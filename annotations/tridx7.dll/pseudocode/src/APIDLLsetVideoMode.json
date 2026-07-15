@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 497,
-    "complexity_score": 1676,
+    "complexity_score": 1645,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 326,
-    "suspect_count": 130,
+    "pseudocode_lines": 325,
+    "suspect_count": 127,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref",
@@ -33,7 +33,7 @@
       "warning_noreturn",
       "warning_overlapping_globals"
     ],
-    "total_lines": 823
+    "total_lines": 822
   },
   "cross_references": [
     {
@@ -57,16 +57,6 @@
   },
   "function_calls": [
     {
-      "addr": "10005430",
-      "is_variadic": false,
-      "name": "_fclose"
-    },
-    {
-      "addr": "10005630",
-      "is_variadic": true,
-      "name": "_sprintf"
-    },
-    {
       "addr": "10004840",
       "is_variadic": false,
       "name": "APIDLLclear"
@@ -77,14 +67,24 @@
       "name": "APIDLLtoggle"
     },
     {
-      "addr": "EXTERNAL:00000001",
+      "addr": "10005430",
       "is_variadic": false,
-      "name": "ExitProcess"
+      "name": "crt_stdio.c__fclose_FUN_10005430"
+    },
+    {
+      "addr": "10005630",
+      "is_variadic": false,
+      "name": "crt_stdio.c__sprintf_FUN_10005630"
     },
     {
       "addr": "10005560",
       "is_variadic": false,
-      "name": "FID_conflict:__wfopen"
+      "name": "crt_stdio.c_fopen_FUN_10005560"
+    },
+    {
+      "addr": "EXTERNAL:00000001",
+      "is_variadic": false,
+      "name": "ExitProcess"
     },
     {
       "addr": "10001d70",
@@ -1276,32 +1276,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 233,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "_sprintf(acStack_198,\"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.\",DAT_10014174,DAT_10014178,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 233,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "_sprintf(acStack_198,\"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.\",DAT_10014174,DAT_10014178,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 234,
-      "match": "DAT_1001417c",
-      "severity": "mild",
-      "text": "DAT_1001417c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 249,
+      "line": 248,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1309,7 +1285,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 249,
+      "line": 248,
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1317,7 +1293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 249,
+      "line": 248,
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1325,7 +1301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 261,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar12 = (char *)&DAT_101386f0;",
@@ -1333,15 +1309,15 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 272,
+      "match": "DAT_101386f0",
+      "severity": "mild",
+      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
       "line": 273,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 274,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -1349,7 +1325,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 277,
+      "line": 276,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1357,7 +1333,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 276,
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1365,7 +1341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 276,
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
@@ -1373,7 +1349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 290,
+      "line": 289,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar12 = (char *)&DAT_101386f0;",
@@ -1381,7 +1357,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 301,
+      "line": 300,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -1389,7 +1365,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 302,
+      "line": 301,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -1397,7 +1373,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 315,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar12 = (char *)&DAT_101386f0;",
@@ -1405,7 +1381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 327,
+      "line": 326,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -1413,7 +1389,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 328,
+      "line": 327,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -1469,7 +1445,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 263,
+      "line": 262,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -1477,7 +1453,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 268,
+      "line": 267,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -1485,7 +1461,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 291,
+      "line": 290,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -1493,7 +1469,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 296,
+      "line": 295,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -1501,7 +1477,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 317,
+      "line": 316,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -1509,7 +1485,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 322,
+      "line": 321,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -1517,7 +1493,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 252,
+      "line": 251,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1525,7 +1501,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 280,
+      "line": 279,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

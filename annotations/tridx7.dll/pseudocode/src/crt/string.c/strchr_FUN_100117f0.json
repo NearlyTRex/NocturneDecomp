@@ -1,0 +1,146 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 118,
+    "complexity_score": 134,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 6,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast"
+    ],
+    "total_lines": 182
+  },
+  "cross_references": [
+    {
+      "addr": "100116f0",
+      "from_addr": "10011706",
+      "name": "crt_string.c__mbschr_FUN_100116f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100117f0",
+    "address_range": [
+      [
+        "100117e0",
+        "100117e4"
+      ],
+      [
+        "100117f0",
+        "100118ab"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strchr_FUN_100117f0",
+    "signature": "char * __cdecl crt_string_c_strchr_FUN_100117f0(char *s,int c)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.797752808988764,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BRANCH": 1,
+      "CBRANCH": 16,
+      "COPY": 98,
+      "INT_ADD": 34,
+      "INT_AND": 109,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 67,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 17,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 37,
+      "INT_SUB": 11,
+      "INT_XOR": 9,
+      "LOAD": 27,
+      "POPCOUNT": 32,
+      "RETURN": 6,
+      "STORE": 3
+    },
+    "pcode_op_count": 516
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "s",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "c",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(char *)((int)s",
+      "severity": "moderate",
+      "text": "s = (char *)((int)s + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)s",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)s + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(char *)((int)s",
+      "severity": "moderate",
+      "text": "return (char *)((int)s + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(char *)((int)s",
+      "severity": "moderate",
+      "text": "return (char *)((int)s + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(char *)((int)s",
+      "severity": "moderate",
+      "text": "return (char *)((int)s + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 24,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "uVar4 = uVar1 ^ CONCAT22(CONCAT11((char)c,(char)c),CONCAT11((char)c,(char)c));",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

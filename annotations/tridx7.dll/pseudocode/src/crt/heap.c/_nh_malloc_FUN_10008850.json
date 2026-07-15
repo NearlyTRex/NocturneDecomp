@@ -1,0 +1,119 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [
+    {
+      "addr": "10008830",
+      "from_addr": "1000883b",
+      "name": "crt_heap.c_malloc_FUN_10008830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10008850",
+    "address_range": [
+      [
+        "10008850",
+        "1000888f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c__nh_malloc_FUN_10008850",
+    "signature": "void * __cdecl crt_heap_c__nh_malloc_FUN_10008850(size_t size,int nh_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000ab30",
+      "is_variadic": false,
+      "name": "crt_heap.c__callnewh_FUN_1000ab30"
+    },
+    {
+      "addr": "10008890",
+      "is_variadic": false,
+      "name": "crt_heap.c__heap_alloc_FUN_10008890"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000883b",
+        "call_type": "direct",
+        "caller": "crt_heap.c_malloc_FUN_10008830",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.758620689655173,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 28,
+      "INT_ADD": 10,
+      "INT_AND": 22,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 7,
+      "INT_XOR": 2,
+      "LOAD": 8,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "size_t"
+      },
+      {
+        "is_param": true,
+        "name": "nh_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

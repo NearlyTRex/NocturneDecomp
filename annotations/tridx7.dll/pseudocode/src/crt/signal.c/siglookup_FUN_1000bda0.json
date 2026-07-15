@@ -1,0 +1,144 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 25,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "1000bbc0",
+      "from_addr": "1000bc0d",
+      "name": "crt_signal.c_raise_FUN_1000bbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b950",
+      "from_addr": "1000b9fa",
+      "name": "crt_signal.c_signal_FUN_1000b950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000bda0",
+    "address_range": [
+      [
+        "1000bda0",
+        "1000bdd0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_signal.c_siglookup_FUN_1000bda0",
+    "signature": "_XCPT_ACTION * __cdecl crt_signal_c_siglookup_FUN_1000bda0(int signum,_XCPT_ACTION *table)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10017754",
+      "name": "DAT_10017754",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "1000bc0d",
+        "call_type": "direct",
+        "caller": "crt_signal.c_raise_FUN_1000bbc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000b9fa",
+        "call_type": "direct",
+        "caller": "crt_signal.c_signal_FUN_1000b950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.526315789473684,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "CBRANCH": 2,
+      "COPY": 15,
+      "INT_ADD": 9,
+      "INT_AND": 15,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "INT_ZEXT": 1,
+      "LOAD": 6,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 105
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "signum",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "table",
+        "offset": 8,
+        "size": 4,
+        "type": "_XCPT_ACTION *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `p_Var1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(uint)p_Var1",
+      "severity": "moderate",
+      "text": "return (_XCPT_ACTION *)(-(uint)(p_Var1->SigNum == signum) & (uint)p_Var1);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

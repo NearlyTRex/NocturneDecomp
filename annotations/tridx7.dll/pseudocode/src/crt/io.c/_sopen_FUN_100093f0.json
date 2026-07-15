@@ -1,0 +1,394 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 449,
+    "complexity_score": 287,
+    "cross_reference_count": 2,
+    "function_call_count": 14,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 192,
+    "suspect_count": 7,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unknown_field"
+    ],
+    "total_lines": 641
+  },
+  "cross_references": [
+    {
+      "addr": "100093d0",
+      "from_addr": "100093e1",
+      "name": "crt_io.c__open_FUN_100093d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10006a30",
+      "from_addr": "10006b8e",
+      "name": "crt_stdio.c__openfile_FUN_10006a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100093f0",
+    "address_range": [
+      [
+        "100093f0",
+        "10009806"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c__sopen_FUN_100093f0",
+    "signature": "int __cdecl crt_io_c__sopen_FUN_100093f0(char *path,int oflag,int shflag,int pmode)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000013",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:00000031",
+      "is_variadic": false,
+      "name": "CreateFileA"
+    },
+    {
+      "addr": "10008a30",
+      "is_variadic": false,
+      "name": "crt_errno.c___doserrno_FUN_10008a30"
+    },
+    {
+      "addr": "100089a0",
+      "is_variadic": false,
+      "name": "crt_errno.c__dosmaperr_FUN_100089a0"
+    },
+    {
+      "addr": "10008a20",
+      "is_variadic": false,
+      "name": "crt_errno.c__errno_FUN_10008a20"
+    },
+    {
+      "addr": "10008a40",
+      "is_variadic": false,
+      "name": "crt_io.c__alloc_osfhnd_FUN_10008a40"
+    },
+    {
+      "addr": "1000b560",
+      "is_variadic": false,
+      "name": "crt_io.c__chsize_lk_FUN_1000b560"
+    },
+    {
+      "addr": "10005b50",
+      "is_variadic": false,
+      "name": "crt_io.c__close_FUN_10005b50"
+    },
+    {
+      "addr": "1000a670",
+      "is_variadic": false,
+      "name": "crt_io.c__lseek_lk_FUN_1000a670"
+    },
+    {
+      "addr": "1000b720",
+      "is_variadic": false,
+      "name": "crt_io.c__read_lk_FUN_1000b720"
+    },
+    {
+      "addr": "10008b80",
+      "is_variadic": false,
+      "name": "crt_io.c__set_osfhnd_FUN_10008b80"
+    },
+    {
+      "addr": "10008e50",
+      "is_variadic": false,
+      "name": "crt_io.c__unlock_fhandle_FUN_10008e50"
+    },
+    {
+      "addr": "EXTERNAL:00000020",
+      "is_variadic": false,
+      "name": "GetFileType"
+    },
+    {
+      "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
+      "name": "GetLastError"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10000000",
+      "name": "IMAGE_DOS_HEADER_10000000",
+      "type": "IMAGE_DOS_HEADER",
+      "value": null
+    },
+    {
+      "addr": "10009808",
+      "name": "switchdataD_10009808",
+      "type": "void*",
+      "value": "100094d6"
+    },
+    {
+      "addr": "1000980c",
+      "name": "PTR_caseD_20_1000980c",
+      "type": "void*",
+      "value": "100094e0"
+    },
+    {
+      "addr": "10016d60",
+      "name": "DAT_10016d60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100178f4",
+      "name": "DAT_100178f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421c8",
+      "name": "PTR_GetLastError_102421c8",
+      "type": "void*",
+      "value": "00242418"
+    },
+    {
+      "addr": "102421cc",
+      "name": "PTR_CloseHandle_102421cc",
+      "type": "void*",
+      "value": "00242428"
+    },
+    {
+      "addr": "10242200",
+      "name": "PTR_GetFileType_10242200",
+      "type": "void*",
+      "value": "002424f8"
+    },
+    {
+      "addr": "10242244",
+      "name": "PTR_CreateFileA_10242244",
+      "type": "void*",
+      "value": "0024262e"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "10006b8e",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__openfile_FUN_10006a30",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "100093e1",
+        "call_type": "direct",
+        "caller": "crt_io.c__open_FUN_100093d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.565349544072948,
+    "instruction_count": 329,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 29,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "BRANCH": 15,
+      "BRANCHIND": 1,
+      "CALL": 26,
+      "CALLIND": 5,
+      "CBRANCH": 40,
+      "COPY": 274,
+      "INT_ADD": 118,
+      "INT_AND": 218,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 179,
+      "INT_LEFT": 2,
+      "INT_LESS": 24,
+      "INT_MULT": 4,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 18,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 89,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 94,
+      "INT_XOR": 4,
+      "LOAD": 73,
+      "POPCOUNT": 87,
+      "RETURN": 10,
+      "STORE": 98
+    },
+    "pcode_op_count": 1502
+  },
+  "stack_frame": {
+    "frame_size": 45,
+    "local_size": 29,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_19",
+        "offset": -25,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "oflag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "shflag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pmode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_100178f4",
+      "severity": "mild",
+      "text": "bVar7 = (DAT_100178f4 == 0x8000) - 1U & 0x80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_10016d60",
+      "severity": "mild",
+      "text": "if (((oflag & 0x100U) != 0) && ((~DAT_10016d60 & pmode & 0x80) == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "piVar3 = (int *)((int)&DAT_10241870 + ((int)(uVar2 & 0xffffffe7) >> 3));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._1_3_",
+      "severity": "mild",
+      "text": "local_18 = CONCAT31(local_18._1_3_,bVar7) & 0xffffff48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 158,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)((int)&DAT_10241870 + ((int)(uVar2 & 0xffffffe7) >> 3));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 161,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "local_18 = CONCAT31(local_18._1_3_,bVar7) & 0xffffff48;",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 158,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)((int)&DAT_10241870 + ((int)(uVar2 & 0xffffffe7) >> 3));",
+      "type": "pointer_cast"
+    }
+  ]
+}

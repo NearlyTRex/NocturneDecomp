@@ -26,12 +26,12 @@
 ;   ... and 45 more
 ;
 ; Called Functions:
-;   _fclose
-;   _sprintf
 ;   APIDLLclear
 ;   APIDLLtoggle
+;   crt_stdio.c__fclose_FUN_10005430
+;   crt_stdio.c__sprintf_FUN_10005630
+;   crt_stdio.c_fopen_FUN_10005560
 ;   ExitProcess
-;   FID_conflict:__wfopen
 ;   FUN_10001d70
 ;   FUN_10002340
 ;   FUN_10002370
@@ -125,16 +125,16 @@ section .text
     ADD ESP,0xc                         ; 10002668
     PUSH 0x1001677c                     ; 1000266b | = "rb"
     PUSH 0x10016780                     ; 10002670 | = "system\\fly.ini"
-    CALL FID_conflict:__wfopen          ; 10002675
-        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * FID_conflict:__wfopen(char * _Filename, char * _Mode)
+    CALL crt_stdio.c_fopen_FUN_10005560 ; 10002675
+        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
     ADD ESP,0x8                         ; 1000267a
     TEST EAX,EAX                        ; 1000267d
     JZ 0x10002696                       ; 1000267f
         ;   XREF to: 10002696 (CONDITIONAL_JUMP)  ; LAB_10002696
     MOV dword ptr [0x1001416c],0x1      ; 10002681 | DAT_1001416c
     PUSH EAX                            ; 1000268b
-    CALL _fclose                        ; 1000268c
-        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int _fclose(FILE * _File)
+    CALL crt_stdio.c__fclose_FUN_10005430 ; 1000268c
+        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(FILE * file)
     ADD ESP,0x4                         ; 10002691
     JMP 0x100026a0                      ; 10002694
         ;   XREF to: 100026a0 (UNCONDITIONAL_JUMP)  ; LAB_100026a0
@@ -508,8 +508,8 @@ section .text
     PUSH EDX                            ; 10002abc
     PUSH 0x100169b8                     ; 10002abd | = "Unable to initialize Direct3D in %dx%..."
     PUSH EAX                            ; 10002ac2
-    CALL _sprintf                       ; 10002ac3
-        ;   XREF to: 10005630 (UNCONDITIONAL_CALL)  ; int _sprintf(char * _Dest, char * _Format)
+    CALL crt_stdio.c__sprintf_FUN_10005630 ; 10002ac3
+        ;   XREF to: 10005630 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_10005630(char * dest, char * format)
     LEA ECX,[ESP + 0x134]               ; 10002ac8
     ADD ESP,0x14                        ; 10002acf
     PUSH ECX                            ; 10002ad2

@@ -1,0 +1,174 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 93,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [],
+  "function": {
+    "address": "1000ab70",
+    "address_range": [
+      [
+        "1000ab70",
+        "1000ac07"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c___endstdio_FUN_1000ab70",
+    "signature": "void __cdecl crt_stdio_c___endstdio_FUN_1000ab70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "10005430",
+      "is_variadic": false,
+      "name": "crt_stdio.c__fclose_FUN_10005430"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    },
+    {
+      "addr": "EXTERNAL:0000000d",
+      "is_variadic": false,
+      "name": "DeleteCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1024085c",
+      "name": "DAT_1024085c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241860",
+      "name": "DAT_10241860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421b4",
+      "name": "PTR_DeleteCriticalSection_102421b4",
+      "type": "void*",
+      "value": "002423b4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5576923076923075,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 40,
+      "INT_ADD": 18,
+      "INT_AND": 32,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 31,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 15,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 237
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "if (3 < DAT_10241860) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "file = *(FILE **)(DAT_1024085c + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "DeleteCriticalSection((LPCRITICAL_SECTION)(*(int *)(DAT_1024085c + iVar2) + 0x20));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "free(*(void **)(DAT_1024085c + iVar2));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "*(uint *)(DAT_1024085c + iVar2) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "} while (iVar1 < DAT_10241860);",
+      "type": "undefined_data"
+    }
+  ]
+}

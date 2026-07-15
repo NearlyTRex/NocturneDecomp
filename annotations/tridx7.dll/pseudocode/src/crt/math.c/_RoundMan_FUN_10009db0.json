@@ -1,0 +1,206 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 89,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 4,
+    "suspect_types": [
+      "extra_output",
+      "unrolled_memcpy",
+      "unrolled_memset"
+    ],
+    "total_lines": 110
+  },
+  "cross_references": [
+    {
+      "addr": "1000a170",
+      "from_addr": "1000a1ae",
+      "name": "crt_math.c___ld12told_FUN_1000a170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10009f60",
+      "from_addr": "1000a005",
+      "name": "crt_math.c__ld12cvt_FUN_10009f60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10009db0",
+    "address_range": [
+      [
+        "10009db0",
+        "10009e5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c__RoundMan_FUN_10009db0",
+    "signature": "int __cdecl crt_math_c__RoundMan_FUN_10009db0(int man,int bit)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009d40",
+      "is_variadic": false,
+      "name": "crt_math.c__IncMan_FUN_10009d40"
+    },
+    {
+      "addr": "10009cd0",
+      "is_variadic": false,
+      "name": "crt_math.c__ZeroTail_FUN_10009cd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "1000a005",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a066",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a1ae",
+        "call_type": "direct",
+        "caller": "crt_math.c___ld12told_FUN_1000a170",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.161764705882353,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 61,
+      "INT_ADD": 25,
+      "INT_AND": 86,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 53,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 14,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 2,
+      "INT_SLESS": 28,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 22,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 18,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 15,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 419
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "man",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bit",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "local_4 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 3 - iVar3; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10009e4e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 68,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 10009e4e: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}

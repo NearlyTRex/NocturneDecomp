@@ -1,0 +1,190 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 129,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 145
+  },
+  "cross_references": [
+    {
+      "addr": "10005c90",
+      "from_addr": "10005c9c",
+      "name": "crt_stdio.c_fflush_FUN_10005c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005d90",
+    "address_range": [
+      [
+        "10005d90",
+        "10005e5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__flsall_FUN_10005d90",
+    "signature": "int __cdecl crt_stdio_c__flsall_FUN_10005d90(int flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005cd0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__fflush_lk_FUN_10005cd0"
+    },
+    {
+      "addr": "10005a70",
+      "is_variadic": false,
+      "name": "crt_stdio.c__lock_file2_FUN_10005a70"
+    },
+    {
+      "addr": "10005ae0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__unlock_file2_FUN_10005ae0"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1024085c",
+      "name": "DAT_1024085c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241860",
+      "name": "DAT_10241860",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.824324324324325,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 11,
+      "COPY": 55,
+      "INT_ADD": 25,
+      "INT_AND": 55,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LESS": 7,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 25,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 357
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "flag",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "if (0 < DAT_10241860) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "stream = *(void **)(DAT_1024085c + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(byte *)((int)stream",
+      "severity": "moderate",
+      "text": "if ((stream != (void *)0x0) && ((*(byte *)((int)stream + 0xc) & 0x83) != 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "file = *(FILE **)(DAT_1024085c + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "_unlock_file2(index,*(void **)(DAT_1024085c + iVar3));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "} while (index < DAT_10241860);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `stream` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)stream",
+      "severity": "moderate",
+      "text": "if ((stream != (void *)0x0) && ((*(byte *)((int)stream + 0xc) & 0x83) != 0)) {",
+      "type": "pointer_truncation"
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 358,
+    "complexity_score": 653,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 183,
+    "suspect_count": 45,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast",
+      "pointer_truncation",
+      "unknown_field"
+    ],
+    "total_lines": 541
+  },
+  "cross_references": [
+    {
+      "addr": "1000a350",
+      "from_addr": "1000a380",
+      "name": "crt_stdio.c__fltout2_FUN_1000a350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000cf50",
+    "address_range": [
+      [
+        "1000cf50",
+        "1000d2ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__i10_output_FUN_1000cf50",
+    "signature": "int __cdecl crt_stdio_c__i10_output_FUN_1000cf50(int man_lo,uint man_hi,ushort exp_sign,int ndigits,byte flags,short *out)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000e8f0",
+      "is_variadic": false,
+      "name": "crt_math.c___multtwelve_FUN_1000e8f0"
+    },
+    {
+      "addr": "1000c5d0",
+      "is_variadic": false,
+      "name": "crt_math.c__add_12_FUN_1000c5d0"
+    },
+    {
+      "addr": "1000eba0",
+      "is_variadic": false,
+      "name": "crt_math.c__multtenpow12_FUN_1000eba0"
+    },
+    {
+      "addr": "1000c640",
+      "is_variadic": false,
+      "name": "crt_math.c__shl_12_FUN_1000c640"
+    },
+    {
+      "addr": "1000c680",
+      "is_variadic": false,
+      "name": "crt_math.c__shr_12_FUN_1000c680"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012774",
+      "name": "DAT_10012774",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012778",
+      "name": "DAT_10012778",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "1001277a",
+      "name": "DAT_1001277a",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "1001277c",
+      "name": "DAT_1001277c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012780",
+      "name": "DAT_10012780",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10012784",
+      "name": "DAT_10012784",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012788",
+      "name": "DAT_10012788",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "1001278c",
+      "name": "DAT_1001278c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012790",
+      "name": "DAT_10012790",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10012792",
+      "name": "DAT_10012792",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000a380",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__fltout2_FUN_1000a350",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8,
+    "instruction_count": 285,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 45,
+      "BOOL_OR": 3,
+      "BRANCH": 5,
+      "CALL": 8,
+      "CBRANCH": 32,
+      "COPY": 221,
+      "INT_2COMP": 2,
+      "INT_ADD": 148,
+      "INT_AND": 214,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 153,
+      "INT_LEFT": 4,
+      "INT_LESS": 25,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 24,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 34,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 3,
+      "INT_SLESS": 79,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 61,
+      "INT_XOR": 3,
+      "INT_ZEXT": 3,
+      "LOAD": 64,
+      "POPCOUNT": 73,
+      "RETURN": 4,
+      "STORE": 89
+    },
+    "pcode_op_count": 1368
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e",
+        "offset": -30,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_17",
+        "offset": -23,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_16",
+        "offset": -22,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_15",
+        "offset": -21,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_13",
+        "offset": -19,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_12",
+        "offset": -18,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_11",
+        "offset": -17,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f",
+        "offset": -15,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e",
+        "offset": -14,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d",
+        "offset": -13,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "man_lo",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "man_hi",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "exp_sign",
+        "offset": 12,
+        "size": 2,
+        "type": "ushort"
+      },
+      {
+        "is_param": true,
+        "name": "ndigits",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 20,
+        "size": 1,
+        "type": "byte"
+      },
+      {
+        "is_param": true,
+        "name": "out",
+        "offset": 24,
+        "size": 4,
+        "type": "short *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 5) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "local_28.ld12._6_4_ = man_hi;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._2_4_",
+      "severity": "mild",
+      "text": "local_28.ld12._2_4_ = man_lo;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 5) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 123,
+      "match": "._2_4_",
+      "severity": "mild",
+      "text": "iVar4 = local_28.ld12._2_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 124,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "uVar5 = local_28.ld12._6_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 127,
+      "match": "._8_2_",
+      "severity": "mild",
+      "text": "local_28.ld12._8_2_ = SUB42(uVar5 >> 0x10,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 128,
+      "match": "._6_2_",
+      "severity": "mild",
+      "text": "local_28.ld12._6_2_ = SUB42(uVar5,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 129,
+      "match": "._4_2_",
+      "severity": "mild",
+      "text": "local_28.ld12._4_2_ = SUB42((uint)iVar4 >> 0x10,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_28.ld12._2_2_ = SUB42(iVar4,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(short *)((int)psVar7",
+      "severity": "moderate",
+      "text": "psVar6 = (short *)((int)psVar7 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 132,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_c = CONCAT22(local_28.ld12._2_2_,local_28.ld12._0_2_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 132,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c = CONCAT22(local_28.ld12._2_2_,local_28.ld12._0_2_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._6_2_",
+      "severity": "mild",
+      "text": "local_8 = CONCAT22(local_28.ld12._6_2_,local_28.ld12._4_2_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._4_2_",
+      "severity": "mild",
+      "text": "local_8 = CONCAT22(local_28.ld12._6_2_,local_28.ld12._4_2_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._8_2_",
+      "severity": "mild",
+      "text": "local_4 = CONCAT13(local_28.ld12[0xb],CONCAT12(local_28.ld12[10],local_28.ld12._8_2_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 135,
+      "match": "._2_4_",
+      "severity": "mild",
+      "text": "local_28.ld12._2_4_ = iVar4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 136,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "local_28.ld12._6_4_ = uVar5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 145,
+      "match": "._2_4_",
+      "severity": "mild",
+      "text": "iVar4 = local_28.ld12._2_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 146,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "uVar5 = local_28.ld12._6_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(char *)((int)psVar6",
+      "severity": "moderate",
+      "text": "if (*(char *)((int)psVar6 + -1) < '5') {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 3) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(byte *)((int)out",
+      "severity": "moderate",
+      "text": "*(byte *)((int)out + 5) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
+      "match": "(short *)((int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(short *)((int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(short *)((int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(char *)((int)out",
+      "severity": "moderate",
+      "text": "*(char *)((int)out + 3) = cVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 184,
+      "match": "(byte *)(cVar3 + 4 + (int)out",
+      "severity": "moderate",
+      "text": "*(byte *)(cVar3 + 4 + (int)out) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "psVar6 = (short *)((int)psVar7 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)psVar6",
+      "severity": "moderate",
+      "text": "if (*(char *)((int)psVar6 + -1) < '5') {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 162,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + -1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 170,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 176,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + -1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(char)psVar7",
+      "severity": "moderate",
+      "text": "cVar3 = ((char)psVar7 - (char)out) + -3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 89,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "if (0x3ffe < CONCAT11(local_28.ld12[0xb],local_28.ld12[10])) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 106,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar2 = CONCAT11(local_28.ld12[0xb],local_28.ld12[10]);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 132,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_c = CONCAT22(local_28.ld12._2_2_,local_28.ld12._0_2_);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 133,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_8 = CONCAT22(local_28.ld12._6_2_,local_28.ld12._4_2_);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 134,
+      "match": "CONCAT13",
+      "severity": "moderate",
+      "text": "local_4 = CONCAT13(local_28.ld12[0xb],CONCAT12(local_28.ld12[10],local_28.ld12._8_2_));",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

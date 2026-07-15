@@ -1,0 +1,322 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 278,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 93,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unrolled_memcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 203
+  },
+  "cross_references": [
+    {
+      "addr": "1000ac10",
+      "from_addr": "1000ae76",
+      "name": "crt_locale.c_setlocale_FUN_1000ac10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000b060",
+    "address_range": [
+      [
+        "1000b060",
+        "1000b14f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c_setlocale_get_all_FUN_1000b060",
+    "signature": "char * __cdecl crt_locale_c_setlocale_get_all_FUN_1000b060(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "1000b330",
+      "is_variadic": true,
+      "name": "crt_locale.c__lc_lctostr_FUN_1000b330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012734",
+      "name": "s_LC_CTYPE_10012734",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012740",
+      "name": "s_LC_COLLATE_10012740",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012754",
+      "name": "DAT_10012754",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012755",
+      "name": "DAT_10012754+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001275c",
+      "name": "DAT_1001275c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017788",
+      "name": "DAT_10017788",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10017789",
+      "name": "DAT_10017789",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "1001778a",
+      "name": "DAT_1001778a",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "1001778b",
+      "name": "DAT_1001778b",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10017794",
+      "name": "DAT_10017794",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001779c",
+      "name": "PTR_s_LC_COLLATE_1001779c",
+      "type": "undefined1*",
+      "value": "10012740"
+    },
+    {
+      "addr": "100177a0",
+      "name": "PTR_DAT_100177a0",
+      "type": "undefined1*",
+      "value": "10017788"
+    },
+    {
+      "addr": "100177a8",
+      "name": "PTR_s_LC_CTYPE_100177a8",
+      "type": "undefined1*",
+      "value": "10012734"
+    },
+    {
+      "addr": "100177ac",
+      "name": "PTR_DAT_100177ac",
+      "type": "undefined1*",
+      "value": "10017788"
+    },
+    {
+      "addr": "100177d0",
+      "name": "PTR_DAT_100177d0",
+      "type": "undefined1*",
+      "value": "10017788"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.32183908045977,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 14,
+      "COPY": 79,
+      "INT_ADD": 25,
+      "INT_AND": 65,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 55,
+      "INT_LESS": 13,
+      "INT_MULT": 6,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 7,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 26,
+      "INT_SUB": 39,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 26,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 463
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "if (DAT_10017794 == (char *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "DAT_10017794 = malloc(0x351);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "*DAT_10017794 = '\\0';",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "_lc_lctostr(DAT_10017794,3,ppuVar9[-1],&DAT_1001275c,*ppuVar9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_1001275c",
+      "severity": "mild",
+      "text": "_lc_lctostr(DAT_10017794,3,ppuVar9[-1],&DAT_1001275c,*ppuVar9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "free(DAT_10017794);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "DAT_10017794 = (char *)0x0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "return DAT_10017794;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_10017794",
+      "severity": "mild",
+      "text": "pcVar10 = DAT_10017794;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&PTR_s_LC_TIME_100177cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&PTR_s_LC_TIME_100177cc",
+      "severity": "moderate",
+      "text": "if ((byte **)((int)&PTR_s_LC_TIME_100177cc + 3) < ppuVar9) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 66,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((byte **)((int)&PTR_s_LC_TIME_100177cc + 3) < ppuVar9) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 40,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 51,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000b0e2, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000b0e2: MOVSD.REP ES:EDI,ESI  ; DAT_10012754",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 72,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
+    "suspect_types": [
+      "builtin_function",
+      "undefined_data"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [
+    {
+      "addr": "10007030",
+      "from_addr": "10007097",
+      "name": "crt_stdio.c__cftoe_FUN_10007030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100072d0",
+      "from_addr": "1000736b",
+      "name": "crt_stdio.c__cftog_FUN_100072d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100070b0",
+    "address_range": [
+      [
+        "100070b0",
+        "10007192"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__cftoe2_FUN_100070b0",
+    "signature": "char * __cdecl crt_stdio_c__cftoe2_FUN_100070b0(char *buf,int dec,int caps,int *pflt,char is_g)"
+  },
+  "function_calls": [
+    {
+      "addr": "100073f0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__shift_FUN_100073f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012408",
+      "name": "DAT_10012408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001240c",
+      "name": "DAT_1001240c",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10017694",
+      "name": "DAT_10017694",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "10007097",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftoe_FUN_10007030",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "1000736b",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftog_FUN_100072d0",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.043956043956044,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 9,
+      "COPY": 60,
+      "INT_2COMP": 3,
+      "INT_ADD": 30,
+      "INT_AND": 58,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 57,
+      "INT_LEFT": 4,
+      "INT_LESS": 13,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 4,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 10,
+      "INT_SDIV": 4,
+      "INT_SEXT": 8,
+      "INT_SLESS": 28,
+      "INT_SREM": 4,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 10,
+      "LOAD": 38,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 459
+  },
+  "stack_frame": {
+    "frame_size": 21,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 17,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buf",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dec",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "caps",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pflt",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "is_g",
+        "offset": 20,
+        "size": 1,
+        "type": "char"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "*pcVar1 = DAT_10017694;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Ghidra builtin function",
+      "line": 24,
+      "match": "builtin_strncpy",
+      "severity": "mild",
+      "text": "builtin_strncpy(pcVar1 + dec + (uint)(is_g == '\\0'),\"e+000\",6);",
+      "type": "builtin_function"
+    }
+  ]
+}

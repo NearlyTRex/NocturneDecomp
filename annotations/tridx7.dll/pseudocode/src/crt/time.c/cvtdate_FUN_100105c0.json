@@ -1,0 +1,441 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 145,
+    "complexity_score": 269,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 20,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 204
+  },
+  "cross_references": [
+    {
+      "addr": "10010360",
+      "from_addr": "10010425",
+      "name": "crt_time.c__isindst_lk_FUN_10010360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100105c0",
+    "address_range": [
+      [
+        "100105c0",
+        "1001074a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_cvtdate_FUN_100105c0",
+    "signature": "time_t __cdecl crt_time_c_cvtdate_FUN_100105c0(int trantype,int datetype,int year,int month,int week,int weekday,int date,int hour,int min,int sec,int msec)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10018528",
+      "name": "DAT_10018528",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c0",
+      "name": "DAT_100185c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c4",
+      "name": "DAT_100185c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c8",
+      "name": "DAT_100185c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d0",
+      "name": "DAT_100185d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d4",
+      "name": "DAT_100185d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d8",
+      "name": "DAT_100185d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185dc",
+      "name": "DAT_100185dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185e0",
+      "name": "DAT_100185e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10018614",
+      "name": "DAT_10018614",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10018618",
+      "name": "DAT_10018618",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "10010425",
+        "call_type": "direct",
+        "caller": "crt_time.c__isindst_lk_FUN_10010360",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "100104d5",
+        "call_type": "direct",
+        "caller": "crt_time.c__isindst_lk_FUN_10010360",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "100104f5",
+        "call_type": "direct",
+        "caller": "crt_time.c__isindst_lk_FUN_10010360",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 11,
+    "declared_stack_bytes": 44,
+    "estimated_params": 11,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.530434782608696,
+    "instruction_count": 115,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 36,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "CBRANCH": 10,
+      "COPY": 86,
+      "INT_ADD": 73,
+      "INT_AND": 144,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 81,
+      "INT_LEFT": 11,
+      "INT_LESS": 12,
+      "INT_MULT": 27,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 30,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 1,
+      "INT_SEXT": 2,
+      "INT_SLESS": 47,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 23,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 48,
+      "POPCOUNT": 37,
+      "RETURN": 2,
+      "STORE": 5,
+      "SUBPIECE": 3
+    },
+    "pcode_op_count": 751
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 44,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "trantype",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "datetype",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "year",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "month",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "week",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "weekday",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "date",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "hour",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "min",
+        "offset": 36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sec",
+        "offset": 40,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "msec",
+        "offset": 44,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_100185dc",
+      "severity": "mild",
+      "text": "iVar4 = (&DAT_100185dc)[month];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10018614",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&DAT_10018614 + month * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_100185e0",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&DAT_100185e0 + month * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_10018618",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&DAT_10018618 + month * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_100185dc",
+      "severity": "mild",
+      "text": "iVar4 = (&DAT_100185dc)[month];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_10018614",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&DAT_10018614 + month * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "DAT_100185d4 = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "DAT_100185d8 = msec + ((hour * 0x3c + min) * 0x3c + _DAT_10018528 + sec) * 1000;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "tVar2 = DAT_100185d8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "if (DAT_100185d8 < 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "DAT_100185d8 = DAT_100185d8 + 86399999;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "DAT_100185d8 = DAT_100185d8 + 86399999;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "else if (86399999 < DAT_100185d8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "DAT_100185d8 = DAT_100185d8 + -86399999;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "DAT_100185d8 = DAT_100185d8 + -86399999;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_100185d0",
+      "severity": "mild",
+      "text": "DAT_100185d0 = year;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "DAT_100185c4 = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_100185c0",
+      "severity": "mild",
+      "text": "DAT_100185c0 = year;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_100185c8",
+      "severity": "mild",
+      "text": "DAT_100185c8 = msec + ((hour * 0x3c + min) * 0x3c + sec) * 1000;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -496,15 +496,14 @@
         "start":"100058c0"
       }
     ],
-    "cmt":"Library Function - Single Match\n __amsg_exit\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__amsg_exit",
+    "name":"crt_startup.c__amsg_exit_FUN_100058c0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"rterrnum",
           "storage":{
             "offset":4,
             "size":4,
@@ -531,13 +530,38 @@
         "start":"10005bc0"
       }
     ],
-    "cmt":"Library Function - Single Match\n __close_lk\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"__close_lk",
-    "ret":"undefined1",
+    "name":"crt_io.c__close_lk_FUN_10005bc0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"fh",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -550,9 +574,10 @@
         "start":"10005f40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10005f40",
-    "ret":"undefined1",
+    "name":"crt_stdio.c__output_FUN_10005f40",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -908,8 +933,65 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILE*"
+        },
+        {
+          "name":"fmt",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"args",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"va_list"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -922,12 +1004,64 @@
         "start":"10006c40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10006c40",
-    "ret":"undefined1",
+    "name":"crt_stdio.c__getstream_FUN_10006c40",
+    "ret":"FILE*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"10006fc0",
+    "body":[
+      {
+        "end":"10006fd6",
+        "size":23,
+        "start":"10006fc0"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"crt_stdio.c__positive_FUN_10006fc0",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"double*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -940,16 +1074,15 @@
         "start":"100075c0"
       }
     ],
-    "cmt":"Library Function - Single Match\n __exit\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__exit",
+    "name":"crt_startup.c__exit_crt_FUN_100075c0",
     "noreturn":true,
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"_Code",
+          "name":"code",
           "storage":{
             "offset":4,
             "size":4,
@@ -976,14 +1109,10 @@
         "start":"100076c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_100076c0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"crt_startup.c__lockexit_FUN_100076c0",
+    "ret":"void"
   },
   {
     "addr":"10007c40",
@@ -994,10 +1123,9 @@
         "start":"10007c40"
       }
     ],
-    "cmt":"Library Function - Single Match\n __setargv\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__setargv",
+    "name":"crt_startup.c__setargv_FUN_10007c40",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1055,12 +1183,70 @@
         "start":"100085c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_100085c0",
-    "ret":"undefined1",
+    "name":"crt_startup.c_DllMain_FUN_100085c0",
+    "ret":"BOOL",
     "vars":{
+      "params":[
+        {
+          "name":"hinst_dll",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HINSTANCE"
+        },
+        {
+          "name":"reason",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"reserved",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPVOID"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1073,10 +1259,9 @@
         "start":"10008a40"
       }
     ],
-    "cmt":"Library Function - Single Match\n __alloc_osfhnd\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__alloc_osfhnd",
+    "name":"crt_io.c__alloc_osfhnd_FUN_10008a40",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1118,10 +1303,10 @@
         "start":"10009240"
       }
     ],
-    "cmt":"Library Function - Single Match\n __wctomb_lk\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"__wctomb_lk",
-    "ret":"undefined1",
+    "name":"crt_locale.c__wctomb_lk_FUN_10009240",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -1141,8 +1326,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"mbchar",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPSTR"
+        },
+        {
+          "name":"wchar",
+          "storage":{
+            "offset":8,
+            "size":2,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":2
+              }
+            ]
+          },
+          "type":"WCHAR"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1155,10 +1381,9 @@
         "start":"10009ac0"
       }
     ],
-    "cmt":"Library Function - Single Match\n __isctype\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__isctype",
+    "name":"crt_ctype.c__isctype_FUN_10009ac0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1197,7 +1422,7 @@
       ],
       "params":[
         {
-          "name":"_C",
+          "name":"c",
           "storage":{
             "offset":4,
             "size":4,
@@ -1213,7 +1438,7 @@
           "type":"int"
         },
         {
-          "name":"_Type",
+          "name":"type",
           "storage":{
             "offset":8,
             "size":4,
@@ -1250,14 +1475,45 @@
         "start":"10009d40"
       }
     ],
-    "cmt":"Library Function - Single Match\n __IncMan\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"__IncMan",
-    "ret":"undefined1",
+    "name":"crt_math.c__IncMan_FUN_10009d40",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"man",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bit",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -1269,9 +1525,10 @@
         "start":"1000a240"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000a240",
-    "ret":"undefined1",
+    "name":"crt_math.c__atoldbl_FUN_1000a240",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -1307,8 +1564,49 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"result",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_LDOUBLE*"
+        },
+        {
+          "name":"str",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1321,15 +1619,14 @@
         "start":"1000a2c0"
       }
     ],
-    "cmt":"Library Function - Single Match\n __fptostr\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__fptostr",
+    "name":"crt_stdio.c__fptostr_FUN_1000a2c0",
     "ret":"errno_t",
     "vars":{
       "params":[
         {
-          "name":"_Buf",
+          "name":"buf",
           "storage":{
             "offset":4,
             "size":4,
@@ -1345,7 +1642,7 @@
           "type":"char*"
         },
         {
-          "name":"_SizeInBytes",
+          "name":"size_in_bytes",
           "storage":{
             "offset":8,
             "size":4,
@@ -1361,7 +1658,7 @@
           "type":"size_t"
         },
         {
-          "name":"_Digits",
+          "name":"digits",
           "storage":{
             "offset":12,
             "size":4,
@@ -1377,7 +1674,7 @@
           "type":"int"
         },
         {
-          "name":"_PtFlt",
+          "name":"pt_flt",
           "storage":{
             "offset":16,
             "size":4,
@@ -1419,12 +1716,38 @@
         "start":"1000bc9f"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000bbc0",
-    "ret":"undefined1",
+    "name":"crt_signal.c_raise_FUN_1000bbc0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sig",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1437,10 +1760,9 @@
         "start":"1000bfc0"
       }
     ],
-    "cmt":"Library Function - Single Match\n ___crtGetStringTypeA\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"___crtGetStringTypeA",
+    "name":"crt_locale.c__crtGetStringTypeA_FUN_1000bfc0",
     "ret":"BOOL",
     "vars":{
       "locals":[
@@ -1463,7 +1785,7 @@
       ],
       "params":[
         {
-          "name":"_Plocinfo",
+          "name":"plocinfo",
           "storage":{
             "offset":4,
             "size":4,
@@ -1479,7 +1801,7 @@
           "type":"_locale_t"
         },
         {
-          "name":"_DWInfoType",
+          "name":"dw_info_type",
           "storage":{
             "offset":8,
             "size":4,
@@ -1495,7 +1817,7 @@
           "type":"DWORD"
         },
         {
-          "name":"_LpSrcStr",
+          "name":"lp_src_str",
           "storage":{
             "offset":12,
             "size":4,
@@ -1511,7 +1833,7 @@
           "type":"LPCSTR"
         },
         {
-          "name":"_CchSrc",
+          "name":"cch_src",
           "storage":{
             "offset":16,
             "size":4,
@@ -1527,7 +1849,7 @@
           "type":"int"
         },
         {
-          "name":"_LpCharType",
+          "name":"lp_char_type",
           "storage":{
             "offset":20,
             "size":4,
@@ -1543,7 +1865,7 @@
           "type":"LPWORD"
         },
         {
-          "name":"_Code_page",
+          "name":"code_page",
           "storage":{
             "offset":24,
             "size":4,
@@ -1559,7 +1881,7 @@
           "type":"int"
         },
         {
-          "name":"_BError",
+          "name":"b_error",
           "storage":{
             "offset":28,
             "size":4,
@@ -1596,12 +1918,134 @@
         "start":"1000c340"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000c340",
-    "ret":"undefined1",
+    "name":"crt_locale.c___crtLCMapStringA_FUN_1000c340",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"lcid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LCID"
+        },
+        {
+          "name":"map_flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"cch_src",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"dest",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWSTR"
+        },
+        {
+          "name":"cch_dest",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"code_page",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1614,14 +2058,29 @@
         "start":"1000c640"
       }
     ],
-    "cmt":"Library Function - Single Match\n ___shl_12\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"___shl_12",
-    "ret":"undefined1",
+    "name":"crt_math.c__shl_12_FUN_1000c640",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"p",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        }
+      ]
     }
   },
   {
@@ -1633,10 +2092,10 @@
         "start":"1000c6c0"
       }
     ],
-    "cmt":"Library Function - Single Match\n ___mtold12\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"___mtold12",
-    "ret":"undefined1",
+    "name":"crt_math.c__mtold12_FUN_1000c6c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -1688,9 +2147,56 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"manptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"cnt",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"ld12",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        }
+      ]
     }
   },
   {
@@ -1702,12 +2208,38 @@
         "start":"1000ddc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000ddc0",
-    "ret":"undefined1",
+    "name":"crt_locale.c___get_lc_monetary_FUN_1000ddc0",
+    "ret":"uint",
     "vars":{
+      "params":[
+        {
+          "name":"lc",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"lconv*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1720,9 +2252,10 @@
         "start":"1000f3c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000f3c0",
-    "ret":"undefined1",
+    "name":"crt_time.c__expand_locale_picture_FUN_1000f3c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -1758,9 +2291,72 @@
           "type":"undefined5"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"picture",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"buf",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"size_t*"
+        }
+      ]
     }
   },
   {
@@ -1772,12 +2368,70 @@
         "start":"1000fe40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000fe40",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c_wcstoul_FUN_1000fe40",
+    "ret":"ulong",
     "vars":{
+      "params":[
+        {
+          "name":"nptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"wchar_t*"
+        },
+        {
+          "name":"endptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"wchar_t**"
+        },
+        {
+          "name":"base",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1790,9 +2444,10 @@
         "start":"100105c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_100105c0",
-    "ret":"undefined1",
+    "name":"crt_time.c_cvtdate_FUN_100105c0",
+    "ret":"time_t",
     "vars":{
       "locals":[
         {
@@ -1812,8 +2467,193 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"trantype",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"datetype",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"year",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"month",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"week",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"weekday",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"date",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"hour",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"min",
+          "storage":{
+            "offset":36,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x24]",
+                "offset":36,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"sec",
+          "storage":{
+            "offset":40,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x28]",
+                "offset":40,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"msec",
+          "storage":{
+            "offset":44,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x2c]",
+                "offset":44,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1826,9 +2666,10 @@
         "start":"10010dc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10010dc0",
-    "ret":"undefined1",
+    "name":"crt_locale.c___crtCompareStringA_v2_FUN_10010dc0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -1864,8 +2705,129 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"lcid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LCID"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"str1",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"cch1",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"str2",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"cch2",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"code_page",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1878,9 +2840,10 @@
         "start":"10011040"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10011040",
-    "ret":"undefined1",
+    "name":"crt_locale.c___crtCompareStringA_FUN_10011040",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -1996,8 +2959,129 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"lcid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LCID"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"str1",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"cch1",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"str2",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"cch2",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"code_page",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

@@ -22,7 +22,7 @@ void APIDLLInformation(void)
   
                     /* 0x19a0  2  APIDLLInformation */
   bVar8 = 0;
-  FUN_10005600();
+  _chkstk();
   puVar6 = (uint *)&stack0x00000100;
   for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

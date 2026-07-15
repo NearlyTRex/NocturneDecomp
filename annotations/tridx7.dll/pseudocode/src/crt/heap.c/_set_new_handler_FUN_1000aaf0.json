@@ -1,0 +1,113 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [],
+  "function": {
+    "address": "1000aaf0",
+    "address_range": [
+      [
+        "1000aaf0",
+        "1000ab17"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c__set_new_handler_FUN_1000aaf0",
+    "signature": "_PNH __cdecl crt_heap_c__set_new_handler_FUN_1000aaf0(_PNH pnh)"
+  },
+  "function_calls": [
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10240794",
+      "name": "DAT_10240794",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5384615384615383,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 9,
+      "INT_ADD": 5,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 46
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pnh",
+        "offset": 4,
+        "size": 4,
+        "type": "_PNH"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_10240794",
+      "severity": "mild",
+      "text": "p_Var1 = DAT_10240794;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_10240794",
+      "severity": "mild",
+      "text": "DAT_10240794 = pnh;",
+      "type": "undefined_data"
+    }
+  ]
+}

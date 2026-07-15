@@ -1,0 +1,109 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 164,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 204
+  },
+  "cross_references": [],
+  "function": {
+    "address": "1000ddc0",
+    "address_range": [
+      [
+        "1000ddc0",
+        "1000df0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c___get_lc_monetary_FUN_1000ddc0",
+    "signature": "uint __cdecl crt_locale_c___get_lc_monetary_FUN_1000ddc0(lconv *lc)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000f6e0",
+      "is_variadic": false,
+      "name": "crt_locale.c___getlocaleinfo_FUN_1000f6e0"
+    },
+    {
+      "addr": "1000df10",
+      "is_variadic": false,
+      "name": "crt_locale.c__fix_grouping_FUN_1000df10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017954",
+      "name": "DAT_10017954",
+      "type": "undefined2",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.255172413793104,
+    "instruction_count": 145,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 16,
+      "CBRANCH": 1,
+      "COPY": 133,
+      "INT_ADD": 42,
+      "INT_AND": 67,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 66,
+      "INT_OR": 14,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 33,
+      "INT_SUB": 81,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 33,
+      "RETURN": 2,
+      "STORE": 81
+    },
+    "pcode_op_count": 617
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lc",
+        "offset": 4,
+        "size": 4,
+        "type": "lconv *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10017954",
+      "severity": "mild",
+      "text": "uVar15 = (uint)DAT_10017954;",
+      "type": "undefined_data"
+    }
+  ]
+}

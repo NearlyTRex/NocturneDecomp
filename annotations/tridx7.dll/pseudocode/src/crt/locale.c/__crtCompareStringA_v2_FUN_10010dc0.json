@@ -1,0 +1,363 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 267,
+    "complexity_score": 268,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 78,
+    "suspect_count": 18,
+    "suspect_types": [
+      "register_param",
+      "undefined_data"
+    ],
+    "total_lines": 345
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10010dc0",
+    "address_range": [
+      [
+        "10010dc0",
+        "10010ffa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c___crtCompareStringA_v2_FUN_10010dc0",
+    "signature": "int __cdecl crt_locale_c___crtCompareStringA_v2_FUN_10010dc0(LCID lcid,DWORD flags,LPCSTR str1,int cch1,LPCSTR str2,int cch2,UINT code_page)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000024",
+      "is_variadic": false,
+      "name": "CompareStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000007",
+      "is_variadic": false,
+      "name": "CompareStringW"
+    },
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "10011000",
+      "is_variadic": false,
+      "name": "crt_string.c_wcsnlen_v3_FUN_10011000"
+    },
+    {
+      "addr": "EXTERNAL:0000002c",
+      "is_variadic": false,
+      "name": "WideCharToMultiByte"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001276c",
+      "name": "DAT_1001276c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012770",
+      "name": "DAT_10012770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001864c",
+      "name": "DAT_1001864c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1024219c",
+      "name": "PTR_CompareStringW_1024219c",
+      "type": "void*",
+      "value": "00242782"
+    },
+    {
+      "addr": "10242210",
+      "name": "PTR_CompareStringA_10242210",
+      "type": "void*",
+      "value": "00242770"
+    },
+    {
+      "addr": "10242230",
+      "name": "PTR_WideCharToMultiByte_10242230",
+      "type": "void*",
+      "value": "002425dc"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.022321428571429,
+    "instruction_count": 224,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 8,
+      "CALLIND": 8,
+      "CBRANCH": 18,
+      "COPY": 219,
+      "INT_ADD": 80,
+      "INT_AND": 92,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 80,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 40,
+      "INT_SUB": 93,
+      "INT_XOR": 5,
+      "LOAD": 62,
+      "POPCOUNT": 40,
+      "RETURN": 8,
+      "STORE": 88
+    },
+    "pcode_op_count": 901
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "lcid",
+        "offset": 4,
+        "size": 4,
+        "type": "LCID"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 12,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 20,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch2",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "code_page",
+        "offset": 28,
+        "size": 4,
+        "type": "UINT"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_1001864c",
+      "severity": "mild",
+      "text": "if (DAT_1001864c == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = CompareStringW(0,0,L\"\",1,L\"\",1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = CompareStringA(0,0,\"\",1,\"\",1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_1001864c",
+      "severity": "mild",
+      "text": "DAT_1001864c = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_1001864c",
+      "severity": "mild",
+      "text": "DAT_1001864c = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 26,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = wcsnlen_v3((wchar_t *)str1,cch1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cch1 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = wcsnlen_v3((wchar_t *)str2,cch2);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 31,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cch2 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = 3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 39,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_1001864c",
+      "severity": "mild",
+      "text": "if (DAT_1001864c == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_1001864c",
+      "severity": "mild",
+      "text": "if (DAT_1001864c == 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "code_page = DAT_10017770;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 80,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    }
+  ]
+}

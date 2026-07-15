@@ -1,0 +1,136 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [
+    {
+      "addr": "10002500",
+      "from_addr": "10002675",
+      "name": "APIDLLsetVideoMode",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10001200",
+      "from_addr": "10001231",
+      "name": "FUN_10001200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005560",
+    "address_range": [
+      [
+        "10005560",
+        "10005574"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fopen_FUN_10005560",
+    "signature": "FILE * __cdecl crt_stdio_c_fopen_FUN_10005560(char *filename,char *mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005520",
+      "is_variadic": false,
+      "name": "crt_stdio.c__fsopen_FUN_10005520"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "10002675",
+        "call_type": "direct",
+        "caller": "APIDLLsetVideoMode",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10001231",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000124b",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.75,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 5,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 30
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

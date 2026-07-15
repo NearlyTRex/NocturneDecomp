@@ -1,0 +1,125 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 44,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "100057f0",
+      "from_addr": "1000587c",
+      "name": "crt_startup.c__DllMainCRTStartup_FUN_100057f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100056a0",
+      "from_addr": "100057bf",
+      "name": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10007760",
+    "address_range": [
+      [
+        "10007760",
+        "10007780"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_thread.c__mtterm_FUN_10007760",
+    "signature": "void __cdecl crt_thread_c__mtterm_FUN_10007760(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005930",
+      "is_variadic": false,
+      "name": "crt_thread.c__mtdeletelocks_FUN_10005930"
+    },
+    {
+      "addr": "EXTERNAL:00000019",
+      "is_variadic": false,
+      "name": "TlsFree"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016da4",
+      "name": "DAT_10016da4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421e4",
+      "name": "PTR_TlsFree_102421e4",
+      "type": "void*",
+      "value": "0024248e"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 1,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 26
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_10016da4",
+      "severity": "mild",
+      "text": "if (DAT_10016da4 != -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_10016da4",
+      "severity": "mild",
+      "text": "TlsFree(DAT_10016da4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_10016da4",
+      "severity": "mild",
+      "text": "DAT_10016da4 = -1;",
+      "type": "undefined_data"
+    }
+  ]
+}

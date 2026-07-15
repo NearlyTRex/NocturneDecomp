@@ -1,0 +1,126 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [
+    {
+      "addr": "1000a280",
+      "from_addr": "1000a2ac",
+      "name": "crt_math.c__atoflt_FUN_1000a280",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a150",
+    "address_range": [
+      [
+        "1000a150",
+        "1000a167"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c___ld12tof_FUN_1000a150",
+    "signature": "INTRNCVT_STATUS __cdecl crt_math_c___ld12tof_FUN_1000a150(_LDBL12 *ifp,_CRT_FLOAT *f)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009f60",
+      "is_variadic": false,
+      "name": "crt_math.c__ld12cvt_FUN_10009f60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100176b8",
+      "name": "DAT_100176b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000a2ac",
+        "call_type": "direct",
+        "caller": "crt_math.c__atoflt_FUN_1000a280",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.75,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 5,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 30
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ifp",
+        "offset": 4,
+        "size": 4,
+        "type": "_LDBL12 *"
+      },
+      {
+        "is_param": true,
+        "name": "f",
+        "offset": 8,
+        "size": 4,
+        "type": "_CRT_FLOAT *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_100176b8",
+      "severity": "mild",
+      "text": "IVar1 = _ld12cvt((ushort *)ifp,(uint *)f,(int *)&DAT_100176b8);",
+      "type": "undefined_data"
+    }
+  ]
+}

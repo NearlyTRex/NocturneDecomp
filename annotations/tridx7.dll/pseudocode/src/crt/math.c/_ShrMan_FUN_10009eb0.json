@@ -1,0 +1,177 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 120
+  },
+  "cross_references": [
+    {
+      "addr": "10009f60",
+      "from_addr": "1000a055",
+      "name": "crt_math.c__ld12cvt_FUN_10009f60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10009eb0",
+    "address_range": [
+      [
+        "10009eb0",
+        "10009f5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c__ShrMan_FUN_10009eb0",
+    "signature": "void __cdecl crt_math_c__ShrMan_FUN_10009eb0(uint *man,int count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "1000a055",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a07a",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a0ab",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a0d3",
+        "call_type": "direct",
+        "caller": "crt_math.c__ld12cvt_FUN_10009f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.956521739130435,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 28,
+      "BRANCH": 1,
+      "CBRANCH": 3,
+      "COPY": 58,
+      "INT_ADD": 23,
+      "INT_AND": 113,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 60,
+      "INT_LEFT": 6,
+      "INT_LESS": 8,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 25,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 5,
+      "INT_SEXT": 2,
+      "INT_SLESS": 34,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 19,
+      "INT_XOR": 6,
+      "LOAD": 14,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 12,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 480
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "man",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

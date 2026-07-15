@@ -1,0 +1,251 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 97,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "10007030",
+      "from_addr": "1000704a",
+      "name": "crt_stdio.c__cftoe_FUN_10007030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100071a0",
+      "from_addr": "100071ba",
+      "name": "crt_stdio.c__cftof_FUN_100071a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100072d0",
+      "from_addr": "100072ec",
+      "name": "crt_stdio.c__cftog_FUN_100072d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a350",
+    "address_range": [
+      [
+        "1000a350",
+        "1000a3d0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__fltout2_FUN_1000a350",
+    "signature": "STRFLT __cdecl crt_stdio_c__fltout2_FUN_1000a350(_CRT_DOUBLE dbl,STRFLT flt,char *result_str,size_t size_in_bytes)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000a3e0",
+      "is_variadic": false,
+      "name": "crt_math.c__dtold_FUN_1000a3e0"
+    },
+    {
+      "addr": "1000cf50",
+      "is_variadic": false,
+      "name": "crt_stdio.c__i10_output_FUN_1000cf50"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "1000704a",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftoe_FUN_10007030",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "100071ba",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftof_FUN_100071a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "100072ec",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftog_FUN_100072d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 20,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.12,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 46,
+      "INT_ADD": 25,
+      "INT_AND": 31,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 26,
+      "INT_ZEXT": 5,
+      "LOAD": 16,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 256
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a",
+        "offset": -26,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "dbl",
+        "offset": 4,
+        "size": 8,
+        "type": "_CRT_DOUBLE"
+      },
+      {
+        "is_param": true,
+        "name": "flt",
+        "offset": 12,
+        "size": 4,
+        "type": "STRFLT"
+      },
+      {
+        "is_param": true,
+        "name": "result_str",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "size_in_bytes",
+        "offset": 20,
+        "size": 4,
+        "type": "size_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 27,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000a3bc, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000a3bc: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

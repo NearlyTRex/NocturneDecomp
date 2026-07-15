@@ -1,0 +1,127 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "100056a0",
+      "from_addr": "100056ff",
+      "name": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100078f0",
+    "address_range": [
+      [
+        "100078f0",
+        "10007904"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c__heap_init_FUN_100078f0",
+    "signature": "int __cdecl crt_heap_c__heap_init_FUN_100078f0(int mtflag)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000001d",
+      "is_variadic": false,
+      "name": "HeapCreate"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10241974",
+      "name": "DAT_10241974",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421f4",
+      "name": "PTR_HeapCreate_102421f4",
+      "type": "void*",
+      "value": "002424ca"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100056ff",
+        "call_type": "direct",
+        "caller": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 0,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8333333333333335,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 5,
+      "INT_ADD": 1,
+      "INT_SUB": 4,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 17
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mtflag",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10241974",
+      "severity": "mild",
+      "text": "DAT_10241974 = (int)HeapCreate(0,0x1000,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_10241974",
+      "severity": "mild",
+      "text": "return DAT_10241974;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 263,
+    "complexity_score": 166,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 76,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_many",
+      "undefined_data"
+    ],
+    "total_lines": 339
+  },
+  "cross_references": [
+    {
+      "addr": "100107d0",
+      "from_addr": "1001084e",
+      "name": "crt_ctype.c__towupper_FUN_100107d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000c0f0",
+    "address_range": [
+      [
+        "1000c0f0",
+        "1000c2fb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c___crtLCMapStringA_v2_FUN_1000c0f0",
+    "signature": "int __cdecl crt_locale_c___crtLCMapStringA_v2_FUN_1000c0f0(LCID lcid,DWORD map_flags,LPCSTR src,int cch_src,LPSTR dest,int cch_dest,UINT code_page,BOOL error)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "1000a9f0",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_1000a9f0"
+    },
+    {
+      "addr": "1000c300",
+      "is_variadic": false,
+      "name": "crt_string.c_wcsnlen_FUN_1000c300"
+    },
+    {
+      "addr": "EXTERNAL:00000034",
+      "is_variadic": false,
+      "name": "LCMapStringA"
+    },
+    {
+      "addr": "EXTERNAL:0000003b",
+      "is_variadic": false,
+      "name": "LCMapStringW"
+    },
+    {
+      "addr": "EXTERNAL:00000028",
+      "is_variadic": false,
+      "name": "MultiByteToWideChar"
+    },
+    {
+      "addr": "EXTERNAL:0000002c",
+      "is_variadic": false,
+      "name": "WideCharToMultiByte"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001276c",
+      "name": "DAT_1001276c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012770",
+      "name": "DAT_10012770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017914",
+      "name": "DAT_10017914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242220",
+      "name": "PTR_MultiByteToWideChar_10242220",
+      "type": "void*",
+      "value": "0024257a"
+    },
+    {
+      "addr": "10242230",
+      "name": "PTR_WideCharToMultiByte_10242230",
+      "type": "void*",
+      "value": "002425dc"
+    },
+    {
+      "addr": "10242250",
+      "name": "PTR_LCMapStringA_10242250",
+      "type": "void*",
+      "value": "002426da"
+    },
+    {
+      "addr": "1024226c",
+      "name": "PTR_LCMapStringW_1024226c",
+      "type": "void*",
+      "value": "002426ea"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1001084e",
+        "call_type": "direct",
+        "caller": "crt_ctype.c__towupper_FUN_100107d0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 7,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.71889400921659,
+    "instruction_count": 217,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CALLIND": 9,
+      "CBRANCH": 19,
+      "COPY": 217,
+      "INT_ADD": 61,
+      "INT_AND": 79,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 64,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 32,
+      "INT_SUB": 94,
+      "INT_XOR": 5,
+      "LOAD": 52,
+      "POPCOUNT": 32,
+      "RETURN": 6,
+      "STORE": 91
+    },
+    "pcode_op_count": 807
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lcid",
+        "offset": 4,
+        "size": 4,
+        "type": "LCID"
+      },
+      {
+        "is_param": true,
+        "name": "map_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 12,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch_src",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 20,
+        "size": 4,
+        "type": "LPSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch_dest",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "code_page",
+        "offset": 28,
+        "size": 4,
+        "type": "UINT"
+      },
+      {
+        "is_param": true,
+        "name": "error",
+        "offset": 32,
+        "size": 4,
+        "type": "BOOL"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "if (DAT_10017914 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "DAT_10017914 = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "DAT_10017914 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "iVar1 = DAT_10017914;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "iVar1 = DAT_10017914;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10017914",
+      "severity": "mild",
+      "text": "DAT_10017914 = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "code_page = DAT_10017770;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 8,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 7,
+      "fix_type": "remove_params",
+      "match": "declared:8 vs estimated:7",
+      "param_delta": -1,
+      "text": "Function declares 8 params but call sites push 7 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

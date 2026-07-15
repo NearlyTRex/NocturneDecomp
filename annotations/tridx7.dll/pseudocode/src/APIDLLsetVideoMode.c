@@ -12,7 +12,7 @@ uint APIDLLsetVideoMode(uint *param_1)
 
 {
   char cVar1;
-  FILE *_File;
+  FILE *file;
   uint uVar2;
   int iVar3;
   int iVar4;
@@ -93,13 +93,13 @@ uint APIDLLsetVideoMode(uint *param_1)
   iStack_230 = 0x10002668;
   FUN_10002b20();
   piStack_22c = (int *)0x1000267a;
-  _File = FID_conflict___wfopen("system\\fly.ini","rb");
-  if (_File == (FILE *)0x0) {
+  file = _fopen("system\\fly.ini","rb");
+  if (file == (FILE *)0x0) {
     DAT_1001416c = 0;
   }
   else {
     DAT_1001416c = 1;
-    _fclose(_File);
+    _fclose(file);
   }
   DAT_10138fb4 = param_1;
   if (0 < DAT_10014178) {
@@ -237,8 +237,7 @@ uint APIDLLsetVideoMode(uint *param_1)
       (**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,auStack_1e4);
       iVar4 = FUN_10003100();
       if (iVar4 == 0) {
-        _sprintf(acStack_198,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.",DAT_10014174,DAT_10014178,
-                 DAT_1001417c);
+        _sprintf(acStack_198,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
         FUN_10002340(acStack_198);
       }
       SetCursorPos(0x27f,0x1df);

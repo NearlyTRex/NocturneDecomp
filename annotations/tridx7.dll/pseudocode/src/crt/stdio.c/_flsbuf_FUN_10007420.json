@@ -1,0 +1,236 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 157,
+    "complexity_score": 142,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 67,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 224
+  },
+  "cross_references": [
+    {
+      "addr": "10005630",
+      "from_addr": "10005688",
+      "name": "crt_stdio.c__sprintf_FUN_10005630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10006920",
+      "from_addr": "10006946",
+      "name": "crt_stdio.c_write_char_FUN_10006920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10007420",
+    "address_range": [
+      [
+        "10007420",
+        "1000756c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__flsbuf_FUN_10007420",
+    "signature": "int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,FILE *str)"
+  },
+  "function_calls": [
+    {
+      "addr": "100091b0",
+      "is_variadic": false,
+      "name": "crt_io.c__isatty_FUN_100091b0"
+    },
+    {
+      "addr": "1000a5f0",
+      "is_variadic": false,
+      "name": "crt_io.c__write_dup_FUN_1000a5f0"
+    },
+    {
+      "addr": "10008f30",
+      "is_variadic": false,
+      "name": "crt_io.c__write_FUN_10008f30"
+    },
+    {
+      "addr": "1000a700",
+      "is_variadic": false,
+      "name": "crt_stdio.c__getbuf_FUN_1000a700"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016db0",
+      "name": "DAT_10016db0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016db4",
+      "name": "DAT_10016db4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "100170a8",
+      "name": "DAT_100170a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100170c8",
+      "name": "DAT_100170c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "10005688",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__sprintf_FUN_10005630",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10006946",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_write_char_FUN_10006920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.983870967741935,
+    "instruction_count": 124,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 13,
+      "COPY": 126,
+      "INT_ADD": 54,
+      "INT_AND": 104,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 13,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 36,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 28,
+      "INT_XOR": 2,
+      "LOAD": 45,
+      "POPCOUNT": 34,
+      "RETURN": 4,
+      "STORE": 32
+    },
+    "pcode_op_count": 618
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_100170a8",
+      "severity": "mild",
+      "text": "if ((str == (FILE *)&DAT_100170a8) || (str == (FILE *)&DAT_100170c8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_100170c8",
+      "severity": "mild",
+      "text": "if ((str == (FILE *)&DAT_100170a8) || (str == (FILE *)&DAT_100170c8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_10016db0",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_10016db0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(fh & 0xffffffe7) >> 3)) + (fh & 0x1f) * 0x24)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(fh & 0xffffffe7) >> 3)) + (fh & 0x1f) * 0x24)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(fh & 0xffffffe7) >> 3)) + (fh & 0x1f) * 0x24)",
+      "type": "pointer_cast"
+    }
+  ]
+}

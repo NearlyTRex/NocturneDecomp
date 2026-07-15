@@ -1,0 +1,79 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
+  },
+  "cross_references": [
+    {
+      "addr": "100057f0",
+      "from_addr": "1000586c",
+      "name": "crt_startup.c__DllMainCRTStartup_FUN_100057f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100085c0",
+    "address_range": [
+      [
+        "100085c0",
+        "100085c7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c_DllMain_FUN_100085c0",
+    "signature": "BOOL __cdecl crt_startup_c_DllMain_FUN_100085c0(HINSTANCE hinst_dll,DWORD reason,LPVOID reserved)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.5,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 2,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 5
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hinst_dll",
+        "offset": 4,
+        "size": 4,
+        "type": "HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "reason",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "reserved",
+        "offset": 12,
+        "size": 4,
+        "type": "LPVOID"
+      }
+    ]
+  },
+  "suspects": []
+}

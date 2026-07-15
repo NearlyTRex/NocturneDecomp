@@ -1,0 +1,381 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 381,
+    "complexity_score": 238,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 108,
+    "suspect_count": 12,
+    "suspect_types": [
+      "register_param",
+      "undefined_data"
+    ],
+    "total_lines": 489
+  },
+  "cross_references": [
+    {
+      "addr": "10010cf0",
+      "from_addr": "10010d15",
+      "name": "crt_env.c___env_compare_FUN_10010cf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10011040",
+    "address_range": [
+      [
+        "10011040",
+        "1001132c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c___crtCompareStringA_FUN_10011040",
+    "signature": "int __cdecl crt_locale_c___crtCompareStringA_FUN_10011040(LCID lcid,DWORD flags,LPCSTR str1,int cch1,LPCSTR str2,int cch2,int code_page)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000024",
+      "is_variadic": false,
+      "name": "CompareStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000007",
+      "is_variadic": false,
+      "name": "CompareStringW"
+    },
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "10011330",
+      "is_variadic": false,
+      "name": "crt_string.c_strncnt_FUN_10011330"
+    },
+    {
+      "addr": "EXTERNAL:00000004",
+      "is_variadic": false,
+      "name": "GetCPInfo"
+    },
+    {
+      "addr": "EXTERNAL:00000028",
+      "is_variadic": false,
+      "name": "MultiByteToWideChar"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001276c",
+      "name": "DAT_1001276c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012770",
+      "name": "DAT_10012770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10018650",
+      "name": "DAT_10018650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242190",
+      "name": "PTR_GetCPInfo_10242190",
+      "type": "void*",
+      "value": "0024253e"
+    },
+    {
+      "addr": "1024219c",
+      "name": "PTR_CompareStringW_1024219c",
+      "type": "void*",
+      "value": "00242782"
+    },
+    {
+      "addr": "10242210",
+      "name": "PTR_CompareStringA_10242210",
+      "type": "void*",
+      "value": "00242770"
+    },
+    {
+      "addr": "10242220",
+      "name": "PTR_MultiByteToWideChar_10242220",
+      "type": "void*",
+      "value": "0024257a"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10010d15",
+        "call_type": "direct",
+        "caller": "crt_env.c___env_compare_FUN_10010cf0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.322475570032573,
+    "instruction_count": 307,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 8,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CALLIND": 9,
+      "CBRANCH": 34,
+      "COPY": 306,
+      "INT_ADD": 141,
+      "INT_AND": 145,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 128,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 64,
+      "INT_SUB": 95,
+      "INT_XOR": 5,
+      "LOAD": 112,
+      "POPCOUNT": 64,
+      "RETURN": 15,
+      "STORE": 84
+    },
+    "pcode_op_count": 1327
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e",
+        "offset": -14,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d",
+        "offset": -13,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "lcid",
+        "offset": 4,
+        "size": 4,
+        "type": "LCID"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 12,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 20,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "cch2",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "code_page",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = CompareStringA(0,0,\"\",1,\"\",1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = CompareStringW(0,0,L\"\",1,L\"\",1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "DAT_10018650 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "DAT_10018650 = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "local_18 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "code_page = DAT_10017770;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 108,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 7,
+    "suspect_types": [
+      "alloc_magic_size",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [
+    {
+      "addr": "100056a0",
+      "from_addr": "10005778",
+      "name": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10007c40",
+    "address_range": [
+      [
+        "10007c40",
+        "10007cda"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c__setargv_FUN_10007c40",
+    "signature": "int __cdecl crt_startup_c__setargv_FUN_10007c40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "100058c0",
+      "is_variadic": false,
+      "name": "crt_startup.c__amsg_exit_FUN_100058c0"
+    },
+    {
+      "addr": "10007ce0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_parse_cmdline_FUN_10007ce0"
+    },
+    {
+      "addr": "EXTERNAL:00000023",
+      "is_variadic": false,
+      "name": "GetModuleFileNameA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016d74",
+      "name": "DAT_10016d74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d78",
+      "name": "DAT_10016d78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d90",
+      "name": "DAT_10016d90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240690",
+      "name": "DAT_10240690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241980",
+      "name": "DAT_10241980",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1024220c",
+      "name": "PTR_GetModuleFileNameA_1024220c",
+      "type": "void*",
+      "value": "00242528"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10005778",
+        "call_type": "direct",
+        "caller": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.528301886792453,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 41,
+      "INT_ADD": 18,
+      "INT_AND": 34,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 13,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 240
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10240690",
+      "severity": "mild",
+      "text": "GetModuleFileNameA((HMODULE)0x0,&DAT_10240690,0x104);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10240690",
+      "severity": "mild",
+      "text": "_DAT_10016d90 = &DAT_10240690;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10240690",
+      "severity": "mild",
+      "text": "cmdstart = &DAT_10240690;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10241980",
+      "severity": "mild",
+      "text": "if (*DAT_10241980 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10241980",
+      "severity": "mild",
+      "text": "cmdstart = DAT_10241980;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 19,
+      "match": "(char**) alloc stride 4",
+      "severity": "moderate",
+      "text": "(char **)malloc(local_8 * 4 + local_4)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

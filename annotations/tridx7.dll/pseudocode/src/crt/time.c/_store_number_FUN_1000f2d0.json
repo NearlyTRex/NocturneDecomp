@@ -1,0 +1,142 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [
+    {
+      "addr": "1000ed30",
+      "from_addr": "1000edd4",
+      "name": "crt_time.c__expandtime_FUN_1000ed30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000f2d0",
+    "address_range": [
+      [
+        "1000f2d0",
+        "1000f357"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c__store_number_FUN_1000f2d0",
+    "signature": "void __cdecl crt_time_c__store_number_FUN_1000f2d0(int value,uint width,char **buf,size_t *count)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000f360",
+      "is_variadic": false,
+      "name": "crt_time.c__store_number_rev_FUN_1000f360"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10018214",
+      "name": "DAT_10018214",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.426229508196721,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 30,
+      "INT_AND": 22,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_OR": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SDIV": 2,
+      "INT_SEXT": 4,
+      "INT_SLESS": 11,
+      "INT_SREM": 2,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 39,
+      "POPCOUNT": 11,
+      "RETURN": 3,
+      "STORE": 12,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 270
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "buf",
+        "offset": 12,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 16,
+        "size": 4,
+        "type": "size_t *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_10018214",
+      "severity": "mild",
+      "text": "if (DAT_10018214 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10018214",
+      "severity": "mild",
+      "text": "DAT_10018214 = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

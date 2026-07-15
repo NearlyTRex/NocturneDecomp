@@ -1,0 +1,174 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 109,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [
+    {
+      "addr": "1000b950",
+      "from_addr": "1000ba4a",
+      "name": "crt_signal.c_signal_FUN_1000b950",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "1000bb30",
+    "address_range": [
+      [
+        "1000bb30",
+        "1000bbb2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_signal.c_siglookup2_FUN_1000bb30",
+    "signature": "void * __cdecl crt_signal_c_siglookup2_FUN_1000bb30(int sig)"
+  },
+  "function_calls": [
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100178f8",
+      "name": "DAT_100178f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100178fc",
+      "name": "DAT_100178fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.046511627906977,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 18,
+      "INT_AND": 19,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 13
+    },
+    "pcode_op_count": 174
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sig",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar2;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_100178f8",
+      "severity": "mild",
+      "text": "puVar1 = &DAT_100178f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_100178f8",
+      "severity": "mild",
+      "text": "pcVar2 = DAT_100178f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_100178fc",
+      "severity": "mild",
+      "text": "puVar1 = &DAT_100178fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_100178fc",
+      "severity": "mild",
+      "text": "pcVar2 = DAT_100178fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (pcVar2 == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 24,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (pcVar2 != (code *)0x1) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -860,15 +860,14 @@
         "start":"10005580"
       }
     ],
-    "cmt":"Library Function - Single Match\n __fpmath\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__fpmath",
+    "name":"crt_fpu.c__fpmath_FUN_10005580",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"flag",
           "storage":{
             "offset":4,
             "size":4,
@@ -895,9 +894,10 @@
         "start":"10005600"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10005600",
-    "ret":"undefined1",
+    "name":"crt_startup.c__chkstk_FUN_10005600",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -947,10 +947,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -962,10 +959,9 @@
         "start":"10005900"
       }
     ],
-    "cmt":"Library Function - Single Match\n __mtinitlocks\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__mtinitlocks",
+    "name":"crt_thread.c__mtinitlocks_FUN_10005900",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -989,15 +985,14 @@
         "start":"10005f00"
       }
     ],
-    "cmt":"Library Function - Single Match\n __ftbuf\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__ftbuf",
+    "name":"crt_stdio.c__ftbuf_FUN_10005f00",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"_Flag",
+          "name":"flag",
           "storage":{
             "offset":4,
             "size":4,
@@ -1013,7 +1008,7 @@
           "type":"int"
         },
         {
-          "name":"_File",
+          "name":"file",
           "storage":{
             "offset":8,
             "size":4,
@@ -1040,13 +1035,158 @@
         "start":"10006a00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10006a00",
-    "ret":"undefined1",
+    "name":"crt_stdio.c_get_int64_arg_FUN_10006a00",
+    "ret":"longlong",
     "vars":{
+      "params":[
+        {
+          "name":"parg",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"va_list*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
+    }
+  },
+  {
+    "addr":"10007380",
+    "body":[
+      {
+        "end":"100073e4",
+        "size":101,
+        "start":"10007380"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"crt_stdio.c__cfltcvt_FUN_10007380",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"double*"
+        },
+        {
+          "name":"buf",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"format",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"size_in_bytes",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"size_t"
+        },
+        {
+          "name":"precision",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"caps",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -1058,13 +1198,61 @@
         "start":"10007600"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10007600",
-    "ret":"undefined1",
+    "name":"crt_startup.c_doexit_FUN_10007600",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"code",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"quick",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"retcaller",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -1076,10 +1264,9 @@
         "start":"10007700"
       }
     ],
-    "cmt":"Library Function - Single Match\n __mtinit\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__mtinit",
+    "name":"crt_thread.c__mtinit_FUN_10007700",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -1103,10 +1290,9 @@
         "start":"10007b00"
       }
     ],
-    "cmt":"Library Function - Single Match\n __ioterm\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__ioterm",
+    "name":"crt_startup.c__ioterm_FUN_10007b00",
     "ret":"void"
   },
   {
@@ -1118,12 +1304,38 @@
         "start":"10008580"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10008580",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c__set_error_mode_FUN_10008580",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"mode",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1136,12 +1348,38 @@
         "start":"10008800"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10008800",
-    "ret":"undefined1",
+    "name":"crt_startup.c__GET_RTERRMSG_FUN_10008800",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"rterrnum",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1154,12 +1392,54 @@
         "start":"10008b80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10008b80",
-    "ret":"undefined1",
+    "name":"crt_io.c__set_osfhnd_FUN_10008b80",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"fh",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"osfhandle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"intptr_t"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1172,12 +1452,38 @@
         "start":"10008e80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10008e80",
-    "ret":"undefined1",
+    "name":"crt_io.c__commit_FUN_10008e80",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"fh",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1190,14 +1496,29 @@
         "start":"10009e80"
       }
     ],
-    "cmt":"Library Function - Single Match\n __FillZeroMan\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"__FillZeroMan",
-    "ret":"undefined1",
+    "name":"crt_math.c__FillZeroMan_FUN_10009e80",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"man",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ]
     }
   },
   {
@@ -1209,10 +1530,9 @@
         "start":"1000a200"
       }
     ],
-    "cmt":"Library Function - Multiple Matches With Different Base Names\n __atodbl\n __atoflt\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"FID_conflict:__atodbl",
+    "name":"crt_math.c__atodbl_FUN_1000a200",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1251,7 +1571,7 @@
       ],
       "params":[
         {
-          "name":"_Result",
+          "name":"result",
           "storage":{
             "offset":4,
             "size":4,
@@ -1264,10 +1584,10 @@
               }
             ]
           },
-          "type":"_CRT_FLOAT*"
+          "type":"_CRT_DOUBLE*"
         },
         {
-          "name":"_Str",
+          "name":"str",
           "storage":{
             "offset":8,
             "size":4,
@@ -1304,10 +1624,9 @@
         "start":"1000a280"
       }
     ],
-    "cmt":"Library Function - Multiple Matches With Different Base Names\n __atodbl\n __atoflt\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"FID_conflict:__atodbl",
+    "name":"crt_math.c__atoflt_FUN_1000a280",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1346,7 +1665,7 @@
       ],
       "params":[
         {
-          "name":"_Result",
+          "name":"result",
           "storage":{
             "offset":4,
             "size":4,
@@ -1362,7 +1681,7 @@
           "type":"_CRT_FLOAT*"
         },
         {
-          "name":"_Str",
+          "name":"str",
           "storage":{
             "offset":8,
             "size":4,
@@ -1399,15 +1718,14 @@
         "start":"1000a700"
       }
     ],
-    "cmt":"Library Function - Single Match\n __getbuf\n\nLibrary: Visual Studio 1998 Release",
     "conv":"__cdecl",
     "importable":true,
-    "name":"__getbuf",
+    "name":"crt_stdio.c__getbuf_FUN_1000a700",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"_File",
+          "name":"file",
           "storage":{
             "offset":4,
             "size":4,
@@ -1434,12 +1752,54 @@
         "start":"1000a900"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000a900",
-    "ret":"undefined1",
+    "name":"crt_signal.c__xcptlookup_FUN_1000a900",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"table",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"xcpt_num",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1452,12 +1812,54 @@
         "start":"1000b380"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000b380",
-    "ret":"undefined1",
+    "name":"crt_locale.c__lc_strtolc_FUN_1000b380",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"lc",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"locale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1470,13 +1872,45 @@
         "start":"1000b480"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000b480",
-    "ret":"undefined1",
+    "name":"crt_locale.c__setlocale_catcopy_FUN_1000b480",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"dst",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"lc",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -1488,9 +1922,10 @@
         "start":"1000be00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000be00",
-    "ret":"undefined1",
+    "name":"crt_locale.c___crtGetStringTypeW_FUN_1000be00",
+    "ret":"BOOL",
     "vars":{
       "locals":[
         {
@@ -1510,8 +1945,113 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"info_type",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCWSTR"
+        },
+        {
+          "name":"cch_src",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"char_type",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWORD"
+        },
+        {
+          "name":"code_page",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"lcid",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"LCID"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1524,12 +2064,54 @@
         "start":"1000c300"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000c300",
-    "ret":"undefined1",
+    "name":"crt_string.c_wcsnlen_FUN_1000c300",
+    "ret":"size_t",
     "vars":{
+      "params":[
+        {
+          "name":"str",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"wchar_t*"
+        },
+        {
+          "name":"max",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1542,14 +2124,29 @@
         "start":"1000c680"
       }
     ],
-    "cmt":"Library Function - Single Match\n ___shr_12\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"___shr_12",
-    "ret":"undefined1",
+    "name":"crt_math.c__shr_12_FUN_1000c680",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"p",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        }
+      ]
     }
   },
   {
@@ -1561,12 +2158,54 @@
         "start":"1000cf00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000cf00",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c__atodbl_v2_FUN_1000cf00",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"result",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_CRT_DOUBLE*"
+        },
+        {
+          "name":"str",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1579,13 +2218,29 @@
         "start":"1000dc80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000dc80",
-    "ret":"undefined1",
+    "name":"crt_locale.c__fix_grouping_FUN_1000dc80",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"grouping",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -1597,12 +2252,54 @@
         "start":"1000e780"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000e780",
-    "ret":"undefined1",
+    "name":"crt_locale.c_GetLcidFromLangCountry_FUN_1000e780",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"plang",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ushort*"
+        },
+        {
+          "name":"pctry",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ushort*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1615,13 +2312,54 @@
         "start":"1000e880"
       }
     ],
-    "cmt":"Library Function - Single Match\n __setmode_lk\n\nLibrary: Visual Studio 1998 Release",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"__setmode_lk",
-    "ret":"undefined1",
+    "name":"crt_io.c__setmode_lk_FUN_1000e880",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"fh",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"mode",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1634,12 +2372,70 @@
         "start":"1000f980"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_1000f980",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c__ultoa_FUN_1000f980",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"val",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulong"
+        },
+        {
+          "name":"buf",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"radix",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1652,12 +2448,54 @@
         "start":"10011000"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10011000",
-    "ret":"undefined1",
+    "name":"crt_string.c_wcsnlen_v3_FUN_10011000",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"str",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"wchar_t*"
+        },
+        {
+          "name":"max",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1670,12 +2508,54 @@
         "start":"10011680"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_10011680",
-    "ret":"undefined1",
+    "name":"crt_heap.c_realloc_FUN_10011680",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"size_t"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

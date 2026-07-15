@@ -1,0 +1,297 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 53,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "1000b4f0",
+      "from_addr": "1000b538",
+      "name": "crt_io.c__chsize_FUN_1000b4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10005b50",
+      "from_addr": "10005b93",
+      "name": "crt_io.c__close_FUN_10005b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008e80",
+      "from_addr": "10008f00",
+      "name": "crt_io.c__commit_FUN_10008e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008d20",
+      "from_addr": "10008dc6",
+      "name": "crt_io.c__open_osfhandle_FUN_10008d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b6a0",
+      "from_addr": "1000b6ed",
+      "name": "crt_io.c__read_FUN_1000b6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000e810",
+      "from_addr": "1000e858",
+      "name": "crt_io.c__setmode_FUN_1000e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100093f0",
+      "from_addr": "10009664",
+      "name": "crt_io.c__sopen_FUN_100093f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008f30",
+      "from_addr": "10008f7d",
+      "name": "crt_io.c__write_FUN_10008f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a5f0",
+      "from_addr": "1000a63d",
+      "name": "crt_io.c__write_dup_FUN_1000a5f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10008e50",
+    "address_range": [
+      [
+        "10008e50",
+        "10008e77"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c__unlock_fhandle_FUN_10008e50",
+    "signature": "void __cdecl crt_io_c__unlock_fhandle_FUN_10008e50(int filehandle)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000000f",
+      "is_variadic": false,
+      "name": "LeaveCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421bc",
+      "name": "PTR_LeaveCriticalSection_102421bc",
+      "type": "void*",
+      "value": "002423e4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "10005b93",
+        "call_type": "direct",
+        "caller": "crt_io.c__close_FUN_10005b50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10008f7d",
+        "call_type": "direct",
+        "caller": "crt_io.c__write_FUN_10008f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000a63d",
+        "call_type": "direct",
+        "caller": "crt_io.c__write_dup_FUN_1000a5f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10009664",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000969b",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10009745",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10009793",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "100097c4",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "100097f5",
+        "call_type": "direct",
+        "caller": "crt_io.c__sopen_FUN_100093f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10008f00",
+        "call_type": "direct",
+        "caller": "crt_io.c__commit_FUN_10008e80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.76923076923077,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALLIND": 1,
+      "COPY": 12,
+      "INT_ADD": 6,
+      "INT_AND": 36,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 9,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 127
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filehandle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(filehandle & 0xffffffe7U) >> 3)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 7,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(filehandle & 0xffffffe7U) >> 3)) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 7,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(filehandle & 0xffffffe7U) >> 3)) +",
+      "type": "pointer_cast"
+    }
+  ]
+}

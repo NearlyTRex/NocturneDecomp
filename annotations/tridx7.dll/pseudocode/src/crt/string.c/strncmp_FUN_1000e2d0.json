@@ -1,0 +1,131 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 43,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strlen"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "1000ac10",
+      "from_addr": "1000ad05",
+      "name": "crt_locale.c_setlocale_FUN_1000ac10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000e2d0",
+    "address_range": [
+      [
+        "1000e2d0",
+        "1000e307"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "crt_string.c_strncmp_FUN_1000e2d0",
+    "signature": "int __cdecl crt_string_c_strncmp_FUN_1000e2d0(char *str1,char *str2,size_t count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000ad05",
+        "call_type": "direct",
+        "caller": "crt_locale.c_setlocale_FUN_1000ac10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.387096774193548,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CBRANCH": 7,
+      "COPY": 30,
+      "INT_2COMP": 1,
+      "INT_ADD": 14,
+      "INT_AND": 18,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 21,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 9,
+      "INT_SUB": 14,
+      "INT_XOR": 2,
+      "INT_ZEXT": 3,
+      "LOAD": 15,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 167
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "size_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 17,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

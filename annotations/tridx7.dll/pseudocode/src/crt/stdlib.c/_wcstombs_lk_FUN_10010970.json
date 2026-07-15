@@ -1,0 +1,265 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 303,
+    "complexity_score": 192,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 107,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 410
+  },
+  "cross_references": [
+    {
+      "addr": "10010910",
+      "from_addr": "10010943",
+      "name": "crt_stdlib.c_wcstombs_FUN_10010910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10010970",
+    "address_range": [
+      [
+        "10010970",
+        "10010bd9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c__wcstombs_lk_FUN_10010970",
+    "signature": "size_t __cdecl crt_stdlib_c__wcstombs_lk_FUN_10010970(char *mbstr,wchar_t *wcstr,size_t count)"
+  },
+  "function_calls": [
+    {
+      "addr": "10008a20",
+      "is_variadic": false,
+      "name": "crt_errno.c__errno_FUN_10008a20"
+    },
+    {
+      "addr": "10010be0",
+      "is_variadic": false,
+      "name": "crt_string.c__wcsnlen_FUN_10010be0"
+    },
+    {
+      "addr": "1000a930",
+      "is_variadic": false,
+      "name": "crt_string.c_wcslen_FUN_1000a930"
+    },
+    {
+      "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
+      "name": "GetLastError"
+    },
+    {
+      "addr": "EXTERNAL:0000002c",
+      "is_variadic": false,
+      "name": "WideCharToMultiByte"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017690",
+      "name": "DAT_10017690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017760",
+      "name": "DAT_10017760",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421c8",
+      "name": "PTR_GetLastError_102421c8",
+      "type": "void*",
+      "value": "00242418"
+    },
+    {
+      "addr": "10242230",
+      "name": "PTR_WideCharToMultiByte_10242230",
+      "type": "void*",
+      "value": "002425dc"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10010943",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c_wcstombs_FUN_10010910",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.371428571428571,
+    "instruction_count": 245,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 5,
+      "CBRANCH": 28,
+      "COPY": 238,
+      "INT_ADD": 118,
+      "INT_AND": 117,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 109,
+      "INT_LESS": 20,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 54,
+      "INT_SUB": 73,
+      "INT_XOR": 2,
+      "LOAD": 87,
+      "POPCOUNT": 54,
+      "RETURN": 14,
+      "STORE": 59
+    },
+    "pcode_op_count": 1071
+  },
+  "stack_frame": {
+    "frame_size": 22,
+    "local_size": 10,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6",
+        "offset": -6,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_5",
+        "offset": -5,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "mbstr",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "wcstr",
+        "offset": 8,
+        "size": 4,
+        "type": "wchar_t *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "size_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_10017760",
+      "severity": "mild",
+      "text": "if (DAT_10017760 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "iVar4 = WideCharToMultiByte(DAT_10017770,0x220,wcstr,-1,(LPSTR)0x0,0,(LPCSTR)0x0,&local_4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10017760",
+      "severity": "mild",
+      "text": "else if (DAT_10017760 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 != 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "iVar4 = WideCharToMultiByte(DAT_10017770,0x220,wcstr,-1,mbstr,count,(LPCSTR)0x0,&local_4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "iVar4 = WideCharToMultiByte(DAT_10017770,0,wcstr,1,local_6,DAT_10017690,(LPCSTR)0x0,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "iVar4 = WideCharToMultiByte(DAT_10017770,0,wcstr,1,local_6,DAT_10017690,(LPCSTR)0x0,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "sVar2 = WideCharToMultiByte(DAT_10017770,0x220,wcstr,sVar2,mbstr,sVar2,(LPCSTR)0x0,&local_4);",
+      "type": "undefined_data"
+    }
+  ]
+}

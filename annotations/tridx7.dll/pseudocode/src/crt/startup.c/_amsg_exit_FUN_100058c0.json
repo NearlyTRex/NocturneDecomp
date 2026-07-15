@@ -1,0 +1,300 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 59,
+    "cross_reference_count": 8,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "10007b60",
+      "from_addr": "10007bac",
+      "name": "crt_env.c__setenvp_FUN_10007b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10011610",
+      "from_addr": "1001164a",
+      "name": "crt_env.c_copy_environ_FUN_10011610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10009ab0",
+      "from_addr": "10009ab2",
+      "name": "crt_fpu.c__fptrap_FUN_10009ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100088b0",
+      "from_addr": "10008913",
+      "name": "crt_io.c__alloc_piob_FUN_100088b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10007920",
+      "from_addr": "1000793c",
+      "name": "crt_io.c__ioinit_FUN_10007920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10007c40",
+      "from_addr": "10007ca1",
+      "name": "crt_startup.c__setargv_FUN_10007c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100077b0",
+      "from_addr": "1000780b",
+      "name": "crt_thread.c__getptd_FUN_100077b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100059a0",
+      "from_addr": "100059c7",
+      "name": "crt_thread.c__lock_FUN_100059a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100058c0",
+    "address_range": [
+      [
+        "100058c0",
+        "100058f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c__amsg_exit_FUN_100058c0",
+    "signature": "void __cdecl crt_startup_c__amsg_exit_FUN_100058c0(int rterrnum)"
+  },
+  "function_calls": [
+    {
+      "addr": "100075c0",
+      "is_variadic": false,
+      "name": "crt_startup.c__exit_crt_FUN_100075c0"
+    },
+    {
+      "addr": "100085d0",
+      "is_variadic": false,
+      "name": "crt_startup.c__FF_MSGBANNER_FUN_100085d0"
+    },
+    {
+      "addr": "10008610",
+      "is_variadic": false,
+      "name": "crt_startup.c__NMSG_WRITE_FUN_10008610"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c6c",
+      "name": "PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c",
+      "type": "void*",
+      "value": "100075c0"
+    },
+    {
+      "addr": "10016c70",
+      "name": "DAT_10016c70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c74",
+      "name": "DAT_10016c74",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "100059c7",
+        "call_type": "direct",
+        "caller": "crt_thread.c__lock_FUN_100059a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000793c",
+        "call_type": "direct",
+        "caller": "crt_io.c__ioinit_FUN_10007920",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10007bac",
+        "call_type": "direct",
+        "caller": "crt_env.c__setenvp_FUN_10007b60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10007bea",
+        "call_type": "direct",
+        "caller": "crt_env.c__setenvp_FUN_10007b60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10007ca1",
+        "call_type": "direct",
+        "caller": "crt_startup.c__setargv_FUN_10007c40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000780b",
+        "call_type": "direct",
+        "caller": "crt_thread.c__getptd_FUN_100077b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10009ab2",
+        "call_type": "direct",
+        "caller": "crt_fpu.c__fptrap_FUN_10009ab0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "1001164a",
+        "call_type": "direct",
+        "caller": "crt_env.c_copy_environ_FUN_10011610",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10008913",
+        "call_type": "direct",
+        "caller": "crt_io.c__alloc_piob_FUN_100088b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 9,
+      "INT_ADD": 2,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 1,
+      "POPCOUNT": 4,
+      "STORE": 5
+    },
+    "pcode_op_count": 63
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "rterrnum",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10016c70",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10016c70",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10016c74",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_startup_c__exit_crt_FUN_100075c0_10016c6c)(0xff);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

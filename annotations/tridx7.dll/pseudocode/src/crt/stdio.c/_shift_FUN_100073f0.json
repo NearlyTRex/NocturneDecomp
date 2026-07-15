@@ -1,0 +1,165 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 33,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strlen"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "100070b0",
+      "from_addr": "100070e1",
+      "name": "crt_stdio.c__cftoe2_FUN_100070b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10007210",
+      "from_addr": "10007268",
+      "name": "crt_stdio.c__cftof2_FUN_10007210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100073f0",
+    "address_range": [
+      [
+        "100073f0",
+        "1000741a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__shift_FUN_100073f0",
+    "signature": "void __cdecl crt_stdio_c__shift_FUN_100073f0(char *str,int dist)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000a4a0",
+      "is_variadic": false,
+      "name": "crt_string.c_memcpy_FUN_1000a4a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "100070e1",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftoe2_FUN_100070b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10007268",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftof2_FUN_10007210",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10007280",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftof2_FUN_10007210",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100072ac",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__cftof2_FUN_10007210",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.85,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 16,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 11,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "INT_ZEXT": 1,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dist",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 12,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

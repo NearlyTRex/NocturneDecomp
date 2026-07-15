@@ -30,15 +30,15 @@ void FUN_10001200(void)
   local_38 = 0;
   DAT_10060670 = 0;
   local_34 = 0x20;
-  pFVar6 = FID_conflict___wfopen(".\\system\\render.ini","rt");
+  pFVar6 = _fopen(".\\system\\render.ini","rt");
   if (pFVar6 == (FILE *)0x0) {
-    pFVar6 = FID_conflict___wfopen(".\\system\\render.ini","wt");
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"[%s]\n","Textures");
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"maxTextures32=%d\n",local_40);
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"maxTextures64=%d\n",local_3c);
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"maxTextures128=%d\n",local_38);
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"maxTextures256=%d\n",local_34);
-    FID_conflict__fwprintf(pFVar6,(wchar_t *)"mipMapFlag=%d\n",DAT_10060670);
+    pFVar6 = _fopen(".\\system\\render.ini","wt");
+    _fprintf(pFVar6,"[%s]\n","Textures");
+    _fprintf(pFVar6,"maxTextures32=%d\n",local_40);
+    _fprintf(pFVar6,"maxTextures64=%d\n",local_3c);
+    _fprintf(pFVar6,"maxTextures128=%d\n",local_38);
+    _fprintf(pFVar6,"maxTextures256=%d\n",local_34);
+    _fprintf(pFVar6,"mipMapFlag=%d\n",DAT_10060670);
     _fclose(pFVar6);
   }
   else {

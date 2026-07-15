@@ -1,0 +1,161 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "10007700",
+      "from_addr": "10007701",
+      "name": "crt_thread.c__mtinit_FUN_10007700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005900",
+    "address_range": [
+      [
+        "10005900",
+        "10005929"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_thread.c__mtinitlocks_FUN_10005900",
+    "signature": "int __cdecl crt_thread_c__mtinitlocks_FUN_10005900(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000000c",
+      "is_variadic": false,
+      "name": "InitializeCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c7c",
+      "name": "LPCRITICAL_SECTION_10016c7c",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240630"
+    },
+    {
+      "addr": "10016c9c",
+      "name": "LPCRITICAL_SECTION_10016c9c",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240660"
+    },
+    {
+      "addr": "10016cac",
+      "name": "LPCRITICAL_SECTION_10016cac",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240678"
+    },
+    {
+      "addr": "10016cbc",
+      "name": "LPCRITICAL_SECTION_10016cbc",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240648"
+    },
+    {
+      "addr": "10240630",
+      "name": "DAT_10240630",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240648",
+      "name": "DAT_10240648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240660",
+      "name": "DAT_10240660",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240678",
+      "name": "DAT_10240678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421b0",
+      "name": "PTR_InitializeCriticalSection_102421b0",
+      "type": "void*",
+      "value": "00242398"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10007701",
+        "call_type": "direct",
+        "caller": "crt_thread.c__mtinit_FUN_10007700",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALLIND": 4,
+      "COPY": 16,
+      "INT_ADD": 2,
+      "INT_SUB": 9,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 43
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
+}

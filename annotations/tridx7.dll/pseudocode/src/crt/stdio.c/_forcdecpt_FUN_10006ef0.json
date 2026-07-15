@@ -1,0 +1,148 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "100055b0",
+      "from_addr": "100055c4",
+      "name": "crt_fpu.c__install_fp_handlers_FUN_100055b0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "10006ef0",
+    "address_range": [
+      [
+        "10006ef0",
+        "10006f54"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__forcdecpt_FUN_10006ef0",
+    "signature": "void __cdecl crt_stdio_c__forcdecpt_FUN_10006ef0(char *buf)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009ac0",
+      "is_variadic": false,
+      "name": "crt_ctype.c__isctype_FUN_10009ac0"
+    },
+    {
+      "addr": "10009b70",
+      "is_variadic": false,
+      "name": "crt_ctype.c__tolower_FUN_10009b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017480",
+      "name": "PTR_DAT_10017480",
+      "type": "void*",
+      "value": "1001748a"
+    },
+    {
+      "addr": "1001748a",
+      "name": "DAT_1001748a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017690",
+      "name": "DAT_10017690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017694",
+      "name": "DAT_10017694",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.125,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 30,
+      "INT_ADD": 10,
+      "INT_AND": 25,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SEXT": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 165
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buf",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "*buf = DAT_10017694;",
+      "type": "undefined_data"
+    }
+  ]
+}

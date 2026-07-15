@@ -1,0 +1,439 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 199,
+    "complexity_score": 410,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 145,
+    "suspect_count": 24,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unknown_field",
+      "unrolled_memcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 344
+  },
+  "cross_references": [
+    {
+      "addr": "1000ac10",
+      "from_addr": "1000adfc",
+      "name": "crt_locale.c_setlocale_FUN_1000ac10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000aee0",
+      "from_addr": "1000af09",
+      "name": "crt_locale.c_setlocale_set_cat_FUN_1000aee0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000b150",
+    "address_range": [
+      [
+        "1000b150",
+        "1000b319"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c__expandlocale_FUN_1000b150",
+    "signature": "int __cdecl crt_locale_c__expandlocale_FUN_1000b150(char *locale,char *cat,LC_ID *lc_id,UINT *code_page)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000e350",
+      "is_variadic": false,
+      "name": "crt_locale.c___get_qualified_locale_FUN_1000e350"
+    },
+    {
+      "addr": "1000b380",
+      "is_variadic": false,
+      "name": "crt_locale.c__lc_strtolc_FUN_1000b380"
+    },
+    {
+      "addr": "1000b480",
+      "is_variadic": false,
+      "name": "crt_locale.c__setlocale_catcopy_FUN_1000b480"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100177d8",
+      "name": "DAT_100177d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100177dc",
+      "name": "DAT_100177dc",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "100177e0",
+      "name": "DAT_100177e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100177e8",
+      "name": "DAT_100177e8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "100177e9",
+      "name": "DAT_100177e9",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "100177ea",
+      "name": "DAT_100177ea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100177eb",
+      "name": "DAT_100177eb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017870",
+      "name": "DAT_10017870",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10017871",
+      "name": "DAT_10017871",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10017872",
+      "name": "DAT_10017872",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017873",
+      "name": "DAT_10017873",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "1000adfc",
+        "call_type": "direct",
+        "caller": "crt_locale.c_setlocale_FUN_1000ac10",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "1000af09",
+        "call_type": "direct",
+        "caller": "crt_locale.c_setlocale_set_cat_FUN_1000aee0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.735483870967742,
+    "instruction_count": 155,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 23,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 4,
+      "BRANCH": 6,
+      "CALL": 3,
+      "CBRANCH": 28,
+      "COPY": 141,
+      "INT_ADD": 58,
+      "INT_AND": 142,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 116,
+      "INT_LESS": 23,
+      "INT_MULT": 10,
+      "INT_NEGATE": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 14,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 56,
+      "INT_SUB": 53,
+      "INT_XOR": 7,
+      "INT_ZEXT": 14,
+      "LOAD": 44,
+      "POPCOUNT": 54,
+      "RETURN": 5,
+      "STORE": 25
+    },
+    "pcode_op_count": 889
+  },
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "locale",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cat",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "lc_id",
+        "offset": 12,
+        "size": 4,
+        "type": "LC_ID *"
+      },
+      {
+        "is_param": true,
+        "name": "code_page",
+        "offset": 16,
+        "size": 4,
+        "type": "UINT *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10017870",
+      "severity": "mild",
+      "text": "pbVar4 = &DAT_10017870;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_100177e8",
+      "severity": "mild",
+      "text": "pbVar4 = &DAT_100177e8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_100177d8",
+      "severity": "mild",
+      "text": "iVar5 = __get_qualified_locale(local_88,&DAT_100177d8,local_88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 85,
+      "match": "DAT_100177e0",
+      "severity": "mild",
+      "text": "DAT_100177e0 = (uint)DAT_100177dc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 85,
+      "match": "DAT_100177dc",
+      "severity": "mild",
+      "text": "DAT_100177e0 = (uint)DAT_100177dc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_10017870",
+      "severity": "mild",
+      "text": "_setlocale_catcopy(&DAT_10017870,local_88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_10017870",
+      "severity": "mild",
+      "text": "locale = &DAT_10017870;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_100177e8",
+      "severity": "mild",
+      "text": "pcVar10 = &DAT_100177e8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 115,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "uVar3 = DAT_100177d8._2_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_100177d8",
+      "severity": "mild",
+      "text": "uVar3 = DAT_100177d8._2_2_;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_100177d8",
+      "severity": "mild",
+      "text": "lc_id->wLanguage = (ushort)DAT_100177d8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_100177dc",
+      "severity": "mild",
+      "text": "lc_id->wCodePage = DAT_100177dc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_100177e0",
+      "severity": "mild",
+      "text": "*code_page = DAT_100177e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 124,
+      "match": "DAT_10017870",
+      "severity": "mild",
+      "text": "pcVar9 = &DAT_10017870;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 145,
+      "match": "DAT_10017870",
+      "severity": "mild",
+      "text": "cat = &DAT_10017870;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 102,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 107,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 135,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 140,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 91,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 125,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000b2a8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 158,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000b2a8: MOVSD.REP ES:EDI,ESI  ; DAT_10017870 | DAT_100177e8",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000b303, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 190,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000b303: MOVSD.REP ES:EDI,ESI  ; DAT_10017870",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:5",
+      "param_delta": 1,
+      "text": "Function declares 4 params but call sites push 5 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

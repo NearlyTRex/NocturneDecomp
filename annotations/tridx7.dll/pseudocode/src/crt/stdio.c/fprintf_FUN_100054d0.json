@@ -1,0 +1,194 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [
+    {
+      "addr": "10001200",
+      "from_addr": "10001260",
+      "name": "FUN_10001200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100054d0",
+    "address_range": [
+      [
+        "100054d0",
+        "10005518"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fprintf_FUN_100054d0",
+    "signature": "int __cdecl crt_stdio_c_fprintf_FUN_100054d0(FILE *file,char *format,...)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005f00",
+      "is_variadic": false,
+      "name": "crt_stdio.c__ftbuf_FUN_10005f00"
+    },
+    {
+      "addr": "10005f40",
+      "is_variadic": false,
+      "name": "crt_stdio.c__output_FUN_10005f40"
+    },
+    {
+      "addr": "10005e60",
+      "is_variadic": false,
+      "name": "crt_stdio.c__stbuf_FUN_10005e60"
+    },
+    {
+      "addr": "10005a30",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_file_FUN_10005a30"
+    },
+    {
+      "addr": "10005aa0",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_file_FUN_10005aa0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "10001260",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001273",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001286",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001299",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "100012ac",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "100012c0",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.838709677419355,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 23,
+      "INT_ADD": 12,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 16,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "iVar1 = _output(file,format,&stack0x0000000c);",
+      "type": "stack_ref"
+    }
+  ]
+}

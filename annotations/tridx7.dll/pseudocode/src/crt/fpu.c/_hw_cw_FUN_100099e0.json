@@ -1,0 +1,133 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 95,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
+    "suspect_types": [
+      "fnstsw_flag_artifact",
+      "register_param"
+    ],
+    "total_lines": 124
+  },
+  "cross_references": [
+    {
+      "addr": "10009890",
+      "from_addr": "100098b7",
+      "name": "crt_fpu.c__control87_FUN_10009890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100099e0",
+    "address_range": [
+      [
+        "100099e0",
+        "10009a6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fpu.c__hw_cw_FUN_100099e0",
+    "signature": "uint __cdecl crt_fpu_c__hw_cw_FUN_100099e0(uint control_word)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100098b7",
+        "call_type": "direct",
+        "caller": "crt_fpu.c__control87_FUN_10009890",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.425531914893617,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BRANCH": 5,
+      "CBRANCH": 12,
+      "COPY": 50,
+      "INT_ADD": 2,
+      "INT_AND": 59,
+      "INT_EQUAL": 50,
+      "INT_LESS": 4,
+      "INT_OR": 11,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 25,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 25,
+      "RETURN": 1
+    },
+    "pcode_op_count": 255
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "control_word",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = in_EAX & 0xffff0000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = CONCAT22((short)(in_EAX >> 0x10),1);",
+      "type": "register_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 11,
+      "match": "CONCAT22((short)(in_EAX >> 0x10",
+      "severity": "severe",
+      "text": "uVar1 = CONCAT22((short)(in_EAX >> 0x10),1);",
+      "type": "fnstsw_flag_artifact"
+    }
+  ]
+}

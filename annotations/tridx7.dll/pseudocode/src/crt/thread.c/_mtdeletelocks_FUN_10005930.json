@@ -1,0 +1,199 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 3,
+    "suspect_types": [
+      "displaced_global_access",
+      "undefined_data"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "10007760",
+      "from_addr": "10007760",
+      "name": "crt_thread.c__mtterm_FUN_10007760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005930",
+    "address_range": [
+      [
+        "10005930",
+        "10005993"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_thread.c__mtdeletelocks_FUN_10005930",
+    "signature": "void __cdecl crt_thread_c__mtdeletelocks_FUN_10005930(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "crt_heap.c_free_FUN_10005b30"
+    },
+    {
+      "addr": "EXTERNAL:0000000d",
+      "is_variadic": false,
+      "name": "DeleteCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c78",
+      "name": "DAT_10016c78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c7c",
+      "name": "LPCRITICAL_SECTION_10016c7c",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240630"
+    },
+    {
+      "addr": "10016c9c",
+      "name": "LPCRITICAL_SECTION_10016c9c",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240660"
+    },
+    {
+      "addr": "10016cac",
+      "name": "LPCRITICAL_SECTION_10016cac",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240678"
+    },
+    {
+      "addr": "10016cbc",
+      "name": "LPCRITICAL_SECTION_10016cbc",
+      "type": "LPCRITICAL_SECTION",
+      "value": "10240648"
+    },
+    {
+      "addr": "10240630",
+      "name": "DAT_10240630",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240648",
+      "name": "DAT_10240648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240660",
+      "name": "DAT_10240660",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240678",
+      "name": "DAT_10240678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421b4",
+      "name": "PTR_DeleteCriticalSection_102421b4",
+      "type": "void*",
+      "value": "002423b4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10007760",
+        "call_type": "direct",
+        "caller": "crt_thread.c__mtterm_FUN_10007760",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.023809523809524,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 5,
+      "CBRANCH": 6,
+      "COPY": 37,
+      "INT_ADD": 7,
+      "INT_AND": 19,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 18,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 169
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10016c78",
+      "severity": "mild",
+      "text": "lpCriticalSection = (LPCRITICAL_SECTION)(&DAT_10016c78)[iVar1];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10016c78",
+      "severity": "mild",
+      "text": "free((void *)(&DAT_10016c78)[iVar1]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x10016c78] lands in DAT_10016c78 but intended target is LPCRITICAL_SECTION_10016c7c at 0x10016c7c (displaced by 4 bytes)",
+      "displaced_from": "DAT_10016c78",
+      "displacement": "0x10016c78",
+      "instruction_address": "",
+      "intended_global": "LPCRITICAL_SECTION_10016c7c",
+      "line": 7,
+      "match": "0x10016c78",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 1000593b: LEA EBX,[EDI*0x4 + 0x10016c78]  ; DAT_10016c78",
+      "type": "displaced_global_access"
+    }
+  ]
+}

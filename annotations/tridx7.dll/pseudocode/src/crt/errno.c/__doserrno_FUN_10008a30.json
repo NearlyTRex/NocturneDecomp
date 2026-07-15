@@ -1,0 +1,155 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 6,
+    "cross_reference_count": 15,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "100089a0",
+      "from_addr": "100089a1",
+      "name": "crt_errno.c__dosmaperr_FUN_100089a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b560",
+      "from_addr": "1000b5fc",
+      "name": "crt_io.c__chsize_lk_FUN_1000b560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10005b50",
+      "from_addr": "10005bab",
+      "name": "crt_io.c__close_FUN_10005b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008e80",
+      "from_addr": "10008ee8",
+      "name": "crt_io.c__commit_FUN_10008e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008c30",
+      "from_addr": "10008cae",
+      "name": "crt_io.c__free_osfhnd_FUN_10008c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008cd0",
+      "from_addr": "10008d09",
+      "name": "crt_io.c__get_osfhandle_FUN_10008cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008d20",
+      "from_addr": "10008d87",
+      "name": "crt_io.c__open_osfhandle_FUN_10008d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b6a0",
+      "from_addr": "1000b705",
+      "name": "crt_io.c__read_FUN_1000b6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b720",
+      "from_addr": "1000b7be",
+      "name": "crt_io.c__read_lk_FUN_1000b720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008b80",
+      "from_addr": "10008c10",
+      "name": "crt_io.c__set_osfhnd_FUN_10008b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100093f0",
+      "from_addr": "10009464",
+      "name": "crt_io.c__sopen_FUN_100093f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008f30",
+      "from_addr": "10008f95",
+      "name": "crt_io.c__write_FUN_10008f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a5f0",
+      "from_addr": "1000a655",
+      "name": "crt_io.c__write_dup_FUN_1000a5f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008fb0",
+      "from_addr": "10009112",
+      "name": "crt_io.c__write_lk_FUN_10008fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b950",
+      "from_addr": "1000ba7b",
+      "name": "crt_signal.c_signal_FUN_1000b950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10008a30",
+    "address_range": [
+      [
+        "10008a30",
+        "10008a38"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_errno.c___doserrno_FUN_10008a30",
+    "signature": "ulong * __cdecl crt_errno_c___doserrno_FUN_10008a30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "100077b0",
+      "is_variadic": false,
+      "name": "crt_thread.c__getptd_FUN_100077b0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "CALL": 1,
+      "INT_ADD": 2,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 15
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

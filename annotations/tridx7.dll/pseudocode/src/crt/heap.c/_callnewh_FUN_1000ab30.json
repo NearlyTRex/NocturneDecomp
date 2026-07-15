@@ -1,0 +1,178 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 54,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "10008850",
+      "from_addr": "1000887f",
+      "name": "crt_heap.c__nh_malloc_FUN_10008850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a750",
+      "from_addr": "1000a78c",
+      "name": "crt_heap.c_calloc_FUN_1000a750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10011680",
+      "from_addr": "100116d8",
+      "name": "crt_heap.c_realloc_FUN_10011680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000ab30",
+    "address_range": [
+      [
+        "1000ab30",
+        "1000ab6d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c__callnewh_FUN_1000ab30",
+    "signature": "int __cdecl crt_heap_c__callnewh_FUN_1000ab30(size_t size)"
+  },
+  "function_calls": [
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10240794",
+      "name": "DAT_10240794",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "1000887f",
+        "call_type": "direct",
+        "caller": "crt_heap.c__nh_malloc_FUN_10008850",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000a78c",
+        "call_type": "direct",
+        "caller": "crt_heap.c_calloc_FUN_1000a750",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "100116d8",
+        "call_type": "direct",
+        "caller": "crt_heap.c_realloc_FUN_10011680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.590909090909091,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 16,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 101
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "size_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_10240794 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_10240794",
+      "severity": "mild",
+      "text": "if (DAT_10240794 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_10240794",
+      "severity": "mild",
+      "text": "iVar1 = (*DAT_10240794)(size);",
+      "type": "undefined_data"
+    }
+  ]
+}

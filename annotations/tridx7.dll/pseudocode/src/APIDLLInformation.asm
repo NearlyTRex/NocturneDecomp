@@ -13,7 +13,7 @@
 ;   PascalUnicode pu_DirectX6_(Some_hardware)_10243062
 ;
 ; Called Functions:
-;   FUN_10005600
+;   crt_startup.c__chkstk_FUN_10005600
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
 
     MOV EAX,0x1ec8                      ; 100019a0
         ;   Label: APIDLLInformation
-    CALL FUN_10005600                   ; 100019a5
-        ;   XREF to: 10005600 (UNCONDITIONAL_CALL)  ; undefined FUN_10005600()
+    CALL crt_startup.c__chkstk_FUN_10005600 ; 100019a5
+        ;   XREF to: 10005600 (UNCONDITIONAL_CALL)  ; void crt_startup.c__chkstk_FUN_10005600()
     PUSH ESI                            ; 100019aa
     XOR EAX,EAX                         ; 100019ab
     PUSH EDI                            ; 100019ad

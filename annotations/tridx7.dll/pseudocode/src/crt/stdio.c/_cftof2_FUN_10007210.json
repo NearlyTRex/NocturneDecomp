@@ -1,0 +1,166 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 118,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 4,
+    "suspect_types": [
+      "builtin_function",
+      "undefined_data",
+      "unrolled_memcpy",
+      "unrolled_memset"
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [
+    {
+      "addr": "100071a0",
+      "from_addr": "100071f8",
+      "name": "crt_stdio.c__cftof_FUN_100071a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100072d0",
+      "from_addr": "1000734d",
+      "name": "crt_stdio.c__cftog_FUN_100072d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10007210",
+    "address_range": [
+      [
+        "10007210",
+        "100072cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__cftof2_FUN_10007210",
+    "signature": "char * __cdecl crt_stdio_c__cftof2_FUN_10007210(char *buf,uint dec,int *pflt,char is_g)"
+  },
+  "function_calls": [
+    {
+      "addr": "100073f0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__shift_FUN_100073f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017694",
+      "name": "DAT_10017694",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.32051282051282,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 10,
+      "COPY": 59,
+      "INT_2COMP": 3,
+      "INT_ADD": 29,
+      "INT_AND": 66,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 55,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 26,
+      "INT_SUB": 28,
+      "INT_ZEXT": 3,
+      "LOAD": 17,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 415
+  },
+  "stack_frame": {
+    "frame_size": 17,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 13,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buf",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dec",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "pflt",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "is_g",
+        "offset": 16,
+        "size": 1,
+        "type": "char"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "*str = DAT_10017694;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Ghidra builtin function",
+      "line": 51,
+      "match": "builtin_strncpy",
+      "severity": "mild",
+      "text": "builtin_strncpy(pcVar5,\"0000\",4);",
+      "type": "builtin_function"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100072be, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 91,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100072be: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}

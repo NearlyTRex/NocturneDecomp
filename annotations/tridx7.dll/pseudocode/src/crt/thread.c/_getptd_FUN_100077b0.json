@@ -1,0 +1,214 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 77,
+    "cross_reference_count": 6,
+    "function_call_count": 8,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unaffected_reg",
+      "undefined_data"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "10008a30",
+      "from_addr": "10008a30",
+      "name": "crt_errno.c___doserrno_FUN_10008a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10008a20",
+      "from_addr": "10008a20",
+      "name": "crt_errno.c__errno_FUN_10008a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a7b0",
+      "from_addr": "1000a7b4",
+      "name": "crt_signal.c__XcptFilter_FUN_1000a7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000bbc0",
+      "from_addr": "1000bc01",
+      "name": "crt_signal.c_raise_FUN_1000bbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b950",
+      "from_addr": "1000b9a8",
+      "name": "crt_signal.c_signal_FUN_1000b950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000bdf0",
+      "from_addr": "1000bdf0",
+      "name": "crt_thread.c___pxcptinfoptrs_FUN_1000bdf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100077b0",
+    "address_range": [
+      [
+        "100077b0",
+        "1000781e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_thread.c__getptd_FUN_100077b0",
+    "signature": "_ptiddata __cdecl crt_thread_c__getptd_FUN_100077b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000a750",
+      "is_variadic": false,
+      "name": "crt_heap.c_calloc_FUN_1000a750"
+    },
+    {
+      "addr": "100058c0",
+      "is_variadic": false,
+      "name": "crt_startup.c__amsg_exit_FUN_100058c0"
+    },
+    {
+      "addr": "10007790",
+      "is_variadic": false,
+      "name": "crt_thread.c__initptd_FUN_10007790"
+    },
+    {
+      "addr": "EXTERNAL:00000016",
+      "is_variadic": false,
+      "name": "GetCurrentThreadId"
+    },
+    {
+      "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
+      "name": "GetLastError"
+    },
+    {
+      "addr": "EXTERNAL:0000001a",
+      "is_variadic": false,
+      "name": "SetLastError"
+    },
+    {
+      "addr": "EXTERNAL:0000001b",
+      "is_variadic": false,
+      "name": "TlsGetValue"
+    },
+    {
+      "addr": "EXTERNAL:00000017",
+      "is_variadic": false,
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016da4",
+      "name": "DAT_10016da4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421c8",
+      "name": "PTR_GetLastError_102421c8",
+      "type": "void*",
+      "value": "00242418"
+    },
+    {
+      "addr": "102421d8",
+      "name": "PTR_GetCurrentThreadId_102421d8",
+      "type": "void*",
+      "value": "0024245e"
+    },
+    {
+      "addr": "102421dc",
+      "name": "PTR_TlsSetValue_102421dc",
+      "type": "void*",
+      "value": "00242474"
+    },
+    {
+      "addr": "102421e8",
+      "name": "PTR_SetLastError_102421e8",
+      "type": "void*",
+      "value": "00242498"
+    },
+    {
+      "addr": "102421ec",
+      "name": "PTR_TlsGetValue_102421ec",
+      "type": "void*",
+      "value": "002424a8"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.58974358974359,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 5,
+      "CBRANCH": 3,
+      "COPY": 33,
+      "INT_ADD": 7,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 18,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 140
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "pthreadlocinfo unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10016da4",
+      "severity": "mild",
+      "text": "ptd = TlsGetValue((DWORD)DAT_10016da4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10016da4",
+      "severity": "mild",
+      "text": "BVar1 = TlsSetValue((DWORD)DAT_10016da4,ptd);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_initptd(ptd,unaff_EDI);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

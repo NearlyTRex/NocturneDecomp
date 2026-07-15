@@ -1,0 +1,824 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 664,
+    "complexity_score": 945,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 415,
+    "suspect_count": 51,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unknown_field"
+    ],
+    "total_lines": 1079
+  },
+  "cross_references": [
+    {
+      "addr": "1000a200",
+      "from_addr": "1000a21a",
+      "name": "crt_math.c__atodbl_FUN_1000a200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a280",
+      "from_addr": "1000a29a",
+      "name": "crt_math.c__atoflt_FUN_1000a280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a240",
+      "from_addr": "1000a25a",
+      "name": "crt_math.c__atoldbl_FUN_1000a240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000cf00",
+      "from_addr": "1000cf1e",
+      "name": "crt_stdlib.c__atodbl_v2_FUN_1000cf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000c7b0",
+    "address_range": [
+      [
+        "1000c7b0",
+        "1000cdd9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c__strgtold12_FUN_1000c7b0",
+    "signature": "uint __cdecl crt_math_c__strgtold12_FUN_1000c7b0(_LDBL12 *pld12,char **p_end_ptr,char *str,int mult12,int scale,int decpt,int implicit_e)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009ac0",
+      "is_variadic": false,
+      "name": "crt_ctype.c__isctype_FUN_10009ac0"
+    },
+    {
+      "addr": "1000c6c0",
+      "is_variadic": false,
+      "name": "crt_math.c__mtold12_FUN_1000c6c0"
+    },
+    {
+      "addr": "1000eba0",
+      "is_variadic": false,
+      "name": "crt_math.c__multtenpow12_FUN_1000eba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1000cddc",
+      "name": "switchdataD_1000cddc",
+      "type": "void*",
+      "value": "1000c81c"
+    },
+    {
+      "addr": "1000cdf9",
+      "name": "PTR_caseD_7_1000cdf8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1000ce04",
+      "name": "PTR_caseD_a_1000ce04",
+      "type": "void*",
+      "value": "1000cc65"
+    },
+    {
+      "addr": "1000ce0c",
+      "name": "switchdataD_1000ce0c",
+      "type": "void*",
+      "value": "1000c8d1"
+    },
+    {
+      "addr": "1000ce49",
+      "name": "BYTE_1000ce49",
+      "type": "byte",
+      "value": "0x5"
+    },
+    {
+      "addr": "1000ce60",
+      "name": "switchdataD_1000ce60",
+      "type": "void*",
+      "value": "1000c9c0"
+    },
+    {
+      "addr": "1000ce99",
+      "name": "BYTE_1000ce99",
+      "type": "byte",
+      "value": "0x4"
+    },
+    {
+      "addr": "1000ceb0",
+      "name": "switchdataD_1000ceb0",
+      "type": "void*",
+      "value": "1000ca67"
+    },
+    {
+      "addr": "10017480",
+      "name": "PTR_DAT_10017480",
+      "type": "void*",
+      "value": "1001748a"
+    },
+    {
+      "addr": "1001748a",
+      "name": "DAT_1001748a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017690",
+      "name": "DAT_10017690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017694",
+      "name": "DAT_10017694",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "1000a21a",
+        "call_type": "direct",
+        "caller": "crt_math.c__atodbl_FUN_1000a200",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "1000a29a",
+        "call_type": "direct",
+        "caller": "crt_math.c__atoflt_FUN_1000a280",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "1000a25a",
+        "call_type": "direct",
+        "caller": "crt_math.c__atoldbl_FUN_1000a240",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "1000cf1e",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c__atodbl_v2_FUN_1000cf00",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.692477876106195,
+    "instruction_count": 452,
+    "opcode_distribution": {
+      "BOOL_AND": 7,
+      "BOOL_NEGATE": 26,
+      "BOOL_OR": 11,
+      "BRANCH": 51,
+      "BRANCHIND": 4,
+      "CALL": 7,
+      "CBRANCH": 68,
+      "COPY": 313,
+      "INT_2COMP": 1,
+      "INT_ADD": 135,
+      "INT_AND": 318,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 317,
+      "INT_LESS": 70,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 1,
+      "INT_SBORROW": 81,
+      "INT_SCARRY": 27,
+      "INT_SEXT": 9,
+      "INT_SLESS": 154,
+      "INT_SUB": 107,
+      "INT_XOR": 35,
+      "LOAD": 116,
+      "POPCOUNT": 154,
+      "RETURN": 1,
+      "STORE": 73
+    },
+    "pcode_op_count": 2121
+  },
+  "stack_frame": {
+    "frame_size": 114,
+    "local_size": 86,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_52",
+        "offset": -82,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11",
+        "offset": -17,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_a",
+        "offset": -10,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6",
+        "offset": -6,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2",
+        "offset": -2,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "pld12",
+        "offset": 4,
+        "size": 4,
+        "type": "_LDBL12 *"
+      },
+      {
+        "is_param": true,
+        "name": "p_end_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mult12",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "scale",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "decpt",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "implicit_e",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(ushort *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 170,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 179,
+      "match": "(ushort *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((int)puVar10 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 205,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 267,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 282,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 320,
+      "match": "(ushort *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 325,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._0_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 330,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._10_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 331,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[0]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 332,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[0]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 333,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[1]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 334,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[1]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 337,
+      "match": "(char *)((int)puVar10",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)puVar10 + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 359,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_28._0_4_ = local_c.ld12._2_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 359,
+      "match": "._2_4_",
+      "severity": "mild",
+      "text": "local_28._0_4_ = local_c.ld12._2_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 368,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "local_c.ld12._6_4_ = local_28._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 368,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_c.ld12._6_4_ = local_28._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 369,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._0_2_ = local_28[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 370,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._10_2_ = local_28[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 374,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._10_2_ = 0x7fff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 379,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._0_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 380,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[0]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 381,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[0]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 382,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[1]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 383,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[1]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 387,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._0_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 392,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._10_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 393,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[0]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 394,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[0]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 395,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[1]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 396,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[1]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 401,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._0_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 406,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "local_c.ld12._10_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 407,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[0]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 408,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[0]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 409,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_28[1]._0_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 410,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "local_28[1]._1_1_ = '\\0';",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 413,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "*(uint *)(pld12->ld12 + 2) = local_28._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 414,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "*(ushort *)pld12->ld12 = local_c.ld12._0_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 415,
+      "match": "._6_4_",
+      "severity": "mild",
+      "text": "*(uint *)(pld12->ld12 + 6) = local_c.ld12._6_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 416,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "*(ushort *)(pld12->ld12 + 10) = local_52 | local_c.ld12._10_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 130,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 179,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((int)puVar10 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 320,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + -1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 337,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)puVar10 + -1);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

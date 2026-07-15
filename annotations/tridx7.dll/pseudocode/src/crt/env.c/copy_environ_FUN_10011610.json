@@ -1,0 +1,154 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 87,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 4,
+    "suspect_types": [
+      "alloc_magic_size",
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [
+    {
+      "addr": "10011360",
+      "from_addr": "100113b0",
+      "name": "crt_env.c___crtsetenv_FUN_10011360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10011610",
+    "address_range": [
+      [
+        "10011610",
+        "1001167d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_env.c_copy_environ_FUN_10011610",
+    "signature": "char ** __cdecl crt_env_c_copy_environ_FUN_10011610(char **oldenviron)"
+  },
+  "function_calls": [
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "100058c0",
+      "is_variadic": false,
+      "name": "crt_startup.c__amsg_exit_FUN_100058c0"
+    },
+    {
+      "addr": "100117b0",
+      "is_variadic": false,
+      "name": "crt_string.c__strdup_FUN_100117b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100113b0",
+        "call_type": "direct",
+        "caller": "crt_env.c___crtsetenv_FUN_10011360",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.659090909090909,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 32,
+      "INT_ADD": 15,
+      "INT_AND": 29,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 28,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 205
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "oldenviron",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(char **)((int)ppcVar1",
+      "severity": "moderate",
+      "text": "ppcVar1 = (char **)((int)ppcVar1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)ppcVar1",
+      "severity": "moderate",
+      "text": "ppcVar1 = (char **)((int)ppcVar1 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)ppcVar1",
+      "severity": "moderate",
+      "text": "ppcVar1 = (char **)malloc((int)ppcVar1 * 4 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 18,
+      "match": "(char**) alloc stride 4",
+      "severity": "moderate",
+      "text": "(char **)malloc((int)ppcVar1 * 4 + 4)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

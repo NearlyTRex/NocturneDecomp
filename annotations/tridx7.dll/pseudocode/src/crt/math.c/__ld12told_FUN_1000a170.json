@@ -1,0 +1,144 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 38,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "1000a240",
+      "from_addr": "1000a26c",
+      "name": "crt_math.c__atoldbl_FUN_1000a240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000cf00",
+      "from_addr": "1000cf32",
+      "name": "crt_stdlib.c__atodbl_v2_FUN_1000cf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a170",
+    "address_range": [
+      [
+        "1000a170",
+        "1000a1f0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c___ld12told_FUN_1000a170",
+    "signature": "INTRNCVT_STATUS __cdecl crt_math_c___ld12told_FUN_1000a170(_LDBL12 *ifp,_LDOUBLE *ld)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009db0",
+      "is_variadic": false,
+      "name": "crt_math.c__RoundMan_FUN_10009db0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "1000a26c",
+        "call_type": "direct",
+        "caller": "crt_math.c__atoldbl_FUN_1000a240",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000cf32",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c__atodbl_v2_FUN_1000cf00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.116279069767442,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 44,
+      "INT_ADD": 21,
+      "INT_AND": 38,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 6,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 220
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ifp",
+        "offset": 4,
+        "size": 4,
+        "type": "_LDBL12 *"
+      },
+      {
+        "is_param": true,
+        "name": "ld",
+        "offset": 8,
+        "size": 4,
+        "type": "_LDOUBLE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&uStack_c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&uStack_c",
+      "severity": "moderate",
+      "text": "iVar2 = _RoundMan((int)&uStack_c,0x40);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

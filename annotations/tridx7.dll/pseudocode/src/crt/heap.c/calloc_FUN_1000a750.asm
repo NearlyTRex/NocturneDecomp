@@ -1,0 +1,74 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void * __cdecl crt_heap_c_calloc_FUN_1000a750(size_t num,size_t size)
+;
+; Parameters:
+; size_t           Stack[0x4]:4   num
+; size_t           Stack[0x8]:4   size
+;
+; XREF[5]:
+;   crt_io.c__alloc_piob_FUN_100088b0 at 100088e1
+;   crt_locale.c___crtGetStringTypeW_FUN_1000be00 at 1000bee5
+;   crt_locale.c__crtGetStringTypeA_FUN_1000bfc0 at 1000c095
+;   crt_thread.c__getptd_FUN_100077b0 at 100077d0
+;   crt_thread.c__mtinit_FUN_10007700 at 1000771e
+;
+; Referenced Globals:
+;   undefined4 DAT_10017780
+;   undefined4 DAT_10241974
+;   void* PTR_HeapAlloc_10242238 = 002425fe
+;
+; Called Functions:
+;   crt_heap.c__callnewh_FUN_1000ab30
+;   HeapAlloc
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH ESI                            ; 1000a750
+        ;   Label: crt_heap.c_calloc_FUN_1000a750
+    PUSH EDI                            ; 1000a751
+    MOV EDI,dword ptr [ESP + 0x10]      ; 1000a752
+    IMUL EDI,dword ptr [ESP + 0xc]      ; 1000a756
+    TEST EDI,EDI                        ; 1000a75b
+    JNZ 0x1000a764                      ; 1000a75d
+        ;   XREF to: 1000a764 (CONDITIONAL_JUMP)  ; LAB_1000a764
+    MOV EDI,0x1                         ; 1000a75f
+    MOV EAX,[0x10241974]                ; 1000a764 | DAT_10241974
+        ;   Label: LAB_1000a764
+    MOV ESI,dword ptr [0x10242238]      ; 1000a769 | PTR_HeapAlloc_10242238
+    CMP EDI,-0x20                       ; 1000a76f
+        ;   Label: LAB_1000a76f
+    JBE 0x1000a778                      ; 1000a772
+        ;   XREF to: 1000a778 (CONDITIONAL_JUMP)  ; LAB_1000a778
+    XOR EAX,EAX                         ; 1000a774
+    JMP 0x1000a77e                      ; 1000a776
+        ;   XREF to: 1000a77e (UNCONDITIONAL_JUMP)  ; LAB_1000a77e
+    PUSH EDI                            ; 1000a778
+        ;   Label: LAB_1000a778
+    PUSH 0x8                            ; 1000a779
+    PUSH EAX                            ; 1000a77b
+    CALL ESI                            ; 1000a77c | LPVOID HeapAlloc(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes)
+    TEST EAX,EAX                        ; 1000a77e
+        ;   Label: LAB_1000a77e
+    JNZ 0x1000a79f                      ; 1000a780
+        ;   XREF to: 1000a79f (CONDITIONAL_JUMP)  ; LAB_1000a79f
+    CMP dword ptr [0x10017780],0x0      ; 1000a782 | DAT_10017780
+    JZ 0x1000a79f                       ; 1000a789
+        ;   XREF to: 1000a79f (CONDITIONAL_JUMP)  ; LAB_1000a79f
+    PUSH EDI                            ; 1000a78b
+    CALL crt_heap.c__callnewh_FUN_1000ab30 ; 1000a78c
+        ;   XREF to: 1000ab30 (UNCONDITIONAL_CALL)  ; int crt_heap.c__callnewh_FUN_1000ab30(size_t size)
+    ADD ESP,0x4                         ; 1000a791
+    TEST EAX,EAX                        ; 1000a794
+    MOV EAX,[0x10241974]                ; 1000a796 | DAT_10241974
+    JNZ 0x1000a76f                      ; 1000a79b
+        ;   XREF to: 1000a76f (CONDITIONAL_JUMP)  ; LAB_1000a76f
+    XOR EAX,EAX                         ; 1000a79d
+    POP EDI                             ; 1000a79f
+        ;   Label: LAB_1000a79f
+    POP ESI                             ; 1000a7a0
+    RET                                 ; 1000a7a1
+

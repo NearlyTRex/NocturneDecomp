@@ -1,0 +1,135 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 104,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_ref",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "1000b480",
+      "from_addr": "1000b4be",
+      "name": "crt_locale.c__setlocale_catcopy_FUN_1000b480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b060",
+      "from_addr": "1000b0a7",
+      "name": "crt_locale.c_setlocale_get_all_FUN_1000b060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000b330",
+    "address_range": [
+      [
+        "1000b330",
+        "1000b37d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c__lc_lctostr_FUN_1000b330",
+    "signature": "void __cdecl crt_locale_c__lc_lctostr_FUN_1000b330(char *dst,int count,...)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.194444444444445,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CBRANCH": 8,
+      "COPY": 36,
+      "INT_ADD": 17,
+      "INT_AND": 39,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 31,
+      "INT_LESS": 7,
+      "INT_MULT": 6,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 14,
+      "INT_SUB": 23,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 17,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dst",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0x0000000c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "line": 44,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000b36a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 29,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000b36a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

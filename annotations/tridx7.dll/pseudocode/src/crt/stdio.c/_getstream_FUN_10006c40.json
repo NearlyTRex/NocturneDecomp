@@ -1,0 +1,260 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 182,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "10005520",
+      "from_addr": "10005522",
+      "name": "crt_stdio.c__fsopen_FUN_10005520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10006c40",
+    "address_range": [
+      [
+        "10006c40",
+        "10006d20"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c__getstream_FUN_10006c40",
+    "signature": "FILE * __cdecl crt_stdio_c__getstream_FUN_10006c40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "crt_heap.c_malloc_FUN_10008830"
+    },
+    {
+      "addr": "10005a70",
+      "is_variadic": false,
+      "name": "crt_stdio.c__lock_file2_FUN_10005a70"
+    },
+    {
+      "addr": "10005ae0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__unlock_file2_FUN_10005ae0"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    },
+    {
+      "addr": "EXTERNAL:0000000e",
+      "is_variadic": false,
+      "name": "EnterCriticalSection"
+    },
+    {
+      "addr": "EXTERNAL:0000000c",
+      "is_variadic": false,
+      "name": "InitializeCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1024085c",
+      "name": "DAT_1024085c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241860",
+      "name": "DAT_10241860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421b0",
+      "name": "PTR_InitializeCriticalSection_102421b0",
+      "type": "void*",
+      "value": "00242398"
+    },
+    {
+      "addr": "102421b8",
+      "name": "PTR_EnterCriticalSection_102421b8",
+      "type": "void*",
+      "value": "002423cc"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10005522",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__fsopen_FUN_10005520",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.407894736842105,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 65,
+      "INT_ADD": 28,
+      "INT_AND": 45,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 41,
+      "INT_LESS": 2,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 20,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "LOAD": 13,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 335
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "if (0 < DAT_10241860) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "pvVar1 = *(void **)(DAT_1024085c + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "*(void **)(DAT_1024085c + index * 4) = pvVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(DAT_1024085c + index * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "EnterCriticalSection((LPCRITICAL_SECTION)(*(int *)(DAT_1024085c + index * 4) + 0x20));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "pFVar3 = *(FILE **)(DAT_1024085c + index * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)pvVar1",
+      "severity": "moderate",
+      "text": "if ((*(uint *)((int)pvVar1 + 0xc) & 0x83) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "if ((*(uint *)((int)*(void **)(DAT_1024085c + iVar2) + 0xc) & 0x83) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "pFVar3 = *(FILE **)(DAT_1024085c + index * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "_unlock_file2(index,*(void **)(DAT_1024085c + iVar2));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "} while (index < DAT_10241860);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "if ((*(uint *)((int)pvVar1 + 0xc) & 0x83) == 0) {",
+      "type": "pointer_truncation"
+    }
+  ]
+}

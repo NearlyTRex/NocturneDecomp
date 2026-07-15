@@ -1,0 +1,437 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 128,
+    "complexity_score": 263,
+    "cross_reference_count": 1,
+    "function_call_count": 18,
+    "global_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 63,
+    "suspect_count": 19,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 191
+  },
+  "cross_references": [
+    {
+      "addr": "100057f0",
+      "from_addr": "10005854",
+      "name": "crt_startup.c__DllMainCRTStartup_FUN_100057f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100056a0",
+    "address_range": [
+      [
+        "100056a0",
+        "100057ec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c___CRTDLL_INIT_FUN_100056a0",
+    "signature": "BOOL __cdecl crt_startup_c___CRTDLL_INIT_FUN_100056a0(HINSTANCE hinst_dll,DWORD reason,LPVOID reserved)"
+  },
+  "function_calls": [
+    {
+      "addr": "100083e0",
+      "is_variadic": false,
+      "name": "crt_env.c___crtGetEnvironmentStringsA_FUN_100083e0"
+    },
+    {
+      "addr": "10007b60",
+      "is_variadic": false,
+      "name": "crt_env.c__setenvp_FUN_10007b60"
+    },
+    {
+      "addr": "100078f0",
+      "is_variadic": false,
+      "name": "crt_heap.c__heap_init_FUN_100078f0"
+    },
+    {
+      "addr": "10007910",
+      "is_variadic": false,
+      "name": "crt_heap.c__heap_term_FUN_10007910"
+    },
+    {
+      "addr": "10007920",
+      "is_variadic": false,
+      "name": "crt_io.c__ioinit_FUN_10007920"
+    },
+    {
+      "addr": "100081d0",
+      "is_variadic": false,
+      "name": "crt_locale.c__initmbctable_FUN_100081d0"
+    },
+    {
+      "addr": "100085b0",
+      "is_variadic": false,
+      "name": "crt_startup.c___set_app_type_FUN_100085b0"
+    },
+    {
+      "addr": "100075e0",
+      "is_variadic": false,
+      "name": "crt_startup.c__cexit_FUN_100075e0"
+    },
+    {
+      "addr": "10007570",
+      "is_variadic": false,
+      "name": "crt_startup.c__cinit_FUN_10007570"
+    },
+    {
+      "addr": "10007b00",
+      "is_variadic": false,
+      "name": "crt_startup.c__ioterm_FUN_10007b00"
+    },
+    {
+      "addr": "10007c40",
+      "is_variadic": false,
+      "name": "crt_startup.c__setargv_FUN_10007c40"
+    },
+    {
+      "addr": "10007820",
+      "is_variadic": false,
+      "name": "crt_thread.c__freeptd_FUN_10007820"
+    },
+    {
+      "addr": "10007700",
+      "is_variadic": false,
+      "name": "crt_thread.c__mtinit_FUN_10007700"
+    },
+    {
+      "addr": "10007760",
+      "is_variadic": false,
+      "name": "crt_thread.c__mtterm_FUN_10007760"
+    },
+    {
+      "addr": "EXTERNAL:00000008",
+      "is_variadic": false,
+      "name": "GetCommandLineA"
+    },
+    {
+      "addr": "EXTERNAL:0000000a",
+      "is_variadic": false,
+      "name": "GetModuleHandleA"
+    },
+    {
+      "addr": "EXTERNAL:00000009",
+      "is_variadic": false,
+      "name": "GetProcAddress"
+    },
+    {
+      "addr": "EXTERNAL:0000000b",
+      "is_variadic": false,
+      "name": "GetVersion"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100122f0",
+      "name": "s_IsTNT_100122f0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "100122f8",
+      "name": "s_kernel32.dll_100122f8",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "10016c60",
+      "name": "DAT_10016c60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c64",
+      "name": "DAT_10016c64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c74",
+      "name": "DAT_10016c74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d64",
+      "name": "DAT_10016d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d68",
+      "name": "DAT_10016d68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d6c",
+      "name": "DAT_10016d6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d70",
+      "name": "DAT_10016d70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d9c",
+      "name": "DAT_10016d9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241980",
+      "name": "DAT_10241980",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421a0",
+      "name": "PTR_GetCommandLineA_102421a0",
+      "type": "void*",
+      "value": "00242352"
+    },
+    {
+      "addr": "102421a4",
+      "name": "PTR_GetProcAddress_102421a4",
+      "type": "void*",
+      "value": "00242364"
+    },
+    {
+      "addr": "102421a8",
+      "name": "PTR_GetModuleHandleA_102421a8",
+      "type": "void*",
+      "value": "00242376"
+    },
+    {
+      "addr": "102421ac",
+      "name": "PTR_GetVersion_102421ac",
+      "type": "void*",
+      "value": "0024238a"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0227272727272725,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 1,
+      "CALL": 17,
+      "CALLIND": 4,
+      "CBRANCH": 13,
+      "COPY": 57,
+      "INT_ADD": 18,
+      "INT_AND": 83,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 29,
+      "INT_SUB": 36,
+      "INT_XOR": 5,
+      "LOAD": 7,
+      "POPCOUNT": 26,
+      "RETURN": 6,
+      "STORE": 27
+    },
+    "pcode_op_count": 442
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hinst_dll",
+        "offset": 4,
+        "size": 4,
+        "type": "HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "reason",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "reserved",
+        "offset": 12,
+        "size": 4,
+        "type": "LPVOID"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "DAT_10016d64 = GetVersion();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10016c74",
+      "severity": "mild",
+      "text": "if (DAT_10016c74 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "if (((char)DAT_10016d64 == '\\x03') && ((DAT_10016d64 & 0x80000000) != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "if (((char)DAT_10016d64 == '\\x03') && ((DAT_10016d64 & 0x80000000) != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "_DAT_10016d70 = DAT_10016d64 >> 8 & 0xff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "_DAT_10016d6c = DAT_10016d64 & 0xff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "DAT_10016d64 = DAT_10016d64 >> 0x10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_10016d64",
+      "severity": "mild",
+      "text": "DAT_10016d64 = DAT_10016d64 >> 0x10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10241980",
+      "severity": "mild",
+      "text": "DAT_10241980 = (int)GetCommandLineA();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_10016c64",
+      "severity": "mild",
+      "text": "DAT_10016c64 = __crtGetEnvironmentStringsA();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_10241980",
+      "severity": "mild",
+      "text": "if ((DAT_10241980 != 0) && (DAT_10016c64 != (char *)0x0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_10016c64",
+      "severity": "mild",
+      "text": "if ((DAT_10241980 != 0) && (DAT_10016c64 != (char *)0x0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "if (0 < DAT_10016c60) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_10016d9c",
+      "severity": "mild",
+      "text": "if (DAT_10016d9c == 0) {",
+      "type": "undefined_data"
+    }
+  ]
+}

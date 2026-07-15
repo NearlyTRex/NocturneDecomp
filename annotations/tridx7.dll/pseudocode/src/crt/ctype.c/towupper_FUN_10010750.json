@@ -1,0 +1,188 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 90,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "1000fc30",
+      "from_addr": "1000fd49",
+      "name": "crt_stdlib.c_wcstoxl_FUN_1000fc30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10010750",
+    "address_range": [
+      [
+        "10010750",
+        "100107c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_ctype.c_towupper_FUN_10010750",
+    "signature": "wint_t __cdecl crt_ctype_c_towupper_FUN_10010750(wint_t c)"
+  },
+  "function_calls": [
+    {
+      "addr": "100107d0",
+      "is_variadic": false,
+      "name": "crt_ctype.c__towupper_FUN_100107d0"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017760",
+      "name": "DAT_10017760",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240854",
+      "name": "DAT_10240854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240858",
+      "name": "DAT_10240858",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000fd49",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c_wcstoxl_FUN_1000fc30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.487804878048781,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 29,
+      "INT_ADD": 15,
+      "INT_AND": 25,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 24,
+      "INT_LESS": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 12,
+      "RETURN": 3,
+      "STORE": 8
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 6,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 2,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "c",
+        "offset": 4,
+        "size": 2,
+        "type": "wint_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_10017760",
+      "severity": "mild",
+      "text": "if (DAT_10017760 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10240854",
+      "severity": "mild",
+      "text": "bVar1 = DAT_10240854 == 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    }
+  ]
+}

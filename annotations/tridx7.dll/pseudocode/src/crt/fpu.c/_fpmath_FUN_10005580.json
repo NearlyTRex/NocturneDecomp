@@ -1,0 +1,106 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "10007570",
+      "from_addr": "10007579",
+      "name": "crt_startup.c__cinit_FUN_10007570",
+      "type": "COMPUTED_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005580",
+    "address_range": [
+      [
+        "10005580",
+        "10005596"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fpu.c__fpmath_FUN_10005580",
+    "signature": "void __cdecl crt_fpu_c__fpmath_FUN_10005580(int flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "100055b0",
+      "is_variadic": false,
+      "name": "crt_fpu.c__install_fp_handlers_FUN_100055b0"
+    },
+    {
+      "addr": "10006da0",
+      "is_variadic": false,
+      "name": "crt_fpu.c__ms_p5_mp_test_fdiv_FUN_10006da0"
+    },
+    {
+      "addr": "10006d30",
+      "is_variadic": false,
+      "name": "crt_fpu.c__setdefaultprecision_FUN_10006d30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c4c",
+      "name": "DAT_10016c4c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 2,
+      "INT_ADD": 1,
+      "INT_AND": 1,
+      "INT_LEFT": 1,
+      "INT_OR": 1,
+      "INT_SUB": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 18
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "flag",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 111,
+    "complexity_score": 181,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 10,
+    "suspect_types": [
+      "concat_reconstruction",
+      "nonstandard_int",
+      "undefined_data"
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [
+    {
+      "addr": "1000e6b0",
+      "from_addr": "1000e6d3",
+      "name": "crt_locale.c_GetLcidFromCountry_FUN_1000e6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000e650",
+      "from_addr": "1000e673",
+      "name": "crt_locale.c_GetLcidFromLanguage_FUN_1000e650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000f3c0",
+      "from_addr": "1000f4a2",
+      "name": "crt_time.c__expand_locale_picture_FUN_1000f3c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000ff20",
+    "address_range": [
+      [
+        "1000ff20",
+        "1000ffe6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "crt_string.c__stricmp_FUN_1000ff20",
+    "signature": "int __cdecl crt_string_c__stricmp_FUN_1000ff20(char *str1,char *str2)"
+  },
+  "function_calls": [
+    {
+      "addr": "10009be0",
+      "is_variadic": false,
+      "name": "crt_ctype.c__tolower_lk_FUN_10009be0"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017758",
+      "name": "DAT_10017758",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017760",
+      "name": "DAT_10017760",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240854",
+      "name": "DAT_10240854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240858",
+      "name": "DAT_10240858",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "1000f4a2",
+        "call_type": "direct",
+        "caller": "crt_time.c__expand_locale_picture_FUN_1000f3c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000f4c1",
+        "call_type": "direct",
+        "caller": "crt_time.c__expand_locale_picture_FUN_1000f3c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000e673",
+        "call_type": "direct",
+        "caller": "crt_locale.c_GetLcidFromLanguage_FUN_1000e650",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000e6d3",
+        "call_type": "direct",
+        "caller": "crt_locale.c_GetLcidFromCountry_FUN_1000e6b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.464285714285714,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 6,
+      "BOOL_XOR": 6,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CBRANCH": 9,
+      "COPY": 58,
+      "INT_ADD": 21,
+      "INT_AND": 72,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 71,
+      "INT_LESS": 22,
+      "INT_OR": 3,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 1,
+      "INT_SLESS": 35,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 13,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 459
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10017760",
+      "severity": "mild",
+      "text": "if (DAT_10017760 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_10240854",
+      "severity": "mild",
+      "text": "bVar2 = 0 < DAT_10240854;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 49,
+      "match": "int3",
+      "severity": "mild",
+      "text": "c = CONCAT31((int3)(c >> 8),cVar6);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 52,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar7 = CONCAT31((int3)(uVar7 >> 8),cVar1);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 49,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "c = CONCAT31((int3)(c >> 8),cVar6);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 52,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "uVar7 = CONCAT31((int3)(uVar7 >> 8),cVar1);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

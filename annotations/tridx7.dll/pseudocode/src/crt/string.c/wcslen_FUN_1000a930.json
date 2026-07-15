@@ -1,0 +1,96 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 28,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "100081e0",
+      "from_addr": "10008395",
+      "name": "crt_env.c___crtGetEnvironmentStringsW_FUN_100081e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10010970",
+      "from_addr": "10010b7a",
+      "name": "crt_stdlib.c__wcstombs_lk_FUN_10010970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a930",
+    "address_range": [
+      [
+        "1000a930",
+        "1000a947"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_wcslen_FUN_1000a930",
+    "signature": "size_t __cdecl crt_string_c_wcslen_FUN_1000a930(wchar_t *str)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.1,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 3,
+      "INT_AND": 21,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 4,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 1
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "wchar_t *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `pwVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)pwVar3",
+      "severity": "moderate",
+      "text": "return ((int)pwVar3 - (int)str >> 1) - 1;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 167,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 93
+  },
+  "cross_references": [
+    {
+      "addr": "10008610",
+      "from_addr": "100087a4",
+      "name": "crt_startup.c__NMSG_WRITE_FUN_10008610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a950",
+    "address_range": [
+      [
+        "1000a950",
+        "1000a9e1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_system.c__crtMessageBoxA_FUN_1000a950",
+    "signature": "int __cdecl crt_system_c__crtMessageBoxA_FUN_1000a950(LPCSTR lp_text,LPCSTR lp_caption,UINT u_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000009",
+      "is_variadic": false,
+      "name": "GetProcAddress"
+    },
+    {
+      "addr": "EXTERNAL:00000025",
+      "is_variadic": false,
+      "name": "LoadLibraryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100126d8",
+      "name": "s_GetLastActivePopup_100126d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100126ec",
+      "name": "s_GetActiveWindow_100126ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100126fc",
+      "name": "s_MessageBoxA_100126fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012708",
+      "name": "s_user32_dll_10012708",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10017774",
+      "name": "DAT_10017774",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017778",
+      "name": "DAT_10017778",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001777c",
+      "name": "DAT_1001777c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421a4",
+      "name": "PTR_GetProcAddress_102421a4",
+      "type": "void*",
+      "value": "00242364"
+    },
+    {
+      "addr": "10242214",
+      "name": "PTR_LoadLibraryA_10242214",
+      "type": "void*",
+      "value": "0024266a"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100087a4",
+        "call_type": "direct",
+        "caller": "crt_startup.c__NMSG_WRITE_FUN_10008610",
+        "estimated_params": 3,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6545454545454548,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 7,
+      "CBRANCH": 6,
+      "COPY": 59,
+      "INT_ADD": 11,
+      "INT_AND": 20,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 201
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lp_text",
+        "offset": 4,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "lp_caption",
+        "offset": 8,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "u_type",
+        "offset": 12,
+        "size": 4,
+        "type": "UINT"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_10017774 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_10017774",
+      "severity": "mild",
+      "text": "if (DAT_10017774 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_10017778 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10017778",
+      "severity": "mild",
+      "text": "if (DAT_10017778 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10017778",
+      "severity": "mild",
+      "text": "iVar1 = (*DAT_10017778)();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar1 != 0) && (DAT_1001777c != (code *)0x0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_1001777c",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (DAT_1001777c != (code *)0x0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_1001777c",
+      "severity": "mild",
+      "text": "iVar1 = (*DAT_1001777c)(iVar1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10017774",
+      "severity": "mild",
+      "text": "iVar1 = (*DAT_10017774)(iVar1,lp_text,lp_caption,u_type);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_10017774",
+      "severity": "mild",
+      "text": "DAT_10017774 = GetProcAddress(hModule,\"MessageBoxA\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_10017774",
+      "severity": "mild",
+      "text": "if (DAT_10017774 != (FARPROC)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10017778",
+      "severity": "mild",
+      "text": "DAT_10017778 = GetProcAddress(hModule,\"GetActiveWindow\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_1001777c",
+      "severity": "mild",
+      "text": "DAT_1001777c = GetProcAddress(hModule,\"GetLastActivePopup\");",
+      "type": "undefined_data"
+    }
+  ]
+}

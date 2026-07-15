@@ -43,9 +43,9 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   _fclose
-;   FID_conflict:__wfopen
-;   FID_conflict:_fwprintf
+;   crt_stdio.c__fclose_FUN_10005430
+;   crt_stdio.c_fopen_FUN_10005560
+;   crt_stdio.c_fprintf_FUN_100054d0
 ;   FUN_10001020
 ;   FUN_10001440
 ;
@@ -67,69 +67,69 @@ section .text
     PUSH 0x10014068                     ; 1000121e | = ".\\system\\render.ini"
     MOV dword ptr [0x10060670],ESI      ; 10001223 | DAT_10060670
     MOV dword ptr [ESP + 0x24],0x20     ; 10001229
-    CALL FID_conflict:__wfopen          ; 10001231
-        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * FID_conflict:__wfopen(char * _Filename, char * _Mode)
+    CALL crt_stdio.c_fopen_FUN_10005560 ; 10001231
+        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
     ADD ESP,0x8                         ; 10001236
     TEST EAX,EAX                        ; 10001239
     JNZ 0x100012d3                      ; 1000123b
         ;   XREF to: 100012d3 (CONDITIONAL_JUMP)  ; LAB_100012d3
     PUSH 0x10014080                     ; 10001241 | = "wt"
     PUSH 0x10014068                     ; 10001246 | = ".\\system\\render.ini"
-    CALL FID_conflict:__wfopen          ; 1000124b
-        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * FID_conflict:__wfopen(char * _Filename, char * _Mode)
+    CALL crt_stdio.c_fopen_FUN_10005560 ; 1000124b
+        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
     ADD ESP,0x8                         ; 10001250
     MOV ESI,EAX                         ; 10001253
     PUSH 0x10014058                     ; 10001255 | = "Textures"
     PUSH 0x10014084                     ; 1000125a | = "[%s]\n"
     PUSH ESI                            ; 1000125f
-    CALL FID_conflict:_fwprintf         ; 10001260
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 10001260
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     MOV EAX,dword ptr [ESP + 0x1c]      ; 10001265
     ADD ESP,0xc                         ; 10001269
     PUSH EAX                            ; 1000126c
     PUSH 0x1001408c                     ; 1000126d | = "maxTextures32=%d\n"
     PUSH ESI                            ; 10001272
-    CALL FID_conflict:_fwprintf         ; 10001273
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 10001273
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     MOV EAX,dword ptr [ESP + 0x20]      ; 10001278
     ADD ESP,0xc                         ; 1000127c
     PUSH EAX                            ; 1000127f
     PUSH 0x100140a0                     ; 10001280 | = "maxTextures64=%d\n"
     PUSH ESI                            ; 10001285
-    CALL FID_conflict:_fwprintf         ; 10001286
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 10001286
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     MOV EAX,dword ptr [ESP + 0x24]      ; 1000128b
     ADD ESP,0xc                         ; 1000128f
     PUSH EAX                            ; 10001292
     PUSH 0x100140b4                     ; 10001293 | = "maxTextures128=%d\n"
     PUSH ESI                            ; 10001298
-    CALL FID_conflict:_fwprintf         ; 10001299
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 10001299
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     MOV EAX,dword ptr [ESP + 0x28]      ; 1000129e
     ADD ESP,0xc                         ; 100012a2
     PUSH EAX                            ; 100012a5
     PUSH 0x100140c8                     ; 100012a6 | = "maxTextures256=%d\n"
     PUSH ESI                            ; 100012ab
-    CALL FID_conflict:_fwprintf         ; 100012ac
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 100012ac
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     ADD ESP,0xc                         ; 100012b1
     MOV EAX,[0x10060670]                ; 100012b4 | DAT_10060670
     PUSH EAX                            ; 100012b9
     PUSH 0x100140dc                     ; 100012ba | = "mipMapFlag=%d\n"
     PUSH ESI                            ; 100012bf
-    CALL FID_conflict:_fwprintf         ; 100012c0
-        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int FID_conflict:_fwprintf(FILE * _File, wchar_t * _Format)
+    CALL crt_stdio.c_fprintf_FUN_100054d0 ; 100012c0
+        ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(FILE * file, char * format) | _fwprintf
     ADD ESP,0xc                         ; 100012c5
     PUSH ESI                            ; 100012c8
-    CALL _fclose                        ; 100012c9
-        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int _fclose(FILE * _File)
+    CALL crt_stdio.c__fclose_FUN_10005430 ; 100012c9
+        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(FILE * file)
     ADD ESP,0x4                         ; 100012ce
     JMP 0x1000134f                      ; 100012d1
         ;   XREF to: 1000134f (UNCONDITIONAL_JUMP)  ; LAB_1000134f
     PUSH EAX                            ; 100012d3
         ;   Label: LAB_100012d3
-    CALL _fclose                        ; 100012d4
-        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int _fclose(FILE * _File)
+    CALL crt_stdio.c__fclose_FUN_10005430 ; 100012d4
+        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(FILE * file)
     LEA EAX,[ESP + 0x14]                ; 100012d9
     ADD ESP,0x4                         ; 100012dd
     PUSH EAX                            ; 100012e0

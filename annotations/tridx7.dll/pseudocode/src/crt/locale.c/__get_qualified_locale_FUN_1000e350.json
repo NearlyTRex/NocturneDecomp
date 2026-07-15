@@ -1,0 +1,280 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 323,
+    "complexity_score": 185,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 145,
+    "suspect_count": 3,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast"
+    ],
+    "total_lines": 468
+  },
+  "cross_references": [
+    {
+      "addr": "1000b150",
+      "from_addr": "1000b24f",
+      "name": "crt_locale.c__expandlocale_FUN_1000b150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000e350",
+    "address_range": [
+      [
+        "1000e350",
+        "1000e64e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_locale.c___get_qualified_locale_FUN_1000e350",
+    "signature": "int __cdecl crt_locale_c___get_qualified_locale_FUN_1000e350(char *locale,void *id,void *out)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000fad0",
+      "is_variadic": false,
+      "name": "crt_locale.c___crtGetLocaleInfoA_FUN_1000fad0"
+    },
+    {
+      "addr": "1000f9a0",
+      "is_variadic": false,
+      "name": "crt_locale.c___crtGetLocaleInfoW_FUN_1000f9a0"
+    },
+    {
+      "addr": "1000e6b0",
+      "is_variadic": false,
+      "name": "crt_locale.c_GetLcidFromCountry_FUN_1000e6b0"
+    },
+    {
+      "addr": "1000e710",
+      "is_variadic": false,
+      "name": "crt_locale.c_GetLcidFromCountry_FUN_1000e710"
+    },
+    {
+      "addr": "1000e780",
+      "is_variadic": false,
+      "name": "crt_locale.c_GetLcidFromLangCountry_FUN_1000e780"
+    },
+    {
+      "addr": "1000e650",
+      "is_variadic": false,
+      "name": "crt_locale.c_GetLcidFromLanguage_FUN_1000e650"
+    },
+    {
+      "addr": "1000f8b0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__itoa_FUN_1000f8b0"
+    },
+    {
+      "addr": "1000ff10",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_atoi_FUN_1000ff10"
+    },
+    {
+      "addr": "1000fc10",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_wcstol_FUN_1000fc10"
+    },
+    {
+      "addr": "EXTERNAL:0000003e",
+      "is_variadic": false,
+      "name": "GetUserDefaultLCID"
+    },
+    {
+      "addr": "EXTERNAL:0000003d",
+      "is_variadic": false,
+      "name": "IsValidCodePage"
+    },
+    {
+      "addr": "EXTERNAL:0000003c",
+      "is_variadic": false,
+      "name": "IsValidLocale"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012d28",
+      "name": "s_OCP_10012d28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012d29",
+      "name": "s_OCP_10012d28+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012d2c",
+      "name": "s_ACP_10012d2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012d2d",
+      "name": "s_ACP_10012d2c+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242270",
+      "name": "PTR_IsValidLocale_10242270",
+      "type": "void*",
+      "value": "002426fa"
+    },
+    {
+      "addr": "10242274",
+      "name": "PTR_IsValidCodePage_10242274",
+      "type": "void*",
+      "value": "0024270a"
+    },
+    {
+      "addr": "10242278",
+      "name": "PTR_GetUserDefaultLCID_10242278",
+      "type": "void*",
+      "value": "0024271c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000b24f",
+        "call_type": "direct",
+        "caller": "crt_locale.c__expandlocale_FUN_1000b150",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.946153846153846,
+    "instruction_count": 260,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CALL": 10,
+      "CALLIND": 4,
+      "CBRANCH": 33,
+      "COPY": 261,
+      "INT_ADD": 131,
+      "INT_AND": 168,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 152,
+      "INT_LESS": 21,
+      "INT_MULT": 4,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 75,
+      "INT_SUB": 75,
+      "INT_XOR": 13,
+      "INT_ZEXT": 5,
+      "LOAD": 89,
+      "POPCOUNT": 75,
+      "RETURN": 11,
+      "STORE": 64
+    },
+    "pcode_op_count": 1286
+  },
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 144,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "locale",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "id",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "out",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(ushort *)((int)id",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)id + 4) = local_88;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(char *)((int)out",
+      "severity": "moderate",
+      "text": "_itoa((uint)local_88,(char *)((int)out + 0x80),10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 132,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "*(uint *)id = CONCAT22(uStack_8a,local_8c);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

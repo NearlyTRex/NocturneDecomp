@@ -1,0 +1,270 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 198,
+    "complexity_score": 237,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 102,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_noreturn"
+    ],
+    "total_lines": 300
+  },
+  "cross_references": [],
+  "function": {
+    "address": "1000bbc0",
+    "address_range": [
+      [
+        "1000bbc0",
+        "1000bc9b"
+      ],
+      [
+        "1000bc9f",
+        "1000bd67"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_signal.c_raise_FUN_1000bbc0",
+    "signature": "int __cdecl crt_signal_c_raise_FUN_1000bbc0(int sig)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000bda0",
+      "is_variadic": false,
+      "name": "crt_signal.c_siglookup_FUN_1000bda0"
+    },
+    {
+      "addr": "100075c0",
+      "is_variadic": false,
+      "name": "crt_startup.c__exit_crt_FUN_100075c0"
+    },
+    {
+      "addr": "100077b0",
+      "is_variadic": false,
+      "name": "crt_thread.c__getptd_FUN_100077b0"
+    },
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "crt_thread.c__lock_FUN_100059a0"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "crt_thread.c__unlock_FUN_10005a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1000bd68",
+      "name": "switchdataD_1000bd68",
+      "type": "undefined1*",
+      "value": "1000bbf1"
+    },
+    {
+      "addr": "1000bd86",
+      "name": "PTR_caseD_3_1000bd84+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017748",
+      "name": "DAT_10017748",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001774c",
+      "name": "DAT_1001774c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100178f8",
+      "name": "DAT_100178f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100178fc",
+      "name": "DAT_100178fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017900",
+      "name": "DAT_10017900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017904",
+      "name": "DAT_10017904",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.709219858156028,
+    "instruction_count": 141,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "BRANCHIND": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 19,
+      "COPY": 110,
+      "INT_ADD": 58,
+      "INT_AND": 96,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 82,
+      "INT_LEFT": 2,
+      "INT_LESS": 15,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 42,
+      "INT_SUB": 39,
+      "INT_XOR": 5,
+      "LOAD": 28,
+      "POPCOUNT": 40,
+      "RETURN": 3,
+      "STORE": 36
+    },
+    "pcode_op_count": 664
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sig",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar6;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_100178f8",
+      "severity": "mild",
+      "text": "ppvStack_c = &DAT_100178f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_100178f8",
+      "severity": "mild",
+      "text": "pcVar6 = DAT_100178f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10017904",
+      "severity": "mild",
+      "text": "ppvStack_c = &DAT_10017904;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_10017904",
+      "severity": "mild",
+      "text": "pcVar6 = DAT_10017904;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_100178fc",
+      "severity": "mild",
+      "text": "ppvStack_c = &DAT_100178fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_100178fc",
+      "severity": "mild",
+      "text": "pcVar6 = DAT_100178fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_10017900",
+      "severity": "mild",
+      "text": "ppvStack_c = &DAT_10017900;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_10017900",
+      "severity": "mild",
+      "text": "pcVar6 = DAT_10017900;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (pcVar6 == (code *)0x1) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (pcVar6 == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 59,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
+}

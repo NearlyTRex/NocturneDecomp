@@ -1,0 +1,225 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 171,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 178
+  },
+  "cross_references": [],
+  "function": {
+    "address": "100057f0",
+    "address_range": [
+      [
+        "100057f0",
+        "100058b9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c__DllMainCRTStartup_FUN_100057f0",
+    "signature": "int __cdecl crt_startup_c__DllMainCRTStartup_FUN_100057f0(HINSTANCE hinst_dll,DWORD reason,LPVOID reserved)"
+  },
+  "function_calls": [
+    {
+      "addr": "10007910",
+      "is_variadic": false,
+      "name": "crt_heap.c__heap_term_FUN_10007910"
+    },
+    {
+      "addr": "100056a0",
+      "is_variadic": false,
+      "name": "crt_startup.c___CRTDLL_INIT_FUN_100056a0"
+    },
+    {
+      "addr": "100085c0",
+      "is_variadic": false,
+      "name": "crt_startup.c_DllMain_FUN_100085c0"
+    },
+    {
+      "addr": "10007760",
+      "is_variadic": false,
+      "name": "crt_thread.c__mtterm_FUN_10007760"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c60",
+      "name": "DAT_10016c60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241984",
+      "name": "DAT_10241984",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.932584269662921,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 15,
+      "COPY": 82,
+      "INT_ADD": 19,
+      "INT_AND": 48,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 38,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 19,
+      "INT_SUB": 32,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 350
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hinst_dll",
+        "offset": 4,
+        "size": 4,
+        "type": "HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "reason",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "reserved",
+        "offset": 12,
+        "size": 4,
+        "type": "LPVOID"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "if (DAT_10016c60 < 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10016c60",
+      "severity": "mild",
+      "text": "DAT_10016c60 = DAT_10016c60 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_10241984 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_10241984",
+      "severity": "mild",
+      "text": "if (DAT_10241984 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10241984",
+      "severity": "mild",
+      "text": "iVar3 = (*DAT_10241984)(hinst_dll,reason,reserved);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar1 != 0) && (DAT_10241984 != (code *)0x0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_10241984",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (DAT_10241984 != (code *)0x0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_10241984",
+      "severity": "mild",
+      "text": "iVar1 = (*DAT_10241984)(hinst_dll,reason,reserved);",
+      "type": "undefined_data"
+    }
+  ]
+}

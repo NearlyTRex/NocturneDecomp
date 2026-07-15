@@ -1,0 +1,123 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 409,
+    "complexity_score": 124,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 99,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 508
+  },
+  "cross_references": [],
+  "function": {
+    "address": "1000d3a0",
+    "address_range": [
+      [
+        "1000d3a0",
+        "1000d713"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c___get_lc_time_FUN_1000d3a0",
+    "signature": "uint __cdecl crt_time_c___get_lc_time_FUN_1000d3a0(__lc_time_data *lc_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000f6e0",
+      "is_variadic": false,
+      "name": "crt_locale.c___getlocaleinfo_FUN_1000f6e0"
+    },
+    {
+      "addr": "1000d960",
+      "is_variadic": false,
+      "name": "crt_time.c__maketimefmt_FUN_1000d960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001795e",
+      "name": "DAT_1001795e",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10017960",
+      "name": "DAT_10017960",
+      "type": "undefined2",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 363,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 43,
+      "CBRANCH": 1,
+      "COPY": 327,
+      "INT_ADD": 95,
+      "INT_AND": 177,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 176,
+      "INT_OR": 42,
+      "INT_SCARRY": 43,
+      "INT_SLESS": 88,
+      "INT_SUB": 217,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 88,
+      "RETURN": 2,
+      "STORE": 217
+    },
+    "pcode_op_count": 1573
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lc_time",
+        "offset": 4,
+        "size": 4,
+        "type": "__lc_time_data *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_10017960",
+      "severity": "mild",
+      "text": "uVar43 = (uint)DAT_10017960;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_1001795e",
+      "severity": "mild",
+      "text": "uVar40 = (uint)DAT_1001795e;",
+      "type": "undefined_data"
+    }
+  ]
+}

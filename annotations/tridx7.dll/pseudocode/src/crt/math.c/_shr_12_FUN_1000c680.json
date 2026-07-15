@@ -1,0 +1,115 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 11,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
+  "cross_references": [
+    {
+      "addr": "1000e8f0",
+      "from_addr": "1000eaa8",
+      "name": "crt_math.c___multtwelve_FUN_1000e8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000cf50",
+      "from_addr": "1000d1ff",
+      "name": "crt_stdio.c__i10_output_FUN_1000cf50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000c680",
+    "address_range": [
+      [
+        "1000c680",
+        "1000c6b5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c__shr_12_FUN_1000c680",
+    "signature": "void __cdecl crt_math_c__shr_12_FUN_1000c680(uint *p)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "1000eaa8",
+        "call_type": "direct",
+        "caller": "crt_math.c___multtwelve_FUN_1000e8f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000d1ff",
+        "call_type": "direct",
+        "caller": "crt_stdio.c__i10_output_FUN_1000cf50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 11.26086956521739,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 25,
+      "COPY": 28,
+      "INT_ADD": 8,
+      "INT_AND": 78,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 27,
+      "INT_RIGHT": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 7,
+      "INT_XOR": 2,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "p",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": []
+}
