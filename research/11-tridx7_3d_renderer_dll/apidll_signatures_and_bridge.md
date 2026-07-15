@@ -96,12 +96,28 @@ typedef void APIDLL_GetDisplayContext(HDC* out_hdc);
 // ReleaseDisplayContext (10004da0): passes the handle by VALUE to ReleaseDC (vtbl+0x68).
 typedef void APIDLL_ReleaseDisplayContext(HDC hdc);
 
-// setVideoMode (10002500): caches one pointer arg (DAT_10138fb4) and copies
-// DAT_10014178 (== screen height, guarded `>480 -> fatal`) dwords from it into an
-// internal array. Returns int (0 on failure). param is an array of `height` dwords —
-// most likely per-scanline buffer pointers. (return+params both differ from int(void).)
-typedef int APIDLL_setVideoMode(void** scanline_ptrs);   // param name/type: MEDIUM confidence
+// setVideoMode (10002500): param is the game's array of `height` (DAT_10014178, default
+// 0x1e0) per-scanline framebuffer pointers. CONFIRMED by the hold-buffer lifecycle:
+//   setVideoMode  saves scanline_ptrs[0..h] -> DAT_10225848 (system-RAM row addresses)
+//   lockHoldBuffer   overwrites scanline_ptrs[y] = lockedSurfaceBase + y*lPitch (VRAM)
+//   unlockHoldBuffer restores scanline_ptrs[y] from the saved copy, then Unlocks
+// i.e. a scanline-pointer table swap for direct-to-VRAM software rendering. Returns int.
+typedef int APIDLL_setVideoMode(void** scanline_ptrs);   // HIGH confidence
 ```
+
+## Audit of the 27 nocedit-sourced signatures vs the DLL bodies
+
+Cross-checked all 27 applied prototypes against the tridx7 asm — **none are contradicted**:
+
+- **23 clean** — params/return match the DLL usage exactly.
+- **`APIDLLInformation`** `void(HMODULE, void*)` — CORRECT. (A red-flag sweep showed `in_stack_`
+  refs + "unused params", but that's a decompiler artifact of the large `_chkstk` alloca
+  shifting the params; the body uses param1 as the HINSTANCE for `LoadStringA` and writes the
+  "Terminal Reality Inc" + version buffer to param2.)
+- **5 unimplemented stubs** (signature = intended API, but body ignores args):
+  `setMipMapLevel`→`return 1`; `addParticle`, `add3dLine`, `flushParticleList`,
+  `flushLineList`→`return 0`. The particle system, 3D-line drawing, and mipmapping are not
+  implemented in this DX7 renderer.
 
 ---
 
@@ -152,3 +168,46 @@ trio = per-channel `floor(log2(scale))`), and **11 unreferenced** by the DLL (cl
 texture_filtering, texture_bits, max_texture_size, sizeof×7) so their nocedit names remain
 unverified guesses. Note the DLL WRITES through the RGB pointers — the bridge is
 bidirectional (game supplies pointers, DLL fills the pixel-format results back).
+
+---
+
+# Changes to apply in nocedit.exe (Ghidra DTM)
+
+## A. Function typedefs — create 3, then retype their globals
+
+The 3 exports are still `APIDLL_unknown` in nocedit. Create these FunctionDefinition data
+types (HDC is a standard Windows handle already in the DTM):
+
+```c
+typedef void APIDLL_GetDisplayContext(HDC* out_hdc);      // was APIDLL_unknown (int(void))
+typedef void APIDLL_ReleaseDisplayContext(HDC hdc);       // was APIDLL_unknown
+typedef int  APIDLL_setVideoMode(void** scanline_ptrs);   // was APIDLL_unknown; array of `height` per-row VRAM/RAM pointers
+```
+
+Then retype the three globals in `globals_3F60000` (currently `APIDLL_unknown*`):
+
+| global | new type |
+|--------|----------|
+| `g_APIDLL_GetDisplayContext` | `APIDLL_GetDisplayContext*` |
+| `g_APIDLL_ReleaseDisplayContext` | `APIDLL_ReleaseDisplayContext*` |
+| `g_APIDLL_setVideoMode` | `APIDLL_setVideoMode*` |
+
+## B. CExternalRendererBridge — rename the 3 mislabeled fields
+
+Type stays `int*`; only the names are wrong (DLL stores `floor(log2(scale_factor))`, i.e. the
+per-channel bits-dropped / dither shift — e.g. 3 for a 5-bit channel — NOT a bit count):
+
+| offset | current name | → new name |
+|--------|--------------|-----------|
+| 0x08 | `red_bit_count` | `red_dither_shift` |
+| 0x14 | `green_bit_count` | `green_dither_shift` |
+| 0x20 | `blue_bit_count` | `blue_dither_shift` |
+
+## C. Leave-but-flag (DLL never reads these — names unverifiable, not proven wrong)
+
+`clip_left/top/right/bottom` (0x34–0x40), `texture_filtering` (0x44), `texture_bits` (0x4c),
+`max_texture_size` (0x58), `sizeof1..3` (0x70–0x88). Keep the names but treat as unconfirmed;
+only the game (nocedit) side can validate them.
+
+After these edits, re-export nocedit (`export_nocedit`); the tridx7 side is already applied
+except the 7 struct-blocked exports (add the structs from the top of this doc first).

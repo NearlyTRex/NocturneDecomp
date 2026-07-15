@@ -2,11 +2,11 @@
 
 Statically-linked **MSVC VC6 C runtime**. (The `compiler: watcomcpp` tag in `metadata.json` is a mis-detection — this is MSVC.)
 
-- **Driver code** (real DLL: 12 `APIDLL*` exports + private helpers) is entirely **below 0x10005400** — out of scope.
+- **Driver code** (the `APIDLL*` renderer exports + private helpers; see [`../11-tridx7_3d_renderer_dll/`](../11-tridx7_3d_renderer_dll/)) is entirely **below 0x10005400** — out of scope here.
 - **CRT** = everything **≥ 0x10005400**, catalogued below in the `crt_<header>_<name>_FUN_<addr>` standard.
-- **180 defined CRT functions** (98 FID-named by Ghidra, 82 unnamed internals identified here) + **2 undefined functions** Ghidra missed (see bottom).
+- **248 CRT functions catalogued** — all named; **200 fully signatured** (return type + params + `__cdecl` + snake_case parameter names); the only unsignatured function is the naked `_chkstk`.
 
-`conf`: H=certain · M=likely · L=needs work. Buckets are coarse/conceptual (nocedit.exe convention).
+`conf`: H=certain · M=likely · L=needs work (all rows currently H/M). Buckets are coarse/conceptual (nocedit.exe convention).
 
 ## ✅ Flagged items — verified
 
