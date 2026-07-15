@@ -1,12 +1,12 @@
 // Name: APIDLLbeginScene
 // Address: 10002ce0
 // Address Range: [[10002ce0, 10002d0d]]
-// Convention: unknown
-// Signature: undefined4 APIDLLbeginScene(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLbeginScene(void)
 
 #include "nocturne.h"
 
-uint APIDLLbeginScene(void)
+int __cdecl APIDLLbeginScene(void)
 
 {
   int iVar1;

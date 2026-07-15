@@ -17,7 +17,7 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
   }
   g_APIDLL_kill = (APIDLL_kill *)0x0;
   g_APIDLL_toggle = (APIDLL_toggle *)0x0;
-  g_APIDLL_setVideoMode = (APIDLL_unknown *)0x0;
+  g_APIDLL_setVideoMode = (APIDLL_setVideoMode *)0x0;
   g_APIDLL_setVideoMode2 = (APIDLL_setVideoMode2 *)0x0;
   g_APIDLL_restoreVideoMode = (APIDLL_restoreVideoMode *)0x0;
   g_APIDLL_beginScene = (APIDLL_beginScene *)0x0;
@@ -42,8 +42,8 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
   g_APIDLL_clearZBuffer = (APIDLL_clearZBuffer *)0x0;
   g_APIDLL_clearZBox = (APIDLL_clearZBox *)0x0;
   g_APIDLL_setColorTable16 = (APIDLL_setColorTable16 *)0x0;
-  g_APIDLL_GetDisplayContext = (APIDLL_unknown *)0x0;
-  g_APIDLL_ReleaseDisplayContext = (APIDLL_unknown *)0x0;
+  g_APIDLL_getDisplayContext = (APIDLL_getDisplayContext *)0x0;
+  g_APIDLL_releaseDisplayContext = (APIDLL_releaseDisplayContext *)0x0;
   g_APIDLL_masterZBuffer = (APIDLL_masterZBuffer *)0x0;
   g_APIDLL_restoreZBuffer = (APIDLL_restoreZBuffer *)0x0;
   g_APIDLL_getVideoMemory = (APIDLL_getVideoMemory *)0x0;

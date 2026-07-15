@@ -460,7 +460,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_005ede20 ; 005b6c5f
         ;   XREF to: 005ede20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005b6c64
-    MOV [0x03f6b904],EAX                ; 005b6c67 | g_APIDLL_GetDisplayContext
+    MOV [0x03f6b904],EAX                ; 005b6c67 | g_APIDLL_getDisplayContext
     TEST EAX,EAX                        ; 005b6c6c
     JNZ 0x005b6c7a                      ; 005b6c6e
         ;   XREF to: 005b6c7a (CONDITIONAL_JUMP)  ; LAB_005b6c7a
@@ -472,7 +472,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_005ede20 ; 005b6c86
         ;   XREF to: 005ede20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005b6c8b
-    MOV [0x03f6b908],EAX                ; 005b6c8e | g_APIDLL_ReleaseDisplayContext
+    MOV [0x03f6b908],EAX                ; 005b6c8e | g_APIDLL_releaseDisplayContext
     TEST EAX,EAX                        ; 005b6c93
     JNZ 0x005b6ca1                      ; 005b6c95
         ;   XREF to: 005b6ca1 (CONDITIONAL_JUMP)  ; LAB_005b6ca1
@@ -731,7 +731,7 @@ section .text
     MOV ESI,0x2d01f28                   ; 005b6fdd | g_RedScaleFactor
     PUSH EAX                            ; 005b6fe2
     LEA EAX,[ESP + 0x3b98]              ; 005b6fe3
-    MOV EDI,0x2d01f2c                   ; 005b6fea | g_RedBitCount
+    MOV EDI,0x2d01f2c                   ; 005b6fea | g_RedDitherShift
     PUSH EAX                            ; 005b6fef
     MOV EBP,0x2d01f30                   ; 005b6ff0 | g_GreenBitPosition
     MOV dword ptr [0x03f6b978],EDX      ; 005b6ff5 | g_LoadedExternalDLLRenderer
@@ -740,22 +740,22 @@ section .text
     MOV ECX,0x2d01f24                   ; 005b7000 | g_RedBitPosition
     MOV EAX,0x2d01f34                   ; 005b7005 | g_GreenScaleFactor
     ADD ESP,0xc                         ; 005b700a
-    MOV EDX,0x2d01f38                   ; 005b700d | g_GreenBitCount
+    MOV EDX,0x2d01f38                   ; 005b700d | g_GreenDitherShift
     MOV dword ptr [ESP + 0x3b90],ECX    ; 005b7012 | g_RedBitPosition
     MOV dword ptr [ESP + 0x3b94],ESI    ; 005b7019 | g_RedScaleFactor
-    MOV dword ptr [ESP + 0x3b98],EDI    ; 005b7020 | g_RedBitCount
+    MOV dword ptr [ESP + 0x3b98],EDI    ; 005b7020 | g_RedDitherShift
     MOV dword ptr [ESP + 0x3b9c],EBP    ; 005b7027 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x3ba0],EAX    ; 005b702e | g_GreenScaleFactor
-    MOV dword ptr [ESP + 0x3ba4],EDX    ; 005b7035 | g_GreenBitCount
+    MOV dword ptr [ESP + 0x3ba4],EDX    ; 005b7035 | g_GreenDitherShift
     MOV ECX,0x2d01f3c                   ; 005b703c | g_BlueBitPosition
     MOV ESI,0x2d01f40                   ; 005b7041 | g_BlueScaleFactor
-    MOV EDI,0x2d01f44                   ; 005b7046 | g_BlueBitCount
+    MOV EDI,0x2d01f44                   ; 005b7046 | g_BlueDitherShift
     MOV EBP,0x2d05298                   ; 005b704b | g_BlendMode
     MOV EAX,0x2d02574                   ; 005b7050 | g_CurrentLightingValue
     MOV EDX,0x6793b4                    ; 005b7055 | g_CurrentAlphaValue
     MOV dword ptr [ESP + 0x3ba8],ECX    ; 005b705a | g_BlueBitPosition
     MOV dword ptr [ESP + 0x3bac],ESI    ; 005b7061 | g_BlueScaleFactor
-    MOV dword ptr [ESP + 0x3bb0],EDI    ; 005b7068 | g_BlueBitCount
+    MOV dword ptr [ESP + 0x3bb0],EDI    ; 005b7068 | g_BlueDitherShift
     MOV dword ptr [ESP + 0x3bb4],EBP    ; 005b706f | g_BlendMode
     MOV dword ptr [ESP + 0x3bb8],EAX    ; 005b7076 | g_CurrentLightingValue
     MOV dword ptr [ESP + 0x3bbc],EDX    ; 005b707d | g_CurrentAlphaValue

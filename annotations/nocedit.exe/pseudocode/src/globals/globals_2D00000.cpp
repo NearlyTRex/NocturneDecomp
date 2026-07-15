@@ -28,11 +28,11 @@ SRGBColorPalette* g_CurrentPalette = {};
 
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_RedBitPosition = {};
-_BIT_INTEGER32 g_RedBitCount = {};
+_BIT_INTEGER32 g_RedDitherShift = {};
 _BIT_INTEGER32 g_GreenBitPosition = {};
-_BIT_INTEGER32 g_GreenBitCount = {};
+_BIT_INTEGER32 g_GreenDitherShift = {};
 _BIT_INTEGER32 g_BlueBitPosition = {};
-_BIT_INTEGER32 g_BlueBitCount = {};
+_BIT_INTEGER32 g_BlueDitherShift = {};
 _BIT_INTEGER32 g_RenderStateFlags = {};
 
 // _MMX_INTEGER

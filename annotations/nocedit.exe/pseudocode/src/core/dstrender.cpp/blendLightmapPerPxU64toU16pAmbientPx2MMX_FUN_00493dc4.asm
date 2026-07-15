@@ -21,8 +21,8 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   _MMX_INTEGER g_TotalColorBits
-;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
 ;   _MMX_INTEGER g_BlueBitShift
 ;   uint[256] g_LightmapTexturePalette
 ;   ulong g_SolidColorMode
@@ -152,8 +152,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 00494015 | g_GreenMask32
     PAND MM3,qword ptr [0x00682760]     ; 0049401c | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 00494023 | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049402a | g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00494031 | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049402a | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00494031 | g_TotalDitherShift
     POR MM0,MM2                         ; 00494038
     POR MM0,MM3                         ; 0049403b
     MOVQ MM6,MM0                        ; 0049403e
@@ -185,8 +185,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 0049409e | g_GreenMask32
     PAND MM3,qword ptr [0x00682760]     ; 004940a5 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 004940ac | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 004940b3 | g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 004940ba | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 004940b3 | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 004940ba | g_TotalDitherShift
     POR MM0,MM2                         ; 004940c1
     POR MM0,MM3                         ; 004940c4
     PSLLQ MM0,0x10                      ; 004940c7

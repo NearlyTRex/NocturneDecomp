@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void APIDLLselectCard(undefined4 param_1)
+; int __cdecl APIDLLselectCard(int card_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   card_index
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10014210
@@ -23,7 +25,7 @@ section .text
     MOV [0x10014210],EAX                ; 100052cf | DAT_10014210
     PUSH ECX                            ; 100052d4
     CALL APIDLLinit                     ; 100052d5
-        ;   XREF to: 10001a80 (UNCONDITIONAL_CALL)  ; undefined APIDLLinit() | Ordinal_19
+        ;   XREF to: 10001a80 (UNCONDITIONAL_CALL)  ; int APIDLLinit(HWND windowHandle, CExternalRendererBridge * interface) | Ordinal_19
     ADD ESP,0x8                         ; 100052da
     RET                                 ; 100052dd
 

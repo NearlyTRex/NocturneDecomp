@@ -42,14 +42,14 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
        (int)(0xff / (ulonglong)
                     (local_70.ddpfPixelFormat.dwRedYMask.dwRBitMask >>
                     (g_RedBitPosition.bytes[0] & 0x1f)));
-  g_RedBitCount.dword = 0;
+  g_RedDitherShift.dword = 0;
   uVar3 = g_RedScaleFactor;
   if (g_RedScaleFactor == 0) {
-    g_RedBitCount.dword = 0x20;
+    g_RedDitherShift.dword = 0x20;
   }
   else {
     for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
-      g_RedBitCount.dword = g_RedBitCount.dword + 1;
+      g_RedDitherShift.dword = g_RedDitherShift.dword + 1;
     }
   }
   g_GreenBitPosition.dword = 0;
@@ -61,14 +61,14 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
        (int)(0xff / (ulonglong)
                     (local_70.ddpfPixelFormat.dwGreenUMask.dwGBitMask >>
                     (g_GreenBitPosition.bytes[0] & 0x1f)));
-  g_GreenBitCount.dword = 0;
+  g_GreenDitherShift.dword = 0;
   uVar4 = g_GreenScaleFactor;
   if (g_GreenScaleFactor == 0) {
-    g_GreenBitCount.dword = 0x20;
+    g_GreenDitherShift.dword = 0x20;
   }
   else {
     for (; 1 < uVar4; uVar4 = uVar4 >> 1) {
-      g_GreenBitCount.dword = g_GreenBitCount.dword + 1;
+      g_GreenDitherShift.dword = g_GreenDitherShift.dword + 1;
     }
   }
   g_BlueBitPosition.dword = 0;
@@ -80,15 +80,15 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
        (int)(0xff / (ulonglong)
                     (local_70.ddpfPixelFormat.dwBlueVMask.dwBBitMask >>
                     (g_BlueBitPosition.bytes[0] & 0x1f)));
-  g_BlueBitCount.dword = 0;
+  g_BlueDitherShift.dword = 0;
   uVar4 = g_BlueScaleFactor;
   if (g_BlueScaleFactor == 0) {
-    g_BlueBitCount.dword = 0x20;
+    g_BlueDitherShift.dword = 0x20;
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();
     return;
   }
   for (; 1 < uVar4; uVar4 = uVar4 >> 1) {
-    g_BlueBitCount.dword = g_BlueBitCount.dword + 1;
+    g_BlueDitherShift.dword = g_BlueDitherShift.dword + 1;
   }
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();
   return;

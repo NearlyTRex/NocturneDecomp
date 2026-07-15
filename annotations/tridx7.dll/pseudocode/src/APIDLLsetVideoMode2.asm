@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void APIDLLsetVideoMode2(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4 )
+; int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **screen_buffer_array)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
+; int              Stack[0xc]:4   bits_per_pixel
+; void * *         Stack[0x10]:4   screen_buffer_array
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10014174
@@ -26,7 +31,7 @@ section .text
     PUSH EAX                            ; 10002bcb
     MOV dword ptr [0x1001417c],EDX      ; 10002bcc | DAT_1001417c
     CALL APIDLLsetVideoMode             ; 10002bd2
-        ;   XREF to: 10002500 (UNCONDITIONAL_CALL)  ; undefined APIDLLsetVideoMode() | Ordinal_31
+        ;   XREF to: 10002500 (UNCONDITIONAL_CALL)  ; int APIDLLsetVideoMode(void * * scanline_ptrs) | Ordinal_31
     ADD ESP,0x4                         ; 10002bd7
     RET                                 ; 10002bda
 

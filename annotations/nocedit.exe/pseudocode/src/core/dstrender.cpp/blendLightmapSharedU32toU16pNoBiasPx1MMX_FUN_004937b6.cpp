@@ -65,7 +65,7 @@ void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004
                   );
   *output_pixel =
        (ushort)((uVar7 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-       (ushort)((uVar7 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-       (ushort)((uVar7 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+       (ushort)((uVar7 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+       (ushort)((uVar7 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
   return;
 }

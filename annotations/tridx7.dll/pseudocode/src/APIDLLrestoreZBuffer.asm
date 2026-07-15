@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLrestoreZBuffer(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)
+; int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   top
+; int              Stack[0xc]:4   mode
+; int              Stack[0x10]:4   right
+; int              Stack[0x14]:4   bottom
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

@@ -129,6 +129,10 @@
       "type":"function_definition"
     },
     {
+      "name":"APIDLL_setVideoMode",
+      "type":"function_definition"
+    },
+    {
       "name":"APIDLL_setVideoMode2",
       "type":"function_definition"
     },
@@ -2453,8 +2457,16 @@
       "type":"struct"
     },
     {
+      "name":"APIDLL_getDisplayContext",
+      "type":"function_definition"
+    },
+    {
       "name":"HDC",
       "type":"typedef"
+    },
+    {
+      "name":"APIDLL_releaseDisplayContext",
+      "type":"function_definition"
     },
     {
       "name":"CREATE_COMPATIBLE_DC_FUNC",
@@ -2541,7 +2553,7 @@
       "type":"typedef"
     },
     {
-      "name":"APIDLL_Information",
+      "name":"APIDLL_information",
       "type":"function_definition"
     },
     {
@@ -10891,6 +10903,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"APIDLL_getDisplayContext",
+      "parameters":[
+        {
+          "name":"out_hdc",
+          "type":"HDC*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"APIDLL_getTextureInfo",
       "parameters":[
         {
@@ -10927,7 +10953,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"APIDLL_Information",
+      "name":"APIDLL_information",
       "parameters":[
         {
           "name":"dll_handle",
@@ -11021,6 +11047,20 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"APIDLL_releaseDisplayContext",
+      "parameters":[
+        {
+          "name":"hdc",
+          "type":"HDC"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -11186,6 +11226,20 @@
         {
           "name":"mipmap_level",
           "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"APIDLL_setVideoMode",
+      "parameters":[
+        {
+          "name":"scanline_ptrs",
+          "type":"void**"
         }
       ],
       "return_type":"int",
@@ -35043,7 +35097,7 @@
         },
         {
           "len":4,
-          "name":"red_bit_count",
+          "name":"red_dither_shift",
           "offset":8,
           "type":"int*"
         },
@@ -35061,7 +35115,7 @@
         },
         {
           "len":4,
-          "name":"green_bit_count",
+          "name":"green_dither_shift",
           "offset":20,
           "type":"int*"
         },
@@ -35079,7 +35133,7 @@
         },
         {
           "len":4,
-          "name":"blue_bit_count",
+          "name":"blue_dither_shift",
           "offset":32,
           "type":"int*"
         },

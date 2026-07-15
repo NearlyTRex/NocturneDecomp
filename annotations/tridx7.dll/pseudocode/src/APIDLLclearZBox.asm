@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLclearZBox(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
+; int __cdecl APIDLLclearZBox(int left,int right,int top,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   right
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   bottom
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70

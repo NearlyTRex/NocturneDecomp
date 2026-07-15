@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLupdateTexture(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; int __cdecl APIDLLupdateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)
 ;
+; Parameters:
+; SMRGLTextureBasic * Stack[0x4]:4   texture_info
+; int              Stack[0x8]:4   texture_dimension
+; void *           Stack[0xc]:4   texture_data
+; void *           Stack[0x10]:4   palette_data
+; void *           Stack[0x14]:4   opacity_data
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10138fb0

@@ -27,19 +27,19 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
      ((y <= g_ClipBottom && (g_BitsPerPixel != 8)))) {
     if (g_BitsPerPixel == 0x10) {
       uVar1 = ((ushort *)g_ScreenBufferArray[y])[x];
-      uVar4 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedBitCount.bytes[0] & 0x1f)
+      uVar4 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedDitherShift.bytes[0] & 0x1f)
       ;
       uVar5 = (uint)(uVar1 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
-              (g_GreenBitCount.bytes[0] & 0x1f);
+              (g_GreenDitherShift.bytes[0] & 0x1f);
       uVar6 = (uint)(uVar1 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
-              (g_BlueBitCount.bytes[0] & 0x1f);
+              (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
       puVar7 = &((uint *)g_ScreenBufferArray[y])[x];
-      uVar4 = (*puVar7 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedBitCount.bytes[0] & 0x1f);
-      uVar5 = (*puVar7 >> (g_GreenBitPosition.bytes[0] & 0x1f)) << (g_GreenBitCount.bytes[0] & 0x1f)
+      uVar4 = (*puVar7 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedDitherShift.bytes[0] & 0x1f);
+      uVar5 = (*puVar7 >> (g_GreenBitPosition.bytes[0] & 0x1f)) << (g_GreenDitherShift.bytes[0] & 0x1f)
       ;
-      uVar6 = (*puVar7 >> (g_BlueBitPosition.bytes[0] & 0x1f)) << (g_BlueBitCount.bytes[0] & 0x1f);
+      uVar6 = (*puVar7 >> (g_BlueBitPosition.bytes[0] & 0x1f)) << (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     iVar3 = palette_index * 3;
     fVar2 = 1.0 - blend_factor;
@@ -49,12 +49,12 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
     local_2c = (uint)(longlong)
                      ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +
                                  (float)(uVar5 & 0xff) * blend_factor));
-    uVar7 = local_34 >> (g_RedBitCount.bytes[0] & 0x1f);
-    uVar2 = local_2c >> (g_GreenBitCount.bytes[0] & 0x1f);
+    uVar7 = local_34 >> (g_RedDitherShift.bytes[0] & 0x1f);
+    uVar2 = local_2c >> (g_GreenDitherShift.bytes[0] & 0x1f);
     local_2c = (uint)(longlong)
                      ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +
                                  (float)(uVar6 & 0xff) * blend_factor));
-    uVar3 = local_2c >> (g_BlueBitCount.bytes[0] & 0x1f);
+    uVar3 = local_2c >> (g_BlueDitherShift.bytes[0] & 0x1f);
     if (g_BitsPerPixel != 0x10) {
       ((uint *)g_ScreenBufferArray[y])[x] =
            uVar7 << (g_RedBitPosition.bytes[0] & 0x1f) |

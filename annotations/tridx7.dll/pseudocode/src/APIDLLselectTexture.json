@@ -14,16 +14,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 149,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 24
   },
@@ -36,9 +35,9 @@
         "10003ec4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLselectTexture",
-    "signature": "undefined4 APIDLLselectTexture(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
+    "signature": "int __cdecl APIDLLselectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)"
   },
   "function_calls": [
     {
@@ -77,9 +76,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -103,116 +102,80 @@
     "pcode_op_count": 35
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_dimension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_data",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_data",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "opacity_data",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint APIDLLselectTexture(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint APIDLLselectTexture(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint APIDLLselectTexture(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint APIDLLselectTexture(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint APIDLLselectTexture(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "DAT_1020de38 = param_3;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 6,
       "match": "DAT_1020de38",
       "severity": "mild",
-      "text": "DAT_1020de38 = param_3;",
+      "text": "DAT_1020de38 = texture_data;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "DAT_10138fb0 = param_4;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 7,
       "match": "DAT_10138fb0",
       "severity": "mild",
-      "text": "DAT_10138fb0 = param_4;",
+      "text": "DAT_10138fb0 = palette_data;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "DAT_1024061c = param_5;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_1024061c",
       "severity": "mild",
-      "text": "DAT_1024061c = param_5;",
+      "text": "DAT_1024061c = opacity_data;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_10014138 = FUN_10001470(param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_10014138",
       "severity": "mild",
-      "text": "DAT_10014138 = FUN_10001470(param_1);",
+      "text": "DAT_10014138 = FUN_10001470(texture_info);",
       "type": "undefined_data"
     }
   ]

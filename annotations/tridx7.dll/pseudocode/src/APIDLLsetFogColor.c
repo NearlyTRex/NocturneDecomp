@@ -1,20 +1,20 @@
 // Name: APIDLLsetFogColor
 // Address: 100049f0
 // Address Range: [[100049f0, 10004a52]]
-// Convention: unknown
-// Signature: undefined4 APIDLLsetFogColor(int param_1,int param_2,uint param_3)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLsetFogColor(int red,int green,int blue)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint APIDLLsetFogColor(int param_1,int param_2,uint param_3)
+int __cdecl APIDLLsetFogColor(int red,int green,int blue)
 
 {
                     /* 0x49f0  29  APIDLLsetFogColor */
-  DAT_100141bc = param_1;
-  DAT_100141c0 = param_2;
-  _DAT_100141c4 = param_3;
+  DAT_100141bc = red;
+  DAT_100141c0 = green;
+  _DAT_100141c4 = blue;
   if (DAT_10014204 == 0) {
     APIDLLbeginScene();
   }

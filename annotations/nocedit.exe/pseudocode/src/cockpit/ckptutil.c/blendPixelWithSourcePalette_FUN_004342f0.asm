@@ -19,11 +19,11 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   _BIT_INTEGER32 g_RedBitPosition
-;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_RedDitherShift
 ;   _BIT_INTEGER32 g_GreenBitPosition
-;   _BIT_INTEGER32 g_GreenBitCount
+;   _BIT_INTEGER32 g_GreenDitherShift
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   _BIT_INTEGER32 g_BlueBitCount
+;   _BIT_INTEGER32 g_BlueDitherShift
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
@@ -75,7 +75,7 @@ section .text
     MOV CL,byte ptr [0x02d01f24]        ; 00434360 | g_RedBitPosition
     MOV EAX,dword ptr [EBX]             ; 00434366
     SHR EAX,CL                          ; 00434368
-    MOV CL,byte ptr [0x02d01f2c]        ; 0043436a | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 0043436a | g_RedDitherShift
     SHL EAX,CL                          ; 00434370
     XOR EDI,EDI                         ; 00434372
     AND EAX,0xff                        ; 00434374
@@ -88,7 +88,7 @@ section .text
     FXCH                                ; 00434390
     FMUL ST1                            ; 00434392
     SHR EAX,CL                          ; 00434394
-    MOV CL,byte ptr [0x02d01f38]        ; 00434396 | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 00434396 | g_GreenDitherShift
     SHL EAX,CL                          ; 0043439c
     AND EAX,0xff                        ; 0043439e
     MOV dword ptr [ESP + 0x18],EDI      ; 004343a3
@@ -98,7 +98,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004343b5
     FMUL ST2                            ; 004343b7
     SHR EAX,CL                          ; 004343b9
-    MOV CL,byte ptr [0x02d01f44]        ; 004343bb | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 004343bb | g_BlueDitherShift
     SHL EAX,CL                          ; 004343c1
     AND EAX,0xff                        ; 004343c3
     MOV dword ptr [ESP + 0x18],EDI      ; 004343c8
@@ -135,7 +135,7 @@ section .text
     FMULP ST3                           ; 0043442e
     FLD float ptr [ESP]                 ; 00434430
     FLD float ptr [ESP + 0x4]           ; 00434433
-    MOV CL,byte ptr [0x02d01f2c]        ; 00434437 | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 00434437 | g_RedDitherShift
     FXCH ST3                            ; 0043443d
     FADD ST0,ST1                        ; 0043443f
     FXCH ST2                            ; 00434441
@@ -169,13 +169,13 @@ section .text
     SHR EDI,CL                          ; 0043448b
     CALL crt_math.c_round_FUN_005fe6b0  ; 0043448d
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
-    MOV CL,byte ptr [0x02d01f38]        ; 00434492 | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 00434492 | g_GreenDitherShift
     FISTP qword ptr [ESP + 0x14]        ; 00434498
     SHR EAX,CL                          ; 0043449c
     MOV ECX,dword ptr [ESP + 0x14]      ; 0043449e
     MOV dword ptr [ESP + 0x24],ECX      ; 004344a2
     MOV EBX,dword ptr [ESP + 0x24]      ; 004344a6
-    MOV CL,byte ptr [0x02d01f44]        ; 004344aa | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 004344aa | g_BlueDitherShift
     SHR EBX,CL                          ; 004344b0
     MOV ECX,dword ptr [0x0067939c]      ; 004344b2 | g_BitsPerPixel
     SHL ESI,0x2                         ; 004344b8
@@ -210,7 +210,7 @@ section .text
     MOV CL,byte ptr [0x02d01f24]        ; 0043450b | g_RedBitPosition
     MOV EBX,EAX                         ; 00434511
     SHR EBX,CL                          ; 00434513
-    MOV CL,byte ptr [0x02d01f2c]        ; 00434515 | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 00434515 | g_RedDitherShift
     SHL EBX,CL                          ; 0043451b
     XOR EDI,EDI                         ; 0043451d
     AND EBX,0xff                        ; 0043451f
@@ -223,7 +223,7 @@ section .text
     FXCH                                ; 0043453c
     FMUL ST1                            ; 0043453e
     SHR EBX,CL                          ; 00434540
-    MOV CL,byte ptr [0x02d01f38]        ; 00434542 | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 00434542 | g_GreenDitherShift
     SHL EBX,CL                          ; 00434548
     MOV ECX,EBX                         ; 0043454a
     AND ECX,0xff                        ; 0043454c
@@ -233,7 +233,7 @@ section .text
     MOV CL,byte ptr [0x02d01f3c]        ; 0043455e | g_BlueBitPosition
     FMUL ST2                            ; 00434564
     SHR EAX,CL                          ; 00434566
-    MOV CL,byte ptr [0x02d01f44]        ; 00434568 | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 00434568 | g_BlueDitherShift
     SHL EAX,CL                          ; 0043456e
     AND EAX,0xff                        ; 00434570
     MOV dword ptr [ESP + 0x10],EDI      ; 00434575

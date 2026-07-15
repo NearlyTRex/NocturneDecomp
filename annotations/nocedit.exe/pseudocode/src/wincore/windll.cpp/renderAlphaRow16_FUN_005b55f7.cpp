@@ -47,8 +47,8 @@ LAB_005b5640:
       uVar11 = (ulonglong)SVar1 ^ (ulonglong)g_AlphaTable[0xff];
       uVar7 = (uint)*destPixels;
       uVar21 = (uint7)((uVar7 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
-               (uint7)((uVar7 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
-               (uint7)((uVar7 & g_RedMask16.mm) << g_TotalColorBits.mm);
+               (uint7)((uVar7 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |
+               (uint7)((uVar7 & g_RedMask16.mm) << g_TotalDitherShift.mm);
       uVar10 = (ushort)(((uVar21 >> 0x18) << 0x30) >> 0x28);
       uVar6 = CONCAT21(uVar10,(char)(uVar21 >> 0x10));
       uVar9 = (ushort)uVar21;
@@ -96,8 +96,8 @@ LAB_005b5640:
       }
 LAB_005b56c3:
       *destPixels = (ushort)((uVar11 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-                    (ushort)((uVar11 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-                    (ushort)((uVar11 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+                    (ushort)((uVar11 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+                    (ushort)((uVar11 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
     }
     else {
       if (64999 < (int)uVar7) goto LAB_005b56c3;

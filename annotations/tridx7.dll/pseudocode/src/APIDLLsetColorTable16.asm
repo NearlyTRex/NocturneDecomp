@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLsetColorTable16(int param_1,ushort *param_2)
+; int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   source_palette
+; void *           Stack[0x8]:4   color_table
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x24]:4  local_24

@@ -1,19 +1,19 @@
 // Name: APIDLLdrawPolygon2
 // Address: 100043c0
 // Address Range: [[100043c0, 100044ac]]
-// Convention: unknown
-// Signature: undefined4 APIDLLdrawPolygon2(int *param_1,int param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 
 #include "nocturne.h"
 
-uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)
+int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 
 {
   short sVar1;
   short sVar2;
   short *psVar3;
   int iVar4;
-  int *piVar5;
+  SRenderVertex **ppSVar5;
   int iVar6;
   int iVar7;
   
@@ -21,29 +21,31 @@ uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)
   if (DAT_10014204 == 0) {
     return 0;
   }
-  FUN_10003f10(param_3);
-  iVar6 = *(int *)(*param_1 + 8);
-  if (1 < param_2) {
-    iVar4 = param_2 + -1;
-    piVar5 = param_1;
+  FUN_10003f10(render_flags);
+  iVar6 = ((*vertex_array)->projected_vertex).transformed_z;
+  if (1 < vertex_count) {
+    iVar4 = vertex_count + -1;
+    ppSVar5 = vertex_array;
     do {
-      piVar5 = piVar5 + 1;
-      if (iVar6 < *(int *)(*piVar5 + 8)) {
-        iVar6 = *(int *)(*piVar5 + 8);
+      ppSVar5 = ppSVar5 + 1;
+      iVar7 = ((*ppSVar5)->projected_vertex).transformed_z;
+      if (iVar6 < iVar7) {
+        iVar6 = iVar7;
       }
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
   iVar4 = 0;
-  if (0 < param_2) {
+  if (0 < vertex_count) {
     do {
       iVar7 = iVar4 + 1;
-      FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);
+      FUN_100044b0(vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,
+                   iVar6);
       iVar4 = iVar7;
-    } while (iVar7 < param_2);
+    } while (iVar7 < vertex_count);
   }
   iVar4 = 0;
-  iVar6 = param_2 + -2;
+  iVar6 = vertex_count + -2;
   if (0 < iVar6) {
     sVar1 = (short)DAT_10014228;
     iVar7 = DAT_1001422c * 2;
@@ -58,7 +60,7 @@ uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)
       psVar3 = psVar3 + 3;
     } while (iVar4 < iVar6);
   }
-  DAT_10014228 = DAT_10014228 + param_2;
+  DAT_10014228 = DAT_10014228 + vertex_count;
   if (0x3e76 < DAT_10014228) {
     FUN_100047b0();
   }

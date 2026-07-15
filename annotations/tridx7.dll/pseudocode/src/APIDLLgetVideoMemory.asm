@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLgetVideoMemory(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+; int __cdecl APIDLLgetVideoMemory(int *total_memory,int *available_memory,int *memory_type)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   total_memory
+; int *            Stack[0x8]:4   available_memory
+; int *            Stack[0xc]:4   memory_type
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10014208

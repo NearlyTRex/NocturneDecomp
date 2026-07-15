@@ -5,6 +5,10 @@
       "type":"typedef"
     },
     {
+      "name":"CExternalRendererBridge",
+      "type":"struct"
+    },
+    {
       "name":"CHAR",
       "type":"typedef"
     },
@@ -181,6 +185,26 @@
       "type":"typedef"
     },
     {
+      "name":"SMRGLHeaderBasic",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLTextureBasic",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLVertex",
+      "type":"struct"
+    },
+    {
+      "name":"SProjectedVertex",
+      "type":"struct"
+    },
+    {
+      "name":"SRenderVertex",
+      "type":"struct"
+    },
+    {
       "name":"SectionFlags",
       "type":"enum"
     },
@@ -191,6 +215,22 @@
     {
       "name":"UINT",
       "type":"typedef"
+    },
+    {
+      "name":"UIntegerFloat",
+      "type":"union"
+    },
+    {
+      "name":"SClipPlane",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLHeaderPrimitive",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLPrimitiveTriangle",
+      "type":"struct"
     },
     {
       "name":"ULONG_PTR",
@@ -503,7 +543,7 @@
   ],
   "enums":[
     {
-      "cat":"/fltintrn.h",
+      "cat":"/Nocturne/Enum/System/fltintrn.h",
       "importable":true,
       "name":"enum_3272",
       "size":4,
@@ -684,7 +724,7 @@
   "function_definitions":[
     {
       "calling_convention":"unknown",
-      "cat":"/new.h",
+      "cat":"/Nocturne/FunctionDefinition/System/new.h",
       "importable":true,
       "name":"_PNH_t",
       "parameters":[
@@ -698,7 +738,7 @@
     },
     {
       "calling_convention":"unknown",
-      "cat":"/signal.h",
+      "cat":"/Nocturne/FunctionDefinition/System/signal.h",
       "importable":true,
       "name":"_sigfn_t",
       "parameters":[
@@ -712,7 +752,7 @@
     },
     {
       "calling_convention":"unknown",
-      "cat":"/WinDef.h/functions",
+      "cat":"/Nocturne/FunctionDefinition/System/WinDef.h",
       "importable":true,
       "name":"FARPROC",
       "parameters":[],
@@ -721,7 +761,7 @@
     },
     {
       "calling_convention":"unknown",
-      "cat":"/wincon.h/functions",
+      "cat":"/Nocturne/FunctionDefinition/System/wincon.h",
       "importable":true,
       "name":"PHANDLER_ROUTINE",
       "parameters":[
@@ -737,7 +777,7 @@
   "structs":[
     {
       "alig":4,
-      "cat":"/excpt.h",
+      "cat":"/Nocturne/Struct/System/excpt.h",
       "desc":"",
       "fields":[
         {
@@ -899,7 +939,7 @@
     },
     {
       "alig":4,
-      "cat":"/winnls.h",
+      "cat":"/Nocturne/Struct/System/winnls.h",
       "desc":"",
       "fields":[
         {
@@ -929,7 +969,7 @@
     },
     {
       "alig":4,
-      "cat":"/stdlib.h",
+      "cat":"/Nocturne/Struct/System/stdlib.h",
       "desc":"",
       "fields":[
         {
@@ -947,7 +987,7 @@
     },
     {
       "alig":4,
-      "cat":"/stdlib.h",
+      "cat":"/Nocturne/Struct/System/stdlib.h",
       "desc":"",
       "fields":[
         {
@@ -965,7 +1005,7 @@
     },
     {
       "alig":4,
-      "cat":"/excpt.h",
+      "cat":"/Nocturne/Struct/System/excpt.h",
       "desc":"",
       "fields":[
         {
@@ -989,7 +1029,7 @@
     },
     {
       "alig":4,
-      "cat":"/excpt.h",
+      "cat":"/Nocturne/Struct/System/excpt.h",
       "desc":"",
       "fields":[
         {
@@ -1037,7 +1077,7 @@
     },
     {
       "alig":4,
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -1103,7 +1143,7 @@
     },
     {
       "alig":4,
-      "cat":"/mbstring.h",
+      "cat":"/Nocturne/Struct/System/mbstring.h",
       "desc":"",
       "fields":[
         {
@@ -1163,7 +1203,7 @@
     },
     {
       "alig":4,
-      "cat":"/mtdll.h",
+      "cat":"/Nocturne/Struct/System/mtdll.h",
       "desc":"",
       "fields":[
         {
@@ -1187,7 +1227,7 @@
     },
     {
       "alig":1,
-      "cat":"/stdlib.h",
+      "cat":"/Nocturne/Struct/System/stdlib.h",
       "desc":"",
       "fields":[
         {
@@ -1205,7 +1245,7 @@
     },
     {
       "alig":1,
-      "cat":"/stdlib.h",
+      "cat":"/Nocturne/Struct/System/stdlib.h",
       "desc":"",
       "fields":[
         {
@@ -1224,7 +1264,7 @@
     },
     {
       "alig":4,
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -1248,7 +1288,7 @@
     },
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -1284,7 +1324,7 @@
     },
     {
       "alig":4,
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -1332,7 +1372,7 @@
     },
     {
       "alig":4,
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -1398,7 +1438,7 @@
     },
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -1428,7 +1468,7 @@
     },
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -1548,7 +1588,7 @@
     },
     {
       "alig":4,
-      "cat":"/fltintrn.h",
+      "cat":"/Nocturne/Struct/System/fltintrn.h",
       "desc":"",
       "fields":[
         {
@@ -1584,7 +1624,7 @@
     },
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -1608,7 +1648,7 @@
     },
     {
       "alig":2,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -1668,7 +1708,7 @@
     },
     {
       "alig":4,
-      "cat":"/mtdll.h",
+      "cat":"/Nocturne/Struct/System/mtdll.h",
       "desc":"",
       "fields":[
         {
@@ -1968,7 +2008,7 @@
     },
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -2022,7 +2062,7 @@
     },
     {
       "alig":1,
-      "cat":"/setlocal.h",
+      "cat":"/Nocturne/Struct/System/setlocal.h",
       "desc":"",
       "fields":[
         {
@@ -2052,7 +2092,229 @@
     },
     {
       "alig":4,
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"red_bit_position",
+          "offset":0,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"red_scale_factor",
+          "offset":4,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"red_dither_shift",
+          "offset":8,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"green_bit_position",
+          "offset":12,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"green_scale_factor",
+          "offset":16,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"green_dither_shift",
+          "offset":20,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"blue_bit_position",
+          "offset":24,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"blue_scale_factor",
+          "offset":28,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"blue_dither_shift",
+          "offset":32,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"blend_mode",
+          "offset":36,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"current_lighting",
+          "offset":40,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"current_alpha",
+          "offset":44,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"console_text_color",
+          "offset":48,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"clip_left",
+          "offset":52,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"clip_top",
+          "offset":56,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"clip_right",
+          "offset":60,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"clip_bottom",
+          "offset":64,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"texture_filtering",
+          "offset":68,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"texture_dimension",
+          "offset":72,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"texture_bits",
+          "offset":76,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"system_memory_size",
+          "offset":80,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"video_memory_size",
+          "offset":84,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"max_texture_size",
+          "offset":88,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"frame_buffer_ptr",
+          "offset":92,
+          "type":"void**"
+        },
+        {
+          "len":4,
+          "name":"system_initialized",
+          "offset":96,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"agp_texture_mode",
+          "offset":100,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"processor_type",
+          "offset":104,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"rendering_quality",
+          "offset":108,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"sizeof1",
+          "offset":112,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof2",
+          "offset":116,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof4",
+          "offset":120,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof5",
+          "offset":124,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof7",
+          "offset":128,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof6",
+          "offset":132,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sizeof3",
+          "offset":136,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":140,
+      "name":"CExternalRendererBridge",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/WinDef.h",
       "desc":"",
       "fields":[
         {
@@ -2070,7 +2332,7 @@
     },
     {
       "alig":4,
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Struct/System/WinDef.h",
       "desc":"",
       "fields":[
         {
@@ -2937,7 +3199,7 @@
     },
     {
       "alig":1,
-      "cat":"/internal.h",
+      "cat":"/Nocturne/Struct/System/internal.h",
       "desc":"",
       "fields":[
         {
@@ -2967,7 +3229,7 @@
     },
     {
       "alig":4,
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Struct/System/crtdefs.h",
       "desc":"",
       "fields":[
         {
@@ -3135,7 +3397,7 @@
     },
     {
       "alig":4,
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Struct/System/crtdefs.h",
       "desc":"",
       "fields":[
         {
@@ -3159,7 +3421,7 @@
     },
     {
       "alig":4,
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Struct/System/crtdefs.h",
       "desc":"",
       "fields":[
         {
@@ -3194,8 +3456,44 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"A",
+          "offset":0,
+          "type":"UIntegerFloat"
+        },
+        {
+          "len":4,
+          "name":"B",
+          "offset":4,
+          "type":"UIntegerFloat"
+        },
+        {
+          "len":4,
+          "name":"C",
+          "offset":8,
+          "type":"UIntegerFloat"
+        },
+        {
+          "len":4,
+          "name":"D",
+          "offset":12,
+          "type":"UIntegerFloat"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SClipPlane",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
-      "cat":"/mtdll.h",
+      "cat":"/Nocturne/Struct/System/mtdll.h",
       "desc":"",
       "fields":[
         {
@@ -3272,8 +3570,236 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"type",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count",
+          "offset":4,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SMRGLHeaderBasic",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderBasic"
+        },
+        {
+          "len":16,
+          "name":"surface_normal",
+          "offset":8,
+          "type":"SClipPlane"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SMRGLHeaderPrimitive",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
+          "len":36,
+          "name":"vertices",
+          "offset":24,
+          "type":"SMRGLVertex[3]"
+        }
+      ],
+      "importable":true,
+      "len":60,
+      "name":"SMRGLPrimitiveTriangle",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderBasic"
+        },
+        {
+          "len":16,
+          "name":"texture_name",
+          "offset":8,
+          "type":"char[16]"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SMRGLTextureBasic",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"vertex_index",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"texture_u",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"texture_v",
+          "offset":8,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"SMRGLVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"transformed_x",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"transformed_y",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"transformed_z",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"inv_z",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"screen_x",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"screen_y",
+          "offset":20,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SProjectedVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"projected_vertex",
+          "offset":0,
+          "type":"SProjectedVertex"
+        },
+        {
+          "len":4,
+          "name":"u",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"v",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"r",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"g",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"b",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"a",
+          "offset":44,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "name":"SRenderVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/crtdefs.h",
       "desc":"",
       "fields":[
         {
@@ -3393,7 +3919,7 @@
     },
     {
       "alig":4,
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Struct/System/crtdefs.h",
       "desc":"",
       "fields":[
         {
@@ -3447,7 +3973,7 @@
     },
     {
       "alig":1,
-      "cat":"/time.h",
+      "cat":"/Nocturne/Struct/System/time.h",
       "desc":"",
       "fields":[
         {
@@ -3515,14 +4041,14 @@
   "typedefs":[
     {
       "base":"localeinfo_struct*",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"_locale_t",
       "type":"typedef"
     },
     {
       "base":"_PNH_t*",
-      "cat":"/new.h",
+      "cat":"/Nocturne/Typedef/System/new.h",
       "function_definition":"_PNH_t",
       "importable":true,
       "name":"_PNH",
@@ -3530,21 +4056,21 @@
     },
     {
       "base":"_tiddata*",
-      "cat":"/mtdll.h",
+      "cat":"/Nocturne/Typedef/System/mtdll.h",
       "importable":true,
       "name":"_ptiddata",
       "type":"typedef"
     },
     {
       "base":"setloc_struct",
-      "cat":"/mtdll.h",
+      "cat":"/Nocturne/Typedef/System/mtdll.h",
       "importable":true,
       "name":"_setloc_struct",
       "type":"typedef"
     },
     {
       "base":"_sigfn_t*",
-      "cat":"/signal.h",
+      "cat":"/Nocturne/Typedef/System/signal.h",
       "function_definition":"_sigfn_t",
       "importable":true,
       "name":"_sigfn",
@@ -3552,56 +4078,56 @@
     },
     {
       "base":"int",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"BOOL",
       "type":"typedef"
     },
     {
       "base":"uchar",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"BYTE",
       "type":"typedef"
     },
     {
       "base":"char",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"CHAR",
       "type":"typedef"
     },
     {
       "base":"_CONTEXT",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"CONTEXT",
       "type":"typedef"
     },
     {
       "base":"ulong",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"DWORD",
       "type":"typedef"
     },
     {
       "base":"int",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"errno_t",
       "type":"typedef"
     },
     {
       "base":"_EXCEPTION_RECORD",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"EXCEPTION_RECORD",
       "type":"typedef"
     },
     {
       "base":"FARPROC*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "function_definition":"FARPROC",
       "importable":true,
       "name":"FARPROC",
@@ -3609,42 +4135,42 @@
     },
     {
       "base":"_iobuf",
-      "cat":"/mbstring.h",
+      "cat":"/Nocturne/Typedef/System/mbstring.h",
       "importable":true,
       "name":"FILE",
       "type":"typedef"
     },
     {
       "base":"_FLOATING_SAVE_AREA",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"FLOATING_SAVE_AREA",
       "type":"typedef"
     },
     {
       "base":"void*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"HANDLE",
       "type":"typedef"
     },
     {
       "base":"HINSTANCE__*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"HINSTANCE",
       "type":"typedef"
     },
     {
       "base":"HINSTANCE",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"HMODULE",
       "type":"typedef"
     },
     {
       "base":"HWND__*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"HWND",
       "type":"typedef"
@@ -3658,217 +4184,217 @@
     },
     {
       "base":"int",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"INT",
       "type":"typedef"
     },
     {
       "base":"int",
-      "cat":"/basetsd.h",
+      "cat":"/Nocturne/Typedef/System/basetsd.h",
       "importable":true,
       "name":"intptr_t",
       "type":"typedef"
     },
     {
       "base":"enum_3272",
-      "cat":"/fltintrn.h",
+      "cat":"/Nocturne/Typedef/System/fltintrn.h",
       "importable":true,
       "name":"INTRNCVT_STATUS",
       "type":"typedef"
     },
     {
       "base":"DWORD",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LCID",
       "type":"typedef"
     },
     {
       "base":"DWORD",
-      "cat":"/winnls.h",
+      "cat":"/Nocturne/Typedef/System/winnls.h",
       "importable":true,
       "name":"LCTYPE",
       "type":"typedef"
     },
     {
       "base":"_LIST_ENTRY",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LIST_ENTRY",
       "type":"typedef"
     },
     {
       "base":"localerefcount",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"locrefcount",
       "type":"typedef"
     },
     {
       "base":"long",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LONG",
       "type":"typedef"
     },
     {
       "base":"BOOL*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPBOOL",
       "type":"typedef"
     },
     {
       "base":"BYTE*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPBYTE",
       "type":"typedef"
     },
     {
       "base":"CHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPCH",
       "type":"typedef"
     },
     {
       "base":"_cpinfo*",
-      "cat":"/winnls.h",
+      "cat":"/Nocturne/Typedef/System/winnls.h",
       "importable":true,
       "name":"LPCPINFO",
       "type":"typedef"
     },
     {
       "base":"PRTL_CRITICAL_SECTION",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPCRITICAL_SECTION",
       "type":"typedef"
     },
     {
       "base":"CHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPCSTR",
       "type":"typedef"
     },
     {
       "base":"void*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPCVOID",
       "type":"typedef"
     },
     {
       "base":"WCHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPCWSTR",
       "type":"typedef"
     },
     {
       "base":"DWORD*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPDWORD",
       "type":"typedef"
     },
     {
       "base":"_OVERLAPPED*",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPOVERLAPPED",
       "type":"typedef"
     },
     {
       "base":"_SECURITY_ATTRIBUTES*",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPSECURITY_ATTRIBUTES",
       "type":"typedef"
     },
     {
       "base":"_STARTUPINFOA*",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPSTARTUPINFOA",
       "type":"typedef"
     },
     {
       "base":"CHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPSTR",
       "type":"typedef"
     },
     {
       "base":"_TIME_ZONE_INFORMATION*",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPTIME_ZONE_INFORMATION",
       "type":"typedef"
     },
     {
       "base":"void*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPVOID",
       "type":"typedef"
     },
     {
       "base":"WCHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPWCH",
       "type":"typedef"
     },
     {
       "base":"WORD*",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"LPWORD",
       "type":"typedef"
     },
     {
       "base":"WCHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPWSTR",
       "type":"typedef"
     },
     {
       "base":"CHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PCNZCH",
       "type":"typedef"
     },
     {
       "base":"WCHAR*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PCNZWCH",
       "type":"typedef"
     },
     {
       "base":"CONTEXT*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PCONTEXT",
       "type":"typedef"
     },
     {
       "base":"EXCEPTION_RECORD*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PEXCEPTION_RECORD",
       "type":"typedef"
     },
     {
       "base":"PHANDLER_ROUTINE*",
-      "cat":"/wincon.h",
+      "cat":"/Nocturne/Typedef/System/wincon.h",
       "function_definition":"PHANDLER_ROUTINE",
       "importable":true,
       "name":"PHANDLER_ROUTINE",
@@ -3876,133 +4402,133 @@
     },
     {
       "base":"LONG*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PLONG",
       "type":"typedef"
     },
     {
       "base":"_RTL_CRITICAL_SECTION*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PRTL_CRITICAL_SECTION",
       "type":"typedef"
     },
     {
       "base":"_RTL_CRITICAL_SECTION_DEBUG*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PRTL_CRITICAL_SECTION_DEBUG",
       "type":"typedef"
     },
     {
       "base":"threadlocaleinfostruct*",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"pthreadlocinfo",
       "type":"typedef"
     },
     {
       "base":"threadmbcinfostruct*",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"pthreadmbcinfo",
       "type":"typedef"
     },
     {
       "base":"void*",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"PVOID",
       "type":"typedef"
     },
     {
       "base":"ULONG_PTR",
-      "cat":"/basetsd.h",
+      "cat":"/Nocturne/Typedef/System/basetsd.h",
       "importable":true,
       "name":"SIZE_T",
       "type":"typedef"
     },
     {
       "base":"uint",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"size_t",
       "type":"typedef"
     },
     {
       "base":"_strflt*",
-      "cat":"/fltintrn.h",
+      "cat":"/Nocturne/Typedef/System/fltintrn.h",
       "importable":true,
       "name":"STRFLT",
       "type":"typedef"
     },
     {
       "base":"_SYSTEMTIME",
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"SYSTEMTIME",
       "type":"typedef"
     },
     {
       "base":"long",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"time_t",
       "type":"typedef"
     },
     {
       "base":"uint",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"UINT",
       "type":"typedef"
     },
     {
       "base":"uint",
-      "cat":"/vadefs.h",
+      "cat":"/Nocturne/Typedef/System/vadefs.h",
       "importable":true,
       "name":"uintptr_t",
       "type":"typedef"
     },
     {
       "base":"ulong",
-      "cat":"/basetsd.h",
+      "cat":"/Nocturne/Typedef/System/basetsd.h",
       "importable":true,
       "name":"ULONG_PTR",
       "type":"typedef"
     },
     {
       "base":"char*",
-      "cat":"/vadefs.h",
+      "cat":"/Nocturne/Typedef/System/vadefs.h",
       "importable":true,
       "name":"va_list",
       "type":"typedef"
     },
     {
       "base":"wchar_t",
-      "cat":"/winnt.h",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"WCHAR",
       "type":"typedef"
     },
     {
       "base":"ushort",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"wctype_t",
       "type":"typedef"
     },
     {
       "base":"ushort",
-      "cat":"/crtdefs.h",
+      "cat":"/Nocturne/Typedef/System/crtdefs.h",
       "importable":true,
       "name":"wint_t",
       "type":"typedef"
     },
     {
       "base":"ushort",
-      "cat":"/WinDef.h",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"WORD",
       "type":"typedef"
@@ -4011,7 +4537,7 @@
   "unions":[
     {
       "alig":4,
-      "cat":"/winbase.h",
+      "cat":"/Nocturne/Union/System/winbase.h",
       "desc":"",
       "fields":[
         {
@@ -4108,6 +4634,30 @@
       "importable":true,
       "len":4,
       "name":"Misc",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"i",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"f",
+          "offset":0,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UIntegerFloat",
       "pack":false,
       "type":"union"
     }

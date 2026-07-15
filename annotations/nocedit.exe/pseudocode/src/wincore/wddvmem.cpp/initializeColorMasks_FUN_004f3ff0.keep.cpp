@@ -29,17 +29,17 @@ void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
     iVar5 = iVar5 + 3;
     iVar7 = iVar7 + 1;
   } while (iVar7 != 0x100);
-  uVar9 = 0xff >> (g_RedBitCount.bytes[0] & 0x1f);
+  uVar9 = 0xff >> (g_RedDitherShift.bytes[0] & 0x1f);
   g_RedMask16.u32[0] = uVar9 << (g_RedBitPosition.bytes[0] & 0x1f);
-  uVar6 = 0xff >> (g_GreenBitCount.bytes[0] & 0x1f);
+  uVar6 = 0xff >> (g_GreenDitherShift.bytes[0] & 0x1f);
   g_GreenMask16.u32[0] = uVar6 << (g_GreenBitPosition.bytes[0] & 0x1f);
-  uVar4 = 0xff >> (g_BlueBitCount.bytes[0] & 0x1f);
+  uVar4 = 0xff >> (g_BlueDitherShift.bytes[0] & 0x1f);
   g_BlueMask16.u32[0] = uVar4 << (g_BlueBitPosition.bytes[0] & 0x1f);
-  g_BlueMask32.u32[0] = uVar4 << (g_BlueBitCount.bytes[0] & 0x1f);
-  g_RedMask32.u32[0] = (uVar9 << (g_RedBitCount.bytes[0] & 0x1f)) << 0x10;
-  g_GreenMask32.u32[0] = (uVar6 << (g_GreenBitCount.bytes[0] & 0x1f)) << 8;
-  g_TotalColorBits.u32[0] = g_RedBitCount.dword + g_GreenBitCount.dword + g_BlueBitCount.dword;
-  g_BlueBitShift.b32[0] = g_BlueBitCount;
-  g_GreenBlueBits.u32[0] = g_GreenBitCount.dword + g_BlueBitCount.dword;
+  g_BlueMask32.u32[0] = uVar4 << (g_BlueDitherShift.bytes[0] & 0x1f);
+  g_RedMask32.u32[0] = (uVar9 << (g_RedDitherShift.bytes[0] & 0x1f)) << 0x10;
+  g_GreenMask32.u32[0] = (uVar6 << (g_GreenDitherShift.bytes[0] & 0x1f)) << 8;
+  g_TotalDitherShift.u32[0] = g_RedDitherShift.dword + g_GreenDitherShift.dword + g_BlueDitherShift.dword;
+  g_BlueBitShift.b32[0] = g_BlueDitherShift;
+  g_GreenBlueDitherShift.u32[0] = g_GreenDitherShift.dword + g_BlueDitherShift.dword;
   return;
 }

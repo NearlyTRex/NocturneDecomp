@@ -18,8 +18,8 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   _MMX_INTEGER g_TotalColorBits
-;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
 ;   _MMX_INTEGER g_BlueBitShift
 ;   ushort[256] g_ColorTable16
 ;   uint[448] g_ColorTable32
@@ -81,45 +81,45 @@ section .text
     JNZ 0x004f41d8                      ; 004f4255
         ;   XREF to: 004f41d8 (CONDITIONAL_JUMP)  ; LAB_004f41d8
     MOV EAX,0xff                        ; 004f4257
-    MOV CL,byte ptr [0x02d01f2c]        ; 004f425c | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 004f425c | g_RedDitherShift
     SHR EAX,CL                          ; 004f4262
     MOV ECX,dword ptr [0x02d01f24]      ; 004f4264 | g_RedBitPosition
     MOV EBX,EAX                         ; 004f426a
     SHL EBX,CL                          ; 004f426c
-    MOV CL,byte ptr [0x02d01f38]        ; 004f426e | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 004f426e | g_GreenDitherShift
     MOV dword ptr [0x00682748],EBX      ; 004f4274 | g_RedMask16
     MOV EBX,0xff                        ; 004f427a
     SHR EBX,CL                          ; 004f427f
     MOV ECX,dword ptr [0x02d01f30]      ; 004f4281 | g_GreenBitPosition
     MOV ESI,EBX                         ; 004f4287
     SHL ESI,CL                          ; 004f4289
-    MOV CL,byte ptr [0x02d01f44]        ; 004f428b | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 004f428b | g_BlueDitherShift
     MOV dword ptr [0x00682750],ESI      ; 004f4291 | g_GreenMask16
     MOV ESI,0xff                        ; 004f4297
     SHR ESI,CL                          ; 004f429c
     MOV ECX,dword ptr [0x02d01f3c]      ; 004f429e | g_BlueBitPosition
     MOV EDI,ESI                         ; 004f42a4
     SHL EDI,CL                          ; 004f42a6
-    MOV CL,byte ptr [0x02d01f2c]        ; 004f42a8 | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 004f42a8 | g_RedDitherShift
     MOV dword ptr [0x00682758],EDI      ; 004f42ae | g_BlueMask16
     SHL EAX,CL                          ; 004f42b4
-    MOV CL,byte ptr [0x02d01f38]        ; 004f42b6 | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 004f42b6 | g_GreenDitherShift
     SHL EAX,0x10                        ; 004f42bc
     SHL EBX,CL                          ; 004f42bf
     MOV [0x00682760],EAX                ; 004f42c1 | g_RedMask32
     SHL EBX,0x8                         ; 004f42c6
-    MOV EAX,[0x02d01f2c]                ; 004f42c9 | g_RedBitCount
+    MOV EAX,[0x02d01f2c]                ; 004f42c9 | g_RedDitherShift
     MOV dword ptr [0x00682780],EBX      ; 004f42ce | g_GreenMask32
-    MOV EBX,dword ptr [0x02d01f38]      ; 004f42d4 | g_GreenBitCount
-    MOV ECX,dword ptr [0x02d01f44]      ; 004f42da | g_BlueBitCount
+    MOV EBX,dword ptr [0x02d01f38]      ; 004f42d4 | g_GreenDitherShift
+    MOV ECX,dword ptr [0x02d01f44]      ; 004f42da | g_BlueDitherShift
     ADD EAX,EBX                         ; 004f42e0
     MOV dword ptr [0x006827e8],ECX      ; 004f42e2 | g_BlueBitShift
     ADD EAX,ECX                         ; 004f42e8
     SHL ESI,CL                          ; 004f42ea
-    MOV [0x006827a8],EAX                ; 004f42ec | g_TotalColorBits
+    MOV [0x006827a8],EAX                ; 004f42ec | g_TotalDitherShift
     LEA EAX,[EBX + ECX*0x1]             ; 004f42f1
     MOV dword ptr [0x006827a0],ESI      ; 004f42f4 | g_BlueMask32
-    MOV [0x006827c8],EAX                ; 004f42fa | g_GreenBlueBits
+    MOV [0x006827c8],EAX                ; 004f42fa | g_GreenBlueDitherShift
     CMP dword ptr [0x0067939c],0x20     ; 004f42ff | g_BitsPerPixel
         ;   Label: LAB_004f42ff
     JNZ 0x004f435d                      ; 004f4306

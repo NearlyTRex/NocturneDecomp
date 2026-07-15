@@ -280,8 +280,8 @@ extern _MMX_INTEGER g_BlueMask16;
 extern _MMX_INTEGER g_RedMask32;
 extern _MMX_INTEGER g_GreenMask32;
 extern _MMX_INTEGER g_BlueMask32;
-extern _MMX_INTEGER g_TotalColorBits;
-extern _MMX_INTEGER g_GreenBlueBits;
+extern _MMX_INTEGER g_TotalDitherShift;
+extern _MMX_INTEGER g_GreenBlueDitherShift;
 extern _MMX_INTEGER g_BlueBitShift;
 
 // byte

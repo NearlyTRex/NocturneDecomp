@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLunlockHoldBuffer(void)
+; int __cdecl APIDLLunlockHoldBuffer(void)
 ;
 ;
 ; Referenced Globals:

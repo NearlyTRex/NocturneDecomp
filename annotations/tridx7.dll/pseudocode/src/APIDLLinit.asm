@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLinit(void)
+; int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   windowHandle
+; CExternalRendererBridge * Stack[0x8]:4   interface
 ;
 ; XREF[1]:
 ;   APIDLLselectCard at 100052d5
@@ -45,7 +48,7 @@ section .text
     PUSH EDI                            ; 10001a88
     PUSH EBP                            ; 10001a89
     CALL APIDLLkill                     ; 10001a8a
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
     MOV dword ptr [0x1020de34],0x0      ; 10001a8f | DAT_1020de34
     PUSH 0x7                            ; 10001a99
     PUSH 0x0                            ; 10001a9b
@@ -166,7 +169,7 @@ section .text
     JZ 0x10001c58                       ; 10001c1d
         ;   XREF to: 10001c58 (CONDITIONAL_JUMP)  ; LAB_10001c58
     CALL APIDLLkill                     ; 10001c1f
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
     XOR EAX,EAX                         ; 10001c24
     POP EBP                             ; 10001c26
     POP EDI                             ; 10001c27
@@ -214,7 +217,7 @@ section .text
     JZ 0x10001c8d                       ; 10001c79
         ;   XREF to: 10001c8d (CONDITIONAL_JUMP)  ; LAB_10001c8d
     CALL APIDLLkill                     ; 10001c7b
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
     XOR EAX,EAX                         ; 10001c80
     POP EBP                             ; 10001c82
     POP EDI                             ; 10001c83
@@ -246,7 +249,7 @@ section .text
     CALL FUN_10002370                   ; 10001cc5
         ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined FUN_10002370()
     CALL APIDLLkill                     ; 10001cca
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
     XOR EAX,EAX                         ; 10001ccf
     POP EBP                             ; 10001cd1
     POP EDI                             ; 10001cd2
@@ -280,7 +283,7 @@ section .text
     CALL FUN_10002370                   ; 10001d1d
         ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined FUN_10002370()
     CALL APIDLLkill                     ; 10001d22
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
     XOR EAX,EAX                         ; 10001d27
     POP EBP                             ; 10001d29
     POP EDI                             ; 10001d2a

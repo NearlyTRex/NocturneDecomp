@@ -1,15 +1,10 @@
 #pragma once
 
-// Dependencies
+// =============================================================================
+// MISC - Miscellaneous System Types
+// =============================================================================
+// This header is reserved for system types that don't fit elsewhere.
+// Types may be moved to basetypes.h or other specific headers over time.
+
 #include "system/basetypes.h"
-
-// =============================================================================
-// MISC - System Header
-// =============================================================================
-
-// Function Definition: FARPROC
-typedef int FARPROC(void);
-
-// Function Definition: PHANDLER_ROUTINE
-typedef BOOL PHANDLER_ROUTINE(DWORD CtrlType);
 

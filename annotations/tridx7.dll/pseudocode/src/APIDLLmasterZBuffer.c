@@ -1,12 +1,12 @@
 // Name: APIDLLmasterZBuffer
 // Address: 10004e10
 // Address Range: [[10004e10, 10004e87]]
-// Convention: unknown
-// Signature: undefined4 APIDLLmasterZBuffer(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLmasterZBuffer(int z_buffer_mode)
 
 #include "nocturne.h"
 
-uint APIDLLmasterZBuffer(int param_1)
+int __cdecl APIDLLmasterZBuffer(int z_buffer_mode)
 
 {
   int *piVar1;
@@ -17,8 +17,8 @@ uint APIDLLmasterZBuffer(int param_1)
   uint local_4;
   
                     /* 0x4e10  23  APIDLLmasterZBuffer */
-  if ((-1 < param_1) && (param_1 < DAT_10226a48)) {
-    piVar1 = (int *)(&DAT_10014198)[param_1];
+  if ((-1 < z_buffer_mode) && (z_buffer_mode < DAT_10226a48)) {
+    piVar1 = (int *)(&DAT_10014198)[z_buffer_mode];
     if (piVar1 == (int *)0x0) {
       return 0;
     }

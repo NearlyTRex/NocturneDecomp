@@ -2,6 +2,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/WinDef.h"
+#include "system/crtdefs.h"
+#include "system/time.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x10010000

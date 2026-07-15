@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLlockFrame(void)
+; int __cdecl APIDLLlockFrame(void)
 ;
 ;
 ; Referenced Globals:
@@ -21,7 +21,7 @@ section .text
     JZ 0x10002d9e                       ; 10002d97
         ;   XREF to: 10002d9e (CONDITIONAL_JUMP)  ; LAB_10002d9e
     CALL APIDLLendScene                 ; 10002d99
-        ;   XREF to: 10002d10 (UNCONDITIONAL_CALL)  ; undefined APIDLLendScene() | Ordinal_15
+        ;   XREF to: 10002d10 (UNCONDITIONAL_CALL)  ; int APIDLLendScene() | Ordinal_15
     CALL FUN_10002dc0                   ; 10002d9e
         ;   XREF to: 10002dc0 (UNCONDITIONAL_CALL)  ; undefined FUN_10002dc0()
         ;   Label: LAB_10002d9e

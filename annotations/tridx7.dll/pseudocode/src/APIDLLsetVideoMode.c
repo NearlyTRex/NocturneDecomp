@@ -1,14 +1,14 @@
 // Name: APIDLLsetVideoMode
 // Address: 10002500
 // Address Range: [[10002500, 10002b1a]]
-// Convention: unknown
-// Signature: undefined4 APIDLLsetVideoMode(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint APIDLLsetVideoMode(uint *param_1)
+int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
 
 {
   char cVar1;
@@ -101,12 +101,12 @@ uint APIDLLsetVideoMode(uint *param_1)
     DAT_1001416c = 1;
     _fclose(file);
   }
-  DAT_10138fb4 = param_1;
+  DAT_10138fb4 = scanline_ptrs;
   if (0 < DAT_10014178) {
     puVar7 = &DAT_10225848;
     for (iVar4 = DAT_10014178; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar7 = *param_1;
-      param_1 = param_1 + (uint)bVar13 * -2 + 1;
+      *puVar7 = *scanline_ptrs;
+      scanline_ptrs = scanline_ptrs + (uint)bVar13 * -2 + 1;
       puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
     }
   }

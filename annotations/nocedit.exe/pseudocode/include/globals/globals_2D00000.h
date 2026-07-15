@@ -38,11 +38,11 @@ extern SRGBColorPalette* g_CurrentPalette;
 
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_RedBitPosition;
-extern _BIT_INTEGER32 g_RedBitCount;
+extern _BIT_INTEGER32 g_RedDitherShift;
 extern _BIT_INTEGER32 g_GreenBitPosition;
-extern _BIT_INTEGER32 g_GreenBitCount;
+extern _BIT_INTEGER32 g_GreenDitherShift;
 extern _BIT_INTEGER32 g_BlueBitPosition;
-extern _BIT_INTEGER32 g_BlueBitCount;
+extern _BIT_INTEGER32 g_BlueDitherShift;
 extern _BIT_INTEGER32 g_RenderStateFlags;
 
 // _MMX_INTEGER

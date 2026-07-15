@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLsetFogColor(int param_1,int param_2,uint param_3)
+; int __cdecl APIDLLsetFogColor(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_100141bc
@@ -30,7 +34,7 @@ section .text
     JNZ 0x10004a1b                      ; 10004a14
         ;   XREF to: 10004a1b (CONDITIONAL_JUMP)  ; LAB_10004a1b
     CALL APIDLLbeginScene               ; 10004a16
-        ;   XREF to: 10002ce0 (UNCONDITIONAL_CALL)  ; undefined APIDLLbeginScene() | Ordinal_6
+        ;   XREF to: 10002ce0 (UNCONDITIONAL_CALL)  ; int APIDLLbeginScene() | Ordinal_6
     MOV EAX,[0x100141bc]                ; 10004a1b | DAT_100141bc
         ;   Label: LAB_10004a1b
     MOV ECX,dword ptr [0x100141c0]      ; 10004a20 | DAT_100141c0
@@ -47,7 +51,7 @@ section .text
     JZ 0x10004a4d                       ; 10004a46
         ;   XREF to: 10004a4d (CONDITIONAL_JUMP)  ; LAB_10004a4d
     CALL APIDLLendScene                 ; 10004a48
-        ;   XREF to: 10002d10 (UNCONDITIONAL_CALL)  ; undefined APIDLLendScene() | Ordinal_15
+        ;   XREF to: 10002d10 (UNCONDITIONAL_CALL)  ; int APIDLLendScene() | Ordinal_15
     MOV EAX,0x1                         ; 10004a4d
         ;   Label: LAB_10004a4d
     RET                                 ; 10004a52

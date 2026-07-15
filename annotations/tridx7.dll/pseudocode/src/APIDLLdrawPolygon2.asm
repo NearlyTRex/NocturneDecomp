@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLdrawPolygon2(int *param_1,int param_2,undefined4 param_3)
+; int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   vertex_array
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[1]:
 ;   APIDLLdrawPolygon at 100043aa

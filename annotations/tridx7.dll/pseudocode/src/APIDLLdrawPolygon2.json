@@ -14,18 +14,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 329,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 26,
+    "pseudocode_lines": 61,
+    "suspect_count": 12,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 167
+    "total_lines": 169
   },
   "cross_references": [
     {
@@ -43,9 +42,9 @@
         "100044ac"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLdrawPolygon2",
-    "signature": "undefined4 APIDLLdrawPolygon2(int *param_1,int param_2,undefined4 param_3)"
+    "signature": "int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags)"
   },
   "function_calls": [
     {
@@ -157,38 +156,36 @@
     "pcode_op_count": 400
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex_array",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 14,
@@ -198,104 +195,24 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_10003f10(param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(*param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (1 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar4 = param_2 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar5 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_1013b8d8",
       "severity": "mild",
-      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "text": "FUN_100044b0(vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_10014228",
       "severity": "mild",
-      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "text": "FUN_100044b0(vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (iVar7 < param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar6 = param_2 + -2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_10014228",
       "severity": "mild",
       "text": "sVar1 = (short)DAT_10014228;",
@@ -303,7 +220,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 44,
       "match": "DAT_1001422c",
       "severity": "mild",
       "text": "iVar7 = DAT_1001422c * 2;",
@@ -311,7 +228,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_1001422c",
       "severity": "mild",
       "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
@@ -319,7 +236,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_1001422c",
       "severity": "mild",
       "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
@@ -327,39 +244,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_10238910",
       "severity": "mild",
       "text": "psVar3 = (short *)(&DAT_10238910 + iVar7);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 56,
       "match": "DAT_10014228",
       "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + param_2;",
+      "text": "DAT_10014228 = DAT_10014228 + vertex_count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 56,
       "match": "DAT_10014228",
       "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + param_2;",
+      "text": "DAT_10014228 = DAT_10014228 + vertex_count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 57,
       "match": "DAT_10014228",
       "severity": "mild",
       "text": "if (0x3e76 < DAT_10014228) {",
@@ -367,7 +276,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 60,
       "match": "DAT_1001422c",
       "severity": "mild",
       "text": "if (0x3e76 < DAT_1001422c) {",

@@ -99,11 +99,11 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_F
     }
 
     pix0_16 = (uint)((pix_bytes[0] & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-              (uint)((pix_bytes[0] & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-              (uint)((pix_bytes[0] & g_RedMask32.mm) >> g_TotalColorBits.mm);
+              (uint)((pix_bytes[0] & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+              (uint)((pix_bytes[0] & g_RedMask32.mm) >> g_TotalDitherShift.mm);
     pix1_16 = (uint)((pix_bytes[1] & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-              (uint)((pix_bytes[1] & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-              (uint)((pix_bytes[1] & g_RedMask32.mm) >> g_TotalColorBits.mm);
+              (uint)((pix_bytes[1] & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+              (uint)((pix_bytes[1] & g_RedMask32.mm) >> g_TotalDitherShift.mm);
 
     *output_buffer = pix0_16 | (pix1_16 << 0x10);
 

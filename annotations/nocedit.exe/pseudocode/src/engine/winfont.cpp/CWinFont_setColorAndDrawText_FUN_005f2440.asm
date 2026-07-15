@@ -28,11 +28,11 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   _BIT_INTEGER32 g_RedBitPosition
-;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_RedDitherShift
 ;   _BIT_INTEGER32 g_GreenBitPosition
-;   _BIT_INTEGER32 g_GreenBitCount
+;   _BIT_INTEGER32 g_GreenDitherShift
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   _BIT_INTEGER32 g_BlueBitCount
+;   _BIT_INTEGER32 g_BlueDitherShift
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
@@ -271,20 +271,20 @@ section .text
     MOV CL,byte ptr [0x02d01f24]        ; 005f2680 | g_RedBitPosition
     MOV EDX,EAX                         ; 005f2686
     SHR EDX,CL                          ; 005f2688
-    MOV CL,byte ptr [0x02d01f2c]        ; 005f268a | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 005f268a | g_RedDitherShift
     SHL EDX,CL                          ; 005f2690
     AND EDX,0xff                        ; 005f2692
     MOV CL,byte ptr [0x02d01f30]        ; 005f2698 | g_GreenBitPosition
     MOV ESI,EDX                         ; 005f269e
     MOV EDX,EAX                         ; 005f26a0
     SHR EDX,CL                          ; 005f26a2
-    MOV CL,byte ptr [0x02d01f38]        ; 005f26a4 | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 005f26a4 | g_GreenDitherShift
     SHL EDX,CL                          ; 005f26aa
     AND EDX,0xff                        ; 005f26ac
     MOV CL,byte ptr [0x02d01f3c]        ; 005f26b2 | g_BlueBitPosition
     MOV EDI,EDX                         ; 005f26b8
     SHR EAX,CL                          ; 005f26ba
-    MOV CL,byte ptr [0x02d01f44]        ; 005f26bc | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 005f26bc | g_BlueDitherShift
     XOR EDX,EDX                         ; 005f26c2
     SHL EAX,CL                          ; 005f26c4
     XOR ECX,ECX                         ; 005f26c6
@@ -339,7 +339,7 @@ section .text
     MOV CX,DI                           ; 005f2760
     MOV dword ptr [ESP + 0x4],ECX       ; 005f2763
     MOV EDI,dword ptr [ESP + 0x4]       ; 005f2767
-    MOV CL,byte ptr [0x02d01f2c]        ; 005f276b | g_RedBitCount
+    MOV CL,byte ptr [0x02d01f2c]        ; 005f276b | g_RedDitherShift
     SHR EDI,CL                          ; 005f2771
     MOV CL,byte ptr [0x02d01f24]        ; 005f2773 | g_RedBitPosition
     SHL EDI,CL                          ; 005f2779
@@ -348,7 +348,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 005f2782
     MOV dword ptr [ESP + 0x8],EDI       ; 005f2786
     MOV EDI,dword ptr [ESP + 0x4]       ; 005f278a
-    MOV CL,byte ptr [0x02d01f38]        ; 005f278e | g_GreenBitCount
+    MOV CL,byte ptr [0x02d01f38]        ; 005f278e | g_GreenDitherShift
     SHR EDI,CL                          ; 005f2794
     MOV CL,byte ptr [0x02d01f30]        ; 005f2796 | g_GreenBitPosition
     SHL EDI,CL                          ; 005f279c
@@ -357,7 +357,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x8]       ; 005f27a3
     XOR DH,DH                           ; 005f27a7
     OR EDI,ECX                          ; 005f27a9
-    MOV CL,byte ptr [0x02d01f44]        ; 005f27ab | g_BlueBitCount
+    MOV CL,byte ptr [0x02d01f44]        ; 005f27ab | g_BlueDitherShift
     AND EDX,0xffff                      ; 005f27b1
     SHR EDX,CL                          ; 005f27b7
     MOV CL,byte ptr [0x02d01f3c]        ; 005f27b9 | g_BlueBitPosition

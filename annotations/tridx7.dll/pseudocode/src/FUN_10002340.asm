@@ -33,7 +33,7 @@
 section .text
 
     CALL APIDLLkill                     ; 10002340
-        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; undefined APIDLLkill() | Ordinal_20
+        ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
         ;   Label: FUN_10002340
     MOV EAX,dword ptr [ESP + 0x4]       ; 10002345
     PUSH 0x10                           ; 10002349

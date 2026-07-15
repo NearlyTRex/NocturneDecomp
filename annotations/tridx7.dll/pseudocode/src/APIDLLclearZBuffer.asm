@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLclearZBuffer(void)
+; int __cdecl APIDLLclearZBuffer(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x64]:4  local_64

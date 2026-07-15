@@ -37,6 +37,7 @@
 #include "types/funcdefs/APIDLL_endScene.h"
 #include "types/funcdefs/APIDLL_flushLineList.h"
 #include "types/funcdefs/APIDLL_flushParticleList.h"
+#include "types/funcdefs/APIDLL_getDisplayContext.h"
 #include "types/funcdefs/APIDLL_getTextureInfo.h"
 #include "types/funcdefs/APIDLL_getVideoMemory.h"
 #include "types/funcdefs/APIDLL_init.h"
@@ -46,6 +47,7 @@
 #include "types/funcdefs/APIDLL_lockHoldBuffer.h"
 #include "types/funcdefs/APIDLL_lockTexture.h"
 #include "types/funcdefs/APIDLL_masterZBuffer.h"
+#include "types/funcdefs/APIDLL_releaseDisplayContext.h"
 #include "types/funcdefs/APIDLL_restoreVideoMode.h"
 #include "types/funcdefs/APIDLL_restoreVideoModeX.h"
 #include "types/funcdefs/APIDLL_restoreZBuffer.h"
@@ -55,6 +57,7 @@
 #include "types/funcdefs/APIDLL_setColorTable16.h"
 #include "types/funcdefs/APIDLL_setFogColor.h"
 #include "types/funcdefs/APIDLL_setMipMapLevel.h"
+#include "types/funcdefs/APIDLL_setVideoMode.h"
 #include "types/funcdefs/APIDLL_setVideoMode2.h"
 #include "types/funcdefs/APIDLL_setVideoModeX.h"
 #include "types/funcdefs/APIDLL_sync.h"
@@ -121,6 +124,9 @@ extern APIDLL_flushLineList* g_APIDLL_flushLineList;
 // APIDLL_flushParticleList*
 extern APIDLL_flushParticleList* g_APIDLL_flushParticleList;
 
+// APIDLL_getDisplayContext*
+extern APIDLL_getDisplayContext* g_APIDLL_getDisplayContext;
+
 // APIDLL_getTextureInfo*
 extern APIDLL_getTextureInfo* g_APIDLL_getTextureInfo;
 
@@ -147,6 +153,9 @@ extern APIDLL_lockTexture* g_APIDLL_lockTexture;
 
 // APIDLL_masterZBuffer*
 extern APIDLL_masterZBuffer* g_APIDLL_masterZBuffer;
+
+// APIDLL_releaseDisplayContext*
+extern APIDLL_releaseDisplayContext* g_APIDLL_releaseDisplayContext;
 
 // APIDLL_restoreVideoMode*
 extern APIDLL_restoreVideoMode* g_APIDLL_restoreVideoMode;
@@ -175,6 +184,9 @@ extern APIDLL_setFogColor* g_APIDLL_setFogColor;
 // APIDLL_setMipMapLevel*
 extern APIDLL_setMipMapLevel* g_APIDLL_setMipMapLevel;
 
+// APIDLL_setVideoMode*
+extern APIDLL_setVideoMode* g_APIDLL_setVideoMode;
+
 // APIDLL_setVideoMode2*
 extern APIDLL_setVideoMode2* g_APIDLL_setVideoMode2;
 
@@ -191,9 +203,6 @@ extern APIDLL_toggle* g_APIDLL_toggle;
 extern APIDLL_toggleX* g_APIDLL_toggleX;
 
 // APIDLL_unknown*
-extern APIDLL_unknown* g_APIDLL_setVideoMode;
-extern APIDLL_unknown* g_APIDLL_GetDisplayContext;
-extern APIDLL_unknown* g_APIDLL_ReleaseDisplayContext;
 extern APIDLL_unknown* g_APIDLL_setViewport;
 extern APIDLL_unknown* g_APIDLL_setLightConstants;
 extern APIDLL_unknown* g_APIDLL_setLightVector;

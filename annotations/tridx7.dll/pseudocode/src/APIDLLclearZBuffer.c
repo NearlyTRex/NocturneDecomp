@@ -1,12 +1,12 @@
 // Name: APIDLLclearZBuffer
 // Address: 10004a70
 // Address Range: [[10004a70, 10004ab6]]
-// Convention: unknown
-// Signature: undefined4 APIDLLclearZBuffer(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLclearZBuffer(void)
 
 #include "nocturne.h"
 
-uint APIDLLclearZBuffer(void)
+int __cdecl APIDLLclearZBuffer(void)
 
 {
   uint *puVar1;

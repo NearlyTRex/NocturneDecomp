@@ -14,16 +14,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 371,
+    "complexity_score": 341,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 29,
+    "suspect_count": 26,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memset"
     ],
     "total_lines": 241
@@ -37,9 +37,9 @@
         "10004d02"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLsetColorTable16",
-    "signature": "undefined4 APIDLLsetColorTable16(int param_1,ushort *param_2)"
+    "signature": "int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table)"
   },
   "function_calls": [
     {
@@ -153,9 +153,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -194,10 +194,10 @@
     "pcode_op_count": 943
   },
   "stack_frame": {
-    "frame_size": 128,
+    "frame_size": 136,
     "local_size": 128,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -227,6 +227,20 @@
         "offset": -28,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "source_palette",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "color_table",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
       }
     ]
   },
@@ -284,51 +298,19 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint APIDLLsetColorTable16(int param_1,ushort *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint APIDLLsetColorTable16(int param_1,ushort *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_10215e40 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_10215e40",
       "severity": "mild",
-      "text": "DAT_10215e40 = param_1;",
+      "text": "DAT_10215e40 = source_palette;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "DAT_10226868 = param_2;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_10226868",
       "severity": "mild",
-      "text": "DAT_10226868 = param_2;",
+      "text": "DAT_10226868 = color_table;",
       "type": "undefined_data"
     },
     {
@@ -444,11 +426,19 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(byte *)((int)DAT_10215e40",
+      "severity": "moderate",
+      "text": "pbVar4 = (byte *)((int)DAT_10215e40 + 2);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_10215e40",
       "severity": "mild",
-      "text": "pbVar4 = (byte *)(DAT_10215e40 + 2);",
+      "text": "pbVar4 = (byte *)((int)DAT_10215e40 + 2);",
       "type": "undefined_data"
     },
     {

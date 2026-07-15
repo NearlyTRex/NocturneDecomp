@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLdrawPolyList2(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param_4)
+; int __cdecl APIDLLdrawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex_buffer
+; ushort * *       Stack[0x8]:4   polygons
+; int              Stack[0xc]:4   polygon_count
+; int              Stack[0x10]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

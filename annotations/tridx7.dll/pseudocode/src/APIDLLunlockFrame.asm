@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLunlockFrame(void)
+; int __cdecl APIDLLunlockFrame(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLbuildCardList(int *param_1,int *param_2,int *param_3,undefined4 *param_4,undefined4 *param_5)
+; int __cdecl APIDLLbuildCardList(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   out_card_count
+; void *           Stack[0x8]:4   enum_data_buffer
+; char * *         Stack[0xc]:4   out_card_names
+; int *            Stack[0x10]:4   out_vendor_ids
+; int *            Stack[0x14]:4   out_device_ids
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_101386b0

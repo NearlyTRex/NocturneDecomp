@@ -5,7 +5,6 @@
 // =============================================================================
 // Auto-generated aggregate of all funcdefs type definitions.
 
-#include "types/funcdefs/APIDLL_Information.h"
 #include "types/funcdefs/APIDLL_add3dLine.h"
 #include "types/funcdefs/APIDLL_addParticle.h"
 #include "types/funcdefs/APIDLL_beginScene.h"
@@ -21,8 +20,10 @@
 #include "types/funcdefs/APIDLL_endScene.h"
 #include "types/funcdefs/APIDLL_flushLineList.h"
 #include "types/funcdefs/APIDLL_flushParticleList.h"
+#include "types/funcdefs/APIDLL_getDisplayContext.h"
 #include "types/funcdefs/APIDLL_getTextureInfo.h"
 #include "types/funcdefs/APIDLL_getVideoMemory.h"
+#include "types/funcdefs/APIDLL_information.h"
 #include "types/funcdefs/APIDLL_init.h"
 #include "types/funcdefs/APIDLL_kill.h"
 #include "types/funcdefs/APIDLL_lockFrame.h"
@@ -30,6 +31,7 @@
 #include "types/funcdefs/APIDLL_lockHoldBuffer.h"
 #include "types/funcdefs/APIDLL_lockTexture.h"
 #include "types/funcdefs/APIDLL_masterZBuffer.h"
+#include "types/funcdefs/APIDLL_releaseDisplayContext.h"
 #include "types/funcdefs/APIDLL_restoreVideoMode.h"
 #include "types/funcdefs/APIDLL_restoreVideoModeX.h"
 #include "types/funcdefs/APIDLL_restoreZBuffer.h"
@@ -39,6 +41,7 @@
 #include "types/funcdefs/APIDLL_setColorTable16.h"
 #include "types/funcdefs/APIDLL_setFogColor.h"
 #include "types/funcdefs/APIDLL_setMipMapLevel.h"
+#include "types/funcdefs/APIDLL_setVideoMode.h"
 #include "types/funcdefs/APIDLL_setVideoMode2.h"
 #include "types/funcdefs/APIDLL_setVideoModeX.h"
 #include "types/funcdefs/APIDLL_sync.h"

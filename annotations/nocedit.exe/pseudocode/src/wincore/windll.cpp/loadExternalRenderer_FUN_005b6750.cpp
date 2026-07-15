@@ -63,10 +63,10 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_setVideoMode =
-         (APIDLL_unknown *)
+         (APIDLL_setVideoMode *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetVideoMode");
-    if (g_APIDLL_setVideoMode == (APIDLL_unknown *)0x0) {
+    if (g_APIDLL_setVideoMode == (APIDLL_setVideoMode *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_setVideoMode2 =
@@ -235,18 +235,18 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     if (g_APIDLL_setColorTable16 == (APIDLL_setColorTable16 *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
-    g_APIDLL_GetDisplayContext =
-         (APIDLL_unknown *)
+    g_APIDLL_getDisplayContext =
+         (APIDLL_getDisplayContext *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLGetDisplayContext");
-    if (g_APIDLL_GetDisplayContext == (APIDLL_unknown *)0x0) {
+    if (g_APIDLL_getDisplayContext == (APIDLL_getDisplayContext *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
-    g_APIDLL_ReleaseDisplayContext =
-         (APIDLL_unknown *)
+    g_APIDLL_releaseDisplayContext =
+         (APIDLL_releaseDisplayContext *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLReleaseDisplayContext");
-    if (g_APIDLL_ReleaseDisplayContext == (APIDLL_unknown *)0x0) {
+    if (g_APIDLL_releaseDisplayContext == (APIDLL_releaseDisplayContext *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_masterZBuffer =
@@ -380,13 +380,13 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       memset(&CStack_9c,0,0x8c);
       CStack_9c.red_bit_position = (int *)&g_RedBitPosition;
       CStack_9c.red_scale_factor = &g_RedScaleFactor;
-      CStack_9c.red_bit_count = (int *)&g_RedBitCount;
+      CStack_9c.red_dither_shift = (int *)&g_RedDitherShift;
       CStack_9c.green_bit_position = (int *)&g_GreenBitPosition;
       CStack_9c.green_scale_factor = &g_GreenScaleFactor;
-      CStack_9c.green_bit_count = (int *)&g_GreenBitCount;
+      CStack_9c.green_dither_shift = (int *)&g_GreenDitherShift;
       CStack_9c.blue_bit_position = (int *)&g_BlueBitPosition;
       CStack_9c.blue_scale_factor = &g_BlueScaleFactor;
-      CStack_9c.blue_bit_count = (int *)&g_BlueBitCount;
+      CStack_9c.blue_dither_shift = (int *)&g_BlueDitherShift;
       CStack_9c.blend_mode = &g_BlendMode;
       CStack_9c.current_lighting = &g_CurrentLightingValue;
       CStack_9c.current_alpha = &g_CurrentAlphaValue;

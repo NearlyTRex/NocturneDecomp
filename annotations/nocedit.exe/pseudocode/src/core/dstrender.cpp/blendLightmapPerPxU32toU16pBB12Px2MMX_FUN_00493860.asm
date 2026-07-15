@@ -272,8 +272,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 00493cf0 | g_GreenMask32
     PAND MM3,qword ptr [0x00682760]     ; 00493cf7 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 00493cfe | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 00493d05 | g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493d0c | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 00493d05 | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493d0c | g_TotalDitherShift
     POR MM0,MM2                         ; 00493d13
     POR MM0,MM3                         ; 00493d16
     MOVQ MM6,MM0                        ; 00493d19
@@ -305,8 +305,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 00493d79 | g_GreenMask32
     PAND MM3,qword ptr [0x00682760]     ; 00493d80 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 00493d87 | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 00493d8e | g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493d95 | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 00493d8e | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493d95 | g_TotalDitherShift
     POR MM0,MM2                         ; 00493d9c
     POR MM0,MM3                         ; 00493d9f
     PSLLQ MM0,0x10                      ; 00493da2

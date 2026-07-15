@@ -1,12 +1,12 @@
 // Name: APIDLLkill
 // Address: 10002460
 // Address Range: [[10002460, 100024a6]]
-// Convention: unknown
-// Signature: undefined4 APIDLLkill(void)
+// Convention: __cdecl
+// Signature: void __cdecl APIDLLkill(void)
 
 #include "nocturne.h"
 
-uint APIDLLkill(void)
+void __cdecl APIDLLkill(void)
 
 {
                     /* 0x2460  20  APIDLLkill */
@@ -19,5 +19,5 @@ uint APIDLLkill(void)
     (**(code **)(*DAT_10014184 + 8))(DAT_10014184);
     DAT_10014184 = (int *)0x0;
   }
-  return 1;
+  return;
 }

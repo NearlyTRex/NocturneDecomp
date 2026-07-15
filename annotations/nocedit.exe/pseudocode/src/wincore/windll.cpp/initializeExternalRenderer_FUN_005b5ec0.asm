@@ -428,7 +428,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_005ede20 ; 005b639f
         ;   XREF to: 005ede20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005b63a4
-    MOV [0x03f6b904],EAX                ; 005b63a7 | g_APIDLL_GetDisplayContext
+    MOV [0x03f6b904],EAX                ; 005b63a7 | g_APIDLL_getDisplayContext
     TEST EAX,EAX                        ; 005b63ac
     JNZ 0x005b63ba                      ; 005b63ae
         ;   XREF to: 005b63ba (CONDITIONAL_JUMP)  ; LAB_005b63ba
@@ -440,7 +440,7 @@ section .text
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_005ede20 ; 005b63c6
         ;   XREF to: 005ede20 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005b63cb
-    MOV [0x03f6b908],EAX                ; 005b63ce | g_APIDLL_ReleaseDisplayContext
+    MOV [0x03f6b908],EAX                ; 005b63ce | g_APIDLL_releaseDisplayContext
     TEST EAX,EAX                        ; 005b63d3
     JNZ 0x005b63e1                      ; 005b63d5
         ;   XREF to: 005b63e1 (CONDITIONAL_JUMP)  ; LAB_005b63e1

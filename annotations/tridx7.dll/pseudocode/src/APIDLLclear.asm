@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLclear(void)
+; int __cdecl APIDLLclear(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc0]:4  local_c0
@@ -75,7 +75,7 @@ section .text
     LEA EDX,[ESP + 0xc]                 ; 100048c1
     PUSH EDX                            ; 100048c5
     CALL APIDLLdrawPolygon              ; 100048c6
-        ;   XREF to: 10004380 (UNCONDITIONAL_CALL)  ; undefined APIDLLdrawPolygon() | Ordinal_13
+        ;   XREF to: 10004380 (UNCONDITIONAL_CALL)  ; int APIDLLdrawPolygon(SRenderVertex * vertices, int vertex_count, int render_flags) | Ordinal_13
     ADD ESP,0xc                         ; 100048cb
     JMP 0x10004901                      ; 100048ce
         ;   XREF to: 10004901 (UNCONDITIONAL_JUMP)  ; LAB_10004901

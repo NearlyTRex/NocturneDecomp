@@ -51,8 +51,8 @@ void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels
     if (do_blend) {
       dst16 = (uint)*destPixels;
       dst32 = (uint)((((ulonglong)dst16 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
-                    (((ulonglong)dst16 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
-                    (((ulonglong)dst16 & g_RedMask16.mm) << g_TotalColorBits.mm));
+                    (((ulonglong)dst16 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |
+                    (((ulonglong)dst16 & g_RedMask16.mm) << g_TotalDitherShift.mm));
 
       alpha_idx = effective >> 8;
       alpha_entry = *(ulonglong *)&g_AlphaTable[alpha_idx];
@@ -86,8 +86,8 @@ void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels
 
     if (write_pixel) {
       *destPixels = (ushort)(((ulonglong)result32 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-                    (ushort)(((ulonglong)result32 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-                    (ushort)(((ulonglong)result32 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+                    (ushort)(((ulonglong)result32 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+                    (ushort)(((ulonglong)result32 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
     }
 
     srcIndices = srcIndices + 1;

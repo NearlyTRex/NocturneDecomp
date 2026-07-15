@@ -1,12 +1,12 @@
 // Name: APIDLLinit
 // Address: 10001a80
 // Address Range: [[10001a80, 10001d6c]]
-// Convention: unknown
-// Signature: undefined4 APIDLLinit(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
 
 #include "nocturne.h"
 
-uint APIDLLinit(void)
+int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
 
 {
   char cVar1;

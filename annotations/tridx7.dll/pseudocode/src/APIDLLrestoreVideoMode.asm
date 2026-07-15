@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLrestoreVideoMode(void)
+; int __cdecl APIDLLrestoreVideoMode(void)
 ;
 ;
 ; Referenced Globals:

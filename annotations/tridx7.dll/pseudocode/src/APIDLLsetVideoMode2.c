@@ -1,18 +1,20 @@
 // Name: APIDLLsetVideoMode2
 // Address: 10002bb0
 // Address Range: [[10002bb0, 10002bda]]
-// Convention: unknown
-// Signature: void APIDLLsetVideoMode2(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4 )
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **screen_buffer_array)
 
 #include "nocturne.h"
 
-void APIDLLsetVideoMode2(uint param_1,uint param_2,uint param_3,uint param_4 )
+int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **screen_buffer_array)
 
 {
+  int iVar1;
+  
                     /* 0x2bb0  32  APIDLLsetVideoMode2 */
-  DAT_10014174 = param_1;
-  DAT_10014178 = param_2;
-  DAT_1001417c = param_3;
-  APIDLLsetVideoMode(param_4);
-  return;
+  DAT_10014174 = width;
+  DAT_10014178 = height;
+  DAT_1001417c = bits_per_pixel;
+  iVar1 = APIDLLsetVideoMode(screen_buffer_array);
+  return iVar1;
 }

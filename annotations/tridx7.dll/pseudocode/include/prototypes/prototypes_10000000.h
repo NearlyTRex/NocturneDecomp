@@ -2,6 +2,26 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/WinDef.h"
+#include "system/basetsd.h"
+#include "system/crtdefs.h"
+#include "system/excpt.h"
+#include "system/fltintrn.h"
+#include "system/internal.h"
+#include "system/mbstring.h"
+#include "system/mtdll.h"
+#include "system/new.h"
+#include "system/setlocal.h"
+#include "system/signal.h"
+#include "system/stdlib.h"
+#include "system/time.h"
+#include "system/vadefs.h"
+#include "system/winnls.h"
+#include "system/winnt.h"
+#include "types/classes/CExternalRendererBridge.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x10000000
@@ -15,26 +35,26 @@ void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
 undefined4 FUN_10001470(undefined4 param_1);
 void FUN_100015d0(undefined4 param_1);
 undefined4 FUN_10001900(undefined4 param_1);
-void APIDLLInformation(void);
-undefined4 APIDLLinit(void);
+void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer);
+int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface);
 void FUN_10001d70(int param_1);
 void FUN_10002340(LPCSTR param_1);
 void FUN_10002370(void);
-undefined4 APIDLLkill(void);
-undefined4 APIDLLtoggle(void);
-undefined4 APIDLLsetVideoMode(undefined4 *param_1);
+void __cdecl APIDLLkill(void);
+void __cdecl APIDLLtoggle(void);
+int __cdecl APIDLLsetVideoMode(void **scanline_ptrs);
 void FUN_10002b20(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
-void APIDLLsetVideoMode2(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4 );
-undefined4 APIDLLrestoreVideoMode(void);
+int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **screen_buffer_array);
+int __cdecl APIDLLrestoreVideoMode(void);
 undefined4 FUN_10002c50(void);
 undefined4 FUN_10002cb0(int *param_1);
-undefined4 APIDLLbeginScene(void);
-bool APIDLLendScene(void);
+int __cdecl APIDLLbeginScene(void);
+int __cdecl APIDLLendScene(void);
 void FUN_10002d50(void);
-undefined4 APIDLLlockFrame(void);
+int __cdecl APIDLLlockFrame(void);
 undefined4 FUN_10002dc0(void);
 bool FUN_10002e20(int *param_1,undefined4 *param_2);
-undefined4 APIDLLunlockFrame(void);
+int __cdecl APIDLLunlockFrame(void);
 void FUN_10002ea0(void);
 bool FUN_10002f40(void);
 int FUN_10002f60(int param_1);
@@ -49,37 +69,37 @@ undefined4 * FUN_10003a30(int param_1);
 void FUN_10003a80(void);
 void FUN_10003d90(ushort *param_1,uint param_2,int param_3);
 void FUN_10003e40(undefined4 *param_1,uint param_2,int param_3);
-undefined4 APIDLLselectTexture(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-undefined4 APIDLLupdateTexture(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-undefined4 APIDLLsetMipMapLevel(void);
+int __cdecl APIDLLselectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
+int __cdecl APIDLLupdateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
+int __cdecl APIDLLsetMipMapLevel(int mipmap_level);
 void FUN_10003f10(uint param_1);
-void APIDLLdrawPolygon(int param_1,int param_2,undefined4 param_3);
-undefined4 APIDLLdrawPolygon2(int *param_1,int param_2,undefined4 param_3);
+int __cdecl APIDLLdrawPolygon(SRenderVertex *vertices,int vertex_count,int render_flags);
+int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags);
 void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4);
 void FUN_100047b0(void);
-undefined4 APIDLLaddParticle(void);
-undefined4 APIDLLflushParticleList(void);
-undefined4 APIDLLadd3dLine(void);
-undefined4 APIDLLflushLineList(void);
-undefined4 APIDLLclear(void);
-undefined4 APIDLLsetFogColor(int param_1,int param_2,uint param_3);
-undefined4 APIDLLsync(void);
-undefined4 APIDLLclearZBuffer(void);
-undefined4 APIDLLclearZBox(undefined4 param_1,int param_2,undefined4 param_3,int param_4);
-undefined4 APIDLLsetColorTable16(int param_1,ushort *param_2);
+int __cdecl APIDLLaddParticle(void *particle_data,int particle_type);
+int __cdecl APIDLLflushParticleList(void);
+int __cdecl APIDLLadd3dLine(void *start_point,void *end_point,int line_style);
+int __cdecl APIDLLflushLineList(void);
+int __cdecl APIDLLclear(void);
+int __cdecl APIDLLsetFogColor(int red,int green,int blue);
+int __cdecl APIDLLsync(void);
+int __cdecl APIDLLclearZBuffer(void);
+int __cdecl APIDLLclearZBox(int left,int right,int top,int bottom);
+int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table);
 int FUN_10004d10(uint param_1);
 void APIDLLGetDisplayContext(undefined4 *param_1);
 void APIDLLReleaseDisplayContext(undefined4 param_1);
-undefined4 APIDLLmasterZBuffer(int param_1);
-undefined4 APIDLLrestoreZBuffer(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5);
-undefined4 APIDLLdrawPolyList(undefined4 param_1,int *param_2,int param_3,undefined4 param_4);
+int __cdecl APIDLLmasterZBuffer(int z_buffer_mode);
+int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom);
+int __cdecl APIDLLdrawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
 undefined4 FUN_10005010(int *param_1,int param_2,undefined4 param_3);
-undefined4 APIDLLdrawPolyList2(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param_4);
-undefined4 APIDLLgetVideoMemory(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
-void APIDLLselectCard(undefined4 param_1);
-undefined4 APIDLLbuildCardList(int *param_1,int *param_2,int *param_3,undefined4 *param_4,undefined4 *param_5);
-undefined4 APIDLLlockHoldBuffer(void);
-undefined4 APIDLLunlockHoldBuffer(void);
+int __cdecl APIDLLdrawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
+int __cdecl APIDLLgetVideoMemory(int *total_memory,int *available_memory,int *memory_type);
+int __cdecl APIDLLselectCard(int card_index);
+int __cdecl APIDLLbuildCardList(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids);
+int __cdecl APIDLLlockHoldBuffer(void);
+int __cdecl APIDLLunlockHoldBuffer(void);
 int __cdecl crt_stdio_c__fclose_FUN_10005430(FILE *file);
 int __cdecl crt_stdio_c__fclose_lk_FUN_10005470(FILE *file);
 int __cdecl crt_stdio_c_fprintf_FUN_100054d0(FILE *file,char *format,...) __attribute__((format(printf, 2, 3)));

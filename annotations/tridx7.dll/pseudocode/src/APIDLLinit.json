@@ -50,9 +50,9 @@
         "10001d6c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLinit",
-    "signature": "undefined4 APIDLLinit(void)"
+    "signature": "int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)"
   },
   "function_calls": [
     {
@@ -202,21 +202,19 @@
         "call_addr": "100052d5",
         "call_type": "direct",
         "caller": "APIDLLselectCard",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.773109243697479,
@@ -253,12 +251,27 @@
     "pcode_op_count": 1136
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "windowHandle",
+        "offset": 4,
+        "size": 4,
+        "type": "HWND"
+      },
+      {
+        "is_param": true,
+        "name": "interface",
+        "offset": 8,
+        "size": 4,
+        "type": "CExternalRendererBridge *"
+      }
+    ]
   },
   "static_analysis": {
     "analyzed_file": "APIDLLinit.c",

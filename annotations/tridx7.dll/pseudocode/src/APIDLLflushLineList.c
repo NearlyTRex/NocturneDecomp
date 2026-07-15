@@ -1,12 +1,12 @@
 // Name: APIDLLflushLineList
 // Address: 10004830
 // Address Range: [[10004830, 10004832]]
-// Convention: unknown
-// Signature: undefined4 APIDLLflushLineList(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLflushLineList(void)
 
 #include "nocturne.h"
 
-uint APIDLLflushLineList(void)
+int __cdecl APIDLLflushLineList(void)
 
 {
                     /* 0x4830  16  APIDLLflushLineList */

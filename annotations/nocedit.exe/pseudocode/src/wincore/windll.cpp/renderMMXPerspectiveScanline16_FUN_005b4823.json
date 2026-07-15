@@ -675,13 +675,13 @@
     },
     {
       "addr": "006827a8",
-      "name": "g_TotalColorBits",
+      "name": "g_TotalDitherShift",
       "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "006827c8",
-      "name": "g_GreenBlueBits",
+      "name": "g_GreenBlueDitherShift",
       "type": "_MMX_INTEGER",
       "value": null
     },
@@ -1135,7 +1135,7 @@
       "match": "uint7",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |",
       "type": "nonstandard_int"
     },
     {
@@ -1144,7 +1144,7 @@
       "match": "uint7",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);",
+      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalDitherShift.mm);",
       "type": "nonstandard_int"
     },
     {
@@ -1207,7 +1207,7 @@
       "match": "uint7",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |",
       "type": "nonstandard_int"
     },
     {
@@ -1216,7 +1216,7 @@
       "match": "uint7",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);",
+      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalDitherShift.mm);",
       "type": "nonstandard_int"
     },
     {

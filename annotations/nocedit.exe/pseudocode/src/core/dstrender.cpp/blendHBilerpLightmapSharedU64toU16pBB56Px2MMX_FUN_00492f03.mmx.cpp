@@ -255,8 +255,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM3,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM3,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM3
         movq MM2,MM1
@@ -265,8 +265,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM3,qword ptr [g_RedMask32]
         psrlq MM1,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM3,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM1,MM2
         por MM1,MM3
         psllq MM1,0x10

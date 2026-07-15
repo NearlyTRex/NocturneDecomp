@@ -295,8 +295,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           }
           *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
                (ushort)((uVar34 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-               (ushort)((uVar34 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-               (ushort)((uVar34 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+               (ushort)((uVar34 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+               (ushort)((uVar34 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
           if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar20) = iVar18;
           }
@@ -353,8 +353,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
               {
                 uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
                 uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
-                         (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
-                         (uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);
+                         (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |
+                         (uint7)((uVar15 & g_RedMask16.mm) << g_TotalDitherShift.mm);
                 uVar24 = (ushort)(((uVar36 >> 0x18) << 0x30) >> 0x28);
                 uVar7 = CONCAT21(uVar24,(char)(uVar36 >> 0x10));
                 uVar8 = CONCAT41((int)(((uint7)uVar7 << 0x20) >> 0x18),(char)(uVar36 >> 8));
@@ -450,8 +450,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
               }
               *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
                    (ushort)((uVar39 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-                   (ushort)((uVar39 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-                   (ushort)((uVar39 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+                   (ushort)((uVar39 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+                   (ushort)((uVar39 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
               if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
                 *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
               }
@@ -490,8 +490,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
             uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
             uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
-                     (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
-                     (uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);
+                     (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueDitherShift.mm) |
+                     (uint7)((uVar15 & g_RedMask16.mm) << g_TotalDitherShift.mm);
             uVar44 = (ulonglong)
                      CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar36 >> 0x18) << 0x30) >>
                                                                      0x28),(char)(uVar36 >> 0x10))
@@ -566,8 +566,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           uVar44 = (ulonglong)uVar10;
           *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
                (ushort)((uVar44 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
-               (ushort)((uVar44 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
-               (ushort)((uVar44 & g_RedMask32.mm) >> g_TotalColorBits.mm);
+               (ushort)((uVar44 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+               (ushort)((uVar44 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
           if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
           }

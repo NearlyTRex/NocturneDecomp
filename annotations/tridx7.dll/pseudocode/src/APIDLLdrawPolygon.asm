@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void APIDLLdrawPolygon(int param_1,int param_2,undefined4 param_3)
+; int __cdecl APIDLLdrawPolygon(SRenderVertex *vertices,int vertex_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[1]:
 ;   APIDLLclear at 100048c6
@@ -40,7 +44,7 @@ section .text
     PUSH ESI                            ; 100043a4
     PUSH 0x10138fc0                     ; 100043a5 | DAT_10138fc0
     CALL APIDLLdrawPolygon2             ; 100043aa
-        ;   XREF to: 100043c0 (UNCONDITIONAL_CALL)  ; undefined APIDLLdrawPolygon2() | Ordinal_14
+        ;   XREF to: 100043c0 (UNCONDITIONAL_CALL)  ; int APIDLLdrawPolygon2(SRenderVertex * * vertex_array, int vertex_count, int render_flags) | Ordinal_14
     ADD ESP,0xc                         ; 100043af
     POP ESI                             ; 100043b2
     RET                                 ; 100043b3

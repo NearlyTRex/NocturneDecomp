@@ -244,11 +244,11 @@ __asm {
         psllq MM4,qword ptr [g_BlueBitShift]
         movd MM2,EBX
         pand MM2,qword ptr [g_GreenMask16]
-        psllq MM2,qword ptr [g_GreenBlueBits]
+        psllq MM2,qword ptr [g_GreenBlueDitherShift]
         por MM4,MM2
         movd MM2,EBX
         pand MM2,qword ptr [g_RedMask16]
-        psllq MM2,qword ptr [g_TotalColorBits]
+        psllq MM2,qword ptr [g_TotalDitherShift]
         por MM4,MM2
         punpcklbw MM4,MM7
     LAB_005b4c2e:
@@ -288,8 +288,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM4,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM4,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0
@@ -357,11 +357,11 @@ __asm {
         psllq MM4,qword ptr [g_BlueBitShift]
         movd MM2,EBX
         pand MM2,qword ptr [g_GreenMask16]
-        psllq MM2,qword ptr [g_GreenBlueBits]
+        psllq MM2,qword ptr [g_GreenBlueDitherShift]
         por MM4,MM2
         movd MM2,EBX
         pand MM2,qword ptr [g_RedMask16]
-        psllq MM2,qword ptr [g_TotalColorBits]
+        psllq MM2,qword ptr [g_TotalDitherShift]
         por MM4,MM2
         punpcklbw MM4,MM7
         psllw MM0,0x4
@@ -411,8 +411,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM4,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM4,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0
@@ -500,8 +500,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM4,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM4,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0

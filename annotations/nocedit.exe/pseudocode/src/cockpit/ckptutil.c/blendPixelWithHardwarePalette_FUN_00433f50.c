@@ -33,12 +33,12 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
      ((y <= g_ClipBottom && (g_BitsPerPixel != 8)))) {
     if (g_BitsPerPixel == 0x10) {
       uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);
-      uVar5 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedBitCount.bytes[0] & 0x1f)
-      ;
+      uVar5 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+              (g_RedDitherShift.bytes[0] & 0x1f);
       uVar6 = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
-              (g_GreenBitCount.bytes[0] & 0x1f);
+              (g_GreenDitherShift.bytes[0] & 0x1f);
       uVar7 = (uint)(uVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
-              (g_BlueBitCount.bytes[0] & 0x1f);
+              (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
       puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);
@@ -48,12 +48,12 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
     }
     if (g_BitsPerPixel == 0x10) {
       uVar1 = g_Hardware16BitPalette[color];
-      uVar9 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedBitCount.bytes[0] & 0x1f)
-      ;
+      uVar9 = (uint)(uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+              (g_RedDitherShift.bytes[0] & 0x1f);
       uVar10 = (uint)(uVar1 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
-               (g_GreenBitCount.bytes[0] & 0x1f);
+               (g_GreenDitherShift.bytes[0] & 0x1f);
       uVar8 = (uint)(uVar1 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
-              (g_BlueBitCount.bytes[0] & 0x1f);
+              (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
       uVar9 = g_Hardware32BitPalette[color] >> (g_RedBitPosition.bytes[0] & 0x1f);
@@ -85,11 +85,11 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
     local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));
     local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar5));
     *(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =
-         (ushort)((local_20.u32[0] >> (g_GreenBitCount.bytes[0] & 0x1f)) <<
+         (ushort)((local_20.u32[0] >> (g_GreenDitherShift.bytes[0] & 0x1f)) <<
                  (g_GreenBitPosition.bytes[0] & 0x1f)) |
-         (ushort)((local_30.u32[0] >> (g_RedBitCount.bytes[0] & 0x1f)) <<
+         (ushort)((local_30.u32[0] >> (g_RedDitherShift.bytes[0] & 0x1f)) <<
                  (g_RedBitPosition.bytes[0] & 0x1f)) |
-         (ushort)((local_28.u32[0] >> (g_BlueBitCount.bytes[0] & 0x1f)) <<
+         (ushort)((local_28.u32[0] >> (g_BlueDitherShift.bytes[0] & 0x1f)) <<
                  (g_BlueBitPosition.bytes[0] & 0x1f));
   }
   return;

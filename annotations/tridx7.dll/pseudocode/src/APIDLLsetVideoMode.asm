@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLsetVideoMode(undefined4 *param_1)
+; int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
 ;
+; Parameters:
+; void * *         Stack[0x4]:4   scanline_ptrs
 ;
 ; XREF[1]:
 ;   APIDLLsetVideoMode2 at 10002bd2
@@ -529,10 +531,10 @@ section .text
         ;   XREF to: 10002af1 (CONDITIONAL_JUMP)  ; LAB_10002af1
     MOV ESI,0x3                         ; 10002af9
     CALL APIDLLclear                    ; 10002afe
-        ;   XREF to: 10004840 (UNCONDITIONAL_CALL)  ; undefined APIDLLclear() | Ordinal_8
+        ;   XREF to: 10004840 (UNCONDITIONAL_CALL)  ; int APIDLLclear() | Ordinal_8
         ;   Label: LAB_10002afe
     CALL APIDLLtoggle                   ; 10002b03
-        ;   XREF to: 100024b0 (UNCONDITIONAL_CALL)  ; undefined APIDLLtoggle() | Ordinal_34
+        ;   XREF to: 100024b0 (UNCONDITIONAL_CALL)  ; void APIDLLtoggle() | Ordinal_34
     DEC ESI                             ; 10002b08
     JNZ 0x10002afe                      ; 10002b09
         ;   XREF to: 10002afe (CONDITIONAL_JUMP)  ; LAB_10002afe

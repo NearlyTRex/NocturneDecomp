@@ -1,12 +1,12 @@
 // Name: APIDLLlockFrame
 // Address: 10002d90
 // Address Range: [[10002d90, 10002db9]]
-// Convention: unknown
-// Signature: undefined4 APIDLLlockFrame(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLlockFrame(void)
 
 #include "nocturne.h"
 
-uint APIDLLlockFrame(void)
+int __cdecl APIDLLlockFrame(void)
 
 {
   int iVar1;

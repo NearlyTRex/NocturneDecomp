@@ -243,8 +243,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
 
         // 16-bit pack and write
         ushort pix16 = (ushort)(((ulonglong)out_pix & g_BlueMask32.mm)  >> g_BlueBitShift.mm)
-                     | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueBits.mm)
-                     | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalColorBits.mm);
+                     | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm)
+                     | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalDitherShift.mm);
         *(ushort *)((char *)g_CurrentScreenPtr + (edi >> 1)) = pix16;
 
         // Z-write
@@ -315,8 +315,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
             // Blend path (LAB_005b4da7): always reads framebuffer
             ushort pix16 = *(ushort *)((char *)g_CurrentScreenPtr + (edi >> 1));
             uint pix32 = ((uint)(pix16 & g_BlueMask16.u32[0])  << g_BlueBitShift.mm)
-                       | ((uint)(pix16 & g_GreenMask16.u32[0]) << g_GreenBlueBits.mm)
-                       | ((uint)(pix16 & g_RedMask16.u32[0])   << g_TotalColorBits.mm);
+                       | ((uint)(pix16 & g_GreenMask16.u32[0]) << g_GreenBlueDitherShift.mm)
+                       | ((uint)(pix16 & g_RedMask16.u32[0])   << g_TotalDitherShift.mm);
             ulonglong mm4 = 0;
             int c;
             for (c = 0; c < 4; c++) {
@@ -359,8 +359,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
 
           // 16-bit pack and write
           ushort pix16_out = (ushort)(((ulonglong)out_pix & g_BlueMask32.mm)  >> g_BlueBitShift.mm)
-                          | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueBits.mm)
-                          | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalColorBits.mm);
+                          | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm)
+                          | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalDitherShift.mm);
           *(ushort *)((char *)g_CurrentScreenPtr + (edi >> 1)) = pix16_out;
 
           // Z-write
@@ -408,8 +408,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
           ushort pix16 = *(ushort *)((char *)g_CurrentScreenPtr + (edi >> 1));
           uint pix32 = ((uint)(pix16 & g_BlueMask16.u32[0])  << g_BlueBitShift.mm)
-                     | ((uint)(pix16 & g_GreenMask16.u32[0]) << g_GreenBlueBits.mm)
-                     | ((uint)(pix16 & g_RedMask16.u32[0])   << g_TotalColorBits.mm);
+                     | ((uint)(pix16 & g_GreenMask16.u32[0]) << g_GreenBlueDitherShift.mm)
+                     | ((uint)(pix16 & g_RedMask16.u32[0])   << g_TotalDitherShift.mm);
           int c;
           for (c = 0; c < 4; c++) {
             mm4 |= ((ulonglong)((pix32 >> (c * 8)) & 0xff) << (c * 16));
@@ -454,8 +454,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
 
         // 16-bit pack and write
         ushort pix16_out = (ushort)(((ulonglong)out_pix & g_BlueMask32.mm)  >> g_BlueBitShift.mm)
-                        | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueBits.mm)
-                        | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalColorBits.mm);
+                        | (ushort)(((ulonglong)out_pix & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm)
+                        | (ushort)(((ulonglong)out_pix & g_RedMask32.mm)   >> g_TotalDitherShift.mm);
         *(ushort *)((char *)g_CurrentScreenPtr + (edi >> 1)) = pix16_out;
 
         // Z-write

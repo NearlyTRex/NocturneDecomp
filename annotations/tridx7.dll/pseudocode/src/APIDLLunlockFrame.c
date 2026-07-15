@@ -1,12 +1,12 @@
 // Name: APIDLLunlockFrame
 // Address: 10002e60
 // Address Range: [[10002e60, 10002e91]]
-// Convention: unknown
-// Signature: undefined4 APIDLLunlockFrame(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLunlockFrame(void)
 
 #include "nocturne.h"
 
-uint APIDLLunlockFrame(void)
+int __cdecl APIDLLunlockFrame(void)
 
 {
   int iVar1;

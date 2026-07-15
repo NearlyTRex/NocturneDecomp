@@ -55,10 +55,10 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_setVideoMode =
-       (APIDLL_unknown *)
+       (APIDLL_setVideoMode *)
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLsetVideoMode");
-  if (g_APIDLL_setVideoMode == (APIDLL_unknown *)0x0) {
+  if (g_APIDLL_setVideoMode == (APIDLL_setVideoMode *)0x0) {
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_setVideoMode2 =
@@ -226,18 +226,18 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   if (g_APIDLL_setColorTable16 == (APIDLL_setColorTable16 *)0x0) {
     g_DLLFunctionsMissing = 1;
   }
-  g_APIDLL_GetDisplayContext =
-       (APIDLL_unknown *)
+  g_APIDLL_getDisplayContext =
+       (APIDLL_getDisplayContext *)
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLGetDisplayContext");
-  if (g_APIDLL_GetDisplayContext == (APIDLL_unknown *)0x0) {
+  if (g_APIDLL_getDisplayContext == (APIDLL_getDisplayContext *)0x0) {
     g_DLLFunctionsMissing = 1;
   }
-  g_APIDLL_ReleaseDisplayContext =
-       (APIDLL_unknown *)
+  g_APIDLL_releaseDisplayContext =
+       (APIDLL_releaseDisplayContext *)
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLReleaseDisplayContext");
-  if (g_APIDLL_ReleaseDisplayContext == (APIDLL_unknown *)0x0) {
+  if (g_APIDLL_releaseDisplayContext == (APIDLL_releaseDisplayContext *)0x0) {
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_masterZBuffer =

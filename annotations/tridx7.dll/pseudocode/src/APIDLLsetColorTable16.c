@@ -1,12 +1,12 @@
 // Name: APIDLLsetColorTable16
 // Address: 10004b30
 // Address Range: [[10004b30, 10004d02]]
-// Convention: unknown
-// Signature: undefined4 APIDLLsetColorTable16(int param_1,ushort *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table)
 
 #include "nocturne.h"
 
-uint APIDLLsetColorTable16(int param_1,ushort *param_2)
+int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table)
 
 {
   uint uVar1;
@@ -21,8 +21,8 @@ uint APIDLLsetColorTable16(int param_1,ushort *param_2)
   uint local_1c;
   
                     /* 0x4b30  28  APIDLLsetColorTable16 */
-  DAT_10215e40 = param_1;
-  DAT_10226868 = param_2;
+  DAT_10215e40 = source_palette;
+  DAT_10226868 = color_table;
   puVar5 = local_7c;
   for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar5 = 0;
@@ -61,7 +61,7 @@ uint APIDLLsetColorTable16(int param_1,ushort *param_2)
   *DAT_102268d4 = (uint)(0xff / (ulonglong)(local_1c >> ((byte)iVar3 & 0x1f)));
   uVar2 = FUN_10004d10(*DAT_102268d4);
   puVar6 = DAT_10226868;
-  pbVar4 = (byte *)(DAT_10215e40 + 2);
+  pbVar4 = (byte *)((int)DAT_10215e40 + 2);
   iVar3 = 0x100;
   *DAT_102268d8 = uVar2;
   do {

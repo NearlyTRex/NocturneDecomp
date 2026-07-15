@@ -49,6 +49,9 @@ APIDLL_flushLineList* g_APIDLL_flushLineList = {};
 // APIDLL_flushParticleList*
 APIDLL_flushParticleList* g_APIDLL_flushParticleList = {};
 
+// APIDLL_getDisplayContext*
+APIDLL_getDisplayContext* g_APIDLL_getDisplayContext = {};
+
 // APIDLL_getTextureInfo*
 APIDLL_getTextureInfo* g_APIDLL_getTextureInfo = {};
 
@@ -75,6 +78,9 @@ APIDLL_lockTexture* g_APIDLL_lockTexture = {};
 
 // APIDLL_masterZBuffer*
 APIDLL_masterZBuffer* g_APIDLL_masterZBuffer = {};
+
+// APIDLL_releaseDisplayContext*
+APIDLL_releaseDisplayContext* g_APIDLL_releaseDisplayContext = {};
 
 // APIDLL_restoreVideoMode*
 APIDLL_restoreVideoMode* g_APIDLL_restoreVideoMode = {};
@@ -103,6 +109,9 @@ APIDLL_setFogColor* g_APIDLL_setFogColor = {};
 // APIDLL_setMipMapLevel*
 APIDLL_setMipMapLevel* g_APIDLL_setMipMapLevel = {};
 
+// APIDLL_setVideoMode*
+APIDLL_setVideoMode* g_APIDLL_setVideoMode = {};
+
 // APIDLL_setVideoMode2*
 APIDLL_setVideoMode2* g_APIDLL_setVideoMode2 = {};
 
@@ -119,9 +128,6 @@ APIDLL_toggle* g_APIDLL_toggle = {};
 APIDLL_toggleX* g_APIDLL_toggleX = {};
 
 // APIDLL_unknown*
-APIDLL_unknown* g_APIDLL_setVideoMode = {};
-APIDLL_unknown* g_APIDLL_GetDisplayContext = {};
-APIDLL_unknown* g_APIDLL_ReleaseDisplayContext = {};
 APIDLL_unknown* g_APIDLL_setViewport = {};
 APIDLL_unknown* g_APIDLL_setLightConstants = {};
 APIDLL_unknown* g_APIDLL_setLightVector = {};

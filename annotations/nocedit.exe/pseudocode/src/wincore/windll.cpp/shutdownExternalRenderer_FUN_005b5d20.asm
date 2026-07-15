@@ -14,7 +14,7 @@
 ;   APIDLL_init* g_APIDLL_init
 ;   APIDLL_kill* g_APIDLL_kill
 ;   APIDLL_toggle* g_APIDLL_toggle
-;   APIDLL_unknown* g_APIDLL_setVideoMode
+;   APIDLL_setVideoMode* g_APIDLL_setVideoMode
 ;   APIDLL_setVideoMode2* g_APIDLL_setVideoMode2
 ;   APIDLL_restoreVideoMode* g_APIDLL_restoreVideoMode
 ;   APIDLL_beginScene* g_APIDLL_beginScene
@@ -73,8 +73,8 @@ section .text
     MOV dword ptr [0x03f6b8f8],EBP      ; 005b5dd0 | g_APIDLL_clearZBuffer
     MOV dword ptr [0x03f6b8fc],EBP      ; 005b5dd6 | g_APIDLL_clearZBox
     MOV dword ptr [0x03f6b900],EBP      ; 005b5ddc | g_APIDLL_setColorTable16
-    MOV dword ptr [0x03f6b904],EBP      ; 005b5de2 | g_APIDLL_GetDisplayContext
-    MOV dword ptr [0x03f6b908],EBP      ; 005b5de8 | g_APIDLL_ReleaseDisplayContext
+    MOV dword ptr [0x03f6b904],EBP      ; 005b5de2 | g_APIDLL_getDisplayContext
+    MOV dword ptr [0x03f6b908],EBP      ; 005b5de8 | g_APIDLL_releaseDisplayContext
     MOV dword ptr [0x03f6b90c],EBP      ; 005b5dee | g_APIDLL_masterZBuffer
     MOV dword ptr [0x03f6b910],EBP      ; 005b5df4 | g_APIDLL_restoreZBuffer
     MOV dword ptr [0x03f6b914],EBP      ; 005b5dfa | g_APIDLL_getVideoMemory

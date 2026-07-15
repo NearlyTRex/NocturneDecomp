@@ -33,9 +33,9 @@
         "10003f05"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLsetMipMapLevel",
-    "signature": "undefined4 APIDLLsetMipMapLevel(void)"
+    "signature": "int __cdecl APIDLLsetMipMapLevel(int mipmap_level)"
   },
   "function_calls": [],
   "globals": [],
@@ -43,9 +43,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -60,12 +60,20 @@
     "pcode_op_count": 4
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mipmap_level",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": []
 }

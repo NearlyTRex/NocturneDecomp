@@ -1,12 +1,12 @@
 // Name: APIDLLrestoreVideoMode
 // Address: 10002be0
 // Address Range: [[10002be0, 10002c46]]
-// Convention: unknown
-// Signature: undefined4 APIDLLrestoreVideoMode(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLrestoreVideoMode(void)
 
 #include "nocturne.h"
 
-uint APIDLLrestoreVideoMode(void)
+int __cdecl APIDLLrestoreVideoMode(void)
 
 {
   int iVar1;

@@ -1,12 +1,12 @@
 // Name: APIDLLsetMipMapLevel
 // Address: 10003f00
 // Address Range: [[10003f00, 10003f05]]
-// Convention: unknown
-// Signature: undefined4 APIDLLsetMipMapLevel(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLsetMipMapLevel(int mipmap_level)
 
 #include "nocturne.h"
 
-uint APIDLLsetMipMapLevel(void)
+int __cdecl APIDLLsetMipMapLevel(int mipmap_level)
 
 {
                     /* 0x3f00  30  APIDLLsetMipMapLevel */

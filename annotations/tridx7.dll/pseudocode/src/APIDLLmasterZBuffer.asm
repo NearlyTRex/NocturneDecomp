@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 APIDLLmasterZBuffer(int param_1)
+; int __cdecl APIDLLmasterZBuffer(int z_buffer_mode)
 ;
+; Parameters:
+; int              Stack[0x4]:4   z_buffer_mode
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

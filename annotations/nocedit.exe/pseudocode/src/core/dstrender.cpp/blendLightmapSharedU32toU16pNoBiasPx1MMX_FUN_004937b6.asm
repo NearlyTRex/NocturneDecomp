@@ -18,8 +18,8 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   _MMX_INTEGER g_TotalColorBits
-;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
 ;   _MMX_INTEGER g_BlueBitShift
 ;   uint[256] g_LightmapTexturePalette
 ;   ulong g_SolidColorMode
@@ -66,8 +66,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 0049382a | g_GreenMask32
     PAND MM3,qword ptr [0x00682760]     ; 00493831 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 00493838 | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049383f | g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493846 | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049383f | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493846 | g_TotalDitherShift
     POR MM0,MM2                         ; 0049384d
     POR MM0,MM3                         ; 00493850
     MOVD EAX,MM0                        ; 00493853

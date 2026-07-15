@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void APIDLLInformation(void)
+; void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer)
 ;
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
+; HMODULE          Stack[0x4]:4   dll_handle
+; void *           Stack[0x8]:4   info_buffer
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Terminal_Reality_Inc_10014238

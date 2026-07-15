@@ -1,12 +1,12 @@
 // Name: APIDLLInformation
 // Address: 100019a0
 // Address Range: [[100019a0, 10001a75]]
-// Convention: unknown
-// Signature: void APIDLLInformation(void)
+// Convention: __cdecl
+// Signature: void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer)
 
 #include "nocturne.h"
 
-void APIDLLInformation(void)
+void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer)
 
 {
   char cVar1;

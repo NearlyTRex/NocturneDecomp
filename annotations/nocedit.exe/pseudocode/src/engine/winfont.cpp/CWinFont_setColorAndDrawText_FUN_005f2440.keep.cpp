@@ -78,13 +78,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
             do {
               uVar2 = ((ushort *)this_ptr->ppv_bits)[CStack_18 * this_ptr->right + iVar4];
               if (uVar2 != 0x7c1f) {
-                *puVar8 = (ushort)((byte)((char)uVar2 << 3) >> (g_BlueBitCount.bytes[0] & 0x1f)) <<
+                *puVar8 = (ushort)((byte)((char)uVar2 << 3) >> (g_BlueDitherShift.bytes[0] & 0x1f)) <<
                           (g_BlueBitPosition.bytes[0] & 0x1f) |
                           (ushort)(((((int)(uint)uVar2 >> 10 & 0x1fU) << 3) >>
-                                   (g_RedBitCount.bytes[0] & 0x1f)) <<
+                                   (g_RedDitherShift.bytes[0] & 0x1f)) <<
                                   (g_RedBitPosition.bytes[0] & 0x1f)) |
                           (ushort)(((((int)(uint)uVar2 >> 5 & 0x1fU) << 3) >>
-                                   (g_GreenBitCount.bytes[0] & 0x1f)) <<
+                                   (g_GreenDitherShift.bytes[0] & 0x1f)) <<
                                   (g_GreenBitPosition.bytes[0] & 0x1f));
               }
               iVar4 = iVar4 + 1;

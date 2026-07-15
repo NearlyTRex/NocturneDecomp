@@ -14,17 +14,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 212,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 17,
+    "suspect_count": 6,
     "suspect_types": [
       "displaced_global_access",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 65
@@ -38,9 +37,9 @@
         "10004efd"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLrestoreZBuffer",
-    "signature": "undefined4 APIDLLrestoreZBuffer(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)"
+    "signature": "int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom)"
   },
   "function_calls": [
     {
@@ -73,9 +72,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -106,10 +105,10 @@
     "pcode_op_count": 156
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 40,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -139,97 +138,52 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint APIDLLrestoreZBuffer(int param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint APIDLLrestoreZBuffer(int param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint APIDLLrestoreZBuffer(int param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint APIDLLrestoreZBuffer(int param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint APIDLLrestoreZBuffer(int param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((&DAT_10014198)[param_1] == 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_10014198",
       "severity": "mild",
-      "text": "if ((&DAT_10014198)[param_1] == 0) {",
+      "text": "if ((&DAT_10014198)[left] == 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_10 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_c = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_8 = param_4 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_4 = param_5 + 1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -248,19 +202,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[param_1],&local_10,0,0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_10014190",
       "severity": "mild",
-      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[param_1],&local_10,0,0);",
+      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[left],&local_10,0,0);",
       "type": "undefined_data"
     },
     {
@@ -268,7 +214,7 @@
       "line": 20,
       "match": "DAT_10014198",
       "severity": "mild",
-      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[param_1],&local_10,0,0);",
+      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[left],&local_10,0,0);",
       "type": "undefined_data"
     },
     {

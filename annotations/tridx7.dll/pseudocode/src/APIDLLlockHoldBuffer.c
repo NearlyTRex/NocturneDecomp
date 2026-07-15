@@ -1,14 +1,14 @@
 // Name: APIDLLlockHoldBuffer
 // Address: 10005350
 // Address Range: [[10005350, 10005392]]
-// Convention: unknown
-// Signature: undefined4 APIDLLlockHoldBuffer(void)
+// Convention: __cdecl
+// Signature: int __cdecl APIDLLlockHoldBuffer(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint APIDLLlockHoldBuffer(void)
+int __cdecl APIDLLlockHoldBuffer(void)
 
 {
   int iVar1;

@@ -14,19 +14,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 194,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 13,
+    "pseudocode_lines": 47,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_memset"
     ],
-    "total_lines": 113
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -44,9 +46,9 @@
         "1000490d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "APIDLLclear",
-    "signature": "undefined4 APIDLLclear(void)"
+    "signature": "int __cdecl APIDLLclear(void)"
   },
   "function_calls": [
     {
@@ -228,39 +230,55 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_10014204",
       "severity": "mild",
       "text": "if (DAT_10014204 == 0) {",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(SRenderVertex *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_10014180",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_10014180",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(SRenderVertex *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_10014174",
       "severity": "mild",
       "text": "local_80 = DAT_10014174 << 0x10;",
@@ -268,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_10014178",
       "severity": "mild",
       "text": "local_4c = DAT_10014178 << 0x10;",
@@ -276,15 +294,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_10226908",
       "severity": "mild",
-      "text": "local_c0[2] = *DAT_10226908;",
+      "text": "local_c0.projected_vertex.transformed_z = *DAT_10226908;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_10226908",
       "severity": "mild",
       "text": "local_88 = *DAT_10226908;",
@@ -292,7 +310,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_10226908",
       "severity": "mild",
       "text": "local_58 = *DAT_10226908;",
@@ -300,7 +318,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 43,
       "match": "DAT_10226908",
       "severity": "mild",
       "text": "local_28 = *DAT_10226908;",
@@ -308,11 +326,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_102268e8",
       "severity": "mild",
       "text": "*DAT_102268e8 = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)pSVar1",
+      "severity": "moderate",
+      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)pSVar1",
+      "severity": "moderate",
+      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom inline memset (REP STOSD at 1000485c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",

@@ -299,11 +299,11 @@ section .text
     PSLLQ MM4,qword ptr [0x006827e8]    ; 005b4bfc | g_BlueBitShift
     MOVD MM2,EBX                        ; 005b4c03
     PAND MM2,qword ptr [0x00682750]     ; 005b4c06 | g_GreenMask16
-    PSLLQ MM2,qword ptr [0x006827c8]    ; 005b4c0d | g_GreenBlueBits
+    PSLLQ MM2,qword ptr [0x006827c8]    ; 005b4c0d | g_GreenBlueDitherShift
     POR MM4,MM2                         ; 005b4c14
     MOVD MM2,EBX                        ; 005b4c17
     PAND MM2,qword ptr [0x00682748]     ; 005b4c1a | g_RedMask16
-    PSLLQ MM2,qword ptr [0x006827a8]    ; 005b4c21 | g_TotalColorBits
+    PSLLQ MM2,qword ptr [0x006827a8]    ; 005b4c21 | g_TotalDitherShift
     POR MM4,MM2                         ; 005b4c28
     PUNPCKLBW MM4,MM7                   ; 005b4c2b
     PSLLW MM0,0x4                       ; 005b4c2e
@@ -345,8 +345,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 005b4c9f | g_GreenMask32
     PAND MM4,qword ptr [0x00682760]     ; 005b4ca6 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 005b4cad | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b4cb4 | g_GreenBlueBits
-    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b4cbb | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b4cb4 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b4cbb | g_TotalDitherShift
     POR MM0,MM2                         ; 005b4cc2
     POR MM0,MM4                         ; 005b4cc5
     MOVD EAX,MM0                        ; 005b4cc8
@@ -422,11 +422,11 @@ section .text
     PSLLQ MM4,qword ptr [0x006827e8]    ; 005b4dbe | g_BlueBitShift
     MOVD MM2,EBX                        ; 005b4dc5
     PAND MM2,qword ptr [0x00682750]     ; 005b4dc8 | g_GreenMask16
-    PSLLQ MM2,qword ptr [0x006827c8]    ; 005b4dcf | g_GreenBlueBits
+    PSLLQ MM2,qword ptr [0x006827c8]    ; 005b4dcf | g_GreenBlueDitherShift
     POR MM4,MM2                         ; 005b4dd6
     MOVD MM2,EBX                        ; 005b4dd9
     PAND MM2,qword ptr [0x00682748]     ; 005b4ddc | g_RedMask16
-    PSLLQ MM2,qword ptr [0x006827a8]    ; 005b4de3 | g_TotalColorBits
+    PSLLQ MM2,qword ptr [0x006827a8]    ; 005b4de3 | g_TotalDitherShift
     POR MM4,MM2                         ; 005b4dea
     PUNPCKLBW MM4,MM7                   ; 005b4ded
     PSLLW MM0,0x4                       ; 005b4df0
@@ -481,8 +481,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 005b4e8e | g_GreenMask32
     PAND MM4,qword ptr [0x00682760]     ; 005b4e95 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 005b4e9c | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b4ea3 | g_GreenBlueBits
-    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b4eaa | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b4ea3 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b4eaa | g_TotalDitherShift
     POR MM0,MM2                         ; 005b4eb1
     POR MM0,MM4                         ; 005b4eb4
     MOVD EAX,MM0                        ; 005b4eb7
@@ -578,8 +578,8 @@ section .text
     PAND MM2,qword ptr [0x00682780]     ; 005b4fff | g_GreenMask32
     PAND MM4,qword ptr [0x00682760]     ; 005b5006 | g_RedMask32
     PSRLQ MM0,qword ptr [0x006827e8]    ; 005b500d | g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b5014 | g_GreenBlueBits
-    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b501b | g_TotalColorBits
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 005b5014 | g_GreenBlueDitherShift
+    PSRLQ MM4,qword ptr [0x006827a8]    ; 005b501b | g_TotalDitherShift
     POR MM0,MM2                         ; 005b5022
     POR MM0,MM4                         ; 005b5025
     MOVD EAX,MM0                        ; 005b5028

@@ -7,15 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 61,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 62,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 282
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -66,7 +66,7 @@
     },
     {
       "addr": "02d01f2c",
-      "name": "g_RedBitCount",
+      "name": "g_RedDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -78,7 +78,7 @@
     },
     {
       "addr": "02d01f38",
-      "name": "g_GreenBitCount",
+      "name": "g_GreenDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -90,7 +90,7 @@
     },
     {
       "addr": "02d01f44",
-      "name": "g_BlueBitCount",
+      "name": "g_BlueDitherShift",
       "type": "_BIT_INTEGER32",
       "value": null
     },
@@ -260,7 +260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(uint *)(x * 4 + (int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -269,7 +269,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 60,
       "match": "(ushort *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 54,
       "match": "(int)g_ScreenBufferArray[y]",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -305,7 +305,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)g_ScreenBufferArray[y]",
       "resolution_source": "keep",
       "severity": "moderate",

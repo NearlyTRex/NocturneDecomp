@@ -40,11 +40,11 @@ __asm {
         psllq MM3,qword ptr [g_BlueBitShift]
         movd MM4,EAX
         pand MM4,qword ptr [g_GreenMask16]
-        psllq MM4,qword ptr [g_GreenBlueBits]
+        psllq MM4,qword ptr [g_GreenBlueDitherShift]
         por MM3,MM4
         movd MM5,EAX
         pand MM5,qword ptr [g_RedMask16]
-        psllq MM5,qword ptr [g_TotalColorBits]
+        psllq MM5,qword ptr [g_TotalDitherShift]
         por MM3,MM5
         punpcklbw MM3,MM7
         cmp dword ptr [g_BlendMode],0x1
@@ -68,8 +68,8 @@ __asm {
         pand MM2,qword ptr [g_GreenMask32]
         pand MM4,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [g_BlueBitShift]
-        psrlq MM2,qword ptr [g_GreenBlueBits]
-        psrlq MM4,qword ptr [g_TotalColorBits]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM4,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0
