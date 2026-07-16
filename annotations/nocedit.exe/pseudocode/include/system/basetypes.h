@@ -118,6 +118,8 @@ typedef void* pointer;
 typedef const char* TerminatedCString;
 typedef const wchar_t* TerminatedUnicode;
 typedef const char* string;  // Ghidra's generic string type
+typedef const wchar_t* unicode;  // Ghidra null-terminated UTF-16 string
+typedef const wchar_t* PascalUnicode;  // Ghidra length-prefixed UTF-16 string
 
 // Extended precision float (x87 80-bit)
 typedef long double float10;

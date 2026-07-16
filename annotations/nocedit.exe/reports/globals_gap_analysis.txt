@@ -5,19 +5,19 @@ GLOBALS GAP ANALYSIS REPORT
 Total globals analyzed:      19522
   Named globals:             19510
   DAT_ globals:              12
-Gaps found:                  2348
-  With exact size bounds:    1313
-  With estimated bounds:     1035
-Total gap bytes:             48,848,364
-  Exact gap bytes:           12,436,275
-Overlaps (size <= 0):        13336
+Gaps found:                  2347
+  With exact size bounds:    1314
+  With estimated bounds:     1033
+Total gap bytes:             48,848,308
+  Exact gap bytes:           12,436,711
+Overlaps (size <= 0):        13337
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          487
   5-16 bytes (small vars)                       547
-  17-64 bytes (structs/small arrays)            574
+  17-64 bytes (structs/small arrays)            573
   65-256 bytes (medium data)                    254
   257-1024 bytes (large structs/arrays)         193
   1-4 KB                                        94
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_005a27d0                     void*                at 0x005a27d0
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1313) - size bounds are known precisely
+ALL EXACT GAPS (1314) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -411,6 +411,7 @@ ALL EXACT GAPS (1313) - size bounds are known precisely
          478 bytes  at 0x0063d675  between g_SyncTimeout                  and s_You_have_been_disconnect_006
          476 bytes  at 0x005f8330  between PTR_caseD_3_005f832c           and switchdataD_005f850c
          472 bytes  at 0x00680e30  between PTR_s_anon_006441c9_00680e2c   and PTR_s_cmp_counterUsed_relOp_co
+         436 bytes  at 0x00684d18  between g_StderrLogFile                and g_StaticFilePoolEnd
          428 bytes  at 0x02d03eec  between CHAR_ARRAY_02d03ee8            and g_KeyboardState+0x200
          420 bytes  at 0x00437ab8  between PTR_caseD_3_00437ab4           and switchdataD_00437c5c
          416 bytes  at 0x00681f10  between PTR_s_GENERIC_00681f0c         and g_SoundResultBufferTemplate
@@ -1496,7 +1497,7 @@ ALL EXACT GAPS (1313) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13336) - next global starts inside previous
+OVERLAPS (13337) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -40945,6 +40946,9 @@ OVERLAPS (13336) - next global starts inside previous
   236 bytes overlap ~
     s_Stack_Overflow_00684b24                TerminatedCString    at 0x00684b24  size=256
     g_PiOver2                                float10              at 0x00684b38
+  6 bytes overlap
+    g_StdoutLogFile                          _FILE                at 0x00684cde  size=32
+    g_StderrLogFile                          _FILE                at 0x00684cf8
   128 bytes overlap ~
     s_EST_006850bc                           TerminatedCString    at 0x006850bc  size=256
     DAT_0068513c                             undefined4           at 0x0068513c
