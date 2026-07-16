@@ -1,0 +1,176 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 25,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 25,
+        "message": "expected expression"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 25,
+        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memset"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10004a70",
+    "address_range": [
+      [
+        "10004a70",
+        "10004ab6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70",
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLclearZBuffer_FUN_10004a70(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10014190",
+      "name": "DAT_10014190",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9545454545454546,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 22,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 87
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 104,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10014190",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10014190",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10004a7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 7,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 10004a7f: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}

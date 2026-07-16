@@ -1,0 +1,105 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "100049f0",
+      "from_addr": "10004a16",
+      "name": "dll_dx7.cpp_APIDLLsetFogColor_FUN_100049f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10002ce0",
+    "address_range": [
+      [
+        "10002ce0",
+        "10002d0d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_APIDLLbeginScene_FUN_10002ce0",
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLbeginScene_FUN_10002ce0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "100141e0",
+      "name": "g_Device",
+      "type": "IDirect3DDevice3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10014204",
+      "name": "g_InScene",
+      "type": "int",
+      "value": "0x0"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.133333333333334,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 4,
+      "INT_AND": 9,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 3,
+      "STORE": 2
+    },
+    "pcode_op_count": 62
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

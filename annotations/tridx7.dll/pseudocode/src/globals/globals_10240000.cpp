@@ -158,7 +158,6 @@ undefined2 DAT_1024084e = 0x0000;
 
 // undefined4
 undefined4 DAT_10240610 = 0x00000000;
-undefined4 DAT_1024061c = 0x00000000;
 undefined4 DAT_10240624 = 0x00000000;
 undefined4 DAT_10240794 = 0x00000000;
 undefined4 DAT_102407a0 = 0x00000000;
@@ -177,6 +176,9 @@ undefined4 DAT_10241978 = 0x00000000;
 undefined4 DAT_1024197c = 0x00000000;
 undefined4 DAT_10241980 = 0x00000000;
 undefined4 DAT_10241984 = 0x00000000;
+
+// void*
+void* g_TextureOpacity = nullptr;
 
 // word
 word DAT_102443AE = 0;

@@ -7,9 +7,9 @@
 ; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[3]:
-;   APIDLLsetVideoMode at 1000268c
-;   FUN_10001200 at 100012c9
 ;   crt_stdio.c___endstdio_FUN_1000ab70 at 1000abab
+;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 1000268c
+;   dll_dx7.cpp_FUN_10001200 at 100012c9
 ;
 ; Called Functions:
 ;   crt_stdio.c__fclose_lk_FUN_10005470

@@ -11,9 +11,11 @@
 extern int g_AdapterCount;
 
 // undefined4
-extern undefined4 DAT_1020de38;
 extern undefined4 DAT_1020de40;
 extern undefined4 DAT_1020de44;
 extern undefined4 DAT_1020de48;
 extern undefined4 DAT_1020de4c;
+
+// void*
+extern void* g_TextureData;
 

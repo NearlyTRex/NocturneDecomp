@@ -1,0 +1,283 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 19,
+        "message": "incompatible integer to pointer conversion assigning to 'uint *' (aka 'unsigned int *') from 'undefined4' (aka 'unsigned int'); take the address with &"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 26,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 30,
+        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 33,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 33,
+        "message": "expected expression"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 33,
+        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 160,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [],
+  "function": {
+    "address": "100053a0",
+    "address_range": [
+      [
+        "100053a0",
+        "100053ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_APIDLLunlockHoldBuffer_FUN_100053a0",
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLunlockHoldBuffer_FUN_100053a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002cb0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10002cb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014178",
+      "name": "DAT_10014178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014180",
+      "name": "DAT_10014180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141b8",
+      "name": "DAT_100141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10138fb4",
+      "name": "DAT_10138fb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10225848",
+      "name": "DAT_10225848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1022584c",
+      "name": "DAT_1022584c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.131578947368421,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 42,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 13,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 12,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 157
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "if (0 < DAT_10014178) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10225848",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_10225848;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10138fb4",
+      "severity": "mild",
+      "text": "puVar3 = DAT_10138fb4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_100141b8",
+      "severity": "mild",
+      "text": "iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_100141b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "if (DAT_10014180 == (int *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,DAT_100141b8,0,0,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,DAT_100141b8,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,DAT_100141b8,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_100141b8",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,DAT_100141b8,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 13,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 100053b7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 10,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 100053b7: MOVSD.REP ES:EDI,ESI  ; DAT_10225848 | DAT_1022584c",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

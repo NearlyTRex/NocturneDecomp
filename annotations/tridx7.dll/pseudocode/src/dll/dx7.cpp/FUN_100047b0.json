@@ -1,0 +1,235 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 34,
+        "line": 14,
+        "message": "use of undeclared identifier 'DAT_1013b8d8'; did you mean 'DAT_101398c8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 69,
+        "line": 14,
+        "message": "use of undeclared identifier 'DAT_10238910'; did you mean 'DAT_10244910'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 85,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "10005130",
+      "from_addr": "10005267",
+      "name": "dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10004f00",
+      "from_addr": "10004ff7",
+      "name": "dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100043c0",
+      "from_addr": "1000448d",
+      "name": "dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002d10",
+      "from_addr": "10002d21",
+      "name": "dll_dx7.cpp_APIDLLendScene_FUN_10002d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10004a60",
+      "from_addr": "10004a60",
+      "name": "dll_dx7.cpp_APIDLLsync_FUN_10004a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100037e0",
+      "from_addr": "10003810",
+      "name": "dll_dx7.cpp_FUN_100037e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10003f10",
+      "from_addr": "10003f3b",
+      "name": "dll_dx7.cpp_FUN_10003f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100047b0",
+    "address_range": [
+      [
+        "100047b0",
+        "100047fe"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_100047b0",
+    "signature": "void dll_dx7_cpp_FUN_100047b0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "100141e0",
+      "name": "g_Device",
+      "type": "IDirect3DDevice3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10014204",
+      "name": "g_InScene",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10014228",
+      "name": "DAT_10014228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001422c",
+      "name": "DAT_1001422c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1013b8d8",
+      "name": "DAT_1013b8d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238910",
+      "name": "DAT_10238910",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.090909090909091,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 21,
+      "INT_ADD": 3,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 11,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 68
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "if ((g_InScene != 0) && (DAT_10014228 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_1013b8d8",
+      "severity": "mild",
+      "text": "(g_Device,4,0x1c4,&DAT_1013b8d8,DAT_10014228,(WORD *)&DAT_10238910,DAT_1001422c,0x1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "(g_Device,4,0x1c4,&DAT_1013b8d8,DAT_10014228,(WORD *)&DAT_10238910,DAT_1001422c,0x1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_10238910",
+      "severity": "mild",
+      "text": "(g_Device,4,0x1c4,&DAT_1013b8d8,DAT_10014228,(WORD *)&DAT_10238910,DAT_1001422c,0x1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "(g_Device,4,0x1c4,&DAT_1013b8d8,DAT_10014228,(WORD *)&DAT_10238910,DAT_1001422c,0x1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "DAT_10014228 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "DAT_1001422c = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

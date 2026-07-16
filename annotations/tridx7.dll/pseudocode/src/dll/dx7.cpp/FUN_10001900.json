@@ -1,0 +1,213 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 36,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "type_error",
+        "column": 42,
+        "line": 36,
+        "message": "called object type 'void' is not a function or function pointer"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 125,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_memset"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "100017b0",
+      "from_addr": "100017b9",
+      "name": "dll_dx7.cpp_FUN_100017b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001900",
+    "address_range": [
+      [
+        "10001900",
+        "10001990"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_10001900",
+    "signature": "undefined4 dll_dx7_cpp_FUN_10001900(GUID *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005424",
+      "is_variadic": false,
+      "name": "DirectDrawCreate"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100017b9",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_FUN_100017b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.326086956521739,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 45,
+      "INT_ADD": 21,
+      "INT_AND": 21,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 17,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 13,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 768,
+    "local_size": 768,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2fc",
+        "offset": -764,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint dll_dx7_cpp_FUN_10001900(GUID *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "HVar1 = DirectDrawCreate(param_1,&local_2fc,(IUnknown *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 24,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 1000192c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 18,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 1000192c: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 1000193e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 22,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 1000193e: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

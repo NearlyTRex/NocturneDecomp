@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "pointer_type",
+        "column": 14,
+        "line": 17,
+        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 44,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "10004840",
+      "from_addr": "100048c6",
+      "name": "dll_dx7.cpp_APIDLLclear_FUN_10004840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10004380",
+    "address_range": [
+      [
+        "10004380",
+        "100043b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_APIDLLdrawPolygon_FUN_10004380",
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLdrawPolygon_FUN_10004380(SRenderVertex *vertices,int vertex_count,int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "100043c0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10138fc0",
+      "name": "DAT_10138fc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10138fc4",
+      "name": "DAT_10138fc4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "100048c6",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLclear_FUN_10004840",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 84
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10138fc0",
+      "severity": "mild",
+      "text": "piVar2 = &DAT_10138fc0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_10138fc0",
+      "severity": "mild",
+      "text": "((SRenderVertex **)&DAT_10138fc0,vertex_count,render_flags);",
+      "type": "undefined_data"
+    }
+  ]
+}

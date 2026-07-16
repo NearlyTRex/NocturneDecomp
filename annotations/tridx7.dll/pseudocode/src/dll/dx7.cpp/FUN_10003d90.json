@@ -1,0 +1,331 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 222,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 17,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "10003a80",
+      "from_addr": "10003b94",
+      "name": "dll_dx7.cpp_FUN_10003a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10003d90",
+    "address_range": [
+      [
+        "10003d90",
+        "10003e3b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_10003d90",
+    "signature": "void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "10003a30",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10003a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "101386a8",
+      "name": "DAT_101386a8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10226e80",
+      "name": "DAT_10226e80",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "10240620",
+      "name": "DAT_10240620",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10003b94",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_FUN_10003a80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.821428571428571,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 42,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 53,
+      "INT_ADD": 23,
+      "INT_AND": 146,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 43,
+      "INT_RIGHT": 8,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 37,
+      "INT_SUB": 19,
+      "INT_XOR": 4,
+      "LOAD": 25,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 550
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_10003d90.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 13,
+          "line": 25,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)dll_dx7_cpp_FUN_10003a30(param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (0 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_4 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar5 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (0 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_101386a8",
+      "severity": "mild",
+      "text": "*puVar4 = (uVar2 >> 4 & 0xf) << (DAT_101386a8 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10226e80",
+      "severity": "mild",
+      "text": "((ushort)(uVar1 >> 4) & 0xf) << (DAT_10226e80 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10240620",
+      "severity": "mild",
+      "text": "((ushort)(uVar1 >> 0xc) & 0xf) << (DAT_10240620 & 0x1f) | uVar2 & 0xf000;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(ushort *)((int)param_1",
+      "severity": "moderate",
+      "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 25,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (0 < param_3) {",
+      "type": "static_identical_inner_condition"
+    }
+  ]
+}

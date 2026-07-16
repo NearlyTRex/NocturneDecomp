@@ -1,0 +1,257 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 198,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 15,
+    "suspect_types": [
+      "register_param",
+      "unnamed_param",
+      "unrolled_memset"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "10001200",
+      "from_addr": "1000141f",
+      "name": "dll_dx7.cpp_FUN_10001200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001020",
+    "address_range": [
+      [
+        "10001020",
+        "10001074"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_10001020",
+    "signature": "void dll_dx7_cpp_FUN_10001020(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002f60",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10002f60"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 38,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 13,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_10001020.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 18,
+          "message": "Uninitialized variable: in_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void dll_dx7_cpp_FUN_10001020(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void dll_dx7_cpp_FUN_10001020(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "int *in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "piVar3 = in_ECX + 4;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*in_ECX = param_1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*in_ECX = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "in_ECX[1] = param_2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "in_ECX[1] = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 20,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "in_ECX[2] = 0;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "in_ECX[3] = 0;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 22,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (0 < *in_ECX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 24,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "iVar1 = dll_dx7_cpp_FUN_10002f60(in_ECX[1]);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (*in_ECX <= iVar2) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*in_ECX = iVar2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 1000103e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 14,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 1000103e: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Uninitialized variable: in_ECX",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "piVar3 = in_ECX + 4;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

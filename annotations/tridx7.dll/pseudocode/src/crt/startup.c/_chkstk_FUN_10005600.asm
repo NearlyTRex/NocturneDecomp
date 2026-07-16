@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   APIDLLInformation at 100019a5
 ;   crt_io.c__chsize_lk_FUN_1000b560 at 1000b565
+;   dll_dx7.cpp_APIDLLInformation_FUN_100019a0 at 100019a5
 ;
 ; *****************************************************************************
 

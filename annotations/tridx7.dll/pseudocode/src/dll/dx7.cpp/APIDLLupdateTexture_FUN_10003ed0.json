@@ -1,0 +1,159 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 16,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_100015d0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10003ed0",
+    "address_range": [
+      [
+        "10003ed0",
+        "10003eff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_APIDLLupdateTexture_FUN_10003ed0",
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "100015d0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_100015d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10138fb0",
+      "name": "g_TexturePalette",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "1020de38",
+      "name": "g_TextureData",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "1024061c",
+      "name": "g_TextureOpacity",
+      "type": "void*",
+      "value": "00000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8333333333333335,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 34
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_dimension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_data",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_data",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "opacity_data",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": []
+}

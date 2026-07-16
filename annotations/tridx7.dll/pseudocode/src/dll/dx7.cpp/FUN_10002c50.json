@@ -1,0 +1,237 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 21,
+        "message": "incompatible integer to pointer conversion assigning to 'uint *' (aka 'unsigned int *') from 'undefined4' (aka 'unsigned int'); take the address with &"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 28,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 124,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "10002be0",
+      "from_addr": "10002bea",
+      "name": "dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002e60",
+      "from_addr": "10002e76",
+      "name": "dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10002c50",
+    "address_range": [
+      [
+        "10002c50",
+        "10002ca2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_10002c50",
+    "signature": "undefined4 dll_dx7_cpp_FUN_10002c50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002cb0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10002cb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014178",
+      "name": "DAT_10014178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014180",
+      "name": "DAT_10014180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141f4",
+      "name": "DAT_100141f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10138fb4",
+      "name": "DAT_10138fb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10225848",
+      "name": "DAT_10225848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1022584c",
+      "name": "DAT_1022584c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.206896551724138,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 32,
+      "INT_ADD": 12,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 10,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 5
+    },
+    "pcode_op_count": 122
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_100141f4",
+      "severity": "mild",
+      "text": "if (DAT_100141f4 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "if (0 < DAT_10014178) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10225848",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_10225848;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10138fb4",
+      "severity": "mild",
+      "text": "puVar3 = DAT_10138fb4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_10014180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_100141f4",
+      "severity": "mild",
+      "text": "DAT_100141f4 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 15,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10002c78, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10002c78: MOVSD.REP ES:EDI,ESI  ; DAT_10225848 | DAT_1022584c",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

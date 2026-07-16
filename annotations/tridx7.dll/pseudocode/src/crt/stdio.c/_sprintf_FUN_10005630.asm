@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   APIDLLsetVideoMode at 10002ac3
+;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 10002ac3
 ;
 ; Called Functions:
 ;   crt_stdio.c__flsbuf_FUN_10007420

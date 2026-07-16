@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/d3d.h"
 #include "system/ddraw.h"
 #include "system/pe.h"
 #include "system/winbase.h"
@@ -14,11 +15,17 @@
 // GUID
 extern GUID g_IID_IDirectDraw4;
 
+// IDirect3DDevice3*
+extern IDirect3DDevice3* g_Device;
+
 // IDirectDraw*
 extern IDirectDraw* g_DirectDraw;
 
 // IDirectDraw4*
 extern IDirectDraw4* g_DirectDraw4;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_PrimarySurface;
 
 // IMAGE_DEBUG_DIRECTORY
 extern IMAGE_DEBUG_DIRECTORY DAT_1001201C;
@@ -31,6 +38,9 @@ extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac;
 extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc;
 
 // int
+extern int g_CurrentTextureIndex;
+extern int g_FrameLocked;
+extern int g_InScene;
 extern int g_SelectedCardIndex;
 
 // string
@@ -82,7 +92,6 @@ extern undefined2 DAT_1001795e;
 extern undefined2 DAT_10017960;
 
 // undefined4
-extern undefined4 DAT_10014138;
 extern undefined4 DAT_10014164;
 extern undefined4 DAT_10014168;
 extern undefined4 DAT_1001416c;
@@ -91,7 +100,6 @@ extern undefined4 DAT_10014174;
 extern undefined4 DAT_10014178;
 extern undefined4 DAT_1001417c;
 extern undefined4 DAT_10014180;
-extern undefined4 DAT_1001418c;
 extern undefined4 DAT_10014190;
 extern undefined4 DAT_10014198;
 extern undefined4 DAT_1001419c;
@@ -100,14 +108,11 @@ extern undefined4 DAT_100141bc;
 extern undefined4 DAT_100141c0;
 extern undefined4 DAT_100141d4;
 extern undefined4 DAT_100141dc;
-extern undefined4 DAT_100141e0;
 extern undefined4 DAT_100141e4;
 extern undefined4 DAT_100141e8;
 extern undefined4 DAT_100141f0;
 extern undefined4 DAT_100141f4;
-extern undefined4 DAT_100141f8;
 extern undefined4 DAT_100141fc;
-extern undefined4 DAT_10014204;
 extern undefined4 DAT_10014214;
 extern undefined4 DAT_1001421c;
 extern undefined4 DAT_10014220;

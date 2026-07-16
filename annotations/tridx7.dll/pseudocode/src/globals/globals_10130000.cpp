@@ -23,7 +23,6 @@ undefined4 DAT_101386f0 = 0x00000000;
 undefined4 DAT_10138f30 = 0x00000000;
 undefined4 DAT_10138f34 = 0x00000000;
 undefined4 DAT_10138f50 = 0x00000000;
-undefined4 DAT_10138fb0 = 0x00000000;
 undefined4 DAT_10138fb4 = 0x00000000;
 undefined4 DAT_10138fc0 = 0x00000000;
 undefined4 DAT_10138fc4 = 0x00000000;
@@ -34,4 +33,7 @@ undefined4 DAT_101390cc = 0x00000000;
 undefined4 DAT_101394c8 = 0x00000000;
 undefined4 DAT_101394cc = 0x00000000;
 undefined4 DAT_101398c8 = 0x00000000;
+
+// void*
+void* g_TexturePalette = nullptr;
 

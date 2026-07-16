@@ -1,0 +1,567 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 46,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10001440'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 52,
+        "message": "use of undeclared identifier 'PTR_DAT_10014044'; did you mean 'DAT_10014004'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 53,
+        "message": "use of undeclared identifier 'PTR_DAT_10014048'; did you mean 'DAT_10014008'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 54,
+        "message": "use of undeclared identifier 'PTR_DAT_1001404c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 55,
+        "message": "use of undeclared identifier 'PTR_DAT_10014050'; did you mean 'DAT_10014010'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 257,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 87,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data"
+    ],
+    "total_lines": 277
+  },
+  "cross_references": [
+    {
+      "addr": "10003400",
+      "from_addr": "1000358f",
+      "name": "dll_dx7.cpp_FUN_10003400",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001200",
+    "address_range": [
+      [
+        "10001200",
+        "10001430"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "dll_dx7.cpp_FUN_10001200",
+    "signature": "void dll_dx7_cpp_FUN_10001200(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005430",
+      "is_variadic": false,
+      "name": "crt_stdio.c__fclose_FUN_10005430"
+    },
+    {
+      "addr": "10005560",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_10005560"
+    },
+    {
+      "addr": "100054d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_100054d0"
+    },
+    {
+      "addr": "10001020",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10001020"
+    },
+    {
+      "addr": "10001440",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10001440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014044",
+      "name": "PTR_DAT_10014044",
+      "type": "void*",
+      "value": "10060678"
+    },
+    {
+      "addr": "10014048",
+      "name": "PTR_DAT_10014048",
+      "type": "void*",
+      "value": "100a8688"
+    },
+    {
+      "addr": "1001404c",
+      "name": "PTR_DAT_1001404c",
+      "type": "void*",
+      "value": "100f0698"
+    },
+    {
+      "addr": "10014050",
+      "name": "PTR_DAT_10014050",
+      "type": "void*",
+      "value": "10018660"
+    },
+    {
+      "addr": "10014058",
+      "name": "s_Textures_10014058",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014068",
+      "name": "s_system_render_ini_10014068",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001407c",
+      "name": "s_rt_1001407c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014080",
+      "name": "s_wt_10014080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014084",
+      "name": "s_s_10014084",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001408c",
+      "name": "s_maxTextures32_d_1001408c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140a0",
+      "name": "s_maxTextures64_d_100140a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140b4",
+      "name": "s_maxTextures128_d_100140b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140c8",
+      "name": "s_maxTextures256_d_100140c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140dc",
+      "name": "s_mipMapFlag_d_100140dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140ec",
+      "name": "s_maxTextures32_100140ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100140fc",
+      "name": "s_maxTextures64_100140fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001410c",
+      "name": "s_maxTextures128_1001410c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001411c",
+      "name": "s_maxTextures256_1001411c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001412c",
+      "name": "s_mipMapFlag_1001412c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10018660",
+      "name": "DAT_10018660",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10060670",
+      "name": "DAT_10060670",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10060678",
+      "name": "DAT_10060678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100a8688",
+      "name": "DAT_100a8688",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100f0698",
+      "name": "DAT_100f0698",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000358f",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_FUN_10003400",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.119496855345912,
+    "instruction_count": 159,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CBRANCH": 6,
+      "COPY": 123,
+      "INT_ADD": 76,
+      "INT_AND": 63,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 64,
+      "INT_LESS": 6,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 31,
+      "INT_SUB": 67,
+      "INT_XOR": 4,
+      "LOAD": 22,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 83
+    },
+    "pcode_op_count": 655
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_10060670",
+      "severity": "mild",
+      "text": "DAT_10060670 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10060670",
+      "severity": "mild",
+      "text": "_fprintf(p_Var6,\"mipMapFlag=%d\\n\",DAT_10060670);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_10060670",
+      "severity": "mild",
+      "text": "dll_dx7_cpp_FUN_10001440(\"Textures\",\"mipMapFlag\",&DAT_10060670);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)local_10 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)local_10 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_10 + iVar7) = iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "uVar5 = *(uint *)((int)local_30 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_10 + iVar8) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_30 + iVar7) = *(uint *)((int)local_30 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_30 + iVar7) = *(uint *)((int)local_30 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_30 + iVar8) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "uVar5 = *(uint *)((int)local_30 + iVar7 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)local_30 + iVar8 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_30 + iVar7 + 0x10) = *puVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)local_30 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)local_10",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)local_10 + iVar7);",
+      "type": "pointer_cast"
+    }
+  ]
+}

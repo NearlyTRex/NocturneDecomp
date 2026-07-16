@@ -7,11 +7,17 @@
 // GUID
 GUID g_IID_IDirectDraw4 = {0x9C59509A, 0x39BD, 0x11D1, {0x8C, 0x4A, 0x00, 0xC0, 0x4F, 0xD9, 0x30, 0xC5}};
 
+// IDirect3DDevice3*
+IDirect3DDevice3* g_Device = nullptr;
+
 // IDirectDraw*
 IDirectDraw* g_DirectDraw = nullptr;
 
 // IDirectDraw4*
 IDirectDraw4* g_DirectDraw4 = nullptr;
+
+// IDirectDrawSurface*
+IDirectDrawSurface* g_PrimarySurface = nullptr;
 
 // IMAGE_DEBUG_DIRECTORY
 IMAGE_DEBUG_DIRECTORY DAT_1001201C = {
@@ -42,6 +48,9 @@ LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac = (LPCRITICAL_SECTION)0x10240678;
 LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc = (LPCRITICAL_SECTION)0x10240648;
 
 // int
+int g_CurrentTextureIndex = 0;
+int g_FrameLocked = 0;
+int g_InScene = 0;
 int g_SelectedCardIndex = 0;
 
 // string
@@ -93,7 +102,6 @@ undefined2 DAT_1001795e = 0x0000;
 undefined2 DAT_10017960 = 0x0000;
 
 // undefined4
-undefined4 DAT_10014138 = 0x00000000;
 undefined4 DAT_10014164 = 0x00000000;
 undefined4 DAT_10014168 = 0x00000000;
 undefined4 DAT_1001416c = 0x00000000;
@@ -102,7 +110,6 @@ undefined4 DAT_10014174 = 0x00000280;
 undefined4 DAT_10014178 = 0x000001E0;
 undefined4 DAT_1001417c = 0x00000010;
 undefined4 DAT_10014180 = 0x00000000;
-undefined4 DAT_1001418c = 0x00000000;
 undefined4 DAT_10014190 = 0x00000000;
 undefined4 DAT_10014198 = 0x00000000;
 undefined4 DAT_1001419c = 0x00000000;
@@ -111,14 +118,11 @@ undefined4 DAT_100141bc = 0x000000FF;
 undefined4 DAT_100141c0 = 0x000000FF;
 undefined4 DAT_100141d4 = 0x00000000;
 undefined4 DAT_100141dc = 0x00000000;
-undefined4 DAT_100141e0 = 0x00000000;
 undefined4 DAT_100141e4 = 0x00000000;
 undefined4 DAT_100141e8 = 0x00000000;
 undefined4 DAT_100141f0 = 0x00000000;
 undefined4 DAT_100141f4 = 0x00000000;
-undefined4 DAT_100141f8 = 0x00000000;
 undefined4 DAT_100141fc = 0x00000000;
-undefined4 DAT_10014204 = 0x00000000;
 undefined4 DAT_10014214 = 0x00000000;
 undefined4 DAT_1001421c = 0x00000000;
 undefined4 DAT_10014220 = 0x00000000;

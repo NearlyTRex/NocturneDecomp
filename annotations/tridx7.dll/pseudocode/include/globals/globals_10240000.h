@@ -143,7 +143,6 @@ extern undefined2 DAT_1024084e;
 
 // undefined4
 extern undefined4 DAT_10240610;
-extern undefined4 DAT_1024061c;
 extern undefined4 DAT_10240624;
 extern undefined4 DAT_10240794;
 extern undefined4 DAT_102407a0;
@@ -162,6 +161,9 @@ extern undefined4 DAT_10241978;
 extern undefined4 DAT_1024197c;
 extern undefined4 DAT_10241980;
 extern undefined4 DAT_10241984;
+
+// void*
+extern void* g_TextureOpacity;
 
 // word
 extern word DAT_102443AE;
