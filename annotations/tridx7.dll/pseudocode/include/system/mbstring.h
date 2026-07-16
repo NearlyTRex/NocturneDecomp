@@ -7,9 +7,9 @@
 // MBSTRING - System Header
 // =============================================================================
 
-// Structure: _iobuf
+// Structure: _FILE
 #pragma pack(push, 8)
-typedef struct _iobuf {
+typedef struct _FILE {
     char* _ptr;
     int _cnt;
     char* _base;
@@ -18,9 +18,6 @@ typedef struct _iobuf {
     int _charbuf;
     int _bufsiz;
     char* _tmpfname;
-} __attribute__((aligned(4))) _iobuf;
+} __attribute__((aligned(4))) _FILE;
 #pragma pack(pop)
-
-// Typedef: _FILE
-typedef _iobuf _FILE;
 

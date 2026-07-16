@@ -1097,6 +1097,10 @@
       "type":"typedef"
     },
     {
+      "name":"_FILE",
+      "type":"struct"
+    },
+    {
       "name":"_FLOATING_SAVE_AREA",
       "type":"struct"
     },
@@ -1230,14 +1234,6 @@
     },
     {
       "name":"LPCPINFO",
-      "type":"typedef"
-    },
-    {
-      "name":"_iobuf",
-      "type":"struct"
-    },
-    {
-      "name":"_FILE",
       "type":"typedef"
     },
     {
@@ -5113,6 +5109,66 @@
     },
     {
       "alig":4,
+      "cat":"/Nocturne/Struct/System/mbstring.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_ptr",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"_cnt",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_base",
+          "offset":8,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"_flag",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_file",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_charbuf",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_bufsiz",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_tmpfname",
+          "offset":28,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"_FILE",
+      "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
       "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
@@ -5210,66 +5266,6 @@
       "importable":true,
       "len":16,
       "name":"_GUID",
-      "pack":true,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/mbstring.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"_ptr",
-          "offset":0,
-          "type":"char*"
-        },
-        {
-          "len":4,
-          "name":"_cnt",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_base",
-          "offset":8,
-          "type":"char*"
-        },
-        {
-          "len":4,
-          "name":"_flag",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_file",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_charbuf",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_bufsiz",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_tmpfname",
-          "offset":28,
-          "type":"char*"
-        }
-      ],
-      "importable":true,
-      "len":32,
-      "name":"_iobuf",
       "pack":true,
       "type":"struct"
     },
@@ -10649,13 +10645,6 @@
     }
   ],
   "typedefs":[
-    {
-      "base":"_iobuf",
-      "cat":"/Nocturne/Typedef/System/mbstring.h",
-      "importable":true,
-      "name":"_FILE",
-      "type":"typedef"
-    },
     {
       "base":"localeinfo_struct*",
       "cat":"/Nocturne/Typedef/System/crtdefs.h",
