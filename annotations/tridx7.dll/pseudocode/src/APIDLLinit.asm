@@ -12,20 +12,20 @@
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_10000000
-;   undefined4 DAT_10012098
+;   GUID g_IID_IDirectDraw4
 ;   undefined4 DAT_10014184
 ;   undefined4 DAT_10014188
-;   undefined4 DAT_10014208
-;   undefined4 DAT_1001420c
-;   undefined4 DAT_10014210
+;   uint g_LocalVideoMem = 0x0
+;   uint g_NonLocalVideoMem = 0x0
+;   int g_SelectedCardIndex = 0x0
 ;   undefined4 DAT_101386b0
 ;   undefined4 DAT_10138ef0
-;   undefined4 DAT_10138fb8
+;   HWND g_WindowHandle = 00000000
 ;   undefined4 DAT_101398d0
-;   undefined4 DAT_1020de34
+;   int g_AdapterCount = 0x0
 ;   undefined4 DAT_10226870
 ;   undefined4 DAT_10226874
-;   undefined4 DAT_102268b8
+;   CExternalRendererBridge g_ExternalRendererBridge
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -49,14 +49,14 @@ section .text
     PUSH EBP                            ; 10001a89
     CALL APIDLLkill                     ; 10001a8a
         ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void APIDLLkill() | Ordinal_20
-    MOV dword ptr [0x1020de34],0x0      ; 10001a8f | DAT_1020de34
+    MOV dword ptr [0x1020de34],0x0      ; 10001a8f | g_AdapterCount
     PUSH 0x7                            ; 10001a99
     PUSH 0x0                            ; 10001a9b
-    PUSH 0x100017b0                     ; 10001a9d | LAB_100017b0
+    PUSH 0x100017b0                     ; 10001a9d
     CALL DirectDrawEnumerateExA         ; 10001aa2
         ;   XREF to: 1000542a (UNCONDITIONAL_CALL)  ; undefined DirectDrawEnumerateExA()
     MOV dword ptr [ESP + 0x10],0x0      ; 10001aa7
-    CMP dword ptr [0x1020de34],0x0      ; 10001aaf | DAT_1020de34
+    CMP dword ptr [0x1020de34],0x0      ; 10001aaf | g_AdapterCount
     JLE 0x10001be2                      ; 10001ab6
         ;   XREF to: 10001be2 (CONDITIONAL_JUMP)  ; LAB_10001be2
     XOR EBP,EBP                         ; 10001abc
@@ -74,7 +74,7 @@ section .text
     PUSH 0x10014188                     ; 10001adb | DAT_10014188
     MOV EAX,[0x10014184]                ; 10001ae0 | DAT_10014184
     MOV ESI,dword ptr [EAX]             ; 10001ae5
-    PUSH 0x10012098                     ; 10001ae7 | DAT_10012098
+    PUSH 0x10012098                     ; 10001ae7 | g_IID_IDirectDraw4
     PUSH EAX                            ; 10001aec
     CALL dword ptr [ESI]                ; 10001aed
     TEST EAX,EAX                        ; 10001aef
@@ -148,19 +148,19 @@ section .text
     ADD EBX,0x200                       ; 10001bc8
     INC dword ptr [ESP + 0x10]          ; 10001bce
     MOV EAX,dword ptr [ESP + 0x10]      ; 10001bd2
-    CMP EAX,dword ptr [0x1020de34]      ; 10001bd6 | DAT_1020de34
+    CMP EAX,dword ptr [0x1020de34]      ; 10001bd6 | g_AdapterCount
     JL 0x10001ac0                       ; 10001bdc
         ;   XREF to: 10001ac0 (CONDITIONAL_JUMP)  ; LAB_10001ac0
     MOV EAX,dword ptr [ESP + 0x444]     ; 10001be2
         ;   Label: LAB_10001be2
-    MOV EDI,0x102268b8                  ; 10001be9 | DAT_102268b8
+    MOV EDI,0x102268b8                  ; 10001be9 | g_ExternalRendererBridge
     MOV ESI,dword ptr [ESP + 0x448]     ; 10001bee
     MOV ECX,0x23                        ; 10001bf5
     PUSH 0x0                            ; 10001bfa
-    MOV [0x10138fb8],EAX                ; 10001bfc | DAT_10138fb8
-    MOVSD.REP ES:EDI,ESI                ; 10001c01 | DAT_102268b8 | DAT_102268bc
+    MOV [0x10138fb8],EAX                ; 10001bfc | g_WindowHandle
+    MOVSD.REP ES:EDI,ESI                ; 10001c01 | g_ExternalRendererBridge | g_ExternalRendererBridge.red_scale_factor
     PUSH 0x10014184                     ; 10001c03 | DAT_10014184
-    MOV ECX,dword ptr [0x10014210]      ; 10001c08 | DAT_10014210
+    MOV ECX,dword ptr [0x10014210]      ; 10001c08 | g_SelectedCardIndex
     MOV EDX,dword ptr [ECX*0x4 + 0x10226870] ; 10001c0e | DAT_10226870
     PUSH EDX                            ; 10001c15
     CALL DirectDrawCreate               ; 10001c16
@@ -205,7 +205,7 @@ section .text
         ;   Label: LAB_10001c58
     MOV EAX,[0x10014184]                ; 10001c5d | DAT_10014184
     MOV EBX,dword ptr [EAX]             ; 10001c62
-    PUSH 0x10012098                     ; 10001c64 | DAT_10012098
+    PUSH 0x10012098                     ; 10001c64 | g_IID_IDirectDraw4
     PUSH EAX                            ; 10001c69
     CALL dword ptr [EBX]                ; 10001c6a
     PUSH EAX                            ; 10001c6c
@@ -260,7 +260,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 10001cdc
         ;   Label: LAB_10001cdc
     LEA ECX,[ESP + 0x18]                ; 10001ce0
-    MOV [0x10014208],EAX                ; 10001ce4 | DAT_10014208
+    MOV [0x10014208],EAX                ; 10001ce4 | g_LocalVideoMem
     XOR EAX,EAX                         ; 10001ce9
     LEA EDX,[ESP + 0x10]                ; 10001ceb
     MOV dword ptr [ECX],EAX             ; 10001cef
@@ -293,7 +293,7 @@ section .text
     RET                                 ; 10001d33
     MOV EAX,dword ptr [ESP + 0x14]      ; 10001d34
         ;   Label: LAB_10001d34
-    MOV [0x1001420c],EAX                ; 10001d38 | DAT_1001420c
+    MOV [0x1001420c],EAX                ; 10001d38 | g_NonLocalVideoMem
     CALL FUN_10002ea0                   ; 10001d3d
         ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_10002ea0()
     CALL FUN_10002f40                   ; 10001d42

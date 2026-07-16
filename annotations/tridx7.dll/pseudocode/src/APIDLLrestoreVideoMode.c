@@ -20,7 +20,7 @@ int __cdecl APIDLLrestoreVideoMode(void)
   }
   (**(code **)(*DAT_10014184 + 0x28))(DAT_10014184);
   (**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);
-  (**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);
+  (**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,g_WindowHandle,8);
   FUN_10002370();
   do {
     iVar1 = ShowCursor(1);

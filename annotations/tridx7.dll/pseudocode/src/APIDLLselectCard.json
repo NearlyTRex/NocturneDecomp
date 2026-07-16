@@ -14,16 +14,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [],
@@ -49,20 +47,20 @@
   "globals": [
     {
       "addr": "10014210",
-      "name": "DAT_10014210",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SelectedCardIndex",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10138fb8",
-      "name": "DAT_10138fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHandle",
+      "type": "HWND",
+      "value": "00000000"
     },
     {
       "addr": "102268b8",
-      "name": "DAT_102268b8",
-      "type": "undefined4",
+      "name": "g_ExternalRendererBridge",
+      "type": "CExternalRendererBridge",
       "value": null
     }
   ],
@@ -111,30 +109,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_10014210",
-      "severity": "mild",
-      "text": "DAT_10014210 = card_index;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_10138fb8",
-      "severity": "mild",
-      "text": "iVar1 = APIDLLinit(DAT_10138fb8,(CExternalRendererBridge *)&DAT_102268b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_102268b8",
-      "severity": "mild",
-      "text": "iVar1 = APIDLLinit(DAT_10138fb8,(CExternalRendererBridge *)&DAT_102268b8);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

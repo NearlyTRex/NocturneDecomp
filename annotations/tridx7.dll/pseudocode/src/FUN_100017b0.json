@@ -1,0 +1,693 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 762,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 117,
+    "suspect_count": 61,
+    "suspect_types": [
+      "displaced_global_access",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 246
+  },
+  "cross_references": [
+    {
+      "addr": "10001a80",
+      "from_addr": "10001a9d",
+      "name": "APIDLLinit",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "100017b0",
+    "address_range": [
+      [
+        "100017b0",
+        "100018f2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_100017b0",
+    "signature": "undefined4 FUN_100017b0(undefined4 *param_1,char *param_2,char *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "10001900",
+      "is_variadic": false,
+      "name": "FUN_10001900"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "101398d0",
+      "name": "DAT_101398d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101398d4",
+      "name": "DAT_101398d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101398d6",
+      "name": "DAT_101398d6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101399cf",
+      "name": "DAT_101399cf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1020de34",
+      "name": "g_AdapterCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10226870",
+      "name": "DAT_10226870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226948",
+      "name": "DAT_10226948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1022694c",
+      "name": "DAT_1022694c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226950",
+      "name": "DAT_10226950",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226954",
+      "name": "DAT_10226954",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10236910",
+      "name": "DAT_10236910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10236914",
+      "name": "DAT_10236914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10236916",
+      "name": "DAT_10236916",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10236a0f",
+      "name": "DAT_10236a0f",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.294642857142857,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 42,
+      "BRANCH": 9,
+      "CALL": 1,
+      "CBRANCH": 19,
+      "COPY": 120,
+      "INT_ADD": 56,
+      "INT_AND": 141,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 10,
+      "INT_LESS": 13,
+      "INT_MULT": 26,
+      "INT_NEGATE": 4,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 35,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 41,
+      "INT_SUB": 62,
+      "INT_XOR": 6,
+      "INT_ZEXT": 24,
+      "LOAD": 39,
+      "POPCOUNT": 29,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 817
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_100017b0(uint *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_100017b0(uint *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint FUN_100017b0(uint *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_10001900(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pcVar5 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pcVar5 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pcVar5 = param_3 + (uint)bVar8 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "cVar1 = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = pcVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_101398d0",
+      "severity": "mild",
+      "text": "pcVar6 = (char *)(&DAT_101398d0 + g_AdapterCount * 0x80);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_101398d0",
+      "severity": "mild",
+      "text": "puVar7 = &DAT_101398d0 + g_AdapterCount * 0x80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*puVar7 = *(uint *)param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 + (uint)bVar8 * -8 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 + (uint)bVar8 * -8 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(ushort *)puVar7 = *(ushort *)param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(char *)((int)puVar7",
+      "severity": "moderate",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_3[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_3[(uint)bVar8 * -4 + 2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_101399cf",
+      "severity": "mild",
+      "text": "(&DAT_101399cf)[g_AdapterCount * 0x200] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar5 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar5 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar5 = param_2 + (uint)bVar8 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = pcVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_10236910",
+      "severity": "mild",
+      "text": "pcVar6 = (char *)(&DAT_10236910 + g_AdapterCount * 0x80);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_10236910",
+      "severity": "mild",
+      "text": "puVar7 = &DAT_10236910 + g_AdapterCount * 0x80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*puVar7 = *(uint *)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + (uint)bVar8 * -8 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + (uint)bVar8 * -8 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)puVar7 = *(ushort *)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(char *)((int)puVar7",
+      "severity": "moderate",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_2[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_2[(uint)bVar8 * -4 + 2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_10236a0f",
+      "severity": "mild",
+      "text": "(&DAT_10236a0f)[g_AdapterCount * 0x200] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (uint *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_10226870",
+      "severity": "mild",
+      "text": "(&DAT_10226870)[g_AdapterCount] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226948 + iVar2) = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_10226948",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226948 + iVar2) = *param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_10226870",
+      "severity": "mild",
+      "text": "(&DAT_10226870)[g_AdapterCount] = &DAT_10226948 + iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_10226948",
+      "severity": "mild",
+      "text": "(&DAT_10226870)[g_AdapterCount] = &DAT_10226948 + iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_1022694c + iVar2) = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_1022694c",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_1022694c + iVar2) = param_1[1];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226950 + iVar2) = param_1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_10226950",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226950 + iVar2) = param_1[2];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226954 + iVar2) = param_1[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 112,
+      "match": "DAT_10226954",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_10226954 + iVar2) = param_1[3];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)puVar7",
+      "severity": "moderate",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_3[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 100,
+      "match": "(int)puVar7",
+      "severity": "moderate",
+      "text": "*(char *)((int)puVar7 + (uint)bVar8 * -4 + 2) = param_2[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 51,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 81,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 86,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 94,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 19,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 27,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 62,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 70,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000180a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000180a: MOVSD.REP ES:EDI,ESI  ; DAT_101398d0",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000182b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000182b: MOVSD.REP ES:EDI,ESI  ; DAT_101398d0 | DAT_101398d4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001872, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 76,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10001872: MOVSD.REP ES:EDI,ESI  ; DAT_10236910",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000188d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 87,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000188d: MOVSD.REP ES:EDI,ESI  ; DAT_10236910 | DAT_10236914",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x10226870] lands in DAT_10226870 but intended target is DAT_10226874 at 0x10226874 (displaced by 4 bytes)",
+      "displaced_from": "DAT_10226870",
+      "displacement": "0x10226870",
+      "instruction_address": "",
+      "intended_global": "DAT_10226874",
+      "line": 95,
+      "match": "0x10226870",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 1000189d: MOV dword ptr [EDX*0x4 + 0x10226870],0x0  ; DAT_10226870",
+      "type": "displaced_global_access"
+    }
+  ]
+}

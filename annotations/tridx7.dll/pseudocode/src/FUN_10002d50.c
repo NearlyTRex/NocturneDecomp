@@ -9,10 +9,10 @@
 void FUN_10002d50(void)
 
 {
-  *DAT_102268e4 = 0;
-  *DAT_102268dc = 1;
+  *g_ExternalRendererBridge.current_alpha = 0;
+  *g_ExternalRendererBridge.blend_mode = 1;
   FUN_10003f10(0x226);
-  *DAT_102268e4 = 0xff;
-  *DAT_102268dc = 0;
+  *g_ExternalRendererBridge.current_alpha = 0xff;
+  *g_ExternalRendererBridge.blend_mode = 0;
   return;
 }

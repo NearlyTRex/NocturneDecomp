@@ -9,8 +9,8 @@
 ; int *            Stack[0xc]:4   memory_type
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014208
-;   undefined4 DAT_1001420c
+;   uint g_LocalVideoMem = 0x0
+;   uint g_NonLocalVideoMem = 0x0
 ;
 ; *****************************************************************************
 
@@ -30,11 +30,11 @@ section .text
     TEST ESI,ESI                        ; 10005295
     JZ 0x100052b5                       ; 10005297
         ;   XREF to: 100052b5 (CONDITIONAL_JUMP)  ; LAB_100052b5
-    MOV EAX,[0x10014208]                ; 10005299 | DAT_10014208
+    MOV EAX,[0x10014208]                ; 10005299 | g_LocalVideoMem
     MOV dword ptr [ESI],0x0             ; 1000529e
     POP ESI                             ; 100052a4
     MOV dword ptr [ECX],EAX             ; 100052a5
-    MOV ECX,dword ptr [0x1001420c]      ; 100052a7 | DAT_1001420c
+    MOV ECX,dword ptr [0x1001420c]      ; 100052a7 | g_NonLocalVideoMem
     MOV EAX,0x1                         ; 100052ad
     MOV dword ptr [EDX],ECX             ; 100052b2
     RET                                 ; 100052b4

@@ -41,13 +41,13 @@ bool FUN_100035b0(void)
   FUN_100037e0(0xe,0);
   FUN_100037e0(0xf,0);
   FUN_100037e0(0x10,0);
-  FUN_100037e0(0x11,2 - (uint)(*DAT_10226918 == 0));
-  FUN_100037e0(0x12,2 - (uint)(*DAT_10226918 == 0));
+  FUN_100037e0(0x11,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
+  FUN_100037e0(0x12,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
   FUN_100037e0(0x13,2);
   FUN_100037e0(0x14,6);
   FUN_100037e0(0x15,2);
   FUN_100037e0(0x16,1);
-  FUN_100037e0(0x1a,*DAT_1022690c);
+  FUN_100037e0(0x1a,*g_ExternalRendererBridge.video_memory_size);
   FUN_100037e0(0x1b,0);
   FUN_100037e0(0x1c,0);
   FUN_100037e0(0x22,DAT_100141bc << 0x10 | DAT_100141c0 << 8 | _DAT_100141c4);

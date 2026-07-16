@@ -9,7 +9,7 @@
 ;   undefined4 DAT_10014188
 ;   undefined4 DAT_100141f8
 ;   TerminatedCString s_Cannot_unlock_back_buffe_10016a14
-;   undefined4 DAT_10138fb8
+;   HWND g_WindowHandle = 00000000
 ;   void* PTR_ShowCursor_10242294 = 002422f0
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 10002c12
     CALL dword ptr [EAX + 0x4c]         ; 10002c14
     PUSH 0x8                            ; 10002c17
-    MOV ECX,dword ptr [0x10138fb8]      ; 10002c19 | DAT_10138fb8
+    MOV ECX,dword ptr [0x10138fb8]      ; 10002c19 | g_WindowHandle
     PUSH ECX                            ; 10002c1f
     MOV EDX,dword ptr [0x10014188]      ; 10002c20 | DAT_10014188
     PUSH EDX                            ; 10002c26

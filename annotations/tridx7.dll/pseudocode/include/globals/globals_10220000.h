@@ -2,10 +2,14 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CExternalRendererBridge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10220000
 // =============================================================================
+
+// CExternalRendererBridge
+extern CExternalRendererBridge g_ExternalRendererBridge;
 
 // undefined1
 extern undefined1 DAT_10226a4c;
@@ -18,27 +22,6 @@ extern undefined4 DAT_1022584c;
 extern undefined4 DAT_10226868;
 extern undefined4 DAT_10226870;
 extern undefined4 DAT_10226874;
-extern undefined4 DAT_102268b8;
-extern undefined4 DAT_102268bc;
-extern undefined4 DAT_102268c0;
-extern undefined4 DAT_102268c4;
-extern undefined4 DAT_102268c8;
-extern undefined4 DAT_102268cc;
-extern undefined4 DAT_102268d0;
-extern undefined4 DAT_102268d4;
-extern undefined4 DAT_102268d8;
-extern undefined4 DAT_102268dc;
-extern undefined4 DAT_102268e0;
-extern undefined4 DAT_102268e4;
-extern undefined4 DAT_102268e8;
-extern undefined4 DAT_10226900;
-extern undefined4 DAT_10226908;
-extern undefined4 DAT_1022690c;
-extern undefined4 DAT_10226914;
-extern undefined4 DAT_10226918;
-extern undefined4 DAT_1022691c;
-extern undefined4 DAT_10226920;
-extern undefined4 DAT_10226924;
 extern undefined4 DAT_10226a48;
 extern undefined4 DAT_10226a50;
 extern undefined4 DAT_10226a58;

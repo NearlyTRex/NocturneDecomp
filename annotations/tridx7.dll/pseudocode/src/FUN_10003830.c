@@ -46,7 +46,7 @@ void FUN_10003830(void)
     puVar6 = puVar8;
   } while (puVar8 < &DAT_10226e80);
   puVar6 = &DAT_101b88e0;
-  iVar9 = *DAT_10226900 * *DAT_10226900;
+  iVar9 = *g_ExternalRendererBridge.texture_dimension * *g_ExternalRendererBridge.texture_dimension;
   if (DAT_1024061c == 0) {
     pbVar4 = DAT_1020de38;
     if (0 < iVar9) {
@@ -75,9 +75,9 @@ void FUN_10003830(void)
       } while (iVar2 < iVar9);
     }
   }
-  if ((*DAT_1022691c == 0) || (DAT_10060670 != 0)) {
+  if ((*g_ExternalRendererBridge.agp_texture_mode == 0) || (DAT_10060670 != 0)) {
     local_10 = &DAT_101b88e0;
-    for (iVar3 = *DAT_10226900; 1 < iVar3; iVar3 = iVar3 / 2) {
+    for (iVar3 = *g_ExternalRendererBridge.texture_dimension; 1 < iVar3; iVar3 = iVar3 / 2) {
       puVar6 = local_10 + iVar3 * iVar3;
       if (0 < iVar3) {
         uVar5 = iVar3 + 1U >> 1;
@@ -103,7 +103,7 @@ void FUN_10003830(void)
           local_4 = local_4 - 1;
         } while (local_4 != 0);
       }
-      if ((*DAT_1022691c == 0) && (DAT_10060670 == 0)) {
+      if ((*g_ExternalRendererBridge.agp_texture_mode == 0) && (DAT_10060670 == 0)) {
         return;
       }
       local_10 = puVar6;

@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 242,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 17,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -84,13 +84,13 @@
     },
     {
       "addr": "102268e8",
-      "name": "DAT_102268e8",
+      "name": "g_ExternalRendererBridge.console_text_color",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10226908",
-      "name": "DAT_10226908",
+      "name": "g_ExternalRendererBridge.system_memory_size",
       "type": "undefined4",
       "value": null
     }
@@ -290,46 +290,6 @@
       "match": "DAT_10014178",
       "severity": "mild",
       "text": "local_4c = DAT_10014178 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_10226908",
-      "severity": "mild",
-      "text": "local_c0.projected_vertex.transformed_z = *DAT_10226908;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_10226908",
-      "severity": "mild",
-      "text": "local_88 = *DAT_10226908;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_10226908",
-      "severity": "mild",
-      "text": "local_58 = *DAT_10226908;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_10226908",
-      "severity": "mild",
-      "text": "local_28 = *DAT_10226908;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_102268e8",
-      "severity": "mild",
-      "text": "*DAT_102268e8 = 0;",
       "type": "undefined_data"
     },
     {

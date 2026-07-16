@@ -49,7 +49,7 @@ void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4)
   if ((param_3 & 1) == 0) {
     if ((param_3 & 0x200) == 0) {
       if ((param_3 & 4) == 0) {
-        uVar2 = *DAT_102268e8 & 0xff;
+        uVar2 = *g_ExternalRendererBridge.console_text_color & 0xff;
       }
       else {
         uVar2 = (*(uint *)(param_1 + 0x18) & 0xff0000) >> 0x10;
@@ -68,13 +68,13 @@ void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4)
   else {
     param_2[5] = (float)((iVar4 << 0x10 | DAT_10240610) << 8 | DAT_10240610 << 0x10 | DAT_10240610);
     if ((param_3 & 0x100) == 0) {
-      iVar4 = *DAT_102268e4;
+      iVar4 = *g_ExternalRendererBridge.current_alpha;
     }
     else {
       iVar4 = *(int *)(param_1 + 0x2c) >> 8;
     }
     if ((param_3 & 0x200) == 0) {
-      if ((DAT_10014164 == 0) || (*DAT_102268dc != 1)) {
+      if ((DAT_10014164 == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {
         param_2[4] = (float)((iVar4 << 0x10 | DAT_10236908) << 8 | DAT_10236908 << 0x10 |
                             DAT_10236908);
       }
@@ -91,7 +91,7 @@ void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4)
                           iVar4 << 0x18);
     }
   }
-  if (*DAT_10226920 == 0) {
+  if (*g_ExternalRendererBridge.processor_type == 0) {
     local_8 = local_8 * _DAT_10240614;
     if (local_8 < 1.0) {
       local_8 = 1.0;

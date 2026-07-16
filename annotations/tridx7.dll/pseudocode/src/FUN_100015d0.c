@@ -9,7 +9,7 @@
 void FUN_100015d0(uint param_1)
 
 {
-  switch(*DAT_10226900) {
+  switch(*g_ExternalRendererBridge.texture_dimension) {
   case 0x20:
     FUN_10001180(param_1);
     return;

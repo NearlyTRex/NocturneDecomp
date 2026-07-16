@@ -31,7 +31,7 @@
 ;   undefined4 DAT_10060670
 ;   undefined4 DAT_10139048
 ;   undefined4 DAT_1020de44
-;   undefined4 DAT_10226900
+;   undefined4 g_ExternalRendererBridge.texture_dimension
 ;   undefined4 DAT_10226a64
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
 
     SUB ESP,0x94                        ; 10003a80
         ;   Label: FUN_10003a80
-    MOV EAX,[0x10226900]                ; 10003a86 | DAT_10226900
+    MOV EAX,[0x10226900]                ; 10003a86 | g_ExternalRendererBridge.texture_dimension
     PUSH EBX                            ; 10003a8b
     MOV EAX,dword ptr [EAX]             ; 10003a8c
     PUSH ESI                            ; 10003a8e

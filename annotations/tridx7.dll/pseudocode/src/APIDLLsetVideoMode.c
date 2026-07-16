@@ -47,10 +47,10 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
   
                     /* 0x2500  31  APIDLLsetVideoMode */
   bVar13 = 0;
-  if (DAT_1001420c == 0) {
-    *DAT_1022691c = 0;
+  if (g_NonLocalVideoMem == 0) {
+    *g_ExternalRendererBridge.agp_texture_mode = 0;
   }
-  if (*DAT_1022691c == 0) {
+  if (*g_ExternalRendererBridge.agp_texture_mode == 0) {
     _DAT_10226848 = 0x80;
     _DAT_1022684c = 0x40;
     _DAT_10226850 = 0x20;
@@ -140,7 +140,7 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
   DAT_10226e88 = 0x7c;
   DAT_10226e8c = 0x21;
   _DAT_10226e9c = 2;
-  if (*DAT_1022691c < 2) {
+  if (*g_ExternalRendererBridge.agp_texture_mode < 2) {
     _DAT_10226e9c = 1;
   }
   uStack_248 = 0;

@@ -11,7 +11,7 @@ uint FUN_10001470(uint param_1)
 {
   uint uVar1;
   
-  switch(*DAT_10226900) {
+  switch(*g_ExternalRendererBridge.texture_dimension) {
   case 0x20:
     uVar1 = FUN_10001090(param_1);
     return uVar1;

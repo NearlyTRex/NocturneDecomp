@@ -4,10 +4,14 @@
 #include "system/basetypes.h"
 #include "system/pe.h"
 #include "system/winbase.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10010000
 // =============================================================================
+
+// GUID
+extern GUID g_IID_IDirectDraw4;
 
 // IMAGE_DEBUG_DIRECTORY
 extern IMAGE_DEBUG_DIRECTORY DAT_1001201C;
@@ -18,6 +22,9 @@ extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016c7c;
 extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016c9c;
 extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac;
 extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc;
+
+// int
+extern int g_SelectedCardIndex;
 
 // string
 extern string DAT_10012397;
@@ -36,6 +43,10 @@ extern string DAT_100125A4;
 extern string DAT_100125D0;
 extern string DAT_100127F8;
 extern string DAT_1001296C;
+
+// uint
+extern uint g_LocalVideoMem;
+extern uint g_NonLocalVideoMem;
 
 // undefined1
 extern undefined1 DAT_1001277a;
@@ -92,9 +103,6 @@ extern undefined4 DAT_100141f4;
 extern undefined4 DAT_100141f8;
 extern undefined4 DAT_100141fc;
 extern undefined4 DAT_10014204;
-extern undefined4 DAT_10014208;
-extern undefined4 DAT_1001420c;
-extern undefined4 DAT_10014210;
 extern undefined4 DAT_10014214;
 extern undefined4 DAT_1001421c;
 extern undefined4 DAT_10014220;

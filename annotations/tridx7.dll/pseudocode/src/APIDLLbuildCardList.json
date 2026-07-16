@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 203,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -82,9 +82,9 @@
     },
     {
       "addr": "1020de34",
-      "name": "DAT_1020de34",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AdapterCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10236910",
@@ -181,22 +181,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_1020de34",
-      "severity": "mild",
-      "text": "iVar2 = DAT_1020de34;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_1020de34",
-      "severity": "mild",
-      "text": "*out_card_count = DAT_1020de34;",
-      "type": "undefined_data"
-    },
     {
       "description": "Undefined global data reference",
       "line": 14,

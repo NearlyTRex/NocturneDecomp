@@ -9,15 +9,15 @@
 int __cdecl APIDLLgetVideoMemory(int *total_memory,int *available_memory,int *memory_type)
 
 {
-  int iVar1;
+  uint uVar1;
   
                     /* 0x5280  18  APIDLLgetVideoMemory */
-  iVar1 = DAT_10014208;
+  uVar1 = g_LocalVideoMem;
   if (((total_memory != (int *)0x0) && (available_memory != (int *)0x0)) &&
      (memory_type != (int *)0x0)) {
     *memory_type = 0;
-    *total_memory = iVar1;
-    *available_memory = DAT_1001420c;
+    *total_memory = uVar1;
+    *available_memory = g_NonLocalVideoMem;
     return 1;
   }
   return 0;

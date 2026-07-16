@@ -26,8 +26,8 @@
 ;   undefined4 DAT_10014178
 ;   undefined4 DAT_10014180
 ;   undefined4 DAT_10014204
-;   undefined4 DAT_102268e8
-;   undefined4 DAT_10226908
+;   undefined4 g_ExternalRendererBridge.console_text_color
+;   undefined4 g_ExternalRendererBridge.system_memory_size
 ;
 ; Called Functions:
 ;   APIDLLdrawPolygon
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EDX      ; 1000486a
     MOV dword ptr [ESP + 0x44],EAX      ; 1000486e
     MOV dword ptr [ESP + 0x48],EDX      ; 10004872
-    MOV ECX,dword ptr [0x10226908]      ; 10004876 | DAT_10226908
+    MOV ECX,dword ptr [0x10226908]      ; 10004876 | g_ExternalRendererBridge.system_memory_size
     MOV dword ptr [ESP + 0x74],EAX      ; 1000487c
     MOV EAX,[0x10014178]                ; 10004880 | DAT_10014178
     SHL EAX,0x10                        ; 10004885
@@ -69,7 +69,7 @@ section .text
     PUSH 0x10                           ; 100048ac
     MOV EAX,dword ptr [ECX]             ; 100048ae
     PUSH 0x4                            ; 100048b0
-    MOV ECX,dword ptr [0x102268e8]      ; 100048b2 | DAT_102268e8
+    MOV ECX,dword ptr [0x102268e8]      ; 100048b2 | g_ExternalRendererBridge.console_text_color
     MOV dword ptr [ESP + 0xa4],EAX      ; 100048b8
     MOV dword ptr [ECX],EDX             ; 100048bf
     LEA EDX,[ESP + 0xc]                 ; 100048c1

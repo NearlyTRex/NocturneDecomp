@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 435,
+    "complexity_score": 425,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 100,
-    "suspect_count": 30,
+    "suspect_count": 29,
     "suspect_types": [
       "displaced_global_access",
       "stack_ref",
@@ -158,7 +158,7 @@
     },
     {
       "addr": "10226900",
-      "name": "DAT_10226900",
+      "name": "g_ExternalRendererBridge.texture_dimension",
       "type": "undefined4",
       "value": null
     },
@@ -333,14 +333,6 @@
       "severity": "moderate",
       "text": "int *unaff_EBX;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_10226900",
-      "severity": "mild",
-      "text": "switch(*DAT_10226900) {",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

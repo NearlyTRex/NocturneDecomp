@@ -16,8 +16,8 @@
 ;   undefined4 DAT_101390cc
 ;   undefined4 DAT_101394c8
 ;   undefined4 DAT_101394cc
-;   undefined4 DAT_1022690c
-;   undefined4 DAT_10226918
+;   undefined4 g_ExternalRendererBridge.video_memory_size
+;   undefined4 g_ExternalRendererBridge.system_initialized
 ;
 ; Called Functions:
 ;   FUN_10002d50
@@ -112,7 +112,7 @@ section .text
     CALL FUN_100037e0                   ; 10003672
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined FUN_100037e0()
     ADD ESP,0x8                         ; 10003677
-    MOV EAX,[0x10226918]                ; 1000367a | DAT_10226918
+    MOV EAX,[0x10226918]                ; 1000367a | g_ExternalRendererBridge.system_initialized
     CMP dword ptr [EAX],0x1             ; 1000367f
     SBB EAX,EAX                         ; 10003682
     ADD EAX,0x2                         ; 10003684
@@ -121,7 +121,7 @@ section .text
     CALL FUN_100037e0                   ; 1000368a
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined FUN_100037e0()
     ADD ESP,0x8                         ; 1000368f
-    MOV ECX,dword ptr [0x10226918]      ; 10003692 | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 10003692 | g_ExternalRendererBridge.system_initialized
     CMP dword ptr [ECX],0x1             ; 10003698
     SBB EAX,EAX                         ; 1000369b
     ADD EAX,0x2                         ; 1000369d
@@ -150,7 +150,7 @@ section .text
     CALL FUN_100037e0                   ; 100036d3
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined FUN_100037e0()
     ADD ESP,0x8                         ; 100036d8
-    MOV ECX,dword ptr [0x1022690c]      ; 100036db | DAT_1022690c
+    MOV ECX,dword ptr [0x1022690c]      ; 100036db | g_ExternalRendererBridge.video_memory_size
     MOV EDX,dword ptr [ECX]             ; 100036e1
     PUSH EDX                            ; 100036e3
     PUSH 0x1a                           ; 100036e4

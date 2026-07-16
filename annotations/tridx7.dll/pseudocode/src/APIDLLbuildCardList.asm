@@ -17,7 +17,7 @@
 ;   undefined4 DAT_10138ef4
 ;   undefined4 DAT_101398d0
 ;   undefined4 DAT_10139ad0
-;   undefined4 DAT_1020de34
+;   int g_AdapterCount = 0x0
 ;   undefined4 DAT_10236910
 ;   undefined4 DAT_10236b10
 ;
@@ -29,7 +29,7 @@ section .text
         ;   Label: APIDLLbuildCardList
     PUSH EBX                            ; 100052e4
     PUSH ESI                            ; 100052e5
-    MOV EBX,dword ptr [0x1020de34]      ; 100052e6 | DAT_1020de34
+    MOV EBX,dword ptr [0x1020de34]      ; 100052e6 | g_AdapterCount
     PUSH EDI                            ; 100052ec
     MOV dword ptr [EAX],EBX             ; 100052ed
     PUSH EBP                            ; 100052ef

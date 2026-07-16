@@ -10,7 +10,7 @@ void FUN_10002340(LPCSTR param_1)
 
 {
   APIDLLkill();
-  MessageBoxA(DAT_10138fb8,param_1,"DirectX6 3D Driver error",0x10);
+  MessageBoxA(g_WindowHandle,param_1,"DirectX6 3D Driver error",0x10);
                     /* WARNING: Subroutine does not return */
   ExitProcess(1);
 }

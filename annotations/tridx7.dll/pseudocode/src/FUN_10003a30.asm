@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Can_t_get_source_size_10016ab8
 ;   undefined4 DAT_101b88e0
-;   undefined4 DAT_10226900
+;   undefined4 g_ExternalRendererBridge.texture_dimension
 ;
 ; Called Functions:
 ;   FUN_10002340
@@ -22,7 +22,7 @@ section .text
 
     PUSH EBX                            ; 10003a30
         ;   Label: FUN_10003a30
-    MOV EAX,[0x10226900]                ; 10003a31 | DAT_10226900
+    MOV EAX,[0x10226900]                ; 10003a31 | g_ExternalRendererBridge.texture_dimension
     PUSH ESI                            ; 10003a36
     MOV EBX,0x101b88e0                  ; 10003a37 | DAT_101b88e0
     MOV ESI,dword ptr [ESP + 0xc]       ; 10003a3c

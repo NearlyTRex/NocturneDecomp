@@ -24,9 +24,9 @@
 ;   undefined4 DAT_10014178
 ;   undefined4 DAT_101398c8
 ;   undefined4 DAT_10215e40
-;   undefined4 DAT_102268dc
-;   undefined4 DAT_102268e4
-;   undefined4 DAT_102268e8
+;   undefined4 g_ExternalRendererBridge.blend_mode
+;   undefined4 g_ExternalRendererBridge.current_alpha
+;   undefined4 g_ExternalRendererBridge.console_text_color
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -128,7 +128,7 @@ section .text
     SAR EAX,0x8                         ; 100045b8
     JMP 0x100045c4                      ; 100045bb
         ;   XREF to: 100045c4 (UNCONDITIONAL_JUMP)  ; LAB_100045c4
-    MOV EAX,[0x102268e4]                ; 100045bd | DAT_102268e4
+    MOV EAX,[0x102268e4]                ; 100045bd | g_ExternalRendererBridge.current_alpha
         ;   Label: LAB_100045bd
     MOV EAX,dword ptr [EAX]             ; 100045c2
     TEST DH,0x2                         ; 100045c4
@@ -153,7 +153,7 @@ section .text
         ;   Label: LAB_100045f9
     JZ 0x10004643                       ; 10004600
         ;   XREF to: 10004643 (CONDITIONAL_JUMP)  ; LAB_10004643
-    MOV EDX,dword ptr [0x102268dc]      ; 10004602 | DAT_102268dc
+    MOV EDX,dword ptr [0x102268dc]      ; 10004602 | g_ExternalRendererBridge.blend_mode
     CMP dword ptr [EDX],0x1             ; 10004608
     JNZ 0x10004643                      ; 1000460b
         ;   XREF to: 10004643 (CONDITIONAL_JUMP)  ; LAB_10004643
@@ -210,7 +210,7 @@ section .text
     SHR EAX,0x10                        ; 10004692
     JMP 0x100046a3                      ; 10004695
         ;   XREF to: 100046a3 (UNCONDITIONAL_JUMP)  ; LAB_100046a3
-    MOV EAX,[0x102268e8]                ; 10004697 | DAT_102268e8
+    MOV EAX,[0x102268e8]                ; 10004697 | g_ExternalRendererBridge.console_text_color
         ;   Label: LAB_10004697
     MOV EAX,dword ptr [EAX]             ; 1000469c
     AND EAX,0xff                        ; 1000469e
@@ -233,7 +233,7 @@ section .text
         ;   Label: LAB_100046cb
     MOV dword ptr [ESI + 0x10],EAX      ; 100046ce
     MOV dword ptr [ESI + 0x14],EDI      ; 100046d1
-    MOV EAX,[0x10226920]                ; 100046d4 | DAT_10226920
+    MOV EAX,[0x10226920]                ; 100046d4 | g_ExternalRendererBridge.processor_type
         ;   Label: LAB_100046d4
     CMP dword ptr [EAX],0x0             ; 100046d9
     JZ 0x1000473f                       ; 100046dc

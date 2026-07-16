@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 1014,
+    "complexity_score": 974,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 88,
+    "suspect_count": 84,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -132,25 +132,25 @@
     },
     {
       "addr": "102268dc",
-      "name": "DAT_102268dc",
+      "name": "g_ExternalRendererBridge.blend_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "102268e4",
-      "name": "DAT_102268e4",
+      "name": "g_ExternalRendererBridge.current_alpha",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "102268e8",
-      "name": "DAT_102268e8",
+      "name": "g_ExternalRendererBridge.console_text_color",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10226920",
-      "name": "DAT_10226920",
+      "name": "g_ExternalRendererBridge.processor_type",
       "type": "undefined4",
       "value": null
     },
@@ -602,14 +602,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_102268e8",
-      "severity": "mild",
-      "text": "uVar2 = *DAT_102268e8 & 0xff;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 48,
       "match": "param_1",
@@ -706,14 +698,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_102268e4",
-      "severity": "mild",
-      "text": "iVar4 = *DAT_102268e4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 67,
       "match": "param_1",
@@ -734,15 +718,7 @@
       "line": 70,
       "match": "DAT_10014164",
       "severity": "mild",
-      "text": "if ((DAT_10014164 == 0) || (*DAT_102268dc != 1)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_102268dc",
-      "severity": "mild",
-      "text": "if ((DAT_10014164 == 0) || (*DAT_102268dc != 1)) {",
+      "text": "if ((DAT_10014164 == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {",
       "type": "undefined_data"
     },
     {
@@ -864,14 +840,6 @@
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x24) & 0xffffff00 | *(int *)(param_1 + 0x28) >> 8 |",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_10226920",
-      "severity": "mild",
-      "text": "if (*DAT_10226920 == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

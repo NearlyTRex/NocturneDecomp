@@ -29,7 +29,7 @@ void FUN_10003a80(void)
   byte local_14 [20];
   
   bVar5 = 0;
-  switch(*DAT_10226900) {
+  switch(*g_ExternalRendererBridge.texture_dimension) {
   case 0x20:
     iVar3 = 3;
     break;

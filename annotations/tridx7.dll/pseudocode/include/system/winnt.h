@@ -12,7 +12,7 @@
 typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
 
 // Typedef: LCID
-// Unsigned Long Integer (compiler-specific size)
+// Unsigned Integer (compiler-specific size)
 typedef DWORD LCID;
 
 // Typedef: LPCH
@@ -69,6 +69,17 @@ typedef _CONTEXT CONTEXT;
 // Typedef: PCONTEXT
 // pointer to CONTEXT
 typedef CONTEXT* PCONTEXT;
+
+// Structure: _GUID
+typedef struct _GUID {
+    ULONG Data1;
+    USHORT Data2;
+    USHORT Data3;
+    UCHAR Data4[8];
+} _GUID;
+
+// Typedef: GUID
+typedef _GUID GUID;
 
 // Structure: _LIST_ENTRY
 typedef struct _LIST_ENTRY {

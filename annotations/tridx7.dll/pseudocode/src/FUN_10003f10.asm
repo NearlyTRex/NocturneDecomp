@@ -24,8 +24,8 @@
 ;   undefined4 DAT_10014220
 ;   undefined4 DAT_10014224
 ;   undefined4 DAT_1020de40
-;   undefined4 DAT_102268dc
-;   undefined4 DAT_102268e0
+;   undefined4 g_ExternalRendererBridge.blend_mode
+;   undefined4 g_ExternalRendererBridge.current_lighting
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     JZ 0x10003f2c                       ; 10003f27
         ;   XREF to: 10003f2c (CONDITIONAL_JUMP)  ; LAB_10003f2c
     OR ESI,0x22                         ; 10003f29
-    MOV ECX,dword ptr [0x10226918]      ; 10003f2c | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 10003f2c | g_ExternalRendererBridge.system_initialized
         ;   Label: LAB_10003f2c
     MOV EAX,[0x1001421c]                ; 10003f32 | DAT_1001421c
     CMP dword ptr [ECX],EAX             ; 10003f37
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 10003f90 (CONDITIONAL_JUMP)  ; LAB_10003f90
     CALL FUN_100047b0                   ; 10003f3b
         ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined FUN_100047b0()
-    MOV EAX,[0x10226918]                ; 10003f40 | DAT_10226918
+    MOV EAX,[0x10226918]                ; 10003f40 | g_ExternalRendererBridge.system_initialized
     MOV ECX,dword ptr [0x100141e0]      ; 10003f45 | DAT_100141e0
     CMP dword ptr [EAX],0x1             ; 10003f4b
     SBB EAX,EAX                         ; 10003f4e
@@ -66,7 +66,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 10003f58
     PUSH ECX                            ; 10003f5a
     CALL dword ptr [EAX + 0xa0]         ; 10003f5b
-    MOV ECX,dword ptr [0x10226918]      ; 10003f61 | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 10003f61 | g_ExternalRendererBridge.system_initialized
     CMP dword ptr [ECX],0x1             ; 10003f67
     MOV ECX,dword ptr [0x100141e0]      ; 10003f6a | DAT_100141e0
     SBB EAX,EAX                         ; 10003f70
@@ -77,7 +77,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 10003f7a
     PUSH ECX                            ; 10003f7c
     CALL dword ptr [EAX + 0xa0]         ; 10003f7d
-    MOV ECX,dword ptr [0x10226918]      ; 10003f83 | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 10003f83 | g_ExternalRendererBridge.system_initialized
     MOV EAX,dword ptr [ECX]             ; 10003f89
     MOV [0x1001421c],EAX                ; 10003f8b | DAT_1001421c
     MOV EAX,ESI                         ; 10003f90
@@ -104,7 +104,7 @@ section .text
     JZ 0x10003fbf                       ; 10003fba
         ;   XREF to: 10003fbf (CONDITIONAL_JUMP)  ; LAB_10003fbf
     AND ESI,0xfffffff7                  ; 10003fbc
-    MOV EAX,[0x102268dc]                ; 10003fbf | DAT_102268dc
+    MOV EAX,[0x102268dc]                ; 10003fbf | g_ExternalRendererBridge.blend_mode
         ;   Label: LAB_10003fbf
     MOV ECX,dword ptr [EAX]             ; 10003fc4
     CMP ECX,dword ptr [0x10014220]      ; 10003fc6 | DAT_10014220
@@ -189,7 +189,7 @@ section .text
     MOV [0x100141d4],EAX                ; 10004094 | DAT_100141d4
     MOV EAX,dword ptr [ECX]             ; 10004099
     CALL dword ptr [EAX + 0xa0]         ; 1000409b
-    MOV ECX,dword ptr [0x10226918]      ; 100040a1 | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 100040a1 | g_ExternalRendererBridge.system_initialized
     CMP dword ptr [ECX],0x1             ; 100040a7
     MOV ECX,dword ptr [0x100141e0]      ; 100040aa | DAT_100141e0
     SBB EAX,EAX                         ; 100040b0
@@ -200,7 +200,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 100040ba
     PUSH ECX                            ; 100040bc
     CALL dword ptr [EAX + 0xa0]         ; 100040bd
-    MOV ECX,dword ptr [0x10226918]      ; 100040c3 | DAT_10226918
+    MOV ECX,dword ptr [0x10226918]      ; 100040c3 | g_ExternalRendererBridge.system_initialized
     CMP dword ptr [ECX],0x1             ; 100040c9
     MOV ECX,dword ptr [0x100141e0]      ; 100040cc | DAT_100141e0
     SBB EAX,EAX                         ; 100040d2
@@ -211,7 +211,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 100040dc
     PUSH ECX                            ; 100040de
     CALL dword ptr [EAX + 0xa0]         ; 100040df
-    MOV ECX,dword ptr [0x10226924]      ; 100040e5 | DAT_10226924
+    MOV ECX,dword ptr [0x10226924]      ; 100040e5 | g_ExternalRendererBridge.rendering_quality
     CMP dword ptr [ECX],0x1             ; 100040eb
     MOV ECX,dword ptr [0x100141e0]      ; 100040ee | DAT_100141e0
     SBB EAX,EAX                         ; 100040f4
@@ -230,7 +230,7 @@ section .text
     PUSH EDX                            ; 10004119
     MOV EAX,dword ptr [EDX]             ; 1000411a
     CALL dword ptr [EAX + 0x98]         ; 1000411c
-    MOV EAX,[0x10226924]                ; 10004122 | DAT_10226924
+    MOV EAX,[0x10226924]                ; 10004122 | g_ExternalRendererBridge.rendering_quality
         ;   Label: LAB_10004122
     MOV ECX,dword ptr [EAX]             ; 10004127
     CMP dword ptr [0x10014224],ECX      ; 10004129 | DAT_10014224
@@ -400,14 +400,14 @@ section .text
     CALL FUN_100037e0                   ; 1000427a
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined FUN_100037e0()
     ADD ESP,0x8                         ; 1000427f
-    MOV EAX,[0x10226908]                ; 10004282 | DAT_10226908
+    MOV EAX,[0x10226908]                ; 10004282 | g_ExternalRendererBridge.system_memory_size
         ;   Label: LAB_10004282
     MOV dword ptr [0x10014218],ESI      ; 10004287 | DAT_10014218
     MOV ECX,dword ptr [EAX]             ; 1000428d
     CMP dword ptr [0x10240624],ECX      ; 1000428f | DAT_10240624
     JZ 0x10004302                       ; 10004295
         ;   XREF to: 10004302 (CONDITIONAL_JUMP)  ; LAB_10004302
-    MOV EAX,[0x10226920]                ; 10004297 | DAT_10226920
+    MOV EAX,[0x10226920]                ; 10004297 | g_ExternalRendererBridge.processor_type
     CMP dword ptr [EAX],0x0             ; 1000429c
     JZ 0x100042e8                       ; 1000429f
         ;   XREF to: 100042e8 (CONDITIONAL_JUMP)  ; LAB_100042e8
@@ -445,7 +445,7 @@ section .text
         ;   Label: LAB_10004302
     JZ 0x1000435f                       ; 10004308
         ;   XREF to: 1000435f (CONDITIONAL_JUMP)  ; LAB_1000435f
-    MOV EAX,[0x102268e0]                ; 1000430a | DAT_102268e0
+    MOV EAX,[0x102268e0]                ; 1000430a | g_ExternalRendererBridge.current_lighting
     MOV dword ptr [0x10240610],0x0      ; 1000430f | DAT_10240610
     MOV ECX,dword ptr [EAX]             ; 10004319
     SUB ECX,0x100                       ; 1000431b

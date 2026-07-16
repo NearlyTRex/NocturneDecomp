@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10130000
 // =============================================================================
 
+// HWND
+HWND g_WindowHandle = nullptr;
+
 // undefined1
 undefined1 DAT_101386a8 = 0x00;
 undefined1 DAT_10139040 = 0x00;
@@ -19,7 +22,6 @@ undefined4 DAT_10138f34 = 0x00000000;
 undefined4 DAT_10138f50 = 0x00000000;
 undefined4 DAT_10138fb0 = 0x00000000;
 undefined4 DAT_10138fb4 = 0x00000000;
-undefined4 DAT_10138fb8 = 0x00000000;
 undefined4 DAT_10138fc0 = 0x00000000;
 undefined4 DAT_10138fc4 = 0x00000000;
 undefined4 DAT_10139048 = 0x00000000;

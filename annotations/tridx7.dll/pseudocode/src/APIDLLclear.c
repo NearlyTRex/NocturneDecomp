@@ -44,11 +44,11 @@ int __cdecl APIDLLclear(void)
     local_7c = 0;
     local_4c = DAT_10014178 << 0x10;
     local_20 = 0;
-    local_c0.projected_vertex.transformed_z = *DAT_10226908;
-    local_88 = *DAT_10226908;
-    local_58 = *DAT_10226908;
-    local_28 = *DAT_10226908;
-    *DAT_102268e8 = 0;
+    local_c0.projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
+    local_88 = *g_ExternalRendererBridge.system_memory_size;
+    local_58 = *g_ExternalRendererBridge.system_memory_size;
+    local_28 = *g_ExternalRendererBridge.system_memory_size;
+    *g_ExternalRendererBridge.console_text_color = 0;
     local_50 = local_80;
     local_1c = local_4c;
     APIDLLdrawPolygon(&local_c0,4,0x10);

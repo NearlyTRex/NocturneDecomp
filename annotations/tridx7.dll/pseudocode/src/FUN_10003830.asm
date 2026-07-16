@@ -23,8 +23,8 @@
 ;   undefined4 DAT_101b88e8
 ;   undefined4 DAT_101b88ec
 ;   undefined4 DAT_1020de38
-;   undefined4 DAT_10226900
-;   undefined4 DAT_1022691c
+;   undefined4 g_ExternalRendererBridge.texture_dimension
+;   undefined4 g_ExternalRendererBridge.agp_texture_mode
 ;   undefined1 DAT_10226a4c
 ;   undefined1 DAT_10226a54
 ;   undefined4 DAT_10226a64
@@ -80,7 +80,7 @@ section .text
     MOV dword ptr [ESI + -0x4],EDX      ; 100038c3 | DAT_10226a80
     JC 0x1000388c                       ; 100038c6
         ;   XREF to: 1000388c (CONDITIONAL_JUMP)  ; LAB_1000388c
-    MOV EAX,[0x10226900]                ; 100038c8 | DAT_10226900
+    MOV EAX,[0x10226900]                ; 100038c8 | g_ExternalRendererBridge.texture_dimension
     MOV EDI,dword ptr [0x1024061c]      ; 100038cd | DAT_1024061c
     MOV ECX,dword ptr [0x1020de38]      ; 100038d3 | DAT_1020de38
     MOV EDX,0x101b88e0                  ; 100038d9 | DAT_101b88e0
@@ -129,7 +129,7 @@ section .text
     DEC ESI                             ; 10003930
     JNZ 0x10003916                      ; 10003931
         ;   XREF to: 10003916 (CONDITIONAL_JUMP)  ; LAB_10003916
-    MOV EAX,[0x1022691c]                ; 10003933 | DAT_1022691c
+    MOV EAX,[0x1022691c]                ; 10003933 | g_ExternalRendererBridge.agp_texture_mode
         ;   Label: LAB_10003933
     CMP dword ptr [EAX],0x0             ; 10003938
     JZ 0x1000394a                       ; 1000393b
@@ -137,7 +137,7 @@ section .text
     CMP dword ptr [0x10060670],0x0      ; 1000393d | DAT_10060670
     JZ 0x10003a27                       ; 10003944
         ;   XREF to: 10003a27 (CONDITIONAL_JUMP)  ; LAB_10003a27
-    MOV EAX,[0x10226900]                ; 1000394a | DAT_10226900
+    MOV EAX,[0x10226900]                ; 1000394a | g_ExternalRendererBridge.texture_dimension
         ;   Label: LAB_1000394a
     MOV ESI,0x101b88e0                  ; 1000394f | DAT_101b88e0
     MOV EAX,dword ptr [EAX]             ; 10003954
@@ -198,7 +198,7 @@ section .text
     DEC dword ptr [ESP + 0x20]          ; 100039fa
     JNZ 0x10003990                      ; 100039fe
         ;   XREF to: 10003990 (CONDITIONAL_JUMP)  ; LAB_10003990
-    MOV ECX,dword ptr [0x1022691c]      ; 10003a00 | DAT_1022691c
+    MOV ECX,dword ptr [0x1022691c]      ; 10003a00 | g_ExternalRendererBridge.agp_texture_mode
         ;   Label: LAB_10003a00
     CMP dword ptr [ECX],0x0             ; 10003a06
     JNZ 0x10003a14                      ; 10003a09

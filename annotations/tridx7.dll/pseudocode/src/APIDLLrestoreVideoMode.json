@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 139,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr"
@@ -89,9 +89,9 @@
     },
     {
       "addr": "10138fb8",
-      "name": "DAT_10138fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHandle",
+      "type": "HWND",
+      "value": "00000000"
     },
     {
       "addr": "10242294",
@@ -205,7 +205,7 @@
       "line": 16,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,g_WindowHandle,8);",
       "type": "unresolved_funcptr"
     },
     {
@@ -213,7 +213,7 @@
       "line": 16,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,g_WindowHandle,8);",
       "type": "undefined_data"
     },
     {
@@ -221,15 +221,7 @@
       "line": 16,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_10138fb8",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,g_WindowHandle,8);",
       "type": "undefined_data"
     }
   ]

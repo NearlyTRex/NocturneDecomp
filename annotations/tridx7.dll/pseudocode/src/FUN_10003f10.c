@@ -17,11 +17,13 @@ void FUN_10003f10(uint param_1)
   if ((DAT_1024061c != 0) && ((param_1 & 1) != 0)) {
     param_1 = param_1 | 0x22;
   }
-  if (*DAT_10226918 != DAT_1001421c) {
+  if (*g_ExternalRendererBridge.system_initialized != DAT_1001421c) {
     FUN_100047b0();
-    (**(code **)(*DAT_100141e0 + 0xa0))(DAT_100141e0,0,0x10,2 - (uint)(*DAT_10226918 == 0));
-    (**(code **)(*DAT_100141e0 + 0xa0))(DAT_100141e0,0,0x11,2 - (uint)(*DAT_10226918 == 0));
-    DAT_1001421c = *DAT_10226918;
+    (**(code **)(*DAT_100141e0 + 0xa0))
+              (DAT_100141e0,0,0x10,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
+    (**(code **)(*DAT_100141e0 + 0xa0))
+              (DAT_100141e0,0,0x11,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
+    DAT_1001421c = *g_ExternalRendererBridge.system_initialized;
   }
   if (((param_1 ^ _DAT_10014218) & 0x20) != 0) {
     if ((param_1 & 0x20) == 0) {
@@ -35,7 +37,7 @@ void FUN_10003f10(uint param_1)
   if ((param_1 & 0x20) != 0) {
     param_1 = param_1 & 0xfffffff7;
   }
-  iVar1 = *DAT_102268dc;
+  iVar1 = *g_ExternalRendererBridge.blend_mode;
   if (iVar1 != DAT_10014220) {
     DAT_10014220 = iVar1;
     if (iVar1 == 0) {
@@ -64,13 +66,16 @@ LAB_1000400f:
     FUN_100047b0();
     DAT_100141d4 = (&DAT_1020de40)[DAT_10014138 * 2];
     (**(code **)(*DAT_100141e0 + 0xa0))(DAT_100141e0,0,1,4);
-    (**(code **)(*DAT_100141e0 + 0xa0))(DAT_100141e0,0,0x10,2 - (uint)(*DAT_10226918 == 0));
-    (**(code **)(*DAT_100141e0 + 0xa0))(DAT_100141e0,0,0x11,2 - (uint)(*DAT_10226918 == 0));
     (**(code **)(*DAT_100141e0 + 0xa0))
-              (DAT_100141e0,0,0x12,(-(uint)(*DAT_10226924 == 0) & 0xfffffffe) + 3);
+              (DAT_100141e0,0,0x10,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
+    (**(code **)(*DAT_100141e0 + 0xa0))
+              (DAT_100141e0,0,0x11,2 - (uint)(*g_ExternalRendererBridge.system_initialized == 0));
+    (**(code **)(*DAT_100141e0 + 0xa0))
+              (DAT_100141e0,0,0x12,
+               (-(uint)(*g_ExternalRendererBridge.rendering_quality == 0) & 0xfffffffe) + 3);
     (**(code **)(*DAT_100141e0 + 0x98))(DAT_100141e0,0,DAT_100141d4);
   }
-  iVar1 = *DAT_10226924;
+  iVar1 = *g_ExternalRendererBridge.rendering_quality;
   if (DAT_10014224 != iVar1) {
     if (iVar1 == 0) {
       uVar2 = 1;
@@ -132,10 +137,10 @@ LAB_1000426c:
   FUN_100037e0(0x17,uVar2);
 LAB_10004282:
   _DAT_10014218 = param_1;
-  iVar1 = *DAT_10226908;
+  iVar1 = *g_ExternalRendererBridge.system_memory_size;
   if (DAT_10240624 != iVar1) {
     DAT_10240624 = iVar1;
-    if (*DAT_10226920 == 0) {
+    if (*g_ExternalRendererBridge.processor_type == 0) {
       _DAT_10240614 = 256.0 / (float)iVar1;
     }
     else if ((DAT_1001416c == 0) || (DAT_10014170 != 0x10)) {
@@ -149,7 +154,7 @@ LAB_10004282:
     DAT_10236908 = 0xff;
   }
   else {
-    DAT_10236908 = *DAT_102268e0 + -0x100 >> 4;
+    DAT_10236908 = *g_ExternalRendererBridge.current_lighting + -0x100 >> 4;
     if (0xff < DAT_10236908) {
       DAT_10240610 = DAT_10236908 + -0x100;
       if (0xff < DAT_10240610) {

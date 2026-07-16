@@ -50,16 +50,16 @@ section .text
 
     SUB ESP,0x210                       ; 10002500
         ;   Label: APIDLLsetVideoMode
-    CMP dword ptr [0x1001420c],0x0      ; 10002506 | DAT_1001420c
+    CMP dword ptr [0x1001420c],0x0      ; 10002506 | g_NonLocalVideoMem
     PUSH EBX                            ; 1000250d
     PUSH ESI                            ; 1000250e
     PUSH EDI                            ; 1000250f
     PUSH EBP                            ; 10002510
     JNZ 0x1000251e                      ; 10002511
         ;   XREF to: 1000251e (CONDITIONAL_JUMP)  ; LAB_1000251e
-    MOV EAX,[0x1022691c]                ; 10002513 | DAT_1022691c
+    MOV EAX,[0x1022691c]                ; 10002513 | g_ExternalRendererBridge.agp_texture_mode
     MOV dword ptr [EAX],0x0             ; 10002518
-    MOV EAX,[0x1022691c]                ; 1000251e | DAT_1022691c
+    MOV EAX,[0x1022691c]                ; 1000251e | g_ExternalRendererBridge.agp_texture_mode
         ;   Label: LAB_1000251e
     CMP dword ptr [EAX],0x0             ; 10002523
     JZ 0x1000257a                       ; 10002526
@@ -156,7 +156,7 @@ section .text
     CALL FUN_10002370                   ; 100026c4
         ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined FUN_10002370()
     PUSH 0x11                           ; 100026c9
-    MOV EAX,[0x10138fb8]                ; 100026cb | DAT_10138fb8
+    MOV EAX,[0x10138fb8]                ; 100026cb | g_WindowHandle
     PUSH EAX                            ; 100026d0
     MOV ECX,dword ptr [0x10014188]      ; 100026d1 | DAT_10014188
     PUSH ECX                            ; 100026d7
@@ -205,7 +205,7 @@ section .text
     MOV ECX,0x1f                        ; 1000272f
     STOSD.REP ES:EDI                    ; 10002734 | DAT_10226e88 | DAT_10226e8c
     MOV dword ptr [0x10226e88],0x7c     ; 10002736 | DAT_10226e88
-    MOV EAX,[0x1022691c]                ; 10002740 | DAT_1022691c
+    MOV EAX,[0x1022691c]                ; 10002740 | g_ExternalRendererBridge.agp_texture_mode
     MOV dword ptr [0x10226e8c],0x21     ; 10002745 | DAT_10226e8c
     CMP dword ptr [EAX],0x1             ; 1000274f
     MOV dword ptr [0x10226e9c],0x2      ; 10002752 | DAT_10226e9c

@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10010000
 // =============================================================================
 
+// GUID
+GUID g_IID_IDirectDraw4 = {0x9C59509A, 0x39BD, 0x11D1, {0x8C, 0x4A, 0x00, 0xC0, 0x4F, 0xD9, 0x30, 0xC5}};
+
 // IMAGE_DEBUG_DIRECTORY
 IMAGE_DEBUG_DIRECTORY DAT_1001201C = {
     .Characteristics = 0x00000000,
@@ -32,6 +35,9 @@ LPCRITICAL_SECTION LPCRITICAL_SECTION_10016c9c = (LPCRITICAL_SECTION)0x10240660;
 LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac = (LPCRITICAL_SECTION)0x10240678;
 LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc = (LPCRITICAL_SECTION)0x10240648;
 
+// int
+int g_SelectedCardIndex = 0;
+
 // string
 string DAT_10012397 = "?GetCurrentThread";
 string DAT_10012410 = "runtime error ";
@@ -49,6 +55,10 @@ string DAT_100125A4 = "R6016\r\n- not enough space for thread data\r\n";
 string DAT_100125D0 = "\r\nabnormal program termination\r\n";
 string DAT_100127F8 = "sweden";
 string DAT_1001296C = "canada";
+
+// uint
+uint g_LocalVideoMem = 0;
+uint g_NonLocalVideoMem = 0;
 
 // undefined1
 undefined1 DAT_1001277a = 0x00;
@@ -105,9 +115,6 @@ undefined4 DAT_100141f4 = 0x00000000;
 undefined4 DAT_100141f8 = 0x00000000;
 undefined4 DAT_100141fc = 0x00000000;
 undefined4 DAT_10014204 = 0x00000000;
-undefined4 DAT_10014208 = 0x00000000;
-undefined4 DAT_1001420c = 0x00000000;
-undefined4 DAT_10014210 = 0x00000000;
 undefined4 DAT_10014214 = 0x00000000;
 undefined4 DAT_1001421c = 0x00000000;
 undefined4 DAT_10014220 = 0x00000000;

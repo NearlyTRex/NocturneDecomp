@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 923,
+    "complexity_score": 903,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 188,
-    "suspect_count": 69,
+    "suspect_count": 67,
     "suspect_types": [
       "displaced_global_access",
       "pointer_cast",
@@ -100,8 +100,8 @@
     },
     {
       "addr": "10012098",
-      "name": "DAT_10012098",
-      "type": "undefined4",
+      "name": "g_IID_IDirectDraw4",
+      "type": "GUID",
       "value": null
     },
     {
@@ -118,21 +118,21 @@
     },
     {
       "addr": "10014208",
-      "name": "DAT_10014208",
-      "type": "undefined4",
-      "value": null
+      "name": "g_LocalVideoMem",
+      "type": "uint",
+      "value": "0x0"
     },
     {
       "addr": "1001420c",
-      "name": "DAT_1001420c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NonLocalVideoMem",
+      "type": "uint",
+      "value": "0x0"
     },
     {
       "addr": "10014210",
-      "name": "DAT_10014210",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SelectedCardIndex",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "101386b0",
@@ -148,9 +148,9 @@
     },
     {
       "addr": "10138fb8",
-      "name": "DAT_10138fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHandle",
+      "type": "HWND",
+      "value": "00000000"
     },
     {
       "addr": "101398d0",
@@ -160,9 +160,9 @@
     },
     {
       "addr": "1020de34",
-      "name": "DAT_1020de34",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AdapterCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10226870",
@@ -178,13 +178,13 @@
     },
     {
       "addr": "102268b8",
-      "name": "DAT_102268b8",
-      "type": "undefined4",
+      "name": "g_ExternalRendererBridge",
+      "type": "CExternalRendererBridge",
       "value": null
     },
     {
       "addr": "102268bc",
-      "name": "DAT_102268bc",
+      "name": "g_ExternalRendererBridge.red_scale_factor",
       "type": "undefined4",
       "value": null
     },
@@ -301,14 +301,14 @@
         },
         {
           "check_id": "uninitvar",
-          "column": 18,
+          "column": 20,
           "line": 144,
-          "message": "Uninitialized variable: uStack_8",
+          "message": "Uninitialized variable: pHStack_8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 17,
+          "column": 41,
           "line": 147,
           "message": "Uninitialized variable: puStack_4",
           "severity": "error"
@@ -320,20 +320,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_1020de34",
-      "severity": "mild",
-      "text": "DAT_1020de34 = 0;",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code **ppcVar8;",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_1020de34",
-      "severity": "mild",
-      "text": "if (0 < DAT_1020de34) {",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcStack_44c;",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
@@ -357,14 +357,6 @@
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "puStack_45c = &DAT_10014188;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_10012098",
-      "severity": "mild",
-      "text": "puStack_460 = &DAT_10012098;",
       "type": "undefined_data"
     },
     {
@@ -393,10 +385,18 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 64,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "*ppcVar8 = (code *)0x0;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 67,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&puStack_44c,0);",
+      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&pcStack_44c,0);",
       "type": "unresolved_funcptr"
     },
     {
@@ -404,7 +404,7 @@
       "line": 67,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&puStack_44c,0);",
+      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&pcStack_44c,0);",
       "type": "undefined_data"
     },
     {
@@ -412,7 +412,7 @@
       "line": 67,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&puStack_44c,0);",
+      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&pcStack_44c,0);",
       "type": "undefined_data"
     },
     {
@@ -536,28 +536,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_1020de34",
-      "severity": "mild",
-      "text": "} while (iVar12 < DAT_1020de34);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_10138fb8",
-      "severity": "mild",
-      "text": "DAT_10138fb8 = uStack_8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_102268b8",
-      "severity": "mild",
-      "text": "puVar10 = &DAT_102268b8;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(CExternalRendererBridge *)((int)pCVar10",
+      "severity": "moderate",
+      "text": "pCVar10 = (CExternalRendererBridge *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -572,15 +556,7 @@
       "line": 145,
       "match": "DAT_10226870",
       "severity": "mild",
-      "text": "uStack_458 = (&DAT_10226870)[DAT_10014210];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 145,
-      "match": "DAT_10014210",
-      "severity": "mild",
-      "text": "uStack_458 = (&DAT_10226870)[DAT_10014210];",
+      "text": "uStack_458 = (&DAT_10226870)[g_SelectedCardIndex];",
       "type": "undefined_data"
     },
     {
@@ -589,14 +565,6 @@
       "match": "DAT_10014188",
       "severity": "mild",
       "text": "puStack_45c = &DAT_10014188;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_10012098",
-      "severity": "mild",
-      "text": "puStack_460 = &DAT_10012098;",
       "type": "undefined_data"
     },
     {
@@ -625,10 +593,18 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 165,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcStack_44c = (code *)0x10000000;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 166,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppuVar8,&piStack_450,&puStack_454);",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppcVar8,&piStack_450,&puStack_454);",
       "type": "unresolved_funcptr"
     },
     {
@@ -636,7 +612,7 @@
       "line": 166,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppuVar8,&piStack_450,&puStack_454);",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppcVar8,&piStack_450,&puStack_454);",
       "type": "undefined_data"
     },
     {
@@ -644,15 +620,7 @@
       "line": 166,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppuVar8,&piStack_450,&puStack_454);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_10014208",
-      "severity": "mild",
-      "text": "DAT_10014208 = puStack_460;",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppcVar8,&piStack_450,&puStack_454);",
       "type": "undefined_data"
     },
     {
@@ -660,7 +628,7 @@
       "line": 177,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&puStack_460,&piStack_464);",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&pGStack_460,&piStack_464);",
       "type": "unresolved_funcptr"
     },
     {
@@ -668,7 +636,7 @@
       "line": 177,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&puStack_460,&piStack_464);",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&pGStack_460,&piStack_464);",
       "type": "undefined_data"
     },
     {
@@ -676,15 +644,7 @@
       "line": 177,
       "match": "DAT_10014188",
       "severity": "mild",
-      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&puStack_460,&piStack_464);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_1001420c",
-      "severity": "mild",
-      "text": "DAT_1001420c = ppuVar8;",
+      "text": "iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&pGStack_460,&piStack_464);",
       "type": "undefined_data"
     },
     {
@@ -725,6 +685,30 @@
       "match": "(int)&DAT_101386b0",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_101386b0 + iVar6) = uStack_28;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 142,
+      "match": "(int)pCVar10",
+      "severity": "moderate",
+      "text": "pCVar10 = (CExternalRendererBridge *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pGStack_460` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 172,
+      "match": "(uint)pGStack_460",
+      "severity": "moderate",
+      "text": "g_LocalVideoMem = (uint)pGStack_460;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppcVar8` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 183,
+      "match": "(uint)ppcVar8",
+      "severity": "moderate",
+      "text": "g_NonLocalVideoMem = (uint)ppcVar8;",
       "type": "pointer_truncation"
     },
     {
@@ -860,7 +844,7 @@
       "line": 118,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10001c01: MOVSD.REP ES:EDI,ESI  ; DAT_102268b8 | DAT_102268bc",
+      "text": "// 10001c01: MOVSD.REP ES:EDI,ESI  ; g_ExternalRendererBridge | g_ExternalRendererBridge.red_scale_factor",
       "type": "unrolled_memcpy"
     },
     {
@@ -901,11 +885,11 @@
       "type": "static_uninitvar"
     },
     {
-      "description": "Uninitialized variable: uStack_8",
+      "description": "Uninitialized variable: pHStack_8",
       "line": 144,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "DAT_10138fb8 = uStack_8;",
+      "text": "g_WindowHandle = pHStack_8;",
       "type": "static_uninitvar"
     },
     {
@@ -913,7 +897,7 @@
       "line": 147,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*puVar10 = *puStack_4;",
+      "text": "pCVar10->red_bit_position = (int *)*puStack_4;",
       "type": "static_uninitvar"
     }
   ]

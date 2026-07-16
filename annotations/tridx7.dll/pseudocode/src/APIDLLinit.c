@@ -16,38 +16,38 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
   int iVar5;
   int iVar6;
   char *pcVar7;
-  byte **ppuVar8;
+  code **ppcVar8;
   char *pcVar9;
-  uint *puVar10;
+  CExternalRendererBridge *pCVar10;
   byte bVar11;
   int *piStack_464;
-  byte *puStack_460;
+  GUID *pGStack_460;
   uint *puStack_45c;
   uint uStack_458;
   uint *puStack_454;
   int *piStack_450;
-  byte *puStack_44c;
+  code *pcStack_44c;
   uint uStack_448;
   uint uStack_444;
   int iVar12;
   char acStack_234 [520];
   uint uStack_2c;
   uint uStack_28;
-  uint uStack_8;
+  HWND pHStack_8;
   uint *puStack_4;
   
                     /* 0x1a80  19  APIDLLinit */
   bVar11 = 0;
   uStack_444 = 0x10001a8f;
   APIDLLkill();
-  DAT_1020de34 = 0;
+  g_AdapterCount = 0;
   uStack_444 = 7;
   uStack_448 = 0;
-  puStack_44c = &LAB_100017b0;
+  pcStack_44c = FUN_100017b0;
   piStack_450 = (int *)0x10001aa7;
   DirectDrawEnumerateExA();
   iVar12 = 0;
-  if (0 < DAT_1020de34) {
+  if (0 < g_AdapterCount) {
     iVar6 = 0;
     iVar5 = 0;
     do {
@@ -60,18 +60,18 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
         return 0;
       }
       puStack_45c = &DAT_10014188;
-      puStack_460 = &DAT_10012098;
+      pGStack_460 = &g_IID_IDirectDraw4;
       piStack_464 = DAT_10014184;
       iVar2 = (**(code **)*DAT_10014184)();
       if (iVar2 != 0) {
         return 0;
       }
-      ppuVar8 = &puStack_44c;
+      ppcVar8 = &pcStack_44c;
       for (iVar2 = 0x10a; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *ppuVar8 = (byte *)0x0;
-        ppuVar8 = ppuVar8 + (uint)bVar11 * -2 + 1;
+        *ppcVar8 = (code *)0x0;
+        ppcVar8 = ppcVar8 + (uint)bVar11 * -2 + 1;
       }
-      iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&puStack_44c,0);
+      iVar2 = (**(code **)(*DAT_10014188 + 0x6c))(DAT_10014188,&pcStack_44c,0);
       if (iVar2 != 0) {
         return 0;
       }
@@ -138,18 +138,18 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
       iVar6 = iVar6 + 4;
       iVar5 = iVar5 + 0x200;
       iVar12 = iVar12 + 1;
-    } while (iVar12 < DAT_1020de34);
+    } while (iVar12 < g_AdapterCount);
   }
   piStack_450 = (int *)0x0;
-  DAT_10138fb8 = uStack_8;
-  puVar10 = &DAT_102268b8;
+  g_WindowHandle = pHStack_8;
+  pCVar10 = &g_ExternalRendererBridge;
   for (iVar12 = 0x23; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *puVar10 = *puStack_4;
+    pCVar10->red_bit_position = (int *)*puStack_4;
     puStack_4 = puStack_4 + (uint)bVar11 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+    pCVar10 = (CExternalRendererBridge *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
   }
   puStack_454 = &DAT_10014184;
-  uStack_458 = (&DAT_10226870)[DAT_10014210];
+  uStack_458 = (&DAT_10226870)[g_SelectedCardIndex];
   puStack_45c = (uint *)0x10001c1b;
   iVar12 = DirectDrawCreate();
   if (iVar12 != 0) {
@@ -158,7 +158,7 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
     return 0;
   }
   puStack_45c = &DAT_10014188;
-  puStack_460 = &DAT_10012098;
+  pGStack_460 = &g_IID_IDirectDraw4;
   piStack_464 = DAT_10014184;
   iVar12 = (**(code **)*DAT_10014184)();
   FUN_10001d70(iVar12);
@@ -168,26 +168,26 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface)
   }
   uStack_448 = 0;
   uStack_444 = 0;
-  ppuVar8 = &puStack_44c;
-  puStack_44c = (byte *)0x10000000;
-  iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppuVar8,&piStack_450,&puStack_454);
+  ppcVar8 = &pcStack_44c;
+  pcStack_44c = (code *)0x10000000;
+  iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,ppcVar8,&piStack_450,&puStack_454);
   if (iVar12 != 0) {
     FUN_10002370();
     APIDLLkill();
     return 0;
   }
-  DAT_10014208 = puStack_460;
+  g_LocalVideoMem = (uint)pGStack_460;
   uStack_458 = 0;
   puStack_454 = (uint *)0x0;
   piStack_450 = (int *)0x0;
   puStack_45c = (uint *)0x20000000;
-  iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&puStack_460,&piStack_464);
+  iVar12 = (**(code **)(*DAT_10014188 + 0x5c))(DAT_10014188,&puStack_45c,&pGStack_460,&piStack_464);
   if (iVar12 != 0) {
     FUN_10002370();
     APIDLLkill();
     return 0;
   }
-  DAT_1001420c = ppuVar8;
+  g_NonLocalVideoMem = (uint)ppcVar8;
   FUN_10002ea0();
   iVar12 = FUN_10002f40();
   if (iVar12 == 0) {

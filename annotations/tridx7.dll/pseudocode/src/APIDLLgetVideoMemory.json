@@ -14,16 +14,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 39,
+    "complexity_score": 14,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 40
   },
   "cross_references": [],
@@ -43,15 +41,15 @@
   "globals": [
     {
       "addr": "10014208",
-      "name": "DAT_10014208",
-      "type": "undefined4",
-      "value": null
+      "name": "g_LocalVideoMem",
+      "type": "uint",
+      "value": "0x0"
     },
     {
       "addr": "1001420c",
-      "name": "DAT_1001420c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NonLocalVideoMem",
+      "type": "uint",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -112,22 +110,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_10014208",
-      "severity": "mild",
-      "text": "iVar1 = DAT_10014208;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_1001420c",
-      "severity": "mild",
-      "text": "*available_memory = DAT_1001420c;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

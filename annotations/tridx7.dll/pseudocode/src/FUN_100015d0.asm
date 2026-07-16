@@ -14,7 +14,7 @@
 ;   void* PTR_DAT_10014048 = 100a8688
 ;   void* PTR_DAT_1001404c = 100f0698
 ;   void* PTR_DAT_10014050 = 10018660
-;   undefined4 DAT_10226900
+;   undefined4 g_ExternalRendererBridge.texture_dimension
 ;
 ; Called Functions:
 ;   FUN_10001180
@@ -23,7 +23,7 @@
 
 section .text
 
-    MOV EAX,[0x10226900]                ; 100015d0 | DAT_10226900
+    MOV EAX,[0x10226900]                ; 100015d0 | g_ExternalRendererBridge.texture_dimension
         ;   Label: FUN_100015d0
     MOV EAX,dword ptr [EAX]             ; 100015d5
     SUB EAX,0x20                        ; 100015d7

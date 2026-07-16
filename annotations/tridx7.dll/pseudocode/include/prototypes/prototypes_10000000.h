@@ -34,6 +34,7 @@ void FUN_10001200(void);
 void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
 undefined4 FUN_10001470(undefined4 param_1);
 void FUN_100015d0(undefined4 param_1);
+undefined4 FUN_100017b0(undefined4 *param_1,char *param_2,char *param_3);
 undefined4 FUN_10001900(undefined4 param_1);
 void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer);
 int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface);

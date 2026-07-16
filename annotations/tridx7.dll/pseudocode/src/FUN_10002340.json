@@ -14,16 +14,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 77,
+    "complexity_score": 62,
     "cross_reference_count": 14,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "warning_noreturn"
     ],
@@ -153,9 +152,9 @@
     },
     {
       "addr": "10138fb8",
-      "name": "DAT_10138fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHandle",
+      "type": "HWND",
+      "value": "00000000"
     },
     {
       "addr": "10242184",
@@ -326,16 +325,8 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "MessageBoxA(DAT_10138fb8,param_1,\"DirectX6 3D Driver error\",0x10);",
+      "text": "MessageBoxA(g_WindowHandle,param_1,\"DirectX6 3D Driver error\",0x10);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_10138fb8",
-      "severity": "mild",
-      "text": "MessageBoxA(DAT_10138fb8,param_1,\"DirectX6 3D Driver error\",0x10);",
-      "type": "undefined_data"
     },
     {
       "description": "Subroutine marked as non-returning",

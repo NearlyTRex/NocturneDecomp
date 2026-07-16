@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_1001418c
 ;   undefined4 DAT_100141f8
-;   undefined4 DAT_10226914
+;   undefined4 g_ExternalRendererBridge.frame_buffer_ptr
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     CMP dword ptr [0x100141f8],0x0      ; 100024b9 | DAT_100141f8
     JNZ 0x100024f0                      ; 100024c0
         ;   XREF to: 100024f0 (CONDITIONAL_JUMP)  ; LAB_100024f0
-    MOV EAX,[0x10226914]                ; 100024c2 | DAT_10226914
+    MOV EAX,[0x10226914]                ; 100024c2 | g_ExternalRendererBridge.frame_buffer_ptr
     CMP dword ptr [EAX],0x0             ; 100024c7
     JZ 0x100024e1                       ; 100024ca
         ;   XREF to: 100024e1 (CONDITIONAL_JUMP)  ; LAB_100024e1

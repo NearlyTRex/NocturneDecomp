@@ -13,7 +13,7 @@ uint * FUN_10003a30(int param_1)
   uint *puVar2;
   
   puVar2 = &DAT_101b88e0;
-  iVar1 = *DAT_10226900;
+  iVar1 = *g_ExternalRendererBridge.texture_dimension;
   while (iVar1 != param_1) {
     puVar2 = puVar2 + iVar1 * iVar1;
     iVar1 = iVar1 / 2;

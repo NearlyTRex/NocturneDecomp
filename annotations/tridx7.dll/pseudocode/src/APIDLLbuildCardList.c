@@ -15,8 +15,8 @@ int __cdecl APIDLLbuildCardList(int *out_card_count,void *enum_data_buffer,char 
   int *piVar4;
   
                     /* 0x52e0  7  APIDLLbuildCardList */
-  iVar2 = DAT_1020de34;
-  *out_card_count = DAT_1020de34;
+  iVar2 = g_AdapterCount;
+  *out_card_count = g_AdapterCount;
   if (0 < iVar2) {
     piVar4 = &DAT_101386b0;
     for (iVar1 = iVar2; iVar1 != 0; iVar1 = iVar1 + -1) {

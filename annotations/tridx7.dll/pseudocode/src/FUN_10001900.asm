@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x2fc]:1  local_2fc
 ;
+; XREF[1]:
+;   FUN_100017b0 at 100017b9
+;
 ; Called Functions:
 ;   DirectDrawCreate
 ;

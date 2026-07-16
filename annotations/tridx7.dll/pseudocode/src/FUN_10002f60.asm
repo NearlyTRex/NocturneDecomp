@@ -25,7 +25,7 @@
 ;   undefined4 DAT_10060670
 ;   undefined4 DAT_1020de40
 ;   undefined4 DAT_1020de44
-;   undefined4 DAT_1022691c
+;   undefined4 g_ExternalRendererBridge.agp_texture_mode
 ;   undefined4 DAT_10226a58
 ;   undefined4 DAT_10226a5c
 ;
@@ -50,7 +50,7 @@ section .text
     MOV ECX,0x8                         ; 10002f7b
     MOVSD.REP ES:EDI,ESI                ; 10002f80 | DAT_10226a58 | DAT_10226a5c
     MOV dword ptr [ESP + 0x8],0x7c      ; 10002f82
-    MOV EAX,[0x1022691c]                ; 10002f8a | DAT_1022691c
+    MOV EAX,[0x1022691c]                ; 10002f8a | g_ExternalRendererBridge.agp_texture_mode
     MOV dword ptr [ESP + 0xc],0x101007  ; 10002f8f
     CMP dword ptr [EAX],0x0             ; 10002f97
     MOV EAX,dword ptr [ESP + 0x88]      ; 10002f9a

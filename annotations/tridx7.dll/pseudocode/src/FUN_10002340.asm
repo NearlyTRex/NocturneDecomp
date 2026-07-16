@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectX6_3D_Driver_error_100166f8
-;   undefined4 DAT_10138fb8
+;   HWND g_WindowHandle = 00000000
 ;   void* PTR_ExitProcess_10242184 = 002422b8
 ;   void* PTR_MessageBoxA_10242290 = 002422e2
 ;
@@ -38,7 +38,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 10002345
     PUSH 0x10                           ; 10002349
     PUSH 0x100166f8                     ; 1000234b | = "DirectX6 3D Driver error"
-    MOV ECX,dword ptr [0x10138fb8]      ; 10002350 | DAT_10138fb8
+    MOV ECX,dword ptr [0x10138fb8]      ; 10002350 | g_WindowHandle
     PUSH EAX                            ; 10002356
     PUSH ECX                            ; 10002357
     CALL dword ptr [0x10242290]         ; 10002358 | PTR_MessageBoxA_10242290

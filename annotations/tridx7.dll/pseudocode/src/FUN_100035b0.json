@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 239,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
@@ -112,13 +112,13 @@
     },
     {
       "addr": "1022690c",
-      "name": "DAT_1022690c",
+      "name": "g_ExternalRendererBridge.video_memory_size",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10226918",
-      "name": "DAT_10226918",
+      "name": "g_ExternalRendererBridge.system_initialized",
       "type": "undefined4",
       "value": null
     }
@@ -234,30 +234,6 @@
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x24))(DAT_100141e0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_10226918",
-      "severity": "mild",
-      "text": "FUN_100037e0(0x11,2 - (uint)(*DAT_10226918 == 0));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_10226918",
-      "severity": "mild",
-      "text": "FUN_100037e0(0x12,2 - (uint)(*DAT_10226918 == 0));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_1022690c",
-      "severity": "mild",
-      "text": "FUN_100037e0(0x1a,*DAT_1022690c);",
       "type": "undefined_data"
     },
     {

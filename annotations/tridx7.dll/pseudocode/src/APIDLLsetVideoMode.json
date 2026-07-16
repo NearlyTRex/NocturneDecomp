@@ -14,13 +14,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 497,
-    "complexity_score": 1575,
+    "complexity_score": 1535,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 325,
-    "suspect_count": 121,
+    "suspect_count": 117,
     "suspect_types": [
       "stack_ref",
       "undefined_data",
@@ -235,9 +235,9 @@
     },
     {
       "addr": "1001420c",
-      "name": "DAT_1001420c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NonLocalVideoMem",
+      "type": "uint",
+      "value": "0x0"
     },
     {
       "addr": "10016714",
@@ -361,9 +361,9 @@
     },
     {
       "addr": "10138fb8",
-      "name": "DAT_10138fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHandle",
+      "type": "HWND",
+      "value": "00000000"
     },
     {
       "addr": "101398c8",
@@ -433,7 +433,7 @@
     },
     {
       "addr": "1022691c",
-      "name": "DAT_1022691c",
+      "name": "g_ExternalRendererBridge.agp_texture_mode",
       "type": "undefined4",
       "value": null
     },
@@ -572,30 +572,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_1001420c",
-      "severity": "mild",
-      "text": "if (DAT_1001420c == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_1022691c",
-      "severity": "mild",
-      "text": "*DAT_1022691c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_1022691c",
-      "severity": "mild",
-      "text": "if (*DAT_1022691c == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -787,14 +763,6 @@
       "match": "DAT_10226e8c",
       "severity": "mild",
       "text": "DAT_10226e8c = 0x21;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_1022691c",
-      "severity": "mild",
-      "text": "if (*DAT_1022691c < 2) {",
       "type": "undefined_data"
     },
     {

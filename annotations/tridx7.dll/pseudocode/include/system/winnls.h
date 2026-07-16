@@ -8,7 +8,7 @@
 // =============================================================================
 
 // Typedef: LCTYPE
-// Unsigned Long Integer (compiler-specific size)
+// Unsigned Integer (compiler-specific size)
 typedef DWORD LCTYPE;
 
 // Typedef: LPCPINFO

@@ -34,7 +34,7 @@ int FUN_10002f60(int param_1)
   }
   local_7c[0] = 0x7c;
   local_7c[1] = 0x101007;
-  if (*DAT_1022691c == 0) {
+  if (*g_ExternalRendererBridge.agp_texture_mode == 0) {
     param_1 = param_1 / 2;
   }
   local_14 = 0x5000;
