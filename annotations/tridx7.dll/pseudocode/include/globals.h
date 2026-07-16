@@ -7,6 +7,8 @@
 #include "globals/globals_10000000.h"
 #include "globals/globals_10010000.h"
 #include "globals/globals_10060000.h"
+#include "globals/globals_100A0000.h"
+#include "globals/globals_100F0000.h"
 #include "globals/globals_10130000.h"
 #include "globals/globals_101B0000.h"
 #include "globals/globals_10200000.h"

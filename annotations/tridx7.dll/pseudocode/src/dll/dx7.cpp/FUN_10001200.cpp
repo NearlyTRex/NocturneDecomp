@@ -22,7 +22,7 @@ void dll_dx7_cpp_FUN_10001200(void)
   uint local_3c;
   uint local_38;
   uint local_34;
-  byte *local_30 [8];
+  CDLLTextureCache *local_30 [8];
   int local_10 [4];
   
   local_3c = 0x200;
@@ -49,20 +49,20 @@ void dll_dx7_cpp_FUN_10001200(void)
     dll_dx7_cpp_FUN_10001440("Textures","maxTextures256",&local_34);
     dll_dx7_cpp_FUN_10001440("Textures","mipMapFlag",&DAT_10060670);
   }
-  local_30[4] = PTR_DAT_10014044;
-  local_30[5] = PTR_DAT_10014048;
-  local_30[6] = PTR_DAT_1001404c;
-  local_30[7] = PTR_DAT_10014050;
+  local_30[4] = g_TextureCache32;
+  local_30[5] = g_TextureCache64;
+  local_30[6] = g_TextureCache128;
+  local_30[7] = g_TextureCache256;
   local_10[0] = local_40;
   local_10[1] = local_3c;
   local_10[2] = local_38;
   local_10[3] = local_34;
-  local_30[0] = (byte *)0x20;
+  local_30[0] = (CDLLTextureCache *)0x20;
   iVar9 = 0;
   iVar7 = 0;
-  local_30[1] = (byte *)0x40;
-  local_30[2] = (byte *)0x80;
-  local_30[3] = (byte *)0x100;
+  local_30[1] = (CDLLTextureCache *)0x40;
+  local_30[2] = (CDLLTextureCache *)0x80;
+  local_30[3] = (CDLLTextureCache *)0x100;
   do {
     iVar9 = iVar9 + 1;
     if (iVar9 < 4) {

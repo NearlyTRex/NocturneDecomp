@@ -857,6 +857,14 @@
       "type":"struct"
     },
     {
+      "name":"STextureCacheEntry",
+      "type":"struct"
+    },
+    {
+      "name":"CDLLTextureCache",
+      "type":"struct"
+    },
+    {
       "name":"SectionFlags",
       "type":"enum"
     },
@@ -6259,6 +6267,48 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"max_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"entry_count",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"usage_counter",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":294912,
+          "name":"entries",
+          "offset":16,
+          "type":"STextureCacheEntry[4096]"
+        }
+      ],
+      "importable":true,
+      "len":294928,
+      "name":"CDLLTextureCache",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
@@ -10464,6 +10514,36 @@
       "importable":true,
       "len":48,
       "name":"SRenderVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"slot",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":64,
+          "name":"name",
+          "offset":4,
+          "type":"char[64]"
+        },
+        {
+          "len":4,
+          "name":"lru_stamp",
+          "offset":68,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "name":"STextureCacheEntry",
       "pack":false,
       "type":"struct"
     },

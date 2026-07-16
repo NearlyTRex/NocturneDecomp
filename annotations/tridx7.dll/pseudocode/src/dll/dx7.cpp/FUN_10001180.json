@@ -26,13 +26,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 170,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 50,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "register_param",
       "unnamed_param"
@@ -57,13 +57,13 @@
     ],
     "convention": "unknown",
     "name": "dll_dx7.cpp_FUN_10001180",
-    "signature": "void dll_dx7_cpp_FUN_10001180(int param_1)"
+    "signature": "void dll_dx7_cpp_FUN_10001180(SMRGLTextureBasic *param_1)"
   },
   "function_calls": [
     {
       "addr": "10001090",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10001090"
+      "name": "dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090"
     },
     {
       "addr": "100030e0",
@@ -182,12 +182,30 @@
   },
   "static_analysis": {
     "analyzed_file": "FUN_10001180.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-signed-char-misuse",
+          "column": 11,
+          "line": 31,
+          "message": "comparison between 'signed char' and 'unsigned char'"
+        },
+        {
+          "check_name": "bugprone-signed-char-misuse",
+          "column": 15,
+          "line": 35,
+          "message": "comparison between 'signed char' and 'unsigned char'"
+        }
+      ],
+      "error": null
+    },
     "cppcheck_quick": {
       "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 20,
+          "column": 11,
           "line": 22,
           "message": "Uninitialized variable: in_ECX",
           "severity": "error"
@@ -203,7 +221,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void dll_dx7_cpp_FUN_10001180(int param_1)",
+      "text": "void dll_dx7_cpp_FUN_10001180(SMRGLTextureBasic *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -211,7 +229,7 @@
       "line": 7,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "int in_ECX;",
+      "text": "CDLLTextureCache *in_ECX;",
       "type": "register_param"
     },
     {
@@ -219,7 +237,7 @@
       "line": 15,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "bVar7 = *(int *)(in_ECX + 8) == 0;",
+      "text": "bVar7 = in_ECX->entry_count == 0;",
       "type": "register_param"
     },
     {
@@ -227,7 +245,7 @@
       "line": 16,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "if (0 < *(int *)(in_ECX + 8)) {",
+      "text": "if (0 < in_ECX->entry_count) {",
       "type": "register_param"
     },
     {
@@ -235,7 +253,7 @@
       "line": 17,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "pbVar4 = (byte *)(in_ECX + 0x14);",
+      "text": "pcVar4 = in_ECX->entries[0].name;",
       "type": "register_param"
     },
     {
@@ -243,7 +261,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "pbVar6 = (byte *)(param_1 + 8);",
+      "text": "pcVar6 = param_1->texture_name;",
       "type": "unnamed_param"
     },
     {
@@ -251,7 +269,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "pbVar6 = (byte *)(param_1 + 8);",
+      "text": "pcVar6 = param_1->texture_name;",
       "type": "unnamed_param"
     },
     {
@@ -259,7 +277,7 @@
       "line": 44,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(in_ECX + 8));",
+      "text": "} while (iVar2 < in_ECX->entry_count);",
       "type": "register_param"
     },
     {
@@ -267,7 +285,7 @@
       "line": 45,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "bVar7 = *(int *)(in_ECX + 8) == iVar2;",
+      "text": "bVar7 = in_ECX->entry_count == iVar2;",
       "type": "register_param"
     },
     {
@@ -275,7 +293,15 @@
       "line": 48,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_100030e0(*(uint *)(iVar2 * 0x48 + 0x10 + in_ECX));",
+      "text": "dll_dx7_cpp_FUN_100030e0(in_ECX->entries[iVar2].slot);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 51,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(in_ECX,param_1);",
       "type": "register_param"
     },
     {
@@ -283,15 +309,31 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_10001090(param_1);",
+      "text": "dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(in_ECX,param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "comparison between 'signed char' and 'unsigned char'",
+      "line": 31,
+      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
+      "severity": "moderate",
+      "text": "if (bVar1 == *pcVar6) {",
+      "type": "static_signed_char_misuse"
+    },
+    {
+      "description": "comparison between 'signed char' and 'unsigned char'",
+      "line": 35,
+      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
+      "severity": "moderate",
+      "text": "if (bVar1 != pcVar6[1]) goto LAB_100011b9;",
+      "type": "static_signed_char_misuse"
     },
     {
       "description": "Uninitialized variable: in_ECX",
       "line": 22,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "bVar7 = *(int *)(in_ECX + 8) == 0;",
+      "text": "bVar7 = in_ECX->entry_count == 0;",
       "type": "static_uninitvar"
     }
   ]

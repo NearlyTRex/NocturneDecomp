@@ -13,4 +13,5 @@
 #include "types/structs/SMRGLVertex.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/STextureCacheEntry.h"
 

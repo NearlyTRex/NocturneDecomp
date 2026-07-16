@@ -5,12 +5,9 @@
 #include "types/classes/CDLLTextureCache.h"
 
 // =============================================================================
-// GLOBAL VARIABLES - Range 0x10060000
+// GLOBAL VARIABLES - Range 0x100A0000
 // =============================================================================
 
 // CDLLTextureCache
-extern CDLLTextureCache CDLLTextureCache_10060678;
-
-// undefined4
-extern undefined4 DAT_10060670;
+extern CDLLTextureCache CDLLTextureCache_100a8688;
 

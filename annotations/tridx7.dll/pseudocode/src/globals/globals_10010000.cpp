@@ -4,6 +4,15 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10010000
 // =============================================================================
 
+// CDLLTextureCache
+CDLLTextureCache CDLLTextureCache_10018660 = {};
+
+// CDLLTextureCache*
+CDLLTextureCache* g_TextureCache32 = (CDLLTextureCache*)&CDLLTextureCache_10060678;
+CDLLTextureCache* g_TextureCache64 = (CDLLTextureCache*)&CDLLTextureCache_100a8688;
+CDLLTextureCache* g_TextureCache128 = (CDLLTextureCache*)&CDLLTextureCache_100f0698;
+CDLLTextureCache* g_TextureCache256 = (CDLLTextureCache*)&CDLLTextureCache_10018660;
+
 // GUID
 GUID g_IID_IDirectDraw4 = {0x9C59509A, 0x39BD, 0x11D1, {0x8C, 0x4A, 0x00, 0xC0, 0x4F, 0xD9, 0x30, 0xC5}};
 

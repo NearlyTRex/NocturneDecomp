@@ -7,6 +7,10 @@
 // Address: 10005580
 void __cdecl ::fpmath(int flag);
 
+// Original: crt_fpu.c_FUN_100055a0
+// Address: 100055a0
+void FUN_100055a0(void);
+
 // Original: crt_fpu.c__install_fp_handlers_FUN_100055b0
 // Address: 100055b0
 void __cdecl ::install_fp_handlers(void);

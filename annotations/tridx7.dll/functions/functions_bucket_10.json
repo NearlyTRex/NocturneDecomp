@@ -8,12 +8,53 @@
         "start":"10001090"
       }
     ],
+    "conv":"__ecxcall",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10001090",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDLLTextureCache*"
+        },
+        {
+          "name":"texture_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

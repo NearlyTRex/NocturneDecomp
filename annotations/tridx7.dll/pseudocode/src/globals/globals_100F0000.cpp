@@ -1,12 +1,9 @@
 #include "nocturne.h"
 
 // =============================================================================
-// GLOBAL VARIABLE DEFINITIONS - Range 0x10060000
+// GLOBAL VARIABLE DEFINITIONS - Range 0x100F0000
 // =============================================================================
 
 // CDLLTextureCache
-CDLLTextureCache CDLLTextureCache_10060678 = {};
-
-// undefined4
-undefined4 DAT_10060670 = 0x00000000;
+CDLLTextureCache CDLLTextureCache_100f0698 = {};
 

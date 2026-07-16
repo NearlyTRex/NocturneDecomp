@@ -18,6 +18,7 @@
 #include "system/vadefs.h"
 #include "system/winnls.h"
 #include "system/winnt.h"
+#include "types/classes/CDLLTextureCache.h"
 #include "types/classes/CExternalRendererBridge.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -28,8 +29,8 @@
 // =============================================================================
 
 void dll_dx7_cpp_FUN_10001020(int param_1,int param_2);
-int dll_dx7_cpp_FUN_10001090(int param_1);
-void dll_dx7_cpp_FUN_10001180(int param_1);
+int __ecxcall dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
+void dll_dx7_cpp_FUN_10001180(SMRGLTextureBasic *param_1);
 void dll_dx7_cpp_FUN_10001200(void);
 void dll_dx7_cpp_FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
 int __cdecl dll_dx7_cpp_resolveTextureSlot_FUN_10001470(SMRGLTextureBasic *texture_info);
@@ -107,6 +108,7 @@ int __cdecl crt_stdio_c_fprintf_FUN_100054d0(_FILE *file,char *format,...) __att
 _FILE * __cdecl crt_stdio_c__fsopen_FUN_10005520(char *filename,char *mode,int sh_flag);
 _FILE * __cdecl crt_stdio_c_fopen_FUN_10005560(char *filename,char *mode);
 void __cdecl crt_fpu_c__fpmath_FUN_10005580(int flag);
+void crt_fpu_c_FUN_100055a0(void);
 void __cdecl crt_fpu_c__install_fp_handlers_FUN_100055b0(void);
 void __cdecl crt_startup_c__chkstk_FUN_10005600(void);
 int __cdecl crt_stdio_c__sprintf_FUN_10005630(char *dest,char *format);

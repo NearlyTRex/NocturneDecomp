@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_FUN_10001180(int param_1)
+; void dll_dx7_cpp_FUN_10001180(SMRGLTextureBasic *param_1)
 ;
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_FUN_100015d0 at 100015fb
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10001090
+;   dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
 ;   dll_dx7.cpp_FUN_100030e0
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_100011ce
     MOV ESI,dword ptr [ESP + 0x14]      ; 100011d0
     PUSH ESI                            ; 100011d4
-    CALL dll_dx7.cpp_FUN_10001090       ; 100011d5
-        ;   XREF to: 10001090 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001090()
+    CALL dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090 ; 100011d5
+        ;   XREF to: 10001090 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     POP EBP                             ; 100011da
     POP EDI                             ; 100011db
     POP ESI                             ; 100011dc

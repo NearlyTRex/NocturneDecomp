@@ -7,10 +7,20 @@
 #include "system/pe.h"
 #include "system/winbase.h"
 #include "system/winnt.h"
+#include "types/classes/CDLLTextureCache.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10010000
 // =============================================================================
+
+// CDLLTextureCache
+extern CDLLTextureCache CDLLTextureCache_10018660;
+
+// CDLLTextureCache*
+extern CDLLTextureCache* g_TextureCache32;
+extern CDLLTextureCache* g_TextureCache64;
+extern CDLLTextureCache* g_TextureCache128;
+extern CDLLTextureCache* g_TextureCache256;
 
 // GUID
 extern GUID g_IID_IDirectDraw4;

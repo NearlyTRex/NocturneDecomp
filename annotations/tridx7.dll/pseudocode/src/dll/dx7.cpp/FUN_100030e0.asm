@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   dll_dx7.cpp_FUN_10001090 at 10001143
+;   dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090 at 10001143
 ;   dll_dx7.cpp_FUN_10001180 at 100011ec
 ;
 ; Referenced Globals:

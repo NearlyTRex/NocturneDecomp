@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "globals.h"
 #include "constants.h"
+#include "prototypes/prototypes_10000000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -401,6 +402,7 @@ static TerminatedCString s_D3DERR_LIGHT_SET_FAILED_10014e94 = "D3DERR_LIGHT_SET_
 static TerminatedCString s_D3DERR_LIGHTHASVIEWPORT_10014ef0 = "D3DERR_LIGHTHASVIEWPORT: The requested operation failed because the light object is associated with another viewport.";
 static TerminatedCString s_D3DERR_LIGHTNOTINTHISVIE_10014f68 = "D3DERR_LIGHTNOTINTHISVIEWPORT: The requested operation failed because the light object has not been associated with this viewport.";
 static TerminatedCString s_D3DERR_MATERIAL_CREATE_F_10014fec = "D3DERR_MATERIAL_CREATE_FAILED: The material could not be created. This typically occurs when no memory is available to allocate for the material.";
+static TerminatedCString s_D3DERR_MATERIAL_DESTROY_10015080 = "D3DERR_MATERIAL_DESTROY_FAILED: The memory for the material could not be deallocated.";
 static TerminatedCString s_D3DERR_MATERIAL_GETDATA_100150d8 = "D3DERR_MATERIAL_GETDATA_FAILED: The material parameters could not be retrieved.";
 static TerminatedCString s_D3DERR_MATERIAL_SETDATA_10015128 = "D3DERR_MATERIAL_SETDATA_FAILED: The material parameters could not be set.";
 static TerminatedCString s_D3DERR_MATRIX_CREATE_FAI_10015174 = "D3DERR_MATRIX_CREATE_FAILED: The matrix could not be created. This can occur when no memory is available to allocate for the matrix.";
@@ -488,7 +490,6 @@ static string s_SetThreadAffinityMask_100123ac = "SetThreadAffinityMask";
 static string s_GetCurrentProcess_100123c4 = "GetCurrentProcess";
 static string s_GetProcessAffinityMask_100123d8 = "GetProcessAffinityMask";
 static string s_KERNEL32_100123f0 = "KERNEL32";
-static string s_D3DERR_MATERIAL_DESTROY_FAILED_T_10015080 = "D3DERR_MATERIAL_DESTROY_FAILED: The memory for the material could not be deallocated.";
 
 // undefined1 constants
 static undefined1 DAT_10012318 = 0x28;
@@ -503,8 +504,8 @@ static undefined1* DAT_10014004 = (undefined1*)0x10001000; // LAB_10001000
 static undefined1* DAT_10014008 = (undefined1*)0x10001730; // LAB_10001730
 static undefined1* DAT_1001400C = (undefined1*)0x10001760; // LAB_10001760
 static undefined1* DAT_10014010 = (undefined1*)0x10001780; // LAB_10001780
-static undefined1* DAT_10016C54 = (undefined1*)0x100055A0; // LAB_100055a0
-static undefined1* DAT_10016C58 = (undefined1*)0x100055A0; // LAB_100055a0
+static undefined1* DAT_10016C54 = (undefined1*)crt_fpu_c_FUN_100055a0;
+static undefined1* DAT_10016C58 = (undefined1*)crt_fpu_c_FUN_100055a0;
 static undefined1* DAT_100177A4 = (undefined1*)0x1000E280; // LAB_1000e280
 static undefined1* DAT_100177B0 = (undefined1*)0x1000DFD0; // LAB_1000dfd0
 static undefined1* DAT_100177B4 = (undefined1*)s_LC_MONETARY_10012728;

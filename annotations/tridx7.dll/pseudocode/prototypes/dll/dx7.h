@@ -7,13 +7,13 @@
 // Address: 10001020
 void FUN_10001020(int param_1,int param_2);
 
-// Original: dll_dx7.cpp_FUN_10001090
+// Original: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
 // Address: 10001090
-int FUN_10001090(int param_1);
+int __ecxcall CDLLTextureCache::acquireSlot(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 
 // Original: dll_dx7.cpp_FUN_10001180
 // Address: 10001180
-void FUN_10001180(int param_1);
+void FUN_10001180(SMRGLTextureBasic *param_1);
 
 // Original: dll_dx7.cpp_FUN_10001200
 // Address: 10001200
