@@ -7,6 +7,6 @@
 // CDLLTextureCache
 CDLLTextureCache CDLLTextureCache_10060678 = {};
 
-// undefined4
-undefined4 DAT_10060670 = 0x00000000;
+// int
+int g_MipMapFlag = 0;
 

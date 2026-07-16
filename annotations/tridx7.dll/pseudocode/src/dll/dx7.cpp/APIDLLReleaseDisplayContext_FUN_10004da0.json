@@ -18,48 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 18,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 19,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 19,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 19,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 27,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 27,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 27,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
     "success": false,
@@ -68,21 +26,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 218,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 17,
+    "pseudocode_lines": 24,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 55
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -95,15 +54,15 @@
     ],
     "convention": "unknown",
     "name": "dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0",
-    "signature": "void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(undefined4 param_1)"
+    "signature": "void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "10014180",
-      "name": "DAT_10014180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "100141f4",
@@ -119,13 +78,13 @@
     },
     {
       "addr": "10226e88",
-      "name": "DAT_10226e88",
-      "type": "undefined4",
+      "name": "g_PrimarySurfaceDesc",
+      "type": "DDSURFACEDESC2",
       "value": null
     },
     {
       "addr": "10226e8c",
-      "name": "DAT_10226e8c",
+      "name": "g_PrimarySurfaceDesc.dwFlags",
       "type": "undefined4",
       "value": null
     }
@@ -178,48 +137,16 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(uint param_1)",
+      "text": "void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "if (DAT_10014180 != (int *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014180 + 0x68))(DAT_10014180,param_1);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x68))(DAT_10014180,param_1);",
+      "text": "(*g_BackBufferSurface->vtable->ReleaseDC)(g_BackBufferSurface,param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x68))(DAT_10014180,param_1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x68))(DAT_10014180,param_1);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -230,56 +157,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_10226e88",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_10226e88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_10226e88",
-      "severity": "mild",
-      "text": "DAT_10226e88 = 0x7c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(DDSURFACEDESC2 *)((int)pDVar2",
       "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014180 + 100))(DAT_10014180,0,&DAT_10226e88,1,0);",
-      "type": "unresolved_funcptr"
+      "text": "pDVar2 = (DDSURFACEDESC2 *)((int)pDVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 100))(DAT_10014180,0,&DAT_10226e88,1,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 100))(DAT_10014180,0,&DAT_10226e88,1,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10226e88",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 100))(DAT_10014180,0,&DAT_10226e88,1,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_100141f4",
       "severity": "mild",
       "text": "DAT_100141f4 = 1;",
@@ -287,11 +174,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_10014230",
       "severity": "mild",
       "text": "DAT_10014230 = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pDVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)pDVar2",
+      "severity": "moderate",
+      "text": "pDVar2 = (DDSURFACEDESC2 *)((int)pDVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -306,7 +201,7 @@
       "line": 19,
       "match": "STOSD.REP",
       "severity": "moderate",
-      "text": "// 10004dd0: STOSD.REP ES:EDI  ; DAT_10226e88 | DAT_10226e8c",
+      "text": "// 10004dd0: STOSD.REP ES:EDI  ; g_PrimarySurfaceDesc | g_PrimarySurfaceDesc.dwFlags",
       "type": "unrolled_memset"
     }
   ]

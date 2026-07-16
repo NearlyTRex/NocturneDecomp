@@ -6,89 +6,88 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
 
 {
   char cVar1;
   _FILE *file;
   HRESULT HVar2;
-  uint uVar3;
-  DWORD DVar4;
-  int iVar5;
-  uint uVar6;
-  uint uVar7;
-  uint **unaff_EBX;
-  int unaff_EBP;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
   IDirectDrawSurface **surface;
-  DWORD *pDVar8;
-  char *pcVar9;
-  DDSURFACEDESC *pDVar10;
-  DDPIXELFORMAT *pDVar11;
-  char *pcVar12;
-  uint *puVar13;
-  byte bVar14;
-  uint auStack_210 [8];
-  DDSURFACEDESC DStack_1f0;
-  uint auStack_17c [19];
-  char acStack_130 [304];
+  DWORD *pDVar6;
+  char *pcVar7;
+  void **ppvVar8;
+  DDSURFACEDESC2 *pDVar9;
+  DDPIXELFORMAT *pDVar10;
+  char *pcVar11;
+  uint *puVar12;
+  byte bVar13;
+  DWORD aDStack_210 [3];
+  int iStack_204;
+  DDSCAPS aDStack_1f0 [4];
+  DDSURFACEDESC2 DStack_1e0;
+  uint auStack_164 [25];
+  char acStack_100 [256];
   
                     /* 0x2500  31  APIDLLsetVideoMode */
-  bVar14 = 0;
+  bVar13 = 0;
   if (g_NonLocalVideoMem == 0) {
     *g_ExternalRendererBridge.agp_texture_mode = 0;
   }
   if (*g_ExternalRendererBridge.agp_texture_mode == 0) {
-    _DAT_10226848 = 0x80;
-    _DAT_1022684c = 0x40;
-    _DAT_10226850 = 0x20;
-    _DAT_10226854 = 0x10;
-    _DAT_10226858 = 8;
-    _DAT_1022685c = 4;
-    _DAT_10226860 = 2;
-    _DAT_10226864 = 1;
+    g_TextureSizeTable[0] = 0x80;
+    g_TextureSizeTable[1] = 0x40;
+    g_TextureSizeTable[2] = 0x20;
+    g_TextureSizeTable[3] = 0x10;
+    g_TextureSizeTable[4] = 8;
+    g_TextureSizeTable[5] = 4;
+    g_TextureSizeTable[6] = 2;
+    g_TextureSizeTable[7] = 1;
   }
   else {
-    _DAT_10226848 = 0x100;
-    _DAT_1022684c = 0x80;
-    _DAT_10226850 = 0x40;
-    _DAT_10226854 = 0x20;
-    _DAT_10226858 = 0x10;
-    _DAT_1022685c = 8;
-    _DAT_10226860 = 4;
-    _DAT_10226864 = 2;
+    g_TextureSizeTable[0] = 0x100;
+    g_TextureSizeTable[1] = 0x80;
+    g_TextureSizeTable[2] = 0x40;
+    g_TextureSizeTable[3] = 0x20;
+    g_TextureSizeTable[4] = 0x10;
+    g_TextureSizeTable[5] = 8;
+    g_TextureSizeTable[6] = 4;
+    g_TextureSizeTable[7] = 2;
   }
-  DAT_10226a48 = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","masterZBufferCount",&DAT_10226a48);
-  DAT_101398c8 = 0;
-  if (0x1e0 < (int)DAT_10014178) {
-    dll_dx7_cpp_FUN_10002b20("Graphics","useHoldBuffer",&DAT_101398c8);
+  g_MasterZBufferCount = 0;
+  dll_dx7_cpp_FUN_10002b20("Graphics","masterZBufferCount",&g_MasterZBufferCount);
+  g_UseHoldBuffer = 0;
+  if (0x1e0 < g_ScreenHeight) {
+    dll_dx7_cpp_FUN_10002b20("Graphics","useHoldBuffer",&g_UseHoldBuffer);
   }
-  DAT_10014164 = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","premultiplyColorAndAlpha",&DAT_10014164);
-  DAT_100141f0 = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","directTextureFlag",&DAT_100141f0);
-  DAT_10014168 = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","allowAutoMipMapping",&DAT_10014168);
+  g_PremultiplyColorAndAlpha = 0;
+  dll_dx7_cpp_FUN_10002b20
+            ("Graphics","premultiplyColorAndAlpha",&g_PremultiplyColorAndAlpha);
+  g_DirectTextureFlag = 0;
+  dll_dx7_cpp_FUN_10002b20("Graphics","directTextureFlag",&g_DirectTextureFlag);
+  g_AllowAutoMipMapping = 0;
+  dll_dx7_cpp_FUN_10002b20
+            ("Graphics","allowAutoMipMapping",&g_AllowAutoMipMapping);
   file = _fopen("system\\fly.ini","rb");
   if (file == (_FILE *)0x0) {
-    DAT_1001416c = 0;
+    g_FlyIniPresent = 0;
   }
   else {
-    DAT_1001416c = 1;
+    g_FlyIniPresent = 1;
     _fclose(file);
   }
-  DAT_10138fb4 = scanline_ptrs;
-  if (0 < (int)DAT_10014178) {
-    puVar13 = &DAT_10225848;
-    for (DVar4 = DAT_10014178; DVar4 != 0; DVar4 = DVar4 - 1) {
-      *puVar13 = *scanline_ptrs;
-      scanline_ptrs = scanline_ptrs + (uint)bVar14 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+  g_ScanlinePtrBase = scanline_ptrs;
+  if (0 < g_ScreenHeight) {
+    ppvVar8 = g_ScanlinePointers;
+    for (iVar3 = g_ScreenHeight; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *ppvVar8 = *scanline_ptrs;
+      scanline_ptrs = scanline_ptrs + (uint)bVar13 * -2 + 1;
+      ppvVar8 = ppvVar8 + (uint)bVar13 * -2 + 1;
     }
   }
-  DVar4 = DAT_1001417c;
+  iVar3 = g_ScreenBitDepth;
   dll_dx7_cpp_FUN_10002370();
   HVar2 = (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,0x11);
   dll_dx7_cpp_FUN_10001d70(HVar2);
@@ -96,55 +95,55 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     return 0;
   }
   HVar2 = (*g_DirectDraw4->vtable->SetDisplayMode)
-                    (g_DirectDraw4,DAT_10014174,DAT_10014178,DVar4,0,0);
+                    (g_DirectDraw4,g_ScreenWidth,g_ScreenHeight,iVar3,0,0);
   if (HVar2 != 0) {
     return 0;
   }
-  puVar13 = &DAT_10226e88;
-  for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar13 = 0;
-    puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+  pDVar9 = &g_PrimarySurfaceDesc;
+  for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pDVar9->dwSize = 0;
+    pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  DAT_10226e88 = 0x7c;
-  DAT_10226e8c = 0x21;
-  _DAT_10226e9c = 2;
+  g_PrimarySurfaceDesc.dwSize = 0x7c;
+  g_PrimarySurfaceDesc.dwFlags = 0x21;
+  g_PrimarySurfaceDesc.dwBackBufferCount = 2;
   if (*g_ExternalRendererBridge.agp_texture_mode < 2) {
-    _DAT_10226e9c = 1;
+    g_PrimarySurfaceDesc.dwBackBufferCount = 1;
   }
-  _DAT_10226ef0 = 0x6218;
+  g_PrimarySurfaceDesc.ddsCaps.dwCaps = 0x6218;
   HVar2 = (*g_DirectDraw4->vtable->CreateSurface)
-                    (g_DirectDraw4,(DDSURFACEDESC *)&DAT_10226e88,&g_PrimarySurface,(IUnknown *)0x0)
-  ;
+                    (g_DirectDraw4,&g_PrimarySurfaceDesc,&g_PrimarySurface,(IUnknown *)0x0);
   if (HVar2 != 0) {
-    _DAT_10226e9c = 1;
+    g_PrimarySurfaceDesc.dwBackBufferCount = 1;
     HVar2 = (*g_DirectDraw4->vtable->CreateSurface)
-                      (g_DirectDraw4,(DDSURFACEDESC *)&DAT_10226e88,&g_PrimarySurface,
-                       (IUnknown *)0x0);
+                      (g_DirectDraw4,&g_PrimarySurfaceDesc,&g_PrimarySurface,(IUnknown *)0x0);
     if (HVar2 != 0) {
       (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
       return 0;
     }
   }
-  DStack_1f0.dwSize = 0x2004;
+  aDStack_1f0[0].dwCaps = 0x2004;
   HVar2 = (*g_PrimarySurface->vtable->GetAttachedSurface)
-                    (g_PrimarySurface,(DDSCAPS *)&DStack_1f0,(IDirectDrawSurface **)&DAT_10014180);
+                    (g_PrimarySurface,aDStack_1f0,&g_BackBufferSurface);
   if (HVar2 != 0) {
     (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     return 0;
   }
-  iVar5 = dll_dx7_cpp_FUN_10002f40();
-  if (iVar5 == 0) {
+  iVar3 = dll_dx7_cpp_FUN_10002f40();
+  if (iVar3 == 0) {
     (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     return 0;
   }
-  puVar13 = auStack_210;
-  for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar13 = 0;
-    puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+  pDVar6 = aDStack_210;
+  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *pDVar6 = 0;
+    pDVar6 = pDVar6 + (uint)bVar13 * -2 + 1;
   }
-  uVar3 = (**(code **)(*DAT_100141dc + 0x28))(DAT_100141dc,&DAT_10012178,&LAB_10002b50,auStack_210);
-  dll_dx7_cpp_FUN_10001d70(uVar3);
-  if (unaff_EBP != 0x20) {
+  HVar2 = (*g_Direct3D3->vtable->EnumZBufferFormats)
+                    (g_Direct3D3,(GUID *)&g_Direct3DDeviceGUID,dll_dx7_cpp_FUN_10002b50,aDStack_210)
+  ;
+  dll_dx7_cpp_FUN_10001d70(HVar2);
+  if (aDStack_210[0] != 0x20) {
     HVar2 = (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     if (HVar2 != 0) {
       return 0;
@@ -152,150 +151,152 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     dll_dx7_cpp_FUN_10002340("Your 3D hardware needs to support a Z buffer");
     return 0;
   }
-  pDVar10 = &DStack_1f0;
-  for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pDVar10->dwSize = 0;
-    pDVar10 = (DDSURFACEDESC *)((int)pDVar10 + ((uint)bVar14 * -2 + 1) * 4);
+  pDVar9 = &DStack_1e0;
+  for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pDVar9->dwSize = 0;
+    pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  DStack_1f0.dwWidth = DAT_10014174;
-  DStack_1f0.dwHeight = DAT_10014178;
-  DStack_1f0.dwSize = 0x7c;
-  DStack_1f0.dwFlags = 0x1007;
-  DStack_1f0.ddsCaps.dwCaps = 0x20000;
-  pDVar8 = (DWORD *)&stack0xfffffde0;
-  pDVar11 = &DStack_1f0.ddpfPixelFormat;
-  for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pDVar11->dwSize = *pDVar8;
-    pDVar8 = pDVar8 + (uint)bVar14 * -2 + 1;
-    pDVar11 = (DDPIXELFORMAT *)((int)pDVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  DStack_1e0.dwWidth = g_ScreenWidth;
+  DStack_1e0.dwHeight = g_ScreenHeight;
+  DStack_1e0.dwSize = 0x7c;
+  DStack_1e0.dwFlags = 0x1007;
+  DStack_1e0.ddsCaps.dwCaps = 0x20000;
+  pDVar6 = aDStack_210;
+  pDVar10 = &DStack_1e0.ddpfPixelFormat;
+  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pDVar10->dwSize = *pDVar6;
+    pDVar6 = pDVar6 + (uint)bVar13 * -2 + 1;
+    pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);
   }
   HVar2 = (*g_DirectDraw4->vtable->CreateSurface)
-                    (g_DirectDraw4,&DStack_1f0,(IDirectDrawSurface **)&DAT_10014190,(IUnknown *)0x0)
-  ;
+                    (g_DirectDraw4,&DStack_1e0,&g_ZBufferSurface,(IUnknown *)0x0);
   if (HVar2 == 0) {
-    iVar5 = 0;
-    DAT_10014170 = unaff_EBX;
-    if (0 < DAT_10226a48) {
-      surface = (IDirectDrawSurface **)&DAT_10014198;
+    iVar3 = 0;
+    g_ZBufferBitDepth = iStack_204;
+    if (0 < g_MasterZBufferCount) {
+      surface = g_MasterZBufferSurfaces;
       do {
         HVar2 = (*g_DirectDraw4->vtable->CreateSurface)
-                          (g_DirectDraw4,&DStack_1f0,surface,(IUnknown *)0x0);
+                          (g_DirectDraw4,&DStack_1e0,surface,(IUnknown *)0x0);
         if (HVar2 != 0) {
           (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
-          uVar6 = 0xffffffff;
-          pcVar9 = "FATAL ERROR!  Unable to create a 2nd master Z buffer.   Your Direct3D driver does not support this.  Please restart the game and turn off hardware acceleration.";
+          uVar4 = 0xffffffff;
+          pcVar7 = "FATAL ERROR!  Unable to create a 2nd master Z buffer.   Your Direct3D driver does not support this.  Please restart the game and turn off hardware acceleration.";
           goto code_r0x10002993;
         }
         surface = surface + 1;
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < DAT_10226a48);
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < g_MasterZBufferCount);
     }
-    iVar5 = (**(code **)(*DAT_10014180 + 0xc))(DAT_10014180,DAT_10014190);
-    if (iVar5 == 0) {
-      puVar13 = auStack_17c;
-      for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar13 = 0;
-        puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+    HVar2 = (*g_BackBufferSurface->vtable->AddAttachedSurface)(g_BackBufferSurface,g_ZBufferSurface)
+    ;
+    if (HVar2 == 0) {
+      puVar12 = auStack_164;
+      for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *puVar12 = 0;
+        puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
       }
-      auStack_17c[0] = 100;
+      auStack_164[0] = 100;
       (*g_PrimarySurface->vtable->Blt)
                 (g_PrimarySurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
-                 auStack_17c);
-      (**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,auStack_17c);
-      iVar5 = dll_dx7_cpp_FUN_10003100();
-      if (iVar5 == 0) {
-        _sprintf(acStack_130,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
-        dll_dx7_cpp_FUN_10002340(acStack_130);
+                 auStack_164);
+      (*g_BackBufferSurface->vtable->Blt)
+                (g_BackBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
+                 auStack_164);
+      iVar3 = dll_dx7_cpp_FUN_10003100();
+      if (iVar3 == 0) {
+        _sprintf(acStack_100,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
+        dll_dx7_cpp_FUN_10002340(acStack_100);
       }
       SetCursorPos(0x27f,0x1df);
       do {
-        iVar5 = ShowCursor(0);
-      } while (0 < iVar5);
-      iVar5 = 3;
+        iVar3 = ShowCursor(0);
+      } while (0 < iVar3);
+      iVar3 = 3;
       do {
         dll_dx7_cpp_APIDLLclear_FUN_10004840();
         dll_dx7_cpp_APIDLLtoggle_FUN_100024b0();
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
+        iVar3 = iVar3 + -1;
+      } while (iVar3 != 0);
       return 1;
     }
     (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
-    uVar6 = 0xffffffff;
-    pcVar9 = "FATAL ERROR!  Unable to attach Z buffer to back buffer.   Please restart the game and turn off hardware acceleration.";
+    uVar4 = 0xffffffff;
+    pcVar7 = "FATAL ERROR!  Unable to attach Z buffer to back buffer.   Please restart the game and turn off hardware acceleration.";
     do {
-      pcVar12 = pcVar9;
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      pcVar12 = pcVar9 + (uint)bVar14 * -2 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar12;
+      pcVar11 = pcVar7;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      pcVar11 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar11;
     } while (cVar1 != '\0');
-    uVar6 = ~uVar6;
-    pcVar9 = pcVar12 + -uVar6;
-    pcVar12 = (char *)&DAT_101386f0;
-    for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(uint *)pcVar12 = *(uint *)pcVar9;
-      pcVar9 = pcVar9 + ((uint)bVar14 * -2 + 1) * 4;
-      pcVar12 = pcVar12 + ((uint)bVar14 * -2 + 1) * 4;
+    uVar4 = ~uVar4;
+    pcVar7 = pcVar11 + -uVar4;
+    pcVar11 = (char *)&DAT_101386f0;
+    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(uint *)pcVar11 = *(uint *)pcVar7;
+      pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
+      pcVar11 = pcVar11 + ((uint)bVar13 * -2 + 1) * 4;
     }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar12 = *pcVar9;
-      pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-      pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
+    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *pcVar11 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     }
     MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */
     ExitProcess(0x29a);
   }
   (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
-  uVar6 = 0xffffffff;
-  pcVar9 = "FATAL ERROR!  Unable to create a Z buffer.   Your 3D adapter does not support a 16-bit Z buffer.  Please restart the game and turn off hardware acceleration.";
+  uVar4 = 0xffffffff;
+  pcVar7 = "FATAL ERROR!  Unable to create a Z buffer.   Your 3D adapter does not support a 16-bit Z buffer.  Please restart the game and turn off hardware acceleration.";
   do {
-    pcVar12 = pcVar9;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
-    pcVar12 = pcVar9 + (uint)bVar14 * -2 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar12;
+    pcVar11 = pcVar7;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar11 = pcVar7 + (uint)bVar13 * -2 + 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar11;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
-  pcVar9 = pcVar12 + -uVar6;
-  pcVar12 = (char *)&DAT_101386f0;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(uint *)pcVar12 = *(uint *)pcVar9;
-    pcVar9 = pcVar9 + ((uint)bVar14 * -2 + 1) * 4;
-    pcVar12 = pcVar12 + ((uint)bVar14 * -2 + 1) * 4;
+  uVar4 = ~uVar4;
+  pcVar7 = pcVar11 + -uVar4;
+  pcVar11 = (char *)&DAT_101386f0;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(uint *)pcVar11 = *(uint *)pcVar7;
+    pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
+    pcVar11 = pcVar11 + ((uint)bVar13 * -2 + 1) * 4;
   }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar12 = *pcVar9;
-    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-    pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pcVar11 = *pcVar7;
+    pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
+    pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
   }
   MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */
   ExitProcess(0x29a);
   while( true ) {
-    uVar6 = uVar6 - 1;
-    pcVar12 = pcVar9 + (uint)bVar14 * -2 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar12;
+    uVar4 = uVar4 - 1;
+    pcVar11 = pcVar7 + (uint)bVar13 * -2 + 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar11;
     if (cVar1 == '\0') break;
 code_r0x10002993:
-    pcVar12 = pcVar9;
-    if (uVar6 == 0) break;
+    pcVar11 = pcVar7;
+    if (uVar4 == 0) break;
   }
-  uVar6 = ~uVar6;
-  pcVar9 = pcVar12 + -uVar6;
-  pcVar12 = (char *)&DAT_101386f0;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(uint *)pcVar12 = *(uint *)pcVar9;
-    pcVar9 = pcVar9 + ((uint)bVar14 * -2 + 1) * 4;
-    pcVar12 = pcVar12 + ((uint)bVar14 * -2 + 1) * 4;
+  uVar4 = ~uVar4;
+  pcVar7 = pcVar11 + -uVar4;
+  pcVar11 = (char *)&DAT_101386f0;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(uint *)pcVar11 = *(uint *)pcVar7;
+    pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
+    pcVar11 = pcVar11 + ((uint)bVar13 * -2 + 1) * 4;
   }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar12 = *pcVar9;
-    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-    pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pcVar11 = *pcVar7;
+    pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
+    pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
   }
   MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */

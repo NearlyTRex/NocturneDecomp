@@ -26,16 +26,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 45,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [],
@@ -61,21 +59,21 @@
   "globals": [
     {
       "addr": "10014174",
-      "name": "DAT_10014174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenWidth",
+      "type": "int",
+      "value": "0x280"
     },
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "1001417c",
-      "name": "DAT_1001417c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenBitDepth",
+      "type": "int",
+      "value": "0x10"
     }
   ],
   "param_estimates": {
@@ -144,30 +142,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "DAT_10014174 = width;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "DAT_10014178 = height;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_1001417c",
-      "severity": "mild",
-      "text": "DAT_1001417c = bits_per_pixel;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

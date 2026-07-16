@@ -22,6 +22,7 @@ int __cdecl dll_dx7_cpp_APIDLLclearZBuffer_FUN_10004a70(void)
   }
   local_64[0] = 100;
   local_14 = 0xffffffff;
-  (**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);
+  (*g_ZBufferSurface->vtable->Blt)
+            (g_ZBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x3000000,local_64);
   return 1;
 }

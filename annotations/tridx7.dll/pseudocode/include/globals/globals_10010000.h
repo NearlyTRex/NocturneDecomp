@@ -24,6 +24,11 @@ extern CDLLTextureCache* g_TextureCache256;
 
 // GUID
 extern GUID g_IID_IDirectDraw4;
+extern GUID g_Direct3DDeviceGUID;
+extern GUID g_IID_IDirect3DTexture2;
+
+// IDirect3D3*
+extern IDirect3D3* g_Direct3D3;
 
 // IDirect3DDevice3*
 extern IDirect3DDevice3* g_Device;
@@ -35,7 +40,12 @@ extern IDirectDraw* g_DirectDraw;
 extern IDirectDraw4* g_DirectDraw4;
 
 // IDirectDrawSurface*
+extern IDirectDrawSurface* g_BackBufferSurface;
 extern IDirectDrawSurface* g_PrimarySurface;
+extern IDirectDrawSurface* g_ZBufferSurface;
+
+// IDirectDrawSurface*[8]
+extern IDirectDrawSurface* g_MasterZBufferSurfaces[8];
 
 // IMAGE_DEBUG_DIRECTORY
 extern IMAGE_DEBUG_DIRECTORY DAT_1001201C;
@@ -49,9 +59,18 @@ extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc;
 
 // int
 extern int g_CurrentTextureIndex;
+extern int g_PremultiplyColorAndAlpha;
+extern int g_AllowAutoMipMapping;
+extern int g_FlyIniPresent;
+extern int g_ZBufferBitDepth;
+extern int g_ScreenWidth;
+extern int g_ScreenHeight;
+extern int g_ScreenBitDepth;
+extern int g_DirectTextureFlag;
 extern int g_FrameLocked;
 extern int g_InScene;
 extern int g_SelectedCardIndex;
+extern int g_TextureCount;
 
 // string
 extern string DAT_10012397;
@@ -102,28 +121,14 @@ extern undefined2 DAT_1001795e;
 extern undefined2 DAT_10017960;
 
 // undefined4
-extern undefined4 DAT_10014164;
-extern undefined4 DAT_10014168;
-extern undefined4 DAT_1001416c;
-extern undefined4 DAT_10014170;
-extern undefined4 DAT_10014174;
-extern undefined4 DAT_10014178;
-extern undefined4 DAT_1001417c;
-extern undefined4 DAT_10014180;
-extern undefined4 DAT_10014190;
-extern undefined4 DAT_10014198;
-extern undefined4 DAT_1001419c;
 extern undefined4 DAT_100141b8;
 extern undefined4 DAT_100141bc;
 extern undefined4 DAT_100141c0;
 extern undefined4 DAT_100141d4;
-extern undefined4 DAT_100141dc;
 extern undefined4 DAT_100141e4;
 extern undefined4 DAT_100141e8;
-extern undefined4 DAT_100141f0;
 extern undefined4 DAT_100141f4;
 extern undefined4 DAT_100141fc;
-extern undefined4 DAT_10014214;
 extern undefined4 DAT_1001421c;
 extern undefined4 DAT_10014220;
 extern undefined4 DAT_10014224;

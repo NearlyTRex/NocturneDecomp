@@ -12,9 +12,9 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode2_FUN_10002bb0(int width,int height,in
   int iVar1;
   
                     /* 0x2bb0  32  APIDLLsetVideoMode2 */
-  DAT_10014174 = width;
-  DAT_10014178 = height;
-  DAT_1001417c = bits_per_pixel;
+  g_ScreenWidth = width;
+  g_ScreenHeight = height;
+  g_ScreenBitDepth = bits_per_pixel;
   iVar1 = dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(screen_buffer_array);
   return iVar1;
 }

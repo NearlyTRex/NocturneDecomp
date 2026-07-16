@@ -22,9 +22,9 @@
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 10002afe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014174
-;   undefined4 DAT_10014178
-;   undefined4 DAT_10014180
+;   int g_ScreenWidth = 0x280
+;   int g_ScreenHeight = 0x1e0
+;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   int g_InScene = 0x0
 ;   undefined4 g_ExternalRendererBridge.console_text_color
 ;   undefined4 g_ExternalRendererBridge.system_memory_size
@@ -47,7 +47,7 @@ section .text
     XOR EAX,EAX                         ; 10004855
     MOV ECX,0x30                        ; 10004857
     STOSD.REP ES:EDI                    ; 1000485c
-    MOV EAX,[0x10014174]                ; 1000485e | DAT_10014174
+    MOV EAX,[0x10014174]                ; 1000485e | g_ScreenWidth
     MOV dword ptr [ESP + 0x14],EDX      ; 10004863
     SHL EAX,0x10                        ; 10004867
     MOV dword ptr [ESP + 0x18],EDX      ; 1000486a
@@ -55,7 +55,7 @@ section .text
     MOV dword ptr [ESP + 0x48],EDX      ; 10004872
     MOV ECX,dword ptr [0x10226908]      ; 10004876 | g_ExternalRendererBridge.system_memory_size
     MOV dword ptr [ESP + 0x74],EAX      ; 1000487c
-    MOV EAX,[0x10014178]                ; 10004880 | DAT_10014178
+    MOV EAX,[0x10014178]                ; 10004880 | g_ScreenHeight
     SHL EAX,0x10                        ; 10004885
     MOV dword ptr [ESP + 0x78],EAX      ; 10004888
     MOV dword ptr [ESP + 0xa4],EDX      ; 1000488c
@@ -86,7 +86,7 @@ section .text
     STOSD.REP ES:EDI                    ; 100048db
     MOV dword ptr [ESP + 0x4],0x64      ; 100048dd
     LEA EAX,[ESP + 0x4]                 ; 100048e5
-    MOV ECX,dword ptr [0x10014180]      ; 100048e9 | DAT_10014180
+    MOV ECX,dword ptr [0x10014180]      ; 100048e9 | g_BackBufferSurface
     PUSH EAX                            ; 100048ef
     PUSH 0x1000400                      ; 100048f0
     PUSH 0x0                            ; 100048f5

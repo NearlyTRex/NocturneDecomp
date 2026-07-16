@@ -43,12 +43,12 @@ void dll_dx7_cpp_FUN_10003f10(uint param_1)
     DAT_10014220 = iVar1;
     if (iVar1 == 0) {
       dll_dx7_cpp_FUN_100037e0(0x14,6);
-      if (DAT_10014164 != 0) {
+      if (g_PremultiplyColorAndAlpha != 0) {
         uVar2 = 5;
         goto LAB_1000400f;
       }
     }
-    else if ((iVar1 == 1) && (dll_dx7_cpp_FUN_100037e0(0x14,2), DAT_10014164 != 0)) {
+    else if ((iVar1 == 1) && (dll_dx7_cpp_FUN_100037e0(0x14,2), g_PremultiplyColorAndAlpha != 0)) {
       uVar2 = 2;
 LAB_1000400f:
       dll_dx7_cpp_FUN_100037e0(0x13,uVar2);
@@ -63,10 +63,9 @@ LAB_1000400f:
       DAT_100141d4 = (IDirect3DTexture2 *)0x0;
     }
   }
-  if (((param_1 & 1) != 0) &&
-     ((IDirect3DTexture2 *)(&DAT_1020de40)[g_CurrentTextureIndex * 2] != DAT_100141d4)) {
+  if (((param_1 & 1) != 0) && (g_TextureSurfaces[g_CurrentTextureIndex].texture != DAT_100141d4)) {
     dll_dx7_cpp_FUN_100047b0();
-    DAT_100141d4 = (IDirect3DTexture2 *)(&DAT_1020de40)[g_CurrentTextureIndex * 2];
+    DAT_100141d4 = g_TextureSurfaces[g_CurrentTextureIndex].texture;
     (*g_Device->vtable->SetTextureStageState)(g_Device,0,1,4);
     (*g_Device->vtable->SetTextureStageState)
               (g_Device,0,0x10,2 - (*g_ExternalRendererBridge.system_initialized == 0));
@@ -145,7 +144,7 @@ LAB_10004282:
     if (*g_ExternalRendererBridge.processor_type == 0) {
       _DAT_10240614 = 256.0 / (float)iVar1;
     }
-    else if ((DAT_1001416c == 0) || (DAT_10014170 != 0x10)) {
+    else if ((g_FlyIniPresent == 0) || (g_ZBufferBitDepth != 0x10)) {
       _DAT_10240614 = 1.0 / (float)iVar1;
     }
     else {

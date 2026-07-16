@@ -9,12 +9,12 @@
 ;   dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60 at 10002e76
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014178
-;   undefined4 DAT_10014180
+;   int g_ScreenHeight = 0x1e0
+;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   undefined4 DAT_100141f4
-;   undefined4 DAT_10138fb4
-;   undefined4 DAT_10225848
-;   undefined4 DAT_1022584c
+;   void** g_ScanlinePtrBase = 00000000
+;   void*[1024] g_ScanlinePointers
+;   undefined4 g_ScanlinePointers[1]
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10002cb0
@@ -33,15 +33,15 @@ section .text
     POP EDI                             ; 10002c60
     POP ESI                             ; 10002c61
     RET                                 ; 10002c62
-    MOV ECX,dword ptr [0x10014178]      ; 10002c63 | DAT_10014178
+    MOV ECX,dword ptr [0x10014178]      ; 10002c63 | g_ScreenHeight
         ;   Label: LAB_10002c63
     TEST ECX,ECX                        ; 10002c69
     JLE 0x10002c7a                      ; 10002c6b
         ;   XREF to: 10002c7a (CONDITIONAL_JUMP)  ; LAB_10002c7a
-    MOV ESI,0x10225848                  ; 10002c6d | DAT_10225848
-    MOV EDI,dword ptr [0x10138fb4]      ; 10002c72 | DAT_10138fb4
-    MOVSD.REP ES:EDI,ESI                ; 10002c78 | DAT_10225848 | DAT_1022584c
-    MOV EAX,[0x10014180]                ; 10002c7a | DAT_10014180
+    MOV ESI,0x10225848                  ; 10002c6d | g_ScanlinePointers
+    MOV EDI,dword ptr [0x10138fb4]      ; 10002c72 | g_ScanlinePtrBase
+    MOVSD.REP ES:EDI,ESI                ; 10002c78 | g_ScanlinePointers | g_ScanlinePointers[1]
+    MOV EAX,[0x10014180]                ; 10002c7a | g_BackBufferSurface
         ;   Label: LAB_10002c7a
     PUSH EAX                            ; 10002c7f
     CALL dll_dx7.cpp_FUN_10002cb0       ; 10002c80

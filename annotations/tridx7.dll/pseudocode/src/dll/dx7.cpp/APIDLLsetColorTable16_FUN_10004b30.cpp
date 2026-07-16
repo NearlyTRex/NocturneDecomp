@@ -29,11 +29,11 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
     puVar5 = puVar5 + 1;
   }
   local_7c[0] = 0x7c;
-  iVar2 = dll_dx7_cpp_FUN_10002e20(DAT_10014180,local_7c);
+  iVar2 = dll_dx7_cpp_FUN_10002e20((int *)g_BackBufferSurface,local_7c);
   if (iVar2 == 0) {
     dll_dx7_cpp_FUN_10002340("Could not lock back buffer");
   }
-  iVar2 = dll_dx7_cpp_FUN_10002cb0(DAT_10014180);
+  iVar2 = dll_dx7_cpp_FUN_10002cb0(g_BackBufferSurface);
   if (iVar2 == 0) {
     dll_dx7_cpp_FUN_10002340("Could not unlock back buffer");
   }

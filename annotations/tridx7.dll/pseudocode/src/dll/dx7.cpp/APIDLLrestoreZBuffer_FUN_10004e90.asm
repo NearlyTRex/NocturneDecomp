@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014190
-;   undefined4 DAT_10014198
+;   IDirectDrawSurface* g_ZBufferSurface = 00000000
+;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
 ;   TerminatedCString s_restoreZBuffer_failed_10016ba0
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 10004e90
         ;   Label: dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90
     SUB ESP,0x10                        ; 10004e94
-    MOV ECX,dword ptr [EAX*0x4 + 0x10014198] ; 10004e97 | DAT_10014198
+    MOV ECX,dword ptr [EAX*0x4 + 0x10014198] ; 10004e97 | g_MasterZBufferSurfaces
     TEST ECX,ECX                        ; 10004e9e
     JNZ 0x10004ea8                      ; 10004ea0
         ;   XREF to: 10004ea8 (CONDITIONAL_JUMP)  ; LAB_10004ea8
@@ -55,7 +55,7 @@ section .text
     LEA EDX,[ESP + 0x10]                ; 10004ed0
     MOV dword ptr [ESP + 0x1c],EAX      ; 10004ed4
     PUSH EDX                            ; 10004ed8
-    MOV EAX,[0x10014190]                ; 10004ed9 | DAT_10014190
+    MOV EAX,[0x10014190]                ; 10004ed9 | g_ZBufferSurface
     PUSH EAX                            ; 10004ede
     MOV EAX,dword ptr [EAX]             ; 10004edf
     CALL dword ptr [EAX + 0x14]         ; 10004ee1

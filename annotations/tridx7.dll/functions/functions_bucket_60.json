@@ -100,9 +100,10 @@
         "start":"10002f60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10002f60",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_createTexture_FUN_10002f60",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -218,8 +219,33 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"texture_size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

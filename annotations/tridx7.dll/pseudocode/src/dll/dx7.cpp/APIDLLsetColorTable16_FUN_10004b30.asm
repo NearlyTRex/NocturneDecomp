@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014180
+;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   TerminatedCString s_Could_not_lock_back_buff_10016b50
 ;   TerminatedCString s_Could_not_unlock_back_bu_10016b6c
 ;   undefined4 DAT_10215e40
@@ -55,7 +55,7 @@ section .text
     PUSH EDX                            ; 10004b5c
     STOSD.REP ES:EDI                    ; 10004b5d
     MOV dword ptr [ESP + 0x14],0x7c     ; 10004b5f
-    MOV EAX,[0x10014180]                ; 10004b67 | DAT_10014180
+    MOV EAX,[0x10014180]                ; 10004b67 | g_BackBufferSurface
     PUSH EAX                            ; 10004b6c
     CALL dll_dx7.cpp_FUN_10002e20       ; 10004b6d
         ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)
@@ -67,7 +67,7 @@ section .text
     CALL dll_dx7.cpp_FUN_10002340       ; 10004b7e
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
     ADD ESP,0x4                         ; 10004b83
-    MOV EAX,[0x10014180]                ; 10004b86 | DAT_10014180
+    MOV EAX,[0x10014180]                ; 10004b86 | g_BackBufferSurface
         ;   Label: LAB_10004b86
     PUSH EAX                            ; 10004b8b
     CALL dll_dx7.cpp_FUN_10002cb0       ; 10004b8c

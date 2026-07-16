@@ -24,15 +24,15 @@
 ;   byte switchdataD_10003ca8 = 0x0
 ;   int g_CurrentTextureIndex = 0x0
 ;   undefined4 DAT_100141e8
-;   undefined4 DAT_100141f0
+;   int g_DirectTextureFlag = 0x0
 ;   TerminatedCString s_Unknown_texture_size_10016ad0
 ;   TerminatedCString s_Texture_load_failed_Coul_10016ae8
 ;   TerminatedCString s_Texture_load_failed_Text_10016b1c
-;   undefined4 DAT_10060670
+;   int g_MipMapFlag = 0x0
 ;   undefined4 DAT_10139048
-;   undefined4 DAT_1020de44
+;   undefined4 g_TextureSurfaces[0].surface
 ;   undefined4 g_ExternalRendererBridge.texture_dimension
-;   undefined4 DAT_10226a64
+;   undefined4 g_TexturePixelFormat.dwBitCount
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10001d70
@@ -88,12 +88,12 @@ section .text
     CALL dll_dx7.cpp_FUN_10003830       ; 10003ad4
         ;   XREF to: 10003830 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003830()
         ;   Label: LAB_10003ad4
-    CMP dword ptr [0x100141f0],0x0      ; 10003ad9 | DAT_100141f0
+    CMP dword ptr [0x100141f0],0x0      ; 10003ad9 | g_DirectTextureFlag
     JZ 0x10003afc                       ; 10003ae0
         ;   XREF to: 10003afc (CONDITIONAL_JUMP)  ; LAB_10003afc
     MOV EAX,[0x10014138]                ; 10003ae2 | g_CurrentTextureIndex
     MOV dword ptr [ESP + 0x14],0x0      ; 10003ae7
-    MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003aef | DAT_1020de44
+    MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003aef | g_TextureSurfaces[0].surface
     MOV dword ptr [ESP + 0x10],ECX      ; 10003af6
     JMP 0x10003b1f                      ; 10003afa
         ;   XREF to: 10003b1f (UNCONDITIONAL_JUMP)  ; LAB_10003b1f
@@ -102,13 +102,13 @@ section .text
     LEA ECX,[ESI + EAX*0x8]             ; 10003b01
     MOV EAX,[0x10014138]                ; 10003b04 | g_CurrentTextureIndex
     MOV EDX,dword ptr [ECX*0x4 + 0x10139048] ; 10003b09 | DAT_10139048
-    MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003b10 | DAT_1020de44
+    MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003b10 | g_TextureSurfaces[0].surface
     MOV dword ptr [ESP + 0x10],EDX      ; 10003b17
     MOV dword ptr [ESP + 0x14],ECX      ; 10003b1b
     XOR EBX,EBX                         ; 10003b1f
         ;   Label: LAB_10003b1f
     MOV EBP,0x7c                        ; 10003b21
-    CMP dword ptr [0x100141f0],EBX      ; 10003b26 | DAT_100141f0
+    CMP dword ptr [0x100141f0],EBX      ; 10003b26 | g_DirectTextureFlag
         ;   Label: LAB_10003b26
     JNZ 0x10003b41                      ; 10003b2c
         ;   XREF to: 10003b41 (CONDITIONAL_JUMP)  ; LAB_10003b41
@@ -141,7 +141,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 10003b79
     MOV EDX,dword ptr [ESP + 0x38]      ; 10003b7d
     PUSH EAX                            ; 10003b81
-    CMP dword ptr [0x10226a64],0x20     ; 10003b82 | DAT_10226a64
+    CMP dword ptr [0x10226a64],0x20     ; 10003b82 | g_TexturePixelFormat.dwBitCount
     PUSH EDX                            ; 10003b89
     PUSH ECX                            ; 10003b8a
     JNZ 0x10003b94                      ; 10003b8b
@@ -167,7 +167,7 @@ section .text
     CALL dll_dx7.cpp_FUN_10002340       ; 10003bb2
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
     ADD ESP,0x4                         ; 10003bb7
-    CMP dword ptr [0x100141f0],EBX      ; 10003bba | DAT_100141f0
+    CMP dword ptr [0x100141f0],EBX      ; 10003bba | g_DirectTextureFlag
         ;   Label: LAB_10003bba
     JNZ 0x10003bfa                      ; 10003bc0
         ;   XREF to: 10003bfa (CONDITIONAL_JUMP)  ; LAB_10003bfa
@@ -192,14 +192,14 @@ section .text
     CALL dll_dx7.cpp_FUN_10001d70       ; 10003bf2
         ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
     ADD ESP,0x4                         ; 10003bf7
-    CMP dword ptr [0x10060670],EBX      ; 10003bfa | DAT_10060670
+    CMP dword ptr [0x10060670],EBX      ; 10003bfa | g_MipMapFlag
         ;   Label: LAB_10003bfa
     JZ 0x10003c35                       ; 10003c00
         ;   XREF to: 10003c35 (CONDITIONAL_JUMP)  ; LAB_10003c35
     CMP ESI,0x4                         ; 10003c02
     JGE 0x10003c35                      ; 10003c05
         ;   XREF to: 10003c35 (CONDITIONAL_JUMP)  ; LAB_10003c35
-    CMP dword ptr [0x100141f0],EBX      ; 10003c07 | DAT_100141f0
+    CMP dword ptr [0x100141f0],EBX      ; 10003c07 | g_DirectTextureFlag
     JZ 0x10003c59                       ; 10003c0d
         ;   XREF to: 10003c59 (CONDITIONAL_JUMP)  ; LAB_10003c59
     LEA EAX,[ESP + 0x10]                ; 10003c0f

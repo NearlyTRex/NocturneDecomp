@@ -21,62 +21,20 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 18,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_10012178'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 33,
-        "message": "incompatible integer to pointer conversion assigning to 'int *' from 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 34,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 34,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 34,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 61,
-        "line": 39,
+        "line": 33,
         "message": "use of undeclared identifier 'LAB_10003340'; did you mean 'DAT_10003D40'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 46,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 46,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 46,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
+        "category": "pointer_type",
+        "column": 62,
+        "line": 40,
+        "message": "cannot initialize a parameter of type 'struct IDirect3DViewport3 **' with an rvalue of type 'undefined4 *' (aka 'unsigned int *')"
       },
       {
         "category": "pointer_type",
         "column": 53,
-        "line": 50,
+        "line": 44,
         "message": "cannot initialize a parameter of type 'struct IDirect3DViewport3 *' with an lvalue of type 'undefined4' (aka 'unsigned int')"
       },
       {
@@ -116,13 +74,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 447,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 97,
-    "suspect_count": 32,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -173,9 +131,9 @@
   "globals": [
     {
       "addr": "10012178",
-      "name": "DAT_10012178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Direct3DDeviceGUID",
+      "type": "GUID",
+      "value": "IDirect3DHALDevice 84e63de0-46aa-11cf-816f-0000c020156e"
     },
     {
       "addr": "100122a8",
@@ -191,21 +149,21 @@
     },
     {
       "addr": "10014174",
-      "name": "DAT_10014174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenWidth",
+      "type": "int",
+      "value": "0x280"
     },
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "10014180",
-      "name": "DAT_10014180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10014188",
@@ -221,9 +179,9 @@
     },
     {
       "addr": "100141dc",
-      "name": "DAT_100141dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Direct3D3",
+      "type": "IDirect3D3*",
+      "value": "00000000"
     },
     {
       "addr": "100141e0",
@@ -245,19 +203,19 @@
     },
     {
       "addr": "101398c8",
-      "name": "DAT_101398c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UseHoldBuffer",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10226a58",
-      "name": "DAT_10226a58",
-      "type": "undefined4",
+      "name": "g_TexturePixelFormat",
+      "type": "DDPIXELFORMAT",
       "value": null
     },
     {
       "addr": "10226a5c",
-      "name": "DAT_10226a5c",
+      "name": "g_TexturePixelFormat.dwFlags",
       "type": "undefined4",
       "value": null
     }
@@ -329,98 +287,34 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "DStack_124 = DAT_10014180;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_10012178",
-      "severity": "mild",
-      "text": "puStack_128 = &DAT_10012178;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_100141dc",
-      "severity": "mild",
-      "text": "piStack_12c = DAT_100141dc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_100141dc",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc,&DAT_100141e4,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_100141dc",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc,&DAT_100141e4,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_100141dc",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc,&DAT_100141e4,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
+      "line": 33,
       "match": "DAT_100141e4",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc,&DAT_100141e4,0);",
+      "text": "HVar1 = (*g_Direct3D3->vtable->CreateViewport)(g_Direct3D3,&DAT_100141e4,(IUnknown *)0x0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 37,
       "match": "DAT_100141e4",
       "severity": "mild",
-      "text": "HVar2 = (*g_Device->vtable->AddViewport)(g_Device,DAT_100141e4);",
+      "text": "HVar1 = (*g_Device->vtable->AddViewport)(g_Device,DAT_100141e4);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "ppIStack_120 = (IDirect3DDevice3 **)DAT_10014174;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(D3DVIEWPORT2 *)((int)pDVar4",
+      "severity": "moderate",
+      "text": "pDVar4 = (D3DVIEWPORT2 *)((int)pDVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_10014178",
+      "line": 57,
+      "match": "DAT_100141e4",
       "severity": "mild",
-      "text": "DStack_11c = DAT_10014178;",
+      "text": "HVar1 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,&DStack_10c);",
       "type": "undefined_data"
     },
     {
@@ -428,15 +322,7 @@
       "line": 57,
       "match": "DAT_100141e4",
       "severity": "mild",
-      "text": "HVar2 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,(D3DVIEWPORT2 *)&piStack_12c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "HVar2 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,(D3DVIEWPORT2 *)&piStack_12c);",
+      "text": "HVar1 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,&DStack_10c);",
       "type": "undefined_data"
     },
     {
@@ -448,28 +334,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_101398c8",
-      "severity": "mild",
-      "text": "if (DAT_101398c8 != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(DDSURFACEDESC *)((int)pDVar5",
+      "match": "(DDSURFACEDESC2 *)((int)pDVar5",
       "severity": "moderate",
-      "text": "pDVar5 = (DDSURFACEDESC *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_10226a58",
-      "severity": "mild",
-      "text": "pDVar3 = &DAT_10226a58;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(DDPIXELFORMAT *)((int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDPIXELFORMAT *)((int)pDVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -484,7 +362,7 @@
       "line": 81,
       "match": "DAT_100141b8",
       "severity": "mild",
-      "text": "(g_DirectDraw4,&DStack_100,(IDirectDrawSurface **)&DAT_100141b8,",
+      "text": "(g_DirectDraw4,&DStack_e0,(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0",
       "type": "undefined_data"
     },
     {
@@ -492,7 +370,7 @@
       "line": 92,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_84);",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
       "type": "unresolved_funcptr"
     },
     {
@@ -500,7 +378,7 @@
       "line": 92,
       "match": "DAT_100141b8",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_84);",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
       "type": "undefined_data"
     },
     {
@@ -508,15 +386,31 @@
       "line": 92,
       "match": "DAT_100141b8",
       "severity": "mild",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_84);",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pDVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pDVar4",
+      "severity": "moderate",
+      "text": "pDVar4 = (D3DVIEWPORT2 *)((int)pDVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pDVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 66,
       "match": "(int)pDVar5",
       "severity": "moderate",
-      "text": "pDVar5 = (DDSURFACEDESC *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDPIXELFORMAT *)((int)pDVar3 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -529,10 +423,10 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
+      "line": 42,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -540,7 +434,7 @@
       "line": 64,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -548,7 +442,7 @@
       "line": 70,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -556,7 +450,7 @@
       "line": 87,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

@@ -34,12 +34,6 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 32,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002e20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
         "line": 36,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
       },
@@ -56,13 +50,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 167,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 72,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
@@ -108,9 +102,9 @@
   "globals": [
     {
       "addr": "10014180",
-      "name": "DAT_10014180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10016b50",
@@ -301,22 +295,6 @@
       "match": "DAT_10226868",
       "severity": "mild",
       "text": "DAT_10226868 = color_table;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "iVar2 = dll_dx7_cpp_FUN_10002e20(DAT_10014180,local_7c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "iVar2 = dll_dx7_cpp_FUN_10002cb0(DAT_10014180);",
       "type": "undefined_data"
     },
     {

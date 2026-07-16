@@ -1,21 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_FUN_10001020(int param_1,int param_2)
+; void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *this_ptr,int max_count,int texture_size)
 ;
+; Parameters:
+; int              Stack[0x4]:4   max_count
+; int              Stack[0x8]:4   texture_size
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_FUN_10001200 at 1000141f
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002f60
+;   dll_dx7.cpp_createTexture_FUN_10002f60
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 10001020
-        ;   Label: dll_dx7.cpp_FUN_10001020
+        ;   Label: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
     PUSH EBX                            ; 10001024
     PUSH ESI                            ; 10001025
     PUSH EDI                            ; 10001026
@@ -37,8 +40,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4]       ; 1000104c
         ;   Label: LAB_1000104c
     PUSH EAX                            ; 1000104f
-    CALL dll_dx7.cpp_FUN_10002f60       ; 10001050
-        ;   XREF to: 10002f60 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002f60()
+    CALL dll_dx7.cpp_createTexture_FUN_10002f60 ; 10001050
+        ;   XREF to: 10002f60 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_createTexture_FUN_10002f60(int texture_size)
     ADD ESP,0x4                         ; 10001055
     CMP EAX,-0x1                        ; 10001058
     JZ 0x1000106d                       ; 1000105b

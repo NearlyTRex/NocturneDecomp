@@ -10,6 +10,9 @@ HWND g_WindowHandle = nullptr;
 // char[16][512]
 char g_AdapterDriverName[16][512] = {};
 
+// int
+int g_UseHoldBuffer = 0;
+
 // uint[16]
 uint g_AdapterDeviceId[16] = {};
 uint g_AdapterVendorId[16] = {};
@@ -23,7 +26,6 @@ undefined4 DAT_101386f0 = 0x00000000;
 undefined4 DAT_10138f30 = 0x00000000;
 undefined4 DAT_10138f34 = 0x00000000;
 undefined4 DAT_10138f50 = 0x00000000;
-undefined4 DAT_10138fb4 = 0x00000000;
 undefined4 DAT_10138fc0 = 0x00000000;
 undefined4 DAT_10138fc4 = 0x00000000;
 undefined4 DAT_10139048 = 0x00000000;
@@ -32,8 +34,10 @@ undefined4 DAT_101390c8 = 0x00000000;
 undefined4 DAT_101390cc = 0x00000000;
 undefined4 DAT_101394c8 = 0x00000000;
 undefined4 DAT_101394cc = 0x00000000;
-undefined4 DAT_101398c8 = 0x00000000;
 
 // void*
 void* g_TexturePalette = nullptr;
+
+// void**
+void** g_ScanlinePtrBase = nullptr;
 

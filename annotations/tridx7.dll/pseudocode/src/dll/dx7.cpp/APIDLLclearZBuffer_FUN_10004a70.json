@@ -18,24 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 25,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 25,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 25,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
     "success": false,
@@ -44,19 +26,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 72,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memset"
     ],
-    "total_lines": 40
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -75,9 +55,9 @@
   "globals": [
     {
       "addr": "10014190",
-      "name": "DAT_10014190",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ZBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -140,30 +120,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_10014190",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_10014190",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,0,0,0,0x3000000,local_64);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom inline memset (REP STOSD at 10004a7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 7,

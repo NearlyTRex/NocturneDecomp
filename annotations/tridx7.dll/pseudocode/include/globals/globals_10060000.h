@@ -11,6 +11,6 @@
 // CDLLTextureCache
 extern CDLLTextureCache CDLLTextureCache_10060678;
 
-// undefined4
-extern undefined4 DAT_10060670;
+// int
+extern int g_MipMapFlag;
 

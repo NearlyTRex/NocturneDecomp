@@ -14,7 +14,7 @@
 ;   dll_dx7.cpp_FUN_10003a80 at 10003ad4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10060670
+;   int g_MipMapFlag = 0x0
 ;   undefined1 DAT_101386a8
 ;   void* g_TexturePalette = 00000000
 ;   undefined1 DAT_10139040
@@ -27,7 +27,7 @@
 ;   undefined4 g_ExternalRendererBridge.agp_texture_mode
 ;   undefined1 DAT_10226a4c
 ;   undefined1 DAT_10226a54
-;   undefined4 DAT_10226a64
+;   undefined4 g_TexturePixelFormat.dwBitCount
 ;   undefined4 DAT_10226a80
 ;   ... and 3 more
 ;
@@ -37,7 +37,7 @@ section .text
 
     SUB ESP,0x14                        ; 10003830
         ;   Label: dll_dx7.cpp_FUN_10003830
-    CMP dword ptr [0x10226a64],0x20     ; 10003833 | DAT_10226a64
+    CMP dword ptr [0x10226a64],0x20     ; 10003833 | g_TexturePixelFormat.dwBitCount
     PUSH EBX                            ; 1000383a
     PUSH ESI                            ; 1000383b
     PUSH EDI                            ; 1000383c
@@ -134,7 +134,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 10003938
     JZ 0x1000394a                       ; 1000393b
         ;   XREF to: 1000394a (CONDITIONAL_JUMP)  ; LAB_1000394a
-    CMP dword ptr [0x10060670],0x0      ; 1000393d | DAT_10060670
+    CMP dword ptr [0x10060670],0x0      ; 1000393d | g_MipMapFlag
     JZ 0x10003a27                       ; 10003944
         ;   XREF to: 10003a27 (CONDITIONAL_JUMP)  ; LAB_10003a27
     MOV EAX,[0x10226900]                ; 1000394a | g_ExternalRendererBridge.texture_dimension
@@ -203,7 +203,7 @@ section .text
     CMP dword ptr [ECX],0x0             ; 10003a06
     JNZ 0x10003a14                      ; 10003a09
         ;   XREF to: 10003a14 (CONDITIONAL_JUMP)  ; LAB_10003a14
-    CMP dword ptr [0x10060670],0x0      ; 10003a0b | DAT_10060670
+    CMP dword ptr [0x10060670],0x0      ; 10003a0b | g_MipMapFlag
     JZ 0x10003a27                       ; 10003a12
         ;   XREF to: 10003a27 (CONDITIONAL_JUMP)  ; LAB_10003a27
     CDQ                                 ; 10003a14

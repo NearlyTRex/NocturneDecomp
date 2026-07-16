@@ -12,12 +12,12 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014174
-;   undefined4 DAT_10014178
-;   undefined4 DAT_10014190
-;   undefined4 DAT_10014198
+;   int g_ScreenWidth = 0x280
+;   int g_ScreenHeight = 0x1e0
+;   IDirectDrawSurface* g_ZBufferSurface = 00000000
+;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
 ;   TerminatedCString s_masterZ_blt_failed_10016b8c
-;   undefined4 DAT_10226a48
+;   int g_MasterZBufferCount = 0x0
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10002340
@@ -32,10 +32,10 @@ section .text
     TEST EAX,EAX                        ; 10004e17
     JL 0x10004e82                       ; 10004e19
         ;   XREF to: 10004e82 (CONDITIONAL_JUMP)  ; LAB_10004e82
-    CMP EAX,dword ptr [0x10226a48]      ; 10004e1b | DAT_10226a48
+    CMP EAX,dword ptr [0x10226a48]      ; 10004e1b | g_MasterZBufferCount
     JGE 0x10004e82                      ; 10004e21
         ;   XREF to: 10004e82 (CONDITIONAL_JUMP)  ; LAB_10004e82
-    MOV EDX,dword ptr [EAX*0x4 + 0x10014198] ; 10004e23 | DAT_10014198
+    MOV EDX,dword ptr [EAX*0x4 + 0x10014198] ; 10004e23 | g_MasterZBufferSurfaces
     TEST EDX,EDX                        ; 10004e2a
     JNZ 0x10004e34                      ; 10004e2c
         ;   XREF to: 10004e34 (CONDITIONAL_JUMP)  ; LAB_10004e34
@@ -44,18 +44,18 @@ section .text
     RET                                 ; 10004e33
     XOR ECX,ECX                         ; 10004e34
         ;   Label: LAB_10004e34
-    MOV EAX,[0x10014174]                ; 10004e36 | DAT_10014174
+    MOV EAX,[0x10014174]                ; 10004e36 | g_ScreenWidth
     MOV dword ptr [ESP],ECX             ; 10004e3b
     PUSH ECX                            ; 10004e3f
     MOV dword ptr [ESP + 0x8],ECX       ; 10004e40
     PUSH ECX                            ; 10004e44
     LEA ECX,[ESP + 0x8]                 ; 10004e45
     MOV dword ptr [ESP + 0x10],EAX      ; 10004e49
-    MOV EAX,[0x10014178]                ; 10004e4d | DAT_10014178
+    MOV EAX,[0x10014178]                ; 10004e4d | g_ScreenHeight
     PUSH ECX                            ; 10004e52
     LEA ECX,[ESP + 0xc]                 ; 10004e53
     MOV dword ptr [ESP + 0x18],EAX      ; 10004e57
-    MOV EAX,[0x10014190]                ; 10004e5b | DAT_10014190
+    MOV EAX,[0x10014190]                ; 10004e5b | g_ZBufferSurface
     PUSH EAX                            ; 10004e60
     PUSH ECX                            ; 10004e61
     PUSH EDX                            ; 10004e62

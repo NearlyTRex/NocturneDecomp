@@ -17,12 +17,12 @@
 ;   undefined4 DAT_100122d0
 ;   undefined4 DAT_100122d8
 ;   undefined4 DAT_100122e8
-;   undefined4 DAT_10014164
-;   undefined4 DAT_1001416c
-;   undefined4 DAT_10014170
-;   undefined4 DAT_10014174
-;   undefined4 DAT_10014178
-;   undefined4 DAT_101398c8
+;   int g_PremultiplyColorAndAlpha = 0x0
+;   int g_FlyIniPresent = 0x0
+;   int g_ZBufferBitDepth = 0x0
+;   int g_ScreenWidth = 0x280
+;   int g_ScreenHeight = 0x1e0
+;   int g_UseHoldBuffer = 0x0
 ;   undefined4 DAT_10215e40
 ;   undefined4 g_ExternalRendererBridge.blend_mode
 ;   undefined4 g_ExternalRendererBridge.current_alpha
@@ -47,15 +47,15 @@ section .text
     FILD dword ptr [ECX + 0x14]         ; 100044ca
     FMUL double ptr [0x100122c8]        ; 100044cd | DAT_100122c8
     FSTP float ptr [ESI + 0x4]          ; 100044d3
-    CMP dword ptr [0x101398c8],0x0      ; 100044d6 | DAT_101398c8
+    CMP dword ptr [0x101398c8],0x0      ; 100044d6 | g_UseHoldBuffer
     JZ 0x10004501                       ; 100044dd
         ;   XREF to: 10004501 (CONDITIONAL_JUMP)  ; LAB_10004501
-    FILD dword ptr [0x10014174]         ; 100044df | DAT_10014174
+    FILD dword ptr [0x10014174]         ; 100044df | g_ScreenWidth
     FMUL float ptr [ESI]                ; 100044e5
     FMUL double ptr [0x100122d0]        ; 100044e7 | DAT_100122d0
     FSTP float ptr [ESI]                ; 100044ed
     FLD float ptr [ESI + 0x4]           ; 100044ef
-    FIMUL dword ptr [0x10014178]        ; 100044f2 | DAT_10014178
+    FIMUL dword ptr [0x10014178]        ; 100044f2 | g_ScreenHeight
     FMUL double ptr [0x100122d8]        ; 100044f8 | DAT_100122d8
     FSTP float ptr [ESI + 0x4]          ; 100044fe
     FILD dword ptr [ECX + 0x8]          ; 10004501
@@ -149,7 +149,7 @@ section .text
     MOV dword ptr [ESI + 0x10],EDX      ; 100045f1
     JMP 0x100046d4                      ; 100045f4
         ;   XREF to: 100046d4 (UNCONDITIONAL_JUMP)  ; LAB_100046d4
-    CMP dword ptr [0x10014164],0x0      ; 100045f9 | DAT_10014164
+    CMP dword ptr [0x10014164],0x0      ; 100045f9 | g_PremultiplyColorAndAlpha
         ;   Label: LAB_100045f9
     JZ 0x10004643                       ; 10004600
         ;   XREF to: 10004643 (CONDITIONAL_JUMP)  ; LAB_10004643
@@ -238,10 +238,10 @@ section .text
     CMP dword ptr [EAX],0x0             ; 100046d9
     JZ 0x1000473f                       ; 100046dc
         ;   XREF to: 1000473f (CONDITIONAL_JUMP)  ; LAB_1000473f
-    CMP dword ptr [0x1001416c],0x0      ; 100046de | DAT_1001416c
+    CMP dword ptr [0x1001416c],0x0      ; 100046de | g_FlyIniPresent
     JZ 0x10004720                       ; 100046e5
         ;   XREF to: 10004720 (CONDITIONAL_JUMP)  ; LAB_10004720
-    CMP dword ptr [0x10014170],0x10     ; 100046e7 | DAT_10014170
+    CMP dword ptr [0x10014170],0x10     ; 100046e7 | g_ZBufferBitDepth
     JNZ 0x10004720                      ; 100046ee
         ;   XREF to: 10004720 (CONDITIONAL_JUMP)  ; LAB_10004720
     MOV EDX,dword ptr [ESP + 0x14]      ; 100046f0

@@ -11,18 +11,15 @@ int __cdecl dll_dx7_cpp_APIDLLclearZBox_FUN_10004ac0(int left,int right,int top,
 {
   int iVar1;
   uint *puVar2;
-  int local_74;
-  int local_70;
-  int local_6c;
-  int local_68;
+  RECT local_74;
   uint local_64 [20];
   uint local_14;
   
                     /* 0x4ac0  9  APIDLLclearZBox */
-  local_70 = top;
-  local_74 = left;
-  local_68 = bottom + 1;
-  local_6c = right + 1;
+  local_74.top = top;
+  local_74.left = left;
+  local_74.bottom = bottom + 1;
+  local_74.right = right + 1;
   puVar2 = local_64;
   for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
@@ -30,6 +27,7 @@ int __cdecl dll_dx7_cpp_APIDLLclearZBox_FUN_10004ac0(int left,int right,int top,
   }
   local_64[0] = 100;
   local_14 = 0xffffffff;
-  (**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,&local_74,0,0,0x3000000,local_64);
+  (*g_ZBufferSurface->vtable->Blt)
+            (g_ZBufferSurface,&local_74,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x3000000,local_64);
   return 1;
 }

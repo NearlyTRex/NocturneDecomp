@@ -12,14 +12,14 @@
 ;
 ; Referenced Globals:
 ;   IDirectDrawSurface* g_PrimarySurface = 00000000
-;   undefined4 DAT_10014190
-;   undefined4 DAT_10014198
-;   undefined4 DAT_1001419c
+;   IDirectDrawSurface* g_ZBufferSurface = 00000000
+;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
+;   undefined4 g_MasterZBufferSurfaces[1]
 ;   undefined4 DAT_100141b8
-;   undefined4 DAT_100141dc
+;   IDirect3D3* g_Direct3D3 = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   undefined4 DAT_100141e4
-;   undefined4 DAT_10226a48
+;   int g_MasterZBufferCount = 0x0
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10002ea0
@@ -59,31 +59,31 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 100023c2
     CALL dword ptr [ESI + 0x8]          ; 100023c4
     MOV dword ptr [0x100141e0],0x0      ; 100023c7 | g_Device
-    CMP dword ptr [0x100141dc],0x0      ; 100023d1 | DAT_100141dc
+    CMP dword ptr [0x100141dc],0x0      ; 100023d1 | g_Direct3D3
         ;   Label: LAB_100023d1
     JZ 0x100023ef                       ; 100023d8
         ;   XREF to: 100023ef (CONDITIONAL_JUMP)  ; LAB_100023ef
-    MOV EAX,[0x100141dc]                ; 100023da | DAT_100141dc
+    MOV EAX,[0x100141dc]                ; 100023da | g_Direct3D3
     PUSH EAX                            ; 100023df
     MOV ESI,dword ptr [EAX]             ; 100023e0
     CALL dword ptr [ESI + 0x8]          ; 100023e2
-    MOV dword ptr [0x100141dc],0x0      ; 100023e5 | DAT_100141dc
-    CMP dword ptr [0x10014190],0x0      ; 100023ef | DAT_10014190
+    MOV dword ptr [0x100141dc],0x0      ; 100023e5 | g_Direct3D3
+    CMP dword ptr [0x10014190],0x0      ; 100023ef | g_ZBufferSurface
         ;   Label: LAB_100023ef
     JZ 0x1000240d                       ; 100023f6
         ;   XREF to: 1000240d (CONDITIONAL_JUMP)  ; LAB_1000240d
-    MOV EAX,[0x10014190]                ; 100023f8 | DAT_10014190
+    MOV EAX,[0x10014190]                ; 100023f8 | g_ZBufferSurface
     PUSH EAX                            ; 100023fd
     MOV ESI,dword ptr [EAX]             ; 100023fe
     CALL dword ptr [ESI + 0x8]          ; 10002400
-    MOV dword ptr [0x10014190],0x0      ; 10002403 | DAT_10014190
+    MOV dword ptr [0x10014190],0x0      ; 10002403 | g_ZBufferSurface
     XOR ESI,ESI                         ; 1000240d
         ;   Label: LAB_1000240d
-    CMP dword ptr [0x10226a48],ESI      ; 1000240f | DAT_10226a48
+    CMP dword ptr [0x10226a48],ESI      ; 1000240f | g_MasterZBufferCount
     JLE 0x1000243a                      ; 10002415
         ;   XREF to: 1000243a (CONDITIONAL_JUMP)  ; LAB_1000243a
-    MOV EDI,0x10014198                  ; 10002417 | DAT_10014198
-    MOV EAX,dword ptr [EDI]             ; 1000241c | DAT_10014198 | DAT_1001419c
+    MOV EDI,0x10014198                  ; 10002417 | g_MasterZBufferSurfaces
+    MOV EAX,dword ptr [EDI]             ; 1000241c | g_MasterZBufferSurfaces | g_MasterZBufferSurfaces[1]
         ;   Label: LAB_1000241c
     TEST EAX,EAX                        ; 1000241e
     JZ 0x1000242e                       ; 10002420
@@ -91,11 +91,11 @@ section .text
     PUSH EAX                            ; 10002422
     MOV EAX,dword ptr [EAX]             ; 10002423
     CALL dword ptr [EAX + 0x8]          ; 10002425
-    MOV dword ptr [EDI],0x0             ; 10002428 | DAT_10014198
+    MOV dword ptr [EDI],0x0             ; 10002428 | g_MasterZBufferSurfaces
     ADD EDI,0x4                         ; 1000242e
         ;   Label: LAB_1000242e
     INC ESI                             ; 10002431
-    CMP dword ptr [0x10226a48],ESI      ; 10002432 | DAT_10226a48
+    CMP dword ptr [0x10226a48],ESI      ; 10002432 | g_MasterZBufferCount
     JG 0x1000241c                       ; 10002438
         ;   XREF to: 1000241c (CONDITIONAL_JUMP)  ; LAB_1000241c
     CMP dword ptr [0x1001418c],0x0      ; 1000243a | g_PrimarySurface

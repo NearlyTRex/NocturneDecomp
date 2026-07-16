@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014178
+;   int g_ScreenHeight = 0x1e0
 ;   undefined4 DAT_100141b8
-;   undefined4 DAT_10138fb4
-;   undefined4 DAT_10226e88
-;   undefined4 DAT_10226e98
-;   undefined4 DAT_10226eac
+;   void** g_ScanlinePtrBase = 00000000
+;   DDSURFACEDESC2 g_PrimarySurfaceDesc
+;   undefined4 g_PrimarySurfaceDesc.dwPitchOrLinearSize
+;   undefined4 g_PrimarySurfaceDesc.lpSurface
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10002e20
@@ -19,7 +19,7 @@
 
 section .text
 
-    PUSH 0x10226e88                     ; 10005350 | DAT_10226e88
+    PUSH 0x10226e88                     ; 10005350 | g_PrimarySurfaceDesc
         ;   Label: dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
     MOV EAX,[0x100141b8]                ; 10005355 | DAT_100141b8
     PUSH EAX                            ; 1000535a
@@ -31,17 +31,17 @@ section .text
         ;   XREF to: 1000536a (CONDITIONAL_JUMP)  ; LAB_1000536a
     XOR EAX,EAX                         ; 10005367
     RET                                 ; 10005369
-    MOV ECX,dword ptr [0x10226eac]      ; 1000536a | DAT_10226eac
+    MOV ECX,dword ptr [0x10226eac]      ; 1000536a | g_PrimarySurfaceDesc.lpSurface
         ;   Label: LAB_1000536a
-    MOV EAX,[0x10014178]                ; 10005370 | DAT_10014178
+    MOV EAX,[0x10014178]                ; 10005370 | g_ScreenHeight
     TEST EAX,EAX                        ; 10005375
     JLE 0x1000538d                      ; 10005377
         ;   XREF to: 1000538d (CONDITIONAL_JUMP)  ; LAB_1000538d
-    MOV EDX,dword ptr [0x10138fb4]      ; 10005379 | DAT_10138fb4
+    MOV EDX,dword ptr [0x10138fb4]      ; 10005379 | g_ScanlinePtrBase
     MOV dword ptr [EDX],ECX             ; 1000537f
         ;   Label: LAB_1000537f
     ADD EDX,0x4                         ; 10005381
-    ADD ECX,dword ptr [0x10226e98]      ; 10005384 | DAT_10226e98
+    ADD ECX,dword ptr [0x10226e98]      ; 10005384 | g_PrimarySurfaceDesc.dwPitchOrLinearSize
     DEC EAX                             ; 1000538a
     JNZ 0x1000537f                      ; 1000538b
         ;   XREF to: 1000537f (CONDITIONAL_JUMP)  ; LAB_1000537f

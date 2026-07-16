@@ -19,12 +19,12 @@ uint dll_dx7_cpp_FUN_10003400(void)
   int iVar5;
   int iVar6;
   int iVar7;
-  DWORD *pDVar8;
-  DDSURFACEDESC *pDVar9;
+  DDPIXELFORMAT *pDVar8;
+  DDSURFACEDESC2 *pDVar9;
   DDPIXELFORMAT *pDVar10;
   byte bVar11;
   int local_80;
-  DDSURFACEDESC local_7c;
+  DDSURFACEDESC2 local_7c;
   
   bVar11 = 0;
   dll_dx7_cpp_FUN_10002ea0();
@@ -36,16 +36,16 @@ uint dll_dx7_cpp_FUN_10003400(void)
       pDVar9 = &local_7c;
       for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
         pDVar9->dwSize = 0;
-        pDVar9 = (DDSURFACEDESC *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);
+        pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);
       }
-      pDVar8 = &DAT_10226a58;
+      pDVar8 = &g_TexturePixelFormat;
       pDVar10 = &local_7c.ddpfPixelFormat;
       for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        pDVar10->dwSize = *pDVar8;
-        pDVar8 = pDVar8 + (uint)bVar11 * -2 + 1;
+        pDVar10->dwSize = pDVar8->dwSize;
+        pDVar8 = (DDPIXELFORMAT *)((int)pDVar8 + ((uint)bVar11 * -2 + 1) * 4);
         pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);
       }
-      local_7c.dwHeight = *(DWORD *)(&DAT_10226848 + local_80);
+      local_7c.dwHeight = *(DWORD *)((int)g_TextureSizeTable + local_80);
       local_7c.dwSize = 0x7c;
       local_7c.dwFlags = 0x1007;
       local_7c.ddsCaps.dwCaps = 0x1800;
@@ -58,7 +58,7 @@ uint dll_dx7_cpp_FUN_10003400(void)
       }
       this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);
       HVar1 = (*this_ptr->vtable->QueryInterface)
-                        ((IUnknown *)this_ptr,(GUID *)&DAT_100121f8,
+                        ((IUnknown *)this_ptr,(GUID *)&g_IID_IDirect3DTexture2,
                          (void **)((int)&DAT_10138f30 + iVar7));
       if (HVar1 != 0) {
         return 0;
@@ -104,7 +104,7 @@ uint dll_dx7_cpp_FUN_10003400(void)
       else {
         _DAT_1013b8d0 = local_7c.ddpfPixelFormat.dwAlphaBitMask;
       }
-      DAT_10014214 = 0;
+      g_TextureCount = 0;
       _DAT_10240628 = local_7c.ddpfPixelFormat.dwBitCount;
       dll_dx7_cpp_FUN_10001200();
       return 1;

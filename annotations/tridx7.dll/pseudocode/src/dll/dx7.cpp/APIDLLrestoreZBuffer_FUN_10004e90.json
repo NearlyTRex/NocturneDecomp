@@ -18,24 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 26,
-        "message": "use of undeclared identifier 'code'; did you mean 'mode'?"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 26,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 26,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
     "success": false,
@@ -44,19 +26,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 97,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 6,
-    "suspect_types": [
-      "displaced_global_access",
-      "undefined_data",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 65
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -81,14 +59,14 @@
   "globals": [
     {
       "addr": "10014190",
-      "name": "DAT_10014190",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ZBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10014198",
-      "name": "DAT_10014198",
-      "type": "undefined4",
+      "name": "g_MasterZBufferSurfaces",
+      "type": "IDirectDrawSurface*[8]",
       "value": null
     },
     {
@@ -206,59 +184,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014198",
-      "severity": "mild",
-      "text": "if ((&DAT_10014198)[left] == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*DAT_10014190 + 0x14))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_10014190",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_10014190 + 0x14))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10014190",
-      "severity": "mild",
-      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[left],&local_10,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10014198",
-      "severity": "mild",
-      "text": "(DAT_10014190,&local_10,(&DAT_10014198)[left],&local_10,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*4 + 0x10014198] lands in DAT_10014198 but intended target is DAT_1001419c at 0x1001419c (displaced by 4 bytes)",
-      "displaced_from": "DAT_10014198",
-      "displacement": "0x10014198",
-      "instruction_address": "",
-      "intended_global": "DAT_1001419c",
-      "line": 4,
-      "match": "0x10014198",
-      "scale": 4,
-      "severity": "moderate",
-      "text": "// 10004e97: MOV ECX,dword ptr [EAX*0x4 + 0x10014198]  ; DAT_10014198",
-      "type": "displaced_global_access"
-    }
-  ]
+  "suspects": []
 }

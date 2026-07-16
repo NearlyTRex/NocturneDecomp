@@ -9,9 +9,9 @@
 void dll_dx7_cpp_FUN_10002370(void)
 
 {
-  int *piVar1;
-  int iVar2;
-  int *piVar3;
+  IDirectDrawSurface *this_ptr;
+  int iVar1;
+  IDirectDrawSurface **ppIVar2;
   
   dll_dx7_cpp_FUN_10002ea0();
   if (DAT_100141b8 != (int *)0x0) {
@@ -26,26 +26,26 @@ void dll_dx7_cpp_FUN_10002370(void)
     (*g_Device->vtable->Release)((IUnknown *)g_Device);
     g_Device = (IDirect3DDevice3 *)0x0;
   }
-  if (DAT_100141dc != (int *)0x0) {
-    (**(code **)(*DAT_100141dc + 8))(DAT_100141dc);
-    DAT_100141dc = (int *)0x0;
+  if (g_Direct3D3 != (IDirect3D3 *)0x0) {
+    (*g_Direct3D3->vtable->Release)((IUnknown *)g_Direct3D3);
+    g_Direct3D3 = (IDirect3D3 *)0x0;
   }
-  if (DAT_10014190 != (int *)0x0) {
-    (**(code **)(*DAT_10014190 + 8))(DAT_10014190);
-    DAT_10014190 = (int *)0x0;
+  if (g_ZBufferSurface != (IDirectDrawSurface *)0x0) {
+    (*g_ZBufferSurface->vtable->Release)((IUnknown *)g_ZBufferSurface);
+    g_ZBufferSurface = (IDirectDrawSurface *)0x0;
   }
-  iVar2 = 0;
-  if (0 < DAT_10226a48) {
-    piVar3 = &DAT_10014198;
+  iVar1 = 0;
+  if (0 < g_MasterZBufferCount) {
+    ppIVar2 = g_MasterZBufferSurfaces;
     do {
-      piVar1 = (int *)*piVar3;
-      if (piVar1 != (int *)0x0) {
-        (**(code **)(*piVar1 + 8))(piVar1);
-        *piVar3 = 0;
+      this_ptr = *ppIVar2;
+      if (this_ptr != (IDirectDrawSurface *)0x0) {
+        (*this_ptr->vtable->Release)((IUnknown *)this_ptr);
+        *ppIVar2 = (IDirectDrawSurface *)0x0;
       }
-      piVar3 = piVar3 + 1;
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < DAT_10226a48);
+      ppIVar2 = ppIVar2 + 1;
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < g_MasterZBufferCount);
   }
   if (g_PrimarySurface != (IDirectDrawSurface *)0x0) {
     (*g_PrimarySurface->vtable->Release)((IUnknown *)g_PrimarySurface);

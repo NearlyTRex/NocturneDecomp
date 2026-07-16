@@ -14,16 +14,16 @@
 ;   undefined4 DAT_100122b8
 ;   undefined4 DAT_100122c0
 ;   int g_CurrentTextureIndex = 0x0
-;   undefined4 DAT_10014164
-;   undefined4 DAT_1001416c
-;   undefined4 DAT_10014170
+;   int g_PremultiplyColorAndAlpha = 0x0
+;   int g_FlyIniPresent = 0x0
+;   int g_ZBufferBitDepth = 0x0
 ;   undefined4 DAT_100141d4
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   undefined4 DAT_10014218
 ;   undefined4 DAT_1001421c
 ;   undefined4 DAT_10014220
 ;   undefined4 DAT_10014224
-;   undefined4 DAT_1020de40
+;   STextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_ExternalRendererBridge.blend_mode
 ;   undefined4 g_ExternalRendererBridge.current_lighting
 ;   ... and 10 more
@@ -125,7 +125,7 @@ section .text
     CALL dll_dx7.cpp_FUN_100037e0       ; 10003fe3
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
     ADD ESP,0x8                         ; 10003fe8
-    CMP dword ptr [0x10014164],0x0      ; 10003feb | DAT_10014164
+    CMP dword ptr [0x10014164],0x0      ; 10003feb | g_PremultiplyColorAndAlpha
     JZ 0x10004019                       ; 10003ff2
         ;   XREF to: 10004019 (CONDITIONAL_JUMP)  ; LAB_10004019
     PUSH 0x5                            ; 10003ff4
@@ -137,7 +137,7 @@ section .text
     CALL dll_dx7.cpp_FUN_100037e0       ; 10003ffc
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
     ADD ESP,0x8                         ; 10004001
-    CMP dword ptr [0x10014164],0x0      ; 10004004 | DAT_10014164
+    CMP dword ptr [0x10014164],0x0      ; 10004004 | g_PremultiplyColorAndAlpha
     JZ 0x10004019                       ; 1000400b
         ;   XREF to: 10004019 (CONDITIONAL_JUMP)  ; LAB_10004019
     PUSH 0x2                            ; 1000400d
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
     MOV EAX,[0x10014138]                ; 1000405e | g_CurrentTextureIndex
     MOV ECX,dword ptr [0x100141d4]      ; 10004063 | DAT_100141d4
-    CMP dword ptr [EAX*0x8 + 0x1020de40],ECX ; 10004069 | DAT_1020de40
+    CMP dword ptr [EAX*0x8 + 0x1020de40],ECX ; 10004069 | g_TextureSurfaces
     JZ 0x10004122                       ; 10004070
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
     CALL dll_dx7.cpp_FUN_100047b0       ; 10004076
@@ -183,7 +183,7 @@ section .text
     PUSH 0x4                            ; 10004080
     PUSH 0x1                            ; 10004082
     MOV ECX,dword ptr [0x100141e0]      ; 10004084 | g_Device
-    MOV EAX,dword ptr [EAX*0x8 + 0x1020de40] ; 1000408a | DAT_1020de40
+    MOV EAX,dword ptr [EAX*0x8 + 0x1020de40] ; 1000408a | g_TextureSurfaces
     PUSH 0x0                            ; 10004091
     PUSH ECX                            ; 10004093
     MOV [0x100141d4],EAX                ; 10004094 | DAT_100141d4
@@ -411,10 +411,10 @@ section .text
     CMP dword ptr [EAX],0x0             ; 1000429c
     JZ 0x100042e8                       ; 1000429f
         ;   XREF to: 100042e8 (CONDITIONAL_JUMP)  ; LAB_100042e8
-    CMP dword ptr [0x1001416c],0x0      ; 100042a1 | DAT_1001416c
+    CMP dword ptr [0x1001416c],0x0      ; 100042a1 | g_FlyIniPresent
     JZ 0x100042d8                       ; 100042a8
         ;   XREF to: 100042d8 (CONDITIONAL_JUMP)  ; LAB_100042d8
-    CMP dword ptr [0x10014170],0x10     ; 100042aa | DAT_10014170
+    CMP dword ptr [0x10014170],0x10     ; 100042aa | g_ZBufferBitDepth
     JNZ 0x100042d8                      ; 100042b1
         ;   XREF to: 100042d8 (CONDITIONAL_JUMP)  ; LAB_100042d8
     MOV dword ptr [ESP + 0x4],ECX       ; 100042b3

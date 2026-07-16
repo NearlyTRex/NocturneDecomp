@@ -91,6 +91,16 @@ typedef struct DDSCAPS {
     DWORD dwCaps;
 } DDSCAPS;
 
+// Structure: DDSCAPS2
+#pragma pack(push, 1)
+typedef struct DDSCAPS2 {
+    DWORD dwCaps;
+    DWORD dwCaps2;
+    DWORD dwCaps3;
+    DWORD dwCaps4;
+} DDSCAPS2;
+#pragma pack(pop)
+
 // Union: DDSURFACEDESC_union1
 typedef union DDSURFACEDESC_union1 {
     LONG lPitch;
@@ -124,6 +134,29 @@ typedef struct DDSURFACEDESC {
     DDSCAPS ddsCaps;
 } DDSURFACEDESC;
 
+// Structure: DDSURFACEDESC2
+#pragma pack(push, 1)
+typedef struct DDSURFACEDESC2 {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwHeight;
+    DWORD dwWidth;
+    DDSURFACEDESC_union1 dwPitchOrLinearSize;
+    DWORD dwBackBufferCount;
+    DDSURFACEDESC_union2 dwMipMapOrRefresh;
+    DWORD dwAlphaBitDepth;
+    DWORD dwReserved;
+    LPVOID lpSurface;
+    DDCOLORKEY ddckCKDestOverlay;
+    DDCOLORKEY ddckCKDestBlt;
+    DDCOLORKEY ddckCKSrcOverlay;
+    DDCOLORKEY ddckCKSrcBlt;
+    DDPIXELFORMAT ddpfPixelFormat;
+    DDSCAPS2 ddsCaps;
+    DWORD dwTextureStage;
+} DDSURFACEDESC2;
+#pragma pack(pop)
+
 // Structure: IDirectDraw
 typedef struct IDirectDraw {
     struct IDirectDraw_vtable* vtable;
@@ -135,7 +168,7 @@ typedef struct IDirectDraw4 {
 } IDirectDraw4;
 
 // Function Definition: IDirectDraw4_CreateSurface
-typedef HRESULT IDirectDraw4_CreateSurface(struct IDirectDraw4* this_ptr, struct DDSURFACEDESC* desc, struct IDirectDrawSurface** surface, struct IUnknown* outer);
+typedef HRESULT IDirectDraw4_CreateSurface(struct IDirectDraw4* this_ptr, struct DDSURFACEDESC2* desc, struct IDirectDrawSurface** surface, struct IUnknown* outer);
 
 // Function Definition: IDirectDraw4_GetAvailableVidMem
 typedef HRESULT IDirectDraw4_GetAvailableVidMem(struct IDirectDraw4* this_ptr, struct DDSCAPS* caps, DWORD* total, DWORD* free);
@@ -326,7 +359,7 @@ typedef HRESULT IDirectDrawSurface_GetPalette(struct IDirectDrawSurface* this_pt
 typedef HRESULT IDirectDrawSurface_GetPixelFormat(struct IDirectDrawSurface* this_ptr, struct DDPIXELFORMAT* pixel_format);
 
 // Function Definition: IDirectDrawSurface_GetSurfaceDesc
-typedef HRESULT IDirectDrawSurface_GetSurfaceDesc(struct IDirectDrawSurface* this_ptr, struct DDSURFACEDESC* surface_desc);
+typedef HRESULT IDirectDrawSurface_GetSurfaceDesc(struct IDirectDrawSurface* this_ptr, struct DDSURFACEDESC2* surface_desc);
 
 // Function Definition: IDirectDrawSurface_Initialize
 typedef HRESULT IDirectDrawSurface_Initialize(struct IDirectDrawSurface* this_ptr, struct IDirectDraw* dd_interface, struct DDSURFACEDESC* surface_desc);
@@ -335,7 +368,7 @@ typedef HRESULT IDirectDrawSurface_Initialize(struct IDirectDrawSurface* this_pt
 typedef HRESULT IDirectDrawSurface_IsLost(struct IDirectDrawSurface* this_ptr);
 
 // Function Definition: IDirectDrawSurface_Lock
-typedef HRESULT IDirectDrawSurface_Lock(struct IDirectDrawSurface* this_ptr, RECT* dest_rect, struct DDSURFACEDESC* surface_desc, DWORD flags, void* event);
+typedef HRESULT IDirectDrawSurface_Lock(struct IDirectDrawSurface* this_ptr, RECT* dest_rect, struct DDSURFACEDESC2* surface_desc, DWORD flags, void* event);
 
 // Function Definition: IDirectDrawSurface_ReleaseDC
 typedef HRESULT IDirectDrawSurface_ReleaseDC(struct IDirectDrawSurface* this_ptr, void* device_context);

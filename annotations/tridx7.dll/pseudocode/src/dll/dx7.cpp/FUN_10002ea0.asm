@@ -15,10 +15,10 @@
 ;   undefined4 DAT_10138f50
 ;   undefined4 DAT_10139048
 ;   undefined4 DAT_10139068
-;   undefined4 DAT_1020de40
-;   undefined4 DAT_1020de44
-;   undefined4 DAT_1020de48
-;   undefined4 DAT_1020de4c
+;   STextureSurfaceSlot[4096] g_TextureSurfaces
+;   undefined4 g_TextureSurfaces[0].surface
+;   undefined4 g_TextureSurfaces[1].texture
+;   undefined4 g_TextureSurfaces[1].surface
 ;   undefined4 DAT_10215e40
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     CMP ESI,0x20                        ; 10002ee9
     JL 0x10002ea5                       ; 10002eec
         ;   XREF to: 10002ea5 (CONDITIONAL_JUMP)  ; LAB_10002ea5
-    MOV ESI,0x1020de40                  ; 10002eee | DAT_1020de40
-    MOV EAX,dword ptr [ESI]             ; 10002ef3 | DAT_1020de40 | DAT_1020de48
+    MOV ESI,0x1020de40                  ; 10002eee | g_TextureSurfaces
+    MOV EAX,dword ptr [ESI]             ; 10002ef3 | g_TextureSurfaces | g_TextureSurfaces[1].texture
         ;   Label: LAB_10002ef3
     TEST EAX,EAX                        ; 10002ef5
     JZ 0x10002f05                       ; 10002ef7
@@ -69,8 +69,8 @@ section .text
     PUSH EAX                            ; 10002ef9
     MOV EAX,dword ptr [EAX]             ; 10002efa
     CALL dword ptr [EAX + 0x8]          ; 10002efc
-    MOV dword ptr [ESI],0x0             ; 10002eff | DAT_1020de40
-    MOV EAX,dword ptr [ESI + 0x4]       ; 10002f05 | DAT_1020de44 | DAT_1020de4c
+    MOV dword ptr [ESI],0x0             ; 10002eff | g_TextureSurfaces
+    MOV EAX,dword ptr [ESI + 0x4]       ; 10002f05 | g_TextureSurfaces[0].surface | g_TextureSurfaces[1].surface
         ;   Label: LAB_10002f05
     TEST EAX,EAX                        ; 10002f08
     JZ 0x10002f19                       ; 10002f0a
@@ -78,16 +78,16 @@ section .text
     PUSH EAX                            ; 10002f0c
     MOV EAX,dword ptr [EAX]             ; 10002f0d
     CALL dword ptr [EAX + 0x8]          ; 10002f0f
-    MOV dword ptr [ESI + 0x4],0x0       ; 10002f12 | DAT_1020de44
+    MOV dword ptr [ESI + 0x4],0x0       ; 10002f12 | g_TextureSurfaces[0].surface
     ADD ESI,0x8                         ; 10002f19
         ;   Label: LAB_10002f19
     CMP ESI,0x10215e40                  ; 10002f1c | DAT_10215e40
     JC 0x10002ef3                       ; 10002f22
         ;   XREF to: 10002ef3 (CONDITIONAL_JUMP)  ; LAB_10002ef3
-    MOV EDI,0x1020de40                  ; 10002f24 | DAT_1020de40
+    MOV EDI,0x1020de40                  ; 10002f24 | g_TextureSurfaces
     XOR EAX,EAX                         ; 10002f29
     MOV ECX,0x2000                      ; 10002f2b
-    STOSD.REP ES:EDI                    ; 10002f30 | DAT_1020de40 | DAT_1020de44
+    STOSD.REP ES:EDI                    ; 10002f30 | g_TextureSurfaces | g_TextureSurfaces[0].surface
     POP EDI                             ; 10002f32
     POP ESI                             ; 10002f33
     POP EBX                             ; 10002f34

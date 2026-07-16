@@ -8,21 +8,21 @@
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 10002a99
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10012178
+;   GUID g_Direct3DDeviceGUID = IDirect3DHALDevice 84e63de0-46aa-11cf-816f-0000c020156e
 ;   undefined4 DAT_100122a8
 ;   undefined4 DAT_100122b0
-;   undefined4 DAT_10014174
-;   undefined4 DAT_10014178
-;   undefined4 DAT_10014180
+;   int g_ScreenWidth = 0x280
+;   int g_ScreenHeight = 0x1e0
+;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141b8
-;   undefined4 DAT_100141dc
+;   IDirect3D3* g_Direct3D3 = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   undefined4 DAT_100141e4
 ;   TerminatedCString s_Can_t_create_hold_surfac_10016a9c
-;   undefined4 DAT_101398c8
-;   undefined4 DAT_10226a58
-;   undefined4 DAT_10226a5c
+;   int g_UseHoldBuffer = 0x0
+;   DDPIXELFORMAT g_TexturePixelFormat
+;   undefined4 g_TexturePixelFormat.dwFlags
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10002340
@@ -35,14 +35,14 @@ section .text
 
     SUB ESP,0x110                       ; 10003100
         ;   Label: dll_dx7.cpp_FUN_10003100
-    MOV EAX,[0x10014180]                ; 10003106 | DAT_10014180
-    MOV ECX,dword ptr [0x100141dc]      ; 1000310b | DAT_100141dc
+    MOV EAX,[0x10014180]                ; 10003106 | g_BackBufferSurface
+    MOV ECX,dword ptr [0x100141dc]      ; 1000310b | g_Direct3D3
     PUSH ESI                            ; 10003111
     PUSH EDI                            ; 10003112
     PUSH 0x0                            ; 10003113
     PUSH 0x100141e0                     ; 10003115 | g_Device
     PUSH EAX                            ; 1000311a
-    PUSH 0x10012178                     ; 1000311b | DAT_10012178
+    PUSH 0x10012178                     ; 1000311b | g_Direct3DDeviceGUID
     MOV EAX,dword ptr [ECX]             ; 10003120
     PUSH ECX                            ; 10003122
     CALL dword ptr [EAX + 0x20]         ; 10003123
@@ -82,7 +82,7 @@ section .text
     RET                                 ; 10003173
     PUSH 0x0                            ; 10003174
         ;   Label: LAB_10003174
-    MOV EAX,[0x100141dc]                ; 10003176 | DAT_100141dc
+    MOV EAX,[0x100141dc]                ; 10003176 | g_Direct3D3
     PUSH 0x100141e4                     ; 1000317b | DAT_100141e4
     PUSH EAX                            ; 10003180
     MOV EAX,dword ptr [EAX]             ; 10003181
@@ -116,8 +116,8 @@ section .text
     MOV ECX,0xb                         ; 100031bc
     XOR EDX,EDX                         ; 100031c1
     STOSD.REP ES:EDI                    ; 100031c3
-    MOV EAX,[0x10014174]                ; 100031c5 | DAT_10014174
-    MOV ECX,dword ptr [0x10014178]      ; 100031ca | DAT_10014178
+    MOV EAX,[0x10014174]                ; 100031c5 | g_ScreenWidth
+    MOV ECX,dword ptr [0x10014178]      ; 100031ca | g_ScreenHeight
     MOV dword ptr [ESP + 0x10],EDX      ; 100031d0
     MOV dword ptr [ESP + 0x14],EDX      ; 100031d4
     MOV dword ptr [ESP + 0x18],EAX      ; 100031d8
@@ -154,17 +154,17 @@ section .text
     PUSH ECX                            ; 1000324b
     MOV EAX,dword ptr [ECX]             ; 1000324c
     CALL dword ptr [EAX + 0x30]         ; 1000324e
-    CMP dword ptr [0x101398c8],0x0      ; 10003251 | DAT_101398c8
+    CMP dword ptr [0x101398c8],0x0      ; 10003251 | g_UseHoldBuffer
     JZ 0x1000330b                       ; 10003258
         ;   XREF to: 1000330b (CONDITIONAL_JUMP)  ; LAB_1000330b
     LEA EDI,[ESP + 0x38]                ; 1000325e
     XOR EAX,EAX                         ; 10003262
     MOV ECX,0x1f                        ; 10003264
     STOSD.REP ES:EDI                    ; 10003269
-    MOV ESI,0x10226a58                  ; 1000326b | DAT_10226a58
+    MOV ESI,0x10226a58                  ; 1000326b | g_TexturePixelFormat
     LEA EDI,[ESP + 0x80]                ; 10003270
     MOV ECX,0x8                         ; 10003277
-    MOVSD.REP ES:EDI,ESI                ; 1000327c | DAT_10226a58 | DAT_10226a5c
+    MOVSD.REP ES:EDI,ESI                ; 1000327c | g_TexturePixelFormat | g_TexturePixelFormat.dwFlags
     MOV dword ptr [ESP + 0x38],0x7c     ; 1000327e
     MOV dword ptr [ESP + 0x3c],0x1007   ; 10003286
     MOV dword ptr [ESP + 0x44],0x280    ; 1000328e

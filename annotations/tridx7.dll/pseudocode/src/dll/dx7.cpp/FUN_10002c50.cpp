@@ -10,22 +10,22 @@ uint dll_dx7_cpp_FUN_10002c50(void)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  void **ppvVar2;
+  void **ppvVar3;
   
   if (DAT_100141f4 == 0) {
     return 1;
   }
-  if (0 < DAT_10014178) {
-    puVar2 = &DAT_10225848;
-    puVar3 = DAT_10138fb4;
-    for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + 1;
-      puVar3 = puVar3 + 1;
+  if (0 < g_ScreenHeight) {
+    ppvVar2 = g_ScanlinePointers;
+    ppvVar3 = g_ScanlinePtrBase;
+    for (iVar1 = g_ScreenHeight; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *ppvVar3 = *ppvVar2;
+      ppvVar2 = ppvVar2 + 1;
+      ppvVar3 = ppvVar3 + 1;
     }
   }
-  iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_10014180);
+  iVar1 = dll_dx7_cpp_FUN_10002cb0(g_BackBufferSurface);
   if (iVar1 == 0) {
     return 0;
   }

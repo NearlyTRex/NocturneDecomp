@@ -6,101 +6,100 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void dll_dx7_cpp_FUN_10003a80(void)
 
 {
-  uint uVar1;
-  int iVar2;
+  IDirectDrawSurface *pIVar1;
+  HRESULT HVar2;
+  uint uVar3;
+  int iVar4;
   int *unaff_EBX;
-  int iVar3;
-  int *piVar4;
-  byte bVar5;
-  int *local_94;
-  int *local_90;
-  uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
-  int local_7c [3];
-  uint local_70;
-  uint local_6c;
-  uint local_58;
-  byte auStack_1c [8];
-  byte local_14 [20];
+  DWORD DVar5;
+  DDSURFACEDESC2 *pDVar6;
+  byte bVar7;
+  IDirectDrawSurface *local_94;
+  IDirectDrawSurface *local_90;
+  RECT local_8c;
+  DDSURFACEDESC2 local_7c;
   
-  bVar5 = 0;
+  bVar7 = 0;
   switch(*g_ExternalRendererBridge.texture_dimension) {
   case 0x20:
-    iVar3 = 3;
+    DVar5 = 3;
     break;
   default:
     dll_dx7_cpp_FUN_10002340("Unknown texture size");
-    iVar3 = local_7c[0];
+    DVar5 = local_7c.dwSize;
     break;
   case 0x40:
-    iVar3 = 2;
+    DVar5 = 2;
     break;
   case 0x80:
-    iVar3 = 1;
+    DVar5 = 1;
     break;
   case 0x100:
-    iVar3 = 0;
+    DVar5 = 0;
   }
   dll_dx7_cpp_FUN_10003830();
-  if (DAT_100141f0 == 0) {
-    local_94 = (int *)(&DAT_10139048)[iVar3 + DAT_100141e8 * 8];
-    local_90 = (int *)(&DAT_1020de44)[g_CurrentTextureIndex * 2];
+  if (g_DirectTextureFlag == 0) {
+    local_94 = (IDirectDrawSurface *)(&DAT_10139048)[DVar5 + DAT_100141e8 * 8];
+    local_90 = g_TextureSurfaces[g_CurrentTextureIndex].surface;
   }
   else {
-    local_90 = (int *)0x0;
-    local_94 = (int *)(&DAT_1020de44)[g_CurrentTextureIndex * 2];
+    local_90 = (IDirectDrawSurface *)0x0;
+    local_94 = g_TextureSurfaces[g_CurrentTextureIndex].surface;
   }
   while( true ) {
-    if (DAT_100141f0 == 0) {
-      local_94 = (int *)(&DAT_10139048)[iVar3 + DAT_100141e8 * 8];
+    if (g_DirectTextureFlag == 0) {
+      local_94 = (IDirectDrawSurface *)(&DAT_10139048)[DVar5 + DAT_100141e8 * 8];
     }
-    piVar4 = local_7c;
-    for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar4 = 0;
-      piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
+    pDVar6 = &local_7c;
+    for (iVar4 = 0x1f; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pDVar6->dwSize = 0;
+      pDVar6 = (DDSURFACEDESC2 *)((int)pDVar6 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    local_7c[0] = 0x7c;
-    iVar2 = dll_dx7_cpp_FUN_10002e20(local_94,local_7c);
-    if (iVar2 == 0) {
+    local_7c.dwSize = 0x7c;
+    iVar4 = dll_dx7_cpp_FUN_10002e20((int *)local_94,&local_7c.dwSize);
+    if (iVar4 == 0) {
       dll_dx7_cpp_FUN_10002340("Texture load failed: Could not lock texture buffer");
     }
-    if (DAT_10226a64 == 0x20) {
+    if (g_TexturePixelFormat.dwBitCount.dwRGBBitCount == 0x20) {
       dll_dx7_cpp_FUN_10003e40();
     }
     else {
-      dll_dx7_cpp_FUN_10003d90(local_58,local_6c,local_70);
+      dll_dx7_cpp_FUN_10003d90
+                (local_7c.lpSurface,local_7c.dwPitchOrLinearSize.lPitch,local_7c.dwWidth);
     }
-    iVar2 = dll_dx7_cpp_FUN_10002cb0(local_94);
-    if (iVar2 == 0) {
+    iVar4 = dll_dx7_cpp_FUN_10002cb0(local_94);
+    if (iVar4 == 0) {
       dll_dx7_cpp_FUN_10002340("Texture load failed: Texture buffer unlock failed");
     }
-    if (DAT_100141f0 == 0) {
-      local_88 = 0;
-      local_8c = 0;
-      local_84 = local_70;
-      local_80 = local_70;
-      uVar1 = (**(code **)(*local_90 + 0x14))(local_90,&local_8c,local_94,&local_8c,0,0);
-      dll_dx7_cpp_FUN_10001d70(uVar1);
+    if (g_DirectTextureFlag == 0) {
+      local_8c.top = 0;
+      local_8c.left = 0;
+      local_8c.right = local_7c.dwWidth;
+      local_8c.bottom = local_7c.dwWidth;
+      HVar2 = (*local_90->vtable->Blt)(local_90,&local_8c,local_94,&local_8c,0,(void *)0x0);
+      dll_dx7_cpp_FUN_10001d70(HVar2);
     }
-    if ((DAT_10060670 == 0) || (3 < iVar3)) break;
-    if (DAT_100141f0 == 0) {
-      (**(code **)(*local_90 + 0x58))(local_90,local_7c);
-      uVar1 = (**(code **)(*unaff_EBX + 0x30))(unaff_EBX,auStack_1c,&stack0xffffff68);
-      dll_dx7_cpp_FUN_10001d70(uVar1);
-      piVar4 = local_90;
+    if ((g_MipMapFlag == 0) || (3 < (int)DVar5)) break;
+    if (g_DirectTextureFlag == 0) {
+      (*local_90->vtable->GetSurfaceDesc)(local_90,&local_7c);
+      uVar3 = (**(code **)(*unaff_EBX + 0x30))
+                        (unaff_EBX,&local_7c.ddpfPixelFormat.dwBlueVMask,&stack0xffffff68);
+      dll_dx7_cpp_FUN_10001d70(uVar3);
+      pIVar1 = local_90;
     }
     else {
-      uVar1 = (**(code **)(*local_94 + 0x30))(local_94,local_14,&local_94);
-      dll_dx7_cpp_FUN_10001d70(uVar1);
-      piVar4 = local_94;
+      HVar2 = (*local_94->vtable->GetAttachedSurface)
+                        (local_94,(DDSCAPS *)&local_7c.ddsCaps,&local_94);
+      dll_dx7_cpp_FUN_10001d70(HVar2);
+      pIVar1 = local_94;
     }
-    if (piVar4 == (int *)0x0) break;
-    iVar3 = iVar3 + 1;
+    if (pIVar1 == (IDirectDrawSurface *)0x0) break;
+    DVar5 = DVar5 + 1;
   }
   DAT_100141e8 = DAT_100141e8 + 1;
   if (3 < DAT_100141e8) {

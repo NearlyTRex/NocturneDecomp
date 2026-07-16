@@ -46,7 +46,7 @@
 ;   crt_stdio.c__fclose_FUN_10005430
 ;   crt_stdio.c_fopen_FUN_10005560
 ;   crt_stdio.c_fprintf_FUN_100054d0
-;   dll_dx7.cpp_FUN_10001020
+;   dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
 ;   dll_dx7.cpp_FUN_10001440
 ;
 ; *****************************************************************************
@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [ESP + 0x18],ESI      ; 10001215
     PUSH 0x1001407c                     ; 10001219 | = "rt"
     PUSH 0x10014068                     ; 1000121e | = ".\\system\\render.ini"
-    MOV dword ptr [0x10060670],ESI      ; 10001223 | DAT_10060670
+    MOV dword ptr [0x10060670],ESI      ; 10001223 | g_MipMapFlag
     MOV dword ptr [ESP + 0x24],0x20     ; 10001229
     CALL crt_stdio.c_fopen_FUN_10005560 ; 10001231
         ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
@@ -113,7 +113,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_100054d0 ; 100012ac
         ;   XREF to: 100054d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_100054d0(_FILE * file, char * format) | _fwprintf
     ADD ESP,0xc                         ; 100012b1
-    MOV EAX,[0x10060670]                ; 100012b4 | DAT_10060670
+    MOV EAX,[0x10060670]                ; 100012b4 | g_MipMapFlag
     PUSH EAX                            ; 100012b9
     PUSH 0x100140dc                     ; 100012ba | = "mipMapFlag=%d\n"
     PUSH ESI                            ; 100012bf
@@ -159,7 +159,7 @@ section .text
     CALL dll_dx7.cpp_FUN_10001440       ; 10001330
         ;   XREF to: 10001440 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001440()
     ADD ESP,0xc                         ; 10001335
-    PUSH 0x10060670                     ; 10001338 | DAT_10060670
+    PUSH 0x10060670                     ; 10001338 | g_MipMapFlag
     PUSH 0x1001412c                     ; 1000133d | = "mipMapFlag"
     PUSH 0x10014058                     ; 10001342 | = "Textures"
     CALL dll_dx7.cpp_FUN_10001440       ; 10001347
@@ -232,8 +232,8 @@ section .text
     ADD ESI,0x4                         ; 10001417
     PUSH ECX                            ; 1000141a
     MOV ECX,dword ptr [ESP + ESI*0x1 + 0x34] ; 1000141b
-    CALL dll_dx7.cpp_FUN_10001020       ; 1000141f
-        ;   XREF to: 10001020 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001020()
+    CALL dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 ; 1000141f
+        ;   XREF to: 10001020 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache * this_ptr, int max_count, int texture_size)
     CMP ESI,0x10                        ; 10001424
     JL 0x1000140e                       ; 10001427
         ;   XREF to: 1000140e (CONDITIONAL_JUMP)  ; LAB_1000140e

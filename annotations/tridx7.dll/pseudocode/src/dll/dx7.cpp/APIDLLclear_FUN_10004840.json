@@ -18,24 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 33,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 33,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 33,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
     "success": false,
@@ -44,21 +26,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 182,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 11,
+    "pseudocode_lines": 49,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memset"
     ],
-    "total_lines": 111
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -90,21 +70,21 @@
   "globals": [
     {
       "addr": "10014174",
-      "name": "DAT_10014174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenWidth",
+      "type": "int",
+      "value": "0x280"
     },
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "10014180",
-      "name": "DAT_10014180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10014204",
@@ -267,52 +247,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(SRenderVertex *)((int)pSVar1",
       "severity": "moderate",
       "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "local_80 = DAT_10014174 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "local_4c = DAT_10014178 << 0x10;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -324,7 +264,7 @@
     },
     {
       "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 34,
       "match": "(int)pSVar1",
       "severity": "moderate",
       "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",

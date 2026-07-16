@@ -21,12 +21,6 @@
       },
       {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 21,
-        "message": "incompatible integer to pointer conversion assigning to 'uint *' (aka 'unsigned int *') from 'undefined4' (aka 'unsigned int'); take the address with &"
-      },
-      {
-        "category": "incompatible_types",
         "column": 11,
         "line": 28,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
@@ -38,13 +32,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 124,
+    "complexity_score": 74,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy"
@@ -87,15 +81,15 @@
   "globals": [
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "10014180",
-      "name": "DAT_10014180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "100141f4",
@@ -105,19 +99,19 @@
     },
     {
       "addr": "10138fb4",
-      "name": "DAT_10138fb4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScanlinePtrBase",
+      "type": "void**",
+      "value": "00000000"
     },
     {
       "addr": "10225848",
-      "name": "DAT_10225848",
-      "type": "undefined4",
+      "name": "g_ScanlinePointers",
+      "type": "void*[1024]",
       "value": null
     },
     {
       "addr": "1022584c",
-      "name": "DAT_1022584c",
+      "name": "g_ScanlinePointers[1]",
       "type": "undefined4",
       "value": null
     }
@@ -171,46 +165,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "if (0 < DAT_10014178) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_10225848",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_10225848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_10138fb4",
-      "severity": "mild",
-      "text": "puVar3 = DAT_10138fb4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_10014180",
-      "severity": "mild",
-      "text": "iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_10014180);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 25,
       "match": "DAT_100141f4",
       "severity": "mild",
@@ -222,7 +176,7 @@
       "line": 15,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = DAT_10014178; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar1 = g_ScreenHeight; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -230,7 +184,7 @@
       "line": 18,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10002c78: MOVSD.REP ES:EDI,ESI  ; DAT_10225848 | DAT_1022584c",
+      "text": "// 10002c78: MOVSD.REP ES:EDI,ESI  ; g_ScanlinePointers | g_ScanlinePointers[1]",
       "type": "unrolled_memcpy"
     }
   ]

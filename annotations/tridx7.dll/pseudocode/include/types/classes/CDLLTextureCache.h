@@ -9,7 +9,7 @@
 #pragma pack(push, 1)
 typedef struct CDLLTextureCache {
     int max_count; // 0x0
-    int unk; // 0x4
+    int texture_size; // 0x4
     int entry_count; // 0x8
     int usage_counter; // 0xc
     STextureCacheEntry entries[4096]; // 0x10

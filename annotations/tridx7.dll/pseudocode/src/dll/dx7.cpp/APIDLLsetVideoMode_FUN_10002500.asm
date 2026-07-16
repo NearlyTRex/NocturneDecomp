@@ -10,21 +10,21 @@
 ;   dll_dx7.cpp_APIDLLsetVideoMode2_FUN_10002bb0 at 10002bd2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10012178
+;   GUID g_Direct3DDeviceGUID = IDirect3DHALDevice 84e63de0-46aa-11cf-816f-0000c020156e
 ;   TerminatedCString s_Graphics_10014140
-;   undefined4 DAT_10014164
-;   undefined4 DAT_10014168
-;   undefined4 DAT_1001416c
-;   undefined4 DAT_10014170
-;   undefined4 DAT_10014174
-;   undefined4 DAT_10014178
-;   undefined4 DAT_1001417c
-;   undefined4 DAT_10014180
+;   int g_PremultiplyColorAndAlpha = 0x0
+;   int g_AllowAutoMipMapping = 0x0
+;   int g_FlyIniPresent = 0x0
+;   int g_ZBufferBitDepth = 0x0
+;   int g_ScreenWidth = 0x280
+;   int g_ScreenHeight = 0x1e0
+;   int g_ScreenBitDepth = 0x10
+;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   IDirectDrawSurface* g_PrimarySurface = 00000000
-;   undefined4 DAT_10014190
-;   undefined4 DAT_10014198
-;   undefined4 DAT_1001419c
+;   IDirectDrawSurface* g_ZBufferSurface = 00000000
+;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
+;   undefined4 g_MasterZBufferSurfaces[1]
 ;   ... and 45 more
 ;
 ; Called Functions:
@@ -64,39 +64,39 @@ section .text
     CMP dword ptr [EAX],0x0             ; 10002523
     JZ 0x1000257a                       ; 10002526
         ;   XREF to: 1000257a (CONDITIONAL_JUMP)  ; LAB_1000257a
-    MOV dword ptr [0x10226848],0x100    ; 10002528 | DAT_10226848
-    MOV dword ptr [0x1022684c],0x80     ; 10002532 | DAT_1022684c
-    MOV dword ptr [0x10226850],0x40     ; 1000253c | DAT_10226850
-    MOV dword ptr [0x10226854],0x20     ; 10002546 | DAT_10226854
-    MOV dword ptr [0x10226858],0x10     ; 10002550 | DAT_10226858
-    MOV dword ptr [0x1022685c],0x8      ; 1000255a | DAT_1022685c
-    MOV dword ptr [0x10226860],0x4      ; 10002564 | DAT_10226860
-    MOV dword ptr [0x10226864],0x2      ; 1000256e | DAT_10226864
+    MOV dword ptr [0x10226848],0x100    ; 10002528 | g_TextureSizeTable
+    MOV dword ptr [0x1022684c],0x80     ; 10002532 | g_TextureSizeTable[1]
+    MOV dword ptr [0x10226850],0x40     ; 1000253c | g_TextureSizeTable[2]
+    MOV dword ptr [0x10226854],0x20     ; 10002546 | g_TextureSizeTable[3]
+    MOV dword ptr [0x10226858],0x10     ; 10002550 | g_TextureSizeTable[4]
+    MOV dword ptr [0x1022685c],0x8      ; 1000255a | g_TextureSizeTable[5]
+    MOV dword ptr [0x10226860],0x4      ; 10002564 | g_TextureSizeTable[6]
+    MOV dword ptr [0x10226864],0x2      ; 1000256e | g_TextureSizeTable[7]
     JMP 0x100025ca                      ; 10002578
         ;   XREF to: 100025ca (UNCONDITIONAL_JUMP)  ; LAB_100025ca
-    MOV dword ptr [0x10226848],0x80     ; 1000257a | DAT_10226848
+    MOV dword ptr [0x10226848],0x80     ; 1000257a | g_TextureSizeTable
         ;   Label: LAB_1000257a
-    MOV dword ptr [0x1022684c],0x40     ; 10002584 | DAT_1022684c
-    MOV dword ptr [0x10226850],0x20     ; 1000258e | DAT_10226850
-    MOV dword ptr [0x10226854],0x10     ; 10002598 | DAT_10226854
-    MOV dword ptr [0x10226858],0x8      ; 100025a2 | DAT_10226858
-    MOV dword ptr [0x1022685c],0x4      ; 100025ac | DAT_1022685c
-    MOV dword ptr [0x10226860],0x2      ; 100025b6 | DAT_10226860
-    MOV dword ptr [0x10226864],0x1      ; 100025c0 | DAT_10226864
+    MOV dword ptr [0x1022684c],0x40     ; 10002584 | g_TextureSizeTable[1]
+    MOV dword ptr [0x10226850],0x20     ; 1000258e | g_TextureSizeTable[2]
+    MOV dword ptr [0x10226854],0x10     ; 10002598 | g_TextureSizeTable[3]
+    MOV dword ptr [0x10226858],0x8      ; 100025a2 | g_TextureSizeTable[4]
+    MOV dword ptr [0x1022685c],0x4      ; 100025ac | g_TextureSizeTable[5]
+    MOV dword ptr [0x10226860],0x2      ; 100025b6 | g_TextureSizeTable[6]
+    MOV dword ptr [0x10226864],0x1      ; 100025c0 | g_TextureSizeTable[7]
     XOR ESI,ESI                         ; 100025ca
         ;   Label: LAB_100025ca
-    PUSH 0x10226a48                     ; 100025cc | DAT_10226a48
+    PUSH 0x10226a48                     ; 100025cc | g_MasterZBufferCount
     PUSH 0x10016714                     ; 100025d1 | = "masterZBufferCount"
-    MOV dword ptr [0x10226a48],ESI      ; 100025d6 | DAT_10226a48
+    MOV dword ptr [0x10226a48],ESI      ; 100025d6 | g_MasterZBufferCount
     PUSH 0x10014140                     ; 100025dc | = "Graphics"
     CALL dll_dx7.cpp_FUN_10002b20       ; 100025e1
         ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
     ADD ESP,0xc                         ; 100025e6
-    MOV dword ptr [0x101398c8],ESI      ; 100025e9 | DAT_101398c8
-    CMP dword ptr [0x10014178],0x1e0    ; 100025ef | DAT_10014178
+    MOV dword ptr [0x101398c8],ESI      ; 100025e9 | g_UseHoldBuffer
+    CMP dword ptr [0x10014178],0x1e0    ; 100025ef | g_ScreenHeight
     JLE 0x10002612                      ; 100025f9
         ;   XREF to: 10002612 (CONDITIONAL_JUMP)  ; LAB_10002612
-    PUSH 0x101398c8                     ; 100025fb | DAT_101398c8
+    PUSH 0x101398c8                     ; 100025fb | g_UseHoldBuffer
     PUSH 0x10016728                     ; 10002600 | = "useHoldBuffer"
     PUSH 0x10014140                     ; 10002605 | = "Graphics"
     CALL dll_dx7.cpp_FUN_10002b20       ; 1000260a
@@ -104,22 +104,22 @@ section .text
     ADD ESP,0xc                         ; 1000260f
     XOR ESI,ESI                         ; 10002612
         ;   Label: LAB_10002612
-    PUSH 0x10014164                     ; 10002614 | DAT_10014164
+    PUSH 0x10014164                     ; 10002614 | g_PremultiplyColorAndAlpha
     PUSH 0x10016738                     ; 10002619 | = "premultiplyColorAndAlpha"
-    MOV dword ptr [0x10014164],ESI      ; 1000261e | DAT_10014164
+    MOV dword ptr [0x10014164],ESI      ; 1000261e | g_PremultiplyColorAndAlpha
     PUSH 0x10014140                     ; 10002624 | = "Graphics"
     CALL dll_dx7.cpp_FUN_10002b20       ; 10002629
         ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
     ADD ESP,0xc                         ; 1000262e
-    MOV dword ptr [0x100141f0],ESI      ; 10002631 | DAT_100141f0
-    PUSH 0x100141f0                     ; 10002637 | DAT_100141f0
+    MOV dword ptr [0x100141f0],ESI      ; 10002631 | g_DirectTextureFlag
+    PUSH 0x100141f0                     ; 10002637 | g_DirectTextureFlag
     PUSH 0x10016754                     ; 1000263c | = "directTextureFlag"
     PUSH 0x10014140                     ; 10002641 | = "Graphics"
     CALL dll_dx7.cpp_FUN_10002b20       ; 10002646
         ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
     ADD ESP,0xc                         ; 1000264b
-    MOV dword ptr [0x10014168],ESI      ; 1000264e | DAT_10014168
-    PUSH 0x10014168                     ; 10002654 | DAT_10014168
+    MOV dword ptr [0x10014168],ESI      ; 1000264e | g_AllowAutoMipMapping
+    PUSH 0x10014168                     ; 10002654 | g_AllowAutoMipMapping
     PUSH 0x10016768                     ; 10002659 | = "allowAutoMipMapping"
     PUSH 0x10014140                     ; 1000265e | = "Graphics"
     CALL dll_dx7.cpp_FUN_10002b20       ; 10002663
@@ -133,25 +133,25 @@ section .text
     TEST EAX,EAX                        ; 1000267d
     JZ 0x10002696                       ; 1000267f
         ;   XREF to: 10002696 (CONDITIONAL_JUMP)  ; LAB_10002696
-    MOV dword ptr [0x1001416c],0x1      ; 10002681 | DAT_1001416c
+    MOV dword ptr [0x1001416c],0x1      ; 10002681 | g_FlyIniPresent
     PUSH EAX                            ; 1000268b
     CALL crt_stdio.c__fclose_FUN_10005430 ; 1000268c
         ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(_FILE * file)
     ADD ESP,0x4                         ; 10002691
     JMP 0x100026a0                      ; 10002694
         ;   XREF to: 100026a0 (UNCONDITIONAL_JUMP)  ; LAB_100026a0
-    MOV dword ptr [0x1001416c],0x0      ; 10002696 | DAT_1001416c
+    MOV dword ptr [0x1001416c],0x0      ; 10002696 | g_FlyIniPresent
         ;   Label: LAB_10002696
     MOV ESI,dword ptr [ESP + 0x224]     ; 100026a0
         ;   Label: LAB_100026a0
-    MOV ECX,dword ptr [0x10014178]      ; 100026a7 | DAT_10014178
-    MOV dword ptr [0x10138fb4],ESI      ; 100026ad | DAT_10138fb4
+    MOV ECX,dword ptr [0x10014178]      ; 100026a7 | g_ScreenHeight
+    MOV dword ptr [0x10138fb4],ESI      ; 100026ad | g_ScanlinePtrBase
     TEST ECX,ECX                        ; 100026b3
     JLE 0x100026be                      ; 100026b5
         ;   XREF to: 100026be (CONDITIONAL_JUMP)  ; LAB_100026be
-    MOV EDI,0x10225848                  ; 100026b7 | DAT_10225848
-    MOVSD.REP ES:EDI,ESI                ; 100026bc | DAT_10225848 | DAT_1022584c
-    MOV ESI,dword ptr [0x1001417c]      ; 100026be | DAT_1001417c
+    MOV EDI,0x10225848                  ; 100026b7 | g_ScanlinePointers
+    MOVSD.REP ES:EDI,ESI                ; 100026bc | g_ScanlinePointers | g_ScanlinePointers[1]
+    MOV ESI,dword ptr [0x1001417c]      ; 100026be | g_ScreenBitDepth
         ;   Label: LAB_100026be
     CALL dll_dx7.cpp_FUN_10002370       ; 100026c4
         ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
@@ -179,9 +179,9 @@ section .text
     RET                                 ; 100026f8
     PUSH 0x0                            ; 100026f9
         ;   Label: LAB_100026f9
-    MOV EAX,[0x10014178]                ; 100026fb | DAT_10014178
+    MOV EAX,[0x10014178]                ; 100026fb | g_ScreenHeight
     PUSH 0x0                            ; 10002700
-    MOV ECX,dword ptr [0x10014174]      ; 10002702 | DAT_10014174
+    MOV ECX,dword ptr [0x10014174]      ; 10002702 | g_ScreenWidth
     PUSH ESI                            ; 10002708
     MOV EDX,dword ptr [0x10014188]      ; 10002709 | g_DirectDraw4
     PUSH EAX                            ; 1000270f
@@ -199,26 +199,26 @@ section .text
     POP EBX                             ; 10002720
     ADD ESP,0x210                       ; 10002721
     RET                                 ; 10002727
-    MOV EDI,0x10226e88                  ; 10002728 | DAT_10226e88
+    MOV EDI,0x10226e88                  ; 10002728 | g_PrimarySurfaceDesc
         ;   Label: LAB_10002728
     XOR EAX,EAX                         ; 1000272d
     MOV ECX,0x1f                        ; 1000272f
-    STOSD.REP ES:EDI                    ; 10002734 | DAT_10226e88 | DAT_10226e8c
-    MOV dword ptr [0x10226e88],0x7c     ; 10002736 | DAT_10226e88
+    STOSD.REP ES:EDI                    ; 10002734 | g_PrimarySurfaceDesc | g_PrimarySurfaceDesc.dwFlags
+    MOV dword ptr [0x10226e88],0x7c     ; 10002736 | g_PrimarySurfaceDesc
     MOV EAX,[0x1022691c]                ; 10002740 | g_ExternalRendererBridge.agp_texture_mode
-    MOV dword ptr [0x10226e8c],0x21     ; 10002745 | DAT_10226e8c
+    MOV dword ptr [0x10226e8c],0x21     ; 10002745 | g_PrimarySurfaceDesc.dwFlags
     CMP dword ptr [EAX],0x1             ; 1000274f
-    MOV dword ptr [0x10226e9c],0x2      ; 10002752 | DAT_10226e9c
+    MOV dword ptr [0x10226e9c],0x2      ; 10002752 | g_PrimarySurfaceDesc.dwBackBufferCount
     JG 0x10002768                       ; 1000275c
         ;   XREF to: 10002768 (CONDITIONAL_JUMP)  ; LAB_10002768
-    MOV dword ptr [0x10226e9c],0x1      ; 1000275e | DAT_10226e9c
+    MOV dword ptr [0x10226e9c],0x1      ; 1000275e | g_PrimarySurfaceDesc.dwBackBufferCount
     PUSH 0x0                            ; 10002768
         ;   Label: LAB_10002768
     MOV EAX,[0x10014188]                ; 1000276a | g_DirectDraw4
-    MOV dword ptr [0x10226ef0],0x6218   ; 1000276f | DAT_10226ef0
+    MOV dword ptr [0x10226ef0],0x6218   ; 1000276f | g_PrimarySurfaceDesc.ddsCaps.dwCaps
     PUSH 0x1001418c                     ; 10002779 | g_PrimarySurface
     MOV EBX,dword ptr [EAX]             ; 1000277e
-    PUSH 0x10226e88                     ; 10002780 | DAT_10226e88
+    PUSH 0x10226e88                     ; 10002780 | g_PrimarySurfaceDesc
     PUSH EAX                            ; 10002785
     CALL dword ptr [EBX + 0x18]         ; 10002786
     TEST EAX,EAX                        ; 10002789
@@ -226,10 +226,10 @@ section .text
         ;   XREF to: 100027ca (CONDITIONAL_JUMP)  ; LAB_100027ca
     PUSH 0x0                            ; 1000278d
     MOV EAX,[0x10014188]                ; 1000278f | g_DirectDraw4
-    MOV dword ptr [0x10226e9c],0x1      ; 10002794 | DAT_10226e9c
+    MOV dword ptr [0x10226e9c],0x1      ; 10002794 | g_PrimarySurfaceDesc.dwBackBufferCount
     PUSH 0x1001418c                     ; 1000279e | g_PrimarySurface
     MOV EBX,dword ptr [EAX]             ; 100027a3
-    PUSH 0x10226e88                     ; 100027a5 | DAT_10226e88
+    PUSH 0x10226e88                     ; 100027a5 | g_PrimarySurfaceDesc
     PUSH EAX                            ; 100027aa
     CALL dword ptr [EBX + 0x18]         ; 100027ab
     TEST EAX,EAX                        ; 100027ae
@@ -248,7 +248,7 @@ section .text
     RET                                 ; 100027c9
     LEA EAX,[ESP + 0x30]                ; 100027ca
         ;   Label: LAB_100027ca
-    PUSH 0x10014180                     ; 100027ce | DAT_10014180
+    PUSH 0x10014180                     ; 100027ce | g_BackBufferSurface
     PUSH EAX                            ; 100027d3
     MOV ECX,dword ptr [0x1001418c]      ; 100027d4 | g_PrimarySurface
     MOV dword ptr [ESP + 0x38],0x2004   ; 100027da
@@ -292,10 +292,10 @@ section .text
     MOV ECX,0x8                         ; 1000282b
     STOSD.REP ES:EDI                    ; 10002830
     LEA EAX,[ESP + 0x10]                ; 10002832
-    MOV ECX,dword ptr [0x100141dc]      ; 10002836 | DAT_100141dc
+    MOV ECX,dword ptr [0x100141dc]      ; 10002836 | g_Direct3D3
     PUSH EAX                            ; 1000283c
-    PUSH 0x10002b50                     ; 1000283d | LAB_10002b50
-    PUSH 0x10012178                     ; 10002842 | DAT_10012178
+    PUSH 0x10002b50                     ; 1000283d
+    PUSH 0x10012178                     ; 10002842 | g_Direct3DDeviceGUID
     MOV EAX,dword ptr [ECX]             ; 10002847
     PUSH ECX                            ; 10002849
     CALL dword ptr [EAX + 0x28]         ; 1000284a
@@ -337,8 +337,8 @@ section .text
     XOR EAX,EAX                         ; 10002897
     MOV ECX,0x1f                        ; 10002899
     STOSD.REP ES:EDI                    ; 1000289e
-    MOV EAX,[0x10014174]                ; 100028a0 | DAT_10014174
-    MOV ECX,dword ptr [0x10014178]      ; 100028a5 | DAT_10014178
+    MOV EAX,[0x10014174]                ; 100028a0 | g_ScreenWidth
+    MOV ECX,dword ptr [0x10014178]      ; 100028a5 | g_ScreenHeight
     MOV dword ptr [ESP + 0x4c],EAX      ; 100028ab
     MOV dword ptr [ESP + 0x48],ECX      ; 100028af
     LEA ESI,[ESP + 0x10]                ; 100028b3
@@ -346,7 +346,7 @@ section .text
     MOV ECX,0x8                         ; 100028be
     PUSH 0x0                            ; 100028c3
     LEA EDX,[ESP + 0x44]                ; 100028c5
-    PUSH 0x10014190                     ; 100028c9 | DAT_10014190
+    PUSH 0x10014190                     ; 100028c9 | g_ZBufferSurface
     MOV dword ptr [ESP + 0x48],0x7c     ; 100028ce
     MOV dword ptr [ESP + 0x4c],0x1007   ; 100028d6
     MOV dword ptr [ESP + 0xb0],0x20000  ; 100028de
@@ -387,15 +387,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 1000294c
         ;   Label: LAB_1000294c
     XOR EBX,EBX                         ; 10002950
-    MOV [0x10014170],EAX                ; 10002952 | DAT_10014170
-    CMP dword ptr [0x10226a48],EBX      ; 10002957 | DAT_10226a48
+    MOV [0x10014170],EAX                ; 10002952 | g_ZBufferBitDepth
+    CMP dword ptr [0x10226a48],EBX      ; 10002957 | g_MasterZBufferCount
     JLE 0x100029d9                      ; 1000295d
         ;   XREF to: 100029d9 (CONDITIONAL_JUMP)  ; LAB_100029d9
-    MOV EBP,0x10014198                  ; 1000295f | DAT_10014198
+    MOV EBP,0x10014198                  ; 1000295f | g_MasterZBufferSurfaces
     LEA EAX,[ESP + 0x40]                ; 10002964
         ;   Label: LAB_10002964
     PUSH 0x0                            ; 10002968
-    PUSH EBP                            ; 1000296a | DAT_10014198 | DAT_1001419c
+    PUSH EBP                            ; 1000296a | g_MasterZBufferSurfaces | g_MasterZBufferSurfaces[1]
     MOV ECX,dword ptr [0x10014188]      ; 1000296b | g_DirectDraw4
     PUSH EAX                            ; 10002971
     PUSH ECX                            ; 10002972
@@ -432,12 +432,12 @@ section .text
     ADD EBP,0x4                         ; 100029cd
         ;   Label: LAB_100029cd
     INC EBX                             ; 100029d0
-    CMP EBX,dword ptr [0x10226a48]      ; 100029d1 | DAT_10226a48
+    CMP EBX,dword ptr [0x10226a48]      ; 100029d1 | g_MasterZBufferCount
     JL 0x10002964                       ; 100029d7
         ;   XREF to: 10002964 (CONDITIONAL_JUMP)  ; LAB_10002964
-    MOV EAX,[0x10014190]                ; 100029d9 | DAT_10014190
+    MOV EAX,[0x10014190]                ; 100029d9 | g_ZBufferSurface
         ;   Label: LAB_100029d9
-    MOV ECX,dword ptr [0x10014180]      ; 100029de | DAT_10014180
+    MOV ECX,dword ptr [0x10014180]      ; 100029de | g_BackBufferSurface
     PUSH EAX                            ; 100029e4
     PUSH ECX                            ; 100029e5
     MOV EAX,dword ptr [ECX]             ; 100029e6
@@ -487,7 +487,7 @@ section .text
     PUSH ECX                            ; 10002a76
     CALL dword ptr [EAX + 0x14]         ; 10002a77
     LEA ECX,[ESP + 0xbc]                ; 10002a7a
-    MOV EDX,dword ptr [0x10014180]      ; 10002a81 | DAT_10014180
+    MOV EDX,dword ptr [0x10014180]      ; 10002a81 | g_BackBufferSurface
     PUSH ECX                            ; 10002a87
     PUSH 0x1000400                      ; 10002a88
     PUSH 0x0                            ; 10002a8d
@@ -501,10 +501,10 @@ section .text
     TEST EAX,EAX                        ; 10002a9e
     JNZ 0x10002adb                      ; 10002aa0
         ;   XREF to: 10002adb (CONDITIONAL_JUMP)  ; LAB_10002adb
-    MOV EAX,[0x1001417c]                ; 10002aa2 | DAT_1001417c
-    MOV ECX,dword ptr [0x10014178]      ; 10002aa7 | DAT_10014178
+    MOV EAX,[0x1001417c]                ; 10002aa2 | g_ScreenBitDepth
+    MOV ECX,dword ptr [0x10014178]      ; 10002aa7 | g_ScreenHeight
     PUSH EAX                            ; 10002aad
-    MOV EDX,dword ptr [0x10014174]      ; 10002aae | DAT_10014174
+    MOV EDX,dword ptr [0x10014174]      ; 10002aae | g_ScreenWidth
     LEA EAX,[ESP + 0x124]               ; 10002ab4
     PUSH ECX                            ; 10002abb
     PUSH EDX                            ; 10002abc

@@ -25,7 +25,7 @@ void dll_dx7_cpp_FUN_10003830(void)
   uint *local_10;
   uint local_4;
   
-  if (DAT_10226a64 == 0x20) {
+  if (g_TexturePixelFormat.dwBitCount.dwRGBBitCount == 0x20) {
     _DAT_10226a4c = _DAT_101386a8;
     _DAT_10226a54 = _DAT_10240620;
     _DAT_10139040 = _DAT_10226e80;
@@ -75,7 +75,7 @@ void dll_dx7_cpp_FUN_10003830(void)
       } while (iVar3 < iVar9);
     }
   }
-  if ((*g_ExternalRendererBridge.agp_texture_mode == 0) || (DAT_10060670 != 0)) {
+  if ((*g_ExternalRendererBridge.agp_texture_mode == 0) || (g_MipMapFlag != 0)) {
     local_10 = &DAT_101b88e0;
     for (iVar9 = *g_ExternalRendererBridge.texture_dimension; 1 < iVar9; iVar9 = iVar9 / 2) {
       puVar6 = local_10 + iVar9 * iVar9;
@@ -103,7 +103,7 @@ void dll_dx7_cpp_FUN_10003830(void)
           local_4 = local_4 - 1;
         } while (local_4 != 0);
       }
-      if ((*g_ExternalRendererBridge.agp_texture_mode == 0) && (DAT_10060670 == 0)) {
+      if ((*g_ExternalRendererBridge.agp_texture_mode == 0) && (g_MipMapFlag == 0)) {
         return;
       }
       local_10 = puVar6;

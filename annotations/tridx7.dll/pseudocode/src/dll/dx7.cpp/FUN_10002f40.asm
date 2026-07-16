@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   undefined4 DAT_10012148
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
-;   undefined4 DAT_100141dc
+;   IDirect3D3* g_Direct3D3 = 00000000
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x100141dc                     ; 10002f40 | DAT_100141dc
+    PUSH 0x100141dc                     ; 10002f40 | g_Direct3D3
         ;   Label: dll_dx7.cpp_FUN_10002f40
     MOV EAX,[0x10014188]                ; 10002f45 | g_DirectDraw4
     PUSH 0x10012148                     ; 10002f4a | DAT_10012148

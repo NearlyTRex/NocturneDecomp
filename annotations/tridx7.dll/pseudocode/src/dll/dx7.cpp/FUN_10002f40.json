@@ -20,10 +20,16 @@
         "message": "unknown type name 'PCONTEXT'"
       },
       {
+        "category": "pointer_type",
+        "column": 70,
+        "line": 15,
+        "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirect3D3 **'"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 57,
         "line": 15,
-        "message": "use of undeclared identifier 'DAT_10012148'; did you mean 'DAT_10012F48'?"
+        "message": "use of undeclared identifier 'DAT_10012148'"
       }
     ],
     "success": false,
@@ -32,13 +38,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 32,
+    "complexity_score": 22,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
@@ -86,9 +92,9 @@
     },
     {
       "addr": "100141dc",
-      "name": "DAT_100141dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Direct3D3",
+      "type": "IDirect3D3*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -162,15 +168,7 @@
       "line": 8,
       "match": "DAT_10012148",
       "severity": "mild",
-      "text": "((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,(void **)&DAT_100141dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_100141dc",
-      "severity": "mild",
-      "text": "((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,(void **)&DAT_100141dc);",
+      "text": "((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,&g_Direct3D3);",
       "type": "undefined_data"
     }
   ]

@@ -14,7 +14,7 @@
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 1000287e
 ;   dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60 at 10002e84
 ;   dll_dx7.cpp_FUN_10001d70 at 10001e21
-;   dll_dx7.cpp_FUN_10002f60 at 10003055
+;   dll_dx7.cpp_FUN_10003100 at 100032c9
 ;   ... and 4 more
 ;
 ; Referenced Globals:

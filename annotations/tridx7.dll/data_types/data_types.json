@@ -81,6 +81,10 @@
       "type":"struct"
     },
     {
+      "name":"DDSCAPS2",
+      "type":"struct"
+    },
+    {
       "name":"DDSURFACEDESC_union1",
       "type":"union"
     },
@@ -813,6 +817,10 @@
       "type":"struct"
     },
     {
+      "name":"DDSURFACEDESC2",
+      "type":"struct"
+    },
+    {
       "name":"Misc",
       "type":"union"
     },
@@ -862,6 +870,10 @@
     },
     {
       "name":"CDLLTextureCache",
+      "type":"struct"
+    },
+    {
+      "name":"STextureSurfaceSlot",
       "type":"struct"
     },
     {
@@ -3317,7 +3329,7 @@
         },
         {
           "name":"desc",
-          "type":"DDSURFACEDESC*"
+          "type":"DDSURFACEDESC2*"
         },
         {
           "name":"surface",
@@ -4507,7 +4519,7 @@
         },
         {
           "name":"surface_desc",
-          "type":"DDSURFACEDESC*"
+          "type":"DDSURFACEDESC2*"
         }
       ],
       "return_type":"HRESULT",
@@ -4565,7 +4577,7 @@
         },
         {
           "name":"surface_desc",
-          "type":"DDSURFACEDESC*"
+          "type":"DDSURFACEDESC2*"
         },
         {
           "name":"flags",
@@ -6279,7 +6291,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"texture_size",
           "offset":4,
           "type":"int"
         },
@@ -7401,6 +7413,42 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ddraw.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwCaps",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps2",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps3",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps4",
+          "offset":12,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"DDSCAPS2",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/ddraw.h",
       "desc":"",
@@ -7506,6 +7554,120 @@
       "len":108,
       "name":"DDSURFACEDESC",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ddraw.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwHeight",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwWidth",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwPitchOrLinearSize",
+          "offset":16,
+          "type":"DDSURFACEDESC_union1"
+        },
+        {
+          "len":4,
+          "name":"dwBackBufferCount",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMipMapOrRefresh",
+          "offset":24,
+          "type":"DDSURFACEDESC_union2"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaBitDepth",
+          "offset":28,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved",
+          "offset":32,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"lpSurface",
+          "offset":36,
+          "type":"LPVOID"
+        },
+        {
+          "len":8,
+          "name":"ddckCKDestOverlay",
+          "offset":40,
+          "type":"DDCOLORKEY"
+        },
+        {
+          "len":8,
+          "name":"ddckCKDestBlt",
+          "offset":48,
+          "type":"DDCOLORKEY"
+        },
+        {
+          "len":8,
+          "name":"ddckCKSrcOverlay",
+          "offset":56,
+          "type":"DDCOLORKEY"
+        },
+        {
+          "len":8,
+          "name":"ddckCKSrcBlt",
+          "offset":64,
+          "type":"DDCOLORKEY"
+        },
+        {
+          "len":32,
+          "name":"ddpfPixelFormat",
+          "offset":72,
+          "type":"DDPIXELFORMAT"
+        },
+        {
+          "len":16,
+          "name":"ddsCaps",
+          "offset":104,
+          "type":"DDSCAPS2"
+        },
+        {
+          "len":4,
+          "name":"dwTextureStage",
+          "offset":120,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":124,
+      "name":"DDSURFACEDESC2",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -10544,6 +10706,30 @@
       "importable":true,
       "len":72,
       "name":"STextureCacheEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"texture",
+          "offset":0,
+          "type":"IDirect3DTexture2*"
+        },
+        {
+          "len":4,
+          "name":"surface",
+          "offset":4,
+          "type":"IDirectDrawSurface*"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"STextureSurfaceSlot",
       "pack":false,
       "type":"struct"
     },

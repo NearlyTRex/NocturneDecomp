@@ -50,13 +50,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 974,
+    "complexity_score": 914,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 84,
+    "suspect_count": 78,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -126,39 +126,39 @@
     },
     {
       "addr": "10014164",
-      "name": "DAT_10014164",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PremultiplyColorAndAlpha",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "1001416c",
-      "name": "DAT_1001416c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FlyIniPresent",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10014170",
-      "name": "DAT_10014170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ZBufferBitDepth",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10014174",
-      "name": "DAT_10014174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenWidth",
+      "type": "int",
+      "value": "0x280"
     },
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "101398c8",
-      "name": "DAT_101398c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UseHoldBuffer",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10215e40",
@@ -414,19 +414,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_101398c8",
-      "severity": "mild",
-      "text": "if (DAT_101398c8 != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (float)DAT_10014174 * *param_2 * 0.0015625;",
+      "text": "*param_2 = (float)g_ScreenWidth * *param_2 * 0.0015625;",
       "type": "unnamed_param"
     },
     {
@@ -434,23 +426,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (float)DAT_10014174 * *param_2 * 0.0015625;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "*param_2 = (float)DAT_10014174 * *param_2 * 0.0015625;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = param_2[1] * (float)DAT_10014178 * 0.0020833334;",
+      "text": "*param_2 = (float)g_ScreenWidth * *param_2 * 0.0015625;",
       "type": "unnamed_param"
     },
     {
@@ -458,16 +434,16 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = param_2[1] * (float)DAT_10014178 * 0.0020833334;",
+      "text": "param_2[1] = param_2[1] * (float)g_ScreenHeight * 0.0020833334;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
       "line": 17,
-      "match": "DAT_10014178",
+      "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = param_2[1] * (float)DAT_10014178 * 0.0020833334;",
-      "type": "undefined_data"
+      "text": "param_2[1] = param_2[1] * (float)g_ScreenHeight * 0.0020833334;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -750,14 +726,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_10014164",
-      "severity": "mild",
-      "text": "if ((DAT_10014164 == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 71,
       "match": "param_2",
@@ -884,22 +852,6 @@
       "severity": "mild",
       "text": "param_2[2] = 1.0 - 1.0 / local_8;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_1001416c",
-      "severity": "mild",
-      "text": "else if ((DAT_1001416c == 0) || (DAT_10014170 != 0x10)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_10014170",
-      "severity": "mild",
-      "text": "else if ((DAT_1001416c == 0) || (DAT_10014170 != 0x10)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

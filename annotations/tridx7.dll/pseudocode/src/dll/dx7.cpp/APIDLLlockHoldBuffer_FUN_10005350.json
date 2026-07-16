@@ -22,20 +22,8 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 19,
+        "line": 17,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002e20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 23,
-        "message": "incompatible integer to pointer conversion assigning to 'int *' from 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_10226e98'; did you mean 'DAT_10226e88'?"
       }
     ],
     "success": false,
@@ -44,18 +32,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 104,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
     ],
-    "total_lines": 53
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -80,9 +69,9 @@
   "globals": [
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "100141b8",
@@ -92,25 +81,25 @@
     },
     {
       "addr": "10138fb4",
-      "name": "DAT_10138fb4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScanlinePtrBase",
+      "type": "void**",
+      "value": "00000000"
     },
     {
       "addr": "10226e88",
-      "name": "DAT_10226e88",
-      "type": "undefined4",
+      "name": "g_PrimarySurfaceDesc",
+      "type": "DDSURFACEDESC2",
       "value": null
     },
     {
       "addr": "10226e98",
-      "name": "DAT_10226e98",
+      "name": "g_PrimarySurfaceDesc.dwPitchOrLinearSize",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10226eac",
-      "name": "DAT_10226eac",
+      "name": "g_PrimarySurfaceDesc.lpSurface",
       "type": "undefined4",
       "value": null
     }
@@ -160,60 +149,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 10,
       "match": "DAT_100141b8",
       "severity": "mild",
-      "text": "iVar1 = dll_dx7_cpp_FUN_10002e20(DAT_100141b8,&DAT_10226e88);",
+      "text": "iVar1 = dll_dx7_cpp_FUN_10002e20(DAT_100141b8,&g_PrimarySurfaceDesc.dwSize);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10226e88",
-      "severity": "mild",
-      "text": "iVar1 = dll_dx7_cpp_FUN_10002e20(DAT_100141b8,&DAT_10226e88);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(void *)((int)pvVar2",
+      "severity": "moderate",
+      "text": "pvVar2 = (void *)((int)pvVar2 + g_PrimarySurfaceDesc.dwPitchOrLinearSize.lPitch);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "iVar1 = DAT_10014178;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_10226eac",
-      "severity": "mild",
-      "text": "iVar2 = DAT_10226eac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_10138fb4",
-      "severity": "mild",
-      "text": "piVar3 = DAT_10138fb4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "if (0 < DAT_10014178) {",
-      "type": "undefined_data"
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)pvVar2",
+      "severity": "moderate",
+      "text": "pvVar2 = (void *)((int)pvVar2 + g_PrimarySurfaceDesc.dwPitchOrLinearSize.lPitch);",
+      "type": "pointer_truncation"
     }
   ]
 }

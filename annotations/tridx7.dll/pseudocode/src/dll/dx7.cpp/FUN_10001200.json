@@ -22,7 +22,13 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 46,
+        "line": 45,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10001440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 49,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10001440'"
       }
     ],
@@ -32,18 +38,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 257,
+    "complexity_score": 241,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 16,
+    "pseudocode_lines": 86,
+    "suspect_count": 15,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 277
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -84,7 +89,7 @@
     {
       "addr": "10001020",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10001020"
+      "name": "dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020"
     },
     {
       "addr": "10001440",
@@ -215,9 +220,9 @@
     },
     {
       "addr": "10060670",
-      "name": "DAT_10060670",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MipMapFlag",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10060678",
@@ -412,67 +417,59 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_10060670",
-      "severity": "mild",
-      "text": "DAT_10060670 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_10060670",
-      "severity": "mild",
-      "text": "_fprintf(p_Var6,\"mipMapFlag=%d\\n\",DAT_10060670);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_10060670",
-      "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_10001440(\"Textures\",\"mipMapFlag\",&DAT_10060670);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)local_10 + iVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(int *)((int)local_10",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)local_10 + iVar7);",
+      "text": "iVar2 = *(int *)((int)local_10 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(int *)((int)local_10",
       "severity": "moderate",
-      "text": "iVar4 = *(int *)((int)local_10 + iVar8);",
+      "text": "*(int *)((int)local_10 + iVar5) = iVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 67,
-      "match": "(int *)((int)local_10",
+      "match": "(uint *)((int)local_30",
       "severity": "moderate",
-      "text": "*(int *)((int)local_10 + iVar7) = iVar4;",
+      "text": "uVar3 = *(uint *)((int)local_30 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(uint *)((int)local_30",
+      "match": "(int *)((int)local_10",
       "severity": "moderate",
-      "text": "uVar5 = *(uint *)((int)local_30 + iVar7);",
+      "text": "*(int *)((int)local_10 + iVar6) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(int *)((int)local_10",
+      "match": "(uint *)((int)local_30",
       "severity": "moderate",
-      "text": "*(int *)((int)local_10 + iVar8) = iVar3;",
+      "text": "*(uint *)((int)local_30 + iVar5) = *(uint *)((int)local_30 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(uint *)((int)local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_30 + iVar5) = *(uint *)((int)local_30 + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -480,63 +477,63 @@
       "line": 70,
       "match": "(uint *)((int)local_30",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_30 + iVar7) = *(uint *)((int)local_30 + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)local_30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_30 + iVar7) = *(uint *)((int)local_30 + iVar8);",
+      "text": "*(uint *)((int)local_30 + iVar6) = uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(uint *)((int)local_30",
+      "match": "(uint *)((int)local_20",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_30 + iVar8) = uVar5;",
+      "text": "uVar3 = *(uint *)((int)local_20 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(uint *)((int)local_30",
+      "match": "(uint *)((int)local_20",
       "severity": "moderate",
-      "text": "uVar5 = *(uint *)((int)local_30 + iVar7 + 0x10);",
+      "text": "*(uint *)((int)local_20 + iVar5) = *(uint *)((int)local_20 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)local_20",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + iVar5) = *(uint *)((int)local_20 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 73,
-      "match": "(uint *)((int)local_30",
+      "match": "(uint *)((int)local_20",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)local_30 + iVar8 + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)local_30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_30 + iVar7 + 0x10) = *puVar1;",
+      "text": "*(uint *)((int)local_20 + iVar6) = uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(uint *)((int)local_30",
+      "match": "(CDLLTextureCache **)((int)local_20",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)local_30 + iVar7);",
+      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar5),*(int *)((int)local_10 + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(int *)((int)local_10",
+      "severity": "moderate",
+      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar5),*(int *)((int)local_10 + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(uint *)((int)local_10",
+      "match": "(int *)((int)local_30",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)local_10 + iVar7);",
+      "text": "*(int *)((int)local_30 + iVar5));",
       "type": "pointer_cast"
     }
   ]

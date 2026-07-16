@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014190
+;   IDirectDrawSurface* g_ZBufferSurface = 00000000
 ;
 ; *****************************************************************************
 
@@ -49,7 +49,7 @@ section .text
     PUSH EAX                            ; 10004b17
     PUSH EAX                            ; 10004b18
     PUSH EDX                            ; 10004b19
-    MOV EAX,[0x10014190]                ; 10004b1a | DAT_10014190
+    MOV EAX,[0x10014190]                ; 10004b1a | g_ZBufferSurface
     PUSH EAX                            ; 10004b1f
     MOV EAX,dword ptr [EAX]             ; 10004b20
     CALL dword ptr [EAX + 0x14]         ; 10004b22

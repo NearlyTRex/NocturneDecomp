@@ -3,9 +3,9 @@
 // Function prototypes for dll/dx7.cpp
 // Generated from Ghidra function signatures
 
-// Original: dll_dx7.cpp_FUN_10001020
+// Original: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
 // Address: 10001020
-void FUN_10001020(int param_1,int param_2);
+void __ecxcall CDLLTextureCache::init(CDLLTextureCache *this_ptr,int max_count,int texture_size);
 
 // Original: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
 // Address: 10001090
@@ -75,6 +75,10 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs);
 // Address: 10002b20
 void FUN_10002b20(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
 
+// Original: dll_dx7.cpp_FUN_10002b50
+// Address: 10002b50
+undefined4 FUN_10002b50(undefined4 *param_1,undefined4 *param_2);
+
 // Original: dll_dx7.cpp_APIDLLsetVideoMode2_FUN_10002bb0
 // Address: 10002bb0
 int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **screen_buffer_array);
@@ -127,9 +131,9 @@ void FUN_10002ea0(void);
 // Address: 10002f40
 int __cdecl FUN_10002f40(void);
 
-// Original: dll_dx7.cpp_FUN_10002f60
+// Original: dll_dx7.cpp_createTexture_FUN_10002f60
 // Address: 10002f60
-int FUN_10002f60(DWORD param_1);
+int __cdecl createTexture(int texture_size);
 
 // Original: dll_dx7.cpp_FUN_10003090
 // Address: 10003090
@@ -257,7 +261,7 @@ void APIDLLGetDisplayContext(undefined4 *param_1);
 
 // Original: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
 // Address: 10004da0
-void APIDLLReleaseDisplayContext(undefined4 param_1);
+void APIDLLReleaseDisplayContext(void *param_1);
 
 // Original: dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10
 // Address: 10004e10

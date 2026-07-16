@@ -16,19 +16,19 @@
 ;   dll_dx7.cpp_FUN_10003100 at 1000330b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_100121f8
+;   GUID g_IID_IDirect3DTexture2 = IDirect3DTexture2 93281502-8cf8-11d0-89ab-00a0c9054129
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141fc
-;   undefined4 DAT_10014214
+;   int g_TextureCount = 0x0
 ;   undefined1 DAT_101386a8
 ;   undefined4 DAT_10138f30
 ;   undefined4 DAT_10139048
 ;   undefined4 DAT_1013b8d0
 ;   undefined4 DAT_101b88d8
-;   undefined4 DAT_10226848
+;   int[8] g_TextureSizeTable
 ;   undefined4 DAT_102268b0
-;   undefined4 DAT_10226a58
-;   undefined4 DAT_10226a5c
+;   DDPIXELFORMAT g_TexturePixelFormat
+;   undefined4 g_TexturePixelFormat.dwFlags
 ;   undefined4 DAT_10226a78
 ;   undefined1 DAT_10226e80
 ;   ... and 2 more
@@ -59,15 +59,15 @@ section .text
     MOV ECX,0x1f                        ; 10003423
     PUSH 0x0                            ; 10003428
     STOSD.REP ES:EDI                    ; 1000342a
-    MOV ESI,0x10226a58                  ; 1000342c | DAT_10226a58
+    MOV ESI,0x10226a58                  ; 1000342c | g_TexturePixelFormat
     LEA EDI,[ESP + 0x60]                ; 10003431
     MOV ECX,0x8                         ; 10003435
-    MOVSD.REP ES:EDI,ESI                ; 1000343a | DAT_10226a58 | DAT_10226a5c
+    MOVSD.REP ES:EDI,ESI                ; 1000343a | g_TexturePixelFormat | g_TexturePixelFormat.dwFlags
     MOV EAX,dword ptr [ESP + 0x14]      ; 1000343c
     LEA ESI,[EBP + 0x10139048]          ; 10003440 | DAT_10139048
     LEA ECX,[ESP + 0x18]                ; 10003446
     PUSH ESI                            ; 1000344a
-    MOV EAX,dword ptr [EAX + 0x10226848] ; 1000344b | DAT_10226848
+    MOV EAX,dword ptr [EAX + 0x10226848] ; 1000344b | g_TextureSizeTable
     PUSH ECX                            ; 10003451
     MOV dword ptr [ESP + 0x2c],EAX      ; 10003452
     MOV dword ptr [ESP + 0x28],EAX      ; 10003456
@@ -84,7 +84,7 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 10003488 | DAT_10139048
     LEA ECX,[EBP + 0x10138f30]          ; 1000348a | DAT_10138f30
     PUSH ECX                            ; 10003490
-    PUSH 0x100121f8                     ; 10003491 | DAT_100121f8
+    PUSH 0x100121f8                     ; 10003491 | g_IID_IDirect3DTexture2
     PUSH EAX                            ; 10003496
     MOV ESI,dword ptr [EAX]             ; 10003497
     CALL dword ptr [ESI]                ; 10003499
@@ -182,7 +182,7 @@ section .text
     RET                                 ; 10003571
     MOV dword ptr [0x1013b8d0],0x0      ; 10003572 | DAT_1013b8d0
         ;   Label: LAB_10003572
-    MOV dword ptr [0x10014214],0x0      ; 1000357c | DAT_10014214
+    MOV dword ptr [0x10014214],0x0      ; 1000357c | g_TextureCount
         ;   Label: LAB_1000357c
     MOV EAX,dword ptr [ESP + 0x68]      ; 10003586
     MOV [0x10240628],EAX                ; 1000358a | DAT_10240628

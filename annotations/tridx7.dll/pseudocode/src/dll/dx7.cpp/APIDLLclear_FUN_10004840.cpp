@@ -30,7 +30,9 @@ int __cdecl dll_dx7_cpp_APIDLLclear_FUN_10004840(void)
       pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);
     }
     local_c0.projected_vertex.transformed_x = 100;
-    (**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,&local_c0);
+    (*g_BackBufferSurface->vtable->Blt)
+              (g_BackBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
+               &local_c0);
   }
   else {
     pSVar1 = &local_c0;
@@ -39,10 +41,10 @@ int __cdecl dll_dx7_cpp_APIDLLclear_FUN_10004840(void)
       pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);
     }
     local_c0.projected_vertex.screen_x = 0;
-    local_80 = DAT_10014174 << 0x10;
+    local_80 = g_ScreenWidth << 0x10;
     local_c0.projected_vertex.screen_y = 0;
     local_7c = 0;
-    local_4c = DAT_10014178 << 0x10;
+    local_4c = g_ScreenHeight << 0x10;
     local_20 = 0;
     local_c0.projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
     local_88 = *g_ExternalRendererBridge.system_memory_size;

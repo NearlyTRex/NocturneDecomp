@@ -18,18 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 29,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 29,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -38,19 +26,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 111,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
-    "suspect_types": [
-      "displaced_global_access",
-      "undefined_data",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 76
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -75,26 +59,26 @@
   "globals": [
     {
       "addr": "10014174",
-      "name": "DAT_10014174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenWidth",
+      "type": "int",
+      "value": "0x280"
     },
     {
       "addr": "10014178",
-      "name": "DAT_10014178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScreenHeight",
+      "type": "int",
+      "value": "0x1e0"
     },
     {
       "addr": "10014190",
-      "name": "DAT_10014190",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ZBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10014198",
-      "name": "DAT_10014198",
-      "type": "undefined4",
+      "name": "g_MasterZBufferSurfaces",
+      "type": "IDirectDrawSurface*[8]",
       "value": null
     },
     {
@@ -105,9 +89,9 @@
     },
     {
       "addr": "10226a48",
-      "name": "DAT_10226a48",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MasterZBufferCount",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -191,67 +175,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_10226a48",
-      "severity": "mild",
-      "text": "if ((-1 < z_buffer_mode) && (z_buffer_mode < DAT_10226a48)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_10014198",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&DAT_10014198)[z_buffer_mode];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10014174",
-      "severity": "mild",
-      "text": "local_8 = DAT_10014174;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_10014178",
-      "severity": "mild",
-      "text": "local_4 = DAT_10014178;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*piVar1 + 0x14))(piVar1,&local_10,DAT_10014190,&local_10,0,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_10014190",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*piVar1 + 0x14))(piVar1,&local_10,DAT_10014190,&local_10,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*4 + 0x10014198] lands in DAT_10014198 but intended target is DAT_1001419c at 0x1001419c (displaced by 4 bytes)",
-      "displaced_from": "DAT_10014198",
-      "displacement": "0x10014198",
-      "instruction_address": "",
-      "intended_global": "DAT_1001419c",
-      "line": 10,
-      "match": "0x10014198",
-      "scale": 4,
-      "severity": "moderate",
-      "text": "// 10004e23: MOV EDX,dword ptr [EAX*0x4 + 0x10014198]  ; DAT_10014198",
-      "type": "displaced_global_access"
-    }
-  ]
+  "suspects": []
 }

@@ -19,9 +19,9 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
   
   *param_2 = (float)*(int *)(param_1 + 0x10) * 1.5258789e-05;
   param_2[1] = (float)*(int *)(param_1 + 0x14) * 1.5258789e-05;
-  if (DAT_101398c8 != 0) {
-    *param_2 = (float)DAT_10014174 * *param_2 * 0.0015625;
-    param_2[1] = param_2[1] * (float)DAT_10014178 * 0.0020833334;
+  if (g_UseHoldBuffer != 0) {
+    *param_2 = (float)g_ScreenWidth * *param_2 * 0.0015625;
+    param_2[1] = param_2[1] * (float)g_ScreenHeight * 0.0020833334;
   }
   local_8 = (float)*(int *)(param_1 + 8);
   iVar4 = 0xff;
@@ -74,7 +74,7 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
       iVar4 = *(int *)(param_1 + 0x2c) >> 8;
     }
     if ((param_3 & 0x200) == 0) {
-      if ((DAT_10014164 == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {
+      if ((g_PremultiplyColorAndAlpha == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {
         param_2[4] = (float)((iVar4 << 0x10 | DAT_10236908) << 8 | DAT_10236908 << 0x10 |
                             DAT_10236908);
       }
@@ -101,7 +101,7 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
     }
     param_2[2] = 1.0 - 1.0 / local_8;
   }
-  else if ((DAT_1001416c == 0) || (DAT_10014170 != 0x10)) {
+  else if ((g_FlyIniPresent == 0) || (g_ZBufferBitDepth != 0x10)) {
     param_2[2] = local_8 * _DAT_10240614;
     if (0x3f800000 < (int)param_2[2]) {
       param_2[2] = 1.0;

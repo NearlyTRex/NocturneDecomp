@@ -9,19 +9,19 @@
 void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(uint *param_1)
 
 {
-  int iVar1;
+  HRESULT HVar1;
   uint local_4;
   
                     /* 0x4d30  1  APIDLLGetDisplayContext */
   local_4 = 0;
-  if (DAT_10014180 != (int *)0x0) {
+  if (g_BackBufferSurface != (IDirectDrawSurface *)0x0) {
     if (DAT_100141f4 != 0) {
-      (**(code **)(*DAT_10014180 + 0x80))(DAT_10014180,0);
+      (*g_BackBufferSurface->vtable->Unlock)(g_BackBufferSurface,(void *)0x0);
       DAT_100141f4 = 0;
       DAT_10014230 = 1;
     }
-    iVar1 = (**(code **)(*DAT_10014180 + 0x44))(DAT_10014180,&local_4);
-    if (iVar1 != 0) {
+    HVar1 = (*g_BackBufferSurface->vtable->GetDC)(g_BackBufferSurface,&local_4);
+    if (HVar1 != 0) {
       local_4 = 0;
     }
   }
