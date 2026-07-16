@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_10001900(undefined4 param_1)
+; undefined4 FUN_10001900(GUID *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x2fc]:1  local_2fc
@@ -25,7 +25,7 @@ section .text
     PUSH EAX                            ; 10001911
     PUSH ECX                            ; 10001912
     CALL DirectDrawCreate               ; 10001913
-        ;   XREF to: 10005424 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+        ;   XREF to: 10005424 (UNCONDITIONAL_CALL)  ; HRESULT DirectDrawCreate(GUID * lpGUID, IDirectDraw * * lplpDD, IUnknown * pUnkOuter)
     TEST EAX,EAX                        ; 10001918
     JNZ 0x10001976                      ; 1000191a
         ;   XREF to: 10001976 (CONDITIONAL_JUMP)  ; LAB_10001976

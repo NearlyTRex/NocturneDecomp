@@ -11,15 +11,15 @@
 ; int *            Stack[0x14]:4   out_device_ids
 ;
 ; Referenced Globals:
-;   undefined4 DAT_101386b0
-;   undefined4 DAT_101386b4
-;   undefined4 DAT_10138ef0
-;   undefined4 DAT_10138ef4
-;   undefined4 DAT_101398d0
-;   undefined4 DAT_10139ad0
+;   uint[16] g_AdapterDeviceId
+;   undefined4 g_AdapterDeviceId[1]
+;   uint[16] g_AdapterVendorId
+;   undefined4 g_AdapterVendorId[1]
+;   char[16][512] g_AdapterDriverName
+;   undefined4 g_AdapterDriverName[1][0]
 ;   int g_AdapterCount = 0x0
-;   undefined4 DAT_10236910
-;   undefined4 DAT_10236b10
+;   char[16][512] g_AdapterDescription
+;   undefined4 g_AdapterDescription[1][0]
 ;
 ; *****************************************************************************
 
@@ -39,23 +39,23 @@ section .text
     XOR EBP,EBP                         ; 100052f4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 100052f6
     MOV EAX,dword ptr [ESP + 0x18]      ; 100052fa
-    MOV ESI,0x101386b0                  ; 100052fe | DAT_101386b0
+    MOV ESI,0x101386b0                  ; 100052fe | g_AdapterDeviceId
     MOV EDI,dword ptr [ESP + 0x24]      ; 10005303
     MOV ECX,EBX                         ; 10005307
-    MOVSD.REP ES:EDI,ESI                ; 10005309 | DAT_101386b0 | DAT_101386b4
-    MOV ESI,0x10138ef0                  ; 1000530b | DAT_10138ef0
+    MOVSD.REP ES:EDI,ESI                ; 10005309 | g_AdapterDeviceId | g_AdapterDeviceId[1]
+    MOV ESI,0x10138ef0                  ; 1000530b | g_AdapterVendorId
     MOV EDI,dword ptr [ESP + 0x20]      ; 10005310
     MOV ECX,EBX                         ; 10005314
-    MOVSD.REP ES:EDI,ESI                ; 10005316 | DAT_10138ef0 | DAT_10138ef4
-    LEA ECX,[EBP + 0x101398d0]          ; 10005318 | DAT_101398d0
+    MOVSD.REP ES:EDI,ESI                ; 10005316 | g_AdapterVendorId | g_AdapterVendorId[1]
+    LEA ECX,[EBP + 0x101398d0]          ; 10005318 | g_AdapterDriverName
         ;   Label: LAB_10005318
     ADD EBP,0x200                       ; 1000531e
-    MOV dword ptr [EAX],ECX             ; 10005324 | DAT_101398d0 | DAT_10139ad0
+    MOV dword ptr [EAX],ECX             ; 10005324 | g_AdapterDriverName | g_AdapterDriverName[1][0]
     ADD EDX,0x4                         ; 10005326
-    LEA ECX,[EBP + 0x10236710]          ; 10005329 | DAT_10236910
+    LEA ECX,[EBP + 0x10236710]          ; 10005329 | g_AdapterDescription
     ADD EAX,0x4                         ; 1000532f
     DEC EBX                             ; 10005332
-    MOV dword ptr [EDX + -0x4],ECX      ; 10005333 | DAT_10236910 | DAT_10236b10
+    MOV dword ptr [EDX + -0x4],ECX      ; 10005333 | g_AdapterDescription | g_AdapterDescription[1][0]
     JNZ 0x10005318                      ; 10005336
         ;   XREF to: 10005318 (CONDITIONAL_JUMP)  ; LAB_10005318
     MOV EAX,0x1                         ; 10005338

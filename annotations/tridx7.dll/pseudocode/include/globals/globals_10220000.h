@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 #include "types/classes/CExternalRendererBridge.h"
 
 // =============================================================================
@@ -10,6 +11,12 @@
 
 // CExternalRendererBridge
 extern CExternalRendererBridge g_ExternalRendererBridge;
+
+// GUID*[16]
+extern GUID* g_AdapterGuids[16];
+
+// GUID[16]
+extern GUID g_AdapterGuidStorage[16];
 
 // undefined1
 extern undefined1 DAT_10226a4c;
@@ -20,8 +27,6 @@ extern undefined1 DAT_10226e80;
 extern undefined4 DAT_10225848;
 extern undefined4 DAT_1022584c;
 extern undefined4 DAT_10226868;
-extern undefined4 DAT_10226870;
-extern undefined4 DAT_10226874;
 extern undefined4 DAT_10226a48;
 extern undefined4 DAT_10226a50;
 extern undefined4 DAT_10226a58;

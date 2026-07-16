@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_100121f8
-;   undefined4 DAT_10014188
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141fc
 ;   undefined4 DAT_10014214
 ;   undefined1 DAT_101386a8
@@ -74,7 +74,7 @@ section .text
     MOV dword ptr [ESP + 0x20],0x7c     ; 1000345a
     MOV dword ptr [ESP + 0x24],0x1007   ; 10003462
     MOV dword ptr [ESP + 0x88],0x1800   ; 1000346a
-    MOV EAX,[0x10014188]                ; 10003475 | DAT_10014188
+    MOV EAX,[0x10014188]                ; 10003475 | g_DirectDraw4
     PUSH EAX                            ; 1000347a
     MOV EAX,dword ptr [EAX]             ; 1000347b
     CALL dword ptr [EAX + 0x18]         ; 1000347d

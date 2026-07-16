@@ -9,8 +9,9 @@
 bool FUN_10002f40(void)
 
 {
-  int iVar1;
+  HRESULT HVar1;
   
-  iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);
-  return iVar1 == 0;
+  HVar1 = (*g_DirectDraw4->vtable->QueryInterface)
+                    ((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,(void **)&DAT_100141dc);
+  return HVar1 == 0;
 }

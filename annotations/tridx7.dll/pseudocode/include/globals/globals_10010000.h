@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
 #include "system/pe.h"
 #include "system/winbase.h"
 #include "system/winnt.h"
@@ -12,6 +13,12 @@
 
 // GUID
 extern GUID g_IID_IDirectDraw4;
+
+// IDirectDraw*
+extern IDirectDraw* g_DirectDraw;
+
+// IDirectDraw4*
+extern IDirectDraw4* g_DirectDraw4;
 
 // IMAGE_DEBUG_DIRECTORY
 extern IMAGE_DEBUG_DIRECTORY DAT_1001201C;
@@ -84,8 +91,6 @@ extern undefined4 DAT_10014174;
 extern undefined4 DAT_10014178;
 extern undefined4 DAT_1001417c;
 extern undefined4 DAT_10014180;
-extern undefined4 DAT_10014184;
-extern undefined4 DAT_10014188;
 extern undefined4 DAT_1001418c;
 extern undefined4 DAT_10014190;
 extern undefined4 DAT_10014198;

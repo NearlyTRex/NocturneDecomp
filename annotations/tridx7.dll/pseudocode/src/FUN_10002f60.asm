@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_10002f60(int param_1)
+; int FUN_10002f60(DWORD param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_100121f8
 ;   undefined4 DAT_10014168
-;   undefined4 DAT_10014188
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_10014214
 ;   TerminatedCString s_D3D_won_t_let_me_convert_10016a4c
 ;   TerminatedCString s_Too_many_textures_reques_10016a80
@@ -87,7 +87,7 @@ section .text
     MOV EAX,[0x10014214]                ; 10003009 | DAT_10014214
         ;   Label: LAB_10003009
     PUSH 0x0                            ; 1000300e
-    MOV ECX,dword ptr [0x10014188]      ; 10003010 | DAT_10014188
+    MOV ECX,dword ptr [0x10014188]      ; 10003010 | g_DirectDraw4
     LEA EDI,[EAX*0x8 + 0x1020de44]      ; 10003016 | DAT_1020de44
     LEA ESI,[EAX*0x8 + 0x1020de40]      ; 1000301d | DAT_1020de40
     PUSH EDI                            ; 10003024

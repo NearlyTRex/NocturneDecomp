@@ -21,20 +21,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 14,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 14,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 14,
+        "column": 57,
+        "line": 15,
         "message": "use of undeclared identifier 'DAT_10012148'; did you mean 'DAT_10012F48'?"
       }
     ],
@@ -44,18 +32,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 66,
+    "complexity_score": 32,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 6,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [
     {
@@ -93,9 +80,9 @@
     },
     {
       "addr": "10014188",
-      "name": "DAT_10014188",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
     },
     {
       "addr": "100141dc",
@@ -171,43 +158,19 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
+      "line": 8,
       "match": "DAT_10012148",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);",
+      "text": "((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,(void **)&DAT_100141dc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 8,
       "match": "DAT_100141dc",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)*DAT_10014188)(DAT_10014188,&DAT_10012148,&DAT_100141dc);",
+      "text": "((IUnknown *)g_DirectDraw4,(GUID *)&DAT_10012148,(void **)&DAT_100141dc);",
       "type": "undefined_data"
     }
   ]

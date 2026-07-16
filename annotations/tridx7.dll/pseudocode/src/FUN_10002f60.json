@@ -21,38 +21,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 58,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 58,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 58,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 63,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 63,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 63,
+        "column": 52,
+        "line": 64,
         "message": "use of undeclared identifier 'DAT_100121f8'; did you mean 'DAT_100141f8'?"
       }
     ],
@@ -62,24 +32,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 393,
+    "complexity_score": 344,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 29,
+    "pseudocode_lines": 64,
+    "suspect_count": 25,
     "suspect_types": [
       "displaced_global_access",
       "param_count_too_few",
-      "raw_address_constant",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
-      "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 162
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -99,7 +67,7 @@
     ],
     "convention": "unknown",
     "name": "FUN_10002f60",
-    "signature": "int FUN_10002f60(int param_1)"
+    "signature": "int FUN_10002f60(DWORD param_1)"
   },
   "function_calls": [
     {
@@ -128,9 +96,9 @@
     },
     {
       "addr": "10014188",
-      "name": "DAT_10014188",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
     },
     {
       "addr": "10014214",
@@ -313,8 +281,8 @@
       "diagnostics": [
         {
           "check_name": "bugprone-signed-char-misuse",
-          "column": 16,
-          "line": 52,
+          "column": 13,
+          "line": 50,
           "message": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first."
         }
       ],
@@ -328,52 +296,52 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_10002f60(int param_1)",
+      "text": "int FUN_10002f60(DWORD param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_10226a58",
       "severity": "mild",
-      "text": "puVar4 = &DAT_10226a58;",
+      "text": "pDVar4 = &DAT_10226a58;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = param_1 / 2;",
+      "text": "param_1 = (int)param_1 / 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = param_1 / 2;",
+      "text": "param_1 = (int)param_1 / 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_7c[2] = param_1;",
+      "text": "local_7c.dwHeight = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_7c[3] = param_1;",
+      "text": "local_7c.dwWidth = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_10060670",
       "severity": "mild",
       "text": "if (DAT_10060670 == 0) {",
@@ -381,7 +349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_10014168",
       "severity": "mild",
       "text": "if (DAT_10014168 == 0) {",
@@ -389,15 +357,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = FUN_10003090(param_1);",
+      "text": "iVar3 = FUN_10003090(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_10014214",
       "severity": "mild",
       "text": "iVar3 = DAT_10014214 * 2;",
@@ -405,42 +373,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 48,
       "match": "DAT_10014214",
       "severity": "mild",
       "text": "iVar1 = DAT_10014214 * 2;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,local_7c,&DAT_1020de44 + iVar3,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,local_7c,&DAT_1020de44 + iVar3,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,local_7c,&DAT_1020de44 + iVar3,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
+      "line": 50,
       "match": "DAT_1020de44",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,local_7c,&DAT_1020de44 + iVar3,0);",
+      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)(&DAT_1020de44 + iVar3),",
       "type": "undefined_data"
     },
     {
@@ -448,36 +392,28 @@
       "line": 55,
       "match": "DAT_1020de44",
       "severity": "mild",
-      "text": "puVar4 = (uint *)(&DAT_1020de44)[iVar3];",
+      "text": "this_ptr = (IDirectDrawSurface *)(&DAT_1020de44)[iVar3];",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)*puVar4)(puVar4,&DAT_100121f8,&DAT_1020de40 + iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_100121f8",
       "severity": "mild",
-      "text": "iVar3 = (**(code **)*puVar4)(puVar4,&DAT_100121f8,&DAT_1020de40 + iVar1);",
+      "text": "((IUnknown *)this_ptr,(GUID *)&DAT_100121f8,(void **)(&DAT_1020de40 + iVar1));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_1020de40",
       "severity": "mild",
-      "text": "iVar3 = (**(code **)*puVar4)(puVar4,&DAT_100121f8,&DAT_1020de40 + iVar1);",
+      "text": "((IUnknown *)this_ptr,(GUID *)&DAT_100121f8,(void **)(&DAT_1020de40 + iVar1));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_10014214",
       "severity": "mild",
       "text": "iVar3 = DAT_10014214;",
@@ -485,15 +421,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_10014214",
-      "severity": "mild",
-      "text": "DAT_10014214 = DAT_10014214 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
+      "line": 62,
       "match": "DAT_10014214",
       "severity": "mild",
       "text": "DAT_10014214 = DAT_10014214 + 1;",
@@ -504,24 +432,32 @@
       "line": 62,
       "match": "DAT_10014214",
       "severity": "mild",
+      "text": "DAT_10014214 = DAT_10014214 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_10014214",
+      "severity": "mild",
       "text": "if (0x1000 < DAT_10014214) {",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x405008 assigned to bare local `local_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
-      "match": "0x405008",
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar5->owner`). Replace `pDVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 17,
+      "match": "pDVar5 = (T *)&pDVar5->FIELD",
       "severity": "moderate",
-      "text": "local_14 = 0x405008;",
-      "type": "raw_address_constant"
+      "text": "pDVar5 = (DDSURFACEDESC *)&pDVar5->dwFlags;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 23,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar6->owner`). Replace `pDVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pDVar6 = (T *)&pDVar6->FIELD",
       "severity": "moderate",
-      "text": "for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pDVar6 = (DDPIXELFORMAT *)&pDVar6->dwFlags;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memset (REP STOSD at 10002f70, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
@@ -570,10 +506,10 @@
     },
     {
       "description": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first.",
-      "line": 52,
+      "line": 50,
       "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
       "severity": "moderate",
-      "text": "local_64 = FUN_10003090(param_1);",
+      "text": "iVar3 = FUN_10003090(param_1);",
       "type": "static_signed_char_misuse"
     }
   ]

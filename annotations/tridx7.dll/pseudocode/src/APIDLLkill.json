@@ -18,66 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 14,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 15,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 15,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 15,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 16,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'int *'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 18,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 19,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 19,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 19,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'int *'"
       }
     ],
     "success": false,
@@ -86,17 +26,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 124,
+    "complexity_score": 14,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 10,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 37
   },
   "cross_references": [
@@ -135,15 +72,15 @@
   "globals": [
     {
       "addr": "10014184",
-      "name": "DAT_10014184",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw",
+      "type": "IDirectDraw*",
+      "value": "00000000"
     },
     {
       "addr": "10014188",
-      "name": "DAT_10014188",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
     }
   ],
   "pcode_summary": {
@@ -176,86 +113,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "if (DAT_10014188 != (int *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014188 + 8))(DAT_10014188);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014188 + 8))(DAT_10014188);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014188 + 8))(DAT_10014188);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "DAT_10014188 = (int *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_10014184",
-      "severity": "mild",
-      "text": "if (DAT_10014184 != (int *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_10014184 + 8))(DAT_10014184);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014184",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014184 + 8))(DAT_10014184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_10014184",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_10014184 + 8))(DAT_10014184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_10014184",
-      "severity": "mild",
-      "text": "DAT_10014184 = (int *)0x0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

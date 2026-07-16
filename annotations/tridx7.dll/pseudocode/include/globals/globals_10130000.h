@@ -11,16 +11,19 @@
 // HWND
 extern HWND g_WindowHandle;
 
+// char[16][512]
+extern char g_AdapterDriverName[16][512];
+
+// uint[16]
+extern uint g_AdapterDeviceId[16];
+extern uint g_AdapterVendorId[16];
+
 // undefined1
 extern undefined1 DAT_101386a8;
 extern undefined1 DAT_10139040;
 
 // undefined4
-extern undefined4 DAT_101386b0;
-extern undefined4 DAT_101386b4;
 extern undefined4 DAT_101386f0;
-extern undefined4 DAT_10138ef0;
-extern undefined4 DAT_10138ef4;
 extern undefined4 DAT_10138f30;
 extern undefined4 DAT_10138f34;
 extern undefined4 DAT_10138f50;
@@ -35,5 +38,4 @@ extern undefined4 DAT_101390cc;
 extern undefined4 DAT_101394c8;
 extern undefined4 DAT_101394cc;
 extern undefined4 DAT_101398c8;
-extern undefined4 DAT_101398d0;
 

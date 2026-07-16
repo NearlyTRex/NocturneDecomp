@@ -18,18 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "pointer_type",
-        "column": 14,
-        "line": 21,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      },
-      {
-        "category": "pointer_type",
-        "column": 14,
-        "line": 27,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       }
     ],
     "success": false,
@@ -38,17 +26,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 183,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 13,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 73
@@ -70,37 +56,37 @@
   "globals": [
     {
       "addr": "101386b0",
-      "name": "DAT_101386b0",
-      "type": "undefined4",
+      "name": "g_AdapterDeviceId",
+      "type": "uint[16]",
       "value": null
     },
     {
       "addr": "101386b4",
-      "name": "DAT_101386b4",
+      "name": "g_AdapterDeviceId[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10138ef0",
-      "name": "DAT_10138ef0",
-      "type": "undefined4",
+      "name": "g_AdapterVendorId",
+      "type": "uint[16]",
       "value": null
     },
     {
       "addr": "10138ef4",
-      "name": "DAT_10138ef4",
+      "name": "g_AdapterVendorId[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "101398d0",
-      "name": "DAT_101398d0",
-      "type": "undefined4",
+      "name": "g_AdapterDriverName",
+      "type": "char[16][512]",
       "value": null
     },
     {
       "addr": "10139ad0",
-      "name": "DAT_10139ad0",
+      "name": "g_AdapterDriverName[1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -112,13 +98,13 @@
     },
     {
       "addr": "10236910",
-      "name": "DAT_10236910",
-      "type": "undefined4",
+      "name": "g_AdapterDescription",
+      "type": "char[16][512]",
       "value": null
     },
     {
       "addr": "10236b10",
-      "name": "DAT_10236b10",
+      "name": "g_AdapterDescription[1][0]",
       "type": "undefined4",
       "value": null
     }
@@ -206,60 +192,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_101386b0",
-      "severity": "mild",
-      "text": "piVar4 = &DAT_101386b0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10138ef0",
-      "severity": "mild",
-      "text": "piVar4 = &DAT_10138ef0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_101398d0",
-      "severity": "mild",
-      "text": "*(int *)enum_data_buffer = (int)&DAT_101398d0 + iVar3;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(void *)((int)enum_data_buffer",
       "severity": "moderate",
       "text": "enum_data_buffer = (void *)((int)enum_data_buffer + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_10236910",
-      "severity": "mild",
-      "text": "*out_card_names = (char *)((int)&DAT_10236910 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_101398d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
-      "match": "(int)&DAT_101398d0",
-      "severity": "moderate",
-      "text": "*(int *)enum_data_buffer = (int)&DAT_101398d0 + iVar3;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_10236910` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)&DAT_10236910",
-      "severity": "moderate",
-      "text": "*out_card_names = (char *)((int)&DAT_10236910 + iVar3);",
-      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -278,27 +216,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(int *)enum_data_buffer = (int)&DAT_101398d0 + iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*out_card_names = (char *)((int)&DAT_10236910 + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom inline memcpy (REP MOVSD at 10005309, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 18,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10005309: MOVSD.REP ES:EDI,ESI  ; DAT_101386b0 | DAT_101386b4",
+      "text": "// 10005309: MOVSD.REP ES:EDI,ESI  ; g_AdapterDeviceId | g_AdapterDeviceId[1]",
       "type": "unrolled_memcpy"
     },
     {
@@ -306,7 +228,7 @@
       "line": 22,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10005316: MOVSD.REP ES:EDI,ESI  ; DAT_10138ef0 | DAT_10138ef4",
+      "text": "// 10005316: MOVSD.REP ES:EDI,ESI  ; g_AdapterVendorId | g_AdapterVendorId[1]",
       "type": "unrolled_memcpy"
     }
   ]

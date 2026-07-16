@@ -8,20 +8,20 @@
 ;   APIDLLinit at 10001a9d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_101398d0
-;   undefined4 DAT_101398d4
-;   undefined4 DAT_101398d6
-;   undefined4 DAT_101399cf
+;   char[16][512] g_AdapterDriverName
+;   undefined4 g_AdapterDriverName[0][4]
+;   undefined4 g_AdapterDriverName[0][6]
+;   undefined4 g_AdapterDriverName[0][255]
 ;   int g_AdapterCount = 0x0
-;   undefined4 DAT_10226870
-;   undefined4 DAT_10226948
-;   undefined4 DAT_1022694c
-;   undefined4 DAT_10226950
-;   undefined4 DAT_10226954
-;   undefined4 DAT_10236910
-;   undefined4 DAT_10236914
-;   undefined4 DAT_10236916
-;   undefined4 DAT_10236a0f
+;   GUID*[16] g_AdapterGuids
+;   GUID[16] g_AdapterGuidStorage
+;   undefined4 g_AdapterGuidStorage[0]+4
+;   undefined4 g_AdapterGuidStorage[0]+8
+;   undefined4 g_AdapterGuidStorage[0]+0xc
+;   char[16][512] g_AdapterDescription
+;   undefined4 g_AdapterDescription[0][4]
+;   undefined4 g_AdapterDescription[0][6]
+;   undefined4 g_AdapterDescription[0][255]
 ;
 ; Called Functions:
 ;   FUN_10001900
@@ -65,11 +65,11 @@ section .text
     SHL EAX,0x9                         ; 100017fc
     SHR ECX,0x2                         ; 100017ff
     MOV ESI,EDI                         ; 10001802
-    LEA EDI,[EAX + 0x101398d0]          ; 10001804 | DAT_101398d0
-    MOVSD.REP ES:EDI,ESI                ; 1000180a | DAT_101398d0
+    LEA EDI,[EAX + 0x101398d0]          ; 10001804 | g_AdapterDriverName
+    MOVSD.REP ES:EDI,ESI                ; 1000180a | g_AdapterDriverName
     MOV ECX,EBP                         ; 1000180c
     AND ECX,0x3                         ; 1000180e
-    MOVSB.REP ES:EDI,ESI                ; 10001811 | DAT_101398d0
+    MOVSB.REP ES:EDI,ESI                ; 10001811 | g_AdapterDriverName
     JMP 0x10001837                      ; 10001813
         ;   XREF to: 10001837 (UNCONDITIONAL_JUMP)  ; LAB_10001837
     MOV EDX,dword ptr [0x1020de34]      ; 10001815 | g_AdapterCount
@@ -77,11 +77,11 @@ section .text
     MOV ECX,0x3f                        ; 1000181b
     MOV EAX,EDX                         ; 10001820
     SHL EAX,0x9                         ; 10001822
-    LEA EDI,[EAX + 0x101398d0]          ; 10001825 | DAT_101398d0
-    MOVSD.REP ES:EDI,ESI                ; 1000182b | DAT_101398d0 | DAT_101398d4
-    MOVSW ES:EDI,ESI                    ; 1000182d | DAT_101398d4
-    MOVSB ES:EDI,ESI                    ; 1000182f | DAT_101398d6
-    MOV byte ptr [EAX + 0x101399cf],0x0 ; 10001830 | DAT_101399cf
+    LEA EDI,[EAX + 0x101398d0]          ; 10001825 | g_AdapterDriverName
+    MOVSD.REP ES:EDI,ESI                ; 1000182b | g_AdapterDriverName | g_AdapterDriverName[0][4]
+    MOVSW ES:EDI,ESI                    ; 1000182d | g_AdapterDriverName[0][4]
+    MOVSB ES:EDI,ESI                    ; 1000182f | g_AdapterDriverName[0][6]
+    MOV byte ptr [EAX + 0x101399cf],0x0 ; 10001830 | g_AdapterDriverName[0][255]
     MOV ESI,dword ptr [ESP + 0x18]      ; 10001837
         ;   Label: LAB_10001837
     MOV ECX,0xffffffff                  ; 1000183b
@@ -104,42 +104,42 @@ section .text
     SHL EAX,0x9                         ; 10001864
     SHR ECX,0x2                         ; 10001867
     MOV ESI,EDI                         ; 1000186a
-    LEA EDI,[EAX + 0x10236910]          ; 1000186c | DAT_10236910
-    MOVSD.REP ES:EDI,ESI                ; 10001872 | DAT_10236910
+    LEA EDI,[EAX + 0x10236910]          ; 1000186c | g_AdapterDescription
+    MOVSD.REP ES:EDI,ESI                ; 10001872 | g_AdapterDescription
     MOV ECX,EBP                         ; 10001874
     AND ECX,0x3                         ; 10001876
-    MOVSB.REP ES:EDI,ESI                ; 10001879 | DAT_10236910
+    MOVSB.REP ES:EDI,ESI                ; 10001879 | g_AdapterDescription
     JMP 0x10001899                      ; 1000187b
         ;   XREF to: 10001899 (UNCONDITIONAL_JUMP)  ; LAB_10001899
     MOV EAX,EDX                         ; 1000187d
         ;   Label: LAB_1000187d
     MOV ECX,0x3f                        ; 1000187f
     SHL EAX,0x9                         ; 10001884
-    LEA EDI,[EAX + 0x10236910]          ; 10001887 | DAT_10236910
-    MOVSD.REP ES:EDI,ESI                ; 1000188d | DAT_10236910 | DAT_10236914
-    MOVSW ES:EDI,ESI                    ; 1000188f | DAT_10236914
-    MOVSB ES:EDI,ESI                    ; 10001891 | DAT_10236916
-    MOV byte ptr [EAX + 0x10236a0f],0x0 ; 10001892 | DAT_10236a0f
+    LEA EDI,[EAX + 0x10236910]          ; 10001887 | g_AdapterDescription
+    MOVSD.REP ES:EDI,ESI                ; 1000188d | g_AdapterDescription | g_AdapterDescription[0][4]
+    MOVSW ES:EDI,ESI                    ; 1000188f | g_AdapterDescription[0][4]
+    MOVSB ES:EDI,ESI                    ; 10001891 | g_AdapterDescription[0][6]
+    MOV byte ptr [EAX + 0x10236a0f],0x0 ; 10001892 | g_AdapterDescription[0][255]
     TEST EBX,EBX                        ; 10001899
         ;   Label: LAB_10001899
     JNZ 0x100018aa                      ; 1000189b
         ;   XREF to: 100018aa (CONDITIONAL_JUMP)  ; LAB_100018aa
-    MOV dword ptr [EDX*0x4 + 0x10226870],0x0 ; 1000189d | DAT_10226870
+    MOV dword ptr [EDX*0x4 + 0x10226870],0x0 ; 1000189d | g_AdapterGuids
     JMP 0x100018d2                      ; 100018a8
         ;   XREF to: 100018d2 (UNCONDITIONAL_JUMP)  ; LAB_100018d2
     MOV EAX,EDX                         ; 100018aa
         ;   Label: LAB_100018aa
     SHL EAX,0x4                         ; 100018ac
-    LEA ECX,[EAX + 0x10226948]          ; 100018af | DAT_10226948
+    LEA ECX,[EAX + 0x10226948]          ; 100018af | g_AdapterGuidStorage
     MOV EAX,dword ptr [EBX]             ; 100018b5
-    MOV dword ptr [ECX],EAX             ; 100018b7 | DAT_10226948
-    MOV dword ptr [EDX*0x4 + 0x10226870],ECX ; 100018b9 | DAT_10226870
+    MOV dword ptr [ECX],EAX             ; 100018b7 | g_AdapterGuidStorage
+    MOV dword ptr [EDX*0x4 + 0x10226870],ECX ; 100018b9 | g_AdapterGuids
     MOV EBP,dword ptr [EBX + 0x4]       ; 100018c0
-    MOV dword ptr [ECX + 0x4],EBP       ; 100018c3 | DAT_1022694c
+    MOV dword ptr [ECX + 0x4],EBP       ; 100018c3 | g_AdapterGuidStorage[0]+4
     MOV EAX,dword ptr [EBX + 0x8]       ; 100018c6
-    MOV dword ptr [ECX + 0x8],EAX       ; 100018c9 | DAT_10226950
+    MOV dword ptr [ECX + 0x8],EAX       ; 100018c9 | g_AdapterGuidStorage[0]+8
     MOV EBX,dword ptr [EBX + 0xc]       ; 100018cc
-    MOV dword ptr [ECX + 0xc],EBX       ; 100018cf | DAT_10226954
+    MOV dword ptr [ECX + 0xc],EBX       ; 100018cf | g_AdapterGuidStorage[0]+0xc
     INC EDX                             ; 100018d2
         ;   Label: LAB_100018d2
     MOV dword ptr [0x1020de34],EDX      ; 100018d3 | g_AdapterCount

@@ -8,14 +8,72 @@
         "start":"10005424"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
     "name":"DirectDrawCreate",
-    "ret":"undefined1",
+    "ret":"HRESULT",
     "thtarget":"EXTERNAL:00000047",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"lpGUID",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"GUID*"
+        },
+        {
+          "name":"lplpDD",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"IDirectDraw**"
+        },
+        {
+          "name":"pUnkOuter",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"IUnknown*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

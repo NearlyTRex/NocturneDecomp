@@ -8,14 +8,72 @@
         "start":"1000542a"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
     "name":"DirectDrawEnumerateExA",
-    "ret":"undefined1",
+    "ret":"HRESULT",
     "thtarget":"EXTERNAL:00000046",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"lpCallback",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DDENUMCALLBACKEXA*"
+        },
+        {
+          "name":"lpContext",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"dwFlags",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

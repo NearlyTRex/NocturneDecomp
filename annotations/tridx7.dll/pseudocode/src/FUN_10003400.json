@@ -21,99 +21,99 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
-        "line": 53,
+        "column": 39,
+        "line": 48,
         "message": "use of undeclared identifier 'DAT_10226848'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 58,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 58,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 58,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 64,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 64,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 64,
+        "column": 56,
+        "line": 61,
         "message": "use of undeclared identifier 'DAT_100121f8'; did you mean 'DAT_100141f8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 73,
+        "line": 71,
         "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 75,
+        "line": 74,
         "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 75,
+        "line": 74,
         "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 77,
+        "line": 76,
         "message": "use of undeclared identifier '_DAT_10226a78'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 69,
-        "line": 77,
+        "column": 78,
+        "line": 79,
         "message": "use of undeclared identifier '_DAT_101386a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 78,
+        "line": 81,
         "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 80,
+        "line": 84,
         "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 80,
+        "line": 84,
         "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 82,
-        "message": "use of undeclared identifier '_DAT_102268b0'; did you mean 'DAT_10226870'?"
+        "line": 86,
+        "message": "use of undeclared identifier '_DAT_102268b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 80,
+        "line": 89,
+        "message": "use of undeclared identifier '_DAT_10240620'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 91,
+        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 94,
+        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 94,
+        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 96,
+        "message": "use of undeclared identifier '_DAT_101b88d8'; did you mean 'DAT_101b88e8'?"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 344,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
+    "pseudocode_lines": 102,
     "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 243
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -181,9 +180,9 @@
     },
     {
       "addr": "10014188",
-      "name": "DAT_10014188",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
     },
     {
       "addr": "100141fc",
@@ -391,51 +390,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_10003400.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 74,
-          "message": "Uninitialized variable: uStack_24",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 79,
-          "message": "Uninitialized variable: uStack_20",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 84,
-          "message": "Uninitialized variable: uStack_1c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 92,
-          "message": "Uninitialized variable: uStack_18",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 23,
-          "line": 95,
-          "message": "Uninitialized variable: uStack_28",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -446,43 +400,43 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(DDSURFACEDESC *)((int)pDVar9",
+      "severity": "moderate",
+      "text": "pDVar9 = (DDSURFACEDESC *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 34,
       "match": "DAT_10226a58",
       "severity": "mild",
-      "text": "puVar5 = &DAT_10226a58;",
+      "text": "pDVar8 = &DAT_10226a58;",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(DDPIXELFORMAT *)((int)pDVar10",
+      "severity": "moderate",
+      "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 41,
       "match": "DAT_10226848",
       "severity": "mild",
-      "text": "local_74 = *(uint *)(&DAT_10226848 + local_80);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*DAT_10014188 + 0x18))",
+      "text": "local_7c.dwHeight = *(DWORD *)(&DAT_10226848 + local_80);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_10014188",
+      "line": 47,
+      "match": "DAT_10139048",
       "severity": "mild",
-      "text": "(DAT_10014188,&local_7c,(uint *)((int)&DAT_10139048 + iVar4),0);",
+      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
       "type": "undefined_data"
     },
     {
@@ -490,44 +444,28 @@
       "line": 52,
       "match": "DAT_10139048",
       "severity": "mild",
-      "text": "(DAT_10014188,&local_7c,(uint *)((int)&DAT_10139048 + iVar4),0);",
+      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_10139048",
-      "severity": "mild",
-      "text": "puVar5 = *(uint **)((int)&DAT_10139048 + iVar4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
+      "line": 54,
       "match": "DAT_100121f8",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);",
+      "text": "((IUnknown *)this_ptr,(GUID *)&DAT_100121f8,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_10138f30",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);",
+      "text": "(void **)((int)&DAT_10138f30 + iVar7));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 94,
       "match": "DAT_100141fc",
       "severity": "mild",
       "text": "if (DAT_100141fc == 0) {",
@@ -535,74 +473,90 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 100,
       "match": "DAT_10014214",
       "severity": "mild",
       "text": "DAT_10014214 = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
-      "match": "(int)&DAT_10139048",
+      "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)pDVar9",
       "severity": "moderate",
-      "text": "(DAT_10014188,&local_7c,(uint *)((int)&DAT_10139048 + iVar4),0);",
+      "text": "pDVar9 = (DDSURFACEDESC *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)pDVar10",
+      "severity": "moderate",
+      "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 47,
       "match": "(int)&DAT_10139048",
       "severity": "moderate",
-      "text": "puVar5 = *(uint **)((int)&DAT_10139048 + iVar4);",
+      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&DAT_10139048",
+      "severity": "moderate",
+      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_10138f30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 55,
       "match": "(int)&DAT_10138f30",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);",
+      "text": "(void **)((int)&DAT_10138f30 + iVar7));",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 35,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(DAT_10014188,&local_7c,(uint *)((int)&DAT_10139048 + iVar4),0);",
+      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar5 = *(uint **)((int)&DAT_10139048 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);",
+      "text": "(void **)((int)&DAT_10138f30 + iVar7));",
       "type": "pointer_cast"
     },
     {
@@ -612,46 +566,6 @@
       "severity": "moderate",
       "text": "// 1000342a: STOSD.REP ES:EDI",
       "type": "unrolled_memset"
-    },
-    {
-      "description": "Uninitialized variable: uStack_24",
-      "line": 74,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "for (uVar1 = uStack_24; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: uStack_20",
-      "line": 79,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "for (uVar1 = uStack_20; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: uStack_1c",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "for (uVar1 = uStack_1c; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: uStack_18",
-      "line": 92,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_1013b8d0 = uStack_18;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: uStack_28",
-      "line": 95,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_10240628 = uStack_28;",
-      "type": "static_uninitvar"
     }
   ]
 }

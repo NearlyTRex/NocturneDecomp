@@ -22,97 +22,97 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 35,
+        "line": 37,
         "message": "use of undeclared identifier 'DAT_10012178'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 36,
+        "line": 38,
         "message": "incompatible integer to pointer conversion assigning to 'int *' from 'undefined4' (aka 'unsigned int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 38,
+        "line": 40,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 38,
+        "line": 40,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 38,
+        "line": 40,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 44,
+        "line": 46,
         "message": "use of undeclared identifier 'LAB_10003340'; did you mean 'DAT_10003D40'?"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 45,
+        "line": 47,
         "message": "incompatible integer to pointer conversion assigning to 'int *' from 'undefined4' (aka 'unsigned int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 47,
+        "line": 49,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 47,
+        "line": 49,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 47,
+        "line": 49,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 56,
+        "line": 58,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 56,
+        "line": 58,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 56,
+        "line": 58,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 60,
+        "line": 62,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 60,
+        "line": 62,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 60,
+        "line": 62,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
@@ -122,20 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 569,
+    "complexity_score": 543,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 44,
+    "pseudocode_lines": 113,
+    "suspect_count": 41,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 298
+    "total_lines": 302
   },
   "cross_references": [
     {
@@ -213,9 +213,9 @@
     },
     {
       "addr": "10014188",
-      "name": "DAT_10014188",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
     },
     {
       "addr": "100141b8",
@@ -333,7 +333,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 28,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "puStack_120 = &DAT_100141e0;",
@@ -341,15 +341,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 29,
       "match": "DAT_10014180",
       "severity": "mild",
-      "text": "uStack_124 = DAT_10014180;",
+      "text": "DStack_124 = DAT_10014180;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 30,
       "match": "DAT_10012178",
       "severity": "mild",
       "text": "puStack_128 = &DAT_10012178;",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 31,
       "match": "DAT_100141dc",
       "severity": "mild",
       "text": "piStack_12c = DAT_100141dc;",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 33,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 33,
       "match": "DAT_100141dc",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
@@ -381,7 +381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "piStack_138 = DAT_100141e0;",
@@ -389,7 +389,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x20))();",
@@ -397,7 +397,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 42,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x20))();",
@@ -405,7 +405,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_100141e4",
       "severity": "mild",
       "text": "puStack_140 = &DAT_100141e4;",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_100141dc",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_100141dc",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 55,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 55,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 55,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 55,
       "match": "DAT_100141e4",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 66,
       "match": "DAT_10014174",
       "severity": "mild",
       "text": "puStack_134 = (byte *)DAT_10014174;",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 67,
       "match": "DAT_10014178",
       "severity": "mild",
       "text": "puStack_130 = (uint *)DAT_10014178;",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 71,
       "match": "DAT_10014178",
       "severity": "mild",
       "text": "puStack_120 = (uint *)(((float)DAT_10014178 / (float)DAT_10014174) * 2.0);",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 71,
       "match": "DAT_10014174",
       "severity": "mild",
       "text": "puStack_120 = (uint *)(((float)DAT_10014178 / (float)DAT_10014174) * 2.0);",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 74,
       "match": "DAT_100141e4",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 74,
       "match": "DAT_100141e4",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
+      "line": 78,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 78,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 78,
       "match": "DAT_100141e0",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 78,
       "match": "DAT_100141e4",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 79,
       "match": "DAT_101398c8",
       "severity": "mild",
       "text": "if (DAT_101398c8 != 0) {",
@@ -565,47 +565,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 85,
       "match": "DAT_10226a58",
       "severity": "mild",
-      "text": "puVar2 = &DAT_10226a58;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "text": "puVar3 = &DAT_10226a58;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_10014188",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
+      "line": 98,
       "match": "DAT_100141b8",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "text": "(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
+      "line": 108,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
@@ -613,7 +589,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 108,
       "match": "DAT_100141b8",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
@@ -621,7 +597,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 108,
       "match": "DAT_100141b8",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
@@ -629,7 +605,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 58,
+      "line": 60,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -637,7 +613,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 79,
+      "line": 81,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -645,7 +621,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 87,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -653,7 +629,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 99,
+      "line": 103,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",

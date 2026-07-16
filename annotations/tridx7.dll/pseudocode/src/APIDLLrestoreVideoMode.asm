@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10014184
-;   undefined4 DAT_10014188
+;   IDirectDraw* g_DirectDraw = 00000000
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141f8
 ;   TerminatedCString s_Cannot_unlock_back_buffe_10016a14
 ;   HWND g_WindowHandle = 00000000
@@ -36,19 +36,19 @@ section .text
     CALL FUN_10002340                   ; 10002bf8
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined FUN_10002340()
     ADD ESP,0x4                         ; 10002bfd
-    MOV EAX,[0x10014184]                ; 10002c00 | DAT_10014184
+    MOV EAX,[0x10014184]                ; 10002c00 | g_DirectDraw
         ;   Label: LAB_10002c00
     PUSH EAX                            ; 10002c05
     MOV ESI,dword ptr [EAX]             ; 10002c06
     CALL dword ptr [ESI + 0x28]         ; 10002c08
-    MOV ECX,dword ptr [0x10014188]      ; 10002c0b | DAT_10014188
+    MOV ECX,dword ptr [0x10014188]      ; 10002c0b | g_DirectDraw4
     PUSH ECX                            ; 10002c11
     MOV EAX,dword ptr [ECX]             ; 10002c12
     CALL dword ptr [EAX + 0x4c]         ; 10002c14
     PUSH 0x8                            ; 10002c17
     MOV ECX,dword ptr [0x10138fb8]      ; 10002c19 | g_WindowHandle
     PUSH ECX                            ; 10002c1f
-    MOV EDX,dword ptr [0x10014188]      ; 10002c20 | DAT_10014188
+    MOV EDX,dword ptr [0x10014188]      ; 10002c20 | g_DirectDraw4
     PUSH EDX                            ; 10002c26
     MOV EAX,dword ptr [EDX]             ; 10002c27
     CALL dword ptr [EAX + 0x50]         ; 10002c29

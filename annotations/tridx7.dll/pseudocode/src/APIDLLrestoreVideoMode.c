@@ -18,9 +18,9 @@ int __cdecl APIDLLrestoreVideoMode(void)
       FUN_10002340("Cannot unlock back buffer");
     }
   }
-  (**(code **)(*DAT_10014184 + 0x28))(DAT_10014184);
-  (**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);
-  (**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,g_WindowHandle,8);
+  (*g_DirectDraw->vtable->FlipToGDISurface)(g_DirectDraw);
+  (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
+  (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,8);
   FUN_10002370();
   do {
     iVar1 = ShowCursor(1);

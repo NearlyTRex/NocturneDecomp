@@ -11,88 +11,101 @@
 uint FUN_10003400(void)
 
 {
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
+  IDirectDrawSurface *this_ptr;
+  HRESULT HVar1;
+  DDPIXELFORMAT_union2 DVar2;
+  DDPIXELFORMAT_union3 DVar3;
+  DDPIXELFORMAT_union4 DVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  DWORD *pDVar8;
+  DDSURFACEDESC *pDVar9;
+  DDPIXELFORMAT *pDVar10;
+  byte bVar11;
   int local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  uint local_34 [3];
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint local_14;
+  DDSURFACEDESC local_7c;
   
-  bVar7 = 0;
+  bVar11 = 0;
   FUN_10002ea0();
   local_80 = 0;
   do {
-    iVar3 = 0;
-    iVar4 = local_80;
+    iVar6 = 0;
+    iVar7 = local_80;
     do {
-      puVar5 = &local_7c;
-      for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+      pDVar9 = &local_7c;
+      for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
+        pDVar9->dwSize = 0;
+        pDVar9 = (DDSURFACEDESC *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);
       }
-      puVar5 = &DAT_10226a58;
-      puVar6 = local_34;
-      for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+      pDVar8 = &DAT_10226a58;
+      pDVar10 = &local_7c.ddpfPixelFormat;
+      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
+        pDVar10->dwSize = *pDVar8;
+        pDVar8 = pDVar8 + (uint)bVar11 * -2 + 1;
+        pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);
       }
-      local_74 = *(uint *)(&DAT_10226848 + local_80);
-      local_7c = 0x7c;
-      local_78 = 0x1007;
-      local_14 = 0x1800;
-      local_70 = local_74;
-      iVar2 = (**(code **)(*DAT_10014188 + 0x18))
-                        (DAT_10014188,&local_7c,(uint *)((int)&DAT_10139048 + iVar4),0);
-      if (iVar2 != 0) {
+      local_7c.dwHeight = *(DWORD *)(&DAT_10226848 + local_80);
+      local_7c.dwSize = 0x7c;
+      local_7c.dwFlags = 0x1007;
+      local_7c.ddsCaps.dwCaps = 0x1800;
+      local_7c.dwWidth = local_7c.dwHeight;
+      HVar1 = (*g_DirectDraw4->vtable->CreateSurface)
+                        (g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)
+                         ,(IUnknown *)0x0);
+      if (HVar1 != 0) {
         return 0;
       }
-      puVar5 = *(uint **)((int)&DAT_10139048 + iVar4);
-      iVar2 = (**(code **)*puVar5)(puVar5,&DAT_100121f8,(int)&DAT_10138f30 + iVar4);
-      if (iVar2 != 0) {
+      this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);
+      HVar1 = (*this_ptr->vtable->QueryInterface)
+                        ((IUnknown *)this_ptr,(GUID *)&DAT_100121f8,
+                         (void **)((int)&DAT_10138f30 + iVar7));
+      if (HVar1 != 0) {
         return 0;
       }
-      iVar4 = iVar4 + 0x20;
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < 4);
+      iVar7 = iVar7 + 0x20;
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < 4);
     local_80 = local_80 + 4;
     if (0x1f < local_80) {
       _DAT_101386a8 = 0;
-      for (uVar1 = uStack_24; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {
+      for (DVar2 = local_7c.ddpfPixelFormat.dwRedYMask; (DVar2.dwRBitMask & 1) == 0;
+          DVar2.dwRBitMask = DVar2.dwRBitMask >> 1) {
         _DAT_101386a8 = _DAT_101386a8 + 1;
       }
-      _DAT_10226a78 = (uint)(0xff / (ulonglong)(uStack_24 >> ((byte)_DAT_101386a8 & 0x1f)));
+      _DAT_10226a78 =
+           (uint)
+           (0xff / (ulonglong)
+                   (local_7c.ddpfPixelFormat.dwRedYMask.dwRBitMask >> ((byte)_DAT_101386a8 & 0x1f)))
+      ;
       _DAT_10240620 = 0;
-      for (uVar1 = uStack_20; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {
+      for (DVar3 = local_7c.ddpfPixelFormat.dwGreenUMask; (DVar3.dwGBitMask & 1) == 0;
+          DVar3.dwGBitMask = DVar3.dwGBitMask >> 1) {
         _DAT_10240620 = _DAT_10240620 + 1;
       }
-      _DAT_102268b0 = (uint)(0xff / (ulonglong)(uStack_20 >> ((byte)_DAT_10240620 & 0x1f)));
+      _DAT_102268b0 =
+           (uint)
+           (0xff / (ulonglong)
+                   (local_7c.ddpfPixelFormat.dwGreenUMask.dwGBitMask >> ((byte)_DAT_10240620 & 0x1f)
+                   ));
       _DAT_10226e80 = 0;
-      for (uVar1 = uStack_1c; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {
+      for (DVar4 = local_7c.ddpfPixelFormat.dwBlueVMask; (DVar4.dwBBitMask & 1) == 0;
+          DVar4.dwBBitMask = DVar4.dwBBitMask >> 1) {
         _DAT_10226e80 = _DAT_10226e80 + 1;
       }
-      _DAT_101b88d8 = (uint)(0xff / (ulonglong)(uStack_1c >> ((byte)_DAT_10226e80 & 0x1f)));
+      _DAT_101b88d8 =
+           (uint)
+           (0xff / (ulonglong)
+                   (local_7c.ddpfPixelFormat.dwBlueVMask.dwBBitMask >> ((byte)_DAT_10226e80 & 0x1f))
+           );
       if (DAT_100141fc == 0) {
         _DAT_1013b8d0 = 0;
       }
       else {
-        _DAT_1013b8d0 = uStack_18;
+        _DAT_1013b8d0 = local_7c.ddpfPixelFormat.dwAlphaBitMask;
       }
       DAT_10014214 = 0;
-      _DAT_10240628 = uStack_28;
+      _DAT_10240628 = local_7c.ddpfPixelFormat.dwBitCount;
       FUN_10001200();
       return 1;
     }

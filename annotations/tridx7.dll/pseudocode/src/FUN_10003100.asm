@@ -14,7 +14,7 @@
 ;   undefined4 DAT_10014174
 ;   undefined4 DAT_10014178
 ;   undefined4 DAT_10014180
-;   undefined4 DAT_10014188
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141b8
 ;   undefined4 DAT_100141dc
 ;   undefined4 DAT_100141e0
@@ -169,7 +169,7 @@ section .text
     MOV dword ptr [ESP + 0x3c],0x1007   ; 10003286
     MOV dword ptr [ESP + 0x44],0x280    ; 1000328e
     PUSH EAX                            ; 10003296
-    MOV ECX,dword ptr [0x10014188]      ; 10003297 | DAT_10014188
+    MOV ECX,dword ptr [0x10014188]      ; 10003297 | g_DirectDraw4
     LEA EAX,[ESP + 0x3c]                ; 1000329d
     PUSH 0x100141b8                     ; 100032a1 | DAT_100141b8
     MOV dword ptr [ESP + 0x48],0x1e0    ; 100032a6

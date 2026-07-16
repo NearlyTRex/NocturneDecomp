@@ -37,6 +37,9 @@ typedef struct DDDEVICEIDENTIFIER {
 } DDDEVICEIDENTIFIER;
 #pragma pack(pop)
 
+// Function Definition: DDENUMCALLBACKEXA
+typedef BOOL DDENUMCALLBACKEXA(GUID* lpGUID, char* lpDriverDescription, char* lpDriverName, void* lpContext, void* hMonitor);
+
 // Union: DDPIXELFORMAT_union1
 typedef union DDPIXELFORMAT_union1 {
     DWORD dwRGBBitCount;

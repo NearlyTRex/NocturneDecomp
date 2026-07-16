@@ -20,7 +20,7 @@
 ;   undefined4 DAT_10014178
 ;   undefined4 DAT_1001417c
 ;   undefined4 DAT_10014180
-;   undefined4 DAT_10014188
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_1001418c
 ;   undefined4 DAT_10014190
 ;   undefined4 DAT_10014198
@@ -158,7 +158,7 @@ section .text
     PUSH 0x11                           ; 100026c9
     MOV EAX,[0x10138fb8]                ; 100026cb | g_WindowHandle
     PUSH EAX                            ; 100026d0
-    MOV ECX,dword ptr [0x10014188]      ; 100026d1 | DAT_10014188
+    MOV ECX,dword ptr [0x10014188]      ; 100026d1 | g_DirectDraw4
     PUSH ECX                            ; 100026d7
     MOV EAX,dword ptr [ECX]             ; 100026d8
     CALL dword ptr [EAX + 0x50]         ; 100026da
@@ -183,7 +183,7 @@ section .text
     PUSH 0x0                            ; 10002700
     MOV ECX,dword ptr [0x10014174]      ; 10002702 | DAT_10014174
     PUSH ESI                            ; 10002708
-    MOV EDX,dword ptr [0x10014188]      ; 10002709 | DAT_10014188
+    MOV EDX,dword ptr [0x10014188]      ; 10002709 | g_DirectDraw4
     PUSH EAX                            ; 1000270f
     PUSH ECX                            ; 10002710
     PUSH EDX                            ; 10002711
@@ -214,7 +214,7 @@ section .text
     MOV dword ptr [0x10226e9c],0x1      ; 1000275e | DAT_10226e9c
     PUSH 0x0                            ; 10002768
         ;   Label: LAB_10002768
-    MOV EAX,[0x10014188]                ; 1000276a | DAT_10014188
+    MOV EAX,[0x10014188]                ; 1000276a | g_DirectDraw4
     MOV dword ptr [0x10226ef0],0x6218   ; 1000276f | DAT_10226ef0
     PUSH 0x1001418c                     ; 10002779 | DAT_1001418c
     MOV EBX,dword ptr [EAX]             ; 1000277e
@@ -225,7 +225,7 @@ section .text
     JZ 0x100027ca                       ; 1000278b
         ;   XREF to: 100027ca (CONDITIONAL_JUMP)  ; LAB_100027ca
     PUSH 0x0                            ; 1000278d
-    MOV EAX,[0x10014188]                ; 1000278f | DAT_10014188
+    MOV EAX,[0x10014188]                ; 1000278f | g_DirectDraw4
     MOV dword ptr [0x10226e9c],0x1      ; 10002794 | DAT_10226e9c
     PUSH 0x1001418c                     ; 1000279e | DAT_1001418c
     MOV EBX,dword ptr [EAX]             ; 100027a3
@@ -235,7 +235,7 @@ section .text
     TEST EAX,EAX                        ; 100027ae
     JZ 0x100027ca                       ; 100027b0
         ;   XREF to: 100027ca (CONDITIONAL_JUMP)  ; LAB_100027ca
-    MOV EAX,[0x10014188]                ; 100027b2 | DAT_10014188
+    MOV EAX,[0x10014188]                ; 100027b2 | g_DirectDraw4
     PUSH EAX                            ; 100027b7
     MOV EBX,dword ptr [EAX]             ; 100027b8
     CALL dword ptr [EBX + 0x4c]         ; 100027ba
@@ -258,7 +258,7 @@ section .text
     TEST EAX,EAX                        ; 100027e8
     JZ 0x10002804                       ; 100027ea
         ;   XREF to: 10002804 (CONDITIONAL_JUMP)  ; LAB_10002804
-    MOV EAX,[0x10014188]                ; 100027ec | DAT_10014188
+    MOV EAX,[0x10014188]                ; 100027ec | g_DirectDraw4
     PUSH EAX                            ; 100027f1
     MOV EBX,dword ptr [EAX]             ; 100027f2
     CALL dword ptr [EBX + 0x4c]         ; 100027f4
@@ -275,7 +275,7 @@ section .text
     TEST EAX,EAX                        ; 10002809
     JNZ 0x10002825                      ; 1000280b
         ;   XREF to: 10002825 (CONDITIONAL_JUMP)  ; LAB_10002825
-    MOV EAX,[0x10014188]                ; 1000280d | DAT_10014188
+    MOV EAX,[0x10014188]                ; 1000280d | g_DirectDraw4
     PUSH EAX                            ; 10002812
     MOV EBX,dword ptr [EAX]             ; 10002813
     CALL dword ptr [EBX + 0x4c]         ; 10002815
@@ -306,7 +306,7 @@ section .text
     CMP dword ptr [ESP + 0x10],0x20     ; 10002856
     JZ 0x10002893                       ; 1000285b
         ;   XREF to: 10002893 (CONDITIONAL_JUMP)  ; LAB_10002893
-    MOV EAX,[0x10014188]                ; 1000285d | DAT_10014188
+    MOV EAX,[0x10014188]                ; 1000285d | g_DirectDraw4
     PUSH EAX                            ; 10002862
     MOV EBX,dword ptr [EAX]             ; 10002863
     CALL dword ptr [EBX + 0x4c]         ; 10002865
@@ -352,14 +352,14 @@ section .text
     MOV dword ptr [ESP + 0xb0],0x20000  ; 100028de
     MOVSD.REP ES:EDI,ESI                ; 100028e9
     PUSH EDX                            ; 100028eb
-    MOV EAX,[0x10014188]                ; 100028ec | DAT_10014188
+    MOV EAX,[0x10014188]                ; 100028ec | g_DirectDraw4
     PUSH EAX                            ; 100028f1
     MOV EBX,dword ptr [EAX]             ; 100028f2
     CALL dword ptr [EBX + 0x18]         ; 100028f4
     TEST EAX,EAX                        ; 100028f7
     JZ 0x1000294c                       ; 100028f9
         ;   XREF to: 1000294c (CONDITIONAL_JUMP)  ; LAB_1000294c
-    MOV EAX,[0x10014188]                ; 100028fb | DAT_10014188
+    MOV EAX,[0x10014188]                ; 100028fb | g_DirectDraw4
     MOV EDI,0x100167c0                  ; 10002900 | = "FATAL ERROR!  Unable to create a Z bu..."
     PUSH EAX                            ; 10002905
     MOV EBX,dword ptr [EAX]             ; 10002906
@@ -396,7 +396,7 @@ section .text
         ;   Label: LAB_10002964
     PUSH 0x0                            ; 10002968
     PUSH EBP                            ; 1000296a | DAT_10014198 | DAT_1001419c
-    MOV ECX,dword ptr [0x10014188]      ; 1000296b | DAT_10014188
+    MOV ECX,dword ptr [0x10014188]      ; 1000296b | g_DirectDraw4
     PUSH EAX                            ; 10002971
     PUSH ECX                            ; 10002972
     MOV EAX,dword ptr [ECX]             ; 10002973
@@ -404,7 +404,7 @@ section .text
     TEST EAX,EAX                        ; 10002978
     JZ 0x100029cd                       ; 1000297a
         ;   XREF to: 100029cd (CONDITIONAL_JUMP)  ; LAB_100029cd
-    MOV EAX,[0x10014188]                ; 1000297c | DAT_10014188
+    MOV EAX,[0x10014188]                ; 1000297c | g_DirectDraw4
     MOV EDI,0x10016874                  ; 10002981 | = "FATAL ERROR!  Unable to create a 2nd ..."
     PUSH EAX                            ; 10002986
     MOV ESI,dword ptr [EAX]             ; 10002987
@@ -445,7 +445,7 @@ section .text
     TEST EAX,EAX                        ; 100029eb
     JZ 0x10002a40                       ; 100029ed
         ;   XREF to: 10002a40 (CONDITIONAL_JUMP)  ; LAB_10002a40
-    MOV EAX,[0x10014188]                ; 100029ef | DAT_10014188
+    MOV EAX,[0x10014188]                ; 100029ef | g_DirectDraw4
     MOV EDI,0x1001692c                  ; 100029f4 | = "FATAL ERROR!  Unable to attach Z buff..."
     PUSH EAX                            ; 100029f9
     MOV EBX,dword ptr [EAX]             ; 100029fa

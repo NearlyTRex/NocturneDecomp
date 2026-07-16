@@ -2,44 +2,44 @@
 // Address: 10001900
 // Address Range: [[10001900, 10001990]]
 // Convention: unknown
-// Signature: undefined4 FUN_10001900(undefined4 param_1)
+// Signature: undefined4 FUN_10001900(GUID *param_1)
 
 #include "nocturne.h"
 
-uint FUN_10001900(uint param_1)
+uint FUN_10001900(GUID *param_1)
 
 {
-  int iVar1;
-  uint unaff_EDI;
-  uint *puVar2;
-  byte bVar3;
-  uint uStack_304;
-  int local_2fc [93];
-  uint auStack_188 [98];
+  HRESULT HVar1;
+  int iVar2;
+  uint *puVar3;
+  byte bVar4;
+  IDirectDraw *local_2fc;
+  uint uStack_2f8;
+  byte bStack_2f4;
+  uint auStack_17c [95];
   
-  bVar3 = 0;
-  uStack_304 = 0;
-  iVar1 = DirectDrawCreate(param_1);
-  if (iVar1 == 0) {
-    puVar2 = &uStack_304;
-    for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
+  bVar4 = 0;
+  HVar1 = DirectDrawCreate(param_1,&local_2fc,(IUnknown *)0x0);
+  if (HVar1 == 0) {
+    puVar3 = &uStack_2f8;
+    for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *puVar3 = 0;
+      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    uStack_304 = 0x17c;
-    puVar2 = auStack_188;
-    for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
+    uStack_2f8 = 0x17c;
+    puVar3 = auStack_17c;
+    for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *puVar3 = 0;
+      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    auStack_188[0] = 0x17c;
-    iVar1 = (**(code **)(local_2fc[0] + 0x2c))(local_2fc,&uStack_304,auStack_188);
-    if ((iVar1 == 0) && ((unaff_EDI & 1) != 0)) {
+    auStack_17c[0] = 0x17c;
+    iVar2 = (*local_2fc->vtable->GetCaps)(local_2fc,&uStack_2f8,auStack_17c);
+    if ((iVar2 == 0) && ((bStack_2f4 & 1) != 0)) {
       return 1;
     }
   }
-  if (&stack0x00000000 != (byte *)0x2fc) {
-    (**(code **)(local_2fc[0] + 8))(local_2fc);
+  if (local_2fc != (IDirectDraw *)0x0) {
+    (*local_2fc->vtable->Release)((IUnknown *)local_2fc);
   }
   return 0;
 }

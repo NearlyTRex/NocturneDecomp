@@ -49,6 +49,10 @@
       "type":"struct"
     },
     {
+      "name":"DDENUMCALLBACKEXA",
+      "type":"function_definition"
+    },
+    {
       "name":"DDPIXELFORMAT_union1",
       "type":"union"
     },
@@ -1616,6 +1620,36 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
+      "name":"DDENUMCALLBACKEXA",
+      "parameters":[
+        {
+          "name":"lpGUID",
+          "type":"GUID*"
+        },
+        {
+          "name":"lpDriverDescription",
+          "type":"char*"
+        },
+        {
+          "name":"lpDriverName",
+          "type":"char*"
+        },
+        {
+          "name":"lpContext",
+          "type":"void*"
+        },
+        {
+          "name":"hMonitor",
+          "type":"void*"
+        }
+      ],
+      "return_type":"BOOL",
       "type":"function_definition"
     },
     {

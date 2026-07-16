@@ -4,7 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10230000
 // =============================================================================
 
+// char[16][512]
+char g_AdapterDescription[16][512] = {};
+
 // undefined4
 undefined4 DAT_10236908 = 0x00000000;
-undefined4 DAT_10236910 = 0x00000000;
 

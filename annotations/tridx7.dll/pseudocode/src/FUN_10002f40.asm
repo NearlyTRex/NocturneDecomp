@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10012148
-;   undefined4 DAT_10014188
+;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141dc
 ;
 ; *****************************************************************************
@@ -19,7 +19,7 @@ section .text
 
     PUSH 0x100141dc                     ; 10002f40 | DAT_100141dc
         ;   Label: FUN_10002f40
-    MOV EAX,[0x10014188]                ; 10002f45 | DAT_10014188
+    MOV EAX,[0x10014188]                ; 10002f45 | g_DirectDraw4
     PUSH 0x10012148                     ; 10002f4a | DAT_10012148
     PUSH EAX                            ; 10002f4f
     MOV EAX,dword ptr [EAX]             ; 10002f50

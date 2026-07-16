@@ -7,6 +7,12 @@
 // GUID
 GUID g_IID_IDirectDraw4 = {0x9C59509A, 0x39BD, 0x11D1, {0x8C, 0x4A, 0x00, 0xC0, 0x4F, 0xD9, 0x30, 0xC5}};
 
+// IDirectDraw*
+IDirectDraw* g_DirectDraw = nullptr;
+
+// IDirectDraw4*
+IDirectDraw4* g_DirectDraw4 = nullptr;
+
 // IMAGE_DEBUG_DIRECTORY
 IMAGE_DEBUG_DIRECTORY DAT_1001201C = {
     .Characteristics = 0x00000000,
@@ -96,8 +102,6 @@ undefined4 DAT_10014174 = 0x00000280;
 undefined4 DAT_10014178 = 0x000001E0;
 undefined4 DAT_1001417c = 0x00000010;
 undefined4 DAT_10014180 = 0x00000000;
-undefined4 DAT_10014184 = 0x00000000;
-undefined4 DAT_10014188 = 0x00000000;
 undefined4 DAT_1001418c = 0x00000000;
 undefined4 DAT_10014190 = 0x00000000;
 undefined4 DAT_10014198 = 0x00000000;

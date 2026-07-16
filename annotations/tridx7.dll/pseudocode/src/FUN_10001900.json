@@ -20,40 +20,16 @@
         "message": "unknown type name 'PCONTEXT'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 22,
-        "message": "no matching function for call to 'DirectDrawCreate'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
+        "category": "other",
+        "column": 14,
         "line": 36,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 24,
+        "category": "type_error",
+        "column": 42,
         "line": 36,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 41,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 42,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 42,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -62,19 +38,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 190,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 12,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "stack_ref",
-      "unaffected_reg",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
@@ -98,7 +71,7 @@
     ],
     "convention": "unknown",
     "name": "FUN_10001900",
-    "signature": "undefined4 FUN_10001900(undefined4 param_1)"
+    "signature": "undefined4 FUN_10001900(GUID *param_1)"
   },
   "function_calls": [
     {
@@ -179,20 +152,13 @@
   "static_analysis": {
     "analyzed_file": "FUN_10001900.c",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 27,
           "line": 37,
-          "message": "Uninitialized variable: unaff_EDI",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 26,
-          "line": 36,
-          "message": "Uninitialized variable: local_2fc",
+          "message": "Uninitialized variable: bStack_2f4",
           "severity": "error"
         }
       ],
@@ -206,63 +172,23 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_10001900(uint param_1)",
+      "text": "uint FUN_10001900(GUID *param_1)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = DirectDrawCreate(param_1);",
+      "text": "HVar1 = DirectDrawCreate(param_1,&local_2fc,(IUnknown *)0x0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(local_2fc[0] + 0x2c))(local_2fc,&uStack_304,auStack_188);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "if ((iVar1 == 0) && ((unaff_EDI & 1) != 0)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0x00000000",
-      "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x2fc) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(local_2fc[0] + 8))(local_2fc);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 18,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -270,7 +196,7 @@
       "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -301,20 +227,12 @@
       "type": "param_count_too_few"
     },
     {
-      "description": "Uninitialized variable: unaff_EDI",
+      "description": "Uninitialized variable: bStack_2f4",
       "line": 37,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "if ((iVar1 == 0) && ((unaff_EDI & 1) != 0)) {",
+      "text": "if ((iVar2 == 0) && ((bStack_2f4 & 1) != 0)) {",
       "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2fc",
-      "line": 36,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iVar1 = (**(code **)(local_2fc[0] + 0x2c))(local_2fc,&uStack_304,auStack_188);",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }
