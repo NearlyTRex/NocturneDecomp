@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,FILE *str)
+; int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,_FILE *str)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ch
-; FILE *           Stack[0x8]:4   str
+; _FILE *          Stack[0x8]:4   str
 ;
 ; XREF[2]:
 ;   crt_stdio.c__sprintf_FUN_10005630 at 10005688
@@ -81,7 +81,7 @@ section .text
     PUSH ESI                            ; 1000749b
         ;   Label: LAB_1000749b
     CALL crt_stdio.c__getbuf_FUN_1000a700 ; 1000749c
-        ;   XREF to: 1000a700 (UNCONDITIONAL_CALL)  ; void crt_stdio.c__getbuf_FUN_1000a700(FILE * file)
+        ;   XREF to: 1000a700 (UNCONDITIONAL_CALL)  ; void crt_stdio.c__getbuf_FUN_1000a700(_FILE * file)
     ADD ESP,0x4                         ; 100074a1
     TEST dword ptr [ESI + 0xc],0x108    ; 100074a4
         ;   Label: LAB_100074a4

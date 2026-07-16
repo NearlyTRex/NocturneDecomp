@@ -9,7 +9,7 @@
 void __cdecl __endstdio(void)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   int iVar2;
   
@@ -18,8 +18,8 @@ void __cdecl __endstdio(void)
   if (3 < DAT_10241860) {
     iVar2 = 0xc;
     do {
-      file = *(FILE **)(DAT_1024085c + iVar2);
-      if (file != (FILE *)0x0) {
+      file = *(_FILE **)(DAT_1024085c + iVar2);
+      if (file != (_FILE *)0x0) {
         if ((file->_flag & 0x83) != 0) {
           _fclose(file);
         }

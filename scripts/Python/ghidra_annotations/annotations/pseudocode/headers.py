@@ -1998,6 +1998,8 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("typedef const char* TerminatedCString;")
     content.append("typedef const wchar_t* TerminatedUnicode;")
     content.append("typedef const char* string;  // Ghidra's generic string type")
+    content.append("typedef const wchar_t* unicode;  // Ghidra null-terminated UTF-16 string")
+    content.append("typedef const wchar_t* PascalUnicode;  // Ghidra length-prefixed UTF-16 string")
     content.append("")
     content.append("// Extended precision float (x87 80-bit)")
     content.append("typedef long double float10;")

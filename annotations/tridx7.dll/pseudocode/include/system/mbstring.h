@@ -21,6 +21,6 @@ typedef struct _iobuf {
 } __attribute__((aligned(4))) _iobuf;
 #pragma pack(pop)
 
-// Typedef: FILE
-typedef _iobuf FILE;
+// Typedef: _FILE
+typedef _iobuf _FILE;
 

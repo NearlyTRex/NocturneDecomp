@@ -38,7 +38,7 @@ section .text
     PUSH EDX                            ; 1000565d
     PUSH EAX                            ; 1000565e
     CALL crt_stdio.c__output_FUN_10005f40 ; 1000565f
-        ;   XREF to: 10005f40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__output_FUN_10005f40(FILE * file_handle, char * fmt, va_list args)
+        ;   XREF to: 10005f40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__output_FUN_10005f40(_FILE * file_handle, char * fmt, va_list args)
     ADD ESP,0xc                         ; 10005664
     MOV ESI,EAX                         ; 10005667
     DEC dword ptr [ESP + 0x8]           ; 10005669
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 10005685
     PUSH 0x0                            ; 10005686
     CALL crt_stdio.c__flsbuf_FUN_10007420 ; 10005688
-        ;   XREF to: 10007420 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flsbuf_FUN_10007420(int ch, FILE * str)
+        ;   XREF to: 10007420 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flsbuf_FUN_10007420(int ch, _FILE * str)
     ADD ESP,0x8                         ; 1000568d
     MOV EAX,ESI                         ; 10005690
     POP ESI                             ; 10005692

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__fclose_lk_FUN_10005470(FILE *file)
+; int __cdecl crt_stdio_c__fclose_lk_FUN_10005470(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c__fclose_FUN_10005430 at 10005457
@@ -29,12 +29,12 @@ section .text
         ;   XREF to: 100054c3 (CONDITIONAL_JUMP)  ; LAB_100054c3
     PUSH ESI                            ; 10005481
     CALL crt_stdio.c__flush_FUN_10005d10 ; 10005482
-        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(FILE * file)
+        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(_FILE * file)
     ADD ESP,0x4                         ; 10005487
     MOV EDI,EAX                         ; 1000548a
     PUSH ESI                            ; 1000548c
     CALL crt_stdio.c__freebuf_FUN_10005c50 ; 1000548d
-        ;   XREF to: 10005c50 (UNCONDITIONAL_CALL)  ; void crt_stdio.c__freebuf_FUN_10005c50(FILE * file)
+        ;   XREF to: 10005c50 (UNCONDITIONAL_CALL)  ; void crt_stdio.c__freebuf_FUN_10005c50(_FILE * file)
     ADD ESP,0x4                         ; 10005492
     MOV EAX,dword ptr [ESI + 0x10]      ; 10005495
     PUSH EAX                            ; 10005498

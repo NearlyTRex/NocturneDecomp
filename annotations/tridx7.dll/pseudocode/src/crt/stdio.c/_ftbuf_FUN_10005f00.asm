@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c__ftbuf_FUN_10005f00(int flag,FILE *file)
+; void __cdecl crt_stdio_c__ftbuf_FUN_10005f00(int flag,_FILE *file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   flag
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fprintf_FUN_100054d0 at 10005502
@@ -28,7 +28,7 @@ section .text
         ;   XREF to: 10005f36 (CONDITIONAL_JUMP)  ; LAB_10005f36
     PUSH ESI                            ; 10005f12
     CALL crt_stdio.c__flush_FUN_10005d10 ; 10005f13
-        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(FILE * file)
+        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(_FILE * file)
     AND dword ptr [ESI + 0xc],0xffffeeff ; 10005f18
     MOV dword ptr [ESI + 0x18],0x0      ; 10005f1f
     ADD ESP,0x4                         ; 10005f26

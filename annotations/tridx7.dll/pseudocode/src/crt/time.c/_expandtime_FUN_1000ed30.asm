@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_time_c__expandtime_FUN_1000ed30(uchar code,tm *tb,char **buf,size_t *count)
+; void __cdecl crt_time_c__expandtime_FUN_1000ed30(uchar code,_tm *tb,char **buf,size_t *count)
 ;
 ; Parameters:
 ; uchar            Stack[0x4]:1   code
-; tm *             Stack[0x8]:4   tb
+; _tm *            Stack[0x8]:4   tb
 ; char * *         Stack[0xc]:4   buf
 ; size_t *         Stack[0x10]:4   count
 ;

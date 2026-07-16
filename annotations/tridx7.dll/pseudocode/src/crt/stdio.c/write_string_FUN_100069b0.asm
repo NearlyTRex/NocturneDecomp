@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_write_string_FUN_100069b0(char *str,int len,FILE *file,int *pnumwritten)
+; void __cdecl crt_stdio_c_write_string_FUN_100069b0(char *str,int len,_FILE *file,int *pnumwritten)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ; int              Stack[0x8]:4   len
-; FILE *           Stack[0xc]:4   file
+; _FILE *          Stack[0xc]:4   file
 ; int *            Stack[0x10]:4   pnumwritten
 ;
 ; XREF[1]:
@@ -41,7 +41,7 @@ section .text
     MOVSX ECX,byte ptr [EAX]            ; 100069d0
     PUSH ECX                            ; 100069d3
     CALL crt_stdio.c_write_char_FUN_10006920 ; 100069d4
-        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, _FILE * file, int * pnumwritten)
     ADD ESP,0xc                         ; 100069d9
     CMP dword ptr [EBP],-0x1            ; 100069dc
     JNZ 0x100069c4                      ; 100069e0

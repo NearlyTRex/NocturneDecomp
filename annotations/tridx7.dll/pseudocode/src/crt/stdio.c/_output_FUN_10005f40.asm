@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__output_FUN_10005f40(FILE *file_handle,char *fmt,va_list args)
+; int __cdecl crt_stdio_c__output_FUN_10005f40(_FILE *file_handle,char *fmt,va_list args)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; char *           Stack[0x8]:4   fmt
 ; va_list          Stack[0xc]:4   args
 ; Local Variables:
@@ -248,7 +248,7 @@ section .text
     PUSH ECX                            ; 1000614c
     PUSH EDX                            ; 1000614d
     CALL crt_stdio.c_write_char_FUN_10006920 ; 1000614e
-        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, _FILE * file, int * pnumwritten)
     MOV ECX,dword ptr [ESP + 0x26c]     ; 10006153
     ADD ESP,0xc                         ; 1000615a
     MOV BL,byte ptr [ECX]               ; 1000615d
@@ -261,7 +261,7 @@ section .text
     PUSH ECX                            ; 10006175
     PUSH EDX                            ; 10006176
     CALL crt_stdio.c_write_char_FUN_10006920 ; 10006177
-        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006920 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_char_FUN_10006920(int ch, _FILE * file, int * pnumwritten)
     ADD ESP,0xc                         ; 1000617c
     MOV EAX,dword ptr [ESP + 0x260]     ; 1000617f
         ;   Label: default
@@ -815,7 +815,7 @@ section .text
     PUSH EDX                            ; 10006721
     PUSH 0x20                           ; 10006722
     CALL crt_stdio.c_write_multi_char_FUN_10006970 ; 10006724
-        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 10006729
     LEA EAX,[ESP + 0x28]                ; 1000672c
         ;   Label: LAB_1000672c
@@ -827,7 +827,7 @@ section .text
     PUSH EDX                            ; 10006741
     PUSH EAX                            ; 10006742
     CALL crt_stdio.c_write_string_FUN_100069b0 ; 10006743
-        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, FILE * file, int * pnumwritten)
+        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 10006748
     TEST ESI,0x8                        ; 1000674b
     JZ 0x10006777                       ; 10006751
@@ -843,7 +843,7 @@ section .text
     PUSH EDX                            ; 1000676c
     PUSH 0x30                           ; 1000676d
     CALL crt_stdio.c_write_multi_char_FUN_10006970 ; 1000676f
-        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 10006774
     CMP dword ptr [ESP + 0x3c],0x0      ; 10006777
         ;   Label: LAB_10006777
@@ -875,7 +875,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 100067b1
     PUSH EAX                            ; 100067b5
     CALL crt_stdio.c_write_string_FUN_100069b0 ; 100067b6
-        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, FILE * file, int * pnumwritten)
+        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 100067bb
     MOV ECX,EBP                         ; 100067be
     DEC EBP                             ; 100067c0
@@ -893,7 +893,7 @@ section .text
     PUSH EDI                            ; 100067d8
     PUSH EDX                            ; 100067d9
     CALL crt_stdio.c_write_string_FUN_100069b0 ; 100067da
-        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, FILE * file, int * pnumwritten)
+        ;   XREF to: 100069b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_string_FUN_100069b0(char * str, int len, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 100067df
     TEST ESI,0x4                        ; 100067e2
         ;   Label: LAB_100067e2
@@ -907,7 +907,7 @@ section .text
     PUSH EDX                            ; 100067ff
     PUSH 0x20                           ; 10006800
     CALL crt_stdio.c_write_multi_char_FUN_10006970 ; 10006802
-        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, FILE * file, int * pnumwritten)
+        ;   XREF to: 10006970 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_write_multi_char_FUN_10006970(int ch, int count, _FILE * file, int * pnumwritten)
     ADD ESP,0x10                        ; 10006807
     JMP 0x1000617f                      ; 1000680a
         ;   XREF to: 1000617f (UNCONDITIONAL_JUMP)  ; caseD_2f

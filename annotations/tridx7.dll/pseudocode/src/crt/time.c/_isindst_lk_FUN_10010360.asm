@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_time_c__isindst_lk_FUN_10010360(tm *tb)
+; int __cdecl crt_time_c__isindst_lk_FUN_10010360(_tm *tb)
 ;
 ; Parameters:
-; tm *             Stack[0x4]:4   tb
+; _tm *            Stack[0x4]:4   tb
 ;
 ; XREF[1]:
 ;   crt_time.c__isindst_FUN_10010330 at 10010340

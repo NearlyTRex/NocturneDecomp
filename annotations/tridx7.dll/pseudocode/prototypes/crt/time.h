@@ -17,11 +17,11 @@ uint __cdecl ::maketimefmt(LCID lcid,__lc_time_data *tdata);
 
 // Original: crt_time.c_strftime_FUN_1000ec20
 // Address: 1000ec20
-size_t __cdecl strftime(char *dest,size_t max_size,char *format,tm *timeptr);
+size_t __cdecl strftime(char *dest,size_t max_size,char *format,_tm *timeptr);
 
 // Original: crt_time.c__expandtime_FUN_1000ed30
 // Address: 1000ed30
-void __cdecl ::expandtime(uchar code,tm *tb,char **buf,size_t *count);
+void __cdecl ::expandtime(uchar code,_tm *tb,char **buf,size_t *count);
 
 // Original: crt_time.c__store_str_FUN_1000f2a0
 // Address: 1000f2a0
@@ -49,11 +49,11 @@ void __cdecl ::tzset(void);
 
 // Original: crt_time.c__isindst_FUN_10010330
 // Address: 10010330
-int __cdecl ::isindst(tm *tb);
+int __cdecl ::isindst(_tm *tb);
 
 // Original: crt_time.c__isindst_lk_FUN_10010360
 // Address: 10010360
-int __cdecl ::isindst_lk(tm *tb);
+int __cdecl ::isindst_lk(_tm *tb);
 
 // Original: crt_time.c_cvtdate_FUN_100105c0
 // Address: 100105c0

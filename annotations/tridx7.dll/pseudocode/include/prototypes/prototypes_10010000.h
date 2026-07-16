@@ -12,8 +12,8 @@
 // =============================================================================
 
 void __cdecl crt_time_c__tzset_FUN_10010050(void);
-int __cdecl crt_time_c__isindst_FUN_10010330(tm *tb);
-int __cdecl crt_time_c__isindst_lk_FUN_10010360(tm *tb);
+int __cdecl crt_time_c__isindst_FUN_10010330(_tm *tb);
+int __cdecl crt_time_c__isindst_lk_FUN_10010360(_tm *tb);
 time_t __cdecl crt_time_c_cvtdate_FUN_100105c0(int trantype,int datetype,int year,int month,int week,int weekday,int date,int hour,int min,int sec,int msec);
 wint_t __cdecl crt_ctype_c_towupper_FUN_10010750(wint_t c);
 wint_t __cdecl crt_ctype_c__towupper_FUN_100107d0(wint_t c);

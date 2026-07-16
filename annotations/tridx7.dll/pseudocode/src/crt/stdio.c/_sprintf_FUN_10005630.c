@@ -10,7 +10,7 @@ int __cdecl _sprintf(char *dest,char *format)
 
 {
   int iVar1;
-  FILE local_20;
+  _FILE local_20;
   
   local_20._flag = 0x42;
   local_20._base = dest;

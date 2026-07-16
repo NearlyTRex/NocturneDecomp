@@ -2,13 +2,13 @@
 // Address: 1000a700
 // Address Range: [[1000a700, 1000a74a]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c__getbuf_FUN_1000a700(FILE *file)
+// Signature: void __cdecl crt_stdio_c__getbuf_FUN_1000a700(_FILE *file)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl _getbuf(FILE *file)
+void __cdecl _getbuf(_FILE *file)
 
 {
   char *pcVar1;

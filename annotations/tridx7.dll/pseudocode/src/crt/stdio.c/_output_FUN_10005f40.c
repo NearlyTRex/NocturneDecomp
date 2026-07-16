@@ -2,11 +2,11 @@
 // Address: 10005f40
 // Address Range: [[10005f40, 1000680e]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__output_FUN_10005f40(FILE *file_handle,char *fmt,va_list args)
+// Signature: int __cdecl crt_stdio_c__output_FUN_10005f40(_FILE *file_handle,char *fmt,va_list args)
 
 #include "nocturne.h"
 
-int __cdecl _output(FILE *file_handle,char *fmt,va_list args)
+int __cdecl _output(_FILE *file_handle,char *fmt,va_list args)
 
 {
   char cVar1;

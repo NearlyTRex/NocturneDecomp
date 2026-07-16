@@ -2,11 +2,11 @@
 // Address: 100054d0
 // Address Range: [[100054d0, 10005518]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fprintf_FUN_100054d0(FILE *file,char *format,...)
+// Signature: int __cdecl crt_stdio_c_fprintf_FUN_100054d0(_FILE *file,char *format,...)
 
 #include "nocturne.h"
 
-int __cdecl _fprintf(FILE *file,char *format,...)
+int __cdecl _fprintf(_FILE *file,char *format,...)
 
 {
   int flag;

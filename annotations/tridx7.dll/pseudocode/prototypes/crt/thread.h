@@ -21,11 +21,11 @@ void __cdecl ::unlock(int locknum);
 
 // Original: crt_thread.c__lock_file_FUN_10005a30
 // Address: 10005a30
-void __cdecl ::lock_file(FILE *file);
+void __cdecl ::lock_file(_FILE *file);
 
 // Original: crt_thread.c__unlock_file_FUN_10005aa0
 // Address: 10005aa0
-void __cdecl ::unlock_file(FILE *file);
+void __cdecl ::unlock_file(_FILE *file);
 
 // Original: crt_thread.c__mtinit_FUN_10007700
 // Address: 10007700

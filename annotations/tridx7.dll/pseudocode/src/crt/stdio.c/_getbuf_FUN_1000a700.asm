@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c__getbuf_FUN_1000a700(FILE *file)
+; void __cdecl crt_stdio_c__getbuf_FUN_1000a700(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c__flsbuf_FUN_10007420 at 1000749c

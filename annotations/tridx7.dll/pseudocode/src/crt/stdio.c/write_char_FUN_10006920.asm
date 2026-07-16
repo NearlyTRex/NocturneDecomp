@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_write_char_FUN_10006920(int ch,FILE *file,int *pnumwritten)
+; void __cdecl crt_stdio_c_write_char_FUN_10006920(int ch,_FILE *file,int *pnumwritten)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ch
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ; int *            Stack[0xc]:4   pnumwritten
 ;
 ; XREF[3]:
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 10006944
     PUSH ECX                            ; 10006945
     CALL crt_stdio.c__flsbuf_FUN_10007420 ; 10006946
-        ;   XREF to: 10007420 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flsbuf_FUN_10007420(int ch, FILE * str)
+        ;   XREF to: 10007420 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flsbuf_FUN_10007420(int ch, _FILE * str)
     ADD ESP,0x8                         ; 1000694b
     CMP EAX,-0x1                        ; 1000694e
         ;   Label: LAB_1000694e

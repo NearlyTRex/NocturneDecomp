@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__fflush_lk_FUN_10005cd0(FILE *file)
+; int __cdecl crt_stdio_c__fflush_lk_FUN_10005cd0(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[2]:
 ;   crt_stdio.c__flsall_FUN_10005d90 at 10005dec
@@ -23,7 +23,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 10005cd1
     PUSH ESI                            ; 10005cd5
     CALL crt_stdio.c__flush_FUN_10005d10 ; 10005cd6
-        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(FILE * file)
+        ;   XREF to: 10005d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__flush_FUN_10005d10(_FILE * file)
     ADD ESP,0x4                         ; 10005cdb
     TEST EAX,EAX                        ; 10005cde
     JZ 0x10005ce9                       ; 10005ce0

@@ -156,7 +156,7 @@ void __cdecl _expand_locale_picture(char *picture,uint flags,char **buf,size_t *
       *count = *count - 1;
     }
     else {
-      _expandtime(local_9,(tm *)flags,buf,count);
+      _expandtime(local_9,(_tm *)flags,buf,count);
     }
 LAB_1000f620:
     bVar1 = *pbVar6;

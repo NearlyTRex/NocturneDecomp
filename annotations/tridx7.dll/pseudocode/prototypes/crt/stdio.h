@@ -5,23 +5,23 @@
 
 // Original: crt_stdio.c__fclose_FUN_10005430
 // Address: 10005430
-int __cdecl ::fclose(FILE *file);
+int __cdecl ::fclose(_FILE *file);
 
 // Original: crt_stdio.c__fclose_lk_FUN_10005470
 // Address: 10005470
-int __cdecl ::fclose_lk(FILE *file);
+int __cdecl ::fclose_lk(_FILE *file);
 
 // Original: crt_stdio.c_fprintf_FUN_100054d0
 // Address: 100054d0
-int __cdecl fprintf(FILE *file,char *format,...) __attribute__((format(printf, 2, 3)));
+int __cdecl fprintf(_FILE *file,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c__fsopen_FUN_10005520
 // Address: 10005520
-FILE * __cdecl ::fsopen(char *filename,char *mode,int sh_flag);
+_FILE * __cdecl ::fsopen(char *filename,char *mode,int sh_flag);
 
 // Original: crt_stdio.c_fopen_FUN_10005560
 // Address: 10005560
-FILE * __cdecl fopen(char *filename,char *mode);
+_FILE * __cdecl fopen(char *filename,char *mode);
 
 // Original: crt_stdio.c__sprintf_FUN_10005630
 // Address: 10005630
@@ -37,19 +37,19 @@ void __cdecl ::unlock_file2(int index,void *stream);
 
 // Original: crt_stdio.c__freebuf_FUN_10005c50
 // Address: 10005c50
-void __cdecl ::freebuf(FILE *file);
+void __cdecl ::freebuf(_FILE *file);
 
 // Original: crt_stdio.c_fflush_FUN_10005c90
 // Address: 10005c90
-int __cdecl fflush(FILE *file);
+int __cdecl fflush(_FILE *file);
 
 // Original: crt_stdio.c__fflush_lk_FUN_10005cd0
 // Address: 10005cd0
-int __cdecl ::fflush_lk(FILE *file);
+int __cdecl ::fflush_lk(_FILE *file);
 
 // Original: crt_stdio.c__flush_FUN_10005d10
 // Address: 10005d10
-int __cdecl ::flush(FILE *file);
+int __cdecl ::flush(_FILE *file);
 
 // Original: crt_stdio.c__flsall_FUN_10005d90
 // Address: 10005d90
@@ -57,27 +57,27 @@ int __cdecl ::flsall(int flag);
 
 // Original: crt_stdio.c__stbuf_FUN_10005e60
 // Address: 10005e60
-int __cdecl ::stbuf(FILE *file);
+int __cdecl ::stbuf(_FILE *file);
 
 // Original: crt_stdio.c__ftbuf_FUN_10005f00
 // Address: 10005f00
-void __cdecl ::ftbuf(int flag,FILE *file);
+void __cdecl ::ftbuf(int flag,_FILE *file);
 
 // Original: crt_stdio.c__output_FUN_10005f40
 // Address: 10005f40
-int __cdecl ::output(FILE *file_handle,char *fmt,va_list args);
+int __cdecl ::output(_FILE *file_handle,char *fmt,va_list args);
 
 // Original: crt_stdio.c_write_char_FUN_10006920
 // Address: 10006920
-void __cdecl write::char(int ch,FILE *file,int *pnumwritten);
+void __cdecl write::char(int ch,_FILE *file,int *pnumwritten);
 
 // Original: crt_stdio.c_write_multi_char_FUN_10006970
 // Address: 10006970
-void __cdecl write::multi_char(int ch,int count,FILE *file,int *pnumwritten);
+void __cdecl write::multi_char(int ch,int count,_FILE *file,int *pnumwritten);
 
 // Original: crt_stdio.c_write_string_FUN_100069b0
 // Address: 100069b0
-void __cdecl write::string(char *str,int len,FILE *file,int *pnumwritten);
+void __cdecl write::string(char *str,int len,_FILE *file,int *pnumwritten);
 
 // Original: crt_stdio.c_get_int_arg_FUN_100069f0
 // Address: 100069f0
@@ -93,11 +93,11 @@ short __cdecl get::short_arg(va_list *parg);
 
 // Original: crt_stdio.c__openfile_FUN_10006a30
 // Address: 10006a30
-FILE * __cdecl ::openfile(char *filename,char *mode,int sh_flag,FILE *file);
+_FILE * __cdecl ::openfile(char *filename,char *mode,int sh_flag,_FILE *file);
 
 // Original: crt_stdio.c__getstream_FUN_10006c40
 // Address: 10006c40
-FILE * __cdecl ::getstream(void);
+_FILE * __cdecl ::getstream(void);
 
 // Original: crt_stdio.c__forcdecpt_FUN_10006ef0
 // Address: 10006ef0
@@ -145,7 +145,7 @@ void __cdecl ::shift(char *str,int dist);
 
 // Original: crt_stdio.c__flsbuf_FUN_10007420
 // Address: 10007420
-int __cdecl ::flsbuf(int ch,FILE *str);
+int __cdecl ::flsbuf(int ch,_FILE *str);
 
 // Original: crt_stdio.c__fptostr_FUN_1000a2c0
 // Address: 1000a2c0
@@ -157,7 +157,7 @@ STRFLT __cdecl ::fltout2(_CRT_DOUBLE dbl,STRFLT flt,char *result_str,size_t size
 
 // Original: crt_stdio.c__getbuf_FUN_1000a700
 // Address: 1000a700
-void __cdecl ::getbuf(FILE *file);
+void __cdecl ::getbuf(_FILE *file);
 
 // Original: crt_stdio.c___endstdio_FUN_1000ab70
 // Address: 1000ab70

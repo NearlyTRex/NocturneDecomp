@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 10005dfc (CONDITIONAL_JUMP)  ; LAB_10005dfc
     PUSH ECX                            ; 10005deb
     CALL crt_stdio.c__fflush_lk_FUN_10005cd0 ; 10005dec
-        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(FILE * file)
+        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(_FILE * file)
     ADD ESP,0x4                         ; 10005df1
     CMP EAX,-0x1                        ; 10005df4
     JZ 0x10005e1a                       ; 10005df7
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 10005e1a (CONDITIONAL_JUMP)  ; LAB_10005e1a
     PUSH ECX                            ; 10005e04
     CALL crt_stdio.c__fflush_lk_FUN_10005cd0 ; 10005e05
-        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(FILE * file)
+        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(_FILE * file)
     ADD ESP,0x4                         ; 10005e0a
     CMP EAX,-0x1                        ; 10005e0d
     JNZ 0x10005e1a                      ; 10005e10

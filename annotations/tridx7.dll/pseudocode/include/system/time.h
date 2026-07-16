@@ -7,9 +7,9 @@
 // TIME - System Header
 // =============================================================================
 
-// Structure: tm
+// Structure: _tm
 #pragma pack(push, 1)
-typedef struct tm {
+typedef struct _tm {
     int tm_sec;
     int tm_min;
     int tm_hour;
@@ -19,6 +19,6 @@ typedef struct tm {
     int tm_wday;
     int tm_yday;
     int tm_isdst;
-} tm;
+} _tm;
 #pragma pack(pop)
 

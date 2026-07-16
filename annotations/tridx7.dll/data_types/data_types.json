@@ -1237,7 +1237,7 @@
       "type":"struct"
     },
     {
-      "name":"FILE",
+      "name":"_FILE",
       "type":"typedef"
     },
     {
@@ -1262,6 +1262,10 @@
     },
     {
       "name":"_struct_519",
+      "type":"struct"
+    },
+    {
+      "name":"_tm",
       "type":"struct"
     },
     {
@@ -1383,10 +1387,6 @@
     {
       "name":"time_t",
       "type":"typedef"
-    },
-    {
-      "name":"tm",
-      "type":"struct"
     },
     {
       "name":"uintptr_t",
@@ -6134,6 +6134,72 @@
     },
     {
       "alig":1,
+      "cat":"/Nocturne/Struct/System/time.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"tm_sec",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_min",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_hour",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_mday",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_mon",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_year",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_wday",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_yday",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_isdst",
+          "offset":32,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":36,
+      "name":"_tm",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
       "cat":"/Nocturne/Struct/System/setlocal.h",
       "desc":"",
       "fields":[
@@ -10580,75 +10646,16 @@
       "name":"threadmbcinfostruct",
       "pack":true,
       "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/System/time.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"tm_sec",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_min",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_hour",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_mday",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_mon",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_year",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_wday",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_yday",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_isdst",
-          "offset":32,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":36,
-      "name":"tm",
-      "pack":false,
-      "type":"struct"
     }
   ],
   "typedefs":[
+    {
+      "base":"_iobuf",
+      "cat":"/Nocturne/Typedef/System/mbstring.h",
+      "importable":true,
+      "name":"_FILE",
+      "type":"typedef"
+    },
     {
       "base":"localeinfo_struct*",
       "cat":"/Nocturne/Typedef/System/crtdefs.h",
@@ -10811,13 +10818,6 @@
       "function_definition":"FARPROC",
       "importable":true,
       "name":"FARPROC",
-      "type":"typedef"
-    },
-    {
-      "base":"_iobuf",
-      "cat":"/Nocturne/Typedef/System/mbstring.h",
-      "importable":true,
-      "name":"FILE",
       "type":"typedef"
     },
     {

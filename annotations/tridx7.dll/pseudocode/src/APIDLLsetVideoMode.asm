@@ -128,7 +128,7 @@ section .text
     PUSH 0x1001677c                     ; 1000266b | = "rb"
     PUSH 0x10016780                     ; 10002670 | = "system\\fly.ini"
     CALL crt_stdio.c_fopen_FUN_10005560 ; 10002675
-        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
+        ;   XREF to: 10005560 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_10005560(char * filename, char * mode) | __wfopen
     ADD ESP,0x8                         ; 1000267a
     TEST EAX,EAX                        ; 1000267d
     JZ 0x10002696                       ; 1000267f
@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [0x1001416c],0x1      ; 10002681 | DAT_1001416c
     PUSH EAX                            ; 1000268b
     CALL crt_stdio.c__fclose_FUN_10005430 ; 1000268c
-        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(FILE * file)
+        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(_FILE * file)
     ADD ESP,0x4                         ; 10002691
     JMP 0x100026a0                      ; 10002694
         ;   XREF to: 100026a0 (UNCONDITIONAL_JUMP)  ; LAB_100026a0

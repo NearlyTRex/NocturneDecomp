@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__stbuf_FUN_10005e60(FILE *file)
+; int __cdecl crt_stdio_c__stbuf_FUN_10005e60(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fprintf_FUN_100054d0 at 100054e1

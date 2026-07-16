@@ -2,11 +2,11 @@
 // Address: 10005cd0
 // Address Range: [[10005cd0, 10005d0b]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__fflush_lk_FUN_10005cd0(FILE *file)
+// Signature: int __cdecl crt_stdio_c__fflush_lk_FUN_10005cd0(_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl _fflush_lk(FILE *file)
+int __cdecl _fflush_lk(_FILE *file)
 
 {
   int iVar1;

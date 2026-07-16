@@ -2,11 +2,11 @@
 // Address: 100069b0
 // Address Range: [[100069b0, 100069e6]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_write_string_FUN_100069b0(char *str,int len,FILE *file,int *pnumwritten)
+// Signature: void __cdecl crt_stdio_c_write_string_FUN_100069b0(char *str,int len,_FILE *file,int *pnumwritten)
 
 #include "nocturne.h"
 
-void __cdecl write_string(char *str,int len,FILE *file,int *pnumwritten)
+void __cdecl write_string(char *str,int len,_FILE *file,int *pnumwritten)
 
 {
   do {

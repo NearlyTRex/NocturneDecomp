@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 1000abb9 (CONDITIONAL_JUMP)  ; LAB_1000abb9
     PUSH EAX                            ; 1000abaa
     CALL crt_stdio.c__fclose_FUN_10005430 ; 1000abab
-        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(FILE * file)
+        ;   XREF to: 10005430 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_10005430(_FILE * file)
     ADD ESP,0x4                         ; 1000abb0
     CMP EAX,-0x1                        ; 1000abb3
     JZ 0x1000abb9                       ; 1000abb6

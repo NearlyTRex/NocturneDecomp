@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; size_t __cdecl crt_time_c_strftime_FUN_1000ec20(char *dest,size_t max_size,char *format,tm *timeptr)
+; size_t __cdecl crt_time_c_strftime_FUN_1000ec20(char *dest,size_t max_size,char *format,_tm *timeptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest
 ; size_t           Stack[0x8]:4   max_size
 ; char *           Stack[0xc]:4   format
-; tm *             Stack[0x10]:4   timeptr
+; _tm *            Stack[0x10]:4   timeptr
 ;
 ; Referenced Globals:
 ;   void* PTR_DAT_10017480 = 1001748a
@@ -103,7 +103,7 @@ section .text
     PUSH EDI                            ; 1000ecdd
     PUSH EDX                            ; 1000ecde
     CALL crt_time.c__expandtime_FUN_1000ed30 ; 1000ecdf
-        ;   XREF to: 1000ed30 (UNCONDITIONAL_CALL)  ; void crt_time.c__expandtime_FUN_1000ed30(uchar code, tm * tb, char * * buf, size_t * count)
+        ;   XREF to: 1000ed30 (UNCONDITIONAL_CALL)  ; void crt_time.c__expandtime_FUN_1000ed30(uchar code, _tm * tb, char * * buf, size_t * count)
     ADD ESP,0x10                        ; 1000ece4
     CMP dword ptr [ESP + 0x10],0x0      ; 1000ece7
         ;   Label: LAB_1000ece7

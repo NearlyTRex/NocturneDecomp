@@ -2,15 +2,15 @@
 // Address: 10007420
 // Address Range: [[10007420, 1000756c]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,FILE *str)
+// Signature: int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,_FILE *str)
 
 #include "nocturne.h"
 
-int __cdecl _flsbuf(int ch,FILE *str)
+int __cdecl _flsbuf(int ch,_FILE *str)
 
 {
   uint fh;
-  FILE *file;
+  _FILE *file;
   int iVar1;
   byte *puVar2;
   uint uVar3;
@@ -38,7 +38,7 @@ int __cdecl _flsbuf(int ch,FILE *str)
   str->_flag = uVar3 & 0xffffffef | 2;
   str->_cnt = 0;
   if ((str->_flag & 0x10cU) == 0) {
-    if ((str == (FILE *)&DAT_100170a8) || (str == (FILE *)&DAT_100170c8)) {
+    if ((str == (_FILE *)&DAT_100170a8) || (str == (_FILE *)&DAT_100170c8)) {
       iVar1 = _isatty(fh);
       if (iVar1 != 0) goto LAB_100074a4;
     }

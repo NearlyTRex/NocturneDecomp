@@ -12,7 +12,7 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   uint uVar2;
   int iVar3;
   int iVar4;
@@ -94,7 +94,7 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs)
   FUN_10002b20();
   piStack_22c = (int *)0x1000267a;
   file = _fopen("system\\fly.ini","rb");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     DAT_1001416c = 0;
   }
   else {

@@ -34,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c__stbuf_FUN_10005e60",
-    "signature": "int __cdecl crt_stdio_c__stbuf_FUN_10005e60(FILE *file)"
+    "signature": "int __cdecl crt_stdio_c__stbuf_FUN_10005e60(_FILE *file)"
   },
   "function_calls": [
     {
@@ -135,7 +135,7 @@
         "name": "file",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -153,7 +153,7 @@
       "line": 16,
       "match": "DAT_100170a8",
       "severity": "mild",
-      "text": "if (file == (FILE *)&DAT_100170a8) {",
+      "text": "if (file == (_FILE *)&DAT_100170a8) {",
       "type": "undefined_data"
     },
     {
@@ -161,7 +161,7 @@
       "line": 20,
       "match": "DAT_100170c8",
       "severity": "mild",
-      "text": "if (file != (FILE *)&DAT_100170c8) {",
+      "text": "if (file != (_FILE *)&DAT_100170c8) {",
       "type": "undefined_data"
     },
     {

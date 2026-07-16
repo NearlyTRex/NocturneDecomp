@@ -280,7 +280,7 @@ section .text
     MOV ESI,EBX                         ; 1000f5e7
     PUSH ECX                            ; 1000f5e9
     CALL crt_time.c__expandtime_FUN_1000ed30 ; 1000f5ea
-        ;   XREF to: 1000ed30 (UNCONDITIONAL_CALL)  ; void crt_time.c__expandtime_FUN_1000ed30(uchar code, tm * tb, char * * buf, size_t * count)
+        ;   XREF to: 1000ed30 (UNCONDITIONAL_CALL)  ; void crt_time.c__expandtime_FUN_1000ed30(uchar code, _tm * tb, char * * buf, size_t * count)
     ADD ESP,0x10                        ; 1000f5ef
     JMP 0x1000f620                      ; 1000f5f2
         ;   XREF to: 1000f620 (UNCONDITIONAL_JUMP)  ; LAB_1000f620

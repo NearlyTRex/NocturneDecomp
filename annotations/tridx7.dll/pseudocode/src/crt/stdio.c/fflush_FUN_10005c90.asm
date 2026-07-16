@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_fflush_FUN_10005c90(FILE *file)
+; int __cdecl crt_stdio_c_fflush_FUN_10005c90(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; Called Functions:
 ;   crt_stdio.c__fflush_lk_FUN_10005cd0
@@ -33,16 +33,16 @@ section .text
     PUSH ESI                            ; 10005ca7
         ;   Label: LAB_10005ca7
     CALL crt_thread.c__lock_file_FUN_10005a30 ; 10005ca8
-        ;   XREF to: 10005a30 (UNCONDITIONAL_CALL)  ; void crt_thread.c__lock_file_FUN_10005a30(FILE * file)
+        ;   XREF to: 10005a30 (UNCONDITIONAL_CALL)  ; void crt_thread.c__lock_file_FUN_10005a30(_FILE * file)
     ADD ESP,0x4                         ; 10005cad
     PUSH ESI                            ; 10005cb0
     CALL crt_stdio.c__fflush_lk_FUN_10005cd0 ; 10005cb1
-        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(FILE * file)
+        ;   XREF to: 10005cd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fflush_lk_FUN_10005cd0(_FILE * file)
     ADD ESP,0x4                         ; 10005cb6
     MOV EDI,EAX                         ; 10005cb9
     PUSH ESI                            ; 10005cbb
     CALL crt_thread.c__unlock_file_FUN_10005aa0 ; 10005cbc
-        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(FILE * file)
+        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(_FILE * file)
     ADD ESP,0x4                         ; 10005cc1
     MOV EAX,EDI                         ; 10005cc4
     POP EDI                             ; 10005cc6

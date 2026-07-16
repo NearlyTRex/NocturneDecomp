@@ -2,11 +2,11 @@
 // Address: 10006920
 // Address Range: [[10006920, 10006960]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_write_char_FUN_10006920(int ch,FILE *file,int *pnumwritten)
+// Signature: void __cdecl crt_stdio_c_write_char_FUN_10006920(int ch,_FILE *file,int *pnumwritten)
 
 #include "nocturne.h"
 
-void __cdecl write_char(int ch,FILE *file,int *pnumwritten)
+void __cdecl write_char(int ch,_FILE *file,int *pnumwritten)
 
 {
   int iVar1;

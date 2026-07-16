@@ -2,11 +2,11 @@
 // Address: 10005d10
 // Address Range: [[10005d10, 10005d73]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__flush_FUN_10005d10(FILE *file)
+// Signature: int __cdecl crt_stdio_c__flush_FUN_10005d10(_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl _flush(FILE *file)
+int __cdecl _flush(_FILE *file)
 
 {
   uint uVar1;

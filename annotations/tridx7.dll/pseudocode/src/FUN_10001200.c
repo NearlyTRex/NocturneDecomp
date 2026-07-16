@@ -14,7 +14,7 @@ void FUN_10001200(void)
   int iVar3;
   int iVar4;
   uint uVar5;
-  FILE *pFVar6;
+  _FILE *p_Var6;
   int iVar7;
   int iVar8;
   int iVar9;
@@ -30,19 +30,19 @@ void FUN_10001200(void)
   local_38 = 0;
   DAT_10060670 = 0;
   local_34 = 0x20;
-  pFVar6 = _fopen(".\\system\\render.ini","rt");
-  if (pFVar6 == (FILE *)0x0) {
-    pFVar6 = _fopen(".\\system\\render.ini","wt");
-    _fprintf(pFVar6,"[%s]\n","Textures");
-    _fprintf(pFVar6,"maxTextures32=%d\n",local_40);
-    _fprintf(pFVar6,"maxTextures64=%d\n",local_3c);
-    _fprintf(pFVar6,"maxTextures128=%d\n",local_38);
-    _fprintf(pFVar6,"maxTextures256=%d\n",local_34);
-    _fprintf(pFVar6,"mipMapFlag=%d\n",DAT_10060670);
-    _fclose(pFVar6);
+  p_Var6 = _fopen(".\\system\\render.ini","rt");
+  if (p_Var6 == (_FILE *)0x0) {
+    p_Var6 = _fopen(".\\system\\render.ini","wt");
+    _fprintf(p_Var6,"[%s]\n","Textures");
+    _fprintf(p_Var6,"maxTextures32=%d\n",local_40);
+    _fprintf(p_Var6,"maxTextures64=%d\n",local_3c);
+    _fprintf(p_Var6,"maxTextures128=%d\n",local_38);
+    _fprintf(p_Var6,"maxTextures256=%d\n",local_34);
+    _fprintf(p_Var6,"mipMapFlag=%d\n",DAT_10060670);
+    _fclose(p_Var6);
   }
   else {
-    _fclose(pFVar6);
+    _fclose(p_Var6);
     FUN_10001440("Textures","maxTextures32",&local_40);
     FUN_10001440("Textures","maxTextures64",&local_3c);
     FUN_10001440("Textures","maxTextures128",&local_38);

@@ -2,11 +2,11 @@
 // Address: 10005470
 // Address Range: [[10005470, 100054ce]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__fclose_lk_FUN_10005470(FILE *file)
+// Signature: int __cdecl crt_stdio_c__fclose_lk_FUN_10005470(_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl _fclose_lk(FILE *file)
+int __cdecl _fclose_lk(_FILE *file)
 
 {
   int iVar1;

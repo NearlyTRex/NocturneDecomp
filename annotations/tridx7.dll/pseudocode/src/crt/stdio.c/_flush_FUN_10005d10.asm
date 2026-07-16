@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__flush_FUN_10005d10(FILE *file)
+; int __cdecl crt_stdio_c__flush_FUN_10005d10(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[3]:
 ;   crt_stdio.c__fclose_lk_FUN_10005470 at 10005482

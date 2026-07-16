@@ -2,16 +2,16 @@
 // Address: 1000ec20
 // Address Range: [[1000ec20, 1000ed2c]]
 // Convention: __cdecl
-// Signature: size_t __cdecl crt_time_c_strftime_FUN_1000ec20(char *dest,size_t max_size,char *format,tm *timeptr)
+// Signature: size_t __cdecl crt_time_c_strftime_FUN_1000ec20(char *dest,size_t max_size,char *format,_tm *timeptr)
 
 #include "nocturne.h"
 
-size_t __cdecl strftime(char *dest,size_t max_size,char *format,tm *timeptr)
+size_t __cdecl strftime(char *dest,size_t max_size,char *format,_tm *timeptr)
 
 {
   byte bVar1;
   size_t sVar2;
-  tm *tb;
+  _tm *tb;
   byte *pbVar3;
   byte *pbVar4;
   bool bVar5;

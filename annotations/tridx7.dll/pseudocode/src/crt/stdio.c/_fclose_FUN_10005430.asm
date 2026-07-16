@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__fclose_FUN_10005430(FILE *file)
+; int __cdecl crt_stdio_c__fclose_FUN_10005430(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[3]:
 ;   APIDLLsetVideoMode at 1000268c
@@ -36,16 +36,16 @@ section .text
     PUSH ESI                            ; 1000544d
         ;   Label: LAB_1000544d
     CALL crt_thread.c__lock_file_FUN_10005a30 ; 1000544e
-        ;   XREF to: 10005a30 (UNCONDITIONAL_CALL)  ; void crt_thread.c__lock_file_FUN_10005a30(FILE * file)
+        ;   XREF to: 10005a30 (UNCONDITIONAL_CALL)  ; void crt_thread.c__lock_file_FUN_10005a30(_FILE * file)
     ADD ESP,0x4                         ; 10005453
     PUSH ESI                            ; 10005456
     CALL crt_stdio.c__fclose_lk_FUN_10005470 ; 10005457
-        ;   XREF to: 10005470 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_lk_FUN_10005470(FILE * file)
+        ;   XREF to: 10005470 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_lk_FUN_10005470(_FILE * file)
     ADD ESP,0x4                         ; 1000545c
     MOV EDI,EAX                         ; 1000545f
     PUSH ESI                            ; 10005461
     CALL crt_thread.c__unlock_file_FUN_10005aa0 ; 10005462
-        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(FILE * file)
+        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(_FILE * file)
     ADD ESP,0x4                         ; 10005467
     MOV EAX,EDI                         ; 1000546a
     POP EDI                             ; 1000546c

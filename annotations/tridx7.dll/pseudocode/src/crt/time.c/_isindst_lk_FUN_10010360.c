@@ -2,11 +2,11 @@
 // Address: 10010360
 // Address Range: [[10010360, 100105ba]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_time_c__isindst_lk_FUN_10010360(tm *tb)
+// Signature: int __cdecl crt_time_c__isindst_lk_FUN_10010360(_tm *tb)
 
 #include "nocturne.h"
 
-int __cdecl _isindst_lk(tm *tb)
+int __cdecl _isindst_lk(_tm *tb)
 
 {
   uint date;

@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c__flsbuf_FUN_10007420",
-    "signature": "int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,FILE *str)"
+    "signature": "int __cdecl crt_stdio_c__flsbuf_FUN_10007420(int ch,_FILE *str)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
         "name": "str",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -189,7 +189,7 @@
       "line": 34,
       "match": "DAT_100170a8",
       "severity": "mild",
-      "text": "if ((str == (FILE *)&DAT_100170a8) || (str == (FILE *)&DAT_100170c8)) {",
+      "text": "if ((str == (_FILE *)&DAT_100170a8) || (str == (_FILE *)&DAT_100170c8)) {",
       "type": "undefined_data"
     },
     {
@@ -197,7 +197,7 @@
       "line": 34,
       "match": "DAT_100170c8",
       "severity": "mild",
-      "text": "if ((str == (FILE *)&DAT_100170a8) || (str == (FILE *)&DAT_100170c8)) {",
+      "text": "if ((str == (_FILE *)&DAT_100170a8) || (str == (_FILE *)&DAT_100170c8)) {",
       "type": "undefined_data"
     },
     {

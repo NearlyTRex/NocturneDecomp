@@ -10,7 +10,7 @@ int __cdecl _flsall(int flag)
 
 {
   void *stream;
-  FILE *file;
+  _FILE *file;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -27,7 +27,7 @@ int __cdecl _flsall(int flag)
       stream = *(void **)(DAT_1024085c + iVar3);
       if ((stream != (void *)0x0) && ((*(byte *)((int)stream + 0xc) & 0x83) != 0)) {
         _lock_file2(index,stream);
-        file = *(FILE **)(DAT_1024085c + iVar3);
+        file = *(_FILE **)(DAT_1024085c + iVar3);
         if ((file->_flag & 0x83U) != 0) {
           if (flag == 1) {
             iVar1 = _fflush_lk(file);

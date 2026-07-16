@@ -2,13 +2,13 @@
 // Address: 10006a30
 // Address Range: [[10006a30, 10006bca]]
 // Convention: __cdecl
-// Signature: FILE * __cdecl crt_stdio_c__openfile_FUN_10006a30(char *filename,char *mode,int sh_flag,FILE *file)
+// Signature: _FILE * __cdecl crt_stdio_c__openfile_FUN_10006a30(char *filename,char *mode,int sh_flag,_FILE *file)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-FILE * __cdecl _openfile(char *filename,char *mode,int sh_flag,FILE *file)
+_FILE * __cdecl _openfile(char *filename,char *mode,int sh_flag,_FILE *file)
 
 {
   char cVar1;
@@ -33,7 +33,7 @@ FILE * __cdecl _openfile(char *filename,char *mode,int sh_flag,FILE *file)
       goto LAB_10006a7d;
     }
     if (cVar1 != 'w') {
-      return (FILE *)0x0;
+      return (_FILE *)0x0;
     }
     oflag = 0x301;
   }
@@ -138,5 +138,5 @@ LAB_10006a7d:
     file->_file = iVar5;
     return file;
   }
-  return (FILE *)0x0;
+  return (_FILE *)0x0;
 }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c__freebuf_FUN_10005c50(FILE *file)
+; void __cdecl crt_stdio_c__freebuf_FUN_10005c50(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c__fclose_lk_FUN_10005470 at 1000548d

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; FILE * __cdecl crt_stdio_c__fsopen_FUN_10005520(char *filename,char *mode,int sh_flag)
+; _FILE * __cdecl crt_stdio_c__fsopen_FUN_10005520(char *filename,char *mode,int sh_flag)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -24,7 +24,7 @@ section .text
         ;   Label: crt_stdio.c__fsopen_FUN_10005520
     PUSH EDI                            ; 10005521
     CALL crt_stdio.c__getstream_FUN_10006c40 ; 10005522
-        ;   XREF to: 10006c40 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c__getstream_FUN_10006c40()
+        ;   XREF to: 10006c40 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c__getstream_FUN_10006c40()
     MOV ESI,EAX                         ; 10005527
     TEST ESI,ESI                        ; 10005529
     JNZ 0x10005532                      ; 1000552b
@@ -42,12 +42,12 @@ section .text
     PUSH ECX                            ; 10005540
     PUSH EDX                            ; 10005541
     CALL crt_stdio.c__openfile_FUN_10006a30 ; 10005542
-        ;   XREF to: 10006a30 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c__openfile_FUN_10006a30(char * filename, char * mode, int sh_flag, FILE * file)
+        ;   XREF to: 10006a30 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c__openfile_FUN_10006a30(char * filename, char * mode, int sh_flag, _FILE * file)
     ADD ESP,0x10                        ; 10005547
     MOV EDI,EAX                         ; 1000554a
     PUSH ESI                            ; 1000554c
     CALL crt_thread.c__unlock_file_FUN_10005aa0 ; 1000554d
-        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(FILE * file)
+        ;   XREF to: 10005aa0 (UNCONDITIONAL_CALL)  ; void crt_thread.c__unlock_file_FUN_10005aa0(_FILE * file)
     ADD ESP,0x4                         ; 10005552
     MOV EAX,EDI                         ; 10005555
     POP EDI                             ; 10005557

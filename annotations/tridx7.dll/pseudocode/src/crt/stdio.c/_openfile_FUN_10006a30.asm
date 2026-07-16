@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; FILE * __cdecl crt_stdio_c__openfile_FUN_10006a30(char *filename,char *mode,int sh_flag,FILE *file)
+; _FILE * __cdecl crt_stdio_c__openfile_FUN_10006a30(char *filename,char *mode,int sh_flag,_FILE *file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; char *           Stack[0x8]:4   mode
 ; int              Stack[0xc]:4   sh_flag
-; FILE *           Stack[0x10]:4   file
+; _FILE *          Stack[0x10]:4   file
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

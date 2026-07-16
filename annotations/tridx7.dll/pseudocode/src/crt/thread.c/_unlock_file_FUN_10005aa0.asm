@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_thread_c__unlock_file_FUN_10005aa0(FILE *file)
+; void __cdecl crt_thread_c__unlock_file_FUN_10005aa0(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[4]:
 ;   crt_stdio.c__fclose_FUN_10005430 at 10005462

@@ -2,16 +2,16 @@
 // Address: 10005c90
 // Address Range: [[10005c90, 10005cc8]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fflush_FUN_10005c90(FILE *file)
+// Signature: int __cdecl crt_stdio_c_fflush_FUN_10005c90(_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl _fflush(FILE *file)
+int __cdecl _fflush(_FILE *file)
 
 {
   int iVar1;
   
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     iVar1 = _flsall(0);
     return iVar1;
   }

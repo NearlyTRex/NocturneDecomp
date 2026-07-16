@@ -2,13 +2,13 @@
 // Address: 10005e60
 // Address Range: [[10005e60, 10005ef1]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__stbuf_FUN_10005e60(FILE *file)
+// Signature: int __cdecl crt_stdio_c__stbuf_FUN_10005e60(_FILE *file)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl _stbuf(FILE *file)
+int __cdecl _stbuf(_FILE *file)
 
 {
   int *piVar1;
@@ -20,11 +20,11 @@ int __cdecl _stbuf(FILE *file)
   if (iVar3 == 0) {
     return 0;
   }
-  if (file == (FILE *)&DAT_100170a8) {
+  if (file == (_FILE *)&DAT_100170a8) {
     iVar3 = 0;
   }
   else {
-    if (file != (FILE *)&DAT_100170c8) {
+    if (file != (_FILE *)&DAT_100170c8) {
       return 0;
     }
     iVar3 = 1;

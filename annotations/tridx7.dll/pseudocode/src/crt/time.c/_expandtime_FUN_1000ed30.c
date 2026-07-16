@@ -2,11 +2,11 @@
 // Address: 1000ed30
 // Address Range: [[1000ed30, 1000f1df]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_time_c__expandtime_FUN_1000ed30(uchar code,tm *tb,char **buf,size_t *count)
+// Signature: void __cdecl crt_time_c__expandtime_FUN_1000ed30(uchar code,_tm *tb,char **buf,size_t *count)
 
 #include "nocturne.h"
 
-void __cdecl _expandtime(uchar code,tm *tb,char **buf,size_t *count)
+void __cdecl _expandtime(uchar code,_tm *tb,char **buf,size_t *count)
 
 {
   int iVar1;

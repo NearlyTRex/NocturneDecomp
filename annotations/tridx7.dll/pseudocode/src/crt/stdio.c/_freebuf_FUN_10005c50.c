@@ -2,11 +2,11 @@
 // Address: 10005c50
 // Address Range: [[10005c50, 10005c88]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c__freebuf_FUN_10005c50(FILE *file)
+// Signature: void __cdecl crt_stdio_c__freebuf_FUN_10005c50(_FILE *file)
 
 #include "nocturne.h"
 
-void __cdecl _freebuf(FILE *file)
+void __cdecl _freebuf(_FILE *file)
 
 {
   if (((file->_flag & 0x83U) != 0) && ((file->_flag & 8U) != 0)) {
