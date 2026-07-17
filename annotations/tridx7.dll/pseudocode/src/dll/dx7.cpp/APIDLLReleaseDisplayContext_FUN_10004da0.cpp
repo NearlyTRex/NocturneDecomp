@@ -1,12 +1,12 @@
 // Name: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
 // Address: 10004da0
 // Address Range: [[10004da0, 10004e04]]
-// Convention: unknown
-// Signature: void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
+// Convention: __cdecl
+// Signature: void __cdecl dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC hdc)
 
 #include "nocturne.h"
 
-void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
+void __cdecl dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC hdc)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
                     /* 0x4da0  3  APIDLLReleaseDisplayContext */
   bVar3 = 0;
   if (g_BackBufferSurface != (IDirectDrawSurface *)0x0) {
-    (*g_BackBufferSurface->vtable->ReleaseDC)(g_BackBufferSurface,param_1);
+    (*g_BackBufferSurface->vtable->ReleaseDC)(g_BackBufferSurface,hdc);
     if (INT_10014230 != 0) {
       pDVar2 = &g_PrimarySurfaceDesc;
       for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {

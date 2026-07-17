@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0",
-    "signature": "int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)"
+    "signature": "int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids)"
   },
   "function_calls": [],
   "globals": [
@@ -136,10 +136,10 @@
       },
       {
         "is_param": true,
-        "name": "enum_data_buffer",
+        "name": "out_driver_names",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "char * *"
       },
       {
         "is_param": true,

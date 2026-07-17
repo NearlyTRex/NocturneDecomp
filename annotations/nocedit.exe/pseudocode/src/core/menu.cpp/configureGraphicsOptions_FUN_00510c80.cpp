@@ -47,7 +47,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
     pacVar6 = pacVar6 + 1;
   } while (iVar4 != 0x24);
   wincore_windll_cpp_buildCardList_FUN_005b7db0
-            (&g_GraphicsCardCount,g_GraphicsCardDriverData,g_GraphicsCardNames,
+            (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
              g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
   if (g_GraphicsCardCount <= g_CurrentGraphicsBoard) {
     g_CurrentGraphicsBoard = 0;
@@ -88,7 +88,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
           if (g_UseDirect3D != 0) {
 LAB_00510e1f:
             wincore_windll_cpp_buildCardList_FUN_005b7db0
-                      (&g_GraphicsCardCount,g_GraphicsCardDriverData,g_GraphicsCardNames,
+                      (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
                        g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
             wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
             iVar7 = g_GraphicsCardCount;
@@ -557,7 +557,7 @@ LAB_005116c3:
         iVar3 = g_UseDirect3D;
         if (g_UseDirect3D != 0) {
           wincore_windll_cpp_buildCardList_FUN_005b7db0
-                    (&g_GraphicsCardCount,g_GraphicsCardDriverData,g_GraphicsCardNames,
+                    (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
                      g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
           wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
           iVar6 = g_CurrentGraphicsBoard;

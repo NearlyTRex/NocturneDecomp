@@ -261,11 +261,11 @@ int __cdecl floorLog2(uint value);
 
 // Original: dll_dx7.cpp_APIDLLGetDisplayContext_FUN_10004d30
 // Address: 10004d30
-void APIDLLGetDisplayContext(undefined4 *param_1);
+void __cdecl APIDLLGetDisplayContext(HDC *hdc);
 
 // Original: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
 // Address: 10004da0
-void APIDLLReleaseDisplayContext(HDC param_1);
+void __cdecl APIDLLReleaseDisplayContext(HDC hdc);
 
 // Original: dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10
 // Address: 10004e10
@@ -297,7 +297,7 @@ int __cdecl APIDLLselectCard(int card_index);
 
 // Original: dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0
 // Address: 100052e0
-int __cdecl APIDLLbuildCardList(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids);
+int __cdecl APIDLLbuildCardList(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 
 // Original: dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
 // Address: 10005350

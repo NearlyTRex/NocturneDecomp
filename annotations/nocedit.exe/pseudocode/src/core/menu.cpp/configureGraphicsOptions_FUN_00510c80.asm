@@ -77,10 +77,10 @@ section .text
     PUSH 0x2f276bc                      ; 00510cbd | g_GraphicsCardDeviceIDs
     PUSH 0x2f2767c                      ; 00510cc2 | g_GraphicsCardVendorIDs
     PUSH 0x2f2763c                      ; 00510cc7 | g_GraphicsCardNames
-    PUSH 0x2f275fc                      ; 00510ccc | g_GraphicsCardDriverData
+    PUSH 0x2f275fc                      ; 00510ccc | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00510cd1 | g_GraphicsCardCount
     CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00510cd6
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, ...)
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     MOV EAX,[0x02f275f4]                ; 00510cdb | g_CurrentGraphicsBoard
     MOV EBX,dword ptr [0x02f275f8]      ; 00510ce0 | g_GraphicsCardCount
     ADD ESP,0x14                        ; 00510ce6
@@ -182,10 +182,10 @@ section .text
         ;   Label: LAB_00510e1f
     PUSH 0x2f2767c                      ; 00510e24 | g_GraphicsCardVendorIDs
     PUSH 0x2f2763c                      ; 00510e29 | g_GraphicsCardNames
-    PUSH 0x2f275fc                      ; 00510e2e | g_GraphicsCardDriverData
+    PUSH 0x2f275fc                      ; 00510e2e | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00510e33 | g_GraphicsCardCount
     CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00510e38
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, ...)
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     ADD ESP,0x14                        ; 00510e3d
     LEA EAX,[ESP + 0x12c]               ; 00510e40
     PUSH EAX                            ; 00510e47
@@ -1059,10 +1059,10 @@ section .text
         ;   Label: LAB_00511750
     PUSH 0x2f2767c                      ; 00511755 | g_GraphicsCardVendorIDs
     PUSH 0x2f2763c                      ; 0051175a | g_GraphicsCardNames
-    PUSH 0x2f275fc                      ; 0051175f | g_GraphicsCardDriverData
+    PUSH 0x2f275fc                      ; 0051175f | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00511764 | g_GraphicsCardCount
     CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00511769
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, ...)
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     ADD ESP,0x14                        ; 0051176e
     LEA EAX,[ESP + 0x12c]               ; 00511771
     PUSH EAX                            ; 00511778

@@ -2,11 +2,11 @@
 // Address: 100052e0
 // Address Range: [[100052e0, 10005341]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)
+// Signature: int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids)
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)
+int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids)
 
 {
   int iVar1;
@@ -31,8 +31,8 @@ int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,voi
       out_vendor_ids = out_vendor_ids + 1;
     }
     do {
-      *(char **)enum_data_buffer = g_AdapterDriverName[0] + iVar3;
-      enum_data_buffer = (void *)((int)enum_data_buffer + 4);
+      *out_driver_names = g_AdapterDriverName[0] + iVar3;
+      out_driver_names = out_driver_names + 1;
       iVar2 = iVar2 + -1;
       *out_card_names = g_AdapterDescription[0] + iVar3;
       out_card_names = out_card_names + 1;

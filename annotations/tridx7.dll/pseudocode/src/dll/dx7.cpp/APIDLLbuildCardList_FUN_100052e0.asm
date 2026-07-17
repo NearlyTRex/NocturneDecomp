@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)
+; int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   out_card_count
-; void *           Stack[0x8]:4   enum_data_buffer
+; char * *         Stack[0x8]:4   out_driver_names
 ; char * *         Stack[0xc]:4   out_card_names
 ; int *            Stack[0x10]:4   out_vendor_ids
 ; int *            Stack[0x14]:4   out_device_ids

@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 93,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
       "unrolled_memcpy"
     ],
     "total_lines": 73
@@ -31,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0",
-    "signature": "int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids)"
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids)"
   },
   "function_calls": [],
   "globals": [
@@ -143,10 +142,10 @@
       },
       {
         "is_param": true,
-        "name": "enum_data_buffer",
+        "name": "out_driver_names",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "char * *"
       },
       {
         "is_param": true,
@@ -172,14 +171,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(void *)((int)enum_data_buffer",
-      "severity": "moderate",
-      "text": "enum_data_buffer = (void *)((int)enum_data_buffer + 4);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 15,

@@ -27,6 +27,7 @@ char* g_ControlOptionsMenuPointers[10] = {};
 char* g_SoundOptionsMenuPointers[10] = {};
 
 // char*[16]
+char* g_GraphicsCardDriverNames[16] = {};
 char* g_GraphicsCardNames[16] = {};
 
 // char*[4]
@@ -46,9 +47,6 @@ char g_CustomKeyNames[30][40] = {};
 // char[4][256]
 char g_OptionsMenuTextBuffers[4][256] = {};
 char g_MainMenuTextBuffers[4][256] = {};
-
-// char[64]
-char g_GraphicsCardDriverData[64] = {};
 
 // char[9][256]
 char g_GraphicsMenuTextBuffers[9][256] = {};

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
+; void __cdecl dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC hdc)
 ;
+; Parameters:
+; HDC              Stack[0x4]:4   hdc
 ;
 ; Referenced Globals:
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000

@@ -179,7 +179,7 @@ int __cdecl wincore_windll_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode);
 int __cdecl wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(int left,int top,int mode,int right,int bottom);
 int __cdecl wincore_windll_cpp_getVideoMemory_FUN_005b7d60(int *total_memory,int *available_memory,int *memory_type);
 int __cdecl wincore_windll_cpp_selectCard_FUN_005b7d90(int card_index);
-int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0(int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,int *out_device_ids);
+int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 int __cdecl wincore_windll_cpp_lockHoldBuffer_FUN_005b7df0(void);
 int __cdecl wincore_windll_cpp_unlockHoldBuffer_FUN_005b7e10(void);
 int __cdecl wincore_windll_cpp_lockTexture_FUN_005b7e23(int texture_id);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(undefined4 *param_1)
+; void __cdecl dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(HDC *hdc)
 ;
+; Parameters:
+; HDC *            Stack[0x4]:4   hdc
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

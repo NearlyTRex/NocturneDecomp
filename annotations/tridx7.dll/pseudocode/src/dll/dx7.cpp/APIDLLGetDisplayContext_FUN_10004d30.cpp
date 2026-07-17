@@ -1,12 +1,12 @@
 // Name: dll_dx7.cpp_APIDLLGetDisplayContext_FUN_10004d30
 // Address: 10004d30
 // Address Range: [[10004d30, 10004d9d]]
-// Convention: unknown
-// Signature: void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(HDC *hdc)
 
 #include "nocturne.h"
 
-void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(uint *param_1)
+void __cdecl dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(HDC *hdc)
 
 {
   HRESULT HVar1;
@@ -25,6 +25,6 @@ void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(uint *param_1)
       local_4 = (HDC)0x0;
     }
   }
-  *param_1 = local_4;
+  *hdc = local_4;
   return;
 }
