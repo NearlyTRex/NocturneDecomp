@@ -15,7 +15,7 @@ void dll_dx7_cpp_FUN_10003f10(uint param_1)
   uint uVar2;
   DWORD value;
   
-  if ((g_TextureOpacity != (void *)0x0) && ((param_1 & 1) != 0)) {
+  if ((g_TextureOpacity != (uchar *)0x0) && ((param_1 & 1) != 0)) {
     param_1 = param_1 | 0x22;
   }
   if (*g_ExternalRendererBridge.system_initialized != DAT_1001421c) {

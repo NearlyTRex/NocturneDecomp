@@ -25,7 +25,7 @@
 ;   undefined4 g_TexturePixelFormat.dwFlags
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10003400
 ;   dll_dx7.cpp_FUN_100035b0
 ;
@@ -182,8 +182,8 @@ section .text
     JZ 0x100032d1                       ; 100032c2
         ;   XREF to: 100032d1 (CONDITIONAL_JUMP)  ; LAB_100032d1
     PUSH 0x10016a9c                     ; 100032c4 | = "Can't create hold surface"
-    CALL dll_dx7.cpp_FUN_10002340       ; 100032c9
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 100032c9
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 100032ce
     LEA EDI,[ESP + 0xb4]                ; 100032d1
         ;   Label: LAB_100032d1

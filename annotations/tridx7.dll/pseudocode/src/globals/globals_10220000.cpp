@@ -21,19 +21,19 @@ GUID g_AdapterGuidStorage[16] = {};
 
 // int
 int g_MasterZBufferCount = 0;
+int g_RedShift = 0;
+int g_GreenShift = 0;
+int g_HWBlueShift = 0;
 
 // int[8]
 int g_TextureSizeTable[8] = {};
 
-// undefined1
-undefined1 DAT_10226a4c = 0x00;
-undefined1 DAT_10226a54 = 0x00;
-undefined1 DAT_10226e80 = 0x00;
+// uint[256]
+uint g_PackedPalette[256] = {};
 
 // undefined4
 undefined4 DAT_10226868 = 0x00000000;
 undefined4 DAT_10226a50 = 0x00000000;
-undefined4 DAT_10226a80 = 0x00000000;
 
 // void*[1024]
 void* g_ScanlinePointers[1024] = {};

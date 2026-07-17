@@ -78,7 +78,7 @@ LAB_100010ce:
       } while (iVar4 < iVar3);
     }
   }
-  dll_dx7_cpp_FUN_100030e0(this_ptr->entries[iVar10].slot);
+  dll_dx7_cpp_loadTexture_FUN_100030e0(this_ptr->entries[iVar10].slot);
   uVar7 = 0xffffffff;
   this_ptr->entries[iVar10].lru_stamp = this_ptr->usage_counter;
   pcVar5 = texture_info->texture_name;

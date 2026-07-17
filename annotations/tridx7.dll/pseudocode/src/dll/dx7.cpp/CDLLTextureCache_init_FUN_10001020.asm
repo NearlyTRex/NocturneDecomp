@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   texture_size
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10001200 at 1000141f
+;   dll_dx7.cpp_initTextureCaches_FUN_10001200 at 1000141f
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_createTexture_FUN_10002f60

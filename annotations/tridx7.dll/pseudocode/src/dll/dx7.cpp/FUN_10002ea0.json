@@ -50,13 +50,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 237,
+    "complexity_score": 217,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -120,13 +120,13 @@
     },
     {
       "addr": "10139048",
-      "name": "DAT_10139048",
-      "type": "undefined4",
+      "name": "g_StagingTextures",
+      "type": "IDirectDrawSurface*[4][8]",
       "value": null
     },
     {
       "addr": "10139068",
-      "name": "DAT_10139068",
+      "name": "g_StagingTextures[1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -269,12 +269,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "DAT_10139048",
-      "severity": "mild",
-      "text": "piVar1 = *(int **)((int)&DAT_10139048 + iVar2);",
-      "type": "undefined_data"
+      "match": "(int **)((int)g_StagingTextures",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -285,12 +285,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "DAT_10139048",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_10139048 + iVar2) = 0;",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_StagingTextures",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_StagingTextures[0] + iVar2) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -317,19 +317,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_StagingTextures[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 25,
-      "match": "(int)&DAT_10139048",
+      "match": "(int)g_StagingTextures[0]",
       "severity": "moderate",
-      "text": "piVar1 = *(int **)((int)&DAT_10139048 + iVar2);",
+      "text": "piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_StagingTextures[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 28,
-      "match": "(int)&DAT_10139048",
+      "match": "(int)g_StagingTextures[0]",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_10139048 + iVar2) = 0;",
+      "text": "*(uint *)((int)g_StagingTextures[0] + iVar2) = 0;",
       "type": "pointer_truncation"
     },
     {
@@ -346,22 +346,6 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_10138f30 + iVar2) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar1 = *(int **)((int)&DAT_10139048 + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 28,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_10139048 + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {

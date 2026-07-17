@@ -8,13 +8,44 @@
         "start":"10001180"
       }
     ],
+    "conv":"__ecxcall",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10001180",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDLLTextureCache*"
+        },
+        {
+          "name":"texture_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
+        }
+      ]
     }
   },
   {
@@ -26,9 +57,10 @@
         "start":"10001200"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10001200",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_initTextureCaches_FUN_10001200",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -287,10 +319,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -600,9 +629,10 @@
         "start":"10003a80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10003a80",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -781,10 +811,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {

@@ -11,25 +11,25 @@ void __ecxcall CDLLTextureCache::init(CDLLTextureCache *this_ptr,int max_count,i
 // Address: 10001090
 int __ecxcall CDLLTextureCache::acquireSlot(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 
-// Original: dll_dx7.cpp_FUN_10001180
+// Original: dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180
 // Address: 10001180
-void FUN_10001180(SMRGLTextureBasic *param_1);
+void __ecxcall CDLLTextureCache::bindTexture(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 
-// Original: dll_dx7.cpp_FUN_10001200
+// Original: dll_dx7.cpp_initTextureCaches_FUN_10001200
 // Address: 10001200
-void FUN_10001200(void);
+void __cdecl initTextureCaches(void);
 
-// Original: dll_dx7.cpp_FUN_10001440
+// Original: dll_dx7.cpp_readIniInt_FUN_10001440
 // Address: 10001440
-void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
+void __cdecl readIniInt(char *section,char *key,uint *value_inout);
 
 // Original: dll_dx7.cpp_resolveTextureSlot_FUN_10001470
 // Address: 10001470
 int __cdecl resolveTextureSlot(SMRGLTextureBasic *texture_info);
 
-// Original: dll_dx7.cpp_FUN_100015d0
+// Original: dll_dx7.cpp_bindTextureBySize_FUN_100015d0
 // Address: 100015d0
-void FUN_100015d0(undefined4 param_1);
+void __cdecl bindTextureBySize(SMRGLTextureBasic *texture_info);
 
 // Original: dll_dx7.cpp_FUN_100017b0
 // Address: 100017b0
@@ -51,9 +51,9 @@ int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface);
 // Address: 10001d70
 void FUN_10001d70(int param_1);
 
-// Original: dll_dx7.cpp_FUN_10002340
+// Original: dll_dx7.cpp_fatalError_FUN_10002340
 // Address: 10002340
-void FUN_10002340(LPCSTR param_1);
+void __cdecl fatalError(char *message);
 
 // Original: dll_dx7.cpp_FUN_10002370
 // Address: 10002370
@@ -71,9 +71,9 @@ int __cdecl APIDLLtoggle(void);
 // Address: 10002500
 int __cdecl APIDLLsetVideoMode(void **scanline_ptrs);
 
-// Original: dll_dx7.cpp_FUN_10002b20
+// Original: dll_dx7.cpp_readIniInt_FUN_10002b20
 // Address: 10002b20
-void FUN_10002b20(LPCSTR param_1,LPCSTR param_2,UINT *param_3);
+void __cdecl readIniInt(char *section,char *key,uint *value_inout);
 
 // Original: dll_dx7.cpp_FUN_10002b50
 // Address: 10002b50
@@ -139,9 +139,9 @@ int __cdecl createTexture(int texture_size);
 // Address: 10003090
 char FUN_10003090(int param_1);
 
-// Original: dll_dx7.cpp_FUN_100030e0
+// Original: dll_dx7.cpp_loadTexture_FUN_100030e0
 // Address: 100030e0
-void FUN_100030e0(int param_1);
+void __cdecl loadTexture(int texture_index);
 
 // Original: dll_dx7.cpp_FUN_10003100
 // Address: 10003100
@@ -159,17 +159,17 @@ int __cdecl FUN_100035b0(void);
 // Address: 100037e0
 void FUN_100037e0(uint param_1,DWORD param_2);
 
-// Original: dll_dx7.cpp_FUN_10003830
+// Original: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
 // Address: 10003830
-void FUN_10003830(void);
+void __cdecl expandTextureAndBuildMips(void);
 
 // Original: dll_dx7.cpp_FUN_10003a30
 // Address: 10003a30
-undefined4 * FUN_10003a30(int param_1);
+uint * FUN_10003a30(int param_1);
 
-// Original: dll_dx7.cpp_FUN_10003a80
+// Original: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
 // Address: 10003a80
-void FUN_10003a80(void);
+void __cdecl uploadCurrentTexture(void);
 
 // Original: dll_dx7.cpp_FUN_10003d90
 // Address: 10003d90

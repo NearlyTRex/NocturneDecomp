@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 10002675
-;   dll_dx7.cpp_FUN_10001200 at 10001231
+;   dll_dx7.cpp_initTextureCaches_FUN_10001200 at 10001231
 ;
 ; Called Functions:
 ;   crt_stdio.c__fsopen_FUN_10005520

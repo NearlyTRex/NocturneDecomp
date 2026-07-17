@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * dll_dx7_cpp_FUN_10003a30(int param_1)
+; uint * dll_dx7_cpp_FUN_10003a30(int param_1)
 ;
 ;
 ; XREF[2]:
@@ -10,11 +10,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Can_t_get_source_size_10016ab8
-;   undefined4 DAT_101b88e0
+;   uint[87381] g_ExpandedTexture
 ;   undefined4 g_ExternalRendererBridge.texture_dimension
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
         ;   Label: dll_dx7.cpp_FUN_10003a30
     MOV EAX,[0x10226900]                ; 10003a31 | g_ExternalRendererBridge.texture_dimension
     PUSH ESI                            ; 10003a36
-    MOV EBX,0x101b88e0                  ; 10003a37 | DAT_101b88e0
+    MOV EBX,0x101b88e0                  ; 10003a37 | g_ExpandedTexture
     MOV ESI,dword ptr [ESP + 0xc]       ; 10003a3c
     PUSH EDI                            ; 10003a40
     MOV EDI,dword ptr [EAX]             ; 10003a41
@@ -44,14 +44,14 @@ section .text
     JNZ 0x10003a6a                      ; 10003a5b
         ;   XREF to: 10003a6a (CONDITIONAL_JUMP)  ; LAB_10003a6a
     PUSH 0x10016ab8                     ; 10003a5d | = "Can't get source size"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10003a62
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003a62
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10003a67
     CMP EDI,ESI                         ; 10003a6a
         ;   Label: LAB_10003a6a
     JNZ 0x10003a47                      ; 10003a6c
         ;   XREF to: 10003a47 (CONDITIONAL_JUMP)  ; LAB_10003a47
-    MOV EAX,EBX                         ; 10003a6e | DAT_101b88e0
+    MOV EAX,EBX                         ; 10003a6e | g_ExpandedTexture
         ;   Label: LAB_10003a6e
     POP EDI                             ; 10003a70
     POP ESI                             ; 10003a71

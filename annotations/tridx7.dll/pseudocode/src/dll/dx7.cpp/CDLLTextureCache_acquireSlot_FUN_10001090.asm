@@ -7,11 +7,11 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ;
 ; XREF[2]:
-;   dll_dx7.cpp_FUN_10001180 at 100011d5
+;   dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 at 100011d5
 ;   dll_dx7.cpp_resolveTextureSlot_FUN_10001470 at 1000149e
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_100030e0
+;   dll_dx7.cpp_loadTexture_FUN_100030e0
 ;
 ; *****************************************************************************
 
@@ -122,8 +122,8 @@ section .text
     LEA EBX,[EAX + EBP*0x1]             ; 1000113c
     PUSH ECX                            ; 1000113f
     ADD EDI,0x8                         ; 10001140
-    CALL dll_dx7.cpp_FUN_100030e0       ; 10001143
-        ;   XREF to: 100030e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100030e0()
+    CALL dll_dx7.cpp_loadTexture_FUN_100030e0 ; 10001143
+        ;   XREF to: 100030e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_loadTexture_FUN_100030e0(int texture_index)
     ADD ESP,0x4                         ; 10001148
     MOV EAX,dword ptr [EBP + 0xc]       ; 1000114b
     MOV ECX,0xffffffff                  ; 1000114e

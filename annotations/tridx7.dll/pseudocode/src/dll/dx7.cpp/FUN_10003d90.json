@@ -26,26 +26,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 222,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 17,
+    "pseudocode_lines": 33,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 98
+    "total_lines": 99
   },
   "cross_references": [
     {
       "addr": "10003a80",
       "from_addr": "10003b94",
-      "name": "dll_dx7.cpp_FUN_10003a80",
+      "name": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,21 +70,21 @@
   "globals": [
     {
       "addr": "101386a8",
-      "name": "DAT_101386a8",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWRedShift",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10226e80",
-      "name": "DAT_10226e80",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWBlueShift",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10240620",
-      "name": "DAT_10240620",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWGreenShift",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -94,7 +93,7 @@
       {
         "call_addr": "10003b94",
         "call_type": "direct",
-        "caller": "dll_dx7.cpp_FUN_10003a80",
+        "caller": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,32 +252,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_101386a8",
-      "severity": "mild",
-      "text": "*puVar4 = (uVar2 >> 4 & 0xf) << (DAT_101386a8 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_10226e80",
-      "severity": "mild",
-      "text": "((ushort)(uVar1 >> 4) & 0xf) << (DAT_10226e80 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_10240620",
-      "severity": "mild",
-      "text": "((ushort)(uVar1 >> 0xc) & 0xf) << (DAT_10240620 & 0x1f) | uVar2 & 0xf000;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(ushort *)((int)param_1",
       "severity": "moderate",
       "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
@@ -286,7 +261,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
@@ -294,7 +269,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",
@@ -302,7 +277,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1 = (ushort *)((int)param_1 + (param_2 & 0xfffffffe));",

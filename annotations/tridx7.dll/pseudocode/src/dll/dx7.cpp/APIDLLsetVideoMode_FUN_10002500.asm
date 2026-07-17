@@ -33,12 +33,12 @@
 ;   crt_stdio.c_fopen_FUN_10005560
 ;   dll_dx7.cpp_APIDLLclear_FUN_10004840
 ;   dll_dx7.cpp_APIDLLtoggle_FUN_100024b0
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10001d70
-;   dll_dx7.cpp_FUN_10002340
 ;   dll_dx7.cpp_FUN_10002370
-;   dll_dx7.cpp_FUN_10002b20
 ;   dll_dx7.cpp_FUN_10002f40
 ;   dll_dx7.cpp_FUN_10003100
+;   dll_dx7.cpp_readIniInt_FUN_10002b20
 ;   ExitProcess
 ;   MessageBoxA
 ;   SetCursorPos
@@ -89,8 +89,8 @@ section .text
     PUSH 0x10016714                     ; 100025d1 | = "masterZBufferCount"
     MOV dword ptr [0x10226a48],ESI      ; 100025d6 | g_MasterZBufferCount
     PUSH 0x10014140                     ; 100025dc | = "Graphics"
-    CALL dll_dx7.cpp_FUN_10002b20       ; 100025e1
-        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
+    CALL dll_dx7.cpp_readIniInt_FUN_10002b20 ; 100025e1
+        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_readIniInt_FUN_10002b20(char * section, char * key, uint * value_inout)
     ADD ESP,0xc                         ; 100025e6
     MOV dword ptr [0x101398c8],ESI      ; 100025e9 | g_UseHoldBuffer
     CMP dword ptr [0x10014178],0x1e0    ; 100025ef | g_ScreenHeight
@@ -99,8 +99,8 @@ section .text
     PUSH 0x101398c8                     ; 100025fb | g_UseHoldBuffer
     PUSH 0x10016728                     ; 10002600 | = "useHoldBuffer"
     PUSH 0x10014140                     ; 10002605 | = "Graphics"
-    CALL dll_dx7.cpp_FUN_10002b20       ; 1000260a
-        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
+    CALL dll_dx7.cpp_readIniInt_FUN_10002b20 ; 1000260a
+        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_readIniInt_FUN_10002b20(char * section, char * key, uint * value_inout)
     ADD ESP,0xc                         ; 1000260f
     XOR ESI,ESI                         ; 10002612
         ;   Label: LAB_10002612
@@ -108,22 +108,22 @@ section .text
     PUSH 0x10016738                     ; 10002619 | = "premultiplyColorAndAlpha"
     MOV dword ptr [0x10014164],ESI      ; 1000261e | g_PremultiplyColorAndAlpha
     PUSH 0x10014140                     ; 10002624 | = "Graphics"
-    CALL dll_dx7.cpp_FUN_10002b20       ; 10002629
-        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
+    CALL dll_dx7.cpp_readIniInt_FUN_10002b20 ; 10002629
+        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_readIniInt_FUN_10002b20(char * section, char * key, uint * value_inout)
     ADD ESP,0xc                         ; 1000262e
     MOV dword ptr [0x100141f0],ESI      ; 10002631 | g_DirectTextureFlag
     PUSH 0x100141f0                     ; 10002637 | g_DirectTextureFlag
     PUSH 0x10016754                     ; 1000263c | = "directTextureFlag"
     PUSH 0x10014140                     ; 10002641 | = "Graphics"
-    CALL dll_dx7.cpp_FUN_10002b20       ; 10002646
-        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
+    CALL dll_dx7.cpp_readIniInt_FUN_10002b20 ; 10002646
+        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_readIniInt_FUN_10002b20(char * section, char * key, uint * value_inout)
     ADD ESP,0xc                         ; 1000264b
     MOV dword ptr [0x10014168],ESI      ; 1000264e | g_AllowAutoMipMapping
     PUSH 0x10014168                     ; 10002654 | g_AllowAutoMipMapping
     PUSH 0x10016768                     ; 10002659 | = "allowAutoMipMapping"
     PUSH 0x10014140                     ; 1000265e | = "Graphics"
-    CALL dll_dx7.cpp_FUN_10002b20       ; 10002663
-        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002b20()
+    CALL dll_dx7.cpp_readIniInt_FUN_10002b20 ; 10002663
+        ;   XREF to: 10002b20 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_readIniInt_FUN_10002b20(char * section, char * key, uint * value_inout)
     ADD ESP,0xc                         ; 10002668
     PUSH 0x1001677c                     ; 1000266b | = "rb"
     PUSH 0x10016780                     ; 10002670 | = "system\\fly.ini"
@@ -322,8 +322,8 @@ section .text
     RET                                 ; 10002878
     PUSH 0x10016790                     ; 10002879 | = "Your 3D hardware needs to support a Z..."
         ;   Label: LAB_10002879
-    CALL dll_dx7.cpp_FUN_10002340       ; 1000287e
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 1000287e
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10002883
     XOR EAX,EAX                         ; 10002886
     POP EBP                             ; 10002888
@@ -515,8 +515,8 @@ section .text
     LEA ECX,[ESP + 0x134]               ; 10002ac8
     ADD ESP,0x14                        ; 10002acf
     PUSH ECX                            ; 10002ad2
-    CALL dll_dx7.cpp_FUN_10002340       ; 10002ad3
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10002ad3
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10002ad8
     PUSH 0x1df                          ; 10002adb
         ;   Label: LAB_10002adb

@@ -1,0 +1,277 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "pointer_type",
+        "column": 19,
+        "line": 46,
+        "message": "comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 186,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 102,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 288
+  },
+  "cross_references": [
+    {
+      "addr": "10003a80",
+      "from_addr": "10003ad4",
+      "name": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10003830",
+    "address_range": [
+      [
+        "10003830",
+        "10003a2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830",
+    "signature": "void __cdecl dll_dx7_cpp_expandTextureAndBuildMips_FUN_10003830(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10060670",
+      "name": "g_MipMapFlag",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "101386a8",
+      "name": "g_HWRedShift",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10138fb0",
+      "name": "g_TexturePalette",
+      "type": "uchar*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10139040",
+      "name": "g_BlueShift",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "101b88e0",
+      "name": "g_ExpandedTexture",
+      "type": "uint[87381]",
+      "value": null
+    },
+    {
+      "addr": "101b88e4",
+      "name": "g_ExpandedTexture[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101b88e8",
+      "name": "g_ExpandedTexture[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101b88ec",
+      "name": "g_ExpandedTexture[3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1020de38",
+      "name": "g_TextureData",
+      "type": "uchar*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10226900",
+      "name": "g_ExternalRendererBridge.texture_dimension",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1022691c",
+      "name": "g_ExternalRendererBridge.agp_texture_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226a4c",
+      "name": "g_RedShift",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10226a54",
+      "name": "g_GreenShift",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10226a64",
+      "name": "g_TexturePixelFormat.dwBitCount",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226a80",
+      "name": "g_PackedPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "10226e80",
+      "name": "g_HWBlueShift",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "1024061c",
+      "name": "g_TextureOpacity",
+      "type": "uchar*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10240620",
+      "name": "g_HWGreenShift",
+      "type": "int",
+      "value": "0x0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10003ad4",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.5369127516778525,
+    "instruction_count": 149,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 66,
+      "BOOL_OR": 5,
+      "BRANCH": 2,
+      "CBRANCH": 18,
+      "COPY": 135,
+      "INT_ADD": 48,
+      "INT_AND": 277,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 139,
+      "INT_LEFT": 8,
+      "INT_LESS": 11,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 63,
+      "INT_RIGHT": 14,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 14,
+      "INT_SEXT": 7,
+      "INT_SLESS": 78,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 30,
+      "INT_XOR": 11,
+      "LOAD": 36,
+      "POPCOUNT": 63,
+      "RETURN": 1,
+      "STORE": 15,
+      "SUBPIECE": 5
+    },
+    "pcode_op_count": 1123
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
+}

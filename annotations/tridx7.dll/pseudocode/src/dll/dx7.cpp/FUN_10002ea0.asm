@@ -13,8 +13,8 @@
 ;   undefined4 DAT_10138f30
 ;   undefined4 DAT_10138f34
 ;   undefined4 DAT_10138f50
-;   undefined4 DAT_10139048
-;   undefined4 DAT_10139068
+;   IDirectDrawSurface*[4][8] g_StagingTextures
+;   undefined4 g_StagingTextures[1][0]
 ;   STextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_TextureSurfaces[0].surface
 ;   undefined4 g_TextureSurfaces[1].texture
@@ -42,7 +42,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 10002eb7
     CALL dword ptr [EAX + 0x8]          ; 10002eb9
     MOV dword ptr [EBX + 0x10138f30],0x0 ; 10002ebc | DAT_10138f30
-    MOV EAX,dword ptr [EBX + 0x10139048] ; 10002ec6 | DAT_10139048 | DAT_10139068
+    MOV EAX,dword ptr [EBX + 0x10139048] ; 10002ec6 | g_StagingTextures | g_StagingTextures[1][0]
         ;   Label: LAB_10002ec6
     TEST EAX,EAX                        ; 10002ecc
     JZ 0x10002ee0                       ; 10002ece
@@ -50,7 +50,7 @@ section .text
     PUSH EAX                            ; 10002ed0
     MOV EAX,dword ptr [EAX]             ; 10002ed1
     CALL dword ptr [EAX + 0x8]          ; 10002ed3
-    MOV dword ptr [EBX + 0x10139048],0x0 ; 10002ed6 | DAT_10139048
+    MOV dword ptr [EBX + 0x10139048],0x0 ; 10002ed6 | g_StagingTextures
     ADD EBX,0x20                        ; 10002ee0
         ;   Label: LAB_10002ee0
     DEC EDI                             ; 10002ee3

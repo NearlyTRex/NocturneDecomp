@@ -28,9 +28,10 @@ void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)
           puVar3 = puVar3 + 1;
           uVar2 = (ushort)(uVar1 >> 0x10);
           iVar5 = iVar5 + -1;
-          *puVar4 = (uVar2 >> 4 & 0xf) << (DAT_101386a8 & 0x1f) |
-                    ((ushort)(uVar1 >> 4) & 0xf) << (DAT_10226e80 & 0x1f) |
-                    ((ushort)(uVar1 >> 0xc) & 0xf) << (DAT_10240620 & 0x1f) | uVar2 & 0xf000;
+          *puVar4 = (uVar2 >> 4 & 0xf) << ((byte)g_HWRedShift & 0x1f) |
+                    ((ushort)(uVar1 >> 4) & 0xf) << ((byte)g_HWBlueShift & 0x1f) |
+                    ((ushort)(uVar1 >> 0xc) & 0xf) << ((byte)g_HWGreenShift & 0x1f) | uVar2 & 0xf000
+          ;
           puVar4 = puVar4 + 1;
         } while (iVar5 != 0);
       }

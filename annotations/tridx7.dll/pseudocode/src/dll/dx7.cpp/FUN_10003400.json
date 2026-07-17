@@ -22,50 +22,8 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 71,
-        "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 74,
-        "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 74,
-        "message": "use of undeclared identifier '_DAT_101386a8'; did you mean 'DAT_101386a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 76,
+        "line": 77,
         "message": "use of undeclared identifier '_DAT_10226a78'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_101386a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 81,
-        "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_10240620'; did you mean 'DAT_10240620'?"
       },
       {
         "category": "undeclared_identifier",
@@ -75,45 +33,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 80,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_10240620'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 91,
-        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_10226e80'; did you mean 'DAT_10226e80'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 7,
         "line": 96,
-        "message": "use of undeclared identifier '_DAT_101b88d8'; did you mean 'DAT_101b88e8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_10226e80'"
+        "message": "use of undeclared identifier '_DAT_101b88d8'; did you mean 'DAT_100185d8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
         "line": 102,
         "message": "use of undeclared identifier '_DAT_1013b8d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 105,
+        "message": "use of undeclared identifier '_DAT_1013b8d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 108,
+        "message": "use of undeclared identifier '_DAT_10240628'"
       }
     ],
     "success": false,
@@ -122,13 +62,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 342,
+    "complexity_score": 302,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
-    "suspect_count": 21,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -161,14 +101,14 @@
   },
   "function_calls": [
     {
-      "addr": "10001200",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10001200"
-    },
-    {
       "addr": "10002ea0",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_10002ea0"
+    },
+    {
+      "addr": "10001200",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_initTextureCaches_FUN_10001200"
     }
   ],
   "globals": [
@@ -198,9 +138,9 @@
     },
     {
       "addr": "101386a8",
-      "name": "DAT_101386a8",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWRedShift",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10138f30",
@@ -210,8 +150,8 @@
     },
     {
       "addr": "10139048",
-      "name": "DAT_10139048",
-      "type": "undefined4",
+      "name": "g_StagingTextures",
+      "type": "IDirectDrawSurface*[4][8]",
       "value": null
     },
     {
@@ -258,15 +198,15 @@
     },
     {
       "addr": "10226e80",
-      "name": "DAT_10226e80",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWBlueShift",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10240620",
-      "name": "DAT_10240620",
-      "type": "undefined1",
-      "value": null
+      "name": "g_HWGreenShift",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10240628",
@@ -401,7 +341,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(DDSURFACEDESC2 *)((int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -409,7 +349,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(DDPIXELFORMAT *)((int)pDVar8",
       "severity": "moderate",
       "text": "pDVar8 = (DDPIXELFORMAT *)((int)pDVar8 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -417,7 +357,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 40,
       "match": "(DDPIXELFORMAT *)((int)pDVar10",
       "severity": "moderate",
       "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -425,7 +365,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
+      "match": "(IDirectDrawSurface **)((int)g_StagingTextures",
+      "severity": "moderate",
+      "text": "surface = (IDirectDrawSurface **)((int)g_StagingTextures[0] + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
       "match": "(DWORD *)((int)g_TextureSizeTable",
       "severity": "moderate",
       "text": "local_7c.dwHeight = *(DWORD *)((int)g_TextureSizeTable + local_80);",
@@ -433,23 +381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_10139048",
-      "severity": "mild",
-      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_10139048",
-      "severity": "mild",
-      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
+      "line": 56,
       "match": "DAT_10138f30",
       "severity": "mild",
       "text": "(void **)((int)&DAT_10138f30 + iVar7));",
@@ -465,7 +397,7 @@
     },
     {
       "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -473,7 +405,7 @@
     },
     {
       "description": "Pointer value `pDVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "(int)pDVar8",
       "severity": "moderate",
       "text": "pDVar8 = (DDPIXELFORMAT *)((int)pDVar8 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -481,31 +413,23 @@
     },
     {
       "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "(int)pDVar10",
       "severity": "moderate",
       "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)&DAT_10139048",
+      "description": "Pointer value `g_StagingTextures[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)g_StagingTextures[0]",
       "severity": "moderate",
-      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_10139048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
-      "match": "(int)&DAT_10139048",
-      "severity": "moderate",
-      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
+      "text": "surface = (IDirectDrawSurface **)((int)g_StagingTextures[0] + iVar7);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_10138f30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&DAT_10138f30",
       "severity": "moderate",
       "text": "(void **)((int)&DAT_10138f30 + iVar7));",
@@ -513,7 +437,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -521,7 +445,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -529,23 +453,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 47,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "(g_DirectDraw4,&local_7c,(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 52,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "this_ptr = *(IDirectDrawSurface **)((int)&DAT_10139048 + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(void **)((int)&DAT_10138f30 + iVar7));",

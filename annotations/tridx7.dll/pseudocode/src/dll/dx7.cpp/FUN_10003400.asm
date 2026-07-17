@@ -20,9 +20,9 @@
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   undefined4 DAT_100141fc
 ;   int g_TextureCount = 0x0
-;   undefined1 DAT_101386a8
+;   int g_HWRedShift = 0x0
 ;   undefined4 DAT_10138f30
-;   undefined4 DAT_10139048
+;   IDirectDrawSurface*[4][8] g_StagingTextures
 ;   undefined4 DAT_1013b8d0
 ;   undefined4 DAT_101b88d8
 ;   int[8] g_TextureSizeTable
@@ -30,12 +30,12 @@
 ;   DDPIXELFORMAT g_TexturePixelFormat
 ;   undefined4 g_TexturePixelFormat.dwFlags
 ;   undefined4 DAT_10226a78
-;   undefined1 DAT_10226e80
+;   int g_HWBlueShift = 0x0
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10001200
 ;   dll_dx7.cpp_FUN_10002ea0
+;   dll_dx7.cpp_initTextureCaches_FUN_10001200
 ;
 ; *****************************************************************************
 
@@ -64,7 +64,7 @@ section .text
     MOV ECX,0x8                         ; 10003435
     MOVSD.REP ES:EDI,ESI                ; 1000343a | g_TexturePixelFormat | g_TexturePixelFormat.dwFlags
     MOV EAX,dword ptr [ESP + 0x14]      ; 1000343c
-    LEA ESI,[EBP + 0x10139048]          ; 10003440 | DAT_10139048
+    LEA ESI,[EBP + 0x10139048]          ; 10003440 | g_StagingTextures
     LEA ECX,[ESP + 0x18]                ; 10003446
     PUSH ESI                            ; 1000344a
     MOV EAX,dword ptr [EAX + 0x10226848] ; 1000344b | g_TextureSizeTable
@@ -81,7 +81,7 @@ section .text
     TEST EAX,EAX                        ; 10003480
     JNZ 0x10003558                      ; 10003482
         ;   XREF to: 10003558 (CONDITIONAL_JUMP)  ; LAB_10003558
-    MOV EAX,dword ptr [ESI]             ; 10003488 | DAT_10139048
+    MOV EAX,dword ptr [ESI]             ; 10003488 | g_StagingTextures
     LEA ECX,[EBP + 0x10138f30]          ; 1000348a | DAT_10138f30
     PUSH ECX                            ; 10003490
     PUSH 0x100121f8                     ; 10003491 | g_IID_IDirect3DTexture2
@@ -115,7 +115,7 @@ section .text
         ;   Label: LAB_100034d2
     MOV EAX,0xff                        ; 100034d6
     SUB EDX,EDX                         ; 100034db
-    MOV dword ptr [0x101386a8],ECX      ; 100034dd | DAT_101386a8
+    MOV dword ptr [0x101386a8],ECX      ; 100034dd | g_HWRedShift
     SHR ESI,CL                          ; 100034e3
     DIV ESI                             ; 100034e5
     XOR ECX,ECX                         ; 100034e7
@@ -134,7 +134,7 @@ section .text
         ;   Label: LAB_100034fe
     MOV EAX,0xff                        ; 10003502
     SUB EDX,EDX                         ; 10003507
-    MOV dword ptr [0x10240620],ECX      ; 10003509 | DAT_10240620
+    MOV dword ptr [0x10240620],ECX      ; 10003509 | g_HWGreenShift
     SHR ESI,CL                          ; 1000350f
     DIV ESI                             ; 10003511
     XOR ECX,ECX                         ; 10003513
@@ -153,7 +153,7 @@ section .text
         ;   Label: LAB_1000352a
     MOV EAX,0xff                        ; 1000352e
     SUB EDX,EDX                         ; 10003533
-    MOV dword ptr [0x10226e80],ECX      ; 10003535 | DAT_10226e80
+    MOV dword ptr [0x10226e80],ECX      ; 10003535 | g_HWBlueShift
     SHR ESI,CL                          ; 1000353b
     DIV ESI                             ; 1000353d
     CMP dword ptr [0x100141fc],0x0      ; 1000353f | DAT_100141fc
@@ -186,8 +186,8 @@ section .text
         ;   Label: LAB_1000357c
     MOV EAX,dword ptr [ESP + 0x68]      ; 10003586
     MOV [0x10240628],EAX                ; 1000358a | DAT_10240628
-    CALL dll_dx7.cpp_FUN_10001200       ; 1000358f
-        ;   XREF to: 10001200 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001200()
+    CALL dll_dx7.cpp_initTextureCaches_FUN_10001200 ; 1000358f
+        ;   XREF to: 10001200 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_initTextureCaches_FUN_10001200()
     MOV EAX,0x1                         ; 10003594
     POP EBP                             ; 10003599
     POP EDI                             ; 1000359a

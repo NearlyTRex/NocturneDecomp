@@ -46,7 +46,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_bu
         } while (local_c < (pSVar1->base).base.count + -2);
       }
       if (0x3e76 < DAT_1001422c) {
-        dll_dx7_cpp_FUN_10002340("You're shoving too many faces");
+        dll_dx7_cpp_fatalError_FUN_10002340("You're shoving too many faces");
       }
       local_8 = local_8 + 1;
       local_4 = local_4 + -1;

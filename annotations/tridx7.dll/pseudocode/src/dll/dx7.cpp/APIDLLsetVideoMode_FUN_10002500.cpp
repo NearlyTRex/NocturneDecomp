@@ -57,19 +57,23 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     g_TextureSizeTable[7] = 2;
   }
   g_MasterZBufferCount = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","masterZBufferCount",&g_MasterZBufferCount);
+  dll_dx7_cpp_readIniInt_FUN_10002b20
+            ("Graphics","masterZBufferCount",(uint *)&g_MasterZBufferCount);
   g_UseHoldBuffer = 0;
   if (0x1e0 < g_ScreenHeight) {
-    dll_dx7_cpp_FUN_10002b20("Graphics","useHoldBuffer",&g_UseHoldBuffer);
+    dll_dx7_cpp_readIniInt_FUN_10002b20
+              ("Graphics","useHoldBuffer",(uint *)&g_UseHoldBuffer);
   }
   g_PremultiplyColorAndAlpha = 0;
-  dll_dx7_cpp_FUN_10002b20
-            ("Graphics","premultiplyColorAndAlpha",&g_PremultiplyColorAndAlpha);
+  dll_dx7_cpp_readIniInt_FUN_10002b20
+            ("Graphics","premultiplyColorAndAlpha",
+             (uint *)&g_PremultiplyColorAndAlpha);
   g_DirectTextureFlag = 0;
-  dll_dx7_cpp_FUN_10002b20("Graphics","directTextureFlag",&g_DirectTextureFlag);
+  dll_dx7_cpp_readIniInt_FUN_10002b20
+            ("Graphics","directTextureFlag",(uint *)&g_DirectTextureFlag);
   g_AllowAutoMipMapping = 0;
-  dll_dx7_cpp_FUN_10002b20
-            ("Graphics","allowAutoMipMapping",&g_AllowAutoMipMapping);
+  dll_dx7_cpp_readIniInt_FUN_10002b20
+            ("Graphics","allowAutoMipMapping",(uint *)&g_AllowAutoMipMapping);
   file = _fopen("system\\fly.ini","rb");
   if (file == (_FILE *)0x0) {
     g_FlyIniPresent = 0;
@@ -148,7 +152,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     if (HVar2 != 0) {
       return 0;
     }
-    dll_dx7_cpp_FUN_10002340("Your 3D hardware needs to support a Z buffer");
+    dll_dx7_cpp_fatalError_FUN_10002340("Your 3D hardware needs to support a Z buffer");
     return 0;
   }
   pDVar9 = &DStack_1e0;
@@ -206,7 +210,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
       iVar3 = dll_dx7_cpp_FUN_10003100();
       if (iVar3 == 0) {
         _sprintf(acStack_100,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
-        dll_dx7_cpp_FUN_10002340(acStack_100);
+        dll_dx7_cpp_fatalError_FUN_10002340(acStack_100);
       }
       SetCursorPos(0x27f,0x1df);
       do {

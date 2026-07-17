@@ -20,99 +20,69 @@
         "message": "unknown type name 'PCONTEXT'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 60,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002b20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 63,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002b20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 66,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002b20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 69,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002b20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 71,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002b20'"
-      },
-      {
         "category": "cast_error",
         "column": 71,
-        "line": 92,
+        "line": 96,
         "message": "cast from pointer to smaller type 'char' loses information"
       },
       {
         "category": "pointer_type",
         "column": 64,
-        "line": 143,
+        "line": 147,
         "message": "cannot initialize a parameter of type 'void *' with an lvalue of type 'undefined4 (undefined4 *, undefined4 *)' (aka 'unsigned int (unsigned int *, unsigned int *)')"
       },
       {
         "category": "format_error",
         "column": 65,
-        "line": 208,
+        "line": 212,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 211,
+        "line": 215,
         "message": "use of undeclared identifier 'SetCursorPos'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 213,
+        "line": 217,
         "message": "use of undeclared identifier 'ShowCursor'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 247,
+        "line": 251,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 249,
+        "line": 253,
         "message": "use of undeclared identifier 'ExitProcess'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 275,
+        "line": 279,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 277,
+        "line": 281,
         "message": "use of undeclared identifier 'ExitProcess'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 301,
+        "line": 305,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 303,
+        "line": 307,
         "message": "use of undeclared identifier 'ExitProcess'"
       }
     ],
@@ -122,12 +92,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 497,
-    "complexity_score": 699,
+    "complexity_score": 703,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 294,
+    "pseudocode_lines": 298,
     "suspect_count": 37,
     "suspect_types": [
       "pointer_cast",
@@ -138,7 +108,7 @@
       "unrolled_strlen",
       "warning_noreturn"
     ],
-    "total_lines": 791
+    "total_lines": 795
   },
   "cross_references": [
     {
@@ -187,24 +157,19 @@
       "name": "dll_dx7.cpp_APIDLLtoggle_FUN_100024b0"
     },
     {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_fatalError_FUN_10002340"
+    },
+    {
       "addr": "10001d70",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_10001d70"
     },
     {
-      "addr": "10002340",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002340"
-    },
-    {
       "addr": "10002370",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_10002370"
-    },
-    {
-      "addr": "10002b20",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002b20"
     },
     {
       "addr": "10002f40",
@@ -215,6 +180,11 @@
       "addr": "10003100",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_10003100"
+    },
+    {
+      "addr": "10002b20",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_readIniInt_FUN_10002b20"
     },
     {
       "addr": "EXTERNAL:00000001",
@@ -679,7 +649,7 @@
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 175,
+          "line": 179,
           "message": "Uninitialized variable: iStack_204",
           "severity": "error"
         }
@@ -691,7 +661,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 102,
       "match": "(DDSURFACEDESC2 *)((int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -699,7 +669,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 154,
       "match": "(DDSURFACEDESC2 *)((int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -707,7 +677,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 166,
       "match": "(DDPIXELFORMAT *)((int)pDVar10",
       "severity": "moderate",
       "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -715,7 +685,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 233,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar11 = (char *)&DAT_101386f0;",
@@ -723,7 +693,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 244,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -731,7 +701,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 241,
+      "line": 245,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -739,7 +709,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 257,
+      "line": 261,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar11 = (char *)&DAT_101386f0;",
@@ -747,7 +717,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 268,
+      "line": 272,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -755,7 +725,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 269,
+      "line": 273,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -763,7 +733,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 283,
+      "line": 287,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar11 = (char *)&DAT_101386f0;",
@@ -771,7 +741,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 298,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -779,7 +749,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 295,
+      "line": 299,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -787,7 +757,7 @@
     },
     {
       "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 102,
       "match": "(int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -795,7 +765,7 @@
     },
     {
       "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 150,
+      "line": 154,
       "match": "(int)pDVar9",
       "severity": "moderate",
       "text": "pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -803,7 +773,7 @@
     },
     {
       "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 162,
+      "line": 166,
       "match": "(int)pDVar10",
       "severity": "moderate",
       "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);",
@@ -811,7 +781,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 77,
+      "line": 81,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = g_ScreenHeight; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -819,7 +789,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 96,
+      "line": 100,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -827,7 +797,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 131,
+      "line": 135,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -835,7 +805,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 148,
+      "line": 152,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -843,7 +813,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 159,
+      "line": 163,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -851,7 +821,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 188,
+      "line": 192,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -859,7 +829,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 230,
+      "line": 234,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -867,7 +837,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 235,
+      "line": 239,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -875,7 +845,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 258,
+      "line": 262,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -883,7 +853,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 263,
+      "line": 267,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -891,7 +861,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 284,
+      "line": 288,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -899,7 +869,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 289,
+      "line": 293,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -907,7 +877,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 219,
+      "line": 223,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -915,7 +885,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 247,
+      "line": 251,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -987,7 +957,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_204",
-      "line": 175,
+      "line": 179,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "g_ZBufferBitDepth = iStack_204;",

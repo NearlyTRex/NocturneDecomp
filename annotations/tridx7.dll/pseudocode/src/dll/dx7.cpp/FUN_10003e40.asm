@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10003a80 at 10003b8d
+;   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 at 10003b8d
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10003a30

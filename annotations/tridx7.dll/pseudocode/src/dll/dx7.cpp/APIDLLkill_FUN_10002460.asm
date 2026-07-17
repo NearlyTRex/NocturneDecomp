@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   dll_dx7.cpp_APIDLLinit_FUN_10001a80 at 10001a8a
-;   dll_dx7.cpp_FUN_10002340 at 10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340 at 10002340
 ;
 ; Referenced Globals:
 ;   IDirectDraw* g_DirectDraw = 00000000

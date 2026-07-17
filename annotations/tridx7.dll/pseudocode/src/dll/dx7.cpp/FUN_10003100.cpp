@@ -88,7 +88,7 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
                       (g_DirectDraw4,&DStack_e0,(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0
                       );
     if (HVar1 != 0) {
-      dll_dx7_cpp_FUN_10002340("Can't create hold surface");
+      dll_dx7_cpp_fatalError_FUN_10002340("Can't create hold surface");
     }
     puVar7 = auStack_64;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {

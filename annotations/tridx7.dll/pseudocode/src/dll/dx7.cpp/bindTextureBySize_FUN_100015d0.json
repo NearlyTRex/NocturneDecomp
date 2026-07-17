@@ -1,0 +1,174 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "10003ed0",
+      "from_addr": "10003ef2",
+      "name": "dll_dx7.cpp_APIDLLupdateTexture_FUN_10003ed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100015d0",
+    "address_range": [
+      [
+        "100015d0",
+        "10001633"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_bindTextureBySize_FUN_100015d0",
+    "signature": "void __cdecl dll_dx7_cpp_bindTextureBySize_FUN_100015d0(SMRGLTextureBasic *texture_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "10001180",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10001634",
+      "name": "switchdataD_10001634",
+      "type": "void*",
+      "value": "100015f0"
+    },
+    {
+      "addr": "10001648",
+      "name": "switchdataD_10001648",
+      "type": "byte",
+      "value": "0x0"
+    },
+    {
+      "addr": "10014044",
+      "name": "g_TextureCache32",
+      "type": "CDLLTextureCache*",
+      "value": "10060678"
+    },
+    {
+      "addr": "10014048",
+      "name": "g_TextureCache64",
+      "type": "CDLLTextureCache*",
+      "value": "100a8688"
+    },
+    {
+      "addr": "1001404c",
+      "name": "g_TextureCache128",
+      "type": "CDLLTextureCache*",
+      "value": "100f0698"
+    },
+    {
+      "addr": "10014050",
+      "name": "g_TextureCache256",
+      "type": "CDLLTextureCache*",
+      "value": "10018660"
+    },
+    {
+      "addr": "10226900",
+      "name": "g_ExternalRendererBridge.texture_dimension",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10003ef2",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLupdateTexture_FUN_10003ed0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2857142857142856,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 4,
+      "CBRANCH": 1,
+      "COPY": 17,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 3,
+      "RETURN": 4,
+      "STORE": 8
+    },
+    "pcode_op_count": 92
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -45,7 +45,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_b
       DAT_1001422c = DAT_1001422c + 3;
       *(ushort *)(&DAT_10238914 + iVar2 * 2) = uVar3;
       if (0x3e76 < DAT_1001422c) {
-        dll_dx7_cpp_FUN_10002340("You're shoving too many faces");
+        dll_dx7_cpp_fatalError_FUN_10002340("You're shoving too many faces");
       }
       polygons = polygons + 1;
       local_4 = local_4 + -1;

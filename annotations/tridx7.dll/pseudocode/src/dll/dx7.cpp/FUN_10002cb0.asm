@@ -8,7 +8,7 @@
 ;   dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 at 10004b8c
 ;   dll_dx7.cpp_APIDLLunlockHoldBuffer_FUN_100053a0 at 100053bf
 ;   dll_dx7.cpp_FUN_10002c50 at 10002c80
-;   dll_dx7.cpp_FUN_10003a80 at 10003ba1
+;   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 at 10003ba1
 ;
 ; *****************************************************************************
 

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   format
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10001200 at 10001260
+;   dll_dx7.cpp_initTextureCaches_FUN_10001200 at 10001260
 ;
 ; Called Functions:
 ;   crt_stdio.c__ftbuf_FUN_10005f00

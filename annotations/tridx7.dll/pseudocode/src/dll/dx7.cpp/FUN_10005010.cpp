@@ -16,7 +16,7 @@ uint dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,uint param_3)
   int iVar5;
   uint *puVar6;
   uint *puVar7;
-  char *pcVar8;
+  char *message;
   
   iVar3 = DAT_10014228;
   iVar1 = *param_1;
@@ -44,7 +44,7 @@ uint dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,uint param_3)
     *(float *)(&DAT_1013b8f0 + iVar3) = (float)iVar2 * 5.9604645e-08;
     *(float *)(&DAT_1013b8f4 + iVar3) = (float)iVar4 * 5.9604645e-08;
     if (iVar5 < 0x3e77) goto LAB_1000511e;
-    pcVar8 = "You're shoving too many verticies";
+    message = "You're shoving too many verticies";
   }
   else {
     iVar2 = param_1[2];
@@ -55,9 +55,9 @@ uint dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,uint param_3)
     dll_dx7_cpp_FUN_100044b0(param_2,&DAT_1013b8d8 + iVar3 * 0x20,param_3,0x100);
     DAT_10014228 = DAT_10014228 + 1;
     if (DAT_10014228 < 0x3e77) goto LAB_1000511e;
-    pcVar8 = "You're shoving too many verticies";
+    message = "You're shoving too many verticies";
   }
-  dll_dx7_cpp_FUN_10002340(pcVar8);
+  dll_dx7_cpp_fatalError_FUN_10002340(message);
 LAB_1000511e:
   return *(uint *)(&DAT_10226f08 + iVar1 * 4);
 }

@@ -29,7 +29,7 @@
 ;   undefined4 g_ExternalRendererBridge.blue_dither_shift
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10002cb0
 ;   dll_dx7.cpp_FUN_10002e20
 ;   dll_dx7.cpp_FUN_10004d10
@@ -64,8 +64,8 @@ section .text
     JNZ 0x10004b86                      ; 10004b77
         ;   XREF to: 10004b86 (CONDITIONAL_JUMP)  ; LAB_10004b86
     PUSH 0x10016b50                     ; 10004b79 | = "Could not lock back buffer"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10004b7e
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004b7e
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10004b83
     MOV EAX,[0x10014180]                ; 10004b86 | g_BackBufferSurface
         ;   Label: LAB_10004b86
@@ -77,8 +77,8 @@ section .text
     JNZ 0x10004ba5                      ; 10004b96
         ;   XREF to: 10004ba5 (CONDITIONAL_JUMP)  ; LAB_10004ba5
     PUSH 0x10016b6c                     ; 10004b98 | = "Could not unlock back buffer"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10004b9d
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004b9d
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10004ba2
     XOR ECX,ECX                         ; 10004ba5
         ;   Label: LAB_10004ba5

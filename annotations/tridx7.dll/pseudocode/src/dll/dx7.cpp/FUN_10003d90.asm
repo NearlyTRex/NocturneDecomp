@@ -8,12 +8,12 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10003a80 at 10003b94
+;   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 at 10003b94
 ;
 ; Referenced Globals:
-;   undefined1 DAT_101386a8
-;   undefined1 DAT_10226e80
-;   undefined1 DAT_10240620
+;   int g_HWRedShift = 0x0
+;   int g_HWBlueShift = 0x0
+;   int g_HWGreenShift = 0x0
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_FUN_10003a30
@@ -49,7 +49,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 10003dcd
     MOV EDX,dword ptr [EAX]             ; 10003dd1
         ;   Label: LAB_10003dd1
-    MOV CL,byte ptr [0x101386a8]        ; 10003dd3 | DAT_101386a8
+    MOV CL,byte ptr [0x101386a8]        ; 10003dd3 | g_HWRedShift
     MOV EBX,EDX                         ; 10003dd9
     MOV EBP,EDX                         ; 10003ddb
     SHR EBX,0x14                        ; 10003ddd
@@ -58,11 +58,11 @@ section .text
     ADD ESI,0x2                         ; 10003de7
     SHL BX,CL                           ; 10003dea
     SHR EBP,0x4                         ; 10003ded
-    MOV CL,byte ptr [0x10226e80]        ; 10003df0 | DAT_10226e80
+    MOV CL,byte ptr [0x10226e80]        ; 10003df0 | g_HWBlueShift
     AND BP,0xf                          ; 10003df6
     SHL BP,CL                           ; 10003dfa
     OR BX,BP                            ; 10003dfd
-    MOV CL,byte ptr [0x10240620]        ; 10003e00 | DAT_10240620
+    MOV CL,byte ptr [0x10240620]        ; 10003e00 | g_HWGreenShift
     MOV EBP,EDX                         ; 10003e06
     SHR EBP,0xc                         ; 10003e08
     SHR EDX,0x1c                        ; 10003e0b

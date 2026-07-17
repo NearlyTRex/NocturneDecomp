@@ -13,7 +13,7 @@
 ;   void* PTR_ShowCursor_10242294 = 002422f0
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10002370
 ;   dll_dx7.cpp_FUN_10002c50
 ;   ShowCursor
@@ -33,8 +33,8 @@ section .text
     JNZ 0x10002c00                      ; 10002bf1
         ;   XREF to: 10002c00 (CONDITIONAL_JUMP)  ; LAB_10002c00
     PUSH 0x10016a14                     ; 10002bf3 | = "Cannot unlock back buffer"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10002bf8
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10002bf8
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10002bfd
     MOV EAX,[0x10014184]                ; 10002c00 | g_DirectDraw
         ;   Label: LAB_10002c00

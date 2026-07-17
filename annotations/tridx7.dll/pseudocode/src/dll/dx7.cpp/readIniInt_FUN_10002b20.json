@@ -1,0 +1,196 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 14,
+        "message": "use of undeclared identifier 'GetPrivateProfileIntA'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 7,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "10002500",
+      "from_addr": "100025e1",
+      "name": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10002b20",
+    "address_range": [
+      [
+        "10002b20",
+        "10002b40"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_readIniInt_FUN_10002b20",
+    "signature": "void __cdecl dll_dx7_cpp_readIniInt_FUN_10002b20(char *section,char *key,uint *value_inout)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000022",
+      "is_variadic": false,
+      "name": "GetPrivateProfileIntA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014150",
+      "name": "s_system_render_ini_10014150",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10242208",
+      "name": "PTR_GetPrivateProfileIntA_10242208",
+      "type": "void*",
+      "value": "002422a0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "100025e1",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "1000260a",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10002629",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10002646",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10002663",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 13,
+      "INT_ADD": 5,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 39
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "section",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value_inout",
+        "offset": 12,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -24,7 +24,7 @@
 ;   undefined4 DAT_10238914
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10003f10
 ;   dll_dx7.cpp_FUN_100047b0
 ;   dll_dx7.cpp_FUN_10005010
@@ -130,8 +130,8 @@ section .text
     JLE 0x1000525a                      ; 1000524b
         ;   XREF to: 1000525a (CONDITIONAL_JUMP)  ; LAB_1000525a
     PUSH 0x10016c20                     ; 1000524d | = "You're shoving too many faces"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10005252
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10005252
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10005257
     ADD EDI,0x4                         ; 1000525a
         ;   Label: LAB_1000525a

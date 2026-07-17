@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureIndex = 0x0
-;   void* g_TexturePalette = 00000000
-;   void* g_TextureData = 00000000
-;   void* g_TextureOpacity = 00000000
+;   uchar* g_TexturePalette = 00000000
+;   uchar* g_TextureData = 00000000
+;   uchar* g_TextureOpacity = 00000000
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_resolveTextureSlot_FUN_10001470

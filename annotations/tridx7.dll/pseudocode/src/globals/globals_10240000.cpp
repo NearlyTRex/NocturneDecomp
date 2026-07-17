@@ -133,8 +133,13 @@ dword DAT_1024201C = 0;
 dword DAT_1024202C = 0;
 dword DAT_10242030 = 0;
 
+// int
+int g_HWGreenShift = 0;
+
+// uchar*
+uchar* g_TextureOpacity = nullptr;
+
 // undefined1
-undefined1 DAT_10240620 = 0x00;
 undefined1 DAT_10240798 = 0x00;
 undefined1 DAT_1024079a = 0x00;
 
@@ -176,9 +181,6 @@ undefined4 DAT_10241978 = 0x00000000;
 undefined4 DAT_1024197c = 0x00000000;
 undefined4 DAT_10241980 = 0x00000000;
 undefined4 DAT_10241984 = 0x00000000;
-
-// void*
-void* g_TextureOpacity = nullptr;
 
 // word
 word DAT_102443AE = 0;

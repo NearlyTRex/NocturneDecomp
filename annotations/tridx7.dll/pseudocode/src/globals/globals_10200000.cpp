@@ -10,6 +10,6 @@ STextureSurfaceSlot g_TextureSurfaces[4096] = {};
 // int
 int g_AdapterCount = 0;
 
-// void*
-void* g_TextureData = nullptr;
+// uchar*
+uchar* g_TextureData = nullptr;
 

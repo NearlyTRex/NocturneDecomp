@@ -29,10 +29,10 @@ void dll_dx7_cpp_FUN_10002ea0(void)
         (**(code **)(*piVar1 + 8))(piVar1);
         *(uint *)((int)&DAT_10138f30 + iVar2) = 0;
       }
-      piVar1 = *(int **)((int)&DAT_10139048 + iVar2);
+      piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);
       if (piVar1 != (int *)0x0) {
         (**(code **)(*piVar1 + 8))(piVar1);
-        *(uint *)((int)&DAT_10139048 + iVar2) = 0;
+        *(uint *)((int)g_StagingTextures[0] + iVar2) = 0;
       }
       iVar2 = iVar2 + 0x20;
       iVar5 = iVar5 + -1;

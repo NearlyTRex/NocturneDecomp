@@ -63,12 +63,12 @@ int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size)
   HVar2 = (*this_ptr->vtable->QueryInterface)
                     ((IUnknown *)this_ptr,(GUID *)&g_IID_IDirect3DTexture2,&ppv_object->texture);
   if (HVar2 != 0) {
-    dll_dx7_cpp_FUN_10002340("D3D won't let me convert a surface to a texture.");
+    dll_dx7_cpp_fatalError_FUN_10002340("D3D won't let me convert a surface to a texture.");
   }
   iVar3 = g_TextureCount;
   g_TextureCount = g_TextureCount + 1;
   if (0x1000 < g_TextureCount) {
-    dll_dx7_cpp_FUN_10002340("Too many textures requested");
+    dll_dx7_cpp_fatalError_FUN_10002340("Too many textures requested");
   }
   return iVar3;
 }

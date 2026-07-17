@@ -26,16 +26,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 70,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 52
@@ -64,13 +63,13 @@
     ],
     "convention": "unknown",
     "name": "dll_dx7.cpp_FUN_10003a30",
-    "signature": "undefined4 * dll_dx7_cpp_FUN_10003a30(int param_1)"
+    "signature": "uint * dll_dx7_cpp_FUN_10003a30(int param_1)"
   },
   "function_calls": [
     {
       "addr": "10002340",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002340"
+      "name": "dll_dx7.cpp_fatalError_FUN_10002340"
     }
   ],
   "globals": [
@@ -82,8 +81,8 @@
     },
     {
       "addr": "101b88e0",
-      "name": "DAT_101b88e0",
-      "type": "undefined4",
+      "name": "g_ExpandedTexture",
+      "type": "uint[87381]",
       "value": null
     },
     {
@@ -175,14 +174,6 @@
       "severity": "mild",
       "text": "uint * dll_dx7_cpp_FUN_10003a30(int param_1)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_101b88e0",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_101b88e0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

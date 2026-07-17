@@ -9,7 +9,7 @@
 ;   TerminatedCString s_Cannot_unlock_back_buffe_10016a30
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002340
+;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10002c50
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     JNZ 0x10002e8c                      ; 10002e7d
         ;   XREF to: 10002e8c (CONDITIONAL_JUMP)  ; LAB_10002e8c
     PUSH 0x10016a30                     ; 10002e7f | = "Cannot unlock back buffer"
-    CALL dll_dx7.cpp_FUN_10002340       ; 10002e84
-        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002340()
+    CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10002e84
+        ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
     ADD ESP,0x4                         ; 10002e89
     MOV EAX,0x1                         ; 10002e8c
         ;   Label: LAB_10002e8c

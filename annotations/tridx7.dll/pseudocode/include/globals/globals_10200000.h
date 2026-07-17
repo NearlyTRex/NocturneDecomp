@@ -14,6 +14,6 @@ extern STextureSurfaceSlot g_TextureSurfaces[4096];
 // int
 extern int g_AdapterCount;
 
-// void*
-extern void* g_TextureData;
+// uchar*
+extern uchar* g_TextureData;
 

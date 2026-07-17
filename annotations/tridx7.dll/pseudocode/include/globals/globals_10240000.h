@@ -118,8 +118,13 @@ extern dword DAT_1024201C;
 extern dword DAT_1024202C;
 extern dword DAT_10242030;
 
+// int
+extern int g_HWGreenShift;
+
+// uchar*
+extern uchar* g_TextureOpacity;
+
 // undefined1
-extern undefined1 DAT_10240620;
 extern undefined1 DAT_10240798;
 extern undefined1 DAT_1024079a;
 
@@ -161,9 +166,6 @@ extern undefined4 DAT_10241978;
 extern undefined4 DAT_1024197c;
 extern undefined4 DAT_10241980;
 extern undefined4 DAT_10241984;
-
-// void*
-extern void* g_TextureOpacity;
 
 // word
 extern word DAT_102443AE;
