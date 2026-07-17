@@ -130,6 +130,9 @@ extern int g_FlyModeDepthBias;
 // uchar*
 extern uchar* g_TextureOpacity;
 
+// uint
+extern uint g_HWTextureBitDepth;
+
 // undefined1
 extern undefined1 DAT_10240798;
 extern undefined1 DAT_1024079a;

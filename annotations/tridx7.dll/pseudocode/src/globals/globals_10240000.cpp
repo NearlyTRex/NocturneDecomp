@@ -145,6 +145,9 @@ int g_FlyModeDepthBias = 0;
 // uchar*
 uchar* g_TextureOpacity = nullptr;
 
+// uint
+uint g_HWTextureBitDepth = 0;
+
 // undefined1
 undefined1 DAT_10240798 = 0x00;
 undefined1 DAT_1024079a = 0x00;

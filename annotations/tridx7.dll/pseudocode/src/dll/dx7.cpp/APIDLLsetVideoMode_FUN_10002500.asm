@@ -13,7 +13,7 @@
 ;   GUID g_Direct3DDeviceGUID = IDirect3DHALDevice 84e63de0-46aa-11cf-816f-0000c020156e
 ;   TerminatedCString s_Graphics_10014140
 ;   int g_PremultiplyColorAndAlpha = 0x0
-;   int g_AllowAutoMipMapping = 0x0
+;   uint g_AllowAutoMipMapping = 0x0
 ;   int g_FlyIniPresent = 0x0
 ;   int g_ZBufferBitDepth = 0x0
 ;   int g_ScreenWidth = 0x280
@@ -34,8 +34,8 @@
 ;   dll_dx7.cpp_APIDLLclear_FUN_10004840
 ;   dll_dx7.cpp_APIDLLtoggle_FUN_100024b0
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
+;   dll_dx7.cpp_createDirect3D_FUN_10002f40
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002f40
 ;   dll_dx7.cpp_initD3DDevice_FUN_10003100
 ;   dll_dx7.cpp_readIniInt_FUN_10002b20
 ;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
@@ -269,8 +269,8 @@ section .text
     POP EBX                             ; 100027fc
     ADD ESP,0x210                       ; 100027fd
     RET                                 ; 10002803
-    CALL dll_dx7.cpp_FUN_10002f40       ; 10002804
-        ;   XREF to: 10002f40 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002f40()
+    CALL dll_dx7.cpp_createDirect3D_FUN_10002f40 ; 10002804
+        ;   XREF to: 10002f40 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_createDirect3D_FUN_10002f40()
         ;   Label: LAB_10002804
     TEST EAX,EAX                        ; 10002809
     JNZ 0x10002825                      ; 1000280b
@@ -364,14 +364,14 @@ section .text
     MOV EDX,ECX                         ; 10002918
     SHR ECX,0x2                         ; 1000291a
     MOV ESI,EDI                         ; 1000291d
-    MOV EDI,0x101386f0                  ; 1000291f | DAT_101386f0
-    MOVSD.REP ES:EDI,ESI                ; 10002924 | = "FATAL ERROR!  Unable to create a Z bu..." | DAT_101386f0
+    MOV EDI,0x101386f0                  ; 1000291f | g_ErrorMessageBuffer
+    MOVSD.REP ES:EDI,ESI                ; 10002924 | = "FATAL ERROR!  Unable to create a Z bu..." | g_ErrorMessageBuffer
     MOV ECX,EDX                         ; 10002926
     PUSH 0x10                           ; 10002928
     AND ECX,0x3                         ; 1000292a
     PUSH 0x10016860                     ; 1000292d | = "3D Adapter Error"
-    MOVSB.REP ES:EDI,ESI                ; 10002932 | = "FATAL ERROR!  Unable to create a Z bu..." | DAT_101386f0
-    PUSH 0x101386f0                     ; 10002934 | DAT_101386f0
+    MOVSB.REP ES:EDI,ESI                ; 10002932 | = "FATAL ERROR!  Unable to create a Z bu..." | g_ErrorMessageBuffer
+    PUSH 0x101386f0                     ; 10002934 | g_ErrorMessageBuffer
     PUSH 0x0                            ; 10002939
     CALL dword ptr [0x10242290]         ; 1000293b | PTR_MessageBoxA_10242290
     PUSH 0x29a                          ; 10002941
@@ -409,14 +409,14 @@ section .text
     MOV EDX,ECX                         ; 10002999
     SHR ECX,0x2                         ; 1000299b
     MOV ESI,EDI                         ; 1000299e
-    MOV EDI,0x101386f0                  ; 100029a0 | DAT_101386f0
+    MOV EDI,0x101386f0                  ; 100029a0 | g_ErrorMessageBuffer
     PUSH 0x10                           ; 100029a5
-    MOVSD.REP ES:EDI,ESI                ; 100029a7 | = "FATAL ERROR!  Unable to create a 2nd ..." | DAT_101386f0
+    MOVSD.REP ES:EDI,ESI                ; 100029a7 | = "FATAL ERROR!  Unable to create a 2nd ..." | g_ErrorMessageBuffer
     MOV ECX,EDX                         ; 100029a9
     PUSH 0x10016918                     ; 100029ab | = "3D Adapter Error"
     AND ECX,0x3                         ; 100029b0
-    PUSH 0x101386f0                     ; 100029b3 | DAT_101386f0
-    MOVSB.REP ES:EDI,ESI                ; 100029b8 | = "FATAL ERROR!  Unable to create a 2nd ..." | DAT_101386f0
+    PUSH 0x101386f0                     ; 100029b3 | g_ErrorMessageBuffer
+    MOVSB.REP ES:EDI,ESI                ; 100029b8 | = "FATAL ERROR!  Unable to create a 2nd ..." | g_ErrorMessageBuffer
     PUSH 0x0                            ; 100029ba
     CALL dword ptr [0x10242290]         ; 100029bc | PTR_MessageBoxA_10242290
     PUSH 0x29a                          ; 100029c2
@@ -450,14 +450,14 @@ section .text
     MOV EDX,ECX                         ; 10002a0c
     SHR ECX,0x2                         ; 10002a0e
     MOV ESI,EDI                         ; 10002a11
-    MOV EDI,0x101386f0                  ; 10002a13 | DAT_101386f0
-    MOVSD.REP ES:EDI,ESI                ; 10002a18 | = "FATAL ERROR!  Unable to attach Z buff..." | DAT_101386f0
+    MOV EDI,0x101386f0                  ; 10002a13 | g_ErrorMessageBuffer
+    MOVSD.REP ES:EDI,ESI                ; 10002a18 | = "FATAL ERROR!  Unable to attach Z buff..." | g_ErrorMessageBuffer
     MOV ECX,EDX                         ; 10002a1a
     PUSH 0x10                           ; 10002a1c
     AND ECX,0x3                         ; 10002a1e
     PUSH 0x100169a4                     ; 10002a21 | = "3D Adapter Error"
-    MOVSB.REP ES:EDI,ESI                ; 10002a26 | = "FATAL ERROR!  Unable to attach Z buff..." | DAT_101386f0
-    PUSH 0x101386f0                     ; 10002a28 | DAT_101386f0
+    MOVSB.REP ES:EDI,ESI                ; 10002a26 | = "FATAL ERROR!  Unable to attach Z buff..." | g_ErrorMessageBuffer
+    PUSH 0x101386f0                     ; 10002a28 | g_ErrorMessageBuffer
     PUSH 0x0                            ; 10002a2d
     CALL dword ptr [0x10242290]         ; 10002a2f | PTR_MessageBoxA_10242290
     PUSH 0x29a                          ; 10002a35

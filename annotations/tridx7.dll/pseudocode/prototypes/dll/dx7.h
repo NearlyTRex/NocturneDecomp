@@ -103,9 +103,9 @@ int __cdecl APIDLLbeginScene(void);
 // Address: 10002d10
 int __cdecl APIDLLendScene(void);
 
-// Original: dll_dx7.cpp_FUN_10002d50
+// Original: dll_dx7.cpp_resetRenderState_FUN_10002d50
 // Address: 10002d50
-void FUN_10002d50(void);
+void __cdecl resetRenderState(void);
 
 // Original: dll_dx7.cpp_APIDLLlockFrame_FUN_10002d90
 // Address: 10002d90
@@ -123,13 +123,13 @@ int __cdecl FUN_10002e20(int *param_1,undefined4 *param_2);
 // Address: 10002e60
 int __cdecl APIDLLunlockFrame(void);
 
-// Original: dll_dx7.cpp_FUN_10002ea0
+// Original: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
 // Address: 10002ea0
-void FUN_10002ea0(void);
+void __cdecl releaseAllTextures(void);
 
-// Original: dll_dx7.cpp_FUN_10002f40
+// Original: dll_dx7.cpp_createDirect3D_FUN_10002f40
 // Address: 10002f40
-int __cdecl FUN_10002f40(void);
+int __cdecl createDirect3D(void);
 
 // Original: dll_dx7.cpp_createTexture_FUN_10002f60
 // Address: 10002f60
@@ -151,17 +151,17 @@ int __cdecl initD3DDevice(void);
 // Address: 10003340
 HRESULT __stdcall pickTextureFormat(DDPIXELFORMAT *pixel_format,int *found_flag);
 
-// Original: dll_dx7.cpp_FUN_10003400
+// Original: dll_dx7.cpp_createStagingTextures_FUN_10003400
 // Address: 10003400
-undefined4 FUN_10003400(void);
+int __cdecl createStagingTextures(void);
 
-// Original: dll_dx7.cpp_FUN_100035b0
+// Original: dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0
 // Address: 100035b0
-int __cdecl FUN_100035b0(void);
+int __cdecl initDefaultRenderStates(void);
 
-// Original: dll_dx7.cpp_FUN_100037e0
+// Original: dll_dx7.cpp_setRenderStateCached_FUN_100037e0
 // Address: 100037e0
-void FUN_100037e0(uint param_1,DWORD param_2);
+void __cdecl setRenderStateCached(uint render_state,DWORD value);
 
 // Original: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
 // Address: 10003830
@@ -207,9 +207,9 @@ int __cdecl APIDLLdrawPolygon(SRenderVertex *vertices,int vertex_count,int rende
 // Address: 100043c0
 int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags);
 
-// Original: dll_dx7.cpp_FUN_100044b0
+// Original: dll_dx7.cpp_buildTLVertex_FUN_100044b0
 // Address: 100044b0
-void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4);
+void __cdecl buildTLVertex(SRenderVertex *src,SScreenVertex *out,uint render_flags,int rhw_scale);
 
 // Original: dll_dx7.cpp_flushBatch_FUN_100047b0
 // Address: 100047b0
@@ -255,9 +255,9 @@ int __cdecl APIDLLclearZBox(int left,int right,int top,int bottom);
 // Address: 10004b30
 int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table);
 
-// Original: dll_dx7.cpp_FUN_10004d10
+// Original: dll_dx7.cpp_floorLog2_FUN_10004d10
 // Address: 10004d10
-int FUN_10004d10(uint param_1);
+int __cdecl floorLog2(uint value);
 
 // Original: dll_dx7.cpp_APIDLLGetDisplayContext_FUN_10004d30
 // Address: 10004d30
@@ -279,9 +279,9 @@ int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom)
 // Address: 10004f00
 int __cdecl APIDLLdrawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
 
-// Original: dll_dx7.cpp_FUN_10005010
+// Original: dll_dx7.cpp_getOrAddVertex_FUN_10005010
 // Address: 10005010
-undefined4 FUN_10005010(int *param_1,int param_2,undefined4 param_3);
+uint __cdecl getOrAddVertex(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array,uint render_flags);
 
 // Original: dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130
 // Address: 10005130

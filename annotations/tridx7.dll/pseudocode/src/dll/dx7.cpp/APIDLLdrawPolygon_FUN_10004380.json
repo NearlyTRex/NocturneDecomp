@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 14,
-        "line": 17,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 44,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 45
   },
   "cross_references": [
@@ -56,13 +47,13 @@
   "globals": [
     {
       "addr": "10138fc0",
-      "name": "DAT_10138fc0",
-      "type": "undefined4",
+      "name": "g_PolygonVertexPtrs",
+      "type": "SRenderVertex*[32]",
       "value": null
     },
     {
       "addr": "10138fc4",
-      "name": "DAT_10138fc4",
+      "name": "g_PolygonVertexPtrs[1]",
       "type": "undefined4",
       "value": null
     }
@@ -143,22 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_10138fc0",
-      "severity": "mild",
-      "text": "piVar2 = &DAT_10138fc0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_10138fc0",
-      "severity": "mild",
-      "text": "((SRenderVertex **)&DAT_10138fc0,vertex_count,render_flags);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

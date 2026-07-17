@@ -13,7 +13,7 @@ void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
   int iVar1;
   IDirectDrawSurface **ppIVar2;
   
-  dll_dx7_cpp_FUN_10002ea0();
+  dll_dx7_cpp_releaseAllTextures_FUN_10002ea0();
   if (g_HoldBufferSurface != (IDirectDrawSurface *)0x0) {
     (*g_HoldBufferSurface->vtable->Release)((IUnknown *)g_HoldBufferSurface);
     g_HoldBufferSurface = (IDirectDrawSurface *)0x0;
@@ -35,7 +35,7 @@ void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
     g_ZBufferSurface = (IDirectDrawSurface *)0x0;
   }
   iVar1 = 0;
-  if (0 < g_MasterZBufferCount) {
+  if (0 < (int)g_MasterZBufferCount) {
     ppIVar2 = g_MasterZBufferSurfaces;
     do {
       this_ptr = *ppIVar2;
@@ -45,7 +45,7 @@ void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
       }
       ppIVar2 = ppIVar2 + 1;
       iVar1 = iVar1 + 1;
-    } while (iVar1 < g_MasterZBufferCount);
+    } while (iVar1 < (int)g_MasterZBufferCount);
   }
   if (g_PrimarySurface != (IDirectDrawSurface *)0x0) {
     (*g_PrimarySurface->vtable->Release)((IUnknown *)g_PrimarySurface);

@@ -280,7 +280,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_100035b0",
+    "name":"dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -425,9 +425,10 @@
         "start":"100044b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_100044b0",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_buildTLVertex_FUN_100044b0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -463,9 +464,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"src",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRenderVertex*"
+        },
+        {
+          "name":"out",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SScreenVertex*"
+        },
+        {
+          "name":"render_flags",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"rhw_scale",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

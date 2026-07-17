@@ -24,7 +24,7 @@
 ;   byte switchdataD_10003ca8 = 0x0
 ;   int g_CurrentTextureIndex = 0x0
 ;   int g_StagingSetIndex = 0x0
-;   int g_DirectTextureFlag = 0x0
+;   uint g_DirectTextureFlag = 0x0
 ;   TerminatedCString s_Unknown_texture_size_10016ad0
 ;   TerminatedCString s_Texture_load_failed_Coul_10016ae8
 ;   TerminatedCString s_Texture_load_failed_Text_10016b1c

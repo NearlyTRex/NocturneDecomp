@@ -24,6 +24,7 @@ extern CDLLTextureCache* g_TextureCache256;
 
 // GUID
 extern GUID g_IID_IDirectDraw4;
+extern GUID g_IID_IDirect3D3;
 extern GUID g_Direct3DDeviceGUID;
 extern GUID g_IID_IDirect3DTexture2;
 
@@ -67,14 +68,15 @@ extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc;
 // int
 extern int g_CurrentTextureIndex;
 extern int g_PremultiplyColorAndAlpha;
-extern int g_AllowAutoMipMapping;
 extern int g_FlyIniPresent;
 extern int g_ZBufferBitDepth;
 extern int g_ScreenWidth;
 extern int g_ScreenHeight;
 extern int g_ScreenBitDepth;
+extern int g_FogColorRed;
+extern int g_FogColorGreen;
+extern int g_FogColorBlue;
 extern int g_StagingSetIndex;
-extern int g_DirectTextureFlag;
 extern int g_BackBufferLocked;
 extern int g_FrameLocked;
 extern int g_TextureFormatSelected;
@@ -86,26 +88,16 @@ extern int g_PrevBlendMode;
 extern int g_PrevRenderingQuality;
 extern int g_PendingVertexCount;
 extern int g_PendingIndexCount;
+extern int INT_10014230;
+extern int g_CurrentBatchStamp;
 
 // string
-extern string DAT_10012397;
-extern string DAT_10012410;
-extern string DAT_10012424;
-extern string DAT_10012434;
-extern string DAT_10012444;
-extern string DAT_10012454;
-extern string DAT_1001248C;
-extern string DAT_100124C4;
-extern string DAT_100124EC;
-extern string DAT_10012524;
-extern string DAT_10012550;
-extern string DAT_10012574;
-extern string DAT_100125A4;
-extern string DAT_100125D0;
 extern string DAT_100127F8;
 extern string DAT_1001296C;
 
 // uint
+extern uint g_AllowAutoMipMapping;
+extern uint g_DirectTextureFlag;
 extern uint g_LocalVideoMem;
 extern uint g_NonLocalVideoMem;
 extern uint g_PrevRenderFlags;
@@ -137,10 +129,6 @@ extern undefined2 DAT_1001795e;
 extern undefined2 DAT_10017960;
 
 // undefined4
-extern undefined4 DAT_100141bc;
-extern undefined4 DAT_100141c0;
-extern undefined4 DAT_10014230;
-extern undefined4 DAT_10014234;
 extern undefined4 DAT_10016c60;
 extern undefined4 DAT_10016c64;
 extern undefined4 DAT_10016c70;
@@ -216,7 +204,8 @@ extern undefined4 DAT_1001864c;
 extern undefined4 DAT_10018650;
 
 // unicode
-extern unicode u_null_1001230a;
+extern unicode u_null_10012308;
+extern unicode u_HAN_10012318;
 
 // word
 extern word WORD_10013000;

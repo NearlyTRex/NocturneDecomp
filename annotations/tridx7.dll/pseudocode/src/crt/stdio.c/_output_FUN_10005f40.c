@@ -226,8 +226,8 @@ switchD_10005fc1_caseD_0:
         if (((uint)puVar13 & 0x810) == 0) {
           pwVar11 = local_240;
           if (local_240 == (wchar_t *)0x0) {
-            local_240 = (wchar_t *)PTR_DAT_10016d40;
-            pwVar11 = (wchar_t *)PTR_DAT_10016d40;
+            local_240 = (wchar_t *)PTR_u_HAN__10016d40;
+            pwVar11 = (wchar_t *)PTR_u_HAN__10016d40;
           }
           for (; (iVar9 != 0 && (iVar9 = iVar9 + -1, (char)*pwVar11 != '\0'));
               pwVar11 = (wchar_t *)((int)pwVar11 + 1)) {
@@ -238,7 +238,7 @@ switchD_10005fc1_caseD_0:
         else {
           pwVar4 = local_240;
           if (local_240 == (wchar_t *)0x0) {
-            pwVar4 = (wchar_t *)PTR_DAT_10016d44;
+            pwVar4 = (wchar_t *)PTR_u__null__10016d44;
           }
           len = (byte *)0x0;
           local_21c = 1;
@@ -261,8 +261,8 @@ switchD_10005fc1_caseD_0:
         if ((psVar6 == (short *)0x0) ||
            (pwVar11 = *(wchar_t **)(psVar6 + 2), pwVar11 == (wchar_t *)0x0)) {
           uVar3 = 0xffffffff;
-          local_240 = (wchar_t *)PTR_DAT_10016d40;
-          pcVar14 = PTR_DAT_10016d40;
+          local_240 = (wchar_t *)PTR_u_HAN__10016d40;
+          pcVar14 = PTR_u_HAN__10016d40;
           do {
             if (uVar3 == 0) break;
             uVar3 = uVar3 - 1;

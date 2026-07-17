@@ -25,8 +25,8 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_applyRenderState_FUN_10003f10
+;   dll_dx7.cpp_buildTLVertex_FUN_100044b0
 ;   dll_dx7.cpp_flushBatch_FUN_100047b0
-;   dll_dx7.cpp_FUN_100044b0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     MOV EAX,dword ptr [EDI + EBP*0x4 + -0x4] ; 10004429
     PUSH ECX                            ; 1000442d
     PUSH EAX                            ; 1000442e
-    CALL dll_dx7.cpp_FUN_100044b0       ; 1000442f
-        ;   XREF to: 100044b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100044b0()
+    CALL dll_dx7.cpp_buildTLVertex_FUN_100044b0 ; 1000442f
+        ;   XREF to: 100044b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_buildTLVertex_FUN_100044b0(SRenderVertex * src, SScreenVertex * out, uint render_flags, int rhw_scale)
     ADD ESP,0x10                        ; 10004434
     MOV ECX,dword ptr [0x10014228]      ; 10004437 | g_PendingVertexCount
     CMP EBP,ESI                         ; 1000443d

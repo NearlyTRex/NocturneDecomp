@@ -12,8 +12,8 @@
 ;   dll_dx7.cpp_APIDLLclear_FUN_10004840 at 100048c6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_10138fc0
-;   undefined4 DAT_10138fc4
+;   SRenderVertex*[32] g_PolygonVertexPtrs
+;   undefined4 g_PolygonVertexPtrs[1]
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0
@@ -29,9 +29,9 @@ section .text
     TEST ESI,ESI                        ; 10004389
     JLE 0x1000439f                      ; 1000438b
         ;   XREF to: 1000439f (CONDITIONAL_JUMP)  ; LAB_1000439f
-    MOV ECX,0x10138fc0                  ; 1000438d | DAT_10138fc0
+    MOV ECX,0x10138fc0                  ; 1000438d | g_PolygonVertexPtrs
     MOV EAX,ESI                         ; 10004392
-    MOV dword ptr [ECX],EDX             ; 10004394 | DAT_10138fc0 | DAT_10138fc4
+    MOV dword ptr [ECX],EDX             ; 10004394 | g_PolygonVertexPtrs | g_PolygonVertexPtrs[1]
         ;   Label: LAB_10004394
     ADD ECX,0x4                         ; 10004396
     ADD EDX,0x30                        ; 10004399
@@ -42,7 +42,7 @@ section .text
         ;   Label: LAB_1000439f
     PUSH EAX                            ; 100043a3
     PUSH ESI                            ; 100043a4
-    PUSH 0x10138fc0                     ; 100043a5 | DAT_10138fc0
+    PUSH 0x10138fc0                     ; 100043a5 | g_PolygonVertexPtrs
     CALL dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0 ; 100043aa
         ;   XREF to: 100043c0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex * * vertex_array, int vertex_count, int render_flags) | Ordinal_14
     ADD ESP,0xc                         ; 100043af

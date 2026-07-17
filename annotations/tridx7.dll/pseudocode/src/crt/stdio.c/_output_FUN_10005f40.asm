@@ -44,13 +44,13 @@
 ;   void* switchdataD_100068a0 = 100061d6
 ;   undefined4 switchdataD_100068a0+1
 ;   undefined4 DAT_10010028
-;   undefined4 s_.dll_100122f8+8
-;   undefined2 DAT_10012308
-;   unicode u_null)_1001230a
-;   undefined1 DAT_10012318
-;   string s_null)_10012319
+;   undefined4 s_kernel32_dll_100122f8+8
+;   unicode u_(null)_10012308
+;   undefined4 u_null)_10012308+2
+;   unicode u_HAN#_10012318
+;   undefined4 u_HAN#)_10012318+1
 ;   undefined4 DAT_10012320
-;   void* PTR_DAT_10016d40 = 10012318
+;   void* PTR_u_HAN#_10016d40 = 10012318
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 10005f9f (CONDITIONAL_JUMP)  ; LAB_10005f9f
     MOVSX ECX,BL                        ; 10005f8f
     XOR EAX,EAX                         ; 10005f92
-    MOV AL,byte ptr [ECX + 0x10012300]  ; 10005f94 | s_.dll_100122f8+8
+    MOV AL,byte ptr [ECX + 0x10012300]  ; 10005f94 | s_kernel32_dll_100122f8+8
     AND EAX,0xf                         ; 10005f9a
     JMP 0x10005fa1                      ; 10005f9d
         ;   XREF to: 10005fa1 (UNCONDITIONAL_JUMP)  ; LAB_10005fa1
@@ -364,8 +364,8 @@ section .text
     TEST EAX,EAX                        ; 10006291
     JNZ 0x1000629e                      ; 10006293
         ;   XREF to: 1000629e (CONDITIONAL_JUMP)  ; LAB_1000629e
-    MOV EAX,[0x10016d44]                ; 10006295 | PTR_DAT_10016d44
-    MOV dword ptr [ESP + 0x18],EAX      ; 1000629a | DAT_10012308
+    MOV EAX,[0x10016d44]                ; 10006295 | PTR_u_(null)_10016d44
+    MOV dword ptr [ESP + 0x18],EAX      ; 1000629a | = "(null)"
     MOV EBP,dword ptr [ESP + 0x18]      ; 1000629e
         ;   Label: LAB_1000629e
     XOR EDI,EDI                         ; 100062a2
@@ -373,7 +373,7 @@ section .text
     TEST EBX,EBX                        ; 100062ac
     JLE 0x100066b4                      ; 100062ae
         ;   XREF to: 100066b4 (CONDITIONAL_JUMP)  ; caseD_77
-    MOV AX,word ptr [EBP]               ; 100062b4 | DAT_10012308 | = "null)"
+    MOV AX,word ptr [EBP]               ; 100062b4 | = "(null)" | u_null)_10012308+2
         ;   Label: LAB_100062b4
     TEST AX,AX                          ; 100062b8
     JZ 0x100066b4                       ; 100062bb
@@ -422,13 +422,13 @@ section .text
     MOV dword ptr [ESP + 0x18],ECX      ; 1000632a
     JMP 0x100066b4                      ; 1000632e
         ;   XREF to: 100066b4 (UNCONDITIONAL_JUMP)  ; caseD_77
-    MOV EAX,[0x10016d40]                ; 10006333 | PTR_DAT_10016d40
+    MOV EAX,[0x10016d40]                ; 10006333 | PTR_u_HAN#_10016d40
         ;   Label: LAB_10006333
     MOV ECX,0xffffffff                  ; 10006338
     MOV EDI,EAX                         ; 1000633d
-    MOV dword ptr [ESP + 0x18],EAX      ; 1000633f | DAT_10012318
+    MOV dword ptr [ESP + 0x18],EAX      ; 1000633f | = ""
     SUB EAX,EAX                         ; 10006343
-    SCASB.REPNE ES:EDI                  ; 10006345 | DAT_10012318 | = "null)"
+    SCASB.REPNE ES:EDI                  ; 10006345 | = "" | u_HAN#)_10012318+1
     NOT ECX                             ; 10006347
     LEA EDI,[ECX + -0x1]                ; 10006349
     JMP 0x100066b4                      ; 1000634c
@@ -751,8 +751,8 @@ section .text
         ;   Label: LAB_10006688
     JNZ 0x10006698                      ; 1000668d
         ;   XREF to: 10006698 (CONDITIONAL_JUMP)  ; LAB_10006698
-    MOV EAX,[0x10016d40]                ; 1000668f | PTR_DAT_10016d40
-    MOV dword ptr [ESP + 0x18],EAX      ; 10006694 | DAT_10012318
+    MOV EAX,[0x10016d40]                ; 1000668f | PTR_u_HAN#_10016d40
+    MOV dword ptr [ESP + 0x18],EAX      ; 10006694 | = ""
     MOV EDI,dword ptr [ESP + 0x18]      ; 10006698
         ;   Label: LAB_10006698
     MOV EAX,EBX                         ; 1000669c
@@ -760,7 +760,7 @@ section .text
     TEST EAX,EAX                        ; 1000669f
     JZ 0x100066b0                       ; 100066a1
         ;   XREF to: 100066b0 (CONDITIONAL_JUMP)  ; LAB_100066b0
-    CMP byte ptr [EDI],0x0              ; 100066a3 | DAT_10012318 | = "null)"
+    CMP byte ptr [EDI],0x0              ; 100066a3 | = "" | u_HAN#)_10012318+1
         ;   Label: LAB_100066a3
     JZ 0x100066b0                       ; 100066a6
         ;   XREF to: 100066b0 (CONDITIONAL_JUMP)  ; LAB_100066b0

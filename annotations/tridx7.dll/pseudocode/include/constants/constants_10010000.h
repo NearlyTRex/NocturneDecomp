@@ -87,6 +87,21 @@ static ImageBaseOffset32 DAT_10012FF8 = (ImageBaseOffset32)0x132DB;
 static ImageBaseOffset32 DAT_10012FFC = (ImageBaseOffset32)0x132F2;
 
 // TerminatedCString constants
+static TerminatedCString s_kernel32_dll_100122f8 = "kernel32.dll";
+static TerminatedCString s_GetCurrentThread_10012398 = "GetCurrentThread";
+static TerminatedCString s_runtime_error_10012410 = "runtime error ";
+static TerminatedCString s_TLOSS_error_10012424 = "TLOSS error\r\n";
+static TerminatedCString s_SING_error_10012434 = "SING error\r\n";
+static TerminatedCString s_DOMAIN_error_10012444 = "DOMAIN error\r\n";
+static TerminatedCString s_R6027_not_enough_space_f_10012454 = "R6027\r\n- not enough space for lowio initialization\r\n";
+static TerminatedCString s_R6026_not_enough_space_f_1001248c = "R6026\r\n- not enough space for stdio initialization\r\n";
+static TerminatedCString s_R6025_pure_virtual_funct_100124c4 = "R6025\r\n- pure virtual function call\r\n";
+static TerminatedCString s_R6024_not_enough_space_f_100124ec = "R6024\r\n- not enough space for _onexit/atexit table\r\n";
+static TerminatedCString s_R6019_unable_to_open_con_10012524 = "R6019\r\n- unable to open console device\r\n";
+static TerminatedCString s_R6018_unexpected_heap_er_10012550 = "R6018\r\n- unexpected heap error\r\n";
+static TerminatedCString s_R6017_unexpected_multith_10012574 = "R6017\r\n- unexpected multithread lock error\r\n";
+static TerminatedCString s_R6016_not_enough_space_f_100125a4 = "R6016\r\n- not enough space for thread data\r\n";
+static TerminatedCString s_abnormal_program_termina_100125d0 = "\r\nabnormal program termination\r\n";
 static TerminatedCString s_R6009_not_enough_space_f_100125f4 = "R6009\r\n- not enough space for environment\r\n";
 static TerminatedCString s_R6008_not_enough_space_f_10012620 = "R6008\r\n- not enough space for arguments\r\n";
 static TerminatedCString s_R6002_floating_point_not_1001264c = "R6002\r\n- floating point not loaded\r\n";
@@ -484,21 +499,24 @@ static TerminatedCString s_You_re_shoving_too_many_10016c20 = "You're shoving to
 
 // double constants
 static double g_D3DClipConst2 = 2;
+static double DOUBLE_100122b8 = 1;
+static double DOUBLE_100122c0 = 256;
+static double DOUBLE_100122c8 = 1.52587890625e-05;
+static double DOUBLE_100122d0 = 0.0015625000000000001;
+static double DOUBLE_100122d8 = 0.0020833333333333298;
+static double DOUBLE_100122e8 = 5.9604644775390599e-08;
 
 // float constants
 static float g_D3DClipHalf = 0.5f;
 
 // string constants
 static string s_IsTNT_100122f0 = "IsTNT";
-static string s_kernel32_dll_100122f8 = "kernel32.dll";
-static string s_null_10012319 = "null)";
 static string s_SetThreadAffinityMask_100123ac = "SetThreadAffinityMask";
 static string s_GetCurrentProcess_100123c4 = "GetCurrentProcess";
 static string s_GetProcessAffinityMask_100123d8 = "GetProcessAffinityMask";
 static string s_KERNEL32_100123f0 = "KERNEL32";
 
 // undefined1 constants
-static undefined1 DAT_10012318 = 0x28;
 static undefined1 DAT_10016ef8 = 0x01;
 static undefined1 DAT_10016ef9 = 0x02;
 static undefined1 DAT_100176d4 = 0x0B;
@@ -564,7 +582,6 @@ static undefined1* DAT_10018240 = (undefined1*)0x1001821C; // DAT_1001821c
 static undefined1* DAT_10018244 = (undefined1*)0x1001821C; // DAT_1001821c
 
 // undefined2 constants
-static undefined2 DAT_10012308 = 0x0028;
 static undefined2 DAT_1001240c = 0x0030;
 static undefined2 DAT_10012764 = 0x002E;
 static undefined2 DAT_10012778 = 0x4E41;

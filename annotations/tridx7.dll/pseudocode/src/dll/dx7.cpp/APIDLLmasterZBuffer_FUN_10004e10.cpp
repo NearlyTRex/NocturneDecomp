@@ -14,7 +14,7 @@ int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
   RECT local_10;
   
                     /* 0x4e10  23  APIDLLmasterZBuffer */
-  if ((z_buffer_mode < 0) || (g_MasterZBufferCount <= z_buffer_mode)) {
+  if ((z_buffer_mode < 0) || ((int)g_MasterZBufferCount <= z_buffer_mode)) {
     return 0;
   }
   this_ptr = g_MasterZBufferSurfaces[z_buffer_mode];

@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10003400 at 1000358f
+;   dll_dx7.cpp_createStagingTextures_FUN_10003400 at 1000358f
 ;
 ; Referenced Globals:
 ;   CDLLTextureCache* g_TextureCache32 = 10060678

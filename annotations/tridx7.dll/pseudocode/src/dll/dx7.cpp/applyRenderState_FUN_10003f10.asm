@@ -10,11 +10,11 @@
 ;   dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130 at 1000514f
 ;   dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00 at 10004f1f
 ;   dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0 at 100043d9
-;   dll_dx7.cpp_FUN_10002d50 at 10002d6c
+;   dll_dx7.cpp_resetRenderState_FUN_10002d50 at 10002d6c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_100122b8
-;   undefined4 DAT_100122c0
+;   double DOUBLE_100122b8 = 1
+;   double DOUBLE_100122c0 = 256
 ;   int g_CurrentTextureIndex = 0x0
 ;   int g_PremultiplyColorAndAlpha = 0x0
 ;   int g_FlyIniPresent = 0x0
@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_flushBatch_FUN_100047b0
-;   dll_dx7.cpp_FUN_100037e0
+;   dll_dx7.cpp_setRenderStateCached_FUN_100037e0
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_10003fa8
     PUSH 0x13                           ; 10003faa
         ;   Label: LAB_10003faa
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10003fac
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10003fac
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10003fb1
     TEST ESI,0x20                       ; 10003fb4
         ;   Label: LAB_10003fb4
@@ -124,8 +124,8 @@ section .text
     PUSH 0x6                            ; 10003fdf
         ;   Label: LAB_10003fdf
     PUSH 0x14                           ; 10003fe1
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10003fe3
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10003fe3
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10003fe8
     CMP dword ptr [0x10014164],0x0      ; 10003feb | g_PremultiplyColorAndAlpha
     JZ 0x10004019                       ; 10003ff2
@@ -136,8 +136,8 @@ section .text
     PUSH 0x2                            ; 10003ff8
         ;   Label: LAB_10003ff8
     PUSH 0x14                           ; 10003ffa
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10003ffc
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10003ffc
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004001
     CMP dword ptr [0x10014164],0x0      ; 10004004 | g_PremultiplyColorAndAlpha
     JZ 0x10004019                       ; 1000400b
@@ -145,8 +145,8 @@ section .text
     PUSH 0x2                            ; 1000400d
     PUSH 0x13                           ; 1000400f
         ;   Label: LAB_1000400f
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004011
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004011
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004016
     MOV EAX,ESI                         ; 10004019
         ;   Label: LAB_10004019
@@ -265,13 +265,13 @@ section .text
         ;   XREF to: 10004183 (CONDITIONAL_JUMP)  ; LAB_10004183
     PUSH 0x1                            ; 10004167
     PUSH 0x1b                           ; 10004169
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000416b
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000416b
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004170
     PUSH 0x1                            ; 10004173
     PUSH 0xf                            ; 10004175
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004177
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004177
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000417c
     PUSH 0x4                            ; 1000417f
     JMP 0x1000419d                      ; 10004181
@@ -279,19 +279,19 @@ section .text
     PUSH 0x0                            ; 10004183
         ;   Label: LAB_10004183
     PUSH 0x1b                           ; 10004185
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004187
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004187
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000418c
     PUSH 0x0                            ; 1000418f
     PUSH 0xf                            ; 10004191
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004193
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004193
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004198
     PUSH 0x2                            ; 1000419b
     PUSH 0x15                           ; 1000419d
         ;   Label: LAB_1000419d
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000419f
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000419f
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 100041a4
     MOV EAX,ESI                         ; 100041a7
         ;   Label: LAB_100041a7
@@ -309,8 +309,8 @@ section .text
         ;   Label: LAB_100041bf
     PUSH 0x9                            ; 100041c1
         ;   Label: LAB_100041c1
-    CALL dll_dx7.cpp_FUN_100037e0       ; 100041c3
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 100041c3
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 100041c8
     MOV EAX,ESI                         ; 100041cb
         ;   Label: LAB_100041cb
@@ -328,8 +328,8 @@ section .text
         ;   Label: LAB_100041e3
     PUSH 0x1c                           ; 100041e5
         ;   Label: LAB_100041e5
-    CALL dll_dx7.cpp_FUN_100037e0       ; 100041e7
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 100041e7
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 100041ec
     MOV EAX,ESI                         ; 100041ef
         ;   Label: LAB_100041ef
@@ -342,8 +342,8 @@ section .text
         ;   XREF to: 10004217 (CONDITIONAL_JUMP)  ; LAB_10004217
     PUSH 0x0                            ; 10004207
     PUSH 0x7                            ; 10004209
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000420b
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000420b
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004210
     PUSH 0x0                            ; 10004213
     JMP 0x1000426c                      ; 10004215
@@ -358,13 +358,13 @@ section .text
         ;   XREF to: 10004242 (CONDITIONAL_JUMP)  ; LAB_10004242
     PUSH 0x1                            ; 10004226
     PUSH 0x7                            ; 10004228
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000422a
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000422a
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000422f
     PUSH 0x1                            ; 10004232
     PUSH 0xe                            ; 10004234
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004236
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004236
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000423b
     PUSH 0x4                            ; 1000423e
     JMP 0x10004278                      ; 10004240
@@ -375,32 +375,32 @@ section .text
     PUSH 0x7                            ; 10004246
     JZ 0x10004262                       ; 10004248
         ;   XREF to: 10004262 (CONDITIONAL_JUMP)  ; LAB_10004262
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000424a
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000424a
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000424f
     PUSH 0x0                            ; 10004252
     PUSH 0xe                            ; 10004254
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004256
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004256
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000425b
     PUSH 0x4                            ; 1000425e
     JMP 0x10004278                      ; 10004260
         ;   XREF to: 10004278 (UNCONDITIONAL_JUMP)  ; LAB_10004278
-    CALL dll_dx7.cpp_FUN_100037e0       ; 10004262
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10004262
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
         ;   Label: LAB_10004262
     ADD ESP,0x8                         ; 10004267
     PUSH 0x1                            ; 1000426a
     PUSH 0xe                            ; 1000426c
         ;   Label: LAB_1000426c
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000426e
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000426e
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10004273
     PUSH 0x8                            ; 10004276
     PUSH 0x17                           ; 10004278
         ;   Label: LAB_10004278
-    CALL dll_dx7.cpp_FUN_100037e0       ; 1000427a
-        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100037e0()
+    CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000427a
+        ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000427f
     MOV EAX,[0x10226908]                ; 10004282 | g_ExternalRendererBridge.system_memory_size
         ;   Label: LAB_10004282
@@ -433,10 +433,10 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 100042d8
         ;   Label: LAB_100042d8
     FILD dword ptr [ESP + 0x4]          ; 100042dc
-    FDIVR double ptr [0x100122b8]       ; 100042e0 | DAT_100122b8
+    FDIVR double ptr [0x100122b8]       ; 100042e0 | DOUBLE_100122b8
     JMP 0x100042f6                      ; 100042e6
         ;   XREF to: 100042f6 (UNCONDITIONAL_JUMP)  ; LAB_100042f6
-    FLD double ptr [0x100122c0]         ; 100042e8 | DAT_100122c0
+    FLD double ptr [0x100122c0]         ; 100042e8 | DOUBLE_100122c0
         ;   Label: LAB_100042e8
     MOV dword ptr [ESP + 0x4],ECX       ; 100042ee
     FIDIV dword ptr [ESP + 0x4]         ; 100042f2

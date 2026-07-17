@@ -1,43 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 33,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 38,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 43,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 87,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 3,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_noreturn"
     ],
-    "total_lines": 161
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -75,7 +55,7 @@
     {
       "addr": "10005010",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10005010"
+      "name": "dll_dx7.cpp_getOrAddVertex_FUN_10005010"
     }
   ],
   "globals": [
@@ -93,9 +73,9 @@
     },
     {
       "addr": "10014234",
-      "name": "DAT_10014234",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentBatchStamp",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10016c20",
@@ -228,24 +208,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_10014234",
-      "severity": "mild",
-      "text": "DAT_10014234 = DAT_10014234 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_10014234",
-      "severity": "mild",
-      "text": "DAT_10014234 = DAT_10014234 + 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Subroutine marked as non-returning",
-      "line": 41,
+      "line": 39,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",

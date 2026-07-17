@@ -1,0 +1,316 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 113,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 4,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "warning_noreturn"
+    ],
+    "total_lines": 151
+  },
+  "cross_references": [
+    {
+      "addr": "10005130",
+      "from_addr": "100051a2",
+      "name": "dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10004f00",
+      "from_addr": "10004f6a",
+      "name": "dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005010",
+    "address_range": [
+      [
+        "10005010",
+        "1000511a"
+      ],
+      [
+        "1000511e",
+        "1000512c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_getOrAddVertex_FUN_10005010",
+    "signature": "uint __cdecl dll_dx7_cpp_getOrAddVertex_FUN_10005010(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array,uint render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "100044b0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_buildTLVertex_FUN_100044b0"
+    },
+    {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_fatalError_FUN_10002340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100122e8",
+      "name": "DOUBLE_100122e8",
+      "type": "double",
+      "value": "5.96046447753906E-8"
+    },
+    {
+      "addr": "10014228",
+      "name": "g_PendingVertexCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10014234",
+      "name": "g_CurrentBatchStamp",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10016bd8",
+      "name": "s_You_re_shoving_too_many_10016bd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016bfc",
+      "name": "s_You_re_shoving_too_many_10016bfc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1013b8d8",
+      "name": "g_VertexBuffer",
+      "type": "SScreenVertex[16000]",
+      "value": null
+    },
+    {
+      "addr": "1013b8dc",
+      "name": "g_VertexBuffer[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1013b8f0",
+      "name": "g_VertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1013b8f4",
+      "name": "g_VertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10215e48",
+      "name": "g_VertexBatchStamp",
+      "type": "int[16000]",
+      "value": null
+    },
+    {
+      "addr": "10226f08",
+      "name": "g_VertexCacheIndex",
+      "type": "int[16000]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "10004f6a",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10004f86",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10004fa2",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "100051a2",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "100051e3",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10005224",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.1625,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 100,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 43,
+      "INT_AND": 78,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 20,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 25,
+      "INT_SUB": 25,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 24,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 493
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "poly_vertex",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_array",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 56,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar6->owner`). Replace `pSVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 28,
+      "match": "pSVar6 = (T *)&pSVar6->FIELD",
+      "severity": "moderate",
+      "text": "pSVar6 = (SScreenVertex *)&pSVar6->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar7->owner`). Replace `pSVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 29,
+      "match": "pSVar7 = (T *)&pSVar7->FIELD",
+      "severity": "moderate",
+      "text": "pSVar7 = (SScreenVertex *)&pSVar7->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 100050d9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 67,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 100050d9: MOVSD.REP ES:EDI,ESI  ; g_VertexBuffer | g_VertexBuffer[0].y",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

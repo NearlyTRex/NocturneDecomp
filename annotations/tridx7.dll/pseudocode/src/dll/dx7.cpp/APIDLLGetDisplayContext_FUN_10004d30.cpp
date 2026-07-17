@@ -18,7 +18,7 @@ void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(uint *param_1)
     if (g_BackBufferLocked != 0) {
       (*g_BackBufferSurface->vtable->Unlock)(g_BackBufferSurface,(void *)0x0);
       g_BackBufferLocked = 0;
-      DAT_10014230 = 1;
+      INT_10014230 = 1;
     }
     HVar1 = (*g_BackBufferSurface->vtable->GetDC)(g_BackBufferSurface,&local_4);
     if (HVar1 != 0) {

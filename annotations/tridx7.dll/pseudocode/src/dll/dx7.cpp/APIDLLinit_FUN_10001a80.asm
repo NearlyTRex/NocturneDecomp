@@ -33,8 +33,8 @@
 ;   DirectDrawEnumerateExA
 ;   dll_dx7.cpp_APIDLLkill_FUN_10002460
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
-;   dll_dx7.cpp_FUN_10002ea0
-;   dll_dx7.cpp_FUN_10002f40
+;   dll_dx7.cpp_createDirect3D_FUN_10002f40
+;   dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
 ;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 ;
 ; *****************************************************************************
@@ -294,10 +294,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 10001d34
         ;   Label: LAB_10001d34
     MOV [0x1001420c],EAX                ; 10001d38 | g_NonLocalVideoMem
-    CALL dll_dx7.cpp_FUN_10002ea0       ; 10001d3d
-        ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002ea0()
-    CALL dll_dx7.cpp_FUN_10002f40       ; 10001d42
-        ;   XREF to: 10002f40 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002f40()
+    CALL dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 ; 10001d3d
+        ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseAllTextures_FUN_10002ea0()
+    CALL dll_dx7.cpp_createDirect3D_FUN_10002f40 ; 10001d42
+        ;   XREF to: 10002f40 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_createDirect3D_FUN_10002f40()
     TEST EAX,EAX                        ; 10001d47
     JNZ 0x10001d58                      ; 10001d49
         ;   XREF to: 10001d58 (CONDITIONAL_JUMP)  ; LAB_10001d58

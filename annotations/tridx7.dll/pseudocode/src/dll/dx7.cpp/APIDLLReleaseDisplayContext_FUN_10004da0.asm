@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   int g_BackBufferLocked = 0x0
-;   undefined4 DAT_10014230
+;   int INT_10014230 = 0x0
 ;   DDSURFACEDESC2 g_PrimarySurfaceDesc
 ;   undefined4 g_PrimarySurfaceDesc.dwFlags
 ;
@@ -26,7 +26,7 @@ section .text
     PUSH EAX                            ; 10004db4
     MOV EAX,dword ptr [EAX]             ; 10004db5
     CALL dword ptr [EAX + 0x68]         ; 10004db7
-    CMP dword ptr [0x10014230],0x0      ; 10004dba | DAT_10014230
+    CMP dword ptr [0x10014230],0x0      ; 10004dba | INT_10014230
     JZ 0x10004e03                       ; 10004dc1
         ;   XREF to: 10004e03 (CONDITIONAL_JUMP)  ; LAB_10004e03
     MOV EDI,0x10226e88                  ; 10004dc3 | g_PrimarySurfaceDesc
@@ -43,7 +43,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 10004dea
     CALL dword ptr [EAX + 0x64]         ; 10004dec
     MOV dword ptr [0x100141f4],0x1      ; 10004def | g_BackBufferLocked
-    MOV dword ptr [0x10014230],0x0      ; 10004df9 | DAT_10014230
+    MOV dword ptr [0x10014230],0x0      ; 10004df9 | INT_10014230
     POP EDI                             ; 10004e03
         ;   Label: LAB_10004e03
     RET                                 ; 10004e04

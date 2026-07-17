@@ -1,0 +1,198 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 227,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memset"
+    ],
+    "total_lines": 290
+  },
+  "cross_references": [
+    {
+      "addr": "10003100",
+      "from_addr": "1000331f",
+      "name": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100035b0",
+    "address_range": [
+      [
+        "100035b0",
+        "100037df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+    "signature": "int __cdecl dll_dx7_cpp_initDefaultRenderStates_FUN_100035b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002d50",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_resetRenderState_FUN_10002d50"
+    },
+    {
+      "addr": "100037e0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_setRenderStateCached_FUN_100037e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100141bc",
+      "name": "g_FogColorRed",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "100141c0",
+      "name": "g_FogColorGreen",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "100141c4",
+      "name": "g_FogColorBlue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "100141e0",
+      "name": "g_Device",
+      "type": "IDirect3DDevice3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "101390c8",
+      "name": "g_RenderStateKeyCache",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "101390cc",
+      "name": "g_RenderStateKeyCache[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "101394c8",
+      "name": "g_RenderStateValueCache",
+      "type": "DWORD[256]",
+      "value": null
+    },
+    {
+      "addr": "101394cc",
+      "name": "g_RenderStateValueCache[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1022690c",
+      "name": "g_ExternalRendererBridge.video_memory_size",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226918",
+      "name": "g_ExternalRendererBridge.system_initialized",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000331f",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.074866310160428,
+    "instruction_count": 187,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 3,
+      "BRANCH": 2,
+      "CALL": 37,
+      "CALLIND": 2,
+      "CBRANCH": 3,
+      "COPY": 114,
+      "INT_2COMP": 1,
+      "INT_ADD": 46,
+      "INT_AND": 127,
+      "INT_CARRY": 38,
+      "INT_EQUAL": 108,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 12,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 38,
+      "INT_SLESS": 56,
+      "INT_SUB": 129,
+      "INT_XOR": 4,
+      "INT_ZEXT": 5,
+      "LOAD": 11,
+      "POPCOUNT": 52,
+      "RETURN": 2,
+      "STORE": 116
+    },
+    "pcode_op_count": 949
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Watcom inline memset (REP STOSD at 100035bd, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 6,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100035bd: STOSD.REP ES:EDI  ; g_RenderStateValueCache | g_RenderStateValueCache[1]",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100035c9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 9,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100035c9: STOSD.REP ES:EDI  ; g_RenderStateKeyCache | g_RenderStateKeyCache[1]",
+      "type": "unrolled_memset"
+    }
+  ]
+}

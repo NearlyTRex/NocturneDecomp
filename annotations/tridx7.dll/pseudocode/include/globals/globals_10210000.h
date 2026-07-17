@@ -7,6 +7,9 @@
 // GLOBAL VARIABLES - Range 0x10210000
 // =============================================================================
 
-// undefined4
-extern undefined4 DAT_10215e40;
+// int[16000]
+extern int g_VertexBatchStamp[16000];
+
+// uchar*
+extern uchar* g_ColorPalette;
 

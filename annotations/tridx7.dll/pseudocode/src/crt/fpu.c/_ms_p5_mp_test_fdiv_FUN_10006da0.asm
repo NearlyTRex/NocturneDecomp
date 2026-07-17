@@ -11,7 +11,7 @@
 ;   crt_fpu.c__fpmath_FUN_10005580 at 10005585
 ;
 ; Referenced Globals:
-;   undefined4 s_GetCurrentThread_10012397+1
+;   TerminatedCString s_GetCurrentThread_10012398
 ;   string s_SetThreadAffinityMask_100123ac
 ;   string s_GetCurrentProcess_100123c4
 ;   string s_GetProcessAffinityMask_100123d8
@@ -136,7 +136,7 @@ section .text
     POP EBX                             ; 10006e5b
     ADD ESP,0x14                        ; 10006e5c
     RET                                 ; 10006e5f
-    PUSH 0x10012398                     ; 10006e60 | s_GetCurrentThread_10012397+1
+    PUSH 0x10012398                     ; 10006e60 | = "GetCurrentThread"
         ;   Label: LAB_10006e60
     PUSH EBX                            ; 10006e65
     CALL ESI                            ; 10006e66 | FARPROC GetProcAddress(HMODULE hModule, LPCSTR lpProcName)

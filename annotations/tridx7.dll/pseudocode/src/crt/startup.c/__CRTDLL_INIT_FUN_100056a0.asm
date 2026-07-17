@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   string s_IsTNT_100122f0
-;   string s_kernel32.dll_100122f8
+;   TerminatedCString s_kernel32_dll_100122f8
 ;   undefined4 DAT_10016c60
 ;   undefined4 DAT_10016c64
 ;   undefined4 DAT_10016c74

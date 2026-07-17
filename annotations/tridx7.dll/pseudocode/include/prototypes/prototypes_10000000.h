@@ -22,7 +22,9 @@
 #include "types/classes/CExternalRendererBridge.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLVertex.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SScreenVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x10000000
@@ -53,21 +55,21 @@ int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void);
 int __cdecl dll_dx7_cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface *surface);
 int __cdecl dll_dx7_cpp_APIDLLbeginScene_FUN_10002ce0(void);
 int __cdecl dll_dx7_cpp_APIDLLendScene_FUN_10002d10(void);
-void dll_dx7_cpp_FUN_10002d50(void);
+void __cdecl dll_dx7_cpp_resetRenderState_FUN_10002d50(void);
 int __cdecl dll_dx7_cpp_APIDLLlockFrame_FUN_10002d90(void);
 int __cdecl dll_dx7_cpp_lockBackBuffer_FUN_10002dc0(void);
 int __cdecl dll_dx7_cpp_FUN_10002e20(int *param_1,undefined4 *param_2);
 int __cdecl dll_dx7_cpp_APIDLLunlockFrame_FUN_10002e60(void);
-void dll_dx7_cpp_FUN_10002ea0(void);
-int __cdecl dll_dx7_cpp_FUN_10002f40(void);
+void __cdecl dll_dx7_cpp_releaseAllTextures_FUN_10002ea0(void);
+int __cdecl dll_dx7_cpp_createDirect3D_FUN_10002f40(void);
 int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size);
 char dll_dx7_cpp_FUN_10003090(int param_1);
 void __cdecl dll_dx7_cpp_loadTexture_FUN_100030e0(int texture_index);
 int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void);
 HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag);
-undefined4 dll_dx7_cpp_FUN_10003400(void);
-int __cdecl dll_dx7_cpp_FUN_100035b0(void);
-void dll_dx7_cpp_FUN_100037e0(uint param_1,DWORD param_2);
+int __cdecl dll_dx7_cpp_createStagingTextures_FUN_10003400(void);
+int __cdecl dll_dx7_cpp_initDefaultRenderStates_FUN_100035b0(void);
+void __cdecl dll_dx7_cpp_setRenderStateCached_FUN_100037e0(uint render_state,DWORD value);
 void __cdecl dll_dx7_cpp_expandTextureAndBuildMips_FUN_10003830(void);
 uint * dll_dx7_cpp_FUN_10003a30(int param_1);
 void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void);
@@ -79,7 +81,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetMipMapLevel_FUN_10003f00(int mipmap_level);
 void __cdecl dll_dx7_cpp_applyRenderState_FUN_10003f10(uint render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolygon_FUN_10004380(SRenderVertex *vertices,int vertex_count,int render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_array,int vertex_count,int render_flags);
-void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4);
+void __cdecl dll_dx7_cpp_buildTLVertex_FUN_100044b0(SRenderVertex *src,SScreenVertex *out,uint render_flags,int rhw_scale);
 void __cdecl dll_dx7_cpp_flushBatch_FUN_100047b0(void);
 int __cdecl dll_dx7_cpp_APIDLLaddParticle_FUN_10004800(void *particle_data,int particle_type);
 int __cdecl dll_dx7_cpp_APIDLLflushParticleList_FUN_10004810(void);
@@ -91,13 +93,13 @@ int __cdecl dll_dx7_cpp_APIDLLsync_FUN_10004a60(void);
 int __cdecl dll_dx7_cpp_APIDLLclearZBuffer_FUN_10004a70(void);
 int __cdecl dll_dx7_cpp_APIDLLclearZBox_FUN_10004ac0(int left,int right,int top,int bottom);
 int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,void *color_table);
-int dll_dx7_cpp_FUN_10004d10(uint param_1);
+int __cdecl dll_dx7_cpp_floorLog2_FUN_10004d10(uint value);
 void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(undefined4 *param_1);
 void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1);
 int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode);
 int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int left,int top,int mode,int right,int bottom);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
-undefined4 dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,undefined4 param_3);
+uint __cdecl dll_dx7_cpp_getOrAddVertex_FUN_10005010(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array,uint render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
 int __cdecl dll_dx7_cpp_APIDLLgetVideoMemory_FUN_10005280(int *total_memory,int *available_memory,int *memory_type);
 int __cdecl dll_dx7_cpp_APIDLLselectCard_FUN_100052c0(int card_index);

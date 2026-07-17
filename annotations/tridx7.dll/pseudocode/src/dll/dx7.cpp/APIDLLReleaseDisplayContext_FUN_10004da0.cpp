@@ -17,7 +17,7 @@ void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
   bVar3 = 0;
   if (g_BackBufferSurface != (IDirectDrawSurface *)0x0) {
     (*g_BackBufferSurface->vtable->ReleaseDC)(g_BackBufferSurface,param_1);
-    if (DAT_10014230 != 0) {
+    if (INT_10014230 != 0) {
       pDVar2 = &g_PrimarySurfaceDesc;
       for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {
         pDVar2->dwSize = 0;
@@ -27,7 +27,7 @@ void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
       (*g_BackBufferSurface->vtable->Lock)
                 (g_BackBufferSurface,(RECT *)0x0,&g_PrimarySurfaceDesc,1,(void *)0x0);
       g_BackBufferLocked = 1;
-      DAT_10014230 = 0;
+      INT_10014230 = 0;
     }
   }
   return;

@@ -19,10 +19,10 @@
 ;   IDirect3D3* g_Direct3D3 = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   IDirect3DViewport3* g_Viewport = 00000000
-;   int g_MasterZBufferCount = 0x0
+;   uint g_MasterZBufferCount = 0x0
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002ea0
+;   dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ESI                            ; 10002370
         ;   Label: dll_dx7.cpp_releaseDirectXResources_FUN_10002370
     PUSH EDI                            ; 10002371
-    CALL dll_dx7.cpp_FUN_10002ea0       ; 10002372
-        ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002ea0()
+    CALL dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 ; 10002372
+        ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseAllTextures_FUN_10002ea0()
     CMP dword ptr [0x100141b8],0x0      ; 10002377 | g_HoldBufferSurface
     JZ 0x10002395                       ; 1000237e
         ;   XREF to: 10002395 (CONDITIONAL_JUMP)  ; LAB_10002395

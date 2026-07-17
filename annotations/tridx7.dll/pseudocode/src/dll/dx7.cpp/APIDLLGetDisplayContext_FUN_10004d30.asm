@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   int g_BackBufferLocked = 0x0
-;   undefined4 DAT_10014230
+;   int INT_10014230 = 0x0
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 10004d56
     CALL dword ptr [ESI + 0x80]         ; 10004d58
     MOV dword ptr [0x100141f4],0x0      ; 10004d5e | g_BackBufferLocked
-    MOV dword ptr [0x10014230],0x1      ; 10004d68 | DAT_10014230
+    MOV dword ptr [0x10014230],0x1      ; 10004d68 | INT_10014230
     LEA EAX,[ESP + 0x4]                 ; 10004d72
         ;   Label: LAB_10004d72
     MOV ECX,dword ptr [0x10014180]      ; 10004d76 | g_BackBufferSurface

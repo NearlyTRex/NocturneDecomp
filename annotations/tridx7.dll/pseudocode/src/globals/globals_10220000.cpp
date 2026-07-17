@@ -20,13 +20,20 @@ GUID* g_AdapterGuids[16] = {};
 GUID g_AdapterGuidStorage[16] = {};
 
 // int
-int g_MasterZBufferCount = 0;
 int g_RedShift = 0;
 int g_GreenShift = 0;
 int g_HWBlueShift = 0;
 
+// int[16000]
+int g_VertexCacheIndex[16000] = {};
+
 // int[8]
 int g_TextureSizeTable[8] = {};
+
+// uint
+uint g_HWGreenScale = 0;
+uint g_MasterZBufferCount = 0;
+uint g_HWRedScale = 0;
 
 // uint[256]
 uint g_PackedPalette[256] = {};

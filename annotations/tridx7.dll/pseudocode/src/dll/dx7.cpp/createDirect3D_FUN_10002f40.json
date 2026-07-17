@@ -1,0 +1,140 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "pointer_type",
+        "column": 74,
+        "line": 15,
+        "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirect3D3 **'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "10001a80",
+      "from_addr": "10001d42",
+      "name": "dll_dx7.cpp_APIDLLinit_FUN_10001a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002500",
+      "from_addr": "10002804",
+      "name": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10002f40",
+    "address_range": [
+      [
+        "10002f40",
+        "10002f5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_createDirect3D_FUN_10002f40",
+    "signature": "int __cdecl dll_dx7_cpp_createDirect3D_FUN_10002f40(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10012148",
+      "name": "g_IID_IDirect3D3",
+      "type": "GUID",
+      "value": "IDirect3D3 bb223240-e72b-11d0-a9b4-00aa00c0993e"
+    },
+    {
+      "addr": "10014188",
+      "name": "g_DirectDraw4",
+      "type": "IDirectDraw4*",
+      "value": "00000000"
+    },
+    {
+      "addr": "100141dc",
+      "name": "g_Direct3D3",
+      "type": "IDirect3D3*",
+      "value": "00000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "10001d42",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLinit_FUN_10001a80",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "10002804",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.4,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "CALLIND": 1,
+      "COPY": 7,
+      "INT_2COMP": 1,
+      "INT_ADD": 1,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "INT_ZEXT": 1,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

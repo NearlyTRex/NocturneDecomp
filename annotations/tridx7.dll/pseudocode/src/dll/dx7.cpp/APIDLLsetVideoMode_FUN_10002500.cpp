@@ -58,11 +58,11 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   }
   g_MasterZBufferCount = 0;
   dll_dx7_cpp_readIniInt_FUN_10002b20
-            ("Graphics","masterZBufferCount",(uint *)&g_MasterZBufferCount);
+            ("Graphics","masterZBufferCount",&g_MasterZBufferCount);
   g_UseHoldBuffer = 0;
   if (0x1e0 < g_ScreenHeight) {
     dll_dx7_cpp_readIniInt_FUN_10002b20
-              ("Graphics","useHoldBuffer",(uint *)&g_UseHoldBuffer);
+              ("Graphics","useHoldBuffer",&g_UseHoldBuffer);
   }
   g_PremultiplyColorAndAlpha = 0;
   dll_dx7_cpp_readIniInt_FUN_10002b20
@@ -70,10 +70,10 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
              (uint *)&g_PremultiplyColorAndAlpha);
   g_DirectTextureFlag = 0;
   dll_dx7_cpp_readIniInt_FUN_10002b20
-            ("Graphics","directTextureFlag",(uint *)&g_DirectTextureFlag);
+            ("Graphics","directTextureFlag",&g_DirectTextureFlag);
   g_AllowAutoMipMapping = 0;
   dll_dx7_cpp_readIniInt_FUN_10002b20
-            ("Graphics","allowAutoMipMapping",(uint *)&g_AllowAutoMipMapping);
+            ("Graphics","allowAutoMipMapping",&g_AllowAutoMipMapping);
   file = _fopen("system\\fly.ini","rb");
   if (file == (_FILE *)0x0) {
     g_FlyIniPresent = 0;
@@ -133,7 +133,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     return 0;
   }
-  iVar3 = dll_dx7_cpp_FUN_10002f40();
+  iVar3 = dll_dx7_cpp_createDirect3D_FUN_10002f40();
   if (iVar3 == 0) {
     (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     return 0;
@@ -177,7 +177,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   if (HVar2 == 0) {
     iVar3 = 0;
     g_ZBufferBitDepth = iStack_204;
-    if (0 < g_MasterZBufferCount) {
+    if (0 < (int)g_MasterZBufferCount) {
       surface = g_MasterZBufferSurfaces;
       do {
         HVar2 = (*g_DirectDraw4->vtable->CreateSurface)
@@ -190,7 +190,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
         }
         surface = surface + 1;
         iVar3 = iVar3 + 1;
-      } while (iVar3 < g_MasterZBufferCount);
+      } while (iVar3 < (int)g_MasterZBufferCount);
     }
     HVar2 = (*g_BackBufferSurface->vtable->AddAttachedSurface)(g_BackBufferSurface,g_ZBufferSurface)
     ;
@@ -238,7 +238,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     pcVar7 = pcVar11 + -uVar4;
-    pcVar11 = (char *)&DAT_101386f0;
+    pcVar11 = g_ErrorMessageBuffer;
     for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *(uint *)pcVar11 = *(uint *)pcVar7;
       pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
@@ -249,7 +249,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
       pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
       pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     }
-    MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
+    MessageBoxA((HWND)0x0,g_ErrorMessageBuffer,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */
     ExitProcess(0x29a);
   }
@@ -266,7 +266,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   } while (cVar1 != '\0');
   uVar4 = ~uVar4;
   pcVar7 = pcVar11 + -uVar4;
-  pcVar11 = (char *)&DAT_101386f0;
+  pcVar11 = g_ErrorMessageBuffer;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)pcVar11 = *(uint *)pcVar7;
     pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
@@ -277,7 +277,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
     pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
   }
-  MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
+  MessageBoxA((HWND)0x0,g_ErrorMessageBuffer,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */
   ExitProcess(0x29a);
   while( true ) {
@@ -292,7 +292,7 @@ code_r0x10002993:
   }
   uVar4 = ~uVar4;
   pcVar7 = pcVar11 + -uVar4;
-  pcVar11 = (char *)&DAT_101386f0;
+  pcVar11 = g_ErrorMessageBuffer;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)pcVar11 = *(uint *)pcVar7;
     pcVar7 = pcVar7 + ((uint)bVar13 * -2 + 1) * 4;
@@ -303,7 +303,7 @@ code_r0x10002993:
     pcVar7 = pcVar7 + (uint)bVar13 * -2 + 1;
     pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
   }
-  MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,"3D Adapter Error",0x10);
+  MessageBoxA((HWND)0x0,g_ErrorMessageBuffer,"3D Adapter Error",0x10);
                     /* WARNING: Subroutine does not return */
   ExitProcess(0x29a);
 }

@@ -17,7 +17,7 @@
 ;   IDirectDrawSurface* g_ZBufferSurface = 00000000
 ;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
 ;   TerminatedCString s_masterZ_blt_failed_10016b8c
-;   int g_MasterZBufferCount = 0x0
+;   uint g_MasterZBufferCount = 0x0
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340

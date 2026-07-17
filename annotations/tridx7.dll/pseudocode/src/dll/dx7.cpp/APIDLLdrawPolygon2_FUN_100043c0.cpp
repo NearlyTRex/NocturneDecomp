@@ -39,7 +39,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_a
   if (0 < vertex_count) {
     do {
       iVar7 = iVar4 + 1;
-      dll_dx7_cpp_FUN_100044b0
+      dll_dx7_cpp_buildTLVertex_FUN_100044b0
                 (vertex_array[iVar4],g_VertexBuffer + g_PendingVertexCount + iVar4,render_flags,
                  iVar6);
       iVar4 = iVar7;

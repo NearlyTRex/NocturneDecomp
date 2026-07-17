@@ -11,10 +11,8 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_b
 {
   ushort *puVar1;
   int iVar2;
-  WORD WVar3;
-  uint local_10;
-  int local_c;
-  int local_8;
+  uint uVar3;
+  SMRGLVertex local_10;
   int local_4;
   
                     /* 0x5130  12  APIDLLdrawPolyList2 */
@@ -22,28 +20,28 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_b
     return 0;
   }
   dll_dx7_cpp_applyRenderState_FUN_10003f10(render_flags);
-  DAT_10014234 = DAT_10014234 + 1;
+  g_CurrentBatchStamp = g_CurrentBatchStamp + 1;
   if (0 < polygon_count) {
     local_4 = polygon_count;
     do {
       puVar1 = *polygons;
-      local_10 = (uint)*puVar1;
-      local_c = (uint)puVar1[3] << 8;
-      local_8 = (uint)puVar1[6] << 8;
-      WVar3 = dll_dx7_cpp_FUN_10005010(&local_10,vertex_buffer,render_flags);
-      g_IndexBuffer[g_PendingIndexCount] = WVar3;
-      local_10 = (uint)puVar1[1];
-      local_c = (uint)puVar1[4] << 8;
-      local_8 = (uint)puVar1[7] << 8;
-      WVar3 = dll_dx7_cpp_FUN_10005010(&local_10,vertex_buffer,render_flags);
-      g_IndexBuffer[g_PendingIndexCount + 1] = WVar3;
-      local_10 = (uint)puVar1[2];
-      local_c = (uint)puVar1[5] << 8;
-      local_8 = (uint)puVar1[8] << 8;
-      WVar3 = dll_dx7_cpp_FUN_10005010(&local_10,vertex_buffer,render_flags);
+      local_10.vertex_index = (int)*puVar1;
+      local_10.texture_u = (uint)puVar1[3] << 8;
+      local_10.texture_v = (uint)puVar1[6] << 8;
+      uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
+      g_IndexBuffer[g_PendingIndexCount] = (WORD)uVar3;
+      local_10.vertex_index = (int)puVar1[1];
+      local_10.texture_u = (uint)puVar1[4] << 8;
+      local_10.texture_v = (uint)puVar1[7] << 8;
+      uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
+      g_IndexBuffer[g_PendingIndexCount + 1] = (WORD)uVar3;
+      local_10.vertex_index = (int)puVar1[2];
+      local_10.texture_u = (uint)puVar1[5] << 8;
+      local_10.texture_v = (uint)puVar1[8] << 8;
+      uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
       iVar2 = g_PendingIndexCount;
       g_PendingIndexCount = g_PendingIndexCount + 3;
-      g_IndexBuffer[iVar2 + 2] = WVar3;
+      g_IndexBuffer[iVar2 + 2] = (WORD)uVar3;
       if (0x3e76 < g_PendingIndexCount) {
                     /* WARNING: Subroutine does not return */
         dll_dx7_cpp_fatalError_FUN_10002340("You're shoving too many faces");

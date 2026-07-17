@@ -1,0 +1,250 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 12,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "100049f0",
+      "from_addr": "10004a37",
+      "name": "dll_dx7.cpp_APIDLLsetFogColor_FUN_100049f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10003f10",
+      "from_addr": "10003fac",
+      "name": "dll_dx7.cpp_applyRenderState_FUN_10003f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100035b0",
+      "from_addr": "100035e2",
+      "name": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100037e0",
+    "address_range": [
+      [
+        "100037e0",
+        "10003824"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_setRenderStateCached_FUN_100037e0",
+    "signature": "void __cdecl dll_dx7_cpp_setRenderStateCached_FUN_100037e0(uint render_state,DWORD value)"
+  },
+  "function_calls": [
+    {
+      "addr": "100047b0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_flushBatch_FUN_100047b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100141e0",
+      "name": "g_Device",
+      "type": "IDirect3DDevice3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "101390c8",
+      "name": "g_RenderStateKeyCache",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "101394c8",
+      "name": "g_RenderStateValueCache",
+      "type": "DWORD[256]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "100035e2",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100035ee",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100035fa",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10003606",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10003612",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000361e",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000362a",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10003636",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10003642",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000364e",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.391304347826087,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 10,
+      "INT_AND": 20,
+      "INT_EQUAL": 9,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "render_state",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      }
+    ]
+  },
+  "suspects": []
+}

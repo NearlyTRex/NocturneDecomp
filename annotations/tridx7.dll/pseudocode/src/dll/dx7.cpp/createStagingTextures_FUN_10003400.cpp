@@ -1,0 +1,108 @@
+// Name: dll_dx7.cpp_createStagingTextures_FUN_10003400
+// Address: 10003400
+// Address Range: [[10003400, 100035a3]]
+// Convention: __cdecl
+// Signature: int __cdecl dll_dx7_cpp_createStagingTextures_FUN_10003400(void)
+
+#include "nocturne.h"
+
+int __cdecl dll_dx7_cpp_createStagingTextures_FUN_10003400(void)
+
+{
+  IDirectDrawSurface **surface;
+  IDirectDrawSurface *this_ptr;
+  HRESULT HVar1;
+  DDPIXELFORMAT_union2 DVar2;
+  DDPIXELFORMAT_union3 DVar3;
+  DDPIXELFORMAT_union4 DVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  DDPIXELFORMAT *pDVar8;
+  DDSURFACEDESC2 *pDVar9;
+  DDPIXELFORMAT *pDVar10;
+  byte bVar11;
+  int local_80;
+  DDSURFACEDESC2 local_7c;
+  
+  bVar11 = 0;
+  dll_dx7_cpp_releaseAllTextures_FUN_10002ea0();
+  local_80 = 0;
+  do {
+    iVar6 = 0;
+    iVar7 = local_80;
+    do {
+      pDVar9 = &local_7c;
+      for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
+        pDVar9->dwSize = 0;
+        pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar11 * -2 + 1) * 4);
+      }
+      pDVar8 = &g_TexturePixelFormat;
+      pDVar10 = &local_7c.ddpfPixelFormat;
+      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
+        pDVar10->dwSize = pDVar8->dwSize;
+        pDVar8 = (DDPIXELFORMAT *)((int)pDVar8 + ((uint)bVar11 * -2 + 1) * 4);
+        pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar11 * -2 + 1) * 4);
+      }
+      surface = (IDirectDrawSurface **)((int)g_StagingTextures[0] + iVar7);
+      local_7c.dwHeight = *(DWORD *)((int)g_TextureSizeTable + local_80);
+      local_7c.dwSize = 0x7c;
+      local_7c.dwFlags = 0x1007;
+      local_7c.ddsCaps.dwCaps = 0x1800;
+      local_7c.dwWidth = local_7c.dwHeight;
+      HVar1 = (*g_DirectDraw4->vtable->CreateSurface)
+                        (g_DirectDraw4,&local_7c,surface,(IUnknown *)0x0);
+      if (HVar1 != 0) {
+        return 0;
+      }
+      this_ptr = *surface;
+      HVar1 = (*this_ptr->vtable->QueryInterface)
+                        ((IUnknown *)this_ptr,(GUID *)&g_IID_IDirect3DTexture2,
+                         (void **)((int)g_StagingTextureInterfaces[0] + iVar7));
+      if (HVar1 != 0) {
+        return 0;
+      }
+      iVar7 = iVar7 + 0x20;
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < 4);
+    local_80 = local_80 + 4;
+    if (0x1f < local_80) {
+      g_HWRedShift = 0;
+      for (DVar2 = local_7c.ddpfPixelFormat.dwRedYMask; (DVar2.dwRBitMask & 1) == 0;
+          DVar2.dwRBitMask = DVar2.dwRBitMask >> 1) {
+        g_HWRedShift = g_HWRedShift + 1;
+      }
+      g_HWRedScale = (uint)(0xff / (ulonglong)
+                                   (local_7c.ddpfPixelFormat.dwRedYMask.dwRBitMask >>
+                                   ((byte)g_HWRedShift & 0x1f)));
+      g_HWGreenShift = 0;
+      for (DVar3 = local_7c.ddpfPixelFormat.dwGreenUMask; (DVar3.dwGBitMask & 1) == 0;
+          DVar3.dwGBitMask = DVar3.dwGBitMask >> 1) {
+        g_HWGreenShift = g_HWGreenShift + 1;
+      }
+      g_HWGreenScale =
+           (uint)(0xff / (ulonglong)
+                         (local_7c.ddpfPixelFormat.dwGreenUMask.dwGBitMask >>
+                         ((byte)g_HWGreenShift & 0x1f)));
+      g_HWBlueShift = 0;
+      for (DVar4 = local_7c.ddpfPixelFormat.dwBlueVMask; (DVar4.dwBBitMask & 1) == 0;
+          DVar4.dwBBitMask = DVar4.dwBBitMask >> 1) {
+        g_HWBlueShift = g_HWBlueShift + 1;
+      }
+      g_HWBlueScale =
+           (uint)(0xff / (ulonglong)
+                         (local_7c.ddpfPixelFormat.dwBlueVMask.dwBBitMask >>
+                         ((byte)g_HWBlueShift & 0x1f)));
+      if (g_TextureFormatSelected == 0) {
+        g_HWAlphaMask = 0;
+      }
+      else {
+        g_HWAlphaMask = local_7c.ddpfPixelFormat.dwAlphaBitMask.dwRGBAlphaBitMask;
+      }
+      g_TextureCount = 0;
+      g_HWTextureBitDepth = local_7c.ddpfPixelFormat.dwBitCount.dwRGBBitCount;
+      dll_dx7_cpp_initTextureCaches_FUN_10001200();
+      return 1;
+    }
+  } while( true );
+}

@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 18,
+        "column": 20,
         "line": 24,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
@@ -26,15 +26,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 174,
+    "complexity_score": 139,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
       "undefined_data",
       "unrolled_memset",
       "warning_noreturn"
@@ -69,14 +68,14 @@
       "name": "dll_dx7.cpp_fatalError_FUN_10002340"
     },
     {
+      "addr": "10004d10",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_floorLog2_FUN_10004d10"
+    },
+    {
       "addr": "10002e20",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_10002e20"
-    },
-    {
-      "addr": "10004d10",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10004d10"
     },
     {
       "addr": "10002cb0",
@@ -105,9 +104,9 @@
     },
     {
       "addr": "10215e40",
-      "name": "DAT_10215e40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ColorPalette",
+      "type": "uchar*",
+      "value": "00000000"
     },
     {
       "addr": "10226868",
@@ -268,14 +267,6 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_10215e40",
-      "severity": "mild",
-      "text": "DAT_10215e40 = source_palette;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_10226868",
       "severity": "mild",
@@ -288,22 +279,6 @@
       "match": "DAT_10226868",
       "severity": "mild",
       "text": "puVar6 = DAT_10226868;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(byte *)((int)DAT_10215e40",
-      "severity": "moderate",
-      "text": "pbVar3 = (byte *)((int)DAT_10215e40 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_10215e40",
-      "severity": "mild",
-      "text": "pbVar3 = (byte *)((int)DAT_10215e40 + 2);",
       "type": "undefined_data"
     },
     {

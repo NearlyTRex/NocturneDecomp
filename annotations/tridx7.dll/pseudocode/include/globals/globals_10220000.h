@@ -26,13 +26,20 @@ extern GUID* g_AdapterGuids[16];
 extern GUID g_AdapterGuidStorage[16];
 
 // int
-extern int g_MasterZBufferCount;
 extern int g_RedShift;
 extern int g_GreenShift;
 extern int g_HWBlueShift;
 
+// int[16000]
+extern int g_VertexCacheIndex[16000];
+
 // int[8]
 extern int g_TextureSizeTable[8];
+
+// uint
+extern uint g_HWGreenScale;
+extern uint g_MasterZBufferCount;
+extern uint g_HWRedScale;
 
 // uint[256]
 extern uint g_PackedPalette[256];

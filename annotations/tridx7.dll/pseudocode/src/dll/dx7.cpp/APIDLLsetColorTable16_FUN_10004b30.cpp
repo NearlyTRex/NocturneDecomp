@@ -21,7 +21,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
   uint local_1c;
   
                     /* 0x4b30  28  APIDLLsetColorTable16 */
-  DAT_10215e40 = source_palette;
+  g_ColorPalette = source_palette;
   DAT_10226868 = color_table;
   puVar5 = local_7c;
   for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -40,7 +40,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
       *g_ExternalRendererBridge.red_bit_position = iVar2;
       *g_ExternalRendererBridge.red_scale_factor =
            (int)(0xff / (ulonglong)(local_24 >> ((byte)iVar2 & 0x1f)));
-      iVar2 = dll_dx7_cpp_FUN_10004d10(*g_ExternalRendererBridge.red_scale_factor);
+      iVar2 = dll_dx7_cpp_floorLog2_FUN_10004d10(*g_ExternalRendererBridge.red_scale_factor);
       *g_ExternalRendererBridge.red_dither_shift = iVar2;
       iVar2 = 0;
       for (uVar1 = local_20; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {
@@ -49,7 +49,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
       *g_ExternalRendererBridge.green_bit_position = iVar2;
       *g_ExternalRendererBridge.green_scale_factor =
            (int)(0xff / (ulonglong)(local_20 >> ((byte)iVar2 & 0x1f)));
-      iVar2 = dll_dx7_cpp_FUN_10004d10(*g_ExternalRendererBridge.green_scale_factor);
+      iVar2 = dll_dx7_cpp_floorLog2_FUN_10004d10(*g_ExternalRendererBridge.green_scale_factor);
       *g_ExternalRendererBridge.green_dither_shift = iVar2;
       iVar2 = 0;
       for (uVar1 = local_1c; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {
@@ -58,9 +58,9 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
       *g_ExternalRendererBridge.blue_bit_position = iVar2;
       *g_ExternalRendererBridge.blue_scale_factor =
            (int)(0xff / (ulonglong)(local_1c >> ((byte)iVar2 & 0x1f)));
-      iVar2 = dll_dx7_cpp_FUN_10004d10(*g_ExternalRendererBridge.blue_scale_factor);
+      iVar2 = dll_dx7_cpp_floorLog2_FUN_10004d10(*g_ExternalRendererBridge.blue_scale_factor);
       puVar6 = DAT_10226868;
-      pbVar3 = (byte *)((int)DAT_10215e40 + 2);
+      pbVar3 = g_ColorPalette + 2;
       iVar4 = 0x100;
       *g_ExternalRendererBridge.blue_dither_shift = iVar2;
       do {

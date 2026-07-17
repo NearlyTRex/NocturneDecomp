@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_flushBatch_FUN_100047b0
-;   dll_dx7.cpp_FUN_10002d50
+;   dll_dx7.cpp_resetRenderState_FUN_10002d50
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 10002d1c (CONDITIONAL_JUMP)  ; LAB_10002d1c
     XOR EAX,EAX                         ; 10002d19
     RET                                 ; 10002d1b
-    CALL dll_dx7.cpp_FUN_10002d50       ; 10002d1c
-        ;   XREF to: 10002d50 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002d50()
+    CALL dll_dx7.cpp_resetRenderState_FUN_10002d50 ; 10002d1c
+        ;   XREF to: 10002d50 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_resetRenderState_FUN_10002d50()
         ;   Label: LAB_10002d1c
     CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10002d21
         ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()

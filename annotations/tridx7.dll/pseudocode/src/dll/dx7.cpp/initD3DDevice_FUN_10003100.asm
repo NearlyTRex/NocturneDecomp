@@ -22,14 +22,14 @@
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   IDirect3DViewport3* g_Viewport = 00000000
 ;   TerminatedCString s_Can_t_create_hold_surfac_10016a9c
-;   int g_UseHoldBuffer = 0x0
+;   uint g_UseHoldBuffer = 0x0
 ;   DDPIXELFORMAT g_TexturePixelFormat
 ;   undefined4 g_TexturePixelFormat.dwFlags
 ;
 ; Called Functions:
+;   dll_dx7.cpp_createStagingTextures_FUN_10003400
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10003400
-;   dll_dx7.cpp_FUN_100035b0
+;   dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0
 ;
 ; *****************************************************************************
 
@@ -202,8 +202,8 @@ section .text
     PUSH 0x0                            ; 10003305
     PUSH ECX                            ; 10003307
     CALL dword ptr [EAX + 0x14]         ; 10003308
-    CALL dll_dx7.cpp_FUN_10003400       ; 1000330b
-        ;   XREF to: 10003400 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003400()
+    CALL dll_dx7.cpp_createStagingTextures_FUN_10003400 ; 1000330b
+        ;   XREF to: 10003400 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_createStagingTextures_FUN_10003400()
         ;   Label: LAB_1000330b
     TEST EAX,EAX                        ; 10003310
     JNZ 0x1000331f                      ; 10003312
@@ -213,8 +213,8 @@ section .text
     POP ESI                             ; 10003317
     ADD ESP,0x110                       ; 10003318
     RET                                 ; 1000331e
-    CALL dll_dx7.cpp_FUN_100035b0       ; 1000331f
-        ;   XREF to: 100035b0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_100035b0()
+    CALL dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0 ; 1000331f
+        ;   XREF to: 100035b0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0()
         ;   Label: LAB_1000331f
     POP EDI                             ; 10003324
     CMP EAX,0x1                         ; 10003325

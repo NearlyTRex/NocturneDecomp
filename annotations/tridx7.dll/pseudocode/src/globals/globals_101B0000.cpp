@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x101B0000
 // =============================================================================
 
+// uint
+uint g_HWBlueScale = 0;
+
 // uint[87381]
 uint g_ExpandedTexture[87381] = {};
 

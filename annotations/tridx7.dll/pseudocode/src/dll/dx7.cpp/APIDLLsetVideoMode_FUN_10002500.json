@@ -68,17 +68,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 744,
+    "complexity_score": 679,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 41,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_memset",
       "unrolled_strlen",
@@ -146,14 +145,14 @@
       "name": "dll_dx7.cpp_checkD3DResult_FUN_10001d70"
     },
     {
+      "addr": "10002f40",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_createDirect3D_FUN_10002f40"
+    },
+    {
       "addr": "10002340",
       "is_variadic": false,
       "name": "dll_dx7.cpp_fatalError_FUN_10002340"
-    },
-    {
-      "addr": "10002f40",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002f40"
     },
     {
       "addr": "10003100",
@@ -213,7 +212,7 @@
     {
       "addr": "10014168",
       "name": "g_AllowAutoMipMapping",
-      "type": "int",
+      "type": "uint",
       "value": "0x0"
     },
     {
@@ -291,7 +290,7 @@
     {
       "addr": "100141f0",
       "name": "g_DirectTextureFlag",
-      "type": "int",
+      "type": "uint",
       "value": "0x0"
     },
     {
@@ -410,8 +409,8 @@
     },
     {
       "addr": "101386f0",
-      "name": "DAT_101386f0",
-      "type": "undefined4",
+      "name": "g_ErrorMessageBuffer",
+      "type": "char[2048]",
       "value": null
     },
     {
@@ -429,7 +428,7 @@
     {
       "addr": "101398c8",
       "name": "g_UseHoldBuffer",
-      "type": "int",
+      "type": "uint",
       "value": "0x0"
     },
     {
@@ -501,7 +500,7 @@
     {
       "addr": "10226a48",
       "name": "g_MasterZBufferCount",
-      "type": "int",
+      "type": "uint",
       "value": "0x0"
     },
     {
@@ -692,22 +691,6 @@
       "type": "warning_noreturn"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 234,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)&DAT_101386f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 245,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Subroutine marked as non-returning",
       "line": 246,
       "match": "WARNING: Subroutine does not return",
@@ -716,44 +699,12 @@
       "type": "warning_noreturn"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 262,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)&DAT_101386f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 273,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Subroutine marked as non-returning",
       "line": 274,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 288,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)&DAT_101386f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 299,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
-      "type": "undefined_data"
     },
     {
       "description": "Subroutine marked as non-returning",
@@ -952,7 +903,7 @@
       "line": 318,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10002924: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a Z bu...\" | DAT_101386f0",
+      "text": "// 10002924: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a Z bu...\" | g_ErrorMessageBuffer",
       "type": "unrolled_memcpy"
     },
     {
@@ -960,7 +911,7 @@
       "line": 364,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 100029a7: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a 2nd ...\" | DAT_101386f0",
+      "text": "// 100029a7: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a 2nd ...\" | g_ErrorMessageBuffer",
       "type": "unrolled_memcpy"
     },
     {
@@ -968,7 +919,7 @@
       "line": 404,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 10002a18: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to attach Z buff...\" | DAT_101386f0",
+      "text": "// 10002a18: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to attach Z buff...\" | g_ErrorMessageBuffer",
       "type": "unrolled_memcpy"
     },
     {

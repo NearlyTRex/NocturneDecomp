@@ -10,8 +10,8 @@
 ;   dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0 at 1000448d
 ;   dll_dx7.cpp_APIDLLendScene_FUN_10002d10 at 10002d21
 ;   dll_dx7.cpp_APIDLLsync_FUN_10004a60 at 10004a60
-;   dll_dx7.cpp_FUN_100037e0 at 10003810
 ;   dll_dx7.cpp_applyRenderState_FUN_10003f10 at 10003f3b
+;   dll_dx7.cpp_setRenderStateCached_FUN_100037e0 at 10003810
 ;
 ; Referenced Globals:
 ;   IDirect3DDevice3* g_Device = 00000000

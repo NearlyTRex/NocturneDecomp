@@ -16,7 +16,7 @@
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   TerminatedCString s_Could_not_lock_back_buff_10016b50
 ;   TerminatedCString s_Could_not_unlock_back_bu_10016b6c
-;   undefined4 DAT_10215e40
+;   uchar* g_ColorPalette = 00000000
 ;   undefined4 DAT_10226868
 ;   CExternalRendererBridge g_ExternalRendererBridge
 ;   undefined4 g_ExternalRendererBridge.red_scale_factor
@@ -30,8 +30,8 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
+;   dll_dx7.cpp_floorLog2_FUN_10004d10
 ;   dll_dx7.cpp_FUN_10002e20
-;   dll_dx7.cpp_FUN_10004d10
 ;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
@@ -41,7 +41,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 10004b30
         ;   Label: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
     SUB ESP,0x7c                        ; 10004b34
-    MOV [0x10215e40],EAX                ; 10004b37 | DAT_10215e40
+    MOV [0x10215e40],EAX                ; 10004b37 | g_ColorPalette
     PUSH EBX                            ; 10004b3c
     MOV ECX,dword ptr [ESP + 0x88]      ; 10004b3d
     PUSH ESI                            ; 10004b44
@@ -103,8 +103,8 @@ section .text
     MOV ECX,dword ptr [0x102268bc]      ; 10004bd5 | g_ExternalRendererBridge.red_scale_factor
     MOV EAX,dword ptr [ECX]             ; 10004bdb
     PUSH EAX                            ; 10004bdd
-    CALL dll_dx7.cpp_FUN_10004d10       ; 10004bde
-        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10004d10()
+    CALL dll_dx7.cpp_floorLog2_FUN_10004d10 ; 10004bde
+        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_floorLog2_FUN_10004d10(uint value)
     ADD ESP,0x4                         ; 10004be3
     MOV ECX,dword ptr [0x102268c0]      ; 10004be6 | g_ExternalRendererBridge.red_dither_shift
     MOV dword ptr [ECX],EAX             ; 10004bec
@@ -132,8 +132,8 @@ section .text
     MOV ECX,dword ptr [0x102268c8]      ; 10004c1e | g_ExternalRendererBridge.green_scale_factor
     MOV EAX,dword ptr [ECX]             ; 10004c24
     PUSH EAX                            ; 10004c26
-    CALL dll_dx7.cpp_FUN_10004d10       ; 10004c27
-        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10004d10()
+    CALL dll_dx7.cpp_floorLog2_FUN_10004d10 ; 10004c27
+        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_floorLog2_FUN_10004d10(uint value)
     ADD ESP,0x4                         ; 10004c2c
     MOV ECX,dword ptr [0x102268cc]      ; 10004c2f | g_ExternalRendererBridge.green_dither_shift
     MOV dword ptr [ECX],EAX             ; 10004c35
@@ -161,11 +161,11 @@ section .text
     MOV ECX,dword ptr [0x102268d4]      ; 10004c67 | g_ExternalRendererBridge.blue_scale_factor
     MOV EAX,dword ptr [ECX]             ; 10004c6d
     PUSH EAX                            ; 10004c6f
-    CALL dll_dx7.cpp_FUN_10004d10       ; 10004c70
-        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10004d10()
+    CALL dll_dx7.cpp_floorLog2_FUN_10004d10 ; 10004c70
+        ;   XREF to: 10004d10 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_floorLog2_FUN_10004d10(uint value)
     ADD ESP,0x4                         ; 10004c75
     MOV ECX,dword ptr [0x102268d8]      ; 10004c78 | g_ExternalRendererBridge.blue_dither_shift
-    MOV EBX,dword ptr [0x10215e40]      ; 10004c7e | DAT_10215e40
+    MOV EBX,dword ptr [0x10215e40]      ; 10004c7e | g_ColorPalette
     MOV EDI,dword ptr [0x10226868]      ; 10004c84 | DAT_10226868
     ADD EBX,0x2                         ; 10004c8a
     MOV ESI,0x100                       ; 10004c8d

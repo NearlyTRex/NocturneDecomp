@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   GUID g_IID_IDirect3DTexture2 = IDirect3DTexture2 93281502-8cf8-11d0-89ab-00a0c9054129
-;   int g_AllowAutoMipMapping = 0x0
+;   uint g_AllowAutoMipMapping = 0x0
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;   int g_TextureCount = 0x0
 ;   TerminatedCString s_D3D_won_t_let_me_convert_10016a4c

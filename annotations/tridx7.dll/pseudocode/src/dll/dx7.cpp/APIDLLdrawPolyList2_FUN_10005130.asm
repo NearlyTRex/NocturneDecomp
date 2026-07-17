@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_InScene = 0x0
 ;   int g_PendingIndexCount = 0x0
-;   undefined4 DAT_10014234
+;   int g_CurrentBatchStamp = 0x0
 ;   TerminatedCString s_You_re_shoving_too_many_10016c20
 ;   WORD[16000] g_IndexBuffer
 ;   undefined4 g_IndexBuffer[1]
@@ -27,7 +27,7 @@
 ;   dll_dx7.cpp_applyRenderState_FUN_10003f10
 ;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_flushBatch_FUN_100047b0
-;   dll_dx7.cpp_FUN_10005010
+;   dll_dx7.cpp_getOrAddVertex_FUN_10005010
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 10003f10 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_applyRenderState_FUN_10003f10(uint render_flags)
     MOV EAX,dword ptr [ESP + 0x30]      ; 10005154
     ADD ESP,0x4                         ; 10005158
-    INC dword ptr [0x10014234]          ; 1000515b | DAT_10014234
+    INC dword ptr [0x10014234]          ; 1000515b | g_CurrentBatchStamp
     TEST EAX,EAX                        ; 10005161
     JLE 0x10005267                      ; 10005163
         ;   XREF to: 10005267 (CONDITIONAL_JUMP)  ; LAB_10005267
@@ -80,8 +80,8 @@ section .text
     MOV AX,word ptr [EBP + 0xc]         ; 10005197
     SHL EAX,0x8                         ; 1000519b
     MOV dword ptr [ESP + 0x24],EAX      ; 1000519e
-    CALL dll_dx7.cpp_FUN_10005010       ; 100051a2
-        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
+    CALL dll_dx7.cpp_getOrAddVertex_FUN_10005010 ; 100051a2
+        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; uint dll_dx7.cpp_getOrAddVertex_FUN_10005010(SMRGLVertex * poly_vertex, SRenderVertex * vertex_array, uint render_flags)
     ADD ESP,0xc                         ; 100051a7
     MOV ECX,dword ptr [0x1001422c]      ; 100051aa | g_PendingIndexCount
     MOV word ptr [ECX*0x2 + 0x10238910],AX ; 100051b0 | g_IndexBuffer
@@ -100,8 +100,8 @@ section .text
     MOV AX,word ptr [EBP + 0xe]         ; 100051d8
     SHL EAX,0x8                         ; 100051dc
     MOV dword ptr [ESP + 0x24],EAX      ; 100051df
-    CALL dll_dx7.cpp_FUN_10005010       ; 100051e3
-        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
+    CALL dll_dx7.cpp_getOrAddVertex_FUN_10005010 ; 100051e3
+        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; uint dll_dx7.cpp_getOrAddVertex_FUN_10005010(SMRGLVertex * poly_vertex, SRenderVertex * vertex_array, uint render_flags)
     ADD ESP,0xc                         ; 100051e8
     MOV ECX,dword ptr [0x1001422c]      ; 100051eb | g_PendingIndexCount
     MOV word ptr [ECX*0x2 + 0x10238912],AX ; 100051f1 | g_IndexBuffer[1]
@@ -120,8 +120,8 @@ section .text
     MOV AX,word ptr [EBP + 0x10]        ; 10005219
     SHL EAX,0x8                         ; 1000521d
     MOV dword ptr [ESP + 0x24],EAX      ; 10005220
-    CALL dll_dx7.cpp_FUN_10005010       ; 10005224
-        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
+    CALL dll_dx7.cpp_getOrAddVertex_FUN_10005010 ; 10005224
+        ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; uint dll_dx7.cpp_getOrAddVertex_FUN_10005010(SMRGLVertex * poly_vertex, SRenderVertex * vertex_array, uint render_flags)
     ADD ESP,0xc                         ; 10005229
     MOV ECX,dword ptr [0x1001422c]      ; 1000522c | g_PendingIndexCount
     ADD dword ptr [0x1001422c],0x3      ; 10005232 | g_PendingIndexCount

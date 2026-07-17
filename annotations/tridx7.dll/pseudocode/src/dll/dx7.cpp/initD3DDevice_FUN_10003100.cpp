@@ -101,10 +101,10 @@ int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void)
               (g_HoldBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
                &auStack_64);
   }
-  iVar2 = dll_dx7_cpp_FUN_10003400();
+  iVar2 = dll_dx7_cpp_createStagingTextures_FUN_10003400();
   if (iVar2 == 0) {
     return 0;
   }
-  iVar2 = dll_dx7_cpp_FUN_100035b0();
+  iVar2 = dll_dx7_cpp_initDefaultRenderStates_FUN_100035b0();
   return (uint)(iVar2 != 0);
 }

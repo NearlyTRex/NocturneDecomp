@@ -183,8 +183,8 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
     return 0;
   }
   g_NonLocalVideoMem = uStack_42c;
-  dll_dx7_cpp_FUN_10002ea0();
-  iVar7 = dll_dx7_cpp_FUN_10002f40();
+  dll_dx7_cpp_releaseAllTextures_FUN_10002ea0();
+  iVar7 = dll_dx7_cpp_createDirect3D_FUN_10002f40();
   if (iVar7 == 0) {
     return 0;
   }
