@@ -9,20 +9,20 @@
 int __cdecl dll_dx7_cpp_APIDLLclearZBuffer_FUN_10004a70(void)
 
 {
-  uint *puVar1;
+  DDBLTFX *pDVar1;
   int iVar2;
-  uint local_64 [20];
-  uint local_14;
+  DDBLTFX local_64;
   
                     /* 0x4a70  10  APIDLLclearZBuffer */
-  puVar1 = local_64;
+  pDVar1 = &local_64;
   for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar1 = 0;
-    puVar1 = puVar1 + 1;
+    pDVar1->dwSize = 0;
+    pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);
   }
-  local_64[0] = 100;
-  local_14 = 0xffffffff;
+  local_64.dwSize = 100;
+  local_64.dwFillColor = 0xffffffff;
   (*g_ZBufferSurface->vtable->Blt)
-            (g_ZBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x3000000,local_64);
+            (g_ZBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x3000000,&local_64)
+  ;
   return 1;
 }

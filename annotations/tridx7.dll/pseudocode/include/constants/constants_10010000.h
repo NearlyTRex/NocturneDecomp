@@ -482,6 +482,12 @@ static TerminatedCString s_You_re_shoving_too_many_10016bd8 = "You're shoving to
 static TerminatedCString s_You_re_shoving_too_many_10016bfc = "You're shoving too many verticies";
 static TerminatedCString s_You_re_shoving_too_many_10016c20 = "You're shoving too many faces";
 
+// double constants
+static double g_D3DClipConst2 = 2;
+
+// float constants
+static float g_D3DClipHalf = 0.5f;
+
 // string constants
 static string s_IsTNT_100122f0 = "IsTNT";
 static string s_kernel32_dll_100122f8 = "kernel32.dll";

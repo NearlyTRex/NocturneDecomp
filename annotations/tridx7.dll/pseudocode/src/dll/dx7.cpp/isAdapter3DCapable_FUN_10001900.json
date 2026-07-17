@@ -1,55 +1,26 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 36,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "type_error",
-        "column": 42,
-        "line": 36,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 85,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 89
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -154,8 +125,40 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(DDCAPS *)((int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDCAPS *)((int)pDVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(DDCAPS *)((int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDCAPS *)((int)pDVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pDVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDCAPS *)((int)pDVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)pDVar3",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDCAPS *)((int)pDVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 18,
+      "line": 17,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -163,7 +166,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {",

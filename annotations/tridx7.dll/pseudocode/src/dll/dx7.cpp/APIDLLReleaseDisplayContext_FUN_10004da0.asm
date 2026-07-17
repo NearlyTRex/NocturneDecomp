@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)
+; void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
 ;
 ;
 ; Referenced Globals:

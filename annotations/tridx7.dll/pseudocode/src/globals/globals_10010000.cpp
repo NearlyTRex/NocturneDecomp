@@ -86,6 +86,7 @@ int g_StagingSetIndex = 0;
 int g_DirectTextureFlag = 0;
 int g_BackBufferLocked = 0;
 int g_FrameLocked = 0;
+int g_TextureFormatSelected = 0;
 int g_InScene = 0;
 int g_SelectedCardIndex = 0;
 int g_TextureCount = 0;
@@ -147,7 +148,6 @@ undefined2 DAT_10017960 = 0x0000;
 // undefined4
 undefined4 DAT_100141bc = 0x000000FF;
 undefined4 DAT_100141c0 = 0x000000FF;
-undefined4 DAT_100141fc = 0x00000000;
 undefined4 DAT_10014230 = 0x00000000;
 undefined4 DAT_10014234 = 0x00000000;
 undefined4 DAT_10016c60 = 0x00000000;

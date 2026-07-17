@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_FUN_10003100
+// Name: dll_dx7.cpp_initD3DDevice_FUN_10003100
 // Address: 10003100
 // Address Range: [[10003100, 100032cd] [100032d1, 10003332]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_FUN_10003100(void)
+// Signature: int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void)
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_FUN_10003100(void)
+int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void)
 
 {
   HRESULT HVar1;
@@ -15,12 +15,12 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
   D3DVIEWPORT2 *pDVar4;
   DDSURFACEDESC2 *pDVar5;
   DDPIXELFORMAT *pDVar6;
-  uint *puVar7;
+  DDBLTFX *pDVar7;
   byte bVar8;
   int iStack_110;
   D3DVIEWPORT2 DStack_10c;
   DDSURFACEDESC2 DStack_e0;
-  uint auStack_64 [25];
+  DDBLTFX auStack_64;
   
   bVar8 = 0;
   HVar1 = (*g_Direct3D3->vtable->CreateDevice)
@@ -30,7 +30,8 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
     return 0;
   }
   iStack_110 = 0;
-  HVar1 = (*g_Device->vtable->EnumTextureFormats)(g_Device,&LAB_10003340,&iStack_110);
+  HVar1 = (*g_Device->vtable->EnumTextureFormats)
+                    (g_Device,dll_dx7_cpp_pickTextureFormat_FUN_10003340,&iStack_110);
   if (HVar1 != 0) {
     return 0;
   }
@@ -90,15 +91,15 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
                     /* WARNING: Subroutine does not return */
       dll_dx7_cpp_fatalError_FUN_10002340("Can't create hold surface");
     }
-    puVar7 = auStack_64;
+    pDVar7 = &auStack_64;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+      pDVar7->dwSize = 0;
+      pDVar7 = (DDBLTFX *)((int)pDVar7 + (uint)bVar8 * -8 + 4);
     }
-    auStack_64[0] = 100;
+    auStack_64.dwSize = 100;
     (*g_HoldBufferSurface->vtable->Blt)
               (g_HoldBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
-               auStack_64);
+               &auStack_64);
   }
   iVar2 = dll_dx7_cpp_FUN_10003400();
   if (iVar2 == 0) {

@@ -22,6 +22,35 @@ typedef struct DDCOLORKEY {
     DWORD dwColorSpaceHighValue;
 } DDCOLORKEY;
 
+// Structure: DDBLTFX
+#pragma pack(push, 1)
+typedef struct DDBLTFX {
+    DWORD dwSize;
+    DWORD dwDDFX;
+    DWORD dwROP;
+    DWORD dwDDROP;
+    DWORD dwRotationAngle;
+    DWORD dwZBufferOpCode;
+    DWORD dwZBufferLow;
+    DWORD dwZBufferHigh;
+    DWORD dwZBufferBaseDest;
+    DWORD dwZDestConstBitDepth;
+    DWORD dwZDestConst; // union: DWORD / IDirectDrawSurface* lpDDSZBufferDest
+    DWORD dwZSrcConstBitDepth;
+    DWORD dwZSrcConst; // union: DWORD / IDirectDrawSurface* lpDDSZBufferSrc
+    DWORD dwAlphaEdgeBlendBitDepth;
+    DWORD dwAlphaEdgeBlend;
+    DWORD dwReserved;
+    DWORD dwAlphaDestConstBitDepth;
+    DWORD dwAlphaDestConst; // union: DWORD / IDirectDrawSurface* lpDDSAlphaDest
+    DWORD dwAlphaSrcConstBitDepth;
+    DWORD dwAlphaSrcConst; // union: DWORD / IDirectDrawSurface* lpDDSAlphaSrc
+    DWORD dwFillColor; // union: dwFillColor / dwFillDepth / dwFillPixel / IDirectDrawSurface* lpDDSPattern
+    DDCOLORKEY ddckDestColorkey;
+    DDCOLORKEY ddckSrcColorkey;
+} DDBLTFX;
+#pragma pack(pop)
+
 // Structure: DDDEVICEIDENTIFIER
 #pragma pack(push, 1)
 typedef struct DDDEVICEIDENTIFIER {
@@ -102,6 +131,69 @@ typedef struct DDSCAPS2 {
 } DDSCAPS2;
 #pragma pack(pop)
 
+// Structure: DDCAPS
+#pragma pack(push, 1)
+typedef struct DDCAPS {
+    DWORD dwSize;
+    DWORD dwCaps;
+    DWORD dwCaps2;
+    DWORD dwCKeyCaps;
+    DWORD dwFXCaps;
+    DWORD dwFXAlphaCaps;
+    DWORD dwPalCaps;
+    DWORD dwSVCaps;
+    DWORD dwAlphaBltConstBitDepths;
+    DWORD dwAlphaBltPixelBitDepths;
+    DWORD dwAlphaBltSurfaceBitDepths;
+    DWORD dwAlphaOverlayConstBitDepths;
+    DWORD dwAlphaOverlayPixelBitDepths;
+    DWORD dwAlphaOverlaySurfaceBitDepths;
+    DWORD dwZBufferBitDepths;
+    DWORD dwVidMemTotal;
+    DWORD dwVidMemFree;
+    DWORD dwMaxVisibleOverlays;
+    DWORD dwCurrVisibleOverlays;
+    DWORD dwNumFourCCCodes;
+    DWORD dwAlignBoundarySrc;
+    DWORD dwAlignSizeSrc;
+    DWORD dwAlignBoundaryDest;
+    DWORD dwAlignSizeDest;
+    DWORD dwAlignStrideAlign;
+    DWORD dwRops[8];
+    DDSCAPS ddsOldCaps;
+    DWORD dwMinOverlayStretch;
+    DWORD dwMaxOverlayStretch;
+    DWORD dwMinLiveVideoStretch;
+    DWORD dwMaxLiveVideoStretch;
+    DWORD dwMinHwCodecStretch;
+    DWORD dwMaxHwCodecStretch;
+    DWORD dwReserved1;
+    DWORD dwReserved2;
+    DWORD dwReserved3;
+    DWORD dwSVBCaps;
+    DWORD dwSVBCKeyCaps;
+    DWORD dwSVBFXCaps;
+    DWORD dwSVBRops[8];
+    DWORD dwVSBCaps;
+    DWORD dwVSBCKeyCaps;
+    DWORD dwVSBFXCaps;
+    DWORD dwVSBRops[8];
+    DWORD dwSSBCaps;
+    DWORD dwSSBCKeyCaps;
+    DWORD dwSSBFXCaps;
+    DWORD dwSSBRops[8];
+    DWORD dwMaxVideoPorts;
+    DWORD dwCurrVideoPorts;
+    DWORD dwSVBCaps2;
+    DWORD dwNLVBCaps;
+    DWORD dwNLVBCaps2;
+    DWORD dwNLVBCKeyCaps;
+    DWORD dwNLVBFXCaps;
+    DWORD dwNLVBRops[8];
+    DDSCAPS2 ddsCaps;
+} DDCAPS;
+#pragma pack(pop)
+
 // Union: DDSURFACEDESC_union1
 typedef union DDSURFACEDESC_union1 {
     LONG lPitch;
@@ -174,6 +266,9 @@ typedef HRESULT IDirectDraw4_CreateSurface(struct IDirectDraw4* this_ptr, struct
 // Function Definition: IDirectDraw4_GetAvailableVidMem
 typedef HRESULT IDirectDraw4_GetAvailableVidMem(struct IDirectDraw4* this_ptr, struct DDSCAPS* caps, DWORD* total, DWORD* free);
 
+// Function Definition: IDirectDraw4_GetCaps
+typedef HRESULT IDirectDraw4_GetCaps(struct IDirectDraw4* this_ptr, struct DDCAPS* driver_caps, struct DDCAPS* hel_caps);
+
 // Function Definition: IDirectDraw4_GetDeviceIdentifier
 typedef HRESULT IDirectDraw4_GetDeviceIdentifier(struct IDirectDraw4* this_ptr, struct DDDEVICEIDENTIFIER* identifier, DWORD flags);
 
@@ -187,7 +282,7 @@ typedef HRESULT IDirectDraw4_RestoreAllSurfaces(struct IDirectDraw4* this_ptr);
 typedef HRESULT IDirectDraw4_RestoreDisplayMode(struct IDirectDraw4* this_ptr);
 
 // Function Definition: IDirectDraw4_SetCooperativeLevel
-typedef HRESULT IDirectDraw4_SetCooperativeLevel(struct IDirectDraw4* this_ptr, undefined1 window, DWORD flags);
+typedef HRESULT IDirectDraw4_SetCooperativeLevel(struct IDirectDraw4* this_ptr, HWND window, DWORD flags);
 
 // Function Definition: IDirectDraw4_SetDisplayMode
 typedef HRESULT IDirectDraw4_SetDisplayMode(struct IDirectDraw4* this_ptr, DWORD width, DWORD height, DWORD bpp, DWORD refresh_rate, DWORD flags);
@@ -209,7 +304,7 @@ typedef struct IDirectDraw4_vtable {
     void* EnumDisplayModes;
     void* EnumSurfaces;
     void* FlipToGDISurface;
-    void* GetCaps;
+    IDirectDraw4_GetCaps* GetCaps;
     void* GetDisplayMode;
     void* GetFourCCCodes;
     void* GetGDISurface;
@@ -309,7 +404,7 @@ typedef HRESULT IDirectDrawSurface_AddAttachedSurface(struct IDirectDrawSurface*
 typedef HRESULT IDirectDrawSurface_AddOverlayDirtyRect(struct IDirectDrawSurface* this_ptr, RECT* dirty_rect);
 
 // Function Definition: IDirectDrawSurface_Blt
-typedef HRESULT IDirectDrawSurface_Blt(struct IDirectDrawSurface* this_ptr, RECT* dest_rect, struct IDirectDrawSurface* src_surface, RECT* src_rect, DWORD flags, void* blt_fx);
+typedef HRESULT IDirectDrawSurface_Blt(struct IDirectDrawSurface* this_ptr, RECT* dest_rect, struct IDirectDrawSurface* src_surface, RECT* src_rect, DWORD flags, struct DDBLTFX* blt_fx);
 
 // Function Definition: IDirectDrawSurface_BltBatch
 typedef HRESULT IDirectDrawSurface_BltBatch(struct IDirectDrawSurface* this_ptr, void* blt_batch, DWORD count, DWORD flags);
@@ -345,7 +440,7 @@ typedef HRESULT IDirectDrawSurface_GetClipper(struct IDirectDrawSurface* this_pt
 typedef HRESULT IDirectDrawSurface_GetColorKey(struct IDirectDrawSurface* this_ptr, DWORD flags, struct DDCOLORKEY* color_key);
 
 // Function Definition: IDirectDrawSurface_GetDC
-typedef HRESULT IDirectDrawSurface_GetDC(struct IDirectDrawSurface* this_ptr, void* device_context);
+typedef HRESULT IDirectDrawSurface_GetDC(struct IDirectDrawSurface* this_ptr, HDC* device_context);
 
 // Function Definition: IDirectDrawSurface_GetFlipStatus
 typedef HRESULT IDirectDrawSurface_GetFlipStatus(struct IDirectDrawSurface* this_ptr, DWORD flags);
@@ -372,7 +467,7 @@ typedef HRESULT IDirectDrawSurface_IsLost(struct IDirectDrawSurface* this_ptr);
 typedef HRESULT IDirectDrawSurface_Lock(struct IDirectDrawSurface* this_ptr, RECT* dest_rect, struct DDSURFACEDESC2* surface_desc, DWORD flags, void* event);
 
 // Function Definition: IDirectDrawSurface_ReleaseDC
-typedef HRESULT IDirectDrawSurface_ReleaseDC(struct IDirectDrawSurface* this_ptr, void* device_context);
+typedef HRESULT IDirectDrawSurface_ReleaseDC(struct IDirectDrawSurface* this_ptr, HDC device_context);
 
 // Function Definition: IDirectDrawSurface_Restore
 typedef HRESULT IDirectDrawSurface_Restore(struct IDirectDrawSurface* this_ptr);
@@ -461,6 +556,9 @@ typedef HRESULT IDirectDraw_DuplicateSurface(struct IDirectDraw* this_ptr, struc
 // Function Definition: IDirectDraw_FlipToGDISurface
 typedef HRESULT IDirectDraw_FlipToGDISurface(struct IDirectDraw* this_ptr);
 
+// Function Definition: IDirectDraw_GetCaps
+typedef HRESULT IDirectDraw_GetCaps(struct IDirectDraw* this_ptr, struct DDCAPS* driver_caps, struct DDCAPS* hel_caps);
+
 // Function Definition: IDirectDraw_GetDisplayMode
 typedef HRESULT IDirectDraw_GetDisplayMode(struct IDirectDraw* this_ptr, struct DDSURFACEDESC* desc);
 
@@ -486,7 +584,7 @@ typedef HRESULT IDirectDraw_Initialize(struct IDirectDraw* this_ptr, GUID* guid)
 typedef HRESULT IDirectDraw_RestoreDisplayMode(struct IDirectDraw* this_ptr);
 
 // Function Definition: IDirectDraw_SetCooperativeLevel
-typedef HRESULT IDirectDraw_SetCooperativeLevel(struct IDirectDraw* this_ptr, undefined1 window, DWORD flags);
+typedef HRESULT IDirectDraw_SetCooperativeLevel(struct IDirectDraw* this_ptr, HWND window, DWORD flags);
 
 // Function Definition: IDirectDraw_SetDisplayMode
 typedef HRESULT IDirectDraw_SetDisplayMode(struct IDirectDraw* this_ptr, DWORD width, DWORD height, DWORD bpp);
@@ -508,7 +606,7 @@ typedef struct IDirectDraw_vtable {
     void* EnumDisplayModes;
     void* EnumSurfaces;
     IDirectDraw_FlipToGDISurface* FlipToGDISurface;
-    void* GetCaps;
+    IDirectDraw_GetCaps* GetCaps;
     IDirectDraw_GetDisplayMode* GetDisplayMode;
     IDirectDraw_GetFourCCCodes* GetFourCCCodes;
     IDirectDraw_GetGDISurface* GetGDISurface;

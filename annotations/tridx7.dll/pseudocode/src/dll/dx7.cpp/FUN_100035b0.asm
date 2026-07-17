@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10003100 at 1000331f
+;   dll_dx7.cpp_initD3DDevice_FUN_10003100 at 1000331f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_100141bc

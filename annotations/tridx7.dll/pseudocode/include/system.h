@@ -14,7 +14,6 @@
 #include "system/d3d.h"
 #include "system/ddraw.h"
 #include "system/dos.h"
-#include "system/excpt.h"
 #include "system/fltintrn.h"
 #include "system/internal.h"
 #include "system/intrinsics.h"

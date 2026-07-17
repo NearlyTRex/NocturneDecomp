@@ -25,7 +25,7 @@ int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
   local_10.top = 0;
   local_10.right = g_ScreenWidth;
   local_10.bottom = g_ScreenHeight;
-  HVar1 = (*this_ptr->vtable->Blt)(this_ptr,&local_10,g_ZBufferSurface,&local_10,0,(void *)0x0);
+  HVar1 = (*this_ptr->vtable->Blt)(this_ptr,&local_10,g_ZBufferSurface,&local_10,0,(DDBLTFX *)0x0);
   if (HVar1 != 0) {
                     /* WARNING: Subroutine does not return */
     dll_dx7_cpp_fatalError_FUN_10002340("masterZ blt failed");

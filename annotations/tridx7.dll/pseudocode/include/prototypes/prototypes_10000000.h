@@ -6,7 +6,6 @@
 #include "system/basetsd.h"
 #include "system/crtdefs.h"
 #include "system/ddraw.h"
-#include "system/excpt.h"
 #include "system/fltintrn.h"
 #include "system/internal.h"
 #include "system/mbstring.h"
@@ -64,7 +63,8 @@ int __cdecl dll_dx7_cpp_FUN_10002f40(void);
 int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size);
 char dll_dx7_cpp_FUN_10003090(int param_1);
 void __cdecl dll_dx7_cpp_loadTexture_FUN_100030e0(int texture_index);
-int __cdecl dll_dx7_cpp_FUN_10003100(void);
+int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void);
+HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag);
 undefined4 dll_dx7_cpp_FUN_10003400(void);
 int __cdecl dll_dx7_cpp_FUN_100035b0(void);
 void dll_dx7_cpp_FUN_100037e0(uint param_1,DWORD param_2);
@@ -93,7 +93,7 @@ int __cdecl dll_dx7_cpp_APIDLLclearZBox_FUN_10004ac0(int left,int right,int top,
 int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,void *color_table);
 int dll_dx7_cpp_FUN_10004d10(uint param_1);
 void dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(undefined4 *param_1);
-void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1);
+void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1);
 int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode);
 int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int left,int top,int mode,int right,int bottom);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);

@@ -98,7 +98,7 @@ uint dll_dx7_cpp_FUN_10003400(void)
            (0xff / (ulonglong)
                    (local_7c.ddpfPixelFormat.dwBlueVMask.dwBBitMask >> ((byte)g_HWBlueShift & 0x1f))
            );
-      if (DAT_100141fc == 0) {
+      if (g_TextureFormatSelected == 0) {
         _DAT_1013b8d0 = 0;
       }
       else {

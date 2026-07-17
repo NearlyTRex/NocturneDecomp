@@ -21,7 +21,7 @@ int __cdecl dll_dx7_cpp_APIDLLrestoreVideoMode_FUN_10002be0(void)
   }
   (*g_DirectDraw->vtable->FlipToGDISurface)(g_DirectDraw);
   (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
-  (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,8);
+  (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,g_WindowHandle,8);
   dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
   do {
     iVar1 = ShowCursor(1);

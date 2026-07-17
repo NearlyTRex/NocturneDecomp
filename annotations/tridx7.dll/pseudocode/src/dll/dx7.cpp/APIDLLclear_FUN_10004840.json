@@ -1,44 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 124,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 46,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memset"
     ],
-    "total_lines": 113
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -240,34 +221,34 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(SRenderVertex *)((int)pSVar1",
+      "line": 20,
+      "match": "(DDBLTFX *)((int)pDVar1",
       "severity": "moderate",
-      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(SRenderVertex *)((int)pSVar1",
+      "line": 31,
+      "match": "(DDBLTFX *)((int)pDVar1",
       "severity": "moderate",
-      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)pSVar1",
+      "description": "Pointer value `pDVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)pDVar1",
       "severity": "moderate",
-      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)pSVar1",
+      "description": "Pointer value `pDVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)pDVar1",
       "severity": "moderate",
-      "text": "pSVar1 = (SRenderVertex *)((int)pSVar1 + 4);",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
       "type": "pointer_truncation"
     },
     {

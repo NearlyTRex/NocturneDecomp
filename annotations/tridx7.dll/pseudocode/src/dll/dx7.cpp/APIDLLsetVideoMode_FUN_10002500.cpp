@@ -22,13 +22,13 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   DDSURFACEDESC2 *pDVar9;
   DDPIXELFORMAT *pDVar10;
   char *pcVar11;
-  uint *puVar12;
+  DDBLTFX *pDVar12;
   byte bVar13;
   DWORD aDStack_210 [3];
   int iStack_204;
   DDSCAPS aDStack_1f0 [4];
   DDSURFACEDESC2 DStack_1e0;
-  uint auStack_164 [25];
+  DDBLTFX DStack_164;
   char acStack_100 [256];
   
                     /* 0x2500  31  APIDLLsetVideoMode */
@@ -93,7 +93,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   }
   iVar3 = g_ScreenBitDepth;
   dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
-  HVar2 = (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,0x11);
+  HVar2 = (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,g_WindowHandle,0x11);
   dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
   if (HVar2 != 0) {
     return 0;
@@ -195,19 +195,19 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     HVar2 = (*g_BackBufferSurface->vtable->AddAttachedSurface)(g_BackBufferSurface,g_ZBufferSurface)
     ;
     if (HVar2 == 0) {
-      puVar12 = auStack_164;
+      pDVar12 = &DStack_164;
       for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar12 = 0;
-        puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
+        pDVar12->dwSize = 0;
+        pDVar12 = (DDBLTFX *)((int)pDVar12 + ((uint)bVar13 * -2 + 1) * 4);
       }
-      auStack_164[0] = 100;
+      DStack_164.dwSize = 100;
       (*g_PrimarySurface->vtable->Blt)
                 (g_PrimarySurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
-                 auStack_164);
+                 &DStack_164);
       (*g_BackBufferSurface->vtable->Blt)
                 (g_BackBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
-                 auStack_164);
-      iVar3 = dll_dx7_cpp_FUN_10003100();
+                 &DStack_164);
+      iVar3 = dll_dx7_cpp_initD3DDevice_FUN_10003100();
       if (iVar3 == 0) {
         _sprintf(acStack_100,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
                     /* WARNING: Subroutine does not return */

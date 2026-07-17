@@ -11,6 +11,7 @@
 // =============================================================================
 
 // Forward declarations
+struct DDPIXELFORMAT;
 struct IDirect3DDevice3;
 struct IDirect3DMaterial3;
 struct IDirect3DTexture2;
@@ -22,6 +23,19 @@ struct IUnknown;
 // Unsigned Integer (compiler-specific size)
 typedef DWORD D3DCOLOR;
 
+// Function Definition: D3DENUMPIXELFORMATSCALLBACK
+typedef HRESULT D3DENUMPIXELFORMATSCALLBACK(struct DDPIXELFORMAT* lpDDPixFmt, void* lpContext);
+
+// Structure: D3DLIGHTINGCAPS
+#pragma pack(push, 1)
+typedef struct D3DLIGHTINGCAPS {
+    DWORD dwSize;
+    DWORD dwCaps;
+    DWORD dwLightingModel;
+    DWORD dwNumLights;
+} D3DLIGHTINGCAPS;
+#pragma pack(pop)
+
 // Typedef: D3DLIGHTSTATETYPE
 // Unsigned Integer (compiler-specific size)
 typedef DWORD D3DLIGHTSTATETYPE;
@@ -29,6 +43,26 @@ typedef DWORD D3DLIGHTSTATETYPE;
 // Typedef: D3DMATERIALHANDLE
 // Unsigned Integer (compiler-specific size)
 typedef DWORD D3DMATERIALHANDLE;
+
+// Structure: D3DPRIMCAPS
+#pragma pack(push, 1)
+typedef struct D3DPRIMCAPS {
+    DWORD dwSize;
+    DWORD dwMiscCaps;
+    DWORD dwRasterCaps;
+    DWORD dwZCmpCaps;
+    DWORD dwSrcBlendCaps;
+    DWORD dwDestBlendCaps;
+    DWORD dwAlphaCmpCaps;
+    DWORD dwShadeCaps;
+    DWORD dwTextureCaps;
+    DWORD dwTextureFilterCaps;
+    DWORD dwTextureBlendCaps;
+    DWORD dwTextureAddressCaps;
+    DWORD dwStippleWidth;
+    DWORD dwStippleHeight;
+} D3DPRIMCAPS;
+#pragma pack(pop)
 
 // Typedef: D3DPRIMITIVETYPE
 // Unsigned Integer (compiler-specific size)
@@ -54,6 +88,14 @@ typedef DWORD D3DTEXTUREHANDLE;
 // Unsigned Integer (compiler-specific size)
 typedef DWORD D3DTEXTURESTAGESTATETYPE;
 
+// Structure: D3DTRANSFORMCAPS
+#pragma pack(push, 1)
+typedef struct D3DTRANSFORMCAPS {
+    DWORD dwSize;
+    DWORD dwCaps;
+} D3DTRANSFORMCAPS;
+#pragma pack(pop)
+
 // Typedef: D3DTRANSFORMSTATETYPE
 // Unsigned Integer (compiler-specific size)
 typedef DWORD D3DTRANSFORMSTATETYPE;
@@ -69,6 +111,46 @@ typedef struct D3DCOLORVALUE {
     D3DVALUE b;
     D3DVALUE a;
 } D3DCOLORVALUE;
+
+// Structure: D3DDEVICEDESC
+#pragma pack(push, 1)
+typedef struct D3DDEVICEDESC {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dcmColorModel;
+    DWORD dwDevCaps;
+    D3DTRANSFORMCAPS dtcTransformCaps;
+    BOOL bClipping;
+    D3DLIGHTINGCAPS dlcLightingCaps;
+    D3DPRIMCAPS dpcLineCaps;
+    D3DPRIMCAPS dpcTriCaps;
+    DWORD dwDeviceRenderBitDepth;
+    DWORD dwDeviceZBufferBitDepth;
+    DWORD dwMaxBufferSize;
+    DWORD dwMaxVertexCount;
+    DWORD dwMinTextureWidth;
+    DWORD dwMinTextureHeight;
+    DWORD dwMaxTextureWidth;
+    DWORD dwMaxTextureHeight;
+    DWORD dwMinStippleWidth;
+    DWORD dwMaxStippleWidth;
+    DWORD dwMinStippleHeight;
+    DWORD dwMaxStippleHeight;
+    DWORD dwMaxTextureRepeat;
+    DWORD dwMaxTextureAspectRatio;
+    DWORD dwMaxAnisotropy;
+    D3DVALUE dvGuardBandLeft;
+    D3DVALUE dvGuardBandTop;
+    D3DVALUE dvGuardBandRight;
+    D3DVALUE dvGuardBandBottom;
+    D3DVALUE dvExtentsAdjust;
+    DWORD dwStencilCaps;
+    DWORD dwFVFCaps;
+    DWORD dwTextureOpCaps;
+    WORD wMaxTextureBlendStages;
+    WORD wMaxSimultaneousTextures;
+} D3DDEVICEDESC;
+#pragma pack(pop)
 
 // Structure: D3DLVERTEX
 typedef struct D3DLVERTEX {
@@ -220,7 +302,7 @@ typedef HRESULT IDirect3D3_CreateViewport(struct IDirect3D3* this_ptr, struct ID
 typedef HRESULT IDirect3D3_EnumDevices(struct IDirect3D3* this_ptr, void* callback, void* context);
 
 // Function Definition: IDirect3D3_EnumZBufferFormats
-typedef HRESULT IDirect3D3_EnumZBufferFormats(struct IDirect3D3* this_ptr, GUID* guid, void* callback, void* context);
+typedef HRESULT IDirect3D3_EnumZBufferFormats(struct IDirect3D3* this_ptr, GUID* guid, D3DENUMPIXELFORMATSCALLBACK* callback, void* context);
 
 // Function Definition: IDirect3D3_EvictManagedTextures
 typedef HRESULT IDirect3D3_EvictManagedTextures(struct IDirect3D3* this_ptr);
@@ -294,7 +376,7 @@ typedef HRESULT IDirect3DDevice3_End(struct IDirect3DDevice3* this_ptr, DWORD fl
 typedef HRESULT IDirect3DDevice3_EndScene(struct IDirect3DDevice3* this_ptr);
 
 // Function Definition: IDirect3DDevice3_EnumTextureFormats
-typedef HRESULT IDirect3DDevice3_EnumTextureFormats(struct IDirect3DDevice3* this_ptr, void* callback, void* context);
+typedef HRESULT IDirect3DDevice3_EnumTextureFormats(struct IDirect3DDevice3* this_ptr, D3DENUMPIXELFORMATSCALLBACK* callback, void* context);
 
 // Function Definition: IDirect3DDevice3_GetCaps
 typedef HRESULT IDirect3DDevice3_GetCaps(struct IDirect3DDevice3* this_ptr, void* hw_desc, void* hel_desc);

@@ -10,6 +10,15 @@
 // Function Definition: FARPROC
 typedef int FARPROC(void);
 
+// Typedef: HDC
+// pointer to HDC__
+typedef struct HDC__* HDC;
+
+// Structure: HDC__
+typedef struct HDC__ {
+    int unused;
+} HDC__;
+
 // Typedef: HINSTANCE
 // pointer to HINSTANCE__
 typedef struct HINSTANCE__* HINSTANCE;

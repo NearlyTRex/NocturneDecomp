@@ -77,6 +77,7 @@ extern int g_StagingSetIndex;
 extern int g_DirectTextureFlag;
 extern int g_BackBufferLocked;
 extern int g_FrameLocked;
+extern int g_TextureFormatSelected;
 extern int g_InScene;
 extern int g_SelectedCardIndex;
 extern int g_TextureCount;
@@ -138,7 +139,6 @@ extern undefined2 DAT_10017960;
 // undefined4
 extern undefined4 DAT_100141bc;
 extern undefined4 DAT_100141c0;
-extern undefined4 DAT_100141fc;
 extern undefined4 DAT_10014230;
 extern undefined4 DAT_10014234;
 extern undefined4 DAT_10016c60;

@@ -2,24 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 7,
         "line": 77,
@@ -68,13 +50,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 302,
+    "complexity_score": 292,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -89,7 +71,7 @@
     {
       "addr": "10003100",
       "from_addr": "1000330b",
-      "name": "dll_dx7.cpp_FUN_10003100",
+      "name": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,9 +114,9 @@
     },
     {
       "addr": "100141fc",
-      "name": "DAT_100141fc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_TextureFormatSelected",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10014214",
@@ -227,7 +209,7 @@
       {
         "call_addr": "1000330b",
         "call_type": "direct",
-        "caller": "dll_dx7.cpp_FUN_10003100",
+        "caller": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -391,14 +373,6 @@
       "match": "DAT_10138f30",
       "severity": "mild",
       "text": "(void **)((int)&DAT_10138f30 + iVar7));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_100141fc",
-      "severity": "mild",
-      "text": "if (DAT_100141fc == 0) {",
       "type": "undefined_data"
     },
     {

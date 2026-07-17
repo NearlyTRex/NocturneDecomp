@@ -143,9 +143,13 @@ char FUN_10003090(int param_1);
 // Address: 100030e0
 void __cdecl loadTexture(int texture_index);
 
-// Original: dll_dx7.cpp_FUN_10003100
+// Original: dll_dx7.cpp_initD3DDevice_FUN_10003100
 // Address: 10003100
-int __cdecl FUN_10003100(void);
+int __cdecl initD3DDevice(void);
+
+// Original: dll_dx7.cpp_pickTextureFormat_FUN_10003340
+// Address: 10003340
+HRESULT __stdcall pickTextureFormat(DDPIXELFORMAT *pixel_format,int *found_flag);
 
 // Original: dll_dx7.cpp_FUN_10003400
 // Address: 10003400
@@ -261,7 +265,7 @@ void APIDLLGetDisplayContext(undefined4 *param_1);
 
 // Original: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
 // Address: 10004da0
-void APIDLLReleaseDisplayContext(void *param_1);
+void APIDLLReleaseDisplayContext(HDC param_1);
 
 // Original: dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10
 // Address: 10004e10

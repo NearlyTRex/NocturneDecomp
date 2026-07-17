@@ -31,6 +31,6 @@ int __cdecl dll_dx7_cpp_APIDLLunlockHoldBuffer_FUN_100053a0(void)
     return 0;
   }
   (*g_BackBufferSurface->vtable->Blt)
-            (g_BackBufferSurface,(RECT *)0x0,g_HoldBufferSurface,(RECT *)0x0,0,(void *)0x0);
+            (g_BackBufferSurface,(RECT *)0x0,g_HoldBufferSurface,(RECT *)0x0,0,(DDBLTFX *)0x0);
   return 1;
 }

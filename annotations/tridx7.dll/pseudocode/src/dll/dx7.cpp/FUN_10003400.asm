@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_10003100 at 1000330b
+;   dll_dx7.cpp_initD3DDevice_FUN_10003100 at 1000330b
 ;
 ; Referenced Globals:
 ;   GUID g_IID_IDirect3DTexture2 = IDirect3DTexture2 93281502-8cf8-11d0-89ab-00a0c9054129
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
-;   undefined4 DAT_100141fc
+;   int g_TextureFormatSelected = 0x0
 ;   int g_TextureCount = 0x0
 ;   int g_HWRedShift = 0x0
 ;   undefined4 DAT_10138f30
@@ -156,7 +156,7 @@ section .text
     MOV dword ptr [0x10226e80],ECX      ; 10003535 | g_HWBlueShift
     SHR ESI,CL                          ; 1000353b
     DIV ESI                             ; 1000353d
-    CMP dword ptr [0x100141fc],0x0      ; 1000353f | DAT_100141fc
+    CMP dword ptr [0x100141fc],0x0      ; 1000353f | g_TextureFormatSelected
     MOV [0x101b88d8],EAX                ; 10003546 | DAT_101b88d8
     JZ 0x10003572                       ; 1000354b
         ;   XREF to: 10003572 (CONDITIONAL_JUMP)  ; LAB_10003572

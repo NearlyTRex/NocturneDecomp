@@ -2,28 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 33,
-        "message": "use of undeclared identifier 'LAB_10003340'; did you mean 'DAT_10003D40'?"
+        "category": "pointer_type",
+        "column": 31,
+        "line": 34,
+        "message": "cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, int *)' (aka 'long (DDPIXELFORMAT *, int *)'): type mismatch at 2nd parameter ('void *' vs 'int *')"
       }
     ],
     "success": false,
@@ -32,13 +14,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 284,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 99,
-    "suspect_count": 16,
+    "pseudocode_lines": 100,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -46,7 +28,7 @@
       "unrolled_memset",
       "warning_noreturn"
     ],
-    "total_lines": 287
+    "total_lines": 288
   },
   "cross_references": [
     {
@@ -69,8 +51,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "dll_dx7.cpp_FUN_10003100",
-    "signature": "int __cdecl dll_dx7_cpp_FUN_10003100(void)"
+    "name": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
+    "signature": "int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void)"
   },
   "function_calls": [
     {
@@ -98,15 +80,15 @@
     },
     {
       "addr": "100122a8",
-      "name": "DAT_100122a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_D3DClipConst2",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "100122b0",
-      "name": "DAT_100122b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_D3DClipHalf",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "10014174",
@@ -238,17 +220,25 @@
     "pcode_op_count": 731
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
+    "frame_size": 104,
+    "local_size": 104,
     "param_offset": 4,
     "param_size": 0,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": false,
+        "name": "auStack_64",
+        "offset": -100,
+        "size": 100,
+        "type": "DDBLTFX"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(D3DVIEWPORT2 *)((int)pDVar4",
       "severity": "moderate",
       "text": "pDVar4 = (D3DVIEWPORT2 *)((int)pDVar4 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -256,7 +246,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 67,
       "match": "(DDSURFACEDESC2 *)((int)pDVar5",
       "severity": "moderate",
       "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -264,7 +254,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 73,
       "match": "(DDPIXELFORMAT *)((int)pDVar3",
       "severity": "moderate",
       "text": "pDVar3 = (DDPIXELFORMAT *)((int)pDVar3 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -272,7 +262,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(DDPIXELFORMAT *)((int)pDVar6",
       "severity": "moderate",
       "text": "pDVar6 = (DDPIXELFORMAT *)((int)pDVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -280,15 +270,23 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 83,
+      "line": 84,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(DDBLTFX *)((int)pDVar7",
+      "severity": "moderate",
+      "text": "pDVar7 = (DDBLTFX *)((int)pDVar7 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Pointer value `pDVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 45,
       "match": "(int)pDVar4",
       "severity": "moderate",
       "text": "pDVar4 = (D3DVIEWPORT2 *)((int)pDVar4 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -296,7 +294,7 @@
     },
     {
       "description": "Pointer value `pDVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 67,
       "match": "(int)pDVar5",
       "severity": "moderate",
       "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -304,7 +302,7 @@
     },
     {
       "description": "Pointer value `pDVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)pDVar3",
       "severity": "moderate",
       "text": "pDVar3 = (DDPIXELFORMAT *)((int)pDVar3 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -312,15 +310,23 @@
     },
     {
       "description": "Pointer value `pDVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
+      "line": 74,
       "match": "(int)pDVar6",
       "severity": "moderate",
       "text": "pDVar6 = (DDPIXELFORMAT *)((int)pDVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pDVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 90,
+      "match": "(int)pDVar7",
+      "severity": "moderate",
+      "text": "pDVar7 = (DDBLTFX *)((int)pDVar7 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -328,7 +334,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -336,7 +342,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -344,7 +350,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 87,
+      "line": 88,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",

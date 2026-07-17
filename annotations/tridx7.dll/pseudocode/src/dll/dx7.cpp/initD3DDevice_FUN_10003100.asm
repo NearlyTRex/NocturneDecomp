@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_FUN_10003100(void)
+; int __cdecl dll_dx7_cpp_initD3DDevice_FUN_10003100(void)
 ;
+; Local Variables:
+; DDBLTFX          Stack[-0x64]:100  auStack_64
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 10002a99
 ;
 ; Referenced Globals:
 ;   GUID g_Direct3DDeviceGUID = IDirect3DHALDevice 84e63de0-46aa-11cf-816f-0000c020156e
-;   undefined4 DAT_100122a8
-;   undefined4 DAT_100122b0
+;   double g_D3DClipConst2 = 2
+;   float g_D3DClipHalf = 0.5
 ;   int g_ScreenWidth = 0x280
 ;   int g_ScreenHeight = 0x1e0
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
@@ -34,7 +36,7 @@
 section .text
 
     SUB ESP,0x110                       ; 10003100
-        ;   Label: dll_dx7.cpp_FUN_10003100
+        ;   Label: dll_dx7.cpp_initD3DDevice_FUN_10003100
     MOV EAX,[0x10014180]                ; 10003106 | g_BackBufferSurface
     MOV ECX,dword ptr [0x100141dc]      ; 1000310b | g_Direct3D3
     PUSH ESI                            ; 10003111
@@ -59,7 +61,7 @@ section .text
     MOV ECX,dword ptr [0x100141e0]      ; 10003139 | g_Device
     MOV dword ptr [ESP + 0x8],0x0       ; 1000313f
     PUSH EAX                            ; 10003147
-    PUSH 0x10003340                     ; 10003148 | LAB_10003340
+    PUSH 0x10003340                     ; 10003148
     PUSH ECX                            ; 1000314d
     MOV EAX,dword ptr [ECX]             ; 1000314e
     CALL dword ptr [EAX + 0x20]         ; 10003150
@@ -128,14 +130,14 @@ section .text
     FIDIV dword ptr [ESP + 0x18]        ; 100031f4
     MOV dword ptr [ESP + 0x28],0x40000000 ; 100031f8
     MOV dword ptr [ESP + 0x34],0x3f800000 ; 10003200
-    FMUL double ptr [0x100122a8]        ; 10003208 | DAT_100122a8
+    FMUL double ptr [0x100122a8]        ; 10003208 | g_D3DClipConst2
     MOV EAX,[0x100141e4]                ; 1000320e | g_Viewport
     MOV dword ptr [ESP + 0x30],EDX      ; 10003213
     LEA EDX,[ESP + 0xc]                 ; 10003217
     PUSH EDX                            ; 1000321b
     PUSH EAX                            ; 1000321c
     FST float ptr [ESP + 0x34]          ; 1000321d
-    FMUL float ptr [0x100122b0]         ; 10003221 | DAT_100122b0
+    FMUL float ptr [0x100122b0]         ; 10003221 | g_D3DClipHalf
     FSTP float ptr [ESP + 0x2c]         ; 10003227
     MOV EAX,dword ptr [EAX]             ; 1000322b
     CALL dword ptr [EAX + 0x44]         ; 1000322d

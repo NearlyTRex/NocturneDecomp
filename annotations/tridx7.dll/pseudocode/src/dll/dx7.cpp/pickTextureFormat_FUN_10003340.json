@@ -1,0 +1,238 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 196,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "10003100",
+      "from_addr": "10003148",
+      "name": "dll_dx7.cpp_initD3DDevice_FUN_10003100",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "10003340",
+    "address_range": [
+      [
+        "10003340",
+        "100033ff"
+      ]
+    ],
+    "convention": "__stdcall",
+    "name": "dll_dx7.cpp_pickTextureFormat_FUN_10003340",
+    "signature": "HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "1001417c",
+      "name": "g_ScreenBitDepth",
+      "type": "int",
+      "value": "0x10"
+    },
+    {
+      "addr": "100141fc",
+      "name": "g_TextureFormatSelected",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "10226a58",
+      "name": "g_TexturePixelFormat",
+      "type": "DDPIXELFORMAT",
+      "value": null
+    },
+    {
+      "addr": "10226a5c",
+      "name": "g_TexturePixelFormat.dwFlags",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.745762711864407,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 3,
+      "CBRANCH": 9,
+      "COPY": 64,
+      "INT_ADD": 36,
+      "INT_AND": 24,
+      "INT_EQUAL": 25,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 11,
+      "INT_SUB": 19,
+      "INT_XOR": 1,
+      "INT_ZEXT": 7,
+      "LOAD": 28,
+      "POPCOUNT": 11,
+      "RETURN": 5,
+      "STORE": 8
+    },
+    "pcode_op_count": 280
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pixel_format",
+        "offset": 4,
+        "size": 4,
+        "type": "DDPIXELFORMAT *"
+      },
+      {
+        "is_param": true,
+        "name": "found_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&pixel_format->dwAlphaBitMask` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&pixel_format->dwAlphaBitMask",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&pixel_format->dwAlphaBitMask + 3) != '\\0')) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pixel_format->dwAlphaBitMask` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&pixel_format->dwAlphaBitMask",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&pixel_format->dwAlphaBitMask + 1) & 0xf0) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 11,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&pixel_format->dwAlphaBitMask + 3) != '\\0')) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&pixel_format->dwAlphaBitMask + 1) & 0xf0) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pixel_format->owner`). Replace `pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 17,
+      "match": "pixel_format = (T *)&pixel_format->FIELD",
+      "severity": "moderate",
+      "text": "pixel_format = (DDPIXELFORMAT *)&pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar2->owner`). Replace `pDVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pDVar2 = (T *)&pDVar2->FIELD",
+      "severity": "moderate",
+      "text": "pDVar2 = (DDPIXELFORMAT *)&pDVar2->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar2->owner`). Replace `pDVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 32,
+      "match": "pDVar2 = (T *)&pDVar2->FIELD",
+      "severity": "moderate",
+      "text": "pDVar2 = (DDPIXELFORMAT *)&pDVar2->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar3->owner`). Replace `pDVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pDVar3 = (T *)&pDVar3->FIELD",
+      "severity": "moderate",
+      "text": "pDVar3 = (DDPIXELFORMAT *)&pDVar3->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pixel_format->owner`). Replace `pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pixel_format = (T *)&pixel_format->FIELD",
+      "severity": "moderate",
+      "text": "pixel_format = (DDPIXELFORMAT *)&pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar2->owner`). Replace `pDVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 43,
+      "match": "pDVar2 = (T *)&pDVar2->FIELD",
+      "severity": "moderate",
+      "text": "pDVar2 = (DDPIXELFORMAT *)&pDVar2->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000337b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000337b: MOVSD.REP ES:EDI,ESI  ; g_TexturePixelFormat | g_TexturePixelFormat.dwFlags",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 100033ba, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 100033ba: MOVSD.REP ES:EDI,ESI  ; g_TexturePixelFormat | g_TexturePixelFormat.dwFlags",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 100033ea, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 100033ea: MOVSD.REP ES:EDI,ESI  ; g_TexturePixelFormat | g_TexturePixelFormat.dwFlags",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

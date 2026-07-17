@@ -79,7 +79,7 @@ void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
       local_8c.left = 0;
       local_8c.right = local_7c.dwWidth;
       local_8c.bottom = local_7c.dwWidth;
-      HVar2 = (*local_90->vtable->Blt)(local_90,&local_8c,local_94,&local_8c,0,(void *)0x0);
+      HVar2 = (*local_90->vtable->Blt)(local_90,&local_8c,local_94,&local_8c,0,(DDBLTFX *)0x0);
       dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
     }
     if ((g_MipMapFlag == 0) || (3 < iVar4)) break;

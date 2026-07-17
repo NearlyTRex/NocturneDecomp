@@ -36,7 +36,7 @@
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_FUN_10002f40
-;   dll_dx7.cpp_FUN_10003100
+;   dll_dx7.cpp_initD3DDevice_FUN_10003100
 ;   dll_dx7.cpp_readIniInt_FUN_10002b20
 ;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 ;   ExitProcess
@@ -488,8 +488,8 @@ section .text
     PUSH 0x0                            ; 10002a93
     PUSH EDX                            ; 10002a95
     CALL dword ptr [EAX + 0x14]         ; 10002a96
-    CALL dll_dx7.cpp_FUN_10003100       ; 10002a99
-        ;   XREF to: 10003100 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10003100()
+    CALL dll_dx7.cpp_initD3DDevice_FUN_10003100 ; 10002a99
+        ;   XREF to: 10003100 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_initD3DDevice_FUN_10003100()
     TEST EAX,EAX                        ; 10002a9e
     JNZ 0x10002adb                      ; 10002aa0
         ;   XREF to: 10002adb (CONDITIONAL_JUMP)  ; LAB_10002adb

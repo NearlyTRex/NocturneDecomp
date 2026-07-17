@@ -7,7 +7,7 @@ dll_dx7.cpp_readIniInt_FUN_10001440,10001440,dll/dx7.cpp,7,0,,7
 dll_dx7.cpp_resolveTextureSlot_FUN_10001470,10001470,dll/dx7.cpp,20,0,,20
 dll_dx7.cpp_bindTextureBySize_FUN_100015d0,100015d0,dll/dx7.cpp,17,0,,17
 dll_dx7.cpp_enumAdapterCallback_FUN_100017b0,100017b0,dll/dx7.cpp,119,22,pointer_cast|unnamed_field|unrolled_memcpy|unrolled_strlen,359
-dll_dx7.cpp_isAdapter3DCapable_FUN_10001900,10001900,dll/dx7.cpp,35,4,unrolled_memcpy|unrolled_memset,85
+dll_dx7.cpp_isAdapter3DCapable_FUN_10001900,10001900,dll/dx7.cpp,34,8,pointer_cast|pointer_truncation|unrolled_memcpy|unrolled_memset,134
 dll_dx7.cpp_APIDLLInformation_FUN_100019a0,100019a0,dll/dx7.cpp,75,22,stack_param|stack_ref|unresolved_register|unrolled_memcpy|unrolled_memset|unrolled_strlen,325
 dll_dx7.cpp_APIDLLinit_FUN_10001a80,10001a80,dll/dx7.cpp,183,22,pointer_cast|pointer_truncation|unrolled_memcpy|unrolled_memset|unrolled_strlen,428
 dll_dx7.cpp_checkD3DResult_FUN_10001d70,10001d70,dll/dx7.cpp,248,75,warning_noreturn,1003
@@ -15,7 +15,7 @@ dll_dx7.cpp_fatalError_FUN_10002340,10002340,dll/dx7.cpp,7,1,warning_noreturn,22
 dll_dx7.cpp_releaseDirectXResources_FUN_10002370,10002370,dll/dx7.cpp,45,0,,45
 dll_dx7.cpp_APIDLLkill_FUN_10002460,10002460,dll/dx7.cpp,14,0,,14
 dll_dx7.cpp_APIDLLtoggle_FUN_100024b0,100024b0,dll/dx7.cpp,12,0,,12
-dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500,10002500,dll/dx7.cpp,299,39,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_memset|unrolled_strlen|warning_noreturn,724
+dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500,10002500,dll/dx7.cpp,299,41,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_memset|unrolled_strlen|warning_noreturn,744
 dll_dx7.cpp_readIniInt_FUN_10002b20,10002b20,dll/dx7.cpp,7,0,,7
 dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50,10002b50,dll/dx7.cpp,23,6,shadow_pointer_walk|unrolled_memcpy,93
 dll_dx7.cpp_APIDLLsetVideoMode2_FUN_10002bb0,10002bb0,dll/dx7.cpp,10,0,,10
@@ -34,8 +34,9 @@ dll_dx7.cpp_FUN_10002f40,10002f40,dll/dx7.cpp,7,1,undefined_data,22
 dll_dx7.cpp_createTexture_FUN_10002f60,10002f60,dll/dx7.cpp,66,6,shadow_pointer_walk|unrolled_memset|warning_noreturn,141
 dll_dx7.cpp_FUN_10003090,10003090,dll/dx7.cpp,16,7,param_count_too_few|unnamed_param,96
 dll_dx7.cpp_loadTexture_FUN_100030e0,100030e0,dll/dx7.cpp,6,0,,6
-dll_dx7.cpp_FUN_10003100,10003100,dll/dx7.cpp,99,16,pointer_cast|pointer_truncation|unrolled_memcpy|unrolled_memset|warning_noreturn,284
-dll_dx7.cpp_FUN_10003400,10003400,dll/dx7.cpp,102,17,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_memset|warning_overlapping_globals,302
+dll_dx7.cpp_initD3DDevice_FUN_10003100,10003100,dll/dx7.cpp,100,18,pointer_cast|pointer_truncation|unrolled_memcpy|unrolled_memset|warning_noreturn,305
+dll_dx7.cpp_pickTextureFormat_FUN_10003340,10003340,dll/dx7.cpp,46,13,pointer_cast|pointer_truncation|shadow_pointer_walk|unrolled_memcpy,196
+dll_dx7.cpp_FUN_10003400,10003400,dll/dx7.cpp,102,16,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_memset|warning_overlapping_globals,292
 dll_dx7.cpp_FUN_100035b0,100035b0,dll/dx7.cpp,60,7,undefined_data|unrolled_memset|warning_overlapping_globals,145
 dll_dx7.cpp_FUN_100037e0,100037e0,dll/dx7.cpp,12,14,param_count_too_few|undefined_data|unnamed_param,167
 dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830,10003830,dll/dx7.cpp,102,0,,102
@@ -55,11 +56,11 @@ dll_dx7.cpp_APIDLLaddParticle_FUN_10004800,10004800,dll/dx7.cpp,5,0,,5
 dll_dx7.cpp_APIDLLflushParticleList_FUN_10004810,10004810,dll/dx7.cpp,5,0,,5
 dll_dx7.cpp_APIDLLadd3dLine_FUN_10004820,10004820,dll/dx7.cpp,5,0,,5
 dll_dx7.cpp_APIDLLflushLineList_FUN_10004830,10004830,dll/dx7.cpp,5,0,,5
-dll_dx7.cpp_APIDLLclear_FUN_10004840,10004840,dll/dx7.cpp,49,6,pointer_cast|pointer_truncation|unrolled_memset,124
+dll_dx7.cpp_APIDLLclear_FUN_10004840,10004840,dll/dx7.cpp,46,6,pointer_cast|pointer_truncation|unrolled_memset,121
 dll_dx7.cpp_APIDLLsetFogColor_FUN_100049f0,100049f0,dll/dx7.cpp,16,5,undefined_data|warning_overlapping_globals,76
 dll_dx7.cpp_APIDLLsync_FUN_10004a60,10004a60,dll/dx7.cpp,6,0,,6
-dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70,10004a70,dll/dx7.cpp,18,1,unrolled_memset,33
-dll_dx7.cpp_APIDLLclearZBox_FUN_10004ac0,10004ac0,dll/dx7.cpp,23,1,unrolled_memset,38
+dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70,10004a70,dll/dx7.cpp,18,3,pointer_cast|pointer_truncation|unrolled_memset,63
+dll_dx7.cpp_APIDLLclearZBox_FUN_10004ac0,10004ac0,dll/dx7.cpp,22,2,shadow_pointer_walk|unrolled_memset,52
 dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30,10004b30,dll/dx7.cpp,74,8,pointer_cast|undefined_data|unrolled_memset|warning_noreturn,174
 dll_dx7.cpp_FUN_10004d10,10004d10,dll/dx7.cpp,12,6,param_count_too_few|unnamed_param,82
 dll_dx7.cpp_APIDLLGetDisplayContext_FUN_10004d30,10004d30,dll/dx7.cpp,20,3,undefined_data|unnamed_param,60

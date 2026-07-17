@@ -9,7 +9,19 @@
       "type":"typedef"
     },
     {
+      "name":"D3DLIGHTINGCAPS",
+      "type":"struct"
+    },
+    {
+      "name":"D3DPRIMCAPS",
+      "type":"struct"
+    },
+    {
       "name":"D3DRECT",
+      "type":"struct"
+    },
+    {
+      "name":"D3DTRANSFORMCAPS",
       "type":"struct"
     },
     {
@@ -18,6 +30,10 @@
     },
     {
       "name":"D3DCOLORVALUE",
+      "type":"struct"
+    },
+    {
+      "name":"D3DDEVICEDESC",
       "type":"struct"
     },
     {
@@ -46,6 +62,10 @@
     },
     {
       "name":"DDCOLORKEY",
+      "type":"struct"
+    },
+    {
+      "name":"DDBLTFX",
       "type":"struct"
     },
     {
@@ -81,6 +101,10 @@
       "type":"struct"
     },
     {
+      "name":"DDCAPS",
+      "type":"struct"
+    },
+    {
       "name":"DDSURFACEDESC_union1",
       "type":"union"
     },
@@ -94,6 +118,14 @@
     },
     {
       "name":"HANDLE",
+      "type":"typedef"
+    },
+    {
+      "name":"HDC__",
+      "type":"struct"
+    },
+    {
+      "name":"HDC",
       "type":"typedef"
     },
     {
@@ -255,6 +287,10 @@
     {
       "name":"HRESULT",
       "type":"typedef"
+    },
+    {
+      "name":"D3DENUMPIXELFORMATSCALLBACK",
+      "type":"function_definition"
     },
     {
       "name":"IDirect3D3_CreateLight",
@@ -469,6 +505,10 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectDraw4_GetCaps",
+      "type":"function_definition"
+    },
+    {
       "name":"IDirectDraw4_GetSurfaceFromDC",
       "type":"function_definition"
     },
@@ -662,6 +702,10 @@
     },
     {
       "name":"IDirectDraw_FlipToGDISurface",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectDraw_GetCaps",
       "type":"function_definition"
     },
     {
@@ -1652,6 +1696,24 @@
     },
     {
       "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/d3d.h",
+      "importable":true,
+      "name":"D3DENUMPIXELFORMATSCALLBACK",
+      "parameters":[
+        {
+          "name":"lpDDPixFmt",
+          "type":"DDPIXELFORMAT*"
+        },
+        {
+          "name":"lpContext",
+          "type":"void*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
       "name":"DDENUMCALLBACKEXA",
@@ -1853,7 +1915,7 @@
         },
         {
           "name":"callback",
-          "type":"void*"
+          "type":"D3DENUMPIXELFORMATSCALLBACK*"
         },
         {
           "name":"context",
@@ -2307,7 +2369,7 @@
         },
         {
           "name":"callback",
-          "type":"void*"
+          "type":"D3DENUMPIXELFORMATSCALLBACK*"
         },
         {
           "name":"context",
@@ -3381,6 +3443,28 @@
       "calling_convention":"unknown",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
+      "name":"IDirectDraw4_GetCaps",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDraw4*"
+        },
+        {
+          "name":"driver_caps",
+          "type":"DDCAPS*"
+        },
+        {
+          "name":"hel_caps",
+          "type":"DDCAPS*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"unknown",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
       "name":"IDirectDraw4_GetDeviceIdentifier",
       "parameters":[
         {
@@ -3460,9 +3544,8 @@
           "type":"IDirectDraw4*"
         },
         {
-          "comment":"Type 'HWND' was deleted",
           "name":"window",
-          "type":"undefined1"
+          "type":"HWND"
         },
         {
           "name":"flags",
@@ -3656,6 +3739,28 @@
       "calling_convention":"unknown",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
+      "name":"IDirectDraw_GetCaps",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDraw*"
+        },
+        {
+          "name":"driver_caps",
+          "type":"DDCAPS*"
+        },
+        {
+          "name":"hel_caps",
+          "type":"DDCAPS*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"unknown",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
       "name":"IDirectDraw_GetDisplayMode",
       "parameters":[
         {
@@ -3807,9 +3912,8 @@
           "type":"IDirectDraw*"
         },
         {
-          "comment":"Type 'HWND' was deleted",
           "name":"window",
-          "type":"undefined1"
+          "type":"HWND"
         },
         {
           "name":"flags",
@@ -4165,7 +4269,7 @@
         },
         {
           "name":"blt_fx",
-          "type":"void*"
+          "type":"DDBLTFX*"
         }
       ],
       "return_type":"HRESULT",
@@ -4433,7 +4537,7 @@
         },
         {
           "name":"device_context",
-          "type":"void*"
+          "type":"HDC*"
         }
       ],
       "return_type":"HRESULT",
@@ -4611,7 +4715,7 @@
         },
         {
           "name":"device_context",
-          "type":"void*"
+          "type":"HDC"
         }
       ],
       "return_type":"HRESULT",
@@ -4871,7 +4975,7 @@
   "structs":[
     {
       "alig":4,
-      "cat":"/Nocturne/Struct/System/excpt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -5099,7 +5203,7 @@
     },
     {
       "alig":4,
-      "cat":"/Nocturne/Struct/System/excpt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -5123,7 +5227,7 @@
     },
     {
       "alig":4,
-      "cat":"/Nocturne/Struct/System/excpt.h",
+      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -6587,6 +6691,222 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/d3d.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dcmColorModel",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwDevCaps",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":8,
+          "name":"dtcTransformCaps",
+          "offset":16,
+          "type":"D3DTRANSFORMCAPS"
+        },
+        {
+          "len":4,
+          "name":"bClipping",
+          "offset":24,
+          "type":"BOOL"
+        },
+        {
+          "len":16,
+          "name":"dlcLightingCaps",
+          "offset":28,
+          "type":"D3DLIGHTINGCAPS"
+        },
+        {
+          "len":56,
+          "name":"dpcLineCaps",
+          "offset":44,
+          "type":"D3DPRIMCAPS"
+        },
+        {
+          "len":56,
+          "name":"dpcTriCaps",
+          "offset":100,
+          "type":"D3DPRIMCAPS"
+        },
+        {
+          "len":4,
+          "name":"dwDeviceRenderBitDepth",
+          "offset":156,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwDeviceZBufferBitDepth",
+          "offset":160,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxBufferSize",
+          "offset":164,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxVertexCount",
+          "offset":168,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinTextureWidth",
+          "offset":172,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinTextureHeight",
+          "offset":176,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxTextureWidth",
+          "offset":180,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxTextureHeight",
+          "offset":184,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinStippleWidth",
+          "offset":188,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxStippleWidth",
+          "offset":192,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinStippleHeight",
+          "offset":196,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxStippleHeight",
+          "offset":200,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxTextureRepeat",
+          "offset":204,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxTextureAspectRatio",
+          "offset":208,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxAnisotropy",
+          "offset":212,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dvGuardBandLeft",
+          "offset":216,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"dvGuardBandTop",
+          "offset":220,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"dvGuardBandRight",
+          "offset":224,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"dvGuardBandBottom",
+          "offset":228,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"dvExtentsAdjust",
+          "offset":232,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"dwStencilCaps",
+          "offset":236,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFVFCaps",
+          "offset":240,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwTextureOpCaps",
+          "offset":244,
+          "type":"DWORD"
+        },
+        {
+          "len":2,
+          "name":"wMaxTextureBlendStages",
+          "offset":248,
+          "type":"WORD"
+        },
+        {
+          "len":2,
+          "name":"wMaxSimultaneousTextures",
+          "offset":250,
+          "type":"WORD"
+        }
+      ],
+      "importable":true,
+      "len":252,
+      "name":"D3DDEVICEDESC",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/d3d.h",
       "desc":"",
@@ -6674,6 +6994,42 @@
       "len":80,
       "name":"D3DLIGHT2",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/d3d.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwLightingModel",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNumLights",
+          "offset":12,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"D3DLIGHTINGCAPS",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -6905,6 +7261,102 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/d3d.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMiscCaps",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwRasterCaps",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZCmpCaps",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSrcBlendCaps",
+          "offset":16,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwDestBlendCaps",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaCmpCaps",
+          "offset":24,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwShadeCaps",
+          "offset":28,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwTextureCaps",
+          "offset":32,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwTextureFilterCaps",
+          "offset":36,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwTextureBlendCaps",
+          "offset":40,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwTextureAddressCaps",
+          "offset":44,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwStippleWidth",
+          "offset":48,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwStippleHeight",
+          "offset":52,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":56,
+      "name":"D3DPRIMCAPS",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/d3d.h",
       "desc":"",
@@ -6998,6 +7450,30 @@
       "len":32,
       "name":"D3DTLVERTEX",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/d3d.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps",
+          "offset":4,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"D3DTRANSFORMCAPS",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -7244,6 +7720,515 @@
       "len":44,
       "name":"D3DVIEWPORT2",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ddraw.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwDDFX",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwROP",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwDDROP",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwRotationAngle",
+          "offset":16,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZBufferOpCode",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZBufferLow",
+          "offset":24,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZBufferHigh",
+          "offset":28,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZBufferBaseDest",
+          "offset":32,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZDestConstBitDepth",
+          "offset":36,
+          "type":"DWORD"
+        },
+        {
+          "comment":"union: DWORD / IDirectDrawSurface* lpDDSZBufferDest",
+          "len":4,
+          "name":"dwZDestConst",
+          "offset":40,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZSrcConstBitDepth",
+          "offset":44,
+          "type":"DWORD"
+        },
+        {
+          "comment":"union: DWORD / IDirectDrawSurface* lpDDSZBufferSrc",
+          "len":4,
+          "name":"dwZSrcConst",
+          "offset":48,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaEdgeBlendBitDepth",
+          "offset":52,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaEdgeBlend",
+          "offset":56,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved",
+          "offset":60,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaDestConstBitDepth",
+          "offset":64,
+          "type":"DWORD"
+        },
+        {
+          "comment":"union: DWORD / IDirectDrawSurface* lpDDSAlphaDest",
+          "len":4,
+          "name":"dwAlphaDestConst",
+          "offset":68,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaSrcConstBitDepth",
+          "offset":72,
+          "type":"DWORD"
+        },
+        {
+          "comment":"union: DWORD / IDirectDrawSurface* lpDDSAlphaSrc",
+          "len":4,
+          "name":"dwAlphaSrcConst",
+          "offset":76,
+          "type":"DWORD"
+        },
+        {
+          "comment":"union: dwFillColor / dwFillDepth / dwFillPixel / IDirectDrawSurface* lpDDSPattern",
+          "len":4,
+          "name":"dwFillColor",
+          "offset":80,
+          "type":"DWORD"
+        },
+        {
+          "len":8,
+          "name":"ddckDestColorkey",
+          "offset":84,
+          "type":"DDCOLORKEY"
+        },
+        {
+          "len":8,
+          "name":"ddckSrcColorkey",
+          "offset":92,
+          "type":"DDCOLORKEY"
+        }
+      ],
+      "importable":true,
+      "len":100,
+      "name":"DDBLTFX",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ddraw.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCaps2",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCKeyCaps",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFXCaps",
+          "offset":16,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFXAlphaCaps",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwPalCaps",
+          "offset":24,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSVCaps",
+          "offset":28,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaBltConstBitDepths",
+          "offset":32,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaBltPixelBitDepths",
+          "offset":36,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaBltSurfaceBitDepths",
+          "offset":40,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaOverlayConstBitDepths",
+          "offset":44,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaOverlayPixelBitDepths",
+          "offset":48,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlphaOverlaySurfaceBitDepths",
+          "offset":52,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZBufferBitDepths",
+          "offset":56,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwVidMemTotal",
+          "offset":60,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwVidMemFree",
+          "offset":64,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxVisibleOverlays",
+          "offset":68,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCurrVisibleOverlays",
+          "offset":72,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNumFourCCCodes",
+          "offset":76,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlignBoundarySrc",
+          "offset":80,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlignSizeSrc",
+          "offset":84,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlignBoundaryDest",
+          "offset":88,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlignSizeDest",
+          "offset":92,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwAlignStrideAlign",
+          "offset":96,
+          "type":"DWORD"
+        },
+        {
+          "len":32,
+          "name":"dwRops",
+          "offset":100,
+          "type":"DWORD[8]"
+        },
+        {
+          "len":4,
+          "name":"ddsOldCaps",
+          "offset":132,
+          "type":"DDSCAPS"
+        },
+        {
+          "len":4,
+          "name":"dwMinOverlayStretch",
+          "offset":136,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxOverlayStretch",
+          "offset":140,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinLiveVideoStretch",
+          "offset":144,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxLiveVideoStretch",
+          "offset":148,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMinHwCodecStretch",
+          "offset":152,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwMaxHwCodecStretch",
+          "offset":156,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved1",
+          "offset":160,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved2",
+          "offset":164,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved3",
+          "offset":168,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSVBCaps",
+          "offset":172,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSVBCKeyCaps",
+          "offset":176,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSVBFXCaps",
+          "offset":180,
+          "type":"DWORD"
+        },
+        {
+          "len":32,
+          "name":"dwSVBRops",
+          "offset":184,
+          "type":"DWORD[8]"
+        },
+        {
+          "len":4,
+          "name":"dwVSBCaps",
+          "offset":216,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwVSBCKeyCaps",
+          "offset":220,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwVSBFXCaps",
+          "offset":224,
+          "type":"DWORD"
+        },
+        {
+          "len":32,
+          "name":"dwVSBRops",
+          "offset":228,
+          "type":"DWORD[8]"
+        },
+        {
+          "len":4,
+          "name":"dwSSBCaps",
+          "offset":260,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSSBCKeyCaps",
+          "offset":264,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSSBFXCaps",
+          "offset":268,
+          "type":"DWORD"
+        },
+        {
+          "len":32,
+          "name":"dwSSBRops",
+          "offset":272,
+          "type":"DWORD[8]"
+        },
+        {
+          "len":4,
+          "name":"dwMaxVideoPorts",
+          "offset":304,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwCurrVideoPorts",
+          "offset":308,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwSVBCaps2",
+          "offset":312,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNLVBCaps",
+          "offset":316,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNLVBCaps2",
+          "offset":320,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNLVBCKeyCaps",
+          "offset":324,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwNLVBFXCaps",
+          "offset":328,
+          "type":"DWORD"
+        },
+        {
+          "len":32,
+          "name":"dwNLVBRops",
+          "offset":332,
+          "type":"DWORD[8]"
+        },
+        {
+          "len":16,
+          "name":"ddsCaps",
+          "offset":364,
+          "type":"DDSCAPS2"
+        }
+      ],
+      "importable":true,
+      "len":380,
+      "name":"DDCAPS",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -7676,6 +8661,24 @@
       "len":124,
       "name":"DDSURFACEDESC2",
       "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/WinDef.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"unused",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"HDC__",
+      "pack":true,
       "type":"struct"
     },
     {
@@ -8497,7 +9500,7 @@
           "len":4,
           "name":"GetCaps",
           "offset":44,
-          "type":"void*"
+          "type":"IDirectDraw4_GetCaps*"
         },
         {
           "len":4,
@@ -8677,7 +9680,7 @@
           "len":4,
           "name":"GetCaps",
           "offset":44,
-          "type":"void*"
+          "type":"IDirectDraw_GetCaps*"
         },
         {
           "len":4,
@@ -11196,6 +12199,13 @@
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"HANDLE",
+      "type":"typedef"
+    },
+    {
+      "base":"HDC__*",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
+      "importable":true,
+      "name":"HDC",
       "type":"typedef"
     },
     {

@@ -2,34 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "cast_error",
-        "column": 71,
-        "line": 96,
-        "message": "cast from pointer to smaller type 'char' loses information"
-      },
-      {
         "category": "pointer_type",
         "column": 22,
         "line": 148,
-        "message": "cannot initialize a parameter of type 'void *' with an lvalue of type 'HRESULT (DDPIXELFORMAT *, DDPIXELFORMAT *)' (aka 'long (DDPIXELFORMAT *, DDPIXELFORMAT *)')"
+        "message": "cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, DDPIXELFORMAT *)' (aka 'long (DDPIXELFORMAT *, DDPIXELFORMAT *)'): type mismatch at 2nd parameter ('void *' vs 'DDPIXELFORMAT *')"
       },
       {
         "category": "format_error",
@@ -92,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 724,
+    "complexity_score": 744,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 39,
+    "suspect_count": 41,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -182,7 +158,7 @@
     {
       "addr": "10003100",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003100"
+      "name": "dll_dx7.cpp_initD3DDevice_FUN_10003100"
     },
     {
       "addr": "10002b20",
@@ -700,6 +676,14 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 194,
+      "match": "(DDBLTFX *)((int)pDVar12",
+      "severity": "moderate",
+      "text": "pDVar12 = (DDBLTFX *)((int)pDVar12 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Subroutine marked as non-returning",
       "line": 206,
       "match": "WARNING: Subroutine does not return",
@@ -801,6 +785,14 @@
       "match": "(int)pDVar10",
       "severity": "moderate",
       "text": "pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 194,
+      "match": "(int)pDVar12",
+      "severity": "moderate",
+      "text": "pDVar12 = (DDBLTFX *)((int)pDVar12 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

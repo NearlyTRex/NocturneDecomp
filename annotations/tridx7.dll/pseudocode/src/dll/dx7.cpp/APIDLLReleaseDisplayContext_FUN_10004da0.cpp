@@ -2,11 +2,11 @@
 // Address: 10004da0
 // Address Range: [[10004da0, 10004e04]]
 // Convention: unknown
-// Signature: void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)
+// Signature: void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
 
 #include "nocturne.h"
 
-void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)
+void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC param_1)
 
 {
   int iVar1;

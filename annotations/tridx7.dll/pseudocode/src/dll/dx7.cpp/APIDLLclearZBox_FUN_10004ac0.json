@@ -1,42 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 5,
-        "line": 21,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 54,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 55,
-        "message": "unknown type name 'PCONTEXT'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 38,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memset"
     ],
-    "total_lines": 57
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -176,6 +158,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar2->owner`). Replace `pDVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pDVar2 = (T *)&pDVar2->FIELD",
+      "severity": "moderate",
+      "text": "pDVar2 = (DDBLTFX *)&pDVar2->dwDDFX;",
+      "type": "shadow_pointer_walk"
+    },
     {
       "description": "Watcom inline memset (REP STOSD at 10004af7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 17,
