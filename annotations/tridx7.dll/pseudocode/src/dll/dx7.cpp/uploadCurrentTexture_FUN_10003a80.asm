@@ -36,11 +36,11 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
+;   dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90
+;   dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
 ;   dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002e20
-;   dll_dx7.cpp_FUN_10003d90
-;   dll_dx7.cpp_FUN_10003e40
+;   dll_dx7.cpp_lockSurface_FUN_10002e20
 ;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
@@ -122,8 +122,8 @@ section .text
     MOV dword ptr [ESP + 0x28],EBP      ; 10003b56
     PUSH EAX                            ; 10003b5a
     PUSH ECX                            ; 10003b5b
-    CALL dll_dx7.cpp_FUN_10002e20       ; 10003b5c
-        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)
+    CALL dll_dx7.cpp_lockSurface_FUN_10002e20 ; 10003b5c
+        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_lockSurface_FUN_10002e20(IDirectDrawSurface * surface, DDSURFACEDESC2 * surface_desc)
     ADD ESP,0x8                         ; 10003b61
     TEST EAX,EAX                        ; 10003b64
     JNZ 0x10003b75                      ; 10003b66
@@ -141,12 +141,12 @@ section .text
     PUSH ECX                            ; 10003b8a
     JNZ 0x10003b94                      ; 10003b8b
         ;   XREF to: 10003b94 (CONDITIONAL_JUMP)  ; LAB_10003b94
-    CALL dll_dx7.cpp_FUN_10003e40       ; 10003b8d
-        ;   XREF to: 10003e40 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003e40()
+    CALL dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40 ; 10003b8d
+        ;   XREF to: 10003e40 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40(uint * dest, uint dest_pitch, int mip_size)
     JMP 0x10003b99                      ; 10003b92
         ;   XREF to: 10003b99 (UNCONDITIONAL_JUMP)  ; LAB_10003b99
-    CALL dll_dx7.cpp_FUN_10003d90       ; 10003b94
-        ;   XREF to: 10003d90 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003d90()
+    CALL dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90 ; 10003b94
+        ;   XREF to: 10003d90 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90(ushort * dest, uint dest_pitch, int mip_size)
         ;   Label: LAB_10003b94
     MOV EAX,dword ptr [ESP + 0x1c]      ; 10003b99
         ;   Label: LAB_10003b99

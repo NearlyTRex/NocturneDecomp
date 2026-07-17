@@ -119,12 +119,38 @@
         "start":"10003090"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10003090",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_textureSizeToIndex_FUN_10003090",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"texture_size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -137,9 +163,10 @@
         "start":"10003d90"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10003d90",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -175,9 +202,56 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ushort*"
+        },
+        {
+          "name":"dest_pitch",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"mip_size",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

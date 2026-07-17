@@ -14,16 +14,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 71,
+    "complexity_score": 31,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_noreturn"
     ],
     "total_lines": 52
@@ -32,13 +30,13 @@
     {
       "addr": "10003d90",
       "from_addr": "10003d9c",
-      "name": "dll_dx7.cpp_FUN_10003d90",
+      "name": "dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "10003e40",
       "from_addr": "10003e4c",
-      "name": "dll_dx7.cpp_FUN_10003e40",
+      "name": "dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,9 +52,9 @@
         "10003a73"
       ]
     ],
-    "convention": "unknown",
-    "name": "dll_dx7.cpp_FUN_10003a30",
-    "signature": "uint * dll_dx7_cpp_FUN_10003a30(int param_1)"
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_getMipLevelPtr_FUN_10003a30",
+    "signature": "uint * __cdecl dll_dx7_cpp_getMipLevelPtr_FUN_10003a30(int mip_size)"
   },
   "function_calls": [
     {
@@ -91,35 +89,31 @@
       {
         "call_addr": "10003d9c",
         "call_type": "direct",
-        "caller": "dll_dx7.cpp_FUN_10003d90",
-        "estimated_params": 2,
+        "caller": "dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "10003e4c",
         "call_type": "direct",
-        "caller": "dll_dx7.cpp_FUN_10003e40",
-        "estimated_params": 2,
+        "caller": "dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.678571428571429,
@@ -150,30 +144,22 @@
     "pcode_op_count": 131
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mip_size",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint * dll_dx7_cpp_FUN_10003a30(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (iVar1 == param_1) {",
-      "type": "unnamed_param"
-    },
     {
       "description": "Subroutine marked as non-returning",
       "line": 17,
@@ -181,17 +167,6 @@
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

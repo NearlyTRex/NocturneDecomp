@@ -12,9 +12,9 @@ int __cdecl wincore_windll_cpp_setFogColorFromPalette_FUN_005b7b01(int palette_i
   int iVar1;
   
   iVar1 = palette_index * 3;
-  g_FogColorRed = (int)(byte)g_SourcePaletteData[iVar1];
-  g_FogColorGreen = (int)(byte)g_SourcePaletteData[iVar1 + 1];
-  g_FogColorBlue = (int)(byte)g_SourcePaletteData[iVar1 + 2];
+  g_FogColorRed = (int)g_SourcePaletteData[iVar1];
+  g_FogColorGreen = (int)g_SourcePaletteData[iVar1 + 1];
+  g_FogColorBlue = (int)g_SourcePaletteData[iVar1 + 2];
   if (g_UseExternalRenderer == 0) {
     return 0;
   }

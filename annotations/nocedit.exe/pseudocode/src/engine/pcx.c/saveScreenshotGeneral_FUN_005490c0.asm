@@ -35,7 +35,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

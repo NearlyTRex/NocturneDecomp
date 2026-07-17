@@ -29,8 +29,8 @@ int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor
           iVar1 = 0x40;
         }
         core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
-                  ((CDemonActor *)this_ptr,(uint)(byte)g_SourcePaletteData[6],
-                   (uint)(byte)g_SourcePaletteData[7],(uint)(byte)g_SourcePaletteData[8],iVar1);
+                  ((CDemonActor *)this_ptr,(uint)g_SourcePaletteData[6],(uint)g_SourcePaletteData[7]
+                   ,(uint)g_SourcePaletteData[8],iVar1);
         return 1;
       }
     }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char dll_dx7_cpp_FUN_10003090(int param_1)
+; int __cdecl dll_dx7_cpp_textureSizeToIndex_FUN_10003090(int texture_size)
 ;
+; Parameters:
+; int              Stack[0x4]:4   texture_size
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_createTexture_FUN_10002f60 at 10002fcf
@@ -12,7 +14,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 10003090
-        ;   Label: dll_dx7.cpp_FUN_10003090
+        ;   Label: dll_dx7.cpp_textureSizeToIndex_FUN_10003090
     CMP EAX,0x10                        ; 10003094
     JNZ 0x1000309f                      ; 10003097
         ;   XREF to: 1000309f (CONDITIONAL_JUMP)  ; LAB_1000309f

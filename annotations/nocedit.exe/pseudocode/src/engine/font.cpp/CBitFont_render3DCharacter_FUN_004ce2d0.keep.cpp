@@ -36,9 +36,9 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
       goto LAB_004ce397;
     }
     iVar3 = color_mode * 3;
-    uVar2 = (uint)(byte)g_SourcePaletteData[iVar3];
-    uVar3 = (uint)(byte)g_SourcePaletteData[iVar3 + 1];
-    uVar4 = (uint)(byte)g_SourcePaletteData[iVar3 + 2];
+    uVar2 = (uint)g_SourcePaletteData[iVar3];
+    uVar3 = (uint)g_SourcePaletteData[iVar3 + 1];
+    uVar4 = (uint)g_SourcePaletteData[iVar3 + 2];
   }
   g_RenderVertexBuffer[0x4e1c].g = uVar3 << 8;
   g_RenderVertexBuffer[0x4e1c].r = uVar2 << 8;

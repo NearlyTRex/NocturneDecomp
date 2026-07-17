@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   ushort[256] g_ColorTable16
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer
 ;   APIDLL_setColorTable16* g_APIDLL_setColorTable16
 ;

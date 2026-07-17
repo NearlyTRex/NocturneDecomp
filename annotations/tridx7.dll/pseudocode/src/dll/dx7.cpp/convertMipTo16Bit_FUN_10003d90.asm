@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_FUN_10003d90(ushort *param_1,uint param_2,int param_3)
+; void __cdecl dll_dx7_cpp_convertMipTo16Bit_FUN_10003d90(ushort *dest,uint dest_pitch,int mip_size)
 ;
+; Parameters:
+; ushort *         Stack[0x4]:4   dest
+; uint             Stack[0x8]:4   dest_pitch
+; int              Stack[0xc]:4   mip_size
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
@@ -16,22 +20,22 @@
 ;   int g_HWGreenShift = 0x0
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10003a30
+;   dll_dx7.cpp_getMipLevelPtr_FUN_10003a30
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0xc]       ; 10003d90
-        ;   Label: dll_dx7.cpp_FUN_10003d90
+        ;   Label: dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90
     SUB ESP,0x8                         ; 10003d94
     PUSH EBX                            ; 10003d97
     PUSH ESI                            ; 10003d98
     PUSH EDI                            ; 10003d99
     PUSH EBP                            ; 10003d9a
     PUSH EAX                            ; 10003d9b
-    CALL dll_dx7.cpp_FUN_10003a30       ; 10003d9c
-        ;   XREF to: 10003a30 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003a30()
+    CALL dll_dx7.cpp_getMipLevelPtr_FUN_10003a30 ; 10003d9c
+        ;   XREF to: 10003a30 (UNCONDITIONAL_CALL)  ; uint * dll_dx7.cpp_getMipLevelPtr_FUN_10003a30(int mip_size)
     ADD ESP,0x4                         ; 10003da1
     CMP dword ptr [ESP + 0x24],0x0      ; 10003da4
     JLE 0x10003e34                      ; 10003da9

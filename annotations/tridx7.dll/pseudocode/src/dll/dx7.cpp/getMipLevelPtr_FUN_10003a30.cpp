@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_FUN_10003a30
+// Name: dll_dx7.cpp_getMipLevelPtr_FUN_10003a30
 // Address: 10003a30
 // Address Range: [[10003a30, 10003a66] [10003a6a, 10003a73]]
-// Convention: unknown
-// Signature: uint * dll_dx7_cpp_FUN_10003a30(int param_1)
+// Convention: __cdecl
+// Signature: uint * __cdecl dll_dx7_cpp_getMipLevelPtr_FUN_10003a30(int mip_size)
 
 #include "nocturne.h"
 
-uint * dll_dx7_cpp_FUN_10003a30(int param_1)
+uint * __cdecl dll_dx7_cpp_getMipLevelPtr_FUN_10003a30(int mip_size)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ uint * dll_dx7_cpp_FUN_10003a30(int param_1)
   puVar2 = g_ExpandedTexture;
   iVar1 = *g_ExternalRendererBridge.texture_dimension;
   do {
-    if (iVar1 == param_1) {
+    if (iVar1 == mip_size) {
       return puVar2;
     }
     puVar2 = puVar2 + iVar1 * iVar1;

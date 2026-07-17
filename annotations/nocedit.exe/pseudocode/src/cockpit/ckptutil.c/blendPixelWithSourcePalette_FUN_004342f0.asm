@@ -24,7 +24,7 @@
 ;   _BIT_INTEGER32 g_GreenDitherShift
 ;   _BIT_INTEGER32 g_BlueBitPosition
 ;   _BIT_INTEGER32 g_BlueDitherShift
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;   int g_ClipLeft

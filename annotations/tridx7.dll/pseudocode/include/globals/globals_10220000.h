@@ -45,8 +45,10 @@ extern uint g_HWRedScale;
 extern uint g_PackedPalette[256];
 
 // undefined4
-extern undefined4 DAT_10226868;
 extern undefined4 DAT_10226a50;
+
+// ushort*
+extern ushort* g_ColorTable16;
 
 // void*[1024]
 extern void* g_ScanlinePointers[1024];

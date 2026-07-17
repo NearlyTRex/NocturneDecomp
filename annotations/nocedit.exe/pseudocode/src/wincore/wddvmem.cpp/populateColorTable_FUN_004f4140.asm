@@ -11,7 +11,7 @@
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;   undefined4 CHAR_ARRAY_02d01f4b

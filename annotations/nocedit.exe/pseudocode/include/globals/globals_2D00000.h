@@ -67,9 +67,6 @@ extern char g_FileTransferBuffer[32768];
 // char[4952]
 extern char g_KeyboardState[4952];
 
-// char[768]
-extern char g_SourcePaletteData[768];
-
 // int
 extern int g_RedScaleFactor;
 extern int g_GreenScaleFactor;
@@ -118,6 +115,7 @@ extern int g_LightDirectionZ;
 extern int g_EventDryRun;
 
 // uchar[768]
+extern uchar g_SourcePaletteData[768];
 extern uchar g_DefaultPalette[768];
 
 // uint[1600]

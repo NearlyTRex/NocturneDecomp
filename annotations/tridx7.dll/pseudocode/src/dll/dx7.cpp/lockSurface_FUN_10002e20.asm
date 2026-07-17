@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_FUN_10002e20(int *param_1,undefined4 *param_2)
+; int __cdecl dll_dx7_cpp_lockSurface_FUN_10002e20(IDirectDrawSurface *surface,DDSURFACEDESC2 *surface_desc)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   param_1
-; undefined4 *     Stack[0x8]:4   param_2
+; IDirectDrawSurface * Stack[0x4]:4   surface
+; DDSURFACEDESC2 * Stack[0x8]:4   surface_desc
 ;
 ; XREF[4]:
 ;   dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350 at 1000535b
@@ -18,7 +18,7 @@
 section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 10002e20
-        ;   Label: dll_dx7.cpp_FUN_10002e20
+        ;   Label: dll_dx7.cpp_lockSurface_FUN_10002e20
     PUSH ESI                            ; 10002e24
     PUSH EDI                            ; 10002e25
     TEST EDX,EDX                        ; 10002e26

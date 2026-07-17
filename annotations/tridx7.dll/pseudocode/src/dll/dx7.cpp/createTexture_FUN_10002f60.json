@@ -65,7 +65,7 @@
     {
       "addr": "10003090",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003090"
+      "name": "dll_dx7.cpp_textureSizeToIndex_FUN_10003090"
     }
   ],
   "globals": [
@@ -263,22 +263,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "createTexture_FUN_10002f60.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-signed-char-misuse",
-          "column": 13,
-          "line": 51,
-          "message": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first."
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Subroutine marked as non-returning",
@@ -327,14 +311,6 @@
       "severity": "moderate",
       "text": "// 10002f70: STOSD.REP ES:EDI",
       "type": "unrolled_memset"
-    },
-    {
-      "description": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first.",
-      "line": 51,
-      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
-      "severity": "moderate",
-      "text": "iVar3 = dll_dx7_cpp_FUN_10003090(texture_size);",
-      "type": "static_signed_char_misuse"
     }
   ]
 }

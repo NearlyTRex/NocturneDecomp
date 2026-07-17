@@ -57,17 +57,18 @@ void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
       pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
     local_7c.dwSize = 0x7c;
-    iVar3 = dll_dx7_cpp_FUN_10002e20((int *)local_94,&local_7c.dwSize);
+    iVar3 = dll_dx7_cpp_lockSurface_FUN_10002e20(local_94,&local_7c);
     if (iVar3 == 0) {
                     /* WARNING: Subroutine does not return */
       dll_dx7_cpp_fatalError_FUN_10002340("Texture load failed: Could not lock texture buffer");
     }
     if (g_TexturePixelFormat.dwBitCount.dwRGBBitCount == 0x20) {
-      dll_dx7_cpp_FUN_10003e40();
+      dll_dx7_cpp_copyMipTo32Bit_FUN_10003e40
+                (local_7c.lpSurface,local_7c.dwPitchOrLinearSize.dwLinearSize,local_7c.dwWidth);
     }
     else {
-      dll_dx7_cpp_FUN_10003d90
-                (local_7c.lpSurface,local_7c.dwPitchOrLinearSize.lPitch,local_7c.dwWidth);
+      dll_dx7_cpp_convertMipTo16Bit_FUN_10003d90
+                (local_7c.lpSurface,local_7c.dwPitchOrLinearSize.dwLinearSize,local_7c.dwWidth);
     }
     iVar3 = dll_dx7_cpp_unlockSurface_FUN_10002cb0(local_94);
     if (iVar3 == 0) {

@@ -5,30 +5,30 @@
         "category": "incompatible_types",
         "column": 7,
         "line": 66,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10003e40'"
+        "message": "no matching function for call to 'dll_dx7_cpp_copyMipTo32Bit_FUN_10003e40'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 69,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10003d90'"
+        "line": 70,
+        "message": "no matching function for call to 'dll_dx7_cpp_convertMipTo16Bit_FUN_10003d90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 88,
+        "line": 89,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 88,
+        "line": 89,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 89,
+        "line": 90,
         "message": "use of undeclared identifier 'stack0xffffff68'"
       }
     ],
@@ -38,12 +38,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 257,
+    "complexity_score": 258,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 98,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
@@ -55,7 +55,7 @@
       "unrolled_memset",
       "warning_noreturn"
     ],
-    "total_lines": 300
+    "total_lines": 301
   },
   "cross_references": [
     {
@@ -96,6 +96,16 @@
       "name": "dll_dx7.cpp_checkD3DResult_FUN_10001d70"
     },
     {
+      "addr": "10003d90",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90"
+    },
+    {
+      "addr": "10003e40",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40"
+    },
+    {
       "addr": "10003830",
       "is_variadic": false,
       "name": "dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830"
@@ -108,17 +118,7 @@
     {
       "addr": "10002e20",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002e20"
-    },
-    {
-      "addr": "10003d90",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003d90"
-    },
-    {
-      "addr": "10003e40",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003e40"
+      "name": "dll_dx7.cpp_lockSurface_FUN_10002e20"
     },
     {
       "addr": "10002cb0",
@@ -353,7 +353,7 @@
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 88,
+          "line": 89,
           "message": "Uninitialized variable: unaff_EBX",
           "severity": "error"
         }
@@ -397,7 +397,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 67,
+      "line": 68,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -405,7 +405,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 82,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
+      "line": 82,
       "match": "code *",
       "severity": "moderate",
       "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
+      "line": 83,
       "match": "&stack0xffffff68",
       "severity": "moderate",
       "text": "(unaff_EBX,&local_7c.ddpfPixelFormat.dwBlueVMask,&stack0xffffff68);",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 83,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(unaff_EBX,&local_7c.ddpfPixelFormat.dwBlueVMask,&stack0xffffff68);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EBX",
-      "line": 88,
+      "line": 89,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",

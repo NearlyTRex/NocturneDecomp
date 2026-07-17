@@ -57,9 +57,6 @@ char g_FileTransferBuffer[32768] = {};
 // char[4952]
 char g_KeyboardState[4952] = {};
 
-// char[768]
-char g_SourcePaletteData[768] = {};
-
 // int
 int g_RedScaleFactor = {};
 int g_GreenScaleFactor = {};
@@ -108,6 +105,7 @@ int g_LightDirectionZ = {};
 int g_EventDryRun = {};
 
 // uchar[768]
+uchar g_SourcePaletteData[768] = {};
 uchar g_DefaultPalette[768] = {};
 
 // uint[1600]

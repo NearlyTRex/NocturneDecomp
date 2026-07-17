@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10003090
+;   dll_dx7.cpp_textureSizeToIndex_FUN_10003090
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     MOV dword ptr [ESP + 0xc],0x121007  ; 10002fc2
     MOV EAX,dword ptr [ESP + 0x14]      ; 10002fca
     PUSH EAX                            ; 10002fce
-    CALL dll_dx7.cpp_FUN_10003090       ; 10002fcf
-        ;   XREF to: 10003090 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003090()
+    CALL dll_dx7.cpp_textureSizeToIndex_FUN_10003090 ; 10002fcf
+        ;   XREF to: 10003090 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_textureSizeToIndex_FUN_10003090(int texture_size)
     OR dword ptr [ESP + 0x74],0x400008  ; 10002fd4
     ADD ESP,0x4                         ; 10002fdc
     SUB EAX,0x3                         ; 10002fdf

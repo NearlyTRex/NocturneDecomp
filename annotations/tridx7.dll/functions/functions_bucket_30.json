@@ -407,12 +407,38 @@
         "start":"10003a6a"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10003a30",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_getMipLevelPtr_FUN_10003a30",
+    "ret":"uint*",
     "vars":{
+      "params":[
+        {
+          "name":"mip_size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -677,7 +703,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"uchar*"
         },
         {
           "name":"color_table",
@@ -693,7 +719,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"ushort*"
         }
       ],
       "ret_storage":{

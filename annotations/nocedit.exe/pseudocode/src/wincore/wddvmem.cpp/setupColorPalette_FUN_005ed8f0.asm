@@ -17,7 +17,7 @@
 ;   TerminatedCString s_setpal_Unable_to_set_fro_006579ff
 ;   int g_BitsPerPixel = 0x8
 ;   ushort[256] g_ColorTable16
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;   undefined4 CHAR_ARRAY_02d01f4b

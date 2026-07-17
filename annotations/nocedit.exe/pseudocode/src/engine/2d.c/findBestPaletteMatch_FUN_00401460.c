@@ -21,7 +21,7 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401460(int red,int green,int 
   float fVar3;
   float fVar4;
   
-  pbVar5 = (byte *)(g_SourcePaletteData + start_index * 3);
+  pbVar5 = g_SourcePaletteData + start_index * 3;
   local_20 = 1e+30;
   if (start_index <= end_index) {
     iVar7 = start_index << 2;

@@ -41,19 +41,19 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_v
     iVar1 = g_PaletteColorIndex * 3;
     if ((uint)g_BitsPerPixel < 0x11) {
       g_CurrentDrawColor =
-           ((uint)(byte)g_SourcePaletteData[iVar1] / (uint)g_RedScaleFactor <<
+           ((uint)g_SourcePaletteData[iVar1] / (uint)g_RedScaleFactor <<
             (g_RedBitPosition.bytes[0] & 0x1f) |
-            (uint)(byte)g_SourcePaletteData[iVar1 + 1] / (uint)g_GreenScaleFactor <<
+            (uint)g_SourcePaletteData[iVar1 + 1] / (uint)g_GreenScaleFactor <<
             (g_GreenBitPosition.bytes[0] & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar1 + 2] / (uint)g_BlueScaleFactor <<
+           (uint)g_SourcePaletteData[iVar1 + 2] / (uint)g_BlueScaleFactor <<
            (g_BlueBitPosition.bytes[0] & 0x1f)) & 0xffff;
       return;
     }
     if (g_BitsPerPixel == 0x20) {
       g_CurrentDrawColor =
-           (uint)(byte)g_SourcePaletteData[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f);
+           (uint)g_SourcePaletteData[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)g_SourcePaletteData[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)g_SourcePaletteData[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f);
       return;
     }
   }

@@ -115,9 +115,9 @@ int __cdecl APIDLLlockFrame(void);
 // Address: 10002dc0
 int __cdecl lockBackBuffer(void);
 
-// Original: dll_dx7.cpp_FUN_10002e20
+// Original: dll_dx7.cpp_lockSurface_FUN_10002e20
 // Address: 10002e20
-int __cdecl FUN_10002e20(int *param_1,undefined4 *param_2);
+int __cdecl lockSurface(IDirectDrawSurface *surface,DDSURFACEDESC2 *surface_desc);
 
 // Original: dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60
 // Address: 10002e60
@@ -135,9 +135,9 @@ int __cdecl createDirect3D(void);
 // Address: 10002f60
 int __cdecl createTexture(int texture_size);
 
-// Original: dll_dx7.cpp_FUN_10003090
+// Original: dll_dx7.cpp_textureSizeToIndex_FUN_10003090
 // Address: 10003090
-char FUN_10003090(int param_1);
+int __cdecl textureSizeToIndex(int texture_size);
 
 // Original: dll_dx7.cpp_loadTexture_FUN_100030e0
 // Address: 100030e0
@@ -167,21 +167,21 @@ void __cdecl setRenderStateCached(uint render_state,DWORD value);
 // Address: 10003830
 void __cdecl expandTextureAndBuildMips(void);
 
-// Original: dll_dx7.cpp_FUN_10003a30
+// Original: dll_dx7.cpp_getMipLevelPtr_FUN_10003a30
 // Address: 10003a30
-uint * FUN_10003a30(int param_1);
+uint * __cdecl getMipLevelPtr(int mip_size);
 
 // Original: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
 // Address: 10003a80
 void __cdecl uploadCurrentTexture(void);
 
-// Original: dll_dx7.cpp_FUN_10003d90
+// Original: dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90
 // Address: 10003d90
-void FUN_10003d90(ushort *param_1,uint param_2,int param_3);
+void __cdecl convertMipTo16Bit(ushort *dest,uint dest_pitch,int mip_size);
 
-// Original: dll_dx7.cpp_FUN_10003e40
+// Original: dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
 // Address: 10003e40
-void FUN_10003e40(undefined4 *param_1,uint param_2,int param_3);
+void __cdecl copyMipTo32Bit(uint *dest,uint dest_pitch,int mip_size);
 
 // Original: dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90
 // Address: 10003e90
@@ -253,7 +253,7 @@ int __cdecl APIDLLclearZBox(int left,int right,int top,int bottom);
 
 // Original: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
 // Address: 10004b30
-int __cdecl APIDLLsetColorTable16(void *source_palette,void *color_table);
+int __cdecl APIDLLsetColorTable16(uchar *source_palette,ushort *color_table);
 
 // Original: dll_dx7.cpp_floorLog2_FUN_10004d10
 // Address: 10004d10

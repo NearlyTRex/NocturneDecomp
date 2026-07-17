@@ -48,7 +48,7 @@ int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size)
   }
   else {
     local_7c.dwFlags = 0x121007;
-    iVar3 = dll_dx7_cpp_FUN_10003090(texture_size);
+    iVar3 = dll_dx7_cpp_textureSizeToIndex_FUN_10003090(texture_size);
     local_7c.ddsCaps.dwCaps = local_7c.ddsCaps.dwCaps | 0x400008;
     local_7c.dwMipMapOrRefresh.dwMipMapCount = iVar3 - 3;
   }

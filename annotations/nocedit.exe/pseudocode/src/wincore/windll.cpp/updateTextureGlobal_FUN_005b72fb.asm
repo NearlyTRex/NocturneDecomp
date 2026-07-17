@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureDimension = 0x100
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   void* g_CurrentTextureData
 ;   void* g_CurrentTextureOpacityData
 ;   int g_UseExternalRenderer

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,void *color_table)
+; int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette,ushort *color_table)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   source_palette
-; void *           Stack[0x8]:4   color_table
+; uchar *          Stack[0x4]:4   source_palette
+; ushort *         Stack[0x8]:4   color_table
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x24]:4  local_24
@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Could_not_lock_back_buff_10016b50
 ;   TerminatedCString s_Could_not_unlock_back_bu_10016b6c
 ;   uchar* g_ColorPalette = 00000000
-;   undefined4 DAT_10226868
+;   ushort* g_ColorTable16 = 00000000
 ;   CExternalRendererBridge g_ExternalRendererBridge
 ;   undefined4 g_ExternalRendererBridge.red_scale_factor
 ;   undefined4 g_ExternalRendererBridge.red_dither_shift
@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
 ;   dll_dx7.cpp_floorLog2_FUN_10004d10
-;   dll_dx7.cpp_FUN_10002e20
+;   dll_dx7.cpp_lockSurface_FUN_10002e20
 ;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
@@ -50,15 +50,15 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 10004b48
     PUSH EBP                            ; 10004b4c
     LEA EDX,[ESP + 0x10]                ; 10004b4d
-    MOV dword ptr [0x10226868],ECX      ; 10004b51 | DAT_10226868
+    MOV dword ptr [0x10226868],ECX      ; 10004b51 | g_ColorTable16
     MOV ECX,0x1f                        ; 10004b57
     PUSH EDX                            ; 10004b5c
     STOSD.REP ES:EDI                    ; 10004b5d
     MOV dword ptr [ESP + 0x14],0x7c     ; 10004b5f
     MOV EAX,[0x10014180]                ; 10004b67 | g_BackBufferSurface
     PUSH EAX                            ; 10004b6c
-    CALL dll_dx7.cpp_FUN_10002e20       ; 10004b6d
-        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)
+    CALL dll_dx7.cpp_lockSurface_FUN_10002e20 ; 10004b6d
+        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_lockSurface_FUN_10002e20(IDirectDrawSurface * surface, DDSURFACEDESC2 * surface_desc)
     ADD ESP,0x8                         ; 10004b72
     TEST EAX,EAX                        ; 10004b75
     JNZ 0x10004b86                      ; 10004b77
@@ -166,7 +166,7 @@ section .text
     ADD ESP,0x4                         ; 10004c75
     MOV ECX,dword ptr [0x102268d8]      ; 10004c78 | g_ExternalRendererBridge.blue_dither_shift
     MOV EBX,dword ptr [0x10215e40]      ; 10004c7e | g_ColorPalette
-    MOV EDI,dword ptr [0x10226868]      ; 10004c84 | DAT_10226868
+    MOV EDI,dword ptr [0x10226868]      ; 10004c84 | g_ColorTable16
     ADD EBX,0x2                         ; 10004c8a
     MOV ESI,0x100                       ; 10004c8d
     MOV dword ptr [ECX],EAX             ; 10004c92

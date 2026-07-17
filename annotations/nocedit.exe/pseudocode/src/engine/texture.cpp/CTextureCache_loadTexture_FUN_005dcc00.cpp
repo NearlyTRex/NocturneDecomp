@@ -109,7 +109,7 @@ LAB_005dcd2c:
   _sprintf(pcVar7,".act");
   p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
-    pbVar2 = (byte *)g_SourcePaletteData;
+    pbVar2 = g_SourcePaletteData;
     pbVar12 = cache->texture_palette_ptrs[cache->current_texture_count];
     for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
       *(uint *)pbVar12 = *(uint *)pbVar2;

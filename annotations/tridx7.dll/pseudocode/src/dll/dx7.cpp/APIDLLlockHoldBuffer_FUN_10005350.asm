@@ -13,7 +13,7 @@
 ;   undefined4 g_PrimarySurfaceDesc.lpSurface
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002e20
+;   dll_dx7.cpp_lockSurface_FUN_10002e20
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
     MOV EAX,[0x100141b8]                ; 10005355 | g_HoldBufferSurface
     PUSH EAX                            ; 1000535a
-    CALL dll_dx7.cpp_FUN_10002e20       ; 1000535b
-        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)
+    CALL dll_dx7.cpp_lockSurface_FUN_10002e20 ; 1000535b
+        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_lockSurface_FUN_10002e20(IDirectDrawSurface * surface, DDSURFACEDESC2 * surface_desc)
     ADD ESP,0x8                         ; 10005360
     TEST EAX,EAX                        ; 10005363
     JNZ 0x1000536a                      ; 10005365

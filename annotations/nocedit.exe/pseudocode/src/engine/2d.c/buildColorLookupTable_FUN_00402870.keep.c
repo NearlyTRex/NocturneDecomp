@@ -27,14 +27,14 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402870(void)
   fVar2 = (float)0.57735027000000005;
   iVar8 = 0;
   do {
-    pbVar1 = (byte *)(g_SourcePaletteData + iVar4);
+    pbVar1 = g_SourcePaletteData + iVar4;
     iVar2 = iVar4 + 1;
     iVar1 = iVar4 + 2;
     iVar7 = iVar8 + 4;
     iVar4 = iVar4 + 3;
     g_PaletteLuminanceCache[iVar8 / 4] =
-         SQRT((float)(byte)g_SourcePaletteData[iVar1] * (float)(byte)g_SourcePaletteData[iVar1] +
-              (float)(byte)g_SourcePaletteData[iVar2] * (float)(byte)g_SourcePaletteData[iVar2] +
+         SQRT((float)g_SourcePaletteData[iVar1] * (float)g_SourcePaletteData[iVar1] +
+              (float)g_SourcePaletteData[iVar2] * (float)g_SourcePaletteData[iVar2] +
               (float)*pbVar1 * (float)*pbVar1) * fVar2;
     iVar8 = iVar7;
   } while (iVar7 != 0x400);

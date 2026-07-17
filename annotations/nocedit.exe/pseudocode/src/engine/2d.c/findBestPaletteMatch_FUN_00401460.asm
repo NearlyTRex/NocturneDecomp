@@ -23,7 +23,7 @@
 ;   double g_LuminanceDifferenceWeight = 0.150000000000000
 ;   float[256] g_PaletteLuminanceCache
 ;   undefined4 g_PaletteLuminanceCache[1]
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;   undefined4 CHAR_ARRAY_02d01f4b

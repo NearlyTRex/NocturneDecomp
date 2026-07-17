@@ -22,15 +22,15 @@ void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
   iVar5 = 0;
   iVar7 = 0;
   do {
-    pbVar1 = (byte *)(g_SourcePaletteData + iVar5);
+    pbVar1 = g_SourcePaletteData + iVar5;
     iVar2 = iVar5 + 1;
     iVar3 = iVar5 + 2;
     iVar8 = iVar7 + 2;
     iVar5 = iVar5 + 3;
     *(ushort *)((int)g_ColorTable16 + iVar7) =
-         (ushort)((uint)(byte)g_SourcePaletteData[iVar3] / (uint)g_BlueScaleFactor <<
+         (ushort)((uint)g_SourcePaletteData[iVar3] / (uint)g_BlueScaleFactor <<
                  (g_BlueBitPosition.bytes[0] & 0x1f)) |
-         (ushort)((uint)(byte)g_SourcePaletteData[iVar2] / (uint)g_GreenScaleFactor <<
+         (ushort)((uint)g_SourcePaletteData[iVar2] / (uint)g_GreenScaleFactor <<
                  (g_GreenBitPosition.bytes[0] & 0x1f)) |
          (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f));
     iVar7 = iVar8;

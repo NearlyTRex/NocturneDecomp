@@ -39,8 +39,10 @@ uint g_HWRedScale = 0;
 uint g_PackedPalette[256] = {};
 
 // undefined4
-undefined4 DAT_10226868 = 0x00000000;
 undefined4 DAT_10226a50 = 0x00000000;
+
+// ushort*
+ushort* g_ColorTable16 = nullptr;
 
 // void*[1024]
 void* g_ScanlinePointers[1024] = {};

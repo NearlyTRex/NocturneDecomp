@@ -12,7 +12,7 @@
 ;   float[256] g_PaletteLuminanceCache
 ;   undefined4 g_PaletteLuminanceCache[1]
 ;   uchar[32768] g_ColorCubeLookup
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;   undefined4 CHAR_ARRAY_02d01f4b

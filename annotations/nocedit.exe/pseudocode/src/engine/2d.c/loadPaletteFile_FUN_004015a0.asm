@@ -17,7 +17,7 @@
 ;   TerminatedCString s_engine_2d_c_006130b3
 ;   TerminatedCString s_Unable_to_open_VGA_palet_006130c2
 ;   TerminatedCString s_engine_2d_c_006130dd
-;   char[768] g_SourcePaletteData
+;   uchar[768] g_SourcePaletteData
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

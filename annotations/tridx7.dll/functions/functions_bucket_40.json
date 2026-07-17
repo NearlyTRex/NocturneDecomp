@@ -221,9 +221,10 @@
         "start":"10003e40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10003e40",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -243,9 +244,56 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        },
+        {
+          "name":"dest_pitch",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"mip_size",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

@@ -17,7 +17,7 @@
 ;   undefined4 g_PrimarySurfaceDesc.lpSurface
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002e20
+;   dll_dx7.cpp_lockSurface_FUN_10002e20
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
         ;   Label: LAB_10002dcf
     MOV EAX,[0x10014180]                ; 10002dd4 | g_BackBufferSurface
     PUSH EAX                            ; 10002dd9
-    CALL dll_dx7.cpp_FUN_10002e20       ; 10002dda
-        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)
+    CALL dll_dx7.cpp_lockSurface_FUN_10002e20 ; 10002dda
+        ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_lockSurface_FUN_10002e20(IDirectDrawSurface * surface, DDSURFACEDESC2 * surface_desc)
     ADD ESP,0x8                         ; 10002ddf
     TEST EAX,EAX                        ; 10002de2
     JNZ 0x10002de9                      ; 10002de4

@@ -74,7 +74,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   _fputc('\f',file);
   iVar3 = 0;
   do {
-    _fputc((uint)(byte)g_SourcePaletteData[iVar3],file);
+    _fputc((uint)g_SourcePaletteData[iVar3],file);
     iVar3 = iVar3 + 1;
     if (0x2ff < iVar3) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",260);

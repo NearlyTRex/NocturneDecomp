@@ -1,44 +1,32 @@
 {
   "compilation_status": {
-    "errors": [
+    "errors": [],
+    "success": true,
+    "warnings": [
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 24,
-        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 25,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 62,
-        "message": "incompatible integer to pointer conversion assigning to 'ushort *' (aka 'unsigned short *') from 'undefined4' (aka 'unsigned int')"
+        "category": "return_type_error",
+        "column": 1,
+        "line": 89,
+        "message": "non-void function does not return a value in all control paths [-Wreturn-type]"
       }
-    ],
-    "success": false,
-    "warnings": []
+    ]
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 139,
+    "complexity_score": 134,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 5,
+    "pseudocode_lines": 79,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
+      "shadow_pointer_walk",
       "unrolled_memset",
       "warning_noreturn"
     ],
-    "total_lines": 247
+    "total_lines": 252
   },
   "cross_references": [],
   "function": {
@@ -59,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30",
-    "signature": "int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,void *color_table)"
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette,ushort *color_table)"
   },
   "function_calls": [
     {
@@ -75,7 +63,7 @@
     {
       "addr": "10002e20",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002e20"
+      "name": "dll_dx7.cpp_lockSurface_FUN_10002e20"
     },
     {
       "addr": "10002cb0",
@@ -110,9 +98,9 @@
     },
     {
       "addr": "10226868",
-      "name": "DAT_10226868",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ColorTable16",
+      "type": "ushort*",
+      "value": "00000000"
     },
     {
       "addr": "102268b8",
@@ -253,37 +241,21 @@
         "name": "source_palette",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
         "name": "color_table",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "ushort *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_10226868",
-      "severity": "mild",
-      "text": "DAT_10226868 = color_table;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_10226868",
-      "severity": "mild",
-      "text": "puVar6 = DAT_10226868;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Subroutine marked as non-returning",
-      "line": 72,
+      "line": 77,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -291,11 +263,19 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 75,
+      "line": 80,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar7->owner`). Replace `pDVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pDVar7 = (T *)&pDVar7->FIELD",
+      "severity": "moderate",
+      "text": "pDVar7 = (DDSURFACEDESC2 *)&pDVar7->dwFlags;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memset (REP STOSD at 10004b5d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",

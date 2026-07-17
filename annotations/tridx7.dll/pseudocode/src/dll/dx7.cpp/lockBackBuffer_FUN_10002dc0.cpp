@@ -16,7 +16,7 @@ int __cdecl dll_dx7_cpp_lockBackBuffer_FUN_10002dc0(void)
   if (g_BackBufferLocked != 0) {
     return 1;
   }
-  iVar1 = dll_dx7_cpp_FUN_10002e20((int *)g_BackBufferSurface,&g_PrimarySurfaceDesc.dwSize);
+  iVar1 = dll_dx7_cpp_lockSurface_FUN_10002e20(g_BackBufferSurface,&g_PrimarySurfaceDesc);
   if (iVar1 != 0) {
     iVar1 = g_ScreenHeight;
     pvVar2 = g_PrimarySurfaceDesc.lpSurface;

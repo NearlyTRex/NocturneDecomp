@@ -103,7 +103,7 @@ LAB_0054923a:
       *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
     }
     else {
-      character = (uint)(byte)g_SourcePaletteData[iVar3];
+      character = (uint)g_SourcePaletteData[iVar3];
 LAB_00549250:
       _fputc(character,file);
     }

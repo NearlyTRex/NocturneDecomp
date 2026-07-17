@@ -44,15 +44,15 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
     iVar3 = palette_index * 3;
     fVar2 = 1.0 - blend_factor;
     local_34 = (uint)(longlong)
-                     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +
+                     ROUND(ROUND((float)g_SourcePaletteData[iVar3] * fVar2 +
                                  (float)(uVar4 & 0xff) * blend_factor));
     local_2c = (uint)(longlong)
-                     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +
+                     ROUND(ROUND((float)g_SourcePaletteData[iVar3 + 1] * fVar2 +
                                  (float)(uVar5 & 0xff) * blend_factor));
     uVar7 = local_34 >> (g_RedDitherShift.bytes[0] & 0x1f);
     uVar2 = local_2c >> (g_GreenDitherShift.bytes[0] & 0x1f);
     local_2c = (uint)(longlong)
-                     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +
+                     ROUND(ROUND((float)g_SourcePaletteData[iVar3 + 2] * fVar2 +
                                  (float)(uVar6 & 0xff) * blend_factor));
     uVar3 = local_2c >> (g_BlueDitherShift.bytes[0] & 0x1f);
     if (g_BitsPerPixel != 0x10) {

@@ -60,6 +60,7 @@
 #define __esi
 #define __edx
 #define __edi_esi_ebx
+#define __ecxcall
 #define __syscall
 #define __fpustack
 #define __fpustack_safe
