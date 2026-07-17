@@ -40,49 +40,49 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 215,
+        "line": 216,
         "message": "use of undeclared identifier 'SetCursorPos'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 217,
+        "line": 218,
         "message": "use of undeclared identifier 'ShowCursor'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 251,
+        "line": 252,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 253,
+        "line": 254,
         "message": "use of undeclared identifier 'ExitProcess'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 279,
+        "line": 280,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 281,
+        "line": 282,
         "message": "use of undeclared identifier 'ExitProcess'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 305,
+        "line": 306,
         "message": "use of undeclared identifier 'MessageBoxA'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 307,
+        "line": 308,
         "message": "use of undeclared identifier 'ExitProcess'"
       }
     ],
@@ -91,14 +91,14 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 497,
-    "complexity_score": 703,
+    "assembly_lines": 488,
+    "complexity_score": 724,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 60,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 298,
-    "suspect_count": 37,
+    "pseudocode_lines": 299,
+    "suspect_count": 39,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -108,7 +108,7 @@
       "unrolled_strlen",
       "warning_noreturn"
     ],
-    "total_lines": 795
+    "total_lines": 787
   },
   "cross_references": [
     {
@@ -123,6 +123,14 @@
     "address_range": [
       [
         "10002500",
+        "10002882"
+      ],
+      [
+        "10002893",
+        "10002ad7"
+      ],
+      [
+        "10002adb",
         "10002b1a"
       ]
     ],
@@ -157,14 +165,14 @@
       "name": "dll_dx7.cpp_APIDLLtoggle_FUN_100024b0"
     },
     {
+      "addr": "10001d70",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_checkD3DResult_FUN_10001d70"
+    },
+    {
       "addr": "10002340",
       "is_variadic": false,
       "name": "dll_dx7.cpp_fatalError_FUN_10002340"
-    },
-    {
-      "addr": "10001d70",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10001d70"
     },
     {
       "addr": "10002370",
@@ -591,8 +599,8 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.293981481481482,
-    "instruction_count": 432,
+    "avg_pcode_per_instr": 4.25531914893617,
+    "instruction_count": 423,
     "opcode_distribution": {
       "BOOL_AND": 2,
       "BOOL_NEGATE": 24,
@@ -601,11 +609,11 @@
       "CALL": 17,
       "CALLIND": 26,
       "CBRANCH": 40,
-      "COPY": 433,
-      "INT_ADD": 126,
-      "INT_AND": 201,
-      "INT_CARRY": 21,
-      "INT_EQUAL": 168,
+      "COPY": 423,
+      "INT_ADD": 118,
+      "INT_AND": 193,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 160,
       "INT_LESS": 17,
       "INT_MULT": 23,
       "INT_NEGATE": 3,
@@ -613,17 +621,17 @@
       "INT_OR": 15,
       "INT_RIGHT": 6,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 22,
-      "INT_SLESS": 77,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 73,
       "INT_SUB": 204,
-      "INT_XOR": 14,
+      "INT_XOR": 13,
       "INT_ZEXT": 23,
-      "LOAD": 98,
-      "POPCOUNT": 74,
-      "RETURN": 8,
+      "LOAD": 93,
+      "POPCOUNT": 70,
+      "RETURN": 7,
       "STORE": 165
     },
-    "pcode_op_count": 1855
+    "pcode_op_count": 1800
   },
   "stack_frame": {
     "frame_size": 8,
@@ -668,6 +676,14 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Subroutine marked as non-returning",
+      "line": 148,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(DDSURFACEDESC2 *)((int)pDVar9",
@@ -684,8 +700,16 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Subroutine marked as non-returning",
+      "line": 206,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 233,
+      "line": 234,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "pcVar11 = (char *)&DAT_101386f0;",
@@ -693,31 +717,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 244,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Subroutine marked as non-returning",
       "line": 245,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 261,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)&DAT_101386f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 272,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -725,23 +725,23 @@
     },
     {
       "description": "Subroutine marked as non-returning",
+      "line": 246,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 262,
+      "match": "DAT_101386f0",
+      "severity": "mild",
+      "text": "pcVar11 = (char *)&DAT_101386f0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 273,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 287,
-      "match": "DAT_101386f0",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)&DAT_101386f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 298,
       "match": "DAT_101386f0",
       "severity": "mild",
       "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
@@ -749,7 +749,31 @@
     },
     {
       "description": "Subroutine marked as non-returning",
+      "line": 274,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 288,
+      "match": "DAT_101386f0",
+      "severity": "mild",
+      "text": "pcVar11 = (char *)&DAT_101386f0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 299,
+      "match": "DAT_101386f0",
+      "severity": "mild",
+      "text": "MessageBoxA((HWND)0x0,(LPCSTR)&DAT_101386f0,\"3D Adapter Error\",0x10);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 300,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -829,7 +853,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 234,
+      "line": 235,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -837,7 +861,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 239,
+      "line": 240,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -845,7 +869,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 262,
+      "line": 263,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -853,7 +877,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 267,
+      "line": 268,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -861,7 +885,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 288,
+      "line": 289,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -869,7 +893,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 293,
+      "line": 294,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -877,7 +901,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 223,
+      "line": 224,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -885,7 +909,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 251,
+      "line": 252,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -909,7 +933,7 @@
     },
     {
       "description": "Watcom inline memset (REP STOSD at 1000289e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 289,
+      "line": 281,
       "match": "STOSD.REP",
       "severity": "moderate",
       "text": "// 1000289e: STOSD.REP ES:EDI",
@@ -917,7 +941,7 @@
     },
     {
       "description": "Watcom inline memset (REP STOSD at 10002a4e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 427,
+      "line": 419,
       "match": "STOSD.REP",
       "severity": "moderate",
       "text": "// 10002a4e: STOSD.REP ES:EDI",
@@ -933,7 +957,7 @@
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 10002924, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 326,
+      "line": 318,
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 10002924: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a Z bu...\" | DAT_101386f0",
@@ -941,7 +965,7 @@
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 100029a7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 372,
+      "line": 364,
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 100029a7: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to create a 2nd ...\" | DAT_101386f0",
@@ -949,7 +973,7 @@
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 10002a18, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 412,
+      "line": 404,
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 10002a18: MOVSD.REP ES:EDI,ESI  ; = \"FATAL ERROR!  Unable to attach Z buff...\" | DAT_101386f0",

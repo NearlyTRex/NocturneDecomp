@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00
 // Address: 10004f00
-// Address Range: [[10004f00, 10005008]]
+// Address Range: [[10004f00, 10004fe4] [10004fe8, 10005008]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
 
@@ -46,6 +46,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_bu
         } while (local_c < (pSVar1->base).base.count + -2);
       }
       if (0x3e76 < DAT_1001422c) {
+                    /* WARNING: Subroutine does not return */
         dll_dx7_cpp_fatalError_FUN_10002340("You're shoving too many faces");
       }
       local_8 = local_8 + 1;

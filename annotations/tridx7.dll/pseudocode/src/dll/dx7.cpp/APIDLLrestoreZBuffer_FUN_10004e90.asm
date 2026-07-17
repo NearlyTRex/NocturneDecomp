@@ -65,7 +65,6 @@ section .text
     PUSH 0x10016ba0                     ; 10004ee8 | = "restoreZBuffer failed!"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004eed
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10004ef2
     MOV EAX,0x1                         ; 10004ef5
         ;   Label: LAB_10004ef5
     ADD ESP,0x10                        ; 10004efa

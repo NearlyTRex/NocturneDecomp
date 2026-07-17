@@ -46,7 +46,6 @@ section .text
     PUSH 0x10016ab8                     ; 10003a5d | = "Can't get source size"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003a62
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10003a67
     CMP EDI,ESI                         ; 10003a6a
         ;   Label: LAB_10003a6a
     JNZ 0x10003a47                      ; 10003a6c

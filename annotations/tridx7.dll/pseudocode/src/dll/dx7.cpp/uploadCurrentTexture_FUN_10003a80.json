@@ -22,19 +22,19 @@
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 69,
+        "line": 68,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10003e40'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 72,
+        "line": 71,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10003d90'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 75,
+        "line": 74,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
       },
       {
@@ -61,14 +61,14 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 209,
-    "complexity_score": 238,
+    "assembly_lines": 203,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -77,9 +77,10 @@
       "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
+      "warning_noreturn",
       "warning_type_propagation"
     ],
-    "total_lines": 307
+    "total_lines": 301
   },
   "cross_references": [
     {
@@ -94,6 +95,18 @@
     "address_range": [
       [
         "10003a80",
+        "10003ab3"
+      ],
+      [
+        "10003abd",
+        "10003b71"
+      ],
+      [
+        "10003b75",
+        "10003bb6"
+      ],
+      [
+        "10003bba",
         "10003c93"
       ]
     ],
@@ -103,6 +116,11 @@
   },
   "function_calls": [
     {
+      "addr": "10001d70",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_checkD3DResult_FUN_10001d70"
+    },
+    {
       "addr": "10003830",
       "is_variadic": false,
       "name": "dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830"
@@ -111,11 +129,6 @@
       "addr": "10002340",
       "is_variadic": false,
       "name": "dll_dx7.cpp_fatalError_FUN_10002340"
-    },
-    {
-      "addr": "10001d70",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10001d70"
     },
     {
       "addr": "10002cb0",
@@ -240,36 +253,36 @@
     "matches_declared": false
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.025477707006369,
-    "instruction_count": 157,
+    "avg_pcode_per_instr": 3.9539473684210527,
+    "instruction_count": 152,
     "opcode_distribution": {
       "BOOL_NEGATE": 7,
       "BOOL_OR": 1,
-      "BRANCH": 8,
+      "BRANCH": 7,
       "BRANCHIND": 1,
       "CALL": 11,
       "CALLIND": 4,
       "CBRANCH": 14,
-      "COPY": 120,
-      "INT_ADD": 63,
-      "INT_AND": 64,
-      "INT_CARRY": 10,
-      "INT_EQUAL": 64,
+      "COPY": 119,
+      "INT_ADD": 59,
+      "INT_AND": 58,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 58,
       "INT_LESS": 13,
       "INT_MULT": 8,
       "INT_NOTEQUAL": 1,
       "INT_SBORROW": 13,
-      "INT_SCARRY": 12,
-      "INT_SLESS": 31,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 28,
       "INT_SUB": 60,
       "INT_XOR": 4,
       "INT_ZEXT": 1,
-      "LOAD": 34,
-      "POPCOUNT": 31,
+      "LOAD": 33,
+      "POPCOUNT": 28,
       "RETURN": 1,
       "STORE": 56
     },
-    "pcode_op_count": 632
+    "pcode_op_count": 601
   },
   "stack_frame": {
     "frame_size": 152,
@@ -385,26 +398,50 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Subroutine marked as non-returning",
+      "line": 25,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(DDSURFACEDESC2 *)((int)pDVar6",
+      "line": 52,
+      "match": "(DDSURFACEDESC2 *)((int)pDVar5",
       "severity": "moderate",
-      "text": "pDVar6 = (DDSURFACEDESC2 *)((int)pDVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 57,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 69,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
     },
     {
       "description": "Unaffected register variable",
       "line": 83,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*unaff_EBX + 0x30))",
+      "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",
       "type": "unaffected_reg"
     },
     {
@@ -412,7 +449,7 @@
       "line": 83,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*unaff_EBX + 0x30))",
+      "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",
       "type": "unresolved_funcptr"
     },
     {
@@ -432,24 +469,24 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Pointer value `pDVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
-      "match": "(int)pDVar6",
+      "description": "Pointer value `pDVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)pDVar5",
       "severity": "moderate",
-      "text": "pDVar6 = (DDSURFACEDESC2 *)((int)pDVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 0x1f; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom inline memset (REP STOSD at 10003b4c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 74,
+      "line": 70,
       "match": "STOSD.REP",
       "severity": "moderate",
       "text": "// 10003b4c: STOSD.REP ES:EDI",
@@ -460,7 +497,7 @@
       "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "uVar3 = (**(code **)(*unaff_EBX + 0x30))",
+      "text": "HVar2 = (**(code **)(*unaff_EBX + 0x30))",
       "type": "static_uninitvar"
     }
   ]

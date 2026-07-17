@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_FUN_10003100
 // Address: 10003100
-// Address Range: [[10003100, 10003332]]
+// Address Range: [[10003100, 100032cd] [100032d1, 10003332]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_FUN_10003100(void)
 
@@ -88,6 +88,7 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
                       (g_DirectDraw4,&DStack_e0,(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0
                       );
     if (HVar1 != 0) {
+                    /* WARNING: Subroutine does not return */
       dll_dx7_cpp_fatalError_FUN_10002340("Can't create hold surface");
     }
     puVar7 = auStack_64;

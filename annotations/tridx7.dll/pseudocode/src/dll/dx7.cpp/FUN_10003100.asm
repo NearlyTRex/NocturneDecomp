@@ -184,7 +184,6 @@ section .text
     PUSH 0x10016a9c                     ; 100032c4 | = "Can't create hold surface"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 100032c9
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 100032ce
     LEA EDI,[ESP + 0xb4]                ; 100032d1
         ;   Label: LAB_100032d1
     XOR EAX,EAX                         ; 100032d8

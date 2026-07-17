@@ -35,9 +35,9 @@
 ;   undefined4 g_TexturePixelFormat.dwBitCount
 ;
 ; Called Functions:
+;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10001d70
 ;   dll_dx7.cpp_FUN_10002cb0
 ;   dll_dx7.cpp_FUN_10002e20
 ;   dll_dx7.cpp_FUN_10003d90
@@ -67,10 +67,6 @@ section .text
         ;   Label: caseD_21
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003aaf
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    MOV ESI,dword ptr [ESP + 0x2c]      ; 10003ab4
-    ADD ESP,0x4                         ; 10003ab8
-    JMP 0x10003ad4                      ; 10003abb
-        ;   XREF to: 10003ad4 (UNCONDITIONAL_JUMP)  ; LAB_10003ad4
     MOV ESI,0x3                         ; 10003abd
         ;   Label: caseD_20
     JMP 0x10003ad4                      ; 10003ac2
@@ -135,7 +131,6 @@ section .text
     PUSH 0x10016ae8                     ; 10003b68 | = "Texture load failed: Could not lock t..."
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003b6d
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10003b72
     MOV ECX,dword ptr [ESP + 0x4c]      ; 10003b75
         ;   Label: LAB_10003b75
     MOV EAX,dword ptr [ESP + 0x34]      ; 10003b79
@@ -166,7 +161,6 @@ section .text
     PUSH 0x10016b1c                     ; 10003bad | = "Texture load failed: Texture buffer u..."
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003bb2
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10003bb7
     CMP dword ptr [0x100141f0],EBX      ; 10003bba | g_DirectTextureFlag
         ;   Label: LAB_10003bba
     JNZ 0x10003bfa                      ; 10003bc0
@@ -189,8 +183,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 10003bec
     CALL dword ptr [EAX + 0x14]         ; 10003bee
     PUSH EAX                            ; 10003bf1
-    CALL dll_dx7.cpp_FUN_10001d70       ; 10003bf2
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 10003bf2
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 10003bf7
     CMP dword ptr [0x10060670],EBX      ; 10003bfa | g_MipMapFlag
         ;   Label: LAB_10003bfa
@@ -211,8 +205,8 @@ section .text
     PUSH EDX                            ; 10003c22
     CALL dword ptr [EAX + 0x30]         ; 10003c23
     PUSH EAX                            ; 10003c26
-    CALL dll_dx7.cpp_FUN_10001d70       ; 10003c27
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 10003c27
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 10003c2c
     CMP dword ptr [ESP + 0x10],EBX      ; 10003c2f
     JNZ 0x10003c8e                      ; 10003c33
@@ -246,8 +240,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 10003c7a
     CALL dword ptr [EAX + 0x30]         ; 10003c7c
     PUSH EAX                            ; 10003c7f
-    CALL dll_dx7.cpp_FUN_10001d70       ; 10003c80
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 10003c80
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 10003c85
     CMP dword ptr [ESP + 0x14],EBX      ; 10003c88
     JZ 0x10003c35                       ; 10003c8c

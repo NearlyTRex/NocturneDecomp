@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 dll_dx7_cpp_FUN_100017b0(undefined4 *param_1,char *param_2,char *param_3)
+; int __stdcall dll_dx7_cpp_enumAdapterCallback_FUN_100017b0(GUID *lp_guid,LPCSTR lp_driver_description,LPCSTR lp_driver_name,LPVOID lp_context,HMONITOR hmonitor)
 ;
+; Parameters:
+; GUID *           Stack[0x4]:4   lp_guid
+; LPCSTR           Stack[0x8]:4   lp_driver_description
+; LPCSTR           Stack[0xc]:4   lp_driver_name
+; LPVOID           Stack[0x10]:4   lp_context
+; HMONITOR         Stack[0x14]:4   hmonitor
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_APIDLLinit_FUN_10001a80 at 10001a9d
@@ -24,21 +30,21 @@
 ;   undefined4 g_AdapterDescription[0][255]
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10001900
+;   dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 100017b0
-        ;   Label: dll_dx7.cpp_FUN_100017b0
+        ;   Label: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
     PUSH ESI                            ; 100017b1
     MOV EBX,dword ptr [ESP + 0xc]       ; 100017b2
     PUSH EDI                            ; 100017b6
     PUSH EBP                            ; 100017b7
     PUSH EBX                            ; 100017b8
-    CALL dll_dx7.cpp_FUN_10001900       ; 100017b9
-        ;   XREF to: 10001900 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001900()
+    CALL dll_dx7.cpp_isAdapter3DCapable_FUN_10001900 ; 100017b9
+        ;   XREF to: 10001900 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_isAdapter3DCapable_FUN_10001900(GUID * adapter_guid)
     ADD ESP,0x4                         ; 100017be
     TEST EAX,EAX                        ; 100017c1
     JZ 0x100018e7                       ; 100017c3

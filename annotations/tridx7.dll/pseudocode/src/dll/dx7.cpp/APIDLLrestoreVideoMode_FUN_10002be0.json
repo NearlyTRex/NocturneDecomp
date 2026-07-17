@@ -22,13 +22,13 @@
       {
         "category": "cast_error",
         "column": 63,
-        "line": 23,
+        "line": 24,
         "message": "cast from pointer to smaller type 'char' loses information"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier 'ShowCursor'"
       }
     ],
@@ -37,15 +37,17 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 42,
-    "complexity_score": 19,
+    "assembly_lines": 41,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_noreturn"
+    ],
     "total_lines": 61
   },
   "cross_references": [],
@@ -54,6 +56,10 @@
     "address_range": [
       [
         "10002be0",
+        "10002bfc"
+      ],
+      [
+        "10002c00",
         "10002c46"
       ]
     ],
@@ -131,30 +137,28 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.5454545454545454,
-    "instruction_count": 33,
+    "avg_pcode_per_instr": 3.375,
+    "instruction_count": 32,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "CALL": 3,
       "CALLIND": 4,
       "CBRANCH": 3,
       "COPY": 27,
-      "INT_ADD": 6,
-      "INT_AND": 9,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 8,
+      "INT_ADD": 5,
+      "INT_AND": 7,
+      "INT_EQUAL": 6,
       "INT_LESS": 2,
       "INT_NOTEQUAL": 1,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 4,
+      "INT_SLESS": 3,
       "INT_SUB": 17,
       "LOAD": 8,
-      "POPCOUNT": 4,
+      "POPCOUNT": 3,
       "RETURN": 1,
       "STORE": 15
     },
-    "pcode_op_count": 117
+    "pcode_op_count": 108
   },
   "stack_frame": {
     "frame_size": 4,
@@ -164,5 +168,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 11,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
 }

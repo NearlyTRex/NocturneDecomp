@@ -66,7 +66,6 @@ section .text
     PUSH 0x10016b50                     ; 10004b79 | = "Could not lock back buffer"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004b7e
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10004b83
     MOV EAX,[0x10014180]                ; 10004b86 | g_BackBufferSurface
         ;   Label: LAB_10004b86
     PUSH EAX                            ; 10004b8b
@@ -79,7 +78,6 @@ section .text
     PUSH 0x10016b6c                     ; 10004b98 | = "Could not unlock back buffer"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004b9d
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10004ba2
     XOR ECX,ECX                         ; 10004ba5
         ;   Label: LAB_10004ba5
     MOV EAX,dword ptr [ESP + 0x68]      ; 10004ba7

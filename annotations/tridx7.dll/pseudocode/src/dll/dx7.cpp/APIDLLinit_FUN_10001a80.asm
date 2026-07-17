@@ -32,7 +32,7 @@
 ;   DirectDrawCreate
 ;   DirectDrawEnumerateExA
 ;   dll_dx7.cpp_APIDLLkill_FUN_10002460
-;   dll_dx7.cpp_FUN_10001d70
+;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_FUN_10002370
 ;   dll_dx7.cpp_FUN_10002ea0
 ;   dll_dx7.cpp_FUN_10002f40
@@ -210,8 +210,8 @@ section .text
     CALL dword ptr [EBX]                ; 10001c6a
     PUSH EAX                            ; 10001c6c
     MOV ESI,EAX                         ; 10001c6d
-    CALL dll_dx7.cpp_FUN_10001d70       ; 10001c6f
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 10001c6f
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 10001c74
     TEST ESI,ESI                        ; 10001c77
     JZ 0x10001c8d                       ; 10001c79

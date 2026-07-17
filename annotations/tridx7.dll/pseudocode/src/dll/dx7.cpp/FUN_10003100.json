@@ -52,19 +52,19 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 99,
+        "line": 100,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 99,
+        "line": 100,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 99,
+        "line": 100,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
@@ -73,21 +73,22 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 189,
-    "complexity_score": 367,
+    "assembly_lines": 188,
+    "complexity_score": 383,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 24,
+    "pseudocode_lines": 98,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy",
-      "unrolled_memset"
+      "unrolled_memset",
+      "warning_noreturn"
     ],
     "total_lines": 286
   },
@@ -104,6 +105,10 @@
     "address_range": [
       [
         "10003100",
+        "100032cd"
+      ],
+      [
+        "100032d1",
         "10003332"
       ]
     ],
@@ -242,8 +247,8 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.431137724550898,
-    "instruction_count": 167,
+    "avg_pcode_per_instr": 4.403614457831325,
+    "instruction_count": 166,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 1,
@@ -257,24 +262,24 @@
       "FLOAT_DIV": 1,
       "FLOAT_MULT": 2,
       "INT2FLOAT": 2,
-      "INT_ADD": 76,
-      "INT_AND": 73,
-      "INT_CARRY": 9,
-      "INT_EQUAL": 70,
+      "INT_ADD": 75,
+      "INT_AND": 71,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 68,
       "INT_LESS": 6,
       "INT_MULT": 5,
       "INT_SBORROW": 6,
-      "INT_SCARRY": 10,
-      "INT_SLESS": 33,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 32,
       "INT_SUB": 56,
       "INT_XOR": 11,
       "INT_ZEXT": 6,
       "LOAD": 44,
-      "POPCOUNT": 33,
+      "POPCOUNT": 32,
       "RETURN": 8,
       "STORE": 63
     },
-    "pcode_op_count": 740
+    "pcode_op_count": 731
   },
   "stack_frame": {
     "frame_size": 4,
@@ -366,8 +371,16 @@
       "type": "undefined_data"
     },
     {
+      "description": "Subroutine marked as non-returning",
+      "line": 84,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 92,
+      "line": 93,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
@@ -375,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_100141b8",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
@@ -383,7 +396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_100141b8",
       "severity": "mild",
       "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
@@ -447,7 +460,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 87,
+      "line": 88,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -471,7 +484,7 @@
     },
     {
       "description": "Watcom inline memset (REP STOSD at 100032df, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 157,
+      "line": 156,
       "match": "STOSD.REP",
       "severity": "moderate",
       "text": "// 100032df: STOSD.REP ES:EDI",

@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
 // Address: 10002500
-// Address Range: [[10002500, 10002b1a]]
+// Address Range: [[10002500, 10002882] [10002893, 10002ad7] [10002adb, 10002b1a]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
 
@@ -94,7 +94,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   iVar3 = g_ScreenBitDepth;
   dll_dx7_cpp_FUN_10002370();
   HVar2 = (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,0x11);
-  dll_dx7_cpp_FUN_10001d70(HVar2);
+  dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
   if (HVar2 != 0) {
     return 0;
   }
@@ -146,14 +146,14 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
   HVar2 = (*g_Direct3D3->vtable->EnumZBufferFormats)
                     (g_Direct3D3,(GUID *)&g_Direct3DDeviceGUID,dll_dx7_cpp_FUN_10002b50,aDStack_210)
   ;
-  dll_dx7_cpp_FUN_10001d70(HVar2);
+  dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
   if (aDStack_210[0] != 0x20) {
     HVar2 = (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);
     if (HVar2 != 0) {
       return 0;
     }
+                    /* WARNING: Subroutine does not return */
     dll_dx7_cpp_fatalError_FUN_10002340("Your 3D hardware needs to support a Z buffer");
-    return 0;
   }
   pDVar9 = &DStack_1e0;
   for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -210,6 +210,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
       iVar3 = dll_dx7_cpp_FUN_10003100();
       if (iVar3 == 0) {
         _sprintf(acStack_100,"Unable to initialize Direct3D in %dx%dx%dbpp.   Your video card doesn't support this mode.");
+                    /* WARNING: Subroutine does not return */
         dll_dx7_cpp_fatalError_FUN_10002340(acStack_100);
       }
       SetCursorPos(0x27f,0x1df);

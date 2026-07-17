@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130
 // Address: 10005130
-// Address Range: [[10005130, 10005278]]
+// Address Range: [[10005130, 10005256] [1000525a, 10005278]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
 
@@ -45,6 +45,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_b
       DAT_1001422c = DAT_1001422c + 3;
       *(ushort *)(&DAT_10238914 + iVar2 * 2) = uVar3;
       if (0x3e76 < DAT_1001422c) {
+                    /* WARNING: Subroutine does not return */
         dll_dx7_cpp_fatalError_FUN_10002340("You're shoving too many faces");
       }
       polygons = polygons + 1;

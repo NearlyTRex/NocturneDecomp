@@ -119,7 +119,6 @@ section .text
     PUSH 0x10016a4c                     ; 10003050 | = "D3D won't let me convert a surface to..."
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003055
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 1000305a
     MOV EAX,[0x10014214]                ; 1000305d | g_TextureCount
         ;   Label: LAB_1000305d
     MOV ESI,EAX                         ; 10003062
@@ -131,7 +130,6 @@ section .text
     PUSH 0x10016a80                     ; 10003071 | = "Too many textures requested"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10003076
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 1000307b
     MOV EAX,ESI                         ; 1000307e
         ;   Label: LAB_1000307e
     POP EDI                             ; 10003080

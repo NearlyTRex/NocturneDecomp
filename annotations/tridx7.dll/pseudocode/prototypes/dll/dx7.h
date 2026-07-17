@@ -31,13 +31,13 @@ int __cdecl resolveTextureSlot(SMRGLTextureBasic *texture_info);
 // Address: 100015d0
 void __cdecl bindTextureBySize(SMRGLTextureBasic *texture_info);
 
-// Original: dll_dx7.cpp_FUN_100017b0
+// Original: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
 // Address: 100017b0
-undefined4 FUN_100017b0(undefined4 *param_1,char *param_2,char *param_3);
+int __stdcall enumAdapterCallback(GUID *lp_guid,LPCSTR lp_driver_description,LPCSTR lp_driver_name,LPVOID lp_context,HMONITOR hmonitor);
 
-// Original: dll_dx7.cpp_FUN_10001900
+// Original: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
 // Address: 10001900
-undefined4 FUN_10001900(GUID *param_1);
+int __cdecl isAdapter3DCapable(GUID *adapter_guid);
 
 // Original: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
 // Address: 100019a0
@@ -47,9 +47,9 @@ void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer);
 // Address: 10001a80
 int __cdecl APIDLLinit(HWND windowHandle,CExternalRendererBridge *interface);
 
-// Original: dll_dx7.cpp_FUN_10001d70
+// Original: dll_dx7.cpp_checkD3DResult_FUN_10001d70
 // Address: 10001d70
-void FUN_10001d70(int param_1);
+void __cdecl checkD3DResult(HRESULT result);
 
 // Original: dll_dx7.cpp_fatalError_FUN_10002340
 // Address: 10002340

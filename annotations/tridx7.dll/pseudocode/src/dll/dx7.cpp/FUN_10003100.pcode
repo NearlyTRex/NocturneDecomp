@@ -863,17 +863,6 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x100032ce,4)
 CALL (ram,0x10002340,4)
 
-@100032ce [ESP:-300](+4)~  # ADD ESP, 0x4
-INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
-INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
-INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
-INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
-POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
-INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
-
 @100032d1 [ESP:-300]~  # LEA EDI, [ESP + 0xb4]
 INT_ADD (unique,0x7f00,4) = (const,0xb4,4), (register,0x10,4) /* ESP */
 COPY (register,0x1c,4) /* EDI */ = (unique,0x7f00,4)
@@ -1091,5 +1080,5 @@ INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 167 instructions, 740 P-code ops
+# Summary: 166 instructions, 731 P-code ops
 # ============================================================================

@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/WinDef.h"
 #include "system/unknwn.h"
 #include "system/windef.h"
 #include "system/winnt.h"
@@ -38,7 +39,7 @@ typedef struct DDDEVICEIDENTIFIER {
 #pragma pack(pop)
 
 // Function Definition: DDENUMCALLBACKEXA
-typedef BOOL DDENUMCALLBACKEXA(GUID* lpGUID, char* lpDriverDescription, char* lpDriverName, void* lpContext, void* hMonitor);
+typedef BOOL DDENUMCALLBACKEXA(GUID* lpGUID, LPCSTR lpDriverDescription, LPCSTR lpDriverName, LPVOID lpContext, HMONITOR hMonitor);
 
 // Union: DDPIXELFORMAT_union1
 typedef union DDPIXELFORMAT_union1 {

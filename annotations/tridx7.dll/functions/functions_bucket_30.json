@@ -8,12 +8,102 @@
         "start":"100017b0"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_100017b0",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_enumAdapterCallback_FUN_100017b0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"lp_guid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"GUID*"
+        },
+        {
+          "name":"lp_driver_description",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lp_driver_name",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lp_context",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPVOID"
+        },
+        {
+          "name":"hmonitor",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"HMONITOR"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -281,9 +371,14 @@
     "addr":"10003a30",
     "body":[
       {
-        "end":"10003a73",
-        "size":68,
+        "end":"10003a66",
+        "size":55,
         "start":"10003a30"
+      },
+      {
+        "end":"10003a73",
+        "size":10,
+        "start":"10003a6a"
       }
     ],
     "importable":true,
@@ -395,9 +490,19 @@
     "addr":"10004b30",
     "body":[
       {
-        "end":"10004d02",
-        "size":467,
+        "end":"10004b82",
+        "size":83,
         "start":"10004b30"
+      },
+      {
+        "end":"10004ba1",
+        "size":28,
+        "start":"10004b86"
+      },
+      {
+        "end":"10004d02",
+        "size":350,
+        "start":"10004ba5"
       }
     ],
     "conv":"__cdecl",
@@ -557,9 +662,14 @@
     "addr":"10005130",
     "body":[
       {
-        "end":"10005278",
-        "size":329,
+        "end":"10005256",
+        "size":295,
         "start":"10005130"
+      },
+      {
+        "end":"10005278",
+        "size":31,
+        "start":"1000525a"
       }
     ],
     "conv":"__cdecl",

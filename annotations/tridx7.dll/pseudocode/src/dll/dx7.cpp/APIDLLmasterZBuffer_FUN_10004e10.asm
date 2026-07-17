@@ -67,7 +67,6 @@ section .text
     PUSH 0x10016b8c                     ; 10004e6c | = "masterZ blt failed"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004e71
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10004e76
     MOV EAX,0x1                         ; 10004e79
         ;   Label: LAB_10004e79
     ADD ESP,0x10                        ; 10004e7e

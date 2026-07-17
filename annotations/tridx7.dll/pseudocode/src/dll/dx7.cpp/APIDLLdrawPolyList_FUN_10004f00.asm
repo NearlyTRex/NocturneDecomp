@@ -115,7 +115,6 @@ section .text
     PUSH 0x10016bb8                     ; 10004fdb | = "You're shoving too many faces"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10004fe0
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10004fe5
     ADD dword ptr [ESP + 0x14],0x4      ; 10004fe8
         ;   Label: LAB_10004fe8
     DEC dword ptr [ESP + 0x18]          ; 10004fed

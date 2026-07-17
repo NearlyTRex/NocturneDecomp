@@ -35,7 +35,7 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
   bVar14 = 0;
   dll_dx7_cpp_APIDLLkill_FUN_10002460();
   g_AdapterCount = 0;
-  DirectDrawEnumerateExA(dll_dx7_cpp_FUN_100017b0,(void *)0x0,7);
+  DirectDrawEnumerateExA(dll_dx7_cpp_enumAdapterCallback_FUN_100017b0,(void *)0x0,7);
   DStack_430 = 0;
   if (0 < g_AdapterCount) {
     iVar8 = 0;
@@ -136,7 +136,7 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
   }
   HVar3 = (*g_DirectDraw->vtable->QueryInterface)
                     ((IUnknown *)g_DirectDraw,(GUID *)&g_IID_IDirectDraw4,&g_DirectDraw4);
-  dll_dx7_cpp_FUN_10001d70(HVar3);
+  dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar3);
   if (HVar3 != 0) {
     dll_dx7_cpp_APIDLLkill_FUN_10002460();
     return 0;

@@ -116,7 +116,6 @@ section .text
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10005116
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
         ;   Label: LAB_10005116
-    ADD ESP,0x4                         ; 1000511b
     MOV EAX,dword ptr [EBX*0x4 + 0x10226f08] ; 1000511e | DAT_10226f08
         ;   Label: LAB_1000511e
     POP EBP                             ; 10005125

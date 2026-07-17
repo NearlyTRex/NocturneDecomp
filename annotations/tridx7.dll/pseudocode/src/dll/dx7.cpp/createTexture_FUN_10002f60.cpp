@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_createTexture_FUN_10002f60
 // Address: 10002f60
-// Address Range: [[10002f60, 10003085]]
+// Address Range: [[10002f60, 10003059] [1000305d, 1000307a] [1000307e, 10003085]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size)
 
@@ -62,12 +62,14 @@ int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size)
   this_ptr = pSVar1->surface;
   HVar2 = (*this_ptr->vtable->QueryInterface)
                     ((IUnknown *)this_ptr,(GUID *)&g_IID_IDirect3DTexture2,&ppv_object->texture);
+  iVar3 = g_TextureCount;
   if (HVar2 != 0) {
+                    /* WARNING: Subroutine does not return */
     dll_dx7_cpp_fatalError_FUN_10002340("D3D won't let me convert a surface to a texture.");
   }
-  iVar3 = g_TextureCount;
   g_TextureCount = g_TextureCount + 1;
   if (0x1000 < g_TextureCount) {
+                    /* WARNING: Subroutine does not return */
     dll_dx7_cpp_fatalError_FUN_10002340("Too many textures requested");
   }
   return iVar3;

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 dll_dx7_cpp_FUN_10001900(GUID *param_1)
+; int __cdecl dll_dx7_cpp_isAdapter3DCapable_FUN_10001900(GUID *adapter_guid)
 ;
+; Parameters:
+; GUID *           Stack[0x4]:4   adapter_guid
 ; Local Variables:
 ; undefined        Stack[-0x2fc]:1  local_2fc
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_FUN_100017b0 at 100017b9
+;   dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 at 100017b9
 ;
 ; Called Functions:
 ;   DirectDrawCreate
@@ -17,7 +19,7 @@
 section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 10001900
-        ;   Label: dll_dx7.cpp_FUN_10001900
+        ;   Label: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
     SUB ESP,0x2fc                       ; 10001904
     LEA EAX,[ESP]                       ; 1000190a
     PUSH EDI                            ; 1000190e

@@ -33,8 +33,8 @@
 ;   crt_stdio.c_fopen_FUN_10005560
 ;   dll_dx7.cpp_APIDLLclear_FUN_10004840
 ;   dll_dx7.cpp_APIDLLtoggle_FUN_100024b0
+;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10001d70
 ;   dll_dx7.cpp_FUN_10002370
 ;   dll_dx7.cpp_FUN_10002f40
 ;   dll_dx7.cpp_FUN_10003100
@@ -164,8 +164,8 @@ section .text
     CALL dword ptr [EAX + 0x50]         ; 100026da
     PUSH EAX                            ; 100026dd
     MOV EDI,EAX                         ; 100026de
-    CALL dll_dx7.cpp_FUN_10001d70       ; 100026e0
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 100026e0
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 100026e5
     TEST EDI,EDI                        ; 100026e8
     JZ 0x100026f9                       ; 100026ea
@@ -300,8 +300,8 @@ section .text
     PUSH ECX                            ; 10002849
     CALL dword ptr [EAX + 0x28]         ; 1000284a
     PUSH EAX                            ; 1000284d
-    CALL dll_dx7.cpp_FUN_10001d70       ; 1000284e
-        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10001d70()
+    CALL dll_dx7.cpp_checkD3DResult_FUN_10001d70 ; 1000284e
+        ;   XREF to: 10001d70 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_checkD3DResult_FUN_10001d70(HRESULT result)
     ADD ESP,0x4                         ; 10002853
     CMP dword ptr [ESP + 0x10],0x20     ; 10002856
     JZ 0x10002893                       ; 1000285b
@@ -324,14 +324,6 @@ section .text
         ;   Label: LAB_10002879
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 1000287e
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10002883
-    XOR EAX,EAX                         ; 10002886
-    POP EBP                             ; 10002888
-    POP EDI                             ; 10002889
-    POP ESI                             ; 1000288a
-    POP EBX                             ; 1000288b
-    ADD ESP,0x210                       ; 1000288c
-    RET                                 ; 10002892
     LEA EDI,[ESP + 0x40]                ; 10002893
         ;   Label: LAB_10002893
     XOR EAX,EAX                         ; 10002897
@@ -517,7 +509,6 @@ section .text
     PUSH ECX                            ; 10002ad2
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10002ad3
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10002ad8
     PUSH 0x1df                          ; 10002adb
         ;   Label: LAB_10002adb
     PUSH 0x27f                          ; 10002ae0

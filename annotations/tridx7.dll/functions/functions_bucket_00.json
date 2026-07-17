@@ -331,9 +331,10 @@
         "start":"10001900"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10001900",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_isAdapter3DCapable_FUN_10001900",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -353,8 +354,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"adapter_guid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"GUID*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -422,9 +448,19 @@
     "addr":"10002500",
     "body":[
       {
-        "end":"10002b1a",
-        "size":1563,
+        "end":"10002882",
+        "size":899,
         "start":"10002500"
+      },
+      {
+        "end":"10002ad7",
+        "size":581,
+        "start":"10002893"
+      },
+      {
+        "end":"10002b1a",
+        "size":64,
+        "start":"10002adb"
       }
     ],
     "conv":"__cdecl",
@@ -466,9 +502,14 @@
     "addr":"10003100",
     "body":[
       {
-        "end":"10003332",
-        "size":563,
+        "end":"100032cd",
+        "size":462,
         "start":"10003100"
+      },
+      {
+        "end":"10003332",
+        "size":98,
+        "start":"100032d1"
       }
     ],
     "conv":"__cdecl",
@@ -624,9 +665,24 @@
     "addr":"10003a80",
     "body":[
       {
-        "end":"10003c93",
-        "size":532,
+        "end":"10003ab3",
+        "size":52,
         "start":"10003a80"
+      },
+      {
+        "end":"10003b71",
+        "size":181,
+        "start":"10003abd"
+      },
+      {
+        "end":"10003bb6",
+        "size":66,
+        "start":"10003b75"
+      },
+      {
+        "end":"10003c93",
+        "size":218,
+        "start":"10003bba"
       }
     ],
     "conv":"__cdecl",
@@ -998,9 +1054,14 @@
     "addr":"10004f00",
     "body":[
       {
-        "end":"10005008",
-        "size":265,
+        "end":"10004fe4",
+        "size":229,
         "start":"10004f00"
+      },
+      {
+        "end":"10005008",
+        "size":33,
+        "start":"10004fe8"
       }
     ],
     "conv":"__cdecl",

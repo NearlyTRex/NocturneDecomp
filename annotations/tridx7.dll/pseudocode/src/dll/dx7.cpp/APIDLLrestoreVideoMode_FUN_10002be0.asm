@@ -35,7 +35,6 @@ section .text
     PUSH 0x10016a14                     ; 10002bf3 | = "Cannot unlock back buffer"
     CALL dll_dx7.cpp_fatalError_FUN_10002340 ; 10002bf8
         ;   XREF to: 10002340 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_fatalError_FUN_10002340(char * message)
-    ADD ESP,0x4                         ; 10002bfd
     MOV EAX,[0x10014184]                ; 10002c00 | g_DirectDraw
         ;   Label: LAB_10002c00
     PUSH EAX                            ; 10002c05

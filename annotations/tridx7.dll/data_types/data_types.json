@@ -49,10 +49,6 @@
       "type":"struct"
     },
     {
-      "name":"DDENUMCALLBACKEXA",
-      "type":"function_definition"
-    },
-    {
       "name":"DDPIXELFORMAT_union1",
       "type":"union"
     },
@@ -110,6 +106,10 @@
     },
     {
       "name":"HMODULE",
+      "type":"typedef"
+    },
+    {
+      "name":"HMONITOR",
       "type":"typedef"
     },
     {
@@ -250,50 +250,6 @@
     },
     {
       "name":"BOOL",
-      "type":"typedef"
-    },
-    {
-      "name":"IUnknown",
-      "type":"struct"
-    },
-    {
-      "name":"IUnknown_AddRef",
-      "type":"function_definition"
-    },
-    {
-      "name":"IUnknown_Release",
-      "type":"function_definition"
-    },
-    {
-      "name":"IUnknown_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"ImageBaseOffset32",
-      "type":"typedef"
-    },
-    {
-      "name":"IMAGE_DATA_DIRECTORY",
-      "type":"struct"
-    },
-    {
-      "name":"IMAGE_DIRECTORY_ENTRY_EXPORT",
-      "type":"struct"
-    },
-    {
-      "name":"IMAGE_OPTIONAL_HEADER32",
-      "type":"struct"
-    },
-    {
-      "name":"IMAGE_NT_HEADERS32",
-      "type":"struct"
-    },
-    {
-      "name":"LC_ID",
-      "type":"struct"
-    },
-    {
-      "name":"LONG",
       "type":"typedef"
     },
     {
@@ -749,6 +705,50 @@
       "type":"function_definition"
     },
     {
+      "name":"IUnknown",
+      "type":"struct"
+    },
+    {
+      "name":"IUnknown_AddRef",
+      "type":"function_definition"
+    },
+    {
+      "name":"IUnknown_Release",
+      "type":"function_definition"
+    },
+    {
+      "name":"IUnknown_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"ImageBaseOffset32",
+      "type":"typedef"
+    },
+    {
+      "name":"IMAGE_DATA_DIRECTORY",
+      "type":"struct"
+    },
+    {
+      "name":"IMAGE_DIRECTORY_ENTRY_EXPORT",
+      "type":"struct"
+    },
+    {
+      "name":"IMAGE_OPTIONAL_HEADER32",
+      "type":"struct"
+    },
+    {
+      "name":"IMAGE_NT_HEADERS32",
+      "type":"struct"
+    },
+    {
+      "name":"LC_ID",
+      "type":"struct"
+    },
+    {
+      "name":"LONG",
+      "type":"typedef"
+    },
+    {
       "name":"LPBOOL",
       "type":"typedef"
     },
@@ -811,6 +811,10 @@
     {
       "name":"LPVOID",
       "type":"typedef"
+    },
+    {
+      "name":"DDENUMCALLBACKEXA",
+      "type":"function_definition"
     },
     {
       "name":"DDSURFACEDESC",
@@ -1654,19 +1658,19 @@
         },
         {
           "name":"lpDriverDescription",
-          "type":"char*"
+          "type":"LPCSTR"
         },
         {
           "name":"lpDriverName",
-          "type":"char*"
+          "type":"LPCSTR"
         },
         {
           "name":"lpContext",
-          "type":"void*"
+          "type":"LPVOID"
         },
         {
           "name":"hMonitor",
-          "type":"void*"
+          "type":"HMONITOR"
         }
       ],
       "return_type":"BOOL",
@@ -11145,7 +11149,14 @@
       "type":"typedef"
     },
     {
-      "base":"long",
+      "base":"void*",
+      "cat":"/Nocturne/Typedef/System/WinDef.h",
+      "importable":true,
+      "name":"HMONITOR",
+      "type":"typedef"
+    },
+    {
+      "base":"int",
       "cat":"/Nocturne/Typedef/System/WinDef.h",
       "importable":true,
       "name":"HRESULT",

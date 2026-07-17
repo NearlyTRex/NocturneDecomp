@@ -1,6 +1,6 @@
 // Name: dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60
 // Address: 10002e60
-// Address Range: [[10002e60, 10002e91]]
+// Address Range: [[10002e60, 10002e88] [10002e8c, 10002e91]]
 // Convention: __cdecl
 // Signature: int __cdecl dll_dx7_cpp_APIDLLunlockFrame_FUN_10002e60(void)
 
@@ -18,6 +18,7 @@ int __cdecl dll_dx7_cpp_APIDLLunlockFrame_FUN_10002e60(void)
   g_FrameLocked = 0;
   iVar1 = dll_dx7_cpp_FUN_10002c50();
   if (iVar1 == 0) {
+                    /* WARNING: Subroutine does not return */
     dll_dx7_cpp_fatalError_FUN_10002340("Cannot unlock back buffer");
   }
   return 1;

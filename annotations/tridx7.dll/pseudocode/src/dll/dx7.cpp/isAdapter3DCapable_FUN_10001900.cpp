@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_FUN_10001900
+// Name: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
 // Address: 10001900
 // Address Range: [[10001900, 10001990]]
-// Convention: unknown
-// Signature: undefined4 dll_dx7_cpp_FUN_10001900(GUID *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl dll_dx7_cpp_isAdapter3DCapable_FUN_10001900(GUID *adapter_guid)
 
 #include "nocturne.h"
 
-uint dll_dx7_cpp_FUN_10001900(GUID *param_1)
+int __cdecl dll_dx7_cpp_isAdapter3DCapable_FUN_10001900(GUID *adapter_guid)
 
 {
   HRESULT HVar1;
@@ -19,7 +19,7 @@ uint dll_dx7_cpp_FUN_10001900(GUID *param_1)
   uint auStack_17c [95];
   
   bVar4 = 0;
-  HVar1 = DirectDrawCreate(param_1,&local_2fc,(IUnknown *)0x0);
+  HVar1 = DirectDrawCreate(adapter_guid,&local_2fc,(IUnknown *)0x0);
   if (HVar1 == 0) {
     puVar3 = &uStack_2f8;
     for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {

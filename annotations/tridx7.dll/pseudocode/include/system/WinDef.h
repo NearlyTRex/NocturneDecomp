@@ -23,6 +23,10 @@ typedef struct HINSTANCE__ {
 // pointer to HINSTANCE__
 typedef HINSTANCE HMODULE;
 
+// Typedef: HMONITOR
+// pointer to void
+typedef void* HMONITOR;
+
 // Typedef: HWND
 // pointer to HWND__
 typedef struct HWND__* HWND;

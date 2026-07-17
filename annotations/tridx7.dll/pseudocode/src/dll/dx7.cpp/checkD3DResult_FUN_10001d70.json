@@ -1,0 +1,1574 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 354,
+    "complexity_score": 1003,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 78,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 248,
+    "suspect_count": 75,
+    "suspect_types": [
+      "warning_noreturn"
+    ],
+    "total_lines": 602
+  },
+  "cross_references": [
+    {
+      "addr": "10001a80",
+      "from_addr": "10001c6f",
+      "name": "dll_dx7.cpp_APIDLLinit_FUN_10001a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002500",
+      "from_addr": "100026e0",
+      "name": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10003a80",
+      "from_addr": "10003bf2",
+      "name": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001d70",
+    "address_range": [
+      [
+        "10001d70",
+        "10001e0b"
+      ],
+      [
+        "10001e0f",
+        "10001e18"
+      ],
+      [
+        "10001e1c",
+        "10001e25"
+      ],
+      [
+        "10001e29",
+        "10001e32"
+      ],
+      [
+        "10001e36",
+        "10001e3f"
+      ],
+      [
+        "10001e43",
+        "10001e4c"
+      ],
+      [
+        "10001e50",
+        "10001e59"
+      ],
+      [
+        "10001e5d",
+        "10001e66"
+      ],
+      [
+        "10001e6a",
+        "10001e73"
+      ],
+      [
+        "10001e77",
+        "10001e80"
+      ],
+      [
+        "10001e84",
+        "10001e8d"
+      ],
+      [
+        "10001e91",
+        "10001e9a"
+      ],
+      [
+        "10001e9e",
+        "10001ea7"
+      ],
+      [
+        "10001eab",
+        "10001eb4"
+      ],
+      [
+        "10001eb8",
+        "10001ec1"
+      ],
+      [
+        "10001ec5",
+        "10001ece"
+      ],
+      [
+        "10001ed2",
+        "10001edb"
+      ],
+      [
+        "10001edf",
+        "10001ee8"
+      ],
+      [
+        "10001eec",
+        "10001ef5"
+      ],
+      [
+        "10001ef9",
+        "10001f02"
+      ],
+      [
+        "10001f06",
+        "10001f0f"
+      ],
+      [
+        "10001f13",
+        "10001f1c"
+      ],
+      [
+        "10001f20",
+        "10001f29"
+      ],
+      [
+        "10001f2d",
+        "10001f36"
+      ],
+      [
+        "10001f3a",
+        "10001f43"
+      ],
+      [
+        "10001f47",
+        "10001f50"
+      ],
+      [
+        "10001f54",
+        "10001f5d"
+      ],
+      [
+        "10001f61",
+        "10001f6a"
+      ],
+      [
+        "10001f6e",
+        "10001f77"
+      ],
+      [
+        "10001f7b",
+        "10001f84"
+      ],
+      [
+        "10001f88",
+        "10001f91"
+      ],
+      [
+        "10001f95",
+        "10001f9e"
+      ],
+      [
+        "10001fa2",
+        "10001fab"
+      ],
+      [
+        "10001faf",
+        "10001fb8"
+      ],
+      [
+        "10001fbc",
+        "10001fc5"
+      ],
+      [
+        "10001fc9",
+        "10001fd2"
+      ],
+      [
+        "10001fd6",
+        "10001fdf"
+      ],
+      [
+        "10001fe3",
+        "10001fec"
+      ],
+      [
+        "10001ff0",
+        "10001ff9"
+      ],
+      [
+        "10001ffd",
+        "10002006"
+      ],
+      [
+        "1000200a",
+        "10002013"
+      ],
+      [
+        "10002017",
+        "10002020"
+      ],
+      [
+        "10002024",
+        "1000202d"
+      ],
+      [
+        "10002031",
+        "1000203a"
+      ],
+      [
+        "1000203e",
+        "10002047"
+      ],
+      [
+        "1000204b",
+        "10002054"
+      ],
+      [
+        "10002058",
+        "10002061"
+      ],
+      [
+        "10002065",
+        "1000206e"
+      ],
+      [
+        "10002072",
+        "1000207b"
+      ],
+      [
+        "1000207f",
+        "10002088"
+      ],
+      [
+        "1000208c",
+        "10002095"
+      ],
+      [
+        "10002099",
+        "100020a2"
+      ],
+      [
+        "100020a6",
+        "100020af"
+      ],
+      [
+        "100020b3",
+        "100020bc"
+      ],
+      [
+        "100020c0",
+        "100020c9"
+      ],
+      [
+        "100020cd",
+        "100020d6"
+      ],
+      [
+        "100020da",
+        "100020e3"
+      ],
+      [
+        "100020e7",
+        "100020f0"
+      ],
+      [
+        "100020f4",
+        "100020fd"
+      ],
+      [
+        "10002101",
+        "1000210a"
+      ],
+      [
+        "1000210e",
+        "10002117"
+      ],
+      [
+        "1000211b",
+        "10002124"
+      ],
+      [
+        "10002128",
+        "10002131"
+      ],
+      [
+        "10002135",
+        "1000213e"
+      ],
+      [
+        "10002142",
+        "1000214b"
+      ],
+      [
+        "1000214f",
+        "10002158"
+      ],
+      [
+        "1000215c",
+        "10002165"
+      ],
+      [
+        "10002169",
+        "10002172"
+      ],
+      [
+        "10002176",
+        "1000217f"
+      ],
+      [
+        "10002183",
+        "1000218c"
+      ],
+      [
+        "10002190",
+        "10002199"
+      ],
+      [
+        "1000219d",
+        "100021a6"
+      ],
+      [
+        "100021aa",
+        "100021b3"
+      ],
+      [
+        "100021b7",
+        "100021c0"
+      ],
+      [
+        "100021c4",
+        "100021cd"
+      ],
+      [
+        "100021d1",
+        "100021d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_checkD3DResult_FUN_10001d70",
+    "signature": "void __cdecl dll_dx7_cpp_checkD3DResult_FUN_10001d70(HRESULT result)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_fatalError_FUN_10002340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100021d4",
+      "name": "switchdataD_100021d4",
+      "type": "void*",
+      "value": "10001e02"
+    },
+    {
+      "addr": "100022b0",
+      "name": "switchdataD_100022b0",
+      "type": "byte",
+      "value": "0x0"
+    },
+    {
+      "addr": "100022fc",
+      "name": "switchdataD_100022fc",
+      "type": "void*",
+      "value": "1000203e"
+    },
+    {
+      "addr": "10014250",
+      "name": "s_D3DERR_BADMAJORVERSION_T_10014250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100142f8",
+      "name": "s_D3DERR_BADMINORVERSION_T_100142f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014400",
+      "name": "s_D3DERR_COLORKEYATTACHED_10014400",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014480",
+      "name": "s_D3DERR_CONFLICTINGTEXTUR_10014480",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100144d8",
+      "name": "s_D3DERR_CONFLICTINGTEXTUR_100144d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100145bc",
+      "name": "s_D3DERR_CONFLICTINGRENDER_100145bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014614",
+      "name": "s_D3DERR_DEVICEAGGREGATED_10014614",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100146a4",
+      "name": "s_D3DERR_EXECUTE_CLIPPED_F_100146a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014700",
+      "name": "s_D3DERR_EXECUTE_CREATE_FA_10014700",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001479c",
+      "name": "s_D3DERR_EXECUTE_DESTROY_F_1001479c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100147f8",
+      "name": "s_D3DERR_EXECUTE_FAILED_Th_100147f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014858",
+      "name": "s_D3DERR_EXECUTE_LOCK_FAIL_10014858",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001489c",
+      "name": "s_D3DERR_EXECUTE_LOCKED_Th_1001489c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001491c",
+      "name": "s_D3DERR_EXECUTE_NOT_LOCKE_1001491c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014984",
+      "name": "s_D3DERR_EXECUTE_UNLOCK_FA_10014984",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100149cc",
+      "name": "s_D3DERR_INITFAILED_A_rend_100149cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014a38",
+      "name": "s_D3DERR_INBEGIN_The_reque_10014a38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014b10",
+      "name": "s_D3DERR_INVALID_DEVICE_Th_10014b10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014b50",
+      "name": "s_D3DERR_INVALIDCURRENTVIE_10014b50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014ba0",
+      "name": "s_D3DERR_INVALIDMATRIX_The_10014ba0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014c74",
+      "name": "s_D3DERR_INVALIDPALETTE_Th_10014c74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014cc0",
+      "name": "s_D3DERR_INVALIDPRIMITIVET_10014cc0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014d1c",
+      "name": "s_D3DERR_INVALIDRAMPTEXTUR_10014d1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014dc8",
+      "name": "s_D3DERR_INVALIDVERTEXFORM_10014dc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014e40",
+      "name": "s_D3DERR_INVALIDVERTEXTYPE_10014e40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014e94",
+      "name": "s_D3DERR_LIGHT_SET_FAILED_10014e94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014ef0",
+      "name": "s_D3DERR_LIGHTHASVIEWPORT_10014ef0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014f68",
+      "name": "s_D3DERR_LIGHTNOTINTHISVIE_10014f68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10014fec",
+      "name": "s_D3DERR_MATERIAL_CREATE_F_10014fec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015080",
+      "name": "s_D3DERR_MATERIAL_DESTROY_10015080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100150d8",
+      "name": "s_D3DERR_MATERIAL_GETDATA_100150d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015128",
+      "name": "s_D3DERR_MATERIAL_SETDATA_10015128",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015174",
+      "name": "s_D3DERR_MATRIX_CREATE_FAI_10015174",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100151fc",
+      "name": "s_D3DERR_MATRIX_DESTROY_FA_100151fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015250",
+      "name": "s_D3DERR_MATRIX_GETDATA_FA_10015250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100152dc",
+      "name": "s_D3DERR_MATRIX_SETDATA_FA_100152dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015364",
+      "name": "s_D3DERR_NOCURRENTVIEWPORT_10015364",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100153cc",
+      "name": "s_D3DERR_NOTINBEGIN_The_re_100153cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015484",
+      "name": "s_D3DERR_NOVIEWPORTS_The_r_10015484",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100154fc",
+      "name": "s_D3DERR_SCENE_BEGIN_FAILE_100154fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015538",
+      "name": "s_D3DERR_SCENE_END_FAILED_10015538",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001557c",
+      "name": "s_D3DERR_SCENE_IN_SCENE_Sc_1001557c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015614",
+      "name": "s_D3DERR_SCENE_NOT_IN_SCEN_10015614",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100156b8",
+      "name": "s_D3DERR_SETVIEWPORTDATA_F_100156b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015704",
+      "name": "s_D3DERR_STENCILBUFFER_NOT_10015704",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100157b0",
+      "name": "s_D3DERR_SURFACENOTINVIDME_100157b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001587c",
+      "name": "s_D3DERR_TEXTURE_BADSIZE_T_1001587c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001594c",
+      "name": "s_D3DERR_TEXTURE_CREATE_FA_1001594c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100159b8",
+      "name": "s_D3DERR_TEXTURE_DESTROY_F_100159b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015a10",
+      "name": "s_D3DERR_TEXTURE_GETSURF_F_10015a10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015a7c",
+      "name": "s_D3DERR_TEXTURE_LOAD_FAIL_10015a7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015abc",
+      "name": "s_D3DERR_TEXTURE_LOCK_FAIL_10015abc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015afc",
+      "name": "s_D3DERR_TEXTURE_LOCKED_Th_10015afc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015b74",
+      "name": "s_D3DERR_TEXTURE_NO_SUPPOR_10015b74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015bbc",
+      "name": "s_D3DERR_TEXTURE_NOT_LOCKE_10015bbc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015c34",
+      "name": "s_D3DERR_TEXTURE_SWAP_FAIL_10015c34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015c7c",
+      "name": "s_D3DERR_TEXTURE_UNLOCK_FA_10015c7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015cc8",
+      "name": "s_D3DERR_TOOMANYOPERATIONS_10015cc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015d3c",
+      "name": "s_D3DERR_TOOMANYPRIMITIVES_10015d3c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015dac",
+      "name": "s_D3DERR_UNSUPPORTEDALPHAA_10015dac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015e2c",
+      "name": "s_D3DERR_UNSUPPORTEDALPHAO_10015e2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015eb4",
+      "name": "s_D3DERR_UNSUPPORTEDCOLORA_10015eb4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015f34",
+      "name": "s_D3DERR_UNSUPPORTEDCOLORO_10015f34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10015fbc",
+      "name": "s_D3DERR_UNSUPPORTEDFACTOR_10015fbc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016020",
+      "name": "s_D3DERR_UNSUPPORTEDTEXTUR_10016020",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016080",
+      "name": "s_D3DERR_VBUF_CREATE_FAILE_10016080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016114",
+      "name": "s_D3DERR_VERTEXBUFFERLOCKE_10016114",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016184",
+      "name": "s_D3DERR_VERTEXBUFFEROPTIM_10016184",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016254",
+      "name": "s_D3DERR_VIEWPORTDATANOTSE_10016254",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016330",
+      "name": "s_D3DERR_VIEWPORTHASNODEVI_10016330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016424",
+      "name": "s_D3DERR_WRONGTEXTUREFORMA_10016424",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016478",
+      "name": "s_D3DERR_ZBUFF_NEEDS_SYSTE_10016478",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016558",
+      "name": "s_D3DERR_ZBUFF_NEEDS_VIDEO_10016558",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016634",
+      "name": "s_D3DERR_ZBUFFER_NOTPRESEN_10016634",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100166c8",
+      "name": "s_D3DERR_ELIFINO_An_unknow_100166c8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "10001c6f",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLinit_FUN_10001a80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "100026e0",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000284e",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10003bf2",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10003c27",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10003c80",
+        "call_type": "direct",
+        "caller": "dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.340659340659341,
+    "instruction_count": 182,
+    "opcode_distribution": {
+      "BOOL_AND": 4,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "BRANCHIND": 2,
+      "CALL": 75,
+      "CBRANCH": 13,
+      "COPY": 83,
+      "INT_ADD": 7,
+      "INT_AND": 25,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 28,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 12,
+      "INT_SUB": 158,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 150
+    },
+    "pcode_op_count": 608
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "result",
+        "offset": 4,
+        "size": 4,
+        "type": "HRESULT"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 7,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 12,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 15,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 18,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 21,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 24,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 27,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 30,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 33,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 36,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 39,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 42,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 45,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 48,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 51,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 54,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 57,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 60,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 63,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 66,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 69,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 72,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 75,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 78,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 81,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 84,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 87,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 90,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 93,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 96,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 99,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 102,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 105,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 108,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 111,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 114,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 117,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 120,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 123,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 126,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 129,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 132,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 135,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 138,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 141,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 144,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 147,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 150,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 153,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 156,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 159,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 162,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 165,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 168,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 171,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 177,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 181,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 187,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 191,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 195,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 205,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 208,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 211,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 214,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 217,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 220,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 223,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 226,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 229,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 232,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 235,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 238,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 241,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 244,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 248,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
+}
