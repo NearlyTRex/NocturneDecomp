@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002c50
+;   dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     RET                                 ; 10002e6b
     MOV dword ptr [0x100141f8],0x0      ; 10002e6c | g_FrameLocked
         ;   Label: LAB_10002e6c
-    CALL dll_dx7.cpp_FUN_10002c50       ; 10002e76
-        ;   XREF to: 10002c50 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002c50()
+    CALL dll_dx7.cpp_unlockBackBuffer_FUN_10002c50 ; 10002e76
+        ;   XREF to: 10002c50 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockBackBuffer_FUN_10002c50()
     TEST EAX,EAX                        ; 10002e7b
     JNZ 0x10002e8c                      ; 10002e7d
         ;   XREF to: 10002e8c (CONDITIONAL_JUMP)  ; LAB_10002e8c

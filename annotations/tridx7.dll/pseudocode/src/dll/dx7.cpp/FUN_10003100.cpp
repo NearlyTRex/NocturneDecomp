@@ -37,11 +37,11 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
   if (iStack_110 == 0) {
     return 0;
   }
-  HVar1 = (*g_Direct3D3->vtable->CreateViewport)(g_Direct3D3,&DAT_100141e4,(IUnknown *)0x0);
+  HVar1 = (*g_Direct3D3->vtable->CreateViewport)(g_Direct3D3,&g_Viewport,(IUnknown *)0x0);
   if (HVar1 != 0) {
     return 0;
   }
-  HVar1 = (*g_Device->vtable->AddViewport)(g_Device,DAT_100141e4);
+  HVar1 = (*g_Device->vtable->AddViewport)(g_Device,g_Viewport);
   if (HVar1 != 0) {
     return 0;
   }
@@ -61,11 +61,11 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
   DStack_10c.dvClipHeight = ((float)g_ScreenHeight / (float)g_ScreenWidth) * 2.0;
   DStack_10c.dvMinZ = 0.0;
   DStack_10c.dvClipY = DStack_10c.dvClipHeight * 0.5;
-  HVar1 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,&DStack_10c);
+  HVar1 = (*g_Viewport->vtable->SetViewport2)(g_Viewport,&DStack_10c);
   if (HVar1 != 0) {
     return 0;
   }
-  (*g_Device->vtable->SetCurrentViewport)(g_Device,DAT_100141e4);
+  (*g_Device->vtable->SetCurrentViewport)(g_Device,g_Viewport);
   if (g_UseHoldBuffer != 0) {
     pDVar5 = &DStack_e0;
     for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -85,8 +85,7 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
     DStack_e0.dwHeight = 0x1e0;
     DStack_e0.ddsCaps.dwCaps = 0x40;
     HVar1 = (*g_DirectDraw4->vtable->CreateSurface)
-                      (g_DirectDraw4,&DStack_e0,(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0
-                      );
+                      (g_DirectDraw4,&DStack_e0,&g_HoldBufferSurface,(IUnknown *)0x0);
     if (HVar1 != 0) {
                     /* WARNING: Subroutine does not return */
       dll_dx7_cpp_fatalError_FUN_10002340("Can't create hold surface");
@@ -97,7 +96,9 @@ int __cdecl dll_dx7_cpp_FUN_10003100(void)
       puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
     }
     auStack_64[0] = 100;
-    (**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);
+    (*g_HoldBufferSurface->vtable->Blt)
+              (g_HoldBufferSurface,(RECT *)0x0,(IDirectDrawSurface *)0x0,(RECT *)0x0,0x1000400,
+               auStack_64);
   }
   iVar2 = dll_dx7_cpp_FUN_10003400();
   if (iVar2 == 0) {

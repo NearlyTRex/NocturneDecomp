@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350 at 1000535b
 ;   dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 at 10004b6d
-;   dll_dx7.cpp_FUN_10002dc0 at 10002dda
+;   dll_dx7.cpp_lockBackBuffer_FUN_10002dc0 at 10002dda
 ;   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 at 10003b5c
 ;
 ; *****************************************************************************

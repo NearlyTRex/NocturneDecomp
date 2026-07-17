@@ -10,6 +10,6 @@ int __cdecl dll_dx7_cpp_APIDLLsync_FUN_10004a60(void)
 
 {
                     /* 0x4a60  33  APIDLLsync */
-  dll_dx7_cpp_FUN_100047b0();
+  dll_dx7_cpp_flushBatch_FUN_100047b0();
   return 1;
 }

@@ -29,37 +29,13 @@
         "category": "undeclared_identifier",
         "column": 25,
         "line": 28,
-        "message": "use of undeclared identifier 'DAT_10226f08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_1013b8d8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_1013b8d8'"
+        "message": "use of undeclared identifier 'DAT_10226f08'; did you mean 'DAT_10226868'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_10226f08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_1013b8f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_1013b8f4'"
+        "line": 39,
+        "message": "use of undeclared identifier 'DAT_10226f08'; did you mean 'DAT_10226868'?"
       },
       {
         "category": "undeclared_identifier",
@@ -71,19 +47,19 @@
         "category": "undeclared_identifier",
         "column": 15,
         "line": 54,
-        "message": "use of undeclared identifier 'DAT_10226f08'"
+        "message": "use of undeclared identifier 'DAT_10226f08'; did you mean 'DAT_10226868'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 39,
+        "category": "incompatible_types",
+        "column": 5,
         "line": 57,
-        "message": "use of undeclared identifier 'DAT_1013b8d8'"
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_100044b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
         "line": 66,
-        "message": "use of undeclared identifier 'DAT_10226f08'"
+        "message": "use of undeclared identifier 'DAT_10226f08'; did you mean 'DAT_10226868'?"
       }
     ],
     "success": false,
@@ -92,15 +68,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 552,
+    "complexity_score": 437,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 47,
+    "suspect_count": 35,
     "suspect_types": [
       "param_count_too_few",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "unrolled_memcpy",
@@ -159,9 +136,9 @@
     },
     {
       "addr": "10014228",
-      "name": "DAT_10014228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PendingVertexCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10014234",
@@ -183,25 +160,25 @@
     },
     {
       "addr": "1013b8d8",
-      "name": "DAT_1013b8d8",
-      "type": "undefined4",
+      "name": "g_VertexBuffer",
+      "type": "SScreenVertex[16000]",
       "value": null
     },
     {
       "addr": "1013b8dc",
-      "name": "DAT_1013b8dc",
+      "name": "g_VertexBuffer[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "1013b8f0",
-      "name": "DAT_1013b8f0",
+      "name": "g_VertexBuffer[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "1013b8f4",
-      "name": "DAT_1013b8f4",
+      "name": "g_VertexBuffer[0].v",
       "type": "undefined4",
       "value": null
     },
@@ -392,14 +369,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "iVar3 = DAT_10014228;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
@@ -476,7 +445,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_1[2];",
+      "text": "iVar4 = param_1[2];",
       "type": "unnamed_param"
     },
     {
@@ -508,95 +477,31 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(param_2 + 0x1c) = iVar3;",
+      "text": "*(int *)(param_2 + 0x1c) = iVar4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_10014228",
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = DAT_10014228 * 0x20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_1013b8d8",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)(&DAT_1013b8d8 + iVar2 * 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_1013b8d8",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)(&DAT_1013b8d8 + iVar3);",
-      "type": "undefined_data"
+      "text": "iVar4 = param_1[1];",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = param_1[2];",
+      "text": "iVar2 = param_1[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_10226f08",
       "severity": "mild",
-      "text": "*(int *)(&DAT_10226f08 + iVar1 * 4) = DAT_10014228;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_10226f08 + iVar1 * 4) = DAT_10014228;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "iVar5 = DAT_10014228 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "DAT_10014228 = iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_1013b8f0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_1013b8f0 + iVar3) = (float)iVar2 * 5.9604645e-08;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_1013b8f4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_1013b8f4 + iVar3) = (float)iVar4 * 5.9604645e-08;",
+      "text": "*(int *)(&DAT_10226f08 + iVar1 * 4) = g_PendingVertexCount;",
       "type": "undefined_data"
     },
     {
@@ -604,7 +509,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1[2];",
+      "text": "iVar4 = param_1[2];",
       "type": "unnamed_param"
     },
     {
@@ -652,7 +557,7 @@
       "line": 49,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(param_2 + 0x1c) = iVar2;",
+      "text": "*(int *)(param_2 + 0x1c) = iVar4;",
       "type": "unnamed_param"
     },
     {
@@ -660,7 +565,7 @@
       "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_100044b0(param_2,&DAT_1013b8d8 + iVar3 * 0x20,param_3,0x100);",
+      "text": "dll_dx7_cpp_FUN_100044b0(param_2,g_VertexBuffer + iVar3,param_3,0x100);",
       "type": "unnamed_param"
     },
     {
@@ -668,40 +573,8 @@
       "line": 50,
       "match": "param_3",
       "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_100044b0(param_2,&DAT_1013b8d8 + iVar3 * 0x20,param_3,0x100);",
+      "text": "dll_dx7_cpp_FUN_100044b0(param_2,g_VertexBuffer + iVar3,param_3,0x100);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_1013b8d8",
-      "severity": "mild",
-      "text": "dll_dx7_cpp_FUN_100044b0(param_2,&DAT_1013b8d8 + iVar3 * 0x20,param_3,0x100);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "if (0x3e76 < DAT_10014228) {",
-      "type": "undefined_data"
     },
     {
       "description": "Subroutine marked as non-returning",
@@ -720,19 +593,27 @@
       "type": "undefined_data"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 26,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar6->owner`). Replace `pSVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "pSVar6 = (T *)&pSVar6->FIELD",
       "severity": "moderate",
-      "text": "for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar6 = (SScreenVertex *)&pSVar6->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar7->owner`). Replace `pSVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 28,
+      "match": "pSVar7 = (T *)&pSVar7->FIELD",
+      "severity": "moderate",
+      "text": "pSVar7 = (SScreenVertex *)&pSVar7->y;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 100050d9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 67,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 100050d9: MOVSD.REP ES:EDI,ESI  ; DAT_1013b8d8 | DAT_1013b8dc",
+      "text": "// 100050d9: MOVSD.REP ES:EDI,ESI  ; g_VertexBuffer | g_VertexBuffer[0].y",
       "type": "unrolled_memcpy"
     },
     {

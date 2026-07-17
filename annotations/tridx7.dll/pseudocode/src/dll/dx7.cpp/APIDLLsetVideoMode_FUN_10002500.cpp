@@ -92,7 +92,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     }
   }
   iVar3 = g_ScreenBitDepth;
-  dll_dx7_cpp_FUN_10002370();
+  dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
   HVar2 = (*g_DirectDraw4->vtable->SetCooperativeLevel)(g_DirectDraw4,(char)g_WindowHandle,0x11);
   dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
   if (HVar2 != 0) {
@@ -144,8 +144,8 @@ int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs)
     pDVar6 = pDVar6 + (uint)bVar13 * -2 + 1;
   }
   HVar2 = (*g_Direct3D3->vtable->EnumZBufferFormats)
-                    (g_Direct3D3,(GUID *)&g_Direct3DDeviceGUID,dll_dx7_cpp_FUN_10002b50,aDStack_210)
-  ;
+                    (g_Direct3D3,(GUID *)&g_Direct3DDeviceGUID,
+                     dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50,aDStack_210);
   dll_dx7_cpp_checkD3DResult_FUN_10001d70(HVar2);
   if (aDStack_210[0] != 0x20) {
     HVar2 = (*g_DirectDraw4->vtable->RestoreDisplayMode)(g_DirectDraw4);

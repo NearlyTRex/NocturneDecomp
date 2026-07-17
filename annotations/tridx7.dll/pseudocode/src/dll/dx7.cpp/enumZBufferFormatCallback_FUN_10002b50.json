@@ -1,0 +1,178 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 6,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "10002500",
+      "from_addr": "1000283d",
+      "name": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "10002b50",
+    "address_range": [
+      [
+        "10002b50",
+        "10002ba0"
+      ]
+    ],
+    "convention": "__stdcall",
+    "name": "dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50",
+    "signature": "HRESULT __stdcall dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "1001417c",
+      "name": "g_ScreenBitDepth",
+      "type": "int",
+      "value": "0x10"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.035714285714286,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CBRANCH": 5,
+      "COPY": 33,
+      "INT_ADD": 22,
+      "INT_AND": 8,
+      "INT_EQUAL": 10,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 17,
+      "POPCOUNT": 4,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 141
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lp_pixel_format",
+        "offset": 4,
+        "size": 4,
+        "type": "DDPIXELFORMAT *"
+      },
+      {
+        "is_param": true,
+        "name": "lp_context",
+        "offset": 8,
+        "size": 4,
+        "type": "DDPIXELFORMAT *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 11,
+      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
+      "severity": "moderate",
+      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_context` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_context->owner`). Replace `lp_context->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 12,
+      "match": "lp_context = (T *)&lp_context->FIELD",
+      "severity": "moderate",
+      "text": "lp_context = (DDPIXELFORMAT *)&lp_context->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
+      "severity": "moderate",
+      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_context` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_context->owner`). Replace `lp_context->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "lp_context = (T *)&lp_context->FIELD",
+      "severity": "moderate",
+      "text": "lp_context = (DDPIXELFORMAT *)&lp_context->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10002b79, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 17,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10002b79: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10002b8e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10002b8e: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

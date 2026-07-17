@@ -1,19 +1,19 @@
-// Name: dll_dx7.cpp_FUN_10002c50
+// Name: dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
 // Address: 10002c50
 // Address Range: [[10002c50, 10002ca2]]
-// Convention: unknown
-// Signature: undefined4 dll_dx7_cpp_FUN_10002c50(void)
+// Convention: __cdecl
+// Signature: int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void)
 
 #include "nocturne.h"
 
-uint dll_dx7_cpp_FUN_10002c50(void)
+int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void)
 
 {
   int iVar1;
   void **ppvVar2;
   void **ppvVar3;
   
-  if (DAT_100141f4 == 0) {
+  if (g_BackBufferLocked == 0) {
     return 1;
   }
   if (0 < g_ScreenHeight) {
@@ -25,10 +25,10 @@ uint dll_dx7_cpp_FUN_10002c50(void)
       ppvVar3 = ppvVar3 + 1;
     }
   }
-  iVar1 = dll_dx7_cpp_FUN_10002cb0(g_BackBufferSurface);
+  iVar1 = dll_dx7_cpp_unlockSurface_FUN_10002cb0(g_BackBufferSurface);
   if (iVar1 == 0) {
     return 0;
   }
-  DAT_100141f4 = 0;
+  g_BackBufferLocked = 0;
   return 1;
 }

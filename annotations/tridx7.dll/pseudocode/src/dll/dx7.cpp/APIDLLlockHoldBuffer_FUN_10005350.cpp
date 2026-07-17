@@ -14,7 +14,7 @@ int __cdecl dll_dx7_cpp_APIDLLlockHoldBuffer_FUN_10005350(void)
   void **ppvVar3;
   
                     /* 0x5350  22  APIDLLlockHoldBuffer */
-  iVar1 = dll_dx7_cpp_FUN_10002e20(DAT_100141b8,&g_PrimarySurfaceDesc.dwSize);
+  iVar1 = dll_dx7_cpp_FUN_10002e20((int *)g_HoldBufferSurface,&g_PrimarySurfaceDesc.dwSize);
   if (iVar1 != 0) {
     iVar1 = g_ScreenHeight;
     pvVar2 = g_PrimarySurfaceDesc.lpSurface;

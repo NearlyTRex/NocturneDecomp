@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_APIDLLendScene_FUN_10002d10
-;   dll_dx7.cpp_FUN_10002dc0
+;   dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   XREF to: 10002d9e (CONDITIONAL_JUMP)  ; LAB_10002d9e
     CALL dll_dx7.cpp_APIDLLendScene_FUN_10002d10 ; 10002d99
         ;   XREF to: 10002d10 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_APIDLLendScene_FUN_10002d10() | Ordinal_15
-    CALL dll_dx7.cpp_FUN_10002dc0       ; 10002d9e
-        ;   XREF to: 10002dc0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002dc0()
+    CALL dll_dx7.cpp_lockBackBuffer_FUN_10002dc0 ; 10002d9e
+        ;   XREF to: 10002dc0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_lockBackBuffer_FUN_10002dc0()
         ;   Label: LAB_10002d9e
     TEST EAX,EAX                        ; 10002da3
     JNZ 0x10002daa                      ; 10002da5

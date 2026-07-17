@@ -4,9 +4,12 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10230000
 // =============================================================================
 
+// WORD[16000]
+WORD g_IndexBuffer[16000] = {};
+
 // char[16][512]
 char g_AdapterDescription[16][512] = {};
 
-// undefined4
-undefined4 DAT_10236908 = 0x00000000;
+// int
+int g_LightingAlpha = 0;
 

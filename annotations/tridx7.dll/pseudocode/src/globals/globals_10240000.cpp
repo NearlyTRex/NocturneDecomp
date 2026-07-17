@@ -133,8 +133,14 @@ dword DAT_1024201C = 0;
 dword DAT_1024202C = 0;
 dword DAT_10242030 = 0;
 
+// float
+float g_TextureLodScale = 0.0f;
+
 // int
+int g_LightingOverflow = 0;
 int g_HWGreenShift = 0;
+int g_PrevSystemMemorySize = 0;
+int g_FlyModeDepthBias = 0;
 
 // uchar*
 uchar* g_TextureOpacity = nullptr;
@@ -162,8 +168,6 @@ undefined2 DAT_1024084c = 0x0000;
 undefined2 DAT_1024084e = 0x0000;
 
 // undefined4
-undefined4 DAT_10240610 = 0x00000000;
-undefined4 DAT_10240624 = 0x00000000;
 undefined4 DAT_10240794 = 0x00000000;
 undefined4 DAT_102407a0 = 0x00000000;
 undefined4 DAT_102407a8 = 0x00000000;

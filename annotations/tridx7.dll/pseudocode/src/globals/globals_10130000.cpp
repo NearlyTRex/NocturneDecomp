@@ -10,6 +10,9 @@ HWND g_WindowHandle = nullptr;
 // IDirectDrawSurface*[4][8]
 IDirectDrawSurface* g_StagingTextures[4][8] = {};
 
+// SScreenVertex[16000]
+SScreenVertex g_VertexBuffer[16000] = {};
+
 // char[16][512]
 char g_AdapterDriverName[16][512] = {};
 

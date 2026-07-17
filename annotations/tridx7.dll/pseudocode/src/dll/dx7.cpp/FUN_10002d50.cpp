@@ -11,7 +11,7 @@ void dll_dx7_cpp_FUN_10002d50(void)
 {
   *g_ExternalRendererBridge.current_alpha = 0;
   *g_ExternalRendererBridge.blend_mode = 1;
-  dll_dx7_cpp_FUN_10003f10(0x226);
+  dll_dx7_cpp_applyRenderState_FUN_10003f10(0x226);
   *g_ExternalRendererBridge.current_alpha = 0xff;
   *g_ExternalRendererBridge.blend_mode = 0;
   return;

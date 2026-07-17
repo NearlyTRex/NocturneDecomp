@@ -26,34 +26,16 @@
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 37,
-        "message": "use of undeclared identifier 'DAT_10238910'; did you mean 'DAT_10244910'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
         "line": 38,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 39,
-        "message": "use of undeclared identifier 'DAT_10238912'; did you mean 'DAT_10244912'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
         "line": 40,
         "message": "no matching function for call to 'dll_dx7_cpp_FUN_10005010'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_10238914'; did you mean 'DAT_10244914'?"
       }
     ],
     "success": false,
@@ -62,13 +44,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 178,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 48,
-    "suspect_count": 12,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_noreturn"
@@ -94,19 +76,19 @@
   },
   "function_calls": [
     {
+      "addr": "10003f10",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_applyRenderState_FUN_10003f10"
+    },
+    {
       "addr": "10002340",
       "is_variadic": false,
       "name": "dll_dx7.cpp_fatalError_FUN_10002340"
     },
     {
-      "addr": "10003f10",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003f10"
-    },
-    {
       "addr": "100047b0",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_100047b0"
+      "name": "dll_dx7.cpp_flushBatch_FUN_100047b0"
     },
     {
       "addr": "10005010",
@@ -123,9 +105,9 @@
     },
     {
       "addr": "1001422c",
-      "name": "DAT_1001422c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PendingIndexCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10014234",
@@ -141,19 +123,19 @@
     },
     {
       "addr": "10238910",
-      "name": "DAT_10238910",
-      "type": "undefined4",
+      "name": "g_IndexBuffer",
+      "type": "WORD[16000]",
       "value": null
     },
     {
       "addr": "10238912",
-      "name": "DAT_10238912",
+      "name": "g_IndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10238914",
-      "name": "DAT_10238914",
+      "name": "g_IndexBuffer[2]",
       "type": "undefined4",
       "value": null
     }
@@ -269,78 +251,6 @@
       "match": "DAT_10014234",
       "severity": "mild",
       "text": "DAT_10014234 = DAT_10014234 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_10238910",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_10238910 + DAT_1001422c * 2) = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_10238910 + DAT_1001422c * 2) = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_10238912",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_10238912 + DAT_1001422c * 2) = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_10238912 + DAT_1001422c * 2) = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "iVar2 = DAT_1001422c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "DAT_1001422c = DAT_1001422c + 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "DAT_1001422c = DAT_1001422c + 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_10238914",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_10238914 + iVar2 * 2) = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "if (0x3e76 < DAT_1001422c) {",
       "type": "undefined_data"
     },
     {

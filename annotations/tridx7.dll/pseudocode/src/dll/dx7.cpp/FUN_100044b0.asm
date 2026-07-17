@@ -88,14 +88,14 @@ section .text
         ;   Label: LAB_1000453e
     XOR EAX,EAX                         ; 10004541
     SUB EBX,0x100                       ; 10004543
-    MOV [0x10240610],EAX                ; 10004549 | DAT_10240610
+    MOV [0x10240610],EAX                ; 10004549 | g_LightingOverflow
     SAR EBX,0x4                         ; 1000454e
     CMP EBX,0xff                        ; 10004551
     JLE 0x10004588                      ; 10004557
         ;   XREF to: 10004588 (CONDITIONAL_JUMP)  ; LAB_10004588
     LEA EAX,[EBX + 0xffffff00]          ; 10004559
-    MOV dword ptr [0x10236908],EBX      ; 1000455f | DAT_10236908
-    MOV [0x10240610],EAX                ; 10004565 | DAT_10240610
+    MOV dword ptr [0x10236908],EBX      ; 1000455f | g_LightingAlpha
+    MOV [0x10240610],EAX                ; 10004565 | g_LightingOverflow
     CMP EAX,0xff                        ; 1000456a
     JLE 0x10004576                      ; 1000456f
         ;   XREF to: 10004576 (CONDITIONAL_JUMP)  ; LAB_10004576
@@ -104,12 +104,12 @@ section .text
         ;   Label: LAB_10004576
     JMP 0x10004588                      ; 1000457b
         ;   XREF to: 10004588 (UNCONDITIONAL_JUMP)  ; LAB_10004588
-    MOV EBX,dword ptr [0x10236908]      ; 1000457d | DAT_10236908
+    MOV EBX,dword ptr [0x10236908]      ; 1000457d | g_LightingAlpha
         ;   Label: LAB_1000457d
-    MOV EAX,[0x10240610]                ; 10004583 | DAT_10240610
-    MOV dword ptr [0x10236908],EBX      ; 10004588 | DAT_10236908
+    MOV EAX,[0x10240610]                ; 10004583 | g_LightingOverflow
+    MOV dword ptr [0x10236908],EBX      ; 10004588 | g_LightingAlpha
         ;   Label: LAB_10004588
-    MOV [0x10240610],EAX                ; 1000458e | DAT_10240610
+    MOV [0x10240610],EAX                ; 1000458e | g_LightingOverflow
     TEST DL,0x1                         ; 10004593
     JZ 0x1000465f                       ; 10004596
         ;   XREF to: 1000465f (CONDITIONAL_JUMP)  ; LAB_1000465f
@@ -133,7 +133,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 100045c2
     TEST DH,0x2                         ; 100045c4
         ;   Label: LAB_100045c4
-    MOV dword ptr [0x10236908],EBX      ; 100045c7 | DAT_10236908
+    MOV dword ptr [0x10236908],EBX      ; 100045c7 | g_LightingAlpha
     JZ 0x100045f9                       ; 100045cd
         ;   XREF to: 100045f9 (CONDITIONAL_JUMP)  ; LAB_100045f9
     MOV EDX,dword ptr [ECX + 0x20]      ; 100045cf
@@ -160,7 +160,7 @@ section .text
     IMUL EAX,EBX                        ; 1000460d
     CDQ                                 ; 10004610
     AND EDX,0xff                        ; 10004611
-    MOV dword ptr [0x10236908],EBX      ; 10004617 | DAT_10236908
+    MOV dword ptr [0x10236908],EBX      ; 10004617 | g_LightingAlpha
     ADD EAX,EDX                         ; 1000461d
     SAR EAX,0x8                         ; 1000461f
     MOV EDX,EAX                         ; 10004622
@@ -168,7 +168,7 @@ section .text
     SHL EDI,0x10                        ; 10004626
     OR EDX,0xffff0000                   ; 10004629
     SHL EDX,0x8                         ; 1000462f
-    MOV [0x10236908],EAX                ; 10004632 | DAT_10236908
+    MOV [0x10236908],EAX                ; 10004632 | g_LightingAlpha
     OR EDX,EDI                          ; 10004637
     OR EDX,EAX                          ; 10004639
     MOV dword ptr [ESI + 0x10],EDX      ; 1000463b
@@ -180,7 +180,7 @@ section .text
     SHL EDX,0x10                        ; 10004648
     OR EAX,EBX                          ; 1000464b
     SHL EAX,0x8                         ; 1000464d
-    MOV dword ptr [0x10236908],EBX      ; 10004650 | DAT_10236908
+    MOV dword ptr [0x10236908],EBX      ; 10004650 | g_LightingAlpha
     OR EAX,EDX                          ; 10004656
     OR EAX,EBX                          ; 10004658
     MOV dword ptr [ESI + 0x10],EAX      ; 1000465a
@@ -246,10 +246,10 @@ section .text
         ;   XREF to: 10004720 (CONDITIONAL_JUMP)  ; LAB_10004720
     MOV EDX,dword ptr [ESP + 0x14]      ; 100046f0
     SAR EDX,0x1                         ; 100046f4
-    ADD EDX,dword ptr [0x1024062c]      ; 100046f7 | DAT_1024062c
+    ADD EDX,dword ptr [0x1024062c]      ; 100046f7 | g_FlyModeDepthBias
     MOV dword ptr [ESP + 0x10],EDX      ; 100046fd
     FLD float ptr [ESP + 0x10]          ; 10004701
-    FMUL float ptr [0x10240614]         ; 10004705 | DAT_10240614
+    FMUL float ptr [0x10240614]         ; 10004705 | g_TextureLodScale
     FSTP float ptr [ESI + 0x8]          ; 1000470b
     CMP dword ptr [ESI + 0x8],0x3f800000 ; 1000470e
     JLE 0x10004780                      ; 10004715
@@ -259,7 +259,7 @@ section .text
         ;   XREF to: 10004780 (UNCONDITIONAL_JUMP)  ; LAB_10004780
     FLD float ptr [ESP + 0x14]          ; 10004720
         ;   Label: LAB_10004720
-    FMUL float ptr [0x10240614]         ; 10004724 | DAT_10240614
+    FMUL float ptr [0x10240614]         ; 10004724 | g_TextureLodScale
     FSTP float ptr [ESI + 0x8]          ; 1000472a
     CMP dword ptr [ESI + 0x8],0x3f800000 ; 1000472d
     JLE 0x10004780                      ; 10004734
@@ -269,7 +269,7 @@ section .text
         ;   XREF to: 10004780 (UNCONDITIONAL_JUMP)  ; LAB_10004780
     FLD float ptr [ESP + 0x14]          ; 1000473f
         ;   Label: LAB_1000473f
-    FMUL float ptr [0x10240614]         ; 10004743 | DAT_10240614
+    FMUL float ptr [0x10240614]         ; 10004743 | g_TextureLodScale
     FCOM double ptr [0x100122b8]        ; 10004749 | DAT_100122b8
     FSTP float ptr [ESP + 0x10]         ; 1000474f
     FNSTSW AX                           ; 10004753

@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002370
-;   dll_dx7.cpp_FUN_10002c50
+;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
+;   dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
 ;   ShowCursor
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH ESI                            ; 10002be7
     JZ 0x10002c00                       ; 10002be8
         ;   XREF to: 10002c00 (CONDITIONAL_JUMP)  ; LAB_10002c00
-    CALL dll_dx7.cpp_FUN_10002c50       ; 10002bea
-        ;   XREF to: 10002c50 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002c50()
+    CALL dll_dx7.cpp_unlockBackBuffer_FUN_10002c50 ; 10002bea
+        ;   XREF to: 10002c50 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockBackBuffer_FUN_10002c50()
     TEST EAX,EAX                        ; 10002bef
     JNZ 0x10002c00                      ; 10002bf1
         ;   XREF to: 10002c00 (CONDITIONAL_JUMP)  ; LAB_10002c00
@@ -51,8 +51,8 @@ section .text
     PUSH EDX                            ; 10002c26
     MOV EAX,dword ptr [EDX]             ; 10002c27
     CALL dword ptr [EAX + 0x50]         ; 10002c29
-    CALL dll_dx7.cpp_FUN_10002370       ; 10002c2c
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 10002c2c
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
     MOV ESI,dword ptr [0x10242294]      ; 10002c31 | PTR_ShowCursor_10242294
     PUSH 0x1                            ; 10002c37
         ;   Label: LAB_10002c37

@@ -7,13 +7,13 @@
 ; Referenced Globals:
 ;   int g_ScreenHeight = 0x1e0
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
-;   undefined4 DAT_100141b8
+;   IDirectDrawSurface* g_HoldBufferSurface = 00000000
 ;   void** g_ScanlinePtrBase = 00000000
 ;   void*[1024] g_ScanlinePointers
 ;   undefined4 g_ScanlinePointers[1]
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002cb0
+;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
 
@@ -29,11 +29,11 @@ section .text
     MOV ESI,0x10225848                  ; 100053ac | g_ScanlinePointers
     MOV EDI,dword ptr [0x10138fb4]      ; 100053b1 | g_ScanlinePtrBase
     MOVSD.REP ES:EDI,ESI                ; 100053b7 | g_ScanlinePointers | g_ScanlinePointers[1]
-    MOV EAX,[0x100141b8]                ; 100053b9 | DAT_100141b8
+    MOV EAX,[0x100141b8]                ; 100053b9 | g_HoldBufferSurface
         ;   Label: LAB_100053b9
     PUSH EAX                            ; 100053be
-    CALL dll_dx7.cpp_FUN_10002cb0       ; 100053bf
-        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002cb0()
+    CALL dll_dx7.cpp_unlockSurface_FUN_10002cb0 ; 100053bf
+        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface * surface)
     ADD ESP,0x4                         ; 100053c4
     TEST EAX,EAX                        ; 100053c7
     JNZ 0x100053d0                      ; 100053c9
@@ -52,7 +52,7 @@ section .text
     RET                                 ; 100053dd
     PUSH 0x0                            ; 100053de
         ;   Label: LAB_100053de
-    MOV EAX,[0x100141b8]                ; 100053e0 | DAT_100141b8
+    MOV EAX,[0x100141b8]                ; 100053e0 | g_HoldBufferSurface
     PUSH 0x0                            ; 100053e5
     MOV ECX,dword ptr [0x10014180]      ; 100053e7 | g_BackBufferSurface
     PUSH 0x0                            ; 100053ed

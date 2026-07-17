@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_FUN_10002370(void)
+; void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
 ;
 ;
 ; XREF[4]:
@@ -15,10 +15,10 @@
 ;   IDirectDrawSurface* g_ZBufferSurface = 00000000
 ;   IDirectDrawSurface*[8] g_MasterZBufferSurfaces
 ;   undefined4 g_MasterZBufferSurfaces[1]
-;   undefined4 DAT_100141b8
+;   IDirectDrawSurface* g_HoldBufferSurface = 00000000
 ;   IDirect3D3* g_Direct3D3 = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
-;   undefined4 DAT_100141e4
+;   IDirect3DViewport3* g_Viewport = 00000000
 ;   int g_MasterZBufferCount = 0x0
 ;
 ; Called Functions:
@@ -29,27 +29,27 @@
 section .text
 
     PUSH ESI                            ; 10002370
-        ;   Label: dll_dx7.cpp_FUN_10002370
+        ;   Label: dll_dx7.cpp_releaseDirectXResources_FUN_10002370
     PUSH EDI                            ; 10002371
     CALL dll_dx7.cpp_FUN_10002ea0       ; 10002372
         ;   XREF to: 10002ea0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002ea0()
-    CMP dword ptr [0x100141b8],0x0      ; 10002377 | DAT_100141b8
+    CMP dword ptr [0x100141b8],0x0      ; 10002377 | g_HoldBufferSurface
     JZ 0x10002395                       ; 1000237e
         ;   XREF to: 10002395 (CONDITIONAL_JUMP)  ; LAB_10002395
-    MOV EAX,[0x100141b8]                ; 10002380 | DAT_100141b8
+    MOV EAX,[0x100141b8]                ; 10002380 | g_HoldBufferSurface
     PUSH EAX                            ; 10002385
     MOV ESI,dword ptr [EAX]             ; 10002386
     CALL dword ptr [ESI + 0x8]          ; 10002388
-    MOV dword ptr [0x100141b8],0x0      ; 1000238b | DAT_100141b8
-    CMP dword ptr [0x100141e4],0x0      ; 10002395 | DAT_100141e4
+    MOV dword ptr [0x100141b8],0x0      ; 1000238b | g_HoldBufferSurface
+    CMP dword ptr [0x100141e4],0x0      ; 10002395 | g_Viewport
         ;   Label: LAB_10002395
     JZ 0x100023b3                       ; 1000239c
         ;   XREF to: 100023b3 (CONDITIONAL_JUMP)  ; LAB_100023b3
-    MOV EAX,[0x100141e4]                ; 1000239e | DAT_100141e4
+    MOV EAX,[0x100141e4]                ; 1000239e | g_Viewport
     PUSH EAX                            ; 100023a3
     MOV ESI,dword ptr [EAX]             ; 100023a4
     CALL dword ptr [ESI + 0x8]          ; 100023a6
-    MOV dword ptr [0x100141e4],0x0      ; 100023a9 | DAT_100141e4
+    MOV dword ptr [0x100141e4],0x0      ; 100023a9 | g_Viewport
     CMP dword ptr [0x100141e0],0x0      ; 100023b3 | g_Device
         ;   Label: LAB_100023b3
     JZ 0x100023d1                       ; 100023ba

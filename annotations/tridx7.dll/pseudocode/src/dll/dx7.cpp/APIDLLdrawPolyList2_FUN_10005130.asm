@@ -16,17 +16,17 @@
 ;
 ; Referenced Globals:
 ;   int g_InScene = 0x0
-;   undefined4 DAT_1001422c
+;   int g_PendingIndexCount = 0x0
 ;   undefined4 DAT_10014234
 ;   TerminatedCString s_You_re_shoving_too_many_10016c20
-;   undefined4 DAT_10238910
-;   undefined4 DAT_10238912
-;   undefined4 DAT_10238914
+;   WORD[16000] g_IndexBuffer
+;   undefined4 g_IndexBuffer[1]
+;   undefined4 g_IndexBuffer[2]
 ;
 ; Called Functions:
+;   dll_dx7.cpp_applyRenderState_FUN_10003f10
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10003f10
-;   dll_dx7.cpp_FUN_100047b0
+;   dll_dx7.cpp_flushBatch_FUN_100047b0
 ;   dll_dx7.cpp_FUN_10005010
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x30]      ; 1000514a
         ;   Label: LAB_1000514a
     PUSH ESI                            ; 1000514e
-    CALL dll_dx7.cpp_FUN_10003f10       ; 1000514f
-        ;   XREF to: 10003f10 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003f10()
+    CALL dll_dx7.cpp_applyRenderState_FUN_10003f10 ; 1000514f
+        ;   XREF to: 10003f10 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_applyRenderState_FUN_10003f10(uint render_flags)
     MOV EAX,dword ptr [ESP + 0x30]      ; 10005154
     ADD ESP,0x4                         ; 10005158
     INC dword ptr [0x10014234]          ; 1000515b | DAT_10014234
@@ -83,8 +83,8 @@ section .text
     CALL dll_dx7.cpp_FUN_10005010       ; 100051a2
         ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
     ADD ESP,0xc                         ; 100051a7
-    MOV ECX,dword ptr [0x1001422c]      ; 100051aa | DAT_1001422c
-    MOV word ptr [ECX*0x2 + 0x10238910],AX ; 100051b0 | DAT_10238910
+    MOV ECX,dword ptr [0x1001422c]      ; 100051aa | g_PendingIndexCount
+    MOV word ptr [ECX*0x2 + 0x10238910],AX ; 100051b0 | g_IndexBuffer
     PUSH ESI                            ; 100051b8
     XOR EAX,EAX                         ; 100051b9
     PUSH EBX                            ; 100051bb
@@ -103,8 +103,8 @@ section .text
     CALL dll_dx7.cpp_FUN_10005010       ; 100051e3
         ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
     ADD ESP,0xc                         ; 100051e8
-    MOV ECX,dword ptr [0x1001422c]      ; 100051eb | DAT_1001422c
-    MOV word ptr [ECX*0x2 + 0x10238912],AX ; 100051f1 | DAT_10238912
+    MOV ECX,dword ptr [0x1001422c]      ; 100051eb | g_PendingIndexCount
+    MOV word ptr [ECX*0x2 + 0x10238912],AX ; 100051f1 | g_IndexBuffer[1]
     PUSH ESI                            ; 100051f9
     XOR EAX,EAX                         ; 100051fa
     PUSH EBX                            ; 100051fc
@@ -123,10 +123,10 @@ section .text
     CALL dll_dx7.cpp_FUN_10005010       ; 10005224
         ;   XREF to: 10005010 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10005010()
     ADD ESP,0xc                         ; 10005229
-    MOV ECX,dword ptr [0x1001422c]      ; 1000522c | DAT_1001422c
-    ADD dword ptr [0x1001422c],0x3      ; 10005232 | DAT_1001422c
-    MOV word ptr [ECX*0x2 + 0x10238914],AX ; 10005239 | DAT_10238914
-    CMP dword ptr [0x1001422c],0x3e76   ; 10005241 | DAT_1001422c
+    MOV ECX,dword ptr [0x1001422c]      ; 1000522c | g_PendingIndexCount
+    ADD dword ptr [0x1001422c],0x3      ; 10005232 | g_PendingIndexCount
+    MOV word ptr [ECX*0x2 + 0x10238914],AX ; 10005239 | g_IndexBuffer[2]
+    CMP dword ptr [0x1001422c],0x3e76   ; 10005241 | g_PendingIndexCount
     JLE 0x1000525a                      ; 1000524b
         ;   XREF to: 1000525a (CONDITIONAL_JUMP)  ; LAB_1000525a
     PUSH 0x10016c20                     ; 1000524d | = "You're shoving too many faces"
@@ -137,8 +137,8 @@ section .text
     DEC dword ptr [ESP + 0x1c]          ; 1000525d
     JNZ 0x10005175                      ; 10005261
         ;   XREF to: 10005175 (CONDITIONAL_JUMP)  ; LAB_10005175
-    CALL dll_dx7.cpp_FUN_100047b0       ; 10005267
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10005267
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
         ;   Label: LAB_10005267
     MOV EAX,0x1                         ; 1000526c
     POP EBP                             ; 10005271

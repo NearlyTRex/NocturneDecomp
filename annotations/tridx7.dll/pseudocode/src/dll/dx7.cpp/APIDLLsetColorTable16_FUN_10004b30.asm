@@ -30,9 +30,9 @@
 ;
 ; Called Functions:
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002cb0
 ;   dll_dx7.cpp_FUN_10002e20
 ;   dll_dx7.cpp_FUN_10004d10
+;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV EAX,[0x10014180]                ; 10004b86 | g_BackBufferSurface
         ;   Label: LAB_10004b86
     PUSH EAX                            ; 10004b8b
-    CALL dll_dx7.cpp_FUN_10002cb0       ; 10004b8c
-        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002cb0()
+    CALL dll_dx7.cpp_unlockSurface_FUN_10002cb0 ; 10004b8c
+        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface * surface)
     ADD ESP,0x4                         ; 10004b91
     TEST EAX,EAX                        ; 10004b94
     JNZ 0x10004ba5                      ; 10004b96

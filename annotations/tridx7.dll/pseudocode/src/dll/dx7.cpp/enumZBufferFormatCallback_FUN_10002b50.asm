@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 dll_dx7_cpp_FUN_10002b50(undefined4 *param_1,undefined4 *param_2)
+; HRESULT __stdcall dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context)
 ;
+; Parameters:
+; DDPIXELFORMAT *  Stack[0x4]:4   lp_pixel_format
+; DDPIXELFORMAT *  Stack[0x8]:4   lp_context
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 1000283d
@@ -15,7 +18,7 @@
 section .text
 
     PUSH ESI                            ; 10002b50
-        ;   Label: dll_dx7.cpp_FUN_10002b50
+        ;   Label: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
     PUSH EDI                            ; 10002b51
     MOV ESI,dword ptr [ESP + 0xc]       ; 10002b52
     CMP dword ptr [ESI + 0x4],0x400     ; 10002b56

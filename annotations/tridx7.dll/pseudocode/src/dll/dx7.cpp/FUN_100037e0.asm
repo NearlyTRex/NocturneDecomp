@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   dll_dx7.cpp_APIDLLsetFogColor_FUN_100049f0 at 10004a37
 ;   dll_dx7.cpp_FUN_100035b0 at 100035e2
-;   dll_dx7.cpp_FUN_10003f10 at 10003fac
+;   dll_dx7.cpp_applyRenderState_FUN_10003f10 at 10003fac
 ;
 ; Referenced Globals:
 ;   IDirect3DDevice3* g_Device = 00000000
@@ -15,7 +15,7 @@
 ;   undefined4 DAT_101394c8
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_100047b0
+;   dll_dx7.cpp_flushBatch_FUN_100047b0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [EAX + 0x101390c8],EDI ; 10003804 | DAT_101390c8
         ;   Label: LAB_10003804
     MOV dword ptr [EAX + 0x101394c8],ESI ; 1000380a | DAT_101394c8
-    CALL dll_dx7.cpp_FUN_100047b0       ; 10003810
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10003810
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
     PUSH ESI                            ; 10003815
     MOV EAX,[0x100141e0]                ; 10003816 | g_Device
     MOV ESI,dword ptr [EAX]             ; 1000381b

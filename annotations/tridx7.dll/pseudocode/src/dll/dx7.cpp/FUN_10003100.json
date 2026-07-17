@@ -24,48 +24,6 @@
         "column": 61,
         "line": 33,
         "message": "use of undeclared identifier 'LAB_10003340'; did you mean 'DAT_10003D40'?"
-      },
-      {
-        "category": "pointer_type",
-        "column": 62,
-        "line": 40,
-        "message": "cannot initialize a parameter of type 'struct IDirect3DViewport3 **' with an rvalue of type 'undefined4 *' (aka 'unsigned int *')"
-      },
-      {
-        "category": "pointer_type",
-        "column": 53,
-        "line": 44,
-        "message": "cannot initialize a parameter of type 'struct IDirect3DViewport3 *' with an lvalue of type 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 64,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "pointer_type",
-        "column": 52,
-        "line": 68,
-        "message": "cannot initialize a parameter of type 'struct IDirect3DViewport3 *' with an lvalue of type 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 100,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 100,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 100,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
     ],
     "success": false,
@@ -74,23 +32,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 383,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 25,
+    "pseudocode_lines": 99,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_noreturn"
     ],
-    "total_lines": 286
+    "total_lines": 287
   },
   "cross_references": [
     {
@@ -178,9 +134,9 @@
     },
     {
       "addr": "100141b8",
-      "name": "DAT_100141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HoldBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "100141dc",
@@ -196,9 +152,9 @@
     },
     {
       "addr": "100141e4",
-      "name": "DAT_100141e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Viewport",
+      "type": "IDirect3DViewport3*",
+      "value": "00000000"
     },
     {
       "addr": "10016a9c",
@@ -291,52 +247,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "HVar1 = (*g_Direct3D3->vtable->CreateViewport)(g_Direct3D3,&DAT_100141e4,(IUnknown *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "HVar1 = (*g_Device->vtable->AddViewport)(g_Device,DAT_100141e4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(D3DVIEWPORT2 *)((int)pDVar4",
       "severity": "moderate",
       "text": "pDVar4 = (D3DVIEWPORT2 *)((int)pDVar4 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "HVar1 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,&DStack_10c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "HVar1 = (*DAT_100141e4->vtable->SetViewport2)(DAT_100141e4,&DStack_10c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_100141e4",
-      "severity": "mild",
-      "text": "(*g_Device->vtable->SetCurrentViewport)(g_Device,DAT_100141e4);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -363,44 +279,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_100141b8",
-      "severity": "mild",
-      "text": "(g_DirectDraw4,&DStack_e0,(IDirectDrawSurface **)&DAT_100141b8,(IUnknown *)0x0",
-      "type": "undefined_data"
-    },
-    {
       "description": "Subroutine marked as non-returning",
-      "line": 84,
+      "line": 83,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_100141b8",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_100141b8",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_64);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pDVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -460,7 +344,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 88,
+      "line": 87,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",

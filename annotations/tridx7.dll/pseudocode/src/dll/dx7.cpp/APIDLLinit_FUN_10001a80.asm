@@ -33,9 +33,9 @@
 ;   DirectDrawEnumerateExA
 ;   dll_dx7.cpp_APIDLLkill_FUN_10002460
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
-;   dll_dx7.cpp_FUN_10002370
 ;   dll_dx7.cpp_FUN_10002ea0
 ;   dll_dx7.cpp_FUN_10002f40
+;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 ;
 ; *****************************************************************************
 
@@ -246,8 +246,8 @@ section .text
     TEST EAX,EAX                        ; 10001cc1
     JZ 0x10001cdc                       ; 10001cc3
         ;   XREF to: 10001cdc (CONDITIONAL_JUMP)  ; LAB_10001cdc
-    CALL dll_dx7.cpp_FUN_10002370       ; 10001cc5
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 10001cc5
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
     CALL dll_dx7.cpp_APIDLLkill_FUN_10002460 ; 10001cca
         ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_APIDLLkill_FUN_10002460() | Ordinal_20
     XOR EAX,EAX                         ; 10001ccf
@@ -280,8 +280,8 @@ section .text
     TEST EAX,EAX                        ; 10001d19
     JZ 0x10001d34                       ; 10001d1b
         ;   XREF to: 10001d34 (CONDITIONAL_JUMP)  ; LAB_10001d34
-    CALL dll_dx7.cpp_FUN_10002370       ; 10001d1d
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 10001d1d
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
     CALL dll_dx7.cpp_APIDLLkill_FUN_10002460 ; 10001d22
         ;   XREF to: 10002460 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_APIDLLkill_FUN_10002460() | Ordinal_20
     XOR EAX,EAX                         ; 10001d27
@@ -308,8 +308,8 @@ section .text
     POP EBX                             ; 10001d50
     ADD ESP,0x430                       ; 10001d51
     RET                                 ; 10001d57
-    CALL dll_dx7.cpp_FUN_10002370       ; 10001d58
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 10001d58
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
         ;   Label: LAB_10001d58
     MOV EAX,0x1                         ; 10001d5d
     POP EBP                             ; 10001d62

@@ -55,9 +55,9 @@ void __cdecl checkD3DResult(HRESULT result);
 // Address: 10002340
 void __cdecl fatalError(char *message);
 
-// Original: dll_dx7.cpp_FUN_10002370
+// Original: dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 // Address: 10002370
-void FUN_10002370(void);
+void __cdecl releaseDirectXResources(void);
 
 // Original: dll_dx7.cpp_APIDLLkill_FUN_10002460
 // Address: 10002460
@@ -75,9 +75,9 @@ int __cdecl APIDLLsetVideoMode(void **scanline_ptrs);
 // Address: 10002b20
 void __cdecl readIniInt(char *section,char *key,uint *value_inout);
 
-// Original: dll_dx7.cpp_FUN_10002b50
+// Original: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
 // Address: 10002b50
-undefined4 FUN_10002b50(undefined4 *param_1,undefined4 *param_2);
+HRESULT __stdcall enumZBufferFormatCallback(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context);
 
 // Original: dll_dx7.cpp_APIDLLsetVideoMode2_FUN_10002bb0
 // Address: 10002bb0
@@ -87,13 +87,13 @@ int __cdecl APIDLLsetVideoMode2(int width,int height,int bits_per_pixel,void **s
 // Address: 10002be0
 int __cdecl APIDLLrestoreVideoMode(void);
 
-// Original: dll_dx7.cpp_FUN_10002c50
+// Original: dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
 // Address: 10002c50
-undefined4 FUN_10002c50(void);
+int __cdecl unlockBackBuffer(void);
 
-// Original: dll_dx7.cpp_FUN_10002cb0
+// Original: dll_dx7.cpp_unlockSurface_FUN_10002cb0
 // Address: 10002cb0
-undefined4 FUN_10002cb0(int *param_1);
+int __cdecl unlockSurface(IDirectDrawSurface *surface);
 
 // Original: dll_dx7.cpp_APIDLLbeginScene_FUN_10002ce0
 // Address: 10002ce0
@@ -111,9 +111,9 @@ void FUN_10002d50(void);
 // Address: 10002d90
 int __cdecl APIDLLlockFrame(void);
 
-// Original: dll_dx7.cpp_FUN_10002dc0
+// Original: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
 // Address: 10002dc0
-undefined4 FUN_10002dc0(void);
+int __cdecl lockBackBuffer(void);
 
 // Original: dll_dx7.cpp_FUN_10002e20
 // Address: 10002e20
@@ -191,9 +191,9 @@ int __cdecl APIDLLupdateTexture(SMRGLTextureBasic *texture_info,int texture_dime
 // Address: 10003f00
 int __cdecl APIDLLsetMipMapLevel(int mipmap_level);
 
-// Original: dll_dx7.cpp_FUN_10003f10
+// Original: dll_dx7.cpp_applyRenderState_FUN_10003f10
 // Address: 10003f10
-void FUN_10003f10(uint param_1);
+void __cdecl applyRenderState(uint render_flags);
 
 // Original: dll_dx7.cpp_APIDLLdrawPolygon_FUN_10004380
 // Address: 10004380
@@ -207,9 +207,9 @@ int __cdecl APIDLLdrawPolygon2(SRenderVertex **vertex_array,int vertex_count,int
 // Address: 100044b0
 void FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4);
 
-// Original: dll_dx7.cpp_FUN_100047b0
+// Original: dll_dx7.cpp_flushBatch_FUN_100047b0
 // Address: 100047b0
-void FUN_100047b0(void);
+void __cdecl flushBatch(void);
 
 // Original: dll_dx7.cpp_APIDLLaddParticle_FUN_10004800
 // Address: 10004800

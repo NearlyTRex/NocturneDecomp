@@ -18,18 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 26,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
-      },
-      {
-        "category": "pointer_type",
-        "column": 46,
-        "line": 34,
-        "message": "cannot initialize a parameter of type 'struct IDirectDrawSurface *' with an lvalue of type 'undefined4' (aka 'unsigned int')"
       }
     ],
     "success": false,
@@ -38,15 +26,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 76,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 72
@@ -68,7 +55,7 @@
     {
       "addr": "10002cb0",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002cb0"
+      "name": "dll_dx7.cpp_unlockSurface_FUN_10002cb0"
     }
   ],
   "globals": [
@@ -86,9 +73,9 @@
     },
     {
       "addr": "100141b8",
-      "name": "DAT_100141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HoldBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
     },
     {
       "addr": "10138fb4",
@@ -158,22 +145,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_100141b8",
-      "severity": "mild",
-      "text": "iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_100141b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_100141b8",
-      "severity": "mild",
-      "text": "(g_BackBufferSurface,(RECT *)0x0,DAT_100141b8,(RECT *)0x0,0,(void *)0x0);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 13,

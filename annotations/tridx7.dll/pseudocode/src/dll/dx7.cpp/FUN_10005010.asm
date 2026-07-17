@@ -12,14 +12,14 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_100122e8
-;   undefined4 DAT_10014228
+;   int g_PendingVertexCount = 0x0
 ;   undefined4 DAT_10014234
 ;   TerminatedCString s_You_re_shoving_too_many_10016bd8
 ;   TerminatedCString s_You_re_shoving_too_many_10016bfc
-;   undefined4 DAT_1013b8d8
-;   undefined4 DAT_1013b8dc
-;   undefined4 DAT_1013b8f0
-;   undefined4 DAT_1013b8f4
+;   SScreenVertex[16000] g_VertexBuffer
+;   undefined4 g_VertexBuffer[0].y
+;   undefined4 g_VertexBuffer[0].u
+;   undefined4 g_VertexBuffer[0].v
 ;   undefined4 DAT_10215e48
 ;   undefined4 DAT_10226f08
 ;
@@ -48,13 +48,13 @@ section .text
     CMP dword ptr [EBX*0x4 + 0x10215e48],EAX ; 10005030 | DAT_10215e48
     JZ 0x10005096                       ; 10005037
         ;   XREF to: 10005096 (CONDITIONAL_JUMP)  ; LAB_10005096
-    MOV EBP,dword ptr [0x10014228]      ; 10005039 | DAT_10014228
+    MOV EBP,dword ptr [0x10014228]      ; 10005039 | g_PendingVertexCount
     MOV ECX,dword ptr [EDX + 0x8]       ; 1000503f
     MOV dword ptr [EBX*0x4 + 0x10215e48],EAX ; 10005042 | DAT_10215e48
     MOV dword ptr [EBX*0x4 + 0x10226f08],EBP ; 10005049 | DAT_10226f08
     SHL EBP,0x5                         ; 10005050
     MOV EAX,dword ptr [EDX + 0x4]       ; 10005053
-    ADD EBP,0x1013b8d8                  ; 10005056 | DAT_1013b8d8
+    ADD EBP,0x1013b8d8                  ; 10005056 | g_VertexBuffer
     PUSH 0x100                          ; 1000505c
     MOV dword ptr [ESI + 0x18],EAX      ; 10005061
     MOV dword ptr [ESI + 0x1c],ECX      ; 10005064
@@ -65,9 +65,9 @@ section .text
     CALL dll_dx7.cpp_FUN_100044b0       ; 1000506e
         ;   XREF to: 100044b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100044b0()
     ADD ESP,0x10                        ; 10005073
-    MOV EAX,[0x10014228]                ; 10005076 | DAT_10014228
+    MOV EAX,[0x10014228]                ; 10005076 | g_PendingVertexCount
     INC EAX                             ; 1000507b
-    MOV [0x10014228],EAX                ; 1000507c | DAT_10014228
+    MOV [0x10014228],EAX                ; 1000507c | g_PendingVertexCount
     CMP EAX,0x3e76                      ; 10005081
     JLE 0x1000511e                      ; 10005086
         ;   XREF to: 1000511e (CONDITIONAL_JUMP)  ; LAB_1000511e
@@ -86,30 +86,30 @@ section .text
     MOV ECX,dword ptr [EDX + 0x4]       ; 100050a6
         ;   Label: LAB_100050a6
     MOV EAX,dword ptr [EDX + 0x8]       ; 100050a9
-    MOV EBP,dword ptr [0x10014228]      ; 100050ac | DAT_10014228
+    MOV EBP,dword ptr [0x10014228]      ; 100050ac | g_PendingVertexCount
     MOV dword ptr [ESI + 0x18],ECX      ; 100050b2
     MOV ECX,dword ptr [EBX*0x4 + 0x10226f08] ; 100050b5 | DAT_10226f08
     MOV dword ptr [ESI + 0x1c],EAX      ; 100050bc
     SHL ECX,0x5                         ; 100050bf
     MOV EAX,EBP                         ; 100050c2
     SHL EAX,0x5                         ; 100050c4
-    LEA ESI,[ECX + 0x1013b8d8]          ; 100050c7 | DAT_1013b8d8
-    ADD EAX,0x1013b8d8                  ; 100050cd | DAT_1013b8d8
+    LEA ESI,[ECX + 0x1013b8d8]          ; 100050c7 | g_VertexBuffer
+    ADD EAX,0x1013b8d8                  ; 100050cd | g_VertexBuffer
     MOV ECX,0x8                         ; 100050d2
     MOV EDI,EAX                         ; 100050d7
-    MOVSD.REP ES:EDI,ESI                ; 100050d9 | DAT_1013b8d8 | DAT_1013b8dc
+    MOVSD.REP ES:EDI,ESI                ; 100050d9 | g_VertexBuffer | g_VertexBuffer[0].y
     FILD dword ptr [EDX + 0x4]          ; 100050db
     MOV EDX,dword ptr [EDX + 0x8]       ; 100050de
     MOV dword ptr [EBX*0x4 + 0x10226f08],EBP ; 100050e1 | DAT_10226f08
     INC EBP                             ; 100050e8
     MOV dword ptr [ESP + 0x10],EDX      ; 100050e9
     FMUL double ptr [0x100122e8]        ; 100050ed | DAT_100122e8
-    MOV dword ptr [0x10014228],EBP      ; 100050f3 | DAT_10014228
+    MOV dword ptr [0x10014228],EBP      ; 100050f3 | g_PendingVertexCount
     CMP EBP,0x3e76                      ; 100050f9
-    FSTP float ptr [EAX + 0x18]         ; 100050ff | DAT_1013b8f0
+    FSTP float ptr [EAX + 0x18]         ; 100050ff | g_VertexBuffer[0].u
     FILD dword ptr [ESP + 0x10]         ; 10005102
     FMUL double ptr [0x100122e8]        ; 10005106 | DAT_100122e8
-    FSTP float ptr [EAX + 0x1c]         ; 1000510c | DAT_1013b8f4
+    FSTP float ptr [EAX + 0x1c]         ; 1000510c | g_VertexBuffer[0].v
     JLE 0x1000511e                      ; 1000510f
         ;   XREF to: 1000511e (CONDITIONAL_JUMP)  ; LAB_1000511e
     PUSH 0x10016bfc                     ; 10005111 | = "You're shoving too many verticies"

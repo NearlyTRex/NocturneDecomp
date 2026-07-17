@@ -15,7 +15,7 @@ int __cdecl dll_dx7_cpp_APIDLLlockFrame_FUN_10002d90(void)
   if (g_InScene != 0) {
     dll_dx7_cpp_APIDLLendScene_FUN_10002d10();
   }
-  iVar1 = dll_dx7_cpp_FUN_10002dc0();
+  iVar1 = dll_dx7_cpp_lockBackBuffer_FUN_10002dc0();
   if (iVar1 == 0) {
     return 0;
   }

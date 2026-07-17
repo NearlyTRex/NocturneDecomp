@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/WinDef.h"
 #include "system/ddraw.h"
+#include "types/structs/SScreenVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10130000
@@ -14,6 +15,9 @@ extern HWND g_WindowHandle;
 
 // IDirectDrawSurface*[4][8]
 extern IDirectDrawSurface* g_StagingTextures[4][8];
+
+// SScreenVertex[16000]
+extern SScreenVertex g_VertexBuffer[16000];
 
 // char[16][512]
 extern char g_AdapterDriverName[16][512];

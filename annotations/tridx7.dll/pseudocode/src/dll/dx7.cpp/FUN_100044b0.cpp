@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4)
 
 {
@@ -31,19 +29,19 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
   }
   if ((param_3 & 4) != 0) {
     if ((param_3 & 0x200) == 0) {
-      DAT_10240610 = 0;
-      DAT_10236908 = *(int *)(param_1 + 0x20) + -0x100 >> 4;
-      if (0xff < (int)DAT_10236908) {
-        DAT_10240610 = DAT_10236908 - 0x100;
-        if (0xff < (int)DAT_10240610) {
-          DAT_10240610 = 0xff;
+      g_LightingOverflow = 0;
+      g_LightingAlpha = *(int *)(param_1 + 0x20) + -0x100 >> 4;
+      if (0xff < g_LightingAlpha) {
+        g_LightingOverflow = g_LightingAlpha - 0x100;
+        if (0xff < g_LightingOverflow) {
+          g_LightingOverflow = 0xff;
         }
-        DAT_10236908 = 0xff;
+        g_LightingAlpha = 0xff;
       }
     }
     else {
-      DAT_10240610 = 0;
-      DAT_10236908 = 0xff;
+      g_LightingOverflow = 0;
+      g_LightingAlpha = 0xff;
     }
   }
   if ((param_3 & 1) == 0) {
@@ -66,7 +64,8 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
     param_2[5] = (float)(iVar4 << 0x18);
   }
   else {
-    param_2[5] = (float)((iVar4 << 0x10 | DAT_10240610) << 8 | DAT_10240610 << 0x10 | DAT_10240610);
+    param_2[5] = (float)((iVar4 << 0x10 | g_LightingOverflow) << 8 | g_LightingOverflow << 0x10 |
+                        g_LightingOverflow);
     if ((param_3 & 0x100) == 0) {
       iVar4 = *g_ExternalRendererBridge.current_alpha;
     }
@@ -75,14 +74,14 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
     }
     if ((param_3 & 0x200) == 0) {
       if ((g_PremultiplyColorAndAlpha == 0) || (*g_ExternalRendererBridge.blend_mode != 1)) {
-        param_2[4] = (float)((iVar4 << 0x10 | DAT_10236908) << 8 | DAT_10236908 << 0x10 |
-                            DAT_10236908);
+        param_2[4] = (float)((iVar4 << 0x10 | g_LightingAlpha) << 8 | g_LightingAlpha << 0x10 |
+                            g_LightingAlpha);
       }
       else {
-        DAT_10236908 = (int)(iVar4 * DAT_10236908 + ((int)(iVar4 * DAT_10236908) >> 0x1f & 0xffU))
-                       >> 8;
-        param_2[4] = (float)((DAT_10236908 | 0xffff0000) << 8 | DAT_10236908 << 0x10 | DAT_10236908)
-        ;
+        g_LightingAlpha =
+             (int)(iVar4 * g_LightingAlpha + (iVar4 * g_LightingAlpha >> 0x1f & 0xffU)) >> 8;
+        param_2[4] = (float)((g_LightingAlpha | 0xffff0000U) << 8 | g_LightingAlpha << 0x10 |
+                            g_LightingAlpha);
       }
     }
     else {
@@ -92,7 +91,7 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
     }
   }
   if (*g_ExternalRendererBridge.processor_type == 0) {
-    local_8 = local_8 * _DAT_10240614;
+    local_8 = local_8 * g_TextureLodScale;
     if (local_8 < 1.0) {
       local_8 = 1.0;
     }
@@ -102,13 +101,13 @@ void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_
     param_2[2] = 1.0 - 1.0 / local_8;
   }
   else if ((g_FlyIniPresent == 0) || (g_ZBufferBitDepth != 0x10)) {
-    param_2[2] = local_8 * _DAT_10240614;
+    param_2[2] = local_8 * g_TextureLodScale;
     if (0x3f800000 < (int)param_2[2]) {
       param_2[2] = 1.0;
     }
   }
   else {
-    param_2[2] = (float)(((int)local_8 >> 1) + _DAT_1024062c) * _DAT_10240614;
+    param_2[2] = (float)(((int)local_8 >> 1) + g_FlyModeDepthBias) * g_TextureLodScale;
     if (0x3f800000 < (int)param_2[2]) {
       param_2[2] = 1.0;
     }

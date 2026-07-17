@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 dll_dx7_cpp_FUN_10002c50(void)
+; int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void)
 ;
 ;
 ; XREF[2]:
@@ -11,20 +11,20 @@
 ; Referenced Globals:
 ;   int g_ScreenHeight = 0x1e0
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
-;   undefined4 DAT_100141f4
+;   int g_BackBufferLocked = 0x0
 ;   void** g_ScanlinePtrBase = 00000000
 ;   void*[1024] g_ScanlinePointers
 ;   undefined4 g_ScanlinePointers[1]
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002cb0
+;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x100141f4],0x0      ; 10002c50 | DAT_100141f4
-        ;   Label: dll_dx7.cpp_FUN_10002c50
+    CMP dword ptr [0x100141f4],0x0      ; 10002c50 | g_BackBufferLocked
+        ;   Label: dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
     PUSH ESI                            ; 10002c57
     PUSH EDI                            ; 10002c58
     JNZ 0x10002c63                      ; 10002c59
@@ -44,8 +44,8 @@ section .text
     MOV EAX,[0x10014180]                ; 10002c7a | g_BackBufferSurface
         ;   Label: LAB_10002c7a
     PUSH EAX                            ; 10002c7f
-    CALL dll_dx7.cpp_FUN_10002cb0       ; 10002c80
-        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002cb0()
+    CALL dll_dx7.cpp_unlockSurface_FUN_10002cb0 ; 10002c80
+        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface * surface)
     ADD ESP,0x4                         ; 10002c85
     TEST EAX,EAX                        ; 10002c88
     JNZ 0x10002c91                      ; 10002c8a
@@ -57,7 +57,7 @@ section .text
     MOV EAX,0x1                         ; 10002c91
         ;   Label: LAB_10002c91
     POP EDI                             ; 10002c96
-    MOV dword ptr [0x100141f4],0x0      ; 10002c97 | DAT_100141f4
+    MOV dword ptr [0x100141f4],0x0      ; 10002c97 | g_BackBufferLocked
     POP ESI                             ; 10002ca1
     RET                                 ; 10002ca2
 

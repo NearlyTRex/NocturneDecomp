@@ -23,7 +23,7 @@ int __cdecl dll_dx7_cpp_APIDLLunlockHoldBuffer_FUN_100053a0(void)
       ppvVar3 = ppvVar3 + 1;
     }
   }
-  iVar1 = dll_dx7_cpp_FUN_10002cb0(DAT_100141b8);
+  iVar1 = dll_dx7_cpp_unlockSurface_FUN_10002cb0(g_HoldBufferSurface);
   if (iVar1 == 0) {
     return 0;
   }
@@ -31,6 +31,6 @@ int __cdecl dll_dx7_cpp_APIDLLunlockHoldBuffer_FUN_100053a0(void)
     return 0;
   }
   (*g_BackBufferSurface->vtable->Blt)
-            (g_BackBufferSurface,(RECT *)0x0,DAT_100141b8,(RECT *)0x0,0,(void *)0x0);
+            (g_BackBufferSurface,(RECT *)0x0,g_HoldBufferSurface,(RECT *)0x0,0,(void *)0x0);
   return 1;
 }

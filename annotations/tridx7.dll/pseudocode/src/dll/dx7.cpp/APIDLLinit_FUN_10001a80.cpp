@@ -157,7 +157,7 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
   HVar3 = (*g_DirectDraw4->vtable->GetAvailableVidMem)
                     (g_DirectDraw4,&DStack_428,&uStack_42c,&DStack_430);
   if (HVar3 != 0) {
-    dll_dx7_cpp_FUN_10002370();
+    dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
     dll_dx7_cpp_APIDLLkill_FUN_10002460();
     return 0;
   }
@@ -178,7 +178,7 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
   HVar3 = (*g_DirectDraw4->vtable->GetAvailableVidMem)
                     (g_DirectDraw4,&DStack_428,&uStack_42c,&DStack_430);
   if (HVar3 != 0) {
-    dll_dx7_cpp_FUN_10002370();
+    dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
     dll_dx7_cpp_APIDLLkill_FUN_10002460();
     return 0;
   }
@@ -188,6 +188,6 @@ int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRende
   if (iVar7 == 0) {
     return 0;
   }
-  dll_dx7_cpp_FUN_10002370();
+  dll_dx7_cpp_releaseDirectXResources_FUN_10002370();
   return 1;
 }

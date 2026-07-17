@@ -13,14 +13,14 @@
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10002370
+;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL dll_dx7.cpp_FUN_10002370       ; 10002460
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 10002460
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
         ;   Label: dll_dx7.cpp_APIDLLkill_FUN_10002460
     CMP dword ptr [0x10014188],0x0      ; 10002465 | g_DirectDraw4
     JZ 0x10002483                       ; 1000246c

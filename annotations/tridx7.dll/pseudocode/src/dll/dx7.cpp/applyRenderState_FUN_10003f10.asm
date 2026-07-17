@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void dll_dx7_cpp_FUN_10003f10(uint param_1)
+; void __cdecl dll_dx7_cpp_applyRenderState_FUN_10003f10(uint render_flags)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   render_flags
 ;
 ; XREF[4]:
 ;   dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130 at 1000514f
@@ -17,27 +19,27 @@
 ;   int g_PremultiplyColorAndAlpha = 0x0
 ;   int g_FlyIniPresent = 0x0
 ;   int g_ZBufferBitDepth = 0x0
-;   undefined4 DAT_100141d4
+;   IDirect3DTexture2* g_CurrentBoundTexture = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
-;   undefined4 DAT_10014218
-;   undefined4 DAT_1001421c
-;   undefined4 DAT_10014220
-;   undefined4 DAT_10014224
+;   uint g_PrevRenderFlags = 0x0
+;   int g_PrevSystemInitialized = 0x0
+;   int g_PrevBlendMode = 0x0
+;   int g_PrevRenderingQuality = 0x1
 ;   STextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_ExternalRendererBridge.blend_mode
 ;   undefined4 g_ExternalRendererBridge.current_lighting
 ;   ... and 10 more
 ;
 ; Called Functions:
+;   dll_dx7.cpp_flushBatch_FUN_100047b0
 ;   dll_dx7.cpp_FUN_100037e0
-;   dll_dx7.cpp_FUN_100047b0
 ;
 ; *****************************************************************************
 
 section .text
 
     SUB ESP,0x4                         ; 10003f10
-        ;   Label: dll_dx7.cpp_FUN_10003f10
+        ;   Label: dll_dx7.cpp_applyRenderState_FUN_10003f10
     CMP dword ptr [0x1024061c],0x0      ; 10003f13 | g_TextureOpacity
     PUSH ESI                            ; 10003f1a
     MOV ESI,dword ptr [ESP + 0xc]       ; 10003f1b
@@ -49,12 +51,12 @@ section .text
     OR ESI,0x22                         ; 10003f29
     MOV ECX,dword ptr [0x10226918]      ; 10003f2c | g_ExternalRendererBridge.system_initialized
         ;   Label: LAB_10003f2c
-    MOV EAX,[0x1001421c]                ; 10003f32 | DAT_1001421c
+    MOV EAX,[0x1001421c]                ; 10003f32 | g_PrevSystemInitialized
     CMP dword ptr [ECX],EAX             ; 10003f37
     JZ 0x10003f90                       ; 10003f39
         ;   XREF to: 10003f90 (CONDITIONAL_JUMP)  ; LAB_10003f90
-    CALL dll_dx7.cpp_FUN_100047b0       ; 10003f3b
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10003f3b
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
     MOV EAX,[0x10226918]                ; 10003f40 | g_ExternalRendererBridge.system_initialized
     MOV ECX,dword ptr [0x100141e0]      ; 10003f45 | g_Device
     CMP dword ptr [EAX],0x1             ; 10003f4b
@@ -79,10 +81,10 @@ section .text
     CALL dword ptr [EAX + 0xa0]         ; 10003f7d
     MOV ECX,dword ptr [0x10226918]      ; 10003f83 | g_ExternalRendererBridge.system_initialized
     MOV EAX,dword ptr [ECX]             ; 10003f89
-    MOV [0x1001421c],EAX                ; 10003f8b | DAT_1001421c
+    MOV [0x1001421c],EAX                ; 10003f8b | g_PrevSystemInitialized
     MOV EAX,ESI                         ; 10003f90
         ;   Label: LAB_10003f90
-    XOR EAX,dword ptr [0x10014218]      ; 10003f92 | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 10003f92 | g_PrevRenderFlags
     TEST AL,0x20                        ; 10003f98
     JZ 0x10003fb4                       ; 10003f9a
         ;   XREF to: 10003fb4 (CONDITIONAL_JUMP)  ; LAB_10003fb4
@@ -107,10 +109,10 @@ section .text
     MOV EAX,[0x102268dc]                ; 10003fbf | g_ExternalRendererBridge.blend_mode
         ;   Label: LAB_10003fbf
     MOV ECX,dword ptr [EAX]             ; 10003fc4
-    CMP ECX,dword ptr [0x10014220]      ; 10003fc6 | DAT_10014220
+    CMP ECX,dword ptr [0x10014220]      ; 10003fc6 | g_PrevBlendMode
     JZ 0x10004019                       ; 10003fcc
         ;   XREF to: 10004019 (CONDITIONAL_JUMP)  ; LAB_10004019
-    MOV dword ptr [0x10014220],ECX      ; 10003fce | DAT_10014220
+    MOV dword ptr [0x10014220],ECX      ; 10003fce | g_PrevBlendMode
     TEST ECX,ECX                        ; 10003fd4
     JZ 0x10003fdf                       ; 10003fd6
         ;   XREF to: 10003fdf (CONDITIONAL_JUMP)  ; LAB_10003fdf
@@ -148,16 +150,16 @@ section .text
     ADD ESP,0x8                         ; 10004016
     MOV EAX,ESI                         ; 10004019
         ;   Label: LAB_10004019
-    XOR EAX,dword ptr [0x10014218]      ; 1000401b | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 1000401b | g_PrevRenderFlags
     TEST AL,0x1                         ; 10004021
     JZ 0x10004052                       ; 10004023
         ;   XREF to: 10004052 (CONDITIONAL_JUMP)  ; LAB_10004052
-    CALL dll_dx7.cpp_FUN_100047b0       ; 10004025
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10004025
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
     TEST ESI,0x1                        ; 1000402a
     JZ 0x1000403e                       ; 10004030
         ;   XREF to: 1000403e (CONDITIONAL_JUMP)  ; LAB_1000403e
-    MOV dword ptr [0x100141d4],0x0      ; 10004032 | DAT_100141d4
+    MOV dword ptr [0x100141d4],0x0      ; 10004032 | g_CurrentBoundTexture
     JMP 0x10004052                      ; 1000403c
         ;   XREF to: 10004052 (UNCONDITIONAL_JUMP)  ; LAB_10004052
     PUSH 0x1                            ; 1000403e
@@ -173,12 +175,12 @@ section .text
     JZ 0x10004122                       ; 10004058
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
     MOV EAX,[0x10014138]                ; 1000405e | g_CurrentTextureIndex
-    MOV ECX,dword ptr [0x100141d4]      ; 10004063 | DAT_100141d4
+    MOV ECX,dword ptr [0x100141d4]      ; 10004063 | g_CurrentBoundTexture
     CMP dword ptr [EAX*0x8 + 0x1020de40],ECX ; 10004069 | g_TextureSurfaces
     JZ 0x10004122                       ; 10004070
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
-    CALL dll_dx7.cpp_FUN_100047b0       ; 10004076
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10004076
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
     MOV EAX,[0x10014138]                ; 1000407b | g_CurrentTextureIndex
     PUSH 0x4                            ; 10004080
     PUSH 0x1                            ; 10004082
@@ -186,7 +188,7 @@ section .text
     MOV EAX,dword ptr [EAX*0x8 + 0x1020de40] ; 1000408a | g_TextureSurfaces
     PUSH 0x0                            ; 10004091
     PUSH ECX                            ; 10004093
-    MOV [0x100141d4],EAX                ; 10004094 | DAT_100141d4
+    MOV [0x100141d4],EAX                ; 10004094 | g_CurrentBoundTexture
     MOV EAX,dword ptr [ECX]             ; 10004099
     CALL dword ptr [EAX + 0xa0]         ; 1000409b
     MOV ECX,dword ptr [0x10226918]      ; 100040a1 | g_ExternalRendererBridge.system_initialized
@@ -223,7 +225,7 @@ section .text
     MOV EAX,dword ptr [ECX]             ; 10004101
     PUSH ECX                            ; 10004103
     CALL dword ptr [EAX + 0xa0]         ; 10004104
-    MOV ECX,dword ptr [0x100141d4]      ; 1000410a | DAT_100141d4
+    MOV ECX,dword ptr [0x100141d4]      ; 1000410a | g_CurrentBoundTexture
     MOV EDX,dword ptr [0x100141e0]      ; 10004110 | g_Device
     PUSH ECX                            ; 10004116
     PUSH 0x0                            ; 10004117
@@ -233,10 +235,10 @@ section .text
     MOV EAX,[0x10226924]                ; 10004122 | g_ExternalRendererBridge.rendering_quality
         ;   Label: LAB_10004122
     MOV ECX,dword ptr [EAX]             ; 10004127
-    CMP dword ptr [0x10014224],ECX      ; 10004129 | DAT_10014224
+    CMP dword ptr [0x10014224],ECX      ; 10004129 | g_PrevRenderingQuality
     JZ 0x10004153                       ; 1000412f
         ;   XREF to: 10004153 (CONDITIONAL_JUMP)  ; LAB_10004153
-    MOV dword ptr [0x10014224],ECX      ; 10004131 | DAT_10014224
+    MOV dword ptr [0x10014224],ECX      ; 10004131 | g_PrevRenderingQuality
     TEST ECX,ECX                        ; 10004137
     JZ 0x1000413f                       ; 10004139
         ;   XREF to: 1000413f (CONDITIONAL_JUMP)  ; LAB_1000413f
@@ -254,7 +256,7 @@ section .text
     CALL dword ptr [EAX + 0xa0]         ; 1000414d
     MOV EAX,ESI                         ; 10004153
         ;   Label: LAB_10004153
-    XOR EAX,dword ptr [0x10014218]      ; 10004155 | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 10004155 | g_PrevRenderFlags
     TEST AL,0x2                         ; 1000415b
     JZ 0x100041a7                       ; 1000415d
         ;   XREF to: 100041a7 (CONDITIONAL_JUMP)  ; LAB_100041a7
@@ -293,7 +295,7 @@ section .text
     ADD ESP,0x8                         ; 100041a4
     MOV EAX,ESI                         ; 100041a7
         ;   Label: LAB_100041a7
-    XOR EAX,dword ptr [0x10014218]      ; 100041a9 | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 100041a9 | g_PrevRenderFlags
     TEST AL,0x4                         ; 100041af
     JZ 0x100041cb                       ; 100041b1
         ;   XREF to: 100041cb (CONDITIONAL_JUMP)  ; LAB_100041cb
@@ -312,7 +314,7 @@ section .text
     ADD ESP,0x8                         ; 100041c8
     MOV EAX,ESI                         ; 100041cb
         ;   Label: LAB_100041cb
-    XOR EAX,dword ptr [0x10014218]      ; 100041cd | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 100041cd | g_PrevRenderFlags
     TEST AL,0x8                         ; 100041d3
     JZ 0x100041ef                       ; 100041d5
         ;   XREF to: 100041ef (CONDITIONAL_JUMP)  ; LAB_100041ef
@@ -331,7 +333,7 @@ section .text
     ADD ESP,0x8                         ; 100041ec
     MOV EAX,ESI                         ; 100041ef
         ;   Label: LAB_100041ef
-    XOR EAX,dword ptr [0x10014218]      ; 100041f1 | DAT_10014218
+    XOR EAX,dword ptr [0x10014218]      ; 100041f1 | g_PrevRenderFlags
     TEST AL,0xc0                        ; 100041f7
     JZ 0x10004282                       ; 100041f9
         ;   XREF to: 10004282 (CONDITIONAL_JUMP)  ; LAB_10004282
@@ -402,9 +404,9 @@ section .text
     ADD ESP,0x8                         ; 1000427f
     MOV EAX,[0x10226908]                ; 10004282 | g_ExternalRendererBridge.system_memory_size
         ;   Label: LAB_10004282
-    MOV dword ptr [0x10014218],ESI      ; 10004287 | DAT_10014218
+    MOV dword ptr [0x10014218],ESI      ; 10004287 | g_PrevRenderFlags
     MOV ECX,dword ptr [EAX]             ; 1000428d
-    CMP dword ptr [0x10240624],ECX      ; 1000428f | DAT_10240624
+    CMP dword ptr [0x10240624],ECX      ; 1000428f | g_PrevSystemMemorySize
     JZ 0x10004302                       ; 10004295
         ;   XREF to: 10004302 (CONDITIONAL_JUMP)  ; LAB_10004302
     MOV EAX,[0x10226920]                ; 10004297 | g_ExternalRendererBridge.processor_type
@@ -423,7 +425,7 @@ section .text
     FLD1                                ; 100042bf
     MOV EDX,dword ptr [ESP + 0x4]       ; 100042c1
     SAR EDX,0x1                         ; 100042c5
-    ADD EDX,dword ptr [0x1024062c]      ; 100042c8 | DAT_1024062c
+    ADD EDX,dword ptr [0x1024062c]      ; 100042c8 | g_FlyModeDepthBias
     MOV dword ptr [ESP + 0x4],EDX       ; 100042ce
     FDIV float ptr [ESP + 0x4]          ; 100042d2
     JMP 0x100042f6                      ; 100042d6
@@ -438,36 +440,36 @@ section .text
         ;   Label: LAB_100042e8
     MOV dword ptr [ESP + 0x4],ECX       ; 100042ee
     FIDIV dword ptr [ESP + 0x4]         ; 100042f2
-    FSTP float ptr [0x10240614]         ; 100042f6 | DAT_10240614
+    FSTP float ptr [0x10240614]         ; 100042f6 | g_TextureLodScale
         ;   Label: LAB_100042f6
-    MOV dword ptr [0x10240624],ECX      ; 100042fc | DAT_10240624
+    MOV dword ptr [0x10240624],ECX      ; 100042fc | g_PrevSystemMemorySize
     TEST ESI,0x10                       ; 10004302
         ;   Label: LAB_10004302
     JZ 0x1000435f                       ; 10004308
         ;   XREF to: 1000435f (CONDITIONAL_JUMP)  ; LAB_1000435f
     MOV EAX,[0x102268e0]                ; 1000430a | g_ExternalRendererBridge.current_lighting
-    MOV dword ptr [0x10240610],0x0      ; 1000430f | DAT_10240610
+    MOV dword ptr [0x10240610],0x0      ; 1000430f | g_LightingOverflow
     MOV ECX,dword ptr [EAX]             ; 10004319
     SUB ECX,0x100                       ; 1000431b
     SAR ECX,0x4                         ; 10004321
-    MOV dword ptr [0x10236908],ECX      ; 10004324 | DAT_10236908
+    MOV dword ptr [0x10236908],ECX      ; 10004324 | g_LightingAlpha
     CMP ECX,0xff                        ; 1000432a
     JLE 0x10004373                      ; 10004330
         ;   XREF to: 10004373 (CONDITIONAL_JUMP)  ; LAB_10004373
     SUB ECX,0x100                       ; 10004332
-    MOV dword ptr [0x10240610],ECX      ; 10004338 | DAT_10240610
+    MOV dword ptr [0x10240610],ECX      ; 10004338 | g_LightingOverflow
     CMP ECX,0xff                        ; 1000433e
     JLE 0x10004350                      ; 10004344
         ;   XREF to: 10004350 (CONDITIONAL_JUMP)  ; LAB_10004350
-    MOV dword ptr [0x10240610],0xff     ; 10004346 | DAT_10240610
-    MOV dword ptr [0x10236908],0xff     ; 10004350 | DAT_10236908
+    MOV dword ptr [0x10240610],0xff     ; 10004346 | g_LightingOverflow
+    MOV dword ptr [0x10236908],0xff     ; 10004350 | g_LightingAlpha
         ;   Label: LAB_10004350
     POP ESI                             ; 1000435a
     ADD ESP,0x4                         ; 1000435b
     RET                                 ; 1000435e
-    MOV dword ptr [0x10236908],0xff     ; 1000435f | DAT_10236908
+    MOV dword ptr [0x10236908],0xff     ; 1000435f | g_LightingAlpha
         ;   Label: LAB_1000435f
-    MOV dword ptr [0x10240610],0x0      ; 10004369 | DAT_10240610
+    MOV dword ptr [0x10240610],0x0      ; 10004369 | g_LightingOverflow
     POP ESI                             ; 10004373
         ;   Label: LAB_10004373
     ADD ESP,0x4                         ; 10004374

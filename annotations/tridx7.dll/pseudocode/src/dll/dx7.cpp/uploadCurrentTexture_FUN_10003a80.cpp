@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
 
 {
@@ -71,7 +69,7 @@ void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
       dll_dx7_cpp_FUN_10003d90
                 (local_7c.lpSurface,local_7c.dwPitchOrLinearSize.lPitch,local_7c.dwWidth);
     }
-    iVar3 = dll_dx7_cpp_FUN_10002cb0(local_94);
+    iVar3 = dll_dx7_cpp_unlockSurface_FUN_10002cb0(local_94);
     if (iVar3 == 0) {
                     /* WARNING: Subroutine does not return */
       dll_dx7_cpp_fatalError_FUN_10002340("Texture load failed: Texture buffer unlock failed");

@@ -35,10 +35,10 @@
 ;   dll_dx7.cpp_APIDLLtoggle_FUN_100024b0
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002370
 ;   dll_dx7.cpp_FUN_10002f40
 ;   dll_dx7.cpp_FUN_10003100
 ;   dll_dx7.cpp_readIniInt_FUN_10002b20
+;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 ;   ExitProcess
 ;   MessageBoxA
 ;   SetCursorPos
@@ -153,8 +153,8 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 100026bc | g_ScanlinePointers | g_ScanlinePointers[1]
     MOV ESI,dword ptr [0x1001417c]      ; 100026be | g_ScreenBitDepth
         ;   Label: LAB_100026be
-    CALL dll_dx7.cpp_FUN_10002370       ; 100026c4
-        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002370()
+    CALL dll_dx7.cpp_releaseDirectXResources_FUN_10002370 ; 100026c4
+        ;   XREF to: 10002370 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_releaseDirectXResources_FUN_10002370()
     PUSH 0x11                           ; 100026c9
     MOV EAX,[0x10138fb8]                ; 100026cb | g_WindowHandle
     PUSH EAX                            ; 100026d0

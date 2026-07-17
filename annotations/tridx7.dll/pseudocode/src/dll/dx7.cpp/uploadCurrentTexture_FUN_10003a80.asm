@@ -38,10 +38,10 @@
 ;   dll_dx7.cpp_checkD3DResult_FUN_10001d70
 ;   dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
 ;   dll_dx7.cpp_fatalError_FUN_10002340
-;   dll_dx7.cpp_FUN_10002cb0
 ;   dll_dx7.cpp_FUN_10002e20
 ;   dll_dx7.cpp_FUN_10003d90
 ;   dll_dx7.cpp_FUN_10003e40
+;   dll_dx7.cpp_unlockSurface_FUN_10002cb0
 ;
 ; *****************************************************************************
 
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_10003b99
     ADD ESP,0xc                         ; 10003b9d
     PUSH EAX                            ; 10003ba0
-    CALL dll_dx7.cpp_FUN_10002cb0       ; 10003ba1
-        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10002cb0()
+    CALL dll_dx7.cpp_unlockSurface_FUN_10002cb0 ; 10003ba1
+        ;   XREF to: 10002cb0 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface * surface)
     ADD ESP,0x4                         ; 10003ba6
     TEST EAX,EAX                        ; 10003ba9
     JNZ 0x10003bba                      ; 10003bab

@@ -31,7 +31,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(void *source_palette,
   local_7c[0] = 0x7c;
   iVar2 = dll_dx7_cpp_FUN_10002e20((int *)g_BackBufferSurface,local_7c);
   if (iVar2 != 0) {
-    iVar2 = dll_dx7_cpp_FUN_10002cb0(g_BackBufferSurface);
+    iVar2 = dll_dx7_cpp_unlockSurface_FUN_10002cb0(g_BackBufferSurface);
     if (iVar2 != 0) {
       iVar2 = 0;
       for (uVar1 = local_24; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {

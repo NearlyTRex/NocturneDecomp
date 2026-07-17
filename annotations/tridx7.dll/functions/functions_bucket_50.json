@@ -42,12 +42,54 @@
         "start":"10002b50"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10002b50",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50",
+    "ret":"HRESULT",
     "vars":{
+      "params":[
+        {
+          "name":"lp_pixel_format",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DDPIXELFORMAT*"
+        },
+        {
+          "name":"lp_context",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DDPIXELFORMAT*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -60,12 +102,20 @@
         "start":"10002c50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10002c50",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_unlockBackBuffer_FUN_10002c50",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

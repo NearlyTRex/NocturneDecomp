@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_FUN_10002370
+// Name: dll_dx7.cpp_releaseDirectXResources_FUN_10002370
 // Address: 10002370
 // Address Range: [[10002370, 1000245a]]
-// Convention: unknown
-// Signature: void dll_dx7_cpp_FUN_10002370(void)
+// Convention: __cdecl
+// Signature: void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
 
 #include "nocturne.h"
 
-void dll_dx7_cpp_FUN_10002370(void)
+void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)
 
 {
   IDirectDrawSurface *this_ptr;
@@ -14,13 +14,13 @@ void dll_dx7_cpp_FUN_10002370(void)
   IDirectDrawSurface **ppIVar2;
   
   dll_dx7_cpp_FUN_10002ea0();
-  if (DAT_100141b8 != (int *)0x0) {
-    (**(code **)(*DAT_100141b8 + 8))(DAT_100141b8);
-    DAT_100141b8 = (int *)0x0;
+  if (g_HoldBufferSurface != (IDirectDrawSurface *)0x0) {
+    (*g_HoldBufferSurface->vtable->Release)((IUnknown *)g_HoldBufferSurface);
+    g_HoldBufferSurface = (IDirectDrawSurface *)0x0;
   }
-  if (DAT_100141e4 != (int *)0x0) {
-    (**(code **)(*DAT_100141e4 + 8))(DAT_100141e4);
-    DAT_100141e4 = (int *)0x0;
+  if (g_Viewport != (IDirect3DViewport3 *)0x0) {
+    (*g_Viewport->vtable->Release)((IUnknown *)g_Viewport);
+    g_Viewport = (IDirect3DViewport3 *)0x0;
   }
   if (g_Device != (IDirect3DDevice3 *)0x0) {
     (*g_Device->vtable->Release)((IUnknown *)g_Device);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 dll_dx7_cpp_FUN_10002dc0(void)
+; int __cdecl dll_dx7_cpp_lockBackBuffer_FUN_10002dc0(void)
 ;
 ;
 ; XREF[1]:
@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_ScreenHeight = 0x1e0
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
-;   undefined4 DAT_100141f4
+;   int g_BackBufferLocked = 0x0
 ;   void** g_ScanlinePtrBase = 00000000
 ;   DDSURFACEDESC2 g_PrimarySurfaceDesc
 ;   undefined4 g_PrimarySurfaceDesc.dwPitchOrLinearSize
@@ -23,8 +23,8 @@
 
 section .text
 
-    CMP dword ptr [0x100141f4],0x0      ; 10002dc0 | DAT_100141f4
-        ;   Label: dll_dx7.cpp_FUN_10002dc0
+    CMP dword ptr [0x100141f4],0x0      ; 10002dc0 | g_BackBufferLocked
+        ;   Label: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
     JZ 0x10002dcf                       ; 10002dc7
         ;   XREF to: 10002dcf (CONDITIONAL_JUMP)  ; LAB_10002dcf
     MOV EAX,0x1                         ; 10002dc9
@@ -55,7 +55,7 @@ section .text
     DEC EAX                             ; 10002e09
     JNZ 0x10002dfe                      ; 10002e0a
         ;   XREF to: 10002dfe (CONDITIONAL_JUMP)  ; LAB_10002dfe
-    MOV dword ptr [0x100141f4],0x1      ; 10002e0c | DAT_100141f4
+    MOV dword ptr [0x100141f4],0x1      ; 10002e0c | g_BackBufferLocked
         ;   Label: LAB_10002e0c
     MOV EAX,0x1                         ; 10002e16
     RET                                 ; 10002e1b

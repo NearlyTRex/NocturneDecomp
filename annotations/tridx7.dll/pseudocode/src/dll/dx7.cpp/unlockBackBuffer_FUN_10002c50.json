@@ -18,12 +18,6 @@
         "column": 5,
         "line": 55,
         "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 28,
-        "message": "no matching function for call to 'dll_dx7_cpp_FUN_10002cb0'"
       }
     ],
     "success": false,
@@ -32,15 +26,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 74,
+    "complexity_score": 49,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 61
@@ -67,15 +60,15 @@
         "10002ca2"
       ]
     ],
-    "convention": "unknown",
-    "name": "dll_dx7.cpp_FUN_10002c50",
-    "signature": "undefined4 dll_dx7_cpp_FUN_10002c50(void)"
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_unlockBackBuffer_FUN_10002c50",
+    "signature": "int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void)"
   },
   "function_calls": [
     {
       "addr": "10002cb0",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10002cb0"
+      "name": "dll_dx7.cpp_unlockSurface_FUN_10002cb0"
     }
   ],
   "globals": [
@@ -93,9 +86,9 @@
     },
     {
       "addr": "100141f4",
-      "name": "DAT_100141f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackBufferLocked",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "10138fb4",
@@ -155,22 +148,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_100141f4",
-      "severity": "mild",
-      "text": "if (DAT_100141f4 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_100141f4",
-      "severity": "mild",
-      "text": "DAT_100141f4 = 0;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 15,

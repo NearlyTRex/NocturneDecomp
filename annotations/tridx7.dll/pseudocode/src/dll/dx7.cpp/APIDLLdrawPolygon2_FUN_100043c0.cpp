@@ -9,9 +9,9 @@
 int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 
 {
-  short sVar1;
+  WORD WVar1;
   short sVar2;
-  short *psVar3;
+  WORD *pWVar3;
   int iVar4;
   SRenderVertex **ppSVar5;
   int iVar6;
@@ -21,7 +21,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_a
   if (g_InScene == 0) {
     return 0;
   }
-  dll_dx7_cpp_FUN_10003f10(render_flags);
+  dll_dx7_cpp_applyRenderState_FUN_10003f10(render_flags);
   iVar6 = ((*vertex_array)->projected_vertex).transformed_z;
   if (1 < vertex_count) {
     iVar4 = vertex_count + -1;
@@ -40,7 +40,7 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_a
     do {
       iVar7 = iVar4 + 1;
       dll_dx7_cpp_FUN_100044b0
-                (vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,
+                (vertex_array[iVar4],g_VertexBuffer + g_PendingVertexCount + iVar4,render_flags,
                  iVar6);
       iVar4 = iVar7;
     } while (iVar7 < vertex_count);
@@ -48,25 +48,24 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_a
   iVar4 = 0;
   iVar6 = vertex_count + -2;
   if (0 < iVar6) {
-    sVar1 = (short)DAT_10014228;
-    iVar7 = DAT_1001422c * 2;
-    DAT_1001422c = DAT_1001422c + iVar6 * 3;
-    psVar3 = (short *)(&DAT_10238910 + iVar7);
+    WVar1 = (WORD)g_PendingVertexCount;
+    pWVar3 = g_IndexBuffer + g_PendingIndexCount;
+    g_PendingIndexCount = g_PendingIndexCount + iVar6 * 3;
     do {
-      *psVar3 = sVar1;
+      *pWVar3 = WVar1;
       sVar2 = (short)iVar4;
-      psVar3[1] = sVar1 + 1 + sVar2;
+      pWVar3[1] = WVar1 + 1 + sVar2;
       iVar4 = iVar4 + 1;
-      psVar3[2] = sVar1 + 2 + sVar2;
-      psVar3 = psVar3 + 3;
+      pWVar3[2] = WVar1 + 2 + sVar2;
+      pWVar3 = pWVar3 + 3;
     } while (iVar4 < iVar6);
   }
-  DAT_10014228 = DAT_10014228 + vertex_count;
-  if (0x3e76 < DAT_10014228) {
-    dll_dx7_cpp_FUN_100047b0();
+  g_PendingVertexCount = g_PendingVertexCount + vertex_count;
+  if (0x3e76 < g_PendingVertexCount) {
+    dll_dx7_cpp_flushBatch_FUN_100047b0();
   }
-  if (0x3e76 < DAT_1001422c) {
-    dll_dx7_cpp_FUN_100047b0();
+  if (0x3e76 < g_PendingIndexCount) {
+    dll_dx7_cpp_flushBatch_FUN_100047b0();
   }
   return 1;
 }

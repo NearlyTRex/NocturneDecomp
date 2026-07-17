@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   dll_dx7.cpp_APIDLLinit_FUN_10001a80 at 10001d3d
-;   dll_dx7.cpp_FUN_10002370 at 10002372
 ;   dll_dx7.cpp_FUN_10003400 at 1000340a
+;   dll_dx7.cpp_releaseDirectXResources_FUN_10002370 at 10002372
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10138f30

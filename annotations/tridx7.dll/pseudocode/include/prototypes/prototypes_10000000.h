@@ -5,6 +5,7 @@
 #include "system/WinDef.h"
 #include "system/basetsd.h"
 #include "system/crtdefs.h"
+#include "system/ddraw.h"
 #include "system/excpt.h"
 #include "system/fltintrn.h"
 #include "system/internal.h"
@@ -41,21 +42,21 @@ void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,void 
 int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRendererBridge *interface);
 void __cdecl dll_dx7_cpp_checkD3DResult_FUN_10001d70(HRESULT result);
 void __cdecl dll_dx7_cpp_fatalError_FUN_10002340(char *message);
-void dll_dx7_cpp_FUN_10002370(void);
+void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void);
 void __cdecl dll_dx7_cpp_APIDLLkill_FUN_10002460(void);
 int __cdecl dll_dx7_cpp_APIDLLtoggle_FUN_100024b0(void);
 int __cdecl dll_dx7_cpp_APIDLLsetVideoMode_FUN_10002500(void **scanline_ptrs);
 void __cdecl dll_dx7_cpp_readIniInt_FUN_10002b20(char *section,char *key,uint *value_inout);
-undefined4 dll_dx7_cpp_FUN_10002b50(undefined4 *param_1,undefined4 *param_2);
+HRESULT __stdcall dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context);
 int __cdecl dll_dx7_cpp_APIDLLsetVideoMode2_FUN_10002bb0(int width,int height,int bits_per_pixel,void **screen_buffer_array);
 int __cdecl dll_dx7_cpp_APIDLLrestoreVideoMode_FUN_10002be0(void);
-undefined4 dll_dx7_cpp_FUN_10002c50(void);
-undefined4 dll_dx7_cpp_FUN_10002cb0(int *param_1);
+int __cdecl dll_dx7_cpp_unlockBackBuffer_FUN_10002c50(void);
+int __cdecl dll_dx7_cpp_unlockSurface_FUN_10002cb0(IDirectDrawSurface *surface);
 int __cdecl dll_dx7_cpp_APIDLLbeginScene_FUN_10002ce0(void);
 int __cdecl dll_dx7_cpp_APIDLLendScene_FUN_10002d10(void);
 void dll_dx7_cpp_FUN_10002d50(void);
 int __cdecl dll_dx7_cpp_APIDLLlockFrame_FUN_10002d90(void);
-undefined4 dll_dx7_cpp_FUN_10002dc0(void);
+int __cdecl dll_dx7_cpp_lockBackBuffer_FUN_10002dc0(void);
 int __cdecl dll_dx7_cpp_FUN_10002e20(int *param_1,undefined4 *param_2);
 int __cdecl dll_dx7_cpp_APIDLLunlockFrame_FUN_10002e60(void);
 void dll_dx7_cpp_FUN_10002ea0(void);
@@ -75,11 +76,11 @@ void dll_dx7_cpp_FUN_10003e40(undefined4 *param_1,uint param_2,int param_3);
 int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
 int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
 int __cdecl dll_dx7_cpp_APIDLLsetMipMapLevel_FUN_10003f00(int mipmap_level);
-void dll_dx7_cpp_FUN_10003f10(uint param_1);
+void __cdecl dll_dx7_cpp_applyRenderState_FUN_10003f10(uint render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolygon_FUN_10004380(SRenderVertex *vertices,int vertex_count,int render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(SRenderVertex **vertex_array,int vertex_count,int render_flags);
 void dll_dx7_cpp_FUN_100044b0(int param_1,float *param_2,uint param_3,int param_4);
-void dll_dx7_cpp_FUN_100047b0(void);
+void __cdecl dll_dx7_cpp_flushBatch_FUN_100047b0(void);
 int __cdecl dll_dx7_cpp_APIDLLaddParticle_FUN_10004800(void *particle_data,int particle_type);
 int __cdecl dll_dx7_cpp_APIDLLflushParticleList_FUN_10004810(void);
 int __cdecl dll_dx7_cpp_APIDLLadd3dLine_FUN_10004820(void *start_point,void *end_point,int line_style);

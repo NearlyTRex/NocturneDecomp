@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_ScreenHeight = 0x1e0
-;   undefined4 DAT_100141b8
+;   IDirectDrawSurface* g_HoldBufferSurface = 00000000
 ;   void** g_ScanlinePtrBase = 00000000
 ;   DDSURFACEDESC2 g_PrimarySurfaceDesc
 ;   undefined4 g_PrimarySurfaceDesc.dwPitchOrLinearSize
@@ -21,7 +21,7 @@ section .text
 
     PUSH 0x10226e88                     ; 10005350 | g_PrimarySurfaceDesc
         ;   Label: dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
-    MOV EAX,[0x100141b8]                ; 10005355 | DAT_100141b8
+    MOV EAX,[0x100141b8]                ; 10005355 | g_HoldBufferSurface
     PUSH EAX                            ; 1000535a
     CALL dll_dx7.cpp_FUN_10002e20       ; 1000535b
         ;   XREF to: 10002e20 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_FUN_10002e20(int * param_1, undefined4 * param_2)

@@ -33,6 +33,12 @@ extern IDirect3D3* g_Direct3D3;
 // IDirect3DDevice3*
 extern IDirect3DDevice3* g_Device;
 
+// IDirect3DTexture2*
+extern IDirect3DTexture2* g_CurrentBoundTexture;
+
+// IDirect3DViewport3*
+extern IDirect3DViewport3* g_Viewport;
+
 // IDirectDraw*
 extern IDirectDraw* g_DirectDraw;
 
@@ -43,6 +49,7 @@ extern IDirectDraw4* g_DirectDraw4;
 extern IDirectDrawSurface* g_BackBufferSurface;
 extern IDirectDrawSurface* g_PrimarySurface;
 extern IDirectDrawSurface* g_ZBufferSurface;
+extern IDirectDrawSurface* g_HoldBufferSurface;
 
 // IDirectDrawSurface*[8]
 extern IDirectDrawSurface* g_MasterZBufferSurfaces[8];
@@ -68,10 +75,16 @@ extern int g_ScreenHeight;
 extern int g_ScreenBitDepth;
 extern int g_StagingSetIndex;
 extern int g_DirectTextureFlag;
+extern int g_BackBufferLocked;
 extern int g_FrameLocked;
 extern int g_InScene;
 extern int g_SelectedCardIndex;
 extern int g_TextureCount;
+extern int g_PrevSystemInitialized;
+extern int g_PrevBlendMode;
+extern int g_PrevRenderingQuality;
+extern int g_PendingVertexCount;
+extern int g_PendingIndexCount;
 
 // string
 extern string DAT_10012397;
@@ -94,6 +107,7 @@ extern string DAT_1001296C;
 // uint
 extern uint g_LocalVideoMem;
 extern uint g_NonLocalVideoMem;
+extern uint g_PrevRenderFlags;
 
 // undefined1
 extern undefined1 DAT_1001277a;
@@ -122,18 +136,9 @@ extern undefined2 DAT_1001795e;
 extern undefined2 DAT_10017960;
 
 // undefined4
-extern undefined4 DAT_100141b8;
 extern undefined4 DAT_100141bc;
 extern undefined4 DAT_100141c0;
-extern undefined4 DAT_100141d4;
-extern undefined4 DAT_100141e4;
-extern undefined4 DAT_100141f4;
 extern undefined4 DAT_100141fc;
-extern undefined4 DAT_1001421c;
-extern undefined4 DAT_10014220;
-extern undefined4 DAT_10014224;
-extern undefined4 DAT_10014228;
-extern undefined4 DAT_1001422c;
 extern undefined4 DAT_10014230;
 extern undefined4 DAT_10014234;
 extern undefined4 DAT_10016c60;

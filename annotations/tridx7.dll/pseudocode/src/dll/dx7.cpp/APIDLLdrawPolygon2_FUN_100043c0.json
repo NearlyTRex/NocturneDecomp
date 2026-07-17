@@ -20,16 +20,10 @@
         "message": "unknown type name 'PCONTEXT'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_1013b8d8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 54,
-        "message": "use of undeclared identifier 'DAT_10238910'; did you mean 'DAT_10244910'?"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 42,
+        "message": "no matching function for call to 'dll_dx7_cpp_FUN_100044b0'"
       }
     ],
     "success": false,
@@ -38,17 +32,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 177,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
-    "suspect_count": 11,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 170
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 169
   },
   "cross_references": [
     {
@@ -74,17 +66,17 @@
     {
       "addr": "10003f10",
       "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_10003f10"
+      "name": "dll_dx7.cpp_applyRenderState_FUN_10003f10"
+    },
+    {
+      "addr": "100047b0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_flushBatch_FUN_100047b0"
     },
     {
       "addr": "100044b0",
       "is_variadic": false,
       "name": "dll_dx7.cpp_FUN_100044b0"
-    },
-    {
-      "addr": "100047b0",
-      "is_variadic": false,
-      "name": "dll_dx7.cpp_FUN_100047b0"
     }
   ],
   "globals": [
@@ -96,55 +88,55 @@
     },
     {
       "addr": "10014228",
-      "name": "DAT_10014228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PendingVertexCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "1001422c",
-      "name": "DAT_1001422c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PendingIndexCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "1013b8d8",
-      "name": "DAT_1013b8d8",
-      "type": "undefined4",
+      "name": "g_VertexBuffer",
+      "type": "SScreenVertex[16000]",
       "value": null
     },
     {
       "addr": "10238910",
-      "name": "DAT_10238910",
-      "type": "undefined4",
+      "name": "g_IndexBuffer",
+      "type": "WORD[16000]",
       "value": null
     },
     {
       "addr": "10238912",
-      "name": "DAT_10238912",
+      "name": "g_IndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10238914",
-      "name": "DAT_10238914",
+      "name": "g_IndexBuffer[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10238916",
-      "name": "DAT_10238916",
+      "name": "g_IndexBuffer[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "10238918",
-      "name": "DAT_10238918",
+      "name": "g_IndexBuffer[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "1023891a",
-      "name": "DAT_1023891a",
+      "name": "g_IndexBuffer[5]",
       "type": "undefined4",
       "value": null
     }
@@ -209,94 +201,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_1013b8d8",
-      "severity": "mild",
-      "text": "(vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "(vertex_array[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,render_flags,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "sVar1 = (short)DAT_10014228;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "iVar7 = DAT_1001422c * 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_10238910",
-      "severity": "mild",
-      "text": "psVar3 = (short *)(&DAT_10238910 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + vertex_count;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "DAT_10014228 = DAT_10014228 + vertex_count;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_10014228",
-      "severity": "mild",
-      "text": "if (0x3e76 < DAT_10014228) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_1001422c",
-      "severity": "mild",
-      "text": "if (0x3e76 < DAT_1001422c) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

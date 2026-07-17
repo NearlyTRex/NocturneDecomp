@@ -118,8 +118,14 @@ extern dword DAT_1024201C;
 extern dword DAT_1024202C;
 extern dword DAT_10242030;
 
+// float
+extern float g_TextureLodScale;
+
 // int
+extern int g_LightingOverflow;
 extern int g_HWGreenShift;
+extern int g_PrevSystemMemorySize;
+extern int g_FlyModeDepthBias;
 
 // uchar*
 extern uchar* g_TextureOpacity;
@@ -147,8 +153,6 @@ extern undefined2 DAT_1024084c;
 extern undefined2 DAT_1024084e;
 
 // undefined4
-extern undefined4 DAT_10240610;
-extern undefined4 DAT_10240624;
 extern undefined4 DAT_10240794;
 extern undefined4 DAT_102407a0;
 extern undefined4 DAT_102407a8;

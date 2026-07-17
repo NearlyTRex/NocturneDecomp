@@ -26,7 +26,7 @@ void dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(void *param_1)
       g_PrimarySurfaceDesc.dwSize = 0x7c;
       (*g_BackBufferSurface->vtable->Lock)
                 (g_BackBufferSurface,(RECT *)0x0,&g_PrimarySurfaceDesc,1,(void *)0x0);
-      DAT_100141f4 = 1;
+      g_BackBufferLocked = 1;
       DAT_10014230 = 0;
     }
   }

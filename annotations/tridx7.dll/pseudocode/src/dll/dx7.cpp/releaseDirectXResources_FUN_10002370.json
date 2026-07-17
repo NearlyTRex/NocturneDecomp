@@ -1,0 +1,178 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 21,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 54,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 55,
+        "message": "unknown type name 'PCONTEXT'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 45,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 128
+  },
+  "cross_references": [
+    {
+      "addr": "10001a80",
+      "from_addr": "10001cc5",
+      "name": "dll_dx7.cpp_APIDLLinit_FUN_10001a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002460",
+      "from_addr": "10002460",
+      "name": "dll_dx7.cpp_APIDLLkill_FUN_10002460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002be0",
+      "from_addr": "10002c2c",
+      "name": "dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10002500",
+      "from_addr": "100026c4",
+      "name": "dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10002370",
+    "address_range": [
+      [
+        "10002370",
+        "1000245a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "dll_dx7.cpp_releaseDirectXResources_FUN_10002370",
+    "signature": "void __cdecl dll_dx7_cpp_releaseDirectXResources_FUN_10002370(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002ea0",
+      "is_variadic": false,
+      "name": "dll_dx7.cpp_FUN_10002ea0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001418c",
+      "name": "g_PrimarySurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10014190",
+      "name": "g_ZBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10014198",
+      "name": "g_MasterZBufferSurfaces",
+      "type": "IDirectDrawSurface*[8]",
+      "value": null
+    },
+    {
+      "addr": "1001419c",
+      "name": "g_MasterZBufferSurfaces[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141b8",
+      "name": "g_HoldBufferSurface",
+      "type": "IDirectDrawSurface*",
+      "value": "00000000"
+    },
+    {
+      "addr": "100141dc",
+      "name": "g_Direct3D3",
+      "type": "IDirect3D3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "100141e0",
+      "name": "g_Device",
+      "type": "IDirect3DDevice3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "100141e4",
+      "name": "g_Viewport",
+      "type": "IDirect3DViewport3*",
+      "value": "00000000"
+    },
+    {
+      "addr": "10226a48",
+      "name": "g_MasterZBufferCount",
+      "type": "int",
+      "value": "0x0"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CALLIND": 7,
+      "CBRANCH": 9,
+      "COPY": 54,
+      "INT_ADD": 12,
+      "INT_AND": 25,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 25,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 12,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "LOAD": 18,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 243
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

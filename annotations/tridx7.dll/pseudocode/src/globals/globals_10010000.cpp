@@ -24,6 +24,12 @@ IDirect3D3* g_Direct3D3 = nullptr;
 // IDirect3DDevice3*
 IDirect3DDevice3* g_Device = nullptr;
 
+// IDirect3DTexture2*
+IDirect3DTexture2* g_CurrentBoundTexture = nullptr;
+
+// IDirect3DViewport3*
+IDirect3DViewport3* g_Viewport = nullptr;
+
 // IDirectDraw*
 IDirectDraw* g_DirectDraw = nullptr;
 
@@ -34,6 +40,7 @@ IDirectDraw4* g_DirectDraw4 = nullptr;
 IDirectDrawSurface* g_BackBufferSurface = nullptr;
 IDirectDrawSurface* g_PrimarySurface = nullptr;
 IDirectDrawSurface* g_ZBufferSurface = nullptr;
+IDirectDrawSurface* g_HoldBufferSurface = nullptr;
 
 // IDirectDrawSurface*[8]
 IDirectDrawSurface* g_MasterZBufferSurfaces[8] = {};
@@ -77,10 +84,16 @@ int g_ScreenHeight = 0x1E0;
 int g_ScreenBitDepth = 0x10;
 int g_StagingSetIndex = 0;
 int g_DirectTextureFlag = 0;
+int g_BackBufferLocked = 0;
 int g_FrameLocked = 0;
 int g_InScene = 0;
 int g_SelectedCardIndex = 0;
 int g_TextureCount = 0;
+int g_PrevSystemInitialized = 0;
+int g_PrevBlendMode = 0;
+int g_PrevRenderingQuality = 0x1;
+int g_PendingVertexCount = 0;
+int g_PendingIndexCount = 0;
 
 // string
 string DAT_10012397 = "?GetCurrentThread";
@@ -103,6 +116,7 @@ string DAT_1001296C = "canada";
 // uint
 uint g_LocalVideoMem = 0;
 uint g_NonLocalVideoMem = 0;
+uint g_PrevRenderFlags = 0;
 
 // undefined1
 undefined1 DAT_1001277a = 0x00;
@@ -131,18 +145,9 @@ undefined2 DAT_1001795e = 0x0000;
 undefined2 DAT_10017960 = 0x0000;
 
 // undefined4
-undefined4 DAT_100141b8 = 0x00000000;
 undefined4 DAT_100141bc = 0x000000FF;
 undefined4 DAT_100141c0 = 0x000000FF;
-undefined4 DAT_100141d4 = 0x00000000;
-undefined4 DAT_100141e4 = 0x00000000;
-undefined4 DAT_100141f4 = 0x00000000;
 undefined4 DAT_100141fc = 0x00000000;
-undefined4 DAT_1001421c = 0x00000000;
-undefined4 DAT_10014220 = 0x00000000;
-undefined4 DAT_10014224 = 0x00000001;
-undefined4 DAT_10014228 = 0x00000000;
-undefined4 DAT_1001422c = 0x00000000;
 undefined4 DAT_10014230 = 0x00000000;
 undefined4 DAT_10014234 = 0x00000000;
 undefined4 DAT_10016c60 = 0x00000000;

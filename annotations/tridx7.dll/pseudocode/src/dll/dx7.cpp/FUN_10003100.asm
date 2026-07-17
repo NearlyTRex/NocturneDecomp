@@ -15,10 +15,10 @@
 ;   int g_ScreenHeight = 0x1e0
 ;   IDirectDrawSurface* g_BackBufferSurface = 00000000
 ;   IDirectDraw4* g_DirectDraw4 = 00000000
-;   undefined4 DAT_100141b8
+;   IDirectDrawSurface* g_HoldBufferSurface = 00000000
 ;   IDirect3D3* g_Direct3D3 = 00000000
 ;   IDirect3DDevice3* g_Device = 00000000
-;   undefined4 DAT_100141e4
+;   IDirect3DViewport3* g_Viewport = 00000000
 ;   TerminatedCString s_Can_t_create_hold_surfac_10016a9c
 ;   int g_UseHoldBuffer = 0x0
 ;   DDPIXELFORMAT g_TexturePixelFormat
@@ -83,7 +83,7 @@ section .text
     PUSH 0x0                            ; 10003174
         ;   Label: LAB_10003174
     MOV EAX,[0x100141dc]                ; 10003176 | g_Direct3D3
-    PUSH 0x100141e4                     ; 1000317b | DAT_100141e4
+    PUSH 0x100141e4                     ; 1000317b | g_Viewport
     PUSH EAX                            ; 10003180
     MOV EAX,dword ptr [EAX]             ; 10003181
     CALL dword ptr [EAX + 0x18]         ; 10003183
@@ -95,7 +95,7 @@ section .text
     POP ESI                             ; 1000318d
     ADD ESP,0x110                       ; 1000318e
     RET                                 ; 10003194
-    MOV EAX,[0x100141e4]                ; 10003195 | DAT_100141e4
+    MOV EAX,[0x100141e4]                ; 10003195 | g_Viewport
         ;   Label: LAB_10003195
     MOV ECX,dword ptr [0x100141e0]      ; 1000319a | g_Device
     PUSH EAX                            ; 100031a0
@@ -129,7 +129,7 @@ section .text
     MOV dword ptr [ESP + 0x28],0x40000000 ; 100031f8
     MOV dword ptr [ESP + 0x34],0x3f800000 ; 10003200
     FMUL double ptr [0x100122a8]        ; 10003208 | DAT_100122a8
-    MOV EAX,[0x100141e4]                ; 1000320e | DAT_100141e4
+    MOV EAX,[0x100141e4]                ; 1000320e | g_Viewport
     MOV dword ptr [ESP + 0x30],EDX      ; 10003213
     LEA EDX,[ESP + 0xc]                 ; 10003217
     PUSH EDX                            ; 1000321b
@@ -147,7 +147,7 @@ section .text
     POP ESI                             ; 10003237
     ADD ESP,0x110                       ; 10003238
     RET                                 ; 1000323e
-    MOV EAX,[0x100141e4]                ; 1000323f | DAT_100141e4
+    MOV EAX,[0x100141e4]                ; 1000323f | g_Viewport
         ;   Label: LAB_1000323f
     MOV ECX,dword ptr [0x100141e0]      ; 10003244 | g_Device
     PUSH EAX                            ; 1000324a
@@ -171,7 +171,7 @@ section .text
     PUSH EAX                            ; 10003296
     MOV ECX,dword ptr [0x10014188]      ; 10003297 | g_DirectDraw4
     LEA EAX,[ESP + 0x3c]                ; 1000329d
-    PUSH 0x100141b8                     ; 100032a1 | DAT_100141b8
+    PUSH 0x100141b8                     ; 100032a1 | g_HoldBufferSurface
     MOV dword ptr [ESP + 0x48],0x1e0    ; 100032a6
     MOV dword ptr [ESP + 0xa8],0x40     ; 100032ae
     PUSH EAX                            ; 100032b9
@@ -191,7 +191,7 @@ section .text
     STOSD.REP ES:EDI                    ; 100032df
     MOV dword ptr [ESP + 0xb4],0x64     ; 100032e1
     LEA EAX,[ESP + 0xb4]                ; 100032ec
-    MOV ECX,dword ptr [0x100141b8]      ; 100032f3 | DAT_100141b8
+    MOV ECX,dword ptr [0x100141b8]      ; 100032f3 | g_HoldBufferSurface
     PUSH EAX                            ; 100032f9
     PUSH 0x1000400                      ; 100032fa
     PUSH 0x0                            ; 100032ff

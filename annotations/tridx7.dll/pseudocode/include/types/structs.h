@@ -13,6 +13,7 @@
 #include "types/structs/SMRGLVertex.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SScreenVertex.h"
 #include "types/structs/STextureCacheEntry.h"
 #include "types/structs/STextureSurfaceSlot.h"
 

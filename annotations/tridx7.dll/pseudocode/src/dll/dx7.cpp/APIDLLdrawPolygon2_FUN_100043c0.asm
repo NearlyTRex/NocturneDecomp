@@ -13,20 +13,20 @@
 ;
 ; Referenced Globals:
 ;   int g_InScene = 0x0
-;   undefined4 DAT_10014228
-;   undefined4 DAT_1001422c
-;   undefined4 DAT_1013b8d8
-;   undefined4 DAT_10238910
-;   undefined4 DAT_10238912
-;   undefined4 DAT_10238914
-;   undefined4 DAT_10238916
-;   undefined4 DAT_10238918
-;   undefined4 DAT_1023891a
+;   int g_PendingVertexCount = 0x0
+;   int g_PendingIndexCount = 0x0
+;   SScreenVertex[16000] g_VertexBuffer
+;   WORD[16000] g_IndexBuffer
+;   undefined4 g_IndexBuffer[1]
+;   undefined4 g_IndexBuffer[2]
+;   undefined4 g_IndexBuffer[3]
+;   undefined4 g_IndexBuffer[4]
+;   undefined4 g_IndexBuffer[5]
 ;
 ; Called Functions:
-;   dll_dx7.cpp_FUN_10003f10
+;   dll_dx7.cpp_applyRenderState_FUN_10003f10
+;   dll_dx7.cpp_flushBatch_FUN_100047b0
 ;   dll_dx7.cpp_FUN_100044b0
-;   dll_dx7.cpp_FUN_100047b0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 100043d4
         ;   Label: LAB_100043d4
     PUSH EAX                            ; 100043d8
-    CALL dll_dx7.cpp_FUN_10003f10       ; 100043d9
-        ;   XREF to: 10003f10 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_10003f10()
+    CALL dll_dx7.cpp_applyRenderState_FUN_10003f10 ; 100043d9
+        ;   XREF to: 10003f10 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_applyRenderState_FUN_10003f10(uint render_flags)
     MOV EDI,dword ptr [ESP + 0x18]      ; 100043de
     MOV ESI,dword ptr [ESP + 0x1c]      ; 100043e2
     ADD ESP,0x4                         ; 100043e6
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 100043f9 (CONDITIONAL_JUMP)  ; LAB_100043f9
     XOR EBP,EBP                         ; 1000440a
         ;   Label: LAB_1000440a
-    MOV ECX,dword ptr [0x10014228]      ; 1000440c | DAT_10014228
+    MOV ECX,dword ptr [0x10014228]      ; 1000440c | g_PendingVertexCount
     TEST ESI,ESI                        ; 10004412
     JLE 0x10004441                      ; 10004414
         ;   XREF to: 10004441 (CONDITIONAL_JUMP)  ; LAB_10004441
@@ -86,14 +86,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 1000441d
     PUSH EDX                            ; 10004421
     INC EBP                             ; 10004422
-    LEA ECX,[EAX + 0x1013b8d8]          ; 10004423 | DAT_1013b8d8
+    LEA ECX,[EAX + 0x1013b8d8]          ; 10004423 | g_VertexBuffer
     MOV EAX,dword ptr [EDI + EBP*0x4 + -0x4] ; 10004429
     PUSH ECX                            ; 1000442d
     PUSH EAX                            ; 1000442e
     CALL dll_dx7.cpp_FUN_100044b0       ; 1000442f
         ;   XREF to: 100044b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100044b0()
     ADD ESP,0x10                        ; 10004434
-    MOV ECX,dword ptr [0x10014228]      ; 10004437 | DAT_10014228
+    MOV ECX,dword ptr [0x10014228]      ; 10004437 | g_PendingVertexCount
     CMP EBP,ESI                         ; 1000443d
     JL 0x10004416                       ; 1000443f
         ;   XREF to: 10004416 (CONDITIONAL_JUMP)  ; LAB_10004416
@@ -104,35 +104,35 @@ section .text
     JLE 0x1000447d                      ; 10004448
         ;   XREF to: 1000447d (CONDITIONAL_JUMP)  ; LAB_1000447d
     MOV DX,CX                           ; 1000444a
-    MOV EAX,[0x1001422c]                ; 1000444d | DAT_1001422c
+    MOV EAX,[0x1001422c]                ; 1000444d | g_PendingIndexCount
     LEA EBP,[EBX + EBX*0x2]             ; 10004452
-    LEA EAX,[EAX*0x2 + 0x10238910]      ; 10004455 | DAT_10238910
-    ADD dword ptr [0x1001422c],EBP      ; 1000445c | DAT_1001422c
-    MOV word ptr [EAX],DX               ; 10004462 | DAT_10238910 | DAT_10238916
+    LEA EAX,[EAX*0x2 + 0x10238910]      ; 10004455 | g_IndexBuffer
+    ADD dword ptr [0x1001422c],EBP      ; 1000445c | g_PendingIndexCount
+    MOV word ptr [EAX],DX               ; 10004462 | g_IndexBuffer | g_IndexBuffer[3]
         ;   Label: LAB_10004462
     LEA EBP,[ECX + EDI*0x1 + 0x1]       ; 10004465
-    MOV word ptr [EAX + 0x2],BP         ; 10004469 | DAT_10238912 | DAT_10238918
+    MOV word ptr [EAX + 0x2],BP         ; 10004469 | g_IndexBuffer[1] | g_IndexBuffer[4]
     ADD EAX,0x6                         ; 1000446d
     LEA EBP,[ECX + EDI*0x1 + 0x2]       ; 10004470
     INC EDI                             ; 10004474
-    MOV word ptr [EAX + -0x2],BP        ; 10004475 | DAT_10238914 | DAT_1023891a
+    MOV word ptr [EAX + -0x2],BP        ; 10004475 | g_IndexBuffer[2] | g_IndexBuffer[5]
     CMP EDI,EBX                         ; 10004479
     JL 0x10004462                       ; 1000447b
         ;   XREF to: 10004462 (CONDITIONAL_JUMP)  ; LAB_10004462
     ADD ECX,ESI                         ; 1000447d
         ;   Label: LAB_1000447d
-    MOV dword ptr [0x10014228],ECX      ; 1000447f | DAT_10014228
+    MOV dword ptr [0x10014228],ECX      ; 1000447f | g_PendingVertexCount
     CMP ECX,0x3e76                      ; 10004485
     JLE 0x10004492                      ; 1000448b
         ;   XREF to: 10004492 (CONDITIONAL_JUMP)  ; LAB_10004492
-    CALL dll_dx7.cpp_FUN_100047b0       ; 1000448d
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
-    CMP dword ptr [0x1001422c],0x3e76   ; 10004492 | DAT_1001422c
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 1000448d
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
+    CMP dword ptr [0x1001422c],0x3e76   ; 10004492 | g_PendingIndexCount
         ;   Label: LAB_10004492
     JLE 0x100044a3                      ; 1000449c
         ;   XREF to: 100044a3 (CONDITIONAL_JUMP)  ; LAB_100044a3
-    CALL dll_dx7.cpp_FUN_100047b0       ; 1000449e
-        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; undefined dll_dx7.cpp_FUN_100047b0()
+    CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 1000449e
+        ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
     MOV EAX,0x1                         ; 100044a3
         ;   Label: LAB_100044a3
     POP EBP                             ; 100044a8

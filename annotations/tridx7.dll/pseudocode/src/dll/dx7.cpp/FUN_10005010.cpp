@@ -14,34 +14,34 @@ uint dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,uint param_3)
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
+  SScreenVertex *pSVar6;
+  SScreenVertex *pSVar7;
   char *message;
   
-  iVar3 = DAT_10014228;
+  iVar3 = g_PendingVertexCount;
   iVar1 = *param_1;
   param_2 = param_2 + iVar1 * 0x30;
   if (*(int *)(&DAT_10215e48 + iVar1 * 4) == DAT_10014234) {
     if ((*(int *)(param_2 + 0x18) != param_1[1]) || (param_1[2] != *(int *)(param_2 + 0x1c))) {
-      iVar3 = param_1[2];
+      iVar4 = param_1[2];
       *(int *)(param_2 + 0x18) = param_1[1];
       iVar2 = *(int *)(&DAT_10226f08 + iVar1 * 4);
-      *(int *)(param_2 + 0x1c) = iVar3;
-      iVar3 = DAT_10014228 * 0x20;
-      puVar6 = (uint *)(&DAT_1013b8d8 + iVar2 * 0x20);
-      puVar7 = (uint *)(&DAT_1013b8d8 + iVar3);
+      *(int *)(param_2 + 0x1c) = iVar4;
+      pSVar6 = g_VertexBuffer + iVar2;
+      pSVar7 = g_VertexBuffer + g_PendingVertexCount;
       for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar7 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar7 = puVar7 + 1;
+        pSVar7->x = pSVar6->x;
+        pSVar6 = (SScreenVertex *)&pSVar6->y;
+        pSVar7 = (SScreenVertex *)&pSVar7->y;
       }
-      iVar2 = param_1[1];
-      iVar4 = param_1[2];
-      *(int *)(&DAT_10226f08 + iVar1 * 4) = DAT_10014228;
-      iVar5 = DAT_10014228 + 1;
-      DAT_10014228 = iVar5;
-      *(float *)(&DAT_1013b8f0 + iVar3) = (float)iVar2 * 5.9604645e-08;
-      *(float *)(&DAT_1013b8f4 + iVar3) = (float)iVar4 * 5.9604645e-08;
+      iVar4 = param_1[1];
+      iVar2 = param_1[2];
+      *(int *)(&DAT_10226f08 + iVar1 * 4) = g_PendingVertexCount;
+      iVar5 = g_PendingVertexCount + 1;
+      pSVar6 = g_VertexBuffer + g_PendingVertexCount;
+      g_PendingVertexCount = iVar5;
+      pSVar6->u = (float)iVar4 * 5.9604645e-08;
+      g_VertexBuffer[iVar3].v = (float)iVar2 * 5.9604645e-08;
       if (0x3e76 < iVar5) {
         message = "You're shoving too many verticies";
         goto LAB_10005116;
@@ -49,14 +49,14 @@ uint dll_dx7_cpp_FUN_10005010(int *param_1,int param_2,uint param_3)
     }
   }
   else {
-    iVar2 = param_1[2];
+    iVar4 = param_1[2];
     *(int *)(&DAT_10215e48 + iVar1 * 4) = DAT_10014234;
     *(int *)(&DAT_10226f08 + iVar1 * 4) = iVar3;
     *(int *)(param_2 + 0x18) = param_1[1];
-    *(int *)(param_2 + 0x1c) = iVar2;
-    dll_dx7_cpp_FUN_100044b0(param_2,&DAT_1013b8d8 + iVar3 * 0x20,param_3,0x100);
-    DAT_10014228 = DAT_10014228 + 1;
-    if (0x3e76 < DAT_10014228) {
+    *(int *)(param_2 + 0x1c) = iVar4;
+    dll_dx7_cpp_FUN_100044b0(param_2,g_VertexBuffer + iVar3,param_3,0x100);
+    g_PendingVertexCount = g_PendingVertexCount + 1;
+    if (0x3e76 < g_PendingVertexCount) {
       message = "You're shoving too many verticies";
 LAB_10005116:
                     /* WARNING: Subroutine does not return */

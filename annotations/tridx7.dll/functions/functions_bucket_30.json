@@ -234,12 +234,38 @@
         "start":"10002cb0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_10002cb0",
-    "ret":"undefined1",
+    "name":"dll_dx7.cpp_unlockSurface_FUN_10002cb0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"surface",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"IDirectDrawSurface*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -451,14 +477,10 @@
         "start":"100047b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"dll_dx7.cpp_FUN_100047b0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"dll_dx7.cpp_flushBatch_FUN_100047b0",
+    "ret":"void"
   },
   {
     "addr":"10004830",
