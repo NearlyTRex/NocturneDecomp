@@ -5,6 +5,8 @@
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   window_handle
+; Local Variables:
+; CExternalRenderer Stack[-0x3c2c]:7624  local_3c2c
 ;
 ; XREF[4]:
 ;   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 at 00511245

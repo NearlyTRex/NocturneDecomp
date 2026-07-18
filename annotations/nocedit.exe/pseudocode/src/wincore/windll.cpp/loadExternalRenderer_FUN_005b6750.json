@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 789,
-    "complexity_score": 422,
+    "complexity_score": 426,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 154,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 422,
+    "pseudocode_lines": 426,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 1211
+    "total_lines": 1215
   },
   "cross_references": [
     {
@@ -1047,8 +1047,44 @@
   },
   "resolved_suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_3c2c */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 413,
+      "match": "._1_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_3c2c.description[5] = g_RendererHandle._1_1_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 414,
+      "match": "._2_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_3c2c.description[6] = g_RendererHandle._2_1_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 415,
+      "match": "._3_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_3c2c.description[7] = g_RendererHandle._3_1_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "memset size hardcodes 0x8c == sizeof(CExternalRendererBridge), whose dest resolves to that struct. CExternalRendererBridge is 64-bit-unstable (contains a pointer), so the struct grows past 0x8c once pointers are 8 bytes and memset covers only its leading 0x8c bytes, leaving the grown tail untouched. Replace the magic with sizeof(CExternalRendererBridge) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
-      "line": 373,
+      "line": 374,
       "match": "memset(dest) size 0x8c == sizeof(CExternalRendererBridge)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1057,12 +1093,19 @@
     }
   ],
   "stack_frame": {
-    "frame_size": 8,
-    "local_size": 4,
+    "frame_size": 15412,
+    "local_size": 15408,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c2c",
+        "offset": -15404,
+        "size": 7624,
+        "type": "CExternalRenderer"
+      },
       {
         "is_param": true,
         "name": "window_handle",

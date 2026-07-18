@@ -6,13 +6,15 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_3c2c */
+
 int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
 
 {
   HWND HVar1;
   FARPROC pFVar2;
   int iVar3;
-  char acStack_3c2c [4];
+  CExternalRenderer local_3c2c;
   CExternalRenderer CStack_1e64;
   CExternalRendererBridge CStack_9c;
   
@@ -37,10 +39,9 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     g_UseDirect3D = 0;
     return 0;
   }
-  (*pFVar2)(g_RendererDLLHandle,acStack_3c2c);
+  (*pFVar2)(g_RendererDLLHandle,&local_3c2c);
   wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90(&CStack_1e64);
-  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
-                    ((CExternalRenderer *)acStack_3c2c,&CStack_1e64);
+  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(&local_3c2c,&CStack_1e64);
   if (iVar3 != 0) {
     g_DLLFunctionsMissing = 0;
     g_APIDLL_init =
@@ -415,10 +416,14 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof7 = 0x28;
       iVar3 = (*g_APIDLL_init)(HVar1,&CStack_9c);
       if (iVar3 != 0) {
-        acStack_3c2c[0] = -0x3b;
-        acStack_3c2c[1] = 'q';
-        acStack_3c2c[2] = '[';
-        acStack_3c2c[3] = '\0';
+        local_3c2c.description[4] = (byte)g_RendererHandle;
+        local_3c2c.description[5] = g_RendererHandle._1_1_;
+        local_3c2c.description[6] = g_RendererHandle._2_1_;
+        local_3c2c.description[7] = g_RendererHandle._3_1_;
+        local_3c2c.description[0] = -0x3b;
+        local_3c2c.description[1] = 'q';
+        local_3c2c.description[2] = '[';
+        local_3c2c.description[3] = '\0';
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }
