@@ -1,0 +1,141 @@
+====================================================================================================
+MOVSD STRUCT COPY ANALYSIS
+====================================================================================================
+
+Ghidra's decompiler cannot analyze MOVSD string copy instructions, producing
+garbled bVar*-8 pointer arithmetic or for-loop decompositions. These can be
+fixed by replacing them with explicit MOV instructions in code caves.
+
+SUMMARY
+--------------------------------------------------
+Consecutive MOVSD groups:  0
+  Fixable (cave patch):   0
+  No artifacts (OK):      0
+  Unfixable:              0
+  Est. cave space:        ~0 bytes
+
+REP MOVSD sites:           54
+  Fixable (struct copy):  5
+  No artifacts (OK):      7
+  Too large (buffer):     10
+  Dynamic count:          32
+  Pass-by-value:          0
+
+  REP MOVSD by copy size:
+    unknown count:        32 sites
+      5 dwords (  20 bytes): 1 sites
+      6 dwords (  24 bytes): 1 sites
+      8 dwords (  32 bytes): 10 sites
+     35 dwords ( 140 bytes): 1 sites
+     63 dwords ( 252 bytes): 2 sites
+    1906 dwords (7624 bytes): 1 sites
+    4294967295 dwords (17179869180 bytes): 6 sites
+
+Total MOVSD sites:         54
+
+----------------------------------------------------------------------------------------------------
+FIXABLE REP MOVSD STRUCT COPIES (5 sites)
+----------------------------------------------------------------------------------------------------
+  _NMSG_WRITE_FUN_10008610                                                 2 sites
+    0x100086a6  REP MOVSD 5 dwords (20 bytes)
+    0x100086fd  REP MOVSD 6 dwords (24 bytes)
+  APIDLLsetVideoMode_FUN_10002500                                          1 sites
+    0x100028e9  REP MOVSD 8 dwords (32 bytes)
+  createStagingTextures_FUN_10003400                                       1 sites
+    0x1000343a  REP MOVSD 8 dwords (32 bytes)
+  initD3DDevice_FUN_10003100                                               1 sites
+    0x1000327c  REP MOVSD 8 dwords (32 bytes)
+
+----------------------------------------------------------------------------------------------------
+REP MOVSD — NO ARTIFACTS (decompiler handles OK) (7 sites)
+----------------------------------------------------------------------------------------------------
+  pickTextureFormat_FUN_10003340                                           3 sites
+    0x1000337b  REP MOVSD 8 dwords (32 bytes)
+    0x100033ba  REP MOVSD 8 dwords (32 bytes)
+    0x100033ea  REP MOVSD 8 dwords (32 bytes)
+  enumZBufferFormatCallback_FUN_10002b50                                   2 sites
+    0x10002b79  REP MOVSD 8 dwords (32 bytes)
+    0x10002b8e  REP MOVSD 8 dwords (32 bytes)
+  createTexture_FUN_10002f60                                               1 sites
+    0x10002f80  REP MOVSD 8 dwords (32 bytes)
+  getOrAddVertex_FUN_10005010                                              1 sites
+    0x100050d9  REP MOVSD 8 dwords (32 bytes)
+
+----------------------------------------------------------------------------------------------------
+REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (10 sites)
+----------------------------------------------------------------------------------------------------
+  _NMSG_WRITE_FUN_10008610                                                 3 sites
+    0x10008727  REP MOVSD 4294967295 dwords (17179869180 bytes)
+    0x10008759  REP MOVSD 4294967295 dwords (17179869180 bytes)
+    0x1000878c  REP MOVSD 4294967295 dwords (17179869180 bytes)
+  enumAdapterCallback_FUN_100017b0                                         2 sites
+    0x1000182b  REP MOVSD 63 dwords (252 bytes)
+    0x1000188d  REP MOVSD 63 dwords (252 bytes)
+  _lc_lctostr_FUN_1000b330                                                 1 sites
+    0x1000b36a  REP MOVSD 4294967295 dwords (17179869180 bytes)
+  setlocale_get_all_FUN_1000b060                                           1 sites
+    0x1000b0e2  REP MOVSD 4294967295 dwords (17179869180 bytes)
+  setlocale_set_cat_FUN_1000aee0                                           1 sites
+    0x1000afaf  REP MOVSD 4294967295 dwords (17179869180 bytes)
+  APIDLLInformation_FUN_100019a0                                           1 sites
+    0x10001a6b  REP MOVSD 1906 dwords (7624 bytes)
+  APIDLLinit_FUN_10001a80                                                  1 sites
+    0x10001c01  REP MOVSD 35 dwords (140 bytes)
+
+----------------------------------------------------------------------------------------------------
+REP MOVSD — DYNAMIC COUNT (ECX not immediate) (32 sites)
+----------------------------------------------------------------------------------------------------
+  memcpy_FUN_1000a4a0                                                      4 sites
+    0x1000a4ce  REP MOVSD (dynamic count)
+    0x1000a534  REP MOVSD (dynamic count)
+    0x1000a567  REP MOVSD (dynamic count)
+    0x1000a5da  REP MOVSD (dynamic count)
+  APIDLLsetVideoMode_FUN_10002500                                          4 sites
+    0x100026bc  REP MOVSD (dynamic count)
+    0x10002924  REP MOVSD (dynamic count)
+    0x100029a7  REP MOVSD (dynamic count)
+    0x10002a18  REP MOVSD (dynamic count)
+  _expandlocale_FUN_1000b150                                               2 sites
+    0x1000b2a8  REP MOVSD (dynamic count)
+    0x1000b303  REP MOVSD (dynamic count)
+  APIDLLInformation_FUN_100019a0                                           2 sites
+    0x100019dc  REP MOVSD (dynamic count)
+    0x10001a4f  REP MOVSD (dynamic count)
+  APIDLLbuildCardList_FUN_100052e0                                         2 sites
+    0x10005309  REP MOVSD (dynamic count)
+    0x10005316  REP MOVSD (dynamic count)
+  APIDLLinit_FUN_10001a80                                                  2 sites
+    0x10001b3c  REP MOVSD (dynamic count)
+    0x10001b66  REP MOVSD (dynamic count)
+  enumAdapterCallback_FUN_100017b0                                         2 sites
+    0x1000180a  REP MOVSD (dynamic count)
+    0x10001872  REP MOVSD (dynamic count)
+  __crtGetEnvironmentStringsA_FUN_100083e0                                 1 sites
+    0x1000854f  REP MOVSD (dynamic count)
+  __crtGetEnvironmentStringsW_FUN_100081e0                                 1 sites
+    0x100082a2  REP MOVSD (dynamic count)
+  __crtsetenv_FUN_10011360                                                 1 sites
+    0x1001155d  REP MOVSD (dynamic count)
+  _setenvp_FUN_10007b60                                                    1 sites
+    0x10007c0d  REP MOVSD (dynamic count)
+  _lc_strtolc_FUN_1000b380                                                 1 sites
+    0x1000b3ce  REP MOVSD (dynamic count)
+  _setlocale_catcopy_FUN_1000b480                                          1 sites
+    0x1000b4a4  REP MOVSD (dynamic count)
+  signal_FUN_1000b950                                                      1 sites
+    0x1000b9e8  REP MOVSD (dynamic count)
+  _fltout2_FUN_1000a350                                                    1 sites
+    0x1000a3bc  REP MOVSD (dynamic count)
+  _fptostr_FUN_1000a2c0                                                    1 sites
+    0x1000a333  REP MOVSD (dynamic count)
+  _tzset_FUN_10010050                                                      1 sites
+    0x10010210  REP MOVSD (dynamic count)
+  APIDLLunlockHoldBuffer_FUN_100053a0                                      1 sites
+    0x100053b7  REP MOVSD (dynamic count)
+  CDLLTextureCache_acquireSlot_FUN_10001090                                1 sites
+    0x10001168  REP MOVSD (dynamic count)
+  copyMipTo32Bit_FUN_10003e40                                              1 sites
+    0x10003e73  REP MOVSD (dynamic count)
+  unlockBackBuffer_FUN_10002c50                                            1 sites
+    0x10002c78  REP MOVSD (dynamic count)
+

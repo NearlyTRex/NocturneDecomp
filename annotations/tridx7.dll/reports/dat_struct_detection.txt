@@ -1,0 +1,336 @@
+================================================================================
+DAT_ STRUCT/ARRAY DETECTION REPORT
+================================================================================
+
+Total DAT_ globals found: 221
+Filtered out (inside named data): 5
+Immediate constants (not real globals): 27
+Real globals remaining: 194
+Clusters detected: 12
+DAT_ globals in clusters: 190
+
+Classification summary:
+  vector_groups        6 clusters
+  struct               3 clusters
+  char_array           1 clusters
+  struct_array         1 clusters
+  unknown              1 clusters
+
+--------------------------------------------------------------------------------
+LIKELY IMMEDIATE CONSTANTS (27)
+--------------------------------------------------------------------------------
+These DAT_ globals are never dereferenced as memory addresses.
+They appear only as inline constant values (e.g. MOV EDX,0xf80000).
+Consider removing the Ghidra label and leaving the raw number.
+
+  DAT_1001276c  value=0x1001276C  refs=8
+    __crtCompareStringA
+      PUSH 0x1001276c                     ; 10011052 | DAT_1001276c
+    __crtCompareStringA_v2
+      PUSH 0x1001276c                     ; 10010dfc | DAT_1001276c
+    __crtGetStringTypeW
+      PUSH 0x1001276c                     ; 1000be3d | DAT_1001276c
+    __crtLCMapStringA
+      PUSH 0x1001276c                     ; 1000c359 | DAT_1001276c
+    __crtLCMapStringA_v2
+      PUSH 0x1001276c                     ; 1000c128 | DAT_1001276c
+    _crtGetStringTypeA
+      PUSH 0x1001276c                     ; 1000bfdd | DAT_1001276c
+
+  DAT_10012770  value=0x10012770  refs=8
+    __crtCompareStringA
+      PUSH 0x10012770                     ; 10011092 | DAT_10012770
+    __crtCompareStringA_v2
+      PUSH 0x10012770                     ; 10010dd8 | DAT_10012770
+    __crtGetStringTypeW
+      PUSH 0x10012770                     ; 1000be1d | DAT_10012770
+    __crtLCMapStringA
+      PUSH 0x10012770                     ; 1000c378 | DAT_10012770
+    __crtLCMapStringA_v2
+      PUSH 0x10012770                     ; 1000c109 | DAT_10012770
+    _crtGetStringTypeA
+      PUSH 0x10012770                     ; 1000bffa | DAT_10012770
+
+  DAT_100170a8  value=0x100170A8  refs=2
+    _flsbuf
+      CMP ESI,0x100170a8                  ; 1000747e | DAT_100170a8
+    _stbuf
+      CMP ESI,0x100170a8                  ; 10005e7b | DAT_100170a8
+
+  DAT_100170c8  value=0x100170C8  refs=2
+    _flsbuf
+      CMP ESI,0x100170c8                  ; 10007486 | DAT_100170c8
+    _stbuf
+      CMP ESI,0x100170c8                  ; 10005e87 | DAT_100170c8
+
+  DAT_100172e8  value=0x100172E8  refs=2
+    _lock_file
+      CMP EAX,0x100172e8                  ; 10005a3e | DAT_100172e8
+    _unlock_file
+      CMP EAX,0x100172e8                  ; 10005aae | DAT_100172e8
+
+  DAT_10017478  value=0x10017478  refs=1
+    _dosmaperr
+      CMP EAX,0x10017478                  ; 100089bb | DAT_10017478
+
+  DAT_100170f8  value=0x100170F8  refs=1
+    _alloc_piob
+      CMP EDX,0x100170f8                  ; 1000896d | DAT_100170f8
+
+  DAT_1001821c  value=0x1001821C  refs=1
+    __free_lconv_mon
+      CMP EAX,0x1001821c                  ; 1000df6c | DAT_1001821c
+
+  DAT_10012760  value=0x10012760  refs=1
+    _lc_strtolc
+      PUSH 0x10012760                     ; 1000b3e0 | DAT_10012760
+
+  DAT_10012764  value=0x10012764  refs=1
+    _setlocale_catcopy
+      PUSH 0x10012764                     ; 1000b4d3 | DAT_10012764
+
+  DAT_10012768  value=0x10012768  refs=1
+    _setlocale_catcopy
+      PUSH 0x10012768                     ; 1000b4b6 | DAT_10012768
+
+  DAT_10012758  value=0x10012758  refs=1
+    setlocale
+      PUSH 0x10012758                     ; 1000acc5 | DAT_10012758
+
+  DAT_1001275c  value=0x1001275C  refs=1
+    setlocale_get_all
+      PUSH 0x1001275c                     ; 1000b09e | DAT_1001275c
+
+  DAT_100176a0  value=0x100176A0  refs=1
+    __ld12tod
+      PUSH 0x100176a0                     ; 1000a134 | DAT_100176a0
+
+  DAT_100176b8  value=0x100176B8  refs=1
+    __ld12tof
+      PUSH 0x100176b8                     ; 1000a154 | DAT_100176b8
+
+  DAT_10018360  value=0x10018360  refs=1
+    _multtenpow12
+      MOV ESI,0x10018360                  ; 1000ebb7 | DAT_10018360
+
+  DAT_10014000  value=0x10014000  refs=1
+    _cinit
+      PUSH 0x10014000                     ; 10007592 | DAT_10014000
+
+  DAT_10014014  value=0x10014014  refs=1
+    _cinit
+      PUSH 0x10014014                     ; 1000758d | DAT_10014014
+
+  DAT_10014018  value=0x10014018  refs=1
+    _cinit
+      PUSH 0x10014018                     ; 10007580 | DAT_10014018
+
+  DAT_10014020  value=0x10014020  refs=1
+    _cinit
+      PUSH 0x10014020                     ; 1000757b | DAT_10014020
+
+  DAT_10014024  value=0x10014024  refs=1
+    doexit
+      PUSH 0x10014024                     ; 10007670 | DAT_10014024
+
+  DAT_1001402c  value=0x1001402C  refs=1
+    doexit
+      PUSH 0x1001402c                     ; 1000766b | DAT_1001402c
+
+  DAT_10014030  value=0x10014030  refs=1
+    doexit
+      PUSH 0x10014030                     ; 10007682 | DAT_10014030
+
+  DAT_10014034  value=0x10014034  refs=1
+    doexit
+      PUSH 0x10014034                     ; 1000767d | DAT_10014034
+
+  DAT_10016db0  value=0x10016DB0  refs=1
+    _flsbuf
+      MOV EAX,0x10016db0                  ; 100074e4 | DAT_10016db0
+
+  DAT_102407ac  value=0x102407AC  refs=1
+    _tzset
+      PUSH 0x102407ac                     ; 1001012e | DAT_102407ac
+
+  DAT_10240800  value=0x10240800  refs=1
+    _tzset
+      PUSH 0x10240800                     ; 10010143 | DAT_10240800
+
+--------------------------------------------------------------------------------
+HIGH CONFIDENCE (1 clusters)
+--------------------------------------------------------------------------------
+
+  0x1001748a - 0x1001748b  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 10 functions
+     near: PTR_DAT_10017484 (void*) at +6
+      0x1001748a  DAT_1001748a  undefined4 [short]
+      0x1001748b  DAT_1001748b  undefined4 [byte]
+
+--------------------------------------------------------------------------------
+MEDIUM CONFIDENCE (7 clusters)
+--------------------------------------------------------------------------------
+
+  0x10016c60 - 0x100170b8  (51 items, 1112 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 8 groups of 3 consecutive ints found
+    Referenced by: 36 functions
+     near: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c (void*) at -12
+      0x10016c60  DAT_10016c60  undefined4
+      0x10016c64  DAT_10016c64  undefined4
+      0x10016c70  DAT_10016c70  undefined4
+      0x10016c74  DAT_10016c74  undefined4
+      0x10016c78  DAT_10016c78  undefined4
+      0x10016d38  DAT_10016d38  undefined4
+      ... +45 more
+
+  0x1001768c - 0x10017960  (47 items, 724 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 7 groups of 3 consecutive ints found
+    Referenced by: 44 functions
+     near: PTR_LAB_10017798 (undefined1*) at -268
+      0x1001768c  DAT_1001768c  undefined4
+      0x10017690  DAT_10017690  undefined4
+      0x10017694  DAT_10017694  undefined1 [byte]
+      0x100176d0  DAT_100176d0  undefined4
+      0x100176d4  DAT_100176d4  undefined1
+      0x10017748  DAT_10017748  undefined4
+      ... +41 more
+
+  0x10018520 - 0x10018650  (22 items, 304 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 3 groups of 3 consecutive ints found
+    Referenced by: 6 functions
+     near: PTR_DAT_100185b0 (void*) at -144
+      0x10018520  DAT_10018520  undefined4
+      0x10018524  DAT_10018524  undefined4
+      0x10018528  DAT_10018528  undefined4
+      0x10018530  DAT_10018530  undefined4
+      0x10018533  DAT_10018533  undefined1 [byte]
+      0x1001856f  DAT_1001856f  undefined1 [byte]
+      ... +16 more
+
+  0x10012754 - 0x10012792  (12 items, 62 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 3 functions
+     near: s_C_COLLATE_10012740+1 (undefined4) at +19
+      0x10012754  DAT_10012754  undefined4
+      0x10012755  DAT_10012754+1  undefined4
+      0x10012774  DAT_10012774  undefined4
+      0x10012778  DAT_10012778  undefined2 [short]
+      0x1001277a  DAT_1001277a  undefined1 [byte]
+      0x1001277c  DAT_1001277c  undefined4
+      ... +6 more
+
+  0x10241860 - 0x10241984  (9 items, 292 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 39 functions
+      0x10241860  DAT_10241860  undefined4
+      0x10241870  DAT_10241870  undefined4
+      0x10241874  DAT_10241874  undefined4
+      0x10241970  DAT_10241970  undefined4
+      0x10241974  DAT_10241974  undefined4
+      0x10241978  DAT_10241978  undefined4
+      ... +3 more
+
+  0x100183b4 - 0x10018410  (6 items, 92 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 1 functions
+     near: PTR_PTR_1001820c (undefined1*) at +424
+      0x100183b4  DAT_100183b4  undefined4 [short]
+      0x100183b8  DAT_100183b8  undefined4
+      0x100183bc  DAT_100183bc  undefined4
+      0x10018408  DAT_10018408  undefined4
+      0x1001840c  DAT_1001840c  undefined4
+      0x10018410  DAT_10018410  undefined4
+
+  0x10240630 - 0x10240690  (5 items, 96 bytes span)
+    Classification: struct_array
+    Likely type: struct_24bytes[5]
+    Reason: 5 elements at stride 24
+    Referenced by: 3 functions
+     near: g_FlyModeDepthBias (int) at +4
+      0x10240630  DAT_10240630  undefined4
+      0x10240648  DAT_10240648  undefined4
+      0x10240660  DAT_10240660  undefined4
+      0x10240678  DAT_10240678  undefined4
+      0x10240690  DAT_10240690  undefined4
+
+--------------------------------------------------------------------------------
+LOW CONFIDENCE (4 clusters)
+--------------------------------------------------------------------------------
+
+  0x10240794 - 0x1024085c  (26 items, 200 bytes span)
+    Classification: struct
+    Likely type: struct (200 bytes span, 26 fields)
+    Reason: mixed strides, shared by 16 functions
+    Referenced by: 16 functions
+     near: g_FlyModeDepthBias (int) at +360
+      0x10240794  DAT_10240794  undefined4
+      0x10240798  DAT_10240798  undefined1 [byte]
+      0x1024079a  DAT_1024079a  undefined1
+      0x102407a0  DAT_102407a0  undefined4
+      0x102407a8  DAT_102407a8  undefined4
+      0x102407ec  DAT_102407ec  undefined2 [short]
+      ... +20 more
+
+  0x10017308 - 0x1001731c  (4 items, 20 bytes span)
+    Classification: struct
+    Likely type: struct (20 bytes span, 4 fields)
+    Reason: mixed strides, shared by 4 functions
+    Referenced by: 4 functions
+     near: PTR_DAT_10017480 (void*) at -376
+      0x10017308  DAT_10017308  undefined4
+      0x10017310  DAT_10017310  undefined4
+      0x10017318  DAT_10017318  undefined4
+      0x1001731c  DAT_1001731c  undefined4
+
+  0x10018210 - 0x10018258  (4 items, 72 bytes span)
+    Classification: struct
+    Likely type: struct (72 bytes span, 4 fields)
+    Reason: mixed strides, shared by 7 functions
+    Referenced by: 7 functions
+     near: PTR_PTR_1001820c (undefined1*) at +4
+      0x10018210  DAT_10018210  undefined4
+      0x10018214  DAT_10018214  undefined4
+      0x10018254  DAT_10018254  undefined4
+      0x10018258  DAT_10018258  undefined4
+
+  0x10017f38 - 0x10017f3a  (2 items, 2 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=2 bytes
+    Referenced by: 2 functions
+     near: PTR_s_italy_100128c4_10017dd8 (void*) at +352
+      0x10017f38  DAT_10017f38  undefined4 [short]
+      0x10017f3a  DAT_10017f3a  undefined4
+
+--------------------------------------------------------------------------------
+ISOLATED DAT_ GLOBALS (4 - not part of any cluster)
+--------------------------------------------------------------------------------
+  DAT_10017ddc                    addr=10017ddc    type=undefined2      refs=1 [likely short]  near: PTR_s_italy_100128c4_10017dd8(+4)
+  DAT_10017af4                    addr=10017af4    type=undefined2      refs=1 [likely short]  near: PTR_s_french_10012b74_10017af0(+4)
+  DAT_10010028                    addr=10010028    type=undefined4      refs=1
+  DAT_10012320                    addr=10012320    type=undefined4      refs=1 [likely byte]  near: u_HAN#)_10012318+1(+7)
+
+--------------------------------------------------------------------------------
+FILTERED OUT - INSIDE NAMED DATA (5)
+--------------------------------------------------------------------------------
+  DAT_10012408                    inside s_KERNEL32_100123f0
+  DAT_1001240c                    inside s_KERNEL32_100123f0
+  DAT_1001269c                    inside s_Microsoft_Visual_C_Runti_10012674
+  DAT_1001269c+1                  inside s_Microsoft_Visual_C_Runti_10012674
+  DAT_10016c4c                    inside s_You_re_shoving_too_many_10016c20
+

@@ -1,0 +1,88 @@
+====================================================================================================
+PARAMETER COUNT MISMATCH ANALYSIS
+====================================================================================================
+
+This report identifies functions where the declared parameter count differs
+from the estimated count based on call site analysis.
+
+Mismatches may indicate:
+  - Incorrect function signature in Ghidra
+  - Calling convention misidentification
+  - Variadic functions
+  - Functions called with wrong number of arguments (bugs)
+
+SUMMARY
+--------------------------------------------------
+Functions with parameter estimates: 280
+Functions with no callers: 72
+Parameter mismatches detected: 17
+Signature accuracy rate: 91.8%
+
+Mismatches by confidence:
+  High confidence:   2 (multiple call sites agree)
+  Medium confidence: 2 (some agreement)
+  Low confidence:    13 (limited data)
+
+====================================================================================================
+HIGH CONFIDENCE MISMATCHES - Likely signature issues
+====================================================================================================
+
+  crt_stdio.c__fptostr_FUN_1000a2c0
+    Declared: 4 params (16 bytes), Estimated: 3 stack slots (12 bytes) [-1]
+    Call sites: 3, Confidence: high
+    File: crt/stdio.c
+    Signature: errno_t __cdecl crt_stdio_c__fptostr_FUN_1000a2c0(char *buf,size_t size_in_bytes,int digits,STRFLT pt_flt)
+    Sample call sites:
+      crt_stdio.c__cftoe_FUN_1000703 at 10007081: 0 reg [], 3 stack (12 bytes, via add_esp)
+      crt_stdio.c__cftof_FUN_100071a at 100071e7: 0 reg [], 3 stack (12 bytes, via add_esp)
+      crt_stdio.c__cftog_FUN_100072d at 10007319: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+  crt_stdio.c_fprintf_FUN_100054d0
+    Declared: 2 params (8 bytes), Estimated: 3 stack slots (12 bytes) [+1]
+    Call sites: 6, Confidence: high
+    File: crt/stdio.c
+    Signature: int __cdecl crt_stdio_c_fprintf_FUN_100054d0(_FILE *file,char *format,...)
+    Sample call sites:
+      dll_dx7.cpp_initTextureCaches_ at 10001260: 0 reg [], 3 stack (12 bytes, via add_esp)
+      dll_dx7.cpp_initTextureCaches_ at 10001273: 0 reg [], 3 stack (12 bytes, via add_esp)
+      dll_dx7.cpp_initTextureCaches_ at 10001286: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+====================================================================================================
+MEDIUM CONFIDENCE MISMATCHES
+====================================================================================================
+
+  crt_locale.c__expandlocale_FUN_1000b150            declared:4 est:5 (+1) [2 calls]
+  crt_thread.c__initptd_FUN_10007790                 declared:2 est:1 (-1) [2 calls]
+
+====================================================================================================
+LOW CONFIDENCE MISMATCHES (limited data)
+====================================================================================================
+
+  13 functions with low-confidence mismatches
+  Sample:
+    dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 declared:0 est:1 (+1)
+    crt_stdio.c__sprintf_FUN_10005630             declared:2 est:5 (+3)
+    crt_math.c__ms_p5_test_fdiv_FUN_10006d50      declared:0 est:4 (+4)
+    crt_stdio.c__cftoe_FUN_10007030               declared:5 est:4 (-1)
+    crt_startup.c__cinit_FUN_10007570             declared:1 est:0 (-1)
+    crt_startup.c_doexit_FUN_10007600             declared:3 est:2 (-1)
+    crt_heap.c__heap_init_FUN_100078f0            declared:1 est:0 (-1)
+    crt_locale.c__setmbcp_FUN_10007eb0            declared:1 est:0 (-1)
+    crt_locale.c_getSystemCP_FUN_100080e0         declared:0 est:1 (+1)
+    crt_fpu.c__controlfp_FUN_100098d0             declared:2 est:1 (-1)
+
+====================================================================================================
+MISMATCH DIRECTION ANALYSIS
+====================================================================================================
+
+Functions where declaration has MORE params than estimated: 10
+  (May indicate: extra params not being passed, or params in globals)
+
+Functions where declaration has FEWER params than estimated: 7
+  (May indicate: missing params in signature, or calling convention issue)
+
+Distribution of differences (estimated - declared):
+  -1 params: 10 functions
+  +1 params: 5 functions
+  +3 params: 1 functions
+  +4 params: 1 functions

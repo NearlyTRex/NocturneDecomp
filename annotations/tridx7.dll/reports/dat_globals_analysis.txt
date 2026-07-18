@@ -1,0 +1,369 @@
+================================================================================
+DAT_ GLOBALS ANALYSIS REPORT
+================================================================================
+
+Total DAT_ globals found: 226
+Filtered out (inside named data): 5
+Immediate constants (not real globals): 27
+Real globals remaining: 194
+
+Current type breakdown:
+  undefined4                     145
+  undefined2                     26
+  undefined1                     23
+
+DAT_ globals with type hints: 70 / 194
+
+--------------------------------------------------------------------------------
+HIGH CONFIDENCE INFERENCES (34)
+--------------------------------------------------------------------------------
+  DAT_10016d64                    addr=10016d64    current=undefined4      likely=char            refs=1
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +8
+  DAT_10016d80                    addr=10016d80    current=undefined4      likely=int             refs=4
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +36
+  DAT_10016da4                    addr=10016da4    current=undefined4      likely=DWORD           refs=4
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +72
+  DAT_10016dd8                    addr=10016dd8    current=undefined4      likely=int             refs=2
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +124
+  DAT_10017080                    addr=10017080    current=undefined4      likely=function_ptr    refs=3
+    nearby: PTR_DAT_10017088 (void*) at offset -8
+  DAT_10017774                    addr=10017774    current=undefined4      likely=function_ptr    refs=1
+    nearby: PTR_LAB_10017798 (undefined1*) at offset -36
+  DAT_10017778                    addr=10017778    current=undefined4      likely=function_ptr    refs=1
+    nearby: PTR_LAB_10017798 (undefined1*) at offset -32
+  DAT_1001777c                    addr=1001777c    current=undefined4      likely=function_ptr    refs=1
+    nearby: PTR_LAB_10017798 (undefined1*) at offset -28
+  DAT_100177d8                    addr=100177d8    current=undefined4      likely=ushort          refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +8
+  DAT_100177dc                    addr=100177dc    current=undefined2      likely=uint            refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +12
+  DAT_10017954                    addr=10017954    current=undefined2      likely=uint            refs=1
+    nearby: PTR_s_dutch_belgian_10012c2c_10017a28 (void*) at offset -212
+  DAT_1001795e                    addr=1001795e    current=undefined2      likely=uint            refs=1
+    nearby: PTR_s_dutch_belgian_10012c2c_10017a28 (void*) at offset -202
+  DAT_10017960                    addr=10017960    current=undefined2      likely=uint            refs=1
+    nearby: PTR_s_dutch_belgian_10012c2c_10017a28 (void*) at offset -200
+  DAT_10240794                    addr=10240794    current=undefined4      likely=function_ptr    refs=2
+  DAT_10240798                    addr=10240798    current=undefined1      likely=LPWSTR          refs=1
+  DAT_102407a8                    addr=102407a8    current=undefined4      likely=LPTIME_ZONE_INFORMATION  refs=1
+  DAT_102407ee                    addr=102407ee    current=undefined2      likely=uint            refs=2
+  DAT_102407f0                    addr=102407f0    current=undefined2      likely=uint            refs=1
+  DAT_102407f2                    addr=102407f2    current=undefined2      likely=uint            refs=1
+  DAT_102407f4                    addr=102407f4    current=undefined2      likely=uint            refs=1
+  DAT_102407f6                    addr=102407f6    current=undefined2      likely=uint            refs=1
+  DAT_102407f8                    addr=102407f8    current=undefined2      likely=uint            refs=1
+  DAT_102407fa                    addr=102407fa    current=undefined2      likely=uint            refs=1
+  DAT_10240842                    addr=10240842    current=undefined2      likely=uint            refs=2
+  DAT_10240844                    addr=10240844    current=undefined2      likely=uint            refs=1
+  DAT_10240846                    addr=10240846    current=undefined2      likely=uint            refs=1
+  DAT_10240848                    addr=10240848    current=undefined2      likely=uint            refs=1
+  DAT_1024084a                    addr=1024084a    current=undefined2      likely=uint            refs=1
+  DAT_1024084c                    addr=1024084c    current=undefined2      likely=uint            refs=1
+  DAT_1024084e                    addr=1024084e    current=undefined2      likely=uint            refs=1
+  DAT_1024085c                    addr=1024085c    current=undefined4      likely=int             refs=4
+  DAT_10241860                    addr=10241860    current=undefined4      likely=int             refs=4
+  DAT_10241870                    addr=10241870    current=undefined4      likely=int             refs=26
+  DAT_10241984                    addr=10241984    current=undefined4      likely=function_ptr    refs=1
+
+--------------------------------------------------------------------------------
+MEDIUM CONFIDENCE INFERENCES (36)
+--------------------------------------------------------------------------------
+  DAT_10012320                    addr=10012320    current=undefined4      likely=byte            refs=1
+    nearby: u_HAN#)_10012318+1 (undefined4) at offset +7
+  DAT_10012778                    addr=10012778    current=undefined2      likely=short           refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +55
+  DAT_1001277a                    addr=1001277a    current=undefined1      likely=byte            refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +57
+  DAT_10012780                    addr=10012780    current=undefined2      likely=short           refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +63
+  DAT_10012788                    addr=10012788    current=undefined2      likely=short           refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +71
+  DAT_10012790                    addr=10012790    current=undefined2      likely=short           refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +79
+  DAT_10012792                    addr=10012792    current=undefined1      likely=byte            refs=1
+    nearby: s_C_COLLATE_10012740+1 (undefined4) at offset +81
+  DAT_10016d98                    addr=10016d98    current=undefined4      likely=byte            refs=1
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +60
+  DAT_10016db4                    addr=10016db4    current=undefined1      likely=byte            refs=1
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +88
+  DAT_10016dd8+1                  addr=10016dd9    current=undefined4      likely=byte            refs=3
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +125
+  DAT_10016dd8+2                  addr=10016dda    current=undefined4      likely=byte            refs=1
+    nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +126
+  DAT_10016ef8                    addr=10016ef8    current=undefined1      likely=byte            refs=1
+  DAT_10016f10                    addr=10016f10    current=undefined4      likely=byte            refs=1
+    nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 (void*) at offset -244
+  DAT_10016f11                    addr=10016f11    current=undefined4      likely=byte            refs=1
+    nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 (void*) at offset -243
+  DAT_10016f12                    addr=10016f12    current=undefined4      likely=byte            refs=1
+    nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 (void*) at offset -242
+  DAT_1001748a                    addr=1001748a    current=undefined4      likely=short           refs=7
+    nearby: PTR_DAT_10017484 (void*) at offset +6
+  DAT_1001748b                    addr=1001748b    current=undefined4      likely=byte            refs=5
+    nearby: PTR_DAT_10017484 (void*) at offset +7
+  DAT_10017694                    addr=10017694    current=undefined1      likely=byte            refs=5
+  DAT_10017788                    addr=10017788    current=undefined1      likely=byte            refs=3
+    nearby: PTR_LAB_10017798 (undefined1*) at offset -16
+  DAT_10017789                    addr=10017789    current=undefined1      likely=byte            refs=2
+    nearby: PTR_LAB_10017798 (undefined1*) at offset -15
+  DAT_100177e8                    addr=100177e8    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +24
+  DAT_100177e9                    addr=100177e9    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +25
+  DAT_10017870                    addr=10017870    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +160
+  DAT_10017871                    addr=10017871    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100177d0 (undefined1*) at offset +161
+  DAT_10017944                    addr=10017944    current=undefined4      likely=short           refs=1
+    nearby: PTR_s_dutch_belgian_10012c2c_10017a28 (void*) at offset -228
+  DAT_10017af4                    addr=10017af4    current=undefined2      likely=short           refs=1
+    nearby: PTR_s_french_10012b74_10017af0 (void*) at offset +4
+  DAT_10017ddc                    addr=10017ddc    current=undefined2      likely=short           refs=1
+    nearby: PTR_s_italy_100128c4_10017dd8 (void*) at offset +4
+  DAT_10017f38                    addr=10017f38    current=undefined4      likely=short           refs=2
+  DAT_100183b4                    addr=100183b4    current=undefined4      likely=short           refs=1
+  DAT_10018533                    addr=10018533    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100185b0 (void*) at offset -125
+  DAT_1001856f                    addr=1001856f    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100185b0 (void*) at offset -65
+  DAT_10018570                    addr=10018570    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100185b0 (void*) at offset -64
+  DAT_10018573                    addr=10018573    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100185b0 (void*) at offset -61
+  DAT_100185af                    addr=100185af    current=undefined1      likely=byte            refs=1
+    nearby: PTR_DAT_100185b0 (void*) at offset -1
+  DAT_102407ec                    addr=102407ec    current=undefined2      likely=short           refs=1
+  DAT_10240840                    addr=10240840    current=undefined2      likely=short           refs=1
+
+--------------------------------------------------------------------------------
+LOW CONFIDENCE INFERENCES (0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+NO TYPE HINTS (124)
+--------------------------------------------------------------------------------
+  DAT_10010028                    addr=10010028    type=undefined4      refs=1
+  DAT_10012754                    addr=10012754    type=undefined4      refs=2  nearby: s_C_COLLATE_10012740+1 at +19
+  DAT_10012754+1                  addr=10012755    type=undefined4      refs=1  nearby: s_C_COLLATE_10012740+1 at +20
+  DAT_10012774                    addr=10012774    type=undefined4      refs=1  nearby: s_C_COLLATE_10012740+1 at +51
+  DAT_1001277c                    addr=1001277c    type=undefined4      refs=1  nearby: s_C_COLLATE_10012740+1 at +59
+  DAT_10012784                    addr=10012784    type=undefined4      refs=1  nearby: s_C_COLLATE_10012740+1 at +67
+  DAT_1001278c                    addr=1001278c    type=undefined4      refs=1  nearby: s_C_COLLATE_10012740+1 at +75
+  DAT_10016c60                    addr=10016c60    type=undefined4      refs=2  nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c at -12
+  DAT_10016c64                    addr=10016c64    type=undefined4      refs=2  nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c at -8
+  DAT_10016c70                    addr=10016c70    type=undefined4      refs=4  nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c at +4
+  DAT_10016c74                    addr=10016c74    type=undefined4      refs=7  nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c at +8
+  DAT_10016c78                    addr=10016c78    type=undefined4      refs=3  nearby: LPCRITICAL_SECTION_10016c7c at -4
+  DAT_10016d38                    addr=10016d38    type=undefined4      refs=1  nearby: PTR_u_HAN#_10016d40 at -8
+  DAT_10016d60                    addr=10016d60    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +4
+  DAT_10016d68                    addr=10016d68    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +12
+  DAT_10016d6c                    addr=10016d6c    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +16
+  DAT_10016d70                    addr=10016d70    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +20
+  DAT_10016d74                    addr=10016d74    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +24
+  DAT_10016d78                    addr=10016d78    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +28
+  DAT_10016d84                    addr=10016d84    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +40
+  DAT_10016d88                    addr=10016d88    type=undefined4      refs=3  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +44
+  DAT_10016d90                    addr=10016d90    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +52
+  DAT_10016d9c                    addr=10016d9c    type=undefined4      refs=2  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +64
+  DAT_10016da0                    addr=10016da0    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +68
+  DAT_10016dd8+3                  addr=10016ddb    type=undefined4      refs=1  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +127
+  DAT_10016ddc                    addr=10016ddc    type=undefined1      refs=2  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c at +128
+  DAT_10016edc                    addr=10016edc    type=undefined4      refs=4
+  DAT_10016ee0                    addr=10016ee0    type=undefined4      refs=3
+  DAT_10016ee8                    addr=10016ee8    type=undefined4      refs=2
+  DAT_10016eec                    addr=10016eec    type=undefined4      refs=2
+  DAT_10016ef0                    addr=10016ef0    type=undefined4      refs=2
+  DAT_10016ef4                    addr=10016ef4    type=undefined4      refs=2
+  DAT_10016ef9                    addr=10016ef9    type=undefined1      refs=1
+  DAT_10016f00                    addr=10016f00    type=undefined4      refs=1
+  DAT_10016f04                    addr=10016f04    type=undefined4      refs=1  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -256
+  DAT_10016f08                    addr=10016f08    type=undefined4      refs=1  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -252
+  DAT_10016f13                    addr=10016f13    type=undefined4      refs=1  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -241
+  DAT_10016f30                    addr=10016f30    type=undefined4      refs=1  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -212
+  DAT_10016ff0                    addr=10016ff0    type=undefined4      refs=2  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -20
+  DAT_10016ff4                    addr=10016ff4    type=undefined4      refs=1  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -16
+  DAT_10016ff8                    addr=10016ff8    type=undefined4      refs=2  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -12
+  DAT_10017000                    addr=10017000    type=undefined4      refs=2  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at -4
+  DAT_10017008                    addr=10017008    type=undefined4      refs=2  nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004 at +4
+  DAT_10017098                    addr=10017098    type=undefined4      refs=1  nearby: PTR_DAT_10017088 at +16
+  DAT_100170b8                    addr=100170b8    type=undefined4      refs=1  nearby: PTR_DAT_10017088 at +48
+  DAT_10017308                    addr=10017308    type=undefined4      refs=3
+  DAT_10017310                    addr=10017310    type=undefined4      refs=1
+  DAT_10017318                    addr=10017318    type=undefined4      refs=1
+  DAT_1001731c                    addr=1001731c    type=undefined4      refs=1
+  DAT_1001768c                    addr=1001768c    type=undefined4      refs=1
+  DAT_10017690                    addr=10017690    type=undefined4      refs=7
+  DAT_100176d0                    addr=100176d0    type=undefined4      refs=2  nearby: PTR_LAB_10017798 at -200
+  DAT_100176d4                    addr=100176d4    type=undefined1      refs=1  nearby: PTR_LAB_10017798 at -196
+  DAT_10017748                    addr=10017748    type=undefined4      refs=2  nearby: PTR_LAB_10017798 at -80
+  DAT_1001774c                    addr=1001774c    type=undefined4      refs=2  nearby: PTR_LAB_10017798 at -76
+  DAT_10017750                    addr=10017750    type=undefined4      refs=1  nearby: PTR_LAB_10017798 at -72
+  DAT_10017754                    addr=10017754    type=undefined4      refs=2  nearby: PTR_LAB_10017798 at -68
+  DAT_10017758                    addr=10017758    type=undefined4      refs=2  nearby: PTR_LAB_10017798 at -64
+  DAT_10017760                    addr=10017760    type=undefined4      refs=10  nearby: PTR_LAB_10017798 at -56
+  DAT_10017770                    addr=10017770    type=undefined4      refs=13  nearby: PTR_LAB_10017798 at -40
+  DAT_10017780                    addr=10017780    type=undefined4      refs=3  nearby: PTR_LAB_10017798 at -24
+  DAT_1001778a                    addr=1001778a    type=undefined1      refs=2  nearby: PTR_LAB_10017798 at -14
+  DAT_1001778b                    addr=1001778b    type=undefined1      refs=2  nearby: PTR_LAB_10017798 at -13
+  DAT_10017794                    addr=10017794    type=undefined4      refs=3  nearby: PTR_LAB_10017798 at -4
+  DAT_100177e0                    addr=100177e0    type=undefined4      refs=1  nearby: PTR_DAT_100177d0 at +16
+  DAT_100177ea                    addr=100177ea    type=undefined4      refs=1  nearby: PTR_DAT_100177d0 at +26
+  DAT_100177eb                    addr=100177eb    type=undefined4      refs=1  nearby: PTR_DAT_100177d0 at +27
+  DAT_10017872                    addr=10017872    type=undefined4      refs=1  nearby: PTR_DAT_100177d0 at +162
+  DAT_10017873                    addr=10017873    type=undefined4      refs=1  nearby: PTR_DAT_100177d0 at +163
+  DAT_100178f4                    addr=100178f4    type=undefined4      refs=1
+  DAT_100178f8                    addr=100178f8    type=undefined4      refs=3
+  DAT_100178fc                    addr=100178fc    type=undefined4      refs=3
+  DAT_10017900                    addr=10017900    type=undefined4      refs=2
+  DAT_10017904                    addr=10017904    type=undefined4      refs=2
+  DAT_10017908                    addr=10017908    type=undefined4      refs=1
+  DAT_1001790c                    addr=1001790c    type=undefined4      refs=1
+  DAT_10017910                    addr=10017910    type=undefined4      refs=1
+  DAT_10017914                    addr=10017914    type=undefined4      refs=1
+  DAT_10017918                    addr=10017918    type=undefined4      refs=1
+  DAT_10017940                    addr=10017940    type=undefined4      refs=1  nearby: PTR_s_dutch_belgian_10012c2c_10017a28 at -232
+  DAT_10017f3a                    addr=10017f3a    type=undefined4      refs=1
+  DAT_10018210                    addr=10018210    type=undefined4      refs=2  nearby: PTR_PTR_1001820c at +4
+  DAT_10018214                    addr=10018214    type=undefined4      refs=3  nearby: PTR_PTR_1001820c at +8
+  DAT_10018254                    addr=10018254    type=undefined4      refs=2  nearby: PTR_PTR_1001820c at +72
+  DAT_10018258                    addr=10018258    type=undefined4      refs=1  nearby: PTR_PTR_1001820c at +76
+  DAT_100183b8                    addr=100183b8    type=undefined4      refs=1
+  DAT_100183bc                    addr=100183bc    type=undefined4      refs=1
+  DAT_10018408                    addr=10018408    type=undefined4      refs=1
+  DAT_1001840c                    addr=1001840c    type=undefined4      refs=1
+  DAT_10018410                    addr=10018410    type=undefined4      refs=1
+  DAT_10018520                    addr=10018520    type=undefined4      refs=1  nearby: PTR_DAT_100185b0 at -144
+  DAT_10018524                    addr=10018524    type=undefined4      refs=2  nearby: PTR_DAT_100185b0 at -140
+  DAT_10018528                    addr=10018528    type=undefined4      refs=2  nearby: PTR_DAT_100185b0 at -136
+  DAT_10018530                    addr=10018530    type=undefined4      refs=1  nearby: PTR_DAT_100185b0 at -128
+  DAT_100185b8                    addr=100185b8    type=undefined4      refs=1  nearby: PTR_DAT_100185b4 at +4
+  DAT_100185c0                    addr=100185c0    type=undefined4      refs=3  nearby: PTR_DAT_100185b4 at +12
+  DAT_100185c4                    addr=100185c4    type=undefined4      refs=2  nearby: PTR_DAT_100185b4 at +16
+  DAT_100185c8                    addr=100185c8    type=undefined4      refs=2  nearby: PTR_DAT_100185b4 at +20
+  DAT_100185d0                    addr=100185d0    type=undefined4      refs=3  nearby: PTR_DAT_100185b4 at +28
+  DAT_100185d4                    addr=100185d4    type=undefined4      refs=2  nearby: PTR_DAT_100185b4 at +32
+  DAT_100185d8                    addr=100185d8    type=undefined4      refs=2  nearby: PTR_DAT_100185b4 at +36
+  DAT_100185dc                    addr=100185dc    type=undefined4      refs=2  nearby: PTR_DAT_100185b4 at +40
+  DAT_100185e0                    addr=100185e0    type=undefined4      refs=1  nearby: PTR_DAT_100185b4 at +44
+  DAT_10018614                    addr=10018614    type=undefined4      refs=1  nearby: CDLLTextureCache_10018660 at -76
+  DAT_10018618                    addr=10018618    type=undefined4      refs=1  nearby: CDLLTextureCache_10018660 at -72
+  DAT_1001864c                    addr=1001864c    type=undefined4      refs=1  nearby: CDLLTextureCache_10018660 at -20
+  DAT_10018650                    addr=10018650    type=undefined4      refs=1  nearby: CDLLTextureCache_10018660 at -16
+  DAT_10240630                    addr=10240630    type=undefined4      refs=2  nearby: g_FlyModeDepthBias at +4
+  DAT_10240648                    addr=10240648    type=undefined4      refs=2  nearby: g_FlyModeDepthBias at +28
+  DAT_10240660                    addr=10240660    type=undefined4      refs=2  nearby: g_FlyModeDepthBias at +52
+  DAT_10240678                    addr=10240678    type=undefined4      refs=2  nearby: g_FlyModeDepthBias at +76
+  DAT_10240690                    addr=10240690    type=undefined4      refs=1  nearby: g_FlyModeDepthBias at +100
+  DAT_1024079a                    addr=1024079a    type=undefined1      refs=1
+  DAT_102407a0                    addr=102407a0    type=undefined4      refs=3
+  DAT_102407fc                    addr=102407fc    type=undefined4      refs=1
+  DAT_10240850                    addr=10240850    type=undefined4      refs=1
+  DAT_10240854                    addr=10240854    type=undefined4      refs=7
+  DAT_10240858                    addr=10240858    type=undefined4      refs=7
+  DAT_10241874                    addr=10241874    type=undefined4      refs=3
+  DAT_10241970                    addr=10241970    type=undefined4      refs=14
+  DAT_10241974                    addr=10241974    type=undefined4      refs=6
+  DAT_10241978                    addr=10241978    type=undefined4      refs=1
+  DAT_1024197c                    addr=1024197c    type=undefined4      refs=1
+  DAT_10241980                    addr=10241980    type=undefined4      refs=2
+
+--------------------------------------------------------------------------------
+MOST REFERENCED DAT_ GLOBALS (top 50)
+--------------------------------------------------------------------------------
+  DAT_10241870                    addr=10241870    refs=26    type=undefined4      likely=int
+  DAT_10241970                    addr=10241970    refs=14    type=undefined4    
+  DAT_10017770                    addr=10017770    refs=13    type=undefined4      nearby: PTR_LAB_10017798(-40)
+  DAT_10017760                    addr=10017760    refs=10    type=undefined4      nearby: PTR_LAB_10017798(-56)
+  DAT_1001748a                    addr=1001748a    refs=7     type=undefined4      likely=short  nearby: PTR_DAT_10017484(+6)
+  DAT_10240854                    addr=10240854    refs=7     type=undefined4    
+  DAT_10240858                    addr=10240858    refs=7     type=undefined4    
+  DAT_10017690                    addr=10017690    refs=7     type=undefined4    
+  DAT_10016c74                    addr=10016c74    refs=7     type=undefined4      nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c(+8)
+  DAT_10241974                    addr=10241974    refs=6     type=undefined4    
+  DAT_1001748b                    addr=1001748b    refs=5     type=undefined4      likely=byte  nearby: PTR_DAT_10017484(+7)
+  DAT_10017694                    addr=10017694    refs=5     type=undefined1      likely=byte
+  DAT_10016d80                    addr=10016d80    refs=4     type=undefined4      likely=int  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+36)
+  DAT_10016edc                    addr=10016edc    refs=4     type=undefined4    
+  DAT_1024085c                    addr=1024085c    refs=4     type=undefined4      likely=int
+  DAT_10241860                    addr=10241860    refs=4     type=undefined4      likely=int
+  DAT_10016c70                    addr=10016c70    refs=4     type=undefined4      nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c(+4)
+  DAT_10016da4                    addr=10016da4    refs=4     type=undefined4      likely=DWORD  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+72)
+  DAT_10016d88                    addr=10016d88    refs=3     type=undefined4      nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+44)
+  DAT_10016ee0                    addr=10016ee0    refs=3     type=undefined4    
+  DAT_10017780                    addr=10017780    refs=3     type=undefined4      nearby: PTR_LAB_10017798(-24)
+  DAT_10241874                    addr=10241874    refs=3     type=undefined4    
+  DAT_102407a0                    addr=102407a0    refs=3     type=undefined4    
+  DAT_10016dd8+1                  addr=10016dd9    refs=3     type=undefined4      likely=byte  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+125)
+  DAT_10017788                    addr=10017788    refs=3     type=undefined1      likely=byte  nearby: PTR_LAB_10017798(-16)
+  DAT_10017794                    addr=10017794    refs=3     type=undefined4      nearby: PTR_LAB_10017798(-4)
+  DAT_100178f8                    addr=100178f8    refs=3     type=undefined4    
+  DAT_100178fc                    addr=100178fc    refs=3     type=undefined4    
+  DAT_10017080                    addr=10017080    refs=3     type=undefined4      likely=function_ptr  nearby: PTR_DAT_10017088(-8)
+  DAT_10017308                    addr=10017308    refs=3     type=undefined4    
+  DAT_10016c78                    addr=10016c78    refs=3     type=undefined4      nearby: LPCRITICAL_SECTION_10016c7c(-4)
+  DAT_10018214                    addr=10018214    refs=3     type=undefined4      nearby: PTR_PTR_1001820c(+8)
+  DAT_100185c0                    addr=100185c0    refs=3     type=undefined4      nearby: PTR_DAT_100185b4(+12)
+  DAT_100185d0                    addr=100185d0    refs=3     type=undefined4      nearby: PTR_DAT_100185b4(+28)
+  DAT_10016ff0                    addr=10016ff0    refs=2     type=undefined4      nearby: PTR_s_R6008_not_enough_space_f_10012620_10017004(-20)
+  DAT_10016c64                    addr=10016c64    refs=2     type=undefined4      nearby: PTR_crt_startup.c__exit_crt_FUN_100075c0_10016c6c(-8)
+  DAT_10240794                    addr=10240794    refs=2     type=undefined4      likely=function_ptr
+  DAT_10017f38                    addr=10017f38    refs=2     type=undefined4      likely=short
+  DAT_10018254                    addr=10018254    refs=2     type=undefined4      nearby: PTR_PTR_1001820c(+72)
+  DAT_10016dd8                    addr=10016dd8    refs=2     type=undefined4      likely=int  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+124)
+  DAT_10016ddc                    addr=10016ddc    refs=2     type=undefined1      nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+128)
+  DAT_10016ee8                    addr=10016ee8    refs=2     type=undefined4    
+  DAT_10016eec                    addr=10016eec    refs=2     type=undefined4    
+  DAT_10016ef0                    addr=10016ef0    refs=2     type=undefined4    
+  DAT_10016ef4                    addr=10016ef4    refs=2     type=undefined4    
+  DAT_10012754                    addr=10012754    refs=2     type=undefined4      nearby: s_C_COLLATE_10012740+1(+19)
+  DAT_10017789                    addr=10017789    refs=2     type=undefined1      likely=byte  nearby: PTR_LAB_10017798(-15)
+  DAT_1001778a                    addr=1001778a    refs=2     type=undefined1      nearby: PTR_LAB_10017798(-14)
+  DAT_1001778b                    addr=1001778b    refs=2     type=undefined1      nearby: PTR_LAB_10017798(-13)
+  DAT_10017758                    addr=10017758    refs=2     type=undefined4      nearby: PTR_LAB_10017798(-64)
+
+--------------------------------------------------------------------------------
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (27)
+--------------------------------------------------------------------------------
+These DAT_ globals are never dereferenced as memory addresses.
+They appear only as inline constant values.
+
+  DAT_1001276c                    value=0x1001276C      refs=8
+  DAT_10012770                    value=0x10012770      refs=8
+  DAT_100170a8                    value=0x100170A8      refs=2
+  DAT_100170c8                    value=0x100170C8      refs=2
+  DAT_100172e8                    value=0x100172E8      refs=2
+  DAT_10017478                    value=0x10017478      refs=1
+  DAT_100170f8                    value=0x100170F8      refs=1
+  DAT_1001821c                    value=0x1001821C      refs=1
+  DAT_10012760                    value=0x10012760      refs=1
+  DAT_10012764                    value=0x10012764      refs=1
+  DAT_10012768                    value=0x10012768      refs=1
+  DAT_10012758                    value=0x10012758      refs=1
+  DAT_1001275c                    value=0x1001275C      refs=1
+  DAT_100176a0                    value=0x100176A0      refs=1
+  DAT_100176b8                    value=0x100176B8      refs=1
+  DAT_10018360                    value=0x10018360      refs=1
+  DAT_10014000                    value=0x10014000      refs=1
+  DAT_10014014                    value=0x10014014      refs=1
+  DAT_10014018                    value=0x10014018      refs=1
+  DAT_10014020                    value=0x10014020      refs=1
+  DAT_10014024                    value=0x10014024      refs=1
+  DAT_1001402c                    value=0x1001402C      refs=1
+  DAT_10014030                    value=0x10014030      refs=1
+  DAT_10014034                    value=0x10014034      refs=1
+  DAT_10016db0                    value=0x10016DB0      refs=1
+  DAT_102407ac                    value=0x102407AC      refs=1
+  DAT_10240800                    value=0x10240800      refs=1
+
+--------------------------------------------------------------------------------
+FILTERED OUT - INSIDE NAMED DATA (5)
+--------------------------------------------------------------------------------
+These DAT_ globals fall within the address range of a named
+string, array, or struct and are not standalone globals.
+
+  DAT_10012408                    inside s_KERNEL32_100123f0
+  DAT_1001240c                    inside s_KERNEL32_100123f0
+  DAT_1001269c                    inside s_Microsoft_Visual_C_Runti_10012674
+  DAT_1001269c+1                  inside s_Microsoft_Visual_C_Runti_10012674
+  DAT_10016c4c                    inside s_You_re_shoving_too_many_10016c20
+

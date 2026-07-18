@@ -1,0 +1,69 @@
+====================================================================================================
+STATIC ANALYSIS BY FUNCTION
+====================================================================================================
+
+All static analysis findings organized by function, sorted by diagnostic count.
+Functions with findings from multiple tools are likely to have real issues.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with findings: 8
+  Total diagnostics: 10
+  Functions flagged by multiple tools: 0
+  .keep.cpp files: 0, raw .cpp files: 8
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090  [.cpp] [Clang-Tidy (quick)]
+  File: dll/dx7.cpp  (2 diagnostics)
+
+  Line   36: [bugprone-signed-char-misuse] comparison between 'signed char' and 'unsigned char'
+  Line   44: [bugprone-signed-char-misuse] comparison between 'signed char' and 'unsigned char'
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180  [.cpp] [Clang-Tidy (quick)]
+  File: dll/dx7.cpp  (2 diagnostics)
+
+  Line   30: [bugprone-signed-char-misuse] comparison between 'signed char' and 'unsigned char'
+  Line   34: [bugprone-signed-char-misuse] comparison between 'signed char' and 'unsigned char'
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_APIDLLInformation_FUN_100019a0  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line   80: [uninitvar] Uninitialized variable: in_stack_00001ed0
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_APIDLLinit_FUN_10001a80  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line  101: [uninitvar] Uninitialized variable: *(uint*)pcVar9
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line  179: [uninitvar] Uninitialized variable: iStack_204
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line   25: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line   27: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80  [.cpp] [Cppcheck (quick)]
+  File: dll/dx7.cpp  (1 diagnostics)
+
+  Line   89: [uninitvar] Uninitialized variable: unaff_EBX

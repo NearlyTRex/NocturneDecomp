@@ -1,0 +1,247 @@
+====================================================================================================
+ANNOTATION QUALITY REPORT
+====================================================================================================
+
+This report identifies functions, parameters, and types that still use Ghidra
+default names or show signs of incorrect type assignments. Use it to prioritize
+manual annotation work.
+(CRT/entry functions are excluded)
+
+====================================================================================================
+SUMMARY STATISTICS
+====================================================================================================
+
+  Total functions analyzed:          76
+  Unnamed functions (FUN_):          37 (48.7%)
+  Functions with unnamed params:     0 ( 0.0%)
+  Functions with type issues:        20 (26.3%)
+  (Name/address mismatches and duplicate names are reported at the end)
+
+  Type issue breakdown:
+    Wrong return type (void):          0
+    Wrong return type (wide/64-bit):   0
+    Missing register params:           0
+    Wrong calling convention:          1
+    Undefined types in variables:      20
+    Unresolved stack params:           1
+
+  Excluded (.keep / MMX / by-value):   0 functions
+    Wrong calling convention:          0
+    Undefined types in variables:      0
+    Unresolved stack params:           0
+
+====================================================================================================
+UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
+====================================================================================================
+
+Sorted by caller count (most-referenced first = highest priority to name).
+
+  dll/dx7.cpp (37 unnamed)
+    0x10002460  __cdecl       2 callers
+    0x10002d10  __cdecl       2 callers
+    0x10001a80  __cdecl       1 callers
+    0x100024b0  __cdecl       1 callers
+    0x10002500  __cdecl       1 callers
+    0x10002ce0  __cdecl       1 callers
+    0x10004380  __cdecl       1 callers
+    0x100043c0  __cdecl       1 callers
+    0x10004840  __cdecl       1 callers
+    0x100019a0  __cdecl       0 callers
+    0x10002bb0  __cdecl       0 callers
+    0x10002be0  __cdecl       0 callers
+    0x10002d90  __cdecl       0 callers
+    0x10002e60  __cdecl       0 callers
+    0x10003e90  __cdecl       0 callers
+    0x10003ed0  __cdecl       0 callers
+    0x10003f00  __cdecl       0 callers
+    0x10004800  __cdecl       0 callers
+    0x10004810  __cdecl       0 callers
+    0x10004820  __cdecl       0 callers
+    0x10004830  __cdecl       0 callers
+    0x100049f0  __cdecl       0 callers
+    0x10004a60  __cdecl       0 callers
+    0x10004a70  __cdecl       0 callers
+    0x10004ac0  __cdecl       0 callers
+    0x10004b30  __cdecl       0 callers
+    0x10004d30  __cdecl       0 callers
+    0x10004da0  __cdecl       0 callers
+    0x10004e10  __cdecl       0 callers
+    0x10004e90  __cdecl       0 callers
+    0x10004f00  __cdecl       0 callers
+    0x10005130  __cdecl       0 callers
+    0x10005280  __cdecl       0 callers
+    0x100052c0  __cdecl       0 callers
+    0x100052e0  __cdecl       0 callers
+    0x10005350  __cdecl       0 callers
+    0x100053a0  __cdecl       0 callers
+
+====================================================================================================
+UNNAMED PARAMETERS (still using param_N)
+====================================================================================================
+
+Sorted by number of unnamed parameters (most unnamed first).
+
+  (none)
+
+====================================================================================================
+TYPE CORRECTNESS ISSUES (heuristic-based)
+====================================================================================================
+
+--------------------------------------------------------------------------------
+Wrong return type (void function with extra output) (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Wrong return type (64-bit return via EDX:EAX) (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Missing register parameters (likely wrong calling convention) (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Wrong calling convention (unaffected register usage) (1)
+--------------------------------------------------------------------------------
+
+  uploadCurrentTexture
+    Address: 0x10003a80  File: dll/dx7.cpp
+    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
+    Signature: void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+--------------------------------------------------------------------------------
+Unresolved stack parameters (missing from signature) (1)
+--------------------------------------------------------------------------------
+
+  APIDLLInformation
+    Address: 0x100019a0  File: dll/dx7.cpp
+    Evidence: in_stack_00001ecc, in_stack_00001ed0, in_stack_00001ecc, in_stack_00001ed0, in_stack_00001ed0, in_stack_00001ed0
+    Signature: void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,void *info_buffer)
+    Suggested: Signature is missing stack parameters entirely
+
+--------------------------------------------------------------------------------
+Undefined types in variables (20)
+--------------------------------------------------------------------------------
+
+  initTextureCaches
+    Address: 0x10001200  File: dll/dx7.cpp
+    Locals:  local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLclear
+    Address: 0x10004840  File: dll/dx7.cpp
+    Locals:  local_c0 (undefined4), local_b8 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_88 (undefined4), local_80 (undefined4), local_7c (undefined4), local_58 (undefined4), local_50 (undefined4), local_4c (undefined4), local_28 (undefined4), local_20 (undefined4), local_1c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  uploadCurrentTexture
+    Address: 0x10003a80  File: dll/dx7.cpp
+    Locals:  local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_70 (undefined4), local_6c (undefined4), local_58 (undefined4), local_14 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  createStagingTextures
+    Address: 0x10003400  File: dll/dx7.cpp
+    Locals:  local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_34 (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  createTexture
+    Address: 0x10002f60  File: dll/dx7.cpp
+    Locals:  local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_64 (undefined4), local_34 (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLclearZBox
+    Address: 0x10004ac0  File: dll/dx7.cpp
+    Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  expandTextureAndBuildMips
+    Address: 0x10003830  File: dll/dx7.cpp
+    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLdrawPolyList2
+    Address: 0x10005130  File: dll/dx7.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLmasterZBuffer
+    Address: 0x10004e10  File: dll/dx7.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLrestoreZBuffer
+    Address: 0x10004e90  File: dll/dx7.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLsetColorTable16
+    Address: 0x10004b30  File: dll/dx7.cpp
+    Locals:  local_7c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLdrawPolyList
+    Address: 0x10004f00  File: dll/dx7.cpp
+    Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLclearZBuffer
+    Address: 0x10004a70  File: dll/dx7.cpp
+    Locals:  local_64 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  buildTLVertex
+    Address: 0x100044b0  File: dll/dx7.cpp
+    Locals:  local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  convertMipTo16Bit
+    Address: 0x10003d90  File: dll/dx7.cpp
+    Locals:  local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLGetDisplayContext
+    Address: 0x10004d30  File: dll/dx7.cpp
+    Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLInformation
+    Address: 0x100019a0  File: dll/dx7.cpp
+    Params:  local_res0 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  copyMipTo32Bit
+    Address: 0x10003e40  File: dll/dx7.cpp
+    Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  getOrAddVertex
+    Address: 0x10005010  File: dll/dx7.cpp
+    Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  isAdapter3DCapable
+    Address: 0x10001900  File: dll/dx7.cpp
+    Locals:  local_2fc (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+====================================================================================================
+FUNCTION NAME / ADDRESS MISMATCHES (0)
+====================================================================================================
+
+  No mismatches found.
+
+====================================================================================================
+DUPLICATE FUNCTION NAMES (1 groups)
+====================================================================================================
+
+Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
+Some are legitimate overloads, others may need disambiguating names.
+
+  dll_dx7.cpp_readIniInt  (2 functions)
+    0x10001440  (char *section,char *key,uint *value_inout)
+    0x10002b20  (char *section,char *key,uint *value_inout)

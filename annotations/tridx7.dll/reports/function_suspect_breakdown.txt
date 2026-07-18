@@ -1,0 +1,74 @@
+========================================================================================================================
+FUNCTION SUSPECT BREAKDOWN
+========================================================================================================================
+
+SUSPECT COUNT DISTRIBUTION
+--------------------------------------------------
+  0 suspects: 36 functions
+  1 suspects: 9 functions
+  2 suspects: 8 functions
+  3 suspects: 2 functions
+  4 suspects: 5 functions
+  5 suspects: 1 functions
+  6 suspects: 3 functions
+  8 suspects: 1 functions
+  11 suspects: 1 functions
+  12 suspects: 1 functions
+  13 suspects: 1 functions
+  14 suspects: 2 functions
+  18 suspects: 1 functions
+  22 suspects: 3 functions
+  35 suspects: 1 functions
+  75 suspects: 1 functions
+
+========================================================================================================================
+EASY WINS: FUNCTIONS WITH 1 SUSPECT
+========================================================================================================================
+
+  [warning_noreturn] (8 functions)
+  ------------------------------------------------------------
+    dll_dx7.cpp_fatalError_FUN_10002340                (  7 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60         ( 15 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_getMipLevelPtr_FUN_10003a30            ( 16 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0    ( 20 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90      ( 21 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10       ( 24 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130       ( 45 lines)
+      /* WARNING: Subroutine does not return */...
+    dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00        ( 50 lines)
+      /* WARNING: Subroutine does not return */...
+
+  [pointer_cast] (1 functions)
+  ------------------------------------------------------------
+    dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90         ( 33 lines)
+      dest = (ushort *)((int)dest + (dest_pitch & 0xfffffffe));...
+
+========================================================================================================================
+FUNCTIONS WITH 2-3 SUSPECTS
+========================================================================================================================
+  dll_dx7.cpp_lockSurface_FUN_10002e20
+    File: dll/dx7.cpp, Lines: 17, Types: ['shadow_pointer_walk', 'unrolled_memset']
+  dll_dx7.cpp_APIDLLclearZBox_FUN_10004ac0
+    File: dll/dx7.cpp, Lines: 22, Types: ['shadow_pointer_walk', 'unrolled_memset']
+  dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
+    File: dll/dx7.cpp, Lines: 23, Types: ['pointer_cast', 'pointer_truncation']
+  dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
+    File: dll/dx7.cpp, Lines: 24, Types: ['unrolled_memcpy']
+  dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
+    File: dll/dx7.cpp, Lines: 26, Types: ['pointer_cast', 'pointer_truncation']
+  dll_dx7.cpp_APIDLLunlockHoldBuffer_FUN_100053a0
+    File: dll/dx7.cpp, Lines: 26, Types: ['unrolled_memcpy']
+  dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
+    File: dll/dx7.cpp, Lines: 32, Types: ['shadow_pointer_walk', 'unrolled_memset']
+  dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0
+    File: dll/dx7.cpp, Lines: 63, Types: ['unrolled_memset']
+  dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70
+    File: dll/dx7.cpp, Lines: 18, Types: ['pointer_cast', 'pointer_truncation', 'unrolled_memset']
+  dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
+    File: dll/dx7.cpp, Lines: 30, Types: ['pointer_cast', 'unrolled_memcpy']

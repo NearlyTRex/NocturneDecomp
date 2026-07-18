@@ -1,0 +1,890 @@
+================================================================================
+GLOBALS GAP ANALYSIS REPORT
+================================================================================
+
+Total globals analyzed:      668
+  Named globals:             442
+  DAT_ globals:              226
+Gaps found:                  199
+  With exact size bounds:    181
+  With estimated bounds:     18
+Total gap bytes:             97,022
+  Exact gap bytes:           91,707
+Overlaps (size <= 0):        174
+
+--------------------------------------------------------------------------------
+GAP SIZE DISTRIBUTION
+--------------------------------------------------------------------------------
+  1-4 bytes (likely padding/alignment)          65
+  5-16 bytes (small vars)                       34
+  17-64 bytes (structs/small arrays)            43
+  65-256 bytes (medium data)                    26
+  257-1024 bytes (large structs/arrays)         14
+  1-4 KB                                        7
+  4-64 KB                                       10
+
+--------------------------------------------------------------------------------
+LARGEST GAPS (top 50)
+--------------------------------------------------------------------------------
+      11,111 bytes  at 0x10003ca9
+    after: switchdataD_10003ca8                     byte                 at 0x10003ca8  size=1
+    before: switchdataD_10006810                     void*                at 0x10006810
+       9,004 bytes  at 0x1000ceb4
+    after: switchdataD_1000ceb0                     void*                at 0x1000ceb0  size=4
+    before: switchdataD_1000f1e0                     undefined1*          at 0x1000f1e0
+       8,300 bytes  at 0x1001002c
+    after: DAT_10010028                             undefined4           at 0x10010028  size=4
+    before: g_IID_IDirectDraw4                       GUID                 at 0x10012098
+       6,548 bytes  at 0x10002300
+    after: switchdataD_100022fc                     void*                at 0x100022fc  size=4
+    before: switchdataD_10003c94                     void*                at 0x10003c94
+       5,771 bytes  at 0x1000817d
+    after: switchdataD_1000817c                     byte                 at 0x1000817c  size=1
+    before: switchdataD_10009808                     void*                at 0x10009808
+       5,512 bytes  at 0x1000a574
+    after: switchdataD_1000a570                     void*                at 0x1000a570  size=4
+    before: switchdataD_1000bafc                     undefined1*          at 0x1000bafc
+       5,491 bytes  at 0x10006bf5
+    after: switchdataD_10006bf4                     byte                 at 0x10006bf4  size=1
+    before: switchdataD_10008168                     void*                at 0x10008168
+       5,208 bytes  at 0x10000080
+    after: IMAGE_DOS_HEADER_10000000                IMAGE_DOS_HEADER     at 0x10000000  size=128
+    before: switchdataD_100014d8                     void*                at 0x100014d8
+       4,192 bytes ~  at 0x10012fa0
+    after: s_TZ_10012ea0                            TerminatedCString    at 0x10012ea0  size=256
+    before: DAT_10014000                             undefined4           at 0x10014000
+       4,178 bytes  at 0x1000bd8a
+    after: PTR_caseD_3_1000bd84+2                   undefined4           at 0x1000bd86  size=4
+    before: switchdataD_1000cddc                     void*                at 0x1000cddc
+       4,096 bytes  at 0x10240860
+    after: DAT_1024085c                             undefined4           at 0x1024085c  size=4
+    before: DAT_10241860                             undefined4           at 0x10241860
+       3,526 bytes  at 0x1024229c
+    after: PTR_SetCursorPos_10242298                void*                at 0x10242298  size=4
+    before: pu_DirectX6_(Some_hardware)_10243062     PascalUnicode        at 0x10243062
+       3,272 bytes  at 0x10009810
+    after: PTR_caseD_20_1000980c                    void*                at 0x1000980c  size=4
+    before: switchdataD_1000a4d8                     void*                at 0x1000a4d8
+       2,955 bytes  at 0x10001649
+    after: switchdataD_10001648                     byte                 at 0x10001648  size=1
+    before: switchdataD_100021d4                     void*                at 0x100021d4
+       2,400 bytes  at 0x1000f6c8
+    after: switchdataD_1000f6c4                     void*                at 0x1000f6c4  size=4
+    before: DAT_10010028                             undefined4           at 0x10010028
+       2,044 bytes  at 0x10241988
+    after: DAT_10241984                             undefined4           at 0x10241984  size=4
+    before: PTR_ExitProcess_10242184                 void*                at 0x10242184
+       1,045 bytes  at 0x1000f21f
+    after: PTR_caseD_63_1000f218+3                  undefined4           at 0x1000f21b  size=4
+    before: switchdataD_1000f634                     void*                at 0x1000f634
+         807 bytes  at 0x100068a5
+    after: switchdataD_100068a0+1                   undefined4           at 0x100068a1  size=4
+    before: switchdataD_10006bcc                     void*                at 0x10006bcc
+         598 bytes  at 0x1000bb12
+    after: PTR_caseD_3_1000bb0c+2                   undefined4           at 0x1000bb0e  size=4
+    before: switchdataD_1000bd68                     undefined1*          at 0x1000bd68
+         562 bytes  at 0x10017af6
+    after: DAT_10017af4                             undefined2           at 0x10017af4  size=2
+    before: PTR_s_england_10012944_10017d28          void*                at 0x10017d28
+         546 bytes  at 0x10017f3e
+    after: DAT_10017f3a                             undefined4           at 0x10017f3a  size=4
+    before: PTR_s_Sun_10018160                       void*                at 0x10018160
+         509 bytes  at 0x1001748f
+    after: DAT_1001748b                             undefined4           at 0x1001748b  size=4
+    before: DAT_1001768c                             undefined4           at 0x1001768c
+         492 bytes  at 0x100170fc
+    after: DAT_100170f8                             undefined4           at 0x100170f8  size=4
+    before: DAT_100172e8                             undefined4           at 0x100172e8
+         486 bytes  at 0x1001240e
+    after: DAT_1001240c                             undefined2           at 0x1001240c  size=2
+    before: s_R6009_not_enough_space_f_100125f4      TerminatedCString    at 0x100125f4
+         346 bytes  at 0x10017dde
+    after: DAT_10017ddc                             undefined2           at 0x10017ddc  size=2
+    before: DAT_10017f38                             undefined4           at 0x10017f38
+         344 bytes  at 0x10017320
+    after: DAT_1001731c                             undefined4           at 0x1001731c  size=4
+    before: DAT_10017478                             undefined4           at 0x10017478
+         327 bytes  at 0x100014ed
+    after: switchdataD_100014ec                     byte                 at 0x100014ec  size=1
+    before: switchdataD_10001634                     void*                at 0x10001634
+         305 bytes  at 0x10012793
+    after: DAT_10012792                             undefined1           at 0x10012792  size=1
+    before: s_italy_100128c4                         TerminatedCString    at 0x100128c4
+         304 bytes ~  at 0x10012a44
+    after: s_england_10012944                       TerminatedCString    at 0x10012944  size=256
+    before: s_french_10012b74                        TerminatedCString    at 0x10012b74
+         268 bytes  at 0x10018414
+    after: DAT_10018410                             undefined4           at 0x10018410  size=4
+    before: DAT_10018520                             undefined4           at 0x10018520
+         260 bytes  at 0x1001825c
+    after: DAT_10018258                             undefined4           at 0x10018258  size=4
+    before: DAT_10018360                             undefined4           at 0x10018360
+         256 bytes  at 0x10240694
+    after: DAT_10240690                             undefined4           at 0x10240690  size=4
+    before: DAT_10240794                             undefined4           at 0x10240794
+         255 bytes  at 0x10016ddd
+    after: DAT_10016ddc                             undefined1           at 0x10016ddc  size=1
+    before: DAT_10016edc                             undefined4           at 0x10016edc
+         248 bytes  at 0x10241878
+    after: DAT_10241874                             undefined4           at 0x10241874  size=4
+    before: DAT_10241970                             undefined4           at 0x10241970
+         240 bytes  at 0x10226958
+    after: g_AdapterGuidStorage[0]+0xc              undefined4           at 0x10226954  size=4
+    before: g_MasterZBufferCount                     uint                 at 0x10226a48
+         216 bytes  at 0x100021d8
+    after: switchdataD_100021d4                     void*                at 0x100021d4  size=4
+    before: switchdataD_100022b0                     byte                 at 0x100022b0
+         198 bytes  at 0x10017962
+    after: DAT_10017960                             undefined2           at 0x10017960  size=2
+    before: PTR_s_dutch_belgian_10012c2c_10017a28    void*                at 0x10017a28
+         196 bytes  at 0x10017a2c
+    after: PTR_s_dutch_belgian_10012c2c_10017a28    void*                at 0x10017a28  size=4
+    before: PTR_s_french_10012b74_10017af0           void*                at 0x10017af0
+         188 bytes  at 0x10016f34
+    after: DAT_10016f30                             undefined4           at 0x10016f30  size=4
+    before: DAT_10016ff0                             undefined4           at 0x10016ff0
+         175 bytes ~  at 0x10012099
+    after: g_IID_IDirectDraw4                       GUID                 at 0x10012098  size=?
+    before: g_IID_IDirect3D3                         GUID                 at 0x10012148
+         175 bytes ~  at 0x100121f9
+    after: g_IID_IDirect3DTexture2                  GUID                 at 0x100121f8  size=?
+    before: g_D3DClipConst2                          double               at 0x100122a8
+         172 bytes  at 0x10017d2c
+    after: PTR_s_england_10012944_10017d28          void*                at 0x10017d28  size=4
+    before: PTR_s_italy_100128c4_10017dd8            void*                at 0x10017dd8
+         159 bytes  at 0x10016879
+    after: s_FATAL_ERROR_Unable_to_cr_10016874+1    undefined4           at 0x10016875  size=4
+    before: s_s_3D_Adapter_Error_10016918            TerminatedCString    at 0x10016918
+         155 bytes  at 0x100167c5
+    after: s_FATAL_ERROR_Unable_to_cr_100167c0+1    undefined4           at 0x100167c1  size=4
+    before: s_s_3D_Adapter_Error_10016860            TerminatedCString    at 0x10016860
+         148 bytes  at 0x1000a4dc
+    after: switchdataD_1000a4d8                     void*                at 0x1000a4d8  size=4
+    before: switchdataD_1000a570                     void*                at 0x1000a570
+         129 bytes  at 0x100177ef
+    after: DAT_100177eb                             undefined4           at 0x100177eb  size=4
+    before: DAT_10017870                             undefined1           at 0x10017870
+         127 bytes ~  at 0x10012179
+    after: g_Direct3DDeviceGUID                     GUID                 at 0x10012178  size=?
+    before: g_IID_IDirect3DTexture2                  GUID                 at 0x100121f8
+         125 bytes  at 0x10017877
+    after: DAT_10017873                             undefined4           at 0x10017873  size=4
+    before: DAT_100178f4                             undefined4           at 0x100178f4
+         123 bytes ~  at 0x10016cbd
+    after: LPCRITICAL_SECTION_10016cbc              LPCRITICAL_SECTION   at 0x10016cbc  size=?
+    before: DAT_10016d38                             undefined4           at 0x10016d38
+         119 bytes  at 0x1000f63d
+    after: PTR_caseD_41_1000f638+1                  undefined4           at 0x1000f639  size=4
+    before: switchdataD_1000f6b4                     void*                at 0x1000f6b4
+
+--------------------------------------------------------------------------------
+ALL EXACT GAPS (181) - size bounds are known precisely
+--------------------------------------------------------------------------------
+      11,111 bytes  at 0x10003ca9  between switchdataD_10003ca8           and switchdataD_10006810
+       9,004 bytes  at 0x1000ceb4  between switchdataD_1000ceb0           and switchdataD_1000f1e0
+       8,300 bytes  at 0x1001002c  between DAT_10010028                   and g_IID_IDirectDraw4
+       6,548 bytes  at 0x10002300  between switchdataD_100022fc           and switchdataD_10003c94
+       5,771 bytes  at 0x1000817d  between switchdataD_1000817c           and switchdataD_10009808
+       5,512 bytes  at 0x1000a574  between switchdataD_1000a570           and switchdataD_1000bafc
+       5,491 bytes  at 0x10006bf5  between switchdataD_10006bf4           and switchdataD_10008168
+       5,208 bytes  at 0x10000080  between IMAGE_DOS_HEADER_10000000      and switchdataD_100014d8
+       4,178 bytes  at 0x1000bd8a  between PTR_caseD_3_1000bd84+2         and switchdataD_1000cddc
+       4,096 bytes  at 0x10240860  between DAT_1024085c                   and DAT_10241860
+       3,526 bytes  at 0x1024229c  between PTR_SetCursorPos_10242298      and pu_DirectX6_(Some_hardware)_10
+       3,272 bytes  at 0x10009810  between PTR_caseD_20_1000980c          and switchdataD_1000a4d8
+       2,955 bytes  at 0x10001649  between switchdataD_10001648           and switchdataD_100021d4
+       2,400 bytes  at 0x1000f6c8  between switchdataD_1000f6c4           and DAT_10010028
+       2,044 bytes  at 0x10241988  between DAT_10241984                   and PTR_ExitProcess_10242184
+       1,045 bytes  at 0x1000f21f  between PTR_caseD_63_1000f218+3        and switchdataD_1000f634
+         807 bytes  at 0x100068a5  between switchdataD_100068a0+1         and switchdataD_10006bcc
+         598 bytes  at 0x1000bb12  between PTR_caseD_3_1000bb0c+2         and switchdataD_1000bd68
+         562 bytes  at 0x10017af6  between DAT_10017af4                   and PTR_s_england_10012944_10017d2
+         546 bytes  at 0x10017f3e  between DAT_10017f3a                   and PTR_s_Sun_10018160
+         509 bytes  at 0x1001748f  between DAT_1001748b                   and DAT_1001768c
+         492 bytes  at 0x100170fc  between DAT_100170f8                   and DAT_100172e8
+         486 bytes  at 0x1001240e  between DAT_1001240c                   and s_R6009_not_enough_space_f_100
+         346 bytes  at 0x10017dde  between DAT_10017ddc                   and DAT_10017f38
+         344 bytes  at 0x10017320  between DAT_1001731c                   and DAT_10017478
+         327 bytes  at 0x100014ed  between switchdataD_100014ec           and switchdataD_10001634
+         305 bytes  at 0x10012793  between DAT_10012792                   and s_italy_100128c4
+         268 bytes  at 0x10018414  between DAT_10018410                   and DAT_10018520
+         260 bytes  at 0x1001825c  between DAT_10018258                   and DAT_10018360
+         256 bytes  at 0x10240694  between DAT_10240690                   and DAT_10240794
+         255 bytes  at 0x10016ddd  between DAT_10016ddc                   and DAT_10016edc
+         248 bytes  at 0x10241878  between DAT_10241874                   and DAT_10241970
+         240 bytes  at 0x10226958  between g_AdapterGuidStorage[0]+0xc    and g_MasterZBufferCount
+         216 bytes  at 0x100021d8  between switchdataD_100021d4           and switchdataD_100022b0
+         198 bytes  at 0x10017962  between DAT_10017960                   and PTR_s_dutch_belgian_10012c2c_1
+         196 bytes  at 0x10017a2c  between PTR_s_dutch_belgian_10012c2c_1 and PTR_s_french_10012b74_10017af0
+         188 bytes  at 0x10016f34  between DAT_10016f30                   and DAT_10016ff0
+         172 bytes  at 0x10017d2c  between PTR_s_england_10012944_10017d2 and PTR_s_italy_100128c4_10017dd8
+         159 bytes  at 0x10016879  between s_FATAL_ERROR_Unable_to_cr_100 and s_s_3D_Adapter_Error_10016918
+         155 bytes  at 0x100167c5  between s_FATAL_ERROR_Unable_to_cr_100 and s_s_3D_Adapter_Error_10016860
+         148 bytes  at 0x1000a4dc  between switchdataD_1000a4d8           and switchdataD_1000a570
+         129 bytes  at 0x100177ef  between DAT_100177eb                   and DAT_10017870
+         125 bytes  at 0x10017877  between DAT_10017873                   and DAT_100178f4
+         119 bytes  at 0x1000f63d  between PTR_caseD_41_1000f638+1        and switchdataD_1000f6b4
+         116 bytes  at 0x10012324  between DAT_10012320                   and s_GetCurrentThread_10012398
+         115 bytes  at 0x10016931  between s_FATAL_ERROR_Unable_to_at_100 and s_s_3D_Adapter_Error_100169a4
+         115 bytes  at 0x100176d5  between DAT_100176d4                   and DAT_10017748
+         112 bytes  at 0x10017010  between PTR_s_R6009_not_enough_space_f and DAT_10017080
+          80 bytes  at 0x10018364  between DAT_10018360                   and DAT_100183b4
+          75 bytes  at 0x100022b1  between switchdataD_100022b0           and switchdataD_100022fc
+          72 bytes  at 0x100183c0  between DAT_100183bc                   and DAT_10018408
+          64 bytes  at 0x10006860  between switchdataD_1000685c           and switchdataD_100068a0
+          60 bytes  at 0x102407b0  between DAT_102407ac                   and DAT_102407ec
+          60 bytes  at 0x10240804  between DAT_10240800                   and DAT_10240840
+          59 bytes  at 0x10018534  between DAT_10018533                   and DAT_1001856f
+          59 bytes  at 0x10018574  between DAT_10018573                   and DAT_100185af
+          57 bytes  at 0x1000ce10  between switchdataD_1000ce0c           and BYTE_1000ce49
+          55 bytes  at 0x1000f1e4  between switchdataD_1000f1e0           and PTR_caseD_63_1000f218+3
+          53 bytes  at 0x1000ce64  between switchdataD_1000ce60           and BYTE_1000ce99
+          52 bytes  at 0x10018220  between DAT_1001821c                   and DAT_10018254
+          48 bytes  at 0x100185e4  between DAT_100185e0                   and DAT_10018614
+          48 bytes  at 0x1001861c  between DAT_10018618                   and DAT_1001864c
+          44 bytes  at 0x100170cc  between DAT_100170c8                   and DAT_100170f8
+          44 bytes  at 0x1001819c  between PTR_s_Jan_10018198             and PTR_s_January_100181c8
+          44 bytes  at 0x100181cc  between PTR_s_January_100181c8         and PTR_s_AM_100181f8
+          40 bytes  at 0x10006834  between switchdataD_10006830           and switchdataD_1000685c
+          39 bytes  at 0x100125f9  between s_R6009_not_enough_space_f_100 and s_R6008_not_enough_space_f_100
+          36 bytes  at 0x10006bd0  between switchdataD_10006bcc           and switchdataD_10006bf4
+          36 bytes  at 0x1001791c  between DAT_10017918                   and DAT_10017940
+          35 bytes  at 0x10016db5  between DAT_10016db4                   and DAT_10016dd8
+          28 bytes  at 0x100172ec  between DAT_100172e8                   and DAT_10017308
+          28 bytes  at 0x100177b0  between PTR_DAT_100177ac               and PTR_s_LC_TIME_100177cc
+          26 bytes  at 0x1000bd6c  between switchdataD_1000bd68           and PTR_caseD_3_1000bd84+2
+          25 bytes  at 0x1000cde0  between switchdataD_1000cddc           and PTR_caseD_7_1000cdf8+1
+          25 bytes  at 0x10016f17  between DAT_10016f13                   and DAT_10016f30
+          24 bytes  at 0x10018164  between PTR_s_Sun_10018160             and PTR_s_Sunday_1001817c
+          24 bytes  at 0x10018180  between PTR_s_Sunday_1001817c          and PTR_s_Jan_10018198
+          22 bytes  at 0x1000ce4a  between BYTE_1000ce49                  and switchdataD_1000ce60
+          22 bytes  at 0x1000ce9a  between BYTE_1000ce99                  and switchdataD_1000ceb0
+          20 bytes  at 0x100126a8  between s_Runtime_Error_Program_100126 and s_anon_100126bc
+          20 bytes  at 0x100176a4  between DAT_100176a0                   and DAT_100176b8
+          20 bytes  at 0x100176bc  between DAT_100176b8                   and DAT_100176d0
+          20 bytes  at 0x10240634  between DAT_10240630                   and DAT_10240648
+          20 bytes  at 0x1024064c  between DAT_10240648                   and DAT_10240660
+          20 bytes  at 0x10240664  between DAT_10240660                   and DAT_10240678
+          20 bytes  at 0x1024067c  between DAT_10240678                   and DAT_10240690
+          19 bytes  at 0x10006814  between switchdataD_10006810           and PTR_caseD_5_10006824+3
+          19 bytes  at 0x1001423d  between s_Terminal_Reality_Inc_1001423 and s_D3DERR_BADMAJORVERSION_T_100
+          16 bytes  at 0x100014dc  between switchdataD_100014d8           and switchdataD_100014ec
+          16 bytes  at 0x10001638  between switchdataD_10001634           and switchdataD_10001648
+          16 bytes  at 0x10003c98  between switchdataD_10003c94           and switchdataD_10003ca8
+          16 bytes  at 0x1000816c  between switchdataD_10008168           and switchdataD_1000817c
+          16 bytes  at 0x10014004  between DAT_10014000                   and DAT_10014014
+          15 bytes  at 0x10012745  between s_C_COLLATE_10012740+1         and DAT_10012754
+          14 bytes  at 0x1000bb00  between switchdataD_1000bafc           and PTR_caseD_3_1000bb0c+2
+          14 bytes  at 0x100126ca  between s_program_name_unknown_100126c and s_GetLastActivePopup_100126d8
+          12 bytes  at 0x1000f6b8  between switchdataD_1000f6b4           and switchdataD_1000f6c4
+          12 bytes  at 0x10014038  between DAT_10014034                   and g_TextureCache32
+          12 bytes  at 0x100141c8  between g_FogColorBlue                 and g_CurrentBoundTexture
+          12 bytes  at 0x10016c54  between PTR_crt_fpu.c__fpmath_FUN_1000 and DAT_10016c60
+          12 bytes  at 0x1001708c  between PTR_DAT_10017088               and DAT_10017098
+          12 bytes  at 0x1001709c  between DAT_10017098                   and DAT_100170a8
+          12 bytes  at 0x100170ac  between DAT_100170a8                   and DAT_100170b8
+          12 bytes  at 0x100170bc  between DAT_100170b8                   and DAT_100170c8
+          12 bytes  at 0x10017764  between DAT_10017760                   and DAT_10017770
+          12 bytes  at 0x10017948  between DAT_10017944                   and DAT_10017954
+          12 bytes  at 0x10018654  between DAT_10018650                   and CDLLTextureCache_10018660
+          12 bytes  at 0x10241864  between DAT_10241860                   and DAT_10241870
+          11 bytes  at 0x10017695  between DAT_10017694                   and DAT_100176a0
+          10 bytes  at 0x1001230e  between u_null)_10012308+2             and u_HAN#_10012318
+           8 bytes  at 0x100122e0  between DOUBLE_100122d8                and DOUBLE_100122e8
+           8 bytes  at 0x10016da8  between DAT_10016da4                   and DAT_10016db0
+           8 bytes  at 0x1001778c  between DAT_1001778b                   and DAT_10017794
+           8 bytes  at 0x10017956  between DAT_10017954                   and DAT_1001795e
+           7 bytes  at 0x1000cdfd  between PTR_caseD_7_1000cdf8+1         and PTR_caseD_a_1000ce04
+           6 bytes  at 0x10016efa  between DAT_10016ef9                   and DAT_10016f00
+           5 bytes  at 0x1024079b  between DAT_1024079a                   and DAT_102407a0
+           4 bytes  at 0x1000682c  between PTR_caseD_6_10006828           and switchdataD_10006830
+           4 bytes  at 0x1000ce08  between PTR_caseD_a_1000ce04           and switchdataD_1000ce0c
+           4 bytes  at 0x100122b4  between g_D3DClipHalf                  and DOUBLE_100122b8
+           4 bytes  at 0x10012304  between s_kernel32_dll_100122f8+8      and u_(null)_10012308
+           4 bytes  at 0x1001401c  between DAT_10014018                   and DAT_10014020
+           4 bytes  at 0x10014028  between DAT_10014024                   and DAT_1001402c
+           4 bytes  at 0x10014054  between g_TextureCache256              and s_Textures_10014058
+           4 bytes  at 0x1001413c  between g_CurrentTextureIndex          and s_Graphics_10014140
+           4 bytes  at 0x10014194  between g_ZBufferSurface               and g_MasterZBufferSurfaces
+           4 bytes  at 0x100141d8  between g_CurrentBoundTexture          and g_Direct3D3
+           4 bytes  at 0x100141ec  between g_StagingSetIndex              and g_DirectTextureFlag
+           4 bytes  at 0x10014200  between g_TextureFormatSelected        and g_InScene
+           4 bytes  at 0x10016c68  between DAT_10016c64                   and PTR_crt_startup.c__exit_crt_FU
+           4 bytes  at 0x10016d3c  between DAT_10016d38                   and PTR_u_HAN#_10016d40
+           4 bytes  at 0x10016d7c  between DAT_10016d78                   and DAT_10016d80
+           4 bytes  at 0x10016d8c  between DAT_10016d88                   and DAT_10016d90
+           4 bytes  at 0x10016d94  between DAT_10016d90                   and DAT_10016d98
+           4 bytes  at 0x10016ee4  between DAT_10016ee0                   and DAT_10016ee8
+           4 bytes  at 0x10016f0c  between DAT_10016f08                   and DAT_10016f10
+           4 bytes  at 0x10016ffc  between DAT_10016ff8                   and DAT_10017000
+           4 bytes  at 0x10017084  between DAT_10017080                   and PTR_DAT_10017088
+           4 bytes  at 0x1001730c  between DAT_10017308                   and DAT_10017310
+           4 bytes  at 0x10017314  between DAT_10017310                   and DAT_10017318
+           4 bytes  at 0x1001747c  between DAT_10017478                   and PTR_DAT_10017480
+           4 bytes  at 0x1001775c  between DAT_10017758                   and DAT_10017760
+           4 bytes  at 0x10017784  between DAT_10017780                   and DAT_10017788
+           4 bytes  at 0x100177a4  between PTR_DAT_100177a0               and PTR_s_LC_CTYPE_100177a8
+           4 bytes  at 0x100177d4  between PTR_DAT_100177d0               and DAT_100177d8
+           4 bytes  at 0x100177e4  between DAT_100177e0                   and DAT_100177e8
+           4 bytes  at 0x10018218  between DAT_10018214                   and DAT_1001821c
+           4 bytes  at 0x1001852c  between DAT_10018528                   and DAT_10018530
+           4 bytes  at 0x100185bc  between DAT_100185b8                   and DAT_100185c0
+           4 bytes  at 0x100185cc  between DAT_100185c8                   and DAT_100185d0
+           4 bytes  at 0x10060674  between g_MipMapFlag                   and CDLLTextureCache_10060678
+           4 bytes  at 0x101386ac  between g_HWRedShift                   and g_AdapterDeviceId
+           4 bytes  at 0x10139044  between g_BlueShift                    and g_StagingTextures
+           4 bytes  at 0x101398cc  between g_UseHoldBuffer                and g_AdapterDriverName
+           4 bytes  at 0x1013b8d4  between g_HWAlphaMask                  and g_VertexBuffer
+           4 bytes  at 0x101b88dc  between g_HWBlueScale                  and g_ExpandedTexture
+           4 bytes  at 0x1020de3c  between g_TextureData                  and g_TextureSurfaces
+           4 bytes  at 0x10215e44  between g_ColorPalette                 and g_VertexBatchStamp
+           4 bytes  at 0x1022686c  between g_ColorTable16                 and g_AdapterGuids
+           4 bytes  at 0x102268b4  between g_HWGreenScale                 and g_ExternalRendererBridge
+           4 bytes  at 0x10226944  between g_ExternalRendererBridge       and g_AdapterGuidStorage
+           4 bytes  at 0x10226a50  between g_RedShift                     and g_GreenShift
+           4 bytes  at 0x10226a7c  between g_HWRedScale                   and g_PackedPalette
+           4 bytes  at 0x10226e84  between g_HWBlueShift                  and g_PrimarySurfaceDesc
+           4 bytes  at 0x10226f04  between g_PrimarySurfaceDesc           and g_VertexCacheIndex
+           4 bytes  at 0x1023690c  between g_LightingAlpha                and g_AdapterDescription
+           4 bytes  at 0x10240618  between g_TextureLodScale              and g_TextureOpacity
+           4 bytes  at 0x102407a4  between DAT_102407a0                   and DAT_102407a8
+           4 bytes  at 0x102421c0  between PTR_LeaveCriticalSection_10242 and PTR_HeapFree_102421c4
+           4 bytes  at 0x102421f0  between PTR_TlsGetValue_102421ec       and PTR_HeapCreate_102421f4
+           4 bytes  at 0x10242288  between PTR_GetTimeZoneInformation_102 and PTR_LoadStringA_1024228c
+           3 bytes  at 0x1001231d  between u_HAN#)_10012318+1             and DAT_10012320
+           2 bytes  at 0x10012766  between DAT_10012764                   and DAT_10012768
+           2 bytes  at 0x10012782  between DAT_10012780                   and DAT_10012784
+           2 bytes  at 0x1001278a  between DAT_10012788                   and DAT_1001278c
+           2 bytes  at 0x10017488  between PTR_DAT_10017484               and DAT_1001748a
+           2 bytes  at 0x100177de  between DAT_100177dc                   and DAT_100177e0
+           2 bytes  at 0x10018571  between DAT_10018570                   and DAT_10018573
+           1 bytes  at 0x1000f638  between switchdataD_1000f634           and PTR_caseD_41_1000f638+1
+           1 bytes  at 0x1001277b  between DAT_1001277a                   and DAT_1001277c
+           1 bytes  at 0x10240799  between DAT_10240798                   and DAT_1024079a
+
+--------------------------------------------------------------------------------
+OVERLAPS (174) - next global starts inside previous
+--------------------------------------------------------------------------------
+  3 bytes overlap
+    PTR_caseD_5_10006824+3                   undefined4           at 0x10006827  size=4
+    PTR_caseD_6_10006828                     void*                at 0x10006828
+  3 bytes overlap
+    switchdataD_100068a0                     void*                at 0x100068a0  size=4
+    switchdataD_100068a0+1                   undefined4           at 0x100068a1
+  248 bytes overlap ~
+    s_kernel32_dll_100122f8                  TerminatedCString    at 0x100122f8  size=256
+    s_kernel32_dll_100122f8+8                undefined4           at 0x10012300
+  236 bytes overlap ~
+    s_GetCurrentThread_10012398              TerminatedCString    at 0x10012398  size=256
+    s_SetThreadAffinityMask_100123ac         string               at 0x100123ac
+  255 bytes overlap ~
+    s_R6009_not_enough_space_f_100125f4      TerminatedCString    at 0x100125f4  size=256
+    s_R6009_not_enough_space_f_100125f4+1    undefined4           at 0x100125f5
+  172 bytes overlap ~
+    s_R6008_not_enough_space_f_10012620      TerminatedCString    at 0x10012620  size=256
+    s_Microsoft_Visual_C_Runti_10012674      TerminatedCString    at 0x10012674
+  216 bytes overlap ~
+    s_Microsoft_Visual_C_Runti_10012674      TerminatedCString    at 0x10012674  size=256
+    DAT_1001269c                             undefined4           at 0x1001269c
+  3 bytes overlap
+    DAT_1001269c                             undefined4           at 0x1001269c  size=4
+    DAT_1001269c+1                           undefined4           at 0x1001269d
+  1 bytes overlap
+    DAT_1001269c+1                           undefined4           at 0x1001269d  size=4
+    s_Runtime_Error_Program_100126a0         TerminatedCString    at 0x100126a0
+  252 bytes overlap ~
+    s_Runtime_Error_Program_100126a0         TerminatedCString    at 0x100126a0  size=256
+    s_Runtime_Error_Program_100126a0+4       undefined4           at 0x100126a4
+  252 bytes overlap ~
+    s_anon_100126bc                          TerminatedCString    at 0x100126bc  size=256
+    s_program_name_unknown_100126c0          TerminatedCString    at 0x100126c0
+  252 bytes overlap ~
+    s_program_name_unknown_100126c0          TerminatedCString    at 0x100126c0  size=256
+    s_program_name_unknown_100126c0+4        undefined4           at 0x100126c4
+  2 bytes overlap
+    s_program_name_unknown_100126c0+4        undefined4           at 0x100126c4  size=4
+    s_program_name_unknown_100126c0+6        undefined4           at 0x100126c6
+  236 bytes overlap ~
+    s_GetLastActivePopup_100126d8            TerminatedCString    at 0x100126d8  size=256
+    s_GetActiveWindow_100126ec               TerminatedCString    at 0x100126ec
+  240 bytes overlap ~
+    s_GetActiveWindow_100126ec               TerminatedCString    at 0x100126ec  size=256
+    s_MessageBoxA_100126fc                   TerminatedCString    at 0x100126fc
+  244 bytes overlap ~
+    s_MessageBoxA_100126fc                   TerminatedCString    at 0x100126fc  size=256
+    s_user32_dll_10012708                    TerminatedCString    at 0x10012708
+  212 bytes overlap ~
+    s_user32_dll_10012708                    TerminatedCString    at 0x10012708  size=256
+    s_LC_CTYPE_10012734                      TerminatedCString    at 0x10012734
+  244 bytes overlap ~
+    s_LC_CTYPE_10012734                      TerminatedCString    at 0x10012734  size=256
+    s_LC_COLLATE_10012740                    TerminatedCString    at 0x10012740
+  255 bytes overlap ~
+    s_LC_COLLATE_10012740                    TerminatedCString    at 0x10012740  size=256
+    s_C_COLLATE_10012740+1                   undefined4           at 0x10012741
+  3 bytes overlap
+    DAT_10012754                             undefined4           at 0x10012754  size=4
+    DAT_10012754+1                           undefined4           at 0x10012755
+  1 bytes overlap
+    DAT_10012754+1                           undefined4           at 0x10012755  size=4
+    DAT_10012758                             undefined4           at 0x10012758
+  128 bytes overlap ~
+    s_italy_100128c4                         TerminatedCString    at 0x100128c4  size=256
+    s_england_10012944                       TerminatedCString    at 0x10012944
+  72 bytes overlap ~
+    s_french_10012b74                        TerminatedCString    at 0x10012b74  size=256
+    s_dutch_belgian_10012c2c                 TerminatedCString    at 0x10012c2c
+  4 bytes overlap ~
+    s_dutch_belgian_10012c2c                 TerminatedCString    at 0x10012c2c  size=256
+    s_OCP_10012d28                           TerminatedCString    at 0x10012d28
+  255 bytes overlap ~
+    s_OCP_10012d28                           TerminatedCString    at 0x10012d28  size=256
+    s_OCP_10012d28+1                         undefined4           at 0x10012d29
+  1 bytes overlap
+    s_OCP_10012d28+1                         undefined4           at 0x10012d29  size=4
+    s_ACP_10012d2c                           TerminatedCString    at 0x10012d2c
+  255 bytes overlap ~
+    s_ACP_10012d2c                           TerminatedCString    at 0x10012d2c  size=256
+    s_ACP_10012d2c+1                         undefined4           at 0x10012d2d
+  1 bytes overlap
+    s_ACP_10012d2c+1                         undefined4           at 0x10012d2d  size=4
+    s_H_mm_ss_10012d30                       TerminatedCString    at 0x10012d30
+  248 bytes overlap ~
+    s_H_mm_ss_10012d30                       TerminatedCString    at 0x10012d30  size=256
+    s_dddd_MMMM_dd_yyyy_10012d38             TerminatedCString    at 0x10012d38
+  236 bytes overlap ~
+    s_dddd_MMMM_dd_yyyy_10012d38             TerminatedCString    at 0x10012d38  size=256
+    s_M_d_yy_10012d4c                        TerminatedCString    at 0x10012d4c
+  248 bytes overlap ~
+    s_M_d_yy_10012d4c                        TerminatedCString    at 0x10012d4c  size=256
+    s_PM_10012d54                            TerminatedCString    at 0x10012d54
+  252 bytes overlap ~
+    s_PM_10012d54                            TerminatedCString    at 0x10012d54  size=256
+    s_AM_10012d58                            TerminatedCString    at 0x10012d58
+  4 bytes overlap ~
+    s_AM_10012d58                            TerminatedCString    at 0x10012d58  size=256
+    s_a_p_10012e54                           TerminatedCString    at 0x10012e54
+  252 bytes overlap ~
+    s_a_p_10012e54                           TerminatedCString    at 0x10012e54  size=256
+    s_am_pm_10012e58                         TerminatedCString    at 0x10012e58
+  184 bytes overlap ~
+    s_am_pm_10012e58                         TerminatedCString    at 0x10012e58  size=256
+    s_TZ_10012ea0                            TerminatedCString    at 0x10012ea0
+  240 bytes overlap ~
+    s_Textures_10014058                      TerminatedCString    at 0x10014058  size=256
+    s_system_render_ini_10014068             TerminatedCString    at 0x10014068
+  236 bytes overlap ~
+    s_system_render_ini_10014068             TerminatedCString    at 0x10014068  size=256
+    s_rt_1001407c                            TerminatedCString    at 0x1001407c
+  252 bytes overlap ~
+    s_rt_1001407c                            TerminatedCString    at 0x1001407c  size=256
+    s_wt_10014080                            TerminatedCString    at 0x10014080
+  252 bytes overlap ~
+    s_wt_10014080                            TerminatedCString    at 0x10014080  size=256
+    s_s_10014084                             TerminatedCString    at 0x10014084
+  248 bytes overlap ~
+    s_s_10014084                             TerminatedCString    at 0x10014084  size=256
+    s_maxTextures32_d_1001408c               TerminatedCString    at 0x1001408c
+  236 bytes overlap ~
+    s_maxTextures32_d_1001408c               TerminatedCString    at 0x1001408c  size=256
+    s_maxTextures64_d_100140a0               TerminatedCString    at 0x100140a0
+  236 bytes overlap ~
+    s_maxTextures64_d_100140a0               TerminatedCString    at 0x100140a0  size=256
+    s_maxTextures128_d_100140b4              TerminatedCString    at 0x100140b4
+  236 bytes overlap ~
+    s_maxTextures128_d_100140b4              TerminatedCString    at 0x100140b4  size=256
+    s_maxTextures256_d_100140c8              TerminatedCString    at 0x100140c8
+  236 bytes overlap ~
+    s_maxTextures256_d_100140c8              TerminatedCString    at 0x100140c8  size=256
+    s_mipMapFlag_d_100140dc                  TerminatedCString    at 0x100140dc
+  240 bytes overlap ~
+    s_mipMapFlag_d_100140dc                  TerminatedCString    at 0x100140dc  size=256
+    s_maxTextures32_100140ec                 TerminatedCString    at 0x100140ec
+  240 bytes overlap ~
+    s_maxTextures32_100140ec                 TerminatedCString    at 0x100140ec  size=256
+    s_maxTextures64_100140fc                 TerminatedCString    at 0x100140fc
+  240 bytes overlap ~
+    s_maxTextures64_100140fc                 TerminatedCString    at 0x100140fc  size=256
+    s_maxTextures128_1001410c                TerminatedCString    at 0x1001410c
+  240 bytes overlap ~
+    s_maxTextures128_1001410c                TerminatedCString    at 0x1001410c  size=256
+    s_maxTextures256_1001411c                TerminatedCString    at 0x1001411c
+  240 bytes overlap ~
+    s_maxTextures256_1001411c                TerminatedCString    at 0x1001411c  size=256
+    s_mipMapFlag_1001412c                    TerminatedCString    at 0x1001412c
+  244 bytes overlap ~
+    s_mipMapFlag_1001412c                    TerminatedCString    at 0x1001412c  size=256
+    g_CurrentTextureIndex                    int                  at 0x10014138
+  240 bytes overlap ~
+    s_Graphics_10014140                      TerminatedCString    at 0x10014140  size=256
+    s_system_render_ini_10014150             TerminatedCString    at 0x10014150
+  236 bytes overlap ~
+    s_system_render_ini_10014150             TerminatedCString    at 0x10014150  size=256
+    g_PremultiplyColorAndAlpha               int                  at 0x10014164
+  255 bytes overlap ~
+    s_Terminal_Reality_Inc_10014238          TerminatedCString    at 0x10014238  size=256
+    s_Terminal_Reality_Inc_10014238+1        undefined4           at 0x10014239
+  88 bytes overlap ~
+    s_D3DERR_BADMAJORVERSION_T_10014250      TerminatedCString    at 0x10014250  size=256
+    s_D3DERR_BADMINORVERSION_T_100142f8      TerminatedCString    at 0x100142f8
+  128 bytes overlap ~
+    s_D3DERR_COLORKEYATTACHED_10014400       TerminatedCString    at 0x10014400  size=256
+    s_D3DERR_CONFLICTINGTEXTUR_10014480      TerminatedCString    at 0x10014480
+  168 bytes overlap ~
+    s_D3DERR_CONFLICTINGTEXTUR_10014480      TerminatedCString    at 0x10014480  size=256
+    s_D3DERR_CONFLICTINGTEXTUR_100144d8      TerminatedCString    at 0x100144d8
+  28 bytes overlap ~
+    s_D3DERR_CONFLICTINGTEXTUR_100144d8      TerminatedCString    at 0x100144d8  size=256
+    s_D3DERR_CONFLICTINGRENDER_100145bc      TerminatedCString    at 0x100145bc
+  168 bytes overlap ~
+    s_D3DERR_CONFLICTINGRENDER_100145bc      TerminatedCString    at 0x100145bc  size=256
+    s_D3DERR_DEVICEAGGREGATED_10014614       TerminatedCString    at 0x10014614
+  112 bytes overlap ~
+    s_D3DERR_DEVICEAGGREGATED_10014614       TerminatedCString    at 0x10014614  size=256
+    s_D3DERR_EXECUTE_CLIPPED_F_100146a4      TerminatedCString    at 0x100146a4
+  164 bytes overlap ~
+    s_D3DERR_EXECUTE_CLIPPED_F_100146a4      TerminatedCString    at 0x100146a4  size=256
+    s_D3DERR_EXECUTE_CREATE_FA_10014700      TerminatedCString    at 0x10014700
+  100 bytes overlap ~
+    s_D3DERR_EXECUTE_CREATE_FA_10014700      TerminatedCString    at 0x10014700  size=256
+    s_D3DERR_EXECUTE_DESTROY_F_1001479c      TerminatedCString    at 0x1001479c
+  164 bytes overlap ~
+    s_D3DERR_EXECUTE_DESTROY_F_1001479c      TerminatedCString    at 0x1001479c  size=256
+    s_D3DERR_EXECUTE_FAILED_Th_100147f8      TerminatedCString    at 0x100147f8
+  160 bytes overlap ~
+    s_D3DERR_EXECUTE_FAILED_Th_100147f8      TerminatedCString    at 0x100147f8  size=256
+    s_D3DERR_EXECUTE_LOCK_FAIL_10014858      TerminatedCString    at 0x10014858
+  188 bytes overlap ~
+    s_D3DERR_EXECUTE_LOCK_FAIL_10014858      TerminatedCString    at 0x10014858  size=256
+    s_D3DERR_EXECUTE_LOCKED_Th_1001489c      TerminatedCString    at 0x1001489c
+  128 bytes overlap ~
+    s_D3DERR_EXECUTE_LOCKED_Th_1001489c      TerminatedCString    at 0x1001489c  size=256
+    s_D3DERR_EXECUTE_NOT_LOCKE_1001491c      TerminatedCString    at 0x1001491c
+  152 bytes overlap ~
+    s_D3DERR_EXECUTE_NOT_LOCKE_1001491c      TerminatedCString    at 0x1001491c  size=256
+    s_D3DERR_EXECUTE_UNLOCK_FA_10014984      TerminatedCString    at 0x10014984
+  184 bytes overlap ~
+    s_D3DERR_EXECUTE_UNLOCK_FA_10014984      TerminatedCString    at 0x10014984  size=256
+    s_D3DERR_INITFAILED_A_rend_100149cc      TerminatedCString    at 0x100149cc
+  148 bytes overlap ~
+    s_D3DERR_INITFAILED_A_rend_100149cc      TerminatedCString    at 0x100149cc  size=256
+    s_D3DERR_INBEGIN_The_reque_10014a38      TerminatedCString    at 0x10014a38
+  40 bytes overlap ~
+    s_D3DERR_INBEGIN_The_reque_10014a38      TerminatedCString    at 0x10014a38  size=256
+    s_D3DERR_INVALID_DEVICE_Th_10014b10      TerminatedCString    at 0x10014b10
+  192 bytes overlap ~
+    s_D3DERR_INVALID_DEVICE_Th_10014b10      TerminatedCString    at 0x10014b10  size=256
+    s_D3DERR_INVALIDCURRENTVIE_10014b50      TerminatedCString    at 0x10014b50
+  176 bytes overlap ~
+    s_D3DERR_INVALIDCURRENTVIE_10014b50      TerminatedCString    at 0x10014b50  size=256
+    s_D3DERR_INVALIDMATRIX_The_10014ba0      TerminatedCString    at 0x10014ba0
+  44 bytes overlap ~
+    s_D3DERR_INVALIDMATRIX_The_10014ba0      TerminatedCString    at 0x10014ba0  size=256
+    s_D3DERR_INVALIDPALETTE_Th_10014c74      TerminatedCString    at 0x10014c74
+  180 bytes overlap ~
+    s_D3DERR_INVALIDPALETTE_Th_10014c74      TerminatedCString    at 0x10014c74  size=256
+    s_D3DERR_INVALIDPRIMITIVET_10014cc0      TerminatedCString    at 0x10014cc0
+  164 bytes overlap ~
+    s_D3DERR_INVALIDPRIMITIVET_10014cc0      TerminatedCString    at 0x10014cc0  size=256
+    s_D3DERR_INVALIDRAMPTEXTUR_10014d1c      TerminatedCString    at 0x10014d1c
+  84 bytes overlap ~
+    s_D3DERR_INVALIDRAMPTEXTUR_10014d1c      TerminatedCString    at 0x10014d1c  size=256
+    s_D3DERR_INVALIDVERTEXFORM_10014dc8      TerminatedCString    at 0x10014dc8
+  136 bytes overlap ~
+    s_D3DERR_INVALIDVERTEXFORM_10014dc8      TerminatedCString    at 0x10014dc8  size=256
+    s_D3DERR_INVALIDVERTEXTYPE_10014e40      TerminatedCString    at 0x10014e40
+  172 bytes overlap ~
+    s_D3DERR_INVALIDVERTEXTYPE_10014e40      TerminatedCString    at 0x10014e40  size=256
+    s_D3DERR_LIGHT_SET_FAILED_10014e94       TerminatedCString    at 0x10014e94
+  164 bytes overlap ~
+    s_D3DERR_LIGHT_SET_FAILED_10014e94       TerminatedCString    at 0x10014e94  size=256
+    s_D3DERR_LIGHTHASVIEWPORT_10014ef0       TerminatedCString    at 0x10014ef0
+  136 bytes overlap ~
+    s_D3DERR_LIGHTHASVIEWPORT_10014ef0       TerminatedCString    at 0x10014ef0  size=256
+    s_D3DERR_LIGHTNOTINTHISVIE_10014f68      TerminatedCString    at 0x10014f68
+  124 bytes overlap ~
+    s_D3DERR_LIGHTNOTINTHISVIE_10014f68      TerminatedCString    at 0x10014f68  size=256
+    s_D3DERR_MATERIAL_CREATE_F_10014fec      TerminatedCString    at 0x10014fec
+  108 bytes overlap ~
+    s_D3DERR_MATERIAL_CREATE_F_10014fec      TerminatedCString    at 0x10014fec  size=256
+    s_D3DERR_MATERIAL_DESTROY_10015080       TerminatedCString    at 0x10015080
+  168 bytes overlap ~
+    s_D3DERR_MATERIAL_DESTROY_10015080       TerminatedCString    at 0x10015080  size=256
+    s_D3DERR_MATERIAL_GETDATA_100150d8       TerminatedCString    at 0x100150d8
+  176 bytes overlap ~
+    s_D3DERR_MATERIAL_GETDATA_100150d8       TerminatedCString    at 0x100150d8  size=256
+    s_D3DERR_MATERIAL_SETDATA_10015128       TerminatedCString    at 0x10015128
+  180 bytes overlap ~
+    s_D3DERR_MATERIAL_SETDATA_10015128       TerminatedCString    at 0x10015128  size=256
+    s_D3DERR_MATRIX_CREATE_FAI_10015174      TerminatedCString    at 0x10015174
+  120 bytes overlap ~
+    s_D3DERR_MATRIX_CREATE_FAI_10015174      TerminatedCString    at 0x10015174  size=256
+    s_D3DERR_MATRIX_DESTROY_FA_100151fc      TerminatedCString    at 0x100151fc
+  172 bytes overlap ~
+    s_D3DERR_MATRIX_DESTROY_FA_100151fc      TerminatedCString    at 0x100151fc  size=256
+    s_D3DERR_MATRIX_GETDATA_FA_10015250      TerminatedCString    at 0x10015250
+  116 bytes overlap ~
+    s_D3DERR_MATRIX_GETDATA_FA_10015250      TerminatedCString    at 0x10015250  size=256
+    s_D3DERR_MATRIX_SETDATA_FA_100152dc      TerminatedCString    at 0x100152dc
+  120 bytes overlap ~
+    s_D3DERR_MATRIX_SETDATA_FA_100152dc      TerminatedCString    at 0x100152dc  size=256
+    s_D3DERR_NOCURRENTVIEWPORT_10015364      TerminatedCString    at 0x10015364
+  152 bytes overlap ~
+    s_D3DERR_NOCURRENTVIEWPORT_10015364      TerminatedCString    at 0x10015364  size=256
+    s_D3DERR_NOTINBEGIN_The_re_100153cc      TerminatedCString    at 0x100153cc
+  72 bytes overlap ~
+    s_D3DERR_NOTINBEGIN_The_re_100153cc      TerminatedCString    at 0x100153cc  size=256
+    s_D3DERR_NOVIEWPORTS_The_r_10015484      TerminatedCString    at 0x10015484
+  136 bytes overlap ~
+    s_D3DERR_NOVIEWPORTS_The_r_10015484      TerminatedCString    at 0x10015484  size=256
+    s_D3DERR_SCENE_BEGIN_FAILE_100154fc      TerminatedCString    at 0x100154fc
+  196 bytes overlap ~
+    s_D3DERR_SCENE_BEGIN_FAILE_100154fc      TerminatedCString    at 0x100154fc  size=256
+    s_D3DERR_SCENE_END_FAILED_10015538       TerminatedCString    at 0x10015538
+  188 bytes overlap ~
+    s_D3DERR_SCENE_END_FAILED_10015538       TerminatedCString    at 0x10015538  size=256
+    s_D3DERR_SCENE_IN_SCENE_Sc_1001557c      TerminatedCString    at 0x1001557c
+  104 bytes overlap ~
+    s_D3DERR_SCENE_IN_SCENE_Sc_1001557c      TerminatedCString    at 0x1001557c  size=256
+    s_D3DERR_SCENE_NOT_IN_SCEN_10015614      TerminatedCString    at 0x10015614
+  92 bytes overlap ~
+    s_D3DERR_SCENE_NOT_IN_SCEN_10015614      TerminatedCString    at 0x10015614  size=256
+    s_D3DERR_SETVIEWPORTDATA_F_100156b8      TerminatedCString    at 0x100156b8
+  180 bytes overlap ~
+    s_D3DERR_SETVIEWPORTDATA_F_100156b8      TerminatedCString    at 0x100156b8  size=256
+    s_D3DERR_STENCILBUFFER_NOT_10015704      TerminatedCString    at 0x10015704
+  84 bytes overlap ~
+    s_D3DERR_STENCILBUFFER_NOT_10015704      TerminatedCString    at 0x10015704  size=256
+    s_D3DERR_SURFACENOTINVIDME_100157b0      TerminatedCString    at 0x100157b0
+  52 bytes overlap ~
+    s_D3DERR_SURFACENOTINVIDME_100157b0      TerminatedCString    at 0x100157b0  size=256
+    s_D3DERR_TEXTURE_BADSIZE_T_1001587c      TerminatedCString    at 0x1001587c
+  48 bytes overlap ~
+    s_D3DERR_TEXTURE_BADSIZE_T_1001587c      TerminatedCString    at 0x1001587c  size=256
+    s_D3DERR_TEXTURE_CREATE_FA_1001594c      TerminatedCString    at 0x1001594c
+  148 bytes overlap ~
+    s_D3DERR_TEXTURE_CREATE_FA_1001594c      TerminatedCString    at 0x1001594c  size=256
+    s_D3DERR_TEXTURE_DESTROY_F_100159b8      TerminatedCString    at 0x100159b8
+  168 bytes overlap ~
+    s_D3DERR_TEXTURE_DESTROY_F_100159b8      TerminatedCString    at 0x100159b8  size=256
+    s_D3DERR_TEXTURE_GETSURF_F_10015a10      TerminatedCString    at 0x10015a10
+  148 bytes overlap ~
+    s_D3DERR_TEXTURE_GETSURF_F_10015a10      TerminatedCString    at 0x10015a10  size=256
+    s_D3DERR_TEXTURE_LOAD_FAIL_10015a7c      TerminatedCString    at 0x10015a7c
+  192 bytes overlap ~
+    s_D3DERR_TEXTURE_LOAD_FAIL_10015a7c      TerminatedCString    at 0x10015a7c  size=256
+    s_D3DERR_TEXTURE_LOCK_FAIL_10015abc      TerminatedCString    at 0x10015abc
+  192 bytes overlap ~
+    s_D3DERR_TEXTURE_LOCK_FAIL_10015abc      TerminatedCString    at 0x10015abc  size=256
+    s_D3DERR_TEXTURE_LOCKED_Th_10015afc      TerminatedCString    at 0x10015afc
+  136 bytes overlap ~
+    s_D3DERR_TEXTURE_LOCKED_Th_10015afc      TerminatedCString    at 0x10015afc  size=256
+    s_D3DERR_TEXTURE_NO_SUPPOR_10015b74      TerminatedCString    at 0x10015b74
+  184 bytes overlap ~
+    s_D3DERR_TEXTURE_NO_SUPPOR_10015b74      TerminatedCString    at 0x10015b74  size=256
+    s_D3DERR_TEXTURE_NOT_LOCKE_10015bbc      TerminatedCString    at 0x10015bbc
+  136 bytes overlap ~
+    s_D3DERR_TEXTURE_NOT_LOCKE_10015bbc      TerminatedCString    at 0x10015bbc  size=256
+    s_D3DERR_TEXTURE_SWAP_FAIL_10015c34      TerminatedCString    at 0x10015c34
+  184 bytes overlap ~
+    s_D3DERR_TEXTURE_SWAP_FAIL_10015c34      TerminatedCString    at 0x10015c34  size=256
+    s_D3DERR_TEXTURE_UNLOCK_FA_10015c7c      TerminatedCString    at 0x10015c7c
+  180 bytes overlap ~
+    s_D3DERR_TEXTURE_UNLOCK_FA_10015c7c      TerminatedCString    at 0x10015c7c  size=256
+    s_D3DERR_TOOMANYOPERATIONS_10015cc8      TerminatedCString    at 0x10015cc8
+  140 bytes overlap ~
+    s_D3DERR_TOOMANYOPERATIONS_10015cc8      TerminatedCString    at 0x10015cc8  size=256
+    s_D3DERR_TOOMANYPRIMITIVES_10015d3c      TerminatedCString    at 0x10015d3c
+  144 bytes overlap ~
+    s_D3DERR_TOOMANYPRIMITIVES_10015d3c      TerminatedCString    at 0x10015d3c  size=256
+    s_D3DERR_UNSUPPORTEDALPHAA_10015dac      TerminatedCString    at 0x10015dac
+  128 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDALPHAA_10015dac      TerminatedCString    at 0x10015dac  size=256
+    s_D3DERR_UNSUPPORTEDALPHAO_10015e2c      TerminatedCString    at 0x10015e2c
+  120 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDALPHAO_10015e2c      TerminatedCString    at 0x10015e2c  size=256
+    s_D3DERR_UNSUPPORTEDCOLORA_10015eb4      TerminatedCString    at 0x10015eb4
+  128 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDCOLORA_10015eb4      TerminatedCString    at 0x10015eb4  size=256
+    s_D3DERR_UNSUPPORTEDCOLORO_10015f34      TerminatedCString    at 0x10015f34
+  120 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDCOLORO_10015f34      TerminatedCString    at 0x10015f34  size=256
+    s_D3DERR_UNSUPPORTEDFACTOR_10015fbc      TerminatedCString    at 0x10015fbc
+  156 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDFACTOR_10015fbc      TerminatedCString    at 0x10015fbc  size=256
+    s_D3DERR_UNSUPPORTEDTEXTUR_10016020      TerminatedCString    at 0x10016020
+  160 bytes overlap ~
+    s_D3DERR_UNSUPPORTEDTEXTUR_10016020      TerminatedCString    at 0x10016020  size=256
+    s_D3DERR_VBUF_CREATE_FAILE_10016080      TerminatedCString    at 0x10016080
+  108 bytes overlap ~
+    s_D3DERR_VBUF_CREATE_FAILE_10016080      TerminatedCString    at 0x10016080  size=256
+    s_D3DERR_VERTEXBUFFERLOCKE_10016114      TerminatedCString    at 0x10016114
+  144 bytes overlap ~
+    s_D3DERR_VERTEXBUFFERLOCKE_10016114      TerminatedCString    at 0x10016114  size=256
+    s_D3DERR_VERTEXBUFFEROPTIM_10016184      TerminatedCString    at 0x10016184
+  48 bytes overlap ~
+    s_D3DERR_VERTEXBUFFEROPTIM_10016184      TerminatedCString    at 0x10016184  size=256
+    s_D3DERR_VIEWPORTDATANOTSE_10016254      TerminatedCString    at 0x10016254
+  36 bytes overlap ~
+    s_D3DERR_VIEWPORTDATANOTSE_10016254      TerminatedCString    at 0x10016254  size=256
+    s_D3DERR_VIEWPORTHASNODEVI_10016330      TerminatedCString    at 0x10016330
+  12 bytes overlap ~
+    s_D3DERR_VIEWPORTHASNODEVI_10016330      TerminatedCString    at 0x10016330  size=256
+    s_D3DERR_WRONGTEXTUREFORMA_10016424      TerminatedCString    at 0x10016424
+  172 bytes overlap ~
+    s_D3DERR_WRONGTEXTUREFORMA_10016424      TerminatedCString    at 0x10016424  size=256
+    s_D3DERR_ZBUFF_NEEDS_SYSTE_10016478      TerminatedCString    at 0x10016478
+  32 bytes overlap ~
+    s_D3DERR_ZBUFF_NEEDS_SYSTE_10016478      TerminatedCString    at 0x10016478  size=256
+    s_D3DERR_ZBUFF_NEEDS_VIDEO_10016558      TerminatedCString    at 0x10016558
+  36 bytes overlap ~
+    s_D3DERR_ZBUFF_NEEDS_VIDEO_10016558      TerminatedCString    at 0x10016558  size=256
+    s_D3DERR_ZBUFFER_NOTPRESEN_10016634      TerminatedCString    at 0x10016634
+  108 bytes overlap ~
+    s_D3DERR_ZBUFFER_NOTPRESEN_10016634      TerminatedCString    at 0x10016634  size=256
+    s_D3DERR_ELIFINO_An_unknow_100166c8      TerminatedCString    at 0x100166c8
+  208 bytes overlap ~
+    s_D3DERR_ELIFINO_An_unknow_100166c8      TerminatedCString    at 0x100166c8  size=256
+    s_DirectX6_3D_Driver_error_100166f8      TerminatedCString    at 0x100166f8
+  228 bytes overlap ~
+    s_DirectX6_3D_Driver_error_100166f8      TerminatedCString    at 0x100166f8  size=256
+    s_masterZBufferCount_10016714            TerminatedCString    at 0x10016714
+  236 bytes overlap ~
+    s_masterZBufferCount_10016714            TerminatedCString    at 0x10016714  size=256
+    s_useHoldBuffer_10016728                 TerminatedCString    at 0x10016728
+  240 bytes overlap ~
+    s_useHoldBuffer_10016728                 TerminatedCString    at 0x10016728  size=256
+    s_premultiplyColorAndAlpha_10016738      TerminatedCString    at 0x10016738
+  228 bytes overlap ~
+    s_premultiplyColorAndAlpha_10016738      TerminatedCString    at 0x10016738  size=256
+    s_directTextureFlag_10016754             TerminatedCString    at 0x10016754
+  236 bytes overlap ~
+    s_directTextureFlag_10016754             TerminatedCString    at 0x10016754  size=256
+    s_allowAutoMipMapping_10016768           TerminatedCString    at 0x10016768
+  236 bytes overlap ~
+    s_allowAutoMipMapping_10016768           TerminatedCString    at 0x10016768  size=256
+    s_rb_1001677c                            TerminatedCString    at 0x1001677c
+  252 bytes overlap ~
+    s_rb_1001677c                            TerminatedCString    at 0x1001677c  size=256
+    s_system_fly_ini_10016780                TerminatedCString    at 0x10016780
+  240 bytes overlap ~
+    s_system_fly_ini_10016780                TerminatedCString    at 0x10016780  size=256
+    s_Your_3D_hardware_needs_t_10016790      TerminatedCString    at 0x10016790
+  208 bytes overlap ~
+    s_Your_3D_hardware_needs_t_10016790      TerminatedCString    at 0x10016790  size=256
+    s_FATAL_ERROR_Unable_to_cr_100167c0      TerminatedCString    at 0x100167c0
+  255 bytes overlap ~
+    s_FATAL_ERROR_Unable_to_cr_100167c0      TerminatedCString    at 0x100167c0  size=256
+    s_FATAL_ERROR_Unable_to_cr_100167c0+1    undefined4           at 0x100167c1
+  236 bytes overlap ~
+    s_s_3D_Adapter_Error_10016860            TerminatedCString    at 0x10016860  size=256
+    s_FATAL_ERROR_Unable_to_cr_10016874      TerminatedCString    at 0x10016874
+  255 bytes overlap ~
+    s_FATAL_ERROR_Unable_to_cr_10016874      TerminatedCString    at 0x10016874  size=256
+    s_FATAL_ERROR_Unable_to_cr_10016874+1    undefined4           at 0x10016875
+  236 bytes overlap ~
+    s_s_3D_Adapter_Error_10016918            TerminatedCString    at 0x10016918  size=256
+    s_FATAL_ERROR_Unable_to_at_1001692c      TerminatedCString    at 0x1001692c
+  255 bytes overlap ~
+    s_FATAL_ERROR_Unable_to_at_1001692c      TerminatedCString    at 0x1001692c  size=256
+    s_FATAL_ERROR_Unable_to_at_1001692c+1    undefined4           at 0x1001692d
+  236 bytes overlap ~
+    s_s_3D_Adapter_Error_100169a4            TerminatedCString    at 0x100169a4  size=256
+    s_Unable_to_initialize_Dir_100169b8      TerminatedCString    at 0x100169b8
+  164 bytes overlap ~
+    s_Unable_to_initialize_Dir_100169b8      TerminatedCString    at 0x100169b8  size=256
+    s_Cannot_unlock_back_buffe_10016a14      TerminatedCString    at 0x10016a14
+  228 bytes overlap ~
+    s_Cannot_unlock_back_buffe_10016a14      TerminatedCString    at 0x10016a14  size=256
+    s_Cannot_unlock_back_buffe_10016a30      TerminatedCString    at 0x10016a30
+  228 bytes overlap ~
+    s_Cannot_unlock_back_buffe_10016a30      TerminatedCString    at 0x10016a30  size=256
+    s_D3D_won_t_let_me_convert_10016a4c      TerminatedCString    at 0x10016a4c
+  204 bytes overlap ~
+    s_D3D_won_t_let_me_convert_10016a4c      TerminatedCString    at 0x10016a4c  size=256
+    s_Too_many_textures_reques_10016a80      TerminatedCString    at 0x10016a80
+  228 bytes overlap ~
+    s_Too_many_textures_reques_10016a80      TerminatedCString    at 0x10016a80  size=256
+    s_Can_t_create_hold_surfac_10016a9c      TerminatedCString    at 0x10016a9c
+  228 bytes overlap ~
+    s_Can_t_create_hold_surfac_10016a9c      TerminatedCString    at 0x10016a9c  size=256
+    s_Can_t_get_source_size_10016ab8         TerminatedCString    at 0x10016ab8
+  232 bytes overlap ~
+    s_Can_t_get_source_size_10016ab8         TerminatedCString    at 0x10016ab8  size=256
+    s_Unknown_texture_size_10016ad0          TerminatedCString    at 0x10016ad0
+  232 bytes overlap ~
+    s_Unknown_texture_size_10016ad0          TerminatedCString    at 0x10016ad0  size=256
+    s_Texture_load_failed_Coul_10016ae8      TerminatedCString    at 0x10016ae8
+  204 bytes overlap ~
+    s_Texture_load_failed_Coul_10016ae8      TerminatedCString    at 0x10016ae8  size=256
+    s_Texture_load_failed_Text_10016b1c      TerminatedCString    at 0x10016b1c
+  204 bytes overlap ~
+    s_Texture_load_failed_Text_10016b1c      TerminatedCString    at 0x10016b1c  size=256
+    s_Could_not_lock_back_buff_10016b50      TerminatedCString    at 0x10016b50
+  228 bytes overlap ~
+    s_Could_not_lock_back_buff_10016b50      TerminatedCString    at 0x10016b50  size=256
+    s_Could_not_unlock_back_bu_10016b6c      TerminatedCString    at 0x10016b6c
+  224 bytes overlap ~
+    s_Could_not_unlock_back_bu_10016b6c      TerminatedCString    at 0x10016b6c  size=256
+    s_masterZ_blt_failed_10016b8c            TerminatedCString    at 0x10016b8c
+  236 bytes overlap ~
+    s_masterZ_blt_failed_10016b8c            TerminatedCString    at 0x10016b8c  size=256
+    s_restoreZBuffer_failed_10016ba0         TerminatedCString    at 0x10016ba0
+  232 bytes overlap ~
+    s_restoreZBuffer_failed_10016ba0         TerminatedCString    at 0x10016ba0  size=256
+    s_You_re_shoving_too_many_10016bb8       TerminatedCString    at 0x10016bb8
+  224 bytes overlap ~
+    s_You_re_shoving_too_many_10016bb8       TerminatedCString    at 0x10016bb8  size=256
+    s_You_re_shoving_too_many_10016bd8       TerminatedCString    at 0x10016bd8
+  220 bytes overlap ~
+    s_You_re_shoving_too_many_10016bd8       TerminatedCString    at 0x10016bd8  size=256
+    s_You_re_shoving_too_many_10016bfc       TerminatedCString    at 0x10016bfc
+  220 bytes overlap ~
+    s_You_re_shoving_too_many_10016bfc       TerminatedCString    at 0x10016bfc  size=256
+    s_You_re_shoving_too_many_10016c20       TerminatedCString    at 0x10016c20
+  212 bytes overlap ~
+    s_You_re_shoving_too_many_10016c20       TerminatedCString    at 0x10016c20  size=256
+    DAT_10016c4c                             undefined4           at 0x10016c4c
+  3 bytes overlap
+    DAT_10016dd8                             undefined4           at 0x10016dd8  size=4
+    DAT_10016dd8+1                           undefined4           at 0x10016dd9
+  3 bytes overlap
+    DAT_10016dd8+1                           undefined4           at 0x10016dd9  size=4
+    DAT_10016dd8+2                           undefined4           at 0x10016dda
+  3 bytes overlap
+    DAT_10016dd8+2                           undefined4           at 0x10016dda  size=4
+    DAT_10016dd8+3                           undefined4           at 0x10016ddb
+  3 bytes overlap
+    DAT_10016dd8+3                           undefined4           at 0x10016ddb  size=4
+    DAT_10016ddc                             undefined1           at 0x10016ddc
+  3 bytes overlap
+    DAT_10016f10                             undefined4           at 0x10016f10  size=4
+    DAT_10016f11                             undefined4           at 0x10016f11
+  3 bytes overlap
+    DAT_10016f11                             undefined4           at 0x10016f11  size=4
+    DAT_10016f12                             undefined4           at 0x10016f12
+  3 bytes overlap
+    DAT_10016f12                             undefined4           at 0x10016f12  size=4
+    DAT_10016f13                             undefined4           at 0x10016f13
+  3 bytes overlap
+    DAT_1001748a                             undefined4           at 0x1001748a  size=4
+    DAT_1001748b                             undefined4           at 0x1001748b
+  3 bytes overlap
+    DAT_100177ea                             undefined4           at 0x100177ea  size=4
+    DAT_100177eb                             undefined4           at 0x100177eb
+  3 bytes overlap
+    DAT_10017872                             undefined4           at 0x10017872  size=4
+    DAT_10017873                             undefined4           at 0x10017873
+  2 bytes overlap
+    DAT_10017f38                             undefined4           at 0x10017f38  size=4
+    DAT_10017f3a                             undefined4           at 0x10017f3a
+  1 bytes overlap
+    DAT_10018530                             undefined4           at 0x10018530  size=4
+    DAT_10018533                             undefined1           at 0x10018533
+  60 bytes overlap ~
+    g_AdapterGuidStorage                     GUID[16]             at 0x10226948  size=64
+    g_AdapterGuidStorage[0]+4                undefined4           at 0x1022694c
+  32000 bytes overlap ~
+    g_IndexBuffer                            WORD[16000]          at 0x10238910  size=64,000
+    g_LightingOverflow                       int                  at 0x10240610
+

@@ -1,0 +1,41 @@
+====================================================================================================
+WRONG GLOBAL SYMBOL RESOLUTION REPORT
+====================================================================================================
+
+Detects potential Watcom 1-based indexing bugs where the decompiler resolves
+a memory access to the wrong overlapping global. Globals that appear in the
+.cpp pseudocode but NOT in the function's JSON reference list are flagged as
+suspicious, since the reference list uses exact address resolution.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions checked: 325
+  Functions with suspicious globals: 2
+  Total suspicious global references: 2
+
+  Most commonly misresolved globals:
+    DAT_10016dd8                                       2 functions
+
+  Raw .cpp files with issues: 2
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+crt_stdlib.c_parse_cmdline_FUN_10007ce0  [.cpp]  (1 suspicious globals)
+  File: crt/stdlib.c
+
+  DAT_10016dd8
+    Used at lines: 29, 62, 125, 133
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_string.c__mbschr_FUN_100116f0  [.cpp]  (1 suspicious globals)
+  File: crt/string.c
+
+  DAT_10016dd8
+    Used at lines: 22
+    NOT found in function reference list

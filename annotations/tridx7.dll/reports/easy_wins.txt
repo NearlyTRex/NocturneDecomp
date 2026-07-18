@@ -1,0 +1,36 @@
+====================================================================================================
+EASY WINS - PRIORITIZED ACTION LIST
+====================================================================================================
+
+This list shows the easiest paths to improving decompilation quality,
+sorted by effort required (lowest effort first).
+(CRT functions are excluded)
+
+====================================================================================================
+PRIORITY 1: Files with 1-2 functions remaining
+====================================================================================================
+
+====================================================================================================
+PRIORITY 2: Small functions with 1 suspect (<50 lines)
+====================================================================================================
+
+  [warning_noreturn] - 7 functions
+    dll_dx7.cpp_fatalError_FUN_10002340                                    (  7 lines)
+    dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60                             ( 15 lines)
+    dll_dx7.cpp_getMipLevelPtr_FUN_10003a30                                ( 16 lines)
+    dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0                        ( 20 lines)
+    dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90                          ( 21 lines)
+    dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10                           ( 24 lines)
+    dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130                           ( 45 lines)
+
+  [pointer_cast] - 1 functions
+    dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90                             ( 33 lines)
+
+====================================================================================================
+PRIORITY 3: Files at 90%+ (finish them off!)
+====================================================================================================
+
+====================================================================================================
+ALL REMAINING FILES
+====================================================================================================
+  dll/dx7.cpp                                                   47.4%  (36/76 clean, 40 remaining)
