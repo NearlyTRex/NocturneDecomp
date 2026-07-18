@@ -1,0 +1,107 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0054c730",
+    "address_range": [
+      [
+        "0054c730",
+        "0054c794"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c730",
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c730(CPackedBitmapSet *this_ptr,int bitmap_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054a940",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_0054a940"
+    },
+    {
+      "addr": "0054c500",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.625,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 19,
+      "INT_AND": 23,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 185
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

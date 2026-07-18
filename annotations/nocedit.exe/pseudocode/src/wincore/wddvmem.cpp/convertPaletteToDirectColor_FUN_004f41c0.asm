@@ -7,7 +7,7 @@
 ; XREF[4]:
 ;   wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730 at 005ed8ca
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0 at 005ed9f3
-;   wincore_windll.cpp_setColorTable16_FUN_005b7579 at 005b75a6
+;   wincore_windll.cpp_setColorTable16_FUN_005b7580 at 005b75a6
 ;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460 at 005b74ce
 ;
 ; Referenced Globals:

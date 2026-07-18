@@ -1,0 +1,136 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 45
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b7b10",
+    "address_range": [
+      [
+        "005b7b10",
+        "005b7b72"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b10",
+    "signature": "int __cdecl wincore_windll_cpp_setFogColorFromPalette_FUN_005b7b10(int palette_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f0",
+      "name": "g_APIDLL_setFogColor",
+      "type": "APIDLL_setFogColor*",
+      "value": null
+    },
+    {
+      "addr": "03f6b980",
+      "name": "g_FogColorRed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b984",
+      "name": "g_FogColorGreen",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b988",
+      "name": "g_FogColorBlue",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.103448275862069,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 10,
+      "INT_AND": 16,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "INT_XOR": 3,
+      "LOAD": 8,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "palette_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

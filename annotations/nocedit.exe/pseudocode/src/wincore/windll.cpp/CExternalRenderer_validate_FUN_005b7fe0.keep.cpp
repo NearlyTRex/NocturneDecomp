@@ -27,18 +27,17 @@ int __cdecl wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternal
       return 0;
     }
     if (uVar3 != 0) {
-      if ((capabilities->hardware_flags).words[0] != 0) {
-        uVar3 = (uint)(*(int *)(this_ptr->dll_identifier + 0xfe) >> 0x18 ==
-                      *(int *)(capabilities->dll_identifier + 0xfe) >> 0x18);
+      if (capabilities->interface_version != 0) {
+        uVar3 = (uint)(this_ptr->interface_version >> 8 ==
+                      capabilities->interface_version >> 8);
       }
-      if ((uVar3 != 0) && ((capabilities->hardware_flags).words[1] != 0)) {
-        uVar3 = (uint)((int)(this_ptr->hardware_flags).dword >> 0x18 ==
-                      (int)(capabilities->hardware_flags).dword >> 0x18);
+      if ((uVar3 != 0) && (capabilities->driver_version != 0)) {
+        uVar3 = (uint)(this_ptr->driver_version >> 8 ==
+                      capabilities->driver_version >> 8);
       }
     }
-    if ((uVar3 != 0) && (capabilities->dll_identifier[0] != '\0')) {
-      iVar4 = _strcmp
-                        (capabilities->dll_identifier,this_ptr->dll_identifier);
+    if ((uVar3 != 0) && (capabilities->vendor_name[0] != '\0')) {
+      iVar4 = _strcmp(capabilities->vendor_name,this_ptr->vendor_name);
       uVar3 = (uint)(iVar4 == 0);
     }
     uVar5 = 0;

@@ -7,7 +7,7 @@
 ; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[9]:
-;   shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e at 0050ee84
+;   shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee60 at 0050ee84
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0 at 0050fab2
 ;   shape_memdbg.cpp_debugCalloc_FUN_0050f350 at 0050f383
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460 at 0050f493

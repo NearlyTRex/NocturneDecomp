@@ -39,8 +39,8 @@ void __cdecl CTextureList::buildMasterTextureList(CTextureList *this_ptr);
 // Address: 005dc5e0
 int __cdecl CTextureList::addTextureSelection(CTextureList *this_ptr,char *filename);
 
-// Original: core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e
-// Address: 005dc68e
+// Original: core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc690
+// Address: 005dc690
 void __cdecl CTextureList::addMasterTextureSelection(CTextureList *this_ptr);
 
 // Original: core_texlist.cpp_CTextureList_setCurrentMasterIndex_FUN_005dc6a0

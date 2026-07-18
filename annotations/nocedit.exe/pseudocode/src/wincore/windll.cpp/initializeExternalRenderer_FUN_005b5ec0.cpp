@@ -12,6 +12,7 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   FARPROC pFVar1;
   int iVar2;
   CExternalRenderer CStack_3ba0;
+  CExternalRenderer CStack_1dd8;
   
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
@@ -26,10 +27,8 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
     return 0;
   }
   (*pFVar1)(g_RendererDLLHandle,&CStack_3ba0);
-  wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90
-            ((CExternalRenderer *)CStack_3ba0.renderer_dll_name);
-  iVar2 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
-                    (&CStack_3ba0,(CExternalRenderer *)CStack_3ba0.renderer_dll_name);
+  wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90(&CStack_1dd8);
+  iVar2 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(&CStack_3ba0,&CStack_1dd8);
   if (iVar2 == 0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
     g_UseDirect3D = 0;

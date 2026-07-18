@@ -135,8 +135,8 @@ void __cdecl CLightActor::archive(CLightActor *this_ptr);
 // Address: 00422d60
 void __cdecl CLightActor::setupLightModel(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_getLightActorTypeName_FUN_0042307e
-// Address: 0042307e
+// Original: core_boxactor.cpp_getLightActorTypeName_FUN_00423080
+// Address: 00423080
 char * __cdecl getLightActorTypeName(ELightActorType type);
 
 // Original: core_boxactor.cpp_pickLightActorType_FUN_00423110

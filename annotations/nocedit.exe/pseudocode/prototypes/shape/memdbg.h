@@ -7,8 +7,8 @@
 // Address: 0050ee40
 void __cdecl staticInit(void);
 
-// Original: shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e
-// Address: 0050ee5e
+// Original: shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee60
+// Address: 0050ee60
 void __cdecl acquireDebugMutex(void);
 
 // Original: shape_memdbg.cpp_releaseDebugMutex_FUN_0050ee90

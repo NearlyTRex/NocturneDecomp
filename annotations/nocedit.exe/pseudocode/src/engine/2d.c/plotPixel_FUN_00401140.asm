@@ -16,7 +16,7 @@
 ;   core_morph.cpp_drawVertexMarker_FUN_0052bb80 at 0052bc67
 ;   core_morph.cpp_plotPixelSafe_FUN_0052bb50 at 0052bb73
 ;   core_setdir.cpp_CZThumb_render_FUN_00574f20 at 0057508d
-;   engine_2d.c_draw320x200SizeDot_FUN_00402a8e at 00402b31
+;   engine_2d.c_draw320x200SizeDot_FUN_00402a90 at 00402b31
 ;   engine_2d.c_drawLine_FUN_004011b0 at 00401206
 ;   ... and 12 more
 ;

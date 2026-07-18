@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e at 005dc697
+;   core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc690 at 005dc697
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_texlist_cpp_00655095

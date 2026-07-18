@@ -35006,28 +35006,28 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"buffer_ptr",
+          "len":256,
+          "name":"description",
           "offset":0,
-          "type":"void*"
-        },
-        {
-          "len":252,
-          "name":"dead1",
-          "offset":4,
-          "type":"char[252]"
+          "type":"char[256]"
         },
         {
           "len":256,
-          "name":"dll_identifier",
+          "name":"vendor_name",
           "offset":256,
           "type":"char[256]"
         },
         {
-          "len":4,
-          "name":"hardware_flags",
+          "len":2,
+          "name":"interface_version",
           "offset":512,
-          "type":"_BIT_INTEGER32"
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"driver_version",
+          "offset":514,
+          "type":"ushort"
         },
         {
           "len":2,
@@ -35037,7 +35037,7 @@
         },
         {
           "len":2,
-          "name":"dead2",
+          "name":"other_version",
           "offset":518,
           "type":"ushort"
         },
@@ -35061,19 +35061,13 @@
         },
         {
           "len":7032,
-          "name":"dead3",
+          "name":"reserved",
           "offset":592,
           "type":"char[7032]"
-        },
-        {
-          "len":32,
-          "name":"renderer_dll_name",
-          "offset":7624,
-          "type":"char[32]"
         }
       ],
       "importable":true,
-      "len":7656,
+      "len":7624,
       "name":"CExternalRenderer",
       "pack":false,
       "type":"struct"

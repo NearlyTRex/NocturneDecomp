@@ -239,8 +239,8 @@ void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 // Address: 005c6950
 int __cdecl isProcessDisabled(CDemonActor *actor);
 
-// Original: core_stranger.cpp_getScaleY_FUN_005c695e
-// Address: 005c695e
+// Original: core_stranger.cpp_getScaleY_FUN_005c6960
+// Address: 005c6960
 int __cdecl getScaleY(CDemonActor *actor);
 
 // Original: core_stranger.cpp_setWindVelocity_FUN_005c6970

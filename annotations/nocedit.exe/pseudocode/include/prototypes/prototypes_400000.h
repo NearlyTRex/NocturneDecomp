@@ -113,7 +113,7 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402870(void);
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *filename);
 void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00402a70(void);
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void);
-void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402a8e(int x_3d,int y_3d,int z_depth);
+void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402a90(int x_3d,int y_3d,int z_depth);
 int __cdecl engine_2d_c_computeOutcode_FUN_00402c10(int x,int y,int x_min,int y_min,int x_max,int y_max);
 void __cdecl engine_2d_c_clipLineGlobal_FUN_00402c50(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max);

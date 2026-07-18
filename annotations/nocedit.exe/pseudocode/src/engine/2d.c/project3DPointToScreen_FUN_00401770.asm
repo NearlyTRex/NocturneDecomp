@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   z_depth
 ;
 ; XREF[2]:
-;   engine_2d.c_draw320x200SizeDot_FUN_00402a8e at 00402ad9
+;   engine_2d.c_draw320x200SizeDot_FUN_00402a90 at 00402ad9
 ;   engine_2d.c_project3DPointClipped_FUN_004017c0 at 004017ea
 ;
 ; Referenced Globals:

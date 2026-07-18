@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   bitmap_index
 ;
 ; XREF[1]:
-;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e at 0054c788
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c730 at 0054c788
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_raw_0063f74c

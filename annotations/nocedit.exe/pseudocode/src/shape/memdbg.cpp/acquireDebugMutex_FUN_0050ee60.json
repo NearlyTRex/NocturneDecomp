@@ -1,0 +1,101 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050ee60",
+    "address_range": [
+      [
+        "0050ee60",
+        "0050ee8d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee60",
+    "signature": "void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee60(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f3fe0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0"
+    },
+    {
+      "addr": "005f3ff0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02f0ca50",
+      "name": "g_RecursiveCallFlag",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02f0d93c",
+      "name": "g_FileMutex",
+      "type": "HANDLE",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.153846153846154,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 3,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

@@ -13,8 +13,8 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   HWND HVar1;
   FARPROC pFVar2;
   int iVar3;
-  void *pvStack_3c2c;
-  byte auStack_1e64 [7624];
+  CExternalRenderer CStack_3c2c;
+  CExternalRenderer CStack_1e64;
   CExternalRendererBridge CStack_9c;
   
   HVar1 = window_handle;
@@ -38,10 +38,9 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     g_UseDirect3D = 0;
     return 0;
   }
-  ((void (__cdecl *)(HMODULE, void *))pFVar2)(g_RendererDLLHandle,&pvStack_3c2c);
-  wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90((CExternalRenderer *)auStack_1e64);
-  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
-                    ((CExternalRenderer *)&pvStack_3c2c,(CExternalRenderer *)auStack_1e64);
+  ((void (__cdecl *)(HMODULE, CExternalRenderer *))pFVar2)(g_RendererDLLHandle,&CStack_3c2c);
+  wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90(&CStack_1e64);
+  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(&CStack_3c2c,&CStack_1e64);
   if (iVar3 != 0) {
     g_DLLFunctionsMissing = 0;
     g_APIDLL_init =
@@ -416,7 +415,6 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof7 = 0x28;
       iVar3 = (*g_APIDLL_init)(HVar1,&CStack_9c);
       if (iVar3 != 0) {
-        pvStack_3c2c = (void *)0x5b71c5;
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }

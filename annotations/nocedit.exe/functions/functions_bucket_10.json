@@ -808,6 +808,72 @@
     "ret":"void"
   },
   {
+    "addr":"00402a90",
+    "body":[
+      {
+        "end":"00402c0d",
+        "size":382,
+        "start":"00402a90"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"engine_2d.c_draw320x200SizeDot_FUN_00402a90",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"x_3d",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"y_3d",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"z_depth",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
+  },
+  {
     "addr":"00402c10",
     "body":[
       {
@@ -93802,12 +93868,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_windll.cpp_CExternalRenderer_init_FUN_005b5d10",
+    "name":"wincore_windll.cpp_bindDllFunction_FUN_005b5d10",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"slot",
           "storage":{
             "offset":4,
             "size":4,
@@ -93820,10 +93886,10 @@
               }
             ]
           },
-          "type":"CExternalRenderer*"
+          "type":"void**"
         },
         {
-          "name":"buffer_ptr",
+          "name":"proc",
           "storage":{
             "offset":8,
             "size":4,
@@ -93836,7 +93902,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"void*"
         }
       ]
     }
@@ -93944,6 +94010,136 @@
     }
   },
   {
+    "addr":"005b7990",
+    "body":[
+      {
+        "end":"005b79b1",
+        "size":34,
+        "start":"005b7990"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_addParticle_FUN_005b7990",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"particle_data",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"particle_type",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b7a10",
+    "body":[
+      {
+        "end":"005b7a22",
+        "size":19,
+        "start":"005b7a10"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_flushLineList_FUN_005b7a10",
+    "ret":"int",
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b7b10",
+    "body":[
+      {
+        "end":"005b7b72",
+        "size":99,
+        "start":"005b7b10"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b10",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"palette_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"005b7d90",
     "body":[
       {
@@ -94014,6 +94210,124 @@
     }
   },
   {
+    "addr":"005b7e90",
+    "body":[
+      {
+        "end":"005b7edd",
+        "size":78,
+        "start":"005b7e90"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_setVideoModeX_FUN_005b7e90",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"width",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"height",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bits_per_pixel",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b7f10",
+    "body":[
+      {
+        "end":"005b7f3f",
+        "size":48,
+        "start":"005b7f10"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_lockFrameX_FUN_005b7f10",
+    "ret":"int",
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"005b7f90",
     "body":[
       {
@@ -94045,6 +94359,50 @@
           "type":"CExternalRenderer*"
         }
       ]
+    }
+  },
+  {
+    "addr":"005b8190",
+    "body":[
+      {
+        "end":"005b81a0",
+        "size":17,
+        "start":"005b8190"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_getCurrentRenderer_FUN_005b8190",
+    "ret":"char*",
+    "vars":{
+      "params":[
+        {
+          "name":"renderer_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -103891,6 +104249,40 @@
           }
         ]
       }
+    }
+  },
+  {
+    "addr":"005dc690",
+    "body":[
+      {
+        "end":"005dc69f",
+        "size":16,
+        "start":"005dc690"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc690",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CTextureList*"
+        }
+      ]
     }
   },
   {

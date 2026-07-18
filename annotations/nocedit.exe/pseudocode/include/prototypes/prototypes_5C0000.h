@@ -68,7 +68,7 @@ void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0(CStranger 
 void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005c6930(CMatrix3x4f *matrix,CVector3f *translation);
 int __cdecl core_stranger_cpp_isProcessDisabled_FUN_005c6950(CDemonActor *actor);
-int __cdecl core_stranger_cpp_getScaleY_FUN_005c695e(CDemonActor *actor);
+int __cdecl core_stranger_cpp_getScaleY_FUN_005c6960(CDemonActor *actor);
 void __cdecl core_stranger_cpp_setWindVelocity_FUN_005c6970(CCloth *cloth_ptr,CVector3f *velocity);
 int __cdecl core_stranger_cpp_getCurrentMotionStateIndex_FUN_005c69a0(CCharacter *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags);

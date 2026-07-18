@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   renderer_handle
 ;
 ; XREF[1]:
-;   wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117 at 005b812f
+;   wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8120 at 005b812f
 ;
 ; Referenced Globals:
 ;   char[256] g_RendererDllPath

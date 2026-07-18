@@ -99238,12 +99238,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_windll.cpp_CExternalRenderer_initValidate_FUN_005b5cf0",
+    "name":"wincore_windll.cpp_bindRequiredDllFunction_FUN_005b5cf0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"slot",
           "storage":{
             "offset":4,
             "size":4,
@@ -99256,10 +99256,10 @@
               }
             ]
           },
-          "type":"CExternalRenderer*"
+          "type":"void**"
         },
         {
-          "name":"buffer_ptr",
+          "name":"proc",
           "storage":{
             "offset":8,
             "size":4,
@@ -99272,7 +99272,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"void*"
         }
       ]
     }
@@ -99335,6 +99335,32 @@
           "type":"int"
         }
       ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b7f70",
+    "body":[
+      {
+        "end":"005b7f82",
+        "size":19,
+        "start":"005b7f70"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"wincore_windll.cpp_toggleX_FUN_005b7f70",
+    "ret":"int",
+    "vars":{
       "ret_storage":{
         "reg":"EAX",
         "size":4,

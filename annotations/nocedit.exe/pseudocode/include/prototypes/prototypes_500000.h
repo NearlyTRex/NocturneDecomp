@@ -323,7 +323,7 @@ void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr,
 void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0(CMelee *this_ptr,CActorPropertyList *property_list);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_0050edf0(CMelee *this_ptr,uint flags);
 void __cdecl shape_memdbg_cpp_staticInit_FUN_0050ee40(void);
-void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee5e(void);
+void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee60(void);
 void __cdecl shape_memdbg_cpp_releaseDebugMutex_FUN_0050ee90(void);
 void __cdecl shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *header,char *source_filename);
 void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header);

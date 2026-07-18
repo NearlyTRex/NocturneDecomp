@@ -101,7 +101,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_00422a20(CLightActor *this_
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time);
 void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_00422c80(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightActor *this_ptr);
-char * __cdecl core_boxactor_cpp_getLightActorTypeName_FUN_0042307e(ELightActorType type);
+char * __cdecl core_boxactor_cpp_getLightActorTypeName_FUN_00423080(ELightActorType type);
 ELightActorType __cdecl core_boxactor_cpp_pickLightActorType_FUN_00423110(char *prompt_text,int allow_custom,uint current_type);
 void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_boxactor_cpp_CLightActor_propertyActionTypeCallback_FUN_00423380(CLightActor *this_ptr,CActorProperty *property);
