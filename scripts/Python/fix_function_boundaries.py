@@ -56,6 +56,26 @@ Safety rails:
     Override with --allow-patched.
   * --exclude REGEX (repeatable) drops findings by function name, e.g.
     --exclude '^crt_' to leave the CRT alone.
+  * SPLIT is only reported when B has NO references from outside A, of any type,
+    AND B does not occupy a vtable slot. Both checks matter and neither is
+    redundant:
+      - Reference check counts every RefType, not just calls. A C++ virtual
+        method is reached through a vtable, which Ghidra records as a **DATA**
+        reference, so a calls-only filter reports it as uncalled.
+      - Vtable veto reads annotations/<prog>/vtables/*.json off disk, so it holds
+        even if the reference data is incomplete.
+    A genuine SPLIT fragment is reachable ONLY by flow from inside A - e.g. the
+    shared `return 0` tail of checkNameHash_FUN_0040c700, entered by a JZ.
+  * --split-strong-only restricts SPLIT to cases where A's body is *fragmented
+    around* B. **This is a filter, NOT a safety gate.** It once shipped as
+    "near-proof of a real split" and that was wrong in the worst way: a small
+    virtual method sitting between two chunks of a neighbour produces exactly
+    this shape, so the flag actively SELECTED FOR the vtable-absorption bug. It
+    is only meaningful once the reference + vtable checks above have run.
+
+Prefer fixing bodies (validate_function_ranges) before trusting fallthrough-only
+SPLITs at all - if A's real body ends in a RET before B, the fall-through that
+the detector keys on is itself an artifact of A's truncated body.
 
 Report-first. Pass --apply to mutate + save. Manual overrides via
 --fix WRONG=CORRECT (repeatable) bypass detection for a specific entry.
@@ -101,6 +121,64 @@ def _is_nop_like(instr):
         return True
     text = " ".join(str(instr).split()).upper()
     return any(rx.match(text) for rx in _NOP_FORMS)
+
+
+def _external_ref_count_to(program, addr, exclude_body=None):
+    """Count incoming references to `addr` of ANY type, ignoring `exclude_body`.
+
+    Returns (count, kinds_dict).
+
+    Counting only CALL references here was a serious bug: a C++ *virtual* method
+    is never CALLed directly, it is reached through a vtable slot, which Ghidra
+    records as a **DATA** reference. Filtering to isCall() therefore reported
+    every vtable-only method as "no external callers" - and 11 one-byte empty
+    virtual overrides (`CWeapon_onFired` had 12 DATA refs) were absorbed into
+    their neighbours, blanking their vtable entries to raw addresses.
+
+    Any reference from outside A means B is a real function. A genuine SPLIT
+    fragment is reachable *only* by flow from inside A (e.g. a shared `return 0`
+    tail entered by a JZ, as in checkNameHash_FUN_0040c700).
+    """
+    n = 0
+    kinds = {}
+    it = program.getReferenceManager().getReferencesTo(addr)
+    while it.hasNext():
+        ref = it.next()
+        if exclude_body is not None and exclude_body.contains(ref.getFromAddress()):
+            continue
+        t = str(ref.getReferenceType())
+        kinds[t] = kinds.get(t, 0) + 1
+        n += 1
+    return n, kinds
+
+
+def load_vtable_targets(program_name):
+    """Every function address that appears in an exported vtable slot.
+
+    Independent second line of defence against absorbing a virtual method: read
+    `annotations/<prog>/vtables/*.json` (field `func_addr`) straight off disk.
+    Belt-and-braces with the reference check above - if either says B is a vtable
+    entry, B is a real function.
+    """
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+    vt_dir = os.path.join(repo_root, "annotations", program_name, "vtables")
+    targets = set()
+    if not os.path.isdir(vt_dir):
+        print("WARN: no vtables/ export at %s - vtable veto unavailable!" % vt_dir)
+        return targets
+    for fn in sorted(os.listdir(vt_dir)):
+        if not fn.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(vt_dir, fn)) as fh:
+                blob = fh.read()
+        except Exception as e:
+            print("WARN: could not read %s: %s" % (fn, e))
+            continue
+        for m in re.finditer(r'"func_addr"\s*:\s*"([0-9a-fA-F]+)"', blob):
+            targets.add(int(m.group(1), 16))
+    return targets
 
 
 def _ref_count_to(program, addr):
@@ -153,7 +231,7 @@ def _detect_entry_early(program, B, listing):
     return cur, _ref_count_to(program, cur)
 
 
-def detect(program):
+def detect(program, vtable_targets=frozenset()):
     """Return list of findings: dicts with kind/entry/correct/other/name."""
     fm = program.getFunctionManager()
     listing = program.getListing()
@@ -191,13 +269,41 @@ def detect(program):
         if owner is not None:
             if owner.getEntryPoint().getOffset() == E.getOffset():
                 continue  # same function (shouldn't happen before entry)
+            if E.getOffset() in vtable_targets:
+                # B occupies a vtable slot -> it is a virtual method, however
+                # small. Absorbing it blanks that slot to a raw address.
+                continue
+            nrefs, kinds = _external_ref_count_to(program, E, owner.getBody())
+            if nrefs:
+                # Anything referencing B from outside A - a CALL, or a DATA ref
+                # from a vtable/function-pointer table - means B is a real
+                # function and A merely runs into it (usually because A's body
+                # ends in alignment padding). Absorbing B would destroy it.
+                continue
+            spans = owner.getBody().getMaxAddress().getOffset() > E.getOffset()
             findings.append({
                 "kind": "SPLIT", "entry": E, "correct": owner.getEntryPoint(),
                 "other": owner, "name": B.getName(), "func": B,
+                "spans": spans,
+                "note": "no external refs; A %s" % (
+                    "fragmented around B" if spans else "fallthrough only"),
             })
             continue
 
-        # owner is None: orphan. Walk the fall-through chain back to a boundary.
+        # owner is None: orphan predecessor.
+        if _is_nop_like(pinstr):
+            # Alignment padding, not an orphaned prologue. It falls through into
+            # the entry so it looks identical to a too-late entry, but padding
+            # before an entry is a legitimate boundary. Without this check
+            # ENTRY_EARLY and ENTRY_LATE ping-pong forever: moving an entry past
+            # its padding orphans the NOPs, which ENTRY_LATE then "fixes" by
+            # moving it back in. Only applies to the orphan path - for SPLIT the
+            # predecessor is owned by another function, and trailing padding
+            # inside that owner's body is normal (see checkNameHash_FUN_0040c700,
+            # whose `LEA EAX,[EAX]` pad precedes its own split-off `return 0` tail).
+            continue
+
+        # Walk the fall-through chain back to a boundary.
         cur = E
         steps = 0
         while steps < MAX_CHAIN:
@@ -208,6 +314,8 @@ def detect(program):
             ins = listing.getInstructionContaining(pb)
             if ins is None:
                 break  # padding/data/undefined -> true start reached
+            if _is_nop_like(ins):
+                break  # alignment padding -> true start reached, do not absorb it
             if fm.getFunctionContaining(ins.getAddress()) is not None:
                 break  # ran into another function -> stop
             if _ft_offset(ins) != cur.getOffset():
@@ -291,7 +399,7 @@ def _body_is_patched(func, cave_ranges, patch_addrs):
 
 
 def annotate_skips(findings, only_fun, excludes, allow_patched,
-                   kinds, cave_ranges, patch_addrs):
+                   kinds, cave_ranges, patch_addrs, split_strong_only=False):
     """Set f['skip'] to a reason string (or None) for every finding."""
     patterns = [re.compile(rx) for rx in (excludes or [])]
     for f in findings:
@@ -299,6 +407,9 @@ def annotate_skips(findings, only_fun, excludes, allow_patched,
         name = f["name"]
         if f["kind"].split("(")[0] not in kinds:
             reason = "--kind"
+        elif (split_strong_only and f["kind"].startswith("SPLIT")
+              and not f.get("spans")):
+            reason = "--split-strong-only (A not fragmented around B)"
         elif only_fun and not name.startswith("FUN_"):
             reason = "--only-fun"
         else:
@@ -592,6 +703,10 @@ def main():
                    help="Skip findings whose function name matches (repeatable), e.g. '^crt_'")
     p.add_argument("--kind", default=",".join(ALL_KINDS),
                    help="Comma-separated kinds to act on (default: all of %s)" % ",".join(ALL_KINDS))
+    p.add_argument("--split-strong-only", action="store_true",
+                   help="Only act on SPLITs where A's body is fragmented around B "
+                        "(near-proof); skip fallthrough-only ones, which can be "
+                        "truncated-body artifacts")
     p.add_argument("--allow-patched", action="store_true",
                    help="Do not skip functions overlapping a code cave / byte patch")
     p.add_argument("--no-preserve", action="store_true",
@@ -622,15 +737,18 @@ def main():
                 findings = parse_manual(program, args.fix)
                 print("Using %d manual --fix override(s)." % len(findings))
             else:
+                vtable_targets = load_vtable_targets(args.program_name)
+                print("Loaded %d vtable slot target(s) for the virtual-method veto"
+                      % len(vtable_targets))
                 print("Scanning for entry-point boundary errors...")
-                findings = detect(program)
+                findings = detect(program, vtable_targets)
 
             cave_ranges, patch_addrs = load_guard_ranges(args.program_name)
             print("Guards: %d code-cave range(s), %d byte-patch address(es)%s" % (
                 len(cave_ranges), len(patch_addrs),
                 " (ignored: --allow-patched)" if args.allow_patched else ""))
             annotate_skips(findings, args.only_fun, args.exclude, args.allow_patched,
-                           kinds, cave_ranges, patch_addrs)
+                           kinds, cave_ranges, patch_addrs, args.split_strong_only)
             report(findings)
 
             actionable = [f for f in findings if not f.get("skip")]
