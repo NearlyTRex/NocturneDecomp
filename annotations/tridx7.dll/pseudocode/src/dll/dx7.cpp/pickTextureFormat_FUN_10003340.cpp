@@ -2,11 +2,11 @@
 // Address: 10003340
 // Address Range: [[10003340, 100033ff]]
 // Convention: __stdcall
-// Signature: HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag)
+// Signature: HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,void *found_flag)
 
 #include "nocturne.h"
 
-HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag)
+HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,void *found_flag)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixe
     if (((pixel_format->dwBitCount).dwRGBBitCount == 0x20) &&
        (*(char *)((int)&pixel_format->dwAlphaBitMask + 3) != '\0')) {
       g_TextureFormatSelected = 1;
-      *found_flag = 1;
+      *(uint *)found_flag = 1;
       pDVar2 = &g_TexturePixelFormat;
       for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
         pDVar2->dwSize = pixel_format->dwSize;
@@ -31,7 +31,7 @@ HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixe
   if ((pixel_format->dwBitCount).dwRGBBitCount == 0x10) {
     if ((*(byte *)((int)&pixel_format->dwAlphaBitMask + 1) & 0xf0) != 0) {
       g_TextureFormatSelected = 1;
-      *found_flag = 1;
+      *(uint *)found_flag = 1;
       pDVar2 = pixel_format;
       pDVar3 = &g_TexturePixelFormat;
       for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -41,8 +41,8 @@ HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixe
       }
       return (uint)((pixel_format->dwAlphaBitMask).dwRGBAlphaBitMask != 0xf000);
     }
-    if (*found_flag == 0) {
-      *found_flag = 1;
+    if (*(int *)found_flag == 0) {
+      *(uint *)found_flag = 1;
       pDVar2 = &g_TexturePixelFormat;
       for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
         pDVar2->dwSize = pixel_format->dwSize;

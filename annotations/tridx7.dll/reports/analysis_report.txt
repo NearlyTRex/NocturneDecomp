@@ -10,30 +10,30 @@ Total functions: 76
 Clean functions: 36 (47.4%)
 Functions with suspects: 40 (52.6%)
 
-Total suspect patterns: 350
-Average suspects per function: 4.61
+Total suspect patterns: 351
+Average suspects per function: 4.62
 
 Virtual files: 1 total, 0 at 100%, 0 at 90%+
 
 Pseudocode lines:
   Min: 5, Max: 299, Average: 42.6
 
-Average complexity score: 94.2
+Average complexity score: 94.4
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 76
-Successful: 64 (84.2%)
-Failed: 12
+Successful: 65 (85.5%)
+Failed: 11
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   warning_noreturn          97
   unrolled_memcpy           71
-  pointer_cast              55
+  pointer_cast              58
   pointer_truncation        33
   unrolled_memset           25
-  shadow_pointer_walk       20
+  shadow_pointer_walk       18
   unrolled_strlen           10
   unnamed_field             6
   stack_param               6
@@ -107,8 +107,8 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (score: 134, suspects: 4, lines: 79)
   10004840: dll_dx7.cpp_APIDLLclear_FUN_10004840 (score: 121, suspects: 6, lines: 46)
   10005010: dll_dx7.cpp_getOrAddVertex_FUN_10005010 (score: 113, suspects: 4, lines: 58)
+  10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (score: 108, suspects: 7, lines: 23)
   10003830: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (score: 102, suspects: 0, lines: 102)
-  10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (score: 93, suspects: 6, lines: 23)
   100035b0: dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0 (score: 88, suspects: 2, lines: 63)
   10004da0: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0 (score: 84, suspects: 4, lines: 24)
   100052e0: dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0 (score: 78, suspects: 4, lines: 33)
@@ -148,18 +148,18 @@ FUNCTIONS BY SUSPECT TYPE
     10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
     ... and 7 more
 
-  pointer_cast (17 functions):
+  pointer_cast (18 functions):
     10001200: dll_dx7.cpp_initTextureCaches_FUN_10001200
     100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
     10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
     10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
     10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
+    10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
     10002dc0: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
     10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
     10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
     10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
-    10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400
-    ... and 7 more
+    ... and 8 more
 
   pointer_truncation (13 functions):
     10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900

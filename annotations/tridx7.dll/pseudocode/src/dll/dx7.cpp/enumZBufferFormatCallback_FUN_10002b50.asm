@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; HRESULT __stdcall dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context)
+; HRESULT __stdcall dll_dx7_cpp_enumZBufferFormatCallback_FUN_10002b50(DDPIXELFORMAT *lp_pixel_format,void *lp_context)
 ;
 ; Parameters:
 ; DDPIXELFORMAT *  Stack[0x4]:4   lp_pixel_format
-; DDPIXELFORMAT *  Stack[0x8]:4   lp_context
+; void *           Stack[0x8]:4   lp_context
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 at 1000283d

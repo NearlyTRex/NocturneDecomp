@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "pointer_type",
-        "column": 22,
-        "line": 148,
-        "message": "cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, DDPIXELFORMAT *)' (aka 'long (DDPIXELFORMAT *, DDPIXELFORMAT *)'): type mismatch at 2nd parameter ('void *' vs 'DDPIXELFORMAT *')"
-      },
-      {
         "category": "format_error",
         "column": 65,
         "line": 212,
@@ -15,7 +9,14 @@
       }
     ],
     "success": false,
-    "warnings": []
+    "warnings": [
+      {
+        "category": "return_type_error",
+        "column": 1,
+        "line": 309,
+        "message": "non-void function does not return a value in all control paths [-Wreturn-type]"
+      }
+    ]
   },
   "compile_source": "cpp",
   "complexity": {

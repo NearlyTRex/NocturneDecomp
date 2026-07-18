@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  warning_noreturn                  97 ( 27.7%)
-  unrolled_memcpy                   71 ( 20.3%)
-  pointer_cast                      55 ( 15.7%)
+  warning_noreturn                  97 ( 27.6%)
+  unrolled_memcpy                   71 ( 20.2%)
+  pointer_cast                      58 ( 16.5%)
   pointer_truncation                33 (  9.4%)
   unrolled_memset                   25 (  7.1%)
-  shadow_pointer_walk               20 (  5.7%)
-  unrolled_strlen                   10 (  2.9%)
+  shadow_pointer_walk               18 (  5.1%)
+  unrolled_strlen                   10 (  2.8%)
   unnamed_field                      6 (  1.7%)
   stack_param                        6 (  1.7%)
   stack_ref                          6 (  1.7%)
@@ -75,7 +75,7 @@ Functions:
   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
 
 ====================================================================================================
-TYPE: pointer_cast (55 occurrences)
+TYPE: pointer_cast (58 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -87,6 +87,7 @@ Unique patterns:
      2x  (CHAR *)((int)pacVar7
      2x  (DDCAPS *)((int)pDVar3
      2x  (DDPIXELFORMAT *)((int)pDVar10
+     2x  (DWORD *)((int)lp_context
      2x  (void *)((int)pvVar2
      2x  (DDSURFACEDESC2 *)((int)pDVar5
      2x  (int)&NAME used in byte-offset arithmetic
@@ -98,7 +99,6 @@ Unique patterns:
      1x  (DWORD *)((int)g_AdapterVendorId
      1x  (DWORD *)((int)g_AdapterDeviceId
      1x  (CExternalRendererBridge *)((int)interface
-     1x  (CExternalRendererBridge *)((int)pCVar13
 
 Functions:
   dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
@@ -111,6 +111,7 @@ Functions:
   dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
   dll_dx7.cpp_createStagingTextures_FUN_10003400
   dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
+  dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
   dll_dx7.cpp_initD3DDevice_FUN_10003100
   dll_dx7.cpp_initTextureCaches_FUN_10001200
   dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
@@ -185,13 +186,12 @@ Functions:
   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (20 occurrences)
+TYPE: shadow_pointer_walk (18 occurrences)
 ====================================================================================================
 
 Unique patterns:
      4x  pDVar2 = (T *)&pDVar2->FIELD
      2x  lp_pixel_format = (T *)&lp_pixel_format->FIELD
-     2x  lp_context = (T *)&lp_context->FIELD
      2x  pDVar3 = (T *)&pDVar3->FIELD
      2x  pixel_format = (T *)&pixel_format->FIELD
      1x  pSVar4 = (T *)pSVar4->ARRAY

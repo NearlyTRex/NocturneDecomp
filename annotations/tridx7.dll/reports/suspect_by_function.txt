@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 76
 Clean: 35 (46.1%)
 With suspects: 41
-Total suspects: 350
+Total suspects: 351
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (23 suspects)
@@ -398,14 +398,15 @@ dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (22 suspects)
   Line 114 [unnamed_field]: *(uint *)&lp_guid->field_0xc;
 
 ====================================================================================================
-dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (6 suspects)
+dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (7 suspects)
   File: dll/dx7.cpp
 ====================================================================================================
   Line 11 [shadow_pointer_walk]: lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;
-  Line 12 [shadow_pointer_walk]: lp_context = (DDPIXELFORMAT *)&lp_context->dwFlags;
+  Line 12 [pointer_cast]: lp_context = (DWORD *)((int)lp_context + 4);
+  Line 16 [pointer_cast]: if (*(uint *)((int)lp_context + 0xc) < (lp_pixel_format->dwBitCount).dwRGBBitCount) {
   Line 17 [unrolled_memcpy]: // 10002b79: MOVSD.REP ES:EDI,ESI
   Line 19 [shadow_pointer_walk]: lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;
-  Line 20 [shadow_pointer_walk]: lp_context = (DDPIXELFORMAT *)&lp_context->dwFlags;
+  Line 20 [pointer_cast]: lp_context = (DWORD *)((int)lp_context + 4);
   Line 25 [unrolled_memcpy]: // 10002b8e: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================

@@ -77,7 +77,7 @@ void __cdecl readIniInt(char *section,char *key,uint *value_inout);
 
 // Original: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
 // Address: 10002b50
-HRESULT __stdcall enumZBufferFormatCallback(DDPIXELFORMAT *lp_pixel_format,DDPIXELFORMAT *lp_context);
+HRESULT __stdcall enumZBufferFormatCallback(DDPIXELFORMAT *lp_pixel_format,void *lp_context);
 
 // Original: dll_dx7.cpp_APIDLLsetVideoMode2_FUN_10002bb0
 // Address: 10002bb0
@@ -149,7 +149,7 @@ int __cdecl initD3DDevice(void);
 
 // Original: dll_dx7.cpp_pickTextureFormat_FUN_10003340
 // Address: 10003340
-HRESULT __stdcall pickTextureFormat(DDPIXELFORMAT *pixel_format,int *found_flag);
+HRESULT __stdcall pickTextureFormat(DDPIXELFORMAT *pixel_format,void *found_flag);
 
 // Original: dll_dx7.cpp_createStagingTextures_FUN_10003400
 // Address: 10003400

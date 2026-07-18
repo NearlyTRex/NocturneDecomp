@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,int *found_flag)
+; HRESULT __stdcall dll_dx7_cpp_pickTextureFormat_FUN_10003340(DDPIXELFORMAT *pixel_format,void *found_flag)
 ;
 ; Parameters:
 ; DDPIXELFORMAT *  Stack[0x4]:4   pixel_format
-; int *            Stack[0x8]:4   found_flag
+; void *           Stack[0x8]:4   found_flag
 ;
 ; XREF[1]:
 ;   dll_dx7.cpp_initD3DDevice_FUN_10003100 at 10003148

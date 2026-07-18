@@ -5,8 +5,8 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 76
-Successful: 64 (84.2%)
-Failed: 12
+Successful: 65 (85.5%)
+Failed: 11
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (7 errors)
@@ -33,9 +33,8 @@ dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90 (3 errors)
   Line 15 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
 
 ====================================================================================================
-dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (2 errors)
+dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (1 error)
 ====================================================================================================
-  Line 148 [pointer_type]: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, DDPIXELFORMAT *)' (aka 'long (DDPIXELFORMAT *, DDPIXELFORMAT *)'): type mismatch at 2nd parameter ('void *' vs 'DDPIXELFORMAT *')
   Line 212 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
@@ -73,11 +72,6 @@ dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (10 errors)
 dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (1 error)
 ====================================================================================================
   Line 46 [pointer_type]: comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *')
-
-====================================================================================================
-dll_dx7.cpp_initD3DDevice_FUN_10003100 (1 error)
-====================================================================================================
-  Line 34 [pointer_type]: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, int *)' (aka 'long (DDPIXELFORMAT *, int *)'): type mismatch at 2nd parameter ('void *' vs 'int *')
 
 ====================================================================================================
 dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (5 errors)

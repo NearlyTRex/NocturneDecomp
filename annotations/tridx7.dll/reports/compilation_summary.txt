@@ -5,38 +5,17 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 76
-Successful: 64 (84.2%)
-Failed: 12
+Successful: 65 (85.5%)
+Failed: 11
 
 ERROR CATEGORIES
 --------------------------------------------------
-  pointer_type                      12
   undeclared_identifier             11
+  pointer_type                      10
   incompatible_types                 8
   missing_member                     6
   syntax_error                       3
   format_error                       1
-
-====================================================================================================
-CATEGORY: pointer_type (12 errors)
-====================================================================================================
-
-  dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
-    Line 35: assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers...
-  dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
-    Line 148: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long...
-  dll_dx7.cpp_initD3DDevice_FUN_10003100
-    Line 34: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long...
-  dll_dx7.cpp_createDirect3D_FUN_10002f40
-    Line 15: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirect3...
-  dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    Line 50: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectD...
-  dll_dx7.cpp_createTexture_FUN_10002f60
-    Line 64: cannot initialize a parameter of type 'void **' with an rvalue of type 'struct I...
-  dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
-    Line 55: comparison of distinct pointer types ('STextureSurfaceSlot *' and 'uchar **' (ak...
-  dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
-    Line 46: comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *...
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (11 errors)
@@ -48,6 +27,23 @@ CATEGORY: undeclared_identifier (11 errors)
     Line 29: use of undeclared identifier 'code'...
   dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
     Line 89: use of undeclared identifier 'code'...
+
+====================================================================================================
+CATEGORY: pointer_type (10 errors)
+====================================================================================================
+
+  dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
+    Line 35: assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers...
+  dll_dx7.cpp_createDirect3D_FUN_10002f40
+    Line 15: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirect3...
+  dll_dx7.cpp_APIDLLinit_FUN_10001a80
+    Line 50: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectD...
+  dll_dx7.cpp_createTexture_FUN_10002f60
+    Line 64: cannot initialize a parameter of type 'void **' with an rvalue of type 'struct I...
+  dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
+    Line 55: comparison of distinct pointer types ('STextureSurfaceSlot *' and 'uchar **' (ak...
+  dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
+    Line 46: comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *...
 
 ====================================================================================================
 CATEGORY: incompatible_types (8 errors)
@@ -87,8 +83,8 @@ CATEGORY: format_error (1 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 3.00
-Average suspects in failed compilations: 12.33
+Average suspects in successfully compiled functions: 3.25
+Average suspects in failed compilations: 11.82
 
-Functions that compile but have suspect patterns: 32
+Functions that compile but have suspect patterns: 33
 (These may have runtime issues even though syntax is valid)
