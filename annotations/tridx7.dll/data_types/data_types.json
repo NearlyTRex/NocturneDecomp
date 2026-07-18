@@ -1,6 +1,10 @@
 {
   "apply_order":[
     {
+      "name":"CExternalRenderer",
+      "type":"struct"
+    },
+    {
       "name":"CExternalRendererBridge",
       "type":"struct"
     },
@@ -6429,6 +6433,78 @@
       "importable":true,
       "len":294928,
       "name":"CDLLTextureCache",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"description",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "len":256,
+          "name":"vendor_name",
+          "offset":256,
+          "type":"char[256]"
+        },
+        {
+          "len":2,
+          "name":"interface_version",
+          "offset":512,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"driver_version",
+          "offset":514,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"api_version",
+          "offset":516,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"other_version",
+          "offset":518,
+          "type":"ushort"
+        },
+        {
+          "len":4,
+          "name":"feature_flags",
+          "offset":520,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"function_count",
+          "offset":524,
+          "type":"uint"
+        },
+        {
+          "len":64,
+          "name":"function_table",
+          "offset":528,
+          "type":"uint[16]"
+        },
+        {
+          "len":7032,
+          "name":"reserved",
+          "offset":592,
+          "type":"char[7032]"
+        }
+      ],
+      "importable":true,
+      "len":7624,
+      "name":"CExternalRenderer",
       "pack":false,
       "type":"struct"
     },

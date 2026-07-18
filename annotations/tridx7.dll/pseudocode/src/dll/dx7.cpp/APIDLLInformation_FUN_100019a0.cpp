@@ -2,11 +2,11 @@
 // Address: 100019a0
 // Address Range: [[100019a0, 10001a75]]
 // Convention: __cdecl
-// Signature: void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,void *info_buffer)
+// Signature: void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,CExternalRenderer *renderer)
 
 #include "nocturne.h"
 
-void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,void *info_buffer)
+void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,CExternalRenderer *renderer)
 
 {
   char cVar1;

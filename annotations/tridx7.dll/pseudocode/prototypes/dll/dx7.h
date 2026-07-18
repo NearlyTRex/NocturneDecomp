@@ -41,7 +41,7 @@ int __cdecl isAdapter3DCapable(GUID *adapter_guid);
 
 // Original: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
 // Address: 100019a0
-void __cdecl APIDLLInformation(HMODULE dll_handle,void *info_buffer);
+void __cdecl APIDLLInformation(HMODULE dll_handle,CExternalRenderer *renderer);
 
 // Original: dll_dx7.cpp_APIDLLinit_FUN_10001a80
 // Address: 10001a80

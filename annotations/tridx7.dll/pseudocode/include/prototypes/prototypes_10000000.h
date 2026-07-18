@@ -19,6 +19,7 @@
 #include "system/winnls.h"
 #include "system/winnt.h"
 #include "types/classes/CDLLTextureCache.h"
+#include "types/classes/CExternalRenderer.h"
 #include "types/classes/CExternalRendererBridge.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -39,7 +40,7 @@ int __cdecl dll_dx7_cpp_resolveTextureSlot_FUN_10001470(SMRGLTextureBasic *textu
 void __cdecl dll_dx7_cpp_bindTextureBySize_FUN_100015d0(SMRGLTextureBasic *texture_info);
 int __stdcall dll_dx7_cpp_enumAdapterCallback_FUN_100017b0(GUID *lp_guid,LPCSTR lp_driver_description,LPCSTR lp_driver_name,LPVOID lp_context,HMONITOR hmonitor);
 int __cdecl dll_dx7_cpp_isAdapter3DCapable_FUN_10001900(GUID *adapter_guid);
-void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,void *info_buffer);
+void __cdecl dll_dx7_cpp_APIDLLInformation_FUN_100019a0(HMODULE dll_handle,CExternalRenderer *renderer);
 int __cdecl dll_dx7_cpp_APIDLLinit_FUN_10001a80(HWND windowHandle,CExternalRendererBridge *interface);
 void __cdecl dll_dx7_cpp_checkD3DResult_FUN_10001d70(HRESULT result);
 void __cdecl dll_dx7_cpp_fatalError_FUN_10002340(char *message);
