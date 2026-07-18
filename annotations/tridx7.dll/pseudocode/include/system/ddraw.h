@@ -652,8 +652,9 @@ typedef struct PALETTEENTRY {
 #pragma pack(pop)
 
 // =============================================================================
-// DIRECTDRAW API FUNCTIONS
+// DIRECTDRAW API FUNCTIONS (tridx7.dll imports)
 // =============================================================================
 
 extern HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);
+extern HRESULT DirectDrawEnumerateExA(DDENUMCALLBACKEXA* lpCallback, void* lpContext, DWORD dwFlags);
 

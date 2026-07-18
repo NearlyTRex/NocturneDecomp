@@ -105,3 +105,14 @@ typedef struct _OVERLAPPED {
     HANDLE hEvent;
 } _OVERLAPPED;
 
+// =============================================================================
+// KERNEL32 / USER32 API FUNCTIONS (tridx7.dll imports)
+// =============================================================================
+
+extern void ExitProcess(UINT uExitCode);
+extern UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault, LPCSTR lpFileName);
+extern int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);
+extern int LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax);
+extern BOOL SetCursorPos(int X, int Y);
+extern int ShowCursor(BOOL bShow);
+

@@ -5,6 +5,20 @@ HEADER COMPILATION REPORT
 Compiler: clang++
 Include directory: annotations/tridx7.dll/pseudocode/include
 
-Summary: 68 passed, 0 failed out of 68 total (100.0% success)
+Summary: 67 passed, 1 failed out of 68 total (98.5% success)
 
-All headers compiled successfully.
+--------------------------------------------------------------------------------
+FAILED HEADERS (1)
+--------------------------------------------------------------------------------
+
+FILE: system/winbase.h
+----------------------------------------
+In file included from /tmp/tmpn3v7p5g6.cpp:1:
+annotations/tridx7.dll/pseudocode/include/system/winbase.h:114:24: error: unknown type name 'HWND'
+  114 | extern int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);
+      |                        ^
+annotations/tridx7.dll/pseudocode/include/system/winbase.h:115:24: error: unknown type name 'HINSTANCE'
+  115 | extern int LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax);
+      |                        ^
+2 errors generated.
+

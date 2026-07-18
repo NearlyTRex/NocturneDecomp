@@ -5,8 +5,8 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 76
-Successful: 60 (78.9%)
-Failed: 16
+Successful: 64 (84.2%)
+Failed: 12
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (7 errors)
@@ -20,16 +20,10 @@ dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (7 errors)
   Line 78 [undeclared_identifier]: use of undeclared identifier 'stack0x00000100'
 
 ====================================================================================================
-dll_dx7.cpp_APIDLLinit_FUN_10001a80 (3 errors)
+dll_dx7.cpp_APIDLLinit_FUN_10001a80 (2 errors)
 ====================================================================================================
-  Line 38 [undeclared_identifier]: use of undeclared identifier 'DirectDrawEnumerateExA'
   Line 50 [pointer_type]: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectDraw4 **'
   Line 138 [pointer_type]: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectDraw4 **'
-
-====================================================================================================
-dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0 (1 error)
-====================================================================================================
-  Line 27 [undeclared_identifier]: use of undeclared identifier 'ShowCursor'
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90 (3 errors)
@@ -39,18 +33,10 @@ dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90 (3 errors)
   Line 15 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
 
 ====================================================================================================
-dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (10 errors)
+dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (2 errors)
 ====================================================================================================
   Line 148 [pointer_type]: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, DDPIXELFORMAT *)' (aka 'long (DDPIXELFORMAT *, DDPIXELFORMAT *)'): type mismatch at 2nd parameter ('void *' vs 'DDPIXELFORMAT *')
   Line 212 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 216 [undeclared_identifier]: use of undeclared identifier 'SetCursorPos'
-  Line 218 [undeclared_identifier]: use of undeclared identifier 'ShowCursor'
-  Line 252 [undeclared_identifier]: use of undeclared identifier 'MessageBoxA'
-  Line 254 [undeclared_identifier]: use of undeclared identifier 'ExitProcess'
-  Line 280 [undeclared_identifier]: use of undeclared identifier 'MessageBoxA'
-  Line 282 [undeclared_identifier]: use of undeclared identifier 'ExitProcess'
-  Line 306 [undeclared_identifier]: use of undeclared identifier 'MessageBoxA'
-  Line 308 [undeclared_identifier]: use of undeclared identifier 'ExitProcess'
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLupdateTexture_FUN_10003ed0 (3 errors)
@@ -89,25 +75,9 @@ dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (1 error)
   Line 46 [pointer_type]: comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *')
 
 ====================================================================================================
-dll_dx7.cpp_fatalError_FUN_10002340 (2 errors)
-====================================================================================================
-  Line 13 [undeclared_identifier]: use of undeclared identifier 'MessageBoxA'
-  Line 15 [undeclared_identifier]: use of undeclared identifier 'ExitProcess'
-
-====================================================================================================
 dll_dx7.cpp_initD3DDevice_FUN_10003100 (1 error)
 ====================================================================================================
   Line 34 [pointer_type]: cannot initialize a parameter of type 'D3DENUMPIXELFORMATSCALLBACK *' (aka 'long (*)(DDPIXELFORMAT *, void *)') with an lvalue of type 'HRESULT (DDPIXELFORMAT *, int *)' (aka 'long (DDPIXELFORMAT *, int *)'): type mismatch at 2nd parameter ('void *' vs 'int *')
-
-====================================================================================================
-dll_dx7.cpp_readIniInt_FUN_10001440 (1 error)
-====================================================================================================
-  Line 14 [undeclared_identifier]: use of undeclared identifier 'GetPrivateProfileIntA'
-
-====================================================================================================
-dll_dx7.cpp_readIniInt_FUN_10002b20 (1 error)
-====================================================================================================
-  Line 14 [undeclared_identifier]: use of undeclared identifier 'GetPrivateProfileIntA'
 
 ====================================================================================================
 dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (5 errors)

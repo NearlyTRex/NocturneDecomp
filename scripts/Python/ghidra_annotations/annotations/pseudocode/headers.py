@@ -2468,6 +2468,84 @@ def generate_dsound_api_functions():
     return lines
 
 
+def generate_tridx7_ddraw_api_functions():
+    """Generate DirectDraw API function declarations for tridx7.dll.
+
+    tridx7.dll's driver code calls these DDRAW.DLL imports directly by name
+    (they are in the DLL's import table). Appended to ddraw.h after the
+    struct/typedef definitions from Ghidra. Distinct from nocedit's set:
+    tridx7 also imports DirectDrawEnumerateExA.
+
+    Returns:
+        List of content lines to append to ddraw.h
+    """
+    lines = []
+    lines.append("// =============================================================================")
+    lines.append("// DIRECTDRAW API FUNCTIONS (tridx7.dll imports)")
+    lines.append("// =============================================================================")
+    lines.append("")
+    lines.append("extern HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);")
+    lines.append("extern HRESULT DirectDrawEnumerateExA(DDENUMCALLBACKEXA* lpCallback, void* lpContext, DWORD dwFlags);")
+    lines.append("")
+    return lines
+
+
+def generate_tridx7_win32_api_functions():
+    """Generate KERNEL32/USER32 API function declarations for tridx7.dll.
+
+    tridx7.dll's driver code calls these Win32 imports directly by name. nocedit
+    never calls them directly (its statically-linked CRT resolves them), so there
+    is no existing subsystem header for them here; tridx7 has no winuser.h either.
+    They are appended to winbase.h — tridx7's guaranteed-present Win32 base header —
+    as plain extern declarations for the compile pass. The linking shim
+    implementations live under pseudocode/shims/.
+
+    Returns:
+        List of content lines to append to winbase.h
+    """
+    lines = []
+    lines.append("// =============================================================================")
+    lines.append("// KERNEL32 / USER32 API FUNCTIONS (tridx7.dll imports)")
+    lines.append("// =============================================================================")
+    lines.append("")
+    lines.append("extern void ExitProcess(UINT uExitCode);")
+    lines.append("extern UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault, LPCSTR lpFileName);")
+    lines.append("extern int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);")
+    lines.append("extern int LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax);")
+    lines.append("extern BOOL SetCursorPos(int X, int Y);")
+    lines.append("extern int ShowCursor(BOOL bShow);")
+    lines.append("")
+    return lines
+
+
+def get_header_injections(program_name):
+    """Return the {header_name: injector_fn} map of API-function/runtime-inline
+    appends for the exporting program.
+
+    The special-case header injections below were originally written for
+    nocedit.exe and applied to every program unconditionally. Different targets
+    need different sets (e.g. tridx7.dll imports Win32/DDraw functions directly
+    that nocedit never calls), so gate them by the exporting program's name.
+
+    nocedit.exe and nocturne.exe keep the original set (default) so their output
+    is unchanged; tridx7.dll gets its own. Note: the stdarg VA_START_T/VA_END_T
+    macros are a generic decompiler-artifact fix, not a program-specific API set,
+    so they are NOT routed through here — they stay applied to every program.
+    """
+    if 'tridx7' in program_name:
+        return {
+            'ddraw':   generate_tridx7_ddraw_api_functions,
+            'winbase': generate_tridx7_win32_api_functions,
+        }
+    # Default (nocedit.exe / nocturne.exe) — preserves prior behavior.
+    return {
+        'watcom':  generate_watcom_runtime_inlines,
+        'winsock': generate_winsock_runtime_inlines,
+        'ddraw':   generate_ddraw_api_functions,
+        'dsound':  generate_dsound_api_functions,
+    }
+
+
 def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map=None):
     """Export grouped header files for system types as single files.
 
@@ -2492,6 +2570,9 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         cyclic_headers = detect_include_cycles(system_grouped_types, type_to_path_map)
         if cyclic_headers:
             log_info("Detected circular dependencies in headers: %s" % ", ".join(sorted(cyclic_headers)))
+
+    # Program-gated per-header injections (resolved once for this program).
+    header_injections = get_header_injections(currentProgram.getName())
 
     # Generate system headers
     for export_path, types in system_grouped_types.items():
@@ -2589,21 +2670,14 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
 
         content.append("")
 
-        # Special case: append Watcom C++ runtime inline functions to watcom.h
-        if header_name == "watcom":
-            content.extend(generate_watcom_runtime_inlines())
-
-        # Special case: append Winsock inline function stubs to winsock.h
-        if header_name == "winsock":
-            content.extend(generate_winsock_runtime_inlines())
-
-        # Special case: append DirectDraw API function declarations to ddraw.h
-        if header_name == "ddraw":
-            content.extend(generate_ddraw_api_functions())
-
-        # Special case: append DirectSound API function declarations to dsound.h
-        if header_name == "dsound":
-            content.extend(generate_dsound_api_functions())
+        # Program-gated header injections (API-function decls / runtime inlines).
+        # The injector set depends on the exporting program — see
+        # get_header_injections(). nocedit.exe/nocturne.exe keep the original
+        # watcom/winsock/ddraw/dsound appends; tridx7.dll gets its own Win32/DDraw
+        # import declarations instead.
+        injector = header_injections.get(header_name)
+        if injector:
+            content.extend(injector())
 
         # Special case: append VA_START_T/VA_END_T macros to stdarg.h
         if header_name == "stdarg":

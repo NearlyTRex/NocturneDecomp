@@ -5,40 +5,17 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 76
-Successful: 60 (78.9%)
-Failed: 16
+Successful: 64 (84.2%)
+Failed: 12
 
 ERROR CATEGORIES
 --------------------------------------------------
-  undeclared_identifier             25
   pointer_type                      12
+  undeclared_identifier             11
   incompatible_types                 8
   missing_member                     6
   syntax_error                       3
   format_error                       1
-
-====================================================================================================
-CATEGORY: undeclared_identifier (25 errors)
-====================================================================================================
-
-  dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    Line 38: use of undeclared identifier 'DirectDrawEnumerateExA'
-  dll_dx7.cpp_readIniInt_FUN_10001440
-    Line 14: use of undeclared identifier 'GetPrivateProfileIntA'
-  dll_dx7.cpp_readIniInt_FUN_10002b20
-    Line 14: use of undeclared identifier 'GetPrivateProfileIntA'
-  dll_dx7.cpp_fatalError_FUN_10002340
-    Line 13: use of undeclared identifier 'MessageBoxA'
-  dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
-    Line 216: use of undeclared identifier 'SetCursorPos'
-  dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0
-    Line 27: use of undeclared identifier 'ShowCursor'
-  dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-    Line 25: use of undeclared identifier '_chkstk'
-  dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
-    Line 29: use of undeclared identifier 'code'
-  dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
-    Line 89: use of undeclared identifier 'code'
 
 ====================================================================================================
 CATEGORY: pointer_type (12 errors)
@@ -60,6 +37,17 @@ CATEGORY: pointer_type (12 errors)
     Line 55: comparison of distinct pointer types ('STextureSurfaceSlot *' and 'uchar **' (aka 'unsigned char **'))
   dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830
     Line 46: comparison of distinct pointer types ('uint *' (aka 'unsigned int *') and 'int *')
+
+====================================================================================================
+CATEGORY: undeclared_identifier (11 errors)
+====================================================================================================
+
+  dll_dx7.cpp_APIDLLInformation_FUN_100019a0
+    Line 25: use of undeclared identifier '_chkstk'
+  dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
+    Line 29: use of undeclared identifier 'code'
+  dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
+    Line 89: use of undeclared identifier 'code'
 
 ====================================================================================================
 CATEGORY: incompatible_types (8 errors)
