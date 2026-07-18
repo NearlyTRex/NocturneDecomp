@@ -1,6 +1,6 @@
 // Name: core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810
 // Address: 00412810
-// Address Range: [[00412810, 00412824]]
+// Address Range: [[00412810, 0041284f]]
 // Convention: __cdecl
 // Signature: int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_00412810(CBackgroundActor *this_ptr)
 

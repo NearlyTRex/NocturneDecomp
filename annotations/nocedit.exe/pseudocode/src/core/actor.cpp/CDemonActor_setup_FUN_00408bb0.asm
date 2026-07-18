@@ -6,9 +6,10 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
-; XREF[42]:
+; XREF[43]:
 ;   core_ammo.cpp_CAmmo_setup_FUN_00410e50 at 00410e67
 ;   core_anvil.cpp_CAnvil_setup_FUN_00411d70 at 00411d75
+;   core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810 at 00412825
 ;   core_barrier.cpp_CBarrier_setup_FUN_00414210 at 00414216
 ;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148ce
 ;   core_battery.cpp_CBattery_setup_FUN_00417ef0 at 00417ef6
@@ -16,8 +17,7 @@
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830 at 0042183a
 ;   core_chain.cpp_CChain_setup_FUN_0042fd20 at 0042fd2c
 ;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 0042814c
-;   core_crate.cpp_CCrate_setup_FUN_00448530 at 00448539
-;   ... and 32 more
+;   ... and 33 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_0061363c

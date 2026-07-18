@@ -1,6 +1,6 @@
 // Name: core_baron.cpp_staticInit_FUN_00412b20
 // Address: 00412b20
-// Address Range: [[00412b20, 00412b3f]]
+// Address Range: [[00412b20, 00412b73]]
 // Convention: __cdecl
 // Signature: void __cdecl core_baron_cpp_staticInit_FUN_00412b20(void)
 

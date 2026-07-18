@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19522
+Total globals analyzed:      19521
   Named globals:             19510
-  DAT_ globals:              12
-Gaps found:                  1765
-  With exact size bounds:    1674
+  DAT_ globals:              11
+Gaps found:                  1764
+  With exact size bounds:    1673
   With estimated bounds:     91
-Total gap bytes:             13,376,195
-  Exact gap bytes:           13,367,157
+Total gap bytes:             13,376,199
+  Exact gap bytes:           13,367,161
 Overlaps (size <= 0):        13365
 
 --------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ GAP SIZE DISTRIBUTION
   5-16 bytes (small vars)                       528
   17-64 bytes (structs/small arrays)            334
   65-256 bytes (medium data)                    125
-  257-1024 bytes (large structs/arrays)         91
+  257-1024 bytes (large structs/arrays)         90
   1-4 KB                                        70
   4-64 KB                                       107
   64+ KB                                        17
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1674) - size bounds are known precisely
+ALL EXACT GAPS (1673) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -288,6 +288,7 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
        5,444 bytes  at 0x0060d0fc  between switchdataD_0060d0f8           and SUB_0060e640
        5,432 bytes  at 0x006764b8  between g_LightmapBlendBias4           and g_LightmapData
        5,276 bytes  at 0x005647d4  between switchdataD_005647d0           and switchdataD_00565c70
+       5,064 bytes  at 0x00411aa0  between switchdataD_00411a9c           and switchdataD_00412e68
        4,992 bytes  at 0x03275a2c  between g_ScreenHeightForFonts         and g_MasterLightCount
        4,892 bytes  at 0x00608994  between SUB_00608990                   and CAVE_cave_00609f20
        4,860 bytes  at 0x02d7c3f4  between g_ActStatsTextBuffer1+0x100    and g_ActStatsTextBuffer2
@@ -301,7 +302,6 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
        4,624 bytes  at 0x00685b48  between g_ExitHandlerTableEnd          and GUID_00686d58
        4,476 bytes  at 0x0053d860  between switchdataD_0053d85c           and switchdataD_0053e9dc
        4,424 bytes  at 0x02d040a8  between g_KeyboardState+0x20c          and g_SoftwareRenderingForced
-       4,257 bytes  at 0x00411aa0  between switchdataD_00411a9c           and DAT_00412b41
        4,196 bytes  at 0x004e551c  between switchdataD_004e5518           and switchdataD_004e6580
        4,108 bytes  at 0x004366dc  between PTR_caseD_3_004366d8           and switchdataD_004376e8
        4,091 bytes  at 0x013d975d  between g_CameraLookupTable+1          and g_CameraShakeSustainTimer
@@ -386,7 +386,6 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
          868 bytes  at 0x0060cd94  between SUB_0060cd90                   and switchdataD_0060d0f8
          836 bytes  at 0x03f624e4  between g_SfxOptions[0].velocity.z+4   and g_LastSampleAccessIndex
          832 bytes  at 0x0052d5f8  between switchdataD_0052d5f4           and switchdataD_0052d938
-         803 bytes  at 0x00412b45  between DAT_00412b41                   and switchdataD_00412e68
          800 bytes  at 0x0060a240  between SUB_0060a23c                   and SUB_0060a560
          768 bytes  at 0x00825128  between g_ClippedVertexBuffer          and g_ClipperCullingPointers
          768 bytes  at 0x008257ac  between g_SecondaryClipVertexBuffer    and g_ClipperTempBuffer

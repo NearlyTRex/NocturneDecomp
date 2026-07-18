@@ -1,6 +1,6 @@
 // Name: core_scat.cpp_CScat_isWeaponReady_FUN_00558010
 // Address: 00558010
-// Address Range: [[00558010, 00558036]]
+// Address Range: [[00556e44, 00556e49] [00558010, 00558036]]
 // Convention: __cdecl
 // Signature: int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_00558010(CScat *this_ptr)
 

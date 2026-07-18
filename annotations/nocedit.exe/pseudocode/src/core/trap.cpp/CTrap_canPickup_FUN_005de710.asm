@@ -22,6 +22,7 @@ section .text
     CMP dword ptr [EAX + 0x2d8],0x0     ; 005de714
     JZ 0x005de723                       ; 005de71b
         ;   XREF to: 005de723 (CONDITIONAL_JUMP)  ; LAB_005de723
+    LEA EAX,[EAX]                       ; 005de71d
     PUSH 0x655539                       ; 005de723 | = "CHero"
         ;   Label: LAB_005de723
     MOV ECX,dword ptr [ESP + 0xc]       ; 005de728

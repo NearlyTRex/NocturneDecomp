@@ -14,6 +14,9 @@
 
 section .text
 
+    MOV EAX,0x1                         ; 00556e44
+        ;   Label: LAB_00556e44
+    RET                                 ; 00556e49
     MOV EAX,dword ptr [ESP + 0x4]       ; 00558010
         ;   Label: core_scat.cpp_CScat_isWeaponReady_FUN_00558010
     CMP dword ptr [EAX + 0x1fbd4],0x0   ; 00558014

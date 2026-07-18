@@ -38,6 +38,9 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @005de71b [ESP:+0]  # JZ 0x005de723
 CBRANCH (ram,0x5de723,4), (register,0x206,1)
 
+@005de71d [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
 @005de723 [ESP:-4](-4)  # PUSH 0x655539
 COPY (unique,0x87f00,4) = (const,0x655539,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -92,5 +95,5 @@ INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 12 instructions, 51 P-code ops
+# Summary: 13 instructions, 52 P-code ops
 # ============================================================================
