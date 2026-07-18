@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/WinDef.h"
 #include "system/basetsd.h"
 #include "system/crtdefs.h"
 #include "system/ddraw.h"
@@ -16,6 +15,7 @@
 #include "system/stdlib.h"
 #include "system/time.h"
 #include "system/vadefs.h"
+#include "system/windef.h"
 #include "system/winnls.h"
 #include "system/winnt.h"
 #include "types/classes/CDLLTextureCache.h"

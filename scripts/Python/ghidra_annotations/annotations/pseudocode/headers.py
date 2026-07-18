@@ -2508,6 +2508,11 @@ def generate_tridx7_win32_api_functions():
     lines.append("// KERNEL32 / USER32 API FUNCTIONS (tridx7.dll imports)")
     lines.append("// =============================================================================")
     lines.append("")
+    # winbase.h does not otherwise pull in the handle typedefs (HWND/HINSTANCE),
+    # so the standalone header-verify pass would fail. windef.h is #pragma once,
+    # so re-including it here is safe.
+    lines.append('#include "system/windef.h"')
+    lines.append("")
     lines.append("extern void ExitProcess(UINT uExitCode);")
     lines.append("extern UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault, LPCSTR lpFileName);")
     lines.append("extern int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);")

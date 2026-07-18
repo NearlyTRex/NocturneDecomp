@@ -8,7 +8,6 @@
 
 #include "system/crt.h"
 #include "system/basetypes.h"
-#include "system/WinDef.h"
 #include "system/basetsd.h"
 #include "system/crtdefs.h"
 #include "system/d3d.h"

@@ -109,6 +109,8 @@ typedef struct _OVERLAPPED {
 // KERNEL32 / USER32 API FUNCTIONS (tridx7.dll imports)
 // =============================================================================
 
+#include "system/windef.h"
+
 extern void ExitProcess(UINT uExitCode);
 extern UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault, LPCSTR lpFileName);
 extern int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);

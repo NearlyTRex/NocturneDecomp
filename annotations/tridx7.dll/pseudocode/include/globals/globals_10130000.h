@@ -2,9 +2,9 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/WinDef.h"
 #include "system/d3d.h"
 #include "system/ddraw.h"
+#include "system/windef.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SScreenVertex.h"
 

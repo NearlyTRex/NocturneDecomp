@@ -2,7 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/WinDef.h"
+#include "system/windef.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10230000
