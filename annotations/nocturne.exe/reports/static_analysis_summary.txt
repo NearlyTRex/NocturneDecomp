@@ -1,0 +1,51 @@
+====================================================================================================
+STATIC ANALYSIS SUMMARY
+====================================================================================================
+
+Results from running static analysis tools on decompiled pseudocode.
+Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with static analysis data: 527
+  Functions flagged by multiple tools: 1
+
+  Clang-Tidy (quick):
+    Files analyzed:      5
+    Files with findings: 5
+    Total diagnostics:   11
+
+  Cppcheck (quick):
+    Files analyzed:      523
+    Files with findings: 523
+    Total diagnostics:   2133
+
+====================================================================================================
+TOP FINDINGS - Clang-Tidy (quick)
+====================================================================================================
+
+  bugprone-integer-division                                   6  [likely decompiler artifact]
+  bugprone-swapped-arguments                                  4  [likely decompiler artifact]
+  cert-flp30-c                                                1
+
+====================================================================================================
+TOP FINDINGS - Cppcheck (quick)
+====================================================================================================
+
+  uninitvar                                                1199  [likely decompiler artifact]
+  objectIndex                                               425  [likely decompiler artifact]
+  legacyUninitvar                                           190
+  shiftTooManyBitsSigned                                    169
+  pointerOutOfBounds                                         57
+  arrayIndexOutOfBounds                                      32
+  selfAssignment                                             14
+  identicalInnerCondition                                     9
+  invalidPointerCast                                          8
+  shiftNegativeLHS                                            7
+  nullPointer                                                 5
+  integerOverflow                                             3
+  nullPointerArithmetic                                       3
+  nullPointerRedundantCheck                                   3
+  arrayIndexOutOfBoundsCond                                   2
