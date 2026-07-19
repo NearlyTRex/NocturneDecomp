@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 436,
     "complexity_score": 160,
@@ -310,6 +310,17 @@
     },
     "pcode_op_count": 1491
   },
+  "resolved_suspects": [
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FlyModeDepthBias`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 144,
+      "match": "g_TextureLodScale = 1.0 / (float)(((int)(float)iVar1 >> 1) + g_FlyModeDepthBias)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_TextureLodScale = 1.0 / (float)(((int)(float)iVar1 >> 1) + g_FlyModeDepthBias);",
+      "type": "fast_sqrt_inline"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

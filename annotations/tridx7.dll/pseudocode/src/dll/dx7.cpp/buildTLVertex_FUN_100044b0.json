@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 156,
+    "complexity_score": 106,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 106,
-    "suspect_count": 4,
-    "suspect_types": [
-      "bit_int_float_compare",
-      "signed_shift_global_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 376
   },
   "cross_references": [
@@ -244,6 +241,53 @@
     },
     "pcode_op_count": 1879
   },
+  "resolved_suspects": [
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 73,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)(iVar3 * g_LightingAlpha + (iVar3 * g_LightingAlpha >> 0x1f & 0xffU)) >> 8;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FlyModeDepthBias`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 100,
+      "match": "out->z = (float)(((int)local_8 >> 1) + g_FlyModeDepthBias) * g_TextureLodScale;",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out->z = (float)(((int)local_8 >> 1) + g_FlyModeDepthBias) * g_TextureLodScale;",
+      "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x43800000 is the IEEE 754 bit pattern of 256f. Rewrite in a .keep as a plain float compare against 256f.",
+      "line": 88,
+      "match": "0x43800000 < (int)local_8)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x43800000 < (int)local_8) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 95,
+      "match": "0x3f800000 < (int)out->z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)out->z) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 101,
+      "match": "0x3f800000 < (int)out->z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)out->z) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 12,
@@ -295,38 +339,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 73,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(int)(iVar3 * g_LightingAlpha + (iVar3 * g_LightingAlpha >> 0x1f & 0xffU)) >> 8;",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x43800000 is the IEEE 754 bit pattern of 256f. Rewrite in a .keep as a plain float compare against 256f.",
-      "line": 88,
-      "match": "0x43800000 < (int)local_8)",
-      "severity": "moderate",
-      "text": "if (0x43800000 < (int)local_8) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 95,
-      "match": "0x3f800000 < (int)out->z)",
-      "severity": "moderate",
-      "text": "if (0x3f800000 < (int)out->z) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 101,
-      "match": "0x3f800000 < (int)out->z)",
-      "severity": "moderate",
-      "text": "if (0x3f800000 < (int)out->z) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 233,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 88,
-    "suspect_count": 14,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 278
   },
   "cross_references": [
@@ -261,6 +259,134 @@
     },
     "pcode_op_count": 655
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)local_10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)local_10 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)local_10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)local_10 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(int *)((int)local_10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_10 + iVar6) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(uint *)((int)local_34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)local_34 + iVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)local_10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_10 + iVar7) = iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)local_34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)local_34 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)local_34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_34 + iVar6 + 4) = *puVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)local_20 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + iVar6) = *(uint *)((int)local_20 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + iVar6) = *(uint *)((int)local_20 + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + iVar7) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(CDLLTextureCache **)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(int *)((int)local_10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)((int)local_34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_34 + iVar6 + 4));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 68,
@@ -382,118 +508,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)local_10",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)local_10 + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)local_10",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)local_10 + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)local_10",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_10 + iVar6) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(uint *)((int)local_34",
-      "severity": "moderate",
-      "text": "uVar4 = *(uint *)((int)local_34 + iVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)local_10",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_10 + iVar7) = iVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)local_34",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)local_34 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(uint *)((int)local_34",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + iVar6 + 4) = *puVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "uVar4 = *(uint *)((int)local_20 + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + iVar6) = *(uint *)((int)local_20 + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + iVar6) = *(uint *)((int)local_20 + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + iVar7) = uVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(CDLLTextureCache **)((int)local_20",
-      "severity": "moderate",
-      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(int *)((int)local_10",
-      "severity": "moderate",
-      "text": "(*(CDLLTextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)local_34",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_34 + iVar6 + 4));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

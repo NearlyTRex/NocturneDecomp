@@ -10,27 +10,23 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
+  dll/dx7.cpp (1 remaining of 76)
+    - dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
+      Suspects: warning_noreturn, warning_noreturn, shadow_pointer_walk, unrolled_memset
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
-
-  [warning_noreturn] - 7 functions
-    dll_dx7.cpp_fatalError_FUN_10002340                                    (  7 lines)
-    dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60                             ( 15 lines)
-    dll_dx7.cpp_getMipLevelPtr_FUN_10003a30                                ( 16 lines)
-    dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0                        ( 20 lines)
-    dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90                          ( 21 lines)
-    dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10                           ( 24 lines)
-    dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130                           ( 45 lines)
-
-  [pointer_cast] - 1 functions
-    dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90                             ( 33 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
+  dll/dx7.cpp (98.7% complete)
+    1 functions remaining:
+      dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (79 lines)
+        Types: ['shadow_pointer_walk', 'unrolled_memset', 'warning_noreturn']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  dll/dx7.cpp                                                   56.6%  (43/76 clean, 33 remaining)

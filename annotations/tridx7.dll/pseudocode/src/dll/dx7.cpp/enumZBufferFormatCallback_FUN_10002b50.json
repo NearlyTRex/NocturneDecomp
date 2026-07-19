@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 108,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -84,6 +80,71 @@
     },
     "pcode_op_count": 141
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(DWORD *)((int)lp_context",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "lp_context = (DWORD *)((int)lp_context + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)lp_context",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(uint *)((int)lp_context + 0xc) < (lp_pixel_format->dwBitCount).dwRGBBitCount) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(DWORD *)((int)lp_context",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "lp_context = (DWORD *)((int)lp_context + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 11,
+      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10002b79, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 17,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10002b79: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10002b8e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10002b8e: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -107,62 +168,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(DWORD *)((int)lp_context",
-      "severity": "moderate",
-      "text": "lp_context = (DWORD *)((int)lp_context + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(uint *)((int)lp_context",
-      "severity": "moderate",
-      "text": "if (*(uint *)((int)lp_context + 0xc) < (lp_pixel_format->dwBitCount).dwRGBBitCount) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(DWORD *)((int)lp_context",
-      "severity": "moderate",
-      "text": "lp_context = (DWORD *)((int)lp_context + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 11,
-      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
-      "severity": "moderate",
-      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `lp_pixel_format` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&lp_pixel_format->owner`). Replace `lp_pixel_format->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "lp_pixel_format = (T *)&lp_pixel_format->FIELD",
-      "severity": "moderate",
-      "text": "lp_pixel_format = (DDPIXELFORMAT *)&lp_pixel_format->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10002b79, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 17,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10002b79: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10002b8e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 25,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10002b8e: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

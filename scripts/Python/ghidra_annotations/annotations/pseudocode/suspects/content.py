@@ -5679,16 +5679,39 @@ def identify_loop_clobbered_constant(decompiled_code):
 _FS_OPERAND = r"(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?"
 
 
+# The bias/magic addend.
+#
+# This used to be a hardcoded list of the globals seen in nocedit.exe, which
+# meant the detector silently missed the identical bit-trick in sibling
+# programs: tridx7.dll spells the same operation with `g_FlyModeDepthBias`
+# and went COMPLETELY unflagged, including one site whose function never
+# appeared in the suspect report at all. Match the *shape* instead and let
+# any identifier (or raw magic literal, e.g. 0x5f3759df) be the bias.
+#
+# This does not open the door to numeric halving of an int: Ghidra only emits
+# the `(int)` cast when it is converting *from* something else, so `(int)EXPR
+# >> 1` inside a `(float)(...)` is already the reinterpretation signature.
+_FS_BIAS = r"[A-Za-z_]\w*|0[xX][0-9a-fA-F]+|\d+"
+
+# Biases already identified as the sqrt / inverse-sqrt magic. Used only to
+# label a finding as a known-vs-new variant, NEVER to gate detection.
+_FS_KNOWN_BIASES = frozenset((
+    'g_FastSqrtMagic', 'INT_02d7a7b8',          # nocedit.exe / nocturne.exe
+    'g_FastInvSqrtMagic', 'g_LightAttenuationMax',
+    'g_FlyModeDepthBias',                        # tridx7.dll
+))
+
+
 # Numeric-cast emit (default Ghidra output):
 #   (float)(((int)EXPR >> 1) + g_FastSqrtMagic)
 #   (float)(g_FastInvSqrtMagic - ((int)EXPR >> 1))
 _FAST_SQRT_NUM_RE = re.compile(
     r"\(\s*float\s*\)\s*\(\s*\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*"
-    r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*\)")
+    r"\+\s*(" + _FS_BIAS + r")\s*\)")
 
 
 _FAST_INV_SQRT_NUM_RE = re.compile(
-    r"\(\s*float\s*\)\s*\(\s*(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
+    r"\(\s*float\s*\)\s*\(\s*(" + _FS_BIAS + r")\s*-\s*"
     r"\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*\)")
 
 
@@ -5699,12 +5722,12 @@ _FAST_INV_SQRT_NUM_RE = re.compile(
 _FAST_SQRT_BIT_RE = re.compile(
     r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
     r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*"
-    r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*;")
+    r"\+\s*(" + _FS_BIAS + r")\s*;")
 
 
 _FAST_INV_SQRT_BIT_RE = re.compile(
     r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
-    r"(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
+    r"(" + _FS_BIAS + r")\s*-\s*"
     r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*;")
 
 
@@ -5751,24 +5774,37 @@ def identify_fast_sqrt_inline(decompiled_code):
                 ('fast_inv_sqrt_inline', _FAST_INV_SQRT_NUM_RE, 'fastInvSqrt'),
                 ('fast_sqrt_inline', _FAST_SQRT_BIT_RE, 'fastSqrt'),
                 ('fast_inv_sqrt_inline', _FAST_INV_SQRT_BIT_RE, 'fastInvSqrt')):
-            if regex.search(line):
+            match = regex.search(line)
+            if match:
+                bias = match.group(1)
+                pretty = ("fast inverse sqrt"
+                          if kind == 'fast_inv_sqrt_inline' else "fast sqrt")
+                if bias in _FS_KNOWN_BIASES:
+                    # nocedit.exe / nocturne.exe expose named helpers for this.
+                    fix = ("Replace with `{helper}(<expr>)` in a .keep - the "
+                           "helper function exists in the binary "
+                           "({addr}).".format(
+                               helper=helper,
+                               addr=("FUN_0043e2a0"
+                                     if kind == 'fast_inv_sqrt_inline'
+                                     else "FUN_00431350")))
+                else:
+                    fix = ("Bias `{bias}` is not a known magic - this may be a "
+                           "sibling-program variant. Confirm against the .asm "
+                           "(SAR/ADD on the float's bits), then express it via "
+                           "a bit-cast helper in a .keep; no named helper is "
+                           "guaranteed to exist in this program.".format(
+                               bias=bias))
                 suspects.append({
                     'line': i + 1,
                     'type': kind,
                     'match': line.strip()[:80],
                     'text': line.strip()[:120],
                     'description': (
-                        "Inlined {pretty} bit-trick. Replace with "
-                        "`{helper}(<expr>)` in a .keep — the helper "
-                        "function exists in the binary "
-                        "({addr}).".format(
-                            pretty=("fast inverse sqrt"
-                                    if kind == 'fast_inv_sqrt_inline'
-                                    else "fast sqrt"),
-                            helper=helper,
-                            addr=("FUN_0043e2a0"
-                                  if kind == 'fast_inv_sqrt_inline'
-                                  else "FUN_00431350"))),
+                        "Inlined {pretty} bit-trick (bias `{bias}`). Ghidra's "
+                        "numeric `(int)` cast is wrong; the asm reinterprets "
+                        "the float's bit pattern. {fix}".format(
+                            pretty=pretty, bias=bias, fix=fix)),
                     'severity': 'moderate',
                 })
                 break  # at most one suspect per line

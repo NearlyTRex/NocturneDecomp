@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          76
   Unnamed functions (FUN_):          37 (48.7%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        16 (21.1%)
+  Functions with type issues:        2 ( 2.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      16
+    Undefined types in variables:      2
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   4 functions
+  Excluded (.keep / MMX / by-value):   18 functions
     Wrong calling convention:          0
-    Undefined types in variables:      4
+    Undefined types in variables:      18
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -118,7 +118,29 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (16)
+Undefined types in variables (2)
+--------------------------------------------------------------------------------
+
+  APIDLLsetColorTable16
+    Address: 0x10004b30  File: dll/dx7.cpp
+    Locals:  local_7c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLGetDisplayContext
+    Address: 0x10004d30  File: dll/dx7.cpp
+    Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+====================================================================================================
+EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
+====================================================================================================
+
+These functions have known decompiler limitations that are handled by
+manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
+passing patterns. Issues here are expected and not actionable.
+
+--------------------------------------------------------------------------------
+Undefined types - .keep overrides (18)
 --------------------------------------------------------------------------------
 
   initTextureCaches
@@ -131,14 +153,29 @@ Undefined types in variables (16)
     Locals:  local_c0 (undefined4), local_b8 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_88 (undefined4), local_80 (undefined4), local_7c (undefined4), local_58 (undefined4), local_50 (undefined4), local_4c (undefined4), local_28 (undefined4), local_20 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  uploadCurrentTexture
+    Address: 0x10003a80  File: dll/dx7.cpp
+    Locals:  local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_70 (undefined4), local_6c (undefined4), local_58 (undefined4), local_14 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
   createStagingTextures
     Address: 0x10003400  File: dll/dx7.cpp
     Locals:  local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_34 (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  createTexture
+    Address: 0x10002f60  File: dll/dx7.cpp
+    Locals:  local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_64 (undefined4), local_34 (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   APIDLLclearZBox
     Address: 0x10004ac0  File: dll/dx7.cpp
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  expandTextureAndBuildMips
+    Address: 0x10003830  File: dll/dx7.cpp
+    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   APIDLLdrawPolyList2
@@ -154,11 +191,6 @@ Undefined types in variables (16)
   APIDLLrestoreZBuffer
     Address: 0x10004e90  File: dll/dx7.cpp
     Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  APIDLLsetColorTable16
-    Address: 0x10004b30  File: dll/dx7.cpp
-    Locals:  local_7c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   APIDLLdrawPolyList
@@ -181,9 +213,9 @@ Undefined types in variables (16)
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  APIDLLGetDisplayContext
-    Address: 0x10004d30  File: dll/dx7.cpp
-    Locals:  local_4 (undefined4)
+  APIDLLInformation
+    Address: 0x100019a0  File: dll/dx7.cpp
+    Params:  local_res0 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   copyMipTo32Bit
@@ -199,38 +231,6 @@ Undefined types in variables (16)
   isAdapter3DCapable
     Address: 0x10001900  File: dll/dx7.cpp
     Locals:  local_2fc (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-====================================================================================================
-EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
-====================================================================================================
-
-These functions have known decompiler limitations that are handled by
-manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
-passing patterns. Issues here are expected and not actionable.
-
---------------------------------------------------------------------------------
-Undefined types - .keep overrides (4)
---------------------------------------------------------------------------------
-
-  uploadCurrentTexture
-    Address: 0x10003a80  File: dll/dx7.cpp
-    Locals:  local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_70 (undefined4), local_6c (undefined4), local_58 (undefined4), local_14 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  createTexture
-    Address: 0x10002f60  File: dll/dx7.cpp
-    Locals:  local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_64 (undefined4), local_34 (undefined), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  expandTextureAndBuildMips
-    Address: 0x10003830  File: dll/dx7.cpp
-    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  APIDLLInformation
-    Address: 0x100019a0  File: dll/dx7.cpp
-    Params:  local_res0 (undefined)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

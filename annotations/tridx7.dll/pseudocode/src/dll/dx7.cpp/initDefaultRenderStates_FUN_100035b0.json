@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 88,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 63,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 290
   },
   "cross_references": [
@@ -169,19 +167,12 @@
     },
     "pcode_op_count": 949
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Watcom inline memset (REP STOSD at 100035bd, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 6,
       "match": "STOSD.REP",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 100035bd: STOSD.REP ES:EDI  ; g_RenderStateValueCache | g_RenderStateValueCache[1]",
       "type": "unrolled_memset"
@@ -190,9 +181,19 @@
       "description": "Watcom inline memset (REP STOSD at 100035c9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 9,
       "match": "STOSD.REP",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 100035c9: STOSD.REP ES:EDI  ; g_RenderStateKeyCache | g_RenderStateKeyCache[1]",
       "type": "unrolled_memset"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

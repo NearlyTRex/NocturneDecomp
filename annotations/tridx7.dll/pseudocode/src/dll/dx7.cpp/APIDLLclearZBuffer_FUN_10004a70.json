@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 63,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 41
   },
   "cross_references": [],
@@ -79,6 +75,35 @@
     },
     "pcode_op_count": 87
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(DDBLTFX *)((int)pDVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pDVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)pDVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10004a7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 7,
+      "match": "STOSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10004a7f: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 104,
     "local_size": 104,
@@ -102,30 +127,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(DDBLTFX *)((int)pDVar1",
-      "severity": "moderate",
-      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `pDVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
-      "match": "(int)pDVar1",
-      "severity": "moderate",
-      "text": "pDVar1 = (DDBLTFX *)((int)pDVar1 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom inline memset (REP STOSD at 10004a7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 7,
-      "match": "STOSD.REP",
-      "severity": "moderate",
-      "text": "// 10004a7f: STOSD.REP ES:EDI",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }

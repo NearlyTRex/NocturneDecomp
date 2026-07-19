@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 49,
+    "complexity_score": 24,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 61
   },
   "cross_references": [
@@ -120,19 +118,12 @@
     },
     "pcode_op_count": 122
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 15,
       "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar1 = g_ScreenHeight; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
@@ -141,9 +132,19 @@
       "description": "Watcom inline memcpy (REP MOVSD at 10002c78, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 18,
       "match": "MOVSD.REP",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 10002c78: MOVSD.REP ES:EDI,ESI  ; g_ScanlinePointers | g_ScanlinePointers[1]",
       "type": "unrolled_memcpy"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

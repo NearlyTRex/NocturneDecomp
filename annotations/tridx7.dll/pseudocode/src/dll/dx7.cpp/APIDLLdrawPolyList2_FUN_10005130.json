@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_noreturn"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 159
   },
   "cross_references": [],
@@ -141,6 +139,17 @@
     },
     "pcode_op_count": 648
   },
+  "resolved_suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 39,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 20,
@@ -206,14 +215,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 39,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    }
-  ]
+  "suspects": []
 }
