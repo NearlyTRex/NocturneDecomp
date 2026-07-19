@@ -17,6 +17,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+// The process-wide window, created by the CreateWindowExA shim (user32.cpp).
+extern SDL_Window *g_sdlWindow;
+
 namespace {
 
 struct GLPresentState {
@@ -143,6 +146,21 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
 
 extern "C" int nocturne_gl_is_active(void) {
     return g_gl.active ? 1 : 0;
+}
+
+extern "C" int nocturne_gl_ensure_active(void) {
+    // The renderer DLL's APIDLLinit runs during startup, well before the engine
+    // sets a display mode — so the context ddraw.cpp's SetDisplayMode would have
+    // created does not exist yet, and every DirectDrawCreate in the DLL fails.
+    // On Windows that ordering is fine: DirectDraw is available from process
+    // start. Here the GL context IS our DirectDraw, so bring it up on first use.
+    //
+    // The window is already up by then (nocedit creates it before loading the
+    // renderer), and the HWND the engine passes around IS the SDL_Window, so
+    // there is exactly one window to attach to.
+    if (g_gl.active) return 1;
+    if (g_sdlWindow == nullptr) return 0;
+    return nocturne_gl_init(g_sdlWindow);
 }
 
 extern "C" void nocturne_gl_set_logical_size(int width, int height) {
@@ -281,6 +299,7 @@ extern "C" void nocturne_gl_shutdown(void) {
 
 extern "C" int  nocturne_gl_init(SDL_Window *w) { (void)w; return 0; }
 extern "C" int  nocturne_gl_is_active(void) { return 0; }
+extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
 extern "C" void nocturne_gl_swap_only(void) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
 extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int pitch, int bpp) {

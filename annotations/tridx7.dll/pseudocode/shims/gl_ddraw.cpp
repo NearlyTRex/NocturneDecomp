@@ -1355,7 +1355,9 @@ HRESULT DirectDrawCreate(GUID *guid, LPDIRECTDRAW *out, IUnknown *outer) {
     (void)guid; (void)outer;
     if (out == nullptr) return DDERR_INVALIDPARAMS;
 
-    if (!nocturne_gl_is_active()) {
+    // Reached from APIDLLinit during startup, before the engine sets a display
+    // mode — so the context may not be up yet. Bring it up rather than refusing.
+    if (!nocturne_gl_ensure_active()) {
         DDRAW_LOG("gl_ddraw: DirectDrawCreate with no GL context — refusing");
         return DDERR_GENERIC;
     }
@@ -1375,11 +1377,11 @@ HRESULT DirectDrawEnumerateExA(DDENUMCALLBACKEXA *callback, void *context, DWORD
     (void)flags;
     if (callback == nullptr) return DDERR_INVALIDPARAMS;
 
-    // Enumeration runs before DirectDrawCreate, so this is the one entry point
-    // that can be reached with no GL context up (NOCTURNE_GL_PRESENT=0, or a
-    // failed context). The gl table would be all-null — report no adapters
-    // rather than calling through it.
-    if (!nocturne_gl_is_active()) {
+    // Enumeration runs before DirectDrawCreate, so this is the first entry point
+    // that needs the context up. If it cannot be brought up at all
+    // (NOCTURNE_GL_PRESENT=0, no window, or a failed context) the gl table is
+    // all-null — report no adapters rather than calling through it.
+    if (!nocturne_gl_ensure_active()) {
         DDRAW_LOG("gl_ddraw: DirectDrawEnumerateExA with no GL context — no adapters");
         return DD_OK;
     }

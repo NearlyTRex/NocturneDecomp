@@ -88,6 +88,7 @@ struct DDraw_ShimData {
     IDirectDraw_vtable vtable_data;
     ULONG ref_count;
     SDL_Window* window;
+    int owns_window;
     SDL_Renderer* renderer;
     HWND cooperative_hwnd;
     DWORD cooperative_level;
@@ -132,7 +133,10 @@ static ULONG ddraw_Release(IDirectDraw* this_ptr) {
     DDraw_ShimData* shim = reinterpret_cast<DDraw_ShimData*>(this_ptr);
     if (--shim->ref_count == 0) {
         if (shim->renderer) SDL_DestroyRenderer(shim->renderer);
-        if (shim->window) SDL_DestroyWindow(shim->window);
+        if (shim->window && shim->owns_window) {
+            if (g_sdlWindow == shim->window) g_sdlWindow = nullptr;
+            SDL_DestroyWindow(shim->window);
+        }
         if (g_ddraw_shim == shim) g_ddraw_shim = nullptr;
         free(shim);
         return 0;
@@ -417,12 +421,14 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     if (!ddraw->window) {
         if (g_sdlWindow) {
             ddraw->window = g_sdlWindow;
+            ddraw->owns_window = 0;
         } else {
             Uint32 flags = SDL_WINDOW_HIDDEN;
             ddraw->window = SDL_CreateWindow("Nocturne",
                                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                               win_w, win_h, flags);
             if (!ddraw->window) return DDERR_GENERIC;
+            ddraw->owns_window = 1;
         }
         SDL_SetWindowSize(ddraw->window, win_w, win_h);
 

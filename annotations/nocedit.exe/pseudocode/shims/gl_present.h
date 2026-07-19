@@ -38,6 +38,13 @@ int nocturne_gl_init(struct SDL_Window *window);
 // the GL present path and the legacy SDL_Renderer one.
 int nocturne_gl_is_active(void);
 
+// Same as nocturne_gl_is_active, but brings the context up against the process
+// window if it is not running yet. For call sites that can be reached before
+// the engine sets a display mode — notably the renderer DLL's DirectDrawCreate,
+// which runs from APIDLLinit during startup. Returns 0 if GL is disabled or no
+// window exists yet, in which case the caller must still fall back.
+int nocturne_gl_ensure_active(void);
+
 // The game's native render resolution (e.g. 640x480). The presented quad is
 // integer-scaled to the largest whole multiple that fits the window and
 // centered, matching what SDL_RenderSetLogicalSize + integer scale did.

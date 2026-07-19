@@ -70,7 +70,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80();
   wincore_winrun_cpp_initJoystick_FUN_005f4310();
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
   g_UseDirect3D = 0;
+#endif
   iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   if (iVar9 == 0) {
     g_CurrentFilename = "..\\core\\main.c";
