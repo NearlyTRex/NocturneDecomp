@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 76
-Clean functions: 75 (98.7%)
-Functions with suspects: 1 (1.3%)
+Clean functions: 76 (100.0%)
+Functions with suspects: 0 (0.0%)
 
-Total suspect patterns: 4
-Average suspects per function: 0.05
+Total suspect patterns: 0
+Average suspects per function: 0.00
 
-Virtual files: 1 total, 0 at 100%, 1 at 90%+
+Virtual files: 1 total, 1 at 100%, 1 at 90%+
 
 Pseudocode lines:
   Min: 5, Max: 299, Average: 42.7
 
-Average complexity score: 43.4
+Average complexity score: 42.7
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,9 +28,6 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  warning_noreturn          2
-  shadow_pointer_walk       1
-  unrolled_memset           1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -84,7 +81,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   10001020: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 (32 lines)
   10003d90: dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90 (33 lines)
   100052e0: dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0 (33 lines)
-  ... and 25 more
+  ... and 26 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -92,7 +89,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   10001d70: dll_dx7.cpp_checkD3DResult_FUN_10001d70 (score: 248, suspects: 0, lines: 248)
   10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80 (score: 186, suspects: 0, lines: 186)
   10003f10: dll_dx7.cpp_applyRenderState_FUN_10003f10 (score: 160, suspects: 0, lines: 160)
-  10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (score: 134, suspects: 4, lines: 79)
   100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (score: 119, suspects: 0, lines: 119)
   100044b0: dll_dx7.cpp_buildTLVertex_FUN_100044b0 (score: 106, suspects: 0, lines: 106)
   10003830: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (score: 102, suspects: 0, lines: 102)
@@ -101,6 +97,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400 (score: 98, suspects: 0, lines: 98)
   10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (score: 98, suspects: 0, lines: 98)
   10001200: dll_dx7.cpp_initTextureCaches_FUN_10001200 (score: 88, suspects: 0, lines: 88)
+  10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (score: 79, suspects: 0, lines: 79)
   100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (score: 75, suspects: 0, lines: 75)
   10002f60: dll_dx7.cpp_createTexture_FUN_10002f60 (score: 66, suspects: 0, lines: 66)
   100035b0: dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0 (score: 63, suspects: 0, lines: 63)
@@ -121,12 +118,3 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
-
-  warning_noreturn (1 functions):
-    10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
-
-  shadow_pointer_walk (1 functions):
-    10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
-
-  unrolled_memset (1 functions):
-    10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30

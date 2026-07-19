@@ -2,30 +2,19 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "return_type_error",
-        "column": 1,
-        "line": 89,
-        "message": "non-void function does not return a value in all control paths [-Wreturn-type]"
-      }
-    ]
+    "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 134,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 79,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memset",
-      "warning_noreturn"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 252
   },
   "cross_references": [],
@@ -201,6 +190,44 @@
     },
     "pcode_op_count": 925
   },
+  "resolved_suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 77,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 80,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar7->owner`). Replace `pDVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pDVar7 = (T *)&pDVar7->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar7 = (DDSURFACEDESC2 *)&pDVar7->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10004b5d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 16,
+      "match": "STOSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10004b5d: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 136,
     "local_size": 128,
@@ -252,38 +279,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 77,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 80,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pDVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar7->owner`). Replace `pDVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 21,
-      "match": "pDVar7 = (T *)&pDVar7->FIELD",
-      "severity": "moderate",
-      "text": "pDVar7 = (DDSURFACEDESC2 *)&pDVar7->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memset (REP STOSD at 10004b5d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 16,
-      "match": "STOSD.REP",
-      "severity": "moderate",
-      "text": "// 10004b5d: STOSD.REP ES:EDI",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }
