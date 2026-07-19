@@ -23,4 +23,5 @@ uint * __cdecl dll_dx7_cpp_getMipLevelPtr_FUN_10003a30(int mip_size)
     iVar1 = iVar1 / 2;
   } while (iVar1 != 0);
   dll_dx7_cpp_fatalError_FUN_10002340("Can't get source size");
+  return (uint *)0x0;
 }

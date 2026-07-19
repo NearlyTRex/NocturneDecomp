@@ -79,7 +79,55 @@ FetchContent_Declare(sdl2_ttf
     GIT_SHALLOW    TRUE)
 
 message(STATUS "bundledlibs: fetching SDL2 ${NOCTURNE_SDL2_TAG} + SDL2_ttf ${NOCTURNE_SDL2TTF_TAG} for ${_noc_multiarch} (first configure clones + builds; cached after)")
+
+# SDL_ttf's vendored freetype still opens with cmake_minimum_required(VERSION 3.0).
+# That is a declaration about *freetype's* compatibility floor, not about the CMake
+# we run: declaring 3.0 asks CMake to set every policy in that subtree to its
+# 2014-era OLD behavior, and it is that emulation which is going away. Hence a
+# deprecation warning on every configure from CMake 3.27 onward.
+#
+# We cannot fix it at the source — FetchContent re-clones the tree, so an in-place
+# patch is undone by the next clean build. Upstream freetype master has since moved
+# to `cmake_minimum_required(VERSION 3.12...3.31.0)`, but SDL_ttf still pins the old
+# submodule commit: release-2.24.0 points at the same freetype (12c5e620) as the
+# 2.22.0 we build, so bumping the tag would not help. Revisit when a later SDL_ttf
+# updates external/freetype.
+#
+# Two separate things are needed, because they solve different problems:
+#
+#   CMAKE_WARN_DEPRECATED=OFF   silences the diagnostic. Cosmetic only.
+#   CMAKE_POLICY_VERSION_MINIMUM  raises the floor CMake actually applies. This is
+#                               load-bearing on CMake >= 4.0, where support for
+#                               declared minimums below 3.5 was *removed* and the
+#                               warning became a hard configure error — at which
+#                               point suppressing warnings saves nothing.
+#
+# The variable arrived in CMake 3.31, so set it only where it exists; on older
+# CMake the low floor is still honored and the suppression above is enough.
+if(DEFINED CMAKE_WARN_DEPRECATED)
+    set(_noc_warn_deprecated_saved "${CMAKE_WARN_DEPRECATED}")
+    set(_noc_warn_deprecated_was_set TRUE)
+else()
+    set(_noc_warn_deprecated_was_set FALSE)
+endif()
+set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE)
+
+set(_noc_policy_min_applied FALSE)
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.31" AND NOT DEFINED CMAKE_POLICY_VERSION_MINIMUM)
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+    set(_noc_policy_min_applied TRUE)
+endif()
+
 FetchContent_MakeAvailable(sdl2 sdl2_ttf)
+
+if(_noc_policy_min_applied)
+    unset(CMAKE_POLICY_VERSION_MINIMUM)
+endif()
+if(_noc_warn_deprecated_was_set)
+    set(CMAKE_WARN_DEPRECATED "${_noc_warn_deprecated_saved}" CACHE BOOL "" FORCE)
+else()
+    unset(CMAKE_WARN_DEPRECATED CACHE)
+endif()
 
 # ----------------------------------------------------------------------------
 # Runtime dlopen compat shim.

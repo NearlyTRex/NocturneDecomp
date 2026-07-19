@@ -36,11 +36,20 @@ typedef struct NocturneBuiltinExport {
     void       *proc;   // address of the compiled-in implementation
 } NocturneBuiltinExport;
 
+// Returns a module's export table and its length.
+//
+// Indirection rather than a plain array, because a renderer's export table has
+// to be built where that program's headers are visible: taking the address of
+// APIDLLinit needs its real prototype, and the renderer's type tree cannot be
+// included here (its system/ddraw.h collides with the exe's). So each built-in
+// DLL defines its own table next to its own sources and exposes it through one
+// of these; this file just holds the name -> provider mapping.
+typedef const NocturneBuiltinExport *(*NocturneBuiltinExportProvider)(int *count);
+
 // One built-in module, keyed by the DLL name the game passes to LoadLibraryA.
 typedef struct NocturneBuiltinModule {
-    const char                  *dll_name;      // matched case-insensitively
-    const NocturneBuiltinExport *exports;
-    int                          export_count;
+    const char                    *dll_name;   // matched case-insensitively
+    NocturneBuiltinExportProvider  exports;
 } NocturneBuiltinModule;
 
 // Non-zero if `dll_name` has a compiled-in implementation registered.

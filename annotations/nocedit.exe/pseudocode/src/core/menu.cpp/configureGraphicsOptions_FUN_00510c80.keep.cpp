@@ -392,9 +392,47 @@ LAB_0051164c:
       }
       break;
     case 2:
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
       g_GraphicsCardCount = 0;
       g_UseDirect3D = 0;
       iVar3 = g_GraphicsCardCount;
+#else
+      // The shipped editor hardcodes both of these to 0 here, so the
+      // Acceleration line can only ever turn acceleration *off* — the third
+      // kill alongside the per-frame clobber and the Ctrl+D one. Make it the
+      // real toggle the retail build had.
+      if (g_UseDirect3D == 0) {
+        // Selecting a renderer this build cannot load would fail immediately,
+        // so snap to an available one first. Which those are comes from the
+        // built-in module registry; no DLL is named here.
+        if (nocturne_builtin_dll_available(g_RendererDllPath) == 0) {
+          pcVar14 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
+          if (pcVar14 != (char *)0x0) {
+            strcpy(g_RendererDllPath,pcVar14);
+          }
+        }
+        g_UseDirect3D = 1;
+        wincore_windll_cpp_kill_FUN_005b71e0();
+        wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
+      }
+      else {
+        g_UseDirect3D = 0;
+        wincore_windll_cpp_kill_FUN_005b71e0();
+      }
+      // loadExternalRenderer clears g_UseDirect3D if the load or validate
+      // failed, so re-read it rather than assuming the toggle stuck.
+      if (g_UseDirect3D == 0) {
+        g_GraphicsCardCount = 0;
+      }
+      else {
+        wincore_windll_cpp_buildCardList_FUN_005b7db0
+                  (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
+                   g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
+        wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
+      }
+      iVar3 = g_GraphicsCardCount;
+      iVar6 = g_CurrentGraphicsBoard;
+#endif
       break;
     case 3:
       if (g_GraphicsCardVendorIDs[g_CurrentGraphicsBoard] != 0x121a) {

@@ -375,7 +375,28 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
          (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetFog");
+    // This gate is all-or-nothing: any one of the 60 probed "APIDLL*" names
+    // coming back null sets g_DLLFunctionsMissing, and the renderer is then
+    // never initialised. No shipped renderer DLL can satisfy it — tridx7,
+    // tridx6 and tri3dfx export 37 entry points, trid3d exports 35 — because
+    // nocedit.exe was built against a newer renderer ABI that is not present in
+    // the game directory. (nocturne.exe references exactly tridx7's 37 and
+    // matches it perfectly, so the shipped pairing is retail-exe + tridx7.)
+    // The practical effect is that editor hardware acceleration can never
+    // initialise, whatever the Graphics Options menu is set to.
+    //
+    // Every call site of the missing entry points already null-checks its
+    // pointer and takes a fallback path — `if (g_APIDLL_lockTexture == 0)
+    // return;`, `if (g_UseExternalRenderer == 0) ...`, and so on — so the
+    // engine tolerates a partial DLL by design. It is only this loader-side
+    // check that does not. Proceeding on a partial table is therefore safe:
+    // the renderer runs with the entry points it does export, and the rest
+    // stay null and unreached.
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
     if (g_DLLFunctionsMissing == 0) {
+#else
+    if (g_APIDLL_init != (APIDLL_init *)0x0) {
+#endif
       g_LoadedExternalDLLRenderer = 1;
       memset(&CStack_9c,0,sizeof(CExternalRendererBridge));
       CStack_9c.red_bit_position = (int *)&g_RedBitPosition;

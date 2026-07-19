@@ -13,22 +13,13 @@
 #include <strings.h>
 
 // -----------------------------------------------------------------------------
-// tridx7.dll — DirectX 7 DDraw + D3D renderer
+// Export-table providers
 // -----------------------------------------------------------------------------
-// 37 "APIDLL*" entry points (see tridx7.dll_apidll_signatures.txt). The rows go
-// in as each function is hooked up; the game tolerates a partial table the same
-// way it tolerates a DLL missing exports — loadExternalRenderer's validate pass
-// sets g_DLLFunctionsMissing and clears g_UseDirect3D.
-//
-// A row is:  { "APIDLLinit", (void *)tridx7_dll_APIDLLinit_FUN_10001a80 },
+// Each built-in DLL builds its own "APIDLL*" table beside its own sources, where
+// that program's prototypes are visible, and hands it over through one of these.
+// See annotations/tridx7.dll/pseudocode/shims/apidll_exports.cpp.
 
-static const NocturneBuiltinExport g_Tridx7Exports[] = {
-    // --- hookup pending ---
-    { NULL, NULL }  // terminator; keeps the array valid while empty
-};
-
-#define NOCTURNE_TRIDX7_EXPORT_COUNT \
-    ((int)(sizeof(g_Tridx7Exports) / sizeof(g_Tridx7Exports[0])) - 1)
+extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count);
 
 // -----------------------------------------------------------------------------
 // Registry
@@ -36,10 +27,10 @@ static const NocturneBuiltinExport g_Tridx7Exports[] = {
 // Order here is the order the Graphics Options 3D-API selector cycles through.
 
 static const NocturneBuiltinModule g_BuiltinModules[] = {
-    { "tridx7.dll", g_Tridx7Exports, NOCTURNE_TRIDX7_EXPORT_COUNT },
-    // { "tridx6.dll", g_Tridx6Exports, NOCTURNE_TRIDX6_EXPORT_COUNT },
-    // { "trid3d.dll", g_Trid3dExports, NOCTURNE_TRID3D_EXPORT_COUNT },
-    // { "tri3dfx.dll", g_Tri3dfxExports, NOCTURNE_TRI3DFX_EXPORT_COUNT },
+    { "tridx7.dll", nocturne_tridx7_exports },
+    // { "tridx6.dll", nocturne_tridx6_exports },
+    // { "trid3d.dll", nocturne_trid3d_exports },
+    // { "tri3dfx.dll", nocturne_tri3dfx_exports },
 };
 
 static const int g_BuiltinModuleCount =
@@ -116,15 +107,21 @@ extern "C" int nocturne_builtin_dll_is_handle(void *handle) {
 
 extern "C" void *nocturne_builtin_dll_sym(void *handle, const char *proc_name) {
     const NocturneBuiltinModule *module = (const NocturneBuiltinModule *)handle;
+    const NocturneBuiltinExport *exports;
+    int count = 0;
     int i;
-    if (!nocturne_builtin_dll_is_handle(handle) || !proc_name) {
+    if (!nocturne_builtin_dll_is_handle(handle) || !proc_name ||
+        module->exports == NULL) {
         return NULL;
     }
-    for (i = 0; i < module->export_count; i++) {
+    exports = module->exports(&count);
+    if (exports == NULL) {
+        return NULL;
+    }
+    for (i = 0; i < count; i++) {
         // Export names are case-sensitive, as with a real PE export table.
-        if (module->exports[i].name &&
-            strcmp(module->exports[i].name, proc_name) == 0) {
-            return module->exports[i].proc;
+        if (exports[i].name && strcmp(exports[i].name, proc_name) == 0) {
+            return exports[i].proc;
         }
     }
     return NULL;

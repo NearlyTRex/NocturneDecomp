@@ -204,4 +204,5 @@ code_r0x10002993:
   strcpy(g_ErrorMessageBuffer,pcVar7);
   MessageBoxA((HWND)0x0,g_ErrorMessageBuffer,"3D Adapter Error",0x10);
   ExitProcess(0x29a);
+  return 0;
 }

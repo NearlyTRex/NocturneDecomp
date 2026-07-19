@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 74
-  Total suspicious global references: 123
+  Functions with suspicious globals: 75
+  Total suspicious global references: 124
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 40 (these need manual review)
+  .keep files with issues: 41 (these need manual review)
   Raw .cpp files with issues: 34
 
 ====================================================================================================
@@ -474,6 +474,14 @@ wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.keep]  (1 suspicious global
 
   g_TextureCacheInstance
     Used at lines: 18, 21, 22
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_loadExternalRenderer_FUN_005b6750  [.keep]  (1 suspicious globals)
+  File: wincore/windll.cpp
+
+  g_UseExternalRenderer
+    Used at lines: 390
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
