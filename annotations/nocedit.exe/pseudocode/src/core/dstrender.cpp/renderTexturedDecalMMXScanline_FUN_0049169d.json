@@ -144,7 +144,7 @@
     {
       "addr": "02d03e80",
       "name": "g_CurrentTextureData",
-      "type": "void*",
+      "type": "uchar*",
       "value": null
     }
   ],
@@ -244,15 +244,6 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
       "type": "pointer_truncation"
     }
   ],

@@ -1,56 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 29,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 29,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 34,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 34,
-        "message": "expected expression"
-      },
-      {
-        "category": "pointer_type",
-        "column": 19,
-        "line": 55,
-        "message": "comparison of distinct pointer types ('STextureSurfaceSlot *' and 'uchar **' (aka 'unsigned char **'))"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 182,
+    "complexity_score": 52,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unresolved_funcptr",
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 119
   },
   "cross_references": [
@@ -220,19 +184,12 @@
     },
     "pcode_op_count": 224
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(int **)((int)g_StagingTextureInterfaces",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = *(int **)((int)g_StagingTextureInterfaces[0] + iVar2);",
       "type": "pointer_cast"
@@ -241,6 +198,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 22,
       "match": "code *",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
       "type": "unresolved_funcptr"
@@ -249,6 +207,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)g_StagingTextureInterfaces",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_StagingTextureInterfaces[0] + iVar2) = 0;",
       "type": "pointer_cast"
@@ -257,6 +216,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int **)((int)g_StagingTextures",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);",
       "type": "pointer_cast"
@@ -265,6 +225,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 27,
       "match": "code *",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
       "type": "unresolved_funcptr"
@@ -273,6 +234,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)g_StagingTextures",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_StagingTextures[0] + iVar2) = 0;",
       "type": "pointer_cast"
@@ -281,6 +243,7 @@
       "description": "Pointer value `g_StagingTextureInterfaces[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 20,
       "match": "(int)g_StagingTextureInterfaces[0]",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = *(int **)((int)g_StagingTextureInterfaces[0] + iVar2);",
       "type": "pointer_truncation"
@@ -289,6 +252,7 @@
       "description": "Pointer value `g_StagingTextureInterfaces[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
       "match": "(int)g_StagingTextureInterfaces[0]",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_StagingTextureInterfaces[0] + iVar2) = 0;",
       "type": "pointer_truncation"
@@ -297,6 +261,7 @@
       "description": "Pointer value `g_StagingTextures[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 25,
       "match": "(int)g_StagingTextures[0]",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);",
       "type": "pointer_truncation"
@@ -305,6 +270,7 @@
       "description": "Pointer value `g_StagingTextures[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 28,
       "match": "(int)g_StagingTextures[0]",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_StagingTextures[0] + iVar2) = 0;",
       "type": "pointer_truncation"
@@ -313,9 +279,19 @@
       "description": "Watcom inline memset (REP STOSD at 10002f30, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 63,
       "match": "STOSD.REP",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 10002f30: STOSD.REP ES:EDI  ; g_TextureSurfaces | g_TextureSurfaces[0].surface",
       "type": "unrolled_memset"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

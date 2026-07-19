@@ -20,7 +20,7 @@ void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
       (*((this_ptr_00->base).vtable)->process)(&this_ptr_00->base);
     }
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != g_BloodParticles + 256);
+  } while (this_ptr_00 != g_BloodParticles + sizeof(g_BloodParticles) / sizeof(g_BloodParticles[0]));
   iVar1 = 0;
   if (0 < g_BloodSplatCount) {
     this_ptr_02 = g_BloodSplats;

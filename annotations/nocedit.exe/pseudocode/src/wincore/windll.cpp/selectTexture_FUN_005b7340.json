@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_selectTexture_FUN_005b7340",
-    "signature": "int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,byte *palette_data)"
+    "signature": "int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)"
   },
   "function_calls": [],
   "globals": [
@@ -48,13 +48,13 @@
     {
       "addr": "02d03e80",
       "name": "g_CurrentTextureData",
-      "type": "void*",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "02d03e84",
       "name": "g_CurrentTextureOpacityData",
-      "type": "void*",
+      "type": "uchar*",
       "value": null
     },
     {
@@ -135,7 +135,7 @@
         "name": "palette_data",
         "offset": 8,
         "size": 4,
-        "type": "byte *"
+        "type": "SRGBColorPalette *"
       }
     ]
   },

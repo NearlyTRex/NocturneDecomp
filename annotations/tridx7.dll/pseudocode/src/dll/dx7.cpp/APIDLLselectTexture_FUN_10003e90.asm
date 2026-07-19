@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)
+; int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ; int              Stack[0x8]:4   texture_dimension
-; void *           Stack[0xc]:4   texture_data
-; void *           Stack[0x10]:4   palette_data
-; void *           Stack[0x14]:4   opacity_data
+; uchar *          Stack[0xc]:4   texture_data
+; uchar *          Stack[0x10]:4   palette_data
+; uchar *          Stack[0x14]:4   opacity_data
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureIndex = 0x0

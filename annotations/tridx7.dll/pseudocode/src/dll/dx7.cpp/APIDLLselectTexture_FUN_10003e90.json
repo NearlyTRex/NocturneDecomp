@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 13,
-        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 14,
-        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 15,
-        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
@@ -47,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90",
-    "signature": "int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)"
+    "signature": "int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)"
   },
   "function_calls": [
     {
@@ -137,21 +118,21 @@
         "name": "texture_data",
         "offset": 12,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
         "name": "palette_data",
         "offset": 16,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
         "name": "opacity_data",
         "offset": 20,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       }
     ]
   },

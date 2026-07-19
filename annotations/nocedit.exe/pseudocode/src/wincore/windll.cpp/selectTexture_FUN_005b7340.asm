@@ -1,19 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,byte *palette_data)
+; int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   tex
-; byte *           Stack[0x8]:4   palette_data
+; SRGBColorPalette * Stack[0x8]:4   palette_data
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 at 005dd887
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureDimension = 0x100
-;   void* g_CurrentTextureData
-;   void* g_CurrentTextureOpacityData
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   int g_UseExternalRenderer
 ;   APIDLL_selectTexture* g_APIDLL_selectTexture
 ;

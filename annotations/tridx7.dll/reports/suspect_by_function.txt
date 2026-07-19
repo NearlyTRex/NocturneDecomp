@@ -5,37 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 76
-Clean: 35 (46.1%)
-With suspects: 41
-Total suspects: 351
-
-====================================================================================================
-dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (23 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 10 [unrolled_memset]: // 100019ba: STOSD.REP ES:EDI
-  Line 13 [stack_param]: HINSTANCE in_stack_00001ecc;
-  Line 14 [stack_param]: uint *in_stack_00001ed0;
-  Line 19 [stack_ref]: puVar6 = (uint *)&stack0x00000100;
-  Line 20 [unrolled_memcpy]: for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 26 [unrolled_strlen]: do {
-  Line 36 [stack_ref]: pcVar7 = &stack0x00000200;
-  Line 37 [unrolled_memcpy]: for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 42 [unrolled_memcpy]: for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 47 [stack_param]: LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);
-  Line 47 [stack_ref]: LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);
-  Line 49 [unresolved_register]: pcVar5 = (char *)register0x00000010;
-  Line 50 [unrolled_strlen]: do {
-  Line 55 [unrolled_memcpy]: // 10001a6b: MOVSD.REP ES:EDI,ESI
-  Line 60 [stack_ref]: pcVar7 = &stack0x00000100;
-  Line 61 [unrolled_memcpy]: for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 66 [unrolled_memcpy]: for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 71 [stack_ref]: puVar6 = (uint *)&stack0x00000100;
-  Line 72 [unrolled_memcpy]: for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 73 [stack_param]: *in_stack_00001ed0 = *puVar6;
-  Line 75 [stack_param]: in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;
-  Line 75 [stack_param]: in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;
-  Line 80 [static_uninitvar]: *in_stack_00001ed0 = *puVar6;
+Clean: 42 (55.3%)
+With suspects: 34
+Total suspects: 217
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0 (4 suspects)
@@ -94,34 +66,6 @@ dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00 (1 suspect)
   Line 44 [warning_noreturn]: /* WARNING: Subroutine does not return */
 
 ====================================================================================================
-dll_dx7.cpp_APIDLLinit_FUN_10001a80 (23 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: HVar3 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar8),&g_DirectDraw,(IUnknown *)0x0
-  Line 37 [pointer_truncation]: HVar3 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar8),&g_DirectDraw,(IUnknown *)0x0
-  Line 44 [unrolled_memset]: // 10001b03: STOSD.REP ES:EDI
-  Line 48 [unrolled_memcpy]: for (iVar4 = 0x10a; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 63 [pointer_cast]: pDVar10 = (DDSCAPS *)((int)pDVar11 + (uint)bVar14 * -2 + 1);
-  Line 63 [pointer_truncation]: pDVar10 = (DDSCAPS *)((int)pDVar11 + (uint)bVar14 * -2 + 1);
-  Line 64 [unrolled_memcpy]: // 10001b3c: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName
-  Line 68 [pointer_cast]: pcVar9 = (char *)((int)pDVar10 - uVar5);
-  Line 68 [pointer_truncation]: pcVar9 = (char *)((int)pDVar10 - uVar5);
-  Line 70 [unrolled_memcpy]: for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-  Line 75 [unrolled_memcpy]: for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-  Line 78 [unrolled_memcpy]: // 10001b66: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription
-  Line 82 [unrolled_strlen]: do {
-  Line 93 [unrolled_memcpy]: for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-  Line 98 [unrolled_memcpy]: for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-  Line 101 [static_uninitvar]: *(uint *)pcVar12 = *(uint *)pcVar9;
-  Line 103 [pointer_cast]: *(DWORD *)((int)g_AdapterVendorId + iVar8) = DStack_20;
-  Line 104 [pointer_cast]: *(DWORD *)((int)g_AdapterDeviceId + iVar8) = DStack_1c;
-  Line 118 [unrolled_memcpy]: // 10001c01: MOVSD.REP ES:EDI,ESI  ; g_ExternalRendererBridge | g_ExternalRendererBridge.red_scale_factor
-  Line 120 [unrolled_memcpy]: for (iVar7 = 0x23; iVar7 != 0; iVar7 = iVar7 + -1) {
-  Line 122 [pointer_cast]: interface = (CExternalRendererBridge *)((int)interface + (uint)bVar14 * -8 + 4);
-  Line 123 [pointer_cast]: pCVar13 = (CExternalRendererBridge *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 123 [pointer_truncation]: pCVar13 = (CExternalRendererBridge *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-
-====================================================================================================
 dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350 (2 suspects)
   File: dll/dx7.cpp
 ====================================================================================================
@@ -154,47 +98,6 @@ dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (4 suspects)
   Line 21 [shadow_pointer_walk]: pDVar7 = (DDSURFACEDESC2 *)&pDVar7->dwFlags;
   Line 77 [warning_noreturn]: /* WARNING: Subroutine does not return */
   Line 80 [warning_noreturn]: /* WARNING: Subroutine does not return */
-
-====================================================================================================
-dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (36 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 81 [unrolled_memcpy]: for (iVar3 = g_ScreenHeight; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 100 [unrolled_memcpy]: for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 102 [pointer_cast]: pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 102 [pointer_truncation]: pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 103 [unrolled_memcpy]: // 100026bc: MOVSD.REP ES:EDI,ESI  ; g_ScanlinePointers | g_ScanlinePointers[1]
-  Line 135 [unrolled_memcpy]: for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 148 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 152 [unrolled_memcpy]: for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 154 [pointer_cast]: pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 154 [pointer_truncation]: pDVar9 = (DDSURFACEDESC2 *)((int)pDVar9 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 156 [unrolled_memset]: // 10002734: STOSD.REP ES:EDI  ; g_PrimarySurfaceDesc | g_PrimarySurfaceDesc.dwFlags
-  Line 163 [unrolled_memcpy]: for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 166 [pointer_cast]: pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 166 [pointer_truncation]: pDVar10 = (DDPIXELFORMAT *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 179 [static_uninitvar]: g_ZBufferBitDepth = iStack_204;
-  Line 192 [unrolled_memcpy]: for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 194 [pointer_cast]: pDVar12 = (DDBLTFX *)((int)pDVar12 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 194 [pointer_truncation]: pDVar12 = (DDBLTFX *)((int)pDVar12 + ((uint)bVar13 * -2 + 1) * 4);
-  Line 206 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 224 [unrolled_strlen]: do {
-  Line 235 [unrolled_memcpy]: for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-  Line 240 [unrolled_memcpy]: for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 243 [unrolled_memset]: // 10002830: STOSD.REP ES:EDI
-  Line 246 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 252 [unrolled_strlen]: do {
-  Line 263 [unrolled_memcpy]: for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-  Line 268 [unrolled_memcpy]: for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 274 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 281 [unrolled_memset]: // 1000289e: STOSD.REP ES:EDI
-  Line 289 [unrolled_memcpy]: for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-  Line 294 [unrolled_memcpy]: for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 300 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 318 [unrolled_memcpy]: // 10002924: MOVSD.REP ES:EDI,ESI  ; = "FATAL ERROR!  Unable to create a Z bu..." | g_ErrorMessageBuffer
-  Line 364 [unrolled_memcpy]: // 100029a7: MOVSD.REP ES:EDI,ESI  ; = "FATAL ERROR!  Unable to create a 2nd ..." | g_ErrorMessageBuffer
-  Line 404 [unrolled_memcpy]: // 10002a18: MOVSD.REP ES:EDI,ESI  ; = "FATAL ERROR!  Unable to attach Z buff..." | g_ErrorMessageBuffer
-  Line 419 [unrolled_memset]: // 10002a4e: STOSD.REP ES:EDI
 
 ====================================================================================================
 dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60 (1 suspect)
@@ -360,44 +263,6 @@ dll_dx7.cpp_createStagingTextures_FUN_10003400 (14 suspects)
   Line 54 [pointer_truncation]: (void **)((int)g_StagingTextureInterfaces[0] + iVar7));
 
 ====================================================================================================
-dll_dx7.cpp_createTexture_FUN_10002f60 (6 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 8 [unrolled_memset]: // 10002f70: STOSD.REP ES:EDI
-  Line 18 [shadow_pointer_walk]: pDVar5 = (DDSURFACEDESC2 *)&pDVar5->dwFlags;
-  Line 24 [shadow_pointer_walk]: pDVar4 = (DDPIXELFORMAT *)&pDVar4->dwFlags;
-  Line 25 [shadow_pointer_walk]: pDVar6 = (DDPIXELFORMAT *)&pDVar6->dwFlags;
-  Line 60 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 65 [warning_noreturn]: /* WARNING: Subroutine does not return */
-
-====================================================================================================
-dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (22 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 19 [unrolled_strlen]: do {
-  Line 27 [unrolled_strlen]: do {
-  Line 37 [unrolled_memcpy]: // 1000180a: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName
-  Line 38 [unrolled_memcpy]: for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 43 [unrolled_memcpy]: for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 49 [unrolled_memcpy]: // 1000182b: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName | g_AdapterDriverName[0][4]
-  Line 51 [unrolled_memcpy]: for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 57 [pointer_cast]: *(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_name[(uint)bVar8 * -4 + 2];
-  Line 62 [unrolled_strlen]: do {
-  Line 70 [unrolled_strlen]: do {
-  Line 76 [unrolled_memcpy]: // 10001872: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription
-  Line 81 [unrolled_memcpy]: for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-  Line 86 [unrolled_memcpy]: for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 87 [unrolled_memcpy]: // 1000188d: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription | g_AdapterDescription[0][4]
-  Line 94 [unrolled_memcpy]: for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 100 [pointer_cast]: *(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_description[(uint)bVar8 * -4 + 2];
-  Line 109 [unnamed_field]: *(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x4 =
-  Line 110 [unnamed_field]: *(uint *)&lp_guid->field_0x4;
-  Line 111 [unnamed_field]: *(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x8 =
-  Line 112 [unnamed_field]: *(uint *)&lp_guid->field_0x8;
-  Line 113 [unnamed_field]: *(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0xc =
-  Line 114 [unnamed_field]: *(uint *)&lp_guid->field_0xc;
-
-====================================================================================================
 dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (7 suspects)
   File: dll/dx7.cpp
 ====================================================================================================
@@ -525,42 +390,8 @@ dll_dx7.cpp_pickTextureFormat_FUN_10003340 (13 suspects)
   Line 61 [unrolled_memcpy]: // 100033ea: MOVSD.REP ES:EDI,ESI  ; g_TexturePixelFormat | g_TexturePixelFormat.dwFlags
 
 ====================================================================================================
-dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (11 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 20 [pointer_cast]: piVar1 = *(int **)((int)g_StagingTextureInterfaces[0] + iVar2);
-  Line 20 [pointer_truncation]: piVar1 = *(int **)((int)g_StagingTextureInterfaces[0] + iVar2);
-  Line 22 [unresolved_funcptr]: (**(code **)(*piVar1 + 8))(piVar1);
-  Line 23 [pointer_cast]: *(uint *)((int)g_StagingTextureInterfaces[0] + iVar2) = 0;
-  Line 23 [pointer_truncation]: *(uint *)((int)g_StagingTextureInterfaces[0] + iVar2) = 0;
-  Line 25 [pointer_cast]: piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);
-  Line 25 [pointer_truncation]: piVar1 = *(int **)((int)g_StagingTextures[0] + iVar2);
-  Line 27 [unresolved_funcptr]: (**(code **)(*piVar1 + 8))(piVar1);
-  Line 28 [pointer_cast]: *(uint *)((int)g_StagingTextures[0] + iVar2) = 0;
-  Line 28 [pointer_truncation]: *(uint *)((int)g_StagingTextures[0] + iVar2) = 0;
-  Line 63 [unrolled_memset]: // 10002f30: STOSD.REP ES:EDI  ; g_TextureSurfaces | g_TextureSurfaces[0].surface
-
-====================================================================================================
 dll_dx7.cpp_unlockBackBuffer_FUN_10002c50 (2 suspects)
   File: dll/dx7.cpp
 ====================================================================================================
   Line 15 [unrolled_memcpy]: for (iVar1 = g_ScreenHeight; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 18 [unrolled_memcpy]: // 10002c78: MOVSD.REP ES:EDI,ESI  ; g_ScanlinePointers | g_ScanlinePointers[1]
-
-====================================================================================================
-dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (13 suspects)
-  File: dll/dx7.cpp
-====================================================================================================
-  Line 8 [unaffected_reg]: int *unaff_EBX;
-  Line 23 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 48 [unrolled_memcpy]: for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 50 [pointer_cast]: pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar6 * -2 + 1) * 4);
-  Line 50 [pointer_truncation]: pDVar5 = (DDSURFACEDESC2 *)((int)pDVar5 + ((uint)bVar6 * -2 + 1) * 4);
-  Line 55 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 68 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 70 [unrolled_memset]: // 10003b4c: STOSD.REP ES:EDI
-  Line 82 [unaffected_reg]: HVar2 = (**(code **)(*unaff_EBX + 0x30))
-  Line 82 [unresolved_funcptr]: HVar2 = (**(code **)(*unaff_EBX + 0x30))
-  Line 83 [stack_ref]: (unaff_EBX,&local_7c.ddpfPixelFormat.dwBlueVMask,&stack0xffffff68);
-  Line 83 [unaffected_reg]: (unaff_EBX,&local_7c.ddpfPixelFormat.dwBlueVMask,&stack0xffffff68);
-  Line 89 [static_uninitvar]: HVar2 = (**(code **)(*unaff_EBX + 0x30))

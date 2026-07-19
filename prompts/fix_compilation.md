@@ -423,17 +423,19 @@ do {
 
 **Diagnosis:** Grep the function for `!= (<Type> *)&g_<something>`. If that `g_<something>` is not the same as the pool the iterator was initialized from, it's the adjacency-sentinel pattern.
 
-**Fix:** Rewrite the loop with the declared pool size as an explicit bound. Pool sizes come from the pool's global declaration in `src/globals/` (e.g., `CSmokeParticle g_SmokeParticlePool[2048] = {};`):
+**Fix:** Rewrite the loop bounded by the pool's own element count, **derived from the pool declaration rather than written as a literal** (see §18a — a literal decouples from the array the moment it is resized). Confirm the count against the pool's global declaration in `src/globals/` (e.g., `CSmokeParticle g_SmokeParticlePool[2048] = {};`) *and* against the sentinel span in the asm; they must agree.
 
 ```cpp
 // FIXED (Style A):
-for (int i = 0; i < 2048; i++)
+for (int i = 0; i < (int)(sizeof(g_SmokeParticlePool) / sizeof(g_SmokeParticlePool[0])); i++)
     CSmokeParticle_reset(&g_SmokeParticlePool[i]);
 
 // FIXED (Style B):
-for (int i = 0; i < 256; i++)
+for (int i = 0; i < (int)(sizeof(g_SparkPool) / sizeof(g_SparkPool[0])); i++)
     g_SparkPool[i].base.lifetime_remaining = 0.0f;
 ```
+
+**Deriving the count from the asm:** the sentinel gives you a byte span, not an element count — divide by the element size and check it matches the declaration. E.g. `CMP ESI, <sentinel>` with base `0x1020de40` and sentinel `0x10215e40` is `32768` bytes; `32768 / sizeof(STextureSurfaceSlot)` = `32768 / 8` = `4096`, matching `g_TextureSurfaces[4096]`. If the two disagree, that is a real finding — see §18a.
 
 **Scope:** Every `*_static_init` / pool-init in the game likely has this shape. If you're fixing one, eyeball the rest of the function — they often come in clusters (one init function sets up a dozen pools).
 
@@ -533,6 +535,41 @@ cost_matrix[i][j] = 1e10f;
 ```
 
 **When to apply vs. suggest:** Apply directly only when the mapping is unambiguous (struct size, exact field offset, bit-for-bit float literal). If there's any ambiguity — two structs with the same size, a constant that's *near* a known value but not equal, a float that rounds differently — leave the hex and flag it for the user to decide. A wrong symbolic substitution silently changes meaning and is worse than a magic number.
+
+#### 18a. Array bounds and capacity guards — ALWAYS derive them from the array
+
+**Any constant that is really "how many elements are in array X" must be written as an expression over X, never as a literal — even when the literal is correct and even when you recovered it from the asm.** This is the single most common de-magic-number case and it is not optional.
+
+The idiom (there is no `ARRAY_COUNT`/`_countof` macro in this project; do not invent one in a `.keep` — that would need a generator change):
+
+```cpp
+(int)(sizeof(g_TextureSurfaces) / sizeof(g_TextureSurfaces[0]))          // element count
+(int)(sizeof(g_Grid[0]) / sizeof(g_Grid[0][0]))                          // inner dimension of [R][C]
+(int)(sizeof(g_Grid)    / sizeof(g_Grid[0]))                             // outer dimension of [R][C]
+```
+
+Cast to `int` when comparing against a signed loop counter, to avoid a signed/unsigned warning.
+
+**Why this is a hard rule, not a style preference.** These arrays get **resized** — most often to support larger video resolutions, bigger texture caches, or more actors. A literal silently decouples from the declaration the moment that happens:
+- A **loop bound** left as a literal under-iterates (leaks/misses elements) or over-iterates (walks off the end) after a resize.
+- A **capacity guard** left as a literal is worse: it is the check that *prevents* the overflow. `if (0x1000 < g_TextureCount) fatalError("Too many textures")` keeps rejecting at 4096 after you grow `g_TextureSurfaces[]`, or stops protecting you if you shrink it.
+
+Both forms appeared in `tridx7!releaseAllTextures` / `tridx7!createTexture` guarding the *same* `g_TextureSurfaces[4096]`, and both were literals.
+
+**Applies to (non-exhaustive):**
+- §16 adjacency-sentinel rewrites — the replacement bound is an array count, so write it as one.
+- Countdown-loop bounds recovered from the asm (`for (i = 0x772; ...)`), when the count is `sizeof(T)/4` or an element count.
+- `memset`/`memcpy` sizes — use `sizeof(array)` for a whole array, `count * sizeof(T)` for a prefix (see §17).
+- Capacity/limit guards comparing a running count against the array's size.
+- Loop bounds over a fixed global grid (`[4][8]` staging tables, per-adapter tables, pool arrays).
+
+**Verify before substituting** — the expression must evaluate to exactly the constant it replaces. A compile-time check is cheap and worth doing when the value came from asm:
+
+```cpp
+int _chk[(int)(sizeof(g_TextureSurfaces) / sizeof(g_TextureSurfaces[0])) == 4096 ? 1 : -1];
+```
+
+**The one exception:** if the asm bound provably does **not** equal the array's element count, that mismatch is the finding — the array declaration is probably wrong (§12 / sibling-array sizing) or the loop really is a partial pass. Say so; do not paper over a real disagreement by making the numbers agree by construction.
 
 ### 19. Pre-increment-array-walk loop idiom (Ghidra decode artifact)
 

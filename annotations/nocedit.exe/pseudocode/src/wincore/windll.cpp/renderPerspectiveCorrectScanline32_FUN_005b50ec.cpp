@@ -98,7 +98,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005
                (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     uVar10 = 0;
     g_StartDepthW = iVar8;
-    if ((g_CurrentTextureOpacityData == (void *)0x0) &&
+    if ((g_CurrentTextureOpacityData == (uchar *)0x0) &&
        (uVar6 = g_StartTextureV, uVar2 = g_StartTextureU, (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {
       while( true ) {
         if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
@@ -106,11 +106,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005
           uVar3 = g_ActiveRenderColor;
           if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) != 0) {
             uVar3 = g_Hardware32BitPalette
-                    [*(byte *)((int)g_CurrentTextureData +
-                              (uVar6 >> (g_TextureShift2.b32[0].bytes[0] & 0x1f) &
-                              g_TextureMask2.u32[0]) +
-                              (uVar2 >> (g_TextureShift1.b32[0].bytes[0] & 0x1f) &
-                              g_TextureMask1.u32[0]))];
+                    [g_CurrentTextureData
+                     [(uVar6 >> (g_TextureShift2.b32[0].bytes[0] & 0x1f) & g_TextureMask2.u32[0]) +
+                      (uVar2 >> (g_TextureShift1.b32[0].bytes[0] & 0x1f) & g_TextureMask1.u32[0])]];
           }
           *(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;
           if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {

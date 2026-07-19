@@ -185,11 +185,11 @@ void __cdecl copyMipTo32Bit(uint *dest,uint dest_pitch,int mip_size);
 
 // Original: dll_dx7.cpp_APIDLLselectTexture_FUN_10003e90
 // Address: 10003e90
-int __cdecl APIDLLselectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
+int __cdecl APIDLLselectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
 // Original: dll_dx7.cpp_APIDLLupdateTexture_FUN_10003ed0
 // Address: 10003ed0
-int __cdecl APIDLLupdateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data);
+int __cdecl APIDLLupdateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
 // Original: dll_dx7.cpp_APIDLLsetMipMapLevel_FUN_10003f00
 // Address: 10003f00

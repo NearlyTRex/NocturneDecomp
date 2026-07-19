@@ -46,9 +46,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_0049
     while( true ) {
       *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =
            *(uint *)
-            (((uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
-             (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0])) * 4 + (int)g_CurrentTextureData)
-      ;
+            (g_CurrentTextureData +
+            ((uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+            (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0])) * 4);
       uVar1 = uVar1 + 4;
       if ((uint)g_PerspectiveScanlinePixelCount <= uVar1) break;
       uVar3 = uVar3 + g_SoftwareDeltaTextureU;

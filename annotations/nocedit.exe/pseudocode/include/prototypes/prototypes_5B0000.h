@@ -150,7 +150,7 @@ int __cdecl wincore_windll_cpp_beginScene_FUN_005b7280(void);
 int __cdecl wincore_windll_cpp_endScene_FUN_005b72a0(void);
 int __cdecl wincore_windll_cpp_selectTextureGlobal_FUN_005b72c0(SMRGLTextureBasic *texture_info);
 int __cdecl wincore_windll_cpp_updateTextureGlobal_FUN_005b7300(SMRGLTextureBasic *texture_info);
-int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,byte *palette_data);
+int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 int __cdecl wincore_windll_cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 int __cdecl wincore_windll_cpp_selectTextureBGRA_FUN_005b73c0(SMRGLTextureBasic *texture_info,int flags);
 int __cdecl wincore_windll_cpp_updateTextureBGRA_FUN_005b7400(SMRGLTextureBasic *texture_info,int flags);

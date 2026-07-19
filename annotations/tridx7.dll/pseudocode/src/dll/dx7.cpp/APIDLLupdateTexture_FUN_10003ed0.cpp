@@ -2,11 +2,11 @@
 // Address: 10003ed0
 // Address Range: [[10003ed0, 10003eff]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)
+// Signature: int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,void *texture_data,void *palette_data,void *opacity_data)
+int __cdecl dll_dx7_cpp_APIDLLupdateTexture_FUN_10003ed0(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)
 
 {
                     /* 0x3ed0  37  APIDLLupdateTexture */

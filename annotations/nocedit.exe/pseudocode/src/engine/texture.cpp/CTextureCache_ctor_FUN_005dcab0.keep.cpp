@@ -15,8 +15,8 @@ CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CText
   this_ptr->current_texture_count = 0;
   this_ptr->max_texture_count = max_texture_count;
   for (i = 0; i < 1024; i = i + 1) {
-    this_ptr->texture_data_ptrs[i] = (void *)0x0;
-    this_ptr->texture_opacity_ptrs[i] = (void *)0x0;
+    this_ptr->texture_data_ptrs[i] = (uchar *)0x0;
+    this_ptr->texture_opacity_ptrs[i] = (uchar *)0x0;
     this_ptr->texture_palette_ptrs[i] = (byte *)0x0;
     this_ptr->texture_dimensions[i] = 0;
   }

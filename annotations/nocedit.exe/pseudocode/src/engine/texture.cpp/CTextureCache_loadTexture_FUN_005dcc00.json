@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 240,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 240,
+    "pseudocode_lines": 239,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 759
+    "total_lines": 758
   },
   "cross_references": [
     {
@@ -343,7 +343,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 124,
+      "line": 123,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 157,
+      "line": 156,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 189,
+      "line": 188,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -379,25 +379,25 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 107,
+      "line": 106,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 112,
+      "line": 111,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -406,7 +406,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 168,
+      "line": 167,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 200,
+      "line": 199,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
       "severity": "moderate",

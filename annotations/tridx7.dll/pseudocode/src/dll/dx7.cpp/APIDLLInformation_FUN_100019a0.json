@@ -1,70 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 25,
-        "message": "use of undeclared identifier '_chkstk'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0x00000100'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 43,
-        "message": "use of undeclared identifier 'stack0x00000200'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 56,
-        "message": "use of undeclared identifier 'register0x00000010'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 67,
-        "message": "use of undeclared identifier 'stack0x00000100'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 78,
-        "message": "use of undeclared identifier 'stack0x00000100'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 325,
+    "complexity_score": 75,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 75,
-    "suspect_count": 22,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref",
-      "unresolved_register",
-      "unrolled_memcpy",
-      "unrolled_memset",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [],
@@ -155,6 +105,206 @@
     },
     "pcode_op_count": 370
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00001ecc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "HINSTANCE in_stack_00001ecc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00001ed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uint *in_stack_00001ed0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0x00000100",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0x00000100;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0x00000200",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar7 = &stack0x00000200;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00001ecc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0x00000000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved register reference",
+      "line": 49,
+      "match": "register0x00000010",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pcVar5 = (char *)register0x00000010;",
+      "type": "unresolved_register"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0x00000100",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar7 = &stack0x00000100;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0x00000100",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0x00000100;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00001ed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*in_stack_00001ed0 = *puVar6;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00001ed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00001ed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 42,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 66,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 72,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 26,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 50,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100019ba, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 10,
+      "match": "STOSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 100019ba: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001a6b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 55,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001a6b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -185,207 +335,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "APIDLLInformation_FUN_100019a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 80,
-          "message": "Uninitialized variable: in_stack_00001ed0",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00001ecc",
-      "severity": "moderate",
-      "text": "HINSTANCE in_stack_00001ecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00001ed0",
-      "severity": "moderate",
-      "text": "uint *in_stack_00001ed0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0x00000100",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0x00000100;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0x00000200",
-      "severity": "moderate",
-      "text": "pcVar7 = &stack0x00000200;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00001ecc",
-      "severity": "moderate",
-      "text": "LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0x00000000",
-      "severity": "moderate",
-      "text": "LoadStringA(in_stack_00001ecc,1,&stack0x00000000,0x100);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved register reference",
-      "line": 49,
-      "match": "register0x00000010",
-      "severity": "mild",
-      "text": "pcVar5 = (char *)register0x00000010;",
-      "type": "unresolved_register"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0x00000100",
-      "severity": "moderate",
-      "text": "pcVar7 = &stack0x00000100;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 71,
-      "match": "&stack0x00000100",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0x00000100;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_00001ed0",
-      "severity": "moderate",
-      "text": "*in_stack_00001ed0 = *puVar6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00001ed0",
-      "severity": "moderate",
-      "text": "in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00001ed0",
-      "severity": "moderate",
-      "text": "in_stack_00001ed0 = in_stack_00001ed0 + (uint)bVar8 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 20,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 61,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 66,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 72,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0x772; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 26,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 50,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom inline memset (REP STOSD at 100019ba, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 10,
-      "match": "STOSD.REP",
-      "severity": "moderate",
-      "text": "// 100019ba: STOSD.REP ES:EDI",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10001a6b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 55,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10001a6b: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00001ed0",
-      "line": 80,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*in_stack_00001ed0 = *puVar6;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

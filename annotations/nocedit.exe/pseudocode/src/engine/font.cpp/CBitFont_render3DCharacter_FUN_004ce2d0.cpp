@@ -189,7 +189,7 @@ LAB_004ce397:
   g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;
   g_RenderVertexBuffer[19999].v = g_RenderVertexBuffer[0x4e1e].v;
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-  if (g_CurrentTextureOpacityData == (void *)0x0) {
+  if (g_CurrentTextureOpacityData == (uchar *)0x0) {
     iVar3 = 0x207;
   }
   else {

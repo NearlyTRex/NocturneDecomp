@@ -113,7 +113,7 @@ int __cdecl updateTextureGlobal(SMRGLTextureBasic *texture_info);
 
 // Original: wincore_windll.cpp_selectTexture_FUN_005b7340
 // Address: 005b7340
-int __cdecl selectTexture(SMRGLTextureBasic *tex,byte *palette_data);
+int __cdecl selectTexture(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
 // Original: wincore_windll.cpp_updateTexture_FUN_005b7380
 // Address: 005b7380

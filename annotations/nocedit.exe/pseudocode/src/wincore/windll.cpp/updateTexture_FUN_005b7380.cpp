@@ -15,7 +15,7 @@ int __cdecl wincore_windll_cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic *tex
     return 0;
   }
   iVar1 = (*g_APIDLL_updateTexture)
-                    (tex,g_CurrentTextureDimension,g_CurrentTextureData,palette_data,
+                    (tex,g_CurrentTextureDimension,g_CurrentTextureData,(uchar *)palette_data,
                      g_CurrentTextureOpacityData);
   return iVar1;
 }

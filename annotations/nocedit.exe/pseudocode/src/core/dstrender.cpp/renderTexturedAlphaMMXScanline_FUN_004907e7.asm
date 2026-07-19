@@ -26,7 +26,7 @@
 ;   _MMX_INTEGER g_TextureMask2
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ReciprocalLookupTable[1]
-;   void* g_CurrentTextureData
+;   uchar* g_CurrentTextureData
 ;   ... and 1 more
 ;
 ; *****************************************************************************

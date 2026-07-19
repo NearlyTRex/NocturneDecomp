@@ -43,7 +43,7 @@ void __cdecl dll_dx7_cpp_expandTextureAndBuildMips_FUN_10003830(void)
     puVar1 = g_TextureOpacity;
     pbVar4 = pbVar4 + 3;
     puVar6 = puVar8;
-  } while (puVar8 < &g_HWBlueShift);
+  } while (puVar8 != g_PackedPalette + sizeof(g_PackedPalette) / sizeof(g_PackedPalette[0]));
   puVar6 = g_ExpandedTexture;
   iVar9 = *g_ExternalRendererBridge.texture_dimension * *g_ExternalRendererBridge.texture_dimension;
   if (g_TextureOpacity == (uchar *)0x0) {

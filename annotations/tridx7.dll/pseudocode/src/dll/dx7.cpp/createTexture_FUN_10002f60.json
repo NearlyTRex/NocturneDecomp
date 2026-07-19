@@ -1,31 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 76,
-        "line": 64,
-        "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'struct IDirect3DTexture2 **'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 141,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 6,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memset",
-      "warning_noreturn"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 163
   },
   "cross_references": [
@@ -198,6 +187,62 @@
     },
     "pcode_op_count": 362
   },
+  "resolved_suspects": [
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 60,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 65,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar5->owner`). Replace `pDVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pDVar5 = (T *)&pDVar5->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar5 = (DDSURFACEDESC2 *)&pDVar5->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar4->owner`). Replace `pDVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pDVar4 = (T *)&pDVar4->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar4 = (DDPIXELFORMAT *)&pDVar4->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pDVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar6->owner`). Replace `pDVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pDVar6 = (T *)&pDVar6->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar6 = (DDPIXELFORMAT *)&pDVar6->dwFlags;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10002f70, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 8,
+      "match": "STOSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10002f70: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 132,
     "local_size": 128,
@@ -263,54 +308,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 60,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 65,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pDVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar5->owner`). Replace `pDVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 18,
-      "match": "pDVar5 = (T *)&pDVar5->FIELD",
-      "severity": "moderate",
-      "text": "pDVar5 = (DDSURFACEDESC2 *)&pDVar5->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pDVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar4->owner`). Replace `pDVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 24,
-      "match": "pDVar4 = (T *)&pDVar4->FIELD",
-      "severity": "moderate",
-      "text": "pDVar4 = (DDPIXELFORMAT *)&pDVar4->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pDVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pDVar6->owner`). Replace `pDVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
-      "match": "pDVar6 = (T *)&pDVar6->FIELD",
-      "severity": "moderate",
-      "text": "pDVar6 = (DDPIXELFORMAT *)&pDVar6->dwFlags;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memset (REP STOSD at 10002f70, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 8,
-      "match": "STOSD.REP",
-      "severity": "moderate",
-      "text": "// 10002f70: STOSD.REP ES:EDI",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }

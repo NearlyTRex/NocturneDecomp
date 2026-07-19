@@ -16,7 +16,7 @@ void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0(void)
   do {
     core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != g_SkeletonPool + 40);
+  } while (this_ptr != g_SkeletonPool + sizeof(g_SkeletonPool) / sizeof(g_SkeletonPool[0]));
   g_SkeletonPoolCount = 0;
   return;
 }

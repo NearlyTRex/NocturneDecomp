@@ -7,44 +7,37 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 76
-Clean functions: 36 (47.4%)
-Functions with suspects: 40 (52.6%)
+Clean functions: 43 (56.6%)
+Functions with suspects: 33 (43.4%)
 
-Total suspect patterns: 351
-Average suspects per function: 4.62
+Total suspect patterns: 217
+Average suspects per function: 2.86
 
 Virtual files: 1 total, 0 at 100%, 0 at 90%+
 
 Pseudocode lines:
-  Min: 5, Max: 299, Average: 42.6
+  Min: 5, Max: 299, Average: 42.7
 
-Average complexity score: 94.4
+Average complexity score: 74.9
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 76
-Successful: 65 (85.5%)
-Failed: 11
+Successful: 76 (100.0%)
+Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  warning_noreturn          97
-  unrolled_memcpy           71
-  pointer_cast              58
-  pointer_truncation        33
-  unrolled_memset           25
-  shadow_pointer_walk       18
-  unrolled_strlen           10
-  unnamed_field             6
-  stack_param               6
-  stack_ref                 6
+  warning_noreturn          87
+  pointer_cast              40
+  unrolled_memcpy           28
+  pointer_truncation        20
+  unrolled_memset           16
+  shadow_pointer_walk       15
   static_signed_char_misuse 4
-  static_uninitvar          4
-  unresolved_funcptr        3
-  unaffected_reg            3
   bit_int_float_compare     3
   static_identical_inner_condition 2
-  unresolved_register       1
+  unrolled_strlen           1
   signed_shift_global_idiom 1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -82,157 +75,135 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   10004d30: dll_dx7.cpp_APIDLLGetDisplayContext_FUN_10004d30 (20 lines)
   10002370: dll_dx7.cpp_releaseDirectXResources_FUN_10002370 (45 lines)
   10001180: dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 (49 lines)
+  10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (52 lines)
   100043c0: dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0 (61 lines)
+  10002f60: dll_dx7.cpp_createTexture_FUN_10002f60 (66 lines)
+  100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (75 lines)
+  10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (98 lines)
   10003830: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (102 lines)
+  100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (119 lines)
   10003f10: dll_dx7.cpp_applyRenderState_FUN_10003f10 (160 lines)
+  10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80 (186 lines)
+  10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (299 lines)
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   10001d70: dll_dx7.cpp_checkD3DResult_FUN_10001d70 (score: 1003, suspects: 75, lines: 248)
-  10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (score: 679, suspects: 35, lines: 299)
-  10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80 (score: 428, suspects: 22, lines: 183)
-  100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (score: 359, suspects: 22, lines: 119)
-  100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (score: 325, suspects: 22, lines: 75)
   10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100 (score: 305, suspects: 18, lines: 100)
+  10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (score: 299, suspects: 0, lines: 299)
   10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400 (score: 258, suspects: 14, lines: 98)
-  10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (score: 258, suspects: 12, lines: 98)
   10001200: dll_dx7.cpp_initTextureCaches_FUN_10001200 (score: 233, suspects: 14, lines: 88)
   10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340 (score: 196, suspects: 13, lines: 46)
-  10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (score: 182, suspects: 11, lines: 52)
+  10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80 (score: 186, suspects: 0, lines: 186)
   10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090 (score: 163, suspects: 5, lines: 98)
   10003f10: dll_dx7.cpp_applyRenderState_FUN_10003f10 (score: 160, suspects: 0, lines: 160)
   100044b0: dll_dx7.cpp_buildTLVertex_FUN_100044b0 (score: 156, suspects: 4, lines: 106)
-  10002f60: dll_dx7.cpp_createTexture_FUN_10002f60 (score: 141, suspects: 6, lines: 66)
   10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900 (score: 134, suspects: 8, lines: 34)
   10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30 (score: 134, suspects: 4, lines: 79)
   10004840: dll_dx7.cpp_APIDLLclear_FUN_10004840 (score: 121, suspects: 6, lines: 46)
+  100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (score: 119, suspects: 0, lines: 119)
   10005010: dll_dx7.cpp_getOrAddVertex_FUN_10005010 (score: 113, suspects: 4, lines: 58)
   10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (score: 108, suspects: 7, lines: 23)
   10003830: dll_dx7.cpp_expandTextureAndBuildMips_FUN_10003830 (score: 102, suspects: 0, lines: 102)
+  10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (score: 98, suspects: 0, lines: 98)
   100035b0: dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0 (score: 88, suspects: 2, lines: 63)
   10004da0: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0 (score: 84, suspects: 4, lines: 24)
   100052e0: dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0 (score: 78, suspects: 4, lines: 33)
+  100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (score: 75, suspects: 0, lines: 75)
   10003e40: dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40 (score: 70, suspects: 3, lines: 30)
+  10002f60: dll_dx7.cpp_createTexture_FUN_10002f60 (score: 66, suspects: 0, lines: 66)
   10004f00: dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00 (score: 65, suspects: 1, lines: 50)
   10004a70: dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70 (score: 63, suspects: 3, lines: 18)
   10001020: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 (score: 62, suspects: 2, lines: 32)
   100043c0: dll_dx7.cpp_APIDLLdrawPolygon2_FUN_100043c0 (score: 61, suspects: 0, lines: 61)
   10005130: dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130 (score: 60, suspects: 1, lines: 45)
+  10002dc0: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0 (score: 56, suspects: 2, lines: 26)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  warning_noreturn (15 functions):
+  warning_noreturn (12 functions):
     10001d70: dll_dx7.cpp_checkD3DResult_FUN_10001d70
     10002340: dll_dx7.cpp_fatalError_FUN_10002340
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
     10002be0: dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0
     10002e60: dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60
-    10002f60: dll_dx7.cpp_createTexture_FUN_10002f60
     10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
     10003a30: dll_dx7.cpp_getMipLevelPtr_FUN_10003a30
-    10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
     10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
-    ... and 5 more
+    10004e10: dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10
+    10004e90: dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90
+    10004f00: dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00
+    ... and 2 more
 
-  unrolled_memcpy (17 functions):
-    10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
-    100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
+  pointer_cast (13 functions):
+    10001200: dll_dx7.cpp_initTextureCaches_FUN_10001200
     10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-    10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
+    10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
+    10002dc0: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
+    10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
+    10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
+    10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400
+    10003d90: dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90
+    10003e40: dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
+    10004840: dll_dx7.cpp_APIDLLclear_FUN_10004840
+    ... and 3 more
+
+  unrolled_memcpy (12 functions):
+    10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
+    10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
     10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
     10002c50: dll_dx7.cpp_unlockBackBuffer_FUN_10002c50
     10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
     10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
-    ... and 7 more
+    10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400
+    10003e40: dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40
+    10004da0: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
+    10005010: dll_dx7.cpp_getOrAddVertex_FUN_10005010
+    ... and 2 more
 
-  pointer_cast (18 functions):
-    10001200: dll_dx7.cpp_initTextureCaches_FUN_10001200
-    100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
+  pointer_truncation (9 functions):
     10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
-    10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
-    10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
     10002dc0: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
-    10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
-    10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
-    10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
-    ... and 8 more
-
-  pointer_truncation (13 functions):
-    10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
-    10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
-    10002dc0: dll_dx7.cpp_lockBackBuffer_FUN_10002dc0
-    10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
     10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
     10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
     10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400
-    10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
     10004840: dll_dx7.cpp_APIDLLclear_FUN_10004840
-    ... and 3 more
+    10004a70: dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70
+    10004da0: dll_dx7.cpp_APIDLLReleaseDisplayContext_FUN_10004da0
+    10005350: dll_dx7.cpp_APIDLLlockHoldBuffer_FUN_10005350
 
-  unrolled_memset (17 functions):
+  unrolled_memset (11 functions):
     10001020: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
     10001900: dll_dx7.cpp_isAdapter3DCapable_FUN_10001900
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-    10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
     10002e20: dll_dx7.cpp_lockSurface_FUN_10002e20
-    10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
-    10002f60: dll_dx7.cpp_createTexture_FUN_10002f60
     10003100: dll_dx7.cpp_initD3DDevice_FUN_10003100
     10003400: dll_dx7.cpp_createStagingTextures_FUN_10003400
-    ... and 7 more
+    100035b0: dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0
+    10004840: dll_dx7.cpp_APIDLLclear_FUN_10004840
+    10004a70: dll_dx7.cpp_APIDLLclearZBuffer_FUN_10004a70
+    10004ac0: dll_dx7.cpp_APIDLLclearZBox_FUN_10004ac0
+    10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
+    ... and 1 more
 
-  shadow_pointer_walk (9 functions):
+  shadow_pointer_walk (8 functions):
     10001020: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
     10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
     10002b50: dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50
     10002e20: dll_dx7.cpp_lockSurface_FUN_10002e20
-    10002f60: dll_dx7.cpp_createTexture_FUN_10002f60
     10003340: dll_dx7.cpp_pickTextureFormat_FUN_10003340
     10004ac0: dll_dx7.cpp_APIDLLclearZBox_FUN_10004ac0
     10004b30: dll_dx7.cpp_APIDLLsetColorTable16_FUN_10004b30
     10005010: dll_dx7.cpp_getOrAddVertex_FUN_10005010
 
-  unrolled_strlen (5 functions):
-    10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
-    100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-    10001a80: dll_dx7.cpp_APIDLLinit_FUN_10001a80
-    10002500: dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500
-
-  unnamed_field (1 functions):
-    100017b0: dll_dx7.cpp_enumAdapterCallback_FUN_100017b0
-
-  stack_param (1 functions):
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-
-  stack_ref (2 functions):
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
-    10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
-
   static_signed_char_misuse (0 functions):
-
-  static_uninitvar (0 functions):
-
-  unresolved_funcptr (2 functions):
-    10002ea0: dll_dx7.cpp_releaseAllTextures_FUN_10002ea0
-    10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
-
-  unaffected_reg (1 functions):
-    10003a80: dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80
 
   bit_int_float_compare (1 functions):
     100044b0: dll_dx7.cpp_buildTLVertex_FUN_100044b0
 
   static_identical_inner_condition (0 functions):
 
-  unresolved_register (1 functions):
-    100019a0: dll_dx7.cpp_APIDLLInformation_FUN_100019a0
+  unrolled_strlen (1 functions):
+    10001090: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
 
   signed_shift_global_idiom (1 functions):
     100044b0: dll_dx7.cpp_buildTLVertex_FUN_100044b0

@@ -6,10 +6,10 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 1
 Total functions: 76
-Clean functions: 36 (47.4%)
+Clean functions: 43 (56.6%)
 Files at 100%: 0
 Files at 90%+: 0
-Files at 50%+: 0
+Files at 50%+: 1
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
@@ -25,38 +25,25 @@ Total: 0 files
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-
-Total: 0 files
-
-====================================================================================================
-FILES BELOW 50%
-====================================================================================================
-   47.4% | dll/dx7.cpp
-         36/76 clean, 40 remaining
+   56.6% | dll/dx7.cpp
+         43/76 clean, 33 remaining
            - dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 (32 lines) [shadow_pointer_walk, unrolled_memset]
            - dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090 (98 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
            - dll_dx7.cpp_initTextureCaches_FUN_10001200 (88 lines) [pointer_cast]
-           - dll_dx7.cpp_enumAdapterCallback_FUN_100017b0 (119 lines) [pointer_cast, unnamed_field, unrolled_memcpy, unrolled_strlen]
            - dll_dx7.cpp_isAdapter3DCapable_FUN_10001900 (34 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset]
-           - dll_dx7.cpp_APIDLLInformation_FUN_100019a0 (75 lines) [stack_param, stack_ref, unresolved_register, unrolled_memcpy, unrolled_memset, unrolled_strlen]
-           - dll_dx7.cpp_APIDLLinit_FUN_10001a80 (183 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, unrolled_strlen]
            - dll_dx7.cpp_checkD3DResult_FUN_10001d70 (248 lines) [warning_noreturn]
            - dll_dx7.cpp_fatalError_FUN_10002340 (7 lines) [warning_noreturn]
-           - dll_dx7.cpp_APIDLLsetVideoMode_FUN_10002500 (299 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, unrolled_strlen, warning_noreturn]
            - dll_dx7.cpp_enumZBufferFormatCallback_FUN_10002b50 (23 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
            - dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0 (20 lines) [warning_noreturn]
            - dll_dx7.cpp_unlockBackBuffer_FUN_10002c50 (24 lines) [unrolled_memcpy]
            - dll_dx7.cpp_lockBackBuffer_FUN_10002dc0 (26 lines) [pointer_cast, pointer_truncation]
            - dll_dx7.cpp_lockSurface_FUN_10002e20 (17 lines) [shadow_pointer_walk, unrolled_memset]
            - dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60 (15 lines) [warning_noreturn]
-           - dll_dx7.cpp_releaseAllTextures_FUN_10002ea0 (52 lines) [pointer_cast, pointer_truncation, unresolved_funcptr, unrolled_memset]
-           - dll_dx7.cpp_createTexture_FUN_10002f60 (66 lines) [shadow_pointer_walk, unrolled_memset, warning_noreturn]
            - dll_dx7.cpp_initD3DDevice_FUN_10003100 (100 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, warning_noreturn]
            - dll_dx7.cpp_pickTextureFormat_FUN_10003340 (46 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
            - dll_dx7.cpp_createStagingTextures_FUN_10003400 (98 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset]
            - dll_dx7.cpp_initDefaultRenderStates_FUN_100035b0 (63 lines) [unrolled_memset]
            - dll_dx7.cpp_getMipLevelPtr_FUN_10003a30 (16 lines) [warning_noreturn]
-           - dll_dx7.cpp_uploadCurrentTexture_FUN_10003a80 (98 lines) [pointer_cast, pointer_truncation, stack_ref, unaffected_reg, unresolved_funcptr, unrolled_memcpy, unrolled_memset, warning_noreturn]
            - dll_dx7.cpp_convertMipTo16Bit_FUN_10003d90 (33 lines) [pointer_cast]
            - dll_dx7.cpp_copyMipTo32Bit_FUN_10003e40 (30 lines) [pointer_cast, unrolled_memcpy]
            - dll_dx7.cpp_buildTLVertex_FUN_100044b0 (106 lines) [bit_int_float_compare, signed_shift_global_idiom]
@@ -75,3 +62,9 @@ FILES BELOW 50%
            - dll_dx7.cpp_APIDLLunlockHoldBuffer_FUN_100053a0 (26 lines) [unrolled_memcpy]
 
 Total: 1 files
+
+====================================================================================================
+FILES BELOW 50%
+====================================================================================================
+
+Total: 0 files

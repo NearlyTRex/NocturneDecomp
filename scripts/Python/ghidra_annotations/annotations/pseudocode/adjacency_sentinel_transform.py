@@ -135,13 +135,33 @@ def init_context(globals_list, global_symbols):
 # iterator variable; group 2 is always the sentinel global. The `&` is
 # optional because array-typed sentinels decay to pointers and are emitted
 # without it (e.g. `!= g_MoonBats` where `g_MoonBats` is `SBat[30]`).
+#
+# Comparison operator: `!=` and `<` only.
+#   `!=` is the canonical Watcom shape; `<` is the same idiom emitted from a
+#   `JC`/`JB` exit (e.g. `while (puVar8 < &g_HWBlueShift)` walking
+#   g_PackedPalette[256] in tridx7!expandTextureAndBuildMips). For a forward
+#   walk whose stride divides the span exactly — which is what an adjacency
+#   sentinel always is — the two exit on the same iteration, so both rewrite
+#   to the identical pool-count bound.
+#
+#   Deliberately NOT matched:
+#     `<=`  would run one element PAST the pool end, so the count-based
+#           rewrite would be off by one. A miss here is far cheaper than a
+#           silently wrong rewrite.
+#     `>` / `>=`  are downward walks; the rewrite emits a forward
+#           `for (i = 0; i < count; i++)` loop and would reverse the traversal
+#           order. Needs its own handling if one ever shows up.
+_SENTINEL_CMP = r'(?:!=|<)'
+
 _SENTINEL_PATTERNS = [
-    # while (iter != (T *)&?g_Global)
-    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*\(\s*\w+\s*\*\s*\)\s*&?\s*(g_\w+)\s*\)'),
-    # while ((T *)iter != &?g_Global)
-    re.compile(r'\bwhile\s*\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*!=\s*&?\s*(g_\w+)\s*\)'),
-    # while (iter != &?g_Global)  (no cast)
-    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*&?\s*(g_\w+)\s*\)'),
+    # while (iter !=|< (T *)&?g_Global)
+    re.compile(r'\bwhile\s*\(\s*(\w+)\s*' + _SENTINEL_CMP +
+               r'\s*\(\s*\w+\s*\*\s*\)\s*&?\s*(g_\w+)\s*\)'),
+    # while ((T *)iter !=|< &?g_Global)
+    re.compile(r'\bwhile\s*\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*' + _SENTINEL_CMP +
+               r'\s*&?\s*(g_\w+)\s*\)'),
+    # while (iter !=|< &?g_Global)  (no cast)
+    re.compile(r'\bwhile\s*\(\s*(\w+)\s*' + _SENTINEL_CMP + r'\s*&?\s*(g_\w+)\s*\)'),
 ]
 
 
@@ -214,7 +234,20 @@ def transform_adjacency_sentinels(code, func_name=None):
                 continue
             count = pools[pool_name]
             old_cond = m.group(0)
-            new_cond = 'while (%s != %s + %d)' % (iter_name, pool_name, count)
+            # Bound the loop by an expression over the pool itself rather than
+            # by the literal count. Both forms are identical today (`count` is
+            # parsed from the very declaration `sizeof` reads, so they cannot
+            # disagree), but the derived form survives a pool RESIZE — arrays
+            # get grown for higher video resolutions / larger caches, and a
+            # baked literal only re-syncs on the next full re-export. See
+            # prompts/fix_compilation.md §18a.
+            #
+            # Safe unconditionally here: _ARRAY_TYPE_RE only admits pools with
+            # an explicit bound (never `extern T g_X[]`), and the element type
+            # is already required to be complete for the `pool + N` pointer
+            # arithmetic this replaces.
+            new_cond = 'while (%s != %s + sizeof(%s) / sizeof(%s[0]))' % (
+                iter_name, pool_name, pool_name, pool_name)
             seen_positions.add(m.start())
             replacements.append((m.start(), m.end(), old_cond, new_cond,
                                  pool_name, sentinel_name))

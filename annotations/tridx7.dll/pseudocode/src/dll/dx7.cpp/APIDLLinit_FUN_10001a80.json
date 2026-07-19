@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 79,
-        "line": 50,
-        "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectDraw4 **'"
-      },
-      {
-        "category": "pointer_type",
-        "column": 75,
-        "line": 138,
-        "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectDraw4 **'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 428,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 183,
-    "suspect_count": 22,
-    "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unrolled_memcpy",
-      "unrolled_memset",
-      "unrolled_strlen"
-    ],
-    "total_lines": 460
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 186,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -252,6 +233,233 @@
     },
     "pcode_op_count": 1136
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(GUID **)((int)g_AdapterGuids",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "HVar2 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar7),&g_DirectDraw,(IUnknown *)0x0",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(DDDEVICEIDENTIFIER *)((int)pDVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar10 = (DDDEVICEIDENTIFIER *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(DDDEVICEIDENTIFIER *)((int)pDVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar9 = (DDDEVICEIDENTIFIER *)((int)pDVar10 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(char *)((int)pDVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar8 = (char *)((int)pDVar9 - uVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(DWORD *)((int)g_AdapterVendorId",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)g_AdapterVendorId + iVar7) = DStack_428.dwVendorId;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(DWORD *)((int)g_AdapterDeviceId",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)g_AdapterDeviceId + iVar7) = DStack_428.dwDeviceId;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(CExternalRendererBridge *)((int)interface",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "interface = (CExternalRendererBridge *)((int)interface + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(CExternalRendererBridge *)((int)pCVar12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CExternalRendererBridge *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_AdapterGuids` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)g_AdapterGuids",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "HVar2 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar7),&g_DirectDraw,(IUnknown *)0x0",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)pDVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar10 = (DDDEVICEIDENTIFIER *)((int)pDVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)pDVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pDVar9 = (DDDEVICEIDENTIFIER *)((int)pDVar10 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)pDVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar8 = (char *)((int)pDVar9 - uVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)pCVar12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CExternalRendererBridge *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x10a; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 67,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 72,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 90,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 95,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 117,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x23; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 56,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 79,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10001b03, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 44,
+      "match": "STOSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001b03: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001b3c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 64,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001b3c: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001b66, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 78,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001b66: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001c01, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 118,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001c01: MOVSD.REP ES:EDI,ESI  ; g_ExternalRendererBridge | g_ExternalRendererBridge.red_scale_factor",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -275,207 +483,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "APIDLLinit_FUN_10001a80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 28,
-          "line": 101,
-          "message": "Uninitialized variable: *(uint*)pcVar9",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(GUID **)((int)g_AdapterGuids",
-      "severity": "moderate",
-      "text": "HVar3 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar8),&g_DirectDraw,(IUnknown *)0x0",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(DDSCAPS *)((int)pDVar11",
-      "severity": "moderate",
-      "text": "pDVar10 = (DDSCAPS *)((int)pDVar11 + (uint)bVar14 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(char *)((int)pDVar10",
-      "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pDVar10 - uVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(DWORD *)((int)g_AdapterVendorId",
-      "severity": "moderate",
-      "text": "*(DWORD *)((int)g_AdapterVendorId + iVar8) = DStack_20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(DWORD *)((int)g_AdapterDeviceId",
-      "severity": "moderate",
-      "text": "*(DWORD *)((int)g_AdapterDeviceId + iVar8) = DStack_1c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 122,
-      "match": "(CExternalRendererBridge *)((int)interface",
-      "severity": "moderate",
-      "text": "interface = (CExternalRendererBridge *)((int)interface + (uint)bVar14 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(CExternalRendererBridge *)((int)pCVar13",
-      "severity": "moderate",
-      "text": "pCVar13 = (CExternalRendererBridge *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `g_AdapterGuids` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)g_AdapterGuids",
-      "severity": "moderate",
-      "text": "HVar3 = DirectDrawCreate(*(GUID **)((int)g_AdapterGuids + iVar8),&g_DirectDraw,(IUnknown *)0x0",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pDVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
-      "match": "(int)pDVar11",
-      "severity": "moderate",
-      "text": "pDVar10 = (DDSCAPS *)((int)pDVar11 + (uint)bVar14 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pDVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
-      "match": "(int)pDVar10",
-      "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pDVar10 - uVar5);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
-      "match": "(int)pCVar13",
-      "severity": "moderate",
-      "text": "pCVar13 = (CExternalRendererBridge *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar4 = 0x10a; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 70,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 75,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 93,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 98,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 120,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar7 = 0x23; iVar7 != 0; iVar7 = iVar7 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 82,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom inline memset (REP STOSD at 10001b03, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
-      "line": 44,
-      "match": "STOSD.REP",
-      "severity": "moderate",
-      "text": "// 10001b03: STOSD.REP ES:EDI",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10001b3c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 64,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10001b3c: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10001b66, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 78,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10001b66: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10001c01, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 118,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10001c01: MOVSD.REP ES:EDI,ESI  ; g_ExternalRendererBridge | g_ExternalRendererBridge.red_scale_factor",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: *(uint*)pcVar9",
-      "line": 101,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(uint *)pcVar12 = *(uint *)pcVar9;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

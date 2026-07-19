@@ -52,7 +52,7 @@ void __cdecl dll_dx7_cpp_releaseAllTextures_FUN_10002ea0(void)
       pSVar4->surface = (IDirectDrawSurface *)0x0;
     }
     pSVar4 = pSVar4 + 1;
-  } while (pSVar4 < &g_ColorPalette);
+  } while (pSVar4 != g_TextureSurfaces + sizeof(g_TextureSurfaces) / sizeof(g_TextureSurfaces[0]));
   pSVar4 = g_TextureSurfaces;
   for (iVar3 = 0x2000; iVar3 != 0; iVar3 = iVar3 + -1) {
     pSVar4->texture = (IDirect3DTexture2 *)0x0;

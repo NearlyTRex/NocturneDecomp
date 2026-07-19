@@ -59,7 +59,7 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(CFireEffect *th
     do {
       core_fire_cpp_CCrater_render_FUN_004c4620(this_ptr_00);
       this_ptr_00 = this_ptr_00 + 1;
-    } while (this_ptr_00 != g_CraterPool + 20);
+    } while (this_ptr_00 != g_CraterPool + sizeof(g_CraterPool) / sizeof(g_CraterPool[0]));
   }
   return;
 }

@@ -13,7 +13,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   HWND HVar1;
   FARPROC pFVar2;
   int iVar3;
-  CExternalRenderer CStack_3c2c;
+  CExternalRenderer local_3c2c;
   CExternalRenderer CStack_1e64;
   CExternalRendererBridge CStack_9c;
   
@@ -38,9 +38,9 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     g_UseDirect3D = 0;
     return 0;
   }
-  ((void (__cdecl *)(HMODULE, CExternalRenderer *))pFVar2)(g_RendererDLLHandle,&CStack_3c2c);
+  ((void (__cdecl *)(HMODULE, CExternalRenderer *))pFVar2)(g_RendererDLLHandle,&local_3c2c);
   wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90(&CStack_1e64);
-  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(&CStack_3c2c,&CStack_1e64);
+  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(&local_3c2c,&CStack_1e64);
   if (iVar3 != 0) {
     g_DLLFunctionsMissing = 0;
     g_APIDLL_init =

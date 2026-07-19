@@ -27,8 +27,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void* g_CurrentTextureData
-;   void* g_CurrentTextureOpacityData
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:

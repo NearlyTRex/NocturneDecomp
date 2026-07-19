@@ -1,86 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 18,
-        "line": 35,
-        "message": "assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers"
-      },
-      {
-        "category": "pointer_type",
-        "column": 52,
-        "line": 38,
-        "message": "assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers"
-      },
-      {
-        "category": "pointer_type",
-        "column": 18,
-        "line": 78,
-        "message": "assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers"
-      },
-      {
-        "category": "pointer_type",
-        "column": 59,
-        "line": 81,
-        "message": "assigning to 'char *' from 'LPCSTR' (aka 'const char *') discards qualifiers"
-      },
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 116,
-        "message": "no member named 'field_0x4' in '_GUID'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 117,
-        "message": "no member named 'field_0x4' in '_GUID'"
-      },
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 118,
-        "message": "no member named 'field_0x8' in '_GUID'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 119,
-        "message": "no member named 'field_0x8' in '_GUID'"
-      },
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 120,
-        "message": "no member named 'field_0xc' in '_GUID'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 121,
-        "message": "no member named 'field_0xc' in '_GUID'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 359,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 22,
-    "suspect_types": [
-      "pointer_cast",
-      "unnamed_field",
-      "unrolled_memcpy",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 248
   },
   "cross_references": [
@@ -238,6 +172,206 @@
     },
     "pcode_op_count": 817
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CHAR *)((int)pacVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_name[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(CHAR *)((int)pacVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_description[(uint)bVar8 * -4 + 2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 109,
+      "match": "field_0x4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x4 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 110,
+      "match": "field_0x4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&lp_guid->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 111,
+      "match": "field_0x8",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x8 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 112,
+      "match": "field_0x8",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&lp_guid->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 113,
+      "match": "field_0xc",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0xc =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 114,
+      "match": "field_0xc",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&lp_guid->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 51,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 81,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 86,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 94,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 19,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 27,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 62,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 70,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000180a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 1000180a: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000182b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 1000182b: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName | g_AdapterDriverName[0][4]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10001872, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 76,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 10001872: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000188d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 87,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 1000188d: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription | g_AdapterDescription[0][4]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -282,182 +416,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(CHAR *)((int)pacVar7",
-      "severity": "moderate",
-      "text": "*(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_name[(uint)bVar8 * -4 + 2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(CHAR *)((int)pacVar7",
-      "severity": "moderate",
-      "text": "*(CHAR *)((int)pacVar7 + (uint)bVar8 * -4 + 2) = lp_driver_description[(uint)bVar8 * -4 + 2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x4 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&lp_guid->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0x8 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&lp_guid->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&g_AdapterGuidStorage[g_AdapterCount].field_0xc =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&lp_guid->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 51,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 81,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 86,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 94,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 19,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 27,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 62,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 70,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 1000180a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 37,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 1000180a: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 1000182b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 49,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 1000182b: MOVSD.REP ES:EDI,ESI  ; g_AdapterDriverName | g_AdapterDriverName[0][4]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 10001872, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 76,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 10001872: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 1000188d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 87,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 1000188d: MOVSD.REP ES:EDI,ESI  ; g_AdapterDescription | g_AdapterDescription[0][4]",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

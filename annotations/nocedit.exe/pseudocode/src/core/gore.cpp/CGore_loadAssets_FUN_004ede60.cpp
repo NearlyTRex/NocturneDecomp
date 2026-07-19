@@ -19,7 +19,7 @@ void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004ede60(CGore *this_ptr)
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,pSVar1);
     pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != g_BloodSplatTextures + 4);
+  } while (pSVar1 != g_BloodSplatTextures + sizeof(g_BloodSplatTextures) / sizeof(g_BloodSplatTextures[0]));
   iVar3 = 0;
   pSVar1 = g_BloodSplatAnimTextures;
   do {

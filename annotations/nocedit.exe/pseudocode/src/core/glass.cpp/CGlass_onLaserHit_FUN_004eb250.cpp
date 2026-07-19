@@ -49,8 +49,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004eb250(CGlass *this_ptr,SLas
     if (g_CurrentTextureDimension <= local_14) {
       local_14 = g_CurrentTextureDimension + -1;
     }
-    if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
-        '\0') {
+    if (g_CurrentTextureData[local_18 + local_14 * g_CurrentTextureDimension] == '\0') {
       laser_info->transparency = 1.0;
       return;
     }

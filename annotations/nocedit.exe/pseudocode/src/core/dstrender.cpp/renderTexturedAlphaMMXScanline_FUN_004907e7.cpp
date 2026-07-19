@@ -10,7 +10,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e
 
 {
   uint uVar1;
-  void *pvVar2;
+  uchar *puVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;
@@ -53,13 +53,12 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e
     g_StartDepthZ = uVar1;
     while( true ) {
       if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {
-        pvVar2 = g_CurrentTextureOpacityData;
-        if (g_CurrentTextureOpacityData == (void *)0x0) {
-          pvVar2 = g_CurrentTextureData;
+        puVar2 = g_CurrentTextureOpacityData;
+        if (g_CurrentTextureOpacityData == (uchar *)0x0) {
+          puVar2 = g_CurrentTextureData;
         }
-        if (*(char *)((uVar4 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
-                      (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) + (int)pvVar2) != '\0')
-        {
+        if (puVar2[(uVar4 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                   (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0])] != '\0') {
           *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;
         }
       }

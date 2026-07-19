@@ -78,7 +78,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     fVar10 = fStack_14;
     sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(pCVar3,fStack_14);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != g_SfxSlots + 64);
+  } while (pCVar3 != g_SfxSlots + sizeof(g_SfxSlots) / sizeof(g_SfxSlots[0]));
   pCVar3 = g_SfxSlots;
   do {
     puVar4 = auStack_40;
@@ -101,7 +101,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     mix_buffer.output_sample_rate = (int)fVar10;
     sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar3,mix_buffer);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != g_SfxSlots + 64);
+  } while (pCVar3 != g_SfxSlots + sizeof(g_SfxSlots) / sizeof(g_SfxSlots[0]));
   g_MixBufferReadIndex = g_MixBufferSize;
   g_MixBufferWriteIndex = 0;
   g_MixBufferCount = g_MixBufferCount + 1;

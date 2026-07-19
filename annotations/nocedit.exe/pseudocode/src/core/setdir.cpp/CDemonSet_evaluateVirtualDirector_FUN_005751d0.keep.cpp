@@ -105,7 +105,9 @@ LAB_0057523f:
          (pSVar4->base).surface_normal.B.i * aCStack_158[iVar12].y +
          (pSVar4->base).surface_normal.C.i * aCStack_158[iVar12].z;
     pSVar4 = pSVar5;
-  } while (pSVar5 != g_BoundingBoxQuadTemplates + 6);
+  } while (pSVar5 !=
+           g_BoundingBoxQuadTemplates +
+           sizeof(g_BoundingBoxQuadTemplates) / sizeof(g_BoundingBoxQuadTemplates[0]));
   if (force_evaluation_mode == 0) {
     iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float
                                 ));

@@ -19,7 +19,7 @@
 ;   undefined4 g_CameraTextureWorkBuffer[1]+1
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SRGBColorPalette* g_CurrentPalette
-;   void* g_CurrentTextureData
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80

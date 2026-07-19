@@ -17,9 +17,9 @@ CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CText
   pCVar1 = this_ptr;
   do {
     piVar2 = &pCVar1->max_texture_count;
-    pCVar1->texture_data_ptrs[0] = (void *)0x0;
-    pCVar1->texture_opacity_ptrs[0] = (void *)0x0;
-    pCVar1->texture_palette_ptrs[0] = (byte *)0x0;
+    pCVar1->texture_data_ptrs[0] = (uchar *)0x0;
+    pCVar1->texture_opacity_ptrs[0] = (uchar *)0x0;
+    pCVar1->texture_palette_ptrs[0] = (uchar *)0x0;
     pCVar1->texture_dimensions[0] = 0;
     pCVar1 = (CTextureCache *)piVar2;
   } while (piVar2 != this_ptr->texture_dimensions + 0x3fe);

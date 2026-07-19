@@ -22,7 +22,7 @@ void __cdecl core_gore_cpp_CGore_reset_FUN_004ed760(CGore *this_ptr)
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;
     pCVar1 = pCVar2;
-  } while (pCVar2 != g_BloodParticles + 256);
+  } while (pCVar2 != g_BloodParticles + sizeof(g_BloodParticles) / sizeof(g_BloodParticles[0]));
   g_FootstepCount = 0;
   g_FootstepIndex = 0;
   return;

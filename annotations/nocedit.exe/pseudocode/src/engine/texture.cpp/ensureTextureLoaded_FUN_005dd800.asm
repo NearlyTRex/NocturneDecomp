@@ -99,7 +99,7 @@ section .text
     PUSH ESI                            ; 005dd885
     PUSH EBX                            ; 005dd886
     CALL wincore_windll.cpp_selectTexture_FUN_005b7340 ; 005dd887
-        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, byte * palette_data)
+        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd88c
     LEA EAX,[EBX + 0x18]                ; 005dd88f
         ;   Label: LAB_005dd88f

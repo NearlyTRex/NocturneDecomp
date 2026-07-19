@@ -20,7 +20,7 @@ int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005ab660(void)
     do {
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
       this_ptr = this_ptr + 1;
-    } while (this_ptr != g_SfxSamples + 64);
+    } while (this_ptr != g_SfxSamples + sizeof(g_SfxSamples) / sizeof(g_SfxSamples[0]));
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       iVar2 = 1;
     }

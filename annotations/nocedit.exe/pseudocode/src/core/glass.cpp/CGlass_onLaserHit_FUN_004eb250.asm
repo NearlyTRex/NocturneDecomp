@@ -16,7 +16,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentTextureDimension = 0x100
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void* g_CurrentTextureData
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840

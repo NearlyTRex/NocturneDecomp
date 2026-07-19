@@ -104,6 +104,10 @@ int g_LightDirectionY = {};
 int g_LightDirectionZ = {};
 int g_EventDryRun = {};
 
+// uchar*
+uchar* g_CurrentTextureData = {};
+uchar* g_CurrentTextureOpacityData = {};
+
 // uchar[768]
 uchar g_SourcePaletteData[768] = {};
 uchar g_DefaultPalette[768] = {};
@@ -123,8 +127,4 @@ ulong g_SolidColorMode = {};
 // ushort[256]
 ushort g_ColorTable16[256] = {};
 ushort g_Hardware16BitPalette[256] = {};
-
-// void*
-void* g_CurrentTextureData = {};
-void* g_CurrentTextureOpacityData = {};
 

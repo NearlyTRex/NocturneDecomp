@@ -62,7 +62,6 @@ typedef struct DDDEVICEIDENTIFIER {
     DWORD dwSubSysId;
     DWORD dwRevision;
     GUID guidDeviceIdentifier;
-    DWORD dwWHQLLevel;
 } DDDEVICEIDENTIFIER;
 #pragma pack(pop)
 
@@ -263,7 +262,7 @@ typedef struct IDirectDraw4 {
 typedef HRESULT IDirectDraw4_CreateSurface(struct IDirectDraw4* this_ptr, struct DDSURFACEDESC2* desc, struct IDirectDrawSurface** surface, struct IUnknown* outer);
 
 // Function Definition: IDirectDraw4_GetAvailableVidMem
-typedef HRESULT IDirectDraw4_GetAvailableVidMem(struct IDirectDraw4* this_ptr, struct DDSCAPS* caps, DWORD* total, DWORD* free);
+typedef HRESULT IDirectDraw4_GetAvailableVidMem(struct IDirectDraw4* this_ptr, struct DDSCAPS2* caps, DWORD* total, DWORD* free);
 
 // Function Definition: IDirectDraw4_GetCaps
 typedef HRESULT IDirectDraw4_GetCaps(struct IDirectDraw4* this_ptr, struct DDCAPS* driver_caps, struct DDCAPS* hel_caps);

@@ -19,12 +19,12 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTexture
     if (this_ptr->texture_data_ptrs[iVar3] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
                 (this_ptr->texture_data_ptrs[iVar3],"..\\engine\\texture.cpp",200);
-      this_ptr->texture_data_ptrs[iVar3] = (void *)0x0;
+      this_ptr->texture_data_ptrs[iVar3] = (uchar *)0x0;
     }
     if (this_ptr->texture_opacity_ptrs[iVar3] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
                 (this_ptr->texture_opacity_ptrs[iVar3],"..\\engine\\texture.cpp",204);
-      this_ptr->texture_opacity_ptrs[iVar3] = (void *)0x0;
+      this_ptr->texture_opacity_ptrs[iVar3] = (uchar *)0x0;
     }
     if (this_ptr->texture_palette_ptrs[iVar3] != (byte *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460

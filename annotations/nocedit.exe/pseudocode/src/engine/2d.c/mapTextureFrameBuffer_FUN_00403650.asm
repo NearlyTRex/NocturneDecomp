@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureDimension = 0x100
-;   void* g_CurrentTextureData
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   engine_2d.c_mapFrameBuffer_FUN_00403430

@@ -114,6 +114,10 @@ extern int g_LightDirectionY;
 extern int g_LightDirectionZ;
 extern int g_EventDryRun;
 
+// uchar*
+extern uchar* g_CurrentTextureData;
+extern uchar* g_CurrentTextureOpacityData;
+
 // uchar[768]
 extern uchar g_SourcePaletteData[768];
 extern uchar g_DefaultPalette[768];
@@ -133,8 +137,4 @@ extern ulong g_SolidColorMode;
 // ushort[256]
 extern ushort g_ColorTable16[256];
 extern ushort g_Hardware16BitPalette[256];
-
-// void*
-extern void* g_CurrentTextureData;
-extern void* g_CurrentTextureOpacityData;
 

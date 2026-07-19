@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_freeAllSamples_FUN_005aa660(void)
   do {
     sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != g_SfxSamples + 64);
+  } while (this_ptr != g_SfxSamples + sizeof(g_SfxSamples) / sizeof(g_SfxSamples[0]));
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return;
 }

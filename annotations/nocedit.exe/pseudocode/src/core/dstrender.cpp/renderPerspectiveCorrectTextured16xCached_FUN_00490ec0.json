@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 357,
+    "complexity_score": 350,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 56,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 357,
+    "pseudocode_lines": 350,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 946
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -372,7 +372,7 @@
     {
       "addr": "02d03e80",
       "name": "g_CurrentTextureData",
-      "type": "void*",
+      "type": "uchar*",
       "value": null
     }
   ],
@@ -442,294 +442,6 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 86,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 91,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 101,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 136,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 153,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 177,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 183,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 189,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "+ (int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 195,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": ") + (int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 202,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 209,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 216,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 223,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 230,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 237,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 244,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 251,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 258,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 265,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 270,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "+ (int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 276,
-      "match": "(int)g_CurrentTextureData",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(int)g_CurrentTextureData)];",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
       "line": 56,
       "match": "g_Global >> 0x1f",
@@ -767,7 +479,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 164,
+      "line": 163,
       "match": "g_Global >> 0x1f",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -776,7 +488,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 167,
+      "line": 166,
       "match": "g_Global >> 0x1f",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -821,11 +533,11 @@
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
+      "text": "*puVar15 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar9,uVar6)]];",
       "type": "concat_reconstruction"
     },
     {
@@ -834,7 +546,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -843,7 +555,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -852,7 +564,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -861,7 +573,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -870,7 +582,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -879,7 +591,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -888,7 +600,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -897,7 +609,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -906,7 +618,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -915,7 +627,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -924,7 +636,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -933,7 +645,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -942,7 +654,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -951,7 +663,7 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
@@ -960,12 +672,12 @@
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),",
+      "text": "[CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 164,
+      "line": 163,
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -974,7 +686,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 167,
+      "line": 166,
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -983,146 +695,146 @@
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 177,
+      "line": 175,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
+      "text": "*puVar15 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar9,uVar6)]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 182,
+      "line": 181,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)) +",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 188,
+      "line": 187,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 194,
+      "line": 193,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 200,
+      "line": 199,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 207,
+      "line": 205,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 214,
+      "line": 211,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 221,
+      "line": 217,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 228,
+      "line": 223,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 235,
+      "line": 229,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]]",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 242,
+      "line": 236,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8)",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 249,
+      "line": 243,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 256,
+      "line": 250,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 263,
+      "line": 257,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 268,
+      "line": 262,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 273,
+      "line": 267,
       "match": "CONCAT11",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(byte *)((uint)CONCAT11((char)((uint)(iVar8 +",
+      "text": "[CONCAT11((char)((uint)(iVar8 + iVar4) >> 8),",
       "type": "concat_reconstruction"
     }
   ],
