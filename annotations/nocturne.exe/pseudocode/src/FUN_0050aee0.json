@@ -122,14 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 954,
+    "complexity_score": 969,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 249,
-    "suspect_count": 68,
+    "suspect_count": 69,
     "suspect_types": [
+      "fast_sqrt_inline",
       "param_count_too_few",
       "pointer_cast",
       "undefined_data",
@@ -1200,6 +1201,14 @@
       "severity": "mild",
       "text": "fVar2 = *(float *)(iVar4 + 0x10c) - (param_2[2] + pfVar6[2]);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01c7070c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c7070c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 215,
+      "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01c7070c) * *(float *)(iVar4 + 0",
+      "severity": "moderate",
+      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01c7070c) * *(float *)(iVar4 + 0x11dc) ) * _DAT_005905da;",
+      "type": "fast_sqrt_inline"
     },
     {
       "call_site_count": 1,

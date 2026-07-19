@@ -63,9 +63,9 @@ LAB_1000400f:
     }
   }
   if (((render_flags & 1) != 0) &&
-     (g_TextureSurfaces[g_CurrentTextureIndex].texture != g_CurrentBoundTexture)) {
+     (g_TextureSurfaces[g_DX7CurrentTextureIndex].texture != g_CurrentBoundTexture)) {
     dll_dx7_cpp_flushBatch_FUN_100047b0();
-    g_CurrentBoundTexture = g_TextureSurfaces[g_CurrentTextureIndex].texture;
+    g_CurrentBoundTexture = g_TextureSurfaces[g_DX7CurrentTextureIndex].texture;
     (*g_Device->vtable->SetTextureStageState)(g_Device,0,1,4);
     (*g_Device->vtable->SetTextureStageState)
               (g_Device,0,0x10,2 - (*g_ExternalRendererBridge.system_initialized == 0));

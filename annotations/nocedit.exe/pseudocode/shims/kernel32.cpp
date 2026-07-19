@@ -16,6 +16,7 @@
 
 #include "system/kernel32.h"
 #include "globals/globals_610000.h"
+#include "builtin_dll.h"
 
 #include <SDL.h>
 #include <dlfcn.h>
@@ -983,6 +984,13 @@ static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
 // =============================================================================
 
 static HMODULE shim_LoadLibraryA(LPCSTR lpLibFileName) {
+    // Compiled-in modules (decompiled renderer DLLs) resolve without touching
+    // the filesystem, so the game's LoadLibrary/GetProcAddress loader path runs
+    // unmodified against our own code. See shims/builtin_dll.h.
+    void* builtin = nocturne_builtin_dll_open(lpLibFileName);
+    if (builtin) {
+        return (HMODULE)builtin;
+    }
     void* handle = dlopen(lpLibFileName, RTLD_LAZY);
     if (!handle) {
         s_lastError = 126; // ERROR_MOD_NOT_FOUND
@@ -992,11 +1000,20 @@ static HMODULE shim_LoadLibraryA(LPCSTR lpLibFileName) {
 }
 
 static BOOL shim_FreeLibrary(HMODULE hLibModule) {
+    // Built-in modules are static data — nothing to unload.
+    if (nocturne_builtin_dll_is_handle((void*)hLibModule)) return 1;
     if (dlclose((void*)hLibModule) == 0) return 1;
     return 0;
 }
 
 static FARPROC shim_GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
+    if (nocturne_builtin_dll_is_handle((void*)hModule)) {
+        void* proc = nocturne_builtin_dll_sym((void*)hModule, lpProcName);
+        if (!proc) {
+            s_lastError = 127; // ERROR_PROC_NOT_FOUND
+        }
+        return (FARPROC)proc;
+    }
     void* sym = dlsym((void*)hModule, lpProcName);
     if (!sym) {
         s_lastError = 127; // ERROR_PROC_NOT_FOUND

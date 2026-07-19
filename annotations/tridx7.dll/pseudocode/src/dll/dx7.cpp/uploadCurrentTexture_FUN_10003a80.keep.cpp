@@ -37,11 +37,11 @@ void __cdecl dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80(void)
   dll_dx7_cpp_expandTextureAndBuildMips_FUN_10003830();
   if (g_DirectTextureFlag == 0) {
     local_94 = g_StagingTextures[g_StagingSetIndex][iVar4];
-    local_90 = g_TextureSurfaces[g_CurrentTextureIndex].surface;
+    local_90 = g_TextureSurfaces[g_DX7CurrentTextureIndex].surface;
   }
   else {
     local_90 = (IDirectDrawSurface *)0x0;
-    local_94 = g_TextureSurfaces[g_CurrentTextureIndex].surface;
+    local_94 = g_TextureSurfaces[g_DX7CurrentTextureIndex].surface;
   }
   while( true ) {
     if (g_DirectTextureFlag == 0) {

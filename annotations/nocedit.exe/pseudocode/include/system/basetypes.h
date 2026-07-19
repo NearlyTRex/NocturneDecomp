@@ -7,9 +7,10 @@
 // It must be included first to break circular dependencies between system headers.
 
 // Standard includes
-#include <stddef.h>  // for wchar_t, size_t
+#include <stddef.h>  // for wchar_t, size_t, ptrdiff_t
 #include <stdint.h>  // for intptr_t/uintptr_t (pointer-width types)
 #include <stdbool.h>  // for bool
+#include <stdarg.h>  // for va_list (24-byte __va_list_tag[1] on x86-64)
 
 // =============================================================================
 // Integer width model: Win32 LLP64 (NOT the host's data model)

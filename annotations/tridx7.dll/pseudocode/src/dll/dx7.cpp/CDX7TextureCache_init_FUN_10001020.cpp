@@ -1,18 +1,18 @@
-// Name: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
+// Name: dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020
 // Address: 10001020
 // Address Range: [[10001020, 10001074]]
 // Convention: __ecxcall
-// Signature: void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *this_ptr,int max_count,int texture_size)
+// Signature: void __ecxcall dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020(CDX7TextureCache *this_ptr,int max_count,int texture_size)
 
 #include "nocturne.h"
 
-void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *this_ptr,int max_count,int texture_size)
+void __ecxcall dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020(CDX7TextureCache *this_ptr,int max_count,int texture_size)
 
 {
   int iVar1;
   int iVar2;
-  STextureCacheEntry *pSVar3;
-  STextureCacheEntry *pSVar4;
+  SDX7TextureCacheEntry *pSVar3;
+  SDX7TextureCacheEntry *pSVar4;
   
   pSVar3 = this_ptr->entries;
   this_ptr->max_count = max_count;
@@ -20,7 +20,7 @@ void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *
   pSVar4 = pSVar3;
   for (iVar2 = 0x12000; iVar2 != 0; iVar2 = iVar2 + -1) {
     pSVar4->slot = 0;
-    pSVar4 = (STextureCacheEntry *)pSVar4->name;
+    pSVar4 = (SDX7TextureCacheEntry *)pSVar4->name;
   }
   iVar2 = 0;
   this_ptr->entry_count = 0;

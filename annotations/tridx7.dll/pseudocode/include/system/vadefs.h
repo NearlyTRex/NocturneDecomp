@@ -1,17 +1,12 @@
 #pragma once
 
-// Dependencies
+// =============================================================================
+// VADEFS - System Header (stub)
+// =============================================================================
+//
+// Every type this header declared is now provided by the host toolchain or
+// by system/basetypes.h, so there is nothing left to define. The file is
+// still emitted because other generated headers include it by path.
+
 #include "system/basetypes.h"
-
-// =============================================================================
-// VADEFS - System Header
-// =============================================================================
-
-// Typedef: uintptr_t
-// Unsigned Integer (compiler-specific size)
-typedef uint uintptr_t;
-
-// Typedef: va_list
-// pointer to char
-typedef char* va_list;
 

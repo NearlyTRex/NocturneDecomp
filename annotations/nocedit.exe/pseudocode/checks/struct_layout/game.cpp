@@ -2969,31 +2969,29 @@ static_assert(__builtin_offsetof(CExplosion, gore_multiplier) == 20,
 static_assert(__builtin_offsetof(CExplosion, flip_flag) == 24,
               "offsetof(CExplosion, flip_flag) != 24");
 
-// ---- CExternalRenderer (7656 bytes) ----
-static_assert(sizeof(CExternalRenderer) == 7656,
-              "sizeof(CExternalRenderer) != 7656");
-static_assert(__builtin_offsetof(CExternalRenderer, buffer_ptr) == 0,
-              "offsetof(CExternalRenderer, buffer_ptr) != 0");
-static_assert(__builtin_offsetof(CExternalRenderer, dead1) == 4,
-              "offsetof(CExternalRenderer, dead1) != 4");
-static_assert(__builtin_offsetof(CExternalRenderer, dll_identifier) == 256,
-              "offsetof(CExternalRenderer, dll_identifier) != 256");
-static_assert(__builtin_offsetof(CExternalRenderer, hardware_flags) == 512,
-              "offsetof(CExternalRenderer, hardware_flags) != 512");
+// ---- CExternalRenderer (7624 bytes) ----
+static_assert(sizeof(CExternalRenderer) == 7624,
+              "sizeof(CExternalRenderer) != 7624");
+static_assert(__builtin_offsetof(CExternalRenderer, description) == 0,
+              "offsetof(CExternalRenderer, description) != 0");
+static_assert(__builtin_offsetof(CExternalRenderer, vendor_name) == 256,
+              "offsetof(CExternalRenderer, vendor_name) != 256");
+static_assert(__builtin_offsetof(CExternalRenderer, interface_version) == 512,
+              "offsetof(CExternalRenderer, interface_version) != 512");
+static_assert(__builtin_offsetof(CExternalRenderer, driver_version) == 514,
+              "offsetof(CExternalRenderer, driver_version) != 514");
 static_assert(__builtin_offsetof(CExternalRenderer, api_version) == 516,
               "offsetof(CExternalRenderer, api_version) != 516");
-static_assert(__builtin_offsetof(CExternalRenderer, dead2) == 518,
-              "offsetof(CExternalRenderer, dead2) != 518");
+static_assert(__builtin_offsetof(CExternalRenderer, other_version) == 518,
+              "offsetof(CExternalRenderer, other_version) != 518");
 static_assert(__builtin_offsetof(CExternalRenderer, feature_flags) == 520,
               "offsetof(CExternalRenderer, feature_flags) != 520");
 static_assert(__builtin_offsetof(CExternalRenderer, function_count) == 524,
               "offsetof(CExternalRenderer, function_count) != 524");
 static_assert(__builtin_offsetof(CExternalRenderer, function_table) == 528,
               "offsetof(CExternalRenderer, function_table) != 528");
-static_assert(__builtin_offsetof(CExternalRenderer, dead3) == 592,
-              "offsetof(CExternalRenderer, dead3) != 592");
-static_assert(__builtin_offsetof(CExternalRenderer, renderer_dll_name) == 7624,
-              "offsetof(CExternalRenderer, renderer_dll_name) != 7624");
+static_assert(__builtin_offsetof(CExternalRenderer, reserved) == 592,
+              "offsetof(CExternalRenderer, reserved) != 592");
 
 // ---- CExternalRendererBridge (140 bytes) ----
 static_assert(sizeof(CExternalRendererBridge) == 140,
@@ -3002,20 +3000,20 @@ static_assert(__builtin_offsetof(CExternalRendererBridge, red_bit_position) == 0
               "offsetof(CExternalRendererBridge, red_bit_position) != 0");
 static_assert(__builtin_offsetof(CExternalRendererBridge, red_scale_factor) == 4,
               "offsetof(CExternalRendererBridge, red_scale_factor) != 4");
-static_assert(__builtin_offsetof(CExternalRendererBridge, red_bit_count) == 8,
-              "offsetof(CExternalRendererBridge, red_bit_count) != 8");
+static_assert(__builtin_offsetof(CExternalRendererBridge, red_dither_shift) == 8,
+              "offsetof(CExternalRendererBridge, red_dither_shift) != 8");
 static_assert(__builtin_offsetof(CExternalRendererBridge, green_bit_position) == 12,
               "offsetof(CExternalRendererBridge, green_bit_position) != 12");
 static_assert(__builtin_offsetof(CExternalRendererBridge, green_scale_factor) == 16,
               "offsetof(CExternalRendererBridge, green_scale_factor) != 16");
-static_assert(__builtin_offsetof(CExternalRendererBridge, green_bit_count) == 20,
-              "offsetof(CExternalRendererBridge, green_bit_count) != 20");
+static_assert(__builtin_offsetof(CExternalRendererBridge, green_dither_shift) == 20,
+              "offsetof(CExternalRendererBridge, green_dither_shift) != 20");
 static_assert(__builtin_offsetof(CExternalRendererBridge, blue_bit_position) == 24,
               "offsetof(CExternalRendererBridge, blue_bit_position) != 24");
 static_assert(__builtin_offsetof(CExternalRendererBridge, blue_scale_factor) == 28,
               "offsetof(CExternalRendererBridge, blue_scale_factor) != 28");
-static_assert(__builtin_offsetof(CExternalRendererBridge, blue_bit_count) == 32,
-              "offsetof(CExternalRendererBridge, blue_bit_count) != 32");
+static_assert(__builtin_offsetof(CExternalRendererBridge, blue_dither_shift) == 32,
+              "offsetof(CExternalRendererBridge, blue_dither_shift) != 32");
 static_assert(__builtin_offsetof(CExternalRendererBridge, blend_mode) == 36,
               "offsetof(CExternalRendererBridge, blend_mode) != 36");
 static_assert(__builtin_offsetof(CExternalRendererBridge, current_lighting) == 40,
@@ -3100,12 +3098,12 @@ static_assert(sizeof(CFileFinder) == 276,
               "sizeof(CFileFinder) != 276");
 static_assert(__builtin_offsetof(CFileFinder, filename) == 0,
               "offsetof(CFileFinder, filename) != 0");
-static_assert(__builtin_offsetof(CFileFinder, file_size) == 256,
-              "offsetof(CFileFinder, file_size) != 256");
-static_assert(__builtin_offsetof(CFileFinder, timestamp) == 260,
-              "offsetof(CFileFinder, timestamp) != 260");
-static_assert(__builtin_offsetof(CFileFinder, attributes) == 264,
-              "offsetof(CFileFinder, attributes) != 264");
+static_assert(__builtin_offsetof(CFileFinder, attributes) == 256,
+              "offsetof(CFileFinder, attributes) != 256");
+static_assert(__builtin_offsetof(CFileFinder, file_size) == 260,
+              "offsetof(CFileFinder, file_size) != 260");
+static_assert(__builtin_offsetof(CFileFinder, timestamp) == 264,
+              "offsetof(CFileFinder, timestamp) != 264");
 static_assert(__builtin_offsetof(CFileFinder, has_results) == 268,
               "offsetof(CFileFinder, has_results) != 268");
 static_assert(__builtin_offsetof(CFileFinder, search_handle) == 272,

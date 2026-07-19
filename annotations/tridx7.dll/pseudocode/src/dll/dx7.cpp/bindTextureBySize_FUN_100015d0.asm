@@ -12,14 +12,14 @@
 ; Referenced Globals:
 ;   void* switchdataD_10001634 = 100015f0
 ;   byte switchdataD_10001648 = 0x0
-;   CDLLTextureCache* g_TextureCache32 = 10060678
-;   CDLLTextureCache* g_TextureCache64 = 100a8688
-;   CDLLTextureCache* g_TextureCache128 = 100f0698
-;   CDLLTextureCache* g_TextureCache256 = 10018660
+;   CDX7TextureCache* g_TextureCache32 = 10060678
+;   CDX7TextureCache* g_TextureCache64 = 100a8688
+;   CDX7TextureCache* g_TextureCache128 = 100f0698
+;   CDX7TextureCache* g_TextureCache256 = 10018660
 ;   undefined4 g_ExternalRendererBridge.texture_dimension
 ;
 ; Called Functions:
-;   dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180
+;   dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180
 ;
 ; *****************************************************************************
 
@@ -40,29 +40,29 @@ section .text
         ;   Label: caseD_20
     MOV ECX,dword ptr [0x10014044]      ; 100015f4 | g_TextureCache32
     PUSH EAX                            ; 100015fa
-    CALL dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 ; 100015fb
-        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
+    CALL dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180 ; 100015fb
+        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     RET                                 ; 10001600
     MOV EAX,dword ptr [ESP + 0x4]       ; 10001601
         ;   Label: caseD_40
     MOV ECX,dword ptr [0x10014048]      ; 10001605 | g_TextureCache64
     PUSH EAX                            ; 1000160b
-    CALL dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 ; 1000160c
-        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
+    CALL dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180 ; 1000160c
+        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     RET                                 ; 10001611
     MOV EAX,dword ptr [ESP + 0x4]       ; 10001612
         ;   Label: caseD_80
     MOV ECX,dword ptr [0x1001404c]      ; 10001616 | g_TextureCache128
     PUSH EAX                            ; 1000161c
-    CALL dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 ; 1000161d
-        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
+    CALL dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180 ; 1000161d
+        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     RET                                 ; 10001622
     MOV EAX,dword ptr [ESP + 0x4]       ; 10001623
         ;   Label: caseD_100
     MOV ECX,dword ptr [0x10014050]      ; 10001627 | g_TextureCache256
     PUSH EAX                            ; 1000162d
-    CALL dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 ; 1000162e
-        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
+    CALL dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180 ; 1000162e
+        ;   XREF to: 10001180 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     RET                                 ; 10001633
         ;   Label: caseD_21
 

@@ -19,7 +19,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette
 
                     /* 0x4b30  28  APIDLLsetColorTable16 */
   g_ColorPalette = source_palette;
-  g_ColorTable16 = color_table;
+  g_DX7ColorTable16 = color_table;
   memset(&desc,0,sizeof(desc));
   desc.dwSize = sizeof(desc);
   if (dll_dx7_cpp_lockSurface_FUN_10002e20(g_BackBufferSurface,&desc) == 0) {
@@ -56,7 +56,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette
   *g_ExternalRendererBridge.blue_dither_shift =
        dll_dx7_cpp_floorLog2_FUN_10004d10(*g_ExternalRendererBridge.blue_scale_factor);
   palette = g_ColorPalette;
-  dest = g_ColorTable16;
+  dest = g_DX7ColorTable16;
   for (entry = 0; entry < 0x100; entry = entry + 1) {
     *dest = (ushort)
             ((uint)palette[0] / (uint)*g_ExternalRendererBridge.red_scale_factor <<

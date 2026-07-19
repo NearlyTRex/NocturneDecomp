@@ -7,12 +7,12 @@ struct IDirectDrawSurface;
 // Dependencies
 #include "system/basetypes.h"
 
-// Structure: STextureSurfaceSlot
+// Structure: SDX7TextureSurfaceSlot
 // Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
-typedef struct STextureSurfaceSlot {
+typedef struct SDX7TextureSurfaceSlot {
     struct IDirect3DTexture2* texture; // 0x0
     struct IDirectDrawSurface* surface; // 0x4
-} STextureSurfaceSlot;
+} SDX7TextureSurfaceSlot;
 #pragma pack(pop)
 

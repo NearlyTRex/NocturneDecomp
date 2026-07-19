@@ -1,5 +1,6 @@
 #include "system/user32.h"
 #include "dump.h"
+#include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
 #include <cstring>
@@ -316,7 +317,13 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
     // Created hidden — DDraw's SetDisplayMode resizes us shortly, and we want
     // to skip the flash of a default-size window between create and resize.
     // The window is shown from ddraw_SetDisplayMode once the real size is set.
+    // SDL_WINDOW_OPENGL must be set at creation — it cannot be added later, and
+    // gl_present needs it to put a GL context on this window. Harmless when
+    // NOCTURNE_GL_PRESENT is 0; the window just never gets a context.
     Uint32 flags = SDL_WINDOW_HIDDEN;
+#if NOCTURNE_GL_PRESENT
+    flags |= SDL_WINDOW_OPENGL;
+#endif
     if (nWidth <= 0) nWidth = 640;
     if (nHeight <= 0) nHeight = 480;
     g_sdlWindow = SDL_CreateWindow(

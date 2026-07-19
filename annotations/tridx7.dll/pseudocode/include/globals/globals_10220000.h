@@ -48,7 +48,7 @@ extern uint g_PackedPalette[256];
 extern undefined4 DAT_10226a50;
 
 // ushort*
-extern ushort* g_ColorTable16;
+extern ushort* g_DX7ColorTable16;
 
 // void*[1024]
 extern void* g_ScanlinePointers[1024];

@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180
+// Name: dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180
 // Address: 10001180
 // Address Range: [[10001180, 100011fa]]
 // Convention: __ecxcall
-// Signature: void __ecxcall dll_dx7_cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+// Signature: void __ecxcall dll_dx7_cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 
 #include "nocturne.h"
 
-void __ecxcall dll_dx7_cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+void __ecxcall dll_dx7_cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 
 {
   byte bVar1;
@@ -54,6 +54,6 @@ LAB_100011b9:
     dll_dx7_cpp_loadTexture_FUN_100030e0(this_ptr->entries[iVar2].slot);
     return;
   }
-  dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(this_ptr,texture_info);
+  dll_dx7_cpp_CDX7TextureCache_acquireSlot_FUN_10001090(this_ptr,texture_info);
   return;
 }

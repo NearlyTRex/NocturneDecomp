@@ -398,6 +398,15 @@ LAB_0051164c:
       break;
     case 3:
       if (g_GraphicsCardVendorIDs[g_CurrentGraphicsBoard] != 0x121a) {
+#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
+        // Cycle only over renderers this build has compiled in, so the selector
+        // can never land on a DLL we can't load. The set is the module table in
+        // shims/builtin_dll.cpp — nothing is named here.
+        pcVar14 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
+        if (pcVar14 != (char *)0x0) {
+          strcpy(g_RendererDllPath,pcVar14);
+        }
+#else
         iVar7 = _stricmp(g_RendererDllPath,"trid3d.dll");
         if (iVar7 == 0) {
           pcVar14 = "tridx6.dll";
@@ -421,6 +430,7 @@ LAB_005116c3:
             goto LAB_005116c3;
           }
         }
+#endif
         wincore_windll_cpp_kill_FUN_005b71e0();
         wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
         iVar6 = g_CurrentGraphicsBoard;

@@ -14,7 +14,7 @@ void __cdecl dll_dx7_cpp_releaseAllTextures_FUN_10002ea0(void)
   IDirectDrawSurface *this_ptr_00;
   int iVar2;
   int iVar3;
-  STextureSurfaceSlot *pSVar4;
+  SDX7TextureSurfaceSlot *pSVar4;
   int iVar5;
   byte bVar6;
   
@@ -56,7 +56,7 @@ void __cdecl dll_dx7_cpp_releaseAllTextures_FUN_10002ea0(void)
   pSVar4 = g_TextureSurfaces;
   for (iVar3 = 0x2000; iVar3 != 0; iVar3 = iVar3 + -1) {
     pSVar4->texture = (IDirect3DTexture2 *)0x0;
-    pSVar4 = (STextureSurfaceSlot *)&pSVar4[-(uint)bVar6].surface;
+    pSVar4 = (SDX7TextureSurfaceSlot *)&pSVar4[-(uint)bVar6].surface;
   }
   return;
 }

@@ -21,7 +21,7 @@ void __cdecl dll_dx7_cpp_initTextureCaches_FUN_10001200(void)
   uint local_3c;
   uint local_38;
   uint local_34 [5];
-  CDLLTextureCache *local_20 [4];
+  CDX7TextureCache *local_20 [4];
   uint local_10 [4];
   
   local_3c = 0x200;
@@ -89,8 +89,8 @@ void __cdecl dll_dx7_cpp_initTextureCaches_FUN_10001200(void)
   iVar6 = 0;
   do {
     iVar8 = iVar6 + 4;
-    dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020
-              (*(CDLLTextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),
+    dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020
+              (*(CDX7TextureCache **)((int)local_20 + iVar6),*(int *)((int)local_10 + iVar6),
                *(int *)((int)local_34 + iVar6 + 4));
     iVar6 = iVar8;
   } while (iVar8 < 0x10);

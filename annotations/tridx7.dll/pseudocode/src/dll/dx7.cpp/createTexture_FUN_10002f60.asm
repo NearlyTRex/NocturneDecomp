@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 at 10001050
+;   dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020 at 10001050
 ;
 ; Referenced Globals:
 ;   GUID g_IID_IDirect3DTexture2 = IDirect3DTexture2 93281502-8cf8-11d0-89ab-00a0c9054129
@@ -25,7 +25,7 @@
 ;   TerminatedCString s_D3D_won_t_let_me_convert_10016a4c
 ;   TerminatedCString s_Too_many_textures_reques_10016a80
 ;   int g_MipMapFlag = 0x0
-;   STextureSurfaceSlot[4096] g_TextureSurfaces
+;   SDX7TextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_TextureSurfaces[0].surface
 ;   undefined4 g_ExternalRendererBridge.agp_texture_mode
 ;   DDPIXELFORMAT g_TexturePixelFormat

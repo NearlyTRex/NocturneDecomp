@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4347
 Clean: 248 (5.7%)
 With suspects: 4099
-Total suspects: 83154
+Total suspects: 83171
 
 ====================================================================================================
 FUN_00401010 (19 suspects)
@@ -13982,7 +13982,7 @@ FUN_0042b8f0 (25 suspects)
   Line 70 [unnamed_param]: *(float *)(param_1 + 0x154) / (float)(*(int *)(param_1 + 0x150) + -1);
 
 ====================================================================================================
-FUN_0042baa0 (50 suspects)
+FUN_0042baa0 (51 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 4 (4 missing)
@@ -14006,6 +14006,7 @@ FUN_0042baa0 (50 suspects)
   Line 26 [unnamed_param]: local_34 = param_2[1] - param_3[1];
   Line 27 [unnamed_param]: local_30 = param_2[2] - param_3[2];
   Line 27 [unnamed_param]: local_30 = param_2[2] - param_3[2];
+  Line 29 [fast_sqrt_inline]: fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) >> 1) + _DAT_01c7070c);
   Line 31 [unnamed_param]: if (fVar6 <= *(float *)(param_1 + 0x158)) {
   Line 34 [unnamed_param]: fVar2 = fVar6 - *(float *)(param_1 + 0x158);
   Line 36 [static_uninitvar]: fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) >> 1) +
@@ -16082,7 +16083,7 @@ FUN_00436580 (21 suspects)
   Line 76 [static_uninitvar]: *(uint *)(iVar2 + 0xa8) = local_7c;
 
 ====================================================================================================
-FUN_004366f0 (74 suspects)
+FUN_004366f0 (77 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
@@ -16107,6 +16108,7 @@ FUN_004366f0 (74 suspects)
   Line 96 [unnamed_param]: local_12c = param_2[1] - pfVar3[1];
   Line 97 [unnamed_param]: local_128 = param_2[2] - pfVar3[2];
   Line 98 [self_copy_guard]: if (&local_7c != &local_130) {
+  Line 104 [fast_sqrt_inline]: local_24 = (float)(((int)local_5c >> 1) + _DAT_01c7070c);
   Line 110 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
   Line 110 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
   Line 110 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
@@ -16142,6 +16144,8 @@ FUN_004366f0 (74 suspects)
   Line 175 [static_uninitvar]: local_a4 = local_b0 * *(float *)(iVar5 + 0x98) +
   Line 176 [static_uninitvar]: local_b8 * *(float *)(iVar5 + 0x80) + local_b4 * *(float *)(iVar5 + 0x8c);
   Line 176 [static_uninitvar]: local_b8 * *(float *)(iVar5 + 0x80) + local_b4 * *(float *)(iVar5 + 0x8c);
+  Line 178 [fast_sqrt_inline]: local_54 = (float)(((int)local_58 >> 1) + _DAT_01c7070c);
+  Line 181 [fast_inv_sqrt_inline]: local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
   Line 189 [self_copy_guard]: if (&local_88 != &local_a0) {
   Line 194 [unnamed_param]: local_d0 = local_88 - *param_2;
   Line 195 [unnamed_param]: local_cc = local_84 - param_2[1];
@@ -20321,7 +20325,7 @@ FUN_004425f0 (114 suspects)
   Line 194 [unnamed_param]: *(int *)(param_3 + 0x1c54)) << 10) * (longlong)param_4;
 
 ====================================================================================================
-FUN_00442c50 (19 suspects)
+FUN_00442c50 (20 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 8 (8 missing)
@@ -20337,6 +20341,7 @@ FUN_00442c50 (19 suspects)
   Line 22 [unnamed_param]: fVar5 = (float)param_2[1] * _DAT_0059bde4 - *(float *)(param_3 + 0x108);
   Line 23 [unnamed_param]: fVar6 = (float)param_2[2] * _DAT_0059bde4 - *(float *)(param_3 + 0x10c);
   Line 23 [unnamed_param]: fVar6 = (float)param_2[2] * _DAT_0059bde4 - *(float *)(param_3 + 0x10c);
+  Line 24 [fast_inv_sqrt_inline]: fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
   Line 25 [unnamed_param]: lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * _DAT_0059bde0) * (longlong)*param_4;
   Line 26 [unnamed_param]: lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * _DAT_0059bde0) * (longlong)param_4[1];
   Line 27 [unnamed_param]: lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * _DAT_0059bde0) * (longlong)param_4[2];
@@ -22671,7 +22676,7 @@ FUN_0044d1f0 (25 suspects)
   Line 25 [unnamed_param]: (local_1c - *(float *)(param_1 + 0x30) <= param_5[2])))) {
 
 ====================================================================================================
-FUN_0044d2d0 (22 suspects)
+FUN_0044d2d0 (23 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 6 (6 missing)
@@ -22693,6 +22698,7 @@ FUN_0044d2d0 (22 suspects)
   Line 27 [unnamed_param]: (*(float *)(param_1 + 0x18) - fVar1) * *(float *)(param_1 + 0x38);
   Line 27 [unnamed_param]: (*(float *)(param_1 + 0x18) - fVar1) * *(float *)(param_1 + 0x38);
   Line 28 [unnamed_param]: if (param_3 != (int *)0x0) {
+  Line 29 [fast_inv_sqrt_inline]: fVar1 = (float)(_DAT_01c70710 - ((int)fVar1 >> 1));
   Line 30 [unnamed_param]: fVar1 = local_28 * fVar1 * (float)param_3[2] * _DAT_0059bffc +
   Line 31 [unnamed_param]: local_30 * fVar1 * (float)*param_3 * _DAT_0059bffc +
   Line 32 [unnamed_param]: local_2c * fVar1 * (float)param_3[1] * _DAT_0059bffc;
@@ -24460,7 +24466,7 @@ FUN_004546d0 (6 suspects)
   Line 14 [unnamed_param]: FUN_004796b0(param_1);
 
 ====================================================================================================
-FUN_00454750 (132 suspects)
+FUN_00454750 (133 suspects)
   File: .
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -24497,6 +24503,7 @@ FUN_00454750 (132 suspects)
   Line 74 [unnamed_param]: local_74 = *(float *)(iVar4 + 0x20) - *(float *)(param_1 + 0x20);
   Line 75 [unnamed_param]: local_70 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
   Line 76 [unnamed_param]: local_6c = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
+  Line 78 [fast_sqrt_inline]: local_18 = (float)(((int)local_24 >> 1) + _DAT_01c7070c);
   Line 85 [unnamed_param]: FUN_004e16b0(param_1 + 0x150,uVar6,1);
   Line 86 [unnamed_param]: iVar4 = FUN_0052eba0(0x02DC9450,*(uint *)(param_1 + 0xbd2c));
   Line 88 [unresolved_funcptr]: uVar6 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"dog5.wav");
@@ -46683,7 +46690,7 @@ FUN_004a9040 (18 suspects)
   Line 55 [unnamed_param]: *(int *)(param_1 + 0xbd84) = iVar1;
 
 ====================================================================================================
-FUN_004a9270 (414 suspects)
+FUN_004a9270 (415 suspects)
   File: .
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -46921,6 +46928,7 @@ FUN_004a9270 (414 suspects)
   Line 571 [unnamed_param]: local_11c = *(float *)(param_1 + 0x24) - *(float *)(iVar6 + 0x24);
   Line 572 [unnamed_param]: local_118 = *(float *)(param_1 + 0x28) - *(float *)(iVar6 + 0x28);
   Line 573 [self_copy_guard]: if (&local_c0 != &local_120) {
+  Line 579 [fast_sqrt_inline]: local_78 = (float)(((int)local_7c >> 1) + _DAT_01c7070c);
   Line 584 [unnamed_param]: *(uint *)(param_1 + 0xbd30) = 0;
   Line 586 [unnamed_param]: local_1c = *(float *)(param_1 + 0x2de8);
   Line 587 [unnamed_param]: if (local_1c < *(float *)(param_1 + 0x2de4)) {
@@ -54912,7 +54920,7 @@ FUN_004c4910 (6 suspects)
   Line 12 [unnamed_param]: *(uint *)(param_1 + 0xbca0) = uVar1;
 
 ====================================================================================================
-FUN_004c4970 (118 suspects)
+FUN_004c4970 (120 suspects)
   File: .
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004c518e) */
@@ -54955,6 +54963,7 @@ FUN_004c4970 (118 suspects)
   Line 150 [unnamed_param]: local_128 = *(float *)(iVar4 + 0x20) - *(float *)(param_1 + 0x20);
   Line 151 [unnamed_param]: local_124 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
   Line 152 [unnamed_param]: local_120 = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
+  Line 154 [fast_sqrt_inline]: local_2c = (float)(((int)local_54 >> 1) + _DAT_01c7070c);
   Line 160 [unnamed_param]: else if (*(float *)(param_1 + 0xbca0) <= 0.0) {
   Line 163 [unnamed_param]: *(float *)(param_1 + 0xbca0) = local_14;
   Line 168 [unresolved_funcptr]: (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
@@ -54979,6 +54988,7 @@ FUN_004c4970 (118 suspects)
   Line 193 [unnamed_param]: local_f8 = *(float *)(iVar4 + 0x20) - *(float *)(param_1 + 0x20);
   Line 194 [unnamed_param]: local_f4 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
   Line 195 [unnamed_param]: local_f0 = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
+  Line 197 [fast_sqrt_inline]: local_40 = (float)(((int)local_44 >> 1) + _DAT_01c7070c);
   Line 198 [unnamed_param]: if (local_40 < *(float *)(param_1 + 0xbc9c)) {
   Line 211 [unnamed_param]: *(uint *)(param_1 + 0xbca0) = 0x40c00000;
   Line 217 [unnamed_param]: else if (((local_28 == 5) && (*(int *)(param_1 + 0xbc90) == 0)) &&
@@ -71286,7 +71296,7 @@ FUN_0050adc0 (42 suspects)
   Line 52 [unrolled_memcpy]: // 0050ae5b: MOVSD.REP ES:EDI,ESI  ; DAT_01fff57c | DAT_01fff580
 
 ====================================================================================================
-FUN_0050aee0 (68 suspects)
+FUN_0050aee0 (69 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 8 (8 missing)
@@ -71357,6 +71367,7 @@ FUN_0050aee0 (68 suspects)
   Line 210 [unnamed_param]: fVar3 = *(float *)(iVar4 + 0x104) - (*param_2 + *pfVar6);
   Line 211 [unnamed_param]: fVar1 = *(float *)(iVar4 + 0x108) - (param_2[1] + pfVar6[1]);
   Line 212 [unnamed_param]: fVar2 = *(float *)(iVar4 + 0x10c) - (param_2[2] + pfVar6[2]);
+  Line 215 [fast_sqrt_inline]: fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01c7070c) * *(float *)(iVar4 + 0x11dc) ) * _DAT_005905da;
 
 ====================================================================================================
 FUN_0050b5c0 (46 suspects)
@@ -71503,7 +71514,7 @@ FUN_0050bb50 (21 suspects)
   Line 12 [undefined_data]: puVar1[10] = (&DAT_005c503c)[param_4 * 0xc];
 
 ====================================================================================================
-FUN_0050be20 (19 suspects)
+FUN_0050be20 (20 suspects)
   File: .
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 5 (5 missing)
@@ -71519,6 +71530,7 @@ FUN_0050be20 (19 suspects)
   Line 28 [unnamed_param]: fVar2 = *(float *)(iVar1 + 0x108) - (param_2[1] + param_3[1]);
   Line 29 [unnamed_param]: fVar3 = *(float *)(iVar1 + 0x10c) - (param_2[2] + param_3[2]);
   Line 29 [unnamed_param]: fVar3 = *(float *)(iVar1 + 0x10c) - (param_2[2] + param_3[2]);
+  Line 30 [fast_sqrt_inline]: fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + _DAT_01c7070c) ;
   Line 59 [unnamed_param]: (&DAT_005c5034)[param_4 * 0xc] = iVar6 << 8;
   Line 59 [undefined_data]: (&DAT_005c5034)[param_4 * 0xc] = iVar6 << 8;
   Line 61 [unnamed_param]: (&DAT_005c5038)[param_4 * 0xc] = iVar6 << 8;
@@ -71564,7 +71576,7 @@ FUN_0050c200 (18 suspects)
   Line 34 [unnamed_param]: FUN_0050c010(param_1,param_2);
 
 ====================================================================================================
-FUN_0050c2d0 (302 suspects)
+FUN_0050c2d0 (306 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -71632,6 +71644,7 @@ FUN_0050c2d0 (302 suspects)
   Line 154 [unnamed_param]: if (0 < param_3) {
   Line 155 [undefined_data]: pfVar14 = (float *)&DAT_01fff5b0;
   Line 156 [unnamed_param]: puVar7 = param_4;
+  Line 175 [fast_inv_sqrt_inline]: local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
   Line 183 [unnamed_param]: } while (iVar8 < param_3);
   Line 185 [unnamed_param]: FUN_00563cc0(&DAT_02045ab0,0,param_2 * 0xc);
   Line 185 [undefined_data]: FUN_00563cc0(&DAT_02045ab0,0,param_2 * 0xc);
@@ -71663,6 +71676,7 @@ FUN_0050c2d0 (302 suspects)
   Line 214 [unnamed_param]: } while (iVar8 < param_3);
   Line 219 [unnamed_param]: puVar7 = param_4;
   Line 220 [unnamed_param]: if (0 < param_3) {
+  Line 237 [fast_inv_sqrt_inline]: local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
   Line 242 [unnamed_param]: if (param_6 == 4) {
   Line 249 [unnamed_param]: } while (iVar8 < param_3);
   Line 251 [unnamed_param]: FUN_00563cc0(&DAT_02045ab0,0,param_2 * 0xc);
@@ -71716,6 +71730,7 @@ FUN_0050c2d0 (302 suspects)
   Line 297 [unnamed_param]: if (0 < param_2) {
   Line 298 [undefined_data]: pfVar14 = (float *)&DAT_02045ab0;
   Line 299 [raw_address_constant]: local_54 = 0x200b130;
+  Line 306 [fast_inv_sqrt_inline]: local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
   Line 316 [stack_ref]: FUN_0050b7f0(param_1,local_54,&stack0xfffffed8,iVar5,0);
   Line 316 [unnamed_param]: FUN_0050b7f0(param_1,local_54,&stack0xfffffed8,iVar5,0);
   Line 319 [undefined_data]: *(int *)((int)&DAT_005c5040 + local_4c) = _DAT_01c038f4;
@@ -71725,6 +71740,7 @@ FUN_0050c2d0 (302 suspects)
   Line 328 [unnamed_param]: if (0 < param_2) {
   Line 329 [undefined_data]: pfVar14 = (float *)&DAT_02045ab0;
   Line 331 [raw_address_constant]: local_50 = 0x200b130;
+  Line 337 [fast_inv_sqrt_inline]: local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
   Line 345 [stack_ref]: piVar16 = &stack0xfffffeb4;
   Line 352 [unnamed_param]: FUN_0050b7f0(param_1,iVar5,piVar16,local_30,0);
   Line 356 [undefined_data]: *(int *)((int)&DAT_005c5040 + local_60) = _DAT_01c038f4;
@@ -93062,7 +93078,7 @@ FUN_0055ec20 (54 suspects)
   Line 85 [unnamed_param]: *(uint *)(param_1 + 0xbe04) = 0;
 
 ====================================================================================================
-FUN_0055ef50 (426 suspects)
+FUN_0055ef50 (427 suspects)
   File: core/zombie.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00560989) */
@@ -93358,6 +93374,7 @@ FUN_0055ef50 (426 suspects)
   Line 729 [unnamed_param]: local_250 = *(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24);
   Line 730 [unnamed_param]: local_24c = *(float *)(param_1 + 0x28) - *(float *)(iVar3 + 0x28);
   Line 731 [self_copy_guard]: if (&local_134 != &local_254) {
+  Line 737 [fast_sqrt_inline]: local_5c = (float)(((int)local_1c >> 1) + _DAT_01c7070c);
   Line 739 [unnamed_param]: local_30 = *(float *)(param_1 + 0x2de8);
   Line 740 [unnamed_param]: if (local_30 < *(float *)(param_1 + 0x2de4)) {
   Line 741 [unnamed_param]: local_30 = *(float *)(param_1 + 0x2398);

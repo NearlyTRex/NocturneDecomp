@@ -43,7 +43,7 @@ int __cdecl dll_dx7_cpp_initDefaultRenderStates_FUN_100035b0(void)
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x1b,0);
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x1c,0);
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0
-            (0x22,g_FogColorRed << 0x10 | g_FogColorGreen << 8 | g_FogColorBlue);
+            (0x22,g_DX7FogColorRed << 0x10 | g_DX7FogColorGreen << 8 | g_DX7FogColorBlue);
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x23,0);
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x1d,1);
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x1e,0);

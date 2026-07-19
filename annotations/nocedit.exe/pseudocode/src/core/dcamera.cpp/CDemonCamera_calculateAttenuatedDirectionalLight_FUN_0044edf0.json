@@ -151,7 +151,7 @@
   },
   "resolved_suspects": [
     {
-      "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
       "line": 22,
       "match": "fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar",
       "resolution_source": "keep",

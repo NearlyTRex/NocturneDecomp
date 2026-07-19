@@ -15,7 +15,7 @@
 ;   undefined4 g_StagingTextureInterfaces[1][0]
 ;   IDirectDrawSurface*[4][8] g_StagingTextures
 ;   undefined4 g_StagingTextures[1][0]
-;   STextureSurfaceSlot[4096] g_TextureSurfaces
+;   SDX7TextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_TextureSurfaces[0].surface
 ;   undefined4 g_TextureSurfaces[1].texture
 ;   undefined4 g_TextureSurfaces[1].surface

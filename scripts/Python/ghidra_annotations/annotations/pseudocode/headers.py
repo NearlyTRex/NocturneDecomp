@@ -14,7 +14,7 @@ from ghidra.program.model.data import Array
 from ghidra_annotations.util import make_dirs, write_if_changed
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
-from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes
+from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes, get_libc_provided_types
 from ghidra_annotations.annotations.pseudocode.intrinsics import write_intrinsics_header
 from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
 from ghidra_annotations.util.string import sanitize_c_identifier
@@ -1875,12 +1875,21 @@ def generate_type_definition(currentProgram, dt):
 
 
 def get_basetypes_defined_types():
-    """Return the set of type names that are defined in basetypes.h.
+    """Return the set of type names that must not be re-emitted as typedefs.
 
-    These types should be skipped when generating system headers to avoid
-    redefinition errors. This delegates to the single source of truth in basetypes.py.
+    Two sources, both skipped for the same reason — the name is already in scope
+    by the time any system header is parsed, so emitting it again is at best
+    redundant and at worst a redefinition error:
+
+      * basetypes.h's own definitions (get_all_basetypes)
+      * standard C types the host toolchain provides (get_libc_provided_types),
+        which basetypes.h brings in via <stddef.h>/<stdint.h>/<stdarg.h>
+
+    The second group is what makes a program whose Ghidra project carries CRT
+    types (tridx7.dll) compile on the 64-bit lane: without it the exporter writes
+    `typedef uint size_t` and friends at the width seen in the 32-bit binary.
     """
-    return get_all_basetypes()
+    return get_all_basetypes() | get_libc_provided_types()
 
 
 def generate_basetypes_header(pseudocode_dir):
@@ -1905,9 +1914,10 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// It must be included first to break circular dependencies between system headers.")
     content.append("")
     content.append("// Standard includes")
-    content.append("#include <stddef.h>  // for wchar_t, size_t")
+    content.append("#include <stddef.h>  // for wchar_t, size_t, ptrdiff_t")
     content.append("#include <stdint.h>  // for intptr_t/uintptr_t (pointer-width types)")
     content.append("#include <stdbool.h>  // for bool")
+    content.append("#include <stdarg.h>  // for va_list (24-byte __va_list_tag[1] on x86-64)")
     content.append("")
     content.append("// =============================================================================")
     content.append("// Integer width model: Win32 LLP64 (NOT the host's data model)")
@@ -2598,8 +2608,40 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         if skipped_count > 0:
             log_info("Skipped %d types in %s (already in basetypes.h)" % (skipped_count, header_name))
 
-        # Skip empty headers
+        # Skip empty headers.
+        #
+        # A header that never had any types simply isn't written. But one whose
+        # entire contents were filtered out is different: other generated
+        # headers already carry `#include "system/<name>.h"` lines aimed at it
+        # (include edges come from the type->path map, which still resolves
+        # those names here), so dropping the file breaks every consumer with a
+        # "file not found". tridx7.dll hits exactly this — system/basetsd.h held
+        # only intptr_t and system/vadefs.h only uintptr_t + va_list, all of
+        # which are now toolchain-provided.
+        #
+        # Emit a stub instead, in the same spirit as the stdint special case
+        # below: the include graph stays valid and the names still resolve,
+        # because basetypes.h pulls in <stddef.h>/<stdint.h>/<stdarg.h>.
         if not filtered_types:
+            if skipped_count > 0:
+                stub = [
+                    "#pragma once",
+                    "",
+                    "// =============================================================================",
+                    "// %s - System Header (stub)" % header_name.upper(),
+                    "// =============================================================================",
+                    "//",
+                    "// Every type this header declared is now provided by the host toolchain or",
+                    "// by system/basetypes.h, so there is nothing left to define. The file is",
+                    "// still emitted because other generated headers include it by path.",
+                    "",
+                    '#include "system/basetypes.h"',
+                    "",
+                ]
+                write_header_file(os.path.join(system_dir, "%s.h" % header_name),
+                                  "\n".join(stub))
+                log_info("Created system/%s.h as a stub (all %d types are toolchain-provided)"
+                         % (header_name, skipped_count))
             continue
 
         types_in_this_header = set(dt.getName() for dt in filtered_types)

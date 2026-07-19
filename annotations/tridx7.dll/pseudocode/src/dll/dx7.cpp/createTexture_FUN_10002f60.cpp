@@ -9,9 +9,9 @@
 int __cdecl dll_dx7_cpp_createTexture_FUN_10002f60(int texture_size)
 
 {
-  STextureSurfaceSlot *ppv_object;
+  SDX7TextureSurfaceSlot *ppv_object;
   IDirectDrawSurface *this_ptr;
-  STextureSurfaceSlot *pSVar1;
+  SDX7TextureSurfaceSlot *pSVar1;
   HRESULT HVar2;
   int iVar3;
   DDPIXELFORMAT *pDVar4;

@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1084,
-    "complexity_score": 3597,
+    "complexity_score": 3642,
     "cross_reference_count": 8,
     "function_call_count": 6,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 532,
-    "suspect_count": 302,
+    "suspect_count": 306,
     "suspect_types": [
+      "fast_inv_sqrt_inline",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
@@ -3408,6 +3409,38 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5040 + iVar5) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 175,
+      "match": "local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));",
+      "severity": "moderate",
+      "text": "local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 237,
+      "match": "local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));",
+      "severity": "moderate",
+      "text": "local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 306,
+      "match": "local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));",
+      "severity": "moderate",
+      "text": "local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 337,
+      "match": "local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));",
+      "severity": "moderate",
+      "text": "local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));",
+      "type": "fast_inv_sqrt_inline"
     }
   ]
 }

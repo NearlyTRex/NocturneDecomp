@@ -68,10 +68,6 @@ typedef struct threadlocaleinfostruct* pthreadlocinfo;
 // pointer to threadmbcinfostruct
 typedef struct threadmbcinfostruct* pthreadmbcinfo;
 
-// Typedef: size_t
-// Unsigned Integer (compiler-specific size)
-typedef uint size_t;
-
 // Structure: threadlocaleinfostruct
 #pragma pack(push, 8)
 typedef struct threadlocaleinfostruct {

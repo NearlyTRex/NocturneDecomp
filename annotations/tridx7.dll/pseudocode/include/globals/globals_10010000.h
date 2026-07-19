@@ -7,20 +7,20 @@
 #include "system/pe.h"
 #include "system/winbase.h"
 #include "system/winnt.h"
-#include "types/classes/CDLLTextureCache.h"
+#include "types/classes/CDX7TextureCache.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x10010000
 // =============================================================================
 
-// CDLLTextureCache
-extern CDLLTextureCache CDLLTextureCache_10018660;
+// CDX7TextureCache
+extern CDX7TextureCache CDX7TextureCache_10018660;
 
-// CDLLTextureCache*
-extern CDLLTextureCache* g_TextureCache32;
-extern CDLLTextureCache* g_TextureCache64;
-extern CDLLTextureCache* g_TextureCache128;
-extern CDLLTextureCache* g_TextureCache256;
+// CDX7TextureCache*
+extern CDX7TextureCache* g_TextureCache32;
+extern CDX7TextureCache* g_TextureCache64;
+extern CDX7TextureCache* g_TextureCache128;
+extern CDX7TextureCache* g_TextureCache256;
 
 // GUID
 extern GUID g_IID_IDirectDraw4;
@@ -66,16 +66,16 @@ extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac;
 extern LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc;
 
 // int
-extern int g_CurrentTextureIndex;
+extern int g_DX7CurrentTextureIndex;
 extern int g_PremultiplyColorAndAlpha;
 extern int g_FlyIniPresent;
 extern int g_ZBufferBitDepth;
 extern int g_ScreenWidth;
 extern int g_ScreenHeight;
 extern int g_ScreenBitDepth;
-extern int g_FogColorRed;
-extern int g_FogColorGreen;
-extern int g_FogColorBlue;
+extern int g_DX7FogColorRed;
+extern int g_DX7FogColorGreen;
+extern int g_DX7FogColorBlue;
 extern int g_StagingSetIndex;
 extern int g_BackBufferLocked;
 extern int g_FrameLocked;

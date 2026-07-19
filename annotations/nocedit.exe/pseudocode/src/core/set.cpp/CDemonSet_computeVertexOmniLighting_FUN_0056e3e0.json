@@ -245,7 +245,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
       "line": 28,
       "match": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) >> 1) + g_",
       "resolution_source": "keep",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *this_ptr,int max_count,int texture_size)
+; void __ecxcall dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020(CDX7TextureCache *this_ptr,int max_count,int texture_size)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   max_count
@@ -18,7 +18,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 10001020
-        ;   Label: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
+        ;   Label: dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020
     PUSH EBX                            ; 10001024
     PUSH ESI                            ; 10001025
     PUSH EDI                            ; 10001026

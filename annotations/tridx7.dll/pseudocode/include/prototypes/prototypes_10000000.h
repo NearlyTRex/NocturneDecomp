@@ -18,7 +18,7 @@
 #include "system/windef.h"
 #include "system/winnls.h"
 #include "system/winnt.h"
-#include "types/classes/CDLLTextureCache.h"
+#include "types/classes/CDX7TextureCache.h"
 #include "types/classes/CExternalRenderer.h"
 #include "types/classes/CExternalRendererBridge.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
@@ -31,9 +31,9 @@
 // FUNCTION PROTOTYPES - Range 0x10000000
 // =============================================================================
 
-void __ecxcall dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache *this_ptr,int max_count,int texture_size);
-int __ecxcall dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
-void __ecxcall dll_dx7_cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
+void __ecxcall dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020(CDX7TextureCache *this_ptr,int max_count,int texture_size);
+int __ecxcall dll_dx7_cpp_CDX7TextureCache_acquireSlot_FUN_10001090(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info);
+void __ecxcall dll_dx7_cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 void __cdecl dll_dx7_cpp_initTextureCaches_FUN_10001200(void);
 void __cdecl dll_dx7_cpp_readIniInt_FUN_10001440(char *section,char *key,uint *value_inout);
 int __cdecl dll_dx7_cpp_resolveTextureSlot_FUN_10001470(SMRGLTextureBasic *texture_info);

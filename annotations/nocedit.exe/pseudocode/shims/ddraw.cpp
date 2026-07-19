@@ -18,6 +18,7 @@
 #include "system/ddraw.h"
 #include "debug_log.h"
 #include "shim_config.h"
+#include "gl_present.h"
 
 extern SDL_Window* g_sdlWindow;
 extern bool g_sdlWindowReadyToShow;
@@ -425,20 +426,31 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
         }
         SDL_SetWindowSize(ddraw->window, win_w, win_h);
 
-        ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1,
-                                              SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-        if (!ddraw->renderer) {
-            ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1, 0);
-        }
-        if (!ddraw->renderer) return DDERR_GENERIC;
+        // GL owns the window's pixels when it comes up; SDL_Renderer is only
+        // created as the fallback, since the two cannot share a window.
+        if (nocturne_gl_init(ddraw->window)) {
+            nocturne_gl_set_logical_size(width, height);
+        } else {
+            ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1,
+                                                  SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            if (!ddraw->renderer) {
+                ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1, 0);
+            }
+            if (!ddraw->renderer) return DDERR_GENERIC;
 
-        SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
-        SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
+            SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
+            SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
+        }
     } else {
         SDL_SetWindowSize(ddraw->window, win_w, win_h);
-        SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
-        SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
+        if (nocturne_gl_is_active()) {
+            nocturne_gl_set_logical_size(width, height);
+        } else {
+            SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
+            SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
+        }
         if (ddraw->cooperative_level & DDSCL_FULLSCREEN) {
+            // This is disabled for now to make testing easier
             //SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
         }
     }
@@ -623,7 +635,12 @@ static HRESULT surface_Flip(IDirectDrawSurface* this_ptr,
                  (unsigned)flags);
 
     // Update the texture from the surface pixels and present
-    if (source->sdl_surface && shim->ddraw && shim->ddraw->renderer) {
+    if (source->sdl_surface && nocturne_gl_is_active()) {
+        nocturne_gl_present_framebuffer(source->sdl_surface->pixels,
+                                        source->sdl_surface->w, source->sdl_surface->h,
+                                        source->sdl_surface->pitch,
+                                        source->sdl_surface->format->BitsPerPixel);
+    } else if (source->sdl_surface && shim->ddraw && shim->ddraw->renderer) {
         SDL_Texture* tex = source->sdl_texture ? source->sdl_texture : shim->sdl_texture;
         if (tex) {
             SDL_UpdateTexture(tex, nullptr, source->sdl_surface->pixels,
@@ -808,7 +825,12 @@ static HRESULT surface_Unlock(IDirectDrawSurface* this_ptr, void* surface_ptr) {
         shim->is_locked = 0;
 
         // For primary surface, update the texture after unlock
-        if (shim->is_primary && shim->sdl_texture && shim->ddraw && shim->ddraw->renderer) {
+        if (shim->is_primary && nocturne_gl_is_active()) {
+            nocturne_gl_present_framebuffer(shim->sdl_surface->pixels,
+                                            shim->sdl_surface->w, shim->sdl_surface->h,
+                                            shim->sdl_surface->pitch,
+                                            shim->sdl_surface->format->BitsPerPixel);
+        } else if (shim->is_primary && shim->sdl_texture && shim->ddraw && shim->ddraw->renderer) {
             SDL_UpdateTexture(shim->sdl_texture, nullptr,
                              shim->sdl_surface->pixels, shim->sdl_surface->pitch);
             SDL_RenderClear(shim->ddraw->renderer);
@@ -965,28 +987,40 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
 extern "C" int nocturne_dump_frontbuffer(const char *path)
 {
 #if NOCTURNE_DUMP_TOOLS
-    if (path == nullptr || g_ddraw_shim == nullptr || g_ddraw_shim->renderer == nullptr) {
+    if (path == nullptr) {
         return -1;
     }
 
-    SDL_Renderer *renderer = g_ddraw_shim->renderer;
     int w = 0, h = 0;
-    if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
-        return -1;
+    unsigned char *buf = nullptr;
+
+    if (nocturne_gl_is_active()) {
+        // GL owns the window; read the finished frame back out of the context.
+        // Already flipped to top-down and packed RGB24 — same shape as below.
+        if (nocturne_gl_read_front(&buf, &w, &h) != 0) {
+            return -1;
+        }
+    } else {
+        if (g_ddraw_shim == nullptr || g_ddraw_shim->renderer == nullptr) {
+            return -1;
+        }
+        SDL_Renderer *renderer = g_ddraw_shim->renderer;
+        if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
+            return -1;
+        }
+        buf = (unsigned char *)malloc((size_t)w * 3 * (size_t)h);
+        if (buf == nullptr) {
+            return -1;
+        }
+        // SDL_PIXELFORMAT_RGB24 yields bytes in R,G,B order — exactly PPM order.
+        if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf,
+                                 (int)((size_t)w * 3)) != 0) {
+            free(buf);
+            return -1;
+        }
     }
 
     const size_t row_bytes = (size_t)w * 3;
-    unsigned char *buf = (unsigned char *)malloc(row_bytes * (size_t)h);
-    if (buf == nullptr) {
-        return -1;
-    }
-
-    // SDL_PIXELFORMAT_RGB24 yields bytes in R,G,B order — exactly PPM order.
-    if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf, (int)row_bytes) != 0) {
-        free(buf);
-        return -1;
-    }
-
     FILE *f = std::fopen(path, "wb");
     if (f == nullptr) {
         free(buf);

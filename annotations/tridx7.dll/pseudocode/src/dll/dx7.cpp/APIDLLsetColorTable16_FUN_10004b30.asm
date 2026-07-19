@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Could_not_lock_back_buff_10016b50
 ;   TerminatedCString s_Could_not_unlock_back_bu_10016b6c
 ;   uchar* g_ColorPalette = 00000000
-;   ushort* g_ColorTable16 = 00000000
+;   ushort* g_DX7ColorTable16 = 00000000
 ;   CExternalRendererBridge g_ExternalRendererBridge
 ;   undefined4 g_ExternalRendererBridge.red_scale_factor
 ;   undefined4 g_ExternalRendererBridge.red_dither_shift
@@ -50,7 +50,7 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 10004b48
     PUSH EBP                            ; 10004b4c
     LEA EDX,[ESP + 0x10]                ; 10004b4d
-    MOV dword ptr [0x10226868],ECX      ; 10004b51 | g_ColorTable16
+    MOV dword ptr [0x10226868],ECX      ; 10004b51 | g_DX7ColorTable16
     MOV ECX,0x1f                        ; 10004b57
     PUSH EDX                            ; 10004b5c
     STOSD.REP ES:EDI                    ; 10004b5d
@@ -166,7 +166,7 @@ section .text
     ADD ESP,0x4                         ; 10004c75
     MOV ECX,dword ptr [0x102268d8]      ; 10004c78 | g_ExternalRendererBridge.blue_dither_shift
     MOV EBX,dword ptr [0x10215e40]      ; 10004c7e | g_ColorPalette
-    MOV EDI,dword ptr [0x10226868]      ; 10004c84 | g_ColorTable16
+    MOV EDI,dword ptr [0x10226868]      ; 10004c84 | g_DX7ColorTable16
     ADD EBX,0x2                         ; 10004c8a
     MOV ESI,0x100                       ; 10004c8d
     MOV dword ptr [ECX],EAX             ; 10004c92

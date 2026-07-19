@@ -9,7 +9,7 @@
 void __cdecl dll_dx7_cpp_loadTexture_FUN_100030e0(int texture_index)
 
 {
-  g_CurrentTextureIndex = texture_index;
+  g_DX7CurrentTextureIndex = texture_index;
   dll_dx7_cpp_uploadCurrentTexture_FUN_10003a80();
   return;
 }

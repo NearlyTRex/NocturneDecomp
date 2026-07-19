@@ -3,17 +3,17 @@
 // Function prototypes for dll/dx7.cpp
 // Generated from Ghidra function signatures
 
-// Original: dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
+// Original: dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020
 // Address: 10001020
-void __ecxcall CDLLTextureCache::init(CDLLTextureCache *this_ptr,int max_count,int texture_size);
+void __ecxcall CDX7TextureCache::init(CDX7TextureCache *this_ptr,int max_count,int texture_size);
 
-// Original: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
+// Original: dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090
 // Address: 10001090
-int __ecxcall CDLLTextureCache::acquireSlot(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
+int __ecxcall CDX7TextureCache::acquireSlot(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 
-// Original: dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180
+// Original: dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180
 // Address: 10001180
-void __ecxcall CDLLTextureCache::bindTexture(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info);
+void __ecxcall CDX7TextureCache::bindTexture(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info);
 
 // Original: dll_dx7.cpp_initTextureCaches_FUN_10001200
 // Address: 10001200

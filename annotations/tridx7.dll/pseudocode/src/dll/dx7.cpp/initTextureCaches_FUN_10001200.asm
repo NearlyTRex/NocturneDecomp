@@ -25,10 +25,10 @@
 ;   dll_dx7.cpp_createStagingTextures_FUN_10003400 at 1000358f
 ;
 ; Referenced Globals:
-;   CDLLTextureCache* g_TextureCache32 = 10060678
-;   CDLLTextureCache* g_TextureCache64 = 100a8688
-;   CDLLTextureCache* g_TextureCache128 = 100f0698
-;   CDLLTextureCache* g_TextureCache256 = 10018660
+;   CDX7TextureCache* g_TextureCache32 = 10060678
+;   CDX7TextureCache* g_TextureCache64 = 100a8688
+;   CDX7TextureCache* g_TextureCache128 = 100f0698
+;   CDX7TextureCache* g_TextureCache256 = 10018660
 ;   TerminatedCString s_Textures_10014058
 ;   TerminatedCString s_system_render_ini_10014068
 ;   TerminatedCString s_rt_1001407c
@@ -46,7 +46,7 @@
 ;   crt_stdio.c__fclose_FUN_10005430
 ;   crt_stdio.c_fopen_FUN_10005560
 ;   crt_stdio.c_fprintf_FUN_100054d0
-;   dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020
+;   dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020
 ;   dll_dx7.cpp_readIniInt_FUN_10001440
 ;
 ; *****************************************************************************
@@ -169,13 +169,13 @@ section .text
         ;   Label: LAB_1000134f
     MOV ECX,dword ptr [0x10014048]      ; 10001354 | g_TextureCache64
     MOV EDX,dword ptr [0x1001404c]      ; 1000135a | g_TextureCache128
-    MOV dword ptr [ESP + 0x30],EAX      ; 10001360 | CDLLTextureCache_10060678
+    MOV dword ptr [ESP + 0x30],EAX      ; 10001360 | CDX7TextureCache_10060678
     MOV EAX,[0x10014050]                ; 10001364 | g_TextureCache256
-    MOV dword ptr [ESP + 0x34],ECX      ; 10001369 | CDLLTextureCache_100a8688
+    MOV dword ptr [ESP + 0x34],ECX      ; 10001369 | CDX7TextureCache_100a8688
     MOV ECX,dword ptr [ESP + 0x10]      ; 1000136d
-    MOV dword ptr [ESP + 0x38],EDX      ; 10001371 | CDLLTextureCache_100f0698
+    MOV dword ptr [ESP + 0x38],EDX      ; 10001371 | CDX7TextureCache_100f0698
     MOV EDX,dword ptr [ESP + 0x14]      ; 10001375
-    MOV dword ptr [ESP + 0x3c],EAX      ; 10001379 | CDLLTextureCache_10018660
+    MOV dword ptr [ESP + 0x3c],EAX      ; 10001379 | CDX7TextureCache_10018660
     MOV EAX,dword ptr [ESP + 0x18]      ; 1000137d
     MOV dword ptr [ESP + 0x40],ECX      ; 10001381
     MOV ECX,dword ptr [ESP + 0x1c]      ; 10001385
@@ -212,8 +212,8 @@ section .text
     MOV EAX,dword ptr [ESP + ECX*0x1 + 0x30] ; 100013ec
     LEA EBX,[ESP + EDX*0x1 + 0x30]      ; 100013f0
     MOV EBP,dword ptr [EBX]             ; 100013f4
-    MOV dword ptr [ESP + ECX*0x1 + 0x30],EBP ; 100013f6 | CDLLTextureCache_100a8688 | CDLLTextureCache_100f0698
-    MOV dword ptr [EBX],EAX             ; 100013fa | CDLLTextureCache_10060678 | CDLLTextureCache_100a8688
+    MOV dword ptr [ESP + ECX*0x1 + 0x30],EBP ; 100013f6 | CDX7TextureCache_100a8688 | CDX7TextureCache_100f0698
+    MOV dword ptr [EBX],EAX             ; 100013fa | CDX7TextureCache_10060678 | CDX7TextureCache_100a8688
     ADD EDX,0x4                         ; 100013fc
         ;   Label: LAB_100013fc
     CMP EDX,0x10                        ; 100013ff
@@ -232,8 +232,8 @@ section .text
     ADD ESI,0x4                         ; 10001417
     PUSH ECX                            ; 1000141a
     MOV ECX,dword ptr [ESP + ESI*0x1 + 0x34] ; 1000141b
-    CALL dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020 ; 1000141f
-        ;   XREF to: 10001020 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDLLTextureCache_init_FUN_10001020(CDLLTextureCache * this_ptr, int max_count, int texture_size)
+    CALL dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020 ; 1000141f
+        ;   XREF to: 10001020 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_CDX7TextureCache_init_FUN_10001020(CDX7TextureCache * this_ptr, int max_count, int texture_size)
     CMP ESI,0x10                        ; 10001424
     JL 0x1000140e                       ; 10001427
         ;   XREF to: 1000140e (CONDITIONAL_JUMP)  ; LAB_1000140e

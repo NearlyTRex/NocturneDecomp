@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 5221,
+    "complexity_score": 5236,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 70,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 926,
-    "suspect_count": 426,
+    "suspect_count": 427,
     "suspect_types": [
+      "fast_sqrt_inline",
       "self_copy_guard",
       "undefined_data",
       "unnamed_param",
@@ -5280,6 +5281,14 @@
       "severity": "moderate",
       "text": "if (&local_134 != &local_254) {",
       "type": "self_copy_guard"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01c7070c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c7070c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 737,
+      "match": "local_5c = (float)(((int)local_1c >> 1) + _DAT_01c7070c);",
+      "severity": "moderate",
+      "text": "local_5c = (float)(((int)local_1c >> 1) + _DAT_01c7070c);",
+      "type": "fast_sqrt_inline"
     }
   ],
   "vtable_info": {

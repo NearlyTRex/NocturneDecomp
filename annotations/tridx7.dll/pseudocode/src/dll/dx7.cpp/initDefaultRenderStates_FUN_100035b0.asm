@@ -8,9 +8,9 @@
 ;   dll_dx7.cpp_initD3DDevice_FUN_10003100 at 1000331f
 ;
 ; Referenced Globals:
-;   int g_FogColorRed = 0xff
-;   int g_FogColorGreen = 0xff
-;   int g_FogColorBlue = 0xff
+;   int g_DX7FogColorRed = 0xff
+;   int g_DX7FogColorGreen = 0xff
+;   int g_DX7FogColorBlue = 0xff
 ;   IDirect3DDevice3* g_Device = 00000000
 ;   uint[256] g_RenderStateKeyCache
 ;   undefined4 g_RenderStateKeyCache[1]
@@ -167,12 +167,12 @@ section .text
     CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 100036fe
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 10003703
-    MOV ECX,dword ptr [0x100141bc]      ; 10003706 | g_FogColorRed
+    MOV ECX,dword ptr [0x100141bc]      ; 10003706 | g_DX7FogColorRed
     SHL ECX,0x10                        ; 1000370c
-    MOV EAX,[0x100141c0]                ; 1000370f | g_FogColorGreen
+    MOV EAX,[0x100141c0]                ; 1000370f | g_DX7FogColorGreen
     SHL EAX,0x8                         ; 10003714
     OR ECX,EAX                          ; 10003717
-    OR ECX,dword ptr [0x100141c4]       ; 10003719 | g_FogColorBlue
+    OR ECX,dword ptr [0x100141c4]       ; 10003719 | g_DX7FogColorBlue
     PUSH ECX                            ; 1000371f
     PUSH 0x22                           ; 10003720
     CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 10003722

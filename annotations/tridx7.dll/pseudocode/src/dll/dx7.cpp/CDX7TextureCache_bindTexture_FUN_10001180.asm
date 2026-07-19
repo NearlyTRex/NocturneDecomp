@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __ecxcall dll_dx7_cpp_CDLLTextureCache_bindTexture_FUN_10001180(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+; void __ecxcall dll_dx7_cpp_CDX7TextureCache_bindTexture_FUN_10001180(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
@@ -10,7 +10,7 @@
 ;   dll_dx7.cpp_bindTextureBySize_FUN_100015d0 at 100015fb
 ;
 ; Called Functions:
-;   dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
+;   dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090
 ;   dll_dx7.cpp_loadTexture_FUN_100030e0
 ;
 ; *****************************************************************************
@@ -18,7 +18,7 @@
 section .text
 
     PUSH EBX                            ; 10001180
-        ;   Label: dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180
+        ;   Label: dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180
     XOR EAX,EAX                         ; 10001181
     PUSH ESI                            ; 10001183
     CMP dword ptr [ECX + 0x8],EAX       ; 10001184
@@ -72,8 +72,8 @@ section .text
         ;   Label: LAB_100011ce
     MOV ESI,dword ptr [ESP + 0x14]      ; 100011d0
     PUSH ESI                            ; 100011d4
-    CALL dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090 ; 100011d5
-        ;   XREF to: 10001090 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache * this_ptr, SMRGLTextureBasic * texture_info)
+    CALL dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090 ; 100011d5
+        ;   XREF to: 10001090 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090(CDX7TextureCache * this_ptr, SMRGLTextureBasic * texture_info)
     POP EBP                             ; 100011da
     POP EDI                             ; 100011db
     POP ESI                             ; 100011dc

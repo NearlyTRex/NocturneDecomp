@@ -122,15 +122,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 4981,
+    "complexity_score": 4996,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 65,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 846,
-    "suspect_count": 409,
+    "suspect_count": 410,
     "suspect_types": [
       "concat_reconstruction",
+      "fast_sqrt_inline",
       "raw_address_constant",
       "self_copy_guard",
       "undefined_data",
@@ -4955,6 +4956,14 @@
       "severity": "moderate",
       "text": "uVar15 = CONCAT44(0x3f333333,_DAT_01c78c14);",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01c7070c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c7070c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 579,
+      "match": "local_78 = (float)(((int)local_7c >> 1) + _DAT_01c7070c);",
+      "severity": "moderate",
+      "text": "local_78 = (float)(((int)local_7c >> 1) + _DAT_01c7070c);",
+      "type": "fast_sqrt_inline"
     },
     {
       "description": "Uninitialized variable: local_1c8",

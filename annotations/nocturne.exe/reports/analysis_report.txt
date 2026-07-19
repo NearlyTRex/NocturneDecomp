@@ -10,7 +10,7 @@ Total functions: 4347
 Clean functions: 249 (5.7%)
 Functions with suspects: 4098 (94.3%)
 
-Total suspect patterns: 83154
+Total suspect patterns: 83171
 Average suspects per function: 19.13
 
 Virtual files: 97 total, 0 at 100%, 0 at 90%+
@@ -18,7 +18,7 @@ Virtual files: 97 total, 0 at 100%, 0 at 90%+
 Pseudocode lines:
   Min: 4, Max: 2729, Average: 45.0
 
-Average complexity score: 245.0
+Average complexity score: 245.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -71,9 +71,11 @@ SUSPECT PATTERN BREAKDOWN
   warning_jumptable         14
   warning_indirect_jump     14
   nan_function_artifact     11
+  fast_sqrt_inline          10
   static_identical_inner_condition 9
   undefined_ptr_cast        9
   static_invalid_pointer_cast 8
+  fast_inv_sqrt_inline      7
   fnstsw_flag_artifact      6
   displaced_global_access   6
   sub84_truncation          6
@@ -155,14 +157,14 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004ff2c0: FUN_004ff2c0 (score: 6964, suspects: 417, lines: 2729)
   00535900: FUN_00535900 (score: 5654, suspects: 456, lines: 1054)
   0047ac50: FUN_0047ac50 (score: 5501, suspects: 356, lines: 1876)
-  0055ef50: FUN_0055ef50 (score: 5221, suspects: 426, lines: 926)
-  004a9270: FUN_004a9270 (score: 4981, suspects: 409, lines: 846)
+  0055ef50: FUN_0055ef50 (score: 5236, suspects: 427, lines: 926)
+  004a9270: FUN_004a9270 (score: 4996, suspects: 410, lines: 846)
   004a0550: FUN_004a0550 (score: 4725, suspects: 267, lines: 2005)
   0047e0d0: FUN_0047e0d0 (score: 4679, suspects: 314, lines: 1499)
   0041ad10: FUN_0041ad10 (score: 4014, suspects: 327, lines: 709)
   00458a90: FUN_00458a90 (score: 3838, suspects: 317, lines: 638)
   004916c0: FUN_004916c0 (score: 3753, suspects: 321, lines: 523)
-  0050c2d0: FUN_0050c2d0 (score: 3597, suspects: 302, lines: 532)
+  0050c2d0: FUN_0050c2d0 (score: 3642, suspects: 306, lines: 532)
   00495a20: FUN_00495a20 (score: 3560, suspects: 291, lines: 620)
   0054c690: FUN_0054c690 (score: 3414, suspects: 287, lines: 524)
   004b6d80: FUN_004b6d80 (score: 3369, suspects: 278, lines: 574)
@@ -652,6 +654,16 @@ FUNCTIONS BY SUSPECT TYPE
     0052dff0: FUN_0052dff0
     0054eae0: FUN_0054eae0
 
+  fast_sqrt_inline (8 functions):
+    0042baa0: FUN_0042baa0
+    004366f0: FUN_004366f0
+    00454750: FUN_00454750
+    004a9270: FUN_004a9270
+    004c4970: FUN_004c4970
+    0050aee0: FUN_0050aee0
+    0050be20: FUN_0050be20
+    0055ef50: FUN_0055ef50
+
   static_identical_inner_condition (0 functions):
 
   undefined_ptr_cast (7 functions):
@@ -664,6 +676,12 @@ FUNCTIONS BY SUSPECT TYPE
     00569040: FUN_00569040
 
   static_invalid_pointer_cast (0 functions):
+
+  fast_inv_sqrt_inline (4 functions):
+    004366f0: FUN_004366f0
+    00442c50: FUN_00442c50
+    0044d2d0: FUN_0044d2d0
+    0050c2d0: FUN_0050c2d0
 
   fnstsw_flag_artifact (6 functions):
     0040bff0: FUN_0040bff0

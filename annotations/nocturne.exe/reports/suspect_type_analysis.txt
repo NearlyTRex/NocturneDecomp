@@ -47,9 +47,11 @@ SUSPECT TYPE COUNTS
   warning_jumptable                 14 (  0.0%)
   warning_indirect_jump             14 (  0.0%)
   nan_function_artifact             11 (  0.0%)
+  fast_sqrt_inline                  10 (  0.0%)
   static_identical_inner_condition     9 (  0.0%)
   undefined_ptr_cast                 9 (  0.0%)
   static_invalid_pointer_cast        8 (  0.0%)
+  fast_inv_sqrt_inline               7 (  0.0%)
   fnstsw_flag_artifact               6 (  0.0%)
   displaced_global_access            6 (  0.0%)
   sub84_truncation                   6 (  0.0%)
@@ -13041,6 +13043,32 @@ Functions:
   FUN_0054eae0
 
 ====================================================================================================
+TYPE: fast_sqrt_inline (10 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * lo
+     1x  local_24 = (float)(((int)local_5c >> 1) + _DAT_01c7070c);
+     1x  local_54 = (float)(((int)local_58 >> 1) + _DAT_01c7070c);
+     1x  local_18 = (float)(((int)local_24 >> 1) + _DAT_01c7070c);
+     1x  local_78 = (float)(((int)local_7c >> 1) + _DAT_01c7070c);
+     1x  local_2c = (float)(((int)local_54 >> 1) + _DAT_01c7070c);
+     1x  local_40 = (float)(((int)local_44 >> 1) + _DAT_01c7070c);
+     1x  fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01c7070c) * *(float *)(iVar4 + 0
+     1x  fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + _D
+     1x  local_5c = (float)(((int)local_1c >> 1) + _DAT_01c7070c);
+
+Functions:
+  FUN_0042baa0
+  FUN_004366f0
+  FUN_00454750
+  FUN_004a9270
+  FUN_004c4970
+  FUN_0050aee0
+  FUN_0050be20
+  FUN_0055ef50
+
+====================================================================================================
 TYPE: static_identical_inner_condition (9 occurrences)
 ====================================================================================================
 
@@ -13088,6 +13116,25 @@ Functions:
   FUN_005125a0
   FUN_005148b0
   FUN_005557d0
+
+====================================================================================================
+TYPE: fast_inv_sqrt_inline (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
+     1x  fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * f
+     1x  fVar1 = (float)(_DAT_01c70710 - ((int)fVar1 >> 1));
+     1x  local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
+     1x  local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
+     1x  local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
+     1x  local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
+
+Functions:
+  FUN_004366f0
+  FUN_00442c50
+  FUN_0044d2d0
+  FUN_0050c2d0
 
 ====================================================================================================
 TYPE: fnstsw_flag_artifact (6 occurrences)

@@ -21,7 +21,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette
   
                     /* 0x4b30  28  APIDLLsetColorTable16 */
   g_ColorPalette = source_palette;
-  g_ColorTable16 = color_table;
+  g_DX7ColorTable16 = color_table;
   pDVar7 = &local_7c;
   for (iVar4 = 0x1f; iVar4 != 0; iVar4 = iVar4 + -1) {
     pDVar7->dwSize = 0;
@@ -64,7 +64,7 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette
            (int)(0xff / (ulonglong)
                         (local_7c.ddpfPixelFormat.dwBlueVMask.dwBBitMask >> ((byte)iVar4 & 0x1f)));
       iVar4 = dll_dx7_cpp_floorLog2_FUN_10004d10(*g_ExternalRendererBridge.blue_scale_factor);
-      puVar8 = g_ColorTable16;
+      puVar8 = g_DX7ColorTable16;
       pbVar5 = g_ColorPalette + 2;
       iVar6 = 0x100;
       *g_ExternalRendererBridge.blue_dither_shift = iVar4;

@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x100F0000
 // =============================================================================
 
-// CDLLTextureCache
-CDLLTextureCache CDLLTextureCache_100f0698 = {};
+// CDX7TextureCache
+CDX7TextureCache CDX7TextureCache_100f0698 = {};
 

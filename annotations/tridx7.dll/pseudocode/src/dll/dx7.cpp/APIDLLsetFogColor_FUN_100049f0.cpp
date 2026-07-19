@@ -10,14 +10,14 @@ int __cdecl dll_dx7_cpp_APIDLLsetFogColor_FUN_100049f0(int red,int green,int blu
 
 {
                     /* 0x49f0  29  APIDLLsetFogColor */
-  g_FogColorRed = red;
-  g_FogColorGreen = green;
-  g_FogColorBlue = blue;
+  g_DX7FogColorRed = red;
+  g_DX7FogColorGreen = green;
+  g_DX7FogColorBlue = blue;
   if (g_InScene == 0) {
     dll_dx7_cpp_APIDLLbeginScene_FUN_10002ce0();
   }
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0
-            (0x22,g_FogColorRed << 0x10 | g_FogColorGreen << 8 | g_FogColorBlue);
+            (0x22,g_DX7FogColorRed << 0x10 | g_DX7FogColorGreen << 8 | g_DX7FogColorBlue);
   if (g_InScene != 0) {
     dll_dx7_cpp_APIDLLendScene_FUN_10002d10();
   }

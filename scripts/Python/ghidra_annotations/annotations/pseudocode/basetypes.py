@@ -44,6 +44,46 @@ def get_all_basetypes():
     }
 
 
+def get_libc_provided_types():
+    """Standard C types the host toolchain defines; never emit a typedef for these.
+
+    Ghidra's type manager carries these names when a program's CRT headers were
+    imported (tridx7.dll does; nocedit.exe does not), and the exporter would
+    otherwise write them out with the width it observed in the 32-bit binary:
+
+        typedef int  intptr_t;      // system/basetsd.h
+        typedef uint uintptr_t;     // system/vadefs.h
+        typedef uint size_t;        // system/crtdefs.h
+        typedef char* va_list;      // system/vadefs.h
+
+    At 32-bit those agree with the real definitions, so the collision is silent.
+    At 64-bit every one of them is half the required width and clang rejects the
+    translation unit outright ("typedef redefinition with different types").
+
+    Skipping them is correct rather than a workaround: unlike DWORD/LONG — which
+    are pinned to 32 bits on purpose because the binary's struct layouts depend
+    on it — these types are *supposed* to follow the target. basetypes.h already
+    includes <stddef.h>, <stdint.h> and <stdarg.h>, so the names stay in scope
+    everywhere and simply resolve to the toolchain's target-correct definitions.
+
+    NOT included here, deliberately:
+      time_t   — emitted as `typedef long time_t`, which is already correct on
+                 both lanes (4 bytes at -m32, 8 at LP64) and does not collide.
+                 Skipping it would require pulling in <time.h>, so leave it.
+    """
+    return {
+        # Pointer-width integers — <stdint.h>
+        'intptr_t', 'uintptr_t',
+        # Object sizes and differences — <stddef.h>
+        'size_t', 'ssize_t', 'ptrdiff_t',
+        # Variadic argument list — <stdarg.h>. On x86-64 SysV this is a 24-byte
+        # __va_list_tag[1], not a char*, so the 32-bit typedef is badly wrong.
+        'va_list',
+        # A builtin keyword in C++; any typedef of it is an error at every width.
+        'wchar_t',
+    }
+
+
 def get_types_needing_basetypes():
     """Return set of type names that require basetypes.h.
 

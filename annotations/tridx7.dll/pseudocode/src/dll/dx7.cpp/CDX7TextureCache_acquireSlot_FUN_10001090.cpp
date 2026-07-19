@@ -1,12 +1,12 @@
-// Name: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
+// Name: dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090
 // Address: 10001090
 // Address Range: [[10001090, 1000117d]]
 // Convention: __ecxcall
-// Signature: int __ecxcall dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+// Signature: int __ecxcall dll_dx7_cpp_CDX7TextureCache_acquireSlot_FUN_10001090(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 
 #include "nocturne.h"
 
-int __ecxcall dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+int __ecxcall dll_dx7_cpp_CDX7TextureCache_acquireSlot_FUN_10001090(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 
 {
   char cVar1;

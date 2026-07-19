@@ -2,12 +2,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "types/classes/CDLLTextureCache.h"
+#include "types/classes/CDX7TextureCache.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x100F0000
 // =============================================================================
 
-// CDLLTextureCache
-extern CDLLTextureCache CDLLTextureCache_100f0698;
+// CDX7TextureCache
+extern CDX7TextureCache CDX7TextureCache_100f0698;
 

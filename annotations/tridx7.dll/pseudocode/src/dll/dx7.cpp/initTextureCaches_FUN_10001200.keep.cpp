@@ -15,13 +15,13 @@ void __cdecl dll_dx7_cpp_initTextureCaches_FUN_10001200(void)
   int j;
   int swap_count;
   int swap_size;
-  CDLLTextureCache *swap_cache;
+  CDX7TextureCache *swap_cache;
   uint max_textures_32;
   uint max_textures_64;
   uint max_textures_128;
   uint max_textures_256;
   int texture_sizes [4];
-  CDLLTextureCache *caches [4];
+  CDX7TextureCache *caches [4];
   int max_counts [4];
 
   max_textures_64 = 0x200;
@@ -77,7 +77,7 @@ void __cdecl dll_dx7_cpp_initTextureCaches_FUN_10001200(void)
     }
   }
   for (i = 0; i < (int)(sizeof(caches) / sizeof(caches[0])); i = i + 1) {
-    dll_dx7_cpp_CDLLTextureCache_init_FUN_10001020
+    dll_dx7_cpp_CDX7TextureCache_init_FUN_10001020
               (caches[i],max_counts[i],texture_sizes[i]);
   }
   return;

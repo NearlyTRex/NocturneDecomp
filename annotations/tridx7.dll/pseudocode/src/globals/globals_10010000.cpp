@@ -4,14 +4,14 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x10010000
 // =============================================================================
 
-// CDLLTextureCache
-CDLLTextureCache CDLLTextureCache_10018660 = {};
+// CDX7TextureCache
+CDX7TextureCache CDX7TextureCache_10018660 = {};
 
-// CDLLTextureCache*
-CDLLTextureCache* g_TextureCache32 = (CDLLTextureCache*)&CDLLTextureCache_10060678;
-CDLLTextureCache* g_TextureCache64 = (CDLLTextureCache*)&CDLLTextureCache_100a8688;
-CDLLTextureCache* g_TextureCache128 = (CDLLTextureCache*)&CDLLTextureCache_100f0698;
-CDLLTextureCache* g_TextureCache256 = (CDLLTextureCache*)&CDLLTextureCache_10018660;
+// CDX7TextureCache*
+CDX7TextureCache* g_TextureCache32 = (CDX7TextureCache*)&CDX7TextureCache_10060678;
+CDX7TextureCache* g_TextureCache64 = (CDX7TextureCache*)&CDX7TextureCache_100a8688;
+CDX7TextureCache* g_TextureCache128 = (CDX7TextureCache*)&CDX7TextureCache_100f0698;
+CDX7TextureCache* g_TextureCache256 = (CDX7TextureCache*)&CDX7TextureCache_10018660;
 
 // GUID
 GUID g_IID_IDirectDraw4 = {0x9C59509A, 0x39BD, 0x11D1, {0x8C, 0x4A, 0x00, 0xC0, 0x4F, 0xD9, 0x30, 0xC5}};
@@ -75,16 +75,16 @@ LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cac = (LPCRITICAL_SECTION)0x10240678;
 LPCRITICAL_SECTION LPCRITICAL_SECTION_10016cbc = (LPCRITICAL_SECTION)0x10240648;
 
 // int
-int g_CurrentTextureIndex = 0;
+int g_DX7CurrentTextureIndex = 0;
 int g_PremultiplyColorAndAlpha = 0;
 int g_FlyIniPresent = 0;
 int g_ZBufferBitDepth = 0;
 int g_ScreenWidth = 0x280;
 int g_ScreenHeight = 0x1E0;
 int g_ScreenBitDepth = 0x10;
-int g_FogColorRed = 0xFF;
-int g_FogColorGreen = 0xFF;
-int g_FogColorBlue = 0xFF;
+int g_DX7FogColorRed = 0xFF;
+int g_DX7FogColorGreen = 0xFF;
+int g_DX7FogColorBlue = 0xFF;
 int g_StagingSetIndex = 0;
 int g_BackBufferLocked = 0;
 int g_FrameLocked = 0;

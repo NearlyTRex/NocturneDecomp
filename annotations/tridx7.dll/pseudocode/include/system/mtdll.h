@@ -3,7 +3,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/crtdefs.h"
-#include "system/vadefs.h"
 
 // =============================================================================
 // MTDLL - System Header

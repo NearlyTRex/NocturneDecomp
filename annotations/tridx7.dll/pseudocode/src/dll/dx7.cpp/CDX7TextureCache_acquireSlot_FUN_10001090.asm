@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __ecxcall dll_dx7_cpp_CDLLTextureCache_acquireSlot_FUN_10001090(CDLLTextureCache *this_ptr,SMRGLTextureBasic *texture_info)
+; int __ecxcall dll_dx7_cpp_CDX7TextureCache_acquireSlot_FUN_10001090(CDX7TextureCache *this_ptr,SMRGLTextureBasic *texture_info)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ;
 ; XREF[2]:
-;   dll_dx7.cpp_CDLLTextureCache_bindTexture_FUN_10001180 at 100011d5
+;   dll_dx7.cpp_CDX7TextureCache_bindTexture_FUN_10001180 at 100011d5
 ;   dll_dx7.cpp_resolveTextureSlot_FUN_10001470 at 1000149e
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@
 section .text
 
     PUSH EBX                            ; 10001090
-        ;   Label: dll_dx7.cpp_CDLLTextureCache_acquireSlot_FUN_10001090
+        ;   Label: dll_dx7.cpp_CDX7TextureCache_acquireSlot_FUN_10001090
     XOR EAX,EAX                         ; 10001091
     PUSH ESI                            ; 10001093
     PUSH EDI                            ; 10001094

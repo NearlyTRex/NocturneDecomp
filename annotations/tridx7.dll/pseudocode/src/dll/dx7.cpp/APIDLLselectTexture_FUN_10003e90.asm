@@ -11,7 +11,7 @@
 ; uchar *          Stack[0x14]:4   opacity_data
 ;
 ; Referenced Globals:
-;   int g_CurrentTextureIndex = 0x0
+;   int g_DX7CurrentTextureIndex = 0x0
 ;   uchar* g_TexturePalette = 00000000
 ;   uchar* g_TextureData = 00000000
 ;   uchar* g_TextureOpacity = 00000000
@@ -35,7 +35,7 @@ section .text
     CALL dll_dx7.cpp_resolveTextureSlot_FUN_10001470 ; 10003eb2
         ;   XREF to: 10001470 (UNCONDITIONAL_CALL)  ; int dll_dx7.cpp_resolveTextureSlot_FUN_10001470(SMRGLTextureBasic * texture_info)
     ADD ESP,0x4                         ; 10003eb7
-    MOV [0x10014138],EAX                ; 10003eba | g_CurrentTextureIndex
+    MOV [0x10014138],EAX                ; 10003eba | g_DX7CurrentTextureIndex
     MOV EAX,0x1                         ; 10003ebf
     RET                                 ; 10003ec4
 

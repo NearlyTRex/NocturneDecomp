@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_10003c94 = 10003abd
 ;   byte switchdataD_10003ca8 = 0x0
-;   int g_CurrentTextureIndex = 0x0
+;   int g_DX7CurrentTextureIndex = 0x0
 ;   int g_StagingSetIndex = 0x0
 ;   uint g_DirectTextureFlag = 0x0
 ;   TerminatedCString s_Unknown_texture_size_10016ad0
@@ -87,7 +87,7 @@ section .text
     CMP dword ptr [0x100141f0],0x0      ; 10003ad9 | g_DirectTextureFlag
     JZ 0x10003afc                       ; 10003ae0
         ;   XREF to: 10003afc (CONDITIONAL_JUMP)  ; LAB_10003afc
-    MOV EAX,[0x10014138]                ; 10003ae2 | g_CurrentTextureIndex
+    MOV EAX,[0x10014138]                ; 10003ae2 | g_DX7CurrentTextureIndex
     MOV dword ptr [ESP + 0x14],0x0      ; 10003ae7
     MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003aef | g_TextureSurfaces[0].surface
     MOV dword ptr [ESP + 0x10],ECX      ; 10003af6
@@ -96,7 +96,7 @@ section .text
     MOV EAX,[0x100141e8]                ; 10003afc | g_StagingSetIndex
         ;   Label: LAB_10003afc
     LEA ECX,[ESI + EAX*0x8]             ; 10003b01
-    MOV EAX,[0x10014138]                ; 10003b04 | g_CurrentTextureIndex
+    MOV EAX,[0x10014138]                ; 10003b04 | g_DX7CurrentTextureIndex
     MOV EDX,dword ptr [ECX*0x4 + 0x10139048] ; 10003b09 | g_StagingTextures
     MOV ECX,dword ptr [EAX*0x8 + 0x1020de44] ; 10003b10 | g_TextureSurfaces[0].surface
     MOV dword ptr [ESP + 0x10],EDX      ; 10003b17

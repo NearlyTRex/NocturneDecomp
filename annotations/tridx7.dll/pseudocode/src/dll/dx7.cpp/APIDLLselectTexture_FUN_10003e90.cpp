@@ -13,6 +13,6 @@ int __cdecl dll_dx7_cpp_APIDLLselectTexture_FUN_10003e90(SMRGLTextureBasic *text
   g_TextureData = texture_data;
   g_TexturePalette = palette_data;
   g_TextureOpacity = opacity_data;
-  g_CurrentTextureIndex = dll_dx7_cpp_resolveTextureSlot_FUN_10001470(texture_info);
+  g_DX7CurrentTextureIndex = dll_dx7_cpp_resolveTextureSlot_FUN_10001470(texture_info);
   return 1;
 }

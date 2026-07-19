@@ -897,6 +897,18 @@
       "type":"typedef"
     },
     {
+      "name":"SDX7TextureCacheEntry",
+      "type":"struct"
+    },
+    {
+      "name":"CDX7TextureCache",
+      "type":"struct"
+    },
+    {
+      "name":"SDX7TextureSurfaceSlot",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLHeaderBasic",
       "type":"struct"
     },
@@ -918,18 +930,6 @@
     },
     {
       "name":"SScreenVertex",
-      "type":"struct"
-    },
-    {
-      "name":"STextureCacheEntry",
-      "type":"struct"
-    },
-    {
-      "name":"CDLLTextureCache",
-      "type":"struct"
-    },
-    {
-      "name":"STextureSurfaceSlot",
       "type":"struct"
     },
     {
@@ -6427,12 +6427,12 @@
           "len":294912,
           "name":"entries",
           "offset":16,
-          "type":"STextureCacheEntry[4096]"
+          "type":"SDX7TextureCacheEntry[4096]"
         }
       ],
       "importable":true,
       "len":294928,
-      "name":"CDLLTextureCache",
+      "name":"CDX7TextureCache",
       "pack":false,
       "type":"struct"
     },
@@ -11455,6 +11455,60 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"slot",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":64,
+          "name":"name",
+          "offset":4,
+          "type":"char[64]"
+        },
+        {
+          "len":4,
+          "name":"lru_stamp",
+          "offset":68,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "name":"SDX7TextureCacheEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"texture",
+          "offset":0,
+          "type":"IDirect3DTexture2*"
+        },
+        {
+          "len":4,
+          "name":"surface",
+          "offset":4,
+          "type":"IDirectDrawSurface*"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SDX7TextureSurfaceSlot",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/mtdll.h",
       "desc":"",
@@ -11817,60 +11871,6 @@
       "importable":true,
       "len":32,
       "name":"SScreenVertex",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"slot",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":64,
-          "name":"name",
-          "offset":4,
-          "type":"char[64]"
-        },
-        {
-          "len":4,
-          "name":"lru_stamp",
-          "offset":68,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":72,
-      "name":"STextureCacheEntry",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"texture",
-          "offset":0,
-          "type":"IDirect3DTexture2*"
-        },
-        {
-          "len":4,
-          "name":"surface",
-          "offset":4,
-          "type":"IDirectDrawSurface*"
-        }
-      ],
-      "importable":true,
-      "len":8,
-      "name":"STextureSurfaceSlot",
       "pack":false,
       "type":"struct"
     },

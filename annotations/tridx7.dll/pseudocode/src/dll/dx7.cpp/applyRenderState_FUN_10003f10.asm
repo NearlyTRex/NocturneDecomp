@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_100122b8 = 1
 ;   double DOUBLE_100122c0 = 256
-;   int g_CurrentTextureIndex = 0x0
+;   int g_DX7CurrentTextureIndex = 0x0
 ;   int g_PremultiplyColorAndAlpha = 0x0
 ;   int g_FlyIniPresent = 0x0
 ;   int g_ZBufferBitDepth = 0x0
@@ -25,7 +25,7 @@
 ;   int g_PrevSystemInitialized = 0x0
 ;   int g_PrevBlendMode = 0x0
 ;   int g_PrevRenderingQuality = 0x1
-;   STextureSurfaceSlot[4096] g_TextureSurfaces
+;   SDX7TextureSurfaceSlot[4096] g_TextureSurfaces
 ;   undefined4 g_ExternalRendererBridge.blend_mode
 ;   undefined4 g_ExternalRendererBridge.current_lighting
 ;   ... and 10 more
@@ -174,14 +174,14 @@ section .text
         ;   Label: LAB_10004052
     JZ 0x10004122                       ; 10004058
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
-    MOV EAX,[0x10014138]                ; 1000405e | g_CurrentTextureIndex
+    MOV EAX,[0x10014138]                ; 1000405e | g_DX7CurrentTextureIndex
     MOV ECX,dword ptr [0x100141d4]      ; 10004063 | g_CurrentBoundTexture
     CMP dword ptr [EAX*0x8 + 0x1020de40],ECX ; 10004069 | g_TextureSurfaces
     JZ 0x10004122                       ; 10004070
         ;   XREF to: 10004122 (CONDITIONAL_JUMP)  ; LAB_10004122
     CALL dll_dx7.cpp_flushBatch_FUN_100047b0 ; 10004076
         ;   XREF to: 100047b0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_flushBatch_FUN_100047b0()
-    MOV EAX,[0x10014138]                ; 1000407b | g_CurrentTextureIndex
+    MOV EAX,[0x10014138]                ; 1000407b | g_DX7CurrentTextureIndex
     PUSH 0x4                            ; 10004080
     PUSH 0x1                            ; 10004082
     MOV ECX,dword ptr [0x100141e0]      ; 10004084 | g_Device

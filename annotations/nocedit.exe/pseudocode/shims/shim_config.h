@@ -80,6 +80,52 @@
 #define NOCTURNE_AUTHENTIC_D3D_OPTIONS 0
 #endif
 
+// NOCTURNE_AUTHENTIC_RENDERER_DLL
+//   The game loads its 3D renderer as a Win32 DLL — LoadLibraryA on the name in
+//   g_RendererDllPath, then GetProcAddress for each "APIDLL*" entry point. We
+//   own both shims, so a decompiled renderer can be resolved straight out of
+//   the executable instead of a file on disk.
+//   1: matches the shipped binary — LoadLibraryA always goes to dlopen, so the
+//      renderer must exist as a real loadable module on disk, and the Graphics
+//      Options "3D API" selector cycles the original hardcoded
+//      trid3d → tridx6 → tridx7 chain regardless of what this build can load.
+//   0: dev-friendly default. LoadLibraryA/GetProcAddress consult the built-in
+//      module registry first (shims/builtin_dll.{h,cpp}) and fall back to
+//      dlopen for anything not registered, so a decompiled renderer links in
+//      without shipping a .so. The 3D-API selector cycles over exactly the
+//      registered modules, so a build only ever offers renderers it can
+//      actually run. Which those are is a table row in builtin_dll.cpp — no
+//      call site names a DLL.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_RENDERER_DLL=1.
+#ifndef NOCTURNE_AUTHENTIC_RENDERER_DLL
+#define NOCTURNE_AUTHENTIC_RENDERER_DLL 0
+#endif
+
+// NOCTURNE_GL_PRESENT
+//   Who owns the window's pixels.
+//   1: the shim layer creates an OpenGL context on the game window and presents
+//      the 2D back buffer as a textured fullscreen quad (shims/gl_present.cpp).
+//      Required for hooking a decompiled 3D renderer DLL up to real GL — its
+//      output composites into the same default framebuffer. Compatibility
+//      profile, because the DX6-era render states those DLLs drive map straight
+//      onto fixed-function GL.
+//   0: legacy path — no GL context; the back buffer is presented through an
+//      SDL_Renderer streaming texture. 3D acceleration is unavailable, so the
+//      software renderer is the only thing that draws.
+//
+//   Note this is an implementation choice, not an authenticity one: the
+//   original ran on DirectDraw, which neither path reproduces literally.
+//
+//   Override with -DNOCTURNE_GL_PRESENT=0.
+#ifndef NOCTURNE_GL_PRESENT
+#define NOCTURNE_GL_PRESENT 1
+#endif
+
+// Registry queries (nocturne_builtin_dll_available / _next) — declared here so
+// decompiled TUs reach them through nocturne.h like the other shim toggles.
+#include "builtin_dll.h"
+
 // NOCTURNE_AUTHENTIC_VOICE
 //   1: matches nocedit.exe as-shipped — subtitles render but no voice audio
 //      plays. The streaming MP3 entry point (`loadStreamingSoundFile`) is
