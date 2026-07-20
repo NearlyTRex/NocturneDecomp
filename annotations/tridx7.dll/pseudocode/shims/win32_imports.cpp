@@ -19,6 +19,7 @@
 // implemented here, minimally, to match what the DLL actually needs from them.
 
 #include "system/winbase.h"
+#include "shim_config.h"
 
 #include <SDL.h>
 #include <stdio.h>
@@ -67,11 +68,34 @@ BOOL SetCursorPos(int X, int Y) {
 // -----------------------------------------------------------------------------
 
 // The DLL hides the cursor when it takes the display mode and restores it on the
-// way out. SDL owns cursor visibility for us, and its return value already has
-// the Win32 shape: a display counter that is >= 0 when the cursor is visible.
+// way out — and it drives both with spin loops that depend on Win32's *display
+// counter* contract, not just on the cursor's visibility:
+//
+//   APIDLLsetVideoMode:     do { c = ShowCursor(0); } while (0 < c);
+//   APIDLLrestoreVideoMode: do { c = ShowCursor(1); } while (c < 1);
+//
+// Win32 keeps an internal counter: TRUE increments it, FALSE decrements it, and
+// the call returns the NEW value; the cursor is visible while it is >= 0. A
+// constant return satisfies the first loop by luck and makes the second one
+// spin forever — which froze the game when toggling 3D acceleration mid-level,
+// because restoring the video mode never completed. Keep the counter.
+static int g_cursor_display_count = 0;   // Win32 starts at 0 when a mouse is present
+
 int ShowCursor(BOOL bShow) {
-    SDL_ShowCursor(bShow ? SDL_ENABLE : SDL_DISABLE);
-    return bShow ? 0 : -1;
+    // The counter is maintained unconditionally — the DLL's spin loops depend on
+    // it regardless of what the pointer actually does.
+    g_cursor_display_count += bShow ? 1 : -1;
+#if NOCTURNE_AUTHENTIC_WINDOWS
+    SDL_ShowCursor((g_cursor_display_count >= 0) ? SDL_ENABLE : SDL_DISABLE);
+#else
+    // Hiding the pointer is a DirectDraw *exclusive fullscreen* quirk: the game
+    // owned the whole screen and drew its own cursor. This port runs windowed,
+    // where obeying it just means losing the pointer whenever it crosses the
+    // window — and this binary is the editor, which is mouse-driven. Keep it
+    // visible; build with -DNOCTURNE_AUTHENTIC_WINDOWS=1 for the original.
+    SDL_ShowCursor(SDL_ENABLE);
+#endif
+    return g_cursor_display_count;
 }
 
 // Used once, to pull the renderer's display name out of the DLL's string table.
