@@ -25,6 +25,17 @@ option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
 option(NOCTURNE_ASAN
     "Enable AddressSanitizer + UBSan on the exe build (requires 32-bit sanitizer runtime)"
     OFF)
+# Who owns the window's pixels. ON (default) creates a GL context and presents
+# the 2D back buffer as a textured quad, which is what lets a decompiled 3D
+# renderer DLL composite into the same framebuffer. OFF selects the legacy
+# SDL_Renderer path with no GL context at all (see NOCTURNE_GL_PRESENT in
+# shims/shim_config.h) — useful as a control when deciding whether a rendering
+# artifact comes from the GL layer or from the engine itself.
+#
+# Defined only on the shim targets, so toggling it rebuilds ~100 files rather
+# than the whole decompiled tree (shim_config.h reaches every TU via nocturne.h).
+option(NOCTURNE_GL_PRESENT "Present through OpenGL (OFF = legacy SDL_Renderer)" ON)
+
 option(NOCTURNE_USE_CCACHE
     "Route the compiler through ccache if available"
     ON)
@@ -382,6 +393,9 @@ if(NOCTURNE_BUILD_EXE)
         target_compile_definitions(nocturne_tridx7_shims PRIVATE
             DirectDrawCreate=tridx7_DirectDrawCreate
             DirectDrawEnumerateExA=tridx7_DirectDrawEnumerateExA)
+        if(NOT NOCTURNE_GL_PRESENT)
+            target_compile_definitions(nocturne_tridx7_shims PRIVATE NOCTURNE_GL_PRESENT=0)
+        endif()
         if(TARGET sdl_headers_copy)
             add_dependencies(nocturne_tridx7_shims sdl_headers_copy)
         endif()
@@ -405,6 +419,9 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
+    if(NOT NOCTURNE_GL_PRESENT)
+        target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_GL_PRESENT=0)
+    endif()
 
     # FFmpeg is built by ExternalProject at build time; its headers must exist
     # before the shim TU that includes them compiles.

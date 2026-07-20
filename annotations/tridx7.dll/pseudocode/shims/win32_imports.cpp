@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <string>      // std::string — watcom_resolve_fs_path's return type
 #include <strings.h>   // strcasecmp
 #include <unistd.h>    // _exit
 
@@ -85,7 +86,10 @@ int LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax)
     return 0;
 }
 
-// The DLL reads a couple of tuning values out of fly.ini (see readIniInt).
+// Defined in the exe's shims/crt.cpp — see stream_compat.h.
+std::string watcom_resolve_fs_path(const char *path);
+
+// The DLL reads its tuning values out of .\system\render.ini (see readIniInt).
 // Minimal INI reader: find [section], then key=value before the next section.
 // Returns nDefault when the file, section, or key is missing — same as Win32.
 UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault,
@@ -93,7 +97,13 @@ UINT GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, int nDefault,
     if (lpAppName == nullptr || lpKeyName == nullptr || lpFileName == nullptr) {
         return (UINT)nDefault;
     }
-    FILE *f = fopen(lpFileName, "r");
+    // The DLL hardcodes Windows paths (".\\system\\render.ini"): backslash
+    // separators and a case that need not match the real filename. Resolving
+    // through the exe's helper translates \ -> / and does a case-insensitive
+    // component walk, the same as every other file the game opens. Without it
+    // the fopen just fails and every ini setting silently keeps its default.
+    const std::string resolved = watcom_resolve_fs_path(lpFileName);
+    FILE *f = fopen(resolved.c_str(), "r");
     if (f == nullptr) {
         return (UINT)nDefault;
     }

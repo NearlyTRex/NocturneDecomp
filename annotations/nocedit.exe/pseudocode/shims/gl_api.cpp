@@ -86,6 +86,7 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(BindRenderbuffer);
     NOCTURNE_GL_LOAD(RenderbufferStorage);
     NOCTURNE_GL_LOAD(FramebufferRenderbuffer);
+    NOCTURNE_GL_LOAD(BlitFramebuffer);
 
     NOCTURNE_GL_LOAD(GenTextures);
     NOCTURNE_GL_LOAD(DeleteTextures);
@@ -94,6 +95,10 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(TexImage2D);
     NOCTURNE_GL_LOAD(TexSubImage2D);
     NOCTURNE_GL_LOAD(TexEnvi);
+    NOCTURNE_GL_LOAD(PushAttrib);
+    NOCTURNE_GL_LOAD(PopAttrib);
+    NOCTURNE_GL_LOAD(PushClientAttrib);
+    NOCTURNE_GL_LOAD(PopClientAttrib);
 
     NOCTURNE_GL_LOAD(Begin);
     NOCTURNE_GL_LOAD(End);

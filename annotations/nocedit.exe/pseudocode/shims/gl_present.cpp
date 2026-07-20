@@ -229,6 +229,10 @@ extern "C" int nocturne_gl_scene_target_active(void) {
     return (g_gl.active && g_gl.scene_fbo != 0) ? 1 : 0;
 }
 
+extern "C" unsigned int nocturne_gl_scene_fbo(void) {
+    return (g_gl.active) ? (unsigned int)g_gl.scene_fbo : 0u;
+}
+
 extern "C" int nocturne_gl_ensure_active(void) {
     // The renderer DLL's APIDLLinit runs during startup, well before the engine
     // sets a display mode — so the context ddraw.cpp's SetDisplayMode would have
@@ -347,6 +351,84 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     }
 }
 
+extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int height,
+                                         int pitch, int bpp) {
+    if (!g_gl.active || g_gl.scene_fbo == 0) return;
+    if (pixels == nullptr || width <= 0 || height <= 0) return;
+
+    GLenum format = 0, type = 0;
+    if (!format_for_bpp(bpp, &format, &type)) {
+        DDRAW_LOG_RL(4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
+        return;
+    }
+    if (!ensure_texture(width, height, format, type)) return;
+
+    // This runs MID-FRAME: after the engine's CPU write, before the renderer
+    // DLL's draws. Unlike the present path (which runs at the frame boundary,
+    // where the DLL re-establishes state anyway) anything left changed here
+    // lands directly on the actor draws.
+    const GLbitfield saved = GL_ENABLE_BIT | GL_TEXTURE_BIT | GL_DEPTH_BUFFER_BIT |
+                             GL_COLOR_BUFFER_BIT | GL_CURRENT_BIT | GL_VIEWPORT_BIT |
+                             GL_TRANSFORM_BIT | GL_SCISSOR_BIT | GL_POLYGON_BIT |
+                             GL_LIGHTING_BIT | GL_FOG_BIT;
+    if (gl.PushAttrib != nullptr)       gl.PushAttrib(saved);
+    if (gl.PushClientAttrib != nullptr) gl.PushClientAttrib(GL_CLIENT_PIXEL_STORE_BIT);
+
+    const int bytes_per_pixel = bpp / 8;
+    gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    gl.PixelStorei(GL_UNPACK_ROW_LENGTH, (pitch > 0) ? pitch / bytes_per_pixel : width);
+    gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
+    gl.TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, type, pixels);
+    gl.PixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+    gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    gl.Disable(GL_SCISSOR_TEST);
+
+    gl.MatrixMode(GL_PROJECTION);
+    gl.PushMatrix();
+    gl.LoadIdentity();
+    gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching the readback flip
+    gl.MatrixMode(GL_MODELVIEW);
+    gl.PushMatrix();
+    gl.LoadIdentity();
+
+    gl.Disable(GL_DEPTH_TEST);
+    gl.DepthMask(GL_FALSE);
+    gl.Disable(GL_BLEND);
+    gl.Disable(GL_ALPHA_TEST);
+    gl.Disable(GL_FOG);
+    gl.Disable(GL_CULL_FACE);
+    gl.Disable(GL_LIGHTING);
+    gl.Enable(GL_TEXTURE_2D);
+    gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+    gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+    // Re-specify sampling state: the DLL's D3DTSS filter handling runs against
+    // whatever texture is bound, and a mipmap MIN_FILTER on this single-level
+    // texture would make it incomplete — GL then drops texturing silently and
+    // the quad comes out flat white. Same trap as the present path.
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    gl.Begin(GL_TRIANGLE_STRIP);
+        gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
+        gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
+        gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
+        gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
+    gl.End();
+
+    gl.MatrixMode(GL_PROJECTION);
+    gl.PopMatrix();
+    gl.MatrixMode(GL_MODELVIEW);
+    gl.PopMatrix();
+
+    if (gl.PopClientAttrib != nullptr) gl.PopClientAttrib();
+    if (gl.PopAttrib != nullptr)       gl.PopAttrib();
+}
+
 extern "C" void nocturne_gl_swap_only(void) {
     if (!g_gl.active) return;
     SDL_GL_SwapWindow(g_gl.window);
@@ -425,8 +507,10 @@ extern "C" int  nocturne_gl_init(SDL_Window *w) { (void)w; return 0; }
 extern "C" int  nocturne_gl_is_active(void) { return 0; }
 extern "C" int  nocturne_gl_scene_target_bind(int w, int h) { (void)w; (void)h; return 0; }
 extern "C" int  nocturne_gl_scene_target_active(void) { return 0; }
+extern "C" unsigned int nocturne_gl_scene_fbo(void) { return 0u; }
 extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
 extern "C" void nocturne_gl_swap_only(void) {}
+extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
 extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int pitch, int bpp) {
     (void)p; (void)w; (void)h; (void)pitch; (void)bpp;

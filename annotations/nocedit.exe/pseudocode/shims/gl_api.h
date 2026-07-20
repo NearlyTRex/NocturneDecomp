@@ -79,6 +79,12 @@ struct NocturneGLApi {
     void      (APIENTRY *BindRenderbuffer)(GLenum, GLuint);
     void      (APIENTRY *RenderbufferStorage)(GLenum, GLenum, GLsizei, GLsizei);
     void      (APIENTRY *FramebufferRenderbuffer)(GLenum, GLenum, GLenum, GLuint);
+    // Depth copies between framebuffers. The renderer DLL saves a "master" Z
+    // buffer for the static world and restores it each frame instead of
+    // clearing (see APIDLLmasterZBuffer / APIDLLrestoreZBuffer).
+    void      (APIENTRY *BlitFramebuffer)(GLint, GLint, GLint, GLint,
+                                          GLint, GLint, GLint, GLint,
+                                          GLbitfield, GLenum);
 
     // --- textures ------------------------------------------------------------
     void (APIENTRY *GenTextures)(GLsizei, GLuint *);
@@ -90,6 +96,16 @@ struct NocturneGLApi {
     void (APIENTRY *TexSubImage2D)(GLenum, GLint, GLint, GLint, GLsizei, GLsizei,
                                    GLenum, GLenum, const void *);
     void (APIENTRY *TexEnvi)(GLenum, GLenum, GLint);
+
+    // Server/client state save+restore. The scene upload runs mid-frame, in
+    // between the engine's CPU write and the renderer DLL's draws, so anything
+    // it changes and does not put back corrupts those draws — the DLL sets some
+    // state once at init rather than per draw. Bracketing with these is what
+    // keeps the upload invisible to it.
+    void (APIENTRY *PushAttrib)(GLbitfield);
+    void (APIENTRY *PopAttrib)(void);
+    void (APIENTRY *PushClientAttrib)(GLbitfield);
+    void (APIENTRY *PopClientAttrib)(void);
 
     // --- immediate mode (2D blit only; geometry uses arrays) -----------------
     void (APIENTRY *Begin)(GLenum);

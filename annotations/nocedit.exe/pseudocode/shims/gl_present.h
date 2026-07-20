@@ -50,6 +50,11 @@ int nocturne_gl_scene_target_bind(int width, int height);
 // GL_COLOR_ATTACHMENT0 and GL_BACK.
 int nocturne_gl_scene_target_active(void);
 
+// GL name of the scene target framebuffer, or 0 when rendering to the window's
+// default framebuffer. The renderer DLL's Z-buffer Blts copy depth in and out
+// of this with glBlitFramebuffer.
+unsigned int nocturne_gl_scene_fbo(void);
+
 // Same as nocturne_gl_is_active, but brings the context up against the process
 // window if it is not running yet. For call sites that can be reached before
 // the engine sets a display mode — notably the renderer DLL's DirectDrawCreate,
@@ -72,6 +77,20 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
 // when a 3D renderer drew the frame on the GPU and there is no CPU-side buffer
 // to composite — uploading a stale one would erase the frame.
 void nocturne_gl_swap_only(void);
+
+// Upload `pixels` into the SCENE target's colour, with no swap and without
+// touching depth. This is the counterpart to the renderer DLL's Lock readback:
+// in real DirectDraw the CPU pixels and the 3D device share one surface, so a
+// CPU write to the back buffer has to become visible to subsequent 3D draws.
+//
+// The engine software-renders the whole static frame into that buffer every
+// frame, so this doubles as the scene target's only full-frame clear — without
+// it, actors accumulate in a target nothing ever clears and smear into trails.
+// Depth is left alone on purpose: the master-Z restore runs before this and its
+// result must survive. Same row-order convention as the readback, so an
+// upload/readback round-trip is the identity. No-op when there is no scene FBO.
+void nocturne_gl_scene_upload(const void *pixels, int width, int height,
+                              int pitch, int bpp);
 
 // Read the presented frame back as tightly packed RGB24 at window resolution.
 // Caller frees *out_rgb with free(). Returns 0 on success. Backs

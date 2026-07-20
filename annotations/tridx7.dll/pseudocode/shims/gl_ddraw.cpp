@@ -73,7 +73,7 @@
 #define DDPF_ZBUFFER             0x00000400
 
 #define DDBLT_COLORFILL          0x00000400
-#define DDBLT_DEPTHFILL          0x00000002
+#define DDBLT_DEPTHFILL          0x02000000
 
 #define DDCAPS_3D                0x00000001
 
@@ -119,6 +119,14 @@ struct GLSurface {
     // Texture surfaces only.
     GLuint     gl_texture;
     GLTexture *texture_iface;
+
+    // DDSCAPS_ZBUFFER surfaces only. `is_scene_depth` marks the one attached to
+    // the back buffer — its storage IS the scene target's depth attachment, so
+    // it has no FBO of its own. Every other Z surface is a "master" copy the
+    // DLL saves the static world's depth into, and gets private storage here.
+    int        is_scene_depth;
+    GLuint     depth_fbo;
+    GLuint     depth_rb;
 };
 
 struct GLTexture {
@@ -418,6 +426,88 @@ void surface_sync_texture(GLSurface *surf) {
 // the 3D scene already there — which on real DirectDraw it would, both being
 // the same memory. Reading back first reproduces that, at the cost of one
 // downtransfer per locked frame.
+void surface_readback_from_gl(GLSurface *surf);
+
+// -----------------------------------------------------------------------------
+// Z-buffer copies (APIDLLmasterZBuffer / APIDLLrestoreZBuffer)
+// -----------------------------------------------------------------------------
+// The engine does not clear the Z buffer per frame. It renders the static world
+// once, saves that depth into a "master" Z surface, and restores it before each
+// frame's dynamic actors — which is what erases the previous frame's characters.
+// Both directions arrive here as a DirectDraw surface-to-surface Blt between two
+// DDSCAPS_ZBUFFER surfaces, so they become glBlitFramebuffer depth copies.
+
+// FBO backing a master Z surface. The scene-depth surface has none: it aliases
+// the scene target, whose FBO gl_present owns.
+GLuint surface_depth_fbo(GLSurface *surf) {
+    if (surf == nullptr) return 0;
+    if (surf->is_scene_depth) return (GLuint)nocturne_gl_scene_fbo();
+    if (surf->depth_fbo != 0) return surf->depth_fbo;
+
+    if (gl.GenFramebuffers == nullptr || gl.GenRenderbuffers == nullptr ||
+        gl.RenderbufferStorage == nullptr || gl.FramebufferRenderbuffer == nullptr ||
+        gl.CheckFramebufferStatus == nullptr) {
+        return 0;
+    }
+
+    GLuint prev_fbo = (GLuint)nocturne_gl_scene_fbo();
+
+    gl.GenRenderbuffers(1, &surf->depth_rb);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, surf->depth_rb);
+    gl.RenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24,
+                           (GLsizei)surf->width, (GLsizei)surf->height);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, 0);
+
+    gl.GenFramebuffers(1, &surf->depth_fbo);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, surf->depth_fbo);
+    gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
+                               GL_RENDERBUFFER, surf->depth_rb);
+
+    const GLenum status = gl.CheckFramebufferStatus(GL_FRAMEBUFFER);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, prev_fbo);
+
+    if (status != GL_FRAMEBUFFER_COMPLETE) {
+        DDRAW_LOG("gl_ddraw: master Z FBO incomplete (%ux%u)",
+                  (unsigned)surf->width, (unsigned)surf->height);
+        gl.DeleteFramebuffers(1, &surf->depth_fbo);
+        gl.DeleteRenderbuffers(1, &surf->depth_rb);
+        surf->depth_fbo = surf->depth_rb = 0;
+        return 0;
+    }
+    return surf->depth_fbo;
+}
+
+// Depth copy for the rect `r` (may be null for the whole surface). Returns 0 if
+// the copy could not be made, in which case the caller falls through.
+int surface_blt_depth(GLSurface *dst, GLSurface *src, RECT *r) {
+    if (gl.BlitFramebuffer == nullptr) return 0;
+
+    const GLuint dst_fbo = surface_depth_fbo(dst);
+    const GLuint src_fbo = surface_depth_fbo(src);
+    if (dst_fbo == 0 && !dst->is_scene_depth) return 0;
+    if (src_fbo == 0 && !src->is_scene_depth) return 0;
+
+    GLint x0 = 0, x1 = (GLint)src->width;
+    GLint y0 = 0, y1 = (GLint)src->height;
+    if (r != nullptr) {
+        // DirectDraw rects are top-left origin, GL is bottom-left. Flip against
+        // the surface height so a partial restore lands where the DLL meant.
+        x0 = (GLint)r->left;
+        x1 = (GLint)r->right;
+        y0 = (GLint)((LONG)src->height - r->bottom);
+        y1 = (GLint)((LONG)src->height - r->top);
+    }
+    if (x1 <= x0 || y1 <= y0) return 1;   // empty rect: nothing to do, not an error
+
+    gl.BindFramebuffer(GL_READ_FRAMEBUFFER, src_fbo);
+    gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, dst_fbo);
+    gl.BlitFramebuffer(x0, y0, x1, y1, x0, y0, x1, y1,
+                       GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    // Restore the scene target as the bound framebuffer for subsequent drawing.
+    gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
+    return 1;
+}
+
 void surface_readback_from_gl(GLSurface *surf) {
     if (surf->pixels == nullptr) return;
     if (surf->bpp != 32 && surf->bpp != 16) {
@@ -526,6 +616,23 @@ static HRESULT surface_Unlock(IDirectDrawSurface *this_ptr, void *unused) {
     GLSurface *surf = (GLSurface *)this_ptr;
     surf->locked    = 0;
     surf->cpu_dirty = 1;
+
+    // A CPU write to the back buffer IS a write to the render target — in real
+    // DirectDraw the Lock/Unlock pixels and the 3D device are one surface, so
+    // what the engine draws here has to be visible to the draws that follow.
+    // Without this the two live in separate images and GL silently wins.
+    //
+    // The engine software-renders the entire static frame between the frame's
+    // first Lock and its 3D draws (measured: 99.1% of pixels rewritten), so
+    // this upload is also the scene target's only full-frame clear. Nothing
+    // else ever clears it — that is what let each frame's actors pile up into
+    // ghost trails. Depth is deliberately untouched; the master-Z restore ran
+    // earlier this frame and its result has to survive.
+    if ((surf->caps & (DDSCAPS_BACKBUFFER | DDSCAPS_PRIMARYSURFACE)) != 0 &&
+        surf->pixels != nullptr) {
+        nocturne_gl_scene_upload(surf->pixels, (int)surf->width, (int)surf->height,
+                                 (int)surf->pitch, (int)surf->bpp);
+    }
     return DD_OK;
 }
 
@@ -573,8 +680,11 @@ static HRESULT surface_AddAttachedSurface(IDirectDrawSurface *this_ptr,
     GLSurface *surf = (GLSurface *)this_ptr;
     GLSurface *att  = (GLSurface *)attached;
     if (att != nullptr && (att->caps & DDSCAPS_ZBUFFER) != 0) {
-        // The depth buffer is the GL context's own; attaching is bookkeeping.
-        surf->attached_z = att;
+        // The Z surface attached to the back buffer IS the scene target's depth
+        // attachment — it has no storage of its own. Marking it here is what
+        // lets the Z-buffer Blt path tell it apart from the master copies.
+        surf->attached_z    = att;
+        att->is_scene_depth = 1;
     }
     return DD_OK;
 }
@@ -582,16 +692,27 @@ static HRESULT surface_AddAttachedSurface(IDirectDrawSurface *this_ptr,
 static HRESULT surface_Blt(IDirectDrawSurface *this_ptr, RECT *dest_rect,
                            IDirectDrawSurface *src_surface, RECT *src_rect,
                            DWORD flags, DDBLTFX *fx) {
-    (void)dest_rect; (void)src_rect;
+    (void)src_rect;   // dest_rect is used by the Z-buffer path below
     GLSurface *dst = (GLSurface *)this_ptr;
 
     // Color / depth fill. The DLL uses these to clear the back buffer, the Z
     // buffer, and sub-rectangles of the Z buffer.
     if ((flags & (DDBLT_COLORFILL | DDBLT_DEPTHFILL)) != 0) {
         if ((flags & DDBLT_DEPTHFILL) != 0 || (dst->caps & DDSCAPS_ZBUFFER) != 0) {
+            // Clear the surface's OWN depth: a master Z surface has a private
+            // FBO, only the scene-attached one aliases the scene target. Depth
+            // writes must be on for glClear to touch depth at all, and the
+            // scissor box would clip it, so force both and put them back.
+            const GLuint fbo = surface_depth_fbo(dst);
+            GLint prev_mask = 0;
+            gl.GetIntegerv(GL_DEPTH_WRITEMASK, &prev_mask);
+            gl.BindFramebuffer(GL_FRAMEBUFFER, fbo);
+            gl.Disable(GL_SCISSOR_TEST);
             gl.DepthMask(GL_TRUE);
             gl.ClearDepth(1.0);
             gl.Clear(GL_DEPTH_BUFFER_BIT);
+            gl.DepthMask(prev_mask ? GL_TRUE : GL_FALSE);
+            gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
             return DD_OK;
         }
         const DWORD fill = (fx != nullptr) ? fx->dwFillColor : 0;
@@ -603,10 +724,24 @@ static HRESULT surface_Blt(IDirectDrawSurface *this_ptr, RECT *dest_rect,
         return DD_OK;
     }
 
-    // Surface-to-surface copy. In this DLL that is always the system-memory
-    // staging texture being pushed into the "video memory" texture, so it is a
-    // CPU copy plus an upload flag rather than anything GL does.
     GLSurface *src = (GLSurface *)src_surface;
+
+    // Z-buffer copy: the master-Z save/restore the DLL uses instead of clearing
+    // depth per frame. This lives entirely on the GPU — the Z surfaces have no
+    // meaningful CPU pixels, so the memcpy path below would silently do nothing
+    // and every frame would keep the previous frame's depth (character ghosting).
+    if (src != nullptr &&
+        ((dst->caps & DDSCAPS_ZBUFFER) != 0 || (src->caps & DDSCAPS_ZBUFFER) != 0)) {
+        if (surface_blt_depth(dst, src, dest_rect)) {
+            return DD_OK;
+        }
+        DDRAW_LOG_RL(4, 200, "gl_ddraw: Z-buffer Blt unavailable — depth not copied");
+        return DD_OK;
+    }
+
+    // Surface-to-surface copy. Otherwise this is the system-memory staging
+    // texture being pushed into the "video memory" texture, so it is a CPU copy
+    // plus an upload flag rather than anything GL does.
     if (src != nullptr && src->pixels != nullptr && dst->pixels != nullptr) {
         const DWORD rows  = (src->height < dst->height) ? src->height : dst->height;
         const DWORD bytes = (src->pitch  < dst->pitch)  ? src->pitch  : dst->pitch;
