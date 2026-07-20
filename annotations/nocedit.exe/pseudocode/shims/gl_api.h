@@ -65,6 +65,21 @@ struct NocturneGLApi {
     // the matrix directly beats composing it out of Ortho calls.
     void (APIENTRY *LoadMatrixf)(const GLfloat *);
 
+    // --- framebuffer objects -------------------------------------------------
+    // A DirectDraw back buffer is persistent memory; GL's default framebuffer
+    // is not (colour and depth are undefined after SwapWindow). Rendering into
+    // an FBO restores the semantics the renderer DLL is written against.
+    void      (APIENTRY *GenFramebuffers)(GLsizei, GLuint *);
+    void      (APIENTRY *DeleteFramebuffers)(GLsizei, const GLuint *);
+    void      (APIENTRY *BindFramebuffer)(GLenum, GLuint);
+    void      (APIENTRY *FramebufferTexture2D)(GLenum, GLenum, GLenum, GLuint, GLint);
+    GLenum    (APIENTRY *CheckFramebufferStatus)(GLenum);
+    void      (APIENTRY *GenRenderbuffers)(GLsizei, GLuint *);
+    void      (APIENTRY *DeleteRenderbuffers)(GLsizei, const GLuint *);
+    void      (APIENTRY *BindRenderbuffer)(GLenum, GLuint);
+    void      (APIENTRY *RenderbufferStorage)(GLenum, GLenum, GLsizei, GLsizei);
+    void      (APIENTRY *FramebufferRenderbuffer)(GLenum, GLenum, GLenum, GLuint);
+
     // --- textures ------------------------------------------------------------
     void (APIENTRY *GenTextures)(GLsizei, GLuint *);
     void (APIENTRY *DeleteTextures)(GLsizei, const GLuint *);

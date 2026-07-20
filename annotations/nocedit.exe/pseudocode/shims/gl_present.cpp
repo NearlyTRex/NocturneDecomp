@@ -33,6 +33,16 @@ struct GLPresentState {
     int           logical_width  = 0;
     int           logical_height = 0;
     bool          active         = false;
+
+    // Scene target. A DirectDraw back buffer and its Z buffer are persistent
+    // memory that the renderer DLL clears only when it chooses; GL's default
+    // framebuffer loses both on every SwapWindow. Everything the DLL draws goes
+    // here instead, and this is blitted to the window at present time.
+    GLuint        scene_fbo      = 0;
+    GLuint        scene_color    = 0;
+    GLuint        scene_depth    = 0;
+    int           scene_width    = 0;
+    int           scene_height   = 0;
 };
 
 GLPresentState g_gl;
@@ -148,6 +158,77 @@ extern "C" int nocturne_gl_is_active(void) {
     return g_gl.active ? 1 : 0;
 }
 
+// Create (or resize) the persistent scene target and make it current. Returns 0
+// if FBOs are unavailable, in which case callers keep using the default
+// framebuffer and the old non-persistent behaviour.
+extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
+    if (!g_gl.active || width <= 0 || height <= 0) return 0;
+    if (gl.GenFramebuffers == nullptr || gl.BindFramebuffer == nullptr ||
+        gl.FramebufferTexture2D == nullptr || gl.CheckFramebufferStatus == nullptr ||
+        gl.GenRenderbuffers == nullptr || gl.BindRenderbuffer == nullptr ||
+        gl.RenderbufferStorage == nullptr || gl.FramebufferRenderbuffer == nullptr) {
+        return 0;
+    }
+
+    if (g_gl.scene_fbo != 0 &&
+        g_gl.scene_width == width && g_gl.scene_height == height) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        return 1;
+    }
+
+    if (g_gl.scene_fbo != 0) {
+        gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
+        gl.DeleteTextures(1, &g_gl.scene_color);
+        gl.DeleteRenderbuffers(1, &g_gl.scene_depth);
+        g_gl.scene_fbo = g_gl.scene_color = g_gl.scene_depth = 0;
+    }
+
+    gl.GenTextures(1, &g_gl.scene_color);
+    gl.BindTexture(GL_TEXTURE_2D, g_gl.scene_color);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0,
+                  GL_BGRA, GL_UNSIGNED_BYTE, nullptr);
+
+    gl.GenRenderbuffers(1, &g_gl.scene_depth);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, g_gl.scene_depth);
+    gl.RenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, width, height);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, 0);
+
+    gl.GenFramebuffers(1, &g_gl.scene_fbo);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
+                            GL_TEXTURE_2D, g_gl.scene_color, 0);
+    gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
+                               GL_RENDERBUFFER, g_gl.scene_depth);
+
+    if (gl.CheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+        DDRAW_LOG("gl_present: scene FBO incomplete (%dx%d) — falling back", width, height);
+        gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
+        gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
+        gl.DeleteTextures(1, &g_gl.scene_color);
+        gl.DeleteRenderbuffers(1, &g_gl.scene_depth);
+        g_gl.scene_fbo = g_gl.scene_color = g_gl.scene_depth = 0;
+        return 0;
+    }
+
+    g_gl.scene_width  = width;
+    g_gl.scene_height = height;
+    // Start from a known state; from here on the contents persist exactly like
+    // DirectDraw surface memory, cleared only when the DLL asks.
+    gl.Viewport(0, 0, width, height);
+    gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    gl.ClearDepth(1.0);
+    gl.DepthMask(GL_TRUE);
+    gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    DDRAW_LOG("gl_present: scene FBO %dx%d ready", width, height);
+    return 1;
+}
+
+extern "C" int nocturne_gl_scene_target_active(void) {
+    return (g_gl.active && g_gl.scene_fbo != 0) ? 1 : 0;
+}
+
 extern "C" int nocturne_gl_ensure_active(void) {
     // The renderer DLL's APIDLLinit runs during startup, well before the engine
     // sets a display mode — so the context ddraw.cpp's SetDisplayMode would have
@@ -189,6 +270,13 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, type, pixels);
     gl.PixelStorei(GL_UNPACK_ROW_LENGTH, 0);
 
+    // The composited frame goes to the WINDOW. When a scene FBO is in use it is
+    // still bound at this point (the DLL renders into it), so switch to the
+    // default framebuffer for the blit and switch back after the swap.
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
 
@@ -224,6 +312,19 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.Enable(GL_TEXTURE_2D);
     gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
     gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
+    // Bind and fully re-specify the sampling state every frame. The renderer
+    // DLL's D3DTSS_MINFILTER/MIPFILTER handling calls glTexParameteri against
+    // whatever texture happens to be bound, and this one is still bound from the
+    // previous present. A mipmap MIN_FILTER on a texture with no mipmap chain
+    // makes it *incomplete*, and GL then behaves as if texturing were disabled —
+    // the quad comes out in the primary colour (white), which is exactly the
+    // white screen this produced. Filters are cheap; do not rely on them
+    // surviving a frame of someone else's state changes.
+    gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
     gl.Begin(GL_TRIANGLE_STRIP);
         gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
@@ -238,11 +339,21 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.PopMatrix();
 
     SDL_GL_SwapWindow(g_gl.window);
+
+    // Back to the persistent scene target for the next frame's 3D.
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    }
 }
 
 extern "C" void nocturne_gl_swap_only(void) {
     if (!g_gl.active) return;
     SDL_GL_SwapWindow(g_gl.window);
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    }
 }
 
 extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
@@ -256,11 +367,24 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
     unsigned char *buf = (unsigned char *)malloc(row_bytes * (size_t)drawable_h);
     if (buf == nullptr) return -1;
 
+    // This must read the WINDOW. Between presents the scene FBO is bound, and
+    // reading that instead returns the 640x480 scene target padded into a
+    // drawable-sized buffer — a dump that looks like the frame squashed into one
+    // corner. Bind the default framebuffer for the read and restore after.
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+
     gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
     // The swap already happened, so the finished frame is in the back buffer we
     // just drew rather than the front one on a double-buffered setup.
     gl.ReadBuffer(GL_BACK);
     gl.ReadPixels(0, 0, drawable_w, drawable_h, GL_RGB, GL_UNSIGNED_BYTE, buf);
+
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    }
 
     // GL's origin is bottom-left; PPM (and every caller here) wants top-down.
     unsigned char *row = (unsigned char *)malloc(row_bytes);
@@ -299,6 +423,8 @@ extern "C" void nocturne_gl_shutdown(void) {
 
 extern "C" int  nocturne_gl_init(SDL_Window *w) { (void)w; return 0; }
 extern "C" int  nocturne_gl_is_active(void) { return 0; }
+extern "C" int  nocturne_gl_scene_target_bind(int w, int h) { (void)w; (void)h; return 0; }
+extern "C" int  nocturne_gl_scene_target_active(void) { return 0; }
 extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
 extern "C" void nocturne_gl_swap_only(void) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }

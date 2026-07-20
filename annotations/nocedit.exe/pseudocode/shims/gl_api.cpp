@@ -76,6 +76,17 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(Ortho);
     NOCTURNE_GL_LOAD(LoadMatrixf);
 
+    NOCTURNE_GL_LOAD(GenFramebuffers);
+    NOCTURNE_GL_LOAD(DeleteFramebuffers);
+    NOCTURNE_GL_LOAD(BindFramebuffer);
+    NOCTURNE_GL_LOAD(FramebufferTexture2D);
+    NOCTURNE_GL_LOAD(CheckFramebufferStatus);
+    NOCTURNE_GL_LOAD(GenRenderbuffers);
+    NOCTURNE_GL_LOAD(DeleteRenderbuffers);
+    NOCTURNE_GL_LOAD(BindRenderbuffer);
+    NOCTURNE_GL_LOAD(RenderbufferStorage);
+    NOCTURNE_GL_LOAD(FramebufferRenderbuffer);
+
     NOCTURNE_GL_LOAD(GenTextures);
     NOCTURNE_GL_LOAD(DeleteTextures);
     NOCTURNE_GL_LOAD(BindTexture);

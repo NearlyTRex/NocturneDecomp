@@ -19,7 +19,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDe
             ((ushort *)g_ScreenBufferArray[screen_y] + screen_x,
              (uint *)this_ptr->framebuffer_aligned +
                      screen_y * this_ptr->framebuffer_width + screen_x,
-             (byte *)(g_CoronaBlurWorkBuffer[iVar1] + offset + iVar2),
-             (byte *)(g_CameraPlaneWorkBuffer.pixels[iVar1] + offset + iVar2));
+             (byte *)((char *)g_CoronaBlurWorkBuffer +
+                      iVar1 * (int)sizeof(g_CoronaBlurWorkBuffer[0]) + offset + iVar2),
+             (byte *)((char *)g_CameraPlaneWorkBuffer.pixels +
+                      iVar1 * (int)sizeof(g_CameraPlaneWorkBuffer.pixels[0]) + offset + iVar2));
   return;
 }

@@ -38,6 +38,18 @@ int nocturne_gl_init(struct SDL_Window *window);
 // the GL present path and the legacy SDL_Renderer one.
 int nocturne_gl_is_active(void);
 
+// Create (or resize) the persistent scene render target and bind it, so the
+// renderer DLL draws into storage that survives a present — matching DirectDraw
+// back-buffer semantics, which GL's default framebuffer does not provide
+// (colour and depth are undefined after SwapWindow). Returns 1 on success, 0 if
+// framebuffer objects are unavailable, in which case the caller keeps rendering
+// to the default framebuffer.
+int nocturne_gl_scene_target_bind(int width, int height);
+
+// 1 when a scene target is in use. Read-back paths need this to choose between
+// GL_COLOR_ATTACHMENT0 and GL_BACK.
+int nocturne_gl_scene_target_active(void);
+
 // Same as nocturne_gl_is_active, but brings the context up against the process
 // window if it is not running yet. For call sites that can be reached before
 // the engine sets a display mode — notably the renderer DLL's DirectDrawCreate,

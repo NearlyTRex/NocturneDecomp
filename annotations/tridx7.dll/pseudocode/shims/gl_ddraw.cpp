@@ -245,13 +245,22 @@ int bytes_per_pixel(const DDPIXELFORMAT *pf) {
 
 // GL upload format for a surface's bit depth. ARGB8888 is BGRA byte order on
 // little-endian; ARGB4444 has a matching packed GL type.
-void gl_format_for_bpp(DWORD bpp, GLenum *format, GLenum *type) {
-    if (bpp == 16) {
+// `caps` selects the 16bpp interpretation the same way fill_surface_format does
+// — texture surfaces are ARGB4444, display surfaces RGB565 — so the bytes a
+// surface advertises and the bytes GL reads back are always the same layout.
+void gl_format_for_bpp(DWORD bpp, DWORD caps, GLenum *format, GLenum *type) {
+    if (bpp != 16) {
+        *format = GL_BGRA;
+        *type   = GL_UNSIGNED_BYTE;
+        return;
+    }
+    const DWORD display_caps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_BACKBUFFER;
+    if ((caps & DDSCAPS_TEXTURE) != 0 && (caps & display_caps) == 0) {
         *format = GL_BGRA;
         *type   = GL_UNSIGNED_SHORT_4_4_4_4_REV;
     } else {
-        *format = GL_BGRA;
-        *type   = GL_UNSIGNED_BYTE;
+        *format = GL_RGB;
+        *type   = GL_UNSIGNED_SHORT_5_6_5;
     }
 }
 
@@ -275,6 +284,38 @@ void fill_argb4444(DDPIXELFORMAT *pf) {
     pf->dwGreenUMask.dwGBitMask       = 0x00F0;
     pf->dwBlueVMask.dwBBitMask        = 0x000F;
     pf->dwAlphaBitMask.dwRGBAlphaBitMask = 0xF000;
+}
+
+// A 16-bit DirectDraw *display* surface is RGB565, not ARGB4444. The two must
+// not be confused: ARGB4444 is a texture format (see EnumTextureFormats), while
+// the back buffer is what nocturne_gl_present_framebuffer uploads, and that
+// path is GL_UNSIGNED_SHORT_5_6_5. Reporting 4444 for a display surface made
+// the engine pack 4:4:4:4 pixels that were then uploaded as 5:6:5.
+void fill_rgb565(DDPIXELFORMAT *pf) {
+    memset(pf, 0, sizeof(*pf));
+    pf->dwSize  = sizeof(DDPIXELFORMAT);
+    pf->dwFlags = DDPF_RGB;
+    pf->dwBitCount.dwRGBBitCount      = 16;
+    pf->dwRedYMask.dwRBitMask         = 0xF800;
+    pf->dwGreenUMask.dwGBitMask       = 0x07E0;
+    pf->dwBlueVMask.dwBBitMask        = 0x001F;
+    pf->dwAlphaBitMask.dwRGBAlphaBitMask = 0x0000;
+}
+
+// The one place that decides what pixel format a surface advertises. Every
+// query (Lock, GetSurfaceDesc, GetPixelFormat) goes through here so a display
+// surface and a texture can never disagree about what 16bpp means.
+void fill_surface_format(DWORD bpp, DWORD caps, DDPIXELFORMAT *pf) {
+    if (bpp != 16) {
+        fill_argb8888(pf);
+        return;
+    }
+    const DWORD display_caps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_BACKBUFFER;
+    if ((caps & DDSCAPS_TEXTURE) != 0 && (caps & display_caps) == 0) {
+        fill_argb4444(pf);   // texture
+    } else {
+        fill_rgb565(pf);     // display / back buffer
+    }
 }
 
 void fill_zbuffer(DDPIXELFORMAT *pf, DWORD depth_bits) {
@@ -343,6 +384,15 @@ void surface_sync_texture(GLSurface *surf) {
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        // Only level 0 is ever uploaded, but the DLL's D3DTSS_MIPFILTER handling
+        // can select a mipmap MIN_FILTER. A mipmap filter on a texture with no
+        // mip chain makes it *incomplete*, and GL then silently disables
+        // texturing for that draw — the geometry comes out in flat vertex colour
+        // with no texture at all. Capping the level range at 0 makes a
+        // single-level texture complete under any filter, so the DLL keeps its
+        // filter choice and the texture still samples.
+        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_BASE_LEVEL, 0);
+        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
         surf->cpu_dirty = 1;
     } else {
         gl.BindTexture(GL_TEXTURE_2D, surf->gl_texture);
@@ -351,7 +401,7 @@ void surface_sync_texture(GLSurface *surf) {
     if (!surf->cpu_dirty) return;
 
     GLenum format = 0, type = 0;
-    gl_format_for_bpp(surf->bpp, &format, &type);
+    gl_format_for_bpp(surf->bpp, surf->caps, &format, &type);
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
     gl.PixelStorei(GL_UNPACK_ROW_LENGTH,
                    (surf->pitch > 0) ? (GLint)(surf->pitch / (surf->bpp / 8)) : (GLint)surf->width);
@@ -369,14 +419,27 @@ void surface_sync_texture(GLSurface *surf) {
 // the same memory. Reading back first reproduces that, at the cost of one
 // downtransfer per locked frame.
 void surface_readback_from_gl(GLSurface *surf) {
-    if (surf->pixels == nullptr || surf->bpp != 32) return;
+    if (surf->pixels == nullptr) return;
+    if (surf->bpp != 32 && surf->bpp != 16) {
+        // Never silently skip: without the readback the 3D scene never reaches
+        // the CPU buffer and the frame goes black with no other symptom.
+        DDRAW_LOG_RL(4, 500, "gl_ddraw: no readback path for %u-bit surface",
+                     (unsigned)surf->bpp);
+        return;
+    }
+
+    GLenum format = 0, type = 0;
+    gl_format_for_bpp(surf->bpp, surf->caps, &format, &type);
+    const GLint bytes_pp = (GLint)(surf->bpp / 8);
 
     gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
     gl.PixelStorei(GL_PACK_ROW_LENGTH,
-                   (surf->pitch > 0) ? (GLint)(surf->pitch / 4) : (GLint)surf->width);
-    gl.ReadBuffer(GL_BACK);
+                   (surf->pitch > 0) ? (GLint)(surf->pitch / bytes_pp) : (GLint)surf->width);
+    // With the persistent scene FBO bound, the frame lives in its colour
+    // attachment; GL_BACK is only meaningful for the default framebuffer.
+    gl.ReadBuffer(nocturne_gl_scene_target_active() ? GL_COLOR_ATTACHMENT0 : GL_BACK);
     gl.ReadPixels(0, 0, (GLsizei)surf->width, (GLsizei)surf->height,
-                  GL_BGRA, GL_UNSIGNED_BYTE, surf->pixels);
+                  format, type, surf->pixels);
     gl.PixelStorei(GL_PACK_ROW_LENGTH, 0);
 
     // GL reads bottom-up; the surface is top-down.
@@ -441,12 +504,18 @@ static HRESULT surface_Lock(IDirectDrawSurface *this_ptr, RECT *rect,
     }
 
     desc->dwSize   = sizeof(DDSURFACEDESC2);
-    desc->dwFlags  = DDSD_WIDTH | DDSD_HEIGHT | DDSD_PITCH | DDSD_LPSURFACE | DDSD_CAPS;
+    desc->dwFlags  = DDSD_WIDTH | DDSD_HEIGHT | DDSD_PITCH | DDSD_LPSURFACE |
+                     DDSD_CAPS | DDSD_PIXELFORMAT;
     desc->dwWidth  = surf->width;
     desc->dwHeight = surf->height;
     desc->dwPitchOrLinearSize.lPitch = (LONG)surf->pitch;
     desc->lpSurface = surf->pixels;
     desc->ddsCaps.dwCaps = surf->caps;
+    // Real DirectDraw fills the whole description on Lock, pixel format
+    // included, and APIDLLsetColorTable16 relies on it: it derives the channel
+    // shifts by scanning each mask for its lowest set bit
+    // (`for (mask = ...; (mask & 1) == 0; mask >>= 1) shift++;`).
+    fill_surface_format(surf->bpp, surf->caps, &desc->ddpfPixelFormat);
 
     surf->locked = 1;
     return DD_OK;
@@ -470,8 +539,7 @@ static HRESULT surface_GetSurfaceDesc(IDirectDrawSurface *this_ptr, DDSURFACEDES
     desc->dwHeight = surf->height;
     desc->dwPitchOrLinearSize.lPitch = (LONG)surf->pitch;
     desc->ddsCaps.dwCaps = surf->caps;
-    if (surf->bpp == 16) fill_argb4444(&desc->ddpfPixelFormat);
-    else                 fill_argb8888(&desc->ddpfPixelFormat);
+    fill_surface_format(surf->bpp, surf->caps, &desc->ddpfPixelFormat);
     return DD_OK;
 }
 
@@ -584,8 +652,7 @@ static HRESULT surface_GetCaps(IDirectDrawSurface *this_ptr, DDSCAPS *caps) {
 static HRESULT surface_GetPixelFormat(IDirectDrawSurface *this_ptr, DDPIXELFORMAT *pf) {
     GLSurface *surf = (GLSurface *)this_ptr;
     if (pf == nullptr) return DDERR_INVALIDPARAMS;
-    if (surf->bpp == 16) fill_argb4444(pf);
-    else                 fill_argb8888(pf);
+    fill_surface_format(surf->bpp, surf->caps, pf);
     return DD_OK;
 }
 
@@ -764,7 +831,16 @@ RenderStateCache g_state;
 
 static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
                                      D3DRENDERSTATETYPE state, DWORD value) {
-    (void)this_ptr;
+    GLDevice *dev = (GLDevice *)this_ptr;
+
+    // Same hazard as device_SetTextureStageState: the legacy TEXTUREADDRESS /
+    // TEXTUREMAG / TEXTUREMIN render states below map to glTexParameteri, which
+    // applies to the currently bound texture. With no texture of ours bound that
+    // would be the exe's present texture.
+    if (((DWORD)state == 3 || (DWORD)state == 17 || (DWORD)state == 18) &&
+        dev->bound_texture == nullptr) {
+        return DD_OK;
+    }
 
     switch ((DWORD)state) {
         case 7:   // D3DRENDERSTATE_ZENABLE
@@ -878,8 +954,21 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
 
 static HRESULT device_SetTextureStageState(IDirect3DDevice3 *this_ptr, DWORD stage,
                                            D3DTEXTURESTAGESTATETYPE state, DWORD value) {
-    (void)this_ptr;
+    GLDevice *dev = (GLDevice *)this_ptr;
     if (stage != 0) return DD_OK;   // the DLL only ever drives stage 0
+
+    // In D3D a stage state applies to the texture set on that stage. In GL,
+    // glTexParameteri applies to whatever is bound right now — which, before the
+    // first SetTexture of a frame, is still the exe's present texture. Writing a
+    // mipmap MIN_FILTER onto that made it incomplete and turned the whole screen
+    // white. Filter/wrap states are only meaningful with a texture bound, so
+    // drop them when there is none.
+    const bool needs_bound_texture =
+        ((DWORD)state == 16 || (DWORD)state == 17 || (DWORD)state == 18 ||
+         (DWORD)state == 19 || (DWORD)state == 20);
+    if (needs_bound_texture && dev->bound_texture == nullptr) {
+        return DD_OK;
+    }
 
     switch ((DWORD)state) {
         case 1:   // D3DTSS_COLOROP — 1 DISABLE, 4 MODULATE
@@ -1207,6 +1296,10 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw4 *this_ptr, DWORD width, DWORD h
     // The window and its GL context already exist (the exe brought them up);
     // this only re-targets the present scaling at the DLL's chosen resolution.
     nocturne_gl_set_logical_size((int)width, (int)height);
+    // Give the DLL a persistent render target at the new mode's size. Without
+    // it the back buffer and Z buffer are undefined after every present, which
+    // is not what a DirectDraw surface does.
+    nocturne_gl_scene_target_bind((int)width, (int)height);
     DDRAW_LOG("gl_ddraw: SetDisplayMode %ux%u bpp=%u", (unsigned)width, (unsigned)height,
               (unsigned)bpp);
     return DD_OK;
