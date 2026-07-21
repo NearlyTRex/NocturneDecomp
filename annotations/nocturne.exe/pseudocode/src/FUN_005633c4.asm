@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00563380 at 005633b7
 ;   FUN_0056deac at 0056defc
+;   crt_stdio.c_fclose_FUN_00563380 at 005633b7
 ;
 ; Called Functions:
 ;   FUN_005634b0

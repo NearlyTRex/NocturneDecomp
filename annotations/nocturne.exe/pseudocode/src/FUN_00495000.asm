@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
-;   FUN_00454530
-;   FUN_00563a30
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   crt_math.c_round_FUN_00563a30
 ;
 ; *****************************************************************************
 
@@ -21,12 +21,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00495008
     FLD float ptr [EAX + 0x178]         ; 0049500c
     ADD EAX,0x17c                       ; 00495012
-    CALL FUN_00563a30                   ; 00495017
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00495017
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     PUSH EAX                            ; 0049501c
     FISTP dword ptr [ESP + 0x4]         ; 0049501d
-    CALL FUN_00454530                   ; 00495021
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00495021
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     ADD ESP,0x4                         ; 00495026
     MOV ECX,dword ptr [ESP]             ; 00495029
     MOV EDX,EAX                         ; 0049502c

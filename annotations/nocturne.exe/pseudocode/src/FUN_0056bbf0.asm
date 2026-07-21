@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005657c0 at 005657c5
+;   crt_stdio.c_remove_FUN_005657c0 at 005657c5
 ;
 ; Referenced Globals:
 ;   void* PTR_DeleteFileA_005754a8 = 00175b4c

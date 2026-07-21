@@ -1,0 +1,601 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 341,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 26,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_constant",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 165
+  },
+  "cross_references": [
+    {
+      "addr": "00463580",
+      "from_addr": "004638ac",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_00463580",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00463440",
+    "address_range": [
+      [
+        "00463440",
+        "0046357a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440",
+    "signature": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(undefined4 *param_1,int param_2,int param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "0053075c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057df82",
+      "name": "s__0057df76+0xc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057df86",
+      "name": "DAT_0057df86",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057df8e",
+      "name": "DAT_0057df8e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057df96",
+      "name": "DAT_0057df96",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057df9e",
+      "name": "DAT_0057df9e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057dfa6",
+      "name": "DAT_0057dfa6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ae704",
+      "name": "DAT_005ae704",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b0678",
+      "name": "DAT_005b0678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5034",
+      "name": "DAT_005c5034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5038",
+      "name": "DAT_005c5038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c503c",
+      "name": "DAT_005c503c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5040",
+      "name": "DAT_005c5040",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004638ac",
+        "call_type": "direct",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_00463580",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.31,
+    "instruction_count": 100,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLOTHER": 4,
+      "CBRANCH": 1,
+      "COPY": 299,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 14,
+      "INT2FLOAT": 2,
+      "INT_ADD": 34,
+      "INT_AND": 29,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 20,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 25,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 531
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00463449",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piVar1 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_18 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_1c = (float)param_2 * ram0x0057df82 * (float)_DAT_0057df86 * (float)_DAT_0057df8e;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fVar12 = (float)param_3 * _DAT_0057df96 * (float)_DAT_0057df86 * (float)_DAT_0057df9e;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_18 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = (float10)fsin((float10)local_1c + (float10)(float)param_1[7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = (float10)fcos((float10)local_1c + (float10)(float)param_1[7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(*piVar1 + param_4 * 0x30,uVar9,uVar10,(int)ROUND(fVar4),piVar11,(int)ROUND(fVar8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar9 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(&DAT_005c5034)[param_4 * 0xc] = uVar9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005c5034",
+      "severity": "mild",
+      "text": "(&DAT_005c5034)[param_4 * 0xc] = uVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(&DAT_005c5038)[param_4 * 0xc] = uVar9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_005c5038",
+      "severity": "mild",
+      "text": "(&DAT_005c5038)[param_4 * 0xc] = uVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(&DAT_005c503c)[param_4 * 0xc] = uVar9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005c503c",
+      "severity": "mild",
+      "text": "(&DAT_005c503c)[param_4 * 0xc] = uVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(&DAT_005c5040)[param_4 * 0xc] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005c5040",
+      "severity": "mild",
+      "text": "(&DAT_005c5040)[param_4 * 0xc] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x463513 assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 48,
+      "match": "0x463513",
+      "severity": "moderate",
+      "text": "uVar10 = 0x463513;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x46351a assigned to bare local `uVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 50,
+      "match": "0x46351a",
+      "severity": "moderate",
+      "text": "uVar9 = 0x46351a;",
+      "type": "raw_address_constant"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

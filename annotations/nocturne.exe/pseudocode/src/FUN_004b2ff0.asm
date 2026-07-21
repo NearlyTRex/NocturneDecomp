@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059e840
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004b3016 (CONDITIONAL_JUMP)  ; LAB_004b3016
     PUSH 0x1                            ; 004b2ffc
     PUSH EBX                            ; 004b2ffe
-    CALL FUN_00553ea0                   ; 004b2fff
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 004b2fff
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 004b3004
     MOV DL,byte ptr [ESP + 0xc]         ; 004b3007
     MOV EBX,EAX                         ; 004b300b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59e840                       ; 004b3016 | DAT_0059e840
         ;   Label: LAB_004b3016
     PUSH EBX                            ; 004b301b
-    CALL FUN_0056445f                   ; 004b301c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004b301c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004b3021
     PUSH EAX                            ; 004b3024
-    CALL FUN_00564486                   ; 004b3025
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004b3025
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004b302a
     MOV EAX,EBX                         ; 004b302d
     POP EBX                             ; 004b302f

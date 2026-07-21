@@ -76,14 +76,14 @@ uint * FUN_00447f20(int param_1,uint *param_2)
     iStack_1c = 0;
     iStack_24 = iStack_2c;
     for (iStack_14 = 1; iStack_14 < *(int *)(param_1 + 0x13c) + -1; iStack_14 = iStack_14 + 1) {
-      FUN_004410c0(param_1,iStack_14,iStack_18);
+      core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_14,iStack_18);
       aiStack_80[0] = uStack_d4;
       aiStack_94[(uint)bVar3 * -2 + 6] = *(int *)(&stack0xffffff30 + (uint)bVar3 * -8);
       aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
            *(int *)(&stack0xffffff34 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       if (iStack_78 < 0x1f401) {
 LAB_004480de:
-        FUN_004411b0(param_1,aiStack_94 + 5);
+        core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(param_1,aiStack_94 + 5);
         iStack_68 = iStack_e0;
         aiStack_94[(uint)bVar3 * -2 + 0xc] = *(int *)(&stack0xffffff24 + (uint)bVar3 * -8);
         aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =
@@ -94,8 +94,9 @@ LAB_004480de:
         fStack_5c = fStack_a4 - *pfStack_20;
         fStack_58 = fStack_a0 - pfStack_20[1];
         fStack_54 = fStack_9c - pfStack_20[2];
-        FUN_0044daa0(aiStack_40[3],auStack_50,&fStack_5c);
-        FUN_0041cc00(param_2,auStack_50);
+        core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                  (aiStack_40[3],auStack_50,&fStack_5c);
+        core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,auStack_50);
       }
       else {
         uVar2 = 0;
@@ -104,7 +105,8 @@ LAB_0044808b:
           uVar2 = 1;
         }
         else {
-          FUN_004410c0(param_1,iStack_1c,iStack_30);
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_1c,iStack_30)
+          ;
           uStack_c8 = uStack_bc;
           *(uint *)(&stack0xffffff3c + (uint)bVar3 * -8) =
                *(uint *)(&stack0xffffff48 + (uint)bVar3 * -8);
@@ -117,7 +119,8 @@ LAB_0044809a:
           uVar2 = uVar2 + 1;
         }
         else {
-          FUN_004410c0(param_1,iStack_1c,iStack_2c);
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_1c,iStack_2c)
+          ;
           uStack_b0 = uStack_ec;
           *(uint *)(&stack0xffffff54 + (uint)bVar3 * -8) =
                *(uint *)(&stack0xffffff18 + (uint)bVar3 * -8);
@@ -126,7 +129,8 @@ LAB_0044809a:
           if (0x1f400 < iStack_a8) goto LAB_0044809a;
         }
         if ((iStack_14 < *(int *)(param_1 + 0x13c) + -2) && (1 < iStack_18)) {
-          FUN_004410c0(param_1,iStack_14 + 1,iStack_28);
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
+                    (param_1,iStack_14 + 1,iStack_28);
           uStack_98 = aiStack_94[2];
           aiStack_94[(uint)bVar3 * -2] = aiStack_94[(uint)bVar3 * -2 + 3];
           aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
@@ -139,7 +143,8 @@ LAB_004480b3:
         }
         if ((iStack_14 < *(int *)(param_1 + 0x13c) + -2) &&
            (iStack_18 < *(int *)(param_1 + 0x140) + -2)) {
-          FUN_004410c0(param_1,iStack_14 + 1,iStack_24);
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
+                    (param_1,iStack_14 + 1,iStack_24);
           uStack_74 = uStack_44;
           aiStack_94[(uint)bVar3 * -2 + 9] = aiStack_40[(uint)bVar3 * -2];
           aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10] =

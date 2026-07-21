@@ -29,7 +29,7 @@ char * FUN_00522480(char *param_1)
   pcVar5 = (char *)0x2dc1edc;
   iVar6 = 0;
   do {
-    iVar2 = FUN_00564520(pcVar5,param_1);
+    iVar2 = _stricmp(pcVar5,param_1);
     if (iVar2 == 0) {
       return pcVar5;
     }
@@ -56,14 +56,14 @@ LAB_005224ea:
   if (bVar8) {
     return pcVar5;
   }
-  FUN_00523a60(pcVar5);
+  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pcVar5);
   if ((DAT_02db1110 & 1) == 0) {
     DAT_02db1110 = DAT_02db1110 | 1;
-    FUN_004e7d90(0x2da8ae0);
+    sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(0x2da8ae0);
     FUN_00564bb0(&DAT_005bea30);
   }
   local_14 = 0;
-  iVar6 = FUN_004568c0("?sound" + 1,param_1);
+  iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("?sound" + 1,param_1);
   pcVar10 = param_1;
   pcVar7 = pcVar5;
   if (iVar6 < 1) goto LAB_005226f8;
@@ -76,7 +76,7 @@ LAB_005224ea:
     pcVar10 = pcVar10 + 2;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  FUN_00566498(param_1,0,0,0,&local_114);
+  splitpath(param_1,0,0,0,&local_114);
   if (local_114 == '.') {
     uVar4 = 0xffffffff;
     pcVar10 = &local_114;
@@ -86,21 +86,21 @@ LAB_005224ea:
       cVar1 = *pcVar10;
       pcVar10 = pcVar10 + (uint)bVar9 * -2 + 1;
     } while (cVar1 != '\0');
-    FUN_00566170(&local_114,local_113,~uVar4 - 1);
+    memmove(&local_114,local_113,~uVar4 - 1);
   }
-  iVar6 = FUN_00564520(&local_114,&DAT_0059265c);
+  iVar6 = _stricmp(&local_114,&DAT_0059265c);
   if (iVar6 == 0) {
-    local_14 = FUN_00456a60("sound",param_1,&DAT_00592660);
+    local_14 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,&DAT_00592660);
     if (local_14 == 0) {
       _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
       _DAT_01cc4804 = 0x300;
       FUN_004c8440("Can't open %s",param_1);
     }
-    uVar3 = FUN_00566e70(local_14);
+    uVar3 = _ftell(local_14);
     *(uint *)(pcVar5 + 0x148) = uVar3;
-    iVar6 = FUN_00521830(local_14,pcVar5 + 0x148,pcVar5);
+    iVar6 = sound_sndmain_cpp_parseWavFile_FUN_00521830(local_14,pcVar5 + 0x148,pcVar5);
     if (iVar6 == 0) goto LAB_005226f8;
-    FUN_00521e10(pcVar5);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pcVar5);
     pcVar5[0x128] = '\0';
     pcVar5[0x129] = '\0';
     pcVar5[0x12a] = '\0';
@@ -121,33 +121,35 @@ LAB_005224ea:
     *(uint *)(pcVar5 + 0x138) = uVar3;
     *(uint *)(pcVar5 + 0x13c) = uVar3;
     *(uint *)(pcVar5 + 0x140) = uVar3;
-    iVar6 = FUN_00523910(pcVar5);
+    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pcVar5);
     if (iVar6 == 0) goto LAB_005226f8;
-    FUN_0056582c(local_14,*(uint *)(pcVar5 + 0x148),0);
-    iVar6 = FUN_00523ba0(pcVar5,0,*(uint *)(pcVar5 + 0x110));
+    _fseek(local_14,*(uint *)(pcVar5 + 0x148),0);
+    iVar6 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(pcVar5,0,*(uint *)(pcVar5 + 0x110))
+    ;
     if (iVar6 == 0) {
       pcVar10 = "Failed to lock sample %s\n";
     }
     else {
-      uVar3 = FUN_00525c40(pcVar5,*(uint *)(pcVar5 + 0x110),local_14);
-      iVar6 = FUN_005636d0(iVar6,uVar3);
+      uVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
+                        (pcVar5,*(uint *)(pcVar5 + 0x110),local_14);
+      iVar6 = _fread(iVar6,uVar3);
       if ((iVar6 == *(int *)(pcVar5 + 0x110)) && ((*(byte *)(local_14 + 0xc) & 0x20) == 0)) {
-        FUN_00523cb0(pcVar5);
-        FUN_00563380(local_14);
+        sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(pcVar5);
+        _fclose(local_14);
         return pcVar5;
       }
       pcVar10 = "Error reading file data for %s\n";
     }
   }
   else {
-    iVar6 = FUN_00564520(&local_114,&DAT_005926c6);
+    iVar6 = _stricmp(&local_114,&DAT_005926c6);
     if (iVar6 != 0) {
       _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
       _DAT_01cc4804 = 0x37d;
       FUN_004c8440("Unknown sample file format extension: %s",param_1);
       return pcVar5;
     }
-    FUN_004e7df0(0x2da8ae0,param_1);
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(0x2da8ae0,param_1);
     pcVar5[0x104] = '\x10';
     pcVar5[0x105] = '\0';
     pcVar5[0x106] = '\0';
@@ -159,7 +161,7 @@ LAB_005224ea:
     pcVar5[0x112] = -1;
     pcVar5[0x113] = -1;
     *(uint *)(pcVar5 + 0x10c) = uVar3;
-    FUN_00521e10(pcVar5);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pcVar5);
     if (*(int *)(pcVar5 + 0x110) < 0) {
       _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
       _DAT_01cc4804 = 0x34f;
@@ -185,16 +187,18 @@ LAB_005224ea:
     *(uint *)(pcVar5 + 0x138) = uVar3;
     *(uint *)(pcVar5 + 0x13c) = uVar3;
     *(uint *)(pcVar5 + 0x140) = uVar3;
-    iVar6 = FUN_00523910(pcVar5);
+    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pcVar5);
     if (iVar6 == 0) goto LAB_005226f8;
-    iVar6 = FUN_00523ba0(pcVar5,0,*(uint *)(pcVar5 + 0x110));
+    iVar6 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(pcVar5,0,*(uint *)(pcVar5 + 0x110))
+    ;
     if (iVar6 == 0) {
       pcVar10 = "Failed to lock sample %s\n";
     }
     else {
-      iVar6 = FUN_004e82d0(0x2da8ae0,iVar6,*(uint *)(pcVar5 + 0x110));
+      iVar6 = sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0
+                        (0x2da8ae0,iVar6,*(uint *)(pcVar5 + 0x110));
       if (iVar6 == *(int *)(pcVar5 + 0x110)) {
-        FUN_00523cb0(pcVar5);
+        sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(pcVar5);
         return pcVar5;
       }
       pcVar10 = "Error decoding file data from %s\n";
@@ -202,10 +206,10 @@ LAB_005224ea:
   }
   FUN_00529980(pcVar10,param_1);
 LAB_005226f8:
-  FUN_004e8260(0x2da8ae0);
-  FUN_00523a60(pcVar5);
+  sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(0x2da8ae0);
+  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pcVar5);
   if (local_14 != 0) {
-    FUN_00563380(local_14);
+    _fclose(local_14);
   }
   return (char *)0x0;
 }

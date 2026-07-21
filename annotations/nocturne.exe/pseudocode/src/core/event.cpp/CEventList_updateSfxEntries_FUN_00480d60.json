@@ -1,0 +1,396 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 118,
+    "complexity_score": 154,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "unnamed_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "0047ac50",
+      "from_addr": "0047c17a",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480bf0",
+      "from_addr": "00480bf6",
+      "name": "core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd80",
+      "from_addr": "0047dff1",
+      "name": "core_event.cpp_CEventList_render_FUN_0047dd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480eb0",
+      "from_addr": "00480f2c",
+      "name": "core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480c30",
+      "from_addr": "00480c3d",
+      "name": "core_event.cpp_CEventList_setSfxHandle_FUN_00480c30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00480d60",
+    "address_range": [
+      [
+        "00480d60",
+        "00480ea5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60",
+    "signature": "void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566170",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_00566170"
+    },
+    {
+      "addr": "00525b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_00525b70"
+    },
+    {
+      "addr": "00526d10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10"
+    },
+    {
+      "addr": "00526cd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6421052631578945,
+    "instruction_count": 95,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 91,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 43,
+      "INT_AND": 55,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 3,
+      "INT_SLESS": 23,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 24,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 28,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 441
+  },
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 332,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_147",
+        "offset": -327,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00480d6c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "00480e4a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x3ac8)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)(param_1 + 0x3acc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = param_1 + 0x3bec;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = *(int *)(param_1 + 0x3ac8) + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x3ac8) = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (local_14 < *(int *)(param_1 + 0x3ac8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 30,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar3 - local_14) * 0x120) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 47,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove(puVar2,local_18,(iVar3 - local_14) * 0x120);",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

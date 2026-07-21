@@ -9,6 +9,6 @@
 void FUN_00402d30(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
-  FUN_00402cf0(param_4,param_1,param_2,param_3);
+  engine_2d_c_drawTextCenteredColor_FUN_00402cf0(param_4,param_1,param_2,param_3);
   return;
 }

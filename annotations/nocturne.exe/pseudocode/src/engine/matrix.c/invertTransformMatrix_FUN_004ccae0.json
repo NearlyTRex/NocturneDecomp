@@ -1,0 +1,612 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 210,
+    "complexity_score": 98,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 29,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 58,
+    "suspect_count": 3,
+    "suspect_types": [
+      "suspect_float",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 268
+  },
+  "cross_references": [
+    {
+      "addr": "004607b0",
+      "from_addr": "004609c2",
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccdc0",
+      "from_addr": "004cd0a4",
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_004ccdc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ccae0",
+    "address_range": [
+      [
+        "004ccae0",
+        "004ccdb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_matrix.c_invertTransformMatrix_FUN_004ccae0",
+    "signature": "void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004ccae0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005881db",
+      "name": "DAT_005881db",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005881e3",
+      "name": "DAT_005881e3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039e8",
+      "name": "DAT_01c039e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039ec",
+      "name": "DAT_01c039ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f0",
+      "name": "DAT_01c039f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f4",
+      "name": "DAT_01c039f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f8",
+      "name": "DAT_01c039f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039fc",
+      "name": "DAT_01c039fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a00",
+      "name": "DAT_01c03a00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a04",
+      "name": "DAT_01c03a04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a08",
+      "name": "DAT_01c03a08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5118",
+      "name": "DAT_01cc5118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc511c",
+      "name": "DAT_01cc511c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5120",
+      "name": "DAT_01cc5120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5124",
+      "name": "DAT_01cc5124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5128",
+      "name": "DAT_01cc5128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc512c",
+      "name": "DAT_01cc512c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5130",
+      "name": "DAT_01cc5130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5134",
+      "name": "DAT_01cc5134",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5138",
+      "name": "DAT_01cc5138",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5140",
+      "name": "DAT_01cc5140",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5144",
+      "name": "DAT_01cc5144",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5148",
+      "name": "DAT_01cc5148",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc514c",
+      "name": "DAT_01cc514c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5150",
+      "name": "DAT_01cc5150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5154",
+      "name": "DAT_01cc5154",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5158",
+      "name": "DAT_01cc5158",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc515c",
+      "name": "DAT_01cc515c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5160",
+      "name": "DAT_01cc5160",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004609c2",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004cd0a4",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_buildRotationMatrix_FUN_004ccdc0",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.355,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "CALL": 9,
+      "COPY": 916,
+      "FLOAT2FLOAT": 85,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 39,
+      "FLOAT_NEG": 4,
+      "FLOAT_SUB": 10,
+      "INT2FLOAT": 9,
+      "INT_ADD": 65,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 11,
+      "LOAD": 57,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "ROUND": 9,
+      "STORE": 30,
+      "TRUNC": 9
+    },
+    "pcode_op_count": 1271
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ccae6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "invertTransformMatrix_FUN_004ccae0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 57,
+          "message": "Uninitialized variable: uStack_54",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 50,
+      "match": "7.053105e-39",
+      "severity": "mild",
+      "text": "fVar14 = (float10)round((float10)uStack_54 * (float10)7.053105e-39);",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 53,
+      "match": "7.053133e-39",
+      "severity": "mild",
+      "text": "fVar6 * fVar5 * fVar8 * fVar7) * (float10)7.053133e-39);",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Uninitialized variable: uStack_54",
+      "line": 57,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar14 = (float10)round((float10)uStack_54 * (float10)7.053105e-39);",
+      "type": "static_uninitvar"
+    }
+  ]
+}

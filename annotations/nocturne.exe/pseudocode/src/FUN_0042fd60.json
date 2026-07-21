@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,27 +122,26 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 691,
+    "complexity_score": 563,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
-    "suspect_count": 58,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 73,
+    "suspect_count": 47,
     "suspect_types": [
-      "extra_output",
       "param_count_too_few",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 397
+    "total_lines": 384
   },
   "cross_references": [
     {
       "addr": "0042f600",
       "from_addr": "0042f7d4",
-      "name": "FUN_0042f600",
+      "name": "cockpit_ckptutil.c_drawLineAA_FUN_0042f600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -163,7 +162,7 @@
     {
       "addr": "00563a30",
       "is_variadic": false,
-      "name": "FUN_00563a30"
+      "name": "crt_math.c_round_FUN_00563a30"
     }
   ],
   "globals": [
@@ -240,7 +239,7 @@
       {
         "call_addr": "0042f7d4",
         "call_type": "direct",
-        "caller": "FUN_0042f600",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_0042f600",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,7 +254,7 @@
       {
         "call_addr": "0042f7e9",
         "call_type": "direct",
-        "caller": "FUN_0042f600",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_0042f600",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +268,7 @@
       {
         "call_addr": "0042f86c",
         "call_type": "direct",
-        "caller": "FUN_0042f600",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_0042f600",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +283,7 @@
       {
         "call_addr": "0042f884",
         "call_type": "direct",
-        "caller": "FUN_0042f600",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_0042f600",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -373,20 +372,27 @@
   "static_analysis": {
     "analyzed_file": "FUN_0042fd60.c",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 35,
-          "line": 48,
+          "column": 33,
+          "line": 41,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 52,
-          "message": "Uninitialized variable: extraout_ECX",
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 33,
+          "line": 46,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 36,
+          "line": 50,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
       ],
@@ -436,16 +442,16 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01c0062c",
+      "severity": "mild",
+      "text": "bVar2 = DAT_01c0062c;",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
@@ -453,7 +459,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
@@ -461,7 +467,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
@@ -469,7 +475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 <= _DAT_01c00c64)) {",
@@ -477,15 +483,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar9 = param_2 * 4;",
+      "text": "iVar1 = param_2 * 4;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 25,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 8) {",
@@ -493,63 +499,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 26,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_01bd2fa0 + iVar9);",
+      "text": "iVar4 = *(int *)(&DAT_01bd2fa0 + iVar1);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 27,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar13 = (float10)param_3;",
+      "text": "fVar8 = (float10)param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "bVar1 = *(byte *)((uint)*(byte *)(iVar9 + param_1) * 3 + 0x1c0064a);",
+      "text": "bVar2 = *(byte *)((uint)*(byte *)(iVar4 + param_1) * 3 + 0x1c0064a);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 29,
       "match": "param_4",
       "severity": "mild",
-      "text": "bVar2 = *(byte *)(param_4 * 3 + 0x1c0064a);",
+      "text": "bVar3 = *(byte *)(param_4 * 3 + 0x1c00649);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(iVar9 + param_1) =",
+      "text": "*(byte *)(iVar4 + param_1) =",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_01bf7720",
       "severity": "mild",
       "text": "(&DAT_01bf7720)",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX * 0x400 + iVar7 * 0x20];",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 47,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x10) {",
@@ -557,215 +555,119 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = *(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar9) + param_1 * 2);",
+      "text": "uVar5 = (uint)(*(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 2) >>",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "uVar3 = *(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar9) + param_1 * 2);",
+      "text": "uVar5 = (uint)(*(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 2) >>",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 49,
       "match": "DAT_01c00624",
       "severity": "mild",
-      "text": "uVar5 = (uint)(uVar3 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
+      "text": "(DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 49,
       "match": "DAT_01c0062c",
       "severity": "mild",
-      "text": "uVar5 = (uint)(uVar3 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
+      "text": "(DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar5 = (*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar1)) >> (DAT_01c00624 & 0x1f)) <<",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "uVar5 = (*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar1)) >> (DAT_01c00624 & 0x1f)) <<",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 52,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "uVar6 = (uint)(uVar3 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01c00638",
-      "severity": "mild",
-      "text": "uVar6 = (uint)(uVar3 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar9));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar9));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
       "match": "DAT_01c00624",
       "severity": "mild",
-      "text": "uVar5 = (*puVar11 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
+      "text": "uVar5 = (*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar1)) >> (DAT_01c00624 & 0x1f)) <<",
       "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_01c0062c",
+      "severity": "mild",
+      "text": "(DAT_01c0062c & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "((float10)((float)(byte)(&DAT_01c00648)[param_4 * 3] *",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 56,
-      "match": "DAT_01c0062c",
-      "severity": "mild",
-      "text": "uVar5 = (*puVar11 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "uVar6 = (*puVar11 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01c00638",
-      "severity": "mild",
-      "text": "uVar6 = (*puVar11 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar4 = (float)((uVar8 >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff) * param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "fVar4 = (float)((uVar8 >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff) * param_3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01c00644",
-      "severity": "mild",
-      "text": "fVar4 = (float)((uVar8 >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff) * param_3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar14 = (float10)1 - (float10)param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar15 = (float10)*(byte *)(param_4 + 0x1c0064a) * fVar14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar12 = (float10)*(byte *)(param_4 + 0x1c00649) * fVar14 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(float10)((float)(uVar6 & 0xff) * param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar17 = (float)((float10)(byte)(&DAT_01c00648)[param_4] * fVar14 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
       "match": "DAT_01c00648",
       "severity": "mild",
-      "text": "fVar17 = (float)((float10)(byte)(&DAT_01c00648)[param_4] * fVar14 +",
+      "text": "((float10)((float)(byte)(&DAT_01c00648)[param_4 * 3] *",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 57,
       "match": "param_3",
       "severity": "mild",
-      "text": "(float10)((float)(uVar5 & 0xff) * param_3));",
+      "text": "(1.0 - param_3) + (float)(uVar5 & 0xff) * param_3));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(1.0 - param_3) + (float)(uVar5 & 0xff) * param_3));",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 64,
       "match": "DAT_01c00638",
       "severity": "mild",
-      "text": "uStack_44 = uStack_44 >> (DAT_01c00638 & 0x1f);",
+      "text": "uStack_4c = uStack_4c >> (DAT_01c00638 & 0x1f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 65,
       "match": "DAT_01c00644",
       "severity": "mild",
-      "text": "uStack_34 = uStack_34 >> (DAT_01c00644 & 0x1f);",
+      "text": "uStack_40 = uStack_40 >> (DAT_01c00644 & 0x1f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 66,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 != 0x10) {",
@@ -773,82 +675,98 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + iVar9 * 4) =",
+      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 67,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + iVar9 * 4) =",
+      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 68,
       "match": "DAT_01c00624",
       "severity": "mild",
-      "text": "(int)uVar16 << (DAT_01c00624 & 0x1f) | uStack_44 << (DAT_01c00630 & 0x1f) |",
+      "text": "uStack_44 << (DAT_01c00624 & 0x1f) | uStack_4c << (DAT_01c00630 & 0x1f) |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 68,
       "match": "DAT_01c00630",
       "severity": "mild",
-      "text": "(int)uVar16 << (DAT_01c00624 & 0x1f) | uStack_44 << (DAT_01c00630 & 0x1f) |",
+      "text": "uStack_44 << (DAT_01c00624 & 0x1f) | uStack_4c << (DAT_01c00630 & 0x1f) |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 69,
       "match": "DAT_01c0063c",
       "severity": "mild",
-      "text": "uStack_34 << (DAT_01c0063c & 0x1f);",
+      "text": "uStack_40 << (DAT_01c0063c & 0x1f);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 72,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + iVar9 * 2) =",
+      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 72,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + iVar9 * 2) =",
+      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 73,
       "match": "DAT_01c00630",
       "severity": "mild",
-      "text": "(ushort)(uStack_44 << (DAT_01c00630 & 0x1f)) |",
+      "text": "(ushort)(uStack_4c << (DAT_01c00630 & 0x1f)) | (ushort)(uStack_44 << (DAT_01c00624 & 0x1f))",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 73,
       "match": "DAT_01c00624",
       "severity": "mild",
-      "text": "(ushort)((int)uVar16 << (DAT_01c00624 & 0x1f)) |",
+      "text": "(ushort)(uStack_4c << (DAT_01c00630 & 0x1f)) | (ushort)(uStack_44 << (DAT_01c00624 & 0x1f))",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 74,
       "match": "DAT_01c0063c",
       "severity": "mild",
-      "text": "(ushort)(uStack_34 << (DAT_01c0063c & 0x1f));",
+      "text": "| (ushort)(uStack_40 << (DAT_01c0063c & 0x1f));",
       "type": "undefined_data"
     },
     {
@@ -864,19 +782,27 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 48,
+      "line": 41,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "iVar10 = (int)ROUND(fVar13) >> 0x1f;",
+      "text": "iVar6 = (int)ROUND(fVar9) >> 0x1f;",
       "type": "static_shift_too_many_bits"
     },
     {
-      "description": "Uninitialized variable: extraout_ECX",
-      "line": 52,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "extraout_ECX * 0x400 + iVar7 * 0x20];",
-      "type": "static_uninitvar"
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 46,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar7 = (int)ROUND(fVar8) >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 50,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400",
+      "type": "static_shift_too_many_bits"
     }
   ]
 }

@@ -11,9 +11,9 @@
 ;   undefined4 s_CHealthItem_005858d1+2
 ;
 ; Called Functions:
-;   FUN_0040d7e0
-;   FUN_004b5950
-;   FUN_004c1580
+;   core_actor.cpp_isOfClass_FUN_0040d7e0
+;   core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950
+;   core_inv.cpp_CInventory_select_FUN_004c1580
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH 0x5858d3                       ; 004b5b1c | s_CHealthItem_005858d1+2
         ;   Label: LAB_004b5b1c
     PUSH EAX                            ; 004b5b21
-    CALL FUN_0040d7e0                   ; 004b5b22
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d7e0()
+    CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b5b22
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
     ADD ESP,0x8                         ; 004b5b27
     TEST EAX,EAX                        ; 004b5b2a
     JNZ 0x004b5b48                      ; 004b5b2c
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_004b5b48
     PUSH EAX                            ; 004b5b4e
     PUSH EBX                            ; 004b5b4f
-    CALL FUN_004c1580                   ; 004b5b50
-        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; undefined FUN_004c1580()
+    CALL core_inv.cpp_CInventory_select_FUN_004c1580 ; 004b5b50
+        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_select_FUN_004c1580()
     ADD ESP,0x8                         ; 004b5b55
     POP EBP                             ; 004b5b58
     POP ESI                             ; 004b5b59
@@ -68,8 +68,8 @@ section .text
     RET                                 ; 004b5b5b
     PUSH ESI                            ; 004b5b5c
         ;   Label: LAB_004b5b5c
-    CALL FUN_004b5950                   ; 004b5b5d
-        ;   XREF to: 004b5950 (UNCONDITIONAL_CALL)  ; undefined FUN_004b5950()
+    CALL core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950 ; 004b5b5d
+        ;   XREF to: 004b5950 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950()
     ADD ESP,0x4                         ; 004b5b62
     TEST EAX,EAX                        ; 004b5b65
     JZ 0x004b5b48                       ; 004b5b67

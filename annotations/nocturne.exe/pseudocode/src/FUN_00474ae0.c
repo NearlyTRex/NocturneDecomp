@@ -19,20 +19,20 @@ void FUN_00474ae0(uint param_1,uint param_2,uint param_3)
   byte auStack_108 [256];
   byte auStack_8 [4];
   
-  FUN_00566498(param_2,auStack_8,auStack_108,auStack_308,auStack_408);
-  FUN_0056626c(auStack_208,0,auStack_108,auStack_308,auStack_408);
-  FUN_00566498(param_3,0,0,auStack_308,auStack_408);
-  FUN_0056626c(auStack_50c,auStack_8,auStack_208,auStack_308,auStack_408);
-  FUN_00456c00(acStack_828);
-  FUN_00456c40(acStack_828,auStack_50c);
+  splitpath(param_2,auStack_8,auStack_108,auStack_308,auStack_408);
+  makepath(auStack_208,0,auStack_108,auStack_308,auStack_408);
+  splitpath(param_3,0,0,auStack_308,auStack_408);
+  makepath(auStack_50c,auStack_8,auStack_208,auStack_308,auStack_408);
+  engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(acStack_828);
+  engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(acStack_828,auStack_50c);
   while (acStack_828[0] != '\0') {
-    FUN_00566498(acStack_828,0,0,auStack_308,auStack_408);
-    FUN_0056626c(auStack_714,auStack_8,auStack_208,auStack_308,auStack_408);
-    FUN_00565d00(auStack_610,auStack_714,0x104);
-    FUN_00473cb0(param_1,auStack_610);
-    FUN_00456cc0(acStack_828);
+    splitpath(acStack_828,0,0,auStack_308,auStack_408);
+    makepath(auStack_714,auStack_8,auStack_208,auStack_308,auStack_408);
+    _fullpath(auStack_610,auStack_714,0x104);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,auStack_610);
+    engine_dosio_cpp_CFileFinder_findNext_FUN_00456cc0(acStack_828);
   }
-  FUN_00456d40(acStack_828);
-  FUN_00456c20(acStack_828,0);
+  engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(acStack_828);
+  engine_dosio_cpp_CFileFinder_dtor_FUN_00456c20(acStack_828,0);
   return;
 }

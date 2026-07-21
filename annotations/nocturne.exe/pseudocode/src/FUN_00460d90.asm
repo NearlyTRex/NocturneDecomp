@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00482680 at 004826e1
-;   FUN_004837a0 at 0048383b
-;   FUN_004842a0 at 00484301
 ;   FUN_00489990 at 00489a1c
-;   FUN_00489d00 at 00489d8f
 ;   FUN_0048d5d0 at 0048d6bf
-;   FUN_004ae0a0 at 004ae101
+;   core_fire.cpp_CFireball_setupRenderState_FUN_004842a0 at 00484301
+;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d8f
+;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680 at 004826e1
+;   core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 at 0048383b
+;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0 at 004ae101
 ;
 ; Called Functions:
-;   FUN_004ce790
+;   engine_matrix.c_getCameraRotation_FUN_004ce790
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EBX,ESI                         ; 00460d95
     MOV ESI,ESP                         ; 00460d97
     MOV EDI,EBX                         ; 00460d99
-    CALL FUN_004ce790                   ; 00460d9b
-        ;   XREF to: 004ce790 (UNCONDITIONAL_CALL)  ; undefined FUN_004ce790()
+    CALL engine_matrix.c_getCameraRotation_FUN_004ce790 ; 00460d9b
+        ;   XREF to: 004ce790 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraRotation_FUN_004ce790()
     MOV ESI,ESP                         ; 00460da0
     MOVSD ES:EDI,ESI                    ; 00460da2
     MOVSD ES:EDI,ESI                    ; 00460da3

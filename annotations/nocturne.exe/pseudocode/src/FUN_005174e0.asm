@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_005173a0 at 005173b0
-;   FUN_005173c0 at 005173cc
-;   FUN_005175f0 at 005175fc
-;   FUN_0051f730 at 0051f743
+;   core_skeledit.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0 at 005173b0
+;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0 at 005173cc
+;   core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 at 005175fc
+;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 at 0051f743
 ;
 ; Called Functions:
-;   FUN_00564486
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV dword ptr [EBX + 0x28558],0x0   ; 005174eb
     PUSH EDX                            ; 005174f5
     MOV dword ptr [EBX + 0x2936c],0x0   ; 005174f6
-    CALL FUN_00564486                   ; 00517500
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517500
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     MOV EAX,dword ptr [EBX + 0x29374]   ; 00517505
     ADD ESP,0x4                         ; 0051750b
     TEST EAX,EAX                        ; 0051750e
@@ -45,16 +45,16 @@ section .text
     SUB EAX,0x4                         ; 0051753c
         ;   Label: LAB_0051753c
     PUSH EAX                            ; 0051753f
-    CALL FUN_00564486                   ; 00517540
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517540
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00517545
     JMP 0x00517512                      ; 00517548
         ;   XREF to: 00517512 (UNCONDITIONAL_JUMP)  ; LAB_00517512
     SUB EAX,0x4                         ; 0051754a
         ;   Label: LAB_0051754a
     PUSH EAX                            ; 0051754d
-    CALL FUN_00564486                   ; 0051754e
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0051754e
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00517553
     JMP 0x0051751c                      ; 00517556
         ;   XREF to: 0051751c (UNCONDITIONAL_JUMP)  ; LAB_0051751c

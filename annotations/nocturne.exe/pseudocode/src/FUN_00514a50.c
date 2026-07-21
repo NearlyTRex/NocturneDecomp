@@ -9,6 +9,6 @@
 uint FUN_00514a50(uint param_1)
 
 {
-  FUN_00515800(param_1);
+  core_setutil_cpp_C3DSLight_reset_FUN_00515800(param_1);
   return param_1;
 }

@@ -12,13 +12,13 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_0041ceb0
-;   FUN_004544d0
-;   FUN_00454530
-;   FUN_00460a00
-;   FUN_00460aa0
-;   FUN_00461090
-;   thunk_FUN_004cdbc0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
+;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0041ea05
     LEA EAX,[EBX + 0x150]               ; 0041ea09
     PUSH EAX                            ; 0041ea0f
-    CALL FUN_00454530                   ; 0041ea10
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0041ea10
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     MOV EDX,dword ptr [EAX + 0x110]     ; 0041ea15
     ADD ESP,0x4                         ; 0041ea1b
     CMP EDX,0x1                         ; 0041ea1e
@@ -47,8 +47,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 0041ea2b | DAT_005ae704
         ;   Label: LAB_0041ea2b
     PUSH ECX                            ; 0041ea31 | DAT_01b4d738
-    CALL FUN_00461090                   ; 0041ea32
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ea32
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 0041ea37
     TEST EAX,EAX                        ; 0041ea3a
     JNZ 0x0041ea47                      ; 0041ea3c
@@ -66,16 +66,16 @@ section .text
     PUSH EAX                            ; 0041ea58
     MOV EAX,[0x005ae700]                ; 0041ea59 | DAT_005ae700
     PUSH EAX                            ; 0041ea5e | DAT_01b4d738
-    CALL FUN_00460a00                   ; 0041ea5f
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined FUN_00460a00()
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0041ea5f
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
     ADD ESP,0x8                         ; 0041ea64
     PUSH 0x0                            ; 0041ea67
     LEA EAX,[EBX + 0x30]                ; 0041ea69
     PUSH EAX                            ; 0041ea6c
     MOV EDX,dword ptr [0x005ae700]      ; 0041ea6d | DAT_005ae700
     PUSH EDX                            ; 0041ea73 | DAT_01b4d738
-    CALL FUN_00460aa0                   ; 0041ea74
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined FUN_00460aa0()
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0041ea74
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
     ADD ESP,0xc                         ; 0041ea79
     PUSH 0x0                            ; 0041ea7c
     LEA EAX,[ESP + 0x8]                 ; 0041ea7e
@@ -85,8 +85,8 @@ section .text
     CALL dword ptr [EDX + 0x14]         ; 0041ea8a
     ADD ESP,0x8                         ; 0041ea8d
     PUSH EAX                            ; 0041ea90
-    CALL FUN_0041ceb0                   ; 0041ea91
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0041ea91
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 0041ea96
     MOV ESI,EAX                         ; 0041ea99
     TEST EAX,EAX                        ; 0041ea9b
@@ -96,14 +96,14 @@ section .text
     ADD EBX,0x150                       ; 0041eaa1
     PUSH dword ptr [EBX + 0x1b8]        ; 0041eaa7
     PUSH EBX                            ; 0041eaad
-    CALL FUN_004544d0                   ; 0041eaae
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004544d0()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0041eaae
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
     ADD ESP,0xc                         ; 0041eab3
     MOV ECX,dword ptr [0x005ae700]      ; 0041eab6 | DAT_005ae700
         ;   Label: LAB_0041eab6
     PUSH ECX                            ; 0041eabc | DAT_01b4d738
-    CALL thunk_FUN_004cdbc0             ; 0041eabd
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004cdbc0()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0041eabd
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0041eac2
     MOV EAX,ESI                         ; 0041eac5
     POP ESI                             ; 0041eac7
@@ -114,8 +114,8 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 0041eace | DAT_005ae704
         ;   Label: LAB_0041eace
     PUSH EBP                            ; 0041ead4 | DAT_01b4d738
-    CALL FUN_00461090                   ; 0041ead5
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ead5
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 0041eada
     TEST EAX,EAX                        ; 0041eadd
     JZ 0x0041ea54                       ; 0041eadf

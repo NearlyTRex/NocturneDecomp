@@ -8,11 +8,11 @@
 ;   undefined4 DAT_005a2bc0
 ;
 ; Called Functions:
-;   FUN_00435160
+;   core_cloth.cpp_CCloth_dtor_FUN_00435160
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_004b4800
-;   FUN_0056445f
-;   FUN_00564486
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -27,14 +27,14 @@ section .text
     PUSH 0x0                            ; 0054305c
     ADD EBX,0x5a574                     ; 0054305e
     PUSH EBX                            ; 00543064
-    CALL FUN_00435160                   ; 00543065
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined FUN_00435160()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 00543065
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
     ADD ESP,0x8                         ; 0054306a
     PUSH 0x0                            ; 0054306d
     SUB EAX,0x3ab30                     ; 0054306f
     PUSH EAX                            ; 00543074
-    CALL FUN_00435160                   ; 00543075
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined FUN_00435160()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 00543075
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
     ADD ESP,0x8                         ; 0054307a
     PUSH 0x1                            ; 0054307d
     LEA EBX,[EAX + 0xfffe05bc]          ; 0054307f
@@ -53,12 +53,12 @@ section .text
     PUSH 0x5a2bc0                       ; 0054309d | DAT_005a2bc0
         ;   Label: LAB_0054309d
     PUSH EBX                            ; 005430a2
-    CALL FUN_0056445f                   ; 005430a3
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 005430a3
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 005430a8
     PUSH EAX                            ; 005430ab
-    CALL FUN_00564486                   ; 005430ac
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 005430ac
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 005430b1
     MOV EAX,EBX                         ; 005430b4
     POP EBX                             ; 005430b6

@@ -1,0 +1,801 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 158,
+    "complexity_score": 484,
+    "cross_reference_count": 3,
+    "function_call_count": 10,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 41,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 217
+  },
+  "cross_references": [
+    {
+      "addr": "00558060",
+      "from_addr": "0055806b",
+      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_00558060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558770",
+      "from_addr": "00558782",
+      "name": "engine_winfont.cpp_CWinFont_getStringHeight_FUN_00558770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558710",
+      "from_addr": "00558721",
+      "name": "engine_winfont.cpp_CWinFont_getStringWidth_FUN_00558710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005584d0",
+    "address_range": [
+      [
+        "005584d0",
+        "00558694"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0",
+    "signature": "bool __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(int param_1,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000006",
+      "is_variadic": false,
+      "name": "CreateBrushIndirect"
+    },
+    {
+      "addr": "EXTERNAL:00000007",
+      "is_variadic": false,
+      "name": "CreateCompatibleDC"
+    },
+    {
+      "addr": "EXTERNAL:00000008",
+      "is_variadic": false,
+      "name": "CreateDIBSection"
+    },
+    {
+      "addr": "00563cc0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_00563cc0"
+    },
+    {
+      "addr": "EXTERNAL:0000000b",
+      "is_variadic": false,
+      "name": "DeleteObject"
+    },
+    {
+      "addr": "005586a0",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_CWinFont_reset_FUN_005586a0"
+    },
+    {
+      "addr": "EXTERNAL:0000000e",
+      "is_variadic": false,
+      "name": "Rectangle"
+    },
+    {
+      "addr": "EXTERNAL:0000000f",
+      "is_variadic": false,
+      "name": "SelectObject"
+    },
+    {
+      "addr": "EXTERNAL:00000010",
+      "is_variadic": false,
+      "name": "SetBkColor"
+    },
+    {
+      "addr": "EXTERNAL:00000011",
+      "is_variadic": false,
+      "name": "SetBkMode"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575398",
+      "name": "PTR_CreateBrushIndirect_00575398",
+      "type": "void*",
+      "value": "001756fc"
+    },
+    {
+      "addr": "0057539c",
+      "name": "PTR_CreateCompatibleDC_0057539c",
+      "type": "void*",
+      "value": "00175712"
+    },
+    {
+      "addr": "005753a0",
+      "name": "PTR_CreateDIBSection_005753a0",
+      "type": "void*",
+      "value": "00175728"
+    },
+    {
+      "addr": "005753ac",
+      "name": "PTR_DeleteObject_005753ac",
+      "type": "void*",
+      "value": "00175756"
+    },
+    {
+      "addr": "005753b8",
+      "name": "PTR_Rectangle_005753b8",
+      "type": "void*",
+      "value": "00175790"
+    },
+    {
+      "addr": "005753bc",
+      "name": "PTR_SelectObject_005753bc",
+      "type": "void*",
+      "value": "0017579c"
+    },
+    {
+      "addr": "005753c0",
+      "name": "PTR_SetBkColor_005753c0",
+      "type": "void*",
+      "value": "001757ac"
+    },
+    {
+      "addr": "005753c4",
+      "name": "PTR_SetBkMode_005753c4",
+      "type": "void*",
+      "value": "001757ba"
+    },
+    {
+      "addr": "005b761c",
+      "name": "DAT_005b761c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7624",
+      "name": "DAT_005b7624",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0055806b",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_drawText_FUN_00558060",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00558721",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_getStringWidth_FUN_00558710",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00558782",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_getStringHeight_FUN_00558770",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLIND": 10,
+      "CBRANCH": 4,
+      "COPY": 144,
+      "INT_2COMP": 2,
+      "INT_ADD": 56,
+      "INT_AND": 54,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 50,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 3,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 24,
+      "INT_SUB": 49,
+      "INT_XOR": 4,
+      "INT_ZEXT": 3,
+      "LOAD": 28,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 65
+    },
+    "pcode_op_count": 559
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a",
+        "offset": -58,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bool __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "bool __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "bool __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = DAT_005b761c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "param_2 = DAT_005b761c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = 100;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((*(int *)(param_1 + 4) == 0 || *(int *)(param_1 + 0x120) < param_2) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((*(int *)(param_1 + 4) == 0 || *(int *)(param_1 + 0x120) < param_2) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((*(int *)(param_1 + 4) == 0 || *(int *)(param_1 + 0x120) < param_2) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) < param_3) || *(int *)(param_1 + 0x128) != DAT_005b7624) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) < param_3) || *(int *)(param_1 + 0x128) != DAT_005b7624) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) < param_3) || *(int *)(param_1 + 0x128) != DAT_005b7624) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) < param_3) || *(int *)(param_1 + 0x128) != DAT_005b7624) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_winfont_cpp_CWinFont_reset_FUN_005586a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(HDC *)(param_1 + 4) = pHVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_48.bmiHeader.biHeight = -param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "local_48.bmiHeader.biBitCount = (WORD)DAT_005b7624;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_48.bmiHeader.biWidth = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "h = CreateDIBSection(*(HDC *)(param_1 + 4),&local_48,0,(void **)(param_1 + 0x14),(HANDLE)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "h = CreateDIBSection(*(HDC *)(param_1 + 4),&local_48,0,(void **)(param_1 + 0x14),(HANDLE)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(HBITMAP *)(param_1 + 8) = h;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "SelectObject(*(HDC *)(param_1 + 4),h);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "SetBkMode(*(HDC *)(param_1 + 4),2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "SetBkColor(*(HDC *)(param_1 + 4),0xff00ff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "SelectObject(*(HDC *)(param_1 + 4),h_00);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "Rectangle(*(HDC *)(param_1 + 4),0,-*(int *)(param_1 + 0x124),*(int *)(param_1 + 0x120),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "Rectangle(*(HDC *)(param_1 + 4),0,-*(int *)(param_1 + 0x124),*(int *)(param_1 + 0x120),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "Rectangle(*(HDC *)(param_1 + 4),0,-*(int *)(param_1 + 0x124),*(int *)(param_1 + 0x120),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pvVar3 = SelectObject(*(HDC *)(param_1 + 4),*(HGDIOBJ *)(param_1 + 0xc));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pvVar3 = SelectObject(*(HDC *)(param_1 + 4),*(HGDIOBJ *)(param_1 + 0xc));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(HGDIOBJ *)(param_1 + 0x10) = pvVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x120) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x120) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x124) = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x128) = DAT_005b7624;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x128) = DAT_005b7624;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) != 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

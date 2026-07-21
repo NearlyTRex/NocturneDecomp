@@ -1,0 +1,176 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 43,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "0048b6f0",
+      "from_addr": "0048c0a8",
+      "name": "FUN_0048b6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005384d0",
+      "from_addr": "005389f8",
+      "name": "FUN_005384d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044dbd0",
+      "from_addr": "0044def8",
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482630",
+      "from_addr": "0048266f",
+      "name": "core_fire.cpp_safeAcos_FUN_00482630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e320",
+      "from_addr": "0053e73f",
+      "name": "core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055b6c0",
+      "from_addr": "0055bb2b",
+      "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055b180",
+      "from_addr": "0055b5eb",
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_0055b180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055d220",
+      "from_addr": "0055d298",
+      "name": "core_xform.cpp_quaternionToAxisAngle_FUN_0055d220",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565ca4",
+    "address_range": [
+      [
+        "00565ca4",
+        "00565ce0"
+      ]
+    ],
+    "convention": "__fpustack_safe",
+    "name": "crt_math.c_acos_FUN_00565ca4",
+    "signature": "void __fpustack_safe crt_math_c_acos_FUN_00565ca4(float10 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566c81",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_00566c81"
+    },
+    {
+      "addr": "0056c5a8",
+      "is_variadic": false,
+      "name": "FUN_0056c5a8"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c17ec",
+      "name": "DAT_005c17ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 0,
+    "estimated_params": 0,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.814814814814815,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 90,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 3,
+      "INT_ADD": 2,
+      "INT_AND": 12,
+      "INT_EQUAL": 2,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "INT_ZEXT": 8,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __fpustack_safe acos(float10 param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((float10)1 - param_1 * param_1 != (float10)0) && (cVar1 = FUN_0056c5a8(), cVar1 == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((float10)1 - param_1 * param_1 != (float10)0) && (cVar1 = FUN_0056c5a8(), cVar1 == '\\0')) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 180,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 13,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "00404710",
+      "from_addr": "00404721",
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00404710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004060b0",
+      "from_addr": "00406119",
+      "name": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00407a20",
+      "from_addr": "00407c30",
+      "name": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00405e10",
+      "from_addr": "00405f8b",
+      "name": "engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00407cc0",
+      "from_addr": "00407d1a",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_00407cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004047e0",
+      "from_addr": "0040483a",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408d10",
+      "from_addr": "00408d6b",
+      "name": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00408d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408c10",
+      "from_addr": "00408c68",
+      "name": "engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c6cc0",
+    "address_range": [
+      [
+        "004c6cc0",
+        "004c6d63"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_light.cpp_calculateLighting_FUN_004c6cc0",
+    "signature": "int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005bacd0",
+      "name": "DAT_005bacd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039dc",
+      "name": "DAT_01c039dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039e0",
+      "name": "DAT_01c039e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039e4",
+      "name": "DAT_01c039e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00408c68",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0040483a",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00404721",
+        "call_type": "direct",
+        "caller": "engine_3d.c_calculatePolygonLighting_FUN_00404710",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00405f8b",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00406119",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00407c30",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00407d1a",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_00407cc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00408d6b",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00408d10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 11.588235294117647,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 50,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 4,
+      "COPY": 40,
+      "INT_2COMP": 1,
+      "INT_ADD": 10,
+      "INT_AND": 164,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 8,
+      "INT_LESS": 7,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 37,
+      "INT_OR": 50,
+      "INT_RIGHT": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 12,
+      "INT_SLESS": 36,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 21,
+      "INT_XOR": 8,
+      "INT_ZEXT": 2,
+      "LOAD": 5,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 591
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "calculateLighting_FUN_004c6cc0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 37,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = ((uint)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((uint)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((uint)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x20) << 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005bacd0",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)iVar2 * (longlong)(0xffff - DAT_005bacd0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005bacd0",
+      "severity": "mild",
+      "text": "iVar3 = DAT_005bacd0 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 37,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "return ((int)((iVar3 + (iVar3 >> 0x1f) * -0x10) - (uint)((iVar3 >> 0x1f) << 3 < 0)) >> 4) +",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

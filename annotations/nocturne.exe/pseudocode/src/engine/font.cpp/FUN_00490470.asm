@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0048ff70 at 0049017f
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049017f
 ;
 ; Referenced Globals:
 ;   string s_..\\engine\\font.cpp_00581829
@@ -32,11 +32,11 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00490920
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920
 ;   FUN_004c8440
-;   FUN_00563c90
-;   FUN_00564486
-;   FUN_00564c18
+;   shape_memdbg.cpp_free_FUN_00564486
+;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     IMUL EBX,EDX                        ; 0049048f
     LEA EAX,[EDX*0x4 + 0x0]             ; 00490492
     PUSH EAX                            ; 00490499
-    CALL FUN_00564c18                   ; 0049049a
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined FUN_00564c18()
+    CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0049049a
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
     ADD ESP,0x4                         ; 0049049f
     MOV dword ptr [ESP + 0x12c],EAX     ; 004904a2
     TEST EAX,EAX                        ; 004904a9
@@ -94,8 +94,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490518
     PUSH EAX                            ; 0049051c
     MOV EBX,0x1ce                       ; 0049051d
-    CALL FUN_00563c90                   ; 00490522
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00490522
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 00490527
     MOV EAX,ESP                         ; 0049052a
     MOV ECX,0x581878                    ; 0049052c | = "..\\engine\\font.cpp"
@@ -253,8 +253,8 @@ section .text
     PUSH 0x58188b                       ; 00490752 | = "Too many chars: fontfile %s, chars %d"
     LEA EAX,[ESP + 0xc]                 ; 00490757
     PUSH EAX                            ; 0049075b
-    CALL FUN_00563c90                   ; 0049075c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049075c
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x202                       ; 00490761
     ADD ESP,0x10                        ; 00490766
     MOV [0x01cc4804],EAX                ; 00490769 | DAT_01cc4804
@@ -301,8 +301,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1d68]    ; 004907f5
     PUSH ECX                            ; 004907fb
     PUSH ESI                            ; 004907fc
-    CALL FUN_00490920                   ; 004907fd
-        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined FUN_00490920()
+    CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920 ; 004907fd
+        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920()
     MOV dword ptr [EBX + 0x2968],EAX    ; 00490802
     MOV EDX,dword ptr [ESI + 0x316c]    ; 00490808
     ADD ESP,0x14                        ; 0049080e
@@ -341,8 +341,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1d68]    ; 00490871
     PUSH ECX                            ; 00490877
     PUSH ESI                            ; 00490878
-    CALL FUN_00490920                   ; 00490879
-        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined FUN_00490920()
+    CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920 ; 00490879
+        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920()
     MOV dword ptr [EBX + 0x2968],EAX    ; 0049087e
     MOV EDI,dword ptr [ESI + 0x316c]    ; 00490884
     ADD ESP,0x14                        ; 0049088a
@@ -383,8 +383,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x316c]    ; 004908f7
     PUSH EBX                            ; 004908fd
     MOV dword ptr [ESI + 0x3170],EAX    ; 004908fe
-    CALL FUN_00564486                   ; 00490904
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00490904
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00490909
     ADD ESP,0x15c                       ; 0049090c
     POP EBP                             ; 00490912

@@ -18,7 +18,7 @@ DWORD FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3)
     DVar1 = GetModuleFileNameW(param_1,param_2,param_3);
     return DVar1;
   }
-  lpFilename = (LPSTR)FUN_005635b0(0x208);
+  lpFilename = (LPSTR)malloc(0x208);
   DVar1 = 0;
   if (lpFilename != (LPSTR)0x0) {
     DVar1 = GetModuleFileNameA(param_1,lpFilename,0x208);

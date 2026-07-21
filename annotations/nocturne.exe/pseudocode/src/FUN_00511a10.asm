@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004118a0 at 004118b6
-;   FUN_00455640 at 00455933
-;   FUN_00456460 at 0045648c
+;   core_barrier.cpp_CBarrier_updateCollisionData_FUN_004118a0 at 004118b6
+;   core_door.cpp_CDoor_process_FUN_00455640 at 00455933
+;   core_door.cpp_CDoor_updateCollisionData_FUN_00456460 at 0045648c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
+;   core_path.cpp_resetAllPathMaps_FUN_004f1e90
 ;   FUN_0046baa0
-;   FUN_004f1e90
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     CALL FUN_0046baa0                   ; 00511a6a
         ;   XREF to: 0046baa0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046baa0()
     ADD ESP,0x14                        ; 00511a6f
-    CALL FUN_004f1e90                   ; 00511a72
-        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; undefined FUN_004f1e90()
+    CALL core_path.cpp_resetAllPathMaps_FUN_004f1e90 ; 00511a72
+        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_resetAllPathMaps_FUN_004f1e90()
     ADD ESP,0x30                        ; 00511a77
     POP EBX                             ; 00511a7a
     RET                                 ; 00511a7b

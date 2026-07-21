@@ -17,7 +17,7 @@ uint FUN_0056f1c0(uint param_1)
     (*(code *)PTR_FUN_005c1ac0)(param_1);
     BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_005c1f54 + param_1 * 4));
     if (BVar1 == 0) {
-      FUN_0056c73c();
+      __set_errno();
       uVar2 = 0xffffffff;
     }
     (*(code *)PTR_FUN_005c1ac4)(param_1);

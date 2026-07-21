@@ -6,24 +6,24 @@
 ;
 ; XREF[36]:
 ;   FUN_00410490 at 0041073a
-;   FUN_00412480 at 00412684
-;   FUN_00413800 at 00413a32
-;   FUN_004150d0 at 00415148
-;   FUN_004154b0 at 0041569b
 ;   FUN_00418a00 at 00418fa1
 ;   FUN_0041fe40 at 00420897
 ;   FUN_00439f50 at 0043a1e1
-;   FUN_0043bdb0 at 0043bfe5
-;   FUN_00454750 at 0045499c
+;   FUN_00495a20 at 00496078
+;   FUN_004a9270 at 004a95b0
+;   FUN_004b32d0 at 004b3570
+;   FUN_004b6d80 at 004b7377
+;   FUN_004b9fe0 at 004ba2f3
+;   FUN_004c4970 at 004c4bcf
 ;   ... and 26 more
 ;
 ; Called Functions:
-;   FUN_00429220
-;   FUN_00429560
-;   FUN_004296c0
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_00429560
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220
+;   core_cloth.cpp_CClothList_process_FUN_00438550
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0
 ;   FUN_00429e60
-;   FUN_00438550
-;   FUN_0051d3c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
         ;   Label: FUN_0042a150
     MOV EBX,dword ptr [ESP + 0x8]       ; 0042a151
     PUSH EBX                            ; 0042a155
-    CALL FUN_00429560                   ; 0042a156
-        ;   XREF to: 00429560 (UNCONDITIONAL_CALL)  ; undefined FUN_00429560()
+    CALL core_charactr.cpp_CCharacter_applyGesture_FUN_00429560 ; 0042a156
+        ;   XREF to: 00429560 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_applyGesture_FUN_00429560()
     ADD ESP,0x4                         ; 0042a15b
     PUSH EBX                            ; 0042a15e
     CALL FUN_00429e60                   ; 0042a15f
@@ -42,17 +42,17 @@ section .text
     ADD ESP,0x4                         ; 0042a164
     LEA EAX,[EBX + 0x150]               ; 0042a167
     PUSH EAX                            ; 0042a16d
-    CALL FUN_0051d3c0                   ; 0042a16e
-        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d3c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 ; 0042a16e
+        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0()
     ADD ESP,0x4                         ; 0042a173
     PUSH EBX                            ; 0042a176
-    CALL FUN_004296c0                   ; 0042a177
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004296c0()
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 0042a177
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
     ADD ESP,0x4                         ; 0042a17c
     PUSH dword ptr [ESP + 0xc]          ; 0042a17f
     PUSH EBX                            ; 0042a183
-    CALL FUN_00429220                   ; 0042a184
-        ;   XREF to: 00429220 (UNCONDITIONAL_CALL)  ; undefined FUN_00429220()
+    CALL core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 ; 0042a184
+        ;   XREF to: 00429220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220()
     MOV EDX,dword ptr [EBX + 0x2618]    ; 0042a189
     ADD ESP,0x8                         ; 0042a18f
     TEST EDX,EDX                        ; 0042a192
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 0042a1c5
     ADD EBX,0x2a8c                      ; 0042a1c6
     PUSH EBX                            ; 0042a1cc
-    CALL FUN_00438550                   ; 0042a1cd
-        ;   XREF to: 00438550 (UNCONDITIONAL_CALL)  ; undefined FUN_00438550()
+    CALL core_cloth.cpp_CClothList_process_FUN_00438550 ; 0042a1cd
+        ;   XREF to: 00438550 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_process_FUN_00438550()
     ADD ESP,0x18                        ; 0042a1d2
     POP EBX                             ; 0042a1d5
     RET                                 ; 0042a1d6

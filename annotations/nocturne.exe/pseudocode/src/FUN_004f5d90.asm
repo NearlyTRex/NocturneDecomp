@@ -7,18 +7,18 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[2]:
-;   FUN_0043b050 at 0043b057
 ;   FUN_004d60b0 at 004d60b5
+;   core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 at 0043b057
 ;
 ; Referenced Globals:
 ;   string s_slider1.kfm_0058d75f
 ;   undefined1* PTR_FUN_005a1384 = 004f5f60
 ;
 ; Called Functions:
+;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
+;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   FUN_00409d30
-;   FUN_0043b5d0
-;   FUN_00454490
-;   FUN_00454580
 ;   FUN_0055d610
 ;
 ; *****************************************************************************
@@ -37,21 +37,21 @@ section .text
     ADD ESP,0x4                         ; 004f5da0
     ADD EAX,0x150                       ; 004f5da3
     PUSH EAX                            ; 004f5da8
-    CALL FUN_00454490                   ; 004f5da9
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004f5da9
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 004f5dae
     ADD EAX,0x1b8                       ; 004f5db1
     PUSH EAX                            ; 004f5db6
-    CALL FUN_0043b5d0                   ; 004f5db7
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0043b5d0()
+    CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 004f5db7
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
     ADD ESP,0x4                         ; 004f5dbc
     LEA EBX,[EAX + 0xfffffcf8]          ; 004f5dbf
     PUSH 0x58d75f                       ; 004f5dc5 | = "slider1.kfm"
     LEA EAX,[EBX + 0x150]               ; 004f5dca
     PUSH EAX                            ; 004f5dd0
     MOV dword ptr [EBX + 0x14c],0x5a1384 ; 004f5dd1 | PTR_FUN_005a1384
-    CALL FUN_00454580                   ; 004f5ddb
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004f5ddb
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     MOV byte ptr [EBX + 0x34c],0x0      ; 004f5de0
     MOV byte ptr [EBX + 0x3b0],0x0      ; 004f5de7
     MOV byte ptr [EBX + 0x414],0x0      ; 004f5dee

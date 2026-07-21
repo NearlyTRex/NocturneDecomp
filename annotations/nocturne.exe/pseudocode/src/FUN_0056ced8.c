@@ -40,7 +40,7 @@ int FUN_0056ced8(int param_1,int param_2)
     local_24 = *(uint *)(param_1 + 0x10);
     local_20 = param_2;
     local_14 = 0;
-    FUN_00565fb0(&local_34);
+    _mktime(&local_34);
     iVar4 = ((*(int *)(param_1 + 0x18) - local_1c) + 7) % 7;
     if (*(int *)(param_1 + 0xc) == 5) {
       iVar3 = 4;

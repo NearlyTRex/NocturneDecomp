@@ -15,8 +15,10 @@ int * FUN_004ca710(int param_1,int param_2)
   if (*piVar1 == 0) {
     return piVar1;
   }
-  FUN_00460aa0(DAT_005ae704,piVar1 + 6,piVar1 + 3);
-  FUN_004544d0(param_1 + 0x150,0,0xffffffff);
-  piVar1 = (int *)thunk_FUN_004cdbc0(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+            (DAT_005ae704,piVar1 + 6,piVar1 + 3);
+  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+            (param_1 + 0x150,0,0xffffffff);
+  piVar1 = (int *)engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
   return piVar1;
 }

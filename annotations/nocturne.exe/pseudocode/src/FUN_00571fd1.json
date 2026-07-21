@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 771,
+    "complexity_score": 772,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 87,
     "suspect_count": 67,
     "suspect_types": [
       "unaffected_reg",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 325
+    "total_lines": 326
   },
   "cross_references": [],
   "function": {
@@ -154,7 +154,7 @@
     {
       "addr": "00566170",
       "is_variadic": false,
-      "name": "FUN_00566170"
+      "name": "crt_string.c_memmove_FUN_00566170"
     },
     {
       "addr": "005689c0",
@@ -243,7 +243,7 @@
         {
           "check_id": "selfAssignment",
           "column": 35,
-          "line": 78,
+          "line": 79,
           "message": "Redundant assignment of '*(uint*)(param_1+0x1c)' to itself.",
           "severity": "warning"
         }
@@ -647,18 +647,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00566170(*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00566170(*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);",
+      "text": "(*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);",
       "type": "unnamed_param"
     },
     {
@@ -666,12 +658,12 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);",
+      "text": "(*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);",
@@ -682,12 +674,12 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",
+      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",
@@ -698,12 +690,12 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + uVar2;",
+      "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + uVar2;",
@@ -711,7 +703,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != -1) {",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(byte **)(param_1 + 0x1c) <= *(byte **)(param_1 + 0x20)) {",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(byte **)(param_1 + 0x1c) <= *(byte **)(param_1 + 0x20)) {",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "**(byte **)(param_1 + 0x20) = (byte)param_2;",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_2",
       "severity": "mild",
       "text": "**(byte **)(param_1 + 0x20) = (byte)param_2;",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + 1;",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + 1;",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((*(byte *)(param_1 + 0x30) & 8) == 0) ||",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 84,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(iVar1 = FUN_005689c0(*(uint *)(param_1 + 0x2c),unaff_EDI,0), -1 < iVar1)) &&",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = FUN_005689c0(*(uint *)(param_1 + 0x2c),unaff_EDI,0), -1 < iVar1)) &&",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Redundant assignment of '*(uint*)(param_1+0x1c)' to itself.",
-      "line": 78,
+      "line": 79,
       "match": "Cppcheck: redundant self-assignment",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",

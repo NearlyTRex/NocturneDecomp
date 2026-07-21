@@ -1,0 +1,524 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 227,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 19,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "00403780",
+      "from_addr": "00403821",
+      "name": "FUN_00403780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040add0",
+      "from_addr": "0040afaa",
+      "name": "FUN_0040add0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005138e0",
+      "from_addr": "00513ac9",
+      "name": "FUN_005138e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004015a0",
+      "from_addr": "004015f6",
+      "name": "engine_2d.c_drawLine_FUN_004015a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401da0",
+      "from_addr": "00401ddc",
+      "name": "engine_2d.c_project3DPointToScreen_FUN_00401da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004724e0",
+      "from_addr": "004725f3",
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401530",
+    "address_range": [
+      [
+        "00401530",
+        "0040159a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_plotPixel_FUN_00401530",
+    "signature": "void __cdecl engine_2d_c_plotPixel_FUN_00401530(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b7624",
+      "name": "DAT_005b7624",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa0",
+      "name": "DAT_01bd2fa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c70",
+      "name": "DAT_01c00c70",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 34,
+    "call_sites": [
+      {
+        "call_addr": "004015f6",
+        "call_type": "direct",
+        "caller": "engine_2d.c_drawLine_FUN_004015a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00401647",
+        "call_type": "direct",
+        "caller": "engine_2d.c_drawLine_FUN_004015a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004725f3",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00472670",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004726b0",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004726ff",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047274e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047287a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004728c9",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00472918",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.193548387096774,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 17,
+      "INT_AND": 39,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 192
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl engine_2d_c_plotPixel_FUN_00401530(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl engine_2d_c_plotPixel_FUN_00401530(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 * 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 * 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "if (DAT_005b7624 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + *(int *)(&DAT_01bd2fa0 + param_2)) = DAT_01c00c70;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + *(int *)(&DAT_01bd2fa0 + param_2)) = DAT_01c00c70;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + *(int *)(&DAT_01bd2fa0 + param_2)) = DAT_01c00c70;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_01c00c70",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + *(int *)(&DAT_01bd2fa0 + param_2)) = DAT_01c00c70;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "if (DAT_005b7624 == 0x10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_01bff720",
+      "severity": "mild",
+      "text": "*(ushort *)(&DAT_01bff720 + (_DAT_01c00c70 & 0xff) * 2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 34,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

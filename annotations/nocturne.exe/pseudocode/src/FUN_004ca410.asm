@@ -10,7 +10,7 @@
 ;   FUN_004c9430 at 004c9565
 ;
 ; Called Functions:
-;   FUN_004cae20
+;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH ECX                            ; 004ca5c9
     ADD EBP,0xb8                        ; 004ca5ca
     ADD EDI,0xb8                        ; 004ca5d0
-    CALL FUN_004cae20                   ; 004ca5d6
-        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined FUN_004cae20()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20 ; 004ca5d6
+        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20()
     MOV dword ptr [EBX + 0x14],0x0      ; 004ca5db
     INC ESI                             ; 004ca5e2
     MOV dword ptr [EBX + 0x20],0x0      ; 004ca5e3

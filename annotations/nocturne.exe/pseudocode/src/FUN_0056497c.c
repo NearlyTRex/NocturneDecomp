@@ -18,7 +18,7 @@ int FUN_0056497c(int param_1)
   }
   while( true ) {
     do {
-      iVar1 = FUN_005635b0(param_1);
+      iVar1 = malloc(param_1);
       if (iVar1 != 0) {
         return iVar1;
       }

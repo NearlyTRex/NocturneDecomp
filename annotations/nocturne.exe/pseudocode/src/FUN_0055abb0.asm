@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0055aa00
+;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH EBX                            ; 0055abbf
     LEA ESI,[ESP + 0x8]                 ; 0055abc0
     MOV EDI,EBX                         ; 0055abc4
-    CALL FUN_0055aa00                   ; 0055abc6
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined FUN_0055aa00()
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0055abc6
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
     MOV ECX,0xc                         ; 0055abcb
     LEA ESI,[ESP + 0x8]                 ; 0055abd0
     ADD ESP,0x8                         ; 0055abd4

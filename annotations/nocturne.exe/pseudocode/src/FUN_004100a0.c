@@ -14,7 +14,7 @@ uint FUN_004100a0(int param_1,int param_2)
   if (*(int *)(param_1 + 0x2cc) == 0) {
     return 0;
   }
-  iVar1 = FUN_00454530(param_1 + 0x150);
+  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
   if (*(int *)(iVar1 + 0x358) != 0) {
     *(int *)(param_2 + 0x24) = param_1 + 0x150;
   }

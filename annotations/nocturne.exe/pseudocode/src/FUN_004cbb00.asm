@@ -9,9 +9,9 @@
 ;   undefined1* PTR_FUN_005a0134 = 004cbb50
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   FUN_00409d30
-;   FUN_00454490
-;   FUN_00454580
 ;
 ; *****************************************************************************
 
@@ -26,16 +26,16 @@ section .text
     ADD ESP,0x4                         ; 004cbb0b
     ADD EAX,0x150                       ; 004cbb0e
     PUSH EAX                            ; 004cbb13
-    CALL FUN_00454490                   ; 004cbb14
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004cbb14
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 004cbb19
     LEA EBX,[EAX + 0xfffffeb0]          ; 004cbb1c
     PUSH 0x58815a                       ; 004cbb22 | = "mirrhack.kfm"
     LEA EAX,[EBX + 0x150]               ; 004cbb27
     PUSH EAX                            ; 004cbb2d
     MOV dword ptr [EBX + 0x14c],0x5a0134 ; 004cbb2e | PTR_FUN_005a0134
-    CALL FUN_00454580                   ; 004cbb38
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004cbb38
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 004cbb3d
     MOV EAX,EBX                         ; 004cbb40
     MOV dword ptr [EBX + 0x2cc],0x0     ; 004cbb42

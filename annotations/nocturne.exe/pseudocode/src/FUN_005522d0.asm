@@ -8,11 +8,11 @@
 ;   undefined4 DAT_005a3ff0
 ;
 ; Called Functions:
-;   FUN_00409ea0
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00552360
-;   FUN_0056445f
-;   FUN_00564486
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0x1                            ; 005522ed
     LEA EBX,[EAX + 0xfffffd6c]          ; 005522ef
     PUSH EBX                            ; 005522f5
-    CALL FUN_00409ea0                   ; 005522f6
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 005522f6
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 005522fb
     MOV DL,byte ptr [ESP + 0xc]         ; 005522fe
     MOV EBX,EAX                         ; 00552302
@@ -47,12 +47,12 @@ section .text
     PUSH 0x5a3ff0                       ; 0055230d | DAT_005a3ff0
         ;   Label: LAB_0055230d
     PUSH EBX                            ; 00552312
-    CALL FUN_0056445f                   ; 00552313
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 00552313
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00552318
     PUSH EAX                            ; 0055231b
-    CALL FUN_00564486                   ; 0055231c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0055231c
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00552321
     MOV EAX,EBX                         ; 00552324
     POP EBX                             ; 00552326

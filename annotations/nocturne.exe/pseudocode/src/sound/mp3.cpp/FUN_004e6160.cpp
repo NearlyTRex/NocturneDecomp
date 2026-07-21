@@ -168,8 +168,9 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                   *(float *)((int)afStack_e78 + local_90) = (float)fVar16;
                 }
                 else {
-                  FUN_004e60c0(*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
-                               iVar12,local_2078);
+                  sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0
+                            (*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
+                             iVar12,local_2078);
                 }
               }
               iVar14 = iVar14 + 2;
@@ -253,8 +254,9 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                       *(float *)((int)afStack_e78 + local_80) = (float)fVar16;
                     }
                     else {
-                      FUN_004e60c0(*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c
-                                   ,iVar7,local_2078);
+                      sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0
+                                (*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
+                                 iVar7,local_2078);
                     }
                   }
                   iVar14 = iVar14 + 2;
@@ -343,8 +345,9 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                     *(float *)((int)afStack_e78 + local_70) = (float)fVar16;
                   }
                   else {
-                    FUN_004e60c0(*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
-                                 iVar7,local_2078);
+                    sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0
+                              (*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
+                               iVar7,local_2078);
                   }
                 }
                 iVar14 = iVar14 + 2;
@@ -425,8 +428,9 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                       *(float *)((int)afStack_e78 + local_64) = (float)fVar16;
                     }
                     else {
-                      FUN_004e60c0(*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c
-                                   ,iVar12,local_2078);
+                      sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0
+                                (*(int *)((int)&uStack_57a + iVar14) >> 0x10,local_2080,local_207c,
+                                 iVar12,local_2078);
                     }
                   }
                   iVar14 = iVar14 + 2;

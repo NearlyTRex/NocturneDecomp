@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   FUN_00564486
-;   FUN_00564c18
 ;   FUN_00571df8
+;   shape_memdbg.cpp_free_FUN_00564486
+;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 0057038c (CONDITIONAL_JUMP)  ; LAB_0057038c
     MOV EDI,dword ptr [ESP + 0x10]      ; 005702bd
     PUSH EDI                            ; 005702c1
-    CALL FUN_00564c18                   ; 005702c2
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined FUN_00564c18()
+    CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 005702c2
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
     ADD ESP,0x4                         ; 005702c7
         ;   Label: LAB_005702c7
     MOV EBP,EAX                         ; 005702ca
@@ -121,8 +121,8 @@ section .text
     JNZ 0x00570407                      ; 0057035e
         ;   XREF to: 00570407 (CONDITIONAL_JUMP)  ; LAB_00570407
     PUSH ECX                            ; 00570364
-    CALL FUN_00564486                   ; 00570365
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00570365
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0057036a
         ;   Label: LAB_0057036a
     XOR EAX,EAX                         ; 0057036d

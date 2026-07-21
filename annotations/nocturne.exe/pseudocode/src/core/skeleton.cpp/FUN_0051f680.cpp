@@ -19,7 +19,7 @@ int FUN_0051f680(uint param_1)
   if (0 < _DAT_02737ef4) {
     iVar3 = 0x2760400;
     do {
-      iVar1 = FUN_00564520(iVar3,param_1);
+      iVar1 = _stricmp(iVar3,param_1);
       if (iVar1 == 0) {
         return iVar2 * 0x2937c + 0x2737ef8;
       }
@@ -34,6 +34,6 @@ int FUN_0051f680(uint param_1)
   }
   iVar2 = _DAT_02737ef4 * 0x2937c + 0x2737ef8;
   _DAT_02737ef4 = _DAT_02737ef4 + 1;
-  FUN_00517560(iVar2,param_1);
+  core_skeleton_cpp_CSkeleton_load_FUN_00517560(iVar2,param_1);
   return iVar2;
 }

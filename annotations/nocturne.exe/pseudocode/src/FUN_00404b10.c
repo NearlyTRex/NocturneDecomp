@@ -63,12 +63,12 @@ int FUN_00404b10(int param_1)
   iVar17 = _DAT_01c039b8 - *(int *)(param_1 + 0x14);
   iVar18 = _DAT_01c039bc - *(int *)(param_1 + 0x18);
   iVar19 = _DAT_01c039c0 - *(int *)(param_1 + 0x1c);
-  iVar20 = FUN_004cca60(*(uint *)(param_1 + 8));
-  iVar21 = FUN_004ccaa0(*(uint *)(param_1 + 8));
-  iVar22 = FUN_004cca60(*(uint *)(param_1 + 0xc));
-  iVar23 = FUN_004ccaa0(*(uint *)(param_1 + 0xc));
-  iVar24 = FUN_004cca60(*(uint *)(param_1 + 0x10));
-  iVar25 = FUN_004ccaa0(*(uint *)(param_1 + 0x10));
+  iVar20 = engine_matrix_c_interpolatedSin_FUN_004cca60(*(uint *)(param_1 + 8));
+  iVar21 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(*(uint *)(param_1 + 8));
+  iVar22 = engine_matrix_c_interpolatedSin_FUN_004cca60(*(uint *)(param_1 + 0xc));
+  iVar23 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(*(uint *)(param_1 + 0xc));
+  iVar24 = engine_matrix_c_interpolatedSin_FUN_004cca60(*(uint *)(param_1 + 0x10));
+  iVar25 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(*(uint *)(param_1 + 0x10));
   lVar1 = (longlong)
           (int)((uint)((longlong)iVar22 * (longlong)iVar20) >> 0x10 |
                (int)((ulonglong)((longlong)iVar22 * (longlong)iVar20) >> 0x20) << 0x10) *

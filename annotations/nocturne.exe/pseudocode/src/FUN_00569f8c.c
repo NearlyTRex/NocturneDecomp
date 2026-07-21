@@ -13,7 +13,7 @@ void FUN_00569f8c(char *param_1)
   
   cVar1 = *param_1;
   while (cVar1 != '\0') {
-    cVar1 = FUN_00565e20(*param_1);
+    cVar1 = toupper(*param_1);
     *param_1 = cVar1;
     cVar1 = param_1[1];
     param_1 = param_1 + 1;

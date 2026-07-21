@@ -16,6 +16,6 @@ uint FUN_00544440(int param_1)
   if ((iVar1 != 0) && (*(int *)(0x01CC9450 + 4) == 0)) {
     return 0;
   }
-  uVar2 = FUN_00426440(param_1);
+  uVar2 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);
   return uVar2;
 }

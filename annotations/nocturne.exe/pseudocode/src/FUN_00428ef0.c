@@ -12,7 +12,7 @@ void FUN_00428ef0(int param_1)
   if (*(int *)(param_1 + 0x25ac) == 0) {
     return;
   }
-  FUN_00455270(*(int *)(param_1 + 0x25ac));
+  core_door_cpp_CDoor_onOpened_FUN_00455270(*(int *)(param_1 + 0x25ac));
   *(uint *)(param_1 + 0x25ac) = 0;
   return;
 }

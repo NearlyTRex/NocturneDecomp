@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 301,
+    "complexity_score": 309,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 89,
     "suspect_count": 20,
     "suspect_types": [
       "stack_alignment_array",
@@ -135,25 +135,25 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 236
+    "total_lines": 244
   },
   "cross_references": [
     {
-      "addr": "004946c0",
-      "from_addr": "00494767",
-      "name": "FUN_004946c0",
+      "addr": "00494e80",
+      "from_addr": "00494eac",
+      "name": "FUN_00494e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00494950",
       "from_addr": "004949a4",
-      "name": "FUN_00494950",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00494e80",
-      "from_addr": "00494eac",
-      "name": "FUN_00494e80",
+      "addr": "004946c0",
+      "from_addr": "00494767",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,48 +167,48 @@
     ],
     "convention": "unknown",
     "name": "FUN_004950a0",
-    "signature": "void FUN_004950a0(int param_1)"
+    "signature": "void FUN_004950a0(undefined *param_1)"
   },
   "function_calls": [
     {
-      "addr": "0040a000",
-      "is_variadic": false,
-      "name": "FUN_0040a000"
-    },
-    {
       "addr": "0040a240",
       "is_variadic": false,
-      "name": "FUN_0040a240"
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040a000",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000"
     },
     {
       "addr": "00453080",
       "is_variadic": false,
-      "name": "FUN_00453080"
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080"
     },
     {
       "addr": "00454530",
       "is_variadic": false,
-      "name": "FUN_00454530"
-    },
-    {
-      "addr": "004952b0",
-      "is_variadic": false,
-      "name": "FUN_004952b0"
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530"
     },
     {
       "addr": "00495340",
       "is_variadic": false,
-      "name": "FUN_00495340"
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340"
+    },
+    {
+      "addr": "004952b0",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
     },
     {
       "addr": "004c8440",
       "is_variadic": false,
       "name": "FUN_004c8440"
-    },
-    {
-      "addr": "00563a30",
-      "is_variadic": false,
-      "name": "FUN_00563a30"
     }
   ],
   "globals": [
@@ -372,20 +372,20 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004950a0(int param_1)",
+      "text": "void FUN_004950a0(byte *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
-      "match": "aiStackY_1014",
+      "match": "aiStackY_1018",
       "severity": "moderate",
-      "text": "int aiStackY_1014 [1012];",
+      "text": "int aiStackY_1018 [1012];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(*(uint *)(param_1 + 0x150)) {",
@@ -396,31 +396,23 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004952b0(param_1,0x43030000,0x4427c000);",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,0x43030000);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004952b0(param_1,0x4403c000,0x445dc000);",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,0x4403c000);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004952b0(param_1,0x44882000,0x44d9a000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004952b0(param_1,0x43af0000,0x43c80000);",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,0x44882000);",
       "type": "unnamed_param"
     },
     {
@@ -428,44 +420,52 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004952b0(param_1,0x44580000,0x44828000);",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,0x43af0000);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00495340(param_1,uVar9,uVar2);",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,0x44580000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340(param_1,uVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 62,
       "match": "DAT_00581d6d",
       "severity": "mild",
-      "text": "FUN_004c8440(&DAT_00581d6d);",
+      "text": "apuStack_3c[0] = &DAT_00581d6d;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040a000(param_1);",
+      "text": "apuStack_3c[0] = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = (float10)*(float *)(param_1 + 0x178);",
+      "text": "fVar8 = (float10)round((float10)*(float *)(param_1 + 0x178));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_1 + 0x480);",
@@ -473,23 +473,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = FUN_00454530(param_1 + 0x17c,local_14);",
+      "text": "uVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x17c,local_18)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar4 = (uint *)FUN_0040a240(param_1,local_38,&local_20);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,apuStack_3c,&local_24);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((uint *)(param_1 + 0x488) != puVar4) {",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x488) = *puVar4;",
@@ -505,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x48c) = puVar4[1];",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x490) = puVar4[2];",

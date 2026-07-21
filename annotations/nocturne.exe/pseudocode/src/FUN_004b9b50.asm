@@ -8,7 +8,7 @@
 ;   string s_killEvent_00585ff8
 ;
 ; Called Functions:
-;   FUN_0040c6d0
+;   core_actor.cpp_archiveString_FUN_0040c6d0
 ;   FUN_004eed10
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
     PUSH 0x585ff8                       ; 004b9b61 | = "killEvent"
     ADD EAX,0x1f570                     ; 004b9b66
     PUSH EAX                            ; 004b9b6b
-    CALL FUN_0040c6d0                   ; 004b9b6c
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c6d0()
+    CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004b9b6c
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
     ADD ESP,0x8                         ; 004b9b71
     RET                                 ; 004b9b74
 

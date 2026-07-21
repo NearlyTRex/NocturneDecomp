@@ -20,13 +20,13 @@ void FUN_004b4800(int param_1)
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);
   iVar1 = FUN_004bee60(param_1 + 0x1f5a0,0);
-  iVar1 = FUN_004efdd0(iVar1 + -0x138e0,0);
-  iVar1 = FUN_0040fe50(iVar1 + -0x88fc,0);
-  iVar1 = FUN_0040fe30(iVar1 + -0x4b0,0);
-  iVar1 = FUN_0040fe10(iVar1 + -0x20c,0);
-  iVar1 = FUN_0040fe10(iVar1 + -0xb4,0);
-  iVar1 = FUN_00438250(iVar1 + -0x1c8,0);
-  iVar1 = FUN_0051b6e0(iVar1 + -0x293c,0);
-  FUN_00409ea0(iVar1 + -0x150,1);
+  iVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0(iVar1 + -0x138e0,0);
+  iVar1 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(iVar1 + -0x88fc,0);
+  iVar1 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30(iVar1 + -0x4b0,0);
+  iVar1 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(iVar1 + -0x20c,0);
+  iVar1 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(iVar1 + -0xb4,0);
+  iVar1 = core_cloth_cpp_CClothList_dtor_FUN_00438250(iVar1 + -0x1c8,0);
+  iVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(iVar1 + -0x293c,0);
+  core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(iVar1 + -0x150,1);
   return;
 }

@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 1869,
+    "complexity_score": 1875,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 384,
+    "pseudocode_lines": 390,
     "suspect_count": 145,
     "suspect_types": [
       "param_count_too_few",
@@ -138,7 +138,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1201
+    "total_lines": 1207
   },
   "cross_references": [
     {
@@ -150,13 +150,13 @@
     {
       "addr": "004cb2d0",
       "from_addr": "004cb513",
-      "name": "FUN_004cb2d0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00554750",
       "from_addr": "005548e5",
-      "name": "FUN_00554750",
+      "name": "core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -175,59 +175,59 @@
   },
   "function_calls": [
     {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
       "addr": "0040a220",
       "is_variadic": false,
-      "name": "FUN_0040a220"
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220"
     },
     {
       "addr": "0040a290",
       "is_variadic": false,
-      "name": "FUN_0040a290"
-    },
-    {
-      "addr": "0040d890",
-      "is_variadic": false,
-      "name": "FUN_0040d890"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
     },
     {
       "addr": "0048b370",
       "is_variadic": false,
-      "name": "FUN_0048b370"
-    },
-    {
-      "addr": "0050fb00",
-      "is_variadic": false,
-      "name": "FUN_0050fb00"
-    },
-    {
-      "addr": "005113e0",
-      "is_variadic": false,
-      "name": "FUN_005113e0"
-    },
-    {
-      "addr": "00511590",
-      "is_variadic": false,
-      "name": "FUN_00511590"
-    },
-    {
-      "addr": "00511750",
-      "is_variadic": false,
-      "name": "FUN_00511750"
+      "name": "core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370"
     },
     {
       "addr": "00511780",
       "is_variadic": false,
-      "name": "FUN_00511780"
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511750",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00511750"
+    },
+    {
+      "addr": "00511590",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590"
+    },
+    {
+      "addr": "005113e0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0"
+    },
+    {
+      "addr": "0050fb00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00"
     },
     {
       "addr": "00511840",
       "is_variadic": false,
-      "name": "FUN_00511840"
+      "name": "core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00511840"
     },
     {
       "addr": "00565ca4",
       "is_variadic": false,
-      "name": "FUN_00565ca4"
+      "name": "crt_math.c_acos_FUN_00565ca4"
     }
   ],
   "globals": [
@@ -304,7 +304,7 @@
       {
         "call_addr": "005548e5",
         "call_type": "direct",
-        "caller": "FUN_00554750",
+        "caller": "core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,7 +330,7 @@
       {
         "call_addr": "004cb513",
         "call_type": "direct",
-        "caller": "FUN_004cb2d0",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1465,84 +1465,84 @@
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 219,
+          "line": 222,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 219,
+          "line": 222,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 220,
+          "line": 223,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 220,
+          "line": 223,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 225,
+          "line": 229,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 225,
+          "line": 229,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 226,
+          "line": 230,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 226,
+          "line": 230,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 231,
+          "line": 236,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 231,
+          "line": 236,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 232,
+          "line": 237,
           "message": "The address of local variable 'local_23c' is accessed at non-zero index.",
           "severity": "error"
         },
         {
           "check_id": "objectIndex",
           "column": 19,
-          "line": 232,
+          "line": 237,
           "message": "The address of local variable 'local_1e8' is accessed at non-zero index.",
           "severity": "error"
         }
@@ -1690,39 +1690,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 155,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_00511840(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_00511840(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_00511840(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_00511840(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
+      "text": "(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 155,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 156,
       "match": "param_2",
       "severity": "mild",
       "text": "local_e0 = *param_2;",
@@ -1730,7 +1730,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 159,
       "match": "param_3",
       "severity": "mild",
       "text": "local_134 = local_e0 + *param_3;",
@@ -1738,7 +1738,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 160,
       "match": "param_3",
       "severity": "mild",
       "text": "local_130 = local_dc + param_3[1];",
@@ -1746,7 +1746,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 161,
       "match": "param_3",
       "severity": "mild",
       "text": "local_12c = local_d8 + param_3[2];",
@@ -1754,7 +1754,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 166,
       "match": "param_3",
       "severity": "mild",
       "text": "local_110 = -*param_3;",
@@ -1762,7 +1762,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 167,
       "match": "param_3",
       "severity": "mild",
       "text": "local_10c = -param_3[1];",
@@ -1770,7 +1770,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 168,
       "match": "param_3",
       "severity": "mild",
       "text": "local_108 = -param_3[2];",
@@ -1778,7 +1778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 188,
       "match": "param_3",
       "severity": "mild",
       "text": "local_128 = *param_3 * (float)local_24;",
@@ -1786,7 +1786,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 189,
       "match": "param_3",
       "severity": "mild",
       "text": "local_124 = param_3[1] * (float)local_24;",
@@ -1794,7 +1794,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 188,
+      "line": 190,
       "match": "param_3",
       "severity": "mild",
       "text": "local_120 = (float)local_24 * param_3[2];",
@@ -1802,7 +1802,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 189,
+      "line": 191,
       "match": "param_2",
       "severity": "mild",
       "text": "local_140 = *param_2 + local_128;",
@@ -1810,7 +1810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 190,
+      "line": 192,
       "match": "param_2",
       "severity": "mild",
       "text": "local_13c = param_2[1] + local_124;",
@@ -1818,7 +1818,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 193,
       "match": "param_2",
       "severity": "mild",
       "text": "local_138 = param_2[2] + local_120;",
@@ -1826,7 +1826,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 206,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[0x12] = 0.0;",
@@ -1834,7 +1834,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 207,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[0x13] = 0.0;",
@@ -1842,7 +1842,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 208,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[0x14] = 0.0;",
@@ -1850,15 +1850,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 209,
+      "line": 212,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar3 = (float *)FUN_0040a290(iVar1,local_c8,param_2);",
+      "text": "(iVar1,local_c8,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 232,
       "match": "param_5",
       "severity": "mild",
       "text": "if ((((param_5 == 0) && (param_4[6] != 0.0)) &&",
@@ -1866,7 +1866,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 232,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((((param_5 == 0) && (param_4[6] != 0.0)) &&",
@@ -1874,23 +1874,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 228,
+      "line": 233,
       "match": "DAT_00765a98",
       "severity": "mild",
-      "text": "(iVar4 = FUN_0040d890(iVar1,DAT_00765a98), iVar4 != 0)) &&",
+      "text": "(iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,DAT_00765a98), iVar4 != 0))",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 229,
+      "line": 234,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {",
+      "text": "&& (iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 230,
+      "line": 235,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "param_4[4] = 3.57331e-43;",
@@ -1898,7 +1898,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 230,
+      "line": 235,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[4] = 3.57331e-43;",
@@ -1906,7 +1906,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 231,
+      "line": 236,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[5] = 0.0;",
@@ -1914,7 +1914,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 232,
+      "line": 237,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "param_4[3] = 3.57331e-43;",
@@ -1922,7 +1922,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 237,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[3] = 3.57331e-43;",
@@ -1930,7 +1930,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 234,
+      "line": 239,
       "match": "param_3",
       "severity": "mild",
       "text": "local_ec = *param_3;",
@@ -1938,7 +1938,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 254,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar2 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
@@ -1946,7 +1946,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 254,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar2 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
@@ -1954,34 +1954,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 254,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar2 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 264,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[0x11] = local_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 265,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xac))(iVar1,param_4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 265,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xac))(iVar1,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -1989,12 +1965,36 @@
       "line": 268,
       "match": "param_4",
       "severity": "mild",
+      "text": "param_4[0x11] = local_2c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 269,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xac))(iVar1,param_4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 269,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xac))(iVar1,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 272,
+      "match": "param_4",
+      "severity": "mild",
       "text": "if (param_4[7] != 0.0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 269,
+      "line": 273,
       "match": "param_4",
       "severity": "mild",
       "text": "local_28 = *param_4;",
@@ -2002,7 +2002,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 271,
+      "line": 275,
       "match": "param_4",
       "severity": "mild",
       "text": "if (0.0 < param_4[0x14]) {",
@@ -2010,7 +2010,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 272,
+      "line": 276,
       "match": "param_3",
       "severity": "mild",
       "text": "local_30 = (local_9c * param_3[2] + local_a4 * *param_3 + local_a0 * param_3[1]) *",
@@ -2018,7 +2018,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 272,
+      "line": 276,
       "match": "param_3",
       "severity": "mild",
       "text": "local_30 = (local_9c * param_3[2] + local_a4 * *param_3 + local_a0 * param_3[1]) *",
@@ -2026,7 +2026,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 272,
+      "line": 276,
       "match": "param_3",
       "severity": "mild",
       "text": "local_30 = (local_9c * param_3[2] + local_a4 * *param_3 + local_a0 * param_3[1]) *",
@@ -2034,7 +2034,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
+      "line": 281,
       "match": "param_3",
       "severity": "mild",
       "text": "local_bc = local_d4 - *param_3;",
@@ -2042,7 +2042,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 278,
+      "line": 282,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b8 = local_d0 - param_3[1];",
@@ -2050,7 +2050,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 280,
+      "line": 284,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4 = local_cc - param_3[2];",
@@ -2058,106 +2058,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 292,
+      "line": 297,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 293,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4],param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 293,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4],param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 293,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4],param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 293,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4],param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 294,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*local_1c,*local_34,*local_3c,*local_18,*local_38,*local_44,param_4[0x11],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 295,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[0x12],param_4[0x13],param_4[0x14]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 295,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[0x12],param_4[0x13],param_4[0x14]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 295,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[0x12],param_4[0x13],param_4[0x14]);",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
       "type": "unnamed_param"
     },
     {
@@ -2165,7 +2069,39 @@
       "line": 297,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_23c = *param_4;",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]",
       "type": "unnamed_param"
     },
     {
@@ -2173,7 +2109,23 @@
       "line": 298,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_238 = param_4[1];",
+      "text": ",param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,*local_1c,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 298,
+      "match": "param_4",
+      "severity": "mild",
+      "text": ",param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,*local_1c,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 298,
+      "match": "param_4",
+      "severity": "mild",
+      "text": ",param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,*local_1c,",
       "type": "unnamed_param"
     },
     {
@@ -2181,7 +2133,15 @@
       "line": 299,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_234 = param_4[2];",
+      "text": "*local_34,*local_3c,*local_18,*local_38,*local_44,param_4[0x11],param_4[0x12],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 299,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*local_34,*local_3c,*local_18,*local_38,*local_44,param_4[0x11],param_4[0x12],",
       "type": "unnamed_param"
     },
     {
@@ -2189,15 +2149,15 @@
       "line": 300,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_230 = param_4[3];",
+      "text": "param_4[0x13],param_4[0x14]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 301,
+      "line": 300,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_22c = param_4[4];",
+      "text": "param_4[0x13],param_4[0x14]);",
       "type": "unnamed_param"
     },
     {
@@ -2205,7 +2165,7 @@
       "line": 302,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_228 = param_4[5];",
+      "text": "local_23c = *param_4;",
       "type": "unnamed_param"
     },
     {
@@ -2213,7 +2173,7 @@
       "line": 303,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_224 = param_4[6];",
+      "text": "local_238 = param_4[1];",
       "type": "unnamed_param"
     },
     {
@@ -2221,12 +2181,52 @@
       "line": 304,
       "match": "param_4",
       "severity": "mild",
+      "text": "local_234 = param_4[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 305,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_230 = param_4[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 306,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_22c = param_4[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 307,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_228 = param_4[5];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 308,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_224 = param_4[6];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 309,
+      "match": "param_4",
+      "severity": "mild",
       "text": "local_220 = param_4[7];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 314,
+      "line": 319,
       "match": "param_4",
       "severity": "mild",
       "text": "local_1f8 = param_4[0x11];",
@@ -2234,7 +2234,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 320,
       "match": "param_4",
       "severity": "mild",
       "text": "local_1f4 = param_4[0x12];",
@@ -2242,7 +2242,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 316,
+      "line": 321,
       "match": "param_4",
       "severity": "mild",
       "text": "local_1f0 = param_4[0x13];",
@@ -2250,7 +2250,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 317,
+      "line": 322,
       "match": "param_4",
       "severity": "mild",
       "text": "local_1ec = param_4[0x14];",
@@ -2258,7 +2258,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 323,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_0048b6f0(param_1,&local_134,&local_bc,&local_23c,local_54);",
@@ -2266,7 +2266,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 320,
+      "line": 325,
       "match": "param_4",
       "severity": "mild",
       "text": "local_28 = (1.0 - param_4[0x14]) * (float)_DAT_005814e4 * local_28;",
@@ -2274,7 +2274,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 322,
+      "line": 327,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4[0x12] <= 0.0) goto LAB_0048bfa9;",
@@ -2282,7 +2282,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 328,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_4[0x12] != 1.0) || (param_4[0x13] != param_4[0x11])) break;",
@@ -2290,7 +2290,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 328,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_4[0x12] != 1.0) || (param_4[0x13] != param_4[0x11])) break;",
@@ -2298,7 +2298,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 328,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_4[0x12] != 1.0) || (param_4[0x13] != param_4[0x11])) break;",
@@ -2306,7 +2306,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 326,
+      "line": 331,
       "match": "param_3",
       "severity": "mild",
       "text": "local_104 = *param_3;",
@@ -2314,7 +2314,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 332,
       "match": "param_3",
       "severity": "mild",
       "text": "local_100 = param_3[1];",
@@ -2322,7 +2322,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 333,
       "match": "param_3",
       "severity": "mild",
       "text": "local_fc = param_3[2];",
@@ -2330,7 +2330,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 334,
       "match": "param_4",
       "severity": "mild",
       "text": "local_190 = param_4[1];",
@@ -2338,7 +2338,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 335,
       "match": "param_4",
       "severity": "mild",
       "text": "local_18c = param_4[2];",
@@ -2346,7 +2346,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 331,
+      "line": 336,
       "match": "param_4",
       "severity": "mild",
       "text": "local_188 = param_4[3];",
@@ -2354,7 +2354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 332,
+      "line": 337,
       "match": "param_4",
       "severity": "mild",
       "text": "local_184 = param_4[4];",
@@ -2362,7 +2362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 338,
       "match": "param_4",
       "severity": "mild",
       "text": "local_180 = param_4[5];",
@@ -2370,7 +2370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 339,
       "match": "param_4",
       "severity": "mild",
       "text": "local_17c = param_4[6];",
@@ -2378,7 +2378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 335,
+      "line": 340,
       "match": "param_4",
       "severity": "mild",
       "text": "local_178 = param_4[7];",
@@ -2386,7 +2386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 336,
+      "line": 341,
       "match": "param_4",
       "severity": "mild",
       "text": "local_7c = param_4 + 8;",
@@ -2394,7 +2394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 338,
+      "line": 343,
       "match": "param_4",
       "severity": "mild",
       "text": "local_78 = param_4 + 9;",
@@ -2402,7 +2402,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 340,
+      "line": 345,
       "match": "param_4",
       "severity": "mild",
       "text": "local_74 = param_4 + 10;",
@@ -2410,7 +2410,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 347,
       "match": "param_4",
       "severity": "mild",
       "text": "local_168 = param_4[0xb];",
@@ -2418,7 +2418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 343,
+      "line": 348,
       "match": "param_4",
       "severity": "mild",
       "text": "local_64 = param_4 + 0xc;",
@@ -2426,7 +2426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 345,
+      "line": 350,
       "match": "param_4",
       "severity": "mild",
       "text": "local_70 = param_4 + 0xd;",
@@ -2434,7 +2434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 352,
       "match": "param_4",
       "severity": "mild",
       "text": "local_6c = param_4 + 0xe;",
@@ -2442,7 +2442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 349,
+      "line": 354,
       "match": "param_4",
       "severity": "mild",
       "text": "local_68 = param_4 + 0xf;",
@@ -2450,7 +2450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 351,
+      "line": 356,
       "match": "param_4",
       "severity": "mild",
       "text": "local_14 = param_4 + 0x10;",
@@ -2458,7 +2458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 353,
+      "line": 358,
       "match": "param_4",
       "severity": "mild",
       "text": "local_150 = param_4[0x11];",
@@ -2466,7 +2466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 354,
+      "line": 359,
       "match": "param_4",
       "severity": "mild",
       "text": "local_14c = param_4[0x12];",
@@ -2474,7 +2474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 355,
+      "line": 360,
       "match": "param_4",
       "severity": "mild",
       "text": "local_148 = param_4[0x13];",
@@ -2482,7 +2482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 356,
+      "line": 361,
       "match": "param_4",
       "severity": "mild",
       "text": "local_144 = param_4[0x14];",
@@ -2490,34 +2490,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 357,
+      "line": 362,
       "match": "param_4",
       "severity": "mild",
       "text": "local_194 = *param_4 * param_4[0x12];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 357,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_194 = *param_4 * param_4[0x12];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 360,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1e8 = *param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 361,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1e4 = param_4[1];",
       "type": "unnamed_param"
     },
     {
@@ -2525,23 +2501,7 @@
       "line": 362,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_1e0 = param_4[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 363,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1dc = param_4[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1d8 = param_4[4];",
+      "text": "local_194 = *param_4 * param_4[0x12];",
       "type": "unnamed_param"
     },
     {
@@ -2549,7 +2509,7 @@
       "line": 365,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_1d4 = param_4[5];",
+      "text": "local_1e8 = *param_4;",
       "type": "unnamed_param"
     },
     {
@@ -2557,7 +2517,7 @@
       "line": 366,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_1d0 = param_4[6];",
+      "text": "local_1e4 = param_4[1];",
       "type": "unnamed_param"
     },
     {
@@ -2565,7 +2525,31 @@
       "line": 367,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_1cc = param_4[7];",
+      "text": "local_1e0 = param_4[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 368,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_1dc = param_4[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 369,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_1d8 = param_4[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 370,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_1d4 = param_4[5];",
       "type": "unnamed_param"
     },
     {
@@ -2573,55 +2557,23 @@
       "line": 371,
       "match": "param_4",
       "severity": "mild",
+      "text": "local_1d0 = param_4[6];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 372,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_1cc = param_4[7];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 376,
+      "match": "param_4",
+      "severity": "mild",
       "text": "local_1bc = param_4[0xb];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 377,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1a4 = param_4[0x11];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 378,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1a0 = param_4[0x12];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 379,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_19c = param_4[0x13];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 380,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_198 = param_4[0x14];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 381,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 381,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
       "type": "unnamed_param"
     },
     {
@@ -2629,15 +2581,15 @@
       "line": 382,
       "match": "param_4",
       "severity": "mild",
-      "text": "local_28 = (1.0 - param_4[0x12]) * (float)_DAT_005814e4 * local_28;",
+      "text": "local_1a4 = param_4[0x11];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 384,
-      "match": "param_1",
+      "line": 383,
+      "match": "param_4",
       "severity": "mild",
-      "text": "FUN_0048b370(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "text": "local_1a0 = param_4[0x12];",
       "type": "unnamed_param"
     },
     {
@@ -2645,28 +2597,76 @@
       "line": 384,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_0048b370(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 384,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_0048b370(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 384,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_0048b370(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "text": "local_19c = param_4[0x13];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 385,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_198 = param_4[0x14];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 386,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 386,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 387,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_28 = (1.0 - param_4[0x12]) * (float)_DAT_005814e4 * local_28;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 391,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[5],param_4[1]);",
@@ -2674,7 +2674,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 385,
+      "line": 391,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[5],param_4[1]);",
@@ -2682,7 +2682,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a4 != &local_110)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 167,
+      "line": 169,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_a4 != &local_110) {",
@@ -2690,7 +2690,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_140)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 192,
+      "line": 194,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_134 != &local_140) {",
@@ -2698,7 +2698,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_bc != &local_f8)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 283,
+      "line": 287,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_bc != &local_f8) {",
@@ -2717,7 +2717,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 219,
+      "line": 222,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_20[1] = pfVar3[1];",
@@ -2725,7 +2725,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 219,
+      "line": 222,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_20[1] = pfVar3[1];",
@@ -2733,7 +2733,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 220,
+      "line": 223,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_20[2] = pfVar3[2];",
@@ -2741,7 +2741,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 220,
+      "line": 223,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_20[2] = pfVar3[2];",
@@ -2749,7 +2749,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 225,
+      "line": 229,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_1c[1] = pfVar3[1];",
@@ -2757,7 +2757,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 225,
+      "line": 229,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_1c[1] = pfVar3[1];",
@@ -2765,7 +2765,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 226,
+      "line": 230,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_1c[2] = pfVar3[2];",
@@ -2773,7 +2773,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 226,
+      "line": 230,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_1c[2] = pfVar3[2];",
@@ -2781,7 +2781,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 231,
+      "line": 236,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_18[1] = pfVar3[1];",
@@ -2789,7 +2789,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 231,
+      "line": 236,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_18[1] = pfVar3[1];",
@@ -2797,7 +2797,7 @@
     },
     {
       "description": "The address of local variable 'local_23c' is accessed at non-zero index.",
-      "line": 232,
+      "line": 237,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_18[2] = pfVar3[2];",
@@ -2805,7 +2805,7 @@
     },
     {
       "description": "The address of local variable 'local_1e8' is accessed at non-zero index.",
-      "line": 232,
+      "line": 237,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_18[2] = pfVar3[2];",

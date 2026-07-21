@@ -16,13 +16,13 @@
 ;   undefined4 DAT_006af5f8
 ;
 ; Called Functions:
-;   FUN_00401710
-;   FUN_00431530
-;   FUN_00431630
-;   FUN_00431730
-;   FUN_00431830
-;   FUN_004cd300
-;   FUN_004f9870
+;   engine_2d.c_drawLine3D_FUN_00401710
+;   engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
+;   engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
+;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
+;   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+;   engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300
+;   engine_prim.c_prepareDepthBuffer_FUN_004f9870
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 004095c5
     LEA EDI,[ESP + 0x80]                ; 004095c6
     LEA ESI,[ESP + 0xc]                 ; 004095cd
-    CALL FUN_00431530                   ; 004095d1
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined FUN_00431530()
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 004095d1
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
     MOV ECX,0xc                         ; 004095d6
     ADD ESP,0xc                         ; 004095db
     MOVSD.REP ES:EDI,ESI                ; 004095de
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 004095fa
     LEA EDI,[ESP + 0x80]                ; 004095fb
     LEA ESI,[ESP + 0xc]                 ; 00409602
-    CALL FUN_00431630                   ; 00409606
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined FUN_00431630()
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 00409606
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
     MOV ECX,0xc                         ; 0040960b
     ADD ESP,0xc                         ; 00409610
     MOVSD.REP ES:EDI,ESI                ; 00409613
@@ -92,8 +92,8 @@ section .text
     PUSH EAX                            ; 0040962b
     LEA EDI,[ESP + 0x80]                ; 0040962c
     LEA ESI,[ESP + 0xc]                 ; 00409633
-    CALL FUN_00431730                   ; 00409637
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined FUN_00431730()
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00409637
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
     MOV ECX,0xc                         ; 0040963c
     ADD ESP,0xc                         ; 00409641
     MOVSD.REP ES:EDI,ESI                ; 00409644
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 00409660
     LEA EDI,[ESP + 0x80]                ; 00409661
     LEA ESI,[ESP + 0xc]                 ; 00409668
-    CALL FUN_00431830                   ; 0040966c
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined FUN_00431830()
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 0040966c
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
     MOV ECX,0xc                         ; 00409671
     ADD ESP,0xc                         ; 00409676
     MOVSD.REP ES:EDI,ESI                ; 00409679
@@ -130,8 +130,8 @@ section .text
     PUSH EAX                            ; 00409691
     LEA EDI,[ESP + 0x50]                ; 00409692
     LEA ESI,[ESP + 0xc]                 ; 00409696
-    CALL FUN_00431530                   ; 0040969a
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined FUN_00431530()
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 0040969a
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
     MOV ECX,0xc                         ; 0040969f
     ADD ESP,0xc                         ; 004096a4
     MOVSD.REP ES:EDI,ESI                ; 004096a7
@@ -150,8 +150,8 @@ section .text
     PUSH EAX                            ; 004096c3
     LEA EDI,[ESP + 0x50]                ; 004096c4
     LEA ESI,[ESP + 0xc]                 ; 004096c8
-    CALL FUN_00431630                   ; 004096cc
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined FUN_00431630()
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 004096cc
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
     MOV ECX,0xc                         ; 004096d1
     ADD ESP,0xc                         ; 004096d6
     MOVSD.REP ES:EDI,ESI                ; 004096d9
@@ -168,8 +168,8 @@ section .text
     PUSH EAX                            ; 004096f1
     LEA EDI,[ESP + 0x50]                ; 004096f2
     LEA ESI,[ESP + 0xc]                 ; 004096f6
-    CALL FUN_00431730                   ; 004096fa
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined FUN_00431730()
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 004096fa
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
     MOV ECX,0xc                         ; 004096ff
     ADD ESP,0xc                         ; 00409704
     MOVSD.REP ES:EDI,ESI                ; 00409707
@@ -188,8 +188,8 @@ section .text
     PUSH EAX                            ; 00409723
     LEA EDI,[ESP + 0x50]                ; 00409724
     LEA ESI,[ESP + 0xc]                 ; 00409728
-    CALL FUN_00431830                   ; 0040972c
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined FUN_00431830()
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 0040972c
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
     MOV ECX,0xc                         ; 00409731
     ADD ESP,0xc                         ; 00409736
     MOVSD.REP ES:EDI,ESI                ; 00409739
@@ -263,19 +263,19 @@ section .text
     MOV EDI,0x6af5e4                    ; 004097c3
     PUSH 0x4e1e                         ; 004097c8
     MOVSD.REP ES:EDI,ESI                ; 004097cd
-    CALL FUN_004cd300                   ; 004097cf
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd300()
+    CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004097cf
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
     ADD ESP,0x4                         ; 004097d4
     PUSH 0x4e1f                         ; 004097d7
-    CALL FUN_004cd300                   ; 004097dc
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd300()
+    CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004097dc
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
     ADD ESP,0x4                         ; 004097e1
     MOV EAX,0x5c5014                    ; 004097e4
     PUSH 0x2                            ; 004097e9
     ADD EAX,0xea5a0                     ; 004097eb
     PUSH EAX                            ; 004097f0
-    CALL FUN_004f9870                   ; 004097f1
-        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9870()
+    CALL engine_prim.c_prepareDepthBuffer_FUN_004f9870 ; 004097f1
+        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_004f9870()
     ADD ESP,0x8                         ; 004097f6
     MOV ECX,dword ptr [0x006af5ec]      ; 004097f9 | DAT_006af5ec
     MOV EAX,[0x006af5f8]                ; 004097ff | DAT_006af5f8
@@ -293,8 +293,8 @@ section .text
     MOV EAX,[0x006af5c4]                ; 00409822 | DAT_006af5c4
     SAR EAX,0x10                        ; 00409827
     PUSH EAX                            ; 0040982a
-    CALL FUN_00401710                   ; 0040982b
-        ;   XREF to: 00401710 (UNCONDITIONAL_CALL)  ; undefined FUN_00401710()
+    CALL engine_2d.c_drawLine3D_FUN_00401710 ; 0040982b
+        ;   XREF to: 00401710 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine3D_FUN_00401710()
     ADD ESP,0x18                        ; 00409830
     ADD ESP,0x30                        ; 00409833
     POP EBP                             ; 00409836

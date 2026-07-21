@@ -25,13 +25,13 @@
 ;   undefined4 DAT_01fb8614
 ;
 ; Called Functions:
+;   core_gore.cpp_CGore_createFootstep_FUN_004b06b0
+;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730
+;   core_ground.cpp_getGroundTypeCode_FUN_004b11b0
+;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50
+;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004940d0
-;   FUN_004b06b0
-;   FUN_004b0730
-;   FUN_004b11b0
-;   FUN_00511b50
-;   FUN_0052ea60
-;   FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_0040dbc2
     MOV EDX,dword ptr [0x005be368]      ; 0040dbc3 | DAT_005be368
     PUSH EDX                            ; 0040dbc9 | DAT_01e57284
-    CALL FUN_00511b50                   ; 0040dbca
-        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; undefined FUN_00511b50()
+    CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0040dbca
+        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50()
     ADD ESP,0x8                         ; 0040dbcf
     TEST EAX,EAX                        ; 0040dbd2
     JZ 0x0040dbdb                       ; 0040dbd4
@@ -95,8 +95,8 @@ section .text
     PUSH ESI                            ; 0040dbe2
     MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | DAT_005b96c4
     PUSH ECX                            ; 0040dbe9
-    CALL FUN_004b0730                   ; 0040dbea
-        ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0730()
+    CALL core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730 ; 0040dbea
+        ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730()
     ADD ESP,0xc                         ; 0040dbef
     TEST EAX,EAX                        ; 0040dbf2
     JZ 0x0040dcb8                       ; 0040dbf4
@@ -113,8 +113,8 @@ section .text
     PUSH ESI                            ; 0040dc18
     MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | DAT_005b96c4
     PUSH EBP                            ; 0040dc1f
-    CALL FUN_004b06b0                   ; 0040dc20
-        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b06b0()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dc20
+        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
     MOV EAX,dword ptr [EBX + 0x114]     ; 0040dc25
     SUB EAX,0x2000                      ; 0040dc2b
     ADD ESP,0x18                        ; 0040dc30
@@ -144,8 +144,8 @@ section .text
     SUB ESP,0x8                         ; 0040dc71
     FSTP double ptr [ESP]               ; 0040dc74
     PUSH EDI                            ; 0040dc77
-    CALL FUN_004b11b0                   ; 0040dc78
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b11b0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0040dc78
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
     ADD ESP,0x4                         ; 0040dc7d
     PUSH EAX                            ; 0040dc80
     LEA EAX,[EBX + 0x11c]               ; 0040dc81
@@ -153,8 +153,8 @@ section .text
     PUSH 0x578021                       ; 0040dc88 | = "footstep-%s-!-%s-?.wav @ %f"
     LEA EAX,[ESP + 0x14]                ; 0040dc8d
     PUSH EAX                            ; 0040dc91
-    CALL FUN_00563c90                   ; 0040dc92
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040dc92
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x18                        ; 0040dc97
     PUSH ESI                            ; 0040dc9a
     LEA EAX,[ESP + 0x4]                 ; 0040dc9b
@@ -162,8 +162,8 @@ section .text
     PUSH EBX                            ; 0040dca0
     MOV ECX,dword ptr [0x005bed68]      ; 0040dca1 | DAT_005bed68
     PUSH ECX                            ; 0040dca7
-    CALL FUN_0052ea60                   ; 0040dca8
-        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ea60()
+    CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0040dca8
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
     ADD ESP,0x10                        ; 0040dcad
     ADD ESP,0x7c                        ; 0040dcb0
     POP EBP                             ; 0040dcb3
@@ -186,8 +186,8 @@ section .text
     PUSH ESI                            ; 0040dcd9
     MOV EAX,[0x005b96c4]                ; 0040dcda | DAT_005b96c4
     PUSH EAX                            ; 0040dcdf
-    CALL FUN_004b06b0                   ; 0040dce0
-        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b06b0()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dce0
+        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
     ADD ESP,0x18                        ; 0040dce5
     JMP 0x0040dc41                      ; 0040dce8
         ;   XREF to: 0040dc41 (UNCONDITIONAL_JUMP)  ; LAB_0040dc41

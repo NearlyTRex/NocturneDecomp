@@ -8,16 +8,16 @@
 ;   undefined4 DAT_0059a700
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0040fe10
-;   FUN_0040fe30
-;   FUN_0040fe50
-;   FUN_00438250
-;   FUN_004e0070
-;   FUN_0051b6e0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   core_armour.cpp_CFlame_arrdtor_FUN_0040fe50
+;   core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10
+;   core_armour.cpp_SFire_arrdtor_FUN_0040fe30
+;   core_cloth.cpp_CClothList_dtor_FUN_00438250
+;   core_morph.cpp_CMorph_dtor_FUN_004e0070
+;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -32,50 +32,50 @@ section .text
     PUSH 0x0                            ; 00415a40
     ADD EBX,0xbea8                      ; 00415a42
     PUSH EBX                            ; 00415a48
-    CALL FUN_004e0070                   ; 00415a49
-        ;   XREF to: 004e0070 (UNCONDITIONAL_CALL)  ; undefined FUN_004e0070()
+    CALL core_morph.cpp_CMorph_dtor_FUN_004e0070 ; 00415a49
+        ;   XREF to: 004e0070 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_dtor_FUN_004e0070()
     ADD ESP,0x8                         ; 00415a4e
     PUSH 0x0                            ; 00415a51
     SUB EAX,0x8ae4                      ; 00415a53
     PUSH EAX                            ; 00415a58
-    CALL FUN_0040fe50                   ; 00415a59
-        ;   XREF to: 0040fe50 (UNCONDITIONAL_CALL)  ; undefined FUN_0040fe50()
+    CALL core_armour.cpp_CFlame_arrdtor_FUN_0040fe50 ; 00415a59
+        ;   XREF to: 0040fe50 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_CFlame_arrdtor_FUN_0040fe50()
     ADD ESP,0x8                         ; 00415a5e
     PUSH 0x0                            ; 00415a61
     SUB EAX,0x4b0                       ; 00415a63
     PUSH EAX                            ; 00415a68
-    CALL FUN_0040fe30                   ; 00415a69
-        ;   XREF to: 0040fe30 (UNCONDITIONAL_CALL)  ; undefined FUN_0040fe30()
+    CALL core_armour.cpp_SFire_arrdtor_FUN_0040fe30 ; 00415a69
+        ;   XREF to: 0040fe30 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_SFire_arrdtor_FUN_0040fe30()
     ADD ESP,0x8                         ; 00415a6e
     PUSH 0x0                            ; 00415a71
     SUB EAX,0x20c                       ; 00415a73
     PUSH EAX                            ; 00415a78
-    CALL FUN_0040fe10                   ; 00415a79
-        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; undefined FUN_0040fe10()
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 ; 00415a79
+        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10()
     ADD ESP,0x8                         ; 00415a7e
     PUSH 0x0                            ; 00415a81
     SUB EAX,0xb4                        ; 00415a83
     PUSH EAX                            ; 00415a88
-    CALL FUN_0040fe10                   ; 00415a89
-        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; undefined FUN_0040fe10()
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 ; 00415a89
+        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10()
     ADD ESP,0x8                         ; 00415a8e
     PUSH 0x0                            ; 00415a91
     SUB EAX,0x1c8                       ; 00415a93
     PUSH EAX                            ; 00415a98
-    CALL FUN_00438250                   ; 00415a99
-        ;   XREF to: 00438250 (UNCONDITIONAL_CALL)  ; undefined FUN_00438250()
+    CALL core_cloth.cpp_CClothList_dtor_FUN_00438250 ; 00415a99
+        ;   XREF to: 00438250 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_dtor_FUN_00438250()
     ADD ESP,0x8                         ; 00415a9e
     PUSH 0x0                            ; 00415aa1
     SUB EAX,0x293c                      ; 00415aa3
     PUSH EAX                            ; 00415aa8
-    CALL FUN_0051b6e0                   ; 00415aa9
-        ;   XREF to: 0051b6e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051b6e0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0 ; 00415aa9
+        ;   XREF to: 0051b6e0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0()
     ADD ESP,0x8                         ; 00415aae
     PUSH 0x1                            ; 00415ab1
     LEA EBX,[EAX + 0xfffffeb0]          ; 00415ab3
     PUSH EBX                            ; 00415ab9
-    CALL FUN_00409ea0                   ; 00415aba
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 00415aba
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 00415abf
     MOV DL,byte ptr [ESP + 0xc]         ; 00415ac2
     MOV EBX,EAX                         ; 00415ac6
@@ -88,12 +88,12 @@ section .text
     PUSH 0x59a700                       ; 00415ad1 | DAT_0059a700
         ;   Label: LAB_00415ad1
     PUSH EBX                            ; 00415ad6
-    CALL FUN_0056445f                   ; 00415ad7
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 00415ad7
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00415adc
     PUSH EAX                            ; 00415adf
-    CALL FUN_00564486                   ; 00415ae0
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00415ae0
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00415ae5
     MOV EAX,EBX                         ; 00415ae8
     POP EBX                             ; 00415aea

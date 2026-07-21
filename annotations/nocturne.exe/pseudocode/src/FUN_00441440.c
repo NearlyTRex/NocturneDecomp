@@ -29,7 +29,7 @@ int * FUN_00441440(int param_1,int *param_2)
   local_20 = param_2[2];
   local_28 = *param_2;
   local_24 = param_2[1];
-  iVar4 = FUN_004613b0(DAT_005ae704);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
   if (iVar4 == 0) {
     lVar1 = (longlong)local_24 * (longlong)*(int *)(param_1 + 0x1a8) +
             (longlong)local_28 * (longlong)*(int *)(param_1 + 0x19c) +

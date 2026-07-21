@@ -14,7 +14,8 @@ void FUN_004d6040(int param_1,float param_2)
      (param_2 = *(float *)(param_1 + 0x720) - param_2, *(float *)(param_1 + 0x720) = param_2,
      param_2 < 0.0)) {
     *(uint *)(param_1 + 0x720) = 0x3dcccccd;
-    FUN_0048ae90(0x01C08D04,param_1 + 0x20,0,0x4000,0x10000,0,0xffff);
+    core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
+              (0x01C08D04,param_1 + 0x20,0,0x4000,0x10000,0,0xffff);
     return;
   }
   return;

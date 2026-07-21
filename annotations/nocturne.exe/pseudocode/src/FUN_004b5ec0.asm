@@ -8,7 +8,7 @@
 ;   FUN_00540820 at 0054082c
 ;
 ; Called Functions:
-;   FUN_004c3280
+;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV dword ptr [EBX + 0x1fa1c],0x0   ; 004b5f09
     PUSH EAX                            ; 004b5f13
     MOV dword ptr [EBX + 0x2590],0x0    ; 004b5f14
-    CALL FUN_004c3280                   ; 004b5f1e
-        ;   XREF to: 004c3280 (UNCONDITIONAL_CALL)  ; undefined FUN_004c3280()
+    CALL core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280 ; 004b5f1e
+        ;   XREF to: 004c3280 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280()
     ADD ESP,0x8                         ; 004b5f23
     PUSH 0x0                            ; 004b5f26
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004b5f28

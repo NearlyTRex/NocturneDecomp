@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004aae00 at 004aae1e
+;   core_ghoul.cpp_CGhoul_renderBackground_FUN_004aae00 at 004aae1e
 ;
 ; Called Functions:
 ;   FUN_00426510

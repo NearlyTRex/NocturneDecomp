@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0044ac10 at 0044ac16
+;   core_dcube.cpp_CDemonCube_dtor_FUN_0044ac10 at 0044ac16
 ;
 ; Called Functions:
 ;   FUN_005638d0
-;   FUN_00564486
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
         ;   XREF to: 0044ae0d (CONDITIONAL_JUMP)  ; LAB_0044ae0d
     LEA EAX,[EDX + -0x4]                ; 0044ae01
     PUSH EAX                            ; 0044ae04
-    CALL FUN_00564486                   ; 0044ae05
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0044ae05
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0044ae0a
     MOV dword ptr [EBX + 0x24],0x0      ; 0044ae0d
         ;   Label: LAB_0044ae0d
@@ -39,8 +39,8 @@ section .text
     JZ 0x0044ae2b                       ; 0044ae19
         ;   XREF to: 0044ae2b (CONDITIONAL_JUMP)  ; LAB_0044ae2b
     PUSH ECX                            ; 0044ae1b
-    CALL FUN_00564486                   ; 0044ae1c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0044ae1c
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0044ae21
     MOV dword ptr [EBX + 0x2c],0x0      ; 0044ae24
     MOV EDI,dword ptr [EBX + 0x30]      ; 0044ae2b

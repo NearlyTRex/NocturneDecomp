@@ -28,7 +28,7 @@ void FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,i
       _DAT_01cc4804 = 0x3f0;
       FUN_004c8440("Invalid height array size.");
     }
-    piVar1 = (int *)FUN_00564c18(param_4 * 4);
+    piVar1 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);
     if (piVar1 == (int *)0x0) {
       _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
       _DAT_01cc4804 = 0x3f6;

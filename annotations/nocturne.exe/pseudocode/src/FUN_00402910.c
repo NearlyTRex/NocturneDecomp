@@ -13,7 +13,7 @@ void FUN_00402910(uint param_1,uint param_2,uint param_3)
   byte *local_c;
   
   local_c = &stack0x00000010;
-  FUN_00563a08(local_100c,param_3,&local_c);
+  _vsprintf(local_100c,param_3,&local_c);
   local_c = (byte *)0x0;
   FUN_004028b0(local_100c,param_1,param_2);
   return;

@@ -34,7 +34,7 @@ void FUN_004c85f0(void)
   _DAT_01c0399c = 0;
   _DAT_005c0f8c = 0x10000;
   _DAT_005c0f80 = 1;
-  iVar4 = FUN_00566e10();
+  iVar4 = getenv();
   if (iVar4 == 0) {
     DAT_006af628 = 3;
   }
@@ -42,39 +42,39 @@ void FUN_004c85f0(void)
     DAT_006af628 = 1;
     _DAT_01c038f0 = 1;
   }
-  iVar4 = FUN_0056568c("stderr.txt",&DAT_00587b65);
+  iVar4 = _fopen("stderr.txt",&DAT_00587b65);
   if (iVar4 != 0) {
-    FUN_00563380();
-    iVar4 = FUN_00565dd0("stderr.txt",0x1c0);
+    _fclose();
+    iVar4 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0("stderr.txt",0x1c0);
     if (iVar4 != 0) {
       _DAT_01cc4800 = "..\\core\\main.c";
       _DAT_01cc4804 = 0x28c;
       FUN_004c8440();
     }
   }
-  FUN_00565724("stderr.txt",&DAT_00587bb5,&DAT_005c18c8);
+  _freopen("stderr.txt",&DAT_00587bb5,&DAT_005c18c8);
   DAT_006af628 = 3;
   FUN_0048ee80();
   FUN_004bdb80();
   _DAT_02dc9d6c = 2;
-  FUN_004f8af0();
+  engine_pod_cpp_CPod_init_FUN_004f8af0();
   FUN_00456750();
   FUN_00456750();
   FUN_004edfc0();
-  FUN_004d9e70();
+  core_mmx_c_detectCPUFeatures_FUN_004d9e70();
   if (_DAT_01c03948 == 0) {
     _DAT_01cc4800 = "..\\core\\main.c";
     _DAT_01cc4804 = 0x2b7;
-    FUN_004ee370();
+    support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     FUN_004c8440();
   }
   pcVar10 = acStack_728;
-  FUN_004cc9d0();
+  engine_matrix_c_initializeTrigTables_FUN_004cc9d0();
   thunk_FUN_005458a0();
   FUN_00401010();
-  FUN_005587f0();
-  FUN_00559e20();
-  iVar4 = FUN_00552e00(0x280,0x1e0,0x20);
+  wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0();
+  wincore_winrun_cpp_initJoystick_FUN_00559e20();
+  iVar4 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(0x280,0x1e0,0x20);
   if (iVar4 == 0) {
     _DAT_01cc4800 = "..\\core\\main.c";
     _DAT_01cc4804 = 0x2c8;
@@ -82,7 +82,7 @@ void FUN_004c85f0(void)
   }
   FUN_0044c560();
   if (_DAT_02de20a8 < 0x3c00000) {
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     pcVar8 = acStack_528;
     do {
       cVar2 = *pcVar5;
@@ -93,7 +93,7 @@ void FUN_004c85f0(void)
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    FUN_00563c90(acStack_228,&DAT_00587cb8,(double)((float)_DAT_02de20a8 * _DAT_00587e64));
+    _sprintf(acStack_228,&DAT_00587cb8,(double)((float)_DAT_02de20a8 * _DAT_00587e64));
     pcVar8 = acStack_228;
     iVar4 = -1;
     pcVar5 = acStack_528;
@@ -115,7 +115,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -157,7 +157,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -199,7 +199,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -241,7 +241,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -283,7 +283,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = (char *)FUN_004ee370();
+    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -307,7 +307,7 @@ void FUN_004c85f0(void)
     FUN_0046fb40(0x01BCD074,acStack_528);
   }
   if (_DAT_02de20ac < 0xc800000) {
-    pcVar8 = (char *)FUN_004ee370();
+    pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     do {
       cVar2 = *pcVar8;
       *pcVar10 = cVar2;
@@ -317,7 +317,7 @@ void FUN_004c85f0(void)
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    FUN_00563c90(acStack_128,&DAT_00587d8d,(double)((float)_DAT_02de20ac * _DAT_00587e64));
+    _sprintf(acStack_128,&DAT_00587d8d,(double)((float)_DAT_02de20ac * _DAT_00587e64));
     pcVar10 = acStack_128;
     iVar4 = -1;
     pcVar8 = acStack_728;
@@ -339,7 +339,7 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = (char *)FUN_004ee370();
+    pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar10 = acStack_728;
     do {
@@ -381,7 +381,7 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = (char *)FUN_004ee370();
+    pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar10 = acStack_728;
     do {
@@ -423,7 +423,7 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = (char *)FUN_004ee370();
+    pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     iVar4 = -1;
     pcVar10 = acStack_728;
     do {
@@ -453,11 +453,11 @@ void FUN_004c85f0(void)
     puVar1[1] = 0x1e0;
     _DAT_02dc9d60 = 0;
     puVar1[2] = 0x20;
-    FUN_004cffa0();
+    core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }
   FUN_0055a510("video","opening.avi");
-  FUN_0052ee70();
-  pcVar8 = (char *)FUN_004ee370();
+  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
   pcVar10 = acStack_328;
   do {
     cVar2 = *pcVar8;
@@ -468,14 +468,14 @@ void FUN_004c85f0(void)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  FUN_00492da0(_DAT_014b9900,acStack_328);
-  FUN_004930e0(_DAT_014b9900,0x58);
-  FUN_0040e320();
-  FUN_0040e3c0(auStack_28,"fangs",0x280,0x1e0);
-  FUN_0040e710(auStack_28,0,0,0x8000);
-  FUN_00553910();
-  FUN_0040e340(auStack_28,0);
-  FUN_0052dd20();
+  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b9900,acStack_328);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_014b9900,0x58);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320();
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(auStack_28,"fangs",0x280,0x1e0);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(auStack_28,0,0,0x8000);
+  wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(auStack_28,0);
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20();
   iVar4 = 0;
   FUN_004d7e00();
   iStack_14 = 0;
@@ -483,7 +483,8 @@ void FUN_004c85f0(void)
     puVar1 = (uint *)((int)&DAT_005ad51c + iVar4);
     iVar4 = iVar4 + 4;
     iVar6 = iStack_14 + 1;
-    FUN_0044c190(*puVar1,(float)iStack_14 * (float)_DAT_00587e68 + (float)_DAT_00587e68,0);
+    core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
+              (*puVar1,(float)iStack_14 * (float)_DAT_00587e68 + (float)_DAT_00587e68,0);
     iStack_14 = iVar6;
   } while (iVar6 < 8);
   iVar6 = 0;
@@ -496,12 +497,14 @@ void FUN_004c85f0(void)
     iVar6 = iVar6 + 4;
     iVar7 = iVar4 + 1;
     iStack_14 = iVar4;
-    FUN_0044c190(*puVar1,(float)iVar4 * fVar3 + (float)_DAT_00587e70,0);
+    core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
+              (*puVar1,(float)iVar4 * fVar3 + (float)_DAT_00587e70,0);
     iVar4 = iVar7;
   } while (iVar7 < 4);
-  FUN_004ee5a0();
+  engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0();
   FUN_004940d0();
-  FUN_004e9910();
-  FUN_00559da0("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_00587e27);
+  core_netgame_cpp_CNetGame_init_FUN_004e9910();
+  wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0
+            ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_00587e27);
   return;
 }

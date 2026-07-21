@@ -17,7 +17,7 @@ int FUN_005701cf(int param_1,byte param_2)
     if ((((*(byte *)(param_1 + 0x3c) & 2) != 0) && ((*(byte *)(param_1 + 0x3c) & 1) == 0)) &&
        (iVar1 = *(int *)(param_1 + 4), iVar1 != 0)) {
       if (*(int *)(param_1 + 0x30) == 0) {
-        FUN_00564486(iVar1);
+        shape_memdbg_cpp_free_FUN_00564486(iVar1);
       }
       else {
         (**(code **)(param_1 + 0x30))(iVar1);
@@ -30,8 +30,8 @@ int FUN_005701cf(int param_1,byte param_2)
     FUN_00564494(param_1);
   }
   else {
-    uVar2 = FUN_0056445f(param_1,&DAT_005a4af0);
-    FUN_00564486(uVar2);
+    uVar2 = __vec_delete(param_1,&DAT_005a4af0);
+    shape_memdbg_cpp_free_FUN_00564486(uVar2);
   }
   return param_1;
 }

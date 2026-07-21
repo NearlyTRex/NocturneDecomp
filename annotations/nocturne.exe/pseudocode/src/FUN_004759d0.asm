@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00474d70 at 00474e13
 ;   FUN_0049cc10 at 0049d583
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e13
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6d50
@@ -32,15 +32,15 @@
 ;   undefined4 DAT_01c00c70
 ;
 ; Called Functions:
-;   FUN_004015a0
-;   FUN_00403e60
-;   FUN_00408370
+;   engine_2d.c_drawLine_FUN_004015a0
+;   engine_2d.c_fillRectColor_FUN_00403e60
+;   engine_3d.c_setRenderAlpha_FUN_00408370
+;   engine_font.cpp_CBitFont_drawText_FUN_00490980
 ;   FUN_004722b0
-;   FUN_004724e0
-;   FUN_00474080
-;   FUN_00476040
 ;   FUN_00476580
-;   FUN_00490980
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0
+;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     MOV EAX,[0x01c00c5c]                ; 00475a8c | DAT_01c00c5c
     PUSH EAX                            ; 00475a91
     PUSH EBP                            ; 00475a92
-    CALL FUN_004015a0                   ; 00475a93
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004015a0()
+    CALL engine_2d.c_drawLine_FUN_004015a0 ; 00475a93
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
     ADD ESP,0x10                        ; 00475a98
     MOV dword ptr [0x01c00c70],ESI      ; 00475a9b | DAT_01c00c70
     MOV EAX,dword ptr [ESP + 0x160]     ; 00475aa1
@@ -191,8 +191,8 @@ section .text
     PUSH EBX                            ; 00475bef
     MOV ESI,dword ptr [ESP + 0x144]     ; 00475bf0
     PUSH ESI                            ; 00475bf7
-    CALL FUN_00403e60                   ; 00475bf8
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined FUN_00403e60()
+    CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 00475bf8
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
     ADD ESP,0x14                        ; 00475bfd
     MOV EBP,dword ptr [ESP + 0x138]     ; 00475c00
         ;   Label: LAB_00475c00
@@ -201,8 +201,8 @@ section .text
     XOR EDI,EDI                         ; 00475c0f
     PUSH EAX                            ; 00475c11
     MOV dword ptr [ESP + 0x14c],EDI     ; 00475c12
-    CALL FUN_00474080                   ; 00475c19
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00475c19
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 00475c1e
     MOV EBX,dword ptr [ESP + 0x160]     ; 00475c21
     MOV dword ptr [ESP + 0x148],EAX     ; 00475c28
@@ -214,8 +214,8 @@ section .text
     MOV EAX,[0x01bcde08]                ; 00475c45 | DAT_01bcde08
     ADD EDI,EDX                         ; 00475c4a
     MOV dword ptr [ESP + 0x144],EAX     ; 00475c4c
-    CALL FUN_00476040                   ; 00475c53
-        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined FUN_00476040()
+    CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 00475c53
+        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040()
     ADD ESP,0x8                         ; 00475c58
     TEST EAX,EAX                        ; 00475c5b
     JZ 0x00475d08                       ; 00475c5d
@@ -244,8 +244,8 @@ section .text
         ;   Label: LAB_00475c9b
     PUSH 0xffff                         ; 00475c9d
     MOV dword ptr [ESP + 0x14c],ESI     ; 00475ca2
-    CALL FUN_00408370                   ; 00475ca9
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined FUN_00408370()
+    CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00475ca9
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
     ADD ESP,0x4                         ; 00475cae
     PUSH -0x1                           ; 00475cb1
     MOV EAX,dword ptr [ESP + 0x140]     ; 00475cb3
@@ -258,8 +258,8 @@ section .text
     MOV ECX,dword ptr [0x01bcd070]      ; 00475cc9 | DAT_01bcd070
     PUSH ECX                            ; 00475ccf
     ADD EBP,0x4                         ; 00475cd0
-    CALL FUN_00490980                   ; 00475cd3
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined FUN_00490980()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00475cd3
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
     ADD ESP,0x18                        ; 00475cd8
     MOV EAX,dword ptr [EBP + 0x78]      ; 00475cdb
     MOV EDX,dword ptr [ESP + 0x144]     ; 00475cde
@@ -322,8 +322,8 @@ section .text
         ;   Label: LAB_00475d86
     MOV ECX,dword ptr [0x005b6d50]      ; 00475d88 | DAT_005b6d50
     PUSH ECX                            ; 00475d8e
-    CALL FUN_004724e0                   ; 00475d8f
-        ;   XREF to: 004724e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004724e0()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 ; 00475d8f
+        ;   XREF to: 004724e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0()
     ADD ESP,0x8                         ; 00475d94
     ADD ESP,0x14c                       ; 00475d97
     POP EBP                             ; 00475d9d

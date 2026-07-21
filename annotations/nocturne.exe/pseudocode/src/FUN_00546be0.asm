@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a3500
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 00546c06 (CONDITIONAL_JUMP)  ; LAB_00546c06
     PUSH 0x1                            ; 00546bec
     PUSH EBX                            ; 00546bee
-    CALL FUN_00409ea0                   ; 00546bef
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 00546bef
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 00546bf4
     MOV DL,byte ptr [ESP + 0xc]         ; 00546bf7
     MOV EBX,EAX                         ; 00546bfb
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a3500                       ; 00546c06 | DAT_005a3500
         ;   Label: LAB_00546c06
     PUSH EBX                            ; 00546c0b
-    CALL FUN_0056445f                   ; 00546c0c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 00546c0c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00546c11
     PUSH EAX                            ; 00546c14
-    CALL FUN_00564486                   ; 00546c15
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00546c15
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00546c1a
     MOV EAX,EBX                         ; 00546c1d
     POP EBX                             ; 00546c1f

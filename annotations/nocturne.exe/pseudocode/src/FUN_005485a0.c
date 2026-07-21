@@ -15,7 +15,7 @@ uint FUN_005485a0(int param_1,int param_2)
     if (*(char *)(param_1 + 0x2fc) == '\0') {
       return 1;
     }
-    uVar1 = FUN_004775b0(param_1 + 0x2fc,param_2,0);
+    uVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(param_1 + 0x2fc,param_2,0);
     return uVar1;
   }
   return 0;

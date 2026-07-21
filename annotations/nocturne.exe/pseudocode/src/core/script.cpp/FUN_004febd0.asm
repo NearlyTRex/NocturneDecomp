@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004d86d0 at 004d870b
+;   core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 at 004d870b
 ;
 ; Referenced Globals:
 ;   string s_world_0058e265
@@ -29,21 +29,21 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004568c0
-;   FUN_00456a60
+;   core_script.cpp_CScript_dbLoad_FUN_00504e70
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fgetc_FUN_00564570
+;   crt_stdio.c_ftell_FUN_00566e70
+;   crt_string.c_splitpath_FUN_00566498
+;   engine_dosio.cpp_getFile_FUN_00456a60
+;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   FUN_0046fcd0
-;   FUN_00473cb0
 ;   FUN_00476160
-;   FUN_00477660
 ;   FUN_004c8440
 ;   FUN_004fe500
 ;   FUN_004fee30
 ;   FUN_004fef60
 ;   FUN_004feff0
-;   FUN_00504e70
-;   FUN_00563380
-;   FUN_00564570
-;   FUN_00566498
+;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x324]     ; 004febfb
     PUSH ECX                            ; 004fec02
     PUSH 0x58e265                       ; 004fec03 | = "world"
-    CALL FUN_004568c0                   ; 004fec08
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004568c0()
+    CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004fec08
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     MOV EBX,EAX                         ; 004fec0d
     ADD ESP,0x8                         ; 004fec0f
     TEST EAX,EAX                        ; 004fec12
@@ -91,8 +91,8 @@ section .text
     PUSH 0x0                            ; 004fec32
     MOV ESI,dword ptr [ESP + 0x334]     ; 004fec34
     PUSH ESI                            ; 004fec3b
-    CALL FUN_00566498                   ; 004fec3c
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined FUN_00566498()
+    CALL crt_string.c_splitpath_FUN_00566498 ; 004fec3c
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004fec41
     LEA EDI,[ESP + 0x200]               ; 004fec44
     MOV ESI,0x58e26b                    ; 004fec4b | DAT_0058e26b
@@ -121,15 +121,15 @@ section .text
     PUSH EAX                            ; 004fec79
     MOV EDI,dword ptr [ESP + 0x324]     ; 004fec7a
     PUSH EDI                            ; 004fec81
-    CALL FUN_00504e70                   ; 004fec82
-        ;   XREF to: 00504e70 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e70()
+    CALL core_script.cpp_CScript_dbLoad_FUN_00504e70 ; 004fec82
+        ;   XREF to: 00504e70 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_dbLoad_FUN_00504e70()
     ADD ESP,0x8                         ; 004fec87
     PUSH 0x58e270                       ; 004fec8a | DAT_0058e270
     MOV EBP,dword ptr [ESP + 0x328]     ; 004fec8f
     PUSH EBP                            ; 004fec96
     PUSH 0x58e273                       ; 004fec97 | = "world"
-    CALL FUN_00456a60                   ; 004fec9c
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004fec9c
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004feca1
     MOV ESI,EAX                         ; 004feca4
     TEST EAX,EAX                        ; 004feca6
@@ -137,16 +137,16 @@ section .text
         ;   XREF to: 004fec16 (CONDITIONAL_JUMP)  ; LAB_004fec16
     PUSH EAX                            ; 004fecae
     MOV EBP,0x1                         ; 004fecaf
-    CALL FUN_00566e70                   ; 004fecb4
-        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined FUN_00566e70()
+    CALL crt_stdio.c_ftell_FUN_00566e70 ; 004fecb4
+        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
     ADD ESP,0x4                         ; 004fecb9
     LEA EDI,[EBX + EAX*0x1]             ; 004fecbc
     XOR EBX,EBX                         ; 004fecbf
         ;   Label: LAB_004fecbf
     PUSH ESI                            ; 004fecc1
         ;   Label: LAB_004fecc1
-    CALL FUN_00566e70                   ; 004fecc2
-        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined FUN_00566e70()
+    CALL crt_stdio.c_ftell_FUN_00566e70 ; 004fecc2
+        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
     ADD ESP,0x4                         ; 004fecc7
     CMP EAX,EDI                         ; 004fecca
     JL 0x004fed78                       ; 004feccc
@@ -159,15 +159,15 @@ section .text
     PUSH EAX                            ; 004fecdb
     MOV EBX,dword ptr [ESP + 0x30c]     ; 004fecdc
     PUSH EBX                            ; 004fece3
-    CALL FUN_00473cb0                   ; 004fece4
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00473cb0()
+    CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004fece4
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 004fece9
     TEST EBP,EBP                        ; 004fecec
     JNZ 0x004fecbf                      ; 004fecee
         ;   XREF to: 004fecbf (CONDITIONAL_JUMP)  ; LAB_004fecbf
     PUSH ESI                            ; 004fecf0
-    CALL FUN_00563380                   ; 004fecf1
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004fecf1
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004fecf6
     MOV ESI,dword ptr [ESP + 0x320]     ; 004fecf9
     PUSH ESI                            ; 004fed00
@@ -208,8 +208,8 @@ section .text
         ;   XREF to: 004febeb (UNCONDITIONAL_JUMP)  ; LAB_004febeb
     PUSH ESI                            ; 004fed78
         ;   Label: LAB_004fed78
-    CALL FUN_00564570                   ; 004fed79
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined FUN_00564570()
+    CALL crt_stdio.c_fgetc_FUN_00564570 ; 004fed79
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
     ADD ESP,0x4                         ; 004fed7e
     MOV EDX,EAX                         ; 004fed81
     CMP EAX,-0x1                        ; 004fed83
@@ -230,14 +230,14 @@ section .text
         ;   XREF to: 004fecc1 (UNCONDITIONAL_JUMP)  ; LAB_004fecc1
     PUSH ESI                            ; 004fedac
         ;   Label: LAB_004fedac
-    CALL FUN_00563380                   ; 004fedad
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004fedad
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004fedb2
     MOV EAX,dword ptr [ESP + 0x320]     ; 004fedb5
     ADD EAX,0x30                        ; 004fedbc
     PUSH EAX                            ; 004fedbf
-    CALL FUN_00477660                   ; 004fedc0
-        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined FUN_00477660()
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_00477660 ; 004fedc0
+        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getItemCount_FUN_00477660()
     ADD ESP,0x4                         ; 004fedc5
     INC EAX                             ; 004fedc8
     PUSH EAX                            ; 004fedc9

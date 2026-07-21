@@ -35,8 +35,8 @@
 ;   undefined4 DAT_01c0064d
 ;
 ; Called Functions:
-;   FUN_00401850
-;   FUN_00563a30
+;   crt_math.c_round_FUN_00563a30
+;   engine_2d.c_findBestPaletteMatch_FUN_00401850
 ;
 ; *****************************************************************************
 
@@ -136,11 +136,11 @@ section .text
     FLD float ptr [ESP + 0x40]          ; 004032cf
     PUSH 0xf5                           ; 004032d3
     FXCH ST2                            ; 004032d8
-    CALL FUN_00563a30                   ; 004032da
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004032da
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 004032df
-    CALL FUN_00563a30                   ; 004032e1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004032e1
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 004032e6
     FISTP dword ptr [ESP + 0x10]        ; 004032e8
     FISTP dword ptr [ESP + 0xc]         ; 004032ec
@@ -148,14 +148,14 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 004032f2
     MOV EAX,dword ptr [ESP + 0x10]      ; 004032f6
     PUSH ECX                            ; 004032fa
-    CALL FUN_00563a30                   ; 004032fb
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004032fb
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     PUSH EAX                            ; 00403300
     FISTP dword ptr [ESP + 0x18]        ; 00403301
     MOV EDX,dword ptr [ESP + 0x18]      ; 00403305
     PUSH EDX                            ; 00403309
-    CALL FUN_00401850                   ; 0040330a
-        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined FUN_00401850()
+    CALL engine_2d.c_findBestPaletteMatch_FUN_00401850 ; 0040330a
+        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_findBestPaletteMatch_FUN_00401850()
     ADD ESP,0x14                        ; 0040330f
     MOV byte ptr [EBX + 0x1bf5620],AL   ; 00403312
         ;   Label: LAB_00403312
@@ -218,26 +218,26 @@ section .text
     FLD float ptr [ESP + 0x3c]          ; 004033d5
     FLD float ptr [ESP + 0x24]          ; 004033d9
     FXCH ST2                            ; 004033dd
-    CALL FUN_00563a30                   ; 004033df
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004033df
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 004033e4
-    CALL FUN_00563a30                   ; 004033e6
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004033e6
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 004033eb
     FISTP dword ptr [ESP + 0x10]        ; 004033ed
     FISTP dword ptr [ESP + 0x14]        ; 004033f1
     MOV ECX,dword ptr [ESP + 0x10]      ; 004033f5
     MOV EAX,dword ptr [ESP + 0x14]      ; 004033f9
     PUSH ECX                            ; 004033fd
-    CALL FUN_00563a30                   ; 004033fe
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004033fe
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     PUSH EAX                            ; 00403403
     FISTP dword ptr [ESP + 0x1c]        ; 00403404
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00403408
     PUSH EDX                            ; 0040340c
     ADD EBX,0x100                       ; 0040340d
-    CALL FUN_00401850                   ; 00403413
-        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined FUN_00401850()
+    CALL engine_2d.c_findBestPaletteMatch_FUN_00401850 ; 00403413
+        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_findBestPaletteMatch_FUN_00401850()
     ADD ESP,0x14                        ; 00403418
     MOV byte ptr [EBX + 0x1bf6520],AL   ; 0040341b
     CMP EBX,ESI                         ; 00403421

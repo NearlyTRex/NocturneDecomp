@@ -12,7 +12,7 @@ void FUN_00517190(uint param_1)
   int iVar1;
   
   do {
-    iVar1 = FUN_00564570(param_1);
+    iVar1 = _fgetc(param_1);
     if (iVar1 < 0) {
       return;
     }

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_0041f3a0 at 0041f3a6
+;   core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0 at 0041f3a6
 ;
 ; Referenced Globals:
 ;   string s_flashlit.kfm_005799b8
@@ -21,11 +21,11 @@
 ;   undefined4 DAT_0076483c
 ;
 ; Called Functions:
-;   FUN_0044bf90
-;   FUN_004501c0
-;   FUN_00454510
-;   FUN_00454580
-;   FUN_00563c90
+;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90
+;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
+;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -63,12 +63,12 @@ section .text
     PUSH 0x5799b8                       ; 0041f728 | = "flashlit.kfm"
         ;   Label: LAB_0041f728
     PUSH ESI                            ; 0041f72d
-    CALL FUN_00454580                   ; 0041f72e
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041f72e
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 0041f733
     PUSH ESI                            ; 0041f736
-    CALL FUN_00454510                   ; 0041f737
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined FUN_00454510()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041f737
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
     ADD ESP,0x4                         ; 0041f73c
     LEA EAX,[ESP + 0x40]                ; 0041f73f
     PUSH EAX                            ; 0041f743
@@ -142,12 +142,12 @@ section .text
     PUSH 0x5799c5                       ; 0041f856 | = "lantern.kfm"
         ;   Label: LAB_0041f856
     PUSH ESI                            ; 0041f85b
-    CALL FUN_00454580                   ; 0041f85c
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041f85c
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 0041f861
     PUSH ESI                            ; 0041f864
-    CALL FUN_00454510                   ; 0041f865
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined FUN_00454510()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041f865
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
     ADD ESP,0x4                         ; 0041f86a
     LEA ESI,[ESP + 0x28]                ; 0041f86d
     PUSH ESI                            ; 0041f871
@@ -223,15 +223,15 @@ section .text
     PUSH 0x5799d1                       ; 0041f99c | = "lantern%d.raw"
     LEA EAX,[ESP + 0x8]                 ; 0041f9a1
     PUSH EAX                            ; 0041f9a5
-    CALL FUN_00563c90                   ; 0041f9a6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0041f9a6
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0041f9ab
     MOV EAX,ESP                         ; 0041f9ae
     PUSH EAX                            ; 0041f9b0
     PUSH ESI                            ; 0041f9b1 | DAT_0076483c
     INC EBX                             ; 0041f9b2
-    CALL FUN_0044bf90                   ; 0041f9b3
-        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; undefined FUN_0044bf90()
+    CALL core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 ; 0041f9b3
+        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90()
     ADD ESP,0x8                         ; 0041f9b8
     ADD ESI,0x4c                        ; 0041f9bb
     CMP EBX,0x8                         ; 0041f9be
@@ -245,8 +245,8 @@ section .text
     PUSH 0x76483c                       ; 0041f9d3 | DAT_0076483c
     ADD EDI,0x668                       ; 0041f9d8
     PUSH EDI                            ; 0041f9de
-    CALL FUN_004501c0                   ; 0041f9df
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004501c0()
+    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 0041f9df
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
     ADD ESP,0x14                        ; 0041f9e4
     MOV ESP,EBP                         ; 0041f9e7
     POP EBP                             ; 0041f9e9

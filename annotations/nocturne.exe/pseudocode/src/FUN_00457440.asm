@@ -11,7 +11,7 @@
 ;   undefined4 DAT_0057d496
 ;
 ; Called Functions:
-;   FUN_00457120
+;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
 
     PUSH EBX                            ; 00457440
         ;   Label: FUN_00457440
-    CALL FUN_00457120                   ; 00457441
-        ;   XREF to: 00457120 (UNCONDITIONAL_CALL)  ; undefined FUN_00457120()
+    CALL core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120 ; 00457441
+        ;   XREF to: 00457120 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120()
     FLD double ptr [0x0057d496]         ; 00457446 | DAT_0057d496
     FILD dword ptr [EBX + 0x354]        ; 0045744c
     FMUL ST1                            ; 00457452

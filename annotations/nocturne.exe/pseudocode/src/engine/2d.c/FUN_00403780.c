@@ -24,7 +24,7 @@ LAB_004038d6:
         FUN_004c8440("draw320x200SizeDot: unknown graphics option");
         return;
       }
-      FUN_00401da0(param_1,param_2,param_3);
+      engine_2d_c_project3DPointToScreen_FUN_00401da0(param_1,param_2,param_3);
     }
     else if (DAT_005b7620 < 0x191) {
       iVar2 = (int)(((longlong)param_1 * (longlong)_DAT_01c00c48) / (longlong)param_3) +
@@ -32,8 +32,8 @@ LAB_004038d6:
       iVar1 = _DAT_01c00c54 +
               (int)(((longlong)param_2 * (longlong)_DAT_01c00c4c) / (longlong)param_3) >> 0x10;
       if (((-1 < iVar2) && (iVar2 < 0x140)) && ((-1 < iVar1 && (iVar1 < 399)))) {
-        FUN_00401530(iVar2,iVar1);
-        FUN_00401530(iVar2,iVar1 + 1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2,iVar1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2,iVar1 + 1);
         return;
       }
     }
@@ -44,10 +44,10 @@ LAB_004038d6:
       iVar1 = (int)(((longlong)param_2 * (longlong)_DAT_01c00c4c) / (longlong)param_3) +
               _DAT_01c00c54 >> 0x10;
       if ((((-1 < iVar2) && (iVar2 < 0x27f)) && (-1 < iVar1)) && (iVar1 < 0x1df)) {
-        FUN_00401530(iVar2,iVar1);
-        FUN_00401530(iVar2 + 1,iVar1);
-        FUN_00401530(iVar2 + 1,iVar1 + 1);
-        FUN_00401530(iVar2,iVar1 + 1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2,iVar1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2 + 1,iVar1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2 + 1,iVar1 + 1);
+        engine_2d_c_plotPixel_FUN_00401530(iVar2,iVar1 + 1);
         return;
       }
     }

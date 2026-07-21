@@ -8,11 +8,11 @@
 ;   undefined4 DAT_0059de40
 ;
 ; Called Functions:
-;   FUN_00435160
+;   core_cloth.cpp_CCloth_dtor_FUN_00435160
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_004b4800
-;   FUN_0056445f
-;   FUN_00564486
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH 0x0                            ; 0049a17c
     ADD EBX,0x1fa7c                     ; 0049a17e
     PUSH EBX                            ; 0049a184
-    CALL FUN_00435160                   ; 0049a185
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined FUN_00435160()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 0049a185
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
     ADD ESP,0x8                         ; 0049a18a
     PUSH 0x1                            ; 0049a18d
     LEA EBX,[EAX + 0xfffe0584]          ; 0049a18f
@@ -47,12 +47,12 @@ section .text
     PUSH 0x59de40                       ; 0049a1ad | DAT_0059de40
         ;   Label: LAB_0049a1ad
     PUSH EBX                            ; 0049a1b2
-    CALL FUN_0056445f                   ; 0049a1b3
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0049a1b3
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0049a1b8
     PUSH EAX                            ; 0049a1bb
-    CALL FUN_00564486                   ; 0049a1bc
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0049a1bc
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0049a1c1
     MOV EAX,EBX                         ; 0049a1c4
     POP EBX                             ; 0049a1c6

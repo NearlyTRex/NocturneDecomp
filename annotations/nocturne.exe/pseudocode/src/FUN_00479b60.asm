@@ -35,11 +35,11 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   FUN_0040dda0
-;   FUN_0043ac60
-;   FUN_00479ab0
-;   FUN_0047dc30
-;   FUN_004f1600
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0
+;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
+;   core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600
+;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_00479bf3
     MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | DAT_005b7650
     PUSH ESI                            ; 00479bfe
-    CALL FUN_0047dc30                   ; 00479bff
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00479bff
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 00479c04
     TEST EAX,EAX                        ; 00479c07
     JNZ 0x00479bce                      ; 00479c09
@@ -139,8 +139,8 @@ section .text
         ;   Label: LAB_00479c6e
     PUSH 0x3f000000                     ; 00479c73
     MOV dword ptr [EDI + 0xbc98],0x0    ; 00479c78
-    CALL FUN_0040dda0                   ; 00479c82
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dda0()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00479c82
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     FLD float ptr [EDI + 0xbcac]        ; 00479c87
     FMUL ST0                            ; 00479c8d
     MOV dword ptr [ESP + 0x4c],EAX      ; 00479c8f
@@ -205,8 +205,8 @@ section .text
     PUSH EAX                            ; 00479d48
     PUSH EDI                            ; 00479d49
     MOV dword ptr [ESP + 0x44],EAX      ; 00479d4a
-    CALL FUN_00479ab0                   ; 00479d4e
-        ;   XREF to: 00479ab0 (UNCONDITIONAL_CALL)  ; undefined FUN_00479ab0()
+    CALL core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0 ; 00479d4e
+        ;   XREF to: 00479ab0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0()
     ADD ESP,0x8                         ; 00479d53
     TEST EAX,EAX                        ; 00479d56
     JNZ 0x00479ef4                      ; 00479d58
@@ -231,8 +231,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00479d90
     PUSH ECX                            ; 00479d94
     PUSH EAX                            ; 00479d95
-    CALL FUN_004f1600                   ; 00479d96
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined FUN_004f1600()
+    CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 00479d96
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
     ADD ESP,0x10                        ; 00479d9b
     CMP EAX,0x1                         ; 00479d9e
     JZ 0x00479f3a                       ; 00479da1
@@ -352,8 +352,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 00479f00
     PUSH ECX                            ; 00479f04 | DAT_0077ad0c
     MOV dword ptr [EDI + 0xbca4],EAX    ; 00479f05
-    CALL FUN_0043ac60                   ; 00479f0b
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043ac60()
+    CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00479f0b
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 00479f10
     MOV ESP,EBP                         ; 00479f13
     POP EBP                             ; 00479f15

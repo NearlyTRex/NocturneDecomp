@@ -26,16 +26,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[48]:
-;   FUN_004047e0 at 00404861
-;   FUN_004048b0 at 0040490a
-;   FUN_004049d0 at 00404a28
-;   FUN_00404a70 at 00404ac2
-;   FUN_00405240 at 00405312
-;   FUN_00405440 at 0040549c
-;   FUN_00405540 at 00405716
-;   FUN_004057a0 at 004057f2
-;   FUN_00405c90 at 00405df4
-;   FUN_00405e10 at 00405fe5
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 00406140
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407c8d
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405fe5
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 00408579
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 00408439
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60 at 00406cbd
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80 at 00406ddd
+;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00408270 at 004082e0
+;   engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30 at 00406f82
+;   engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_00407d90 at 00407e07
 ;   ... and 38 more
 ;
 ; Referenced Globals:
@@ -57,16 +57,16 @@
 ;   ... and 39 more
 ;
 ; Called Functions:
-;   FUN_00431530
-;   FUN_00431630
-;   FUN_00431730
-;   FUN_00431830
-;   FUN_00431930
+;   engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
+;   engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
+;   engine_clipper.c_interpolateVertexNearClip_FUN_00431930
+;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
+;   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   FUN_004c8440
-;   FUN_004f9a10
 ;   FUN_004f9dd0
 ;   FUN_004fa2e0
-;   FUN_00532650
+;   wincore_windll.cpp_drawPolygon2_FUN_00532650
 ;
 ; *****************************************************************************
 
@@ -160,8 +160,8 @@ section .text
     PUSH EDX                            ; 00432dbc
     MOV ECX,dword ptr [0x00767274]      ; 00432dbd | DAT_00767274
     PUSH ECX                            ; 00432dc3
-    CALL FUN_004f9a10                   ; 00432dc4
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9a10()
+    CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 00432dc4
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
     ADD ESP,0xc                         ; 00432dc9
     TEST EAX,EAX                        ; 00432dcc
     JZ 0x00432e01                       ; 00432dce
@@ -206,8 +206,8 @@ section .text
     PUSH ECX                            ; 00432e11
     MOV EBX,dword ptr [0x00767274]      ; 00432e12 | DAT_00767274
     PUSH EBX                            ; 00432e18
-    CALL FUN_004f9a10                   ; 00432e19
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9a10()
+    CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 00432e19
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
     ADD ESP,0xc                         ; 00432e1e
     TEST EAX,EAX                        ; 00432e21
     JZ 0x00432de0                       ; 00432e23
@@ -220,8 +220,8 @@ section .text
     INC ESI                             ; 00432e33
     PUSH 0x767274                       ; 00432e34 | DAT_00767274
     MOV dword ptr [0x01e52ef8],ESI      ; 00432e39 | DAT_01e52ef8
-    CALL FUN_00532650                   ; 00432e3f
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined FUN_00532650()
+    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 00432e3f
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
     ADD ESP,0xc                         ; 00432e44
     ADD ESP,0x140                       ; 00432e47
     POP EBP                             ; 00432e4d
@@ -641,8 +641,8 @@ section .text
     PUSH EDI                            ; 004332aa
     INC ESI                             ; 004332ab
     MOV dword ptr [EAX],EDX             ; 004332ac | DAT_007678f8
-    CALL FUN_00431530                   ; 004332ae
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined FUN_00431530()
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 004332ae
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
     ADD ESP,0xc                         ; 004332b3
     JMP 0x00432f9a                      ; 004332b6
         ;   XREF to: 00432f9a (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -678,8 +678,8 @@ section .text
     PUSH EBX                            ; 00433321
     INC ESI                             ; 00433322
     MOV dword ptr [EAX],EDX             ; 00433323 | DAT_007678f8
-    CALL FUN_00431530                   ; 00433325
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined FUN_00431530()
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 00433325
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
     ADD ESP,0xc                         ; 0043332a
     JMP 0x00432f9a                      ; 0043332d
         ;   XREF to: 00432f9a (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -706,8 +706,8 @@ section .text
     PUSH ESI                            ; 0043336f
     MOV [0x00767b38],EAX                ; 00433370 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00433375 | DAT_007678f8
-    CALL FUN_00431630                   ; 00433379
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined FUN_00431630()
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 00433379
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
     ADD ESP,0xc                         ; 0043337e
     JMP 0x00433029                      ; 00433381
         ;   XREF to: 00433029 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -737,8 +737,8 @@ section .text
     PUSH EDI                            ; 004333ca
     MOV [0x00767b38],EAX                ; 004333cb | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004333d0 | DAT_007678f8
-    CALL FUN_00431630                   ; 004333d4
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined FUN_00431630()
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 004333d4
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
     ADD ESP,0xc                         ; 004333d9
     JMP 0x00433029                      ; 004333dc
         ;   XREF to: 00433029 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -765,8 +765,8 @@ section .text
     PUSH EBX                            ; 0043341e
     MOV [0x00767b38],EAX                ; 0043341f | DAT_00767b38
     MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00433424 | DAT_007678f8
-    CALL FUN_00431730                   ; 00433428
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined FUN_00431730()
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00433428
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
     ADD ESP,0xc                         ; 0043342d
     JMP 0x004330c2                      ; 00433430
         ;   XREF to: 004330c2 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -796,8 +796,8 @@ section .text
     PUSH EDI                            ; 00433479
     MOV [0x00767b38],EAX                ; 0043347a | DAT_00767b38
     MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 0043347f | DAT_007678f8
-    CALL FUN_00431730                   ; 00433483
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined FUN_00431730()
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00433483
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
     ADD ESP,0xc                         ; 00433488
     JMP 0x004330c2                      ; 0043348b
         ;   XREF to: 004330c2 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -824,8 +824,8 @@ section .text
     PUSH ESI                            ; 004334cd
     MOV [0x00767b38],EAX                ; 004334ce | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004334d3 | DAT_007678f8
-    CALL FUN_00431830                   ; 004334d7
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined FUN_00431830()
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 004334d7
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
     ADD ESP,0xc                         ; 004334dc
     JMP 0x00433165                      ; 004334df
         ;   XREF to: 00433165 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -855,8 +855,8 @@ section .text
     PUSH EDI                            ; 00433528
     MOV [0x00767b38],EAX                ; 00433529 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043352e | DAT_007678f8
-    CALL FUN_00431830                   ; 00433532
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined FUN_00431830()
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 00433532
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
     ADD ESP,0xc                         ; 00433537
     JMP 0x00433165                      ; 0043353a
         ;   XREF to: 00433165 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -1009,8 +1009,8 @@ section .text
     PUSH EAX                            ; 004336a4 | DAT_00766c74
     PUSH EBX                            ; 004336a5 | DAT_00767328
     PUSH EDX                            ; 004336a6
-    CALL FUN_00431930                   ; 004336a7
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined FUN_00431930()
+    CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 004336a7
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
     MOV EBX,dword ptr [0x00766c70]      ; 004336ac | DAT_00766c70
     INC EBX                             ; 004336b2
     ADD ESP,0xc                         ; 004336b3
@@ -1057,8 +1057,8 @@ section .text
     PUSH EAX                            ; 00433712 | DAT_00766ca4
     PUSH EDX                            ; 00433713
     PUSH EBX                            ; 00433714 | DAT_00767328
-    CALL FUN_00431930                   ; 00433715
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined FUN_00431930()
+    CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 00433715
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
     MOV EDI,dword ptr [0x00766c70]      ; 0043371a | DAT_00766c70
     INC EDI                             ; 00433720
     ADD ESP,0xc                         ; 00433721

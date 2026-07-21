@@ -9,6 +9,6 @@
 uint FUN_0044bcb0(uint param_1)
 
 {
-  FUN_0044bcd0(param_1);
+  core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(param_1);
   return param_1;
 }

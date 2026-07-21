@@ -54,7 +54,8 @@ void FUN_0049f930(int param_1)
           *(int *)(param_1 + 0x270) = *0x01E57284 + -1;
         }
       }
-      FUN_005088f0(0x01E57284,*(uint *)(param_1 + 0x270));
+      core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
+                (0x01E57284,*(uint *)(param_1 + 0x270));
     }
   }
   if (((*(int *)(param_1 + 0x210) != 0) &&
@@ -63,18 +64,18 @@ void FUN_0049f930(int param_1)
     iVar4 = 1 - *(int *)(param_1 + 0x1fc);
     *(int *)(param_1 + 0x1fc) = iVar4;
     if (iVar4 == 0) {
-      FUN_0052ddf0();
+      core_sound_cpp_CSound_init_FUN_0052ddf0();
       FUN_004940d0();
     }
     else {
       _DAT_01bd1d94 = 0;
-      FUN_0052df90();
+      core_sound_cpp_CSound_shutdown_FUN_0052df90();
       FUN_004940d0();
     }
   }
   if (*(int *)(param_1 + 0x210) == 0) {
-    FUN_004ee3f0();
-    iVar4 = FUN_00566e10();
+    support_newmsg_cpp_decryptMessage_FUN_004ee3f0();
+    iVar4 = getenv();
     if (iVar4 != 0) goto LAB_0049f9d8;
   }
   else {
@@ -92,14 +93,14 @@ LAB_0049f9d8:
       (iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x3f), iVar4 != 0)) ||
      ((iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar4 != 0 &&
       (iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar4 != 0)))) {
-    iVar4 = FUN_00526ca0();
+    iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
     if (iVar4 == 0) {
-      FUN_0052df90();
-      FUN_00526cb0();
+      core_sound_cpp_CSound_shutdown_FUN_0052df90();
+      sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0();
     }
     else {
-      FUN_00526cb0();
-      FUN_0052ddf0();
+      sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0();
+      core_sound_cpp_CSound_init_FUN_0052ddf0();
     }
   }
   if ((((*(int *)(param_1 + 0x210) != 0) &&
@@ -133,24 +134,26 @@ LAB_0049f9d8:
   }
   iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x3d);
   if (iVar4 != 0) {
-    FUN_004a6570();
+    core_game_cpp_CGame_promptLoadGame_FUN_004a6570();
   }
   iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x40);
   if ((iVar4 != 0) && (*(int *)(param_1 + 0x228) == 0)) {
     FUN_004a3b90(param_1,"quicksavedgame.noc");
-    uVar5 = FUN_004ee370("Quick Save",0x40000000);
-    FUN_0049aa30(param_1,uVar5);
+    uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quick Save",0x40000000);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,uVar5);
   }
   if ((*(int *)(param_1 + 0x1dc) == 0) &&
      (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x43), iVar4 != 0)) {
-    iVar4 = FUN_00456a60(&DAT_00582a9e,"quicksavedgame.noc",&DAT_00582a88);
+    iVar4 = engine_dosio_cpp_getFile_FUN_00456a60
+                      (&DAT_00582a9e,"quicksavedgame.noc",&DAT_00582a88);
     if (iVar4 == 0) {
-      uVar5 = FUN_004ee370("No quicked saved game to load",0x40000000);
-      FUN_0049aa30(param_1,uVar5);
+      uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                        ("No quicked saved game to load",0x40000000);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,uVar5);
     }
     else {
-      FUN_00563380();
-      uVar5 = FUN_004ee370();
+      _fclose();
+      uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370();
       iVar4 = FUN_00470230(0x01BCD074,uVar5);
       if (iVar4 != 0) {
         pcVar6 = "quicksavedgame.noc";
@@ -173,8 +176,8 @@ LAB_0049f9d8:
     *(uint *)(param_1 + 0xac8) = (uint)(*(int *)(param_1 + 0xac8) == 0);
   }
   if (*(int *)(param_1 + 0x210) == 0) {
-    FUN_004ee3f0();
-    iVar4 = FUN_00566e10();
+    support_newmsg_cpp_decryptMessage_FUN_004ee3f0();
+    iVar4 = getenv();
     if (iVar4 == 0) goto LAB_0049fc23;
   }
   iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0xf);
@@ -219,10 +222,9 @@ LAB_0049fc23:
     if (iVar4 < 0x8000) {
       *(uint *)(param_1 + 0x224) = 0x8000;
     }
-    FUN_00563c90(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42
-                );
-    FUN_0049aa30(param_1,auStack_21c,0x3f800000);
-    FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
+    _sprintf(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_21c,0x3f800000);
+    core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }
   iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x58);
   if (iVar4 != 0) {
@@ -231,10 +233,9 @@ LAB_0049fc23:
     if (0x10000 < iVar4) {
       *(uint *)(param_1 + 0x224) = 0x10000;
     }
-    FUN_00563c90(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42
-                );
-    FUN_0049aa30(param_1,auStack_11c,0x3f800000);
-    FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
+    _sprintf(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_11c,0x3f800000);
+    core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }
   if (((*(int *)(param_1 + 0x210) != 0) &&
       (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar4 != 0)) &&
@@ -258,7 +259,7 @@ LAB_0049fc23:
       fStack_220 = 1.0;
     }
     for (iVar4 = 0; iVar4 < *0x01E57284; iVar4 = iVar4 + 1) {
-      FUN_0050e4c0(0x01E57284,iVar4,fStack_220);
+      core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(0x01E57284,iVar4,fStack_220);
     }
   }
   return;

@@ -17,14 +17,14 @@ int FUN_004afe80(uint param_1,int param_2)
   
   iVar3 = 0x01C775EC;
   if (*(int *)(0x01C775EC + 0x14) != 0) {
-    FUN_004aeae0(0x1c7ccf4);
+    core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(0x1c7ccf4);
     if (param_2 == 0) {
       iVar3 = 0;
       if (0 < _DAT_01c7ccf0) {
         iVar1 = 0;
         do {
           if (*(int *)(iVar1 + 0x1c7ccf4) == 0) {
-            FUN_004aeb70(iVar1 + 0x1c7ccf4);
+            core_gore_cpp_CBloodSplat_render_FUN_004aeb70(iVar1 + 0x1c7ccf4);
           }
           iVar3 = iVar3 + 1;
           iVar1 = iVar1 + 0x44;
@@ -36,20 +36,20 @@ int FUN_004afe80(uint param_1,int param_2)
       if (0 < _DAT_01c7ccf0) {
         iVar1 = 0x1c7ccf4;
         do {
-          FUN_004aeb70(iVar1);
+          core_gore_cpp_CBloodSplat_render_FUN_004aeb70(iVar1);
           iVar3 = iVar3 + 1;
           iVar1 = iVar1 + 0x44;
         } while (iVar3 < _DAT_01c7ccf0);
       }
     }
-    iVar3 = FUN_004af2a0(0x1c9e03c);
+    iVar3 = core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(0x1c9e03c);
     if (param_2 == 0) {
       iVar1 = 0;
       if (0 < _DAT_01c9e038) {
         iVar2 = 0;
         do {
           if (*(int *)(iVar2 + 0x1c9e03c) == 0) {
-            iVar3 = FUN_004af340(iVar2 + 0x1c9e03c);
+            iVar3 = core_gore_cpp_CBloodPool_render_FUN_004af340(iVar2 + 0x1c9e03c);
           }
           iVar1 = iVar1 + 1;
           iVar2 = iVar2 + 0x28;
@@ -61,7 +61,7 @@ int FUN_004afe80(uint param_1,int param_2)
       if (0 < _DAT_01c9e038) {
         iVar2 = 0x1c9e03c;
         do {
-          iVar3 = FUN_004af340(iVar2);
+          iVar3 = core_gore_cpp_CBloodPool_render_FUN_004af340(iVar2);
           iVar1 = iVar1 + 1;
           iVar2 = iVar2 + 0x28;
         } while (iVar1 < _DAT_01c9e038);
@@ -73,7 +73,7 @@ int FUN_004afe80(uint param_1,int param_2)
         iVar2 = 0;
         do {
           if (*(int *)(iVar2 + 0x1c9e544) == 0) {
-            iVar3 = FUN_004afa20(iVar2 + 0x1c9e544);
+            iVar3 = core_gore_cpp_CFootstep_render_FUN_004afa20(iVar2 + 0x1c9e544);
           }
           iVar1 = iVar1 + 1;
           iVar2 = iVar2 + 0x40;
@@ -85,7 +85,7 @@ int FUN_004afe80(uint param_1,int param_2)
       if (0 < _DAT_01c9e540) {
         iVar3 = 0x1c9e544;
         do {
-          FUN_004afa20(iVar3);
+          core_gore_cpp_CFootstep_render_FUN_004afa20(iVar3);
           iVar1 = iVar1 + 1;
           iVar3 = iVar3 + 0x40;
         } while (iVar1 < _DAT_01c9e540);

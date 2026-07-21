@@ -34,7 +34,7 @@ LAB_0056e0ea:
     *(HANDLE *)(iVar1 + DAT_005c1f54) = param_1;
   }
   else {
-    DAT_005c1f54 = FUN_00564a70(DAT_005c1f54,iVar1 + 4);
+    DAT_005c1f54 = realloc(DAT_005c1f54,iVar1 + 4);
     if (DAT_005c1f58 < (int)param_2) {
       iVar2 = DAT_005c1f58 * 4;
       do {

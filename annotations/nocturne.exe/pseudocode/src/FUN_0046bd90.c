@@ -19,9 +19,13 @@ void FUN_0046bd90(int param_1,float *param_2,uint param_3,float *param_4,float *
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
-  byte local_8c [40];
-  float local_64;
-  float local_60;
+  float fVar9;
+  float fVar10;
+  byte local_98 [12];
+  byte local_8c [28];
+  float fStack_70;
+  float fStack_6c;
+  float fStack_68;
   float local_5c;
   float local_58;
   float local_54;
@@ -29,70 +33,71 @@ void FUN_0046bd90(int param_1,float *param_2,uint param_3,float *param_4,float *
   float local_4c;
   float local_48;
   float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  byte local_34 [12];
+  byte local_40 [12];
+  int local_34;
+  int iStack_30;
+  int iStack_2c;
   int local_28;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
   
-  FUN_0044d7a0(local_8c,param_3);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_8c,param_3);
   local_58 = *param_5 - *param_4;
   local_54 = param_5[1] - param_4[1];
   local_50 = param_5[2] - param_4[2];
-  fVar5 = (float10)local_54 / (float10)*(float *)(param_1 + 0x38);
-  fVar6 = (float10)local_50 / (float10)*(float *)(param_1 + 0x3c);
+  fVar5 = (float10)local_54;
+  fVar9 = *(float *)(param_1 + 0x38);
+  fVar6 = (float10)local_50;
+  fVar10 = *(float *)(param_1 + 0x3c);
   fVar7 = (float10)_DAT_0057e3ce;
-  fVar8 = (float10)1 + ((float10)local_58 / (float10)*(float *)(param_1 + 0x34)) * fVar7;
-  FUN_00563a30();
-  local_28 = (int)ROUND(fVar8);
-  fVar8 = (float10)local_58 / (float10)local_28;
-  fVar5 = (float10)1 + fVar5 * fVar7;
-  local_14 = local_28;
-  FUN_00563a30();
-  local_24 = (int)ROUND(fVar5);
-  fVar5 = (float10)local_54 / (float10)local_24;
-  fVar6 = (float10)1 + fVar6 * fVar7;
-  local_14 = local_24;
-  FUN_00563a30();
-  local_1c = (int)ROUND(fVar6);
-  fVar1 = local_50 / (float)local_1c;
-  local_20 = 0;
-  if (0 < local_28) {
+  fVar8 = (float10)round
+                             ((float10)1 +
+                              ((float10)local_58 / (float10)*(float *)(param_1 + 0x34)) * fVar7);
+  iStack_2c = (int)ROUND(fVar8);
+  fVar1 = local_5c / (float)iStack_2c;
+  local_18 = iStack_2c;
+  fVar5 = (float10)round((float10)1 + (fVar5 / (float10)fVar9) * fVar7);
+  iStack_2c = (int)ROUND(fVar5);
+  fVar9 = local_5c / (float)iStack_2c;
+  local_1c = iStack_2c;
+  fVar5 = (float10)round((float10)1 + (fVar6 / (float10)fVar10) * fVar7);
+  local_28 = (int)ROUND(fVar5);
+  fVar10 = local_5c / (float)local_28;
+  iStack_2c = 0;
+  if (0 < local_34) {
     do {
-      local_18 = 0;
-      if (0 < local_24) {
+      local_24 = 0;
+      if (0 < iStack_30) {
         do {
           iVar4 = 0;
-          if (0 < local_1c) {
+          if (0 < local_28) {
             do {
               fVar2 = (float)_DAT_0057e3d6;
-              local_40 = (float)fVar8 * fVar2 + (float)local_20 * (float)fVar8 + *param_4;
-              local_3c = (float)fVar5 * fVar2 + (float)local_18 * (float)fVar5 + param_4[1];
-              local_38 = (float)iVar4 * fVar1 + param_4[2] + fVar1 * fVar2;
-              local_14 = iVar4;
-              pfVar3 = (float *)FUN_0044da40(local_8c,local_34,&local_40);
-              local_64 = *pfVar3 + *param_2;
-              local_60 = pfVar3[1] + param_2[1];
-              local_5c = pfVar3[2] + param_2[2];
-              if (&local_4c != &local_64) {
-                local_4c = local_64;
-                local_48 = local_60;
-                local_44 = local_5c;
+              local_4c = fVar1 * fVar2 + (float)iStack_2c * fVar1 + *param_4;
+              local_48 = fVar9 * fVar2 + (float)local_24 * fVar9 + param_4[1];
+              local_44 = (float)iVar4 * fVar10 + param_4[2] + fVar10 * fVar2;
+              local_20 = iVar4;
+              pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                          (local_98,local_40,&local_4c);
+              fStack_70 = *pfVar3 + *param_2;
+              fStack_6c = pfVar3[1] + param_2[1];
+              fStack_68 = pfVar3[2] + param_2[2];
+              if (&local_58 != &fStack_70) {
+                local_58 = fStack_70;
+                local_54 = fStack_6c;
+                local_50 = fStack_68;
               }
-              FUN_0046c100(param_1,&local_4c);
+              FUN_0046c100(param_1,&local_58);
               iVar4 = iVar4 + 1;
-            } while (iVar4 < local_1c);
+            } while (iVar4 < local_28);
           }
-          local_18 = local_18 + 1;
-        } while (local_18 < local_24);
+          local_24 = local_24 + 1;
+        } while (local_24 < iStack_30);
       }
-      local_20 = local_20 + 1;
-    } while (local_20 < local_28);
+      iStack_2c = iStack_2c + 1;
+    } while (iStack_2c < local_34);
   }
   return;
 }

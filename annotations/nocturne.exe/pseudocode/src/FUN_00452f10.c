@@ -9,22 +9,22 @@
 void FUN_00452f10(int param_1)
 
 {
-  FUN_00564486(*(uint *)(param_1 + 0x10c));
+  shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x10c));
   *(uint *)(param_1 + 0x10c) = 0;
-  FUN_00564486(*(uint *)(param_1 + 0x108));
+  shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x108));
   *(uint *)(param_1 + 0x108) = 0;
-  FUN_00564486(*(uint *)(param_1 + 0x114));
+  shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x114));
   *(uint *)(param_1 + 0x114) = 0;
-  FUN_00564486(*(uint *)(param_1 + 0x118));
+  shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x118));
   *(uint *)(param_1 + 0x118) = 0;
-  FUN_00564486(*(uint *)(param_1 + 0x11c));
+  shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x11c));
   *(uint *)(param_1 + 0x11c) = 0;
   if (*(int *)(param_1 + 0x350) != 0) {
-    FUN_00564486(*(int *)(param_1 + 0x350) + -4);
+    shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 0x350) + -4);
   }
   *(uint *)(param_1 + 0x350) = 0;
   if (*(int *)(param_1 + 0x358) != 0) {
-    FUN_00564486(*(int *)(param_1 + 0x358) + -4);
+    shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 0x358) + -4);
   }
   *(uint *)(param_1 + 0x104) = 0;
   *(uint *)(param_1 + 0x110) = 0;

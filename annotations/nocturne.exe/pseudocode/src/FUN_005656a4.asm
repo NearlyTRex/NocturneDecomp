@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00565724 at 00565767
+;   crt_stdio.c_freopen_FUN_00565724 at 00565767
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ad0 = 005671e4

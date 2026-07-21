@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_005636d0 at 00563740
-;   FUN_00563a50 at 00563ac5
 ;   FUN_00564670 at 00564682
-;   FUN_00564740 at 005647d6
-;   FUN_00566cc0 at 00566d3c
 ;   FUN_0056ae10 at 0056ae69
 ;   FUN_00573660 at 00573687
+;   crt_stdio.c_fputc_FUN_00566cc0 at 00566d3c
+;   crt_stdio.c_fread_FUN_005636d0 at 00563740
+;   crt_stdio.c_fwrite_FUN_00563a50 at 00563ac5
+;   crt_stdio.c_ungetc_FUN_00564740 at 005647d6
 ;
 ; Called Functions:
-;   FUN_005635b0
+;   crt_memory.c_malloc_FUN_005635b0
 ;   FUN_0056bbb0
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x14]      ; 00568f0c
         ;   Label: LAB_00568f0c
     PUSH ECX                            ; 00568f0f
-    CALL FUN_005635b0                   ; 00568f10
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 00568f10
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     MOV EDX,dword ptr [EBX + 0x8]       ; 00568f15
     MOV dword ptr [EDX + 0x8],EAX       ; 00568f18
     MOV EAX,dword ptr [EBX + 0x8]       ; 00568f1b

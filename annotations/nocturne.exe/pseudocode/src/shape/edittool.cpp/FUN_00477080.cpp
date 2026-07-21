@@ -17,10 +17,10 @@ void FUN_00477080(int param_1)
     FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(uint *)(_DAT_01bcd070 + 0x3168);
-  _DAT_01bcd9bc = FUN_004930e0(_DAT_01bcd070,0x6a);
+  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (param_1 == 0) {
     param_1 = 0x57f0fa;
   }
-  FUN_00492da0(_DAT_01bcd070,param_1);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,param_1);
   return;
 }

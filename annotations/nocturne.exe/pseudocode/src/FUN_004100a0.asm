@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00454530
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004100b2
         ;   Label: LAB_004100b2
     PUSH EAX                            ; 004100b8
-    CALL FUN_00454530                   ; 004100b9
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004100b9
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     MOV ECX,dword ptr [EAX + 0x358]     ; 004100be
     ADD ESP,0x4                         ; 004100c4
     TEST ECX,ECX                        ; 004100c7

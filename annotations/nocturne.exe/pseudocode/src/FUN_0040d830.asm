@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0040d810 at 0040d81c
-;   FUN_00544720 at 00544751
-;   FUN_005624b0 at 005624d5
+;   core_actor.cpp_checkNameHash_FUN_0040d810 at 0040d81c
+;   core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720 at 00544751
+;   core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0 at 005624d5
 ;
 ; *****************************************************************************
 

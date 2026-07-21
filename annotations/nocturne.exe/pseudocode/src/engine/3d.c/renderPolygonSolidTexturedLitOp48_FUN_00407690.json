@@ -1,0 +1,345 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 143,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00407690",
+    "address_range": [
+      [
+        "00407690",
+        "0040773c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_3d.c_renderPolygonSolidTexturedLitOp48_FUN_00407690",
+    "signature": "int engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00407690(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00404710",
+      "is_variadic": false,
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00404710"
+    },
+    {
+      "addr": "00404610",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00404610"
+    },
+    {
+      "addr": "00408370",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00408370"
+    },
+    {
+      "addr": "00432cd0",
+      "is_variadic": false,
+      "name": "FUN_00432cd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b7624",
+      "name": "DAT_005b7624",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c7c",
+      "name": "DAT_01c00c7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03948",
+      "name": "DAT_01c03948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039a0",
+      "name": "DAT_01c039a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039a4",
+      "name": "DAT_01c039a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.469387755102041,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CBRANCH": 4,
+      "COPY": 36,
+      "INT_ADD": 16,
+      "INT_AND": 34,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 13,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 219
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00407690(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "if (DAT_005b7624 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "else if (DAT_005b7624 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 192,
+        "vtable_addr": "005acab8"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

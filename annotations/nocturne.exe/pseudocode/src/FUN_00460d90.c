@@ -11,13 +11,13 @@ void FUN_00460d90(void)
 {
   uint *unaff_ESI;
   byte bVar1;
-  uint auStack_ffc [1021];
+  uint auStack_1000 [1022];
   
   bVar1 = 0;
-  FUN_004ce790();
-  *unaff_ESI = auStack_ffc[0x3fa];
-  unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_ffc[(uint)bVar1 * -2 + 0x3fb];
+  engine_matrix_c_getCameraRotation_FUN_004ce790(auStack_1000 + 0x3fb);
+  *unaff_ESI = 0x460da0;
+  unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_1000[(uint)bVar1 * -2 + 0x3fb];
   (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       auStack_ffc[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
+       auStack_1000[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
   return;
 }

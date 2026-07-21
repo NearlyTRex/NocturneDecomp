@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 361,
+    "complexity_score": 365,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 95,
     "suspect_count": 26,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 272
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -153,7 +153,7 @@
     {
       "addr": "0051d380",
       "is_variadic": false,
-      "name": "FUN_0051d380"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380"
     }
   ],
   "globals": [
@@ -343,14 +343,14 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 35,
+          "line": 36,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 36,
+          "line": 37,
           "message": "Uninitialized variable: local_28",
           "severity": "error"
         }
@@ -386,26 +386,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0051d380(param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0051d380(param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));",
+      "text": "(param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (&local_30 != param_2) {",
+      "text": "(param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));",
       "type": "unnamed_param"
     },
     {
@@ -413,7 +405,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = local_30;",
+      "text": "if (&local_30 != param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -421,7 +413,7 @@
       "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = local_2c;",
+      "text": "*param_2 = local_30;",
       "type": "unnamed_param"
     },
     {
@@ -429,12 +421,20 @@
       "line": 29,
       "match": "param_2",
       "severity": "mild",
+      "text": "param_2[1] = local_2c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
       "text": "param_2[2] = local_28;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1 + 0x150;",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "switch((local_18 + *(int *)(param_1 + 0x6c)) % 4) {",
@@ -450,15 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0) {",
@@ -469,12 +461,20 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
       "text": "uVar6 = *(uint *)(param_1 + 0xbdc8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar3 = param_2 + iVar5 * 3;",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde8) * 4) != 0) {",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde8) * 4) != 0) {",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar6 = *(uint *)(param_1 + 0xbdcc);",
@@ -506,31 +506,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar3 = (float *)FUN_0051d380(iVar1,local_3c,*(uint *)(param_1 + 0xbdb4));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar1,local_3c,*(uint *)(param_1 + 0xbdb4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar4 = param_2 + iVar5 * 3;",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf4) * 4) != 0) {",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf4) * 4) != 0) {",
@@ -554,15 +554,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar3 = (float *)FUN_0051d380(iVar1,local_60,*(uint *)(param_1 + 0xbddc));",
+      "text": "(iVar1,local_60,*(uint *)(param_1 + 0xbddc));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 85,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar4 = param_2 + iVar5 * 3;",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 35,
+      "line": 36,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[1] = local_2c;",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Uninitialized variable: local_28",
-      "line": 36,
+      "line": 37,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[2] = local_28;",
@@ -588,7 +588,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CZombie",
         "offset": 76,
         "vtable_addr": "005a4554"
       }

@@ -17,10 +17,11 @@ void FUN_005495f0(int param_1)
   int iVar4;
   float local_18;
   
-  FUN_00454510(param_1 + 0x57c);
-  FUN_00553f10(param_1);
-  iVar2 = FUN_00454530(param_1 + 0x150);
-  piVar3 = (int *)FUN_00453080(iVar2,*(int *)(iVar2 + 0x100) + -1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x57c);
+  core_weapon_cpp_CWeapon_setup_FUN_00553f10(param_1);
+  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
+  piVar3 = (int *)core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080
+                            (iVar2,*(int *)(iVar2 + 0x100) + -1);
   local_18 = -1e+30;
   for (iVar4 = 0; iVar4 < *(int *)(iVar2 + 0x104); iVar4 = iVar4 + 1) {
     fVar1 = (float)piVar3[2] + (float)piVar3[1] * (float)_DAT_00596d15;

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00563a50 at 00563b18
 ;   FUN_00568890 at 005688f2
+;   crt_stdio.c_fwrite_FUN_00563a50 at 00563b18
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFilePointer_005755a0 = 00175ff4
@@ -19,9 +19,9 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FUN_005671e4
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   FUN_0056f220
 ;   SetFilePointer
 ;   WriteFile
@@ -76,8 +76,8 @@ section .text
     PUSH EBX                            ; 0056a012
     CALL dword ptr [0x005c1ac4]         ; 0056a013 | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 0056a019
-    CALL FUN_0056c73c                   ; 0056a01c
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056a01c
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x4                         ; 0056a021
     POP EBP                             ; 0056a024
     POP EDI                             ; 0056a025
@@ -126,8 +126,8 @@ section .text
     PUSH EBX                            ; 0056a07f
     CALL dword ptr [0x005c1ac4]         ; 0056a080 | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 0056a086
-    CALL FUN_0056c73c                   ; 0056a089
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056a089
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x4                         ; 0056a08e
     POP EBP                             ; 0056a091
     POP EDI                             ; 0056a092

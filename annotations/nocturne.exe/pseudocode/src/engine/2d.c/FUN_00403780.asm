@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00401530
-;   FUN_00401da0
+;   engine_2d.c_plotPixel_FUN_00401530
+;   engine_2d.c_project3DPointToScreen_FUN_00401da0
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     PUSH ECX                            ; 004037c6
     PUSH ESI                            ; 004037c7
     PUSH EAX                            ; 004037c8
-    CALL FUN_00401da0                   ; 004037c9
-        ;   XREF to: 00401da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00401da0()
+    CALL engine_2d.c_project3DPointToScreen_FUN_00401da0 ; 004037c9
+        ;   XREF to: 00401da0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_project3DPointToScreen_FUN_00401da0()
     ADD ESP,0xc                         ; 004037ce
     POP EBP                             ; 004037d1
         ;   Label: LAB_004037d1
@@ -98,14 +98,14 @@ section .text
         ;   XREF to: 004037d1 (CONDITIONAL_JUMP)  ; LAB_004037d1
     PUSH ESI                            ; 0040381f
     PUSH EDI                            ; 00403820
-    CALL FUN_00401530                   ; 00403821
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 00403821
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 00403826
     INC ESI                             ; 00403829
     PUSH ESI                            ; 0040382a
     PUSH EDI                            ; 0040382b
-    CALL FUN_00401530                   ; 0040382c
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040382c
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 00403831
     POP EBP                             ; 00403834
     POP EDI                             ; 00403835
@@ -142,25 +142,25 @@ section .text
         ;   XREF to: 004037d1 (CONDITIONAL_JUMP)  ; LAB_004037d1
     PUSH ESI                            ; 00403893
     PUSH EDI                            ; 00403894
-    CALL FUN_00401530                   ; 00403895
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 00403895
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040389a
     PUSH ESI                            ; 0040389d
     LEA EBX,[EDI + 0x1]                 ; 0040389e
     PUSH EBX                            ; 004038a1
-    CALL FUN_00401530                   ; 004038a2
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 004038a2
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 004038a7
     INC ESI                             ; 004038aa
     PUSH ESI                            ; 004038ab
     PUSH EBX                            ; 004038ac
-    CALL FUN_00401530                   ; 004038ad
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 004038ad
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 004038b2
     PUSH ESI                            ; 004038b5
     PUSH EDI                            ; 004038b6
-    CALL FUN_00401530                   ; 004038b7
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 004038b7
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 004038bc
     POP EBP                             ; 004038bf
     POP EDI                             ; 004038c0

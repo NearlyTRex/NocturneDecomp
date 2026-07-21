@@ -14,9 +14,10 @@ int FUN_00515d20(uint param_1)
   uint uVar1;
   int iVar2;
   
-  iVar2 = FUN_00553d90(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_005a1af4;
-  FUN_00454580(iVar2 + 0x150,"shotgun.kfm");
+  iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  *(byte ***)(iVar2 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_005a1af4;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (iVar2 + 0x150,"shotgun.kfm");
   *(uint *)(iVar2 + 0x570) = 0x41200000;
   *(uint *)(iVar2 + 0x2d0) = 1;
   *(uint *)(iVar2 + 0x2d4) = 2;

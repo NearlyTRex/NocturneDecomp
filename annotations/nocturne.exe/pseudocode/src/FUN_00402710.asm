@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_004021a0
+;   engine_2d.c_drawCharacterHighlighted_FUN_004021a0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EDX                            ; 00402744
     PUSH EBP                            ; 00402745
     PUSH EAX                            ; 00402746
-    CALL FUN_004021a0                   ; 00402747
-        ;   XREF to: 004021a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004021a0()
+    CALL engine_2d.c_drawCharacterHighlighted_FUN_004021a0 ; 00402747
+        ;   XREF to: 004021a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacterHighlighted_FUN_004021a0()
     ADD ESP,0xc                         ; 0040274c
     ADD EBP,EAX                         ; 0040274f
     INC EBX                             ; 00402751

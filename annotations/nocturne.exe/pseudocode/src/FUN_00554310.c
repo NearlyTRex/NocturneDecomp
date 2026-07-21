@@ -13,9 +13,11 @@ void FUN_00554310(int param_1,uint *param_2)
   byte local_14 [12];
   
   *(uint *)(param_1 + 0x2fc) = 0;
-  FUN_00554660(param_1);
+  core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(param_1);
   if (param_2 != (uint *)0x0) {
-    puVar1 = (uint *)FUN_0044daa0(param_1 + 0x318,local_14,param_2);
+    puVar1 = (uint *)
+             core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                       (param_1 + 0x318,local_14,param_2);
     if ((uint *)(param_1 + 0x34c) != puVar1) {
       *(uint *)(param_1 + 0x34c) = *puVar1;
       *(uint *)(param_1 + 0x350) = puVar1[1];

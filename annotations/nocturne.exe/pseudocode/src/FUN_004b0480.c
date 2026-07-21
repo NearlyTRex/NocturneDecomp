@@ -14,7 +14,7 @@ void FUN_004b0480(uint param_1,uint param_2,int param_3)
   if (param_3 == 2) {
     return;
   }
-  uVar1 = FUN_004b0430(param_1);
-  FUN_004af730(uVar1,param_2,param_3);
+  uVar1 = core_gore_cpp_CGore_allocateBloodPool_FUN_004b0430(param_1);
+  core_gore_cpp_CBloodPool_init_FUN_004af730(uVar1,param_2,param_3);
   return;
 }

@@ -16,7 +16,7 @@ uint * FUN_0055abb0(uint *param_1,uint param_2)
   uint auStack_3c [12];
   
   bVar4 = 0;
-  FUN_0055aa00(param_1,param_2);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(param_1,param_2);
   puVar2 = auStack_3c;
   puVar3 = param_1;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

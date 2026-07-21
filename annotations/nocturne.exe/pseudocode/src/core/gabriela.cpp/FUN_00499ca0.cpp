@@ -68,7 +68,7 @@ void FUN_00499ca0(int param_1,float param_2)
   local_14 = 0.0;
   local_18 = 0.0;
   local_1c = 0.0;
-  iVar1 = FUN_0040d890(iVar4,DAT_00764ad4);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,DAT_00764ad4);
   if (iVar1 == 0) goto LAB_00499d1a;
   (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_a0);
   fStack_28 = local_a0 + fStack_94;
@@ -99,7 +99,7 @@ void FUN_00499ca0(int param_1,float param_2)
     goto LAB_00499d1a;
   }
   if (param_2 == 0.0) {
-    FUN_0055c7b0(0xbfc90fdb);
+    core_xform_cpp_buildRotationY_FUN_0055c7b0(0xbfc90fdb);
     puVar3 = auStack_190;
 LAB_00499f65:
     puVar5 = auStack_d0;
@@ -111,13 +111,13 @@ LAB_00499f65:
   }
   else {
     if (param_2 == 1.4013e-45) {
-      FUN_0055c7b0(0x3fc90fdb);
+      core_xform_cpp_buildRotationY_FUN_0055c7b0(0x3fc90fdb);
       puVar3 = auStack_100;
       goto LAB_00499f65;
     }
-    FUN_0055abf0(auStack_d0);
+    core_xform_cpp_setIdentityMatrix3x4_FUN_0055abf0(auStack_d0);
   }
-  FUN_0055aa00(auStack_d0,local_10 * 0x30 + param_1 + 0xfd0);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_d0,local_10 * 0x30 + param_1 + 0xfd0);
   puVar3 = auStack_130;
   puVar5 = auStack_d0;
   for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -125,7 +125,7 @@ LAB_00499f65:
     puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puVar3 = (uint *)FUN_0055b180(auStack_d0,auStack_4c);
+  puVar3 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(auStack_d0,auStack_4c);
   if (&local_58 != puVar3) {
     local_58 = *puVar3;
     local_54 = puVar3[1];
@@ -158,9 +158,10 @@ LAB_00499d1a:
     local_34 = 0.0;
     local_2c = 0.0;
   }
-  FUN_0055a910(&local_34,local_10 * 0x30 + param_1 + 0xfd0);
-  FUN_0055afb0(local_160,&local_34,&local_58);
-  pfVar2 = (float *)FUN_0055a8b0(local_70,&local_1c,local_160);
+  core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(&local_34,local_10 * 0x30 + param_1 + 0xfd0)
+  ;
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_160,&local_34,&local_58);
+  pfVar2 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_70,&local_1c,local_160);
   local_40 = local_34 - *pfVar2;
   local_3c = local_30 - pfVar2[1];
   local_38 = local_2c - pfVar2[2];

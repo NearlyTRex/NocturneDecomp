@@ -17,8 +17,8 @@
 ;   undefined4 DAT_02ddf560
 ;
 ; Called Functions:
-;   FUN_005322b0
 ;   FUN_005638d0
+;   wincore_windll.cpp_kill_FUN_005322b0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     XOR EBP,EBP                         ; 00552cd1
     ADD ESP,0x4                         ; 00552cd3
     MOV dword ptr [0x006af62c],EBP      ; 00552cd6 | DAT_006af62c
-    CALL FUN_005322b0                   ; 00552cdc
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005322b0()
+    CALL wincore_windll.cpp_kill_FUN_005322b0 ; 00552cdc
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_kill_FUN_005322b0()
         ;   Label: LAB_00552cdc
     MOV EAX,[0x02ddf55c]                ; 00552ce1 | DAT_02ddf55c
     TEST EAX,EAX                        ; 00552ce6

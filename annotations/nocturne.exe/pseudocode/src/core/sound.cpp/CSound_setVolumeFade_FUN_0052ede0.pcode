@@ -1,0 +1,42 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_sound.cpp_CSound_setVolumeFade_FUN_0052ede0
+# Entry:       0052ede0
+# Signature:   void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0052ede0 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x8]
+INT_ADD (unique,0x7600,4) = (const,0x8,4), (register,0x10,4) /* ESP */
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
+
+@0052ede4 [ESP:+0]  # MOV [0x02dc9c9c], EAX
+COPY (ram,0x2dc9c9c,4) = (register,0x0,4) /* EAX */
+
+@0052ede9 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0xc]
+INT_ADD (unique,0x7600,4) = (const,0xc,4), (register,0x10,4) /* ESP */
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
+
+@0052eded [ESP:+0]  # MOV [0x02dc9ca0], EAX
+COPY (ram,0x2dc9ca0,4) = (register,0x0,4) /* EAX */
+
+@0052edf2 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 5 instructions, 11 P-code ops
+# ============================================================================

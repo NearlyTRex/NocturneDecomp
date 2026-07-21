@@ -13,13 +13,13 @@
 ;   undefined4 DAT_01fb1b24
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00416030
-;   FUN_0041ceb0
-;   FUN_004544d0
-;   FUN_00460aa0
-;   FUN_00461090
-;   thunk_FUN_004cdbc0
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc98]     ; 004161dc
     PUSH EBP                            ; 004161e2
     MOV dword ptr [EAX + 0x15a8a0],EBX  ; 004161e3 | DAT_01fb1b24
-    CALL FUN_00409f20                   ; 004161e9
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004161e9
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 004161ee
     PUSH 0x0                            ; 004161f1
     LEA EAX,[ESP + 0x10]                ; 004161f3
@@ -66,8 +66,8 @@ section .text
     CALL dword ptr [EBX + 0x14]         ; 004161ff
     ADD ESP,0x8                         ; 00416202
     PUSH EAX                            ; 00416205
-    CALL FUN_0041ceb0                   ; 00416206
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 00416206
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 0041620b
     MOV dword ptr [EBP + 0xf14],EAX     ; 0041620e
     TEST EAX,EAX                        ; 00416214
@@ -79,8 +79,8 @@ section .text
     PUSH -0x1                           ; 00416229
         ;   Label: LAB_00416229
     PUSH EBP                            ; 0041622b
-    CALL FUN_00416030                   ; 0041622c
-        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; undefined FUN_00416030()
+    CALL core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 ; 0041622c
+        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030()
     ADD ESP,0x8                         ; 00416231
     MOV EDI,dword ptr [EBP + 0x284]     ; 00416234
         ;   Label: LAB_00416234
@@ -99,22 +99,22 @@ section .text
     PUSH EDI                            ; 00416261
     MOV EAX,[0x005ae704]                ; 00416262 | DAT_005ae704
     PUSH EAX                            ; 00416267 | DAT_01b4d738
-    CALL FUN_00460aa0                   ; 00416268
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined FUN_00460aa0()
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00416268
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
     ADD ESP,0xc                         ; 0041626d
     PUSH -0x1                           ; 00416270
     PUSH 0x0                            ; 00416272
     PUSH ESI                            ; 00416274
-    CALL FUN_004544d0                   ; 00416275
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004544d0()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00416275
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
     ADD ESP,0xc                         ; 0041627a
     MOV EDX,dword ptr [0x005ae704]      ; 0041627d | DAT_005ae704
     INC EBX                             ; 00416283
     PUSH EDX                            ; 00416284 | DAT_01b4d738
     ADD EDI,0x194                       ; 00416285
     ADD ESI,0x194                       ; 0041628b
-    CALL thunk_FUN_004cdbc0             ; 00416291
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004cdbc0()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00416291
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     MOV ECX,dword ptr [EBP + 0x284]     ; 00416296
     ADD ESP,0x4                         ; 0041629c
     CMP EBX,ECX                         ; 0041629f
@@ -126,8 +126,8 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004162b0 | DAT_005ae704
         ;   Label: LAB_004162b0
     PUSH EBX                            ; 004162b6 | DAT_01b4d738
-    CALL thunk_FUN_004cdbc0             ; 004162b7
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004cdbc0()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004162b7
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     MOV EAX,[0x005be368]                ; 004162bc | DAT_005be368
     MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004162c1 | DAT_01fb1b24
     ADD ESP,0x4                         ; 004162cb
@@ -141,8 +141,8 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 004162dc | DAT_005ae704
         ;   Label: LAB_004162dc
     PUSH ESI                            ; 004162e2 | DAT_01b4d738
-    CALL FUN_00461090                   ; 004162e3
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004162e3
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 004162e8
     TEST EAX,EAX                        ; 004162eb
     JNZ 0x00416229                      ; 004162ed

@@ -66,7 +66,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004e85b0 at 004e9149
+;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e9149
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\sound\\mp3.cpp_0058b8af+1
@@ -88,7 +88,7 @@
 ;
 ; Called Functions:
 ;   FUN_004c8440
-;   FUN_004e60c0
+;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
 ;
 ; *****************************************************************************
 
@@ -387,8 +387,8 @@ section .text
     PUSH EDX                            ; 004e657a
     SAR EAX,0x10                        ; 004e657b
     PUSH EAX                            ; 004e657e
-    CALL FUN_004e60c0                   ; 004e657f
-        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e60c0()
+    CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0 ; 004e657f
+        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0()
     ADD ESP,0x14                        ; 004e6584
     MOV EAX,dword ptr [ESP + 0x1ff0]    ; 004e6587
         ;   Label: LAB_004e6587
@@ -583,8 +583,8 @@ section .text
     PUSH ECX                            ; 004e686f
     SAR EAX,0x10                        ; 004e6870
     PUSH EAX                            ; 004e6873
-    CALL FUN_004e60c0                   ; 004e6874
-        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e60c0()
+    CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0 ; 004e6874
+        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0()
     ADD ESP,0x14                        ; 004e6879
     MOV EAX,dword ptr [ESP + 0x2010]    ; 004e687c
         ;   Label: LAB_004e687c
@@ -710,8 +710,8 @@ section .text
     MOV EAX,dword ptr [ESP + EBX*0x1 + 0x1b16] ; 004e6a4a
     SAR EAX,0x10                        ; 004e6a51
     PUSH EAX                            ; 004e6a54
-    CALL FUN_004e60c0                   ; 004e6a55
-        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e60c0()
+    CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0 ; 004e6a55
+        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0()
     ADD ESP,0x14                        ; 004e6a5a
     MOV EAX,dword ptr [ESP + 0x201c]    ; 004e6a5d
         ;   Label: LAB_004e6a5d
@@ -930,8 +930,8 @@ section .text
     PUSH ECX                            ; 004e6d8a
     SAR EAX,0x10                        ; 004e6d8b
     PUSH EAX                            ; 004e6d8e
-    CALL FUN_004e60c0                   ; 004e6d8f
-        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e60c0()
+    CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0 ; 004e6d8f
+        ;   XREF to: 004e60c0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0()
     ADD ESP,0x14                        ; 004e6d94
     MOV EDX,dword ptr [ESP + 0x2000]    ; 004e6d97
         ;   Label: LAB_004e6d97

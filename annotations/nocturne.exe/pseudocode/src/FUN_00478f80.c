@@ -58,11 +58,11 @@ uint FUN_00478f80(int param_1)
   uint local_14;
   uint local_10;
   
-  iVar1 = FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (((iVar1 == 0) && (*(int *)(param_1 + 0x150) == 3)) && (*(int *)(param_1 + 0x160) != 0)) {
-    FUN_00511750(0x01E57284);
-    FUN_00511780(0x01E57284,param_1);
-    FUN_0048b6b0(&local_cc);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
+    core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_cc);
     local_c4 = *(uint *)(param_1 + 0x230);
     local_c0 = *(uint *)(param_1 + 0x234);
     local_bc = *(uint *)(param_1 + 0x238);
@@ -94,9 +94,10 @@ uint FUN_00478f80(int param_1)
     local_6c = local_c0;
     local_68 = local_bc;
     local_64 = local_b8;
-    uVar2 = FUN_0040a200(param_1,local_24,&local_18,&local_78,0);
+    uVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                      (param_1,local_24,&local_18,&local_78,0);
     FUN_0048b6f0(0x01C08D04,param_1 + 0x20,uVar2);
-    FUN_00511750(0x01E57284);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     return 1;
   }
   return 0;

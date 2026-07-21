@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 112,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "pseudocode_lines": 22,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
+      "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 52
+    "total_lines": 57
   },
   "cross_references": [],
   "function": {
@@ -151,14 +151,14 @@
   },
   "function_calls": [
     {
-      "addr": "004c6a10",
-      "is_variadic": false,
-      "name": "FUN_004c6a10"
-    },
-    {
       "addr": "00563a30",
       "is_variadic": false,
-      "name": "FUN_00563a30"
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "004c6a10",
+      "is_variadic": false,
+      "name": "engine_light.cpp_setDirectionalLightVector_FUN_004c6a10"
     }
   ],
   "globals": [
@@ -253,44 +253,36 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar2 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar4 = (float10)round((float10)param_2[2] * fVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x460cd0 assigned to bare local `uVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 21,
+      "match": "0x460cd0",
       "severity": "moderate",
-      "text": "uint extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (float10)param_2[2] * fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar3 = (float10)param_2[1] * fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = (float10)*param_2 * fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "FUN_004c6a10((int)ROUND(fVar1),extraout_ECX);",
-      "type": "extra_output"
+      "text": "uVar6 = 0x460cd0;",
+      "type": "raw_address_constant"
     }
   ]
 }

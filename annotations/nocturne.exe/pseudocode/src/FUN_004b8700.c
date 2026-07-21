@@ -63,15 +63,18 @@ void FUN_004b8700(int param_1,int param_2)
   bVar5 = 0;
   iVar2 = param_1 + param_2 * 0x44;
   if ((*(int *)(param_1 + 0x1f920) == 1) &&
-     (iVar1 = FUN_0040d7e0(*(uint *)(iVar2 + 0x24ac),"CShotgun"), iVar1 != 0)) {
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
+                        (*(uint *)(iVar2 + 0x24ac),"CShotgun"), iVar1 != 0)) {
     local_84 = 0x3e89ba5e;
     local_80 = 0xbc449ba6;
     local_54 = 0xbe92f1aa;
     local_7c = 0x3dbc6a7f;
     local_4c = 0x3f9ac083;
     local_50 = 0x3ecf5c29;
-    FUN_0055afb0(local_204,&local_84,&local_54);
-    FUN_0055aa00(local_204,param_1 + 0xfd0 + *(int *)(iVar2 + 0x24a4) * 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_204,&local_84,&local_54)
+    ;
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+              (local_204,param_1 + 0xfd0 + *(int *)(iVar2 + 0x24a4) * 0x30);
     puVar3 = local_1d4;
   }
   else if (*(int *)(param_1 + 0x1f920) == 3) {
@@ -91,8 +94,9 @@ void FUN_004b8700(int param_1,int param_2)
       local_98 = 0x3e0c27a6;
       local_94 = 0x3e0c27a6;
     }
-    FUN_0055afb0(local_e4,&local_a8,&local_9c);
-    FUN_0055aa00(local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_e4,&local_a8,&local_9c);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+              (local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
     puVar3 = local_264;
   }
   else if (*(int *)(param_1 + 0x1f920) == 5) {
@@ -112,8 +116,10 @@ void FUN_004b8700(int param_1,int param_2)
       local_44 = 0x3e0c27a6;
       local_40 = 0x3e0c27a6;
     }
-    FUN_0055afb0(local_114,&local_30,&local_48);
-    FUN_0055aa00(local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_114,&local_30,&local_48)
+    ;
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+              (local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
     puVar3 = local_174;
   }
   else {

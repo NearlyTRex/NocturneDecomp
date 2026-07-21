@@ -28,14 +28,16 @@ uint FUN_004b52f0(int param_1)
   local_18 = 1e+30;
   *(uint *)(param_1 + 0x1fa10) = 0;
   for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
-    iVar1 = FUN_0040d890(*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),_DAT_01cc3660);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),_DAT_01cc3660);
     if (iVar1 != 0) {
-      FUN_0040a290(param_1,&local_3c,iVar1 + 0x20);
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_3c,iVar1 + 0x20);
       if ((((ABS(local_38) <= (float)_DAT_00585853) && (0.0 <= (double)local_34)) &&
           ((double)local_34 <= _DAT_0058585b)) && (ABS(local_3c) <= (float)_DAT_0058585b)) {
-        iVar2 = FUN_0054e4a0(local_30,&local_3c);
+        iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_30,&local_3c)
+        ;
         if (ABS(*(float *)(iVar2 + 4)) <= (float)_DAT_00585863) {
-          iVar2 = FUN_004c68f0(iVar1,local_1c);
+          iVar2 = core_lever_cpp_CLever_isAccessibleFrom_FUN_004c68f0(iVar1,local_1c);
           if (iVar2 != 0) {
             local_14 = SQRT((local_34 + _DAT_0058586f) * (local_34 + _DAT_0058586f) +
                             (local_3c + _DAT_0058586b) * (local_3c + _DAT_0058586b));
@@ -50,7 +52,8 @@ uint FUN_004b52f0(int param_1)
     iVar3 = iVar3 + 4;
   }
   if (*(int *)(param_1 + 0x1fa10) != 0) {
-    iVar3 = FUN_00481890(*(int *)(param_1 + 0x1fa10) + 0x418);
+    iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_00481890
+                      (*(int *)(param_1 + 0x1fa10) + 0x418);
     if (iVar3 == 0) {
       *(uint *)(param_1 + 0xbca0) = 0;
       return 1;

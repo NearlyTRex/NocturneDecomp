@@ -36,7 +36,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00422050 at 004220ef
-;   FUN_00422370 at 00422746
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422746
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00579d09
@@ -48,9 +48,9 @@
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
-;   FUN_00468580
-;   FUN_00563a30
-;   FUN_005648c0
+;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
+;   crt_math.c_floor_FUN_005648c0
+;   crt_math.c_round_FUN_00563a30
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 00421c1d
     SUB ESP,0x8                         ; 00421c21
     FSTP double ptr [ESP]               ; 00421c24
-    CALL FUN_005648c0                   ; 00421c27
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005648c0()
+    CALL crt_math.c_floor_FUN_005648c0  ; 00421c27
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
     MOV dword ptr [ESP + 0x44],EAX      ; 00421c2c
     MOV dword ptr [ESP + 0x48],EDX      ; 00421c30
     FLD double ptr [ESP + 0x44]         ; 00421c34
@@ -114,13 +114,13 @@ section .text
     FLD float ptr [ESP + 0x14]          ; 00421c3b
     FMUL float ptr [ESP + 0x70]         ; 00421c3f
     FXCH                                ; 00421c43
-    CALL FUN_00563a30                   ; 00421c45
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00421c45
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x48]        ; 00421c4a
     SUB ESP,0x8                         ; 00421c4e
     FSTP double ptr [ESP]               ; 00421c51
-    CALL FUN_005648c0                   ; 00421c54
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005648c0()
+    CALL crt_math.c_floor_FUN_005648c0  ; 00421c54
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
     MOV dword ptr [ESP + 0x44],EAX      ; 00421c59
     MOV dword ptr [ESP + 0x48],EDX      ; 00421c5d
     FLD double ptr [ESP + 0x44]         ; 00421c61
@@ -130,8 +130,8 @@ section .text
     FILD dword ptr [ESP + 0x70]         ; 00421c70
     FMUL float ptr [0x0059aea8]         ; 00421c74 | DAT_0059aea8
     FXCH                                ; 00421c7a
-    CALL FUN_00563a30                   ; 00421c7c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00421c7c
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x6c]        ; 00421c81
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00421c85
     FSUB float ptr [EBX + 0x20]         ; 00421c89
@@ -303,8 +303,8 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 00421ebd
     PUSH EAX                            ; 00421ec1
     PUSH 0x1fba938                      ; 00421ec2 | DAT_01fba938
-    CALL FUN_00468580                   ; 00421ec7
-        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; undefined FUN_00468580()
+    CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580 ; 00421ec7
+        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580()
     MOV dword ptr [ESP + 0x88],EAX      ; 00421ecc
     FLD float ptr [ESP + 0x88]          ; 00421ed3
     ADD ESP,0x10                        ; 00421eda

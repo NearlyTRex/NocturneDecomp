@@ -15,7 +15,7 @@ void FUN_0051f650(void)
   
   puVar1 = (byte *)0x268cef4;
   do {
-    FUN_00517cc0(puVar1);
+    core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(puVar1);
     puVar1 = puVar1 + 0x2ac0;
   } while (puVar1 != &DAT_02737ef4);
   _DAT_0268cef0 = 0;

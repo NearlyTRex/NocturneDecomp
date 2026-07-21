@@ -1,0 +1,408 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 73,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "0040b300",
+      "from_addr": "0040bb68",
+      "name": "FUN_0040b300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477890",
+      "from_addr": "00477f6a",
+      "name": "FUN_00477890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b27c0",
+      "from_addr": "004b2cae",
+      "name": "FUN_004b27c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515ea0",
+      "from_addr": "005165b1",
+      "name": "FUN_00515ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545c30",
+      "from_addr": "00546165",
+      "name": "FUN_00545c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004880d0",
+      "from_addr": "0048820c",
+      "name": "core_fire.cpp_CGunFlame_init_FUN_004880d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048e5a0",
+      "from_addr": "0048e5d1",
+      "name": "core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509140",
+      "from_addr": "0050959e",
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_00509140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ab10",
+      "from_addr": "0054afdc",
+      "name": "core_turret.cpp_CTurret_fire_FUN_0054ab10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048e550",
+    "address_range": [
+      [
+        "0048e550",
+        "0048e59f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550",
+    "signature": "void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048ae90",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b80f0",
+      "name": "DAT_005b80f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0048820c",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CGunFlame_init_FUN_004880d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050959e",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_processActors_FUN_00509140",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040bb68",
+        "call_type": "direct",
+        "caller": "FUN_0040b300",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00477f6a",
+        "call_type": "direct",
+        "caller": "FUN_00477890",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048e5d1",
+        "call_type": "direct",
+        "caller": "core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b2cae",
+        "call_type": "direct",
+        "caller": "FUN_004b27c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005165b1",
+        "call_type": "direct",
+        "caller": "FUN_00515ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00546165",
+        "call_type": "direct",
+        "caller": "FUN_00545c30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054afdc",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_fire_FUN_0054ab10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.92,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 24,
+      "INT_ADD": 10,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 98
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2cc) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C08D04,param_1 + 0x358,0,0x4000,0x4000,0,0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x4e4) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 9,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

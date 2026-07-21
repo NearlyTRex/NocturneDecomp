@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl crt_string_c__stricmp_FUN_00566fb0(byte *param_1,byte *param_2)
+;
+;
+; XREF[1]:
+;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d955f
+;
+; *****************************************************************************
+
+section .text
+
+    JMP 0x00564520                      ; 00566fb0
+        ;   XREF to: 00564520 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_string.c__stricmp_FUN_00566fb0
+

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0048f490(int param_1)
+; int FUN_0048f490(int *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -23,19 +23,19 @@
 ;   undefined4 DAT_01c70758
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00409f60
-;   FUN_0041ceb0
-;   FUN_0045f460
-;   FUN_00460f20
-;   FUN_00461090
-;   FUN_0048f3c0
-;   FUN_004f99d0
-;   FUN_0053075c
-;   FUN_00533ce0
-;   FUN_00533f10
-;   FUN_00545920
-;   FUN_00563a30
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_flies.cpp_drawFlyPixel_FUN_0048f3c0
+;   core_spline.cpp_computeSplineBasis_FUN_00533ce0
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10
+;   crt_math.c_round_FUN_00563a30
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
+;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
+;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
+;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0048f49c
     MOV EDX,dword ptr [0x005ae704]      ; 0048f49f | DAT_005ae704
     PUSH EDX                            ; 0048f4a5 | DAT_01b4d738
-    CALL FUN_00461090                   ; 0048f4a6
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048f4a6
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 0048f4ab
     TEST EAX,EAX                        ; 0048f4ae
     JZ 0x0048f4bb                       ; 0048f4b0
@@ -68,8 +68,8 @@ section .text
         ;   Label: LAB_0048f4bb
     PUSH EAX                            ; 0048f4be
     MOV dword ptr [EAX + 0x2a14],0x0    ; 0048f4bf
-    CALL FUN_00409f20                   ; 0048f4c9
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0048f4c9
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 0048f4ce
     PUSH 0x0                            ; 0048f4d1
     LEA EAX,[ESP + 0x4c]                ; 0048f4d3
@@ -81,8 +81,8 @@ section .text
     CALL dword ptr [EDX + 0x14]         ; 0048f4e5
     ADD ESP,0x8                         ; 0048f4e8
     PUSH EAX                            ; 0048f4eb
-    CALL FUN_0041ceb0                   ; 0048f4ec
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0048f4ec
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 0048f4f1
     MOV dword ptr [ESP + 0x78],EAX      ; 0048f4f4
     TEST EAX,EAX                        ; 0048f4f8
@@ -105,8 +105,8 @@ section .text
     FSTP float ptr [ESP]                ; 0048f53a
     PUSH ESI                            ; 0048f53d
     INC EBX                             ; 0048f53e
-    CALL FUN_00533ce0                   ; 0048f53f
-        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00533ce0()
+    CALL core_spline.cpp_computeSplineBasis_FUN_00533ce0 ; 0048f53f
+        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_computeSplineBasis_FUN_00533ce0()
     ADD ESP,0xc                         ; 0048f544
     ADD ESI,0x20                        ; 0048f547
     CMP EBX,0x40                        ; 0048f54a
@@ -166,8 +166,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0048f62a | DAT_01b4d738
     PUSH 0x5b9214                       ; 0048f62c | DAT_005b9214
     MOV dword ptr [EAX + 0x8c],EDX      ; 0048f631
-    CALL FUN_00545920                   ; 0048f637
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined FUN_00545920()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0048f637
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
     ADD ESP,0x4                         ; 0048f63c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0048f63f
         ;   Label: LAB_0048f63f
@@ -183,8 +183,8 @@ section .text
         ;   Label: LAB_0048f662
     FLD float ptr [EAX]                 ; 0048f669
     FMUL float ptr [0x0058171f]         ; 0048f66b | DAT_0058171f
-    CALL FUN_00563a30                   ; 0048f671
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0048f671
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x84]        ; 0048f676
     MOV EDI,dword ptr [ESP + 0x84]      ; 0048f67d
     TEST EDI,EDI                        ; 0048f684
@@ -210,8 +210,8 @@ section .text
     ADD EAX,0x1c7075c                   ; 0048f6bb
     PUSH EAX                            ; 0048f6c0
     LEA EBX,[ESP + 0x84]                ; 0048f6c1
-    CALL FUN_00533f10                   ; 0048f6c8
-        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00533f10()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10 ; 0048f6c8
+        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10()
     ADD ESP,0x18                        ; 0048f6cd
     LEA EAX,[ESP + 0x60]                ; 0048f6d0
     MOV EDX,dword ptr [0x005ae704]      ; 0048f6d4 | DAT_005ae704
@@ -228,8 +228,8 @@ section .text
     PUSH EAX                            ; 0048f700
     MOV EAX,dword ptr [EDX]             ; 0048f701 | DAT_01b4d738
     PUSH EAX                            ; 0048f703
-    CALL FUN_0053075c                   ; 0048f704
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined FUN_0053075c()
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0048f704
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x005ae704]                ; 0048f709 | DAT_005ae704
     MOV EBX,dword ptr [EAX]             ; 0048f70e | DAT_01b4d738
     MOV DL,byte ptr [EBX + 0x13]        ; 0048f710
@@ -252,8 +252,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0048f74a
         ;   Label: LAB_0048f74a
     PUSH ESI                            ; 0048f74d
-    CALL FUN_00409f60                   ; 0048f74e
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f60()
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0048f74e
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
     ADD ESP,0x4                         ; 0048f753
     MOV EAX,dword ptr [ESP + 0x78]      ; 0048f756
     MOV ESP,EBP                         ; 0048f75a
@@ -268,8 +268,8 @@ section .text
     PUSH EAX                            ; 0048f763
     MOV EDX,dword ptr [0x005ae704]      ; 0048f764 | DAT_005ae704
     PUSH EDX                            ; 0048f76a | DAT_01b4d738
-    CALL FUN_00460f20                   ; 0048f76b
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00460f20()
+    CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0048f76b
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
     MOV EAX,[0x01c038f4]                ; 0048f770 | DAT_01c038f4
     SAR EAX,0x8                         ; 0048f775
     MOV [0x01c70754],EAX                ; 0048f778 | DAT_01c70754
@@ -332,16 +332,16 @@ section .text
     INC ECX                             ; 0048f82c
     PUSH EAX                            ; 0048f82d | DAT_01b4d738
     MOV word ptr [EBX + 0x76],CX        ; 0048f82e
-    CALL FUN_0045f460                   ; 0048f832
-        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; undefined FUN_0045f460()
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460 ; 0048f832
+        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460()
     ADD ESP,0xc                         ; 0048f837
     JMP 0x0048f71f                      ; 0048f83a
         ;   XREF to: 0048f71f (UNCONDITIONAL_JUMP)  ; LAB_0048f71f
     PUSH 0x1                            ; 0048f83f
         ;   Label: LAB_0048f83f
     PUSH EBX                            ; 0048f841
-    CALL FUN_004f99d0                   ; 0048f842
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f99d0()
+    CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 0048f842
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
     ADD ESP,0x8                         ; 0048f847
     MOV EAX,dword ptr [EBX + 0x8]       ; 0048f84a
     TEST ESI,ESI                        ; 0048f84d
@@ -359,8 +359,8 @@ section .text
     PUSH EAX                            ; 0048f875
     PUSH EDI                            ; 0048f876
     PUSH ESI                            ; 0048f877
-    CALL FUN_0048f3c0                   ; 0048f878
-        ;   XREF to: 0048f3c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048f3c0()
+    CALL core_flies.cpp_drawFlyPixel_FUN_0048f3c0 ; 0048f878
+        ;   XREF to: 0048f3c0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_drawFlyPixel_FUN_0048f3c0()
     ADD ESP,0xc                         ; 0048f87d
     JMP 0x0048f71f                      ; 0048f880
         ;   XREF to: 0048f71f (UNCONDITIONAL_JUMP)  ; LAB_0048f71f

@@ -12,7 +12,7 @@
 ;   void* PTR_FUN_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_00566cc0
+;   crt_stdio.c_fputc_FUN_00566cc0
 ;   FUN_005671e4
 ;   FUN_00568890
 ;   FUN_00568ed0
@@ -67,8 +67,8 @@ section .text
     PUSH ESI                            ; 005736bb
     PUSH EAX                            ; 005736bc
     INC EBX                             ; 005736bd
-    CALL FUN_00566cc0                   ; 005736be
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00566cc0()
+    CALL crt_stdio.c_fputc_FUN_00566cc0 ; 005736be
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
     ADD ESP,0x8                         ; 005736c3
     CMP EAX,-0x1                        ; 005736c6
     JNZ 0x005736b3                      ; 005736c9

@@ -8,10 +8,10 @@
 ;   undefined4 DAT_00599e50
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004118e6 (CONDITIONAL_JUMP)  ; LAB_004118e6
     PUSH 0x1                            ; 004118cc
     PUSH EBX                            ; 004118ce
-    CALL FUN_00409ea0                   ; 004118cf
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004118cf
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 004118d4
     MOV DL,byte ptr [ESP + 0xc]         ; 004118d7
     MOV EBX,EAX                         ; 004118db
@@ -39,12 +39,12 @@ section .text
     PUSH 0x599e50                       ; 004118e6 | DAT_00599e50
         ;   Label: LAB_004118e6
     PUSH EBX                            ; 004118eb
-    CALL FUN_0056445f                   ; 004118ec
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004118ec
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004118f1
     PUSH EAX                            ; 004118f4
-    CALL FUN_00564486                   ; 004118f5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004118f5
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004118fa
     MOV EAX,EBX                         ; 004118fd
     POP EBX                             ; 004118ff

@@ -76,7 +76,7 @@ void FUN_00423480(int param_1,int param_2)
     }
   }
   else {
-    iVar5 = FUN_0040de00(0,iVar6 + -1);
+    iVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(0,iVar6 + -1);
     *(uint *)(param_2 + 0x30) = *(uint *)(&stack0xffffff98 + iVar5 * 4);
   }
   iVar5 = *(int *)(*(int *)(param_1 + 0x12964) + 0x2234);

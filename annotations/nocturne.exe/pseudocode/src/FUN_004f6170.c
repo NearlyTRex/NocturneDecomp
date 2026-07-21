@@ -86,35 +86,40 @@ void FUN_004f6170(int param_1,float param_2)
   local_2c = 0;
   switch(*(uint *)(param_1 + 0x2cc)) {
   case 0:
-    iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
     bVar14 = iVar5 != 0;
     if (bVar14) {
-      FUN_004f6bd0(param_1,0x3f800000,1.0 / *(float *)(param_1 + 0x2e0));
+      core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
+                (param_1,0x3f800000,1.0 / *(float *)(param_1 + 0x2e0));
     }
     *(uint *)(param_1 + 0x2d4) = 0;
     break;
   case 1:
-    iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
     bVar14 = iVar5 != 0;
     if (bVar14) {
-      FUN_004f6bd0(param_1,0,1.0 / *(float *)(param_1 + 0x2e4));
+      core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
+                (param_1,0,1.0 / *(float *)(param_1 + 0x2e4));
     }
     *(uint *)(param_1 + 0x2d4) = 0x3f800000;
     break;
   case 2:
-    iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
     if (iVar5 == 0) {
-      iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
+      iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x34c)
+      ;
       if (iVar5 != 0) {
-        FUN_004f6bd0(param_1,0,1.0 / *(float *)(param_1 + 0x2e4));
+        core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
+                  (param_1,0,1.0 / *(float *)(param_1 + 0x2e4));
       }
     }
     else {
-      FUN_004f6bd0(param_1,0x3f800000,1.0 / *(float *)(param_1 + 0x2e0));
+      core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
+                (param_1,0x3f800000,1.0 / *(float *)(param_1 + 0x2e0));
     }
     break;
   case 3:
-    iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x414);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x414);
     if (iVar5 != 0) {
       *(uint *)(param_1 + 0x2cc) = 2;
       if (*(char *)(param_1 + 0x48c) != '\0') {
@@ -140,7 +145,7 @@ LAB_004f65e2:
     }
     goto LAB_004f65d0;
   case 4:
-    iVar5 = FUN_0047dc30(0x01C03A10,param_1 + 0x414);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x414);
     if (iVar5 != 0) {
       *(uint *)(param_1 + 0x2cc) = 2;
       if (*(char *)(param_1 + 0x48c) != '\0') {
@@ -182,9 +187,9 @@ joined_r0x004f6259:
       if (local_324[0] != '\0') {
         if (*pcVar8 == ';') {
           *pcVar8 = '\0';
-          iVar5 = FUN_005090a0(0x01E57284,pcVar4);
+          iVar5 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(0x01E57284,pcVar4);
           if ((iVar5 != -1) && (iVar5 != *(int *)(0x01E57284 + 0x15aabc))) {
-            FUN_005135d0(0x01E57284,iVar5,0x4479c000);
+            core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,iVar5,0x4479c000);
             *(uint *)(param_1 + 0x71c) = 0;
             goto LAB_004f62b0;
           }
@@ -199,33 +204,36 @@ joined_r0x004f6259:
         goto joined_r0x004f6259;
       }
 LAB_004f62b0:
-      iVar5 = FUN_005090a0(0x01E57284,pcVar4);
+      iVar5 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(0x01E57284,pcVar4);
       if ((iVar5 != -1) && (iVar5 != *(int *)(0x01E57284 + 0x15aabc))) {
-        FUN_005135d0(0x01E57284,iVar5,0x4479c000);
+        core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,iVar5,0x4479c000);
         *(uint *)(param_1 + 0x71c) = 0;
       }
     }
     if (local_30 != 0) {
-      FUN_005135f0(0x01E57284);
+      core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(0x01E57284);
     }
   }
   if (*(float *)(param_1 + 0x2d4) == local_34) {
     return;
   }
   if ((local_2c == 0) || (*(char *)(param_1 + 0x4a0) == '\0')) {
-    FUN_0052ebb0(0x02DC9450,*(uint *)(param_1 + 0x4b4));
+    core_sound_cpp_CSound_killSound_FUN_0052ebb0(0x02DC9450,*(uint *)(param_1 + 0x4b4));
   }
   else {
-    iVar5 = FUN_0052eba0(0x02DC9450,*(uint *)(param_1 + 0x4b4));
+    iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
+                      (0x02DC9450,*(uint *)(param_1 + 0x4b4));
     if (iVar5 == 0) {
       uVar6 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,param_1 + 0x4a0);
       *(uint *)(param_1 + 0x4b4) = uVar6;
     }
   }
   fStack_28 = *(float *)(param_1 + 0x24);
-  FUN_0055ae80(auStack_224,param_1 + 0x20,param_1 + 0x30);
-  FUN_004f5ff0(param_1);
-  FUN_0055afb0(auStack_104,param_1 + 0x20,param_1 + 0x30);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
+            (auStack_224,param_1 + 0x20,param_1 + 0x30);
+  core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(param_1);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (auStack_104,param_1 + 0x20,param_1 + 0x30);
   iVar5 = 0;
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_ac);
   iVar12 = 0;
@@ -238,8 +246,9 @@ LAB_004f62b0:
           iVar5 = *(int *)(0x01E57284 + iStack_24 + 0x14cd70);
           if (param_1 == *(int *)(iVar5 + 0xdc)) {
             pfStack_18 = (float *)(iVar5 + 0x20);
-            FUN_0055afb0(auStack_1c4,pfStack_18,iVar5 + 0x30);
-            FUN_0055aa00(auStack_1c4,auStack_224);
+            core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+                      (auStack_1c4,pfStack_18,iVar5 + 0x30);
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_1c4,auStack_224);
             puVar10 = auStack_134;
             puVar13 = auStack_164;
             for (iVar12 = 0xc; iVar12 != 0; iVar12 = iVar12 + -1) {
@@ -247,7 +256,7 @@ LAB_004f62b0:
               puVar10 = puVar10 + (uint)bVar15 * -2 + 1;
               puVar13 = puVar13 + (uint)bVar15 * -2 + 1;
             }
-            FUN_0055aa00(auStack_164,auStack_104);
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_164,auStack_104);
             puVar10 = auStack_194;
             puVar13 = auStack_1f4;
             for (iVar12 = 0xc; iVar12 != 0; iVar12 = iVar12 + -1) {
@@ -258,7 +267,7 @@ LAB_004f62b0:
             fStack_7c = fStack_1e8;
             fStack_78 = fStack_1d8;
             fStack_74 = fStack_1c8;
-            FUN_0055b180(auStack_1f4,auStack_94);
+            core_xform_cpp_matrixToEulerAngles_FUN_0055b180(auStack_1f4,auStack_94);
             fStack_88 = fStack_7c - *pfStack_18;
             fStack_84 = fStack_78 - pfStack_18[1];
             fStack_80 = fStack_74 - pfStack_18[2];
@@ -269,12 +278,13 @@ LAB_004f62b0:
             }
             *(uint *)(iVar5 + 0xec) = 0;
             *(uint *)(iVar5 + 0xf4) = 0;
-            pfStack_18 = (float *)FUN_0040df00(fStack_90 - *(float *)(iVar5 + 0x34));
+            pfStack_18 = (float *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                            (fStack_90 - *(float *)(iVar5 + 0x34));
             *(float **)(iVar5 + 0xf0) = pfStack_18;
           }
           iStack_24 = iStack_24 + 4;
         }
-        FUN_004f7700(param_1);
+        core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(param_1);
         return;
       }
       iVar2 = *(int *)(iVar5 + 0x14ecb4 + 0x01E57284);
@@ -292,17 +302,17 @@ LAB_004f6a33:
       }
       goto LAB_004f6a33;
     }
-    FUN_0040a290(param_1,&fStack_4c,iVar2 + 0x20);
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&fStack_4c,iVar2 + 0x20);
     if ((fStack_9c < fStack_48) || (fStack_48 < fStack_a8 + (float)_DAT_0058d76d))
     goto LAB_004f6a33;
-    FUN_0041e160(auStack_ac,&fStack_70,&fStack_4c);
+    core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(auStack_ac,&fStack_70,&fStack_4c);
     fStack_40 = fStack_4c - fStack_70;
     fStack_3c = fStack_48 - fStack_6c;
     fStack_38 = fStack_44 - fStack_68;
     if (((float)_DAT_0058d775 < ABS(fStack_40)) || ((float)_DAT_0058d775 < ABS(fStack_38)))
     goto LAB_004f6a33;
     fStack_3c = 0.0;
-    FUN_00511990(auStack_d4);
+    core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_d4);
     auStack_d4[0] = 0;
     iVar7 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x34))(iVar2,auStack_d4);
     if ((((iVar7 != 2) || (fStack_9c < fStack_48 + fStack_c0)) ||
@@ -318,7 +328,8 @@ LAB_004f6a33:
     fStack_58 = fStack_70 + fStack_40;
     fStack_54 = fStack_6c + fStack_3c;
     fStack_50 = fStack_68 + fStack_38;
-    FUN_0040a240(param_1,auStack_64,&fStack_58,(double)fVar3,fVar3);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+              (param_1,auStack_64,&fStack_58,(double)fVar3,fVar3);
     uStack_60 = *(uint *)(iVar2 + 0x24);
     (**(code **)(*(int *)(iVar2 + 0x14c) + 0x60))(iVar2,auStack_64,iVar2 + 0x30);
     iVar12 = iVar12 + 1;

@@ -29,8 +29,8 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   FUN_004cd240
-;   FUN_004d6420
+;   core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420
+;   engine_matrix.c_projectCachedPoint_FUN_004cd240
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH 0x1cc9124                      ; 004d7525 | DAT_01cc9124
     ADD EAX,0x98                        ; 004d752a
     PUSH EAX                            ; 004d752f
-    CALL FUN_004d6420                   ; 004d7530
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6420()
+    CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7530
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420()
     MOV ESI,dword ptr [0x01cc92a4]      ; 004d7535 | DAT_01cc92a4
     ADD ESP,0x14                        ; 004d753b
     CMP ESI,0x3                         ; 004d753e
@@ -109,8 +109,8 @@ section .text
     PUSH 0x1cc92a8                      ; 004d755c
     ADD EAX,0xa8                        ; 004d7561
     PUSH EAX                            ; 004d7566
-    CALL FUN_004d6420                   ; 004d7567
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6420()
+    CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7567
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420()
     MOV EAX,[0x01cc9120]                ; 004d756c | DAT_01cc9120
     ADD ESP,0x14                        ; 004d7571
     CMP EAX,0x3                         ; 004d7574
@@ -123,8 +123,8 @@ section .text
     PUSH 0x1cc9124                      ; 004d7588 | DAT_01cc9124
     ADD EAX,0xb8                        ; 004d758d
     PUSH EAX                            ; 004d7592
-    CALL FUN_004d6420                   ; 004d7593
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6420()
+    CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d7593
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420()
     MOV ECX,dword ptr [0x01cc92a4]      ; 004d7598 | DAT_01cc92a4
     ADD ESP,0x14                        ; 004d759e
     CMP ECX,0x3                         ; 004d75a1
@@ -137,8 +137,8 @@ section .text
     PUSH 0x1cc92a8                      ; 004d75b5
     ADD EAX,0xc8                        ; 004d75ba
     PUSH EAX                            ; 004d75bf
-    CALL FUN_004d6420                   ; 004d75c0
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6420()
+    CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d75c0
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420()
     MOV ESI,dword ptr [0x01cc9120]      ; 004d75c5 | DAT_01cc9120
     ADD ESP,0x14                        ; 004d75cb
     CMP ESI,0x3                         ; 004d75ce
@@ -151,8 +151,8 @@ section .text
     PUSH 0x1cc9124                      ; 004d75e6 | DAT_01cc9124
     ADD EAX,0xd8                        ; 004d75eb
     PUSH EAX                            ; 004d75f0
-    CALL FUN_004d6420                   ; 004d75f1
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6420()
+    CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 ; 004d75f1
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420()
     MOV EAX,[0x01cc92a4]                ; 004d75f6 | DAT_01cc92a4
     ADD ESP,0x14                        ; 004d75fb
     CMP EAX,0x3                         ; 004d75fe
@@ -198,8 +198,8 @@ section .text
     MOV dword ptr [EDI + EAX*0x1 + 0x10],0xffffffff ; 004d7694
     PUSH EDX                            ; 004d769c
     MOV dword ptr [ESI + 0xfc],EDX      ; 004d769d
-    CALL FUN_004cd240                   ; 004d76a3
-        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd240()
+    CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004d76a3
+        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPoint_FUN_004cd240()
     ADD ESP,0x4                         ; 004d76a8
     INC EBP                             ; 004d76ab
     MOV ECX,dword ptr [ESP]             ; 004d76ac

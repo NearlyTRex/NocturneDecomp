@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 234,
+    "complexity_score": 236,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 66,
     "suspect_count": 16,
     "suspect_types": [
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 167
+    "total_lines": 169
   },
   "cross_references": [],
   "function": {
@@ -152,37 +152,37 @@
     {
       "addr": "0042a060",
       "is_variadic": false,
-      "name": "FUN_0042a060"
+      "name": "core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060"
     },
     {
       "addr": "00544760",
       "is_variadic": false,
-      "name": "FUN_00544760"
-    },
-    {
-      "addr": "0055aa00",
-      "is_variadic": false,
-      "name": "FUN_0055aa00"
+      "name": "core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760"
     },
     {
       "addr": "0055afb0",
       "is_variadic": false,
-      "name": "FUN_0055afb0"
-    },
-    {
-      "addr": "0055b180",
-      "is_variadic": false,
-      "name": "FUN_0055b180"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0"
     },
     {
       "addr": "0055bc00",
       "is_variadic": false,
-      "name": "FUN_0055bc00"
+      "name": "core_xform.cpp_getTranslation_FUN_0055bc00"
     },
     {
       "addr": "0055cc30",
       "is_variadic": false,
-      "name": "FUN_0055cc30"
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_0055cc30"
+    },
+    {
+      "addr": "0055b180",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_0055b180"
+    },
+    {
+      "addr": "0055aa00",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00"
     }
   ],
   "globals": [],
@@ -317,7 +317,7 @@
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 68,
+          "line": 70,
           "message": "Uninitialized variable: *puVar1",
           "severity": "error"
         }
@@ -361,55 +361,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055cc30(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
+      "text": "(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055cc30(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
+      "text": "(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055cc30(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
+      "text": "(param_1 + 0xbd34,param_1 + 0xbd64,*(uint *)(param_1 + 0xbd30));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055afb0(local_13c,param_1 + 0x20,param_1 + 0x30);",
+      "text": "(local_13c,param_1 + 0x20,param_1 + 0x30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055afb0(local_13c,param_1 + 0x20,param_1 + 0x30);",
+      "text": "(local_13c,param_1 + 0x20,param_1 + 0x30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00544760(param_1,local_13c);",
+      "text": "core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(param_1,local_13c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 0xbca4);",
@@ -417,15 +417,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0042a060(*(uint *)(param_1 + 0xbca4),uVar2);",
+      "text": "core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(*(uint *)(param_1 + 0xbca4),uVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -433,7 +433,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 40,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -441,7 +441,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 46,
+      "line": 48,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -449,7 +449,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 54,
+      "line": 56,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -457,7 +457,7 @@
     },
     {
       "description": "Uninitialized variable: *puVar1",
-      "line": 68,
+      "line": 70,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(uint *)(iVar3 + 0x20) = *puVar1;",
@@ -467,7 +467,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CTentacle",
         "offset": 264,
         "vtable_addr": "005a3104"
       }

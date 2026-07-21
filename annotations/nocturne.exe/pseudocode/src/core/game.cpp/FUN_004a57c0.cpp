@@ -39,7 +39,7 @@ void FUN_004a57c0(int param_1)
   }
   iVar4 = param_1 + 0x8b4;
   *(uint *)(param_1 + 0xcc) = 0;
-  iVar2 = FUN_004568c0(&DAT_0058437c,iVar4);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058437c,iVar4);
   if (iVar2 < 0) {
     FUN_0046fcd0(0x01BCD074,"Can't open %s",iVar4);
     *(byte *)(param_1 + 0x8b4) = 0;
@@ -52,7 +52,7 @@ void FUN_004a57c0(int param_1)
     *(byte *)(param_1 + 0x8b4) = 0;
     return;
   }
-  FUN_00566498(iVar4,0,0,local_130,0);
+  splitpath(iVar4,0,0,local_130,0);
   pcVar6 = &DAT_005843be;
   iVar4 = -1;
   pcVar8 = local_130;
@@ -74,13 +74,13 @@ void FUN_004a57c0(int param_1)
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  iVar4 = FUN_00456a60(&DAT_005843c6,local_130,&DAT_005843c3);
+  iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005843c6,local_130,&DAT_005843c3);
   if (iVar4 == 0) {
     FUN_0046fcd0(0x01BCD074,"Can't open %s",local_130);
   }
   else {
-    FUN_005636d0(local_630,1,0x300,iVar4);
-    FUN_00563380(iVar4);
+    _fread(local_630,1,0x300,iVar4);
+    _fclose(iVar4);
     iVar4 = 0;
     iVar2 = 0;
     local_20 = 0;
@@ -109,23 +109,23 @@ void FUN_004a57c0(int param_1)
       iVar4 = iVar4 + 3;
       local_20 = local_20 + 4;
     } while (iVar2 != 0x200);
-    FUN_00553470();
-    FUN_005322e0();
-    FUN_0052ee70();
+    wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
+    wincore_windll_cpp_lockFrame_FUN_005322e0();
+    wincore_windll_cpp_clearScreen_FUN_0052ee70();
     FUN_00532320();
-    FUN_00553520();
-    FUN_00553910();
-    local_18 = FUN_005635b0(*(int *)(param_1 + 0x9b4) * *(int *)(param_1 + 0x9b8));
+    wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
+    local_18 = malloc
+                         (*(int *)(param_1 + 0x9b4) * *(int *)(param_1 + 0x9b8));
     if (local_18 != 0) {
-      iVar4 = FUN_00456a60(&DAT_005843db,param_1 + 0x8b4,&DAT_005843d8);
+      iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005843db,param_1 + 0x8b4,&DAT_005843d8);
       if (iVar4 == 0) {
         _DAT_01cc4800 = "..\\core\\game.cpp";
         _DAT_01cc4804 = 0x1028;
         FUN_004c8440("Can't open %s",param_1 + 0x8b4);
       }
-      FUN_005636d0(local_18,*(uint *)(param_1 + 0x9b4),*(uint *)(param_1 + 0x9b8),iVar4)
-      ;
-      FUN_00563380(iVar4);
+      _fread(local_18,*(uint *)(param_1 + 0x9b4),*(uint *)(param_1 + 0x9b8),iVar4);
+      _fclose(iVar4);
       local_1c = 0;
       if (0 < DAT_005b7620) {
         local_24 = 0;
@@ -155,14 +155,14 @@ void FUN_004a57c0(int param_1)
           local_24 = local_24 + 4;
         } while (local_1c < DAT_005b7620);
       }
-      FUN_00403f50();
-      FUN_0049f8c0(param_1);
+      engine_2d_c_clearInputAndWait_FUN_00403f50();
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(param_1);
       do {
-        FUN_00553910();
+        wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         if (*(int *)(param_1 + 0xbc) == 2) {
-          FUN_0049e8b0(param_1);
+          core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(param_1);
         }
-        iVar4 = FUN_00558b70();
+        iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70();
       } while (((iVar4 == 0) &&
                (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,*(uint *)(param_1 + 0x48)),
                iVar4 == 0)) && (_DAT_01bd1d94 == 0));
@@ -170,16 +170,16 @@ void FUN_004a57c0(int param_1)
              (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,*(uint *)(param_1 + 0x48)),
              iVar4 != 0))) {
         if (*(int *)(param_1 + 0xbc) == 2) {
-          FUN_0049e8b0(param_1);
-          FUN_00553910();
+          core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(param_1);
+          wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         }
         else {
-          FUN_00553910();
+          wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         }
       }
-      FUN_00403f50();
-      FUN_0049f8c0(param_1);
-      FUN_0049a890(param_1);
+      engine_2d_c_clearInputAndWait_FUN_00403f50();
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(param_1);
+      core_game_cpp_CGame_saveClockTime_FUN_0049a890(param_1);
       *(byte *)(param_1 + 0x8b4) = 0;
       FUN_005638d0(local_18);
       return;

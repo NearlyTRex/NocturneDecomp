@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0050ded0 at 0050df33
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 at 0050df33
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a18f0
@@ -53,14 +53,14 @@
 ;   undefined4 DAT_02045ab8
 ;
 ; Called Functions:
-;   FUN_0045f790
-;   FUN_0045ff20
+;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
+;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
+;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
+;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
+;   engine_matrix.c_normalizeVector3DFloat_FUN_004cde90
 ;   FUN_00460d10
-;   FUN_00461000
-;   FUN_00461010
-;   FUN_00461eb0
-;   FUN_004c3920
-;   FUN_004cde90
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5be680                       ; 0050d91f | DAT_005be680
     MOV EDX,dword ptr [0x005ae704]      ; 0050d924 | DAT_005ae704
     PUSH EDX                            ; 0050d92a | DAT_01b4d738
-    CALL FUN_00461eb0                   ; 0050d92b
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00461eb0()
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0050d92b
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
     MOV EAX,[0x005b9354]                ; 0050d930 | DAT_005b9354
     MOV ECX,dword ptr [EAX + 0x1f4]     ; 0050d935 | DAT_01c777e0
     ADD ESP,0x8                         ; 0050d93b
@@ -218,8 +218,8 @@ section .text
     PUSH EAX                            ; 0050db09
     LEA EDI,[ESP + 0xf0]                ; 0050db0a
     MOV dword ptr [ESP + 0xd4],EDX      ; 0050db11
-    CALL FUN_004cde90                   ; 0050db18
-        ;   XREF to: 004cde90 (UNCONDITIONAL_CALL)  ; undefined FUN_004cde90()
+    CALL engine_matrix.c_normalizeVector3DFloat_FUN_004cde90 ; 0050db18
+        ;   XREF to: 004cde90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004cde90()
     LEA ESI,[ESP + 0xe4]                ; 0050db1d
     ADD ESP,0x4                         ; 0050db24
     MOVSD ES:EDI,ESI                    ; 0050db27
@@ -335,8 +335,8 @@ section .text
     PUSH EAX                            ; 0050dc98
     MOV EDI,dword ptr [0x005ae704]      ; 0050dc99 | DAT_005ae704
     PUSH EDI                            ; 0050dc9f | DAT_01b4d738
-    CALL FUN_0045f790                   ; 0050dca0
-        ;   XREF to: 0045f790 (UNCONDITIONAL_CALL)  ; undefined FUN_0045f790()
+    CALL engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790 ; 0050dca0
+        ;   XREF to: 0045f790 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790()
     ADD ESP,0x8                         ; 0050dca5
         ;   Label: LAB_0050dca5
     MOV EBX,dword ptr [EBP + 0x18]      ; 0050dca8
@@ -366,14 +366,14 @@ section .text
     PUSH EAX                            ; 0050dce8
     MOV ESI,dword ptr [0x005ae704]      ; 0050dce9 | DAT_005ae704
     PUSH ESI                            ; 0050dcef | DAT_01b4d738
-    CALL FUN_00461010                   ; 0050dcf0
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined FUN_00461010()
+    CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0050dcf0
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
     ADD ESP,0x8                         ; 0050dcf5
     PUSH 0x0                            ; 0050dcf8
     MOV EDI,dword ptr [0x005ae704]      ; 0050dcfa | DAT_005ae704
     PUSH EDI                            ; 0050dd00 | DAT_01b4d738
-    CALL FUN_00461000                   ; 0050dd01
-        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined FUN_00461000()
+    CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 0050dd01
+        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000()
     ADD ESP,0x8                         ; 0050dd06
     JMP 0x0050d952                      ; 0050dd09
         ;   XREF to: 0050d952 (UNCONDITIONAL_JUMP)  ; LAB_0050d952
@@ -381,8 +381,8 @@ section .text
         ;   Label: LAB_0050dd0e
     PUSH EAX                            ; 0050dd10
     PUSH 0x200b130                      ; 0050dd11
-    CALL FUN_004c3920                   ; 0050dd16
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined FUN_004c3920()
+    CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 0050dd16
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
     ADD ESP,0x8                         ; 0050dd1b
     JMP 0x0050da14                      ; 0050dd1e
         ;   XREF to: 0050da14 (UNCONDITIONAL_JUMP)  ; LAB_0050da14
@@ -402,8 +402,8 @@ section .text
     PUSH EAX                            ; 0050dd43
     MOV ESI,dword ptr [0x005ae704]      ; 0050dd44 | DAT_005ae704
     PUSH ESI                            ; 0050dd4a | DAT_01b4d738
-    CALL FUN_0045ff20                   ; 0050dd4b
-        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; undefined FUN_0045ff20()
+    CALL engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20 ; 0050dd4b
+        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20()
     JMP 0x0050dca5                      ; 0050dd50
         ;   XREF to: 0050dca5 (UNCONDITIONAL_JUMP)  ; LAB_0050dca5
 

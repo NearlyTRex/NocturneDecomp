@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -139,7 +139,7 @@
     {
       "addr": "004b0580",
       "from_addr": "004b065b",
-      "name": "FUN_004b0580",
+      "name": "core_gore.cpp_CGore_spawnFlies_FUN_004b0580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,20 +157,20 @@
   },
   "function_calls": [
     {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    },
+    {
       "addr": "00409d30",
       "is_variadic": false,
       "name": "FUN_00409d30"
-    },
-    {
-      "addr": "005644a7",
-      "is_variadic": false,
-      "name": "FUN_005644a7"
     }
   ],
   "globals": [
     {
       "addr": "0059da34",
-      "name": "PTR_FUN_0059da34",
+      "name": "PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34",
       "type": "undefined1*",
       "value": "0048efb0"
     },
@@ -187,7 +187,7 @@
       {
         "call_addr": "004b065b",
         "call_type": "direct",
-        "caller": "FUN_004b0580",
+        "caller": "core_gore.cpp_CGore_spawnFlies_FUN_004b0580",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -279,7 +279,7 @@
       "line": 9,
       "match": "DAT_0059db10",
       "severity": "mild",
-      "text": "iVar1 = FUN_005644a7(iVar1 + 0x160,200,&DAT_0059db10);",
+      "text": "iVar1 = __arrinit(iVar1 + 0x160,200,&DAT_0059db10);",
       "type": "undefined_data"
     }
   ],

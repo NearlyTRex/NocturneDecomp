@@ -10,6 +10,6 @@ void FUN_004b9b50(int param_1)
 
 {
   FUN_004eed10(param_1);
-  FUN_0040c6d0(param_1 + 0x1f570,"killEvent");
+  core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f570,"killEvent");
   return;
 }

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004ff2c0 at 00501744
-;   FUN_0050e580 at 0050e5b7
+;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501744
+;   core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580 at 0050e5b7
 ;
 ; *****************************************************************************
 

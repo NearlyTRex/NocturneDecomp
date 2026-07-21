@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 312,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 65,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
@@ -137,13 +137,13 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 197
+    "total_lines": 200
   },
   "cross_references": [
     {
       "addr": "00513610",
       "from_addr": "00513634",
-      "name": "FUN_00513610",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,54 +161,54 @@
   },
   "function_calls": [
     {
-      "addr": "00460700",
+      "addr": "00507c80",
       "is_variadic": false,
-      "name": "FUN_00460700"
-    },
-    {
-      "addr": "00460780",
-      "is_variadic": false,
-      "name": "FUN_00460780"
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80"
     },
     {
       "addr": "004609d0",
       "is_variadic": false,
-      "name": "FUN_004609d0"
-    },
-    {
-      "addr": "00460c00",
-      "is_variadic": false,
-      "name": "FUN_00460c00"
-    },
-    {
-      "addr": "00460e40",
-      "is_variadic": false,
-      "name": "FUN_00460e40"
-    },
-    {
-      "addr": "00461070",
-      "is_variadic": false,
-      "name": "FUN_00461070"
+      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0"
     },
     {
       "addr": "00461090",
       "is_variadic": false,
-      "name": "FUN_00461090"
-    },
-    {
-      "addr": "00507c80",
-      "is_variadic": false,
-      "name": "FUN_00507c80"
-    },
-    {
-      "addr": "0052eed4",
-      "is_variadic": false,
-      "name": "FUN_0052eed4"
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090"
     },
     {
       "addr": "00460e70",
       "is_variadic": false,
-      "name": "thunk_FUN_004ce920"
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70"
+    },
+    {
+      "addr": "00460e40",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40"
+    },
+    {
+      "addr": "00460700",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070"
+    },
+    {
+      "addr": "00460c00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00"
+    },
+    {
+      "addr": "00460780",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780"
+    },
+    {
+      "addr": "0052eed4",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearZBufferNative_FUN_0052eed4"
     }
   ],
   "globals": [
@@ -267,7 +267,7 @@
       {
         "call_addr": "00513634",
         "call_type": "direct",
-        "caller": "FUN_00513610",
+        "caller": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -376,7 +376,7 @@
       "line": 20,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "uVar1 = FUN_00461090(DAT_005ae704);",
+      "text": "uVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
@@ -384,7 +384,7 @@
       "line": 21,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "FUN_00461070(DAT_005ae704,0,uVar1);",
+      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0,uVar1);",
       "type": "undefined_data"
     },
     {
@@ -392,7 +392,7 @@
       "line": 22,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);",
+      "text": "engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);",
       "type": "undefined_data"
     },
     {
@@ -437,15 +437,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00507c80(param_1,0x461c3f9a,0);",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,0x461c3f9a,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 43,
       "match": "DAT_01bd4260",
       "severity": "mild",
       "text": "puVar6 = *(uint **)(&DAT_01bd4260 + iVar4);",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 52,
       "match": "(uint *)((int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 53,
       "match": "(uint *)((int)puVar7",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *param_1);",
@@ -477,23 +477,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 65,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "thunk_FUN_004ce920(DAT_005ae704);",
+      "text": "engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 66,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "FUN_00461070(DAT_005ae704,uVar1);",
+      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,uVar1);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 52,
       "match": "(int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 53,
       "match": "(int)puVar7",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
+      "line": 45,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 50,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",

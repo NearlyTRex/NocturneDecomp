@@ -11,7 +11,8 @@ void FUN_00490b70(uint param_1,uint param_2,uint param_3,uint param_4,uint param
 {
   byte auStack_1010 [4096];
   
-  FUN_00563a08(auStack_1010,param_6,param_7);
-  FUN_00490af0(param_1,param_2,param_3,param_4,param_5,auStack_1010);
+  _vsprintf(auStack_1010,param_6,param_7);
+  engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0
+            (param_1,param_2,param_3,param_4,param_5,auStack_1010);
   return;
 }

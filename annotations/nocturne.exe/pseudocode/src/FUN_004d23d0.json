@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 531,
+    "complexity_score": 532,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 171,
+    "pseudocode_lines": 172,
     "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 645
+    "total_lines": 646
   },
   "cross_references": [
     {
@@ -163,29 +163,69 @@
   },
   "function_calls": [
     {
-      "addr": "00403f50",
-      "is_variadic": false,
-      "name": "FUN_00403f50"
-    },
-    {
-      "addr": "0040e3c0",
-      "is_variadic": false,
-      "name": "FUN_0040e3c0"
-    },
-    {
-      "addr": "0040e9e0",
-      "is_variadic": false,
-      "name": "FUN_0040e9e0"
-    },
-    {
       "addr": "0049a890",
       "is_variadic": false,
-      "name": "FUN_0049a890"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_0049a890"
     },
     {
       "addr": "0049a8a0",
       "is_variadic": false,
-      "name": "FUN_0049a8a0"
+      "name": "core_game.cpp_CGame_updateDT_FUN_0049a8a0"
+    },
+    {
+      "addr": "004cf440",
+      "is_variadic": false,
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440"
+    },
+    {
+      "addr": "004d21c0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004d21c0"
+    },
+    {
+      "addr": "004dea60",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_free_FUN_004dea60"
+    },
+    {
+      "addr": "004de860",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_init_FUN_004de860"
+    },
+    {
+      "addr": "004dec50",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_render_FUN_004dec50"
+    },
+    {
+      "addr": "004deae0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_update_FUN_004deae0"
+    },
+    {
+      "addr": "0052e850",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_configure_FUN_0052e850"
+    },
+    {
+      "addr": "0052e9c0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_reset_FUN_0052e9c0"
+    },
+    {
+      "addr": "00403f50",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403f50"
+    },
+    {
+      "addr": "0040e3c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0"
+    },
+    {
+      "addr": "0040e9e0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0"
     },
     {
       "addr": "004a4170",
@@ -203,74 +243,34 @@
       "name": "FUN_004c8510"
     },
     {
-      "addr": "004cf440",
-      "is_variadic": false,
-      "name": "FUN_004cf440"
-    },
-    {
-      "addr": "004d21c0",
-      "is_variadic": false,
-      "name": "FUN_004d21c0"
-    },
-    {
-      "addr": "004de860",
-      "is_variadic": false,
-      "name": "FUN_004de860"
-    },
-    {
-      "addr": "004dea60",
-      "is_variadic": false,
-      "name": "FUN_004dea60"
-    },
-    {
-      "addr": "004deae0",
-      "is_variadic": false,
-      "name": "FUN_004deae0"
-    },
-    {
-      "addr": "004dec50",
-      "is_variadic": false,
-      "name": "FUN_004dec50"
-    },
-    {
-      "addr": "004ee370",
-      "is_variadic": false,
-      "name": "FUN_004ee370"
-    },
-    {
-      "addr": "00526ca0",
-      "is_variadic": false,
-      "name": "FUN_00526ca0"
-    },
-    {
-      "addr": "00526cb0",
-      "is_variadic": false,
-      "name": "FUN_00526cb0"
-    },
-    {
-      "addr": "0052e850",
-      "is_variadic": false,
-      "name": "FUN_0052e850"
-    },
-    {
-      "addr": "0052e9c0",
-      "is_variadic": false,
-      "name": "FUN_0052e9c0"
-    },
-    {
-      "addr": "0052ee70",
-      "is_variadic": false,
-      "name": "FUN_0052ee70"
-    },
-    {
       "addr": "005459f0",
       "is_variadic": false,
       "name": "FUN_005459f0"
     },
     {
+      "addr": "00526ca0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0"
+    },
+    {
+      "addr": "00526cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0"
+    },
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    },
+    {
       "addr": "00553910",
       "is_variadic": false,
-      "name": "FUN_00553910"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
+    },
+    {
+      "addr": "0052ee70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_0052ee70"
     }
   ],
   "globals": [
@@ -586,7 +586,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc7d10;",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_01cc7e10",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc7e10;",
@@ -602,7 +602,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_01cc7f10",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc7f10;",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_01cc8010",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc8010;",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "puVar5 = &DAT_01cc7d10;",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 95,
+      "line": 96,
       "match": "*(byte **)(iVar7 + 0x1cc8110",
       "severity": "moderate",
       "text": "*(byte **)(iVar7 + 0x1cc8110) = puVar5;",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 108,
+      "line": 109,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
+      "line": 110,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((iVar7 == 0) || (iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar7 == 0)) {",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 142,
+      "line": 143,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -666,7 +666,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
+      "line": 143,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 146,
+      "line": 147,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 147,
+      "line": 148,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
+      "line": 148,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 152,
+      "line": 153,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 154,
+      "line": 155,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 154,
+      "line": 155,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 155,
+      "line": 156,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "(iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 155,
+      "line": 156,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {",
@@ -738,7 +738,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 160,
+      "line": 161,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 162,
+      "line": 163,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "(**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x21);",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 162,
+      "line": 163,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x21);",
@@ -762,10 +762,10 @@
     },
     {
       "description": "Pointer value `&PTR_s_f0100_005baf18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 30,
       "match": "(int)&PTR_s_f0100_005baf18",
       "severity": "moderate",
-      "text": "FUN_0040e3c0(iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);",
+      "text": "(iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);",
       "type": "pointer_truncation"
     },
     {
@@ -786,7 +786,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
+      "line": 62,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -810,7 +810,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 84,
+      "line": 85,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -818,10 +818,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 29,
+      "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "FUN_0040e3c0(iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);",
+      "text": "(iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);",
       "type": "pointer_cast"
     }
   ]

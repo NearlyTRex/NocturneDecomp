@@ -16,19 +16,19 @@ int FUN_00419c20(int param_1)
   if (*(int *)(param_1 + 0x2404) != 0) {
     return 0;
   }
-  FUN_00409f20(param_1);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
   uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);
-  iVar2 = FUN_0041ceb0(uVar1);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar1);
   if (iVar2 != 0) {
-    FUN_004619f0(DAT_005ae704,0);
+    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,0);
     uVar1 = DAT_005ae704;
     *(uint *)(0x01E57284 + 0x15a8a0) = 1;
-    FUN_00461010(uVar1,0xffff);
-    FUN_00425c20(param_1);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(uVar1,0xffff);
+    core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(param_1);
     uVar1 = DAT_005ae704;
     *(uint *)(0x01E57284 + 0x15a8a0) = 0;
-    FUN_00461db0(uVar1);
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(uVar1);
   }
-  FUN_00409f60(param_1);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
   return iVar2;
 }

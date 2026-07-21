@@ -8,11 +8,11 @@
 ;   undefined4 DAT_0059bdb0
 ;
 ; Called Functions:
-;   FUN_00409ea0
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_0043f980
-;   FUN_0056445f
-;   FUN_00564486
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0x1                            ; 0043f8fd
     LEA EBX,[EAX + 0xfffffe00]          ; 0043f8ff
     PUSH EBX                            ; 0043f905
-    CALL FUN_00409ea0                   ; 0043f906
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 0043f906
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 0043f90b
     MOV DL,byte ptr [ESP + 0xc]         ; 0043f90e
     MOV EBX,EAX                         ; 0043f912
@@ -47,12 +47,12 @@ section .text
     PUSH 0x59bdb0                       ; 0043f91d | DAT_0059bdb0
         ;   Label: LAB_0043f91d
     PUSH EBX                            ; 0043f922
-    CALL FUN_0056445f                   ; 0043f923
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0043f923
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0043f928
     PUSH EAX                            ; 0043f92b
-    CALL FUN_00564486                   ; 0043f92c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0043f92c
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0043f931
     MOV EAX,EBX                         ; 0043f934
     POP EBX                             ; 0043f936

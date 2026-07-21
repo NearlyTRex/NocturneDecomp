@@ -29,7 +29,8 @@ int FUN_005621f0(int param_1,float *param_2)
   byte local_24 [12];
   int local_18;
   
-  FUN_0051d380(param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+            (param_1 + 0x150,&local_30,*(uint *)(param_1 + 0xbdd8));
   if (&local_30 != param_2) {
     *param_2 = local_30;
     param_2[1] = local_2c;
@@ -45,7 +46,8 @@ int FUN_005621f0(int param_1,float *param_2)
         uVar6 = *(uint *)(param_1 + 0xbdc8);
         puVar2 = local_24;
 LAB_0056227c:
-        pfVar3 = (float *)FUN_0051d380(iVar1,puVar2,uVar6);
+        pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                                    (iVar1,puVar2,uVar6);
         if (&local_48 != pfVar3) {
           local_48 = *pfVar3;
           local_44 = pfVar3[1];
@@ -72,7 +74,8 @@ LAB_005622fe:
       break;
     case 2:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {
-        pfVar3 = (float *)FUN_0051d380(iVar1,local_3c,*(uint *)(param_1 + 0xbdb4));
+        pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                                    (iVar1,local_3c,*(uint *)(param_1 + 0xbdb4));
         pfVar4 = param_2 + iVar5 * 3;
         if (pfVar4 != pfVar3) {
           *pfVar4 = *pfVar3;
@@ -84,7 +87,8 @@ LAB_005622fe:
       break;
     case 3:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf4) * 4) != 0) {
-        pfVar3 = (float *)FUN_0051d380(iVar1,local_60,*(uint *)(param_1 + 0xbddc));
+        pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                                    (iVar1,local_60,*(uint *)(param_1 + 0xbddc));
         pfVar4 = param_2 + iVar5 * 3;
         if (pfVar4 != pfVar3) {
           *pfVar4 = *pfVar3;

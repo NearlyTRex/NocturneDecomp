@@ -21,10 +21,10 @@ void FUN_0052d030(uint param_1,char *param_2,uint param_3)
   _DAT_02dc9620 = 0;
   *param_2 = '\0';
   for (iVar4 = 0; iVar4 < _DAT_02dc9610; iVar4 = iVar4 + 1) {
-    uVar2 = FUN_00474080(&DAT_02dc9610,iVar4,0);
-    iVar3 = FUN_004775b0(param_3,uVar2);
+    uVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&DAT_02dc9610,iVar4,0);
+    iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(param_3,uVar2);
     if (iVar3 != 0) {
-      pcVar5 = (char *)FUN_00474080(&DAT_02dc9610,iVar4);
+      pcVar5 = (char *)shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&DAT_02dc9610,iVar4);
       pcVar6 = (char *)(_DAT_02dc9620 * 0x28 + 0x2dc9628);
       do {
         cVar1 = *pcVar5;
@@ -42,7 +42,7 @@ void FUN_0052d030(uint param_1,char *param_2,uint param_3)
   if (_DAT_02dc9620 < 1) {
     return;
   }
-  iVar4 = FUN_0056488c();
+  iVar4 = rand();
   pcVar5 = (char *)((iVar4 % _DAT_02dc9620) * 0x28 + 0x2dc9628);
   do {
     cVar1 = *pcVar5;

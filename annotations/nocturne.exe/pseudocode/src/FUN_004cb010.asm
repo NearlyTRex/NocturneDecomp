@@ -26,14 +26,14 @@
 ;   undefined4 DAT_005a0048
 ;
 ; Called Functions:
-;   FUN_0040a240
-;   FUN_004cae20
-;   FUN_004caef0
-;   FUN_004cb5a0
-;   FUN_004cb740
-;   FUN_004cb8e0
-;   FUN_004cb8f0
-;   FUN_004cba40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0
+;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
+;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0
+;   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40
+;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0
+;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740
+;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 004cb054
     PUSH ESI                            ; 004cb055
     FSTP float ptr [ESP + 0x34]         ; 004cb056
-    CALL FUN_0040a240                   ; 004cb05a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cb05a
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 004cb05f
     MOV EAX,ESP                         ; 004cb062
     PUSH EAX                            ; 004cb064
@@ -76,8 +76,8 @@ section .text
     LEA EAX,[EBX + 0xc]                 ; 004cb075
     PUSH dword ptr [EBX + 0x18]         ; 004cb078
     PUSH EAX                            ; 004cb07b
-    CALL FUN_004caef0                   ; 004cb07c
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined FUN_004caef0()
+    CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb07c
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
     ADD ESP,0x18                        ; 004cb081
     MOV EBP,EAX                         ; 004cb084
     MOV EAX,ESP                         ; 004cb086
@@ -90,8 +90,8 @@ section .text
     PUSH dword ptr [EBX + 0x1c]         ; 004cb09c
     PUSH EAX                            ; 004cb09f
     AND EBP,0x1                         ; 004cb0a0
-    CALL FUN_004caef0                   ; 004cb0a3
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined FUN_004caef0()
+    CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb0a3
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
     ADD ESP,0x18                        ; 004cb0a8
     AND EBP,EAX                         ; 004cb0ab
     MOV EAX,ESP                         ; 004cb0ad
@@ -103,8 +103,8 @@ section .text
     LEA EAX,[EBX + 0x14]                ; 004cb0c0
     PUSH dword ptr [EBX + 0x20]         ; 004cb0c3
     PUSH EAX                            ; 004cb0c6
-    CALL FUN_004caef0                   ; 004cb0c7
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined FUN_004caef0()
+    CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb0c7
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
     ADD ESP,0x18                        ; 004cb0cc
     AND EBP,EAX                         ; 004cb0cf
     LEA EAX,[ESP + 0x18]                ; 004cb0d1
@@ -120,8 +120,8 @@ section .text
     FLD float ptr [EBX + 0x1c]          ; 004cb0ee
     PUSH ESI                            ; 004cb0f1
     FSTP float ptr [EBX + 0x18]         ; 004cb0f2
-    CALL FUN_004cae20                   ; 004cb0f5
-        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined FUN_004cae20()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20 ; 004cb0f5
+        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20()
     ADD ESP,0x14                        ; 004cb0fa
     FLD float ptr [ESP + 0x14]          ; 004cb0fd
     FDIV float ptr [0x005a0048]         ; 004cb101 | DAT_005a0048
@@ -281,34 +281,34 @@ section .text
         ;   XREF to: 004cb1e3 (CONDITIONAL_JUMP)  ; LAB_004cb1e3
     PUSH EDI                            ; 004cb26d
     PUSH ESI                            ; 004cb26e
-    CALL FUN_004cb8f0                   ; 004cb26f
-        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb8f0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0 ; 004cb26f
+        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0()
     ADD ESP,0x8                         ; 004cb274
     PUSH EAX                            ; 004cb277
     PUSH ESI                            ; 004cb278
-    CALL FUN_004cba40                   ; 004cb279
-        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined FUN_004cba40()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 ; 004cb279
+        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40()
     ADD ESP,0x8                         ; 004cb27e
     TEST EAX,EAX                        ; 004cb281
     JZ 0x004cb2b3                       ; 004cb283
         ;   XREF to: 004cb2b3 (CONDITIONAL_JUMP)  ; LAB_004cb2b3
     PUSH EDI                            ; 004cb285
     PUSH ESI                            ; 004cb286
-    CALL FUN_004cb8e0                   ; 004cb287
-        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb8e0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0 ; 004cb287
+        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0()
     ADD ESP,0x8                         ; 004cb28c
     PUSH EAX                            ; 004cb28f
     PUSH ESI                            ; 004cb290
-    CALL FUN_004cba40                   ; 004cb291
-        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined FUN_004cba40()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 ; 004cb291
+        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40()
     ADD ESP,0x8                         ; 004cb296
     TEST EAX,EAX                        ; 004cb299
     JNZ 0x004cb1e3                      ; 004cb29b
         ;   XREF to: 004cb1e3 (CONDITIONAL_JUMP)  ; LAB_004cb1e3
     PUSH EDI                            ; 004cb2a1
     PUSH ESI                            ; 004cb2a2
-    CALL FUN_004cb740                   ; 004cb2a3
-        ;   XREF to: 004cb740 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb740()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740 ; 004cb2a3
+        ;   XREF to: 004cb740 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740()
     ADD ESP,0x8                         ; 004cb2a8
     ADD ESP,0x2c                        ; 004cb2ab
     POP EBP                             ; 004cb2ae
@@ -319,8 +319,8 @@ section .text
     PUSH EDI                            ; 004cb2b3
         ;   Label: LAB_004cb2b3
     PUSH ESI                            ; 004cb2b4
-    CALL FUN_004cb5a0                   ; 004cb2b5
-        ;   XREF to: 004cb5a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb5a0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 ; 004cb2b5
+        ;   XREF to: 004cb5a0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0()
     ADD ESP,0x8                         ; 004cb2ba
     ADD ESP,0x2c                        ; 004cb2bd
     POP EBP                             ; 004cb2c0

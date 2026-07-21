@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00566b90 at 00566b95
+;   crt_heap.c__heapwalk_FUN_00566b90 at 00566b95
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1680

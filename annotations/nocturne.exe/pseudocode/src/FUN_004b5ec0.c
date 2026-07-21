@@ -20,7 +20,7 @@ void FUN_004b5ec0(int param_1)
   *(uint *)(param_1 + 0x1fa18) = 0;
   *(uint *)(param_1 + 0x1fa1c) = 0;
   *(uint *)(param_1 + 0x2590) = 0;
-  FUN_004c3280(param_1 + 0x1f5a0,0xffffffff);
+  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004c3280(param_1 + 0x1f5a0,0xffffffff);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,0);
   iVar2 = param_1;
   do {

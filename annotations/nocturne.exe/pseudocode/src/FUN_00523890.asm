@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00525b70
+;   sound_sndmain.cpp_CSfxSample_init_FUN_00525b70
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00523890
         ;   Label: FUN_00523890
     PUSH EDX                            ; 00523894
-    CALL FUN_00525b70                   ; 00523895
-        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; undefined FUN_00525b70()
+    CALL sound_sndmain.cpp_CSfxSample_init_FUN_00525b70 ; 00523895
+        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_init_FUN_00525b70()
     MOV dword ptr [EAX + 0x120],0x0     ; 0052389a
     MOV dword ptr [EAX + 0x12c],0x0     ; 005238a4
     MOV dword ptr [EAX + 0x130],0x0     ; 005238ae

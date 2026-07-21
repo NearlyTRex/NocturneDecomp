@@ -17,14 +17,14 @@ int FUN_0048a970(uint param_1,int param_2)
   int iVar4;
   int iVar5;
   
-  iVar1 = FUN_00482ed0(&DAT_01c20148);
+  iVar1 = core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(&DAT_01c20148);
   if (param_2 == 0) {
     iVar4 = 0;
     if (0 < _DAT_01c20140) {
       iVar2 = 0;
       do {
         if ((*(int *)(iVar2 + 0x1c20154) != 0) && (*(int *)(iVar2 + 0x1c20158) == 0)) {
-          iVar1 = FUN_00482f50(&DAT_01c20148 + iVar2);
+          iVar1 = core_fire_cpp_CBulletHole_render_FUN_00482f50(&DAT_01c20148 + iVar2);
           *(uint *)(iVar2 + 0x1c20154) = 0;
         }
         iVar4 = iVar4 + 1;
@@ -38,7 +38,7 @@ int FUN_0048a970(uint param_1,int param_2)
       iVar2 = 0;
       do {
         if (*(int *)(iVar2 + 0x1c20158) == 0) {
-          FUN_00482f50(&DAT_01c20148 + iVar2);
+          core_fire_cpp_CBulletHole_render_FUN_00482f50(&DAT_01c20148 + iVar2);
         }
         iVar4 = iVar4 + 1;
         iVar2 = iVar2 + 0x3c;
@@ -54,7 +54,7 @@ int FUN_0048a970(uint param_1,int param_2)
       if (iVar1 == 0) {
         *(uint *)(iVar2 + 0x1c23d50) = 1;
 LAB_0048a9ef:
-        iVar1 = FUN_004835d0(iVar2 + 0x1c23d50);
+        iVar1 = core_fire_cpp_CStake_render_FUN_004835d0(iVar2 + 0x1c23d50);
       }
       else if (*(int *)(iVar2 + 0x1c23d50) != 0) goto LAB_0048a9ef;
       iVar2 = iVar2 + 0x260;
@@ -66,7 +66,7 @@ LAB_0048a9ef:
     iVar4 = 0;
     do {
       if (*(int *)(iVar4 + 0x1c625fc) != 0) {
-        iVar1 = FUN_00487af0(iVar4 + 0x1c625f8);
+        iVar1 = core_fire_cpp_CCrater_render_FUN_00487af0(iVar4 + 0x1c625f8);
         *(uint *)(iVar4 + 0x1c625fc) = 0;
       }
       iVar4 = iVar4 + 0x70;
@@ -75,7 +75,7 @@ LAB_0048a9ef:
   else {
     puVar3 = (byte *)0x1c625f8;
     do {
-      iVar1 = FUN_00487af0(puVar3);
+      iVar1 = core_fire_cpp_CCrater_render_FUN_00487af0(puVar3);
       puVar3 = puVar3 + 0x70;
     } while (puVar3 != &DAT_01c62eb8);
   }

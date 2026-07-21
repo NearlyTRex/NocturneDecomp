@@ -1,0 +1,229 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 40,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "0046f7e0",
+      "from_addr": "0046f9d4",
+      "name": "FUN_0046f7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470eb0",
+      "from_addr": "00471274",
+      "name": "FUN_00470eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f2a0",
+      "from_addr": "0046f2b0",
+      "name": "shape_edittool.cpp_CInputString_backspace_FUN_0046f2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f390",
+      "from_addr": "0046f570",
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f330",
+      "from_addr": "0046f37e",
+      "name": "shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046f130",
+    "address_range": [
+      [
+        "0046f130",
+        "0046f140"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130",
+    "signature": "void __cdecl shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(int param_1)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 3,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 12
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x138) = *(uint *)(param_1 + 0x134);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x138) = *(uint *)(param_1 + 0x134);",
+      "type": "unnamed_param"
+    }
+  ]
+}

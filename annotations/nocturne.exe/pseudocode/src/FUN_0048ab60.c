@@ -51,13 +51,13 @@ void FUN_0048ab60(uint param_1,float *param_2,int param_3,uint param_4,int param
         } while (iVar1 < _DAT_01c20140);
       }
       if (local_14 != 0) {
-        uVar3 = FUN_0048a0e0();
-        FUN_00482c80(uVar3,param_2,param_3,param_5);
+        uVar3 = core_fire_cpp_allocateBulletHole_FUN_0048a0e0();
+        core_fire_cpp_CBulletHole_init_FUN_00482c80(uVar3,param_2,param_3,param_5);
       }
     }
   }
 LAB_0048ac45:
-  iVar1 = FUN_00446590(0x1fb8508,param_2,0x3f000000);
+  iVar1 = core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(0x1fb8508,param_2,0x3f000000);
   if (iVar1 != 0) {
     iVar1 = 0;
     do {
@@ -67,7 +67,8 @@ LAB_0048ac45:
         _DAT_01c0a13c = 0;
       }
       iVar1 = iVar1 + 1;
-      FUN_00482780(&DAT_01c0a140 + iVar2,param_2,0x3e99999a,0,0xffff);
+      core_fire_cpp_CSmokeParticle_init_FUN_00482780
+                (&DAT_01c0a140 + iVar2,param_2,0x3e99999a,0,0xffff);
     } while (iVar1 < 8);
     switch(param_4) {
     case 2:
@@ -76,7 +77,8 @@ LAB_0048ac45:
       iVar1 = 0;
       do {
         iVar1 = iVar1 + 1;
-        FUN_0048ae90(param_1,param_2,0,0x20000,0x10000,0,0xffff);
+        core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
+                  (param_1,param_2,0,0x20000,0x10000,0,0xffff);
       } while (iVar1 < 8);
     }
   }
@@ -91,10 +93,10 @@ LAB_0048ac45:
   switch(param_4) {
   case 2:
   case 8:
-    iVar1 = FUN_0040dea0(0x3e2aaaab);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e2aaaab);
     if (iVar1 != 0) {
-      uVar3 = FUN_004b11b0(2);
-      FUN_00563c90(acStack_60,"ric-%s!?.wav",uVar3);
+      uVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(2);
+      _sprintf(acStack_60,"ric-%s!?.wav",uVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -103,10 +105,10 @@ LAB_0048ac45:
     break;
   case 3:
   case 4:
-    iVar1 = FUN_0040dea0(0x3e2aaaab);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e2aaaab);
     if (iVar1 != 0) {
-      uVar3 = FUN_004b11b0(3);
-      FUN_00563c90(acStack_60,"ric-%s.wav",uVar3);
+      uVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(3);
+      _sprintf(acStack_60,"ric-%s.wav",uVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -114,10 +116,10 @@ LAB_0048ac45:
     }
     break;
   case 5:
-    iVar1 = FUN_0040dea0(0x3e2aaaab);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e2aaaab);
     if (iVar1 != 0) {
-      uVar3 = FUN_004b11b0(5);
-      FUN_00563c90(acStack_60,"ric-%s!?.wav",uVar3);
+      uVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(5);
+      _sprintf(acStack_60,"ric-%s!?.wav",uVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -125,10 +127,10 @@ LAB_0048ac45:
     }
     break;
   case 7:
-    iVar1 = FUN_0040dea0(0x3e2aaaab);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e2aaaab);
     if (iVar1 != 0) {
-      uVar3 = FUN_004b11b0(7);
-      FUN_00563c90(acStack_60,"ric-%s!?.wav",uVar3);
+      uVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(7);
+      _sprintf(acStack_60,"ric-%s!?.wav",uVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -139,6 +141,7 @@ LAB_0048ac45:
     return;
   }
 LAB_0048ae60:
-  FUN_0052eb00(0x02DC9450,0,acStack_60,param_2,0x3e2e147b);
+  core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
+            (0x02DC9450,0,acStack_60,param_2,0x3e2e147b);
   return;
 }

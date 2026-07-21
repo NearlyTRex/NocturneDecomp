@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 314,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 101,
     "suspect_count": 18,
     "suspect_types": [
       "self_copy_guard",
@@ -138,7 +138,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 277
+    "total_lines": 279
   },
   "cross_references": [],
   "function": {
@@ -158,22 +158,22 @@
     {
       "addr": "0040e160",
       "is_variadic": false,
-      "name": "FUN_0040e160"
-    },
-    {
-      "addr": "0055a8b0",
-      "is_variadic": false,
-      "name": "FUN_0055a8b0"
-    },
-    {
-      "addr": "0055aa00",
-      "is_variadic": false,
-      "name": "FUN_0055aa00"
+      "name": "core_actor.cpp_CVector_ctor_FUN_0040e160"
     },
     {
       "addr": "0055afb0",
       "is_variadic": false,
-      "name": "FUN_0055afb0"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0"
+    },
+    {
+      "addr": "0055aa00",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00"
+    },
+    {
+      "addr": "0055a8b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_0055a8b0"
     }
   ],
   "globals": [
@@ -510,84 +510,84 @@
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 67,
+          "line": 68,
           "message": "Uninitialized variable: local_84",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 68,
+          "line": 69,
           "message": "Uninitialized variable: local_8c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 68,
+          "line": 69,
           "message": "Uninitialized variable: local_80",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 69,
+          "line": 70,
           "message": "Uninitialized variable: local_88",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 69,
+          "line": 70,
           "message": "Uninitialized variable: local_7c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 98,
+          "line": 100,
           "message": "Uninitialized variable: local_14",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 99,
+          "line": 101,
           "message": "Uninitialized variable: local_10",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 100,
+          "line": 102,
           "message": "Uninitialized variable: local_e4",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 101,
+          "line": 103,
           "message": "Uninitialized variable: local_d4",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 102,
+          "line": 104,
           "message": "Uninitialized variable: local_c4",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 105,
+          "line": 107,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 105,
+          "line": 107,
           "message": "Uninitialized variable: *puVar4",
           "severity": "error"
         }
@@ -647,15 +647,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "FUN_0055afb0(local_120,&DAT_02dd1184,&local_60);",
+      "text": "(local_120,&DAT_02dd1184,&local_60);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 59,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_90);",
@@ -663,23 +663,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar2 = (float *)FUN_0055a8b0(local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);",
+      "text": "(local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 100,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar4;",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 102,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 102,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 86,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 97,
+      "line": 99,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_48 != &local_30)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 67,
+      "line": 68,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_48 != &local_30) {",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Uninitialized variable: local_84",
-      "line": 67,
+      "line": 68,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_54 = local_90 + local_84;",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Uninitialized variable: local_8c",
-      "line": 68,
+      "line": 69,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_50 = local_8c + local_80;",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Uninitialized variable: local_80",
-      "line": 68,
+      "line": 69,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_50 = local_8c + local_80;",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Uninitialized variable: local_88",
-      "line": 69,
+      "line": 70,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_4c = local_88 + local_7c;",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Uninitialized variable: local_7c",
-      "line": 69,
+      "line": 70,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_4c = local_88 + local_7c;",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Uninitialized variable: local_14",
-      "line": 98,
+      "line": 100,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_38 = local_14 - pfVar2[1];",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Uninitialized variable: local_10",
-      "line": 99,
+      "line": 101,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_34 = local_10 - pfVar2[2];",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Uninitialized variable: local_e4",
-      "line": 100,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_e4 = local_e4 + (local_18 - *pfVar2);",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Uninitialized variable: local_d4",
-      "line": 101,
+      "line": 103,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_d4 = local_d4 + (local_14 - pfVar2[1]);",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Uninitialized variable: local_c4",
-      "line": 102,
+      "line": 104,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_c4 = local_c4 + (local_10 - pfVar2[2]);",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 105,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_ESI = *puVar4;",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Uninitialized variable: *puVar4",
-      "line": 105,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_ESI = *puVar4;",
@@ -841,7 +841,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 292,
         "vtable_addr": "0059a8b4"
       }

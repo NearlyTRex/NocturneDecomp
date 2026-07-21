@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00428510 at 004286b1
 ;   FUN_004ab450 at 004ab6aa
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004286b1
 ;
 ; Referenced Globals:
 ;   string s_glass-1.wav@2.0_0057a014
 ;
 ; Called Functions:
-;   FUN_0051ed30
+;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00427a98
     PUSH EAX                            ; 00427a9b
     PUSH EDX                            ; 00427a9c
-    CALL FUN_0051ed30                   ; 00427a9d
-        ;   XREF to: 0051ed30 (UNCONDITIONAL_CALL)  ; undefined FUN_0051ed30()
+    CALL core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30 ; 00427a9d
+        ;   XREF to: 0051ed30 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30()
     ADD ESP,0x10                        ; 00427aa2
     MOV dword ptr [EBX + 0x70],0x2      ; 00427aa5
     POP EBX                             ; 00427aac

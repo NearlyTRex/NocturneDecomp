@@ -28,30 +28,30 @@ int FUN_004edfc0(uint param_1)
   int local_14;
   
   local_1c = 0;
-  iVar3 = FUN_004568c0(&DAT_0058c922,param_1);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058c922,param_1);
   iVar5 = iVar3;
   if (0 < iVar3) {
-    iVar4 = FUN_00456a60(&DAT_0058c926,param_1,&DAT_0058c923);
+    iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0058c926,param_1,&DAT_0058c923);
     iVar5 = 0;
     if (iVar4 != 0) {
-      local_18 = FUN_00566e70(iVar4);
+      local_18 = _ftell(iVar4);
       local_18 = iVar3 + local_18;
-      FUN_00564b20(local_31c,0xff,iVar4);
-      FUN_00563350(iVar4,&DAT_0058c927,&local_1c);
-      FUN_00564b20(local_31c,0xff,iVar4);
-      FUN_00563350(iVar4,&DAT_0058c92b,&DAT_01d16810);
+      _fgets(local_31c,0xff,iVar4);
+      _fscanf(iVar4,&DAT_0058c927,&local_1c);
+      _fgets(local_31c,0xff,iVar4);
+      _fscanf(iVar4,&DAT_0058c92b,&DAT_01d16810);
       if (local_1c != 0) {
         _DAT_01cc4800 = "..\\support\\newmsg.cpp";
         _DAT_01cc4804 = 0x52;
         FUN_004c8440("Unknown message file version");
       }
-      FUN_00564b20(local_31c,0xff,iVar4);
-      FUN_00563350(iVar4,"\"%[^\"]\"\n",&DAT_005bdf50);
+      _fgets(local_31c,0xff,iVar4);
+      _fscanf(iVar4,"\"%[^\"]\"\n",&DAT_005bdf50);
       do {
-        FUN_00563350(iVar4,&DAT_0058c96b);
-        iVar5 = FUN_00566e70(iVar4);
+        _fscanf(iVar4,&DAT_0058c96b);
+        iVar5 = _ftell(iVar4);
         if (local_18 <= iVar5) {
-          FUN_00563380(iVar4);
+          _fclose(iVar4);
           if (0 < _DAT_01d16818) {
             iVar7 = 0x1d177c0;
             iVar3 = 0x1d271c0;
@@ -71,8 +71,9 @@ int FUN_004edfc0(uint param_1)
             if (iVar4 < _DAT_01d16818) {
               iVar7 = iVar4 * 4;
               do {
-                iVar6 = FUN_005649c0(*(uint *)(iVar3 + 0x1d1681c),
-                                     *(uint *)(iVar7 + 0x1d1681c));
+                iVar6 = _strcmp
+                                  (*(uint *)(iVar3 + 0x1d1681c),
+                                   *(uint *)(iVar7 + 0x1d1681c));
                 if (0 < iVar6) {
                   uVar2 = *(uint *)(iVar3 + 0x1d1681c);
                   *(uint *)(iVar3 + 0x1d1681c) = *(uint *)(iVar7 + 0x1d1681c);
@@ -90,7 +91,7 @@ int FUN_004edfc0(uint param_1)
           _DAT_01d16814 = 1;
           return _DAT_01d16818 + -1;
         }
-        iVar5 = FUN_00563350(iVar4,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
+        iVar5 = _fscanf(iVar4,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
         if (iVar5 != 2) {
           _DAT_01cc4800 = "..\\support\\newmsg.cpp";
           _DAT_01cc4804 = 99;

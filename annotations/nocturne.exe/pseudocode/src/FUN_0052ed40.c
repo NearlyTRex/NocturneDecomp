@@ -18,14 +18,15 @@ uint FUN_0052ed40(uint param_1,uint param_2,int *param_3)
   do {
     puVar1 = (uint *)(iVar2 + 0x5bed6c);
     iVar2 = iVar2 + 0x10;
-    FUN_00473cb0(auStack_174,*puVar1);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_174,*puVar1);
   } while (iVar2 != 0x1b0);
-  iVar2 = FUN_00474d70(auStack_174,param_2,*param_3);
+  iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
+                    (auStack_174,param_2,*param_3);
   if (-1 < iVar2) {
     *param_3 = iVar2;
-    FUN_00474cf0(auStack_174,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(auStack_174,0);
     return 1;
   }
-  FUN_00474cf0(auStack_174,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(auStack_174,0);
   return 0;
 }

@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
-;   FUN_004c1d20
+;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     PUSH 0x0                            ; 004a3a7c
     ADD EAX,0x1f5a0                     ; 004a3a7e
     PUSH EAX                            ; 004a3a83
-    CALL FUN_004c1d20                   ; 004a3a84
-        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined FUN_004c1d20()
+    CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20 ; 004a3a84
+        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20()
     ADD ESP,0x8                         ; 004a3a89
     RET                                 ; 004a3a8c
 

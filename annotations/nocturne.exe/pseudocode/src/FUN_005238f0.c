@@ -9,6 +9,6 @@
 uint FUN_005238f0(uint param_1)
 
 {
-  FUN_00523a60(param_1);
+  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(param_1);
   return param_1;
 }

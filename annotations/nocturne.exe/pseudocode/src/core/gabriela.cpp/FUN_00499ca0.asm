@@ -41,15 +41,15 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_0040d890
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+;   core_xform.cpp_buildRotationY_FUN_0055c7b0
+;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180
+;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
+;   core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0
+;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
+;   core_xform.cpp_transformVector3x4InPlace_FUN_0055a910
 ;   FUN_004c8440
-;   FUN_0055a8b0
-;   FUN_0055a910
-;   FUN_0055aa00
-;   FUN_0055abf0
-;   FUN_0055afb0
-;   FUN_0055b180
-;   FUN_0055c7b0
 ;
 ; *****************************************************************************
 
@@ -83,8 +83,8 @@ section .text
     PUSH EDI                            ; 00499cf9
     MOV dword ptr [ESP + 0x180],ECX     ; 00499cfa
     MOV dword ptr [ESP + 0x17c],ECX     ; 00499d01
-    CALL FUN_0040d890                   ; 00499d08
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00499d08
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 00499d0d
     MOV ESI,EAX                         ; 00499d10
     TEST EAX,EAX                        ; 00499d12
@@ -119,8 +119,8 @@ section .text
     PUSH EAX                            ; 00499d89
     LEA EAX,[ESP + 0x160]               ; 00499d8a
     PUSH EAX                            ; 00499d91
-    CALL FUN_0055a910                   ; 00499d92
-        ;   XREF to: 0055a910 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a910()
+    CALL core_xform.cpp_transformVector3x4InPlace_FUN_0055a910 ; 00499d92
+        ;   XREF to: 0055a910 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4InPlace_FUN_0055a910()
     ADD ESP,0x8                         ; 00499d97
     LEA EAX,[ESP + 0x138]               ; 00499d9a
     PUSH EAX                            ; 00499da1
@@ -128,8 +128,8 @@ section .text
     PUSH EAX                            ; 00499da9
     LEA EAX,[ESP + 0x38]                ; 00499daa
     PUSH EAX                            ; 00499dae
-    CALL FUN_0055afb0                   ; 00499daf
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055afb0()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 00499daf
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
     ADD ESP,0xc                         ; 00499db4
     LEA EAX,[ESP + 0x30]                ; 00499db7
     PUSH EAX                            ; 00499dbb
@@ -139,8 +139,8 @@ section .text
     PUSH EAX                            ; 00499dcb
     LEA ESI,[ESP + 0x3c]                ; 00499dcc
     MOV EDI,EBX                         ; 00499dd0
-    CALL FUN_0055a8b0                   ; 00499dd2
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a8b0()
+    CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00499dd2
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
     ADD ESP,0xc                         ; 00499dd7
     MOV ECX,0xc                         ; 00499dda
     FLD float ptr [ESP + 0x15c]         ; 00499ddf
@@ -236,8 +236,8 @@ section .text
     PUSH 0xbfc90fdb                     ; 00499f47
     LEA ESI,[ESP + 0x4]                 ; 00499f4c
     LEA EDI,[ESP + 0xc4]                ; 00499f50
-    CALL FUN_0055c7b0                   ; 00499f57
-        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055c7b0()
+    CALL core_xform.cpp_buildRotationY_FUN_0055c7b0 ; 00499f57
+        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationY_FUN_0055c7b0()
     MOV ECX,0xc                         ; 00499f5c
     LEA ESI,[ESP + 0x4]                 ; 00499f61
     ADD ESP,0x4                         ; 00499f65
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 00499f90
     LEA ESI,[ESP + 0x68]                ; 00499f91
     LEA EDI,[ESP + 0xc8]                ; 00499f95
-    CALL FUN_0055aa00                   ; 00499f9c
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined FUN_0055aa00()
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00499f9c
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
     ADD ESP,0x8                         ; 00499fa1
     LEA EAX,[ESP + 0x144]               ; 00499fa4
     MOV ECX,0xc                         ; 00499fab
@@ -266,8 +266,8 @@ section .text
     LEA ESI,[ESP + 0x64]                ; 00499fb8
     PUSH EAX                            ; 00499fbc
     MOVSD.REP ES:EDI,ESI                ; 00499fbd
-    CALL FUN_0055b180                   ; 00499fbf
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined FUN_0055b180()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 00499fbf
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
     MOV EDX,EAX                         ; 00499fc4
     LEA EAX,[ESP + 0x140]               ; 00499fc6
     ADD ESP,0x8                         ; 00499fcd
@@ -296,8 +296,8 @@ section .text
     PUSH 0x3fc90fdb                     ; 0049a01d
     LEA ESI,[ESP + 0x94]                ; 0049a022
     LEA EDI,[ESP + 0xc4]                ; 0049a029
-    CALL FUN_0055c7b0                   ; 0049a030
-        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055c7b0()
+    CALL core_xform.cpp_buildRotationY_FUN_0055c7b0 ; 0049a030
+        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationY_FUN_0055c7b0()
     MOV ECX,0xc                         ; 0049a035
     LEA ESI,[ESP + 0x94]                ; 0049a03a
     JMP 0x00499f65                      ; 0049a041
@@ -305,8 +305,8 @@ section .text
     LEA EAX,[ESP + 0xc0]                ; 0049a046
         ;   Label: LAB_0049a046
     PUSH EAX                            ; 0049a04d
-    CALL FUN_0055abf0                   ; 0049a04e
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055abf0()
+    CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 0049a04e
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
     ADD ESP,0x4                         ; 0049a053
     JMP 0x00499f6a                      ; 0049a056
         ;   XREF to: 00499f6a (UNCONDITIONAL_JUMP)  ; LAB_00499f6a

@@ -26,10 +26,10 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
+;   crt_memory.c_malloc_FUN_005635b0
 ;   DirectDrawCreate
 ;   FUN_004c8440
-;   FUN_00531780
-;   FUN_005635b0
+;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     SAR EAX,0x3                         ; 00552b60
     IMUL EAX,ECX                        ; 00552b63
     PUSH EAX                            ; 00552b66
-    CALL FUN_005635b0                   ; 00552b67
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 00552b67
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 00552b6c
     MOV [0x005c5010],EAX                ; 00552b6f | DAT_005c5010
     TEST EAX,EAX                        ; 00552b74
@@ -63,8 +63,8 @@ section .text
     SHL EAX,0x2                         ; 00552b88
     ADD EAX,0x40                        ; 00552b8b
     PUSH EAX                            ; 00552b8e
-    CALL FUN_005635b0                   ; 00552b8f
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 00552b8f
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 00552b94
     MOV [0x02ddf560],EAX                ; 00552b97 | DAT_02ddf560
     TEST EAX,EAX                        ; 00552b9c
@@ -138,8 +138,8 @@ section .text
     MOV EBX,dword ptr [0x02de2098]      ; 00552c4e | DAT_02de2098
         ;   Label: LAB_00552c4e
     PUSH EBX                            ; 00552c54
-    CALL FUN_00531780                   ; 00552c55
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined FUN_00531780()
+    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 00552c55
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
     MOV EAX,0x1                         ; 00552c5a
     ADD ESP,0x4                         ; 00552c5f
     POP EBP                             ; 00552c62

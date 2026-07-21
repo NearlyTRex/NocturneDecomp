@@ -18,15 +18,17 @@ int FUN_00540b40(uint param_1)
   char *pcVar5;
   char *pcVar6;
   
-  iVar4 = FUN_00479560(param_1);
-  iVar4 = FUN_0051b660(iVar4 + 0xbd24);
-  iVar4 = FUN_00438210(iVar4 + 0x22b4);
-  iVar4 = FUN_004e0050(iVar4 + 0x1cc);
+  iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
+  iVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(iVar4 + 0xbd24);
+  iVar4 = core_cloth_cpp_CClothList_ctor_FUN_00438210(iVar4 + 0x22b4);
+  iVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar4 + 0x1cc);
   *(byte ***)(iVar4 + -0xe058) = &PTR_FUN_005a28e4;
-  FUN_0051e0c0(iVar4 + -0xe054,"succubus.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar4 + -0xe054,"succubus.dfm");
   pcVar5 = "hdwing.cth";
   pcVar6 = (char *)(iVar4 + -0x1c8);
-  FUN_0051e0c0(iVar4 + -0x2480,"hotdemon.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar4 + -0x2480,"hotdemon.dfm");
   *(uint *)(iVar4 + -0xb3d0) = 0x3f19999a;
   uVar2 = _DAT_005a28cc;
   *(uint *)(iVar4 + -0xb3cc) = 0x3f666666;

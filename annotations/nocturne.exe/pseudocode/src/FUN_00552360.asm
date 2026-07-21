@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005a3fd0
 ;
 ; Called Functions:
-;   FUN_0056494f
+;   crt_memory.c___arrfini_FUN_0056494f
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH 0x3e8                          ; 00552365
     MOV EDX,dword ptr [ESP + 0xc]       ; 0055236a
     PUSH EDX                            ; 0055236e
-    CALL FUN_0056494f                   ; 0055236f
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined FUN_0056494f()
+    CALL crt_memory.c___arrfini_FUN_0056494f ; 0055236f
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
     ADD ESP,0xc                         ; 00552374
     RET                                 ; 00552377
 

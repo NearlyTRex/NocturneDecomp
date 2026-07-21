@@ -1,0 +1,692 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 456,
+    "complexity_score": 482,
+    "cross_reference_count": 7,
+    "function_call_count": 7,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 177,
+    "suspect_count": 29,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 633
+  },
+  "cross_references": [
+    {
+      "addr": "0049da10",
+      "from_addr": "0049deb9",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5e40",
+      "from_addr": "004a5ed7",
+      "name": "core_game.cpp_joinNetworkGame_FUN_004a5e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9910",
+      "from_addr": "004e9996",
+      "name": "core_netgame.cpp_CNetGame_init_FUN_004e9910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9a90",
+      "from_addr": "004e9aa2",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea830",
+      "from_addr": "004eb0d3",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_004ea830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb520",
+      "from_addr": "004eb86c",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_004eb520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e99c0",
+      "from_addr": "004e99c7",
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e9e90",
+    "address_range": [
+      [
+        "004e9e90",
+        "004ea362"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ea740",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740"
+    },
+    {
+      "addr": "004edab0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0"
+    },
+    {
+      "addr": "0046fe60",
+      "is_variadic": false,
+      "name": "FUN_0046fe60"
+    },
+    {
+      "addr": "004720c0",
+      "is_variadic": false,
+      "name": "FUN_004720c0"
+    },
+    {
+      "addr": "00471660",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660"
+    },
+    {
+      "addr": "00471760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760"
+    },
+    {
+      "addr": "00558a30",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_00558a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058bc84",
+      "name": "s_Disconnecting_from_server..._0058bc84",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058bca1",
+      "name": "s_Couldn't_contact_server_to_disco_0058bca1",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058bcc8",
+      "name": "s_Disconnecting..._0058bcc8",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058bcd9",
+      "name": "s_Couldn't_connect_to_all_clients_t_0058bcd9",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058bd0a",
+      "name": "DAT_0058bd0a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0058bd12",
+      "name": "DAT_0058bd12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0058bd1a",
+      "name": "DAT_0058bd1a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0058bd22",
+      "name": "DAT_0058bd22",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6d50",
+      "name": "DAT_005b6d50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea3f4",
+      "name": "DAT_01cea3f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea3f8",
+      "name": "DAT_01cea3f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea400",
+      "name": "DAT_01cea400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea404",
+      "name": "DAT_01cea404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea40c",
+      "name": "DAT_01cea40c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06610",
+      "name": "DAT_01d06610",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.870689655172414,
+    "instruction_count": 348,
+    "opcode_distribution": {
+      "BOOL_AND": 5,
+      "BOOL_NEGATE": 37,
+      "BOOL_OR": 24,
+      "BRANCH": 14,
+      "CALL": 20,
+      "CBRANCH": 34,
+      "COPY": 507,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 20,
+      "INT2FLOAT": 8,
+      "INT_ADD": 79,
+      "INT_AND": 288,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 174,
+      "INT_LEFT": 46,
+      "INT_LESS": 28,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 83,
+      "INT_OR": 80,
+      "INT_SBORROW": 28,
+      "INT_SCARRY": 25,
+      "INT_SDIV": 6,
+      "INT_SEXT": 9,
+      "INT_SLESS": 81,
+      "INT_SREM": 6,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 82,
+      "INT_XOR": 12,
+      "INT_ZEXT": 52,
+      "LOAD": 36,
+      "POPCOUNT": 81,
+      "RETURN": 1,
+      "STORE": 74,
+      "SUBPIECE": 14
+    },
+    "pcode_op_count": 2043
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004e9e99",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 == 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x44] < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1 + param_1[0x44] * 0x1e + 0xf,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1 + param_1[0x44] * 0x1e + 0xf,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1 + param_1[0x44] * 0x1e + 0xf,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (-1 < param_1[0x44]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 == 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[7] < 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 152,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1[7]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar4 = param_1 + 0xf;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar1 != param_1[0x45]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 156,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(param_1,piVar4,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 160,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar1 < param_1[7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 163,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (1 < param_1[7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 169,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 170,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x45] = -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 171,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x44] = -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 172,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + 0x46) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 173,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 177,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[7] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 179,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x5a] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
+      "line": 54,
+      "match": "0x40400000 < (int)local_24))",
+      "severity": "moderate",
+      "text": "if (((float)_DAT_0058bd1a < local_24) || (0x40400000 < (int)local_24)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
+      "line": 125,
+      "match": "0x40a00000 < (int)local_2c))",
+      "severity": "moderate",
+      "text": "if (((float)_DAT_0058bd1a < local_2c) || (0x40a00000 < (int)local_2c)) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

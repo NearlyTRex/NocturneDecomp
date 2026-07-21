@@ -23,7 +23,7 @@
 ;   undefined4 DAT_00598996
 ;
 ; Called Functions:
-;   FUN_0051d380
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EAX                            ; 0056220a
     LEA EAX,[EBX + 0x150]               ; 0056220b
     PUSH EAX                            ; 00562211
-    CALL FUN_0051d380                   ; 00562212
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d380()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00562212
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
     ADD ESP,0xc                         ; 00562217
     LEA EAX,[ESP + 0x30]                ; 0056221a
     MOV ECX,dword ptr [EBP + 0x18]      ; 0056221e
@@ -80,8 +80,8 @@ section .text
     PUSH EAX                            ; 0056227c
         ;   Label: LAB_0056227c
     PUSH EDI                            ; 0056227d
-    CALL FUN_0051d380                   ; 0056227e
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d380()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 0056227e
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
     MOV EDX,EAX                         ; 00562283
     LEA EAX,[ESP + 0x24]                ; 00562285
     ADD ESP,0xc                         ; 00562289
@@ -168,8 +168,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0056236a
     PUSH EAX                            ; 0056236e
     PUSH EDI                            ; 0056236f
-    CALL FUN_0051d380                   ; 00562370
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d380()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00562370
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
     IMUL EDX,ESI,0xc                    ; 00562375
     ADD ESP,0xc                         ; 00562378
     ADD EDX,dword ptr [EBP + 0x18]      ; 0056237b
@@ -194,8 +194,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005623b6
     PUSH EAX                            ; 005623ba
     PUSH EDI                            ; 005623bb
-    CALL FUN_0051d380                   ; 005623bc
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d380()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 005623bc
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
     IMUL EDX,ESI,0xc                    ; 005623c1
     ADD ESP,0xc                         ; 005623c4
     ADD EDX,dword ptr [EBP + 0x18]      ; 005623c7

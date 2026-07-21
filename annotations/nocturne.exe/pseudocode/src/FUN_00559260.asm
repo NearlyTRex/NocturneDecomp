@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   FUN_0056df10 at 0056dfad
+;   crt_startup.cpp_WinMainBootstrap_FUN_0056df10 at 0056dfad
 ;
 ; Referenced Globals:
 ;   void* PTR_GetStockObject_005753b0 = 00175766
@@ -42,11 +42,11 @@
 ; Called Functions:
 ;   BringWindowToTop
 ;   CreateWindowExA
+;   crt_memory.c_memset_FUN_00563cc0
+;   crt_stdlib.c_srand_FUN_005648b0
 ;   FindWindowA
 ;   FUN_004c85f0
 ;   FUN_004c90e0
-;   FUN_00563cc0
-;   FUN_005648b0
 ;   GetCommandLineA
 ;   GetCurrentDirectoryA
 ;   GetCurrentProcess
@@ -116,8 +116,8 @@ section .text
     MOV dword ptr [0x02de209c],EBP      ; 005592d6 | DAT_02de209c
     CALL dword ptr CS:[0x5753ec]        ; 005592dc | PTR_timeGetTime_005753ec
     PUSH EAX                            ; 005592e3
-    CALL FUN_005648b0                   ; 005592e4
-        ;   XREF to: 005648b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005648b0()
+    CALL crt_stdlib.c_srand_FUN_005648b0 ; 005592e4
+        ;   XREF to: 005648b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_srand_FUN_005648b0()
     ADD ESP,0x4                         ; 005592e9
     MOV EDI,0x2de2c10                   ; 005592ec
     CALL dword ptr CS:[0x5754e8]        ; 005592f1 | PTR_GetCommandLineA_005754e8
@@ -279,8 +279,8 @@ section .text
     PUSH 0x0                            ; 0055949c
     LEA EAX,[ESP + 0x30]                ; 0055949e
     PUSH EAX                            ; 005594a2
-    CALL FUN_00563cc0                   ; 005594a3
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 005594a3
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     ADD ESP,0xc                         ; 005594a8
     LEA EAX,[ESP + 0x28]                ; 005594ab
     MOV EDI,0x20                        ; 005594af

@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; Called Functions:
-;   FUN_00566170
+;   crt_string.c_memmove_FUN_00566170
 ;   FUN_005689c0
 ;   FUN_0056bc10
 ;   FUN_0057301c
@@ -226,8 +226,8 @@ section .text
     ADD EAX,EDX                         ; 0057218f
     PUSH EAX                            ; 00572191
     PUSH EDX                            ; 00572192
-    CALL FUN_00566170                   ; 00572193
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined FUN_00566170()
+    CALL crt_string.c_memmove_FUN_00566170 ; 00572193
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
     MOV EAX,dword ptr [EBX + 0x18]      ; 00572198
     MOV dword ptr [EBX + 0x20],EAX      ; 0057219b
     MOV EDX,dword ptr [EBX + 0x1c]      ; 0057219e

@@ -26,7 +26,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00507f80 at 0050807d
-;   FUN_005088f0 at 00508b65
+;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b65
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0057b803
@@ -47,10 +47,10 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   FUN_004410c0
-;   FUN_004411b0
+;   core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
 ;   FUN_00446810
-;   FUN_00447910
 ;
 ; *****************************************************************************
 
@@ -115,8 +115,8 @@ section .text
     PUSH EDX                            ; 0044226d
     LEA ESI,[ESP + 0x28]                ; 0044226e
     LEA EDI,[ESP + 0x10]                ; 00442272
-    CALL FUN_004410c0                   ; 00442276
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004410c0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 00442276
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
     LEA ESI,[ESP + 0x28]                ; 0044227b
     ADD ESP,0xc                         ; 0044227f
     MOVSD ES:EDI,ESI                    ; 00442282
@@ -137,8 +137,8 @@ section .text
     PUSH ESI                            ; 004422a1
     LEA ESI,[ESP + 0x18]                ; 004422a2
     LEA EDI,[ESP + 0x3c]                ; 004422a6
-    CALL FUN_004411b0                   ; 004422aa
-        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004411b0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0 ; 004422aa
+        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0()
     LEA ESI,[ESP + 0x18]                ; 004422af
     ADD ESP,0x8                         ; 004422b3
     MOVSD ES:EDI,ESI                    ; 004422b6
@@ -161,8 +161,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004422d9
     PUSH EDI                            ; 004422dc
     LEA ESI,[ESP + 0x34]                ; 004422dd
-    CALL FUN_00447910                   ; 004422e1
-        ;   XREF to: 00447910 (UNCONDITIONAL_CALL)  ; undefined FUN_00447910()
+    CALL core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910 ; 004422e1
+        ;   XREF to: 00447910 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910()
     LEA EDI,[ESP + 0x40]                ; 004422e6
     LEA ESI,[ESP + 0x34]                ; 004422ea
     ADD ESP,0xc                         ; 004422ee

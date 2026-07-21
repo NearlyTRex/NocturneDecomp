@@ -21,21 +21,21 @@ void FUN_004eeea0(int param_1,int param_2)
     if (fVar1 <= 0.0) {
       *(uint *)(param_1 + 0x2434) = 0;
       (**(code **)(*(int *)(param_1 + 0x14c) + 0xa0))(param_1,0x32,0x41c80000);
-      FUN_004291f0(param_1);
-      FUN_004eedc0(iVar2,&DAT_0058cb6f);
+      core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(param_1);
+      core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb6f);
     }
     else if ((0.0 < *(float *)(param_2 + 4)) && (*(int *)(param_1 + 0x2590) == 0)) {
-      iVar3 = FUN_004eedc0(iVar2,&DAT_0058cb73);
+      iVar3 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb73);
       if (iVar3 == 0) {
-        iVar3 = FUN_004eedc0(iVar2,"DAMAGE");
+        iVar3 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,"DAMAGE");
         if (iVar3 == 0) {
-          FUN_004eedc0(iVar2,&DAT_0058cb7f);
-          FUN_00428510(param_1,param_2);
+          core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb7f);
+          core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);
           return;
         }
       }
     }
   }
-  FUN_00428510(param_1,param_2);
+  core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);
   return;
 }

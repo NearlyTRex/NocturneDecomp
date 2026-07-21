@@ -9,10 +9,10 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   crt_memory.c_malloc_FUN_005635b0
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004c8440
-;   FUN_005635b0
 ;   FUN_005638d0
-;   FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     IMUL EBX,EBP                        ; 004303f7
     PUSH EBX                            ; 004303fa
     MOV dword ptr [ESP + 0x64],EAX      ; 004303fb
-    CALL FUN_005635b0                   ; 004303ff
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 004303ff
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 00430404
     MOV dword ptr [ESP + 0x54],EAX      ; 00430407
     TEST EAX,EAX                        ; 0043040b
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004304c2
     PUSH EAX                            ; 004304c6
     MOV EBX,0x802                       ; 004304c7
-    CALL FUN_00563c90                   ; 004304cc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004304cc
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004304d1
     MOV EAX,ESP                         ; 004304d4
     MOV ECX,0x57aae5                    ; 004304d6

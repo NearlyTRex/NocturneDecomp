@@ -27,10 +27,10 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateFileA
-;   FUN_00564520
+;   crt_errno.c___set_errno_FUN_0056c73c
+;   crt_string.c__stricmp_FUN_00564520
 ;   FUN_005671e8
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   FUN_0056dfc0
 ;   FUN_0056e208
 ;   FUN_0056f278
@@ -96,8 +96,8 @@ section .text
     PUSH 0x598bd0                       ; 0056b9e5 | DAT_00598bd0
     MOV EDX,dword ptr [ESP + 0x30]      ; 0056b9ea
     PUSH EDX                            ; 0056b9ee
-    CALL FUN_00564520                   ; 0056b9ef
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined FUN_00564520()
+    CALL crt_string.c__stricmp_FUN_00564520 ; 0056b9ef
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
     ADD ESP,0x8                         ; 0056b9f4
     TEST EAX,EAX                        ; 0056b9f7
     JNZ 0x0056ba24                      ; 0056b9f9
@@ -204,8 +204,8 @@ section .text
         ;   Label: LAB_0056baeb
     JNZ 0x0056bafd                      ; 0056baee
         ;   XREF to: 0056bafd (CONDITIONAL_JUMP)  ; LAB_0056bafd
-    CALL FUN_0056c73c                   ; 0056baf0
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056baf0
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x18                        ; 0056baf5
     POP EBP                             ; 0056baf8
     POP EDI                             ; 0056baf9

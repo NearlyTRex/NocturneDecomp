@@ -13,14 +13,14 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_0050c2d0 at 0050c52d
+;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c52d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_004613b0
+;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EAX,dword ptr [ECX + 0x4]       ; 00441464
     PUSH EDX                            ; 00441467 | DAT_01b4d738
     MOV dword ptr [ESP + 0x8],EAX       ; 00441468
-    CALL FUN_004613b0                   ; 0044146c
-        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004613b0()
+    CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 0044146c
+        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0()
     MOV EBX,EAX                         ; 00441471
     ADD ESP,0x4                         ; 00441473
     TEST EAX,EAX                        ; 00441476

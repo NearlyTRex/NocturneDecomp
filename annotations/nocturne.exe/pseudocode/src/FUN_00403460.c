@@ -12,19 +12,19 @@ void FUN_00403460(uint param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_004568c0(&DAT_005771fc,param_1);
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_005771fc,param_1);
   if (iVar1 == 0x1000) {
     FUN_004031a0(0);
   }
   else {
-    iVar1 = FUN_00456a60(&DAT_00577203,param_1,&DAT_00577200);
+    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577203,param_1,&DAT_00577200);
     if (iVar1 == 0) {
       FUN_004031a0(0);
       FUN_00403500(param_1);
     }
     else {
-      FUN_005636d0(0x1bf5620,0x100,0x20,iVar1);
-      FUN_00563380(iVar1);
+      _fread(0x1bf5620,0x100,0x20,iVar1);
+      _fclose(iVar1);
     }
   }
   iVar1 = 0;

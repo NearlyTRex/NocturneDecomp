@@ -5,21 +5,21 @@
 ;
 ;
 ; XREF[18]:
-;   FUN_00412480 at 00412732
-;   FUN_00413800 at 00413dcc
 ;   FUN_0041fe40 at 00420020
-;   FUN_0043bdb0 at 0043c10d
-;   FUN_00454750 at 00454b03
-;   FUN_00458a90 at 0045967e
-;   FUN_00462a60 at 00462ebd
 ;   FUN_004a9270 at 004a9c9d
-;   FUN_004b8f20 at 004b91cb
-;   FUN_004bbaf0 at 004bc070
+;   FUN_004c4970 at 004c4e3e
+;   FUN_004d4f30 at 004d50f6
+;   FUN_004da790 at 004db041
+;   FUN_0055ef50 at 00560117
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412732
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413dcc
+;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043c10d
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454b03
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   FUN_004af730
-;   FUN_004b0430
+;   core_gore.cpp_CBloodPool_init_FUN_004af730
+;   core_gore.cpp_CGore_allocateBloodPool_FUN_004b0430
 ;
 ; *****************************************************************************
 
@@ -35,16 +35,16 @@ section .text
     PUSH EBX                            ; 004b0489
     MOV ECX,dword ptr [ESP + 0xc]       ; 004b048a
     PUSH ECX                            ; 004b048e
-    CALL FUN_004b0430                   ; 004b048f
-        ;   XREF to: 004b0430 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0430()
+    CALL core_gore.cpp_CGore_allocateBloodPool_FUN_004b0430 ; 004b048f
+        ;   XREF to: 004b0430 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_allocateBloodPool_FUN_004b0430()
     ADD ESP,0x4                         ; 004b0494
     MOV EBX,dword ptr [ESP + 0x14]      ; 004b0497
     PUSH EBX                            ; 004b049b
     MOV ESI,dword ptr [ESP + 0x14]      ; 004b049c
     PUSH ESI                            ; 004b04a0
     PUSH EAX                            ; 004b04a1
-    CALL FUN_004af730                   ; 004b04a2
-        ;   XREF to: 004af730 (UNCONDITIONAL_CALL)  ; undefined FUN_004af730()
+    CALL core_gore.cpp_CBloodPool_init_FUN_004af730 ; 004b04a2
+        ;   XREF to: 004af730 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodPool_init_FUN_004af730()
     ADD ESP,0xc                         ; 004b04a7
     POP EBX                             ; 004b04aa
     POP ESI                             ; 004b04ab

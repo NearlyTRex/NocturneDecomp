@@ -12,7 +12,7 @@ void FUN_005438d0(uint param_1)
   int iVar1;
   
   iVar1 = FUN_00409d30(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_FUN_005a2fc4;
+  *(byte ***)(iVar1 + 0x14c) = &PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005a2fc4;
   *(uint *)(iVar1 + 0x150) = 0x40a00000;
   *(uint *)(iVar1 + 0x154) = 0x41100000;
   *(uint *)(iVar1 + 0x158) = 0x40a00000;

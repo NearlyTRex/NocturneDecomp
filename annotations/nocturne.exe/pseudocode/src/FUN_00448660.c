@@ -41,8 +41,9 @@ void FUN_00448660(float param_1)
         }
         break;
       case 1:
-        FUN_004484c0(iVar1,puVar6,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,0x3ff00000,0,0,
-                     (double)-param_1);
+        core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
+                  (iVar1,puVar6,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,0x3ff00000,0,0,
+                   (double)-param_1);
         break;
       case 2:
         iVar4 = _DAT_014b8550 * 0xc;
@@ -52,8 +53,9 @@ void FUN_00448660(float param_1)
           *(uint *)(&DAT_014b855c + iVar4) = puVar6[2];
         }
         _DAT_014b8550 = _DAT_014b8550 + 1;
-        FUN_004484c0(puVar6,iVar1,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,0x3ff00000,0,0,
-                     (double)-param_1);
+        core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
+                  (puVar6,iVar1,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,0x3ff00000,0,0,
+                   (double)-param_1);
         break;
       default:
         goto switchD_004486cc_caseD_3;

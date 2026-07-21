@@ -158,14 +158,16 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
     local_80 = param_2 + 1;
     local_58 = param_2 + 2;
     while( true ) {
-      FUN_00511840(0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);
+      core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00511840
+                (0x01E57284,param_4[2],param_4[3],param_4[4],param_4[5]);
       local_e0 = *param_2;
       local_dc = *local_80;
       local_d8 = *local_58;
       local_134 = local_e0 + *param_3;
       local_130 = local_dc + param_3[1];
       local_12c = local_d8 + param_3[2];
-      local_24 = (float *)FUN_0050fb00(0x01E57284,&local_e0,&local_134);
+      local_24 = (float *)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                                    (0x01E57284,&local_e0,&local_134);
       local_90 = (double)(float)local_24;
       if ((local_90 < 0.0) || (1.0 <= local_90)) {
         local_110 = -*param_3;
@@ -213,27 +215,30 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
       param_4[0x14] = 0.0;
       local_14 = local_24;
       if (iVar1 != 0) {
-        pfVar3 = (float *)FUN_0040a290(iVar1,local_c8,param_2);
+        pfVar3 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                                    (iVar1,local_c8,param_2);
         if (pfVar3 != local_20) {
           *local_20 = *pfVar3;
           local_20[1] = pfVar3[1];
           local_20[2] = pfVar3[2];
         }
-        pfVar3 = (float *)FUN_0040a290(iVar1,local_b0,0x01E57284 + 0x14cd50);
+        pfVar3 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                                    (iVar1,local_b0,0x01E57284 + 0x14cd50);
         if (pfVar3 != local_1c) {
           *local_1c = *pfVar3;
           local_1c[1] = pfVar3[1];
           local_1c[2] = pfVar3[2];
         }
-        pfVar3 = (float *)FUN_0040a220(iVar1,local_11c,0x01E57284 + 0x14cd40);
+        pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                                    (iVar1,local_11c,0x01E57284 + 0x14cd40);
         if (pfVar3 != local_18) {
           *local_18 = *pfVar3;
           local_18[1] = pfVar3[1];
           local_18[2] = pfVar3[2];
         }
         if ((((param_5 == 0) && (param_4[6] != 0.0)) &&
-            (iVar4 = FUN_0040d890(iVar1,DAT_00765a98), iVar4 != 0)) &&
-           (iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {
+            (iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,DAT_00765a98), iVar4 != 0))
+           && (iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {
           param_4[4] = 3.57331e-43;
           param_4[5] = 0.0;
           param_4[3] = 3.57331e-43;
@@ -257,8 +262,7 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
         local_98 = (double)fVar2;
         if ((float)_DAT_005814ec < fVar2) {
           if (local_98 < 1.0) {
-            fVar5 = (float10)fVar2;
-            FUN_00565ca4();
+            fVar5 = (float10)acos((float10)fVar2);
             local_2c = (float)fVar5;
           }
           else {
@@ -296,11 +300,12 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
         local_3c = local_1c + 2;
         local_38 = local_18 + 1;
         local_44 = local_18 + 2;
-        FUN_005113e0(0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],
-                     param_4[4],param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,
-                     *local_1c,*local_34,*local_3c,*local_18,*local_38,*local_44,param_4[0x11],
-                     param_4[0x12],param_4[0x13],param_4[0x14]);
-        FUN_00511750(0x01E57284);
+        core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0
+                  (0x01E57284,*param_4 * param_4[0x14],param_4[1],param_4[2],param_4[3],param_4[4]
+                   ,param_4[5],param_4[6],param_4[7],*local_20,*local_50,*local_4c,*local_1c,
+                   *local_34,*local_3c,*local_18,*local_38,*local_44,param_4[0x11],param_4[0x12],
+                   param_4[0x13],param_4[0x14]);
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
         local_23c = *param_4;
         local_238 = param_4[1];
         local_234 = param_4[2];
@@ -323,12 +328,12 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
         local_1f0 = param_4[0x13];
         local_1ec = param_4[0x14];
         FUN_0048b6f0(param_1,&local_134,&local_bc,&local_23c,local_54);
-        FUN_00511590(0x01E57284);
+        core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
         local_28 = (1.0 - param_4[0x14]) * (float)_DAT_005814e4 * local_28;
       }
       if (param_4[0x12] <= 0.0) goto LAB_0048bfa9;
       if ((param_4[0x12] != 1.0) || (param_4[0x13] != param_4[0x11])) break;
-      FUN_00511780(0x01E57284,iVar1);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,iVar1);
     }
     local_104 = *param_3;
     local_100 = param_3[1];
@@ -362,8 +367,8 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
     local_148 = param_4[0x13];
     local_144 = param_4[0x14];
     local_194 = *param_4 * param_4[0x12];
-    FUN_00511750(0x01E57284);
-    FUN_00511780(0x01E57284,iVar1);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,iVar1);
     local_1e8 = *param_4;
     local_1e4 = param_4[1];
     local_1e0 = param_4[2];
@@ -388,8 +393,9 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
     FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);
     local_28 = (1.0 - param_4[0x12]) * (float)_DAT_005814e4 * local_28;
 LAB_0048bfa9:
-    FUN_0048b370(param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],
-                 param_4[5],param_4[1]);
+    core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370
+              (param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],
+               param_4[5],param_4[1]);
   }
   return;
 }

@@ -42,19 +42,21 @@ void FUN_0045ab40(int param_1,uint param_2,uint param_3)
   byte local_20 [12];
   float local_14;
   
-  local_14 = (float)FUN_0040dda0(0x3f800000,0x40e00000);
+  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000,0x40e00000);
   *(float *)(param_1 + 0xbdb8) = local_14;
-  iVar1 = FUN_00528490();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
     puVar5 = (uint *)&DAT_01b4d280;
     iVar1 = 0;
     do {
-      iVar2 = FUN_00526c50(*puVar5);
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*puVar5);
       uVar3 = _DAT_01b4d260;
       if (iVar2 == 0) {
         puVar5[7] = 0;
-        uVar3 = FUN_0051d380(param_1 + 0x150,local_44,uVar3);
-        puVar4 = (uint *)FUN_0040a240(param_1,local_50,uVar3);
+        uVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                          (param_1 + 0x150,local_44,uVar3);
+        puVar4 = (uint *)
+                 core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_50,uVar3);
         if (puVar5 + 0xb != puVar4) {
           puVar5[0xb] = *puVar4;
           puVar5[0xc] = puVar4[1];
@@ -63,11 +65,14 @@ void FUN_0045ab40(int param_1,uint param_2,uint param_3)
         local_2c = (float)puVar5[0xb];
         local_28 = (float)puVar5[0xc];
         local_24 = (float)puVar5[0xd];
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_2c = local_14 + local_2c;
-        local_14 = (float)FUN_0040dda0(0xc0000000,0x40000000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
+        ;
         local_28 = local_14 + local_28;
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_6c = local_14 + local_24;
         local_74 = local_2c;
         local_70 = local_28;
@@ -80,11 +85,14 @@ void FUN_0045ab40(int param_1,uint param_2,uint param_3)
         local_7c = (float)puVar5[0xc];
         local_78 = (float)puVar5[0xd];
         local_24 = local_6c;
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_80 = local_14 + local_80;
-        local_14 = (float)FUN_0040dda0(0xc0000000,0x40000000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
+        ;
         local_7c = local_14 + local_7c;
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_78 = local_14 + local_78;
         local_5c = local_80;
         local_58 = local_7c;
@@ -97,11 +105,14 @@ void FUN_0045ab40(int param_1,uint param_2,uint param_3)
         local_64 = _DAT_01fb8610;
         local_60 = _DAT_01fb8614;
         local_54 = local_78;
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_68 = local_14 + local_68;
-        local_14 = (float)FUN_0040dda0(0xc0000000,0x40000000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
+        ;
         local_64 = local_14 + local_64;
-        local_14 = (float)FUN_0040dda0(0xc0a00000,0x40a00000);
+        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+        ;
         local_60 = local_14 + local_60;
         local_38 = local_68;
         local_34 = local_64;
@@ -111,29 +122,31 @@ void FUN_0045ab40(int param_1,uint param_2,uint param_3)
           puVar5[0x13] = local_60;
         }
         local_30 = local_60;
-        FUN_00533ce0(local_ac,puVar5[7],0);
+        core_spline_cpp_computeSplineBasis_FUN_00533ce0(local_ac,puVar5[7],0);
         puVar4 = (uint *)
-                 FUN_00533f10(local_ac,local_8c,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
+                 core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10
+                           (local_ac,local_8c,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
         if (puVar5 + 1 != puVar4) {
           puVar5[1] = *puVar4;
           puVar5[2] = puVar4[1];
           puVar5[3] = puVar4[2];
         }
         puVar4 = (uint *)
-                 FUN_005340d0(local_ac,local_20,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
+                 core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0
+                           (local_ac,local_20,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
         if (puVar5 + 4 != puVar4) {
           puVar5[4] = *puVar4;
           puVar5[5] = puVar4[1];
           puVar5[6] = puVar4[2];
         }
-        FUN_00526340();
-        FUN_00525fc0(puVar5 + 1);
-        FUN_00526090(puVar5 + 4);
-        FUN_005260f0(param_3);
+        sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
+        sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(puVar5 + 1);
+        sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090(puVar5 + 4);
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(param_3);
         FUN_0052d030(0x02DC9450,local_174,param_2);
-        uVar3 = FUN_005265a0(local_174);
+        uVar3 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_174);
         *puVar5 = uVar3;
-        FUN_005263c0();
+        sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
         puVar5[0x14] = param_1;
         return;
       }

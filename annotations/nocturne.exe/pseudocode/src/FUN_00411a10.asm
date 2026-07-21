@@ -10,13 +10,13 @@
 ;   undefined4 s_tpath.pth_0057877c+2
 ;   undefined4 s_path.pth_0057877c+3
 ;   string s_bat.kfm_00578788
-;   undefined1* PTR_FUN_00599e94 = 00411ae0
+;   undefined1* PTR_core_bat.cpp_CBat_setup_FUN_00411ae0_00599e94 = 00411ae0
 ;
 ; Called Functions:
+;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
+;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   FUN_00409d30
-;   FUN_0043b5d0
-;   FUN_00454490
-;   FUN_00454580
 ;
 ; *****************************************************************************
 
@@ -33,15 +33,15 @@ section .text
     ADD ESP,0x4                         ; 00411a1d
     ADD EAX,0x170                       ; 00411a20
     PUSH EAX                            ; 00411a25
-    CALL FUN_0043b5d0                   ; 00411a26
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0043b5d0()
+    CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 00411a26
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
     ADD ESP,0x4                         ; 00411a2b
     ADD EAX,0x10                        ; 00411a2e
     PUSH EAX                            ; 00411a31
-    CALL FUN_00454490                   ; 00411a32
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00411a32
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     LEA EBX,[EAX + 0xfffffe80]          ; 00411a37
-    MOV dword ptr [EBX + 0x14c],0x599e94 ; 00411a3d | PTR_FUN_00599e94
+    MOV dword ptr [EBX + 0x14c],0x599e94 ; 00411a3d | PTR_core_bat.cpp_CBat_setup_FUN_00411ae0_00599e94
     MOV dword ptr [EBX + 0x17c],0x0     ; 00411a47
     MOV dword ptr [EBX + 0x2fc],0x0     ; 00411a51
     MOV ESI,0x57877c                    ; 00411a5b | = "batpath.pth"
@@ -69,8 +69,8 @@ section .text
     PUSH 0x578788                       ; 00411aa1 | = "bat.kfm"
     LEA EAX,[EBX + 0x180]               ; 00411aa6
     PUSH EAX                            ; 00411aac
-    CALL FUN_00454580                   ; 00411aad
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00411aad
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     MOV byte ptr [EBX + 0x30c],0x0      ; 00411ab2
     MOV dword ptr [EBX + 0x370],0x41700000 ; 00411ab9
     ADD ESP,0x8                         ; 00411ac3

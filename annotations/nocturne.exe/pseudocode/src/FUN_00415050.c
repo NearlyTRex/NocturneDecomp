@@ -15,9 +15,9 @@ int FUN_00415050(uint param_1)
   uint uVar2;
   int iVar3;
   
-  iVar3 = FUN_00479560(param_1);
+  iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
   *(byte ***)(iVar3 + 0x14c) = &PTR_FUN_0059a414;
-  FUN_0051e0c0(iVar3 + 0x150,"beast.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar3 + 0x150,"beast.dfm");
   uVar2 = _DAT_0059a40c;
   uVar1 = _DAT_0059a408;
   *(uint *)(iVar3 + 0x2dd4) = 0x41200000;

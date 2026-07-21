@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005c2148
 ;
 ; Called Functions:
-;   FUN_00566cc0
+;   crt_stdio.c_fputc_FUN_00566cc0
 ;   FUN_0056fdf0
 ;   FUN_00573660
 ;
@@ -49,8 +49,8 @@ section .text
     ADD ESP,0x8                         ; 00572a24
     PUSH EBX                            ; 00572a27
     PUSH 0xa                            ; 00572a28
-    CALL FUN_00566cc0                   ; 00572a2a
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00566cc0()
+    CALL crt_stdio.c_fputc_FUN_00566cc0 ; 00572a2a
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
     ADD ESP,0x8                         ; 00572a2f
     POP EBX                             ; 00572a32
     POP EBP                             ; 00572a33

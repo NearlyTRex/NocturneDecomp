@@ -9,8 +9,8 @@
 void FUN_005090f0(int param_1,uint param_2,uint param_3,uint param_4)
 
 {
-  FUN_00440010(0x1fb8508,param_4);
+  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(0x1fb8508,param_4);
   FUN_004401b0(0x1fb8508,param_2,param_3);
-  FUN_005088f0(param_1,*(uint *)(param_1 + 0x15aabc));
+  core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(param_1,*(uint *)(param_1 + 0x15aabc));
   return;
 }

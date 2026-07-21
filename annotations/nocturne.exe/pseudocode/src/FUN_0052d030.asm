@@ -6,16 +6,16 @@
 ;
 ; XREF[2]:
 ;   FUN_0045ab40 at 0045afea
-;   FUN_0052d120 at 0052d522
+;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d522
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc9610
 ;   undefined4 DAT_02dc9620
 ;
 ; Called Functions:
-;   FUN_00474080
-;   FUN_004775b0
-;   FUN_0056488c
+;   crt_stdlib.c_rand_FUN_0056488c
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
+;   shape_edittool.cpp_wildcardStringMatch_FUN_004775b0
 ;
 ; *****************************************************************************
 
@@ -50,21 +50,21 @@ section .text
         ;   Label: LAB_0052d064
     PUSH EBX                            ; 0052d066
     PUSH 0x2dc9610                      ; 0052d067 | DAT_02dc9610
-    CALL FUN_00474080                   ; 0052d06c
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052d06c
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 0052d071
     PUSH EAX                            ; 0052d074
     PUSH EBP                            ; 0052d075
-    CALL FUN_004775b0                   ; 0052d076
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004775b0()
+    CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 0052d076
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
     ADD ESP,0xc                         ; 0052d07b
     TEST EAX,EAX                        ; 0052d07e
     JZ 0x0052d0cb                       ; 0052d080
         ;   XREF to: 0052d0cb (CONDITIONAL_JUMP)  ; LAB_0052d0cb
     PUSH EBX                            ; 0052d082
     PUSH 0x2dc9610                      ; 0052d083 | DAT_02dc9610
-    CALL FUN_00474080                   ; 0052d088
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052d088
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     IMUL EDI,dword ptr [0x02dc9620],0x28 ; 0052d08d | DAT_02dc9620
     ADD ESP,0x8                         ; 0052d094
     MOV ESI,EAX                         ; 0052d097
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_0052d0cb
     JMP 0x0052d049                      ; 0052d0cc
         ;   XREF to: 0052d049 (UNCONDITIONAL_JUMP)  ; LAB_0052d049
-    CALL FUN_0056488c                   ; 0052d0d1
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined FUN_0056488c()
+    CALL crt_stdlib.c_rand_FUN_0056488c ; 0052d0d1
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_0052d0d1
     MOV EDX,EAX                         ; 0052d0d6
     MOV ECX,dword ptr [0x02dc9620]      ; 0052d0d8 | DAT_02dc9620

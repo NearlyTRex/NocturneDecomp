@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02de4348
 ;
 ; Called Functions:
-;   FUN_0055d8f0
+;   core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH EAX                            ; 0055def9
     PUSH EDX                            ; 0055defa
     PUSH EBP                            ; 0055defb
-    CALL FUN_0055d8f0                   ; 0055defc
-        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d8f0()
+    CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055defc
+        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0()
     MOV ESI,dword ptr [0x00766c70]      ; 0055df01 | DAT_00766c70
     INC ESI                             ; 0055df07
     ADD ESP,0xc                         ; 0055df08

@@ -8,17 +8,17 @@
 ;
 ; XREF[6]:
 ;   FUN_00462300 at 00462498
-;   FUN_0047ac50 at 0047d354
-;   FUN_00484b60 at 00484bd2
-;   FUN_00486e40 at 00486e86
-;   FUN_0048c420 at 0048c496
-;   FUN_0048c4a0 at 0048c51a
+;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d354
+;   core_fire.cpp_CExplosion_activate_FUN_00486e40 at 00486e86
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0 at 0048c51a
+;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420 at 0048c496
+;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484bd2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9284
 ;
 ; Called Functions:
-;   FUN_00447e80
+;   core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80
 ;   FUN_004940d0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 0050e668
     PUSH dword ptr [ESP + 0x14]         ; 0050e66c
     PUSH 0x1fb8508                      ; 0050e670
-    CALL FUN_00447e80                   ; 0050e675
-        ;   XREF to: 00447e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00447e80()
+    CALL core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80 ; 0050e675
+        ;   XREF to: 00447e80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80()
     ADD ESP,0x14                        ; 0050e67a
     FLD float ptr [ESP + 0xc]           ; 0050e67d
     FADD float ptr [ESP + 0x10]         ; 0050e681

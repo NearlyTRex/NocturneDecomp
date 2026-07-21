@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00564f32 at 00564f5a
-;   FUN_00565072 at 005650a0
-;   FUN_005652fe at 0056531a
+;   crt_fstream.cpp_ifstream_ctor_FUN_00565072 at 005650a0
+;   crt_fstream.cpp_ifstream_ctor_FUN_005652fe at 0056531a
+;   crt_strstream.cpp_istrstream_ctor_FUN_00564f32 at 00564f5a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a49b8

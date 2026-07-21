@@ -9,7 +9,7 @@
 ; undefined1[10]   Stack[-0xe]:10  local_e
 ;
 ; XREF[1]:
-;   FUN_00566c81 at 00566c90
+;   crt_math.c_atan2_FUN_00566c81 at 00566c90
 ;
 ; Called Functions:
 ;   FUN_00570d50

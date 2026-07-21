@@ -44,21 +44,21 @@ LAB_00403672:
     _DAT_01cc4804 = 0x76e;
     FUN_004c8440("hose!");
   }
-  FUN_00563c90(pcVar4,&DAT_00577259);
-  iVar2 = FUN_00456a60(&DAT_00577261,local_5c,&DAT_0057725e);
+  _sprintf(pcVar4,&DAT_00577259);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577261,local_5c,&DAT_0057725e);
   if (iVar2 != 0) {
-    FUN_005636d0(&DAT_01bf7720,1,0x8000,iVar2);
-    FUN_00563380(iVar2);
+    _fread(&DAT_01bf7720,1,0x8000,iVar2);
+    _fclose(iVar2);
     return;
   }
-  FUN_00403570();
-  iVar2 = FUN_00456a60(&DAT_00577268,local_5c,&DAT_00577265);
+  engine_2d_c_buildColorLookupTable_FUN_00403570();
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577268,local_5c,&DAT_00577265);
   if (iVar2 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0x775;
     FUN_004c8440("Unable to write quick map!");
   }
-  FUN_00563a50(&DAT_01bf7720,1,0x8000,iVar2);
-  FUN_00563380(iVar2);
+  _fwrite(&DAT_01bf7720,1,0x8000,iVar2);
+  _fclose(iVar2);
   return;
 }

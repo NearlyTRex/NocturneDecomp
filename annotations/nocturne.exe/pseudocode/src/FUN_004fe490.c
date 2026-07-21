@@ -11,7 +11,7 @@ int FUN_004fe490(int param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00473b60(param_1 + 0x30);
+  iVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60(param_1 + 0x30);
   *(uint *)(iVar1 + -8) = 0;
   *(uint *)(iVar1 + -4) = 0;
   *(uint *)(iVar1 + -0x14) = 0;

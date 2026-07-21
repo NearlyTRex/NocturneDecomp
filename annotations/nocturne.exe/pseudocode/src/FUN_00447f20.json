@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 662,
+    "complexity_score": 667,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 157,
     "suspect_count": 47,
     "suspect_types": [
       "param_count_too_few",
@@ -139,7 +139,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 451
+    "total_lines": 456
   },
   "cross_references": [
     {
@@ -165,22 +165,22 @@
     {
       "addr": "0041cc00",
       "is_variadic": false,
-      "name": "FUN_0041cc00"
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00"
     },
     {
       "addr": "004410c0",
       "is_variadic": false,
-      "name": "FUN_004410c0"
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0"
     },
     {
       "addr": "004411b0",
       "is_variadic": false,
-      "name": "FUN_004411b0"
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0"
     },
     {
       "addr": "0044daa0",
       "is_variadic": false,
-      "name": "FUN_0044daa0"
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0"
     }
   ],
   "globals": [
@@ -311,28 +311,28 @@
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 108,
+          "line": 110,
           "message": "Uninitialized variable: uStack_bc",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 113,
+          "line": 115,
           "message": "Uninitialized variable: iStack_c0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 23,
-          "line": 121,
+          "line": 124,
           "message": "Uninitialized variable: uStack_ec",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 25,
-          "line": 126,
+          "line": 129,
           "message": "Uninitialized variable: iStack_a8",
           "severity": "error"
         },
@@ -346,14 +346,14 @@
         {
           "check_id": "legacyUninitvar",
           "column": 25,
-          "line": 147,
+          "line": 152,
           "message": "Uninitialized variable: iStack_6c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 23,
-          "line": 143,
+          "line": 148,
           "message": "Uninitialized variable: uStack_44",
           "severity": "error"
         }
@@ -520,7 +520,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004410c0(param_1,iStack_14,iStack_18);",
+      "text": "core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_14,iStack_18);",
       "type": "unnamed_param"
     },
     {
@@ -544,7 +544,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004411b0(param_1,aiStack_94 + 5);",
+      "text": "core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(param_1,aiStack_94 + 5);",
       "type": "unnamed_param"
     },
     {
@@ -565,23 +565,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 92,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0041cc00(param_2,auStack_50);",
+      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,auStack_50);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004410c0(param_1,iStack_1c,iStack_30);",
+      "text": "core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_1c,iStack_30)",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 104,
       "match": "&stack0xffffff3c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff3c + (uint)bVar3 * -8) =",
@@ -589,7 +589,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 105,
       "match": "&stack0xffffff48",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff48 + (uint)bVar3 * -8);",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 106,
       "match": "&stack0xffffff40",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 107,
       "match": "&stack0xffffff4c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff4c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((iStack_14 < 2) || (*(int *)(param_1 + 0x140) + -2 <= iStack_18)) {",
@@ -621,15 +621,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004410c0(param_1,iStack_1c,iStack_2c);",
+      "text": "core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,iStack_1c,iStack_2c)",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 118,
       "match": "&stack0xffffff54",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff54 + (uint)bVar3 * -8) =",
@@ -637,7 +637,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 119,
       "match": "&stack0xffffff18",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff18 + (uint)bVar3 * -8);",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 117,
+      "line": 120,
       "match": "&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 118,
+      "line": 121,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff1c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((iStack_14 < *(int *)(param_1 + 0x13c) + -2) && (1 < iStack_18)) {",
@@ -669,15 +669,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004410c0(param_1,iStack_14 + 1,iStack_28);",
+      "text": "(param_1,iStack_14 + 1,iStack_28);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 137,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((iStack_14 < *(int *)(param_1 + 0x13c) + -2) &&",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
       "text": "(iStack_18 < *(int *)(param_1 + 0x140) + -2)) {",
@@ -693,15 +693,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004410c0(param_1,iStack_14 + 1,iStack_24);",
+      "text": "(param_1,iStack_14 + 1,iStack_24);",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffff40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 106,
       "match": "(int)&stack0xffffff40",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -709,7 +709,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 120,
       "match": "(int)&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -717,7 +717,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 104,
+      "line": 106,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -725,7 +725,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 117,
+      "line": 120,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -776,7 +776,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_bc",
-      "line": 108,
+      "line": 110,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "uStack_c8 = uStack_bc;",
@@ -784,7 +784,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_c0",
-      "line": 113,
+      "line": 115,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (0x1f400 < iStack_c0) goto LAB_0044808b;",
@@ -792,7 +792,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_ec",
-      "line": 121,
+      "line": 124,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uStack_b0 = uStack_ec;",
@@ -800,7 +800,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_a8",
-      "line": 126,
+      "line": 129,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (0x1f400 < iStack_a8) goto LAB_0044809a;",
@@ -816,7 +816,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_6c",
-      "line": 147,
+      "line": 152,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (0x1f400 < iStack_6c) goto LAB_004480cc;",
@@ -824,7 +824,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_44",
-      "line": 143,
+      "line": 148,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uStack_74 = uStack_44;",

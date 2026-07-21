@@ -18,7 +18,7 @@ uint FUN_005661c2(int param_1,uint param_2,char *param_3)
       pcVar1 = FUN_0056d99b;
     }
     else {
-      pcVar1 = FUN_005644a7;
+      pcVar1 = (code *)__arrinit;
     }
     uVar2 = (*pcVar1)(param_1,param_2,param_3);
   }

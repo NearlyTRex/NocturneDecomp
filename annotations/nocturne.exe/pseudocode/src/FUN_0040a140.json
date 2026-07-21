@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 178,
+    "complexity_score": 180,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 25,
     "suspect_count": 14,
     "suspect_types": [
       "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 94
+    "total_lines": 96
   },
   "cross_references": [],
   "function": {
@@ -153,27 +153,27 @@
     {
       "addr": "0040d890",
       "is_variadic": false,
-      "name": "FUN_0040d890"
-    },
-    {
-      "addr": "0050ec80",
-      "is_variadic": false,
-      "name": "FUN_0050ec80"
-    },
-    {
-      "addr": "005113e0",
-      "is_variadic": false,
-      "name": "FUN_005113e0"
-    },
-    {
-      "addr": "00511590",
-      "is_variadic": false,
-      "name": "FUN_00511590"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
     },
     {
       "addr": "00511780",
       "is_variadic": false,
-      "name": "FUN_00511780"
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511590",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590"
+    },
+    {
+      "addr": "0050ec80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80"
+    },
+    {
+      "addr": "005113e0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0"
     },
     {
       "addr": "005117f0",
@@ -319,28 +319,28 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00511780(0x01E57284,param_1);",
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = FUN_0050ec80(0x01E57284,param_1 + 0x20,param_2);",
+      "text": "(0x01E57284,param_1 + 0x20,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar2 = FUN_0050ec80(0x01E57284,param_1 + 0x20,param_2);",
+      "text": "(0x01E57284,param_1 + 0x20,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xdc) = uVar3;",
@@ -348,7 +348,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 20,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (uint *)0x0) {",
@@ -356,7 +356,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (uint *)(0x01E57284 + 0x14cd40)) {",
@@ -364,7 +364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = *(uint *)(0x01E57284 + 0x14cd40);",
@@ -372,7 +372,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = *(uint *)(iVar1 + 0x14cd44);",
@@ -380,7 +380,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[2] = *(uint *)(iVar1 + 0x14cd48);",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
+      "line": 19,
       "match": "0x1e57284",
       "severity": "moderate",
       "text": "iVar1 = 0x01E57284;",
@@ -398,17 +398,17 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBassPlayer",
         "offset": 56,
         "vtable_addr": "005a2c04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CTentacle",
         "offset": 56,
         "vtable_addr": "005a3104"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBaronWeapon",
         "offset": 56,
         "vtable_addr": "00599c14"
       },
@@ -418,7 +418,7 @@
         "vtable_addr": "0059a414"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDraculaBride",
         "offset": 56,
         "vtable_addr": "0059c414"
       }

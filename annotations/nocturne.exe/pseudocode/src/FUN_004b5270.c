@@ -14,13 +14,14 @@ uint FUN_004b5270(int param_1)
   if (*(int *)(param_1 + 0x1fa04) == 0) {
     return 0;
   }
-  iVar1 = FUN_004c31b0(param_1 + 0x1f5a0,*(uint *)(*(int *)(param_1 + 0x1fa04) + 0x988),1);
+  iVar1 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
+                    (param_1 + 0x1f5a0,*(uint *)(*(int *)(param_1 + 0x1fa04) + 0x988),1);
   if (iVar1 != 0) {
-    FUN_00455270(*(uint *)(param_1 + 0x1fa04));
+    core_door_cpp_CDoor_onOpened_FUN_00455270(*(uint *)(param_1 + 0x1fa04));
     *(uint *)(param_1 + 0x1fa04) = 0;
     return 1;
   }
-  FUN_00456650(*(uint *)(param_1 + 0x1fa04));
+  core_door_cpp_CDoor_onLocked_FUN_00456650(*(uint *)(param_1 + 0x1fa04));
   *(uint *)(param_1 + 0x1fa04) = 0;
   return 0;
 }

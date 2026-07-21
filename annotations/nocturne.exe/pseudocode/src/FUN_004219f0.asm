@@ -8,8 +8,8 @@
 ;   FUN_00423790 at 004238a9
 ;
 ; Called Functions:
-;   FUN_00421ad0
-;   FUN_00563cc0
+;   core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0
+;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EAX                            ; 00421a08
     MOV dword ptr [EDI + 0x1299c],0x0   ; 00421a09
     XOR ESI,ESI                         ; 00421a13
-    CALL FUN_00563cc0                   ; 00421a15
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 00421a15
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     ADD ESP,0xc                         ; 00421a1a
     TEST EBP,EBP                        ; 00421a1d
     JLE 0x00421ac3                      ; 00421a1f
@@ -44,8 +44,8 @@ section .text
     MOV AX,word ptr [EBX]               ; 00421a34
     PUSH EAX                            ; 00421a37
     PUSH EDI                            ; 00421a38
-    CALL FUN_00421ad0                   ; 00421a39
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a39
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421a3e
     XOR EAX,EAX                         ; 00421a41
     PUSH ESI                            ; 00421a43
@@ -55,8 +55,8 @@ section .text
     MOV AX,word ptr [EBX + 0x2]         ; 00421a4b
     PUSH EAX                            ; 00421a4f
     PUSH EDI                            ; 00421a50
-    CALL FUN_00421ad0                   ; 00421a51
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a51
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421a56
     XOR EAX,EAX                         ; 00421a59
     PUSH ESI                            ; 00421a5b
@@ -66,8 +66,8 @@ section .text
     MOV AX,word ptr [EBX + 0x4]         ; 00421a62
     PUSH EAX                            ; 00421a66
     PUSH EDI                            ; 00421a67
-    CALL FUN_00421ad0                   ; 00421a68
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a68
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421a6d
     XOR EAX,EAX                         ; 00421a70
     PUSH ESI                            ; 00421a72
@@ -77,8 +77,8 @@ section .text
     MOV AX,word ptr [EBX + 0x2]         ; 00421a79
     PUSH EAX                            ; 00421a7d
     PUSH EDI                            ; 00421a7e
-    CALL FUN_00421ad0                   ; 00421a7f
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a7f
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421a84
     XOR EAX,EAX                         ; 00421a87
     PUSH ESI                            ; 00421a89
@@ -88,8 +88,8 @@ section .text
     MOV AX,word ptr [EBX + 0x4]         ; 00421a91
     PUSH EAX                            ; 00421a95
     PUSH EDI                            ; 00421a96
-    CALL FUN_00421ad0                   ; 00421a97
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a97
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421a9c
     XOR EAX,EAX                         ; 00421a9f
     PUSH ESI                            ; 00421aa1
@@ -101,8 +101,8 @@ section .text
     PUSH EDI                            ; 00421aad
     ADD EBX,0x12                        ; 00421aae
     INC ESI                             ; 00421ab1
-    CALL FUN_00421ad0                   ; 00421ab2
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00421ad0()
+    CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421ab2
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
     ADD ESP,0x10                        ; 00421ab7
     CMP ESI,EBP                         ; 00421aba
     JL 0x00421a2a                       ; 00421abc

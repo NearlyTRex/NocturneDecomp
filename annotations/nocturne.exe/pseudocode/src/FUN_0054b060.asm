@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a38b0
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0054b086 (CONDITIONAL_JUMP)  ; LAB_0054b086
     PUSH 0x1                            ; 0054b06c
     PUSH EBX                            ; 0054b06e
-    CALL FUN_00553ea0                   ; 0054b06f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0054b06f
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 0054b074
     MOV DL,byte ptr [ESP + 0xc]         ; 0054b077
     MOV EBX,EAX                         ; 0054b07b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a38b0                       ; 0054b086 | DAT_005a38b0
         ;   Label: LAB_0054b086
     PUSH EBX                            ; 0054b08b
-    CALL FUN_0056445f                   ; 0054b08c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0054b08c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0054b091
     PUSH EAX                            ; 0054b094
-    CALL FUN_00564486                   ; 0054b095
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0054b095
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0054b09a
     MOV EAX,EBX                         ; 0054b09d
     POP EBX                             ; 0054b09f

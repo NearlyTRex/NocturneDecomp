@@ -19,8 +19,8 @@
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   ExitProcess
-;   FUN_00563c90
 ;   MessageBoxA
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     PUSH EBX                            ; 00559515
     PUSH 0x597f49                       ; 00559516 | s_%s_File:_%s_Line:_%d_00597f47+2
     PUSH 0x2de0860                      ; 0055951b
-    CALL FUN_00563c90                   ; 00559520
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00559520
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x14                        ; 00559525
     PUSH 0x30                           ; 00559528
     MOV ESI,dword ptr [0x005c1658]      ; 0055952a | PTR_s_Nocturne_005c1658

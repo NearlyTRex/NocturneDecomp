@@ -8,7 +8,7 @@
 ;   FUN_004fe9d0 at 004fea25
 ;
 ; Called Functions:
-;   FUN_0045d110
+;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x0                            ; 0045d2bd
     PUSH 0x0                            ; 0045d2bf
     PUSH EDX                            ; 0045d2c1
-    CALL FUN_0045d110                   ; 0045d2c2
-        ;   XREF to: 0045d110 (UNCONDITIONAL_CALL)  ; undefined FUN_0045d110()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 ; 0045d2c2
+        ;   XREF to: 0045d110 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110()
     ADD ESP,0x14                        ; 0045d2c7
     RET                                 ; 0045d2ca
 

@@ -8,9 +8,9 @@
 ;   undefined4 DAT_0059746b
 ;
 ; Called Functions:
-;   FUN_00409fc0
-;   FUN_00454510
-;   FUN_0048d050
+;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
+;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+;   core_flame.cpp_CFlame_setup_FUN_0048d050
 ;
 ; *****************************************************************************
 
@@ -21,18 +21,18 @@ section .text
     SUB ESP,0x24                        ; 0054fa81
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0054fa84
     PUSH EBX                            ; 0054fa88
-    CALL FUN_00409fc0                   ; 0054fa89
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409fc0()
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0054fa89
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
     ADD ESP,0x4                         ; 0054fa8e
     LEA EAX,[EBX + 0x150]               ; 0054fa91
     PUSH EAX                            ; 0054fa97
-    CALL FUN_00454510                   ; 0054fa98
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined FUN_00454510()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054fa98
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
     ADD ESP,0x4                         ; 0054fa9d
     LEA EAX,[EBX + 0x65c]               ; 0054faa0
     PUSH EAX                            ; 0054faa6
-    CALL FUN_00454510                   ; 0054faa7
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined FUN_00454510()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054faa7
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
     ADD ESP,0x4                         ; 0054faac
     MOV EDX,ESP                         ; 0054faaf
     PUSH EDX                            ; 0054fab1
@@ -100,8 +100,8 @@ section .text
     MOV dword ptr [EBX + 0x510],0x3f800000 ; 0054fb8f
     PUSH EAX                            ; 0054fb99
     MOV dword ptr [EBX + 0x514],0x3f000000 ; 0054fb9a
-    CALL FUN_0048d050                   ; 0054fba4
-        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; undefined FUN_0048d050()
+    CALL core_flame.cpp_CFlame_setup_FUN_0048d050 ; 0054fba4
+        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_setup_FUN_0048d050()
     ADD ESP,0x4                         ; 0054fba9
     MOV dword ptr [EBX + 0xfc],0x1      ; 0054fbac
     ADD ESP,0x24                        ; 0054fbb6

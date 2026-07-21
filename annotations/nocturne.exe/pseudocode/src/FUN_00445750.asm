@@ -55,9 +55,9 @@
 ;   undefined4 DAT_01c775f8
 ;
 ; Called Functions:
-;   FUN_00441610
-;   FUN_00445650
-;   FUN_0044ce80
+;   core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
+;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH EDI                            ; 00445794
     LEA ESI,[ESP + 0x8]                 ; 00445795
     MOV [0x014b8458],EAX                ; 00445799 | DAT_014b8458
-    CALL FUN_00441610                   ; 0044579e
-        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; undefined FUN_00441610()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610 ; 0044579e
+        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610()
     LEA ESI,[ESP + 0x8]                 ; 004457a3
     ADD ESP,0x8                         ; 004457a7
     MOV EDI,0x14b8460                   ; 004457aa
@@ -217,8 +217,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x9c]      ; 00445936
         ;   Label: LAB_00445936
     PUSH ECX                            ; 0044593d
-    CALL FUN_0044ce80                   ; 0044593e
-        ;   XREF to: 0044ce80 (UNCONDITIONAL_CALL)  ; undefined FUN_0044ce80()
+    CALL core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 ; 0044593e
+        ;   XREF to: 0044ce80 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80()
     ADD ESP,0x4                         ; 00445943
     MOV EAX,dword ptr [ESP + 0x98]      ; 00445946
     XOR EBX,EBX                         ; 0044594d
@@ -270,8 +270,8 @@ section .text
     PUSH EBP                            ; 004459f5
     PUSH EAX                            ; 004459f6
     PUSH ESI                            ; 004459f7
-    CALL FUN_00445650                   ; 004459f8
-        ;   XREF to: 00445650 (UNCONDITIONAL_CALL)  ; undefined FUN_00445650()
+    CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650 ; 004459f8
+        ;   XREF to: 00445650 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650()
     ADD ESP,0x10                        ; 004459fd
     JMP 0x004458df                      ; 00445a00
         ;   XREF to: 004458df (UNCONDITIONAL_JUMP)  ; LAB_004458df
@@ -285,8 +285,8 @@ section .text
     ADD EDX,EAX                         ; 00445a1f
     MOV dword ptr [0x01216608],EBX      ; 00445a21 | DAT_01216608
     MOV dword ptr [ESP + 0x18],EDX      ; 00445a27
-    CALL FUN_0044ce80                   ; 00445a2b
-        ;   XREF to: 0044ce80 (UNCONDITIONAL_CALL)  ; undefined FUN_0044ce80()
+    CALL core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 ; 00445a2b
+        ;   XREF to: 0044ce80 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80()
     ADD ESP,0x4                         ; 00445a30
     MOV EAX,dword ptr [ESP + 0x98]      ; 00445a33
     XOR ESI,ESI                         ; 00445a3a
@@ -497,8 +497,8 @@ section .text
     MOV ECX,dword ptr [EAX*0x4 + 0x146b290] ; 00445cc4
     PUSH ECX                            ; 00445ccb
     PUSH EAX                            ; 00445ccc
-    CALL FUN_00445650                   ; 00445ccd
-        ;   XREF to: 00445650 (UNCONDITIONAL_CALL)  ; undefined FUN_00445650()
+    CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650 ; 00445ccd
+        ;   XREF to: 00445650 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650()
     ADD ESP,0x10                        ; 00445cd2
     MOV ESI,dword ptr [ESP + 0x28]      ; 00445cd5
         ;   Label: LAB_00445cd5

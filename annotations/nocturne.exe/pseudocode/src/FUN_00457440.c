@@ -14,7 +14,7 @@ void FUN_00457440(void)
   float fVar1;
   int unaff_EBX;
   
-  FUN_00457120();
+  core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120();
   fVar1 = (float)_DAT_0057d496;
   *(float *)(unaff_EBX + 0x36c) = (float)*(int *)(unaff_EBX + 0x354) * fVar1;
   *(float *)(unaff_EBX + 0x370) = (float)*(int *)(unaff_EBX + 0x358) * fVar1;

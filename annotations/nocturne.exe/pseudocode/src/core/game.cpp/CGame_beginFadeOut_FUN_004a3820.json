@@ -1,0 +1,478 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 187,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_alignment_array",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "0049da10",
+      "from_addr": "0049e574",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ff2c0",
+      "from_addr": "00500b8b",
+      "name": "core_script.cpp_CScript_step_FUN_004ff2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3820",
+    "address_range": [
+      [
+        "004a3820",
+        "004a385f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_beginFadeOut_FUN_004a3820",
+    "signature": "void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004a3820(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b761c",
+      "name": "DAT_005b761c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "DAT_005b7620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78b04",
+      "name": "DAT_01c78b04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78b08",
+      "name": "DAT_01c78b08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78b0c",
+      "name": "DAT_01c78b0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78b10",
+      "name": "DAT_01c78b10",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0049e574",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00500b8b",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00501aae",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.375,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "COPY": 30,
+      "FLOAT2FLOAT": 1,
+      "INT2FLOAT": 1,
+      "INT_AND": 36,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 8,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 6,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 4,
+      "POPCOUNT": 6
+    },
+    "pcode_op_count": 134
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "CGame_beginFadeOut_FUN_004a3820.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 7,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 60,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 61,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 50,
+          "line": 63,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 64,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 51,
+          "message": "Uninitialized variable: fStack_44",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 52,
+          "message": "Uninitialized variable: fStack_40",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 17,
+          "line": 54,
+          "message": "Uninitialized variable: aiStack_2c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_1018",
+      "severity": "moderate",
+      "text": "int aiStackY_1018 [1000];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "_DAT_01c78b0c = DAT_005b761c / 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "_DAT_01c78b10 = DAT_005b7620 / 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "_DAT_01c78b08 = (float)DAT_005b761c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 34,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pfVar2 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_6c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (0x1e0 < DAT_005b7620) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "_DAT_01c78b0c = (_DAT_01c78b0c * DAT_005b761c) / 0x280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "_DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 60,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 61,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 63,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 64,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Uninitialized variable: fStack_44",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iStack_50 = (int)ROUND(fStack_44 * _DAT_0059de84);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_40",
+      "line": 52,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iStack_4c = (int)ROUND(fStack_40 * _DAT_0059de84);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: aiStack_2c",
+      "line": 54,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "iStack_30 = aiStack_2c[2];",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

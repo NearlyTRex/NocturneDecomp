@@ -65,7 +65,7 @@ DWORD FUN_0057301c(uint param_1,LPCVOID param_2,DWORD param_3)
                   BVar4 = WriteFile(local_18,&local_24,DVar2,&local_24,(LPOVERLAPPED)0x0);
                   if (BVar4 == 0) {
                     (*(code *)PTR_FUN_005c1ac4)(param_1);
-                    DVar2 = FUN_0056c73c();
+                    DVar2 = __set_errno();
                     return DVar2;
                   }
                 }
@@ -89,7 +89,7 @@ DWORD FUN_0057301c(uint param_1,LPCVOID param_2,DWORD param_3)
                 BVar4 = WriteFile(local_18,&local_24,DVar2,&local_24,(LPOVERLAPPED)0x0);
                 if (BVar4 == 0) {
                   (*(code *)PTR_FUN_005c1ac4)(param_1);
-                  DVar2 = FUN_0056c73c();
+                  DVar2 = __set_errno();
                   return DVar2;
                 }
               }
@@ -111,7 +111,7 @@ DWORD FUN_0057301c(uint param_1,LPCVOID param_2,DWORD param_3)
             BVar4 = WriteFile(local_18,&local_24,local_24,&local_20,(LPOVERLAPPED)0x0);
             if (BVar4 == 0) {
               (*(code *)PTR_FUN_005c1ac4)(param_1);
-              DVar2 = FUN_0056c73c();
+              DVar2 = __set_errno();
               return DVar2;
             }
           }
@@ -130,7 +130,7 @@ DWORD FUN_0057301c(uint param_1,LPCVOID param_2,DWORD param_3)
           BVar4 = WriteFile(local_18,param_2,param_3,&local_1c,(LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*(code *)PTR_FUN_005c1ac4)(param_1);
-            DVar2 = FUN_0056c73c();
+            DVar2 = __set_errno();
             return DVar2;
           }
         }
@@ -146,7 +146,7 @@ DWORD FUN_0057301c(uint param_1,LPCVOID param_2,DWORD param_3)
     }
     else {
       (*(code *)PTR_FUN_005c1ac4)(param_1);
-      param_3 = FUN_0056c73c();
+      param_3 = __set_errno();
     }
   }
   return param_3;

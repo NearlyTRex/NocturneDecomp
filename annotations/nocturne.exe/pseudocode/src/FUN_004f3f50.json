@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -139,31 +139,31 @@
     {
       "addr": "004f3f00",
       "from_addr": "004f3f06",
-      "name": "FUN_004f3f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4630",
-      "from_addr": "004f463d",
-      "name": "FUN_004f4630",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f47b0",
       "from_addr": "004f47c2",
-      "name": "FUN_004f47b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4c80",
-      "from_addr": "004f4c90",
-      "name": "FUN_004f4c80",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f4e40",
       "from_addr": "004f4e4a",
-      "name": "FUN_004f4e40",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4c80",
+      "from_addr": "004f4c90",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4630",
+      "from_addr": "004f463d",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -183,7 +183,7 @@
     {
       "addr": "004f3f20",
       "is_variadic": false,
-      "name": "FUN_004f3f20"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20"
     },
     {
       "addr": "005638d0",
@@ -193,7 +193,7 @@
     {
       "addr": "00564486",
       "is_variadic": false,
-      "name": "FUN_00564486"
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
     }
   ],
   "globals": [],
@@ -203,7 +203,7 @@
       {
         "call_addr": "004f3f06",
         "call_type": "direct",
-        "caller": "FUN_004f3f00",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +216,7 @@
       {
         "call_addr": "004f463d",
         "call_type": "direct",
-        "caller": "FUN_004f4630",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +230,7 @@
       {
         "call_addr": "004f47c2",
         "call_type": "direct",
-        "caller": "FUN_004f47b0",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +243,7 @@
       {
         "call_addr": "004f4e4a",
         "call_type": "direct",
-        "caller": "FUN_004f4e40",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,7 +256,7 @@
       {
         "call_addr": "004f4c90",
         "call_type": "direct",
-        "caller": "FUN_004f4c80",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,7 +334,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00564486(*(uint *)(param_1 + 0x20));",
+      "text": "shape_memdbg_cpp_free_FUN_00564486(*(uint *)(param_1 + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -342,7 +342,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f3f20(param_1);",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_004f3f20(param_1);",
       "type": "unnamed_param"
     },
     {

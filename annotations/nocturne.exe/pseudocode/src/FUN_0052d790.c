@@ -46,8 +46,8 @@ int FUN_0052d790(void)
   fStack_18 = *(float *)(0x01C775EC + 0x264);
   if (*(int *)(0x01C775EC + 0x240) == 0) {
     if (_DAT_02dc9d54 != *(int *)(0x01E57284 + 0x15aabc)) {
-      FUN_00511750();
-      FUN_005117e0();
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750();
+      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0();
       uStack_50 = _DAT_02dc945c;
       fStack_4c = _DAT_02dc9460;
       fStack_48 = _DAT_02dc9464;
@@ -57,14 +57,15 @@ int FUN_0052d790(void)
       fStack_3c = _DAT_02dc9464;
       uStack_30 = 0;
       fStack_40 = _DAT_02dc9460 + _DAT_00594b42;
-      iVar2 = FUN_0050fa30(0x01E57284,&uStack_50,&uStack_44);
+      iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
+                        (0x01E57284,&uStack_50,&uStack_44);
       if (iVar2 == 0) {
         PTR_DAT_005bed60 = &DAT_00594aff;
       }
       else {
         PTR_DAT_005bed60 = &DAT_00594afb;
       }
-      FUN_00511750();
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750();
       _DAT_02dc9d54 = *(int *)(0x01E57284 + 0x15aabc);
     }
   }
@@ -72,38 +73,38 @@ int FUN_0052d790(void)
     PTR_DAT_005bed60 = &DAT_00594af7;
     _DAT_02dc9d54 = -1;
   }
-  FUN_00526340();
-  FUN_00526240();
-  FUN_005261b0();
-  iVar2 = FUN_00564520(PTR_DAT_005bed60,&DAT_00594b03);
+  sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
+  sound_sndmain_cpp_setNextSfxFlags_FUN_00526240();
+  sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
+  iVar2 = _stricmp(PTR_DAT_005bed60,&DAT_00594b03);
   if (iVar2 == 0) {
-    FUN_00527230();
+    sound_sndmain_cpp_killSfx_FUN_00527230();
     fVar10 = 0.4;
   }
   else {
     fVar10 = 0.7;
-    iVar2 = FUN_00526c50();
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
     if (iVar2 == 0) {
-      FUN_00526340();
-      FUN_005260f0();
-      _DAT_02dc9d5c = FUN_005265a0();
-      FUN_005263c0();
+      sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
+      sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0();
+      _DAT_02dc9d5c = sound_sndmain_cpp_startSfx_FUN_005265a0();
+      sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
   }
-  iVar2 = FUN_00526c50();
+  iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
   if (iVar2 == 0) {
-    FUN_00526340();
-    FUN_005260f0();
-    _DAT_02dc9d58 = FUN_005265a0();
-    FUN_005263c0();
+    sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
+    sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0();
+    _DAT_02dc9d58 = sound_sndmain_cpp_startSfx_FUN_005265a0();
+    sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   else {
-    iVar2 = FUN_00564520(PTR_DAT_005bed64,PTR_DAT_005bed60);
+    iVar2 = _stricmp(PTR_DAT_005bed64,PTR_DAT_005bed60);
     if (iVar2 != 0) {
-      FUN_005270d0(_DAT_02dc9d58,fVar10 * (float)_DAT_00594b46);
+      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,fVar10 * (float)_DAT_00594b46);
     }
   }
-  FUN_005263c0();
+  sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   pfVar5 = (float *)&DAT_02dc9ca4;
   iVar2 = 0;
   PTR_DAT_005bed64 = PTR_DAT_005bed60;
@@ -112,7 +113,7 @@ int FUN_0052d790(void)
   pfStack_1c = (float *)0x0;
   _DAT_02dc9d4c = 30.0;
   do {
-    iVar3 = FUN_00526c50();
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
     if (iVar3 == 0) {
       uVar4 = 0;
       pfStack_1c = pfVar5;
@@ -126,7 +127,7 @@ int FUN_0052d790(void)
       pfVar5[2] = pfVar5[2] + fStack_24;
       uVar4 = (ushort)((uint)iVar3 >> 0x10);
       if ((float)_DAT_00594b5e < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {
-        FUN_00527230();
+        sound_sndmain_cpp_killSfx_FUN_00527230();
         uVar4 = extraout_var;
       }
     }
@@ -137,7 +138,8 @@ int FUN_0052d790(void)
   iVar2 = CONCAT22(uVar4,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |
                          (ushort)(_DAT_02dc9d50 == 0.0) << 0xe);
   if ((0.0 >= _DAT_02dc9d50) && (pfStack_1c != (float *)0x0)) {
-    _DAT_02dc9d50 = (float)FUN_0040dda0(0x3f800000,0x40a00000);
+    _DAT_02dc9d50 =
+         (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000,0x40a00000);
     fStack_20 = 20.0;
     fVar11 = 1.0;
     puVar7 = &DAT_005bef88;
@@ -148,14 +150,14 @@ int FUN_0052d790(void)
       puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
       pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
     }
-    iVar3 = FUN_0056488c(fVar10,0x3f800000);
+    iVar3 = rand(fVar10,0x3f800000);
     iVar2 = iVar3 / 5;
     switch(iVar3 % 5) {
     case 0:
     case 1:
       fVar11 = fVar10 * (float)_DAT_00594b56;
       fStack_20 = 25.0;
-      FUN_00563c90(acStack_118,"rail?%s.wav",PTR_DAT_005bed60,fVar10,fVar11);
+      _sprintf(acStack_118,"rail?%s.wav",PTR_DAT_005bed60,fVar10,fVar11);
       break;
     case 2:
     case 3:
@@ -177,17 +179,18 @@ int FUN_0052d790(void)
       goto LAB_0052da35;
     }
     *pfStack_1c = 0.0;
-    fStack_14 = (float)FUN_0040dda0(0xc0400000,0x40000000);
+    fStack_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0400000,0x40000000);
     fVar10 = fStack_14 * fStack_20 + _DAT_02dc9464;
     pfStack_1c[1] = 0.0;
     pfStack_1c[2] = fVar10;
-    FUN_00526340();
-    FUN_005261b0();
-    FUN_00526090();
-    FUN_00563c90(auStack_b4,"%s @ %g",acStack_118,(double)fVar11);
-    fVar10 = (float)FUN_0052ea90(0x02DC9450,0,auStack_b4,pfStack_1c);
+    sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
+    sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
+    sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090();
+    _sprintf(auStack_b4,"%s @ %g",acStack_118,(double)fVar11);
+    fVar10 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
+                              (0x02DC9450,0,auStack_b4,pfStack_1c);
     pfStack_1c[3] = fVar10;
-    iVar2 = FUN_005263c0();
+    iVar2 = sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     return iVar2;
   }
 LAB_0052da35:

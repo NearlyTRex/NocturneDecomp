@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0050e490 at 0050e4ac
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490 at 0050e4ac
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_0045f190
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
 ;   FUN_004d74a0
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 004d7741
     MOV EBX,dword ptr [0x005ae704]      ; 004d7742 | DAT_005ae704
     PUSH EBX                            ; 004d7748 | DAT_01b4d738
-    CALL FUN_0045f190                   ; 004d7749
-        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; undefined FUN_0045f190()
+    CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 ; 004d7749
+        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190()
     ADD ESP,0x8                         ; 004d774e
     POP EBX                             ; 004d7751
     RET                                 ; 004d7752

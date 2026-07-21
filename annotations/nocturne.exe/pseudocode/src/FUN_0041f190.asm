@@ -12,9 +12,9 @@
 ;   FUN_0041ef90 at 0041f098
 ;
 ; Called Functions:
-;   FUN_0040a240
-;   FUN_0040a290
-;   FUN_0041e160
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0041f1ab
     PUSH EAX                            ; 0041f1af
     PUSH EDX                            ; 0041f1b0
-    CALL FUN_0040a290                   ; 0041f1b1
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a290()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0041f1b1
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
     ADD ESP,0xc                         ; 0041f1b6
     LEA EAX,[ESP + 0x24]                ; 0041f1b9
     PUSH EAX                            ; 0041f1bd
@@ -52,8 +52,8 @@ section .text
     CALL dword ptr [ECX + 0x14]         ; 0041f1d5
     ADD ESP,0x8                         ; 0041f1d8
     PUSH EAX                            ; 0041f1db
-    CALL FUN_0041e160                   ; 0041f1dc
-        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined FUN_0041e160()
+    CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 ; 0041f1dc
+        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160()
     MOV EDX,EAX                         ; 0041f1e1
     LEA EAX,[ESP + 0x30]                ; 0041f1e3
     ADD ESP,0xc                         ; 0041f1e7
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 0041f20c
     MOV ESI,dword ptr [EBX + 0x31c]     ; 0041f20d
     PUSH ESI                            ; 0041f213
-    CALL FUN_0040a240                   ; 0041f214
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0041f214
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     FLD float ptr [EAX]                 ; 0041f219
     ADD ESP,0xc                         ; 0041f21b
     FSTP float ptr [EBX + 0x20]         ; 0041f21e

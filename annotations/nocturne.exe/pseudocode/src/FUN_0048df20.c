@@ -24,13 +24,13 @@ void FUN_0048df20(int param_1,int param_2)
   uVar2 = DAT_005ae704;
   *(uint *)(param_1 + 0x298) = 0;
   *(uint *)(param_1 + 0x290) = 0;
-  iVar1 = FUN_00461090(uVar2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(uVar2);
   if ((iVar1 == 0) && (param_2 != 0)) {
-    FUN_00409f20(param_1);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
     uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_38,0);
-    uVar2 = FUN_0041ceb0(uVar2);
+    uVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar2);
     *(uint *)(param_1 + 0x288) = uVar2;
-    FUN_00409f60(param_1);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
     if ((*(int *)(param_1 + 0x288) != 0) &&
        (((1.0 < SQRT(*(float *)(param_1 + 0x158) * *(float *)(param_1 + 0x158) +
                      *(float *)(param_1 + 0x150) * *(float *)(param_1 + 0x150) +
@@ -39,7 +39,8 @@ void FUN_0048df20(int param_1,int param_2)
       iVar1 = 0;
       iStack_14 = 0;
       for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
-        iVar3 = FUN_0040d890(*(uint *)(iVar1 + 0x14cd70 + 0x01E57284),_DAT_01c70650);
+        iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (*(uint *)(iVar1 + 0x14cd70 + 0x01E57284),_DAT_01c70650);
         if (iVar3 != 0) {
           fStack_20 = *(float *)(param_1 + 0x20) - *(float *)(iVar3 + 0x20);
           fStack_1c = *(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24);

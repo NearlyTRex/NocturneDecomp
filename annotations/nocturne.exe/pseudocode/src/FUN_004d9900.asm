@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004d7fe0 at 004d84d2
+;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d84d2
 ;
 ; Called Functions:
+;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
 ;   FUN_00454460
 ;   FUN_0051f650
-;   FUN_0051f730
 ;   FUN_005459f0
 ;
 ; *****************************************************************************

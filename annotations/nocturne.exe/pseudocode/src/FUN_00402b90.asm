@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00402b60
+;   engine_2d.c_drawTextRightAlignedColor_FUN_00402b60
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ECX                            ; 00402b9a
     MOV EBX,dword ptr [ESP + 0x18]      ; 00402b9b
     PUSH EBX                            ; 00402b9f
-    CALL FUN_00402b60                   ; 00402ba0
-        ;   XREF to: 00402b60 (UNCONDITIONAL_CALL)  ; undefined FUN_00402b60()
+    CALL engine_2d.c_drawTextRightAlignedColor_FUN_00402b60 ; 00402ba0
+        ;   XREF to: 00402b60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextRightAlignedColor_FUN_00402b60()
     ADD ESP,0xc                         ; 00402ba5
     POP EBX                             ; 00402ba8
     RET                                 ; 00402ba9

@@ -35,9 +35,9 @@
 ;   undefined4 DAT_01bcde7c
 ;
 ; Called Functions:
-;   FUN_0040d890
-;   FUN_0055aa00
-;   FUN_0055afb0
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH EAX                            ; 004dbb3d
     LEA EAX,[ESP + 0x8]                 ; 004dbb3e
     PUSH EAX                            ; 004dbb42
-    CALL FUN_0055afb0                   ; 004dbb43
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055afb0()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 004dbb43
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
     LEA EAX,[ESI*0x4 + 0x0]             ; 004dbb48
     ADD ESP,0xc                         ; 004dbb4f
     SUB EAX,ESI                         ; 004dbb52
@@ -110,8 +110,8 @@ section .text
     PUSH EAX                            ; 004dbb6b
     LEA ESI,[ESP + 0x38]                ; 004dbb6c
     MOV EDI,EBX                         ; 004dbb70
-    CALL FUN_0055aa00                   ; 004dbb72
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined FUN_0055aa00()
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004dbb72
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
     MOV ECX,0xc                         ; 004dbb77
     LEA ESI,[ESP + 0x38]                ; 004dbb7c
     ADD ESP,0x8                         ; 004dbb80
@@ -126,8 +126,8 @@ section .text
         ;   Label: LAB_004dbb91
     PUSH EBP                            ; 004dbb97
     PUSH EDX                            ; 004dbb98
-    CALL FUN_0040d890                   ; 004dbb99
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004dbb99
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 004dbb9e
     TEST EAX,EAX                        ; 004dbba1
     JZ 0x004dbc2f                       ; 004dbba3

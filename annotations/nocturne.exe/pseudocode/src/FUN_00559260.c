@@ -52,7 +52,7 @@ uint FUN_00559260(HMODULE param_1,uint param_2,uint param_3,int param_4)
   } while (iVar10 < (int)pWVar12);
   _DAT_02de209c = param_1;
   DVar6 = timeGetTime();
-  FUN_005648b0(DVar6);
+  srand(DVar6);
   pcVar13 = &DAT_02de2c10;
   pCVar7 = GetCommandLineA();
   do {
@@ -126,7 +126,7 @@ LAB_005593b7:
   UpdateWindow(_DAT_02de2098);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,1);
-  FUN_00563cc0(&local_30,0,0x20);
+  memset(&local_30,0,0x20);
   local_30.dwLength = 0x20;
   GlobalMemoryStatus(&local_30);
   _DAT_02de20a8 = local_30.dwTotalPhys;

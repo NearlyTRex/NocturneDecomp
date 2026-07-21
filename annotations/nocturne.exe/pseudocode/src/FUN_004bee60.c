@@ -9,6 +9,6 @@
 uint FUN_004bee60(uint param_1)
 
 {
-  FUN_004bee80(param_1);
+  core_inv_cpp_CInventory_clear_FUN_004bee80(param_1);
   return param_1;
 }

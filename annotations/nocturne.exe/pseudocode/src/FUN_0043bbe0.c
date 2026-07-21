@@ -15,9 +15,9 @@ int FUN_0043bbe0(uint param_1)
   uint uVar2;
   int iVar3;
   
-  iVar3 = FUN_00479560(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_FUN_0059b8a4;
-  FUN_0051e0c0(iVar3 + 0x150,"cow.dfm");
+  iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
+  *(byte ***)(iVar3 + 0x14c) = &PTR_core_cow_cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar3 + 0x150,"cow.dfm");
   uVar1 = _DAT_0059b88c;
   *(uint *)(iVar3 + 0x2dd4) = 0x3fe00000;
   uVar2 = _DAT_0059b890;

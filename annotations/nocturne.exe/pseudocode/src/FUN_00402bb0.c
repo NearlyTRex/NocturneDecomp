@@ -13,8 +13,8 @@ void FUN_00402bb0(uint param_1,uint param_2,uint param_3)
   byte *local_c;
   
   local_c = &stack0x00000010;
-  FUN_00563a08(local_100c,param_3,&local_c);
+  _vsprintf(local_100c,param_3,&local_c);
   local_c = (byte *)0x0;
-  FUN_00402b60(local_100c,param_1,param_2);
+  engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(local_100c,param_1,param_2);
   return;
 }

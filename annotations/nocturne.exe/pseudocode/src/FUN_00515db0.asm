@@ -21,11 +21,11 @@
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
-;   FUN_0040a240
-;   FUN_0044d7a0
-;   FUN_00452080
-;   FUN_0050a970
-;   FUN_00554030
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080
+;   core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970
+;   core_weapon.cpp_CWeapon_process_FUN_00554030
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_00515dc2
     PUSH EBX                            ; 00515dc6
     MOV dword ptr [EBX + 0x574],0x0     ; 00515dc7
-    CALL FUN_00554030                   ; 00515dd1
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined FUN_00554030()
+    CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 00515dd1
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
     ADD ESP,0x8                         ; 00515dd6
     ADD ESP,0x18                        ; 00515dd9
     POP EBP                             ; 00515ddc
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 00515e06
     PUSH EBX                            ; 00515e07
     XOR ESI,ESI                         ; 00515e08
-    CALL FUN_0040a240                   ; 00515e0a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00515e0a
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     LEA EAX,[ESP + 0x14]                ; 00515e0f
     ADD ESP,0xc                         ; 00515e13
     MOV dword ptr [0x01c762fc],ESI      ; 00515e16 | DAT_01c762fc
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_00515e3e
     PUSH EAX                            ; 00515e41
     PUSH 0x1c74750                      ; 00515e42 | DAT_01c74750
-    CALL FUN_0044d7a0                   ; 00515e47
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d7a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00515e47
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 00515e4c
     MOV EDI,0x42e00000                  ; 00515e4f
     PUSH 0x3f800000                     ; 00515e54
@@ -93,16 +93,16 @@ section .text
     PUSH 0x1c74640                      ; 00515e5f | DAT_01c74640
     FSTP float ptr [0x01c74740]         ; 00515e64 | DAT_01c74740
     MOV dword ptr [0x01c74778],EDI      ; 00515e6a | DAT_01c74778
-    CALL FUN_00452080                   ; 00515e70
-        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined FUN_00452080()
+    CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 ; 00515e70
+        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080()
     ADD ESP,0x8                         ; 00515e75
     PUSH 0x1c74640                      ; 00515e78 | DAT_01c74640
     MOV EAX,[0x005be368]                ; 00515e7d | DAT_005be368
     XOR EBP,EBP                         ; 00515e82
     PUSH EAX                            ; 00515e84 | DAT_01e57284
     MOV dword ptr [0x01c76310],EBP      ; 00515e85 | DAT_01c76310
-    CALL FUN_0050a970                   ; 00515e8b
-        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; undefined FUN_0050a970()
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 00515e8b
+        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970()
     ADD ESP,0x8                         ; 00515e90
     POP ESI                             ; 00515e93
     POP EDI                             ; 00515e94

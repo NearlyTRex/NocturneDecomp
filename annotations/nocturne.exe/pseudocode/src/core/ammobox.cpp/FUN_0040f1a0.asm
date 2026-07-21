@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00498790 at 004987bd
-;   FUN_0053beb0 at 0053beec
+;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_00498790 at 004987bd
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0 at 0053beec
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\ammobox.cpp_0057836d
@@ -19,10 +19,10 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_0040eb70
-;   FUN_0040ed80
+;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
+;   core_inv.cpp_CInventory_addItem_FUN_004bf360
 ;   FUN_0040ef60
-;   FUN_004bf360
 ;   FUN_004c8440
 ;   FUN_0056497c
 ;
@@ -49,8 +49,8 @@ section .text
     PUSH EDX                            ; 0040f1be
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040f1bf
     PUSH EBX                            ; 0040f1c3
-    CALL FUN_004bf360                   ; 0040f1c4
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined FUN_004bf360()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 0040f1c4
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
     MOV dword ptr [EBP + 0x318],0x0     ; 0040f1c9
     ADD ESP,0xc                         ; 0040f1d3
     MOV dword ptr [EBP + 0x30c],0x0     ; 0040f1d6
@@ -66,8 +66,8 @@ section .text
     JZ 0x0040f1fd                       ; 0040f1f2
         ;   XREF to: 0040f1fd (CONDITIONAL_JUMP)  ; LAB_0040f1fd
     PUSH EAX                            ; 0040f1f4
-    CALL FUN_0040eb70                   ; 0040f1f5
-        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined FUN_0040eb70()
+    CALL core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 ; 0040f1f5
+        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_ctor_FUN_0040eb70()
     ADD ESP,0x4                         ; 0040f1fa
     PUSH EDI                            ; 0040f1fd
         ;   Label: LAB_0040f1fd
@@ -88,8 +88,8 @@ section .text
         ;   Label: LAB_0040f228
     PUSH ESI                            ; 0040f22e
     PUSH EBX                            ; 0040f22f
-    CALL FUN_0040ed80                   ; 0040f230
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ed80()
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 0040f230
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
     ADD ESP,0x8                         ; 0040f235
     MOV EAX,dword ptr [EBP + 0x30c]     ; 0040f238
     PUSH EAX                            ; 0040f23e
@@ -105,8 +105,8 @@ section .text
     ADD ESP,0x4                         ; 0040f25d
     PUSH ESI                            ; 0040f260
     PUSH EBX                            ; 0040f261
-    CALL FUN_0040ed80                   ; 0040f262
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ed80()
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 0040f262
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
     ADD ESP,0x8                         ; 0040f267
     MOV EDI,EBX                         ; 0040f26a
     MOV ESI,0x57838f                    ; 0040f26c | = "Some_ammo"
@@ -130,8 +130,8 @@ section .text
     PUSH EBX                            ; 0040f28d
     MOV EDX,dword ptr [ESP + 0x20]      ; 0040f28e
     PUSH EDX                            ; 0040f292
-    CALL FUN_004bf360                   ; 0040f293
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined FUN_004bf360()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 0040f293
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
     ADD ESP,0xc                         ; 0040f298
     MOV dword ptr [EBP + 0x30c],0x0     ; 0040f29b
     POP ESI                             ; 0040f2a5

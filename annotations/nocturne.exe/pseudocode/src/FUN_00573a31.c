@@ -34,7 +34,7 @@ uint FUN_00573a31(uint param_1,uint param_2)
   uVar3 = 0;
   if (_DAT_02de54a8 != 0) {
     iVar1 = FUN_00574000(in_stack_00000024);
-    iVar2 = FUN_005635b0(unaff_retaddr * (iVar1 + 1));
+    iVar2 = malloc(unaff_retaddr * (iVar1 + 1));
     if (iVar2 == 0) {
       FUN_0056c6d0(5);
       return 0xffffffff;

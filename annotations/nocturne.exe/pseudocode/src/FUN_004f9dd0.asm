@@ -32,14 +32,14 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   FUN_004f9830
-;   FUN_004f9870
-;   FUN_004f98e0
-;   FUN_004f9960
-;   FUN_004f99d0
-;   FUN_004f9a10
-;   FUN_00530710
-;   FUN_00532620
+;   engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960
+;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
+;   engine_prim.c_findEdgeInBuffer_FUN_004f9830
+;   engine_prim.c_normalizeTextureCoords_FUN_004f98e0
+;   engine_prim.c_prepareDepthBuffer_FUN_004f9870
+;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
+;   wincore_windll.cpp_drawPolygon_FUN_00532620
+;   wincore_windll.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -118,8 +118,8 @@ section .text
     PUSH EDI                            ; 004f9e7d
     MOV EAX,dword ptr [ESP + 0x30]      ; 004f9e7e
     PUSH EAX                            ; 004f9e82
-    CALL FUN_004f9a10                   ; 004f9e83
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9a10()
+    CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004f9e83
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
     ADD ESP,0xc                         ; 004f9e88
     TEST EAX,EAX                        ; 004f9e8b
     JZ 0x004f9f74                       ; 004f9e8d
@@ -201,8 +201,8 @@ section .text
         ;   Label: LAB_004f9f51
     MOV EBX,dword ptr [0x01e52eec]      ; 004f9f53 | DAT_01e52eec
     PUSH EBX                            ; 004f9f59
-    CALL FUN_004f9830                   ; 004f9f5a
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9830()
+    CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004f9f5a
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
     ADD ESP,0x8                         ; 004f9f5f
     MOV EBP,EAX                         ; 004f9f62
     TEST EAX,EAX                        ; 004f9f64
@@ -224,8 +224,8 @@ section .text
     PUSH EDI                            ; 004f9f7b
     MOV ECX,dword ptr [ESP + 0x30]      ; 004f9f7c
     PUSH ECX                            ; 004f9f80
-    CALL FUN_004f9a10                   ; 004f9f81
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9a10()
+    CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004f9f81
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
     ADD ESP,0xc                         ; 004f9f86
     TEST EAX,EAX                        ; 004f9f89
     JNZ 0x004f9eac                      ; 004f9f8b
@@ -243,8 +243,8 @@ section .text
     PUSH EBP                            ; 004f9fa4
     MOV EAX,dword ptr [ESP + 0x30]      ; 004f9fa5
     PUSH EAX                            ; 004f9fa9
-    CALL FUN_00532620                   ; 004f9faa
-        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined FUN_00532620()
+    CALL wincore_windll.cpp_drawPolygon_FUN_00532620 ; 004f9faa
+        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon_FUN_00532620()
     ADD ESP,0xc                         ; 004f9faf
     ADD ESP,0x14                        ; 004f9fb2
     POP EBP                             ; 004f9fb5
@@ -257,8 +257,8 @@ section .text
     PUSH EDI                            ; 004f9fbe
     MOV EBP,dword ptr [ESP + 0x2c]      ; 004f9fbf
     PUSH EBP                            ; 004f9fc3
-    CALL FUN_004f9870                   ; 004f9fc4
-        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9870()
+    CALL engine_prim.c_prepareDepthBuffer_FUN_004f9870 ; 004f9fc4
+        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_004f9870()
     ADD ESP,0x8                         ; 004f9fc9
     JMP 0x004f9ee1                      ; 004f9fcc
         ;   XREF to: 004f9ee1 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -267,8 +267,8 @@ section .text
     PUSH EBX                            ; 004f9fd5
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004f9fd6
     PUSH ESI                            ; 004f9fda
-    CALL FUN_004f98e0                   ; 004f9fdb
-        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f98e0()
+    CALL engine_prim.c_normalizeTextureCoords_FUN_004f98e0 ; 004f9fdb
+        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_004f98e0()
     ADD ESP,0x8                         ; 004f9fe0
     JMP 0x004f9ee1                      ; 004f9fe3
         ;   XREF to: 004f9ee1 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -277,8 +277,8 @@ section .text
     PUSH EDX                            ; 004f9fec
     MOV ECX,dword ptr [ESP + 0x2c]      ; 004f9fed
     PUSH ECX                            ; 004f9ff1
-    CALL FUN_004f9960                   ; 004f9ff2
-        ;   XREF to: 004f9960 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9960()
+    CALL engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960 ; 004f9ff2
+        ;   XREF to: 004f9960 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960()
     ADD ESP,0x8                         ; 004f9ff7
     JMP 0x004f9ee1                      ; 004f9ffa
         ;   XREF to: 004f9ee1 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -287,8 +287,8 @@ section .text
     PUSH EBP                            ; 004fa003
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004fa004
     PUSH EAX                            ; 004fa008
-    CALL FUN_004f98e0                   ; 004fa009
-        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f98e0()
+    CALL engine_prim.c_normalizeTextureCoords_FUN_004f98e0 ; 004fa009
+        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_004f98e0()
     ADD ESP,0x8                         ; 004fa00e
     JMP 0x004f9ee1                      ; 004fa011
         ;   XREF to: 004f9ee1 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -297,8 +297,8 @@ section .text
     PUSH ESI                            ; 004fa01a
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004fa01b
     PUSH EDI                            ; 004fa01f
-    CALL FUN_004f99d0                   ; 004fa020
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f99d0()
+    CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 004fa020
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
     ADD ESP,0x8                         ; 004fa025
     JMP 0x004f9ee1                      ; 004fa028
         ;   XREF to: 004f9ee1 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -446,8 +446,8 @@ section .text
         ;   Label: LAB_004fa1a4
     MOV ESI,dword ptr [0x01e52eec]      ; 004fa1a5 | DAT_01e52eec
     PUSH ESI                            ; 004fa1ab
-    CALL FUN_004f9830                   ; 004fa1ac
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9830()
+    CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa1ac
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
     ADD ESP,0x8                         ; 004fa1b1
     MOV dword ptr [ESP + 0x10],EAX      ; 004fa1b4
     TEST EAX,EAX                        ; 004fa1b8
@@ -473,8 +473,8 @@ section .text
     PUSH EBP                            ; 004fa1f1
     PUSH EAX                            ; 004fa1f2
     MOV dword ptr [EDX],0xffffffff      ; 004fa1f3
-    CALL FUN_004f9830                   ; 004fa1f9
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9830()
+    CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa1f9
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
     ADD ESP,0x8                         ; 004fa1fe
     MOV dword ptr [ESP + 0x10],EAX      ; 004fa201
     TEST EAX,EAX                        ; 004fa205
@@ -484,8 +484,8 @@ section .text
         ;   Label: LAB_004fa20d
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fa211
     MOV ESI,EBP                         ; 004fa215
-    CALL FUN_00530710                   ; 004fa217
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined FUN_00530710()
+    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 004fa217
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
     MOV EAX,dword ptr [EBP + 0xc]       ; 004fa21c
     ADD dword ptr [EBP + 0x8],EAX       ; 004fa21f
     MOV ECX,dword ptr [EBP + 0x18]      ; 004fa222
@@ -546,8 +546,8 @@ section .text
     PUSH ECX                            ; 004fa2bd
     PUSH EAX                            ; 004fa2be
     MOV dword ptr [EBP],0xffffffff      ; 004fa2bf
-    CALL FUN_004f9830                   ; 004fa2c6
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9830()
+    CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa2c6
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
     ADD ESP,0x8                         ; 004fa2cb
     MOV EBP,EAX                         ; 004fa2ce
     TEST EAX,EAX                        ; 004fa2d0

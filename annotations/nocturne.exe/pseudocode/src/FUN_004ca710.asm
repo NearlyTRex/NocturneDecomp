@@ -12,9 +12,9 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_004544d0
-;   FUN_00460aa0
-;   thunk_FUN_004cdbc0
+;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
 
@@ -42,21 +42,21 @@ section .text
     PUSH EAX                            ; 004ca73e
     MOV ECX,dword ptr [0x005ae704]      ; 004ca73f | DAT_005ae704
     PUSH ECX                            ; 004ca745 | DAT_01b4d738
-    CALL FUN_00460aa0                   ; 004ca746
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined FUN_00460aa0()
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004ca746
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
     ADD ESP,0xc                         ; 004ca74b
     MOV EAX,dword ptr [ESP + 0x8]       ; 004ca74e
     PUSH -0x1                           ; 004ca752
     ADD EAX,0x150                       ; 004ca754
     PUSH 0x0                            ; 004ca759
     PUSH EAX                            ; 004ca75b
-    CALL FUN_004544d0                   ; 004ca75c
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004544d0()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 004ca75c
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
     ADD ESP,0xc                         ; 004ca761
     MOV EBX,dword ptr [0x005ae704]      ; 004ca764 | DAT_005ae704
     PUSH EBX                            ; 004ca76a | DAT_01b4d738
-    CALL thunk_FUN_004cdbc0             ; 004ca76b
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004cdbc0()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004ca76b
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 004ca770
     POP EBX                             ; 004ca773
     LEA EAX,[EAX]                       ; 004ca774

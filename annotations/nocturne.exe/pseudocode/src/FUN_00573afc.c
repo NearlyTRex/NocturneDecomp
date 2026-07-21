@@ -43,7 +43,7 @@ uint FUN_00573afc(char *param_1)
     if (bVar9) {
       return 0;
     }
-    puVar2 = (uint *)FUN_005635b0(9);
+    puVar2 = (uint *)malloc(9);
     if (puVar2 == (uint *)0x0) {
       return 0xffffffff;
     }
@@ -62,7 +62,7 @@ uint FUN_00573afc(char *param_1)
       iVar4 = -iVar3;
       iVar5 = iVar3 * -4 + 8U + iVar4 + 1;
       if (_DAT_02de54a0 == (uint *)0x0) {
-        puVar2 = (uint *)FUN_005635b0(iVar5);
+        puVar2 = (uint *)malloc(iVar5);
         if (puVar2 == (uint *)0x0) {
           return 0xffffffff;
         }
@@ -79,14 +79,14 @@ uint FUN_00573afc(char *param_1)
           puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
         }
         _DAT_02de54a0 = puVar2 + (2 - iVar3);
-        FUN_00563cc0(_DAT_02de54a0,0,iVar4 + 1);
+        memset(_DAT_02de54a0,0,iVar4 + 1);
       }
       else {
-        puVar2 = (uint *)FUN_00564a70(puVar2,iVar5);
+        puVar2 = (uint *)realloc(puVar2,iVar5);
         if (puVar2 == (uint *)0x0) {
           return 0xffffffff;
         }
-        FUN_00566170(puVar2 + (2 - iVar3),_DAT_02de54a0,iVar4);
+        memmove(puVar2 + (2 - iVar3),_DAT_02de54a0,iVar4);
         _DAT_02de54a0 = puVar2 + (2 - iVar3);
       }
       puVar2[1 - iVar3] = 0;

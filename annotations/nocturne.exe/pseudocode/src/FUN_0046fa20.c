@@ -12,7 +12,7 @@ uint FUN_0046fa20(uint param_1)
 
 {
   while (0 < _DAT_01bcd07c) {
-    FUN_004721e0(param_1);
+    shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(param_1);
   }
   if (_DAT_01bcd078 == 0) {
     return param_1;

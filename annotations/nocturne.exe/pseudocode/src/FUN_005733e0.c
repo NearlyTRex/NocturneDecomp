@@ -92,7 +92,7 @@ uint FUN_005733e0(uint param_1,char *param_2,DWORD param_3)
           return uVar2;
         }
 LAB_005734ea:
-        uVar2 = FUN_0056c73c();
+        uVar2 = __set_errno();
         return uVar2;
       }
     }

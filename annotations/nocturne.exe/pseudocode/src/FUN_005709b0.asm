@@ -16,7 +16,7 @@
 ;   FUN_0056c864 at 0056ca36
 ;
 ; Called Functions:
-;   FUN_00565fb0
+;   crt_time.c__mktime_FUN_00565fb0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 00570a0c
     MOV dword ptr [ESP + 0x10],EBX      ; 00570a0d
     MOV dword ptr [ESP + 0x24],EDX      ; 00570a11
-    CALL FUN_00565fb0                   ; 00570a15
-        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00565fb0()
+    CALL crt_time.c__mktime_FUN_00565fb0 ; 00570a15
+        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_00565fb0()
     ADD ESP,0x4                         ; 00570a1a
     ADD ESP,0x24                        ; 00570a1d
     POP EBX                             ; 00570a20

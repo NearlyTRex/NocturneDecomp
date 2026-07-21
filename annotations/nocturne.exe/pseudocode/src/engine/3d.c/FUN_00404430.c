@@ -13,7 +13,7 @@ byte * FUN_00404430(uint *param_1)
 {
   byte local_54 [80];
   
-  FUN_00563c90(local_54,"Old func : %d",*param_1);
+  _sprintf(local_54,"Old func : %d",*param_1);
   _DAT_01cc4804 = 0xd9;
   _DAT_01cc4800 = "..\\engine\\3d.c";
   FUN_004c8440(local_54);

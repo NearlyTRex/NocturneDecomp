@@ -36,15 +36,16 @@ float FUN_004fda20(int param_1,int param_2,int param_3)
   float fStack_1c;
   float fStack_14;
   
-  iVar3 = FUN_0040d890(param_2,_DAT_01bcdef4);
-  FUN_005644a7(local_f8,10,&DAT_005993b0);
+  iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01bcdef4);
+  __arrinit(local_f8,10,&DAT_005993b0);
   iVar4 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x4c))(param_2,local_f8);
   if ((iVar4 != 0) &&
      (((iVar3 == 0 || (iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3), iVar3 < 1)) &&
-      (FUN_0040a290(param_1,&fStack_50,param_2 + 0x20), 0.0 < fStack_48)))) {
+      (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&fStack_50,param_2 + 0x20),
+      0.0 < fStack_48)))) {
     fVar2 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
     fStack_20 = fVar2;
-    iVar3 = FUN_0054e4a0(auStack_68,&fStack_50);
+    iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(auStack_68,&fStack_50);
     fVar1 = *(float *)(iVar3 + 4);
     if (param_3 == 0) {
       if ((float)_DAT_0058df76 < fVar2) {
@@ -78,12 +79,13 @@ float FUN_004fda20(int param_1,int param_2,int param_3)
     fStack_5c = *(float *)(param_1 + 0x20) + fStack_2c;
     fStack_58 = *(float *)(param_1 + 0x24) + fStack_28;
     fStack_54 = *(float *)(param_1 + 0x28) + fStack_24;
-    FUN_0040a240(param_2,auStack_44,local_f8);
-    FUN_00511800(0x01E57284,1);
-    FUN_00511780(0x01E57284,param_1);
-    fStack_1c = (float)FUN_0050fb00(0x01E57284,&fStack_5c,auStack_44);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,auStack_44,local_f8);
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
+    fStack_1c = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                                 (0x01E57284,&fStack_5c,auStack_44);
     fStack_14 = fStack_1c;
-    FUN_00511750(0x01E57284);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     if ((fStack_1c <= 1.0) && (param_2 == *(int *)(0x01E57284 + 0x14cd5c))) {
       return fStack_20;
     }

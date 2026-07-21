@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 141,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 82,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 343
+    "total_lines": 349
   },
   "cross_references": [
     {
@@ -158,29 +158,84 @@
   },
   "function_calls": [
     {
-      "addr": "004012a0",
+      "addr": "004be2d0",
       "is_variadic": false,
-      "name": "FUN_004012a0"
+      "name": "core_inivar.cpp_writeIniData_FUN_004be2d0"
+    },
+    {
+      "addr": "004e99c0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0"
+    },
+    {
+      "addr": "0051f730",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_freeAllSkeletons_FUN_0051f730"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "0056488c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_0056488c"
     },
     {
       "addr": "00403f50",
       "is_variadic": false,
-      "name": "FUN_00403f50"
-    },
-    {
-      "addr": "0040e360",
-      "is_variadic": false,
-      "name": "FUN_0040e360"
-    },
-    {
-      "addr": "0040e3c0",
-      "is_variadic": false,
-      "name": "FUN_0040e3c0"
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403f50"
     },
     {
       "addr": "0040e710",
       "is_variadic": false,
-      "name": "FUN_0040e710"
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710"
+    },
+    {
+      "addr": "0040e360",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360"
+    },
+    {
+      "addr": "0040e3c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "00490980",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_00490980"
+    },
+    {
+      "addr": "004930e0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0"
+    },
+    {
+      "addr": "00492da0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0"
+    },
+    {
+      "addr": "004f8b40",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_cleanup_FUN_004f8b40"
+    },
+    {
+      "addr": "004012a0",
+      "is_variadic": false,
+      "name": "FUN_004012a0"
     },
     {
       "addr": "0044cc00",
@@ -193,34 +248,9 @@
       "name": "FUN_00454460"
     },
     {
-      "addr": "00456a60",
-      "is_variadic": false,
-      "name": "FUN_00456a60"
-    },
-    {
-      "addr": "00490980",
-      "is_variadic": false,
-      "name": "FUN_00490980"
-    },
-    {
-      "addr": "00492da0",
-      "is_variadic": false,
-      "name": "FUN_00492da0"
-    },
-    {
-      "addr": "004930e0",
-      "is_variadic": false,
-      "name": "FUN_004930e0"
-    },
-    {
       "addr": "004940d0",
       "is_variadic": false,
       "name": "FUN_004940d0"
-    },
-    {
-      "addr": "004be2d0",
-      "is_variadic": false,
-      "name": "FUN_004be2d0"
     },
     {
       "addr": "004cca50",
@@ -233,24 +263,9 @@
       "name": "FUN_004d7e90"
     },
     {
-      "addr": "004e99c0",
-      "is_variadic": false,
-      "name": "FUN_004e99c0"
-    },
-    {
-      "addr": "004ee370",
-      "is_variadic": false,
-      "name": "FUN_004ee370"
-    },
-    {
       "addr": "004ee680",
       "is_variadic": false,
       "name": "FUN_004ee680"
-    },
-    {
-      "addr": "004f8b40",
-      "is_variadic": false,
-      "name": "FUN_004f8b40"
     },
     {
       "addr": "0051f650",
@@ -258,54 +273,14 @@
       "name": "FUN_0051f650"
     },
     {
-      "addr": "0051f730",
-      "is_variadic": false,
-      "name": "FUN_0051f730"
-    },
-    {
-      "addr": "0052ee70",
-      "is_variadic": false,
-      "name": "FUN_0052ee70"
-    },
-    {
-      "addr": "00553910",
-      "is_variadic": false,
-      "name": "FUN_00553910"
-    },
-    {
-      "addr": "00558a20",
-      "is_variadic": false,
-      "name": "FUN_00558a20"
-    },
-    {
-      "addr": "00558a30",
-      "is_variadic": false,
-      "name": "FUN_00558a30"
-    },
-    {
-      "addr": "00558b00",
-      "is_variadic": false,
-      "name": "FUN_00558b00"
-    },
-    {
       "addr": "00559e90",
       "is_variadic": false,
       "name": "FUN_00559e90"
     },
     {
-      "addr": "00563380",
+      "addr": "004ee370",
       "is_variadic": false,
-      "name": "FUN_00563380"
-    },
-    {
-      "addr": "00563c90",
-      "is_variadic": false,
-      "name": "FUN_00563c90"
-    },
-    {
-      "addr": "0056488c",
-      "is_variadic": false,
-      "name": "FUN_0056488c"
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
     },
     {
       "addr": "0052dd80",
@@ -316,6 +291,31 @@
       "addr": "00404490",
       "is_variadic": false,
       "name": "thunk_FUN_005458d0"
+    },
+    {
+      "addr": "00553910",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
+    },
+    {
+      "addr": "0052ee70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_0052ee70"
+    },
+    {
+      "addr": "00558a20",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_endPeriod_FUN_00558a20"
+    },
+    {
+      "addr": "00558b00",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_00558b00"
+    },
+    {
+      "addr": "00558a30",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_00558a30"
     }
   ],
   "globals": [
@@ -524,7 +524,7 @@
       "line": 15,
       "match": "DAT_00587ed1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
       "type": "undefined_data"
     },
     {
@@ -532,12 +532,12 @@
       "line": 15,
       "match": "DAT_00587ec4",
       "severity": "mild",
-      "text": "iVar1 = FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 47,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
+      "line": 49,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);",

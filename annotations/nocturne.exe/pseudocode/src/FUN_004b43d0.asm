@@ -8,7 +8,7 @@
 ;   string s_CHero_00585670
 ;
 ; Called Functions:
-;   FUN_0040d7e0
+;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: FUN_004b43d0
     MOV EDX,dword ptr [ESP + 0xc]       ; 004b43d5
     PUSH EDX                            ; 004b43d9
-    CALL FUN_0040d7e0                   ; 004b43da
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d7e0()
+    CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b43da
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
     ADD ESP,0x8                         ; 004b43df
     TEST EAX,EAX                        ; 004b43e2
     JZ 0x004b43eb                       ; 004b43e4

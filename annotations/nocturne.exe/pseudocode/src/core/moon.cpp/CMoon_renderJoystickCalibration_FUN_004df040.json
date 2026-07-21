@@ -1,0 +1,595 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 305,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 21,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [
+    {
+      "addr": "004cf8d0",
+      "from_addr": "004cf8ef",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004cf8d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004df040",
+    "address_range": [
+      [
+        "004df040",
+        "004df160"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040",
+    "signature": "void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00453040",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040"
+    },
+    {
+      "addr": "00460a00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00"
+    },
+    {
+      "addr": "00460700",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700"
+    },
+    {
+      "addr": "00460c00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00"
+    },
+    {
+      "addr": "00460780",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780"
+    },
+    {
+      "addr": "004cde90",
+      "is_variadic": false,
+      "name": "engine_matrix.c_normalizeVector3DFloat_FUN_004cde90"
+    },
+    {
+      "addr": "0052ee70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_0052ee70"
+    },
+    {
+      "addr": "0052eed4",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearZBufferNative_FUN_0052eed4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ae704",
+      "name": "DAT_005ae704",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005be368",
+      "name": "DAT_005be368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c038f8",
+      "name": "DAT_01c038f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c038fc",
+      "name": "DAT_01c038fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "DAT_01e57284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d0c",
+      "name": "DAT_01fb1d0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d10",
+      "name": "DAT_01fb1d10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d14",
+      "name": "DAT_01fb1d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d18",
+      "name": "DAT_01fb1d18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d1c",
+      "name": "DAT_01fb1d1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd1184",
+      "name": "DAT_02dd1184",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004cf8ef",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004cf8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cf9d2",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004cf8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.025974025974026,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "CALL": 8,
+      "COPY": 68,
+      "INT_ADD": 42,
+      "INT_AND": 24,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 24,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 12,
+      "INT_SUB": 32,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 40
+    },
+    "pcode_op_count": 310
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CMoon_renderJoystickCalibration_FUN_004df040.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 44,
+          "message": "Uninitialized variable: local_34",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_101c",
+      "severity": "moderate",
+      "text": "int aiStackY_101c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02dd1184",
+      "severity": "mild",
+      "text": "(DAT_005ae704,&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,0x42600000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(DAT_005ae704,&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02dd1184",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(DAT_005ae704,&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,&stack0xffffffe4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,&stack0xffffffe4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffd8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 38,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "(&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xffffffd0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(param_1 + 8,0,0,0x205);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 36,
+      "match": "0x1e57284",
+      "severity": "moderate",
+      "text": "iVar1 = 0x01E57284;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: local_34",
+      "line": 44,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_28 = local_34;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

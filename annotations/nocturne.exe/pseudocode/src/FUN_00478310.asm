@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059cc30
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 00478336 (CONDITIONAL_JUMP)  ; LAB_00478336
     PUSH 0x1                            ; 0047831c
     PUSH EBX                            ; 0047831e
-    CALL FUN_00553ea0                   ; 0047831f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0047831f
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 00478324
     MOV DL,byte ptr [ESP + 0xc]         ; 00478327
     MOV EBX,EAX                         ; 0047832b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59cc30                       ; 00478336 | DAT_0059cc30
         ;   Label: LAB_00478336
     PUSH EBX                            ; 0047833b
-    CALL FUN_0056445f                   ; 0047833c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0047833c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00478341
     PUSH EAX                            ; 00478344
-    CALL FUN_00564486                   ; 00478345
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00478345
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0047834a
     MOV EAX,EBX                         ; 0047834d
     POP EBX                             ; 0047834f

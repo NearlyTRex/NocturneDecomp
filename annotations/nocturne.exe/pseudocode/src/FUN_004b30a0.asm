@@ -9,8 +9,8 @@
 ;   undefined1* PTR_FUN_0059e884 = 004b3110
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   FUN_004b46d0
-;   FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV dword ptr [EAX + 0x1f8ec],0x0   ; 004b30c1
     PUSH EAX                            ; 004b30cb
     MOV dword ptr [EAX + 0x1f8f0],0x0   ; 004b30cc
-    CALL FUN_0051e0c0                   ; 004b30d6
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b30d6
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     LEA EAX,[EBX + 0x1fa44]             ; 004b30db
     MOV dword ptr [EBX + 0x1fa50],0x3f800000 ; 004b30e1
     MOV dword ptr [EAX + 0x8],0x0       ; 004b30eb

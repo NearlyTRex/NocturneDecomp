@@ -1,0 +1,463 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 206,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 14,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 147
+  },
+  "cross_references": [
+    {
+      "addr": "004ed720",
+      "from_addr": "004ed7c9",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004edaf0",
+    "address_range": [
+      [
+        "004edaf0",
+        "004edc28"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004eb350",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_send_FUN_004eb350"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058c7e5",
+      "name": "s_..\\core\\netgame.cpp_0058c7e5",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c7f9",
+      "name": "s_CNetGame::sendSimFrameAck_-_shou_0058c7f9",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c83a",
+      "name": "s_..\\core\\netgame.cpp_0058c83a",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c84e",
+      "name": "s_CNetGame::sendSimFrameAck_-_shou_0058c84e",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c891",
+      "name": "s_..\\core\\netgame.cpp_0058c891",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c8a5",
+      "name": "s_CNetGame::sendSimFrameAck_-_serv_0058c8a5",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c8db",
+      "name": "s_..\\core\\netgame.cpp_0058c8db",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058c8ef",
+      "name": "s_CNetGame::sendSimFrameAck_-_I'm_n_0058c8ef",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea3f8",
+      "name": "DAT_01cea3f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea408",
+      "name": "DAT_01cea408",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004ed7c9",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ed93e",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2592592592592595,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BRANCH": 4,
+      "CALL": 5,
+      "CBRANCH": 5,
+      "COPY": 65,
+      "INT_ADD": 27,
+      "INT_AND": 78,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 8,
+      "INT_LESS": 7,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 20,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 25,
+      "INT_SUB": 30,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 426
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_43",
+        "offset": -67,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3f",
+        "offset": -63,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] != 3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x44] < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x45] < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_43 = param_1[param_1[0x45] * 0x1e + 0x1a];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_43 = param_1[param_1[0x45] * 0x1e + 0x1a];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1 + param_1[0x45] * 0x1e + 0x1b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1 + param_1[0x45] * 0x1e + 0x1b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_send_FUN_004eb350(param_1,param_1[0x44],&local_48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_send_FUN_004eb350(param_1,param_1[0x44],&local_48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 42,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

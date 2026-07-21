@@ -32,15 +32,15 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   crt_memory.c_memset_FUN_00563cc0
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fopen_FUN_0056568c
+;   crt_stdio.c_fputc_FUN_00566cc0
+;   crt_stdio.c_fwrite_FUN_00563a50
+;   engine_pcx.c_saveScreenRaw16_FUN_004f2620
+;   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
+;   engine_pcx.c_writePCXScanline_FUN_004f2550
 ;   FUN_004c8440
-;   FUN_004f2550
-;   FUN_004f2620
-;   FUN_004f27e0
-;   FUN_00563380
-;   FUN_00563a50
-;   FUN_00563cc0
-;   FUN_0056568c
-;   FUN_00566cc0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004f29c0
     PUSH EAX                            ; 004f29c4
     MOV ESI,0x1                         ; 004f29c5
-    CALL FUN_00563cc0                   ; 004f29ca
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 004f29ca
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     MOV AH,0xa                          ; 004f29cf
     MOV DL,0x5                          ; 004f29d1
     ADD ESP,0xc                         ; 004f29d3
@@ -109,8 +109,8 @@ section .text
     PUSH 0x58cfc3                       ; 004f2a5f | DAT_0058cfc3
         ;   Label: LAB_004f2a5f
     PUSH EBX                            ; 004f2a64
-    CALL FUN_0056568c                   ; 004f2a65
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined FUN_0056568c()
+    CALL crt_stdio.c_fopen_FUN_0056568c ; 004f2a65
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
     ADD ESP,0x8                         ; 004f2a6a
     MOV EBX,EAX                         ; 004f2a6d
     TEST EAX,EAX                        ; 004f2a6f
@@ -131,8 +131,8 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004f2a9d
     PUSH EAX                            ; 004f2aa1
     XOR ESI,ESI                         ; 004f2aa2
-    CALL FUN_00563a50                   ; 004f2aa4
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a50()
+    CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f2aa4
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
     MOV EDX,dword ptr [0x005b7620]      ; 004f2aa9 | DAT_005b7620
     ADD ESP,0x10                        ; 004f2aaf
     TEST EDX,EDX                        ; 004f2ab2
@@ -141,8 +141,8 @@ section .text
     PUSH EBX                            ; 004f2ab6
         ;   Label: LAB_004f2ab6
     PUSH ESI                            ; 004f2ab7
-    CALL FUN_004f2550                   ; 004f2ab8
-        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined FUN_004f2550()
+    CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ab8
+        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_004f2550()
     MOV EAX,[0x005b761c]                ; 004f2abd | DAT_005b761c
     ADD ESP,0x8                         ; 004f2ac2
     CMP EAX,0x280                       ; 004f2ac5
@@ -153,8 +153,8 @@ section .text
         ;   XREF to: 004f2ae2 (CONDITIONAL_JUMP)  ; LAB_004f2ae2
     PUSH EBX                            ; 004f2ad8
     PUSH ESI                            ; 004f2ad9
-    CALL FUN_004f2550                   ; 004f2ada
-        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined FUN_004f2550()
+    CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ada
+        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_004f2550()
     ADD ESP,0x8                         ; 004f2adf
     MOV ECX,dword ptr [0x005b7620]      ; 004f2ae2 | DAT_005b7620
         ;   Label: LAB_004f2ae2
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 004f2af3
         ;   Label: LAB_004f2af3
     PUSH 0xc                            ; 004f2af4
-    CALL FUN_00566cc0                   ; 004f2af6
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00566cc0()
+    CALL crt_stdio.c_fputc_FUN_00566cc0 ; 004f2af6
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
         ;   Label: LAB_004f2af6
     ADD ESP,0x8                         ; 004f2afb
     XOR ESI,ESI                         ; 004f2afe
@@ -184,8 +184,8 @@ section .text
     PUSH EBX                            ; 004f2b0c
     MOV AL,byte ptr [ESI + 0x1c00648]   ; 004f2b0d
     PUSH EAX                            ; 004f2b13
-    CALL FUN_00566cc0                   ; 004f2b14
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00566cc0()
+    CALL crt_stdio.c_fputc_FUN_00566cc0 ; 004f2b14
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
         ;   Label: LAB_004f2b14
     ADD ESP,0x8                         ; 004f2b19
     INC ESI                             ; 004f2b1c
@@ -194,8 +194,8 @@ section .text
     JL 0x004f2b00                       ; 004f2b23
         ;   XREF to: 004f2b00 (CONDITIONAL_JUMP)  ; LAB_004f2b00
     PUSH EBX                            ; 004f2b25
-    CALL FUN_00563380                   ; 004f2b26
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004f2b26
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004f2b2b
     POP ESI                             ; 004f2b2e
     POP EDI                             ; 004f2b2f
@@ -206,15 +206,15 @@ section .text
     RET                                 ; 004f2b38
     PUSH EBX                            ; 004f2b39
         ;   Label: LAB_004f2b39
-    CALL FUN_004f2620                   ; 004f2b3a
-        ;   XREF to: 004f2620 (UNCONDITIONAL_CALL)  ; undefined FUN_004f2620()
+    CALL engine_pcx.c_saveScreenRaw16_FUN_004f2620 ; 004f2b3a
+        ;   XREF to: 004f2620 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_saveScreenRaw16_FUN_004f2620()
     ADD ESP,0x4                         ; 004f2b3f
     JMP 0x004f2b30                      ; 004f2b42
         ;   XREF to: 004f2b30 (UNCONDITIONAL_JUMP)  ; LAB_004f2b30
     PUSH EBX                            ; 004f2b44
         ;   Label: LAB_004f2b44
-    CALL FUN_004f27e0                   ; 004f2b45
-        ;   XREF to: 004f27e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f27e0()
+    CALL engine_pcx.c_saveScreenRaw32_FUN_004f27e0 ; 004f2b45
+        ;   XREF to: 004f27e0 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_saveScreenRaw32_FUN_004f27e0()
     ADD ESP,0x4                         ; 004f2b4a
     JMP 0x004f2b30                      ; 004f2b4d
         ;   XREF to: 004f2b30 (UNCONDITIONAL_JUMP)  ; LAB_004f2b30

@@ -22,10 +22,11 @@ int FUN_004f5d90(uint param_1)
   
   bVar8 = 0;
   iVar1 = FUN_00409d30(param_1);
-  iVar1 = FUN_00454490(iVar1 + 0x150);
-  iVar1 = FUN_0043b5d0(iVar1 + 0x1b8);
+  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
+  iVar1 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar1 + 0x1b8);
   *(byte ***)(iVar1 + -0x1bc) = &PTR_FUN_005a1384;
-  FUN_00454580(iVar1 + -0x1b8,"slider1.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (iVar1 + -0x1b8,"slider1.kfm");
   *(byte *)(iVar1 + 0x44) = 0;
   *(byte *)(iVar1 + 0xa8) = 0;
   *(byte *)(iVar1 + 0x10c) = 0;

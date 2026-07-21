@@ -60,8 +60,9 @@ void FUN_004421b0(int param_1)
         local_24 = local_34;
         do {
           puVar4 = puVar4 + *(int *)(param_1 + 0x14c);
-          FUN_004410c0(param_1,local_28 * *(int *)(param_1 + 0x14c),
-                       local_38 * *(int *)(param_1 + 0x14c));
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
+                    (param_1,local_28 * *(int *)(param_1 + 0x14c),
+                     local_38 * *(int *)(param_1 + 0x14c));
           local_7c = local_64;
           *(uint *)((int)&stack0xffffff88 + (uint)bVar11 * 0xfffffffe * 4) =
                *(uint *)(&stack0xffffffa0 + (uint)bVar11 * -8);
@@ -70,7 +71,8 @@ void FUN_004421b0(int param_1)
           if ((local_74 != 0x7fffffff) && (local_80 < local_74)) {
             local_80 = local_74;
           }
-          FUN_004411b0(param_1,&stack0xffffff84);
+          core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
+                    (param_1,&stack0xffffff84);
           local_4c = local_70;
           *(uint *)(&stack0xffffffb8 + (uint)bVar11 * -8) =
                *(uint *)(&stack0xffffff94 + (uint)bVar11 * -8);
@@ -82,7 +84,8 @@ void FUN_004421b0(int param_1)
           puVar9[(uint)bVar11 * -2 + 1] =
                *(uint *)(&stack0xffffff98 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
           if (*puVar4 >> 0x18 != 0) {
-            FUN_00447910(param_1,&stack0xffffff84,*puVar4 >> 0x18);
+            core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910
+                      (param_1,&stack0xffffff84,*puVar4 >> 0x18);
             local_4c = local_58;
             *(uint *)(&stack0xffffffb8 + (uint)bVar11 * -8) =
                  *(uint *)(&stack0xffffffac + (uint)bVar11 * -8);

@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059fe90
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004c8066 (CONDITIONAL_JUMP)  ; LAB_004c8066
     PUSH 0x1                            ; 004c804c
     PUSH EBX                            ; 004c804e
-    CALL FUN_00553ea0                   ; 004c804f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 004c804f
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 004c8054
     MOV DL,byte ptr [ESP + 0xc]         ; 004c8057
     MOV EBX,EAX                         ; 004c805b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59fe90                       ; 004c8066 | DAT_0059fe90
         ;   Label: LAB_004c8066
     PUSH EBX                            ; 004c806b
-    CALL FUN_0056445f                   ; 004c806c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004c806c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004c8071
     PUSH EAX                            ; 004c8074
-    CALL FUN_00564486                   ; 004c8075
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004c8075
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004c807a
     MOV EAX,EBX                         ; 004c807d
     POP EBX                             ; 004c807f

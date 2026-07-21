@@ -42,21 +42,21 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   FUN_00403f50
-;   FUN_0052ee70
-;   FUN_00553910
-;   FUN_00558b70
-;   FUN_005591c0
-;   FUN_0055a1c0
-;   FUN_00563380
-;   FUN_00563c90
-;   FUN_0056568c
-;   FUN_00566f30
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fopen_FUN_0056568c
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   crt_stdlib.c_atoi_FUN_00566f30
+;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   GetClientRect
 ;   GetCurrentProcess
 ;   mciGetErrorStringA
 ;   mciSendStringA
 ;   MessageBoxA
+;   MoveWindow
+;   SetRectEmpty
+;   SetThreadPriority
+;   Sleep
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -73,14 +73,14 @@ section .text
     PUSH 0x59822d                       ; 0055a527 | = "%s\\%s"
     LEA EAX,[ESP + 0x190]               ; 0055a52c
     PUSH EAX                            ; 0055a533
-    CALL FUN_00563c90                   ; 0055a534
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0055a534
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x10                        ; 0055a539
     PUSH 0x598233                       ; 0055a53c | DAT_00598233
     LEA EAX,[ESP + 0x188]               ; 0055a541
     PUSH EAX                            ; 0055a548
-    CALL FUN_0056568c                   ; 0055a549
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined FUN_0056568c()
+    CALL crt_stdio.c_fopen_FUN_0056568c ; 0055a549
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
     ADD ESP,0x8                         ; 0055a54e
     TEST EAX,EAX                        ; 0055a551
     JNZ 0x0055a55d                      ; 0055a553
@@ -93,22 +93,22 @@ section .text
     PUSH ESI                            ; 0055a55e
     PUSH EBX                            ; 0055a55f
     PUSH EAX                            ; 0055a560
-    CALL FUN_00563380                   ; 0055a561
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 0055a561
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 0055a566
     LEA ESI,[ESP + 0x190]               ; 0055a569
-    CALL FUN_0052ee70                   ; 0055a570
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ee70()
-    CALL FUN_00553910                   ; 0055a575
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined FUN_00553910()
+    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0055a570
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a575
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EDI,dword ptr [0x02de3124]      ; 0055a57a | DAT_02de3124
     MOV EBX,dword ptr [0x02de2098]      ; 0055a580 | DAT_02de2098
     TEST EDI,EDI                        ; 0055a586
     JZ 0x0055a593                       ; 0055a588
         ;   XREF to: 0055a593 (CONDITIONAL_JUMP)  ; LAB_0055a593
     PUSH EBX                            ; 0055a58a
-    CALL FUN_0055a1c0                   ; 0055a58b
-        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a1c0()
+    CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 0055a58b
+        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
     ADD ESP,0x4                         ; 0055a590
     PUSH EBX                            ; 0055a593
         ;   Label: LAB_0055a593
@@ -116,8 +116,8 @@ section .text
     PUSH 0x598199                       ; 0055a595 | = "open \"%s\" alias mov style child par..."
     LEA EAX,[ESP + 0x18]                ; 0055a59a
     PUSH EAX                            ; 0055a59e
-    CALL FUN_00563c90                   ; 0055a59f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0055a59f
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x10                        ; 0055a5a4
     PUSH 0x0                            ; 0055a5a7
     PUSH 0x0                            ; 0055a5a9
@@ -141,8 +141,8 @@ section .text
         ;   XREF to: 0055a678 (CONDITIONAL_JUMP)  ; LAB_0055a678
     LEA EAX,[ESP + 0xc]                 ; 0055a5eb
     PUSH EAX                            ; 0055a5ef
-    CALL FUN_00566f30                   ; 0055a5f0
-        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00566f30()
+    CALL crt_stdlib.c_atoi_FUN_00566f30 ; 0055a5f0
+        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_atoi_FUN_00566f30()
     ADD ESP,0x4                         ; 0055a5f5
     MOV [0x02de311c],EAX                ; 0055a5f8 | DAT_02de311c
     CMP dword ptr [0x02de312c],0x0      ; 0055a5fd | DAT_02de312c
@@ -333,14 +333,14 @@ section .text
     MOV EBX,EAX                         ; 0055a7f4
     CALL dword ptr CS:[0x5755b0]        ; 0055a7f6 | PTR_SetThreadPriority_005755b0
     XOR ESI,ESI                         ; 0055a7fd
-    CALL FUN_005591c0                   ; 0055a7ff
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005591c0()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 0055a7ff
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
         ;   Label: LAB_0055a7ff
     CMP ESI,dword ptr [0x02de3120]      ; 0055a804 | DAT_02de3120
     JZ 0x0055a879                       ; 0055a80a
         ;   XREF to: 0055a879 (CONDITIONAL_JUMP)  ; LAB_0055a879
-    CALL FUN_00558b70                   ; 0055a80c
-        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; undefined FUN_00558b70()
+    CALL wincore_winrun.cpp_wasKeyPressed_FUN_00558b70 ; 0055a80c
+        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_wasKeyPressed_FUN_00558b70()
     TEST EAX,EAX                        ; 0055a811
     JNZ 0x0055a879                      ; 0055a813
         ;   XREF to: 0055a879 (CONDITIONAL_JUMP)  ; LAB_0055a879
@@ -387,15 +387,15 @@ section .text
     CALL dword ptr CS:[0x5755b0]        ; 0055a87c | PTR_SetThreadPriority_005755b0
     MOV EAX,[0x02de2098]                ; 0055a883 | DAT_02de2098
     PUSH EAX                            ; 0055a888
-    CALL FUN_0055a1c0                   ; 0055a889
-        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a1c0()
+    CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 0055a889
+        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
     ADD ESP,0x4                         ; 0055a88e
-    CALL FUN_0052ee70                   ; 0055a891
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ee70()
-    CALL FUN_00553910                   ; 0055a896
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined FUN_00553910()
-    CALL FUN_00403f50                   ; 0055a89b
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined FUN_00403f50()
+    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0055a891
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a896
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+    CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0055a89b
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EAX,0x1                         ; 0055a8a0
     POP EBX                             ; 0055a8a5
     POP ESI                             ; 0055a8a6

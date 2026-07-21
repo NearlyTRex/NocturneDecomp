@@ -9,6 +9,6 @@
 void FUN_00460760(uint param_1,uint *param_2)
 
 {
-  FUN_004ce730(*param_2,param_2[1],param_2[2]);
+  engine_matrix_c_setCameraRotation_FUN_004ce730(*param_2,param_2[1],param_2[2]);
   return;
 }

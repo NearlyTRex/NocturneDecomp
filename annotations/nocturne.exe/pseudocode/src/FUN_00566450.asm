@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00566498 at 00566521
+;   crt_string.c_splitpath_FUN_00566498 at 00566521
 ;
 ; Called Functions:
 ;   FUN_0056db40

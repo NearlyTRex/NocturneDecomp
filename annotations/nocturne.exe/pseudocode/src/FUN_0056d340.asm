@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00565fb0 at 005660c3
 ;   FUN_00566590 at 005665af
+;   crt_time.c__mktime_FUN_00565fb0 at 005660c3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a4a78

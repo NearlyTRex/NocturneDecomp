@@ -22,7 +22,7 @@ byte * FUN_004fef60(int param_1,int *param_2)
     do {
       iVar2 = *(int *)(param_1 + 0x40);
       local_10 = 0x3e800000;
-      iVar1 = FUN_004ff2c0(param_1,&local_10);
+      iVar1 = core_script_cpp_CScript_step_FUN_004ff2c0(param_1,&local_10);
       if (iVar1 < 0) {
         *param_2 = *(int *)(*(int *)(param_1 + 0x2c) + iVar2 * 8) + -1;
         return &DAT_01e56420;

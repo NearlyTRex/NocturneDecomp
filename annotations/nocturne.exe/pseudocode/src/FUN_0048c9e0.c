@@ -9,6 +9,6 @@
 void FUN_0048c9e0(uint param_1)
 
 {
-  FUN_004ef030(param_1,1);
+  core_particle_cpp_CParticle_dtor_FUN_004ef030(param_1,1);
   return;
 }

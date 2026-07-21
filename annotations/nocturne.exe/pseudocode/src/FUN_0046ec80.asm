@@ -8,8 +8,8 @@
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
-;   FUN_0048c2a0
-;   FUN_00554600
+;   core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0
+;   core_weapon.cpp_CWeapon_fire_FUN_00554600
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
         ;   Label: FUN_0046ec80
     MOV EBX,dword ptr [ESP + 0x8]       ; 0046ec81
     PUSH EBX                            ; 0046ec85
-    CALL FUN_00554600                   ; 0046ec86
-        ;   XREF to: 00554600 (UNCONDITIONAL_CALL)  ; undefined FUN_00554600()
+    CALL core_weapon.cpp_CWeapon_fire_FUN_00554600 ; 0046ec86
+        ;   XREF to: 00554600 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_fire_FUN_00554600()
     ADD ESP,0x4                         ; 0046ec8b
     TEST EAX,EAX                        ; 0046ec8e
     JNZ 0x0046ec94                      ; 0046ec90
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 0046ecb0
     MOV ECX,dword ptr [0x005b80f0]      ; 0046ecb1 | DAT_005b80f0
     PUSH ECX                            ; 0046ecb7
-    CALL FUN_0048c2a0                   ; 0046ecb8
-        ;   XREF to: 0048c2a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c2a0()
+    CALL core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0 ; 0046ecb8
+        ;   XREF to: 0048c2a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0()
     MOV dword ptr [EBX + 0x580],0x0     ; 0046ecbd
     MOV dword ptr [EBX + 0x570],0xbf800000 ; 0046ecc7
     MOV EAX,0x1                         ; 0046ecd1

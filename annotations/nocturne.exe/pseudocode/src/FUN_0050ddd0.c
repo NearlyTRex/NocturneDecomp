@@ -23,8 +23,10 @@ void FUN_0050ddd0(int param_1,int param_2,int param_3,uint param_4)
   uint local_14;
   
   if (*(int *)(0x01C775EC + 0x1f0) == 0) {
-    if ((*(int *)(0x01C775EC + 500) != 0) && (iVar1 = FUN_00461090(DAT_005ae704), iVar1 == 0)) {
-      FUN_0050d670(param_1,param_2,param_3,0xffff);
+    if ((*(int *)(0x01C775EC + 500) != 0) &&
+       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
+       iVar1 == 0)) {
+      core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(param_1,param_2,param_3,0xffff);
       return;
     }
     if ((*(int *)(param_1 + 0x15a890) != 0) && (iVar2 = 0, iVar1 = param_2, 0 < param_3)) {
@@ -40,10 +42,12 @@ void FUN_0050ddd0(int param_1,int param_2,int param_3,uint param_4)
         local_14 = *(uint *)(iVar1 + 0x3c);
         iVar1 = iVar1 + 0x48;
         iVar2 = iVar2 + 1;
-        FUN_00460e80(DAT_005ae704,local_38,&DAT_00444440);
+        engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
+                  (DAT_005ae704,local_38,&DAT_00444440);
       } while (iVar2 < param_3);
     }
-    FUN_00461440(DAT_005ae704,param_2,param_3,param_4);
+    engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440
+              (DAT_005ae704,param_2,param_3,param_4);
   }
   return;
 }

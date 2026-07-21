@@ -44,14 +44,15 @@ void FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
   int local_14;
   
   bVar6 = 0;
-  FUN_00461eb0(DAT_005ae704,&DAT_005be680);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005be680);
   if (*(int *)(0x01C775EC + 500) == 2) {
     param_4 = DAT_005b763c << 8;
   }
   else {
     lVar2 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)param_4;
-    FUN_00461010(DAT_005ae704,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    FUN_00461000(DAT_005ae704,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (DAT_005ae704,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   }
   FUN_00460d10(DAT_005ae704);
   local_20 = 0;
@@ -72,7 +73,7 @@ void FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
       local_100[5] = (uint)param_2[7] << 8;
       local_e0 = (uint)param_2[8] << 8;
       if (*(int *)(param_1 + 0x15aa9c) != 0) {
-        FUN_004c3920(0x200b130,auStack_118);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920(0x200b130,auStack_118);
       }
       local_18 = 0;
       if (0 < local_114) {
@@ -92,7 +93,7 @@ void FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
             local_50 = (int)ROUND(_DAT_01fff54c * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b130);
             local_4c = (int)ROUND(_DAT_01fff550 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b134);
             local_48 = (int)ROUND(_DAT_01fff554 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b138);
-            FUN_004cde90(&local_50);
+            engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_50);
             aiStack_34[2] = local_38;
             aiStack_34[(uint)bVar6 * -2 + 3] = aiStack_34[(uint)bVar6 * -2];
             aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
@@ -146,10 +147,12 @@ void FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
         local_104 = 0;
       }
       if (param_4 < 0xfde9) {
-        FUN_0045ff20(DAT_005ae704,auStack_118);
+        engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
+                  (DAT_005ae704,auStack_118);
       }
       else {
-        FUN_0045f790(DAT_005ae704,auStack_118);
+        engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
+                  (DAT_005ae704,auStack_118);
       }
       param_2 = param_2 + 9;
       local_20 = local_20 + 1;

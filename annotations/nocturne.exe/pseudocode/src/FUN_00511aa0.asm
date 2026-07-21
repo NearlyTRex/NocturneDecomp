@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00455640 at 004556e4
+;   core_door.cpp_CDoor_process_FUN_00455640 at 004556e4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
+;   core_path.cpp_resetAllPathMaps_FUN_004f1e90
 ;   FUN_0046bd90
-;   FUN_004f1e90
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     CALL FUN_0046bd90                   ; 00511afa
         ;   XREF to: 0046bd90 (UNCONDITIONAL_CALL)  ; undefined FUN_0046bd90()
     ADD ESP,0x14                        ; 00511aff
-    CALL FUN_004f1e90                   ; 00511b02
-        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; undefined FUN_004f1e90()
+    CALL core_path.cpp_resetAllPathMaps_FUN_004f1e90 ; 00511b02
+        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_resetAllPathMaps_FUN_004f1e90()
     ADD ESP,0x30                        ; 00511b07
     POP EBX                             ; 00511b0a
     RET                                 ; 00511b0b

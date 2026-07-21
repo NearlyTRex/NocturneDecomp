@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0050ded0 at 0050df12
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 at 0050df12
 ;
 ; Referenced Globals:
 ;   string s_..\\engine\\drender.cpp_0057dcfa
@@ -27,13 +27,13 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00457a00
-;   FUN_00458080
-;   FUN_0045f5e0
-;   FUN_00461bd0
+;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
+;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
+;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
+;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
 ;   FUN_004c8440
-;   FUN_004f9cb0
-;   FUN_005327c0
+;   wincore_windll.cpp_drawPolyList2_FUN_005327c0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH EBX                            ; 0046174b
     PUSH ESI                            ; 0046174c
     INC EBP                             ; 0046174d
-    CALL FUN_00461bd0                   ; 0046174e
-        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00461bd0()
+    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 ; 0046174e
+        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0()
     ADD EBX,0x12                        ; 00461753
     ADD ESP,0xc                         ; 00461756
     CMP EBP,EDI                         ; 00461759
@@ -100,8 +100,8 @@ section .text
     PUSH EBX                            ; 00461784
     PUSH ESI                            ; 00461785
     INC EBP                             ; 00461786
-    CALL FUN_0045f5e0                   ; 00461787
-        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045f5e0()
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 ; 00461787
+        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0()
     ADD EBX,0x12                        ; 0046178c
     ADD ESP,0xc                         ; 0046178f
     CMP EBP,EDI                         ; 00461792
@@ -217,8 +217,8 @@ section .text
     PUSH EAX                            ; 004618e4
     DEC EDI                             ; 004618e5
     ADD EBX,0x12                        ; 004618e6
-    CALL FUN_00457a00                   ; 004618e9
-        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; undefined FUN_00457a00()
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00457a00 ; 004618e9
+        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleTextured_FUN_00457a00()
     ADD ESP,0x8                         ; 004618ee
     JMP 0x004617ef                      ; 004618f1
         ;   XREF to: 004617ef (UNCONDITIONAL_JUMP)  ; LAB_004617ef
@@ -245,8 +245,8 @@ section .text
     PUSH EAX                            ; 00461935
     DEC EDI                             ; 00461936
     ADD EBX,0x12                        ; 00461937
-    CALL FUN_00458080                   ; 0046193a
-        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; undefined FUN_00458080()
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_00458080 ; 0046193a
+        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleSimple_FUN_00458080()
     ADD ESP,0x8                         ; 0046193f
     TEST EDI,EDI                        ; 00461942
     JG 0x00461913                       ; 00461944
@@ -270,8 +270,8 @@ section .text
     MOV dword ptr [ESP + 0x10],EBP      ; 00461967
     PUSH EBX                            ; 0046196b
         ;   Label: LAB_0046196b
-    CALL FUN_004f9cb0                   ; 0046196c
-        ;   XREF to: 004f9cb0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f9cb0()
+    CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0 ; 0046196c
+        ;   XREF to: 004f9cb0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0()
     ADD ESP,0x4                         ; 00461971
     TEST EAX,EAX                        ; 00461974
     JZ 0x004619b5                       ; 00461976
@@ -311,8 +311,8 @@ section .text
     PUSH 0x5ae70c                       ; 004619d5 | DAT_005ae70c
     MOV EDI,dword ptr [ESI]             ; 004619da
     PUSH EDI                            ; 004619dc
-    CALL FUN_005327c0                   ; 004619dd
-        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005327c0()
+    CALL wincore_windll.cpp_drawPolyList2_FUN_005327c0 ; 004619dd
+        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolyList2_FUN_005327c0()
     ADD ESP,0x10                        ; 004619e2
     ADD ESP,0x14                        ; 004619e5
     POP EBP                             ; 004619e8

@@ -8,8 +8,8 @@
 ;   string s_GETGRABBED_00585792
 ;
 ; Called Functions:
-;   FUN_004e10a0
-;   FUN_004e1890
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0
 ;
 ; *****************************************************************************
 
@@ -28,12 +28,12 @@ section .text
     PUSH 0x585792                       ; 004b4c3b | = "GETGRABBED"
     ADD EAX,0x150                       ; 004b4c40
     PUSH EAX                            ; 004b4c45
-    CALL FUN_004e1890                   ; 004b4c46
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1890()
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004b4c46
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
     ADD ESP,0x4                         ; 004b4c4b
     PUSH EAX                            ; 004b4c4e
-    CALL FUN_004e10a0                   ; 004b4c4f
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e10a0()
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004b4c4f
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
     ADD ESP,0xc                         ; 004b4c54
     TEST EAX,EAX                        ; 004b4c57
     JGE 0x004b4c30                      ; 004b4c59

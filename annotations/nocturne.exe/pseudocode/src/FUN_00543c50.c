@@ -67,14 +67,14 @@ void FUN_00543c50(int param_1,float param_2)
     local_20 = (float *)(param_1 + 0x20);
     local_1c = param_1 + 0x150;
     while (0.0 < local_258) {
-      uVar5 = FUN_004e11c0(local_1c,&local_258);
+      uVar5 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(local_1c,&local_258);
       if (99 < uVar5) {
         if (uVar5 < 0x65) {
           iVar3 = *(int *)(param_1 + 0xbca4);
           if ((iVar3 != 0) &&
              (iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0xec))(iVar3), iVar3 == 0)) {
-            FUN_0051d3c0(local_1c);
-            FUN_00544760(param_1);
+            core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(local_1c);
+            core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(param_1);
             puVar6 = auStack_1c0;
             puVar7 = auStack_1f0;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -82,8 +82,8 @@ void FUN_00543c50(int param_1,float param_2)
               puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
               puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
             }
-            uVar4 = FUN_0055bc00(auStack_1f0,auStack_94);
-            FUN_0040a240(param_1,&fStack_a0,uVar4);
+            uVar4 = core_xform_cpp_getTranslation_FUN_0055bc00(auStack_1f0,auStack_94);
+            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_a0,uVar4);
             iVar3 = *(int *)(param_1 + 0xbca4);
             fStack_4c = fStack_a0 - *(float *)(iVar3 + 0x20);
             fStack_48 = fStack_9c - *(float *)(iVar3 + 0x24);
@@ -93,10 +93,12 @@ void FUN_00543c50(int param_1,float param_2)
                (iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe4))
                                   (*(int *)(param_1 + 0xbca4),param_1,1), iVar3 != 0)) {
               *(uint *)(param_1 + 0xbd30) = 0;
-              FUN_0055afb0(auStack_160,*(int *)(param_1 + 0xbca4) + 0x20,
-                           *(int *)(param_1 + 0xbca4) + 0x30);
-              FUN_0055ae80(auStack_190,local_20,local_24);
-              FUN_0055bd00(auStack_1f0);
+              core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+                        (auStack_160,*(int *)(param_1 + 0xbca4) + 0x20,
+                         *(int *)(param_1 + 0xbca4) + 0x30);
+              core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
+                        (auStack_190,local_20,local_24);
+              core_xform_cpp_inverse_FUN_0055bd00(auStack_1f0);
               puVar6 = auStack_220;
               puVar7 = auStack_250;
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -104,7 +106,7 @@ void FUN_00543c50(int param_1,float param_2)
                 puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
                 puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
               }
-              FUN_0055aa00(auStack_160,auStack_190,auStack_250);
+              core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_160,auStack_190,auStack_250);
               puVar6 = auStack_d0;
               puVar7 = auStack_130;
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -112,7 +114,7 @@ void FUN_00543c50(int param_1,float param_2)
                 puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
                 puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
               }
-              FUN_0055aa00(auStack_130);
+              core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_130);
               puVar6 = auStack_100;
               puVar7 = (uint *)(param_1 + 0xbd34);
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -127,18 +129,22 @@ void FUN_00543c50(int param_1,float param_2)
                 puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
                 puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
               }
-              FUN_0055ae60(local_28);
+              core_xform_cpp_clearTranslation_FUN_0055ae60(local_28);
               iVar3 = 0;
               do {
-                uStack_7c = FUN_0040dda0(0xc0e00000,0x40e00000);
+                uStack_7c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                      (0xc0e00000,0x40e00000);
                 fStack_18 = (float)uStack_7c;
-                uStack_74 = FUN_0040dda0(0xc0e00000,0x40e00000);
+                uStack_74 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                      (0xc0e00000,0x40e00000);
                 fStack_18 = (float)uStack_74;
-                fStack_78 = (float)FUN_0040dda0(0xbf800000,0x41700000);
+                fStack_78 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                             (0xbf800000,0x41700000);
                 iVar3 = iVar3 + 1;
                 fStack_18 = fStack_78;
-                FUN_004b00f0(0x01C78C7C,&fStack_a0,&uStack_7c,
-                             *(uint *)(*(int *)(param_1 + 0xbca4) + 0x2608));
+                core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
+                          (0x01C78C7C,&fStack_a0,&uStack_7c,
+                           *(uint *)(*(int *)(param_1 + 0xbca4) + 0x2608));
               } while (iVar3 < 0x46);
             }
           }
@@ -149,7 +155,7 @@ void FUN_00543c50(int param_1,float param_2)
         }
       }
     }
-    iVar3 = FUN_004e1660(local_1c);
+    iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(local_1c);
     uVar5 = *(uint *)(iVar3 + 0x24);
     if (uVar5 < 2) {
       if (uVar5 == 0) {
@@ -159,18 +165,20 @@ void FUN_00543c50(int param_1,float param_2)
         }
         if (*(float *)(param_1 + 0xbd24) <= 0.0) {
           if (*(int *)(param_1 + 0xbd2c) == 0) {
-            iVar3 = FUN_005444f0(param_1,"CEnemy CHero CNPC");
+            iVar3 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0
+                              (param_1,"CEnemy CHero CNPC");
             if (iVar3 != 0) {
-              FUN_004e16b0(param_1 + 0x150,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);
               *(uint *)(param_1 + 0xbd24) = 0;
             }
           }
           else {
-            iVar3 = FUN_005444f0(param_1,"CHero CNPC");
+            iVar3 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0
+                              (param_1,"CHero CNPC");
             if (iVar3 != 0) {
-              FUN_004e16b0(param_1 + 0x150,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);
               *(uint *)(param_1 + 0xbd24) = 0;
-              FUN_004b0dc0(*(uint *)(param_1 + 0xbd2c));
+              core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0(*(uint *)(param_1 + 0xbd2c));
               *(uint *)(param_1 + 0xbd2c) = 0;
             }
           }
@@ -187,8 +195,10 @@ void FUN_00543c50(int param_1,float param_2)
           fStack_88 = *(float *)(iVar3 + 0x20) - *local_20;
           fStack_84 = *(float *)(iVar3 + 0x24) - local_20[1];
           fStack_80 = *(float *)(iVar3 + 0x28) - local_20[2];
-          iVar3 = FUN_0054e4a0(auStack_70,&fStack_88);
-          fStack_254 = (float)FUN_0040df00(*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
+          iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                            (auStack_70,&fStack_88);
+          fStack_254 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                        (*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
           fStack_2c = param_2 * (float)_DAT_00596568;
           *(float *)(param_1 + 0x2410) = fStack_254;
           fStack_38 = -fStack_2c;
@@ -207,14 +217,14 @@ void FUN_00543c50(int param_1,float param_2)
             if (((fStack_254 < (float)_DAT_00596578) &&
                 (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24)) < (float)_DAT_00596580))
                && ((float)_DAT_00596588 < fVar1 && fVar1 < (float)_DAT_00596590)) {
-              FUN_004e16b0(param_1 + 0x150,6,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);
               *(uint *)(param_1 + 0xbd24) = 0x41c80000;
             }
           }
         }
       }
       else {
-        FUN_004e16b0(local_1c,0,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_1c,0,1);
         *(uint *)(param_1 + 0xbd24) = 0x41c80000;
       }
     }
@@ -226,8 +236,10 @@ void FUN_00543c50(int param_1,float param_2)
       fStack_64 = *(float *)(iVar3 + 0x20) - *local_20;
       fStack_60 = *(float *)(iVar3 + 0x24) - local_20[1];
       fStack_5c = *(float *)(iVar3 + 0x28) - local_20[2];
-      iVar3 = FUN_0054e4a0(auStack_58,&fStack_64);
-      fStack_18 = (float)FUN_0040df00(*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
+      iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                        (auStack_58,&fStack_64);
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                   (*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
       fStack_30 = param_2 * (float)_DAT_00596558;
       *(float *)(param_1 + 0x2410) = fStack_18;
       fStack_34 = -fStack_30;
@@ -243,8 +255,8 @@ void FUN_00543c50(int param_1,float param_2)
     if (1.0 < fVar1) {
       *(uint *)(param_1 + 0xbd30) = 0x3f800000;
     }
-    FUN_004259a0(param_1);
-    FUN_0051b8a0(param_1 + 0x150);
+    core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
     FUN_0042a150(param_1,param_2);
   }
   return;

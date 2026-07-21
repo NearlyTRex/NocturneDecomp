@@ -26,14 +26,16 @@ void FUN_00401010(void)
     _DAT_01cc4804 = 0x84;
     FUN_004c8440("No room for frame buffer.  Please run SETUP");
   }
-  FUN_00552e00(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),
-               *(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);
+  wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
+            (*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),
+             *(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);
   FUN_00401bd0("vga.act");
   FUN_00403460("vga.lte");
   FUN_00403630("vga.map");
   FUN_00401990("vga.act");
-  FUN_005537e0();
-  iVar3 = FUN_00456a60("startup","font.ndx",&DAT_0057705f);
+  wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0();
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
+                    ("startup","font.ndx",&DAT_0057705f);
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0xa1;
@@ -42,25 +44,26 @@ void FUN_00401010(void)
   puVar5 = &DAT_006afabc;
   do {
     puVar6 = puVar5 + 1;
-    FUN_00563350(iVar3,&DAT_0057709a,puVar5);
+    _fscanf(iVar3,&DAT_0057709a,puVar5);
     puVar5 = puVar6;
   } while (puVar6 != (uint *)0x6afc3c);
-  FUN_00563380(iVar3);
-  uVar4 = FUN_004568c0("startup","font.bin");
-  DAT_006afa38 = FUN_005635b0(uVar4);
+  _fclose(iVar3);
+  uVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0("startup","font.bin");
+  DAT_006afa38 = malloc(uVar4);
   if (DAT_006afa38 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0xaa;
     FUN_004c8440("Unable to malloc font memory");
   }
-  iVar3 = FUN_00456a60("startup","font.bin",&DAT_005770db);
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
+                    ("startup","font.bin",&DAT_005770db);
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0xac;
     FUN_004c8440("Unable to open font.bin");
   }
-  FUN_005636d0(DAT_006afa38,uVar4,1,iVar3);
-  FUN_00563380(iVar3);
+  _fread(DAT_006afa38,uVar4,1,iVar3);
+  _fclose(iVar3);
   iVar3 = 0x80;
   iVar7 = 0;
   do {
@@ -78,11 +81,11 @@ void FUN_00401010(void)
     *(int *)(&DAT_01c00c80 + iVar3) = (int)(0xffffffff / uVar2);
     iVar3 = iVar3 + 4;
   } while (uVar8 < 0x640);
-  iVar3 = FUN_00456a60(&DAT_00577125,"default.act",&DAT_00577116);
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577125,"default.act",&DAT_00577116);
   if (iVar3 == 0) {
     return;
   }
-  FUN_005636d0(0x1c00948,0x300,1,iVar3);
-  FUN_00563380(iVar3);
+  _fread(0x1c00948,0x300,1,iVar3);
+  _fclose(iVar3);
   return;
 }

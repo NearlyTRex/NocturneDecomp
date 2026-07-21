@@ -47,14 +47,16 @@ void FUN_00547b30(int param_1,float param_2)
   *(uint *)(param_1 + 0x2f4) = 0;
   switch(*(uint *)(param_1 + 0x16c)) {
   case 0:
-    iVar6 = FUN_004b45b0(param_1 + 0x20,*(uint *)(param_1 + 0x150));
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      (param_1 + 0x20,*(uint *)(param_1 + 0x150));
     if (iVar6 != 0) {
       iVar6 = 0;
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_a0);
       if (0 < _DAT_01cae0d4) {
         iVar8 = 0;
         do {
-          iVar7 = FUN_005487b0(param_1,*(uint *)(iVar8 + 0x1cae0d8));
+          iVar7 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0
+                            (param_1,*(uint *)(iVar8 + 0x1cae0d8));
           if (iVar7 != 0) {
             uVar4 = *(uint *)(iVar8 + 0x1cae0d8);
             goto LAB_00547bbc;
@@ -67,7 +69,8 @@ void FUN_00547b30(int param_1,float param_2)
     break;
   case 1:
     if (*(int *)(param_1 + 0x360) == 0) {
-      uVar4 = FUN_004d90a0(0x01CC9450,param_1 + 0x170);
+      uVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
+                        (0x01CC9450,param_1 + 0x170);
       *(uint *)(param_1 + 0x360) = uVar4;
     }
     iVar6 = *(int *)(param_1 + 0x360);
@@ -77,7 +80,7 @@ void FUN_00547b30(int param_1,float param_2)
         fVar2 = *(float *)(param_1 + 0x28) - *(float *)(iVar6 + 0x28),
         fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
         *(float *)(param_1 + 0x150) * *(float *)(param_1 + 0x150))) &&
-       (iVar6 = FUN_005487b0(param_1,iVar6), iVar6 != 0)) {
+       (iVar6 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,iVar6), iVar6 != 0)) {
       uVar4 = *(uint *)(param_1 + 0x360);
 LAB_00547bbc:
       local_34 = 1;
@@ -85,7 +88,8 @@ LAB_00547bbc:
     }
     break;
   case 2:
-    iVar6 = FUN_004b45b0(param_1 + 0x20,*(uint *)(param_1 + 0x150));
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      (param_1 + 0x20,*(uint *)(param_1 + 0x150));
     if (iVar6 != 0) {
       pfVar5 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_b8);
       fStack_88 = *pfVar5 + pfVar5[3];
@@ -94,7 +98,8 @@ LAB_00547bbc:
       fStack_6c = fStack_84 * _DAT_005969a7;
       fStack_80 = pfVar5[2] + pfVar5[5];
       fStack_68 = fStack_80 * _DAT_005969a7;
-      pfVar5 = (float *)FUN_0040a240(param_1,auStack_64,&fStack_70);
+      pfVar5 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                                  (param_1,auStack_64,&fStack_70);
       if (&fStack_58 != pfVar5) {
         fStack_58 = *pfVar5;
         fStack_54 = pfVar5[1];
@@ -103,7 +108,8 @@ LAB_00547bbc:
       iStack_7c = (int)ROUND(fStack_58 * _DAT_005a3640);
       iStack_78 = (int)ROUND(fStack_54 * _DAT_005a3640);
       iStack_74 = (int)ROUND(fStack_50 * _DAT_005a3640);
-      iStack_18 = FUN_0050b5c0(0x01E57284,&iStack_7c,0);
+      iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
+                            (0x01E57284,&iStack_7c,0);
       if ((*(float *)(param_1 + 0x214) * (float)_DAT_005969af <= (float)iStack_18) &&
          ((float)iStack_18 <= *(float *)(param_1 + 0x218) * (float)_DAT_005969af)) {
         local_34 = 1;
@@ -117,12 +123,14 @@ LAB_00547bbc:
     *(uint *)(param_1 + 0x2e8) = 0;
     break;
   case 6:
-    iVar6 = FUN_004b45b0(param_1 + 0x20,*(uint *)(param_1 + 0x150));
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      (param_1 + 0x20,*(uint *)(param_1 + 0x150));
     if (iVar6 != 0) {
       local_1c = *(float *)(param_1 + 0x160) * *(float *)(param_1 + 0x160) +
                  *(float *)(param_1 + 0x15c) * *(float *)(param_1 + 0x15c) +
                  *(float *)(param_1 + 0x158) * *(float *)(param_1 + 0x158);
-      local_34 = FUN_0048c160(0x01C08D04,param_1 + 0x20,((int)local_1c >> 1) + _DAT_01c7070c,0,0);
+      local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
+                           (0x01C08D04,param_1 + 0x20,((int)local_1c >> 1) + _DAT_01c7070c,0,0);
     }
     break;
   case 7:
@@ -139,13 +147,16 @@ LAB_00547bbc:
     }
     break;
   case 8:
-    iVar6 = FUN_004b45b0(param_1 + 0x20,*(uint *)(param_1 + 0x150));
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      (param_1 + 0x20,*(uint *)(param_1 + 0x150));
     if (iVar6 != 0) {
       local_28 = 0;
       for (iVar6 = 0; iVar6 < *(int *)(0x01E57284 + 0x14cd6c); iVar6 = iVar6 + 1) {
         iVar8 = *(int *)(0x01E57284 + local_28 + 0x14cd70);
         iVar7 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x54))(iVar8);
-        if ((iVar7 != 0) && (iVar7 = FUN_005487b0(param_1,iVar8), iVar7 != 0)) {
+        if ((iVar7 != 0) &&
+           (iVar7 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,iVar8), iVar7 != 0)
+           ) {
           *(int *)(param_1 + 0x2f4) = iVar8;
           local_34 = 1;
           break;
@@ -155,7 +166,8 @@ LAB_00547bbc:
     }
     break;
   case 9:
-    iVar6 = FUN_004b45b0((float *)(param_1 + 0x20),*(uint *)(param_1 + 0x150));
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      ((float *)(param_1 + 0x20),*(uint *)(param_1 + 0x150));
     if (iVar6 != 0) {
       local_30 = param_1 + 0x170;
       local_2c = param_1 + 0x1c0;
@@ -168,9 +180,11 @@ LAB_00547bbc:
         fVar2 = *(float *)(iVar8 + 0x28) - local_20[2];
         if ((((fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
                *(float *)(param_1 + 0x150) * *(float *)(param_1 + 0x150)) && (iVar8 != param_1)) &&
-            (iVar7 = FUN_0040d7e0(iVar8,local_2c), iVar7 != 0)) &&
-           ((iVar7 = FUN_004775b0(local_30,iVar8,0), iVar7 != 0 &&
-            (iVar7 = FUN_005487b0(param_1,iVar8), iVar7 != 0)))) {
+            (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar8,local_2c), iVar7 != 0)) &&
+           ((iVar7 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(local_30,iVar8,0),
+            iVar7 != 0 &&
+            (iVar7 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,iVar8), iVar7 != 0
+            )))) {
           *(int *)(param_1 + 0x2f4) = iVar8;
           local_34 = 1;
           break;
@@ -206,10 +220,10 @@ LAB_005480a6:
 switchD_00547bd4_default:
   *(int *)(param_1 + 0x2e4) = local_34;
   if (*(int *)(param_1 + 0x164) == 0) {
-    FUN_0047ab70(0x01C03A10,param_1 + 0x280);
+    core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x280);
     *(uint *)(param_1 + 0x2f4) = 0;
     return;
   }
-  FUN_0047ab70(0x01C03A10,param_1 + 0x21c);
+  core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x21c);
   return;
 }

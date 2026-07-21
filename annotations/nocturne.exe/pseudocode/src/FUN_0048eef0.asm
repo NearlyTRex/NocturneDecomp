@@ -9,15 +9,15 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   FUN_004b0580 at 004b065b
+;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b065b
 ;
 ; Referenced Globals:
-;   undefined1* PTR_FUN_0059da34 = 0048efb0
+;   undefined1* PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34 = 0048efb0
 ;   undefined4 DAT_0059db10
 ;
 ; Called Functions:
+;   crt_memory.c___arrinit_FUN_005644a7
 ;   FUN_00409d30
-;   FUN_005644a7
 ;
 ; *****************************************************************************
 
@@ -34,11 +34,11 @@ section .text
     PUSH 0xc8                           ; 0048ef05
     ADD EAX,0x160                       ; 0048ef0a
     PUSH EAX                            ; 0048ef0f
-    CALL FUN_005644a7                   ; 0048ef10
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 0048ef10
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     LEA EDX,[EAX + 0xfffffea0]          ; 0048ef15
     MOV ECX,0x40a00000                  ; 0048ef1b
-    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_FUN_0059da34
+    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34
     ADD ESP,0xc                         ; 0048ef2a
     MOV dword ptr [EDX + 0x15c],0x14    ; 0048ef2d
     MOV EAX,ESP                         ; 0048ef37

@@ -19,14 +19,16 @@ bool FUN_00470230(uint param_1,uint param_2)
   byte *local_c;
   
   local_c = &stack0x0000000c;
-  FUN_00563a08(0x1bcb4d0,param_2,&local_c);
+  _vsprintf(0x1bcb4d0,param_2,&local_c);
   local_c = (byte *)0x0;
   FUN_00474c90(local_17c);
-  uVar2 = FUN_004ee370("[Y]es, I know what I'm doing and I hate these annoying prompts.");
-  FUN_00473cb0(local_17c,uVar2);
-  uVar2 = FUN_004ee370("[N]o, please, I didn't mean to do it!");
-  FUN_00473cb0(local_17c,uVar2);
-  pcVar3 = (char *)FUN_004ee370(&DAT_0057e64b);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                    ("[Y]es, I know what I'm doing and I hate these annoying prompts.");
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_17c,uVar2);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                    ("[N]o, please, I didn't mean to do it!");
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_17c,uVar2);
+  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_0057e64b);
   pcVar5 = local_168;
   do {
     cVar1 = *pcVar3;
@@ -37,7 +39,8 @@ bool FUN_00470230(uint param_1,uint param_2)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar4 = FUN_00474d70(local_17c,0x1bcb4d0,0xffffffff);
-  FUN_00474cf0(local_17c,0);
+  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
+                    (local_17c,0x1bcb4d0,0xffffffff);
+  shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_17c,0);
   return iVar4 == 0;
 }

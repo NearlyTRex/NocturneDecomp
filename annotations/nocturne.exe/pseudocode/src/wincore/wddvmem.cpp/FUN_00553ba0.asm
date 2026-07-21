@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00553910 at 00553b4c
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 00553b4c
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFocus_00575470 = 00175a70
@@ -27,9 +27,9 @@
 ; Called Functions:
 ;   DirectDrawCreate
 ;   FUN_004c8440
-;   FUN_005324a0
-;   FUN_00552e00
 ;   SetFocus
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
+;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH ECX                            ; 00553bca
     MOV EBX,dword ptr [0x005b761c]      ; 00553bcb | DAT_005b761c
     PUSH EBX                            ; 00553bd1
-    CALL FUN_005324a0                   ; 00553bd2
-        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005324a0()
+    CALL wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553bd2
+        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0()
     ADD ESP,0xc                         ; 00553bd7
     TEST EAX,EAX                        ; 00553bda
     JNZ 0x00553c81                      ; 00553bdc
@@ -118,8 +118,8 @@ section .text
     PUSH EDX                            ; 00553c70
     MOV ECX,dword ptr [0x005b761c]      ; 00553c71 | DAT_005b761c
     PUSH ECX                            ; 00553c77
-    CALL FUN_00552e00                   ; 00553c78
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined FUN_00552e00()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553c78
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
     ADD ESP,0xc                         ; 00553c7d
     POP EDI                             ; 00553c80
     MOV EBX,dword ptr [0x02de2098]      ; 00553c81 | DAT_02de2098

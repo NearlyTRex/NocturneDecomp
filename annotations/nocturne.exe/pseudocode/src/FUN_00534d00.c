@@ -11,8 +11,8 @@ void FUN_00534d00(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_0041e300(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_FUN_005a25d4;
+  iVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(param_1);
+  *(byte ***)(iVar1 + 0x14c) = &PTR_core_boxactor_cpp_CBoxActor_setup_FUN_0041e430_005a25d4;
   *(uint *)(iVar1 + 0x664) = 0;
   return;
 }

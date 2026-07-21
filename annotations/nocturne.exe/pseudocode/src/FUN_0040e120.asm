@@ -9,7 +9,7 @@
 ;   FUN_00429f70 at 00429fac
 ;
 ; Called Functions:
-;   FUN_0040dfc0
+;   core_actor.cpp_crc32ProcessByte_FUN_0040dfc0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 0040e134
     PUSH ESI                            ; 0040e135
     INC EBX                             ; 0040e136
-    CALL FUN_0040dfc0                   ; 0040e137
-        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dfc0()
+    CALL core_actor.cpp_crc32ProcessByte_FUN_0040dfc0 ; 0040e137
+        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessByte_FUN_0040dfc0()
     MOV DL,byte ptr [EBX]               ; 0040e13c
     ADD ESP,0x8                         ; 0040e13e
     TEST DL,DL                          ; 0040e141

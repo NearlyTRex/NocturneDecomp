@@ -14,10 +14,10 @@
 ;   void* PTR_FUN_005c1acc = 005671f8
 ;
 ; Called Functions:
+;   crt_stdio.c_ftell_FUN_00566e70
+;   crt_stdio.c_remove_FUN_005657c0
 ;   FUN_005633fc
 ;   FUN_005638d0
-;   FUN_005657c0
-;   FUN_00566e70
 ;   FUN_005671e4
 ;   FUN_005671f8
 ;   FUN_00568890
@@ -58,8 +58,8 @@ section .text
     CALL dword ptr [0x005c1ac0]         ; 005634ea | PTR_FUN_005c1ac0
     ADD ESP,0x4                         ; 005634f0
     PUSH EBX                            ; 005634f3
-    CALL FUN_00566e70                   ; 005634f4
-        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined FUN_00566e70()
+    CALL crt_stdio.c_ftell_FUN_00566e70 ; 005634f4
+        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
     ADD ESP,0x4                         ; 005634f9
     CMP EAX,-0x1                        ; 005634fc
     JZ 0x00563510                       ; 005634ff
@@ -108,8 +108,8 @@ section .text
     ADD ESP,0x8                         ; 00563563
     MOV EAX,ESP                         ; 00563566
     PUSH EAX                            ; 00563568
-    CALL FUN_005657c0                   ; 00563569
-        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005657c0()
+    CALL crt_stdio.c_remove_FUN_005657c0 ; 00563569
+        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_remove_FUN_005657c0()
     ADD ESP,0x4                         ; 0056356e
     MOV ECX,dword ptr [EBX + 0x10]      ; 00563571
         ;   Label: LAB_00563571

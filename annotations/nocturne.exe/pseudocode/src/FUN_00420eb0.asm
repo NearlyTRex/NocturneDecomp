@@ -14,8 +14,8 @@
 ;   undefined4 DAT_00764b2c
 ;
 ; Called Functions:
-;   FUN_0051d0a0
-;   FUN_0055a8b0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH ESI                            ; 00420ecc
     LEA ESI,[EBP + -0x3c]               ; 00420ecd
     LEA EDI,[EBP + -0x6c]               ; 00420ed0
-    CALL FUN_0051d0a0                   ; 00420ed3
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d0a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 00420ed3
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
     MOV ECX,0xc                         ; 00420ed8
     LEA ESI,[EBP + -0x3c]               ; 00420edd
     MOVSD.REP ES:EDI,ESI                ; 00420ee0
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 00420efb
     MOV dword ptr [EBP + -0xc],ECX      ; 00420efc
     MOV dword ptr [EBP + -0x4],EDI      ; 00420eff
-    CALL FUN_0055a8b0                   ; 00420f02
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a8b0()
+    CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00420f02
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
     ADD ESP,0xc                         ; 00420f07
     MOV EAX,EBX                         ; 00420f0a
     MOV ESP,EBP                         ; 00420f0c

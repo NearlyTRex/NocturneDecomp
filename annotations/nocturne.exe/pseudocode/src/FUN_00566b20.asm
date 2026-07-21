@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00566b5c at 00566b74
+;   crt_stdio.c_sscanf_FUN_00566b5c at 00566b74
 ;
 ; Called Functions:
 ;   FUN_00567560

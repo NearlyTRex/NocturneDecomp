@@ -14,7 +14,8 @@ void FUN_00427a60(int param_1)
     *(uint *)(param_1 + 0x70) = 2;
     return;
   }
-  FUN_0051ed30(param_1 + 0x150,param_1 + 0x20,param_1 + 0x30,0);
+  core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_0051ed30
+            (param_1 + 0x150,param_1 + 0x20,param_1 + 0x30,0);
   *(uint *)(param_1 + 0x70) = 2;
   return;
 }

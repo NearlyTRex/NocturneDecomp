@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,21 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 411,
+    "complexity_score": 487,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 19,
+    "pseudocode_lines": 207,
+    "suspect_count": 25,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
+      "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 646
+    "total_lines": 657
   },
   "cross_references": [
     {
@@ -160,59 +161,59 @@
   },
   "function_calls": [
     {
-      "addr": "00438f30",
+      "addr": "00446ea0",
       "is_variadic": false,
-      "name": "FUN_00438f30"
-    },
-    {
-      "addr": "004390b0",
-      "is_variadic": false,
-      "name": "FUN_004390b0"
-    },
-    {
-      "addr": "00439370",
-      "is_variadic": false,
-      "name": "FUN_00439370"
-    },
-    {
-      "addr": "00439830",
-      "is_variadic": false,
-      "name": "FUN_00439830"
-    },
-    {
-      "addr": "00439880",
-      "is_variadic": false,
-      "name": "FUN_00439880"
-    },
-    {
-      "addr": "004399a0",
-      "is_variadic": false,
-      "name": "FUN_004399a0"
+      "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0"
     },
     {
       "addr": "0043fa20",
       "is_variadic": false,
-      "name": "FUN_0043fa20"
+      "name": "core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20"
     },
     {
       "addr": "0043fc80",
       "is_variadic": false,
-      "name": "FUN_0043fc80"
+      "name": "core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80"
     },
     {
       "addr": "0043fe60",
       "is_variadic": false,
-      "name": "FUN_0043fe60"
+      "name": "core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60"
     },
     {
-      "addr": "00446ea0",
+      "addr": "0056511e",
       "is_variadic": false,
-      "name": "FUN_00446ea0"
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_0056511e"
+    },
+    {
+      "addr": "005651ca",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ofstream_dtor_FUN_005651ca"
+    },
+    {
+      "addr": "00565a13",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ostream_write_FUN_00565a13"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
       "addr": "00456a60",
       "is_variadic": false,
-      "name": "FUN_00456a60"
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
     },
     {
       "addr": "004c8440",
@@ -220,34 +221,34 @@
       "name": "FUN_004c8440"
     },
     {
-      "addr": "00563380",
+      "addr": "00438f30",
       "is_variadic": false,
-      "name": "FUN_00563380"
+      "name": "support_codec.cpp_CCodec_dtor_FUN_00438f30"
     },
     {
-      "addr": "00563a30",
+      "addr": "004390b0",
       "is_variadic": false,
-      "name": "FUN_00563a30"
+      "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0"
     },
     {
-      "addr": "00563c90",
+      "addr": "00439830",
       "is_variadic": false,
-      "name": "FUN_00563c90"
+      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00439830"
     },
     {
-      "addr": "0056511e",
+      "addr": "004399a0",
       "is_variadic": false,
-      "name": "FUN_0056511e"
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_004399a0"
     },
     {
-      "addr": "005651ca",
+      "addr": "00439880",
       "is_variadic": false,
-      "name": "FUN_005651ca"
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_00439880"
     },
     {
-      "addr": "00565a13",
+      "addr": "00439370",
       "is_variadic": false,
-      "name": "FUN_00565a13"
+      "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00439370"
     }
   ],
   "globals": [
@@ -704,13 +705,27 @@
   "static_analysis": {
     "analyzed_file": "FUN_00446810.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 70,
+          "line": 77,
           "message": "Uninitialized variable: local_114",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 200,
+          "message": "Uninitialized variable: iStack_120",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 26,
+          "line": 107,
+          "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
       ],
@@ -736,131 +751,179 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00563c90(local_274,\"%s.fog\",param_1);",
+      "text": "_sprintf(local_274,\"%s.fog\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 63,
       "match": "DAT_0057ba02",
       "severity": "mild",
-      "text": "iVar1 = FUN_00456a60(\"backdrop\",local_274,&DAT_0057ba02);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(\"backdrop\",local_274,&DAT_0057ba02);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar12 = (float10)*(float *)(param_1 + 0x104) * fVar11;",
+      "text": "fVar11 = (float10)round((float10)*(float *)(param_1 + 0x104) * fVar10);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (1 < *(int *)(param_1 + 0x154)) {",
+      "text": "fVar11 = (float10)round((float10)*(float *)(param_1 + 0x108) * fVar10);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_012ceb78",
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = &DAT_012ceb78 + local_34;",
-      "type": "undefined_data"
+      "text": "fVar10 = (float10)round(fVar10 * (float10)*(float *)(param_1 + 0x10c));",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (1 < *(int *)(param_1 + 0x150)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 123,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_28 < *(int *)(param_1 + 0x154));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00446ea0(param_1,local_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x154)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 136,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x150)) {",
-      "type": "unnamed_param"
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (1 < *(int *)(unaff_EDI + 0x154)) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 106,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "(&DAT_012ceb78)[iVar3] = (char)iVar5;",
+      "text": "puVar6 = &DAT_012ceb78 + local_40;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 163,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar9 < *(int *)(param_1 + 0x150));",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (1 < *(int *)(unaff_EDI + 0x150)) {",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 168,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_2c < *(int *)(param_1 + 0x154));",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 127,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (iVar1 < *(int *)(unaff_EDI + 0x150));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 133,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (local_34 < *(int *)(unaff_EDI + 0x154));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 135,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 137,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(unaff_EDI + 0x154)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 146,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(unaff_EDI + 0x150)) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 163,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "iVar1 = FUN_004390b0(local_94,&DAT_012ceb78,&local_4c,local_130);",
+      "text": "(&DAT_012ceb78)[iVar2] = (char)iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 173,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (iVar8 < *(int *)(unaff_EDI + 0x150));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 178,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (local_38 < *(int *)(unaff_EDI + 0x154));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 182,
+      "match": "DAT_012ceb78",
+      "severity": "mild",
+      "text": "(auStack_a0,&DAT_012ceb78,&local_58,auStack_13c);",
       "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x444645 assigned to bare local `local_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 70,
+      "line": 77,
       "match": "0x444645",
       "severity": "moderate",
       "text": "local_50 = 0x00444645;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x446980 assigned to bare local `uVar16`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar16` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 80,
+      "match": "0x446980",
+      "severity": "moderate",
+      "text": "uVar16 = 0x446980;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x446996 assigned to bare local `uVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 84,
+      "match": "0x446996",
+      "severity": "moderate",
+      "text": "uVar14 = 0x446996;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4469b4 assigned to bare local `uVar12`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar12` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 88,
+      "match": "0x4469b4",
+      "severity": "moderate",
+      "text": "uVar12 = 0x4469b4;",
       "type": "raw_address_constant"
     },
     {
@@ -876,11 +939,27 @@
     },
     {
       "description": "Uninitialized variable: local_114",
-      "line": 70,
+      "line": 77,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_114 != 0) {",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: iStack_120",
+      "line": 200,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (iStack_120 != 0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 107,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (1 < *(int *)(unaff_EDI + 0x154)) {",
+      "type": "static_legacy_uninitvar"
     }
   ]
 }

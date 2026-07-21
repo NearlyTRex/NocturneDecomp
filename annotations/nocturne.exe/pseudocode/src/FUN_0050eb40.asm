@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00506e50 at 00506e77
+;   core_set.cpp_CDemonSet_dtor_FUN_00506e50 at 00506e77
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a19b0
 ;
 ; Called Functions:
-;   FUN_0056494f
+;   crt_memory.c___arrfini_FUN_0056494f
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH 0x14                           ; 0050eb45
     MOV EDX,dword ptr [ESP + 0xc]       ; 0050eb47
     PUSH EDX                            ; 0050eb4b
-    CALL FUN_0056494f                   ; 0050eb4c
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined FUN_0056494f()
+    CALL crt_memory.c___arrfini_FUN_0056494f ; 0050eb4c
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
     ADD ESP,0xc                         ; 0050eb51
     RET                                 ; 0050eb54
 

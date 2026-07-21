@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 368,
-    "complexity_score": 482,
+    "complexity_score": 483,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 147,
+    "pseudocode_lines": 148,
     "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
@@ -136,7 +136,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 515
+    "total_lines": 516
   },
   "cross_references": [],
   "function": {
@@ -153,34 +153,54 @@
   },
   "function_calls": [
     {
-      "addr": "00402600",
-      "is_variadic": false,
-      "name": "FUN_00402600"
-    },
-    {
       "addr": "00440290",
       "is_variadic": false,
-      "name": "FUN_00440290"
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290"
     },
     {
       "addr": "00440a20",
       "is_variadic": false,
-      "name": "FUN_00440a20"
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20"
+    },
+    {
+      "addr": "00444e20",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20"
     },
     {
       "addr": "00441c50",
       "is_variadic": false,
-      "name": "FUN_00441c50"
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50"
+    },
+    {
+      "addr": "005084c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_005084c0"
+    },
+    {
+      "addr": "00507c80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "005649c0",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005649c0"
+    },
+    {
+      "addr": "00402600",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00402600"
     },
     {
       "addr": "004421b0",
       "is_variadic": false,
       "name": "FUN_004421b0"
-    },
-    {
-      "addr": "00444e20",
-      "is_variadic": false,
-      "name": "FUN_00444e20"
     },
     {
       "addr": "00444ef0",
@@ -196,16 +216,6 @@
       "addr": "004c8440",
       "is_variadic": false,
       "name": "FUN_004c8440"
-    },
-    {
-      "addr": "00507c80",
-      "is_variadic": false,
-      "name": "FUN_00507c80"
-    },
-    {
-      "addr": "005084c0",
-      "is_variadic": false,
-      "name": "FUN_005084c0"
     },
     {
       "addr": "0050ad20",
@@ -225,17 +235,7 @@
     {
       "addr": "00553910",
       "is_variadic": false,
-      "name": "FUN_00553910"
-    },
-    {
-      "addr": "00563c90",
-      "is_variadic": false,
-      "name": "FUN_00563c90"
-    },
-    {
-      "addr": "005649c0",
-      "is_variadic": false,
-      "name": "FUN_005649c0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
     }
   ],
   "globals": [
@@ -448,12 +448,12 @@
       "line": 92,
       "match": "DAT_01fb99d4",
       "severity": "mild",
-      "text": "iVar3 = FUN_005649c0(*(uint *)(&DAT_01fb99d4 + iVar6));",
+      "text": "iVar3 = _strcmp(*(uint *)(&DAT_01fb99d4 + iVar6));",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 124,
       "match": "(byte *)((int)param_1",
       "severity": "moderate",
       "text": "*(byte *)((int)param_1 + iStack_20 + 0x19770 + iVar4 * 0x1898) = uVar1;",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "*(byte *)((int)param_1 + iStack_20 + 0x19770 + iVar4 * 0x1898) = uVar1;",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 126,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x1986c) = 0;",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x1986c) = 0;",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 127,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19870) = 0;",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19870) = 0;",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 128,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19874) = 0;",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19874) = 0;",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 129,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19878) = 0;",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19878) = 0;",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iStack_20 < *param_1);",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 105,
+      "line": 106,
       "match": "(byte *)(iStack_18 + 0x19770)",
       "severity": "moderate",
       "text": "*(byte *)(iStack_18 + 0x19770) = uVar1;",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 108,
+      "line": 109,
       "match": "(uint *)(iVar5 + 0x1986c)",
       "severity": "moderate",
       "text": "*(uint *)(iVar5 + 0x1986c) = uStack_58;",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 114,
+      "line": 115,
       "match": "(char *)(iStack_18 + 0x19770)",
       "severity": "moderate",
       "text": "if (*(char *)(iStack_18 + 0x19770) != '\\0') {",

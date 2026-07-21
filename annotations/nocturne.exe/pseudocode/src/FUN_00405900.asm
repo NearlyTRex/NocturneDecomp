@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00405840
+;   engine_3d.c_setActiveRenderColor_FUN_00405840
 ;   FUN_00409590
 ;
 ; *****************************************************************************
@@ -18,8 +18,8 @@ section .text
     PUSH EDI                            ; 00405902
     PUSH EBP                            ; 00405903
     SUB ESP,0x60                        ; 00405904
-    CALL FUN_00405840                   ; 00405907
-        ;   XREF to: 00405840 (UNCONDITIONAL_CALL)  ; undefined FUN_00405840()
+    CALL engine_3d.c_setActiveRenderColor_FUN_00405840 ; 00405907
+        ;   XREF to: 00405840 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setActiveRenderColor_FUN_00405840()
     MOV EBX,dword ptr [ESP + 0x74]      ; 0040590c
     XOR EBP,EBP                         ; 00405910
     ADD EBX,0x8                         ; 00405912

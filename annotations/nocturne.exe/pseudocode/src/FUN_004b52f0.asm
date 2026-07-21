@@ -36,11 +36,11 @@
 ;   undefined4 DAT_01fa3ff4
 ;
 ; Called Functions:
-;   FUN_0040a290
-;   FUN_0040d890
-;   FUN_00481890
-;   FUN_004c68f0
-;   FUN_0054e4a0
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890
+;   core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH EDX                            ; 004b534a
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004b534b | DAT_01fa3ff4
     PUSH ECX                            ; 004b5352
-    CALL FUN_0040d890                   ; 004b5353
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5353
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     MOV EBX,EAX                         ; 004b5358
     ADD ESP,0x8                         ; 004b535a
     TEST EAX,EAX                        ; 004b535d
@@ -98,8 +98,8 @@ section .text
     PUSH EAX                            ; 004b536d
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b536e
     PUSH EAX                            ; 004b5371
-    CALL FUN_0040a290                   ; 004b5372
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a290()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004b5372
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
     ADD ESP,0xc                         ; 004b5377
     FLD float ptr [ESP + 0x18]          ; 004b537a
     FABS                                ; 004b537e
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 004b53d1
     LEA EAX,[ESP + 0x24]                ; 004b53d2
     PUSH EAX                            ; 004b53d6
-    CALL FUN_0054e4a0                   ; 004b53d7
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0054e4a0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004b53d7
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
     FLD float ptr [EAX + 0x4]           ; 004b53dc
     FABS                                ; 004b53df
     ADD ESP,0x8                         ; 004b53e1
@@ -147,8 +147,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x34]      ; 004b53ef
     PUSH EDX                            ; 004b53f3
     PUSH EBX                            ; 004b53f4
-    CALL FUN_004c68f0                   ; 004b53f5
-        ;   XREF to: 004c68f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c68f0()
+    CALL core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f0 ; 004b53f5
+        ;   XREF to: 004c68f0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f0()
     ADD ESP,0x8                         ; 004b53fa
     TEST EAX,EAX                        ; 004b53fd
     JZ 0x004b5453                       ; 004b53ff
@@ -185,8 +185,8 @@ section .text
     LEA EAX,[EBX + 0x418]               ; 004b545c
         ;   Label: LAB_004b545c
     PUSH EAX                            ; 004b5462
-    CALL FUN_00481890                   ; 004b5463
-        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; undefined FUN_00481890()
+    CALL core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890 ; 004b5463
+        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890()
     ADD ESP,0x4                         ; 004b5468
     TEST EAX,EAX                        ; 004b546b
     JNZ 0x004b533b                      ; 004b546d

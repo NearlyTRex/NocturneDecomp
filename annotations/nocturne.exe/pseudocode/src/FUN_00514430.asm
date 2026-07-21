@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00506ec0 at 00506edf
 ;   FUN_00514410 at 00514416
 ;   FUN_00514470 at 00514476
+;   core_set.cpp_CDemonSet_clear_FUN_00506ec0 at 00506edf
 ;
 ; Called Functions:
 ;   FUN_005638d0

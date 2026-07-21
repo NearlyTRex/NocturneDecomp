@@ -10,8 +10,8 @@
 ;   FUN_004b4950 at 004b4985
 ;
 ; Called Functions:
-;   FUN_00409860
-;   FUN_00511990
+;   core_actor.cpp_rayCylinderIntersect_FUN_00409860
+;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x20]      ; 0040a432
     LEA EAX,[ESP + 0xc]                 ; 0040a435
     PUSH EAX                            ; 0040a439
-    CALL FUN_00511990                   ; 0040a43a
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined FUN_00511990()
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 0040a43a
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
     ADD ESP,0x4                         ; 0040a43f
     XOR EDX,EDX                         ; 0040a442
     MOV dword ptr [ESP + 0xc],EDX       ; 0040a444
@@ -71,8 +71,8 @@ section .text
     FSUB float ptr [EBX + 0x8]          ; 0040a492
     PUSH EAX                            ; 0040a495
     FSTP float ptr [ESP + 0x70]         ; 0040a496
-    CALL FUN_00409860                   ; 0040a49a
-        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; undefined FUN_00409860()
+    CALL core_actor.cpp_rayCylinderIntersect_FUN_00409860 ; 0040a49a
+        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00409860()
     MOV dword ptr [ESP + 0x74],EAX      ; 0040a49f
     FLD float ptr [ESP + 0x74]          ; 0040a4a3
     ADD ESP,0x10                        ; 0040a4a7

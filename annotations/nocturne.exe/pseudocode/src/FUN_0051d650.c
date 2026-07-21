@@ -35,12 +35,13 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
   if (param_3 <= (float)_DAT_00591bc3) {
     return;
   }
-  FUN_0051e0a0(param_1);
-  pfVar1 = (float *)FUN_0051d2a0(param_1,auStack_14,param_4);
+  core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
+  pfVar1 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+                              (param_1,auStack_14,param_4);
   fStack_2c = *param_2 - *pfVar1;
   fStack_28 = param_2[1] - pfVar1[1];
   fStack_24 = param_2[2] - pfVar1[2];
-  FUN_0054e4a0(&uStack_20,&stack0xffffffd4);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&uStack_20,&stack0xffffffd4);
   FUN_0055d4a0(uStack_20);
   puVar3 = &stack0xffffff54;
   uStack_ac = uStack_3c;
@@ -65,7 +66,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
        *(uint *)
         ((int)(&stack0xffffff9c + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
-  FUN_0055d130(param_5,puVar3);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(param_5,puVar3);
   uStack_7c = uStack_5c;
   *(uint *)((int)&stack0xffffff88 + (uint)bVar2 * 0xfffffffe * 4) =
        *(uint *)(&stack0xffffffa8 + (uint)bVar2 * -8);
@@ -76,7 +77,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
        *(uint *)
         ((int)(&stack0xffffffac + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
-  FUN_0055d130(&stack0xffffff84);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xffffff84);
   uStack_9c = uStack_4c;
   *(uint *)((int)&stack0xffffff68 + (uint)bVar2 * 0xfffffffe * 4) =
        *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8);
@@ -87,6 +88,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
        *(uint *)
         ((int)(&stack0xffffffbc + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
-  FUN_0051cfd0(param_1,&stack0xffffff64,param_3,param_4,param_6);
+  core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
+            (param_1,&stack0xffffff64,param_3,param_4,param_6);
   return;
 }

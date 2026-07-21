@@ -9,6 +9,6 @@
 uint FUN_00476490(uint param_1)
 
 {
-  FUN_004764b0(param_1);
+  shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(param_1);
   return param_1;
 }

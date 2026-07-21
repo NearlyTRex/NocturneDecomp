@@ -15,8 +15,8 @@ void FUN_00527e10(void)
     return;
   }
   _DAT_02dbd34c = _DAT_02dbd34c + 1;
-  FUN_00528080();
-  FUN_00527c30();
+  sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
+  sound_sndmain_cpp_freeAllSamples_FUN_00527c30();
   _DAT_02dbd34c = _DAT_02dbd34c + -1;
   return;
 }

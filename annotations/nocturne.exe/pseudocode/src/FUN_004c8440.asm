@@ -14,9 +14,9 @@
 ;   FUN_00403500 at 0040355a
 ;   FUN_00403630 at 00403693
 ;   FUN_00403780 at 004038f1
-;   FUN_00403990 at 00403a3c
-;   FUN_00403bd0 at 00403ccc
-;   FUN_00403ce0 at 00403df8
+;   FUN_00404430 at 00404466
+;   FUN_00409f70 at 00409f8b
+;   FUN_0040a0a0 at 0040a0c1
 ;   ... and 444 more
 ;
 ; Referenced Globals:
@@ -25,12 +25,12 @@
 ;   undefined4 DAT_01cc4808
 ;
 ; Called Functions:
+;   crt_stdio.c_vsprintf_FUN_00563a08
+;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
 ;   FUN_004012a0
-;   FUN_00558a20
 ;   FUN_00559500
-;   FUN_00563a08
-;   FUN_00566f90
 ;   thunk_FUN_00527e10
+;   wincore_winrun.cpp_endPeriod_FUN_00558a20
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH 0x1cc3700                      ; 004c846a
     MOV dword ptr [0x01cc4808],ECX      ; 004c846f | DAT_01cc4808
     XOR ESI,ESI                         ; 004c8475
-    CALL FUN_00563a08                   ; 004c8477
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 004c8477
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
     ADD ESP,0xc                         ; 004c847c
     MOV DH,0x5c                         ; 004c847f
     MOV dword ptr [ESP + 0x4],ESI       ; 004c8481
@@ -94,8 +94,8 @@ section .text
     ADD ESP,0x4                         ; 004c84b6
     CALL FUN_004012a0                   ; 004c84b9
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004012a0()
-    CALL FUN_00558a20                   ; 004c84be
-        ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; undefined FUN_00558a20()
+    CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
+        ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_endPeriod_FUN_00558a20()
     PUSH 0x1cc3700                      ; 004c84c3
     CALL FUN_00559500                   ; 004c84c8
         ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; undefined FUN_00559500()
@@ -104,8 +104,8 @@ section .text
     POP EDI                             ; 004c84d3
     POP ESI                             ; 004c84d4
     RET                                 ; 004c84d5
-    CALL FUN_00566f90                   ; 004c84d6
-        ;   XREF to: 00566f90 (UNCONDITIONAL_CALL)  ; undefined FUN_00566f90()
+    CALL crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 ; 004c84d6
+        ;   XREF to: 00566f90 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c_notifyAbnormalTermination_FUN_00566f90()
         ;   Label: LAB_004c84d6
     JMP 0x004c8452                      ; 004c84db
         ;   XREF to: 004c8452 (UNCONDITIONAL_JUMP)  ; LAB_004c8452

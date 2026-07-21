@@ -55,16 +55,16 @@ void FUN_00439f50(int param_1,float param_2)
   *(uint *)(param_1 + 0x23ac) = 0;
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
-  FUN_0043a980(param_1,param_2);
+  core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(param_1,param_2);
   if (*(int *)(param_1 + 0xbc90) == 2) {
-    FUN_0043a470(param_1,param_2);
+    core_colonel_cpp_CColonel_processAI_FUN_0043a470(param_1,param_2);
   }
   fVar2 = (float)_DAT_0057b13c;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar2;
   iVar4 = FUN_00428c00(param_1,param_2);
   if (iVar4 == 0) {
-    iVar4 = FUN_004e1660(param_1 + 0x150);
+    iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     switch(*(uint *)(iVar4 + 0x24)) {
     case 0:
     case 1:
@@ -91,17 +91,19 @@ void FUN_00439f50(int param_1,float param_2)
         if (*(int *)(param_1 + 0xbca0) != 0) {
           bVar3 = true;
           if ((*(int *)(param_1 + 0x1fa3c) == 0) && (*(int *)(param_1 + 0xbc90) != 2)) {
-            iVar6 = FUN_004b4e90(param_1);
+            iVar6 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(param_1);
             bVar3 = false;
             if (iVar6 != 0) goto LAB_0043a2b0;
             local_24 = FUN_004b5110(param_1);
             if ((local_24 != 0) && (local_24 != 1)) {
               FUN_004b5270(param_1);
             }
-            if ((local_24 != 0) || (iVar6 = FUN_004b4fe0(param_1), iVar6 != 0)) goto LAB_0043a2b0;
+            if ((local_24 != 0) ||
+               (iVar6 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(param_1),
+               iVar6 != 0)) goto LAB_0043a2b0;
             iVar6 = FUN_004b52f0(param_1);
             if (iVar6 != 0) {
-              FUN_004b5490(param_1);
+              core_hero_cpp_CHero_executeLeverPull_FUN_004b5490(param_1);
               goto LAB_0043a2b0;
             }
           }
@@ -113,7 +115,7 @@ LAB_0043a2b0:
         }
 LAB_0043a2be:
         *(float *)(param_1 + 0x2410) = *(float *)(param_1 + 0xbcb8) * *(float *)(param_1 + 0x2430);
-        iVar6 = FUN_004e1660(param_1 + 0x150);
+        iVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
         if (iVar4 != *(int *)(iVar6 + 0x24)) goto LAB_0043a023;
       }
       break;
@@ -135,8 +137,9 @@ LAB_0043a224:
     else {
       if (2 < uVar1) {
         if (uVar1 == 3) {
-          FUN_004e16b0(param_1 + 0x150,0,1);
-          FUN_0043ac60(PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);
+          engine_console_cpp_CConsole_printf_FUN_0043ac60
+                    (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
           goto switchD_0043a387_caseD_4;
         }
         goto LAB_0043a224;
@@ -144,7 +147,7 @@ LAB_0043a224:
       iVar4 = 2;
     }
 LAB_0043a023:
-    FUN_004e16b0(param_1 + 0x150,iVar4,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,iVar4,1);
   }
 switchD_0043a387_caseD_4:
   if (*(int *)(param_1 + 0x2590) == 0) {
@@ -164,13 +167,14 @@ switchD_0043a387_caseD_4:
     *(uint *)(param_1 + 0x241c) = 0;
     *(float *)(param_1 + 0x2418) = *(float *)(param_1 + 0x241c);
     *(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x241c);
-    FUN_00425050(param_1,&local_68);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_68);
   }
   else {
     if (*(int *)(param_1 + 0x2594) == 0) {
-      uVar5 = FUN_0040a290(param_1,local_5c,*(int *)(param_1 + 0x2590) + 0x20);
-      iVar4 = FUN_0054e4a0(local_44,uVar5);
-      local_14 = (float)FUN_0040df00(*(uint *)(iVar4 + 4));
+      uVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                        (param_1,local_5c,*(int *)(param_1 + 0x2590) + 0x20);
+      iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_44,uVar5);
+      local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar4 + 4));
       local_98 = local_14;
       if (local_14 < (float)_DAT_0057b14c) {
         local_98 = local_14 + _DAT_0057b154;
@@ -187,11 +191,12 @@ switchD_0043a387_caseD_4:
         local_98 = local_1c;
       }
       *(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_98;
-      FUN_0040a000(param_1);
+      core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
     }
     iVar4 = *(int *)(param_1 + 0x2590);
     local_14 = *(float *)(iVar4 + 0x14c);
-    uVar5 = FUN_0051d380(param_1 + 0x150,local_74,0);
+    uVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                      (param_1 + 0x150,local_74,0);
     iVar4 = (**(code **)((int)local_14 + 0x108))(iVar4,param_1,uVar5);
     if (iVar4 == 0) {
       *(uint *)(param_1 + 0x2590) = 0;
@@ -203,12 +208,12 @@ LAB_0043a151:
       if (*(int *)(param_1 + 0xbca0) == 0) goto LAB_0043a164;
       uVar5 = 9;
     }
-    FUN_004e16b0(param_1 + 0x150,uVar5,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar5,1);
   }
 LAB_0043a164:
-  FUN_004259a0(param_1);
+  core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   iStack_18 = param_1 + 0x150;
-  FUN_0051b8a0(iStack_18);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iStack_18);
   iVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   if (iVar4 == 0) {
     FUN_0055d610(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),DAT_0077ac8c,&LAB_0051b650);
@@ -224,7 +229,7 @@ LAB_0043a164:
          *(uint *)
           ((int)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +
           ((uint)bVar7 * -2 + 1) * 4);
-    FUN_0051cfd0(iVar4,puVar8);
+    core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(iVar4,puVar8);
   }
   FUN_0042a150(param_1,param_2);
 switchD_0043a387_caseD_6:

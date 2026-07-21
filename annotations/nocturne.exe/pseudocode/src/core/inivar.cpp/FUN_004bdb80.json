@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 171,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 92,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 128,
     "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 690
+    "total_lines": 732
   },
   "cross_references": [
     {
@@ -160,27 +160,32 @@
     {
       "addr": "0049e610",
       "is_variadic": false,
-      "name": "FUN_0049e610"
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610"
+    },
+    {
+      "addr": "00565dd0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0"
     },
     {
       "addr": "004bd860",
       "is_variadic": false,
-      "name": "FUN_004bd860"
-    },
-    {
-      "addr": "004bd8d0",
-      "is_variadic": false,
-      "name": "FUN_004bd8d0"
-    },
-    {
-      "addr": "004bd910",
-      "is_variadic": false,
-      "name": "FUN_004bd910"
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004bd860"
     },
     {
       "addr": "004bda20",
       "is_variadic": false,
-      "name": "FUN_004bda20"
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004bda20"
+    },
+    {
+      "addr": "004bd910",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getString_FUN_004bd910"
+    },
+    {
+      "addr": "004bd8d0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0"
     },
     {
       "addr": "004c8440",
@@ -191,11 +196,6 @@
       "addr": "005289f0",
       "is_variadic": false,
       "name": "FUN_005289f0"
-    },
-    {
-      "addr": "00565dd0",
-      "is_variadic": false,
-      "name": "FUN_00565dd0"
     }
   ],
   "globals": [
@@ -826,47 +826,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_02dc9d60",
       "severity": "mild",
-      "text": "FUN_004bda20(local_204,\"useDirect3D\",&DAT_02dc9d60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02dc9d6c",
-      "severity": "mild",
-      "text": "FUN_004bda20(local_204,\"useAGPFlag\",&DAT_02dc9d6c);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,\"useDirect3D\",&DAT_02dc9d60);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 23,
+      "match": "DAT_02dc9d6c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,\"useAGPFlag\",&DAT_02dc9d6c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
       "match": "DAT_005c0e80",
       "severity": "mild",
-      "text": "FUN_004bd910(local_204,\"rendererDLLPath\",&DAT_005c0e80,0xfa);",
+      "text": "(local_204,\"rendererDLLPath\",&DAT_005c0e80,0xfa);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 30,
       "match": "DAT_01cae37c",
       "severity": "mild",
-      "text": "FUN_004bda20(local_204,\"firstTimeFlag\",&DAT_01cae37c);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,\"firstTimeFlag\",&DAT_01cae37c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 50,
       "match": "DAT_01cc64a4",
       "severity": "mild",
-      "text": "FUN_004bda20(local_204,\"currentBoard\",&DAT_01cc64a4);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,\"currentBoard\",&DAT_01cc64a4);",
       "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x1c775ec assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 34,
+      "line": 43,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "iVar1 = 0x01C775EC;",

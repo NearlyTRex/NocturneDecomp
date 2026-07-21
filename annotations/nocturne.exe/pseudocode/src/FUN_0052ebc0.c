@@ -15,7 +15,7 @@ float FUN_0052ebc0(uint param_1,char *param_2)
   char *pcVar4;
   char local_138 [308];
   
-  FUN_00525b70(local_138);
+  sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(local_138);
   pcVar4 = local_138;
   cVar1 = *param_2;
   while ((((cVar1 != '\0' && (cVar1 = *param_2, cVar1 != '@')) && (cVar1 != '*')) &&
@@ -27,10 +27,10 @@ float FUN_0052ebc0(uint param_1,char *param_2)
     pcVar4 = pcVar4 + 1;
   }
   *pcVar4 = '\0';
-  iVar3 = FUN_005279e0(local_138);
+  iVar3 = sound_sndmain_cpp_getSampleInfo_FUN_005279e0(local_138);
   if (iVar3 == 0) {
     return -1.0;
   }
-  dVar2 = (double)FUN_00525bc0(local_138);
+  dVar2 = (double)sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_00525bc0(local_138);
   return (float)dVar2;
 }

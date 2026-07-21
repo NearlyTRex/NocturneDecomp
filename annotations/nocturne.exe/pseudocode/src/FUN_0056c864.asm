@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0056c864(LPCSTR param_1,int *param_2)
+; undefined4 __cdecl FUN_0056c864(LPCSTR param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x368]:4  local_368
@@ -22,7 +22,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00570ad0 at 00570b44
-;   thunk_FUN_0056c864 at 00565dc0
+;   crt_io.c_getFileStat_FUN_00565dc0 at 00565dc0
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005754c8 = 00175bf0
@@ -31,16 +31,16 @@
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:
+;   crt_ctype.c_tolower_FUN_00564860
+;   crt_errno.c___set_errno_FUN_0056c73c
+;   crt_memory.c_memset_FUN_00563cc0
+;   crt_stdlib.c__fullpath_FUN_00565d00
+;   crt_string.c__strncpy_FUN_00565f70
 ;   FindClose
 ;   FindFirstFileA
-;   FUN_00563cc0
-;   FUN_00564860
-;   FUN_00565d00
-;   FUN_00565f70
 ;   FUN_00566570
 ;   FUN_00568e80
 ;   FUN_0056c5f0
-;   FUN_0056c73c
 ;   FUN_0056c750
 ;   FUN_0056da80
 ;   FUN_00570870
@@ -91,8 +91,8 @@ section .text
     PUSH ESI                            ; 0056c8c4
     LEA EAX,[ESP + 0x148]               ; 0056c8c5
     PUSH EAX                            ; 0056c8cc
-    CALL FUN_00565d00                   ; 0056c8cd
-        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; undefined FUN_00565d00()
+    CALL crt_stdlib.c__fullpath_FUN_00565d00 ; 0056c8cd
+        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__fullpath_FUN_00565d00()
     ADD ESP,0xc                         ; 0056c8d2
     TEST EAX,EAX                        ; 0056c8d5
     JZ 0x0056c913                       ; 0056c8d7
@@ -165,8 +165,8 @@ section .text
     PUSH 0x0                            ; 0056c970
     LEA EAX,[ESP + 0x8]                 ; 0056c972
     PUSH EAX                            ; 0056c976
-    CALL FUN_00563cc0                   ; 0056c977
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 0056c977
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     MOV EDX,0x10                        ; 0056c97c
     ADD ESP,0xc                         ; 0056c981
     MOV dword ptr [ESP],EDX             ; 0056c984
@@ -180,8 +180,8 @@ section .text
     CMP EAX,-0x1                        ; 0056c994
     JNZ 0x0056c9a9                      ; 0056c997
         ;   XREF to: 0056c9a9 (CONDITIONAL_JUMP)  ; LAB_0056c9a9
-    CALL FUN_0056c73c                   ; 0056c999
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056c999
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x358                       ; 0056c99e
     POP EBP                             ; 0056c9a4
     POP EDI                             ; 0056c9a5
@@ -209,8 +209,8 @@ section .text
     MOV AL,byte ptr [ESP + 0x244]       ; 0056c9c9
     PUSH EAX                            ; 0056c9d0
         ;   Label: LAB_0056c9d0
-    CALL FUN_00564860                   ; 0056c9d1
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined FUN_00564860()
+    CALL crt_ctype.c_tolower_FUN_00564860 ; 0056c9d1
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
     SUB EAX,0x61                        ; 0056c9d6
     ADD ESP,0x4                         ; 0056c9d9
     MOV dword ptr [EBX],EAX             ; 0056c9dc
@@ -328,8 +328,8 @@ section .text
     MOV word ptr [EBX + -0x3],0x0       ; 0056cb40
     PUSH EBX                            ; 0056cb46
     MOV byte ptr [EBX + -0x1],0x0       ; 0056cb47
-    CALL FUN_00565f70                   ; 0056cb4b
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined FUN_00565f70()
+    CALL crt_string.c__strncpy_FUN_00565f70 ; 0056cb4b
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
     ADD ESP,0xc                         ; 0056cb50
     XOR EAX,EAX                         ; 0056cb53
     ADD ESP,0x358                       ; 0056cb55

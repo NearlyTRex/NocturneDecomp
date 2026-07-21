@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00564ce5 at 00564d6c
-;   FUN_00565a13 at 00565aaa
+;   crt_fstream.cpp_ostream_write_FUN_00565a13 at 00565aaa
+;   crt_iostream.cpp_ostream_put_FUN_00564ce5 at 00564d6c
 ;
 ; Called Functions:
 ;   FUN_00568890

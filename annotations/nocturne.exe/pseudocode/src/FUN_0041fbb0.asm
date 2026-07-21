@@ -8,11 +8,11 @@
 ;   string s_bride.dfm_005799f4
 ;   undefined4 DAT_0059ad10
 ;   undefined4 DAT_0059ad14
-;   undefined1* PTR_FUN_0059ad24 = 0041fc20
+;   undefined1* PTR_core_bride.cpp_CBride_setup_FUN_0041fc20_0059ad24 = 0041fc20
 ;
 ; Called Functions:
-;   FUN_00479560
-;   FUN_0051e0c0
+;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -22,16 +22,16 @@ section .text
         ;   Label: FUN_0041fbb0
     MOV EDX,dword ptr [ESP + 0x8]       ; 0041fbb1
     PUSH EDX                            ; 0041fbb5
-    CALL FUN_00479560                   ; 0041fbb6
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined FUN_00479560()
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0041fbb6
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
     ADD ESP,0x4                         ; 0041fbbb
     PUSH 0x5799f4                       ; 0041fbbe | = "bride.dfm"
     MOV EBX,EAX                         ; 0041fbc3
     ADD EAX,0x150                       ; 0041fbc5
     PUSH EAX                            ; 0041fbca
-    MOV dword ptr [EAX + -0x4],0x59ad24 ; 0041fbcb | PTR_FUN_0059ad24
-    CALL FUN_0051e0c0                   ; 0041fbd2
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    MOV dword ptr [EAX + -0x4],0x59ad24 ; 0041fbcb | PTR_core_bride.cpp_CBride_setup_FUN_0041fc20_0059ad24
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0041fbd2
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     FLD float ptr [0x0059ad10]          ; 0041fbd7 | DAT_0059ad10
     MOV dword ptr [EBX + 0x2dd4],0x3f400000 ; 0041fbdd
     FLD float ptr [0x0059ad14]          ; 0041fbe7 | DAT_0059ad14

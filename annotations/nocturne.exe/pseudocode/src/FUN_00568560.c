@@ -20,7 +20,7 @@ byte * FUN_00568560(void)
     puVar2 = &DAT_005c1894;
     do {
       if ((puVar2[0xc] & 3) == 0) {
-        puVar1 = (uint *)FUN_005635b0(0x1d);
+        puVar1 = (uint *)malloc(0x1d);
         if (puVar1 == (uint *)0x0) goto LAB_00568608;
         uVar3 = 3;
         goto LAB_005685d9;
@@ -28,7 +28,7 @@ byte * FUN_00568560(void)
       puVar2 = puVar2 + 0x1a;
     } while (puVar2 < &DAT_005c1a9c);
     uVar3 = 0x4003;
-    puVar1 = (uint *)FUN_005635b0(0x37);
+    puVar1 = (uint *)malloc(0x37);
     if (puVar1 == (uint *)0x0) {
 LAB_00568608:
       FUN_00568e80(5);
@@ -44,7 +44,7 @@ LAB_00568608:
     _DAT_02de4e24 = (uint *)*_DAT_02de4e24;
   }
 LAB_005685d9:
-  FUN_00563cc0(puVar2,0,0x1a);
+  memset(puVar2,0,0x1a);
   *(uint *)(puVar2 + 0xc) = uVar3;
   puVar1[1] = puVar2;
   *(uint **)(puVar2 + 8) = puVar1;

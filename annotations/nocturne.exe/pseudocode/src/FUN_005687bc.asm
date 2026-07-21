@@ -19,8 +19,8 @@
 ;   undefined1 DAT_005c1b27
 ;
 ; Called Functions:
-;   FUN_00565d00
-;   FUN_00566e10
+;   crt_env.c_getenv_FUN_00566e10
+;   crt_stdlib.c__fullpath_FUN_00565d00
 ;   FUN_0056c5f0
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
         ;   XREF to: 00568814 (UNCONDITIONAL_JUMP)  ; LAB_00568814
     PUSH EDX                            ; 005687d3 | DAT_00598b30
         ;   Label: LAB_005687d3
-    CALL FUN_00566e10                   ; 005687d4
-        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00566e10()
+    CALL crt_env.c_getenv_FUN_00566e10  ; 005687d4
+        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
     MOV EDX,EAX                         ; 005687d9
     ADD ESP,0x4                         ; 005687db
     TEST EAX,EAX                        ; 005687de
@@ -63,8 +63,8 @@ section .text
     PUSH 0x103                          ; 005687fc
     PUSH EDX                            ; 00568801
     PUSH 0x5c1b24                       ; 00568802 | DAT_005c1b24
-    CALL FUN_00565d00                   ; 00568807
-        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; undefined FUN_00565d00()
+    CALL crt_stdlib.c__fullpath_FUN_00565d00 ; 00568807
+        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__fullpath_FUN_00565d00()
     ADD ESP,0xc                         ; 0056880c
     JMP 0x0056881b                      ; 0056880f
         ;   XREF to: 0056881b (UNCONDITIONAL_JUMP)  ; LAB_0056881b

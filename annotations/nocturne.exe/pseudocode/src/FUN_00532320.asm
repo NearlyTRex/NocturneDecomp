@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00445020 at 00445091
-;   FUN_00471b50 at 00471e40
 ;   FUN_0049cc10 at 0049d5ab
 ;   FUN_004a57c0 at 004a598e
-;   FUN_005324a0 at 00532576
 ;   FUN_00532ba0 at 00532c40
+;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 at 00445091
+;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471e40
+;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0 at 00532576
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

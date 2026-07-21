@@ -16,11 +16,11 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_0040a200
-;   FUN_0040a240
-;   FUN_00461090
-;   FUN_0048ae90
-;   FUN_0048b3e0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
+;   core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 004c7caf
     MOV EDX,dword ptr [0x005ae704]      ; 004c7cb2 | DAT_005ae704
     PUSH EDX                            ; 004c7cb8 | DAT_01b4d738
-    CALL FUN_00461090                   ; 004c7cb9
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004c7cb9
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 004c7cbe
     TEST EAX,EAX                        ; 004c7cc1
     JZ 0x004c7cd7                       ; 004c7cc3
@@ -64,8 +64,8 @@ section .text
     LEA EAX,[ESP + 0x58]                ; 004c7ced
     PUSH EAX                            ; 004c7cf1
     PUSH ESI                            ; 004c7cf2
-    CALL FUN_0040a240                   ; 004c7cf3
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004c7cf3
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 004c7cf8
     MOV EAX,dword ptr [ESI + 0x2e0]     ; 004c7cfb
     MOV dword ptr [ESP + 0x44],EAX      ; 004c7d01
@@ -78,8 +78,8 @@ section .text
     PUSH ESI                            ; 004c7d15
     MOV dword ptr [ESP + 0x48],ECX      ; 004c7d16
     MOV dword ptr [ESP + 0x4c],ECX      ; 004c7d1a
-    CALL FUN_0040a200                   ; 004c7d1e
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a200()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004c7d1e
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
     ADD ESP,0xc                         ; 004c7d23
     LEA EAX,[ESP + 0x48]                ; 004c7d26
     FLD float ptr [ESP + 0x54]          ; 004c7d2a
@@ -167,8 +167,8 @@ section .text
     PUSH EAX                            ; 004c7e28
     MOV ECX,dword ptr [0x005b80f0]      ; 004c7e29 | DAT_005b80f0
     PUSH ECX                            ; 004c7e2f
-    CALL FUN_0048b3e0                   ; 004c7e30
-        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048b3e0()
+    CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 004c7e30
+        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0()
     MOV EBX,dword ptr [ESI + 0x580]     ; 004c7e35
     ADD ESP,0x20                        ; 004c7e3b
     TEST EBX,EBX                        ; 004c7e3e
@@ -195,8 +195,8 @@ section .text
     MOV EDI,dword ptr [0x005b80f0]      ; 004c7e93 | DAT_005b80f0
     PUSH EDI                            ; 004c7e99
     INC EBX                             ; 004c7e9a
-    CALL FUN_0048b3e0                   ; 004c7e9b
-        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048b3e0()
+    CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 004c7e9b
+        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0()
     ADD ESP,0x20                        ; 004c7ea0
     CMP EBX,0xa                         ; 004c7ea3
     JL 0x004c7e55                       ; 004c7ea6
@@ -270,8 +270,8 @@ section .text
     PUSH EAX                            ; 004c7f8a
     MOV EDI,dword ptr [0x005b80f0]      ; 004c7f8b | DAT_005b80f0
     PUSH EDI                            ; 004c7f91
-    CALL FUN_0048ae90                   ; 004c7f92
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined FUN_0048ae90()
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 004c7f92
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
     ADD ESP,0x1c                        ; 004c7f97
     INC EBX                             ; 004c7f9a
     FLD float ptr [ESP + 0x18]          ; 004c7f9b

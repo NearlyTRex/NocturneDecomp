@@ -9,8 +9,8 @@
 ;   undefined4 DAT_01bcd07c
 ;
 ; Called Functions:
-;   FUN_004721e0
 ;   FUN_005638d0
+;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   XREF to: 0046fa50 (CONDITIONAL_JUMP)  ; LAB_0046fa50
     PUSH EBX                            ; 0046fa31
         ;   Label: LAB_0046fa31
-    CALL FUN_004721e0                   ; 0046fa32
-        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004721e0()
+    CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0 ; 0046fa32
+        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0()
     MOV ECX,dword ptr [0x01bcd07c]      ; 0046fa37 | DAT_01bcd07c
     ADD ESP,0x4                         ; 0046fa3d
     TEST ECX,ECX                        ; 0046fa40

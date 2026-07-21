@@ -15,9 +15,10 @@ int FUN_00412100(uint param_1)
   uint uVar2;
   int iVar3;
   
-  iVar3 = FUN_00479560(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_FUN_00599fc4;
-  FUN_0051e0c0(iVar3 + 0x150,"batcreat.dfm");
+  iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
+  *(byte ***)(iVar3 + 0x14c) = &PTR_core_batcreat_cpp_CBatCreature_setup_FUN_00412160_00599fc4;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar3 + 0x150,"batcreat.dfm");
   uVar2 = _DAT_00599fb4;
   uVar1 = _DAT_00599fb0;
   *(uint *)(iVar3 + 0x2dd4) = 0x3f19999a;

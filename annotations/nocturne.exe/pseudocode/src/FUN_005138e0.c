@@ -122,7 +122,7 @@ void FUN_005138e0(int *param_1)
               uVar4 = 0xff;
             }
             _DAT_01c00c70 = (uint)(byte)(&DAT_01bf7720)[(uVar4 >> 3) * 0x421];
-            FUN_00401530(iVar3,iVar6);
+            engine_2d_c_plotPixel_FUN_00401530(iVar3,iVar6);
             iVar5 = iVar5 + 4;
             iVar3 = iVar3 + 1;
           } while (iVar5 != local_14);
@@ -131,10 +131,10 @@ void FUN_005138e0(int *param_1)
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      FUN_00563c90(local_c4,&DAT_00590c5c,(double)*(float *)(&DAT_02663604 + local_3c * 4));
+      _sprintf(local_c4,&DAT_00590c5c,(double)*(float *)(&DAT_02663604 + local_3c * 4));
       iVar6 = local_2c;
-      FUN_00402600(local_c4,local_2c);
-      FUN_00402600(local_60 + local_3c * 0x68);
+      engine_2d_c_drawText_FUN_00402600(local_c4,local_2c);
+      engine_2d_c_drawText_FUN_00402600(local_60 + local_3c * 0x68);
       local_2c = iVar6 + 0x41;
       if (DAT_005b761c < iVar6 + 0x81) {
         local_2c = 2;

@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00410cc0 at 00410e13
-;   FUN_00428510 at 00428684
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428684
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9284

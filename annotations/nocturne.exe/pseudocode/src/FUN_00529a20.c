@@ -9,6 +9,6 @@
 uint FUN_00529a20(uint param_1)
 
 {
-  FUN_00525eb0(param_1);
+  sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(param_1);
   return param_1;
 }

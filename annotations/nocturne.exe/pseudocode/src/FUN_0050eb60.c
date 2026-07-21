@@ -9,6 +9,6 @@
 void FUN_0050eb60(uint param_1)
 
 {
-  FUN_0056494f(param_1,0xfa,&DAT_005a19d0);
+  __arrfini(param_1,0xfa,&DAT_005a19d0);
   return;
 }

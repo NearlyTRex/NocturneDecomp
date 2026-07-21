@@ -28,7 +28,7 @@ DWORD FUN_00569fb0(uint param_1,LPCVOID param_2,DWORD param_3)
       DVar2 = SetFilePointer(hFile,0,(PLONG)0x0,2);
       if (DVar2 == 0xffffffff) {
         (*(code *)PTR_FUN_005c1ac4)(param_1);
-        DVar2 = FUN_0056c73c();
+        DVar2 = __set_errno();
         return DVar2;
       }
     }
@@ -43,7 +43,7 @@ DWORD FUN_00569fb0(uint param_1,LPCVOID param_2,DWORD param_3)
     BVar4 = WriteFile(hFile,param_2,param_3,&DStack_14,(LPOVERLAPPED)0x0);
     if (BVar4 == 0) {
       (*(code *)PTR_FUN_005c1ac4)(param_1);
-      DVar2 = FUN_0056c73c();
+      DVar2 = __set_errno();
       return DVar2;
     }
     if (param_3 != DStack_14) {

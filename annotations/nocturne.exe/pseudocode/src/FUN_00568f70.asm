@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005636d0 at 005637e9
 ;   FUN_00564670 at 005646ff
+;   crt_stdio.c_fread_FUN_005636d0 at 005637e9
 ;
 ; Referenced Globals:
 ;   void* PTR_ReadFile_0057557c = 00175f40
@@ -18,9 +18,9 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FUN_005671e4
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   ReadFile
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
     PUSH EBX                            ; 0056900d
     CALL dword ptr [0x005c1ac4]         ; 0056900e | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 00569014
-    CALL FUN_0056c73c                   ; 00569017
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 00569017
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x4                         ; 0056901c
     POP EBP                             ; 0056901f
     POP EDI                             ; 00569020

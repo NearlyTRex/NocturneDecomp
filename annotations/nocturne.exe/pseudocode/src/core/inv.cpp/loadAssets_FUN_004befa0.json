@@ -1,0 +1,519 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 246,
+    "complexity_score": 148,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 28,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 58,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 304
+  },
+  "cross_references": [
+    {
+      "addr": "004c2470",
+      "from_addr": "004c2dd3",
+      "name": "FUN_004c2470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3660",
+      "from_addr": "004a368e",
+      "name": "core_game.cpp_CGame_loadAssets_FUN_004a3660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c2150",
+      "from_addr": "004c23d1",
+      "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004befa0",
+    "address_range": [
+      [
+        "004befa0",
+        "004bf26e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_loadAssets_FUN_004befa0",
+    "signature": "void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bed80",
+      "is_variadic": false,
+      "name": "core_inv.cpp_loadItem_FUN_004bed80"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00563350",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_00563350"
+    },
+    {
+      "addr": "0040e3c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0"
+    },
+    {
+      "addr": "0040e9e0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00586d91",
+      "name": "DAT_00586d91",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00586d94",
+      "name": "s_invsize.txt_00586d94",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586da0",
+      "name": "DAT_00586da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00586da5",
+      "name": "s_%d,%d_00586da5",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dac",
+      "name": "s_invback_00586dac",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586db4",
+      "name": "s_invback2_00586db4",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dbd",
+      "name": "s_weapback_00586dbd",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dc6",
+      "name": "s_weapback2_00586dc6",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dd0",
+      "name": "s_battery_00586dd0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dd8",
+      "name": "s_hbar1_00586dd8",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dde",
+      "name": "s_hbar2_00586dde",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586de4",
+      "name": "s_tommyclip24x24_00586de4",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586df3",
+      "name": "s_bullet24x24_00586df3",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586dff",
+      "name": "s_lithium24x24_00586dff",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e0c",
+      "name": "s_mercurybullet24x24_00586e0c",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e1f",
+      "name": "s_shotshell24x24_00586e1f",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e2e",
+      "name": "s_silverbullet24x24_00586e2e",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e40",
+      "name": "s_holybullet24x24_00586e40",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e50",
+      "name": "DAT_00586e50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00586e53",
+      "name": "s_itemlist.txt_00586e53",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00586e60",
+      "name": "DAT_00586e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "DAT_005b7620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9354",
+      "name": "DAT_005b9354",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bab60",
+      "name": "DAT_005bab60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bab64",
+      "name": "DAT_005bab64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c775f0",
+      "name": "DAT_01c775f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb03d0",
+      "name": "DAT_01cb03d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc30a0",
+      "name": "DAT_01cc30a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004a368e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadAssets_FUN_004a3660",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004c2dd3",
+        "call_type": "direct",
+        "caller": "FUN_004c2470",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004c23d1",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.039800995024875,
+    "instruction_count": 201,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 31,
+      "CBRANCH": 5,
+      "COPY": 137,
+      "INT_ADD": 39,
+      "INT_AND": 82,
+      "INT_CARRY": 32,
+      "INT_EQUAL": 79,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 33,
+      "INT_SEXT": 3,
+      "INT_SLESS": 39,
+      "INT_SUB": 138,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 39,
+      "RETURN": 1,
+      "STORE": 137,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 812
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "_DAT_01cc30a0 = DAT_005b7620;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00586da0",
+      "severity": "mild",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00586da0,\"invsize.txt\",&DAT_00586d91);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00586d91",
+      "severity": "mild",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00586da0,\"invsize.txt\",&DAT_00586d91);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005bab60",
+      "severity": "mild",
+      "text": "_fscanf(iVar1,\"%d,%d\\n\",&DAT_005bab60,&DAT_005bab64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005bab64",
+      "severity": "mild",
+      "text": "_fscanf(iVar1,\"%d,%d\\n\",&DAT_005bab60,&DAT_005bab64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00586e60",
+      "severity": "mild",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00586e60,\"itemlist.txt\",&DAT_00586e50)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00586e50",
+      "severity": "mild",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00586e60,\"itemlist.txt\",&DAT_00586e50)",
+      "type": "undefined_data"
+    }
+  ]
+}

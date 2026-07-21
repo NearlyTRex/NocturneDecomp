@@ -21,9 +21,9 @@
 ;   undefined4 DAT_005b7650
 ;
 ; Called Functions:
-;   FUN_0040a200
-;   FUN_0040dda0
-;   FUN_0047dc30
+;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
+;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   FUN_00533750
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 00533234
     MOV EBP,dword ptr [0x005b7650]      ; 00533235 | DAT_005b7650
     PUSH EBP                            ; 0053323b
-    CALL FUN_0047dc30                   ; 0053323c
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053323c
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 00533241
     TEST EAX,EAX                        ; 00533244
     JZ 0x00533252                       ; 00533246
@@ -61,8 +61,8 @@ section .text
     PUSH EAX                            ; 00533258
     MOV EAX,[0x005b7650]                ; 00533259 | DAT_005b7650
     PUSH EAX                            ; 0053325e
-    CALL FUN_0047dc30                   ; 0053325f
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053325f
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 00533264
     TEST EAX,EAX                        ; 00533267
     JZ 0x005333e2                       ; 00533269
@@ -117,8 +117,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0053331a
     PUSH EAX                            ; 0053331e
     PUSH EBX                            ; 0053331f
-    CALL FUN_0040a200                   ; 00533320
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a200()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00533320
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
     LEA EDX,[EBX + 0x2d8]               ; 00533325
     FLD float ptr [EDX]                 ; 0053332b
     FADD float ptr [EAX]                ; 0053332d
@@ -165,8 +165,8 @@ section .text
     PUSH EAX                            ; 0053339b
     MOV ESI,dword ptr [0x005b7650]      ; 0053339c | DAT_005b7650
     PUSH ESI                            ; 005333a2
-    CALL FUN_0047dc30                   ; 005333a3
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005333a3
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 005333a8
     TEST EAX,EAX                        ; 005333ab
     JZ 0x005333b9                       ; 005333ad
@@ -177,8 +177,8 @@ section .text
     PUSH EAX                            ; 005333bf
     MOV EDI,dword ptr [0x005b7650]      ; 005333c0 | DAT_005b7650
     PUSH EDI                            ; 005333c6
-    CALL FUN_0047dc30                   ; 005333c7
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005333c7
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 005333cc
     TEST EAX,EAX                        ; 005333cf
     JZ 0x005333e2                       ; 005333d1
@@ -226,8 +226,8 @@ section .text
     PUSH 0x3fa00000                     ; 00533464
         ;   Label: LAB_00533464
     PUSH 0x3f400000                     ; 00533469
-    CALL FUN_0040dda0                   ; 0053346e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dda0()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0053346e
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     MOV dword ptr [ESP + 0x44],EAX      ; 00533473
     FLD float ptr [ESP + 0x44]          ; 00533477
     FMUL float ptr [EBX + 0x54c]        ; 0053347b

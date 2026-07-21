@@ -25,10 +25,10 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FUN_005670e0
 ;   FUN_005671e4
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   FUN_0056f220
 ;   FUN_00571150
 ;   FUN_00572f40
@@ -118,8 +118,8 @@ section .text
     PUSH EDI                            ; 005730b8
     CALL dword ptr [0x005c1ac4]         ; 005730b9 | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 005730bf
-    CALL FUN_0056c73c                   ; 005730c2
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 005730c2
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     JMP 0x00573189                      ; 005730c7
         ;   XREF to: 00573189 (UNCONDITIONAL_JUMP)  ; LAB_00573189
     TEST byte ptr [EBP + -0x3],0x80     ; 005730cc
@@ -183,8 +183,8 @@ section .text
     PUSH EDI                            ; 0057314a
     CALL dword ptr [0x005c1ac4]         ; 0057314b | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 00573151
-    CALL FUN_0056c73c                   ; 00573154
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 00573154
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV ESP,EBP                         ; 00573159
     POP EBP                             ; 0057315b
     POP EDI                             ; 0057315c
@@ -290,8 +290,8 @@ section .text
     PUSH EDI                            ; 0057323c
     CALL dword ptr [0x005c1ac4]         ; 0057323d | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 00573243
-    CALL FUN_0056c73c                   ; 00573246
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 00573246
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV ESP,EBP                         ; 0057324b
     POP EBP                             ; 0057324d
     POP EDI                             ; 0057324e
@@ -370,8 +370,8 @@ section .text
     PUSH EDI                            ; 005732e8
     CALL dword ptr [0x005c1ac4]         ; 005732e9 | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 005732ef
-    CALL FUN_0056c73c                   ; 005732f2
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 005732f2
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV ESP,EBP                         ; 005732f7
     POP EBP                             ; 005732f9
     POP EDI                             ; 005732fa
@@ -446,8 +446,8 @@ section .text
     PUSH EDI                            ; 0057338c
     CALL dword ptr [0x005c1ac4]         ; 0057338d | PTR_FUN_005c1ac4
     ADD ESP,0x4                         ; 00573393
-    CALL FUN_0056c73c                   ; 00573396
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 00573396
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV ESP,EBP                         ; 0057339b
     POP EBP                             ; 0057339d
     POP EDI                             ; 0057339e

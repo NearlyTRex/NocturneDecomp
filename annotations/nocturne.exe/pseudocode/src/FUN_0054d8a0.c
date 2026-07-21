@@ -46,8 +46,8 @@ void FUN_0054d8a0(int param_1,int param_2)
     local_1c = 0;
     local_24 = 0;
   }
-  FUN_0055afb0(local_78,&local_3c,&local_24);
-  FUN_0055aa00(local_78,iVar1 * 0x30 + param_1 + 0xfd0);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_78,&local_3c,&local_24);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_78,iVar1 * 0x30 + param_1 + 0xfd0);
   puVar2 = local_a8;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

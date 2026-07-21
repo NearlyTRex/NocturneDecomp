@@ -40,13 +40,16 @@ void FUN_005148b0(char *param_1,char *param_2)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  FUN_00446740(param_2,*(uint *)(param_1 + 0x144));
+  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
+            (param_2,*(uint *)(param_1 + 0x144));
   if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {
-    FUN_0043ac60(PTR_DAT_005ad350,"Ambient set low by script\n");
+    engine_console_cpp_CConsole_printf_FUN_0043ac60
+              (PTR_DAT_005ad350,"Ambient set low by script\n");
   }
   if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {
     return;
   }
-  FUN_0043ac60(PTR_DAT_005ad350,"Ambient set ridiculously high\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (PTR_DAT_005ad350,"Ambient set ridiculously high\n");
   return;
 }

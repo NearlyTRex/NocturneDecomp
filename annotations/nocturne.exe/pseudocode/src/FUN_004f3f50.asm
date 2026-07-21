@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_004f3f00 at 004f3f06
-;   FUN_004f4630 at 004f463d
-;   FUN_004f47b0 at 004f47c2
-;   FUN_004f4c80 at 004f4c90
-;   FUN_004f4e40 at 004f4e4a
+;   cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00 at 004f3f06
+;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f47c2
+;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4e4a
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 at 004f4c90
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f463d
 ;
 ; Called Functions:
-;   FUN_004f3f20
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20
 ;   FUN_005638d0
-;   FUN_00564486
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -31,12 +31,12 @@ section .text
     MOV ESI,dword ptr [EBX + 0x20]      ; 004f3f5d
         ;   Label: LAB_004f3f5d
     PUSH ESI                            ; 004f3f60
-    CALL FUN_00564486                   ; 004f3f61
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004f3f61
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004f3f66
     PUSH EBX                            ; 004f3f69
-    CALL FUN_004f3f20                   ; 004f3f6a
-        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3f20()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20 ; 004f3f6a
+        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20()
     ADD ESP,0x4                         ; 004f3f6f
     POP ESI                             ; 004f3f72
     POP EBX                             ; 004f3f73

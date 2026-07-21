@@ -9,6 +9,6 @@
 void FUN_00565106(int param_1,uint param_2)
 
 {
-  FUN_00565264(param_1 - *(int *)(param_1 + -4),param_2);
+  crt_fstream_cpp_ifstream_dtor_FUN_00565264(param_1 - *(int *)(param_1 + -4),param_2);
   return;
 }

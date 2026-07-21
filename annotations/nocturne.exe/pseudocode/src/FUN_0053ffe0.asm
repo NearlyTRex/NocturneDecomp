@@ -14,8 +14,8 @@
 ;   undefined4 DAT_00595eb7
 ;
 ; Called Functions:
-;   FUN_0042a9d0
-;   FUN_0053a660
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH EAX                            ; 005400d9
         ;   Label: LAB_005400d9
     PUSH EBX                            ; 005400da
-    CALL FUN_0042a9d0                   ; 005400db
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a9d0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 005400db
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
     MOV dword ptr [ESP + 0x8],EAX       ; 005400e0
     FLD float ptr [ESP + 0x8]           ; 005400e4
     ADD ESP,0x8                         ; 005400e8
@@ -276,8 +276,8 @@ section .text
     PUSH 0x0                            ; 0054027f
         ;   Label: LAB_0054027f
     PUSH EBX                            ; 00540281
-    CALL FUN_0053a660                   ; 00540282
-        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined FUN_0053a660()
+    CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 ; 00540282
+        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660()
     MOV EAX,dword ptr [EBX + 0x1fa94]   ; 00540287
     MOV ECX,dword ptr [EAX + 0x2d4]     ; 0054028d
     ADD ESP,0x8                         ; 00540293
@@ -296,8 +296,8 @@ section .text
         ;   Label: LAB_005402bb
     PUSH EBP                            ; 005402c1
     PUSH EBX                            ; 005402c2
-    CALL FUN_0053a660                   ; 005402c3
-        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined FUN_0053a660()
+    CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 ; 005402c3
+        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660()
     MOV EDX,dword ptr [EBX + 0x1fa98]   ; 005402c8
     ADD ESP,0x8                         ; 005402ce
     TEST EDX,EDX                        ; 005402d1

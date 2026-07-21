@@ -15,6 +15,7 @@ void FUN_004d76e0(int param_1,uint param_2)
   if (iVar1 == 0) {
     return;
   }
-  FUN_0045ee60(DAT_005ae704,param_1 + 0xe8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
+            (DAT_005ae704,param_1 + 0xe8);
   return;
 }

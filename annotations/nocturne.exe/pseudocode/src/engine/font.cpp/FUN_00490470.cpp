@@ -32,7 +32,7 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
   int local_18;
   byte *local_14;
   
-  local_40 = (int *)FUN_00564c18(param_4 * 4);
+  local_40 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);
   if (local_40 == (int *)0x0) {
     _DAT_01cc4800 = "..\\engine\\font.cpp";
     _DAT_01cc4804 = 0x1b9;
@@ -51,8 +51,7 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
     } while (iVar3 < param_3 * param_4);
   }
   if (local_20 == *(uint *)(param_1 + 0x3188)) {
-    FUN_00563c90(local_16c,"No character markers found in font file (%s).",param_2 * 0x50 + param_1 + 4)
-    ;
+    _sprintf(local_16c,"No character markers found in font file (%s).",param_2 * 0x50 + param_1 + 4);
     _DAT_01cc4804 = 0x1ce;
     _DAT_01cc4800 = "..\\engine\\font.cpp";
     FUN_004c8440(local_16c);
@@ -100,7 +99,7 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
             local_18 = 1;
             local_28 = iVar6;
             if (0xff < iVar3) {
-              FUN_00563c90(local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar3);
+              _sprintf(local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar3);
               _DAT_01cc4804 = 0x202;
               _DAT_01cc4800 = "..\\engine\\font.cpp";
               FUN_004c8440(local_16c);
@@ -114,9 +113,9 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
           if (*(int *)(param_1 + 0x3168) < iVar1) {
             *(int *)(param_1 + 0x3168) = iVar1;
           }
-          iVar1 = FUN_00490920(param_1,*(uint *)(iVar5 + 0x1d68),
-                               *(uint *)(iVar5 + 0x2568),local_24[1] - (*local_24 + 1),param_3
-                              );
+          iVar1 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_00490920
+                            (param_1,*(uint *)(iVar5 + 0x1d68),*(uint *)(iVar5 + 0x2568)
+                             ,local_24[1] - (*local_24 + 1),param_3);
           *(int *)(iVar5 + 0x2968) = iVar1;
           if (*(int *)(param_1 + 0x316c) < iVar1) {
             *(int *)(param_1 + 0x316c) = iVar1;
@@ -133,8 +132,9 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
           *(int *)(param_1 + 0x3168) = iVar1;
         }
         iVar6 = iVar3 * 4 + param_1;
-        iVar5 = FUN_00490920(param_1,*(uint *)(iVar6 + 0x1d68),*(uint *)(iVar6 + 0x2568)
-                             ,local_30[1] - (*local_30 + 1),param_3);
+        iVar5 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_00490920
+                          (param_1,*(uint *)(iVar6 + 0x1d68),*(uint *)(iVar6 + 0x2568),
+                           local_30[1] - (*local_30 + 1),param_3);
         *(int *)(iVar6 + 0x2968) = iVar5;
         if (*(int *)(param_1 + 0x316c) < iVar5) {
           *(int *)(param_1 + 0x316c) = iVar5;
@@ -154,6 +154,6 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
     } while (param_5 < iVar3);
   }
   *(uint *)(param_1 + 0x3170) = *(uint *)(param_1 + 0x316c);
-  FUN_00564486(local_40);
+  shape_memdbg_cpp_free_FUN_00564486(local_40);
   return;
 }

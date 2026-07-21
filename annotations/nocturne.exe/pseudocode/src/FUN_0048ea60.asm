@@ -13,8 +13,8 @@
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
-;   FUN_0040a240
-;   FUN_0048c3c0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0
 ;   FUN_004940d0
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0048ea91
     PUSH EAX                            ; 0048ea95
     PUSH EBX                            ; 0048ea96
-    CALL FUN_0040a240                   ; 0048ea97
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0048ea97
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 0048ea9c
     PUSH 0x1                            ; 0048ea9f
     PUSH 0x3                            ; 0048eaa1
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 0048eaab
     MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | DAT_005b80f0
     PUSH ECX                            ; 0048eab2
-    CALL FUN_0048c3c0                   ; 0048eab3
-        ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c3c0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0 ; 0048eab3
+        ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0()
     MOV ESI,dword ptr [EBX + 0x578]     ; 0048eab8
     ADD ESP,0x14                        ; 0048eabe
     TEST ESI,ESI                        ; 0048eac1

@@ -36,17 +36,21 @@ void FUN_004cb010(int param_1,int param_2,float param_3)
   local_28 = param_3 * _DAT_00588026;
   local_14 = local_28 / _DAT_005a0044;
   pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);
-  FUN_0040a240(param_1,local_3c,pfVar12 + 9);
-  uVar6 = FUN_004caef0(pfVar12 + 3,pfVar12[6],local_14,pfVar12 + 0x2b,
-                       "p?manpuz-chargegemloop-red.wav" + 2,local_3c);
-  uVar7 = FUN_004caef0(pfVar12 + 4,pfVar12[7],local_14,pfVar12 + 0x2c,
-                       "manpuz-chargegemloop-green.wav",local_3c);
-  uVar8 = FUN_004caef0(pfVar12 + 5,pfVar12[8],local_14,pfVar12 + 0x2d,
-                       "manpuz-chargegemloop-blue.wav",local_3c);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,pfVar12 + 9);
+  uVar6 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
+                    (pfVar12 + 3,pfVar12[6],local_14,pfVar12 + 0x2b,
+                     "p?manpuz-chargegemloop-red.wav" + 2,local_3c);
+  uVar7 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
+                    (pfVar12 + 4,pfVar12[7],local_14,pfVar12 + 0x2c,
+                     "manpuz-chargegemloop-green.wav",local_3c);
+  uVar8 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
+                    (pfVar12 + 5,pfVar12[8],local_14,pfVar12 + 0x2d,
+                     "manpuz-chargegemloop-blue.wav",local_3c);
   pfVar12[8] = 0.0;
   pfVar12[7] = pfVar12[8];
   pfVar12[6] = pfVar12[7];
-  FUN_004cae20(param_1,param_2,&local_30,&local_2c,&local_24);
+  core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
+            (param_1,param_2,&local_30,&local_2c,&local_24);
   local_14 = local_28 / _DAT_005a0048;
   local_20 = local_30 - *pfVar12;
   bVar5 = 1;
@@ -100,16 +104,16 @@ LAB_004cb1a0:
       (((piVar11[2] & 0x7fffffffU) == 0 && ((piVar11[1] & 0x7fffffffU) == 0)))) &&
      (((float)piVar11[0x13] == pfVar12[3] &&
       (((float)piVar11[0x14] == pfVar12[4] && ((float)piVar11[0x15] == pfVar12[5])))))) {
-    uVar9 = FUN_004cb8f0(param_1,param_2);
-    iVar10 = FUN_004cba40(param_1,uVar9);
+    uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);
+    iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);
     if (iVar10 == 0) {
-      FUN_004cb5a0(param_1,param_2);
+      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);
       return;
     }
-    uVar9 = FUN_004cb8e0(param_1,param_2);
-    iVar10 = FUN_004cba40(param_1,uVar9);
+    uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);
+    iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);
     if (iVar10 == 0) {
-      FUN_004cb740(param_1,param_2);
+      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);
       return;
     }
   }

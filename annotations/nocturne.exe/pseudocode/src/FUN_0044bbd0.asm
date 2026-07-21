@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059bf40
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0044bbf6 (CONDITIONAL_JUMP)  ; LAB_0044bbf6
     PUSH 0x1                            ; 0044bbdc
     PUSH EBX                            ; 0044bbde
-    CALL FUN_00409ea0                   ; 0044bbdf
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 0044bbdf
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 0044bbe4
     MOV DL,byte ptr [ESP + 0xc]         ; 0044bbe7
     MOV EBX,EAX                         ; 0044bbeb
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59bf40                       ; 0044bbf6 | DAT_0059bf40
         ;   Label: LAB_0044bbf6
     PUSH EBX                            ; 0044bbfb
-    CALL FUN_0056445f                   ; 0044bbfc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0044bbfc
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0044bc01
     PUSH EAX                            ; 0044bc04
-    CALL FUN_00564486                   ; 0044bc05
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0044bc05
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0044bc0a
     MOV EAX,EBX                         ; 0044bc0d
     POP EBX                             ; 0044bc0f

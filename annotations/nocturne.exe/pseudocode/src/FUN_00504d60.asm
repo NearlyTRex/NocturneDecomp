@@ -9,7 +9,7 @@
 ;   FUN_00504d90 at 00504dad
 ;
 ; Called Functions:
-;   FUN_00504bf0
+;   core_script.cpp_CScript_setSpeaker_FUN_00504bf0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 00504d65
     PUSH EDX                            ; 00504d68
     PUSH EBX                            ; 00504d69
-    CALL FUN_00504bf0                   ; 00504d6a
-        ;   XREF to: 00504bf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00504bf0()
+    CALL core_script.cpp_CScript_setSpeaker_FUN_00504bf0 ; 00504d6a
+        ;   XREF to: 00504bf0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_setSpeaker_FUN_00504bf0()
     MOV dword ptr [EBX + 0x44],0x0      ; 00504d6f
     ADD ESP,0x8                         ; 00504d76
     MOV dword ptr [EBX + 0x48],0x0      ; 00504d79

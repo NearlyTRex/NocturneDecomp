@@ -49,7 +49,7 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
               *(uint *)(local_1c * 0x30 + 0x1c + *param_1) = (uint)param_2[8] << 8;
             }
             param_2 = param_2 + 9;
-            FUN_00457a00(&local_24,3);
+            engine_drender_cpp_renderTriangleTextured_FUN_00457a00(&local_24,3);
           }
         }
         else {
@@ -58,7 +58,7 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
           if (0 < param_3) {
             local_14 = 0;
             do {
-              iVar3 = FUN_004f9cb0(param_2);
+              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_004f9cb0(param_2);
               if (iVar3 != 0) {
                 iVar4 = iVar4 + 1;
                 iVar3 = local_14 + 4;
@@ -75,7 +75,8 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
             } while (local_18 < param_3);
           }
           if (0 < iVar4) {
-            FUN_005327c0(*param_1,&DAT_005ae70c,iVar4,_DAT_01c039a0);
+            wincore_windll_cpp_drawPolyList2_FUN_005327c0
+                      (*param_1,&DAT_005ae70c,iVar4,_DAT_01c039a0);
             return;
           }
         }
@@ -95,7 +96,7 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
             local_1c = (uint)param_2[2];
             param_3 = param_3 + -1;
             param_2 = param_2 + 9;
-            FUN_00458080(&local_24,3);
+            engine_drender_cpp_renderTriangleSimple_FUN_00458080(&local_24,3);
             uVar1 = _DAT_01c039a0;
             uVar2 = _DAT_01c039a4;
           } while (0 < param_3);
@@ -108,7 +109,8 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
       if (0 < param_3) {
         do {
           iVar4 = iVar4 + 1;
-          FUN_0045f5e0(param_1,param_2,param_4);
+          engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(param_1,param_2,param_4)
+          ;
           param_2 = param_2 + 9;
         } while (iVar4 < param_3);
         return;
@@ -120,7 +122,7 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
     if (0 < param_3) {
       do {
         iVar4 = iVar4 + 1;
-        FUN_00461bd0(param_1,param_2,param_4);
+        engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(param_1,param_2,param_4);
         param_2 = param_2 + 9;
       } while (iVar4 < param_3);
     }

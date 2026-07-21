@@ -8,8 +8,8 @@
 ;   FUN_00490d20 at 00490d4f
 ;
 ; Called Functions:
-;   FUN_00490ce0
-;   FUN_00563a08
+;   crt_stdio.c_vsprintf_FUN_00563a08
+;   engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH ECX                            ; 00490d89
     LEA EAX,[ESP + 0x8]                 ; 00490d8a
     PUSH EAX                            ; 00490d8e
-    CALL FUN_00563a08                   ; 00490d8f
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00490d8f
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
     ADD ESP,0xc                         ; 00490d94
     MOV EAX,ESP                         ; 00490d97
     PUSH EAX                            ; 00490d99
@@ -42,8 +42,8 @@ section .text
     PUSH EBP                            ; 00490db9
     MOV EAX,dword ptr [ESP + 0x1028]    ; 00490dba
     PUSH EAX                            ; 00490dc1
-    CALL FUN_00490ce0                   ; 00490dc2
-        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00490ce0()
+    CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 00490dc2
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
     ADD ESP,0x18                        ; 00490dc7
     ADD ESP,0x1000                      ; 00490dca
     POP EBP                             ; 00490dd0

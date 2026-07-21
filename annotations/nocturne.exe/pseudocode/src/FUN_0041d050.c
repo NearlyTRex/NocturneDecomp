@@ -45,11 +45,11 @@ uint FUN_0041d050(float *param_1)
   iVar2 = 0;
   local_14 = 0;
   do {
-    FUN_0041cc70(param_1,&local_2c,iVar4);
+    core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(param_1,&local_2c,iVar4);
     local_20 = (int)ROUND(local_2c * _DAT_0059aa80);
     local_1c = (int)ROUND(local_28 * _DAT_0059aa80);
     local_18 = (int)ROUND(local_24 * _DAT_0059aa80);
-    FUN_0053075c(*0x01B4D738 + iVar2,&local_20);
+    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + iVar2,&local_20);
     if ((*(byte *)(iVar2 + 0x13 + *DAT_005ae704) & 0x80) == 0) {
       uVar1 = 0;
     }
@@ -63,9 +63,9 @@ uint FUN_0041d050(float *param_1)
   if (uVar1 != 0) {
     return 0;
   }
-  FUN_00461050(DAT_005ae704,local_14);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,local_14);
   local_68 = 4;
-  FUN_00460fa0(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,0);
   local_38 = (int)ROUND(*param_1 * _DAT_0059aa80);
   local_34 = (int)ROUND(param_1[1] * _DAT_0059aa80);
   local_30 = (int)ROUND(param_1[2] * _DAT_0059aa80);
@@ -78,13 +78,13 @@ uint FUN_0041d050(float *param_1)
   uVar5 = 1;
   local_58 = -local_38;
   local_64 = 0xffffffff;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_48 = 2;
     local_54 = 0;
     local_50 = 4;
     local_4c = 6;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -93,13 +93,13 @@ uint FUN_0041d050(float *param_1)
   local_64 = 1;
   local_60 = 0;
   local_5c = 0;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_54 = 1;
     local_50 = 3;
     local_4c = 7;
     local_48 = 5;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -108,13 +108,13 @@ uint FUN_0041d050(float *param_1)
   local_64 = 0;
   local_58 = -local_34;
   local_5c = 0;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_48 = 4;
     local_54 = 0;
     local_50 = 1;
     local_4c = 5;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -123,13 +123,13 @@ uint FUN_0041d050(float *param_1)
   local_64 = 0;
   local_60 = 1;
   local_5c = 0;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_54 = 2;
     local_50 = 6;
     local_4c = 7;
     local_48 = 3;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -138,13 +138,13 @@ uint FUN_0041d050(float *param_1)
   local_60 = 0;
   local_58 = -local_30;
   local_5c = 0xffffffff;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_48 = 1;
     local_54 = 0;
     local_50 = 2;
     local_4c = 3;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -153,20 +153,20 @@ uint FUN_0041d050(float *param_1)
   local_64 = 0;
   local_60 = 0;
   local_5c = 1;
-  iVar2 = FUN_00404610(&local_64);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&local_64);
   if (iVar2 != 0) {
     local_54 = 4;
     local_50 = 5;
     local_4c = 7;
     local_48 = 6;
-    iVar2 = FUN_0050e490(0x01E57284,auStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,auStack_6c);
     uVar3 = uVar5;
     if (iVar2 == 0) {
       uVar3 = 0;
     }
   }
 LAB_0041d3f6:
-  FUN_00461050(DAT_005ae704,1);
-  FUN_00460fa0(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,1);
   return uVar3;
 }

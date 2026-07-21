@@ -12,7 +12,7 @@ void FUN_0051b7d0(int param_1)
   if (*(int *)(param_1 + 0x2234) == 0) {
     return;
   }
-  FUN_00564486(*(int *)(param_1 + 0x2234));
+  shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 0x2234));
   *(uint *)(param_1 + 0x2234) = 0;
   return;
 }

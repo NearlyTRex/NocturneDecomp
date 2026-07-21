@@ -32,7 +32,7 @@ DWORD FUN_00568f70(uint param_1,LPVOID param_2,DWORD param_3)
                      (LPOVERLAPPED)0x0);
     if (BVar3 == 0) {
       (*(code *)PTR_FUN_005c1ac4)(param_1);
-      uVar2 = FUN_0056c73c();
+      uVar2 = __set_errno();
       return uVar2;
     }
     (*(code *)PTR_FUN_005c1ac4)(param_1);

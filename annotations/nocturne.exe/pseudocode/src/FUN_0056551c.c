@@ -16,7 +16,7 @@ int FUN_0056551c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_
   
   *(byte *)(param_6 + 0xc) = *(byte *)(param_6 + 0xc) & 0xfc;
   *(uint *)(param_6 + 0xc) = *(uint *)(param_6 + 0xc) | param_3;
-  cVar1 = FUN_00564860(param_2);
+  cVar1 = tolower(param_2);
   if (cVar1 == 'r') {
     uVar3 = 0;
     if ((param_3 & 2) != 0) {
@@ -59,7 +59,7 @@ int FUN_0056551c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_
   *(uint *)(*(int *)(param_6 + 8) + 0x15) = 0;
   *(uint *)(*(int *)(param_6 + 8) + 8) = 0;
   if ((param_3 & 0x80) != 0) {
-    FUN_0056582c(param_6,0,2);
+    _fseek(param_6,0,2);
   }
   FUN_0056bbb0(param_6);
   return param_6;

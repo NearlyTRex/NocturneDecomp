@@ -24,7 +24,7 @@ uint FUN_0056c750(uint param_1,char *param_2)
     uVar1 = 0x40;
   }
   if ((param_1 & uVar1) != 0) {
-    iVar2 = FUN_00564520(param_2,&DAT_00598bd4);
+    iVar2 = _stricmp(param_2,&DAT_00598bd4);
     pcVar5 = param_2;
     if (iVar2 == 0) {
       pcVar5 = "conin$";
@@ -60,7 +60,8 @@ uint FUN_0056c750(uint param_1,char *param_2)
       } while (*pcVar5 != '\0');
       pcVar5 = (char *)0x0;
 LAB_0056c831:
-      if ((pcVar5 != (char *)0x0) && (iVar2 = FUN_005649c0(pcVar5 + 1,&DAT_00598be0), iVar2 == 0)) {
+      if ((pcVar5 != (char *)0x0) &&
+         (iVar2 = _strcmp(pcVar5 + 1,&DAT_00598be0), iVar2 == 0)) {
         uVar1 = uVar4 | 0x8049;
       }
     }

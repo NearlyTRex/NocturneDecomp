@@ -19,7 +19,7 @@ byte * FUN_005687bc(void)
   bVar6 = 0;
   if (DAT_005c1b24 == '\0') {
     for (ppuVar4 = &PTR_DAT_005c1b10; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1) {
-      pcVar2 = (char *)FUN_00566e10(*ppuVar4);
+      pcVar2 = (char *)getenv(*ppuVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;
         pcVar5 = pcVar2;
@@ -30,7 +30,7 @@ byte * FUN_005687bc(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (~uVar3 - 1 < 0x104) {
-          FUN_00565d00(&DAT_005c1b24,pcVar2,0x103);
+          _fullpath(&DAT_005c1b24,pcVar2,0x103);
           break;
         }
       }

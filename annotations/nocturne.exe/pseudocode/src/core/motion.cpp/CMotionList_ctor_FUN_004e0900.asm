@@ -1,0 +1,19 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(undefined4 *param_1)
+;
+;
+; XREF[1]:
+;   FUN_00517350 at 0051735f
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004e0900
+        ;   Label: core_motion.cpp_CMotionList_ctor_FUN_004e0900
+    MOV dword ptr [EAX + 0x964],0x0     ; 004e0904
+    MOV dword ptr [EAX],0x0             ; 004e090e
+    RET                                 ; 004e0914
+

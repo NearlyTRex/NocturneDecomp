@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00445020 at 00445038
+;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 at 00445038
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad450
@@ -33,18 +33,18 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   FUN_0043fe60
-;   FUN_00444810
+;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810
+;   core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60
+;   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
+;   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
+;   core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
+;   core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
+;   core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
+;   core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
+;   core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
+;   core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
 ;   FUN_00447bb0
 ;   FUN_00447c60
-;   FUN_00464afc
-;   FUN_00464fda
-;   FUN_004657a7
-;   FUN_00465c9b
-;   FUN_00465fc9
-;   FUN_00466520
-;   FUN_00466930
-;   FUN_00466e94
 ;
 ; *****************************************************************************
 
@@ -88,13 +88,13 @@ section .text
     MOV EBX,dword ptr [0x0140d778]      ; 00447146 | DAT_0140d778
     PUSH EBX                            ; 0044714c
     PUSH 0x140d784                      ; 0044714d
-    CALL FUN_0043fe60                   ; 00447152
-        ;   XREF to: 0043fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043fe60()
+    CALL core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60 ; 00447152
+        ;   XREF to: 0043fe60 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60()
     ADD ESP,0xc                         ; 00447157
     PUSH EDI                            ; 0044715a
         ;   Label: LAB_0044715a
-    CALL FUN_00444810                   ; 0044715b
-        ;   XREF to: 00444810 (UNCONDITIONAL_CALL)  ; undefined FUN_00444810()
+    CALL core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810 ; 0044715b
+        ;   XREF to: 00444810 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810()
     MOV EAX,[0x005ad458]                ; 00447160 | DAT_005ad458
     MOV ECX,dword ptr [0x005ad450]      ; 00447165 | DAT_005ad450
     MOV EDX,dword ptr [0x005b7624]      ; 0044716b | DAT_005b7624
@@ -171,8 +171,8 @@ section .text
     PUSH EAX                            ; 00447277
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00447278
     PUSH EDX                            ; 0044727c
-    CALL FUN_00466930                   ; 0044727d
-        ;   XREF to: 00466930 (UNCONDITIONAL_CALL)  ; undefined FUN_00466930()
+    CALL core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930 ; 0044727d
+        ;   XREF to: 00466930 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930()
     ADD ESP,0x14                        ; 00447282
     CMP dword ptr [EDI + 0x14c],0x2     ; 00447285
         ;   Label: LAB_00447285
@@ -205,8 +205,8 @@ section .text
     PUSH ECX                            ; 004472c5
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004472c6
     PUSH EBX                            ; 004472ca
-    CALL FUN_00465fc9                   ; 004472cb
-        ;   XREF to: 00465fc9 (UNCONDITIONAL_CALL)  ; undefined FUN_00465fc9()
+    CALL core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9 ; 004472cb
+        ;   XREF to: 00465fc9 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9()
     ADD ESP,0x14                        ; 004472d0
     JMP 0x0044728e                      ; 004472d3
         ;   XREF to: 0044728e (UNCONDITIONAL_JUMP)  ; LAB_0044728e
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 004472eb
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004472ec
     PUSH EDX                            ; 004472f0
-    CALL FUN_00466e94                   ; 004472f1
-        ;   XREF to: 00466e94 (UNCONDITIONAL_CALL)  ; undefined FUN_00466e94()
+    CALL core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94 ; 004472f1
+        ;   XREF to: 00466e94 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94()
     ADD ESP,0x14                        ; 004472f6
     CMP dword ptr [EDI + 0x14c],0x2     ; 004472f9
         ;   Label: LAB_004472f9
@@ -238,8 +238,8 @@ section .text
     PUSH ECX                            ; 00447313
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00447314
     PUSH EBX                            ; 00447318
-    CALL FUN_00466520                   ; 00447319
-        ;   XREF to: 00466520 (UNCONDITIONAL_CALL)  ; undefined FUN_00466520()
+    CALL core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520 ; 00447319
+        ;   XREF to: 00466520 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520()
     ADD ESP,0x14                        ; 0044731e
     JMP 0x0044728e                      ; 00447321
         ;   XREF to: 0044728e (UNCONDITIONAL_JUMP)  ; LAB_0044728e
@@ -314,8 +314,8 @@ section .text
     PUSH EAX                            ; 004473fc
     MOV EDX,dword ptr [ESP + 0x10]      ; 004473fd
     PUSH EDX                            ; 00447401
-    CALL FUN_004657a7                   ; 00447402
-        ;   XREF to: 004657a7 (UNCONDITIONAL_CALL)  ; undefined FUN_004657a7()
+    CALL core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7 ; 00447402
+        ;   XREF to: 004657a7 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7()
     ADD ESP,0x14                        ; 00447407
     CMP dword ptr [EDI + 0x14c],0x2     ; 0044740a
         ;   Label: LAB_0044740a
@@ -340,8 +340,8 @@ section .text
     PUSH ECX                            ; 00447439
     MOV EBX,dword ptr [ESP + 0x10]      ; 0044743a
     PUSH EBX                            ; 0044743e
-    CALL FUN_00464afc                   ; 0044743f
-        ;   XREF to: 00464afc (UNCONDITIONAL_CALL)  ; undefined FUN_00464afc()
+    CALL core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc ; 0044743f
+        ;   XREF to: 00464afc (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc()
     ADD ESP,0x14                        ; 00447444
     JMP 0x00447413                      ; 00447447
         ;   XREF to: 00447413 (UNCONDITIONAL_JUMP)  ; LAB_00447413
@@ -358,8 +358,8 @@ section .text
     PUSH EAX                            ; 00447463
     MOV EDX,dword ptr [ESP + 0x10]      ; 00447464
     PUSH EDX                            ; 00447468
-    CALL FUN_00465c9b                   ; 00447469
-        ;   XREF to: 00465c9b (UNCONDITIONAL_CALL)  ; undefined FUN_00465c9b()
+    CALL core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b ; 00447469
+        ;   XREF to: 00465c9b (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b()
     ADD ESP,0x14                        ; 0044746e
     CMP dword ptr [EDI + 0x14c],0x2     ; 00447471
         ;   Label: LAB_00447471
@@ -374,8 +374,8 @@ section .text
     PUSH ECX                            ; 0044748b
     MOV EBX,dword ptr [ESP + 0x10]      ; 0044748c
     PUSH EBX                            ; 00447490
-    CALL FUN_00464fda                   ; 00447491
-        ;   XREF to: 00464fda (UNCONDITIONAL_CALL)  ; undefined FUN_00464fda()
+    CALL core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda ; 00447491
+        ;   XREF to: 00464fda (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda()
     ADD ESP,0x14                        ; 00447496
     JMP 0x00447413                      ; 00447499
         ;   XREF to: 00447413 (UNCONDITIONAL_JUMP)  ; LAB_00447413

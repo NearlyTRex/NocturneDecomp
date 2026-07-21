@@ -29,9 +29,11 @@ void FUN_004c45a0(int param_1)
   if (*(int *)(param_1 + 0x2d8) == 0) {
     return;
   }
-  FUN_0055afb0(local_dc,param_1 + 0x2dc,param_1 + 0x2e8);
-  FUN_0055afb0(local_ac,*(int *)(param_1 + 0x2d8) + 0x20,*(int *)(param_1 + 0x2d8) + 0x30);
-  FUN_0055aa00(local_dc,local_ac);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_dc,param_1 + 0x2dc,param_1 + 0x2e8);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_ac,*(int *)(param_1 + 0x2d8) + 0x20,*(int *)(param_1 + 0x2d8) + 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_dc,local_ac);
   puVar1 = local_4c;
   puVar3 = local_7c;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -45,12 +47,12 @@ void FUN_004c45a0(int param_1)
   *(uint *)(param_1 + 0x20) = local_70;
   *(uint *)(param_1 + 0x24) = local_60;
   *(uint *)(param_1 + 0x28) = local_50;
-  puVar1 = (uint *)FUN_0055b180(local_7c,local_10);
+  puVar1 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_7c,local_10);
   if ((uint *)(param_1 + 0x30) != puVar1) {
     *(uint *)(param_1 + 0x30) = *puVar1;
     *(uint *)(param_1 + 0x34) = puVar1[1];
     *(uint *)(param_1 + 0x38) = puVar1[2];
   }
-  FUN_0040a000(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
   return;
 }

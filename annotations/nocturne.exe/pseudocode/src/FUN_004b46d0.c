@@ -12,13 +12,13 @@ int FUN_004b46d0(uint param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_00423f40(param_1);
-  iVar1 = FUN_004efd50(iVar1 + 0xbcc0);
-  iVar2 = FUN_004bedc0(iVar1 + 0x138e0);
+  iVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00423f40(param_1);
+  iVar1 = core_path_cpp_CPathMap_ctor_FUN_004efd50(iVar1 + 0xbcc0);
+  iVar2 = core_inv_cpp_CInventory_ctor_FUN_004bedc0(iVar1 + 0x138e0);
   iVar1 = iVar2 + -0x1f5a0;
   *(int *)(iVar2 + 4) = iVar1;
   *(byte ***)(iVar2 + -0x1f454) = &PTR_FUN_0059eb34;
-  FUN_00563cc0(iVar2 + -0x1390c,0,0x2c);
+  memset(iVar2 + -0x1390c,0,0x2c);
   *(uint *)(iVar2 + -0x13914) = 0;
   *(uint *)(iVar2 + -0x1c7cc) = 0x3f19999a;
   *(uint *)(iVar2 + -0x1c7c8) = 0x3f666666;
@@ -36,7 +36,7 @@ int FUN_004b46d0(uint param_1)
   *(uint *)(iVar2 + 0x478) = 0;
   *(uint *)(iVar2 + 0x47c) = 0;
   *(uint *)(iVar2 + 0x460) = 0;
-  FUN_004b4dd0(iVar1);
+  core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(iVar1);
   *(uint *)(iVar2 + 0x498) = 2;
   *(uint *)(iVar2 + -0x1cf84) = 0;
   *(uint *)(iVar2 + -0x1d164) = 1;

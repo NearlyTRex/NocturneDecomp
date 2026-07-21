@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004950a0(int param_1)
+; void FUN_004950a0(undefined *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
@@ -14,9 +14,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004946c0 at 00494767
-;   FUN_00494950 at 004949a4
 ;   FUN_00494e80 at 00494eac
+;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 at 004949a4
+;   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 at 00494767
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00495078 = 004950c1
@@ -28,14 +28,14 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_0040a000
-;   FUN_0040a240
-;   FUN_00453080
-;   FUN_00454530
-;   FUN_004952b0
-;   FUN_00495340
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
+;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340
+;   core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0
+;   crt_math.c_round_FUN_00563a30
 ;   FUN_004c8440
-;   FUN_00563a30
 ;
 ; *****************************************************************************
 
@@ -59,18 +59,18 @@ section .text
     PUSH 0x0                            ; 004950c7
     PUSH EBP                            ; 004950c9
         ;   Label: LAB_004950c9
-    CALL FUN_00495340                   ; 004950ca
-        ;   XREF to: 00495340 (UNCONDITIONAL_CALL)  ; undefined FUN_00495340()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340 ; 004950ca
+        ;   XREF to: 00495340 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340()
     ADD ESP,0xc                         ; 004950cf
         ;   Label: LAB_004950cf
     PUSH EBP                            ; 004950d2
         ;   Label: LAB_004950d2
-    CALL FUN_0040a000                   ; 004950d3
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a000()
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004950d3
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
     FLD float ptr [EBP + 0x178]         ; 004950d8
     ADD ESP,0x4                         ; 004950de
-    CALL FUN_00563a30                   ; 004950e1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004950e1
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x24]        ; 004950e6
     MOV EBX,dword ptr [ESP + 0x24]      ; 004950ea
     MOV EDX,dword ptr [EBP + 0x480]     ; 004950ee
@@ -79,15 +79,15 @@ section .text
     LEA ESI,[EDX*0x4 + 0x0]             ; 004950fb
     PUSH EAX                            ; 00495102
     SUB ESI,EDX                         ; 00495103
-    CALL FUN_00454530                   ; 00495105
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00495105
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     ADD ESP,0x4                         ; 0049510a
     LEA EDI,[ESP + 0x10]                ; 0049510d
     PUSH EAX                            ; 00495111
     SHL ESI,0x2                         ; 00495112
     LEA EBX,[ESP + 0x20]                ; 00495115
-    CALL FUN_00453080                   ; 00495119
-        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined FUN_00453080()
+    CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080 ; 00495119
+        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080()
     ADD ESI,EAX                         ; 0049511e
     ADD ESP,0x8                         ; 00495120
     LEA EAX,[ESP + 0xc]                 ; 00495123
@@ -108,8 +108,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00495151
     PUSH EAX                            ; 00495155
     PUSH EBP                            ; 00495156
-    CALL FUN_0040a240                   ; 00495157
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00495157
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD EBP,0x488                       ; 0049515c
     ADD ESP,0xc                         ; 00495162
     CMP EBP,EAX                         ; 00495165
@@ -126,40 +126,40 @@ section .text
         ;   Label: caseD_1
     PUSH 0x43030000                     ; 0049517a
     PUSH EBP                            ; 0049517f
-    CALL FUN_004952b0                   ; 00495180
-        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004952b0()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0 ; 00495180
+        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0()
     JMP 0x004950cf                      ; 00495185
         ;   XREF to: 004950cf (UNCONDITIONAL_JUMP)  ; LAB_004950cf
     PUSH 0x445dc000                     ; 0049518a
         ;   Label: caseD_2
     PUSH 0x4403c000                     ; 0049518f
     PUSH EBP                            ; 00495194
-    CALL FUN_004952b0                   ; 00495195
-        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004952b0()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0 ; 00495195
+        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0()
     JMP 0x004950cf                      ; 0049519a
         ;   XREF to: 004950cf (UNCONDITIONAL_JUMP)  ; LAB_004950cf
     PUSH 0x44d9a000                     ; 0049519f
         ;   Label: caseD_3
     PUSH 0x44882000                     ; 004951a4
     PUSH EBP                            ; 004951a9
-    CALL FUN_004952b0                   ; 004951aa
-        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004952b0()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0 ; 004951aa
+        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0()
     JMP 0x004950cf                      ; 004951af
         ;   XREF to: 004950cf (UNCONDITIONAL_JUMP)  ; LAB_004950cf
     PUSH 0x43c80000                     ; 004951b4
         ;   Label: caseD_4
     PUSH 0x43af0000                     ; 004951b9
     PUSH EBP                            ; 004951be
-    CALL FUN_004952b0                   ; 004951bf
-        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004952b0()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0 ; 004951bf
+        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0()
     JMP 0x004950cf                      ; 004951c4
         ;   XREF to: 004950cf (UNCONDITIONAL_JUMP)  ; LAB_004950cf
     PUSH 0x44828000                     ; 004951c9
         ;   Label: caseD_5
     PUSH 0x44580000                     ; 004951ce
     PUSH EBP                            ; 004951d3
-    CALL FUN_004952b0                   ; 004951d4
-        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004952b0()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0 ; 004951d4
+        ;   XREF to: 004952b0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0()
     JMP 0x004950cf                      ; 004951d9
         ;   XREF to: 004950cf (UNCONDITIONAL_JUMP)  ; LAB_004950cf
     PUSH 0x44f14000                     ; 004951de

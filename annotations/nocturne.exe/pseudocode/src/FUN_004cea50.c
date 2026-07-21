@@ -26,7 +26,7 @@ int FUN_004cea50(int param_1)
   iStack_4c = param_1;
   uStack_50 = 0;
   iStack_48 = 0;
-  FUN_004cd0e0(&stack0xffffffb0);
+  engine_matrix_c_transformWorldToView_FUN_004cd0e0(&stack0xffffffb0);
   uStack_50 = uStack_44;
   (&stack0xffffffb4)[(uint)bVar1 * 0xfffffffe] =
        *(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);
@@ -35,9 +35,9 @@ int FUN_004cea50(int param_1)
   if (0 < iStack_48) {
     iStack_1c = param_1;
     iStack_18 = iStack_48;
-    fVar2 = ((-(float10)param_1 * (float10)_DAT_01c00c4c) / (float10)iStack_48) /
-            (float10)DAT_005b7648;
-    FUN_00563a30();
+    fVar2 = (float10)round
+                               (((-(float10)param_1 * (float10)_DAT_01c00c4c) / (float10)iStack_48)
+                                / (float10)DAT_005b7648);
     return (int)ROUND(fVar2);
   }
   return -1;

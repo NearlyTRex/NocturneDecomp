@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00566f90 at 00566f90
 ;   FUN_005717d8 at 00571810
+;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 at 00566f90
 ;
 ; Referenced Globals:
 ;   string s_ABNORMAL_TERMINATION_00598b14

@@ -13,9 +13,9 @@
 ;   undefined4 DAT_02737ef4
 ;
 ; Called Functions:
-;   FUN_00517b50
-;   FUN_0051b600
-;   FUN_00563c90
+;   core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600
+;   core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV ESI,0x2737ef8                   ; 0051f772
     PUSH ESI                            ; 0051f777
         ;   Label: LAB_0051f777
-    CALL FUN_00517b50                   ; 0051f778
-        ;   XREF to: 00517b50 (UNCONDITIONAL_CALL)  ; undefined FUN_00517b50()
+    CALL core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50 ; 0051f778
+        ;   XREF to: 00517b50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50()
     INC EBX                             ; 0051f77d
     MOV ECX,dword ptr [0x02737ef4]      ; 0051f77e | DAT_02737ef4
     ADD ESP,0x4                         ; 0051f784
@@ -58,8 +58,8 @@ section .text
     MOV ESI,0x268cef4                   ; 0051f7ae
     PUSH ESI                            ; 0051f7b3
         ;   Label: LAB_0051f7b3
-    CALL FUN_0051b600                   ; 0051f7b4
-        ;   XREF to: 0051b600 (UNCONDITIONAL_CALL)  ; undefined FUN_0051b600()
+    CALL core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600 ; 0051f7b4
+        ;   XREF to: 0051b600 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600()
     INC EBX                             ; 0051f7b9
     ADD ESP,0x4                         ; 0051f7ba
     ADD EDI,EAX                         ; 0051f7bd
@@ -79,8 +79,8 @@ section .text
     PUSH 0x591e81                       ; 0051f7e0 | = "%d skeletons, %d bytes, %d models, %d..."
     MOV EBX,dword ptr [ESP + 0x28]      ; 0051f7e5
     PUSH EBX                            ; 0051f7e9
-    CALL FUN_00563c90                   ; 0051f7ea
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0051f7ea
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x18                        ; 0051f7ef
     POP EBP                             ; 0051f7f2
     POP EDI                             ; 0051f7f3

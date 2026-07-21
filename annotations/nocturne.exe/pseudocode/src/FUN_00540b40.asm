@@ -16,11 +16,11 @@
 ;   undefined1* PTR_FUN_005a28e4 = 00540c20
 ;
 ; Called Functions:
-;   FUN_00438210
-;   FUN_00479560
-;   FUN_004e0050
-;   FUN_0051b660
-;   FUN_0051e0c0
+;   core_cloth.cpp_CClothList_ctor_FUN_00438210
+;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
+;   core_morph.cpp_CMorph_ctor_FUN_004e0050
+;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -32,39 +32,39 @@ section .text
     PUSH EDI                            ; 00540b42
     MOV EBX,dword ptr [ESP + 0x10]      ; 00540b43
     PUSH EBX                            ; 00540b47
-    CALL FUN_00479560                   ; 00540b48
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined FUN_00479560()
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00540b48
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
     ADD ESP,0x4                         ; 00540b4d
     ADD EAX,0xbd24                      ; 00540b50
     PUSH EAX                            ; 00540b55
-    CALL FUN_0051b660                   ; 00540b56
-        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; undefined FUN_0051b660()
+    CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660 ; 00540b56
+        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660()
     ADD ESP,0x4                         ; 00540b5b
     ADD EAX,0x22b4                      ; 00540b5e
     PUSH EAX                            ; 00540b63
-    CALL FUN_00438210                   ; 00540b64
-        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; undefined FUN_00438210()
+    CALL core_cloth.cpp_CClothList_ctor_FUN_00438210 ; 00540b64
+        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_ctor_FUN_00438210()
     ADD ESP,0x4                         ; 00540b69
     ADD EAX,0x1cc                       ; 00540b6c
     PUSH EAX                            ; 00540b71
-    CALL FUN_004e0050                   ; 00540b72
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined FUN_004e0050()
+    CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 00540b72
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
     ADD ESP,0x4                         ; 00540b77
     LEA EBX,[EAX + 0xffff1e5c]          ; 00540b7a
     PUSH 0x595ffe                       ; 00540b80 | = "succubus.dfm"
     LEA EAX,[EBX + 0x150]               ; 00540b85
     PUSH EAX                            ; 00540b8b
     MOV dword ptr [EBX + 0x14c],0x5a28e4 ; 00540b8c | PTR_FUN_005a28e4
-    CALL FUN_0051e0c0                   ; 00540b96
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540b96
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 00540b9b
     PUSH 0x59600b                       ; 00540b9e | = "hotdemon.dfm"
     LEA EAX,[EBX + 0xbd24]              ; 00540ba3
     PUSH EAX                            ; 00540ba9
     MOV ESI,0x596018                    ; 00540baa | = "hdwing.cth"
     LEA EDI,[EBX + 0xdfdc]              ; 00540baf
-    CALL FUN_0051e0c0                   ; 00540bb5
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540bb5
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 00540bba
     FLD float ptr [0x005a28cc]          ; 00540bc4 | DAT_005a28cc
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 00540bca

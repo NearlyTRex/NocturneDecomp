@@ -1,0 +1,1112 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 362,
+    "complexity_score": 579,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 204,
+    "suspect_count": 34,
+    "suspect_types": [
+      "concat_reconstruction",
+      "param_count_too_few",
+      "undefined_data",
+      "unknown_field",
+      "unnamed_param",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 566
+  },
+  "cross_references": [
+    {
+      "addr": "00507c80",
+      "from_addr": "00507eb6",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005088f0",
+      "from_addr": "00508c7d",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00463580",
+    "address_range": [
+      [
+        "00463580",
+        "00463a33"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dskybox.cpp_renderSkyDome_FUN_00463580",
+    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(undefined4 *param_1,char *param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00463440",
+      "is_variadic": false,
+      "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440"
+    },
+    {
+      "addr": "0046b9f0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0"
+    },
+    {
+      "addr": "0046b9c0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "00461eb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0"
+    },
+    {
+      "addr": "00460a00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00"
+    },
+    {
+      "addr": "0045f460",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460"
+    },
+    {
+      "addr": "0053075c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00400000",
+      "name": "IMAGE_DOS_HEADER_00400000",
+      "type": "IMAGE_DOS_HEADER",
+      "value": null
+    },
+    {
+      "addr": "0057dfae",
+      "name": "DAT_0057dfae",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057dfb6",
+      "name": "DAT_0057dfb6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057dfbe",
+      "name": "DAT_0057dfbe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057dfc6",
+      "name": "DAT_0057dfc6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ae704",
+      "name": "DAT_005ae704",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b0678",
+      "name": "DAT_005b0678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b7b728",
+      "name": "DAT_01b7b728",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b7b72c",
+      "name": "DAT_01b7b72c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b7b730",
+      "name": "DAT_01b7b730",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fba938",
+      "name": "DAT_01fba938",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00507eb6",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00508c7d",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.338414634146342,
+    "instruction_count": 328,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 47,
+      "BOOL_OR": 9,
+      "BOOL_XOR": 3,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CALLOTHER": 1,
+      "CBRANCH": 9,
+      "COPY": 475,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 10,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 1,
+      "INT_2COMP": 3,
+      "INT_ADD": 150,
+      "INT_AND": 237,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 131,
+      "INT_LEFT": 18,
+      "INT_LESS": 13,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 54,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 67,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 66,
+      "INT_XOR": 13,
+      "INT_ZEXT": 15,
+      "LOAD": 68,
+      "POPCOUNT": 61,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 113,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1751
+  },
+  "stack_frame": {
+    "frame_size": 184,
+    "local_size": 184,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "renderSkyDome_FUN_00463580.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 54,
+          "line": 181,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 43,
+          "line": 182,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 191,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 40,
+          "line": 197,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 83,
+          "message": "Uninitialized variable: local_60",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 31,
+          "line": 83,
+          "message": "Uninitialized variable: local_54",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 84,
+          "message": "Uninitialized variable: local_58",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 31,
+          "line": 84,
+          "message": "Uninitialized variable: local_4c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 87,
+          "message": "Uninitialized variable: local_5c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 91,
+          "message": "Uninitialized variable: local_50",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 122,
+          "message": "Uninitialized variable: local_74",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 124,
+          "message": "Uninitialized variable: local_6c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar9 = (char *)(param_1 + 3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_1 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_01fba938",
+      "severity": "mild",
+      "text": "piStack_bc = (int *)&DAT_01fba938;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_01fba938",
+      "severity": "mild",
+      "text": "piStack_bc = (int *)&DAT_01fba938;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_01b7b728",
+      "severity": "mild",
+      "text": "pfStack_b8 = (float *)&DAT_01b7b728;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piStack_bc = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfStack_b8 = (float *)(param_1 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piStack_bc = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piVar4 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 120,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piVar4 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 122,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "*(uint *)(*DAT_005ae704 + 0x20) = uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*piVar4 + 0x58) = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 137,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 162,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(param_1,iVar10,iVar8,fVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 202,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,&piStack_bc,0x2c5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 205,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 59,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 205,
+      "match": "CONCAT13",
+      "severity": "moderate",
+      "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 181,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "local_1c = (int)(((int)local_30 + ((int)local_30 >> 0x1f) * -4) -",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 182,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(uint)(((int)local_30 >> 0x1f) << 1 < 0)) >> 2 & 0xffffff;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 191,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar5 = iVar10 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 197,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "local_90 = (int)((iVar8 + (iVar8 >> 0x1f) * -4) - (uint)((iVar8 >> 0x1f) << 1 < 0)) >> 2 ^",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Uninitialized variable: local_60",
+      "line": 83,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01b7b728 = (local_60 + local_54) * fVar7;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_54",
+      "line": 83,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01b7b728 = (local_60 + local_54) * fVar7;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_58",
+      "line": 84,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01b7b730 = (local_58 + local_4c) * fVar7;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_4c",
+      "line": 84,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01b7b730 = (local_58 + local_4c) * fVar7;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_5c",
+      "line": 87,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01b7b72c = local_5c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_50",
+      "line": 91,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_2c = (local_50 - local_5c) * (float)_DAT_0057dfb6;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_74",
+      "line": 122,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_74 = -local_74;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_6c",
+      "line": 124,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_6c = -local_6c;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -14,10 +14,10 @@
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
+;   core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0
+;   core_sound.cpp_CSound_killSound_FUN_0052ebb0
+;   core_weapon.cpp_CWeapon_process_FUN_00554030
 ;   FUN_004940d0
-;   FUN_0052eba0
-;   FUN_0052ebb0
-;   FUN_00554030
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0048eb3c
     PUSH dword ptr [EBP + 0x18]         ; 0048eb3f
     PUSH EBX                            ; 0048eb42
-    CALL FUN_00554030                   ; 0048eb43
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined FUN_00554030()
+    CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 0048eb43
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
     MOV EDX,dword ptr [EBX + 0x570]     ; 0048eb48
     ADD ESP,0x8                         ; 0048eb4e
     TEST EDX,EDX                        ; 0048eb51
@@ -48,8 +48,8 @@ section .text
     PUSH ECX                            ; 0048eb5f
     MOV EDI,dword ptr [0x005bed68]      ; 0048eb60 | DAT_005bed68
     PUSH EDI                            ; 0048eb66
-    CALL FUN_0052ebb0                   ; 0048eb67
-        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ebb0()
+    CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0048eb67
+        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_killSound_FUN_0052ebb0()
     ADD ESP,0x8                         ; 0048eb6c
     MOV dword ptr [EBX + 0x574],0x0     ; 0048eb6f
     PUSH EBX                            ; 0048eb79
@@ -77,8 +77,8 @@ section .text
     PUSH EDI                            ; 0048ebc1
     MOV EAX,[0x005bed68]                ; 0048ebc2 | DAT_005bed68
     PUSH EAX                            ; 0048ebc7
-    CALL FUN_0052eba0                   ; 0048ebc8
-        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052eba0()
+    CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 0048ebc8
+        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0()
     ADD ESP,0x8                         ; 0048ebcd
     TEST EAX,EAX                        ; 0048ebd0
     JZ 0x0048ec25                       ; 0048ebd2

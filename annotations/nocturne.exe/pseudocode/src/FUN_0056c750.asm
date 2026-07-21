@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateFileA
-;   FUN_00564520
-;   FUN_005649c0
+;   crt_string.c__strcmp_FUN_005649c0
+;   crt_string.c__stricmp_FUN_00564520
 ;   GetFileType
 ;   GetLastError
 ;
@@ -50,8 +50,8 @@ section .text
         ;   XREF to: 0056c7f7 (CONDITIONAL_JUMP)  ; LAB_0056c7f7
     PUSH 0x598bd4                       ; 0056c77d | DAT_00598bd4
     PUSH ESI                            ; 0056c782
-    CALL FUN_00564520                   ; 0056c783
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined FUN_00564520()
+    CALL crt_string.c__stricmp_FUN_00564520 ; 0056c783
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
     ADD ESP,0x8                         ; 0056c788
     TEST EAX,EAX                        ; 0056c78b
     JNZ 0x0056c796                      ; 0056c78d
@@ -145,8 +145,8 @@ section .text
     PUSH 0x598be0                       ; 0056c835 | DAT_00598be0
     INC ESI                             ; 0056c83a
     PUSH ESI                            ; 0056c83b
-    CALL FUN_005649c0                   ; 0056c83c
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005649c0()
+    CALL crt_string.c__strcmp_FUN_005649c0 ; 0056c83c
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
     ADD ESP,0x8                         ; 0056c841
     TEST EAX,EAX                        ; 0056c844
     JNZ 0x0056c84b                      ; 0056c846

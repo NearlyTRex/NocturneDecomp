@@ -22,13 +22,13 @@
 ;   undefined4 DAT_01fb9b58
 ;
 ; Called Functions:
-;   FUN_00440290
-;   FUN_00440a20
-;   FUN_0044d7a0
-;   FUN_0044e970
-;   FUN_0050a640
-;   FUN_0050d2d0
-;   FUN_00566c81
+;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
+;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
+;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640
+;   crt_math.c_atan2_FUN_00566c81
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     FSUB float ptr [EBX + EAX*0x1 + 0x10c] ; 0050ac25
     FST float ptr [ESP + 0x8]           ; 0050ac2c
     FLD float ptr [ESP]                 ; 0050ac30
-    CALL FUN_00566c81                   ; 0050ac33
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined FUN_00566c81()
+    CALL crt_math.c_atan2_FUN_00566c81  ; 0050ac33
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
     FLD float ptr [ESP + 0x8]           ; 0050ac38
     FMUL ST0                            ; 0050ac3c
     FLD float ptr [ESP]                 ; 0050ac3e
@@ -83,8 +83,8 @@ section .text
     FADDP                               ; 0050ac43
     FSQRT                               ; 0050ac45
     FLD float ptr [ESP + 0x4]           ; 0050ac47
-    CALL FUN_00566c81                   ; 0050ac4b
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined FUN_00566c81()
+    CALL crt_math.c_atan2_FUN_00566c81  ; 0050ac4b
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
     XOR EDX,EDX                         ; 0050ac50
     MOV dword ptr [ESP + 0x14],EDX      ; 0050ac52
     LEA EAX,[ESP + 0xc]                 ; 0050ac56
@@ -94,8 +94,8 @@ section .text
     FCHS                                ; 0050ac61
     PUSH 0x1fb8618                      ; 0050ac63 | DAT_01fb8618
     FSTP float ptr [ESP + 0x14]         ; 0050ac68
-    CALL FUN_0044d7a0                   ; 0050ac6c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d7a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0050ac6c
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     MOV EDX,dword ptr [EBX + 0x15aabc]  ; 0050ac71
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050ac77
     SUB EAX,EDX                         ; 0050ac7e
@@ -119,23 +119,23 @@ section .text
     PUSH 0x0                            ; 0050acb2
         ;   Label: LAB_0050acb2
     PUSH 0x1fb8508                      ; 0050acb4
-    CALL FUN_00440290                   ; 0050acb9
-        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined FUN_00440290()
+    CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 ; 0050acb9
+        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290()
     ADD ESP,0x8                         ; 0050acbe
     PUSH 0x10                           ; 0050acc1
     PUSH EBX                            ; 0050acc3
-    CALL FUN_0050d2d0                   ; 0050acc4
-        ;   XREF to: 0050d2d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050d2d0()
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 ; 0050acc4
+        ;   XREF to: 0050d2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0()
     ADD ESP,0x8                         ; 0050acc9
     PUSH EBX                            ; 0050accc
-    CALL FUN_0050a640                   ; 0050accd
-        ;   XREF to: 0050a640 (UNCONDITIONAL_CALL)  ; undefined FUN_0050a640()
+    CALL core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 ; 0050accd
+        ;   XREF to: 0050a640 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640()
     ADD ESP,0x4                         ; 0050acd2
     PUSH 0x0                            ; 0050acd5
     PUSH 0x1fb8508                      ; 0050acd7
     XOR EBX,EBX                         ; 0050acdc
-    CALL FUN_00440a20                   ; 0050acde
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined FUN_00440a20()
+    CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 0050acde
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
     MOV ECX,dword ptr [0x01fb9b54]      ; 0050ace3 | DAT_01fb9b54
     ADD ESP,0x8                         ; 0050ace9
     TEST ECX,ECX                        ; 0050acec
@@ -147,8 +147,8 @@ section .text
     PUSH EDI                            ; 0050acf8
     ADD ESI,0x4                         ; 0050acf9
     INC EBX                             ; 0050acfc
-    CALL FUN_0044e970                   ; 0050acfd
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e970()
+    CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 0050acfd
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
     MOV EAX,[0x01fb9b54]                ; 0050ad02 | DAT_01fb9b54
     ADD ESP,0x4                         ; 0050ad07
     CMP EBX,EAX                         ; 0050ad0a

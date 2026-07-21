@@ -16,7 +16,8 @@ void FUN_0053f210(int param_1,int param_2)
   uint local_38 [12];
   
   bVar3 = 0;
-  FUN_0053a760(param_1,*(uint *)(param_1 + 0x24ac + param_2 * 0x44),param_2);
+  core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+            (param_1,*(uint *)(param_1 + 0x24ac + param_2 * 0x44),param_2);
   puVar2 = local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

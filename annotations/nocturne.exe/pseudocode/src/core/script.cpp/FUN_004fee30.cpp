@@ -21,17 +21,19 @@ void FUN_004fee30(int param_1)
   byte bVar8;
   
   bVar8 = 0;
-  FUN_004fe550(param_1);
+  core_script_cpp_CScript_freeParsedLines_FUN_004fe550(param_1);
   iVar5 = 0;
   do {
-    iVar2 = FUN_00477660(param_1 + 0x30);
+    iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(param_1 + 0x30);
     if (iVar2 <= iVar5) {
       return;
     }
-    uVar3 = FUN_00474080(param_1 + 0x30,iVar5,&DAT_01e55c18);
-    FUN_004fdf60(uVar3);
+    uVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1 + 0x30,iVar5,&DAT_01e55c18)
+    ;
+    core_script_cpp_trimLine_FUN_004fdf60(uVar3);
     if (DAT_01e55c18 != '\0') {
-      iVar2 = FUN_00564a70(*(uint *)(param_1 + 0x2c),(*(int *)(param_1 + 0x28) + 1) * 8);
+      iVar2 = realloc
+                        (*(uint *)(param_1 + 0x2c),(*(int *)(param_1 + 0x28) + 1) * 8);
       *(int *)(param_1 + 0x2c) = iVar2;
       if (iVar2 == 0) {
         _DAT_01cc4800 = "..\\core\\script.cpp";
@@ -47,7 +49,7 @@ void FUN_004fee30(int param_1)
         cVar1 = *pcVar7;
         pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
       } while (cVar1 != '\0');
-      uVar3 = FUN_005635b0(~uVar4);
+      uVar3 = malloc(~uVar4);
       *(uint *)(*(int *)(param_1 + 0x2c) + 4 + *(int *)(param_1 + 0x28) * 8) = uVar3;
       if (*(int *)(param_1 + 0x2c) == 0) {
         _DAT_01cc4800 = "..\\core\\script.cpp";

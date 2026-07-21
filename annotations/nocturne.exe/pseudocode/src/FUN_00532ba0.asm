@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_00553910 at 005539d2
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539d2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c
@@ -20,10 +20,10 @@
 ;   undefined4 DAT_02dc9e24
 ;
 ; Called Functions:
-;   FUN_005322e0
 ;   FUN_00532320
-;   FUN_00553470
-;   FUN_00553520
+;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
+;   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
+;   wincore_windll.cpp_lockFrame_FUN_005322e0
 ;
 ; *****************************************************************************
 
@@ -52,10 +52,10 @@ section .text
     MOV EBX,dword ptr [0x01bd2fa0]      ; 00532bdd | DAT_01bd2fa0
     XOR EDI,EDI                         ; 00532be3
     MOV EBP,EAX                         ; 00532be5
-    CALL FUN_00553470                   ; 00532be7
-        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; undefined FUN_00553470()
-    CALL FUN_005322e0                   ; 00532bec
-        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005322e0()
+    CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 00532be7
+        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
+    CALL wincore_windll.cpp_lockFrame_FUN_005322e0 ; 00532bec
+        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_lockFrame_FUN_005322e0()
     MOV EAX,[0x005b7620]                ; 00532bf1 | DAT_005b7620
     MOV dword ptr [ESP + 0xc],EDI       ; 00532bf6
     TEST EAX,EAX                        ; 00532bfa
@@ -89,8 +89,8 @@ section .text
     CALL FUN_00532320                   ; 00532c40
         ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined FUN_00532320()
         ;   Label: LAB_00532c40
-    CALL FUN_00553520                   ; 00532c45
-        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; undefined FUN_00553520()
+    CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 00532c45
+        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
     POP EBX                             ; 00532c4a
     POP ESI                             ; 00532c4b
     XOR EDI,EDI                         ; 00532c4c

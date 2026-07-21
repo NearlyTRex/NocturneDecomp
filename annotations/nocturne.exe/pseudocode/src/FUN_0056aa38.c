@@ -63,7 +63,7 @@ void FUN_0056aa38(int *param_1,uint *param_2,uint param_3,int param_4,uint *para
     param_3 = param_3 - uVar7;
     if ((int)uVar7 < param_1[1]) {
       iVar4 = param_1[1] - uVar7;
-      FUN_00563cc0((byte *)((int)param_5 + uVar7),0x30,iVar4);
+      memset((byte *)((int)param_5 + uVar7),0x30,iVar4);
       uVar7 = uVar7 + iVar4;
     }
   }
@@ -76,7 +76,7 @@ void FUN_0056aa38(int *param_1,uint *param_2,uint param_3,int param_4,uint *para
   }
   if (param_1[1] < 0) {
     iVar4 = -param_1[1];
-    FUN_00563cc0((byte *)((int)param_5 + uVar7),0x30,iVar4,uVar1,iVar4);
+    memset((byte *)((int)param_5 + uVar7),0x30,iVar4,uVar1,iVar4);
     uVar7 = uVar7 + iVar4;
   }
   if (0 < (int)uVar1) {

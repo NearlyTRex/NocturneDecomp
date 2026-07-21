@@ -131,9 +131,10 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
   float local_18;
   uint local_14;
   
-  FUN_005644a7(&local_1e4,4,&DAT_005993b0);
+  __arrinit(&local_1e4,4,&DAT_005993b0);
   local_14 = (uint)(param_5 < 4);
-  if (((param_5 < 3) || (iVar1 = FUN_0040dea0(0x3f000000), iVar1 == 0)) && (local_14 != 0)) {
+  if (((param_5 < 3) || (iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000), iVar1 == 0))
+     && (local_14 != 0)) {
     if (&local_1e4 != param_2) {
       local_1e4 = *param_2;
       local_1e0 = param_2[1];
@@ -385,8 +386,9 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
   local_1a4 = *param_4;
   local_1a0 = param_4[1];
   local_19c = param_4[2];
-  FUN_0048b1c0(0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
-               *(uint *)(param_1 + 0x174));
+  core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
+            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
+             *(uint *)(param_1 + 0x174));
   if (&local_1d8 != param_2 + 6) {
     local_1d8 = param_2[6];
     local_1d4 = param_2[7];
@@ -401,7 +403,8 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
   local_1ac = param_3[3];
   local_1a0 = param_4[2];
   local_19c = param_4[3];
-  FUN_0048b1c0(0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
-               *(uint *)(param_1 + 0x174));
+  core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
+            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
+             *(uint *)(param_1 + 0x174));
   return;
 }

@@ -22,7 +22,7 @@ LPCRITICAL_SECTION FUN_0056e254(void)
     if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
       FUN_0056ddc0("Unable to allocate semaphore data\r\n",1);
     }
-    _DAT_02de5c18 = FUN_00564a70(_DAT_02de5c18,(_DAT_02de5c14 + 1) * 4);
+    _DAT_02de5c18 = realloc(_DAT_02de5c18,(_DAT_02de5c14 + 1) * 4);
     if (_DAT_02de5c18 == 0) {
       FUN_0056ddc0("Unable to allocate semaphore data\r\n",1);
     }

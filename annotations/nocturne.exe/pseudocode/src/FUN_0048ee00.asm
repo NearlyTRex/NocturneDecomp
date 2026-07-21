@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059d9f0
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0048ee26 (CONDITIONAL_JUMP)  ; LAB_0048ee26
     PUSH 0x1                            ; 0048ee0c
     PUSH EBX                            ; 0048ee0e
-    CALL FUN_00553ea0                   ; 0048ee0f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0048ee0f
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 0048ee14
     MOV DL,byte ptr [ESP + 0xc]         ; 0048ee17
     MOV EBX,EAX                         ; 0048ee1b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59d9f0                       ; 0048ee26 | DAT_0059d9f0
         ;   Label: LAB_0048ee26
     PUSH EBX                            ; 0048ee2b
-    CALL FUN_0056445f                   ; 0048ee2c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0048ee2c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0048ee31
     PUSH EAX                            ; 0048ee34
-    CALL FUN_00564486                   ; 0048ee35
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0048ee35
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0048ee3a
     MOV EAX,EBX                         ; 0048ee3d
     POP EBX                             ; 0048ee3f

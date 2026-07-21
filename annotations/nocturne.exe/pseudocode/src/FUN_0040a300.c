@@ -9,6 +9,7 @@
 void FUN_0040a300(int param_1,uint param_2)
 
 {
-  FUN_0052ea90(0x02DC9450,param_1,param_2,param_1 + 0x20);
+  core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
+            (0x02DC9450,param_1,param_2,param_1 + 0x20);
   return;
 }

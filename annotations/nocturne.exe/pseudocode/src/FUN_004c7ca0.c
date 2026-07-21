@@ -47,14 +47,14 @@ int FUN_004c7ca0(int param_1)
   float fStack_1c;
   int iStack_18;
   
-  iVar2 = FUN_00461090(DAT_005ae704);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar2 == 0) {
     uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_94);
-    FUN_0040a240(param_1,&fStack_4c,uVar3);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_4c,uVar3);
     uStack_5c = *(uint *)(param_1 + 0x2e0);
     uStack_64 = 0;
     uStack_60 = 0;
-    FUN_0040a200(param_1,&fStack_28,&uStack_64);
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_28,&uStack_64);
     fStack_58 = -fStack_28;
     fStack_54 = -fStack_24;
     fStack_50 = -fStack_20;
@@ -79,15 +79,17 @@ int FUN_004c7ca0(int param_1)
       fStack_2c = fStack_2c * fVar1;
     }
     fVar5 = (float10)fpatan((float10)_DAT_00587aad / (float10)_DAT_0059fd64,(float10)1);
-    iVar2 = FUN_0048b3e0(0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,(float)fVar5);
+    iVar2 = core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
+                      (0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,(float)fVar5);
     if (*(int *)(param_1 + 0x580) != 0) {
       *(uint *)(param_1 + 0x580) = 0;
       iVar2 = 1;
       do {
         iVar4 = iVar2 + 1;
         iStack_18 = iVar2;
-        FUN_0048b3e0(0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,
-                     (float)iVar2 * (float)fVar5 * (float)_DAT_00587ab5);
+        core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
+                  (0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,
+                   (float)iVar2 * (float)fVar5 * (float)_DAT_00587ab5);
         iVar2 = iVar4;
       } while (iVar4 < 10);
       fStack_6c = fStack_3c - fStack_48;
@@ -119,7 +121,8 @@ int FUN_004c7ca0(int param_1)
       }
       iVar2 = 0;
       do {
-        iVar4 = FUN_0048ae90(0x01C08D04,&fStack_88,0,0x8000,0x4000,0,0x3333);
+        iVar4 = core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
+                          (0x01C08D04,&fStack_88,0,0x8000,0x4000,0,0x3333);
         iVar2 = iVar2 + 1;
         fStack_88 = fStack_88 + fStack_70;
         fStack_84 = fStack_84 + fStack_6c;

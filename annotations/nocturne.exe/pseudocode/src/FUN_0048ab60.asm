@@ -16,7 +16,7 @@
 ;   FUN_004b27c0 at 004b2fa5
 ;   FUN_00515ea0 at 00516608
 ;   FUN_00545c30 at 0054645f
-;   FUN_0054ab10 at 0054b01e
+;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054b01e
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0048ab04 = 0048acc0
@@ -37,15 +37,15 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   FUN_0040dea0
-;   FUN_00446590
-;   FUN_00482780
-;   FUN_00482c80
-;   FUN_0048a0e0
-;   FUN_0048ae90
-;   FUN_004b11b0
-;   FUN_0052eb00
-;   FUN_00563c90
+;   core_actor.cpp_randomChance_FUN_0040dea0
+;   core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590
+;   core_fire.cpp_allocateBulletHole_FUN_0048a0e0
+;   core_fire.cpp_CBulletHole_init_FUN_00482c80
+;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
+;   core_fire.cpp_CSmokeParticle_init_FUN_00482780
+;   core_ground.cpp_getGroundTypeCode_FUN_004b11b0
+;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -137,8 +137,8 @@ section .text
         ;   Label: LAB_0048ac45
     PUSH EBX                            ; 0048ac4a
     PUSH 0x1fb8508                      ; 0048ac4b
-    CALL FUN_00446590                   ; 0048ac50
-        ;   XREF to: 00446590 (UNCONDITIONAL_CALL)  ; undefined FUN_00446590()
+    CALL core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590 ; 0048ac50
+        ;   XREF to: 00446590 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590()
     ADD ESP,0xc                         ; 0048ac55
     TEST EAX,EAX                        ; 0048ac58
     JZ 0x0048acc0                       ; 0048ac5a
@@ -162,8 +162,8 @@ section .text
     PUSH EBX                            ; 0048ac91
     PUSH EAX                            ; 0048ac92 | DAT_01c0a140
     INC ESI                             ; 0048ac93
-    CALL FUN_00482780                   ; 0048ac94
-        ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; undefined FUN_00482780()
+    CALL core_fire.cpp_CSmokeParticle_init_FUN_00482780 ; 0048ac94
+        ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSmokeParticle_init_FUN_00482780()
     ADD ESP,0x14                        ; 0048ac99
     CMP ESI,0x8                         ; 0048ac9c
     JL 0x0048ac5e                       ; 0048ac9f
@@ -209,16 +209,16 @@ section .text
         ;   Label: LAB_0048ad07
     JZ 0x0048ac45                       ; 0048ad0c
         ;   XREF to: 0048ac45 (CONDITIONAL_JUMP)  ; LAB_0048ac45
-    CALL FUN_0048a0e0                   ; 0048ad12
-        ;   XREF to: 0048a0e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048a0e0()
+    CALL core_fire.cpp_allocateBulletHole_FUN_0048a0e0 ; 0048ad12
+        ;   XREF to: 0048a0e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_allocateBulletHole_FUN_0048a0e0()
     MOV EDX,dword ptr [EBP + 0x24]      ; 0048ad17
     PUSH EDX                            ; 0048ad1a
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0048ad1b
     PUSH ECX                            ; 0048ad1e
     PUSH EBX                            ; 0048ad1f
     PUSH EAX                            ; 0048ad20
-    CALL FUN_00482c80                   ; 0048ad21
-        ;   XREF to: 00482c80 (UNCONDITIONAL_CALL)  ; undefined FUN_00482c80()
+    CALL core_fire.cpp_CBulletHole_init_FUN_00482c80 ; 0048ad21
+        ;   XREF to: 00482c80 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_init_FUN_00482c80()
     ADD ESP,0x10                        ; 0048ad26
     JMP 0x0048ac45                      ; 0048ad29
         ;   XREF to: 0048ac45 (UNCONDITIONAL_JUMP)  ; LAB_0048ac45
@@ -233,8 +233,8 @@ section .text
     PUSH EBX                            ; 0048ad43
     PUSH EDI                            ; 0048ad44
     INC ESI                             ; 0048ad45
-    CALL FUN_0048ae90                   ; 0048ad46
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined FUN_0048ae90()
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0048ad46
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
     ADD ESP,0x1c                        ; 0048ad4b
     CMP ESI,0x8                         ; 0048ad4e
     JL 0x0048ad30                       ; 0048ad51
@@ -243,22 +243,22 @@ section .text
         ;   XREF to: 0048acc0 (UNCONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3e2aaaab                     ; 0048ad58
         ;   Label: caseD_2
-    CALL FUN_0040dea0                   ; 0048ad5d
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dea0()
+    CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0048ad5d
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
     ADD ESP,0x4                         ; 0048ad62
     TEST EAX,EAX                        ; 0048ad65
     JZ 0x0048ace3                       ; 0048ad67
         ;   XREF to: 0048ace3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x2                            ; 0048ad6d
-    CALL FUN_004b11b0                   ; 0048ad6f
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b11b0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0048ad6f
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
     ADD ESP,0x4                         ; 0048ad74
     PUSH EAX                            ; 0048ad77
     PUSH 0x58146c                       ; 0048ad78 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 0048ad7d
     PUSH EAX                            ; 0048ad81
-    CALL FUN_00563c90                   ; 0048ad82
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ad82
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0048ad87
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ad8a
     JNZ 0x0048ae60                      ; 0048ad8f
@@ -271,22 +271,22 @@ section .text
     RET                                 ; 0048ad9b
     PUSH 0x3e2aaaab                     ; 0048ad9c
         ;   Label: caseD_5
-    CALL FUN_0040dea0                   ; 0048ada1
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dea0()
+    CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0048ada1
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
     ADD ESP,0x4                         ; 0048ada6
     TEST EAX,EAX                        ; 0048ada9
     JZ 0x0048ace3                       ; 0048adab
         ;   XREF to: 0048ace3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x5                            ; 0048adb1
-    CALL FUN_004b11b0                   ; 0048adb3
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b11b0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0048adb3
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
     ADD ESP,0x4                         ; 0048adb8
     PUSH EAX                            ; 0048adbb
     PUSH 0x581479                       ; 0048adbc | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 0048adc1
     PUSH EAX                            ; 0048adc5
-    CALL FUN_00563c90                   ; 0048adc6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048adc6
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0048adcb
     CMP byte ptr [ESP + 0x8],0x0        ; 0048adce
     JNZ 0x0048ae60                      ; 0048add3
@@ -299,22 +299,22 @@ section .text
     RET                                 ; 0048addf
     PUSH 0x3e2aaaab                     ; 0048ade0
         ;   Label: caseD_7
-    CALL FUN_0040dea0                   ; 0048ade5
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dea0()
+    CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0048ade5
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
     ADD ESP,0x4                         ; 0048adea
     TEST EAX,EAX                        ; 0048aded
     JZ 0x0048ace3                       ; 0048adef
         ;   XREF to: 0048ace3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x7                            ; 0048adf5
-    CALL FUN_004b11b0                   ; 0048adf7
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b11b0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0048adf7
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
     ADD ESP,0x4                         ; 0048adfc
     PUSH EAX                            ; 0048adff
     PUSH 0x581486                       ; 0048ae00 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 0048ae05
     PUSH EAX                            ; 0048ae09
-    CALL FUN_00563c90                   ; 0048ae0a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ae0a
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0048ae0f
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ae12
     JNZ 0x0048ae60                      ; 0048ae17
@@ -327,22 +327,22 @@ section .text
     RET                                 ; 0048ae1f
     PUSH 0x3e2aaaab                     ; 0048ae20
         ;   Label: caseD_3
-    CALL FUN_0040dea0                   ; 0048ae25
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dea0()
+    CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0048ae25
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
     ADD ESP,0x4                         ; 0048ae2a
     TEST EAX,EAX                        ; 0048ae2d
     JZ 0x0048ace3                       ; 0048ae2f
         ;   XREF to: 0048ace3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3                            ; 0048ae35
-    CALL FUN_004b11b0                   ; 0048ae37
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b11b0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0048ae37
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
     ADD ESP,0x4                         ; 0048ae3c
     PUSH EAX                            ; 0048ae3f
     PUSH 0x581493                       ; 0048ae40 | = "ric-%s.wav"
     LEA EAX,[ESP + 0x10]                ; 0048ae45
     PUSH EAX                            ; 0048ae49
-    CALL FUN_00563c90                   ; 0048ae4a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ae4a
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0048ae4f
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ae52
     JNZ 0x0048ae60                      ; 0048ae57
@@ -361,8 +361,8 @@ section .text
     PUSH 0x0                            ; 0048ae6b
     MOV EAX,[0x005bed68]                ; 0048ae6d | DAT_005bed68
     PUSH EAX                            ; 0048ae72
-    CALL FUN_0052eb00                   ; 0048ae73
-        ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0052eb00()
+    CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 ; 0048ae73
+        ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00()
     ADD ESP,0x14                        ; 0048ae78
     MOV ESP,EBP                         ; 0048ae7b
     POP EBP                             ; 0048ae7d

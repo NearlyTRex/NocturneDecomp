@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 1080,
+    "complexity_score": 1083,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 190,
+    "pseudocode_lines": 193,
     "suspect_count": 85,
     "suspect_types": [
       "param_count_too_few",
@@ -139,13 +139,13 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 760
+    "total_lines": 763
   },
   "cross_references": [
     {
       "addr": "004e85b0",
       "from_addr": "004e90c8",
-      "name": "FUN_004e85b0",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -163,6 +163,16 @@
   },
   "function_calls": [
     {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00566b5c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_00566b5c"
+    },
+    {
       "addr": "004c8440",
       "is_variadic": false,
       "name": "FUN_004c8440"
@@ -170,32 +180,22 @@
     {
       "addr": "004e2ce0",
       "is_variadic": false,
-      "name": "FUN_004e2ce0"
-    },
-    {
-      "addr": "004e2cf0",
-      "is_variadic": false,
-      "name": "FUN_004e2cf0"
-    },
-    {
-      "addr": "004e2e40",
-      "is_variadic": false,
-      "name": "FUN_004e2e40"
+      "name": "sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0"
     },
     {
       "addr": "004e2ed0",
       "is_variadic": false,
-      "name": "FUN_004e2ed0"
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0"
     },
     {
-      "addr": "00563c90",
+      "addr": "004e2cf0",
       "is_variadic": false,
-      "name": "FUN_00563c90"
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0"
     },
     {
-      "addr": "00566b5c",
+      "addr": "004e2e40",
       "is_variadic": false,
-      "name": "FUN_00566b5c"
+      "name": "sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_004e2e40"
     }
   ],
   "globals": [
@@ -350,7 +350,7 @@
       {
         "call_addr": "004e90c8",
         "call_type": "direct",
-        "caller": "FUN_004e85b0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -600,7 +600,7 @@
       "line": 43,
       "match": "DAT_0058b77c",
       "severity": "mild",
-      "text": "FUN_00563c90(local_1c,&DAT_0058b77c,iVar6);",
+      "text": "_sprintf(local_1c,&DAT_0058b77c,iVar6);",
       "type": "undefined_data"
     },
     {
@@ -648,7 +648,7 @@
       "line": 49,
       "match": "DAT_0058b77f",
       "severity": "mild",
-      "text": "FUN_00566b5c(iVar9,&DAT_0058b77f,&local_38);",
+      "text": "sscanf(iVar9,&DAT_0058b77f,&local_38);",
       "type": "undefined_data"
     },
     {
@@ -824,7 +824,7 @@
       "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e2ce0(param_1);",
+      "text": "sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -853,15 +853,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e2ed0(param_1,iVar9,&local_48,&local_44,&local_40,&local_3c);",
+      "text": "(param_1,iVar9,&local_48,&local_44,&local_40,&local_3c);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 148,
       "match": "(uint *)(param_2 + ((int)uVar7",
       "severity": "moderate",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_48;",
@@ -869,7 +869,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 148,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_48;",
@@ -877,7 +877,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 152,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + iVar9 * 0x48 + iVar3 * 4) = local_44;",
@@ -885,15 +885,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 153,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e2ce0(param_1);",
+      "text": "sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 158,
       "match": "param_3",
       "severity": "mild",
       "text": "local_2c = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
@@ -901,7 +901,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 158,
       "match": "param_4",
       "severity": "mild",
       "text": "local_2c = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
@@ -909,7 +909,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 158,
       "match": "param_5",
       "severity": "mild",
       "text": "local_2c = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
@@ -917,7 +917,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 161,
       "match": "param_6",
       "severity": "mild",
       "text": "local_14 = param_6 + *(int *)(local_2c + 0x18);",
@@ -925,23 +925,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = FUN_004e2ce0(param_1);",
+      "text": "uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e2ed0(param_1,local_28,&local_48,&local_44,&local_40,&local_3c);",
+      "text": "(param_1,local_28,&local_48,&local_44,&local_40,&local_3c);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 166,
       "match": "(uint *)(param_2 + ((int)uVar7",
       "severity": "moderate",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_40;",
@@ -949,7 +949,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 166,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_40;",
@@ -957,7 +957,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 167,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + (iVar9 / 0x12) * 0x48 + (iVar9 % 0x12) * 4) = local_3c;",
@@ -965,7 +965,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 168,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + (iVar6 / 0x12) * 0x48 + (iVar6 % 0x12) * 4) = local_48;",
@@ -973,7 +973,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 175,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + iVar3 * 0x48 + iVar5 * 4) = local_44;",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 177,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar6 = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 177,
       "match": "param_4",
       "severity": "mild",
       "text": "iVar6 = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
@@ -997,18 +997,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 177,
       "match": "param_5",
       "severity": "mild",
       "text": "iVar6 = param_3 + param_4 * 0xa0 + param_5 * 0x48;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1016,15 +1008,7 @@
       "line": 178,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = FUN_004e2ce0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 179,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if ((uint)(param_6 + iVar1) < uVar2) {",
+      "text": "sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1032,7 +1016,15 @@
       "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_004e2ce0(param_1);",
+      "text": "uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 181,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if ((uint)(param_6 + iVar1) < uVar2) {",
       "type": "unnamed_param"
     },
     {
@@ -1040,55 +1032,7 @@
       "line": 182,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e2e40(param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 182,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "FUN_004e2e40(param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "text": "iVar1 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1096,12 +1040,68 @@
       "line": 185,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_004e2ce0(param_1);",
+      "text": "(param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 185,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "(param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 187,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 187,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 187,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 187,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 187,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 188,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 189,
       "match": "param_6",
       "severity": "mild",
       "text": "if (iVar1 < param_6) {",
@@ -1109,23 +1109,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 190,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_004e2cf0(param_1,param_6 - iVar1);",
+      "text": "iVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(param_1,param_6 - iVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 190,
       "match": "param_6",
       "severity": "mild",
-      "text": "iVar1 = FUN_004e2cf0(param_1,param_6 - iVar1);",
+      "text": "iVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(param_1,param_6 - iVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 194,
       "match": "(uint *)(param_2 + ((int)uVar7",
       "severity": "moderate",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = 0;",
@@ -1133,7 +1133,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 194,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = 0;",

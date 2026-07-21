@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[2]:
-;   FUN_005635b0 at 005635b5
 ;   FUN_00564a88 at 00564a99
+;   crt_memory.c_malloc_FUN_005635b0 at 005635b5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1680

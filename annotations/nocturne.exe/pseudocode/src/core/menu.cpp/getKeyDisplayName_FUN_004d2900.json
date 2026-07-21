@@ -1,0 +1,680 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 233,
+    "complexity_score": 357,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 21,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 87,
+    "suspect_count": 25,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 320
+  },
+  "cross_references": [
+    {
+      "addr": "0049b4e0",
+      "from_addr": "0049b97d",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bf360",
+      "from_addr": "004bf553",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2d00",
+      "from_addr": "004d3b39",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2900",
+    "address_range": [
+      [
+        "004d2900",
+        "004d2b38"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_getKeyDisplayName_FUN_004d2900",
+    "signature": "char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    },
+    {
+      "addr": "00559560",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getKeyName_FUN_00559560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00588d69",
+      "name": "s_(none)_00588d69",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588d70",
+      "name": "s_Mouse_X-Axis_00588d70",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588d7d",
+      "name": "s_Mouse_Y-Axis_00588d7d",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588d8a",
+      "name": "s_Mouse_B1_00588d8a",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588d93",
+      "name": "s_Mouse_B2_00588d93",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588d9c",
+      "name": "s_Mouse_B3_00588d9c",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588da5",
+      "name": "s_Button_1_00588da5",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588dae",
+      "name": "s_Button_2_00588dae",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588db7",
+      "name": "s_Button_3_00588db7",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588dc0",
+      "name": "s_Button_4_00588dc0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588dc9",
+      "name": "s_Button_5_00588dc9",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588dd2",
+      "name": "s_Button_6_00588dd2",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588ddb",
+      "name": "s_Button_7_00588ddb",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588de4",
+      "name": "s_Button_8_00588de4",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588ded",
+      "name": "s_Button_9_00588ded",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588df6",
+      "name": "s_Button_10_00588df6",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588e00",
+      "name": "s_Gamepad_left_00588e00",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588e0d",
+      "name": "s_Gamepad_right_00588e0d",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588e1b",
+      "name": "s_Gamepad_forward_00588e1b",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588e2b",
+      "name": "s_Gamepad_back_00588e2b",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "01cc8650",
+      "name": "DAT_01cc8650",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 43,
+    "call_sites": [
+      {
+        "call_addr": "0049b97d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049ba25",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bae1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bb8b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bc35",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bcde",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bd88",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049be32",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bedb",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bf85",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.863354037267081,
+    "instruction_count": 161,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BRANCH": 2,
+      "CALL": 21,
+      "CBRANCH": 23,
+      "COPY": 92,
+      "INT_ADD": 33,
+      "INT_AND": 125,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 3,
+      "INT_LESS": 22,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 25,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 53,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 51,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 783
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 599) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x255) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x256) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x200) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x201) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x20c) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x202) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x203) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x204) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x205) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x206) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x207) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x208) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x209) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x20a) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x20b) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x251) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x252) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x253) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0x254) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)wincore_winrun_cpp_getKeyName_FUN_00559560(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 79,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "call_site_count": 43,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

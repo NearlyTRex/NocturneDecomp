@@ -20,7 +20,8 @@ uint FUN_00420eb0(int param_1,uint param_2)
   uint local_14;
   
   bVar4 = 0;
-  FUN_0051d0a0(param_1 + 0x150,DAT_00764b2c);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+            (param_1 + 0x150,DAT_00764b2c);
   puVar2 = local_4c;
   puVar3 = local_7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -31,6 +32,6 @@ uint FUN_00420eb0(int param_1,uint param_2)
   local_18 = 0x3f333333;
   local_1c = 0;
   local_14 = 0x3e99999a;
-  FUN_0055a8b0(param_2,&local_1c,local_7c);
+  core_xform_cpp_transformVector3x4_FUN_0055a8b0(param_2,&local_1c,local_7c);
   return param_2;
 }

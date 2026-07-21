@@ -34,14 +34,14 @@
 ;   undefined4 DAT_01e56c20
 ;
 ; Called Functions:
-;   FUN_00403e60
-;   FUN_00408370
-;   FUN_0042b5c0
-;   FUN_00490980
-;   FUN_00492da0
-;   FUN_00492f30
-;   FUN_004930e0
-;   FUN_004fe710
+;   core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0
+;   core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
+;   engine_2d.c_fillRectColor_FUN_00403e60
+;   engine_3d.c_setRenderAlpha_FUN_00408370
+;   engine_font.cpp_CBitFont_drawText_FUN_00490980
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
+;   engine_font.cpp_CBitFont_wrapText_FUN_00492f30
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     JNZ 0x004fe991                      ; 004fe788
         ;   XREF to: 004fe991 (CONDITIONAL_JUMP)  ; LAB_004fe991
     PUSH EAX                            ; 004fe78e | DAT_01c775ec
-    CALL FUN_0042b5c0                   ; 004fe78f
-        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0042b5c0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe78f
+        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe794
     FLD float ptr [ESP + 0x20]          ; 004fe798
     FDIV float ptr [0x0058e24a]         ; 004fe79c | DAT_0058e24a
@@ -93,8 +93,8 @@ section .text
     PUSH EDI                            ; 004fe7ec
     XOR ESI,ESI                         ; 004fe7ed
     MOV dword ptr [ESP + 0x10],EAX      ; 004fe7ef
-    CALL FUN_004fe710                   ; 004fe7f3
-        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined FUN_004fe710()
+    CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 004fe7f3
+        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710()
     MOV dword ptr [ESP + 0xc],ESI       ; 004fe7f8
     ADD ESP,0x4                         ; 004fe7fc
     MOV ESI,EAX                         ; 004fe7ff
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 004fe817
     PUSH 0x0                            ; 004fe818
     PUSH 0x0                            ; 004fe81a
-    CALL FUN_00403e60                   ; 004fe81c
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined FUN_00403e60()
+    CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004fe81c
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
     ADD ESP,0x14                        ; 004fe821
     PUSH 0x0                            ; 004fe824
         ;   Label: LAB_004fe824
@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 004fe834
     MOV EAX,dword ptr [ESP + 0x18]      ; 004fe835
     PUSH EAX                            ; 004fe839
-    CALL FUN_00403e60                   ; 004fe83a
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined FUN_00403e60()
+    CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004fe83a
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
     ADD ESP,0x14                        ; 004fe83f
     MOV EAX,[0x01c00c5c]                ; 004fe842 | DAT_01c00c5c
         ;   Label: LAB_004fe842
@@ -172,15 +172,15 @@ section .text
     LEA EAX,[EDI + 0x4c]                ; 004fe8cb
     PUSH EAX                            ; 004fe8ce
     PUSH EBP                            ; 004fe8cf
-    CALL FUN_00492f30                   ; 004fe8d0
-        ;   XREF to: 00492f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00492f30()
+    CALL engine_font.cpp_CBitFont_wrapText_FUN_00492f30 ; 004fe8d0
+        ;   XREF to: 00492f30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_wrapText_FUN_00492f30()
     ADD ESP,0x18                        ; 004fe8d5
     PUSH 0x58                           ; 004fe8d8
     PUSH EBP                            ; 004fe8da
     MOV ESI,EAX                         ; 004fe8db
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe8dd
-    CALL FUN_004930e0                   ; 004fe8e1
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004930e0()
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004fe8e1
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
     MOV EDI,EAX                         ; 004fe8e6
     IMUL EDI,ESI                        ; 004fe8e8
     ADD ESP,0x8                         ; 004fe8eb
@@ -200,8 +200,8 @@ section .text
     MOV ESI,EBX                         ; 004fe90a
     PUSH 0xffff                         ; 004fe90c
         ;   Label: LAB_004fe90c
-    CALL FUN_00408370                   ; 004fe911
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined FUN_00408370()
+    CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004fe911
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
     ADD ESP,0x4                         ; 004fe916
     MOV EAX,dword ptr [ESP + 0x18]      ; 004fe919
     XOR EDI,EDI                         ; 004fe91d
@@ -215,8 +215,8 @@ section .text
     PUSH EBX                            ; 004fe934
         ;   Label: LAB_004fe934
     PUSH EBP                            ; 004fe935
-    CALL FUN_00492da0                   ; 004fe936
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00492da0()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004fe936
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
     ADD ESP,0x8                         ; 004fe93b
     MOV EDX,dword ptr [ESP + 0x10]      ; 004fe93e
     SUB EDX,EAX                         ; 004fe942
@@ -231,8 +231,8 @@ section .text
     PUSH EBX                            ; 004fe956
     PUSH EBP                            ; 004fe957
     INC EDI                             ; 004fe958
-    CALL FUN_00490980                   ; 004fe959
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined FUN_00490980()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004fe959
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
     ADD ESP,0x18                        ; 004fe95e
     ADD EBX,0x400                       ; 004fe961
     MOV EDX,dword ptr [ESP + 0x14]      ; 004fe967
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 004fe991 | DAT_01c775ec
         ;   Label: LAB_004fe991
     MOV dword ptr [0x01e53410],EDX      ; 004fe992 | DAT_01e53410
-    CALL FUN_0042b5c0                   ; 004fe998
-        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0042b5c0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe998
+        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe99d
     FLD float ptr [ESP + 0x20]          ; 004fe9a1
     FDIV float ptr [0x0058e24a]         ; 004fe9a5 | DAT_0058e24a

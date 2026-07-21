@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005088f0 at 00508b72
+;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b72
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd4260
 ;
 ; Called Functions:
-;   FUN_00481a28
+;   crt_watcom.c__memcpy_FUN_00481a28
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004483c1 | DAT_01bd4260
     ADD ECX,EAX                         ; 004483c8
     INC ESI                             ; 004483ca
-    CALL FUN_00481a28                   ; 004483cb
-        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; undefined FUN_00481a28()
+    CALL crt_watcom.c__memcpy_FUN_00481a28 ; 004483cb
+        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00481a28()
     CMP ESI,dword ptr [EBX + 0x140]     ; 004483d0
     JL 0x00448392                       ; 004483d6
         ;   XREF to: 00448392 (CONDITIONAL_JUMP)  ; LAB_00448392

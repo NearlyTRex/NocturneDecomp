@@ -48,7 +48,7 @@ void FUN_005423c0(int param_1,float param_2)
   local_1c = 0.25;
   local_24 = 0.7853982;
   iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  FUN_00563cc0(param_1 + 0xbc94,0,0x2c);
+  memset(param_1 + 0xbc94,0,0x2c);
   if (*(int *)(param_1 + 0x1fa38) != 0) {
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     local_6c = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
@@ -67,7 +67,7 @@ void FUN_005423c0(int param_1,float param_2)
     if ((local_30 < local_28) &&
        ((*(int *)(param_1 + 0x1fa38) == 2 || (*(int *)(param_1 + 0x1fa38) == 3)))) {
       fStack_3c = 9999.9;
-      iVar4 = FUN_004b5d00(param_1,&fStack_3c);
+      iVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,&fStack_3c);
       if ((iVar4 == 0) || (local_28 <= fStack_3c)) {
         if (*(int *)(param_1 + 0x1fa3c) != 0) {
           *(uint *)(param_1 + 0xbcac) = 1;
@@ -110,11 +110,13 @@ void FUN_005423c0(int param_1,float param_2)
         }
       }
       if (iStack_20 == 0) {
-        iStack_20 = FUN_004f1e00(iVar7 + 0x20);
+        iStack_20 = core_path_cpp_getPathMap_FUN_004f1e00(iVar7 + 0x20);
       }
-      iVar4 = FUN_004f1600(iStack_20,param_1 + 0x20,auStack_48,*(uint *)(param_1 + 0x6c));
+      iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+                        (iStack_20,param_1 + 0x20,auStack_48,*(uint *)(param_1 + 0x6c));
       if (iVar4 != 0) {
-        fStack_14 = (float)FUN_0040df00(fStack_44 - *(float *)(param_1 + 0x34));
+        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                     (fStack_44 - *(float *)(param_1 + 0x34));
         fVar3 = fStack_14 * (float)_DAT_005963c9 * (float)_DAT_005963d1;
         fStack_38 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
@@ -139,7 +141,7 @@ void FUN_005423c0(int param_1,float param_2)
           *(uint *)(param_1 + 0xbcac) = 1;
         }
         else {
-          iVar4 = FUN_004e1660(param_1 + 0x150);
+          iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
           if ((*(int *)(iVar4 + 0x24) != 2) && (*(int *)(iVar4 + 0x24) != 1)) {
             *(uint *)(param_1 + 0xbca0) = 1;
           }
@@ -147,7 +149,7 @@ void FUN_005423c0(int param_1,float param_2)
         *(uint *)(param_1 + 0x2dbc) = 0;
       }
       else {
-        iVar4 = FUN_004e1660(param_1 + 0x150);
+        iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
         if ((*(int *)(iVar4 + 0x24) == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
           *(uint *)(param_1 + 0xbcac) = 1;
         }
@@ -164,8 +166,10 @@ void FUN_005423c0(int param_1,float param_2)
         }
       }
       if (bVar2) {
-        iVar4 = FUN_0054e4a0(auStack_54,&local_6c);
-        fStack_14 = (float)FUN_0040df00(*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
+        iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                          (auStack_54,&local_6c);
+        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                     (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
         fVar1 = fStack_14 * (float)_DAT_005963c9 * (float)_DAT_005963d1;
         fStack_34 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar1;
@@ -200,13 +204,15 @@ void FUN_005423c0(int param_1,float param_2)
       local_68 = fStack_5c;
       local_64 = fStack_58;
     }
-    pfVar5 = (float *)FUN_0054e4a0(auStack_84,&local_6c);
+    pfVar5 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                                (auStack_84,&local_6c);
     if (&local_6c != pfVar5) {
       local_6c = *pfVar5;
       local_68 = pfVar5[1];
       local_64 = pfVar5[2];
     }
-    fStack_8c = (float)FUN_0040df00(local_68 - *(float *)(param_1 + 0x34));
+    fStack_8c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                 (local_68 - *(float *)(param_1 + 0x34));
     if (local_24 < fStack_8c) {
       fStack_8c = local_24;
     }

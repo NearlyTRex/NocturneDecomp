@@ -95,7 +95,7 @@ void FUN_00560cd0(int param_1,int param_2)
     }
   }
   else {
-    iVar2 = FUN_00564bc0(param_1 + 0x23b0,&DAT_0059877e,3);
+    iVar2 = _strnicmp(param_1 + 0x23b0,&DAT_0059877e,3);
     if (iVar2 == 0) {
       local_8c = 0xbf7c6a90;
       local_90 = 0x3f7343c8;
@@ -106,13 +106,14 @@ void FUN_00560cd0(int param_1,int param_2)
       local_90 = 0x3f676c8b;
       local_94 = 0x3e1eb852;
     }
-    FUN_0055afb0(local_16c,&DAT_02dd1184,&local_94);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+              (local_16c,&DAT_02dd1184,&local_94);
     (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_dc);
-    FUN_0040e160(&local_1c);
+    core_actor_cpp_CVector_ctor_FUN_0040e160(&local_1c);
     local_1c = local_dc + local_d0;
     local_18 = local_d8 + local_cc;
     local_14 = local_d4 + local_c8;
-    FUN_0040e160(&local_7c);
+    core_actor_cpp_CVector_ctor_FUN_0040e160(&local_7c);
     local_7c = local_1c * _DAT_00598782;
     local_78 = local_18 * _DAT_00598782;
     local_74 = local_d4 + (float)_DAT_00598786;
@@ -136,13 +137,14 @@ void FUN_00560cd0(int param_1,int param_2)
     local_54 = 0;
     local_50 = 0;
   }
-  pfVar3 = (float *)FUN_0055a8b0(puVar8,puVar5,local_10 * 0x30 + param_1 + 0xfd0);
+  pfVar3 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0
+                              (puVar8,puVar5,local_10 * 0x30 + param_1 + 0xfd0);
   if (&local_40 != pfVar3) {
     local_40 = *pfVar3;
     local_3c = pfVar3[1];
     local_38 = pfVar3[2];
   }
-  FUN_0055aa00(local_16c,local_10 * 0x30 + param_1 + 0xfd0);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_16c,local_10 * 0x30 + param_1 + 0xfd0);
   puVar5 = local_13c;
   puVar6 = local_10c;
   for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -150,7 +152,7 @@ void FUN_00560cd0(int param_1,int param_2)
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
     puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  pfVar3 = (float *)FUN_0055a8b0(local_ac,&local_64,local_10c);
+  pfVar3 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_ac,&local_64,local_10c);
   local_a0 = local_40 - *pfVar3;
   local_9c = local_3c - pfVar3[1];
   local_98 = local_38 - pfVar3[2];

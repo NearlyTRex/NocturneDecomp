@@ -66,7 +66,8 @@ void FUN_0055de20(void)
         DAT_00766c70 = DAT_00766c70 + 1;
         break;
       case 1:
-        FUN_0055d8f0(&DAT_02de4340 + iVar4,plVar6,&DAT_00766c74 + DAT_00766c70 * 0xc);
+        core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0
+                  (&DAT_02de4340 + iVar4,plVar6,&DAT_00766c74 + DAT_00766c70 * 0xc);
         DAT_00766c70 = DAT_00766c70 + 1;
         break;
       case 2:
@@ -95,7 +96,8 @@ void FUN_0055de20(void)
           }
         }
         DAT_00766c70 = DAT_00766c70 + 1;
-        FUN_0055d8f0(plVar6,&DAT_02de4340 + iVar4,&DAT_00766c74 + DAT_00766c70 * 0xc);
+        core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0
+                  (plVar6,&DAT_02de4340 + iVar4,&DAT_00766c74 + DAT_00766c70 * 0xc);
         DAT_00766c70 = DAT_00766c70 + 1;
       }
       iStack_14 = iStack_14 + 1;

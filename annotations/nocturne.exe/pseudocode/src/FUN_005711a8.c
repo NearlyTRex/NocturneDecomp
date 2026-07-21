@@ -47,7 +47,7 @@ uint * FUN_005711a8(void)
     puVar1[3] = 1;
   }
   else {
-    lpTlsValue = (uint *)FUN_00564a70(puVar1[2],0x000000F4);
+    lpTlsValue = (uint *)realloc(puVar1[2],0x000000F4);
     if (lpTlsValue == (uint *)0x0) {
       FUN_0056ddc0("Unable to resize thread-specific data\r\n",1);
     }

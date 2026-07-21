@@ -46,8 +46,9 @@ void FUN_0041f6e0(int param_1)
     local_18 = param_1 + 0x668;
     iVar3 = param_1 + 0x150;
     if (uVar1 < 2) {
-      FUN_00454580(iVar3,"flashlit.kfm");
-      FUN_00454510(iVar3);
+      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+                (iVar3,"flashlit.kfm");
+      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_90);
       fVar2 = _DAT_005799e1;
       *(float *)(param_1 + 0x3614) = (local_90 + fStack_84) * _DAT_005799e1;
@@ -63,8 +64,9 @@ void FUN_0041f6e0(int param_1)
       return;
     }
     if (uVar1 == 2) {
-      FUN_00454580(iVar3,"lantern.kfm");
-      FUN_00454510(iVar3);
+      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+                (iVar3,"lantern.kfm");
+      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_a8);
       fStack_4c = _DAT_005799e1;
       fStack_48 = local_a8 + fStack_9c;
@@ -95,14 +97,14 @@ void FUN_0041f6e0(int param_1)
         puVar4 = &DAT_0076483c;
         iVar3 = 0;
         do {
-          FUN_00563c90(auStack_d0,"lantern%d.raw",iVar3);
+          _sprintf(auStack_d0,"lantern%d.raw",iVar3);
           iVar3 = iVar3 + 1;
-          FUN_0044bf90(puVar4,auStack_d0);
+          core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(puVar4,auStack_d0);
           puVar4 = puVar4 + 0x4c;
         } while (iVar3 < 8);
         DAT_007647fc = 1;
       }
-      FUN_004501c0(param_1 + 0x668,&DAT_0076483c,0,0,0);
+      core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0(param_1 + 0x668,&DAT_0076483c,0,0,0);
       return;
     }
   }

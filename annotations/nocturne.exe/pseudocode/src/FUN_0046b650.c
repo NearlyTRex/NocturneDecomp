@@ -9,40 +9,44 @@
 void FUN_0046b650(int param_1,float *param_2)
 
 {
-  int *unaff_ESI;
-  byte bVar1;
-  float10 fVar2;
-  float10 fVar3;
-  double dVar4;
-  int aiStackY_1004 [1016];
-  int local_1c;
-  int local_18;
-  int local_14;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  uint *unaff_ESI;
+  byte bVar4;
+  float10 fVar5;
+  double dVar6;
+  int aiStackY_100c [1016];
+  uint uVar7;
+  int iStack_20;
+  byte local_18 [8];
   double local_10;
   
-  bVar1 = 0;
-  local_10 = (double)FUN_005648c0((double)((*param_2 - *(float *)(param_1 + 0x10)) /
-                                          *(float *)(param_1 + 0x28)));
-  fVar2 = ((float10)param_2[1] - (float10)*(float *)(param_1 + 0x14)) /
-          (float10)*(float *)(param_1 + 0x2c);
-  fVar3 = (float10)local_10;
-  FUN_00563a30();
-  local_1c = (int)ROUND(fVar3);
-  dVar4 = (double)FUN_005648c0((double)fVar2);
-  fVar2 = ((float10)param_2[2] - (float10)*(float *)(param_1 + 0x18)) /
-          (float10)*(float *)(param_1 + 0x30);
-  fVar3 = (float10)dVar4;
-  local_10 = dVar4;
-  FUN_00563a30();
-  local_18 = (int)ROUND(fVar3);
-  dVar4 = (double)FUN_005648c0((double)fVar2);
-  fVar2 = (float10)dVar4;
-  local_10 = dVar4;
-  FUN_00563a30();
-  local_14 = (int)ROUND(fVar2);
-  *unaff_ESI = local_1c;
-  unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar1 * -8);
-  (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       *(int *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  bVar4 = 0;
+  dVar6 = (double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28));
+  iStack_20 = (int)((ulonglong)dVar6 >> 0x20);
+  local_10 = (double)floor(SUB84(__BITCAST_UINT64(dVar6),0));
+  fVar1 = param_2[1];
+  fVar2 = *(float *)(param_1 + 0x14);
+  fVar3 = *(float *)(param_1 + 0x2c);
+  iStack_20 = 0x46b68f;
+  fVar5 = (float10)round((float10)local_10);
+  iStack_20 = (int)ROUND(fVar5);
+  dVar6 = (double)floor((double)((fVar1 - fVar2) / fVar3));
+  fVar1 = param_2[2];
+  fVar2 = *(float *)(param_1 + 0x18);
+  fVar3 = *(float *)(param_1 + 0x30);
+  uVar7 = 0x46b6ba;
+  unique0x10000133 = dVar6;
+  fVar5 = (float10)round((float10)dVar6);
+  iStack_20 = (int)ROUND(fVar5);
+  dVar6 = (double)floor((double)((fVar1 - fVar2) / fVar3));
+  local_18 = (byte  [8])dVar6;
+  fVar5 = (float10)round((float10)dVar6);
+  iStack_20 = (int)ROUND(fVar5);
+  *unaff_ESI = uVar7;
+  unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)((int)&stack0xffffffe0 + (uint)bVar4 * -8);
+  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
+       *(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   return;
 }

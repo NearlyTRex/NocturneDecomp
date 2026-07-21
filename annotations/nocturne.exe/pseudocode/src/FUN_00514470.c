@@ -10,7 +10,7 @@ void FUN_00514470(int param_1)
 
 {
   FUN_00514430(param_1);
-  FUN_00563cc0(param_1,0,0x1a0);
+  memset(param_1,0,0x1a0);
   *(uint *)(param_1 + 0x140) = 0x41e00000;
   *(uint *)(param_1 + 0x17c) = 0xc3960000;
   *(uint *)(param_1 + 0x180) = 0;

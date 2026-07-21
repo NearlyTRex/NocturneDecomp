@@ -20,7 +20,7 @@ uint FUN_005257e0(int param_1)
       FUN_00529980("Error polling hw playback pos %s\n",*(uint *)(param_1 + 0x74));
       return 0;
     }
-    FUN_00525870(param_1,dVar1);
+    sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(param_1,dVar1);
     return 1;
   }
   return 0;

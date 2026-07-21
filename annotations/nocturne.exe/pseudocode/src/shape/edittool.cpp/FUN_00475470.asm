@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00474e70 at 00474e80
+;   shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 at 00474e80
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\shape\\edittool.cpp_0057ee29+1
@@ -28,15 +28,15 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00403f50
-;   FUN_00471a80
-;   FUN_00474080
-;   FUN_004764d0
-;   FUN_00476df0
-;   FUN_00476e10
-;   FUN_00492da0
+;   crt_memory.c_memset_FUN_00563cc0
+;   engine_2d.c_clearInputAndWait_FUN_00403f50
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   FUN_004c8440
-;   FUN_00563cc0
+;   shape_edittool.cpp_calculateGridHeight_FUN_00476e10
+;   shape_edittool.cpp_calculateGridWidth_FUN_00476df0
+;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
+;   shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004764d0
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV dword ptr [EDX + 0x114],0x8     ; 00475494
     PUSH EAX                            ; 0047549e
     MOV dword ptr [EDX + 0xa4],0x1      ; 0047549f
-    CALL FUN_00563cc0                   ; 004754a9
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 004754a9
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     ADD ESP,0xc                         ; 004754ae
     MOV EAX,dword ptr [ESP + 0x148]     ; 004754b1
     XOR EDX,EDX                         ; 004754b8
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 004754d2
     MOV EBP,dword ptr [ESP + 0x14c]     ; 004754d3
     PUSH EBP                            ; 004754da
-    CALL FUN_00474080                   ; 004754db
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004754db
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 004754e0
     MOV ESI,EAX                         ; 004754e3
     XOR EBP,EBP                         ; 004754e5
@@ -101,8 +101,8 @@ section .text
     PUSH EAX                            ; 00475510
     MOV EAX,[0x01bcd070]                ; 00475511 | DAT_01bcd070
     PUSH EAX                            ; 00475516
-    CALL FUN_00492da0                   ; 00475517
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00492da0()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00475517
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
     MOV EDX,dword ptr [EDI + 0x7c]      ; 0047551c
     ADD ESP,0x8                         ; 0047551f
     CMP EAX,EDX                         ; 00475522
@@ -297,12 +297,12 @@ section .text
     MOV EAX,dword ptr [EDX + 0x124]     ; 004757b4
     IMUL EAX,ECX                        ; 004757ba
     LEA ESI,[EAX + 0x6]                 ; 004757bd
-    CALL FUN_00476df0                   ; 004757c0
-        ;   XREF to: 00476df0 (UNCONDITIONAL_CALL)  ; undefined FUN_00476df0()
+    CALL shape_edittool.cpp_calculateGridWidth_FUN_00476df0 ; 004757c0
+        ;   XREF to: 00476df0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateGridWidth_FUN_00476df0()
     MOV EDI,EAX                         ; 004757c5
     MOV dword ptr [ESP + 0x12c],EAX     ; 004757c7
-    CALL FUN_00476e10                   ; 004757ce
-        ;   XREF to: 00476e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00476e10()
+    CALL shape_edittool.cpp_calculateGridHeight_FUN_00476e10 ; 004757ce
+        ;   XREF to: 00476e10 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateGridHeight_FUN_00476e10()
     MOV EDX,dword ptr [ESP + 0x148]     ; 004757d3
     MOV ECX,dword ptr [EDX + 0x16c]     ; 004757da
     MOV EBX,EAX                         ; 004757e0
@@ -319,8 +319,8 @@ section .text
     PUSH EBP                            ; 004757fe
     MOV ECX,dword ptr [0x005b6d50]      ; 004757ff | DAT_005b6d50
     PUSH ECX                            ; 00475805
-    CALL FUN_00471a80                   ; 00475806
-        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00471a80()
+    CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 00475806
+        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
     MOV EAX,[0x01c00c60]                ; 0047580b | DAT_01c00c60
     SUB EAX,dword ptr [0x01c00c58]      ; 00475810 | DAT_01c00c58
     LEA EBP,[EAX + 0x1]                 ; 00475816
@@ -349,8 +349,8 @@ section .text
     PUSH EDX                            ; 0047586f
     PUSH EAX                            ; 00475870
     SUB EBP,EDI                         ; 00475871
-    CALL FUN_004764d0                   ; 00475873
-        ;   XREF to: 004764d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004764d0()
+    CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004764d0 ; 00475873
+        ;   XREF to: 004764d0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004764d0()
         ;   Label: LAB_00475873
     ADD ESP,0x14                        ; 00475878
     MOV ECX,dword ptr [ESP + 0x148]     ; 0047587b
@@ -402,8 +402,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x148]     ; 00475933
     MOV dword ptr [EDX + 0x11c],0x0     ; 0047593a
     MOV dword ptr [EDX + 0x128],EAX     ; 00475944
-    CALL FUN_00403f50                   ; 0047594a
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined FUN_00403f50()
+    CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0047594a
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EAX,dword ptr [ESP + 0x148]     ; 0047594f
     MOV EBX,0xffffffff                  ; 00475956
     MOV byte ptr [EAX + 0xa8],0x0       ; 0047595b

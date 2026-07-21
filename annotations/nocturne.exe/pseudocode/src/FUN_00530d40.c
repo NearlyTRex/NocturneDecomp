@@ -14,7 +14,7 @@ void FUN_00530d40(void)
   _DAT_01c02594 = 0;
   _DAT_02dc9e04 = 0;
   if (_DAT_02dc9e08 != 0) {
-    FUN_00553d20(_DAT_02dc9e08);
+    wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(_DAT_02dc9e08);
     _DAT_02dc9e08 = 0;
   }
   _DAT_02dc9d78 = 0;

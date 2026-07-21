@@ -91,7 +91,8 @@ int * FUN_00432cd0(int *param_1,int *param_2)
           }
           if (DAT_006b0280 != 0) {
             if ((int)param_1 < 4) {
-              iVar7 = FUN_004f9a10(DAT_00767274,DAT_00767278);
+              iVar7 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                                (DAT_00767274,DAT_00767278);
               if (iVar7 == 0) {
                 return (int *)0x0;
               }
@@ -104,8 +105,9 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               local_28 = piVar4;
               if (0 < iVar7) {
                 do {
-                  piVar4 = (int *)FUN_004f9a10(DAT_00767274,
-                                               *(uint *)((int)&DAT_00767278 + iVar9));
+                  piVar4 = (int *)engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                                            (DAT_00767274,
+                                             *(uint *)((int)&DAT_00767278 + iVar9));
                   if (piVar4 == (int *)0x0) {
                     piVar13 = (int *)((int)piVar13 + 1);
                   }
@@ -118,7 +120,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
             }
           }
           _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-          piVar4 = (int *)FUN_00532650(&DAT_00767274,param_1);
+          piVar4 = (int *)wincore_windll_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1);
           return piVar4;
         }
         DAT_00766c70 = param_1;
@@ -199,7 +201,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               iVar9 = iVar7 * 4;
               iVar7 = iVar7 + 1;
               *(byte **)(local_4c + iVar9) = &DAT_007678f8 + iVar14;
-              FUN_00431530(piVar2,piVar12);
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(piVar2,piVar12);
               break;
             case 2:
               iVar14 = iVar7 + 1;
@@ -213,7 +215,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               DAT_00767b38 = DAT_00767b38 + 1;
               iVar7 = iVar7 + 2;
               *(byte **)(local_4c + iVar14 * 4) = &DAT_007678f8 + iVar9;
-              FUN_00431530(piVar12,piVar2);
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(piVar12,piVar2);
             }
             piVar4 = (int *)((int)local_44 + 1);
             local_44 = piVar4;
@@ -253,7 +255,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               iVar9 = iVar9 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               aiStack_d4[iVar9] = (int)(&DAT_007678f8 + iVar7);
-              FUN_00431630(piVar12,piVar13);
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431630(piVar12,piVar13);
               break;
             case 2:
               aiStack_d4[iVar9 + 1] = (int)piVar13;
@@ -266,7 +268,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               iVar9 = iVar9 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               aiStack_d4[iVar9] = (int)(&DAT_007678f8 + iVar7);
-              FUN_00431630(piVar13,piVar12);
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431630(piVar13,piVar12);
             }
             piVar4 = (int *)((int)local_3c + 1);
             local_3c = piVar4;
@@ -312,7 +314,8 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               iVar14 = iVar11 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_150[iVar11] = (int)(&DAT_007678f8 + iVar8);
-              piVar13 = (int *)FUN_00431730(iVar9,iVar7);
+              piVar13 = (int *)engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                                         (iVar9,iVar7);
               break;
             case (int *)0x2:
               local_150[iVar11] = iVar7;
@@ -325,7 +328,8 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               iVar14 = iVar11 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_150[iVar11 + 1] = (int)(&DAT_007678f8 + iVar8);
-              piVar13 = (int *)FUN_00431730(iVar7,iVar9);
+              piVar13 = (int *)engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                                         (iVar7,iVar9);
             }
             local_34 = local_34 + 1;
             local_20 = local_20 + 1;
@@ -368,7 +372,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               piVar12 = (int *)((int)piVar12 + 1);
               DAT_00767b38 = DAT_00767b38 + 1;
               aiStack_d4[(int)piVar12] = (int)(&DAT_007678f8 + iVar14);
-              piVar13 = (int *)FUN_00431830(iVar9,iVar7);
+              piVar13 = (int *)engine_clipper_c_interpolateVertexTopClip_FUN_00431830(iVar9,iVar7);
               break;
             case (int *)0x2:
               aiStack_d4[(int)piVar12 + 1] = iVar7;
@@ -381,7 +385,7 @@ int * FUN_00432cd0(int *param_1,int *param_2)
               piVar12 = (int *)((int)piVar12 + 2);
               DAT_00767b38 = DAT_00767b38 + 1;
               aiStack_d4[(int)piVar12] = (int)(&DAT_007678f8 + iVar14);
-              piVar13 = (int *)FUN_00431830(iVar7,iVar9);
+              piVar13 = (int *)engine_clipper_c_interpolateVertexTopClip_FUN_00431830(iVar7,iVar9);
             }
             local_2c = local_2c + 1;
             local_1c = local_1c + 1;
@@ -504,7 +508,8 @@ int * FUN_00432cd0(int *param_1,int *param_2)
                   DAT_00766c70 = (int *)((int)DAT_00766c70 + 1);
                   break;
                 case (int *)0x1:
-                  piVar13 = (int *)FUN_00431930(&DAT_007672f8 + (int)piVar4 * 0xc,plVar10);
+                  piVar13 = (int *)engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                                             (&DAT_007672f8 + (int)piVar4 * 0xc,plVar10);
                   DAT_00766c70 = (int *)((int)DAT_00766c70 + 1);
                   break;
                 case (int *)0x2:
@@ -534,7 +539,8 @@ int * FUN_00432cd0(int *param_1,int *param_2)
                     }
                   }
                   DAT_00766c70 = (int *)((int)DAT_00766c70 + 1);
-                  piVar13 = (int *)FUN_00431930(plVar10,&DAT_007672f8 + (int)piVar4 * 0xc);
+                  piVar13 = (int *)engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                                             (plVar10,&DAT_007672f8 + (int)piVar4 * 0xc);
                   DAT_00766c70 = (int *)((int)DAT_00766c70 + 1);
                 }
                 local_14 = local_14 + 1;

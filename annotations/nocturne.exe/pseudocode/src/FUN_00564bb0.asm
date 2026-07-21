@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004f1c90 at 004f1dad
 ;   FUN_00522480 at 00522529
-;   FUN_005279e0 at 00527b7d
+;   core_path.cpp_getOrCreatePathMap_FUN_004f1c90 at 004f1dad
+;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b7d
 ;
 ; Called Functions:
 ;   FUN_0056b215

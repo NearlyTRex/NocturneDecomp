@@ -15,9 +15,11 @@ void FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_
   uint uVar4;
   
   if ((*(int *)(param_1 + 0x2f08) < 0x32) &&
-     (((param_6 != 0 || (iVar1 = FUN_0040d7e0(param_1,"KCHero" + 1), iVar1 == 0)) &&
-      (*(char *)(param_1 + 0x23b0) != '\0')))) {
-    iVar2 = FUN_0051e9e0(param_1 + 0x150,param_2);
+     (((param_6 != 0 ||
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,"KCHero" + 1), iVar1 == 0))
+      && (*(char *)(param_1 + 0x23b0) != '\0')))) {
+    iVar2 = core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0
+                      (param_1 + 0x150,param_2);
     iVar3 = 0;
     iVar1 = param_1;
     if (0 < *(int *)(param_1 + 0x2f08)) {
@@ -31,8 +33,9 @@ void FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_
     }
     *(uint *)(param_1 + 0x2f0c) = param_4;
     *(uint *)(param_1 + 0x2f10) = param_5;
-    uVar4 = FUN_0051e0a0(param_1 + 0x150,iVar2);
-    FUN_004266a0(param_1,uVar4);
+    uVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
+                      (param_1 + 0x150,iVar2);
+    core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(param_1,uVar4);
     *(uint *)(param_1 + 0xfc) = 1;
     return;
   }

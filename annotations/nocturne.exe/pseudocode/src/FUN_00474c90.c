@@ -11,9 +11,9 @@ int FUN_00474c90(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00473b60(param_1);
-  iVar1 = FUN_00476450(iVar1 + 0x138);
-  *(byte ***)(iVar1 + -300) = &PTR_FUN_0059ca94;
+  iVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60(param_1);
+  iVar1 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_00476450(iVar1 + 0x138);
+  *(byte ***)(iVar1 + -300) = &PTR_shape_edittool_cpp_CPickList_dtor_FUN_00474cf0_0059ca94;
   *(uint *)(iVar1 + -0x128) = 0;
   *(byte *)(iVar1 + -0x124) = 0;
   *(uint *)(iVar1 + 0x34) = 0;

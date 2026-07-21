@@ -47,7 +47,8 @@ void FUN_004dba70(int param_1,int param_2)
   iVar1 = param_2 * 0x44 + param_1;
   iVar2 = *(int *)(iVar1 + 0x24a4);
   if (param_2 == 1) {
-    iVar1 = FUN_0040d890(*(uint *)(iVar1 + 0x24ac),_DAT_01bcde7c);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (*(uint *)(iVar1 + 0x24ac),_DAT_01bcde7c);
     if (iVar1 == 0) {
       local_78 = 0x3e698e54;
       local_74 = 0xbe0d3d86;
@@ -103,8 +104,8 @@ void FUN_004dba70(int param_1,int param_2)
       local_28 = 0xbfdac083;
     }
   }
-  FUN_0055afb0(local_d8,&local_60,&local_30);
-  FUN_0055aa00(local_d8,iVar2 * 0x30 + param_1 + 0xfd0);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_d8,&local_60,&local_30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_d8,iVar2 * 0x30 + param_1 + 0xfd0);
   puVar3 = local_a8;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     *unaff_ESI = *puVar3;

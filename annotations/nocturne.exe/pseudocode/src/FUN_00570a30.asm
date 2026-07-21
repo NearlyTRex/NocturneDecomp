@@ -8,7 +8,7 @@
 ;   FUN_0056cb60 at 0056cbcc
 ;
 ; Called Functions:
-;   FUN_00565fb0
+;   crt_time.c__mktime_FUN_00565fb0
 ;   FUN_00572b00
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     MOV EAX,ESP                         ; 00570a4d
         ;   Label: LAB_00570a4d
     PUSH EAX                            ; 00570a4f
-    CALL FUN_00565fb0                   ; 00570a50
-        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00565fb0()
+    CALL crt_time.c__mktime_FUN_00565fb0 ; 00570a50
+        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_00565fb0()
     ADD ESP,0x4                         ; 00570a55
     MOV EDX,EAX                         ; 00570a58
     TEST EBX,EBX                        ; 00570a5a

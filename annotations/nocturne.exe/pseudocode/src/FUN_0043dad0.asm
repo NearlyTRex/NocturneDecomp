@@ -42,10 +42,10 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_00409fc0
-;   FUN_0043e110
-;   FUN_00461eb0
-;   FUN_00563a30
+;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
+;   core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110
+;   crt_math.c_round_FUN_00563a30
+;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;
 ; *****************************************************************************
 
@@ -61,15 +61,15 @@ section .text
     AND ESP,0xfffffff8                  ; 0043dad9
     MOV EBX,dword ptr [EBP + 0x14]      ; 0043dadc
     PUSH EBX                            ; 0043dadf
-    CALL FUN_00409fc0                   ; 0043dae0
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409fc0()
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0043dae0
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
     ADD ESP,0x4                         ; 0043dae5
     LEA EAX,[EBX + 0x15c]               ; 0043dae8
     PUSH EAX                            ; 0043daee
     MOV EDX,dword ptr [0x005ae704]      ; 0043daef | DAT_005ae704
     PUSH EDX                            ; 0043daf5 | DAT_01b4d738
-    CALL FUN_00461eb0                   ; 0043daf6
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00461eb0()
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0043daf6
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
     ADD ESP,0x8                         ; 0043dafb
     FLD1                                ; 0043dafe
         ;   Label: LAB_0043dafe
@@ -80,12 +80,12 @@ section .text
     FMUL ST1                            ; 0043db10
     FLD float ptr [EBX + 0x154]         ; 0043db12
     FMULP ST2                           ; 0043db18
-    CALL FUN_00563a30                   ; 0043db1a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0043db1a
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x14]        ; 0043db1f
     MOV EAX,dword ptr [ESP + 0x14]      ; 0043db23
-    CALL FUN_00563a30                   ; 0043db27
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0043db27
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     INC EAX                             ; 0043db2c
     FISTP dword ptr [ESP + 0x74]        ; 0043db2d
     MOV dword ptr [ESP + 0x58],EAX      ; 0043db31
@@ -239,8 +239,8 @@ section .text
     FLD double ptr [0x0057b4f6]         ; 0043dcfb | DAT_0057b4f6
     FXCH                                ; 0043dd01
     FMUL ST1                            ; 0043dd03
-    CALL FUN_00563a30                   ; 0043dd05
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0043dd05
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x74]        ; 0043dd0a
     MOV ECX,dword ptr [ESP + 0x74]      ; 0043dd0e
     ADD ECX,0x20000                     ; 0043dd12
@@ -257,8 +257,8 @@ section .text
     FADD float ptr [ESP + 0x44]         ; 0043dd35
     ADD EDI,0x74                        ; 0043dd39
     FSTP float ptr [ESP + 0x64]         ; 0043dd3c
-    CALL FUN_00563a30                   ; 0043dd40
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0043dd40
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x74]        ; 0043dd45
     MOV ECX,dword ptr [ESP + 0x74]      ; 0043dd49
     MOV dword ptr [ESP + 0x70],EDI      ; 0043dd4d
@@ -528,8 +528,8 @@ section .text
         ;   XREF to: 0043deba (CONDITIONAL_JUMP)  ; LAB_0043deba
     PUSH EBX                            ; 0043e083
         ;   Label: LAB_0043e083
-    CALL FUN_0043e110                   ; 0043e084
-        ;   XREF to: 0043e110 (UNCONDITIONAL_CALL)  ; undefined FUN_0043e110()
+    CALL core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110 ; 0043e084
+        ;   XREF to: 0043e110 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110()
     MOV EDI,dword ptr [EBX + 0x174]     ; 0043e089
     ADD ESP,0x4                         ; 0043e08f
     CMP EDI,0xfde8                      ; 0043e092

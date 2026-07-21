@@ -9,7 +9,7 @@
 void FUN_00504d60(int param_1)
 
 {
-  FUN_00504bf0(param_1,*(uint *)(param_1 + 4));
+  core_script_cpp_CScript_setSpeaker_FUN_00504bf0(param_1,*(uint *)(param_1 + 4));
   *(uint *)(param_1 + 0x44) = 0;
   *(uint *)(param_1 + 0x48) = 0;
   return;

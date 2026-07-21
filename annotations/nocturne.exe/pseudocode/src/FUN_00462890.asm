@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059c6c0
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004628b6 (CONDITIONAL_JUMP)  ; LAB_004628b6
     PUSH 0x1                            ; 0046289c
     PUSH EBX                            ; 0046289e
-    CALL FUN_00409ea0                   ; 0046289f
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 0046289f
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 004628a4
     MOV DL,byte ptr [ESP + 0xc]         ; 004628a7
     MOV EBX,EAX                         ; 004628ab
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59c6c0                       ; 004628b6 | DAT_0059c6c0
         ;   Label: LAB_004628b6
     PUSH EBX                            ; 004628bb
-    CALL FUN_0056445f                   ; 004628bc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004628bc
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004628c1
     PUSH EAX                            ; 004628c4
-    CALL FUN_00564486                   ; 004628c5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004628c5
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004628ca
     MOV EAX,EBX                         ; 004628cd
     POP EBX                             ; 004628cf

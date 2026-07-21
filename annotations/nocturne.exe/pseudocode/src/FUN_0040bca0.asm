@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00417f10 at 00417f29
 ;   FUN_004cef80 at 004cef99
+;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10 at 00417f29
 ;
 ; *****************************************************************************
 

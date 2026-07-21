@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a2410
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 00533cb6 (CONDITIONAL_JUMP)  ; LAB_00533cb6
     PUSH 0x1                            ; 00533c9c
     PUSH EBX                            ; 00533c9e
-    CALL FUN_00409ea0                   ; 00533c9f
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 00533c9f
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 00533ca4
     MOV DL,byte ptr [ESP + 0xc]         ; 00533ca7
     MOV EBX,EAX                         ; 00533cab
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a2410                       ; 00533cb6 | DAT_005a2410
         ;   Label: LAB_00533cb6
     PUSH EBX                            ; 00533cbb
-    CALL FUN_0056445f                   ; 00533cbc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 00533cbc
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00533cc1
     PUSH EAX                            ; 00533cc4
-    CALL FUN_00564486                   ; 00533cc5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00533cc5
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00533cca
     MOV EAX,EBX                         ; 00533ccd
     POP EBX                             ; 00533ccf

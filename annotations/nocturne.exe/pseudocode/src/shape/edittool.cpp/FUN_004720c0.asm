@@ -14,10 +14,10 @@
 ;   FUN_0046fcd0 at 0046fe3f
 ;   FUN_0046fe60 at 0046ffcf
 ;   FUN_00470eb0 at 00471171
-;   FUN_00474d70 at 00474e3e
-;   FUN_0049da10 at 0049de90
-;   FUN_004cfbc0 at 004cfdfc
-;   FUN_004e9e90 at 004ea00b
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de90
+;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfdfc
+;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea00b
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e3e
 ;
 ; Referenced Globals:
 ;   string s_..\\shape\\edittool.cpp_0057e952
@@ -30,8 +30,8 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004721e0
 ;   FUN_004c8440
+;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
 ;
 ; *****************************************************************************
 
@@ -120,8 +120,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 004721a0
         ;   Label: LAB_004721a0
     PUSH EDI                            ; 004721a4
-    CALL FUN_004721e0                   ; 004721a5
-        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004721e0()
+    CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0 ; 004721a5
+        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0()
     ADD ESP,0x4                         ; 004721aa
     ADD ESP,0xc                         ; 004721ad
     POP EBP                             ; 004721b0

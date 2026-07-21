@@ -15,10 +15,10 @@ void FUN_0048eb30(int param_1,float param_2)
   int iVar2;
   uint uVar3;
   
-  FUN_00554030(param_1,param_2);
+  core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);
   if (*(int *)(param_1 + 0x570) == 0) {
     if (*(int *)(param_1 + 0x574) != 0) {
-      FUN_0052ebb0(0x02DC9450,*(int *)(param_1 + 0x574));
+      core_sound_cpp_CSound_killSound_FUN_0052ebb0(0x02DC9450,*(int *)(param_1 + 0x574));
       *(uint *)(param_1 + 0x574) = 0;
     }
     iVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
@@ -27,7 +27,8 @@ void FUN_0048eb30(int param_1,float param_2)
     }
   }
   else {
-    iVar2 = FUN_0052eba0(0x02DC9450,*(uint *)(param_1 + 0x574));
+    iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
+                      (0x02DC9450,*(uint *)(param_1 + 0x574));
     if (iVar2 == 0) {
       uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"fl-throw.wav");
       *(uint *)(param_1 + 0x574) = uVar3;

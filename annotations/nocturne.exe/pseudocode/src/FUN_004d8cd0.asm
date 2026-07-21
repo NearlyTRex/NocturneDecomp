@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004bf360 at 004c02a2
-;   FUN_004c14d0 at 004c14f2
-;   FUN_004d8f90 at 004d8fa1
-;   FUN_004d9440 at 004d94d4
+;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c02a2
+;   core_inv.cpp_CInventory_loadItems_FUN_004c14d0 at 004c14f2
+;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 at 004d8fa1
+;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d94d4
 ;
 ; *****************************************************************************
 

@@ -33,15 +33,20 @@ uint FUN_004d74a0(int param_1,int param_2)
       pfVar2 = pfVar2 + 3;
     } while (iVar3 < *(int *)(param_2 + 4));
   }
-  FUN_004d6420(param_1 + 0x98,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);
+  core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
+            (param_1 + 0x98,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);
   if ((((2 < _DAT_01cc92a4) &&
-       (FUN_004d6420(param_1 + 0xa8,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120),
+       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
+                  (param_1 + 0xa8,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120),
        2 < _DAT_01cc9120)) &&
-      (FUN_004d6420(param_1 + 0xb8,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4),
+      (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
+                 (param_1 + 0xb8,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4),
       2 < _DAT_01cc92a4)) &&
-     ((FUN_004d6420(param_1 + 200,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120),
+     ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
+                 (param_1 + 200,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120),
       2 < _DAT_01cc9120 &&
-      (FUN_004d6420(param_1 + 0xd8,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4),
+      (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
+                 (param_1 + 0xd8,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4),
       2 < _DAT_01cc92a4)))) {
     *(int *)(param_1 + 0xec) = _DAT_01cc92a4;
     *(uint *)(param_1 + 0xf0) = *(uint *)(param_2 + 8);
@@ -59,7 +64,7 @@ uint FUN_004d74a0(int param_1,int param_2)
         piVar1[2] = (int)ROUND(local_14[2] * _DAT_005a0880);
         *(uint *)(iVar4 + 0x10 + *DAT_005ae704) = 0xffffffff;
         *(int *)(param_1 + 0x100) = iVar3 + 0x4e00;
-        FUN_004cd240(iVar3 + 0x4e00);
+        engine_matrix_c_projectCachedPoint_FUN_004cd240(iVar3 + 0x4e00);
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 0x30;
         local_14 = local_14 + 3;

@@ -1,0 +1,395 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 149,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "00474ae0",
+      "from_addr": "00474bb4",
+      "name": "FUN_00474ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f92b0",
+      "from_addr": "004f92f0",
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_004f92b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004746b0",
+      "from_addr": "00474801",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004748b0",
+      "from_addr": "004749f4",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00456c40",
+    "address_range": [
+      [
+        "00456c40",
+        "00456cb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40",
+    "signature": "undefined4 __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(int param_1,LPCSTR param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00456d40",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40"
+    },
+    {
+      "addr": "00456d90",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90"
+    },
+    {
+      "addr": "00456d80",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_reset_FUN_00456d80"
+    },
+    {
+      "addr": "EXTERNAL:00000050",
+      "is_variadic": false,
+      "name": "FindFirstFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754cc",
+      "name": "PTR_FindFirstFileA_005754cc",
+      "type": "void*",
+      "value": "00175bfc"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00474801",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004749f4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f92f0",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_CDemonPod_load_FUN_004f92b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00474bb4",
+        "call_type": "direct",
+        "caller": "FUN_00474ae0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.352941176470588,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 16,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 14,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 148
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(int param_1,LPCSTR param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(int param_1,LPCSTR param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pvVar1 = FindFirstFileA(param_2,&_Stack_144);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x10c) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(uint *)(param_1 + 0x10c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(HANDLE *)(param_1 + 0x110) = pvVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(param_1,&_Stack_144);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x10c) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(uint *)(param_1 + 0x10c);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

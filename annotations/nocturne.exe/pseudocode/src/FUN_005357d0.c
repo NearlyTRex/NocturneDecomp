@@ -20,7 +20,7 @@ void FUN_005357d0(int param_1,float param_2)
     return;
   }
   uVar1 = *(uint *)(0x01C775EC + 0x264);
-  iVar3 = FUN_004e1660(param_1 + 0x150);
+  iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
   bVar2 = false;
   switch(*(uint *)(iVar3 + 0x24)) {
   case 7:
@@ -51,6 +51,6 @@ void FUN_005357d0(int param_1,float param_2)
     FUN_00535900(param_1,param_2);
   }
   FUN_00535900(param_1,param_2);
-  FUN_004a5f00(0x01C775EC,uVar1);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,uVar1);
   return;
 }

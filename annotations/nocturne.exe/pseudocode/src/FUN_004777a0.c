@@ -18,21 +18,21 @@ void FUN_004777a0(int param_1)
   if (*(int *)(param_1 + 0x574) != 0) {
     _DAT_01c762f4 = 1;
     (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))();
-    FUN_0040a240();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240();
     _DAT_01c762fc = 0;
     if (&stack0x00000000 != (byte *)0x1c74764) {
       _DAT_01c74744 = uStack_20;
       _DAT_01c74748 = uStack_1c;
       _DAT_01c7474c = uStack_18;
     }
-    FUN_0044d7a0();
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0();
     _DAT_01c74740 = *(uint *)(param_1 + 0x578);
     _DAT_01c74778 = 0x42e00000;
-    FUN_00452080();
+    core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080();
     _DAT_01c76310 = 0;
-    FUN_0050a970();
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970();
   }
   *(uint *)(param_1 + 0x574) = 0;
-  FUN_00554030();
+  core_weapon_cpp_CWeapon_process_FUN_00554030();
   return;
 }

@@ -9,11 +9,11 @@
 ;   undefined4 DAT_005b7650
 ;
 ; Called Functions:
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
+;   core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0
+;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   FUN_00422050
-;   FUN_00422370
-;   FUN_004227a0
 ;   FUN_004259f0
-;   FUN_0047dc30
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 004214d1
     MOV ECX,dword ptr [0x005b7650]      ; 004214d2 | DAT_005b7650
     PUSH ECX                            ; 004214d8
-    CALL FUN_0047dc30                   ; 004214d9
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004214d9
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 004214de
     TEST EAX,EAX                        ; 004214e1
     JZ 0x004214a0                       ; 004214e3
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 004214f7
     MOV EDI,dword ptr [0x005b7650]      ; 004214f8 | DAT_005b7650
     PUSH EDI                            ; 004214fe
-    CALL FUN_0047dc30                   ; 004214ff
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined FUN_0047dc30()
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004214ff
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
     ADD ESP,0x8                         ; 00421504
     TEST EAX,EAX                        ; 00421507
     JZ 0x004214a9                       ; 00421509
@@ -86,8 +86,8 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00421517
         ;   Label: caseD_1
     PUSH EBX                            ; 0042151b
-    CALL FUN_00422370                   ; 0042151c
-        ;   XREF to: 00422370 (UNCONDITIONAL_CALL)  ; undefined FUN_00422370()
+    CALL core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 ; 0042151c
+        ;   XREF to: 00422370 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370()
     ADD ESP,0x8                         ; 00421521
     POP EDI                             ; 00421524
     POP EBX                             ; 00421525
@@ -95,8 +95,8 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00421527
         ;   Label: caseD_2
     PUSH EBX                            ; 0042152b
-    CALL FUN_004227a0                   ; 0042152c
-        ;   XREF to: 004227a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004227a0()
+    CALL core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0 ; 0042152c
+        ;   XREF to: 004227a0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0()
     ADD ESP,0x8                         ; 00421531
     POP EDI                             ; 00421534
     POP EBX                             ; 00421535

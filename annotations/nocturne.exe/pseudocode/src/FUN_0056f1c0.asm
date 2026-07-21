@@ -15,10 +15,10 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FlushFileBuffers
 ;   FUN_005671e4
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     TEST EAX,EAX                        ; 0056f200
     JNZ 0x0056f20e                      ; 0056f202
         ;   XREF to: 0056f20e (CONDITIONAL_JUMP)  ; LAB_0056f20e
-    CALL FUN_0056c73c                   ; 0056f204
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056f204
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV ESI,0xffffffff                  ; 0056f209
     PUSH EBX                            ; 0056f20e
         ;   Label: LAB_0056f20e

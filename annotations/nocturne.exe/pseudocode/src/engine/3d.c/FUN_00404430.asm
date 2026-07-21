@@ -14,8 +14,8 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004c8440
-;   FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00404440
     PUSH EAX                            ; 00404444
     MOV EBX,0xd9                        ; 00404445
-    CALL FUN_00563c90                   ; 0040444a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040444a
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0040444f
     MOV EAX,ESP                         ; 00404452
     MOV ECX,0x5774d6                    ; 00404454 | = "..\\engine\\3d.c"

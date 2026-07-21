@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_0052c9d0 at 0052cfaf
+;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cfaf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00590a15
@@ -23,8 +23,8 @@
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
-;   FUN_00467a00
-;   FUN_0050ffe0
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 0050f97a
     PUSH 0x1fba938                      ; 0050f97e | DAT_01fba938
     FSTP float ptr [ESP + 0x1c]         ; 0050f983
-    CALL FUN_00467a00                   ; 0050f987
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined FUN_00467a00()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0050f987
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
     MOV dword ptr [ESP + 0x34],EAX      ; 0050f98c
     FLD float ptr [ESP + 0x34]          ; 0050f990
     ADD ESP,0x14                        ; 0050f994
@@ -106,8 +106,8 @@ section .text
     PUSH EAX                            ; 0050f9d7
     PUSH 0xbf800000                     ; 0050f9d8
     PUSH EBX                            ; 0050f9dd
-    CALL FUN_0050ffe0                   ; 0050f9de
-        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ffe0()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 ; 0050f9de
+        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0()
     MOV dword ptr [ESP + 0x34],EAX      ; 0050f9e3
     FLD float ptr [ESP + 0x34]          ; 0050f9e7
     ADD ESP,0x14                        ; 0050f9eb

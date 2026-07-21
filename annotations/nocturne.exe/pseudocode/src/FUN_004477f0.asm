@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004477f0(int param_1,int param_2)
+; void FUN_004477f0(int param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   FUN_004ce760
+;   engine_matrix.c_getCameraOrigin_FUN_004ce760
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EDI                            ; 004477f1
     SUB ESP,0xc                         ; 004477f2
     MOV ESI,ESP                         ; 004477f5
-    CALL FUN_004ce760                   ; 004477f7
-        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined FUN_004ce760()
+    CALL engine_matrix.c_getCameraOrigin_FUN_004ce760 ; 004477f7
+        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ce760()
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004477fc
     LEA EAX,[EDX*0x4 + 0x0]             ; 00447800
     SUB EAX,EDX                         ; 00447807

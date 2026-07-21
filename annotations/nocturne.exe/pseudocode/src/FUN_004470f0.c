@@ -30,9 +30,9 @@ void FUN_004470f0(int param_1)
     if (0xf < _DAT_0140d778) {
       _DAT_0140d778 = 0;
     }
-    FUN_0043fe60(0x140d784,_DAT_0140d778,_DAT_0140d77c);
+    core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(0x140d784,_DAT_0140d778,_DAT_0140d77c);
   }
-  FUN_00444810(param_1);
+  core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810(param_1);
   if (DAT_005b7624 == 0x20) {
     _DAT_01c039a8 =
          (*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff) << (DAT_01c0063c & 0x1f) |
@@ -57,18 +57,22 @@ void FUN_004470f0(int param_1)
       iVar4 = iVar4 + 0xaafdb8;
       if ((uVar9 & 1) == 0) {
         if (*(int *)(param_1 + 0x14c) == 1) {
-          FUN_00466930(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
         if (*(int *)(param_1 + 0x14c) == 2) {
-          FUN_00465fc9(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
       }
       else {
         if (*(int *)(param_1 + 0x14c) == 1) {
-          FUN_00466e94(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
         if (*(int *)(param_1 + 0x14c) == 2) {
-          FUN_00466520(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
       }
       iVar4 = iVar10 * 0xc;
@@ -102,18 +106,22 @@ LAB_0044729d:
       puVar5 = &DAT_012ceb78 + iVar8;
       if ((uVar9 & 1) == 0) {
         if (*(int *)(param_1 + 0x14c) == 1) {
-          FUN_004657a7(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
         if (*(int *)(param_1 + 0x14c) == 2) {
-          FUN_00464afc(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
       }
       else {
         if (*(int *)(param_1 + 0x14c) == 1) {
-          FUN_00465c9b(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
         if (*(int *)(param_1 + 0x14c) == 2) {
-          FUN_00464fda(iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
+          core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
+                    (iVar6,iVar7,iVar4,puVar5,*(uint *)(param_1 + 0x13c));
         }
       }
       iVar4 = iVar10 * 0xc;

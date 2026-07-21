@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00566234 at 00566244
+;   crt_memory.c___vec_new_FUN_00566234 at 00566244
 ;
 ; Called Functions:
 ;   FUN_005661c2

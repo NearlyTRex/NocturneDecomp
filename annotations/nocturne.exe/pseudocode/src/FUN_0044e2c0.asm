@@ -6,10 +6,10 @@
 ;
 ; XREF[2]:
 ;   FUN_0044e1c0 at 0044e1c5
-;   FUN_0044e1e0 at 0044e1ea
+;   core_dlight.cpp_CDemonLight_init_FUN_0044e1e0 at 0044e1ea
 ;
 ; Called Functions:
-;   FUN_0044e440
+;   core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440
 ;   FUN_005638d0
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 0044e304 (CONDITIONAL_JUMP)  ; LAB_0044e304
     PUSH EBX                            ; 0044e2d0
         ;   Label: LAB_0044e2d0
-    CALL FUN_0044e440                   ; 0044e2d1
-        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e440()
+    CALL core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440 ; 0044e2d1
+        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440()
     MOV ESI,dword ptr [EBX + 0x2fa0]    ; 0044e2d6
     ADD ESP,0x4                         ; 0044e2dc
     TEST ESI,ESI                        ; 0044e2df

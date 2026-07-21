@@ -8,9 +8,9 @@
 ;   string s_stand_00595fdc
 ;
 ; Called Functions:
+;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960
+;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   FUN_004b5ec0
-;   FUN_004e16b0
-;   FUN_004e1960
 ;
 ; *****************************************************************************
 
@@ -32,14 +32,14 @@ section .text
     MOV dword ptr [EBX + 0x2934],0x0    ; 00540859
     PUSH EBX                            ; 00540863
     MOV dword ptr [EBX + 0x2938],0x0    ; 00540864
-    CALL FUN_004e1960                   ; 0054086e
-        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1960()
+    CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960 ; 0054086e
+        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960()
     ADD ESP,0xc                         ; 00540873
     PUSH 0x1                            ; 00540876
     PUSH 0x0                            ; 00540878
     PUSH EBX                            ; 0054087a
-    CALL FUN_004e16b0                   ; 0054087b
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e16b0()
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 0054087b
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 00540880
     POP EBX                             ; 00540883
     RET                                 ; 00540884

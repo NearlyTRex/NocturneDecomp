@@ -1,0 +1,322 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 111,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004551f0",
+    "address_range": [
+      [
+        "004551f0",
+        "00455261"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_door.cpp_CDoor_setup_FUN_004551f0",
+    "signature": "void core_door_cpp_CDoor_setup_FUN_004551f0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409fc0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00409fc0"
+    },
+    {
+      "addr": "00454510",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "005649c0",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005649c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057d047",
+      "name": "s_defaultDoorOpen_0057d047",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0057d057",
+      "name": "s_%sOpen_0057d057",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0057d05e",
+      "name": "s_defaultDoorClose_0057d05e",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0057d06f",
+      "name": "s_%sClose_0057d06f",
+      "type": "string",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 20,
+      "LOAD": 7,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 166
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_door_cpp_CDoor_setup_FUN_004551f0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = _strcmp(param_1 + 0x2e0,\"defaultDoorOpen\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(param_1 + 0x2e0,\"%sOpen\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(param_1 + 0x2e0,\"%sOpen\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = _strcmp(param_1 + 0x344,\"defaultDoorClose\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(param_1 + 0x344,\"%sClose\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(param_1 + 0x344,\"%sClose\",param_1);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDoor",
+        "offset": 0,
+        "vtable_addr": "0059c284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

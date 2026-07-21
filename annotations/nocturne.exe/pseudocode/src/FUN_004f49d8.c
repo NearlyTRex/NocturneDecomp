@@ -12,7 +12,7 @@ void FUN_004f49d8(void)
   uint uVar1;
   int unaff_EBP;
   
-  uVar1 = FUN_00564a70(*(uint *)(unaff_EBP + 0x14));
+  uVar1 = realloc(*(uint *)(unaff_EBP + 0x14));
   *(uint *)(unaff_EBP + 0x14) = uVar1;
   return;
 }

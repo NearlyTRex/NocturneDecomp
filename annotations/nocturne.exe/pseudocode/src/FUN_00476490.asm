@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00474cf0 at 00474d15
+;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d15
 ;
 ; Called Functions:
-;   FUN_004764b0
+;   shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: FUN_00476490
     MOV EBX,dword ptr [ESP + 0x8]       ; 00476491
     PUSH EBX                            ; 00476495
-    CALL FUN_004764b0                   ; 00476496
-        ;   XREF to: 004764b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004764b0()
+    CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0 ; 00476496
+        ;   XREF to: 004764b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0()
     ADD ESP,0x4                         ; 0047649b
     MOV EAX,EBX                         ; 0047649e
     POP EBX                             ; 004764a0

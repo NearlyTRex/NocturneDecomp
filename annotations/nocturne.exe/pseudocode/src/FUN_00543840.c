@@ -12,6 +12,6 @@ void FUN_00543840(uint param_1)
   int iVar1;
   
   iVar1 = FUN_00409d30(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_FUN_005a2ee4;
+  *(byte ***)(iVar1 + 0x14c) = &PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005a2ee4;
   return;
 }

@@ -15,7 +15,8 @@ int FUN_004b30a0(uint param_1)
   *(byte ***)(iVar1 + 0x14c) = &PTR_FUN_0059e884;
   *(uint *)(iVar1 + 0x1fa3c) = 0;
   *(uint *)(iVar1 + 0x1fa40) = 0;
-  FUN_0051e0c0(iVar1 + 0x150,"haystack.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar1 + 0x150,"haystack.dfm");
   *(uint *)(iVar1 + 0x1fa50) = 0x3f800000;
   *(uint *)(iVar1 + 0x1fa4c) = 0;
   *(uint *)(iVar1 + 0x1fa48) = *(uint *)(iVar1 + 0x1fa4c);

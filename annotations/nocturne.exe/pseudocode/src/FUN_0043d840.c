@@ -11,6 +11,6 @@ uint FUN_0043d840(void)
 {
   uint uVar1;
   
-  uVar1 = FUN_0040dda0(0x41200000,0x41700000);
+  uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41700000);
   return uVar1;
 }

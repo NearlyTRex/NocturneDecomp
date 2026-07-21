@@ -13,8 +13,8 @@ void FUN_00529980(uint param_1)
   byte *local_8;
   
   local_8 = &stack0x00000008;
-  FUN_00563a08(local_408,param_1,&local_8);
+  _vsprintf(local_408,param_1,&local_8);
   local_8 = (byte *)0x0;
-  FUN_0043ac60(PTR_DAT_005ad350,&DAT_00593b86,local_408);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,&DAT_00593b86,local_408);
   return;
 }

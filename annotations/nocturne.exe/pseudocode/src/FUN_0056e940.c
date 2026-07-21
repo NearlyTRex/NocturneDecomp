@@ -26,7 +26,7 @@ char * FUN_0056e940(char *param_1)
     pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  pcVar2 = (char *)FUN_005635b0(uVar3);
+  pcVar2 = (char *)malloc(uVar3);
   if (pcVar2 != (char *)0x0) {
     pcVar5 = pcVar2;
     for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {

@@ -9,8 +9,8 @@
 ;   undefined4 DAT_01c00c4c
 ;
 ; Called Functions:
-;   FUN_004cd0e0
-;   FUN_00563a30
+;   crt_math.c_round_FUN_00563a30
+;   engine_matrix.c_transformWorldToView_FUN_004cd0e0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 004cea6d
     MOV dword ptr [ESP + 0x4],EDX       ; 004cea6e
     MOV dword ptr [ESP + 0xc],EDX       ; 004cea72
-    CALL FUN_004cd0e0                   ; 004cea76
-        ;   XREF to: 004cd0e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd0e0()
+    CALL engine_matrix.c_transformWorldToView_FUN_004cd0e0 ; 004cea76
+        ;   XREF to: 004cd0e0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformWorldToView_FUN_004cd0e0()
     LEA ESI,[ESP + 0x10]                ; 004cea7b
     ADD ESP,0x4                         ; 004cea7f
     MOVSD ES:EDI,ESI                    ; 004cea82
@@ -55,8 +55,8 @@ section .text
     FDIVP                               ; 004ceaaa
     FILD dword ptr [0x005b7648]         ; 004ceaac | DAT_005b7648
     FDIVP                               ; 004ceab2
-    CALL FUN_00563a30                   ; 004ceab4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004ceab4
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x30]        ; 004ceab9
     MOV EAX,dword ptr [ESP + 0x30]      ; 004ceabd
     MOV ESP,EBP                         ; 004ceac1

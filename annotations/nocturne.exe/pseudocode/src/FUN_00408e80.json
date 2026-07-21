@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 113,
+    "complexity_score": 114,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
@@ -135,7 +135,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 40
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -145,21 +145,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004051e0",
-      "from_addr": "004051eb",
-      "name": "FUN_004051e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00405200",
       "from_addr": "0040521b",
       "name": "FUN_00405200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004051e0",
+      "from_addr": "004051eb",
+      "name": "engine_3d.c_oldFunction3_FUN_004051e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c3c90",
       "from_addr": "004c4011",
-      "name": "FUN_004c3c90",
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -179,7 +179,7 @@
   "globals": [
     {
       "addr": "005acab8",
-      "name": "PTR_FUN_005acab8",
+      "name": "PTR_engine_3d.c_badMRGLStruct_FUN_004044a0_005acab8",
       "type": "undefined1*",
       "value": "004044a0"
     },
@@ -211,7 +211,7 @@
       {
         "call_addr": "004051eb",
         "call_type": "direct",
-        "caller": "FUN_004051e0",
+        "caller": "engine_3d.c_oldFunction3_FUN_004051e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,7 +251,7 @@
       {
         "call_addr": "004c4011",
         "call_type": "direct",
-        "caller": "FUN_004c3c90",
+        "caller": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,7 +334,7 @@
       "line": 11,
       "match": "code *",
       "severity": "moderate",
-      "text": "param_1 = (int *)(*(code *)(&PTR_FUN_005acab8)[iVar1])(param_1);",
+      "text": "param_1 = (int *)(*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_004044a0_005acab8)[iVar1])",
       "type": "unresolved_funcptr"
     },
     {
@@ -342,20 +342,20 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (int *)(*(code *)(&PTR_FUN_005acab8)[iVar1])(param_1);",
+      "text": "param_1 = (int *)(*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_004044a0_005acab8)[iVar1])",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (int *)(*(code *)(&PTR_FUN_005acab8)[iVar1])(param_1);",
+      "text": "(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_005b7644",
       "severity": "mild",
       "text": "DAT_005b7644 = 1;",

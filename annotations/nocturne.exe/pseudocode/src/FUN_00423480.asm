@@ -21,13 +21,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00422c70 at 004233ac
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 004233ac
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00579d7d
 ;
 ; Called Functions:
-;   FUN_0040de00
+;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;
 ; *****************************************************************************
 
@@ -202,8 +202,8 @@ section .text
         ;   Label: LAB_00423657
     PUSH ESI                            ; 00423658
     PUSH 0x0                            ; 00423659
-    CALL FUN_0040de00                   ; 0042365b
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040de00()
+    CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0042365b
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
     ADD ESP,0x8                         ; 00423660
     MOV EDX,dword ptr [ESP + 0x70]      ; 00423663
     MOV EAX,dword ptr [ESP + EAX*0x4]   ; 00423667

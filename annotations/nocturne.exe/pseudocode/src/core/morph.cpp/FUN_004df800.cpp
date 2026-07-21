@@ -42,7 +42,8 @@ void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,i
   if (0 < param_8) {
     local_24 = param_6;
     do {
-      uVar4 = FUN_004dfba0(param_1,*local_24 * 0x48 + param_5 + 8);
+      uVar4 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
+                        (param_1,*local_24 * 0x48 + param_5 + 8);
       iVar6 = 2;
       if (2 < *(int *)(param_3 + 4)) {
         iVar7 = param_3 + 0x18;

@@ -30,6 +30,6 @@ void FUN_00511a10(uint param_1,int param_2)
     uStack_8 = puVar1[5];
   }
   FUN_0046baa0(&DAT_01fba938,param_2 + 0x20,param_2 + 0x30,&uStack_1c,&uStack_10);
-  FUN_004f1e90();
+  core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   return;
 }

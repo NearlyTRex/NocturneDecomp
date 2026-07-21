@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005180a0 at 005180b2
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0 at 005180b2
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\skeleton.cpp_00591e2e
@@ -15,9 +15,9 @@
 ;   undefined4 DAT_02737ef4
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CSkeleton_load_FUN_00517560
+;   crt_string.c__stricmp_FUN_00564520
 ;   FUN_004c8440
-;   FUN_00517560
-;   FUN_00564520
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EBP,0x2737ef8                   ; 0051f6a6
     PUSH ESI                            ; 0051f6ab
     ADD EBP,EAX                         ; 0051f6ac
-    CALL FUN_00564520                   ; 0051f6ae
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined FUN_00564520()
+    CALL crt_string.c__stricmp_FUN_00564520 ; 0051f6ae
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
     ADD ESP,0x8                         ; 0051f6b3
     TEST EAX,EAX                        ; 0051f6b6
     JZ 0x0051f725                       ; 0051f6b8
@@ -76,8 +76,8 @@ section .text
     LEA EDX,[EAX + 0x1]                 ; 0051f70c
     PUSH EBX                            ; 0051f70f
     MOV dword ptr [0x02737ef4],EDX      ; 0051f710 | DAT_02737ef4
-    CALL FUN_00517560                   ; 0051f716
-        ;   XREF to: 00517560 (UNCONDITIONAL_CALL)  ; undefined FUN_00517560()
+    CALL core_skeleton.cpp_CSkeleton_load_FUN_00517560 ; 0051f716
+        ;   XREF to: 00517560 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_load_FUN_00517560()
     ADD ESP,0x8                         ; 0051f71b
     MOV EAX,EBX                         ; 0051f71e
     POP EBP                             ; 0051f720

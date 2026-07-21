@@ -21,8 +21,9 @@ uint FUN_0048ea60(int param_1)
     return 0;
   }
   uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_20);
-  FUN_0040a240(param_1,auStack_14,uVar2);
-  FUN_0048c3c0(0x01C08D04,auStack_14,param_1 + 0x30,3,1);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_14,uVar2);
+  core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(0x01C08D04,auStack_14,param_1 + 0x30,3,1)
+  ;
   if (*(int *)(param_1 + 0x578) == 0) {
     fVar1 = 1.0 / _DAT_0059d7a0;
     *(int *)(param_1 + 0x560) = *(int *)(param_1 + 0x560) + -1;

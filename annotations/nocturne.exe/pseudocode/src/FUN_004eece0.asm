@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b82d0 at 004b8315
+;   core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0 at 004b8315
 ;
 ; Called Functions:
 ;   FUN_00426510

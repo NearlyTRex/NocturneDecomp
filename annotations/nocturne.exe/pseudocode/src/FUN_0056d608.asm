@@ -11,9 +11,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_00565fb0 at 005660cb
 ;   FUN_00566590 at 00566596
-;   FUN_00566634 at 00566a03
+;   crt_time.c__mktime_FUN_00565fb0 at 005660cb
+;   crt_time.c__strftime_FUN_00566634 at 00566a03
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_0057553c = 00175dfe
@@ -28,7 +28,7 @@
 ;   undefined1 DAT_005c1f20
 ;
 ; Called Functions:
-;   FUN_00566e10
+;   crt_env.c_getenv_FUN_00566e10
 ;   FUN_0056d87c
 ;   FUN_00570bd0
 ;   GetTimeZoneInformation
@@ -129,8 +129,8 @@ section .text
     RET                                 ; 0056d605
     PUSH 0x598be8                       ; 0056d608 | DAT_00598be8
         ;   Label: FUN_0056d608
-    CALL FUN_00566e10                   ; 0056d60d
-        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00566e10()
+    CALL crt_env.c_getenv_FUN_00566e10  ; 0056d60d
+        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
     ADD ESP,0x4                         ; 0056d612
     TEST EAX,EAX                        ; 0056d615
     JZ 0x0056d50c                       ; 0056d617

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00402a60
+;   engine_2d.c_drawTextColor_FUN_00402a60
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ECX                            ; 00402ada
     MOV EBX,dword ptr [ESP + 0x18]      ; 00402adb
     PUSH EBX                            ; 00402adf
-    CALL FUN_00402a60                   ; 00402ae0
-        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00402a60()
+    CALL engine_2d.c_drawTextColor_FUN_00402a60 ; 00402ae0
+        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextColor_FUN_00402a60()
     ADD ESP,0xc                         ; 00402ae5
     POP EBX                             ; 00402ae8
     RET                                 ; 00402ae9

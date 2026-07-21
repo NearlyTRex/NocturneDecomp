@@ -42,9 +42,9 @@
 ;   undefined4 DAT_026714bc
 ;
 ; Called Functions:
-;   FUN_00401530
-;   FUN_00402600
-;   FUN_00563c90
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_2d.c_drawText_FUN_00402600
+;   engine_2d.c_plotPixel_FUN_00401530
 ;
 ; *****************************************************************************
 
@@ -197,8 +197,8 @@ section .text
     AND EAX,0xff                        ; 00513abe
     PUSH ESI                            ; 00513ac3
     MOV [0x01c00c70],EAX                ; 00513ac4 | DAT_01c00c70
-    CALL FUN_00401530                   ; 00513ac9
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 00513ac9
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 00513ace
     ADD EBX,0x4                         ; 00513ad1
     MOV EDX,dword ptr [ESP + 0xb0]      ; 00513ad4
@@ -226,8 +226,8 @@ section .text
     PUSH 0x590c5c                       ; 00513b2f | DAT_00590c5c
     LEA EAX,[ESP + 0xc]                 ; 00513b34
     PUSH EAX                            ; 00513b38
-    CALL FUN_00563c90                   ; 00513b39
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00513b39
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x10                        ; 00513b3e
     MOV ECX,dword ptr [ESP + 0x80]      ; 00513b41
     PUSH ECX                            ; 00513b48
@@ -235,8 +235,8 @@ section .text
     PUSH EBX                            ; 00513b50
     LEA EAX,[ESP + 0x8]                 ; 00513b51
     PUSH EAX                            ; 00513b55
-    CALL FUN_00402600                   ; 00513b56
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 00513b56
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 00513b5b
     IMUL EAX,dword ptr [ESP + 0x88],0x1a0 ; 00513b5e
     MOV ESI,dword ptr [ESP + 0x78]      ; 00513b69
@@ -245,8 +245,8 @@ section .text
     PUSH EBX                            ; 00513b72
     ADD EAX,EDX                         ; 00513b73
     PUSH EAX                            ; 00513b75
-    CALL FUN_00402600                   ; 00513b76
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 00513b76
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     LEA EAX,[EBX + 0x81]                ; 00513b7b
     LEA ECX,[EBX + 0x41]                ; 00513b81
     ADD ESP,0xc                         ; 00513b84

@@ -19,18 +19,18 @@ uint FUN_004703f0(uint param_1,uint param_2)
   byte *puStack_10;
   
   puStack_10 = &stack0x0000000c;
-  FUN_00563a08(0x1bcbcd0,param_2,&puStack_10);
+  _vsprintf(0x1bcbcd0,param_2,&puStack_10);
   puStack_10 = (byte *)0x0;
   FUN_00474c90(auStack_180);
-  uVar2 = FUN_004ee370(0x57e65c);
-  FUN_00473cb0(auStack_180,uVar2);
-  uVar2 = FUN_004ee370("Yes to [A]ll");
-  FUN_00473cb0(auStack_180,uVar2);
-  uVar2 = FUN_004ee370(0x57e66f);
-  FUN_00473cb0(auStack_180,uVar2);
-  uVar2 = FUN_004ee370("[C]ancel");
-  FUN_00473cb0(auStack_180,uVar2);
-  pcVar3 = (char *)FUN_004ee370(0x57e67d);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e65c);
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Yes to [A]ll");
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e66f);
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[C]ancel");
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
+  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e67d);
   pcVar5 = acStack_16c;
   do {
     cVar1 = *pcVar3;
@@ -41,7 +41,8 @@ uint FUN_004703f0(uint param_1,uint param_2)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar4 = FUN_00474d70(auStack_180,0x1bcbcd0,0xffffffff);
+  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
+                    (auStack_180,0x1bcbcd0,0xffffffff);
   if (iVar4 == 0) {
     uVar2 = 1;
   }
@@ -50,11 +51,11 @@ uint FUN_004703f0(uint param_1,uint param_2)
   }
   else {
     if (iVar4 != 2) {
-      FUN_00474cf0(auStack_180,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(auStack_180,0);
       return 0xffffffff;
     }
     uVar2 = 0;
   }
-  FUN_00474cf0(auStack_180,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(auStack_180,0);
   return uVar2;
 }

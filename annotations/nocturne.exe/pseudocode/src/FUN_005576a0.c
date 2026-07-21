@@ -29,7 +29,7 @@ uint FUN_005576a0(int param_1)
   }
   if (*(float *)(param_1 + 0xbd68) <= (float)_DAT_00597e39) {
     if (*(int *)(param_1 + 0x2618) != 0) {
-      FUN_00409f20(param_1);
+      core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
       puVar3 = (uint *)(param_1 + 0xfd0 + *(int *)(param_1 + 0xbd38) * 0x30);
       puVar4 = local_50;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -37,19 +37,20 @@ uint FUN_005576a0(int param_1)
         puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
-      FUN_0055b180(local_50,local_14);
-      FUN_0055bc00(local_50,local_20);
-      FUN_00460aa0(DAT_005ae704,&DAT_02dd1184,local_20);
-      FUN_00460aa0(DAT_005ae704,local_14,0);
-      FUN_005570b0(param_1,0x2de0774);
-      FUN_005570b0(param_1,0x2de0780);
-      FUN_00409f60(param_1);
-      FUN_00409f60(param_1);
-      FUN_00409f60(param_1);
+      core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_50,local_14);
+      core_xform_cpp_getTranslation_FUN_0055bc00(local_50,local_20);
+      engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+                (DAT_005ae704,&DAT_02dd1184,local_20);
+      engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,local_14,0);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,0x2de0774);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,0x2de0780);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
     }
-    FUN_00427260(param_1);
+    core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);
     return *(uint *)(param_1 + 0x2618);
   }
-  uVar1 = FUN_00427260(param_1);
+  uVar1 = core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);
   return uVar1;
 }

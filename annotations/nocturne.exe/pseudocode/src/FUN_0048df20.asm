@@ -17,11 +17,11 @@
 ;   undefined4 DAT_01fa3ff4
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00409f60
-;   FUN_0040d890
-;   FUN_0041ceb0
-;   FUN_00461090
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV dword ptr [EAX + 0x298],0x0     ; 0048df35
     PUSH EDX                            ; 0048df3f | DAT_01b4d738
     MOV dword ptr [EAX + 0x290],0x0     ; 0048df40
-    CALL FUN_00461090                   ; 0048df4a
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048df4a
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 0048df4f
     TEST EAX,EAX                        ; 0048df52
     JNZ 0x0048df5c                      ; 0048df54
@@ -59,8 +59,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0048df63
         ;   Label: LAB_0048df63
     PUSH EBX                            ; 0048df66
-    CALL FUN_00409f20                   ; 0048df67
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0048df67
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 0048df6c
     PUSH 0x0                            ; 0048df6f
     LEA EDX,[ESP + 0x4]                 ; 0048df71
@@ -70,13 +70,13 @@ section .text
     CALL dword ptr [EAX + 0x14]         ; 0048df7d
     ADD ESP,0x8                         ; 0048df80
     PUSH EAX                            ; 0048df83
-    CALL FUN_0041ceb0                   ; 0048df84
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0048df84
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 0048df89
     PUSH EBX                            ; 0048df8c
     MOV dword ptr [EBX + 0x288],EAX     ; 0048df8d
-    CALL FUN_00409f60                   ; 0048df93
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f60()
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0048df93
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
     MOV EDX,dword ptr [EBX + 0x288]     ; 0048df98
     ADD ESP,0x4                         ; 0048df9e
     TEST EDX,EDX                        ; 0048dfa1
@@ -139,8 +139,8 @@ section .text
     PUSH EDX                            ; 0048e02f
     MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 0048e030 | DAT_01fa3ff4
     PUSH ECX                            ; 0048e037
-    CALL FUN_0040d890                   ; 0048e038
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0048e038
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     MOV EDX,EAX                         ; 0048e03d
     ADD ESP,0x8                         ; 0048e03f
     TEST EAX,EAX                        ; 0048e042

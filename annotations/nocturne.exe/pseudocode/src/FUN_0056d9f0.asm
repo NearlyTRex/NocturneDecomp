@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0056626c at 005662fa
-;   FUN_00566498 at 005664dc
 ;   FUN_00570870 at 00570888
 ;   FUN_00572d90 at 00572da9
 ;   FUN_00573db0 at 00573e1d
+;   crt_file.c_makepath_FUN_0056626c at 005662fa
+;   crt_string.c_splitpath_FUN_00566498 at 005664dc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

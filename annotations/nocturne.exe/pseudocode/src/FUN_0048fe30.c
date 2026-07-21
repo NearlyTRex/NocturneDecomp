@@ -9,6 +9,6 @@
 uint FUN_0048fe30(uint param_1)
 
 {
-  FUN_00490420(param_1);
+  engine_font_cpp_CBitFont_free_FUN_00490420(param_1);
   return param_1;
 }

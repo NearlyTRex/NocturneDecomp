@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00455270
+;   core_door.cpp_CDoor_onOpened_FUN_00455270
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     RET                                 ; 00428f00
     PUSH EDX                            ; 00428f01
         ;   Label: LAB_00428f01
-    CALL FUN_00455270                   ; 00428f02
-        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined FUN_00455270()
+    CALL core_door.cpp_CDoor_onOpened_FUN_00455270 ; 00428f02
+        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_onOpened_FUN_00455270()
     ADD ESP,0x4                         ; 00428f07
     MOV dword ptr [EBX + 0x25ac],0x0    ; 00428f0a
     POP EBX                             ; 00428f14

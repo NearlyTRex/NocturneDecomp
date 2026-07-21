@@ -15,16 +15,19 @@ int FUN_004c9430(uint param_1)
   char *pcVar4;
   
   iVar2 = FUN_00409d30(param_1);
-  iVar2 = FUN_00454490(iVar2 + 0x150);
-  iVar2 = FUN_00454490(iVar2 + 0x17c);
-  iVar2 = FUN_00454490(iVar2 + 0x17c);
-  iVar2 = FUN_005644a7(iVar2 + 0x1a0,0xc,&DAT_005a0210);
-  iVar2 = FUN_005644a7(iVar2 + 0x4b0,0xc,&DAT_005a0230);
-  iVar2 = FUN_005644a7(iVar2 + 0x8a0,2,&DAT_005a0250);
+  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
+  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x17c);
+  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x17c);
+  iVar2 = __arrinit(iVar2 + 0x1a0,0xc,&DAT_005a0210);
+  iVar2 = __arrinit(iVar2 + 0x4b0,0xc,&DAT_005a0230);
+  iVar2 = __arrinit(iVar2 + 0x8a0,2,&DAT_005a0250);
   *(byte ***)(iVar2 + -0x11ec) = &PTR_FUN_005a0054;
-  FUN_00454580(iVar2 + -0x11e8,"doorpuzz.kfm");
-  FUN_00454580(iVar2 + -0x106c,"puzz-rec.kfm");
-  FUN_00454580(iVar2 + -0xef0,"mirrhack.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (iVar2 + -0x11e8,"doorpuzz.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (iVar2 + -0x106c,"puzz-rec.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (iVar2 + -0xef0,"mirrhack.kfm");
   pcVar3 = "headlite.raw";
   pcVar4 = (char *)(iVar2 + 0x188);
   do {

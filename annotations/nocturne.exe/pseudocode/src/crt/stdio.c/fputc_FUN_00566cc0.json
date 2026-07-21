@@ -1,0 +1,686 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 153,
+    "complexity_score": 582,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 51,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 205
+  },
+  "cross_references": [
+    {
+      "addr": "0049cc10",
+      "from_addr": "0049d7df",
+      "name": "FUN_0049cc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2990",
+      "from_addr": "004f2af6",
+      "name": "FUN_004f2990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005729e8",
+      "from_addr": "00572a2a",
+      "name": "FUN_005729e8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573660",
+      "from_addr": "005736be",
+      "name": "FUN_00573660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563a50",
+      "from_addr": "00563c0e",
+      "name": "crt_stdio.c_fwrite_FUN_00563a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2620",
+      "from_addr": "004f274c",
+      "name": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f27e0",
+      "from_addr": "004f28fa",
+      "name": "engine_pcx.c_saveScreenRaw32_FUN_004f27e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2550",
+      "from_addr": "004f2586",
+      "name": "engine_pcx.c_writePCXScanline_FUN_004f2550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566cc0",
+    "address_range": [
+      [
+        "00566cc0",
+        "00566e08"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fputc_FUN_00566cc0",
+    "signature": "uint __cdecl crt_stdio_c_fputc_FUN_00566cc0(uint param_1,int *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "FUN_005671e4"
+    },
+    {
+      "addr": "00568890",
+      "is_variadic": false,
+      "name": "FUN_00568890"
+    },
+    {
+      "addr": "00568e80",
+      "is_variadic": false,
+      "name": "FUN_00568e80"
+    },
+    {
+      "addr": "00568ed0",
+      "is_variadic": false,
+      "name": "FUN_00568ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1ac0",
+      "name": "PTR_FUN_005c1ac0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1ac4",
+      "name": "PTR_FUN_005c1ac4",
+      "type": "void*",
+      "value": "005671e4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 16,
+    "call_sites": [
+      {
+        "call_addr": "0049d7df",
+        "call_type": "direct",
+        "caller": "FUN_0049cc10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049d7ec",
+        "call_type": "direct",
+        "caller": "FUN_0049cc10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049d7f6",
+        "call_type": "direct",
+        "caller": "FUN_0049cc10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f2af6",
+        "call_type": "direct",
+        "caller": "FUN_004f2990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f2b14",
+        "call_type": "direct",
+        "caller": "FUN_004f2990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f2586",
+        "call_type": "direct",
+        "caller": "engine_pcx.c_writePCXScanline_FUN_004f2550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f259a",
+        "call_type": "direct",
+        "caller": "engine_pcx.c_writePCXScanline_FUN_004f2550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f274c",
+        "call_type": "direct",
+        "caller": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f275a",
+        "call_type": "direct",
+        "caller": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f276e",
+        "call_type": "direct",
+        "caller": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.323076923076923,
+    "instruction_count": 130,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "CALL": 4,
+      "CALLIND": 6,
+      "CBRANCH": 11,
+      "COPY": 126,
+      "INT_ADD": 69,
+      "INT_AND": 64,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 58,
+      "INT_LESS": 5,
+      "INT_OR": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 29,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "LOAD": 53,
+      "POPCOUNT": 29,
+      "RETURN": 5,
+      "STORE": 34
+    },
+    "pcode_op_count": 562
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl _fputc(uint param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl _fputc(uint param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac0)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac0)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_2[2] + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2[2] + 0xc) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_2 + 3) & 2) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) | 0x20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) | 0x20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(param_2[2] + 8) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_00568ed0(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == 10) && (uVar2 = 0x600, (*(byte *)(param_2 + 3) & 0x40) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_1 == 10) && (uVar2 = 0x600, (*(byte *)(param_2 + 3) & 0x40) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(byte *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(byte *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)*param_2 = 0xd;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = iVar1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (iVar1 + 1 == param_2[5]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = FUN_00568890(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 36,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)*param_2 = (byte)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)*param_2 = (byte)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = iVar1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((uVar2 & param_2[3]) != 0) || (iVar1 + 1 == param_2[5])) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((uVar2 & param_2[3]) != 0) || (iVar1 + 1 == param_2[5])) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = FUN_00568890(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 53,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(code *)PTR_FUN_005c1ac4)(param_2[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 & 0xff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 28,
+      "match": "(byte *)((int)param_2 + 0xd)",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 41,
+      "match": "(byte *)((int)param_2 + 0xd)",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 16,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

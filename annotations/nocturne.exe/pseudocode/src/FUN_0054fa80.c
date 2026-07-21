@@ -17,9 +17,9 @@ void FUN_0054fa80(int param_1)
   float fStack_c;
   float fStack_8;
   
-  FUN_00409fc0(param_1);
-  FUN_00454510(param_1 + 0x150);
-  FUN_00454510(param_1 + 0x65c);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x65c);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_28);
   iVar1 = *(int *)(param_1 + 0x3a0);
   *(uint *)(param_1 + 0x2cc) = 0;
@@ -49,7 +49,7 @@ void FUN_0054fa80(int param_1)
   *(uint *)(param_1 + 0x50c) = 0x3f000000;
   *(uint *)(param_1 + 0x510) = 0x3f800000;
   *(uint *)(param_1 + 0x514) = 0x3f000000;
-  FUN_0048d050(param_1 + 0x3bc);
+  core_flame_cpp_CFlame_setup_FUN_0048d050(param_1 + 0x3bc);
   *(uint *)(param_1 + 0xfc) = 1;
   return;
 }

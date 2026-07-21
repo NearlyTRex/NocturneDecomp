@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00409f60
-;   FUN_0041ceb0
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     RET                                 ; 00479103
     PUSH EBX                            ; 00479104
         ;   Label: LAB_00479104
-    CALL FUN_00409f20                   ; 00479105
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00479105
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 0047910a
     PUSH 0x0                            ; 0047910d
     LEA EDX,[ESP + 0x4]                 ; 0047910f
@@ -38,13 +38,13 @@ section .text
     CALL dword ptr [EAX + 0x14]         ; 0047911b
     ADD ESP,0x8                         ; 0047911e
     PUSH EAX                            ; 00479121
-    CALL FUN_0041ceb0                   ; 00479122
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 00479122
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 00479127
     PUSH EBX                            ; 0047912a
     MOV dword ptr [EBX + 0x484],EAX     ; 0047912b
-    CALL FUN_00409f60                   ; 00479131
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f60()
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 00479131
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
     ADD ESP,0x4                         ; 00479136
     ADD ESP,0x18                        ; 00479139
     POP EBX                             ; 0047913c

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_004ce730
+;   engine_matrix.c_setCameraRotation_FUN_004ce730
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     PUSH ECX                            ; 0046076c
     MOV EBX,dword ptr [EAX]             ; 0046076d
     PUSH EBX                            ; 0046076f
-    CALL FUN_004ce730                   ; 00460770
-        ;   XREF to: 004ce730 (UNCONDITIONAL_CALL)  ; undefined FUN_004ce730()
+    CALL engine_matrix.c_setCameraRotation_FUN_004ce730 ; 00460770
+        ;   XREF to: 004ce730 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_setCameraRotation_FUN_004ce730()
     ADD ESP,0xc                         ; 00460775
     POP EBX                             ; 00460778
     RET                                 ; 00460779

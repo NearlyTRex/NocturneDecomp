@@ -14,6 +14,6 @@ void FUN_00476160(int param_1)
     *(uint *)(param_1 + 0x134) = 0;
   }
   *(uint *)(param_1 + 0x130) = 0;
-  FUN_00473c50(param_1);
+  shape_edittool_cpp_CStrList_clear_FUN_00473c50(param_1);
   return;
 }

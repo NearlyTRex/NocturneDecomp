@@ -17,7 +17,7 @@ uint FUN_00570a30(uint *param_1)
   if (499 < iVar1) {
     aiStack_28[0] = aiStack_28[0] + 1;
   }
-  uVar2 = FUN_00565fb0(aiStack_28);
+  uVar2 = _mktime(aiStack_28);
   if (param_1 != (uint *)0x0) {
     *param_1 = uVar2;
   }

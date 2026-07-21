@@ -26,20 +26,20 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
+;   crt_memory.c_malloc_FUN_005635b0
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fread_FUN_005636d0
+;   crt_stdio.c_fscanf_FUN_00563350
+;   engine_dosio.cpp_getFile_FUN_00456a60
+;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   FUN_00401990
 ;   FUN_00401bd0
 ;   FUN_00403460
 ;   FUN_00403630
-;   FUN_004568c0
-;   FUN_00456a60
 ;   FUN_004c8440
 ;   FUN_00552b40
-;   FUN_00552e00
-;   FUN_005537e0
-;   FUN_00563350
-;   FUN_00563380
-;   FUN_005635b0
-;   FUN_005636d0
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
+;   wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x8 + 0x5aca70] ; 00401046 | DAT_005aca70
     PUSH EAX                            ; 0040104d
     PUSH ECX                            ; 0040104e
-    CALL FUN_00552e00                   ; 0040104f
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined FUN_00552e00()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 0040104f
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
     ADD ESP,0xc                         ; 00401054
     PUSH 0x57703f                       ; 00401057 | = "vga.act"
     CALL FUN_00401bd0                   ; 0040105c
@@ -87,13 +87,13 @@ section .text
     CALL FUN_00401990                   ; 00401083
         ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; undefined FUN_00401990()
     ADD ESP,0x4                         ; 00401088
-    CALL FUN_005537e0                   ; 0040108b
-        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005537e0()
+    CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 ; 0040108b
+        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
     PUSH 0x57705f                       ; 00401090 | DAT_0057705f
     PUSH 0x577062                       ; 00401095 | = "font.ndx"
     PUSH 0x57706b                       ; 0040109a | = "startup"
-    CALL FUN_00456a60                   ; 0040109f
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040109f
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004010a4
     MOV ESI,EAX                         ; 004010a7
     TEST EAX,EAX                        ; 004010a9
@@ -109,25 +109,25 @@ section .text
     PUSH 0x57709a                       ; 004010c8 | DAT_0057709a
     PUSH ESI                            ; 004010cd
     ADD EBX,0x4                         ; 004010ce
-    CALL FUN_00563350                   ; 004010d1
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined FUN_00563350()
+    CALL crt_stdio.c_fscanf_FUN_00563350 ; 004010d1
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     ADD ESP,0xc                         ; 004010d6
     CMP EBX,EDI                         ; 004010d9
     JNZ 0x004010c7                      ; 004010db
         ;   XREF to: 004010c7 (CONDITIONAL_JUMP)  ; LAB_004010c7
     PUSH ESI                            ; 004010dd
-    CALL FUN_00563380                   ; 004010de
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004010de
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004010e3
     PUSH 0x57709e                       ; 004010e6 | = "font.bin"
     PUSH 0x5770a7                       ; 004010eb | = "startup"
-    CALL FUN_004568c0                   ; 004010f0
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004568c0()
+    CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004010f0
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 004010f5
     PUSH EAX                            ; 004010f8
     MOV ESI,EAX                         ; 004010f9
-    CALL FUN_005635b0                   ; 004010fb
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 004010fb
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 00401100
     MOV EBP,EAX                         ; 00401103
     MOV [0x006afa38],EAX                ; 00401105 | DAT_006afa38
@@ -146,8 +146,8 @@ section .text
         ;   Label: LAB_00401131
     PUSH 0x5770de                       ; 00401136 | = "font.bin"
     PUSH 0x5770e7                       ; 0040113b | = "startup"
-    CALL FUN_00456a60                   ; 00401140
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00401140
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00401145
     MOV EBX,EAX                         ; 00401148
     TEST EAX,EAX                        ; 0040114a
@@ -159,12 +159,12 @@ section .text
     PUSH ESI                            ; 00401155
     MOV EBP,dword ptr [0x006afa38]      ; 00401156 | DAT_006afa38
     PUSH EBP                            ; 0040115c
-    CALL FUN_005636d0                   ; 0040115d
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 0040115d
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 00401162
     PUSH EBX                            ; 00401165
-    CALL FUN_00563380                   ; 00401166
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 00401166
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     MOV EAX,0x80                        ; 0040116b
     MOV EBP,dword ptr [0x006afa38]      ; 00401170 | DAT_006afa38
     ADD ESP,0x4                         ; 00401176
@@ -199,8 +199,8 @@ section .text
     PUSH 0x577116                       ; 004011d2 | DAT_00577116
     PUSH 0x577119                       ; 004011d7 | = "default.act"
     PUSH 0x577125                       ; 004011dc | DAT_00577125
-    CALL FUN_00456a60                   ; 004011e1
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004011e1
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004011e6
     ADD ESP,0xc                         ; 004011e8
     TEST EAX,EAX                        ; 004011eb
@@ -249,12 +249,12 @@ section .text
     PUSH 0x1                            ; 00401274
     PUSH 0x300                          ; 00401276
     PUSH 0x1c00948                      ; 0040127b
-    CALL FUN_005636d0                   ; 00401280
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00401280
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 00401285
     PUSH EBX                            ; 00401288
-    CALL FUN_00563380                   ; 00401289
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 00401289
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 0040128e
     MOV EBP,dword ptr [0x006afa38]      ; 00401291 | DAT_006afa38
     POP EBP                             ; 00401297

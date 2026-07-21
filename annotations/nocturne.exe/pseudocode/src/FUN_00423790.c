@@ -22,11 +22,11 @@ void FUN_00423790(int param_1,uint param_2)
   uVar3 = _DAT_01cae124;
   *(uint *)(param_1 + 0x12964) = 0;
   *(uint *)(param_1 + 0x12960) = 0;
-  iVar1 = FUN_0040d890(param_2,uVar3);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,uVar3);
   if (iVar1 != 0) {
     *(int *)(param_1 + 0x12964) = iVar1 + 0x150;
   }
-  iVar1 = FUN_0040d890(param_2,_DAT_01bcdef4);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01bcdef4);
   if ((iVar1 != 0) && (*(char *)(iVar1 + 0x23b0) != '\0')) {
     *(int *)(param_1 + 0x12964) = iVar1 + 0x150;
   }
@@ -37,15 +37,19 @@ void FUN_00423790(int param_1,uint param_2)
     *(uint *)(param_1 + 0x12998) = 0;
     *(int *)(param_1 + 100) = iVar1 + 1;
     do {
-      iVar2 = FUN_0051e020(*(uint *)(param_1 + 0x12964));
+      iVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                        (*(uint *)(param_1 + 0x12964));
       iVar1 = *(int *)(param_1 + 0x12998);
       if (*(int *)(iVar2 + 0x2c + iVar1 * 4) < 0x2bd) {
-        FUN_0043ac60(PTR_DAT_005ad350,">%s swarming on %s at LOD %d\n" + 1,param_1,param_2,
-                     iVar1);
-        iVar1 = FUN_0051e020(*(uint *)(param_1 + 0x12964));
+        engine_console_cpp_CConsole_printf_FUN_0043ac60
+                  (PTR_DAT_005ad350,">%s swarming on %s at LOD %d\n" + 1,param_1,param_2,
+                   iVar1);
+        iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                          (*(uint *)(param_1 + 0x12964));
         FUN_004219f0(param_1,*(uint *)(iVar1 + 0x54 + *(int *)(param_1 + 0x12998) * 4),
                      *(uint *)(iVar1 + 0x7c + *(int *)(param_1 + 0x12998) * 4));
-        FUN_0051da50(*(uint *)(param_1 + 0x12964),*(uint *)(param_1 + 0x12998));
+        core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
+                  (*(uint *)(param_1 + 0x12964),*(uint *)(param_1 + 0x12998));
         iVar2 = 0;
         iVar1 = *(int *)(*(int *)(param_1 + 0x12964) + 0x2234);
         if (0 < *(int *)(param_1 + 0x1299c)) {
@@ -81,8 +85,9 @@ void FUN_00423790(int param_1,uint param_2)
         do {
           *(uint *)(iVar5 + 0xbd58) = 0xffffffff;
           *(int *)(iVar5 + 0xbd5c) = (&DAT_00764d98)[iVar7];
-          uVar3 = FUN_0040de00(0,(int)(CONCAT44(*(int *)(param_1 + 0x1299c) >> 0x1f,
-                                                *(uint *)(param_1 + 0x1299c)) / 0xf));
+          uVar3 = core_actor_cpp_getRandomInt_FUN_0040de00
+                            (0,(int)(CONCAT44(*(int *)(param_1 + 0x1299c) >> 0x1f,
+                                              *(uint *)(param_1 + 0x1299c)) / 0xf));
           *(uint *)(iVar5 + 0xbd68) = uVar3;
           iVar7 = iVar7 + 1;
           if ((*(int *)(param_1 + 0x1299c) <= iVar7) ||
@@ -95,7 +100,8 @@ void FUN_00423790(int param_1,uint param_2)
         return;
       }
       *(int *)(param_1 + 0x12998) = iVar1 + 1;
-      piVar4 = (int *)FUN_0051e020(*(uint *)(param_1 + 0x12964));
+      piVar4 = (int *)core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                                (*(uint *)(param_1 + 0x12964));
     } while (*(int *)(param_1 + 0x12998) < *piVar4);
     *(uint *)(param_1 + 0x12964) = 0;
   }

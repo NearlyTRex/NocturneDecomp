@@ -6,15 +6,15 @@
 ;
 ; XREF[28]:
 ;   FUN_00412d80 at 00412dbd
-;   FUN_00414510 at 0041454d
 ;   FUN_00415160 at 0041519d
-;   FUN_00415870 at 004158ad
 ;   FUN_00419ce0 at 00419d41
-;   FUN_00420970 at 004209ee
 ;   FUN_0043c2e0 at 0043c32d
 ;   FUN_00454dc0 at 00454e0d
-;   FUN_0045a450 at 0045a526
 ;   FUN_004630e0 at 0046312d
+;   FUN_004b49a0 at 004b49da
+;   FUN_004bc9c0 at 004bc9fd
+;   FUN_004c5250 at 004c529d
+;   FUN_004eed10 at 004eed4d
 ;   ... and 18 more
 ;
 ; Referenced Globals:
@@ -27,12 +27,12 @@
 ;   undefined4 DAT_00763e88
 ;
 ; Called Functions:
-;   FUN_0040bff0
-;   FUN_0040c320
-;   FUN_004e2180
-;   FUN_004e2220
-;   FUN_005644f0
-;   FUN_00564570
+;   core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
+;   core_actor.cpp_handleActorPropertyParseError_FUN_0040c320
+;   core_motion.cpp_CMotionController_load_FUN_004e2180
+;   core_motion.cpp_CMotionController_save_FUN_004e2220
+;   crt_stdio.c_fgetc_FUN_00564570
+;   crt_stdio.c_fprintf_FUN_005644f0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     MOV EBP,dword ptr [0x00763e84]      ; 0040cb14 | DAT_00763e84
         ;   Label: LAB_0040cb14
     PUSH EBP                            ; 0040cb1a
-    CALL FUN_00564570                   ; 0040cb1b
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined FUN_00564570()
+    CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040cb1b
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
     ADD ESP,0x4                         ; 0040cb20
     MOV ESI,EAX                         ; 0040cb23
     TEST EAX,EAX                        ; 0040cb25
@@ -64,14 +64,14 @@ section .text
     PUSH EAX                            ; 0040cb33
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040cb34
     PUSH EDX                            ; 0040cb38
-    CALL FUN_004e2180                   ; 0040cb39
-        ;   XREF to: 004e2180 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2180()
+    CALL core_motion.cpp_CMotionController_load_FUN_004e2180 ; 0040cb39
+        ;   XREF to: 004e2180 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_load_FUN_004e2180()
     ADD ESP,0x8                         ; 0040cb3e
     MOV ECX,dword ptr [0x00763e84]      ; 0040cb41 | DAT_00763e84
         ;   Label: LAB_0040cb41
     PUSH ECX                            ; 0040cb47
-    CALL FUN_00564570                   ; 0040cb48
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined FUN_00564570()
+    CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040cb48
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
     ADD ESP,0x4                         ; 0040cb4d
     MOV ESI,EAX                         ; 0040cb50
     TEST EAX,EAX                        ; 0040cb52
@@ -87,16 +87,16 @@ section .text
     PUSH EBX                            ; 0040cb5f
         ;   Label: LAB_0040cb5f
     PUSH 0x577c8c                       ; 0040cb60 | = "motion state info opening brace"
-    CALL FUN_0040c320                   ; 0040cb65
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c320()
+    CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cb65
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
     ADD ESP,0x8                         ; 0040cb6a
     JMP 0x0040cb29                      ; 0040cb6d
         ;   XREF to: 0040cb29 (UNCONDITIONAL_JUMP)  ; LAB_0040cb29
     PUSH EBX                            ; 0040cb6f
         ;   Label: LAB_0040cb6f
     PUSH 0x577cac                       ; 0040cb70 | = "motion state info closing brace"
-    CALL FUN_0040c320                   ; 0040cb75
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c320()
+    CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cb75
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
     ADD ESP,0x8                         ; 0040cb7a
     CMP ESI,0xa                         ; 0040cb7d
     JNZ 0x0040cb41                      ; 0040cb80
@@ -112,31 +112,31 @@ section .text
     PUSH 0x577ccc                       ; 0040cb8d | = "%s{ // %s\n"
     MOV ECX,dword ptr [0x00763e84]      ; 0040cb92 | DAT_00763e84
     PUSH ECX                            ; 0040cb98
-    CALL FUN_005644f0                   ; 0040cb99
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005644f0()
+    CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040cb99
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x10                        ; 0040cb9e
     PUSH 0x1                            ; 0040cba1
-    CALL FUN_0040bff0                   ; 0040cba3
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040bff0()
+    CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040cba3
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
     ADD ESP,0x4                         ; 0040cba8
     PUSH 0x5acc90                       ; 0040cbab | DAT_005acc90
     MOV EBX,dword ptr [0x00763e84]      ; 0040cbb0 | DAT_00763e84
     PUSH EBX                            ; 0040cbb6
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040cbb7
     PUSH ESI                            ; 0040cbbb
-    CALL FUN_004e2220                   ; 0040cbbc
-        ;   XREF to: 004e2220 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2220()
+    CALL core_motion.cpp_CMotionController_save_FUN_004e2220 ; 0040cbbc
+        ;   XREF to: 004e2220 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_save_FUN_004e2220()
     ADD ESP,0xc                         ; 0040cbc1
     PUSH -0x1                           ; 0040cbc4
-    CALL FUN_0040bff0                   ; 0040cbc6
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040bff0()
+    CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040cbc6
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
     ADD ESP,0x4                         ; 0040cbcb
     PUSH 0x5acc90                       ; 0040cbce | DAT_005acc90
     PUSH 0x577cd7                       ; 0040cbd3 | DAT_00577cd7
     MOV EDI,dword ptr [0x00763e84]      ; 0040cbd8 | DAT_00763e84
     PUSH EDI                            ; 0040cbde
-    CALL FUN_005644f0                   ; 0040cbdf
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005644f0()
+    CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040cbdf
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0xc                         ; 0040cbe4
     POP EDI                             ; 0040cbe7
     POP EBP                             ; 0040cbe8

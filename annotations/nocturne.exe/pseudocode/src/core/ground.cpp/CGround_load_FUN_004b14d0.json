@@ -1,0 +1,770 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 335,
+    "complexity_score": 522,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 157,
+    "suspect_count": 33,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strchr",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 492
+  },
+  "cross_references": [
+    {
+      "addr": "005492b0",
+      "from_addr": "005492db",
+      "name": "core_terrain.cpp_CTerrain_init_FUN_005492b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b14d0",
+    "address_range": [
+      [
+        "004b14d0",
+        "004b17f0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_load_FUN_004b14d0",
+    "signature": "undefined4 __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00544950",
+      "is_variadic": false,
+      "name": "core_texlist.cpp_CTextureList_load_FUN_00544950"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00564570",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_00564570"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058525d",
+      "name": "s_..\\core\\ground.cpp_0058525d",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00585270",
+      "name": "s_eopen_-_ext_not_found!_00585270",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00585287",
+      "name": "s_..\\core\\ground.cpp_00585287",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058529a",
+      "name": "s_eopen_-_Cannot_open_file_0058529a",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005853e5",
+      "name": "DAT_005853e5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005853e8",
+      "name": "DAT_005853e8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853e9",
+      "name": "DAT_005853e9",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853ea",
+      "name": "DAT_005853ea",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853eb",
+      "name": "DAT_005853eb",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853ec",
+      "name": "DAT_005853ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005853f1",
+      "name": "DAT_005853f1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005853f4",
+      "name": "DAT_005853f4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853f5",
+      "name": "DAT_005853f5",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853f6",
+      "name": "DAT_005853f6",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853f7",
+      "name": "DAT_005853f7",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005853f8",
+      "name": "DAT_005853f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005492db",
+        "call_type": "direct",
+        "caller": "core_terrain.cpp_CTerrain_init_FUN_005492b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.505747126436781,
+    "instruction_count": 261,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 30,
+      "COPY": 189,
+      "INT_ADD": 90,
+      "INT_AND": 185,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 154,
+      "INT_LEFT": 4,
+      "INT_LESS": 25,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 10,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 34,
+      "INT_SEXT": 6,
+      "INT_SLESS": 80,
+      "INT_SUB": 65,
+      "INT_XOR": 6,
+      "LOAD": 53,
+      "POPCOUNT": 76,
+      "RETURN": 1,
+      "STORE": 58,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1176
+  },
+  "stack_frame": {
+    "frame_size": 208,
+    "local_size": 208,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cb",
+        "offset": -203,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7b",
+        "offset": -123,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004b14f2",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004b1513",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CGround_load_FUN_004b14d0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 9,
+          "line": 51,
+          "message": "Uninitialized variable: *pcVar9",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar8 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005853ec",
+      "severity": "mild",
+      "text": "local_24 = &DAT_005853ec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_005853e5",
+      "severity": "mild",
+      "text": "local_20 = &DAT_005853e5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_005853e8",
+      "severity": "mild",
+      "text": "pcVar9 = &DAT_005853e8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1[1]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1[9] + (local_18 * *param_1 + iVar11) * 4) = uVar4 << 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1[9] + (local_18 * *param_1 + iVar11) * 4) = uVar4 << 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar11 < *param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (local_18 < param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_005853f8",
+      "severity": "mild",
+      "text": "local_28 = &DAT_005853f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_005853f1",
+      "severity": "mild",
+      "text": "local_2c = &DAT_005853f1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar9 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_005853f4",
+      "severity": "mild",
+      "text": "pcVar8 = &DAT_005853f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 145,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1[1]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 148,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 150,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = local_14 * *param_1 + iVar11;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 152,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(iVar6 * 4 + param_1[9] + 2,1,2,local_1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar11 < *param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 156,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (local_14 < param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar7 = core_texlist_cpp_CTextureList_load_FUN_00544950(param_1[10],param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar7 = core_texlist_cpp_CTextureList_load_FUN_00544950(param_1[10],param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `(pbVar2 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)(pbVar2 + 1)",
+      "severity": "moderate",
+      "text": "*piVar5 = (int)(pbVar2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 31,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 60,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 102,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 129,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 42,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 112,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: *pcVar9",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (*pcVar9 == '.') goto LAB_004b153d;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

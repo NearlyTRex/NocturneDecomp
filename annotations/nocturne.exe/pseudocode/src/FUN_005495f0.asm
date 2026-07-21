@@ -12,10 +12,10 @@
 ;   undefined4 DAT_005a3788
 ;
 ; Called Functions:
-;   FUN_00453080
-;   FUN_00454510
-;   FUN_00454530
-;   FUN_00553f10
+;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+;   core_weapon.cpp_CWeapon_setup_FUN_00553f10
 ;
 ; *****************************************************************************
 
@@ -30,17 +30,17 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 005495f7
     LEA EAX,[EBP + 0x57c]               ; 005495fb
     PUSH EAX                            ; 00549601
-    CALL FUN_00454510                   ; 00549602
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined FUN_00454510()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00549602
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
     ADD ESP,0x4                         ; 00549607
     PUSH EBP                            ; 0054960a
-    CALL FUN_00553f10                   ; 0054960b
-        ;   XREF to: 00553f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00553f10()
+    CALL core_weapon.cpp_CWeapon_setup_FUN_00553f10 ; 0054960b
+        ;   XREF to: 00553f10 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_setup_FUN_00553f10()
     ADD ESP,0x4                         ; 00549610
     LEA EAX,[EBP + 0x150]               ; 00549613
     PUSH EAX                            ; 00549619
-    CALL FUN_00454530                   ; 0054961a
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0054961a
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     MOV EDX,dword ptr [EAX + 0x100]     ; 0054961f
     ADD ESP,0x4                         ; 00549625
     DEC EDX                             ; 00549628
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 00549630
     MOV EDI,EAX                         ; 00549631
     MOV EBX,ESI                         ; 00549633
-    CALL FUN_00453080                   ; 00549635
-        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined FUN_00453080()
+    CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080 ; 00549635
+        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080()
     MOV EDX,0xf149f2ca                  ; 0054963a
     ADD ESP,0x8                         ; 0054963f
     XOR ECX,ECX                         ; 00549642

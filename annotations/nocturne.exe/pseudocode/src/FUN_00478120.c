@@ -34,16 +34,16 @@ void FUN_00478120(int param_1)
   uint uStack_1c;
   uint uStack_18;
   
-  iVar2 = FUN_00461090(DAT_005ae704);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar2 != 0) {
     return;
   }
   uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_44);
-  FUN_0040a240(param_1,&fStack_68,uVar3);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_68,uVar3);
   uStack_18 = *(uint *)(param_1 + 0x2e0);
   uStack_20 = 0;
   uStack_1c = 0;
-  FUN_0040a200(param_1,&fStack_74,&uStack_20);
+  core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_74,&uStack_20);
   fStack_38 = -fStack_74;
   fStack_34 = -fStack_70;
   fStack_30 = -fStack_6c;
@@ -67,8 +67,9 @@ void FUN_00478120(int param_1)
     fStack_4c = fStack_4c * fVar1;
     fStack_48 = fStack_48 * fVar1;
   }
-  FUN_0048b3e0(0x01C08D04,&fStack_68,&fStack_2c,0x3f800000,0,0xff,0,
-               *(float *)(param_1 + 0x570) * (float)_DAT_0057f17c * (float)_DAT_0057f184);
+  core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
+            (0x01C08D04,&fStack_68,&fStack_2c,0x3f800000,0,0xff,0,
+             *(float *)(param_1 + 0x570) * (float)_DAT_0057f17c * (float)_DAT_0057f184);
   *(uint *)(param_1 + 0x574) = 1;
   *(float *)(param_1 + 0x578) =
        SQRT((fStack_24 - fStack_60) * (fStack_24 - fStack_60) +

@@ -59,7 +59,7 @@ void FUN_004b2430(int *param_1,uint param_2,uint param_3)
                   param_1[8] *
                   (int)*(short *)(iVar5 + ((uVar2 & param_1[3]) + (uVar1 & param_1[3]) * *param_1) *
                                           4);
-      FUN_004cde90(&stack0xffffffc4);
+      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
       piVar7 = (int *)&stack0xffffffac;
     }
     else {
@@ -71,7 +71,7 @@ void FUN_004b2430(int *param_1,uint param_2,uint param_3)
                   param_1[8] * (int)*(short *)(((uVar2 & param_1[2]) + iVar5) * 4 + uStack_1c);
       iStack_38 = param_1[7] << 8;
       iStack_34 = iStack_24 - iStack_34;
-      FUN_004cde90(&stack0xffffffc4);
+      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
       piVar7 = (int *)auStack_30;
     }
   }
@@ -85,7 +85,7 @@ void FUN_004b2430(int *param_1,uint param_2,uint param_3)
     iStack_34 = iStack_34 -
                 param_1[8] *
                 (int)*(short *)((uVar8 + (uVar1 & param_1[3]) * *param_1) * 4 + uStack_18);
-    FUN_004cde90(&stack0xffffffc4);
+    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
     piVar7 = (int *)&stack0xffffffa0;
   }
   else {
@@ -97,7 +97,7 @@ void FUN_004b2430(int *param_1,uint param_2,uint param_3)
     iStack_3c = (int)*(short *)(iVar5 + (iVar6 + uVar8) * 4) * param_1[8] - iStack_34;
     iStack_38 = param_1[7] << 8;
     iStack_34 = iStack_20 - iStack_34;
-    FUN_004cde90(&stack0xffffffc4);
+    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
     piVar7 = (int *)&stack0xffffffb8;
   }
   iStack_3c = *piVar7;

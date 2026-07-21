@@ -14,7 +14,7 @@ byte * FUN_00567c2c(byte *param_1,int param_2)
   byte *pbVar3;
   
   pbVar3 = param_1 + 1;
-  FUN_00563cc0(param_2,0,0x20);
+  memset(param_2,0,0x20);
   uVar2 = (uint)*param_1;
   if (uVar2 != 0) {
     do {

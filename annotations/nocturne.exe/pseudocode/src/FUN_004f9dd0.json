@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 619,
+    "complexity_score": 618,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
+    "pseudocode_lines": 203,
     "suspect_count": 38,
     "suspect_types": [
       "param_count_too_few",
@@ -138,7 +138,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 714
+    "total_lines": 713
   },
   "cross_references": [
     {
@@ -162,44 +162,44 @@
   },
   "function_calls": [
     {
-      "addr": "004f9830",
-      "is_variadic": false,
-      "name": "FUN_004f9830"
-    },
-    {
-      "addr": "004f9870",
-      "is_variadic": false,
-      "name": "FUN_004f9870"
-    },
-    {
-      "addr": "004f98e0",
-      "is_variadic": false,
-      "name": "FUN_004f98e0"
-    },
-    {
       "addr": "004f9960",
       "is_variadic": false,
-      "name": "FUN_004f9960"
-    },
-    {
-      "addr": "004f99d0",
-      "is_variadic": false,
-      "name": "FUN_004f99d0"
+      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960"
     },
     {
       "addr": "004f9a10",
       "is_variadic": false,
-      "name": "FUN_004f9a10"
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10"
     },
     {
-      "addr": "00530710",
+      "addr": "004f9830",
       "is_variadic": false,
-      "name": "FUN_00530710"
+      "name": "engine_prim.c_findEdgeInBuffer_FUN_004f9830"
+    },
+    {
+      "addr": "004f98e0",
+      "is_variadic": false,
+      "name": "engine_prim.c_normalizeTextureCoords_FUN_004f98e0"
+    },
+    {
+      "addr": "004f9870",
+      "is_variadic": false,
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_004f9870"
+    },
+    {
+      "addr": "004f99d0",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_004f99d0"
     },
     {
       "addr": "00532620",
       "is_variadic": false,
-      "name": "FUN_00532620"
+      "name": "wincore_windll.cpp_drawPolygon_FUN_00532620"
+    },
+    {
+      "addr": "00530710",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_renderScanline_FUN_00530710"
     }
   ],
   "globals": [
@@ -443,7 +443,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((DAT_005b7644 != 0) && (iVar8 = 0, piVar5 = param_1, 0 < param_2)) {",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((DAT_005b7644 != 0) && (iVar8 = 0, piVar5 = param_1, 0 < param_2)) {",
@@ -459,7 +459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 22,
       "match": "DAT_005b7644",
       "severity": "mild",
       "text": "if ((DAT_005b7644 != 0) && (iVar8 = 0, piVar5 = param_1, 0 < param_2)) {",
@@ -467,7 +467,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(byte *)((int)piVar5",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)piVar5 + 0x13) & 0x80) != 0) {",
@@ -475,7 +475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "} while (iVar8 < param_2);",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_006b0280",
       "severity": "mild",
       "text": "if (DAT_006b0280 != 0) {",
@@ -491,7 +491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar11 = param_1 + 0xc;",
@@ -499,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar5 = param_1 + 0x18;",
@@ -507,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < 4) {",
@@ -515,15 +515,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = FUN_004f9a10(param_1,piVar11,piVar5);",
+      "text": "iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,piVar11,piVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar8 = param_2 + -2;",
@@ -531,15 +531,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_004f9a10(param_1,piVar11,piVar5);",
+      "text": "iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,piVar11,piVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 65,
       "match": "DAT_006b0278",
       "severity": "mild",
       "text": "if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {",
@@ -547,103 +547,103 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00532620(param_1,param_2,_DAT_01c039a0);",
+      "text": "wincore_windll_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00532620(param_1,param_2,_DAT_01c039a0);",
+      "text": "wincore_windll_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f9870(param_1,param_2);",
+      "text": "engine_prim_c_prepareDepthBuffer_FUN_004f9870(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 71,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f9870(param_1,param_2);",
+      "text": "engine_prim_c_prepareDepthBuffer_FUN_004f9870(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f98e0(param_1,param_2);",
+      "text": "engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 74,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f98e0(param_1,param_2);",
+      "text": "engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f9960(param_1,param_2);",
+      "text": "engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 77,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f9960(param_1,param_2);",
+      "text": "engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f98e0(param_1,param_2);",
+      "text": "engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 80,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f98e0(param_1,param_2);",
+      "text": "engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f99d0(param_1,param_2);",
+      "text": "engine_prim_c_replaceWWithDepth_FUN_004f99d0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 83,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f99d0(param_1,param_2);",
+      "text": "engine_prim_c_replaceWWithDepth_FUN_004f99d0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 89,
       "match": "param_2",
       "severity": "mild",
       "text": "if (0 < param_2) {",
@@ -651,7 +651,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 92,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= iVar8) {",
@@ -659,7 +659,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar5 = param_1 + iVar8 * 0xc;",
@@ -667,7 +667,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar11 = param_1 + local_1c * 0xc;",
@@ -675,7 +675,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 109,
       "match": "DAT_01e52a6c",
       "severity": "mild",
       "text": "*(int *)(&DAT_01e52a6c + iVar2) = iVar8;",
@@ -683,7 +683,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 164,
       "match": "param_2",
       "severity": "mild",
       "text": "} while (local_1c < param_2);",
@@ -691,7 +691,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 172,
+      "line": 171,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar12 = SBORROW4(_DAT_01e52eec,0x000004B0);",
@@ -699,15 +699,15 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 204,
+      "line": 203,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(local_18,iVar7);",
+      "text": "bVar12 = SBORROW4(local_1c,iVar9);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)piVar5 + 0x13) & 0x80) != 0) {",

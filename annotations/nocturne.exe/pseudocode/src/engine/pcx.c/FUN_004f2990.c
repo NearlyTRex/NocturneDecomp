@@ -30,14 +30,14 @@ void FUN_004f2990(uint param_1)
   short local_40;
   
   if (DAT_005b7624 == 0x10) {
-    FUN_004f2620(param_1);
+    engine_pcx_c_saveScreenRaw16_FUN_004f2620(param_1);
     return;
   }
   if (DAT_005b7624 == 0x20) {
-    FUN_004f27e0(param_1);
+    engine_pcx_c_saveScreenRaw32_FUN_004f27e0(param_1);
     return;
   }
-  FUN_00563cc0(&local_88,0,0x80);
+  memset(&local_88,0,0x80);
   local_88 = 10;
   local_87 = 5;
   local_85 = 8;
@@ -55,19 +55,19 @@ void FUN_004f2990(uint param_1)
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  piVar1 = (int *)FUN_0056568c(param_1,&DAT_0058cfc3);
+  piVar1 = (int *)_fopen(param_1,&DAT_0058cfc3);
   if (piVar1 == (int *)0x0) {
     _DAT_01cc4800 = "..\\engine\\pcx.c";
     _DAT_01cc4804 = 0xee;
     FUN_004c8440("Cannot write .PCX");
   }
   iVar2 = 0;
-  FUN_00563a50(&local_88,1,0x80,piVar1);
+  _fwrite(&local_88,1,0x80,piVar1);
   if (0 < DAT_005b7620) {
     do {
-      FUN_004f2550(iVar2,piVar1);
+      engine_pcx_c_writePCXScanline_FUN_004f2550(iVar2,piVar1);
       if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {
-        FUN_004f2550(iVar2,piVar1);
+        engine_pcx_c_writePCXScanline_FUN_004f2550(iVar2,piVar1);
       }
       iVar2 = iVar2 + 1;
     } while (iVar2 < DAT_005b7620);
@@ -85,7 +85,7 @@ void FUN_004f2990(uint param_1)
   else {
     uVar4 = 0xc;
   }
-  FUN_00566cc0(uVar4,piVar1);
+  _fputc(uVar4,piVar1);
 LAB_004f2afe:
   iVar2 = 0;
   do {
@@ -102,11 +102,11 @@ LAB_004f2afe:
     else {
       uVar3 = (&DAT_01c00648)[iVar2];
 LAB_004f2b14:
-      FUN_00566cc0(uVar3,piVar1);
+      _fputc(uVar3,piVar1);
     }
     iVar2 = iVar2 + 1;
     if (0x2ff < iVar2) {
-      FUN_00563380(piVar1);
+      _fclose(piVar1);
       return;
     }
   } while( true );

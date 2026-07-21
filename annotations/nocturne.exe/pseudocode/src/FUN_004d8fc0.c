@@ -16,14 +16,15 @@ void FUN_004d8fc0(int param_1)
   
   iVar1 = *(int *)(param_1 + 0x514);
   while (iVar1 != 0) {
-    FUN_004d8f90(param_1,*(uint *)(param_1 + 0x514),1);
+    core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90
+              (param_1,*(uint *)(param_1 + 0x514),1);
     iVar1 = *(int *)(param_1 + 0x514);
   }
-  FUN_004d8ee0(param_1);
+  core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(param_1);
   uVar2 = 0x01E57284;
   _DAT_01cae0d4 = 0;
   *(uint *)(param_1 + 0x850) = 0;
-  FUN_00511b30(uVar2);
+  core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30(uVar2);
   *(uint *)(param_1 + 0x52c) = 0;
   return;
 }

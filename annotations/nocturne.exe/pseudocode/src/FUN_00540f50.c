@@ -52,21 +52,21 @@ void FUN_00540f50(int param_1,float param_2)
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
   local_24 = param_2 * *(float *)(param_1 + 0xbc8c);
   while (0.0 < local_24) {
-    uVar10 = FUN_004e11c0(param_1 + 0x150,&local_24);
-    FUN_0042add0(param_1,uVar10);
+    uVar10 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0x150,&local_24);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar10);
   }
   *(uint *)(param_1 + 0xdf80) = 0;
   *(uint *)(param_1 + 0xdf7c) = *(uint *)(param_1 + 0xdf80);
   *(uint *)(param_1 + 0xdf78) = *(uint *)(param_1 + 0xdf7c);
   local_24 = param_2 * *(float *)(param_1 + 0xbc8c);
   while (0.0 < local_24) {
-    FUN_004e11c0(param_1 + 0xbd24,&local_24);
+    core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0xbd24,&local_24);
   }
   fVar3 = (float)_DAT_005961bc;
   iVar6 = param_1 + 0x150;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c);
-  iVar7 = FUN_004e1660(iVar6);
+  iVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar6);
   uVar2 = *(uint *)(iVar7 + 0x24);
   iVar7 = FUN_00428c00(param_1,param_2);
   if (iVar7 == 0) {
@@ -74,9 +74,9 @@ void FUN_00540f50(int param_1,float param_2)
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
       iVar7 = *(int *)(param_1 + 0xbca4);
       if (iVar7 == 0) {
-        iVar7 = FUN_0047a030(param_1,param_2);
+        iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         if (iVar7 != 0) {
-          FUN_004e16b0(iVar6,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar6,1,1);
         }
       }
       else {
@@ -85,19 +85,19 @@ void FUN_00540f50(int param_1,float param_2)
         local_30 = *(float *)(param_1 + 0x28) - *(float *)(iVar7 + 0x28);
         if (SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) <
             *(float *)(param_1 + 0xbc9c)) {
-          FUN_004e16b0(iVar6,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar6,1,1);
         }
       }
     }
     else if ((uVar2 < 2) || (uVar2 == 2)) {
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
       if (*(int *)(param_1 + 0xbca4) == 0) {
-        iVar6 = FUN_0047a030(param_1,param_2);
+        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         if (iVar6 == 0) {
-          FUN_004e16b0(param_1 + 0x150,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);
         }
         else {
-          FUN_004e16b0(param_1 + 0x150,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,1,1);
         }
       }
       else {
@@ -109,7 +109,8 @@ void FUN_00540f50(int param_1,float param_2)
         local_64 = 0;
         uVar10 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                            (*(int *)(param_1 + 0xbca4),&local_68,0x3f000000,0x3e32b8c2);
-        iVar6 = FUN_004247f0(param_1,*(int *)(param_1 + 0xbca4) + 0x20,uVar10);
+        iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                          (param_1,*(int *)(param_1 + 0xbca4) + 0x20,uVar10);
         if (((-1 < iVar6) &&
             (iVar6 = *(int *)(param_1 + 0xbca4),
             fVar3 = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 0x20),
@@ -119,7 +120,7 @@ void FUN_00540f50(int param_1,float param_2)
            (*(int *)(param_1 + 0xe19c) == 0)) {
           *(uint *)(param_1 + 0xe19c) = 1;
           *(uint *)(param_1 + 0xe1a0) = 0;
-          FUN_00527230(*(uint *)(param_1 + 0xe194));
+          sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xe194));
           *(uint *)(param_1 + 0xe198) = 0x461c3f9a;
           (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,"succubus-morph.wav");
         }
@@ -137,13 +138,14 @@ LAB_00541065:
 LAB_005413d0:
       uVar10 = 0;
     }
-    FUN_004e16b0(param_1 + 0x150,uVar10,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar10,1);
   }
   else {
     if (uVar2 < 3) goto LAB_00541065;
     if (uVar2 != 3) goto LAB_005413d0;
-    FUN_004e16b0(iVar6,0,1);
-    FUN_0043ac60(PTR_DAT_005ad350,">%s confused while walking to scriptDest!\n" + 1,param_1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar6,0,1);
+    engine_console_cpp_CConsole_printf_FUN_0043ac60
+              (PTR_DAT_005ad350,">%s confused while walking to scriptDest!\n" + 1,param_1);
   }
   *(uint *)(param_1 + 0x23ac) = 0;
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
@@ -152,7 +154,7 @@ LAB_00541090:
   if (0.0 < *(float *)(param_1 + 0xbca0)) {
     *(float *)(param_1 + 0xbca0) = *(float *)(param_1 + 0xbca0) - param_2;
   }
-  iVar6 = FUN_00425960(param_1);
+  iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(param_1);
   if (iVar6 != 0) {
     *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_005961c4;
     local_5c = *(float *)(param_1 + 0x2420) * param_2;
@@ -170,28 +172,30 @@ LAB_00541090:
     *(uint *)(param_1 + 0x23ac) = 0;
     *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
     *(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23a8);
-    FUN_00425050(param_1,&local_44);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_44);
   }
-  FUN_004259a0(param_1);
-  FUN_0051b8a0(param_1 + 0x150);
+  core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
   FUN_0042a150(param_1,param_2);
-  local_20 = FUN_004e1660(param_1 + 0x150);
+  local_20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
   local_1c = *(uint *)(param_1 + 0x158);
-  FUN_004e1960(param_1 + 0xbd24,local_20,local_1c);
-  FUN_0051b880(param_1 + 0xbd24);
+  core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
+            (param_1 + 0xbd24,local_20,local_1c);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
+            (param_1 + 0xbd24);
   if ((*(int *)(param_1 + 0xe19c) != 0) &&
      (fVar3 = *(float *)(param_1 + 0xe1a0) + param_2, *(float *)(param_1 + 0xe1a0) = fVar3,
      _DAT_005a28d8 < fVar3)) {
     iVar7 = FUN_0056497c(0xbd58);
     iVar6 = 0;
     if (iVar7 != 0) {
-      iVar6 = FUN_004b8ca0(iVar7);
+      iVar6 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(iVar7);
     }
     uVar10 = 0x01CC9450;
     local_18 = iVar6;
     if (iVar6 != 0) {
       *(uint *)(param_1 + 0x70) = 2;
-      FUN_004d9720(uVar10,iVar6);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(uVar10,iVar6);
       *(uint *)(iVar6 + 0x20) = *(uint *)(param_1 + 0x20);
       *(uint *)(iVar6 + 0x24) = *(uint *)(param_1 + 0x24);
       *(uint *)(iVar6 + 0x28) = *(uint *)(param_1 + 0x28);
@@ -215,30 +219,32 @@ LAB_00541090:
       } while (cVar1 != '\0');
       (*(code *)**(uint **)(local_18 + 0x14c))(local_18);
       iVar7 = local_18 + 0x150;
-      FUN_004e1960(iVar7,local_20,local_1c);
+      core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960(iVar7,local_20,local_1c);
       iVar6 = local_18;
-      FUN_0051b880(iVar7);
+      core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(iVar7);
       *(uint *)(iVar6 + 0x108) = *(uint *)(param_1 + 0x108);
       *(uint *)(iVar6 + 0x10c) = *(uint *)(param_1 + 0x10c);
       uVar10 = 0x01CC9450;
       *(uint *)(iVar6 + 0x110) = *(uint *)(param_1 + 0x110);
-      FUN_004d8c60(uVar10,iVar6);
+      core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(uVar10,iVar6);
       uVar10 = *(uint *)(param_1 + 0xe16c);
       *(uint *)(param_1 + 0xe16c) = *(uint *)(local_18 + 0x2c20);
       *(uint *)(local_18 + 0x2c20) = uVar10;
     }
   }
   if (*(int *)(param_1 + 0x2618) != 0) {
-    FUN_00438550(param_1 + 0xdfd8,param_1 + 0x20,param_1 + 0x30,param_2,
-                 *(uint *)(param_1 + 0x240c),param_1 + 0xbd24);
+    core_cloth_cpp_CClothList_process_FUN_00438550
+              (param_1 + 0xdfd8,param_1 + 0x20,param_1 + 0x30,param_2,
+               *(uint *)(param_1 + 0x240c),param_1 + 0xbd24);
   }
-  iVar6 = FUN_0047dc30(0x01C03A10,"succubusShutUp");
+  iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                    (0x01C03A10,"succubusShutUp");
   if (iVar6 == 0) {
-    iVar6 = FUN_00526c50(*(uint *)(param_1 + 0xe194));
+    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xe194));
     if ((iVar6 == 0) &&
        (param_2 = *(float *)(param_1 + 0xe198) - param_2, *(float *)(param_1 + 0xe198) = param_2,
        param_2 < 0.0)) {
-      local_14 = FUN_0040dda0(0x40a00000,0x41200000);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
       *(uint *)(param_1 + 0xe198) = local_14;
       uVar10 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
                          (param_1,"succubus-horny-?.wav");
@@ -247,6 +253,6 @@ LAB_00541090:
     }
     return;
   }
-  FUN_00527230(*(uint *)(param_1 + 0xe194));
+  sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xe194));
   return;
 }

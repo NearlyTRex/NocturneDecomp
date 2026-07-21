@@ -53,14 +53,14 @@ void FUN_00523170(void)
       iStack_4c = *(int *)(iVar1 + 0x2dc8360);
       puStack_48 = (byte *)(_DAT_02dc8330 * 4 + iStack_4c);
       uStack_50 = 0x5231e8;
-      FUN_00566170();
+      memmove();
       puStack_48 = (byte *)0x0;
       iStack_4c = *(int *)(iVar1 + 0x2dc8360) + (_DAT_02dc8334 + -1) * _DAT_02dc8330 * 4;
       iVar1 = iVar1 + 4;
       iVar5 = iVar5 + 1;
       uStack_50 = 0x523216;
       pcStack_44 = (char *)iVar3;
-      FUN_00563cc0();
+      memset();
     } while (iVar5 < DAT_005bea68);
   }
   iStack_20 = _DAT_02dc8330;
@@ -80,7 +80,7 @@ void FUN_00523170(void)
     pcStack_44 = (char *)fStack_14;
     iStack_4c = 0x523297;
     puStack_48 = puVar2;
-    FUN_00524830();
+    sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830();
     puVar2 = puVar2 + 0x120;
   } while (puVar2 != &DAT_02dc1b74);
   puVar2 = (byte *)0x2dbd374;
@@ -92,7 +92,7 @@ void FUN_00523170(void)
       puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
-    FUN_00524d10(puVar2);
+    sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(puVar2);
     puVar2 = puVar2 + 0x120;
   } while (puVar2 != &DAT_02dc1b74);
   _DAT_02dc8328 = _DAT_02dc8330;

@@ -33,26 +33,27 @@ int thunk_FUN_004d23d0(void)
   iVar6 = 0x1cc56e0;
   iVar7 = 0;
   do {
-    FUN_0040e3c0(iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
+              (iVar6,*(uint *)((int)&PTR_s_f0100_005baf18 + iVar7),0x40,0x40);
     iVar7 = iVar7 + 4;
-    FUN_0040e9e0(iVar6,2,1);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(iVar6,2,1);
     iVar6 = iVar6 + 0x14;
   } while (iVar7 != 0x20);
-  FUN_0040e3c0(0x1cc5b20,"fblurl",0x68,0x46);
-  FUN_0040e3c0(0x1cc5b34,"fblurm",0x20,0x46);
-  FUN_0040e3c0(0x1cc5b48,"fblurr",0x68,0x46);
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc5b20,"fblurl",0x68,0x46);
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc5b34,"fblurm",0x20,0x46);
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc5b48,"fblurr",0x68,0x46);
   iVar6 = 0;
-  FUN_00403f50();
+  engine_2d_c_clearInputAndWait_FUN_00403f50();
   FUN_005459f0();
   uStack_c = 0;
-  FUN_004de860(0x1cc5780);
+  core_moon_cpp_CMoon_init_FUN_004de860(0x1cc5780);
   iStack_8 = 1;
-  FUN_0049a890(0x01C775EC);
+  core_game_cpp_CGame_saveClockTime_FUN_0049a890(0x01C775EC);
   do {
-    FUN_0049a8a0(0x01C775EC);
-    FUN_004deae0(0x1cc5780,0x01C775EC[0x99]);
-    FUN_004dec50(0x1cc5780);
-    pcVar3 = (char *)FUN_004ee370("S T A R T");
+    core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
+    core_moon_cpp_CMoon_update_FUN_004deae0(0x1cc5780,0x01C775EC[0x99]);
+    core_moon_cpp_CMoon_render_FUN_004dec50(0x1cc5780);
+    pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("S T A R T");
     pcVar8 = &DAT_01cc7d10;
     do {
       cVar1 = *pcVar3;
@@ -63,7 +64,7 @@ int thunk_FUN_004d23d0(void)
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    pcVar3 = (char *)FUN_004ee370("O P T I O N S");
+    pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("O P T I O N S");
     pcVar8 = &DAT_01cc7e10;
     do {
       cVar1 = *pcVar3;
@@ -74,7 +75,7 @@ int thunk_FUN_004d23d0(void)
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    pcVar3 = (char *)FUN_004ee370("L O A D");
+    pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("L O A D");
     pcVar8 = &DAT_01cc7f10;
     do {
       cVar1 = *pcVar3;
@@ -86,7 +87,7 @@ int thunk_FUN_004d23d0(void)
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     pcVar8 = &DAT_01cc8010;
-    pcVar3 = (char *)FUN_004ee370("Q U I T");
+    pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Q U I T");
     puVar5 = &DAT_01cc7d10;
     do {
       cVar1 = *pcVar3;
@@ -103,15 +104,15 @@ int thunk_FUN_004d23d0(void)
       iVar7 = iVar7 + 4;
       puVar5 = puVar5 + 0x100;
     } while (iVar7 != 0x10);
-    uVar4 = FUN_004cf440(0x1cc8110,4,&uStack_c,0xfa,0);
+    uVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(0x1cc8110,4,&uStack_c,0xfa,0);
     if (iStack_8 != 0) {
-      FUN_0052ee70();
+      wincore_windll_cpp_clearScreen_FUN_0052ee70();
     }
-    FUN_00553910();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     switch(uVar4) {
     case 0:
-      FUN_004dea60(0x1cc5780);
-      FUN_0052e9c0(0x02DC9450);
+      core_moon_cpp_CMoon_free_FUN_004dea60(0x1cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
       iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);
       if ((iVar7 == 0) || (iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar7 == 0)) {
         iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
@@ -126,22 +127,22 @@ int thunk_FUN_004d23d0(void)
         uVar4 = 2;
       }
       FUN_004a4b50(0x01C775EC,uVar4);
-      FUN_00403f50();
+      engine_2d_c_clearInputAndWait_FUN_00403f50();
       FUN_005459f0();
-      FUN_004de860(0x1cc5780);
+      core_moon_cpp_CMoon_init_FUN_004de860(0x1cc5780);
       goto LAB_004d2665;
     case 1:
-      FUN_004d21c0(0);
+      core_menu_cpp_showOptionsScreen_FUN_004d21c0(0);
       break;
     case 2:
-      FUN_004dea60(0x1cc5780);
-      FUN_0052e9c0(0x02DC9450);
+      core_moon_cpp_CMoon_free_FUN_004dea60(0x1cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
       FUN_004a4170(0x01C775EC,0,1);
-      FUN_00403f50();
+      engine_2d_c_clearInputAndWait_FUN_00403f50();
       FUN_005459f0();
-      FUN_004de860(0x1cc5780);
+      core_moon_cpp_CMoon_init_FUN_004de860(0x1cc5780);
 LAB_004d2665:
-      FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
       break;
     case 3:
       iVar6 = 99;
@@ -152,17 +153,17 @@ LAB_004d2665:
     }
     iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
     if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {
-      iVar7 = FUN_00526ca0();
-      FUN_00526cb0(iVar7 == 0);
-      FUN_0052e850(0x02DC9450);
+      iVar7 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
+      sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(iVar7 == 0);
+      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
     }
     iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
     if ((iVar7 != 0) &&
        ((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||
         (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {
-      FUN_0052e9c0(0x02DC9450);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
       FUN_004c8510();
-      FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
     }
     iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
     if (iVar7 != 0) {
@@ -170,12 +171,12 @@ LAB_004d2665:
     }
     if (iStack_8 != 0) {
       iStack_8 = 0;
-      FUN_0052e850(0x02DC9450);
-      FUN_00403f50();
+      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
+      engine_2d_c_clearInputAndWait_FUN_00403f50();
     }
     if (iVar6 != 0) {
-      FUN_0052e9c0(0x02DC9450);
-      FUN_004dea60(0x1cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
+      core_moon_cpp_CMoon_free_FUN_004dea60(0x1cc5780);
       return iVar6;
     }
   } while( true );

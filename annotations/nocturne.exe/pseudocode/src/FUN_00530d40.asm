@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   FUN_00530e60 at 00531750
-;   FUN_00531780 at 0053226f
-;   FUN_005322b0 at 005322c5
+;   wincore_windll.cpp_kill_FUN_005322b0 at 005322c5
+;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780 at 0053226f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c02594
@@ -28,7 +28,7 @@
 ;   ... and 24 more
 ;
 ; Called Functions:
-;   FUN_00553d20
+;   wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH EDI                            ; 00530e3b
         ;   Label: LAB_00530e3b
     PUSH EBX                            ; 00530e3c
-    CALL FUN_00553d20                   ; 00530e3d
-        ;   XREF to: 00553d20 (UNCONDITIONAL_CALL)  ; undefined FUN_00553d20()
+    CALL wincore_wddvmem.cpp_freeLibrary_FUN_00553d20 ; 00530e3d
+        ;   XREF to: 00553d20 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_freeLibrary_FUN_00553d20()
     XOR EDI,EDI                         ; 00530e42
     ADD ESP,0x4                         ; 00530e44
     MOV dword ptr [0x02dc9e08],EDI      ; 00530e47 | DAT_02dc9e08

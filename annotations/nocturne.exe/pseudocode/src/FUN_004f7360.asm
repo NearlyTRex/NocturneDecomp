@@ -14,11 +14,11 @@
 ;   undefined4 DAT_0058d96d
 ;
 ; Called Functions:
-;   FUN_0040a290
-;   FUN_0040df00
-;   FUN_00453990
-;   FUN_00454530
-;   FUN_00511990
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f737f
         ;   Label: LAB_004f737f
     PUSH EAX                            ; 004f7383
-    CALL FUN_00511990                   ; 004f7384
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined FUN_00511990()
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 004f7384
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
     ADD ESP,0x4                         ; 004f7389
     LEA EAX,[ESP + 0x8]                 ; 004f738c
     XOR EDX,EDX                         ; 004f7390
@@ -63,15 +63,15 @@ section .text
     JNZ 0x004f7376                      ; 004f73a7
         ;   XREF to: 004f7376 (CONDITIONAL_JUMP)  ; LAB_004f7376
     PUSH dword ptr [EBX + 0x30]         ; 004f73a9
-    CALL FUN_0040df00                   ; 004f73ac
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040df00()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004f73ac
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
     MOV dword ptr [ESP + 0x7c],EAX      ; 004f73b1
     FLD float ptr [ESP + 0x7c]          ; 004f73b5
     ADD ESP,0x4                         ; 004f73b9
     PUSH dword ptr [EBX + 0x38]         ; 004f73bc
     FSTP float ptr [EBX + 0x30]         ; 004f73bf
-    CALL FUN_0040df00                   ; 004f73c2
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040df00()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004f73c2
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
     FLD float ptr [EBX + 0x30]          ; 004f73c7
     MOV dword ptr [ESP + 0x7c],EAX      ; 004f73ca
     FABS                                ; 004f73ce
@@ -101,8 +101,8 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 004f740b
     PUSH EAX                            ; 004f740f
     PUSH EBX                            ; 004f7410
-    CALL FUN_0040a290                   ; 004f7411
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a290()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004f7411
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
     ADD ESP,0xc                         ; 004f7416
     FLD float ptr [ESP + 0x6c]          ; 004f7419
     FADD float ptr [ESP + 0x24]         ; 004f741d
@@ -148,8 +148,8 @@ section .text
         ;   XREF to: 004f7376 (CONDITIONAL_JUMP)  ; LAB_004f7376
     LEA EAX,[EBX + 0x150]               ; 004f7497
     PUSH EAX                            ; 004f749d
-    CALL FUN_00454530                   ; 004f749e
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004f749e
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     MOV ECX,dword ptr [EAX + 0x358]     ; 004f74a3
     ADD ESP,0x4                         ; 004f74a9
     TEST ECX,ECX                        ; 004f74ac
@@ -188,12 +188,12 @@ section .text
     FADD float ptr [ESP + 0x5c]         ; 004f7507
     PUSH EBX                            ; 004f750b
     FSTP float ptr [ESP + 0x60]         ; 004f750c
-    CALL FUN_00454530                   ; 004f7510
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004f7510
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     ADD ESP,0x4                         ; 004f7515
     PUSH EAX                            ; 004f7518
-    CALL FUN_00453990                   ; 004f7519
-        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; undefined FUN_00453990()
+    CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 ; 004f7519
+        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990()
     MOV dword ptr [ESP + 0x8c],EAX      ; 004f751e
     FLD float ptr [ESP + 0x8c]          ; 004f7525
     ADD ESP,0x14                        ; 004f752c

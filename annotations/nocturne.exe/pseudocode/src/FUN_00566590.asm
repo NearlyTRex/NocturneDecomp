@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005665e8 at 005665f7
+;   crt_time.c__localtime_FUN_005665e8 at 005665f7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1f14

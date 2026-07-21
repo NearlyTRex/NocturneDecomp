@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a1d30
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 00516b16 (CONDITIONAL_JUMP)  ; LAB_00516b16
     PUSH 0x1                            ; 00516afc
     PUSH EBX                            ; 00516afe
-    CALL FUN_00553ea0                   ; 00516aff
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 00516aff
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 00516b04
     MOV DL,byte ptr [ESP + 0xc]         ; 00516b07
     MOV EBX,EAX                         ; 00516b0b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a1d30                       ; 00516b16 | DAT_005a1d30
         ;   Label: LAB_00516b16
     PUSH EBX                            ; 00516b1b
-    CALL FUN_0056445f                   ; 00516b1c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 00516b1c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00516b21
     PUSH EAX                            ; 00516b24
-    CALL FUN_00564486                   ; 00516b25
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00516b25
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00516b2a
     MOV EAX,EBX                         ; 00516b2d
     POP EBX                             ; 00516b2f

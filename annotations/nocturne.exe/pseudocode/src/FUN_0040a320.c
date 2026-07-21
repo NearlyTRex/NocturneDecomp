@@ -9,6 +9,7 @@
 void FUN_0040a320(int param_1,uint param_2,uint param_3)
 
 {
-  FUN_0052eb00(0x02DC9450,param_1,param_2,param_1 + 0x20,param_3);
+  core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
+            (0x02DC9450,param_1,param_2,param_1 + 0x20,param_3);
   return;
 }

@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004cc5d0 at 004cc6c2
+;   core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0 at 004cc6c2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a02b0
@@ -27,8 +27,8 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   FUN_0045f3c0
-;   FUN_00530a25
+;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
+;   wincore_windll.cpp_transformPoint_FUN_00530a25
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004cc479
     PUSH EAX                            ; 004cc47d
     PUSH ESI                            ; 004cc47e
-    CALL FUN_00530a25                   ; 004cc47f
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined FUN_00530a25()
+    CALL wincore_windll.cpp_transformPoint_FUN_00530a25 ; 004cc47f
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformPoint_FUN_00530a25()
     MOV EAX,[0x005ae704]                ; 004cc484 | DAT_005ae704
     MOV ESI,dword ptr [EAX]             ; 004cc489 | DAT_01b4d738
     MOV ECX,0xc                         ; 004cc48b
@@ -130,8 +130,8 @@ section .text
     PUSH EAX                            ; 004cc5ae | DAT_01b4d738
     MOV dword ptr [ESP + 0x28],EDI      ; 004cc5af
     MOV dword ptr [ESP + 0x2c],EBP      ; 004cc5b3
-    CALL FUN_0045f3c0                   ; 004cc5b7
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045f3c0()
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 004cc5b7
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
     ADD ESP,0xc                         ; 004cc5bc
     ADD ESP,0x34                        ; 004cc5bf
     POP EBP                             ; 004cc5c2

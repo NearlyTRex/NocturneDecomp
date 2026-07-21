@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0045c0f0
-;   FUN_0045c440
+;   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440
+;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 0045c00b
     PUSH EAX                            ; 0045c00f
     PUSH EBX                            ; 0045c010
-    CALL FUN_0045c440                   ; 0045c011
-        ;   XREF to: 0045c440 (UNCONDITIONAL_CALL)  ; undefined FUN_0045c440()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440 ; 0045c011
+        ;   XREF to: 0045c440 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440()
     ADD ESP,0x24                        ; 0045c016
     TEST EAX,EAX                        ; 0045c019
     JNZ 0x0045c022                      ; 0045c01b
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 0045c031
     PUSH EAX                            ; 0045c035
     PUSH EBX                            ; 0045c036
-    CALL FUN_0045c0f0                   ; 0045c037
-        ;   XREF to: 0045c0f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045c0f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 ; 0045c037
+        ;   XREF to: 0045c0f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0()
     ADD ESP,0x14                        ; 0045c03c
     POP EBP                             ; 0045c03f
     POP EDI                             ; 0045c040

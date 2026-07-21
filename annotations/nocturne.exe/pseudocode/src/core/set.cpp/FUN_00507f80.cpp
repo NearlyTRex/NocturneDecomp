@@ -43,7 +43,7 @@ void FUN_00507f80(int *param_1,int param_2)
   auStack_54[3] = 0;
   bVar9 = _DAT_01fb99d0 == 0;
   if (bVar9) {
-    FUN_005084c0();
+    core_set_cpp_CDemonSet_initScene_FUN_005084c0();
   }
   auStack_54[3] = (uint)bVar9;
   iStack_20 = 0;
@@ -57,10 +57,10 @@ void FUN_00507f80(int *param_1,int param_2)
     piStack_2c = piStack_30;
     do {
       FUN_005148b0(piStack_40 + iStack_20 * 0x68,0x1fb8508);
-      FUN_00440290(0x1fb8508,0);
+      core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(0x1fb8508,0);
       _DAT_01fba938 = 1;
-      FUN_00507c80();
-      FUN_00440a20(0x1fb8508,0);
+      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80();
+      core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(0x1fb8508,0);
       FUN_004421b0();
       piVar2 = (int *)FUN_00447f20(0x1fb8508,auStack_70);
       if (piVar2 != piStack_38) {
@@ -73,11 +73,11 @@ void FUN_00507f80(int *param_1,int param_2)
         piStack_38[4] = piVar2[4];
         piStack_38[5] = piVar2[5];
       }
-      FUN_00563c90(auStack_170,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
-                   (double)(float)piStack_34[0x5f],(double)(float)piStack_34[0x60],
-                   (double)(float)piStack_34[0x61],(double)(float)piStack_34[0x62],
-                   (double)(float)piStack_34[99],(double)(float)piStack_34[100]);
-      FUN_00402600();
+      _sprintf(auStack_170,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
+                 (double)(float)piStack_34[0x5f],(double)(float)piStack_34[0x60],
+                 (double)(float)piStack_34[0x61],(double)(float)piStack_34[0x62],
+                 (double)(float)piStack_34[99],(double)(float)piStack_34[100]);
+      engine_2d_c_drawText_FUN_00402600();
       iStack_1c = 0x21;
       iStack_24 = param_1[0x6591];
       iStack_14 = 0;
@@ -96,7 +96,7 @@ void FUN_00507f80(int *param_1,int param_2)
             if (0 < _DAT_01fb99d0) {
               iVar6 = 0;
               do {
-                iVar3 = FUN_005649c0(*(uint *)(&DAT_01fb99d4 + iVar6));
+                iVar3 = _strcmp(*(uint *)(&DAT_01fb99d4 + iVar6));
                 if (iVar3 == 0) break;
                 iVar4 = iVar4 + 1;
                 iVar6 = iVar6 + 4;
@@ -107,8 +107,9 @@ void FUN_00507f80(int *param_1,int param_2)
               _DAT_01cc4804 = 0x2e8;
               FUN_004c8440();
             }
-            FUN_00441c50();
-            uVar1 = FUN_00444e20(0x1fb8508);
+            core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50();
+            uVar1 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
+                              (0x1fb8508);
             *(byte *)(iStack_18 + 0x19770) = uVar1;
             FUN_00444ef0(0x1fb8508);
             puVar7 = (uint *)(iVar5 + 0x19870 + (uint)bVar10 * -8);
@@ -119,16 +120,16 @@ void FUN_00507f80(int *param_1,int param_2)
             puVar8[(uint)bVar10 * -2 + 1] =
                  (auStack_54 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
             if (*(char *)(iStack_18 + 0x19770) != '\0') {
-              FUN_00563c90();
-              FUN_00402600();
+              _sprintf();
+              engine_2d_c_drawText_FUN_00402600();
               iStack_1c = iStack_1c + 0xb;
             }
           }
           else {
-            FUN_00440290(0x1fb8508);
+            core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(0x1fb8508);
             uVar1 = FUN_00515c40();
             *(byte *)((int)param_1 + iStack_20 + 0x19770 + iVar4 * 0x1898) = uVar1;
-            FUN_00440a20(0x1fb8508);
+            core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(0x1fb8508);
             *(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x1986c) = 0;
             *(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19870) = 0;
             *(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x19874) = 0;
@@ -139,9 +140,9 @@ void FUN_00507f80(int *param_1,int param_2)
           iStack_14 = iStack_14 + 1;
         } while (iStack_14 < iStack_24);
       }
-      FUN_00563c90();
-      FUN_00402600();
-      FUN_00553910();
+      _sprintf();
+      engine_2d_c_drawText_FUN_00402600();
+      wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       piStack_38 = piStack_38 + 0x68;
       piStack_34 = piStack_34 + 0x68;
       iStack_3c = iStack_3c + 0x10;

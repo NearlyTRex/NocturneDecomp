@@ -23,7 +23,7 @@ int FUN_00405900(int param_1)
   
   bVar6 = 0;
   uStack_74 = 0x40590c;
-  FUN_00405840();
+  engine_3d_c_setActiveRenderColor_FUN_00405840();
   iVar3 = 0;
   piVar2 = (int *)(param_1 + 8);
   while( true ) {

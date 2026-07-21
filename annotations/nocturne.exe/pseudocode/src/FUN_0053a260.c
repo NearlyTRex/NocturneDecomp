@@ -103,12 +103,15 @@ void FUN_0053a260(int param_1,int param_2)
           *(float *)(param_1 + 0x2a88);
   if (0.0 < fVar6) {
     local_1c = param_1 + 0x150;
-    uVar1 = FUN_0051e0a0(local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);
-    uVar1 = FUN_004e1010(uVar1);
+    uVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
+                      (local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);
+    uVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar1);
     iVar3 = local_1c;
-    local_34 = FUN_004e1f50(local_1c,uVar1,*(uint *)(param_1 + 0x2a88));
+    local_34 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
+                         (local_1c,uVar1,*(uint *)(param_1 + 0x2a88));
     local_18 = local_34;
-    FUN_0051c3d0(iVar3,uVar1,local_34,fVar6,local_24,&LAB_0051b650);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
+              (iVar3,uVar1,local_34,fVar6,local_24,&LAB_0051b650);
     FUN_0055d4e0(*(uint *)(local_20 + 0xc));
     puVar4 = auStack_198 + 0xb;
     local_16c[0] = local_4c;
@@ -126,7 +129,7 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9)[(uint)bVar5 * -2 + 1] =
          (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 1)
          [(uint)bVar5 * -2 + 1];
-    FUN_0055d130(auStack_198 + 7);
+    core_xform_cpp_multiplyQuaternion_FUN_0055d130(auStack_198 + 7);
     puVar4 = &stack0xfffffe34;
     uVar1 = 0x3f733333;
     auStack_198[3] = local_ac;
@@ -136,7 +139,7 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 5)[(uint)bVar5 * -2 + 1] =
          (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xd)
          [(uint)bVar5 * -2 + 1];
-    FUN_0055d2d0(&DAT_005a4508,puVar4,uVar1);
+    core_xform_cpp_slerpQuaternion_FUN_0055d2d0(&DAT_005a4508,puVar4,uVar1);
     puVar4 = auStack_198 + 3;
     local_15c[0] = local_9c;
     auStack_198[(uint)bVar5 * 0xfffffffe + 0x10] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x10];
@@ -146,7 +149,7 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x11)[(uint)bVar5 * -2 + 1]
          = (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x11)
            [(uint)bVar5 * -2 + 1];
-    FUN_0055d130(auStack_198 + 0xf,puVar4,fVar6);
+    core_xform_cpp_multiplyQuaternion_FUN_0055d130(auStack_198 + 0xf,puVar4,fVar6);
     local_14c[0] = local_bc;
     auStack_198[(uint)bVar5 * 0xfffffffe + 0x14] = auStack_d8[(uint)bVar5 * 0xfffffffe + 8];
     auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x15] =
@@ -156,7 +159,7 @@ void FUN_0053a260(int param_1,int param_2)
            [(uint)bVar5 * -2 + 1];
     iVar3 = local_24 * 0x10;
     local_2c = param_1 + 0x800 + iVar3;
-    FUN_0055d2d0(local_2c,auStack_198 + 0x13);
+    core_xform_cpp_slerpQuaternion_FUN_0055d2d0(local_2c,auStack_198 + 0x13);
     local_30 = param_1 + iVar3;
     puVar4 = (uint *)(local_30 + 0x804 + (uint)bVar5 * -8);
     *(uint *)(local_30 + 0x800) = local_6c;
@@ -166,7 +169,8 @@ void FUN_0053a260(int param_1,int param_2)
     puVar2[(uint)bVar5 * -2 + 1] =
          (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x1d)
          [(uint)bVar5 * -2 + 1];
-    FUN_0055d130(&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);
+    core_xform_cpp_multiplyQuaternion_FUN_0055d130
+              (&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);
     local_12c[0] = local_8c;
     auStack_198[(uint)bVar5 * 0xfffffffe + 0x1c] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x14];
     auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x1d] =
@@ -174,7 +178,7 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x1d)[(uint)bVar5 * -2 + 1]
          = (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x15)
            [(uint)bVar5 * -2 + 1];
-    FUN_0055d130(auStack_198 + 0x1b);
+    core_xform_cpp_multiplyQuaternion_FUN_0055d130(auStack_198 + 0x1b);
     local_13c[0] = local_7c;
     auStack_198[(uint)bVar5 * 0xfffffffe + 0x18] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x18];
     auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19] =
@@ -182,7 +186,8 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19)[(uint)bVar5 * -2 + 1]
          = (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19)
            [(uint)bVar5 * -2 + 1];
-    FUN_0051cfd0(local_1c,auStack_198 + 0x17,fVar7,local_28,&LAB_0051b650);
+    core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
+              (local_1c,auStack_198 + 0x17,fVar7,local_28,&LAB_0051b650);
     if ((float)_DAT_00595967 < *(float *)(param_1 + 0x1faf4)) {
       FUN_0055d4a0(0x3fc90fdb);
       puVar4 = auStack_198 + 0x27;
@@ -194,7 +199,7 @@ void FUN_0053a260(int param_1,int param_2)
       [(uint)bVar5 * -2 + 1] =
            (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x21)
            [(uint)bVar5 * -2 + 1];
-      FUN_0055d130(auStack_198 + 0xf,puVar4);
+      core_xform_cpp_multiplyQuaternion_FUN_0055d130(auStack_198 + 0xf,puVar4);
       local_10c[0] = local_dc;
       auStack_198[(uint)bVar5 * 0xfffffffe + 0x24] = auStack_d8[(uint)bVar5 * 0xfffffffe];
       auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x25] =
@@ -203,7 +208,8 @@ void FUN_0053a260(int param_1,int param_2)
       [(uint)bVar5 * -2 + 1] =
            (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 1)
            [(uint)bVar5 * -2 + 1];
-      FUN_0055d2d0(local_2c,auStack_198 + 0x23,*(uint *)(param_1 + 0x1faf4));
+      core_xform_cpp_slerpQuaternion_FUN_0055d2d0
+                (local_2c,auStack_198 + 0x23,*(uint *)(param_1 + 0x1faf4));
       puVar4 = (uint *)(local_30 + 0x804 + (uint)bVar5 * -8);
       *(uint *)(local_30 + 0x800) = auStack_d8[3];
       puVar2 = puVar4 + (uint)bVar5 * -2 + 1;

@@ -9,15 +9,15 @@
 ;   undefined4 DAT_01c775ec
 ;
 ; Called Functions:
-;   FUN_0044d7a0
-;   FUN_0049b240
-;   FUN_004b45b0
-;   FUN_004ca640
-;   FUN_004cac90
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+;   core_game.cpp_CGame_setFudgeTarget_FUN_0049b240
+;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0
+;   core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0
+;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980
 ;   FUN_004cb010
-;   FUN_004cb2d0
-;   FUN_004cb900
-;   FUN_004cb980
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004c9cf5
     PUSH 0x41f00000                     ; 004c9cf8
     PUSH EAX                            ; 004c9cfd
-    CALL FUN_004b45b0                   ; 004c9cfe
-        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b45b0()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 ; 004c9cfe
+        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0()
     ADD ESP,0x8                         ; 004c9d03
     TEST EAX,EAX                        ; 004c9d06
     JZ 0x004c9dfc                       ; 004c9d08
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_004c9d11
     PUSH ESI                            ; 004c9d15
     PUSH EBX                            ; 004c9d16
-    CALL FUN_004cac90                   ; 004c9d17
-        ;   XREF to: 004cac90 (UNCONDITIONAL_CALL)  ; undefined FUN_004cac90()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90 ; 004c9d17
+        ;   XREF to: 004cac90 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90()
     INC ESI                             ; 004c9d1c
     ADD ESP,0xc                         ; 004c9d1d
     CMP ESI,0xc                         ; 004c9d20
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_004c9d27
     PUSH ESI                            ; 004c9d2b
     PUSH EBX                            ; 004c9d2c
-    CALL FUN_004cb900                   ; 004c9d2d
-        ;   XREF to: 004cb900 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb900()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900 ; 004c9d2d
+        ;   XREF to: 004cb900 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900()
     INC ESI                             ; 004c9d32
     ADD ESP,0xc                         ; 004c9d33
     CMP ESI,0x2                         ; 004c9d36
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_004c9d3d
     PUSH ESI                            ; 004c9d41
     PUSH EBX                            ; 004c9d42
-    CALL FUN_004cb2d0                   ; 004c9d43
-        ;   XREF to: 004cb2d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb2d0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0 ; 004c9d43
+        ;   XREF to: 004cb2d0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0()
     INC ESI                             ; 004c9d48
     ADD ESP,0xc                         ; 004c9d49
     CMP ESI,0xc                         ; 004c9d4c
@@ -88,8 +88,8 @@ section .text
     PUSH ESI                            ; 004c9d69
         ;   Label: LAB_004c9d69
     PUSH EBX                            ; 004c9d6a
-    CALL FUN_004ca640                   ; 004c9d6b
-        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; undefined FUN_004ca640()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640 ; 004c9d6b
+        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640()
     INC ESI                             ; 004c9d70
     ADD ESP,0x8                         ; 004c9d71
     CMP ESI,0xc                         ; 004c9d74
@@ -99,8 +99,8 @@ section .text
     PUSH ESI                            ; 004c9d7b
         ;   Label: LAB_004c9d7b
     PUSH EBX                            ; 004c9d7c
-    CALL FUN_004cb980                   ; 004c9d7d
-        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; undefined FUN_004cb980()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980 ; 004c9d7d
+        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980()
     INC ESI                             ; 004c9d82
     ADD ESP,0x8                         ; 004c9d83
     CMP ESI,0x2                         ; 004c9d86
@@ -125,22 +125,22 @@ section .text
     MOV byte ptr [EBX + 0x13c7],AH      ; 004c9dbb
     LEA EAX,[EBX + 0x136c]              ; 004c9dc1
     PUSH EAX                            ; 004c9dc7
-    CALL FUN_0044d7a0                   ; 004c9dc8
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d7a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9dc8
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 004c9dcd
     LEA EAX,[EBX + 0x13c0]              ; 004c9dd0
     PUSH EAX                            ; 004c9dd6
     ADD EBX,0x13cc                      ; 004c9dd7
     PUSH EBX                            ; 004c9ddd
-    CALL FUN_0044d7a0                   ; 004c9dde
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d7a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9dde
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 004c9de3
     PUSH 0x3c8efa35                     ; 004c9de6
     PUSH ESI                            ; 004c9deb
     MOV EDX,dword ptr [0x005b9354]      ; 004c9dec | DAT_005b9354
     PUSH EDX                            ; 004c9df2 | DAT_01c775ec
-    CALL FUN_0049b240                   ; 004c9df3
-        ;   XREF to: 0049b240 (UNCONDITIONAL_CALL)  ; undefined FUN_0049b240()
+    CALL core_game.cpp_CGame_setFudgeTarget_FUN_0049b240 ; 004c9df3
+        ;   XREF to: 0049b240 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_setFudgeTarget_FUN_0049b240()
     ADD ESP,0xc                         ; 004c9df8
     POP ESI                             ; 004c9dfb
     POP EBX                             ; 004c9dfc

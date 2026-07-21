@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0056626c at 00566316
 ;   FUN_0056db40 at 0056db5f
 ;   FUN_0056dbb0 at 0056dbef
 ;   FUN_0056f040 at 0056f09e
@@ -13,6 +12,7 @@
 ;   FUN_00572a90 at 00572aab
 ;   FUN_00572d90 at 00572dc9
 ;   FUN_00573db0 at 00573dc8
+;   crt_file.c_makepath_FUN_0056626c at 00566316
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

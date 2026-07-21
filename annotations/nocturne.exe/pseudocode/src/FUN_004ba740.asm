@@ -19,10 +19,10 @@
 ;   undefined4 DAT_01cae2c8
 ;
 ; Called Functions:
-;   FUN_004e1010
-;   FUN_004e1890
-;   FUN_0051c3d0
-;   FUN_0051d7a0
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;   FUN_0055d4a0
 ;
 ; *****************************************************************************
@@ -59,12 +59,12 @@ section .text
     PUSH 0x58618a                       ; 004ba78d | = "shoot"
     LEA ESI,[EBX + 0x150]               ; 004ba792
     PUSH ESI                            ; 004ba798
-    CALL FUN_004e1890                   ; 004ba799
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1890()
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004ba799
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
     ADD ESP,0x4                         ; 004ba79e
     PUSH EAX                            ; 004ba7a1
-    CALL FUN_004e1010                   ; 004ba7a2
-        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1010()
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010 ; 004ba7a2
+        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010()
     ADD ESP,0xc                         ; 004ba7a7
     PUSH 0x51b650                       ; 004ba7aa | LAB_0051b650
     MOV EDI,dword ptr [0x01cae2c8]      ; 004ba7af | DAT_01cae2c8
@@ -73,8 +73,8 @@ section .text
     PUSH 0x0                            ; 004ba7bc
     PUSH EAX                            ; 004ba7be
     PUSH ESI                            ; 004ba7bf
-    CALL FUN_0051c3d0                   ; 004ba7c0
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051c3d0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 004ba7c0
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
     FLD float ptr [EBX + 0xbcbc]        ; 004ba7c5
     FMUL double ptr [0x0058619a]        ; 004ba7cb | DAT_0058619a
     FMUL double ptr [0x00586192]        ; 004ba7d1 | DAT_00586192
@@ -116,8 +116,8 @@ section .text
     PUSH EAX                            ; 004ba84e
     ADD EBX,0x150                       ; 004ba84f
     PUSH EBX                            ; 004ba855
-    CALL FUN_0051d7a0                   ; 004ba856
-        ;   XREF to: 0051d7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051d7a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 ; 004ba856
+        ;   XREF to: 0051d7a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0()
     ADD ESP,0x14                        ; 004ba85b
     POP ESI                             ; 004ba85e
     POP EDI                             ; 004ba85f

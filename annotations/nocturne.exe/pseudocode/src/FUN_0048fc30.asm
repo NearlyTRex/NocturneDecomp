@@ -8,11 +8,11 @@
 ;   undefined4 DAT_0059db30
 ;
 ; Called Functions:
-;   FUN_00409ea0
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_0048fce0
-;   FUN_0056445f
-;   FUN_00564486
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0x1                            ; 0048fc4d
     LEA EBX,[EAX + 0xfffffea0]          ; 0048fc4f
     PUSH EBX                            ; 0048fc55
-    CALL FUN_00409ea0                   ; 0048fc56
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 0048fc56
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 0048fc5b
     MOV DL,byte ptr [ESP + 0xc]         ; 0048fc5e
     MOV EBX,EAX                         ; 0048fc62
@@ -47,12 +47,12 @@ section .text
     PUSH 0x59db30                       ; 0048fc6d | DAT_0059db30
         ;   Label: LAB_0048fc6d
     PUSH EBX                            ; 0048fc72
-    CALL FUN_0056445f                   ; 0048fc73
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0048fc73
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0048fc78
     PUSH EAX                            ; 0048fc7b
-    CALL FUN_00564486                   ; 0048fc7c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0048fc7c
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0048fc81
     MOV EAX,EBX                         ; 0048fc84
     POP EBX                             ; 0048fc86

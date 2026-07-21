@@ -8,7 +8,7 @@
 ;   FUN_0056720c at 00567306
 ;
 ; Called Functions:
-;   FUN_005635b0
+;   crt_memory.c_malloc_FUN_005635b0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     POP ES                              ; 0056e958
     LEA EBX,[ECX + 0x1]                 ; 0056e959
     PUSH EBX                            ; 0056e95c
-    CALL FUN_005635b0                   ; 0056e95d
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 0056e95d
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 0056e962
     MOV EDX,EAX                         ; 0056e965
     TEST EAX,EAX                        ; 0056e967

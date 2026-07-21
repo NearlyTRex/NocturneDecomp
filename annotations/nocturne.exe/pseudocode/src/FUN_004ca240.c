@@ -18,7 +18,7 @@ void FUN_004ca240(int param_1,uint param_2)
   uint local_14;
   uint local_10;
   
-  iVar1 = FUN_00454530(param_1 + 0x150);
+  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
   local_24 = *(uint *)(iVar1 + 0x338);
   local_20 = *(uint *)(iVar1 + 0x33c);
   local_1c = *(uint *)(iVar1 + 0x340);
@@ -28,7 +28,8 @@ void FUN_004ca240(int param_1,uint param_2)
   local_10 = *(uint *)(iVar1 + 0x34c);
   do {
     while (*piVar2 != 0) {
-      FUN_00510710(0x01E57284,param_2,&local_24,piVar2 + 3,piVar2 + 9);
+      core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710
+                (0x01E57284,param_2,&local_24,piVar2 + 3,piVar2 + 9);
       piVar2 = piVar2 + 0x19;
       if (piVar2 == (int *)(param_1 + 0xa98)) {
         return;

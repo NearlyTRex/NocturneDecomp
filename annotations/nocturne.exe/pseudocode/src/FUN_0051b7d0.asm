@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0051b6e0 at 0051b6f4
-;   FUN_0051b750 at 0051b757
+;   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0051b750 at 0051b757
+;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0 at 0051b6f4
 ;
 ; Called Functions:
-;   FUN_00564486
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 0051b7e0
     PUSH EDX                            ; 0051b7e1
         ;   Label: LAB_0051b7e1
-    CALL FUN_00564486                   ; 0051b7e2
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0051b7e2
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0051b7e7
     MOV dword ptr [EBX + 0x2234],0x0    ; 0051b7ea
     POP EBX                             ; 0051b7f4

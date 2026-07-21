@@ -14,7 +14,7 @@ int FUN_005350c0(uint param_1)
   int iVar3;
   
   iVar2 = FUN_004b46d0(param_1);
-  iVar3 = FUN_00454490(iVar2 + 0x1fb40);
+  iVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x1fb40);
   iVar2 = iVar3 + -0x1fb40;
   *(byte ***)(iVar3 + -0x1f9f4) = &PTR_FUN_005a2744;
   *(uint *)(iVar3 + -0x104) = 0;
@@ -47,7 +47,8 @@ int FUN_005350c0(uint param_1)
   *(uint *)(iVar3 + -0xec) = *(uint *)(iVar3 + -0xf0);
   *(uint *)(iVar3 + -0xc4) = *(uint *)(iVar3 + -200);
   *(uint *)(iVar3 + -0xcc) = *(uint *)(iVar3 + -0xd0);
-  FUN_0051e0c0(iVar3 + -0x1f9f0,"p?stranger.dfm" + 2);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar3 + -0x1f9f0,"p?stranger.dfm" + 2);
   *(uint *)(iVar3 + -0x1d0bc) = 0;
   *(uint *)(iVar3 + -0xac) = 0;
   *(uint *)(iVar3 + -0x88) = 0;
@@ -62,25 +63,40 @@ int FUN_005350c0(uint param_1)
   *(uint *)(iVar3 + -0xa0) = 0;
   *(uint *)(iVar3 + -0x50) = 0;
   *(uint *)(iVar3 + -0x48) = 0;
-  FUN_00454580(*(int *)(iVar3 + -0x270) + 0x150,"gat.kfm");
-  FUN_0042a760(iVar2,0,1,"draw_stand2holsters",0);
-  FUN_0042a760(iVar2,1,2,"draw_holsters2aimPistols",0);
-  FUN_0042a760(iVar2,0,3,"draw_stand2coatPocket",0);
-  FUN_0042a760(iVar2,3,4,"draw_coatPocket2aimShotgun",0);
-  FUN_0042a760(iVar2,3,5,"draw_coatPocket2aimFlameThrower",0);
-  FUN_0042a760(iVar2,1,3,"draw_holsters2CoatPocket",0);
-  FUN_0042a760(iVar2,0,6,"draw_stand2TossAim",1);
-  FUN_0042a760(iVar2,6,0,"draw_tossAim2Stand",1);
-  FUN_0042a760(iVar2,0xb,4,"draw_shotGunRecoil",1);
-  FUN_0042a760(iVar2,3,7,"draw_coatPocket2aimTommy",0);
-  FUN_0042a760(iVar2,7,7,"draw_tommyRecoil",0);
-  FUN_0042a760(iVar2,0,8,"draw_stand2spearhold",0);
-  FUN_0042a760(iVar2,0xc,8,"draw_spearStab",1);
-  FUN_0042a760(iVar2,0xc,8,"draw_spearOverheadswing",1);
-  FUN_0042a760(iVar2,9,9,"draw_holdCrate",0);
-  FUN_0042a760(iVar2,3,10,"draw_coatPocket2GasMask",0);
-  FUN_0042a760(iVar2,10,0,"draw_gasMask2Stand",0);
-  FUN_00438390(iVar3 + -0x1d0b4,"strcoat.cth");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (*(int *)(iVar3 + -0x270) + 0x150,"gat.kfm");
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0,1,"draw_stand2holsters",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,1,2,"draw_holsters2aimPistols",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0,3,"draw_stand2coatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,3,4,"draw_coatPocket2aimShotgun",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,3,5,"draw_coatPocket2aimFlameThrower",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,1,3,"draw_holsters2CoatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0,6,"draw_stand2TossAim",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,6,0,"draw_tossAim2Stand",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0xb,4,"draw_shotGunRecoil",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,3,7,"draw_coatPocket2aimTommy",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(iVar2,7,7,"draw_tommyRecoil",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0,8,"draw_stand2spearhold",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(iVar2,0xc,8,"draw_spearStab",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,0xc,8,"draw_spearOverheadswing",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(iVar2,9,9,"draw_holdCrate",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,3,10,"draw_coatPocket2GasMask",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            (iVar2,10,0,"draw_gasMask2Stand",0);
+  core_cloth_cpp_CClothList_add_FUN_00438390(iVar3 + -0x1d0b4,"strcoat.cth");
   *(uint *)(iVar3 + 0x194) = 0;
   return iVar2;
 }

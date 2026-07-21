@@ -24,7 +24,7 @@ void FUN_0050e370(int param_1,float *param_2)
   local_10 = (int)ROUND(*param_2 * _DAT_005a18f0);
   local_c = (int)ROUND(param_2[1] * _DAT_005a18f0);
   local_8 = (int)ROUND(param_2[2] * _DAT_005a18f0);
-  FUN_0050b7f0(param_1,&local_10,0,0,0);
+  core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,&local_10,0,0,0);
   uVar1 = DAT_005c5034;
   *(uint *)(param_1 + 0x161270) = 1;
   uVar2 = DAT_005c503c;

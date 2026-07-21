@@ -28,7 +28,7 @@ void FUN_00402710(byte *param_1,int param_2,uint param_3)
     do {
       bVar1 = *param_1;
       if ((0x1f < bVar1) && (bVar1 < 0x100)) {
-        iVar2 = FUN_004021a0((uint)bVar1,param_2,param_3);
+        iVar2 = engine_2d_c_drawCharacterHighlighted_FUN_004021a0((uint)bVar1,param_2,param_3);
         param_2 = param_2 + iVar2;
       }
       iVar4 = iVar4 + 1;

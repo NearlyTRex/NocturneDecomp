@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,17 +122,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 161,
+    "complexity_score": 162,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 17,
     "suspect_count": 14,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 55
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -151,12 +151,12 @@
     {
       "addr": "0048c2a0",
       "is_variadic": false,
-      "name": "FUN_0048c2a0"
+      "name": "core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0"
     },
     {
       "addr": "00554600",
       "is_variadic": false,
-      "name": "FUN_00554600"
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_00554600"
     }
   ],
   "globals": [
@@ -220,31 +220,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00554600(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0048c2a0(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0048c2a0(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0048c2a0(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
+      "text": "iVar1 = core_weapon_cpp_CWeapon_fire_FUN_00554600(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -252,12 +228,28 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x570),*(uint *)(param_1 + 0x580));",
+      "text": "(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C08D04,param_1 + 0x20,param_1 + 0x30,(uint *)(param_1 + 0x574),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x570),*(uint *)(param_1 + 0x580));",
@@ -268,7 +260,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x580) = 0;",
+      "text": "*(uint *)(param_1 + 0x570),*(uint *)(param_1 + 0x580));",
       "type": "unnamed_param"
     },
     {
@@ -276,7 +268,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x570) = 0xbf800000;",
+      "text": "*(uint *)(param_1 + 0x580) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -284,7 +276,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x57c) = 0;",
+      "text": "*(uint *)(param_1 + 0x570) = 0xbf800000;",
       "type": "unnamed_param"
     },
     {
@@ -292,12 +284,12 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x578) = *(uint *)(param_1 + 0x57c);",
+      "text": "*(uint *)(param_1 + 0x57c) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x578) = *(uint *)(param_1 + 0x57c);",
@@ -306,6 +298,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x578) = *(uint *)(param_1 + 0x57c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x574) = *(uint *)(param_1 + 0x578);",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x574) = *(uint *)(param_1 + 0x578);",
@@ -323,7 +323,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 220,
         "vtable_addr": "0059c924"
       }

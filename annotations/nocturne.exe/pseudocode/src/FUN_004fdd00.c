@@ -40,8 +40,9 @@ void FUN_004fdd00(int param_1)
     local_28 = 0x3ec817db;
     local_24 = 0xbdd340d5;
     local_20 = 0x3ddfa765;
-    FUN_0055afb0(local_130,&local_28,&local_40);
-    FUN_0055aa00(local_130,param_1 + 0xfd0 + _DAT_01e533c0 * 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_130,&local_28,&local_40)
+    ;
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_130,param_1 + 0xfd0 + _DAT_01e533c0 * 0x30);
     puVar4 = local_d0;
     puVar5 = local_70;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -49,8 +50,9 @@ void FUN_004fdd00(int param_1)
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    FUN_0055afb0(local_160,param_1 + 0x20,param_1 + 0x30);
-    FUN_0055aa00(local_70,local_160);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+              (local_160,param_1 + 0x20,param_1 + 0x30);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_70,local_160);
     puVar4 = local_100;
     puVar5 = local_a0;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -60,8 +62,8 @@ void FUN_004fdd00(int param_1)
     }
     iVar3 = *(int *)(param_1 + 0x1fa50);
     iVar1 = *(int *)(iVar3 + 0x14c);
-    uVar2 = FUN_0055b180(local_a0,local_34);
-    uVar2 = FUN_0055bc00(local_a0,local_1c,uVar2);
+    uVar2 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_a0,local_34);
+    uVar2 = core_xform_cpp_getTranslation_FUN_0055bc00(local_a0,local_1c,uVar2);
     (**(code **)(iVar1 + 0x60))(iVar3,uVar2);
     return;
   }

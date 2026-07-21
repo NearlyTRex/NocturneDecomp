@@ -12,7 +12,8 @@ int FUN_00543150(uint param_1)
   int iVar1;
   
   iVar1 = FUN_004ee950(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_FUN_005a2c04;
-  FUN_0051e0c0(iVar1 + 0x150,"bassplayer.dfm");
+  *(byte ***)(iVar1 + 0x14c) = &PTR_core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180_005a2c04;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (iVar1 + 0x150,"bassplayer.dfm");
   return iVar1;
 }

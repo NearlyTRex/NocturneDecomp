@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00565f14 at 00565f1c
 ;   FUN_00571c60 at 00571c69
 ;   FUN_00571cc6 at 00571cd4
+;   crt_fstream.cpp_istream_seekg_FUN_00565f14 at 00565f1c
 ;
 ; Called Functions:
 ;   FUN_0056b227

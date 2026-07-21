@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   FUN_00402a60
-;   FUN_00563a08
+;   crt_stdio.c_vsprintf_FUN_00563a08
+;   engine_2d.c_drawTextColor_FUN_00402a60
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDX                            ; 00402b15
     LEA EAX,[ESP + 0x8]                 ; 00402b16
     PUSH EAX                            ; 00402b1a
-    CALL FUN_00563a08                   ; 00402b1b
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00402b1b
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
     ADD ESP,0xc                         ; 00402b20
     MOV EBX,dword ptr [ESP + 0x1014]    ; 00402b23
     PUSH EBX                            ; 00402b2a
@@ -38,8 +38,8 @@ section .text
     XOR ECX,ECX                         ; 00402b37
     PUSH EAX                            ; 00402b39
     MOV dword ptr [ESP + 0x100c],ECX    ; 00402b3a
-    CALL FUN_00402a60                   ; 00402b41
-        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00402a60()
+    CALL engine_2d.c_drawTextColor_FUN_00402a60 ; 00402b41
+        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextColor_FUN_00402a60()
     ADD ESP,0xc                         ; 00402b46
     ADD ESP,0x1004                      ; 00402b49
     POP ESI                             ; 00402b4f

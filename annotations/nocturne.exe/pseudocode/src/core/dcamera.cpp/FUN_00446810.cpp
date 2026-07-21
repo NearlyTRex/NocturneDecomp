@@ -12,28 +12,38 @@ void FUN_00446810(int param_1)
 
 {
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  char cVar6;
-  byte *puVar7;
-  int *piVar8;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  char cVar5;
+  byte *puVar6;
+  int *piVar7;
+  int unaff_EDI;
+  int iVar8;
   int iVar9;
-  int iVar10;
+  float10 fVar10;
   float10 fVar11;
-  float10 fVar12;
-  byte local_274 [256];
-  byte local_174 [68];
-  byte local_130 [28];
+  uint uVar12;
+  uint uVar13;
+  uint uVar14;
+  uint uVar15;
+  uint uVar16;
+  byte local_274 [244];
+  byte auStack_180 [12];
+  byte local_174 [56];
+  byte auStack_13c [12];
+  byte local_130 [16];
+  int iStack_120;
   int local_114;
-  byte local_f8 [100];
-  byte local_94 [4];
-  byte local_90 [52];
-  int local_5c;
+  byte auStack_104 [12];
+  byte local_f8 [88];
+  byte auStack_a0 [4];
+  byte auStack_9c [52];
+  byte auStack_68 [8];
+  int iStack_60;
   int local_58;
   int local_54;
-  uint local_50;
+  int local_50;
   int local_4c;
   int local_48;
   int local_44;
@@ -47,161 +57,162 @@ void FUN_00446810(int param_1)
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  int local_14;
-  int local_10;
   
   _DAT_012b022c = 1;
   _DAT_0140d778 = 0;
   _DAT_0140d77c = 0;
-  FUN_0043fa20(0x140d784);
+  core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(0x140d784);
   _DAT_0140d780 = 0x10;
   if ((_DAT_0140e790 == 0 && _DAT_0140e794 == 0) && _DAT_0140e798 == 0) {
     _DAT_0140d780 = 1;
   }
-  FUN_00563c90(local_274,"%s.fog",param_1);
-  iVar1 = FUN_00456a60("backdrop",local_274,&DAT_0057ba02);
+  _sprintf(local_274,"%s.fog",param_1);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_274,&DAT_0057ba02);
   if (iVar1 != 0) {
-    FUN_00563380(iVar1);
+    _fclose(iVar1);
     return;
   }
-  FUN_00563c90(local_f8,"backdrop\\%s",local_274);
-  FUN_0056511e(local_174,0,local_f8,0x110,0x000001A4);
+  _sprintf(local_f8,"backdrop\\%s",local_274);
+  crt_fstream_cpp_ofstream_ctor_FUN_0056511e(local_174,0,local_f8,0x110,0x000001A4);
   if (local_114 != 0) {
     _DAT_01cc4800 = "..\\core\\dcamera.cpp";
     _DAT_01cc4804 = 0x12d0;
     FUN_004c8440("Can't create %s",local_f8);
   }
-  FUN_00565a13(local_130,0x140d784,0x1000);
+  crt_fstream_cpp_ostream_write_FUN_00565a13(local_130,0x140d784,0x1000);
   if (_DAT_0140e7a0 != 0) {
     local_50 = 0x00444645;
-    FUN_00565a13(local_130,&local_50,3);
-    fVar11 = (float10)_DAT_0057badb;
-    fVar12 = (float10)*(float *)(param_1 + 0x104) * fVar11;
-    iVar1 = FUN_00563a30();
-    local_5c = (int)ROUND(fVar12);
-    fVar12 = (float10)*(float *)(iVar1 + 0x108) * fVar11;
-    iVar1 = FUN_00563a30(6);
-    local_58 = (int)ROUND(fVar12);
-    fVar11 = fVar11 * (float10)*(float *)(iVar1 + 0x10c);
-    uVar2 = FUN_00563a30(0x10000);
-    local_54 = (int)ROUND(fVar11);
-    FUN_00439830(uVar2);
-    FUN_00439880(local_94);
-    local_14 = 0;
+    crt_fstream_cpp_ostream_write_FUN_00565a13(local_130,&local_50,3);
+    fVar10 = (float10)_DAT_0057badb;
+    uVar16 = 0x446980;
+    fVar11 = (float10)round((float10)*(float *)(param_1 + 0x104) * fVar10);
+    iStack_60 = (int)ROUND(fVar11);
+    uVar15 = 6;
+    uVar14 = 0x446996;
+    fVar11 = (float10)round((float10)*(float *)(param_1 + 0x108) * fVar10);
+    iStack_60 = (int)ROUND(fVar11);
+    uVar13 = 0x10000;
+    uVar12 = 0x4469b4;
+    fVar10 = (float10)round(fVar10 * (float10)*(float *)(param_1 + 0x10c));
+    iStack_60 = (int)ROUND(fVar10);
+    support_codec_cpp_CLZWCompress_ctor_FUN_00439830(auStack_9c,uVar12,uVar13,uVar14,uVar15,uVar16);
+    support_codec_cpp_CLZWCompress_init_FUN_00439880(auStack_a0);
+    local_20 = 0;
     if (0 < _DAT_0140d780) {
-      local_44 = 0;
-      local_40 = -0x12c00;
+      local_50 = 0;
+      local_4c = -0x12c00;
       do {
-        FUN_0043fe60(0x140d784,local_14,0);
-        local_28 = 1;
-        if (1 < *(int *)(param_1 + 0x154)) {
-          local_34 = 0x140;
-          local_3c = 0xf00;
-          local_30 = 0x500;
+        core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(0x140d784,local_20,0);
+        local_34 = 1;
+        if (1 < *(int *)(unaff_EDI + 0x154)) {
+          local_40 = 0x140;
+          local_48 = 0xf00;
+          local_3c = 0x500;
           do {
-            iVar9 = local_3c + 0x7f7378;
-            puVar7 = &DAT_012ceb78 + local_34;
-            piVar8 = (int *)(local_30 + 0xac2af8);
+            iVar8 = local_48 + 0x7f7378;
+            puVar6 = &DAT_012ceb78 + local_40;
+            piVar7 = (int *)(local_3c + 0xac2af8);
             iVar1 = 1;
-            if (1 < *(int *)(param_1 + 0x150)) {
+            if (1 < *(int *)(unaff_EDI + 0x150)) {
               do {
-                if (*piVar8 == 0x7fffffff) {
-                  *puVar7 = 0xff;
+                if (*piVar7 == 0x7fffffff) {
+                  *puVar6 = 0xff;
                 }
                 else {
-                  iVar3 = FUN_0043fc80(0x140d784,&local_5c,iVar9,*piVar8);
-                  uVar4 = (uint)(iVar3 * 0xff) >> 0xe;
-                  if (0xff < uVar4) {
-                    uVar4 = 0xff;
+                  iVar2 = core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80
+                                    (0x140d784,auStack_68,iVar8,*piVar7);
+                  uVar3 = (uint)(iVar2 * 0xff) >> 0xe;
+                  if (0xff < uVar3) {
+                    uVar3 = 0xff;
                   }
-                  *puVar7 = (char)uVar4;
+                  *puVar6 = (char)uVar3;
                 }
-                iVar9 = iVar9 + 0xc;
-                puVar7 = puVar7 + 1;
+                iVar8 = iVar8 + 0xc;
+                puVar6 = puVar6 + 1;
                 iVar1 = iVar1 + 1;
-                piVar8 = piVar8 + 1;
-              } while (iVar1 < *(int *)(param_1 + 0x150));
+                piVar7 = piVar7 + 1;
+              } while (iVar1 < *(int *)(unaff_EDI + 0x150));
             }
-            local_30 = local_30 + 0x500;
-            local_34 = local_34 + 0x140;
-            local_3c = local_3c + 0xf00;
-            local_28 = local_28 + 1;
-          } while (local_28 < *(int *)(param_1 + 0x154));
+            local_3c = local_3c + 0x500;
+            local_40 = local_40 + 0x140;
+            local_48 = local_48 + 0xf00;
+            local_34 = local_34 + 1;
+          } while (local_34 < *(int *)(unaff_EDI + 0x154));
         }
-        FUN_00446ea0(param_1,local_14);
-        local_2c = 0;
-        if (0 < *(int *)(param_1 + 0x154)) {
-          local_24 = 0;
-          local_1c = local_40;
-          local_48 = local_40;
-          local_20 = local_44;
-          local_38 = local_44;
+        core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);
+        local_38 = 0;
+        if (0 < *(int *)(unaff_EDI + 0x154)) {
+          local_30 = 0;
+          local_28 = local_4c;
+          local_54 = local_4c;
+          local_2c = local_50;
+          local_44 = local_50;
           do {
-            iVar9 = 0;
+            iVar8 = 0;
             iVar1 = 0;
-            if (0 < *(int *)(param_1 + 0x150)) {
-              local_10 = local_24;
-              local_18 = local_24;
-              iVar3 = local_24;
-              iVar10 = local_38;
+            if (0 < *(int *)(unaff_EDI + 0x150)) {
+              local_1c = local_30;
+              local_24 = local_30;
+              iVar2 = local_30;
+              iVar9 = local_44;
               do {
-                uVar4 = (uint)*(byte *)(iVar9 + 0x12e1778 + local_44 + local_24);
-                if (0 < local_14) {
-                  uVar4 = uVar4 - *(byte *)(iVar9 + 0x12e1778 + local_40 + local_24);
+                uVar3 = (uint)*(byte *)(iVar8 + 0x12e1778 + local_50 + local_30);
+                if (0 < local_20) {
+                  uVar3 = uVar3 - *(byte *)(iVar8 + 0x12e1778 + local_4c + local_30);
                 }
-                iVar5 = ((int)uVar4 >> 2) - iVar1;
-                if (iVar5 < -0x20) {
-                  iVar5 = -0x20;
+                iVar4 = ((int)uVar3 >> 2) - iVar1;
+                if (iVar4 < -0x20) {
+                  iVar4 = -0x20;
                 }
-                else if (0x3f < iVar5) {
-                  iVar5 = 0x3f;
+                else if (0x3f < iVar4) {
+                  iVar4 = 0x3f;
                 }
-                (&DAT_012ceb78)[iVar3] = (char)iVar5;
-                iVar1 = iVar5 + iVar1;
-                cVar6 = (char)iVar1 * '\x04';
-                if (0 < local_14) {
-                  cVar6 = cVar6 + *(char *)(iVar9 + 0x12e1778 + local_40 + local_24);
+                (&DAT_012ceb78)[iVar2] = (char)iVar4;
+                iVar1 = iVar4 + iVar1;
+                cVar5 = (char)iVar1 * '\x04';
+                if (0 < local_20) {
+                  cVar5 = cVar5 + *(char *)(iVar8 + 0x12e1778 + local_4c + local_30);
                 }
-                *(char *)(iVar10 + 0x12e1778) = cVar6;
-                iVar3 = iVar3 + 1;
+                *(char *)(iVar9 + 0x12e1778) = cVar5;
+                iVar2 = iVar2 + 1;
+                iVar8 = iVar8 + 1;
                 iVar9 = iVar9 + 1;
-                iVar10 = iVar10 + 1;
-              } while (iVar9 < *(int *)(param_1 + 0x150));
+              } while (iVar8 < *(int *)(unaff_EDI + 0x150));
             }
-            local_24 = local_24 + 0x140;
-            local_38 = local_38 + 0x140;
-            local_2c = local_2c + 1;
-          } while (local_2c < *(int *)(param_1 + 0x154));
+            local_30 = local_30 + 0x140;
+            local_44 = local_44 + 0x140;
+            local_38 = local_38 + 1;
+          } while (local_38 < *(int *)(unaff_EDI + 0x154));
         }
-        local_4c = 0x12c00;
-        iVar1 = FUN_004390b0(local_94,&DAT_012ceb78,&local_4c,local_130);
+        local_58 = 0x12c00;
+        iVar1 = support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0
+                          (auStack_a0,&DAT_012ceb78,&local_58,auStack_13c);
         if (iVar1 == 0) {
           _DAT_01cc4800 = "..\\core\\dcamera.cpp";
           _DAT_01cc4804 = 0x133d;
-          FUN_004c8440("Error compressing %s",local_f8);
+          FUN_004c8440("Error compressing %s",auStack_104);
         }
-        if (local_4c != 0) {
+        if (local_58 != 0) {
           _DAT_01cc4800 = "..\\core\\dcamera.cpp";
           _DAT_01cc4804 = 0x133f;
-          FUN_004c8440("Not all bytes consumed compressing %s",local_f8);
+          FUN_004c8440("Not all bytes consumed compressing %s",auStack_104);
         }
-        if (local_114 != 0) {
+        if (iStack_120 != 0) {
           _DAT_01cc4800 = "..\\core\\dcamera.cpp";
           _DAT_01cc4804 = 0x1340;
-          FUN_004c8440("Error writing compressed file %s",local_f8);
+          FUN_004c8440("Error writing compressed file %s",auStack_104);
         }
-        local_44 = local_44 + 0x12c00;
-        local_40 = local_40 + 0x12c00;
-        local_14 = local_14 + 1;
-      } while (local_14 < _DAT_0140d780);
+        local_50 = local_50 + 0x12c00;
+        local_4c = local_4c + 0x12c00;
+        local_20 = local_20 + 1;
+      } while (local_20 < _DAT_0140d780);
     }
-    FUN_004399a0(local_94,local_130);
-    FUN_00439370(local_90,0);
-    FUN_00438f30(local_94,1);
-    FUN_005651ca(local_174,0);
+    support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(auStack_a0,auStack_13c);
+    support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(auStack_9c,0);
+    support_codec_cpp_CCodec_dtor_FUN_00438f30(auStack_a0,1);
+    crt_fstream_cpp_ofstream_dtor_FUN_005651ca(auStack_180,0);
     return;
   }
-  FUN_005651ca(local_174,0);
+  crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_174,0);
   return;
 }

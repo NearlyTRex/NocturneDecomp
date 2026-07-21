@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_004047e0 at 0040484f
-;   FUN_00405e10 at 00405fa0
-;   FUN_004060b0 at 0040612e
-;   FUN_00407a20 at 00407c45
-;   FUN_00407cc0 at 00407d2f
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 0040612e
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407c45
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405fa0
+;   engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_00407cc0 at 00407d2f
+;   engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0 at 0040484f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005acbc4

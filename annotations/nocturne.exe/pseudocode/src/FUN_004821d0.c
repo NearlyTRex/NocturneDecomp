@@ -19,11 +19,11 @@ int FUN_004821d0(int param_1)
   uint uStack_14;
   uint uStack_10;
   
-  FUN_00409f20(param_1);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
   uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_3c,0);
-  iVar2 = FUN_0041ceb0(uVar1);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar1);
   if (iVar2 == 0) {
-    FUN_00409f60(param_1);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
     return 0;
   }
   uStack_18 = 0;
@@ -32,11 +32,14 @@ int FUN_004821d0(int param_1)
   uStack_24 = 0;
   uStack_1c = 0;
   uStack_20 = 0x40000000;
-  FUN_00460aa0(DAT_005ae704,&DAT_02dd1184,&uStack_24);
-  FUN_00460aa0(DAT_005ae704,&uStack_18,&DAT_02dd1184);
-  FUN_004544d0(param_1 + 0x1ec,0,0xffffffff);
-  thunk_FUN_004cdbc0(DAT_005ae704);
-  thunk_FUN_004cdbc0(DAT_005ae704);
-  FUN_00409f60(param_1);
+  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+            (DAT_005ae704,&DAT_02dd1184,&uStack_24);
+  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+            (DAT_005ae704,&uStack_18,&DAT_02dd1184);
+  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+            (param_1 + 0x1ec,0,0xffffffff);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
   return iVar2;
 }

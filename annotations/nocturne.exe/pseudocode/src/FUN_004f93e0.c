@@ -12,11 +12,11 @@ uint FUN_004f93e0(uint param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = FUN_0056445f(param_1,&DAT_005a1510);
-    FUN_00564486(uVar1);
+    uVar1 = __vec_delete(param_1,&DAT_005a1510);
+    shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }
-  uVar1 = FUN_004f8840(param_1,1);
+  uVar1 = engine_pod_cpp_CPod_dtor_FUN_004f8840(param_1,1);
   if ((param_2 & 2) == 0) {
     return uVar1;
   }

@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 168,
+    "complexity_score": 174,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 29,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 124
+    "total_lines": 130
   },
   "cross_references": [],
   "function": {
@@ -153,37 +153,37 @@
     {
       "addr": "0041ceb0",
       "is_variadic": false,
-      "name": "FUN_0041ceb0"
-    },
-    {
-      "addr": "004544d0",
-      "is_variadic": false,
-      "name": "FUN_004544d0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0"
     },
     {
       "addr": "00454530",
       "is_variadic": false,
-      "name": "FUN_00454530"
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530"
     },
     {
-      "addr": "00460a00",
+      "addr": "004544d0",
       "is_variadic": false,
-      "name": "FUN_00460a00"
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0"
     },
     {
       "addr": "00460aa0",
       "is_variadic": false,
-      "name": "FUN_00460aa0"
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0"
     },
     {
       "addr": "00461090",
       "is_variadic": false,
-      "name": "FUN_00461090"
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090"
     },
     {
       "addr": "00460bf0",
       "is_variadic": false,
-      "name": "thunk_FUN_004cdbc0"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0"
+    },
+    {
+      "addr": "00460a00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00"
     }
   ],
   "globals": [
@@ -271,15 +271,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00454530(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar1 = FUN_00461090(DAT_005ae704), iVar1 == 0 && (*(int *)(param_1 + 0xfc) != 0)))) {",
+      "text": "iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);",
       "type": "unnamed_param"
     },
     {
@@ -287,44 +279,52 @@
       "line": 11,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "((iVar1 = FUN_00461090(DAT_005ae704), iVar1 == 0 && (*(int *)(param_1 + 0xfc) != 0)))) {",
+      "text": "((iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar1 == 0",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x5ec) == 0) && (iVar1 = FUN_00461090(DAT_005ae704), iVar1 != 0)) {",
+      "text": "&& (*(int *)(param_1 + 0xfc) != 0)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x5ec) == 0) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 16,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x5ec) == 0) && (iVar1 = FUN_00461090(DAT_005ae704), iVar1 != 0)) {",
+      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar1 != 0)",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00460a00(0x01B4D738,param_1 + 0x20);",
+      "text": "(0x01B4D738,param_1 + 0x20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00460aa0(0x01B4D738,param_1 + 0x30,0);",
+      "text": "engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(0x01B4D738,param_1 + 0x30,0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
@@ -332,7 +332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
@@ -340,7 +340,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
@@ -348,35 +348,35 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004544d0(param_1 + 0x150,*(uint *)(param_1 + 0x308),0xffffffff);",
+      "text": "(param_1 + 0x150,*(uint *)(param_1 + 0x308),0xffffffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004544d0(param_1 + 0x150,*(uint *)(param_1 + 0x308),0xffffffff);",
+      "text": "(param_1 + 0x150,*(uint *)(param_1 + 0x308),0xffffffff);",
       "type": "unnamed_param"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 8,
         "vtable_addr": "0059abb4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 8,
         "vtable_addr": "0059aad4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 8,
         "vtable_addr": "005a25d4"
       }

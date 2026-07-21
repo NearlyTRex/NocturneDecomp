@@ -1,0 +1,423 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 140,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00479820",
+    "address_range": [
+      [
+        "00479820",
+        "004798d0"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_enemy.cpp_CEnemy_getTargetPoints_FUN_00479820",
+    "signature": "undefined4 core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0057f333",
+      "name": "DAT_0057f333",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057f337",
+      "name": "DAT_0057f337",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.873015873015873,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 174,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ADD": 4,
+      "FLOAT_MULT": 4,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 30,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 21,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 307
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00479827",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CEnemy_getTargetPoints_FUN_00479820.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 27,
+          "message": "Uninitialized variable: fStack_3c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 27,
+          "message": "Uninitialized variable: fStack_30",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 28,
+          "message": "Uninitialized variable: fStack_38",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 28,
+          "message": "Uninitialized variable: fStack_2c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 27,
+          "line": 32,
+          "message": "Uninitialized variable: fStack_34",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_40);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == afStack_28) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (fStack_40 + fStack_34) * _DAT_0057f333;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = (fStack_30 - fStack_3c) * fVar3 + fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[2] = fVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Uninitialized variable: fStack_3c",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar1 = (fStack_3c + fStack_30) * _DAT_0057f333;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_30",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar1 = (fStack_3c + fStack_30) * _DAT_0057f333;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_38",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar2 = (fStack_38 + fStack_2c) * _DAT_0057f333;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_2c",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar2 = (fStack_38 + fStack_2c) * _DAT_0057f333;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_34",
+      "line": 32,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*param_2 = (fStack_40 + fStack_34) * _DAT_0057f333;",
+      "type": "static_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTentacle",
+        "offset": 76,
+        "vtable_addr": "005a3104"
+      },
+      {
+        "class_name": "CEnemy",
+        "offset": 76,
+        "vtable_addr": "0059cdb4"
+      },
+      {
+        "class_name": "CBugs",
+        "offset": 76,
+        "vtable_addr": "0059aec4"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 76,
+        "vtable_addr": "005a05f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

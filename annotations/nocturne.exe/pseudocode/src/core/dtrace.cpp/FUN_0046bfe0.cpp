@@ -34,7 +34,7 @@ void FUN_0046bfe0(int param_1,uint param_2)
   if ((((-1 < local_40) && (-1 < local_3c)) && (-1 < local_38)) &&
      (((local_40 < *(int *)(param_1 + 0x40) && (local_3c < *(int *)(param_1 + 0x44))) &&
       (local_38 < *(int *)(param_1 + 0x48))))) {
-    FUN_0046b700(param_1,param_2);
+    core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(param_1,param_2);
     local_34 = local_1c;
     *(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =
          *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
@@ -43,7 +43,8 @@ void FUN_0046bfe0(int param_1,uint param_2)
     local_34 = local_34 % 8;
     local_30 = local_30 % 8;
     local_2c = local_2c % 8;
-    piVar1 = (int *)FUN_004678d0(param_1,local_40,local_3c,local_38);
+    piVar1 = (int *)core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
+                              (param_1,local_40,local_3c,local_38);
     if (piVar1 == (int *)0x0) {
       _DAT_01cc4800 = "?..\\core\\dtrace.cpp" + 1;
       _DAT_01cc4804 = 0xb19;

@@ -15,7 +15,7 @@ void FUN_00448310(int param_1)
   if (0 < *(int *)(param_1 + 0x140)) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_00481a28(*(int *)(param_1 + 0x13c) << 2);
+      _memcpy(*(int *)(param_1 + 0x13c) << 2);
     } while (iVar1 < *(int *)(param_1 + 0x140));
   }
   return;

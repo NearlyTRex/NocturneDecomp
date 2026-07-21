@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00427da0
+;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 004b99b4
     MOV ECX,dword ptr [ESP + 0x8]       ; 004b99b5
     PUSH ECX                            ; 004b99b9
-    CALL FUN_00427da0                   ; 004b99ba
-        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00427da0()
+    CALL core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0 ; 004b99ba
+        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0()
     ADD ESP,0x8                         ; 004b99bf
     RET                                 ; 004b99c2
 

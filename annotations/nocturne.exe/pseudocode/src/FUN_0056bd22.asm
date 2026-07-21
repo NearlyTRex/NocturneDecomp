@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
-;   FUN_00565ad6 at 00565af8
+;   crt_math.c_pow_FUN_00565ad6 at 00565af8
 ;
 ; Called Functions:
 ;   FUN_005706dd

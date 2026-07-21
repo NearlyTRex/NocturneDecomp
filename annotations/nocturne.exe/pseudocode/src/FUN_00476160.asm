@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00474cf0 at 00474d04
-;   FUN_0049da10 at 0049dd03
 ;   FUN_004a4b50 at 004a50e4
 ;   FUN_004fe500 at 004fe52d
 ;   FUN_004febd0 at 004fed2f
 ;   FUN_004fef60 at 004fef83
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd03
+;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d04
 ;
 ; Called Functions:
-;   FUN_00473c50
 ;   FUN_005638d0
+;   shape_edittool.cpp_CStrList_clear_FUN_00473c50
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EBX                            ; 0047616f
         ;   Label: LAB_0047616f
     MOV dword ptr [EBX + 0x130],0x0     ; 00476170
-    CALL FUN_00473c50                   ; 0047617a
-        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00473c50()
+    CALL shape_edittool.cpp_CStrList_clear_FUN_00473c50 ; 0047617a
+        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_clear_FUN_00473c50()
     ADD ESP,0x4                         ; 0047617f
     POP EBX                             ; 00476182
     RET                                 ; 00476183

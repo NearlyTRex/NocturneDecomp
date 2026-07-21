@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   FUN_004d7e90 at 004d7e95
-;   FUN_004d7fe0 at 004d7ff2
-;   FUN_004d9440 at 004d94ed
+;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d7ff2
+;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d94ed
 ;
 ; Called Functions:
 ;   FUN_004d8fc0

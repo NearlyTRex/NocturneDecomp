@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005144e0 at 005144f9
+;   core_setutil.cpp_C3DSCamera_load_FUN_005144e0 at 005144f9
 ;
 ; Called Functions:
+;   crt_memory.c_memset_FUN_00563cc0
 ;   FUN_00514430
-;   FUN_00563cc0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x1a0                          ; 0051447e
     PUSH 0x0                            ; 00514483
     PUSH EBX                            ; 00514485
-    CALL FUN_00563cc0                   ; 00514486
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 00514486
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     MOV dword ptr [EBX + 0x140],0x41e00000 ; 0051448b
     MOV dword ptr [EBX + 0x17c],0xc3960000 ; 00514495
     MOV dword ptr [EBX + 0x180],0x0     ; 0051449f

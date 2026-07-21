@@ -26,7 +26,7 @@ void FUN_00573e30(uint *param_1)
     *(uint *)((int)&uStackY_30 + iVar1) = 0;
     *(byte **)(auStackY_34 + iVar1) = local_28 + iVar1;
     *(uint *)((int)&uStackY_38 + iVar1) = 0x573e6f;
-    FUN_00563cc0();
+    memset();
     *(byte **)(&stack0xffffffd4 + iVar1) = local_28 + iVar1;
     *(int *)(&stack0x000000c8 + iVar1) = 0x000000F4;
     *(uint *)((int)&uStackY_30 + iVar1) = 0x573e83;

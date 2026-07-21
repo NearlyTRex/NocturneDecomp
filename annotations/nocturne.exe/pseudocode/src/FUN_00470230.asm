@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   FUN_0049da10 at 0049e3ac
 ;   FUN_0049f930 at 004a0025
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e3ac
 ;
 ; Referenced Globals:
 ;   string s_[Y]es,_I_know_what_I'm_doing_and_0057e5e5
@@ -19,12 +19,12 @@
 ;   undefined4 DAT_0057e64b
 ;
 ; Called Functions:
-;   FUN_00473cb0
+;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   FUN_00474c90
-;   FUN_00474cf0
-;   FUN_00474d70
-;   FUN_004ee370
-;   FUN_00563a08
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
+;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
+;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
+;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x188]     ; 0047024e
     PUSH EDX                            ; 00470255
     PUSH 0x1bcb4d0                      ; 00470256
-    CALL FUN_00563a08                   ; 0047025b
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0047025b
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
     ADD ESP,0xc                         ; 00470260
     MOV EAX,ESP                         ; 00470263
     XOR ECX,ECX                         ; 00470265
@@ -52,28 +52,28 @@ section .text
         ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00474c90()
     ADD ESP,0x4                         ; 00470274
     PUSH 0x57e5e5                       ; 00470277 | = "[Y]es, I know what I'm doing and I ha..."
-    CALL FUN_004ee370                   ; 0047027c
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee370()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0047027c
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 00470281
     PUSH EAX                            ; 00470284
     LEA EAX,[ESP + 0x4]                 ; 00470285
     PUSH EAX                            ; 00470289
-    CALL FUN_00473cb0                   ; 0047028a
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00473cb0()
+    CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 0047028a
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 0047028f
     PUSH 0x57e625                       ; 00470292 | = "[N]o, please, I didn't mean to do it!"
-    CALL FUN_004ee370                   ; 00470297
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee370()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 00470297
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0047029c
     PUSH EAX                            ; 0047029f
     LEA EAX,[ESP + 0x4]                 ; 004702a0
     PUSH EAX                            ; 004702a4
-    CALL FUN_00473cb0                   ; 004702a5
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00473cb0()
+    CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004702a5
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 004702aa
     PUSH 0x57e64b                       ; 004702ad | DAT_0057e64b
-    CALL FUN_004ee370                   ; 004702b2
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee370()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004702b2
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004702b7
     LEA EDI,[ESP + 0x14]                ; 004702ba
     MOV ESI,EAX                         ; 004702be
@@ -97,8 +97,8 @@ section .text
     PUSH 0x1bcb4d0                      ; 004702dc
     LEA EAX,[ESP + 0x8]                 ; 004702e1
     PUSH EAX                            ; 004702e5
-    CALL FUN_00474d70                   ; 004702e6
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined FUN_00474d70()
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 004702e6
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
     ADD ESP,0xc                         ; 004702eb
     TEST EAX,EAX                        ; 004702ee
     SETZ AL                             ; 004702f0
@@ -106,8 +106,8 @@ section .text
     MOVZX EDI,AL                        ; 004702f5
     LEA EAX,[ESP + 0x4]                 ; 004702f8
     PUSH EAX                            ; 004702fc
-    CALL FUN_00474cf0                   ; 004702fd
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00474cf0()
+    CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004702fd
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
     ADD ESP,0x8                         ; 00470302
     MOV EAX,EDI                         ; 00470305
     ADD ESP,0x174                       ; 00470307

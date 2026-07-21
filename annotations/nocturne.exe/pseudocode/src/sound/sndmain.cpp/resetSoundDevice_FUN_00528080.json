@@ -1,0 +1,276 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 45,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00527e10",
+      "from_addr": "00527e24",
+      "name": "FUN_00527e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6e90",
+      "from_addr": "004a6f6a",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004a6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d12e0",
+      "from_addr": "004d1ff6",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004d12e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052e9c0",
+      "from_addr": "0052e9c0",
+      "name": "core_sound.cpp_CSound_reset_FUN_0052e9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052df90",
+      "from_addr": "0052dfd4",
+      "name": "core_sound.cpp_CSound_shutdown_FUN_0052df90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005285b0",
+      "from_addr": "005285b2",
+      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005285b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527e40",
+      "from_addr": "00527e6e",
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00527e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526cb0",
+      "from_addr": "00526cbb",
+      "name": "sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0",
+      "type": "CONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "00528080",
+    "address_range": [
+      [
+        "00528080",
+        "005280b1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_resetSoundDevice_FUN_00528080",
+    "signature": "undefined4 __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_00528080(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005230d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_freeMixBuffers_FUN_005230d0"
+    },
+    {
+      "addr": "005272b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_005272b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02dc8318",
+      "name": "DAT_02dc8318",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc831c",
+      "name": "DAT_02dc831c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 4,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02dc8318 + 8))(_DAT_02dc8318);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

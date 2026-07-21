@@ -21,8 +21,8 @@ void FUN_0055d660(uint param_1)
   auStack_24[3] = 0;
   auStack_24[4] = 0;
   auStack_24[5] = 0;
-  FUN_0055ae80(auStack_58,auStack_24 + 3,param_1);
-  FUN_0055cf10(auStack_58);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(auStack_58,auStack_24 + 3,param_1);
+  core_xform_cpp_matrixToQuaternion_FUN_0055cf10(auStack_58);
   puVar1 = unaff_ESI + (uint)bVar2 * -2 + 1;
   *unaff_ESI = uStack_28;
   *puVar1 = auStack_24[(uint)bVar2 * -2];

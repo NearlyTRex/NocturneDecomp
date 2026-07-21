@@ -9,6 +9,6 @@
 void FUN_00571ee0(uint param_1)
 
 {
-  FUN_005635b0(param_1);
+  malloc(param_1);
   return;
 }

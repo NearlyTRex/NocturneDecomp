@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 703,
+    "complexity_score": 709,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 208,
+    "pseudocode_lines": 214,
     "suspect_count": 45,
     "suspect_types": [
       "param_count_too_few",
@@ -140,13 +140,13 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 523
+    "total_lines": 529
   },
   "cross_references": [
     {
       "addr": "00539b10",
       "from_addr": "00539feb",
-      "name": "FUN_00539b10",
+      "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -165,39 +165,39 @@
   },
   "function_calls": [
     {
-      "addr": "004e1010",
-      "is_variadic": false,
-      "name": "FUN_004e1010"
-    },
-    {
       "addr": "004e1f50",
       "is_variadic": false,
-      "name": "FUN_004e1f50"
+      "name": "core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50"
     },
     {
-      "addr": "0051c3d0",
+      "addr": "004e1010",
       "is_variadic": false,
-      "name": "FUN_0051c3d0"
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010"
     },
     {
       "addr": "0051cfd0",
       "is_variadic": false,
-      "name": "FUN_0051cfd0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0"
+    },
+    {
+      "addr": "0051c3d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0"
     },
     {
       "addr": "0051e0a0",
       "is_variadic": false,
-      "name": "FUN_0051e0a0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0"
     },
     {
       "addr": "0055d130",
       "is_variadic": false,
-      "name": "FUN_0055d130"
+      "name": "core_xform.cpp_multiplyQuaternion_FUN_0055d130"
     },
     {
       "addr": "0055d2d0",
       "is_variadic": false,
-      "name": "FUN_0055d2d0"
+      "name": "core_xform.cpp_slerpQuaternion_FUN_0055d2d0"
     },
     {
       "addr": "0055d4a0",
@@ -259,7 +259,7 @@
       {
         "call_addr": "00539feb",
         "call_type": "direct",
-        "caller": "FUN_00539b10",
+        "caller": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,7 +270,7 @@
       {
         "call_addr": "00539ff6",
         "call_type": "direct",
-        "caller": "FUN_00539b10",
+        "caller": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -617,238 +617,238 @@
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 115,
+          "line": 118,
           "message": "Array 'auStack_198[7]' accessed at index 12, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 61,
-          "line": 115,
+          "line": 118,
           "message": "Array 'auStack_d8[7]' accessed at index 36, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 116,
+          "line": 119,
           "message": "Array 'auStack_198[7]' accessed at index 13, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 117,
+          "line": 120,
           "message": "Array 'auStack_d8[7]' accessed at index 37, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 123,
+          "line": 126,
           "message": "Array 'auStack_198[7]' accessed at index 8, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 124,
+          "line": 127,
           "message": "Array 'auStack_198[7]' accessed at index 9, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 59,
-          "line": 133,
+          "line": 136,
           "message": "Array 'auStack_d8[7]' accessed at index 12, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 135,
+          "line": 138,
           "message": "Array 'auStack_d8[7]' accessed at index 13, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 142,
+          "line": 145,
           "message": "Array 'auStack_198[7]' accessed at index 16, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 62,
-          "line": 142,
+          "line": 145,
           "message": "Array 'auStack_d8[7]' accessed at index 16, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 144,
+          "line": 147,
           "message": "Array 'auStack_198[7]' accessed at index 17, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 145,
+          "line": 148,
           "message": "Array 'auStack_d8[7]' accessed at index 17, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 151,
+          "line": 154,
           "message": "Array 'auStack_198[7]' accessed at index 20, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 62,
-          "line": 151,
+          "line": 154,
           "message": "Array 'auStack_d8[7]' accessed at index 8, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 152,
+          "line": 155,
           "message": "Array 'auStack_198[7]' accessed at index 21, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 153,
+          "line": 156,
           "message": "Array 'auStack_d8[7]' accessed at index 9, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 25,
-          "line": 164,
+          "line": 167,
           "message": "Array 'auStack_d8[7]' accessed at index 28, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 25,
-          "line": 165,
+          "line": 168,
           "message": "Array 'auStack_d8[7]' accessed at index 29, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 171,
+          "line": 175,
           "message": "Array 'auStack_198[7]' accessed at index 28, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 62,
-          "line": 171,
+          "line": 175,
           "message": "Array 'auStack_d8[7]' accessed at index 20, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 172,
+          "line": 176,
           "message": "Array 'auStack_198[7]' accessed at index 29, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 173,
+          "line": 177,
           "message": "Array 'auStack_d8[7]' accessed at index 21, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 179,
+          "line": 183,
           "message": "Array 'auStack_198[7]' accessed at index 24, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 62,
-          "line": 179,
+          "line": 183,
           "message": "Array 'auStack_d8[7]' accessed at index 24, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 16,
-          "line": 180,
+          "line": 184,
           "message": "Array 'auStack_198[7]' accessed at index 25, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 20,
-          "line": 181,
+          "line": 185,
           "message": "Array 'auStack_d8[7]' accessed at index 25, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 26,
-          "line": 113,
+          "line": 116,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0xb' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 30,
-          "line": 149,
+          "column": 64,
+          "line": 152,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0xf' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 39,
-          "line": 159,
+          "column": 70,
+          "line": 162,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0x13' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 30,
-          "line": 177,
+          "column": 64,
+          "line": 181,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0x1b' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 39,
-          "line": 185,
+          "column": 37,
+          "line": 190,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0x17' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 28,
-          "line": 188,
+          "line": 193,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0x27' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 32,
-          "line": 197,
+          "column": 66,
+          "line": 202,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0xf' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 41,
-          "line": 206,
+          "column": 39,
+          "line": 212,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_198+0x23' is out of bounds.",
           "severity": "portability"
         },
@@ -876,70 +876,70 @@
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 114,
+          "line": 117,
           "message": "Uninitialized variable: local_4c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 122,
+          "line": 125,
           "message": "Uninitialized variable: local_19c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 132,
+          "line": 135,
           "message": "Uninitialized variable: local_ac",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 141,
+          "line": 144,
           "message": "Uninitialized variable: local_9c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 150,
+          "line": 153,
           "message": "Uninitialized variable: local_bc",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 35,
-          "line": 162,
+          "line": 165,
           "message": "Uninitialized variable: local_6c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 170,
+          "line": 174,
           "message": "Uninitialized variable: local_8c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 178,
+          "line": 182,
           "message": "Uninitialized variable: local_7c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 189,
+          "line": 194,
           "message": "Uninitialized variable: local_5c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 198,
+          "line": 203,
           "message": "Uninitialized variable: local_dc",
           "severity": "error"
         },
@@ -953,7 +953,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 51,
-          "line": 115,
+          "line": 118,
           "message": "Uninitialized variable: auStack_d8",
           "severity": "error"
         }
@@ -1149,31 +1149,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_0051e0a0(local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);",
+      "text": "(local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_0051e0a0(local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);",
+      "text": "(local_1c,*(int *)(param_1 + 0x2a84) * 0x38 + param_1 + 0x262c,1,fVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = FUN_004e1f50(local_1c,uVar1,*(uint *)(param_1 + 0x2a88));",
+      "text": "(local_1c,uVar1,*(uint *)(param_1 + 0x2a88));",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 126,
       "match": "&stack0xfffffe34",
       "severity": "moderate",
       "text": "puVar4 = &stack0xfffffe34;",
@@ -1181,15 +1181,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 135,
       "match": "DAT_005a4508",
       "severity": "mild",
-      "text": "FUN_0055d2d0(&DAT_005a4508,puVar4,uVar1);",
+      "text": "core_xform_cpp_slerpQuaternion_FUN_0055d2d0(&DAT_005a4508,puVar4,uVar1);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = param_1 + 0x800 + iVar3;",
@@ -1197,7 +1197,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 153,
+      "line": 156,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = param_1 + iVar3;",
@@ -1205,23 +1205,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 162,
+      "line": 166,
       "match": "&stack0xfffffe34",
       "severity": "moderate",
-      "text": "FUN_0055d130(&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);",
+      "text": "(&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 162,
+      "line": 166,
       "match": "&stack0xfffffe44",
       "severity": "moderate",
-      "text": "FUN_0055d130(&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);",
+      "text": "(&stack0xfffffe34,&stack0xfffffe44,auStack_198 + 3);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 184,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((float)_DAT_00595967 < *(float *)(param_1 + 0x1faf4)) {",
@@ -1229,10 +1229,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 205,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055d2d0(local_2c,auStack_198 + 0x23,*(uint *)(param_1 + 0x1faf4));",
+      "text": "(local_2c,auStack_198 + 0x23,*(uint *)(param_1 + 0x1faf4));",
       "type": "unnamed_param"
     },
     {
@@ -1344,7 +1344,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 12, which is out of bounds.",
-      "line": 115,
+      "line": 118,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0xc] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x24];",
@@ -1352,7 +1352,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 36, which is out of bounds.",
-      "line": 115,
+      "line": 118,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0xc] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x24];",
@@ -1360,7 +1360,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 13, which is out of bounds.",
-      "line": 116,
+      "line": 119,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xd] =",
@@ -1368,7 +1368,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 37, which is out of bounds.",
-      "line": 117,
+      "line": 120,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x25];",
@@ -1376,7 +1376,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 8, which is out of bounds.",
-      "line": 123,
+      "line": 126,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 8] = auStack_198[(uint)bVar5 * 0xfffffffe];",
@@ -1384,7 +1384,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 9, which is out of bounds.",
-      "line": 124,
+      "line": 127,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9] =",
@@ -1392,7 +1392,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 12, which is out of bounds.",
-      "line": 133,
+      "line": 136,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 4] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0xc];",
@@ -1400,7 +1400,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 13, which is out of bounds.",
-      "line": 135,
+      "line": 138,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xd];",
@@ -1408,7 +1408,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 16, which is out of bounds.",
-      "line": 142,
+      "line": 145,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x10] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x10];",
@@ -1416,7 +1416,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 16, which is out of bounds.",
-      "line": 142,
+      "line": 145,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x10] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x10];",
@@ -1424,7 +1424,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 17, which is out of bounds.",
-      "line": 144,
+      "line": 147,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x11] =",
@@ -1432,7 +1432,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 17, which is out of bounds.",
-      "line": 145,
+      "line": 148,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x11];",
@@ -1440,7 +1440,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 20, which is out of bounds.",
-      "line": 151,
+      "line": 154,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x14] = auStack_d8[(uint)bVar5 * 0xfffffffe + 8];",
@@ -1448,7 +1448,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 8, which is out of bounds.",
-      "line": 151,
+      "line": 154,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x14] = auStack_d8[(uint)bVar5 * 0xfffffffe + 8];",
@@ -1456,7 +1456,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 21, which is out of bounds.",
-      "line": 152,
+      "line": 155,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x15] =",
@@ -1464,7 +1464,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 9, which is out of bounds.",
-      "line": 153,
+      "line": 156,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9];",
@@ -1472,7 +1472,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 28, which is out of bounds.",
-      "line": 164,
+      "line": 167,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "*puVar4 = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x1c];",
@@ -1480,7 +1480,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 29, which is out of bounds.",
-      "line": 165,
+      "line": 168,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "*puVar2 = auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x1d];",
@@ -1488,7 +1488,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 28, which is out of bounds.",
-      "line": 171,
+      "line": 175,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x1c] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x14];",
@@ -1496,7 +1496,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 20, which is out of bounds.",
-      "line": 171,
+      "line": 175,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x1c] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x14];",
@@ -1504,7 +1504,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 29, which is out of bounds.",
-      "line": 172,
+      "line": 176,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x1d] =",
@@ -1512,7 +1512,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 21, which is out of bounds.",
-      "line": 173,
+      "line": 177,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x15];",
@@ -1520,7 +1520,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 24, which is out of bounds.",
-      "line": 179,
+      "line": 183,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x18] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x18];",
@@ -1528,7 +1528,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 24, which is out of bounds.",
-      "line": 179,
+      "line": 183,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0x18] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x18];",
@@ -1536,7 +1536,7 @@
     },
     {
       "description": "Array 'auStack_198[7]' accessed at index 25, which is out of bounds.",
-      "line": 180,
+      "line": 184,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19] =",
@@ -1544,7 +1544,7 @@
     },
     {
       "description": "Array 'auStack_d8[7]' accessed at index 25, which is out of bounds.",
-      "line": 181,
+      "line": 185,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_d8[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19];",
@@ -1576,7 +1576,7 @@
     },
     {
       "description": "Uninitialized variable: local_4c",
-      "line": 114,
+      "line": 117,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_16c[0] = local_4c;",
@@ -1584,7 +1584,7 @@
     },
     {
       "description": "Uninitialized variable: local_19c",
-      "line": 122,
+      "line": 125,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_17c[0] = local_19c;",
@@ -1592,7 +1592,7 @@
     },
     {
       "description": "Uninitialized variable: local_ac",
-      "line": 132,
+      "line": 135,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "auStack_198[3] = local_ac;",
@@ -1600,7 +1600,7 @@
     },
     {
       "description": "Uninitialized variable: local_9c",
-      "line": 141,
+      "line": 144,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_15c[0] = local_9c;",
@@ -1608,7 +1608,7 @@
     },
     {
       "description": "Uninitialized variable: local_bc",
-      "line": 150,
+      "line": 153,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_14c[0] = local_bc;",
@@ -1616,7 +1616,7 @@
     },
     {
       "description": "Uninitialized variable: local_6c",
-      "line": 162,
+      "line": 165,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(uint *)(local_30 + 0x800) = local_6c;",
@@ -1624,7 +1624,7 @@
     },
     {
       "description": "Uninitialized variable: local_8c",
-      "line": 170,
+      "line": 174,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_12c[0] = local_8c;",
@@ -1632,7 +1632,7 @@
     },
     {
       "description": "Uninitialized variable: local_7c",
-      "line": 178,
+      "line": 182,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_13c[0] = local_7c;",
@@ -1640,7 +1640,7 @@
     },
     {
       "description": "Uninitialized variable: local_5c",
-      "line": 189,
+      "line": 194,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_fc[0] = local_5c;",
@@ -1648,7 +1648,7 @@
     },
     {
       "description": "Uninitialized variable: local_dc",
-      "line": 198,
+      "line": 203,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_10c[0] = local_dc;",
@@ -1664,7 +1664,7 @@
     },
     {
       "description": "Uninitialized variable: auStack_d8",
-      "line": 115,
+      "line": 118,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "auStack_198[(uint)bVar5 * 0xfffffffe + 0xc] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x24];",

@@ -1,0 +1,491 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 216,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 13,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 208
+  },
+  "cross_references": [
+    {
+      "addr": "004a4b50",
+      "from_addr": "004a4eac",
+      "name": "FUN_004a4b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d9440",
+      "from_addr": "004d9596",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004d9440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb520",
+      "from_addr": "004ebb4d",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_004eb520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d9a80",
+    "address_range": [
+      [
+        "004d9a80",
+        "004d9c12"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80",
+    "signature": "undefined4 __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040d7e0"
+    },
+    {
+      "addr": "004d8ee0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0"
+    },
+    {
+      "addr": "004d9920",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920"
+    },
+    {
+      "addr": "004d8f90",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00589f69",
+      "name": "s_..\\core\\mission.cpp_00589f69",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00589f7d",
+      "name": "s_CDemonMission::createHeros_-_too_00589f7d",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00589fc0",
+      "name": "s_CHeroPlaceholder_00589fc0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005b9354",
+      "name": "DAT_005b9354",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bdee0",
+      "name": "DAT_005bdee0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776ac",
+      "name": "DAT_01c776ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776b0",
+      "name": "DAT_01c776b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0d4",
+      "name": "DAT_01cae0d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea280",
+      "name": "DAT_01cea280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea29c",
+      "name": "DAT_01cea29c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea2b8",
+      "name": "DAT_01cea2b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cea394",
+      "name": "DAT_01cea394",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004a4eac",
+        "call_type": "direct",
+        "caller": "FUN_004a4b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d9596",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_run_FUN_004d9440",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ebb4d",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_004eb520",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ebd24",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_004eb520",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 10,
+      "COPY": 96,
+      "INT_ADD": 37,
+      "INT_AND": 57,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 51,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 25,
+      "INT_SUB": 28,
+      "INT_XOR": 5,
+      "LOAD": 21,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 429
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,0,*(uint *)(0x01C775EC + 0xc0),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,0,*(uint *)(0x01C775EC + 0xc0),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)(iVar3 + 0x34 + (int)0x01CEA280",
+      "severity": "moderate",
+      "text": "(param_1,iVar4,*(uint *)(iVar3 + 0x34 + (int)0x01CEA280),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,iVar4,*(uint *)(iVar3 + 0x34 + (int)0x01CEA280),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)0x01CEA280",
+      "severity": "moderate",
+      "text": "*(uint *)((int)0x01CEA280 + iVar3 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(param_1 + 0x514);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(param_1,iVar4,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(param_1 + 0x514);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

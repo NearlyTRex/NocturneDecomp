@@ -9,6 +9,6 @@
 uint FUN_004afd80(uint param_1)
 
 {
-  FUN_004afdb0(param_1);
+  core_gore_cpp_CGore_reset_FUN_004afdb0(param_1);
   return param_1;
 }

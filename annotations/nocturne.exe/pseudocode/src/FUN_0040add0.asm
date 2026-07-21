@@ -17,9 +17,9 @@
 ;   undefined4 DAT_01c00c70
 ;
 ; Called Functions:
-;   FUN_00401530
-;   FUN_0053075c
-;   FUN_005644a7
+;   crt_memory.c___arrinit_FUN_005644a7
+;   engine_2d.c_plotPixel_FUN_00401530
+;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH 0xa                            ; 0040ade6
     LEA EAX,[ESP + 0x8]                 ; 0040ade8
     PUSH EAX                            ; 0040adec
-    CALL FUN_005644a7                   ; 0040aded
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 0040aded
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 0040adf2
     MOV EAX,ESP                         ; 0040adf5
     PUSH EAX                            ; 0040adf7
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0040ae55 | DAT_01b4d738
     ADD EAX,0xea5d0                     ; 0040ae57
     PUSH EAX                            ; 0040ae5c
-    CALL FUN_0053075c                   ; 0040ae5d
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined FUN_0053075c()
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0040ae5d
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | DAT_005ae700
     MOV ESI,dword ptr [ESI]             ; 0040ae68 | DAT_01b4d738
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 0040ae6a
@@ -212,8 +212,8 @@ section .text
         ;   XREF to: 0040ae78 (CONDITIONAL_JUMP)  ; LAB_0040ae78
     PUSH ESI                            ; 0040afa8
     PUSH EBX                            ; 0040afa9
-    CALL FUN_00401530                   ; 0040afaa
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040afaa
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040afaf
     JMP 0x0040ae78                      ; 0040afb2
         ;   XREF to: 0040ae78 (UNCONDITIONAL_JUMP)  ; LAB_0040ae78
@@ -223,8 +223,8 @@ section .text
         ;   XREF to: 0040aec4 (CONDITIONAL_JUMP)  ; LAB_0040aec4
     PUSH ESI                            ; 0040afc3
     PUSH EBX                            ; 0040afc4
-    CALL FUN_00401530                   ; 0040afc5
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040afc5
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040afca
     JMP 0x0040aec4                      ; 0040afcd
         ;   XREF to: 0040aec4 (UNCONDITIONAL_JUMP)  ; LAB_0040aec4
@@ -234,8 +234,8 @@ section .text
         ;   XREF to: 0040aede (CONDITIONAL_JUMP)  ; LAB_0040aede
     PUSH EDX                            ; 0040afde
     PUSH EAX                            ; 0040afdf
-    CALL FUN_00401530                   ; 0040afe0
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040afe0
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040afe5
     JMP 0x0040aede                      ; 0040afe8
         ;   XREF to: 0040aede (UNCONDITIONAL_JUMP)  ; LAB_0040aede
@@ -245,8 +245,8 @@ section .text
         ;   XREF to: 0040aef8 (CONDITIONAL_JUMP)  ; LAB_0040aef8
     PUSH EDX                            ; 0040aff9
     PUSH EAX                            ; 0040affa
-    CALL FUN_00401530                   ; 0040affb
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040affb
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b000
     JMP 0x0040aef8                      ; 0040b003
         ;   XREF to: 0040aef8 (UNCONDITIONAL_JUMP)  ; LAB_0040aef8
@@ -256,8 +256,8 @@ section .text
         ;   XREF to: 0040af12 (CONDITIONAL_JUMP)  ; LAB_0040af12
     PUSH EDX                            ; 0040b014
     PUSH EAX                            ; 0040b015
-    CALL FUN_00401530                   ; 0040b016
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040b016
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b01b
     JMP 0x0040af12                      ; 0040b01e
         ;   XREF to: 0040af12 (UNCONDITIONAL_JUMP)  ; LAB_0040af12
@@ -267,8 +267,8 @@ section .text
         ;   XREF to: 0040af2c (CONDITIONAL_JUMP)  ; LAB_0040af2c
     PUSH EAX                            ; 0040b02f
     PUSH EDX                            ; 0040b030
-    CALL FUN_00401530                   ; 0040b031
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040b031
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b036
     JMP 0x0040af2c                      ; 0040b039
         ;   XREF to: 0040af2c (UNCONDITIONAL_JUMP)  ; LAB_0040af2c
@@ -278,8 +278,8 @@ section .text
         ;   XREF to: 0040af46 (CONDITIONAL_JUMP)  ; LAB_0040af46
     PUSH EDX                            ; 0040b04a
     PUSH EAX                            ; 0040b04b
-    CALL FUN_00401530                   ; 0040b04c
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040b04c
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b051
     JMP 0x0040af46                      ; 0040b054
         ;   XREF to: 0040af46 (UNCONDITIONAL_JUMP)  ; LAB_0040af46
@@ -289,8 +289,8 @@ section .text
         ;   XREF to: 0040af60 (CONDITIONAL_JUMP)  ; LAB_0040af60
     PUSH EDX                            ; 0040b065
     PUSH EAX                            ; 0040b066
-    CALL FUN_00401530                   ; 0040b067
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040b067
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b06c
     JMP 0x0040af60                      ; 0040b06f
         ;   XREF to: 0040af60 (UNCONDITIONAL_JUMP)  ; LAB_0040af60
@@ -300,8 +300,8 @@ section .text
         ;   XREF to: 0040af7a (CONDITIONAL_JUMP)  ; LAB_0040af7a
     PUSH EDX                            ; 0040b080
     PUSH EAX                            ; 0040b081
-    CALL FUN_00401530                   ; 0040b082
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined FUN_00401530()
+    CALL engine_2d.c_plotPixel_FUN_00401530 ; 0040b082
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
     ADD ESP,0x8                         ; 0040b087
     JMP 0x0040af7a                      ; 0040b08a
         ;   XREF to: 0040af7a (UNCONDITIONAL_JUMP)  ; LAB_0040af7a

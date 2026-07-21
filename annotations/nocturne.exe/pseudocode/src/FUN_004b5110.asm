@@ -28,11 +28,11 @@
 ;   undefined4 DAT_01fa3ff4
 ;
 ; Called Functions:
-;   FUN_0040a290
-;   FUN_0040d890
-;   FUN_00455270
-;   FUN_004564b0
-;   FUN_00481890
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+;   core_door.cpp_CDoor_getMoveType_FUN_004564b0
+;   core_door.cpp_CDoor_onOpened_FUN_00455270
+;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH EBX                            ; 004b5162
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004b5163 | DAT_01fa3ff4
     PUSH ECX                            ; 004b5169
-    CALL FUN_0040d890                   ; 004b516a
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b516a
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     MOV EBX,EAX                         ; 004b516f
     ADD ESP,0x8                         ; 004b5171
     TEST EAX,EAX                        ; 004b5174
@@ -103,8 +103,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b51a7
     PUSH EDX                            ; 004b51aa
     FSTP float ptr [ESP + 0x14]         ; 004b51ab
-    CALL FUN_0040a290                   ; 004b51af
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a290()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004b51af
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
     FLD float ptr [EAX + 0x8]           ; 004b51b4
     FLDZ                                ; 004b51b7
     ADD ESP,0xc                         ; 004b51b9
@@ -135,8 +135,8 @@ section .text
         ;   XREF to: 004b5148 (CONDITIONAL_JUMP)  ; LAB_004b5148
     LEA EAX,[EBX + 0x470]               ; 004b51fc
     PUSH EAX                            ; 004b5202
-    CALL FUN_00481890                   ; 004b5203
-        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; undefined FUN_00481890()
+    CALL core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890 ; 004b5203
+        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890()
     ADD ESP,0x4                         ; 004b5208
     TEST EAX,EAX                        ; 004b520b
     JZ 0x004b521b                       ; 004b520d
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_004b521b
     PUSH EAX                            ; 004b521e
     PUSH EBX                            ; 004b521f
-    CALL FUN_004564b0                   ; 004b5220
-        ;   XREF to: 004564b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004564b0()
+    CALL core_door.cpp_CDoor_getMoveType_FUN_004564b0 ; 004b5220
+        ;   XREF to: 004564b0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_getMoveType_FUN_004564b0()
     ADD ESP,0x8                         ; 004b5225
     MOV dword ptr [ESP + 0x18],EAX      ; 004b5228
     TEST EAX,EAX                        ; 004b522c
@@ -163,8 +163,8 @@ section .text
     JNZ 0x004b524d                      ; 004b5237
         ;   XREF to: 004b524d (CONDITIONAL_JUMP)  ; LAB_004b524d
     PUSH EBX                            ; 004b5239
-    CALL FUN_00455270                   ; 004b523a
-        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined FUN_00455270()
+    CALL core_door.cpp_CDoor_onOpened_FUN_00455270 ; 004b523a
+        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_onOpened_FUN_00455270()
     ADD ESP,0x4                         ; 004b523f
     MOV EAX,dword ptr [ESP + 0x18]      ; 004b5242
     MOV ESP,EBP                         ; 004b5246

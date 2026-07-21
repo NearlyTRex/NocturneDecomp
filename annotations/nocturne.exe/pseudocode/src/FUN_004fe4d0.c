@@ -12,6 +12,6 @@ int FUN_004fe4d0(int param_1)
   int iVar1;
   
   FUN_004fe500(param_1);
-  iVar1 = FUN_00473b80(param_1 + 0x30,0);
+  iVar1 = shape_edittool_cpp_CStrList_dtor_FUN_00473b80(param_1 + 0x30,0);
   return iVar1 + -0x30;
 }

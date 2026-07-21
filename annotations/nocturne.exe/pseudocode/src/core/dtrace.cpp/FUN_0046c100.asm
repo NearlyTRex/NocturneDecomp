@@ -24,10 +24,10 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
 ;   FUN_0044ac30
-;   FUN_004678d0
 ;   FUN_0046b650
-;   FUN_0046b700
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH EBX                            ; 0046c15c
     LEA ESI,[ESP + 0x2c]                ; 0046c15d
     LEA EDI,[ESP + 0x8]                 ; 0046c161
-    CALL FUN_0046b700                   ; 0046c165
-        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b700()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 0046c165
+        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
     LEA ESI,[ESP + 0x2c]                ; 0046c16a
     ADD ESP,0x8                         ; 0046c16e
     MOVSD ES:EDI,ESI                    ; 0046c171
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 0046c1ae
     PUSH EBX                            ; 0046c1af
     MOV dword ptr [ESP + 0x18],EDX      ; 0046c1b0
-    CALL FUN_004678d0                   ; 0046c1b4
-        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004678d0()
+    CALL core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0 ; 0046c1b4
+        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0()
     ADD ESP,0x10                        ; 0046c1b9
     MOV EBX,EAX                         ; 0046c1bc
     TEST EAX,EAX                        ; 0046c1be

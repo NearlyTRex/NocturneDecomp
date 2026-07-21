@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01bd2fa0
 ;
 ; Called Functions:
-;   FUN_00466886
+;   core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EBP                            ; 00447cf7
     MOV EDI,dword ptr [ESP + 0xc]       ; 00447cf8
     PUSH EDI                            ; 00447cfc
-    CALL FUN_00466886                   ; 00447cfd
-        ;   XREF to: 00466886 (UNCONDITIONAL_CALL)  ; undefined FUN_00466886()
+    CALL core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886 ; 00447cfd
+        ;   XREF to: 00466886 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886()
     ADD ESP,0x10                        ; 00447d02
     ADD ESP,0x4                         ; 00447d05
     POP EBP                             ; 00447d08

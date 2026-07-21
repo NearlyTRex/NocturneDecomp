@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,17 +122,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 202,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 29,
     "suspect_count": 17,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 109
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -149,29 +149,29 @@
   },
   "function_calls": [
     {
+      "addr": "00422370",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370"
+    },
+    {
+      "addr": "004227a0",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0"
+    },
+    {
+      "addr": "0047dc30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30"
+    },
+    {
       "addr": "00422050",
       "is_variadic": false,
       "name": "FUN_00422050"
     },
     {
-      "addr": "00422370",
-      "is_variadic": false,
-      "name": "FUN_00422370"
-    },
-    {
-      "addr": "004227a0",
-      "is_variadic": false,
-      "name": "FUN_004227a0"
-    },
-    {
       "addr": "004259f0",
       "is_variadic": false,
       "name": "FUN_004259f0"
-    },
-    {
-      "addr": "0047dc30",
-      "is_variadic": false,
-      "name": "FUN_0047dc30"
     }
   ],
   "globals": [
@@ -276,15 +276,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = FUN_0047dc30(0x01C03A10,param_1 + 0x19708), iVar1 != 0)) {",
+      "text": "(0x01C03A10,param_1 + 0x19708), iVar1 != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x19700) = 1;",
@@ -292,7 +292,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x19704) == 0) &&",
@@ -300,18 +300,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = FUN_0047dc30(0x01C03A10,param_1 + 0x1976c), iVar1 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x19704) = 1;",
+      "text": "(0x01C03A10,param_1 + 0x1976c), iVar1 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -319,12 +311,20 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x19704) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
       "text": "switch(*(uint *)(param_1 + 0xbd24)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00422050(param_1,param_2);",
@@ -332,7 +332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_00422050(param_1,param_2);",
@@ -340,41 +340,41 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00422370(param_1,param_2);",
+      "text": "core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00422370(param_1,param_2);",
+      "text": "core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004227a0(param_1,param_2);",
+      "text": "core_bugs_cpp_CBugs_updateBoundingBox_FUN_004227a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004227a0(param_1,param_2);",
+      "text": "core_bugs_cpp_CBugs_updateBoundingBox_FUN_004227a0(param_1,param_2);",
       "type": "unnamed_param"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBugs",
         "offset": 4,
         "vtable_addr": "0059aec4"
       }

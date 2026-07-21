@@ -48,7 +48,8 @@ void FUN_00433ef0(void)
         DAT_00767b48 = DAT_00767b48 + 1;
         break;
       case 1:
-        FUN_00433a00(&DAT_0076874c + uVar2 * 0xc,puVar4,&DAT_00768d4c + DAT_00767b48 * 0xc);
+        engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+                  (&DAT_0076874c + uVar2 * 0xc,puVar4,&DAT_00768d4c + DAT_00767b48 * 0xc);
         DAT_00767b48 = DAT_00767b48 + 1;
         break;
       case 2:
@@ -65,7 +66,8 @@ void FUN_00433ef0(void)
           puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
         }
         DAT_00767b48 = DAT_00767b48 + 1;
-        FUN_00433a00(puVar4,&DAT_0076874c + uVar2 * 0xc,&DAT_00768d4c + DAT_00767b48 * 0xc);
+        engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+                  (puVar4,&DAT_0076874c + uVar2 * 0xc,&DAT_00768d4c + DAT_00767b48 * 0xc);
         DAT_00767b48 = DAT_00767b48 + 1;
       }
       iStack_14 = iStack_14 + 1;

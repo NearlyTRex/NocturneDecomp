@@ -9,6 +9,6 @@
 uint FUN_0043ff30(uint param_1)
 
 {
-  FUN_004401d0(param_1);
+  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(param_1);
   return param_1;
 }

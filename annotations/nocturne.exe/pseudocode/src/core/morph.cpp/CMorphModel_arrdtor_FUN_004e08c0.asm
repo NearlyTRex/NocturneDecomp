@@ -1,0 +1,29 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(undefined4 param_1)
+;
+;
+; XREF[1]:
+;   core_morph.cpp_CMorph_dtor_FUN_004e0070 at 004e0084
+;
+; Referenced Globals:
+;   undefined4 DAT_005a0ce0
+;
+; Called Functions:
+;   crt_memory.c___arrfini_FUN_0056494f
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x5a0ce0                       ; 004e08c0 | DAT_005a0ce0
+        ;   Label: core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
+    PUSH 0x2                            ; 004e08c5
+    MOV EDX,dword ptr [ESP + 0xc]       ; 004e08c7
+    PUSH EDX                            ; 004e08cb
+    CALL crt_memory.c___arrfini_FUN_0056494f ; 004e08cc
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+    ADD ESP,0xc                         ; 004e08d1
+    RET                                 ; 004e08d4
+

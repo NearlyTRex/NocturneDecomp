@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
-;   FUN_00426440
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     RET                                 ; 00544464
     PUSH EBX                            ; 00544465
         ;   Label: LAB_00544465
-    CALL FUN_00426440                   ; 00544466
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined FUN_00426440()
+    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 00544466
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
     ADD ESP,0x4                         ; 0054446b
     POP EBX                             ; 0054446e
     RET                                 ; 0054446f

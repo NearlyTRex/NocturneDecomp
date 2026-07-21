@@ -15,6 +15,6 @@ void FUN_005729e8(int param_1,uint param_2)
   FUN_00573660(*(uint *)(&DAT_005c2148 + param_1 * 4),uVar1);
   FUN_00573660(&DAT_00599281,uVar1);
   FUN_00573660(param_2,uVar1);
-  FUN_00566cc0(10,uVar1);
+  _fputc(10,uVar1);
   return;
 }

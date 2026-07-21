@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_004c79a0 at 004c7c29
-;   FUN_0052d120 at 0052d347
+;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d347
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc1b74

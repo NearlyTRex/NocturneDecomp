@@ -9,6 +9,6 @@
 uint FUN_004b13b0(uint param_1)
 
 {
-  FUN_004b1470(param_1);
+  core_ground_cpp_CGround_free_FUN_004b1470(param_1);
   return param_1;
 }

@@ -111,7 +111,7 @@ switchD_005400cd_caseD_3:
       uVar4 = 8;
     }
   }
-  fVar1 = (float)FUN_0042a9d0(param_1,uVar4);
+  fVar1 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,uVar4);
   if ((float)_DAT_00595eb7 <= fVar1) {
     iVar5 = param_1 + 0x1fa50;
     if ((*(int *)(param_1 + 0x1fa98) != 0) && (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 0))
@@ -122,7 +122,8 @@ switchD_005400cd_caseD_3:
        (iVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xe0))
                           (*(int *)(param_1 + 0x1fa94)), iVar5 != 0)) {
       if (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 0) {
-        FUN_0053a660(param_1,*(uint *)(param_1 + 0x1fa98));
+        core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660
+                  (param_1,*(uint *)(param_1 + 0x1fa98));
         *(uint *)(param_1 + 0x1fa98) = (uint)(*(int *)(param_1 + 0x1fa98) == 0);
       }
       *(uint *)(param_1 + 0x1fa9c) = 0;
@@ -131,7 +132,7 @@ switchD_005400cd_caseD_3:
       if (iVar5 != 0) {
         *(uint *)(param_1 + 0x1fa9c) = 1;
       }
-      FUN_0053a660(param_1,0);
+      core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(param_1,0);
       if (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d4) == 2) {
         *(uint *)(param_1 + 0x2a88) = 0;
         *(uint *)(param_1 + 0x2a84) = 8;

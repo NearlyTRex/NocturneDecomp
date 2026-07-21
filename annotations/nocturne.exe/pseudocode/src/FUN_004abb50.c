@@ -15,9 +15,9 @@ int FUN_004abb50(uint param_1)
   char *pcVar4;
   
   iVar2 = FUN_00409d30(param_1);
-  iVar2 = FUN_004d6550(iVar2 + 0x1e4);
-  iVar2 = FUN_005644a7(iVar2 + 0x1a0,0x19,&DAT_005993b0);
-  *(byte ***)(iVar2 + -0x238) = &PTR_FUN_0059e3b4;
+  iVar2 = core_mirror_cpp_CMirror_ctor_FUN_004d6550(iVar2 + 0x1e4);
+  iVar2 = __arrinit(iVar2 + 0x1a0,0x19,&DAT_005993b0);
+  *(byte ***)(iVar2 + -0x238) = &PTR_core_glass_cpp_CGlass_setup_FUN_004abc90_0059e3b4;
   pcVar3 = "HEADLITE.RAW";
   *(uint *)(iVar2 + -0x234) = 0x40800000;
   *(uint *)(iVar2 + -0x230) = 0x40800000;

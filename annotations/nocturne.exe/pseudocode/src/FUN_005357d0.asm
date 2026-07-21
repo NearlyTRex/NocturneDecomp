@@ -15,9 +15,9 @@
 ;   undefined4 DAT_01c77850
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_slamDT_FUN_004a5f00
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   FUN_004259f0
-;   FUN_004a5f00
-;   FUN_004e1660
 ;   FUN_00535900
 ;
 ; *****************************************************************************
@@ -73,8 +73,8 @@ section .text
     MOV ECX,dword ptr [0x005b9354]      ; 00535842 | DAT_005b9354
     PUSH dword ptr [ESP + 0x8]          ; 00535848
     PUSH ECX                            ; 0053584c | DAT_01c775ec
-    CALL FUN_004a5f00                   ; 0053584d
-        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; undefined FUN_004a5f00()
+    CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0053584d
+        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_slamDT_FUN_004a5f00()
     ADD ESP,0x8                         ; 00535852
     POP ESI                             ; 00535855
     ADD ESP,0x8                         ; 00535856
@@ -87,8 +87,8 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00535867
     PUSH EAX                            ; 0053586d
     FSTP float ptr [ESP + 0xc]          ; 0053586e
-    CALL FUN_004e1660                   ; 00535872
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1660()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00535872
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
     MOV EAX,dword ptr [EAX + 0x24]      ; 00535877
     XOR ESI,ESI                         ; 0053587a
     SUB EAX,0x7                         ; 0053587c

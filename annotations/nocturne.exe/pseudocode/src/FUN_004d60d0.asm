@@ -8,11 +8,11 @@
 ;   undefined4 DAT_005a0860
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0043b5f0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   core_stairs.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -27,14 +27,14 @@ section .text
     PUSH 0x0                            ; 004d60dc
     ADD EBX,0x308                       ; 004d60de
     PUSH EBX                            ; 004d60e4
-    CALL FUN_0043b5f0                   ; 004d60e5
-        ;   XREF to: 0043b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0043b5f0()
+    CALL core_stairs.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0 ; 004d60e5
+        ;   XREF to: 0043b5f0 (UNCONDITIONAL_CALL)  ; undefined core_stairs.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0()
     ADD ESP,0x8                         ; 004d60ea
     PUSH 0x1                            ; 004d60ed
     LEA EBX,[EAX + 0xfffffcf8]          ; 004d60ef
     PUSH EBX                            ; 004d60f5
-    CALL FUN_00409ea0                   ; 004d60f6
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004d60f6
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 004d60fb
     MOV DL,byte ptr [ESP + 0xc]         ; 004d60fe
     MOV EBX,EAX                         ; 004d6102
@@ -47,12 +47,12 @@ section .text
     PUSH 0x5a0860                       ; 004d610d | DAT_005a0860
         ;   Label: LAB_004d610d
     PUSH EBX                            ; 004d6112
-    CALL FUN_0056445f                   ; 004d6113
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004d6113
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004d6118
     PUSH EAX                            ; 004d611b
-    CALL FUN_00564486                   ; 004d611c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004d611c
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004d6121
     MOV EAX,EBX                         ; 004d6124
     POP EBX                             ; 004d6126

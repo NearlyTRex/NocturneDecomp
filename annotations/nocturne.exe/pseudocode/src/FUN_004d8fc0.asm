@@ -13,9 +13,9 @@
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
-;   FUN_004d8ee0
-;   FUN_004d8f90
-;   FUN_00511b30
+;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
+;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
+;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x514]     ; 004d8fd3
     PUSH ECX                            ; 004d8fd9
     PUSH EBX                            ; 004d8fda
-    CALL FUN_004d8f90                   ; 004d8fdb
-        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8f90()
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d8fdb
+        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90()
     MOV ESI,dword ptr [EBX + 0x514]     ; 004d8fe0
     ADD ESP,0xc                         ; 004d8fe6
     TEST ESI,ESI                        ; 004d8fe9
@@ -45,16 +45,16 @@ section .text
     POP ESI                             ; 004d8fed
     PUSH EBX                            ; 004d8fee
         ;   Label: LAB_004d8fee
-    CALL FUN_004d8ee0                   ; 004d8fef
-        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8ee0()
+    CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 ; 004d8fef
+        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0()
     ADD ESP,0x4                         ; 004d8ff4
     MOV EBP,dword ptr [0x005be368]      ; 004d8ff7 | DAT_005be368
     XOR EDI,EDI                         ; 004d8ffd
     PUSH EBP                            ; 004d8fff | DAT_01e57284
     MOV dword ptr [0x01cae0d4],EDI      ; 004d9000 | DAT_01cae0d4
     MOV dword ptr [EBX + 0x850],EDI     ; 004d9006
-    CALL FUN_00511b30                   ; 004d900c
-        ;   XREF to: 00511b30 (UNCONDITIONAL_CALL)  ; undefined FUN_00511b30()
+    CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30 ; 004d900c
+        ;   XREF to: 00511b30 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30()
     ADD ESP,0x4                         ; 004d9011
     MOV dword ptr [EBX + 0x52c],EDI     ; 004d9014
     POP EBP                             ; 004d901a

@@ -1,0 +1,313 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 77,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "0055a510",
+      "from_addr": "0055a7ff",
+      "name": "FUN_0055a510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049da10",
+      "from_addr": "0049e0ec",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553910",
+      "from_addr": "005539c6",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005591c0",
+    "address_range": [
+      [
+        "005591c0",
+        "00559250"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_processWindowMessages_FUN_005591c0",
+    "signature": "void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005591c0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000027",
+      "is_variadic": false,
+      "name": "DispatchMessageA"
+    },
+    {
+      "addr": "EXTERNAL:00000034",
+      "is_variadic": false,
+      "name": "PeekMessageA"
+    },
+    {
+      "addr": "EXTERNAL:0000008b",
+      "is_variadic": false,
+      "name": "Sleep"
+    },
+    {
+      "addr": "EXTERNAL:0000003e",
+      "is_variadic": false,
+      "name": "TranslateMessage"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575424",
+      "name": "PTR_DispatchMessageA_00575424",
+      "type": "void*",
+      "value": "0017593a"
+    },
+    {
+      "addr": "00575458",
+      "name": "PTR_PeekMessageA_00575458",
+      "type": "void*",
+      "value": "00175a0c"
+    },
+    {
+      "addr": "00575480",
+      "name": "PTR_TranslateMessage_00575480",
+      "type": "void*",
+      "value": "00175ab0"
+    },
+    {
+      "addr": "005755b8",
+      "name": "PTR_Sleep_005755b8",
+      "type": "void*",
+      "value": "00176066"
+    },
+    {
+      "addr": "005c1660",
+      "name": "DAT_005c1660",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1664",
+      "name": "DAT_005c1664",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de20a0",
+      "name": "DAT_02de20a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.529411764705882,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 3,
+      "CALLIND": 4,
+      "CBRANCH": 7,
+      "COPY": 43,
+      "INT_ADD": 11,
+      "INT_AND": 31,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 30,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 15,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "LOAD": 5,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 231
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01c02598",
+      "severity": "mild",
+      "text": "(&DAT_01c02598)[iVar1] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c1660",
+      "severity": "mild",
+      "text": "if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (DAT_005c1664 == 0)) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c1664",
+      "severity": "mild",
+      "text": "if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (DAT_005c1664 == 0)) break;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,830 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 211,
+    "complexity_score": 639,
+    "cross_reference_count": 1,
+    "function_call_count": 13,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 54,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 280
+  },
+  "cross_references": [
+    {
+      "addr": "004901d0",
+      "from_addr": "004901ff",
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048ff70",
+    "address_range": [
+      [
+        "0048ff70",
+        "004901c7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70",
+    "signature": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,undefined4 param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d240",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042d240"
+    },
+    {
+      "addr": "0056626c",
+      "is_variadic": false,
+      "name": "crt_file.c_makepath_FUN_0056626c"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00564570",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_00564570"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00566498",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_00566498"
+    },
+    {
+      "addr": "00566ad0",
+      "is_variadic": false,
+      "name": "crt_string.c_strupr_FUN_00566ad0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004568c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
+    },
+    {
+      "addr": "004931b0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_remapPalette_FUN_004931b0"
+    },
+    {
+      "addr": "00490470",
+      "is_variadic": false,
+      "name": "FUN_00490470"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    },
+    {
+      "addr": "00564c18",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_malloc_FUN_00564c18"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058175b",
+      "name": "s_..\\engine\\font.cpp_0058175a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0058176e",
+      "name": "s_Too_many_bitmaps_0058176e",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058177f",
+      "name": "DAT_0058177f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00581783",
+      "name": "s_Invalid_font_file_size_(%s)._00581783",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005817a0",
+      "name": "s_..\\engine\\font.cpp_005817a0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005817b3",
+      "name": "s_Unable_to_allocate_memory_for_fo_005817b3",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005817e3",
+      "name": "s_..\\engine\\font.cpp_005817e3",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005817f6",
+      "name": "DAT_005817f6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005817fa",
+      "name": "DAT_005817fa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005817fd",
+      "name": "DAT_005817fd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004901ff",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0",
+        "estimated_params": 5,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.568181818181818,
+    "instruction_count": 176,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BRANCH": 1,
+      "CALL": 18,
+      "CBRANCH": 7,
+      "COPY": 125,
+      "INT_ADD": 70,
+      "INT_AND": 104,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 84,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 29,
+      "INT_SEXT": 12,
+      "INT_SLESS": 44,
+      "INT_SUB": 70,
+      "INT_XOR": 3,
+      "LOAD": 29,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 70,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 804
+  },
+  "stack_frame": {
+    "frame_size": 1092,
+    "local_size": 1092,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_440",
+        "offset": -1088,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_314",
+        "offset": -788,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (3 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar6 = param_1 + *param_1 * 0x14 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar6 = param_1 + *param_1 * 0x14 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(char *)((int)piVar6",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar6 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)piVar6",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "strupr(param_1 + *param_1 * 0x14 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "strupr(param_1 + *param_1 * 0x14 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar5 = param_3 * param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = param_3 * param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[*param_1 + 0x55] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[*param_1 + 0x55] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1[*param_1 + 0x55] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058177f,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_0058177f",
+      "severity": "mild",
+      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058177f,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_sprintf(local_440,\"Invalid font file size (%s).\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[*param_1 + 0x51] = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[*param_1 + 0x51] = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[*param_1 + 0x51] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[*param_1 + 0x51] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_sprintf(local_440,\"Unable to allocate memory for font bitmap (%s).\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(param_2,param_1[*param_1 + 0x51],iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(param_2,param_1[*param_1 + 0x51],iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(param_2,param_1[*param_1 + 0x51],iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "splitpath(param_2,0,local_110,local_210,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005817f6",
+      "severity": "mild",
+      "text": "makepath(local_314,0,local_110,local_210,&DAT_005817f6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005817fd",
+      "severity": "mild",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005817fd,local_314,&DAT_005817fa);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005817fa",
+      "severity": "mild",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005817fd,local_314,&DAT_005817fa);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(byte *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x164) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x164) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x164) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(byte *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x165) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x165) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x165) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(byte *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x163) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x163) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)param_1 + iVar5 + *param_1 * 0x300 + 0x163) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00490470(param_1,*param_1,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00490470(param_1,*param_1,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_00490470(param_1,*param_1,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_00490470(param_1,*param_1,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "FUN_00490470(param_1,*param_1,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = *param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = *param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_font_cpp_CBitFont_remapPalette_FUN_004931b0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)piVar6",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar6 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)piVar6",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

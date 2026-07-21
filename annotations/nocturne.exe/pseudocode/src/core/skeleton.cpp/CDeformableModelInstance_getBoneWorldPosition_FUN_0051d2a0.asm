@@ -1,0 +1,124 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; float * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(int param_1,float *param_2,int param_3)
+;
+; Local Variables:
+; undefined        Stack[-0x70]:1  local_70
+; undefined        Stack[-0x40]:1  local_40
+;
+; XREF[35]:
+;   FUN_0041fe40 at 0041fffd
+;   FUN_00497870 at 00497891
+;   FUN_00499b00 at 00499b33
+;   FUN_004a9270 at 004a9d97
+;   FUN_004b6d80 at 004b71e1
+;   FUN_004c4970 at 004c4e1b
+;   FUN_004d4f30 at 004d4f60
+;   FUN_004da790 at 004db01e
+;   FUN_0051d650 at 0051d69c
+;   FUN_00535450 at 005356a5
+;   ... and 25 more
+;
+; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
+;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0051d2a0
+        ;   Label: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+    PUSH ESI                            ; 0051d2a1
+    PUSH EDI                            ; 0051d2a2
+    PUSH EBP                            ; 0051d2a3
+    SUB ESP,0x60                        ; 0051d2a4
+    MOV EDI,dword ptr [ESP + 0x74]      ; 0051d2a7
+    MOV EBX,dword ptr [ESP + 0x78]      ; 0051d2ab
+    MOV EDX,dword ptr [ESP + 0x7c]      ; 0051d2af
+    LEA ESI,[EDI + 0x6a4]               ; 0051d2b3
+    TEST EDX,EDX                        ; 0051d2b9
+    JGE 0x0051d2df                      ; 0051d2bb
+        ;   XREF to: 0051d2df (CONDITIONAL_JUMP)  ; LAB_0051d2df
+    MOV EAX,dword ptr [ESI]             ; 0051d2bd
+    LEA EDX,[ESI + 0x4]                 ; 0051d2bf
+    MOV dword ptr [EBX],EAX             ; 0051d2c2
+    LEA EAX,[EBX + 0x4]                 ; 0051d2c4
+    MOV EDX,dword ptr [EDX]             ; 0051d2c7
+    MOV dword ptr [EAX],EDX             ; 0051d2c9
+    LEA EDX,[EAX + 0x4]                 ; 0051d2cb
+    LEA EAX,[ESI + 0x8]                 ; 0051d2ce
+    MOV EAX,dword ptr [EAX]             ; 0051d2d1
+    MOV dword ptr [EDX],EAX             ; 0051d2d3
+    MOV EAX,EBX                         ; 0051d2d5
+    ADD ESP,0x60                        ; 0051d2d7
+    POP EBP                             ; 0051d2da
+    POP EDI                             ; 0051d2db
+    POP ESI                             ; 0051d2dc
+    POP EBX                             ; 0051d2dd
+    RET                                 ; 0051d2de
+    PUSH EDI                            ; 0051d2df
+        ;   Label: LAB_0051d2df
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051d2e0
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+    ADD ESP,0x4                         ; 0051d2e5
+    MOV EDX,dword ptr [ESP + 0x7c]      ; 0051d2e8
+    MOV EBP,EAX                         ; 0051d2ec
+    LEA EAX,[EDX*0x8 + 0x0]             ; 0051d2ee
+    ADD EAX,EDX                         ; 0051d2f5
+    SHL EAX,0x2                         ; 0051d2f7
+    LEA EDX,[EAX + EBP*0x1]             ; 0051d2fa
+    MOV EBP,dword ptr [ESP + 0x7c]      ; 0051d2fd
+    LEA EAX,[EBP*0x4 + 0x0]             ; 0051d301
+    SUB EAX,EBP                         ; 0051d308
+    LEA ECX,[EDI + 0x58]                ; 0051d30a
+    SHL EAX,0x2                         ; 0051d30d
+    MOV EDX,dword ptr [EDX + 0x2857c]   ; 0051d310
+    LEA EBP,[ECX + EAX*0x1]             ; 0051d316
+    TEST EDX,EDX                        ; 0051d319
+    JGE 0x0051d340                      ; 0051d31b
+        ;   XREF to: 0051d340 (CONDITIONAL_JUMP)  ; LAB_0051d340
+    FLD float ptr [EBP]                 ; 0051d31d
+    FADD float ptr [ESI]                ; 0051d320
+    FSTP float ptr [EBX]                ; 0051d322
+    FLD float ptr [EBP + 0x4]           ; 0051d324
+    FADD float ptr [ESI + 0x4]          ; 0051d327
+    FSTP float ptr [EBX + 0x4]          ; 0051d32a
+    FLD float ptr [EBP + 0x8]           ; 0051d32d
+    FADD float ptr [ESI + 0x8]          ; 0051d330
+    FSTP float ptr [EBX + 0x8]          ; 0051d333
+    MOV EAX,EBX                         ; 0051d336
+    ADD ESP,0x60                        ; 0051d338
+    POP EBP                             ; 0051d33b
+    POP EDI                             ; 0051d33c
+    POP ESI                             ; 0051d33d
+    POP EBX                             ; 0051d33e
+    RET                                 ; 0051d33f
+    PUSH EDX                            ; 0051d340
+        ;   Label: LAB_0051d340
+    PUSH EDI                            ; 0051d341
+    LEA ESI,[ESP + 0x38]                ; 0051d342
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 0051d346
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+    ADD ESP,0x8                         ; 0051d34b
+    MOV EAX,ESP                         ; 0051d34e
+    PUSH EAX                            ; 0051d350
+    MOV ECX,0xc                         ; 0051d351
+    PUSH EBP                            ; 0051d356
+    LEA EDI,[ESP + 0x8]                 ; 0051d357
+    LEA ESI,[ESP + 0x38]                ; 0051d35b
+    PUSH EBX                            ; 0051d35f
+    MOVSD.REP ES:EDI,ESI                ; 0051d360
+    CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0051d362
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+    ADD ESP,0xc                         ; 0051d367
+    MOV EAX,EBX                         ; 0051d36a
+    ADD ESP,0x60                        ; 0051d36c
+    POP EBP                             ; 0051d36f
+    POP EDI                             ; 0051d370
+    POP ESI                             ; 0051d371
+    POP EBX                             ; 0051d372
+    RET                                 ; 0051d373
+

@@ -62,7 +62,8 @@ void FUN_004ca410(int param_1)
   iVar3 = param_1 + 0xa9c;
   do {
     iVar4 = iVar2 * 0xb8 + param_1 + 0xa98;
-    FUN_004cae20(param_1,iVar2,iVar4,iVar3,iVar1);
+    core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(param_1,iVar2,iVar4,iVar3,iVar1)
+    ;
     *(uint *)(iVar4 + 0x14) = 0;
     iVar2 = iVar2 + 1;
     *(uint *)(iVar4 + 0x20) = 0;

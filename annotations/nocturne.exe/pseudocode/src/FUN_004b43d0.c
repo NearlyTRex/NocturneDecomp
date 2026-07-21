@@ -12,7 +12,7 @@ uint FUN_004b43d0(uint param_1,uint param_2)
   int iVar1;
   uint uVar2;
   
-  iVar1 = FUN_0040d7e0(param_2,"CHero");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CHero");
   uVar2 = 0;
   if (iVar1 != 0) {
     uVar2 = 2;

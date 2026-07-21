@@ -19,28 +19,29 @@ void FUN_004d8720(int param_1,uint param_2)
   int iVar6;
   
   if (*(int *)(param_1 + 0x850) == 0) {
-    FUN_0046fff0(0x01BCD074,"Preparing actors...");
-    FUN_004d8db0(param_1);
+    shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
+              (0x01BCD074,"Preparing actors...");
+    core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(param_1);
   }
   *(uint *)(param_1 + 8) = 7;
-  FUN_005644f0(param_2,"// mission version, actor version\n");
-  FUN_005644f0(param_2,"%d,%d\n",*(uint *)(param_1 + 8),4);
-  FUN_005644f0(param_2,"// Root name of mission\n");
-  FUN_005644f0(param_2,&DAT_00589aa4,param_1 + 0x10);
-  FUN_005644f0(param_2,"// setList\n");
+  _fprintf(param_2,"// mission version, actor version\n");
+  _fprintf(param_2,"%d,%d\n",*(uint *)(param_1 + 8),4);
+  _fprintf(param_2,"// Root name of mission\n");
+  _fprintf(param_2,&DAT_00589aa4,param_1 + 0x10);
+  _fprintf(param_2,"// setList\n");
   iVar4 = 0;
-  FUN_005644f0(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));
+  _fprintf(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));
   if (0 < *(int *)(param_1 + 0x110)) {
     iVar5 = param_1 + 0x114;
     do {
       iVar4 = iVar4 + 1;
-      FUN_005644f0(param_2,&DAT_00589ab8,iVar5);
+      _fprintf(param_2,&DAT_00589ab8,iVar5);
       iVar5 = iVar5 + 0x100;
     } while (iVar4 < *(int *)(param_1 + 0x110));
   }
-  FUN_005644f0(param_2,"// actorTypeList\n");
-  FUN_005644f0(param_2,&DAT_00589ace,DAT_00763e94);
-  FUN_0040d8c0();
+  _fprintf(param_2,"// actorTypeList\n");
+  _fprintf(param_2,&DAT_00589ace,DAT_00763e94);
+  core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0();
   iVar4 = 0;
   if (0 < DAT_00763e94) {
     iVar5 = 0;
@@ -48,27 +49,27 @@ void FUN_004d8720(int param_1,uint param_2)
       piVar1 = (int *)((int)&DAT_00763e98 + iVar5);
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;
-      FUN_005644f0(param_2,"%s %d\n",*piVar1,*(uint *)(*piVar1 + 0x34));
+      _fprintf(param_2,"%s %d\n",*piVar1,*(uint *)(*piVar1 + 0x34));
     } while (iVar4 < DAT_00763e94);
   }
-  FUN_005644f0(param_2,"// actor count\n");
-  uVar2 = FUN_004d8d80(param_1);
-  FUN_005644f0(param_2,&DAT_00589ae9,uVar2);
+  _fprintf(param_2,"// actor count\n");
+  uVar2 = core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(param_1);
+  _fprintf(param_2,&DAT_00589ae9,uVar2);
   iVar5 = 0;
-  FUN_005644f0(param_2,"// inventory actor count\n");
+  _fprintf(param_2,"// inventory actor count\n");
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    iVar3 = FUN_0040d890(iVar4,_DAT_01cae124);
+    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,_DAT_01cae124);
     if (iVar3 != 0) {
       iVar5 = iVar5 + *(int *)(iVar3 + 0x1f5a8);
     }
   }
-  FUN_005644f0(param_2,&DAT_00589b07,iVar5);
-  FUN_005644f0(param_2,"// actor name list\n");
+  _fprintf(param_2,&DAT_00589b07,iVar5);
+  _fprintf(param_2,"// actor name list\n");
   iVar4 = *(int *)(param_1 + 0x514);
   *(uint *)(param_1 + 0x858) = 0;
   for (; iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    uVar2 = FUN_00409fa0(iVar4,iVar4);
-    FUN_005644f0(param_2,"%s \"%s\"\n",uVar2);
+    uVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4,iVar4);
+    _fprintf(param_2,"%s \"%s\"\n",uVar2);
     if (1999 < *(int *)(param_1 + 0x858)) {
       _DAT_01cc4800 = "..\\core\\mission.cpp";
       _DAT_01cc4804 = 0x1e9;
@@ -78,7 +79,7 @@ void FUN_004d8720(int param_1,uint param_2)
     *(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;
   }
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    iVar5 = FUN_0040d890(iVar4,_DAT_01cae124);
+    iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,_DAT_01cae124);
     if (iVar5 != 0) {
       iVar3 = iVar5 + 0x1f5a0;
       for (iVar6 = 0; iVar6 < *(int *)(iVar5 + 0x1f5a8); iVar6 = iVar6 + 1) {
@@ -92,14 +93,14 @@ void FUN_004d8720(int param_1,uint param_2)
         iVar3 = iVar3 + 4;
         *(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;
       }
-      FUN_004c1140(iVar5 + 0x1f5a0,param_2);
+      core_inv_cpp_CInventory_saveItems_FUN_004c1140(iVar5 + 0x1f5a0,param_2);
     }
   }
-  FUN_005644f0(param_2,"// actor data list\n");
+  _fprintf(param_2,"// actor data list\n");
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    FUN_0040c040(iVar4,param_2);
+    core_actor_cpp_CDemonActor_save_FUN_0040c040(iVar4,param_2);
   }
-  FUN_004b08d0(0x01C78C7C,param_2);
+  core_gore_cpp_CGore_save_FUN_004b08d0(0x01C78C7C,param_2);
   *(uint *)(param_1 + 0x858) = 0;
   return;
 }

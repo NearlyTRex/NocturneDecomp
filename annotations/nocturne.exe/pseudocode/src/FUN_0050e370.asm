@@ -18,7 +18,7 @@
 ;   undefined4 DAT_005c503c
 ;
 ; Called Functions:
-;   FUN_0050b7f0
+;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     LEA EBX,[ESP + 0x10]                ; 0050e3b8
     PUSH EBX                            ; 0050e3bc
     PUSH ESI                            ; 0050e3bd
-    CALL FUN_0050b7f0                   ; 0050e3be
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050b7f0()
+    CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050e3be
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
     MOV EBX,dword ptr [0x005c5034]      ; 0050e3c3 | DAT_005c5034
     MOV dword ptr [ESI + 0x161270],0x1  ; 0050e3c9
     MOV EAX,[0x005c503c]                ; 0050e3d3 | DAT_005c503c

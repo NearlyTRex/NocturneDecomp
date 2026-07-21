@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
+;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   FUN_00402980
-;   FUN_00563a08
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH EDX                            ; 00402a16
     LEA EAX,[ESP + 0x8]                 ; 00402a17
     PUSH EAX                            ; 00402a1b
-    CALL FUN_00563a08                   ; 00402a1c
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00402a1c
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
     ADD ESP,0xc                         ; 00402a21
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00402a24
     PUSH EBX                            ; 00402a2b

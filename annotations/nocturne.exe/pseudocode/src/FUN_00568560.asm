@@ -19,8 +19,8 @@
 ;   undefined4 DAT_02de4e24
 ;
 ; Called Functions:
-;   FUN_005635b0
-;   FUN_00563cc0
+;   crt_memory.c_malloc_FUN_005635b0
+;   crt_memory.c_memset_FUN_00563cc0
 ;   FUN_005671e4
 ;   FUN_00568e80
 ;
@@ -55,8 +55,8 @@ section .text
     JNZ 0x005685b6                      ; 0056859d
         ;   XREF to: 005685b6 (CONDITIONAL_JUMP)  ; LAB_005685b6
     PUSH 0x1d                           ; 0056859f
-    CALL FUN_005635b0                   ; 005685a1
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 005685a1
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 005685a6
     MOV ESI,EAX                         ; 005685a9
     TEST EAX,EAX                        ; 005685ab
@@ -73,8 +73,8 @@ section .text
     PUSH 0x37                           ; 005685c1
         ;   Label: LAB_005685c1
     MOV EDI,0x4003                      ; 005685c3
-    CALL FUN_005635b0                   ; 005685c8
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 005685c8
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 005685cd
     MOV ESI,EAX                         ; 005685d0
     TEST EAX,EAX                        ; 005685d2
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_005685d9
     PUSH 0x0                            ; 005685db
     PUSH EBX                            ; 005685dd | DAT_005c18ae
-    CALL FUN_00563cc0                   ; 005685de
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 005685de
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     MOV dword ptr [EBX + 0xc],EDI       ; 005685e3
     MOV EAX,[0x02de4e20]                ; 005685e6 | DAT_02de4e20
     MOV dword ptr [ESI + 0x4],EBX       ; 005685eb

@@ -1,12 +1,12 @@
 // Name: FUN_0056c864
 // Address: 0056c864
 // Address Range: [[0056c864, 0056cb5f]]
-// Convention: unknown
-// Signature: undefined4 FUN_0056c864(LPCSTR param_1,int *param_2)
+// Convention: __cdecl
+// Signature: undefined4 __cdecl FUN_0056c864(LPCSTR param_1,int *param_2)
 
 #include "nocturne.h"
 
-uint FUN_0056c864(LPCSTR param_1,int *param_2)
+uint __cdecl FUN_0056c864(LPCSTR param_1,int *param_2)
 
 {
   bool bVar1;
@@ -34,7 +34,7 @@ uint FUN_0056c864(LPCSTR param_1,int *param_2)
   }
   else {
     FUN_0056c5f0(local_124,0x104);
-    iVar3 = FUN_00565d00(&local_228,param_1,0x104);
+    iVar3 = _fullpath(&local_228,param_1,0x104);
     if ((iVar3 != 0) &&
        ((((((&DAT_005c168c)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
          (local_226 == '\\')) && (local_225 == '\0')))) {
@@ -51,13 +51,13 @@ uint FUN_0056c864(LPCSTR param_1,int *param_2)
         return 0xffffffff;
       }
       FUN_00566570(local_124);
-      FUN_00563cc0(&local_368,0,0x13e);
+      memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }
     else {
       hFindFile = FindFirstFileA(param_1,&local_368);
       if (hFindFile == (HANDLE)0xffffffff) {
-        uVar4 = FUN_0056c73c();
+        uVar4 = __set_errno();
         return uVar4;
       }
       FindClose(hFindFile);
@@ -66,7 +66,7 @@ uint FUN_0056c864(LPCSTR param_1,int *param_2)
     if (*pcVar6 == ':') {
       local_124[0] = *param_1;
     }
-    iVar3 = FUN_00564860(local_124[0]);
+    iVar3 = tolower(local_124[0]);
     *param_2 = iVar3 + -0x61;
     iVar3 = *param_2;
     *param_2 = iVar3 + -1;
@@ -102,7 +102,7 @@ uint FUN_0056c864(LPCSTR param_1,int *param_2)
     *(uint *)((int)param_2 + 0x32) = 0;
     *(ushort *)((int)param_2 + 0x36) = 0;
     *(byte *)(param_2 + 0xe) = 0;
-    FUN_00565f70((int)param_2 + 0x39,local_368.cFileName,0xd);
+    _strncpy((int)param_2 + 0x39,local_368.cFileName,0xd);
     uVar4 = 0;
   }
   return uVar4;

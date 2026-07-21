@@ -20,7 +20,7 @@ void FUN_004676c0(int param_1,int param_2)
   
   FUN_004673a0(param_1);
   _DAT_01bc994c = 0;
-  FUN_005636d0(&local_14,4,1,param_2);
+  _fread(&local_14,4,1,param_2);
   if (local_14 < 1) {
     _DAT_01cc4800 = "..\\core\\dtrace.cpp";
     _DAT_01cc4804 = 0x148;
@@ -31,12 +31,12 @@ void FUN_004676c0(int param_1,int param_2)
     _DAT_01cc4804 = 0x14b;
     FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
-  FUN_005636d0(param_1 + 0x40,4,1,param_2);
-  FUN_005636d0(param_1 + 0x44,4,1,param_2);
-  FUN_005636d0(param_1 + 0x48,4,1,param_2);
-  FUN_005636d0(param_1 + 0x10,0xc,1,param_2);
-  FUN_005636d0(param_1 + 0x1c,0xc,1,param_2);
-  FUN_005636d0((float *)(param_1 + 0x28),0xc,1,param_2);
+  _fread(param_1 + 0x40,4,1,param_2);
+  _fread(param_1 + 0x44,4,1,param_2);
+  _fread(param_1 + 0x48,4,1,param_2);
+  _fread(param_1 + 0x10,0xc,1,param_2);
+  _fread(param_1 + 0x1c,0xc,1,param_2);
+  _fread((float *)(param_1 + 0x28),0xc,1,param_2);
   local_20 = *(float *)(param_1 + 0x28) / _DAT_0057e1ca;
   local_1c = *(float *)(param_1 + 0x2c) * _DAT_0057e1ce;
   local_18 = _DAT_0057e1ce * *(float *)(param_1 + 0x30);
@@ -51,12 +51,12 @@ void FUN_004676c0(int param_1,int param_2)
     FUN_004c8440("Release build doesn't support old geometry");
   }
   else {
-    FUN_00467330(param_1);
+    core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(param_1);
     iVar2 = 0;
     for (iVar1 = 0;
         iVar1 < *(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48);
         iVar1 = iVar1 + 1) {
-      FUN_0044aed0(*(int *)(param_1 + 0x50) + iVar2,param_2);
+      core_dcube_cpp_CDemonCube_load_FUN_0044aed0(*(int *)(param_1 + 0x50) + iVar2,param_2);
       iVar2 = iVar2 + 0x34;
     }
   }

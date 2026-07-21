@@ -10,8 +10,8 @@ void FUN_0040b0d0(int param_1,uint param_2)
 
 {
   FUN_0040e120(param_2,param_1);
-  FUN_0040e100(param_2,param_1 + 0x20);
-  FUN_0040e100(param_2,param_1 + 0x30);
-  FUN_0040e0e0(param_2,*(uint *)(param_1 + 0x70));
+  core_actor_cpp_crc32ProcessVector_FUN_0040e100(param_2,param_1 + 0x20);
+  core_actor_cpp_crc32ProcessVector_FUN_0040e100(param_2,param_1 + 0x30);
+  core_actor_cpp_crc32ProcessInt_FUN_0040e0e0(param_2,*(uint *)(param_1 + 0x70));
   return;
 }

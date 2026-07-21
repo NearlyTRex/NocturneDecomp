@@ -34,7 +34,7 @@ void FUN_004cc440(uint param_1,float *param_2)
   local_1c = (int)ROUND(*param_2 * _DAT_005a02b0);
   local_18 = (int)ROUND(param_2[1] * _DAT_005a02b0);
   local_14 = (int)ROUND(param_2[2] * _DAT_005a02b0);
-  FUN_00530a25(*DAT_005ae704,&local_1c);
+  wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704,&local_1c);
   piVar1 = DAT_005ae704;
   puVar3 = (uint *)*DAT_005ae704;
   puVar4 = (uint *)*DAT_005ae704 + 0xc;
@@ -86,6 +86,6 @@ void FUN_004cc440(uint param_1,float *param_2)
   local_20 = 3;
   local_28 = 1;
   local_24 = 2;
-  FUN_0045f3c0(piVar1,local_44,99);
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(piVar1,local_44,99);
   return;
 }

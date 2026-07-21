@@ -21,12 +21,12 @@
 ;   undefined4 DAT_01cae124
 ;
 ; Called Functions:
-;   FUN_0040d890
-;   FUN_0040de00
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_actor.cpp_getRandomInt_FUN_0040de00
+;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
+;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   FUN_004219f0
-;   FUN_0043ac60
-;   FUN_0051da50
-;   FUN_0051e020
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     MOV dword ptr [EAX + 0x12964],0x0   ; 004237a6
     PUSH EBX                            ; 004237b0
     MOV dword ptr [EAX + 0x12960],0x0   ; 004237b1
-    CALL FUN_0040d890                   ; 004237bb
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004237bb
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 004237c0
     TEST EAX,EAX                        ; 004237c3
     JZ 0x004237d6                       ; 004237c5
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_004237d6
     PUSH ECX                            ; 004237dc
     PUSH EBX                            ; 004237dd
-    CALL FUN_0040d890                   ; 004237de
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004237de
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 004237e3
     TEST EAX,EAX                        ; 004237e6
     JZ 0x00423804                       ; 004237e8
@@ -88,8 +88,8 @@ section .text
         ;   Label: LAB_00423840
     MOV EDI,dword ptr [EAX + 0x12964]   ; 00423844
     PUSH EDI                            ; 0042384a
-    CALL FUN_0051e020                   ; 0042384b
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e020()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0042384b
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
     ADD ESP,0x4                         ; 00423850
     MOV EDX,EAX                         ; 00423853
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00423855
@@ -105,13 +105,13 @@ section .text
     PUSH 0x579d8d                       ; 00423876 | s_%s_swarming_on_%s_at_LOD_%d_00579d8c+1
     MOV EAX,[0x005ad350]                ; 0042387b | PTR_DAT_005ad350
     PUSH EAX                            ; 00423880 | DAT_0077ad0c
-    CALL FUN_0043ac60                   ; 00423881
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043ac60()
+    CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00423881
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x14                        ; 00423886
     MOV EDX,dword ptr [EBP + 0x12964]   ; 00423889
     PUSH EDX                            ; 0042388f
-    CALL FUN_0051e020                   ; 00423890
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e020()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 00423890
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
     MOV EDX,dword ptr [EBP + 0x12998]   ; 00423895
     ADD ESP,0x4                         ; 0042389b
     MOV ECX,dword ptr [EAX + EDX*0x4 + 0x7c] ; 0042389e
@@ -128,8 +128,8 @@ section .text
     MOV EBP,dword ptr [EBP + 0x12964]   ; 004238ba
     PUSH EBP                            ; 004238c0
     MOV EBX,ESI                         ; 004238c1
-    CALL FUN_0051da50                   ; 004238c3
-        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0051da50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 ; 004238c3
+        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50()
     ADD ESP,0x8                         ; 004238c8
     MOV EDX,ESI                         ; 004238cb
     MOV EBX,dword ptr [EBX + 0x12964]   ; 004238cd
@@ -219,8 +219,8 @@ section .text
     IDIV ECX                            ; 004239c6
     PUSH EAX                            ; 004239c8
     PUSH 0x0                            ; 004239c9
-    CALL FUN_0040de00                   ; 004239cb
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040de00()
+    CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004239cb
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
     ADD ESP,0x8                         ; 004239d0
     MOV dword ptr [EDI + 0xbd68],EAX    ; 004239d3
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004239d9
@@ -251,8 +251,8 @@ section .text
     INC EAX                             ; 00423a0c
     PUSH ESI                            ; 00423a0d
     MOV dword ptr [EDX + 0x12998],EAX   ; 00423a0e
-    CALL FUN_0051e020                   ; 00423a14
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e020()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 00423a14
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
     ADD ESP,0x4                         ; 00423a19
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00423a1c
     MOV EAX,dword ptr [EAX]             ; 00423a20

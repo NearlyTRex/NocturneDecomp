@@ -1,0 +1,228 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 95,
+    "cross_reference_count": 14,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_type",
+      "unnamed_param"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "004c4970",
+      "from_addr": "004c4c7f",
+      "name": "FUN_004c4970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aba0",
+      "from_addr": "0050ac33",
+      "name": "FUN_0050aba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005384d0",
+      "from_addr": "0053920f",
+      "name": "FUN_005384d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004785a0",
+      "from_addr": "00478664",
+      "name": "core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482c80",
+      "from_addr": "00482d3a",
+      "name": "core_fire.cpp_CBulletHole_init_FUN_00482c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aea00",
+      "from_addr": "004aea3f",
+      "name": "core_gore.cpp_CBloodSplat_initWallSplat_FUN_004aea00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b0200",
+      "from_addr": "004b02e0",
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f080",
+      "from_addr": "0051f1a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b460",
+      "from_addr": "0054b7aa",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_0054b460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c690",
+      "from_addr": "0054ca21",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_0054c690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e4a0",
+      "from_addr": "0054e510",
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055d2d0",
+      "from_addr": "0055d45e",
+      "name": "core_xform.cpp_slerpQuaternion_FUN_0055d2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ca4",
+      "from_addr": "00565cd1",
+      "name": "crt_math.c_acos_FUN_00565ca4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565c76",
+      "from_addr": "00565c8b",
+      "name": "crt_math.c_asin_FUN_00565c76",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566c81",
+    "address_range": [
+      [
+        "00566c81",
+        "00566c95"
+      ]
+    ],
+    "convention": "__fpureg",
+    "name": "crt_math.c_atan2_FUN_00566c81",
+    "signature": "void __fpureg crt_math_c_atan2_FUN_00566c81(unkbyte10 param_1,unkbyte10 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056dc98",
+      "is_variadic": false,
+      "name": "FUN_0056dc98"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1d98",
+      "name": "DAT_005c1d98",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 0,
+    "estimated_params": 0,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.428571428571429,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLOTHER": 1,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 1,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 31
+  },
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 2,
+      "match": "unkbyte10",
+      "severity": "mild",
+      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 2,
+      "match": "unkbyte10",
+      "severity": "mild",
+      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_005c1d98",
+      "severity": "mild",
+      "text": "if ((DAT_005c1d98 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fpatan(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fpatan(param_1,param_2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

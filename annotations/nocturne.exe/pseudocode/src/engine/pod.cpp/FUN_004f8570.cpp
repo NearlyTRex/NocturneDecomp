@@ -23,15 +23,15 @@ void FUN_004f8570(int param_1,int param_2)
     _DAT_01cc4804 = 0x1f1;
     FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
-  iVar1 = FUN_0056568c(param_1 + 4,0x58dac5);
+  iVar1 = _fopen(param_1 + 4,0x58dac5);
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\pod.cpp";
     _DAT_01cc4804 = 0x1f6;
     FUN_004c8440("CPodFile::getAuditRecord - can't open %s",param_1 + 4);
   }
-  FUN_0056582c(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
-  FUN_005636d0(auStack_144,0x138,1,iVar1);
-  FUN_00563380(iVar1);
+  _fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
+  _fread(auStack_144,0x138,1,iVar1);
+  _fclose(iVar1);
   puVar2 = auStack_144;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

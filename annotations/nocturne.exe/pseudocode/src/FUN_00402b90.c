@@ -9,6 +9,6 @@
 void FUN_00402b90(uint param_1,uint param_2,uint param_3)
 
 {
-  FUN_00402b60(param_3,param_1,param_2);
+  engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(param_3,param_1,param_2);
   return;
 }

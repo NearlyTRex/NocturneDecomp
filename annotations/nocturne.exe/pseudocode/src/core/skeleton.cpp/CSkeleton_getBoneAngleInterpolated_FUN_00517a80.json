@@ -1,0 +1,679 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 395,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 33,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_param"
+    ],
+    "total_lines": 121
+  },
+  "cross_references": [
+    {
+      "addr": "0051c3d0",
+      "from_addr": "0051c4d0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e350",
+      "from_addr": "0051e3bc",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051b920",
+      "from_addr": "0051ba40",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00517a80",
+    "address_range": [
+      [
+        "00517a80",
+        "00517b0f"
+      ]
+    ],
+    "convention": "__stack5_esi",
+    "is_ebp_frame": true,
+    "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80",
+    "signature": "undefined4 * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5 ,undefined4 *param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "00517a60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60"
+    },
+    {
+      "addr": "0055d2d0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_slerpQuaternion_FUN_0055d2d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0051ba40",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051bc71",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051bd09",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051bf6c",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051c039",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051c39f",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051c4d0",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051c83f",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051c9ae",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051e3bc",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.75,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 124,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 35,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 16,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 37,
+      "INT_ZEXT": 24,
+      "LOAD": 21,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 391
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00517a88",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "uint * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(uint param_1,uint param_2,uint param_3,uint param_4,float param_5 ,uint *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "auStackY_180c",
+      "severity": "moderate",
+      "text": "uint auStackY_180c [1520];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar2 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((param_5 <= 0.0) || (uVar2 = param_4, 1.0 <= param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((param_5 <= 0.0) || (uVar2 = param_4, 1.0 <= param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((param_5 <= 0.0) || (uVar2 = param_4, 1.0 <= param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60(param_1,param_2,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60(param_1,param_2,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_3,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_3,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_1,param_2,param_3,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)&stack0xffffffe0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8) = *puVar3;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "puVar1 = param_6 + (uint)bVar4 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "return param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 10,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

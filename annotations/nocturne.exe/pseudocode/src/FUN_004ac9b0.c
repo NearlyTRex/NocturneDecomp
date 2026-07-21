@@ -27,16 +27,16 @@ void FUN_004ac9b0(int param_1,int param_2)
   }
   else if ((param_2 != 0) || (*(int *)(param_1 + 0xb34) != 0)) {
     *(uint *)(param_1 + 0xb34) = 0;
-    FUN_00409f20(param_1);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
     uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);
-    FUN_0041ceb0(uVar1);
+    core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar1);
     if (*(int *)(param_1 + 0x178) == 0) {
       iVar5 = param_1 + 0x15c;
     }
     else {
       iVar5 = param_1 + 0x36c;
     }
-    FUN_00461eb0(DAT_005ae704,iVar5);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,iVar5);
     pfVar2 = (float *)(param_1 + 900);
     iVar5 = 0;
     piVar3 = (int *)(param_1 + 0x4b0);
@@ -51,7 +51,8 @@ void FUN_004ac9b0(int param_1,int param_2)
       } while (iVar5 < *(int *)(param_1 + 0xb2c));
     }
     iVar5 = 0;
-    FUN_0050c200(0x01E57284,*(uint *)(param_1 + 0xb2c),(int *)(param_1 + 0x4b0));
+    core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
+              (0x01E57284,*(uint *)(param_1 + 0xb2c),(int *)(param_1 + 0x4b0));
     if (0 < *(int *)(param_1 + 0xb30)) {
       iVar6 = param_1 + 0x6a4;
       iVar4 = param_1;
@@ -63,11 +64,11 @@ void FUN_004ac9b0(int param_1,int param_2)
         *(uint *)(iVar4 + 0x6b4) = 0;
         *(uint *)(iVar4 + 0x6b8) = 0;
         iVar4 = iVar4 + 0x48;
-        FUN_0045f460(uVar1,iVar6,0xc1);
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(uVar1,iVar6,0xc1);
         iVar6 = iVar6 + 0x48;
       } while (iVar5 < *(int *)(param_1 + 0xb30));
     }
-    FUN_00409f60(param_1);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
   }
   return;
 }

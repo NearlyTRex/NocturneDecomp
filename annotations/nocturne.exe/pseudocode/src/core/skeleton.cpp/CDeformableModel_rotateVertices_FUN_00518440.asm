@@ -1,0 +1,40 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00518440(int param_1,int param_2,undefined4 param_3)
+;
+;
+; XREF[1]:
+;   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0 at 0051dafa
+;
+; Referenced Globals:
+;   undefined4 DAT_005be368
+;   undefined4 DAT_01e57284
+;
+; Called Functions:
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00518440
+        ;   Label: core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00518440
+    PUSH ESI                            ; 00518441
+    MOV EAX,dword ptr [ESP + 0x10]      ; 00518442
+    MOV ECX,dword ptr [ESP + 0xc]       ; 00518446
+    SHL EAX,0x2                         ; 0051844a
+    MOV EDX,dword ptr [ESP + 0x14]      ; 0051844d
+    ADD EAX,ECX                         ; 00518451
+    PUSH EDX                            ; 00518453
+    MOV EBX,dword ptr [EAX + 0x2c]      ; 00518454
+    PUSH EBX                            ; 00518457
+    MOV ESI,dword ptr [0x005be368]      ; 00518458 | DAT_005be368
+    PUSH ESI                            ; 0051845e | DAT_01e57284
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0051845f
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+    ADD ESP,0xc                         ; 00518464
+    POP ESI                             ; 00518467
+    POP EBX                             ; 00518468
+    RET                                 ; 00518469
+

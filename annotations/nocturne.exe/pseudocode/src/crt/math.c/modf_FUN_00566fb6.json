@@ -1,0 +1,227 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 122,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 10,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "005648c0",
+      "from_addr": "005648d3",
+      "name": "crt_math.c_floor_FUN_005648c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e4070",
+      "from_addr": "004e429e",
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566fb6",
+    "address_range": [
+      [
+        "00566fb6",
+        "00566fd5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_math.c_modf_FUN_00566fb6",
+    "signature": "double crt_math_c_modf_FUN_00566fb6(undefined4 param_1,double *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004e429e",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e4308",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005648d3",
+        "call_type": "direct",
+        "caller": "crt_math.c_floor_FUN_005648c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.133333333333334,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 44,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 77
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "double modf(uint param_1,double *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "double modf(uint param_1,double *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 7,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (double)fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 9,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

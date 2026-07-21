@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a04f0
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004cf1c6 (CONDITIONAL_JUMP)  ; LAB_004cf1c6
     PUSH 0x1                            ; 004cf1ac
     PUSH EBX                            ; 004cf1ae
-    CALL FUN_00553ea0                   ; 004cf1af
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 004cf1af
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 004cf1b4
     MOV DL,byte ptr [ESP + 0xc]         ; 004cf1b7
     MOV EBX,EAX                         ; 004cf1bb
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a04f0                       ; 004cf1c6 | DAT_005a04f0
         ;   Label: LAB_004cf1c6
     PUSH EBX                            ; 004cf1cb
-    CALL FUN_0056445f                   ; 004cf1cc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004cf1cc
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004cf1d1
     PUSH EAX                            ; 004cf1d4
-    CALL FUN_00564486                   ; 004cf1d5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004cf1d5
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004cf1da
     MOV EAX,EBX                         ; 004cf1dd
     POP EBX                             ; 004cf1df

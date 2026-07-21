@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 148,
+    "complexity_score": 150,
     "cross_reference_count": 8,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 40,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
@@ -135,21 +135,9 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 182
   },
   "cross_references": [
-    {
-      "addr": "0049a240",
-      "from_addr": "0049a305",
-      "name": "FUN_0049a240",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a0550",
-      "from_addr": "004a0f80",
-      "name": "FUN_004a0550",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004a4170",
       "from_addr": "004a4611",
@@ -163,27 +151,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a0550",
+      "from_addr": "004a0f80",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004a0550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a240",
+      "from_addr": "0049a305",
+      "name": "core_game.cpp_setupMovieRecording_FUN_0049a240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d9c20",
       "from_addr": "004d9d77",
-      "name": "FUN_004d9c20",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e9e90",
       "from_addr": "004e9ffc",
-      "name": "FUN_004e9e90",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb520",
       "from_addr": "004eb859",
-      "name": "FUN_004eb520",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_004eb520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ff2c0",
       "from_addr": "00501242",
-      "name": "FUN_004ff2c0",
+      "name": "core_script.cpp_CScript_step_FUN_004ff2c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -201,19 +201,44 @@
   },
   "function_calls": [
     {
+      "addr": "00563a08",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_00563a08"
+    },
+    {
       "addr": "00403f50",
       "is_variadic": false,
-      "name": "FUN_00403f50"
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403f50"
     },
     {
       "addr": "00408370",
       "is_variadic": false,
-      "name": "FUN_00408370"
+      "name": "engine_3d.c_setRenderAlpha_FUN_00408370"
     },
     {
-      "addr": "00471a80",
+      "addr": "00490980",
       "is_variadic": false,
-      "name": "FUN_00471a80"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_00490980"
+    },
+    {
+      "addr": "004930e0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0"
+    },
+    {
+      "addr": "00492e60",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60"
+    },
+    {
+      "addr": "00492da0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0"
+    },
+    {
+      "addr": "004c41c0",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0"
     },
     {
       "addr": "004720c0",
@@ -226,44 +251,19 @@
       "name": "FUN_004722b0"
     },
     {
-      "addr": "00490980",
-      "is_variadic": false,
-      "name": "FUN_00490980"
-    },
-    {
-      "addr": "00492da0",
-      "is_variadic": false,
-      "name": "FUN_00492da0"
-    },
-    {
-      "addr": "00492e60",
-      "is_variadic": false,
-      "name": "FUN_00492e60"
-    },
-    {
-      "addr": "004930e0",
-      "is_variadic": false,
-      "name": "FUN_004930e0"
-    },
-    {
-      "addr": "004c41c0",
-      "is_variadic": false,
-      "name": "FUN_004c41c0"
-    },
-    {
       "addr": "004c8440",
       "is_variadic": false,
       "name": "FUN_004c8440"
     },
     {
-      "addr": "00553910",
+      "addr": "00471a80",
       "is_variadic": false,
-      "name": "FUN_00553910"
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80"
     },
     {
-      "addr": "00563a08",
+      "addr": "00553910",
       "is_variadic": false,
-      "name": "FUN_00563a08"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
     }
   ],
   "globals": [
@@ -406,7 +406,7 @@
       {
         "call_addr": "004a0f80",
         "call_type": "direct",
-        "caller": "FUN_004a0550",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004a0550",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -419,7 +419,7 @@
       {
         "call_addr": "004d9d77",
         "call_type": "direct",
-        "caller": "FUN_004d9c20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -430,7 +430,7 @@
       {
         "call_addr": "004d9dcb",
         "call_type": "direct",
-        "caller": "FUN_004d9c20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -443,7 +443,7 @@
       {
         "call_addr": "004e9ffc",
         "call_type": "direct",
-        "caller": "FUN_004e9e90",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -459,7 +459,7 @@
       {
         "call_addr": "004ea21f",
         "call_type": "direct",
-        "caller": "FUN_004e9e90",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -474,7 +474,7 @@
       {
         "call_addr": "00501242",
         "call_type": "direct",
-        "caller": "FUN_004ff2c0",
+        "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -489,7 +489,7 @@
       {
         "call_addr": "0049a305",
         "call_type": "direct",
-        "caller": "FUN_0049a240",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_0049a240",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -597,15 +597,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00563a08(0x1bca8d0,param_2,&local_18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00471a80(param_1,_DAT_01bcd9b8 * 4 + iVar1,_DAT_01bcd9bc * 2 + iVar3,local_14,0);",
+      "text": "_vsprintf(0x1bca8d0,param_2,&local_18);",
       "type": "unnamed_param"
     },
     {
@@ -613,12 +605,20 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
+      "text": "(param_1,_DAT_01bcd9b8 * 4 + iVar1,_DAT_01bcd9bc * 2 + iVar3,local_14,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
       "text": "FUN_004722b0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004720c0(param_1);",

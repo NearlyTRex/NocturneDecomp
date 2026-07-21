@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
-;   FUN_00454530
-;   FUN_00510710
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004ca24a
     LEA EAX,[ESI + 0x150]               ; 004ca24e
     PUSH EAX                            ; 004ca254
-    CALL FUN_00454530                   ; 004ca255
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined FUN_00454530()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004ca255
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     LEA EBX,[EAX + 0x338]               ; 004ca25a
     ADD ESP,0x4                         ; 004ca260
     MOV EAX,dword ptr [EBX]             ; 004ca263
@@ -79,8 +79,8 @@ section .text
     PUSH EDI                            ; 004ca2c4
     MOV ECX,dword ptr [0x005be368]      ; 004ca2c5 | DAT_005be368
     PUSH ECX                            ; 004ca2cb | DAT_01e57284
-    CALL FUN_00510710                   ; 004ca2cc
-        ;   XREF to: 00510710 (UNCONDITIONAL_CALL)  ; undefined FUN_00510710()
+    CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710 ; 004ca2cc
+        ;   XREF to: 00510710 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710()
     ADD ESP,0x14                        ; 004ca2d1
     ADD EBX,0x64                        ; 004ca2d4
     CMP EBX,ESI                         ; 004ca2d7

@@ -46,9 +46,9 @@ void FUN_0050aa70(void)
     } while (iVar4 < _DAT_01fba2d8);
   }
   iVar5 = _DAT_01fb9b54 + _DAT_01fba2d8;
-  FUN_00563c90(local_110,"%d omni lights",_DAT_01fba9a4);
-  FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);
-  FUN_00563c90(local_110,"%d spot lights",_DAT_01fb9b54);
-  FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5] + 0xb);
+  _sprintf(local_110,"%d omni lights",_DAT_01fba9a4);
+  engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);
+  _sprintf(local_110,"%d spot lights",_DAT_01fb9b54);
+  engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5] + 0xb);
   return;
 }

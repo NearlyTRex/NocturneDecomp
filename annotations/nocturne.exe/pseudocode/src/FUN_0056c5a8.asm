@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_00565c76 at 00565c80
-;   FUN_00565ca4 at 00565cc6
+;   crt_math.c_acos_FUN_00565ca4 at 00565cc6
+;   crt_math.c_asin_FUN_00565c76 at 00565c80
 ;
 ; Called Functions:
 ;   FUN_005707db

@@ -8,7 +8,7 @@
 ;   FUN_0056808c at 0056822b
 ;
 ; Called Functions:
-;   FUN_00564860
+;   crt_ctype.c_tolower_FUN_00564860
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 00568509
     PUSH EAX                            ; 0056850a
         ;   Label: LAB_0056850a
-    CALL FUN_00564860                   ; 0056850b
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined FUN_00564860()
+    CALL crt_ctype.c_tolower_FUN_00564860 ; 0056850b
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
     ADD ESP,0x4                         ; 00568510
     CMP EAX,0x61                        ; 00568513
     JL 0x00568521                       ; 00568516

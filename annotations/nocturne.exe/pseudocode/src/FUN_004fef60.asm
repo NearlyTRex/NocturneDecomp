@@ -13,9 +13,9 @@
 ;   undefined4 DAT_01e56418
 ;
 ; Called Functions:
+;   core_script.cpp_CScript_step_FUN_004ff2c0
 ;   FUN_00476160
 ;   FUN_004feff0
-;   FUN_004ff2c0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EBX                            ; 004fef9d
     MOV ESI,dword ptr [EBX + 0x40]      ; 004fef9e
     MOV dword ptr [ESP + 0x8],EBP       ; 004fefa1
-    CALL FUN_004ff2c0                   ; 004fefa5
-        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ff2c0()
+    CALL core_script.cpp_CScript_step_FUN_004ff2c0 ; 004fefa5
+        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_004ff2c0()
     ADD ESP,0x8                         ; 004fefaa
     TEST EAX,EAX                        ; 004fefad
     JL 0x004fefcf                       ; 004fefaf

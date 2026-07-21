@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0049da10 at 0049dfea
-;   FUN_004d92a0 at 004d93a4
 ;   FUN_00507f80 at 00508496
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfea
+;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d93a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fb99d0
@@ -15,9 +15,9 @@
 ;   undefined4 DAT_01fb99d8
 ;
 ; Called Functions:
-;   FUN_004401d0
+;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
+;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0
 ;   FUN_0044e1c0
-;   FUN_0044e3b0
 ;   FUN_00515410
 ;   FUN_00564494
 ;
@@ -73,12 +73,12 @@ section .text
         ;   XREF to: 0050ad6f (CONDITIONAL_JUMP)  ; LAB_0050ad6f
     LEA EAX,[EAX]                       ; 0050ad89
     NOP                                 ; 0050ad8f
-    CALL FUN_0044e3b0                   ; 0050ad90
-        ;   XREF to: 0044e3b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e3b0()
+    CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0 ; 0050ad90
+        ;   XREF to: 0044e3b0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0()
         ;   Label: LAB_0050ad90
     PUSH 0x1fb8508                      ; 0050ad95
-    CALL FUN_004401d0                   ; 0050ad9a
-        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004401d0()
+    CALL core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 ; 0050ad9a
+        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_free_FUN_004401d0()
     ADD ESP,0x4                         ; 0050ad9f
     POP EBP                             ; 0050ada2
     POP EDI                             ; 0050ada3

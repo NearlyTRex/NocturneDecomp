@@ -32,7 +32,7 @@ int FUN_00573660(char *param_1,int param_2)
     cVar1 = *pcVar4;
     if (cVar1 == '\0') goto LAB_005736cd;
     pcVar4 = pcVar4 + 1;
-    iVar2 = FUN_00566cc0(cVar1,param_2);
+    iVar2 = _fputc(cVar1,param_2);
   } while (iVar2 != -1);
   iVar5 = -1;
 LAB_005736cd:

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_0056568c at 00565699
+;   crt_stdio.c_fopen_FUN_0056568c at 00565699
 ;
 ; Called Functions:
 ;   FUN_005653e0

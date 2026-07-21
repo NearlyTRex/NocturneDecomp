@@ -13,15 +13,16 @@ uint FUN_00552b40(void)
 {
   int iVar1;
   
-  DAT_005c5010 = FUN_005635b0(((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -
-                                    (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
-                              DAT_005b761c * DAT_005b7620);
+  DAT_005c5010 = malloc
+                           (((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -
+                                  (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
+                            DAT_005b761c * DAT_005b7620);
   if (DAT_005c5010 == 0) {
     _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
     _DAT_01cc4804 = 0xea;
     FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02ddf560 = FUN_005635b0(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
+  _DAT_02ddf560 = malloc(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
   if (_DAT_02ddf560 == 0) {
     _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
     _DAT_01cc4804 = 0xef;
@@ -49,6 +50,6 @@ uint FUN_00552b40(void)
   if (iVar1 == 0) {
     (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
   }
-  FUN_00531780(_DAT_02de2098);
+  wincore_windll_cpp_loadExternalRenderer_FUN_00531780(_DAT_02de2098);
   return 1;
 }

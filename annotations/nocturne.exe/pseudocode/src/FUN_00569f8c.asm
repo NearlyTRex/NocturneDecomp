@@ -8,7 +8,7 @@
 ;   FUN_00569928 at 00569d69
 ;
 ; Called Functions:
-;   FUN_00565e20
+;   crt_ctype.c_toupper_FUN_00565e20
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV AL,byte ptr [EBX]               ; 00569f98
     PUSH EAX                            ; 00569f9a
     INC EBX                             ; 00569f9b
-    CALL FUN_00565e20                   ; 00569f9c
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined FUN_00565e20()
+    CALL crt_ctype.c_toupper_FUN_00565e20 ; 00569f9c
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
     MOV byte ptr [EBX + -0x1],AL        ; 00569fa1
     MOV DL,byte ptr [EBX]               ; 00569fa4
     ADD ESP,0x4                         ; 00569fa6

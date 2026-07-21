@@ -12,10 +12,10 @@
 ;   FUN_004c71a0 at 004c7720
 ;   FUN_00515ea0 at 005163a6
 ;   FUN_00545c30 at 005463c1
-;   FUN_0054ab10 at 0054af53
+;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af53
 ;
 ; Called Functions:
-;   FUN_004775b0
+;   shape_edittool.cpp_wildcardStringMatch_FUN_004775b0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 005485ce
     ADD EAX,0x2fc                       ; 005485cf
     PUSH EAX                            ; 005485d4
-    CALL FUN_004775b0                   ; 005485d5
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004775b0()
+    CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 005485d5
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
     ADD ESP,0xc                         ; 005485da
     RET                                 ; 005485dd
 

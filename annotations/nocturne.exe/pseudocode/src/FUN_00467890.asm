@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00506f10 at 00507824
+;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507824
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0057e1d2
 ;   undefined4 DAT_0057e1d5
 ;
 ; Called Functions:
-;   FUN_00456a60
+;   crt_stdio.c_fclose_FUN_00563380
+;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   FUN_004676c0
-;   FUN_00563380
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00467896
     PUSH EDX                            ; 0046789a
     PUSH 0x57e1d5                       ; 0046789b | DAT_0057e1d5
-    CALL FUN_00456a60                   ; 004678a0
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004678a0
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004678a5
     ADD ESP,0xc                         ; 004678a7
     TEST EAX,EAX                        ; 004678aa
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 004676c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004676c0()
     ADD ESP,0x8                         ; 004678bb
     PUSH EBX                            ; 004678be
-    CALL FUN_00563380                   ; 004678bf
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004678bf
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     MOV EAX,0x1                         ; 004678c4
     ADD ESP,0x4                         ; 004678c9
     POP EBX                             ; 004678cc

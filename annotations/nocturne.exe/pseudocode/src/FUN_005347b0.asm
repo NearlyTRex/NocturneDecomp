@@ -9,8 +9,8 @@
 ;   undefined1* PTR_FUN_005a24b4 = 00534820
 ;
 ; Called Functions:
+;   crt_memory.c___arrinit_FUN_005644a7
 ;   FUN_00409d30
-;   FUN_005644a7
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x28                           ; 005347c2
     ADD EAX,0x168                       ; 005347c4
     PUSH EAX                            ; 005347c9
-    CALL FUN_005644a7                   ; 005347ca
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 005347ca
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     MOV dword ptr [EAX + -0x1c],0x5a24b4 ; 005347cf | PTR_FUN_005a24b4
     MOV dword ptr [EAX + -0x18],0x3f800000 ; 005347d6
     MOV dword ptr [EAX + -0x14],0x3f800000 ; 005347dd

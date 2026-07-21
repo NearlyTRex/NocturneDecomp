@@ -59,43 +59,43 @@ void FUN_005402f0(int param_1)
   }
   iVar3 = *(int *)(param_1 + 0x2c20);
   if (bVar2) {
-    FUN_004386b0(iVar3,"?Bip01 L Forearm" + 1,0x32);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x33);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x34);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x35);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x36);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x37);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x20);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x21);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x22);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x23);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x24);
-    FUN_004386b0(iVar3,"Bip01 R Forearm",0x25);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"?Bip01 L Forearm" + 1,0x32);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x33);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x34);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x35);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x36);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x37);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x20);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x21);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x22);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x23);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x24);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 R Forearm",0x25);
   }
   else {
-    FUN_00438750(iVar3,0x32);
-    FUN_00438750(iVar3,0x33);
-    FUN_00438750(iVar3,0x34);
-    FUN_00438750(iVar3,0x35);
-    FUN_00438750(iVar3,0x36);
-    FUN_00438750(iVar3,0x37);
-    FUN_00438750(iVar3,0x20);
-    FUN_00438750(iVar3,0x21);
-    FUN_00438750(iVar3,0x22);
-    FUN_00438750(iVar3,0x23);
-    FUN_00438750(iVar3,0x24);
-    FUN_00438750(iVar3,0x25);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x32);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x33);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x34);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x35);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x36);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x37);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x20);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x21);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x22);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x23);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x24);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x25);
   }
   if (bVar1) {
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x2f);
-    FUN_004386b0(iVar3,"Bip01 L Forearm",0x32);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x2f);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x32);
   }
   else {
-    FUN_00438750(iVar3,0x2f);
-    FUN_00438750(iVar3,0x32);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x2f);
+    core_cloth_cpp_CCloth_resetState_FUN_00438750(iVar3,0x32);
   }
   puVar5 = (uint *)(iVar3 + 0x3ab24);
-  iVar4 = FUN_004e1660(param_1 + 0x150);
+  iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
   if (*(int *)(iVar4 + 0x24) == 0x2a) {
     if (puVar5 != auStack_28) {
       *(uint *)(iVar3 + 0x3ab28) = 0;

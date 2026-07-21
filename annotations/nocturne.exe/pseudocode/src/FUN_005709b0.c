@@ -24,6 +24,6 @@ void FUN_005709b0(uint param_1,uint param_2)
   local_28 = (param_2 & 0x1f) * 2;
   local_1c = param_1 & 0x1f;
   local_8 = 0xffffffff;
-  FUN_00565fb0(&local_28);
+  _mktime(&local_28);
   return;
 }

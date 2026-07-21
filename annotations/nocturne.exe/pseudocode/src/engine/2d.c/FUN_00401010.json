@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 277,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 40,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 80,
     "suspect_count": 19,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 293
+    "total_lines": 296
   },
   "cross_references": [
     {
@@ -157,6 +157,36 @@
   },
   "function_calls": [
     {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00563350",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_00563350"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004568c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
+    },
+    {
       "addr": "00401990",
       "is_variadic": false,
       "name": "FUN_00401990"
@@ -177,16 +207,6 @@
       "name": "FUN_00403630"
     },
     {
-      "addr": "004568c0",
-      "is_variadic": false,
-      "name": "FUN_004568c0"
-    },
-    {
-      "addr": "00456a60",
-      "is_variadic": false,
-      "name": "FUN_00456a60"
-    },
-    {
       "addr": "004c8440",
       "is_variadic": false,
       "name": "FUN_004c8440"
@@ -199,32 +219,12 @@
     {
       "addr": "00552e00",
       "is_variadic": false,
-      "name": "FUN_00552e00"
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00"
     },
     {
       "addr": "005537e0",
       "is_variadic": false,
-      "name": "FUN_005537e0"
-    },
-    {
-      "addr": "00563350",
-      "is_variadic": false,
-      "name": "FUN_00563350"
-    },
-    {
-      "addr": "00563380",
-      "is_variadic": false,
-      "name": "FUN_00563380"
-    },
-    {
-      "addr": "005635b0",
-      "is_variadic": false,
-      "name": "FUN_005635b0"
-    },
-    {
-      "addr": "005636d0",
-      "is_variadic": false,
-      "name": "FUN_005636d0"
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0"
     }
   ],
   "globals": [
@@ -560,23 +560,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_005aca6c",
       "severity": "mild",
-      "text": "FUN_00552e00(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_006af628",
-      "severity": "mild",
-      "text": "FUN_00552e00(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
+      "text": "(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 23,
+      "match": "DAT_006af628",
+      "severity": "mild",
+      "text": "(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
       "match": "DAT_005aca70",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);",
@@ -584,7 +584,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_006af628",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);",
@@ -592,15 +592,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 31,
       "match": "DAT_0057705f",
       "severity": "mild",
-      "text": "iVar3 = FUN_00456a60(\"startup\",\"font.ndx\",&DAT_0057705f);",
+      "text": "(\"startup\",\"font.ndx\",&DAT_0057705f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_006afabc",
       "severity": "mild",
       "text": "puVar5 = &DAT_006afabc;",
@@ -608,23 +608,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_0057709a",
       "severity": "mild",
-      "text": "FUN_00563350(iVar3,&DAT_0057709a,puVar5);",
+      "text": "_fscanf(iVar3,&DAT_0057709a,puVar5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_006afa38",
       "severity": "mild",
-      "text": "DAT_006afa38 = FUN_005635b0(uVar4);",
+      "text": "DAT_006afa38 = malloc(uVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_006afa38",
       "severity": "mild",
       "text": "if (DAT_006afa38 == 0) {",
@@ -632,23 +632,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 52,
       "match": "DAT_005770db",
       "severity": "mild",
-      "text": "iVar3 = FUN_00456a60(\"startup\",\"font.bin\",&DAT_005770db);",
+      "text": "(\"startup\",\"font.bin\",&DAT_005770db);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 58,
       "match": "DAT_006afa38",
       "severity": "mild",
-      "text": "FUN_005636d0(DAT_006afa38,uVar4,1,iVar3);",
+      "text": "_fread(DAT_006afa38,uVar4,1,iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 63,
       "match": "DAT_006afa3c",
       "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_006afa3c + iVar3);",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 64,
       "match": "DAT_006afa38",
       "severity": "mild",
       "text": "*(int *)(iVar3 + 0x6afe3c) = iVar7 + DAT_006afa38;",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 74,
       "match": "DAT_01c00c80",
       "severity": "mild",
       "text": "*(int *)(&DAT_01c00c80 + iVar3) = (int)(0xffffffff / uVar2);",
@@ -672,18 +672,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 77,
       "match": "DAT_00577125",
       "severity": "mild",
-      "text": "iVar3 = FUN_00456a60(&DAT_00577125,\"default.act\",&DAT_00577116);",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577125,\"default.act\",&DAT_00577116);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 77,
       "match": "DAT_00577116",
       "severity": "mild",
-      "text": "iVar3 = FUN_00456a60(&DAT_00577125,\"default.act\",&DAT_00577116);",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577125,\"default.act\",&DAT_00577116);",
       "type": "undefined_data"
     }
   ]

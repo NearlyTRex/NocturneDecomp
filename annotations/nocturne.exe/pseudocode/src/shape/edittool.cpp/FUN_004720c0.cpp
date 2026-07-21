@@ -61,6 +61,6 @@ void FUN_004720c0(uint param_1)
       } while (iVar4 < *(int *)(iVar1 + 0x1bcd08c));
     }
   }
-  FUN_004721e0(param_1);
+  shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(param_1);
   return;
 }

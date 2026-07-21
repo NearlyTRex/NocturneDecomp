@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00507f80 at 00508030
-;   FUN_005088f0 at 00508a45
+;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508a45
 ;
 ; Referenced Globals:
 ;   string s_Ambient_set_low_by_script_00590d03
@@ -18,8 +18,8 @@
 ;   undefined4 DAT_01fa3fec
 ;
 ; Called Functions:
-;   FUN_0043ac60
-;   FUN_00446740
+;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740
+;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00514917
     PUSH dword ptr [EBX + 0x144]        ; 00514918
     PUSH EDX                            ; 0051491e
-    CALL FUN_00446740                   ; 0051491f
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined FUN_00446740()
+    CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 0051491f
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
     MOV EAX,[0x005be368]                ; 00514924 | DAT_005be368
     FLD float ptr [EBX + 0x144]         ; 00514929
     ADD ESP,0x8                         ; 0051492f
@@ -82,8 +82,8 @@ section .text
     PUSH 0x590d03                       ; 0051493d | = "Ambient set low by script\n"
     MOV EDX,dword ptr [0x005ad350]      ; 00514942 | PTR_DAT_005ad350
     PUSH EDX                            ; 00514948 | DAT_0077ad0c
-    CALL FUN_0043ac60                   ; 00514949
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043ac60()
+    CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514949
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 0051494e
     FLD float ptr [EBX + 0x144]         ; 00514951
         ;   Label: LAB_00514951
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_00514966
     MOV ECX,dword ptr [0x005ad350]      ; 0051496b | PTR_DAT_005ad350
     PUSH ECX                            ; 00514971 | DAT_0077ad0c
-    CALL FUN_0043ac60                   ; 00514972
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043ac60()
+    CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514972
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00514977
     POP EDI                             ; 0051497a
     POP ESI                             ; 0051497b

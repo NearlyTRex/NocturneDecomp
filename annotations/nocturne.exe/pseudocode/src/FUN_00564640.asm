@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00564570 at 005645d5
+;   crt_stdio.c_fgetc_FUN_00564570 at 005645d5
 ;
 ; Called Functions:
 ;   FUN_00564670

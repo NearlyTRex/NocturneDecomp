@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
+;   core_actor.cpp_crc32ProcessInt_FUN_0040e0e0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   FUN_0040b0d0
-;   FUN_0040e0e0
 ;   FUN_0040e120
-;   FUN_004e1660
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     LEA ESI,[EDI + 0x150]               ; 00429f8b
     PUSH EBX                            ; 00429f91
     ADD EDI,0x23b0                      ; 00429f92
-    CALL FUN_0040e0e0                   ; 00429f98
-        ;   XREF to: 0040e0e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040e0e0()
+    CALL core_actor.cpp_crc32ProcessInt_FUN_0040e0e0 ; 00429f98
+        ;   XREF to: 0040e0e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessInt_FUN_0040e0e0()
     MOV AH,byte ptr [EDI]               ; 00429f9d
     ADD ESP,0x8                         ; 00429f9f
     TEST AH,AH                          ; 00429fa2
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 0040e120 (UNCONDITIONAL_CALL)  ; undefined FUN_0040e120()
     ADD ESP,0x8                         ; 00429fb1
     PUSH ESI                            ; 00429fb4
-    CALL FUN_004e1660                   ; 00429fb5
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1660()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00429fb5
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
     ADD ESP,0x4                         ; 00429fba
     PUSH EAX                            ; 00429fbd
     PUSH EBX                            ; 00429fbe
@@ -61,8 +61,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x8]       ; 00429fca
     MOV dword ptr [ESP],EAX             ; 00429fcd
     PUSH EBX                            ; 00429fd0
-    CALL FUN_0040e0e0                   ; 00429fd1
-        ;   XREF to: 0040e0e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040e0e0()
+    CALL core_actor.cpp_crc32ProcessInt_FUN_0040e0e0 ; 00429fd1
+        ;   XREF to: 0040e0e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessInt_FUN_0040e0e0()
     ADD ESP,0x8                         ; 00429fd6
     POP EDI                             ; 00429fd9
     POP ESI                             ; 00429fda

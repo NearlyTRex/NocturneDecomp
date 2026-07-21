@@ -16,7 +16,7 @@ int FUN_004b6610(uint param_1)
   
   iVar2 = FUN_004ee950(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_0059eda4;
-  FUN_0051e0c0(iVar2 + 0x150,"hiram.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"hiram.dfm");
   pcVar3 = "killHiram";
   pcVar4 = (char *)(iVar2 + 0x1f570);
   do {

@@ -23,7 +23,7 @@ uint FUN_005634b0(int param_1,int param_2)
       uVar1 = FUN_00568890(param_1);
     }
     (*(code *)PTR_FUN_005c1ac0)(*(uint *)(param_1 + 0x10));
-    iVar2 = FUN_00566e70(param_1);
+    iVar2 = _ftell(param_1);
     if (iVar2 != -1) {
       FUN_005689c0(*(uint *)(param_1 + 0x10),iVar2,0);
     }
@@ -37,7 +37,7 @@ uint FUN_005634b0(int param_1,int param_2)
     }
     if ((*(byte *)(param_1 + 0xd) & 8) != 0) {
       FUN_005633fc(auStack_124,*(byte *)(*(int *)(param_1 + 8) + 0x14));
-      FUN_005657c0(auStack_124);
+      remove(auStack_124);
     }
     (*(code *)PTR_FUN_005c1ac4)(*(uint *)(param_1 + 0x10));
     if (param_2 != 0) {

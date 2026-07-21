@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059eaf0
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004b4486 (CONDITIONAL_JUMP)  ; LAB_004b4486
     PUSH 0x1                            ; 004b446c
     PUSH EBX                            ; 004b446e
-    CALL FUN_00409ea0                   ; 004b446f
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004b446f
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 004b4474
     MOV DL,byte ptr [ESP + 0xc]         ; 004b4477
     MOV EBX,EAX                         ; 004b447b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59eaf0                       ; 004b4486 | DAT_0059eaf0
         ;   Label: LAB_004b4486
     PUSH EBX                            ; 004b448b
-    CALL FUN_0056445f                   ; 004b448c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004b448c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004b4491
     PUSH EAX                            ; 004b4494
-    CALL FUN_00564486                   ; 004b4495
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004b4495
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004b449a
     MOV EAX,EBX                         ; 004b449d
     POP EBX                             ; 004b449f

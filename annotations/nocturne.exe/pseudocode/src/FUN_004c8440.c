@@ -11,48 +11,51 @@
 void FUN_004c8440(uint param_1)
 
 {
-  char *pcVar1;
+  byte uVar1;
+  byte extraout_DL;
+  uint unaff_EBX;
   char *pcVar2;
+  char *pcVar3;
   byte *local_c;
   
   if (_DAT_01cc4808 != 0) {
-    FUN_00566f90();
+    notifyAbnormalTermination();
   }
   local_c = &stack0x00000008;
   _DAT_01cc4808 = 1;
-  FUN_00563a08(0x1cc3700,param_1,&local_c);
+  _vsprintf(0x1cc3700,param_1,&local_c);
   local_c = (byte *)0x0;
-  pcVar2 = _DAT_01cc4800;
+  pcVar3 = _DAT_01cc4800;
   do {
-    pcVar1 = pcVar2;
+    pcVar2 = pcVar3;
+    if (*pcVar3 == '\\') goto LAB_004c84a6;
+    if (*pcVar3 == '\0') goto LAB_004c84a4;
+    pcVar2 = pcVar3 + 1;
     if (*pcVar2 == '\\') goto LAB_004c84a6;
-    if (*pcVar2 == '\0') goto LAB_004c84a4;
-    pcVar1 = pcVar2 + 1;
-    if (*pcVar1 == '\\') goto LAB_004c84a6;
-    pcVar2 = pcVar2 + 2;
-    if (*pcVar1 == '\0') {
+    pcVar3 = pcVar3 + 2;
+    if (*pcVar2 == '\0') {
 LAB_004c84a4:
-      pcVar1 = (char *)0x0;
+      pcVar2 = (char *)0x0;
 LAB_004c84a6:
-      if (pcVar1 == (char *)0x0) {
+      if (pcVar2 == (char *)0x0) {
         thunk_FUN_00527e10(0x02DC9450);
-        FUN_004012a0();
-        FUN_00558a20();
+        uVar1 = FUN_004012a0();
+        wincore_winrun_cpp_endPeriod_FUN_00558a20(uVar1,extraout_DL,unaff_EBX);
         FUN_00559500(0x1cc3700);
         return;
       }
       do {
-        pcVar2 = _DAT_01cc4800;
+        pcVar3 = _DAT_01cc4800;
         if (*_DAT_01cc4800 == '\\') goto LAB_004c84fe;
         if (*_DAT_01cc4800 == '\0') break;
-        pcVar2 = _DAT_01cc4800 + 1;
-        if (*pcVar2 == '\\') goto LAB_004c84fe;
+        pcVar3 = _DAT_01cc4800 + 1;
+        if (*pcVar3 == '\\') goto LAB_004c84fe;
         _DAT_01cc4800 = _DAT_01cc4800 + 2;
-      } while (*pcVar2 != '\0');
-      pcVar2 = (char *)0x0;
+      } while (*pcVar3 != '\0');
+      pcVar3 = (char *)0x0;
 LAB_004c84fe:
-      pcVar2 = pcVar2 + 1;
-      _DAT_01cc4800 = pcVar2;
+      pcVar3 = pcVar3 + 1;
+      _DAT_01cc4800 = pcVar3;
     }
   } while( true );
 }

@@ -9,8 +9,8 @@
 ;   FUN_00402840 at 00402891
 ;
 ; Called Functions:
-;   FUN_00401ed0
-;   FUN_00402600
+;   engine_2d.c_drawText_FUN_00402600
+;   engine_2d.c_getStringWidth_FUN_00401ed0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH EDX                            ; 004027f5
     MOV ECX,dword ptr [ESP + 0xc]       ; 004027f6
     PUSH ECX                            ; 004027fa
-    CALL FUN_00401ed0                   ; 004027fb
-        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_00401ed0()
+    CALL engine_2d.c_getStringWidth_FUN_00401ed0 ; 004027fb
+        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_getStringWidth_FUN_00401ed0()
     ADD ESP,0x4                         ; 00402800
     MOV EDX,dword ptr [ESP + 0x10]      ; 00402803
     SUB EDX,EAX                         ; 00402807
@@ -31,8 +31,8 @@ section .text
     PUSH EAX                            ; 0040280c
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040280d
     PUSH EBX                            ; 00402811
-    CALL FUN_00402600                   ; 00402812
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 00402812
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 00402817
     POP EBX                             ; 0040281a
     RET                                 ; 0040281b

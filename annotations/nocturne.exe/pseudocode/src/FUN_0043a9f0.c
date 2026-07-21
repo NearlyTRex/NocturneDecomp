@@ -9,6 +9,6 @@
 void FUN_0043a9f0(uint param_1)
 
 {
-  FUN_00426440(param_1);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);
   return;
 }

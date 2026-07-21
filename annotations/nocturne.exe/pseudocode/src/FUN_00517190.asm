@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00564570
+;   crt_stdio.c_fgetc_FUN_00564570
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00517191
     PUSH EBX                            ; 00517195
         ;   Label: LAB_00517195
-    CALL FUN_00564570                   ; 00517196
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined FUN_00564570()
+    CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517196
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
     ADD ESP,0x4                         ; 0051719b
     TEST EAX,EAX                        ; 0051719e
     JL 0x005171a7                       ; 005171a0

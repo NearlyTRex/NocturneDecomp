@@ -9,11 +9,11 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fopen_FUN_0056568c
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004c8440
-;   FUN_004f4bb0
-;   FUN_00563380
-;   FUN_00563c90
-;   FUN_0056568c
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x58d1f0                       ; 004f4b35
     MOV EDX,dword ptr [ESP + 0x78]      ; 004f4b3a
     PUSH EDX                            ; 004f4b3e
-    CALL FUN_0056568c                   ; 004f4b3f
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined FUN_0056568c()
+    CALL crt_stdio.c_fopen_FUN_0056568c ; 004f4b3f
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
     ADD ESP,0x8                         ; 004f4b44
     MOV EBX,EAX                         ; 004f4b47
     TEST EAX,EAX                        ; 004f4b49
@@ -37,12 +37,12 @@ section .text
         ;   Label: LAB_004f4b4d
     MOV EBP,dword ptr [ESP + 0x74]      ; 004f4b4e
     PUSH EBP                            ; 004f4b52
-    CALL FUN_004f4bb0                   ; 004f4b53
-        ;   XREF to: 004f4bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f4bb0()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 ; 004f4b53
+        ;   XREF to: 004f4bb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0()
     ADD ESP,0x8                         ; 004f4b58
     PUSH EBX                            ; 004f4b5b
-    CALL FUN_00563380                   ; 004f4b5c
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004f4b5c
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004f4b61
     ADD ESP,0x64                        ; 004f4b64
     POP EBP                             ; 004f4b67
@@ -57,8 +57,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004f4b76
     PUSH EAX                            ; 004f4b7a
     MOV ESI,0x58d210                    ; 004f4b7b
-    CALL FUN_00563c90                   ; 004f4b80
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f4b80
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004f4b85
     LEA EAX,[ESP + 0x8]                 ; 004f4b88
     MOV EDI,0x473                       ; 004f4b8c

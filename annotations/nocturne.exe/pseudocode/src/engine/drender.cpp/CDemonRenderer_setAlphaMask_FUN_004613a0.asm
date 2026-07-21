@@ -1,0 +1,21 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(int param_1,int param_2)
+;
+;
+; XREF[2]:
+;   FUN_0050e080 at 0050e16a
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1ea
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x8]       ; 004613a0
+        ;   Label: engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0
+    MOV EDX,dword ptr [ESP + 0x4]       ; 004613a4
+    SHL EAX,0x18                        ; 004613a8
+    MOV dword ptr [EDX + 0x14],EAX      ; 004613ab
+    RET                                 ; 004613ae
+

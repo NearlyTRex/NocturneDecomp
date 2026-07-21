@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059ca20
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0046ef56 (CONDITIONAL_JUMP)  ; LAB_0046ef56
     PUSH 0x1                            ; 0046ef3c
     PUSH EBX                            ; 0046ef3e
-    CALL FUN_00553ea0                   ; 0046ef3f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0046ef3f
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 0046ef44
     MOV DL,byte ptr [ESP + 0xc]         ; 0046ef47
     MOV EBX,EAX                         ; 0046ef4b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59ca20                       ; 0046ef56 | DAT_0059ca20
         ;   Label: LAB_0046ef56
     PUSH EBX                            ; 0046ef5b
-    CALL FUN_0056445f                   ; 0046ef5c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0046ef5c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0046ef61
     PUSH EAX                            ; 0046ef64
-    CALL FUN_00564486                   ; 0046ef65
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0046ef65
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0046ef6a
     MOV EAX,EBX                         ; 0046ef6d
     POP EBX                             ; 0046ef6f

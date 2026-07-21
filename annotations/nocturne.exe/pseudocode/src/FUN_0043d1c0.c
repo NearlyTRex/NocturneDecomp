@@ -71,15 +71,15 @@ uint FUN_0043d1c0(int param_1)
   float fStack_14;
   
   uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_64);
-  FUN_0040a240(param_1,&fStack_40,uVar1);
-  iVar2 = FUN_00554600(param_1);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_40,uVar1);
+  iVar2 = core_weapon_cpp_CWeapon_fire_FUN_00554600(param_1);
   if (iVar2 == 0) {
     return 0;
   }
   uStack_68 = *(uint *)(param_1 + 0x2e0);
   uStack_70 = 0;
   uStack_6c = 0;
-  FUN_0040a200(param_1,&fStack_a0,&uStack_70);
+  core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_a0,&uStack_70);
   fStack_ac = fStack_40 + fStack_a0;
   fStack_a8 = fStack_3c + fStack_9c;
   fStack_a4 = fStack_38 + fStack_98;
@@ -90,39 +90,44 @@ uint FUN_0043d1c0(int param_1)
   fStack_94 = fStack_40 - fStack_7c;
   fStack_90 = fStack_3c - fStack_78;
   fStack_8c = fStack_38 - fStack_74;
-  FUN_00511750(0x01E57284);
-  FUN_00511800(0x01E57284,1);
-  FUN_00511780(0x01E57284,param_1);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
   if (*(int *)(param_1 + 0x2fc) != 0) {
-    FUN_00511780(0x01E57284,*(int *)(param_1 + 0x2fc));
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,*(int *)(param_1 + 0x2fc));
   }
   iStack_20 = 0;
   do {
-    fStack_f8 = (float)FUN_0050fb00(0x01E57284,&fStack_94,&fStack_ac);
+    fStack_f8 = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                                 (0x01E57284,&fStack_94,&fStack_ac);
     fStack_14 = fStack_f8;
     if ((fStack_f8 < 0.0) || (1.0 < fStack_f8)) break;
-    iVar2 = FUN_0040d890(*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);
     if ((iVar2 != 0) && (iVar3 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2), 0 < iVar3))
     {
       iVar2 = 0;
     }
-    iStack_18 = FUN_0040d890(*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c78c78);
-    iVar3 = FUN_0040d890(*(uint *)(0x01E57284 + 0x14cd5c),_DAT_02dd10bc);
+    iStack_18 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c78c78);
+    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_02dd10bc);
     iStack_24 = iVar3;
     if (iVar2 == 0) {
       if (iStack_18 == 0) {
         if (iVar3 == 0) {
-          FUN_0048b070(0x01C08D04,0x01E57284 + 0x14cd50,param_1 + 0x30,0x01E57284 + 0x14cd40,
-                       *(uint *)(0x01E57284 + 0x14cd4c));
+          core_fire_cpp_CFireEffect_createStake_FUN_0048b070
+                    (0x01C08D04,0x01E57284 + 0x14cd50,param_1 + 0x30,0x01E57284 + 0x14cd40,
+                     *(uint *)(0x01E57284 + 0x14cd4c));
           break;
         }
-        FUN_00548580(iVar3);
+        core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(iVar3);
         iVar2 = FUN_005485a0(iVar3,param_1);
         if (iVar2 != 0) {
           fStack_14 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);
-          FUN_005485e0(iVar3,fStack_14);
+          core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(iVar3,fStack_14);
         }
-        FUN_00511780(0x01E57284,iStack_24);
+        core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,iStack_24);
       }
       else {
         iVar2 = FUN_004aded0(iStack_18);
@@ -136,12 +141,12 @@ uint FUN_0043d1c0(int param_1)
       if (iVar4 != 0) {
         if (iStack_20 == 0) {
           *(int *)(param_1 + 0x560) = *(int *)(param_1 + 0x560) + 1;
-          FUN_00511750(iVar3);
+          core_setcolid_cpp_CDemonSet_init_FUN_00511750(iVar3);
           return 0;
         }
         break;
       }
-      FUN_00423ed0(&uStack_f4);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&uStack_f4);
       uStack_f4 = *(uint *)(0x01E57284 + 0x14cd60);
       fStack_f0 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);
       uStack_ec = 0x3ecccccd;
@@ -159,7 +164,9 @@ uint FUN_0043d1c0(int param_1)
         fStack_e0 = fStack_50;
       }
       fStack_14 = fStack_f0;
-      puVar5 = (uint *)FUN_0040a290(iVar2,auStack_34,0x01E57284 + 0x14cd50);
+      puVar5 = (uint *)
+               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                         (iVar2,auStack_34,0x01E57284 + 0x14cd50);
       if (&uStack_d8 != puVar5) {
         uStack_d8 = *puVar5;
         uStack_d4 = puVar5[1];
@@ -172,11 +179,12 @@ uint FUN_0043d1c0(int param_1)
       uStack_bc = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
       (**(code **)(*(int *)(iVar2 + 0x14c) + 0x100))(iVar2,&uStack_f4);
       if (*(int *)(param_1 + 0x2dc) == 0) break;
-      FUN_00511780(0x01E57284,*(uint *)(0x01E57284 + 0x14cd5c));
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (0x01E57284,*(uint *)(0x01E57284 + 0x14cd5c));
     }
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 4);
-  FUN_00511750(0x01E57284);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   if (1.0 < fStack_f8) {
     fStack_f8 = 1.0;
   }
@@ -186,7 +194,8 @@ uint FUN_0043d1c0(int param_1)
   fStack_88 = fStack_94 + fStack_4c;
   fStack_84 = fStack_90 + fStack_48;
   fStack_80 = fStack_8c + fStack_44;
-  FUN_0052ea60(0x02DC9450,param_1,"bow-!.wav",&fStack_40);
+  core_sound_cpp_CSound_playActorSound_FUN_0052ea60
+            (0x02DC9450,param_1,"bow-!.wav",&fStack_40);
   *(uint *)(param_1 + 0x2f8) = 0x3f2a7efa;
   iVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
   if (iVar2 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {

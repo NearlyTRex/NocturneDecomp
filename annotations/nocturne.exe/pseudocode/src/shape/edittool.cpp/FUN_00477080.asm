@@ -12,8 +12,8 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00492da0
-;   FUN_004930e0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x3168]    ; 004770bb
     PUSH EAX                            ; 004770c1
     MOV dword ptr [0x01bcd9b8],EDX      ; 004770c2 | DAT_01bcd9b8
-    CALL FUN_004930e0                   ; 004770c8
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004930e0()
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004770c8
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
     ADD ESP,0x8                         ; 004770cd
     MOV [0x01bcd9bc],EAX                ; 004770d0 | DAT_01bcd9bc
     TEST EBX,EBX                        ; 004770d5
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_004770de
     MOV EDI,dword ptr [0x01bcd070]      ; 004770df | DAT_01bcd070
     PUSH EDI                            ; 004770e5
-    CALL FUN_00492da0                   ; 004770e6
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00492da0()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004770e6
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
     ADD ESP,0x8                         ; 004770eb
     POP EDI                             ; 004770ee
     POP EBX                             ; 004770ef

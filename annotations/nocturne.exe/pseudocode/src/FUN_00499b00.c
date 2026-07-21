@@ -30,10 +30,12 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
   int local_14;
   
   bVar6 = 0;
-  FUN_0051ed90(param_1 + 0x150,local_1b44);
-  FUN_0051d2a0(param_1 + 0x150,local_30,param_5);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90
+            (param_1 + 0x150,local_1b44);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+            (param_1 + 0x150,local_30,param_5);
   local_2c = local_2c + _DAT_00582286;
-  FUN_0040a240(param_1,local_24,local_30);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,local_30);
   local_18 = *param_3;
   local_1b48 = param_2 / _DAT_0059dcb8 + local_18;
   if (1.0 < local_1b48) {
@@ -43,9 +45,10 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
   iVar3 = 0;
   do {
     iVar2 = local_14;
-    FUN_0051ee60(local_14,local_1b44);
-    FUN_0051c3d0(iVar2,0,0,*param_3,param_5,&LAB_0051b650);
-    FUN_0051d0a0(iVar2,param_4);
+    core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60(local_14,local_1b44);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
+              (iVar2,0,0,*param_3,param_5,&LAB_0051b650);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(iVar2,param_4);
     puVar4 = local_78;
     puVar5 = local_a8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -53,9 +56,10 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    uVar1 = FUN_0055a8b0(local_48,param_6,local_a8);
-    FUN_0040a240(param_1,local_3c,uVar1);
-    iVar2 = FUN_0050fa30(0x01E57284,local_24,local_3c);
+    uVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_48,param_6,local_a8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,uVar1);
+    iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
+                      (0x01E57284,local_24,local_3c);
     if (iVar2 == 0) {
       local_1b48 = *param_3;
     }

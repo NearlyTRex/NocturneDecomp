@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00530e60 at 00530e6d
-;   FUN_00531780 at 005317be
+;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780 at 005317be
 ;
 ; Referenced Globals:
 ;   void* PTR_LoadLibraryA_00575560 = 00175eaa

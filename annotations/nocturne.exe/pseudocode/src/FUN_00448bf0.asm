@@ -11,7 +11,7 @@
 ;   undefined4 DAT_014b8860
 ;
 ; Called Functions:
-;   FUN_004484c0
+;   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
 ;
 ; *****************************************************************************
 
@@ -116,8 +116,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00448cc7
     PUSH EAX                            ; 00448ccb
     MOV dword ptr [0x014b8860],EBX      ; 00448ccc | DAT_014b8860
-    CALL FUN_004484c0                   ; 00448cd2
-        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004484c0()
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448cd2
+        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_004484c0()
     MOV EBX,dword ptr [0x014b8860]      ; 00448cd7 | DAT_014b8860
     ADD ESP,0x2c                        ; 00448cdd
     JMP 0x00448c88                      ; 00448ce0
@@ -152,8 +152,8 @@ section .text
     PUSH ECX                            ; 00448d26
     PUSH EDX                            ; 00448d27
     MOV dword ptr [0x014b8860],EBX      ; 00448d28 | DAT_014b8860
-    CALL FUN_004484c0                   ; 00448d2e
-        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004484c0()
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448d2e
+        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_004484c0()
     MOV EBX,dword ptr [0x014b8860]      ; 00448d33 | DAT_014b8860
     ADD ESP,0x2c                        ; 00448d39
     JMP 0x00448c88                      ; 00448d3c

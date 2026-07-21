@@ -14,7 +14,7 @@ int FUN_005684f8(int param_1)
   if ((0x2f < param_1) && (param_1 < 0x3a)) {
     return param_1 + -0x30;
   }
-  iVar1 = FUN_00564860(param_1);
+  iVar1 = tolower(param_1);
   if ((0x60 < iVar1) && (iVar1 < 0x67)) {
     return iVar1 + -0x57;
   }

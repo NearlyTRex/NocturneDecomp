@@ -71,12 +71,12 @@ void FUN_004c9580(int param_1)
   int local_14;
   
   bVar11 = 0;
-  FUN_00409fc0(param_1);
-  FUN_00454510(param_1 + 0x150);
-  FUN_00454510(param_1 + 0x2cc);
-  FUN_00454510(param_1 + 0x448);
-  FUN_00461eb0(DAT_005ae704,param_1 + 0x14b8);
-  iVar4 = FUN_00454530(param_1 + 0x150);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x2cc);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x448);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x14b8);
+  iVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
   local_c4 = *(uint *)(iVar4 + 0x338);
   local_c0 = *(float *)(iVar4 + 0x33c);
   local_bc = *(uint *)(iVar4 + 0x340);
@@ -104,8 +104,9 @@ void FUN_004c9580(int param_1)
     *(uint *)(param_1 + 0x5c4) = 0;
   }
   local_18 = local_b0;
-  FUN_0055afb0(local_17c,param_1 + 0x5c4,param_1 + 0x5d0);
-  iVar4 = FUN_00454530(param_1 + 0x2cc);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_17c,param_1 + 0x5c4,param_1 + 0x5d0);
+  iVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x2cc);
   local_ac = *(uint *)(iVar4 + 0x338);
   local_a8 = *(uint *)(iVar4 + 0x33c);
   local_a4 = *(uint *)(iVar4 + 0x340);
@@ -119,10 +120,11 @@ void FUN_004c9580(int param_1)
   local_38 = 0;
   do {
     iVar4 = local_38;
-    FUN_004ca640(param_1,local_38);
+    core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(param_1,local_38);
     iVar8 = local_34 + iVar4 * 0xb8;
     local_24 = iVar8;
-    FUN_004cae20(param_1,iVar4,iVar8,local_2c,local_30);
+    core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
+              (param_1,iVar4,iVar8,local_2c,local_30);
     *(uint *)(iVar8 + 0x14) = 0;
     *(uint *)(iVar8 + 0x10) = *(uint *)(iVar8 + 0x14);
     *(uint *)(iVar8 + 0x20) = 0;
@@ -136,13 +138,14 @@ void FUN_004c9580(int param_1)
     *(uint *)(iVar8 + 0xb4) = 0;
     local_94 = 0;
     local_8c = 0;
-    FUN_0044d7a0(local_ec,&local_94);
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_ec,&local_94);
     local_80 = *(uint *)(param_1 + 0x1504);
     local_88 = 0;
     local_84 = 0;
-    uVar5 = FUN_0044da40(local_ec,local_7c,&local_88,&local_94);
-    FUN_0055afb0(local_1ac,uVar5);
-    FUN_0055aa00(local_17c,local_1ac);
+    uVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                      (local_ec,local_7c,&local_88,&local_94);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_1ac,uVar5);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_17c,local_1ac);
     puVar6 = local_1dc;
     puVar9 = local_11c;
     for (iVar4 = 0xc; puVar3 = local_28, iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -150,7 +153,7 @@ void FUN_004c9580(int param_1)
       puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
       puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
     }
-    puVar6 = (uint *)FUN_0055bc00(local_11c,local_4c);
+    puVar6 = (uint *)core_xform_cpp_getTranslation_FUN_0055bc00(local_11c,local_4c);
     iVar4 = local_24;
     if (puVar6 != puVar3) {
       *puVar3 = *puVar6;
@@ -158,7 +161,7 @@ void FUN_004c9580(int param_1)
       puVar3[2] = puVar6[2];
     }
     puVar9 = (uint *)(local_24 + 0x30);
-    puVar6 = (uint *)FUN_0055b180(local_11c,local_64);
+    puVar6 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_11c,local_64);
     if (puVar9 != puVar6) {
       *puVar9 = *puVar6;
       *(uint *)(iVar4 + 0x34) = puVar6[1];
@@ -166,7 +169,7 @@ void FUN_004c9580(int param_1)
     }
     puVar6 = local_14c;
     uVar10 = 0;
-    FUN_005644a7(local_14c,4,&DAT_005993b0);
+    __arrinit(local_14c,4,&DAT_005993b0);
     do {
       local_6c = 0;
       local_70 = local_ac;
@@ -179,7 +182,8 @@ void FUN_004c9580(int param_1)
       }
       local_20 = local_70;
       local_1c = local_68;
-      puVar9 = (uint *)FUN_0055a8b0(local_58,&local_70,local_11c);
+      puVar9 = (uint *)
+               core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_58,&local_70,local_11c);
       if (puVar6 != puVar9) {
         *puVar6 = *puVar9;
         puVar6[1] = puVar9[1];
@@ -188,11 +192,13 @@ void FUN_004c9580(int param_1)
       uVar10 = uVar10 + 1;
       puVar6 = puVar6 + 3;
     } while ((int)uVar10 < 4);
-    FUN_0046c5b0(local_24 + 0x3c,local_134,local_140,local_14c);
+    core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+              (local_24 + 0x3c,local_134,local_140,local_14c);
     local_30 = local_30 + 0xb8;
     iVar4 = local_38 + 1;
     local_38 = iVar4;
-    FUN_0046c5b0(local_24 + 0x74,local_134,local_128,local_140);
+    core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+              (local_24 + 0x74,local_134,local_128,local_140);
     local_28 = local_28 + 0x2e;
     local_2c = local_2c + 0xb8;
   } while (iVar4 < 0xc);
@@ -215,7 +221,8 @@ void FUN_004c9580(int param_1)
   *(uint *)(param_1 + 0x1368) = 0;
   *(uint *)(param_1 + 0x1364) = 0xbfc529dc;
   *(float *)(param_1 + 0x133c) = *(float *)(param_1 + 0x133c) + _DAT_00587f4a;
-  FUN_0044d7a0(param_1 + 0x136c,(uint *)(param_1 + 0x1360));
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+            (param_1 + 0x136c,(uint *)(param_1 + 0x1360));
   *(uint *)(param_1 + 0x139c) = *(uint *)(param_1 + 0x133c);
   *(uint *)(param_1 + 0x13a0) = *(uint *)(param_1 + 0x1340);
   *(uint *)(param_1 + 0x13a8) = *(uint *)(param_1 + 0x1348);
@@ -226,9 +233,10 @@ void FUN_004c9580(int param_1)
   *(float *)(param_1 + 0x13a4) = -*(float *)(param_1 + 0x1344);
   *(float *)(param_1 + 0x13c4) = -*(float *)(param_1 + 0x1364);
   iVar4 = 0;
-  FUN_0044d7a0(param_1 + 0x13cc,(uint *)(param_1 + 0x13c0));
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+            (param_1 + 0x13cc,(uint *)(param_1 + 0x13c0));
   do {
-    FUN_004cb980(param_1,iVar4);
+    core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(param_1,iVar4);
     iVar4 = iVar4 + 1;
   } while (iVar4 < 2);
   return;

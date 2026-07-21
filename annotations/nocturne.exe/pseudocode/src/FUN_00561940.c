@@ -42,7 +42,8 @@ uint FUN_00561940(int param_1)
   
   bVar5 = 0;
   if ((*(int *)(param_1 + 0x2618) != 0) && (*(int *)(param_1 + 0xbda8) != 0)) {
-    FUN_0051d0a0(param_1 + 0x150,*(uint *)(param_1 + 0xbdb4));
+    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+              (param_1 + 0x150,*(uint *)(param_1 + 0xbdb4));
     local_6c = 0x3f000000;
     local_68 = 0x3f000000;
     puVar3 = local_c4;
@@ -53,27 +54,27 @@ uint FUN_00561940(int param_1)
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     local_70 = 0;
-    uVar1 = FUN_0055a8b0(local_94,&local_70,local_f4);
-    FUN_0040a240(param_1,local_88,uVar1);
+    uVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_94,&local_70,local_f4);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_88,uVar1);
     local_58 = 0;
     local_54 = 0;
     local_50 = 0;
-    uVar1 = FUN_0055a8b0(local_40,&local_58,local_f4);
-    FUN_0040a200(param_1,&local_34,uVar1);
+    uVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_40,&local_58,local_f4);
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_34,uVar1);
     local_28 = 0;
     local_24 = 0;
     local_20 = 0x3f800000;
-    uVar1 = FUN_0055a8b0(local_4c,&local_28,local_f4);
-    FUN_0040a200(param_1,&local_1c,uVar1);
+    uVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_4c,&local_28,local_f4);
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_1c,uVar1);
     local_64 = local_1c - local_34;
     local_60 = local_18 - local_30;
     local_5c = local_14 - local_2c;
-    FUN_0054e4a0(local_7c,&local_64);
-    FUN_00451b70(local_88,local_7c,0x42600000,0x40c00000);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_7c,&local_64);
+    core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(local_88,local_7c,0x42600000,0x40c00000);
   }
   if (*(int *)(param_1 + 0x2618) == 0) {
     return *(uint *)(param_1 + 0x2618);
   }
-  FUN_00427260(param_1);
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);
   return *(uint *)(param_1 + 0x2618);
 }

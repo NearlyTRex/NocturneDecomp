@@ -22,13 +22,13 @@
 ;   undefined4 DAT_01e55c1b
 ;
 ; Called Functions:
-;   FUN_00474080
-;   FUN_00477660
+;   core_script.cpp_CScript_freeParsedLines_FUN_004fe550
+;   core_script.cpp_trimLine_FUN_004fdf60
+;   crt_memory.c_malloc_FUN_005635b0
+;   crt_memory.c_realloc_FUN_00564a70
 ;   FUN_004c8440
-;   FUN_004fdf60
-;   FUN_004fe550
-;   FUN_005635b0
-;   FUN_00564a70
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_00477660
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     SUB ESP,0x4                         ; 004fee34
     MOV EBX,dword ptr [ESP + 0x18]      ; 004fee37
     PUSH EBX                            ; 004fee3b
-    CALL FUN_004fe550                   ; 004fee3c
-        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; undefined FUN_004fe550()
+    CALL core_script.cpp_CScript_freeParsedLines_FUN_004fe550 ; 004fee3c
+        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_freeParsedLines_FUN_004fe550()
     ADD ESP,0x4                         ; 004fee41
     LEA EAX,[EBX + 0x30]                ; 004fee44
     XOR EBP,EBP                         ; 004fee47
@@ -51,8 +51,8 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 004fee4c
         ;   Label: LAB_004fee4c
     PUSH EDX                            ; 004fee4f
-    CALL FUN_00477660                   ; 004fee50
-        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined FUN_00477660()
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_00477660 ; 004fee50
+        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getItemCount_FUN_00477660()
     ADD ESP,0x4                         ; 004fee55
     CMP EBP,EAX                         ; 004fee58
     JL 0x004fee64                       ; 004fee5a
@@ -68,12 +68,12 @@ section .text
     PUSH EBP                            ; 004fee69
     MOV ECX,dword ptr [ESP + 0x8]       ; 004fee6a
     PUSH ECX                            ; 004fee6e
-    CALL FUN_00474080                   ; 004fee6f
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004fee6f
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 004fee74
     PUSH EAX                            ; 004fee77
-    CALL FUN_004fdf60                   ; 004fee78
-        ;   XREF to: 004fdf60 (UNCONDITIONAL_CALL)  ; undefined FUN_004fdf60()
+    CALL core_script.cpp_trimLine_FUN_004fdf60 ; 004fee78
+        ;   XREF to: 004fdf60 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_trimLine_FUN_004fdf60()
     MOV AH,byte ptr [0x01e55c18]        ; 004fee7d | DAT_01e55c18
     ADD ESP,0x8                         ; 004fee83
     TEST AH,AH                          ; 004fee86
@@ -85,8 +85,8 @@ section .text
     PUSH EAX                            ; 004fee95
     MOV ESI,dword ptr [EBX + 0x2c]      ; 004fee96
     PUSH ESI                            ; 004fee99
-    CALL FUN_00564a70                   ; 004fee9a
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined FUN_00564a70()
+    CALL crt_memory.c_realloc_FUN_00564a70 ; 004fee9a
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
     ADD ESP,0x8                         ; 004fee9f
     MOV dword ptr [EBX + 0x2c],EAX      ; 004feea2
     TEST EAX,EAX                        ; 004feea5
@@ -115,8 +115,8 @@ section .text
     DEC ECX                             ; 004feee9
     INC ECX                             ; 004feeea
     PUSH ECX                            ; 004feeeb
-    CALL FUN_005635b0                   ; 004feeec
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 004feeec
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     MOV ECX,dword ptr [EBX + 0x28]      ; 004feef1
     MOV EDI,dword ptr [EBX + 0x2c]      ; 004feef4
     MOV dword ptr [EDI + ECX*0x8 + 0x4],EAX ; 004feef7

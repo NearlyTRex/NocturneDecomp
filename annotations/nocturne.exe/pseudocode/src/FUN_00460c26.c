@@ -9,9 +9,9 @@
 void FUN_00460c26(void)
 
 {
-  float10 in_ST0;
+  float10 fVar1;
   
-  FUN_00563a30();
-  DAT_005b7648 = (int)ROUND(in_ST0);
+  fVar1 = (float10)round();
+  DAT_005b7648 = (int)ROUND(fVar1);
   return;
 }

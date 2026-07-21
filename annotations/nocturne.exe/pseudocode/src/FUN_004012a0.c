@@ -25,7 +25,7 @@ void FUN_004012a0(void)
     FUN_005638d0(_DAT_02ddf560);
     DAT_006af62c = 0;
   }
-  FUN_005322b0();
+  wincore_windll_cpp_kill_FUN_005322b0();
   if (_DAT_02ddf55c != (int *)0x0) {
     (**(code **)(*_DAT_02ddf55c + 8))(_DAT_02ddf55c);
     _DAT_02ddf55c = (int *)0x0;

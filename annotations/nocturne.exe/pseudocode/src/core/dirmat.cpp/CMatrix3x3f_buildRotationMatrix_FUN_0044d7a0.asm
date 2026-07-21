@@ -1,0 +1,110 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(float *param_1,float *param_2)
+;
+; Local Variables:
+; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x14]:4  local_14
+; undefined4       Stack[-0x10]:4  local_10
+; undefined4       Stack[-0xc]:4  local_c
+;
+; XREF[47]:
+;   FUN_0041f3d0 at 0041f5d1
+;   FUN_00422050 at 004221d1
+;   FUN_0042af70 at 0042b135
+;   FUN_0046baa0 at 0046bac1
+;   FUN_0046bd90 at 0046bdb1
+;   FUN_004777a0 at 00477837
+;   FUN_00495a20 at 00496c6d
+;   FUN_004b27c0 at 004b2ab2
+;   FUN_004c9580 at 004c984d
+;   FUN_004c9cf0 at 004c9dc8
+;   ... and 37 more
+;
+; *****************************************************************************
+
+section .text
+
+    SUB ESP,0x34                        ; 0044d7a0
+        ;   Label: core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+    MOV EDX,dword ptr [ESP + 0x38]      ; 0044d7a3
+    MOV ECX,dword ptr [ESP + 0x3c]      ; 0044d7a7
+    FLD float ptr [ECX]                 ; 0044d7ab
+    FLD ST0                             ; 0044d7ad
+    FSIN                                ; 0044d7af
+    FLD float ptr [ECX + 0x8]           ; 0044d7b1
+    FLD ST0                             ; 0044d7b4
+    FSIN                                ; 0044d7b6
+    FLD float ptr [ECX + 0x4]           ; 0044d7b8
+    FLD ST0                             ; 0044d7bb
+    FSIN                                ; 0044d7bd
+    FXCH ST5                            ; 0044d7bf
+    FCOS                                ; 0044d7c1
+    FXCH ST3                            ; 0044d7c3
+    FCOS                                ; 0044d7c5
+    FXCH                                ; 0044d7c7
+    FCOS                                ; 0044d7c9
+    FXCH ST5                            ; 0044d7cb
+    FST float ptr [ESP + 0x24]          ; 0044d7cd
+    FXCH ST4                            ; 0044d7d1
+    FSTP float ptr [ESP + 0x28]         ; 0044d7d3
+    FXCH ST3                            ; 0044d7d7
+    FMUL float ptr [ESP + 0x28]         ; 0044d7d9
+    FLD float ptr [ESP + 0x24]          ; 0044d7dd
+    FMUL ST3                            ; 0044d7e1
+    FXCH ST2                            ; 0044d7e3
+    FST float ptr [ESP + 0x1c]          ; 0044d7e5
+    FMUL ST3                            ; 0044d7e9
+    FXCH ST4                            ; 0044d7eb
+    FST float ptr [ESP + 0x20]          ; 0044d7ed
+    FMUL ST3                            ; 0044d7f1
+    FXCH ST5                            ; 0044d7f3
+    FST float ptr [ESP + 0x18]          ; 0044d7f5
+    FMUL float ptr [ESP + 0x28]         ; 0044d7f9
+    FLD float ptr [ESP + 0x18]          ; 0044d7fd
+    FMULP ST4                           ; 0044d801
+    FLD ST1                             ; 0044d803
+    FMUL float ptr [ESP + 0x1c]         ; 0044d805
+    FXCH ST2                            ; 0044d809
+    FMUL float ptr [ESP + 0x20]         ; 0044d80b
+    FXCH ST3                            ; 0044d80f
+    FSTP float ptr [EDX + 0x8]          ; 0044d811
+    FLD float ptr [ESP + 0x28]          ; 0044d814
+    FCHS                                ; 0044d818
+    FSTP float ptr [EDX + 0x14]         ; 0044d81a
+    FLD ST0                             ; 0044d81d
+    FMUL float ptr [ESP + 0x1c]         ; 0044d81f
+    FXCH ST5                            ; 0044d823
+    FSTP float ptr [EDX + 0xc]          ; 0044d825
+    FLD float ptr [ESP + 0x18]          ; 0044d828
+    FMUL float ptr [ESP + 0x20]         ; 0044d82c
+    FXCH ST6                            ; 0044d830
+    FSTP float ptr [EDX + 0x10]         ; 0044d832
+    FLD float ptr [ESP + 0x18]          ; 0044d835
+    FCHS                                ; 0044d839
+    FMUL float ptr [ESP + 0x1c]         ; 0044d83b
+    FXCH ST6                            ; 0044d83f
+    FADDP ST2,ST0                       ; 0044d841
+    FMUL float ptr [ESP + 0x20]         ; 0044d843
+    FXCH ST5                            ; 0044d847
+    FADDP ST2,ST0                       ; 0044d849
+    FLD float ptr [ESP + 0x1c]          ; 0044d84b
+    FMUL float ptr [ESP + 0x24]         ; 0044d84f
+    FLD float ptr [ESP + 0x24]          ; 0044d853
+    FCHS                                ; 0044d857
+    FMUL float ptr [ESP + 0x20]         ; 0044d859
+    FXCH ST4                            ; 0044d85d
+    FSTP float ptr [EDX + 0x20]         ; 0044d85f
+    FADDP ST5,ST0                       ; 0044d862
+    FSTP float ptr [EDX]                ; 0044d864
+    FXCH                                ; 0044d866
+    FADDP ST2,ST0                       ; 0044d868
+    FSTP float ptr [EDX + 0x4]          ; 0044d86a
+    FXCH                                ; 0044d86d
+    FSTP float ptr [EDX + 0x1c]         ; 0044d86f
+    FSTP float ptr [EDX + 0x18]         ; 0044d872
+    ADD ESP,0x34                        ; 0044d875
+    RET                                 ; 0044d878
+

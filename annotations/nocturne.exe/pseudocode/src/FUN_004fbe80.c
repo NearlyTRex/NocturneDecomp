@@ -15,9 +15,9 @@ void FUN_004fbe80(int param_1)
   char *pcVar4;
   
   param_1 = param_1 + 0x1f5a0;
-  FUN_004bef10(param_1);
+  core_inv_cpp_CInventory_initialize_FUN_004bef10(param_1);
   pcVar3 = "BaronProxy";
-  pcVar2 = (char *)FUN_0040d540("CBaronWeapon");
+  pcVar2 = (char *)core_actor_cpp_createActorByName_FUN_0040d540("CBaronWeapon");
   pcVar4 = pcVar2;
   do {
     cVar1 = *pcVar3;
@@ -28,7 +28,7 @@ void FUN_004fbe80(int param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  FUN_004bf360(param_1,pcVar2,1);
-  FUN_004c0850(param_1,0,5,1);
+  core_inv_cpp_CInventory_addItem_FUN_004bf360(param_1,pcVar2,1);
+  core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(param_1,0,5,1);
   return;
 }

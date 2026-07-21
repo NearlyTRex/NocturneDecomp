@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00467220 at 00467238
 ;   FUN_004676c0 at 004676d0
+;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00467220 at 00467238
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059c8c0
 ;
 ; Called Functions:
-;   FUN_0056445f
-;   FUN_00564486
+;   crt_memory.c___vec_delete_FUN_0056445f
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,12 +25,12 @@ section .text
     PUSH 0x59c8c0                       ; 004673a5 | DAT_0059c8c0
     MOV EDX,dword ptr [EBX + 0x50]      ; 004673aa
     PUSH EDX                            ; 004673ad
-    CALL FUN_0056445f                   ; 004673ae
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 004673ae
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 004673b3
     PUSH EAX                            ; 004673b6
-    CALL FUN_00564486                   ; 004673b7
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004673b7
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     MOV dword ptr [EBX + 0x50],0x0      ; 004673bc
     MOV dword ptr [EBX + 0x48],0x0      ; 004673c3
     MOV EAX,dword ptr [EBX + 0x48]      ; 004673ca

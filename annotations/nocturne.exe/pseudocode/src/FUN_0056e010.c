@@ -26,7 +26,7 @@ int FUN_0056e010(int param_1)
       iVar2 = iVar2 + 1;
     } while (iVar1 < DAT_005c1f58 * 4);
   }
-  DAT_005c1f54 = FUN_00564a70(DAT_005c1f54,(DAT_005c1f58 + 1) * 4);
+  DAT_005c1f54 = realloc(DAT_005c1f54,(DAT_005c1f58 + 1) * 4);
   iVar2 = DAT_005c1f58 * 4;
   DAT_005c1f58 = DAT_005c1f58 + 1;
   *(int *)(DAT_005c1f54 + iVar2) = param_1;

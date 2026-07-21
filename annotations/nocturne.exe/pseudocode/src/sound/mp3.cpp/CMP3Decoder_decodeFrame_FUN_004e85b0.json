@@ -1,0 +1,1990 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1125,
+    "complexity_score": 1641,
+    "cross_reference_count": 2,
+    "function_call_count": 29,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 636,
+    "suspect_count": 97,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1761
+  },
+  "cross_references": [
+    {
+      "addr": "004e82d0",
+      "from_addr": "004e83b4",
+      "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8410",
+      "from_addr": "004e84ed",
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e85b0",
+    "address_range": [
+      [
+        "004e85b0",
+        "004e9490"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0",
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,undefined2 *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    },
+    {
+      "addr": "004e5200",
+      "is_variadic": false,
+      "name": "FUN_004e5200"
+    },
+    {
+      "addr": "004e6160",
+      "is_variadic": false,
+      "name": "FUN_004e6160"
+    },
+    {
+      "addr": "004e7030",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_antiAliasingButterfly_FUN_004e7030"
+    },
+    {
+      "addr": "004e3e70",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004e3e70"
+    },
+    {
+      "addr": "004e77d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0"
+    },
+    {
+      "addr": "004e3320",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_004e3320"
+    },
+    {
+      "addr": "004e31f0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004e31f0"
+    },
+    {
+      "addr": "004e29d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_004e29d0"
+    },
+    {
+      "addr": "004e2ac0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0"
+    },
+    {
+      "addr": "004e3130",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004e3130"
+    },
+    {
+      "addr": "004e36d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_004e36d0"
+    },
+    {
+      "addr": "004e37d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0"
+    },
+    {
+      "addr": "004e33d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004e33d0"
+    },
+    {
+      "addr": "004e3460",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460"
+    },
+    {
+      "addr": "004e2ce0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0"
+    },
+    {
+      "addr": "004e2de0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_004e2de0"
+    },
+    {
+      "addr": "004e2cf0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0"
+    },
+    {
+      "addr": "004e48a0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0"
+    },
+    {
+      "addr": "004e5000",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000"
+    },
+    {
+      "addr": "004e4320",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320"
+    },
+    {
+      "addr": "004e2ea0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0"
+    },
+    {
+      "addr": "004e4070",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070"
+    },
+    {
+      "addr": "004e7720",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e7720"
+    },
+    {
+      "addr": "004e5d80",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_reorderShortBlockSamples_FUN_004e5d80"
+    },
+    {
+      "addr": "004e58d0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_004e58d0"
+    },
+    {
+      "addr": "004e3a60",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_004e3a60"
+    },
+    {
+      "addr": "004e3d30",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_requantizeSamples_FUN_004e3d30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058b4e0",
+      "name": "s_..\\sound\\mp3.cpp_0058b4e0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058b4f1",
+      "name": "s_MPEG_Layer_2_-_pick_table_-_can'_0058b4f1",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058b52a",
+      "name": "s_..\\sound\\mp3.cpp_0058b52a",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058b53b",
+      "name": "s_js_bound_bad_layer/modext_(%d/%d_0058b53b",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0058b9c0",
+      "name": "s_..\\sound\\mp3.cpp_0058b9bf+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0058b9d1",
+      "name": "s_Not_enough_main_data_to_decode_f_0058b9d1",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005bb250",
+      "name": "s_ntroller$$_005bb246+0xa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbc48",
+      "name": "DAT_005bbc48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbc88",
+      "name": "DAT_005bbc88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbdf0",
+      "name": "DAT_005bbdf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd8b28",
+      "name": "DAT_01cd8b28",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004e84ed",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e8520",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e83b4",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e83e8",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.249190938511327,
+    "instruction_count": 927,
+    "opcode_distribution": {
+      "BOOL_AND": 4,
+      "BOOL_NEGATE": 129,
+      "BOOL_OR": 15,
+      "BRANCH": 19,
+      "CALL": 41,
+      "CBRANCH": 72,
+      "COPY": 857,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_DIV": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_NEG": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 469,
+      "INT_AND": 768,
+      "INT_CARRY": 92,
+      "INT_DIV": 1,
+      "INT_EQUAL": 537,
+      "INT_LEFT": 36,
+      "INT_LESS": 64,
+      "INT_MULT": 20,
+      "INT_NOTEQUAL": 80,
+      "INT_OR": 106,
+      "INT_REM": 1,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 67,
+      "INT_SCARRY": 110,
+      "INT_SDIV": 3,
+      "INT_SEXT": 6,
+      "INT_SLESS": 287,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 266,
+      "INT_XOR": 43,
+      "INT_ZEXT": 13,
+      "LOAD": 189,
+      "POPCOUNT": 254,
+      "RETURN": 2,
+      "ROUND": 2,
+      "STORE": 271,
+      "SUBPIECE": 10,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 4866
+  },
+  "stack_frame": {
+    "frame_size": 24788,
+    "local_size": 24788,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60d0",
+        "offset": -24784,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60cc",
+        "offset": -24780,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60c8",
+        "offset": -24776,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4ec8",
+        "offset": -20168,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3cc8",
+        "offset": -15560,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_33c8",
+        "offset": -13256,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2ac8",
+        "offset": -10952,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_21c8",
+        "offset": -8648,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18c8",
+        "offset": -6344,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc8",
+        "offset": -4040,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc8",
+        "offset": -3272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c8",
+        "offset": -2504,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c8",
+        "offset": -1736,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d8",
+        "offset": -1240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d0",
+        "offset": -1232,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c0",
+        "offset": -1216,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_390",
+        "offset": -912,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_290",
+        "offset": -656,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004e85bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "004e8e93",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004e8f5c",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CMP3Decoder_decodeFrame_FUN_004e85b0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 162,
+          "message": "Uninitialized variable: local_90",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 622,
+          "message": "Uninitialized variable: local_104",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 82,
+          "line": 622,
+          "message": "Uninitialized variable: iStack_114",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 629,
+          "message": "Uninitialized variable: local_100",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 15,
+          "line": 615,
+          "message": "Uninitialized variable: iStack_108",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 28,
+          "line": 214,
+          "message": "Uninitialized variable: piStack_e4",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 20,
+          "line": 149,
+          "message": "Uninitialized variable: local_c8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 36,
+          "line": 435,
+          "message": "Uninitialized variable: local_b8",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ushort *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ushort *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiVar11 = param_1 + 0x14c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x14cf] == (int *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((uint)param_1[0x14cb] & 7) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppuStack_60d4 = (uint **)(8 - ((uint)param_1[0x14cb] & 7));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (((local_a4 & uVar3) != local_a8 && (param_1[0x14cf] == (int *)0x0))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x14cf] == (int *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_b0 = param_1[0x14cb];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 135,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = param_1 + 0x14c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_005bbc88",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)(&DAT_005bbc88 + local_94 * 4 + local_14) / local_d0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_005bbc48",
+      "severity": "mild",
+      "text": "(&DAT_005bbc48 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 175,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = (int **)&DAT_01cd8b28;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 193,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = (int **)&DAT_01cd8b28;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 208,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiVar11 = param_1 + 0x14c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 245,
+      "match": "(int *)((int)local_80",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)((int)local_80 + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(float *)((int)local_84",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)local_84 + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 251,
+      "match": "DAT_005bbdf0",
+      "severity": "mild",
+      "text": "*pfVar6 = *pfVar6 * (float)*(double *)(&DAT_005bbdf0 + iVar8 * 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 263,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e4 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(ushort *)((int)ppiStack_60d8",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x480);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(int **)((int)ppiVar11",
+      "severity": "moderate",
+      "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 314,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != (ushort *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 320,
+      "match": "(int **)((int)apiStack_9cc",
+      "severity": "moderate",
+      "text": "ppiVar13 = (int **)((int)apiStack_9cc + local_30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 324,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e4 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 329,
+      "match": "(int **)((int)ppiVar11",
+      "severity": "moderate",
+      "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 345,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar12 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 347,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = puVar12 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 349,
+      "match": "(ushort *)((int)auStack_33cc",
+      "severity": "moderate",
+      "text": "*puVar12 = *(ushort *)((int)auStack_33cc + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 351,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar12 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 372,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e0 = param_1 + 0x14c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 373,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e4 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 392,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e0 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 396,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 399,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 404,
+      "match": "(int **)((int)ppuStack_60d4",
+      "severity": "moderate",
+      "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 405,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60dc = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 410,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_74 = (int)param_1[0x14d3] + (-aiStack_4dc[0] - uVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 413,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60dc = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 414,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x14d3] = param_1[0x14d3] + -0x400;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 414,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x14d3] = param_1[0x14d3] + -0x400;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 426,
+      "match": "(int *)((int)param_1",
+      "severity": "moderate",
+      "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 426,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 426,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 437,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60dc = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 442,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != (ushort *)0x0) && (local_78 = 0, 0 < (int)local_b0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 449,
+      "match": "(int **)((int)apiStack_4c4",
+      "severity": "moderate",
+      "text": "ppiVar11 = (int **)((int)apiStack_4c4 + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 451,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60d8 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 460,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60ec = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 469,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60ec = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 478,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60f0 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 530,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60f0 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 545,
+      "match": "(float *)((int)afStack_18cc",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_18cc + iVar5) = -*(float *)((int)afStack_18cc + iVar5)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 545,
+      "match": "(float *)((int)afStack_18cc",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_18cc + iVar5) = -*(float *)((int)afStack_18cc + iVar5)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 561,
+      "match": "(uint *)((int)afStack_18cc",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)afStack_18cc + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 563,
+      "match": "(uint *)((int)apiStack_194",
+      "severity": "moderate",
+      "text": "*(uint *)((int)apiStack_194 + iVar8) = *puVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 568,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60e4 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 570,
+      "match": "(ushort *)((int)ppiStack_60d8",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 575,
+      "match": "(int **)((int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (int **)((int)local_20 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 589,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar12 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 591,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = puVar12 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 593,
+      "match": "(ushort *)((int)auStack_33cc",
+      "severity": "moderate",
+      "text": "*puVar12 = *(ushort *)((int)auStack_33cc + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 595,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar12 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 615,
+      "match": "DAT_005bbc48",
+      "severity": "mild",
+      "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 616,
+      "match": "DAT_005bbc88",
+      "severity": "mild",
+      "text": "* (float10)*(int *)(&DAT_005bbc88 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 625,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_68 = local_68 * (int)ppiStack_60d8 - ((int)param_1[0x14cb] + (0xc - local_b8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 630,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ppiStack_60dc = param_1 + 0x14c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)local_8c",
+      "severity": "moderate",
+      "text": "local_14 = (int)local_8c * 0xb4 + 0x3c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 153,
+      "match": "(int)local_8c",
+      "severity": "moderate",
+      "text": "local_e0[4] * 8 + (int)local_8c * 0x20));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)local_8c",
+      "severity": "moderate",
+      "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)local_8c",
+      "severity": "moderate",
+      "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 192,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "(3 < (int)ppiVar11)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "(\"$CMotionController$$\" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)local_8c",
+      "severity": "moderate",
+      "text": "(\"$CMotionController$$\" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 245,
+      "match": "(int)local_80",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)((int)local_80 + local_60);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 246,
+      "match": "(int)local_84",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)local_84 + local_60);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 264,
+      "match": "(int)ppiStack_60d8",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x480);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 269,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 272,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "} while ((int)ppiVar11 < local_bc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 329,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 332,
+      "match": "(int)ppiVar11",
+      "severity": "moderate",
+      "text": "} while ((int)ppiVar11 < local_bc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppuStack_60d4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 403,
+      "match": "(uint)ppuStack_60d4",
+      "severity": "moderate",
+      "text": "if (uVar4 % (uint)ppuStack_60d4 != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppuStack_60d4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 404,
+      "match": "(int)ppuStack_60d4",
+      "severity": "moderate",
+      "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppuStack_60d4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 404,
+      "match": "(uint)ppuStack_60d4",
+      "severity": "moderate",
+      "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 442,
+      "match": "(int)local_b0",
+      "severity": "moderate",
+      "text": "if ((param_2 != (ushort *)0x0) && (local_78 = 0, 0 < (int)local_b0)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 570,
+      "match": "(int)ppiStack_60d8",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x40);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 575,
+      "match": "(int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (int **)((int)local_20 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 580,
+      "match": "(int)local_20",
+      "severity": "moderate",
+      "text": "} while ((int)local_20 < local_bc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 605,
+      "match": "(int)local_b0",
+      "severity": "moderate",
+      "text": "} while (local_78 < (int)local_b0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 625,
+      "match": "(int)ppiStack_60d8",
+      "severity": "moderate",
+      "text": "local_68 = local_68 * (int)ppiStack_60d8 - ((int)param_1[0x14cb] + (0xc - local_b8));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 636,
+      "match": "(int)local_b0",
+      "severity": "moderate",
+      "text": "return (int)local_b0 * 0x240;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 379,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 420,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 151,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((float10)*(double *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 202,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "local_cc = *(uint ***)",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: local_90",
+      "line": 162,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (local_90 == 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_104",
+      "line": 622,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: iStack_114",
+      "line": 622,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_100",
+      "line": 629,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (local_100 != 0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: iStack_108",
+      "line": 615,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (0 < iStack_108) {",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: piStack_e4",
+      "line": 214,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "local_b0 = (int *)((*piStack_e4 != 0) + 1);",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_c8",
+      "line": 149,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "local_9c = local_c8;",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b8",
+      "line": 435,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "ppiStack_60d8 = (int **)(local_b8 + -1);",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ DWORD FUN_005689c0(uint param_1,int param_2,DWORD param_3)
     DVar2 = SetFilePointer(*(HANDLE *)(DAT_005c1f54 + param_1 * 4),param_2,(PLONG)0x0,param_3);
     (*(code *)PTR_FUN_005c1ac4)(param_1);
     if (DVar2 == 0xffffffff) {
-      FUN_0056c73c();
+      __set_errno();
     }
     return DVar2;
   }

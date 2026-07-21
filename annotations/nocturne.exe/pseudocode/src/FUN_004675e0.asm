@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00467220 at 0046722f
+;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00467220 at 0046722f
 ;
 ; Called Functions:
-;   FUN_00564486
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 004675fc (CONDITIONAL_JUMP)  ; LAB_004675fc
     LEA EAX,[EDX + -0x4]                ; 004675f0
     PUSH EAX                            ; 004675f3
-    CALL FUN_00564486                   ; 004675f4
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 004675f4
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 004675f9
     MOV ECX,dword ptr [EBX + 0xc]       ; 004675fc
         ;   Label: LAB_004675fc
@@ -42,8 +42,8 @@ section .text
     RET                                 ; 00467619
     PUSH ECX                            ; 0046761a
         ;   Label: LAB_0046761a
-    CALL FUN_00564486                   ; 0046761b
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0046761b
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00467620
     JMP 0x00467603                      ; 00467623
         ;   XREF to: 00467603 (UNCONDITIONAL_JUMP)  ; LAB_00467603

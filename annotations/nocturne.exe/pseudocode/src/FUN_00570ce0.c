@@ -24,7 +24,7 @@ char * FUN_00570ce0(char *param_1,char *param_2,int param_3)
     pcVar1[-1] = '\0';
   }
   if (param_3 != 0) {
-    FUN_00563cc0(pcVar1,0,param_3);
+    memset(pcVar1,0,param_3);
   }
   return param_1;
 }

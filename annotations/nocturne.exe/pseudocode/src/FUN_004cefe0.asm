@@ -8,9 +8,9 @@
 ;   undefined4 DAT_00765a98
 ;
 ; Called Functions:
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
 ;   FUN_0040bce0
-;   FUN_0040d890
-;   FUN_004cf090
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | DAT_00765a98
     PUSH EDI                            ; 004cf006
     PUSH ESI                            ; 004cf007
-    CALL FUN_0040d890                   ; 004cf008
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004cf008
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 004cf00d
     TEST EAX,EAX                        ; 004cf010
     JNZ 0x004cf01d                      ; 004cf012
@@ -54,8 +54,8 @@ section .text
     PUSH EBP                            ; 004cf023
     PUSH 0x14                           ; 004cf024
     PUSH EBX                            ; 004cf026
-    CALL FUN_004cf090                   ; 004cf027
-        ;   XREF to: 004cf090 (UNCONDITIONAL_CALL)  ; undefined FUN_004cf090()
+    CALL core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090 ; 004cf027
+        ;   XREF to: 004cf090 (UNCONDITIONAL_CALL)  ; undefined core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090()
     ADD ESP,0xc                         ; 004cf02c
     CMP dword ptr [ESP + 0x18],0x1      ; 004cf02f
     JNZ 0x004cf04f                      ; 004cf034

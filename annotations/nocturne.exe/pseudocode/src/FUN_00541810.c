@@ -10,6 +10,6 @@ void FUN_00541810(uint param_1,int param_2)
 
 {
   *(uint *)(param_2 + 4) = 0;
-  FUN_00479f70(param_1,param_2);
+  core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
   return;
 }

@@ -12,8 +12,8 @@ uint FUN_004b4140(uint param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = FUN_0056445f(param_1,&DAT_0059e9d0);
-    FUN_00564486(uVar1);
+    uVar1 = __vec_delete(param_1,&DAT_0059e9d0);
+    shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }
   uVar1 = FUN_004b4800(param_1,1);

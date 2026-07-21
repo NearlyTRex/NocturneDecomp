@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00565264
+;   crt_fstream.cpp_ifstream_dtor_FUN_00565264
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     PUSH EDX                            ; 005650f8
     SUB EAX,0x44                        ; 005650f9
     PUSH EAX                            ; 005650fc
-    CALL FUN_00565264                   ; 005650fd
-        ;   XREF to: 00565264 (UNCONDITIONAL_CALL)  ; undefined FUN_00565264()
+    CALL crt_fstream.cpp_ifstream_dtor_FUN_00565264 ; 005650fd
+        ;   XREF to: 00565264 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ifstream_dtor_FUN_00565264()
     ADD ESP,0x8                         ; 00565102
     RET                                 ; 00565105
 

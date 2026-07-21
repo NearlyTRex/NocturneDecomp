@@ -12,7 +12,7 @@ void FUN_00517350(uint param_1)
   int iVar1;
   
   FUN_005670b1(8);
-  iVar1 = FUN_004e0900(param_1);
+  iVar1 = core_motion_cpp_CMotionList_ctor_FUN_004e0900(param_1);
   *(uint *)(iVar1 + 0x28558) = 0;
   *(uint *)(iVar1 + 0x2936c) = 0;
   *(uint *)(iVar1 + 0x29370) = 0;

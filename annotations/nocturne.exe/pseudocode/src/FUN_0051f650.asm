@@ -7,13 +7,13 @@
 ; XREF[3]:
 ;   FUN_004c90e0 at 004c9357
 ;   FUN_004d9900 at 004d990a
-;   FUN_0051f730 at 0051f737
+;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 at 0051f737
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0268cef0
 ;
 ; Called Functions:
-;   FUN_00517cc0
+;   core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     LEA ESI,[EBX + 0xab000]             ; 0051f657
     PUSH EBX                            ; 0051f65d
         ;   Label: LAB_0051f65d
-    CALL FUN_00517cc0                   ; 0051f65e
-        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00517cc0()
+    CALL core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0 ; 0051f65e
+        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0()
     ADD EBX,0x2ac0                      ; 0051f663
     ADD ESP,0x4                         ; 0051f669
     CMP EBX,ESI                         ; 0051f66c

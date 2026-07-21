@@ -17,12 +17,12 @@
 ;   undefined4 DAT_01fb1b24
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00416030
-;   FUN_0041ceb0
-;   FUN_0043ac60
-;   FUN_00461090
-;   thunk_FUN_004cdbc0
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   engine_console.cpp_CConsole_printf_FUN_0043ac60
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_00416352
     PUSH EBX                            ; 00416353
     MOV dword ptr [EBX + 0x150],0x2     ; 00416354
-    CALL FUN_00409f20                   ; 0041635e
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0041635e
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 00416363
     MOV EAX,[0x005be368]                ; 00416366 | DAT_005be368
     MOV EDX,dword ptr [EBX + 0xc98]     ; 0041636b
@@ -74,8 +74,8 @@ section .text
     CALL dword ptr [EDX + 0x14]         ; 00416385
     ADD ESP,0x8                         ; 00416388
     PUSH EAX                            ; 0041638b
-    CALL FUN_0041ceb0                   ; 0041638c
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0041638c
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 00416391
     MOV ESI,EAX                         ; 00416394
     TEST EAX,EAX                        ; 00416396
@@ -87,14 +87,14 @@ section .text
     PUSH -0x1                           ; 004163a3
         ;   Label: LAB_004163a3
     PUSH EBX                            ; 004163a5
-    CALL FUN_00416030                   ; 004163a6
-        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; undefined FUN_00416030()
+    CALL core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 ; 004163a6
+        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030()
     ADD ESP,0x8                         ; 004163ab
     MOV EAX,[0x005ae704]                ; 004163ae | DAT_005ae704
         ;   Label: LAB_004163ae
     PUSH EAX                            ; 004163b3 | DAT_01b4d738
-    CALL thunk_FUN_004cdbc0             ; 004163b4
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004cdbc0()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004163b4
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     MOV EAX,[0x005be368]                ; 004163b9 | DAT_005be368 | DAT_01e57284
     MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004163be | DAT_01fb1b24
     ADD ESP,0x4                         ; 004163c8
@@ -118,16 +118,16 @@ section .text
     MOV EBP,dword ptr [0x005ad350]      ; 004163f3 | PTR_DAT_005ad350
     PUSH EBP                            ; 004163f9 | DAT_0077ad0c
     MOV dword ptr [EBX + 0x150],0x1     ; 004163fa
-    CALL FUN_0043ac60                   ; 00416404
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043ac60()
+    CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00416404
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 00416409
     JMP 0x0041632f                      ; 0041640c
         ;   XREF to: 0041632f (UNCONDITIONAL_JUMP)  ; LAB_0041632f
     MOV EBP,dword ptr [0x005ae704]      ; 00416411 | DAT_005ae704
         ;   Label: LAB_00416411
     PUSH EBP                            ; 00416417 | DAT_01b4d738
-    CALL FUN_00461090                   ; 00416418
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined FUN_00461090()
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00416418
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     ADD ESP,0x4                         ; 0041641d
     TEST EAX,EAX                        ; 00416420
     JNZ 0x004163a3                      ; 00416422

@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004e85b0 at 004e90c8
+;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e90c8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058b77c
@@ -41,13 +41,13 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   FUN_004c8440
-;   FUN_004e2ce0
-;   FUN_004e2cf0
-;   FUN_004e2e40
-;   FUN_004e2ed0
-;   FUN_00563c90
-;   FUN_00566b5c
+;   sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0
+;   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0
+;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0
+;   sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_004e2e40
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     LEA EDI,[EDX*0x8 + 0x0]             ; 004e5298
     ADD EBX,EAX                         ; 004e529f
     ADD EDI,EDX                         ; 004e52a1
-    CALL FUN_004e2ce0                   ; 004e52a3
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e52a3
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD ESP,0x4                         ; 004e52a8
     SHL EDI,0x3                         ; 004e52ab
     MOV dword ptr [ESP + 0x24],EBX      ; 004e52ae
@@ -122,8 +122,8 @@ section .text
         ;   XREF to: 004e5720 (CONDITIONAL_JUMP)  ; LAB_004e5720
     MOV EDX,dword ptr [ESP + 0x4c]      ; 004e52d0
     PUSH EDX                            ; 004e52d4
-    CALL FUN_004e2ce0                   ; 004e52d5
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e52d5
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     MOV EDX,dword ptr [EDI + 0x5c]      ; 004e52da
     ADD EDX,0x20                        ; 004e52dd
     MOV EAX,EDX                         ; 004e52e0
@@ -159,8 +159,8 @@ section .text
     MOV dword ptr [ESP + 0x34],EAX      ; 004e533f
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004e5343
     PUSH EAX                            ; 004e5347
-    CALL FUN_004e2ce0                   ; 004e5348
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e5348
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD ESP,0x4                         ; 004e534d
     CMP EAX,dword ptr [ESP + 0x34]      ; 004e5350
     JNC 0x004e57cc                      ; 004e5354
@@ -180,8 +180,8 @@ section .text
     PUSH EAX                            ; 004e537e
     MOV EDX,dword ptr [ESP + 0x60]      ; 004e537f
     PUSH EDX                            ; 004e5383
-    CALL FUN_004e2ed0                   ; 004e5384
-        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ed0()
+    CALL sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 ; 004e5384
+        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0()
     MOV ECX,0x12                        ; 004e5389
     MOV EDX,ESI                         ; 004e538e
     MOV EAX,ESI                         ; 004e5390
@@ -260,8 +260,8 @@ section .text
     PUSH 0x58b77c                       ; 004e5472 | DAT_0058b77c
     MOV EDI,dword ptr [ESP + 0x34]      ; 004e5477
     PUSH EDI                            ; 004e547b
-    CALL FUN_00563c90                   ; 004e547c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004e547c
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004e5481
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e5484
     MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e5488 | DAT_005bdba0
@@ -284,8 +284,8 @@ section .text
     PUSH EAX                            ; 004e54dc
     PUSH 0x58b77f                       ; 004e54dd | DAT_0058b77f
     PUSH EDI                            ; 004e54e2
-    CALL FUN_00566b5c                   ; 004e54e3
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined FUN_00566b5c()
+    CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004e54e3
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
     ADD ESP,0xc                         ; 004e54e8
     CMP EBP,dword ptr [ESP + 0x10]      ; 004e54eb
     JZ 0x004e551a                       ; 004e54ef
@@ -485,8 +485,8 @@ section .text
     PUSH EAX                            ; 004e5766
     MOV ECX,dword ptr [ESP + 0x60]      ; 004e5767
     PUSH ECX                            ; 004e576b
-    CALL FUN_004e2ed0                   ; 004e576c
-        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ed0()
+    CALL sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 ; 004e576c
+        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0()
     MOV ECX,0x12                        ; 004e5771
     MOV EDX,ESI                         ; 004e5776
     MOV EAX,ESI                         ; 004e5778
@@ -534,15 +534,15 @@ section .text
     SHL EAX,0x3                         ; 004e57f3
     PUSH ECX                            ; 004e57f6
     ADD EBX,EAX                         ; 004e57f7
-    CALL FUN_004e2ce0                   ; 004e57f9
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e57f9
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD ESP,0x4                         ; 004e57fe
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004e5801
     PUSH EAX                            ; 004e5805
     MOV EBP,dword ptr [EBX + 0x18]      ; 004e5806
     MOV EDI,dword ptr [ESP + 0x64]      ; 004e5809
-    CALL FUN_004e2ce0                   ; 004e580d
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e580d
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD EDI,EBP                         ; 004e5812
     ADD ESP,0x4                         ; 004e5814
     CMP EAX,EDI                         ; 004e5817
@@ -550,8 +550,8 @@ section .text
         ;   XREF to: 004e5844 (CONDITIONAL_JUMP)  ; LAB_004e5844
     MOV EDX,dword ptr [ESP + 0x4c]      ; 004e581b
     PUSH EDX                            ; 004e581f
-    CALL FUN_004e2ce0                   ; 004e5820
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e5820
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD ESP,0x4                         ; 004e5825
     MOV ECX,dword ptr [ESP + 0x60]      ; 004e5828
     MOV EDI,dword ptr [EBX + 0x18]      ; 004e582c
@@ -561,8 +561,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x50]      ; 004e5834
     PUSH EBP                            ; 004e5838
     SUB ESI,0x4                         ; 004e5839
-    CALL FUN_004e2e40                   ; 004e583c
-        ;   XREF to: 004e2e40 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2e40()
+    CALL sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_004e2e40 ; 004e583c
+        ;   XREF to: 004e2e40 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_004e2e40()
     ADD ESP,0x8                         ; 004e5841
     MOV EDX,dword ptr [ESP + 0x58]      ; 004e5844
         ;   Label: LAB_004e5844
@@ -579,8 +579,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x60]      ; 004e586f
     PUSH ECX                            ; 004e5873
     ADD EBX,EDX                         ; 004e5874
-    CALL FUN_004e2ce0                   ; 004e5876
-        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2ce0()
+    CALL sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0 ; 004e5876
+        ;   XREF to: 004e2ce0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0()
     ADD ESP,0x4                         ; 004e587b
     CMP EAX,EBX                         ; 004e587e
     JL 0x004e58b4                       ; 004e5880
@@ -611,8 +611,8 @@ section .text
     PUSH EBX                            ; 004e58b6
     MOV EBX,dword ptr [ESP + 0x50]      ; 004e58b7
     PUSH EBX                            ; 004e58bb
-    CALL FUN_004e2cf0                   ; 004e58bc
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e2cf0()
+    CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e58bc
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
     ADD ESP,0x8                         ; 004e58c1
     JMP 0x004e5882                      ; 004e58c4
         ;   XREF to: 004e5882 (UNCONDITIONAL_JUMP)  ; LAB_004e5882

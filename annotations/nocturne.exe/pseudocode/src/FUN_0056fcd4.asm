@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_0056af76 at 0056af95
-;   FUN_0056df10 at 0056dfb3
+;   crt_startup.cpp_WinMainBootstrap_FUN_0056df10 at 0056dfb3
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c2054 = 0056fcd0

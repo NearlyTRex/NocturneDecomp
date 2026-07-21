@@ -18,7 +18,7 @@ void FUN_00429490(int param_1,int param_2)
   
   bVar4 = 0;
   piVar2 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);
-  FUN_0055aa00(piVar2 + 3,param_1 + 0xfd0 + *piVar2 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(piVar2 + 3,param_1 + 0xfd0 + *piVar2 * 0x30);
   puVar3 = local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar3;

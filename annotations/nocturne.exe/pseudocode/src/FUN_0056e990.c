@@ -14,7 +14,7 @@ int FUN_0056e990(uint param_1)
   
   iVar1 = FUN_005713e0(param_1);
   iVar1 = (iVar1 + 1) * 2;
-  iVar2 = FUN_005635b0(iVar1);
+  iVar2 = malloc(iVar1);
   if (iVar2 != 0) {
     FUN_00571410(iVar2,param_1,iVar1);
   }

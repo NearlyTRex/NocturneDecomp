@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0054e0b0 at 0054e119
+;   core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0 at 0054e119
 ;
 ; *****************************************************************************
 

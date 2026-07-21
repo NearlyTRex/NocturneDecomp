@@ -33,7 +33,8 @@ void FUN_004fa2e0(int *param_1,int param_2)
   
   if (DAT_006b0280 != 0) {
     if (param_2 < 4) {
-      iVar3 = FUN_004f9a10(&DAT_005c5014 + *param_1 * 0xc,&DAT_005c5014 + param_1[1] * 0xc);
+      iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                        (&DAT_005c5014 + *param_1 * 0xc,&DAT_005c5014 + param_1[1] * 0xc);
       if (iVar3 == 0) {
         return;
       }
@@ -45,7 +46,8 @@ void FUN_004fa2e0(int *param_1,int param_2)
       piVar7 = param_1;
       if (0 < iVar3) {
         do {
-          iVar2 = FUN_004f9a10(&DAT_005c5014 + *piVar7 * 0xc,&DAT_005c5014 + piVar7[1] * 0xc);
+          iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                            (&DAT_005c5014 + *piVar7 * 0xc,&DAT_005c5014 + piVar7[1] * 0xc);
           if (iVar2 == 0) {
             iVar11 = iVar11 + 1;
           }
@@ -163,44 +165,46 @@ void FUN_004fa2e0(int *param_1,int param_2)
         local_1c = local_1c + 1;
       } while (local_1c < param_2);
     }
-    local_14 = (uint *)FUN_004f9830(_DAT_01e52eec);
+    local_14 = (uint *)engine_prim_c_findEdgeInBuffer_FUN_004f9830(_DAT_01e52eec);
     if ((local_14 != (uint *)0x0) &&
-       (puVar4 = (uint *)FUN_004f9830(_DAT_01e52eec), puVar4 != (uint *)0x0)) {
+       (puVar4 = (uint *)engine_prim_c_findEdgeInBuffer_FUN_004f9830(_DAT_01e52eec),
+       puVar4 != (uint *)0x0)) {
       local_18 = _DAT_01e52eec;
       iVar3 = _DAT_01e52eec - 0x000004B0;
       bVar13 = SBORROW4(_DAT_01e52eec,0x000004B0);
       while (bVar13 != iVar3 < 0) {
         if ((int)local_14[1] <= local_18) {
           *local_14 = 0xffffffff;
-          local_14 = (uint *)FUN_004f9830(local_18);
+          local_14 = (uint *)engine_prim_c_findEdgeInBuffer_FUN_004f9830(local_18);
           if (local_14 == (uint *)0x0) {
             return;
           }
         }
         if ((int)puVar4[1] <= local_18) {
           *puVar4 = 0xffffffff;
-          puVar4 = (uint *)FUN_004f9830(local_18);
+          puVar4 = (uint *)engine_prim_c_findEdgeInBuffer_FUN_004f9830(local_18);
           if (puVar4 == (uint *)0x0) {
             return;
           }
         }
-        FUN_00530710();
-        local_14[2] = local_14[2] + local_14[3];
-        local_14[6] = local_14[6] + local_14[7];
-        local_14[8] = local_14[8] + local_14[9];
-        local_14[4] = local_14[4] + local_14[5];
-        local_14[10] = local_14[10] + local_14[0xb];
-        local_14[0xc] = local_14[0xc] + local_14[0xd];
+        local_64[0] = 0x4fa54c;
+        wincore_windll_cpp_renderScanline_FUN_00530710(puVar4,local_14,local_18);
+        *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
+        *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
+        *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);
+        *(int *)(local_18 + 0x10) = *(int *)(local_18 + 0x10) + *(int *)(local_18 + 0x14);
+        *(int *)(local_18 + 0x28) = *(int *)(local_18 + 0x28) + *(int *)(local_18 + 0x2c);
+        *(int *)(local_18 + 0x30) = *(int *)(local_18 + 0x30) + *(int *)(local_18 + 0x34);
         puVar4[2] = puVar4[2] + puVar4[3];
         puVar4[6] = puVar4[6] + puVar4[7];
         iVar9 = 0x000004B0;
         puVar4[8] = puVar4[8] + puVar4[9];
         puVar4[4] = puVar4[4] + puVar4[5];
         puVar4[10] = puVar4[10] + puVar4[0xb];
-        local_18 = local_18 + 1;
+        local_1c = local_1c + 1;
         puVar4[0xc] = puVar4[0xc] + puVar4[0xd];
-        iVar3 = local_18 - iVar9;
-        bVar13 = SBORROW4(local_18,iVar9);
+        iVar3 = local_1c - iVar9;
+        bVar13 = SBORROW4(local_1c,iVar9);
       }
     }
   }
@@ -215,7 +219,7 @@ void FUN_004fa2e0(int *param_1,int param_2)
         iVar3 = iVar11;
       } while (iVar11 < param_2);
     }
-    FUN_00532650(local_64,param_2);
+    wincore_windll_cpp_drawPolygon2_FUN_00532650(local_64,param_2);
   }
   return;
 }

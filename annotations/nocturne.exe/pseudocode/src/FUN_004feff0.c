@@ -40,7 +40,7 @@ void FUN_004feff0(uint *param_1)
   param_1[0x115] = 0;
   _DAT_01e56c28 = 0;
   param_1[5] = 0;
-  FUN_00566498(iVar2,0,0,local_70,0);
+  splitpath(iVar2,0,0,local_70,0);
   pcVar3 = &DAT_0058e36d;
   iVar2 = -1;
   pcVar5 = local_70;
@@ -62,7 +62,7 @@ void FUN_004feff0(uint *param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = FUN_00564520(local_70,"smill.wav");
+  iVar2 = _stricmp(local_70,"smill.wav");
   if (iVar2 == 0) {
     pcVar3 = &DAT_0058e37c;
     iVar2 = -1;
@@ -86,7 +86,7 @@ void FUN_004feff0(uint *param_1)
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = FUN_00564520(local_70,"town.wav");
+  iVar2 = _stricmp(local_70,"town.wav");
   if (iVar2 == 0) {
     pcVar3 = &DAT_0058e38b;
     iVar2 = -1;
@@ -110,7 +110,7 @@ void FUN_004feff0(uint *param_1)
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
   }
-  FUN_0052e9d0(0x02DC9450,local_70);
+  core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(0x02DC9450,local_70);
   param_1[6] = 0;
   return;
 }

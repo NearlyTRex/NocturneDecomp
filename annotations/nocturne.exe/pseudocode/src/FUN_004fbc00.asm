@@ -8,13 +8,13 @@
 ;   string s_scat.dfm_0058dd12
 ;   string s_draw_stand2coatPocket_0058dd1b
 ;   string s_draw_coatPocket2aimPistols_0058dd31
-;   undefined1* PTR_FUN_005a1554 = 004fbcc0
+;   undefined1* PTR_core_scat.cpp_CScat_setup_FUN_004fbcc0_005a1554 = 004fbcc0
 ;
 ; Called Functions:
-;   FUN_0042a760
+;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   FUN_004b46d0
 ;   FUN_004fbe80
-;   FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -30,11 +30,11 @@ section .text
     MOV EBX,EAX                         ; 004fbc0e
     ADD EAX,0x150                       ; 004fbc10
     PUSH 0x58dd12                       ; 004fbc15 | = "scat.dfm"
-    MOV dword ptr [EAX + -0x4],0x5a1554 ; 004fbc1a | PTR_FUN_005a1554
+    MOV dword ptr [EAX + -0x4],0x5a1554 ; 004fbc1a | PTR_core_scat.cpp_CScat_setup_FUN_004fbcc0_005a1554
     PUSH EAX                            ; 004fbc21
     MOV dword ptr [EAX + 0x1f8ec],0x0   ; 004fbc22
-    CALL FUN_0051e0c0                   ; 004fbc2c
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004fbc2c
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     LEA EAX,[EBX + 0x1fa40]             ; 004fbc31
     MOV dword ptr [EBX + 0x1fa4c],0x3f800000 ; 004fbc37
     ADD ESP,0x8                         ; 004fbc41
@@ -58,16 +58,16 @@ section .text
     FLD float ptr [EBX + 0x1fa58]       ; 004fbc92
     PUSH EBX                            ; 004fbc98
     FSTP float ptr [EBX + 0x1fa54]      ; 004fbc99
-    CALL FUN_0042a760                   ; 004fbc9f
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a760()
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 004fbc9f
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
     ADD ESP,0x14                        ; 004fbca4
     PUSH 0x0                            ; 004fbca7
     PUSH 0x58dd31                       ; 004fbca9 | = "draw_coatPocket2aimPistols"
     PUSH 0x2                            ; 004fbcae
     PUSH 0x1                            ; 004fbcb0
     PUSH EBX                            ; 004fbcb2
-    CALL FUN_0042a760                   ; 004fbcb3
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a760()
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 004fbcb3
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
     ADD ESP,0x14                        ; 004fbcb8
     MOV EAX,EBX                         ; 004fbcbb
     POP EBX                             ; 004fbcbd

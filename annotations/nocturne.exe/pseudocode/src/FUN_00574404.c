@@ -53,7 +53,7 @@ int FUN_00574404(short *param_1,int param_2)
             FUN_005638d0(iVar8);
           }
           iVar8 = (int)piVar9 - (int)_DAT_02de54a8 >> 2;
-          FUN_00566170(piVar9,_DAT_02de54a0,iVar8);
+          memmove(piVar9,_DAT_02de54a0,iVar8);
           _DAT_02de54a0 = piVar9;
           if (iVar10 < iVar8) {
             puVar6 = (byte *)(iVar10 + (int)piVar9);

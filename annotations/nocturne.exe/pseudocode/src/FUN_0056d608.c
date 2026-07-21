@@ -15,7 +15,7 @@ void FUN_0056d608(void)
   int iVar2;
   _TIME_ZONE_INFORMATION local_b4;
   
-  iVar2 = FUN_00566e10();
+  iVar2 = getenv();
   if (iVar2 != 0) {
     FUN_0056d87c();
     return;

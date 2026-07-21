@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00566634 at 00566894
 ;   FUN_005696e8 at 005696f8
 ;   FUN_0056974c at 00569789
+;   crt_time.c__strftime_FUN_00566634 at 00566894
 ;
 ; Called Functions:
 ;   FUN_0056dc10

@@ -5,17 +5,17 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00565d00 at 00565d49
 ;   FUN_005687bc at 00568828
 ;   FUN_0056c864 at 0056c8b7
+;   crt_stdlib.c__fullpath_FUN_00565d00 at 00565d49
 ;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentDirectoryA_005754f4 = 00175ca6
 ;
 ; Called Functions:
-;   FUN_005635b0
+;   crt_errno.c___set_errno_FUN_0056c73c
+;   crt_memory.c_malloc_FUN_005635b0
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   GetCurrentDirectoryA
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     TEST EAX,EAX                        ; 0056c618
     JNZ 0x0056c625                      ; 0056c61a
         ;   XREF to: 0056c625 (CONDITIONAL_JUMP)  ; LAB_0056c625
-    CALL FUN_0056c73c                   ; 0056c61c
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056c61c
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     XOR EAX,EAX                         ; 0056c621
     JMP 0x0056c68e                      ; 0056c623
         ;   XREF to: 0056c68e (UNCONDITIONAL_JUMP)  ; LAB_0056c68e
@@ -53,8 +53,8 @@ section .text
     MOV EAX,ESI                         ; 0056c62e
     PUSH EAX                            ; 0056c630
         ;   Label: LAB_0056c630
-    CALL FUN_005635b0                   ; 0056c631
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 0056c631
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 0056c636
     MOV EBX,EAX                         ; 0056c639
     TEST EAX,EAX                        ; 0056c63b

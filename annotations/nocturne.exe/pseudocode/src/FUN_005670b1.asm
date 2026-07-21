@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00517350 at 00517355
-;   FUN_005173a0 at 005173a5
+;   core_skeledit.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0 at 005173a5
 ;
 ; Called Functions:
 ;   FUN_005670c1

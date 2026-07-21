@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004df2f0 at 004df452
+;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 at 004df452
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\morph.cpp_0058abd4
@@ -24,8 +24,8 @@
 ;   undefined4 DAT_01cd4314
 ;
 ; Called Functions:
+;   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
 ;   FUN_004c8440
-;   FUN_004dfba0
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     ADD EAX,0x8                         ; 004df8b2
     PUSH EAX                            ; 004df8b5
     PUSH EBX                            ; 004df8b6
-    CALL FUN_004dfba0                   ; 004df8b7
-        ;   XREF to: 004dfba0 (UNCONDITIONAL_CALL)  ; undefined FUN_004dfba0()
+    CALL core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0 ; 004df8b7
+        ;   XREF to: 004dfba0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0()
     MOV ECX,0x2                         ; 004df8bc
     ADD ESP,0x8                         ; 004df8c1
     MOV EDI,dword ptr [EBP + 0x4]       ; 004df8c4

@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0042a120 at 0042a138
+;   core_charactr.cpp_CCharacter_spawnFlies_FUN_0042a120 at 0042a138
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
-;   FUN_0048fbe0
-;   FUN_004b0670
+;   core_flies.cpp_findFliesByFollowActor_FUN_0048fbe0
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0040b090
         ;   Label: FUN_0040b090
     PUSH EDX                            ; 0040b094
-    CALL FUN_0048fbe0                   ; 0040b095
-        ;   XREF to: 0048fbe0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048fbe0()
+    CALL core_flies.cpp_findFliesByFollowActor_FUN_0048fbe0 ; 0040b095
+        ;   XREF to: 0048fbe0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_findFliesByFollowActor_FUN_0048fbe0()
     ADD ESP,0x4                         ; 0040b09a
     TEST EAX,EAX                        ; 0040b09d
     JZ 0x0040b0a2                       ; 0040b09f
@@ -39,8 +39,8 @@ section .text
     PUSH EBX                            ; 0040b0b2
     MOV ESI,dword ptr [0x005b96c4]      ; 0040b0b3 | DAT_005b96c4
     PUSH ESI                            ; 0040b0b9
-    CALL FUN_004b0670                   ; 0040b0ba
-        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0670()
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0040b0ba
+        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()
     ADD ESP,0x14                        ; 0040b0bf
     POP EBX                             ; 0040b0c2
     POP ESI                             ; 0040b0c3

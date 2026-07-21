@@ -11,8 +11,8 @@ void FUN_004ee9e0(int param_1)
 {
   int iVar1;
   
-  FUN_00424260(param_1);
-  iVar1 = FUN_00564520(param_1 + 0x23b0,"priest.dfm");
+  core_charactr_cpp_CCharacter_setup_FUN_00424260(param_1);
+  iVar1 = _stricmp(param_1 + 0x23b0,"priest.dfm");
   if (iVar1 != 0) {
     return;
   }

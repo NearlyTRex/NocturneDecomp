@@ -6,15 +6,15 @@
 ;
 ; XREF[18]:
 ;   FUN_0040f1a0 at 0040f1e8
-;   FUN_00415b30 at 00415b48
-;   FUN_00438270 at 00438299
-;   FUN_0044bd20 at 0044bd97
 ;   FUN_0044c560 at 0044c569
-;   FUN_004a0550 at 004a1b18
-;   FUN_004b0580 at 004b0590
-;   FUN_004b13d0 at 004b13fc
-;   FUN_004d9c20 at 004d9cf4
-;   FUN_004f88a0 at 004f88b1
+;   FUN_00540f50 at 005411f5
+;   FUN_005458a0 at 005458a5
+;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415b48
+;   core_cloth.cpp_CClothList_load_FUN_00438270 at 00438299
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bd97
+;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b18
+;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b0590
+;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b13fc
 ;   ... and 8 more
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@
 ;   undefined4 DAT_02de548c
 ;
 ; Called Functions:
-;   FUN_005635b0
+;   crt_memory.c_malloc_FUN_005635b0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
         ;   XREF to: 005649ac (CONDITIONAL_JUMP)  ; LAB_005649ac
     PUSH EBX                            ; 00564986
         ;   Label: LAB_00564986
-    CALL FUN_005635b0                   ; 00564987
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635b0()
+    CALL crt_memory.c_malloc_FUN_005635b0 ; 00564987
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     ADD ESP,0x4                         ; 0056498c
     MOV ESI,EAX                         ; 0056498f
     TEST EAX,EAX                        ; 00564991

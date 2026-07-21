@@ -37,7 +37,8 @@ void FUN_00479b60(int param_1,float param_2)
   iVar6 = *(int *)(param_1 + 0xbd1c);
   if (iVar6 == 0) {
     if (((*(int *)(0x01C775EC + 0x1d4) != 0) || (*(int *)(0x01C775EC + 0x230) == 0)) ||
-       (iVar6 = FUN_0047dc30(0x01C03A10,"?Capture" + 1), iVar6 != 0)) {
+       (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                          (0x01C03A10,"?Capture" + 1), iVar6 != 0)) {
       *(uint *)(param_1 + 0xbc98) = 0;
       *(uint *)(param_1 + 0xbca8) = 0;
       *(uint *)(param_1 + 0xbca4) = 0;
@@ -47,7 +48,7 @@ void FUN_00479b60(int param_1,float param_2)
     *(float *)(param_1 + 0xbca8) = param_2;
     if (param_2 <= 0.0) {
       *(uint *)(param_1 + 0xbc98) = 0;
-      local_14 = FUN_0040dda0(0x3f000000,0x3fc00000);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f000000,0x3fc00000);
       local_38 = *(float *)(param_1 + 0xbcac) * *(float *)(param_1 + 0xbcac);
       iVar6 = 0;
       *(uint *)(param_1 + 0xbca8) = local_14;
@@ -99,17 +100,19 @@ void FUN_00479b60(int param_1,float param_2)
         }
         if (iVar9 < 0) break;
         local_1c = *(int *)(&DAT_01bcdef8 + iVar9 * 4);
-        iVar8 = FUN_00479ab0(param_1,local_1c);
+        iVar8 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(param_1,local_1c);
         puVar5 = PTR_DAT_005ad350;
         if (iVar8 != 0) {
           *(int *)(param_1 + 0xbca4) = local_1c;
-          FUN_0043ac60(puVar5,"%s can see hero\n",param_1);
+          engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar5,"%s can see hero\n",param_1)
+          ;
           return;
         }
         if ((((*(int *)(param_1 + 0xbd20) != 0) ||
              ((*(int *)(param_1 + 0xbd20) == 0 && (local_1c == local_34)))) &&
             (iVar8 = (**(code **)(*(int *)(local_1c + 0x14c) + 0xbc))(local_1c), iVar8 != 0)) &&
-           (iVar8 = FUN_004f1600(iVar8,local_3c,auStack_48,*(uint *)(param_1 + 0x6c)),
+           (iVar8 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+                              (iVar8,local_3c,auStack_48,*(uint *)(param_1 + 0x6c)),
            iVar8 == 1)) {
           *(int *)(param_1 + 0xbca4) = local_1c;
           return;

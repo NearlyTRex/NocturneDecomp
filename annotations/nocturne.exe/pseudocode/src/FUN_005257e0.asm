@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00523ea0 at 00523f23
-;   FUN_00526d10 at 00526d40
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 00523f23
+;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d40
 ;
 ; Referenced Globals:
 ;   string s_Error_polling_hw_playback_pos_%s_00593120
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   FUN_00525870
 ;   FUN_00529980
+;   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0052584f
     PUSH EAX                            ; 00525853
     PUSH EBX                            ; 00525854
-    CALL FUN_00525870                   ; 00525855
-        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; undefined FUN_00525870()
+    CALL sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 ; 00525855
+        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870()
     MOV EAX,0x1                         ; 0052585a
     ADD ESP,0xc                         ; 0052585f
     MOV ESP,EBP                         ; 00525862

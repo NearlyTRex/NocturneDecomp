@@ -1,12 +1,12 @@
 // Name: FUN_0056cb60
 // Address: 0056cb60
 // Address Range: [[0056cb60, 0056ccd5]]
-// Convention: unknown
-// Signature: undefined4 FUN_0056cb60(LPCSTR param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: undefined4 __cdecl FUN_0056cb60(LPCSTR param_1,undefined4 *param_2)
 
 #include "nocturne.h"
 
-uint FUN_0056cb60(LPCSTR param_1,uint *param_2)
+uint __cdecl FUN_0056cb60(LPCSTR param_1,uint *param_2)
 
 {
   HANDLE hFile;
@@ -24,13 +24,13 @@ uint FUN_0056cb60(LPCSTR param_1,uint *param_2)
   
   hFile = CreateFileA(param_1,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
-    uVar1 = FUN_0056c73c();
+    uVar1 = __set_errno();
   }
   else {
     BVar2 = GetFileTime(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
       CloseHandle(hFile);
-      uVar1 = FUN_0056c73c();
+      uVar1 = __set_errno();
       return uVar1;
     }
     if (param_2 == (uint *)0x0) {
@@ -38,7 +38,7 @@ uint FUN_0056cb60(LPCSTR param_1,uint *param_2)
       param_2 = &uStack_1c;
       uStack_18 = uStack_1c;
     }
-    pWVar3 = (WORD *)FUN_005665e8(param_2 + 1);
+    pWVar3 = (WORD *)_localtime(param_2 + 1);
     SStack_54.wYear = pWVar3[10] + 0x76c;
     SStack_54.wMonth = pWVar3[8] + 1;
     SStack_54.wDay = pWVar3[6];
@@ -60,7 +60,7 @@ uint FUN_0056cb60(LPCSTR param_1,uint *param_2)
     BVar2 = SetFileTime(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
       CloseHandle(hFile);
-      uVar1 = FUN_0056c73c();
+      uVar1 = __set_errno();
       return uVar1;
     }
     CloseHandle(hFile);

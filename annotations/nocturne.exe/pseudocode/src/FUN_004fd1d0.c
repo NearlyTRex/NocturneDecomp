@@ -110,7 +110,7 @@ void FUN_004fd1d0(int param_1,int param_2)
        *(uint *)
         ((int)(&stack0xfffffebc + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
   ;
-  FUN_0055d130(&stack0xfffffee4);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xfffffee4);
   local_12c = local_15c;
   *(uint *)((int)&stack0xfffffed8 + (uint)bVar5 * 0xfffffffe * 4) =
        *(uint *)(&stack0xfffffea8 + (uint)bVar5 * -8);
@@ -121,7 +121,8 @@ void FUN_004fd1d0(int param_1,int param_2)
        *(uint *)
         ((int)(&stack0xfffffeac + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
   ;
-  FUN_0055d2d0(&DAT_005a4508,&stack0xffffff04,0x3f733333,&stack0xfffffed4);
+  core_xform_cpp_slerpQuaternion_FUN_0055d2d0
+            (&DAT_005a4508,&stack0xffffff04,0x3f733333,&stack0xfffffed4);
   local_ec = local_4c;
   *(uint *)((int)&stack0xffffff18 + (uint)bVar5 * 0xfffffffe * 4) =
        auStack_88[(uint)bVar5 * 0xfffffffe + 0x10];
@@ -131,7 +132,7 @@ void FUN_004fd1d0(int param_1,int param_2)
    ((int)(&stack0xffffff1c + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x11)
        [(uint)bVar5 * -2 + 1];
-  FUN_0055d130(&stack0xffffff14);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xffffff14);
   local_2c[0] = local_3c;
   auStack_88[(uint)bVar5 * 0xfffffffe + 0x18] = auStack_88[(uint)bVar5 * 0xfffffffe + 0x14];
   auStack_88[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19] =
@@ -140,7 +141,7 @@ void FUN_004fd1d0(int param_1,int param_2)
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x15)
        [(uint)bVar5 * -2 + 1];
   iVar4 = local_1c * 0x10;
-  FUN_0055d2d0(param_1 + 0x800 + iVar4,auStack_88 + 0x17,local_160);
+  core_xform_cpp_slerpQuaternion_FUN_0055d2d0(param_1 + 0x800 + iVar4,auStack_88 + 0x17,local_160);
   puVar2 = (uint *)(iVar4 + 0x800 + param_1);
   puVar3 = puVar2 + (uint)bVar5 * -2 + 1;
   *puVar2 = local_8c;
@@ -149,7 +150,8 @@ void FUN_004fd1d0(int param_1,int param_2)
   ;
   (puVar3 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 1)[(uint)bVar5 * -2 + 1];
-  FUN_0055d130(&stack0xffffff04,&stack0xfffffec4,&stack0xfffffed4);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xffffff04,&stack0xfffffec4,&stack0xfffffed4)
+  ;
   local_dc = local_5c;
   *(uint *)((int)&stack0xffffff28 + (uint)bVar5 * 0xfffffffe * 4) =
        auStack_88[(uint)bVar5 * 0xfffffffe + 0xc];
@@ -159,7 +161,7 @@ void FUN_004fd1d0(int param_1,int param_2)
    ((int)(&stack0xffffff2c + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xd)
        [(uint)bVar5 * -2 + 1];
-  FUN_0055d130(&stack0xffffff24);
+  core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xffffff24);
   uVar1 = local_18;
   puVar6 = &LAB_0051b650;
   local_2c[0] = local_6c;
@@ -168,6 +170,7 @@ void FUN_004fd1d0(int param_1,int param_2)
        auStack_88[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9];
   (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x19)[(uint)bVar5 * -2 + 1] =
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9)[(uint)bVar5 * -2 + 1];
-  FUN_0051cfd0(param_1 + 0x150,auStack_88 + 0x17,local_160,uVar1,puVar6);
+  core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
+            (param_1 + 0x150,auStack_88 + 0x17,local_160,uVar1,puVar6);
   return;
 }

@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0056cb60(LPCSTR param_1,undefined4 *param_2)
+; undefined4 __cdecl FUN_0056cb60(LPCSTR param_1,undefined4 *param_2)
 ;
 ;
 ; XREF[1]:
-;   thunk_FUN_0056cb60 at 00565dc6
+;   crt_io.c__utime_00600c1e_FUN_00565dc6 at 00565dc6
 ;
 ; Called Functions:
-;   FUN_005665e8
-;   FUN_0056c73c
+;   crt_errno.c___set_errno_FUN_0056c73c
+;   crt_time.c__localtime_FUN_005665e8
 ;   FUN_00570a30
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     CMP EAX,-0x1                        ; 0056cb89
     JNZ 0x0056cb98                      ; 0056cb8c
         ;   XREF to: 0056cb98 (CONDITIONAL_JUMP)  ; LAB_0056cb98
-    CALL FUN_0056c73c                   ; 0056cb8e
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056cb8e
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     JMP 0x0056cccf                      ; 0056cb93
         ;   XREF to: 0056cccf (UNCONDITIONAL_JUMP)  ; LAB_0056cccf
     LEA EAX,[ESP + 0x20]                ; 0056cb98
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 0056cbc7 (CONDITIONAL_JUMP)  ; LAB_0056cbc7
     PUSH EBX                            ; 0056cbb3
     CALL dword ptr CS:[0x57548c]        ; 0056cbb4
-    CALL FUN_0056c73c                   ; 0056cbbb
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056cbbb
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x48                        ; 0056cbc0
     POP EDI                             ; 0056cbc3
     POP ESI                             ; 0056cbc4
@@ -75,8 +75,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 0056cbe0
         ;   Label: LAB_0056cbe0
     PUSH EAX                            ; 0056cbe3
-    CALL FUN_005665e8                   ; 0056cbe4
-        ;   XREF to: 005665e8 (UNCONDITIONAL_CALL)  ; undefined FUN_005665e8()
+    CALL crt_time.c__localtime_FUN_005665e8 ; 0056cbe4
+        ;   XREF to: 005665e8 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__localtime_FUN_005665e8()
     MOV EDX,EAX                         ; 0056cbe9
     MOV AX,word ptr [EAX + 0x14]        ; 0056cbeb
     ADD ESP,0x4                         ; 0056cbef
@@ -135,8 +135,8 @@ section .text
         ;   XREF to: 0056ccc5 (CONDITIONAL_JUMP)  ; LAB_0056ccc5
     PUSH ESI                            ; 0056ccb1
     CALL dword ptr CS:[0x57548c]        ; 0056ccb2
-    CALL FUN_0056c73c                   ; 0056ccb9
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 0056ccb9
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x48                        ; 0056ccbe
     POP EDI                             ; 0056ccc1
     POP ESI                             ; 0056ccc2

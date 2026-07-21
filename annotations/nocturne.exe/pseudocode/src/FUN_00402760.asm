@@ -8,7 +8,7 @@
 ;   FUN_0049cc10 at 0049d403
 ;
 ; Called Functions:
-;   FUN_00402600
+;   engine_2d.c_drawText_FUN_00402600
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH ECX                            ; 0040276a
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040276b
     PUSH EBX                            ; 0040276f
-    CALL FUN_00402600                   ; 00402770
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 00402770
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 00402775
     POP EBX                             ; 00402778
     RET                                 ; 00402779

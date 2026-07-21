@@ -11,13 +11,13 @@ void FUN_00460d10(void)
 {
   uint *unaff_ESI;
   byte bVar1;
-  uint auStack_ffc [1021];
+  uint auStack_1000 [1022];
   
   bVar1 = 0;
-  FUN_004ce760();
-  *unaff_ESI = auStack_ffc[0x3fa];
-  unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_ffc[(uint)bVar1 * -2 + 0x3fb];
+  engine_matrix_c_getCameraOrigin_FUN_004ce760(auStack_1000 + 0x3fb);
+  *unaff_ESI = 0x460d20;
+  unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_1000[(uint)bVar1 * -2 + 0x3fb];
   (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       auStack_ffc[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
+       auStack_1000[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
   return;
 }

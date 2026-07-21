@@ -6,7 +6,6 @@
 ;
 ; XREF[9]:
 ;   FUN_005634b0 at 00563508
-;   FUN_0056582c at 005658b7
 ;   FUN_00568890 at 00568959
 ;   FUN_00571efe at 00571fae
 ;   FUN_00571fd1 at 00572134
@@ -14,6 +13,7 @@
 ;   FUN_005723ae at 00572417
 ;   FUN_00572f40 at 00572f55
 ;   FUN_005733e0 at 00573593
+;   crt_stdio.c_fseek_FUN_0056582c at 005658b7
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFilePointer_005755a0 = 00175ff4
@@ -23,9 +23,9 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FUN_005671e4
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   FUN_0056f220
 ;   FUN_0056f278
 ;   SetFilePointer
@@ -92,8 +92,8 @@ section .text
     CMP ESI,-0x1                        ; 00568a3a
     JNZ 0x00568a44                      ; 00568a3d
         ;   XREF to: 00568a44 (CONDITIONAL_JUMP)  ; LAB_00568a44
-    CALL FUN_0056c73c                   ; 00568a3f
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 00568a3f
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
     MOV EAX,ESI                         ; 00568a44
         ;   Label: LAB_00568a44
     POP EDI                             ; 00568a46

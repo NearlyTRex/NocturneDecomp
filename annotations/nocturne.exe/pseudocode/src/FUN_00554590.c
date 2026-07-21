@@ -13,7 +13,7 @@ uint * FUN_00554590(int param_1,uint *param_2)
   uint uVar2;
   int iVar3;
   
-  iVar3 = FUN_00454530(param_1 + 0x150);
+  iVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
   uVar1 = *(uint *)(iVar3 + 0x348);
   uVar2 = *(uint *)(iVar3 + 0x34c);
   *param_2 = 0;

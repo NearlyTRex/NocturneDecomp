@@ -29,8 +29,8 @@ uint FUN_00532ba0(void)
   if (_DAT_02dc9e24 == 0) {
     iVar4 = DAT_005b761c * DAT_005b7624 >> 0x1f;
     uVar1 = (int)((DAT_005b761c * DAT_005b7624 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
-    FUN_00553470();
-    FUN_005322e0();
+    wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
+    wincore_windll_cpp_lockFrame_FUN_005322e0();
     local_8 = 0;
     if (0 < DAT_005b7620) {
       iVar4 = 0;
@@ -53,7 +53,7 @@ uint FUN_00532ba0(void)
       } while (local_8 < DAT_005b7620);
     }
     FUN_00532320();
-    FUN_00553520();
+    wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
   }
   _DAT_02dc9e24 = 0;
   uVar2 = (*_DAT_02dc9d7c)();

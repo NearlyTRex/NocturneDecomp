@@ -23,27 +23,29 @@ void FUN_0046fb40(uint param_1,uint param_2)
     FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(int *)(_DAT_01bcd070 + 0x3168);
-  _DAT_01bcd9bc = FUN_004930e0(_DAT_01bcd070,0x6a);
+  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   local_18 = &stack0x0000000c;
-  FUN_00563a08(0x1bca0d0,param_2,&local_18);
+  _vsprintf(0x1bca0d0,param_2,&local_18);
   local_18 = (byte *)0x0;
   local_14 = "Warning";
-  iVar1 = FUN_00492da0(_DAT_01bcd070,"Warning");
-  iVar2 = FUN_00492da0(_DAT_01bcd070,0x1bca0d0);
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,"Warning");
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,0x1bca0d0);
   if (iVar1 < iVar2) {
     iVar1 = iVar2;
   }
-  iVar3 = FUN_00492e60(_DAT_01bcd070,0x1bca0d0);
-  FUN_00471a80(param_1,_DAT_01bcd9b8 * 4 + iVar1,_DAT_01bcd9bc * 2 + iVar3,local_14,0);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,0x1bca0d0);
+  shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
+            (param_1,_DAT_01bcd9b8 * 4 + iVar1,_DAT_01bcd9bc * 2 + iVar3,local_14,0);
   FUN_004722b0(param_1);
-  FUN_00408370(0xffff);
-  FUN_00490980(_DAT_01bcd070,0x1bca0d0,((_DAT_01c00c58 + _DAT_01c00c60) - iVar2) / 2,
-               ((_DAT_01c00c5c + _DAT_01c00c64) - iVar3) / 2,_DAT_01bcddd4,0xffffffff);
-  FUN_00553910();
-  FUN_00403f50();
-  FUN_004c41c0(0x01CC30E4);
+  engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
+  engine_font_cpp_CBitFont_drawText_FUN_00490980
+            (_DAT_01bcd070,0x1bca0d0,((_DAT_01c00c58 + _DAT_01c00c60) - iVar2) / 2,
+             ((_DAT_01c00c5c + _DAT_01c00c64) - iVar3) / 2,_DAT_01bcddd4,0xffffffff);
+  wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
+  engine_2d_c_clearInputAndWait_FUN_00403f50();
+  engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(0x01CC30E4);
   FUN_004720c0(param_1);
-  FUN_00553910();
-  FUN_00403f50();
+  wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
+  engine_2d_c_clearInputAndWait_FUN_00403f50();
   return;
 }

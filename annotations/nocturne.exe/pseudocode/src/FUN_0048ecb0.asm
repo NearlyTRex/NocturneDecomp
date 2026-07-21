@@ -8,10 +8,10 @@
 ;   undefined4 DAT_0059d8b0
 ;
 ; Called Functions:
-;   FUN_00553ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0048ecd6 (CONDITIONAL_JUMP)  ; LAB_0048ecd6
     PUSH 0x1                            ; 0048ecbc
     PUSH EBX                            ; 0048ecbe
-    CALL FUN_00553ea0                   ; 0048ecbf
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ea0()
+    CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0048ecbf
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
     ADD ESP,0x8                         ; 0048ecc4
     MOV DL,byte ptr [ESP + 0xc]         ; 0048ecc7
     MOV EBX,EAX                         ; 0048eccb
@@ -39,12 +39,12 @@ section .text
     PUSH 0x59d8b0                       ; 0048ecd6 | DAT_0059d8b0
         ;   Label: LAB_0048ecd6
     PUSH EBX                            ; 0048ecdb
-    CALL FUN_0056445f                   ; 0048ecdc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0048ecdc
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 0048ece1
     PUSH EAX                            ; 0048ece4
-    CALL FUN_00564486                   ; 0048ece5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 0048ece5
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0048ecea
     MOV EAX,EBX                         ; 0048eced
     POP EBX                             ; 0048ecef

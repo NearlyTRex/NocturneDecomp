@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005088f0 at 00508caa
 ;   FUN_00509a80 at 00509eb8
+;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508caa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c20140
@@ -15,10 +15,10 @@
 ;   undefined4 DAT_01c24208
 ;
 ; Called Functions:
-;   FUN_00482ed0
-;   FUN_00482f50
-;   FUN_004835d0
-;   FUN_00487af0
+;   core_fire.cpp_CBulletHole_render_FUN_00482f50
+;   core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0
+;   core_fire.cpp_CCrater_render_FUN_00487af0
+;   core_fire.cpp_CStake_render_FUN_004835d0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EBP                            ; 0048a973
     MOV EBP,dword ptr [ESP + 0x18]      ; 0048a974
     PUSH 0x1c20148                      ; 0048a978
-    CALL FUN_00482ed0                   ; 0048a97d
-        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_00482ed0()
+    CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0 ; 0048a97d
+        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0()
     ADD ESP,0x4                         ; 0048a982
     TEST EBP,EBP                        ; 0048a985
     JZ 0x0048aa45                       ; 0048a987
@@ -50,8 +50,8 @@ section .text
     MOV EAX,0x1c20148                   ; 0048a9a4
     ADD EAX,EBX                         ; 0048a9a9
     PUSH EAX                            ; 0048a9ab
-    CALL FUN_00482f50                   ; 0048a9ac
-        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; undefined FUN_00482f50()
+    CALL core_fire.cpp_CBulletHole_render_FUN_00482f50 ; 0048a9ac
+        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_render_FUN_00482f50()
     ADD ESP,0x4                         ; 0048a9b1
     MOV EAX,[0x01c20140]                ; 0048a9b4 | DAT_01c20140
         ;   Label: LAB_0048a9b4
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_0048a9ef
     ADD EAX,EBX                         ; 0048a9f4
     PUSH EAX                            ; 0048a9f6
-    CALL FUN_004835d0                   ; 0048a9f7
-        ;   XREF to: 004835d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004835d0()
+    CALL core_fire.cpp_CStake_render_FUN_004835d0 ; 0048a9f7
+        ;   XREF to: 004835d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CStake_render_FUN_004835d0()
     ADD ESP,0x4                         ; 0048a9fc
     MOV EDX,dword ptr [0x01c23d48]      ; 0048a9ff | DAT_01c23d48
         ;   Label: LAB_0048a9ff
@@ -102,8 +102,8 @@ section .text
     LEA ESI,[EBX + 0x8c0]               ; 0048aa23
     PUSH EBX                            ; 0048aa29
         ;   Label: LAB_0048aa29
-    CALL FUN_00487af0                   ; 0048aa2a
-        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; undefined FUN_00487af0()
+    CALL core_fire.cpp_CCrater_render_FUN_00487af0 ; 0048aa2a
+        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_render_FUN_00487af0()
     ADD EBX,0x70                        ; 0048aa2f
     ADD ESP,0x4                         ; 0048aa32
     CMP EBX,ESI                         ; 0048aa35
@@ -135,8 +135,8 @@ section .text
     MOV EAX,0x1c20148                   ; 0048aa69
     ADD EAX,EBX                         ; 0048aa6e
     PUSH EAX                            ; 0048aa70
-    CALL FUN_00482f50                   ; 0048aa71
-        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; undefined FUN_00482f50()
+    CALL core_fire.cpp_CBulletHole_render_FUN_00482f50 ; 0048aa71
+        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_render_FUN_00482f50()
     ADD ESP,0x4                         ; 0048aa76
     MOV dword ptr [EBX + 0x1c20154],EDI ; 0048aa79
     MOV ECX,dword ptr [0x01c20140]      ; 0048aa7f | DAT_01c20140
@@ -162,8 +162,8 @@ section .text
     MOV ESI,0x1c625f8                   ; 0048aaae
     ADD ESI,EBX                         ; 0048aab3
     PUSH ESI                            ; 0048aab5
-    CALL FUN_00487af0                   ; 0048aab6
-        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; undefined FUN_00487af0()
+    CALL core_fire.cpp_CCrater_render_FUN_00487af0 ; 0048aab6
+        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_render_FUN_00487af0()
     ADD ESP,0x4                         ; 0048aabb
     MOV dword ptr [EBX + 0x1c625fc],EDI ; 0048aabe
     ADD EBX,0x70                        ; 0048aac4

@@ -8,11 +8,11 @@
 ;   string s_sentinel.dfm_0058ff27
 ;   undefined4 DAT_005a173c
 ;   undefined4 DAT_005a1740
-;   undefined1* PTR_FUN_005a1754 = 00505990
+;   undefined1* PTR_core_sentinel.cpp_CSentinel_setup_FUN_00505990_005a1754 = 00505990
 ;
 ; Called Functions:
-;   FUN_00479560
-;   FUN_0051e0c0
+;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -22,16 +22,16 @@ section .text
         ;   Label: FUN_00505920
     MOV EDX,dword ptr [ESP + 0x8]       ; 00505921
     PUSH EDX                            ; 00505925
-    CALL FUN_00479560                   ; 00505926
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined FUN_00479560()
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00505926
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
     ADD ESP,0x4                         ; 0050592b
     PUSH 0x58ff27                       ; 0050592e | = "sentinel.dfm"
     MOV EBX,EAX                         ; 00505933
     ADD EAX,0x150                       ; 00505935
     PUSH EAX                            ; 0050593a
-    MOV dword ptr [EAX + -0x4],0x5a1754 ; 0050593b | PTR_FUN_005a1754
-    CALL FUN_0051e0c0                   ; 00505942
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    MOV dword ptr [EAX + -0x4],0x5a1754 ; 0050593b | PTR_core_sentinel.cpp_CSentinel_setup_FUN_00505990_005a1754
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00505942
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     FLD float ptr [0x005a173c]          ; 00505947 | DAT_005a173c
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0050594d
     FLD float ptr [0x005a1740]          ; 00505957 | DAT_005a1740

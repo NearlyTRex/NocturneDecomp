@@ -25,13 +25,13 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00403570
-;   FUN_00456a60
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fread_FUN_005636d0
+;   crt_stdio.c_fwrite_FUN_00563a50
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_2d.c_buildColorLookupTable_FUN_00403570
+;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   FUN_004c8440
-;   FUN_00563380
-;   FUN_005636d0
-;   FUN_00563a50
-;   FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -97,28 +97,28 @@ section .text
     PUSH 0x577259                       ; 0040369b | DAT_00577259
         ;   Label: LAB_0040369b
     PUSH EBX                            ; 004036a0
-    CALL FUN_00563c90                   ; 004036a1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004036a1
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 004036a6
     PUSH 0x57725e                       ; 004036a9 | DAT_0057725e
     LEA EAX,[ESP + 0x4]                 ; 004036ae
     PUSH EAX                            ; 004036b2
     PUSH 0x577261                       ; 004036b3 | DAT_00577261
-    CALL FUN_00456a60                   ; 004036b8
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004036b8
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004036bd
     ADD ESP,0xc                         ; 004036bf
     TEST EAX,EAX                        ; 004036c2
     JNZ 0x00403730                      ; 004036c4
         ;   XREF to: 00403730 (CONDITIONAL_JUMP)  ; LAB_00403730
-    CALL FUN_00403570                   ; 004036c6
-        ;   XREF to: 00403570 (UNCONDITIONAL_CALL)  ; undefined FUN_00403570()
+    CALL engine_2d.c_buildColorLookupTable_FUN_00403570 ; 004036c6
+        ;   XREF to: 00403570 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_buildColorLookupTable_FUN_00403570()
     PUSH 0x577265                       ; 004036cb | DAT_00577265
     LEA EAX,[ESP + 0x4]                 ; 004036d0
     PUSH EAX                            ; 004036d4
     PUSH 0x577268                       ; 004036d5 | DAT_00577268
-    CALL FUN_00456a60                   ; 004036da
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004036da
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004036df
     MOV EBX,EAX                         ; 004036e2
     TEST EAX,EAX                        ; 004036e4
@@ -137,12 +137,12 @@ section .text
     PUSH 0x8000                         ; 0040370c
     PUSH 0x1                            ; 00403711
     PUSH 0x1bf7720                      ; 00403713 | DAT_01bf7720
-    CALL FUN_00563a50                   ; 00403718
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a50()
+    CALL crt_stdio.c_fwrite_FUN_00563a50 ; 00403718
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
     ADD ESP,0x10                        ; 0040371d
     PUSH EBX                            ; 00403720
-    CALL FUN_00563380                   ; 00403721
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 00403721
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 00403726
     ADD ESP,0x50                        ; 00403729
     POP EDI                             ; 0040372c
@@ -154,12 +154,12 @@ section .text
     PUSH 0x8000                         ; 00403731
     PUSH 0x1                            ; 00403736
     PUSH 0x1bf7720                      ; 00403738 | DAT_01bf7720
-    CALL FUN_005636d0                   ; 0040373d
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 0040373d
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 00403742
     PUSH EBX                            ; 00403745
-    CALL FUN_00563380                   ; 00403746
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 00403746
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 0040374b
     ADD ESP,0x50                        ; 0040374e
     POP EDI                             ; 00403751

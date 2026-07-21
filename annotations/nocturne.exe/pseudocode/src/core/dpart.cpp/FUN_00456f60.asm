@@ -12,9 +12,9 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00457060
+;   core_dpart.cpp_CDemonPart_free_FUN_00457060
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004c8440
-;   FUN_00563c90
 ;   FUN_00565c50
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     SUB ESP,0x100                       ; 00456f63
     MOV EBX,dword ptr [ESP + 0x110]     ; 00456f69
     PUSH EBX                            ; 00456f70
-    CALL FUN_00457060                   ; 00456f71
-        ;   XREF to: 00457060 (UNCONDITIONAL_CALL)  ; undefined FUN_00457060()
+    CALL core_dpart.cpp_CDemonPart_free_FUN_00457060 ; 00456f71
+        ;   XREF to: 00457060 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_CDemonPart_free_FUN_00457060()
     MOV EDX,dword ptr [EBX + 0x20]      ; 00456f76
     ADD ESP,0x4                         ; 00456f79
     TEST EDX,EDX                        ; 00456f7c
@@ -61,8 +61,8 @@ section .text
     PUSH 0x57d35e                       ; 00456fab
     LEA EAX,[ESP + 0x8]                 ; 00456fb0
     PUSH EAX                            ; 00456fb4
-    CALL FUN_00563c90                   ; 00456fb5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00456fb5
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x8b                        ; 00456fba
     ADD ESP,0xc                         ; 00456fbf
     MOV [0x01cc4804],EAX                ; 00456fc2 | DAT_01cc4804

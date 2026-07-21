@@ -38,7 +38,7 @@ void FUN_004f0360(float *param_1,float *param_2,int param_3)
     }
   }
   else {
-    uVar1 = FUN_0056488c();
+    uVar1 = rand();
     param_1[0x4e36] = (float)(uVar1 & 0x3fff);
   }
   if (param_1 != param_2) {
@@ -46,7 +46,7 @@ void FUN_004f0360(float *param_1,float *param_2,int param_3)
     param_1[1] = param_2[1];
     param_1[2] = param_2[2];
   }
-  FUN_0046b700(&DAT_01fba938,param_1);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);
   param_1[3] = local_1c;
   param_1[(uint)bVar3 * -2 + 4] = *(float *)(&stack0xffffffe8 + (uint)bVar3 * -8);
   (param_1 + (uint)bVar3 * -2 + 4)[(uint)bVar3 * -2 + 1] =
@@ -62,6 +62,6 @@ void FUN_004f0360(float *param_1,float *param_2,int param_3)
   param_1[9] = (float)((int)param_1[3] + -0x32);
   param_1[0xb] = (float)((int)param_1[5] + -0x32);
   param_1[10] = param_1[4];
-  FUN_004f1e10(param_1);
+  core_path_cpp_CPathMap_reset_FUN_004f1e10(param_1);
   return;
 }

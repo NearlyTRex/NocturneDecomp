@@ -14,7 +14,7 @@
 ;   void* switchdataD_0056aa28 = 0056ac03
 ;
 ; Called Functions:
-;   FUN_00563cc0
+;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
     PUSH 0x30                           ; 0056ab00
     ADD EAX,EBX                         ; 0056ab02
     PUSH EAX                            ; 0056ab04
-    CALL FUN_00563cc0                   ; 0056ab05
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 0056ab05
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     MOV EDX,dword ptr [EBP + -0x10]     ; 0056ab0a
     ADD ESP,0xc                         ; 0056ab0d
     ADD EBX,EDX                         ; 0056ab10
@@ -165,8 +165,8 @@ section .text
     PUSH EAX                            ; 0056ab51
     MOV dword ptr [EBP + -0x10],ECX     ; 0056ab52
     MOV EDI,ESI                         ; 0056ab55
-    CALL FUN_00563cc0                   ; 0056ab57
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 0056ab57
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     ADD EBX,EDI                         ; 0056ab5c
     ADD ESP,0xc                         ; 0056ab5e
     MOV EAX,dword ptr [EBP + -0x14]     ; 0056ab61

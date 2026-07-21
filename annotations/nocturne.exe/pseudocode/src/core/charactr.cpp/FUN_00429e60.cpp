@@ -53,7 +53,7 @@ void FUN_00429e60(int param_1)
          *(uint *)
           ((int)(&stack0xfffffff4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
           ((uint)bVar3 * -2 + 1) * 4);
-    FUN_0055d130(&stack0xffffffac);
+    core_xform_cpp_multiplyQuaternion_FUN_0055d130(&stack0xffffffac);
     local_64 = local_74;
     *(uint *)((int)&stack0xffffffa0 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffff90 + (uint)bVar3 * -8);
@@ -64,8 +64,9 @@ void FUN_00429e60(int param_1)
          *(uint *)
           ((int)(&stack0xffffff94 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
           ((uint)bVar3 * -2 + 1) * 4);
-    FUN_0055d2d0(*(int *)(param_1 + 0x25dc) * 0x10 + param_1 + 0x800,&stack0xffffff9c,
-                 *(uint *)(param_1 + 0x25d8));
+    core_xform_cpp_slerpQuaternion_FUN_0055d2d0
+              (*(int *)(param_1 + 0x25dc) * 0x10 + param_1 + 0x800,&stack0xffffff9c,
+               *(uint *)(param_1 + 0x25d8));
     puVar1 = (uint *)(*(int *)(param_1 + 0x25dc) * 0x10 + 0x800 + param_1);
     puVar2 = puVar1 + (uint)bVar3 * -2 + 1;
     *puVar1 = local_34;

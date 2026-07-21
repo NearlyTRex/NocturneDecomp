@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0054c690 at 0054d3a7
+;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d3a7
 ;
 ; Referenced Globals:
 ;   string s_voicusummon.wav_00597239
@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01fa3ff4
 ;
 ; Called Functions:
-;   FUN_0040d890
-;   FUN_004785a0
+;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH ECX                            ; 0054e164
     MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 0054e165 | DAT_01fa3ff4
     PUSH EDI                            ; 0054e16c
-    CALL FUN_0040d890                   ; 0054e16d
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054e16d
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 0054e172
     TEST EAX,EAX                        ; 0054e175
     JZ 0x0054e18b                       ; 0054e177
@@ -59,8 +59,8 @@ section .text
     JNZ 0x0054e18b                      ; 0054e180
         ;   XREF to: 0054e18b (CONDITIONAL_JUMP)  ; LAB_0054e18b
     PUSH EAX                            ; 0054e182
-    CALL FUN_004785a0                   ; 0054e183
-        ;   XREF to: 004785a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004785a0()
+    CALL core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 ; 0054e183
+        ;   XREF to: 004785a0 (UNCONDITIONAL_CALL)  ; undefined core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0()
     ADD ESP,0x4                         ; 0054e188
     INC ESI                             ; 0054e18b
         ;   Label: LAB_0054e18b

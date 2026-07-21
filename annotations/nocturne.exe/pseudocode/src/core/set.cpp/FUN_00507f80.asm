@@ -11,21 +11,21 @@
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
-;   FUN_00402600
-;   FUN_00440290
-;   FUN_00440a20
-;   FUN_00441c50
+;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
+;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
+;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
+;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
+;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   crt_string.c__strcmp_FUN_005649c0
+;   engine_2d.c_drawText_FUN_00402600
 ;   FUN_004421b0
-;   FUN_00444e20
 ;   FUN_00444ef0
 ;   FUN_00447f20
 ;   FUN_004c8440
-;   FUN_00507c80
-;   FUN_005084c0
 ;   FUN_0050ad20
 ;   FUN_005148b0
-;   FUN_00515c40
-;   FUN_00553910
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     ADD ESP,0x8                         ; 00508035
     PUSH 0x0                            ; 00508038
     PUSH 0x1fb8508                      ; 0050803a
-    CALL FUN_00440290                   ; 0050803f
-        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined FUN_00440290()
+    CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 ; 0050803f
+        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290()
     ADD ESP,0x8                         ; 00508044
     PUSH 0x0                            ; 00508047
     MOV EDI,dword ptr [ESP + 0x178]     ; 00508049
@@ -87,13 +87,13 @@ section .text
     MOV ESI,0x1                         ; 00508055
     PUSH EDI                            ; 0050805a
     MOV dword ptr [0x01fba938],ESI      ; 0050805b | DAT_01fba938
-    CALL FUN_00507c80                   ; 00508061
-        ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; undefined FUN_00507c80()
+    CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 ; 00508061
+        ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80()
     ADD ESP,0xc                         ; 00508066
     PUSH 0x0                            ; 00508069
     PUSH 0x1fb8508                      ; 0050806b
-    CALL FUN_00440a20                   ; 00508070
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined FUN_00440a20()
+    CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 00508070
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
     ADD ESP,0x8                         ; 00508075
     PUSH 0x1fb8508                      ; 00508078
     CALL FUN_004421b0                   ; 0050807d
@@ -151,15 +151,15 @@ section .text
     PUSH 0x5902ac                       ; 00508120
     LEA EAX,[ESP + 0x34]                ; 00508125
     PUSH EAX                            ; 00508129
-    CALL FUN_00563c90                   ; 0050812a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050812a
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x38                        ; 0050812f
     PUSH 0x16                           ; 00508132
     PUSH 0x0                            ; 00508134
     LEA EAX,[ESP + 0x8]                 ; 00508136
     PUSH EAX                            ; 0050813a
-    CALL FUN_00402600                   ; 0050813b
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 0050813b
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 00508140
     MOV EAX,0x21                        ; 00508143
     MOV EBX,dword ptr [ESP + 0x174]     ; 00508148
@@ -209,8 +209,8 @@ section .text
         ;   Label: LAB_00508202
     MOV ECX,dword ptr [ESI + 0x1fb99d4] ; 00508203
     PUSH ECX                            ; 00508209
-    CALL FUN_005649c0                   ; 0050820a
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005649c0()
+    CALL crt_string.c__strcmp_FUN_005649c0 ; 0050820a
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
     ADD ESP,0x8                         ; 0050820f
     TEST EAX,EAX                        ; 00508212
     JNZ 0x00508404                      ; 00508214
@@ -232,13 +232,13 @@ section .text
     MOV EBX,dword ptr [EBX*0x4 + 0x1fb99d4] ; 00508246
     PUSH EBX                            ; 0050824d
     PUSH 0x1fb8508                      ; 0050824e
-    CALL FUN_00441c50                   ; 00508253
-        ;   XREF to: 00441c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00441c50()
+    CALL core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 ; 00508253
+        ;   XREF to: 00441c50 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50()
     ADD ESP,0xc                         ; 00508258
     PUSH EBX                            ; 0050825b
     PUSH 0x1fb8508                      ; 0050825c
-    CALL FUN_00444e20                   ; 00508261
-        ;   XREF to: 00444e20 (UNCONDITIONAL_CALL)  ; undefined FUN_00444e20()
+    CALL core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20 ; 00508261
+        ;   XREF to: 00444e20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20()
     ADD ESP,0x8                         ; 00508266
     PUSH EBX                            ; 00508269
     MOV ESI,dword ptr [ESP + 0x15c]     ; 0050826a
@@ -271,16 +271,16 @@ section .text
     PUSH 0x590341                       ; 005082d0
     LEA EAX,[ESP + 0x18]                ; 005082d5
     PUSH EAX                            ; 005082d9
-    CALL FUN_00563c90                   ; 005082da
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005082da
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x1c                        ; 005082df
     MOV EAX,dword ptr [ESP + 0x154]     ; 005082e2
     PUSH EAX                            ; 005082e9
     PUSH 0x0                            ; 005082ea
     LEA EAX,[ESP + 0x8]                 ; 005082ec
     PUSH EAX                            ; 005082f0
-    CALL FUN_00402600                   ; 005082f1
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 005082f1
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 005082f6
     ADD dword ptr [ESP + 0x154],0xb     ; 005082f9
     MOV EBX,dword ptr [ESP + 0x158]     ; 00508301
@@ -301,18 +301,18 @@ section .text
     PUSH 0x59035d                       ; 00508341
     LEA EAX,[ESP + 0x8]                 ; 00508346
     PUSH EAX                            ; 0050834a
-    CALL FUN_00563c90                   ; 0050834b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050834b
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 00508350
     PUSH 0x0                            ; 00508353
     PUSH 0x0                            ; 00508355
     LEA EAX,[ESP + 0x8]                 ; 00508357
     PUSH EAX                            ; 0050835b
-    CALL FUN_00402600                   ; 0050835c
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 0050835c
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 00508361
-    CALL FUN_00553910                   ; 00508364
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined FUN_00553910()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00508364
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EDX,dword ptr [ESP + 0x138]     ; 00508369
     MOV ECX,dword ptr [ESP + 0x13c]     ; 00508370
     MOV EBX,dword ptr [ESP + 0x134]     ; 00508377
@@ -346,8 +346,8 @@ section .text
         ;   Label: LAB_005083e3
     PUSH EBX                            ; 005083ea
     MOV ESI,0x1                         ; 005083eb
-    CALL FUN_005084c0                   ; 005083f0
-        ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005084c0()
+    CALL core_set.cpp_CDemonSet_initScene_FUN_005084c0 ; 005083f0
+        ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_initScene_FUN_005084c0()
     ADD ESP,0x4                         ; 005083f5
     MOV dword ptr [ESP + 0x128],ESI     ; 005083f8
     JMP 0x00507fa1                      ; 005083ff
@@ -364,8 +364,8 @@ section .text
     PUSH 0x1                            ; 0050841a
         ;   Label: LAB_0050841a
     PUSH 0x1fb8508                      ; 0050841c
-    CALL FUN_00440290                   ; 00508421
-        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined FUN_00440290()
+    CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 ; 00508421
+        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290()
     ADD ESP,0x8                         ; 00508426
     ADD ESI,dword ptr [ESP + 0x140]     ; 00508429
     PUSH ESI                            ; 00508430
@@ -376,8 +376,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x154]     ; 0050843b
     PUSH 0x1fb8508                      ; 00508442
     MOV byte ptr [ESI + EBX*0x1 + 0x19770],AL ; 00508447
-    CALL FUN_00440a20                   ; 0050844e
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined FUN_00440a20()
+    CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 0050844e
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
     ADD ESP,0x8                         ; 00508453
     MOV EAX,dword ptr [ESP + 0x148]     ; 00508456
     MOV dword ptr [EBX + EAX*0x1 + 0x1986c],0x0 ; 0050845d

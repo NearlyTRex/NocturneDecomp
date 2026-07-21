@@ -15,7 +15,7 @@
 ;   undefined4 DAT_02de4e30
 ;
 ; Called Functions:
-;   FUN_00563cc0
+;   crt_memory.c_memset_FUN_00563cc0
 ;   FUN_005671dc
 ;   FUN_00567208
 ;   FUN_0056e608
@@ -54,8 +54,8 @@ section .text
     PUSH ECX                            ; 00573e67
     PUSH EDX                            ; 00573e68
     PUSH EBX                            ; 00573e69
-    CALL FUN_00563cc0                   ; 00573e6a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563cc0()
+    CALL crt_memory.c_memset_FUN_00563cc0 ; 00573e6a
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     ADD ESP,0xc                         ; 00573e6f
     MOV EAX,[0x005c20cc]                ; 00573e72 | DAT_005c20cc
     PUSH EBX                            ; 00573e77

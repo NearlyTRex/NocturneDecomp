@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -139,15 +139,15 @@
   },
   "cross_references": [
     {
-      "addr": "005088f0",
-      "from_addr": "00508c99",
-      "name": "FUN_005088f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00509a80",
       "from_addr": "00509ea7",
       "name": "FUN_00509a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005088f0",
+      "from_addr": "00508c99",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -165,29 +165,29 @@
   },
   "function_calls": [
     {
-      "addr": "004aeae0",
+      "addr": "004af340",
       "is_variadic": false,
-      "name": "FUN_004aeae0"
-    },
-    {
-      "addr": "004aeb70",
-      "is_variadic": false,
-      "name": "FUN_004aeb70"
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004af340"
     },
     {
       "addr": "004af2a0",
       "is_variadic": false,
-      "name": "FUN_004af2a0"
+      "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004af2a0"
     },
     {
-      "addr": "004af340",
+      "addr": "004aeb70",
       "is_variadic": false,
-      "name": "FUN_004af340"
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004aeb70"
+    },
+    {
+      "addr": "004aeae0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_setupRenderState_FUN_004aeae0"
     },
     {
       "addr": "004afa20",
       "is_variadic": false,
-      "name": "FUN_004afa20"
+      "name": "core_gore.cpp_CFootstep_render_FUN_004afa20"
     }
   ],
   "globals": [
@@ -228,7 +228,7 @@
       {
         "call_addr": "00508c99",
         "call_type": "direct",
-        "caller": "FUN_005088f0",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

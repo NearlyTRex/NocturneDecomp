@@ -13,13 +13,13 @@ void FUN_00403130(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00456a60(&DAT_005771c6,param_1,&DAT_005771c3);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005771c6,param_1,&DAT_005771c3);
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0x6b7;
     FUN_004c8440("Unable to write fog tab");
   }
-  FUN_00563a50(0x1bd1ea0,0x100,0x10,iVar1);
-  FUN_00563380(iVar1);
+  _fwrite(0x1bd1ea0,0x100,0x10,iVar1);
+  _fclose(iVar1);
   return;
 }

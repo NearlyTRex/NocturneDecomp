@@ -61,13 +61,14 @@ void FUN_004194b0(int param_1,int param_2)
   local_58 = 0x40224dd3;
   local_60 = 0xbf456042;
   local_5c = 0xc0224dd3;
-  FUN_0055afb0(local_120,&DAT_02dd1184,&local_60);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_120,&DAT_02dd1184,&local_60);
   (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_90);
-  FUN_0040e160(&local_54);
+  core_actor_cpp_CVector_ctor_FUN_0040e160(&local_54);
   local_54 = local_90 + local_84;
   local_50 = local_8c + local_80;
   local_4c = local_88 + local_7c;
-  FUN_0040e160(&local_30);
+  core_actor_cpp_CVector_ctor_FUN_0040e160(&local_30);
   local_30 = local_54 * _DAT_0057936e;
   local_2c = local_50 * _DAT_0057936e;
   local_28 = local_88 + (float)_DAT_00579376;
@@ -79,13 +80,14 @@ void FUN_004194b0(int param_1,int param_2)
   local_64 = 0xbda7ef9e;
   local_6c = 0x3d03126f;
   local_68 = 0x3e560419;
-  pfVar2 = (float *)FUN_0055a8b0(local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);
+  pfVar2 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0
+                              (local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);
   if (&local_18 != pfVar2) {
     local_18 = *pfVar2;
     local_14 = pfVar2[1];
     local_10 = pfVar2[2];
   }
-  FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);
   puVar4 = local_c0;
   puVar5 = local_f0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -93,7 +95,7 @@ void FUN_004194b0(int param_1,int param_2)
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  pfVar2 = (float *)FUN_0055a8b0(local_24,&local_48,local_f0);
+  pfVar2 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_24,&local_48,local_f0);
   local_3c = local_18 - *pfVar2;
   local_38 = local_14 - pfVar2[1];
   local_34 = local_10 - pfVar2[2];

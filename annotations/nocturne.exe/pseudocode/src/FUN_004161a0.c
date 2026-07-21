@@ -18,13 +18,15 @@ uint FUN_004161a0(int param_1)
   
   if (*(int *)(param_1 + 0x150) < 2) {
     *(uint *)(0x01E57284 + 0x15a8a0) = *(uint *)(param_1 + 0xc98);
-    FUN_00409f20(param_1);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
     uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);
-    iVar2 = FUN_0041ceb0(uVar1);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar1);
     *(int *)(param_1 + 0xf14) = iVar2;
     if (iVar2 != 0) {
-      if ((*(int *)(param_1 + 0xc9c) == 0) || (iVar2 = FUN_00461090(DAT_005ae704), iVar2 != 0)) {
-        FUN_00416030(param_1,0xffffffff);
+      if ((*(int *)(param_1 + 0xc9c) == 0) ||
+         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
+         iVar2 != 0)) {
+        core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(param_1,0xffffffff);
       }
       iVar2 = 0;
       if (0 < *(int *)(param_1 + 0x284)) {
@@ -32,16 +34,18 @@ uint FUN_004161a0(int param_1)
         iVar3 = param_1 + 0x2a0;
         iVar4 = param_1 + 0x294;
         do {
-          FUN_00460aa0(DAT_005ae704,iVar4,iVar2 * 0x194 + iStack_8);
-          FUN_004544d0(iVar3,0,0xffffffff);
+          engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+                    (DAT_005ae704,iVar4,iVar2 * 0x194 + iStack_8);
+          core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+                    (iVar3,0,0xffffffff);
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 0x194;
           iVar3 = iVar3 + 0x194;
-          thunk_FUN_004cdbc0(DAT_005ae704);
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
         } while (iVar2 < *(int *)(param_1 + 0x284));
       }
     }
-    thunk_FUN_004cdbc0(DAT_005ae704);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
     *(uint *)(0x01E57284 + 0x15a8a0) = 0;
     return *(uint *)(param_1 + 0xf14);
   }

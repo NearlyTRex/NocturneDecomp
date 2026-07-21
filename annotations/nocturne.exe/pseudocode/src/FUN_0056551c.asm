@@ -6,11 +6,11 @@
 ;
 ; XREF[2]:
 ;   FUN_00565630 at 00565676
-;   FUN_00565724 at 00565798
+;   crt_stdio.c_freopen_FUN_00565724 at 00565798
 ;
 ; Called Functions:
-;   FUN_00564860
-;   FUN_0056582c
+;   crt_ctype.c_tolower_FUN_00564860
+;   crt_stdio.c_fseek_FUN_0056582c
 ;   FUN_00568620
 ;   FUN_0056b934
 ;   FUN_0056bbb0
@@ -33,8 +33,8 @@ section .text
     MOV AL,byte ptr [ESP + 0x18]        ; 00565533
     PUSH EAX                            ; 00565537
     MOV dword ptr [EBX + 0xc],EDX       ; 00565538
-    CALL FUN_00564860                   ; 0056553b
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined FUN_00564860()
+    CALL crt_ctype.c_tolower_FUN_00564860 ; 0056553b
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
     ADD ESP,0x4                         ; 00565540
     CMP AL,0x72                         ; 00565543
     JNZ 0x00565575                      ; 00565545
@@ -130,8 +130,8 @@ section .text
     PUSH 0x2                            ; 00565611
     PUSH 0x0                            ; 00565613
     PUSH EBX                            ; 00565615
-    CALL FUN_0056582c                   ; 00565616
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined FUN_0056582c()
+    CALL crt_stdio.c_fseek_FUN_0056582c ; 00565616
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
     ADD ESP,0xc                         ; 0056561b
     PUSH EBX                            ; 0056561e
         ;   Label: LAB_0056561e

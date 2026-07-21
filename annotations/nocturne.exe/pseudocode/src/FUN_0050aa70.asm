@@ -24,9 +24,9 @@
 ;   undefined4 DAT_01fba9a4
 ;
 ; Called Functions:
-;   FUN_00402600
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_2d.c_drawText_FUN_00402600
 ;   FUN_0044ed80
-;   FUN_00563c90
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
     MOV ECX,dword ptr [0x01fba2d8]      ; 0050ab26 | DAT_01fba2d8
     PUSH ESI                            ; 0050ab2c
     ADD EBX,ECX                         ; 0050ab2d
-    CALL FUN_00563c90                   ; 0050ab2f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050ab2f
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0050ab34
     MOV EDI,dword ptr [EBX*0x4 + 0x5be4fc] ; 0050ab37 | DAT_005be4fc
     PUSH EDI                            ; 0050ab3e
@@ -109,16 +109,16 @@ section .text
     PUSH EBP                            ; 0050ab46
     LEA ESI,[ESP + 0x8]                 ; 0050ab47
     PUSH ESI                            ; 0050ab4b
-    CALL FUN_00402600                   ; 0050ab4c
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 0050ab4c
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 0050ab51
     MOV EAX,[0x01fb9b54]                ; 0050ab54 | DAT_01fb9b54
     PUSH EAX                            ; 0050ab59
     PUSH 0x5905c2                       ; 0050ab5a | = "%d spot lights"
     LEA ESI,[ESP + 0x8]                 ; 0050ab5f
     PUSH ESI                            ; 0050ab63
-    CALL FUN_00563c90                   ; 0050ab64
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050ab64
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV ESI,dword ptr [EBX*0x4 + 0x5be4fc] ; 0050ab69 | DAT_005be4fc
     ADD ESP,0xc                         ; 0050ab70
     ADD ESI,0xb                         ; 0050ab73
@@ -127,8 +127,8 @@ section .text
     PUSH EDX                            ; 0050ab7e
     LEA EBX,[ESP + 0x8]                 ; 0050ab7f
     PUSH EBX                            ; 0050ab83
-    CALL FUN_00402600                   ; 0050ab84
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined FUN_00402600()
+    CALL engine_2d.c_drawText_FUN_00402600 ; 0050ab84
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 0050ab89
     ADD ESP,0x100                       ; 0050ab8c
     POP EBP                             ; 0050ab92

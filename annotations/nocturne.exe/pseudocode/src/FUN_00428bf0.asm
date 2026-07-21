@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00428bc0 at 00428bd8
+;   core_charactr.cpp_CCharacter_isWalkComplete_FUN_00428bc0 at 00428bd8
 ;
 ; *****************************************************************************
 

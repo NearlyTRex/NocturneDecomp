@@ -70,7 +70,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
   uStack_118 = 8;
   pfStack_11c = afStack_110;
   uStack_120 = 0x4731b9;
-  FUN_005644a7();
+  __arrinit();
   pfVar3 = afStack_110;
   uVar1 = 0;
   do {
@@ -104,7 +104,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_8c;
           uStack_118 = 0;
           pfStack_11c = (float *)0x47327c;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           fStack_68 = afStack_110[uVar1 * 3] * _DAT_0057eaaa;
           fStack_64 = afStack_110[uVar1 * 3 + 1] * _DAT_0057eaaa;
           fStack_60 = afStack_110[uVar1 * 3 + 2] * _DAT_0057eaaa;
@@ -120,7 +120,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_8c;
           uStack_118 = 1;
           pfStack_11c = (float *)0x47335b;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           puVar4 = &DAT_005c5044;
           puVar5 = auStack_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -135,7 +135,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
             puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
             puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
           }
-          FUN_00409290();
+          engine_3d_c_clipAndDrawLine2D_FUN_00409290();
           uVar1 = uStack_20 ^ 2;
           iStack_b0 = (int)ROUND(*pfVar3 * _DAT_0059ca4c);
           iStack_ac = (int)ROUND(pfVar3[1] * _DAT_0059ca4c);
@@ -143,7 +143,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_b0;
           uStack_118 = 0;
           pfStack_11c = (float *)0x4733ce;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           fStack_98 = afStack_110[uVar1 * 3] * _DAT_0057eaaa;
           fStack_94 = afStack_110[uVar1 * 3 + 1] * _DAT_0057eaaa;
           fStack_90 = afStack_110[uVar1 * 3 + 2] * _DAT_0057eaaa;
@@ -159,7 +159,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_b0;
           uStack_118 = 1;
           pfStack_11c = (float *)0x47349b;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           puVar4 = &DAT_005c5044;
           puVar5 = auStack_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -174,7 +174,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
             puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
             puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
           }
-          FUN_00409290();
+          engine_3d_c_clipAndDrawLine2D_FUN_00409290();
           uVar1 = uStack_20 ^ 4;
           iStack_50 = (int)ROUND(*pfVar3 * _DAT_0059ca4c);
           iStack_4c = (int)ROUND(pfVar3[1] * _DAT_0059ca4c);
@@ -182,7 +182,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_50;
           uStack_118 = 0;
           pfStack_11c = (float *)0x473512;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           fStack_80 = afStack_110[uVar1 * 3] * _DAT_0057eaaa;
           fStack_7c = afStack_110[uVar1 * 3 + 1] * _DAT_0057eaaa;
           fStack_78 = _DAT_0057eaaa * afStack_110[uVar1 * 3 + 2];
@@ -198,7 +198,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
           piStack_114 = &iStack_50;
           uStack_118 = 1;
           pfStack_11c = (float *)0x4735d2;
-          FUN_004cd210();
+          engine_matrix_c_transformToCache_FUN_004cd210();
           puVar4 = &DAT_005c5044;
           puVar5 = auStack_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -213,7 +213,7 @@ void FUN_00473190(uint param_1,uint *param_2,uint *param_3,uint param_4)
             puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
             puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
           }
-          FUN_00409290();
+          engine_3d_c_clipAndDrawLine2D_FUN_00409290();
           uStack_20 = uStack_20 + 1;
           pfVar3 = pfVar3 + 3;
         } while ((int)uStack_20 < 8);

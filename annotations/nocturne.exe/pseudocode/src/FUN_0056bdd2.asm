@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_00565ad6 at 00565bf4
+;   crt_math.c_pow_FUN_00565ad6 at 00565bf4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1d9c

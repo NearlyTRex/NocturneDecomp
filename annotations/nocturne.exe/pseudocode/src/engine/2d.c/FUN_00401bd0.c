@@ -13,13 +13,13 @@ void FUN_00401bd0(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00456a60(&DAT_00577157,param_1,&DAT_00577154);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577157,param_1,&DAT_00577154);
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0x2c1;
     FUN_004c8440("Unable to open VGA palette");
   }
-  FUN_005636d0(&DAT_01c00648,0x300,1,iVar1);
-  FUN_00563380(iVar1);
+  _fread(&DAT_01c00648,0x300,1,iVar1);
+  _fclose(iVar1);
   return;
 }

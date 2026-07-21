@@ -31,7 +31,7 @@ void entry(void)
   *(uint *)((int)aiStack_1c + iVar1 + 4) = 0;
   *(byte **)((int)aiStack_1c + iVar1) = auStack_10 + iVar1;
   *(uint *)((int)&uStack_20 + iVar1) = 0x56df3e;
-  FUN_00563cc0();
+  memset();
   *(byte **)(auStack_10 + iVar1 + -4) = auStack_10 + iVar1;
   *(int *)(&stack0x000000e0 + iVar1) = 0x000000F4;
   *(byte **)((int)aiStack_1c + iVar1 + 4) = auStack_10;

@@ -9,7 +9,7 @@
 void FUN_004c4340(int param_1)
 
 {
-  FUN_00409fc0(param_1);
-  FUN_00454510(param_1 + 0x150);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
   return;
 }

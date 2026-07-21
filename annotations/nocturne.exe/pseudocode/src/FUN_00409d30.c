@@ -15,9 +15,9 @@ byte * FUN_00409d30(int param_1)
   char *pcVar4;
   char *pcVar5;
   
-  iVar3 = FUN_00409cf0(param_1 + 0x128);
+  iVar3 = core_actor_cpp_initTransformCache_FUN_00409cf0(param_1 + 0x128);
   puVar1 = (byte *)(iVar3 + -0x128);
-  *(byte ***)(iVar3 + 0x24) = &PTR_FUN_005992d4;
+  *(byte ***)(iVar3 + 0x24) = &PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005992d4;
   *puVar1 = 0;
   *(uint *)(iVar3 + 0x1c) = 0;
   *(uint *)(iVar3 + 0x20) = 0;
@@ -29,7 +29,7 @@ byte * FUN_00409d30(int param_1)
   *(uint *)(iVar3 + -0xf0) = 0;
   *(uint *)(iVar3 + -0xf4) = *(uint *)(iVar3 + -0xf0);
   *(uint *)(iVar3 + -0xf8) = *(uint *)(iVar3 + -0xf4);
-  FUN_0040a000(puVar1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(puVar1);
   pcVar5 = (char *)(iVar3 + -0xb0);
   *(uint *)(iVar3 + -0xb4) = 0x3f800000;
   do {

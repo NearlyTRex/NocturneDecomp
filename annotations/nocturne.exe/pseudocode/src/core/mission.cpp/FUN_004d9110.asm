@@ -6,13 +6,13 @@
 ;
 ; XREF[8]:
 ;   FUN_00418a00 at 00418ced
-;   FUN_0043cdb0 at 0043ce46
-;   FUN_0048e5a0 at 0048e61f
-;   FUN_004b6770 at 004b6802
-;   FUN_004bf360 at 004c00bd
-;   FUN_004d5e20 at 004d5ee4
-;   FUN_004ef890 at 004ef9d1
-;   FUN_00555c60 at 00555da8
+;   core_crate.cpp_CCrate_explode_FUN_0043cdb0 at 0043ce46
+;   core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0 at 0048e61f
+;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6802
+;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c00bd
+;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20 at 004d5ee4
+;   core_passngr.cpp_CPassenger_process_FUN_004ef890 at 004ef9d1
+;   core_werewolf.cpp_CWerewolf_process_FUN_00555c60 at 00555da8
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\mission.cpp_00589cfb

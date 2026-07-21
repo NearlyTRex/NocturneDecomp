@@ -11,7 +11,7 @@ void FUN_00523890(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00525b70(param_1);
+  iVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(param_1);
   *(uint *)(iVar1 + 0x120) = 0;
   *(uint *)(iVar1 + 300) = 0;
   *(uint *)(iVar1 + 0x130) = 0;

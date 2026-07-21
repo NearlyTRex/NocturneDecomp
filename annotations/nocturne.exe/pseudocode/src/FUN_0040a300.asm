@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005bed68
 ;
 ; Called Functions:
-;   FUN_0052ea90
+;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 0040a30e
     MOV EBX,dword ptr [0x005bed68]      ; 0040a30f | DAT_005bed68
     PUSH EBX                            ; 0040a315
-    CALL FUN_0052ea90                   ; 0040a316
-        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ea90()
+    CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0040a316
+        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90()
     ADD ESP,0x10                        ; 0040a31b
     POP EBX                             ; 0040a31e
     RET                                 ; 0040a31f

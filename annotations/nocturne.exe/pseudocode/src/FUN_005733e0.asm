@@ -21,10 +21,10 @@
 ;   undefined4 DAT_005c1f90
 ;
 ; Called Functions:
+;   crt_errno.c___set_errno_FUN_0056c73c
 ;   FUN_005671e4
 ;   FUN_005689c0
 ;   FUN_00568e80
-;   FUN_0056c73c
 ;   FUN_0056f220
 ;   GetLastError
 ;   ReadFile
@@ -144,8 +144,8 @@ section .text
     CMP EAX,0x6d                        ; 005734e1
     JZ 0x005735df                       ; 005734e4
         ;   XREF to: 005735df (CONDITIONAL_JUMP)  ; LAB_005735df
-    CALL FUN_0056c73c                   ; 005734ea
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined FUN_0056c73c()
+    CALL crt_errno.c___set_errno_FUN_0056c73c ; 005734ea
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
         ;   Label: LAB_005734ea
     ADD ESP,0x10                        ; 005734ef
     POP EBP                             ; 005734f2

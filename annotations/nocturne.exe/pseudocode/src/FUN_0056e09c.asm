@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005c1f58
 ;
 ; Called Functions:
-;   FUN_00564a70
+;   crt_memory.c_realloc_FUN_00564a70
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_0056e10b
     PUSH EAX                            ; 0056e10e
     PUSH ESI                            ; 0056e10f
-    CALL FUN_00564a70                   ; 0056e110
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined FUN_00564a70()
+    CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e110
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
     MOV EDX,dword ptr [0x005c1f58]      ; 0056e115 | DAT_005c1f58
     ADD ESP,0x8                         ; 0056e11b
     MOV ESI,EAX                         ; 0056e11e

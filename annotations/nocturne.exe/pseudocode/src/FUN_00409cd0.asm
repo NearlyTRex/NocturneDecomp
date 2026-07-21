@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004bf360 at 004c0342
-;   FUN_004c07b0 at 004c083a
-;   FUN_004d8f90 at 004d8fb1
+;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c0342
+;   core_inv.cpp_CInventory_removeItem_FUN_004c07b0 at 004c083a
+;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 at 004d8fb1
 ;
 ; *****************************************************************************
 

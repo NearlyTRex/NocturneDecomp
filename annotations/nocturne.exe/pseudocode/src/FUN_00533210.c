@@ -29,11 +29,11 @@ void FUN_00533210(int param_1,float param_2)
   float local_14;
   
   if ((*(int *)(param_1 + 0x2cc) == 0) || (*(int *)(param_1 + 0x2cc) == 1)) {
-    iVar3 = FUN_0047dc30(0x01C03A10,param_1 + 0x2e8);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x2e8);
     if (iVar3 != 0) {
       *(uint *)(param_1 + 0x2d4) = 1;
     }
-    iVar3 = FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
     if (iVar3 == 0) goto LAB_005333e2;
     *(uint *)(param_1 + 0x2d4) = 0;
 LAB_00533279:
@@ -45,11 +45,11 @@ LAB_00533279:
     }
   }
   else {
-    iVar3 = FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
     if (iVar3 != 0) {
       *(uint *)(param_1 + 0x2d4) = 1;
     }
-    iVar3 = FUN_0047dc30(0x01C03A10,param_1 + 0x414);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x414);
     if (iVar3 == 0) {
 LAB_005333e2:
       if (*(int *)(param_1 + 0x2d4) == 0) goto LAB_00533279;
@@ -103,7 +103,7 @@ LAB_00533455:
       goto LAB_005332db;
     }
   }
-  fVar5 = (float)FUN_0040dda0(0x3f400000,0x3fa00000);
+  fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f400000,0x3fa00000);
   *(float *)(param_1 + 0x480) = fVar5 * *(float *)(param_1 + 0x54c);
 LAB_005332db:
   pfVar1 = (float *)(param_1 + 0x20);
@@ -114,7 +114,8 @@ LAB_005332db:
   local_50 = 0;
   local_4c = 0;
   local_14 = local_48;
-  pfVar4 = (float *)FUN_0040a200(param_1,local_2c,&local_50);
+  pfVar4 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                              (param_1,local_2c,&local_50);
   local_44 = *(float *)(param_1 + 0x2d8) + *pfVar4;
   local_40 = *(float *)(param_1 + 0x2dc) + pfVar4[1];
   local_3c = *(float *)(param_1 + 0x2e0) + pfVar4[2];

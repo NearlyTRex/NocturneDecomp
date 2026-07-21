@@ -6,17 +6,17 @@
 ;
 ; XREF[5]:
 ;   FUN_004b6750 at 004b6755
-;   FUN_004b6b20 at 004b6cbc
-;   FUN_004ef6d0 at 004ef6d8
-;   FUN_00543180 at 00543187
-;   FUN_005433d0 at 005433d7
+;   core_hostage.cpp_CHostage_setup_FUN_004b6b20 at 004b6cbc
+;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef6d8
+;   core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180 at 00543187
+;   core_tbplayer.cpp_CDrummer_setup_FUN_005433d0 at 005433d7
 ;
 ; Referenced Globals:
 ;   string s_priest.dfm_0058cacb
 ;
 ; Called Functions:
-;   FUN_00424260
-;   FUN_00564520
+;   core_charactr.cpp_CCharacter_setup_FUN_00424260
+;   crt_string.c__stricmp_FUN_00564520
 ;
 ; *****************************************************************************
 
@@ -28,14 +28,14 @@ section .text
     MOV EBP,ESP                         ; 004ee9e2
     MOV EBX,dword ptr [EBP + 0xc]       ; 004ee9e4
     PUSH EBX                            ; 004ee9e7
-    CALL FUN_00424260                   ; 004ee9e8
-        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; undefined FUN_00424260()
+    CALL core_charactr.cpp_CCharacter_setup_FUN_00424260 ; 004ee9e8
+        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setup_FUN_00424260()
     ADD ESP,0x4                         ; 004ee9ed
     PUSH 0x58cacb                       ; 004ee9f0 | = "priest.dfm"
     LEA EAX,[EBX + 0x23b0]              ; 004ee9f5
     PUSH EAX                            ; 004ee9fb
-    CALL FUN_00564520                   ; 004ee9fc
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined FUN_00564520()
+    CALL crt_string.c__stricmp_FUN_00564520 ; 004ee9fc
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
     ADD ESP,0x8                         ; 004eea01
     TEST EAX,EAX                        ; 004eea04
     JZ 0x004eea0b                       ; 004eea06

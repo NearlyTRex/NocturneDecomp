@@ -9,6 +9,6 @@
 void FUN_004c8190(uint param_1)
 
 {
-  FUN_00409fc0(param_1);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
   return;
 }

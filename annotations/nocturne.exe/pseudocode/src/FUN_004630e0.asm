@@ -12,10 +12,10 @@
 ;   undefined4 DAT_005b0660
 ;
 ; Called Functions:
-;   FUN_0040c880
-;   FUN_0040ca80
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
+;   core_actor.cpp_archiveFloat_FUN_0040c880
+;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
 ;   FUN_0040cb00
-;   FUN_004796c0
 ;
 ; *****************************************************************************
 
@@ -25,20 +25,20 @@ section .text
         ;   Label: FUN_004630e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004630e1
     PUSH EBX                            ; 004630e5
-    CALL FUN_004796c0                   ; 004630e6
-        ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004796c0()
+    CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 004630e6
+        ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 004630eb
     PUSH 0x57df2c                       ; 004630ee | s_speed_0057df2a+2
     LEA EAX,[EBX + 0xbc8c]              ; 004630f3
     PUSH EAX                            ; 004630f9
-    CALL FUN_0040c880                   ; 004630fa
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c880()
+    CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004630fa
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 004630ff
     PUSH 0x57df32                       ; 00463102 | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 00463107
     PUSH EAX                            ; 0046310d
-    CALL FUN_0040ca80                   ; 0046310e
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ca80()
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0046310e
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
     MOV EDX,dword ptr [0x005b0660]      ; 00463113 | DAT_005b0660
     ADD ESP,0x8                         ; 00463119
     CMP EDX,0x2                         ; 0046311c
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_00463137
     LEA EAX,[EBX + 0xbc9c]              ; 0046313c
     PUSH EAX                            ; 00463142
-    CALL FUN_0040c880                   ; 00463143
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c880()
+    CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 00463143
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 00463148
     JMP 0x00463121                      ; 0046314b
         ;   XREF to: 00463121 (UNCONDITIONAL_JUMP)  ; LAB_00463121

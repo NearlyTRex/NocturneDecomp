@@ -15,6 +15,7 @@ void FUN_004d7720(int param_1,uint param_2)
   if (iVar1 == 0) {
     return;
   }
-  FUN_0045f190(DAT_005ae704,param_1 + 0xe8);
+  engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
+            (DAT_005ae704,param_1 + 0xe8);
   return;
 }

@@ -22,8 +22,9 @@ uint FUN_0050fc90(int param_1)
     }
     pfVar1 = (float *)(param_1 + 0x14cd28);
     *(uint *)(param_1 + 0x14cd4c) = *(uint *)(param_1 + 0x15f2f0);
-    uVar3 = FUN_0050ffe0(param_1,*(uint *)(param_1 + 0x15f2dc),pfVar1,
-                         (float *)(param_1 + 0x14cd34),*(uint *)(param_1 + 0x15f2e0));
+    uVar3 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
+                      (param_1,*(uint *)(param_1 + 0x15f2dc),pfVar1,
+                       (float *)(param_1 + 0x14cd34),*(uint *)(param_1 + 0x15f2e0));
     *(uint *)(param_1 + 0x15f2dc) = uVar3;
     if (*(float *)(param_1 + 0x15f2dc) <= 1.0) {
       pfVar2 = (float *)(param_1 + 0x15f2dc);

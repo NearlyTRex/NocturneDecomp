@@ -1,0 +1,64 @@
+#pragma once
+
+// Function prototypes for core/bugs.cpp
+// Generated from Ghidra function signatures
+
+// Original: core_bugs.cpp_CBugs_ctor_FUN_00421040
+// Address: 00421040
+int CBugs::ctor(undefined4 param_1);
+
+// Original: core_bugs.cpp_CBugs_setup_FUN_004211e0
+// Address: 004211e0
+void CBugs::setup(int param_1);
+
+// Original: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
+// Address: 004216d0
+void CBugs::renderGroundHeightGrid(int param_1);
+
+// Original: core_bugs.cpp_CBugs_archive_FUN_00421880
+// Address: 00421880
+void CBugs::archive(int param_1);
+
+// Original: core_bugs.cpp_CBugs_getDeathState_FUN_004219b0
+// Address: 004219b0
+undefined4 CBugs::getDeathState(int param_1);
+
+// Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0
+// Address: 00421ad0
+void __cdecl CBugs::addSwarmGraphEdge(int param_1,int param_2,int param_3,int param_4);
+
+// Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00
+// Address: 00421f00
+undefined4 CBugs::sampleGroundHeight(int param_1,float param_2);
+
+// Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
+// Address: 00422370
+void __cdecl CBugs::attackSwarmTarget(int param_1,float param_2);
+
+// Original: core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0
+// Address: 004227a0
+void __cdecl CBugs::updateBoundingBox(undefined4 param_1);
+
+// Original: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
+// Address: 004227b0
+undefined4 CBugs::updateBugPathfinding(undefined4 param_1,int *param_2,float param_3,float *param_4);
+
+// Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
+// Address: 00422c70
+void CBugs::updateBugRenderingData(int param_1,int param_2,float param_3);
+
+// Original: core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680
+// Address: 00423680
+undefined4 * __cdecl CBugs::recalculateBoundingBox(int param_1);
+
+// Original: core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50
+// Address: 00423a50
+void __cdecl CBugs::applySwarmTranslation(int param_1,float *param_2);
+
+// Original: core_bugs.cpp_getDeformableModelName_FUN_00423d30
+// Address: 00423d30
+int __cdecl getDeformableModelName(int param_1);
+
+// Original: core_bugs.cpp_maxFloat_FUN_00423d60
+// Address: 00423d60
+float maxFloat(float param_1,float param_2);

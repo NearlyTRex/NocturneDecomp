@@ -27,25 +27,25 @@ uint FUN_0055a510(uint param_1,uint param_2)
   tagRECT local_24;
   tagRECT local_14;
   
-  FUN_00563c90(local_74,"%s\\%s",param_1,param_2);
-  iVar3 = FUN_0056568c(local_74,&DAT_00598233);
+  _sprintf(local_74,"%s\\%s",param_1,param_2);
+  iVar3 = _fopen(local_74,&DAT_00598233);
   if (iVar3 == 0) {
     return 0;
   }
-  FUN_00563380(iVar3);
-  FUN_0052ee70();
-  FUN_00553910();
+  _fclose(iVar3);
+  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   pHVar7 = _DAT_02de2098;
   if (_DAT_02de3124 != 0) {
-    FUN_0055a1c0(_DAT_02de2098);
+    wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(_DAT_02de2098);
   }
-  FUN_00563c90(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
+  _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
   MVar4 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar4 == 0) {
     _DAT_02de3124 = 1;
     MVar4 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
     if (MVar4 == 0) {
-      _DAT_02de311c = (HWND)FUN_00566f30(local_1f8);
+      _DAT_02de311c = (HWND)atoi(local_1f8);
     }
     else {
       mciGetErrorStringA(MVar4,local_1f8,0x104);
@@ -107,14 +107,15 @@ uint FUN_0055a510(uint param_1,uint param_2)
   mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar7);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,-0xf);
-  while (((FUN_005591c0(), _DAT_02de3120 != 0 && (iVar3 = FUN_00558b70(), iVar3 == 0)) &&
+  while (((wincore_winrun_cpp_processWindowMessages_FUN_005591c0(), _DAT_02de3120 != 0 &&
+          (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 == 0)) &&
          (_DAT_02de3124 != 0))) {
     Sleep(0x14);
   }
   SetThreadPriority(hThread,1);
-  FUN_0055a1c0(_DAT_02de2098);
-  FUN_0052ee70();
-  FUN_00553910();
-  FUN_00403f50();
+  wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(_DAT_02de2098);
+  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
+  engine_2d_c_clearInputAndWait_FUN_00403f50();
   return 1;
 }

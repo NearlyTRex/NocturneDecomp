@@ -60,7 +60,7 @@ uint * FUN_00445750(uint *param_1,uint *param_2,int param_3)
   if ((0x01C775EC[3] != 0) ||
      ((puVar3 = 0x01C775EC, param_3 == 0 && (puVar3 = param_2, param_2[8] != 0)))) {
     _DAT_014b8458 = param_2;
-    FUN_00441610(param_1,param_2);
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(param_1,param_2);
     _DAT_014b8460 = local_94;
     *(uint *)(&DAT_014b8464 + (uint)bVar1 * -8) =
          *(uint *)(&stack0xffffff70 + (uint)bVar1 * -8);
@@ -101,8 +101,9 @@ uint * FUN_00445750(uint *param_1,uint *param_2,int param_3)
             }
             do {
               if (*(uint *)(iVar2 + 4) != param_1[0x4f]) {
-                FUN_00445650(iVar12,*(uint *)(iVar2 + 4),*(uint *)(iVar2 + 0x3c4),
-                             iVar5 + 0x121660c);
+                core_dcamera_cpp_blendCoronaTextureSpan_FUN_00445650
+                          (iVar12,*(uint *)(iVar2 + 4),*(uint *)(iVar2 + 0x3c4),
+                           iVar5 + 0x121660c);
               }
               iVar12 = iVar12 + 1;
               iVar2 = iVar2 + 4;
@@ -116,7 +117,7 @@ uint * FUN_00445750(uint *param_1,uint *param_2,int param_3)
         iVar5 = _DAT_01216608 * 0x13384;
         _DAT_01216608 = _DAT_01216608 + 1;
         local_80 = (uint *)(iVar5 + 0x121660c);
-        FUN_0044ce80(param_2);
+        core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(param_2);
         local_54 = 0;
         if (0 < (int)param_1[0x55]) {
           local_6c = local_80 + 0x1e1;
@@ -200,8 +201,9 @@ LAB_00445beb:
               }
               local_80[local_54 + 1] = uVar6;
               local_80[local_54 + 0xf1] = uVar4;
-              FUN_00445650(local_54,*(uint *)(local_54 * 4 + 0x146b290),
-                           *(uint *)(local_54 * 4 + 0x146b650),local_80);
+              core_dcamera_cpp_blendCoronaTextureSpan_FUN_00445650
+                        (local_54,*(uint *)(local_54 * 4 + 0x146b290),
+                         *(uint *)(local_54 * 4 + 0x146b650),local_80);
             }
             local_6c = local_6c + 0x50;
             local_70 = local_70 + 0x500;
@@ -218,7 +220,7 @@ LAB_00445beb:
       }
       _DAT_014b845c = 0;
     }
-    FUN_0044ce80(param_2);
+    core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(param_2);
     local_64 = 0;
     puVar3 = param_1;
     if (0 < (int)param_1[0x55]) {

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00474d70 at 00474e08
-;   FUN_0049da10 at 0049de75
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de75
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e08
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0057ee22
@@ -21,12 +21,12 @@
 ;   undefined4 DAT_01c00c64
 ;
 ; Called Functions:
-;   FUN_00475db0
-;   FUN_00475f10
-;   FUN_00476040
-;   FUN_00476920
-;   FUN_00558a30
-;   FUN_00558d60
+;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920
+;   shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10
+;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040
+;   shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0
+;   wincore_winrun.cpp_getTime_FUN_00558a30
+;   wincore_winrun.cpp_setCursorPosition_FUN_00558d60
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     AND ESP,0xfffffff8                  ; 00475239
     MOV EBX,dword ptr [EBP + 0x14]      ; 0047523c
     PUSH EBX                            ; 0047523f
-    CALL FUN_00475db0                   ; 00475240
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined FUN_00475db0()
+    CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 00475240
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
     MOV EDX,dword ptr [EBX + 0x10c]     ; 00475245
     ADD ESP,0x4                         ; 0047524b
     TEST EDX,EDX                        ; 0047524e
@@ -52,8 +52,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x118]     ; 00475252
     PUSH ECX                            ; 00475258
     PUSH EBX                            ; 00475259
-    CALL FUN_00476040                   ; 0047525a
-        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined FUN_00476040()
+    CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 0047525a
+        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040()
     ADD ESP,0x8                         ; 0047525f
     TEST EAX,EAX                        ; 00475262
     JNZ 0x004753f6                      ; 00475264
@@ -68,8 +68,8 @@ section .text
     JL 0x00475403                       ; 0047527c
         ;   XREF to: 00475403 (CONDITIONAL_JUMP)  ; LAB_00475403
     PUSH EBX                            ; 00475282
-    CALL FUN_00475db0                   ; 00475283
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined FUN_00475db0()
+    CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 00475283
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
     MOV ESI,dword ptr [EBX + 0x78]      ; 00475288
     ADD ESP,0x4                         ; 0047528b
     TEST ESI,ESI                        ; 0047528e
@@ -87,8 +87,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x124]     ; 004752bf
     PUSH ECX                            ; 004752c5
     MOV dword ptr [EBX + 0x140],EAX     ; 004752c6
-    CALL FUN_00476920                   ; 004752cc
-        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; undefined FUN_00476920()
+    CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 ; 004752cc
+        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920()
     MOV EAX,dword ptr [EBX + 0x138]     ; 004752d1
     ADD ESP,0x4                         ; 004752d7
         ;   Label: LAB_004752d7
@@ -140,8 +140,8 @@ section .text
     PUSH EDX                            ; 00475357
         ;   Label: LAB_00475357
     PUSH EAX                            ; 00475358
-    CALL FUN_00558d60                   ; 00475359
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined FUN_00558d60()
+    CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 00475359
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
     MOV AH,byte ptr [0x01bd1d94]        ; 0047535e | DAT_01bd1d94
     ADD ESP,0x8                         ; 00475364
     TEST AH,0x1                         ; 00475367
@@ -152,8 +152,8 @@ section .text
     MOV EDI,dword ptr [0x01bd1d8c]      ; 00475377 | DAT_01bd1d8c
     PUSH EDI                            ; 0047537d
     PUSH EBX                            ; 0047537e
-    CALL FUN_00475f10                   ; 0047537f
-        ;   XREF to: 00475f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00475f10()
+    CALL shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10 ; 0047537f
+        ;   XREF to: 00475f10 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10()
     ADD ESP,0xc                         ; 00475384
     MOV ESI,EAX                         ; 00475387
     TEST EAX,EAX                        ; 00475389
@@ -163,8 +163,8 @@ section .text
     AND DL,0xfe                         ; 00475393
     MOV dword ptr [EBX + 0x118],EAX     ; 00475396
     MOV byte ptr [0x01bd1d94],DL        ; 0047539c | DAT_01bd1d94
-    CALL FUN_00558a30                   ; 004753a2
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00558a30()
+    CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004753a2
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV ECX,dword ptr [0x01bcde1c]      ; 004753a7 | DAT_01bcde1c
     MOV EDX,EAX                         ; 004753ad
     SUB EAX,ECX                         ; 004753af
@@ -232,8 +232,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x12c]     ; 0047544b
     PUSH ECX                            ; 00475451
     MOV dword ptr [EBX + 0x140],EAX     ; 00475452
-    CALL FUN_00476920                   ; 00475458
-        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; undefined FUN_00476920()
+    CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 ; 00475458
+        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920()
     MOV EAX,dword ptr [EBX + 0x138]     ; 0047545d
     IMUL EAX,dword ptr [EBX + 0x124]    ; 00475463
     JMP 0x004752d7                      ; 0047546a

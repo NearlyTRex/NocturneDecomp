@@ -19,7 +19,7 @@ uint * FUN_0056c5f0(uint *param_1,uint param_2)
   bVar5 = 0;
   DVar1 = GetCurrentDirectoryA(0x104,aCStack_110);
   if (DVar1 == 0) {
-    FUN_0056c73c();
+    __set_errno();
     param_1 = (uint *)0x0;
   }
   else {
@@ -28,7 +28,7 @@ uint * FUN_0056c5f0(uint *param_1,uint param_2)
       if (DVar1 + 1 < param_2) {
         uVar2 = param_2;
       }
-      param_1 = (uint *)FUN_005635b0(uVar2);
+      param_1 = (uint *)malloc(uVar2);
       if (param_1 == (uint *)0x0) {
         FUN_00568e80(5);
         return (uint *)0x0;

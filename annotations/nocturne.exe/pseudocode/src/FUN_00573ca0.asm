@@ -12,9 +12,9 @@
 ;   undefined4 DAT_02de54a4
 ;
 ; Called Functions:
+;   crt_ctype.c_toupper_FUN_00565e20
+;   crt_string.c_memmove_FUN_00566170
 ;   FUN_005638d0
-;   FUN_00565e20
-;   FUN_00566170
 ;
 ; *****************************************************************************
 
@@ -37,15 +37,15 @@ section .text
         ;   Label: LAB_00573cbc
     MOV AL,byte ptr [EBX]               ; 00573cbe
     PUSH EAX                            ; 00573cc0
-    CALL FUN_00565e20                   ; 00573cc1
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined FUN_00565e20()
+    CALL crt_ctype.c_toupper_FUN_00565e20 ; 00573cc1
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
     MOV EDI,EAX                         ; 00573cc6
     XOR EAX,EAX                         ; 00573cc8
     ADD ESP,0x4                         ; 00573cca
     MOV AL,byte ptr [ESI]               ; 00573ccd
     PUSH EAX                            ; 00573ccf
-    CALL FUN_00565e20                   ; 00573cd0
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined FUN_00565e20()
+    CALL crt_ctype.c_toupper_FUN_00565e20 ; 00573cd0
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
     ADD ESP,0x4                         ; 00573cd5
     CMP EDI,EAX                         ; 00573cd8
     JNZ 0x00573d86                      ; 00573cda
@@ -96,8 +96,8 @@ section .text
     MOV EDX,dword ptr [0x02de54a0]      ; 00573d42 | DAT_02de54a0
     PUSH EDX                            ; 00573d48
     PUSH EBX                            ; 00573d49
-    CALL FUN_00566170                   ; 00573d4a
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined FUN_00566170()
+    CALL crt_string.c_memmove_FUN_00566170 ; 00573d4a
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
     ADD ESP,0xc                         ; 00573d4f
     MOV dword ptr [0x02de54a0],EBX      ; 00573d52 | DAT_02de54a0
     CMP ESI,EDI                         ; 00573d58

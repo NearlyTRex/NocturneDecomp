@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00566e70 at 00566e85
+;   crt_stdio.c_ftell_FUN_00566e70 at 00566e85
 ;
 ; Called Functions:
 ;   FUN_00568890

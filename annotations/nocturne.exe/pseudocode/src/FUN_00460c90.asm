@@ -11,8 +11,8 @@
 ;   undefined4 DAT_0057dc65
 ;
 ; Called Functions:
-;   FUN_004c6a10
-;   FUN_00563a30
+;   crt_math.c_round_FUN_00563a30
+;   engine_light.cpp_setDirectionalLightVector_FUN_004c6a10
 ;
 ; *****************************************************************************
 
@@ -30,25 +30,25 @@ section .text
     FLD float ptr [EAX]                 ; 00460ca8
     FMULP ST3                           ; 00460caa
     FXCH                                ; 00460cac
-    CALL FUN_00563a30                   ; 00460cae
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00460cae
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 00460cb3
-    CALL FUN_00563a30                   ; 00460cb5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00460cb5
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FXCH                                ; 00460cba
     FISTP dword ptr [ESP]               ; 00460cbc
     FISTP dword ptr [ESP + 0x4]         ; 00460cbf
     MOV EDX,dword ptr [ESP]             ; 00460cc3
     MOV ECX,dword ptr [ESP + 0x4]       ; 00460cc6
     PUSH EDX                            ; 00460cca
-    CALL FUN_00563a30                   ; 00460ccb
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00460ccb
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     PUSH ECX                            ; 00460cd0
     FISTP dword ptr [ESP + 0xc]         ; 00460cd1
     MOV EBX,dword ptr [ESP + 0xc]       ; 00460cd5
     PUSH EBX                            ; 00460cd9
-    CALL FUN_004c6a10                   ; 00460cda
-        ;   XREF to: 004c6a10 (UNCONDITIONAL_CALL)  ; undefined FUN_004c6a10()
+    CALL engine_light.cpp_setDirectionalLightVector_FUN_004c6a10 ; 00460cda
+        ;   XREF to: 004c6a10 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_setDirectionalLightVector_FUN_004c6a10()
     ADD ESP,0xc                         ; 00460cdf
     ADD ESP,0x8                         ; 00460ce2
     POP EBX                             ; 00460ce5

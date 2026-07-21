@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0052d120 at 0052d330
+;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d330
 ;
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_005933f1

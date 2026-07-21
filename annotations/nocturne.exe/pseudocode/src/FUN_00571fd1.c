@@ -73,7 +73,8 @@ LAB_00572080:
         *(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);
       }
       else {
-        FUN_00566170(*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);
+        memmove
+                  (*(int *)(param_1 + 0x18),iVar1 + *(int *)(param_1 + 0x18),uVar2);
         *(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);
         *(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);
         *(uint *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + uVar2;

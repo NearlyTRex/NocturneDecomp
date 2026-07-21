@@ -73,9 +73,10 @@ float FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param
   int local_18;
   int local_14;
   
-  FUN_00468a20(&local_14c,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
+  core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20
+            (&local_14c,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
   if (((param_4 & 0x7fffffff) != 0) || ((param_5 & 0x7fffffff) != 0)) {
-    FUN_00468af0(&DAT_01fba938,&local_14c);
+    core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0(&DAT_01fba938,&local_14c);
   }
   *(uint *)(param_1 + 0x14cd4c) = 1;
   *(uint *)(param_1 + 0x14cd60) = 0xffffffff;
@@ -100,7 +101,7 @@ float FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param
     else {
       local_84 = local_84 + local_130;
     }
-    FUN_00511990(&local_f0);
+    core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&local_f0);
     local_f0 = *(uint *)(param_1 + 0x15f298);
     local_ec = *(uint *)(param_1 + 0x15f29c);
     local_e8 = *(uint *)(param_1 + 0x15f2a0);
@@ -111,19 +112,21 @@ float FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param
       local_18 = param_1;
       do {
         iVar1 = *(int *)(local_18 + 0x1569c4);
-        iVar9 = FUN_005103f0(param_1,iVar1);
+        iVar9 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(param_1,iVar1);
         if ((iVar9 == 0) &&
            (local_d0 = iVar9, local_cc = iVar9,
            uVar10 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,&local_f0), uVar10 != 0)) {
-          uVar11 = FUN_0040a540(iVar1,auStack_b0,&local_f0,uVar10);
-          iVar9 = FUN_0041dc20(&local_98,uVar11);
+          uVar11 = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
+                             (iVar1,auStack_b0,&local_f0,uVar10);
+          iVar9 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(&local_98,uVar11);
           if (iVar9 != 0) {
             if (local_cc == 0) {
               if (uVar10 < 2) {
                 if (uVar10 == 1) {
                   uVar11 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))
                                      (iVar1,auStack_c8,iVar1 + 0x20,iVar1 + 0x3c);
-                  iVar9 = FUN_00510710(param_1,&local_14c,uVar11);
+                  iVar9 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710
+                                    (param_1,&local_14c,uVar11);
                   if (iVar9 != 0) {
                     *(int *)(param_1 + 0x14cd5c) = iVar1;
                   }
@@ -194,18 +197,22 @@ LAB_0051133f:
                 fStack_68 = local_13c;
                 fStack_60 = local_138;
                 iStack_64 = local_cc;
-                FUN_0040a290(iVar1,auStack_80,&fStack_68);
+                core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                          (iVar1,auStack_80,&fStack_68);
                 afStack_74[0] = local_134;
                 afStack_74[2] = local_130;
                 afStack_74[1] = 0.0;
-                FUN_0040a220(iVar1,auStack_5c,afStack_74);
-                FUN_00468a20(&fStack_1a8,auStack_80[0],uStack_78,auStack_5c[0],uStack_54,param_6,
-                             param_7 - *(float *)(iVar1 + 0x24),param_8 - *(float *)(iVar1 + 0x24));
+                core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                          (iVar1,auStack_5c,afStack_74);
+                core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20
+                          (&fStack_1a8,auStack_80[0],uStack_78,auStack_5c[0],uStack_54,param_6,
+                           param_7 - *(float *)(iVar1 + 0x24),param_8 - *(float *)(iVar1 + 0x24));
                 fStack_1a8 = local_14c;
                 (**(code **)(*(int *)(iVar1 + 0x14c) + 0xb4))(iVar1,&fStack_1a8);
                 if (fStack_1a8 < local_14c) {
                   local_14c = fStack_1a8;
-                  pfVar12 = (float *)FUN_0040a200(iVar1,auStack_50,auStack_1a4);
+                  pfVar12 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                                               (iVar1,auStack_50,auStack_1a4);
                   if (&local_148 != pfVar12) {
                     local_148 = *pfVar12;
                     local_144 = pfVar12[1];
@@ -216,17 +223,19 @@ LAB_0051133f:
               }
             }
             else {
-              iVar9 = FUN_00454530(local_cc);
+              iVar9 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(local_cc);
               if (*(int *)(iVar9 + 0x358) == 0) {
                 _DAT_01cc4800 = "..\\core\\setcolid.cpp";
                 _DAT_01cc4804 = 0x389;
                 FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",iVar9);
               }
-              FUN_00468a20(&fStack_204,local_13c - *(float *)(iVar1 + 0x20),
-                           local_138 - *(float *)(iVar1 + 0x28),local_134,local_130,param_6,
-                           param_7 - *(float *)(iVar1 + 0x24),param_8 - *(float *)(iVar1 + 0x24));
+              core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20
+                        (&fStack_204,local_13c - *(float *)(iVar1 + 0x20),
+                         local_138 - *(float *)(iVar1 + 0x28),local_134,local_130,param_6,
+                         param_7 - *(float *)(iVar1 + 0x24),param_8 - *(float *)(iVar1 + 0x24));
               fStack_204 = local_14c;
-              FUN_00453e10(iVar9,0,&fStack_204,iVar1 + 0x30);
+              core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10
+                        (iVar9,0,&fStack_204,iVar1 + 0x30);
               if (fStack_204 < local_14c) {
                 if (&local_148 != &fStack_200) {
                   local_148 = fStack_200;

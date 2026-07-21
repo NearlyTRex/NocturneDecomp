@@ -14,11 +14,11 @@ void FUN_00403070(uint param_1,uint param_2)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_00456a60(&DAT_0057718f,param_1,&DAT_0057718c);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057718f,param_1,&DAT_0057718c);
   if (iVar1 == 0) {
     FUN_00402e90(param_2);
     FUN_00403130(param_1);
-    iVar1 = FUN_00456a60(&DAT_00577196,param_1,&DAT_00577193);
+    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577196,param_1,&DAT_00577193);
   }
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
@@ -26,8 +26,8 @@ void FUN_00403070(uint param_1,uint param_2)
     FUN_004c8440("Unable to read fog table.");
   }
   else {
-    FUN_005636d0(0x1bd1ea0,0x100,0x10,iVar1);
-    FUN_00563380(iVar1);
+    _fread(0x1bd1ea0,0x100,0x10,iVar1);
+    _fclose(iVar1);
   }
   iVar1 = 0;
   do {
@@ -37,6 +37,6 @@ void FUN_00403070(uint param_1,uint param_2)
     *(byte *)(iVar1 + 0x1bd1da0) = *(byte *)(iVar1 + 0x1bd1ea0);
     iVar1 = iVar2;
   } while (iVar2 < 0x100);
-  FUN_00532a80(param_2);
+  wincore_windll_cpp_setFogColorFromPalette_FUN_00532a80(param_2);
   return;
 }

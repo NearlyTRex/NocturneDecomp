@@ -1,0 +1,506 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 174,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 13,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "00411f20",
+      "from_addr": "00411fbf",
+      "name": "core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495340",
+      "from_addr": "004953be",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc1b0",
+      "from_addr": "004cc224",
+      "name": "core_marquee.cpp_CMarquee_computeBoundingBox_FUN_004cc1b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc5d0",
+      "from_addr": "004cc682",
+      "name": "core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dec50",
+      "from_addr": "004dedb6",
+      "name": "core_moon.cpp_CMoon_render_FUN_004dec50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5ff0",
+      "from_addr": "004f612d",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054eae0",
+      "from_addr": "0054eb37",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_0054eae0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043b800",
+    "address_range": [
+      [
+        "0043b800",
+        "0043b884"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_evaluate_FUN_0043b800",
+    "signature": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043b890",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_interpolate_FUN_0043b890"
+    },
+    {
+      "addr": "0055b180",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_0055b180"
+    },
+    {
+      "addr": "0055ced0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_0055ced0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "004dedb6",
+        "call_type": "direct",
+        "caller": "core_moon.cpp_CMoon_render_FUN_004dec50",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004953be",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004f612d",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00411fbf",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004cc224",
+        "call_type": "direct",
+        "caller": "core_marquee.cpp_CMarquee_computeBoundingBox_FUN_004cc1b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004cc682",
+        "call_type": "direct",
+        "caller": "core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004cc74d",
+        "call_type": "direct",
+        "caller": "core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004cc822",
+        "call_type": "direct",
+        "caller": "core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0054eb37",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_0054eae0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0054eba8",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_0054eae0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.127659574468085,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 43,
+      "INT_ADD": 30,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 15,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(uint param_1,uint param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(uint param_1,uint param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(uint param_1,uint param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(uint param_1,uint param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_course_cpp_CCourse_interpolate_FUN_0043b890(param_1,param_2,param_3,local_28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_course_cpp_CCourse_interpolate_FUN_0043b890(param_1,param_2,param_3,local_28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "core_course_cpp_CCourse_interpolate_FUN_0043b890(param_1,param_2,param_3,local_28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 == puVar1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*param_4 = *puVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4[1] = puVar1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4[2] = puVar1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 10,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

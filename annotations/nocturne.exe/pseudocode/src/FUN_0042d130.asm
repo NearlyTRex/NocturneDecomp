@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0042e520 at 0042e52b
+;   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520 at 0042e52b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

@@ -40,7 +40,7 @@ void FUN_0050ad20(int param_1)
       iVar3 = iVar3 + 0x1898;
     } while (iVar4 < *(int *)(param_1 + 0x19644));
   }
-  FUN_0044e3b0();
-  FUN_004401d0(0x1fb8508);
+  core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
+  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(0x1fb8508);
   return;
 }

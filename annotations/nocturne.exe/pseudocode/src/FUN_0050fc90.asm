@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0050ffe0
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x15f2f0]  ; 0050fce9
     PUSH EBX                            ; 0050fcef
     MOV dword ptr [EBX + 0x14cd4c],EAX  ; 0050fcf0
-    CALL FUN_0050ffe0                   ; 0050fcf6
-        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ffe0()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 ; 0050fcf6
+        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0()
     MOV dword ptr [ESP + 0x44],EAX      ; 0050fcfb
     MOV EAX,dword ptr [ESP + 0x44]      ; 0050fcff
     MOV dword ptr [EBX + 0x15f2dc],EAX  ; 0050fd03

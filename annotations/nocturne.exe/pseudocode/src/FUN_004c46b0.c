@@ -27,9 +27,11 @@ void FUN_004c46b0(int param_1)
   
   bVar4 = 0;
   if (*(int *)(param_1 + 0x2d8) != 0) {
-    FUN_0055afb0(local_e4,param_1 + 0x20,param_1 + 0x30);
-    FUN_0055ae80(local_b4,*(int *)(param_1 + 0x2d8) + 0x20,*(int *)(param_1 + 0x2d8) + 0x30);
-    FUN_0055aa00(local_e4,local_b4);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+              (local_e4,param_1 + 0x20,param_1 + 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
+              (local_b4,*(int *)(param_1 + 0x2d8) + 0x20,*(int *)(param_1 + 0x2d8) + 0x30);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_e4,local_b4);
     puVar1 = local_54;
     puVar3 = local_84;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -45,7 +47,7 @@ void FUN_004c46b0(int param_1)
       *(uint *)(param_1 + 0x2e0) = local_68;
       *(uint *)(param_1 + 0x2e4) = local_58;
     }
-    puVar1 = (uint *)FUN_0055b180(local_84,local_18);
+    puVar1 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_84,local_18);
     if ((uint *)(param_1 + 0x2e8) != puVar1) {
       *(uint *)(param_1 + 0x2e8) = *puVar1;
       *(uint *)(param_1 + 0x2ec) = puVar1[1];

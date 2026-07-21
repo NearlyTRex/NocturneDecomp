@@ -12,13 +12,13 @@
 ; XREF[9]:
 ;   FUN_00429e60 at 00429ebb
 ;   FUN_00497900 at 00497ab9
-;   FUN_004db6f0 at 004db99b
 ;   FUN_004fd1d0 at 004fd216
 ;   FUN_0051d650 at 0051d714
 ;   FUN_005384d0 at 00538710
 ;   FUN_005396d0 at 0053975d
-;   FUN_00539b10 at 0053a0e1
 ;   FUN_0053a260 at 0053a2a1
+;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db99b
+;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 0053a0e1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059837e

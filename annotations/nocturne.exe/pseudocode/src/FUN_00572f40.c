@@ -23,7 +23,7 @@ int FUN_00572f40(uint param_1)
       uVar3 = FUN_0056f220(param_1);
       FUN_0056f278(param_1,uVar3 & 0xffff7fff);
       if (0 < iVar1) {
-        FUN_00563cc0(local_20c,0,0x200);
+        memset(local_20c,0,0x200);
         do {
           iVar2 = iVar1;
           if (0x200 < iVar1) {

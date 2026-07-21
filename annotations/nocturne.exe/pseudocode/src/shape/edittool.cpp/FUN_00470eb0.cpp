@@ -37,21 +37,22 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
     FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(int *)(_DAT_01bcd070 + 0x3168);
-  _DAT_01bcd9bc = FUN_004930e0(_DAT_01bcd070,0x6a);
-  FUN_00471a80(param_1,_DAT_01bcd9b8 * 0x1e,_DAT_01bcd9bc * 2,param_2,0);
+  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
+  shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
+            (param_1,_DAT_01bcd9b8 * 0x1e,_DAT_01bcd9bc * 2,param_2,0);
   pcVar7 = param_5;
   if ((param_6 & 1) == 0) {
     pcVar7 = (char *)0x0;
   }
-  FUN_0046f0a0(local_158,pcVar7,0x14,0);
+  shape_edittool_cpp_CInputString_init_FUN_0046f0a0(local_158,pcVar7,0x14,0);
   local_18 = DAT_005b7630;
   DAT_005b7630 = 0x7f;
   local_14 = 0;
   do {
     FUN_004722b0(param_1);
-    FUN_00566ad0(local_158);
+    strupr(local_158);
     if (*param_3 != '\0') {
-      pcVar2 = (char *)FUN_004ee370("Directory: ");
+      pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Directory: ");
       pcVar7 = local_360;
       do {
         cVar1 = *pcVar2;
@@ -83,29 +84,32 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
         pcVar2[1] = cVar1;
         pcVar2 = pcVar2 + 2;
       } while (cVar1 != '\0');
-      FUN_00408370(0xffff);
-      FUN_00490980(_DAT_01bcd070,local_360,_DAT_01c00c58,_DAT_01c00c5c,_DAT_01bcddf0,0xffffffff);
+      engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
+      engine_font_cpp_CBitFont_drawText_FUN_00490980
+                (_DAT_01bcd070,local_360,_DAT_01c00c58,_DAT_01c00c5c,_DAT_01bcddf0,0xffffffff);
     }
     uVar3 = _DAT_01bcddf0;
     if (local_14 != 0) {
       uVar3 = _DAT_01bcddf4;
     }
-    FUN_00408370(0xffff);
-    uVar3 = FUN_004ee370("Filename: ",_DAT_01c00c58,_DAT_01c00c5c + _DAT_01bcd9bc,uVar3,
-                         0xffffffff);
-    FUN_00490980(_DAT_01bcd070,uVar3);
-    uVar3 = FUN_004ee370("Filename: ");
-    iVar4 = FUN_00492da0(_DAT_01bcd070,uVar3);
-    FUN_0046f680(local_158,iVar4 + _DAT_01c00c58,_DAT_01c00c5c + _DAT_01bcd9bc);
-    FUN_00553910();
+    engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                      ("Filename: ",_DAT_01c00c58,_DAT_01c00c5c + _DAT_01bcd9bc,uVar3,
+                       0xffffffff);
+    engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_01bcd070,uVar3);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Filename: ");
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,uVar3);
+    shape_edittool_cpp_CInputString_draw_FUN_0046f680
+              (local_158,iVar4 + _DAT_01c00c58,_DAT_01c00c5c + _DAT_01bcd9bc);
+    wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     if (local_14 != 0) break;
-    while (iVar4 = FUN_00558b70(), iVar4 != 0) {
-      iVar4 = FUN_004c41c0(0x01CC30E4);
+    while (iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar4 != 0) {
+      iVar4 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(0x01CC30E4);
       if (iVar4 == 0x1b) {
         *param_5 = '\0';
         FUN_004720c0(param_1);
-        FUN_00403f50();
-        FUN_00553910();
+        engine_2d_c_clearInputAndWait_FUN_00403f50();
+        wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         DAT_005b7630 = local_18;
         return 0;
       }
@@ -176,22 +180,22 @@ LAB_004711e7:
           } while (cVar1 != '\0');
           local_28 = ~uVar6 - 1;
           local_24 = local_28;
-          FUN_0046f130(local_158);
+          shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(local_158);
         }
-        FUN_00403f50();
+        engine_2d_c_clearInputAndWait_FUN_00403f50();
         local_14 = 1;
       }
       if (iVar4 == 8) {
-        FUN_0046f2a0(local_158);
+        shape_edittool_cpp_CInputString_backspace_FUN_0046f2a0(local_158);
       }
       else if ((((((&DAT_005c168c)[(byte)((char)iVar4 + 1)] & 8) != 0) && (iVar4 != 0x5c)) &&
                (iVar4 != 0x3a)) && (((&DAT_005c168c)[(byte)((char)iVar4 + 1)] & 2) == 0)) {
-        FUN_0046f250(local_158);
-        FUN_0046f150(local_158,iVar4,1);
-        FUN_0046f130(local_158);
+        shape_edittool_cpp_CInputString_deleteSelection_FUN_0046f250(local_158);
+        shape_edittool_cpp_CInputString_insertChar_FUN_0046f150(local_158,iVar4,1);
+        shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(local_158);
       }
     }
-    FUN_0046f390(local_158);
+    shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0046f390(local_158);
   } while( true );
   pcVar7 = local_158;
   do {

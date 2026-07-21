@@ -47,13 +47,13 @@ int FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,in
     local_1c = 0x1cd8c28;
     do {
       iVar9 = local_1c;
-      FUN_00563c90(local_1c,&DAT_0058b77c,iVar6);
+      _sprintf(local_1c,&DAT_0058b77c,iVar6);
       *(uint *)(&DAT_01cd944c + iVar1) = *(uint *)(&DAT_005bdba0 + local_18);
       *(uint *)(iVar1 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_18);
       *(uint *)(iVar1 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_18);
       *(uint *)(iVar1 + 0x1cd8c34) = *(uint *)(&DAT_005bdbac + local_18);
       *(int *)(iVar1 + 0x1cd8c38) = (1 << (*(byte *)(iVar1 + 0x1cd8c34) & 0x1f)) + -1;
-      FUN_00566b5c(iVar9,&DAT_0058b77f,&local_38);
+      sscanf(iVar9,&DAT_0058b77f,&local_38);
       if (iVar6 != local_38) {
         _DAT_01cc4800 = "..\\sound\\mp3.cpp";
         _DAT_01cc4804 = 0xd6b;
@@ -135,7 +135,7 @@ LAB_004e5594:
     iVar1 = 0x240;
     local_20 = 0x24;
   }
-  FUN_004e2ce0(param_1);
+  sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
   local_30 = param_5 * 0x48;
   iVar6 = 1;
   local_24 = param_3 + param_4 * 0xa0;
@@ -150,14 +150,15 @@ LAB_004e5594:
     else {
       iVar9 = *(int *)(iVar9 + 0x3c) * 0x828 + 0x1cd8c28;
     }
-    FUN_004e2ed0(param_1,iVar9,&local_48,&local_44,&local_40,&local_3c);
+    sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0
+              (param_1,iVar9,&local_48,&local_44,&local_40,&local_3c);
     *(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_48;
     iVar9 = iVar6 / 0x12;
     iVar3 = iVar6 % 0x12;
     iVar6 = iVar6 + 2;
     *(uint *)(param_2 + iVar9 * 0x48 + iVar3 * 4) = local_44;
   }
-  FUN_004e2ce0(param_1);
+  sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
   local_28 = (*(int *)(iVar9 + 0x5c) + 0x20) * 0x828 + 0x1cd8c28;
   iVar1 = uVar7 + 3;
   iVar6 = uVar7 + 2;
@@ -165,9 +166,10 @@ LAB_004e5594:
   iVar9 = uVar7 + 1;
   while( true ) {
     local_14 = param_6 + *(int *)(local_2c + 0x18);
-    uVar2 = FUN_004e2ce0(param_1);
+    uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
     if ((local_14 <= uVar2) || (0x23f < (int)uVar7)) break;
-    FUN_004e2ed0(param_1,local_28,&local_48,&local_44,&local_40,&local_3c);
+    sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0
+              (param_1,local_28,&local_48,&local_44,&local_40,&local_3c);
     *(uint *)(param_2 + ((int)uVar7 / 0x12) * 0x48 + ((int)uVar7 % 0x12) * 4) = local_40;
     *(uint *)(param_2 + (iVar9 / 0x12) * 0x48 + (iVar9 % 0x12) * 4) = local_3c;
     *(uint *)(param_2 + (iVar6 / 0x12) * 0x48 + (iVar6 % 0x12) * 4) = local_48;
@@ -180,18 +182,19 @@ LAB_004e5594:
     *(uint *)(param_2 + iVar3 * 0x48 + iVar5 * 4) = local_44;
   }
   iVar6 = param_3 + param_4 * 0xa0 + param_5 * 0x48;
-  FUN_004e2ce0(param_1);
+  sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
   iVar1 = *(int *)(iVar6 + 0x18);
-  uVar2 = FUN_004e2ce0(param_1);
+  uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
   if ((uint)(param_6 + iVar1) < uVar2) {
-    iVar1 = FUN_004e2ce0(param_1);
+    iVar1 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
     uVar7 = uVar7 - 4;
-    FUN_004e2e40(param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));
+    sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40
+              (param_1,(iVar1 - param_6) - *(int *)(iVar6 + 0x18));
   }
   param_6 = param_6 + *(int *)(param_3 + param_4 * 0xa0 + 0x18 + param_5 * 0x48);
-  iVar1 = FUN_004e2ce0(param_1);
+  iVar1 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(param_1);
   if (iVar1 < param_6) {
-    iVar1 = FUN_004e2cf0(param_1,param_6 - iVar1);
+    iVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(param_1,param_6 - iVar1);
   }
   for (; (int)uVar7 < 0x240; uVar7 = uVar7 + 1) {
     iVar1 = (int)uVar7 / 0x12;

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_00764ad4
 ;
 ; Called Functions:
-;   FUN_0040d890
+;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH EDX                            ; 0049781e
     MOV ECX,dword ptr [EAX + 0x24ac]    ; 0049781f
     PUSH ECX                            ; 00497825
-    CALL FUN_0040d890                   ; 00497826
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d890()
+    CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00497826
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     ADD ESP,0x8                         ; 0049782b
     TEST EAX,EAX                        ; 0049782e
     JZ 0x00497851                       ; 00497830

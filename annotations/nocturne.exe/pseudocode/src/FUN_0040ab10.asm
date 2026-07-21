@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_004add80 at 004add91
-;   FUN_004ca300 at 004ca314
-;   FUN_004cbcb0 at 004cbcbb
-;   FUN_00548530 at 0054853c
-;   FUN_005522a0 at 005522ab
+;   core_glass.cpp_CGlass_onLaserHit_FUN_004add80 at 004add91
+;   core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300 at 004ca314
+;   core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_004cbcb0 at 004cbcbb
+;   core_trigger.cpp_CTrigger_onLaserHit_FUN_00548530 at 0054853c
+;   core_wateract.cpp_CWaterActor_onLaserHit_FUN_005522a0 at 005522ab
 ;
 ; *****************************************************************************
 

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00566e10 at 00566e3f
+;   crt_env.c_getenv_FUN_00566e10 at 00566e3f
 ;
 ; Called Functions:
 ;   FUN_0056da80

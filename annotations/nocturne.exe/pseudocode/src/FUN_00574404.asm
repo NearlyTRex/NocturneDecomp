@@ -12,8 +12,8 @@
 ;   undefined4 DAT_02de54a8
 ;
 ; Called Functions:
+;   crt_string.c_memmove_FUN_00566170
 ;   FUN_005638d0
-;   FUN_00566170
 ;   FUN_005746f0
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     MOV EDX,dword ptr [0x02de54a0]      ; 005744ab | DAT_02de54a0
     PUSH EDX                            ; 005744b1
     PUSH EBX                            ; 005744b2
-    CALL FUN_00566170                   ; 005744b3
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined FUN_00566170()
+    CALL crt_string.c_memmove_FUN_00566170 ; 005744b3
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
     ADD ESP,0xc                         ; 005744b8
     MOV dword ptr [0x02de54a0],EBX      ; 005744bb | DAT_02de54a0
     CMP ESI,EBP                         ; 005744c1

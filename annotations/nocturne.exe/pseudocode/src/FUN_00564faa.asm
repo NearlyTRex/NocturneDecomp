@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00564fd8
+;   crt_strstream.cpp_istrstream_dtor_FUN_00564fd8
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     PUSH EDX                            ; 00564fb2
     SUB EAX,0x48                        ; 00564fb3
     PUSH EAX                            ; 00564fb6
-    CALL FUN_00564fd8                   ; 00564fb7
-        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; undefined FUN_00564fd8()
+    CALL crt_strstream.cpp_istrstream_dtor_FUN_00564fd8 ; 00564fb7
+        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_istrstream_dtor_FUN_00564fd8()
     ADD ESP,0x8                         ; 00564fbc
     RET                                 ; 00564fbf
 

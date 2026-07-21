@@ -31,16 +31,16 @@ void FUN_004f8a10(int *param_1,char *param_2)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  iVar3 = FUN_00456800(local_220);
+  iVar3 = engine_dosio_cpp_findFileNormally_FUN_00456800(local_220);
   if (iVar3 != 0) {
     iVar3 = 0;
     piVar8 = param_1;
     if (0 < *param_1) {
       do {
-        iVar4 = FUN_00564520(piVar8[1] + 4,local_120);
+        iVar4 = _stricmp(piVar8[1] + 4,local_120);
         if (iVar4 == 0) {
           if (piVar8[1] != 0) {
-            uVar6 = FUN_004f7ac0(piVar8[1],0);
+            uVar6 = engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(piVar8[1],0);
             FUN_00564494(uVar6);
           }
           piVar5 = param_1 + iVar3;

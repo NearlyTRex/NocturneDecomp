@@ -32,7 +32,7 @@ uint FUN_00570272(int param_1)
       local_18 = iVar9 + 0x200;
     }
     if (*(int *)(param_1 + 0x2c) == 0) {
-      iVar4 = FUN_00564c18(local_18);
+      iVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(local_18);
     }
     else {
       iVar4 = (**(code **)(param_1 + 0x2c))(local_18);
@@ -90,7 +90,7 @@ uint FUN_00570272(int param_1)
       }
       if (iVar2 != 0) {
         if (*(int *)(param_1 + 0x30) == 0) {
-          FUN_00564486(iVar2);
+          shape_memdbg_cpp_free_FUN_00564486(iVar2);
         }
         else {
           (**(code **)(param_1 + 0x30))(iVar2);

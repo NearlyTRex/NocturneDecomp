@@ -25,7 +25,7 @@ uint FUN_00504d90(int *param_1)
   while ((*(int *)(0x01C775EC + 0x228) != 0 && (*param_1 == 0))) {
     local_c = 0x3e800000;
     iVar1 = param_1[0x10];
-    iVar2 = FUN_004ff2c0(param_1,&local_c);
+    iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(param_1,&local_c);
     if (iVar2 < 0) {
       FUN_0046fcd0(0x01BCD074,"Error processing script to skip cinematic.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
                    *(uint *)(param_1[0xb] + iVar1 * 8),

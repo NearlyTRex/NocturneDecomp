@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   FUN_00565630 at 0056563e
-;   FUN_00565724 at 00565737
+;   crt_stdio.c_freopen_FUN_00565724 at 00565737
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1aa0

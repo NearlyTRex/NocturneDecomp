@@ -18,11 +18,11 @@
 ;   undefined4 DAT_005a0250
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+;   crt_memory.c___arrinit_FUN_005644a7
 ;   FUN_00409d30
-;   FUN_00454490
-;   FUN_00454580
 ;   FUN_004ca410
-;   FUN_005644a7
 ;
 ; *****************************************************************************
 
@@ -39,59 +39,59 @@ section .text
     ADD ESP,0x4                         ; 004c943d
     ADD EAX,0x150                       ; 004c9440
     PUSH EAX                            ; 004c9445
-    CALL FUN_00454490                   ; 004c9446
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9446
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 004c944b
     ADD EAX,0x17c                       ; 004c944e
     PUSH EAX                            ; 004c9453
-    CALL FUN_00454490                   ; 004c9454
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9454
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 004c9459
     ADD EAX,0x17c                       ; 004c945c
     PUSH EAX                            ; 004c9461
-    CALL FUN_00454490                   ; 004c9462
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9462
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 004c9467
     PUSH 0x5a0210                       ; 004c946a | DAT_005a0210
     PUSH 0xc                            ; 004c946f
     ADD EAX,0x1a0                       ; 004c9471
     PUSH EAX                            ; 004c9476
-    CALL FUN_005644a7                   ; 004c9477
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c9477
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 004c947c
     PUSH 0x5a0230                       ; 004c947f | DAT_005a0230
     PUSH 0xc                            ; 004c9484
     ADD EAX,0x4b0                       ; 004c9486
     PUSH EAX                            ; 004c948b
-    CALL FUN_005644a7                   ; 004c948c
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c948c
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 004c9491
     PUSH 0x5a0250                       ; 004c9494 | DAT_005a0250
     PUSH 0x2                            ; 004c9499
     ADD EAX,0x8a0                       ; 004c949b
     PUSH EAX                            ; 004c94a0
-    CALL FUN_005644a7                   ; 004c94a1
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c94a1
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 004c94a6
     LEA EBX,[EAX + 0xffffecc8]          ; 004c94a9
     PUSH 0x587ef3                       ; 004c94af | = "doorpuzz.kfm"
     LEA EAX,[EBX + 0x150]               ; 004c94b4
     PUSH EAX                            ; 004c94ba
     MOV dword ptr [EBX + 0x14c],0x5a0054 ; 004c94bb | PTR_FUN_005a0054
-    CALL FUN_00454580                   ; 004c94c5
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94c5
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 004c94ca
     PUSH 0x587f00                       ; 004c94cd | = "puzz-rec.kfm"
     LEA EAX,[EBX + 0x2cc]               ; 004c94d2
     PUSH EAX                            ; 004c94d8
-    CALL FUN_00454580                   ; 004c94d9
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94d9
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 004c94de
     PUSH 0x587f0d                       ; 004c94e1 | = "mirrhack.kfm"
     LEA EAX,[EBX + 0x448]               ; 004c94e6
     PUSH EAX                            ; 004c94ec
-    CALL FUN_00454580                   ; 004c94ed
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94ed
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 004c94f2
     MOV ESI,0x587f1a                    ; 004c94f5 | = "headlite.raw"
     LEA EDI,[EBX + 0x14c0]              ; 004c94fa

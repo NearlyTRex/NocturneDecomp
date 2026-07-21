@@ -6,11 +6,11 @@
 ;
 ; Referenced Globals:
 ;   string s_bassplayer.dfm_00596491
-;   undefined1* PTR_FUN_005a2c04 = 00543180
+;   undefined1* PTR_core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180_005a2c04 = 00543180
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   FUN_004ee950
-;   FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -27,9 +27,9 @@ section .text
     MOV EBX,EAX                         ; 00543163
     ADD EAX,0x150                       ; 00543165
     PUSH EAX                            ; 0054316a
-    MOV dword ptr [EAX + -0x4],0x5a2c04 ; 0054316b | PTR_FUN_005a2c04
-    CALL FUN_0051e0c0                   ; 00543172
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    MOV dword ptr [EAX + -0x4],0x5a2c04 ; 0054316b | PTR_core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180_005a2c04
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00543172
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 00543177
     MOV EAX,EBX                         ; 0054317a
     POP EBX                             ; 0054317c

@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0055b6c0
-;   FUN_0055cd70
+;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70
 ;
 ; *****************************************************************************
 
@@ -20,14 +20,14 @@ section .text
     PUSH EDX                            ; 0055d5ec
     LEA EAX,[ESP + 0x4]                 ; 0055d5ed
     PUSH EAX                            ; 0055d5f1
-    CALL FUN_0055cd70                   ; 0055d5f2
-        ;   XREF to: 0055cd70 (UNCONDITIONAL_CALL)  ; undefined FUN_0055cd70()
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70 ; 0055d5f2
+        ;   XREF to: 0055cd70 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70()
     ADD ESP,0x8                         ; 0055d5f7
     PUSH EBX                            ; 0055d5fa
     LEA EAX,[ESP + 0x4]                 ; 0055d5fb
     PUSH EAX                            ; 0055d5ff
-    CALL FUN_0055b6c0                   ; 0055d600
-        ;   XREF to: 0055b6c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055b6c0()
+    CALL core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0 ; 0055d600
+        ;   XREF to: 0055b6c0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0()
     ADD ESP,0x8                         ; 0055d605
     MOV EAX,EBX                         ; 0055d608
     ADD ESP,0x30                        ; 0055d60a

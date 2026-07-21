@@ -45,7 +45,7 @@ uint FUN_004196b0(int param_1,float param_2)
   *(float *)(param_1 + 0xbd28) = fVar1;
   if (0.0 < fVar1) {
     *(int *)(param_1 + 0xbd24) = *(int *)(param_1 + 0xbd24) + 1;
-    local_18 = FUN_0040dda0(0x40a00000,0x41200000);
+    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
     *(uint *)(param_1 + 0xbd28) = local_18;
   }
   if (*(int *)(param_1 + 0x24f0) == 0) {
@@ -54,11 +54,12 @@ uint FUN_004196b0(int param_1,float param_2)
       if (iVar6 != 0) {
         iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x8c))(iVar6);
         if (iVar6 != 0) {
-          FUN_0043ac60(PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
-                       *(uint *)(param_1 + 0xbd30));
+          engine_console_cpp_CConsole_printf_FUN_0043ac60
+                    (PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
+                     *(uint *)(param_1 + 0xbd30));
           *(uint *)(param_1 + 0xbd30) = 0;
           *(uint *)(param_1 + 0xbd2c) = 0;
-          FUN_004e16b0(param_1 + 0x150,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,1,1);
           return 0;
         }
         iVar6 = -1;
@@ -69,30 +70,34 @@ uint FUN_004196b0(int param_1,float param_2)
             iVar6 = *(int *)(param_1 + 0xbd30);
             (**(code **)(*(int *)(iVar6 + 0x14c) + 0x14))(iVar6,auStack_94);
             uStack_30 = 0x3f000000;
-            uVar4 = FUN_00417fc0(auStack_94,auStack_4c,auStack_88,auStack_70,&uStack_30);
-            FUN_00417f60(uVar4);
+            uVar4 = core_bodypart_cpp_addVector_FUN_00417fc0
+                              (auStack_94,auStack_4c,auStack_88,auStack_70,&uStack_30);
+            core_bodypart_cpp_scaleVector_FUN_00417f60(uVar4);
             fStack_68 = fStack_8c + (float)_DAT_0057942e;
-            FUN_0040a240(iVar6,auStack_58,auStack_70);
+            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar6,auStack_58,auStack_70);
             uStack_78 = 0;
             uStack_74 = 0;
             uStack_7c = 0x3fc00000;
-            iVar6 = FUN_004247f0(param_1,auStack_58,0,&uStack_7c,0,0);
+            iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                              (param_1,auStack_58,0,&uStack_7c,0,0);
           }
         }
         if (-1 < iVar6) {
           if (iVar6 < 1) {
             return 1;
           }
-          FUN_0043ac60(PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,
-                       *(uint *)(param_1 + 0xbd30));
-          FUN_004e16b0(param_1 + 0x150,7,1);
+          engine_console_cpp_CConsole_printf_FUN_0043ac60
+                    (PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,
+                     *(uint *)(param_1 + 0xbd30));
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,7,1);
           return 1;
         }
-        FUN_0043ac60(PTR_DAT_005ad350,"%s can't pick up %s, giving up!!!!\n",param_1,
-                     *(uint *)(param_1 + 0xbd30));
+        engine_console_cpp_CConsole_printf_FUN_0043ac60
+                  (PTR_DAT_005ad350,"%s can't pick up %s, giving up!!!!\n",param_1,
+                   *(uint *)(param_1 + 0xbd30));
         *(uint *)(param_1 + 0xbd30) = 0;
         *(uint *)(param_1 + 0xbd2c) = 0x41a00000;
-        FUN_004e16b0(param_1 + 0x150,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,1,1);
         return 0;
       }
       iVar6 = 0;
@@ -110,7 +115,7 @@ uint FUN_004196b0(int param_1,float param_2)
             fStack_5c = pfVar5[5] - pfVar5[2];
             if ((((fStack_64 < 1.0) && (fStack_60 < 1.0)) && ((float)_DAT_00579436 < fStack_5c)) &&
                ((double)fStack_5c < _DAT_0057943e)) {
-              iVar2 = FUN_0040d7e0(iVar3,"CBodyPart");
+              iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar3,"CBodyPart");
               if (iVar2 == 0) {
                 fStack_40 = *(float *)(iVar3 + 0x20) - *(float *)(param_1 + 0x20);
                 fStack_3c = *(float *)(iVar3 + 0x24) - *(float *)(param_1 + 0x24);
@@ -131,13 +136,14 @@ uint FUN_004196b0(int param_1,float param_2)
         local_20 = local_20 + 4;
       }
       if (0 < local_2c) {
-        iVar6 = FUN_0040de00(0,local_2c + -1);
+        iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,local_2c + -1);
         iVar6 = aiStack_d4[iVar6];
         *(uint *)(param_1 + 0xbd2c) = 0xc2200000;
         *(int *)(param_1 + 0xbd30) = iVar6;
         *(int *)(param_1 + 0xbd24) = *(int *)(param_1 + 0xbd24) + 1;
-        FUN_0043ac60(PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,
-                     *(uint *)(param_1 + 0xbd30));
+        engine_console_cpp_CConsole_printf_FUN_0043ac60
+                  (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,
+                   *(uint *)(param_1 + 0xbd30));
         return 1;
       }
     }

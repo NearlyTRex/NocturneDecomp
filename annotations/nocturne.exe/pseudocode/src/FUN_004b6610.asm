@@ -13,8 +13,8 @@
 ;   undefined1* PTR_FUN_0059eda4 = 004b6750
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   FUN_004ee950
-;   FUN_0051e0c0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     LEA EDI,[EAX + 0x150]               ; 004b6627
     PUSH EDI                            ; 004b662d
     MOV dword ptr [EAX + 0x14c],0x59eda4 ; 004b662e | PTR_FUN_0059eda4
-    CALL FUN_0051e0c0                   ; 004b6638
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b6638
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 004b663d
     MOV ESI,0x5859d5                    ; 004b6640 | = "killHiram"
     LEA EDI,[EBX + 0x1f570]             ; 004b6645

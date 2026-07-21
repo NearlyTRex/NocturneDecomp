@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 271,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 58,
     "suspect_count": 19,
     "suspect_types": [
       "bitcast_double_pair",
@@ -136,7 +136,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 203
+    "total_lines": 205
   },
   "cross_references": [],
   "function": {
@@ -154,39 +154,39 @@
   },
   "function_calls": [
     {
-      "addr": "00409f20",
-      "is_variadic": false,
-      "name": "FUN_00409f20"
-    },
-    {
       "addr": "00409f60",
       "is_variadic": false,
-      "name": "FUN_00409f60"
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60"
+    },
+    {
+      "addr": "00409f20",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20"
     },
     {
       "addr": "0041ceb0",
       "is_variadic": false,
-      "name": "FUN_0041ceb0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0"
     },
     {
       "addr": "004544d0",
       "is_variadic": false,
-      "name": "FUN_004544d0"
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0"
+    },
+    {
+      "addr": "00495240",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_findLeader_FUN_00495240"
+    },
+    {
+      "addr": "005648c0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005648c0"
     },
     {
       "addr": "004950a0",
       "is_variadic": false,
       "name": "FUN_004950a0"
-    },
-    {
-      "addr": "00495240",
-      "is_variadic": false,
-      "name": "FUN_00495240"
-    },
-    {
-      "addr": "005648c0",
-      "is_variadic": false,
-      "name": "FUN_005648c0"
     }
   ],
   "globals": [
@@ -340,21 +340,21 @@
         {
           "check_id": "legacyUninitvar",
           "column": 69,
-          "line": 40,
+          "line": 41,
           "message": "Uninitialized variable: uStack_1c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 69,
-          "line": 44,
+          "line": 45,
           "message": "Uninitialized variable: uStack_1c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 69,
-          "line": 48,
+          "line": 49,
           "message": "Uninitialized variable: uStack_1c",
           "severity": "error"
         }
@@ -414,18 +414,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004544d0(param_1 + 0x17c,*(uint *)(param_1 + 0x178),0xffffffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004544d0(param_1 + 0x17c,*(uint *)(param_1 + 0x178),0xffffffff);",
+      "text": "(param_1 + 0x17c,*(uint *)(param_1 + 0x178),0xffffffff);",
       "type": "unnamed_param"
     },
     {
@@ -433,7 +425,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(char *)(param_1 + 0x37c) != '\\0') {",
+      "text": "(param_1 + 0x17c,*(uint *)(param_1 + 0x178),0xffffffff);",
       "type": "unnamed_param"
     },
     {
@@ -441,12 +433,20 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (*(char *)(param_1 + 0x37c) != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar1 = *(int *)(param_1 + 0x154);",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 34,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 33,
+      "line": 34,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_38 = *(float *)(param_1 + 0x154) + _DAT_00581d54;",
@@ -470,7 +470,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 38,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -478,7 +478,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 37,
+      "line": 38,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 41,
+      "line": 42,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -494,7 +494,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 41,
+      "line": 42,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -502,7 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (*(float *)(param_1 + 0x154) + _DAT_00581d2c) * (float)_DAT_00581d30;",
@@ -510,15 +510,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004544d0(param_1 + 0x304,fStack_38,0xffffffff);",
+      "text": "(param_1 + 0x304,fStack_38,0xffffffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Uninitialized variable: uStack_1c",
-      "line": 40,
+      "line": 41,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -526,7 +526,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_1c",
-      "line": 44,
+      "line": 45,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -534,7 +534,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_1c",
-      "line": 48,
+      "line": 49,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
@@ -544,7 +544,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CFrankenstienMachine",
         "offset": 8,
         "vtable_addr": "0059db84"
       }

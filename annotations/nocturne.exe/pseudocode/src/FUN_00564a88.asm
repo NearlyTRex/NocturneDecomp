@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00564a70 at 00564a7b
+;   crt_memory.c_realloc_FUN_00564a70 at 00564a7b
 ;
 ; Called Functions:
 ;   FUN_005635c0

@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005a3620
 ;
 ; Called Functions:
-;   FUN_00409ea0
-;   FUN_0056445f
-;   FUN_00564486
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
+;   crt_memory.c___vec_delete_FUN_0056445f
 ;   FUN_00564494
+;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 00547826 (CONDITIONAL_JUMP)  ; LAB_00547826
     PUSH 0x1                            ; 0054780c
     PUSH EBX                            ; 0054780e
-    CALL FUN_00409ea0                   ; 0054780f
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409ea0()
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 0054780f
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
     ADD ESP,0x8                         ; 00547814
     MOV DL,byte ptr [ESP + 0xc]         ; 00547817
     MOV EBX,EAX                         ; 0054781b
@@ -39,12 +39,12 @@ section .text
     PUSH 0x5a3620                       ; 00547826 | DAT_005a3620
         ;   Label: LAB_00547826
     PUSH EBX                            ; 0054782b
-    CALL FUN_0056445f                   ; 0054782c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined FUN_0056445f()
+    CALL crt_memory.c___vec_delete_FUN_0056445f ; 0054782c
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
     ADD ESP,0x8                         ; 00547831
     PUSH EAX                            ; 00547834
-    CALL FUN_00564486                   ; 00547835
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined FUN_00564486()
+    CALL shape_memdbg.cpp_free_FUN_00564486 ; 00547835
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 0054783a
     MOV EAX,EBX                         ; 0054783d
     POP EBX                             ; 0054783f

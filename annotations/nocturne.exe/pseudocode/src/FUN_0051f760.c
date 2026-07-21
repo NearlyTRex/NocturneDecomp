@@ -22,7 +22,7 @@ void FUN_0051f760(uint param_1)
   if (0 < _DAT_02737ef4) {
     iVar5 = 0x2737ef8;
     do {
-      iVar1 = FUN_00517b50(iVar5);
+      iVar1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(iVar5);
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 0x2937c;
       iVar4 = iVar4 + iVar1;
@@ -33,13 +33,13 @@ void FUN_0051f760(uint param_1)
   if (0 < _DAT_0268cef0) {
     iVar1 = 0x268cef4;
     do {
-      iVar2 = FUN_0051b600(iVar1);
+      iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(iVar1);
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + iVar2;
       iVar1 = iVar1 + 0x2ac0;
     } while (iVar3 < _DAT_0268cef0);
   }
-  FUN_00563c90(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0
-               ,iVar5);
+  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,
+             iVar5);
   return;
 }

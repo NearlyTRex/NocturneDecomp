@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004c1dd0 at 004c1f77
-;   FUN_004c1f90 at 004c2137
-;   FUN_0050c010 at 0050c1aa
+;   core_inv.cpp_drawItemIconBackground_FUN_004c1f90 at 004c2137
+;   core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0 at 004c1f77
+;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010 at 0050c1aa
 ;
 ; *****************************************************************************
 

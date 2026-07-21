@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004cbce0 at 004cbceb
-;   FUN_0054a800 at 0054a80c
+;   core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0 at 004cbceb
+;   core_turret.cpp_CTurret_getInteractionInfo_FUN_0054a800 at 0054a80c
 ;
 ; *****************************************************************************
 

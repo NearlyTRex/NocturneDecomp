@@ -7,12 +7,12 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Called Functions:
-;   FUN_00409f20
-;   FUN_00409f60
-;   FUN_0041ceb0
-;   FUN_00425c20
-;   FUN_004e0340
-;   FUN_004e0820
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20
+;   core_morph.cpp_CMorph_render_FUN_004e0820
+;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_004efa87
     PUSH ESI                            ; 004efa88
     PUSH EBX                            ; 004efa89
-    CALL FUN_00409f20                   ; 004efa8a
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f20()
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004efa8a
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
     ADD ESP,0x4                         ; 004efa8f
     PUSH 0x0                            ; 004efa92
     LEA EAX,[ESP + 0xc]                 ; 004efa94
@@ -52,8 +52,8 @@ section .text
     CALL dword ptr [ESI + 0x14]         ; 004efaa0
     ADD ESP,0x8                         ; 004efaa3
     PUSH EAX                            ; 004efaa6
-    CALL FUN_0041ceb0                   ; 004efaa7
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041ceb0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 004efaa7
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
     ADD ESP,0x8                         ; 004efaac
     MOV EDI,EAX                         ; 004efaaf
     TEST EAX,EAX                        ; 004efab1
@@ -63,13 +63,13 @@ section .text
     JNZ 0x004efadc                      ; 004efabf
         ;   XREF to: 004efadc (CONDITIONAL_JUMP)  ; LAB_004efadc
     PUSH EBX                            ; 004efac1
-    CALL FUN_00425c20                   ; 004efac2
-        ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; undefined FUN_00425c20()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 ; 004efac2
+        ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20()
     ADD ESP,0x4                         ; 004efac7
     PUSH EBX                            ; 004efaca
         ;   Label: LAB_004efaca
-    CALL FUN_00409f60                   ; 004efacb
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f60()
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004efacb
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
     ADD ESP,0x4                         ; 004efad0
     MOV EAX,EDI                         ; 004efad3
     POP ESI                             ; 004efad5
@@ -84,8 +84,8 @@ section .text
     PUSH 0x0                            ; 004efae5
     LEA ESI,[EBX + 0x1f67c]             ; 004efae7
     PUSH ESI                            ; 004efaed
-    CALL FUN_004e0340                   ; 004efaee
-        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined FUN_004e0340()
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340 ; 004efaee
+        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340()
     ADD ESP,0x10                        ; 004efaf3
     MOV EAX,dword ptr [EBX + 0x1f678]   ; 004efaf6
     PUSH 0x0                            ; 004efafc
@@ -93,17 +93,17 @@ section .text
     PUSH EAX                            ; 004efb03
     PUSH 0x1                            ; 004efb04
     PUSH ESI                            ; 004efb06
-    CALL FUN_004e0340                   ; 004efb07
-        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined FUN_004e0340()
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340 ; 004efb07
+        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340()
     ADD ESP,0x10                        ; 004efb0c
     PUSH dword ptr [EBX + 0x202a8]      ; 004efb0f
     PUSH ESI                            ; 004efb15
-    CALL FUN_004e0820                   ; 004efb16
-        ;   XREF to: 004e0820 (UNCONDITIONAL_CALL)  ; undefined FUN_004e0820()
+    CALL core_morph.cpp_CMorph_render_FUN_004e0820 ; 004efb16
+        ;   XREF to: 004e0820 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_render_FUN_004e0820()
     ADD ESP,0x8                         ; 004efb1b
     PUSH EBX                            ; 004efb1e
-    CALL FUN_00409f60                   ; 004efb1f
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined FUN_00409f60()
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004efb1f
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
     ADD ESP,0x4                         ; 004efb24
     MOV EAX,EDI                         ; 004efb27
     POP ESI                             ; 004efb29

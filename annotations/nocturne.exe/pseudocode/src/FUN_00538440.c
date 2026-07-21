@@ -21,8 +21,10 @@ float * FUN_00538440(int param_1,float *param_2)
   byte local_30 [24];
   byte local_18 [12];
   
-  pfVar6 = (float *)FUN_0051d2a0(param_1 + 0x150,local_30,_DAT_02dc9f88);
-  pfVar7 = (float *)FUN_0051d2a0(param_1 + 0x150,local_18,_DAT_02dc9f84);
+  pfVar6 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+                              (param_1 + 0x150,local_30,_DAT_02dc9f88);
+  pfVar7 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+                              (param_1 + 0x150,local_18,_DAT_02dc9f84);
   fVar5 = _DAT_0059580f;
   fVar1 = pfVar7[1];
   fVar2 = pfVar6[1];

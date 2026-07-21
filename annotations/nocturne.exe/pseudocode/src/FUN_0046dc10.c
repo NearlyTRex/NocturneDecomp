@@ -39,8 +39,9 @@ void FUN_0046dc10(float param_1)
         }
         break;
       case 1:
-        FUN_0046d4e0(&DAT_01bc9c80 + uVar2 * 0xc,puVar4,&DAT_01bc9d44 + _DAT_01bc9d40 * 0xc,0,0,0,0,
-                     0,0xbff00000,(double)param_1);
+        core_dtri_cpp_clipLineToPlane_FUN_0046d4e0
+                  (&DAT_01bc9c80 + uVar2 * 0xc,puVar4,&DAT_01bc9d44 + _DAT_01bc9d40 * 0xc,0,0,0,0,0,
+                   0xbff00000,(double)param_1);
         break;
       case 2:
         iVar3 = _DAT_01bc9d40 * 0xc;
@@ -50,8 +51,9 @@ void FUN_0046dc10(float param_1)
           *(uint *)(&DAT_01bc9d4c + iVar3) = puVar4[2];
         }
         _DAT_01bc9d40 = _DAT_01bc9d40 + 1;
-        FUN_0046d4e0(puVar4,&DAT_01bc9c80 + uVar2 * 0xc,&DAT_01bc9d44 + _DAT_01bc9d40 * 0xc,0,0,0,0,
-                     0,0xbff00000,(double)param_1);
+        core_dtri_cpp_clipLineToPlane_FUN_0046d4e0
+                  (puVar4,&DAT_01bc9c80 + uVar2 * 0xc,&DAT_01bc9d44 + _DAT_01bc9d40 * 0xc,0,0,0,0,0,
+                   0xbff00000,(double)param_1);
         break;
       default:
         goto switchD_0046dc84_caseD_3;

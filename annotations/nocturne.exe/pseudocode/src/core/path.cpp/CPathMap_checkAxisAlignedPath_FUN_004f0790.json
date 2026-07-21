@@ -1,0 +1,1430 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 467,
+    "complexity_score": 1175,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 145,
+    "suspect_count": 101,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 612
+  },
+  "cross_references": [
+    {
+      "addr": "004f0c20",
+      "from_addr": "004f1158",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f0790",
+    "address_range": [
+      [
+        "004f0790",
+        "004f0bf1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790",
+    "signature": "undefined4 __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f04a0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01e312f4",
+      "name": "DAT_01e312f4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f1158",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.612244897959184,
+    "instruction_count": 392,
+    "opcode_distribution": {
+      "BOOL_AND": 12,
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 8,
+      "BRANCH": 6,
+      "CALL": 20,
+      "CBRANCH": 28,
+      "COPY": 289,
+      "INT_ADD": 141,
+      "INT_AND": 229,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 234,
+      "INT_LESS": 52,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 58,
+      "INT_SCARRY": 29,
+      "INT_SEXT": 16,
+      "INT_SLESS": 111,
+      "INT_SUB": 162,
+      "INT_XOR": 17,
+      "LOAD": 78,
+      "POPCOUNT": 111,
+      "RETURN": 3,
+      "STORE": 135,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 1808
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CPathMap_checkAxisAlignedPath_FUN_004f0790.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 14,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 35,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 33,
+          "line": 57,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 37,
+          "line": 61,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 94,
+          "line": 64,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 71,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 79,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 83,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 38,
+          "line": 87,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 33,
+          "line": 110,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 37,
+          "line": 114,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 36,
+          "line": 118,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 132,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 136,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 38,
+          "line": 140,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uint __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar1 = param_2 - param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uVar1 = param_2 - param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar2 = param_3 - param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uVar2 = param_3 - param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "local_14 = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5 + -1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5 + -1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(param_1,param_5 + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5 + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5 + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": ", _DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,iVar4,iVar5,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,local_14,iVar5 + -1,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,local_14,iVar5 + 1,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar4,iVar5,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI == iVar5)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_18 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar3 = local_40 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 104,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 107,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 111,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 112,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_5 = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 123,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 125,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 126,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 127,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5 + -1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5 + -1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 129,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 130,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5 + 1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5 + 1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 133,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 134,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 144,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI == iVar5)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 35,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar6 = (int)uVar1 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 57,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 61,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 64,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(param_1,param_5 + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 71,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = (int)uVar2 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 79,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 83,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 87,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 110,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 114,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 118,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 132,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 136,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 140,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

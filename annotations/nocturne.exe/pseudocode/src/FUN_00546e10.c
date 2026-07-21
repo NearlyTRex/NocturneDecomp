@@ -78,9 +78,11 @@ void FUN_00546e10(int param_1,float param_2)
   float local_14;
   
   bVar11 = 0;
-  iVar6 = FUN_004b45b0((uint *)(param_1 + 0x20),0x42c80000);
+  iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                    ((uint *)(param_1 + 0x20),0x42c80000);
   if (iVar6 == 0) {
-    iVar6 = FUN_004b45b0((uint *)(param_1 + 0x2cc),0x42c80000);
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
+                      ((uint *)(param_1 + 0x2cc),0x42c80000);
     if (iVar6 != 0) {
       return;
     }
@@ -89,11 +91,11 @@ void FUN_00546e10(int param_1,float param_2)
     *(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x2d4);
     return;
   }
-  local_14 = (float)FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
+  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
   *(float *)(param_1 + 0x2f8) = local_14 + *(float *)(param_1 + 0x2f8);
-  local_14 = (float)FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
+  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
   *(float *)(param_1 + 0x2fc) = local_14 + *(float *)(param_1 + 0x2fc);
-  local_14 = (float)FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
+  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd4ccccd,0x3d4ccccd);
   *(float *)(param_1 + 0x300) = local_14 + *(float *)(param_1 + 0x300);
   iVar6 = 0x01E57284;
   local_d0 = 0x40800000;
@@ -113,13 +115,13 @@ void FUN_00546e10(int param_1,float param_2)
       *(uint *)(param_1 + 0x314) = *(uint *)(iVar6 + 0x15a87c);
       *(uint *)(param_1 + 0x318) = *(uint *)(iVar6 + 0x15a880);
     }
-    local_14 = (float)FUN_0040dda0(0xc1200000,0x41200000);
+    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc1200000,0x41200000);
     *(float *)(param_1 + 0x310) = local_14 + *(float *)(param_1 + 0x310);
-    local_14 = (float)FUN_0040dda0(0x41700000,0x41c80000);
+    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41700000,0x41c80000);
     *(float *)(param_1 + 0x314) = local_14 + *(float *)(param_1 + 0x314);
-    local_14 = (float)FUN_0040dda0(0xc1200000,0x41200000);
+    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc1200000,0x41200000);
     *(float *)(param_1 + 0x318) = local_14 + *(float *)(param_1 + 0x318);
-    uVar7 = FUN_0040dda0(0x40c00000,0x41a00000);
+    uVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40c00000,0x41a00000);
     *(uint *)(param_1 + 0x30c) = uVar7;
   }
   pfVar1 = (float *)(param_1 + 0x310);
@@ -157,7 +159,8 @@ void FUN_00546e10(int param_1,float param_2)
   local_d8 = local_14 + local_48;
   local_4c = local_dc;
   local_44 = local_d4;
-  pfVar8 = (float *)FUN_0040a220(param_1,local_70,pfVar8);
+  pfVar8 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                              (param_1,local_70,pfVar8);
   local_a0 = *pfVar8 * _DAT_0059695b;
   local_9c = pfVar8[1] * _DAT_0059695b;
   local_98 = _DAT_0059695b * pfVar8[2];
@@ -206,8 +209,9 @@ void FUN_00546e10(int param_1,float param_2)
   *pfVar1 = *pfVar1 + local_58;
   *(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + local_54;
   *(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + local_50;
-  local_1c = (float)FUN_0050ec80(0x01E57284,pfVar1,
-                                 *(float *)(param_1 + 0x308) * (float)_DAT_0059696b);
+  local_1c = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
+                              (0x01E57284,pfVar1,
+                               *(float *)(param_1 + 0x308) * (float)_DAT_0059696b);
   if (local_1c <= *(float *)(param_1 + 0x24)) {
     if (!bVar5) goto LAB_005474f0;
   }
@@ -240,9 +244,11 @@ LAB_005474f0:
   }
   local_18 = (uint *)(param_1 + 0x30);
   local_14 = local_1c;
-  FUN_0055afb0(local_1a8,&DAT_02dd1184,local_18);
-  FUN_0055afb0(local_118,&DAT_02dd1184,&local_34);
-  FUN_0055aa00(local_118,local_1a8);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_1a8,&DAT_02dd1184,local_18);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (local_118,&DAT_02dd1184,&local_34);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_118,local_1a8);
   puVar9 = local_178;
   puVar10 = local_148;
   for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -250,12 +256,12 @@ LAB_005474f0:
     puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
     puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
   }
-  puVar9 = (uint *)FUN_0055b180(local_148,local_88);
+  puVar9 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_148,local_88);
   if (puVar9 != local_18) {
     *local_18 = *puVar9;
     local_18[1] = puVar9[1];
     local_18[2] = puVar9[2];
   }
-  FUN_0040a000(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
   return;
 }

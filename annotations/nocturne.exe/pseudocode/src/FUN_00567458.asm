@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056df10 at 0056df51
+;   crt_startup.cpp_WinMainBootstrap_FUN_0056df10 at 0056df51
 ;
 ; Referenced Globals:
 ;   void* PTR_GetModuleHandleA_0057552c = 00175dbc

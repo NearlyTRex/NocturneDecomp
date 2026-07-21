@@ -29,7 +29,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
     iVar3 = 0;
     do {
       if (in_stack_0000003c < (int)in_stack_00000034) {
-        FUN_00431530(&param_1,&stack0x00000034,auStack_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+                  (&param_1,&stack0x00000034,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &stack0x00000034;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -39,7 +40,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (-in_stack_00000034 != in_stack_0000003c && (int)in_stack_00000034 <= -in_stack_0000003c) {
-        FUN_00431630(&param_1,&stack0x00000034,auStack_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+                  (&param_1,&stack0x00000034,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &stack0x00000034;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -49,7 +51,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (in_stack_0000003c < (int)in_stack_00000038) {
-        FUN_00431730(&param_1,&stack0x00000034,auStack_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                  (&param_1,&stack0x00000034,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &stack0x00000034;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -59,7 +62,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (-in_stack_00000038 != in_stack_0000003c && (int)in_stack_00000038 <= -in_stack_0000003c) {
-        FUN_00431830(&param_1,&stack0x00000034,auStack_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&param_1,&stack0x00000034,auStack_40)
+        ;
         puVar4 = auStack_40;
         puVar5 = &stack0x00000034;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -69,7 +73,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (param_3 < (int)param_1) {
-        FUN_00431530(&stack0x00000034,&param_1,auStack_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+                  (&stack0x00000034,&param_1,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &param_1;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -79,7 +84,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (-param_1 != param_3 && (int)param_1 <= -param_3) {
-        FUN_00431630(&stack0x00000034,&param_1,auStack_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+                  (&stack0x00000034,&param_1,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &param_1;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -89,7 +95,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (param_3 < (int)param_2) {
-        FUN_00431730(&stack0x00000034,&param_1,auStack_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                  (&stack0x00000034,&param_1,auStack_40);
         puVar4 = auStack_40;
         puVar5 = &param_1;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -99,7 +106,8 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         }
       }
       if (-param_2 != param_3 && (int)param_2 <= -param_3) {
-        FUN_00431830(&stack0x00000034,&param_1,auStack_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&stack0x00000034,&param_1,auStack_40)
+        ;
         puVar4 = auStack_40;
         puVar5 = &param_1;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -133,11 +141,12 @@ uint FUN_00409590(uint param_1,uint param_2,int param_3,uint param_4,uint param_
         puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
         puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      FUN_004cd300(0x4e1e);
-      FUN_004cd300(19999);
-      FUN_004f9870(&DAT_006af5b4,2);
-      uVar1 = FUN_00401710(DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,_DAT_006af5bc,
-                           DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10,_DAT_006af5ec);
+      engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(0x4e1e);
+      engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(19999);
+      engine_prim_c_prepareDepthBuffer_FUN_004f9870(&DAT_006af5b4,2);
+      uVar1 = engine_2d_c_drawLine3D_FUN_00401710
+                        (DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,_DAT_006af5bc,
+                         DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10,_DAT_006af5ec);
       return uVar1;
     }
   }

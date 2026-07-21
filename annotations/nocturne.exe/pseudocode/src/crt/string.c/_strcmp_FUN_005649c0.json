@@ -1,0 +1,541 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 282,
+    "cross_reference_count": 29,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 21,
+    "suspect_types": [
+      "concat_reconstruction",
+      "param_count_too_few",
+      "register_param",
+      "unnamed_param"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "004571f0",
+      "from_addr": "004572fd",
+      "name": "FUN_004571f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00478790",
+      "from_addr": "004787b4",
+      "name": "FUN_00478790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004edfc0",
+      "from_addr": "004ee15f",
+      "name": "FUN_004edfc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00507f80",
+      "from_addr": "0050820a",
+      "name": "FUN_00507f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c750",
+      "from_addr": "0056c83c",
+      "name": "FUN_0056c750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040ed80",
+      "from_addr": "0040ed9f",
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004386b0",
+      "from_addr": "004386d0",
+      "name": "core_cloth.cpp_CCloth_grabCloth_FUN_004386b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043ebf0",
+      "from_addr": "0043ec60",
+      "name": "core_curtain.cpp_CCurtain_process_FUN_0043ebf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443250",
+      "from_addr": "00443452",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00441c50",
+      "from_addr": "00441c7a",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044be60",
+      "from_addr": "0044be79",
+      "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044bd20",
+      "from_addr": "0044bd39",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004551f0",
+      "from_addr": "0045521a",
+      "name": "core_door.cpp_CDoor_setup_FUN_004551f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e0d0",
+      "from_addr": "0047e4d8",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6e90",
+      "from_addr": "004a6f51",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004a6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004abc90",
+      "from_addr": "004ac2d4",
+      "name": "core_glass.cpp_CGlass_setup_FUN_004abc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bf360",
+      "from_addr": "004c00f7",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0a50",
+      "from_addr": "004c0af1",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec600",
+      "from_addr": "004ecb30",
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea830",
+      "from_addr": "004ea8ca",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_004ea830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd2b0",
+      "from_addr": "004bd3a0",
+      "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd0a0",
+      "from_addr": "004bd1b4",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd480",
+      "from_addr": "004bd6a0",
+      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8b90",
+      "from_addr": "004f8cbe",
+      "name": "engine_pod.cpp_findFilesByExtension_FUN_004f8b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545390",
+      "from_addr": "005453bd",
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00545390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005580b0",
+      "from_addr": "005582c4",
+      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee2f0",
+      "from_addr": "004ee327",
+      "name": "support_newmsg.cpp_findLocalizedString_FUN_004ee2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee370",
+      "from_addr": "004ee3b4",
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532df0",
+      "from_addr": "00532ebc",
+      "name": "wincore_windll.cpp_CExternalRenderer_validate_FUN_00532df0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005649c0",
+    "address_range": [
+      [
+        "005649c0",
+        "00564a6b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c__strcmp_FUN_005649c0",
+    "signature": "ulonglong __cdecl crt_string_c__strcmp_FUN_005649c0(uint *param_1,uint *param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 49,
+    "call_sites": [
+      {
+        "call_addr": "004bd1b4",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bd204",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bd6a0",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bd3a0",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bd3c7",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bd44e",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0044be79",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040ed9f",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040eddc",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040ee02",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.222222222222222,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "CBRANCH": 15,
+      "COPY": 56,
+      "INT_ADD": 22,
+      "INT_AND": 94,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 64,
+      "INT_LESS": 15,
+      "INT_NEGATE": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 11,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 33,
+      "INT_SUB": 20,
+      "INT_ZEXT": 1,
+      "LOAD": 18,
+      "POPCOUNT": 31,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 448
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ulonglong __cdecl _strcmp(uint *param_1,uint *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "ulonglong __cdecl _strcmp(uint *param_1,uint *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uint in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_1 != param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "return CONCAT44(in_EDX,-(uint)bVar5) | 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = param_1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = param_1[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = param_2[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 54,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "return (ulonglong)in_EDX << 0x20;",
+      "type": "register_param"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 36,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(in_EDX,-(uint)bVar5) | 1;",
+      "type": "concat_reconstruction"
+    },
+    {
+      "call_site_count": 49,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

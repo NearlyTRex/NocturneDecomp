@@ -11,8 +11,8 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
-;   FUN_00563a08 at 00563a1d
 ;   FUN_0056ae10 at 0056aea0
+;   crt_stdio.c_vsprintf_FUN_00563a08 at 00563a1d
 ;
 ; Called Functions:
 ;   FUN_00569468

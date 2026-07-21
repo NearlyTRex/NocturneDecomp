@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 421,
-    "complexity_score": 450,
+    "complexity_score": 454,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
+    "pseudocode_lines": 204,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
@@ -137,13 +137,13 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 621
+    "total_lines": 625
   },
   "cross_references": [
     {
       "addr": "005265a0",
       "from_addr": "00526923",
-      "name": "FUN_005265a0",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005265a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,14 +161,49 @@
   },
   "function_calls": [
     {
-      "addr": "004568c0",
+      "addr": "00563380",
       "is_variadic": false,
-      "name": "FUN_004568c0"
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "0056582c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_0056582c"
+    },
+    {
+      "addr": "00566e70",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_00566e70"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    },
+    {
+      "addr": "00566170",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_00566170"
+    },
+    {
+      "addr": "00566498",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_00566498"
     },
     {
       "addr": "00456a60",
       "is_variadic": false,
-      "name": "FUN_00456a60"
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004568c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
     },
     {
       "addr": "004c8440",
@@ -176,79 +211,9 @@
       "name": "FUN_004c8440"
     },
     {
-      "addr": "004e7d90",
-      "is_variadic": false,
-      "name": "FUN_004e7d90"
-    },
-    {
-      "addr": "004e7df0",
-      "is_variadic": false,
-      "name": "FUN_004e7df0"
-    },
-    {
-      "addr": "004e8260",
-      "is_variadic": false,
-      "name": "FUN_004e8260"
-    },
-    {
-      "addr": "004e82d0",
-      "is_variadic": false,
-      "name": "FUN_004e82d0"
-    },
-    {
-      "addr": "00521830",
-      "is_variadic": false,
-      "name": "FUN_00521830"
-    },
-    {
-      "addr": "00521e10",
-      "is_variadic": false,
-      "name": "FUN_00521e10"
-    },
-    {
-      "addr": "00523910",
-      "is_variadic": false,
-      "name": "FUN_00523910"
-    },
-    {
-      "addr": "00523a60",
-      "is_variadic": false,
-      "name": "FUN_00523a60"
-    },
-    {
-      "addr": "00523ba0",
-      "is_variadic": false,
-      "name": "FUN_00523ba0"
-    },
-    {
-      "addr": "00523cb0",
-      "is_variadic": false,
-      "name": "FUN_00523cb0"
-    },
-    {
-      "addr": "00525c40",
-      "is_variadic": false,
-      "name": "FUN_00525c40"
-    },
-    {
       "addr": "00529980",
       "is_variadic": false,
       "name": "FUN_00529980"
-    },
-    {
-      "addr": "00563380",
-      "is_variadic": false,
-      "name": "FUN_00563380"
-    },
-    {
-      "addr": "005636d0",
-      "is_variadic": false,
-      "name": "FUN_005636d0"
-    },
-    {
-      "addr": "00564520",
-      "is_variadic": false,
-      "name": "FUN_00564520"
     },
     {
       "addr": "00564bb0",
@@ -256,24 +221,59 @@
       "name": "FUN_00564bb0"
     },
     {
-      "addr": "0056582c",
+      "addr": "004e7d90",
       "is_variadic": false,
-      "name": "FUN_0056582c"
+      "name": "sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90"
     },
     {
-      "addr": "00566170",
+      "addr": "004e8260",
       "is_variadic": false,
-      "name": "FUN_00566170"
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_004e8260"
     },
     {
-      "addr": "00566498",
+      "addr": "004e7df0",
       "is_variadic": false,
-      "name": "FUN_00566498"
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0"
     },
     {
-      "addr": "00566e70",
+      "addr": "004e82d0",
       "is_variadic": false,
-      "name": "FUN_00566e70"
+      "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0"
+    },
+    {
+      "addr": "00523910",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910"
+    },
+    {
+      "addr": "00523a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60"
+    },
+    {
+      "addr": "00525c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40"
+    },
+    {
+      "addr": "00523ba0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0"
+    },
+    {
+      "addr": "00521e10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10"
+    },
+    {
+      "addr": "00523cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0"
+    },
+    {
+      "addr": "00521830",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_parseWavFile_FUN_00521830"
     }
   ],
   "globals": [
@@ -428,7 +428,7 @@
       {
         "call_addr": "00526923",
         "call_type": "direct",
-        "caller": "FUN_005265a0",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_005265a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -548,7 +548,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_00564520(pcVar5,param_1);",
+      "text": "iVar2 = _stricmp(pcVar5,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -588,7 +588,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = FUN_004568c0(\"?sound\" + 1,param_1);",
+      "text": "iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"?sound\" + 1,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -604,7 +604,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00566498(param_1,0,0,0,&local_114);",
+      "text": "splitpath(param_1,0,0,0,&local_114);",
       "type": "unnamed_param"
     },
     {
@@ -612,7 +612,7 @@
       "line": 84,
       "match": "DAT_0059265c",
       "severity": "mild",
-      "text": "iVar6 = FUN_00564520(&local_114,&DAT_0059265c);",
+      "text": "iVar6 = _stricmp(&local_114,&DAT_0059265c);",
       "type": "undefined_data"
     },
     {
@@ -620,7 +620,7 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = FUN_00456a60(\"sound\",param_1,&DAT_00592660);",
+      "text": "local_14 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_1,&DAT_00592660);",
       "type": "unnamed_param"
     },
     {
@@ -628,7 +628,7 @@
       "line": 86,
       "match": "DAT_00592660",
       "severity": "mild",
-      "text": "local_14 = FUN_00456a60(\"sound\",param_1,&DAT_00592660);",
+      "text": "local_14 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_1,&DAT_00592660);",
       "type": "undefined_data"
     },
     {
@@ -641,15 +641,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_005926c6",
       "severity": "mild",
-      "text": "iVar6 = FUN_00564520(&local_114,&DAT_005926c6);",
+      "text": "iVar6 = _stricmp(&local_114,&DAT_005926c6);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004c8440(\"Unknown sample file format extension: %s\",param_1);",
@@ -657,15 +657,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e7df0(0x2da8ae0,param_1);",
+      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(0x2da8ae0,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 161,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004c8440(\"Don't know length of sample %s\",param_1);",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00529980(pcVar10,param_1);",

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
-;   FUN_004c1da0
+;   core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a3a95
     ADD EAX,0x1f5a0                     ; 004a3a9c
     PUSH EAX                            ; 004a3aa1
-    CALL FUN_004c1da0                   ; 004a3aa2
-        ;   XREF to: 004c1da0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c1da0()
+    CALL core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0 ; 004a3aa2
+        ;   XREF to: 004c1da0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0()
     ADD ESP,0x4                         ; 004a3aa7
     RET                                 ; 004a3aaa
 

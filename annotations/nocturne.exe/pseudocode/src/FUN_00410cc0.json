@@ -9,61 +9,37 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 266,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 266,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 267,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "other",
-        "column": 95,
+        "column": 150,
         "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 92,
+        "column": 164,
         "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 152,
         "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 51,
         "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 62,
         "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
@@ -75,7 +51,7 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
@@ -87,13 +63,13 @@
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 59,
         "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 87,
         "line": 30,
         "message": "unknown type name 'code'"
       },
@@ -105,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 56,
         "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 333,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 98,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
@@ -136,13 +136,13 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 358
+    "total_lines": 368
   },
   "cross_references": [
     {
       "addr": "00411010",
       "from_addr": "00411046",
-      "name": "FUN_00411010",
+      "name": "core_baron.cpp_CBaron_advanceMotion_FUN_00411010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -163,67 +163,67 @@
     {
       "addr": "0040a240",
       "is_variadic": false,
-      "name": "FUN_0040a240"
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
     },
     {
       "addr": "0040a290",
       "is_variadic": false,
-      "name": "FUN_0040a290"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
     },
     {
       "addr": "0040df00",
       "is_variadic": false,
-      "name": "FUN_0040df00"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
       "addr": "00423ed0",
       "is_variadic": false,
-      "name": "FUN_00423ed0"
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0"
+    },
+    {
+      "addr": "0048c370",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createCrater_FUN_0048c370"
+    },
+    {
+      "addr": "0048c420",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420"
+    },
+    {
+      "addr": "0048c4a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0"
+    },
+    {
+      "addr": "004b5d00",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_closestEnemy_FUN_004b5d00"
+    },
+    {
+      "addr": "0054e4a0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
+    },
+    {
+      "addr": "0055a8b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_0055a8b0"
+    },
+    {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    },
+    {
+      "addr": "0056488c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_0056488c"
     },
     {
       "addr": "004286d0",
       "is_variadic": false,
       "name": "FUN_004286d0"
-    },
-    {
-      "addr": "0048c370",
-      "is_variadic": false,
-      "name": "FUN_0048c370"
-    },
-    {
-      "addr": "0048c420",
-      "is_variadic": false,
-      "name": "FUN_0048c420"
-    },
-    {
-      "addr": "0048c4a0",
-      "is_variadic": false,
-      "name": "FUN_0048c4a0"
-    },
-    {
-      "addr": "004b5d00",
-      "is_variadic": false,
-      "name": "FUN_004b5d00"
-    },
-    {
-      "addr": "0054e4a0",
-      "is_variadic": false,
-      "name": "FUN_0054e4a0"
-    },
-    {
-      "addr": "0055a8b0",
-      "is_variadic": false,
-      "name": "FUN_0055a8b0"
-    },
-    {
-      "addr": "005644a7",
-      "is_variadic": false,
-      "name": "FUN_005644a7"
-    },
-    {
-      "addr": "0056488c",
-      "is_variadic": false,
-      "name": "FUN_0056488c"
     }
   ],
   "globals": [
@@ -282,7 +282,7 @@
       {
         "call_addr": "00411046",
         "call_type": "direct",
-        "caller": "FUN_00411010",
+        "caller": "core_baron.cpp_CBaron_advanceMotion_FUN_00411010",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -478,7 +478,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_004b5d00(param_1,local_1c);",
+      "text": "iVar1 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,local_1c);",
       "type": "unnamed_param"
     },
     {
@@ -486,20 +486,20 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040a290(param_1,&local_40,iVar1 + 0x20);",
+      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_40,iVar1 + 0x20);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_005993b0",
       "severity": "mild",
-      "text": "FUN_005644a7(local_148,10,&DAT_005993b0);",
+      "text": "__arrinit(local_148,10,&DAT_005993b0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
+      "line": 59,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x4c))(iVar1,local_148);",
@@ -507,71 +507,71 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
+      "text": "(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 80,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
+      "text": "(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 80,
       "match": "DAT_0076431c",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
+      "text": "(auStack_64,&DAT_02dd1184,DAT_0076431c * 0x30 + param_1 + 0xfd0);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040a240(param_1,auStack_70,uVar5);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_70,uVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
+      "text": "(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 83,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
+      "text": "(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 83,
       "match": "DAT_00764320",
       "severity": "mild",
-      "text": "uVar5 = FUN_0055a8b0(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
+      "text": "(auStack_88,&DAT_02dd1184,param_1 + 0xfd0 + DAT_00764320 * 0x30);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040a240(param_1,auStack_34,uVar5);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_34,uVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 89,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"@@baron-attack.wav\" + 2);",
@@ -579,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"@@baron-attack.wav\" + 2);",
@@ -587,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"@@baron-attack.wav\" + 2);",
@@ -595,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "local_9c = param_1;",
@@ -603,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "local_98 = *(int *)(param_1 + 0x1fb14);",
@@ -611,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "local_98 = param_1;",
@@ -619,7 +619,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
+      "line": 99,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0x100))(iVar1,local_d0);",

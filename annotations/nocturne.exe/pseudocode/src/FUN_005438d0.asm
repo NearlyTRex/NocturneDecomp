@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_FUN_005a2fc4 = 00409fc0
+;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005a2fc4 = 00409fc0
 ;
 ; Called Functions:
 ;   FUN_00409d30
@@ -19,7 +19,7 @@ section .text
     PUSH EDX                            ; 005438d4
     CALL FUN_00409d30                   ; 005438d5
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
-    MOV dword ptr [EAX + 0x14c],0x5a2fc4 ; 005438da | PTR_FUN_005a2fc4
+    MOV dword ptr [EAX + 0x14c],0x5a2fc4 ; 005438da | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005a2fc4
     MOV dword ptr [EAX + 0x150],0x40a00000 ; 005438e4
     MOV dword ptr [EAX + 0x154],0x41100000 ; 005438ee
     MOV dword ptr [EAX + 0x158],0x40a00000 ; 005438f8

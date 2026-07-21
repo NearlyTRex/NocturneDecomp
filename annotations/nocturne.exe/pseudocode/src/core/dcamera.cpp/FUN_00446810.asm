@@ -54,21 +54,21 @@
 ;   ... and 16 more
 ;
 ; Called Functions:
-;   FUN_00438f30
-;   FUN_004390b0
-;   FUN_00439370
-;   FUN_00439830
-;   FUN_00439880
-;   FUN_004399a0
-;   FUN_0043fa20
-;   FUN_0043fc80
-;   FUN_0043fe60
-;   FUN_00446ea0
-;   FUN_00456a60
+;   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0
+;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20
+;   core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80
+;   core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60
+;   crt_fstream.cpp_ofstream_ctor_FUN_0056511e
+;   crt_fstream.cpp_ofstream_dtor_FUN_005651ca
+;   crt_fstream.cpp_ostream_write_FUN_00565a13
+;   crt_math.c_round_FUN_00563a30
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   FUN_004c8440
-;   FUN_00563380
-;   FUN_00563a30
-;   FUN_00563c90
+;   support_codec.cpp_CCodec_dtor_FUN_00438f30
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0
+;   support_codec.cpp_CLZWCompress_ctor_FUN_00439830
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     MOV dword ptr [0x012b022c],EDX      ; 0044682a | DAT_012b022c
     MOV dword ptr [0x0140d778],ECX      ; 00446830 | DAT_0140d778
     MOV dword ptr [0x0140d77c],ECX      ; 00446836 | DAT_0140d77c
-    CALL FUN_0043fa20                   ; 0044683c
-        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; undefined FUN_0043fa20()
+    CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20 ; 0044683c
+        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20()
     MOV EAX,[0x0140e790]                ; 00446841 | DAT_0140e790
     MOV EDI,dword ptr [0x0140e794]      ; 00446846 | DAT_0140e794
     MOV EBP,dword ptr [0x0140e798]      ; 0044684c | DAT_0140e798
@@ -105,15 +105,15 @@ section .text
     PUSH 0x57b9fb                       ; 00446873 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 00446878
     PUSH EAX                            ; 0044687c
-    CALL FUN_00563c90                   ; 0044687d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0044687d
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 00446882
     PUSH 0x57ba02                       ; 00446885 | DAT_0057ba02
     LEA EAX,[ESP + 0x4]                 ; 0044688a
     PUSH EAX                            ; 0044688e
     PUSH 0x57ba05                       ; 0044688f | = "backdrop"
-    CALL FUN_00456a60                   ; 00446894
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00446894
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00446899
     TEST EAX,EAX                        ; 0044689c
     JNZ 0x00446ded                      ; 0044689e
@@ -123,8 +123,8 @@ section .text
     PUSH 0x57ba0e                       ; 004468a7 | = "backdrop\\%s"
     LEA EAX,[ESP + 0x184]               ; 004468ac
     PUSH EAX                            ; 004468b3
-    CALL FUN_00563c90                   ; 004468b4
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004468b4
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004468b9
     MOV ECX,dword ptr [0x005a47a0]      ; 004468bc | DAT_005a47a0
     PUSH ECX                            ; 004468c2
@@ -134,8 +134,8 @@ section .text
     PUSH 0x0                            ; 004468d0
     LEA EAX,[ESP + 0x110]               ; 004468d2
     PUSH EAX                            ; 004468d9
-    CALL FUN_0056511e                   ; 004468da
-        ;   XREF to: 0056511e (UNCONDITIONAL_CALL)  ; undefined FUN_0056511e()
+    CALL crt_fstream.cpp_ofstream_ctor_FUN_0056511e ; 004468da
+        ;   XREF to: 0056511e (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ofstream_ctor_FUN_0056511e()
     ADD ESP,0x14                        ; 004468df
     CMP dword ptr [ESP + 0x160],0x0     ; 004468e2
     JZ 0x00446917                       ; 004468ea
@@ -155,8 +155,8 @@ section .text
     PUSH 0x140d784                      ; 0044691c
     LEA EAX,[ESP + 0x14c]               ; 00446921
     PUSH EAX                            ; 00446928
-    CALL FUN_00565a13                   ; 00446929
-        ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; undefined FUN_00565a13()
+    CALL crt_fstream.cpp_ostream_write_FUN_00565a13 ; 00446929
+        ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ostream_write_FUN_00565a13()
     MOV EBP,dword ptr [0x0140e7a0]      ; 0044692e | DAT_0140e7a0
     ADD ESP,0xc                         ; 00446934
     TEST EBP,EBP                        ; 00446937
@@ -170,36 +170,36 @@ section .text
     PUSH EAX                            ; 00446955
     LEA EAX,[ESP + 0x150]               ; 00446956
     PUSH EAX                            ; 0044695d
-    CALL FUN_00565a13                   ; 0044695e
-        ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; undefined FUN_00565a13()
+    CALL crt_fstream.cpp_ostream_write_FUN_00565a13 ; 0044695e
+        ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ostream_write_FUN_00565a13()
     ADD ESP,0xc                         ; 00446963
     MOV EAX,dword ptr [ESP + 0x27c]     ; 00446966
     FLD double ptr [0x0057badb]         ; 0044696d | DAT_0057badb
     FLD float ptr [EAX + 0x104]         ; 00446973
     FMUL ST1                            ; 00446979
-    CALL FUN_00563a30                   ; 0044697b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 0044697b
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x21c]       ; 00446980
     FLD float ptr [EAX + 0x108]         ; 00446987
     FMUL ST1                            ; 0044698d
     PUSH 0x6                            ; 0044698f
-    CALL FUN_00563a30                   ; 00446991
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 00446991
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x224]       ; 00446996
     FMUL float ptr [EAX + 0x10c]        ; 0044699d
     PUSH 0x10000                        ; 004469a3
     LEA EAX,[ESP + 0x1ec]               ; 004469a8
-    CALL FUN_00563a30                   ; 004469af
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a30()
+    CALL crt_math.c_round_FUN_00563a30  ; 004469af
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     PUSH EAX                            ; 004469b4
     FISTP dword ptr [ESP + 0x230]       ; 004469b5
-    CALL FUN_00439830                   ; 004469bc
-        ;   XREF to: 00439830 (UNCONDITIONAL_CALL)  ; undefined FUN_00439830()
+    CALL support_codec.cpp_CLZWCompress_ctor_FUN_00439830 ; 004469bc
+        ;   XREF to: 00439830 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWCompress_ctor_FUN_00439830()
     ADD ESP,0xc                         ; 004469c1
     LEA EAX,[ESP + 0x1e4]               ; 004469c4
     PUSH EAX                            ; 004469cb
-    CALL FUN_00439880                   ; 004469cc
-        ;   XREF to: 00439880 (UNCONDITIONAL_CALL)  ; undefined FUN_00439880()
+    CALL support_codec.cpp_CLZWCompress_init_FUN_00439880 ; 004469cc
+        ;   XREF to: 00439880 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWCompress_init_FUN_00439880()
     ADD ESP,0x4                         ; 004469d1
     XOR EAX,EAX                         ; 004469d4
     MOV EDX,dword ptr [0x0140d780]      ; 004469d6 | DAT_0140d780
@@ -214,8 +214,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x268]     ; 004469ff
     PUSH EDX                            ; 00446a06
     PUSH 0x140d784                      ; 00446a07
-    CALL FUN_0043fe60                   ; 00446a0c
-        ;   XREF to: 0043fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0043fe60()
+    CALL core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60 ; 00446a0c
+        ;   XREF to: 0043fe60 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60()
     ADD ESP,0xc                         ; 00446a11
     MOV EAX,dword ptr [ESP + 0x27c]     ; 00446a14
     MOV ECX,0x1                         ; 00446a1b
@@ -256,8 +256,8 @@ section .text
     LEA EAX,[ESP + 0x224]               ; 00446aa8
     PUSH EAX                            ; 00446aaf
     PUSH 0x140d784                      ; 00446ab0
-    CALL FUN_0043fc80                   ; 00446ab5
-        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; undefined FUN_0043fc80()
+    CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80 ; 00446ab5
+        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80()
     IMUL EAX,EAX,0xff                   ; 00446aba
     SHR EAX,0xe                         ; 00446ac0
     ADD ESP,0x10                        ; 00446ac3
@@ -301,8 +301,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x280]     ; 00446b55
     PUSH ESI                            ; 00446b5c
     XOR EDI,EDI                         ; 00446b5d
-    CALL FUN_00446ea0                   ; 00446b5f
-        ;   XREF to: 00446ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_00446ea0()
+    CALL core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0 ; 00446b5f
+        ;   XREF to: 00446ea0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0()
     ADD ESP,0x8                         ; 00446b64
     MOV EBP,dword ptr [ESI + 0x154]     ; 00446b67
     MOV dword ptr [ESP + 0x24c],EDI     ; 00446b6d
@@ -397,8 +397,8 @@ section .text
     PUSH 0x12ceb78                      ; 00446cef
     LEA EAX,[ESP + 0x1f0]               ; 00446cf4
     PUSH EAX                            ; 00446cfb
-    CALL FUN_004390b0                   ; 00446cfc
-        ;   XREF to: 004390b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004390b0()
+    CALL support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0 ; 00446cfc
+        ;   XREF to: 004390b0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0()
     ADD ESP,0x10                        ; 00446d01
     TEST EAX,EAX                        ; 00446d04
     JZ 0x00446e36                       ; 00446d06
@@ -440,26 +440,26 @@ section .text
     PUSH EAX                            ; 00446d9b
     LEA EAX,[ESP + 0x1e8]               ; 00446d9c
     PUSH EAX                            ; 00446da3
-    CALL FUN_004399a0                   ; 00446da4
-        ;   XREF to: 004399a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004399a0()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_004399a0 ; 00446da4
+        ;   XREF to: 004399a0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWCompress_finalize_FUN_004399a0()
     ADD ESP,0x8                         ; 00446da9
     PUSH 0x0                            ; 00446dac
     LEA EAX,[ESP + 0x1ec]               ; 00446dae
     PUSH EAX                            ; 00446db5
-    CALL FUN_00439370                   ; 00446db6
-        ;   XREF to: 00439370 (UNCONDITIONAL_CALL)  ; undefined FUN_00439370()
+    CALL support_codec.cpp_CLZWDictionary_dtor_FUN_00439370 ; 00446db6
+        ;   XREF to: 00439370 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_dtor_FUN_00439370()
     ADD ESP,0x8                         ; 00446dbb
     PUSH 0x1                            ; 00446dbe
     LEA EAX,[ESP + 0x1e8]               ; 00446dc0
     PUSH EAX                            ; 00446dc7
-    CALL FUN_00438f30                   ; 00446dc8
-        ;   XREF to: 00438f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00438f30()
+    CALL support_codec.cpp_CCodec_dtor_FUN_00438f30 ; 00446dc8
+        ;   XREF to: 00438f30 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CCodec_dtor_FUN_00438f30()
     ADD ESP,0x8                         ; 00446dcd
     PUSH 0x0                            ; 00446dd0
     LEA EAX,[ESP + 0x108]               ; 00446dd2
     PUSH EAX                            ; 00446dd9
-    CALL FUN_005651ca                   ; 00446dda
-        ;   XREF to: 005651ca (UNCONDITIONAL_CALL)  ; undefined FUN_005651ca()
+    CALL crt_fstream.cpp_ofstream_dtor_FUN_005651ca ; 00446dda
+        ;   XREF to: 005651ca (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ofstream_dtor_FUN_005651ca()
     ADD ESP,0x8                         ; 00446ddf
     POP EBX                             ; 00446de2
     ADD ESP,0x268                       ; 00446de3
@@ -469,8 +469,8 @@ section .text
     RET                                 ; 00446dec
     PUSH EAX                            ; 00446ded
         ;   Label: LAB_00446ded
-    CALL FUN_00563380                   ; 00446dee
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 00446dee
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 00446df3
     ADD ESP,0x268                       ; 00446df6
     POP EBP                             ; 00446dfc
@@ -481,8 +481,8 @@ section .text
         ;   Label: LAB_00446e00
     LEA EAX,[ESP + 0x104]               ; 00446e01
     PUSH EAX                            ; 00446e08
-    CALL FUN_005651ca                   ; 00446e09
-        ;   XREF to: 005651ca (UNCONDITIONAL_CALL)  ; undefined FUN_005651ca()
+    CALL crt_fstream.cpp_ofstream_dtor_FUN_005651ca ; 00446e09
+        ;   XREF to: 005651ca (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ofstream_dtor_FUN_005651ca()
     ADD ESP,0x8                         ; 00446e0e
     ADD ESP,0x268                       ; 00446e11
     POP EBP                             ; 00446e17

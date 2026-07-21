@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00402c20
+;   engine_2d.c_drawTextCenteredAtColor_FUN_00402c20
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ECX                            ; 00402c6a
     MOV EBX,dword ptr [ESP + 0x18]      ; 00402c6b
     PUSH EBX                            ; 00402c6f
-    CALL FUN_00402c20                   ; 00402c70
-        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; undefined FUN_00402c20()
+    CALL engine_2d.c_drawTextCenteredAtColor_FUN_00402c20 ; 00402c70
+        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredAtColor_FUN_00402c20()
     ADD ESP,0xc                         ; 00402c75
     POP EBX                             ; 00402c78
     RET                                 ; 00402c79

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_0049da10 at 0049e3c8
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e3c8
 ;
 ; Referenced Globals:
 ;   string s_Error_processing_script_to_skip_c_0058faf7
@@ -20,9 +20,9 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   core_script.cpp_CScript_step_FUN_004ff2c0
 ;   FUN_0046fcd0
 ;   FUN_004c8440
-;   FUN_004ff2c0
 ;   FUN_00504d60
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EBP       ; 00504de5
     PUSH EBX                            ; 00504de9
     MOV EDI,dword ptr [EBX + 0x40]      ; 00504dea
-    CALL FUN_004ff2c0                   ; 00504ded
-        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ff2c0()
+    CALL core_script.cpp_CScript_step_FUN_004ff2c0 ; 00504ded
+        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_004ff2c0()
     ADD ESP,0x8                         ; 00504df2
     TEST EAX,EAX                        ; 00504df5
     JL 0x00504e30                       ; 00504df7

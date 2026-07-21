@@ -19,17 +19,17 @@
 ;   string s_(No_script_loaded.)_0058e251
 ;
 ; Called Functions:
-;   FUN_0045b480
-;   FUN_0045b5f0
-;   FUN_0045baa0
-;   FUN_0045cb70
+;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30
+;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320
+;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480
+;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
+;   cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0
+;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_0045d2b0
-;   FUN_0045da30
-;   FUN_0045e260
-;   FUN_0045e320
-;   FUN_00474080
-;   FUN_00477660
-;   FUN_00563c90
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_00477660
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
 ;
 ; *****************************************************************************
 
@@ -57,12 +57,12 @@ section .text
     PUSH EDX                            ; 004fea08
     LEA EAX,[ESP + 0x78]                ; 004fea09
     PUSH EAX                            ; 004fea0d
-    CALL FUN_0045b480                   ; 004fea0e
-        ;   XREF to: 0045b480 (UNCONDITIONAL_CALL)  ; undefined FUN_0045b480()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480 ; 004fea0e
+        ;   XREF to: 0045b480 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480()
     ADD ESP,0x18                        ; 004fea13
     PUSH 0x0                            ; 004fea16
-    CALL FUN_0045b5f0                   ; 004fea18
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045b5f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004fea18
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
     ADD ESP,0x4                         ; 004fea1d
     LEA EAX,[ESP + 0x64]                ; 004fea20
     PUSH EAX                            ; 004fea24
@@ -70,8 +70,8 @@ section .text
         ;   XREF to: 0045d2b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045d2b0()
     ADD ESP,0x4                         ; 004fea2a
     PUSH 0x0                            ; 004fea2d
-    CALL FUN_0045baa0                   ; 004fea2f
-        ;   XREF to: 0045baa0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045baa0()
+    CALL cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0 ; 004fea2f
+        ;   XREF to: 0045baa0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0()
     MOV EDX,dword ptr [EBP + 0x28]      ; 004fea34
     ADD ESP,0x4                         ; 004fea37
     TEST EDX,EDX                        ; 004fea3a
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 004feba6 (CONDITIONAL_JUMP)  ; LAB_004feba6
     LEA EAX,[ESP + 0x64]                ; 004fea42
     PUSH EAX                            ; 004fea46
-    CALL FUN_0045e320                   ; 004fea47
-        ;   XREF to: 0045e320 (UNCONDITIONAL_CALL)  ; undefined FUN_0045e320()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320 ; 004fea47
+        ;   XREF to: 0045e320 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320()
     MOV EBX,EAX                         ; 004fea4c
     ADD ESP,0x4                         ; 004fea4e
     MOV EDX,dword ptr [EBP + 0x40]      ; 004fea51
@@ -115,8 +115,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x90]      ; 004feab3
         ;   Label: LAB_004feab3
     PUSH EDI                            ; 004feaba
-    CALL FUN_00477660                   ; 004feabb
-        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined FUN_00477660()
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_00477660 ; 004feabb
+        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getItemCount_FUN_00477660()
     ADD ESP,0x4                         ; 004feac0
     CMP EBX,EAX                         ; 004feac3
     JGE 0x004feb57                      ; 004feac5
@@ -129,8 +129,8 @@ section .text
     JNZ 0x004feb83                      ; 004feadd
         ;   XREF to: 004feb83 (CONDITIONAL_JUMP)  ; LAB_004feb83
     PUSH 0xfa                           ; 004feae3
-    CALL FUN_0045b5f0                   ; 004feae8
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045b5f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feae8
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
         ;   Label: LAB_004feae8
     ADD ESP,0x4                         ; 004feaed
     LEA EDI,[EBX + 0x1]                 ; 004feaf0
@@ -138,8 +138,8 @@ section .text
     PUSH 0x58e24e                       ; 004feaf4 | DAT_0058e24e
     LEA EAX,[ESP + 0x8]                 ; 004feaf9
     PUSH EAX                            ; 004feafd
-    CALL FUN_00563c90                   ; 004feafe
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00563c90()
+    CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004feafe
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004feb03
     PUSH ESI                            ; 004feb06
     PUSH 0x2                            ; 004feb07
@@ -147,22 +147,22 @@ section .text
     PUSH EAX                            ; 004feb0d
     LEA EAX,[ESP + 0x70]                ; 004feb0e
     PUSH EAX                            ; 004feb12
-    CALL FUN_0045da30                   ; 004feb13
-        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined FUN_0045da30()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30 ; 004feb13
+        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30()
     ADD ESP,0x10                        ; 004feb18
     PUSH ESI                            ; 004feb1b
     PUSH 0x1e                           ; 004feb1c
     PUSH EBX                            ; 004feb1e
     MOV EAX,dword ptr [ESP + 0x9c]      ; 004feb1f
     PUSH EAX                            ; 004feb26
-    CALL FUN_00474080                   ; 004feb27
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined FUN_00474080()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004feb27
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 004feb2c
     PUSH EAX                            ; 004feb2f
     LEA EAX,[ESP + 0x70]                ; 004feb30
     PUSH EAX                            ; 004feb34
-    CALL FUN_0045da30                   ; 004feb35
-        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined FUN_0045da30()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30 ; 004feb35
+        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30()
     ADD ESP,0x10                        ; 004feb3a
     MOV EDX,dword ptr [ESP + 0x88]      ; 004feb3d
     MOV ECX,dword ptr [ESP + 0x8c]      ; 004feb44
@@ -173,13 +173,13 @@ section .text
         ;   XREF to: 004feab3 (CONDITIONAL_JUMP)  ; LAB_004feab3
     PUSH 0xff                           ; 004feb57
         ;   Label: LAB_004feb57
-    CALL FUN_0045b5f0                   ; 004feb5c
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045b5f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feb5c
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
     ADD ESP,0x4                         ; 004feb61
     LEA EAX,[ESP + 0x64]                ; 004feb64
     PUSH EAX                            ; 004feb68
-    CALL FUN_0045cb70                   ; 004feb69
-        ;   XREF to: 0045cb70 (UNCONDITIONAL_CALL)  ; undefined FUN_0045cb70()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70 ; 004feb69
+        ;   XREF to: 0045cb70 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70()
     ADD ESP,0x4                         ; 004feb6e
     ADD ESP,0x94                        ; 004feb71
     POP EBP                             ; 004feb77
@@ -208,14 +208,14 @@ section .text
         ;   XREF to: 004feae8 (UNCONDITIONAL_JUMP)  ; LAB_004feae8
     PUSH 0xf9                           ; 004feba6
         ;   Label: LAB_004feba6
-    CALL FUN_0045b5f0                   ; 004febab
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045b5f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004febab
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
     ADD ESP,0x4                         ; 004febb0
     PUSH 0x58e251                       ; 004febb3 | = "(No script loaded.)"
     LEA EAX,[ESP + 0x68]                ; 004febb8
     PUSH EAX                            ; 004febbc
-    CALL FUN_0045e260                   ; 004febbd
-        ;   XREF to: 0045e260 (UNCONDITIONAL_CALL)  ; undefined FUN_0045e260()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260 ; 004febbd
+        ;   XREF to: 0045e260 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260()
     ADD ESP,0x8                         ; 004febc2
     JMP 0x004feb57                      ; 004febc5
         ;   XREF to: 004feb57 (UNCONDITIONAL_JUMP)  ; LAB_004feb57

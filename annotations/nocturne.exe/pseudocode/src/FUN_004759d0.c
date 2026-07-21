@@ -44,15 +44,16 @@ void FUN_004759d0(int *param_1)
             if (param_1[0x43] != 0) {
               uVar2 = _DAT_01bcde14;
             }
-            FUN_00403e60(local_28,local_1c,local_28 + param_1[0x4a] + -1,
-                         local_1c + param_1[0x44] + -1,uVar2);
+            engine_2d_c_fillRectColor_FUN_00403e60
+                      (local_28,local_1c,local_28 + param_1[0x4a] + -1,local_1c + param_1[0x44] + -1
+                       ,uVar2);
           }
           iVar3 = local_24;
           local_18 = 0;
-          local_14 = (char *)FUN_00474080(param_1,local_24);
+          local_14 = (char *)shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,local_24);
           iVar7 = local_28 + param_1[0x45];
           local_20 = _DAT_01bcde08;
-          iVar3 = FUN_00476040(param_1,iVar3);
+          iVar3 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(param_1,iVar3);
           if (iVar3 == 0) {
             local_20 = _DAT_01bcde0c;
           }
@@ -69,8 +70,9 @@ void FUN_004759d0(int *param_1)
             }
             *pcVar4 = '\0';
             local_14 = pcVar6;
-            FUN_00408370(0xffff);
-            FUN_00490980(_DAT_01bcd070,local_15c,iVar7,local_1c,local_20,0xffffffff);
+            engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
+            engine_font_cpp_CBitFont_drawText_FUN_00490980
+                      (_DAT_01bcd070,local_15c,iVar7,local_1c,local_20,0xffffffff);
             local_18 = local_18 + 1;
             iVar7 = iVar7 + piVar5[0x1f];
             piVar5 = piVar5 + 1;
@@ -83,7 +85,7 @@ void FUN_004759d0(int *param_1)
       uVar2 = _DAT_01c00c70;
       if (0 < local_30) {
         _DAT_01c00c70 = _DAT_01bcde18;
-        FUN_004015a0(local_28,_DAT_01c00c5c,local_28,_DAT_01c00c64);
+        engine_2d_c_drawLine_FUN_004015a0(local_28,_DAT_01c00c5c,local_28,_DAT_01c00c64);
       }
       local_30 = local_30 + 1;
       local_28 = local_28 + param_1[0x4a];
@@ -106,6 +108,6 @@ LAB_00475b35:
   if (param_1[0x1e] != 0) {
     return;
   }
-  FUN_004724e0(0x01BCD074,1);
+  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(0x01BCD074,1);
   return;
 }

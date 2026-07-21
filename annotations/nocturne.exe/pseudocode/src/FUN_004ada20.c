@@ -70,13 +70,14 @@ void FUN_004ada20(int param_1)
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      FUN_0050e300(0x01E57284);
+      core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(0x01E57284);
     }
-    FUN_005644a7(&local_cc,4,&DAT_005993b0);
+    __arrinit(&local_cc,4,&DAT_005993b0);
     local_1c = *(float *)(param_1 + 0x150) * (float)_DAT_00585068;
     local_18 = 0.0;
     local_14 = 0;
-    pfVar2 = (float *)FUN_0044da40(param_1 + 0x3c,local_4c,&local_1c);
+    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                (param_1 + 0x3c,local_4c,&local_1c);
     local_40 = *(float *)(param_1 + 0x20) + *pfVar2;
     local_3c = *(float *)(param_1 + 0x24) + pfVar2[1];
     local_38 = *(float *)(param_1 + 0x28) + pfVar2[2];
@@ -86,7 +87,8 @@ void FUN_004ada20(int param_1)
       local_c4 = local_38;
     }
     local_18 = local_18 + *(float *)(param_1 + 0x154);
-    pfVar2 = (float *)FUN_0044da40(param_1 + 0x3c,local_7c,&local_1c);
+    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                (param_1 + 0x3c,local_7c,&local_1c);
     local_58 = *(float *)(param_1 + 0x20) + *pfVar2;
     local_54 = *(float *)(param_1 + 0x24) + pfVar2[1];
     local_50 = *(float *)(param_1 + 0x28) + pfVar2[2];
@@ -96,7 +98,8 @@ void FUN_004ada20(int param_1)
       local_b8 = local_50;
     }
     local_1c = -local_1c;
-    pfVar2 = (float *)FUN_0044da40(param_1 + 0x3c,local_64,&local_1c);
+    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                (param_1 + 0x3c,local_64,&local_1c);
     local_34 = *(float *)(param_1 + 0x20) + *pfVar2;
     local_30 = *(float *)(param_1 + 0x24) + pfVar2[1];
     local_2c = *(float *)(param_1 + 0x28) + pfVar2[2];
@@ -106,7 +109,8 @@ void FUN_004ada20(int param_1)
       local_ac = local_2c;
     }
     local_18 = 0.0;
-    pfVar2 = (float *)FUN_0044da40(param_1 + 0x3c,local_70,&local_1c);
+    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                (param_1 + 0x3c,local_70,&local_1c);
     local_28 = *(float *)(param_1 + 0x20) + *pfVar2;
     local_24 = *(float *)(param_1 + 0x24) + pfVar2[1];
     local_20 = *(float *)(param_1 + 0x28) + pfVar2[2];
@@ -115,7 +119,7 @@ void FUN_004ada20(int param_1)
       local_a4 = local_24;
       local_a0 = local_20;
     }
-    FUN_00461eb0(DAT_005ae704,param_1 + 0x15c);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x15c);
     if (DAT_005b762c == 0x40) {
       local_8c = 0xf80000;
       local_98 = 0x80000;

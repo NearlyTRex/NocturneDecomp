@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[46]:
-;   FUN_0040eb70 at 0040eb78
 ;   FUN_0040fed0 at 0040fed6
-;   FUN_00411710 at 00411715
 ;   FUN_00411a10 at 00411a18
 ;   FUN_00414d80 at 00414d86
-;   FUN_00415d20 at 00415d25
-;   FUN_0041e300 at 0041e306
-;   FUN_00423f40 at 00423f48
-;   FUN_0042b750 at 0042b757
 ;   FUN_0043c810 at 0043c816
+;   FUN_0048eef0 at 0048eef8
+;   FUN_004a8a10 at 004a8a16
+;   FUN_004abb50 at 004abb57
+;   FUN_004b41f0 at 004b41f6
+;   FUN_004c3460 at 004c3466
+;   FUN_004c9430 at 004c9438
 ;   ... and 36 more
 ;
 ; Referenced Globals:
@@ -26,12 +26,12 @@
 ;   undefined1 DAT_00577583
 ;   undefined1 DAT_00577584
 ;   undefined1 DAT_00577585
-;   undefined1* PTR_FUN_005992d4 = 00409fc0
+;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4 = 00409fc0
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
-;   FUN_00409cf0
-;   FUN_0040a000
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
+;   core_actor.cpp_initTransformCache_FUN_00409cf0
 ;
 ; *****************************************************************************
 
@@ -44,10 +44,10 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00409d33
     ADD EBX,0x128                       ; 00409d37
     PUSH EBX                            ; 00409d3d
-    CALL FUN_00409cf0                   ; 00409d3e
-        ;   XREF to: 00409cf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409cf0()
+    CALL core_actor.cpp_initTransformCache_FUN_00409cf0 ; 00409d3e
+        ;   XREF to: 00409cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_initTransformCache_FUN_00409cf0()
     LEA EBX,[EAX + 0xfffffed8]          ; 00409d43
-    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409d49 | PTR_FUN_005992d4
+    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409d49 | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4
     MOV byte ptr [EBX],0x0              ; 00409d53
     MOV dword ptr [EBX + 0x144],0x0     ; 00409d56
     LEA EAX,[EBX + 0x20]                ; 00409d60
@@ -67,8 +67,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00409d9c
     MOV EDX,dword ptr [EAX + 0x4]       ; 00409d9f
     MOV dword ptr [EAX],EDX             ; 00409da2
-    CALL FUN_0040a000                   ; 00409da4
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a000()
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00409da4
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
     ADD ESP,0x4                         ; 00409da9
     LEA EDI,[EBX + 0x78]                ; 00409dac
     MOV dword ptr [EBX + 0x74],0x3f800000 ; 00409daf

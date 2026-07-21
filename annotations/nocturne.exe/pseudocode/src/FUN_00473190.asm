@@ -11,9 +11,9 @@
 ;   undefined4 DAT_01c00c70
 ;
 ; Called Functions:
-;   FUN_00409290
-;   FUN_004cd210
-;   FUN_005644a7
+;   crt_memory.c___arrinit_FUN_005644a7
+;   engine_3d.c_clipAndDrawLine2D_FUN_00409290
+;   engine_matrix.c_transformToCache_FUN_004cd210
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH 0x8                            ; 004731ad
     LEA EAX,[ESP + 0x8]                 ; 004731af
     PUSH EAX                            ; 004731b3
-    CALL FUN_005644a7                   ; 004731b4
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 004731b4
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 004731b9
     XOR EAX,EAX                         ; 004731bc
     MOV EDX,dword ptr [ESI]             ; 004731be
@@ -88,8 +88,8 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 0047326d
     PUSH EAX                            ; 00473274
     PUSH 0x0                            ; 00473275
-    CALL FUN_004cd210                   ; 00473277
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00473277
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     FLD float ptr [ESI]                 ; 0047327c
     FMUL float ptr [0x0057eaaa]         ; 0047327e | DAT_0057eaaa
     ADD ESP,0x8                         ; 00473284
@@ -134,8 +134,8 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 0047334c
     PUSH EAX                            ; 00473353
     PUSH 0x1                            ; 00473354
-    CALL FUN_004cd210                   ; 00473356
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00473356
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     ADD ESP,0x8                         ; 0047335b
     MOV ESI,0x5c5044                    ; 0047335e
     SUB ESP,0x30                        ; 00473363
@@ -147,8 +147,8 @@ section .text
     MOV ESI,0x5c5014                    ; 00473377
     MOV EDI,ESP                         ; 0047337c
     MOVSD.REP ES:EDI,ESI                ; 0047337e
-    CALL FUN_00409290                   ; 00473380
-        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined FUN_00409290()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00473380
+        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00409290()
     ADD ESP,0x60                        ; 00473385
     MOV ESI,dword ptr [ESP + 0xf0]      ; 00473388
     XOR SI,0x2                          ; 0047338f
@@ -169,8 +169,8 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 004733c2
     PUSH EAX                            ; 004733c6
     PUSH 0x0                            ; 004733c7
-    CALL FUN_004cd210                   ; 004733c9
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 004733c9
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     FLD float ptr [ESI]                 ; 004733ce
     FMUL float ptr [0x0057eaaa]         ; 004733d0 | DAT_0057eaaa
     ADD ESP,0x8                         ; 004733d6
@@ -215,8 +215,8 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 0047348f
     PUSH EAX                            ; 00473493
     PUSH 0x1                            ; 00473494
-    CALL FUN_004cd210                   ; 00473496
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00473496
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     ADD ESP,0x8                         ; 0047349b
     MOV ESI,0x5c5044                    ; 0047349e
     SUB ESP,0x30                        ; 004734a3
@@ -228,8 +228,8 @@ section .text
     MOV ESI,0x5c5014                    ; 004734b7
     MOV EDI,ESP                         ; 004734bc
     MOVSD.REP ES:EDI,ESI                ; 004734be
-    CALL FUN_00409290                   ; 004734c0
-        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined FUN_00409290()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 004734c0
+        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00409290()
     ADD ESP,0x60                        ; 004734c5
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004734c8
     XOR AL,0x4                          ; 004734cf
@@ -250,8 +250,8 @@ section .text
     LEA EAX,[ESP + 0xc0]                ; 00473503
     PUSH EAX                            ; 0047350a
     PUSH 0x0                            ; 0047350b
-    CALL FUN_004cd210                   ; 0047350d
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 0047350d
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     FLD float ptr [0x0057eaaa]          ; 00473512 | DAT_0057eaaa
     FLD float ptr [ESI]                 ; 00473518
     FMUL ST1                            ; 0047351a
@@ -296,8 +296,8 @@ section .text
     LEA EAX,[ESP + 0xc0]                ; 004735c3
     PUSH EAX                            ; 004735ca
     PUSH 0x1                            ; 004735cb
-    CALL FUN_004cd210                   ; 004735cd
-        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined FUN_004cd210()
+    CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 004735cd
+        ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     ADD ESP,0x8                         ; 004735d2
     MOV ESI,0x5c5044                    ; 004735d5
     SUB ESP,0x30                        ; 004735da
@@ -309,8 +309,8 @@ section .text
     MOV ESI,0x5c5014                    ; 004735ee
     MOV EDI,ESP                         ; 004735f3
     MOVSD.REP ES:EDI,ESI                ; 004735f5
-    CALL FUN_00409290                   ; 004735f7
-        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined FUN_00409290()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 004735f7
+        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00409290()
     ADD ESP,0x60                        ; 004735fc
     MOV ECX,dword ptr [ESP + 0xf0]      ; 004735ff
     INC ECX                             ; 00473606

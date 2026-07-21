@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
-;   FUN_0040dda0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: FUN_00516ab0
     PUSH 0x41700000                     ; 00516ab3
     PUSH 0x41200000                     ; 00516ab8
-    CALL FUN_0040dda0                   ; 00516abd
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dda0()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00516abd
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516ac2
     FLD float ptr [ESP + 0xc]           ; 00516ac6
     ADD ESP,0x8                         ; 00516aca

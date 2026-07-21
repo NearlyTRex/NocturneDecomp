@@ -18,7 +18,7 @@
 ;   undefined4 DAT_00768d4c
 ;
 ; Called Functions:
-;   FUN_00433a00
+;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     PUSH EAX                            ; 00433fa8
     PUSH EDX                            ; 00433fa9
     PUSH EBP                            ; 00433faa
-    CALL FUN_00433a00                   ; 00433fab
-        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; undefined FUN_00433a00()
+    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 ; 00433fab
+        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00()
     MOV ESI,dword ptr [0x00767b48]      ; 00433fb0 | DAT_00767b48
     INC ESI                             ; 00433fb6
     ADD ESP,0xc                         ; 00433fb7

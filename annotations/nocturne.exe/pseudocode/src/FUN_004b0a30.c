@@ -11,7 +11,7 @@ void FUN_004b0a30(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_004ef010(param_1);
-  *(byte ***)(iVar1 + 0x34) = &PTR_FUN_0059e4f4;
+  iVar1 = core_particle_cpp_CParticle_ctor_FUN_004ef010(param_1);
+  *(byte ***)(iVar1 + 0x34) = &PTR_core_particle_cpp_CParticle_setup_FUN_004ef040_0059e4f4;
   return;
 }

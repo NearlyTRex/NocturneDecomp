@@ -31,11 +31,11 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
   local_14 = param_1 + 0x30;
   do {
     FUN_004fe500(param_1);
-    iVar3 = FUN_004568c0("world",param_2);
+    iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("world",param_2);
     if (iVar3 < 1) {
       return 1;
     }
-    FUN_00566498(param_2,0,0,local_11c,0);
+    splitpath(param_2,0,0,local_11c,0);
     pcVar8 = &DAT_0058e26b;
     iVar6 = -1;
     pcVar10 = local_11c;
@@ -57,23 +57,23 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
       pcVar9[1] = cVar1;
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
-    FUN_00504e70(param_1,local_11c);
-    iVar6 = FUN_00456a60("world",param_2,&DAT_0058e270);
+    core_script_cpp_CScript_dbLoad_FUN_00504e70(param_1,local_11c);
+    iVar6 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,&DAT_0058e270);
     if (iVar6 == 0) {
       return 1;
     }
     bVar2 = true;
-    iVar4 = FUN_00566e70(iVar6);
+    iVar4 = _ftell(iVar6);
     do {
       iVar7 = 0;
-      while (iVar5 = FUN_00566e70(iVar6), iVar5 < iVar3 + iVar4) {
-        iVar5 = FUN_00564570(iVar6);
+      while (iVar5 = _ftell(iVar6), iVar5 < iVar3 + iVar4) {
+        iVar5 = _fgetc(iVar6);
         if (iVar5 == -1) goto LAB_004fecd4;
         if (iVar5 != 0xd) {
           if (iVar5 == 10) goto LAB_004fecd4;
           if (iVar5 == 0) {
-            FUN_00563380(iVar6);
-            iVar3 = FUN_00477660(param_1 + 0x30);
+            _fclose(iVar6);
+            iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(param_1 + 0x30);
             FUN_0046fcd0(0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1)
             ;
             FUN_004fe500(param_1);
@@ -86,9 +86,9 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
       bVar2 = false;
 LAB_004fecd4:
       local_31c[iVar7] = 0;
-      FUN_00473cb0(local_14,local_31c);
+      shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_14,local_31c);
     } while (bVar2);
-    FUN_00563380(iVar6);
+    _fclose(iVar6);
     FUN_004fee30(param_1);
     if (param_3 != 0) {
 LAB_004fee03:

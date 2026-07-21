@@ -48,13 +48,13 @@
 ;   FUN_0040b300 at 0040b7a0
 ;   FUN_0043d1c0 at 0043d7b4
 ;   FUN_00477890 at 00477f49
-;   FUN_004ac3f0 at 004ac429
 ;   FUN_004b27c0 at 004b2ef2
-;   FUN_004b6770 at 004b6864
-;   FUN_00509140 at 005094fc
 ;   FUN_00515ea0 at 00516590
 ;   FUN_00545c30 at 005463ac
-;   FUN_0054ab10 at 0054afc2
+;   core_glass.cpp_CGlass_process_FUN_004ac3f0 at 004ac429
+;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6864
+;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 005094fc
+;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afc2
 ;
 ; Referenced Globals:
 ;   undefined4 s_7YEARS.RAW_00585047+1
@@ -71,11 +71,11 @@
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
-;   FUN_0044da40
-;   FUN_00461eb0
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
+;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300
+;   crt_memory.c___arrinit_FUN_005644a7
+;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   FUN_004accf0
-;   FUN_0050e300
-;   FUN_005644a7
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     PUSH 0x4                            ; 004ada5b
     LEA EAX,[ESP + 0x8]                 ; 004ada5d
     PUSH EAX                            ; 004ada61
-    CALL FUN_005644a7                   ; 004ada62
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 004ada62
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     FLD float ptr [EBX + 0x150]         ; 004ada67
     FMUL double ptr [0x00585068]        ; 004ada6d | DAT_00585068
     ADD ESP,0xc                         ; 004ada73
@@ -116,8 +116,8 @@ section .text
     MOV dword ptr [ESP + 0xc0],EDI      ; 004ada92
     PUSH EAX                            ; 004ada99
     FSTP float ptr [ESP + 0xbc]         ; 004ada9a
-    CALL FUN_0044da40                   ; 004adaa1
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined FUN_0044da40()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adaa1
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
     LEA EDX,[EBX + 0x20]                ; 004adaa6
     FLD float ptr [EDX]                 ; 004adaa9
     FADD float ptr [EAX]                ; 004adaab
@@ -150,8 +150,8 @@ section .text
     FADD float ptr [EBX + 0x154]        ; 004adb15
     PUSH EAX                            ; 004adb1b
     FSTP float ptr [ESP + 0xc0]         ; 004adb1c
-    CALL FUN_0044da40                   ; 004adb23
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined FUN_0044da40()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adb23
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
     LEA EDX,[EBX + 0x20]                ; 004adb28
     FLD float ptr [EDX]                 ; 004adb2b
     FADD float ptr [EAX]                ; 004adb2d
@@ -182,8 +182,8 @@ section .text
     PUSH EAX                            ; 004adb82
     LEA EAX,[EBX + 0x3c]                ; 004adb83
     PUSH EAX                            ; 004adb86
-    CALL FUN_0044da40                   ; 004adb87
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined FUN_0044da40()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adb87
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
     LEA EDX,[EBX + 0x20]                ; 004adb8c
     FLD float ptr [EDX]                 ; 004adb8f
     FADD float ptr [EAX]                ; 004adb91
@@ -215,8 +215,8 @@ section .text
     PUSH EAX                            ; 004adbfc
     LEA EAX,[EBX + 0x3c]                ; 004adbfd
     PUSH EAX                            ; 004adc00
-    CALL FUN_0044da40                   ; 004adc01
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined FUN_0044da40()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adc01
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
     LEA EDX,[EBX + 0x20]                ; 004adc06
     FLD float ptr [EDX]                 ; 004adc09
     FADD float ptr [EAX]                ; 004adc0b
@@ -244,8 +244,8 @@ section .text
     PUSH EAX                            ; 004adc67
     MOV EDX,dword ptr [0x005ae704]      ; 004adc68 | DAT_005ae704
     PUSH EDX                            ; 004adc6e | DAT_01b4d738
-    CALL FUN_00461eb0                   ; 004adc6f
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00461eb0()
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004adc6f
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
     MOV ECX,dword ptr [0x005b762c]      ; 004adc74 | DAT_005b762c
     ADD ESP,0x8                         ; 004adc7a
     CMP ECX,0x40                        ; 004adc7d
@@ -311,8 +311,8 @@ section .text
         ;   Label: LAB_004add1f
     MOV ESI,dword ptr [0x005be368]      ; 004add20 | DAT_005be368
     PUSH ESI                            ; 004add26 | DAT_01e57284
-    CALL FUN_0050e300                   ; 004add27
-        ;   XREF to: 0050e300 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e300()
+    CALL core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300 ; 004add27
+        ;   XREF to: 0050e300 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300()
     ADD ESP,0x4                         ; 004add2c
     JMP 0x004ada56                      ; 004add2f
         ;   XREF to: 004ada56 (UNCONDITIONAL_JUMP)  ; LAB_004ada56

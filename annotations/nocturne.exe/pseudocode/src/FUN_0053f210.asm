@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; Called Functions:
-;   FUN_0053a760
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH ESI                            ; 0053f22f
     LEA ESI,[ESP + 0xc]                 ; 0053f230
     MOV EDI,EBX                         ; 0053f234
-    CALL FUN_0053a760                   ; 0053f236
-        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined FUN_0053a760()
+    CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 ; 0053f236
+        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760()
     MOV ECX,0xc                         ; 0053f23b
     LEA ESI,[ESP + 0xc]                 ; 0053f240
     ADD ESP,0xc                         ; 0053f244

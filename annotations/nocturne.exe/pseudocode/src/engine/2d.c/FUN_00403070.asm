@@ -15,13 +15,13 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   crt_stdio.c_fclose_FUN_00563380
+;   crt_stdio.c_fread_FUN_005636d0
+;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   FUN_00402e90
 ;   FUN_00403130
-;   FUN_00456a60
 ;   FUN_004c8440
-;   FUN_00532a80
-;   FUN_00563380
-;   FUN_005636d0
+;   wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH 0x57718c                       ; 0040307b | DAT_0057718c
     PUSH EDI                            ; 00403080
     PUSH 0x57718f                       ; 00403081 | DAT_0057718f
-    CALL FUN_00456a60                   ; 00403086
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403086
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0040308b
     MOV ESI,EAX                         ; 0040308e
     TEST EAX,EAX                        ; 00403090
@@ -51,12 +51,12 @@ section .text
     PUSH 0x10                           ; 00403099
     PUSH 0x100                          ; 0040309b
     PUSH 0x1bd1ea0                      ; 004030a0
-    CALL FUN_005636d0                   ; 004030a5
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 004030a5
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 004030aa
     PUSH ESI                            ; 004030ad
-    CALL FUN_00563380                   ; 004030ae
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    CALL crt_stdio.c_fclose_FUN_00563380 ; 004030ae
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004030b3
         ;   Label: LAB_004030b3
     XOR EAX,EAX                         ; 004030b6
@@ -71,8 +71,8 @@ section .text
     JL 0x004030b9                       ; 004030d7
         ;   XREF to: 004030b9 (CONDITIONAL_JUMP)  ; LAB_004030b9
     PUSH EBX                            ; 004030d9
-    CALL FUN_00532a80                   ; 004030da
-        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00532a80()
+    CALL wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80 ; 004030da
+        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80()
     ADD ESP,0x4                         ; 004030df
     POP EDI                             ; 004030e2
     POP EBX                             ; 004030e3
@@ -89,8 +89,8 @@ section .text
     PUSH 0x577193                       ; 004030f7 | DAT_00577193
     PUSH EDI                            ; 004030fc
     PUSH 0x577196                       ; 004030fd | DAT_00577196
-    CALL FUN_00456a60                   ; 00403102
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00456a60()
+    CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403102
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00403107
     MOV ESI,EAX                         ; 0040310a
     JMP 0x00403094                      ; 0040310c

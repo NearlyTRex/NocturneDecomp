@@ -31,8 +31,8 @@ int FUN_00573ca0(char *param_1,int param_2)
     cVar3 = *param_1;
     pcVar10 = param_1;
     while (cVar3 != '\0') {
-      iVar5 = FUN_00565e20(*pcVar8);
-      iVar6 = FUN_00565e20(*pcVar10);
+      iVar5 = toupper(*pcVar8);
+      iVar6 = toupper(*pcVar10);
       if (iVar5 != iVar6) break;
       if (*pcVar8 == '=') {
         iVar5 = (int)piVar9 - (int)_DAT_02de54a4 >> 2;
@@ -52,7 +52,7 @@ int FUN_00573ca0(char *param_1,int param_2)
             FUN_005638d0(iVar6);
           }
           iVar6 = (int)piVar9 - (int)_DAT_02de54a4 >> 2;
-          FUN_00566170(piVar9,_DAT_02de54a0,iVar6);
+          memmove(piVar9,_DAT_02de54a0,iVar6);
           _DAT_02de54a0 = piVar9;
           if (iVar5 < iVar6) {
             puVar7 = (byte *)(iVar5 + (int)piVar9);

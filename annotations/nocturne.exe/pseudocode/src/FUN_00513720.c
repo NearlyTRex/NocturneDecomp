@@ -24,9 +24,9 @@ void FUN_00513720(int *param_1)
   int *local_14;
   
   bVar8 = 0;
-  uVar1 = FUN_00461090(DAT_005ae704);
-  FUN_00461070(DAT_005ae704,0,uVar1);
-  FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);
+  uVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0,uVar1);
+  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);
   iVar5 = 0;
   if (0 < *param_1) {
     piVar11 = param_1 + 0x44;
@@ -35,12 +35,15 @@ void FUN_00513720(int *param_1)
     piVar9 = param_1 + 1;
     do {
       piVar10 = piVar9;
-      FUN_00460700(0x01B4D738,local_14,uVar1,piVar9,piVar11);
-      FUN_00460c00(0x01B4D738,piVar9[iVar5 * 0x68 + 0x50]);
-      FUN_00460780(0x01B4D738,piVar11);
-      FUN_004609d0(0x01B4D738,0x26635f8);
-      FUN_0052eed4();
-      FUN_00507c80(param_1,0x461c3f9a,0);
+      engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
+                (0x01B4D738,local_14,uVar1,piVar9,piVar11);
+      engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
+                (0x01B4D738,piVar9[iVar5 * 0x68 + 0x50]);
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(0x01B4D738,piVar11);
+      engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(0x01B4D738,0x26635f8)
+      ;
+      wincore_windll_cpp_clearZBufferNative_FUN_0052eed4();
+      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,0x461c3f9a,0);
       iVar4 = 0;
       puVar3 = local_18;
       do {
@@ -66,7 +69,7 @@ void FUN_00513720(int *param_1)
       piVar9 = piVar10;
     } while (iVar5 < *param_1);
   }
-  thunk_FUN_004ce920(DAT_005ae704);
-  FUN_00461070(DAT_005ae704,uVar1);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,uVar1);
   return;
 }

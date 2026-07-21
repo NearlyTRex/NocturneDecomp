@@ -10,9 +10,9 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[3]:
-;   FUN_00409fc0 at 00409ff5
-;   FUN_004f1c90 at 004f1d77
-;   FUN_00509140 at 0050935a
+;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0 at 00409ff5
+;   core_path.cpp_getOrCreatePathMap_FUN_004f1c90 at 004f1d77
+;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 0050935a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058cd8f
@@ -20,9 +20,9 @@
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
-;   FUN_0046b700
-;   FUN_004f1e10
-;   FUN_0056488c
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+;   core_path.cpp_CPathMap_reset_FUN_004f1e10
+;   crt_stdlib.c_rand_FUN_0056488c
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
         ;   Label: LAB_004f0404
     PUSH 0x1fba938                      ; 004f0405 | DAT_01fba938
     LEA ESI,[ESP + 0x14]                ; 004f040a
-    CALL FUN_0046b700                   ; 004f040e
-        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b700()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f040e
+        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
     LEA ESI,[ESP + 0x14]                ; 004f0413
     LEA EDI,[EBX + 0xc]                 ; 004f0417
     ADD ESP,0x8                         ; 004f041a
@@ -123,8 +123,8 @@ section .text
     POP ESI                             ; 004f0445
     POP EBX                             ; 004f0446
     RET                                 ; 004f0447
-    CALL FUN_0056488c                   ; 004f0448
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined FUN_0056488c()
+    CALL crt_stdlib.c_rand_FUN_0056488c ; 004f0448
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_004f0448
     AND EAX,0x3fff                      ; 004f044d
     MOV dword ptr [EBX + 0x138d8],EAX   ; 004f0452
@@ -150,8 +150,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 004f0486
     PUSH EBX                            ; 004f0489
     MOV dword ptr [EBX + 0x28],EAX      ; 004f048a
-    CALL FUN_004f1e10                   ; 004f048d
-        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; undefined FUN_004f1e10()
+    CALL core_path.cpp_CPathMap_reset_FUN_004f1e10 ; 004f048d
+        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_reset_FUN_004f1e10()
     ADD ESP,0x4                         ; 004f0492
     MOV ESP,EBP                         ; 004f0495
     POP EBP                             ; 004f0497

@@ -29,11 +29,11 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_0044aed0
-;   FUN_00467330
+;   core_dcube.cpp_CDemonCube_load_FUN_0044aed0
+;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330
+;   crt_stdio.c_fread_FUN_005636d0
 ;   FUN_004673a0
 ;   FUN_004c8440
-;   FUN_005636d0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     XOR EDX,EDX                         ; 004676e1
     PUSH EAX                            ; 004676e3
     MOV dword ptr [0x01bc994c],EDX      ; 004676e4 | DAT_01bc994c
-    CALL FUN_005636d0                   ; 004676ea
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 004676ea
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 004676ef
     CMP dword ptr [ESP + 0xc],0x1       ; 004676f2
     JL 0x00467809                       ; 004676f7
@@ -83,48 +83,48 @@ section .text
     PUSH 0x4                            ; 0046772f
     LEA EAX,[EBX + 0x40]                ; 00467731
     PUSH EAX                            ; 00467734
-    CALL FUN_005636d0                   ; 00467735
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00467735
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 0046773a
     PUSH EBP                            ; 0046773d
     PUSH 0x1                            ; 0046773e
     PUSH 0x4                            ; 00467740
     LEA EAX,[EBX + 0x44]                ; 00467742
     PUSH EAX                            ; 00467745
-    CALL FUN_005636d0                   ; 00467746
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00467746
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 0046774b
     PUSH EBP                            ; 0046774e
     PUSH 0x1                            ; 0046774f
     PUSH 0x4                            ; 00467751
     LEA EAX,[EBX + 0x48]                ; 00467753
     PUSH EAX                            ; 00467756
-    CALL FUN_005636d0                   ; 00467757
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00467757
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 0046775c
     PUSH EBP                            ; 0046775f
     PUSH 0x1                            ; 00467760
     PUSH 0xc                            ; 00467762
     LEA EAX,[EBX + 0x10]                ; 00467764
     PUSH EAX                            ; 00467767
-    CALL FUN_005636d0                   ; 00467768
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00467768
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 0046776d
     PUSH EBP                            ; 00467770
     PUSH 0x1                            ; 00467771
     PUSH 0xc                            ; 00467773
     LEA EAX,[EBX + 0x1c]                ; 00467775
     PUSH EAX                            ; 00467778
-    CALL FUN_005636d0                   ; 00467779
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 00467779
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 0046777e
     PUSH EBP                            ; 00467781
     PUSH 0x1                            ; 00467782
     PUSH 0xc                            ; 00467784
     LEA ESI,[EBX + 0x28]                ; 00467786
     PUSH ESI                            ; 00467789
-    CALL FUN_005636d0                   ; 0046778a
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005636d0()
+    CALL crt_stdio.c_fread_FUN_005636d0 ; 0046778a
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     FLD float ptr [ESI]                 ; 0046778f
     FDIV float ptr [0x0057e1ca]         ; 00467791 | DAT_0057e1ca
     ADD ESP,0x10                        ; 00467797
@@ -151,8 +151,8 @@ section .text
     JL 0x00467831                       ; 004677d4
         ;   XREF to: 00467831 (CONDITIONAL_JUMP)  ; LAB_00467831
     PUSH EBX                            ; 004677d6
-    CALL FUN_00467330                   ; 004677d7
-        ;   XREF to: 00467330 (UNCONDITIONAL_CALL)  ; undefined FUN_00467330()
+    CALL core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330 ; 004677d7
+        ;   XREF to: 00467330 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330()
     XOR ESI,ESI                         ; 004677dc
     XOR EDI,EDI                         ; 004677de
     ADD ESP,0x4                         ; 004677e0
@@ -169,8 +169,8 @@ section .text
     ADD EAX,EDI                         ; 004677f8
     PUSH EAX                            ; 004677fa
     INC ESI                             ; 004677fb
-    CALL FUN_0044aed0                   ; 004677fc
-        ;   XREF to: 0044aed0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044aed0()
+    CALL core_dcube.cpp_CDemonCube_load_FUN_0044aed0 ; 004677fc
+        ;   XREF to: 0044aed0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCube_load_FUN_0044aed0()
     ADD EDI,0x34                        ; 00467801
     ADD ESP,0x8                         ; 00467804
     JMP 0x004677e3                      ; 00467807

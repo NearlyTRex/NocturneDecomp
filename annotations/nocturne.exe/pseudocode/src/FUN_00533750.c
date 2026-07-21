@@ -81,20 +81,21 @@ void FUN_00533750(int param_1)
   fStack_e8 = fStack_e8 + _DAT_005950ee;
   fStack_e0 = fStack_e0 + _DAT_005950f2;
   fStack_dc = fStack_dc + _DAT_005950f2;
-  FUN_0041dbc0(auStack_d4);
+  core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(auStack_d4);
   iVar7 = 0;
   puVar6 = auStack_1cc;
-  FUN_005644a7(auStack_1cc,8,&DAT_005993b0);
+  __arrinit(auStack_1cc,8,&DAT_005993b0);
   do {
-    uVar4 = FUN_0041cc70(&local_ec,auStack_50,iVar7);
-    puVar5 = (uint *)FUN_0040a240(param_1,auStack_74,uVar4);
+    uVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&local_ec,auStack_50,iVar7);
+    puVar5 = (uint *)
+             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_74,uVar4);
     if (puVar6 != puVar5) {
       *puVar6 = *puVar5;
       puVar6[1] = puVar5[1];
       puVar6[2] = puVar5[2];
     }
     iVar7 = iVar7 + 1;
-    FUN_0041cc00(auStack_d4,puVar6);
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(auStack_d4,puVar6);
     puVar6 = puVar6 + 3;
   } while (iVar7 < 8);
   fStack_44 = SQRT(fStack_e4 * fStack_e4 + local_ec * local_ec + fStack_e8 * fStack_e8);
@@ -109,7 +110,7 @@ void FUN_00533750(int param_1)
   uStack_bc = 0;
   uStack_b8 = 0;
   fStack_18 = fStack_b4;
-  FUN_0040a200(param_1,&fStack_98,&uStack_bc);
+  core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_98,&uStack_bc);
   pfStack_20 = (float *)(param_1 + 0x20);
   iStack_24 = 0;
   for (iStack_1c = 0; iStack_1c < *(int *)(0x01E57284 + 0x14ecb0); iStack_1c = iStack_1c + 1) {
@@ -118,12 +119,13 @@ void FUN_00533750(int param_1)
     fVar3 = pfStack_20[1] - *(float *)(iVar7 + 0x24);
     fVar2 = pfStack_20[2] - *(float *)(iVar7 + 0x28);
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fStack_2c) {
-      FUN_00511990(auStack_130);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_130);
       auStack_130[0] = 0;
       iStack_28 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x34))(iVar7,auStack_130);
       if (iStack_28 != 0) {
         uStack_11c = 0;
-        FUN_0040a290(param_1,&fStack_68,(float *)(iVar7 + 0x20));
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                  (param_1,&fStack_68,(float *)(iVar7 + 0x20));
         if (fStack_68 < local_ec) {
           fStack_68 = local_ec;
         }
@@ -137,9 +139,10 @@ void FUN_00533750(int param_1)
           fStack_64 = fStack_dc;
         }
         uStack_60 = 0;
-        FUN_0040a240(param_1,&fStack_80,&fStack_68);
-        fStack_18 = (float)FUN_0040a740(iVar7,&fStack_80,&fStack_98,auStack_108,auStack_130,
-                                        iStack_28,auStack_d4);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_80,&fStack_68);
+        fStack_18 = (float)core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740
+                                     (iVar7,&fStack_80,&fStack_98,auStack_108,auStack_130,iStack_28,
+                                      auStack_d4);
         if ((0.0 <= fStack_18) && (fStack_18 <= 1.0)) {
           fStack_5c = fStack_98 * fStack_18;
           fStack_58 = fStack_94 * fStack_18;
@@ -147,8 +150,8 @@ void FUN_00533750(int param_1)
           fStack_b0 = fStack_80 + fStack_5c;
           fStack_ac = fStack_7c + fStack_58;
           fStack_a8 = fStack_78 + fStack_54;
-          FUN_0040a290(iVar7,&uStack_a4,&fStack_b0);
-          FUN_00423ed0(auStack_16c);
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar7,&uStack_a4,&fStack_b0);
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_16c);
           uStack_168 = *(uint *)(param_1 + 0x550);
           uStack_13c = 0x67;
           if (&uStack_150 != &uStack_a4) {

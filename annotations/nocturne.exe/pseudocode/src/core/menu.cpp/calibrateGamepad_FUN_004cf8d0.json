@@ -1,0 +1,468 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 252,
+    "complexity_score": 215,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 85,
+    "suspect_count": 11,
+    "suspect_types": [
+      "raw_address_constant",
+      "raw_address_pointer_store",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 337
+  },
+  "cross_references": [
+    {
+      "addr": "004d2d00",
+      "from_addr": "004d3be6",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0d20",
+      "from_addr": "004d127c",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_004d0d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cf8d0",
+    "address_range": [
+      [
+        "004cf8d0",
+        "004cfbb6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_calibrateGamepad_FUN_004cf8d0",
+    "signature": "undefined4 __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049e8b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_0049e8b0"
+    },
+    {
+      "addr": "004df040",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00402600",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00402600"
+    },
+    {
+      "addr": "00490980",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_00490980"
+    },
+    {
+      "addr": "004930e0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0"
+    },
+    {
+      "addr": "00492da0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0"
+    },
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    },
+    {
+      "addr": "00553910",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005884ec",
+      "name": "s_%d,%d,%x_005884ec",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005884f5",
+      "name": "s_Center_gamepad,_press_ENTER_005884f5",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00588511",
+      "name": "s_Move_gamepad_in_all_directions,_p_00588511",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005b9354",
+      "name": "DAT_005b9354",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bac64",
+      "name": "DAT_005bac64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b98f8",
+      "name": "DAT_014b98f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c038f8",
+      "name": "DAT_01c038f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c038fc",
+      "name": "DAT_01c038fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03908",
+      "name": "DAT_01c03908",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c77690",
+      "name": "DAT_01c77690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c77694",
+      "name": "DAT_01c77694",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c77698",
+      "name": "DAT_01c77698",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7769c",
+      "name": "DAT_01c7769c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776a0",
+      "name": "DAT_01c776a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776a4",
+      "name": "DAT_01c776a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776a8",
+      "name": "DAT_01c776a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc30e4",
+      "name": "DAT_01cc30e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5162790697674415,
+    "instruction_count": 215,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 23,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 18,
+      "CALLIND": 4,
+      "CBRANCH": 8,
+      "COPY": 169,
+      "INT_ADD": 60,
+      "INT_AND": 152,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 107,
+      "INT_LESS": 13,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 16,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 50,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 93,
+      "INT_XOR": 3,
+      "LOAD": 24,
+      "POPCOUNT": 50,
+      "RETURN": 2,
+      "STORE": 90
+    },
+    "pcode_op_count": 971
+  },
+  "stack_frame": {
+    "frame_size": 552,
+    "local_size": 552,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_224",
+        "offset": -548,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 37,
+      "match": "*(code **)(*0x01CC30E4",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 37,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 40,
+      "match": "*(code **)(*0x01CC30E4",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 58,
+      "match": "*(code **)(*0x01CC30E4",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 58,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 69,
+      "match": "*(code **)(*0x01CC30E4",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 69,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x1c775ec assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
+      "match": "0x1c775ec",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01C775EC;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1c775ec assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 85,
+      "match": "0x1c775ec",
+      "severity": "moderate",
+      "text": "iVar5 = 0x01C775EC;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

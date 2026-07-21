@@ -26,8 +26,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
-;   FUN_0055aa00
-;   FUN_0055afb0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH EAX                            ; 0054351b
     LEA EAX,[ESP + 0x38]                ; 0054351c
     PUSH EAX                            ; 00543520
-    CALL FUN_0055afb0                   ; 00543521
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055afb0()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 00543521
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
     LEA EAX,[ESI*0x4 + 0x0]             ; 00543526
     ADD ESP,0xc                         ; 0054352d
     SUB EAX,ESI                         ; 00543530
@@ -102,8 +102,8 @@ section .text
     PUSH EAX                            ; 00543549
     LEA ESI,[ESP + 0x8]                 ; 0054354a
     MOV EDI,EBX                         ; 0054354e
-    CALL FUN_0055aa00                   ; 00543550
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined FUN_0055aa00()
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00543550
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
     MOV ECX,0xc                         ; 00543555
     LEA ESI,[ESP + 0x8]                 ; 0054355a
     ADD ESP,0x8                         ; 0054355e

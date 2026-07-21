@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    wincore_windll.cpp_renderScanline_FUN_00530710
+# Entry:       00530710
+# Signature:   void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_00530710(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00530710 [ESP:+0]  # JMP dword ptr [0x01c00c7c]
+BRANCHIND (ram,0x1c00c7c,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

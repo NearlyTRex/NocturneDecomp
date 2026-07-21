@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0056c73c at 0056c744
 ;   FUN_00573a31 at 00573aac
+;   crt_errno.c___set_errno_FUN_0056c73c at 0056c744
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1da9

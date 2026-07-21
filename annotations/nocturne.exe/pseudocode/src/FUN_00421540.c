@@ -26,11 +26,11 @@ int FUN_00421540(int param_1)
   int iStack_8;
   
   if (*(int *)(param_1 + 0x2404) == 0) {
-    iVar1 = FUN_00461090(DAT_005ae704);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
     if (iVar1 == 0) {
-      FUN_00409f20(param_1);
+      core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
       uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_44,0);
-      iStack_14 = FUN_0041ceb0(uVar2);
+      iStack_14 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar2);
       if (iStack_14 != 0) {
         iVar1 = 0;
         if (0 < *(int *)(param_1 + 0xbd28)) {
@@ -40,7 +40,8 @@ int FUN_00421540(int param_1)
           pfVar3 = (float *)(param_1 + 0xbd34);
           do {
             iStack_8 = iStack_c + iVar1 * 0x40;
-            FUN_00460aa0(DAT_005ae704,iVar4,pfVar3);
+            engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+                      (DAT_005ae704,iVar4,pfVar3);
             fStack_20 = *(float *)(param_1 + 0x20) + *pfVar3;
             fStack_1c = *(float *)(param_1 + 0x24) + pfVar3[1];
             fStack_18 = *(float *)(param_1 + 0x28) + pfVar3[2];
@@ -50,9 +51,10 @@ int FUN_00421540(int param_1)
               fStack_24 = fStack_18;
             }
             FUN_0050e370(0x01E57284,&fStack_2c);
-            FUN_00461010(DAT_005ae704,0xffff);
-            FUN_004544d0(*(int *)(iStack_8 + 4) * 0x17c + iStack_10,0,0x2e7);
-            thunk_FUN_004cdbc0(DAT_005ae704);
+            engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+            core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+                      (*(int *)(iStack_8 + 4) * 0x17c + iStack_10,0,0x2e7);
+            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
             iVar4 = iVar4 + 0x40;
             iVar1 = iVar1 + 1;
             pfVar3 = pfVar3 + 0x10;
@@ -60,7 +62,7 @@ int FUN_00421540(int param_1)
         }
         FUN_0050e370(0x01E57284,0);
       }
-      FUN_00409f60(param_1);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       return iStack_14;
     }
   }

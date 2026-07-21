@@ -1,0 +1,536 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 142,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 144,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 145,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 151,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 61,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 63,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 129,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 136,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 140,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 143,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 30,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 49,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 51,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 170,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 208,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 217,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 322,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 335,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 212,
+    "complexity_score": 289,
+    "cross_reference_count": 1,
+    "function_call_count": 15,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
+    "suspect_count": 19,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 291
+  },
+  "cross_references": [
+    {
+      "addr": "0052dd20",
+      "from_addr": "0052dd38",
+      "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004748b0",
+    "address_range": [
+      [
+        "004748b0",
+        "00474ade"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(int *param_1,char *param_2,char *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056626c",
+      "is_variadic": false,
+      "name": "crt_file.c_makepath_FUN_0056626c"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    },
+    {
+      "addr": "00566170",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_00566170"
+    },
+    {
+      "addr": "00566498",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_00566498"
+    },
+    {
+      "addr": "00456d40",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40"
+    },
+    {
+      "addr": "00456c00",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00"
+    },
+    {
+      "addr": "00456c20",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20"
+    },
+    {
+      "addr": "00456cc0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00456cc0"
+    },
+    {
+      "addr": "00456c40",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40"
+    },
+    {
+      "addr": "004f8da0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0"
+    },
+    {
+      "addr": "004f8d50",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_initSearch_FUN_004f8d50"
+    },
+    {
+      "addr": "00473cb0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00473cb0"
+    },
+    {
+      "addr": "00474140",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_findString_FUN_00474140"
+    },
+    {
+      "addr": "00474080",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00474080"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057ee19",
+      "name": "s_%s\\%s_0057ee19",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005be1cc",
+      "name": "DAT_005be1cc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0052dd38",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052dd4f",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.407407407407407,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 16,
+      "CBRANCH": 17,
+      "COPY": 114,
+      "INT_ADD": 57,
+      "INT_AND": 92,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 87,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 43,
+      "INT_SUB": 76,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 21,
+      "POPCOUNT": 43,
+      "RETURN": 1,
+      "STORE": 62
+    },
+    "pcode_op_count": 714
+  },
+  "stack_frame": {
+    "frame_size": 2120,
+    "local_size": 2120,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_844",
+        "offset": -2116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_528",
+        "offset": -1320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_414",
+        "offset": -1044,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_310",
+        "offset": -784,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30f",
+        "offset": -783,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10f",
+        "offset": -271,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(int *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(int *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(int *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 == (char *)0x0) || (*param_2 == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 == (char *)0x0) || (*param_2 == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "cVar1 = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "cVar1 = param_3[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_sprintf(local_110,\"%s\\\\%s\",param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "_sprintf(local_110,\"%s\\\\%s\",param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = shape_edittool_cpp_CStrList_findString_FUN_00474140(param_1,local_414);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,local_414);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,iVar6,local_528);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,local_528);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 44,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

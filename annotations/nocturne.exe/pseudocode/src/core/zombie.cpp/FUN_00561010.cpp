@@ -76,7 +76,7 @@ uint FUN_00561010(int param_1,float param_2)
   *(float *)(param_1 + 0xbd2c) = fVar2;
   if (0.0 < fVar2) {
     *(int *)(param_1 + 0xbd28) = *(int *)(param_1 + 0xbd28) + 1;
-    local_14 = FUN_0040dda0(0x40a00000,0x41200000);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
     *(uint *)(param_1 + 0xbd2c) = local_14;
   }
   if (*(int *)(param_1 + 0x24ac) != 0) {
@@ -110,10 +110,12 @@ uint FUN_00561010(int param_1,float param_2)
         fStack_5c = pfVar6[3] - *pfVar6;
         fStack_58 = pfVar6[4] - pfVar6[1];
         fStack_54 = pfVar6[5] - pfVar6[2];
-        iStack_28 = FUN_0055e940(&fStack_5c);
-        if (((iStack_28 != 0) && (iVar4 = FUN_00561880(param_1,iStack_28), iVar4 != 0)) &&
-           ((iVar4 = FUN_0040d7e0(iVar8,"CBodyPart"), iVar4 == 0 ||
-            ((*(uint *)(iVar8 + 0x6c) & 3) == (*(uint *)(param_1 + 0xbd28) & 3))))) {
+        iStack_28 = core_zombie_cpp_classifyObjectShape_FUN_0055e940(&fStack_5c);
+        if (((iStack_28 != 0) &&
+            (iVar4 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(param_1,iStack_28),
+            iVar4 != 0)) &&
+           ((iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar8,"CBodyPart"), iVar4 == 0
+            || ((*(uint *)(iVar8 + 0x6c) & 3) == (*(uint *)(param_1 + 0xbd28) & 3))))) {
           fStack_8c = *(float *)(iVar8 + 0x20) - *local_1c;
           fStack_88 = *(float *)(iVar8 + 0x24) - local_1c[1];
           fStack_88 = fStack_88 * fStack_88;
@@ -136,23 +138,25 @@ uint FUN_00561010(int param_1,float param_2)
     if (local_24 < 1) {
       return 0;
     }
-    iVar7 = FUN_0040de00(0,local_24 + -1);
+    iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,local_24 + -1);
     *(int *)(param_1 + 0xbd34) = aiStack_160[iVar7];
     iVar7 = aiStack_138[iVar7];
     *(uint *)(param_1 + 0xbd30) = 0xc2200000;
     *(int *)(param_1 + 0xbd38) = iVar7;
     *(int *)(param_1 + 0xbd28) = *(int *)(param_1 + 0xbd28) + 1;
-    FUN_0043ac60(PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,
-                 *(uint *)(param_1 + 0xbd34));
+    engine_console_cpp_CConsole_printf_FUN_0043ac60
+              (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,
+               *(uint *)(param_1 + 0xbd34));
     return 1;
   }
   iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x8c))(iVar7);
   if (iVar7 != 0) {
-    FUN_0043ac60(PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
-                 *(uint *)(param_1 + 0xbd34));
+    engine_console_cpp_CConsole_printf_FUN_0043ac60
+              (PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
+               *(uint *)(param_1 + 0xbd34));
     *(uint *)(param_1 + 0xbd34) = 0;
     *(uint *)(param_1 + 0xbd30) = 0;
-    FUN_005624e0(param_1);
+    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
     return 0;
   }
   fVar2 = *(float *)(param_1 + 0x20) - *(float *)(*(int *)(param_1 + 0xbd34) + 0x20);
@@ -163,11 +167,13 @@ uint FUN_00561010(int param_1,float param_2)
   }
   iVar8 = -1;
   *(float *)(param_1 + 0xbd30) = param_2 * fStack_168 + *(float *)(param_1 + 0xbd30);
-  iVar7 = FUN_005617e0(param_1,*(uint *)(param_1 + 0xbd38));
+  iVar7 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0
+                    (param_1,*(uint *)(param_1 + 0xbd38));
   if ((((-1 < iVar7) && (*(float *)(param_1 + 0xbd30) < 0.0)) &&
       (iVar9 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbd34) + 0x14c) + 0x7c))
                          (*(int *)(param_1 + 0xbd34),param_1), iVar9 == 3)) &&
-     (iVar9 = FUN_00561880(param_1,*(uint *)(param_1 + 0xbd38)), iVar9 != 0)) {
+     (iVar9 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880
+                        (param_1,*(uint *)(param_1 + 0xbd38)), iVar9 != 0)) {
     uVar1 = *(uint *)(param_1 + 0xbd38);
     if (uVar1 < 2) {
       if (uVar1 == 1) {
@@ -175,10 +181,11 @@ LAB_00561230:
         iVar8 = *(int *)(param_1 + 0xbd34);
         (**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_e0);
         uStack_2c = 0x3f000000;
-        uVar5 = FUN_00417fc0(auStack_e0,auStack_b0,auStack_d4,auStack_80,&uStack_2c);
-        FUN_00417f60(uVar5);
+        uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
+                          (auStack_e0,auStack_b0,auStack_d4,auStack_80,&uStack_2c);
+        core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
         fStack_78 = fStack_d8 + (float)_DAT_0059886e;
-        FUN_0040a240(iVar8,&uStack_44,auStack_80);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_44,auStack_80);
         if (&uStack_a4 != &uStack_44) {
           uStack_a4 = uStack_44;
           uStack_a0 = uStack_40;
@@ -203,10 +210,11 @@ LAB_005614f8:
       iVar8 = *(int *)(param_1 + 0xbd34);
       (**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_f8);
       uStack_30 = 0x3f000000;
-      uVar5 = FUN_00417fc0(auStack_f8,auStack_68,auStack_ec,auStack_bc,&uStack_30);
-      FUN_00417f60(uVar5);
+      uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
+                        (auStack_f8,auStack_68,auStack_ec,auStack_bc,&uStack_30);
+      core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
       fStack_b4 = fStack_f0 + (float)_DAT_0059886e;
-      FUN_0040a240(iVar8,&uStack_50,auStack_bc);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_50,auStack_bc);
       if (&uStack_a4 != &uStack_50) {
         uStack_a4 = uStack_50;
         uStack_a0 = uStack_4c;
@@ -236,21 +244,24 @@ LAB_005614f8:
         uStack_c8 = 0x3fc00000;
       }
     }
-    iVar8 = FUN_004247f0(param_1,&uStack_a4,0,&uStack_c8,0,0);
+    iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                      (param_1,&uStack_a4,0,&uStack_c8,0,0);
   }
   if (iVar8 < 0) {
-    FUN_0043ac60(PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",param_1,
-                 *(uint *)(param_1 + 0xbd34));
+    engine_console_cpp_CConsole_printf_FUN_0043ac60
+              (PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",param_1,
+               *(uint *)(param_1 + 0xbd34));
     *(uint *)(param_1 + 0xbd34) = 0;
     *(uint *)(param_1 + 0xbd30) = 0x41a00000;
-    FUN_005624e0(param_1);
+    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
     return 0;
   }
   if (iVar8 < 1) {
     return 1;
   }
-  FUN_0043ac60(PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,
-               *(uint *)(param_1 + 0xbd34));
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,
+             *(uint *)(param_1 + 0xbd34));
   uVar1 = *(uint *)(param_1 + 0xbd38);
   if (uVar1 < 2) {
     if (uVar1 != 1) {
@@ -270,6 +281,6 @@ LAB_005615c6:
   }
   uVar5 = 10;
 LAB_00561571:
-  FUN_004e16b0(param_1 + 0x150,uVar5,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar5,1);
   return 1;
 }
