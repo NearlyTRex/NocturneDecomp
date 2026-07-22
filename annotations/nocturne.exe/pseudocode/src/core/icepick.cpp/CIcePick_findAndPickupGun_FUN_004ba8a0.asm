@@ -15,7 +15,7 @@
 ;   FUN_004b9fe0 at 004ba4a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005861b2
+;   double DOUBLE_005861b2 = 2
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
@@ -107,7 +107,7 @@ section .text
     FXCH                                ; 004ba967
     FSUB float ptr [ESP + 0x14]         ; 004ba969
     FSTP float ptr [ESP + 0x8]          ; 004ba96d
-    FCOMP double ptr [0x005861b2]       ; 004ba971 | DAT_005861b2
+    FCOMP double ptr [0x005861b2]       ; 004ba971 | DOUBLE_005861b2
     FNSTSW AX                           ; 004ba977
     SAHF                                ; 004ba979
     JA 0x004ba9a7                       ; 004ba97a

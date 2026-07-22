@@ -14,11 +14,11 @@ int __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  *(byte ***)(iVar2 + -4) = &PTR_LAB_00599454;
+  *(byte ***)(iVar2 + -4) = &PTR_core_ammo_cpp_FUN_0040ec00_00599454;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"bullet.kfm");
-  pcVar3 = &DAT_005781f6;
+  pcVar3 = "CGun";
   pcVar4 = (char *)(iVar2 + 0x17c);
   do {
     cVar1 = *pcVar3;

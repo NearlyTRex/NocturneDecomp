@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0044f0b0 at 0044f41d
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044d046
+;   core_dlight.cpp_FUN_0044f0b0 at 0044f41d
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

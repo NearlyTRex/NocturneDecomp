@@ -124,7 +124,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(float *param_1)
       local_b4 = param_1[6];
     }
     else {
-      local_b4 = param_1[4] * (float)_DAT_0058142c;
+      local_b4 = param_1[4] * (float)0.25;
     }
     local_b0 = param_1[4];
     local_60 = (int)ROUND(local_b4 * _DAT_0059d1f8);
@@ -170,7 +170,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(float *param_1)
     wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x90,&local_90);
     piVar5 = DAT_005ae704;
     fVar4 = param_1[6];
-    fVar8 = (float10)_DAT_00581424;
+    fVar8 = (float10)256;
     fVar3 = param_1[10];
     *(uint *)(*DAT_005ae704 + 0x10) = 0x80000000;
     uVar11 = 0x4890ac;

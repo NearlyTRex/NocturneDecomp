@@ -22,7 +22,7 @@ int core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(int param_1,flo
   
   if ((*(int *)(param_1 + 0x2a84) < 0) || (*(int *)(param_1 + 0x2620) <= *(int *)(param_1 + 0x2a84))
      ) {
-    _DAT_01cc4800 = "A..\\core\\charactr.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\charactr.cpp";
     _DAT_01cc4804 = 0xf00;
     FUN_004c8440("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_004110f0 at 00411244
-;   FUN_00414340 at 00414497
 ;   FUN_00419c20 at 00419c71
 ;   FUN_0045a260 at 0045a3c6
 ;   FUN_00550210 at 0055030a
+;   core_baron.cpp_FUN_004110f0 at 00411244
+;   core_batman.cpp_FUN_00414340 at 00414497
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0ee8
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dfeb4
 ;

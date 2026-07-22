@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EDX                            ; 004048fe
     MOV dword ptr [0x01c039a0],EBP      ; 004048ff | DAT_01c039a0
     MOV [0x01c039a4],EAX                ; 00404905 | DAT_01c039a4
-    CALL FUN_00432cd0                   ; 0040490a
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 0040490a
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 0040490f
     MOV ESI,dword ptr [EBX + 0x4]       ; 00404912
         ;   Label: LAB_00404912

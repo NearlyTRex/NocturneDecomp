@@ -18,7 +18,7 @@ uint __cdecl core_gore_cpp_CGore_load_FUN_004b0820(uint param_1,uint param_2)
   
   _fgets(local_110,0xff,param_2);
   iVar3 = 0;
-  _fscanf(param_2,&DAT_005851d8,&DAT_01c9e038);
+  _fscanf(param_2,"%d\n",&DAT_01c9e038);
   if (0 < _DAT_01c9e038) {
     iVar2 = 0x1c9e03c;
     do {
@@ -28,7 +28,7 @@ uint __cdecl core_gore_cpp_CGore_load_FUN_004b0820(uint param_1,uint param_2)
     } while (iVar3 < _DAT_01c9e038);
   }
   iVar3 = 0;
-  uVar1 = _fscanf(param_2,&DAT_005851dc,&DAT_01c7ccf0);
+  uVar1 = _fscanf(param_2,"%d\n",&DAT_01c7ccf0);
   if (0 < _DAT_01c7ccf0) {
     iVar2 = 0x1c7ccf4;
     do {

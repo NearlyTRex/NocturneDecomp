@@ -7,6 +7,10 @@
 // Address: 0040fcf0
 int CEnemy::dtor(int param_1,byte param_2);
 
+// Original: core_armour.cpp_FUN_0040fdb0
+// Address: 0040fdb0
+undefined4 FUN_0040fdb0(undefined4 param_1);
+
 // Original: core_armour.cpp_CFlame_dtor_FUN_0040fdc0
 // Address: 0040fdc0
 undefined4 CFlame::dtor(undefined4 param_1,byte param_2);

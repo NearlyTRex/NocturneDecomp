@@ -9,8 +9,8 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597e35
-;   undefined4 DAT_00597e39
+;   float FLOAT_00597e35 = -1
+;   double DOUBLE_00597e39 = 0.800000000000000
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_02dd1184
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 005577d0 (CONDITIONAL_JUMP)  ; LAB_005577d0
     FLD float ptr [EBX + 0xbd68]        ; 005576d6
         ;   Label: LAB_005576d6
-    FCOMP double ptr [0x00597e39]       ; 005576dc | DAT_00597e39
+    FCOMP double ptr [0x00597e39]       ; 005576dc | DOUBLE_00597e39
     FNSTSW AX                           ; 005576e2
     SAHF                                ; 005576e4
     JA 0x005577e7                       ; 005576e5
@@ -142,7 +142,7 @@ section .text
     RET                                 ; 005577cf
     FLD float ptr [EBX + 0xbd68]        ; 005577d0
         ;   Label: LAB_005577d0
-    FADD float ptr [0x00597e35]         ; 005577d6 | DAT_00597e35
+    FADD float ptr [0x00597e35]         ; 005577d6 | FLOAT_00597e35
     FSTP float ptr [EBX + 0xbd68]       ; 005577dc
     JMP 0x005576d6                      ; 005577e2
         ;   XREF to: 005576d6 (UNCONDITIONAL_JUMP)  ; LAB_005576d6

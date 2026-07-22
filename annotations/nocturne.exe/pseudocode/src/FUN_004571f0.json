@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 831,
+    "complexity_score": 815,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 101,
-    "suspect_count": 72,
+    "pseudocode_lines": 100,
+    "suspect_count": 71,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 354
+    "total_lines": 353
   },
   "cross_references": [],
   "function": {
@@ -177,9 +176,9 @@
   "globals": [
     {
       "addr": "0057d48e",
-      "name": "DAT_0057d48e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d48e",
+      "type": "double",
+      "value": "256"
     }
   ],
   "param_estimates": {
@@ -233,16 +232,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_004571f0(int param_1,uint param_2,float *param_3)",
@@ -250,7 +241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_004571f0(int param_1,uint param_2,float *param_3)",
@@ -258,7 +249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void FUN_004571f0(int param_1,uint param_2,float *param_3)",
@@ -266,7 +257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1,0x20,1,param_2);",
@@ -274,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1,0x20,1,param_2);",
@@ -282,7 +273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x20,4,1,param_2);",
@@ -290,7 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x20,4,1,param_2);",
@@ -298,7 +289,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x24,4,1,param_2);",
@@ -306,7 +297,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x24,4,1,param_2);",
@@ -314,7 +305,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00456f60(param_1);",
@@ -322,7 +313,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x33c,0xc,1,param_2);",
@@ -330,7 +321,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x33c,0xc,1,param_2);",
@@ -338,7 +329,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x348,0xc,1,param_2);",
@@ -346,7 +337,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x348,0xc,1,param_2);",
@@ -354,7 +345,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x354,0xc,1,param_2);",
@@ -362,7 +353,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x354,0xc,1,param_2);",
@@ -370,7 +361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x360,0xc,1,param_2);",
@@ -378,7 +369,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x360,0xc,1,param_2);",
@@ -386,7 +377,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x38,4,1,param_2);",
@@ -394,7 +385,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x38,4,1,param_2);",
@@ -402,7 +393,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x38)) {",
@@ -410,7 +401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1 + 0x44;",
@@ -418,7 +409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(iVar6,0x10,1,param_2);",
@@ -426,7 +417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)(param_1 + 0x38));",
@@ -434,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1 + 0x28,4,1,param_2);",
@@ -442,7 +433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(param_1 + 0x28,4,1,param_2);",
@@ -450,7 +441,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x2c),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -458,7 +449,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x2c),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -466,7 +457,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x2c),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -474,7 +465,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x30),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -482,7 +473,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x30),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -490,7 +481,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x30),0xc,*(uint *)(param_1 + 0x20),param_2);",
@@ -498,7 +489,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = _strcmp(param_1,\"newformat\");",
@@ -506,7 +497,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x34),0x20,*(uint *)(param_1 + 0x24),param_2);",
@@ -514,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x34),0x20,*(uint *)(param_1 + 0x24),param_2);",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(*(uint *)(param_1 + 0x34),0x20,*(uint *)(param_1 + 0x24),param_2);",
@@ -530,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(0x1af4ef0,0x48,*(uint *)(param_1 + 0x24),param_2);",
@@ -538,7 +529,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_2",
       "severity": "mild",
       "text": "_fread(0x1af4ef0,0x48,*(uint *)(param_1 + 0x24),param_2);",
@@ -546,7 +537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x24)) {",
@@ -554,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + iVar6) = *(uint *)(iVar4 + 0x1af4ef8);",
@@ -562,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + iVar6 + 4) = *(uint *)(iVar4 + 0x1af4efc);",
@@ -570,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 8 + iVar6) = *(uint *)(iVar4 + 0x1af4f00);",
@@ -578,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 0xc + iVar6) = *(uint *)(iVar4 + 0x1af4f04)",
@@ -586,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 0x10 + iVar6) =",
@@ -594,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 0x14 + iVar6) =",
@@ -602,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 0x18 + iVar6) =",
@@ -610,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + 0x1c + iVar6) = 0xffffffff;",
@@ -618,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x34) + iVar6 + 0x1c) =",
@@ -626,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)(param_1 + 0x24));",
@@ -634,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 71,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (float *)0x0) {",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar2 = param_3[1];",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar3 = param_3[2];",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1 + 0x20);",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar8 = (float10)round((float10)*param_3 * fVar7);",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar1 = (int *)(iVar5 + *(int *)(param_1 + 0x2c));",
@@ -682,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar1 = (int *)(iVar5 + 4 + *(int *)(param_1 + 0x2c));",
@@ -690,7 +681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar1 = (int *)(iVar5 + 8 + *(int *)(param_1 + 0x2c));",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < *(int *)(param_1 + 0x20));",
@@ -706,7 +697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120(param_1);",
@@ -714,7 +705,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x36c) = (float)*(int *)(param_1 + 0x354) * fVar2;",
@@ -722,7 +713,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x36c) = (float)*(int *)(param_1 + 0x354) * fVar2;",
@@ -730,7 +721,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x370) = (float)*(int *)(param_1 + 0x358) * fVar2;",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x370) = (float)*(int *)(param_1 + 0x358) * fVar2;",
@@ -746,7 +737,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x374) = (float)*(int *)(param_1 + 0x35c) * fVar2;",
@@ -754,7 +745,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x374) = (float)*(int *)(param_1 + 0x35c) * fVar2;",
@@ -762,7 +753,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x378) = (float)*(int *)(param_1 + 0x360) * fVar2;",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x378) = (float)*(int *)(param_1 + 0x360) * fVar2;",
@@ -778,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x37c) = (float)*(int *)(param_1 + 0x364) * fVar2;",
@@ -786,7 +777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x37c) = (float)*(int *)(param_1 + 0x364) * fVar2;",
@@ -794,7 +785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x380) = (float)*(int *)(param_1 + 0x368) * fVar2;",
@@ -802,7 +793,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x380) = (float)*(int *)(param_1 + 0x368) * fVar2;",

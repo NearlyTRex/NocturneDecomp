@@ -37,15 +37,15 @@ void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(int param_1,float param_2)
     }
     else {
       iVar3 = core_actor_cpp_randomChance_FUN_0040dea0
-                        ((param_2 * (float)_DAT_0057e4ee * fVar1) / _DAT_0059c91c);
+                        ((param_2 * (float)5 * fVar1) / _DAT_0059c91c);
       if (iVar3 != 0) {
         pfVar4 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_48);
         fStack_24 = *pfVar4 + pfVar4[3];
         fStack_20 = pfVar4[1] + pfVar4[4];
-        fStack_30 = fStack_24 * _DAT_0057e4f6;
+        fStack_30 = fStack_24 * 0.5f;
         fStack_1c = pfVar4[2] + pfVar4[5];
-        fStack_2c = fStack_20 * _DAT_0057e4f6;
-        fStack_28 = fStack_1c * _DAT_0057e4f6;
+        fStack_2c = fStack_20 * 0.5f;
+        fStack_28 = fStack_1c * 0.5f;
         iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_60);
         fStack_28 = *(float *)(iVar3 + 0x14);
         pfVar4 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

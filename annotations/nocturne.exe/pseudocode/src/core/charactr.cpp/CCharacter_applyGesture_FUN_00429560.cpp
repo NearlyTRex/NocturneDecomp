@@ -25,11 +25,11 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
     }
     iVar4 = *(int *)(param_1 + 0x25c0) * 0x54c;
     iVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1 + 0x150);
-    fVar1 = 1.0 / (*(float *)(iVar4 + 0x988 + iVar3) * _DAT_0057a26a);
+    fVar1 = 1.0 / (*(float *)(iVar4 + 0x988 + iVar3) * 0.3f);
     fVar2 = *(float *)(param_1 + 0x25c4) * fVar1;
     fVar1 = ((float)*(int *)(iVar4 + 0x9cc + iVar3) - *(float *)(param_1 + 0x25c4)) * fVar1;
     local_8 = 0.85;
-    if (fVar2 < _DAT_0057a26e) {
+    if (fVar2 < 0.85f) {
       local_8 = fVar2;
     }
     if (fVar1 < local_8) {

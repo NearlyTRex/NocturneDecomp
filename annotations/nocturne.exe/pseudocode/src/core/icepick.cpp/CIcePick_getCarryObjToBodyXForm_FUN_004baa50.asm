@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\icepick.cpp_005861b9+1
+;   TerminatedCString s_core_icepick_cpp_005861ba
 ;   string s_CIcePick::getCarryObjToBodyXForm_005861ce
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [ESP + 0x6c],ESI      ; 004bab6f
     JMP 0x004baabb                      ; 004bab73
         ;   XREF to: 004baabb (UNCONDITIONAL_JUMP)  ; LAB_004baabb
-    MOV ESI,0x5861ba                    ; 004bab78 | s_..\core\icepick.cpp_005861b9+1
+    MOV ESI,0x5861ba                    ; 004bab78 | = "..\\core\\icepick.cpp"
         ;   Label: LAB_004bab78
     MOV EBP,0x28a                       ; 004bab7d
     PUSH 0x5861ce                       ; 004bab82 | = "CIcePick::getCarryObjToBodyXForm - wr..."

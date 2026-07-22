@@ -76,19 +76,19 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   FUN_0044f0b0 at 0044f3ed
+;   core_dlight.cpp_FUN_0044f0b0 at 0044f3ed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c8c6
-;   undefined4 DAT_0057c8ce
-;   undefined4 DAT_0057c8d6
-;   undefined4 DAT_0057c8de
-;   undefined4 DAT_0057c8e6
-;   undefined4 DAT_0057c8ee
-;   undefined4 DAT_0057c8f6
-;   undefined4 DAT_0057c8fe
-;   undefined4 DAT_0057c906
-;   undefined4 DAT_0057c90e
+;   double DOUBLE_0057c8c6 = 0.100000000000000
+;   double DOUBLE_0057c8ce = 18
+;   double DOUBLE_0057c8d6 = 2
+;   double DOUBLE_0057c8de = 0.5
+;   double DOUBLE_0057c8e6 = 0.0625
+;   double DOUBLE_0057c8ee = 5.09776332595173E-315
+;   double DOUBLE_0057c8f6 = 3.14159265350000
+;   double DOUBLE_0057c8fe = 0.00390625
+;   double DOUBLE_0057c906 = 5.18065378653631E-315
+;   double DOUBLE_0057c90e = 512
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_0059c038
 ;   undefined4 DAT_005ae704
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0045138f (CONDITIONAL_JUMP)  ; LAB_0045138f
     MOV EAX,[0x005be368]                ; 0045136e | DAT_005be368
     FLD float ptr [EAX + 0x15a888]      ; 00451373 | DAT_01fb1b0c
-    FCOMP double ptr [0x0057c8c6]       ; 00451379 | DAT_0057c8c6
+    FCOMP double ptr [0x0057c8c6]       ; 00451379 | DOUBLE_0057c8c6
     FNSTSW AX                           ; 0045137f
     SAHF                                ; 00451381
     JC 0x0045138f                       ; 00451382
@@ -260,7 +260,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff5e],EAX ; 0045150c
     FLD float ptr [EBP + 0xffffff5e]    ; 00451512
         ;   Label: LAB_00451512
-    FMUL double ptr [0x0057c8ce]        ; 00451518 | DAT_0057c8ce
+    FMUL double ptr [0x0057c8ce]        ; 00451518 | DOUBLE_0057c8ce
     MOV EAX,dword ptr [EBP + 0x92]      ; 0045151e
     FDIV float ptr [EAX + 0x138]        ; 00451524
     FLD float ptr [EBP + 0xffffff5a]    ; 0045152a
@@ -268,7 +268,7 @@ section .text
     FLD float ptr [EBP + 0xffffff56]    ; 00451532
     FMUL ST0                            ; 00451538
     FXCH ST2                            ; 0045153a
-    FMUL double ptr [0x0057c8d6]        ; 0045153c | DAT_0057c8d6
+    FMUL double ptr [0x0057c8d6]        ; 0045153c | DOUBLE_0057c8d6
     FXCH ST2                            ; 00451542
     FADDP                               ; 00451544
     FLD ST0                             ; 00451546
@@ -284,7 +284,7 @@ section .text
     JNC 0x0045156e                      ; 0045155a
         ;   XREF to: 0045156e (CONDITIONAL_JUMP)  ; LAB_0045156e
     FLD float ptr [EBP + 0x36]          ; 0045155c
-    FCOMP double ptr [0x0057c8de]       ; 0045155f | DAT_0057c8de
+    FCOMP double ptr [0x0057c8de]       ; 0045155f | DOUBLE_0057c8de
     FNSTSW AX                           ; 00451565
     SAHF                                ; 00451567
     JA 0x0045138f                       ; 00451568
@@ -319,12 +319,12 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 004515be
         ;   Label: LAB_004515be
     FLD float ptr [EAX + 0x138]         ; 004515c4
-    FDIVR double ptr [0x0057c8ce]       ; 004515ca | DAT_0057c8ce
+    FDIVR double ptr [0x0057c8ce]       ; 004515ca | DOUBLE_0057c8ce
     MOV EAX,dword ptr [EBP + 0x3e]      ; 004515d0
     MOV dword ptr [EBP + 0x76],EAX      ; 004515d3
     FILD dword ptr [EBP + 0x76]         ; 004515d6
     FMULP                               ; 004515d9
-    FMUL double ptr [0x0057c8e6]        ; 004515db | DAT_0057c8e6
+    FMUL double ptr [0x0057c8e6]        ; 004515db | DOUBLE_0057c8e6
     FST float ptr [EBP + 0x42]          ; 004515e1
     FLD ST0                             ; 004515e4
     FLD1                                ; 004515e6
@@ -340,14 +340,14 @@ section .text
     MOV EAX,dword ptr [EBP + 0x46]      ; 004515fd
         ;   Label: LAB_004515fd
     MOV dword ptr [EBP + 0x76],EAX      ; 00451600
-    FLD float ptr [0x0057c8ee]          ; 00451603 | DAT_0057c8ee
+    FLD float ptr [0x0057c8ee]          ; 00451603 | DOUBLE_0057c8ee
     FILD dword ptr [EBP + 0x76]         ; 00451609
     FMUL ST1                            ; 0045160c
-    FLD double ptr [0x0057c8f6]         ; 0045160e | DAT_0057c8f6
+    FLD double ptr [0x0057c8f6]         ; 0045160e | DOUBLE_0057c8f6
     FXCH                                ; 00451614
     FMUL ST1                            ; 00451616
     INC EAX                             ; 00451618
-    FLD double ptr [0x0057c8d6]         ; 00451619 | DAT_0057c8d6
+    FLD double ptr [0x0057c8d6]         ; 00451619 | DOUBLE_0057c8d6
     FXCH                                ; 0045161f
     FMUL ST1                            ; 00451621
     MOV dword ptr [EBP + 0x76],EAX      ; 00451623
@@ -420,7 +420,7 @@ section .text
     MOV dword ptr [EBP + 0x7a],EAX      ; 004516ef
     XOR ESI,ESI                         ; 004516f2
     FILD dword ptr [EBP + 0x7a]         ; 004516f4
-    FMUL double ptr [0x0057c8fe]        ; 004516f7 | DAT_0057c8fe
+    FMUL double ptr [0x0057c8fe]        ; 004516f7 | DOUBLE_0057c8fe
     MOV dword ptr [EBP + 0x6a],ESI      ; 004516fd
     FXCH                                ; 00451700
     FSTP float ptr [EBP + 0x52]         ; 00451702
@@ -438,7 +438,7 @@ section .text
     MOV dword ptr [EBP + 0x7a],EAX      ; 00451729
     FILD dword ptr [EBP + 0x7a]         ; 0045172c
     FMUL ST1                            ; 0045172f
-    FLD float ptr [0x0057c906]          ; 00451731 | DAT_0057c906
+    FLD float ptr [0x0057c906]          ; 00451731 | DOUBLE_0057c906
     FXCH                                ; 00451737
     FMUL ST1                            ; 00451739
     FLD float ptr [EBP + 0x22]          ; 0045173b
@@ -451,7 +451,7 @@ section .text
     FXCH                                ; 0045174c
     FMUL ST1                            ; 0045174e
     MOV dword ptr [EBP + 0x7a],EAX      ; 00451750
-    FLD double ptr [0x0057c90e]         ; 00451753 | DAT_0057c90e
+    FLD double ptr [0x0057c90e]         ; 00451753 | DOUBLE_0057c90e
     FXCH                                ; 00451759
     FMUL ST1                            ; 0045175b
     FILD dword ptr [EBP + 0x7a]         ; 0045175d

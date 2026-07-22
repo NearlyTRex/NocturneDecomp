@@ -20,18 +20,18 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e5a1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058437c
+;   TerminatedCString s_art_0058437c
 ;   string s_Can't_open_%s_00584380
 ;   string s_%s_is_%d_bytes,_but_expected_%dx_0058438e
-;   undefined1 DAT_005843be
-;   undefined1 DAT_005843bf
-;   undefined1 DAT_005843c0
-;   undefined1 DAT_005843c1
-;   undefined4 DAT_005843c3
-;   undefined4 DAT_005843c6
+;   TerminatedCString s_act_005843be
+;   undefined4 s_act_005843be+1
+;   undefined4 s_act_005843be+2
+;   undefined4 s_act_005843be+3
+;   TerminatedCString s_rb_005843c3
+;   TerminatedCString s_art_005843c6
 ;   string s_Can't_open_%s_005843ca
-;   undefined4 DAT_005843d8
-;   undefined4 DAT_005843db
+;   TerminatedCString s_rb_005843d8
+;   TerminatedCString s_art_005843db
 ;   string s_..\\core\\game.cpp_005843df
 ;   string s_Can't_open_%s_005843f0
 ;   undefined4 DAT_005b6d50
@@ -78,7 +78,7 @@ section .text
     LEA ESI,[EAX + 0x8b4]               ; 004a57e5
         ;   Label: LAB_004a57e5
     PUSH ESI                            ; 004a57eb
-    PUSH 0x58437c                       ; 004a57ec | DAT_0058437c
+    PUSH 0x58437c                       ; 004a57ec | = "art"
     MOV dword ptr [EAX + 0xcc],0x0      ; 004a57f1
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004a57fb
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
@@ -105,20 +105,20 @@ section .text
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004a5846
     LEA EDI,[ESP + 0x900]               ; 004a5849
-    MOV ESI,0x5843be                    ; 004a5850 | DAT_005843be
+    MOV ESI,0x5843be                    ; 004a5850 | = ".act"
     PUSH EDI                            ; 004a5855
     SUB ECX,ECX                         ; 004a5856
     DEC ECX                             ; 004a5858
     MOV AL,0x0                          ; 004a5859
     SCASB.REPNE ES:EDI                  ; 004a585b
     DEC EDI                             ; 004a585d
-    MOV AL,byte ptr [ESI]               ; 004a585e | DAT_005843be | DAT_005843c0
+    MOV AL,byte ptr [ESI]               ; 004a585e | = ".act" | s_act_005843be+2
         ;   Label: LAB_004a585e
     MOV byte ptr [EDI],AL               ; 004a5860
     CMP AL,0x0                          ; 004a5862
     JZ 0x004a5876                       ; 004a5864
         ;   XREF to: 004a5876 (CONDITIONAL_JUMP)  ; LAB_004a5876
-    MOV AL,byte ptr [ESI + 0x1]         ; 004a5866 | DAT_005843bf | DAT_005843c1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a5866 | s_act_005843be+1 | s_act_005843be+3
     ADD ESI,0x2                         ; 004a5869
     MOV byte ptr [EDI + 0x1],AL         ; 004a586c
     ADD EDI,0x2                         ; 004a586f
@@ -127,10 +127,10 @@ section .text
         ;   XREF to: 004a585e (CONDITIONAL_JUMP)  ; LAB_004a585e
     POP EDI                             ; 004a5876
         ;   Label: LAB_004a5876
-    PUSH 0x5843c3                       ; 004a5877 | DAT_005843c3
+    PUSH 0x5843c3                       ; 004a5877 | = "rb"
     LEA EAX,[ESP + 0x904]               ; 004a587c
     PUSH EAX                            ; 004a5883
-    PUSH 0x5843c6                       ; 004a5884 | DAT_005843c6
+    PUSH 0x5843c6                       ; 004a5884 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a5889
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004a588e
@@ -221,10 +221,10 @@ section .text
     JZ 0x004a5c45                       ; 004a59ca
         ;   XREF to: 004a5c45 (CONDITIONAL_JUMP)  ; LAB_004a5c45
     MOV ESI,dword ptr [ESP + 0xa34]     ; 004a59d0
-    PUSH 0x5843d8                       ; 004a59d7 | DAT_005843d8
+    PUSH 0x5843d8                       ; 004a59d7 | = "rb"
     ADD ESI,0x8b4                       ; 004a59dc
     PUSH ESI                            ; 004a59e2
-    PUSH 0x5843db                       ; 004a59e3 | DAT_005843db
+    PUSH 0x5843db                       ; 004a59e3 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a59e8
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004a59ed

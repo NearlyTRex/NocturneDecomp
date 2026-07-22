@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 00509b2d
+;   core_set.cpp_FUN_00509a80 at 00509b2d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00b0ddf8

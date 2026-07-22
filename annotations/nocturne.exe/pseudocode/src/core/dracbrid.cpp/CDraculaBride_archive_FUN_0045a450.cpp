@@ -17,7 +17,7 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
   
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
   if (0x00000009 < 2) {
-    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc8c,"?speed" + 1);
+    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc8c,"speed");
   }
   iVar1 = core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
                     (param_1 + 0x150,"modelName");
@@ -39,7 +39,7 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
                       (param_1 + 0x150,pcVar4,0);
   }
   if (3 < 0x00000009) {
-    iVar1 = FUN_0040cb00(param_1 + 0x150,"motionState");
+    iVar1 = core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motionState");
   }
   if (0x00000009 == 4) {
     iVar2 = 0;

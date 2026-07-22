@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00462300(int param_1,float param_2)
 
 {
@@ -46,21 +44,21 @@ void FUN_00462300(int param_1,float param_2)
   if (*(int *)(param_1 + 0x2e4) == 0) {
     local_48 = *(uint *)(param_1 + 0x2f0);
     local_40 = *(uint *)(param_1 + 0x2f8);
-    local_44 = *(float *)(param_1 + 0x2f4) + _DAT_0057de6c;
+    local_44 = *(float *)(param_1 + 0x2f4) + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930
               (&DAT_01fba938,local_54,(uint *)(param_1 + 0x2f0),&local_48);
     *(uint *)(param_1 + 0x2e4) = 1;
     *(uint *)(param_1 + 0x2e8) = local_50;
   }
   if ((*(uint *)(param_1 + 0x2d4) & 0x7fffffff) == 0) {
-    fVar2 = *(float *)(param_1 + 0x300) - param_2 * (float)_DAT_0057de70;
+    fVar2 = *(float *)(param_1 + 0x300) - param_2 * (float)32;
     *(float *)(param_1 + 0x300) = fVar2;
     *(float *)(param_1 + 0x24) = fVar2 * param_2 + *(float *)(param_1 + 0x24);
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_78);
     if (*(float *)(param_1 + 0x24) <
-        *(float *)(param_1 + 0x2e8) - (fStack_68 - fStack_74) * (float)_DAT_0057de78) {
+        *(float *)(param_1 + 0x2e8) - (fStack_68 - fStack_74) * (float)0.84999999999999998) {
       if (*(int *)(param_1 + 0x330) != 0) {
-        FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
+        core_set_cpp_FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x30c);
       }
       *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x2e8);
@@ -89,9 +87,9 @@ void FUN_00462300(int param_1,float param_2)
           fVar8 = (float10)fsin((float10)fStack_14);
           fVar9 = (float10)fsin((float10)fStack_1c);
           fStack_18 = (float)fVar7;
-          fStack_38 = (float)(fVar9 * (float10)_DAT_0057de80);
-          fStack_3c = (float)(fVar6 * (float10)_DAT_0057de80 * (float10)fStack_18);
-          fStack_34 = (float)(fVar8 * (float10)_DAT_0057de80 * (float10)fStack_18);
+          fStack_38 = (float)(fVar9 * (float10)20.0f);
+          fStack_3c = (float)(fVar6 * (float10)20.0f * (float10)fStack_18);
+          fStack_34 = (float)(fVar8 * (float10)20.0f * (float10)fStack_18);
           uVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(0x1b7b330);
           iVar4 = iVar4 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_0048b320

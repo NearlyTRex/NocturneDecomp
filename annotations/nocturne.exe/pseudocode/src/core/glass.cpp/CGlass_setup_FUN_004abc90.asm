@@ -50,7 +50,7 @@
 ; Referenced Globals:
 ;   string s_..\\core\\glass.cpp_00584edc
 ;   string s_CGlass::setup_-_Too_many_vertici_00584eee
-;   undefined4 DAT_00584f23
+;   TerminatedCString s_none_00584f23
 ;   string s_7YEARS.RAW_00584f28
 ;   string s_factwin.raw_00584f33
 ;   string s_factwinx.raw_00584f3f
@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 004abe5d (CONDITIONAL_JUMP)  ; LAB_004abe5d
     FLD float ptr [EBX + 0x150]         ; 004abccf
         ;   Label: LAB_004abccf
-    FMUL double ptr [0x00584fa0]        ; 004abcd5 | DAT_00584fa0
+    FMUL double ptr [0x00584fa0]        ; 004abcd5 | DOUBLE_00584fa0
     CALL crt_math.c_round_FUN_00563a30  ; 004abcdb
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0xc4]        ; 004abce0
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [EBX + 0xb24],0x4     ; 004abcfa
     FLD float ptr [EBX + 0x154]         ; 004abd04
         ;   Label: LAB_004abd04
-    FMUL double ptr [0x00584fa0]        ; 004abd0a | DAT_00584fa0
+    FMUL double ptr [0x00584fa0]        ; 004abd0a | DOUBLE_00584fa0
     CALL crt_math.c_round_FUN_00563a30  ; 004abd10
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0xc4]        ; 004abd15
@@ -183,7 +183,7 @@ section .text
     IMUL EDX,EDI,0xc                    ; 004abe06
     FLD float ptr [EBX + 0x150]         ; 004abe09
     FCHS                                ; 004abe0f
-    FMUL double ptr [0x00584fa0]        ; 004abe11 | DAT_00584fa0
+    FMUL double ptr [0x00584fa0]        ; 004abe11 | DOUBLE_00584fa0
     MOV EAX,dword ptr [ESP + 0xb0]      ; 004abe17
     XOR ESI,ESI                         ; 004abe1e
     FSTP float ptr [ESP]                ; 004abe20
@@ -213,7 +213,7 @@ section .text
     PUSH EAX                            ; 004abe6f
     FLD float ptr [EBX + 0x150]         ; 004abe70
     LEA EAX,[ESP + 0x34]                ; 004abe76
-    FMUL float ptr [0x00584f98]         ; 004abe7a | DAT_00584f98
+    FMUL float ptr [0x00584f98]         ; 004abe7a | FLOAT_00584f98
     PUSH EAX                            ; 004abe80
     LEA EAX,[EBX + 0x3c]                ; 004abe81
     PUSH EAX                            ; 004abe84
@@ -379,10 +379,10 @@ section .text
     FILD dword ptr [EBX + 0xb24]        ; 004ac07c
     FILD dword ptr [ESP + 0xc4]         ; 004ac082
     FDIVRP                              ; 004ac089
-    FLD double ptr [0x00584fa8]         ; 004ac08b | DAT_00584fa8
+    FLD double ptr [0x00584fa8]         ; 004ac08b | DOUBLE_00584fa8
     FXCH                                ; 004ac091
     FMUL ST1                            ; 004ac093
-    FLD double ptr [0x00584fb0]         ; 004ac095 | DAT_00584fb0
+    FLD double ptr [0x00584fb0]         ; 004ac095 | DOUBLE_00584fb0
     FXCH                                ; 004ac09b
     FADD ST0,ST1                        ; 004ac09d
     CALL crt_math.c_round_FUN_00563a30  ; 004ac09f
@@ -497,7 +497,7 @@ section .text
         ;   Label: LAB_004ac258
     SETLE AL                            ; 004ac262
     AND EAX,0xff                        ; 004ac265
-    PUSH 0x584f23                       ; 004ac26a | DAT_00584f23
+    PUSH 0x584f23                       ; 004ac26a | = "none"
     MOV dword ptr [EBX + 0xfc],EAX      ; 004ac26f
     LEA EAX,[EBX + 0x17c]               ; 004ac275
     PUSH EAX                            ; 004ac27b

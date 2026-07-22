@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00478120(int param_1)
 
 {
@@ -69,7 +67,7 @@ void FUN_00478120(int param_1)
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
             (0x01C08D04,&fStack_68,&fStack_2c,0x3f800000,0,0xff,0,
-             *(float *)(param_1 + 0x570) * (float)_DAT_0057f17c * (float)_DAT_0057f184);
+             *(float *)(param_1 + 0x570) * (float)3.1415926535000001 * (float)0.0055555555555555497);
   *(uint *)(param_1 + 0x574) = 1;
   *(float *)(param_1 + 0x578) =
        SQRT((fStack_24 - fStack_60) * (fStack_24 - fStack_60) +

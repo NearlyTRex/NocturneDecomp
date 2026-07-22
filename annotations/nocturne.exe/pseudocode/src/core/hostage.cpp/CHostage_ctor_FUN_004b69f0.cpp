@@ -20,7 +20,7 @@ int core_hostage_cpp_CHostage_ctor_FUN_004b69f0(uint param_1)
   ;
   *(uint *)(iVar2 + 0x1f91c) = 0;
   *(uint *)(iVar2 + 0x1f924) = 0;
-  pcVar3 = &DAT_005859ff;
+  pcVar3 = "true";
   *(uint *)(iVar2 + 0x1f928) = 0;
   *(uint *)(iVar2 + 0x1f92c) = 0;
   pcVar4 = (char *)(iVar2 + 0x1f574);

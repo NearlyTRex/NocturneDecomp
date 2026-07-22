@@ -52,11 +52,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 0050a17a
+;   core_set.cpp_FUN_00509a80 at 0050a17a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c7de
-;   undefined4 DAT_0057c7e6
+;   double DOUBLE_0057c7de = 0.00390625
+;   double DOUBLE_0057c7e6 = 65536
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_005ae470
 ;   undefined4 DAT_005ae704
@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [ESP + 0xc4],EAX      ; 0044f4b9
     FILD dword ptr [ESP + 0xc4]         ; 0044f4c0
     MOV EAX,dword ptr [ESP + 0x78]      ; 0044f4c7
-    FLD double ptr [0x0057c7de]         ; 0044f4cb | DAT_0057c7de
+    FLD double ptr [0x0057c7de]         ; 0044f4cb | DOUBLE_0057c7de
     FXCH                                ; 0044f4d1
     FMUL ST1                            ; 0044f4d3
     MOV dword ptr [ESP + 0xc4],EAX      ; 0044f4d5
@@ -229,7 +229,7 @@ section .text
     FMUL float ptr [ESP + 0xbc]         ; 0044f642
     FMUL float ptr [ESP + 0xbc]         ; 0044f649
     FMUL float ptr [ESP + 0xbc]         ; 0044f650
-    FMUL double ptr [0x0057c7e6]        ; 0044f657 | DAT_0057c7e6
+    FMUL double ptr [0x0057c7e6]        ; 0044f657 | DOUBLE_0057c7e6
     MOV EDX,0xffff                      ; 0044f65d
     CALL crt_math.c_round_FUN_00563a30  ; 0044f662
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

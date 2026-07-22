@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_CHero_0057b43a+1
+;   TerminatedCString s_CHero_0057b43b
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -14,7 +14,7 @@
 
 section .text
 
-    PUSH 0x57b43b                       ; 0043c940 | s_CHero_0057b43a+1
+    PUSH 0x57b43b                       ; 0043c940 | = "CHero"
         ;   Label: core_crate.cpp_CCrate_canPickup_FUN_0043c940
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043c945
     PUSH EDX                            ; 0043c949

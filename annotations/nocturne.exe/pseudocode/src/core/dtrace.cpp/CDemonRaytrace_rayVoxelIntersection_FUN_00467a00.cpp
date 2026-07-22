@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)
 
 {
@@ -128,7 +126,7 @@ float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param
         }
         fVar10 = (float10)fVar18;
         fVar15 = (float10)(float)auStack_c0._4_4_;
-        fVar11 = (float10)_DAT_0057e1da;
+        fVar11 = (float10)2.684355e+08f;
         fVar9 = (float10)(float)local_b8;
         fVar17 = 6.47312e-39;
         fVar12 = (float10)round

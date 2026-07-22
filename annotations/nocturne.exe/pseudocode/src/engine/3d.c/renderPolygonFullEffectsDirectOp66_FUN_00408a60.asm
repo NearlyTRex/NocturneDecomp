@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
+;   engine_clipper.c_FUN_00432cd0
 ;   engine_texture.cpp_getCurrentTexture_FUN_00545ad0
-;   FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -165,8 +165,8 @@ section .text
     PUSH EBX                            ; 00408bfa
     MOV ECX,dword ptr [EAX + 0x4]       ; 00408bfb
     PUSH ECX                            ; 00408bfe
-    CALL FUN_00432cd0                   ; 00408bff
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 00408bff
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 00408c04
     JMP 0x00408b98                      ; 00408c07
         ;   XREF to: 00408b98 (UNCONDITIONAL_JUMP)  ; LAB_00408b98

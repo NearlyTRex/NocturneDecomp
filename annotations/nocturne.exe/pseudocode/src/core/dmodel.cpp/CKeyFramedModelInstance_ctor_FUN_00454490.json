@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -123,7 +123,7 @@
   "complexity": {
     "assembly_lines": 12,
     "complexity_score": 62,
-    "cross_reference_count": 37,
+    "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -135,6 +135,18 @@
     "total_lines": 19
   },
   "cross_references": [
+    {
+      "addr": "0040f040",
+      "from_addr": "0040f056",
+      "name": "FUN_0040f040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f560",
+      "from_addr": "0040f576",
+      "name": "FUN_0040f560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0040fed0",
       "from_addr": "0040fee4",
@@ -379,7 +391,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 41,
+    "call_site_count": 43,
     "call_sites": [
       {
         "call_addr": "0040eb86",
@@ -396,6 +408,28 @@
         "call_addr": "004a8a24",
         "call_type": "direct",
         "caller": "FUN_004a8a10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040f056",
+        "call_type": "direct",
+        "caller": "FUN_0040f040",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040f576",
+        "call_type": "direct",
+        "caller": "FUN_0040f560",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -462,28 +496,6 @@
         "call_addr": "004180e8",
         "call_type": "direct",
         "caller": "core_bodypart.cpp_SBodyPartModel_ctor_FUN_004180e0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0041e314",
-        "call_type": "direct",
-        "caller": "core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "004f5da9",
-        "call_type": "direct",
-        "caller": "FUN_004f5d90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

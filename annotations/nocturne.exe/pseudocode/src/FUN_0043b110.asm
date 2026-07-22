@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Called Functions:
+;   core_xform.cpp_FUN_0055d610
 ;   FUN_004f5f60
-;   FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_0043b143
     PUSH EAX                            ; 0043b146
     LEA ESI,[ESP + 0x4]                 ; 0043b147
-    CALL FUN_0055d610                   ; 0043b14b
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 0043b14b
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     LEA ESI,[ESP + 0x4]                 ; 0043b150
     LEA EDI,[EBX + 0x33c]               ; 0043b154
     ADD ESP,0x4                         ; 0043b15a

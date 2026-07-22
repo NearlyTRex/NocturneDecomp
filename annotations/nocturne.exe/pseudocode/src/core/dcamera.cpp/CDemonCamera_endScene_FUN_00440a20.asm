@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00507f80 at 00508070
-;   FUN_00509a80 at 00509f95
-;   FUN_0050aba0 at 0050acde
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508c15
+;   core_set.cpp_FUN_00507f80 at 00508070
+;   core_set.cpp_FUN_00509a80 at 00509f95
+;   core_set.cpp_FUN_0050aba0 at 0050acde
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dcamera.cpp_0057b704

@@ -14,8 +14,8 @@
 ;   FUN_004a9270 at 004aa8e2
 ;   FUN_004d4f30 at 004d5429
 ;   FUN_00535900 at 00536075
-;   FUN_0055ef50 at 00560881
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539c6d
+;   core_zombie.cpp_FUN_0055ef50 at 00560881
 ;
 ; *****************************************************************************
 

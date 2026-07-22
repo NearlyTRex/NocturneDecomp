@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00460c90(uint param_1,float *param_2)
 
 {
@@ -19,7 +17,7 @@ void FUN_00460c90(uint param_1,float *param_2)
   uint uVar6;
   int iVar7;
   
-  fVar3 = (float10)_DAT_0057dc65;
+  fVar3 = (float10)65536;
   fVar1 = param_2[1];
   fVar2 = *param_2;
   fVar4 = (float10)round((float10)param_2[2] * fVar3);

@@ -13,9 +13,9 @@
 ;   core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370 at 005504d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058157f
-;   undefined4 DAT_00581587
-;   undefined4 DAT_0058158f
+;   double DOUBLE_0058157f = 5.22209901682860E-315
+;   double DOUBLE_00581587 = 2
+;   double DOUBLE_0058158f = 0.5
 ;   undefined4 DAT_0059d560
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b8de8
@@ -196,7 +196,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 0048d781
         ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
     FLD float ptr [EBP + 0x150]         ; 0048d786
-    FMUL float ptr [0x0058157f]         ; 0048d78c | DAT_0058157f
+    FMUL float ptr [0x0058157f]         ; 0048d78c | DOUBLE_0058157f
     LEA EBX,[ESP + 0xe8]                ; 0048d792
     ADD ESP,0xc                         ; 0048d799
     XOR EDX,EDX                         ; 0048d79c
@@ -441,7 +441,7 @@ section .text
     JNZ 0x0048deb8                      ; 0048db13
         ;   XREF to: 0048deb8 (CONDITIONAL_JUMP)  ; LAB_0048deb8
     FLD float ptr [EBP + 0x154]         ; 0048db19
-    FMUL double ptr [0x00581587]        ; 0048db1f | DAT_00581587
+    FMUL double ptr [0x00581587]        ; 0048db1f | DOUBLE_00581587
     MOV EDI,dword ptr [EBP + 0x288]     ; 0048db25
     FSTP float ptr [ESP + 0x130]        ; 0048db2b
     TEST EDI,EDI                        ; 0048db32
@@ -454,7 +454,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0 ; 0048db48
         ;   XREF to: 00460db0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0()
     FLD float ptr [EBP + 0x154]         ; 0048db4d
-    FMUL double ptr [0x0058158f]        ; 0048db53 | DAT_0058158f
+    FMUL double ptr [0x0058158f]        ; 0048db53 | DOUBLE_0058158f
     ADD ESP,0x8                         ; 0048db59
     FSTP float ptr [ESP + 0x13c]        ; 0048db5c
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0048db63

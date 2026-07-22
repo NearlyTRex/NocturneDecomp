@@ -10,7 +10,7 @@
 ;   FUN_004b0480 at 004b04a2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585138
+;   float FLOAT_00585138 = 0.1000000
 ;   undefined4 DAT_0059e4d4
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -52,7 +52,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 004af774
     MOV dword ptr [ESI + 0xc],EDX       ; 004af777
     MOV dword ptr [ESI + 0x18],0x0      ; 004af77a
-    FADD float ptr [0x00585138]         ; 004af781 | DAT_00585138
+    FADD float ptr [0x00585138]         ; 004af781 | FLOAT_00585138
     LEA EBX,[ESI + 0x1c]                ; 004af787
     FSTP float ptr [ESI + 0x8]          ; 004af78a
     FLD float ptr [EAX]                 ; 004af78d

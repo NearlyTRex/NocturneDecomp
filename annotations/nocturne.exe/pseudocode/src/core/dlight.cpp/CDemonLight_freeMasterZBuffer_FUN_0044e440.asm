@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0044e2c0 at 0044e2d1
+;   core_dlight.cpp_FUN_0044e2c0 at 0044e2d1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 005089b9
 ;
 ; *****************************************************************************

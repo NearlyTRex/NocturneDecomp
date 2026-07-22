@@ -19,7 +19,7 @@ int FUN_004b49a0(int param_1)
   if (0x0000000C < 4) {
     iVar1 = core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
     if (1 < 0x0000000C) {
-      iVar1 = FUN_0040cb00(iVar2,"motion state");
+      iVar1 = core_actor_cpp_FUN_0040cb00(iVar2,"motion state");
     }
     if (2 < 0x0000000C) {
       core_actor_cpp_archivePartStatus_FUN_0040cbf0(param_1 + 0x150,"partStatus");
@@ -29,7 +29,7 @@ int FUN_004b49a0(int param_1)
   }
   else {
     core_charactr_cpp_CCharacter_archive_FUN_004244b0(param_1);
-    FUN_0040cb00(iVar2,"motion state");
+    core_actor_cpp_FUN_0040cb00(iVar2,"motion state");
     core_actor_cpp_archivePartStatus_FUN_0040cbf0(iVar2,"partStatus");
     if (0x0000000C < 8) {
       core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2590,"grabbedBy");
@@ -46,7 +46,7 @@ int FUN_004b49a0(int param_1)
       core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa0c,"pushedObject");
     }
     if (0x0000000C == 10) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(local_c,&DAT_00585765);
+      core_actor_cpp_archiveInteger_FUN_0040c900(local_c,"keys");
     }
     iVar1 = 0x0000000C;
     if ((7 < 0x0000000C) && (0x0000000C < 0xb)) {

@@ -17,7 +17,7 @@
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 at 004476d4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057baf3
+;   double DOUBLE_0057baf3 = 256
 ;   undefined4 DAT_0059bde4
 ;
 ; Called Functions:
@@ -66,7 +66,7 @@ section .text
     FMUL ST0                            ; 00447611
     FADDP                               ; 00447613
     FSQRT                               ; 00447615
-    FMUL double ptr [0x0057baf3]        ; 00447617 | DAT_0057baf3
+    FMUL double ptr [0x0057baf3]        ; 00447617 | DOUBLE_0057baf3
     CALL crt_math.c_round_FUN_00563a30  ; 0044761d
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x18]        ; 00447622

@@ -10,8 +10,8 @@
 ;   FUN_00418a00 at 00419273
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f34f
-;   undefined4 DAT_0057f357
+;   double DOUBLE_0057f34f = 1.20000000000000
+;   double DOUBLE_0057f357 = 0.25
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -67,8 +67,8 @@ section .text
     JNC 0x004799a9                      ; 004799e6
         ;   XREF to: 004799a9 (CONDITIONAL_JUMP)  ; LAB_004799a9
     FLD double ptr [ESP]                ; 004799e8
-    FMUL double ptr [0x0057f34f]        ; 004799eb | DAT_0057f34f
-    FMUL double ptr [0x0057f357]        ; 004799f1 | DAT_0057f357
+    FMUL double ptr [0x0057f34f]        ; 004799eb | DOUBLE_0057f34f
+    FMUL double ptr [0x0057f357]        ; 004799f1 | DOUBLE_0057f357
     PUSH 0x0                            ; 004799f7
     CALL crt_math.c_round_FUN_00563a30  ; 004799f9
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

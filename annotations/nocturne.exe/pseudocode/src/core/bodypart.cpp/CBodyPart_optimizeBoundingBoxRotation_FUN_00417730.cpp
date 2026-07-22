@@ -9,7 +9,6 @@
 /* WARNING: Removing unreachable block (ram,0x00417a74) */
 /* WARNING: Removing unreachable block (ram,0x00417a87) */
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(int param_1)
 
@@ -76,19 +75,19 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041773
   local_c0 = 0;
   do {
     local_18 = 0;
-    local_54 = (float)local_c0 * (float)_DAT_005790ca * (float)_DAT_005790d2;
-    local_50 = (float)_DAT_005790ca * 0.0 * (float)_DAT_005790d2;
+    local_54 = (float)local_c0 * (float)3.1415926535000001 * (float)0.083333333333333301;
+    local_50 = (float)3.1415926535000001 * 0.0 * (float)0.083333333333333301;
     local_4c = 0;
     uStack_cc = 0x4177b7;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_b8,&local_54);
     fVar9 = (float10)round();
     local_2c = (int)ROUND(fVar9);
     fVar10 = (float10)local_a4[1];
-    fVar9 = (float10)_DAT_005790da;
+    fVar9 = (float10)65536.0f;
     fVar11 = (float10)round();
     local_2c = (int)ROUND(fVar11);
     fVar12 = (float10)local_a4[1];
-    fVar11 = (float10)_DAT_005790da;
+    fVar11 = (float10)65536.0f;
     local_60 = 0x7fffffff;
     iStack_64 = 0x7fffffff;
     iStack_68 = 0x7fffffff;

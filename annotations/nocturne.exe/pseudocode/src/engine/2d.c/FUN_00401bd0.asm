@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00401bd0(undefined4 param_1)
+; void engine_2d_c_FUN_00401bd0(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
 ;   FUN_00401010 at 0040105c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00577154
-;   undefined4 DAT_00577157
-;   string s_..\\engine\\2d.c_0057715b
+;   TerminatedCString s_rb_00577154
+;   TerminatedCString s_art_00577157
+;   TerminatedCString s_engine_2d_c_0057715b
 ;   string s_Unable_to_open_VGA_palette_0057716a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -26,11 +26,11 @@
 section .text
 
     PUSH EBX                            ; 00401bd0
-        ;   Label: FUN_00401bd0
-    PUSH 0x577154                       ; 00401bd1 | DAT_00577154
+        ;   Label: engine_2d.c_FUN_00401bd0
+    PUSH 0x577154                       ; 00401bd1 | = "rb"
     MOV EDX,dword ptr [ESP + 0xc]       ; 00401bd6
     PUSH EDX                            ; 00401bda
-    PUSH 0x577157                       ; 00401bdb | DAT_00577157
+    PUSH 0x577157                       ; 00401bdb | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00401be0
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00401be5

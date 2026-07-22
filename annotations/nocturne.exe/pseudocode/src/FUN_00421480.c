@@ -11,7 +11,7 @@ void FUN_00421480(int param_1,uint param_2)
 {
   int iVar1;
   
-  iVar1 = FUN_004259f0(param_1,param_2);
+  iVar1 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar1 != 0) {
     if ((*(int *)(param_1 + 0x19700) == 0) &&
        (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -25,7 +25,7 @@ void FUN_00421480(int param_1,uint param_2)
     }
     switch(*(uint *)(param_1 + 0xbd24)) {
     case 0:
-      FUN_00422050(param_1,param_2);
+      core_bugs_cpp_FUN_00422050(param_1,param_2);
       break;
     case 1:
       core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(param_1,param_2);

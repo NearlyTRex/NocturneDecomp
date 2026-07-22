@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0040b0d0 at 0040b0e9
+;   core_actor.cpp_FUN_0040b0d0 at 0040b0e9
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0

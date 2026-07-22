@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004950a0(undefined *param_1)
+; void FUN_004950a0(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_00495078 = 004950c1
 ;   string s_..\\core\\frankgen.cpp_00581d58
-;   undefined4 DAT_00581d6d
+;   TerminatedCString s_WTF_00581d6d
 ;   undefined4 DAT_0059db58
 ;   undefined4 DAT_0059db70
 ;   undefined4 DAT_01cc4800
@@ -175,7 +175,7 @@ section .text
     MOV EDX,0x581d58                    ; 004951fc | = "..\\core\\frankgen.cpp"
         ;   Label: default
     MOV ECX,0x1bb                       ; 00495201
-    PUSH 0x581d6d                       ; 00495206 | DAT_00581d6d
+    PUSH 0x581d6d                       ; 00495206 | = "WTF!"
     MOV dword ptr [0x01cc4800],EDX      ; 0049520b | DAT_01cc4800
     MOV dword ptr [0x01cc4804],ECX      ; 00495211 | DAT_01cc4804
     CALL FUN_004c8440                   ; 00495217

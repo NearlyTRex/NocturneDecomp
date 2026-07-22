@@ -4,9 +4,14 @@
 ; char * core_actor_cpp_registerActorClass_FUN_0040d3f0(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
+; XREF[3]:
+;   FUN_004116b0 at 004116cb
+;   FUN_00411910 at 0041192b
+;   FUN_004120a0 at 004120bb
+;
 ; Referenced Globals:
-;   string s_..\\core\\actor.cpp_00577f3b
-;   string s_Too_many_actor_types!_00577f4d
+;   TerminatedCString s_core_actor_cpp_00577f3b
+;   TerminatedCString s_Too_many_actor_types_00577f4d
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_00763e94
 ;   undefined4 DAT_00763e98

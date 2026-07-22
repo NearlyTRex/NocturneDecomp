@@ -4,9 +4,8 @@
 ; void __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(undefined4 *param_1)
 ;
 ;
-; XREF[49]:
-;   FUN_0040b300 at 0040b54b
-;   FUN_00410cc0 at 00410dbb
+; XREF[50]:
+;   FUN_0040f610 at 0040f6f5
 ;   FUN_00418a00 at 0041908c
 ;   FUN_0041fe40 at 0042030d
 ;   FUN_0043d1c0 at 0043d5e8
@@ -15,7 +14,8 @@
 ;   FUN_004a9270 at 004a98a4
 ;   FUN_004b27c0 at 004b2d07
 ;   FUN_004b6d80 at 004b6eb4
-;   ... and 39 more
+;   FUN_004c71a0 at 004c78ab
+;   ... and 40 more
 ;
 ; *****************************************************************************
 

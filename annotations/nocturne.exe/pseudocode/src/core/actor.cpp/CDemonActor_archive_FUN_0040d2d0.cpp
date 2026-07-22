@@ -14,7 +14,7 @@ void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(int param_1)
   core_actor_cpp_archiveLocation_FUN_0040c590(param_1 + 0x20,"location");
   core_actor_cpp_archiveOrientation_FUN_0040c4f0(param_1 + 0x30,"orient");
   if (0x00000007 < 7) {
-    core_actor_cpp_archiveFloat_FUN_0040c880(local_8,&DAT_00577f15);
+    core_actor_cpp_archiveFloat_FUN_0040c880(local_8,&FLOAT_00577f15);
     if (0x00000007 < 6) {
       return;
     }

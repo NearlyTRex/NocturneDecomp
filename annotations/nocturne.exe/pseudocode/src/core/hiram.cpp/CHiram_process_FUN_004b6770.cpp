@@ -16,7 +16,7 @@ void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)
   uint uVar3;
   float local_18 [2];
   
-  iVar1 = FUN_004259f0(param_1,param_2);
+  iVar1 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar1 == 0) {
     return;
   }
@@ -51,6 +51,6 @@ void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iVar1);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iVar1);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

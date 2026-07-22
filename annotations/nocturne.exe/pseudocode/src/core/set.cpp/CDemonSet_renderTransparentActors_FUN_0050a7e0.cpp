@@ -59,7 +59,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0(int par
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
         if (0 < *(int *)(param_1 + 0x15a8cc)) {
           do {
-            FUN_0050e080(param_1,iVar3,0);
+            core_set_cpp_FUN_0050e080(param_1,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0xc))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;

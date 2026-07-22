@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   void* PTR_GetCurrentThreadId_00575500 = 00175ce8
 ;   void* PTR_TlsSetValue_005755cc = 001760aa
-;   string s_Unable_to_resize_thread-specific_0059919c
-;   string s_Unable_to_resize_thread-specific_005991c4
+;   TerminatedCString s_Unable_to_resize_thread_0059919c
+;   TerminatedCString s_Unable_to_resize_thread_005991c4
 ;   undefined4 DAT_005c1ab8
 ;   void* PTR_FUN_005c1ae8 = 005671e4
 ;   void* PTR_FUN_005c1aec = 005671e4

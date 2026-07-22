@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de2e
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\game.cpp_005829a9+1
+;   TerminatedCString s_core_game_cpp_005829aa
 ;   string s_CGame::playerControls_-_unknown_c_005829bb
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_005be368
@@ -127,7 +127,7 @@ section .text
     CMP EAX,0x2                         ; 0049e882
     JZ 0x0049e84b                       ; 0049e885
         ;   XREF to: 0049e84b (CONDITIONAL_JUMP)  ; LAB_0049e84b
-    MOV EBP,0x5829aa                    ; 0049e887 | s_..\core\game.cpp_005829a9+1
+    MOV EBP,0x5829aa                    ; 0049e887 | = "..\\core\\game.cpp"
         ;   Label: LAB_0049e887
     MOV EAX,0x71d                       ; 0049e88c
     PUSH 0x5829bb                       ; 0049e891 | = "CGame::playerControls - unknown contr..."

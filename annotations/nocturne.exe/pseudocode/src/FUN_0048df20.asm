@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581597
+;   double DOUBLE_00581597 = 5
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b4d738
@@ -164,7 +164,7 @@ section .text
     FADDP                               ; 0048e075
     ADD EAX,0x20                        ; 0048e077
     FSQRT                               ; 0048e07a
-    FCOMP double ptr [0x00581597]       ; 0048e07c | DAT_00581597
+    FCOMP double ptr [0x00581597]       ; 0048e07c | DOUBLE_00581597
     FNSTSW AX                           ; 0048e082
     SAHF                                ; 0048e084
     JNC 0x0048e023                      ; 0048e085

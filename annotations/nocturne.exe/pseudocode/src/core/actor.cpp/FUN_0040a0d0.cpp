@@ -1,14 +1,14 @@
-// Name: FUN_0040a0d0
+// Name: core_actor.cpp_FUN_0040a0d0
 // Address: 0040a0d0
 // Address Range: [[0040a0d0, 0040a0f3]]
 // Convention: unknown
-// Signature: void FUN_0040a0d0(void)
+// Signature: void core_actor_cpp_FUN_0040a0d0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0040a0d0(void)
+void core_actor_cpp_FUN_0040a0d0(void)
 
 {
   _DAT_01cc4800 = "..\\core\\actor.cpp";

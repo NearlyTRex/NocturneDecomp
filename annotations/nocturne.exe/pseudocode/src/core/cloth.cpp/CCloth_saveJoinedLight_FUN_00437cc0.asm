@@ -8,7 +8,7 @@
 ;   core_cloth.cpp_CClothList_render_FUN_004385a0 at 004385c6
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\cloth.cpp_0057ae4c+1
+;   TerminatedCString s_core_cloth_cpp_0057ae4d
 ;   string s_CCloth::saveJoinedLight_-_Can't_s_0057ae5f
 ;   string s_..\\core\\cloth.cpp_0057ae99
 ;   string s_CCloth::saveJoinedLight_-_Model_w_0057aeab
@@ -80,7 +80,7 @@ section .text
     POP ESI                             ; 00437d52
     POP EBX                             ; 00437d53
     RET                                 ; 00437d54
-    MOV EDX,0x57ae4d                    ; 00437d55 | s_..\core\cloth.cpp_0057ae4c+1
+    MOV EDX,0x57ae4d                    ; 00437d55 | = "..\\core\\cloth.cpp"
         ;   Label: LAB_00437d55
     MOV ECX,0x4e3                       ; 00437d5a
     PUSH 0x57ae5f                       ; 00437d5f | = "CCloth::saveJoinedLight - Can't save ..."

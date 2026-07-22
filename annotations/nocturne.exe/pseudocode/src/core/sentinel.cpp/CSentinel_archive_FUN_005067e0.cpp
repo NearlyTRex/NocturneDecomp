@@ -14,6 +14,6 @@ void core_sentinel_cpp_CSentinel_archive_FUN_005067e0(int param_1)
   if (0x00000002 < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc9c,"guardDistance");
   }
-  FUN_0040cb00(param_1 + 0x150,"motion state");
+  core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
   return;
 }

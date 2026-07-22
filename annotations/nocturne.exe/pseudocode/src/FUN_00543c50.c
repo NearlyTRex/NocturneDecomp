@@ -59,7 +59,7 @@ void FUN_00543c50(int param_1,float param_2)
   float fStack_18;
   
   bVar8 = 0;
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 != 0) {
     local_24 = param_1 + 0x30;
     local_258 = param_2 * *(float *)(param_1 + 0xbc8c);
@@ -257,7 +257,7 @@ void FUN_00543c50(int param_1,float param_2)
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-    FUN_0042a150(param_1,param_2);
+    core_charactr_cpp_FUN_0042a150(param_1,param_2);
   }
   return;
 }

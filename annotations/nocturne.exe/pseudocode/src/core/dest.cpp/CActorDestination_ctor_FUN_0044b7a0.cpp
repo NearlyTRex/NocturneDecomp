@@ -14,8 +14,8 @@ int __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  pcVar3 = &DAT_0057be09;
-  iVar2 = FUN_00409d30(param_1);
+  pcVar3 = "none";
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   pcVar4 = (char *)(iVar2 + 0x180);
   *(byte ***)(iVar2 + 0x14c) = &PTR_core_dest_cpp_CActorDestination_setup_FUN_0044b810_0059be64
   ;

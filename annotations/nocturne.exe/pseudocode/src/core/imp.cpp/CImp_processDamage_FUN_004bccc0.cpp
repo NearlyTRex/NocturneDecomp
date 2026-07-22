@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_imp_cpp_CImp_processDamage_FUN_004bccc0(int param_1,int param_2)
 
 {
@@ -21,7 +19,7 @@ void core_imp_cpp_CImp_processDamage_FUN_004bccc0(int param_1,int param_2)
   sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd24));
   if (*(int *)(param_2 + 0x28) == 8) {
     iVar4 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_005864dd;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,param_2 + 0x1c);
     do {
       iVar4 = iVar4 + 1;
@@ -45,7 +43,7 @@ void core_imp_cpp_CImp_processDamage_FUN_004bccc0(int param_1,int param_2)
     if ((*(int *)(iVar2 + 0x24) == 6) || (*(int *)(iVar2 + 0x24) == 7)) goto LAB_004bcdbc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,6,1);
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd28));
-    pcVar5 = "@imp-die?.wav" + 1;
+    pcVar5 = "imp-die?.wav";
   }
   uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,pcVar5);
   *(uint *)(param_1 + 0xbd28) = uVar3;

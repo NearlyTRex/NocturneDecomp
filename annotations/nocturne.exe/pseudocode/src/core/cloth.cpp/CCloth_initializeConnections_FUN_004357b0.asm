@@ -21,7 +21,7 @@
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435c8b
 ;
 ; Referenced Globals:
-;   string s_..\\core\\cloth.cpp_0057adb6
+;   TerminatedCString s_core_cloth_cpp_0057adb6
 ;   string s_Too_many_connecting_verticies_0057adc8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

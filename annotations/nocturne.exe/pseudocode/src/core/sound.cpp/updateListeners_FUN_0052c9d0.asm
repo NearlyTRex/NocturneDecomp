@@ -92,8 +92,8 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
+;   core_setcolid.cpp_FUN_0050f910
 ;   crt_string.c__strnicmp_FUN_00564bc0
-;   FUN_0050f910
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_00527690
 ;   sound_sndmain.cpp_set3DListenerPos_FUN_00527610
 ;
@@ -486,8 +486,8 @@ section .text
     FADD float ptr [ESP + 0xf4]         ; 0052cfa0
     PUSH EAX                            ; 0052cfa7 | DAT_01e57284
     FSTP float ptr [ESP + 0xf8]         ; 0052cfa8
-    CALL FUN_0050f910                   ; 0052cfaf
-        ;   XREF to: 0050f910 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f910()
+    CALL core_setcolid.cpp_FUN_0050f910 ; 0052cfaf
+        ;   XREF to: 0050f910 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0050f910()
     MOV dword ptr [ESP + 0x164],EAX     ; 0052cfb4
     FLD float ptr [ESP + 0x164]         ; 0052cfbb
     ADD ESP,0x8                         ; 0052cfc2

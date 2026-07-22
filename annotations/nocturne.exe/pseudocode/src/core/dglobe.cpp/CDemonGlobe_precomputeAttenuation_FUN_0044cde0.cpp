@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int param_1,float param_2)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int 
   float10 fVar2;
   float unaff_retaddr;
   
-  fVar1 = (float10)_DAT_0057c379;
-  fVar2 = (float10)_DAT_0057c381;
+  fVar1 = (float10)5.5951060894592141e-315._0_4_;
+  fVar2 = (float10)65536;
   *(float *)(param_1 + 0x30) = param_2;
   fVar1 = (float10)round((float10)param_2 * fVar1);
   fVar2 = (float10)round((float10)param_2 * (float10)param_2 * fVar2);
@@ -26,7 +24,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int 
     *(uint *)(param_1 + 0x10) = 0x10000;
   }
   *(float *)(param_1 + 0x18) = unaff_retaddr * unaff_retaddr;
-  fVar1 = (float10)_DAT_0057c381;
+  fVar1 = (float10)65536;
   *(float *)(param_1 + 0x34) = 1.0 / unaff_retaddr;
   *(float *)(param_1 + 0x38) = 1.0 / (unaff_retaddr * unaff_retaddr);
   fVar1 = (float10)round

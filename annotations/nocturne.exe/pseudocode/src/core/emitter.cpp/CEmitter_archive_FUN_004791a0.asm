@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_emitterType_0057f203+1
+;   TerminatedCString s_emitterType_0057f204
 ;   string s_emitterSize_0057f210
 ;   string s_eventOn_0057f21c
 ;   string s_eventOff_0057f224
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004791a7
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004791ac
-    PUSH 0x57f204                       ; 004791af | s_emitterType_0057f203+1
+    PUSH 0x57f204                       ; 004791af | = "emitterType"
     LEA EAX,[EBX + 0x150]               ; 004791b4
     PUSH EAX                            ; 004791ba
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004791bb

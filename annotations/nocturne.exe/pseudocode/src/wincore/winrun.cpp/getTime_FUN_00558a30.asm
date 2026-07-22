@@ -12,21 +12,21 @@
 ;   FUN_00475230 at 004753a2
 ;   FUN_0049cc10 at 0049ccc4
 ;   FUN_004c90e0 at 004c911e
-;   FUN_00509a80 at 0050a0ed
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a08bf
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a64bd
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890 at 0049a890
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0 at 0049a8a7
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f19
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_004ece70 at 004ece9a
+;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e992a
 ;   ... and 23 more
 ;
 ; Referenced Globals:
 ;   void* PTR_timeGetTime_005753ec = 0017584a
 ;   void* PTR_QueryPerformanceCounter_00575570 = 00175ef6
-;   undefined4 DAT_00597f31
-;   undefined4 DAT_00597f39
-;   undefined4 DAT_00597f41
+;   double DOUBLE_00597f31 = 4294967296
+;   double DOUBLE_00597f39 = 65536
+;   double DOUBLE_00597f41 = 18
 ;   undefined4 DAT_02de07d0
 ;   undefined4 DAT_02de07d4
 ;   undefined4 DAT_02de07d8
@@ -62,7 +62,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00558a5e | DAT_02de07d8 | DAT_02de07d0
     MOVSD ES:EDI,ESI                    ; 00558a5f | DAT_02de07dc | DAT_02de07d4
     CALL dword ptr CS:[0x575570]        ; 00558a60 | PTR_QueryPerformanceCounter_00575570
-    FLD double ptr [0x00597f31]         ; 00558a67 | DAT_00597f31
+    FLD double ptr [0x00597f31]         ; 00558a67 | DOUBLE_00597f31
     FILD dword ptr [0x02de07d4]         ; 00558a6d | DAT_02de07d4
     FMUL ST1                            ; 00558a73
     FILD dword ptr [0x02de07dc]         ; 00558a75 | DAT_02de07dc
@@ -81,8 +81,8 @@ section .text
     FSUBP                               ; 00558aa5
     FLD ST0                             ; 00558aa7
     FDIV double ptr [0x02de07e8]        ; 00558aa9 | DAT_02de07e8
-    FMUL double ptr [0x00597f39]        ; 00558aaf | DAT_00597f39
-    FMUL double ptr [0x00597f41]        ; 00558ab5 | DAT_00597f41
+    FMUL double ptr [0x00597f39]        ; 00558aaf | DOUBLE_00597f39
+    FMUL double ptr [0x00597f41]        ; 00558ab5 | DOUBLE_00597f41
     MOV ESI,dword ptr [0x02de07f0]      ; 00558abb | DAT_02de07f0
     FSTP ST1                            ; 00558ac1
     CALL crt_math.c_round_FUN_00563a30  ; 00558ac3

@@ -8,21 +8,21 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[56]:
-;   FUN_004110f0 at 00411197
+; XREF[57]:
+;   FUN_0040f740 at 0040f765
 ;   FUN_00414e70 at 00414e84
 ;   FUN_0041ea00 at 0041ea5f
 ;   FUN_0041eaf0 at 0041eb28
 ;   FUN_0043cbc0 at 0043cbd4
-;   FUN_0044f0b0 at 0044f0cf
-;   FUN_0044f9b0 at 0044fe03
 ;   FUN_00481d90 at 00481da4
 ;   FUN_00489990 at 00489a05
 ;   FUN_0048e6d0 at 0048e6e4
-;   ... and 46 more
+;   FUN_004a8ab0 at 004a8ac4
+;   FUN_005125a0 at 00512dea
+;   ... and 47 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057dc25
+;   double DOUBLE_0057dc25 = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x10                        ; 00460a00
         ;   Label: engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
     MOV EAX,dword ptr [ESP + 0x18]      ; 00460a03
-    FLD double ptr [0x0057dc25]         ; 00460a07 | DAT_0057dc25
+    FLD double ptr [0x0057dc25]         ; 00460a07 | DOUBLE_0057dc25
     FLD float ptr [EAX]                 ; 00460a0d
     FMUL ST1                            ; 00460a0f
     CALL crt_math.c_round_FUN_00563a30  ; 00460a11

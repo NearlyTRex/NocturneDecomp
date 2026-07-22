@@ -12,7 +12,7 @@
 ;   FUN_00448bf0 at 00448cd2
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dcube.cpp_0057bb72+1
+;   TerminatedCString s_core_dcube_cpp_0057bb73
 ;   string s_Bad_clip!_0057bb85
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -178,7 +178,7 @@ section .text
     POP ESI                             ; 00448613
     POP EBX                             ; 00448614
     RET                                 ; 00448615
-    MOV EAX,0x57bb73                    ; 00448616 | s_..\core\dcube.cpp_0057bb72+1
+    MOV EAX,0x57bb73                    ; 00448616 | = "..\\core\\dcube.cpp"
         ;   Label: LAB_00448616
     MOV EDX,0x6e                        ; 0044861b
     PUSH 0x57bb85                       ; 00448620 | = "Bad clip!"

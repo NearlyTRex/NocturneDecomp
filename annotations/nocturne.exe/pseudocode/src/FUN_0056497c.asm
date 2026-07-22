@@ -4,8 +4,9 @@
 ; int FUN_0056497c(int param_1)
 ;
 ;
-; XREF[18]:
+; XREF[19]:
 ;   FUN_0040f1a0 at 0040f1e8
+;   FUN_004120d0 at 004120d5
 ;   FUN_0044c560 at 0044c569
 ;   FUN_00540f50 at 005411f5
 ;   FUN_005458a0 at 005458a5
@@ -14,8 +15,7 @@
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bd97
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b18
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b0590
-;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b13fc
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5488

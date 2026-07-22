@@ -41,7 +41,7 @@
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730 at 00417aa4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005790c2
+;   double DOUBLE_005790c2 = 5.92666793179754E-315
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -75,31 +75,31 @@ section .text
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 00417346
     FLD float ptr [ESP + 0x120]         ; 00417349
-    FMUL float ptr [0x005790c2]         ; 00417350 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 00417350 | DOUBLE_005790c2
     FLD float ptr [ESP + 0x124]         ; 00417356
-    FMUL float ptr [0x005790c2]         ; 0041735d | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 0041735d | DOUBLE_005790c2
     FLD float ptr [ESP + 0x128]         ; 00417363
-    FMUL float ptr [0x005790c2]         ; 0041736a | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 0041736a | DOUBLE_005790c2
     FLD float ptr [ESP + 0x12c]         ; 00417370
-    FMUL float ptr [0x005790c2]         ; 00417377 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 00417377 | DOUBLE_005790c2
     FLD float ptr [ESP + 0x130]         ; 0041737d
-    FMUL float ptr [0x005790c2]         ; 00417384 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 00417384 | DOUBLE_005790c2
     FLD float ptr [ESP + 0x134]         ; 0041738a
-    FMUL float ptr [0x005790c2]         ; 00417391 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 00417391 | DOUBLE_005790c2
     FLD float ptr [ESP + 0x138]         ; 00417397
-    FMUL float ptr [0x005790c2]         ; 0041739e | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 0041739e | DOUBLE_005790c2
     FXCH ST6                            ; 004173a4
     CALL crt_math.c_round_FUN_00563a30  ; 004173a6
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x198]       ; 004173ab
     FLD float ptr [ESP + 0x13c]         ; 004173b2
-    FMUL float ptr [0x005790c2]         ; 004173b9 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 004173b9 | DOUBLE_005790c2
     FXCH ST5                            ; 004173bf
     CALL crt_math.c_round_FUN_00563a30  ; 004173c1
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x19c]       ; 004173c6
     FLD float ptr [ESP + 0x140]         ; 004173cd
-    FMUL float ptr [0x005790c2]         ; 004173d4 | DAT_005790c2
+    FMUL float ptr [0x005790c2]         ; 004173d4 | DOUBLE_005790c2
     XOR EDI,EDI                         ; 004173da
     MOV ECX,dword ptr [EBP + 0x16c]     ; 004173dc
     FXCH ST4                            ; 004173e2

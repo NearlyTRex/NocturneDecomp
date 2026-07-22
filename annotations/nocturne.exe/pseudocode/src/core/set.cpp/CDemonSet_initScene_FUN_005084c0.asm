@@ -7,9 +7,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00507f80 at 005083f0
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dc82
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d93b3
+;   core_set.cpp_FUN_00507f80 at 005083f0
 ;
 ; Referenced Globals:
 ;   string s_Initializing_scene_00590382

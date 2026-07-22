@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   FUN_004196b0 at 004198b5
-;   FUN_00561010 at 0056127f
 ;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0 at 004dbf16
+;   core_zombie.cpp_FUN_00561010 at 0056127f
 ;
 ; *****************************************************************************
 

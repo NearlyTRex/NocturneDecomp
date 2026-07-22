@@ -22,7 +22,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00458bf5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057d74e
+;   double DOUBLE_0057d74e = 5.22209901682860E-315
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -112,7 +112,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0045a01a
     FADD float ptr [ESI + 0x4]          ; 0045a01d
     FXCH                                ; 0045a020
-    FLD float ptr [0x0057d74e]          ; 0045a022 | DAT_0057d74e
+    FLD float ptr [0x0057d74e]          ; 0045a022 | DOUBLE_0057d74e
     FXCH                                ; 0045a028
     FMUL ST1                            ; 0045a02a
     FXCH ST2                            ; 0045a02c

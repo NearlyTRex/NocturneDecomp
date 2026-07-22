@@ -19,7 +19,7 @@
 ;   core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20 at 00542e59
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057aedd
+;   double DOUBLE_0057aedd = 65535
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0076934c
@@ -39,13 +39,13 @@
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
+;   core_set.cpp_FUN_0050ddd0
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
-;   FUN_0050ddd0
 ;
 ; *****************************************************************************
 
@@ -85,7 +85,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00437e07
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
     FLD float ptr [EBP + 0x37b48]       ; 00437e0c
-    FMUL double ptr [0x0057aedd]        ; 00437e12 | DAT_0057aedd
+    FMUL double ptr [0x0057aedd]        ; 00437e12 | DOUBLE_0057aedd
     ADD ESP,0x4                         ; 00437e18
     CALL crt_math.c_round_FUN_00563a30  ; 00437e1b
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
@@ -174,8 +174,8 @@ section .text
     PUSH ECX                            ; 00437f19
     MOV EBX,dword ptr [0x005be368]      ; 00437f1a | DAT_005be368
     PUSH EBX                            ; 00437f20 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 00437f21
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 00437f21
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
         ;   Label: LAB_00437f21
     ADD ESP,0x10                        ; 00437f26
     MOV EAX,dword ptr [EBP + 0x110]     ; 00437f29
@@ -222,8 +222,8 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 00437fa3 | DAT_005be368
         ;   Label: LAB_00437fa3
     PUSH EBX                            ; 00437fa9 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 00437faa
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 00437faa
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
         ;   Label: LAB_00437faa
     ADD ESP,0x10                        ; 00437faf
     PUSH 0x0                            ; 00437fb2
@@ -346,8 +346,8 @@ section .text
     PUSH ESI                            ; 004380f0
     MOV EDI,dword ptr [0x005be368]      ; 004380f1 | DAT_005be368
     PUSH EDI                            ; 004380f7 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 004380f8
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 004380f8
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
         ;   Label: LAB_004380f8
     ADD ESP,0x10                        ; 004380fd
     MOV EAX,dword ptr [EBP + 0x110]     ; 00438100

@@ -22,11 +22,11 @@ int core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,uint *param_2,uint 
     iVar4 = FUN_0048eef0(iVar3);
   }
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "=..\\core\\gore.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\gore.cpp";
     _DAT_01cc4804 = 0x675;
     FUN_004c8440("Can't create flies!");
   }
-  fVar2 = (float)_DAT_005851c0;
+  fVar2 = (float)60;
   *(uint *)(iVar4 + 0x20) = *param_2;
   *(uint *)(iVar4 + 0x24) = param_2[1];
   *(uint *)(iVar4 + 0x28) = param_2[2];

@@ -25,9 +25,9 @@
 ;   string s_ric-%s!?.wav_00581479
 ;   string s_ric-%s!?.wav_00581486
 ;   string s_ric-%s.wav_00581493
-;   undefined4 DAT_005814a4
-;   undefined4 DAT_005814ac
-;   undefined4 DAT_005814b4
+;   double DOUBLE_005814a4 = 0.200000000000000
+;   double DOUBLE_005814ac = -0.200000000000000
+;   double DOUBLE_005814b4 = 0.0578000000000000
 ;   undefined4 DAT_005b8bd8
 ;   undefined2 DAT_005b8bdc
 ;   undefined4 DAT_005bed68
@@ -64,13 +64,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0048ab72
     FLD float ptr [EAX + 0x4]           ; 0048ab75
     FST double ptr [ESP]                ; 0048ab78
-    FCOMP double ptr [0x005814a4]       ; 0048ab7b | DAT_005814a4
+    FCOMP double ptr [0x005814a4]       ; 0048ab7b | DOUBLE_005814a4
     FNSTSW AX                           ; 0048ab81
     SAHF                                ; 0048ab83
     JNC 0x0048ac45                      ; 0048ab84
         ;   XREF to: 0048ac45 (CONDITIONAL_JUMP)  ; LAB_0048ac45
     FLD double ptr [ESP]                ; 0048ab8a
-    FCOMP double ptr [0x005814ac]       ; 0048ab8d | DAT_005814ac
+    FCOMP double ptr [0x005814ac]       ; 0048ab8d | DOUBLE_005814ac
     FNSTSW AX                           ; 0048ab93
     SAHF                                ; 0048ab95
     JBE 0x0048ac45                      ; 0048ab96
@@ -128,7 +128,7 @@ section .text
     FLD float ptr [ESP + 0x44]          ; 0048ac2e
     FMUL ST0                            ; 0048ac32
     FADDP                               ; 0048ac34
-    FCOMP double ptr [0x005814b4]       ; 0048ac36 | DAT_005814b4
+    FCOMP double ptr [0x005814b4]       ; 0048ac36 | DOUBLE_005814b4
     FNSTSW AX                           ; 0048ac3c
     SAHF                                ; 0048ac3e
     JNC 0x0048acf5                      ; 0048ac3f

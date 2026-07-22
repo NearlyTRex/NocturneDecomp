@@ -11,8 +11,8 @@ void engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(uint param_1,uint param_2,u
 {
   byte local_6c [100];
   
-  _sprintf(local_6c,&DAT_00586732,*param_3);
+  _sprintf(local_6c,"%d",*param_3);
   engine_ini_cpp_CIniFile_getString_FUN_004bd910(param_1,param_2,local_6c,100);
-  sscanf(local_6c,&DAT_00586735,param_3);
+  sscanf(local_6c,"%d",param_3);
   return;
 }

@@ -14,8 +14,7 @@ void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)
   char *pcVar3;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-            (param_1 + 0x150,"?modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,"doorType");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d4,"doorSide");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d8,"doorState");
@@ -48,7 +47,7 @@ void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)
         *(uint *)(param_1 + 0x470) = 0;
       }
       else {
-        pcVar2 = &DAT_0057d1c0;
+        pcVar2 = "true";
         pcVar3 = (char *)(param_1 + 0x474);
         do {
           cVar1 = *pcVar2;

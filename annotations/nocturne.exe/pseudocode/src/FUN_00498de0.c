@@ -48,34 +48,34 @@ float FUN_00498de0(int param_1,int param_2,int param_3)
     iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(auStack_68,&fStack_50);
     fVar1 = *(float *)(iVar3 + 4);
     if (param_3 == 0) {
-      if ((float)_DAT_00582202 < fVar2) {
+      if ((float)30 < fVar2) {
         return -1.0;
       }
-      if (fVar1 < (float)_DAT_0058220a) {
+      if (fVar1 < (float)-0.78149070982587099) {
         return -1.0;
       }
-      if (_DAT_00582212 < (double)fVar1) {
+      if (1.56298141965174 < (double)fVar1) {
         return -1.0;
       }
     }
     else {
-      if ((float)_DAT_0058221a < fVar2) {
+      if ((float)35 < fVar2) {
         return -1.0;
       }
-      if (fVar1 < (float)_DAT_00582222) {
+      if (fVar1 < (float)-0.78539816337500001) {
         return -1.0;
       }
-      if (_DAT_0058222a < (double)fVar1) {
+      if (1.57079632675 < (double)fVar1) {
         return -1.0;
       }
     }
     pfVar5 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_80);
     fStack_38 = *pfVar5 + pfVar5[3];
     fStack_34 = pfVar5[1] + pfVar5[4];
-    fStack_2c = fStack_38 * _DAT_00582232;
+    fStack_2c = fStack_38 * 0.5f;
     fStack_30 = pfVar5[2] + pfVar5[5];
-    fStack_28 = fStack_34 * _DAT_00582232;
-    fStack_24 = fStack_30 * _DAT_00582232;
+    fStack_28 = fStack_34 * 0.5f;
+    fStack_24 = fStack_30 * 0.5f;
     fStack_5c = *(float *)(param_1 + 0x20) + fStack_2c;
     fStack_58 = *(float *)(param_1 + 0x24) + fStack_28;
     fStack_54 = *(float *)(param_1 + 0x28) + fStack_24;

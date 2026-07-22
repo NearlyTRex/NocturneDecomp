@@ -35,16 +35,15 @@ void FUN_004a3b90(int param_1,char *param_2)
   int local_14;
   
   if (*(int *)(param_1 + 0x228) != 0) {
-    uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                      ("p@Unable to save during cinematic" + 2);
+    uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Unable to save during cinematic");
     FUN_0046fcd0(0x01BCD074,uVar4);
     return;
   }
   remove("save\\$$SAVE$$.TMP");
   splitpath();
-  iVar2 = _stricmp(local_24c,&DAT_00583b32);
+  iVar2 = _stricmp(local_24c,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_24c,&DAT_00583b36), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_24c,".noc"), iVar2 == 0)) {
     pcVar7 = local_558;
     pcVar5 = &DAT_01c78598;
     do {
@@ -85,10 +84,10 @@ void FUN_004a3b90(int param_1,char *param_2)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  _mkdir(&DAT_00583b55);
+  _mkdir("save");
   DAT_00763e90 = 1;
   local_14 = 1;
-  iVar2 = _fopen("save\\$$SAVE$$.TMP",&DAT_00583b5a);
+  iVar2 = _fopen("save\\$$SAVE$$.TMP","wt");
   if (iVar2 == 0) {
     uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                       ("Warning!  Your game didn't save.");
@@ -129,8 +128,8 @@ void FUN_004a3b90(int param_1,char *param_2)
   _fclose(iVar2);
   DAT_00763e90 = 0;
   if (local_14 != 0) {
-    local_18 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_00583c06,"save\\$$SAVE$$.TMP")
-    ;
+    local_18 = engine_dosio_cpp_getFileSize_FUN_004568c0
+                         (&CHAR_00h_00583c06,"save\\$$SAVE$$.TMP");
     crt_fstream_cpp_ifstream_ctor_FUN_005652fe(local_14c,0);
     crt_fstream_cpp_ofstream_ctor_FUN_0056536a(local_cc,0);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
@@ -144,7 +143,7 @@ void FUN_004a3b90(int param_1,char *param_2)
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;
     }
-    _sprintf(local_350,"%s\\%s",&DAT_00583c28,local_558);
+    _sprintf(local_350,"%s\\%s","save",local_558);
     crt_fstream_cpp_openFile_FUN_00565eb5(local_cc,local_350,0x112,uVar4);
     if (local_6c != 0) {
       FUN_0046fcd0(0x01BCD074,uVar3);

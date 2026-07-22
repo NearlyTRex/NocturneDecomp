@@ -25,13 +25,13 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00439f34 = 0043a234
 ;   string s_%s_confused_while_walking_to_scr_0057b10b
-;   undefined4 DAT_0057b13c
-;   undefined4 DAT_0057b144
-;   undefined4 DAT_0057b14c
-;   undefined4 DAT_0057b154
-;   undefined4 DAT_0057b15c
-;   undefined4 DAT_0057b164
-;   undefined4 DAT_0057b16c
+;   double DOUBLE_0057b13c = 12.5663706140000
+;   double DOUBLE_0057b144 = 32
+;   double DOUBLE_0057b14c = -1.57079632675000
+;   double DOUBLE_0057b154 = 5.32864626443882E-315
+;   double DOUBLE_0057b15c = 1.57079632675000
+;   double DOUBLE_0057b164 = 1.59386252192652E-314
+;   double DOUBLE_0057b16c = 3.14159265350000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ac8c
 ;   undefined4 DAT_0077ad0c
@@ -42,6 +42,9 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_0043a980
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004b5490
@@ -49,9 +52,6 @@
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
-;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00439f5f
     PUSH dword ptr [EBP + 0x18]         ; 00439f62
     PUSH EBX                            ; 00439f65
-    CALL FUN_004259f0                   ; 00439f66
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 00439f66
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 00439f6b
     TEST EAX,EAX                        ; 00439f6e
     JZ 0x0043a1e9                       ; 00439f70
@@ -108,14 +108,14 @@ section .text
     ADD ESP,0x8                         ; 00439fd0
     FLD float ptr [EBP + 0x18]          ; 00439fd3
         ;   Label: LAB_00439fd3
-    FMUL double ptr [0x0057b13c]        ; 00439fd6 | DAT_0057b13c
+    FMUL double ptr [0x0057b13c]        ; 00439fd6 | DOUBLE_0057b13c
     PUSH dword ptr [EBP + 0x18]         ; 00439fdc
     MOV EAX,dword ptr [EBX + 0x23ac]    ; 00439fdf
     MOV dword ptr [EBX + 0x242c],EAX    ; 00439fe5
     PUSH EBX                            ; 00439feb
     FSTP float ptr [EBX + 0x2430]       ; 00439fec
-    CALL FUN_00428c00                   ; 00439ff2
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 00439ff2
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     LEA ESI,[EBX + 0x150]               ; 00439ff7
     ADD ESP,0x8                         ; 00439ffd
     TEST EAX,EAX                        ; 0043a000
@@ -166,27 +166,27 @@ section .text
     FLD float ptr [ESP + 0x88]          ; 0043a075
     ADD ESP,0x4                         ; 0043a07c
     FST float ptr [ESP]                 ; 0043a07f
-    FCOMP double ptr [0x0057b14c]       ; 0043a082 | DAT_0057b14c
+    FCOMP double ptr [0x0057b14c]       ; 0043a082 | DOUBLE_0057b14c
     FNSTSW AX                           ; 0043a088
     SAHF                                ; 0043a08a
     JNC 0x0043a099                      ; 0043a08b
         ;   XREF to: 0043a099 (CONDITIONAL_JUMP)  ; LAB_0043a099
     FLD float ptr [ESP]                 ; 0043a08d
-    FADD float ptr [0x0057b154]         ; 0043a090 | DAT_0057b154
+    FADD float ptr [0x0057b154]         ; 0043a090 | DOUBLE_0057b154
     FSTP float ptr [ESP]                ; 0043a096
     FLD float ptr [ESP]                 ; 0043a099
         ;   Label: LAB_0043a099
-    FCOMP double ptr [0x0057b15c]       ; 0043a09c | DAT_0057b15c
+    FCOMP double ptr [0x0057b15c]       ; 0043a09c | DOUBLE_0057b15c
     FNSTSW AX                           ; 0043a0a2
     SAHF                                ; 0043a0a4
     JBE 0x0043a0b3                      ; 0043a0a5
         ;   XREF to: 0043a0b3 (CONDITIONAL_JUMP)  ; LAB_0043a0b3
     FLD float ptr [ESP]                 ; 0043a0a7
-    FADD float ptr [0x0057b164]         ; 0043a0aa | DAT_0057b164
+    FADD float ptr [0x0057b164]         ; 0043a0aa | DOUBLE_0057b164
     FSTP float ptr [ESP]                ; 0043a0b0
     FLD float ptr [EBP + 0x18]          ; 0043a0b3
         ;   Label: LAB_0043a0b3
-    FMUL double ptr [0x0057b16c]        ; 0043a0b6 | DAT_0057b16c
+    FMUL double ptr [0x0057b16c]        ; 0043a0b6 | DOUBLE_0057b16c
     FLD float ptr [ESP]                 ; 0043a0bc
     FXCH                                ; 0043a0bf
     FST float ptr [ESP + 0x7c]          ; 0043a0c1
@@ -274,8 +274,8 @@ section .text
     PUSH dword ptr [EBX + 0x1fa50]      ; 0043a1a9
     PUSH EAX                            ; 0043a1af
     LEA ESI,[ESP + 0x14]                ; 0043a1b0
-    CALL FUN_0055d610                   ; 0043a1b4
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 0043a1b4
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     ADD ESP,0x4                         ; 0043a1b9
     LEA EAX,[ESP + 0x20]                ; 0043a1bc
     LEA EDI,[ESP + 0x20]                ; 0043a1c0
@@ -293,8 +293,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0043a1dd
         ;   Label: LAB_0043a1dd
     PUSH EBX                            ; 0043a1e0
-    CALL FUN_0042a150                   ; 0043a1e1
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 0043a1e1
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 0043a1e6
     MOV ESP,EBP                         ; 0043a1e9
         ;   Label: caseD_6
@@ -486,7 +486,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 0043a3b0
         ;   Label: LAB_0043a3b0
     FLD ST0                             ; 0043a3b3
-    FMUL double ptr [0x0057b144]        ; 0043a3b5 | DAT_0057b144
+    FMUL double ptr [0x0057b144]        ; 0043a3b5 | DOUBLE_0057b144
     FLD float ptr [EBX + 0x2424]        ; 0043a3bb
     FXCH                                ; 0043a3c1
     FSUBR ST0,ST1                       ; 0043a3c3

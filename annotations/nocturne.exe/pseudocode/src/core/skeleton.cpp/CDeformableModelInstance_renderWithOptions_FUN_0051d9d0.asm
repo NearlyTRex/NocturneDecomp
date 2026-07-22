@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_004110f0 at 0041125e
-;   FUN_00414340 at 004144bf
 ;   FUN_0045a260 at 0045a3ee
 ;   FUN_004d5b20 at 004d5b7b
 ;   FUN_00541640 at 005416c0
 ;   FUN_0054dac0 at 0054db36
+;   core_baron.cpp_FUN_004110f0 at 0041125e
+;   core_batman.cpp_FUN_00414340 at 004144bf
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 at 00427040
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425c95
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5969

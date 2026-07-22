@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[4]:
-;   FUN_004270e0 at 00427193
 ;   FUN_00499b00 at 00499b1e
 ;   FUN_005396d0 at 005396ea
+;   core_charactr.cpp_FUN_004270e0 at 00427193
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de0b9
 ;
 ; Called Functions:

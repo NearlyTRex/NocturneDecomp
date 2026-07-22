@@ -28,8 +28,8 @@
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 0051025e
 ;
 ; Referenced Globals:
-;   string s_..\\core\\actor.cpp_00577701
-;   string s_CDemonActor::rayIntersect_-_Inva_00577713
+;   TerminatedCString s_core_actor_cpp_00577701
+;   TerminatedCString s_CDemonActor_rayIntersect_00577713
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

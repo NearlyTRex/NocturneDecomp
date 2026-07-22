@@ -59,7 +59,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(int param_1,float pa
         (float)_DAT_0058a812) {
       iVar6 = *(int *)(iVar6 + 0x1cae0d8);
       iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x140))(iVar6);
-      if ((iVar6 == 0) && (uVar5 = FUN_0042af70(param_1,param_2), uVar5 != 0)) {
+      if ((iVar6 == 0) && (uVar5 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar5 != 0)) {
         if (uVar5 < 2) {
           *(uint *)(param_1 + 0xbc94) = 1;
         }

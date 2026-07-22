@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_rasterizePolygonHardware_FUN_00494260
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_00407057
     MOV EAX,dword ptr [EDX + 0x4]       ; 00407058
     PUSH EAX                            ; 0040705b
-    CALL FUN_00432cd0                   ; 0040705c
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 0040705c
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 00407061
     MOV EAX,0x6b0288                    ; 00407064 | DAT_006b0288
     POP EBP                             ; 00407069

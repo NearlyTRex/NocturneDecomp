@@ -17,7 +17,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580(int *pa
   if (0 < *param_1) {
     do {
       if (param_2 == piVar2[0x53]) {
-        FUN_0050e550(param_1,iVar1,param_3);
+        core_set_cpp_FUN_0050e550(param_1,iVar1,param_3);
       }
       iVar1 = iVar1 + 1;
       piVar2 = piVar2 + 0x68;

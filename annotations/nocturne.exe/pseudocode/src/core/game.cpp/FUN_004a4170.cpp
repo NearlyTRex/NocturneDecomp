@@ -55,9 +55,9 @@ void FUN_004a4170(int param_1,char *param_2,int param_3)
   remove("save\\$$SAVE$$.TMP");
   *(uint *)(param_1 + 0x234) = 1;
   splitpath(&DAT_01c78598,0,0,0,local_430);
-  iVar3 = _stricmp(local_430,&DAT_00583c33);
+  iVar3 = _stricmp(local_430,"noc");
   if ((iVar3 == 0) ||
-     (iVar3 = _stricmp(local_430,&DAT_00583c37), iVar3 == 0)) {
+     (iVar3 = _stricmp(local_430,".noc"), iVar3 == 0)) {
     pcVar8 = &DAT_01c78598;
     pcVar10 = local_534;
     do {
@@ -85,7 +85,8 @@ void FUN_004a4170(int param_1,char *param_2,int param_3)
   do {
     if (param_2 == (char *)0x0) {
       uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                        ("Select file to load",&DAT_00583c42,"*.noc",local_534,1);
+                        ("Select file to load","save","*.noc",local_534,1
+                        );
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
                         (0x01BCD074,uVar6);
       if (iVar3 == 0) {
@@ -111,7 +112,7 @@ LAB_004a4674:
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_00480410(0x01C03A10);
     core_level_cpp_CLevelLoader_show_FUN_004c5640(0x01CC3160,9,0,0xffffffff);
-    iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00583c5e,local_534,&DAT_00583c5b);
+    iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("save",local_534,"rt");
     local_18 = _ftell(iVar3);
     uVar6 = 1;
     iVar4 = _stricmp(&DAT_01c78598,local_534);
@@ -154,11 +155,11 @@ LAB_004a4674:
     if (iVar4 == 0) {
 LAB_004a43cc:
       _fclose(iVar3);
-      local_34 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_00583c67,local_534);
+      local_34 = engine_dosio_cpp_getFileSize_FUN_004568c0("save",local_534);
       local_34 = local_34 + -4;
       crt_fstream_cpp_ifstream_ctor_FUN_005652fe(local_168,0);
       crt_fstream_cpp_ofstream_ctor_FUN_0056536a(local_e8,0);
-      _sprintf(local_638,"%s\\%s",&DAT_00583c6c,local_534);
+      _sprintf(local_638,"%s\\%s","save",local_534);
       uVar2 = 0x000001A4;
       crt_fstream_cpp_openFile_FUN_00565eb5(local_168,local_638,0x121,0x000001A4);
       crt_fstream_cpp_istream_seekg_FUN_00565f14(local_124,4);
@@ -195,7 +196,7 @@ LAB_004a43cc:
         crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_168,0);
         return;
       }
-      iVar3 = _fopen("save\\$$SAVE$$.TMP",&DAT_00583cef);
+      iVar3 = _fopen("save\\$$SAVE$$.TMP","rt");
       if (iVar3 == 0) {
         _DAT_01cc4800 = "..\\core\\game.cpp";
         _DAT_01cc4804 = 0xe2f;
@@ -212,7 +213,7 @@ LAB_004a43cc:
       iVar4 = 0;
       bVar14 = true;
       pbVar9 = local_3c;
-      pbVar11 = &DAT_00583c63;
+      pbVar11 = (byte *)"LZW";
       do {
         if (iVar5 == 0) break;
         iVar5 = iVar5 + -1;
@@ -233,7 +234,7 @@ LAB_004a43cc:
       FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
     }
     else {
-      _fscanf(iVar3,&DAT_00583d48,&local_38);
+      _fscanf(iVar3,"%d\n",&local_38);
       if (local_38 < 3) {
         _fclose(iVar3);
         FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
@@ -288,12 +289,12 @@ LAB_004a43cc:
         else {
           _fgets(local_330,0xff,iVar3);
           iVar4 = 1;
-          _fscanf(iVar3,&DAT_00583da1,&DAT_01c7869c);
+          _fscanf(iVar3,"%d\n",&DAT_01c7869c);
           if (0 < _DAT_01c7869c) {
             puVar7 = &DAT_01c786a0;
             do {
               iVar4 = iVar4 + 1;
-              _fscanf(iVar3,&DAT_00583da5,puVar7);
+              _fscanf(iVar3,"%d\n",puVar7);
               puVar7 = puVar7 + 4;
             } while (iVar4 <= _DAT_01c7869c);
           }

@@ -17,9 +17,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s_Capture_0057f36e+1
+;   TerminatedCString s_Capture_0057f36f
 ;   string s_%s_can_see_hero_0057f377
-;   undefined4 DAT_0057f38b
+;   float FLOAT_0057f38b = 3
 ;   undefined4 DAT_0059cda8
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
@@ -96,7 +96,7 @@ section .text
     POP ESI                             ; 00479bf0
     POP EBX                             ; 00479bf1
     RET                                 ; 00479bf2
-    PUSH 0x57f36f                       ; 00479bf3 | s_Capture_0057f36e+1
+    PUSH 0x57f36f                       ; 00479bf3 | = "Capture"
         ;   Label: LAB_00479bf3
     MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | DAT_005b7650
     PUSH ESI                            ; 00479bfe
@@ -313,7 +313,7 @@ section .text
     JC 0x00479edb                       ; 00479e8a
         ;   XREF to: 00479edb (CONDITIONAL_JUMP)  ; LAB_00479edb
     FLD float ptr [ESP + 0x8]           ; 00479e8c
-    FMUL float ptr [0x0057f38b]         ; 00479e90 | DAT_0057f38b
+    FMUL float ptr [0x0057f38b]         ; 00479e90 | FLOAT_0057f38b
     FST float ptr [ESP + 0x8]           ; 00479e96
     FMUL float ptr [ESP + 0x8]          ; 00479e9a
     FLD float ptr [ESP + 0x4]           ; 00479e9e

@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFileA_00575498 = 00175b06
-;   string s_conin$_005991ec
-;   string s_conout$_005991f4
+;   TerminatedCString s_conin_005991ec
+;   TerminatedCString s_conout_005991f4
 ;   void* PTR_FUN_005c1ac0 = 005671e4
 ;   void* PTR_FUN_005c1ac4 = 005671e4
 ;   undefined4 DAT_005c20d0

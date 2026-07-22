@@ -19,6 +19,10 @@ void __cdecl CBatman::pickRandomMovementState(int param_1);
 // Address: 00413800
 void CBatman::process(int param_1,float param_2);
 
+// Original: core_batman.cpp_FUN_00414340
+// Address: 00414340
+int FUN_00414340(int param_1);
+
 // Original: core_batman.cpp_CBatman_archive_FUN_00414510
 // Address: 00414510
 void CBatman::archive(int param_1);

@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   string s_[Y]es,_I_know_what_I'm_doing_and_0057e5e5
 ;   string s_[N]o,_please,_I_didn't_mean_to_d_0057e625
-;   undefined4 DAT_0057e64b
+;   TerminatedCString s_yn_0057e64b
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
@@ -71,7 +71,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004702a5
         ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 004702aa
-    PUSH 0x57e64b                       ; 004702ad | DAT_0057e64b
+    PUSH 0x57e64b                       ; 004702ad | = "yn"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004702b2
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004702b7

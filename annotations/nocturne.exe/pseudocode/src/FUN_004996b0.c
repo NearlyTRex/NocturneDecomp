@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004996b0(int param_1,int param_2)
 
 {
@@ -50,7 +48,7 @@ void FUN_004996b0(int param_1,int param_2)
         *(uint *)(param_1 + 0x2590) = 0;
         fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x42c80000,1);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (param_1 + 0x150,(fVar3 <= _DAT_00582282) + '\t');
+                  (param_1 + 0x150,(fVar3 <= 50.0f) + '\t');
         if (*(int *)(0x01C775EC + 0xc0) != 2) {
           iVar2 = *(int *)(param_1 + 0x14c);
           uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3e800000,0x3ecccccd);

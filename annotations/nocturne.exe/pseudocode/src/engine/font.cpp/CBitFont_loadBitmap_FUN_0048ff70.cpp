@@ -23,7 +23,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char 
   byte local_110 [256];
   
   if (3 < *param_1) {
-    _DAT_01cc4800 = "@..\\engine\\font.cpp" + 1;
+    _DAT_01cc4800 = "..\\engine\\font.cpp";
     _DAT_01cc4804 = 0xd7;
     FUN_004c8440("Too many bitmaps");
   }
@@ -41,7 +41,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char 
   strupr(param_1 + *param_1 * 0x14 + 1);
   iVar5 = param_3 * param_4;
   param_1[*param_1 + 0x55] = param_3;
-  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058177f,param_2);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",param_2);
   if (iVar3 < iVar5) {
     _sprintf(local_440,"Invalid font file size (%s).",param_2);
     _DAT_01cc4800 = "..\\engine\\font.cpp";
@@ -58,8 +58,8 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char 
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(param_2,param_1[*param_1 + 0x51],iVar5);
   splitpath(param_2,0,local_110,local_210,0);
-  makepath(local_314,0,local_110,local_210,&DAT_005817f6);
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005817fd,local_314,&DAT_005817fa);
+  makepath(local_314,0,local_110,local_210,"act");
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_314,"rb");
   if (iVar3 != 0) {
     iVar5 = 0;
     do {

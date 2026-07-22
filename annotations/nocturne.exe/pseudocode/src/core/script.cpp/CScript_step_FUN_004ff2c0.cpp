@@ -952,7 +952,8 @@ joined_r0x00504194:
                                                     uVar8 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                                             (0x01C03A10,local_2d5c);
-                                                  FUN_0050e550(0x01E57284,iVar4,uVar8);
+                                                  core_set_cpp_FUN_0050e550
+                                                            (0x01E57284,iVar4,uVar8);
                                                   }
                                                   else {
                                                     pcVar12 = (char *)

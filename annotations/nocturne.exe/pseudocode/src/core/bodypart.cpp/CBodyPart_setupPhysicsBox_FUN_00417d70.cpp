@@ -33,10 +33,10 @@ void core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(int param_1)
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_4c);
     fStack_28 = fStack_4c + fStack_40;
     fStack_24 = fStack_48 + fStack_3c;
-    fStack_34 = fStack_28 * _DAT_0057911a;
-    fStack_30 = fStack_24 * _DAT_0057911a;
+    fStack_34 = fStack_28 * 0.5f;
+    fStack_30 = fStack_24 * 0.5f;
     fStack_20 = fStack_44 + fStack_38;
-    fStack_2c = fStack_20 * _DAT_0057911a;
+    fStack_2c = fStack_20 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_1c,&fStack_34);
     fStack_10 = fStack_40 - fStack_4c;
     fStack_c = fStack_3c - fStack_48;

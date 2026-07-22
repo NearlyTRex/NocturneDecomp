@@ -8,7 +8,7 @@
 ;   FUN_00572a35 at 00572a55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00599281
+;   TerminatedCString s_in_00599281
 ;   undefined4 DAT_005c2148
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
         ;   XREF to: 00573660 (UNCONDITIONAL_CALL)  ; undefined FUN_00573660()
     ADD ESP,0x8                         ; 00572a09
     PUSH EBX                            ; 00572a0c
-    PUSH 0x599281                       ; 00572a0d | DAT_00599281
+    PUSH 0x599281                       ; 00572a0d | = " in "
     CALL FUN_00573660                   ; 00572a12
         ;   XREF to: 00573660 (UNCONDITIONAL_CALL)  ; undefined FUN_00573660()
     ADD ESP,0x8                         ; 00572a17

@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   undefined4 s_imp-die?.wav_005864bc+1
+;   TerminatedCString s_imp_die_wav_005864bd
 ;   string s_imp-hurt?.wav_005864ca
-;   undefined4 DAT_005864dd
+;   double DOUBLE_005864dd = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     FLD float ptr [EDI + 0x4]           ; 004bcce6
     LEA EAX,[EDI + 0x1c]                ; 004bcce9
     FLD ST0                             ; 004bccec
-    FMUL double ptr [0x005864dd]        ; 004bccee | DAT_005864dd
+    FMUL double ptr [0x005864dd]        ; 004bccee | DOUBLE_005864dd
     PUSH EAX                            ; 004bccf4
     LEA EAX,[ESP + 0x4]                 ; 004bccf5
     XOR EBX,EBX                         ; 004bccf9
@@ -115,7 +115,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004bcd9c
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 004bcda1
-    PUSH 0x5864bd                       ; 004bcda4 | s_imp-die?.wav_005864bc+1
+    PUSH 0x5864bd                       ; 004bcda4 | = "imp-die?.wav"
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004bcda9
         ;   Label: LAB_004bcda9
     PUSH ESI                            ; 004bcdaf

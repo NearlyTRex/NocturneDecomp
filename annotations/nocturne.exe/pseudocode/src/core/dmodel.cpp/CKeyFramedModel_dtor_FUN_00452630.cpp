@@ -9,6 +9,6 @@
 uint __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630(uint param_1)
 
 {
-  FUN_00452f10(param_1);
+  core_dmodel_cpp_FUN_00452f10(param_1);
   return param_1;
 }

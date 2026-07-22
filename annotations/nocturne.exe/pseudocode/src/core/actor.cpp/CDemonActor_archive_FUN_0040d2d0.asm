@@ -6,7 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x8]:1  local_8
 ;
-; XREF[47]:
+; XREF[50]:
+;   FUN_0040f390 at 0040f396
+;   FUN_0040f7d0 at 0040f7d6
 ;   FUN_0043cc50 at 0043cc56
 ;   FUN_00481e20 at 00481e26
 ;   FUN_0048e830 at 0048e836
@@ -15,14 +17,12 @@
 ;   FUN_004b49a0 at 004b49c1
 ;   FUN_004b61f0 at 004b61f5
 ;   FUN_004cc870 at 004cc876
-;   FUN_004eed10 at 004eed7f
-;   FUN_005348c0 at 005348c6
-;   ... and 37 more
+;   ... and 40 more
 ;
 ; Referenced Globals:
 ;   string s_location_00577f05
 ;   string s_orient_00577f0e
-;   undefined4 DAT_00577f15
+;   float FLOAT_00577f15 = 1.087655E-38
 ;   string s_wasCreated_00577f19
 ;   string s_createProb_00577f24
 ;   string s_createEvent_00577f2f
@@ -65,7 +65,7 @@ section .text
     ADD ESP,0x4                         ; 0040d30e
     POP EBX                             ; 0040d311
     RET                                 ; 0040d312
-    PUSH 0x577f15                       ; 0040d313 | DAT_00577f15
+    PUSH 0x577f15                       ; 0040d313 | FLOAT_00577f15
         ;   Label: LAB_0040d313
     LEA EAX,[ESP + 0x4]                 ; 0040d318
     PUSH EAX                            ; 0040d31c

@@ -12,7 +12,7 @@
 ;   FUN_0046dc10 at 0046dcf2
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dtri.cpp_0057e48d+1
+;   TerminatedCString s_core_dtri_cpp_0057e48e
 ;   string s_Bad_clip!_0057e49f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -178,7 +178,7 @@ section .text
     POP ESI                             ; 0046d633
     POP EBX                             ; 0046d634
     RET                                 ; 0046d635
-    MOV EAX,0x57e48e                    ; 0046d636 | s_..\core\dtri.cpp_0057e48d+1
+    MOV EAX,0x57e48e                    ; 0046d636 | = "..\\core\\dtri.cpp"
         ;   Label: LAB_0046d636
     MOV EDX,0x457                       ; 0046d63b
     PUSH 0x57e49f                       ; 0046d640 | = "Bad clip!"

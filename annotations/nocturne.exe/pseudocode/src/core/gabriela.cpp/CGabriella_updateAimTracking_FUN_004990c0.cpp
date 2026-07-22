@@ -79,7 +79,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int par
         *(uint *)(param_1 + 0x1fa68) = *(uint *)(param_1 + 0x1fa6c);
         *(uint *)(param_1 + 0x1fa64) = *(uint *)(param_1 + 0x1fa68);
       }
-      fVar2 = param_2 / (_DAT_0059dcb0 * (float)_DAT_00582252) + *(float *)(param_1 + 0x1fa78);
+      fVar2 = param_2 / (_DAT_0059dcb0 * (float)0.5) + *(float *)(param_1 + 0x1fa78);
     }
     else if (*(int *)(param_1 + 0x1fa60) == 0) {
       if (0.0 < *(float *)(param_1 + 0x1fa74)) goto LAB_0049915d;
@@ -94,10 +94,10 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int par
                                     (*(int *)(param_1 + 0x1fa60),auStack_bc);
         fStack_a4 = *pfVar6 + pfVar6[3];
         fStack_a0 = pfVar6[1] + pfVar6[4];
-        fStack_8c = fStack_a4 * _DAT_0058224e;
+        fStack_8c = fStack_a4 * 0.5f;
         fStack_9c = pfVar6[2] + pfVar6[5];
-        fStack_88 = fStack_a0 * _DAT_0058224e;
-        fStack_12c = fStack_9c * _DAT_0058224e;
+        fStack_88 = fStack_a0 * 0.5f;
+        fStack_12c = fStack_9c * 0.5f;
         fStack_84 = fStack_12c;
         fVar2 = fStack_8c;
         fVar3 = fStack_88;
@@ -129,11 +129,11 @@ LAB_004993c1:
     }
   }
   else {
-    fVar2 = *(float *)(param_1 + 0xbcbc) * (float)_DAT_0058223a * (float)_DAT_00582242 * param_2 +
-            *(float *)(param_1 + 0x1fa64);
+    fVar2 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_2
+            + *(float *)(param_1 + 0x1fa64);
     local_3c = 0x3fc90fdb;
     *(float *)(param_1 + 0x1fa64) = fVar2;
-    if (fVar2 < _DAT_0058224a) {
+    if (fVar2 < -1.570796f) {
       *(uint *)(param_1 + 0x1fa64) = 0xbfc90fdb;
     }
     if (1.5707964 < *(float *)(param_1 + 0x1fa64)) {
@@ -158,7 +158,7 @@ LAB_0049915d:
     local_18 = local_1c;
     local_30 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                 (*(float *)(param_1 + 0x1fa64) - *(float *)(param_1 + 0x1fa6c));
-    fVar2 = param_2 * (float)_DAT_0058223a * (float)_DAT_0058225a;
+    fVar2 = param_2 * (float)3.1415926535000001 * (float)1.5;
     if (local_1c < -fVar2) {
       local_1c = -fVar2;
     }

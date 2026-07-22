@@ -52,10 +52,10 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
     local_50 = *(float *)(param_1 + 0x24) - *(float *)(iVar4 + 0x24);
     local_4c = *(float *)(param_1 + 0x28) - *(float *)(iVar4 + 0x28);
     local_2c = SQRT(local_4c * local_4c + local_54 * local_54 + local_50 * local_50);
-    if ((((*(int *)(param_1 + 0x1fa38) == 3) || (local_2c < _DAT_0057b174)) &&
+    if ((((*(int *)(param_1 + 0x1fa38) == 3) || (local_2c < 5.4396864758631248e-315._0_4_)) &&
         ((*(int *)(param_1 + 0x1fa38) == 2 || (*(int *)(param_1 + 0x1fa38) == 3)))) &&
        ((iVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,&local_88), iVar4 != 0 &&
-        (local_88 < (float)_DAT_0057b17c)))) {
+        (local_88 < (float)20)))) {
       bVar2 = true;
       iVar6 = iVar4;
     }
@@ -69,7 +69,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
     }
     fVar1 = SQRT(local_4c * local_4c + local_54 * local_54 + local_50 * local_50);
     local_30 = fVar1;
-    if ((float)_DAT_0057b184 <= fVar1) {
+    if ((float)6 <= fVar1) {
       iVar4 = 0;
       if (!bVar2) {
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
@@ -83,7 +83,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
       if (iVar4 != 0) {
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (local_80 - *(float *)(param_1 + 0x34));
-        fVar3 = local_14 * (float)_DAT_0057b18c * (float)_DAT_0057b194;
+        fVar3 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
         if (fVar3 < local_28) {
@@ -92,7 +92,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if (((float)_DAT_0057b19c <= fVar1) || (bVar2)) {
+        if (((float)10 <= fVar1) || (bVar2)) {
           *(uint *)(param_1 + 0xbc9c) = 1;
           *(uint *)(param_1 + 0xbc94) = 1;
         }
@@ -121,7 +121,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
         ;
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
-        fVar1 = local_14 * (float)_DAT_0057b18c * (float)_DAT_0057b194;
+        fVar1 = local_14 * (float)0.31830988619288902 * (float)4;
         local_18 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar1;
         if (fVar1 < local_18) {
@@ -130,8 +130,8 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if ((((float)_DAT_0057b1a4 < *(float *)(param_1 + 0xbcb8)) &&
-            ((double)*(float *)(param_1 + 0xbcb8) < _DAT_0057b1ac)) &&
+        if ((((float)-0.25 < *(float *)(param_1 + 0xbcb8)) &&
+            ((double)*(float *)(param_1 + 0xbcb8) < 0.25)) &&
            (*(int *)(param_1 + 0xbca0) != 0)) {
           *(uint *)(param_1 + 0xbcb8) = 0;
         }
@@ -161,11 +161,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
       local_44 = -local_20;
     }
     local_8c = local_44 - *(float *)(param_1 + 0x1fa48);
-    if (param_2 * (float)_DAT_0057b1b4 < local_8c) {
-      local_8c = param_2 * (float)_DAT_0057b1b4;
+    if (param_2 * (float)3.1415926535000001 < local_8c) {
+      local_8c = param_2 * (float)3.1415926535000001;
     }
-    if (local_8c < param_2 * (float)_DAT_0057b1bc) {
-      local_8c = param_2 * (float)_DAT_0057b1bc;
+    if (local_8c < param_2 * (float)-3.1415926535000001) {
+      local_8c = param_2 * (float)-3.1415926535000001;
     }
     *(float *)(param_1 + 0x1fa48) = *(float *)(param_1 + 0x1fa48) + local_8c;
   }

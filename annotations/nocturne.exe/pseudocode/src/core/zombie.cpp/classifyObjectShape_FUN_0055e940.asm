@@ -11,7 +11,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   FUN_00561010 at 0056164e
+;   core_zombie.cpp_FUN_00561010 at 0056164e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005983ce

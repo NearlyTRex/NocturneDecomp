@@ -14,11 +14,11 @@ int core_emitter_cpp_CEmitter_ctor_FUN_004783c0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x240);
   *(byte ***)(iVar2 + -0xf4) = &PTR_core_emitter_cpp_CEmitter_setup_FUN_00478520_0059cc74;
   *(uint *)(iVar2 + -0xec) = 0x3f800000;
-  pcVar3 = &DAT_0057f195;
+  pcVar3 = "none";
   *(uint *)(iVar2 + -0xe8) = 0x3f800000;
   *(uint *)(iVar2 + -0xe4) = 0x3f800000;
   pcVar4 = (char *)(iVar2 + -0xdc);
@@ -32,7 +32,7 @@ int core_emitter_cpp_CEmitter_ctor_FUN_004783c0(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_0057f19a;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + -0x78);
   do {
     cVar1 = *pcVar3;

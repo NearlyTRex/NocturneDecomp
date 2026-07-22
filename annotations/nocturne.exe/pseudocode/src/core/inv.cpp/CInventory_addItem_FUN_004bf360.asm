@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   string s_You've_found_:_00586e61
-;   undefined4 DAT_00586e71
+;   TerminatedCString s_d_00586e71
 ;   string s_CHealthItem_00586e75
 ;   string s_Press_00586e81
 ;   string s_and_00586e88
@@ -36,6 +36,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_actor.cpp_createActorByName_FUN_0040d540
+;   core_actor.cpp_FUN_00409cd0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
@@ -47,7 +48,6 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
 ;   crt_string.c__stricmp_FUN_00564520
-;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -156,7 +156,7 @@ section .text
         ;   XREF to: 004bf4c6 (CONDITIONAL_JUMP)  ; LAB_004bf4c6
     MOV EAX,dword ptr [EBX + 0x30c]     ; 004bf47f
     PUSH EAX                            ; 004bf485
-    PUSH 0x586e71                       ; 004bf486 | DAT_00586e71
+    PUSH 0x586e71                       ; 004bf486 | = "%d "
     LEA EAX,[ESP + 0x208]               ; 004bf48b
     PUSH EAX                            ; 004bf492
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bf493
@@ -1135,7 +1135,7 @@ section .text
         ;   XREF to: 004bfca7 (CONDITIONAL_JUMP)  ; LAB_004bfca7
     POP EDI                             ; 004bfcbf
         ;   Label: LAB_004bfcbf
-    PUSH 0x58701a                       ; 004bfcc0 | DAT_0058701a
+    PUSH 0x58701a                       ; 004bfcc0 | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004bfcc5
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004bfcca
@@ -1348,7 +1348,7 @@ section .text
         ;   XREF to: 004bfe73 (CONDITIONAL_JUMP)  ; LAB_004bfe73
     POP EDI                             ; 004bfe8b
         ;   Label: LAB_004bfe8b
-    PUSH 0x58703e                       ; 004bfe8c | DAT_0058703e
+    PUSH 0x58703e                       ; 004bfe8c | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004bfe91
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004bfe96
@@ -1411,7 +1411,7 @@ section .text
     ADD ESP,0x8                         ; 004bff11
     MOV dword ptr [ESP + 0x320],EAX     ; 004bff14
     FILD dword ptr [ESP + 0x320]        ; 004bff1b
-    FMUL double ptr [0x00587161]        ; 004bff22 | DAT_00587161
+    FMUL double ptr [0x00587161]        ; 004bff22 | DOUBLE_00587161
     FSTP float ptr [EBP + 0x344]        ; 004bff28
     MOV EDI,dword ptr [0x007641f4]      ; 004bff2e | DAT_007641f4
         ;   Label: LAB_004bff2e
@@ -1778,8 +1778,8 @@ section .text
     ADD ESP,0x8                         ; 004c0337
     MOV EDI,dword ptr [ESP + 0x33c]     ; 004c033a
     PUSH EDI                            ; 004c0341
-    CALL FUN_00409cd0                   ; 004c0342
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409cd0()
+    CALL core_actor.cpp_FUN_00409cd0    ; 004c0342
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409cd0()
     ADD ESP,0x4                         ; 004c0347
     PUSH 0x5870e3                       ; 004c034a | = "Found dynamite.  Creating weapon for ..."
     MOV EAX,[0x005ad350]                ; 004c034f | PTR_DAT_005ad350
@@ -2028,8 +2028,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c05ef
     MOV EDX,dword ptr [EAX + 0xc]       ; 004c05f6
     PUSH EDX                            ; 004c05f9
-    CALL FUN_00409cd0                   ; 004c05fa
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00409cd0()
+    CALL core_actor.cpp_FUN_00409cd0    ; 004c05fa
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409cd0()
     ADD ESP,0x4                         ; 004c05ff
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c0602
     PUSH EDI                            ; 004c0609

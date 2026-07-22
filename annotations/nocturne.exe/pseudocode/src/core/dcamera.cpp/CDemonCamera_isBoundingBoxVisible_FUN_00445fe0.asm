@@ -82,7 +82,7 @@
 ;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0 at 0050b02c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b9e3
+;   double DOUBLE_0057b9e3 = 256
 ;   undefined4 DAT_0059bddc
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
@@ -126,7 +126,7 @@ section .text
         ;   XREF to: 00460be0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0()
     FLD float ptr [EBX + 0x104]         ; 00446012
     FSUB float ptr [EBP]                ; 00446018
-    FLD double ptr [0x0057b9e3]         ; 0044601b | DAT_0057b9e3
+    FLD double ptr [0x0057b9e3]         ; 0044601b | DOUBLE_0057b9e3
     FXCH                                ; 00446021
     FMUL ST1                            ; 00446023
     FLD float ptr [EBX + 0x10c]         ; 00446025

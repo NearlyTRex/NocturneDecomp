@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   FUN_0040cb00 at 0040cbbc
+;   core_actor.cpp_FUN_0040cb00 at 0040cbbc
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\motion.cpp_0058b40a

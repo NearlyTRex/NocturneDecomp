@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 225,
+    "complexity_score": 209,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 17,
+    "pseudocode_lines": 39,
+    "suspect_count": 16,
     "suspect_types": [
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 146
+    "total_lines": 145
   },
   "cross_references": [],
   "function": {
@@ -160,9 +159,9 @@
   "globals": [
     {
       "addr": "0057a032",
-      "name": "DAT_0057a032",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057a032",
+      "type": "double",
+      "value": "5"
     },
     {
       "addr": "005b9354",
@@ -335,7 +334,7 @@
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 34,
+          "line": 32,
           "message": "Uninitialized variable: local_18",
           "severity": "error"
         }
@@ -346,16 +345,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,int param_2,uint param_3)",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,int param_2,uint param_3)",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,int param_2,uint param_3)",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != 0) &&",
@@ -387,7 +378,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
@@ -395,7 +386,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
@@ -404,14 +403,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,local_44,param_3);",
@@ -419,7 +410,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_2,local_44,param_3);",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "local_38 = *(float *)(param_2 + 0x20) + local_2c;",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "local_34 = *(float *)(param_2 + 0x24) + local_28;",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_2",
       "severity": "mild",
       "text": "local_30 = *(float *)(param_2 + 0x28) + local_24;",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&local_38,param_2 + 0x30);",
@@ -459,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&local_38,param_2 + 0x30);",
@@ -467,7 +458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&local_38,param_2 + 0x30);",
@@ -475,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&local_38,param_2 + 0x30);",
@@ -483,7 +474,7 @@
     },
     {
       "description": "Uninitialized variable: local_18",
-      "line": 34,
+      "line": 32,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_24 = local_18 - pfVar2[2];",

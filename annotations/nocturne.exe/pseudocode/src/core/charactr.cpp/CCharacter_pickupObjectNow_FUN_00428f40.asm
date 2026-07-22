@@ -9,13 +9,13 @@
 ;   FUN_004da790 at 004daa4e
 ;   FUN_0053f310 at 0053f5b6
 ;   FUN_0054dd50 at 0054df2f
-;   FUN_0055ef50 at 0055f427
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004b5c30 at 004b5c4e
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0 at 004bb38c
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f1c8
+;   core_zombie.cpp_FUN_0055ef50 at 0055f427
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\charactr.cpp_0057a149+1
+;   TerminatedCString s_core_charactr_cpp_0057a14a
 ;   string s_CCharacter::pickupObjectNow_-_in_0057a15f
 ;   string s_..\\core\\charactr.cpp_0057a190
 ;   string s_CCharacter::pickupObjectNow_-_in_0057a1a5
@@ -44,7 +44,7 @@ section .text
     CMP EDI,0x2                         ; 00428f54
     JL 0x00428f7c                       ; 00428f57
         ;   XREF to: 00428f7c (CONDITIONAL_JUMP)  ; LAB_00428f7c
-    MOV EDX,0x57a14a                    ; 00428f59 | s_..\core\charactr.cpp_0057a149+1
+    MOV EDX,0x57a14a                    ; 00428f59 | = "..\\core\\charactr.cpp"
         ;   Label: LAB_00428f59
     MOV ECX,0xbe7                       ; 00428f5e
     PUSH 0x57a15f                       ; 00428f63 | = "CCharacter::pickupObjectNow - invalid..."

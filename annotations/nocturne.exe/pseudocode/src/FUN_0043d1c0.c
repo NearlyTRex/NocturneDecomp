@@ -83,7 +83,7 @@ uint FUN_0043d1c0(int param_1)
   fStack_ac = fStack_40 + fStack_a0;
   fStack_a8 = fStack_3c + fStack_9c;
   fStack_a4 = fStack_38 + fStack_98;
-  fStack_28 = (float)_DAT_0057b496 / *(float *)(param_1 + 0x2e0);
+  fStack_28 = (float)1.5 / *(float *)(param_1 + 0x2e0);
   fStack_7c = fStack_a0 * fStack_28;
   fStack_78 = fStack_9c * fStack_28;
   fStack_74 = fStack_98 * fStack_28;
@@ -153,7 +153,7 @@ uint FUN_0043d1c0(int param_1)
       fStack_b8 = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
       fStack_b4 = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
       fStack_b0 = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-      fStack_1c = (float)_DAT_0057b49e /
+      fStack_1c = (float)10 /
                   SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4);
       fStack_58 = fStack_b8 * fStack_1c;
       fStack_54 = fStack_b4 * fStack_1c;

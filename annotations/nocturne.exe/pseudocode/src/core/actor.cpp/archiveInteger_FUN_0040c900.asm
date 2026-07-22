@@ -4,7 +4,9 @@
 ; void __cdecl core_actor_cpp_archiveInteger_FUN_0040c900(undefined4 *param_1,undefined4 param_2)
 ;
 ;
-; XREF[61]:
+; XREF[64]:
+;   FUN_0040f390 at 0040f3d2
+;   FUN_0040f7d0 at 0040f826
 ;   FUN_00419ce0 at 00419d95
 ;   FUN_0043b310 at 0043b37a
 ;   FUN_0048e830 at 0048e85e
@@ -13,13 +15,11 @@
 ;   FUN_004b61f0 at 004b620c
 ;   FUN_004cc870 at 004cc8c6
 ;   FUN_004de680 at 004de6c2
-;   FUN_004eed10 at 004eed6a
-;   FUN_005348c0 at 00534916
-;   ... and 51 more
+;   ... and 54 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00577c81
-;   undefined4 DAT_00577c84
+;   TerminatedCString s_d_00577c81
+;   TerminatedCString s_s_d_00577c84
 ;   string s_Integer_value_005acc78
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
@@ -44,7 +44,7 @@ section .text
     JNZ 0x0040c954                      ; 0040c90e
         ;   XREF to: 0040c954 (CONDITIONAL_JUMP)  ; LAB_0040c954
     PUSH EAX                            ; 0040c910
-    PUSH 0x577c81                       ; 0040c911 | DAT_00577c81
+    PUSH 0x577c81                       ; 0040c911 | = "%d"
     MOV ESI,dword ptr [0x00763e84]      ; 0040c916 | DAT_00763e84
     PUSH ESI                            ; 0040c91c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c91d
@@ -78,7 +78,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 0040c955
     PUSH ECX                            ; 0040c957
     PUSH 0x5acc90                       ; 0040c958 | DAT_005acc90
-    PUSH 0x577c84                       ; 0040c95d | DAT_00577c84
+    PUSH 0x577c84                       ; 0040c95d | = "%s%d"
     MOV EBX,dword ptr [0x00763e84]      ; 0040c962 | DAT_00763e84
     PUSH EBX                            ; 0040c968
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c969

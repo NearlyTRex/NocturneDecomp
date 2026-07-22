@@ -16,10 +16,10 @@
 ;   core_gore.cpp_CGore_createFootstep_FUN_004b06b0 at 004b0710
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585180
-;   undefined4 DAT_00585188
-;   undefined4 DAT_00585190
-;   undefined4 DAT_00585194
+;   double DOUBLE_00585180 = 0.5
+;   double DOUBLE_00585188 = 4
+;   float FLOAT_00585190 = -3
+;   float FLOAT_00585194 = 0.08333334
 ;   undefined4 DAT_005ba82c
 ;   undefined4 DAT_005ba830
 ;   undefined4 DAT_005ba83c
@@ -52,7 +52,7 @@ section .text
     FXCH                                ; 004af8c1
     FCOS                                ; 004af8c3
     FXCH                                ; 004af8c5
-    FLD double ptr [0x00585180]         ; 004af8c7 | DAT_00585180
+    FLD double ptr [0x00585180]         ; 004af8c7 | DOUBLE_00585180
     FXCH                                ; 004af8cd
     FMUL ST1                            ; 004af8cf
     FXCH ST2                            ; 004af8d1
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 004af95a
     LEA EAX,[ESP + 0xc]                 ; 004af95b
     FXCH                                ; 004af95f
-    FADD float ptr [0x00585190]         ; 004af961 | DAT_00585190
+    FADD float ptr [0x00585190]         ; 004af961 | FLOAT_00585190
     PUSH EAX                            ; 004af967
     FXCH                                ; 004af968
     FSTP float ptr [ESP + 0x14]         ; 004af96a
@@ -114,10 +114,10 @@ section .text
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
     MOV dword ptr [ESP + 0x3c],EAX      ; 004af97c
     FLD float ptr [ESP + 0x3c]          ; 004af980
-    FMUL double ptr [0x00585188]        ; 004af984 | DAT_00585188
+    FMUL double ptr [0x00585188]        ; 004af984 | DOUBLE_00585188
     ADD ESP,0x14                        ; 004af98a
     FSUBR float ptr [ESP + 0x4]         ; 004af98d
-    FADD float ptr [0x00585194]         ; 004af991 | DAT_00585194
+    FADD float ptr [0x00585194]         ; 004af991 | FLOAT_00585194
     MOV EAX,ESP                         ; 004af997
     FSTP float ptr [ESP + 0x4]          ; 004af999
     CMP ESI,EAX                         ; 004af99d
@@ -144,7 +144,7 @@ section .text
     FLD float ptr [EAX + 0xc]           ; 004af9d2
     FSUB float ptr [EBX + 0xc]          ; 004af9d5
     FABS                                ; 004af9d8
-    FCOMP double ptr [0x00585180]       ; 004af9da | DAT_00585180
+    FCOMP double ptr [0x00585180]       ; 004af9da | DOUBLE_00585180
     FNSTSW AX                           ; 004af9e0
     SAHF                                ; 004af9e2
     JBE 0x004af9ee                      ; 004af9e3

@@ -1,0 +1,29 @@
+#pragma once
+
+// Forward declarations
+struct CDemonActor;
+
+// Dependencies
+#include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EAmmoType.h"
+#include "types/enums/EDamageType.h"
+
+// Structure: SDamageInfo
+// Ghidra size: 0x3c (60 bytes)
+#pragma pack(push, 1)
+typedef struct SDamageInfo {
+    int hit_part_index; // 0x0
+    float damage_amount; // 0x4
+    float gore_multiplier; // 0x8
+    CVector3f impact_point; // 0xc
+    float impact_force; // 0x18
+    CVector3f impact_direction; // 0x1c
+    EAmmoType ammo_type; // 0x28
+    float dismember_prob; // 0x2c
+    EDamageType damage_type; // 0x30
+    struct CDemonActor* attacker; // 0x34
+    struct CDemonActor* wielder; // 0x38
+} SDamageInfo;
+#pragma pack(pop)
+

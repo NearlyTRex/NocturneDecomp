@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0040b300 at 0040b787
 ;   FUN_0043d1c0 at 0043d791
 ;   FUN_00477890 at 00477f26
 ;   FUN_004b27c0 at 004b2ecf
 ;   FUN_00515ea0 at 0051656d
 ;   FUN_00545c30 at 00546389
+;   core_actor.cpp_FUN_0040b300 at 0040b787
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 005094ea
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af9f
 ;

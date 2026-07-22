@@ -39,16 +39,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00422050 at 00422130
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 0042339a
+;   core_bugs.cpp_FUN_00422050 at 00422130
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579d41
-;   undefined4 DAT_00579d45
-;   undefined4 DAT_00579d4d
-;   undefined4 DAT_00579d55
-;   undefined4 DAT_00579d5d
-;   undefined4 DAT_00579d65
+;   float FLOAT_00579d41 = 12
+;   double DOUBLE_00579d45 = 0.5
+;   double DOUBLE_00579d4d = 1.60185815079703E-314
+;   double DOUBLE_00579d55 = 0.400000000000000
+;   double DOUBLE_00579d5d = 3.14159265350000
+;   double DOUBLE_00579d65 = 4
 ;   undefined4 DAT_0059aea8
 ;   undefined4 DAT_0059aeb0
 ;
@@ -118,11 +118,11 @@ section .text
         ;   XREF to: 00422b79 (CONDITIONAL_JUMP)  ; LAB_00422b79
     FLD float ptr [0x0059aea8]          ; 0042284f | DAT_0059aea8
     FLD ST0                             ; 00422855
-    FMUL float ptr [0x00579d41]         ; 00422857 | DAT_00579d41
+    FMUL float ptr [0x00579d41]         ; 00422857 | FLOAT_00579d41
     FXCH                                ; 0042285d
-    FMUL float ptr [0x00579d4d]         ; 0042285f | DAT_00579d4d
+    FMUL float ptr [0x00579d4d]         ; 0042285f | DOUBLE_00579d4d
     FXCH                                ; 00422865
-    FLD double ptr [0x00579d45]         ; 00422867 | DAT_00579d45
+    FLD double ptr [0x00579d45]         ; 00422867 | DOUBLE_00579d45
     FXCH                                ; 0042286d
     FMUL ST1                            ; 0042286f
     FXCH ST2                            ; 00422871
@@ -249,7 +249,7 @@ section .text
     FST float ptr [ESP + 0x60]          ; 004229f5
     FSUB float ptr [EBX + 0xc]          ; 004229f9
     FLD float ptr [ESP]                 ; 004229fc
-    FMUL double ptr [0x00579d55]        ; 004229ff | DAT_00579d55
+    FMUL double ptr [0x00579d55]        ; 004229ff | DOUBLE_00579d55
     FCOMPP                              ; 00422a05
     FNSTSW AX                           ; 00422a07
     SAHF                                ; 00422a09
@@ -294,8 +294,8 @@ section .text
     FLD float ptr [ESP + 0x80]          ; 00422a89
     ADD ESP,0x4                         ; 00422a90
     FLD float ptr [EBP + 0x1c]          ; 00422a93
-    FMUL double ptr [0x00579d5d]        ; 00422a96 | DAT_00579d5d
-    FMUL double ptr [0x00579d65]        ; 00422a9c | DAT_00579d65
+    FMUL double ptr [0x00579d5d]        ; 00422a96 | DOUBLE_00579d5d
+    FMUL double ptr [0x00579d65]        ; 00422a9c | DOUBLE_00579d65
     FLD float ptr [ESP + 0x6c]          ; 00422aa2
     FXCH ST2                            ; 00422aa6
     FSTP float ptr [ESP + 0x68]         ; 00422aa8

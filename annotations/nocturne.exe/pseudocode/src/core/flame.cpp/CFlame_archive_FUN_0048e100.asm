@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_flameSize_005815ae+1
+;   TerminatedCString s_flameSize_005815af
 ;   string s_whichFlame_005815b9
 ;   string s_globeScalar_005815c4
 ;   string s_onEvent_005815d0
@@ -35,7 +35,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0048e106
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0048e10b
-    PUSH 0x5815af                       ; 0048e10e | s_flameSize_005815ae+1
+    PUSH 0x5815af                       ; 0048e10e | = "flameSize"
     LEA EAX,[EBX + 0x150]               ; 0048e113
     PUSH EAX                            ; 0048e119
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0048e11a

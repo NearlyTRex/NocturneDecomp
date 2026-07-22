@@ -123,10 +123,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(int param_1,float *param_2,
   float local_18;
   float local_14;
   
-  if ((float)_DAT_0057ae25 <= param_5) {
+  if ((float)9999 <= param_5) {
     param_5 = -9999.0;
   }
-  if (param_4 < (float)_DAT_0057ae2d) {
+  if (param_4 < (float)0.01) {
     param_4 = 0.01;
   }
   *(float *)(param_1 + 0x3ab00) = 1.0 / param_4;

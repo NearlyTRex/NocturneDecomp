@@ -50,16 +50,16 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
         if (*(int *)(param_1 + 0x2408) != 0) {
           local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                       (iVar1,2);
-          if ((float)_DAT_005820ea < local_18) {
+          if ((float)0.40000000000000002 < local_18) {
             (**(code **)(*(int *)(param_1 + 0x14c) + 0x1c))(param_1,local_58,0x3fd9999a);
           }
           else {
             local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                         (iVar1,1);
-            if (local_18 <= (float)_DAT_005820ea) {
+            if (local_18 <= (float)0.40000000000000002) {
               local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                           (iVar1,3);
-              if ((float)_DAT_005820ea < local_18) {
+              if ((float)0.40000000000000002 < local_18) {
                 (**(code **)(*(int *)(param_1 + 0x14c) + 0x1c))(param_1,local_58,0x3f800000);
               }
             }
@@ -122,8 +122,8 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
         (**(code **)(*(int *)(local_1c + 0x14c) + 0x100))(local_1c,local_a0);
         if (0.0 < local_9c) {
           uVar4 = 0x497725;
-          fVar6 = (float10)round((float10)local_9c * (float10)_DAT_005820e2)
-          ;
+          fVar6 = (float10)round
+                                     ((float10)local_9c * (float10)0.20000000000000001);
           local_1c = (int)ROUND(fVar6);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
                     (0x01C78C7C,&local_68,0,local_1c + 1,0,uVar4);

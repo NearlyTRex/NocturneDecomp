@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(uint param_1,float *param_2)
 
 {
@@ -16,7 +14,7 @@ float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460
   int local_1c;
   
   engine_matrix_c_getCameraOrigin_FUN_004ce760(&local_20);
-  fVar1 = (float)_DAT_0057dc6d;
+  fVar1 = (float)0.00390625;
   *param_2 = fVar1 * 4590917.0;
   param_2[1] = (float)local_20 * fVar1;
   param_2[2] = (float)local_1c * fVar1;

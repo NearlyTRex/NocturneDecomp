@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00559260 at 005592e4
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb1b
+;   wincore_winrun.cpp_FUN_00559260 at 005592e4
 ;
 ; Called Functions:
 ;   FUN_00564880

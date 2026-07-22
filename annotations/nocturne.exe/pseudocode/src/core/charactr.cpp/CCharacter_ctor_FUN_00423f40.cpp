@@ -14,7 +14,7 @@ int __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(uint param_1)
   uint local_c [3];
   int iVar3;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(iVar1 + 0x150);
   iVar1 = core_cloth_cpp_CClothList_ctor_FUN_00438210(iVar1 + 0x293c);
   iVar1 = __arrinit(iVar1 + 0x1c8,0xf,&DAT_005993b0);

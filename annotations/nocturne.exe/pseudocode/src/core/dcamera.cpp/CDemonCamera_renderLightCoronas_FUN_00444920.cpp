@@ -69,9 +69,9 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
   }
   iStack_64 = param_2;
   iStack_68 = 0x4449a9;
-  FUN_0044f0b0();
-  fVar9 = (float10)*(float *)(param_2 + 0x100) * (float10)_DAT_0057b973;
-  fVar11 = (float10)_DAT_0057b97b;
+  core_dlight_cpp_FUN_0044f0b0();
+  fVar9 = (float10)*(float *)(param_2 + 0x100) * (float10)256;
+  fVar11 = (float10)3.3219280948900001;
   iStack_64 = 0x4449cd;
   fVar10 = (float10)round(fVar9);
   iStack_68 = 0x4449d6;

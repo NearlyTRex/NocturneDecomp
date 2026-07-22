@@ -18,7 +18,7 @@ void FUN_004eed10(int param_1)
   if (2 < 0x00000004) {
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(param_1 + 0x150,"modelName")
     ;
-    FUN_0040cb00(param_1 + 0x150,"motion state");
+    core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
   }
   if (3 < 0x00000004) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f568,"shootMe");

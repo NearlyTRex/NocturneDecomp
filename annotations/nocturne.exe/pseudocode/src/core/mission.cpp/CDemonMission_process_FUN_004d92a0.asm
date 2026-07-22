@@ -21,8 +21,8 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
+;   core_set.cpp_FUN_0050ad20
 ;   engine_2d.c_drawText_FUN_00402600
-;   FUN_0050ad20
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   wincore_windll.cpp_clearScreen_FUN_0052ee70
 ;
@@ -125,8 +125,8 @@ section .text
     ADD ESP,0x8                         ; 004d939b
     MOV EAX,[0x005be368]                ; 004d939e | DAT_005be368
     PUSH EAX                            ; 004d93a3 | DAT_01e57284
-    CALL FUN_0050ad20                   ; 004d93a4
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ad20()
+    CALL core_set.cpp_FUN_0050ad20      ; 004d93a4
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ad20()
     ADD ESP,0x4                         ; 004d93a9
     MOV EDX,dword ptr [0x005be368]      ; 004d93ac | DAT_005be368
     PUSH EDX                            ; 004d93b2 | DAT_01e57284

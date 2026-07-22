@@ -13,7 +13,7 @@ void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(int param_1)
   if (0x00000002 < 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x368,"!\t@keyReel" + 3);
+  core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x368,"keyReel");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x36c,"keyEvent");
   return;
 }

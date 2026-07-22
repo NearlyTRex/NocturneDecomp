@@ -11,10 +11,10 @@
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 0042808d
 ;
 ; Referenced Globals:
-;   undefined4 s_CHAR2.RAW_005790dd+1
-;   undefined4 s_HAR2.RAW_005790dd+2
-;   undefined4 s_AR2.RAW_005790dd+3
-;   undefined4 s_R2.RAW_005790dd+4
+;   TerminatedCString s_CHAR2_RAW_005790de
+;   undefined4 s_CHAR2_RAW_005790de+1
+;   undefined4 s_CHAR2_RAW_005790de+2
+;   undefined4 s_CHAR2_RAW_005790de+3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -83,16 +83,16 @@ section .text
     MOV dword ptr [ESI + 0x164],0x3fc00000 ; 00417be9
     ADD ESP,0x4                         ; 00417bf3
     MOV dword ptr [EBX + 0xfc],0x1      ; 00417bf6
-    MOV ESI,0x5790de                    ; 00417c00 | s_CHAR2.RAW_005790dd+1
+    MOV ESI,0x5790de                    ; 00417c00 | = "CHAR2.RAW"
     MOV dword ptr [EBX + 0x184],0x1     ; 00417c05
     PUSH EDI                            ; 00417c0f
-    MOV AL,byte ptr [ESI]               ; 00417c10 | s_CHAR2.RAW_005790dd+1 | s_AR2.RAW_005790dd+3
+    MOV AL,byte ptr [ESI]               ; 00417c10 | = "CHAR2.RAW" | s_CHAR2_RAW_005790de+2
         ;   Label: LAB_00417c10
     MOV byte ptr [EDI],AL               ; 00417c12
     CMP AL,0x0                          ; 00417c14
     JZ 0x00417c28                       ; 00417c16
         ;   XREF to: 00417c28 (CONDITIONAL_JUMP)  ; LAB_00417c28
-    MOV AL,byte ptr [ESI + 0x1]         ; 00417c18 | s_HAR2.RAW_005790dd+2 | s_R2.RAW_005790dd+4
+    MOV AL,byte ptr [ESI + 0x1]         ; 00417c18 | s_CHAR2_RAW_005790de+1 | s_CHAR2_RAW_005790de+3
     ADD ESI,0x2                         ; 00417c1b
     MOV byte ptr [EDI + 0x1],AL         ; 00417c1e
     ADD EDI,0x2                         ; 00417c21

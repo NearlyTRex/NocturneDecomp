@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a032
+;   double DOUBLE_0057a032 = 5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
 ;
@@ -89,7 +89,7 @@ section .text
     FXCH                                ; 004281df
     FSQRT                               ; 004281e1
     FXCH                                ; 004281e3
-    FMUL double ptr [0x0057a032]        ; 004281e5 | DAT_0057a032
+    FMUL double ptr [0x0057a032]        ; 004281e5 | DOUBLE_0057a032
     ADD ESP,0xc                         ; 004281eb
     FSTP float ptr [EBP + -0xc]         ; 004281ee
     FST float ptr [EBP + -0x8]          ; 004281f1

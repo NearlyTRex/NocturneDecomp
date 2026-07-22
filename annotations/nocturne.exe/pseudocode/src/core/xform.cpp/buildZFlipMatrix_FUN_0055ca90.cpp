@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,uint *param_2)
 
 {
@@ -27,7 +25,7 @@ uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,ui
   local_34[8] = 0.0;
   local_34[9] = 0.0;
   local_34[10] = -1.0;
-  local_34[0xb] = param_1 * (float)_DAT_00598346;
+  local_34[0xb] = param_1 * (float)2;
   pfVar2 = local_34;
   puVar3 = param_2;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

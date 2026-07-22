@@ -44,8 +44,7 @@ void core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(int param_1,int para
       iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
       if (*(int *)(iVar2 + 0x24) != 8) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,8,1);
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
-                  (param_1,"@gargoyle-shatter.wav" + 1);
+        (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_dismember_FUN_00427b60(param_1,0,0xbf800000,1);
       }
     }

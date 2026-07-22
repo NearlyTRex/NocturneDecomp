@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x54]:1  local_54
 ;
 ; Referenced Globals:
-;   string s_Old_func_:_%d_005774c8
-;   string s_..\\engine\\3d.c_005774d6
+;   TerminatedCString s_Old_func_d_005774c8
+;   TerminatedCString s_engine_3d_c_005774d6
 ;   undefined4 DAT_006b0288
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

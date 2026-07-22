@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(uint param_1,float param_2)
 
 {
   float fVar1;
   
-  if ((float)_DAT_0057969d < param_2) {
-    fVar1 = (float)_DAT_005796a5;
+  if ((float)0.012500000000000001 < param_2) {
+    fVar1 = (float)0.5;
     core_box_cpp_CBox_process_FUN_0041acb0(param_1,param_2 * fVar1);
     core_box_cpp_CBox_process_FUN_0041acb0(param_1,param_2 * fVar1);
     return;

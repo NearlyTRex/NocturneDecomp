@@ -29,11 +29,11 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10
+;   core_xform.cpp_FUN_0055d560
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_quaternionToAxisAngle_FUN_0055d220
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_0055ced0
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_0055a910
-;   FUN_0055d560
 ;
 ; *****************************************************************************
 
@@ -132,8 +132,8 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 0051d8a0
     PUSH dword ptr [ESP + 0x4]          ; 0051d8a7
     LEA EDI,[ESP + 0x8c]                ; 0051d8ab
-    CALL FUN_0055d560                   ; 0051d8b2
-        ;   XREF to: 0055d560 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d560()
+    CALL core_xform.cpp_FUN_0055d560    ; 0051d8b2
+        ;   XREF to: 0055d560 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d560()
     LEA ESI,[ESP + 0xac]                ; 0051d8b7
     ADD ESP,0x8                         ; 0051d8be
     LEA EAX,[ESP + 0x84]                ; 0051d8c1
@@ -166,8 +166,8 @@ section .text
     SUB ESP,0x4                         ; 0051d911
     LEA EDI,[ESP + 0x9c]                ; 0051d914
     FSTP float ptr [ESP]                ; 0051d91b
-    CALL FUN_0055d560                   ; 0051d91e
-        ;   XREF to: 0055d560 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d560()
+    CALL core_xform.cpp_FUN_0055d560    ; 0051d91e
+        ;   XREF to: 0055d560 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d560()
     LEA ESI,[ESP + 0x7c]                ; 0051d923
     ADD ESP,0x8                         ; 0051d927
     LEA EAX,[ESP + 0x94]                ; 0051d92a

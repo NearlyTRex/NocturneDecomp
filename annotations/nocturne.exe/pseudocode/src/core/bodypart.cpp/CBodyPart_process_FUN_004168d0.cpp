@@ -64,7 +64,7 @@ void core_bodypart_cpp_CBodyPart_process_FUN_004168d0(int param_1,float param_2)
           *(uint *)(param_1 + 0x38) = *(uint *)(param_1 + 0xcc8);
         }
         core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
-        if (((float)_DAT_0057908a <
+        if (((float)3 <
              SQRT(*(float *)(param_1 + 0xcfc) * *(float *)(param_1 + 0xcfc) +
                   *(float *)(param_1 + 0xcf4) * *(float *)(param_1 + 0xcf4) +
                   *(float *)(param_1 + 0xcf8) * *(float *)(param_1 + 0xcf8))) &&

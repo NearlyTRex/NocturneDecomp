@@ -67,7 +67,7 @@ void FUN_00446810(int param_1)
     _DAT_0140d780 = 1;
   }
   _sprintf(local_274,"%s.fog",param_1);
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_274,&DAT_0057ba02);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_274,"rb");
   if (iVar1 != 0) {
     _fclose(iVar1);
     return;
@@ -83,7 +83,7 @@ void FUN_00446810(int param_1)
   if (_DAT_0140e7a0 != 0) {
     local_50 = 0x00444645;
     crt_fstream_cpp_ostream_write_FUN_00565a13(local_130,&local_50,3);
-    fVar10 = (float10)_DAT_0057badb;
+    fVar10 = (float10)256;
     uVar16 = 0x446980;
     fVar11 = (float10)round((float10)*(float *)(param_1 + 0x104) * fVar10);
     iStack_60 = (int)ROUND(fVar11);

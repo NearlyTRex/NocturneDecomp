@@ -8,7 +8,7 @@
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f11
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_01bcd070
@@ -39,7 +39,7 @@ section .text
     CMP dword ptr [0x01bcd070],0x0      ; 00471668 | DAT_01bcd070
     JNZ 0x00471694                      ; 0047166f
         ;   XREF to: 00471694 (CONDITIONAL_JUMP)  ; LAB_00471694
-    MOV ECX,0x57e4fa                    ; 00471671 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 00471671 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 00471676
     PUSH 0x57e510                       ; 0047167b | = "gEdFont must be set by the application."
     MOV dword ptr [0x01cc4800],ECX      ; 00471680 | DAT_01cc4800

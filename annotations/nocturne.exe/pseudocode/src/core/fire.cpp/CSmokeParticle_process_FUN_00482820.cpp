@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_00482820(uint *param_1)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_00482820(uint *param_1)
   float fVar5;
   
   fVar3 = *(float *)(0x01C775EC + 0x264);
-  param_1[6] = fVar3 * _DAT_00581074 + (float)param_1[6];
+  param_1[6] = fVar3 * 30.0f + (float)param_1[6];
   if (0x421fffff < (int)param_1[6]) {
     *param_1 = 0;
     return;

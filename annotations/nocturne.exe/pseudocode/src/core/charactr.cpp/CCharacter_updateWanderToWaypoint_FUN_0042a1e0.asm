@@ -16,8 +16,8 @@
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030 at 0047a062
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a37a
-;   undefined4 DAT_0057a382
+;   double DOUBLE_0057a37a = 4
+;   float FLOAT_0057a382 = 20
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fabd00
 ;   undefined4 DAT_02dd1184
@@ -75,7 +75,7 @@ section .text
     FMUL ST0                            ; 0042a255
     FADDP                               ; 0042a257
     FSQRT                               ; 0042a259
-    FCOMP double ptr [0x0057a37a]       ; 0042a25b | DAT_0057a37a
+    FCOMP double ptr [0x0057a37a]       ; 0042a25b | DOUBLE_0057a37a
     FNSTSW AX                           ; 0042a261
     SAHF                                ; 0042a263
     JNC 0x0042a33b                      ; 0042a264
@@ -187,7 +187,7 @@ section .text
     FMUL ST0                            ; 0042a3d9
     FADDP                               ; 0042a3db
     FSQRT                               ; 0042a3dd
-    FCOMP float ptr [0x0057a382]        ; 0042a3df | DAT_0057a382
+    FCOMP float ptr [0x0057a382]        ; 0042a3df | FLOAT_0057a382
     FNSTSW AX                           ; 0042a3e5
     SAHF                                ; 0042a3e7
     JC 0x0042a2ee                       ; 0042a3e8

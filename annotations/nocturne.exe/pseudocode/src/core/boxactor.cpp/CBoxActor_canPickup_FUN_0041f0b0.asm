@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_CHero_00579964+1
+;   TerminatedCString s_CHero_00579965
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -23,7 +23,7 @@ section .text
         ;   Label: LAB_0041f0bd
     MOV EAX,dword ptr [EAX + 0x30c]     ; 0041f0c1
     RET                                 ; 0041f0c7
-    PUSH 0x579965                       ; 0041f0c8 | s_CHero_00579964+1
+    PUSH 0x579965                       ; 0041f0c8 | = "CHero"
         ;   Label: LAB_0041f0c8
     MOV ECX,dword ptr [ESP + 0xc]       ; 0041f0cd
     PUSH ECX                            ; 0041f0d1

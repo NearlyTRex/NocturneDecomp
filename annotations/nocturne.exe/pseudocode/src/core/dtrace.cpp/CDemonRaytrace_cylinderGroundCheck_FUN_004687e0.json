@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,22 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 557,
+    "complexity_score": 556,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 116,
     "suspect_count": 41,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "suspect_float",
       "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unknown_field",
+      "unnamed_param"
     ],
-    "total_lines": 338
+    "total_lines": 337
   },
   "cross_references": [
     {
@@ -179,15 +179,15 @@
   "globals": [
     {
       "addr": "0057e1ea",
-      "name": "DAT_0057e1ea",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0057e1ea",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "0057e1ee",
-      "name": "DAT_0057e1ee",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057e1ee",
+      "type": "double",
+      "value": "131072.094299316"
     }
   ],
   "param_estimates": {
@@ -411,35 +411,35 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 117,
+          "line": 115,
           "message": "Uninitialized variable: local_3c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 14,
-          "line": 106,
+          "line": 104,
           "message": "Uninitialized variable: unaff_EBX",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 7,
-          "line": 122,
+          "line": 120,
           "message": "Uninitialized variable: unaff_EBX",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 13,
-          "line": 111,
+          "line": 109,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 7,
-          "line": 119,
+          "line": 117,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -450,16 +450,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)",
@@ -467,7 +459,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)",
@@ -475,7 +467,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)",
@@ -483,7 +475,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "uint *unaff_EBX;",
@@ -491,7 +483,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
@@ -499,7 +491,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "uint unaff_EDI;",
@@ -507,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
       "text": "local_4c = *param_2;",
@@ -515,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "local_44 = param_2[2];",
@@ -523,7 +515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "local_64 = *param_2;",
@@ -531,31 +523,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_48 = param_2[1] + _DAT_0057e1ea;",
+      "text": "local_48 = param_2[1] + 2.0f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "local_5c = param_2[2];",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_60 = param_2[1] + 131072.094299316._0_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_60 = param_2[1] + _DAT_0057e1ee;",
+      "text": "local_60 = param_2[1] + 131072.094299316._0_4_;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "local_38 = local_4c - *(float *)(param_1 + 0x10);",
@@ -563,7 +563,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_1 + 0x28);",
@@ -571,7 +571,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (float10)local_44 - (float10)*(float *)(param_1 + 0x18);",
@@ -579,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = 1.0 / *(float *)(param_1 + 0x30);",
@@ -587,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar11 = (float10)round((fVar5 - (float10)param_3) * fVar11);",
@@ -595,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_3",
       "severity": "mild",
       "text": "((fVar6 + (float10)param_3) * ((float10)1 / (float10)fVar3));",
@@ -603,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar12 = (float10)round((fVar7 + (float10)param_3) * fVar12);",
@@ -611,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,iVar4,local_30,fVar3,uVar13);",
@@ -619,7 +619,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 85,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(iVar2,&local_64,unaff_EDI,local_54,&uStack_70,&local_48);",
@@ -627,7 +627,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 97,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {",
@@ -635,7 +635,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 97,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {",
@@ -643,7 +643,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 98,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = uStack_70;",
@@ -651,7 +651,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 101,
+      "line": 99,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = uStack_6c;",
@@ -659,7 +659,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 100,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = uStack_68;",
@@ -667,7 +667,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 104,
+      "line": 102,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI != (float *)0x0) {",
@@ -675,7 +675,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 103,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = local_48;",
@@ -683,7 +683,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 112,
+      "line": 110,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI != (float *)0x0) {",
@@ -691,7 +691,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 111,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = 1.4013e-45;",
@@ -699,7 +699,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 113,
+      "line": 111,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "*unaff_ESI = 1.4013e-45;",
@@ -707,7 +707,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 115,
+      "line": 113,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != (uint *)0x0) {",
@@ -715,7 +715,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 116,
+      "line": 114,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = 0x3f800000;",
@@ -723,7 +723,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 117,
+      "line": 115,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = 0;",
@@ -731,7 +731,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 118,
+      "line": 116,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = 0;",
@@ -739,7 +739,7 @@
     },
     {
       "description": "Raw hex address 0x4688b5 assigned to bare local `uStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 57,
+      "line": 55,
       "match": "0x4688b5",
       "severity": "moderate",
       "text": "uStack_68 = 0x4688b5;",
@@ -747,7 +747,7 @@
     },
     {
       "description": "Raw hex address 0x4688bc assigned to bare local `uStack_6c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_6c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 59,
+      "line": 57,
       "match": "0x4688bc",
       "severity": "moderate",
       "text": "uStack_6c = 0x4688bc;",
@@ -755,7 +755,7 @@
     },
     {
       "description": "Raw hex address 0x4688db assigned to bare local `uStack_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 62,
+      "line": 60,
       "match": "0x4688db",
       "severity": "moderate",
       "text": "uStack_70 = 0x4688db;",
@@ -763,7 +763,7 @@
     },
     {
       "description": "Raw hex address 0x4688f0 assigned to bare local `uVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 69,
+      "line": 67,
       "match": "0x4688f0",
       "severity": "moderate",
       "text": "uVar13 = 0x4688f0;",
@@ -782,7 +782,7 @@
     },
     {
       "description": "Uninitialized variable: local_3c",
-      "line": 117,
+      "line": 115,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "} while (local_3c <= local_30);",
@@ -790,7 +790,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EBX",
-      "line": 106,
+      "line": 104,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {",
@@ -798,7 +798,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EBX",
-      "line": 122,
+      "line": 120,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (unaff_EBX != (uint *)0x0) {",
@@ -806,7 +806,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 111,
+      "line": 109,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (unaff_ESI != (float *)0x0) {",
@@ -814,7 +814,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 119,
+      "line": 117,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (unaff_ESI != (float *)0x0) {",

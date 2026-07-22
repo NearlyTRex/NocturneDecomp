@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(int param_1,float param_2)
 
 {
@@ -23,7 +21,7 @@ uint __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(int param
   }
   param_2 = *(float *)(param_1 + 0x1f954) - param_2;
   *(float *)(param_1 + 0x1f954) = param_2;
-  if ((0.0 < param_2) && (*(float *)(param_1 + 0x2dcc) <= (float)_DAT_00585caa)) {
+  if ((0.0 < param_2) && (*(float *)(param_1 + 0x2dcc) <= (float)1.5)) {
     iVar1 = *(int *)(param_1 + 0x1f950);
     local_20 = *(float *)(param_1 + 0x20) - *(float *)(iVar1 + 0x20);
     local_1c = *(float *)(param_1 + 0x24) - *(float *)(iVar1 + 0x24);

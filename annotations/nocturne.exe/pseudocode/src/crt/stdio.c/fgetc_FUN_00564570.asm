@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[22]:
-;   FUN_0040cb00 at 0040cb1b
-;   FUN_0040ce80 at 0040ce9b
 ;   FUN_004febd0 at 004fed79
 ;   FUN_00517190 at 00517196
+;   core_actor.cpp_FUN_0040cb00 at 0040cb1b
+;   core_actor.cpp_FUN_0040ce80 at 0040ce9b
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cf90
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3bb
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc13

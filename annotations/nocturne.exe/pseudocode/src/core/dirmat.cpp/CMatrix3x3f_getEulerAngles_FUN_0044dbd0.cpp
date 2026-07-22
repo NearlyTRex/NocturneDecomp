@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,float *param_2)
 
 {
@@ -28,7 +26,7 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
   
   fVar3 = -param_1[5];
   fStack_24 = (float)((ulonglong)(double)fVar3 >> 0x20);
-  if (fVar3 <= (float)_DAT_0057c50e) {
+  if (fVar3 <= (float)-1) {
     *param_2 = -1.5707964;
   }
   else if ((double)fVar3 < 1.0) {
@@ -47,8 +45,8 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
       local_80 = (uint)((ulonglong)dVar1 >> 0x20);
       dVar2 = (double)fVar3;
       uStack_5c = SUB84(__BITCAST_UINT64(dVar2),0);
-      if ((_DAT_0057c516 <= dVar1) || (dVar1 <= _DAT_0057c51e)) {
-        if ((_DAT_0057c50e < dVar2) && (dVar2 < 1.0)) {
+      if ((0.70699999999999996 <= dVar1) || (dVar1 <= -0.70699999999999996)) {
+        if ((-1 < dVar2) && (dVar2 < 1.0)) {
           uStack_98 = 0x44df4f;
           fVar5 = (float10)acos((float10)fVar3);
           local_20 = (float)fVar5;
@@ -62,14 +60,14 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
         fVar5 = (float10)asin((float10)fVar4);
         local_20 = (float)fVar5;
         if (__BITCAST_DOUBLE(CONCAT44(uStack_5c,local_80)) < 0.0) {
-          local_20 = (float)_DAT_0057c526 - local_20;
+          local_20 = (float)3.1415926535900001 - local_20;
         }
       }
-      if (local_20 < (float)_DAT_0057c52e) {
-        local_20 = local_20 + _DAT_0057c536;
+      if (local_20 < (float)-3.1415926535900001) {
+        local_20 = local_20 + 6.283185f;
       }
-      if ((float)_DAT_0057c526 < local_20) {
-        local_20 = local_20 + _DAT_0057c53a;
+      if ((float)3.1415926535900001 < local_20) {
+        local_20 = local_20 + -6.283185f;
       }
       param_2[1] = local_20;
       fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,uStack_98));
@@ -77,8 +75,8 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
       fVar3 = param_1[4] * fVar3;
       dVar1 = (double)fVar4;
       dVar2 = (double)fVar3;
-      if ((_DAT_0057c516 <= dVar1) || (dVar1 <= _DAT_0057c51e)) {
-        if (_DAT_0057c50e < dVar2) {
+      if ((0.70699999999999996 <= dVar1) || (dVar1 <= -0.70699999999999996)) {
+        if (-1 < dVar2) {
           if (dVar2 < 1.0) {
             acos((float10)fVar3);
           }
@@ -96,11 +94,11 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
       else {
         asin((float10)fVar4);
       }
-      if (fStack_24 < (float)_DAT_0057c52e) {
-        fStack_24 = fStack_24 + _DAT_0057c536;
+      if (fStack_24 < (float)-3.1415926535900001) {
+        fStack_24 = fStack_24 + 6.283185f;
       }
-      if ((float)_DAT_0057c526 < fStack_24) {
-        fStack_24 = fStack_24 + _DAT_0057c53a;
+      if ((float)3.1415926535900001 < fStack_24) {
+        fStack_24 = fStack_24 + -6.283185f;
       }
       param_2[2] = fStack_24;
       return param_2;
@@ -112,8 +110,8 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
   param_2[2] = 0.0;
   dVar1 = (double)-param_1[6];
   dVar2 = (double)*param_1;
-  if ((_DAT_0057c516 <= dVar1) || (dVar1 <= _DAT_0057c51e)) {
-    if (_DAT_0057c50e < dVar2) {
+  if ((0.70699999999999996 <= dVar1) || (dVar1 <= -0.70699999999999996)) {
+    if (-1 < dVar2) {
       if (dVar2 < 1.0) {
         acos((float10)*param_1);
       }
@@ -131,11 +129,11 @@ float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,f
   else {
     asin((float10)-param_1[6]);
   }
-  if (fStack_24 < (float)_DAT_0057c52e) {
-    fStack_24 = fStack_24 + _DAT_0057c536;
+  if (fStack_24 < (float)-3.1415926535900001) {
+    fStack_24 = fStack_24 + 6.283185f;
   }
-  if ((float)_DAT_0057c526 < fStack_24) {
-    fStack_24 = fStack_24 + _DAT_0057c53a;
+  if ((float)3.1415926535900001 < fStack_24) {
+    fStack_24 = fStack_24 + -6.283185f;
   }
   param_2[1] = fStack_24;
   return param_2;

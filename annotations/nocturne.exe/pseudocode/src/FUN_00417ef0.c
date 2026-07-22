@@ -14,6 +14,6 @@ uint FUN_00417ef0(int param_1)
   if (*(int *)(param_1 + 0x150) != 0) {
     return 0;
   }
-  uVar1 = FUN_0040b200(param_1);
+  uVar1 = core_actor_cpp_FUN_0040b200(param_1);
   return uVar1;
 }

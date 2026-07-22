@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_CTentacle_0059899d+1
+;   TerminatedCString s_CTentacle_0059899e
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -15,7 +15,7 @@
 
 section .text
 
-    PUSH 0x59899e                       ; 005623f0 | s_CTentacle_0059899d+1
+    PUSH 0x59899e                       ; 005623f0 | = "CTentacle"
         ;   Label: core_zombie.cpp_CZombie_isGrabbable_FUN_005623f0
     MOV EDX,dword ptr [ESP + 0xc]       ; 005623f5
     PUSH EDX                            ; 005623f9

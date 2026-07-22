@@ -52,10 +52,10 @@
 ; Referenced Globals:
 ;   string s_noc%05d.raw_00582386
 ;   string s_Movie_recording_active:_movie\\%s_00582392
-;   undefined4 DAT_005823b3
+;   TerminatedCString s_wb_005823b3
 ;   string s_movie_005823b6
 ;   string s_screen_paint_:_%3.2f_ms_005825d7
-;   undefined4 DAT_005825f0
+;   byte[56] BYTE_ARRAY_005825f0
 ;   string s_demon%d.pcx_00582628
 ;   string s_Camera:_\"%s\"_Group_%d_00582634
 ;   string s_FR:_%f,_AVG:_%f,_PC:_%d_0058264a
@@ -64,7 +64,7 @@
 ;   string s_Fudge:_%g,%g,%g_005826ba
 ;   string s_SFX:_%d_Samples:_Active:_%d/%.1f_005826ca
 ;   string s_You're_dead._Game_over._0058271b
-;   undefined4 DAT_0058273a
+;   double DOUBLE_0058273a = 0.0555555555555556
 ;   ... and 51 more
 ;
 ; Called Functions:
@@ -81,8 +81,8 @@
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760
-;   core_slew.cpp_CSlew_processInput_FUN_0051f980
-;   crt_env.c_getenv_FUN_00566e10
+;   core_set.cpp_FUN_00509a80
+;   core_set.cpp_FUN_0050a260
 ;   ... and 39 more
 ;
 ; *****************************************************************************
@@ -188,8 +188,8 @@ section .text
     PUSH 0x1                            ; 0049cd18
     MOV EDI,dword ptr [0x005be368]      ; 0049cd1a | DAT_005be368
     PUSH EDI                            ; 0049cd20 | DAT_01e57284
-    CALL FUN_00509a80                   ; 0049cd21
-        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00509a80()
+    CALL core_set.cpp_FUN_00509a80      ; 0049cd21
+        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00509a80()
     ADD ESP,0x8                         ; 0049cd26
     MOV EAX,[0x005bdee0]                ; 0049cd29 | DAT_005bdee0
         ;   Label: LAB_0049cd29
@@ -343,12 +343,12 @@ section .text
     SUB EAX,ECX                         ; 0049cee5
     MOV dword ptr [EBP + 0x7a],EAX      ; 0049cee7
     FILD dword ptr [EBP + 0x7a]         ; 0049ceea
-    FMUL double ptr [0x0058273a]        ; 0049ceed | DAT_0058273a
+    FMUL double ptr [0x0058273a]        ; 0049ceed | DOUBLE_0058273a
     MOV EAX,[0x005b9354]                ; 0049cef3 | DAT_005b9354
-    FMUL double ptr [0x00582742]        ; 0049cef8 | DAT_00582742
+    FMUL double ptr [0x00582742]        ; 0049cef8 | DOUBLE_00582742
     FLD float ptr [EAX + 0x264]         ; 0049cefe | DAT_01c77850
     FXCH                                ; 0049cf04
-    FMUL double ptr [0x0058274a]        ; 0049cf06 | DAT_0058274a
+    FMUL double ptr [0x0058274a]        ; 0049cf06 | DOUBLE_0058274a
     FDIVRP                              ; 0049cf0c
     SUB ESP,0x8                         ; 0049cf0e
     FSTP double ptr [ESP]               ; 0049cf11
@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 0049cf5d (CONDITIONAL_JUMP)  ; LAB_0049cf5d
     MOV EAX,[0x005be368]                ; 0049cf4f | DAT_005be368
     PUSH EAX                            ; 0049cf54 | DAT_01e57284
-    CALL FUN_0050a260                   ; 0049cf55
-        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; undefined FUN_0050a260()
+    CALL core_set.cpp_FUN_0050a260      ; 0049cf55
+        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050a260()
     ADD ESP,0x4                         ; 0049cf5a
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cf5d
         ;   Label: LAB_0049cf5d
@@ -417,8 +417,8 @@ section .text
         ;   XREF to: 0049cfea (CONDITIONAL_JUMP)  ; LAB_0049cfea
     MOV EDI,dword ptr [0x005be368]      ; 0049cfdb | DAT_005be368
     PUSH EDI                            ; 0049cfe1 | DAT_01e57284
-    CALL FUN_0050aa70                   ; 0049cfe2
-        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; undefined FUN_0050aa70()
+    CALL core_set.cpp_FUN_0050aa70      ; 0049cfe2
+        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050aa70()
     ADD ESP,0x4                         ; 0049cfe7
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cfea
         ;   Label: LAB_0049cfea
@@ -546,11 +546,11 @@ section .text
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     MOV EAX,[0x01cae0e8]                ; 0049d177 | DAT_01cae0e8
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049d17c
-    FLD double ptr [0x00582752]         ; 0049d183 | DAT_00582752
+    FLD double ptr [0x00582752]         ; 0049d183 | DOUBLE_00582752
     FLD float ptr [EAX + 0x34]          ; 0049d189
     FMUL ST1                            ; 0049d18c
     ADD ESP,0xc                         ; 0049d18e
-    FLD double ptr [0x0058275a]         ; 0049d191 | DAT_0058275a
+    FLD double ptr [0x0058275a]         ; 0049d191 | DOUBLE_0058275a
     FXCH                                ; 0049d197
     FMUL ST1                            ; 0049d199
     SUB ESP,0x8                         ; 0049d19b
@@ -589,11 +589,11 @@ section .text
     ADD ESP,0xc                         ; 0049d1fa
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049d1fd
     MOV EAX,dword ptr [EAX + 0x274]     ; 0049d203
-    MOV ESI,dword ptr [EAX*0x4 + 0x5b9358] ; 0049d209 | PTR_DAT_005b9358
+    MOV ESI,dword ptr [EAX*0x4 + 0x5b9358] ; 0049d209 | PTR_s_Off_005b9358
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049d210
     MOV EAX,dword ptr [EAX + 0x1fc]     ; 0049d216
     PUSH ESI                            ; 0049d21c
-    MOV EDI,dword ptr [EAX*0x4 + 0x5b9358] ; 0049d21d | PTR_DAT_005b9358
+    MOV EDI,dword ptr [EAX*0x4 + 0x5b9358] ; 0049d21d | PTR_s_Off_005b9358
     PUSH EDI                            ; 0049d224
     PUSH 0x582699                       ; 0049d225 | = "Slew : %s, Virtual Director : %s"
     LEA EAX,[EBP + 0xfffffdb2]          ; 0049d22a
@@ -655,7 +655,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x46]      ; 0049d2c1
     MOV dword ptr [EBP + 0x7a],EAX      ; 0049d2c4
     ADD ESP,0x18                        ; 0049d2c7
-    FLD double ptr [0x00582762]         ; 0049d2ca | DAT_00582762
+    FLD double ptr [0x00582762]         ; 0049d2ca | DOUBLE_00582762
     FILD dword ptr [EBP + 0x7a]         ; 0049d2d0
     FMUL ST1                            ; 0049d2d3
     SUB ESP,0x8                         ; 0049d2d5
@@ -769,8 +769,8 @@ section .text
     PUSH EAX                            ; 0049d3ff
     PUSH ESI                            ; 0049d400
     PUSH 0x0                            ; 0049d401
-    CALL FUN_00402760                   ; 0049d403
-        ;   XREF to: 00402760 (UNCONDITIONAL_CALL)  ; undefined FUN_00402760()
+    CALL engine_2d.c_FUN_00402760       ; 0049d403
+        ;   XREF to: 00402760 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00402760()
     ADD ESI,0xb                         ; 0049d408
     ADD ESP,0xc                         ; 0049d40b
     PUSH EBX                            ; 0049d40e
@@ -962,7 +962,7 @@ section .text
     ADD ESP,0x4                         ; 0049d5fd
     JMP 0x0049ce7c                      ; 0049d600
         ;   XREF to: 0049ce7c (UNCONDITIONAL_JUMP)  ; LAB_0049ce7c
-    PUSH 0x5825f0                       ; 0049d605 | DAT_005825f0
+    PUSH 0x5825f0                       ; 0049d605 | BYTE_ARRAY_005825f0
         ;   Label: LAB_0049d605
     CALL support_newmsg.cpp_decryptMessage_FUN_004ee3f0 ; 0049d60a
         ;   XREF to: 004ee3f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_decryptMessage_FUN_004ee3f0()
@@ -1002,7 +1002,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049d679
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0049d67e
-    PUSH 0x5823b3                       ; 0049d681 | DAT_005823b3
+    PUSH 0x5823b3                       ; 0049d681 | = "wb"
     LEA EAX,[EBP + 0xffffff7a]          ; 0049d686
     PUSH EAX                            ; 0049d68c
     PUSH 0x5823b6                       ; 0049d68d | = "movie"

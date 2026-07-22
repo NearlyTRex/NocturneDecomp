@@ -31,12 +31,13 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,i
   
   piVar1 = DAT_005ae704;
   local_18 = param_2;
-  local_1c = (float)param_2 * ram0x0057df82 * (float)_DAT_0057df86 * (float)_DAT_0057df8e;
+  local_1c = (float)param_2 * 0.0625f * (float)3.1415926535000001 * (float)2;
   if (param_3 == 0) {
     fVar12 = 0.019634955;
   }
   else {
-    fVar12 = (float)param_3 * _DAT_0057df96 * (float)_DAT_0057df86 * (float)_DAT_0057df9e;
+    fVar12 = (float)param_3 * 5.1806537865363094e-315._0_4_ * (float)3.1415926535000001 *
+             (float)0.5;
     local_18 = param_3;
   }
   fVar2 = (float10)fsin((float10)fVar12);
@@ -47,7 +48,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,i
   local_38 = (double)fVar4;
   fVar4 = (float10)local_38;
   fVar8 = (float10)local_38;
-  fVar7 = (float10)_DAT_0057dfa6;
+  fVar7 = (float10)256;
   piVar11 = local_44;
   local_30 = local_38;
   fVar2 = (float10)round(fVar2 * fVar6 * fVar7);

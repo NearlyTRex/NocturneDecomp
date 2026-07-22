@@ -17,7 +17,7 @@
 ;   FUN_00535900 at 0053646a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057995d
+;   double DOUBLE_0057995d = 1.01000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -108,7 +108,7 @@ section .text
     SAHF                                ; 0041f039
     JBE 0x0041efe7                      ; 0041f03a
         ;   XREF to: 0041efe7 (CONDITIONAL_JUMP)  ; LAB_0041efe7
-    FLD double ptr [0x0057995d]         ; 0041f03c | DAT_0057995d
+    FLD double ptr [0x0057995d]         ; 0041f03c | DOUBLE_0057995d
     FSUB double ptr [ESP]               ; 0041f042
     FLD float ptr [ESI]                 ; 0041f045
     FXCH                                ; 0041f047

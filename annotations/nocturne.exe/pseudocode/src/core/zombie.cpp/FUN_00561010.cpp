@@ -1,14 +1,14 @@
-// Name: FUN_00561010
+// Name: core_zombie.cpp_FUN_00561010
 // Address: 00561010
 // Address Range: [[00561010, 005617d2]]
 // Convention: unknown
-// Signature: undefined4 FUN_00561010(int param_1,float param_2)
+// Signature: undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00561010(int param_1,float param_2)
+uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)
 
 {
   uint uVar1;
@@ -152,7 +152,7 @@ uint FUN_00561010(int param_1,float param_2)
   iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x8c))(iVar7);
   if (iVar7 != 0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
+              (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",param_1,
                *(uint *)(param_1 + 0xbd34));
     *(uint *)(param_1 + 0xbd34) = 0;
     *(uint *)(param_1 + 0xbd30) = 0;

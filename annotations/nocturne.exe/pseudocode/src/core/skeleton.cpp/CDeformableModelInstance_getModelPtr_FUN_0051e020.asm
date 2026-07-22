@@ -5,8 +5,6 @@
 ;
 ;
 ; XREF[46]:
-;   FUN_00423790 at 0042384b
-;   FUN_004270e0 at 004271bc
 ;   FUN_00535450 at 00535755
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040aabc
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 004122f0
@@ -15,6 +13,8 @@
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 00418972
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fd2c
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422eed
+;   core_bugs.cpp_FUN_00423790 at 0042384b
+;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427b9d
 ;   ... and 36 more
 ;
 ; Referenced Globals:

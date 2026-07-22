@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   FUN_00543c50 at 00543d5d
-;   FUN_0055ef50 at 005600ad
 ;   core_grave.cpp_CGrave_process_FUN_004b0bf0 at 004b0c45
+;   core_zombie.cpp_FUN_0055ef50 at 005600ad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param_2)
 
 {
@@ -68,7 +66,7 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
   float local_18;
   float local_14;
   
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 == 0) {
     return;
   }
@@ -80,13 +78,13 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
     uVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0x150,&local_2c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar6);
   }
-  fVar2 = (float)_DAT_00578a17;
+  fVar2 = (float)3.1415926535000001;
   iVar3 = param_1 + 0x150;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar2 * *(float *)(param_1 + 0xbc8c);
   iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar3);
   iVar4 = *(int *)(iVar4 + 0x24);
-  iVar5 = FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar5 == 0) {
     switch(iVar4) {
     case 0:
@@ -108,7 +106,7 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_b8,&local_f4);
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (local_b4 - *(float *)(param_1 + 0x34));
-        if (ABS(local_14) < (float)_DAT_00578a1f) {
+        if (ABS(local_14) < (float)0.52359877558333301) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,3,1);
           iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd60));
           if ((iVar3 == 0) &&
@@ -121,7 +119,7 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
         }
       }
       if (*(float *)(param_1 + 0xbc9c) <= local_1c) break;
-      if (local_1c < _DAT_00599fb8) {
+      if (local_1c < 10.0f) {
         uVar6 = 1;
         *(uint *)(param_1 + 0xbca0) = 0;
       }
@@ -136,9 +134,9 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_64,&local_e8);
           local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                       (local_60 - *(float *)(param_1 + 0x34));
-          if ((ABS(local_14) < (float)_DAT_00578a1f) &&
+          if ((ABS(local_14) < (float)0.52359877558333301) &&
              (ABS(*(float *)(*(int *)(param_1 + 0xbca4) + 0x24) - *(float *)(param_1 + 0x24)) <
-              (float)_DAT_00578a27)) {
+              (float)2)) {
             uVar6 = 2;
             goto LAB_0041290b;
           }
@@ -190,7 +188,7 @@ LAB_0041290b:
           local_9c = 0;
           local_20 = SQRT(local_98 * local_98 + local_a0 * local_a0);
           local_18 = local_20;
-          if ((_DAT_00599fb8 < local_20) && (*(uint *)(param_1 + 0xbca0) = 0, iVar4 == 1)) {
+          if ((10.0f < local_20) && (*(uint *)(param_1 + 0xbca0) = 0, iVar4 == 1)) {
             iVar4 = *(int *)(param_1 + 0xbca4);
             local_94 = *(float *)(iVar4 + 0x20) - *(float *)(param_1 + 0x20);
             local_90 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
@@ -198,9 +196,9 @@ LAB_0041290b:
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_dc,&local_94);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_d8 - *(float *)(param_1 + 0x34));
-            if ((ABS(local_14) < (float)_DAT_00578a1f) &&
+            if ((ABS(local_14) < (float)0.52359877558333301) &&
                (ABS(*(float *)(*(int *)(param_1 + 0xbca4) + 0x24) - *(float *)(param_1 + 0x24)) <
-                (float)_DAT_00578a27)) {
+                (float)2)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,2,1);
               *(uint *)(param_1 + 0xbca0) = 0;
               iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd60))
@@ -222,7 +220,7 @@ LAB_0041290b:
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_d0,&local_88);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_cc - *(float *)(param_1 + 0x34));
-            if (ABS(local_14) < (float)_DAT_00578a1f) {
+            if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,3,1);
               *(uint *)(param_1 + 0xbca0) = 0x3f800000;
               iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd60))
@@ -293,7 +291,7 @@ switchD_00412d72_caseD_2:
   }
   iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(param_1);
   if (iVar3 != 0) {
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_00578a2f;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_c4 = *(float *)(param_1 + 0x2420) * param_2;
     local_c0 = *(float *)(param_1 + 0x2424) * param_2;
     local_bc = param_2 * *(float *)(param_1 + 0x2428);
@@ -313,6 +311,6 @@ switchD_00412d72_caseD_2:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

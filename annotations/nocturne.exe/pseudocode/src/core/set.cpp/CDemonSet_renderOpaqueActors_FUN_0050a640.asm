@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00509a80 at 00509d4a
-;   FUN_0050aba0 at 0050accd
+;   core_set.cpp_FUN_00509a80 at 00509d4a
+;   core_set.cpp_FUN_0050aba0 at 0050accd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -18,9 +18,9 @@
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
+;   core_set.cpp_FUN_0050e080
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   FUN_0050e080
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
         ;   Label: LAB_0050a76e
     PUSH ESI                            ; 0050a770
     PUSH EDI                            ; 0050a771
-    CALL FUN_0050e080                   ; 0050a772
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e080()
+    CALL core_set.cpp_FUN_0050e080      ; 0050a772
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
     ADD ESP,0xc                         ; 0050a777
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0050a77a
     PUSH EBX                            ; 0050a780

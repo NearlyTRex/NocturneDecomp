@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   string s_hotdemon-die.wav_00585f9a
 ;   string s_hotdemon-hurt?.wav_00585fab
-;   undefined4 DAT_00585fc5
+;   double DOUBLE_00585fc5 = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_004b97c3
     LEA EAX,[EDI + 0x1c]                ; 004b97c6
     FLD ST0                             ; 004b97c9
-    FMUL double ptr [0x00585fc5]        ; 004b97cb | DAT_00585fc5
+    FMUL double ptr [0x00585fc5]        ; 004b97cb | DOUBLE_00585fc5
     PUSH EAX                            ; 004b97d1
     LEA EAX,[ESP + 0x4]                 ; 004b97d2
     XOR EBX,EBX                         ; 004b97d6

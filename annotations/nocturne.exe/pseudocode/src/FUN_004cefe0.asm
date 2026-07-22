@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_actor.cpp_FUN_0040bce0
 ;   core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
-;   FUN_0040bce0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 004ceff2
     PUSH ECX                            ; 004ceff6
     PUSH EBX                            ; 004ceff7
-    CALL FUN_0040bce0                   ; 004ceff8
-        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040bce0()
+    CALL core_actor.cpp_FUN_0040bce0    ; 004ceff8
+        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040bce0()
     ADD ESP,0x10                        ; 004ceffd
     MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | DAT_00765a98
     PUSH EDI                            ; 004cf006

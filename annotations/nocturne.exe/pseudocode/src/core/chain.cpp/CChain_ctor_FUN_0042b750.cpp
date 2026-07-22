@@ -14,7 +14,7 @@ int core_chain_cpp_CChain_ctor_FUN_0042b750(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = __arrinit(iVar2 + 0x284,0x14,&DAT_0059b320);
   *(byte ***)(iVar2 + -0x138) = &PTR_core_chain_cpp_CChain_setup_FUN_0042b8f0_0059b244;
   *(uint *)(iVar2 + -0x134) = 10;

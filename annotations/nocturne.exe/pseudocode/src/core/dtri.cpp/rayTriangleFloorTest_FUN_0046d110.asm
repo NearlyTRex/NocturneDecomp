@@ -36,8 +36,8 @@
 ;   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_00534a70 at 00534aa4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e47e
-;   undefined4 DAT_0057e486
+;   double DOUBLE_0057e47e = -0.340000000000000
+;   double DOUBLE_0057e486 = 0.0100000000000000
 ;   undefined4 DAT_01bc995c
 ;   undefined4 DAT_01bc9960
 ;   undefined4 DAT_01bc9964
@@ -62,7 +62,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0046d11c
     MOV ESI,dword ptr [EBP + 0x18]      ; 0046d11f
     FLD float ptr [EBX + 0x28]          ; 0046d122
-    FCOMP double ptr [0x0057e47e]       ; 0046d125 | DAT_0057e47e
+    FCOMP double ptr [0x0057e47e]       ; 0046d125 | DOUBLE_0057e47e
     FNSTSW AX                           ; 0046d12b
     SAHF                                ; 0046d12d
     JA 0x0046d374                       ; 0046d12e
@@ -243,7 +243,7 @@ section .text
         ;   XREF to: 0046d3fb (CONDITIONAL_JUMP)  ; LAB_0046d3fb
     FLD double ptr [ESP]                ; 0046d321
         ;   Label: LAB_0046d321
-    FCOMP double ptr [0x0057e486]       ; 0046d324 | DAT_0057e486
+    FCOMP double ptr [0x0057e486]       ; 0046d324 | DOUBLE_0057e486
     FNSTSW AX                           ; 0046d32a
     SAHF                                ; 0046d32c
     JNC 0x0046d424                      ; 0046d32d

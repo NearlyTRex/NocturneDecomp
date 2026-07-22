@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(int param_1,float param_2)
 
 {
@@ -49,11 +47,11 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(int param_1,float param_2)
   FUN_004d9110(0x01CC9450,param_1,1);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_40);
   fStack_10 = fStack_34 - local_40;
-  fStack_1c = fStack_10 * _DAT_00581657;
+  fStack_1c = fStack_10 * 0.5f;
   fStack_c = fStack_30 - fStack_3c;
   fStack_8 = fStack_2c - fStack_38;
-  fStack_18 = fStack_c * _DAT_00581657;
-  fStack_14 = fStack_8 * _DAT_00581657;
+  fStack_18 = fStack_c * 0.5f;
+  fStack_14 = fStack_8 * 0.5f;
   fStack_28 = *(float *)(param_1 + 0x20) + fStack_1c;
   fStack_24 = *(float *)(param_1 + 0x24) + fStack_18;
   fStack_20 = *(float *)(param_1 + 0x28) + fStack_14;

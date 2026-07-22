@@ -18,14 +18,14 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(uint param_
     iVar1 = 0;
   }
   else {
-    iVar2 = _stricmp(param_2,&DAT_0058022c);
+    iVar2 = _stricmp(param_2,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
       _DAT_01c08b5c = 0;
       iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_0047dd10(param_1,param_2);
       if (iVar1 < 0) {
-        engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,&DAT_00580231,&DAT_01c08b60);
+        engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"%s\n",&DAT_01c08b60)
+        ;
         return 0;
       }
     }

@@ -4,10 +4,8 @@
 #include "system/basetypes.h"
 
 // =============================================================================
-// STDARG - System Header (default)
+// STDARG - System Header
 // =============================================================================
-// Emitted because this program has no va_list_t data type of its own, yet
-// crt.h unconditionally depends on it. Mirrors the analyzed-program stdarg.h.
 
 // Structure: va_list_t
 #pragma pack(push, 1)
@@ -16,10 +14,23 @@ typedef struct va_list_t {
 } va_list_t;
 #pragma pack(pop)
 
-// Variadic argument macros for va_list_t. Delegate to the compiler
-// intrinsics so the first-arg position is correct even under ASan's
-// shadow-stack parameter relocation; consumers memcpy value[] back into a
-// real va_list for glibc.
+// Variadic argument macros for va_list_t
+// Ghidra produces uncompilable va_list_t initialization patterns in variadic
+// functions. These macros provide compilable equivalents.
+//
+// An earlier version of VA_START_T used `(char*)(&(last) + 1)` to
+// locate the first variadic arg. That works in unsanitized builds
+// where parameters live contiguously on the real stack, but under
+// AddressSanitizer the compiler copies parameters into a shadow
+// stack frame, so `&last` points into the shadow region and `+1`
+// walks into ASan-managed zeroed memory. Every vsprintf-style
+// callee then reads NULL for every format arg (printed as '(null)').
+//
+// Delegate to the compiler intrinsic __builtin_va_start so the
+// correct position is picked regardless of relocations, then stash
+// the whole __builtin_va_list into value[] (one char* on i386 SysV,
+// a 24-byte __va_list_tag[1] on x86-64 SysV -- va_list_t is sized to
+// fit). Consumers memcpy value[] back into a real va_list for glibc.
 #define VA_START_T(ap, last) do { \
     __builtin_va_list _va_start_tmp; \
     __builtin_va_start(_va_start_tmp, (last)); \

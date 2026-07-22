@@ -13,16 +13,16 @@
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0 at 004901ff
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\font.cpp_0058175a+1
+;   TerminatedCString s_engine_font_cpp_0058175b
 ;   string s_Too_many_bitmaps_0058176e
-;   undefined4 DAT_0058177f
+;   TerminatedCString s_art_0058177f
 ;   string s_Invalid_font_file_size_(%s)._00581783
 ;   string s_..\\engine\\font.cpp_005817a0
 ;   string s_Unable_to_allocate_memory_for_fo_005817b3
 ;   string s_..\\engine\\font.cpp_005817e3
-;   undefined4 DAT_005817f6
-;   undefined4 DAT_005817fa
-;   undefined4 DAT_005817fd
+;   TerminatedCString s_act_005817f6
+;   TerminatedCString s_rb_005817fa
+;   TerminatedCString s_art_005817fd
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -95,7 +95,7 @@ section .text
     IMUL ESI,EDI                        ; 0048ffea
     PUSH EBP                            ; 0048ffed
     MOV EAX,dword ptr [EBX]             ; 0048ffee
-    PUSH 0x58177f                       ; 0048fff0 | DAT_0058177f
+    PUSH 0x58177f                       ; 0048fff0 | = "art"
     MOV dword ptr [EBX + EAX*0x4 + 0x154],EDX ; 0048fff5
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 0048fffc
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
@@ -166,7 +166,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 004900b6
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004900bb
-    PUSH 0x5817f6                       ; 004900be | DAT_005817f6
+    PUSH 0x5817f6                       ; 004900be | = "act"
     LEA EAX,[ESP + 0x234]               ; 004900c3
     PUSH EAX                            ; 004900ca
     LEA EAX,[ESP + 0x338]               ; 004900cb
@@ -177,10 +177,10 @@ section .text
     CALL crt_file.c_makepath_FUN_0056626c ; 004900dd
         ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
     ADD ESP,0x14                        ; 004900e2
-    PUSH 0x5817fa                       ; 004900e5 | DAT_005817fa
+    PUSH 0x5817fa                       ; 004900e5 | = "rb"
     LEA EAX,[ESP + 0x130]               ; 004900ea
     PUSH EAX                            ; 004900f1
-    PUSH 0x5817fd                       ; 004900f2 | DAT_005817fd
+    PUSH 0x5817fd                       ; 004900f2 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004900f7
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004900fc
@@ -245,7 +245,7 @@ section .text
     POP ESI                             ; 0049019d
     POP EBX                             ; 0049019e
     RET                                 ; 0049019f
-    MOV ECX,0x58175b                    ; 004901a0 | s_..\engine\font.cpp_0058175a+1
+    MOV ECX,0x58175b                    ; 004901a0 | = "..\\engine\\font.cpp"
         ;   Label: LAB_004901a0
     MOV ESI,0xd7                        ; 004901a5
     PUSH 0x58176e                       ; 004901aa | = "Too many bitmaps"

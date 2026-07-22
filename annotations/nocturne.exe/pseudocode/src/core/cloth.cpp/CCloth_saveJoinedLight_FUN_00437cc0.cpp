@@ -19,7 +19,7 @@ int core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(int param_1,int param_2)
   int iVar6;
   
   if (param_2 == 0) {
-    _DAT_01cc4800 = "?..\\core\\cloth.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\cloth.cpp";
     _DAT_01cc4804 = 0x4e3;
     FUN_004c8440("CCloth::saveJoinedLight - Can't save light with no model!");
   }

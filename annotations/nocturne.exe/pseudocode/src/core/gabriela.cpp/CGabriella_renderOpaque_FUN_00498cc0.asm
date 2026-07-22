@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005821fa
+;   double DOUBLE_005821fa = 0.900000000000000
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bca0c0
@@ -76,7 +76,7 @@ section .text
     CALL dword ptr [EDX + 0x8]          ; 00498d25
     FLD float ptr [EBX + 0x1fa44]       ; 00498d28
     ADD ESP,0x4                         ; 00498d2e
-    FCOMP double ptr [0x005821fa]       ; 00498d31 | DAT_005821fa
+    FCOMP double ptr [0x005821fa]       ; 00498d31 | DOUBLE_005821fa
     FNSTSW AX                           ; 00498d37
     SAHF                                ; 00498d39
     JBE 0x00498cec                      ; 00498d3a

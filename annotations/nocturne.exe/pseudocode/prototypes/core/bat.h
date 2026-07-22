@@ -15,6 +15,14 @@ void CBat::archive(int param_1);
 // Address: 00411c40
 void CBat::process(int param_1,float param_2);
 
+// Original: core_bat.cpp_FUN_00411e30
+// Address: 00411e30
+int FUN_00411e30(int param_1);
+
+// Original: core_bat.cpp_FUN_00411ea0
+// Address: 00411ea0
+undefined4 * FUN_00411ea0(int param_1,undefined4 *param_2);
+
 // Original: core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20
 // Address: 00411f20
 void __cdecl CBat::updateCoursePosition(int param_1);

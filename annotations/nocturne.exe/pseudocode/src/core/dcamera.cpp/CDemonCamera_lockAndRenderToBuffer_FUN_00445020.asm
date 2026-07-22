@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 00509d1f
+;   core_set.cpp_FUN_00509a80 at 00509d1f
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dcamera.cpp_0057b981+2
+;   TerminatedCString s_core_dcamera_cpp_0057b983
 ;   string s_Unable_to_lock_hold_buffer._Plea_0057b997
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01cc4800
@@ -62,7 +62,7 @@ section .text
     JNZ 0x00445033                      ; 00445068
         ;   XREF to: 00445033 (CONDITIONAL_JUMP)  ; LAB_00445033
     PUSH EBX                            ; 0044506a
-    MOV ECX,0x57b983                    ; 0044506b | s_..\core\dcamera.cpp_0057b981+2
+    MOV ECX,0x57b983                    ; 0044506b | = "..\\core\\dcamera.cpp"
     MOV EBX,0xe2b                       ; 00445070
     PUSH 0x57b997                       ; 00445075 | = "Unable to lock hold buffer.   Please ..."
     MOV dword ptr [0x01cc4800],ECX      ; 0044507a | DAT_01cc4800

@@ -64,9 +64,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
     if (((0 < piVar5[2]) &&
         (*(short *)(*(int *)(param_3 + 0x2f94) +
                    ((*piVar5 >> 0x10) + *(int *)(param_3 + 0x1cc0) * (piVar5[1] >> 0x10)) * 2) != 0)
-        ) && ((float)piVar5[2] * (float)_DAT_0057b813 < *(float *)(param_3 + 0x100))) {
+        ) && ((float)piVar5[2] * (float)0.00390625 < *(float *)(param_3 + 0x100))) {
       return (int)ROUND((float)param_4 *
-                        ((*(float *)(param_3 + 0x100) - (float)piVar5[2] * (float)_DAT_0057b813) /
+                        ((*(float *)(param_3 + 0x100) - (float)piVar5[2] * (float)0.00390625) /
                         *(float *)(param_3 + 0x100)));
     }
     return 0;

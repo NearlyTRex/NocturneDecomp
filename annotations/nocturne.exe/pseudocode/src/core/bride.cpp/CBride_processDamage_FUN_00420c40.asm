@@ -11,19 +11,19 @@
 ; Referenced Globals:
 ;   string s_ub-die?.wav_00579bd5
 ;   string s_ub-hurt?.wav_00579be1
-;   undefined4 DAT_00579bf5
+;   double DOUBLE_00579bf5 = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00420a10
+;   core_charactr.cpp_FUN_00427730
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-;   FUN_00427730
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
@@ -76,8 +76,8 @@ section .text
     LEA EAX,[EBP + -0x20]               ; 00420ca4
     PUSH EAX                            ; 00420ca7
     PUSH ESI                            ; 00420ca8
-    CALL FUN_00427730                   ; 00420ca9
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined FUN_00427730()
+    CALL core_charactr.cpp_FUN_00427730 ; 00420ca9
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
     ADD ESP,0x18                        ; 00420cae
     PUSH EDI                            ; 00420cb1
         ;   Label: LAB_00420cb1
@@ -156,7 +156,7 @@ section .text
         ;   Label: LAB_00420d76
     LEA EAX,[EDI + 0x1c]                ; 00420d79
     FLD ST0                             ; 00420d7c
-    FMUL double ptr [0x00579bf5]        ; 00420d7e | DAT_00579bf5
+    FMUL double ptr [0x00579bf5]        ; 00420d7e | DOUBLE_00579bf5
     PUSH EAX                            ; 00420d84
     LEA EAX,[EBP + -0x2c]               ; 00420d85
     XOR EBX,EBX                         ; 00420d88

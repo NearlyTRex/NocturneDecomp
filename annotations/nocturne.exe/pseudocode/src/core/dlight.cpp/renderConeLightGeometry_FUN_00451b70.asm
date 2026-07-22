@@ -45,15 +45,15 @@
 ; XREF[3]:
 ;   FUN_004c8200 at 004c8278
 ;   FUN_0054f510 at 0054f717
-;   FUN_00561940 at 00561a69
+;   core_zombie.cpp_FUN_00561940 at 00561a69
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c916
-;   undefined4 DAT_0057c91e
-;   undefined4 DAT_0057c926
-;   undefined4 DAT_0057c92e
-;   undefined4 DAT_0057c936
-;   undefined4 DAT_0057c93e
+;   double DOUBLE_0057c916 = 0.125
+;   double DOUBLE_0057c91e = 5.13920855624402E-315
+;   double DOUBLE_0057c926 = 3.14159265350000
+;   double DOUBLE_0057c92e = 2
+;   double DOUBLE_0057c936 = 1024
+;   double DOUBLE_0057c93e = 18
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_005ae458
 ;   undefined4 DAT_005ae704
@@ -132,11 +132,11 @@ section .text
     FSTP float ptr [ESP + 0x90]         ; 00451bf6
     FLD float ptr [ESP + 0x4]           ; 00451bfd
         ;   Label: LAB_00451bfd
-    FDIVR double ptr [0x0057c93e]       ; 00451c01 | DAT_0057c93e
+    FDIVR double ptr [0x0057c93e]       ; 00451c01 | DOUBLE_0057c93e
     MOV dword ptr [ESP + 0xa8],EDI      ; 00451c07
     FILD dword ptr [ESP + 0xa8]         ; 00451c0e
     FMULP                               ; 00451c15
-    FMUL double ptr [0x0057c916]        ; 00451c17 | DAT_0057c916
+    FMUL double ptr [0x0057c916]        ; 00451c17 | DOUBLE_0057c916
     FST float ptr [ESP]                 ; 00451c1d
     FLD1                                ; 00451c20
     FPATAN                              ; 00451c22
@@ -146,13 +146,13 @@ section .text
     FSTP float ptr [ESP + 0xa4]         ; 00451c2b
     MOV dword ptr [ESP + 0xa8],EAX      ; 00451c32
         ;   Label: LAB_00451c32
-    FLD float ptr [0x0057c91e]          ; 00451c39 | DAT_0057c91e
+    FLD float ptr [0x0057c91e]          ; 00451c39 | DOUBLE_0057c91e
     FILD dword ptr [ESP + 0xa8]         ; 00451c3f
     FMUL ST1                            ; 00451c46
-    FLD double ptr [0x0057c926]         ; 00451c48 | DAT_0057c926
+    FLD double ptr [0x0057c926]         ; 00451c48 | DOUBLE_0057c926
     FXCH                                ; 00451c4e
     FMUL ST1                            ; 00451c50
-    FLD double ptr [0x0057c92e]         ; 00451c52 | DAT_0057c92e
+    FLD double ptr [0x0057c92e]         ; 00451c52 | DOUBLE_0057c92e
     FXCH                                ; 00451c58
     FMUL ST1                            ; 00451c5a
     LEA ESI,[EAX + 0x1]                 ; 00451c5c
@@ -207,7 +207,7 @@ section .text
     FXCH ST3                            ; 00451d07
     FMULP ST2                           ; 00451d09
     FXCH ST3                            ; 00451d0b
-    FLD double ptr [0x0057c936]         ; 00451d0d | DAT_0057c936
+    FLD double ptr [0x0057c936]         ; 00451d0d | DOUBLE_0057c936
     FXCH                                ; 00451d13
     FMUL ST1                            ; 00451d15
     FXCH ST2                            ; 00451d17

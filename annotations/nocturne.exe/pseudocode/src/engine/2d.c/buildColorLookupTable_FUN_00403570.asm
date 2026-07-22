@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00403630 at 004036c6
+;   engine_2d.c_FUN_00403630 at 004036c6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057723c
+;   double DOUBLE_0057723c = 0.577350270000000
 ;   undefined4 DAT_006af638
 ;   undefined4 DAT_01bf7720
 ;   undefined4 DAT_01c00648
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x10                        ; 00403574
     XOR EBX,EBX                         ; 00403577
     XOR ESI,ESI                         ; 00403579
-    FLD double ptr [0x0057723c]         ; 0040357b | DAT_0057723c
+    FLD double ptr [0x0057723c]         ; 0040357b | DOUBLE_0057723c
     XOR EAX,EAX                         ; 00403581
         ;   Label: LAB_00403581
     MOV AL,byte ptr [EBX + 0x1c00648]   ; 00403583 | DAT_01c00648

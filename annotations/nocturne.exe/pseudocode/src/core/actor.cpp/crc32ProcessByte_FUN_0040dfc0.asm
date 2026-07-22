@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0040e120 at 0040e137
+;   core_actor.cpp_FUN_0040e120 at 0040e137
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0 at 0040e0bb
 ;   core_script.cpp_CScript_computeChecksum_FUN_00505820 at 00505852
 ;

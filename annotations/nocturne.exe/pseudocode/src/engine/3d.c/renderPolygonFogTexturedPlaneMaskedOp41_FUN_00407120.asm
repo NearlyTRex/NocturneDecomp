@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -145,8 +145,8 @@ section .text
         ;   Label: LAB_00407291
     MOV ESI,dword ptr [EDI + 0x4]       ; 00407296
     PUSH ESI                            ; 00407299
-    CALL FUN_00432cd0                   ; 0040729a
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 0040729a
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 0040729f
     POP EBX                             ; 004072a2
     MOV EDX,dword ptr [EDI + 0x4]       ; 004072a3

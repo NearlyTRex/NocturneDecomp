@@ -22,7 +22,7 @@
 ;   FUN_0048ab60 at 0048ad21
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005810b8
+;   float FLOAT_005810b8 = 0.1000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -50,7 +50,7 @@ section .text
     CMP EBX,EAX                         ; 00482c9f
     JNZ 0x00482d88                      ; 00482ca1
         ;   XREF to: 00482d88 (CONDITIONAL_JUMP)  ; LAB_00482d88
-    FLD float ptr [0x005810b8]          ; 00482ca7 | DAT_005810b8
+    FLD float ptr [0x005810b8]          ; 00482ca7 | FLOAT_005810b8
         ;   Label: LAB_00482ca7
     FLD float ptr [EBP]                 ; 00482cad
     FMUL ST1                            ; 00482cb0

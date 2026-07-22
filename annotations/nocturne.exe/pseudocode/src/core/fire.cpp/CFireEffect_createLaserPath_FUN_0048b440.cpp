@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)
 
 {
@@ -38,8 +36,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1
   float local_14;
   
   local_80 = param_7;
-  local_88 = param_7 * _DAT_005814c8;
-  if (local_88 < (float)_DAT_005814cc) {
+  local_88 = param_7 * 0.05f;
+  if (local_88 < (float)0.050000000000000003) {
     local_88 = 0.05;
   }
   local_70 = *param_2;
@@ -56,7 +54,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1
     local_34 = local_28 * local_84;
     local_30 = local_24 * local_84;
     local_2c = local_20 * local_84;
-    local_14 = local_84 * (float)_DAT_005814d4 * local_84;
+    local_14 = local_84 * (float)0.5 * local_84;
     local_64 = local_14 * 0.0;
     local_60 = local_14 * -32.0;
     local_5c = local_14 * 0.0;

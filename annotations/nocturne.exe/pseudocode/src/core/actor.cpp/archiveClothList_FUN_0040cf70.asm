@@ -12,16 +12,16 @@
 ;
 ; Referenced Globals:
 ;   string s_Cloth_list_opening_brace_00577dd9
-;   undefined4 DAT_00577df2
+;   TerminatedCString s_d_00577df2
 ;   string s_cloth_count_00577df5
 ;   string s_clothCount_00577e01
-;   string s_\"%[^\"]\"_00577e0c
+;   TerminatedCString s_anon_00577e0c
 ;   string s_cloth_filename_entry_00577e16
 ;   string s_Cloth_list_closing_brace_00577e2b
-;   string s_%s{_//_%s_00577e44
-;   string s_%s%d_//_clothCount_00577e4f
-;   string s_%s\"%s\"_00577e63
-;   undefined4 DAT_00577e6b
+;   TerminatedCString s_s_s_00577e44
+;   TerminatedCString s_s_d_clothCount_00577e4f
+;   TerminatedCString s_s_s_00577e63
+;   TerminatedCString s_s_00577e6b
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
@@ -63,7 +63,7 @@ section .text
     JNZ 0x0040cf89                      ; 0040cfa5
         ;   XREF to: 0040cf89 (CONDITIONAL_JUMP)  ; LAB_0040cf89
     PUSH EBP                            ; 0040cfa7
-    PUSH 0x577df2                       ; 0040cfa8 | DAT_00577df2
+    PUSH 0x577df2                       ; 0040cfa8 | = "%d"
     MOV EDI,dword ptr [0x00763e84]      ; 0040cfad | DAT_00763e84
     PUSH EDI                            ; 0040cfb3
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040cfb4
@@ -203,7 +203,7 @@ section .text
         ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
     ADD ESP,0x4                         ; 0040d0e7
     PUSH 0x5acc90                       ; 0040d0ea | DAT_005acc90
-    PUSH 0x577e6b                       ; 0040d0ef | DAT_00577e6b
+    PUSH 0x577e6b                       ; 0040d0ef | = "%s}\n"
     MOV ECX,dword ptr [0x00763e84]      ; 0040d0f4 | DAT_00763e84
     PUSH ECX                            ; 0040d0fa
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d0fb

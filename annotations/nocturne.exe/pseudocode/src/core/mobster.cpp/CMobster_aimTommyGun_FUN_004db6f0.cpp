@@ -116,7 +116,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (param_1 + 0x150,uVar6,0x40c00000,uVar3,_DAT_01ccdbd0,&LAB_0051b650);
-      FUN_0055d4a0(local_2c);
+      core_xform_cpp_FUN_0055d4a0(local_2c);
       local_80 = local_60;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =
            *(uint *)(local_44 + (uint)bVar5 * -8 + -0x18);
@@ -131,7 +131,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (local_18,&stack0xffffff80,*(uint *)(param_1 + 0xbdf4),_DAT_01ccdbd0,
                  &LAB_0051b650);
-      FUN_0055d4e0(local_28);
+      core_xform_cpp_FUN_0055d4e0(local_28);
       puVar7 = &LAB_0051b650;
       local_80 = local_70;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =

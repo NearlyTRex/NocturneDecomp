@@ -60,7 +60,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
     for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - *(float *)(param_1 + 0x264)) {
       pcStack_554 = (char *)0x4a6a79;
       wincore_windll_cpp_clearScreen_FUN_0052ee70();
-      pcStack_554 = "Y@To be continued..." + 2;
+      pcStack_554 = "To be continued...";
       uStack_558 = 0x4a6a83;
       pcStack_554 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
       uStack_558 = 0;
@@ -97,15 +97,15 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(local_4c);
   fVar1 = *(float *)(param_1 + 0x248);
   pcStack_554 = (char *)0x4a6b78;
-  fVar11 = (float10)round((float10)fVar1 * (float10)_DAT_0058464a);
+  fVar11 = (float10)round((float10)fVar1 * (float10)0.00027777777777777799);
   local_2c = (int)ROUND(fVar11);
-  fVar12 = (float10)fVar1 - (float10)local_2c * (float10)_DAT_00584652;
+  fVar12 = (float10)fVar1 - (float10)local_2c * (float10)3600;
   *(float *)(param_1 + 0x248) = (float)fVar12;
   uStack_558 = 0x4a6bb2;
   local_18 = local_2c;
-  fVar11 = (float10)round(fVar12 * (float10)_DAT_0058465a);
+  fVar11 = (float10)round(fVar12 * (float10)0.016666666666666701);
   iStack_38 = (int)ROUND(fVar11);
-  *(float *)(param_1 + 0x248) = (float)(fVar12 - (float10)iStack_38 * (float10)_DAT_00584662);
+  *(float *)(param_1 + 0x248) = (float)(fVar12 - (float10)iStack_38 * (float10)60);
   uStack_55c = (char *)0x4a6be4;
   local_1c = iStack_38;
   fVar11 = (float10)round();
@@ -115,7 +115,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
   pcVar14 = "Mission time";
   uVar13 = 0x4a6c1f;
   local_20 = local_24;
-  fVar11 = (float10)round(fVar11 * (float10)_DAT_0058466a);
+  fVar11 = (float10)round(fVar11 * (float10)100);
   iStack_3c = (int)ROUND(fVar11);
   pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(uVar13,pcVar14);
   pcVar14 = (char *)&uStack_55c;
@@ -129,7 +129,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
     pcVar14 = pcVar14 + 2;
   } while (cVar2 != '\0');
   iVar3 = iStack_3c;
-  pcVar4 = &DAT_00584618;
+  pcVar4 = "\n\n";
   iVar5 = -1;
   pcVar14 = (char *)&uStack_55c;
   do {
@@ -209,7 +209,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
     pcVar8[1] = cVar2;
     pcVar8 = pcVar8 + 2;
   } while (cVar2 != '\0');
-  pcVar4 = &DAT_0058463e;
+  pcVar4 = "\n\n";
   iVar3 = -1;
   pcVar14 = (char *)&uStack_55c;
   do {
@@ -230,7 +230,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
     pcVar8[1] = cVar2;
     pcVar8 = pcVar8 + 2;
   } while (cVar2 != '\0');
-  _sprintf(acStack_15c,&DAT_00584641,*(uint *)(param_1 + 0x254));
+  _sprintf(acStack_15c,"%d\n\n",*(uint *)(param_1 + 0x254));
   pcVar14 = acStack_15c;
   iVar3 = -1;
   pcVar4 = (char *)&uStack_55c;

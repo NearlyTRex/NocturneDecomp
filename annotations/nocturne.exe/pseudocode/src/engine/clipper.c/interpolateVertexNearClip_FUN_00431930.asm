@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00431f50 at 004320bf
-;   FUN_00432cd0 at 004336a7
+;   engine_clipper.c_FUN_00431f50 at 004320bf
+;   engine_clipper.c_FUN_00432cd0 at 004336a7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad284

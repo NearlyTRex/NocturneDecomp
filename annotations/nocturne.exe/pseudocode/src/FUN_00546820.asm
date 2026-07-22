@@ -9,9 +9,9 @@
 ;   undefined1* PTR_FUN_005a3424 = 00546870
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: FUN_00546820
     MOV EBX,dword ptr [ESP + 0x8]       ; 00546821
     PUSH EBX                            ; 00546825
-    CALL FUN_00409d30                   ; 00546826
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00546826
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0054682b
     ADD EAX,0x150                       ; 0054682e
     PUSH EAX                            ; 00546833

@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_0050d910 at 0050dca0
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0 at 0050d87f
+;   core_set.cpp_FUN_0050d910 at 0050dca0
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 00551158
 ;
 ; Referenced Globals:

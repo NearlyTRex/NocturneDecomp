@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * FUN_00404430(undefined4 *param_1)
+; undefined * engine_3d_c_FUN_00404430(undefined4 *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ;
 ; Referenced Globals:
-;   string s_Old_func_:_%d_005774c8
-;   string s_..\\engine\\3d.c_005774d6
+;   TerminatedCString s_Old_func_d_005774c8
+;   TerminatedCString s_engine_3d_c_005774d6
 ;   undefined4 DAT_006b0288
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -22,7 +22,7 @@
 section .text
 
     PUSH EBX                            ; 00404430
-        ;   Label: FUN_00404430
+        ;   Label: engine_3d.c_FUN_00404430
     SUB ESP,0x50                        ; 00404431
     MOV EAX,dword ptr [ESP + 0x58]      ; 00404434
     MOV EDX,dword ptr [EAX]             ; 00404438

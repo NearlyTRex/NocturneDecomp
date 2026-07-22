@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   string s_guul.dfm_00584ac4
-;   undefined4 DAT_00584acd
+;   double DOUBLE_00584acd = 65536
 ;   undefined4 DAT_0059e210
 ;   undefined4 DAT_0059e214
 ;   undefined1* PTR_core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0_0059e224 = 004a8dd0
@@ -47,7 +47,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004a8cdc
     FLD float ptr [ESP + 0x8]           ; 004a8ce0
     ADD ESP,0x8                         ; 004a8ce4
-    FMUL double ptr [0x00584acd]        ; 004a8ce7 | DAT_00584acd
+    FMUL double ptr [0x00584acd]        ; 004a8ce7 | DOUBLE_00584acd
     PUSH 0x41200000                     ; 004a8ced
     PUSH 0x40800000                     ; 004a8cf2
     CALL crt_math.c_round_FUN_00563a30  ; 004a8cf7
@@ -59,7 +59,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004a8d11
     MOV dword ptr [EBX + 0xbd34],0xffffffff ; 004a8d15
     FLD float ptr [ESP + 0x8]           ; 004a8d1f
-    FMUL double ptr [0x00584acd]        ; 004a8d23 | DAT_00584acd
+    FMUL double ptr [0x00584acd]        ; 004a8d23 | DOUBLE_00584acd
     MOV dword ptr [EBX + 0xbd38],0x0    ; 004a8d29
     ADD ESP,0x8                         ; 004a8d33
     MOV dword ptr [EBX + 0xbd44],0x2    ; 004a8d36

@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_0057548c = 00175ad4
 ;   void* PTR_CreateFileA_00575498 = 00175b06
-;   undefined4 DAT_00598bd0
+;   TerminatedCString s_con_00598bd0
 ;   undefined4 DAT_005c1aa0
 ;   void* PTR_FUN_005c1ac8 = 005671e8
 ;   undefined4 DAT_005c1d5c
@@ -93,7 +93,7 @@ section .text
     CMP dword ptr [0x005c1d5c],0x0      ; 0056b9dc | DAT_005c1d5c
     JZ 0x0056ba24                       ; 0056b9e3
         ;   XREF to: 0056ba24 (CONDITIONAL_JUMP)  ; LAB_0056ba24
-    PUSH 0x598bd0                       ; 0056b9e5 | DAT_00598bd0
+    PUSH 0x598bd0                       ; 0056b9e5 | = "con"
     MOV EDX,dword ptr [ESP + 0x30]      ; 0056b9ea
     PUSH EDX                            ; 0056b9ee
     CALL crt_string.c__stricmp_FUN_00564520 ; 0056b9ef

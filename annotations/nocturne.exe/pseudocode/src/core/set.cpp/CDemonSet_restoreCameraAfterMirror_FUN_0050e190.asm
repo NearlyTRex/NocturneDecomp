@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_00509a80 at 00509bdb
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a7a5
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507e4d
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509904
 ;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0 at 0050a931
+;   core_set.cpp_FUN_00509a80 at 00509bdb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

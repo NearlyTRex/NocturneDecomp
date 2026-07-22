@@ -53,7 +53,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(int param_1)
     fVar5 = (float10)round((float10)*(float *)(param_1 + 0x18));
     local_1c = (int)ROUND(fVar5);
     if ((local_1c < 0) || (0x27 < local_1c)) {
-      _DAT_01cc4800 = "A..\\core\\fire.cpp" + 1;
+      _DAT_01cc4800 = "..\\core\\fire.cpp";
       _DAT_01cc4804 = 0x11d;
       FUN_004c8440("CSmokeParticle::render - Frame out of range");
     }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_flies_cpp_CFlies_process_FUN_0048f090(int param_1,float param_2)
 
 {
@@ -37,9 +35,9 @@ void core_flies_cpp_CFlies_process_FUN_0048f090(int param_1,float param_2)
       if (0.0 < SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34)) {
         pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                                     (param_1,local_2c,&local_38);
-        local_44 = *pfVar3 * _DAT_00581707;
-        local_40 = pfVar3[1] * _DAT_00581707;
-        local_3c = _DAT_00581707 * pfVar3[2];
+        local_44 = *pfVar3 * 0.5f;
+        local_40 = pfVar3[1] * 0.5f;
+        local_3c = 0.5f * pfVar3[2];
         if (&local_38 != &local_44) {
           local_38 = local_44;
           local_34 = local_40;
@@ -87,7 +85,7 @@ void core_flies_cpp_CFlies_process_FUN_0048f090(int param_1,float param_2)
         *(uint *)(param_1 + 0x2a04) = 0;
       }
     }
-    fVar1 = (float)_DAT_0058170f;
+    fVar1 = (float)2;
     local_18 = 0;
     if (0 < *(int *)(param_1 + 0x15c)) {
       pfVar3 = (float *)(param_1 + 0x160);

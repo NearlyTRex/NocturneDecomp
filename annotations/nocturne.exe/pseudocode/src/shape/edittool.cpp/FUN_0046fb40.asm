@@ -17,7 +17,7 @@
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0 at 0053bf1e
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   string s_Warning_0057e5cf
 ;   undefined4 DAT_005bac64
@@ -62,7 +62,7 @@ section .text
     CMP dword ptr [0x01bcd070],0x0      ; 0046fb4b | DAT_01bcd070
     JNZ 0x0046fb77                      ; 0046fb52
         ;   XREF to: 0046fb77 (CONDITIONAL_JUMP)  ; LAB_0046fb77
-    MOV ECX,0x57e4fa                    ; 0046fb54 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 0046fb54 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fb59
     PUSH 0x57e510                       ; 0046fb5e | = "gEdFont must be set by the application."
     MOV dword ptr [0x01cc4800],ECX      ; 0046fb63 | DAT_01cc4800

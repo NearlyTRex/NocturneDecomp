@@ -44,16 +44,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_0050f910 at 0050f987
 ;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041adaf
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930 at 0046794f
 ;   core_gore.cpp_CFootstep_init_FUN_004af8a0 at 004af977
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef222
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 at 0050fb50
+;   core_setcolid.cpp_FUN_0050f910 at 0050f987
 ;   core_tvbat.cpp_CTVBat_process_FUN_0054b460 at 0054bc57
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e1da
+;   float FLOAT_0057e1da = 2.684355E+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
@@ -271,7 +271,7 @@ section .text
     FLD float ptr [ESP + 0x14]          ; 00467c46
     FSUB float ptr [ESP + 0x4]          ; 00467c4a
     FABS                                ; 00467c4e
-    FLD float ptr [0x0057e1da]          ; 00467c50 | DAT_0057e1da
+    FLD float ptr [0x0057e1da]          ; 00467c50 | FLOAT_0057e1da
     FDIV float ptr [ESP + 0x10]         ; 00467c56
     FXCH ST3                            ; 00467c5a
     FMUL ST3                            ; 00467c5c

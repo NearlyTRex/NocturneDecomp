@@ -9,13 +9,13 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_0042a150 at 0042a156
+;   core_charactr.cpp_FUN_0042a150 at 0042a156
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\charactr.cpp_0057a210
 ;   string s_CCharacter::applyGesture_-_never_0057a225
-;   undefined4 DAT_0057a26a
-;   undefined4 DAT_0057a26e
+;   float FLOAT_0057a26a = 0.3000000
+;   float FLOAT_0057a26e = 0.8500000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -46,7 +46,7 @@ section .text
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 00429594
         ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
     FLD float ptr [ESI + EAX*0x1 + 0x988] ; 00429599
-    FMUL float ptr [0x0057a26a]         ; 004295a0 | DAT_0057a26a
+    FMUL float ptr [0x0057a26a]         ; 004295a0 | FLOAT_0057a26a
     FLD float ptr [EBX + 0x25c4]        ; 004295a6
     ADD ESP,0x4                         ; 004295ac
     FLD1                                ; 004295af
@@ -60,7 +60,7 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 004295cd
     FSTP float ptr [ESP + 0xc]          ; 004295d1
     FLD float ptr [ESP + 0x8]           ; 004295d5
-    FCOMP float ptr [0x0057a26e]        ; 004295d9 | DAT_0057a26e
+    FCOMP float ptr [0x0057a26e]        ; 004295d9 | FLOAT_0057a26e
     FNSTSW AX                           ; 004295df
     SAHF                                ; 004295e1
     JNC 0x004295ec                      ; 004295e2

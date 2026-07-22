@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)
 
 {
@@ -65,7 +63,7 @@ float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_
       local_60 = -local_60;
       uStack_7c = uStack_7c ^ 0x80000000;
     }
-    if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= _DAT_0059836e) {
+    if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= 0.99999000000000005) {
       fVar8 = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));
       fVar9 = (float10)atan2(SQRT((float10)1 - fVar8 * fVar8));
       fVar10 = (float10)fsin(((float10)1 - (float10)param_3) * fVar9);

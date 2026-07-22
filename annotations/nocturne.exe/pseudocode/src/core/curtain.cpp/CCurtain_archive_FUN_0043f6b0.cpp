@@ -12,7 +12,7 @@ void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(int param_1)
   uint local_8;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"?curtainSize" + 1);
+  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"curtainSize");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x164,"curtainTexture");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x174,"opacity");
   local_8 = 0;

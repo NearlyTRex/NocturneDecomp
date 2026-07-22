@@ -17,10 +17,10 @@
 ;   undefined1* switchdataD_004145cc = 0041462d
 ;   string s_limb?.wav_00578ceb
 ;   string s_Shot_thru_the_heart_00578cf5
-;   undefined4 DAT_00578d0f
-;   undefined4 DAT_00578d17
-;   undefined4 DAT_00578d1f
-;   undefined4 DAT_00578d27
+;   double DOUBLE_00578d0f = 7
+;   double DOUBLE_00578d17 = 0.5
+;   double DOUBLE_00578d1f = 2.5
+;   double DOUBLE_00578d27 = 20
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_0077ad0c
@@ -231,7 +231,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 004147b1
         ;   Label: LAB_004147b1
     FLD ST0                             ; 004147b4
-    FMUL double ptr [0x00578d0f]        ; 004147b6 | DAT_00578d0f
+    FMUL double ptr [0x00578d0f]        ; 004147b6 | DOUBLE_00578d0f
     FSTP ST1                            ; 004147bc
     FSTP float ptr [ESI + 0x8]          ; 004147be
     MOV EDX,dword ptr [EBX + 0xbd88]    ; 004147c1
@@ -242,7 +242,7 @@ section .text
         ;   XREF to: 00414881 (CONDITIONAL_JUMP)  ; LAB_00414881
     FLD float ptr [ESI + 0x4]           ; 004147d1
     FLD ST0                             ; 004147d4
-    FMUL double ptr [0x00578d1f]        ; 004147d6 | DAT_00578d1f
+    FMUL double ptr [0x00578d1f]        ; 004147d6 | DOUBLE_00578d1f
     FSTP ST1                            ; 004147dc
         ;   Label: LAB_004147dc
     FSTP float ptr [ESI + 0x4]          ; 004147de
@@ -318,7 +318,7 @@ section .text
         ;   XREF to: 00414889 (CONDITIONAL_JUMP)  ; LAB_00414889
     FLD float ptr [ESI + 0x4]           ; 0041489c
     FLD ST0                             ; 0041489f
-    FMUL double ptr [0x00578d17]        ; 004148a1 | DAT_00578d17
+    FMUL double ptr [0x00578d17]        ; 004148a1 | DOUBLE_00578d17
     JMP 0x004147dc                      ; 004148a7
         ;   XREF to: 004147dc (UNCONDITIONAL_JUMP)  ; LAB_004147dc
     FLD float ptr [ESI + 0x4]           ; 004148ac
@@ -326,7 +326,7 @@ section .text
     PUSH 0x578cf5                       ; 004148af | = "Shot thru the heart\n"
     MOV EDX,dword ptr [0x005ad350]      ; 004148b4 | PTR_DAT_005ad350
     FLD ST0                             ; 004148ba
-    FMUL double ptr [0x00578d27]        ; 004148bc | DAT_00578d27
+    FMUL double ptr [0x00578d27]        ; 004148bc | DOUBLE_00578d27
     PUSH EDX                            ; 004148c2 | DAT_0077ad0c
     FSTP ST1                            ; 004148c3
     FSTP float ptr [ESI + 0x4]          ; 004148c5

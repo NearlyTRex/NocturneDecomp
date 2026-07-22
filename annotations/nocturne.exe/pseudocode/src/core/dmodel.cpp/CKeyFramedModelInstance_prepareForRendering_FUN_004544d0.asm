@@ -6,10 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[49]:
-;   FUN_0040ff80 at 0040ffc9
-;   FUN_004110f0 at 004111d0
-;   FUN_00411e30 at 00411e85
+; XREF[52]:
+;   FUN_0040f2b0 at 0040f324
+;   FUN_0040f740 at 0040f7b0
 ;   FUN_00414e70 at 00414ee6
 ;   FUN_004161a0 at 00416275
 ;   FUN_0041ea00 at 0041eaae
@@ -17,7 +16,8 @@
 ;   FUN_00421540 at 00421676
 ;   FUN_0043cbc0 at 0043cc3c
 ;   FUN_0043d0a0 at 0043d106
-;   ... and 39 more
+;   FUN_00455d50 at 00455dea
+;   ... and 42 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040

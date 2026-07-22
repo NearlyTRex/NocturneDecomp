@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 143,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 11,
+    "pseudocode_lines": 17,
+    "suspect_count": 12,
     "suspect_types": [
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 62
+    "total_lines": 61
   },
   "cross_references": [],
   "function": {
@@ -154,15 +154,15 @@
   "globals": [
     {
       "addr": "0057f35f",
-      "name": "DAT_0057f35f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057f35f",
+      "type": "double",
+      "value": "5.22209901682860E-315"
     },
     {
       "addr": "0057f367",
-      "name": "DAT_0057f367",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057f367",
+      "type": "double",
+      "value": "0.166666666666667"
     }
   ],
   "param_estimates": {
@@ -233,35 +233,35 @@
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 24,
+          "line": 22,
           "message": "Uninitialized variable: fStack_24",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 17,
-          "line": 25,
+          "line": 23,
           "message": "Uninitialized variable: fStack_2c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 25,
+          "line": 23,
           "message": "Uninitialized variable: fStack_20",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 26,
+          "line": 24,
           "message": "Uninitialized variable: fStack_28",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 37,
-          "line": 26,
+          "line": 24,
           "message": "Uninitialized variable: fStack_1c",
           "severity": "error"
         }
@@ -272,16 +272,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float * core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(int param_1,float *param_2)",
@@ -289,7 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "float * core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(int param_1,float *param_2)",
@@ -297,7 +289,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_30);",
@@ -305,7 +297,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_30);",
@@ -313,10 +305,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fVar1 = 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "*param_2 = (fStack_30 + fStack_24) * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (fStack_30 + fStack_24) * 5.2220990168285998e-315._0_4_;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = (fStack_2c + fStack_20) * fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -324,7 +348,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (fStack_30 + fStack_24) * _DAT_0057f35f;",
+      "text": "param_2[2] = fVar1 * (fStack_28 + fStack_1c);",
       "type": "unnamed_param"
     },
     {
@@ -332,7 +356,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = (fStack_2c + fStack_20) * fVar1;",
+      "text": "param_2[1] = fStack_20 - (fStack_20 - fStack_2c) * (float)0.16666666666666699;",
       "type": "unnamed_param"
     },
     {
@@ -340,36 +364,20 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = fVar1 * (fStack_28 + fStack_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = fStack_20 - (fStack_20 - fStack_2c) * (float)_DAT_0057f367;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
       "text": "return param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Uninitialized variable: fStack_24",
-      "line": 24,
+      "line": 22,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*param_2 = (fStack_30 + fStack_24) * _DAT_0057f35f;",
+      "text": "*param_2 = (fStack_30 + fStack_24) * 5.2220990168285998e-315._0_4_;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_2c",
-      "line": 25,
+      "line": 23,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[1] = (fStack_2c + fStack_20) * fVar1;",
@@ -377,7 +385,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_20",
-      "line": 25,
+      "line": 23,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[1] = (fStack_2c + fStack_20) * fVar1;",
@@ -385,7 +393,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_28",
-      "line": 26,
+      "line": 24,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[2] = fVar1 * (fStack_28 + fStack_1c);",
@@ -393,7 +401,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_1c",
-      "line": 26,
+      "line": 24,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_2[2] = fVar1 * (fStack_28 + fStack_1c);",

@@ -16,13 +16,13 @@
 ;   FUN_004b6d80 at 004b71a4
 ;   FUN_004da790 at 004daec7
 ;   FUN_0053e860 at 0053ec6e
-;   FUN_0055ef50 at 0055f82c
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412e8a
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041287b
 ;   ... and 34 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578061
-;   undefined4 DAT_00578065
+;   float FLOAT_00578061 = 0.00003051851
+;   float FLOAT_00578065 = 5.960465E-8
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77828
 ;
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_generateRandomValue_FUN_0040dd30()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040deb6
     FILD dword ptr [ESP + 0x4]          ; 0040deba
-    FMUL float ptr [0x00578065]         ; 0040debe | DAT_00578065
+    FMUL float ptr [0x00578065]         ; 0040debe | FLOAT_00578065
     FSTP float ptr [ESP]                ; 0040dec4
         ;   Label: LAB_0040dec4
     FLD float ptr [ESP]                 ; 0040dec7
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_0040dedd
     MOV dword ptr [ESP + 0x4],EAX       ; 0040dee2
     FILD dword ptr [ESP + 0x4]          ; 0040dee6
-    FMUL float ptr [0x00578061]         ; 0040deea | DAT_00578061
+    FMUL float ptr [0x00578061]         ; 0040deea | FLOAT_00578061
     JMP 0x0040dec4                      ; 0040def0
         ;   XREF to: 0040dec4 (UNCONDITIONAL_JUMP)  ; LAB_0040dec4
 

@@ -107,14 +107,14 @@ LAB_00549887:
     *(float *)(param_1 + 0x774) = *(float *)(param_1 + 0x774) - param_2;
     local_18 = (uint *)(param_1 + 0x30);
     if (0.0 < *(float *)(param_1 + 0x774)) {
-      FUN_0055d610();
+      core_xform_cpp_FUN_0055d610();
       local_90 = local_40;
       auStack_8c[(uint)bVar5 * -2] = auStack_8c[(uint)bVar5 * -2 + 0x14];
       auStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            auStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x15];
       (auStack_8c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
            (auStack_8c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x15)[(uint)bVar5 * -2 + 1];
-      FUN_0055d610();
+      core_xform_cpp_FUN_0055d610();
       local_50[0] = local_70;
       auStack_8c[(uint)bVar5 * -2 + 0x10] = auStack_8c[(uint)bVar5 * -2 + 8];
       auStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x11] =

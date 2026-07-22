@@ -37,9 +37,9 @@
 ;   FUN_0053d100 at 0053d24d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005814c8
-;   undefined4 DAT_005814cc
-;   undefined4 DAT_005814d4
+;   float FLOAT_005814c8 = 0.05000000
+;   double DOUBLE_005814cc = 0.0500000000000000
+;   double DOUBLE_005814d4 = 0.5
 ;   undefined4 DAT_0059d210
 ;
 ; Called Functions:
@@ -65,9 +65,9 @@ section .text
     MOV EBX,dword ptr [EBP + 0x34]      ; 0048b45b
     MOV dword ptr [ESP + 0x8],EAX       ; 0048b45e
     FLD float ptr [ESP + 0x8]           ; 0048b462
-    FMUL float ptr [0x005814c8]         ; 0048b466 | DAT_005814c8
+    FMUL float ptr [0x005814c8]         ; 0048b466 | FLOAT_005814c8
     FST float ptr [ESP]                 ; 0048b46c
-    FCOMP double ptr [0x005814cc]       ; 0048b46f | DAT_005814cc
+    FCOMP double ptr [0x005814cc]       ; 0048b46f | DOUBLE_005814cc
     FNSTSW AX                           ; 0048b475
     SAHF                                ; 0048b477
     JC 0x0048b654                       ; 0048b478
@@ -111,7 +111,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 0048b4e6
     FLD float ptr [ESP + 0x4]           ; 0048b4ea
     FLD ST0                             ; 0048b4ee
-    FMUL double ptr [0x005814d4]        ; 0048b4f0 | DAT_005814d4
+    FMUL double ptr [0x005814d4]        ; 0048b4f0 | DOUBLE_005814d4
     FLD float ptr [ESP + 0x68]          ; 0048b4f6
     FMUL float ptr [ESP + 0x4]          ; 0048b4fa
     FXCH                                ; 0048b4fe

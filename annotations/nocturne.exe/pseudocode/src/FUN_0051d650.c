@@ -42,7 +42,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
   fStack_28 = param_2[1] - pfVar1[1];
   fStack_24 = param_2[2] - pfVar1[2];
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&uStack_20,&stack0xffffffd4);
-  FUN_0055d4a0(uStack_20);
+  core_xform_cpp_FUN_0055d4a0(uStack_20);
   puVar3 = &stack0xffffff54;
   uStack_ac = uStack_3c;
   *(uint *)((int)&stack0xffffff58 + (uint)bVar2 * 0xfffffffe * 4) =
@@ -54,7 +54,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
        *(uint *)
         ((int)(auStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + -0x20) +
         ((uint)bVar2 * -2 + 1) * 4);
-  FUN_0055d4e0(uStack_1c,puVar3);
+  core_xform_cpp_FUN_0055d4e0(uStack_1c,puVar3);
   puVar3 = &stack0xffffff74;
   uStack_8c = uStack_6c;
   *(uint *)((int)&stack0xffffff78 + (uint)bVar2 * 0xfffffffe * 4) =

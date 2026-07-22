@@ -11,13 +11,13 @@
 int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
   int iVar8;
   int *piVar9;
   float *pfVar10;
@@ -37,7 +37,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   int local_18;
   int local_14;
   
-  local_30 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,&DAT_0057acab);
+  local_30 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rt");
   if (local_30 == 0) {
     _DAT_01cc4800 = "..\\core\\cloth.cpp";
     _DAT_01cc4804 = 0x9b;
@@ -45,7 +45,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   }
   iVar12 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(iVar12,&DAT_0057aced,param_1 + 0x3ab20);
+  _fscanf(iVar12,"%d\n",param_1 + 0x3ab20);
   if (3 < *(int *)(param_1 + 0x3ab20)) {
     _DAT_01cc4800 = "..\\core\\cloth.cpp";
     _DAT_01cc4804 = 0xa2;
@@ -53,7 +53,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   }
   iVar12 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(iVar12,&DAT_0057ad4b,auStack_238);
+  _fscanf(iVar12,"%s\n",auStack_238);
   core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(param_1,auStack_238);
   core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(param_1);
   _fgets(local_138,0xff,iVar12);
@@ -61,21 +61,21 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   if (*(int *)(param_1 + 0x3ab20) < 3) {
     _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",param_1 + 0x37b18,param_1 + 0x37b1c,
                param_1 + 0x37b20,param_1 + 0x37b24,param_1 + 0x37b28,local_38);
-    uVar6 = _DAT_0059b390;
-    uVar5 = _DAT_0059b38c;
-    uVar4 = _DAT_0059b388;
-    uVar3 = _DAT_0059b384;
-    uVar2 = _DAT_0059b380;
-    uVar1 = _DAT_0059b37c;
-    *(uint *)(param_1 + 0x37b18) = _DAT_0059b378;
-    uVar7 = _DAT_0059b394;
-    *(uint *)(param_1 + 0x37b1c) = uVar1;
-    *(uint *)(param_1 + 0x37b20) = uVar2;
-    *(uint *)(param_1 + 0x37b24) = uVar3;
-    *(uint *)(param_1 + 0x37b28) = uVar4;
-    *(uint *)(param_1 + 0x37b2c) = uVar5;
-    *(uint *)(param_1 + 0x37b30) = uVar6;
-    *(uint *)(param_1 + 0x37b34) = uVar7;
+    fVar6 = 0.05f;
+    fVar5 = 0.5f;
+    fVar4 = 0.5f;
+    fVar3 = 0.005f;
+    fVar2 = 0.9f;
+    fVar1 = 32.0f;
+    *(float *)(param_1 + 0x37b18) = 0.125f;
+    fVar7 = 0.15f;
+    *(float *)(param_1 + 0x37b1c) = fVar1;
+    *(float *)(param_1 + 0x37b20) = fVar2;
+    *(float *)(param_1 + 0x37b24) = fVar3;
+    *(float *)(param_1 + 0x37b28) = fVar4;
+    *(float *)(param_1 + 0x37b2c) = fVar5;
+    *(float *)(param_1 + 0x37b30) = fVar6;
+    *(float *)(param_1 + 0x37b34) = fVar7;
   }
   else {
     _fscanf(local_30,"%f,%f,%f,%f,%f,%f,%f,%f\n",param_1 + 0x37b18,param_1 + 0x37b1c,
@@ -84,17 +84,17 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   }
   iVar12 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(iVar12,&DAT_0057ad7b,param_1 + 0x37b48);
+  _fscanf(iVar12,"%f\n",param_1 + 0x37b48);
   if (*(int *)(param_1 + 0x3ab20) < 2) {
     *(uint *)(param_1 + 0x37b44) = 0;
   }
   else {
     _fgets(local_138,0xff,iVar12);
-    _fscanf(iVar12,&DAT_0057ad7f,param_1 + 0x37b44);
+    _fscanf(iVar12,"%d\n",param_1 + 0x37b44);
   }
   iVar12 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(iVar12,&DAT_0057ad83,param_1 + 0x39ce8);
+  _fscanf(iVar12,"%d\n",param_1 + 0x39ce8);
   core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(param_1);
   iVar11 = 0;
   _fgets(local_138,0xff,iVar12);
@@ -102,14 +102,14 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
     iVar12 = param_1 + 0x39cec;
     do {
       iVar11 = iVar11 + 1;
-      _fscanf(local_30,&DAT_0057ad87,iVar12);
+      _fscanf(local_30,"%d\n",iVar12);
       iVar12 = iVar12 + 4;
     } while (iVar11 < *(int *)(param_1 + 0x39ce8));
   }
   core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(param_1);
   iVar12 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(iVar12,&DAT_0057ad8b,param_1 + 0x37b4c);
+  _fscanf(iVar12,"%d\n",param_1 + 0x37b4c);
   iVar12 = 0;
   if (0 < *(int *)(param_1 + 0x37b4c)) {
     local_34 = param_1 + 0x37b50;
@@ -125,8 +125,8 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
     do {
       iVar8 = iVar12 * 0xac;
       iVar12 = iVar12 + 1;
-      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",iVar8 + local_34,iVar11,
-                 local_14,local_18,local_20,local_1c,local_24,local_2c,iVar13,local_28);
+      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",iVar8 + local_34,iVar11,local_14,local_18,
+                 local_20,local_1c,local_24,local_2c,iVar13,local_28);
       iVar11 = iVar11 + 0xac;
       local_14 = local_14 + 0xac;
       local_18 = local_18 + 0xac;

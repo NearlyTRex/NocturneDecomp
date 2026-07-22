@@ -11,10 +11,10 @@
 ;   FUN_004c85f0 at 004c8bba
 ;   FUN_004c90e0 at 004c9160
 ;   FUN_004d23d0 at 004d25d2
-;   FUN_0050a260 at 0050a62b
-;   FUN_0055a510 at 0055a570
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404dc
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b9
+;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a74
+;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a701a
 ;   ... and 15 more
 ;
 ; Referenced Globals:

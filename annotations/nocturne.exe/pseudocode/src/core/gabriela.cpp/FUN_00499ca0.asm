@@ -31,11 +31,11 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\gabriela.cpp_00582291+1
+;   TerminatedCString s_core_gabriela_cpp_00582292
 ;   string s_Don't_know_how_to_carry_light_%s_005822a7
-;   undefined4 DAT_005822ca
-;   undefined4 DAT_005822d2
-;   undefined4 DAT_005822da
+;   float FLOAT_005822ca = 0.5
+;   double DOUBLE_005822d2 = 0.700000000000000
+;   double DOUBLE_005822da = 0.300000000000000
 ;   undefined4 DAT_00764ad4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -187,7 +187,7 @@ section .text
     FLD float ptr [ESP + 0xf0]          ; 00499e6f
     FADD float ptr [ESP + 0xfc]         ; 00499e76
     FST float ptr [ESP + 0x168]         ; 00499e7d
-    FLD float ptr [0x005822ca]          ; 00499e84 | DAT_005822ca
+    FLD float ptr [0x005822ca]          ; 00499e84 | FLOAT_005822ca
     FXCH                                ; 00499e8a
     FMUL ST1                            ; 00499e8c
     FLD float ptr [ESP + 0xf8]          ; 00499e8e
@@ -282,9 +282,9 @@ section .text
     MOV dword ptr [ESP + 0x140],EAX     ; 00499fea
     FLD float ptr [ESP + 0xf8]          ; 00499ff1
         ;   Label: LAB_00499ff1
-    FMUL double ptr [0x005822d2]        ; 00499ff8 | DAT_005822d2
+    FMUL double ptr [0x005822d2]        ; 00499ff8 | DOUBLE_005822d2
     FLD float ptr [ESP + 0x104]         ; 00499ffe
-    FMUL double ptr [0x005822da]        ; 0049a005 | DAT_005822da
+    FMUL double ptr [0x005822da]        ; 0049a005 | DOUBLE_005822da
     FADDP                               ; 0049a00b
     FSTP float ptr [ESP + 0x17c]        ; 0049a00d
     JMP 0x00499d1a                      ; 0049a014
@@ -320,7 +320,7 @@ section .text
         ;   XREF to: 00499d1a (UNCONDITIONAL_JUMP)  ; LAB_00499d1a
     PUSH ESI                            ; 0049a073
         ;   Label: LAB_0049a073
-    MOV EAX,0x582292                    ; 0049a074 | s_..\core\gabriela.cpp_00582291+1
+    MOV EAX,0x582292                    ; 0049a074 | = "..\\core\\gabriela.cpp"
     MOV EDX,0x945                       ; 0049a079
     PUSH 0x5822a7                       ; 0049a07e | = "Don't know how to carry light %s"
     MOV [0x01cc4800],EAX                ; 0049a083 | DAT_01cc4800

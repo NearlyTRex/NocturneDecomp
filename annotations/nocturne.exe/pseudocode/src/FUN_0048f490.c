@@ -73,7 +73,7 @@ int FUN_0048f490(int *param_1)
         iVar6 = iVar3 + 1;
         iStack_18 = iVar3;
         core_spline_cpp_computeSplineBasis_FUN_00533ce0
-                  (iVar7,((float)iVar3 + (float)_DAT_00581727) * (float)_DAT_00581717);
+                  (iVar7,((float)iVar3 + (float)0.5) * (float)0.015625);
         iVar7 = iVar7 + 0x20;
         iVar3 = iVar6;
       } while (iVar6 < 0x40);
@@ -126,7 +126,7 @@ int FUN_0048f490(int *param_1)
         pfVar2 = pfStack_20;
         apiStack_a4[0] = (int *)0x48f676;
         fVar12 = (float10)round
-                                    ((float10)*pfStack_20 * (float10)_DAT_0058171f);
+                                    ((float10)*pfStack_20 * (float10)64.0f);
         pfStack_20 = (float *)(int)ROUND(fVar12);
         if ((int)pfStack_20 < 0) {
           pfStack_20 = (float *)0x0;

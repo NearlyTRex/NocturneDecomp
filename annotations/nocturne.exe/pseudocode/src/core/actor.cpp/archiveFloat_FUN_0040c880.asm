@@ -6,8 +6,10 @@
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;
-; XREF[64]:
-;   FUN_00412d80 at 00412d9b
+; XREF[67]:
+;   FUN_0040f390 at 0040f3f7
+;   FUN_0040f7d0 at 0040f812
+;   FUN_0040fb60 at 0040fb7b
 ;   FUN_00415160 at 0041517b
 ;   FUN_00419ce0 at 00419d03
 ;   FUN_0043c2e0 at 0043c2fa
@@ -15,13 +17,11 @@
 ;   FUN_004630e0 at 004630fa
 ;   FUN_0048e830 at 0048e872
 ;   FUN_004948f0 at 0049491e
-;   FUN_004b49a0 at 004b4a28
-;   FUN_004bc9c0 at 004bc9db
-;   ... and 54 more
+;   ... and 57 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00577c79
-;   undefined4 DAT_00577c7c
+;   TerminatedCString s_f_00577c79
+;   TerminatedCString s_s_g_00577c7c
 ;   string s_Floating_point_value_005acc60
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
@@ -45,7 +45,7 @@ section .text
     JNZ 0x0040c8d4                      ; 0040c88d
         ;   XREF to: 0040c8d4 (CONDITIONAL_JUMP)  ; LAB_0040c8d4
     PUSH EAX                            ; 0040c88f
-    PUSH 0x577c79                       ; 0040c890 | DAT_00577c79
+    PUSH 0x577c79                       ; 0040c890 | = "%f"
     MOV EBX,dword ptr [0x00763e84]      ; 0040c895 | DAT_00763e84
     PUSH EBX                            ; 0040c89b
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c89c
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [EAX]                 ; 0040c8d7
     FSTP double ptr [ESP]               ; 0040c8d9
     PUSH 0x5acc90                       ; 0040c8dc | DAT_005acc90
-    PUSH 0x577c7c                       ; 0040c8e1 | DAT_00577c7c
+    PUSH 0x577c7c                       ; 0040c8e1 | = "%s%g"
     MOV ECX,dword ptr [0x00763e84]      ; 0040c8e6 | DAT_00763e84
     PUSH ECX                            ; 0040c8ec
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c8ed

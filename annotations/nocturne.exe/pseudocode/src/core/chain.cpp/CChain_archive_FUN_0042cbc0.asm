@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_vertexCount_0057a5a5+1
+;   TerminatedCString s_vertexCount_0057a5a6
 ;   string s_chainLength_0057a5b2
 ;   string s_target_0057a5be
 ;   string s_targetBone_0057a5c5
@@ -37,7 +37,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0042cbc6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0042cbcb
-    PUSH 0x57a5a6                       ; 0042cbce | s_vertexCount_0057a5a5+1
+    PUSH 0x57a5a6                       ; 0042cbce | = "vertexCount"
     LEA EAX,[EBX + 0x150]               ; 0042cbd3
     PUSH EAX                            ; 0042cbd9
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0042cbda

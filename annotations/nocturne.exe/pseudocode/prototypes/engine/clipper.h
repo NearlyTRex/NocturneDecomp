@@ -23,9 +23,17 @@ void interpolateVertexTopClip(int *param_1,int *param_2,int *param_3);
 // Address: 00431930
 void __cdecl interpolateVertexNearClip(int *param_1,int *param_2,int *param_3);
 
+// Original: engine_clipper.c_FUN_00431f50
+// Address: 00431f50
+void FUN_00431f50(void);
+
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00432150
 // Address: 00432150
 void normalizeClippedVertices(void);
+
+// Original: engine_clipper.c_FUN_00432cd0
+// Address: 00432cd0
+int * FUN_00432cd0(int *param_1,int *param_2);
 
 // Original: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
 // Address: 004337a0
@@ -42,6 +50,10 @@ void __cdecl interpolateVertexBottomClipAdvanced(int *param_1,int *param_2,int *
 // Original: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
 // Address: 00433b30
 void __cdecl interpolateVertexTopClipAdvanced(int *param_1,int *param_2,int *param_3);
+
+// Original: engine_clipper.c_FUN_00433ef0
+// Address: 00433ef0
+void FUN_00433ef0(void);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_004349a0
 // Address: 004349a0

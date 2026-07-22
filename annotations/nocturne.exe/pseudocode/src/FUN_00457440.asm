@@ -8,7 +8,7 @@
 ;   FUN_004571f0 at 004573c0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057d496
+;   double DOUBLE_0057d496 = 0.00390625
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120
@@ -21,7 +21,7 @@ section .text
         ;   Label: FUN_00457440
     CALL core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120 ; 00457441
         ;   XREF to: 00457120 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120()
-    FLD double ptr [0x0057d496]         ; 00457446 | DAT_0057d496
+    FLD double ptr [0x0057d496]         ; 00457446 | DOUBLE_0057d496
     FILD dword ptr [EBX + 0x354]        ; 0045744c
     FMUL ST1                            ; 00457452
     FILD dword ptr [EBX + 0x358]        ; 00457454

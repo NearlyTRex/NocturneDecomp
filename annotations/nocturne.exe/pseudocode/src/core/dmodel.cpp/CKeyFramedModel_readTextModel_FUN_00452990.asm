@@ -23,20 +23,20 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 at 0045270f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057ca34
+;   TerminatedCString s_d_0057ca34
 ;   string s_..\\core\\dmodel.cpp_0057ca38
 ;   string s_KFM_file_is_invalid_version_%d_0057ca4b
 ;   string s_..\\core\\dmodel.cpp_0057ca6a
 ;   string s_KFM_file_is_version_%d,_this_.ex_0057ca7d
 ;   string s_%d,%d,%d,%d,%d_0057cac0
-;   undefined4 DAT_0057cad0
-;   undefined4 DAT_0057cad4
-;   undefined4 DAT_0057cad8
-;   undefined4 DAT_0057cadc
+;   TerminatedCString s_d_0057cad0
+;   TerminatedCString s_d_0057cad4
+;   TerminatedCString s_d_0057cad8
+;   TerminatedCString s_d_0057cadc
 ;   string s_%d,%d,%d_0057cae0
 ;   string s_%d,%d_0057caea
 ;   string s_,_%d,%d,%d_0057caf0
-;   undefined4 DAT_0057cafb
+;   TerminatedCString s_anon_0057cafb
 ;   string s_..\\core\\dmodel.cpp_0057cafd
 ;   ... and 8 more
 ;
@@ -81,7 +81,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004529c2
         ;   Label: LAB_004529c2
     PUSH EAX                            ; 004529c6
-    PUSH 0x57ca34                       ; 004529c7 | DAT_0057ca34
+    PUSH 0x57ca34                       ; 004529c7 | = "%d\n"
     PUSH EBP                            ; 004529cc
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004529cd
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -173,7 +173,7 @@ section .text
     MOV EAX,ESP                         ; 00452a98
         ;   Label: LAB_00452a98
     PUSH EAX                            ; 00452a9a
-    PUSH 0x57cad0                       ; 00452a9b | DAT_0057cad0
+    PUSH 0x57cad0                       ; 00452a9b | = "%d\n"
     PUSH EBP                            ; 00452aa0
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452aa1
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -202,7 +202,7 @@ section .text
         ;   Label: LAB_00452ad2
     ADD EAX,0x35c                       ; 00452ad6
     PUSH EAX                            ; 00452adb
-    PUSH 0x57cad4                       ; 00452adc | DAT_0057cad4
+    PUSH 0x57cad4                       ; 00452adc | = "%d\n"
     PUSH EBP                            ; 00452ae1
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452ae2
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -232,7 +232,7 @@ section .text
         ;   Label: LAB_00452b13
     ADD EAX,0x360                       ; 00452b17
     PUSH EAX                            ; 00452b1c
-    PUSH 0x57cad8                       ; 00452b1d | DAT_0057cad8
+    PUSH 0x57cad8                       ; 00452b1d | = "%d\n"
     PUSH EBP                            ; 00452b22
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452b23
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -264,7 +264,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 00452b58
         ;   Label: LAB_00452b58
     PUSH EAX                            ; 00452b5c
-    PUSH 0x57cadc                       ; 00452b5d | DAT_0057cadc
+    PUSH 0x57cadc                       ; 00452b5d | = "%d\n"
     PUSH EBP                            ; 00452b62
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452b63
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -416,7 +416,7 @@ section .text
     CMP EBX,ECX                         ; 00452cdd
     JL 0x00452cb5                       ; 00452cdf
         ;   XREF to: 00452cb5 (CONDITIONAL_JUMP)  ; LAB_00452cb5
-    PUSH 0x57cafb                       ; 00452ce1 | DAT_0057cafb
+    PUSH 0x57cafb                       ; 00452ce1 | = "\n"
         ;   Label: LAB_00452ce1
     PUSH EBP                            ; 00452ce6
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452ce7
@@ -594,7 +594,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 00452e8e
         ;   Label: LAB_00452e8e
     PUSH EAX                            ; 00452e92
-    PUSH 0x57cb31                       ; 00452e93 | DAT_0057cb31
+    PUSH 0x57cb31                       ; 00452e93 | = "%d\n"
     PUSH EBP                            ; 00452e98
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00452e99
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

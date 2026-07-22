@@ -32,8 +32,8 @@
 ;   FUN_00511aa0 at 00511afa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e3ce
-;   undefined4 DAT_0057e3d6
+;   double DOUBLE_0057e3ce = 2
+;   double DOUBLE_0057e3d6 = 0.5
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -81,7 +81,7 @@ section .text
     FLD float ptr [ESP + 0x48]          ; 0046bde8
     FDIV float ptr [EAX + 0x3c]         ; 0046bdec
     FXCH ST2                            ; 0046bdef
-    FLD double ptr [0x0057e3ce]         ; 0046bdf1 | DAT_0057e3ce
+    FLD double ptr [0x0057e3ce]         ; 0046bdf1 | DOUBLE_0057e3ce
     FXCH                                ; 0046bdf7
     FMUL ST1                            ; 0046bdf9
     FLD1                                ; 0046bdfb
@@ -156,7 +156,7 @@ section .text
     FXCH                                ; 0046bee8
     FMUL ST1                            ; 0046beea
     FXCH ST3                            ; 0046beec
-    FLD double ptr [0x0057e3d6]         ; 0046beee | DAT_0057e3d6
+    FLD double ptr [0x0057e3d6]         ; 0046beee | DOUBLE_0057e3d6
     FXCH                                ; 0046bef4
     FMUL ST1                            ; 0046bef6
     MOV dword ptr [ESP + 0x84],EBX      ; 0046bef8

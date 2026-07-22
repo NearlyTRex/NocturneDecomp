@@ -32,7 +32,7 @@ int engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00407740(int param_1)
     _DAT_01c039a0 = 0xc1;
     _DAT_01c039a4 = 1;
     engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
-    FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   }
   return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;
 }

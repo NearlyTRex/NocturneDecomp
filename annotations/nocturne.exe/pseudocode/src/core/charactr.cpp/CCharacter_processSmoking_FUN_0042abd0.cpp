@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(int param_1,float param_2)
 
 {
@@ -30,21 +28,20 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(int param_
   byte local_1c [12];
   
   if ((*(int *)(param_1 + 0x2618) != 0) &&
-     (*(float *)(0x01E57284 + 0x15a88c) < (float)_DAT_0057a48a)) {
+     (*(float *)(0x01E57284 + 0x15a88c) < (float)32)) {
     iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     if (*(int *)(iVar2 + 0x24) == 0) {
       if ((*(int *)(param_1 + 0x2c50) == 0) &&
          (fVar1 = *(float *)(param_1 + 0x2c48) - param_2, *(float *)(param_1 + 0x2c48) = fVar1,
          fVar1 < 0.0)) {
-        *(float *)(param_1 + 0x2c48) = *(float *)(param_1 + 0x2c48) + _DAT_0057a492;
+        *(float *)(param_1 + 0x2c48) = *(float *)(param_1 + 0x2c48) + 0.2f;
         local_48 = 0xbf000000;
         local_4c = 0;
         local_44 = 0x3f800000;
         core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_1c,&local_4c);
         uVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (param_1 + 0x150);
-        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
-                          (uVar3,"?Bip01 head" + 1,0);
+        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar3,"Bip01 head",0);
         if (iVar2 != -1) {
           local_64 = 0;
           local_5c = 0x3f000000;
@@ -59,7 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(int param_
       param_2 = *(float *)(param_1 + 0x2c4c) - param_2;
       *(float *)(param_1 + 0x2c4c) = param_2;
       if (param_2 < 0.0) {
-        *(float *)(param_1 + 0x2c4c) = *(float *)(param_1 + 0x2c4c) + _DAT_0057a496;
+        *(float *)(param_1 + 0x2c4c) = *(float *)(param_1 + 0x2c4c) + 1.5f;
         uVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (param_1 + 0x150);
         iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar3,"Bip01 head",0);

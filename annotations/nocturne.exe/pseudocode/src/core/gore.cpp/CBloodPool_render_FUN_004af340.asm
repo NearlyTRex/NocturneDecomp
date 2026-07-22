@@ -25,7 +25,7 @@
 ;   FUN_004afe80 at 004aff17
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585128
+;   double DOUBLE_00585128 = 8
 ;   undefined4 DAT_0059e4d4
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b9d4c
@@ -61,7 +61,7 @@ section .text
     SUB ESP,0x40                        ; 004af344
     MOV ESI,dword ptr [ESP + 0x54]      ; 004af347
     FLD float ptr [ESI + 0x18]          ; 004af34b
-    FMUL double ptr [0x00585128]        ; 004af34e | DAT_00585128
+    FMUL double ptr [0x00585128]        ; 004af34e | DOUBLE_00585128
     CALL crt_math.c_round_FUN_00563a30  ; 004af354
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x3c]        ; 004af359

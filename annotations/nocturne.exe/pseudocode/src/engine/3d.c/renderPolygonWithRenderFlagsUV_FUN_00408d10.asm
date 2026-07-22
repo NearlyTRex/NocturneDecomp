@@ -16,8 +16,8 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
+;   engine_clipper.c_FUN_00432cd0
 ;   engine_light.cpp_calculateLighting_FUN_004c6cc0
-;   FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     PUSH 0x6b029c                       ; 00408dd9
     MOV EAX,dword ptr [EDI + 0x4]       ; 00408dde
     PUSH EAX                            ; 00408de1
-    CALL FUN_00432cd0                   ; 00408de2
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 00408de2
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 00408de7
     POP EBP                             ; 00408dea
         ;   Label: LAB_00408dea

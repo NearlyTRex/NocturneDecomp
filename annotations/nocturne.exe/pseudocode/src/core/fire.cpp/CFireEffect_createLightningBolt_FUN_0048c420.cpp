@@ -25,6 +25,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420(uint par
       return;
     }
   }
-  FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
+  core_set_cpp_FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
   return;
 }

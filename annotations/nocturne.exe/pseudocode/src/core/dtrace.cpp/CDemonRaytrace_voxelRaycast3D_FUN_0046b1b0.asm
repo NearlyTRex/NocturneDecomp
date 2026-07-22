@@ -35,8 +35,8 @@
 ;   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0 at 0050faef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e3b2
-;   undefined4 DAT_0057e3b6
+;   float FLOAT_0057e3b2 = 0.125
+;   double DOUBLE_0057e3b6 = 6.42401069530502E-315
 ;   undefined4 DAT_005b6d08
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0046b1c2
     FLD float ptr [EAX]                 ; 0046b1c5
     FSUB float ptr [ECX + 0x10]         ; 0046b1c7
-    FLD float ptr [0x0057e3b2]          ; 0046b1ca | DAT_0057e3b2
+    FLD float ptr [0x0057e3b2]          ; 0046b1ca | FLOAT_0057e3b2
     FLD float ptr [ECX + 0x28]          ; 0046b1d0
     FMUL ST1                            ; 0046b1d3
     FLD1                                ; 0046b1d5
@@ -176,7 +176,7 @@ section .text
     FLD float ptr [ESP + 0x4]           ; 0046b2f9
     FLD ST0                             ; 0046b2fd
     FABS                                ; 0046b2ff
-    FLD float ptr [0x0057e3b6]          ; 0046b301 | DAT_0057e3b6
+    FLD float ptr [0x0057e3b6]          ; 0046b301 | DOUBLE_0057e3b6
     FDIV float ptr [ESP]                ; 0046b307
     FXCH                                ; 0046b30a
     FMUL ST1                            ; 0046b30c

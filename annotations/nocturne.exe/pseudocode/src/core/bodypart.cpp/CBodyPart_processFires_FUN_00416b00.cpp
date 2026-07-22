@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(int param_1,float param_2)
 
 {
@@ -41,11 +39,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(int param_1,f
         local_30 = 1.0;
         puVar4[1] = puVar2[1];
         puVar4[2] = puVar2[2];
-        if (*(float *)(param_1 + 0xcb0) < (float)_DAT_005790aa) {
-          local_30 = *(float *)(param_1 + 0xcb0) * (float)_DAT_005790a2;
+        if (*(float *)(param_1 + 0xcb0) < (float)5) {
+          local_30 = *(float *)(param_1 + 0xcb0) * (float)0.20000000000000001;
         }
-        local_18 = local_30 * (float)_DAT_00579092;
-        fVar1 = (float)_DAT_0057909a;
+        local_18 = local_30 * (float)1.5;
+        fVar1 = (float)3;
         *(float *)(iVar3 + 0x15c) = local_18;
         *(float *)(iVar3 + 0x160) = local_30 * fVar1;
         *(float *)(iVar3 + 0x164) = local_18;

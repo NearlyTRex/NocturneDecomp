@@ -7,8 +7,8 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[3]:
-;   FUN_0040a320 at 0040a33a
 ;   FUN_0048ab60 at 0048ae73
+;   core_actor.cpp_FUN_0040a320 at 0040a33a
 ;   core_fire.cpp_CFireEffect_createStake_FUN_0048b070 at 0048b173
 ;
 ; Called Functions:

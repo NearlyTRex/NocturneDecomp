@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   string s_CAmmo_00586d73
-;   undefined4 DAT_00586d79
-;   undefined4 DAT_00586d81
-;   undefined4 DAT_00586d89
+;   float FLOAT_00586d79 = 0.00003051851
+;   double DOUBLE_00586d81 = 3.14159265350000
+;   double DOUBLE_00586d89 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040d540
@@ -44,9 +44,9 @@ section .text
         ;   Label: LAB_004bef2b
     MOV dword ptr [ESP],EAX             ; 004bef30
     FILD dword ptr [ESP]                ; 004bef33
-    FMUL float ptr [0x00586d79]         ; 004bef36 | DAT_00586d79
-    FMUL double ptr [0x00586d81]        ; 004bef3c | DAT_00586d81
-    FMUL double ptr [0x00586d89]        ; 004bef42 | DAT_00586d89
+    FMUL float ptr [0x00586d79]         ; 004bef36 | FLOAT_00586d79
+    FMUL double ptr [0x00586d81]        ; 004bef3c | DOUBLE_00586d81
+    FMUL double ptr [0x00586d89]        ; 004bef42 | DOUBLE_00586d89
     ADD EBX,0x4                         ; 004bef48
     FSTP float ptr [EBX + 0x198]        ; 004bef4b
     CMP EBX,ESI                         ; 004bef51

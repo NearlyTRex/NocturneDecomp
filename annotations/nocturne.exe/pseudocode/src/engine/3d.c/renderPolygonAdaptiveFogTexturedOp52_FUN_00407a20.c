@@ -76,7 +76,7 @@ int engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20(int param_1)
         engine_light_cpp_calculateLighting_FUN_004c6cc0
                   (*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
                    *(uint *)(param_1 + 0x10));
-        _DAT_01c00c70 = FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+        _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
       }
     }
     else {
@@ -106,7 +106,7 @@ int engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20(int param_1)
       *(int *)(&DAT_005c5030 + (*piVar2 + DAT_006b0264) * 0x30) = piVar2[2];
       piVar2 = piVar2 + 3;
     }
-    FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
   }
   return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;
 }

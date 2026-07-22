@@ -19,8 +19,8 @@ void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(float *param_1,uint p
     }
   }
   else {
-    _fprintf(DAT_00763e84,"%s%g,%g,%g,%g",&DAT_005acc90,(double)*param_1,
-               (double)param_1[1],(double)param_1[2],(double)param_1[3]);
+    _fprintf(DAT_00763e84,"%s%g,%g,%g,%g",&DAT_005acc90,(double)*param_1,(double)param_1[1],
+               (double)param_1[2],(double)param_1[3]);
   }
   core_actor_cpp_archiveDescription_FUN_0040c3a0("Quaternion",param_2);
   return;

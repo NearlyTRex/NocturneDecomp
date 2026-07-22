@@ -81,7 +81,7 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(int param_1,float param_2)
     local_1c8 = 0x461c3f9a;
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,local_1cc);
   }
-  iVar2 = FUN_004259f0(param_1,param_2);
+  iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar2 == 0) {
     return;
   }
@@ -142,7 +142,7 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(int param_1,float param_2)
   iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar2);
   iVar4 = *(int *)(iVar4 + 0x24);
   local_24 = iVar4;
-  iVar5 = FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar5 == 0) {
     switch(iVar4) {
     case 1:
@@ -341,6 +341,6 @@ switchD_00520915_caseD_3:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

@@ -43,7 +43,7 @@ int engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00408a60(int param_1)
     _DAT_01c039a4 = 1;
     _DAT_01c039a0 = 0x1e7;
     if (((DAT_006b494c == 0) || (0x9c3 < DAT_006b4950)) || (4 < *(int *)(param_1 + 4))) {
-      FUN_00432cd0(*(uint *)(param_1 + 4),piVar7);
+      engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),piVar7);
     }
     else {
       iVar3 = DAT_006b4950 * 0x118;

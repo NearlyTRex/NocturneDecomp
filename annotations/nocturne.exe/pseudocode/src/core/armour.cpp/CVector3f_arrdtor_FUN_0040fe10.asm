@@ -4,18 +4,18 @@
 ; void __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(undefined4 param_1)
 ;
 ;
-; XREF[36]:
+; XREF[37]:
+;   FUN_0040fc30 at 0040fc69
 ;   FUN_004132c0 at 004132f9
 ;   FUN_00414c60 at 00414c99
 ;   FUN_00415250 at 00415289
 ;   FUN_00415a30 at 00415a79
 ;   FUN_00420f20 at 00420f59
-;   FUN_00423d90 at 00423dd9
 ;   FUN_0043c6f0 at 0043c729
 ;   FUN_00454f30 at 00454f69
 ;   FUN_0045b350 at 0045b389
 ;   FUN_00463310 at 00463349
-;   ... and 26 more
+;   ... and 27 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005993b0

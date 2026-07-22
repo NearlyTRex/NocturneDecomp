@@ -14,7 +14,7 @@
 ;   FUN_00514470 at 00514486
 ;   FUN_00523170 at 00523211
 ;   FUN_005423c0 at 00542403
-;   FUN_00559260 at 005594a3
+;   FUN_00565c50 at 00565c6b
 ;   ... and 79 more
 ;
 ; Called Functions:

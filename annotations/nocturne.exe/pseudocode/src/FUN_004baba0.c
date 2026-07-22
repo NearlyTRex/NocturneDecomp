@@ -89,7 +89,7 @@ void FUN_004baba0(int param_1,float param_2)
     fVar1 = SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68);
     *(uint *)(param_1 + 0x2410) = 0;
     fStack_18 = fVar1;
-    if ((float)_DAT_00586202 <= fVar1) {
+    if ((float)6 <= fVar1) {
       iStack_20 = 0;
       if (bVar2) {
         *(uint *)(param_1 + 0x2dbc) = 0;
@@ -99,7 +99,7 @@ void FUN_004baba0(int param_1,float param_2)
         iStack_20 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = FUN_0042af70(param_1,param_2), uVar6 != 0)) {
+        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
           if (uVar6 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }
@@ -117,7 +117,7 @@ void FUN_004baba0(int param_1,float param_2)
       if (iVar4 != 0) {
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (fStack_44 - *(float *)(param_1 + 0x34));
-        fVar3 = fStack_14 * (float)_DAT_0058620a * (float)_DAT_00586212;
+        fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
         if (fVar3 < fStack_38) {
@@ -126,7 +126,7 @@ void FUN_004baba0(int param_1,float param_2)
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if (((float)_DAT_0058621a <= fVar1) || (bVar2)) {
+        if (((float)10 <= fVar1) || (bVar2)) {
           *(uint *)(param_1 + 0xbc9c) = 1;
           *(uint *)(param_1 + 0xbc94) = 1;
         }
@@ -155,7 +155,7 @@ void FUN_004baba0(int param_1,float param_2)
         }
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = FUN_0042af70(param_1,param_2), uVar6 != 0)) {
+        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
           if (uVar6 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }
@@ -170,7 +170,7 @@ void FUN_004baba0(int param_1,float param_2)
                           (auStack_54,&local_6c);
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
-        fVar1 = fStack_14 * (float)_DAT_0058620a * (float)_DAT_00586212;
+        fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar1;
         if (fVar1 < fStack_34) {
@@ -179,8 +179,8 @@ void FUN_004baba0(int param_1,float param_2)
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if ((((float)_DAT_00586222 < *(float *)(param_1 + 0xbcb8)) &&
-            ((double)*(float *)(param_1 + 0xbcb8) < _DAT_0058622a)) &&
+        if ((((float)-0.25 < *(float *)(param_1 + 0xbcb8)) &&
+            ((double)*(float *)(param_1 + 0xbcb8) < 0.25)) &&
            (*(int *)(param_1 + 0xbca0) != 0)) {
           *(uint *)(param_1 + 0xbcb8) = 0;
         }
@@ -220,11 +220,11 @@ void FUN_004baba0(int param_1,float param_2)
       fStack_8c = -local_24;
     }
     fStack_98 = fStack_8c - *(float *)(param_1 + 0x1fa50);
-    if (param_2 * (float)_DAT_00586232 < fStack_98) {
-      fStack_98 = param_2 * (float)_DAT_00586232;
+    if (param_2 * (float)3.1415926535000001 < fStack_98) {
+      fStack_98 = param_2 * (float)3.1415926535000001;
     }
-    if (fStack_98 < param_2 * (float)_DAT_0058623a) {
-      fStack_98 = param_2 * (float)_DAT_0058623a;
+    if (fStack_98 < param_2 * (float)-3.1415926535000001) {
+      fStack_98 = param_2 * (float)-3.1415926535000001;
     }
     *(float *)(param_1 + 0x1fa50) = *(float *)(param_1 + 0x1fa50) + fStack_98;
   }

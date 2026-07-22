@@ -2,41 +2,41 @@
 // Address: 004b11b0
 // Address Range: [[004b11b0, 004b1214]]
 // Convention: __cdecl
-// Signature: undefined * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1)
+// Signature: char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1)
 
 #include "nocturne.h"
 
-byte * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(uint param_1)
+char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(uint param_1)
 
 {
   switch(param_1) {
   case 1:
-    return &DAT_005852b3;
+    return "no";
   case 2:
-    return &DAT_005852b6;
+    return "ct";
   case 3:
-    return &DAT_005852b9;
+    return "dt";
   case 4:
-    return &DAT_005852bc;
+    return "dt";
   case 5:
-    return &DAT_005852bf;
+    return "mt";
   case 6:
-    return &DAT_005852c2;
+    return "wt";
   case 7:
-    return &DAT_005852c5;
+    return "wd";
   case 8:
-    return &DAT_005852c8;
+    return "mb";
   case 9:
-    return &DAT_005852cb;
+    return "md";
   case 10:
-    return &DAT_005852ce;
+    return "cp";
   case 0xb:
-    return &DAT_005852d1;
+    return "bd";
   case 0xc:
-    return &DAT_005852d4;
+    return "gl";
   case 0xd:
-    return &DAT_005852d7;
+    return "gr";
   default:
-    return &DAT_005852da;
+    return "df";
   }
 }

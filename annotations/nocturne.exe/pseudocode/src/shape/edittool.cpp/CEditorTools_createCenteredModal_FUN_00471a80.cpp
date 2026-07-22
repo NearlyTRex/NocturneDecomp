@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(ui
   int iVar2;
   
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "?..\\shape\\edittool.cpp" + 1;
+    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
     _DAT_01cc4804 = 0x8b;
     FUN_004c8440("gEdFont must be set by the application.");
   }

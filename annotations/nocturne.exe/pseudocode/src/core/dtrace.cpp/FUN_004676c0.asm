@@ -21,8 +21,8 @@
 ;   string s_Release_build_doesn't_support_ol_0057e15c
 ;   string s_..\\core\\dtrace.cpp_0057e187
 ;   string s_CDemonRaytrace::loadBinary_-_err_0057e19a
-;   undefined4 DAT_0057e1ca
-;   undefined4 DAT_0057e1ce
+;   float FLOAT_0057e1ca = 8
+;   float FLOAT_0057e1ce = 0.125
 ;   undefined4 DAT_005b6d00
 ;   undefined4 DAT_01bc994c
 ;   undefined4 DAT_01cc4800
@@ -126,10 +126,10 @@ section .text
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0046778a
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     FLD float ptr [ESI]                 ; 0046778f
-    FDIV float ptr [0x0057e1ca]         ; 00467791 | DAT_0057e1ca
+    FDIV float ptr [0x0057e1ca]         ; 00467791 | FLOAT_0057e1ca
     ADD ESP,0x10                        ; 00467797
     FSTP float ptr [ESP]                ; 0046779a
-    FLD float ptr [0x0057e1ce]          ; 0046779d | DAT_0057e1ce
+    FLD float ptr [0x0057e1ce]          ; 0046779d | FLOAT_0057e1ce
     FLD float ptr [ESI + 0x4]           ; 004677a3
     FMUL ST1                            ; 004677a6
     FSTP float ptr [ESP + 0x4]          ; 004677a8

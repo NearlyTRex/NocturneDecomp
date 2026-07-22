@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00413040 at 004130c6
+;   core_batcreat.cpp_FUN_00413040 at 004130c6
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00412dc8 = 00412e1d
 ;   string s_limb?.wav_00578a54
-;   undefined4 DAT_00578a5f
+;   double DOUBLE_00578a5f = 7
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600
 ;   undefined4 DAT_01c777cc
@@ -268,7 +268,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 00413027
         ;   Label: LAB_00413027
     FLD ST0                             ; 0041302a
-    FMUL double ptr [0x00578a5f]        ; 0041302c | DAT_00578a5f
+    FMUL double ptr [0x00578a5f]        ; 0041302c | DOUBLE_00578a5f
     FSTP ST1                            ; 00413032
     FSTP float ptr [ESI + 0x8]          ; 00413034
     ADD ESP,0xc                         ; 00413037

@@ -13,8 +13,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d2a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00586732
-;   undefined4 DAT_00586735
+;   TerminatedCString s_d_00586732
+;   TerminatedCString s_d_00586735
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -32,7 +32,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x78]      ; 004bda25
     MOV EDX,dword ptr [EAX]             ; 004bda29
     PUSH EDX                            ; 004bda2b
-    PUSH 0x586732                       ; 004bda2c | DAT_00586732
+    PUSH 0x586732                       ; 004bda2c | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004bda31
     PUSH EAX                            ; 004bda35
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bda36
@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x10                        ; 004bda54
     MOV ESI,dword ptr [ESP + 0x78]      ; 004bda57
     PUSH ESI                            ; 004bda5b
-    PUSH 0x586735                       ; 004bda5c | DAT_00586735
+    PUSH 0x586735                       ; 004bda5c | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004bda61
     PUSH EAX                            ; 004bda65
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004bda66

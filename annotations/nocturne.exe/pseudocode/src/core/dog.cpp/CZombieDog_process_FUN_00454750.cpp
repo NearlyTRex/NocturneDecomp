@@ -49,7 +49,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -62,14 +62,14 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar6);
   }
   iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-  fVar3 = (float)_DAT_0057cfae;
+  fVar3 = (float)3.1415926535000001;
   iVar4 = *(int *)(iVar4 + 0x24);
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c);
   if (iVar4 == 2) {
-    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0057cfb6;
+    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)2;
   }
-  iVar5 = FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar5 == 0) {
     switch(iVar4) {
     case 0:
@@ -142,7 +142,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
         }
         else if ((0 < iVar4) && (*(float *)(param_1 + 0xbca0) <= 0.0)) {
           local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-          if ((float)_DAT_0057cfbe < local_14) {
+          if ((float)0.5 < local_14) {
             uVar6 = 3;
           }
           else {
@@ -217,7 +217,7 @@ switchD_00454db3_caseD_5:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                 (0x01E57284,*(uint *)(param_1 + 0xbca4));
     }
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057cfc6;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_68 = *(float *)(param_1 + 0x2420) * param_2;
     local_64 = *(float *)(param_1 + 0x2424) * param_2;
     local_60 = param_2 * *(float *)(param_1 + 0x2428);
@@ -237,6 +237,6 @@ switchD_00454db3_caseD_5:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

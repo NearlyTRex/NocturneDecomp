@@ -43,6 +43,14 @@ void setCursorPosition(int param_1,int param_2);
 // Address: 005591c0
 void __cdecl processWindowMessages(void);
 
+// Original: wincore_winrun.cpp_FUN_00559260
+// Address: 00559260
+undefined4 FUN_00559260(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+
+// Original: wincore_winrun.cpp_FUN_00559500
+// Address: 00559500
+void FUN_00559500(undefined4 param_1);
+
 // Original: wincore_winrun.cpp_getKeyName_FUN_00559560
 // Address: 00559560
 char * __cdecl getKeyName(uint param_1);
@@ -82,6 +90,10 @@ void __cdecl setRegistryStringValue(LPCSTR param_1,LPCSTR param_2,BYTE *param_3)
 // Original: wincore_winrun.cpp_initJoystick_FUN_00559e20
 // Address: 00559e20
 MMRESULT __cdecl initJoystick(void);
+
+// Original: wincore_winrun.cpp_FUN_00559e90
+// Address: 00559e90
+void FUN_00559e90(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00559eb0
 // Address: 00559eb0

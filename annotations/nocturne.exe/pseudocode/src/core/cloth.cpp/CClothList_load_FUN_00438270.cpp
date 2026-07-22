@@ -35,7 +35,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_00438270(int *param_1)
       }
       piVar5[0x65] = iVar3;
       if (iVar3 == 0) {
-        _DAT_01cc4800 = "@..\\core\\cloth.cpp" + 1;
+        _DAT_01cc4800 = "..\\core\\cloth.cpp";
         _DAT_01cc4804 = 0x5a9;
         FUN_004c8440("CClothList::load - out of memory for CCloth object.");
       }

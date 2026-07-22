@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   string s_disableBodyPartDamage_00579070
-;   undefined4 DAT_0057908a
+;   double DOUBLE_0057908a = 3
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -191,7 +191,7 @@ section .text
     FADDP                               ; 00416a5c
     FSQRT                               ; 00416a5e
     ADD ESP,0x4                         ; 00416a60
-    FCOMP double ptr [0x0057908a]       ; 00416a63 | DAT_0057908a
+    FCOMP double ptr [0x0057908a]       ; 00416a63 | DOUBLE_0057908a
     FNSTSW AX                           ; 00416a69
     SAHF                                ; 00416a6b
     JBE 0x0041694f                      ; 00416a6c

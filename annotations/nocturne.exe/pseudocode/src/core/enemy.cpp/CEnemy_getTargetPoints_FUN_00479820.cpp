@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param_2)
 
 {
@@ -23,13 +21,13 @@ uint core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param
   float afStack_28 [8];
   
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_40);
-  fVar3 = (float)_DAT_0057f337;
-  fVar1 = (fStack_3c + fStack_30) * _DAT_0057f333;
-  fVar2 = (fStack_38 + fStack_2c) * _DAT_0057f333;
+  fVar3 = (float)0.29999999999999999;
+  fVar1 = (fStack_3c + fStack_30) * 0.5f;
+  fVar2 = (fStack_38 + fStack_2c) * 0.5f;
   if (param_2 == afStack_28) {
     return 1;
   }
-  *param_2 = (fStack_40 + fStack_34) * _DAT_0057f333;
+  *param_2 = (fStack_40 + fStack_34) * 0.5f;
   param_2[1] = (fStack_30 - fStack_3c) * fVar3 + fVar1;
   param_2[2] = fVar2;
   return 1;

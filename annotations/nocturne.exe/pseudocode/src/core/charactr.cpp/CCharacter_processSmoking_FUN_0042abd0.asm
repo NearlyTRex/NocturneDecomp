@@ -25,11 +25,11 @@
 ;   core_npc.cpp_CNPC_process_FUN_004eea20 at 004eea4a
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_head_0057a471+1
+;   TerminatedCString s_Bip01_head_0057a472
 ;   string s_Bip01_head_0057a47d
-;   undefined4 DAT_0057a48a
-;   undefined4 DAT_0057a492
-;   undefined4 DAT_0057a496
+;   double DOUBLE_0057a48a = 32
+;   float FLOAT_0057a492 = 0.2000000
+;   float FLOAT_0057a496 = 1.5
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 0042abfb (CONDITIONAL_JUMP)  ; LAB_0042abfb
     MOV EAX,[0x005be368]                ; 0042abe5 | DAT_005be368
     FLD float ptr [EAX + 0x15a88c]      ; 0042abea | DAT_01fb1b10
-    FCOMP double ptr [0x0057a48a]       ; 0042abf0 | DAT_0057a48a
+    FCOMP double ptr [0x0057a48a]       ; 0042abf0 | DOUBLE_0057a48a
     FNSTSW AX                           ; 0042abf6
     SAHF                                ; 0042abf8
     JC 0x0042ac02                       ; 0042abf9
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 0042abfb (CONDITIONAL_JUMP)  ; LAB_0042abfb
     FLD float ptr [EBX + 0x2c4c]        ; 0042ac3d
     LEA EAX,[EBX + 0x150]               ; 0042ac43
-    FADD float ptr [0x0057a496]         ; 0042ac49 | DAT_0057a496
+    FADD float ptr [0x0057a496]         ; 0042ac49 | FLOAT_0057a496
     PUSH EAX                            ; 0042ac4f
     FSTP float ptr [EBX + 0x2c4c]       ; 0042ac50
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ac56
@@ -172,7 +172,7 @@ section .text
     JBE 0x0042ac25                      ; 0042ad06
         ;   XREF to: 0042ac25 (CONDITIONAL_JUMP)  ; LAB_0042ac25
     FLD float ptr [EBX + 0x2c48]        ; 0042ad0c
-    FADD float ptr [0x0057a492]         ; 0042ad12 | DAT_0057a492
+    FADD float ptr [0x0057a492]         ; 0042ad12 | FLOAT_0057a492
     MOV EAX,0xbf000000                  ; 0042ad18
     FSTP float ptr [EBX + 0x2c48]       ; 0042ad1d
     MOV dword ptr [EBP + -0x38],EAX     ; 0042ad23
@@ -193,7 +193,7 @@ section .text
         ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
     ADD ESP,0x4                         ; 0042ad4a
     PUSH EDI                            ; 0042ad4d
-    PUSH 0x57a472                       ; 0042ad4e | s_Bip01_head_0057a471+1
+    PUSH 0x57a472                       ; 0042ad4e | = "Bip01 head"
     PUSH EAX                            ; 0042ad53
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042ad54
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()

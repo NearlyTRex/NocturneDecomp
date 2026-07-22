@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0044f9b0 at 00450118
+;   core_dlight.cpp_FUN_0044f9b0 at 00450118
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

@@ -10,16 +10,16 @@
 ;
 ; Referenced Globals:
 ;   string s_bullet.kfm_005781eb
-;   undefined1 DAT_005781f6
-;   undefined1 DAT_005781f7
-;   undefined1 DAT_005781f8
-;   undefined1 DAT_005781f9
-;   undefined1* PTR_LAB_00599454 = 0040ec00
+;   TerminatedCString s_CGun_005781f6
+;   undefined4 s_Gun_005781f6+1
+;   undefined4 s_un_005781f6+2
+;   undefined4 s_n_005781f6+3
+;   undefined1* PTR_core_ammo.cpp_FUN_0040ec00_00599454 = 0040ec00
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EDI                            ; 0040eb72
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040eb73
     PUSH EBX                            ; 0040eb77
-    CALL FUN_00409d30                   ; 0040eb78
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 0040eb78
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0040eb7d
     ADD EAX,0x150                       ; 0040eb80
     PUSH EAX                            ; 0040eb85
@@ -43,20 +43,20 @@ section .text
     PUSH 0x5781eb                       ; 0040eb94 | = "bullet.kfm"
     LEA EAX,[EBX + 0x150]               ; 0040eb99
     PUSH EAX                            ; 0040eb9f
-    MOV dword ptr [EBX + 0x14c],0x599454 ; 0040eba0 | PTR_LAB_00599454
+    MOV dword ptr [EBX + 0x14c],0x599454 ; 0040eba0 | PTR_core_ammo.cpp_FUN_0040ec00_00599454
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ebaa
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 0040ebaf
-    MOV ESI,0x5781f6                    ; 0040ebb2 | DAT_005781f6
+    MOV ESI,0x5781f6                    ; 0040ebb2 | = "CGun"
     LEA EDI,[EBX + 0x2cc]               ; 0040ebb7
     PUSH EDI                            ; 0040ebbd
-    MOV AL,byte ptr [ESI]               ; 0040ebbe | DAT_005781f6 | DAT_005781f8
+    MOV AL,byte ptr [ESI]               ; 0040ebbe | = "CGun" | s_un_005781f6+2
         ;   Label: LAB_0040ebbe
     MOV byte ptr [EDI],AL               ; 0040ebc0
     CMP AL,0x0                          ; 0040ebc2
     JZ 0x0040ebd6                       ; 0040ebc4
         ;   XREF to: 0040ebd6 (CONDITIONAL_JUMP)  ; LAB_0040ebd6
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040ebc6 | DAT_005781f7 | DAT_005781f9
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040ebc6 | s_Gun_005781f6+1 | s_n_005781f6+3
     ADD ESI,0x2                         ; 0040ebc9
     MOV byte ptr [EDI + 0x1],AL         ; 0040ebcc
     ADD EDI,0x2                         ; 0040ebcf

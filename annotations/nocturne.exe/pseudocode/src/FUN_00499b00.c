@@ -34,7 +34,7 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
             (param_1 + 0x150,local_1b44);
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
             (param_1 + 0x150,local_30,param_5);
-  local_2c = local_2c + _DAT_00582286;
+  local_2c = local_2c + -0.3f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,local_30);
   local_18 = *param_3;
   local_1b48 = param_2 / _DAT_0059dcb8 + local_18;
@@ -67,7 +67,7 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
       local_18 = *param_3;
     }
     iVar3 = iVar3 + 1;
-    *param_3 = (local_18 + local_1b48) * (float)_DAT_0058228a;
+    *param_3 = (local_18 + local_1b48) * (float)0.5;
   } while (iVar3 < 7);
   return;
 }

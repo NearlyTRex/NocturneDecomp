@@ -48,8 +48,8 @@ void core_gore_cpp_CBloodSplat_render_FUN_004aeb70(uint *param_1)
   
   iStack_90 = 0x4aeb92;
   fVar3 = (float10)round
-                             ((float10)(float)param_1[9] * (float10)_DAT_005850a8 +
-                              (float10)_DAT_005850b0);
+                             ((float10)(float)param_1[9] * (float10)8 +
+                              (float10)4);
   local_18 = (int)ROUND(fVar3);
   if (local_18 < 0) {
     local_18 = 0;

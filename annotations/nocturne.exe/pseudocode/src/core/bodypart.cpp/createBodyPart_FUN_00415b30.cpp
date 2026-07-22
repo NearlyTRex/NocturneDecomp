@@ -27,7 +27,7 @@ int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *pa
     iVar2 = core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(iVar1);
   }
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "?..\\core\\bodypart.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
     _DAT_01cc4804 = 0x32;
     FUN_004c8440("Can't create body part!");
   }
@@ -47,7 +47,7 @@ int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *pa
     fVar6 = (float10)fcos((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar4);
     fVar8 = (float10)fsin((float10)fVar3);
-    fVar9 = (float10)_DAT_00578eaa;
+    fVar9 = (float10)10.0f;
     *(float *)(iVar2 + 0x27c) = (float)(fVar8 * fVar9);
     *(float *)(iVar2 + 0x278) = (float)(fVar5 * fVar9 * fVar6);
     *(float *)(iVar2 + 0x280) = (float)(fVar7 * fVar9 * fVar6);

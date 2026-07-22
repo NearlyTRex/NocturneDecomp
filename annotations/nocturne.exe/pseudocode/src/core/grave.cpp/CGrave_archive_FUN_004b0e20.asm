@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   string s_model_name_00585208
-;   undefined4 DAT_00585213
+;   TerminatedCString s_fps_00585213
 ;   string s_active_00585217
 ;   string s_graveState_0058521e
 ;   string s_curFrame_00585229
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 004b0e3e
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00()
     ADD ESP,0x8                         ; 004b0e43
-    PUSH 0x585213                       ; 004b0e46 | DAT_00585213
+    PUSH 0x585213                       ; 004b0e46 | = "fps"
     LEA EAX,[EBX + 0x2d0]               ; 004b0e4b
     PUSH EAX                            ; 004b0e51
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004b0e52

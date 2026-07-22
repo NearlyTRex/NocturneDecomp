@@ -10,17 +10,17 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585070
-;   undefined4 DAT_00585078
+;   double DOUBLE_00585070 = 0.0000152590218966964
+;   double DOUBLE_00585078 = 0.5
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b762c
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c02580
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_0040ab10
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-;   FUN_0040ab10
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004add8b
     PUSH ESI                            ; 004add8f
     PUSH EBX                            ; 004add90
-    CALL FUN_0040ab10                   ; 004add91
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ab10()
+    CALL core_actor.cpp_FUN_0040ab10    ; 004add91
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ab10()
     MOV EDX,dword ptr [EBX + 0x1e0]     ; 004add96
     ADD ESP,0x8                         ; 004add9c
     TEST EDX,EDX                        ; 004add9f
@@ -63,7 +63,7 @@ section .text
     PUSH EBX                            ; 004addd7
     FLD1                                ; 004addd8
     FXCH                                ; 004addda
-    FADD double ptr [0x00585078]        ; 004adddc | DAT_00585078
+    FADD double ptr [0x00585078]        ; 004adddc | DOUBLE_00585078
     MOV EBX,dword ptr [0x005ae704]      ; 004adde2 | DAT_005ae704
     FSTP float ptr [ESP + 0x8]          ; 004adde8
     FSUBRP                              ; 004addec
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 004ade47 (UNCONDITIONAL_JUMP)  ; LAB_004ade47
     FILD dword ptr [EBX + 0x174]        ; 004ade9b
         ;   Label: LAB_004ade9b
-    FMUL double ptr [0x00585070]        ; 004adea1 | DAT_00585070
+    FMUL double ptr [0x00585070]        ; 004adea1 | DOUBLE_00585070
     FLD1                                ; 004adea7
     FSUBRP                              ; 004adea9
     FSTP float ptr [ESI + 0x48]         ; 004adeab

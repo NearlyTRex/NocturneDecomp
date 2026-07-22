@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 1511,
+    "complexity_score": 1495,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 181,
-    "suspect_count": 130,
+    "pseudocode_lines": 180,
+    "suspect_count": 129,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 832
+    "total_lines": 831
   },
   "cross_references": [
     {
@@ -164,15 +163,15 @@
   "globals": [
     {
       "addr": "0057b4fe",
-      "name": "DAT_0057b4fe",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057b4fe",
+      "type": "double",
+      "value": "-0.5"
     },
     {
       "addr": "0057b506",
-      "name": "DAT_0057b506",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057b506",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "0077bdb8",
@@ -906,42 +905,42 @@
         {
           "check_id": "selfAssignment",
           "column": 46,
-          "line": 91,
+          "line": 89,
           "message": "Redundant assignment of '*(float*)(param_2+0x24)' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "selfAssignment",
           "column": 27,
-          "line": 107,
+          "line": 105,
           "message": "Redundant assignment of '*pfVar1' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "selfAssignment",
           "column": 25,
-          "line": 123,
+          "line": 121,
           "message": "Redundant assignment of '*pfVar1' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 155,
+          "line": 153,
           "message": "Uninitialized variable: local_d8",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 42,
-          "line": 155,
+          "line": 153,
           "message": "Uninitialized variable: local_e0",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 64,
-          "line": 155,
+          "line": 153,
           "message": "Uninitialized variable: local_dc",
           "severity": "warning"
         }
@@ -952,16 +951,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1,int param_2)",
@@ -969,7 +960,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1,int param_2)",
@@ -977,7 +968,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x65b24) != 0) &&",
@@ -985,7 +976,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) < *(float *)(param_1 + 0x65b20))) {",
@@ -993,7 +984,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) < *(float *)(param_1 + 0x65b20))) {",
@@ -1001,7 +992,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x34) = 0;",
@@ -1009,7 +1000,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x30) = *(uint *)(param_2 + 0x34);",
@@ -1017,7 +1008,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x30) = *(uint *)(param_2 + 0x34);",
@@ -1025,7 +1016,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x2c) = *(uint *)(param_2 + 0x30);",
@@ -1033,7 +1024,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x2c) = *(uint *)(param_2 + 0x30);",
@@ -1041,7 +1032,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x24) = *(uint *)(param_1 + 0x65b20);",
@@ -1049,7 +1040,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x24) = *(uint *)(param_1 + 0x65b20);",
@@ -1057,7 +1048,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x6c) = 1;",
@@ -1065,7 +1056,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_0077bdb8",
       "severity": "mild",
       "text": "if (0 < DAT_0077bdb8) {",
@@ -1073,7 +1064,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar1 = (float *)(param_2 + 0x20);",
@@ -1081,7 +1072,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar2 = (float *)(param_2 + 0x2c);",
@@ -1089,7 +1080,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar13 = (float *)(param_1 + 0x1c720);",
@@ -1097,7 +1088,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_0077c288",
       "severity": "mild",
       "text": "local_1c = (float *)&DAT_0077c288;",
@@ -1105,15 +1096,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (((((float)_DAT_0057b4fe <= *(float *)(param_2 + 0x30)) ||",
+      "text": "if (((((float)-0.5 <= *(float *)(param_2 + 0x30)) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1121,7 +1112,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_0077c284",
       "severity": "mild",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1129,7 +1120,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar6 <= *(float *)(param_2 + 0x24))) ||",
@@ -1137,7 +1128,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||",
@@ -1145,7 +1136,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 49,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||",
@@ -1153,7 +1144,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "(fVar5 = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11),",
@@ -1161,7 +1152,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 50,
       "match": "DAT_0077bdbc",
       "severity": "mild",
       "text": "(fVar5 = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11),",
@@ -1169,7 +1160,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11),",
@@ -1177,7 +1168,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_0077bdc4",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11),",
@@ -1185,7 +1176,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_0077c288",
       "severity": "mild",
       "text": "(float)(&DAT_0077c288)[local_18 * 10] <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {",
@@ -1193,7 +1184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*(float *)((int)&DAT_0077bdc0 + iVar11) <= *(float *)(param_2 + 0x24)) &&",
@@ -1201,7 +1192,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 53,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "if ((*(float *)((int)&DAT_0077bdc0 + iVar11) <= *(float *)(param_2 + 0x24)) &&",
@@ -1209,7 +1200,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1217,7 +1208,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_0077c284",
       "severity": "mild",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1225,7 +1216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) <= fVar6)) {",
@@ -1233,7 +1224,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "local_104[0] = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1241,7 +1232,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_0077bdbc",
       "severity": "mild",
       "text": "local_104[0] = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1249,7 +1240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "local_fc = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1257,7 +1248,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_0077bdc4",
       "severity": "mild",
       "text": "local_fc = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1265,7 +1256,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 59,
       "match": "DAT_0077c288",
       "severity": "mild",
       "text": "if (fVar5 <= (float)(&DAT_0077c288)[local_18 * 10]) {",
@@ -1273,7 +1264,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(float *)(param_2 + 0x3c) < fVar6) {",
@@ -1281,7 +1272,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(float *)((int)&DAT_0077bdc0 + iVar11) < *(float *)(param_2 + 0x3c)) {",
@@ -1289,7 +1280,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 61,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "if (*(float *)((int)&DAT_0077bdc0 + iVar11) < *(float *)(param_2 + 0x3c)) {",
@@ -1297,7 +1288,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 70,
       "match": "DAT_0077bdbc",
       "severity": "mild",
       "text": "fVar3 = local_104[0] * *local_1c + *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1305,7 +1296,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 71,
       "match": "DAT_0077bdc4",
       "severity": "mild",
       "text": "fVar4 = local_fc * *local_1c + *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1313,7 +1304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) =",
@@ -1321,7 +1312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) +",
@@ -1329,7 +1320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) - *(float *)(param_2 + 0x24)) * fVar6;",
@@ -1337,7 +1328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(float *)(param_2 + 0x24) - *(float *)(param_2 + 0x24)) * fVar6;",
@@ -1345,7 +1336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) =",
@@ -1353,7 +1344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 79,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar4 - *(float *)(param_2 + 0x28)) * fVar5;",
@@ -1361,7 +1352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 79,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar4 - *(float *)(param_2 + 0x28)) * fVar5;",
@@ -1369,7 +1360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24);",
@@ -1377,10 +1368,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_2 + 0x28) = fVar4;",
       "type": "unnamed_param"
     },
     {
@@ -1388,20 +1387,12 @@
       "line": 85,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 0x28) = fVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_2",
-      "severity": "mild",
       "text": "*(uint *)(param_2 + 0x6c) = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 88,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_2 + 0x28);",
@@ -1409,7 +1400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 89,
       "match": "DAT_0077bdc0",
       "severity": "mild",
       "text": "fVar4 = *(float *)((int)&DAT_0077bdc0 + iVar11);",
@@ -1417,7 +1408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 93,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) =",
@@ -1425,7 +1416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) + (fVar4 - *(float *)(param_2 + 0x24)) * fVar6;",
@@ -1433,7 +1424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) + (fVar4 - *(float *)(param_2 + 0x24)) * fVar6;",
@@ -1441,7 +1432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) =",
@@ -1449,7 +1440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar3 - *(float *)(param_2 + 0x28)) * fVar5;",
@@ -1457,7 +1448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar3 - *(float *)(param_2 + 0x28)) * fVar5;",
@@ -1465,7 +1456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = fVar4;",
@@ -1473,7 +1464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 100,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = fVar3;",
@@ -1481,7 +1472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 105,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar4 = *(float *)(param_2 + 0x28);",
@@ -1489,7 +1480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) =",
@@ -1497,7 +1488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) + (fVar6 - *(float *)(param_2 + 0x24)) * fVar5;",
@@ -1505,7 +1496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) + (fVar6 - *(float *)(param_2 + 0x24)) * fVar5;",
@@ -1513,7 +1504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 111,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) =",
@@ -1521,7 +1512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 112,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar4 - *(float *)(param_2 + 0x28)) * fVar3;",
@@ -1529,7 +1520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 112,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) + (fVar4 - *(float *)(param_2 + 0x28)) * fVar3;",
@@ -1537,7 +1528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 115,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = fVar6;",
@@ -1545,7 +1536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 116,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = fVar4;",
@@ -1553,7 +1544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 123,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x30) = 0;",
@@ -1561,7 +1552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 124,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x6c) = 1;",
@@ -1569,7 +1560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 125,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = fVar6;",
@@ -1577,7 +1568,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 130,
       "match": "DAT_0077bdb8",
       "severity": "mild",
       "text": "} while (local_18 < DAT_0077bdb8);",
@@ -1585,7 +1576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_2 + 0x44)) {",
@@ -1593,7 +1584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 134,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar1 = (float *)(param_2 + 0x20);",
@@ -1601,7 +1592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar13 = (float *)(param_1 + 0x65b14);",
@@ -1609,7 +1600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar12 = (float *)(param_1 + 0x1c720);",
@@ -1617,7 +1608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 137,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar2 = (float *)(param_2 + 0x2c);",
@@ -1625,7 +1616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 138,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar11 = param_2;",
@@ -1633,7 +1624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar10 = param_1 + 0x200 + *(int *)(iVar11 + 0x48) * 0x74;",
@@ -1641,7 +1632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 143,
       "match": "param_2",
       "severity": "mild",
       "text": "local_dc = *(float *)(param_2 + 0x24) - *(float *)(iVar10 + 0x24);",
@@ -1649,7 +1640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 144,
       "match": "param_2",
       "severity": "mild",
       "text": "local_d8 = *(float *)(param_2 + 0x28) - *(float *)(iVar10 + 0x28);",
@@ -1657,7 +1648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 155,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24) - fVar9;",
@@ -1665,7 +1656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 155,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24) - fVar9;",
@@ -1673,7 +1664,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 156,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = *(float *)(param_2 + 0x28) - fVar7;",
@@ -1681,7 +1672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 156,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = *(float *)(param_2 + 0x28) - fVar7;",
@@ -1689,7 +1680,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 160,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) = *(float *)(param_2 + 0x30) - fVar9 * fVar3;",
@@ -1697,7 +1688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 160,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) = *(float *)(param_2 + 0x30) - fVar9 * fVar3;",
@@ -1705,7 +1696,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 161,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) - fVar7 * fVar4;",
@@ -1713,7 +1704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 161,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) - fVar7 * fVar4;",
@@ -1721,7 +1712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 170,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24) + fVar4;",
@@ -1729,7 +1720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 170,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24) + fVar4;",
@@ -1737,7 +1728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 171,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = *(float *)(param_2 + 0x28) + fVar7;",
@@ -1745,7 +1736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 171,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x28) = *(float *)(param_2 + 0x28) + fVar7;",
@@ -1753,7 +1744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 175,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) = *(float *)(param_2 + 0x30) + fVar4 * fVar6;",
@@ -1761,7 +1752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 175,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x30) = *(float *)(param_2 + 0x30) + fVar4 * fVar6;",
@@ -1769,7 +1760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 176,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) + fVar7 * fVar5;",
@@ -1777,7 +1768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 176,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) + fVar7 * fVar5;",
@@ -1785,7 +1776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 180,
       "match": "param_2",
       "severity": "mild",
       "text": "} while (local_34 < *(int *)(param_2 + 0x44));",
@@ -1793,7 +1784,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1801,7 +1792,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "(*(float *)(param_2 + 0x24) <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||",
@@ -1809,7 +1800,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdbc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&DAT_0077bdbc",
       "severity": "moderate",
       "text": "(fVar5 = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11),",
@@ -1817,7 +1808,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "(int)&DAT_0077bdc4",
       "severity": "moderate",
       "text": "fVar3 = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11),",
@@ -1825,7 +1816,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "if ((*(float *)((int)&DAT_0077bdc0 + iVar11) <= *(float *)(param_2 + 0x24)) &&",
@@ -1833,7 +1824,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 54,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1841,7 +1832,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdbc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&DAT_0077bdbc",
       "severity": "moderate",
       "text": "local_104[0] = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1849,7 +1840,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "(int)&DAT_0077bdc4",
       "severity": "moderate",
       "text": "local_fc = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1857,7 +1848,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "if (*(float *)((int)&DAT_0077bdc0 + iVar11) < *(float *)(param_2 + 0x3c)) {",
@@ -1865,7 +1856,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdbc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "(int)&DAT_0077bdbc",
       "severity": "moderate",
       "text": "fVar3 = local_104[0] * *local_1c + *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1873,7 +1864,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
+      "line": 71,
       "match": "(int)&DAT_0077bdc4",
       "severity": "moderate",
       "text": "fVar4 = local_fc * *local_1c + *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1881,7 +1872,7 @@
     },
     {
       "description": "Pointer value `&DAT_0077bdc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "(int)&DAT_0077bdc0",
       "severity": "moderate",
       "text": "fVar4 = *(float *)((int)&DAT_0077bdc0 + iVar11);",
@@ -1889,7 +1880,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1897,7 +1888,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(*(float *)(param_2 + 0x24) <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||",
@@ -1905,7 +1896,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(fVar5 = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11),",
@@ -1913,7 +1904,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar3 = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11),",
@@ -1921,7 +1912,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if ((*(float *)((int)&DAT_0077bdc0 + iVar11) <= *(float *)(param_2 + 0x24)) &&",
@@ -1929,7 +1920,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
+      "line": 54,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],",
@@ -1937,7 +1928,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_104[0] = *(float *)(param_2 + 0x20) - *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1945,7 +1936,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_fc = *(float *)(param_2 + 0x28) - *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1953,7 +1944,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (*(float *)((int)&DAT_0077bdc0 + iVar11) < *(float *)(param_2 + 0x3c)) {",
@@ -1961,7 +1952,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar3 = local_104[0] * *local_1c + *(float *)((int)&DAT_0077bdbc + iVar11);",
@@ -1969,7 +1960,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 73,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar4 = local_fc * *local_1c + *(float *)((int)&DAT_0077bdc4 + iVar11);",
@@ -1977,7 +1968,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar4 = *(float *)((int)&DAT_0077bdc0 + iVar11);",
@@ -1996,7 +1987,7 @@
     },
     {
       "description": "Redundant assignment of '*(float*)(param_2+0x24)' to itself.",
-      "line": 91,
+      "line": 89,
       "match": "Cppcheck: redundant self-assignment",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x24) = *(float *)(param_2 + 0x24);",
@@ -2004,7 +1995,7 @@
     },
     {
       "description": "Redundant assignment of '*pfVar1' to itself.",
-      "line": 107,
+      "line": 105,
       "match": "Cppcheck: redundant self-assignment",
       "severity": "mild",
       "text": "*pfVar1 = *pfVar1;",
@@ -2012,7 +2003,7 @@
     },
     {
       "description": "Redundant assignment of '*pfVar1' to itself.",
-      "line": 123,
+      "line": 121,
       "match": "Cppcheck: redundant self-assignment",
       "severity": "mild",
       "text": "*pfVar1 = *pfVar1;",
@@ -2020,7 +2011,7 @@
     },
     {
       "description": "Uninitialized variable: local_d8",
-      "line": 155,
+      "line": 153,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar5 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",
@@ -2028,7 +2019,7 @@
     },
     {
       "description": "Uninitialized variable: local_e0",
-      "line": 155,
+      "line": 153,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar5 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",
@@ -2036,7 +2027,7 @@
     },
     {
       "description": "Uninitialized variable: local_dc",
-      "line": 155,
+      "line": 153,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar5 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",

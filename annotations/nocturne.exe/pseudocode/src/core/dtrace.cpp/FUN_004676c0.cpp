@@ -37,9 +37,9 @@ void FUN_004676c0(int param_1,int param_2)
   _fread(param_1 + 0x10,0xc,1,param_2);
   _fread(param_1 + 0x1c,0xc,1,param_2);
   _fread((float *)(param_1 + 0x28),0xc,1,param_2);
-  local_20 = *(float *)(param_1 + 0x28) / _DAT_0057e1ca;
-  local_1c = *(float *)(param_1 + 0x2c) * _DAT_0057e1ce;
-  local_18 = _DAT_0057e1ce * *(float *)(param_1 + 0x30);
+  local_20 = *(float *)(param_1 + 0x28) / 8.0f;
+  local_1c = *(float *)(param_1 + 0x2c) * 0.125f;
+  local_18 = 0.125f * *(float *)(param_1 + 0x30);
   if ((float *)(param_1 + 0x34) != &local_20) {
     *(float *)(param_1 + 0x34) = local_20;
     *(float *)(param_1 + 0x38) = local_1c;

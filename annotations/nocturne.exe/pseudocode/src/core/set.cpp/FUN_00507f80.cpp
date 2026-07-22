@@ -1,14 +1,14 @@
-// Name: FUN_00507f80
+// Name: core_set.cpp_FUN_00507f80
 // Address: 00507f80
 // Address Range: [[00507f80, 005084b0]]
 // Convention: unknown
-// Signature: void FUN_00507f80(int *param_1,int param_2)
+// Signature: void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00507f80(int *param_1,int param_2)
+void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
 
 {
   byte uVar1;
@@ -150,7 +150,7 @@ void FUN_00507f80(int *param_1,int param_2)
     } while (iStack_20 < *param_1);
   }
   if (auStack_54[3] != 0) {
-    FUN_0050ad20();
+    core_set_cpp_FUN_0050ad20();
     _DAT_01fba938 = 0;
     return;
   }

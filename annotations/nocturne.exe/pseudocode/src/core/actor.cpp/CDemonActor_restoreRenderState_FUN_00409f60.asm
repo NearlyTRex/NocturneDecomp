@@ -4,18 +4,18 @@
 ; void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(void)
 ;
 ;
-; XREF[59]:
-;   FUN_0040ff80 at 0040ffd2
-;   FUN_004110f0 at 0041129a
-;   FUN_00411e30 at 00411e66
-;   FUN_00414340 at 00414429
+; XREF[61]:
+;   FUN_0040f2b0 at 0040f2e8
 ;   FUN_00415760 at 00415852
 ;   FUN_00419c20 at 00419cc5
 ;   FUN_00421540 at 004216be
-;   FUN_00426510 at 0042655a
 ;   FUN_0042c4c0 at 0042c52a
 ;   FUN_0043d0a0 at 0043d0d6
-;   ... and 49 more
+;   FUN_0043f330 at 0043f503
+;   FUN_00455d50 at 00455dce
+;   FUN_00455e10 at 00455e75
+;   FUN_0045a260 at 0045a349
+;   ... and 51 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

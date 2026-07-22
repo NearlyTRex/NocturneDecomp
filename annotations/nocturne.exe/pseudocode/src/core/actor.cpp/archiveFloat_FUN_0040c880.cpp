@@ -12,14 +12,14 @@ void __cdecl core_actor_cpp_archiveFloat_FUN_0040c880(float *param_1,uint param_
   int iVar1;
   
   if (DAT_00763e88 == 1) {
-    iVar1 = _fscanf(DAT_00763e84,&DAT_00577c79,param_1);
+    iVar1 = _fscanf(DAT_00763e84,"%f",param_1);
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("Floating point value",param_2);
     }
   }
   else {
-    _fprintf(DAT_00763e84,&DAT_00577c7c,&DAT_005acc90,(double)*param_1);
+    _fprintf(DAT_00763e84,"%s%g",&DAT_005acc90,(double)*param_1);
   }
   core_actor_cpp_archiveDescription_FUN_0040c3a0("Floating point value",param_2);
   return;

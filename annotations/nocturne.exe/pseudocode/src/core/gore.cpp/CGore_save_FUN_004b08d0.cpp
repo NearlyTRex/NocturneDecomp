@@ -17,7 +17,7 @@ uint __cdecl core_gore_cpp_CGore_save_FUN_004b08d0(uint param_1,uint param_2)
   
   _fprintf(param_2,"--- Gore ---\n");
   iVar3 = 0;
-  _fprintf(param_2,&DAT_005851ee,_DAT_01c9e038);
+  _fprintf(param_2,"%d\n",_DAT_01c9e038);
   if (0 < _DAT_01c9e038) {
     iVar2 = 0x1c9e03c;
     do {
@@ -27,7 +27,7 @@ uint __cdecl core_gore_cpp_CGore_save_FUN_004b08d0(uint param_1,uint param_2)
     } while (iVar3 < _DAT_01c9e038);
   }
   iVar3 = 0;
-  uVar1 = _fprintf(param_2,&DAT_005851f2,_DAT_01c7ccf0);
+  uVar1 = _fprintf(param_2,"%d\n",_DAT_01c7ccf0);
   if (0 < _DAT_01c7ccf0) {
     iVar2 = 0x1c7ccf4;
     do {

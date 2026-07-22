@@ -19,7 +19,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(uint param_1)
   (*(code *)**(uint **)(iVar1 + 0x14c))(iVar1);
   iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,_DAT_02ddf9a8);
   if (iVar2 == 0) {
-    _DAT_01cc4800 = ">..\\core\\game.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\game.cpp";
     _DAT_01cc4804 = 0xa0b;
     FUN_004c8440("giveHeroWeapon - This is not a weapon");
   }

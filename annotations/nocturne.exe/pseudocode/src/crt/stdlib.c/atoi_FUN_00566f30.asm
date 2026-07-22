@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0055a510 at 0055a5f0
 ;   core_texlist.cpp_CTextureList_load_FUN_00544950 at 00544aa4
+;   wincore_winvideo.cpp_FUN_0055a510 at 0055a5f0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c168c

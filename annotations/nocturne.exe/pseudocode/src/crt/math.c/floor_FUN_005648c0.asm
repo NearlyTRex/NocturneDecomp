@@ -8,8 +8,8 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined        Stack[-0x8]:1  local_8
 ;
-; XREF[25]:
-;   FUN_00421b80 at 00421c27
+; XREF[26]:
+;   FUN_00411940 at 00411969
 ;   FUN_0046b650 at 0046b66d
 ;   FUN_00494e80 at 00494faf
 ;   FUN_005464a0 at 00546607
@@ -18,8 +18,8 @@
 ;   core_bat.cpp_fmodfPositive_FUN_0043b510 at 0043b539
 ;   core_boneguy.cpp_hsvToRgb_FUN_00418480 at 00418597
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e61f
-;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043ba2c
-;   ... and 15 more
+;   core_bugs.cpp_FUN_00421b80 at 00421c27
+;   ... and 16 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005989b0

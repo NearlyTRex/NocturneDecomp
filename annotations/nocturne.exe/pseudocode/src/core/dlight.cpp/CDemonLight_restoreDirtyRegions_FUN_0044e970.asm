@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00509a80 at 00509fb3
-;   FUN_0050aba0 at 0050acfd
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508954
+;   core_set.cpp_FUN_00509a80 at 00509fb3
+;   core_set.cpp_FUN_0050aba0 at 0050acfd
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dlight.cpp_0057c76e

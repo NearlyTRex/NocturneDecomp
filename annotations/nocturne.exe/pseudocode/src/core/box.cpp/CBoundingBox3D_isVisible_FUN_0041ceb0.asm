@@ -21,21 +21,21 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[68]:
-;   FUN_0040ff80 at 0040ffb2
-;   FUN_004110f0 at 00411205
-;   FUN_00411e30 at 00411e57
-;   FUN_00414340 at 004143c4
+; XREF[71]:
+;   FUN_0040f2b0 at 0040f2d9
+;   FUN_0040f740 at 0040f797
 ;   FUN_00414e70 at 00414eb6
 ;   FUN_00415760 at 0041579a
 ;   FUN_004161a0 at 00416206
 ;   FUN_00416300 at 0041638c
 ;   FUN_00419c20 at 00419c59
 ;   FUN_0041ea00 at 0041ea91
-;   ... and 58 more
+;   FUN_0041eaf0 at 0041eb5a
+;   FUN_00421540 at 0042158e
+;   ... and 61 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005797c5
+;   float FLOAT_005797c5 = 0.5
 ;   undefined4 DAT_0059aa80
 ;   undefined4 DAT_0059aa88
 ;   undefined4 DAT_005ae704
@@ -97,7 +97,7 @@ section .text
     FLD float ptr [EBX + 0x4]           ; 0041cef7
     FADD float ptr [EAX + 0x4]          ; 0041cefa
     FXCH                                ; 0041cefd
-    FLD float ptr [0x005797c5]          ; 0041ceff | DAT_005797c5
+    FLD float ptr [0x005797c5]          ; 0041ceff | FLOAT_005797c5
     FXCH                                ; 0041cf05
     FMUL ST1                            ; 0041cf07
     FXCH ST2                            ; 0041cf09

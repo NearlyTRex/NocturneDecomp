@@ -10,11 +10,11 @@
 ;   FUN_004c4970 at 004c4e3e
 ;   FUN_004d4f30 at 004d50f6
 ;   FUN_004da790 at 004db041
-;   FUN_0055ef50 at 00560117
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412732
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413dcc
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043c10d
 ;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454b03
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 0045967e
 ;   ... and 8 more
 ;
 ; Called Functions:

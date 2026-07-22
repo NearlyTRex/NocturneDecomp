@@ -13,12 +13,12 @@ void core_bugs_cpp_CBugs_archive_FUN_00421880(int param_1)
   int iVar2;
   
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbd28,"?count" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbd28,"count");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1212c,"modelCount");
   if (DAT_00763e88 == 1) {
     iVar1 = param_1 + 0x12130;
     do {
-      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,&DAT_00579c6e);
+      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,&CHAR_00h_00579c6e);
       iVar1 = iVar1 + 0x17c;
     } while (iVar1 != param_1 + 0x12720);
   }

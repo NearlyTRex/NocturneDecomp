@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 00509ade
+;   core_set.cpp_FUN_00509a80 at 00509ade
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

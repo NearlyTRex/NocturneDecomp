@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b1de
+;   TerminatedCString s_size_0057b1de
 ;   string s_direction_0057b1e3
 ;   string s_startEvent_0057b1ed
 ;   string s_stopEvent_0057b1f8
@@ -30,7 +30,7 @@ section .text
     CALL core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0 ; 0043b316
         ;   XREF to: 004f6fa0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0()
     ADD ESP,0x4                         ; 0043b31b
-    PUSH 0x57b1de                       ; 0043b31e | DAT_0057b1de
+    PUSH 0x57b1de                       ; 0043b31e | = "size"
     LEA EAX,[EBX + 0x720]               ; 0043b323
     PUSH EAX                            ; 0043b329
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0043b32a

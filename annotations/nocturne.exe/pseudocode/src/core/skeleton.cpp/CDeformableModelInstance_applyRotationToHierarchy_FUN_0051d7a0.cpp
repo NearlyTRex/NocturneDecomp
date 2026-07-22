@@ -48,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
         fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);
         fStack_e8 = fStack_18 * local_28;
         if ((float)_DAT_00591bcb < ABS(fStack_e8)) {
-          FUN_0055d560(fStack_e8,local_34);
+          core_xform_cpp_FUN_0055d560(fStack_e8,local_34);
           uStack_64 = auStack_50[3];
           *(uint *)((int)auStack_60 + (uint)bVar5 * 0xfffffff8) =
                *(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + 4) * 4);
@@ -78,7 +78,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   if (-1 < param_4) {
     return;
   }
-  FUN_0055d560(local_28 * param_3,local_34);
+  core_xform_cpp_FUN_0055d560(local_28 * param_3,local_34);
   local_54 = auStack_80[3];
   *(uint *)((int)auStack_50 + (uint)bVar5 * 0xfffffff8) =
        *(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + -8) * 4);

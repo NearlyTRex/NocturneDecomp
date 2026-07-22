@@ -33,7 +33,7 @@
 ;   string s_leverToPull_0058573e
 ;   string s_ladderToClimb_0058574a
 ;   string s_pushedObject_00585758
-;   undefined4 DAT_00585765
+;   TerminatedCString s_keys_00585765
 ;   string s_keyNameList[%d]_0058576a
 ;   ... and 5 more
 ;
@@ -44,11 +44,11 @@
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_charactr.cpp_CCharacter_archive_FUN_004244b0
 ;   core_inv.cpp_CInventory_load_FUN_004c1190
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 004b49e2 (CONDITIONAL_JUMP)  ; LAB_004b49e2
     PUSH 0x5856ca                       ; 004b49d4 | = "motion state"
     PUSH EBX                            ; 004b49d9
-    CALL FUN_0040cb00                   ; 004b49da
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004b49da
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004b49df
     CMP dword ptr [0x005ba940],0x3      ; 004b49e2 | DAT_005ba940
         ;   Label: LAB_004b49e2
@@ -114,8 +114,8 @@ section .text
     ADD ESP,0x4                         ; 004b4a38
     PUSH 0x5856f6                       ; 004b4a3b | = "motion state"
     PUSH EBX                            ; 004b4a40
-    CALL FUN_0040cb00                   ; 004b4a41
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004b4a41
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004b4a46
     PUSH 0x585703                       ; 004b4a49 | = "partStatus"
     PUSH EBX                            ; 004b4a4e
@@ -181,7 +181,7 @@ section .text
         ;   Label: LAB_004b4b0a
     JNZ 0x004b4b28                      ; 004b4b11
         ;   XREF to: 004b4b28 (CONDITIONAL_JUMP)  ; LAB_004b4b28
-    PUSH 0x585765                       ; 004b4b13 | DAT_00585765
+    PUSH 0x585765                       ; 004b4b13 | = "keys"
     LEA EAX,[ESP + 0xcc]                ; 004b4b18
     PUSH EAX                            ; 004b4b1f
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004b4b20

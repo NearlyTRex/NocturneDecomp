@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_004196b0(int param_1,float param_2)
 
 {
@@ -55,7 +53,7 @@ uint FUN_004196b0(int param_1,float param_2)
         iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x8c))(iVar6);
         if (iVar6 != 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
+                    (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",param_1,
                      *(uint *)(param_1 + 0xbd30));
           *(uint *)(param_1 + 0xbd30) = 0;
           *(uint *)(param_1 + 0xbd2c) = 0;
@@ -73,7 +71,7 @@ uint FUN_004196b0(int param_1,float param_2)
             uVar4 = core_bodypart_cpp_addVector_FUN_00417fc0
                               (auStack_94,auStack_4c,auStack_88,auStack_70,&uStack_30);
             core_bodypart_cpp_scaleVector_FUN_00417f60(uVar4);
-            fStack_68 = fStack_8c + (float)_DAT_0057942e;
+            fStack_68 = fStack_8c + (float)0.40000000000000002;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar6,auStack_58,auStack_70);
             uStack_78 = 0;
             uStack_74 = 0;
@@ -113,8 +111,8 @@ uint FUN_004196b0(int param_1,float param_2)
             fStack_64 = pfVar5[3] - *pfVar5;
             fStack_60 = pfVar5[4] - pfVar5[1];
             fStack_5c = pfVar5[5] - pfVar5[2];
-            if ((((fStack_64 < 1.0) && (fStack_60 < 1.0)) && ((float)_DAT_00579436 < fStack_5c)) &&
-               ((double)fStack_5c < _DAT_0057943e)) {
+            if ((((fStack_64 < 1.0) && (fStack_60 < 1.0)) && ((float)2 < fStack_5c))
+               && ((double)fStack_5c < 6)) {
               iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar3,"CBodyPart");
               if (iVar2 == 0) {
                 fStack_40 = *(float *)(iVar3 + 0x20) - *(float *)(param_1 + 0x20);
@@ -123,7 +121,7 @@ uint FUN_004196b0(int param_1,float param_2)
                 fStack_38 = *(float *)(iVar3 + 0x28) - *(float *)(param_1 + 0x28);
                 fStack_3c = fStack_3c * fStack_3c;
                 fVar1 = SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c);
-                if (((float)_DAT_00579426 <= fVar1) && ((int)fVar1 < 0x41700001)) {
+                if (((float)5 <= fVar1) && ((int)fVar1 < 0x41700001)) {
                   *(int *)((int)aiStack_d4 + iVar6) = iVar3;
                   local_2c = local_2c + 1;
                   iVar6 = iVar6 + 4;

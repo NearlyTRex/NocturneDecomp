@@ -16,8 +16,8 @@
 ;   void* PTR_GlobalFree_00575548 = 00175e34
 ;   void* PTR_GlobalLock_0057554c = 00175e42
 ;   void* PTR_GlobalUnlock_00575554 = 00175e66
-;   undefined1 DAT_0057ea92
-;   undefined1 DAT_0057ea93
+;   char CHAR_00h_0057ea92 = \x00
+;   TerminatedCString s_XYZ_0057ea93
 ;   undefined4 DAT_01bcd078
 ;   undefined4 DAT_02de2098
 ;
@@ -43,13 +43,13 @@ section .text
     CMP dword ptr [ESP + 0x18],0x0      ; 00472d14
     JNZ 0x00472d23                      ; 00472d19
         ;   XREF to: 00472d23 (CONDITIONAL_JUMP)  ; LAB_00472d23
-    MOV dword ptr [ESP + 0x18],0x57ea92 ; 00472d1b | DAT_0057ea92
+    MOV dword ptr [ESP + 0x18],0x57ea92 ; 00472d1b | CHAR_00h_0057ea92
     MOV EDI,dword ptr [ESP + 0x18]      ; 00472d23
         ;   Label: LAB_00472d23
     SUB ECX,ECX                         ; 00472d27
     DEC ECX                             ; 00472d29
     XOR EAX,EAX                         ; 00472d2a
-    SCASB.REPNE ES:EDI                  ; 00472d2c | DAT_0057ea92 | DAT_0057ea93
+    SCASB.REPNE ES:EDI                  ; 00472d2c | CHAR_00h_0057ea92 | = "XYZ"
     NOT ECX                             ; 00472d2e
     DEC ECX                             ; 00472d30
     MOV ESI,dword ptr [0x02de2098]      ; 00472d31 | DAT_02de2098

@@ -16,14 +16,14 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
   int *piVar3;
   int iVar4;
   
-  FUN_00452f10(param_1);
+  core_dmodel_cpp_FUN_00452f10(param_1);
   *(uint *)(param_1 + 0x104) = param_2;
   *(uint *)(param_1 + 0x110) = param_3;
   *(uint *)(param_1 + 0x120) = param_4;
   *(uint *)(param_1 + 0x244) = param_5;
   *(uint *)(param_1 + 0x100) = param_6;
   if (4 < *(int *)(param_1 + 0x120)) {
-    _DAT_01cc4800 = "@o@..\\core\\dmodel.cpp" + 3;
+    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
     _DAT_01cc4804 = 0x2c0;
     FUN_004c8440("Too many materials!");
   }
@@ -51,7 +51,7 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
        ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||
       ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||
      (*(int *)(param_1 + 0x350) == 0)) {
-    FUN_00452f10(param_1);
+    core_dmodel_cpp_FUN_00452f10(param_1);
     _DAT_01cc4804 = 0x2d3;
     _DAT_01cc4800 = "..\\core\\dmodel.cpp";
     FUN_004c8440("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",*(uint *)(param_1 + 0x100),

@@ -18,18 +18,6 @@
   },
   "cross_references": [
     {
-      "addr": "0040add0",
-      "from_addr": "0040aded",
-      "name": "FUN_0040add0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00410cc0",
-      "from_addr": "00410e40",
-      "name": "FUN_00410cc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00418630",
       "from_addr": "00418650",
       "name": "FUN_00418630",
@@ -106,6 +94,18 @@
       "from_addr": "005661e3",
       "name": "FUN_005661c2",
       "type": "COMPUTED_CALL"
+    },
+    {
+      "addr": "0040add0",
+      "from_addr": "0040aded",
+      "name": "core_actor.cpp_FUN_0040add0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410cc0",
+      "from_addr": "00410e40",
+      "name": "core_baron.cpp_FUN_00410cc0",
+      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00415d20",
@@ -455,7 +455,7 @@
       {
         "call_addr": "0040aded",
         "call_type": "direct",
-        "caller": "FUN_0040add0",
+        "caller": "core_actor.cpp_FUN_0040add0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

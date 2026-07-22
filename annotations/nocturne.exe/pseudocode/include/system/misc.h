@@ -22,6 +22,3 @@ typedef DWORD PTHREAD_START_ROUTINE(LPVOID lpThreadParameter);
 // Function Definition: PTOP_LEVEL_EXCEPTION_FILTER
 typedef LONG PTOP_LEVEL_EXCEPTION_FILTER(struct _EXCEPTION_POINTERS* ExceptionInfo);
 
-// Function Definition: WNDPROC
-typedef LRESULT WNDPROC(HWND param, UINT param1, WPARAM param2, LPARAM param3);
-

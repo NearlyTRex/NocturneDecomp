@@ -14,10 +14,10 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 004169c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579092
-;   undefined4 DAT_0057909a
-;   undefined4 DAT_005790a2
-;   undefined4 DAT_005790aa
+;   double DOUBLE_00579092 = 1.5
+;   double DOUBLE_0057909a = 3
+;   double DOUBLE_005790a2 = 0.200000000000000
+;   double DOUBLE_005790aa = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -80,20 +80,20 @@ section .text
     FSTP float ptr [ESI + 0x8]          ; 00416b92
     FLD float ptr [EAX + 0xcb0]         ; 00416b95
     FST double ptr [ESP]                ; 00416b9b
-    FCOMP double ptr [0x005790aa]       ; 00416b9e | DAT_005790aa
+    FCOMP double ptr [0x005790aa]       ; 00416b9e | DOUBLE_005790aa
     FNSTSW AX                           ; 00416ba4
     SAHF                                ; 00416ba6
     JNC 0x00416bb6                      ; 00416ba7
         ;   XREF to: 00416bb6 (CONDITIONAL_JUMP)  ; LAB_00416bb6
     FLD double ptr [ESP]                ; 00416ba9
-    FMUL double ptr [0x005790a2]        ; 00416bac | DAT_005790a2
+    FMUL double ptr [0x005790a2]        ; 00416bac | DOUBLE_005790a2
     FSTP float ptr [ESP + 0x8]          ; 00416bb2
     FLD float ptr [ESP + 0x8]           ; 00416bb6
         ;   Label: LAB_00416bb6
     FLD ST0                             ; 00416bba
-    FMUL double ptr [0x00579092]        ; 00416bbc | DAT_00579092
+    FMUL double ptr [0x00579092]        ; 00416bbc | DOUBLE_00579092
     FXCH                                ; 00416bc2
-    FMUL double ptr [0x0057909a]        ; 00416bc4 | DAT_0057909a
+    FMUL double ptr [0x0057909a]        ; 00416bc4 | DOUBLE_0057909a
     ADD EBX,0xc                         ; 00416bca
     FXCH                                ; 00416bcd
     FSTP float ptr [ESP + 0x20]         ; 00416bcf

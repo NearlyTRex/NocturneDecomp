@@ -17,8 +17,8 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_0054449e
     LEA ESI,[EBX + 0x150]               ; 005444a3
     PUSH ESI                            ; 005444a9
-    CALL FUN_0040cb00                   ; 005444aa
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 005444aa
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 005444af
     PUSH 0x5965cd                       ; 005444b2 | = "partStatus"
     PUSH ESI                            ; 005444b7

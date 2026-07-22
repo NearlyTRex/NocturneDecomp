@@ -6,16 +6,16 @@
 ;
 ; Referenced Globals:
 ;   string s_filmreel.kfm_00580f8c
-;   undefined1 DAT_00580f99
-;   undefined1 DAT_00580f9a
-;   undefined1 DAT_00580f9b
-;   undefined1 DAT_00580f9c
+;   TerminatedCString s_movie3_00580f99
+;   undefined4 s_ovie3_00580f99+1
+;   undefined4 s_vie3_00580f99+2
+;   undefined4 s_ie3_00580f99+3
 ;   undefined1* PTR_core_filmreel.cpp_CFilmReel_setup_FUN_00481ca0_0059cf84 = 00481ca0
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDI                            ; 00481c32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00481c33
     PUSH EBX                            ; 00481c37
-    CALL FUN_00409d30                   ; 00481c38
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00481c38
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 00481c3d
     ADD EAX,0x150                       ; 00481c40
     PUSH EAX                            ; 00481c45
@@ -43,16 +43,16 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00481c6a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 00481c6f
-    MOV ESI,0x580f99                    ; 00481c72 | DAT_00580f99
+    MOV ESI,0x580f99                    ; 00481c72 | = "movie3"
     LEA EDI,[EBX + 0x2d0]               ; 00481c77
     PUSH EDI                            ; 00481c7d
-    MOV AL,byte ptr [ESI]               ; 00481c7e | DAT_00580f99 | DAT_00580f9b
+    MOV AL,byte ptr [ESI]               ; 00481c7e | = "movie3" | s_vie3_00580f99+2
         ;   Label: LAB_00481c7e
     MOV byte ptr [EDI],AL               ; 00481c80
     CMP AL,0x0                          ; 00481c82
     JZ 0x00481c96                       ; 00481c84
         ;   XREF to: 00481c96 (CONDITIONAL_JUMP)  ; LAB_00481c96
-    MOV AL,byte ptr [ESI + 0x1]         ; 00481c86 | DAT_00580f9a | DAT_00580f9c
+    MOV AL,byte ptr [ESI + 0x1]         ; 00481c86 | s_ovie3_00580f99+1 | s_ie3_00580f99+3
     ADD ESI,0x2                         ; 00481c89
     MOV byte ptr [EDI + 0x1],AL         ; 00481c8c
     ADD EDI,0x2                         ; 00481c8f

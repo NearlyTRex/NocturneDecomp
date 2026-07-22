@@ -84,8 +84,8 @@ uint FUN_00477890(int param_1)
               (0x02DC9450,param_1,"shotgun-noammo.wav",&fStack_d4);
     return 0;
   }
-  fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)_DAT_0057f13c *
-                         (float10)_DAT_0057f144);
+  fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)3.1415926535000001 *
+                         (float10)0.0055555555555555497);
   fStack_44 = (float)(fVar9 * (float10)*(float *)(param_1 + 0x2e0));
   fStack_38 = (float)core_actor_cpp_getRandomInt_FUN_0040de00(10,0xf);
   iStack_40 = 0;
@@ -109,7 +109,7 @@ uint FUN_00477890(int param_1)
       fStack_bc = fStack_d4 + fStack_e0;
       fStack_b8 = fStack_d0 + fStack_dc;
       fStack_b4 = fStack_cc + fStack_d8;
-      fStack_3c = (float)_DAT_0057f154 / *(float *)(param_1 + 0x2e0);
+      fStack_3c = (float)1.5 / *(float *)(param_1 + 0x2e0);
       fStack_a4 = fStack_e0 * fStack_3c;
       fStack_a0 = fStack_dc * fStack_3c;
       fStack_9c = fStack_d8 * fStack_3c;
@@ -188,7 +188,7 @@ uint FUN_00477890(int param_1)
           fStack_74 = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
           fStack_70 = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
           fStack_6c = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-          fStack_1c = (float)_DAT_0057f15c /
+          fStack_1c = (float)10 /
                       SQRT(fStack_6c * fStack_6c + fStack_74 * fStack_74 + fStack_70 * fStack_70);
           fStack_c8 = fStack_74 * fStack_1c;
           fStack_c4 = fStack_70 * fStack_1c;
@@ -223,7 +223,7 @@ uint FUN_00477890(int param_1)
   }
   fStack_80 = fStack_d4;
   fStack_78 = fStack_cc;
-  fStack_7c = fStack_d0 + _DAT_0057f14c;
+  fStack_7c = fStack_d0 + 1.574918751107038e-314._0_4_;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_80,param_1 + 0x3c);
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (0x02DC9450,param_1,"elephantgun.wav",&fStack_d4);

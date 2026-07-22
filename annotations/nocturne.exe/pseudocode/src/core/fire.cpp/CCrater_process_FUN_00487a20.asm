@@ -12,8 +12,8 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a555
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005812ac
-;   undefined4 DAT_005812b4
+;   double DOUBLE_005812ac = 0.200000000000000
+;   float FLOAT_005812b4 = -0.2000000
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
@@ -48,14 +48,14 @@ section .text
     FADD float ptr [EAX]                ; 00487a52
     FSTP float ptr [EAX]                ; 00487a54
     FLD float ptr [EBX + 0x18]          ; 00487a56
-    FCOMP double ptr [0x005812ac]       ; 00487a59 | DAT_005812ac
+    FCOMP double ptr [0x005812ac]       ; 00487a59 | DOUBLE_005812ac
     FNSTSW AX                           ; 00487a5f
     SAHF                                ; 00487a61
     JBE 0x00487ab0                      ; 00487a62
         ;   XREF to: 00487ab0 (CONDITIONAL_JUMP)  ; LAB_00487ab0
     FLD float ptr [EBX + 0x18]          ; 00487a64
     MOV ESI,0x3f800000                  ; 00487a67
-    FADD float ptr [0x005812b4]         ; 00487a6c | DAT_005812b4
+    FADD float ptr [0x005812b4]         ; 00487a6c | FLOAT_005812b4
     XOR ECX,ECX                         ; 00487a72
     FSTP float ptr [EBX + 0x18]         ; 00487a74
     MOV dword ptr [ESP],ECX             ; 00487a77

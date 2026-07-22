@@ -125,7 +125,7 @@ uint FUN_0048d5d0(int param_1)
         do {
           engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
                     (DAT_005ae704,&uStack_c0,0);
-          fStack_3c = *(float *)(param_1 + 0x150) * _DAT_0058157f;
+          fStack_3c = *(float *)(param_1 + 0x150) * 5.2220990168285998e-315._0_4_;
           fStack_38 = 0.0;
           fStack_34 = 0.0;
           iStack_6c = (int)ROUND(fStack_3c * _DAT_0059d560);
@@ -220,11 +220,11 @@ uint FUN_0048d5d0(int param_1)
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
     if ((*(int *)(param_1 + 0x1a0) == 1) &&
-       (fStack_18 = *(float *)(param_1 + 0x154) * (float)_DAT_00581587,
+       (fStack_18 = *(float *)(param_1 + 0x154) * (float)2,
        *(int *)(param_1 + 0x288) != 0)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
                 (DAT_005ae704,auStack_90);
-      fStack_80 = *(float *)(param_1 + 0x154) * (float)_DAT_0058158f;
+      fStack_80 = *(float *)(param_1 + 0x154) * (float)0.5;
       uStack_84 = 0;
       uStack_7c = 0;
       fStack_c = fStack_80;

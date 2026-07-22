@@ -6,15 +6,15 @@
 ;
 ; XREF[31]:
 ;   FUN_00401010 at 0040115d
-;   FUN_00401bd0 at 00401bfb
-;   FUN_00403070 at 004030a5
-;   FUN_00403460 at 004034e1
-;   FUN_00403630 at 0040373d
 ;   FUN_004571f0 at 00457205
 ;   FUN_004676c0 at 004676ea
 ;   FUN_004a4170 at 004a436d
 ;   FUN_004a57c0 at 004a58ab
 ;   FUN_004f7ae0 at 004f7bb0
+;   FUN_004f8570 at 004f8608
+;   FUN_00522480 at 00522784
+;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d538
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d2a8
 ;   ... and 21 more
 ;
 ; Referenced Globals:

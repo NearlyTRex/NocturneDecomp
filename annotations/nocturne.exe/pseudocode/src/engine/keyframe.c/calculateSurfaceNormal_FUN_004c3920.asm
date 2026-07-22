@@ -15,10 +15,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_0050d910 at 0050dd16
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 at 0041712a
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620 at 00453695
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120 at 00457197
+;   core_set.cpp_FUN_0050d910 at 0050dd16
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c3feb
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080 at 004c40e1
 ;

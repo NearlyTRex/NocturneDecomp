@@ -10,16 +10,16 @@
 ;
 ; Referenced Globals:
 ;   string s_Rule_list_opening_brace_00577e70
-;   undefined4 DAT_00577e88
+;   TerminatedCString s_d_00577e88
 ;   string s_rule_count_00577e8b
-;   string s_ruleCount_00577e96
-;   string s_\"%[^\"]\"_=>_\"%[^\"]\"_00577ea0
-;   undefined4 DAT_00577eb5
-;   string s_Rule_list_closing_brace_00577eba
+;   TerminatedCString s_ruleCount_00577e96
+;   TerminatedCString s_anon_00577ea0
+;   TerminatedCString s_rule_00577eb5
+;   TerminatedCString s_Rule_list_closing_brace_00577eba
 ;   string s_%s{_//_%s_00577ed2
-;   string s_%s%d_//_ruleCount_00577edd
-;   string s_%s\"%s\"_=>_\"%s\"_00577ef0
-;   undefined4 DAT_00577f00
+;   TerminatedCString s_s_d_ruleCount_00577edd
+;   TerminatedCString s_s_s_s_00577ef0
+;   TerminatedCString s_s_00577f00
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 0040d125 (CONDITIONAL_JUMP)  ; LAB_0040d125
     MOV EDI,dword ptr [ESP + 0x14]      ; 0040d143
     PUSH EDI                            ; 0040d147
-    PUSH 0x577e88                       ; 0040d148 | DAT_00577e88
+    PUSH 0x577e88                       ; 0040d148 | = "%d"
     MOV EBP,dword ptr [0x00763e84]      ; 0040d14d | DAT_00763e84
     PUSH EBP                            ; 0040d153
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040d154
@@ -102,7 +102,7 @@ section .text
     JZ 0x0040d1ba                       ; 0040d1aa
         ;   XREF to: 0040d1ba (CONDITIONAL_JUMP)  ; LAB_0040d1ba
     PUSH EBX                            ; 0040d1ac
-    PUSH 0x577eb5                       ; 0040d1ad | DAT_00577eb5
+    PUSH 0x577eb5                       ; 0040d1ad | = "rule"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d1b2
         ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
     ADD ESP,0x8                         ; 0040d1b7
@@ -212,7 +212,7 @@ section .text
         ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
     ADD ESP,0x4                         ; 0040d2a7
     PUSH 0x5acc90                       ; 0040d2aa | DAT_005acc90
-    PUSH 0x577f00                       ; 0040d2af | DAT_00577f00
+    PUSH 0x577f00                       ; 0040d2af | = "%s}\n"
     MOV ECX,dword ptr [0x00763e84]      ; 0040d2b4 | DAT_00763e84
     PUSH ECX                            ; 0040d2ba
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d2bb

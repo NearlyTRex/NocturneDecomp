@@ -9,7 +9,7 @@
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e08
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057ee22
+;   double DOUBLE_0057ee22 = 294912
 ;   undefined4 DAT_01bcde1c
 ;   undefined4 DAT_01bcde20
 ;   undefined4 DAT_01bd1d8c
@@ -173,7 +173,7 @@ section .text
         ;   XREF to: 004753de (CONDITIONAL_JUMP)  ; LAB_004753de
     MOV dword ptr [ESP],EAX             ; 004753b5
     FILD dword ptr [ESP]                ; 004753b8
-    FCOMP double ptr [0x0057ee22]       ; 004753bb | DAT_0057ee22
+    FCOMP double ptr [0x0057ee22]       ; 004753bb | DOUBLE_0057ee22
     FNSTSW AX                           ; 004753c1
     SAHF                                ; 004753c3
     JNC 0x004753de                      ; 004753c4

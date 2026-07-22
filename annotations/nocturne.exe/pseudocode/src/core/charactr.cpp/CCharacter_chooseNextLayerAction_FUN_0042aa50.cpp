@@ -23,8 +23,8 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(int
     _DAT_01cc4804 = 0xfb4;
     FUN_004c8440("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
-  if ((float)_DAT_0057a462 <= *(float *)(param_1 + 0x2a88)) {
-    if (*(float *)(param_1 + 0x2a88) <= (float)_DAT_0057a46a) {
+  if ((float)1.0000000000000001e-05 <= *(float *)(param_1 + 0x2a88)) {
+    if (*(float *)(param_1 + 0x2a88) <= (float)0.99999000000000005) {
       return;
     }
     iVar2 = *(int *)(param_1 + 0x2628 + *(int *)(param_1 + 0x2a84) * 0x38);

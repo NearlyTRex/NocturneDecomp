@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_0057553c = 00175dfe
-;   undefined4 DAT_00598be8
+;   TerminatedCString s_TZ_00598be8
 ;   undefined4 DAT_005c1e08
 ;   undefined4 DAT_005c1e88
 ;   undefined1 DAT_005c1e89
@@ -127,7 +127,7 @@ section .text
     POP ESI                             ; 0056d603
     POP EBX                             ; 0056d604
     RET                                 ; 0056d605
-    PUSH 0x598be8                       ; 0056d608 | DAT_00598be8
+    PUSH 0x598be8                       ; 0056d608 | = "TZ"
         ;   Label: FUN_0056d608
     CALL crt_env.c_getenv_FUN_00566e10  ; 0056d60d
         ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()

@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_0050e370 at 0050e3be
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 at 0050bb6d
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c3be
+;   core_set.cpp_FUN_0050e370 at 0050e3be
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\set.cpp_005905e9+1

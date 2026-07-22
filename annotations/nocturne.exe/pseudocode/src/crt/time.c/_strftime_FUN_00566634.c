@@ -158,16 +158,16 @@ LAB_00566802:
       }
     }
     else if (bVar2 < 0x6f) {
-      pcVar6 = &DAT_00598abc;
+      pcVar6 = "\n";
     }
     else if (bVar2 < 0x77) {
       if (bVar2 < 0x72) {
         if (bVar2 != 0x70) goto LAB_00566a14;
         if ((int)param_4[2] < 0xc) {
-          pcVar6 = &DAT_00598acc;
+          pcVar6 = "AM";
         }
         else {
-          pcVar6 = &DAT_00598ad0;
+          pcVar6 = "PM";
         }
       }
       else {
@@ -177,7 +177,7 @@ LAB_00566802:
           goto LAB_0056666a;
         }
         if (bVar2 != 0x74) goto LAB_00566a14;
-        pcVar6 = &DAT_00598ad4;
+        pcVar6 = "\t";
       }
     }
     else {

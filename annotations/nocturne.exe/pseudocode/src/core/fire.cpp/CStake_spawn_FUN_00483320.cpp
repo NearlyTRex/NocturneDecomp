@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(uint *param_1,uint param_2,uint param_3,float *param_4)
 
 {
@@ -51,7 +49,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(uint *param_1,uint param_2,
   local_34 = 0;
   local_30 = 0x41200000;
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(local_b4,&local_44,&local_38);
-  local_14 = (param_4[2] * local_3c + *param_4 * local_44 + param_4[1] * local_40) * _DAT_005810c8;
+  local_14 = (param_4[2] * local_3c + *param_4 * local_44 + param_4[1] * local_40) * 2.0f;
   local_68 = *param_4 * local_14;
   local_64 = param_4[1] * local_14;
   local_60 = param_4[2] * local_14;

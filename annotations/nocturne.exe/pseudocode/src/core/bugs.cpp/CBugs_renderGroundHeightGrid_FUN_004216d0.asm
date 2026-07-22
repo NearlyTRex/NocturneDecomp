@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579c55
+;   double DOUBLE_00579c55 = 0.25
 ;   undefined4 DAT_0059ae90
 ;   undefined4 DAT_0059aea8
 ;   undefined4 DAT_005ae704
@@ -54,7 +54,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00421733 | DAT_005ae704
     FSTP float ptr [ESP + 0x8]          ; 00421739
     FLD float ptr [EDI + 0x12720]       ; 0042173d
-    FADD double ptr [0x00579c55]        ; 00421743 | DAT_00579c55
+    FADD double ptr [0x00579c55]        ; 00421743 | DOUBLE_00579c55
     MOV EAX,ESP                         ; 00421749
     FSTP float ptr [ESP + 0x4]          ; 0042174b
     FLD float ptr [EAX]                 ; 0042174f

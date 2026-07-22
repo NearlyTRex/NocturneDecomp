@@ -7,7 +7,6 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[39]:
-;   FUN_00409d30 at 00409da4
 ;   FUN_0041fe40 at 004207c1
 ;   FUN_00439f50 at 0043a0f8
 ;   FUN_004950a0 at 004950d3
@@ -17,6 +16,7 @@
 ;   FUN_004b6d80 at 004b74ee
 ;   FUN_004b9fe0 at 004ba1bc
 ;   FUN_004c45a0 at 004c4693
+;   FUN_004fbf20 at 004fc0d2
 ;   ... and 29 more
 ;
 ; Called Functions:

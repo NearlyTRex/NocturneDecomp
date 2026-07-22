@@ -73,7 +73,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
   if (local_e0 != 0) {
     return;
   }
-  pcVar5 = "?headlite.raw" + 1;
+  pcVar5 = "headlite.raw";
   pcVar7 = &DAT_007658cc;
   do {
     cVar1 = *pcVar5;
@@ -169,7 +169,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
   }
   fVar11 = *(float *)(param_1 + 0x2de4) * *(float *)(param_1 + 0x2614);
   if (local_38 < fVar11) {
-    local_38 = *(float *)(param_1 + 0x2614) * (float)_DAT_00579f7a + fVar11;
+    local_38 = *(float *)(param_1 + 0x2614) * (float)0.5 + fVar11;
   }
   local_44 = *(float *)(param_1 + 0x2de4) * *(float *)(param_1 + 0x2614);
   fVar11 = *(float *)(param_1 + 0x2dd8) * *(float *)(param_1 + 0x2614);
@@ -178,7 +178,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
   local_1c = 0;
   do {
     iVar12 = local_1c * 2;
-    fVar9 = (float10)iVar12 * (float10)_DAT_00579f82 * (float10)_DAT_00579f8a;
+    fVar9 = (float10)iVar12 * (float10)3.1415926535000001 * (float10)0.041666666666666699;
     fVar10 = (float10)fsin(fVar9);
     fVar9 = (float10)fcos(fVar9);
     local_80 = local_44;
@@ -230,7 +230,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
   iVar3 = 0;
   *(uint *)(*piVar2 + 0x28) = 0;
   do {
-    fVar9 = (float10)iVar3 * (float10)_DAT_00579f82 * (float10)_DAT_00579f8a;
+    fVar9 = (float10)iVar3 * (float10)3.1415926535000001 * (float10)0.041666666666666699;
     fVar10 = (float10)fsin(fVar9);
     fVar9 = (float10)fcos(fVar9);
     local_84 = (float)((float10)*(float *)(param_1 + 0x2614) *

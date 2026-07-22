@@ -11,7 +11,7 @@ void core_barrier_cpp_CBarrier_ctor_FUN_00411710(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   *(byte ***)(iVar1 + 0x14c) = &PTR_core_barrier_cpp_CBarrier_setup_FUN_00411760_00599d74;
   *(uint *)(iVar1 + 0x158) = 0x40a00000;
   *(byte *)(iVar1 + 0x160) = 0;

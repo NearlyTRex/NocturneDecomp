@@ -94,7 +94,7 @@ void FUN_0049cc10(int param_1)
     wincore_windll_cpp_clearScreen_FUN_0052ee70();
   }
   if (*(int *)(param_1 + 0x240) == 0) {
-    FUN_00509a80(0x01E57284,1);
+    core_set_cpp_FUN_00509a80(0x01E57284,1);
   }
   core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(0x01CEA280);
   if (*(int *)(param_1 + 0x1fc) == 0) {
@@ -151,16 +151,16 @@ void FUN_0049cc10(int param_1)
     local_14 = local_14 - local_44;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (PTR_DAT_005ad350,"screen paint : %3.2f ms\n",
-               ((double)local_14 * _DAT_0058273a * _DAT_00582742 * _DAT_0058274a) /
+               ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                (double)*(float *)(0x01C775EC + 0x264));
   }
   if (*(int *)(param_1 + 0x208) != 0) goto LAB_0049d5b0;
   wincore_windll_cpp_lockFrame_FUN_005322e0();
   if (*(int *)(param_1 + 0x240) != 0) {
-    FUN_0050a260(0x01E57284);
+    core_set_cpp_FUN_0050a260(0x01E57284);
   }
   if (*(int *)(param_1 + 0x210) == 0) {
-    uVar5 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0(&DAT_005825f0);
+    uVar5 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0(BYTE_ARRAY_005825f0);
     iVar4 = getenv(uVar5);
     if (iVar4 != 0) goto LAB_0049cf70;
   }
@@ -175,7 +175,7 @@ LAB_0049cf70:
   }
   FUN_004c2470(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0);
   if (*(int *)(param_1 + 0x278) != 0) {
-    FUN_0050aa70(0x01E57284);
+    core_set_cpp_FUN_0050aa70(0x01E57284);
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(param_1);
   if (_DAT_01c78ac8 != 0) {
@@ -194,7 +194,7 @@ LAB_0049cf70:
       if (_DAT_01c78acc != 0) {
         _sprintf(local_114,"noc%05d.raw",_DAT_01c78ad4);
         _sprintf(local_1dc,"Movie recording active: movie\\%s",local_114);
-        local_34 = engine_dosio_cpp_getFile_FUN_00456a60("movie",local_114,&DAT_005823b3);
+        local_34 = engine_dosio_cpp_getFile_FUN_00456a60("movie",local_114,"wb");
         if (local_34 != 0) {
           local_38 = 0;
           if (0 < 0x00000040) {
@@ -274,13 +274,13 @@ LAB_0049cf70:
     _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                (double)*(float *)(iVar4 + 0x20),(double)*(float *)(iVar4 + 0x24),
                (double)*(float *)(iVar4 + 0x28),
-               _DAT_0058275a * (double)*(float *)(iVar4 + 0x30) * _DAT_00582752,
-               (double)*(float *)(iVar4 + 0x38) * _DAT_00582752 * _DAT_0058275a,
-               (double)*(float *)(iVar4 + 0x34) * _DAT_00582752 * _DAT_0058275a);
+               180 * (double)*(float *)(iVar4 + 0x30) * 0.31830988619288902,
+               (double)*(float *)(iVar4 + 0x38) * 0.31830988619288902 * 180,
+               (double)*(float *)(iVar4 + 0x34) * 0.31830988619288902 * 180);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0);
     _sprintf(local_2dc,"Slew : %s, Virtual Director : %s",
-               (&PTR_DAT_005b9358)[*(int *)(param_1 + 0x1fc)],
-               (&PTR_DAT_005b9358)[*(int *)(param_1 + 0x274)]);
+               (&PTR_s_Off_005b9358)[*(int *)(param_1 + 0x1fc)],
+               (&PTR_s_Off_005b9358)[*(int *)(param_1 + 0x274)]);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0xb);
     pfVar2 = *(float **)(param_1 + 0x9bc);
     if (pfVar2 != (float *)0x0) {
@@ -292,10 +292,10 @@ LAB_0049cf70:
               (&local_5c,&local_58,&local_54,&local_50,local_4c,&local_48);
     local_14 = local_58;
     uVar5 = sound_sndmain_cpp_countActiveSfx_FUN_005275e0
-                      (local_5c,(double)local_58 * _DAT_00582762,local_54,
-                       (double)local_50 * _DAT_00582762,
-                       (double)(local_58 + local_50) * _DAT_00582762,
-                       (double)local_48 * _DAT_00582762);
+                      (local_5c,(double)local_58 * 0.0009765625,local_54,
+                       (double)local_50 * 0.0009765625,
+                       (double)(local_58 + local_50) * 0.0009765625,
+                       (double)local_48 * 0.0009765625);
     _sprintf(local_2dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk",uVar5);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x42);
     engine_texture_cpp_getTextureCacheStats_FUN_00545a80(local_2dc);
@@ -311,7 +311,7 @@ LAB_0049cf70:
       sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(local_604);
       iVar7 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(iVar6,local_604);
       if (iVar7 != 0) {
-        FUN_00402760(0,iVar4,local_604);
+        engine_2d_c_FUN_00402760(0,iVar4,local_604);
         iVar4 = iVar4 + 0xb;
       }
     }

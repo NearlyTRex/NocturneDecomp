@@ -27,7 +27,7 @@
 ; Referenced Globals:
 ;   void* PTR_FindClose_005754c8 = 00175bf0
 ;   void* PTR_FindFirstFileA_005754cc = 00175bfc
-;   undefined4 DAT_00598be4
+;   TerminatedCString s_anon_00598be4
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     TEST AH,AH                          ; 0056c880
     JZ 0x0056c896                       ; 0056c882
         ;   XREF to: 0056c896 (CONDITIONAL_JUMP)  ; LAB_0056c896
-    PUSH 0x598be4                       ; 0056c884 | DAT_00598be4
+    PUSH 0x598be4                       ; 0056c884 | = "*?"
     PUSH ESI                            ; 0056c889
     CALL FUN_00570870                   ; 0056c88a
         ;   XREF to: 00570870 (UNCONDITIONAL_CALL)  ; undefined FUN_00570870()

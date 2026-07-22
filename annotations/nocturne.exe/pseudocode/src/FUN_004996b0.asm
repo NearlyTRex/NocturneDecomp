@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   string s_gb-die[1,6].wav_00582262
 ;   string s_gb-hit[1,6].wav_00582272
-;   undefined4 DAT_00582282
+;   float FLOAT_00582282 = 50
 ;   undefined4 DAT_0059dcb4
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 00499770
     ADD ESP,0x8                         ; 00499773
     FLD float ptr [EBP + -0x4]          ; 00499776
-    FCOMP float ptr [0x00582282]        ; 00499779 | DAT_00582282
+    FCOMP float ptr [0x00582282]        ; 00499779 | FLOAT_00582282
     FNSTSW AX                           ; 0049977f
     SAHF                                ; 00499781
     SETBE AL                            ; 00499782

@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(int param
   int *piVar1;
   
   if ((param_2 < 0) || (1 < param_2)) {
-    _DAT_01cc4800 = "?..\\core\\charactr.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\charactr.cpp";
     _DAT_01cc4804 = 0xbe7;
     FUN_004c8440("CCharacter::pickupObjectNow - invalid hand index");
   }

@@ -9,7 +9,7 @@
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00416cc0 at 00416cd3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057911a
+;   float FLOAT_0057911a = 0.5
 ;   undefined4 DAT_02dd1184
 ;   undefined4 DAT_02dd1188
 ;   undefined4 DAT_02dd118c
@@ -84,7 +84,7 @@ section .text
     FADD float ptr [ESP + 0x10]         ; 00417e08
     FXCH                                ; 00417e0c
     FST float ptr [ESP + 0x24]          ; 00417e0e
-    FLD float ptr [0x0057911a]          ; 00417e12 | DAT_0057911a
+    FLD float ptr [0x0057911a]          ; 00417e12 | FLOAT_0057911a
     FXCH                                ; 00417e18
     FMUL ST1                            ; 00417e1a
     FXCH ST2                            ; 00417e1c

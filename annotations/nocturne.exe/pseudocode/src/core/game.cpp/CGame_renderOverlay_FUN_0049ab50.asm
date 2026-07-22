@@ -33,10 +33,10 @@
 ;   FUN_0049cc10 at 0049d07b
 ;
 ; Referenced Globals:
-;   undefined4 s_%d_-_%s_005823d9+1
-;   undefined4 s__005823d9+9
-;   undefined4 DAT_005823ea
-;   undefined4 DAT_005823f2
+;   TerminatedCString s_d_s_005823da
+;   double DOUBLE_005823e2 = 65535
+;   double DOUBLE_005823ea = 0.600000000000000
+;   double DOUBLE_005823f2 = 0.350000000000000
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005be220
@@ -140,7 +140,7 @@ section .text
     PUSH 0x1c789c0                      ; 0049ac2d | DAT_01c789c0
     MOV ECX,dword ptr [0x01c78ac0]      ; 0049ac32 | DAT_01c78ac0
     PUSH ECX                            ; 0049ac38
-    PUSH 0x5823da                       ; 0049ac39 | s_%d_-_%s_005823d9+1
+    PUSH 0x5823da                       ; 0049ac39 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 0049ac3e
     PUSH EAX                            ; 0049ac42
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049ac43
@@ -257,7 +257,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0049ade8
     MOV EBX,dword ptr [ESP + 0x134]     ; 0049adec
     FLD float ptr [ESP + 0x8]           ; 0049adf3
-    FCOMP double ptr [0x005823ea]       ; 0049adf7 | DAT_005823ea
+    FCOMP double ptr [0x005823ea]       ; 0049adf7 | DOUBLE_005823ea
     FNSTSW AX                           ; 0049adfd
     SAHF                                ; 0049adff
     JNC 0x0049ae07                      ; 0049ae00
@@ -265,7 +265,7 @@ section .text
     MOV EDI,0xfb                        ; 0049ae02
     FLD float ptr [ESP + 0x8]           ; 0049ae07
         ;   Label: LAB_0049ae07
-    FCOMP double ptr [0x005823f2]       ; 0049ae0b | DAT_005823f2
+    FCOMP double ptr [0x005823f2]       ; 0049ae0b | DOUBLE_005823f2
     FNSTSW AX                           ; 0049ae11
     SAHF                                ; 0049ae13
     JNC 0x0049ae1b                      ; 0049ae14
@@ -354,7 +354,7 @@ section .text
     JBE 0x0049b086                      ; 0049af1e
         ;   XREF to: 0049b086 (CONDITIONAL_JUMP)  ; LAB_0049b086
     FLD double ptr [ESP]                ; 0049af24
-    FMUL double ptr [0x005823e2]        ; 0049af27 | s__005823d9+9
+    FMUL double ptr [0x005823e2]        ; 0049af27 | DOUBLE_005823e2
     CALL crt_math.c_round_FUN_00563a30  ; 0049af2d
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x15c]       ; 0049af32

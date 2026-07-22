@@ -33,7 +33,7 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(i
     }
     else if (iVar2 < 0) {
       if (99 < *(int *)(param_1 + 0x258c)) {
-        _DAT_01cc4800 = ">@..\\core\\event.cpp" + 2;
+        _DAT_01cc4800 = "..\\core\\event.cpp";
         _DAT_01cc4804 = 0x9f5;
         FUN_004c8440("Too many persistent events!");
       }

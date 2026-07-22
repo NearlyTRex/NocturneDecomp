@@ -32,11 +32,11 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_0049a8a0(int param_1)
   *(int *)(param_1 + 0x260) = (int)ROUND(fVar3);
   if (iVar1 != 0) {
     fVar3 = (float10)round
-                               (((float10)_DAT_005823be / (float10)_DAT_005b9360) *
+                               (((float10)65536.0f / (float10)_DAT_005b9360) *
                                 (float10)*(float *)(param_1 + 0x1ec));
     *(int *)(param_1 + 0x260) = (int)ROUND(fVar3);
   }
   _DAT_01bd1d80 = *(uint *)(param_1 + 0x260);
-  *(float *)(param_1 + 0x264) = (float)*(int *)(param_1 + 0x260) * (float)_DAT_005823c2;
+  *(float *)(param_1 + 0x264) = (float)*(int *)(param_1 + 0x260) * (float)1.52587890625e-05;
   return;
 }

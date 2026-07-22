@@ -11,7 +11,7 @@ void core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(uint param_1,
 {
   uint uVar1;
   
-  FUN_0040bca0(param_1,param_2,param_3,param_4);
+  core_actor_cpp_FUN_0040bca0(param_1,param_2,param_3,param_4);
   uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41700000);
   *(uint *)(param_3 + 0x2c) = 0x3ca3d70a;
   *(uint *)(param_3 + 4) = uVar1;

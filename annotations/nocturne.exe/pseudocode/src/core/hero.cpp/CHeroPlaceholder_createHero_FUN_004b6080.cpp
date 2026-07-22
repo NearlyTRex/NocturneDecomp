@@ -18,7 +18,7 @@ int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,u
   iVar2 = 0;
   switch(param_2) {
   case 0:
-    pcVar3 = "@CGabriella" + 1;
+    pcVar3 = "CGabriella";
     break;
   case 1:
     pcVar3 = "CSvetlana";

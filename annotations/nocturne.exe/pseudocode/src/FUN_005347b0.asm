@@ -9,8 +9,8 @@
 ;   undefined1* PTR_FUN_005a24b4 = 00534820
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005347b0
         ;   Label: FUN_005347b0
     PUSH EAX                            ; 005347b4
-    CALL FUN_00409d30                   ; 005347b5
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 005347b5
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 005347ba
     PUSH 0x59c080                       ; 005347bd | DAT_0059c080
     PUSH 0x28                           ; 005347c2

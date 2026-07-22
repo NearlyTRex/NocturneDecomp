@@ -9,6 +9,6 @@
 void FUN_004b4440(uint param_1,uint param_2)
 
 {
-  FUN_0040b1a0(param_1,param_2);
+  core_actor_cpp_FUN_0040b1a0(param_1,param_2);
   return;
 }

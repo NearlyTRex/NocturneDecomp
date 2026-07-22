@@ -10,9 +10,9 @@
 ;   string s_45-dry-!.wav_0058540a
 ;   string s_45.wav_00585417
 ;   string s_gatbullet.kfm_0058541e
-;   undefined4 DAT_0058542d
-;   undefined4 DAT_00585435
-;   undefined4 DAT_0058543d
+;   double DOUBLE_0058542d = 1.5
+;   double DOUBLE_00585435 = 1.57491875110704E-314
+;   double DOUBLE_0058543d = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005be368
@@ -103,7 +103,7 @@ section .text
     FSTP float ptr [ESP + 0xc4]         ; 004b287e
     FSTP float ptr [ESP + 0xc8]         ; 004b2885
     FLD float ptr [EBX + 0x2e0]         ; 004b288c
-    FDIVR double ptr [0x0058542d]       ; 004b2892 | DAT_0058542d
+    FDIVR double ptr [0x0058542d]       ; 004b2892 | DOUBLE_0058542d
     FLD float ptr [ESP + 0x114]         ; 004b2898
     FXCH                                ; 004b289f
     FSTP float ptr [ESP + 0x120]        ; 004b28a1
@@ -193,7 +193,7 @@ section .text
     FLD float ptr [ESP + 0x74]          ; 004b29eb
     PUSH EAX                            ; 004b29ef
     MOV EAX,[0x005b80f0]                ; 004b29f0 | DAT_005b80f0
-    FADD float ptr [0x00585435]         ; 004b29f5 | DAT_00585435
+    FADD float ptr [0x00585435]         ; 004b29f5 | DOUBLE_00585435
     PUSH EAX                            ; 004b29fb
     FSTP float ptr [ESP + 0x7c]         ; 004b29fc
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20 ; 004b2a00
@@ -481,7 +481,7 @@ section .text
     FMUL float ptr [ESP + 0x110]        ; 004b2d98
     FADDP                               ; 004b2d9f
     FSQRT                               ; 004b2da1
-    FDIVR double ptr [0x0058543d]       ; 004b2da3 | DAT_0058543d
+    FDIVR double ptr [0x0058543d]       ; 004b2da3 | DOUBLE_0058543d
     FLD float ptr [ESP + 0x108]         ; 004b2da9
     FXCH                                ; 004b2db0
     FSTP float ptr [ESP + 0x134]        ; 004b2db2

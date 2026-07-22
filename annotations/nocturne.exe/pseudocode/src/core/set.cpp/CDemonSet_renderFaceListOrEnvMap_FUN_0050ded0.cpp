@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(uint par
     if (*(int *)(0x01C775EC + 500) != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
       if (iVar1 == 0) {
-        FUN_0050d910(param_1,param_2,param_3,0xffff);
+        core_set_cpp_FUN_0050d910(param_1,param_2,param_3,0xffff);
         return;
       }
     }

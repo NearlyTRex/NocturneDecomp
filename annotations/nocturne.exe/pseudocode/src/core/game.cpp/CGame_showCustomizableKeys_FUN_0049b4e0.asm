@@ -37,7 +37,7 @@
 ;   FUN_0049cc10 at 0049d54f
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_=_%s_00582401+1
+;   TerminatedCString s_s_s_00582402
 ;   string s_Quick_help_0058240a
 ;   string s_F1_=_Toggle_help_00582415
 ;   string s_F2_=_Save_game_00582426
@@ -47,9 +47,9 @@
 ;   string s_F9_=_Quick_load_00582468
 ;   string s_ESC_=_Pause_game_00582478
 ;   string s_Forward_00582489
-;   undefined4 DAT_00582491
-;   undefined4 DAT_00582496
-;   undefined4 DAT_0058249b
+;   TerminatedCString s_Back_00582491
+;   TerminatedCString s_Walk_00582496
+;   TerminatedCString s_Run_0058249b
 ;   string s_Strafe_on_0058249f
 ;   string s_Strafe_left_005824a9
 ;   ... and 31 more
@@ -425,7 +425,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049b982
     PUSH EAX                            ; 0049b985
-    PUSH 0x582402                       ; 0049b986 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049b986 | = "%s = %s"
     LEA EAX,[ESP + 0x40c]               ; 0049b98b
     PUSH EAX                            ; 0049b992
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049b993
@@ -465,7 +465,7 @@ section .text
     MOV EAX,EBX                         ; 0049ba09
     IDIV ECX                            ; 0049ba0b
     ADD dword ptr [0x01c78adc],EAX      ; 0049ba0d | DAT_01c78adc
-    PUSH 0x582491                       ; 0049ba13 | DAT_00582491
+    PUSH 0x582491                       ; 0049ba13 | = "Back"
         ;   Label: LAB_0049ba13
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049ba18
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -477,7 +477,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049ba2a
     PUSH EAX                            ; 0049ba2d
-    PUSH 0x582402                       ; 0049ba2e | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049ba2e | = "%s = %s"
     LEA EAX,[ESP + 0xb0c]               ; 0049ba33
     PUSH EAX                            ; 0049ba3a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049ba3b
@@ -523,7 +523,7 @@ section .text
     CMP dword ptr [EAX + 0x98],0x0      ; 0049bac2 | DAT_01c77684
     JZ 0x0049cb4f                       ; 0049bac9
         ;   XREF to: 0049cb4f (CONDITIONAL_JUMP)  ; LAB_0049cb4f
-    PUSH 0x582496                       ; 0049bacf | DAT_00582496
+    PUSH 0x582496                       ; 0049bacf | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bad4
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0049bad9
@@ -534,7 +534,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bae6
     PUSH EAX                            ; 0049bae9
-    PUSH 0x582402                       ; 0049baea | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049baea | = "%s = %s"
     LEA EAX,[ESP + 0x130c]              ; 0049baef
     PUSH EAX                            ; 0049baf6
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049baf7
@@ -588,7 +588,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bb90
     PUSH EAX                            ; 0049bb93
-    PUSH 0x582402                       ; 0049bb94 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bb94 | = "%s = %s"
     LEA EAX,[ESP + 0x20c]               ; 0049bb99
     PUSH EAX                            ; 0049bba0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bba1
@@ -641,7 +641,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bc3a
     PUSH EAX                            ; 0049bc3d
-    PUSH 0x582402                       ; 0049bc3e | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bc3e | = "%s = %s"
     LEA EAX,[ESP + 0x90c]               ; 0049bc43
     PUSH EAX                            ; 0049bc4a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bc4b
@@ -693,7 +693,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bce3
     PUSH EAX                            ; 0049bce6
-    PUSH 0x582402                       ; 0049bce7 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bce7 | = "%s = %s"
     LEA EAX,[ESP + 0x100c]              ; 0049bcec
     PUSH EAX                            ; 0049bcf3
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bcf4
@@ -746,7 +746,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bd8d
     PUSH EAX                            ; 0049bd90
-    PUSH 0x582402                       ; 0049bd91 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bd91 | = "%s = %s"
     LEA EAX,[ESP + 0x170c]              ; 0049bd96
     PUSH EAX                            ; 0049bd9d
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bd9e
@@ -799,7 +799,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049be37
     PUSH EAX                            ; 0049be3a
-    PUSH 0x582402                       ; 0049be3b | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049be3b | = "%s = %s"
     LEA EAX,[ESP + 0x150c]              ; 0049be40
     PUSH EAX                            ; 0049be47
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049be48
@@ -851,7 +851,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bee0
     PUSH EAX                            ; 0049bee3
-    PUSH 0x582402                       ; 0049bee4 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bee4 | = "%s = %s"
     LEA EAX,[ESP + 0x140c]              ; 0049bee9
     PUSH EAX                            ; 0049bef0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bef1
@@ -904,7 +904,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049bf8a
     PUSH EAX                            ; 0049bf8d
-    PUSH 0x582402                       ; 0049bf8e | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049bf8e | = "%s = %s"
     LEA EAX,[ESP + 0x1a0c]              ; 0049bf93
     PUSH EAX                            ; 0049bf9a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049bf9b
@@ -957,7 +957,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c034
     PUSH EAX                            ; 0049c037
-    PUSH 0x582402                       ; 0049c038 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c038 | = "%s = %s"
     LEA EAX,[ESP + 0x120c]              ; 0049c03d
     PUSH EAX                            ; 0049c044
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c045
@@ -1009,7 +1009,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c0dd
     PUSH EAX                            ; 0049c0e0
-    PUSH 0x582402                       ; 0049c0e1 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c0e1 | = "%s = %s"
     LEA EAX,[ESP + 0x190c]              ; 0049c0e6
     PUSH EAX                            ; 0049c0ed
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c0ee
@@ -1050,7 +1050,7 @@ section .text
     MOV EAX,EBX                         ; 0049c166
     IDIV ECX                            ; 0049c168
     ADD dword ptr [0x01c78adc],EAX      ; 0049c16a | DAT_01c78adc
-    PUSH 0x582501                       ; 0049c170 | DAT_00582501
+    PUSH 0x582501                       ; 0049c170 | = "Draw"
         ;   Label: LAB_0049c170
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c175
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1062,7 +1062,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c187
     PUSH EAX                            ; 0049c18a
-    PUSH 0x582402                       ; 0049c18b | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c18b | = "%s = %s"
     LEA EAX,[ESP + 0x10c]               ; 0049c190
     PUSH EAX                            ; 0049c197
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c198
@@ -1115,7 +1115,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c231
     PUSH EAX                            ; 0049c234
-    PUSH 0x582402                       ; 0049c235 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c235 | = "%s = %s"
     LEA EAX,[ESP + 0x80c]               ; 0049c23a
     PUSH EAX                            ; 0049c241
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c242
@@ -1167,7 +1167,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c2da
     PUSH EAX                            ; 0049c2dd
-    PUSH 0x582402                       ; 0049c2de | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c2de | = "%s = %s"
     LEA EAX,[ESP + 0xf0c]               ; 0049c2e3
     PUSH EAX                            ; 0049c2ea
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c2eb
@@ -1208,7 +1208,7 @@ section .text
     MOV EAX,EBX                         ; 0049c363
     IDIV ECX                            ; 0049c365
     ADD dword ptr [0x01c78adc],EAX      ; 0049c367 | DAT_01c78adc
-    PUSH 0x58251a                       ; 0049c36d | DAT_0058251a
+    PUSH 0x58251a                       ; 0049c36d | = "Jump"
         ;   Label: LAB_0049c36d
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c372
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1220,7 +1220,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c384
     PUSH EAX                            ; 0049c387
-    PUSH 0x582402                       ; 0049c388 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c388 | = "%s = %s"
     LEA EAX,[ESP + 0x60c]               ; 0049c38d
     PUSH EAX                            ; 0049c394
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c395
@@ -1273,7 +1273,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c42e
     PUSH EAX                            ; 0049c431
-    PUSH 0x582402                       ; 0049c432 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c432 | = "%s = %s"
     LEA EAX,[ESP + 0xd0c]               ; 0049c437
     PUSH EAX                            ; 0049c43e
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c43f
@@ -1325,7 +1325,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c4d7
     PUSH EAX                            ; 0049c4da
-    PUSH 0x582402                       ; 0049c4db | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c4db | = "%s = %s"
     LEA EAX,[ESP + 0x30c]               ; 0049c4e0
     PUSH EAX                            ; 0049c4e7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c4e8
@@ -1378,7 +1378,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c581
     PUSH EAX                            ; 0049c584
-    PUSH 0x582402                       ; 0049c585 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c585 | = "%s = %s"
     LEA EAX,[ESP + 0xa0c]               ; 0049c58a
     PUSH EAX                            ; 0049c591
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c592
@@ -1431,7 +1431,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c62b
     PUSH EAX                            ; 0049c62e
-    PUSH 0x582402                       ; 0049c62f | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c62f | = "%s = %s"
     LEA EAX,[ESP + 0x110c]              ; 0049c634
     PUSH EAX                            ; 0049c63b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c63c
@@ -1483,7 +1483,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c6d4
     PUSH EAX                            ; 0049c6d7
-    PUSH 0x582402                       ; 0049c6d8 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c6d8 | = "%s = %s"
     LEA EAX,[ESP + 0x180c]              ; 0049c6dd
     PUSH EAX                            ; 0049c6e4
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c6e5
@@ -1536,7 +1536,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c77e
     PUSH EAX                            ; 0049c781
-    PUSH 0x582402                       ; 0049c782 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c782 | = "%s = %s"
     LEA EAX,[ESP + 0xc]                 ; 0049c787
     PUSH EAX                            ; 0049c78b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c78c
@@ -1589,7 +1589,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c825
     PUSH EAX                            ; 0049c828
-    PUSH 0x582402                       ; 0049c829 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c829 | = "%s = %s"
     LEA EAX,[ESP + 0x70c]               ; 0049c82e
     PUSH EAX                            ; 0049c835
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c836
@@ -1641,7 +1641,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c8d1
     PUSH EAX                            ; 0049c8d4
-    PUSH 0x582402                       ; 0049c8d5 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c8d5 | = "%s = %s"
     LEA EAX,[ESP + 0xe0c]               ; 0049c8da
     PUSH EAX                            ; 0049c8e1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c8e2
@@ -1694,7 +1694,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049c97e
     PUSH EAX                            ; 0049c981
-    PUSH 0x582402                       ; 0049c982 | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049c982 | = "%s = %s"
     LEA EAX,[ESP + 0x50c]               ; 0049c987
     PUSH EAX                            ; 0049c98e
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049c98f
@@ -1747,7 +1747,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049ca2b
     PUSH EAX                            ; 0049ca2e
-    PUSH 0x582402                       ; 0049ca2f | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049ca2f | = "%s = %s"
     LEA EAX,[ESP + 0xc0c]               ; 0049ca34
     PUSH EAX                            ; 0049ca3b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049ca3c
@@ -1799,7 +1799,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049cad7
     PUSH EAX                            ; 0049cada
-    PUSH 0x582402                       ; 0049cadb | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049cadb | = "%s = %s"
     LEA EAX,[ESP + 0x1b0c]              ; 0049cae0
     PUSH EAX                            ; 0049cae7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049cae8
@@ -1835,7 +1835,7 @@ section .text
     POP ESI                             ; 0049cb4c
     POP EBX                             ; 0049cb4d
     RET                                 ; 0049cb4e
-    PUSH 0x58249b                       ; 0049cb4f | DAT_0058249b
+    PUSH 0x58249b                       ; 0049cb4f | = "Run"
         ;   Label: LAB_0049cb4f
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049cb54
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1847,7 +1847,7 @@ section .text
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
     ADD ESP,0x4                         ; 0049cb66
     PUSH EAX                            ; 0049cb69
-    PUSH 0x582402                       ; 0049cb6a | s_%s_=_%s_00582401+1
+    PUSH 0x582402                       ; 0049cb6a | = "%s = %s"
     LEA EAX,[ESP + 0x160c]              ; 0049cb6f
     PUSH EAX                            ; 0049cb76
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049cb77

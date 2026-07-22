@@ -37,7 +37,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,flo
                         (*(uint *)(0x01E57284 + local_1c + 0x14cd70),_DAT_02ddf54c);
       if ((iVar1 != 0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
-                            (PTR_s_darkPoint__00584eac_1_005b9654,iVar1,0), iVar2 != 0)) {
+                            (PTR_s_darkPoint_00584ead_005b9654,iVar1,0), iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;
         for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x150bf4); iVar4 = iVar4 + 1) {

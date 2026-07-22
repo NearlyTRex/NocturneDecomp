@@ -42,9 +42,9 @@ float core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(int param_1,fl
   local_18 = param_2 + 1;
   local_54 = param_2[2];
   local_50 = *param_2;
-  local_58 = *local_18 + _DAT_0057e1e2;
+  local_58 = *local_18 + 2.0f;
   fVar3 = param_2[2];
-  local_4c = *local_18 + _DAT_0057e1e6;
+  local_4c = *local_18 + -10.0f;
   fVar1 = *(float *)(param_1 + 0x2c);
   fVar6 = (float10)local_4c;
   fVar2 = *(float *)(param_1 + 0x14);

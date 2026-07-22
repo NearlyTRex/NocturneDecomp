@@ -113,8 +113,8 @@
 ;   core_cloth.cpp_CCloth_process_FUN_00436e50 at 00436e6e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057ae25
-;   undefined4 DAT_0057ae2d
+;   double DOUBLE_0057ae25 = 9999
+;   double DOUBLE_0057ae2d = 0.0100000000000000
 ;   undefined4 DAT_0057ae35
 ;   undefined4 DAT_0059b360
 ;   undefined4 DAT_005be368
@@ -145,14 +145,14 @@ section .text
     AND ESP,0xfffffff8                  ; 00436e8c
     MOV EDI,dword ptr [EBP + 0x14]      ; 00436e8f
     FLD float ptr [EBP + 0x24]          ; 00436e92
-    FCOMP double ptr [0x0057ae25]       ; 00436e95 | DAT_0057ae25
+    FCOMP double ptr [0x0057ae25]       ; 00436e95 | DOUBLE_0057ae25
     FNSTSW AX                           ; 00436e9b
     SAHF                                ; 00436e9d
     JNC 0x004377a7                      ; 00436e9e
         ;   XREF to: 004377a7 (CONDITIONAL_JUMP)  ; LAB_004377a7
     FLD float ptr [EBP + 0x20]          ; 00436ea4
         ;   Label: LAB_00436ea4
-    FCOMP double ptr [0x0057ae2d]       ; 00436ea7 | DAT_0057ae2d
+    FCOMP double ptr [0x0057ae2d]       ; 00436ea7 | DOUBLE_0057ae2d
     FNSTSW AX                           ; 00436ead
     SAHF                                ; 00436eaf
     JNC 0x00436eb9                      ; 00436eb0

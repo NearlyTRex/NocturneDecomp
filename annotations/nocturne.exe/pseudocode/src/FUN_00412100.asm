@@ -4,10 +4,13 @@
 ; int FUN_00412100(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004120d0 at 004120e3
+;
 ; Referenced Globals:
 ;   string s_batcreat.dfm_0057883c
-;   undefined4 DAT_00599fb0
-;   undefined4 DAT_00599fb4
+;   float FLOAT_00599fb0 = 50
+;   float FLOAT_00599fb4 = 100
 ;   undefined1* PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4 = 00412160
 ;
 ; Called Functions:
@@ -32,8 +35,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x599fc4 ; 0041211b | PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00412122
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
-    FLD float ptr [0x00599fb0]          ; 00412127 | DAT_00599fb0
-    FLD float ptr [0x00599fb4]          ; 0041212d | DAT_00599fb4
+    FLD float ptr [0x00599fb0]          ; 00412127 | FLOAT_00599fb0
+    FLD float ptr [0x00599fb4]          ; 0041212d | FLOAT_00599fb4
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 00412133
     ADD ESP,0x8                         ; 0041213d
     MOV dword ptr [EBX + 0x2dd8],0x3fc00000 ; 00412140

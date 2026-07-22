@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   string s_Shot_thru_the_heart_0057d812
-;   undefined4 DAT_0057d82e
+;   double DOUBLE_0057d82e = 20
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;
@@ -43,7 +43,7 @@ section .text
     PUSH 0x57d812                       ; 0045a6c9 | = "Shot thru the heart\n"
     MOV EDI,dword ptr [0x005ad350]      ; 0045a6ce | PTR_DAT_005ad350
     FLD ST0                             ; 0045a6d4
-    FMUL double ptr [0x0057d82e]        ; 0045a6d6 | DAT_0057d82e
+    FMUL double ptr [0x0057d82e]        ; 0045a6d6 | DOUBLE_0057d82e
     PUSH EDI                            ; 0045a6dc | DAT_0077ad0c
     FSTP ST1                            ; 0045a6dd
     FSTP float ptr [EAX + 0x4]          ; 0045a6df

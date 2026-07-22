@@ -26,7 +26,7 @@
 ;   undefined4 DAT_00597c51
 ;   undefined4 DAT_00597c59
 ;   undefined4 DAT_00597c61
-;   undefined4 DAT_00597c69
+;   float FLOAT_00597c69 = 100
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
@@ -89,7 +89,7 @@ section .text
     JNC 0x00554a89                      ; 005549e5
         ;   XREF to: 00554a89 (CONDITIONAL_JUMP)  ; LAB_00554a89
     FLD float ptr [EBX + 0x2ddfa2c]     ; 005549eb
-    FADD float ptr [0x00597c69]         ; 005549f1 | DAT_00597c69
+    FADD float ptr [0x00597c69]         ; 005549f1 | FLOAT_00597c69
     MOV EAX,dword ptr [EBP + 0x14]      ; 005549f7
     FSTP float ptr [EBX + 0x2ddfa2c]    ; 005549fa
     CMP dword ptr [EAX],0x1             ; 00554a00

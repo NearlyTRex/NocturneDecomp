@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 99,
-    "cross_reference_count": 47,
+    "complexity_score": 84,
+    "cross_reference_count": 50,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 80
   },
   "cross_references": [
+    {
+      "addr": "0040f390",
+      "from_addr": "0040f396",
+      "name": "FUN_0040f390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f7d0",
+      "from_addr": "0040f7d6",
+      "name": "FUN_0040f7d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0043cc50",
       "from_addr": "0043cc56",
@@ -212,6 +223,12 @@
       "addr": "00546da0",
       "from_addr": "00546da6",
       "name": "FUN_00546da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040ecf0",
+      "from_addr": "0040ecf6",
+      "name": "core_ammo.cpp_FUN_0040ecf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -473,9 +490,9 @@
     },
     {
       "addr": "00577f15",
-      "name": "DAT_00577f15",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00577f15",
+      "type": "float",
+      "value": "1.087655E-38"
     },
     {
       "addr": "00577f19",
@@ -503,8 +520,41 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 47,
+    "call_site_count": 50,
     "call_sites": [
+      {
+        "call_addr": "0040ecf6",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_FUN_0040ecf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040f396",
+        "call_type": "direct",
+        "caller": "FUN_0040f390",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040f7d6",
+        "call_type": "direct",
+        "caller": "FUN_0040f7d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
       {
         "call_addr": "004796d8",
         "call_type": "direct",
@@ -575,39 +625,6 @@
         "call_addr": "00411b56",
         "call_type": "direct",
         "caller": "core_bat.cpp_CBat_archive_FUN_00411b50",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00414ef6",
-        "call_type": "direct",
-        "caller": "core_battery.cpp_CBattery_archive_FUN_00414ef0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0041657c",
-        "call_type": "direct",
-        "caller": "core_bodypart.cpp_CBodyPart_archive_FUN_00416570",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0041ec70",
-        "call_type": "direct",
-        "caller": "core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -688,14 +705,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00577f15",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(local_8,&DAT_00577f15);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_1",
@@ -729,8 +738,8 @@
       },
       {
         "class_name": "CDemonActor",
-        "offset": 180,
-        "vtable_addr": "005992ec"
+        "offset": 204,
+        "vtable_addr": "005992d4"
       },
       {
         "class_name": "CDemonActor",

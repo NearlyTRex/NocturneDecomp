@@ -127,9 +127,9 @@ float * core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(float *param_1,
 float * core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(float *param_1,float *param_2,float *param_3);
 float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,float *param_2);
 void core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void FUN_0044e1c0(undefined4 param_1);
+void core_dlight_cpp_FUN_0044e1c0(undefined4 param_1);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1);
-void FUN_0044e2c0(int param_1);
+void core_dlight_cpp_FUN_0044e2c0(int param_1);
 uint __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int param_1);
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0(void);
 void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(int param_1);
@@ -141,10 +141,10 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int p
 void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(int param_1);
 void core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(int param_1);
 int __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60(int param_1,int *param_2,byte param_3,byte param_4);
-void FUN_0044ed50(int param_1,int param_2,int param_3);
-void FUN_0044ed80(int param_1,int param_2,int param_3,int param_4);
+void core_dlight_cpp_FUN_0044ed50(int param_1,int param_2,int param_3);
+void core_dlight_cpp_FUN_0044ed80(int param_1,int param_2,int param_3,int param_4);
 void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(int param_1);
-void FUN_0044f0b0(int param_1);
+void core_dlight_cpp_FUN_0044f0b0(int param_1);
 void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(int param_1);
-void FUN_0044f9b0(int param_1);
+void core_dlight_cpp_FUN_0044f9b0(int param_1);
 

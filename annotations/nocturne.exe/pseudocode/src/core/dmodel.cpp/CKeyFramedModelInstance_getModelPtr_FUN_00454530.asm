@@ -4,18 +4,18 @@
 ; undefined4 __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(int param_1)
 ;
 ;
-; XREF[75]:
-;   FUN_0040fff0 at 0040ffff
+; XREF[79]:
+;   FUN_0040f2b0 at 0040f302
+;   FUN_0040f340 at 0040f34f
+;   FUN_0040f860 at 0040f86f
 ;   FUN_004100a0 at 004100b9
-;   FUN_00411ea0 at 00411ec1
 ;   FUN_00414f50 at 00414f5f
 ;   FUN_00415430 at 00415473
 ;   FUN_00415760 at 004157e9
 ;   FUN_0041ea00 at 0041ea10
 ;   FUN_0041eaf0 at 0041eb00
 ;   FUN_0041ebe0 at 0041ec01
-;   FUN_0043ccc0 at 0043cccf
-;   ... and 65 more
+;   ... and 69 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dmodel.cpp_0057cea8

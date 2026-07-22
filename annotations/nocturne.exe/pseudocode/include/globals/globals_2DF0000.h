@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/pe.h"
+#include "system/windef.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2DF0000

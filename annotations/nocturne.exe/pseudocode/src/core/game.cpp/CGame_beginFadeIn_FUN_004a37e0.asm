@@ -9,7 +9,7 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500b56
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00583afa
+;   float FLOAT_00583afa = 0.5
 ;   undefined4 DAT_0059de84
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
@@ -43,7 +43,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004a36b2
     FADD float ptr [EDX + 0x4]          ; 004a36b5
     FXCH                                ; 004a36b8
-    FLD float ptr [0x00583afa]          ; 004a36ba | DAT_00583afa
+    FLD float ptr [0x00583afa]          ; 004a36ba | FLOAT_00583afa
     FXCH                                ; 004a36c0
     FMUL ST1                            ; 004a36c2
     FXCH ST2                            ; 004a36c4

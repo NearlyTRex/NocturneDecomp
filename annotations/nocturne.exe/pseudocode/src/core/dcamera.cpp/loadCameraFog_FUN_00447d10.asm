@@ -14,7 +14,7 @@
 ;   string s_%d,%d,%d_0057bb13
 ;   string s_%f,%f,%f_0057bb1d
 ;   string s_%f,%f_0057bb27
-;   undefined4 DAT_0057bb2e
+;   TerminatedCString s_f_0057bb2e
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_00564b20
@@ -85,7 +85,7 @@ section .text
     ADD EBX,0x20                        ; 00447dad
         ;   Label: LAB_00447dad
     PUSH EBX                            ; 00447db0
-    PUSH 0x57bb2e                       ; 00447db1 | DAT_0057bb2e
+    PUSH 0x57bb2e                       ; 00447db1 | = "%f\n"
     PUSH ESI                            ; 00447db6
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00447db7
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

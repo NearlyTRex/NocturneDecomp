@@ -14,7 +14,7 @@ int __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_core_trigger_cpp_CTrigger_setup_FUN_00547a00_005a3664;
   *(uint *)(iVar2 + 0x158) = 0x40a00000;
   *(uint *)(iVar2 + 0x15c) = 0x41100000;

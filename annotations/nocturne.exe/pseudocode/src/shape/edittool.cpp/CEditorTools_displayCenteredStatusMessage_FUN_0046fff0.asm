@@ -14,7 +14,7 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb0c
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
@@ -104,7 +104,7 @@ section .text
     POP ESI                             ; 0047009c
     POP EBX                             ; 0047009d
     RET                                 ; 0047009e
-    MOV ECX,0x57e4fa                    ; 0047009f | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 0047009f | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_0047009f
     MOV EBX,0x8b                        ; 004700a4
     PUSH 0x57e510                       ; 004700a9 | = "gEdFont must be set by the application."

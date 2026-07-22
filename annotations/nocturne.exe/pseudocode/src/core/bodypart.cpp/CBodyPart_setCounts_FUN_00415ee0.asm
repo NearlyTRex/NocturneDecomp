@@ -13,7 +13,7 @@
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 at 0051a11e
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\bodypart.cpp_00578eac+2
+;   TerminatedCString s_core_bodypart_cpp_00578eae
 ;   string s_CBodyPart::setCounts_-_out_of_me_00578ec3
 ;   string s_..\\core\\bodypart.cpp_00578f08
 ;   string s_CBodyPart::setCounts_-_out_of_me_00578f1d
@@ -94,7 +94,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x16c]     ; 00415fad
         ;   Label: LAB_00415fad
     PUSH EDI                            ; 00415fb3
-    MOV ECX,0x578eae                    ; 00415fb4 | s_..\core\bodypart.cpp_00578eac+2
+    MOV ECX,0x578eae                    ; 00415fb4 | = "..\\core\\bodypart.cpp"
     MOV ESI,0xb2                        ; 00415fb9
     PUSH 0x578ec3                       ; 00415fbe | = "CBodyPart::setCounts - out of memory ..."
     MOV dword ptr [0x01cc4800],ECX      ; 00415fc3 | DAT_01cc4800

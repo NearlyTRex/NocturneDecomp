@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005090f0 at 00509113
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50 at 0043ff8f
+;   core_set.cpp_FUN_005090f0 at 00509113
 ;
 ; *****************************************************************************
 

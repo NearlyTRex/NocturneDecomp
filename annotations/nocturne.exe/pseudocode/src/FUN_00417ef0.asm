@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0040b200
+;   core_actor.cpp_FUN_0040b200
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     RET                                 ; 00417eff
     PUSH EAX                            ; 00417f00
         ;   Label: LAB_00417f00
-    CALL FUN_0040b200                   ; 00417f01
-        ;   XREF to: 0040b200 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b200()
+    CALL core_actor.cpp_FUN_0040b200    ; 00417f01
+        ;   XREF to: 0040b200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b200()
     ADD ESP,0x4                         ; 00417f06
     RET                                 ; 00417f09
 

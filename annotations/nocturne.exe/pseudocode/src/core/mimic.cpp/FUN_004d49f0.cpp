@@ -28,7 +28,7 @@ void FUN_004d49f0(int param_1,uint param_2)
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);
     return;
   }
-  iVar2 = FUN_004259f0(param_1,param_2);
+  iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar2 != 0) {
     if (*(int *)(param_1 + 0x4691c) < 2) {
       if ((*(int *)(param_1 + 0x4691c) < 1) &&

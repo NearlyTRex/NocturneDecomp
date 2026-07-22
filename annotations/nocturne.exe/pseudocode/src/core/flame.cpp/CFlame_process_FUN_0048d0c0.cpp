@@ -53,13 +53,13 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(int param_1,float param_
                          (0x01C03A10,param_1 + 0x214), iVar2 != 0 &&
       (*(uint *)(param_1 + 0x1ac) = 0, *(int *)(param_1 + 0x1a0) != 3)))) {
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-              (0x01C08D04,param_1 + 0x20,*(float *)(param_1 + 0x154) * (float)_DAT_00581557,0,
+              (0x01C08D04,param_1 + 0x20,*(float *)(param_1 + 0x154) * (float)0.5,0,
                0xffff);
   }
   if (*(int *)(param_1 + 0x1ac) != 0) {
-    *(float *)(param_1 + 0x15c) = param_2 * (float)_DAT_0058155f + *(float *)(param_1 + 0x15c);
+    *(float *)(param_1 + 0x15c) = param_2 * (float)16 + *(float *)(param_1 + 0x15c);
     if (0x40ffffff < *(int *)(param_1 + 0x15c)) {
-      *(float *)(param_1 + 0x15c) = *(float *)(param_1 + 0x15c) + _DAT_00581567;
+      *(float *)(param_1 + 0x15c) = *(float *)(param_1 + 0x15c) + 1.5997858892824123e-314._0_4_;
     }
     *(uint *)(param_1 + 0x30) = 0;
     *(uint *)(param_1 + 0x38) = 0;
@@ -95,17 +95,17 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(int param_1,float param_
         fStack_40 = *(float *)(iVar2 + 0x20) - *(float *)(param_1 + 0x20);
         fStack_3c = *(float *)(iVar2 + 0x24) - *(float *)(param_1 + 0x24);
         fStack_38 = *(float *)(iVar2 + 0x28) - *(float *)(param_1 + 0x28);
-        if (((float)_DAT_0058156f < fStack_3c) && (fStack_3c < fStack_78)) {
+        if (((float)-0.5 < fStack_3c) && (fStack_3c < fStack_78)) {
           fVar4 = (float10)round
                                      (((float10)*(float *)(param_1 + 0x150) +
-                                      (float10)*(float *)(param_1 + 0x158)) * (float10)_DAT_00581577
-                                     );
+                                      (float10)*(float *)(param_1 + 0x158)) *
+                                      (float10)0.25);
           fStack_18 = (float)(int)ROUND(fVar4);
           fStack_1c = (float)(int)fStack_18;
           local_14 = fStack_18;
           if ((ABS(fStack_44) < fStack_78 + fStack_1c) && (ABS(fStack_3c) < fStack_78 + fStack_1c))
           {
-            FUN_00427730(iVar2,(float *)(param_1 + 0x20),0,0,0x40000000,1);
+            core_charactr_cpp_FUN_00427730(iVar2,(float *)(param_1 + 0x20),0,0,0x40000000,1);
           }
         }
       }
@@ -129,15 +129,16 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(int param_1,float param_
           fStack_34 = fVar1;
           fVar4 = (float10)round
                                      (((float10)*(float *)(param_1 + 0x150) +
-                                      (float10)*(float *)(param_1 + 0x158)) * (float10)_DAT_00581577
-                                     );
+                                      (float10)*(float *)(param_1 + 0x158)) *
+                                      (float10)0.25);
           iStack_24 = (int)ROUND(fVar4);
-          if (((float)_DAT_0058156f < fVar1) && (fStack_38 < fStack_58)) {
+          if (((float)-0.5 < fVar1) && (fStack_38 < fStack_58)) {
             fStack_28 = (float)iStack_24;
             if ((ABS(fStack_3c) < fStack_54 + fStack_28) && (ABS(fStack_34) < fStack_54 + fStack_28)
                ) {
               fStack_18 = (float)iStack_24;
-              FUN_00427730(iVar2,(float *)(param_1 + 0x20),0,0,0x40000000,0,uVar5);
+              core_charactr_cpp_FUN_00427730(iVar2,(float *)(param_1 + 0x20),0,0,0x40000000,0,uVar5)
+              ;
             }
           }
         }

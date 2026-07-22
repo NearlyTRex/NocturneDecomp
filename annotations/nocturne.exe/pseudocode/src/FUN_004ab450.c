@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004ab450(int param_1,int param_2)
 
 {
@@ -33,7 +31,7 @@ void FUN_004ab450(int param_1,int param_2)
       *(uint *)(param_1 + 0xbd98) = *(uint *)(param_1 + 0x24);
       *(uint *)(param_1 + 0xbd9c) = *(uint *)(param_1 + 0x28);
     }
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"@go berzerk\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"go berzerk\n");
   }
   if (*(int *)(param_2 + 0x30) == 0x6c) {
     *(uint *)(param_1 + 0xbd80) = 0x40800000;
@@ -51,7 +49,7 @@ void FUN_004ab450(int param_1,int param_2)
   if (*(float *)(param_1 + 0x2434) <= 0.0) {
     *(uint *)(param_1 + 0x2434) = 0;
     if (*(int *)(param_1 + 0xbd14) != 0) {
-      FUN_00427a60(param_1);
+      core_charactr_cpp_FUN_00427a60(param_1);
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
       return;
     }
@@ -92,7 +90,7 @@ void FUN_004ab450(int param_1,int param_2)
         *(uint *)(param_1 + 0xbd7c) = uVar3;
       }
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40800000,0x41200000);
-      fVar4 = (float10)_DAT_00584e8d;
+      fVar4 = (float10)65536;
       *(uint *)(param_1 + 0xbd30) = 0xa0000;
       uVar6 = 0x41c80000;
       iVar1 = *(int *)(param_1 + 0x14c);

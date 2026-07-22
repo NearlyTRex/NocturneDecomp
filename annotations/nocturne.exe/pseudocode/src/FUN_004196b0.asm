@@ -13,16 +13,16 @@
 ;   FUN_00418a00 at 0041936a
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_can't_pick_up_%s,_sombody_els_0057937d+1
+;   TerminatedCString s_s_can_t_pick_up_s_sombod_0057937e
 ;   string s_%s_can't_pick_up_%s,_giving_up!!_005793b0
 ;   string s_%s_beginning_to_pickup_%s_005793d4
 ;   string s_CBodyPart_005793ef
 ;   string s_%s_is_going_to_try_to_pick_up_%s_005793f9
-;   undefined4 DAT_0057941e
-;   undefined4 DAT_00579426
-;   undefined4 DAT_0057942e
-;   undefined4 DAT_00579436
-;   undefined4 DAT_0057943e
+;   double DOUBLE_0057941e = 0.333333333333333
+;   double DOUBLE_00579426 = 5
+;   double DOUBLE_0057942e = 0.400000000000000
+;   double DOUBLE_00579436 = 2
+;   double DOUBLE_0057943e = 6
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
@@ -165,8 +165,8 @@ section .text
     FMUL ST0                            ; 00419818
     FADDP                               ; 0041981a
     FSQRT                               ; 0041981c
-    FMUL double ptr [0x0057941e]        ; 0041981e | DAT_0057941e
-    FSUBR double ptr [0x00579426]       ; 00419824 | DAT_00579426
+    FMUL double ptr [0x0057941e]        ; 0041981e | DOUBLE_0057941e
+    FSUBR double ptr [0x00579426]       ; 00419824 | DOUBLE_00579426
     FLD1                                ; 0041982a
     FCOMPP                              ; 0041982c
     FNSTSW AX                           ; 0041982e
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[ESP + 0x8c]                ; 004198cb
     FLD float ptr [ESP + 0x58]          ; 004198d2
     PUSH EAX                            ; 004198d6
-    FADD double ptr [0x0057942e]        ; 004198d7 | DAT_0057942e
+    FADD double ptr [0x0057942e]        ; 004198d7 | DOUBLE_0057942e
     PUSH EBX                            ; 004198dd
     FSTP float ptr [ESP + 0x84]         ; 004198de
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004198e5
@@ -268,7 +268,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0xbd30]    ; 00419944
     PUSH ESI                            ; 0041994a
     PUSH EAX                            ; 0041994b
-    PUSH 0x57937e                       ; 0041994c | s_%s_can't_pick_up_%s,_sombody_els_0057937d+1
+    PUSH 0x57937e                       ; 0041994c | = "%s can't pick up %s, sombody else bea..."
     MOV EDI,EAX                         ; 00419951
     MOV EAX,[0x005ad350]                ; 00419953 | PTR_DAT_005ad350
     PUSH EAX                            ; 00419958 | DAT_0077ad0c
@@ -387,13 +387,13 @@ section .text
         ;   XREF to: 004197c8 (CONDITIONAL_JUMP)  ; LAB_004197c8
     FLD float ptr [ESP + 0x84]          ; 00419a8f
     FST double ptr [ESP]                ; 00419a96
-    FCOMP double ptr [0x00579436]       ; 00419a99 | DAT_00579436
+    FCOMP double ptr [0x00579436]       ; 00419a99 | DOUBLE_00579436
     FNSTSW AX                           ; 00419a9f
     SAHF                                ; 00419aa1
     JBE 0x004197c8                      ; 00419aa2
         ;   XREF to: 004197c8 (CONDITIONAL_JUMP)  ; LAB_004197c8
     FLD double ptr [ESP]                ; 00419aa8
-    FCOMP double ptr [0x0057943e]       ; 00419aab | DAT_0057943e
+    FCOMP double ptr [0x0057943e]       ; 00419aab | DOUBLE_0057943e
     FNSTSW AX                           ; 00419ab1
     SAHF                                ; 00419ab3
     JNC 0x004197c8                      ; 00419ab4
@@ -430,7 +430,7 @@ section .text
     FADDP                               ; 00419b31
     FSQRT                               ; 00419b33
     FST float ptr [ESP + 0x8]           ; 00419b35
-    FCOMP double ptr [0x00579426]       ; 00419b39 | DAT_00579426
+    FCOMP double ptr [0x00579426]       ; 00419b39 | DOUBLE_00579426
     FNSTSW AX                           ; 00419b3f
     SAHF                                ; 00419b41
     JC 0x004197c8                       ; 00419b42

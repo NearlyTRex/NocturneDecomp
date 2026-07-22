@@ -57,7 +57,7 @@ int engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510(int pa
     }
     _DAT_01c039a0 = 0x8d;
     _DAT_01c039a4 = 5;
-    FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   }
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 4;
 }

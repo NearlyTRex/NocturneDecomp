@@ -18,10 +18,10 @@
 ;   undefined1* PTR_FUN_005a3d84 = 0054fa80
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   core_flame.cpp_CFlame_ctor_FUN_0048cf60
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EDI                            ; 0054f922
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054f923
     PUSH EBX                            ; 0054f927
-    CALL FUN_00409d30                   ; 0054f928
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 0054f928
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0054f92d
     ADD EAX,0x150                       ; 0054f930
     PUSH EAX                            ; 0054f935

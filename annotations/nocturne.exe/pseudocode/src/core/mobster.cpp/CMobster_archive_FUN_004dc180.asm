@@ -25,8 +25,8 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_004dc1c5
     LEA EAX,[EBX + 0x150]               ; 004dc1ca
     PUSH EAX                            ; 004dc1d0
-    CALL FUN_0040cb00                   ; 004dc1d1
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004dc1d1
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     MOV ECX,dword ptr [0x005bb124]      ; 004dc1d6 | DAT_005bb124
     ADD ESP,0x8                         ; 004dc1dc
     CMP ECX,0x2                         ; 004dc1df

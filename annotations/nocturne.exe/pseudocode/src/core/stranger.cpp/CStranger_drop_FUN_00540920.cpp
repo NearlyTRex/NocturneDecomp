@@ -13,6 +13,6 @@ void core_stranger_cpp_CStranger_drop_FUN_00540920(int param_1,int param_2,uint 
     *(uint *)(param_1 + 0x1fa94) = 0;
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,0);
   }
-  FUN_00428100(param_1,param_2,param_3);
+  core_charactr_cpp_FUN_00428100(param_1,param_2,param_3);
   return;
 }

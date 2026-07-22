@@ -4,18 +4,18 @@
 ; int __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(int param_1,byte param_2)
 ;
 ;
-; XREF[37]:
+; XREF[38]:
+;   FUN_0040fc30 at 0040fc99
 ;   FUN_004132c0 at 00413329
 ;   FUN_00414c60 at 00414cc9
 ;   FUN_00415250 at 004152b9
 ;   FUN_00415a30 at 00415aa9
 ;   FUN_00420f20 at 00420f89
-;   FUN_00423d90 at 00423e09
 ;   FUN_0043c6f0 at 0043c759
 ;   FUN_00454f30 at 00454f99
 ;   FUN_0045b350 at 0045b3b9
 ;   FUN_00463310 at 00463379
-;   ... and 27 more
+;   ... and 28 more
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4 = 0051b6e0

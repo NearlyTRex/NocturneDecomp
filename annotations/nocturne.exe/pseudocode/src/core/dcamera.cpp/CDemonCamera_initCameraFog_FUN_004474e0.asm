@@ -9,8 +9,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508ab9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057bae3
-;   undefined4 DAT_0057baeb
+;   double DOUBLE_0057bae3 = 65536
+;   double DOUBLE_0057baeb = 256
 ;   undefined4 DAT_005ad450
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 00447529
     CALL wincore_windll.cpp_setFogColor_FUN_00532af0 ; 0044752a
         ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColor_FUN_00532af0()
-    FLD double ptr [0x0057bae3]         ; 0044752f | DAT_0057bae3
+    FLD double ptr [0x0057bae3]         ; 0044752f | DOUBLE_0057bae3
     FLD float ptr [EBX + 0xc]           ; 00447535
     FMUL ST1                            ; 00447538
     FLD float ptr [EBX + 0x10]          ; 0044753a
@@ -61,7 +61,7 @@ section .text
     FLD float ptr [EBX + 0x14]          ; 0044753f
     FMUL ST3                            ; 00447542
     FLD float ptr [EBX + 0x18]          ; 00447544
-    FMUL double ptr [0x0057baeb]        ; 00447547 | DAT_0057baeb
+    FMUL double ptr [0x0057baeb]        ; 00447547 | DOUBLE_0057baeb
     FLD float ptr [EBX + 0x1c]          ; 0044754d
     FMULP ST5                           ; 00447550
     ADD ESP,0xc                         ; 00447552

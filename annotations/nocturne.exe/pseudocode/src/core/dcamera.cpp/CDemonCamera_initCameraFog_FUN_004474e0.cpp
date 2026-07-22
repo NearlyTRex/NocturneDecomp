@@ -27,10 +27,10 @@ void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *
             (*(uint *)(&DAT_00b0e1fc + *param_2 * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + param_2[1] * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);
-  fVar4 = (float10)_DAT_0057bae3;
+  fVar4 = (float10)65536;
   fVar1 = (float)param_2[5];
   fVar2 = (float)param_2[6];
-  fVar8 = (float10)_DAT_0057baeb;
+  fVar8 = (float10)256;
   fVar3 = (float)param_2[7];
   fVar5 = (float10)round();
   fVar6 = (float10)round();

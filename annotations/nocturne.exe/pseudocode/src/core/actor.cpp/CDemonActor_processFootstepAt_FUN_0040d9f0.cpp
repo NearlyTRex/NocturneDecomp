@@ -26,7 +26,7 @@ uint core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(int param_1,uint 
   local_28 = _DAT_01fb860c;
   local_24 = _DAT_01fb8610;
   local_20 = _DAT_01fb8614;
-  if (_DAT_00578015 <
+  if (10000.0f <
       (local_2c - _DAT_01fb8614) * (local_2c - _DAT_01fb8614) +
       (local_30 - _DAT_01fb8610) * (local_30 - _DAT_01fb8610) +
       (local_34 - _DAT_01fb860c) * (local_34 - _DAT_01fb860c)) {
@@ -41,7 +41,7 @@ uint core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(int param_1,uint 
                               (0x01E57284,param_1 + 0x20,0);
   local_8 = local_18;
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  if (local_1c < local_18 + (float)_DAT_00578019) {
+  if (local_1c < local_18 + (float)-1) {
     uVar1 = *(uint *)(0x01E57284 + 0x14cd4c);
   }
   uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x20))(param_1,&local_34,uVar1,param_3);

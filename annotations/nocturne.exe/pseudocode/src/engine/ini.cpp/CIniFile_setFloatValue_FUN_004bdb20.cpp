@@ -11,7 +11,7 @@ void engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(uint param_1,uint param_
 {
   byte local_64 [100];
   
-  _sprintf(local_64,&DAT_00586741,(double)param_3);
+  _sprintf(local_64,"%g",(double)param_3);
   engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(param_1,param_2,local_64);
   return;
 }

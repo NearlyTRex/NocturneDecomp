@@ -56,18 +56,18 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(int param_1)
     *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x990);
     *(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x994);
     if (*(int *)(param_1 + 0x2dc) == 0) {
-      fVar1 = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa + *(float *)(param_1 + 0x99c);
+      fVar1 = *(float *)(param_1 + 0x9a4) * (float)1.57079632675 + *(float *)(param_1 + 0x99c);
     }
     else {
-      fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;
+      fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)1.57079632675;
     }
     *(float *)(param_1 + 0x34) = fVar1;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
     if (ABS(local_c8) <= ABS(fStack_bc)) {
-      local_c8 = fStack_bc + (float)_DAT_0057d0ba;
+      local_c8 = fStack_bc + (float)-0.29999999999999999;
     }
     else {
-      local_c8 = local_c8 + (float)_DAT_0057d0c2;
+      local_c8 = local_c8 + (float)0.29999999999999999;
     }
     *(float *)(param_1 + 0x9b4) = local_c8;
     *(uint *)(param_1 + 0x9b8) = 0x40600000;
@@ -110,14 +110,14 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(int param_1)
                        (param_1,auStack_68,&uStack_8c);
     break;
   case 3:
-    *(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;
+    *(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)1.57079632675;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
     fStack_b0 = local_c8 + fStack_bc;
     fStack_ac = fStack_c4 + fStack_b8;
-    fStack_5c = fStack_b0 * _DAT_0057d0b2;
-    fStack_58 = fStack_ac * _DAT_0057d0b2;
+    fStack_5c = fStack_b0 * 5.2220990168285998e-315._0_4_;
+    fStack_58 = fStack_ac * 5.2220990168285998e-315._0_4_;
     fStack_a8 = fStack_c0 + fStack_b4;
-    fStack_54 = fStack_a8 * _DAT_0057d0b2;
+    fStack_54 = fStack_a8 * 5.2220990168285998e-315._0_4_;
     puVar2 = (uint *)
              core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                        (param_1,auStack_38,&fStack_5c);

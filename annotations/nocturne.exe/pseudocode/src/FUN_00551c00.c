@@ -86,7 +86,7 @@ int FUN_00551c00(int param_1)
         }
       }
       else {
-        FUN_0050ddd0(0x01E57284,iVar3,*(uint *)(param_1 + 0x2b22c),0xffffffff);
+        core_set_cpp_FUN_0050ddd0(0x01E57284,iVar3,*(uint *)(param_1 + 0x2b22c),0xffffffff);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
     }

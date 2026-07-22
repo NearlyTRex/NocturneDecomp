@@ -79,7 +79,7 @@ LAB_004752e0:
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     iVar3 = iVar2 - _DAT_01bcde1c;
     _DAT_01bcde1c = iVar2;
-    if ((0 < iVar3) && (((double)iVar3 < _DAT_0057ee22 && (_DAT_01bcde20 == param_1[0x46])))) {
+    if ((0 < iVar3) && (((double)iVar3 < 294912 && (_DAT_01bcde20 == param_1[0x46])))) {
       param_1[0x43] = 1;
     }
   }

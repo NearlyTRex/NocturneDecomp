@@ -31,7 +31,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
   float fStack_20;
   float fStack_1c;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -57,7 +57,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
   fVar2 = (float)_DAT_0058cb23;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * fVar2;
-  iVar4 = FUN_00428c00(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar4 == 0) goto LAB_004eeb7c;
   uVar1 = *(uint *)(param_1 + 0x25a8);
   if (uVar1 < 2) {
@@ -110,6 +110,6 @@ LAB_004eeb7c:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&fStack_54);
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

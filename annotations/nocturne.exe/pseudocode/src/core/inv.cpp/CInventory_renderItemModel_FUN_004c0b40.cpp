@@ -81,7 +81,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(uint param_1,i
        (local_14 = local_24, local_24 < local_28)) {
       local_14 = local_28;
     }
-    iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,&DAT_005871ad);
+    iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CGun");
     if ((iVar8 != 0) ||
        (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CKeyActor"), iVar8 != 0)) {
       local_14 = local_14 * (float)_DAT_005871e1;

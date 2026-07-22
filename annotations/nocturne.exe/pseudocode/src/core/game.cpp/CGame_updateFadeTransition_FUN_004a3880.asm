@@ -10,8 +10,8 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a604f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00583b02
-;   undefined4 DAT_00583b0a
+;   double DOUBLE_00583b02 = 31457280
+;   double DOUBLE_00583b0a = 256
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01c78b04
@@ -35,7 +35,7 @@ section .text
     JGE 0x004a38fa                      ; 004a3899
         ;   XREF to: 004a38fa (CONDITIONAL_JUMP)  ; LAB_004a38fa
     FILD dword ptr [0x005b7620]         ; 004a389b | DAT_005b7620
-    FDIVR double ptr [0x00583b02]       ; 004a38a1 | DAT_00583b02
+    FDIVR double ptr [0x00583b02]       ; 004a38a1 | DOUBLE_00583b02
     FSTP float ptr [ESP]                ; 004a38a7
     CMP EDX,0x2                         ; 004a38aa
     JZ 0x004a3901                       ; 004a38ad
@@ -45,7 +45,7 @@ section .text
     JNZ 0x004a38e6                      ; 004a38b2
         ;   XREF to: 004a38e6 (CONDITIONAL_JUMP)  ; LAB_004a38e6
     FILD dword ptr [ECX + 0x260]        ; 004a38b4
-    FMUL double ptr [0x00583b0a]        ; 004a38ba | DAT_00583b0a
+    FMUL double ptr [0x00583b0a]        ; 004a38ba | DOUBLE_00583b0a
     FDIV float ptr [ESP]                ; 004a38c0
     FLD float ptr [0x01c78b08]          ; 004a38c3 | DAT_01c78b08
     FXCH                                ; 004a38c9
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 004a38f0 (UNCONDITIONAL_JUMP)  ; LAB_004a38f0
     FILD dword ptr [ECX + 0x260]        ; 004a3901
         ;   Label: LAB_004a3901
-    FMUL double ptr [0x00583b0a]        ; 004a3907 | DAT_00583b0a
+    FMUL double ptr [0x00583b0a]        ; 004a3907 | DOUBLE_00583b0a
     FDIV float ptr [ESP]                ; 004a390d
     FLD float ptr [0x01c78b08]          ; 004a3910 | DAT_01c78b08
     FXCH                                ; 004a3916

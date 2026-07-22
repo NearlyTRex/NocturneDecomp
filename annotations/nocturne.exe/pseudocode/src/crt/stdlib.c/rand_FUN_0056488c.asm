@@ -5,9 +5,7 @@
 ;
 ;
 ; XREF[37]:
-;   FUN_00410cc0 at 00410e63
 ;   FUN_0041f3d0 at 0041f4aa
-;   FUN_004270e0 at 0042714a
 ;   FUN_004c90e0 at 004c9128
 ;   FUN_004f0360 at 004f0448
 ;   FUN_0052d030 at 0052d0d1
@@ -15,6 +13,8 @@
 ;   FUN_0052dff0 at 0052e823
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 at 0040ddeb
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de35
+;   core_actor.cpp_randomChance_FUN_0040dea0 at 0040dedd
+;   core_baron.cpp_FUN_00410cc0 at 00410e63
 ;   ... and 27 more
 ;
 ; Called Functions:

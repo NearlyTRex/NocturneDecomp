@@ -10,22 +10,22 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[37]:
-;   FUN_00413040 at 004130f4
 ;   FUN_00414930 at 004149e4
 ;   FUN_00418630 at 0041871e
 ;   FUN_004196b0 at 00419b8b
 ;   FUN_0041f3d0 at 0041f443
-;   FUN_00423480 at 0042365b
-;   FUN_00423790 at 004239cb
 ;   FUN_00477890 at 004778fe
 ;   FUN_00478790 at 004788d4
 ;   FUN_004ab450 at 004ab7c5
+;   FUN_00515ea0 at 00515f14
+;   FUN_0054dd50 at 0054ddaf
+;   core_batcreat.cpp_FUN_00413040 at 004130f4
 ;   ... and 27 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578051
-;   undefined4 DAT_00578059
-;   undefined4 DAT_0057805d
+;   double DOUBLE_00578051 = 0.999990000000000
+;   float FLOAT_00578059 = 0.00003051851
+;   float FLOAT_0057805d = 5.960465E-8
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77828
 ;
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de15
     FILD dword ptr [ESP + 0x10]         ; 0040de19
     MOV EAX,[0x005b9354]                ; 0040de1d | DAT_005b9354
-    FADD double ptr [0x00578051]        ; 0040de22 | DAT_00578051
+    FADD double ptr [0x00578051]        ; 0040de22 | DOUBLE_00578051
     MOV EDX,dword ptr [EAX + 0x23c]     ; 0040de28 | DAT_01c77828
     FSTP double ptr [ESP]               ; 0040de2e
     TEST EDX,EDX                        ; 0040de31
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de3a
     FILD dword ptr [ESP + 0x10]         ; 0040de3e
-    FMUL float ptr [0x00578059]         ; 0040de42 | DAT_00578059
+    FMUL float ptr [0x00578059]         ; 0040de42 | FLOAT_00578059
     FSTP float ptr [ESP + 0x8]          ; 0040de48
         ;   Label: LAB_0040de48
     FLD float ptr [ESP + 0x8]           ; 0040de4c
@@ -92,7 +92,7 @@ section .text
         ;   Label: LAB_0040de7a
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de7f
     FILD dword ptr [ESP + 0x10]         ; 0040de83
-    FMUL float ptr [0x0057805d]         ; 0040de87 | DAT_0057805d
+    FMUL float ptr [0x0057805d]         ; 0040de87 | FLOAT_0057805d
     JMP 0x0040de48                      ; 0040de8d
         ;   XREF to: 0040de48 (UNCONDITIONAL_JUMP)  ; LAB_0040de48
     MOV EAX,EBX                         ; 0040de8f

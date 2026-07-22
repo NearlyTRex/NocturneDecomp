@@ -12,11 +12,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_00509a80 at 00509d41
-;   FUN_0050a260 at 0050a3e5
-;   FUN_0050aba0 at 0050acc4
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509899
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b1f
+;   core_set.cpp_FUN_00509a80 at 00509d41
+;   core_set.cpp_FUN_0050a260 at 0050a3e5
+;   core_set.cpp_FUN_0050aba0 at 0050acc4
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\set.cpp_005907aa

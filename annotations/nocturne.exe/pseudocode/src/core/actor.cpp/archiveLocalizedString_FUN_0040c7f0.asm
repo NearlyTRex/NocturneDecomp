@@ -15,10 +15,10 @@
 ;   core_weapon.cpp_CWeapon_archive_FUN_00554170 at 005541fe
 ;
 ; Referenced Globals:
-;   string s_!LOCALIZE!_00577c6d
-;   undefined4 s_!LOCALIZE!_00577c6d+1
-;   undefined4 s_LOCALIZE!_00577c6d+2
-;   undefined4 s_OCALIZE!_00577c6d+3
+;   TerminatedCString s_LOCALIZE_00577c6d
+;   undefined4 s_LOCALIZE_00577c6d+1
+;   undefined4 s_LOCALIZE_00577c6d+2
+;   undefined4 s_LOCALIZE_00577c6d+3
 ;   undefined4 DAT_005accf8
 ;   undefined4 DAT_005accfc
 ;
@@ -50,13 +50,13 @@ section .text
     MOV AL,0x0                          ; 0040c81c
     SCASB.REPNE ES:EDI                  ; 0040c81e
     DEC EDI                             ; 0040c820
-    MOV AL,byte ptr [ESI]               ; 0040c821 | = " !LOCALIZE!" | s_LOCALIZE!_00577c6d+2
+    MOV AL,byte ptr [ESI]               ; 0040c821 | = " !LOCALIZE!" | s_LOCALIZE_00577c6d+2
         ;   Label: LAB_0040c821
     MOV byte ptr [EDI],AL               ; 0040c823
     CMP AL,0x0                          ; 0040c825
     JZ 0x0040c839                       ; 0040c827
         ;   XREF to: 0040c839 (CONDITIONAL_JUMP)  ; LAB_0040c839
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040c829 | s_!LOCALIZE!_00577c6d+1 | s_OCALIZE!_00577c6d+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040c829 | s_LOCALIZE_00577c6d+1 | s_LOCALIZE_00577c6d+3
     ADD ESI,0x2                         ; 0040c82c
     MOV byte ptr [EDI + 0x1],AL         ; 0040c82f
     ADD EDI,0x2                         ; 0040c832

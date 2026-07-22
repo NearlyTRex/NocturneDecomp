@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_0057df2a+2
+;   TerminatedCString s_speed_0057df2c
 ;   string s_modelName_0057df32
 ;   string s_guardDistance_0057df3c
 ;   string s_motion_state_0057df4a
@@ -14,8 +14,8 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 004630e6
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 004630eb
-    PUSH 0x57df2c                       ; 004630ee | s_speed_0057df2a+2
+    PUSH 0x57df2c                       ; 004630ee | = "speed"
     LEA EAX,[EBX + 0xbc8c]              ; 004630f3
     PUSH EAX                            ; 004630f9
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004630fa
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_00463121
     ADD EBX,0x150                       ; 00463126
     PUSH EBX                            ; 0046312c
-    CALL FUN_0040cb00                   ; 0046312d
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 0046312d
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 00463132
     POP EBX                             ; 00463135
     RET                                 ; 00463136

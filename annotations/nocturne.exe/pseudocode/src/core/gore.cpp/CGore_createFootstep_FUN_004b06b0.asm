@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0040db50 at 0040dc20
+;   core_actor.cpp_FUN_0040db50 at 0040dc20
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c9e53c

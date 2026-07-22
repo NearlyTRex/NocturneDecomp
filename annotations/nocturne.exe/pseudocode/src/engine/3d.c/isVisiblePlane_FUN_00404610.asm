@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[71]:
-;   FUN_00405200 at 00405209
 ;   FUN_0041d050 at 0041d191
+;   engine_3d.c_FUN_00405200 at 00405209
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 004060c5
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407a34
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405e1d

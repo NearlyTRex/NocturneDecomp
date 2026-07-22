@@ -15,10 +15,10 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a588
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005813ac
-;   undefined4 DAT_005813b4
-;   undefined4 DAT_005813bc
-;   undefined4 DAT_005813c4
+;   double DOUBLE_005813ac = 5.26105753567487E-315
+;   double DOUBLE_005813b4 = 0.200000000000000
+;   double DOUBLE_005813bc = 0.5
+;   double DOUBLE_005813c4 = 1.60496654306895E-314
 ;   undefined4 DAT_0059d218
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
@@ -87,10 +87,10 @@ section .text
     FSTP float ptr [ESI + 0x4]          ; 004884a9
     FADD float ptr [ESP + 0xc]          ; 004884ac
     FXCH                                ; 004884b0
-    FMUL double ptr [0x005813b4]        ; 004884b2 | DAT_005813b4
+    FMUL double ptr [0x005813b4]        ; 004884b2 | DOUBLE_005813b4
     FXCH                                ; 004884b8
     FSTP float ptr [ESI + 0x8]          ; 004884ba
-    FLD float ptr [0x005813ac]          ; 004884bd | DAT_005813ac
+    FLD float ptr [0x005813ac]          ; 004884bd | DOUBLE_005813ac
     FLD float ptr [EAX]                 ; 004884c3
     FMUL ST1                            ; 004884c5
     FLD float ptr [EAX + 0x4]           ; 004884c7
@@ -105,7 +105,7 @@ section .text
     FXCH                                ; 004884de
     FADD ST0,ST1                        ; 004884e0
     FXCH ST2                            ; 004884e2
-    FMUL double ptr [0x005813bc]        ; 004884e4 | DAT_005813bc
+    FMUL double ptr [0x005813bc]        ; 004884e4 | DOUBLE_005813bc
     FXCH ST2                            ; 004884ea
     FSTP ST1                            ; 004884ec
     SUB ESP,0x4                         ; 004884ee
@@ -149,7 +149,7 @@ section .text
     CMP dword ptr [EBX + 0x1c],0x41a00000 ; 0048854e
     JL 0x00488466                       ; 00488555
         ;   XREF to: 00488466 (CONDITIONAL_JUMP)  ; LAB_00488466
-    FLD float ptr [0x005813c4]          ; 0048855b | DAT_005813c4
+    FLD float ptr [0x005813c4]          ; 0048855b | DOUBLE_005813c4
     FLD float ptr [EBX + 0x1c]          ; 00488561
         ;   Label: LAB_00488561
     FADD ST0,ST1                        ; 00488564

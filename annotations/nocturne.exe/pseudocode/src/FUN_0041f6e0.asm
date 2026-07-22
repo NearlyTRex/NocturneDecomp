@@ -15,8 +15,8 @@
 ;   string s_flashlit.kfm_005799b8
 ;   string s_lantern.kfm_005799c5
 ;   string s_lantern%d.raw_005799d1
-;   undefined4 DAT_005799e1
-;   undefined4 DAT_005799e5
+;   float FLOAT_005799e1 = 0.5
+;   double DOUBLE_005799e5 = 0.100000000000000
 ;   undefined4 DAT_007647fc
 ;   undefined4 DAT_0076483c
 ;
@@ -79,7 +79,7 @@ section .text
     FLD float ptr [ESP + 0x40]          ; 0041f751
     FADD float ptr [ESP + 0x4c]         ; 0041f755
     FST float ptr [ESP + 0xac]          ; 0041f759
-    FLD float ptr [0x005799e1]          ; 0041f760 | DAT_005799e1
+    FLD float ptr [0x005799e1]          ; 0041f760 | FLOAT_005799e1
     FXCH                                ; 0041f766
     FMUL ST1                            ; 0041f768
     FLD float ptr [ESP + 0x48]          ; 0041f76a
@@ -121,7 +121,7 @@ section .text
     FSTP float ptr [ESP + 0xa8]         ; 0041f7f1
     MOV dword ptr [EDI + 0x3618],EAX    ; 0041f7f8
     FLD float ptr [ESP + 0x54]          ; 0041f7fe
-    FADD double ptr [0x005799e5]        ; 0041f802 | DAT_005799e5
+    FADD double ptr [0x005799e5]        ; 0041f802 | DOUBLE_005799e5
     FSTP float ptr [EDI + 0x361c]       ; 0041f808
     MOV dword ptr [EBX + 0x8],0x0       ; 0041f80e
     MOV EAX,dword ptr [ESP + 0xb8]      ; 0041f815
@@ -158,7 +158,7 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 0041f87f
     FADD float ptr [ESP + 0x34]         ; 0041f883
     FST float ptr [ESP + 0x88]          ; 0041f887
-    FLD float ptr [0x005799e1]          ; 0041f88e | DAT_005799e1
+    FLD float ptr [0x005799e1]          ; 0041f88e | FLOAT_005799e1
     FXCH                                ; 0041f894
     FMUL ST1                            ; 0041f896
     FLD float ptr [ESP + 0x30]          ; 0041f898

@@ -8,7 +8,7 @@
 ;   FUN_00510a40 at 00510e27
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dmodel.cpp_0057ccf4+2
+;   TerminatedCString s_core_dmodel_cpp_0057ccf6
 ;   string s_Tried_to_call_CKeyFramedModel::i_0057cd09
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -59,7 +59,7 @@ section .text
     JNZ 0x00453e82                      ; 00453e5d
         ;   XREF to: 00453e82 (CONDITIONAL_JUMP)  ; LAB_00453e82
     PUSH EDI                            ; 00453e5f
-    MOV EAX,0x57ccf6                    ; 00453e60 | s_..\core\dmodel.cpp_0057ccf4+2
+    MOV EAX,0x57ccf6                    ; 00453e60 | = "..\\core\\dmodel.cpp"
     MOV EDX,0x40e                       ; 00453e65
     PUSH 0x57cd09                       ; 00453e6a | = "Tried to call CKeyFramedModel::inters..."
     MOV [0x01cc4800],EAX                ; 00453e6f | DAT_01cc4800

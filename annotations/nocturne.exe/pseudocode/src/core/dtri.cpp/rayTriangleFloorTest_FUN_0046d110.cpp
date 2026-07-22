@@ -42,7 +42,7 @@ uint __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(float *param_1,floa
   float local_30;
   float local_2c;
   
-  if (param_1[10] <= (float)_DAT_0057e47e) {
+  if (param_1[10] <= (float)-0.34000000000000002) {
     fVar1 = *param_1 - *param_2;
     fVar9 = param_1[1];
     fVar2 = param_1[2] - param_2[2];
@@ -123,7 +123,7 @@ uint __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(float *param_1,floa
           _DAT_01bc995c = 0;
           _DAT_01bc9964 = 0;
         }
-        if (_DAT_0057e486 <= (double)fVar9) {
+        if (0.01 <= (double)fVar9) {
           param_3 = param_3 / fVar9;
           local_64 = param_1[9] * param_3 + *param_2;
           local_5c = param_3 * param_1[0xb] + param_2[2];

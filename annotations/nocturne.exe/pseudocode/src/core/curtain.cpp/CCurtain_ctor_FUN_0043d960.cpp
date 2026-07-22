@@ -14,7 +14,7 @@ int core_curtain_cpp_CCurtain_ctor_FUN_0043d960(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = __arrinit(iVar2 + 0x200,1000,&DAT_0059bd90);
   *(byte ***)(iVar2 + -0xb4) = &PTR_FUN_0059bc94;
   pcVar3 = "SGLASS.RAW";
@@ -37,7 +37,7 @@ int core_curtain_cpp_CCurtain_ctor_FUN_0043d960(uint param_1)
   *(uint *)(iVar2 + -0x88) = 1;
   *(uint *)(iVar2 + -0x7c) = 0;
   *(uint *)(iVar2 + -0x80) = 0;
-  pcVar3 = &DAT_0057b4d2;
+  pcVar3 = "none";
   *(uint *)(iVar2 + -0x84) = 0;
   pcVar4 = (char *)(iVar2 + -0x74);
   *(uint *)(iVar2 + -0x78) = 0;

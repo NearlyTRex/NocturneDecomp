@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0043c350 = 0043c39d
 ;   string s_limb?.wav_0057b3ed
-;   undefined4 DAT_0057b3fa
-;   undefined4 DAT_0057b402
-;   undefined4 DAT_0057b40a
+;   double DOUBLE_0057b3fa = 7
+;   double DOUBLE_0057b402 = 0.5
+;   double DOUBLE_0057b40a = 2.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600
 ;   undefined4 DAT_01c777cc
@@ -216,7 +216,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 0043c51d
         ;   Label: LAB_0043c51d
     FLD ST0                             ; 0043c520
-    FMUL double ptr [0x0057b3fa]        ; 0043c522 | DAT_0057b3fa
+    FMUL double ptr [0x0057b3fa]        ; 0043c522 | DOUBLE_0057b3fa
     FSTP ST1                            ; 0043c528
     FSTP float ptr [ESI + 0x8]          ; 0043c52a
     MOV EDX,dword ptr [EBX + 0xbd30]    ; 0043c52d
@@ -226,7 +226,7 @@ section .text
         ;   XREF to: 0043c5be (CONDITIONAL_JUMP)  ; LAB_0043c5be
     FLD float ptr [ESI + 0x4]           ; 0043c53b
     FLD ST0                             ; 0043c53e
-    FMUL double ptr [0x0057b40a]        ; 0043c540 | DAT_0057b40a
+    FMUL double ptr [0x0057b40a]        ; 0043c540 | DOUBLE_0057b40a
     FSTP ST1                            ; 0043c546
     FSTP float ptr [ESI + 0x4]          ; 0043c548
     ADD ESP,0xc                         ; 0043c54b
@@ -273,7 +273,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 0043c5be
         ;   Label: LAB_0043c5be
     FLD ST0                             ; 0043c5c1
-    FMUL double ptr [0x0057b402]        ; 0043c5c3 | DAT_0057b402
+    FMUL double ptr [0x0057b402]        ; 0043c5c3 | DOUBLE_0057b402
     FSTP ST1                            ; 0043c5c9
     FSTP float ptr [ESI + 0x4]          ; 0043c5cb
     ADD ESP,0xc                         ; 0043c5ce

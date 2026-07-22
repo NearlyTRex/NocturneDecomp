@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(float *param_1,float *param_2,float *param_3)
 
 {
@@ -16,10 +14,10 @@ void core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(float *param_1,float *par
   
   if (param_2 != (float *)0x0) {
     fVar1 = *param_1;
-    if ((float)_DAT_0059835e < fVar1) {
+    if ((float)-1 < fVar1) {
       if (fVar1 < 1.0) {
         fVar2 = (float10)acos((float10)fVar1);
-        *param_2 = (float)(fVar2 * (float10)_DAT_00598366);
+        *param_2 = (float)(fVar2 * (float10)2);
       }
       else {
         *param_2 = 0.0;

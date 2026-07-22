@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dced
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\game.cpp_00582768+2
+;   TerminatedCString s_core_game_cpp_0058276a
 ;   string s_CGame::setGameRes_-_Unable_to_se_0058277b
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
@@ -77,7 +77,7 @@ section .text
     PUSH ECX                            ; 0049d8d6
     MOV ESI,dword ptr [EBX]             ; 0049d8d7
     PUSH ESI                            ; 0049d8d9
-    MOV EBP,0x58276a                    ; 0049d8da | s_..\core\game.cpp_00582768+2
+    MOV EBP,0x58276a                    ; 0049d8da | = "..\\core\\game.cpp"
     MOV EAX,0x497                       ; 0049d8df
     PUSH 0x58277b                       ; 0049d8e4 | = "CGame::setGameRes - Unable to set the..."
     MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | DAT_01cc4800

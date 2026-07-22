@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004ada20(int param_1)
 
 {
@@ -58,7 +56,7 @@ void FUN_004ada20(int param_1)
   if (*(int *)(param_1 + 0x178) == 0) {
     *(uint *)(param_1 + 0x178) = 1;
     if (*(int *)(param_1 + 0x1e0) != 0) {
-      pcVar3 = ">7YEARS.RAW" + 1;
+      pcVar3 = "7YEARS.RAW";
       pcVar4 = (char *)(param_1 + 0x164);
       *(uint *)(param_1 + 0x174) = 0xffff;
       do {
@@ -73,7 +71,7 @@ void FUN_004ada20(int param_1)
       core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(0x01E57284);
     }
     __arrinit(&local_cc,4,&DAT_005993b0);
-    local_1c = *(float *)(param_1 + 0x150) * (float)_DAT_00585068;
+    local_1c = *(float *)(param_1 + 0x150) * (float)0.5;
     local_18 = 0.0;
     local_14 = 0;
     pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40

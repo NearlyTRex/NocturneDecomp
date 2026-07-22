@@ -4,8 +4,8 @@
 ; void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004796c0(int param_1)
 ;
 ;
-; XREF[26]:
-;   FUN_00412d80 at 00412d87
+; XREF[27]:
+;   FUN_0040fb60 at 0040fb67
 ;   FUN_00415160 at 00415167
 ;   FUN_00419ce0 at 00419cec
 ;   FUN_0043c2e0 at 0043c2e6
@@ -14,8 +14,8 @@
 ;   FUN_004bc9c0 at 004bc9c7
 ;   FUN_004c5250 at 004c5256
 ;   FUN_005417c0 at 005417c7
-;   core_batman.cpp_CBatman_archive_FUN_00414510 at 00414517
-;   ... and 16 more
+;   core_batcreat.cpp_FUN_00412d80 at 00412d87
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   string s_speed_0057f2c2

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004194b0(int param_1,int param_2)
 
 {
@@ -69,9 +67,9 @@ void FUN_004194b0(int param_1,int param_2)
   local_50 = local_8c + local_80;
   local_4c = local_88 + local_7c;
   core_actor_cpp_CVector_ctor_FUN_0040e160(&local_30);
-  local_30 = local_54 * _DAT_0057936e;
-  local_2c = local_50 * _DAT_0057936e;
-  local_28 = local_88 + (float)_DAT_00579376;
+  local_30 = local_54 * 5.2220990168285998e-315._0_4_;
+  local_2c = local_50 * 5.2220990168285998e-315._0_4_;
+  local_28 = local_88 + (float)0.40000000000000002;
   if (&local_48 != &local_30) {
     local_48 = local_30;
     local_44 = local_2c;

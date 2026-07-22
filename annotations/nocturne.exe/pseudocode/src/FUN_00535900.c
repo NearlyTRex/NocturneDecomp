@@ -363,7 +363,7 @@ void FUN_00535900(int param_1,float param_2)
         iVar5 = *(int *)(param_1 + 0x2590);
         if (iVar5 == 0) {
           if (*(int *)(param_1 + 0x1fa0c) == 0) {
-            iVar5 = FUN_00428c00(param_1,param_2);
+            iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
             if (iVar5 == 0) {
               if (iStack_28 != 0) {
                 iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660();
@@ -1046,7 +1046,7 @@ LAB_00536144:
   }
   core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(param_1,param_2,uVar4);
   FUN_005402f0();
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   fStack_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                (param_1 + 0x150,6);
   if (fStack_14 <= 0.0) {

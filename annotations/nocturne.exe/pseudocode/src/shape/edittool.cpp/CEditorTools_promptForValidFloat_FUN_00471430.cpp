@@ -17,7 +17,7 @@ uint __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(ui
     local_38[0] = 0;
   }
   else {
-    _sprintf(local_38,&DAT_0057e7a5,(double)*param_3);
+    _sprintf(local_38,"%g",(double)*param_3);
   }
   while( true ) {
     while( true ) {

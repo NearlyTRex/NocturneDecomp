@@ -13,7 +13,7 @@ void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,uint *p
   uint uVar2;
   float fVar3;
   
-  FUN_0040b1b0(param_1,param_2);
+  core_actor_cpp_FUN_0040b1b0(param_1,param_2);
   if (*(int *)(param_1 + 0x850) == 0) {
     return;
   }

@@ -40,7 +40,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(int *param_1)
       engine_2d_c_drawText_FUN_00402600("Insert wipe here...",0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_mission_cpp_CDemonMission_loadSet_FUN_004d9020(param_1,param_1[0x14a]);
-      FUN_0050ad20(0x01E57284);
+      core_set_cpp_FUN_0050ad20(0x01E57284);
       core_set_cpp_CDemonSet_initScene_FUN_005084c0(0x01E57284);
       *(uint *)(0x01E56DA0 + 0x10) = 2;
     }

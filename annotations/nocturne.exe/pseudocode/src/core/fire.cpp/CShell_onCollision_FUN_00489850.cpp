@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
 
 {
@@ -18,7 +16,7 @@ uint core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
   int iVar5;
   float local_18;
   
-  local_18 = (float)(4 - *(int *)(param_1 + 0x50)) * (float)_DAT_0058145c;
+  local_18 = (float)(4 - *(int *)(param_1 + 0x50)) * (float)0.25;
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }

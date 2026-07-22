@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004209f8 = 00420a50
 ;   string s_limb?.wav_00579ba9
-;   undefined4 DAT_00579bb5
-;   undefined4 DAT_00579bbd
-;   undefined4 DAT_00579bc5
-;   undefined4 DAT_00579bcd
+;   double DOUBLE_00579bb5 = 0.333000000000000
+;   double DOUBLE_00579bbd = 7
+;   double DOUBLE_00579bc5 = 0.5
+;   double DOUBLE_00579bcd = 2.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600
 ;   undefined4 DAT_01c777cc
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 00420a88 (CONDITIONAL_JUMP)  ; LAB_00420a88
     FLD float ptr [ESP]                 ; 00420a78
     FLD ST0                             ; 00420a7b
-    FMUL double ptr [0x00579bb5]        ; 00420a7d | DAT_00579bb5
+    FMUL double ptr [0x00579bb5]        ; 00420a7d | DOUBLE_00579bb5
     FSTP ST1                            ; 00420a83
     FSTP float ptr [ESP]                ; 00420a85
     MOV EAX,[0x005b9354]                ; 00420a88 | DAT_005b9354
@@ -176,7 +176,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 00420b5f
         ;   Label: LAB_00420b5f
     FLD ST0                             ; 00420b62
-    FMUL double ptr [0x00579bbd]        ; 00420b64 | DAT_00579bbd
+    FMUL double ptr [0x00579bbd]        ; 00420b64 | DOUBLE_00579bbd
     FSTP ST1                            ; 00420b6a
     FSTP float ptr [EBX + 0x8]          ; 00420b6c
     MOV EDX,dword ptr [ESI + 0xbd44]    ; 00420b6f
@@ -238,7 +238,7 @@ section .text
     FLD float ptr [EBX + 0x4]           ; 00420c0d
         ;   Label: LAB_00420c0d
     FLD ST0                             ; 00420c10
-    FMUL double ptr [0x00579bcd]        ; 00420c12 | DAT_00579bcd
+    FMUL double ptr [0x00579bcd]        ; 00420c12 | DOUBLE_00579bcd
     FSTP ST1                            ; 00420c18
     FSTP float ptr [EBX + 0x4]          ; 00420c1a
     MOV ESP,EBP                         ; 00420c1d
@@ -250,7 +250,7 @@ section .text
     FLD float ptr [EBX + 0x4]           ; 00420c24
         ;   Label: LAB_00420c24
     FLD ST0                             ; 00420c27
-    FMUL double ptr [0x00579bc5]        ; 00420c29 | DAT_00579bc5
+    FMUL double ptr [0x00579bc5]        ; 00420c29 | DOUBLE_00579bc5
     FSTP ST1                            ; 00420c2f
     FSTP float ptr [EBX + 0x4]          ; 00420c31
     MOV ESP,EBP                         ; 00420c34

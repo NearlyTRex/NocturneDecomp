@@ -36,8 +36,8 @@
 ;   FUN_004a9270 at 004a9f71
 ;   FUN_0053c800 at 0053cdce
 ;   FUN_00546e10 at 005473a0
-;   FUN_0055ef50 at 0055fef4
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004252cf
+;   core_zombie.cpp_FUN_0055ef50 at 0055fef4
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\setcolid.cpp_00590a2d

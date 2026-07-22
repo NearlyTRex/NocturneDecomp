@@ -27,8 +27,8 @@
 ;   string s_kick1.wav_005820ba
 ;   string s_hit-gh[4,7].wav_005820c4
 ;   string s_gb-fall1.wav_005820d4
-;   undefined4 DAT_005820e2
-;   undefined4 DAT_005820ea
+;   double DOUBLE_005820e2 = 0.200000000000000
+;   double DOUBLE_005820ea = 0.400000000000000
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_00764ad4
 ;   undefined4 DAT_01bcdef4
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 00497564
     FLD float ptr [ESP + 0x98]          ; 0049756b
     ADD ESP,0x8                         ; 00497572
-    FCOMP double ptr [0x005820ea]       ; 00497575 | DAT_005820ea
+    FCOMP double ptr [0x005820ea]       ; 00497575 | DOUBLE_005820ea
     FNSTSW AX                           ; 0049757b
     SAHF                                ; 0049757d
     JA 0x004975c0                       ; 0049757e
@@ -214,7 +214,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 00497588
     FLD float ptr [ESP + 0x98]          ; 0049758f
     ADD ESP,0x8                         ; 00497596
-    FCOMP double ptr [0x005820ea]       ; 00497599 | DAT_005820ea
+    FCOMP double ptr [0x005820ea]       ; 00497599 | DOUBLE_005820ea
     FNSTSW AX                           ; 0049759f
     SAHF                                ; 004975a1
     JBE 0x004975dc                      ; 004975a2
@@ -246,7 +246,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 004975e4
     FLD float ptr [ESP + 0x98]          ; 004975eb
     ADD ESP,0x8                         ; 004975f2
-    FCOMP double ptr [0x005820ea]       ; 004975f5 | DAT_005820ea
+    FCOMP double ptr [0x005820ea]       ; 004975f5 | DOUBLE_005820ea
     FNSTSW AX                           ; 004975fb
     SAHF                                ; 004975fd
     JBE 0x004974a7                      ; 004975fe
@@ -345,7 +345,7 @@ section .text
     JNC 0x00497643                      ; 00497711
         ;   XREF to: 00497643 (CONDITIONAL_JUMP)  ; LAB_00497643
     FLD double ptr [ESP]                ; 00497717
-    FMUL double ptr [0x005820e2]        ; 0049771a | DAT_005820e2
+    FMUL double ptr [0x005820e2]        ; 0049771a | DOUBLE_005820e2
     CALL crt_math.c_round_FUN_00563a30  ; 00497720
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x90]        ; 00497725

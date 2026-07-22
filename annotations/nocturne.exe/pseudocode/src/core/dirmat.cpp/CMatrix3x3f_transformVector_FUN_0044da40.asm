@@ -5,9 +5,6 @@
 ;
 ;
 ; XREF[49]:
-;   FUN_00422050 at 00422210
-;   FUN_0042af70 at 0042b17d
-;   FUN_0044f9b0 at 0044fc69
 ;   FUN_0046baa0 at 0046bc55
 ;   FUN_0046bd90 at 0046bf45
 ;   FUN_00495a20 at 00496c95
@@ -15,6 +12,9 @@
 ;   FUN_004b27c0 at 004b2acc
 ;   FUN_004c9580 at 004c987c
 ;   FUN_005384d0 at 00538dd9
+;   FUN_00545c30 at 00545fd9
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 at 0040a25a
+;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 at 0040a213
 ;   ... and 39 more
 ;
 ; *****************************************************************************

@@ -19,8 +19,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(int param_1)
   if (*(int *)(param_1 + 0x70) != 1) {
     return;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (PTR_DAT_005ad350,"?%s exploding!\n" + 1,param_1);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"%s exploding!\n",param_1);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_28);
   if (&uStack_10 != (uint *)(param_1 + 0x20)) {
     uStack_10 = *(uint *)(param_1 + 0x20);

@@ -21,7 +21,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[1]:
-;   FUN_00428c00 at 00428cf4
+;   core_charactr.cpp_FUN_00428c00 at 00428cf4
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045624c = 004562b4

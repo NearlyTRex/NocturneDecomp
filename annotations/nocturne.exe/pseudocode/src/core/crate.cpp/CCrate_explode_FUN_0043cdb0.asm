@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_0040b300 at 0040bc87
 ;   FUN_00477890 at 00477f75
 ;   FUN_004b27c0 at 004b2f59
 ;   FUN_00515ea0 at 005165bc
 ;   FUN_00545c30 at 00546413
+;   core_actor.cpp_FUN_0040b300 at 0040bc87
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afea
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_exploding!_0057b45e+1
+;   TerminatedCString s_s_exploding_0057b45f
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005baf90
@@ -40,7 +40,7 @@ section .text
     RET                                 ; 0043cdc2
     PUSH EBX                            ; 0043cdc3
         ;   Label: LAB_0043cdc3
-    PUSH 0x57b45f                       ; 0043cdc4 | s_%s_exploding!_0057b45e+1
+    PUSH 0x57b45f                       ; 0043cdc4 | = "%s exploding!\n"
     MOV ECX,dword ptr [0x005ad350]      ; 0043cdc9 | PTR_DAT_005ad350
     PUSH ECX                            ; 0043cdcf | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0043cdd0

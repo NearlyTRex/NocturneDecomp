@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_hotdemon_cpp_CHotDemon_processDamage_FUN_004b9720(int param_1,int param_2)
 
 {
@@ -20,7 +18,7 @@ void core_hotdemon_cpp_CHotDemon_processDamage_FUN_004b9720(int param_1,int para
   sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd24));
   if (*(int *)(param_2 + 0x28) == 8) {
     iVar2 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00585fc5;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,param_2 + 0x1c);
     do {
       iVar2 = iVar2 + 1;

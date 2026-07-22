@@ -9,7 +9,7 @@
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 at 00566f90
 ;
 ; Referenced Globals:
-;   string s_ABNORMAL_TERMINATION_00598b14
+;   TerminatedCString s_ABNORMAL_TERMINATION_00598b14
 ;
 ; Called Functions:
 ;   FUN_0056ddc0

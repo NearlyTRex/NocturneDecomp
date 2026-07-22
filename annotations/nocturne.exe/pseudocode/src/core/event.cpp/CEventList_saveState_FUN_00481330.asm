@@ -14,18 +14,18 @@
 ;
 ; Referenced Globals:
 ;   string s_//_CEventList_version_00580d9b
-;   undefined4 DAT_00580db2
+;   TerminatedCString s_d_00580db2
 ;   string s_//_eventCount,_list_00580db6
-;   undefined4 DAT_00580dcb
-;   undefined4 DAT_00580dcf
+;   TerminatedCString s_d_00580dcb
+;   TerminatedCString s_s_00580dcf
 ;   string s_//_currentEventCount,_list_00580dd3
-;   undefined4 DAT_00580def
-;   undefined4 DAT_00580df3
+;   TerminatedCString s_d_00580def
+;   TerminatedCString s_s_00580df3
 ;   string s_//_persistentEventCount,_list_00580df7
-;   undefined4 DAT_00580e16
-;   undefined4 DAT_00580e1a
+;   TerminatedCString s_d_00580e16
+;   TerminatedCString s_s_00580e1a
 ;   string s_//_timerCount,_list(duration,_na_00580e1e
-;   undefined4 DAT_00580e43
+;   TerminatedCString s_d_00580e43
 ;   string s_%f,_%s_00580e47
 ;   string s_//_counterCount,_list(value,_nam_00580e4f
 ;   ... and 8 more
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x8                         ; 0048134a
     PUSH 0x5                            ; 0048134d
-    PUSH 0x580db2                       ; 0048134f | DAT_00580db2
+    PUSH 0x580db2                       ; 0048134f | = "%d\n"
     PUSH ESI                            ; 00481354
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00481355
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
@@ -63,7 +63,7 @@ section .text
     ADD ESP,0x8                         ; 00481368
     MOV EDX,dword ptr [EBX]             ; 0048136b
     PUSH EDX                            ; 0048136d
-    PUSH 0x580dcb                       ; 0048136e | DAT_00580dcb
+    PUSH 0x580dcb                       ; 0048136e | = "%d\n"
     PUSH ESI                            ; 00481373
     XOR EBP,EBP                         ; 00481374
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00481376
@@ -76,7 +76,7 @@ section .text
     LEA EDI,[EBX + 0x4]                 ; 00481384
     PUSH EDI                            ; 00481387
         ;   Label: LAB_00481387
-    PUSH 0x580dcf                       ; 00481388 | DAT_00580dcf
+    PUSH 0x580dcf                       ; 00481388 | = "%s\n"
     PUSH ESI                            ; 0048138d
     INC EBP                             ; 0048138e
     ADD EDI,0x20                        ; 0048138f
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x8                         ; 004813ab
     MOV EDX,dword ptr [EBX + 0xc84]     ; 004813ae
     PUSH EDX                            ; 004813b4
-    PUSH 0x580def                       ; 004813b5 | DAT_00580def
+    PUSH 0x580def                       ; 004813b5 | = "%d\n"
     PUSH ESI                            ; 004813ba
     XOR EDI,EDI                         ; 004813bb
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004813bd
@@ -108,7 +108,7 @@ section .text
     LEA EBP,[EBX + 0xc88]               ; 004813cf
     PUSH EBP                            ; 004813d5
         ;   Label: LAB_004813d5
-    PUSH 0x580df3                       ; 004813d6 | DAT_00580df3
+    PUSH 0x580df3                       ; 004813d6 | = "%s\n"
     PUSH ESI                            ; 004813db
     INC EDI                             ; 004813dc
     ADD EBP,0x20                        ; 004813dd
@@ -130,7 +130,7 @@ section .text
     ADD ESP,0x8                         ; 0048140b
     MOV EDX,dword ptr [EBX + 0x258c]    ; 0048140e
     PUSH EDX                            ; 00481414
-    PUSH 0x580e16                       ; 00481415 | DAT_00580e16
+    PUSH 0x580e16                       ; 00481415 | = "%d\n"
     PUSH ESI                            ; 0048141a
     XOR EBP,EBP                         ; 0048141b
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048141d
@@ -143,7 +143,7 @@ section .text
     LEA EDI,[EBX + 0x2590]              ; 0048142f
     PUSH EDI                            ; 00481435
         ;   Label: LAB_00481435
-    PUSH 0x580e1a                       ; 00481436 | DAT_00580e1a
+    PUSH 0x580e1a                       ; 00481436 | = "%s\n"
     PUSH ESI                            ; 0048143b
     INC EBP                             ; 0048143c
     ADD EDI,0x20                        ; 0048143d
@@ -165,7 +165,7 @@ section .text
     ADD ESP,0x8                         ; 0048146b
     MOV EDX,dword ptr [EBX + 0x3210]    ; 0048146e
     PUSH EDX                            ; 00481474
-    PUSH 0x580e43                       ; 00481475 | DAT_00580e43
+    PUSH 0x580e43                       ; 00481475 | = "%d\n"
     PUSH ESI                            ; 0048147a
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048147b
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
@@ -206,7 +206,7 @@ section .text
     ADD ESP,0x8                         ; 004814db
     MOV ECX,dword ptr [EBX + 0x337c]    ; 004814de
     PUSH ECX                            ; 004814e4
-    PUSH 0x580e73                       ; 004814e5 | DAT_00580e73
+    PUSH 0x580e73                       ; 004814e5 | = "%d\n"
     PUSH ESI                            ; 004814ea
     XOR EDI,EDI                         ; 004814eb
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004814ed
@@ -246,7 +246,7 @@ section .text
     ADD ESP,0x8                         ; 0048154b
     MOV EDI,dword ptr [EBX + 0x34e8]    ; 0048154e
     PUSH EDI                            ; 00481554
-    PUSH 0x580eab                       ; 00481555 | DAT_00580eab
+    PUSH 0x580eab                       ; 00481555 | = "%d\n"
     PUSH ESI                            ; 0048155a
     XOR EBP,EBP                         ; 0048155b
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048155d
@@ -287,7 +287,7 @@ section .text
     ADD ESP,0x8                         ; 004815bb
     MOV EDX,dword ptr [EBX + 0x1908]    ; 004815be
     PUSH EDX                            ; 004815c4
-    PUSH 0x580ed3                       ; 004815c5 | DAT_00580ed3
+    PUSH 0x580ed3                       ; 004815c5 | = "%d\n"
     PUSH ESI                            ; 004815ca
     XOR EBP,EBP                         ; 004815cb
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004815cd
@@ -300,7 +300,7 @@ section .text
     LEA EDI,[EBX + 0x190c]              ; 004815df
     PUSH EDI                            ; 004815e5
         ;   Label: LAB_004815e5
-    PUSH 0x580ed7                       ; 004815e6 | DAT_00580ed7
+    PUSH 0x580ed7                       ; 004815e6 | = "%s\n"
     PUSH ESI                            ; 004815eb
     INC EBP                             ; 004815ec
     ADD EDI,0x20                        ; 004815ed

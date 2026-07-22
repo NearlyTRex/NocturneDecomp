@@ -51,9 +51,9 @@
 ;   string s_%s_confused_while_walking_to_scr_00585f0c
 ;   string s_hotdemon-attack.wav_00585f36
 ;   string s_hotdemon-attack.wav_00585f4a
-;   undefined4 DAT_00585f65
-;   undefined4 DAT_00585f6d
-;   undefined4 DAT_00585f75
+;   double DOUBLE_00585f65 = 3.14159265350000
+;   double DOUBLE_00585f6d = 0.523598775583333
+;   double DOUBLE_00585f75 = 32
 ;   undefined4 DAT_0059f0bc
 ;   undefined4 DAT_0059f0c8
 ;   void* PTR_DAT_005ad350 = 0077ad0c
@@ -71,13 +71,13 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 004b8f2f
     PUSH dword ptr [EBP + 0x92]         ; 004b8f35
     PUSH EBX                            ; 004b8f3b
-    CALL FUN_004259f0                   ; 004b8f3c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 004b8f3c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 004b8f41
     TEST EAX,EAX                        ; 004b8f44
     JZ 0x004b9125                       ; 004b8f46
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 004b912d (CONDITIONAL_JUMP)  ; LAB_004b912d
     FLD float ptr [EBX + 0xbc8c]        ; 004b8f89
     FLD float ptr [EBP + 0x92]          ; 004b8f8f
-    FMUL double ptr [0x00585f65]        ; 004b8f95 | DAT_00585f65
+    FMUL double ptr [0x00585f65]        ; 004b8f95 | DOUBLE_00585f65
     FMULP                               ; 004b8f9b
     FLD float ptr [EBX + 0x23ac]        ; 004b8f9d
     PUSH ESI                            ; 004b8fa3
@@ -134,8 +134,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b8fbe
     PUSH EBX                            ; 004b8fc1
     MOV EDI,EAX                         ; 004b8fc2
-    CALL FUN_00428c00                   ; 004b8fc4
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 004b8fc4
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 004b8fc9
     TEST EAX,EAX                        ; 004b8fcc
     JZ 0x004b9649                       ; 004b8fce
@@ -184,7 +184,7 @@ section .text
         ;   XREF to: 004b90fe (CONDITIONAL_JUMP)  ; LAB_004b90fe
     FLD float ptr [EBP + 0x92]          ; 004b9049
     FLD ST0                             ; 004b904f
-    FMUL double ptr [0x00585f75]        ; 004b9051 | DAT_00585f75
+    FMUL double ptr [0x00585f75]        ; 004b9051 | DOUBLE_00585f75
     FLD float ptr [EBX + 0x2424]        ; 004b9057
     FXCH                                ; 004b905d
     FSUBR ST0,ST1                       ; 004b905f
@@ -252,8 +252,8 @@ section .text
     ADD ESP,0x4                         ; 004b9113
     PUSH dword ptr [EBP + 0x92]         ; 004b9116
     PUSH EBX                            ; 004b911c
-    CALL FUN_0042a150                   ; 004b911d
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 004b911d
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 004b9122
     LEA ESP,[EBP + 0x7a]                ; 004b9125
         ;   Label: LAB_004b9125
@@ -463,7 +463,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004b9344
     FABS                                ; 004b9347
     ADD ESP,0x4                         ; 004b9349
-    FCOMP double ptr [0x00585f6d]       ; 004b934c | DAT_00585f6d
+    FCOMP double ptr [0x00585f6d]       ; 004b934c | DOUBLE_00585f6d
     FNSTSW AX                           ; 004b9352
     SAHF                                ; 004b9354
     JNC 0x004b92da                      ; 004b9355
@@ -682,7 +682,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004b958c
     FABS                                ; 004b958f
     ADD ESP,0x4                         ; 004b9591
-    FCOMP double ptr [0x00585f6d]       ; 004b9594 | DAT_00585f6d
+    FCOMP double ptr [0x00585f6d]       ; 004b9594 | DOUBLE_00585f6d
     FNSTSW AX                           ; 004b959a
     SAHF                                ; 004b959c
     JNC 0x004b95d4                      ; 004b959d

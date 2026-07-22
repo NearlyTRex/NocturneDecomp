@@ -8,11 +8,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s_go_berzerk_00584e44+1
+;   TerminatedCString s_go_berzerk_00584e45
 ;   string s_ghoul-die-!-?.wav_@1.6_00584e51
 ;   string s_guul_flinch%d_00584e68
 ;   string s_ghoul-mad-!-?.wav_00584e76
-;   undefined4 DAT_00584e8d
+;   double DOUBLE_00584e8d = 65536
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;
@@ -20,6 +20,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_actor.cpp_randomChance_FUN_0040dea0
+;   core_charactr.cpp_FUN_00427a60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -29,7 +30,6 @@
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_00427a60
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     MOV dword ptr [EBP + -0x4],EAX      ; 004ab5de
     FLD float ptr [EBP + -0x4]          ; 004ab5e1
-    FMUL double ptr [0x00584e8d]        ; 004ab5e4 | DAT_00584e8d
+    FMUL double ptr [0x00584e8d]        ; 004ab5e4 | DOUBLE_00584e8d
     ADD ESP,0x8                         ; 004ab5ea
     MOV dword ptr [EBX + 0xbd30],0xa0000 ; 004ab5ed
     PUSH 0x41c80000                     ; 004ab5f7
@@ -220,7 +220,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 004ab67c
     MOV ECX,dword ptr [EDX + 0x8]       ; 004ab67f
     MOV dword ptr [EAX + 0x8],ECX       ; 004ab682
-    PUSH 0x584e45                       ; 004ab685 | s_go_berzerk_00584e44+1
+    PUSH 0x584e45                       ; 004ab685 | = "go berzerk\n"
         ;   Label: LAB_004ab685
     MOV ESI,dword ptr [0x005ad350]      ; 004ab68a | PTR_DAT_005ad350
     PUSH ESI                            ; 004ab690 | DAT_0077ad0c
@@ -235,8 +235,8 @@ section .text
         ;   XREF to: 004ab4f0 (UNCONDITIONAL_JUMP)  ; LAB_004ab4f0
     PUSH EBX                            ; 004ab6a9
         ;   Label: LAB_004ab6a9
-    CALL FUN_00427a60                   ; 004ab6aa
-        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00427a60()
+    CALL core_charactr.cpp_FUN_00427a60 ; 004ab6aa
+        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427a60()
     ADD ESP,0x4                         ; 004ab6af
     PUSH EDI                            ; 004ab6b2
     PUSH EBX                            ; 004ab6b3

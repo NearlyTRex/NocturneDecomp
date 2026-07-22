@@ -186,7 +186,7 @@ void FUN_005384d0(int param_1)
     else {
       local_1ee0 = fVar2 * (float)_DAT_005958af;
     }
-    FUN_0055d4a0(local_7c);
+    core_xform_cpp_FUN_0055d4a0(local_7c);
     local_360 = auStack_32c[3];
     auStack_35c[(uint)bVar10 * -2] = auStack_32c[(uint)bVar10 * -2 + 4];
     auStack_35c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -196,7 +196,7 @@ void FUN_005384d0(int param_1)
     local_18 = (float)(param_1 + 0x150);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
               (local_18,local_380 + 8,local_1ee0,_DAT_02dc9f94,&LAB_0051b650);
-    FUN_0055d4e0(local_78);
+    core_xform_cpp_FUN_0055d4e0(local_78);
     pfVar12 = (float *)&LAB_0051b650;
     puVar8 = local_390;
     puVar6 = local_300;
@@ -229,7 +229,7 @@ LAB_00538745:
     else {
       local_1ef4 = fVar2 * (float)_DAT_00595897;
     }
-    FUN_0055d4a0(-local_4c);
+    core_xform_cpp_FUN_0055d4a0(-local_4c);
     auStack_23c[3] = local_2c0;
     auStack_23c[(uint)bVar10 * -2 + 4] = auStack_2bc[(uint)bVar10 * -2];
     auStack_23c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
@@ -239,7 +239,7 @@ LAB_00538745:
     local_18 = (float)(param_1 + 0x150);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
               (param_1 + 0x150,auStack_23c + 3,local_1ef4,_DAT_02dc9f60,&LAB_0051b650);
-    FUN_0055d4e0(local_48);
+    core_xform_cpp_FUN_0055d4e0(local_48);
     auStack_1ec[3] = local_240;
     auStack_1ec[(uint)bVar10 * -2 + 4] = auStack_23c[(uint)bVar10 * -2];
     auStack_1ec[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
@@ -292,7 +292,7 @@ LAB_00538745:
           fVar11 = (float10)acos((float10)local_24 / (float10)_DAT_005a2738)
           ;
           local_20 = (float)fVar11;
-          FUN_0055d4e0(local_20,pfVar12);
+          core_xform_cpp_FUN_0055d4e0(local_20,pfVar12);
           auStack_2a4[0] = uStack_2d4;
           auStack_2bc[(uint)bVar10 * -2 + 7] = local_2f0[(uint)bVar10 * -2 + 8];
           auStack_2bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 8] =
@@ -302,7 +302,7 @@ LAB_00538745:
           local_1c = param_1 + 0x150;
           core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                     (param_1 + 0x150,auStack_2bc + 6,local_1f08,_DAT_02dc9f60,&LAB_0051b650);
-          FUN_0055d4e0(-local_20);
+          core_xform_cpp_FUN_0055d4e0(-local_20);
           auStack_1c4[0] = auStack_2bc[2];
           auStack_1ec[(uint)bVar10 * -2 + 0xb] = auStack_2bc[(uint)bVar10 * -2 + 3];
           auStack_1ec[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xc] =
@@ -312,7 +312,7 @@ LAB_00538745:
           core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                     (local_1c,auStack_1ec + 10,local_1f08,_DAT_02dc9f68,&LAB_0051b650);
         }
-        FUN_0055d4a0(uStack_14c);
+        core_xform_cpp_FUN_0055d4a0(uStack_14c);
         uStack_3b4 = uStack_1d4;
         local_3b0[(uint)bVar10 * -2] = auStack_1ec[(uint)bVar10 * -2 + 7];
         local_3b0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -322,7 +322,7 @@ LAB_00538745:
         local_1c = param_1 + 0x150;
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                   (local_1c,&uStack_3b4,local_1f08,_DAT_02dc9f60,&LAB_0051b650);
-        FUN_0055d4e0(local_148[0]);
+        core_xform_cpp_FUN_0055d4e0(local_148[0]);
         puVar8 = auStack_25c + 2;
         puVar6 = local_3b0 + 3;
       }
@@ -334,7 +334,7 @@ LAB_00538745:
         fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,
                                  (float10)1);
         local_38 = (float)fVar11;
-        FUN_0055d4e0(local_38);
+        core_xform_cpp_FUN_0055d4e0(local_38);
         local_330 = local_3f0;
         auStack_32c[(uint)bVar10 * -2] = auStack_3ec[(uint)bVar10 * -2];
         auStack_32c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -344,7 +344,7 @@ LAB_00538745:
         local_18 = (float)(param_1 + 0x150);
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                   (local_18,auStack_35c + 0xb,local_1ef8,_DAT_02dc9f60,&LAB_0051b650);
-        FUN_0055d4e0(-local_38);
+        core_xform_cpp_FUN_0055d4e0(-local_38);
         pfVar12 = (float *)&LAB_0051b650;
         puVar8 = auStack_35c + 0xb;
         puVar6 = auStack_32c + 7;
@@ -363,7 +363,7 @@ LAB_00538745:
             fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738
                                      ,(float10)1);
             local_34 = (float)fVar11;
-            FUN_0055d4e0(local_34);
+            core_xform_cpp_FUN_0055d4e0(local_34);
             local_1f0 = local_260;
             auStack_1ec[(uint)bVar10 * -2] = auStack_25c[(uint)bVar10 * -2];
             auStack_1ec[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -373,7 +373,7 @@ LAB_00538745:
             local_18 = (float)(param_1 + 0x150);
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (param_1 + 0x150,auStack_23c + 0x13,local_1f0c,_DAT_02dc9f60,&LAB_0051b650);
-            FUN_0055d4e0(-local_34);
+            core_xform_cpp_FUN_0055d4e0(-local_34);
             local_1f0 = local_220;
             auStack_1ec[(uint)bVar10 * -2] = auStack_23c[(uint)bVar10 * -2 + 8];
             auStack_1ec[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -391,7 +391,7 @@ LAB_00538745:
             fVar11 = (float10)atan2
                                         ((float10)local_168 - (float10)*(float *)(param_1 + 0x1fb04)
                                          ,(float10)_DAT_005a2738);
-            FUN_0055d4a0((float)fVar11,pfVar12);
+            core_xform_cpp_FUN_0055d4a0((float)fVar11,pfVar12);
             iVar3 = local_1c;
             auStack_3ec[2] = uStack_344;
             auStack_3ec[(uint)bVar10 * -2 + 3] = auStack_35c[(uint)bVar10 * -2 + 7];
@@ -406,7 +406,7 @@ LAB_00538745:
             fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738
                                      ,(float10)1);
             local_30 = (float)fVar11;
-            FUN_0055d4e0(local_30);
+            core_xform_cpp_FUN_0055d4e0(local_30);
             iVar3 = local_1c;
             auStack_214[0] = uStack_204;
             auStack_23c[(uint)bVar10 * -2 + 0xb] = auStack_23c[(uint)bVar10 * -2 + 0xf];
@@ -417,7 +417,7 @@ LAB_00538745:
             ;
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (iVar3,auStack_23c + 10,local_1ef4,_DAT_02dc9f60,&LAB_0051b650);
-            FUN_0055d4e0(-local_30);
+            core_xform_cpp_FUN_0055d4e0(-local_30);
             auStack_214[0] = auStack_35c[2];
             auStack_23c[(uint)bVar10 * -2 + 0xb] = auStack_35c[(uint)bVar10 * -2 + 3];
             auStack_23c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xc] =
@@ -441,7 +441,7 @@ LAB_00538745:
         pfVar12 = (float *)0x539214;
         fVar11 = (float10)atan2
                                     ((float10)local_c0 - (float10)local_20,(float10)_DAT_005a2738);
-        FUN_0055d4a0((float)fVar11,pfVar12);
+        core_xform_cpp_FUN_0055d4a0((float)fVar11,pfVar12);
         auStack_294[0] = uStack_384;
         auStack_2bc[(uint)bVar10 * -2 + 0xb] = local_380[(uint)bVar10 * -2];
         auStack_2bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xc] =
@@ -456,7 +456,7 @@ LAB_00538745:
         fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,
                                  (float10)1);
         local_34 = (float)fVar11;
-        FUN_0055d4e0(local_34);
+        core_xform_cpp_FUN_0055d4e0(local_34);
         auStack_1a4[0] = uStack_2f4;
         auStack_1ec[(uint)bVar10 * -2 + 0x13] = local_2f0[(uint)bVar10 * -2];
         auStack_1ec[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x14] =
@@ -465,7 +465,7 @@ LAB_00538745:
              (local_2f0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                   (local_1c,auStack_1ec + 0x12,local_1ee0,_DAT_02dc9f60,&LAB_0051b650);
-        FUN_0055d4e0(-local_34);
+        core_xform_cpp_FUN_0055d4e0(-local_34);
         puVar8 = auStack_1ec + 0x12;
         puVar6 = auStack_3ec + 10;
       }
@@ -514,7 +514,7 @@ LAB_00538745:
     else {
       local_1edc = local_1edc * (float)_DAT_0059587f;
     }
-    FUN_0055d4a0(uStack_11c);
+    core_xform_cpp_FUN_0055d4a0(uStack_11c);
     auStack_284[0] = uStack_1b4;
     auStack_2bc[(uint)bVar10 * -2 + 0xf] = auStack_1ec[(uint)bVar10 * -2 + 0xf];
     auStack_2bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
@@ -524,7 +524,7 @@ LAB_00538745:
     local_1c = param_1 + 0x150;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
               (param_1 + 0x150,auStack_2bc + 0xe,local_1edc,_DAT_02dc9f94,&LAB_0051b650);
-    FUN_0055d4e0(uStack_118);
+    core_xform_cpp_FUN_0055d4e0(uStack_118);
     uStack_274 = local_380[3];
     auStack_2bc[(uint)bVar10 * -2 + 0x13] = local_380[(uint)bVar10 * -2 + 4];
     auStack_2bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x14] =
@@ -542,7 +542,7 @@ LAB_00538751:
     if ((*(int *)(param_1 + 0x1fa3c) != 0) && (*(int *)(param_1 + 0x1fa94) != 0)) {
       local_8c[0] = *(float *)(param_1 + 0x1fa58);
     }
-    FUN_0055d610(local_8c,0x3f800000,_DAT_02dc9f50,&LAB_0051b650,pfVar12);
+    core_xform_cpp_FUN_0055d610(local_8c,0x3f800000,_DAT_02dc9f50,&LAB_0051b650,pfVar12);
     local_2f0[3] = uStack_3d4;
     local_2f0[(uint)bVar10 * -2 + 4] = auStack_3ec[(uint)bVar10 * -2 + 7];
     local_2f0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =

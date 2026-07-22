@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 004073b5
     MOV dword ptr [0x01c039a0],EDI      ; 004073b6 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EBP      ; 004073bc | DAT_01c039a4
-    CALL FUN_00432cd0                   ; 004073c2
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 004073c2
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 004073c7
     POP EDI                             ; 004073ca
     MOV EAX,dword ptr [EBX + 0x4]       ; 004073cb

@@ -24,21 +24,21 @@
 ;   core_svetlana.cpp_CSvetlana_setup_FUN_00541a40 at 00541c33
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057acab
+;   TerminatedCString s_rt_0057acab
 ;   string s_models_0057acae
 ;   string s_..\\core\\cloth.cpp_0057acb5
 ;   string s_CCloth::load_-_Unable_to_open_fi_0057acc7
-;   undefined4 DAT_0057aced
+;   TerminatedCString s_d_0057aced
 ;   string s_..\\core\\cloth.cpp_0057acf1
 ;   string s_%s_is_version_%d,_this_.EXE_is_o_0057ad03
-;   undefined4 DAT_0057ad4b
+;   TerminatedCString s_s_0057ad4b
 ;   string s_%f,%f,%f,%f,%f,%f_0057ad4f
 ;   string s_%f,%f,%f,%f,%f,%f,%f,%f_0057ad62
-;   undefined4 DAT_0057ad7b
-;   undefined4 DAT_0057ad7f
-;   undefined4 DAT_0057ad83
-;   undefined4 DAT_0057ad87
-;   undefined4 DAT_0057ad8b
+;   TerminatedCString s_f_0057ad7b
+;   TerminatedCString s_d_0057ad7f
+;   TerminatedCString s_d_0057ad83
+;   TerminatedCString s_d_0057ad87
+;   TerminatedCString s_d_0057ad8b
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     SUB ESP,0x228                       ; 00435244
     MOV ESI,dword ptr [ESP + 0x23c]     ; 0043524a
     MOV EBX,dword ptr [ESP + 0x240]     ; 00435251
-    PUSH 0x57acab                       ; 00435258 | DAT_0057acab
+    PUSH 0x57acab                       ; 00435258 | = "rt"
     PUSH EBX                            ; 0043525d
     PUSH 0x57acae                       ; 0043525e | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00435263
@@ -85,7 +85,7 @@ section .text
     ADD ESP,0xc                         ; 00435294
     LEA EAX,[ESI + 0x3ab20]             ; 00435297
     PUSH EAX                            ; 0043529d
-    PUSH 0x57aced                       ; 0043529e | DAT_0057aced
+    PUSH 0x57aced                       ; 0043529e | = "%d\n"
     PUSH EDI                            ; 004352a3
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004352a4
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0xc                         ; 004352f8
     MOV EAX,ESP                         ; 004352fb
     PUSH EAX                            ; 004352fd
-    PUSH 0x57ad4b                       ; 004352fe | DAT_0057ad4b
+    PUSH 0x57ad4b                       ; 004352fe | = "%s\n"
     PUSH EBP                            ; 00435303
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00435304
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -160,17 +160,17 @@ section .text
     PUSH EBX                            ; 00435388
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00435389
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
-    FLD float ptr [0x0059b378]          ; 0043538e | DAT_0059b378
-    FLD float ptr [0x0059b37c]          ; 00435394 | DAT_0059b37c
-    FLD float ptr [0x0059b380]          ; 0043539a | DAT_0059b380
-    FLD float ptr [0x0059b384]          ; 004353a0 | DAT_0059b384
-    FLD float ptr [0x0059b388]          ; 004353a6 | DAT_0059b388
-    FLD float ptr [0x0059b38c]          ; 004353ac | DAT_0059b38c
-    FLD float ptr [0x0059b390]          ; 004353b2 | DAT_0059b390
+    FLD float ptr [0x0059b378]          ; 0043538e | FLOAT_0059b378
+    FLD float ptr [0x0059b37c]          ; 00435394 | FLOAT_0059b37c
+    FLD float ptr [0x0059b380]          ; 0043539a | FLOAT_0059b380
+    FLD float ptr [0x0059b384]          ; 004353a0 | FLOAT_0059b384
+    FLD float ptr [0x0059b388]          ; 004353a6 | FLOAT_0059b388
+    FLD float ptr [0x0059b38c]          ; 004353ac | FLOAT_0059b38c
+    FLD float ptr [0x0059b390]          ; 004353b2 | FLOAT_0059b390
     ADD ESP,0x20                        ; 004353b8
     FXCH ST6                            ; 004353bb
     FSTP float ptr [ESI + 0x37b18]      ; 004353bd
-    FLD float ptr [0x0059b394]          ; 004353c3 | DAT_0059b394
+    FLD float ptr [0x0059b394]          ; 004353c3 | FLOAT_0059b394
     FXCH ST5                            ; 004353c9
     FSTP float ptr [ESI + 0x37b1c]      ; 004353cb
     FXCH ST3                            ; 004353d1
@@ -193,7 +193,7 @@ section .text
     ADD ESP,0xc                         ; 00435415
     LEA EAX,[ESI + 0x37b48]             ; 00435418
     PUSH EAX                            ; 0043541e
-    PUSH 0x57ad7b                       ; 0043541f | DAT_0057ad7b
+    PUSH 0x57ad7b                       ; 0043541f | = "%f\n"
     PUSH EDI                            ; 00435424
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00435425
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -211,7 +211,7 @@ section .text
     ADD ESP,0xc                         ; 0043544f
     LEA EAX,[ESI + 0x37b44]             ; 00435452
     PUSH EAX                            ; 00435458
-    PUSH 0x57ad7f                       ; 00435459 | DAT_0057ad7f
+    PUSH 0x57ad7f                       ; 00435459 | = "%d\n"
     PUSH EDI                            ; 0043545e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0043545f
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -227,7 +227,7 @@ section .text
     ADD ESP,0xc                         ; 00435481
     LEA EAX,[ESI + 0x39ce8]             ; 00435484
     PUSH EAX                            ; 0043548a
-    PUSH 0x57ad83                       ; 0043548b | DAT_0057ad83
+    PUSH 0x57ad83                       ; 0043548b | = "%d\n"
     PUSH EBX                            ; 00435490
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00435491
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -251,7 +251,7 @@ section .text
     LEA EDI,[ESI + 0x39cec]             ; 004354c4
     PUSH EDI                            ; 004354ca
         ;   Label: LAB_004354ca
-    PUSH 0x57ad87                       ; 004354cb | DAT_0057ad87
+    PUSH 0x57ad87                       ; 004354cb | = "%d\n"
     MOV EDX,dword ptr [ESP + 0x210]     ; 004354d0
     PUSH EDX                            ; 004354d7
     INC EBX                             ; 004354d8
@@ -279,7 +279,7 @@ section .text
     ADD ESP,0xc                         ; 00435513
     LEA EAX,[ESI + 0x37b4c]             ; 00435516
     PUSH EAX                            ; 0043551c
-    PUSH 0x57ad8b                       ; 0043551d | DAT_0057ad8b
+    PUSH 0x57ad8b                       ; 0043551d | = "%d\n"
     PUSH EBX                            ; 00435522
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00435523
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   string s_Unable_to_allocate_%u_bytes_for_b_0057a625
 ;   string s_..\\cockpit\\ckptutil.c_0057a657
-;   undefined4 DAT_0057a66d
-;   undefined4 DAT_0057a670
+;   TerminatedCString s_rb_0057a66d
+;   TerminatedCString s_art_0057a670
 ;   string s_Unable_to_open_bitmap_file_(%s)._0057a674
 ;   string s_..\\cockpit\\ckptutil.c_0057a695
 ;   string s_Unable_to_read_bitmap_file_(%s)._0057a6ab
@@ -47,10 +47,10 @@ section .text
     TEST ESI,ESI                        ; 0042d253
     JZ 0x0042d2c8                       ; 0042d255
         ;   XREF to: 0042d2c8 (CONDITIONAL_JUMP)  ; LAB_0042d2c8
-    PUSH 0x57a66d                       ; 0042d257 | DAT_0057a66d
+    PUSH 0x57a66d                       ; 0042d257 | = "rb"
         ;   Label: LAB_0042d257
     PUSH EDI                            ; 0042d25c
-    PUSH 0x57a670                       ; 0042d25d | DAT_0057a670
+    PUSH 0x57a670                       ; 0042d25d | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0042d262
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0042d267

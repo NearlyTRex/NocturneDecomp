@@ -11,7 +11,7 @@ int core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x17c);
   iVar1 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar1 + 0x17c);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0xc);

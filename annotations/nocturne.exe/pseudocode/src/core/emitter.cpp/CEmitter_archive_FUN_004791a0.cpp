@@ -10,7 +10,7 @@ void core_emitter_cpp_CEmitter_archive_FUN_004791a0(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x150,"?emitterType" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x150,"emitterType");
   core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x154,"emitterSize");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x164,"eventOn");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1c8,"eventOff");

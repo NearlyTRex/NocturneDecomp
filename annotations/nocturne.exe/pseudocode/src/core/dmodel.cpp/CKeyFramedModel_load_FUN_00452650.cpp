@@ -17,8 +17,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,cha
   char *pcVar4;
   char *pcVar5;
   
-  FUN_00452f10(param_1);
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,&DAT_0057c956);
+  core_dmodel_cpp_FUN_00452f10(param_1);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rb");
   pcVar4 = param_2;
   pcVar5 = param_1;
   if (iVar2 == 0) {
@@ -39,7 +39,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,cha
   _ungetc(iVar3,iVar2);
   if (iVar3 == 0x2f) {
     _fclose(iVar2);
-    iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,&DAT_0057c991);
+    iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rt");
     if (iVar2 == 0) {
       _DAT_01cc4800 = "..\\core\\dmodel.cpp";
       _DAT_01cc4804 = 0xc5;

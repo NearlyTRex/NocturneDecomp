@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005850a0
+;   double DOUBLE_005850a0 = 0.900000000000000
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ae902
     MOV ECX,dword ptr [ESP + 0x10]      ; 004ae906
     FLD float ptr [ECX + 0x4]           ; 004ae90a
-    FCOMP double ptr [0x005850a0]       ; 004ae90d | DAT_005850a0
+    FCOMP double ptr [0x005850a0]       ; 004ae90d | DOUBLE_005850a0
     FNSTSW AX                           ; 004ae913
     SAHF                                ; 004ae915
     JBE 0x004ae934                      ; 004ae916

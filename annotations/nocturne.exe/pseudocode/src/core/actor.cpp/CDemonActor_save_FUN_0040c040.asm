@@ -12,11 +12,11 @@
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10e3
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\actor.cpp_005779d8+1
-;   string s_CDemonActor::save_-_tried_to_sav_005779eb
-;   string s_%s{_%s_\"%s\"_00577a2c
-;   string s_%s}_%s_\"%s\"_00577a39
-;   string s_..\\core\\actor.cpp_00577a46
+;   TerminatedCString s_core_actor_cpp_005779d9
+;   TerminatedCString s_CDemonActor_save_tried_t_005779eb
+;   TerminatedCString s_s_s_s_00577a2c
+;   TerminatedCString s_s_s_s_00577a39
+;   TerminatedCString s_core_actor_cpp_00577a46
 ;   string s_IO_Error_after_writing_actor_of_t_00577a58
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
@@ -56,7 +56,7 @@ section .text
     JNZ 0x0040c089                      ; 0040c063
         ;   XREF to: 0040c089 (CONDITIONAL_JUMP)  ; LAB_0040c089
     PUSH EAX                            ; 0040c065
-    MOV EDX,0x5779d9                    ; 0040c066 | s_..\core\actor.cpp_005779d8+1
+    MOV EDX,0x5779d9                    ; 0040c066 | = "..\\core\\actor.cpp"
     MOV ECX,0x787                       ; 0040c06b
     PUSH 0x5779eb                       ; 0040c070 | = "CDemonActor::save - tried to save act..."
     MOV dword ptr [0x01cc4800],EDX      ; 0040c075 | DAT_01cc4800

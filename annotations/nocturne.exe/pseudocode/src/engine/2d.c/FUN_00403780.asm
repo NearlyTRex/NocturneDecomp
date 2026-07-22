@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00403780(int param_1,int param_2,int param_3)
+; void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@
 section .text
 
     PUSH EBX                            ; 00403780
-        ;   Label: FUN_00403780
+        ;   Label: engine_2d.c_FUN_00403780
     PUSH ESI                            ; 00403781
     PUSH EDI                            ; 00403782
     PUSH EBP                            ; 00403783

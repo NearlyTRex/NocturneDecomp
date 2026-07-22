@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00432cd0 at 00432ee5
+;   engine_clipper.c_FUN_00432cd0 at 00432ee5
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f9da8 = 004f9ee1

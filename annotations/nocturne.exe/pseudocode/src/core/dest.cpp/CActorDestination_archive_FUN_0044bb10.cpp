@@ -13,7 +13,7 @@ void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(int param_1)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   if (0x00000004 < 2) {
-    core_actor_cpp_archiveString_FUN_0040c6d0(local_104,"?whoGoesHere" + 1);
+    core_actor_cpp_archiveString_FUN_0040c6d0(local_104,"whoGoesHere");
     *(uint *)(param_1 + 0x150) = 0;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x180,"whatEvent");

@@ -36,8 +36,8 @@
 ; Referenced Globals:
 ;   string s_..\\core\\gabriela.cpp_00582134
 ;   string s_Hell_froze_-_invalid_pickUpType:_00582149
-;   undefined4 DAT_00582172
-;   undefined4 DAT_0058217a
+;   double DOUBLE_00582172 = -0.800000000000000
+;   double DOUBLE_0058217a = 2
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800
@@ -203,7 +203,7 @@ section .text
     FXCH                                ; 004985a6
     FSUB float ptr [EDX + 0x8]          ; 004985a8
     FSTP float ptr [ESP + 0x84]         ; 004985ab
-    FCOMP double ptr [0x0058217a]       ; 004985b2 | DAT_0058217a
+    FCOMP double ptr [0x0058217a]       ; 004985b2 | DOUBLE_0058217a
     FNSTSW AX                           ; 004985b8
     SAHF                                ; 004985ba
     JA 0x00498543                       ; 004985bb
@@ -270,7 +270,7 @@ section .text
     FSTP float ptr [ESP + 0x60]         ; 00498678
     FLD float ptr [ESP + 0x60]          ; 0049867c
         ;   Label: LAB_0049867c
-    FCOMP double ptr [0x00582172]       ; 00498680 | DAT_00582172
+    FCOMP double ptr [0x00582172]       ; 00498680 | DOUBLE_00582172
     FNSTSW AX                           ; 00498686
     SAHF                                ; 00498688
     JA 0x00498543                       ; 00498689

@@ -21,7 +21,7 @@ uint __cdecl core_event_cpp_parseDamageType_FUN_0047a8f0(uint param_1,uint *para
     *param_2 = 0x65;
     return 1;
   }
-  iVar1 = _stricmp(param_1,&DAT_0057f55c);
+  iVar1 = _stricmp(param_1,"Fire");
   if (iVar1 == 0) {
     *param_2 = 0x66;
     return 1;
@@ -36,7 +36,7 @@ uint __cdecl core_event_cpp_parseDamageType_FUN_0047a8f0(uint param_1,uint *para
     *param_2 = 0x68;
     return 1;
   }
-  iVar1 = _stricmp(param_1,&DAT_0057f56d);
+  iVar1 = _stricmp(param_1,"Gas");
   if (iVar1 == 0) {
     *param_2 = 0x69;
     return 1;

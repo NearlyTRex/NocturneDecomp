@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f333
-;   undefined4 DAT_0057f337
+;   float FLOAT_0057f333 = 0.5
+;   double DOUBLE_0057f337 = 0.300000000000000
 ;
 ; *****************************************************************************
 
@@ -32,10 +32,10 @@ section .text
     FXCH                                ; 0047984b
     FADD float ptr [ESP + 0xc]          ; 0047984d
     FXCH                                ; 00479851
-    FMUL double ptr [0x0057f337]        ; 00479853 | DAT_0057f337
+    FMUL double ptr [0x0057f337]        ; 00479853 | DOUBLE_0057f337
     FXCH                                ; 00479859
     FST float ptr [ESP + 0x24]          ; 0047985b
-    FLD float ptr [0x0057f333]          ; 0047985f | DAT_0057f333
+    FLD float ptr [0x0057f333]          ; 0047985f | FLOAT_0057f333
     FXCH                                ; 00479865
     FMUL ST1                            ; 00479867
     FLD float ptr [ESP + 0x8]           ; 00479869

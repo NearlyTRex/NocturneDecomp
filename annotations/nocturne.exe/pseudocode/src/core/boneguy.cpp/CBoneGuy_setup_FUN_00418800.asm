@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_Head_005791a1+1
+;   TerminatedCString s_Bip01_Head_005791a2
 ;   string s_Bip01_L_ForeArm_005791ad
 ;   string s_Bip01_R_ForeArm_005791bd
 ;   string s_Bip01_L_UpperArm_005791cd
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
     ADD ESP,0x4                         ; 0041881c
     PUSH 0x1                            ; 0041881f
-    PUSH 0x5791a2                       ; 00418821 | s_Bip01_Head_005791a1+1
+    PUSH 0x5791a2                       ; 00418821 | = "Bip01 Head"
     PUSH EAX                            ; 00418826
     MOV EBX,EAX                         ; 00418827
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00418829

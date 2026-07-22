@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,int param_2,float param_3,float param_4,int *param_5)
 
 {
@@ -35,8 +33,8 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,i
   local_4c = *(float *)(param_2 + 0x24) - *(float *)(param_1 + 0x24);
   local_48 = *(float *)(param_2 + 0x28) - *(float *)(param_1 + 0x28);
   if (0.0 <= param_3) {
-    if ((((float)_DAT_0057a0ca < ABS(local_4c)) || ((float)_DAT_0057a0d2 < ABS(local_50))) ||
-       ((float)_DAT_0057a0d2 < ABS(local_48))) {
+    if ((((float)20 < ABS(local_4c)) || ((float)40 < ABS(local_50))) ||
+       ((float)40 < ABS(local_48))) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"%s confused while following %s\n",param_1,param_2);
       *param_5 = 3;
@@ -47,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,i
     if (param_4 < 0.0) {
       param_4 = 1e+30;
     }
-    local_20 = param_3 * (float)_DAT_0057a0da;
+    local_20 = param_3 * (float)0.10000000000000001;
     iVar4 = *param_5;
     if (iVar4 == 0) {
       param_3 = param_3 + local_20;
@@ -59,7 +57,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,i
     else if (iVar4 == 2) {
       param_4 = param_4 - local_20;
     }
-    if (param_3 < (float)_DAT_0057a0e2) {
+    if (param_3 < (float)0.01) {
       param_3 = 0.01;
     }
     if (param_3 <= local_2c) {
@@ -87,11 +85,11 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,i
   iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_38,uVar3);
   *(uint *)(param_1 + 0x2410) = *(uint *)(iVar4 + 4);
   if (*param_5 == 0) {
-    if ((float)_DAT_0057a0f2 < ABS(*(float *)(param_1 + 0x2410))) goto LAB_00428901;
+    if ((float)0.17453292519444399 < ABS(*(float *)(param_1 + 0x2410))) goto LAB_00428901;
     if (*param_5 != 1) goto LAB_0042899e;
   }
   else {
-    if (ABS(*(float *)(param_1 + 0x2410)) < (float)_DAT_0057a0ea) {
+    if (ABS(*(float *)(param_1 + 0x2410)) < (float)0.034906585038888903) {
       *param_5 = 0;
 LAB_0042899e:
       *(uint *)(param_1 + 0x2410) = 0;

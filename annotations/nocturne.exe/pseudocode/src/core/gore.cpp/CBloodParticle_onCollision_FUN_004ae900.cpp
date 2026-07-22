@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_gore_cpp_CBloodParticle_onCollision_FUN_004ae900(int param_1,int param_2)
 
 {
-  if ((float)_DAT_005850a0 < *(float *)(param_2 + 4)) {
+  if ((float)0.90000000000000002 < *(float *)(param_2 + 4)) {
     core_gore_cpp_CGore_createGroundBloodSplat_FUN_004b0190
               (0x01C78C7C,param_1,*(uint *)(param_1 + 0x38));
     return 1;

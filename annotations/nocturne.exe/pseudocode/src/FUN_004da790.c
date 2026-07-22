@@ -79,7 +79,7 @@ void FUN_004da790(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     if (*(int *)(param_1 + 0xbd48) != 0) {
       core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(param_1);
@@ -155,7 +155,7 @@ void FUN_004da790(int param_1,float param_2)
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c);
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
   uVar6 = *(uint *)(iVar5 + 0x24);
-  iVar5 = FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar5 == 0) {
     switch(uVar6) {
     case 0:
@@ -518,6 +518,6 @@ switchD_004db6cf_caseD_3:
   if (iVar4 == 0) {
     core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(param_1,param_2);
   }
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

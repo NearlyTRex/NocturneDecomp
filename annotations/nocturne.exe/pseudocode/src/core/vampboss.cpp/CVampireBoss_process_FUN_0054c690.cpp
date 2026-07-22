@@ -94,7 +94,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
     }
     iVar7 = iVar7 + 4;
   } while (iVar7 != param_1 + 0x10);
-  iVar7 = FUN_004259f0(param_1,param_2);
+  iVar7 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar7 == 0) {
     return;
   }
@@ -547,7 +547,7 @@ LAB_0054d280:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   iVar7 = param_1 + 0x150;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iVar7);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   local_18 = (float)(param_1 + 0x30);
   core_cloth_cpp_CCloth_process_FUN_00436e50
             (param_1 + 0x48b08,param_1 + 0x20,local_18,param_2,*(uint *)(param_1 + 0x240c),

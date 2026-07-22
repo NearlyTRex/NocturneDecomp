@@ -20,7 +20,7 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(ui
   else {
     iVar2 = wincore_windll_cpp_lockHoldBuffer_FUN_00532d60();
     if (iVar2 == 0) {
-      _DAT_01cc4800 = "\n@..\\core\\dcamera.cpp" + 2;
+      _DAT_01cc4800 = "..\\core\\dcamera.cpp";
       _DAT_01cc4804 = 0xe2b;
       FUN_004c8440("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
     }

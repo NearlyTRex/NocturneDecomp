@@ -41,7 +41,7 @@ uint __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(int param_1
       if (iVar4 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - local_34;
         fVar3 = *(float *)(iVar1 + 0x28) - local_2c;
-        if ((ABS(*(float *)(iVar1 + 0x24) - fStack_30) <= (float)_DAT_005861b2) &&
+        if ((ABS(*(float *)(iVar1 + 0x24) - fStack_30) <= (float)2) &&
            (fStack_18 = fVar2 * fVar2 + fVar3 * fVar3, fStack_18 <= local_1c)) {
           *(int *)(param_1 + 0x1fa60) = iVar1;
           local_1c = fStack_18;

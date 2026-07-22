@@ -27,7 +27,7 @@
 ;   undefined1* PTR_LAB_0044afd0 = 0044b114
 ;   string s_..\\core\\dcube.cpp_0057bd80
 ;   string s_CDemonCube::rotateVerticies_-_tr_0057bd92
-;   undefined4 DAT_0057bdeb
+;   float FLOAT_0057bdeb = 127
 ;   undefined4 DAT_0059be10
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_014b847c
@@ -185,7 +185,7 @@ section .text
     MOV dword ptr [EBP + -0x28],EAX     ; 0044b131
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044b134
     MOV dword ptr [EBP + -0x24],EAX     ; 0044b137
-    FLD float ptr [0x0057bdeb]          ; 0044b13a | DAT_0057bdeb
+    FLD float ptr [0x0057bdeb]          ; 0044b13a | FLOAT_0057bdeb
         ;   Label: LAB_0044b13a
     FLD float ptr [EBP + -0x2c]         ; 0044b140
     FMUL ST1                            ; 0044b143

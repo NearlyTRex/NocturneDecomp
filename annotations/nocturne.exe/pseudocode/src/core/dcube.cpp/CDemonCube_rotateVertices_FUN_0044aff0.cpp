@@ -84,9 +84,9 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(int param_1,u
         local_38 = *(float *)(iVar3 + 0x10);
         local_34 = *(float *)(iVar3 + 0x14);
       }
-      local_3c = local_3c * _DAT_0057bdeb;
-      local_38 = local_38 * _DAT_0057bdeb;
-      local_34 = _DAT_0057bdeb * local_34;
+      local_3c = local_3c * 127.0f;
+      local_38 = local_38 * 127.0f;
+      local_34 = 127.0f * local_34;
       local_28 = (uint)ROUND(local_34);
       local_2c = (uint)ROUND(local_38);
       local_30 = (uint)ROUND(local_3c);

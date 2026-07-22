@@ -36,8 +36,8 @@
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580 at 004365d0
 ;
 ; Referenced Globals:
-;   string s_..\\core\\xform.cpp_005982fa
-;   string s_inverse()_-_Singular_matrix_0059830c
+;   TerminatedCString s_core_xform_cpp_005982fa
+;   TerminatedCString s_inverse_Singular_matrix_0059830c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

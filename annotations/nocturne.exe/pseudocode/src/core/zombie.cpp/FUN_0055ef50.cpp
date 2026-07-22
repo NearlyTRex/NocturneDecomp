@@ -1,15 +1,15 @@
-// Name: FUN_0055ef50
+// Name: core_zombie.cpp_FUN_0055ef50
 // Address: 0055ef50
 // Address Range: [[0055ef50, 00560ccb]]
 // Convention: unknown
-// Signature: void FUN_0055ef50(int param_1,float param_2)
+// Signature: void core_zombie_cpp_FUN_0055ef50(int param_1,float param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00560989) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0055ef50(int param_1,float param_2)
+void core_zombie_cpp_FUN_0055ef50(int param_1,float param_2)
 
 {
   float fVar1;
@@ -164,7 +164,7 @@ void FUN_0055ef50(int param_1,float param_2)
   float *local_18;
   float *local_14;
   
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 == 0) {
     return;
   }
@@ -208,8 +208,7 @@ LAB_0055efe4:
               core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
                         (param_1,iVar6,iVar3,0x3e4ccccd);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (PTR_DAT_005ad350,"%s picked up %s using hand %d\n",param_1,iVar3,
-                         iVar6);
+                        (PTR_DAT_005ad350,"%s picked up %s using hand %d\n",param_1,iVar3,iVar6);
             }
           }
         }
@@ -317,7 +316,7 @@ LAB_0055f021:
       if (iVar3 < 0) {
         _DAT_01cc4800 = "..\\core\\zombie.cpp";
         _DAT_01cc4804 = 0x1ee;
-        FUN_004c8440(&DAT_00598558);
+        FUN_004c8440("WTF!");
       }
       iVar6 = *(int *)(iVar3 * 0x44 + param_1 + 0x24ac);
       if (iVar6 != 0) {
@@ -335,7 +334,7 @@ LAB_0055f021:
       if (iVar3 < 0) {
         _DAT_01cc4800 = "..\\core\\zombie.cpp";
         _DAT_01cc4804 = 0x205;
-        FUN_004c8440(&DAT_0059858b);
+        FUN_004c8440("WTF!");
       }
       iVar6 = iVar3 * 0x44 + param_1;
       if (*(int *)(iVar6 + 0x24ac) != 0) {
@@ -454,7 +453,7 @@ LAB_0055f021:
   iVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar3);
   iVar6 = *(int *)(iVar6 + 0x24);
   local_48 = 0;
-  iVar9 = FUN_00428c00(param_1,param_2);
+  iVar9 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar9 == 0) {
     local_34 = -1.0;
     local_4c = 0.3;
@@ -489,8 +488,8 @@ LAB_0055f021:
           iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbe08));
           if (iVar3 == 0) {
             if (*(int *)(param_1 + 0xbdb0) == 0) {
-              uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
-                                (param_1,"zom-a0?.wav");
+              uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"zom-a0?.wav")
+              ;
               *(uint *)(param_1 + 0xbe08) = uVar4;
             }
             else {
@@ -539,7 +538,7 @@ LAB_0056033e:
           *(uint *)(param_1 + 0x23ac) = 0;
           *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
-          iVar3 = FUN_00561010(param_1,param_2);
+          iVar3 = core_zombie_cpp_FUN_00561010(param_1,param_2);
           if (iVar3 == 0) {
             local_50 = 0x3FA66666;
             local_40 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(param_1,1);
@@ -933,7 +932,7 @@ LAB_0055fa02:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   if (iVar3 != 0xe) {
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-    FUN_0042a150(param_1,param_2);
+    core_charactr_cpp_FUN_0042a150(param_1,param_2);
   }
   if (*(int *)(param_1 + 0xbc90) == 0) {
     iVar3 = *(int *)(param_1 + 0xbdf4);

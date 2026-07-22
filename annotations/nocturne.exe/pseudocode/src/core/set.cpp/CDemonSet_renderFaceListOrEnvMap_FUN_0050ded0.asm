@@ -16,9 +16,9 @@
 ;   undefined4 DAT_01c777e0
 ;
 ; Called Functions:
+;   core_set.cpp_FUN_0050d910
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   FUN_00461720
-;   FUN_0050d910
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EDI                            ; 0050df2d
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050df2e
     PUSH EBP                            ; 0050df32
-    CALL FUN_0050d910                   ; 0050df33
-        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; undefined FUN_0050d910()
+    CALL core_set.cpp_FUN_0050d910      ; 0050df33
+        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050d910()
     ADD ESP,0x10                        ; 0050df38
     POP ESI                             ; 0050df3b
     POP EDI                             ; 0050df3c

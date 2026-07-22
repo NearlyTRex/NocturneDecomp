@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004bca20(int param_1,int *param_2)
 
 {
@@ -90,16 +88,16 @@ switchD_004bca56_default:
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(param_1,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(uVar3);
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_005864a5);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   iVar2 = *param_2;
   if (iVar2 == *(int *)(param_1 + 0xbd58)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_005864b5);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar2 != *(int *)(param_1 + 0xbd50)) && (iVar2 != *(int *)(param_1 + 0xbd54))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_005864ad);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

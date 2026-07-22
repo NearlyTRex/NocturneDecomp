@@ -49,7 +49,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(int pa
   *(int *)(param_1 + 0x2c) = local_14;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&DAT_01fba938,&local_30);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&DAT_01fba938,&local_54);
-  local_20 = (float)_DAT_00597c89;
+  local_20 = (float)0.5;
   local_60 = (local_30 + local_54) * local_20;
   local_58 = (local_28 + local_4c) * local_20;
   local_20 = (local_54 - local_30) * local_20;
@@ -62,7 +62,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(int pa
   if (local_18 < local_24) {
     local_18 = local_24;
   }
-  local_1c = (local_4c - local_28) * (float)_DAT_00597c89;
+  local_1c = (local_4c - local_28) * (float)0.5;
   if (local_18 < local_1c) {
     local_18 = local_1c;
   }
@@ -86,12 +86,12 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(int pa
   uVar3 = 0x01C03A10;
   local_14 = _DAT_01fb96f0;
   fVar2 = (float)_DAT_01fb96f0;
-  fVar1 = (float)_DAT_00597c91;
+  fVar1 = (float)1.5259021896696401e-05;
   *(float *)(param_1 + 0x30) = fVar2 * fVar1;
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (uVar3,"BnoLightningFlash" + 1);
+                    (uVar3,"noLightningFlash");
   if (iVar5 == 0) {
-    local_98 = fVar2 * fVar1 + _DAT_00597c99;
+    local_98 = fVar2 * fVar1 + 0.65f;
     if (1.0 < local_98) {
       local_98 = 1.0;
     }

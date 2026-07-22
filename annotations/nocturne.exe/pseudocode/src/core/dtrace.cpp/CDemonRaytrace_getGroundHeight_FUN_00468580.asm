@@ -25,12 +25,12 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_00421b80 at 00421ec7
+;   core_bugs.cpp_FUN_00421b80 at 00421ec7
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050ecc7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e1e2
-;   undefined4 DAT_0057e1e6
+;   float FLOAT_0057e1e2 = 2
+;   float FLOAT_0057e1e6 = -10
 ;   undefined4 DAT_014b89e8
 ;   undefined4 DAT_014b89ec
 ;   undefined4 DAT_014b89f0
@@ -81,12 +81,12 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 004685c2
     FLD float ptr [ESP + 0x8]           ; 004685c4
     MOV dword ptr [ESP + 0x14],EAX      ; 004685c8
-    FADD float ptr [0x0057e1e2]         ; 004685cc | DAT_0057e1e2
+    FADD float ptr [0x0057e1e2]         ; 004685cc | FLOAT_0057e1e2
     FLD float ptr [ESP + 0x14]          ; 004685d2
     MOV EAX,dword ptr [EDX]             ; 004685d6
     FXCH                                ; 004685d8
     FSTP float ptr [ESP + 0x8]          ; 004685da
-    FADD float ptr [0x0057e1e6]         ; 004685de | DAT_0057e1e6
+    FADD float ptr [0x0057e1e6]         ; 004685de | FLOAT_0057e1e6
     MOV dword ptr [ESP + 0x18],EAX      ; 004685e4
     FSTP float ptr [ESP + 0x14]         ; 004685e8
     FSUB float ptr [EBX + 0x10]         ; 004685ec

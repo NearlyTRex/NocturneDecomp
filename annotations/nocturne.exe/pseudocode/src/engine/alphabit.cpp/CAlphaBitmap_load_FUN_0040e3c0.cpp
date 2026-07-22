@@ -25,7 +25,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
   iVar1 = malloc(param_3 * param_4);
   *param_1 = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "@..\\engine\\alphabit.cpp" + 1;
+    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
     _DAT_01cc4804 = 0x53;
     FUN_004c8440("CAlphaBitmap::load - Out of memory");
   }
@@ -44,7 +44,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
     FUN_004c8440("CAlphaBitmap::load - Out of memory");
   }
   _sprintf(local_114,"%s.raw",param_2);
-  local_14 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00578151,local_114,&DAT_0057814e);
+  local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (local_14 == 0) {
     _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
     _DAT_01cc4804 = 0x5f;
@@ -54,7 +54,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
   _fread(*param_1,param_3,param_4,local_14);
   _fclose(iVar1);
   _sprintf(local_114,"%s.act",param_2);
-  local_14 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00578199,local_114,&DAT_00578196);
+  local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (local_14 == 0) {
     _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
     _DAT_01cc4804 = 0x65;
@@ -78,7 +78,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
   } while (iVar2 != 0x400);
   _fclose(local_14);
   _sprintf(local_114,"%s.opa",param_2);
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005781e1,local_114,&DAT_005781de);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (iVar1 == 0) {
     param_3 = param_3 * param_4;
     iVar1 = 0;

@@ -28,7 +28,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":32,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"mapFrameBuffer - invalid stride"
   },
   {
@@ -36,8 +36,16 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":15,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\2d.c"
+  },
+  {
+    "addr":"0057757d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"none"
   },
   {
     "addr":"00577c0d",
@@ -52,7 +60,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":12,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":" !LOCALIZE!"
   },
   {
@@ -60,7 +68,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":19,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"%s%d // ruleCount\n"
   },
   {
@@ -68,7 +76,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":22,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Too many actor types!"
   },
   {
@@ -76,7 +84,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":23,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\alphabit.cpp"
   },
   {
@@ -84,7 +92,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":23,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\alphabit.cpp"
   },
   {
@@ -116,7 +124,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":20,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\core\\ammobox.cpp"
   },
   {
@@ -126,6 +134,14 @@
     "len":9,
     "type":"string",
     "value":"ammoType"
+  },
+  {
+    "addr":"0057844d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"yvel"
   },
   {
     "addr":"005784ed",
@@ -184,14 +200,6 @@
     "value":"modelName"
   },
   {
-    "addr":"00578d2d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":17,
-    "type":"string",
-    "value":"4@batman-die.wav"
-  },
-  {
     "addr":"00578d6d",
     "charset":"US-ASCII",
     "importable":true,
@@ -232,28 +240,12 @@
     "value":"CBodyPart::setCounts - out of memory for triangles - triCount = %d"
   },
   {
-    "addr":"005790dd",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":11,
-    "type":"string",
-    "value":"GCHAR2.RAW"
-  },
-  {
     "addr":"005790fd",
     "charset":"US-ASCII",
     "importable":true,
     "len":29,
     "type":"string",
     "value":"Too many body part textures!"
-  },
-  {
-    "addr":"0057911d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":11,
-    "type":"string",
-    "value":"?CBoneGuy"
   },
   {
     "addr":"005791ad",
@@ -280,14 +272,6 @@
     "value":"Bip01 L UpperArm"
   },
   {
-    "addr":"0057937d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":51,
-    "type":"string",
-    "value":"?%s can't pick up %s, sombody else beat me to it!\n"
-  },
-  {
     "addr":"0057950d",
     "charset":"US-ASCII",
     "importable":true,
@@ -300,8 +284,16 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":26,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"modelStruct not supported"
+  },
+  {
+    "addr":"005797dd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"CBoxActor"
   },
   {
     "addr":"0057991d",
@@ -320,6 +312,14 @@
     "value":"light status"
   },
   {
+    "addr":"005799ed",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":7,
+    "type":"TerminatedCString",
+    "value":"CBride"
+  },
+  {
     "addr":"00579a5d",
     "charset":"US-ASCII",
     "importable":true,
@@ -336,12 +336,36 @@
     "value":"lowerbodypiece"
   },
   {
+    "addr":"00579bfd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"CBugs"
+  },
+  {
+    "addr":"00579c5d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"count"
+  },
+  {
     "addr":"00579ccd",
     "charset":"US-ASCII",
     "importable":true,
     "len":58,
     "type":"string",
     "value":"CBugs::addSwarmGraphEdge - Too many verts in swarm graph."
+  },
+  {
+    "addr":"00579d8d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":29,
+    "type":"TerminatedCString",
+    "value":"%s swarming on %s at LOD %d\n"
   },
   {
     "addr":"00579e8d",
@@ -358,14 +382,6 @@
     "len":14,
     "type":"string",
     "value":"healthBarMode"
-  },
-  {
-    "addr":"0057a00d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"string",
-    "value":"KCHero"
   },
   {
     "addr":"0057a28d",
@@ -392,11 +408,19 @@
     "value":"CHAINLINK.RAW"
   },
   {
+    "addr":"0057a66d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rb"
+  },
+  {
     "addr":"0057a75d",
     "charset":"US-ASCII",
     "importable":true,
     "len":40,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"No room for scroll bitmap height table."
   },
   {
@@ -404,7 +428,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":22,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\cockpit\\ckptutil.c"
   },
   {
@@ -412,8 +436,24 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":33,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Unable to open bitmap file (%s)."
+  },
+  {
+    "addr":"0057aced",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
+    "addr":"0057ae4d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":18,
+    "type":"TerminatedCString",
+    "value":"..\\core\\cloth.cpp"
   },
   {
     "addr":"0057af3d",
@@ -462,14 +502,6 @@
     "len":10,
     "type":"string",
     "value":"limb?.wav"
-  },
-  {
-    "addr":"0057b54d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":13,
-    "type":"string",
-    "value":"?curtainSize"
   },
   {
     "addr":"0057b5ed",
@@ -528,12 +560,36 @@
     "value":"..\\core\\dfilter.cpp"
   },
   {
+    "addr":"0057c01d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rb"
+  },
+  {
+    "addr":"0057c06d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":12,
+    "type":"TerminatedCString",
+    "value":"movscrn.raw"
+  },
+  {
     "addr":"0057c0dd",
     "charset":"US-ASCII",
     "importable":true,
     "len":24,
     "type":"string",
     "value":"Can't open movie %s.mov"
+  },
+  {
+    "addr":"0057c10d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":18,
+    "type":"TerminatedCString",
+    "value":"..\\core\\dfont.cpp"
   },
   {
     "addr":"0057c14d",
@@ -548,7 +604,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":19,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\core\\dimage.cpp"
   },
   {
@@ -556,16 +612,8 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":46,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CDemonImage::load - Unable to find extention!"
-  },
-  {
-    "addr":"0057c58d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":20,
-    "type":"string",
-    "value":"@..\\core\\dlight.cpp"
   },
   {
     "addr":"0057ca7d",
@@ -628,7 +676,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":18,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\core\\dpart.cpp"
   },
   {
@@ -656,14 +704,6 @@
     "value":"%s gave up chase - I'm confused\n"
   },
   {
-    "addr":"0057d75d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"string",
-    "value":"?speed"
-  },
-  {
     "addr":"0057d79d",
     "charset":"US-ASCII",
     "importable":true,
@@ -680,28 +720,12 @@
     "value":"freakyVoiceNumber"
   },
   {
-    "addr":"0057d86d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":23,
-    "type":"string",
-    "value":"@%5.2f %5.2f %5.2f\n"
-  },
-  {
     "addr":"0057d8cd",
     "charset":"US-ASCII",
     "importable":true,
     "len":24,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\cockpit\\drawsurf.cpp"
-  },
-  {
-    "addr":"0057d97d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":25,
-    "type":"string",
-    "value":">..\\cockpit\\drawsurf.cpp"
   },
   {
     "addr":"0057d9ed",
@@ -716,15 +740,31 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":6,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Hello"
+  },
+  {
+    "addr":"0057db0d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%s"
   },
   {
     "addr":"0057db3d",
     "charset":"US-ASCII",
     "importable":true,
     "len":22,
-    "type":"string",
+    "type":"TerminatedCString",
+    "value":"..\\engine\\drender.cpp"
+  },
+  {
+    "addr":"0057dc9d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":22,
+    "type":"TerminatedCString",
     "value":"..\\engine\\drender.cpp"
   },
   {
@@ -744,14 +784,6 @@
     "value":"%s gave up chase - I'm confused\n"
   },
   {
-    "addr":"0057e1fd",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":20,
-    "type":"string",
-    "value":">..\\core\\dtrace.cpp"
-  },
-  {
     "addr":"0057e2ed",
     "charset":"US-ASCII",
     "importable":true,
@@ -760,28 +792,28 @@
     "value":"..\\core\\dtrace.cpp"
   },
   {
-    "addr":"0057e3dd",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":20,
-    "type":"string",
-    "value":"?..\\core\\dtrace.cpp"
-  },
-  {
-    "addr":"0057e48d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":18,
-    "type":"string",
-    "value":"?..\\core\\dtri.cpp"
-  },
-  {
     "addr":"0057e5dd",
     "charset":"US-ASCII",
     "importable":true,
     "len":8,
     "type":"string",
     "value":"Message"
+  },
+  {
+    "addr":"0057e67d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"yanc"
+  },
+  {
+    "addr":"0057e6dd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"*.*"
   },
   {
     "addr":"0057e72d",
@@ -803,8 +835,8 @@
     "addr":"0057ecfd",
     "charset":"US-ASCII",
     "importable":true,
-    "len":31,
-    "type":"string",
+    "len":30,
+    "type":"TerminatedCString",
     "value":"CStrList::set - invalid index"
   },
   {
@@ -832,12 +864,12 @@
     "value":"destActor"
   },
   {
-    "addr":"0057f38d",
+    "addr":"0057f52d",
     "charset":"US-ASCII",
     "importable":true,
-    "len":10,
-    "type":"string",
-    "value":"@@Capture"
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"gas"
   },
   {
     "addr":"0057f54d",
@@ -846,6 +878,22 @@
     "len":8,
     "type":"string",
     "value":"generic"
+  },
+  {
+    "addr":"0057f56d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"Gas"
+  },
+  {
+    "addr":"0057f57d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%s\n"
   },
   {
     "addr":"0057f60d",
@@ -948,7 +996,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":34,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CRuleList::insert - invalid index"
   },
   {
@@ -956,7 +1004,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":15,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CFilmProjector"
   },
   {
@@ -976,12 +1024,36 @@
     "value":"%f,%f,%f\n"
   },
   {
+    "addr":"005817fd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
+  },
+  {
+    "addr":"005819ed",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":24,
+    "type":"TerminatedCString",
+    "value":"{0A,1B} ~1 O<<I I|O &x;"
+  },
+  {
     "addr":"00581b0d",
     "charset":"US-ASCII",
     "importable":true,
     "len":14,
     "type":"string",
     "value":"frankxbed.kfm"
+  },
+  {
+    "addr":"00581d6d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"WTF!"
   },
   {
     "addr":"00581f2d",
@@ -1096,6 +1168,14 @@
     "value":"burp1.wav"
   },
   {
+    "addr":"00583b5d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"wt"
+  },
+  {
     "addr":"00583bed",
     "charset":"US-ASCII",
     "importable":true,
@@ -1110,6 +1190,14 @@
     "len":6,
     "type":"string",
     "value":"%s\\%s"
+  },
+  {
+    "addr":"00583dcd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rt"
   },
   {
     "addr":"00583ddd",
@@ -1200,6 +1288,14 @@
     "value":"CHero"
   },
   {
+    "addr":"00584abd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":7,
+    "type":"TerminatedCString",
+    "value":"CGhoul"
+  },
+  {
     "addr":"00584bdd",
     "charset":"US-ASCII",
     "importable":true,
@@ -1216,6 +1312,14 @@
     "value":"%s confused while walking to scriptDest!\n"
   },
   {
+    "addr":"00584dbd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"speed"
+  },
+  {
     "addr":"00584dcd",
     "charset":"US-ASCII",
     "importable":true,
@@ -1230,6 +1334,14 @@
     "len":11,
     "type":"string",
     "value":"spasmCount"
+  },
+  {
+    "addr":"00584ead",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":11,
+    "type":"TerminatedCString",
+    "value":"darkPoint*"
   },
   {
     "addr":"0058514d",
@@ -1268,8 +1380,16 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":12,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"GROUND_NONE"
+  },
+  {
+    "addr":"005853fd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"CGun"
   },
   {
     "addr":"0058560d",
@@ -1328,12 +1448,28 @@
     "value":"CHotDemon"
   },
   {
+    "addr":"00585f7d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"speed"
+  },
+  {
     "addr":"00585f8d",
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
     "type":"string",
     "value":"motion state"
+  },
+  {
+    "addr":"00585fcd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":21,
+    "type":"TerminatedCString",
+    "value":"CHighPriestOfGardath"
   },
   {
     "addr":"00585fed",
@@ -1350,6 +1486,14 @@
     "len":13,
     "type":"string",
     "value":"Bip01 Spine1"
+  },
+  {
+    "addr":"0058627d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"CImp"
   },
   {
     "addr":"0058634d",
@@ -1376,12 +1520,44 @@
     "value":"torso01"
   },
   {
+    "addr":"0058647d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"speed"
+  },
+  {
     "addr":"0058648d",
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
     "type":"string",
     "value":"motion state"
+  },
+  {
+    "addr":"005864bd",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":13,
+    "type":"TerminatedCString",
+    "value":"imp-die?.wav"
+  },
+  {
+    "addr":"0058652d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rt"
+  },
+  {
+    "addr":"0058657d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rt"
   },
   {
     "addr":"005866cd",
@@ -1494,6 +1670,14 @@
     "len":41,
     "type":"string",
     "value":"Found same weapon, increasing ammoCount\n"
+  },
+  {
+    "addr":"005871ad",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"CGun"
   },
   {
     "addr":"0058775d",
@@ -2912,11 +3096,19 @@
     "value":"..\\wincore\\wddvmem.cpp"
   },
   {
+    "addr":"00597c6d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":17,
+    "type":"TerminatedCString",
+    "value":"noLightningFlash"
+  },
+  {
     "addr":"00597c9d",
     "charset":"US-ASCII",
     "importable":true,
     "len":11,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"thndr?.wav"
   },
   {
@@ -2926,6 +3118,30 @@
     "len":7,
     "type":"string",
     "value":"alpha2"
+  },
+  {
+    "addr":"00597f6d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"6"
+  },
+  {
+    "addr":"00597f8d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"E"
+  },
+  {
+    "addr":"00597f9d",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"["
   },
   {
     "addr":"0059810d",
@@ -2940,7 +3156,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":6,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"%s\\%s"
   },
   {
@@ -2964,16 +3180,8 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":15,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"%s lugging %s\n"
-  },
-  {
-    "addr":"0059878d",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":51,
-    "type":"string",
-    "value":"?%s can't pick up %s, sombody else beat me to it!\n"
   },
   {
     "addr":"0059888d",
@@ -2992,20 +3200,20 @@
     "value":"carriedActor"
   },
   {
-    "addr":"0059893d",
+    "addr":"0059910d",
     "charset":"US-ASCII",
     "importable":true,
-    "len":13,
-    "type":"string",
-    "value":"@lookForHead"
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"asin"
   },
   {
-    "addr":"0059899d",
+    "addr":"0059915d",
     "charset":"US-ASCII",
     "importable":true,
-    "len":11,
-    "type":"string",
-    "value":"?CTentacle"
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"tan"
   },
   {
     "addr":"005be9cd",

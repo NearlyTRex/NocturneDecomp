@@ -90,10 +90,10 @@ section .text
     JGE 0x00494cd2                      ; 004949e8
         ;   XREF to: 00494cd2 (CONDITIONAL_JUMP)  ; LAB_00494cd2
     FLD float ptr [ESI + 0x154]         ; 004949ee
-    FADD float ptr [0x00581d18]         ; 004949f4 | DAT_00581d18
-    FMUL double ptr [0x00581d08]        ; 004949fa | DAT_00581d08
-    FMUL double ptr [0x00581d20]        ; 00494a00 | DAT_00581d20
-    FADD float ptr [0x00581d28]         ; 00494a06 | DAT_00581d28
+    FADD float ptr [0x00581d18]         ; 004949f4 | FLOAT_00581d18
+    FMUL double ptr [0x00581d08]        ; 004949fa | DOUBLE_00581d08
+    FMUL double ptr [0x00581d20]        ; 00494a00 | DOUBLE_00581d20
+    FADD float ptr [0x00581d28]         ; 00494a06 | FLOAT_00581d28
     FSTP float ptr [ESP + 0x78]         ; 00494a0c
         ;   Label: LAB_00494a0c
     PUSH dword ptr [ESP + 0x90]         ; 00494a10
@@ -315,11 +315,11 @@ section .text
     FSTP float ptr [ESI + 0x154]        ; 00494cc7
     JMP 0x00494980                      ; 00494ccd
         ;   XREF to: 00494980 (UNCONDITIONAL_JUMP)  ; LAB_00494980
-    FLD float ptr [0x00581d00]          ; 00494cd2 | DAT_00581d00
+    FLD float ptr [0x00581d00]          ; 00494cd2 | FLOAT_00581d00
         ;   Label: LAB_00494cd2
     FSUB float ptr [ESI + 0x154]        ; 00494cd8
-    FMUL double ptr [0x00581d08]        ; 00494cde | DAT_00581d08
-    FMUL double ptr [0x00581d10]        ; 00494ce4 | DAT_00581d10
+    FMUL double ptr [0x00581d08]        ; 00494cde | DOUBLE_00581d08
+    FMUL double ptr [0x00581d10]        ; 00494ce4 | DOUBLE_00581d10
     JMP 0x00494a0c                      ; 00494cea
         ;   XREF to: 00494a0c (UNCONDITIONAL_JUMP)  ; LAB_00494a0c
     PUSH 0x581c64                       ; 00494cef | = "frankx-crane1.wav"
@@ -397,7 +397,7 @@ section .text
     MOV EDX,0x581ce5                    ; 00494d98 | = "..\\core\\frankgen.cpp"
         ;   Label: default
     MOV ECX,0x13e                       ; 00494d9d
-    PUSH 0x581cfa                       ; 00494da2 | DAT_00581cfa
+    PUSH 0x581cfa                       ; 00494da2 | = "WTF!"
     MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | DAT_01cc4800
     MOV dword ptr [0x01cc4804],ECX      ; 00494dad | DAT_01cc4804
     CALL FUN_004c8440                   ; 00494db3

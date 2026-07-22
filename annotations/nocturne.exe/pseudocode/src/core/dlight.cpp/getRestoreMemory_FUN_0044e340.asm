@@ -8,7 +8,7 @@
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0 at 0044e3dd
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dlight.cpp_0057c58d+1
+;   TerminatedCString s_core_dlight_cpp_0057c58e
 ;   string s_getRestoreMemory_-_Need_more_sta_0057c5a1
 ;   undefined4 DAT_01ab99ec
 ;   undefined4 DAT_01cc4800
@@ -46,7 +46,7 @@ section .text
     PUSH ESI                            ; 0044e37f
         ;   Label: LAB_0044e37f
     PUSH EBX                            ; 0044e380
-    MOV EBX,0x57c58e                    ; 0044e381 | s_..\core\dlight.cpp_0057c58d+1
+    MOV EBX,0x57c58e                    ; 0044e381 | = "..\\core\\dlight.cpp"
     MOV ESI,0xa3                        ; 0044e386
     PUSH 0x57c5a1                       ; 0044e38b | = "getRestoreMemory - Need more static m..."
     MOV dword ptr [0x01cc4800],EBX      ; 0044e390 | DAT_01cc4800

@@ -18,8 +18,8 @@
 ;
 ; XREF[3]:
 ;   FUN_0049cc10 at 0049ceb1
-;   FUN_00509a80 at 00509ad1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508cf0
+;   core_set.cpp_FUN_00509a80 at 00509ad1
 ;
 ; Referenced Globals:
 ;   undefined4 s_renderStaticLights_:_%3.2f_ms_005904f9+1
@@ -49,9 +49,9 @@
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
+;   core_set.cpp_FUN_0050e080
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-;   FUN_0050e080
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -202,8 +202,8 @@ section .text
         ;   Label: LAB_005098e3
     PUSH EBX                            ; 005098e5
     PUSH ESI                            ; 005098e6
-    CALL FUN_0050e080                   ; 005098e7
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e080()
+    CALL core_set.cpp_FUN_0050e080      ; 005098e7
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
     ADD ESP,0xc                         ; 005098ec
     MOV EAX,dword ptr [EDI + 0x15f300]  ; 005098ef
     PUSH EAX                            ; 005098f5

@@ -15,11 +15,11 @@
 ;   undefined1* PTR_FUN_005a1384 = 004f5f60
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
-;   FUN_0055d610
+;   core_xform.cpp_FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 004f5d98
     PUSH ESI                            ; 004f5d99
     PUSH EBX                            ; 004f5d9a
-    CALL FUN_00409d30                   ; 004f5d9b
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004f5d9b
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 004f5da0
     ADD EAX,0x150                       ; 004f5da3
     PUSH EAX                            ; 004f5da8
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004f5e67
     PUSH EAX                            ; 004f5e6a
     LEA ESI,[ESP + 0xc]                 ; 004f5e6b
-    CALL FUN_0055d610                   ; 004f5e6f
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 004f5e6f
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     LEA ESI,[ESP + 0xc]                 ; 004f5e74
     LEA EDI,[EBX + 0x33c]               ; 004f5e78
     ADD ESP,0x4                         ; 004f5e7e

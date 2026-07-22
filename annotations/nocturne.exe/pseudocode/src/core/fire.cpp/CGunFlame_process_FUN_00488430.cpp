@@ -27,14 +27,14 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(float *param_1)
     pfVar2 = param_1 + 1;
     *pfVar2 = *pfVar2 + *pfVar1 * fVar4;
     param_1[2] = param_1[2] + param_1[5] * fVar4;
-    fVar5 = (float)_DAT_005813b4;
+    fVar5 = (float)0.20000000000000001;
     param_1[3] = param_1[3] + param_1[6] * fVar4;
-    fVar3 = param_1[5] * _DAT_005813ac;
-    fVar6 = param_1[6] * _DAT_005813ac;
-    *pfVar1 = *pfVar1 * _DAT_005813ac;
+    fVar3 = param_1[5] * 5.261057535674868e-315._0_4_;
+    fVar6 = param_1[6] * 5.261057535674868e-315._0_4_;
+    *pfVar1 = *pfVar1 * 5.261057535674868e-315._0_4_;
     param_1[5] = fVar3;
     param_1[6] = fVar6;
-    fVar3 = (float)_DAT_005813bc;
+    fVar3 = (float)0.5;
     param_1[5] = fVar4 * fVar5 + param_1[5];
     iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(fVar4 * fVar3);
     if (iVar7 != 0) {
@@ -46,7 +46,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(float *param_1)
       core_fire_cpp_CGunFlame_init_FUN_004880d0(param_1);
     }
     param_1[7] = fVar4 * _DAT_0059d218 + param_1[7];
-    fVar3 = _DAT_005813c4;
+    fVar3 = 1.6049665430689486e-314._0_4_;
     if (0x419fffff < (int)param_1[7]) {
       do {
         param_1[7] = param_1[7] + fVar3;

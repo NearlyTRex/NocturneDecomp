@@ -35,11 +35,11 @@
 ;   core_weather.cpp_CWeather_update_FUN_00554980 at 00554c53
 ;
 ; Referenced Globals:
-;   undefined4 s_noLightningFlash_00597c6c+1
+;   TerminatedCString s_noLightningFlash_00597c6d
 ;   string s_light?.wav_00597c7e
-;   undefined4 DAT_00597c89
-;   undefined4 DAT_00597c91
-;   undefined4 DAT_00597c99
+;   double DOUBLE_00597c89 = 0.5
+;   double DOUBLE_00597c91 = 0.0000152590218966964
+;   float FLOAT_00597c99 = 0.6500000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005bed68
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0x8                         ; 00554dc3
     FLD float ptr [ESP + 0x68]          ; 00554dc6
     FADD float ptr [ESP + 0x44]         ; 00554dca
-    FLD double ptr [0x00597c89]         ; 00554dce | DAT_00597c89
+    FLD double ptr [0x00597c89]         ; 00554dce | DOUBLE_00597c89
     FXCH                                ; 00554dd4
     FMUL ST1                            ; 00554dd6
     FLD float ptr [ESP + 0x44]          ; 00554dd8
@@ -143,7 +143,7 @@ section .text
     FLD float ptr [ESP + 0x4c]          ; 00554e45
         ;   Label: LAB_00554e45
     FSUB float ptr [ESP + 0x70]         ; 00554e49
-    FMUL double ptr [0x00597c89]        ; 00554e4d | DAT_00597c89
+    FMUL double ptr [0x00597c89]        ; 00554e4d | DOUBLE_00597c89
     FST float ptr [ESP + 0x7c]          ; 00554e53
     FCOMP float ptr [ESP + 0x80]        ; 00554e57
     FNSTSW AX                           ; 00554e5e
@@ -213,8 +213,8 @@ section .text
         ;   Label: LAB_00554f12
     MOV dword ptr [ESP + 0x84],EAX      ; 00554f17
     FILD dword ptr [ESP + 0x84]         ; 00554f1e
-    FMUL double ptr [0x00597c91]        ; 00554f25 | DAT_00597c91
-    PUSH 0x597c6d                       ; 00554f2b | s_noLightningFlash_00597c6c+1
+    FMUL double ptr [0x00597c91]        ; 00554f25 | DOUBLE_00597c91
+    PUSH 0x597c6d                       ; 00554f2b | = "noLightningFlash"
     MOV EDX,dword ptr [0x005b7650]      ; 00554f30 | DAT_005b7650
     FSTP float ptr [ESP + 0x4]          ; 00554f36
     MOV EAX,dword ptr [ESP + 0x4]       ; 00554f3a
@@ -241,7 +241,7 @@ section .text
         ;   XREF to: 00554e22 (UNCONDITIONAL_JUMP)  ; LAB_00554e22
     FLD float ptr [ESP]                 ; 00554f6a
         ;   Label: LAB_00554f6a
-    FADD float ptr [0x00597c99]         ; 00554f6d | DAT_00597c99
+    FADD float ptr [0x00597c99]         ; 00554f6d | FLOAT_00597c99
     FST float ptr [ESP]                 ; 00554f73
     FLD1                                ; 00554f76
     FCOMPP                              ; 00554f78

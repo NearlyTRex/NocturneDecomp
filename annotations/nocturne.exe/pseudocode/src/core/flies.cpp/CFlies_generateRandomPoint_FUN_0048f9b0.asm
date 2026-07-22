@@ -36,10 +36,10 @@
 ;   core_flies.cpp_CFlies_process_FUN_0048f090 at 0048f38d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058173f
-;   undefined4 DAT_00581747
-;   undefined4 DAT_0058174f
-;   undefined4 DAT_00581757
+;   double DOUBLE_0058173f = 0.5
+;   double DOUBLE_00581747 = -0.5
+;   double DOUBLE_0058174f = 4
+;   float FLOAT_00581757 = 4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -73,10 +73,10 @@ section .text
     FSTP float ptr [EBX + 0x4]          ; 0048f9ea
     FLD float ptr [EDI + 0x150]         ; 0048f9ed
     FLD ST0                             ; 0048f9f3
-    FMUL double ptr [0x0058173f]        ; 0048f9f5 | DAT_0058173f
+    FMUL double ptr [0x0058173f]        ; 0048f9f5 | DOUBLE_0058173f
     SUB ESP,0x4                         ; 0048f9fb
     FXCH                                ; 0048f9fe
-    FMUL double ptr [0x00581747]        ; 0048fa00 | DAT_00581747
+    FMUL double ptr [0x00581747]        ; 0048fa00 | DOUBLE_00581747
     FXCH                                ; 0048fa06
     FSTP float ptr [ESP]                ; 0048fa08
     SUB ESP,0x4                         ; 0048fa0b
@@ -89,10 +89,10 @@ section .text
     ADD ESP,0x8                         ; 0048fa20
     FLD float ptr [EDI + 0x158]         ; 0048fa23
     FLD ST0                             ; 0048fa29
-    FMUL double ptr [0x0058173f]        ; 0048fa2b | DAT_0058173f
+    FMUL double ptr [0x0058173f]        ; 0048fa2b | DOUBLE_0058173f
     SUB ESP,0x4                         ; 0048fa31
     FXCH                                ; 0048fa34
-    FMUL double ptr [0x00581747]        ; 0048fa36 | DAT_00581747
+    FMUL double ptr [0x00581747]        ; 0048fa36 | DOUBLE_00581747
     FXCH                                ; 0048fa3c
     FSTP float ptr [ESP]                ; 0048fa3e
     SUB ESP,0x4                         ; 0048fa41
@@ -125,7 +125,7 @@ section .text
     FSQRT                               ; 0048fa92
     FST float ptr [ESP + 0x8]           ; 0048fa94
     FST double ptr [ESP]                ; 0048fa98
-    FCOMP double ptr [0x0058174f]       ; 0048fa9b | DAT_0058174f
+    FCOMP double ptr [0x0058174f]       ; 0048fa9b | DOUBLE_0058174f
     FNSTSW AX                           ; 0048faa1
     SAHF                                ; 0048faa3
     JA 0x0048fb35                       ; 0048faa4
@@ -183,7 +183,7 @@ section .text
     POP ESI                             ; 0048fb32
     POP EBX                             ; 0048fb33
     RET                                 ; 0048fb34
-    FLD float ptr [0x00581757]          ; 0048fb35 | DAT_00581757
+    FLD float ptr [0x00581757]          ; 0048fb35 | FLOAT_00581757
         ;   Label: LAB_0048fb35
     FLD float ptr [ESP + 0x30]          ; 0048fb3b
     FMUL ST1                            ; 0048fb3f

@@ -39,9 +39,9 @@
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_0048b1c0 at 0048b212
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058114c
-;   undefined4 DAT_00581150
-;   undefined4 DAT_00581154
+;   float FLOAT_0058114c = 3
+;   float FLOAT_00581150 = 0.3333333
+;   double DOUBLE_00581154 = 10
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -75,7 +75,7 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 00485119
     FADD float ptr [EAX]                ; 0048511d
     FST float ptr [ESP + 0x60]          ; 0048511f
-    FDIV float ptr [0x0058114c]         ; 00485123 | DAT_0058114c
+    FDIV float ptr [0x0058114c]         ; 00485123 | FLOAT_0058114c
     FLD float ptr [ESP + 0x34]          ; 00485129
     FADD float ptr [EAX + 0x4]          ; 0048512d
     FLD float ptr [ESP + 0x38]          ; 00485130
@@ -84,7 +84,7 @@ section .text
     FXCH                                ; 0048513a
     FADD float ptr [EAX + 0x8]          ; 0048513c
     FXCH                                ; 0048513f
-    FLD float ptr [0x00581150]          ; 00485141 | DAT_00581150
+    FLD float ptr [0x00581150]          ; 00485141 | FLOAT_00581150
     FXCH                                ; 00485147
     FMUL ST1                            ; 00485149
     FXCH ST2                            ; 0048514b
@@ -224,7 +224,7 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 004852ff
     FADDP                               ; 00485303
     FSQRT                               ; 00485305
-    FMUL double ptr [0x00581154]        ; 00485307 | DAT_00581154
+    FMUL double ptr [0x00581154]        ; 00485307 | DOUBLE_00581154
     PUSH 0x3fc90fdb                     ; 0048530d
     PUSH 0x3f490fdb                     ; 00485312
     FSTP float ptr [ESP + 0x84]         ; 00485317

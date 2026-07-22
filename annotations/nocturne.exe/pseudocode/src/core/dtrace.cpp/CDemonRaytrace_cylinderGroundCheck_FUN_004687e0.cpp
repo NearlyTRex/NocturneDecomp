@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)
 
 {
@@ -48,9 +46,9 @@ uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int
   local_4c = *param_2;
   local_44 = param_2[2];
   local_64 = *param_2;
-  local_48 = param_2[1] + _DAT_0057e1ea;
+  local_48 = param_2[1] + 2.0f;
   local_5c = param_2[2];
-  local_60 = param_2[1] + _DAT_0057e1ee;
+  local_60 = param_2[1] + 131072.094299316._0_4_;
   local_38 = local_4c - *(float *)(param_1 + 0x10);
   fVar3 = *(float *)(param_1 + 0x28);
   fVar5 = (float10)local_44 - (float10)*(float *)(param_1 + 0x18);

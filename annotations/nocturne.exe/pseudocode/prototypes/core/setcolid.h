@@ -7,6 +7,10 @@
 // Address: 0050ec80
 float CDemonSet::processCollisionTypes(int param_1,float *param_2,float param_3);
 
+// Original: core_setcolid.cpp_FUN_0050f910
+// Address: 0050f910
+float FUN_0050f910(int param_1,undefined4 *param_2);
+
 // Original: core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
 // Address: 0050fa30
 undefined4 __cdecl CDemonSet::testLineOcclusion(undefined4 param_1,undefined4 param_2,undefined4 param_3);

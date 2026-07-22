@@ -14,10 +14,10 @@
 ;   undefined1* switchdataD_0045528c = 004552da
 ;   string s_..\\core\\door.cpp_0057d077
 ;   string s_CDoor::reposition_-_Unknown_type_0057d088
-;   undefined4 DAT_0057d0aa
-;   undefined4 DAT_0057d0b2
-;   undefined4 DAT_0057d0ba
-;   undefined4 DAT_0057d0c2
+;   double DOUBLE_0057d0aa = 1.57079632675000
+;   double DOUBLE_0057d0b2 = 5.22209901682860E-315
+;   double DOUBLE_0057d0ba = -0.300000000000000
+;   double DOUBLE_0057d0c2 = 0.300000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -69,7 +69,7 @@ section .text
     JNZ 0x004553b3                      ; 00455308
         ;   XREF to: 004553b3 (CONDITIONAL_JUMP)  ; LAB_004553b3
     FLD float ptr [EBX + 0x9a4]         ; 0045530e
-    FMUL double ptr [0x0057d0aa]        ; 00455314 | DAT_0057d0aa
+    FMUL double ptr [0x0057d0aa]        ; 00455314 | DOUBLE_0057d0aa
     FADD float ptr [EBX + 0x99c]        ; 0045531a
     FSTP float ptr [EBX + 0x34]         ; 00455320
         ;   Label: LAB_00455320
@@ -89,7 +89,7 @@ section .text
     JBE 0x004553ca                      ; 00455344
         ;   XREF to: 004553ca (CONDITIONAL_JUMP)  ; LAB_004553ca
     FLD double ptr [ESP]                ; 0045534a
-    FADD double ptr [0x0057d0c2]        ; 0045534d | DAT_0057d0c2
+    FADD double ptr [0x0057d0c2]        ; 0045534d | DOUBLE_0057d0c2
     FSTP float ptr [EBX + 0x9b4]        ; 00455353
         ;   Label: LAB_00455353
     LEA ESI,[EBX + 0x9b4]               ; 00455359
@@ -128,13 +128,13 @@ section .text
     RET                                 ; 004553b2
     FLD float ptr [EBX + 0x9a4]         ; 004553b3
         ;   Label: LAB_004553b3
-    FMUL double ptr [0x0057d0aa]        ; 004553b9 | DAT_0057d0aa
+    FMUL double ptr [0x0057d0aa]        ; 004553b9 | DOUBLE_0057d0aa
     FSUBR float ptr [EBX + 0x99c]       ; 004553bf
     JMP 0x00455320                      ; 004553c5
         ;   XREF to: 00455320 (UNCONDITIONAL_JUMP)  ; LAB_00455320
     FLD double ptr [ESP + 0x8]          ; 004553ca
         ;   Label: LAB_004553ca
-    FADD double ptr [0x0057d0ba]        ; 004553ce | DAT_0057d0ba
+    FADD double ptr [0x0057d0ba]        ; 004553ce | DOUBLE_0057d0ba
     JMP 0x00455353                      ; 004553d4
         ;   XREF to: 00455353 (UNCONDITIONAL_JUMP)  ; LAB_00455353
     FLD float ptr [EBX + 0x990]         ; 004553d9
@@ -214,7 +214,7 @@ section .text
         ;   XREF to: 0045543b (UNCONDITIONAL_JUMP)  ; LAB_0045543b
     FLD float ptr [EBX + 0x9a4]         ; 004554d2
         ;   Label: caseD_3
-    FMUL double ptr [0x0057d0aa]        ; 004554d8 | DAT_0057d0aa
+    FMUL double ptr [0x0057d0aa]        ; 004554d8 | DOUBLE_0057d0aa
     PUSH EBX                            ; 004554de
     FSTP float ptr [EBX + 0x30]         ; 004554df
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004554e2
@@ -227,7 +227,7 @@ section .text
     FADD float ptr [ESP + 0x20]         ; 004554f8
     FXCH                                ; 004554fc
     FST float ptr [ESP + 0x28]          ; 004554fe
-    FLD float ptr [0x0057d0b2]          ; 00455502 | DAT_0057d0b2
+    FLD float ptr [0x0057d0b2]          ; 00455502 | DOUBLE_0057d0b2
     FXCH                                ; 00455508
     FMUL ST1                            ; 0045550a
     FXCH ST2                            ; 0045550c

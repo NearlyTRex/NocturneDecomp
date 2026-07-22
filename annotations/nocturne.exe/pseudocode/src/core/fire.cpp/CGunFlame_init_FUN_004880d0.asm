@@ -12,8 +12,8 @@
 ;   core_fire.cpp_CGunFlame_process_FUN_00488430 at 00488536
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058138c
-;   undefined4 DAT_00581394
+;   double DOUBLE_0058138c = 5.45263811032947E-315
+;   double DOUBLE_00581394 = 25
 ;   undefined4 DAT_01c09e08
 ;   undefined4 DAT_01c09e0c
 ;   undefined4 DAT_01c09ed4
@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+;   core_charactr.cpp_FUN_00427730
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-;   FUN_00427730
 ;
 ; *****************************************************************************
 
@@ -91,7 +91,7 @@ section .text
     FSUB float ptr [EAX + 0x8]          ; 00488168
     FMUL ST0                            ; 0048816b
     FADDP                               ; 0048816d
-    FCOMP double ptr [0x00581394]       ; 0048816f | DAT_00581394
+    FCOMP double ptr [0x00581394]       ; 0048816f | DOUBLE_00581394
     FNSTSW AX                           ; 00488175
     SAHF                                ; 00488177
     JBE 0x0048820b                      ; 00488178
@@ -124,7 +124,7 @@ section .text
     FSUB float ptr [ESI + 0x8]          ; 004881ab
     FMUL ST0                            ; 004881ae
     FADDP                               ; 004881b0
-    FCOMP float ptr [0x0058138c]        ; 004881b2 | DAT_0058138c
+    FCOMP float ptr [0x0058138c]        ; 004881b2 | DOUBLE_0058138c
     FNSTSW AX                           ; 004881b8
     SAHF                                ; 004881ba
     JA 0x00488118                       ; 004881bb
@@ -152,8 +152,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004881f8
     PUSH EAX                            ; 004881fc
     PUSH EBX                            ; 004881fd
-    CALL FUN_00427730                   ; 004881fe
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined FUN_00427730()
+    CALL core_charactr.cpp_FUN_00427730 ; 004881fe
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
     ADD ESP,0x18                        ; 00488203
     JMP 0x00488118                      ; 00488206
         ;   XREF to: 00488118 (UNCONDITIONAL_JUMP)  ; LAB_00488118

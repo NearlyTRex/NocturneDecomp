@@ -27,21 +27,21 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e38b
 ;
 ; Referenced Globals:
-;   undefined4 s_Unable_to_save_during_cinematic_00583b10+2
-;   undefined4 DAT_00583b32
-;   undefined4 DAT_00583b36
-;   undefined4 DAT_00583b3b
-;   undefined4 DAT_00583b3f
+;   TerminatedCString s_Unable_to_save_during_ci_00583b12
+;   TerminatedCString s_noc_00583b32
+;   TerminatedCString s_noc_00583b36
+;   TerminatedCString s_noc_00583b3b
+;   TerminatedCString s_save_00583b3f
 ;   string s_Save_game_00583b44
 ;   string s_%s.noc_00583b4e
-;   undefined4 DAT_00583b55
-;   undefined4 DAT_00583b5a
+;   TerminatedCString s_save_00583b55
+;   TerminatedCString s_wt_00583b5a
 ;   string s_Warning!_Your_game_didn't_save._00583b65
 ;   string s_//_.NOC_file_version_00583b86
-;   undefined4 DAT_00583b9c
+;   TerminatedCString s_d_00583b9c
 ;   string s_//_Hero_count,_local_hero_index,_00583ba0
 ;   string s_%d,_%d_00583bcc
-;   undefined4 DAT_00583bd4
+;   TerminatedCString s_s_00583bd4
 ;   ... and 30 more
 ;
 ; Called Functions:
@@ -90,7 +90,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 004a3bd5
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004a3bda
-    PUSH 0x583b32                       ; 004a3bdd | DAT_00583b32
+    PUSH 0x583b32                       ; 004a3bdd | = "noc"
     LEA EAX,[ESP + 0x310]               ; 004a3be2
     PUSH EAX                            ; 004a3be9
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a3bea
@@ -140,12 +140,12 @@ section .text
         ;   XREF to: 004a3c28 (CONDITIONAL_JUMP)  ; LAB_004a3c28
     POP EDI                             ; 004a3c40
         ;   Label: LAB_004a3c40
-    PUSH 0x583b55                       ; 004a3c41 | DAT_00583b55
+    PUSH 0x583b55                       ; 004a3c41 | = "save"
         ;   Label: LAB_004a3c41
     CALL crt_watcom.c__mkdir_FUN_00565e40 ; 004a3c46
         ;   XREF to: 00565e40 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__mkdir_FUN_00565e40()
     ADD ESP,0x4                         ; 004a3c4b
-    PUSH 0x583b5a                       ; 004a3c4e | DAT_00583b5a
+    PUSH 0x583b5a                       ; 004a3c4e | = "wt"
     MOV EBX,0x1                         ; 004a3c53
     PUSH 0x5b9370                       ; 004a3c58 | = "save\\$$SAVE$$.TMP"
     MOV dword ptr [0x00763e90],EBX      ; 004a3c5d | DAT_00763e90
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x8                         ; 004a3c89
     PUSH 0x9                            ; 004a3c8c
-    PUSH 0x583b9c                       ; 004a3c8e | DAT_00583b9c
+    PUSH 0x583b9c                       ; 004a3c8e | = "%d\n"
     PUSH ESI                            ; 004a3c93
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004a3c94
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
@@ -198,7 +198,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x1cae0d8] ; 004a3ce3
         ;   Label: LAB_004a3ce3
     PUSH EAX                            ; 004a3ce9
-    PUSH 0x583bd4                       ; 004a3cea | DAT_00583bd4
+    PUSH 0x583bd4                       ; 004a3cea | = "%s\n"
     PUSH EBX                            ; 004a3cef
     ADD EDI,0x4                         ; 004a3cf0
     INC ESI                             ; 004a3cf3
@@ -243,7 +243,7 @@ section .text
     ADD ESP,0x8                         ; 004a3d5e
     MOV EDX,dword ptr [0x01c7869c]      ; 004a3d61 | DAT_01c7869c
     PUSH EDX                            ; 004a3d67
-    PUSH 0x583be5                       ; 004a3d68 | DAT_00583be5
+    PUSH 0x583be5                       ; 004a3d68 | = "%d\n"
     PUSH EBX                            ; 004a3d6d
     MOV ESI,0x1                         ; 004a3d6e
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004a3d73
@@ -257,7 +257,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x1c7869c] ; 004a3d8a | DAT_01c786a0 | DAT_01c786a4
         ;   Label: LAB_004a3d8a
     PUSH EAX                            ; 004a3d90
-    PUSH 0x583be9                       ; 004a3d91 | DAT_00583be9
+    PUSH 0x583be9                       ; 004a3d91 | = "%d\n"
     PUSH EBX                            ; 004a3d96
     ADD EDI,0x4                         ; 004a3d97
     INC ESI                             ; 004a3d9a
@@ -307,7 +307,7 @@ section .text
     JZ 0x004a3fc7                       ; 004a3e1c
         ;   XREF to: 004a3fc7 (CONDITIONAL_JUMP)  ; LAB_004a3fc7
     PUSH 0x5b9370                       ; 004a3e22 | = "save\\$$SAVE$$.TMP"
-    PUSH 0x583c06                       ; 004a3e27 | DAT_00583c06
+    PUSH 0x583c06                       ; 004a3e27 | CHAR_00h_00583c06
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004a3e2c
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 004a3e31
@@ -343,7 +343,7 @@ section .text
         ;   XREF to: 004a40ea (CONDITIONAL_JUMP)  ; LAB_004a40ea
     MOV EAX,ESP                         ; 004a3e9b
     PUSH EAX                            ; 004a3e9d
-    PUSH 0x583c28                       ; 004a3e9e | DAT_00583c28
+    PUSH 0x583c28                       ; 004a3e9e | = "save"
     PUSH 0x583c2d                       ; 004a3ea3 | = "%s\\%s"
     LEA EAX,[ESP + 0x214]               ; 004a3ea8
     PUSH EAX                            ; 004a3eaf
@@ -463,7 +463,7 @@ section .text
     POP ESI                             ; 004a3ffd
     POP EBX                             ; 004a3ffe
     RET                                 ; 004a3fff
-    PUSH 0x583b12                       ; 004a4000 | s_Unable_to_save_during_cinematic_00583b10+2
+    PUSH 0x583b12                       ; 004a4000 | = "Unable to save during cinematic"
         ;   Label: LAB_004a4000
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a4005
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -480,7 +480,7 @@ section .text
     POP ESI                             ; 004a4025
     POP EBX                             ; 004a4026
     RET                                 ; 004a4027
-    PUSH 0x583b36                       ; 004a4028 | DAT_00583b36
+    PUSH 0x583b36                       ; 004a4028 | = ".noc"
         ;   Label: LAB_004a4028
     LEA EAX,[ESP + 0x310]               ; 004a402d
     PUSH EAX                            ; 004a4034
@@ -498,8 +498,8 @@ section .text
         ;   Label: LAB_004a404f
     LEA EAX,[ESP + 0x4]                 ; 004a4051
     PUSH EAX                            ; 004a4055
-    PUSH 0x583b3b                       ; 004a4056 | DAT_00583b3b
-    PUSH 0x583b3f                       ; 004a405b | DAT_00583b3f
+    PUSH 0x583b3b                       ; 004a4056 | = "noc"
+    PUSH 0x583b3f                       ; 004a405b | = "save"
     PUSH 0x583b44                       ; 004a4060 | = "Save game"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a4065
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()

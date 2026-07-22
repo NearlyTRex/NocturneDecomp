@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0055ef50(int param_1,float param_2)
+; void core_zombie_cpp_FUN_0055ef50(int param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3b0]:4  local_3b0
@@ -146,21 +146,21 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   string s_CHASE_2_0059850e
-;   string s_ghoul-eat-?.wav_00598516
-;   string s_%s_picked_up_%s_using_hand_%d_00598526
-;   string s_..\\core\\zombie.cpp_00598545
-;   undefined4 DAT_00598558
-;   string s_%s_lugging_%s_0059855d
-;   string s_zom-h0?.wav_0059856c
-;   string s_..\\core\\zombie.cpp_00598578
-;   undefined4 DAT_0059858b
+;   TerminatedCString s_CHASE_2_0059850e
+;   TerminatedCString s_ghoul_eat_wav_00598516
+;   TerminatedCString s_s_picked_up_s_using_hand_00598526
+;   TerminatedCString s_core_zombie_cpp_00598545
+;   TerminatedCString s_WTF_00598558
+;   TerminatedCString s_s_lugging_s_0059855d
+;   TerminatedCString s_zom_h0_wav_0059856c
+;   TerminatedCString s_core_zombie_cpp_00598578
+;   TerminatedCString s_WTF_0059858b
 ;   string s_%s_tossing_%s_00598590
 ;   string s_zom-h0?.wav_0059859f
-;   string s_zombie-bang-door?.wav_005985ab
-;   string s_ghoul-eat-?.wav_005985c1
-;   undefined4 s_houl-eat-?.wav_005985c1+1
-;   undefined4 s_oul-eat-?.wav_005985c1+2
+;   TerminatedCString s_zombie_bang_door_wav_005985ab
+;   TerminatedCString s_ghoul_eat_wav_005985c1
+;   undefined4 s_ghoul_eat_wav_005985c1+1
+;   undefined4 s_ghoul_eat_wav_005985c1+2
 ;   ... and 55 more
 ;
 ; Called Functions:
@@ -186,7 +186,7 @@
 section .text
 
     PUSH EBX                            ; 0055ef50
-        ;   Label: FUN_0055ef50
+        ;   Label: core_zombie.cpp_FUN_0055ef50
     PUSH ESI                            ; 0055ef51
     PUSH EDI                            ; 0055ef52
     PUSH EBP                            ; 0055ef53
@@ -196,8 +196,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 0055ef5f
     PUSH dword ptr [EBP + 0x92]         ; 0055ef65
     PUSH EBX                            ; 0055ef6b
-    CALL FUN_004259f0                   ; 0055ef6c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 0055ef6c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 0055ef71
     TEST EAX,EAX                        ; 0055ef74
     JNZ 0x0055ef80                      ; 0055ef76
@@ -680,7 +680,7 @@ section .text
     MOV ECX,0x598545                    ; 0055f4d3 | = "..\\core\\zombie.cpp"
         ;   Label: LAB_0055f4d3
     MOV EDI,0x1ee                       ; 0055f4d8
-    PUSH 0x598558                       ; 0055f4dd | DAT_00598558
+    PUSH 0x598558                       ; 0055f4dd | = "WTF!"
     MOV dword ptr [0x01cc4800],ECX      ; 0055f4e2 | DAT_01cc4800
     MOV dword ptr [0x01cc4804],EDI      ; 0055f4e8 | DAT_01cc4804
     CALL FUN_004c8440                   ; 0055f4ee
@@ -754,7 +754,7 @@ section .text
     MOV EAX,0x598578                    ; 0055f5d3 | = "..\\core\\zombie.cpp"
         ;   Label: LAB_0055f5d3
     MOV EDX,0x205                       ; 0055f5d8
-    PUSH 0x59858b                       ; 0055f5dd | DAT_0059858b
+    PUSH 0x59858b                       ; 0055f5dd | = "WTF!"
     MOV [0x01cc4800],EAX                ; 0055f5e2 | DAT_01cc4800
     MOV dword ptr [0x01cc4804],EDX      ; 0055f5e7 | DAT_01cc4804
     CALL FUN_004c8440                   ; 0055f5ed
@@ -951,13 +951,13 @@ section .text
     LEA EDI,[EBP + 0xfffffd56]          ; 0055f83d
         ;   Label: LAB_0055f83d
     PUSH EDI                            ; 0055f843
-    MOV AL,byte ptr [ESI]               ; 0055f844 | = "ghoul-eat-?.wav" | s_oul-eat-?.wav_005985c1+2 | s_ghoul-dig-?.wav_005985d1
+    MOV AL,byte ptr [ESI]               ; 0055f844 | = "ghoul-eat-?.wav" | s_ghoul_eat_wav_005985c1+2 | s_ghoul-dig-?.wav_005985d1
         ;   Label: LAB_0055f844
     MOV byte ptr [EDI],AL               ; 0055f846
     CMP AL,0x0                          ; 0055f848
     JZ 0x0055f85c                       ; 0055f84a
         ;   XREF to: 0055f85c (CONDITIONAL_JUMP)  ; LAB_0055f85c
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055f84c | s_houl-eat-?.wav_005985c1+1 | s_ul-eat-?.wav_005985c1+3 | s_houl-dig-?.wav_005985d1+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055f84c | s_ghoul_eat_wav_005985c1+1 | s_ghoul_eat_wav_005985c1+3 | s_houl-dig-?.wav_005985d1+1
     ADD ESI,0x2                         ; 0055f84f
     MOV byte ptr [EDI + 0x1],AL         ; 0055f852
     ADD EDI,0x2                         ; 0055f855
@@ -1051,8 +1051,8 @@ section .text
     XOR EAX,EAX                         ; 0055f958
     PUSH EBX                            ; 0055f95a
     MOV dword ptr [EBP + 0x42],EAX      ; 0055f95b
-    CALL FUN_00428c00                   ; 0055f95e
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 0055f95e
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 0055f963
     TEST EAX,EAX                        ; 0055f966
     JZ 0x0056095b                       ; 0055f968
@@ -1123,8 +1123,8 @@ section .text
     ADD ESP,0x4                         ; 0055fa1c
     PUSH dword ptr [EBP + 0x92]         ; 0055fa1f
     PUSH EBX                            ; 0055fa25
-    CALL FUN_0042a150                   ; 0055fa26
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 0055fa26
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 0055fa2b
     CMP dword ptr [EBX + 0xbc90],0x0    ; 0055fa2e
         ;   Label: LAB_0055fa2e
@@ -1927,8 +1927,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005603c1
     MOV EDX,dword ptr [EAX + 0x4]       ; 005603c4
     MOV dword ptr [EAX],EDX             ; 005603c7
-    CALL FUN_00561010                   ; 005603c9
-        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; undefined FUN_00561010()
+    CALL core_zombie.cpp_FUN_00561010   ; 005603c9
+        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_00561010()
     ADD ESP,0x8                         ; 005603ce
     TEST EAX,EAX                        ; 005603d1
     JNZ 0x0055fc6b                      ; 005603d3

@@ -455,7 +455,7 @@ void FUN_004c85f0(void)
     puVar1[2] = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }
-  FUN_0055a510("video","opening.avi");
+  wincore_winvideo_cpp_FUN_0055a510("video","opening.avi");
   wincore_windll_cpp_clearScreen_FUN_0052ee70();
   pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
   pcVar10 = acStack_328;

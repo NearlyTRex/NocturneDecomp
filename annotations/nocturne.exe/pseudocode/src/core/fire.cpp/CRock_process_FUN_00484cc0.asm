@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581134
+;   double DOUBLE_00581134 = 32767.7000000000
 ;   undefined4 DAT_01bd1d80
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     SHL EDX,0x2                         ; 00484cef
     SBB EAX,EDX                         ; 00484cf2
     SAR EAX,0x2                         ; 00484cf4
-    FMUL double ptr [0x00581134]        ; 00484cf7 | DAT_00581134
+    FMUL double ptr [0x00581134]        ; 00484cf7 | DOUBLE_00581134
     ADD ESP,0x4                         ; 00484cfd
     CALL crt_math.c_round_FUN_00563a30  ; 00484d00
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

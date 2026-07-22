@@ -48,7 +48,7 @@ void FUN_00541d00(int param_1,float param_2)
      (float)_DAT_00596379 < fVar1)) {
     *(uint *)(param_1 + 0x2434) = 0x42c80000;
   }
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if ((iVar4 == 0) || (*(int *)(param_1 + 0x1fa38) == 4)) {
 switchD_005420d7_caseD_9:
     return;
@@ -66,7 +66,7 @@ switchD_005420d7_caseD_9:
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
   core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(param_1,param_2);
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
-  iVar4 = FUN_00428c00(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar4 == 0) {
     if (*(int *)(param_1 + 0xbc90) == 2) {
       FUN_005423c0(param_1,param_2);
@@ -253,7 +253,8 @@ LAB_00541f87:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iStack_1c);
   iVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   if (iVar4 == 0) {
-    FUN_0055d610(param_1 + 0x950a8,*(uint *)(param_1 + 0x950b4),_DAT_02dca058,&LAB_0051b650);
+    core_xform_cpp_FUN_0055d610
+              (param_1 + 0x950a8,*(uint *)(param_1 + 0x950b4),_DAT_02dca058,&LAB_0051b650);
     uStack_94 = uStack_84;
     *(uint *)((int)&stack0xffffff70 + (uint)bVar8 * 0xfffffffe * 4) =
          *(uint *)(local_68 + (uint)bVar8 * -8 + -0x18);
@@ -267,7 +268,7 @@ LAB_00541f87:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (iStack_1c,&stack0xffffff6c);
   }
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   local_14 = (float)(param_1 + 0x20);
   core_cloth_cpp_CCloth_process_FUN_00436e50
             (param_1 + 0x1fa44,local_14,param_1 + 0x30,param_2,*(uint *)(param_1 + 0x240c),

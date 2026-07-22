@@ -8,9 +8,9 @@
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 at 004b068d
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\gore.cpp_00585197+1
+;   TerminatedCString s_core_gore_cpp_00585198
 ;   string s_Can't_create_flies!_005851a9
-;   undefined4 DAT_005851c0
+;   double DOUBLE_005851c0 = 60
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -45,7 +45,7 @@ section .text
     TEST EAX,EAX                        ; 004b05a2
     JNZ 0x004b05c9                      ; 004b05a4
         ;   XREF to: 004b05c9 (CONDITIONAL_JUMP)  ; LAB_004b05c9
-    MOV EDX,0x585198                    ; 004b05a6 | s_..\core\gore.cpp_00585197+1
+    MOV EDX,0x585198                    ; 004b05a6 | = "..\\core\\gore.cpp"
     MOV ECX,0x675                       ; 004b05ab
     PUSH 0x5851a9                       ; 004b05b0 | = "Can't create flies!"
     MOV dword ptr [0x01cc4800],EDX      ; 004b05b5 | DAT_01cc4800
@@ -55,7 +55,7 @@ section .text
     ADD ESP,0x4                         ; 004b05c6
     FLD float ptr [ESP + 0x1c]          ; 004b05c9
         ;   Label: LAB_004b05c9
-    FDIVR double ptr [0x005851c0]       ; 004b05cd | DAT_005851c0
+    FDIVR double ptr [0x005851c0]       ; 004b05cd | DOUBLE_005851c0
     LEA EAX,[EBX + 0x20]                ; 004b05d3
     MOV EDX,dword ptr [EDI]             ; 004b05d6
     MOV dword ptr [EAX],EDX             ; 004b05d8

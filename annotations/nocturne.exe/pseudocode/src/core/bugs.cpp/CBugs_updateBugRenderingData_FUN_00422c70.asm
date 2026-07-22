@@ -67,18 +67,18 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004224db
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579d6d
-;   undefined4 DAT_00579d75
+;   double DOUBLE_00579d6d = 1.58735232019473E-314
+;   double DOUBLE_00579d75 = 0.00100000000000000
 ;   undefined4 DAT_0059ae98
 ;   undefined4 DAT_0059aeac
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
+;   core_bugs.cpp_FUN_00423480
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_0055a910
-;   FUN_00423480
 ;
 ; *****************************************************************************
 
@@ -591,8 +591,8 @@ section .text
         ;   XREF to: 00423324 (CONDITIONAL_JUMP)  ; LAB_00423324
     PUSH ESI                            ; 004233aa
     PUSH EDI                            ; 004233ab
-    CALL FUN_00423480                   ; 004233ac
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined FUN_00423480()
+    CALL core_bugs.cpp_FUN_00423480     ; 004233ac
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
     ADD ESP,0x8                         ; 004233b1
     MOV dword ptr [ESI + 0x34],0x0      ; 004233b4
     MOV ESP,EBP                         ; 004233bb
@@ -604,8 +604,8 @@ section .text
     PUSH ESI                            ; 004233c2
         ;   Label: LAB_004233c2
     PUSH EDI                            ; 004233c3
-    CALL FUN_00423480                   ; 004233c4
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined FUN_00423480()
+    CALL core_bugs.cpp_FUN_00423480     ; 004233c4
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
     ADD ESP,0x8                         ; 004233c9
     MOV dword ptr [ESI + 0x34],0x0      ; 004233cc
     JMP 0x00422cfc                      ; 004233d3
@@ -613,15 +613,15 @@ section .text
     PUSH ESI                            ; 004233d8
         ;   Label: LAB_004233d8
     PUSH EDI                            ; 004233d9
-    CALL FUN_00423480                   ; 004233da
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined FUN_00423480()
+    CALL core_bugs.cpp_FUN_00423480     ; 004233da
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
     ADD ESP,0x8                         ; 004233df
     FLD float ptr [ESP + 0xc]           ; 004233e2
     FLD1                                ; 004233e6
     FSUBRP                              ; 004233e8
     FDIV float ptr [ESP + 0x8]          ; 004233ea
     FLD float ptr [ESI + 0x34]          ; 004233ee
-    FADD float ptr [0x00579d6d]         ; 004233f1 | DAT_00579d6d
+    FADD float ptr [0x00579d6d]         ; 004233f1 | DOUBLE_00579d6d
     FLD float ptr [ESP]                 ; 004233f7
     FXCH ST2                            ; 004233fa
     FSUBR ST0,ST2                       ; 004233fc
@@ -629,7 +629,7 @@ section .text
     FSTP float ptr [ESI + 0x34]         ; 00423400
     FSTP ST1                            ; 00423403
     FST float ptr [ESP]                 ; 00423405
-    FCOMP double ptr [0x00579d75]       ; 00423408 | DAT_00579d75
+    FCOMP double ptr [0x00579d75]       ; 00423408 | DOUBLE_00579d75
     FNSTSW AX                           ; 0042340e
     SAHF                                ; 00423410
     JC 0x00422cd6                       ; 00423411

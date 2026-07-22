@@ -21,7 +21,7 @@ void FUN_0044c560(void)
   }
   _DAT_014b98f8 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = ">@..\\core\\dfont.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\dfont.cpp";
     _DAT_01cc4804 = 0x41;
     FUN_004c8440("Medium font object not allocated!");
   }

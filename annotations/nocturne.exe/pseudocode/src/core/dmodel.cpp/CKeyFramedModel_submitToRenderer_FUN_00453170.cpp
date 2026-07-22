@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(int param_1,int *param_2,uint param_3)
 
 {
@@ -30,7 +28,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(int p
          (fVar1 = *(float *)(param_1 + 0x344) - *(float *)(param_1 + 0x338),
          fVar2 = *(float *)(param_1 + 0x348) - *(float *)(param_1 + 0x33c),
          fVar3 = *(float *)(param_1 + 0x34c) - *(float *)(param_1 + 0x340),
-         (float)_DAT_0057cb6e < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
+         (float)250 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
         engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
       }
     }
@@ -53,8 +51,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(int p
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                         (DAT_005ae704,param_1 + 0x124);
             }
-            FUN_0050ddd0(0x01E57284,*(int *)(param_1 + 0x114) + iVar8 * 0x48,iVar5 - iVar8,param_3
-                        );
+            core_set_cpp_FUN_0050ddd0
+                      (0x01E57284,*(int *)(param_1 + 0x114) + iVar8 * 0x48,iVar5 - iVar8,param_3);
           }
           else {
             while (iVar8 < iVar5) {
@@ -71,8 +69,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(int p
                 iVar7 = iVar7 + 1;
                 if (iVar5 * 4 <= iVar6) break;
               } while (iVar9 == *(int *)(*(int *)(param_1 + 0x118) + iVar6));
-              FUN_0050ddd0(0x01E57284,*(int *)(param_1 + 0x114) + iVar8 * 0x48,iVar7 - iVar8,
-                           param_3);
+              core_set_cpp_FUN_0050ddd0
+                        (0x01E57284,*(int *)(param_1 + 0x114) + iVar8 * 0x48,iVar7 - iVar8,param_3
+                        );
               iVar8 = iVar7;
             }
           }

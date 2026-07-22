@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0050ddd0 at 0050de8e
+;   core_set.cpp_FUN_0050ddd0 at 0050de8e
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0

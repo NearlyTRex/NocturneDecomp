@@ -16,7 +16,7 @@
 ;   undefined1* PTR_FUN_0059fed4 = 004c8190
 ;
 ; Called Functions:
-;   FUN_00409d30
+;   core_actor.cpp_FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDI                            ; 004c80f1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c80f2
     PUSH EDX                            ; 004c80f6
-    CALL FUN_00409d30                   ; 004c80f7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004c80f7
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     MOV dword ptr [EAX + 0x14c],0x59fed4 ; 004c80fc | PTR_FUN_0059fed4
     MOV ESI,0x587ad0                    ; 004c8106 | DAT_00587ad0
     MOV dword ptr [EAX + 0x150],0x42600000 ; 004c810b

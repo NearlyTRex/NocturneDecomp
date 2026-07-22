@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_00414340 at 00414356
 ;   FUN_00441440 at 0044146c
 ;   FUN_0045a260 at 0045a276
 ;   FUN_004de550 at 004de55f
 ;   FUN_00541640 at 00541650
+;   core_batman.cpp_FUN_00414340 at 00414356
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 00426450
 ;   core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10 at 00441aa5
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610 at 00441627

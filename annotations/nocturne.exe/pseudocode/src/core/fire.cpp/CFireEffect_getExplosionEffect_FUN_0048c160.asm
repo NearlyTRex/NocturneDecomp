@@ -24,8 +24,8 @@
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 00509440
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058150c
-;   undefined4 DAT_00581514
+;   double DOUBLE_0058150c = 0.5
+;   double DOUBLE_00581514 = 5.48113170615542E-315
 ;   undefined4 DAT_01c5d714
 ;   undefined4 DAT_01c5d724
 ;   undefined4 DAT_01c5d728
@@ -54,7 +54,7 @@ section .text
     FLD float ptr [EDX + 0xc]           ; 0048c17d | DAT_01c5d714 | DAT_01c5d730
         ;   Label: LAB_0048c17d
     MOV ESI,EDX                         ; 0048c180
-    FCOMP double ptr [0x0058150c]       ; 0048c182 | DAT_0058150c
+    FCOMP double ptr [0x0058150c]       ; 0048c182 | DOUBLE_0058150c
     FNSTSW AX                           ; 0048c188
     SAHF                                ; 0048c18a
     JA 0x0048c19f                       ; 0048c18b
@@ -104,7 +104,7 @@ section .text
     FADDP                               ; 0048c1f3
     FSQRT                               ; 0048c1f5
     FLD float ptr [ESI + 0x10]          ; 0048c1f7 | DAT_01c5d734
-    FMUL double ptr [0x0058150c]        ; 0048c1fa | DAT_0058150c
+    FMUL double ptr [0x0058150c]        ; 0048c1fa | DOUBLE_0058150c
     FADD float ptr [ESP + 0x4]          ; 0048c200
     FXCH                                ; 0048c204
     FST float ptr [ESP]                 ; 0048c206
@@ -129,7 +129,7 @@ section .text
     FMULP ST3                           ; 0048c234
     FXCH                                ; 0048c236
     FST float ptr [ESP + 0x20]          ; 0048c238
-    FLD float ptr [0x00581514]          ; 0048c23c | DAT_00581514
+    FLD float ptr [0x00581514]          ; 0048c23c | DOUBLE_00581514
     FXCH                                ; 0048c242
     FMUL ST1                            ; 0048c244
     FXCH ST2                            ; 0048c246

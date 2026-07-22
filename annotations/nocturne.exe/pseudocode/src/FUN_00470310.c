@@ -22,11 +22,11 @@ bool FUN_00470310(uint param_1,uint param_2)
   _vsprintf(0x1bcb8d0,param_2,&puStack_c);
   puStack_c = (byte *)0x0;
   FUN_00474c90(auStack_17c);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e64e);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_17c,uVar2);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e654);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_17c,uVar2);
-  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e659);
+  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("yn");
   pcVar5 = acStack_168;
   do {
     cVar1 = *pcVar3;

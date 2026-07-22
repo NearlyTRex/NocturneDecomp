@@ -16,7 +16,7 @@ void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)
   if (0x0000000C < 10) {
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(param_1 + 0x150,"modelName")
     ;
-    FUN_0040cb00(param_1 + 0x150,"motion state");
+    core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
   }
   core_actor_cpp_archivePartStatus_FUN_0040cbf0(param_1 + 0x150,"partStatus");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1f570,"rescueDistance");

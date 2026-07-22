@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,33 +122,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 201,
+    "complexity_score": 185,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 15,
+    "pseudocode_lines": 25,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 71
+    "total_lines": 70
   },
   "cross_references": [
     {
       "addr": "004777a0",
       "from_addr": "00477860",
       "name": "FUN_004777a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050a260",
-      "from_addr": "0050a36d",
-      "name": "FUN_0050a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -161,6 +154,12 @@
       "addr": "004c6ff0",
       "from_addr": "004c7091",
       "name": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a260",
+      "from_addr": "0050a36d",
+      "name": "core_set.cpp_FUN_0050a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -203,15 +202,15 @@
   "globals": [
     {
       "addr": "0057c946",
-      "name": "DAT_0057c946",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057c946",
+      "type": "double",
+      "value": "7"
     },
     {
       "addr": "0057c94e",
-      "name": "DAT_0057c94e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057c94e",
+      "type": "double",
+      "value": "3"
     },
     {
       "addr": "005ad51c",
@@ -232,7 +231,7 @@
       {
         "call_addr": "0050a36d",
         "call_type": "direct",
-        "caller": "FUN_0050a260",
+        "caller": "core_set.cpp_FUN_0050a260",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -350,16 +349,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(int param_1,uint param_2)",
@@ -367,7 +358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(int param_1,uint param_2)",
@@ -375,7 +366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2fa8) = param_2;",
@@ -383,7 +374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2fa8) = param_2;",
@@ -391,7 +382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0x100 < *(int *)(param_1 + 0x1cc0)) {",
@@ -399,15 +390,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "((float10)*(float *)(param_1 + 0x2fa8) * (float10)_DAT_0057c94e);",
+      "text": "((float10)*(float *)(param_1 + 0x2fa8) * (float10)3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(&DAT_005ad53c)[(int)ROUND(fVar1)],0,uVar2,uVar3,uVar4);",
@@ -415,7 +406,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 18,
       "match": "DAT_005ad53c",
       "severity": "mild",
       "text": "(param_1,(&DAT_005ad53c)[(int)ROUND(fVar1)],0,uVar2,uVar3,uVar4);",
@@ -423,15 +414,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "((float10)*(float *)(param_1 + 0x2fa8) * (float10)_DAT_0057c946);",
+      "text": "((float10)*(float *)(param_1 + 0x2fa8) * (float10)7);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(&DAT_005ad51c)[(int)ROUND(fVar1)],0,uVar2,uVar3);",
@@ -439,7 +430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_005ad51c",
       "severity": "mild",
       "text": "(param_1,(&DAT_005ad51c)[(int)ROUND(fVar1)],0,uVar2,uVar3);",
@@ -447,7 +438,7 @@
     },
     {
       "description": "Raw hex address 0x4520b3 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
+      "line": 14,
       "match": "0x4520b3",
       "severity": "moderate",
       "text": "uVar2 = 0x4520b3;",
@@ -455,7 +446,7 @@
     },
     {
       "description": "Raw hex address 0x4520e8 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
+      "line": 22,
       "match": "0x4520e8",
       "severity": "moderate",
       "text": "uVar2 = 0x4520e8;",

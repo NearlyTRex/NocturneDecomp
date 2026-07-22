@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * __cdecl core_boneguy_cpp_hsvToRgb_FUN_00418480(float *param_1,float *param_2)
 
 {
@@ -26,7 +24,7 @@ float * __cdecl core_boneguy_cpp_hsvToRgb_FUN_00418480(float *param_1,float *par
   fVar1 = param_2[1];
   fVar6 = param_2[2];
   if (0.0 < fVar1) {
-    fVar5 = *param_2 * (float)_DAT_0057917e;
+    fVar5 = *param_2 * (float)0.023529411764705899;
     dVar4 = (double)floor((double)fVar5);
     fVar7 = (float10)round((float10)dVar4);
     fVar2 = (1.0 - local_34) * fVar5;

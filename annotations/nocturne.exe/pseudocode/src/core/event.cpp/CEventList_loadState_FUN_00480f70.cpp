@@ -23,7 +23,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   
   core_event_cpp_CEventList_reset_FUN_0047aa00(param_1);
   _fgets(local_120,0xff,param_2);
-  _fscanf(param_2,&DAT_00580cc1,&local_20);
+  _fscanf(param_2,"%d\n",&local_20);
   if (5 < local_20) {
     _DAT_01cc4800 = "..\\core\\event.cpp";
     _DAT_01cc4804 = 0xc2c;
@@ -31,7 +31,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   }
   _fgets(local_120,0xff,param_2);
   iVar1 = 0;
-  _fscanf(param_2,&DAT_00580d3a,param_1);
+  _fscanf(param_2,"%d\n",param_1);
   if (0 < *param_1) {
     piVar4 = param_1 + 1;
     do {
@@ -42,7 +42,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   }
   _fgets(local_120,0xff,param_2);
   iVar1 = 0;
-  _fscanf(param_2,&DAT_00580d45,param_1 + 0x321);
+  _fscanf(param_2,"%d\n",param_1 + 0x321);
   if (0 < param_1[0x321]) {
     piVar4 = param_1 + 0x322;
     do {
@@ -53,7 +53,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   }
   _fgets(local_120,0xff,param_2);
   iVar2 = 0;
-  iVar1 = _fscanf(param_2,&DAT_00580d50,param_1 + 0x963);
+  iVar1 = _fscanf(param_2,"%d\n",param_1 + 0x963);
   if (0 < param_1[0x963]) {
     piVar4 = param_1 + 0x964;
     do {
@@ -64,7 +64,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   }
   if (1 < local_20) {
     _fgets(local_120,0xff,param_2);
-    _fscanf(param_2,&DAT_00580d5b,param_1 + 0xc84);
+    _fscanf(param_2,"%d\n",param_1 + 0xc84);
     iVar1 = param_1[0xc84];
     local_14 = 0;
     if (0 < iVar1) {
@@ -81,7 +81,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   if (2 < local_20) {
     _fgets(local_120,0xff,param_2);
     iVar2 = 0;
-    _fscanf(param_2,&DAT_00580d6a,param_1 + 0xcdf);
+    _fscanf(param_2,"%d\n",param_1 + 0xcdf);
     iVar1 = param_1[0xcdf];
     if (0 < iVar1) {
       local_18 = param_1 + 0xce0;
@@ -98,7 +98,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   if (3 < local_20) {
     _fgets(local_120,0xff,param_2);
     iVar2 = 0;
-    iVar1 = _fscanf(param_2,&DAT_00580d79,param_1 + 0xd3a);
+    iVar1 = _fscanf(param_2,"%d\n",param_1 + 0xd3a);
     if (0 < param_1[0xd3a]) {
       local_1c = (int)param_1 + 0x37da;
       piVar4 = param_1 + 0xd3b;
@@ -113,7 +113,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   if (4 < local_20) {
     _fgets(local_120,0xff,param_2);
     iVar2 = 0;
-    iVar1 = _fscanf(param_2,&DAT_00580d90,param_1 + 0x642);
+    iVar1 = _fscanf(param_2,"%d\n",param_1 + 0x642);
     if (0 < param_1[0x642]) {
       piVar4 = param_1 + 0x643;
       do {

@@ -19,8 +19,7 @@ void FUN_00456f60(int param_1)
     iVar1 = FUN_00565c50(*(int *)(param_1 + 0x20),0xc);
     *(int *)(param_1 + 0x2c) = iVar1;
     if (iVar1 == 0) {
-      _sprintf(auStack_10c,"CDemonPart::alloc - Out of vertex %d memory!",
-                 *(uint *)(param_1 + 0x20));
+      _sprintf(auStack_10c,"CDemonPart::alloc - Out of vertex %d memory!",*(uint *)(param_1 + 0x20));
       _DAT_01cc4804 = 0x8b;
       _DAT_01cc4800 = "..\\core\\dpart.cpp";
       FUN_004c8440(auStack_10c);

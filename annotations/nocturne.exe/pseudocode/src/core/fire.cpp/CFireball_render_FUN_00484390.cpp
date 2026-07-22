@@ -183,8 +183,8 @@ void core_fire_cpp_CFireball_render_FUN_00484390(float *param_1)
       local_9c = param_1[5];
       fVar6 = 1.0;
       do {
-        local_e4 = local_e4 * (float)_DAT_00581114;
-        fVar6 = (float)_DAT_00581114 * fVar6;
+        local_e4 = local_e4 * (float)0.69999999999999996;
+        fVar6 = (float)0.69999999999999996 * fVar6;
         local_5c = local_a4 * local_e4;
         local_a0 = local_a0 - local_e4 * param_1[7];
         local_54 = local_9c * local_e4;

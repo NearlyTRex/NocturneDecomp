@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00403070(undefined4 param_1,undefined4 param_2)
+; void engine_2d_c_FUN_00403070(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057718c
-;   undefined4 DAT_0057718f
-;   undefined4 DAT_00577193
-;   undefined4 DAT_00577196
+;   TerminatedCString s_rb_0057718c
+;   TerminatedCString s_fog_0057718f
+;   TerminatedCString s_rb_00577193
+;   TerminatedCString s_fog_00577196
 ;   string s_..\\engine\\2d.c_0057719a
 ;   string s_Unable_to_read_fog_table._005771a9
 ;   undefined4 DAT_01cc4800
@@ -17,9 +17,9 @@
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
+;   engine_2d.c_FUN_00402e90
+;   engine_2d.c_FUN_00403130
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_00402e90
-;   FUN_00403130
 ;   FUN_004c8440
 ;   wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80
 ;
@@ -28,14 +28,14 @@
 section .text
 
     PUSH EBX                            ; 00403070
-        ;   Label: FUN_00403070
+        ;   Label: engine_2d.c_FUN_00403070
     PUSH EDI                            ; 00403071
     MOV EDI,dword ptr [ESP + 0xc]       ; 00403072
     MOV EBX,dword ptr [ESP + 0x10]      ; 00403076
     PUSH ESI                            ; 0040307a
-    PUSH 0x57718c                       ; 0040307b | DAT_0057718c
+    PUSH 0x57718c                       ; 0040307b | = "rb"
     PUSH EDI                            ; 00403080
-    PUSH 0x57718f                       ; 00403081 | DAT_0057718f
+    PUSH 0x57718f                       ; 00403081 | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403086
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0040308b
@@ -79,16 +79,16 @@ section .text
     RET                                 ; 004030e4
     PUSH EBX                            ; 004030e5
         ;   Label: LAB_004030e5
-    CALL FUN_00402e90                   ; 004030e6
-        ;   XREF to: 00402e90 (UNCONDITIONAL_CALL)  ; undefined FUN_00402e90()
+    CALL engine_2d.c_FUN_00402e90       ; 004030e6
+        ;   XREF to: 00402e90 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00402e90()
     ADD ESP,0x4                         ; 004030eb
     PUSH EDI                            ; 004030ee
-    CALL FUN_00403130                   ; 004030ef
-        ;   XREF to: 00403130 (UNCONDITIONAL_CALL)  ; undefined FUN_00403130()
+    CALL engine_2d.c_FUN_00403130       ; 004030ef
+        ;   XREF to: 00403130 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403130()
     ADD ESP,0x4                         ; 004030f4
-    PUSH 0x577193                       ; 004030f7 | DAT_00577193
+    PUSH 0x577193                       ; 004030f7 | = "rb"
     PUSH EDI                            ; 004030fc
-    PUSH 0x577196                       ; 004030fd | DAT_00577196
+    PUSH 0x577196                       ; 004030fd | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403102
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00403107

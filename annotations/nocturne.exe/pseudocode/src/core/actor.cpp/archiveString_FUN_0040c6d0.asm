@@ -4,7 +4,10 @@
 ; void __cdecl core_actor_cpp_archiveString_FUN_0040c6d0(undefined1 *param_1,undefined4 param_2)
 ;
 ;
-; XREF[50]:
+; XREF[54]:
+;   FUN_0040f390 at 0040f3be
+;   FUN_0040f7d0 at 0040f7fe
+;   FUN_0040fb60 at 0040fbb1
 ;   FUN_00419ce0 at 00419d67
 ;   FUN_0043b310 at 0043b352
 ;   FUN_00481e20 at 00481e5b
@@ -12,14 +15,11 @@
 ;   FUN_004b49a0 at 004b4b57
 ;   FUN_004b9b50 at 004b9b6c
 ;   FUN_004cc870 at 004cc88a
-;   FUN_004de680 at 004de69a
-;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d35e
-;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 at 0040caa5
-;   ... and 40 more
+;   ... and 44 more
 ;
 ; Referenced Globals:
-;   string s_%[^\"]_00577c60
-;   string s_%s\"%s\"_00577c66
+;   TerminatedCString s_anon_00577c60
+;   TerminatedCString s_s_s_00577c66
 ;   string s_String_005acc58
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_005c168c

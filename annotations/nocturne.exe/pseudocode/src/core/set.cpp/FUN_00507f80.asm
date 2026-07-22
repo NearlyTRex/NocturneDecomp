@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00507f80(int *param_1,int param_2)
+; void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -17,6 +17,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
+;   core_set.cpp_FUN_0050ad20
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
 ;   engine_2d.c_drawText_FUN_00402600
@@ -24,7 +25,6 @@
 ;   FUN_00444ef0
 ;   FUN_00447f20
 ;   FUN_004c8440
-;   FUN_0050ad20
 ;   FUN_005148b0
 ;   ... and 2 more
 ;
@@ -33,7 +33,7 @@
 section .text
 
     PUSH EBX                            ; 00507f80
-        ;   Label: FUN_00507f80
+        ;   Label: core_set.cpp_FUN_00507f80
     PUSH ESI                            ; 00507f81
     PUSH EDI                            ; 00507f82
     PUSH EBP                            ; 00507f83
@@ -389,8 +389,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x174]     ; 0050848e
         ;   Label: LAB_0050848e
     PUSH EAX                            ; 00508495
-    CALL FUN_0050ad20                   ; 00508496
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ad20()
+    CALL core_set.cpp_FUN_0050ad20      ; 00508496
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ad20()
     ADD ESP,0x4                         ; 0050849b
     XOR ECX,ECX                         ; 0050849e
     MOV dword ptr [0x01fba938],ECX      ; 005084a0 | DAT_01fba938

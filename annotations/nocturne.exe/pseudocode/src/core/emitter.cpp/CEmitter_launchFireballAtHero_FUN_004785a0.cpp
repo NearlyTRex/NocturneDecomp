@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(int param_1)
 
 {
@@ -46,12 +44,12 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(int par
     local_68 = local_5c;
     local_64 = local_58;
   }
-  local_68 = local_68 + _DAT_0057f1ac;
+  local_68 = local_68 + 5.3567960152785439e-315._0_4_;
   local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc1000000,0x41000000);
   local_6c = local_10 + local_6c;
   local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc1000000,0x41000000);
-  Var3 = fsin((float10)_DAT_0057f1b4);
-  fVar4 = (float10)fptan((float10)_DAT_0057f1c4);
+  Var3 = fsin((float10)-1.30899693895833);
+  fVar4 = (float10)fptan((float10)1.30899693895833);
   fVar5 = (float10)local_10 + (float10)local_64;
   local_64 = (float)fVar5;
   Var6 = atan2((float10)local_6c);
@@ -60,8 +58,8 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(int par
   fVar8 = (float10)fsin(Var6);
   fVar9 = (float10)fcos(Var6);
   local_40 = (double)fVar1;
-  fStack_1c = fVar1 * (float)_DAT_0057f1bc * fVar1;
-  fVar5 = fVar7 * (float10)_DAT_0057f1cc * fVar7 * (fVar5 * (float10)fVar1 - (float10)local_6c);
+  fStack_1c = fVar1 * (float)32 * fVar1;
+  fVar5 = fVar7 * (float10)2.0f * fVar7 * (fVar5 * (float10)fVar1 - (float10)local_6c);
   local_48 = (float)-fVar4;
   local_4c = (float)(fVar8 * fVar7);
   local_44 = (float)(fVar9 * fVar7);

@@ -186,7 +186,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
           }
           else {
             local_80 = iVar8 * 0x10;
-            FUN_0055d0d0(local_bec + iVar8 * 4);
+            core_xform_cpp_FUN_0055d0d0(local_bec + iVar8 * 4);
             puVar11 = auStack_228 + 7;
             iVar8 = (int)local_bec + local_68;
             local_20c[0] = local_15c;
@@ -316,7 +316,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
                puVar9[(uint)bVar12 * -2 + 1];
           if (-1 < iVar8) {
             local_80 = iVar8 * 0x10;
-            FUN_0055d0d0(auStack_1274 + iVar8 * 4 + 0x12);
+            core_xform_cpp_FUN_0055d0d0(auStack_1274 + iVar8 * 4 + 0x12);
             puVar11 = auStack_228 + 0x1f;
             local_1ac[0] = auStack_108[3];
             auStack_228[(uint)bVar12 * -2 + 0x20] = auStack_108[(uint)bVar12 * -2 + 4];
@@ -331,7 +331,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
                  auStack_288[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xd];
             (auStack_228 + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 0x19)[(uint)bVar12 * -2 + 1] =
                  (auStack_288 + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xd)[(uint)bVar12 * -2 + 1];
-            FUN_0055d0d0((int)local_186c + local_80);
+            core_xform_cpp_FUN_0055d0d0((int)local_186c + local_80);
             puVar11 = &local_28c;
             local_28c = local_1fc;
             auStack_288[(uint)bVar12 * -2] = auStack_228[(uint)bVar12 * -2 + 0xc];
@@ -348,7 +348,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
             (auStack_108 + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xd)[(uint)bVar12 * -2 + 1] =
                  (auStack_228 + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 0x25)[(uint)bVar12 * -2 + 1]
             ;
-            FUN_0055d0d0(iVar8);
+            core_xform_cpp_FUN_0055d0d0(iVar8);
             puVar11 = auStack_228 + 0x27;
             local_18c[0] = local_10c;
             auStack_228[(uint)bVar12 * -2 + 0x28] = auStack_108[(uint)bVar12 * -2];
@@ -365,7 +365,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
                  (auStack_228 + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 0x3d)[(uint)bVar12 * -2 + 1]
             ;
           }
-          FUN_0055d0d0(auStack_228 + 0x17);
+          core_xform_cpp_FUN_0055d0d0(auStack_228 + 0x17);
           puVar11 = auStack_228 + 0x13;
           local_1dc[0] = local_12c;
           auStack_228[(uint)bVar12 * -2 + 0x14] = auStack_228[(uint)bVar12 * -2 + 0x40];

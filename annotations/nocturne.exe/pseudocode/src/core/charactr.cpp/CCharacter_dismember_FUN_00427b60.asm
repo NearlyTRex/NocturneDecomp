@@ -18,7 +18,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[7]:
+; XREF[9]:
+;   FUN_0040fa20 at 0040fb50
+;   FUN_0040fbc0 at 0040fbcf
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414918
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0 at 00427b4b
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428663
@@ -28,7 +30,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d417
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a02a
+;   double DOUBLE_0057a02a = 5.22209901682860E-315
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -125,7 +127,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00427c1a
     FADD float ptr [ESI + 0x4]          ; 00427c1d
     FXCH                                ; 00427c20
-    FLD float ptr [0x0057a02a]          ; 00427c22 | DAT_0057a02a
+    FLD float ptr [0x0057a02a]          ; 00427c22 | DOUBLE_0057a02a
     FXCH                                ; 00427c28
     FMUL ST1                            ; 00427c2a
     FXCH ST2                            ; 00427c2c

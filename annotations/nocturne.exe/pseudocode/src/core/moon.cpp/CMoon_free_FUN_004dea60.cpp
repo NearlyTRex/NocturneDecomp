@@ -26,7 +26,7 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(int *param_1)
     core_course_cpp_CCourse_free_FUN_0043b7c0(iVar1);
     iVar1 = iVar1 + 0xc;
   } while (iVar1 != 0x1ccdeec);
-  FUN_00452f10(param_1 + 2);
-  FUN_00452f10(0x1cce1bc);
+  core_dmodel_cpp_FUN_00452f10(param_1 + 2);
+  core_dmodel_cpp_FUN_00452f10(0x1cce1bc);
   return;
 }

@@ -49,7 +49,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_0049
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30(int param_1,float param_2,undefined4 param_3);
 int FUN_00494e80(int param_1);
 undefined4 * FUN_00495000(int param_1,undefined4 *param_2);
-void FUN_004950a0(undefined *param_1);
+void FUN_004950a0(char *param_1);
 int __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(int param_1,float param_2,float param_3);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340(int param_1,float param_2,float param_3);

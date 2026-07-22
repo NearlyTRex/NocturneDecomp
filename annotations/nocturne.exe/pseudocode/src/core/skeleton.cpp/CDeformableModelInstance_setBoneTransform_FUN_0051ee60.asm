@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_004270e0 at 0042723d
 ;   FUN_00499b00 at 00499bb5
 ;   FUN_005396d0 at 0053979d
+;   core_charactr.cpp_FUN_004270e0 at 0042723d
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

@@ -4,7 +4,9 @@
 ; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(int param_1,char *param_2)
 ;
 ;
-; XREF[64]:
+; XREF[66]:
+;   FUN_0040f040 at 0040f07a
+;   FUN_0040f560 at 0040f59f
 ;   FUN_0040fed0 at 0040ff08
 ;   FUN_00411a10 at 00411aad
 ;   FUN_00414d80 at 00414db8
@@ -13,9 +15,7 @@
 ;   FUN_00477710 at 00477732
 ;   FUN_004a8a10 at 004a8a48
 ;   FUN_004b2760 at 004b2782
-;   FUN_004b41f0 at 004b4228
-;   FUN_004c3460 at 004c3498
-;   ... and 54 more
+;   ... and 56 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0

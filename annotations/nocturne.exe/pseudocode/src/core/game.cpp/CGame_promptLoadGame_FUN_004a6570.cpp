@@ -20,9 +20,9 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004a6570(int param_1)
   *(uint *)(param_1 + 0x9c4) = 0;
   *(byte *)(param_1 + 0x9c8) = 0;
   splitpath(&DAT_01c78598,0,0,0,local_10c);
-  iVar2 = _stricmp(local_10c,&DAT_00584562);
+  iVar2 = _stricmp(local_10c,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_10c,&DAT_00584566), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_10c,".noc"), iVar2 == 0)) {
     pcVar5 = local_210;
     pcVar4 = &DAT_01c78598;
     do {
@@ -40,7 +40,7 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004a6570(int param_1)
   }
   pcVar5 = local_210;
   uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                    ("Select file to load",&DAT_00584571,"*.noc",local_210,1);
+                    ("Select file to load","save","*.noc",local_210,1);
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(0x01BCD074,uVar3);
   if (iVar2 == 0) {
     return;

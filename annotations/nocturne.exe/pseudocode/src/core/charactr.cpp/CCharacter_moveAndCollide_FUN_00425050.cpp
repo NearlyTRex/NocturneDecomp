@@ -172,7 +172,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
     }
     fVar3 = *(float *)(param_1 + 0x2de4) * *(float *)(param_1 + 0x2614);
     if (local_38 < fVar3) {
-      local_38 = *(float *)(param_1 + 0x2614) * (float)_DAT_00579f42 + fVar3;
+      local_38 = *(float *)(param_1 + 0x2614) * (float)0.5 + fVar3;
     }
     local_14 = (float)FUN_00510a40(0x01E57284,*(uint *)(param_1 + 0x20),
                                    *(uint *)(param_1 + 0x28),local_94,local_8c,
@@ -244,7 +244,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
         *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x240c);
         local_a8 = *(float *)(param_1 + 0x24);
       }
-      if ((float)_DAT_00579f52 < local_c8) break;
+      if ((float)0.90000000000000002 < local_c8) break;
       local_b4 = 0.0;
       fVar3 = SQRT(local_b0 * local_b0 + local_b8 * local_b8);
       if (0.0 < fVar3) {
@@ -253,13 +253,13 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
         local_b4 = fStack_40 * 0.0;
         local_b0 = local_b0 * fStack_40;
       }
-      fStack_44 = (float)_DAT_00579f52 - local_c8;
+      fStack_44 = (float)0.90000000000000002 - local_c8;
       local_94 = local_94 * fStack_44;
       local_90 = local_90 * fStack_44;
       local_8c = local_8c * fStack_44;
       fVar3 = local_b0 * local_8c + local_b8 * local_94 + local_b4 * local_90;
       if (0.0 <= fVar3) break;
-      fVar3 = fVar3 * (float)_DAT_00579f4a;
+      fVar3 = fVar3 * (float)1.2;
       fStack_64 = local_b8 * fVar3;
       fStack_60 = local_b4 * fVar3;
       fStack_5c = local_b0 * fVar3;
@@ -268,7 +268,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
       local_8c = local_8c - fStack_5c;
     }
     else {
-      local_48 = local_14 + (float)_DAT_00579f5a;
+      local_48 = local_14 + (float)-0.01;
       local_a0 = *(float *)(0x01E57284 + 0x14cd40) * local_48;
       local_9c = *(float *)(0x01E57284 + 0x14cd44) * local_48;
       local_98 = *(float *)(0x01E57284 + 0x14cd48) * local_48;
@@ -292,7 +292,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
   *(float *)(param_1 + 0x24) = fVar3;
   if (*(float *)(param_1 + 0x240c) <= fVar3) {
     if ((*(int *)(param_1 + 0x2408) != 0) &&
-       (*(float *)(param_1 + 0x24) < *(float *)(param_1 + 0x240c) + (float)_DAT_00579f42)) {
+       (*(float *)(param_1 + 0x24) < *(float *)(param_1 + 0x240c) + (float)0.5)) {
       *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x240c);
       local_a8 = *(float *)(param_1 + 0x24);
     }

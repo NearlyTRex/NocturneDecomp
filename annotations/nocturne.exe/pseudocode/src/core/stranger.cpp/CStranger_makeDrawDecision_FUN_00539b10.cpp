@@ -168,7 +168,7 @@ LAB_00539cea:
     ;
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
-      FUN_0055d4a0(fVar1,local_100,_DAT_02dc9f94,&LAB_00534e90);
+      core_xform_cpp_FUN_0055d4a0(fVar1,local_100,_DAT_02dc9f94,&LAB_00534e90);
       puVar10 = &stack0xffffff90;
       iVar2 = param_1 + 0x150;
       local_70 = local_90;
@@ -211,7 +211,7 @@ LAB_00539cea:
     local_18 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,3)
     ;
     local_38 = (1.0 - local_18) * local_f8;
-    FUN_0055d4a0(*(uint *)(param_1 + 0x1fa58));
+    core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x1fa58));
     fVar1 = local_38;
     puVar12 = &LAB_00534e90;
     puVar10 = &stack0xffffff20;
@@ -230,7 +230,7 @@ LAB_00539cea:
     local_30 = (float)(param_1 + 0x150);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
               (fVar9,puVar10,fVar1,uVar3,puVar12);
-    FUN_0055d4e0(*(uint *)(param_1 + 0x1fa5c));
+    core_xform_cpp_FUN_0055d4e0(*(uint *)(param_1 + 0x1fa5c));
     local_50 = local_60;
     *(uint *)((int)&stack0xffffffb4 + (uint)bVar7 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffffa4 + (uint)bVar7 * -8);
@@ -253,7 +253,7 @@ LAB_00539cea:
   fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,(float10)1
                          );
   local_34 = (float)fVar8;
-  FUN_0055d4e0(local_34);
+  core_xform_cpp_FUN_0055d4e0(local_34);
   puVar12 = &LAB_0051b650;
   puVar10 = &stack0xffffff60;
   uVar11 = 0x3f800000;
@@ -272,7 +272,7 @@ LAB_00539cea:
   ;
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
             (iVar2,puVar10,uVar11,uVar3,puVar12);
-  FUN_0055d4e0(-local_34);
+  core_xform_cpp_FUN_0055d4e0(-local_34);
   puVar12 = &LAB_0051b650;
   puVar10 = &stack0xffffff60;
   uVar11 = 0x3f800000;

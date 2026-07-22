@@ -2,24 +2,24 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 4577
-Filtered out (inside named data): 1449
-Immediate constants (not real globals): 681
-Real globals remaining: 3896
-Clusters detected: 398
-DAT_ globals in clusters: 3790
+Total DAT_ globals found: 3849
+Filtered out (inside named data): 676
+Immediate constants (not real globals): 474
+Real globals remaining: 3375
+Clusters detected: 344
+DAT_ globals in clusters: 3278
 
 Classification summary:
-  struct               134 clusters
-  unknown              115 clusters
-  vector_groups        72 clusters
-  array                36 clusters
-  char_array           16 clusters
-  struct_array         15 clusters
-  byte_blob            10 clusters
+  unknown              108 clusters
+  struct               102 clusters
+  vector_groups        68 clusters
+  array                35 clusters
+  char_array           13 clusters
+  struct_array         11 clusters
+  byte_blob            7 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (681)
+LIKELY IMMEDIATE CONSTANTS (474)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -89,13 +89,17 @@ Consider removing the Ghidra label and leaving the raw number.
     testOBBIntersection
       PUSH 0x5993b0                       ; 00513ed5 | DAT_005993b0
 
-  DAT_00763e48  value=0x763E48 (7749192)  refs=18
+  DAT_00763e48  value=0x763E48 (7749192)  refs=20
     CEventList_evaluateAtom
       PUSH 0x763e48                       ; 0047e819 | DAT_00763e48
     CEventList_executeCommand
       PUSH 0x763e48                       ; 0047b0c9 | DAT_00763e48
     CScript_step
       PUSH 0x763e48                       ; 0050073f | DAT_00763e48
+    FUN_004116b0
+      PUSH 0x763e48                       ; 004116b0 | DAT_00763e48
+    FUN_00411910
+      PUSH 0x763e48                       ; 00411910 | DAT_00763e48
     parseVectorLocation
       PUSH 0x763e48                       ; 0047a54d | DAT_00763e48
 
@@ -133,10 +137,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00409d30
       MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | DAT_0078a123
 
-  DAT_00583db6  value=0x583DB6 (5782966)  refs=5
-    FUN_004a4b50
-      PUSH 0x583db6                       ; 004a51a0 | DAT_00583db6
-
   DAT_005bdf50  value=0x5BDF50 (6020944)  refs=5
     FUN_0044c560
       PUSH 0x5bdf50                       ; 0044ca64 | DAT_005bdf50
@@ -167,14 +167,6 @@ Consider removing the Ghidra label and leaving the raw number.
     drawWeaponIconBackground
       MOV dword ptr [ECX + 0x48],0x600000 ; 004c1e94 | DAT_00600000
 
-  DAT_0076436c  value=0x76436C (7750508)  refs=3
-    CBaron_ctor
-      PUSH 0x76436c                       ; 00410295 | DAT_0076436c
-    CBaron_setup
-      PUSH 0x76436c                       ; 0041045f | DAT_0076436c
-    FUN_004110f0
-      PUSH 0x76436c                       ; 004111cb | DAT_0076436c
-
   DAT_005993f0  value=0x5993F0 (5870576)  refs=3
     CDeformableModel_ctor
       PUSH 0x5993f0                       ; 00517b8b | DAT_005993f0
@@ -194,6 +186,14 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x599940                       ; 0040fe50 | DAT_00599940
     CFlame_dtor
       PUSH 0x599940                       ; 0040fde6 | DAT_00599940
+
+  DAT_0076436c  value=0x76436C (7750508)  refs=3
+    CBaron_ctor
+      PUSH 0x76436c                       ; 00410295 | DAT_0076436c
+    CBaron_setup
+      PUSH 0x76436c                       ; 0041045f | DAT_0076436c
+    FUN_004110f0
+      PUSH 0x76436c                       ; 004111cb | DAT_0076436c
 
   DAT_007658e4  value=0x7658E4 (7756004)  refs=3
     CCharacter_renderAttachedModels
@@ -227,17 +227,29 @@ Consider removing the Ghidra label and leaving the raw number.
     CDeformableModel_free
       PUSH 0x5a1ee0                       ; 00517cd6 | DAT_005a1ee0
 
+  DAT_00764524  value=0x764524 (7750948)  refs=2
+    FUN_004116b0
+      PUSH 0x764524                       ; 004116c6 | DAT_00764524
+    FUN_00411700
+      MOV EAX,0x764524                    ; 00411700 | DAT_00764524
+
+  DAT_00764560  value=0x764560 (7751008)  refs=2
+    FUN_00411910
+      PUSH 0x764560                       ; 00411926 | DAT_00764560
+    FUN_00411a00
+      MOV EAX,0x764560                    ; 00411a00 | DAT_00764560
+
+  DAT_007645cc  value=0x7645CC (7751116)  refs=2
+    FUN_004120a0
+      PUSH 0x7645cc                       ; 004120b6 | DAT_007645cc
+    FUN_004120f0
+      MOV EAX,0x7645cc                    ; 004120f0 | DAT_007645cc
+
   DAT_0059aa00  value=0x59AA00 (5876224)  refs=2
     FUN_00418630
       PUSH 0x59aa00                       ; 00418643 | DAT_0059aa00
     SBoneGuyBox_arrdtor
       PUSH 0x59aa00                       ; 0041a4f0 | DAT_0059aa00
-
-  DAT_0059b010  value=0x59B010 (5877776)  refs=2
-    CBugs_ctor
-      PUSH 0x59b010                       ; 00421050 | DAT_0059b010
-    FUN_00423e80
-      PUSH 0x59b010                       ; 00423e80 | DAT_0059b010
 
   DAT_0059b320  value=0x59B320 (5878560)  refs=2
     CChain_ctor
@@ -363,6 +375,12 @@ Consider removing the Ghidra label and leaving the raw number.
     SScrape_arrdtor
       PUSH 0x59aa60                       ; 0041cbe0 | DAT_0059aa60
 
+  DAT_0059b010  value=0x59B010 (5877776)  refs=2
+    CBugs_ctor
+      PUSH 0x59b010                       ; 00421050 | DAT_0059b010
+    FUN_00423e80
+      PUSH 0x59b010                       ; 00423e80 | DAT_0059b010
+
   DAT_0059b030  value=0x59B030 (5877808)  refs=2
     CBugs_ctor
       PUSH 0x59b030                       ; 00421068 | DAT_0059b030
@@ -388,10 +406,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0077d250  value=0x77D250 (7852624)  refs=2
     CDemonCamera_loadImage
       PUSH 0x77d250                       ; 004434f4 | DAT_0077d250
-
-  DAT_0057f3c3  value=0x57F3C3 (5764035)  refs=2
-    CEventList_evaluateAtom
-      PUSH 0x57f3c3                       ; 0047e506 | DAT_0057f3c3
 
   DAT_005c5044  value=0x5C5044 (6049860)  refs=2
     CBulletHole_render
@@ -483,13 +497,37 @@ Consider removing the Ghidra label and leaving the raw number.
     CDirectSoundDevice_setMode
       PUSH 0x5c3918                       ; 0052a692 | DAT_005c3918
 
-  DAT_00577200  value=0x577200 (5730816)  refs=1
-    FUN_00403460
-      PUSH 0x577200                       ; 0040347b | DAT_00577200
+  DAT_007641bc  value=0x7641BC (7750076)  refs=1
+    FUN_0040eb60
+      MOV EAX,0x7641bc                    ; 0040eb60 | DAT_007641bc
 
-  DAT_00577203  value=0x577203 (5730819)  refs=1
-    FUN_00403460
-      PUSH 0x577203                       ; 00403481 | DAT_00577203
+  DAT_00599530  value=0x599530 (5870896)  refs=1
+    FUN_0040ef90
+      PUSH 0x599530                       ; 0040efb6 | DAT_00599530
+
+  DAT_007641f8  value=0x7641F8 (7750136)  refs=1
+    FUN_0040f030
+      MOV EAX,0x7641f8                    ; 0040f030 | DAT_007641f8
+
+  DAT_00599650  value=0x599650 (5871184)  refs=1
+    FUN_0040f4b0
+      PUSH 0x599650                       ; 0040f4d6 | DAT_00599650
+
+  DAT_00764234  value=0x764234 (7750196)  refs=1
+    FUN_0040f550
+      MOV EAX,0x764234                    ; 0040f550 | DAT_00764234
+
+  DAT_00599770  value=0x599770 (5871472)  refs=1
+    FUN_0040f8b0
+      PUSH 0x599770                       ; 0040f8d6 | DAT_00599770
+
+  DAT_00764270  value=0x764270 (7750256)  refs=1
+    FUN_0040f950
+      MOV EAX,0x764270                    ; 0040f950 | DAT_00764270
+
+  DAT_00599900  value=0x599900 (5871872)  refs=1
+    FUN_0040fc30
+      PUSH 0x599900                       ; 0040fcc1 | DAT_00599900
 
   DAT_007642ac  value=0x7642AC (7750316)  refs=1
     FUN_0040fec0
@@ -503,10 +541,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_004101c0
       MOV EAX,0x764330                    ; 004101c0 | DAT_00764330
 
-  DAT_007644e8  value=0x7644E8 (7750888)  refs=1
-    FUN_00411340
-      MOV EAX,0x7644e8                    ; 00411340 | DAT_007644e8
-
   DAT_00599d10  value=0x599D10 (5872912)  refs=1
     FUN_00411610
       PUSH 0x599d10                       ; 00411636 | DAT_00599d10
@@ -515,21 +549,9 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00411660
       PUSH 0x599d30                       ; 00411686 | DAT_00599d30
 
-  DAT_00764524  value=0x764524 (7750948)  refs=1
-    FUN_00411700
-      MOV EAX,0x764524                    ; 00411700 | DAT_00764524
-
   DAT_00599e50  value=0x599E50 (5873232)  refs=1
     FUN_004118c0
       PUSH 0x599e50                       ; 004118e6 | DAT_00599e50
-
-  DAT_00764560  value=0x764560 (7751008)  refs=1
-    FUN_00411a00
-      MOV EAX,0x764560                    ; 00411a00 | DAT_00764560
-
-  DAT_007645cc  value=0x7645CC (7751116)  refs=1
-    FUN_004120f0
-      MOV EAX,0x7645cc                    ; 004120f0 | DAT_007645cc
 
   DAT_0059a110  value=0x59A110 (5873936)  refs=1
     FUN_004132c0
@@ -603,18 +625,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00421030
       MOV EAX,0x765888                    ; 00421030 | DAT_00765888
 
-  DAT_0059b050  value=0x59B050 (5877840)  refs=1
-    FUN_00423d90
-      PUSH 0x59b050                       ; 00423e31 | DAT_0059b050
-
-  DAT_005ad140  value=0x5AD140 (5951808)  refs=1
-    FUN_004270e0
-      ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
-
-  DAT_00765c30  value=0x765C30 (7756848)  refs=1
-    FUN_0042b740
-      MOV EAX,0x765c30                    ; 0042b740 | DAT_00765c30
-
   DAT_0059b340  value=0x59B340 (5878592)  refs=1
     FUN_0042cd30
       PUSH 0x59b340                       ; 0042cd6d | DAT_0059b340
@@ -630,10 +640,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0077bcc8  value=0x77BCC8 (7847112)  refs=1
     FUN_0043b040
       MOV EAX,0x77bcc8                    ; 0043b040 | DAT_0077bcc8
-
-  DAT_0057b1de  value=0x57B1DE (5747166)  refs=1
-    FUN_0043b310
-      PUSH 0x57b1de                       ; 0043b31e | DAT_0057b1de
 
   DAT_0059b810  value=0x59B810 (5879824)  refs=1
     FUN_0043b420
@@ -707,10 +713,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00478310
       PUSH 0x59cc30                       ; 00478336 | DAT_0059cc30
 
-  DAT_0057f1d5  value=0x57F1D5 (5763541)  refs=1
-    FUN_00478790
-      PUSH 0x57f1d5                       ; 004789d4 | DAT_0057f1d5
-
   DAT_0059cd70  value=0x59CD70 (5885296)  refs=1
     FUN_00479420
       PUSH 0x59cd70                       ; 00479446 | DAT_0059cd70
@@ -755,70 +757,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_0049a170
       PUSH 0x59de40                       ; 0049a1ad | DAT_0059de40
 
-  DAT_005823b3  value=0x5823B3 (5776307)  refs=1
-    FUN_0049cc10
-      PUSH 0x5823b3                       ; 0049d681 | DAT_005823b3
-
-  DAT_00582a88  value=0x582A88 (5778056)  refs=1
-    FUN_0049f930
-      PUSH 0x582a88                       ; 0049ffec | DAT_00582a88
-
-  DAT_00582a9e  value=0x582A9E (5778078)  refs=1
-    FUN_0049f930
-      PUSH 0x582a9e                       ; 0049fff6 | DAT_00582a9e
-
-  DAT_00583b32  value=0x583B32 (5782322)  refs=1
-    FUN_004a3b90
-      PUSH 0x583b32                       ; 004a3bdd | DAT_00583b32
-
-  DAT_00583b36  value=0x583B36 (5782326)  refs=1
-    FUN_004a3b90
-      PUSH 0x583b36                       ; 004a4028 | DAT_00583b36
-
-  DAT_00583b3b  value=0x583B3B (5782331)  refs=1
-    FUN_004a3b90
-      PUSH 0x583b3b                       ; 004a4056 | DAT_00583b3b
-
-  DAT_00583b3f  value=0x583B3F (5782335)  refs=1
-    FUN_004a3b90
-      PUSH 0x583b3f                       ; 004a405b | DAT_00583b3f
-
-  DAT_00583b9c  value=0x583B9C (5782428)  refs=1
-    FUN_004a3b90
-      PUSH 0x583b9c                       ; 004a3c8e | DAT_00583b9c
-
-  DAT_00583be9  value=0x583BE9 (5782505)  refs=1
-    FUN_004a3b90
-      PUSH 0x583be9                       ; 004a3d91 | DAT_00583be9
-
-  DAT_00583c06  value=0x583C06 (5782534)  refs=1
-    FUN_004a3b90
-      PUSH 0x583c06                       ; 004a3e27 | DAT_00583c06
-
-  DAT_00583c28  value=0x583C28 (5782568)  refs=1
-    FUN_004a3b90
-      PUSH 0x583c28                       ; 004a3e9e | DAT_00583c28
-
-  DAT_00583dbf  value=0x583DBF (5782975)  refs=1
-    FUN_004a4b50
-      PUSH 0x583dbf                       ; 004a4b5a | DAT_00583dbf
-
-  DAT_00583dcc  value=0x583DCC (5782988)  refs=1
-    FUN_004a4b50
-      PUSH 0x583dcc                       ; 004a4b64 | DAT_00583dcc
-
-  DAT_00583dcd  value=0x583DCD (5782989)  refs=1
-    FUN_004a4b50
-      PUSH 0x583dcd                       ; 004a4bb3 | DAT_00583dcd
-
-  DAT_00583f4c  value=0x583F4C (5783372)  refs=1
-    FUN_004a4b50
-      PUSH 0x583f4c                       ; 004a4ffb | DAT_00583f4c
-
-  DAT_005842fe  value=0x5842FE (5784318)  refs=1
-    FUN_004a4b50
-      PUSH 0x5842fe                       ; 004a4db9 | DAT_005842fe
-
   DAT_0059e0a0  value=0x59E0A0 (5890208)  refs=1
     FUN_004a88f0
       PUSH 0x59e0a0                       ; 004a8981 | DAT_0059e0a0
@@ -850,10 +788,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0059eaf0  value=0x59EAF0 (5892848)  refs=1
     FUN_004b4460
       PUSH 0x59eaf0                       ; 004b4486 | DAT_0059eaf0
-
-  DAT_00585765  value=0x585765 (5789541)  refs=1
-    FUN_004b49a0
-      PUSH 0x585765                       ; 004b4b13 | DAT_00585765
 
   DAT_0059f080  value=0x59F080 (5894272)  refs=1
     FUN_004b8b70
@@ -999,10 +933,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00506a80
       PUSH 0x5a18a0                       ; 00506b11 | DAT_005a18a0
 
-  DAT_00444440  value=0x444440 (4473920)  refs=1
-    FUN_0050ddd0
-      PUSH 0x444440                       ; 0050de52 | DAT_00444440
-
   DAT_005a1bf0  value=0x5A1BF0 (5905392)  refs=1
     FUN_00516960
       PUSH 0x5a1bf0                       ; 00516986 | DAT_005a1bf0
@@ -1127,18 +1057,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00557e90
       PUSH 0x5a4460                       ; 00557f21 | DAT_005a4460
 
-  DAT_02de0860  value=0x2DE0860  refs=1
-    FUN_00559500
-      PUSH 0x2de0860                      ; 00559531 | DAT_02de0860
-
-  DAT_0059877e  value=0x59877E (5867390)  refs=1
-    FUN_00560cd0
-      PUSH 0x59877e                       ; 00560d24 | DAT_0059877e
-
-  DAT_005a46a0  value=0x5A46A0 (5916320)  refs=1
-    FUN_00562550
-      PUSH 0x5a46a0                       ; 005625e1 | DAT_005a46a0
-
   DAT_02de4e40  value=0x2DE4E40  refs=1
     FUN_0056720c
       PUSH 0x2de4e40                      ; 005672bf | DAT_02de4e40
@@ -1183,14 +1101,6 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_0056b810
       PUSH 0x5a4a60                       ; 0056b860 | DAT_005a4a60
 
-  DAT_00598bd0  value=0x598BD0 (5868496)  refs=1
-    FUN_0056b960
-      PUSH 0x598bd0                       ; 0056b9e5 | DAT_00598bd0
-
-  DAT_00598bd4  value=0x598BD4 (5868500)  refs=1
-    FUN_0056c750
-      PUSH 0x598bd4                       ; 0056c77d | DAT_00598bd4
-
   DAT_005a4af0  value=0x5A4AF0 (5917424)  refs=1
     FUN_005701cf
       PUSH 0x5a4af0                       ; 0057021f | DAT_005a4af0
@@ -1199,97 +1109,17 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00570449
       PUSH 0x5a4b60                       ; 0057049e | DAT_005a4b60
 
-  DAT_0057a66d  value=0x57A66D (5744237)  refs=1
-    readBitmapFile
-      PUSH 0x57a66d                       ; 0042d257 | DAT_0057a66d
-
-  DAT_0057a670  value=0x57A670 (5744240)  refs=1
-    readBitmapFile
-      PUSH 0x57a670                       ; 0042d25d | DAT_0057a670
-
   DAT_005993d0  value=0x5993D0 (5870544)  refs=1
     CDemonActor_dtor
       PUSH 0x5993d0                       ; 00409ed1 | DAT_005993d0
-
-  DAT_00577c89  value=0x577C89 (5733513)  refs=1
-    archiveActor
-      PUSH 0x577c89                       ; 0040c9be | DAT_00577c89
-
-  DAT_00577df2  value=0x577DF2 (5733874)  refs=1
-    archiveClothList
-      PUSH 0x577df2                       ; 0040cfa8 | DAT_00577df2
-
-  DAT_00577c02  value=0x577C02 (5733378)  refs=1
-    archiveDescription
-      PUSH 0x577c02                       ; 0040c41c | DAT_00577c02
-
-  DAT_00577c79  value=0x577C79 (5733497)  refs=1
-    archiveFloat
-      PUSH 0x577c79                       ; 0040c890 | DAT_00577c79
-
-  DAT_00577c7c  value=0x577C7C (5733500)  refs=1
-    archiveFloat
-      PUSH 0x577c7c                       ; 0040c8e1 | DAT_00577c7c
-
-  DAT_00577c81  value=0x577C81 (5733505)  refs=1
-    archiveInteger
-      PUSH 0x577c81                       ; 0040c911 | DAT_00577c81
-
-  DAT_00577c84  value=0x577C84 (5733508)  refs=1
-    archiveInteger
-      PUSH 0x577c84                       ; 0040c95d | DAT_00577c84
-
-  DAT_00577cf6  value=0x577CF6 (5733622)  refs=1
-    archivePartStatus
-      PUSH 0x577cf6                       ; 0040cc2d | DAT_00577cf6
-
-  DAT_00577cf9  value=0x577CF9 (5733625)  refs=1
-    archivePartStatus
-      PUSH 0x577cf9                       ; 0040cc5a | DAT_00577cf9
-
-  DAT_00577d1a  value=0x577D1A (5733658)  refs=1
-    archivePartStatus
-      PUSH 0x577d1a                       ; 0040cc90 | DAT_00577d1a
-
-  DAT_00577d1c  value=0x577D1C (5733660)  refs=1
-    archivePartStatus
-      PUSH 0x577d1c                       ; 0040ccbd | DAT_00577d1c
-
-  DAT_00577d3e  value=0x577D3E (5733694)  refs=1
-    archivePartStatus
-      PUSH 0x577d3e                       ; 0040ccf3 | DAT_00577d3e
-
-  DAT_00577d80  value=0x577D80 (5733760)  refs=1
-    archivePartStatus
-      PUSH 0x577d80                       ; 0040ce40 | DAT_00577d80
-
-  DAT_00577d82  value=0x577D82 (5733762)  refs=1
-    archivePartStatus
-      PUSH 0x577d82                       ; 0040ce63 | DAT_00577d82
-
-  DAT_00577e88  value=0x577E88 (5734024)  refs=1
-    archiveRules
-      PUSH 0x577e88                       ; 0040d148 | DAT_00577e88
-
-  DAT_00577eb5  value=0x577EB5 (5734069)  refs=1
-    archiveRules
-      PUSH 0x577eb5                       ; 0040d1ad | DAT_00577eb5
-
-  DAT_00577f00  value=0x577F00 (5734144)  refs=1
-    archiveRules
-      PUSH 0x577f00                       ; 0040d2af | DAT_00577f00
-
-  DAT_00578228  value=0x578228 (5734952)  refs=1
-    CAmmo_setWeaponClass
-      PUSH 0x578228                       ; 0040ed99 | DAT_00578228
 
   DAT_00599920  value=0x599920 (5871904)  refs=1
     CEnemy_dtor
       PUSH 0x599920                       ; 0040fd81 | DAT_00599920
 
-  DAT_00578750  value=0x578750 (5736272)  refs=1
-    CBarrier_archive
-      PUSH 0x578750                       ; 0041180e | DAT_00578750
+  DAT_007644e8  value=0x7644E8 (7750888)  refs=1
+    FUN_00411340
+      MOV EAX,0x7644e8                    ; 00411340 | DAT_007644e8
 
   DAT_0059a860  value=0x59A860 (5875808)  refs=1
     CBodyPart_dtor
@@ -1299,17 +1129,9 @@ Consider removing the Ghidra label and leaving the raw number.
     CBoneGuy_dtor
       PUSH 0x59aa20                       ; 0041a4a1 | DAT_0059aa20
 
-  DAT_00579705  value=0x579705 (5740293)  refs=1
-    CBox_loadFromFile
-      PUSH 0x579705                       ; 0041c882 | DAT_00579705
-
-  DAT_0057983e  value=0x57983E (5740606)  refs=1
-    CBoxActor_archive
-      PUSH 0x57983e                       ; 0041ecb4 | DAT_0057983e
-
-  DAT_00579c6e  value=0x579C6E (5741678)  refs=1
-    CBugs_archive
-      PUSH 0x579c6e                       ; 004218d2 | DAT_00579c6e
+  DAT_0059b050  value=0x59B050 (5877840)  refs=1
+    FUN_00423d90
+      PUSH 0x59b050                       ; 00423e31 | DAT_0059b050
 
   DAT_0076595c  value=0x76595C (7756124)  refs=1
     CCharacter_dismemberPartInternal
@@ -1319,14 +1141,6 @@ Consider removing the Ghidra label and leaving the raw number.
     CCharacter_dtor
       PUSH 0x59b200                       ; 0042b661 | DAT_0059b200
 
-  DAT_0057a04a  value=0x57A04A (5742666)  refs=1
-    CCharacter_getDeathState
-      PUSH 0x57a04a                       ; 00428723 | DAT_0057a04a
-
-  DAT_0057a04e  value=0x57A04E (5742670)  refs=1
-    CCharacter_getDeathState
-      PUSH 0x57a04e                       ; 0042874b | DAT_0057a04e
-
   DAT_005ad1fc  value=0x5AD1FC (5951996)  refs=1
     CCharacter_renderBurn
       PUSH 0x5ad1fc                       ; 00426e9f | DAT_005ad1fc
@@ -1335,249 +1149,17 @@ Consider removing the Ghidra label and leaving the raw number.
     CCharacter_renderCollision
       PUSH 0x7658c4                       ; 00425d1d | DAT_007658c4
 
-  DAT_0057acab  value=0x57ACAB (5745835)  refs=1
-    CCloth_load
-      PUSH 0x57acab                       ; 00435258 | DAT_0057acab
+  DAT_005ad140  value=0x5AD140 (5951808)  refs=1
+    FUN_004270e0
+      ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
 
-  DAT_0057aced  value=0x57ACED (5745901)  refs=1
-    CCloth_load
-      PUSH 0x57aced                       ; 0043529e | DAT_0057aced
-
-  DAT_0057ad4b  value=0x57AD4B (5745995)  refs=1
-    CCloth_load
-      PUSH 0x57ad4b                       ; 004352fe | DAT_0057ad4b
-
-  DAT_0057ad83  value=0x57AD83 (5746051)  refs=1
-    CCloth_load
-      PUSH 0x57ad83                       ; 0043548b | DAT_0057ad83
-
-  DAT_0057ad87  value=0x57AD87 (5746055)  refs=1
-    CCloth_load
-      PUSH 0x57ad87                       ; 004354cb | DAT_0057ad87
-
-  DAT_0057ad8b  value=0x57AD8B (5746059)  refs=1
-    CCloth_load
-      PUSH 0x57ad8b                       ; 0043551d | DAT_0057ad8b
-
-  DAT_0057b261  value=0x57B261 (5747297)  refs=1
-    CCourse_load
-      PUSH 0x57b261                       ; 0043b6a8 | DAT_0057b261
-
-  DAT_0057b264  value=0x57B264 (5747300)  refs=1
-    CCourse_load
-      PUSH 0x57b264                       ; 0043b6ae | DAT_0057b264
-
-  DAT_0057b29f  value=0x57B29F (5747359)  refs=1
-    CCourse_load
-      PUSH 0x57b29f                       ; 0043b6dc | DAT_0057b29f
-
-  DAT_0057b50e  value=0x57B50E (5747982)  refs=1
-    CCurtain_process
-      PUSH 0x57b50e                       ; 0043ec54 | DAT_0057b50e
-
-  DAT_0057b85b  value=0x57B85B (5748827)  refs=1
-    CDemonCamera_loadImage
-      PUSH 0x57b85b                       ; 004432e1 | DAT_0057b85b
-
-  DAT_0057b86a  value=0x57B86A (5748842)  refs=1
-    CDemonCamera_loadImage
-      PUSH 0x57b86a                       ; 00443a36 | DAT_0057b86a
-
-  DAT_0057b8a8  value=0x57B8A8 (5748904)  refs=1
-    CDemonCamera_loadImage
-      PUSH 0x57b8a8                       ; 004433ab | DAT_0057b8a8
-
-  DAT_0057b8b8  value=0x57B8B8 (5748920)  refs=1
-    CDemonCamera_loadImage
-      PUSH 0x57b8b8                       ; 00443a4e | DAT_0057b8b8
-
-  DAT_0057b955  value=0x57B955 (5749077)  refs=1
-    CDemonCamera_loadImage
-      PUSH 0x57b955                       ; 004436d4 | DAT_0057b955
-
-  DAT_0057ba02  value=0x57BA02 (5749250)  refs=1
-    FUN_00446810
-      PUSH 0x57ba02                       ; 00446885 | DAT_0057ba02
-
-  DAT_0057bf1e  value=0x57BF1E (5750558)  refs=1
-    CDemonFilter_load
-      PUSH 0x57bf1e                       ; 0044bf9f | DAT_0057bf1e
-
-  DAT_0057bf21  value=0x57BF21 (5750561)  refs=1
-    CDemonFilter_load
-      PUSH 0x57bf21                       ; 0044bfa5 | DAT_0057bf21
-
-  DAT_0057bf60  value=0x57BF60 (5750624)  refs=1
-    CDemonFilter_load
-      PUSH 0x57bf60                       ; 0044bfc6 | DAT_0057bf60
-
-  DAT_0057c01d  value=0x57C01D (5750813)  refs=1
-    CDemonFilter_load
-      PUSH 0x57c01d                       ; 0044c08a | DAT_0057c01d
-
-  DAT_0057c020  value=0x57C020 (5750816)  refs=1
-    CDemonFilter_load
-      PUSH 0x57c020                       ; 0044c090 | DAT_0057c020
-
-  DAT_0057c08c  value=0x57C08C (5750924)  refs=1
-    CFilterFX_openMovie
-      PUSH 0x57c08c                       ; 0044c34c | DAT_0057c08c
-
-  DAT_0057c0bb  value=0x57C0BB (5750971)  refs=1
-    CFilterFX_openMovie
-      PUSH 0x57c0bb                       ; 0044c38a | DAT_0057c0bb
-
-  DAT_0057c0c6  value=0x57C0C6 (5750982)  refs=1
-    CFilterFX_openMovie
-      PUSH 0x57c0c6                       ; 0044c3c5 | DAT_0057c0c6
+  DAT_00765c30  value=0x765C30 (7756848)  refs=1
+    FUN_0042b740
+      MOV EAX,0x765c30                    ; 0042b740 | DAT_00765c30
 
   DAT_005ae458  value=0x5AE458 (5956696)  refs=1
     renderConeLightGeometry
       PUSH 0x5ae458                       ; 00451bc8 | DAT_005ae458
-
-  DAT_0057c956  value=0x57C956 (5753174)  refs=1
-    CKeyFramedModel_load
-      PUSH 0x57c956                       ; 00452661 | DAT_0057c956
-
-  DAT_0057c991  value=0x57C991 (5753233)  refs=1
-    CKeyFramedModel_load
-      PUSH 0x57c991                       ; 004526c9 | DAT_0057c991
-
-  DAT_0057ca34  value=0x57CA34 (5753396)  refs=1
-    CKeyFramedModel_readTextModel
-      PUSH 0x57ca34                       ; 004529c7 | DAT_0057ca34
-
-  DAT_0057cad8  value=0x57CAD8 (5753560)  refs=1
-    CKeyFramedModel_readTextModel
-      PUSH 0x57cad8                       ; 00452b1d | DAT_0057cad8
-
-  DAT_0057cadc  value=0x57CADC (5753564)  refs=1
-    CKeyFramedModel_readTextModel
-      PUSH 0x57cadc                       ; 00452b5d | DAT_0057cadc
-
-  DAT_0057cafb  value=0x57CAFB (5753595)  refs=1
-    CKeyFramedModel_readTextModel
-      PUSH 0x57cafb                       ; 00452ce1 | DAT_0057cafb
-
-  DAT_0057cb31  value=0x57CB31 (5753649)  refs=1
-    CKeyFramedModel_readTextModel
-      PUSH 0x57cb31                       ; 00452e93 | DAT_0057cb31
-
-  DAT_0057f3bb  value=0x57F3BB (5764027)  refs=1
-    CEventList_evaluateAtom
-      PUSH 0x57f3bb                       ; 0047e5e3 | DAT_0057f3bb
-
-  DAT_0057f3be  value=0x57F3BE (5764030)  refs=1
-    CEventList_evaluateAtom
-      PUSH 0x57f3be                       ; 0047e606 | DAT_0057f3be
-
-  DAT_0057f3c0  value=0x57F3C0 (5764032)  refs=1
-    CEventList_evaluateAtom
-      PUSH 0x57f3c0                       ; 0047e629 | DAT_0057f3c0
-
-  DAT_005802c4  value=0x5802C4 (5767876)  refs=1
-    CEventList_evaluateAtom
-      PUSH 0x5802c4                       ; 0047e2cb | DAT_005802c4
-
-  DAT_0058022c  value=0x58022C (5767724)  refs=1
-    CEventList_evaluateCondition
-      PUSH 0x58022c                       ; 0047dc42 | DAT_0058022c
-
-  DAT_00580231  value=0x580231 (5767729)  refs=1
-    CEventList_evaluateCondition
-      PUSH 0x580231                       ; 0047dc73 | DAT_00580231
-
-  DAT_0057f581  value=0x57F581 (5764481)  refs=1
-    CEventList_executeCommand
-      PUSH 0x57f581                       ; 0047ac83 | DAT_0057f581
-
-  DAT_0057f7a5  value=0x57F7A5 (5765029)  refs=1
-    CEventList_executeCommand
-      PUSH 0x57f7a5                       ; 0047b3cf | DAT_0057f7a5
-
-  DAT_0057fbe2  value=0x57FBE2 (5766114)  refs=1
-    CEventList_executeCommand
-      PUSH 0x57fbe2                       ; 0047c4bb | DAT_0057fbe2
-
-  DAT_0057ffc1  value=0x57FFC1 (5767105)  refs=1
-    CEventList_executeCommand
-      PUSH 0x57ffc1                       ; 0047d252 | DAT_0057ffc1
-
-  DAT_0057ffc6  value=0x57FFC6 (5767110)  refs=1
-    CEventList_executeCommand
-      PUSH 0x57ffc6                       ; 0047d271 | DAT_0057ffc6
-
-  DAT_00580cc1  value=0x580CC1 (5770433)  refs=1
-    CEventList_loadState
-      PUSH 0x580cc1                       ; 00480fac | DAT_00580cc1
-
-  DAT_00580d3a  value=0x580D3A (5770554)  refs=1
-    CEventList_loadState
-      PUSH 0x580d3a                       ; 00480fde | DAT_00580d3a
-
-  DAT_00580d6a  value=0x580D6A (5770602)  refs=1
-    CEventList_loadState
-      PUSH 0x580d6a                       ; 00481188 | DAT_00580d6a
-
-  DAT_00580d79  value=0x580D79 (5770617)  refs=1
-    CEventList_loadState
-      PUSH 0x580d79                       ; 00481218 | DAT_00580d79
-
-  DAT_00580d90  value=0x580D90 (5770640)  refs=1
-    CEventList_loadState
-      PUSH 0x580d90                       ; 004812e0 | DAT_00580d90
-
-  DAT_00580227  value=0x580227 (5767719)  refs=1
-    CEventList_resolveVariable
-      PUSH 0x580227                       ; 0047dbac | DAT_00580227
-
-  DAT_00580db2  value=0x580DB2 (5770674)  refs=1
-    CEventList_saveState
-      PUSH 0x580db2                       ; 0048134f | DAT_00580db2
-
-  DAT_00580dcb  value=0x580DCB (5770699)  refs=1
-    CEventList_saveState
-      PUSH 0x580dcb                       ; 0048136e | DAT_00580dcb
-
-  DAT_00580dcf  value=0x580DCF (5770703)  refs=1
-    CEventList_saveState
-      PUSH 0x580dcf                       ; 00481388 | DAT_00580dcf
-
-  DAT_00580def  value=0x580DEF (5770735)  refs=1
-    CEventList_saveState
-      PUSH 0x580def                       ; 004813b5 | DAT_00580def
-
-  DAT_00580df3  value=0x580DF3 (5770739)  refs=1
-    CEventList_saveState
-      PUSH 0x580df3                       ; 004813d6 | DAT_00580df3
-
-  DAT_00580e16  value=0x580E16 (5770774)  refs=1
-    CEventList_saveState
-      PUSH 0x580e16                       ; 00481415 | DAT_00580e16
-
-  DAT_00580e1a  value=0x580E1A (5770778)  refs=1
-    CEventList_saveState
-      PUSH 0x580e1a                       ; 00481436 | DAT_00580e1a
-
-  DAT_00580e43  value=0x580E43 (5770819)  refs=1
-    CEventList_saveState
-      PUSH 0x580e43                       ; 00481475 | DAT_00580e43
-
-  DAT_00580e73  value=0x580E73 (5770867)  refs=1
-    CEventList_saveState
-      PUSH 0x580e73                       ; 004814e5 | DAT_00580e73
-
-  DAT_00580eab  value=0x580EAB (5770923)  refs=1
-    CEventList_saveState
-      PUSH 0x580eab                       ; 00481555 | DAT_00580eab
-
-  DAT_0057f52d  value=0x57F52D (5764397)  refs=1
-    parseDeathType
-      PUSH 0x57f52d                       ; 0047a846 | DAT_0057f52d
-
-  DAT_0057f3de  value=0x57F3DE (5764062)  refs=1
-    resolveActorByName
-      PUSH 0x57f3de                       ; 0047a3f2 | DAT_0057f3de
 
   DAT_005b8afc  value=0x5B8AFC (5999356)  refs=1
     CCrater_render
@@ -1586,10 +1168,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005b858c  value=0x5B858C (5997964)  refs=1
     CExplosion_render
       ADD EAX,0x5b858c                    ; 00487029 | DAT_005b858c
-
-  DAT_0058152c  value=0x58152C (5772588)  refs=1
-    CFireEffect_load
-      PUSH 0x58152c                       ; 0048c814 | DAT_0058152c
 
   DAT_005b8514  value=0x5B8514 (5997844)  refs=1
     CFireball_render
@@ -1623,98 +1201,6 @@ Consider removing the Ghidra label and leaving the raw number.
     CFlies_dtor
       PUSH 0x5a2590                       ; 00534c4d | DAT_005a2590
 
-  DAT_00581d6d  value=0x581D6D (5774701)  refs=1
-    FUN_004950a0
-      PUSH 0x581d6d                       ; 00495206 | DAT_00581d6d
-
-  DAT_00584562  value=0x584562 (5784930)  refs=1
-    CGame_promptLoadGame
-      PUSH 0x584562                       ; 004a65ac | DAT_00584562
-
-  DAT_00584566  value=0x584566 (5784934)  refs=1
-    CGame_promptLoadGame
-      PUSH 0x584566                       ; 004a65c5 | DAT_00584566
-
-  DAT_00584678  value=0x584678 (5785208)  refs=1
-    CGame_rollCredits
-      PUSH 0x584678                       ; 004a6ef3 | DAT_00584678
-
-  DAT_0058468c  value=0x58468C (5785228)  refs=1
-    CGame_rollCredits
-      PUSH 0x58468c                       ; 004a6f44 | DAT_0058468c
-
-  DAT_0058282b  value=0x58282B (5777451)  refs=1
-    CGame_runGameSession
-      PUSH 0x58282b                       ; 0049dabf | DAT_0058282b
-
-  DAT_00582984  value=0x582984 (5777796)  refs=1
-    CGame_runGameSession
-      PUSH 0x582984                       ; 0049e398 | DAT_00582984
-
-  DAT_0058249b  value=0x58249B (5776539)  refs=1
-    CGame_showCustomizableKeys
-      PUSH 0x58249b                       ; 0049cb4f | DAT_0058249b
-
-  DAT_00582501  value=0x582501 (5776641)  refs=1
-    CGame_showCustomizableKeys
-      PUSH 0x582501                       ; 0049c170 | DAT_00582501
-
-  DAT_00583c67  value=0x583C67 (5782631)  refs=1
-    FUN_004a4170
-      PUSH 0x583c67                       ; 004a43dd | DAT_00583c67
-
-  DAT_00583c6c  value=0x583C6C (5782636)  refs=1
-    FUN_004a4170
-      PUSH 0x583c6c                       ; 004a4420 | DAT_00583c6c
-
-  DAT_00583cef  value=0x583CEF (5782767)  refs=1
-    FUN_004a4170
-      PUSH 0x583cef                       ; 004a4537 | DAT_00583cef
-
-  DAT_00583d48  value=0x583D48 (5782856)  refs=1
-    FUN_004a4170
-      PUSH 0x583d48                       ; 004a47b6 | DAT_00583d48
-
-  DAT_00583da1  value=0x583DA1 (5782945)  refs=1
-    FUN_004a4170
-      PUSH 0x583da1                       ; 004a4963 | DAT_00583da1
-
-  DAT_00583da5  value=0x583DA5 (5782949)  refs=1
-    FUN_004a4170
-      PUSH 0x583da5                       ; 004a4989 | DAT_00583da5
-
-  DAT_0058437c  value=0x58437C (5784444)  refs=1
-    FUN_004a57c0
-      PUSH 0x58437c                       ; 004a57ec | DAT_0058437c
-
-  DAT_005843c3  value=0x5843C3 (5784515)  refs=1
-    FUN_004a57c0
-      PUSH 0x5843c3                       ; 004a5877 | DAT_005843c3
-
-  DAT_005843c6  value=0x5843C6 (5784518)  refs=1
-    FUN_004a57c0
-      PUSH 0x5843c6                       ; 004a5884 | DAT_005843c6
-
-  DAT_005843db  value=0x5843DB (5784539)  refs=1
-    FUN_004a57c0
-      PUSH 0x5843db                       ; 004a59e3 | DAT_005843db
-
-  DAT_00584f23  value=0x584F23 (5787427)  refs=1
-    CGlass_setup
-      PUSH 0x584f23                       ; 004ac26a | DAT_00584f23
-
-  DAT_005851d8  value=0x5851D8 (5788120)  refs=1
-    CGore_load
-      PUSH 0x5851d8                       ; 004b0849 | DAT_005851d8
-
-  DAT_005851dc  value=0x5851DC (5788124)  refs=1
-    CGore_load
-      PUSH 0x5851dc                       ; 004b0885 | DAT_005851dc
-
-  DAT_00585213  value=0x585213 (5788179)  refs=1
-    CGrave_archive
-      PUSH 0x585213                       ; 004b0e46 | DAT_00585213
-
   DAT_0059ed60  value=0x59ED60 (5893472)  refs=1
     CHeroPlaceholder_dtor
       PUSH 0x59ed60                       ; 004b5ff0 | DAT_0059ed60
@@ -1722,18 +1208,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0059eee0  value=0x59EEE0 (5893856)  refs=1
     CHiram_dtor
       PUSH 0x59eee0                       ; 004b671b | DAT_0059eee0
-
-  DAT_00586e71  value=0x586E71 (5795441)  refs=1
-    CInventory_addItem
-      PUSH 0x586e71                       ; 004bf486 | DAT_00586e71
-
-  DAT_0058701a  value=0x58701A (5795866)  refs=1
-    CInventory_addItem
-      PUSH 0x58701a                       ; 004bfcc0 | DAT_0058701a
-
-  DAT_0058703e  value=0x58703E (5795902)  refs=1
-    CInventory_addItem
-      PUSH 0x58703e                       ; 004bfe8c | DAT_0058703e
 
   DAT_00587411  value=0x587411 (5796881)  refs=1
     CInventory_isWeaponInCategory
@@ -1746,18 +1220,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005873e7  value=0x5873E7 (5796839)  refs=1
     CInventory_select
       PUSH 0x5873e7                       ; 004c170b | DAT_005873e7
-
-  DAT_00586d91  value=0x586D91 (5795217)  refs=1
-    loadAssets
-      PUSH 0x586d91                       ; 004befa2 | DAT_00586d91
-
-  DAT_00586da0  value=0x586DA0 (5795232)  refs=1
-    loadAssets
-      PUSH 0x586da0                       ; 004befb1 | DAT_00586da0
-
-  DAT_00586e50  value=0x586E50 (5795408)  refs=1
-    loadAssets
-      PUSH 0x586e50                       ; 004bf1ed | DAT_00586e50
 
   DAT_00586e60  value=0x586E60 (5795424)  refs=1
     loadAssets
@@ -2239,6 +1701,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CDemonSet_saveStateInfo
       PUSH 0x5908be                       ; 0050e8fa | DAT_005908be
 
+  DAT_00444440  value=0x444440 (4473920)  refs=1
+    FUN_0050ddd0
+      PUSH 0x444440                       ; 0050de52 | DAT_00444440
+
   DAT_00590c05  value=0x590C05 (5835781)  refs=1
     CDemonSet_refreshThumbs
       PUSH 0x590c05                       ; 00513616 | DAT_00590c05
@@ -2411,25 +1877,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CWeather_renderParticles
       PUSH 0x5c15ec                       ; 0055554b | DAT_005c15ec
 
-  DAT_00597e90  value=0x597E90 (5865104)  refs=1
-    CWerewolf_archive
-      PUSH 0x597e90                       ; 005578b2 | DAT_00597e90
-
   DAT_005c1618  value=0x5C1618 (6034968)  refs=1
     CWerewolf_renderEyeGlow
       PUSH 0x5c1618                       ; 0055760f | DAT_005c1618
 
-  DAT_00598883  value=0x598883 (5867651)  refs=1
-    CZombie_getPickupHandIndex
-      PUSH 0x598883                       ; 0056180b | DAT_00598883
-
-  DAT_00598558  value=0x598558 (5866840)  refs=1
-    FUN_0055ef50
-      PUSH 0x598558                       ; 0055f4dd | DAT_00598558
-
-  DAT_0059858b  value=0x59858B (5866891)  refs=1
-    FUN_0055ef50
-      PUSH 0x59858b                       ; 0055f5dd | DAT_0059858b
+  DAT_005a46a0  value=0x5A46A0 (5916320)  refs=1
+    FUN_00562550
+      PUSH 0x5a46a0                       ; 005625e1 | DAT_005a46a0
 
   DAT_0059b4d0  value=0x59B4D0 (5878992)  refs=1
     ifstream_dtor
@@ -2463,10 +1917,6 @@ Consider removing the Ghidra label and leaving the raw number.
     ostrstream_dtor
       PUSH 0x59b490                       ; 00564efc | DAT_0059b490
 
-  DAT_00598abc  value=0x598ABC (5868220)  refs=1
-    _strftime
-      MOV ESI,0x598abc                    ; 005668d1 | DAT_00598abc
-
   DAT_005c17f8  value=0x5C17F8 (6035448)  refs=1
     _strftime
       MOV ESI,0x5c17f8                    ; 005667e4 | DAT_005c17f8
@@ -2475,125 +1925,9 @@ Consider removing the Ghidra label and leaving the raw number.
     _strftime
       ADD ESI,0x5c1830                    ; 00566808 | DAT_005c1830
 
-  DAT_0057705f  value=0x57705F (5730399)  refs=1
-    FUN_00401010
-      PUSH 0x57705f                       ; 00401090 | DAT_0057705f
-
-  DAT_0057709a  value=0x57709A (5730458)  refs=1
-    FUN_00401010
-      PUSH 0x57709a                       ; 004010c8 | DAT_0057709a
-
-  DAT_005770db  value=0x5770DB (5730523)  refs=1
-    FUN_00401010
-      PUSH 0x5770db                       ; 00401131 | DAT_005770db
-
-  DAT_00577116  value=0x577116 (5730582)  refs=1
-    FUN_00401010
-      PUSH 0x577116                       ; 004011d2 | DAT_00577116
-
-  DAT_00577154  value=0x577154 (5730644)  refs=1
-    FUN_00401bd0
-      PUSH 0x577154                       ; 00401bd1 | DAT_00577154
-
-  DAT_00577157  value=0x577157 (5730647)  refs=1
-    FUN_00401bd0
-      PUSH 0x577157                       ; 00401bdb | DAT_00577157
-
-  DAT_0057718f  value=0x57718F (5730703)  refs=1
-    FUN_00403070
-      PUSH 0x57718f                       ; 00403081 | DAT_0057718f
-
-  DAT_00577193  value=0x577193 (5730707)  refs=1
-    FUN_00403070
-      PUSH 0x577193                       ; 004030f7 | DAT_00577193
-
-  DAT_00577196  value=0x577196 (5730710)  refs=1
-    FUN_00403070
-      PUSH 0x577196                       ; 004030fd | DAT_00577196
-
-  DAT_005771c3  value=0x5771C3 (5730755)  refs=1
-    FUN_00403130
-      PUSH 0x5771c3                       ; 00403131 | DAT_005771c3
-
-  DAT_005771c6  value=0x5771C6 (5730758)  refs=1
-    FUN_00403130
-      PUSH 0x5771c6                       ; 0040313b | DAT_005771c6
-
-  DAT_00577207  value=0x577207 (5730823)  refs=1
-    FUN_00403500
-      PUSH 0x577207                       ; 00403501 | DAT_00577207
-
-  DAT_0057720a  value=0x57720A (5730826)  refs=1
-    FUN_00403500
-      PUSH 0x57720a                       ; 0040350b | DAT_0057720a
-
-  DAT_00577265  value=0x577265 (5730917)  refs=1
-    FUN_00403630
-      PUSH 0x577265                       ; 004036cb | DAT_00577265
-
-  DAT_00577268  value=0x577268 (5730920)  refs=1
-    FUN_00403630
-      PUSH 0x577268                       ; 004036d5 | DAT_00577268
-
-  DAT_00578151  value=0x578151 (5734737)  refs=1
-    CAlphaBitmap_load
-      PUSH 0x578151                       ; 0040e4af | DAT_00578151
-
-  DAT_00578199  value=0x578199 (5734809)  refs=1
-    CAlphaBitmap_load
-      PUSH 0x578199                       ; 0040e53d | DAT_00578199
-
-  DAT_0057b1c4  value=0x57B1C4 (5747140)  refs=1
-    CConsole_printf
-      PUSH 0x57b1c4                       ; 0043aced | DAT_0057b1c4
-
-  DAT_0057b1c7  value=0x57B1C7 (5747143)  refs=1
-    CConsole_printf
-      PUSH 0x57b1c7                       ; 0043ad08 | DAT_0057b1c7
-
-  DAT_0058177f  value=0x58177F (5773183)  refs=1
-    CBitFont_loadBitmap
-      PUSH 0x58177f                       ; 0048fff0 | DAT_0058177f
-
   DAT_005b9250  value=0x5B9250 (6001232)  refs=1
     CBitFont_render3DCharacter
       PUSH 0x5b9250                       ; 0049123e | DAT_005b9250
-
-  DAT_0058673b  value=0x58673B (5793595)  refs=1
-    CIniFile_getFloat
-      PUSH 0x58673b                       ; 004bdad0 | DAT_0058673b
-
-  DAT_0058673e  value=0x58673E (5793598)  refs=1
-    CIniFile_getFloat
-      PUSH 0x58673e                       ; 004bdb00 | DAT_0058673e
-
-  DAT_00586735  value=0x586735 (5793589)  refs=1
-    CIniFile_getInteger
-      PUSH 0x586735                       ; 004bda5c | DAT_00586735
-
-  DAT_00586741  value=0x586741 (5793601)  refs=1
-    CIniFile_setFloatValue
-      PUSH 0x586741                       ; 004bdb2d | DAT_00586741
-
-  DAT_00586738  value=0x586738 (5793592)  refs=1
-    CIniFile_setInteger
-      PUSH 0x586738                       ; 004bda89 | DAT_00586738
-
-  DAT_0058652d  value=0x58652D (5793069)  refs=1
-    CIni_findLineNumberOfVariable
-      PUSH 0x58652d                       ; 004bd2c1 | DAT_0058652d
-
-  DAT_005864e5  value=0x5864E5 (5792997)  refs=1
-    CIni_getProfileString
-      PUSH 0x5864e5                       ; 004bd0aa | DAT_005864e5
-
-  DAT_0058657d  value=0x58657D (5793149)  refs=1
-    CIni_writeProfileString
-      PUSH 0x58657d                       ; 004bd4db | DAT_0058657d
-
-  DAT_005865c1  value=0x5865C1 (5793217)  refs=1
-    CIni_writeProfileString
-      PUSH 0x5865c1                       ; 004bd54d | DAT_005865c1
 
   DAT_0058a661  value=0x58A661 (5809761)  refs=1
     loadModelChunk
@@ -2667,37 +2001,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CWinFont_dtor
       PUSH 0x5a44a0                       ; 00558035 | DAT_005a44a0
 
-  DAT_0057e913  value=0x57E913 (5761299)  refs=1
-    CEditorTools_createModalWindow
-      PUSH 0x57e913                       ; 00471d05 | DAT_0057e913
-
-  DAT_0057e7a5  value=0x57E7A5 (5760933)  refs=1
-    CEditorTools_promptForValidFloat
-      PUSH 0x57e7a5                       ; 00471487 | DAT_0057e7a5
-
-  DAT_0057e7a8  value=0x57E7A8 (5760936)  refs=1
-    CEditorTools_promptForValidFloat
-      PUSH 0x57e7a8                       ; 004714a0 | DAT_0057e7a8
-
-  DAT_0057e754  value=0x57E754 (5760852)  refs=1
-    CEditorTools_promptForValidInteger
-      PUSH 0x57e754                       ; 004713c2 | DAT_0057e754
-
   DAT_0059cad0  value=0x59CAD0 (5884624)  refs=1
     CPickList_dtor
       PUSH 0x59cad0                       ; 00474d3d | DAT_0059cad0
 
-  DAT_0057eddf  value=0x57EDDF (5762527)  refs=1
-    CStrList_copyToClipboard
-      PUSH 0x57eddf                       ; 0047440e | DAT_0057eddf
-
   DAT_0059caf0  value=0x59CAF0 (5884656)  refs=1
     CStrList_dtor
       PUSH 0x59caf0                       ; 00473ba7 | DAT_0059caf0
-
-  DAT_0057e72c  value=0x57E72C (5760812)  refs=1
-    FUN_00470eb0
-      MOV dword ptr [ESP + 0x36c],0x57e72c ; 0047111b | DAT_0057e72c
 
   DAT_0058b95d  value=0x58B95D (5814621)  refs=1
     CMP3Decoder_openFile
@@ -2811,140 +2121,12 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_004edfc0
       PUSH 0x58c96b                       ; 004ee0b1 | DAT_0058c96b
 
-  DAT_00597f5f  value=0x597F5F (5865311)  refs=1
-    getKeyName
-      MOV EAX,0x597f5f                    ; 005595a7 | DAT_00597f5f
-
-  DAT_00597f63  value=0x597F63 (5865315)  refs=1
-    getKeyName
-      MOV EAX,0x597f63                    ; 005595d5 | DAT_00597f63
-
-  DAT_00597f65  value=0x597F65 (5865317)  refs=1
-    getKeyName
-      MOV EAX,0x597f65                    ; 005595dc | DAT_00597f65
-
-  DAT_00597f67  value=0x597F67 (5865319)  refs=1
-    getKeyName
-      MOV EAX,0x597f67                    ; 005595e3 | DAT_00597f67
-
-  DAT_00597f69  value=0x597F69 (5865321)  refs=1
-    getKeyName
-      MOV EAX,0x597f69                    ; 00559bb3 | DAT_00597f69
-
-  DAT_00597f6b  value=0x597F6B (5865323)  refs=1
-    getKeyName
-      MOV EAX,0x597f6b                    ; 005595ea | DAT_00597f6b
-
-  DAT_00597f6d  value=0x597F6D (5865325)  refs=1
-    getKeyName
-      MOV EAX,0x597f6d                    ; 005595f1 | DAT_00597f6d
-
-  DAT_00597f6f  value=0x597F6F (5865327)  refs=1
-    getKeyName
-      MOV EAX,0x597f6f                    ; 00559b87 | DAT_00597f6f
-
-  DAT_00597f71  value=0x597F71 (5865329)  refs=1
-    getKeyName
-      MOV EAX,0x597f71                    ; 005595f8 | DAT_00597f71
-
-  DAT_00597f73  value=0x597F73 (5865331)  refs=1
-    getKeyName
-      MOV EAX,0x597f73                    ; 005595ff | DAT_00597f73
-
-  DAT_00597f75  value=0x597F75 (5865333)  refs=1
-    getKeyName
-      MOV EAX,0x597f75                    ; 00559b9d | DAT_00597f75
-
-  DAT_00597f77  value=0x597F77 (5865335)  refs=1
-    getKeyName
-      MOV EAX,0x597f77                    ; 00559606 | DAT_00597f77
-
-  DAT_00597f79  value=0x597F79 (5865337)  refs=1
-    getKeyName
-      MOV EAX,0x597f79                    ; 0055960d | DAT_00597f79
-
-  DAT_00597f97  value=0x597F97 (5865367)  refs=1
-    getKeyName
-      MOV EAX,0x597f97                    ; 0055963e | DAT_00597f97
-
-  DAT_00597f99  value=0x597F99 (5865369)  refs=1
-    getKeyName
-      MOV EAX,0x597f99                    ; 00559b56 | DAT_00597f99
-
-  DAT_00597f9b  value=0x597F9B (5865371)  refs=1
-    getKeyName
-      MOV EAX,0x597f9b                    ; 00559645 | DAT_00597f9b
-
-  DAT_00597f9d  value=0x597F9D (5865373)  refs=1
-    getKeyName
-      MOV EAX,0x597f9d                    ; 0055964c | DAT_00597f9d
-
-  DAT_00597f9f  value=0x597F9F (5865375)  refs=1
-    getKeyName
-      MOV EAX,0x597f9f                    ; 00559a3c | DAT_00597f9f
-
-  DAT_00597fc0  value=0x597FC0 (5865408)  refs=1
-    getKeyName
-      MOV EAX,0x597fc0                    ; 00559684 | DAT_00597fc0
-
-  DAT_00597fc2  value=0x597FC2 (5865410)  refs=1
-    getKeyName
-      MOV EAX,0x597fc2                    ; 0055968b | DAT_00597fc2
-
-  DAT_00597fc4  value=0x597FC4 (5865412)  refs=1
-    getKeyName
-      MOV EAX,0x597fc4                    ; 00559a5c | DAT_00597fc4
-
-  DAT_00597fc6  value=0x597FC6 (5865414)  refs=1
-    getKeyName
-      MOV EAX,0x597fc6                    ; 00559692 | DAT_00597fc6
-
-  DAT_00597fde  value=0x597FDE (5865438)  refs=1
-    getKeyName
-      MOV EAX,0x597fde                    ; 005596c3 | DAT_00597fde
-
-  DAT_00597fe0  value=0x597FE0 (5865440)  refs=1
-    getKeyName
-      MOV EAX,0x597fe0                    ; 00559a93 | DAT_00597fe0
-
-  DAT_00597fe2  value=0x597FE2 (5865442)  refs=1
-    getKeyName
-      MOV EAX,0x597fe2                    ; 005596ca | DAT_00597fe2
-
-  DAT_00597fe4  value=0x597FE4 (5865444)  refs=1
-    getKeyName
-      MOV EAX,0x597fe4                    ; 005596d1 | DAT_00597fe4
-
-  DAT_00598025  value=0x598025 (5865509)  refs=1
-    getKeyName
-      MOV EAX,0x598025                    ; 0055997b | DAT_00598025
-
-  DAT_00598028  value=0x598028 (5865512)  refs=1
-    getKeyName
-      MOV EAX,0x598028                    ; 00559710 | DAT_00598028
-
-  DAT_0059802b  value=0x59802B (5865515)  refs=1
-    getKeyName
-      MOV EAX,0x59802b                    ; 00559717 | DAT_0059802b
-
-  DAT_005980ac  value=0x5980AC (5865644)  refs=1
-    getKeyName
-      MOV EAX,0x5980ac                    ; 0055976b | DAT_005980ac
-
-  DAT_005980ec  value=0x5980EC (5865708)  refs=1
-    getKeyName
-      MOV EAX,0x5980ec                    ; 005597a3 | DAT_005980ec
-
-  DAT_00598109  value=0x598109 (5865737)  refs=1
-    getKeyName
-      MOV EAX,0x598109                    ; 005597c6 | DAT_00598109
-
-  DAT_00598151  value=0x598151 (5865809)  refs=1
-    setRegistryStringValue
-      PUSH 0x598151                       ; 00559dbb | DAT_00598151
+  DAT_02de0860  value=0x2DE0860  refs=1
+    FUN_00559500
+      PUSH 0x2de0860                      ; 00559531 | DAT_02de0860
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE (31 clusters)
+HIGH CONFIDENCE (28 clusters)
 --------------------------------------------------------------------------------
 
   0x01c775e8 - 0x01c776b8  (53 items, 208 bytes span)
@@ -3017,7 +2199,7 @@ HIGH CONFIDENCE (31 clusters)
     Classification: array
     Likely type: int[17]
     Reason: 17 elements at stride 4
-    Referenced by: 156 functions
+    Referenced by: 157 functions
       0x01c00c48  DAT_01c00c48  undefined4 [float]
       0x01c00c4c  DAT_01c00c4c  undefined4 [float]
       0x01c00c50  DAT_01c00c50  undefined4
@@ -3146,40 +2328,6 @@ HIGH CONFIDENCE (31 clusters)
       0x0268cee8  DAT_0268cee8  undefined4
       ... +2 more
 
-  0x005853f4 - 0x005853f8  (5 items, 4 bytes span)
-    Classification: char_array
-    Likely type: char[6]
-    Reason: 5 consecutive bytes
-    Referenced by: 1 functions
-     near: s_gat.kfm_00585402 (string) at -14
-      0x005853f4  DAT_005853f4  undefined1 [byte]
-      0x005853f5  DAT_005853f5  undefined1 [byte]
-      0x005853f6  DAT_005853f6  undefined1
-      0x005853f7  DAT_005853f7  undefined1
-      0x005853f8  DAT_005853f8  undefined4
-
-  0x0057851b - 0x0057851e  (4 items, 3 bytes span)
-    Classification: char_array
-    Likely type: char[5]
-    Reason: 4 consecutive bytes
-    Referenced by: 1 functions
-     near: s_baronshell.kfm_00578520 (string) at -5
-      0x0057851b  DAT_0057851b  undefined1 [byte]
-      0x0057851c  DAT_0057851c  undefined1 [byte]
-      0x0057851d  DAT_0057851d  undefined1
-      0x0057851e  DAT_0057851e  undefined1
-
-  0x005859ff - 0x00585a02  (4 items, 3 bytes span)
-    Classification: char_array
-    Likely type: char[5]
-    Reason: 4 consecutive bytes
-    Referenced by: 1 functions
-     near: s_hickboy.dfm_00585a04 (string) at -5
-      0x005859ff  DAT_005859ff  undefined1 [byte]
-      0x00585a00  DAT_00585a00  undefined1 [byte]
-      0x00585a01  DAT_00585a01  undefined1
-      0x00585a02  DAT_00585a02  undefined1
-
   0x0058923e - 0x00589241  (4 items, 3 bytes span)
     Classification: char_array
     Likely type: char[5]
@@ -3306,7 +2454,7 @@ HIGH CONFIDENCE (31 clusters)
       0x02de2a11  DAT_02de2a11  undefined4
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (116 clusters)
+MEDIUM CONFIDENCE (104 clusters)
 --------------------------------------------------------------------------------
 
   0x01cc8120 - 0x01cc8650  (133 items, 1328 bytes span)
@@ -3366,7 +2514,7 @@ MEDIUM CONFIDENCE (116 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 19 groups of 3 consecutive ints found
-    Referenced by: 112 functions
+    Referenced by: 113 functions
       0x01cae018  DAT_01cae018  undefined4
       0x01cae01c  DAT_01cae01c  undefined4
       0x01cae020  DAT_01cae020  undefined4
@@ -3387,20 +2535,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01b4d260  DAT_01b4d260  undefined4
       0x01b4d264  DAT_01b4d264  undefined4
       ... +48 more
-
-  0x00580fa3 - 0x00581757  (51 items, 1972 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 24 functions
-     near: s_CHero_00580faa+1 (undefined4) at -8
-      0x00580fa3  DAT_00580fa3  undefined4 [double]
-      0x00580fdc  DAT_00580fdc  undefined1 [byte]
-      0x00580fdd  DAT_00580fdd  undefined1 [byte]
-      0x00580fde  DAT_00580fde  undefined1
-      0x00580fdf  DAT_00580fdf  undefined1
-      0x00581074  DAT_00581074  undefined4 [float]
-      ... +45 more
 
   0x01c038f0 - 0x01c03a08  (46 items, 280 bytes span)
     Classification: vector_groups
@@ -3572,20 +2706,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x02dd0f91  DAT_02dd0f91  undefined4 [byte]
       ... +23 more
 
-  0x00582082 - 0x005823fa  (25 items, 888 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 9 functions
-     near: s_kick1.wav_005820ba (string) at -56
-      0x00582082  DAT_00582082  undefined4 [double]
-      0x0058208a  DAT_0058208a  undefined4 [double]
-      0x00582092  DAT_00582092  undefined4 [double]
-      0x0058209a  DAT_0058209a  undefined4 [double]
-      0x005820a2  DAT_005820a2  undefined4 [double]
-      0x005820aa  DAT_005820aa  undefined4 [double]
-      ... +19 more
-
   0x005bf48c - 0x005bf658  (25 items, 460 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -3668,7 +2788,7 @@ MEDIUM CONFIDENCE (116 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 5 groups of 3 consecutive ints found
-    Referenced by: 233 functions
+    Referenced by: 235 functions
       0x01b4d710  DAT_01b4d710  undefined4 [short]
       0x01b4d714  DAT_01b4d714  undefined4
       0x01b4d718  DAT_01b4d718  undefined4
@@ -3694,7 +2814,7 @@ MEDIUM CONFIDENCE (116 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 4 groups of 3 consecutive ints found
-    Referenced by: 284 functions
+    Referenced by: 287 functions
       0x005b75dc  DAT_005b75dc  undefined4
       0x005b7604  DAT_005b7604  undefined4
       0x005b761c  DAT_005b761c  undefined4 [float]
@@ -3715,20 +2835,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01fb1adc  DAT_01fb1adc  undefined4
       0x01fb1ae0  DAT_01fb1ae0  undefined4
       ... +13 more
-
-  0x0057968d - 0x005796fd  (18 items, 112 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 3 functions
-     near: s__00579633+0x1a (undefined4) at +64
-      0x0057968d  DAT_0057968d  undefined4 [double]
-      0x00579695  DAT_00579695  undefined4 [double]
-      0x0057969d  DAT_0057969d  undefined4 [double]
-      0x005796a5  DAT_005796a5  undefined4 [double]
-      0x005796ad  DAT_005796ad  undefined4 [float]
-      0x005796b5  DAT_005796b5  undefined4 [double]
-      ... +12 more
 
   0x0077ac8c - 0x0077ad0c  (18 items, 128 bytes span)
     Classification: vector_groups
@@ -3926,20 +3032,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01c00638  DAT_01c00638  undefined4 [byte]
       ... +6 more
 
-  0x0057b1b4 - 0x0057b222  (11 items, 110 bytes span)
-    Classification: byte_blob
-    Likely type: char[] or byte[]
-    Reason: 6/10 strides are 1 byte
-    Referenced by: 3 functions
-     near: s_direction_0057b1e3 (string) at -47
-      0x0057b1b4  DAT_0057b1b4  undefined4 [double]
-      0x0057b1bc  DAT_0057b1bc  undefined4 [double]
-      0x0057b1d4  DAT_0057b1d4  undefined1 [byte]
-      0x0057b1d5  DAT_0057b1d5  undefined1 [byte]
-      0x0057b1d6  DAT_0057b1d6  undefined1
-      0x0057b1d7  DAT_0057b1d7  undefined1
-      ... +5 more
-
   0x012ceb58 - 0x012ceb7a  (11 items, 34 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -3991,20 +3083,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x02ddfa14  DAT_02ddfa14  undefined4
       0x02ddfa28  DAT_02ddfa28  undefined4 [float]
       ... +5 more
-
-  0x0059b360 - 0x0059b394  (10 items, 52 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 3 functions
-     near: PTR_support_codec.cpp_CCodec_dtor_FUN_00438f30_0059b3e4 (void*) at -132
-      0x0059b360  DAT_0059b360  undefined4 [float]
-      0x0059b368  DAT_0059b368  undefined4 [float]
-      0x0059b378  DAT_0059b378  undefined4 [float]
-      0x0059b37c  DAT_0059b37c  undefined4 [float]
-      0x0059b380  DAT_0059b380  undefined4 [float]
-      0x0059b384  DAT_0059b384  undefined4 [float]
-      ... +4 more
 
   0x00767b38 - 0x00767b84  (10 items, 76 bytes span)
     Classification: vector_groups
@@ -4138,20 +3216,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01fb1d1c  DAT_01fb1d1c  undefined4
       ... +3 more
 
-  0x0057757d - 0x00577585  (8 items, 8 bytes span)
-    Classification: byte_blob
-    Likely type: char[] or byte[]
-    Reason: 6/7 strides are 1 byte
-    Referenced by: 1 functions
-     near: s_..\core\actor.cpp_00577586 (string) at -9
-      0x0057757d  DAT_0057757d  undefined1 [byte]
-      0x0057757e  DAT_0057757e  undefined1 [byte]
-      0x0057757f  DAT_0057757f  undefined1
-      0x00577580  DAT_00577580  undefined1
-      0x00577582  DAT_00577582  undefined1 [byte]
-      0x00577583  DAT_00577583  undefined1 [byte]
-      ... +2 more
-
   0x0058e36d - 0x0058e38e  (8 items, 33 bytes span)
     Classification: byte_blob
     Likely type: char[] or byte[]
@@ -4245,20 +3309,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01d09c68  DAT_01d09c68  undefined4
       ... +2 more
 
-  0x00583ada - 0x00583b0a  (7 items, 48 bytes span)
-    Classification: struct_array
-    Likely type: struct_8bytes[7]
-    Reason: 7 elements at stride 8
-    Referenced by: 3 functions
-     near: s_Unable_to_save_during_cinematic_00583b10+2 (undefined4) at -56
-      0x00583ada  DAT_00583ada  undefined4 [double]
-      0x00583ae2  DAT_00583ae2  undefined4 [double]
-      0x00583aea  DAT_00583aea  undefined4 [double]
-      0x00583af2  DAT_00583af2  undefined4 [double]
-      0x00583afa  DAT_00583afa  undefined4 [float]
-      0x00583b02  DAT_00583b02  undefined4
-      ... +1 more
-
   0x005a0570 - 0x005a05e4  (7 items, 116 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -4324,32 +3374,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x02de5d80  DAT_02de5d80  undefined4
       0x02de5d84  DAT_02de5d84  undefined4
       ... +1 more
-
-  0x0057dc6d - 0x0057dc95  (6 items, 40 bytes span)
-    Classification: struct_array
-    Likely type: struct_8bytes[6]
-    Reason: 6 elements at stride 8
-    Referenced by: 4 functions
-     near: s_..\engine\drender.cpp_0057dc9c+1 (undefined4) at -48
-      0x0057dc6d  DAT_0057dc6d  undefined4 [double]
-      0x0057dc75  DAT_0057dc75  undefined4 [double]
-      0x0057dc7d  DAT_0057dc7d  undefined4 [double]
-      0x0057dc85  DAT_0057dc85  undefined4
-      0x0057dc8d  DAT_0057dc8d  undefined4 [double]
-      0x0057dc95  DAT_0057dc95  undefined4 [double]
-
-  0x005855dd - 0x00585605  (6 items, 40 bytes span)
-    Classification: struct_array
-    Likely type: struct_8bytes[6]
-    Reason: 6 elements at stride 8
-    Referenced by: 1 functions
-     near: s_box-swing?.wav_0058560d (string) at -48
-      0x005855dd  DAT_005855dd  undefined4 [double]
-      0x005855e5  DAT_005855e5  undefined4 [double]
-      0x005855ed  DAT_005855ed  undefined4 [double]
-      0x005855f5  DAT_005855f5  undefined4 [double]
-      0x005855fd  DAT_005855fd  undefined4 [double]
-      0x00585605  DAT_00585605  undefined4 [double]
 
   0x00588378 - 0x00588386  (6 items, 14 bytes span)
     Classification: byte_blob
@@ -4522,18 +3546,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x02de2c14  DAT_02de2c14  undefined4
       0x02de2d10  DAT_02de2d10  undefined4
 
-  0x005843be - 0x00584482  (5 items, 196 bytes span)
-    Classification: byte_blob
-    Likely type: char[] or byte[]
-    Reason: 3/4 strides are 1 byte
-    Referenced by: 2 functions
-     near: s_Can't_open_%s_005843ca (string) at -12
-      0x005843be  DAT_005843be  undefined1 [byte]
-      0x005843bf  DAT_005843bf  undefined1 [byte]
-      0x005843c0  DAT_005843c0  undefined1
-      0x005843c1  DAT_005843c1  undefined1
-      0x00584482  DAT_00584482  undefined4 [float]
-
   0x005963d9 - 0x005963f9  (5 items, 32 bytes span)
     Classification: struct_array
     Likely type: struct_8bytes[5]
@@ -4545,6 +3557,18 @@ MEDIUM CONFIDENCE (116 clusters)
       0x005963e9  DAT_005963e9  undefined4 [double]
       0x005963f1  DAT_005963f1  undefined4 [double]
       0x005963f9  DAT_005963f9  undefined4 [double]
+
+  0x00598756 - 0x00598776  (5 items, 32 bytes span)
+    Classification: struct_array
+    Likely type: struct_8bytes[5]
+    Reason: 5 elements at stride 8
+    Referenced by: 1 functions
+     near: s_new_0059877e (TerminatedCString) at -40
+      0x00598756  DAT_00598756  undefined4 [double]
+      0x0059875e  DAT_0059875e  undefined4 [double]
+      0x00598766  DAT_00598766  undefined4 [float]
+      0x0059876e  DAT_0059876e  undefined4 [double]
+      0x00598776  DAT_00598776  undefined4 [double]
 
   0x0059a898 - 0x0059a8a8  (5 items, 16 bytes span)
     Classification: array
@@ -4637,28 +3661,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x01e56422  DAT_01e56422  undefined4
       0x01e56423  DAT_01e56423  undefined4
 
-  0x005809e7 - 0x005809ff  (4 items, 24 bytes span)
-    Classification: struct_array
-    Likely type: struct_8bytes[4]
-    Reason: 4 elements at stride 8
-    Referenced by: 1 functions
-     near: s_alid_meta-function_005809cc+3 (undefined4) at +24
-      0x005809e7  DAT_005809e7  undefined4 [double]
-      0x005809ef  DAT_005809ef  undefined4 [double]
-      0x005809f7  DAT_005809f7  undefined4 [double]
-      0x005809ff  DAT_005809ff  undefined4 [double]
-
-  0x00585c92 - 0x00585caa  (4 items, 24 bytes span)
-    Classification: struct_array
-    Likely type: struct_8bytes[4]
-    Reason: 4 elements at stride 8
-    Referenced by: 2 functions
-     near: s_ScatDazzle_00585cb1+1 (undefined4) at -32
-      0x00585c92  DAT_00585c92  undefined4 [double]
-      0x00585c9a  DAT_00585c9a  undefined4 [double]
-      0x00585ca2  DAT_00585ca2  undefined4 [double]
-      0x00585caa  DAT_00585caa  undefined4 [double]
-
   0x0058b6c8 - 0x0058b6e0  (4 items, 24 bytes span)
     Classification: struct_array
     Likely type: struct_8bytes[4]
@@ -4669,17 +3671,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x0058b6d0  DAT_0058b6d0  undefined4 [double]
       0x0058b6d8  DAT_0058b6d8  undefined4 [double]
       0x0058b6e0  DAT_0058b6e0  undefined4 [double]
-
-  0x00599fac - 0x00599fb8  (4 items, 12 bytes span)
-    Classification: array
-    Likely type: float[4]
-    Reason: 4 elements at stride 4
-    Referenced by: 2 functions
-     near: PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4 (undefined1*) at -24
-      0x00599fac  DAT_00599fac  undefined4 [float]
-      0x00599fb0  DAT_00599fb0  undefined4 [float]
-      0x00599fb4  DAT_00599fb4  undefined4 [float]
-      0x00599fb8  DAT_00599fb8  undefined4 [float]
 
   0x0059a14c - 0x0059a158  (4 items, 12 bytes span)
     Classification: array
@@ -4754,16 +3745,6 @@ MEDIUM CONFIDENCE (116 clusters)
       0x02dca1d8  DAT_02dca1d8  undefined4
       0x02dca1dc  DAT_02dca1dc  undefined4
 
-  0x00583352 - 0x0058335c  (3 items, 10 bytes span)
-    Classification: struct_array
-    Likely type: struct_5bytes[3]
-    Reason: 3 elements at stride 5
-    Referenced by: 1 functions
-     near: s_CShotgun_00583361 (string) at -15
-      0x00583352  DAT_00583352  undefined4
-      0x00583357  DAT_00583357  undefined4
-      0x0058335c  DAT_0058335c  undefined4
-
   0x0058a822 - 0x0058a832  (3 items, 16 bytes span)
     Classification: struct_array
     Likely type: struct_8bytes[3]
@@ -4774,8 +3755,18 @@ MEDIUM CONFIDENCE (116 clusters)
       0x0058a82a  DAT_0058a82a  undefined4 [double]
       0x0058a832  DAT_0058a832  undefined4 [double]
 
+  0x005983ce - 0x005983de  (3 items, 16 bytes span)
+    Classification: struct_array
+    Likely type: struct_8bytes[3]
+    Reason: 3 elements at stride 8
+    Referenced by: 1 functions
+     near: s_zombie1.dfm_005983e6 (string) at -24
+      0x005983ce  DAT_005983ce  undefined4 [double]
+      0x005983d6  DAT_005983d6  undefined4 [double]
+      0x005983de  DAT_005983de  undefined4 [double]
+
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (251 clusters)
+LOW CONFIDENCE (212 clusters)
 --------------------------------------------------------------------------------
 
   0x005b5d00 - 0x005b64f8  (65 items, 2040 bytes span)
@@ -4823,7 +3814,7 @@ LOW CONFIDENCE (251 clusters)
     Likely type: struct (1444 bytes span, 28 fields)
     Reason: mixed strides, shared by 212 functions
     Referenced by: 212 functions
-     near: PTR_DAT_005b9358 (void*) at -408
+     near: PTR_s_Off_005b9358 (void*) at -408
       0x005b91c0  DAT_005b91c0  undefined4
       0x005b9210  DAT_005b9210  undefined4
       0x005b9258  DAT_005b9258  undefined1 [byte]
@@ -4831,20 +3822,6 @@ LOW CONFIDENCE (251 clusters)
       0x005b925a  DAT_005b925a  undefined1
       0x005b925b  DAT_005b925b  undefined1
       ... +22 more
-
-  0x00584d95 - 0x00585194  (26 items, 1023 bytes span)
-    Classification: struct
-    Likely type: struct (1023 bytes span, 26 fields)
-    Reason: mixed strides, shared by 12 functions
-    Referenced by: 12 functions
-     near: s_speed_00584dbc+1 (undefined4) at -40
-      0x00584d95  DAT_00584d95  undefined4 [double]
-      0x00584d9d  DAT_00584d9d  undefined4 [double]
-      0x00584da5  DAT_00584da5  undefined4 [double]
-      0x00584dad  DAT_00584dad  undefined4 [double]
-      0x00584db5  DAT_00584db5  undefined4 [double]
-      0x00584e1d  DAT_00584e1d  undefined4 [float]
-      ... +20 more
 
   0x00587ccf - 0x0058802e  (26 items, 863 bytes span)
     Classification: struct
@@ -4860,48 +3837,6 @@ LOW CONFIDENCE (251 clusters)
       0x00587d35  DAT_00587d35  undefined1 [byte]
       ... +20 more
 
-  0x0057f15c - 0x0057f38b  (23 items, 559 bytes span)
-    Classification: struct
-    Likely type: struct (559 bytes span, 23 fields)
-    Reason: mixed strides, shared by 8 functions
-    Referenced by: 8 functions
-     near: s_shell.kfm_0057f164 (string) at -8
-      0x0057f15c  DAT_0057f15c  undefined4
-      0x0057f195  DAT_0057f195  undefined1 [byte]
-      0x0057f196  DAT_0057f196  undefined1 [byte]
-      0x0057f197  DAT_0057f197  undefined1
-      0x0057f198  DAT_0057f198  undefined1
-      0x0057f19a  DAT_0057f19a  undefined1 [byte]
-      ... +17 more
-
-  0x0057b3b2 - 0x0057b546  (22 items, 404 bytes span)
-    Classification: struct
-    Likely type: struct (404 bytes span, 22 fields)
-    Reason: mixed strides, shared by 9 functions
-    Referenced by: 9 functions
-     near: s_speed_0057b3c0+2 (undefined4) at -16
-      0x0057b3b2  DAT_0057b3b2  undefined4 [double]
-      0x0057b3ba  DAT_0057b3ba  undefined4 [double]
-      0x0057b40a  DAT_0057b40a  undefined4 [double]
-      0x0057b45b  DAT_0057b45b  undefined4 [float]
-      0x0057b4b6  DAT_0057b4b6  undefined4 [double]
-      0x0057b4d2  DAT_0057b4d2  undefined1 [byte]
-      ... +16 more
-
-  0x0058582b - 0x005858eb  (22 items, 192 bytes span)
-    Classification: struct
-    Likely type: struct (192 bytes span, 22 fields)
-    Reason: mixed strides, shared by 8 functions
-    Referenced by: 8 functions
-     near: s__0058581b+0xc (undefined4) at +4
-      0x0058582b  DAT_0058582b  undefined4 [double]
-      0x00585833  DAT_00585833  undefined4 [double]
-      0x0058583b  DAT_0058583b  undefined4 [double]
-      0x00585843  DAT_00585843  undefined4 [double]
-      0x0058584b  DAT_0058584b  undefined4 [double]
-      0x00585853  DAT_00585853  undefined4 [double]
-      ... +16 more
-
   0x005baf48 - 0x005bb420  (21 items, 1240 bytes span)
     Classification: struct
     Likely type: struct (1240 bytes span, 21 fields)
@@ -4915,20 +3850,6 @@ LOW CONFIDENCE (251 clusters)
       0x005bb068  DAT_005bb068  undefined4
       0x005bb06c  DAT_005bb06c  undefined4
       ... +15 more
-
-  0x0057a26a - 0x0057a59e  (19 items, 820 bytes span)
-    Classification: struct
-    Likely type: struct (820 bytes span, 19 fields)
-    Reason: mixed strides, shared by 7 functions
-    Referenced by: 7 functions
-     near: s_CHero_0057a272 (string) at -8
-      0x0057a26a  DAT_0057a26a  undefined4 [float]
-      0x0057a26e  DAT_0057a26e  undefined4 [float]
-      0x0057a2fa  DAT_0057a2fa  undefined4 [double]
-      0x0057a302  DAT_0057a302  undefined4 [double]
-      0x0057a30a  DAT_0057a30a  undefined4 [double]
-      0x0057a312  DAT_0057a312  undefined4 [float]
-      ... +13 more
 
   0x0059711d - 0x005974a3  (18 items, 902 bytes span)
     Classification: struct
@@ -4958,34 +3879,6 @@ LOW CONFIDENCE (251 clusters)
       0x00594a52  DAT_00594a52  undefined1 [byte]
       ... +11 more
 
-  0x00579f4a - 0x0057a142  (16 items, 504 bytes span)
-    Classification: struct
-    Likely type: struct (504 bytes span, 16 fields)
-    Reason: mixed strides, shared by 10 functions
-    Referenced by: 10 functions
-     near: s_headlite.raw_00579f69+1 (undefined4) at -32
-      0x00579f4a  DAT_00579f4a  undefined4 [double]
-      0x00579f52  DAT_00579f52  undefined4 [double]
-      0x00579f5a  DAT_00579f5a  undefined4 [double]
-      0x00579f62  DAT_00579f62  undefined4 [double]
-      0x00579f7a  DAT_00579f7a  undefined4 [double]
-      0x00579f82  DAT_00579f82  undefined4 [double]
-      ... +10 more
-
-  0x0057b78b - 0x0057b9eb  (16 items, 608 bytes span)
-    Classification: struct
-    Likely type: struct (608 bytes span, 16 fields)
-    Reason: mixed strides, shared by 7 functions
-    Referenced by: 7 functions
-     near: s_movscrn.raw_0057b79a+1 (undefined4) at -16
-      0x0057b78b  DAT_0057b78b  undefined4 [double]
-      0x0057b793  DAT_0057b793  undefined4
-      0x0057b803  DAT_0057b803  undefined4 [double]
-      0x0057b80b  DAT_0057b80b  undefined4 [double]
-      0x0057b813  DAT_0057b813  undefined4 [double]
-      0x0057b856  DAT_0057b856  undefined1 [byte]
-      ... +10 more
-
   0x01cc7d10 - 0x01cc8013  (16 items, 771 bytes span)
     Classification: struct_array
     Likely type: struct_256bytes[4]
@@ -4998,48 +3891,6 @@ LOW CONFIDENCE (251 clusters)
       0x01cc7e10  DAT_01cc7e10  undefined4 [byte]
       0x01cc7e11  DAT_01cc7e11  undefined4 [byte]
       ... +10 more
-
-  0x0057dde9 - 0x0057dfc6  (14 items, 477 bytes span)
-    Classification: struct
-    Likely type: struct (477 bytes span, 14 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: s_k-x.wav_0057ddec (string) at -3
-      0x0057dde9  DAT_0057dde9  undefined1 [byte]
-      0x0057ddea  DAT_0057ddea  undefined1 [byte]
-      0x0057ddeb  DAT_0057ddeb  undefined1
-      0x0057de80  DAT_0057de80  undefined4 [float]
-      0x0057df24  DAT_0057df24  undefined4 [double]
-      0x0057df86  DAT_0057df86  undefined4 [double]
-      ... +8 more
-
-  0x005982c6 - 0x005983f5  (14 items, 303 bytes span)
-    Classification: struct
-    Likely type: struct (303 bytes span, 14 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_..\core\xform.cpp_005982fa (string) at -52
-      0x005982c6  DAT_005982c6  undefined4 [double]
-      0x005982ce  DAT_005982ce  undefined4 [double]
-      0x005982d6  DAT_005982d6  undefined4 [float]
-      0x005982de  DAT_005982de  undefined4 [double]
-      0x005982e6  DAT_005982e6  undefined4 [double]
-      0x005982ee  DAT_005982ee  undefined4 [double]
-      ... +8 more
-
-  0x0057c7fe - 0x0057c94e  (13 items, 336 bytes span)
-    Classification: struct
-    Likely type: struct (336 bytes span, 13 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_..\core\dlight.cpp_0057c825+1 (undefined4) at -40
-      0x0057c7fe  DAT_0057c7fe  undefined4 [float]
-      0x0057c806  DAT_0057c806  undefined4 [double]
-      0x0057c80e  DAT_0057c80e  undefined4 [float]
-      0x0057c816  DAT_0057c816  undefined4 [double]
-      0x0057c81e  DAT_0057c81e  undefined4 [double]
-      0x0057c916  DAT_0057c916  undefined4 [double]
-      ... +7 more
 
   0x0058cf14 - 0x0058d088  (13 items, 372 bytes span)
     Classification: struct
@@ -5054,20 +3905,6 @@ LOW CONFIDENCE (251 clusters)
       0x0058cf83  DAT_0058cf83  undefined1 [byte]
       0x0058cf84  DAT_0058cf84  undefined1 [byte]
       ... +7 more
-
-  0x00579b6d - 0x00579c55  (12 items, 232 bytes span)
-    Classification: struct
-    Likely type: struct (232 bytes span, 12 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: s_speed_00579b83+2 (undefined4) at -24
-      0x00579b6d  DAT_00579b6d  undefined4 [double]
-      0x00579b75  DAT_00579b75  undefined4 [double]
-      0x00579b7d  DAT_00579b7d  undefined4 [double]
-      0x00579bcd  DAT_00579bcd  undefined4 [double]
-      0x00579c37  DAT_00579c37  undefined1 [byte]
-      0x00579c38  DAT_00579c38  undefined1 [byte]
-      ... +6 more
 
   0x005be060 - 0x005be220  (12 items, 448 bytes span)
     Classification: struct
@@ -5125,20 +3962,6 @@ LOW CONFIDENCE (251 clusters)
       0x0059055a  DAT_0059055a  undefined4 [double]
       ... +5 more
 
-  0x0059875e - 0x00598996  (11 items, 568 bytes span)
-    Classification: struct
-    Likely type: struct (568 bytes span, 11 fields)
-    Reason: mixed strides, shared by 6 functions
-    Referenced by: 6 functions
-     near: s_%s_can't_pick_up_%s,_sombody_els_0059878d+1 (undefined4) at -48
-      0x0059875e  DAT_0059875e  undefined4 [double]
-      0x00598766  DAT_00598766  undefined4 [float]
-      0x0059876e  DAT_0059876e  undefined4 [double]
-      0x00598776  DAT_00598776  undefined4 [double]
-      0x00598782  DAT_00598782  undefined4 [float]
-      0x00598786  DAT_00598786  undefined4 [double]
-      ... +5 more
-
   0x005a4a76 - 0x005a4b83  (11 items, 269 bytes span)
     Classification: struct
     Likely type: struct (269 bytes span, 11 fields)
@@ -5152,20 +3975,6 @@ LOW CONFIDENCE (251 clusters)
       0x005a4a92  DAT_005a4a92  undefined4 [short]
       0x005a4b78  DAT_005a4b78  undefined4 [double]
       ... +5 more
-
-  0x0058459b - 0x0058466a  (10 items, 207 bytes span)
-    Classification: struct
-    Likely type: struct (207 bytes span, 10 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_%2d:%2d:%2d.%2d_0058459e (string) at -3
-      0x0058459b  DAT_0058459b  undefined1 [byte]
-      0x0058459c  DAT_0058459c  undefined1 [byte]
-      0x0058459d  DAT_0058459d  undefined1
-      0x005845e2  DAT_005845e2  undefined4 [double]
-      0x005845ea  DAT_005845ea  undefined4 [double]
-      0x00584618  DAT_00584618  undefined1 [byte]
-      ... +4 more
 
   0x0058a2f1 - 0x0058a4c9  (10 items, 472 bytes span)
     Classification: struct
@@ -5195,20 +4004,6 @@ LOW CONFIDENCE (251 clusters)
       0x0058b38d  DAT_0058b38d  undefined4 [float]
       ... +4 more
 
-  0x00597e0d - 0x00597f41  (10 items, 308 bytes span)
-    Classification: struct
-    Likely type: struct (308 bytes span, 10 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: s_were?.wav_00597e29 (string) at -28
-      0x00597e0d  DAT_00597e0d  undefined4 [float]
-      0x00597e11  DAT_00597e11  undefined4 [double]
-      0x00597e19  DAT_00597e19  undefined4 [double]
-      0x00597e21  DAT_00597e21  undefined4 [double]
-      0x00597ee9  DAT_00597ee9  undefined4 [double]
-      0x00597f09  DAT_00597f09  undefined4 [double]
-      ... +4 more
-
   0x0059bff0 - 0x0059c0e4  (10 items, 244 bytes span)
     Classification: struct
     Likely type: struct (244 bytes span, 10 fields)
@@ -5226,8 +4021,8 @@ LOW CONFIDENCE (251 clusters)
   0x005ae638 - 0x005ae70c  (10 items, 212 bytes span)
     Classification: struct
     Likely type: struct (212 bytes span, 10 fields)
-    Reason: mixed strides, shared by 213 functions
-    Referenced by: 213 functions
+    Reason: mixed strides, shared by 215 functions
+    Referenced by: 215 functions
       0x005ae638  DAT_005ae638  undefined4
       0x005ae678  DAT_005ae678  undefined4
       0x005ae690  DAT_005ae690  undefined4
@@ -5369,34 +4164,6 @@ LOW CONFIDENCE (251 clusters)
       0x02de4e30  DAT_02de4e30  undefined4 [byte]
       ... +3 more
 
-  0x0057c50e - 0x0057c586  (8 items, 120 bytes span)
-    Classification: struct
-    Likely type: struct (120 bytes span, 8 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_..\core\dlight.cpp_0057c53e (string) at -48
-      0x0057c50e  DAT_0057c50e  undefined4 [double]
-      0x0057c516  DAT_0057c516  undefined4 [double]
-      0x0057c51e  DAT_0057c51e  undefined4 [double]
-      0x0057c526  DAT_0057c526  undefined4 [double]
-      0x0057c52e  DAT_0057c52e  undefined4 [double]
-      0x0057c536  DAT_0057c536  undefined4 [float]
-      ... +2 more
-
-  0x0057cfbe - 0x0057d1c3  (8 items, 517 bytes span)
-    Classification: struct
-    Likely type: struct (517 bytes span, 8 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_speed_0057cfcc+2 (undefined4) at -16
-      0x0057cfbe  DAT_0057cfbe  undefined4 [double]
-      0x0057cfc6  DAT_0057cfc6  undefined4 [double]
-      0x0057d0ba  DAT_0057d0ba  undefined4 [double]
-      0x0057d0c2  DAT_0057d0c2  undefined4 [double]
-      0x0057d1c0  DAT_0057d1c0  undefined1 [byte]
-      0x0057d1c1  DAT_0057d1c1  undefined1 [byte]
-      ... +2 more
-
   0x00587744 - 0x0058793d  (8 items, 505 bytes span)
     Classification: struct
     Likely type: struct (505 bytes span, 8 fields)
@@ -5505,34 +4272,6 @@ LOW CONFIDENCE (251 clusters)
       0x01c7cd44  DAT_01c7cd44  undefined4 [float]
       ... +2 more
 
-  0x00579d5d - 0x00579d89  (7 items, 44 bytes span)
-    Classification: struct
-    Likely type: struct (44 bytes span, 7 fields)
-    Reason: mixed strides, shared by 4 functions
-    Referenced by: 4 functions
-     near: s_%s_swarming_on_%s_at_LOD_%d_00579d8c+1 (undefined4) at -48
-      0x00579d5d  DAT_00579d5d  undefined4 [double]
-      0x00579d65  DAT_00579d65  undefined4 [double]
-      0x00579d6d  DAT_00579d6d  undefined4 [float]
-      0x00579d75  DAT_00579d75  undefined4 [double]
-      0x00579d7d  DAT_00579d7d  undefined4 [double]
-      0x00579d85  DAT_00579d85  undefined4 [float]
-      ... +1 more
-
-  0x0057e3c6 - 0x0057e4f6  (7 items, 304 bytes span)
-    Classification: struct
-    Likely type: struct (304 bytes span, 7 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: s_..\core\dtrace.cpp_0057e3dd+1 (undefined4) at -24
-      0x0057e3c6  DAT_0057e3c6  undefined4 [double]
-      0x0057e3ce  DAT_0057e3ce  undefined4 [double]
-      0x0057e3d6  DAT_0057e3d6  undefined4 [double]
-      0x0057e476  DAT_0057e476  undefined4 [double]
-      0x0057e47e  DAT_0057e47e  undefined4 [double]
-      0x0057e486  DAT_0057e486  undefined4 [double]
-      ... +1 more
-
   0x00587a5d - 0x00587add  (7 items, 128 bytes span)
     Classification: struct
     Likely type: struct (128 bytes span, 7 fields)
@@ -5640,45 +4379,6 @@ LOW CONFIDENCE (251 clusters)
       0x02de54a4  DAT_02de54a4  undefined4
       ... +1 more
 
-  0x005790c2 - 0x0057917e  (6 items, 188 bytes span)
-    Classification: struct
-    Likely type: struct (188 bytes span, 6 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_CHAR2.RAW_005790dd+1 (undefined4) at -28
-      0x005790c2  DAT_005790c2  undefined4 [float]
-      0x005790ca  DAT_005790ca  undefined4 [double]
-      0x005790d2  DAT_005790d2  undefined4 [double]
-      0x005790da  DAT_005790da  undefined4 [float]
-      0x00579176  DAT_00579176  undefined4 [double]
-      0x0057917e  DAT_0057917e  undefined4 [double]
-
-  0x0057be09 - 0x0057be17  (6 items, 14 bytes span)
-    Classification: struct
-    Likely type: struct (14 bytes span, 6 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_whoGoesHere_0057be1e+1 (undefined4) at -22
-      0x0057be09  DAT_0057be09  undefined1 [byte]
-      0x0057be0a  DAT_0057be0a  undefined1 [byte]
-      0x0057be0b  DAT_0057be0b  undefined1
-      0x0057be0c  DAT_0057be0c  undefined1
-      0x0057be0f  DAT_0057be0f  undefined4 [double]
-      0x0057be17  DAT_0057be17  undefined4 [double]
-
-  0x0058617a - 0x0058623a  (6 items, 192 bytes span)
-    Classification: struct
-    Likely type: struct (192 bytes span, 6 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_shoot_0058618a (string) at -16
-      0x0058617a  DAT_0058617a  undefined4 [float]
-      0x00586182  DAT_00586182  undefined4 [double]
-      0x005861b2  DAT_005861b2  undefined4 [double]
-      0x0058622a  DAT_0058622a  undefined4 [double]
-      0x00586232  DAT_00586232  undefined4 [double]
-      0x0058623a  DAT_0058623a  undefined4 [double]
-
   0x005938e6 - 0x00593b7e  (6 items, 664 bytes span)
     Classification: struct
     Likely type: struct (664 bytes span, 6 fields)
@@ -5704,19 +4404,6 @@ LOW CONFIDENCE (251 clusters)
       0x005969af  DAT_005969af  undefined4 [double]
       0x005969b7  DAT_005969b7  undefined4 [double]
       0x005969bf  DAT_005969bf  undefined4 [double]
-
-  0x00597c11 - 0x00597cc5  (6 items, 180 bytes span)
-    Classification: struct
-    Likely type: struct (180 bytes span, 6 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: s_noLightningFlash_00597c18+1 (undefined4) at -8
-      0x00597c11  DAT_00597c11  undefined4 [float]
-      0x00597c15  DAT_00597c15  undefined4 [float]
-      0x00597c61  DAT_00597c61  undefined4 [double]
-      0x00597c69  DAT_00597c69  undefined4 [float]
-      0x00597c99  DAT_00597c99  undefined4 [float]
-      0x00597cc5  DAT_00597cc5  undefined4 [float]
 
   0x0059ae90 - 0x0059aeb4  (6 items, 36 bytes span)
     Classification: struct
@@ -5868,90 +4555,6 @@ LOW CONFIDENCE (251 clusters)
       0x02de5c14  DAT_02de5c14  undefined4
       0x02de5c18  DAT_02de5c18  undefined4
       0x02de5c30  DAT_02de5c30  undefined4
-
-  0x00578015 - 0x00578091  (5 items, 124 bytes span)
-    Classification: struct
-    Likely type: struct (124 bytes span, 5 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_footstep-%s-!-%s-?.wav_@_%f_00578021 (string) at -12
-      0x00578015  DAT_00578015  undefined4 [float]
-      0x00578019  DAT_00578019  undefined4 [double]
-      0x00578081  DAT_00578081  undefined4 [double]
-      0x00578089  DAT_00578089  undefined4 [double]
-      0x00578091  DAT_00578091  undefined4 [double]
-
-  0x00578c9f - 0x00578eaa  (5 items, 523 bytes span)
-    Classification: struct
-    Likely type: struct (523 bytes span, 5 fields)
-    Reason: mixed strides, shared by 4 functions
-    Referenced by: 4 functions
-     near: s_speed_00578ca6+1 (undefined4) at -8
-      0x00578c9f  DAT_00578c9f  undefined4 [double]
-      0x00578d27  DAT_00578d27  undefined4 [double]
-      0x00578e1e  DAT_00578e1e  undefined4 [double]
-      0x00578e26  DAT_00578e26  undefined4 [double]
-      0x00578eaa  DAT_00578eaa  undefined4 [float]
-
-  0x00579366 - 0x0057943e  (5 items, 216 bytes span)
-    Classification: struct
-    Likely type: struct (216 bytes span, 5 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_%s_can't_pick_up_%s,_sombody_els_0057937d+1 (undefined4) at -24
-      0x00579366  DAT_00579366  undefined4 [double]
-      0x0057936e  DAT_0057936e  undefined4 [float]
-      0x00579376  DAT_00579376  undefined4 [double]
-      0x00579436  DAT_00579436  undefined4 [double]
-      0x0057943e  DAT_0057943e  undefined4 [double]
-
-  0x00579809 - 0x0057981d  (5 items, 20 bytes span)
-    Classification: struct
-    Likely type: struct (20 bytes span, 5 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_question.kfm_005797f8+1 (undefined4) at +16
-      0x00579809  DAT_00579809  undefined4 [float]
-      0x0057980d  DAT_0057980d  undefined4 [float]
-      0x00579811  DAT_00579811  undefined4 [float]
-      0x00579815  DAT_00579815  undefined4 [double]
-      0x0057981d  DAT_0057981d  undefined4 [float]
-
-  0x0057bafb - 0x0057bbb3  (5 items, 184 bytes span)
-    Classification: struct
-    Likely type: struct (184 bytes span, 5 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_%d,%d,%d_0057bb13 (string) at -24
-      0x0057bafb  DAT_0057bafb  undefined4 [double]
-      0x0057bb03  DAT_0057bb03  undefined4 [double]
-      0x0057bb0b  DAT_0057bb0b  undefined4 [double]
-      0x0057bb6b  DAT_0057bb6b  undefined4 [double]
-      0x0057bbb3  DAT_0057bbb3  undefined4 [double]
-
-  0x0057e1e6 - 0x0057e25e  (5 items, 120 bytes span)
-    Classification: struct
-    Likely type: struct (120 bytes span, 5 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: s_..\core\dtrace.cpp_0057e1fd+1 (undefined4) at -24
-      0x0057e1e6  DAT_0057e1e6  undefined4 [float]
-      0x0057e1ea  DAT_0057e1ea  undefined4 [float]
-      0x0057e1ee  DAT_0057e1ee  undefined4 [float]
-      0x0057e256  DAT_0057e256  undefined4 [float]
-      0x0057e25e  DAT_0057e25e  undefined4 [double]
-
-  0x00581d40 - 0x00581d54  (5 items, 20 bytes span)
-    Classification: struct
-    Likely type: struct (20 bytes span, 5 fields)
-    Reason: mixed strides, shared by 1 functions
-    Referenced by: 1 functions
-     near: s_..\core\frankgen.cpp_00581d58 (string) at -24
-      0x00581d40  DAT_00581d40  undefined4 [double]
-      0x00581d48  DAT_00581d48  undefined4 [float]
-      0x00581d4c  DAT_00581d4c  undefined4 [float]
-      0x00581d50  DAT_00581d50  undefined4 [float]
-      0x00581d54  DAT_00581d54  undefined4 [float]
 
   0x0058a94e - 0x0058a966  (5 items, 24 bytes span)
     Classification: struct
@@ -6247,39 +4850,6 @@ LOW CONFIDENCE (251 clusters)
       0x02dc2174  DAT_02dc2174  undefined4
       0x02dc217c  DAT_02dc217c  undefined4
 
-  0x00578660 - 0x00578690  (4 items, 48 bytes span)
-    Classification: struct
-    Likely type: struct (48 bytes span, 4 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_baron-attack.wav_0057866e+2 (undefined4) at -16
-      0x00578660  DAT_00578660  undefined4 [double]
-      0x00578668  DAT_00578668  undefined4 [double]
-      0x00578688  DAT_00578688  undefined4 [double]
-      0x00578690  DAT_00578690  undefined4 [double]
-
-  0x00578a2f - 0x00578aa5  (4 items, 118 bytes span)
-    Classification: struct
-    Likely type: struct (118 bytes span, 4 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-     near: s_speed_00578a35+2 (undefined4) at -8
-      0x00578a2f  DAT_00578a2f  undefined4 [double]
-      0x00578aa3  DAT_00578aa3  undefined1 [byte]
-      0x00578aa4  DAT_00578aa4  undefined1
-      0x00578aa5  DAT_00578aa5  undefined1
-
-  0x0057d746 - 0x0057d82e  (4 items, 232 bytes span)
-    Classification: struct
-    Likely type: struct (232 bytes span, 4 fields)
-    Reason: mixed strides, shared by 4 functions
-    Referenced by: 4 functions
-     near: s_speed_0057d75d+1 (undefined4) at -24
-      0x0057d746  DAT_0057d746  undefined4 [double]
-      0x0057d74e  DAT_0057d74e  undefined4 [float]
-      0x0057d756  DAT_0057d756  undefined4 [double]
-      0x0057d82e  DAT_0057d82e  undefined4 [double]
-
   0x00588193 - 0x005881e3  (4 items, 80 bytes span)
     Classification: struct
     Likely type: struct (80 bytes span, 4 fields)
@@ -6481,26 +5051,6 @@ LOW CONFIDENCE (251 clusters)
       0x02db111c  DAT_02db111c  undefined4
       0x02db111d  DAT_02db111d  undefined4
 
-  0x0057eaaa - 0x0057eb0a  (3 items, 96 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=96 bytes
-    Referenced by: 2 functions
-     near: s_Blocks:_%d_Total:_%.1fk_Max:_%.1_0057eab5+1 (undefined4) at -12
-      0x0057eaaa  DAT_0057eaaa  undefined4 [float]
-      0x0057eaae  DAT_0057eaae  undefined4 [float]
-      0x0057eb0a  DAT_0057eb0a  undefined4 [double]
-
-  0x0058646d - 0x005864b5  (3 items, 72 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=72 bytes
-    Referenced by: 2 functions
-     near: s_speed_0058647c+1 (undefined4) at -16
-      0x0058646d  DAT_0058646d  undefined4 [double]
-      0x00586475  DAT_00586475  undefined4 [double]
-      0x005864b5  DAT_005864b5  undefined4 [double]
-
   0x0058ad24 - 0x0058ad74  (3 items, 80 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -6521,6 +5071,16 @@ LOW CONFIDENCE (251 clusters)
       0x00591bcb  DAT_00591bcb  undefined4 [double]
       0x00591c87  DAT_00591c87  undefined4 [float]
 
+  0x00597c11 - 0x00597c61  (3 items, 80 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=80 bytes
+    Referenced by: 3 functions
+     near: s_noLightningFlash_00597c18+1 (undefined4) at -8
+      0x00597c11  DAT_00597c11  undefined4 [float]
+      0x00597c15  DAT_00597c15  undefined4 [float]
+      0x00597c61  DAT_00597c61  undefined4 [double]
+
   0x0059a598 - 0x0059a5a0  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -6540,16 +5100,6 @@ LOW CONFIDENCE (251 clusters)
       0x0059ad0c  DAT_0059ad0c  undefined4
       0x0059ad10  DAT_0059ad10  undefined4 [float]
       0x0059ad14  DAT_0059ad14  undefined4 [float]
-
-  0x0059b888 - 0x0059b890  (3 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=8 bytes
-    Referenced by: 2 functions
-     near: PTR_core_cow.cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4 (undefined1*) at -28
-      0x0059b888  DAT_0059b888  undefined4
-      0x0059b88c  DAT_0059b88c  undefined4 [float]
-      0x0059b890  DAT_0059b890  undefined4 [float]
 
   0x0059c6f8 - 0x0059c700  (3 items, 8 bytes span)
     Classification: unknown
@@ -6918,69 +5468,6 @@ LOW CONFIDENCE (251 clusters)
       0x02de4980  DAT_02de4980  undefined4
       0x02de49c8  DAT_02de49c8  undefined4
 
-  0x0057714c - 0x0057723c  (2 items, 240 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=240 bytes
-    Referenced by: 2 functions
-     near: s_..\engine\2d.c_0057715b (string) at -15
-      0x0057714c  DAT_0057714c  undefined4 [double]
-      0x0057723c  DAT_0057723c  undefined4 [double]
-
-  0x005777a9 - 0x005777b1  (2 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=8 bytes
-    Referenced by: 1 functions
-     near: s_CHero_005777b8+1 (undefined4) at -16
-      0x005777a9  DAT_005777a9  undefined4 [double]
-      0x005777b1  DAT_005777b1  undefined4 [double]
-
-  0x0057cce6 - 0x0057ccee  (2 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=8 bytes
-    Referenced by: 2 functions
-     near: s_..\core\dmodel.cpp_0057ccf4+2 (undefined4) at -16
-      0x0057cce6  DAT_0057cce6  undefined4 [double]
-      0x0057ccee  DAT_0057ccee  undefined4 [double]
-
-  0x0057d48e - 0x0057d496  (2 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=8 bytes
-    Referenced by: 2 functions
-     near: s_nbride2.dfm_0057d4ac (string) at -30
-      0x0057d48e  DAT_0057d48e  undefined4 [double]
-      0x0057d496  DAT_0057d496  undefined4 [double]
-
-  0x0057e8d2 - 0x0057e8da  (2 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=8 bytes
-    Referenced by: 1 functions
-     near: s_..\shape\edittool.cpp_0057e8e1+1 (undefined4) at -16
-      0x0057e8d2  DAT_0057e8d2  undefined4 [double]
-      0x0057e8da  DAT_0057e8da  undefined4 [double]
-
-  0x0058275a - 0x00582762  (2 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=8 bytes
-    Referenced by: 1 functions
-     near: s_..\core\game.cpp_00582768+2 (undefined4) at -16
-      0x0058275a  DAT_0058275a  undefined4 [double]
-      0x00582762  DAT_00582762  undefined4 [double]
-
-  0x00584a08 - 0x00584a68  (2 items, 96 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=96 bytes
-    Referenced by: 2 functions
-     near: s_speed_00584a0e+2 (undefined4) at -8
-      0x00584a08  DAT_00584a08  undefined4 [double]
-      0x00584a68  DAT_00584a68  undefined4 [double]
-
   0x005871ed - 0x005871f1  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -7152,6 +5639,15 @@ LOW CONFIDENCE (251 clusters)
       0x00596d15  DAT_00596d15  undefined4 [double]
       0x00596d9d  DAT_00596d9d  undefined4 [double]
 
+  0x005997a8 - 0x005997ac  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: PTR_FUN_005997b4 (undefined1*) at -12
+      0x005997a8  DAT_005997a8  undefined4 [float]
+      0x005997ac  DAT_005997ac  undefined4 [float]
+
   0x0059a408 - 0x0059a40c  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -7169,6 +5665,15 @@ LOW CONFIDENCE (251 clusters)
      near: PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_0059aad4 (undefined1*) at -84
       0x0059aa80  DAT_0059aa80  undefined4 [float]
       0x0059aa88  DAT_0059aa88  undefined4 [float]
+
+  0x0059b360 - 0x0059b368  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 3 functions
+     near: FLOAT_0059b378 (float) at -24
+      0x0059b360  DAT_0059b360  undefined4 [float]
+      0x0059b368  DAT_0059b368  undefined4 [float]
 
   0x0059c8a0 - 0x0059c91c  (2 items, 124 bytes span)
     Classification: unknown
@@ -7499,7 +6004,7 @@ LOW CONFIDENCE (251 clusters)
       0x02ddd5d4  DAT_02ddd5d4  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (106 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (97 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_01bd4260                    addr=01bd4260    type=undefined4      refs=17
   DAT_02dc1b74                    addr=02dc1b74    type=undefined4      refs=15
@@ -7509,35 +6014,33 @@ ISOLATED DAT_ GLOBALS (106 - not part of any cluster)
   DAT_01fb96f0                    addr=01fb96f0    type=undefined4      refs=4
   DAT_005a47a0                    addr=005a47a0    type=undefined4      refs=4  near: PTR_crt_fstream.cpp_ifstream_dtor_FUN_00565264_005a47b8(-24)
   DAT_0059e390                    addr=0059e390    type=undefined4      refs=4 [likely float]  near: PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4(-36)
-  DAT_01fba480                    addr=01fba480    type=undefined4      refs=4
-  DAT_005a18f0                    addr=005a18f0    type=undefined4      refs=4 [likely float]
   DAT_01cc56dc                    addr=01cc56dc    type=undefined4      refs=4
   DAT_012e18b8                    addr=012e18b8    type=undefined4      refs=4 [likely byte]
   DAT_0059cf1c                    addr=0059cf1c    type=undefined4      refs=4  near: PTR_core_filmreel.cpp_CFilmReel_setup_FUN_00481ca0_0059cf84(-104)
   DAT_01c5c700                    addr=01c5c700    type=undefined4      refs=4
+  DAT_01fba480                    addr=01fba480    type=undefined4      refs=4
+  DAT_005a18f0                    addr=005a18f0    type=undefined4      refs=4 [likely float]
   DAT_02dc1ed8                    addr=02dc1ed8    type=undefined4      refs=4
   DAT_01216608                    addr=01216608    type=undefined4      refs=3
   DAT_02737ef4                    addr=02737ef4    type=undefined4      refs=3
   DAT_012b022c                    addr=012b022c    type=undefined4      refs=3
   DAT_01c6750c                    addr=01c6750c    type=undefined4      refs=3
   DAT_01cb03d0                    addr=01cb03d0    type=undefined4      refs=3
-  DAT_005acbc4                    addr=005acbc4    type=undefined4      refs=2  near: s_3D_vector_005acc10(-76)
-  DAT_01abb658                    addr=01abb658    type=undefined4      refs=2
   DAT_01c23fa8                    addr=01c23fa8    type=undefined4      refs=2
   DAT_01c24208                    addr=01c24208    type=undefined4      refs=2
   DAT_005a0ab8                    addr=005a0ab8    type=undefined4      refs=2 [likely float]  near: PTR_core_moloch.cpp_CMoloch_setup_FUN_004dda70_005a0ac4(-12)
   DAT_01fabd00                    addr=01fabd00    type=undefined4      refs=2
+  DAT_01abb658                    addr=01abb658    type=undefined4      refs=2
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_01c625f4                    addr=01c625f4    type=undefined4      refs=2
   DAT_01c676c8                    addr=01c676c8    type=undefined4      refs=2
   DAT_01cce2bc                    addr=01cce2bc    type=undefined4      refs=2
   DAT_02dd5238                    addr=02dd5238    type=undefined4      refs=2
+  DAT_005acbc4                    addr=005acbc4    type=undefined4      refs=2  near: s_3D_vector_005acc10(-76)
   DAT_01cc53d0                    addr=01cc53d0    type=undefined4      refs=2
   DAT_01cd944c                    addr=01cd944c    type=undefined4      refs=2
   DAT_005bfe70                    addr=005bfe70    type=undefined8      refs=2 [likely short]
   DAT_005c0668                    addr=005c0668    type=undefined8      refs=2 [likely short]
-  DAT_005992b0                    addr=005992b0    type=undefined4      refs=1 [likely float]  near: PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4(-36)
-  DAT_0057995d                    addr=0057995d    type=undefined4      refs=1 [likely double]  near: s_CHero_00579964+1(-8)
   DAT_0059b220                    addr=0059b220    type=undefined4      refs=1 [likely float]  near: PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244(-36)
   DAT_0059bc70                    addr=0059bc70    type=undefined4      refs=1 [likely float]  near: PTR_FUN_0059bc94(-36)
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  near: PTR_core_enemy.cpp_CEnemy_setup_FUN_004796b0_0059cdb4(-12)
@@ -7545,715 +6048,19 @@ ISOLATED DAT_ GLOBALS (106 - not part of any cluster)
   DAT_0059d560                    addr=0059d560    type=undefined4      refs=1 [likely float]  near: PTR_core_flame.cpp_CFlame_setup_FUN_0048d050_0059d584(-36)
   DAT_0059da10                    addr=0059da10    type=undefined4      refs=1 [likely float]  near: PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34(-36)
   DAT_01c780b8                    addr=01c780b8    type=undefined4      refs=1
-  DAT_00582b4a                    addr=00582b4a    type=undefined4      refs=1 [likely double]  near: s_..\core\game.cpp_00582b51+1(-8)
   DAT_005a02b0                    addr=005a02b0    type=undefined4      refs=1 [likely float]  near: PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4(-36)
   DAT_0058d77d                    addr=0058d77d    type=undefined4      refs=1 [likely double]  near: s_modelName_0058d784+1(-8)
   DAT_005a1360                    addr=005a1360    type=undefined4      refs=1 [likely float]  near: PTR_FUN_005a1384(-36)
   DAT_0058d96d                    addr=0058d96d    type=undefined4      refs=1 [likely float]  near: s_..\core\platfrm.cpp_0058d971(-4)
   DAT_0058e24a                    addr=0058e24a    type=undefined4      refs=1 [likely float]  near: s_(No_script_loaded.)_0058e251(-7)
-  ... +56 more
+  DAT_02663604                    addr=02663604    type=undefined4      refs=1
+  DAT_01bd30e0                    addr=01bd30e0    type=undefined4      refs=1
+  DAT_00590d41                    addr=00590d41    type=undefined4      refs=1 [likely double]  near: s_%[^_]_00590d49(-8)
+  ... +47 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (1449)
+FILTERED OUT - INSIDE NAMED DATA (676)
 --------------------------------------------------------------------------------
-  DAT_00577125                    inside s_default.act_00577119
-  DAT_0057712c                    inside s_default.act_00577119
-  DAT_00577134                    inside s_default.act_00577119
-  DAT_0057713c                    inside s_default.act_00577119
-  DAT_00577144                    inside s_default.act_00577119
-  DAT_00577188                    inside s_Unable_to_open_VGA_palette_0057716a
-  DAT_0057718c                    inside s_Unable_to_open_VGA_palette_0057716a
-  DAT_005771f4                    inside s_Unable_to_write_fog_tab_005771d9
-  DAT_005771f8                    inside s_Unable_to_write_fog_tab_005771d9
-  DAT_005771fc                    inside s_Unable_to_write_fog_tab_005771d9
-  DAT_00577259                    inside s_hose!_00577253
-  DAT_0057725e                    inside s_hose!_00577253
-  DAT_00577261                    inside s_hose!_00577253
-  DAT_00577809                    inside s_%s_causing_%5.2f_damage_to_%s_005777e4
-  DAT_00577811                    inside s_%s_causing_%5.2f_damage_to_%s_005777e4
-  DAT_00577b75                    inside s_(unknown)_00577b6b
-  DAT_00577cd7                    inside s_%s{_//_%s_00577ccc
-  DAT_00577d70                    inside s_%s%d_00577d6a
-  DAT_00577d73                    inside s_%s%d_00577d6a
-  DAT_00577d77                    inside s_%s%d_00577d6a
-  DAT_00577d79                    inside s_%s%d_00577d6a
-  DAT_00577d7c                    inside s_%s%d_00577d6a
-  DAT_00577dd4                    inside s_%s{_//_%s_00577dc9
-  DAT_00577e6b                    inside s_%s"%s"_00577e63
-  DAT_00577f15                    inside s_orient_00577f0e
-  DAT_00578011                    inside s_Not_enough_memory_to_create_%s_00577ff0
-  DAT_0057803d                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578049                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_0057804d                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578051                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578059                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_0057805d                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578061                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578065                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578069                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578071                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_00578079                    inside s_footstep-%s-!-%s-?.wav_@_%f_00578021
-  DAT_0057814e                    inside s_%s.raw_00578147
-  DAT_00578196                    inside s_%s.act_0057818f
-  DAT_005781de                    inside s_%s.opa_005781d7
-  DAT_005781e1                    inside s_%s.opa_005781d7
-  DAT_005781f6                    inside s_bullet.kfm_005781eb
-  DAT_005781f7                    inside s_bullet.kfm_005781eb
-  DAT_005781f8                    inside s_bullet.kfm_005781eb
-  DAT_005781f9                    inside s_bullet.kfm_005781eb
-  DAT_00578516                    inside s_baron.dfm_0057850c
-  DAT_00578517                    inside s_baron.dfm_0057850c
-  DAT_00578518                    inside s_baron.dfm_0057850c
-  DAT_00578519                    inside s_baron.dfm_0057850c
-  DAT_00578658                    inside s_%s_confused_while_walking_to_scr_0057862e
-  DAT_005786c0                    inside s_summoned_005786b0
-  DAT_00578740                    inside s_CBaron_00578729
-  DAT_00578748                    inside s_CBaron_00578729
-  DAT_005787ff                    inside s_periodicSoundTimerMax_005787e5
-  DAT_00578807                    inside s_periodicSoundTimerMax_005787e5
-  DAT_0057880f                    inside s_periodicSoundTimerMax_005787e5
-  DAT_00578817                    inside s_periodicSoundTimerMax_005787e5
-  DAT_0057881f                    inside s_periodicSoundTimerMax_005787e5
-  DAT_00578a17                    inside s_batman-attack?.wav_005789ff
-  DAT_00578a1f                    inside s_batman-attack?.wav_005789ff
-  DAT_00578a27                    inside s_batman-attack?.wav_005789ff
-  DAT_00578a5f                    inside s_limb?.wav_00578a54
-  DAT_00578a87                    inside s_batman-hurt?.wav_00578a76
-  DAT_00578aa2                    inside s_batman.dfm_00578a97
-  DAT_00578c7f                    inside s_batman-attack?.wav_00578c6b
-  DAT_00578c87                    inside s_batman-attack?.wav_00578c6b
-  DAT_00578c8f                    inside s_batman-attack?.wav_00578c6b
-  DAT_00578c97                    inside s_batman-attack?.wav_00578c6b
-  DAT_00578d0f                    inside s_Shot_thru_the_heart_00578cf5
-  DAT_00578d17                    inside s_Shot_thru_the_heart_00578cf5
-  DAT_00578d1f                    inside s_Shot_thru_the_heart_00578cf5
-  DAT_00578d4f                    inside s_batman-hurt?.wav_00578d3e
-  DAT_0057908a                    inside s_disableBodyPartDamage_00579070
-  DAT_00579092                    inside s_disableBodyPartDamage_00579070
-  DAT_0057909a                    inside s_disableBodyPartDamage_00579070
-  DAT_005790a2                    inside s_disableBodyPartDamage_00579070
-  DAT_005790aa                    inside s_disableBodyPartDamage_00579070
-  DAT_005790b2                    inside s_disableBodyPartDamage_00579070
-  DAT_005790ba                    inside s_disableBodyPartDamage_00579070
-  DAT_0057911a                    inside s_Too_many_body_part_textures!_005790fd
-  DAT_00579336                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_0057933e                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_00579346                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_0057934e                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_00579356                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_0057935e                    inside s_boneGuy-walkloop.wav_0057931e
-  DAT_0057941e                    inside s_%s_is_going_to_try_to_pick_up_%s_005793f9
-  DAT_00579426                    inside s_%s_is_going_to_try_to_pick_up_%s_005793f9
-  DAT_0057942e                    inside s_%s_is_going_to_try_to_pick_up_%s_005793f9
-  DAT_0057972b                    inside s_%f,%f,%f_00579720
-  DAT_00579746                    inside s_%f,%f,%f_0057973b
-  DAT_005797bd                    inside s_%s%d_005797b1
-  DAT_005797c5                    inside s_%s%d_005797b1
-  DAT_005797c9                    inside s_%s%d_005797b1
-  DAT_005797cd                    inside s_%s%d_005797b1
-  DAT_0057983a                    inside s_weightInPounds_0057982b
-  DAT_005799e1                    inside s_lantern%d.raw_005799d1
-  DAT_005799e5                    inside s_lantern%d.raw_005799d1
-  DAT_00579b35                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b3d                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b45                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b4d                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b55                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b5d                    inside s_ub-attack?.wav_00579b22
-  DAT_00579b65                    inside s_ub-attack?.wav_00579b22
-  DAT_00579bb5                    inside s_limb?.wav_00579ba9
-  DAT_00579bbd                    inside s_limb?.wav_00579ba9
-  DAT_00579bc5                    inside s_limb?.wav_00579ba9
-  DAT_00579bf5                    inside s_ub-hurt?.wav_00579be1
-  DAT_00579c32                    inside s_guul.dfm_00579c29
-  DAT_00579c33                    inside s_guul.dfm_00579c29
-  DAT_00579c34                    inside s_guul.dfm_00579c29
-  DAT_00579c35                    inside s_guul.dfm_00579c29
-  DAT_00579d09                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d0d                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d15                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d1d                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d25                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d2d                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d35                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d3d                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d41                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d45                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d4d                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579d55                    inside s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
-  DAT_00579f0a                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f12                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f1a                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f22                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f2a                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f32                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f3a                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579f42                    inside s_CCharacter::walkToPoint_-_go_som_00579ed8
-  DAT_00579fda                    inside s_character-onfire-loop.wav_00579fb9
-  DAT_00579fe2                    inside s_character-onfire-loop.wav_00579fb9
-  DAT_00579fea                    inside s_character-onfire-loop.wav_00579fb9
-  DAT_00579ff2                    inside s_character-onfire-loop.wav_00579fb9
-  DAT_0057a026                    inside s_glass-1.wav@2.0_0057a014
-  DAT_0057a02a                    inside s_glass-1.wav@2.0_0057a014
-  DAT_0057a032                    inside s_glass-1.wav@2.0_0057a014
-  DAT_0057a03a                    inside s_glass-1.wav@2.0_0057a014
-  DAT_0057a042                    inside s_glass-1.wav@2.0_0057a014
-  DAT_0057a0ca                    inside s_%s_confused_after_pathmap_call_w_0057a093
-  DAT_0057a0d2                    inside s_%s_confused_after_pathmap_call_w_0057a093
-  DAT_0057a0da                    inside s_%s_confused_after_pathmap_call_w_0057a093
-  DAT_0057a2ca                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a2d2                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a2da                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a2e2                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a2ea                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a2f2                    inside s_CCharacter::findSomethingToLookA_0057a28d
-  DAT_0057a372                    inside s_STAND_0057a36b
-  DAT_0057a37a                    inside s_STAND_0057a36b
-  DAT_0057a48a                    inside s_Bip01_head_0057a47d
-  DAT_0057a50a                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057a512                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057a51a                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057a522                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057a52a                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057a532                    inside s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
-  DAT_0057ad7b                    inside s_%f,%f,%f,%f,%f,%f,%f,%f_0057ad62
-  DAT_0057ad7f                    inside s_%f,%f,%f,%f,%f,%f,%f,%f_0057ad62
-  DAT_0057ae1d                    inside s_Can't_orient_bone_with_no_childr_0057adf8
-  DAT_0057ae25                    inside s_Can't_orient_bone_with_no_childr_0057adf8
-  DAT_0057ae2d                    inside s_Can't_orient_bone_with_no_childr_0057adf8
-  DAT_0057ae35                    inside s_Can't_orient_bone_with_no_childr_0057adf8
-  DAT_0057b13c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b144                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b14c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b154                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b15c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b164                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b16c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b174                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b17c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b184                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b18c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b194                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b19c                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b1a4                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b1ac                    inside s_%s_confused_while_walking_to_scr_0057b10b
-  DAT_0057b21a                    inside s_actorClass_0057b208
-  DAT_0057b2c2                    inside s_%f,%f,%f,_%f,%f,%f,%f_0057b2aa
-  DAT_0057b3aa                    inside s_%s_gave_up_chase_-_I'm_confused_0057b382
-  DAT_0057b3fa                    inside s_limb?.wav_0057b3ed
-  DAT_0057b402                    inside s_limb?.wav_0057b3ed
-  DAT_0057b433                    inside s_question.kfm_0057b422
-  DAT_0057b496                    inside s_bow-!.wav_0057b485
-  DAT_0057b49e                    inside s_bow-!.wav_0057b485
-  DAT_0057b4a6                    inside s_bow-!.wav_0057b485
-  DAT_0057b4ae                    inside s_bow-!.wav_0057b485
-  DAT_0057b867                    inside s_backdrop_0057b85e
-  DAT_0057b8b4                    inside s_backdrop_0057b8ab
-  DAT_0057b961                    inside s_backdrop_0057b958
-  DAT_0057b964                    inside s_backdrop_0057b958
-  DAT_0057b973                    inside s_backdrop_0057b958
-  DAT_0057badb                    inside s_Error_writing_compressed_file_%s_0057bab5
-  DAT_0057bae3                    inside s_Error_writing_compressed_file_%s_0057bab5
-  DAT_0057baeb                    inside s_Error_writing_compressed_file_%s_0057bab5
-  DAT_0057baf3                    inside s_Error_writing_compressed_file_%s_0057bab5
-  DAT_0057bb2e                    inside s_%f,%f_0057bb27
-  DAT_0057bb8f                    inside s_Bad_clip!_0057bb85
-  DAT_0057bb93                    inside s_Bad_clip!_0057bb85
-  DAT_0057bb97                    inside s_Bad_clip!_0057bb85
-  DAT_0057bb9b                    inside s_Bad_clip!_0057bb85
-  DAT_0057bba3                    inside s_Bad_clip!_0057bb85
-  DAT_0057bbab                    inside s_Bad_clip!_0057bb85
-  DAT_0057bdeb                    inside s_CDemonCube::rotateVerticies_-_tr_0057bd92
-  DAT_0057c05d                    inside s_CDemonFilter::load_-_Bad_filenam_0057c038
-  DAT_0057c105                    inside s_movscrn.raw_0057c0f5
-  DAT_0057c371                    inside s_initFonts_-_Can't_allocate_gDebu_0057c349
-  DAT_0057c379                    inside s_initFonts_-_Can't_allocate_gDebu_0057c349
-  DAT_0057c381                    inside s_initFonts_-_Can't_allocate_gDebu_0057c349
-  DAT_0057c389                    inside s_initFonts_-_Can't_allocate_gDebu_0057c349
-  DAT_0057c7b6                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7be                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7c6                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7ce                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7d6                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7de                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7e6                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7ee                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c7f6                    inside s_CDemonLight::blitZBuffer_-_No_ma_0057c781
-  DAT_0057c866                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c86e                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c876                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c87a                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c87e                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8c6                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8ce                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8d6                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8de                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8e6                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8ee                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8f6                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c8fe                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c906                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057c90e                    inside s_CDemonLight::allocateFilter_-_Ou_0057c839
-  DAT_0057cad0                    inside s_%d,%d,%d,%d,%d_0057cac0
-  DAT_0057cad4                    inside s_%d,%d,%d,%d,%d_0057cac0
-  DAT_0057cfae                    inside s_%s_gave_up_chase_-_I'm_confused_0057cf8d
-  DAT_0057cfb6                    inside s_%s_gave_up_chase_-_I'm_confused_0057cf8d
-  DAT_0057d0aa                    inside s_CDoor::reposition_-_Unknown_type_0057d088
-  DAT_0057d0b2                    inside s_CDoor::reposition_-_Unknown_type_0057d088
-  DAT_0057d716                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d71e                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d726                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d72e                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d736                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d73e                    inside s_hotbride-swipe?.wav_0057d6fe
-  DAT_0057d866                    inside s_bride-hurt?.wav_0057d856
-  DAT_0057dc05                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc0d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc15                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc1d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc25                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc2d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc35                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc3d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc45                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc4d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc5d                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057dc65                    inside s_Can't_use_demonZFacetCount_in_sh_0057dbd4
-  DAT_0057de0b                    inside s_modelName_0057de01
-  DAT_0057de21                    inside s_homePos_0057de19
-  DAT_0057de6c                    inside s_noRockFlag_0057de60
-  DAT_0057de70                    inside s_noRockFlag_0057de60
-  DAT_0057de78                    inside s_noRockFlag_0057de60
-  DAT_0057df0c                    inside s_slime.wav_0057df00
-  DAT_0057df14                    inside s_slime.wav_0057df00
-  DAT_0057df1c                    inside s_slime.wav_0057df00
-  DAT_0057e1ca                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1ce                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1d2                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1d5                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1da                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1de                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e1e2                    inside s_CDemonRaytrace::loadBinary_-_err_0057e19a
-  DAT_0057e23e                    inside s_Too_many_drawn_cubes._Need_to_re_0057e211
-  DAT_0057e246                    inside s_Too_many_drawn_cubes._Need_to_re_0057e211
-  DAT_0057e24e                    inside s_Too_many_drawn_cubes._Need_to_re_0057e211
-  DAT_0057e3ae                    inside s_CDemonRenderer::savePVS_-_can't_f_0057e37b
-  DAT_0057e3b2                    inside s_CDemonRenderer::savePVS_-_can't_f_0057e37b
-  DAT_0057e3b6                    inside s_CDemonRenderer::savePVS_-_can't_f_0057e37b
-  DAT_0057e3be                    inside s_CDemonRenderer::savePVS_-_can't_f_0057e37b
-  DAT_0057e45e                    inside s_Parity_Check_999_0057e415
-  DAT_0057e462                    inside s_Parity_Check_999_0057e415
-  DAT_0057e466                    inside s_Parity_Check_999_0057e415
-  DAT_0057e46e                    inside s_Parity_Check_999_0057e415
-  DAT_0057e4ee                    inside s_fuse.wav_0057e4e2
-  DAT_0057e64b                    inside s_[N]o,_please,_I_didn't_mean_to_d_0057e625
-  DAT_0057e74f                    inside s_Filename:_0057e744
-  DAT_0057e750                    inside s_Filename:_0057e744
-  DAT_0057e751                    inside s_Filename:_0057e744
-  DAT_0057e8c2                    inside s_%d:%02d_elapsed,_approximately_%_0057e88e
-  DAT_0057e8ca                    inside s_%d:%02d_elapsed,_approximately_%_0057e88e
-  DAT_0057ea91                    inside s_CEditorTools::setMousePointerTyp_0057ea5f
-  DAT_0057ea92                    inside s_CEditorTools::setMousePointerTyp_0057ea5f
-  DAT_0057ea93                    inside s_CEditorTools::setMousePointerTyp_0057ea5f
-  DAT_0057ee22                    inside s_%s\%s_0057ee19
-  DAT_0057f13c                    inside s_elephantgun.wav_0057f12c
-  DAT_0057f144                    inside s_elephantgun.wav_0057f12c
-  DAT_0057f14c                    inside s_elephantgun.wav_0057f12c
-  DAT_0057f154                    inside s_elephantgun.wav_0057f12c
-  DAT_0057f17c                    inside s_sh-cock.wav_0057f16e
-  DAT_0057f184                    inside s_sh-cock.wav_0057f16e
-  DAT_0057f1ac                    inside s_stalrock.kfm_0057f19f
-  DAT_0057f1b4                    inside s_stalrock.kfm_0057f19f
-  DAT_0057f1bc                    inside s_stalrock.kfm_0057f19f
-  DAT_0057f333                    inside s_victim_0057f32c
-  DAT_0057f337                    inside s_victim_0057f32c
-  DAT_0057f33f                    inside s_victim_0057f32c
-  DAT_0057f347                    inside s_victim_0057f32c
-  DAT_0057f34f                    inside s_victim_0057f32c
-  DAT_0057f357                    inside s_victim_0057f32c
-  DAT_0057f3b3                    inside s_Event_command_parse_error:_0057f397
-  DAT_0057f3b5                    inside s_Event_command_parse_error:_0057f397
-  DAT_0057f3b8                    inside s_Event_command_parse_error:_0057f397
-  DAT_0057f502                    inside s_drown_0057f4fc
-  DAT_0057f548                    inside s_Impale_0057f541
-  DAT_0057f55c                    inside s_bullet_0057f555
-  DAT_0057f56d                    inside s_Stake_0057f567
-  DAT_0057f57d                    inside s_electrocute_0057f571
-  DAT_0057ffbc                    inside s_Error_parsing_setWeather_command_0057ff95
-  DAT_00580217                    inside s_Extra_characters_found_005801fb
-  DAT_0058021f                    inside s_Extra_characters_found_005801fb
-  DAT_00580d45                    inside s_%[^_]_00580d3e
-  DAT_00580d50                    inside s_%[^_]_00580d49
-  DAT_00580d5b                    inside s_%[^_]_00580d54
-  DAT_00580ed3                    inside s_//_gameFlagCount,_list_00580ebb
-  DAT_00580ed7                    inside s_//_gameFlagCount,_list_00580ebb
-  DAT_00580f99                    inside s_filmreel.kfm_00580f8c
-  DAT_00580f9a                    inside s_filmreel.kfm_00580f8c
-  DAT_00580f9b                    inside s_filmreel.kfm_00580f8c
-  DAT_00580f9c                    inside s_filmreel.kfm_00580f8c
-  DAT_0058104b                    inside s_35-end.wav_0058103e
-  DAT_00581064                    inside s_keyEvent_0058105b
-  DAT_0058106c                    inside s_keyEvent_0058105b
-  DAT_005810c8                    inside s_stake.kfm_005810bc
-  DAT_005810cc                    inside s_stake.kfm_005810bc
-  DAT_005810d4                    inside s_stake.kfm_005810bc
-  DAT_0058110c                    inside s_grnball.kfm_005810fa
-  DAT_00581134                    inside s_rock-x.wav_00581127
-  DAT_00581210                    inside s_debris05.kfm_00581200
-  DAT_00581214                    inside s_debris05.kfm_00581200
-  DAT_0058121c                    inside s_debris05.kfm_00581200
-  DAT_00581224                    inside s_debris05.kfm_00581200
-  DAT_0058122c                    inside s_debris05.kfm_00581200
-  DAT_0058129c                    inside s_dynamitestick.kfm_0058128a
-  DAT_005812a4                    inside s_dynamitestick.kfm_0058128a
-  DAT_005813ac                    inside s_fr46%03d.raw_0058139c
-  DAT_005813b4                    inside s_fr46%03d.raw_0058139c
-  DAT_005813bc                    inside s_fr46%03d.raw_0058139c
-  DAT_005813c4                    inside s_fr46%03d.raw_0058139c
-  DAT_005813cc                    inside s_fr46%03d.raw_0058139c
-  DAT_005813d4                    inside s_fr46%03d.raw_0058139c
-  DAT_005813dc                    inside s_fr46%03d.raw_0058139c
-  DAT_005813e4                    inside s_fr46%03d.raw_0058139c
-  DAT_005813ec                    inside s_fr46%03d.raw_0058139c
-  DAT_005813f4                    inside s_fr46%03d.raw_0058139c
-  DAT_005813fc                    inside s_fr46%03d.raw_0058139c
-  DAT_00581404                    inside s_fr46%03d.raw_0058139c
-  DAT_00581408                    inside s_fr46%03d.raw_0058139c
-  DAT_0058140c                    inside s_fr46%03d.raw_0058139c
-  DAT_0058145c                    inside s_44-sh?c_@_.2_0058144c
-  DAT_005814a4                    inside s_ric-%s.wav_00581493
-  DAT_005814ac                    inside s_ric-%s.wav_00581493
-  DAT_005814c8                    inside s_a-wood?.wav_005814bc
-  DAT_005814cc                    inside s_a-wood?.wav_005814bc
-  DAT_005814d4                    inside s_a-wood?.wav_005814bc
-  DAT_005814dc                    inside s_a-wood?.wav_005814bc
-  DAT_005814e4                    inside s_a-wood?.wav_005814bc
-  DAT_0058150c                    inside s_xplode?.wav_@_6.0_005814f4
-  DAT_00581514                    inside s_xplode?.wav_@_6.0_005814f4
-  DAT_0058151c                    inside s_xplode?.wav_@_6.0_005814f4
-  DAT_0058153c                    inside s_Fire_state_00581530
-  DAT_00581557                    inside s_torch.wav_*_%f_00581546
-  DAT_0058155f                    inside s_torch.wav_*_%f_00581546
-  DAT_00581567                    inside s_torch.wav_*_%f_00581546
-  DAT_0058156f                    inside s_torch.wav_*_%f_00581546
-  DAT_00581577                    inside s_torch.wav_*_%f_00581546
-  DAT_0058157f                    inside s_torch.wav_*_%f_00581546
-  DAT_00581587                    inside s_torch.wav_*_%f_00581546
-  DAT_0058158f                    inside s_torch.wav_*_%f_00581546
-  DAT_00581617                    inside s_burnEnemy_00581609
-  DAT_0058161f                    inside s_burnEnemy_00581609
-  DAT_00581627                    inside s_burnEnemy_00581609
-  DAT_00581646                    inside s_question.kfm_00581639
-  DAT_00581647                    inside s_question.kfm_00581639
-  DAT_00581648                    inside s_question.kfm_00581639
-  DAT_00581649                    inside s_question.kfm_00581639
-  DAT_0058164f                    inside s_question.kfm_00581639
-  DAT_00581707                    inside s_boxSize_005816ff
-  DAT_0058170f                    inside s_boxSize_005816ff
-  DAT_00581717                    inside s_boxSize_005816ff
-  DAT_0058171f                    inside s_boxSize_005816ff
-  DAT_00581727                    inside s_boxSize_005816ff
-  DAT_0058172f                    inside s_boxSize_005816ff
-  DAT_00581737                    inside s_boxSize_005816ff
-  DAT_0058173f                    inside s_boxSize_005816ff
-  DAT_005817f6                    inside s_..\engine\font.cpp_005817e3
-  DAT_005817fa                    inside s_..\engine\font.cpp_005817e3
-  DAT_005817fd                    inside s_..\engine\font.cpp_005817e3
-  DAT_00581cfa                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d00                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d08                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d10                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d18                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d20                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d28                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d2c                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d30                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581d38                    inside s_..\core\frankgen.cpp_00581ce5
-  DAT_00581ff2                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00581ffa                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582002                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058200a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582012                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058201a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582022                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058202a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582032                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058203a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582042                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058204a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582052                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058205a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582062                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058206a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_00582072                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_0058207a                    inside s_undraw-s.wav_@_.7_00581fdb
-  DAT_005820e2                    inside s_gb-fall1.wav_005820d4
-  DAT_005820ea                    inside s_gb-fall1.wav_005820d4
-  DAT_005820f2                    inside s_gb-fall1.wav_005820d4
-  DAT_005820f6                    inside s_gb-fall1.wav_005820d4
-  DAT_00582102                    inside s_gb-fall1.wav_005820d4
-  DAT_0058210a                    inside s_gb-fall1.wav_005820d4
-  DAT_00582112                    inside s_gb-fall1.wav_005820d4
-  DAT_00582172                    inside s_Hell_froze_-_invalid_pickUpType:_00582149
-  DAT_0058217a                    inside s_Hell_froze_-_invalid_pickUpType:_00582149
-  DAT_00582182                    inside s_Hell_froze_-_invalid_pickUpType:_00582149
-  DAT_0058218a                    inside s_Hell_froze_-_invalid_pickUpType:_00582149
-  DAT_005821fa                    inside s_rhCarryObject_005821ec
-  DAT_00582202                    inside s_rhCarryObject_005821ec
-  DAT_0058220a                    inside s_rhCarryObject_005821ec
-  DAT_00582212                    inside s_rhCarryObject_005821ec
-  DAT_0058221a                    inside s_rhCarryObject_005821ec
-  DAT_00582222                    inside s_rhCarryObject_005821ec
-  DAT_0058222a                    inside s_rhCarryObject_005821ec
-  DAT_00582232                    inside s_rhCarryObject_005821ec
-  DAT_0058223a                    inside s_rhCarryObject_005821ec
-  DAT_00582242                    inside s_rhCarryObject_005821ec
-  DAT_00582282                    inside s_gb-hit[1,6].wav_00582272
-  DAT_00582286                    inside s_gb-hit[1,6].wav_00582272
-  DAT_005822ca                    inside s_Don't_know_how_to_carry_light_%s_005822a7
-  DAT_005822d2                    inside s_Don't_know_how_to_carry_light_%s_005822a7
-  DAT_005823be                    inside s_movie_005823b6
-  DAT_005823c2                    inside s_movie_005823b6
-  DAT_005823ca                    inside s_movie_005823b6
-  DAT_00582491                    inside s_Forward_00582489
-  DAT_00582496                    inside s_Forward_00582489
-  DAT_0058251a                    inside s_Point_down_0058250f
-  DAT_005825f0                    inside s_screen_paint_:_%3.2f_ms_005825d7
-  DAT_0058273a                    inside s_You're_dead._Game_over._0058271b
-  DAT_00582742                    inside s_You're_dead._Game_over._0058271b
-  DAT_0058274a                    inside s_You're_dead._Game_over._0058271b
-  DAT_00582752                    inside s_You're_dead._Game_over._0058271b
-  DAT_0058283a                    inside s_ESP:_%08X_0058282f
-  DAT_00582963                    inside s_Save_game_00582959
-  DAT_00582993                    inside s_Load_game_00582989
-  DAT_005829a2                    inside s_Game_Over_00582998
-  DAT_005829ea                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_005829ee                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_005829f2                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_005829f6                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_005829fa                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a02                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a0a                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a0e                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a12                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a1a                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a22                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a2a                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582a32                    inside s_CGame::playerControls_-_unknown_c_005829bb
-  DAT_00582aee                    inside s_No_quicked_saved_game_to_load_00582ad0
-  DAT_00582b42                    inside s_Gamma_:_%f_00582b31
-  DAT_00582bde                    inside s_Enter_cheat_code_00582bcd
-  DAT_00582c4d                    inside s_buy-fly-today.wav_@_4.0_00582c35
-  DAT_00582c8d                    inside s_FPS:_%3.2lf_00582c81
-  DAT_00582cc2                    inside s_FPS:_%3.2lf_00582c81
-  DAT_00582d20                    inside s_cheat-1.wav_00582d14
-  DAT_00582d81                    inside s_cheat-1.wav_00582d75
-  DAT_00582dea                    inside s_cheat-1.wav_00582dde
-  DAT_00582e3d                    inside s_cheat-1.wav_00582e31
-  DAT_00582e8c                    inside s_cheat-1.wav_00582e80
-  DAT_00582ebf                    inside s_cheat-1.wav_00582e80
-  DAT_00582ef6                    inside s_cheat-1.wav_00582e80
-  DAT_00582f76                    inside s_You_have_the_skeleton_key_00582f5c
-  DAT_00582fe6                    inside s_cheat-1.wav_00582fda
-  DAT_00583066                    inside s_CShotgun_0058305d
-  DAT_005830c0                    inside s_CCrossbow_005830b6
-  DAT_00583111                    inside s_CDynamite_00583107
-  DAT_00583167                    inside s_CFlameThrower_00583159
-  DAT_005831c0                    inside s_CTommyGun_005831b6
-  DAT_0058321f                    inside s_CBaronWeapon_00583212
-  DAT_00583281                    inside s_CElephantGun_00583274
-  DAT_005832e7                    inside s_CLightGun_005832dd
-  DAT_0058331b                    inside s_CLightGun_005832dd
-  DAT_005833de                    inside s_cheat-1.wav_005833d2
-  DAT_0058343f                    inside s_cheat-1.wav_00583433
-  DAT_0058348d                    inside s_Raise_an_event_0058347e
-  DAT_005834cc                    inside s_cheat-1.wav_005834c0
-  DAT_00583552                    inside s_cheat-1.wav_00583546
-  DAT_005835a2                    inside s_Enter_time_factor_00583590
-  DAT_005835e1                    inside s_cheat-1.wav_005835d5
-  DAT_00583620                    inside s_cheat-1.wav_00583614
-  DAT_005836c7                    inside s_cheat-1.wav_005836bb
-  DAT_00583706                    inside s_cheat-1.wav_005836fa
-  DAT_00583738                    inside s_cheat-1.wav_005836fa
-  DAT_00583793                    inside s_Single_step_disabled_0058377e
-  DAT_005837f2                    inside s_cheat-1.wav_005837e6
-  DAT_00583828                    inside s_cheat-1.wav_005837e6
-  DAT_0058385e                    inside s_cheat-1.wav_005837e6
-  DAT_005838e3                    inside s_stranger-hat.kfm_005838d2
-  DAT_00583917                    inside s_stranger-hat.kfm_005838d2
-  DAT_00583964                    inside s_You've_got_a_gasmask!_0058394e
-  DAT_005839aa                    inside s_Health_restored._00583999
-  DAT_005839f5                    inside s_cheat-1.wav_005839e9
-  DAT_00583a29                    inside s_cheat-1.wav_005839e9
-  DAT_00583a2e                    inside s_cheat-1.wav_005839e9
-  DAT_00583a60                    inside s_cheat-1.wav_005839e9
-  DAT_00583a65                    inside s_cheat-1.wav_005839e9
-  DAT_00583a9a                    inside s_cheat-1.wav_005839e9
-  DAT_00583a9f                    inside s_cheat-1.wav_005839e9
-  DAT_00583b55                    inside s_%s.noc_00583b4e
-  DAT_00583b5a                    inside s_%s.noc_00583b4e
-  DAT_00583bd4                    inside s_%d,_%d_00583bcc
-  DAT_00583be5                    inside s_Light_state_00583bd8
-  DAT_00583c33                    inside s_%s\%s_00583c2d
-  DAT_00583c37                    inside s_%s\%s_00583c2d
-  DAT_00583c42                    inside s_*.noc_00583c3c
-  DAT_00583c5b                    inside s_Select_file_to_load_00583c47
-  DAT_00583c5e                    inside s_Select_file_to_load_00583c47
-  DAT_00583c63                    inside s_Select_file_to_load_00583c47
-  DAT_00583c64                    inside s_Select_file_to_load_00583c47
-  DAT_00583dd8                    inside s_pod.ini_00583dd0
-  DAT_005843d8                    inside s_Can't_open_%s_005843ca
-  DAT_0058454a                    inside s_simulate_:_%3.2f_ms_00584532
-  DAT_00584552                    inside s_simulate_:_%3.2f_ms_00584532
-  DAT_0058455a                    inside s_simulate_:_%3.2f_ms_00584532
-  DAT_00584571                    inside s_*.noc_0058456b
-  DAT_005845bb                    inside s_Body_count_005845b0
-  DAT_005845bc                    inside s_Body_count_005845b0
-  DAT_005845bd                    inside s_Body_count_005845b0
-  DAT_005845be                    inside s_Body_count_005845b0
-  DAT_005845ca                    inside s_Body_count_005845b0
-  DAT_005845d2                    inside s_Body_count_005845b0
-  DAT_005845da                    inside s_Body_count_005845b0
-  DAT_0058463e                    inside s_Total_body_count_0058462d
-  DAT_0058463f                    inside s_Total_body_count_0058462d
-  DAT_00584640                    inside s_Total_body_count_0058462d
-  DAT_00584641                    inside s_Total_body_count_0058462d
-  DAT_0058464a                    inside s_Total_body_count_0058462d
-  DAT_00584652                    inside s_Total_body_count_0058462d
-  DAT_0058465a                    inside s_Total_body_count_0058462d
-  DAT_00584687                    inside s_credits.txt_0058467b
-  DAT_005846d6                    inside s_faded-remix.mp3_005846c5
-  DAT_00584980                    inside s_tail01_00584979
-  DAT_00584988                    inside s_tail01_00584979
-  DAT_005849f8                    inside s_gargoyle-stone.wav_005849e1
-  DAT_00584a00                    inside s_gargoyle-stone.wav_005849e1
-  DAT_00584a58                    inside s_homeBase_00584a4b
-  DAT_00584a60                    inside s_homeBase_00584a4b
-  DAT_00584acd                    inside s_guul.dfm_00584ac4
-  DAT_00584d1d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d25                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d2d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d35                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d3d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d45                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d4d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d55                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d5d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d65                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d6d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d75                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d7d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d85                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584d8d                    inside s_ghoul-walk-?.wav_*%f_00584d06
-  DAT_00584e2d                    inside s_limb?.wav_00584e21
-  DAT_00584e35                    inside s_limb?.wav_00584e21
-  DAT_00584e8d                    inside s_ghoul-mad-!-?.wav_00584e76
-  DAT_00584e95                    inside s_ghoul-mad-!-?.wav_00584e76
-  DAT_00584e9d                    inside s_ghoul-mad-!-?.wav_00584e76
-  DAT_00585038                    inside s_brokenTexture_00585029
-  DAT_0058503c                    inside s_brokenTexture_00585029
-  DAT_00585068                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585070                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585078                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585080                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585088                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585090                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585098                    inside s_glass-1.wav@2.0_00585053
-  DAT_005850a0                    inside s_glass-1.wav@2.0_00585053
-  DAT_00585128                    inside s_%d,%d,%d,%d,%d,%d,%d_00585112
-  DAT_00585130                    inside s_%d,%d,%d,%d,%d,%d,%d_00585112
-  DAT_00585180                    inside s_%d,%f,%d,%d,%d_0058516e
-  DAT_00585188                    inside s_%d,%f,%d,%d,%d_0058516e
-  DAT_005851c0                    inside s_Can't_create_flies!_005851a9
-  DAT_005851c8                    inside s_Can't_create_flies!_005851a9
-  DAT_005851d0                    inside s_Can't_create_flies!_005851a9
-  DAT_005851ee                    inside s_---_Gore_---_005851e0
-  DAT_005851f2                    inside s_---_Gore_---_005851e0
-  DAT_005852b3                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852b6                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852b9                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852bc                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852bf                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852c2                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852c5                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852c8                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852cb                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852ce                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852d1                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852d4                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852d7                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005852da                    inside s_eopen_-_Cannot_open_file_0058529a
-  DAT_005853e5                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853e8                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853e9                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853ea                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853eb                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853ec                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_005853f1                    inside s_CGround::init_-_Out_of_memory2_005853c6
-  DAT_0058542d                    inside s_gatbullet.kfm_0058541e
-  DAT_00585435                    inside s_gatbullet.kfm_0058541e
-  DAT_0058543d                    inside s_gatbullet.kfm_0058541e
-  DAT_0058557d                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_00585585                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_0058558d                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_00585595                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_0058559d                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855a5                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855ad                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855b5                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855bd                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855c5                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855cd                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_005855d5                    inside s_%s_confused_while_walking_to_scr_0058554e
-  DAT_0058567b                    inside s_CHero_00585670
-  DAT_005857f6                    inside s_STAND_005857f0
-  DAT_00585c2a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c32                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c3a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c42                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c4a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c52                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c5a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c62                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c6a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c72                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c76                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c7a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c82                    inside s_deputeFireShotgun_00585c17
-  DAT_00585c8a                    inside s_deputeFireShotgun_00585c17
-  DAT_00585f65                    inside s_hotdemon-attack.wav_00585f4a
-  DAT_00585f6d                    inside s_hotdemon-attack.wav_00585f4a
-  DAT_00585fc5                    inside s_hotdemon-hurt?.wav_00585fab
-  DAT_00586152                    inside s_icepick-miss?.wav_00586140
-  DAT_0058615a                    inside s_icepick-miss?.wav_00586140
-  DAT_00586162                    inside s_icepick-miss?.wav_00586140
-  DAT_0058616a                    inside s_icepick-miss?.wav_00586140
-  DAT_00586172                    inside s_icepick-miss?.wav_00586140
-  DAT_00586192                    inside s_shoot_0058618a
-  DAT_0058619a                    inside s_shoot_0058618a
-  DAT_005861a2                    inside s_shoot_0058618a
-  DAT_005861aa                    inside s_shoot_0058618a
-  DAT_00586202                    inside s_CIcePick::getCarryObjToBodyXForm_005861ce
-  DAT_0058620a                    inside s_CIcePick::getCarryObjToBodyXForm_005861ce
-  DAT_00586212                    inside s_CIcePick::getCarryObjToBodyXForm_005861ce
-  DAT_0058621a                    inside s_CIcePick::getCarryObjToBodyXForm_005861ce
-  DAT_00586222                    inside s_CIcePick::getCarryObjToBodyXForm_005861ce
-  DAT_00586435                    inside s_imp-laugh?.wav_00586423
-  DAT_0058643d                    inside s_imp-laugh?.wav_00586423
-  DAT_00586445                    inside s_imp-laugh?.wav_00586423
-  DAT_0058644d                    inside s_imp-laugh?.wav_00586423
-  DAT_00586455                    inside s_imp-laugh?.wav_00586423
-  DAT_0058645d                    inside s_imp-laugh?.wav_00586423
-  DAT_00586465                    inside s_imp-laugh?.wav_00586423
-  DAT_005864a5                    inside s_limb?.wav_0058649a
-  DAT_005864ad                    inside s_limb?.wav_0058649a
-  DAT_005864dd                    inside s_imp-hurt?.wav_005864ca
-  DAT_00586732                    inside s_CIniFile::setString_-_section_no_00586709
-  DAT_00586d79                    inside s_CAmmo_00586d73
-  DAT_00586d81                    inside s_CAmmo_00586d73
-  DAT_00586d89                    inside s_CAmmo_00586d73
-  DAT_00587161                    inside s_Converting_existing_ammo_for_%s_t_00587136
-  DAT_005871ad                    inside s_CAmmo_005871a7
   DAT_005871d9                    inside s_ax.kfm_005871cf
   DAT_005871e1                    inside s_ax.kfm_005871cf
   DAT_005871e9                    inside s_ax.kfm_005871cf
@@ -8792,83 +6599,8 @@ FILTERED OUT - INSIDE NAMED DATA (1449)
   DAT_00597c49                    inside s_rain.wav_@_.1_00597c3b
   DAT_00597c51                    inside s_rain.wav_@_.1_00597c3b
   DAT_00597c59                    inside s_rain.wav_@_.1_00597c3b
-  DAT_00597c89                    inside s_light?.wav_00597c7e
-  DAT_00597c91                    inside s_light?.wav_00597c7e
-  DAT_00597ca9                    inside s_thndr?.wav_00597c9d
-  DAT_00597cb1                    inside s_thndr?.wav_00597c9d
-  DAT_00597cb9                    inside s_thndr?.wav_00597c9d
-  DAT_00597cc1                    inside s_thndr?.wav_00597c9d
-  DAT_00597dd1                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597dd9                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597de1                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597de9                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597df1                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597df9                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597e01                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597e09                    inside s_werewolf-eat.wav_00597dbb
-  DAT_00597e35                    inside s_were?.wav_00597e29
-  DAT_00597e39                    inside s_were?.wav_00597e29
-  DAT_00597ed9                    inside s_werewolf-hurt?.wav_00597ec6
-  DAT_00597ee1                    inside s_werewolf-hurt?.wav_00597ec6
-  DAT_00597f85                    inside s_BackSpace_00597f7b
-  DAT_00597f89                    inside s_BackSpace_00597f7b
-  DAT_00597f8b                    inside s_BackSpace_00597f7b
-  DAT_00597f8d                    inside s_BackSpace_00597f7b
-  DAT_00597f8f                    inside s_BackSpace_00597f7b
-  DAT_00597f91                    inside s_BackSpace_00597f7b
-  DAT_00597f93                    inside s_BackSpace_00597f7b
-  DAT_00597f95                    inside s_BackSpace_00597f7b
-  DAT_00597fb0                    inside s_LeftCtrl_00597fa7
-  DAT_00597fb2                    inside s_LeftCtrl_00597fa7
-  DAT_00597fb4                    inside s_LeftCtrl_00597fa7
-  DAT_00597fb6                    inside s_LeftCtrl_00597fa7
-  DAT_00597fb8                    inside s_LeftCtrl_00597fa7
-  DAT_00597fba                    inside s_LeftCtrl_00597fa7
-  DAT_00597fbc                    inside s_LeftCtrl_00597fa7
-  DAT_00597fbe                    inside s_LeftCtrl_00597fa7
-  DAT_00597fd2                    inside s_LeftShift_00597fc8
-  DAT_00597fd4                    inside s_LeftShift_00597fc8
-  DAT_00597fd6                    inside s_LeftShift_00597fc8
-  DAT_00597fd8                    inside s_LeftShift_00597fc8
-  DAT_00597fda                    inside s_LeftShift_00597fc8
-  DAT_00597fdc                    inside s_LeftShift_00597fc8
-  DAT_00598010                    inside s_CapsLock_00598007
-  DAT_00598013                    inside s_CapsLock_00598007
-  DAT_00598016                    inside s_CapsLock_00598007
-  DAT_00598019                    inside s_CapsLock_00598007
-  DAT_0059801c                    inside s_CapsLock_00598007
-  DAT_0059801f                    inside s_CapsLock_00598007
-  DAT_00598022                    inside s_CapsLock_00598007
-  DAT_005980a8                    inside s_NumPad._005980a0
-  DAT_005980df                    inside s_NumLock_005980d7
-  DAT_005980e4                    inside s_NumLock_005980d7
-  DAT_005980e7                    inside s_NumLock_005980d7
-  DAT_005980f7                    inside s_Right_005980f1
-  DAT_005980fb                    inside s_Right_005980f1
-  DAT_00598100                    inside s_Right_005980f1
-  DAT_00598105                    inside s_Right_005980f1
-  DAT_00598141                    inside s_(invalid_key)_00598132
-  DAT_00598149                    inside s_(invalid_key)_00598132
-  DAT_00598233                    inside s_%s\%s_0059822d
-  DAT_0059828e                    inside s_%s\%s_0059822d
-  DAT_00598296                    inside s_%s\%s_0059822d
-  DAT_0059829e                    inside s_%s\%s_0059822d
-  DAT_005982a6                    inside s_%s\%s_0059822d
-  DAT_005982ae                    inside s_%s\%s_0059822d
-  DAT_005982b6                    inside s_%s\%s_0059822d
-  DAT_005982be                    inside s_%s\%s_0059822d
-  DAT_00598336                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598346                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_0059834e                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598356                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_0059835e                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598366                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_0059836e                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598376                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_0059837e                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598386                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_0059838e                    inside s_inverse()_-_Singular_matrix_0059830c
-  DAT_00598506                    inside s_zombho2.dfm_005984f5
+  DAT_00598336                    inside s_inverse_Singular_matrix_0059830c
+  DAT_00598506                    inside s_zombho2_dfm_005984f5
   DAT_005986de                    inside s_%s_giving_up_attack_005986c3
   DAT_005986e6                    inside s_%s_giving_up_attack_005986c3
   DAT_005986ee                    inside s_%s_giving_up_attack_005986c3
@@ -8885,24 +6617,22 @@ FILTERED OUT - INSIDE NAMED DATA (1449)
   DAT_0059873e                    inside s_%s_giving_up_attack_005986c3
   DAT_00598746                    inside s_%s_giving_up_attack_005986c3
   DAT_0059874e                    inside s_%s_giving_up_attack_005986c3
-  DAT_00598756                    inside s_%s_giving_up_attack_005986c3
-  DAT_0059885e                    inside s_%s_is_going_to_try_to_pick_up_%s_00598835
-  DAT_00598866                    inside s_%s_is_going_to_try_to_pick_up_%s_00598835
-  DAT_00598926                    inside s_limb?.wav_0059891a
-  DAT_0059892e                    inside s_limb?.wav_0059891a
-  DAT_00598986                    inside s_zom-s0?.wav_0059897a
-  DAT_0059898e                    inside s_zom-s0?.wav_0059897a
+  DAT_00598782                    inside s_new_0059877e
+  DAT_00598786                    inside s_new_0059877e
+  DAT_0059885e                    inside s_s_is_going_to_try_to_pic_00598835
+  DAT_00598866                    inside s_s_is_going_to_try_to_pic_00598835
+  DAT_0059886e                    inside s_s_is_going_to_try_to_pic_00598835
+  DAT_00598876                    inside s_s_is_going_to_try_to_pic_00598835
+  DAT_00598926                    inside s_limb_wav_0059891a
+  DAT_0059892e                    inside s_limb_wav_0059891a
+  DAT_00598936                    inside s_limb_wav_0059891a
+  DAT_00598986                    inside s_zom_s0_wav_0059897a
+  DAT_0059898e                    inside s_zom_s0_wav_0059897a
+  DAT_00598996                    inside s_zom_s0_wav_0059897a
   DAT_005989b0                    inside s_CHASE_2_005989a8
-  DAT_005989e4                    inside s_undefined_constructor_or_destruc_005989b8
-  DAT_00598acc                    inside s_%I:%M:%S_%p_00598ac0
-  DAT_00598ad0                    inside s_%I:%M:%S_%p_00598ac0
+  DAT_005989e4                    inside s_undefined_constructor_or_005989b8
   DAT_00598b2c                    inside s_ABNORMAL_TERMINATION_00598b14
-  DAT_00598b30                    inside s_ABNORMAL_TERMINATION_00598b14
-  DAT_00598b34                    inside s_ABNORMAL_TERMINATION_00598b14
-  DAT_00598be0                    inside s_conin$_00598bd8
-  DAT_00598be4                    inside s_conin$_00598bd8
-  DAT_00598be8                    inside s_conin$_00598bd8
-  DAT_00599281                    inside s_conout$_005991f4
+  DAT_005992b0                    inside s_in_00599281
   DAT_005acc88                    inside s_Integer_value_005acc78
   DAT_005acc8e                    inside s_Integer_value_005acc78
   DAT_005acc8f                    inside s_Integer_value_005acc78
@@ -8910,11 +6640,13 @@ FILTERED OUT - INSIDE NAMED DATA (1449)
   DAT_005acc91                    inside s_Integer_value_005acc78
   DAT_005accf8                    inside s_Integer_value_005acc78
   DAT_005accfc                    inside s_Integer_value_005acc78
+  DAT_005aceb4                    inside s_Integer_value_005acc78
   DAT_005acf20                    inside s_Integer_value_005acc78
   DAT_005acf3c                    inside s_Integer_value_005acc78
   DAT_005acf40                    inside s_Integer_value_005acc78
   DAT_005acf80                    inside s_Integer_value_005acc78
   DAT_005acf94                    inside s_Integer_value_005acc78
+  DAT_005acfa4                    inside s_Integer_value_005acc78
   DAT_005acfbc                    inside s_Integer_value_005acc78
   DAT_005ad00c                    inside s_Integer_value_005acc78
   DAT_005ad054                    inside s_Integer_value_005acc78

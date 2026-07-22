@@ -91,7 +91,7 @@ uint FUN_004b27c0(int param_1)
   fStack_90 = fStack_9c + fStack_3c;
   fStack_8c = fStack_98 + fStack_38;
   fStack_88 = fStack_94 + fStack_34;
-  fStack_30 = (float)_DAT_0058542d / *(float *)(param_1 + 0x2e0);
+  fStack_30 = (float)1.5 / *(float *)(param_1 + 0x2e0);
   fStack_78 = fStack_3c * fStack_30;
   fStack_74 = fStack_38 * fStack_30;
   fStack_70 = fStack_34 * fStack_30;
@@ -174,7 +174,7 @@ uint FUN_004b27c0(int param_1)
       fStack_48 = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
       fStack_44 = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
       fStack_40 = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-      fStack_1c = (float)_DAT_0058543d /
+      fStack_1c = (float)10 /
                   SQRT(fStack_40 * fStack_40 + fStack_48 * fStack_48 + fStack_44 * fStack_44);
       fStack_b4 = fStack_48 * fStack_1c;
       fStack_b0 = fStack_44 * fStack_1c;
@@ -208,7 +208,7 @@ uint FUN_004b27c0(int param_1)
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   fStack_e4 = fStack_9c;
   fStack_dc = fStack_94;
-  fStack_e0 = fStack_98 + _DAT_00585435;
+  fStack_e0 = fStack_98 + 1.574918751107038e-314._0_4_;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_e4,param_1 + 0x3c);
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (0x02DC9450,param_1,"45.wav",&fStack_9c);

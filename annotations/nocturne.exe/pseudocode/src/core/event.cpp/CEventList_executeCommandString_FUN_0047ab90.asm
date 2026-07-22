@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_validateCommands_FUN_0047dcd0 at 0047dcf1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f57d
+;   TerminatedCString s_s_0057f57d
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_0077ad0c
@@ -108,7 +108,7 @@ section .text
     RET                                 ; 0047ac1e
     PUSH 0x1c08b60                      ; 0047ac1f | DAT_01c08b60
         ;   Label: LAB_0047ac1f
-    PUSH 0x57f57d                       ; 0047ac24 | DAT_0057f57d
+    PUSH 0x57f57d                       ; 0047ac24 | = "%s\n"
     MOV ECX,dword ptr [0x005ad350]      ; 0047ac29 | PTR_DAT_005ad350
     PUSH ECX                            ; 0047ac2f | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0047ac30

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(float *param_1)
 
 {
@@ -73,8 +71,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(float *param_1)
       do {
         while( true ) {
           fStack_1c = (float)iVar3;
-          fVar2 = ((float)iVar3 * _DAT_0058115c) / (float)iVar1;
-          if (fVar2 <= (float)_DAT_00581164) break;
+          fVar2 = ((float)iVar3 * 5.1640756954075245e-315._0_4_) / (float)iVar1;
+          if (fVar2 <= (float)0.01) break;
           local_34 = local_58 * fStack_1c;
           local_30 = local_54 * fStack_1c;
           local_2c = local_50 * fStack_1c;

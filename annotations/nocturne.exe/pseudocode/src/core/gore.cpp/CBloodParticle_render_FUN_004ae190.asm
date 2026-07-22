@@ -56,9 +56,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585088
-;   undefined4 DAT_00585090
-;   undefined4 DAT_00585098
+;   double DOUBLE_00585088 = 0.700000000000000
+;   double DOUBLE_00585090 = -0.100000000000000
+;   double DOUBLE_00585098 = 0.100000000000000
 ;   undefined4 DAT_0059e4d4
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b96d4
@@ -374,7 +374,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 004ae55f
         ;   Label: LAB_004ae55f
     FLD ST0                             ; 004ae563
-    FLD double ptr [0x00585088]         ; 004ae565 | DAT_00585088
+    FLD double ptr [0x00585088]         ; 004ae565 | DOUBLE_00585088
     FXCH                                ; 004ae56b
     FMUL ST1                            ; 004ae56d
     FLD float ptr [ESP + 0x8]           ; 004ae56f
@@ -434,7 +434,7 @@ section .text
     ADD ESP,0xc                         ; 004ae622
     FLD float ptr [ESP + 0x8]           ; 004ae625
     FST double ptr [ESP]                ; 004ae629
-    FMUL double ptr [0x00585090]        ; 004ae62c | DAT_00585090
+    FMUL double ptr [0x00585090]        ; 004ae62c | DOUBLE_00585090
     LEA EBX,[ESP + 0x28]                ; 004ae632
     MOV EDX,dword ptr [0x005ae704]      ; 004ae636 | DAT_005ae704
     FSTP float ptr [ESP + 0x4c]         ; 004ae63c
@@ -461,7 +461,7 @@ section .text
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 004ae688
     FLD double ptr [ESP]                ; 004ae68b
-    FMUL double ptr [0x00585098]        ; 004ae68e | DAT_00585098
+    FMUL double ptr [0x00585098]        ; 004ae68e | DOUBLE_00585098
     XOR EBX,EBX                         ; 004ae694
     FSTP float ptr [ESP + 0xdc]         ; 004ae696
     MOV EAX,dword ptr [ESP + 0xdc]      ; 004ae69d

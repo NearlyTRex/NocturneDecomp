@@ -15,14 +15,14 @@ void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004a3880(int param_1)
     if (_DAT_01c78b04 < 4) {
       if ((_DAT_01c78b04 != 2) ||
          (_DAT_01c78b08 =
-               ((float)*(int *)(param_1 + 0x260) * (float)_DAT_00583b0a) /
-               ((float)_DAT_00583b02 / (float)DAT_005b7620) + _DAT_01c78b08,
+               ((float)*(int *)(param_1 + 0x260) * (float)256) /
+               ((float)31457280 / (float)DAT_005b7620) + _DAT_01c78b08,
          _DAT_01c78b08 <= (float)DAT_005b761c)) {
         if ((_DAT_01c78b04 == 3) &&
            (_DAT_01c78b08 =
                  _DAT_01c78b08 -
-                 ((float)*(int *)(param_1 + 0x260) * (float)_DAT_00583b0a) /
-                 ((float)_DAT_00583b02 / (float)DAT_005b7620), _DAT_01c78b08 < 0.0)) {
+                 ((float)*(int *)(param_1 + 0x260) * (float)256) /
+                 ((float)31457280 / (float)DAT_005b7620), _DAT_01c78b08 < 0.0)) {
           _DAT_01c78b08 = 0.0;
           _DAT_01c78b04 = 4;
           return;

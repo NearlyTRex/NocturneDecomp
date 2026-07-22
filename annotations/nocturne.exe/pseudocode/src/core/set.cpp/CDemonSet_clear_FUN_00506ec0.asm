@@ -12,8 +12,8 @@
 ;   undefined4 DAT_005c1144
 ;
 ; Called Functions:
+;   core_dmodel.cpp_FUN_00452f10
 ;   core_terrain.cpp_CTerrain_free_FUN_005492f0
-;   FUN_00452f10
 ;   FUN_00514430
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_clear_FUN_00506ec0
     PUSH ESI                            ; 00506ec1
     PUSH 0x1fbacc8                      ; 00506ec2
-    CALL FUN_00452f10                   ; 00506ec7
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 00506ec7
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 00506ecc
     MOV ESI,dword ptr [ESP + 0xc]       ; 00506ecf
     ADD ESI,0x4                         ; 00506ed3

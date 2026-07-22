@@ -55,7 +55,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
   }
   if (*(float *)(param_1 + 0x18) <= local_10 * local_10 + local_18 * local_18 + local_14 * local_14)
   {
-    local_c = *(float *)(param_1 + 0x30) * (float)_DAT_0057c389;
+    local_c = *(float *)(param_1 + 0x30) * (float)0.00390625;
     iVar4 = 0;
     iVar3 = 0;
     do {

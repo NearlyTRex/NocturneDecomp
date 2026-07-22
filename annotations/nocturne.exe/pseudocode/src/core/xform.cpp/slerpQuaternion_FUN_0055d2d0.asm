@@ -21,10 +21,10 @@
 ;
 ; XREF[14]:
 ;   FUN_00418a00 at 00418bb6
-;   FUN_00429e60 at 00429f09
 ;   FUN_00497900 at 00497bba
 ;   FUN_004fd1d0 at 004fd349
 ;   FUN_0053a260 at 0053a431
+;   core_charactr.cpp_FUN_00429e60 at 00429f09
 ;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043b9d5
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0 at 004f60d4
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0 at 0051d082
@@ -33,7 +33,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059836e
+;   double DOUBLE_0059836e = 0.999990000000000
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_00566c81
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 0055d410 (CONDITIONAL_JUMP)  ; LAB_0055d410
     FLD double ptr [ESP]                ; 0055d356
         ;   Label: LAB_0055d356
-    FCOMP double ptr [0x0059836e]       ; 0055d359 | DAT_0059836e
+    FCOMP double ptr [0x0059836e]       ; 0055d359 | DOUBLE_0059836e
     FNSTSW AX                           ; 0055d35f
     SAHF                                ; 0055d361
     JBE 0x0055d44b                      ; 0055d362

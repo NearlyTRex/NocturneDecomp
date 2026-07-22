@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(int param_1
     if (((*(int *)(param_1 + 0x25a8) != 0) && (*(int *)(param_1 + 0x2598) != 0)) &&
        (*(char *)(param_1 + 0x23b0) != '\0')) {
       uVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                        (param_1 + 0x150,"?STAND" + 1,0);
+                        (param_1 + 0x150,"STAND",0);
       iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(uVar1);
       if (-1 < iVar2) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740

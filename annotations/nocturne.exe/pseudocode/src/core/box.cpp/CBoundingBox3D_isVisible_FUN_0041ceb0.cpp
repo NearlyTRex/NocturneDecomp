@@ -37,10 +37,10 @@ uint __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(float *param_1,i
   if (iVar1 == 0) {
     local_44 = *param_1 + param_1[3];
     local_40 = param_1[1] + param_1[4];
-    local_38 = local_44 * _DAT_005797c5;
+    local_38 = local_44 * 0.5f;
     local_3c = param_1[2] + param_1[5];
-    local_34 = local_40 * _DAT_005797c5;
-    local_30 = local_3c * _DAT_005797c5;
+    local_34 = local_40 * 0.5f;
+    local_30 = local_3c * 0.5f;
     if (&local_20 != &local_38) {
       local_20 = local_38;
       local_1c = local_34;

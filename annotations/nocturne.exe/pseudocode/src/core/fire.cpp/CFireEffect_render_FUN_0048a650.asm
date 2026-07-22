@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00509a80 at 00509df1
-;   FUN_0050a260 at 0050a466
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509952
+;   core_set.cpp_FUN_00509a80 at 00509df1
+;   core_set.cpp_FUN_0050a260 at 0050a466
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

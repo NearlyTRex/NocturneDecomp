@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[26]:
-;   FUN_004110f0 at 00411185
 ;   FUN_0046fb40 at 0046fc3c
 ;   FUN_0046fcd0 at 0046fdcc
 ;   FUN_0046fe60 at 0046ff5c
@@ -14,6 +13,7 @@
 ;   FUN_004759d0 at 00475ca9
 ;   FUN_004c2470 at 004c2cc0
 ;   FUN_004fe770 at 004fe911
+;   core_baron.cpp_FUN_004110f0 at 00411185
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6950
 ;   ... and 16 more
 ;

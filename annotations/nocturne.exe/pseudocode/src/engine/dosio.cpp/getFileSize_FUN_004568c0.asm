@@ -9,7 +9,6 @@
 ;
 ; XREF[22]:
 ;   FUN_00401010 at 004010f0
-;   FUN_00403460 at 0040346c
 ;   FUN_004a3b90 at 004a3e2c
 ;   FUN_004a4170 at 004a43e2
 ;   FUN_004a57c0 at 004a57fb
@@ -18,6 +17,7 @@
 ;   FUN_00522480 at 00522547
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044346c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 at 0044bfcb
+;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b3d4
 ;   ... and 12 more
 ;
 ; Called Functions:

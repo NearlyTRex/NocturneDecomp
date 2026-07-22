@@ -53,8 +53,8 @@ LAB_004ab8bc:
           local_44 = pfVar3[1];
           local_40 = pfVar3[2];
         }
-        local_44 = local_2c * (float)_DAT_00584ea5 + local_44 * (float)_DAT_00584e9d;
-        local_48 = local_30 * (float)_DAT_00584e95 + local_48 * (float)_DAT_00584e95;
+        local_44 = local_2c * (float)0.29999999999999999 + local_44 * (float)0.69999999999999996;
+        local_48 = local_30 * (float)0.5 + local_48 * (float)0.5;
         pfVar3 = param_2 + iVar5 * 3;
         if (pfVar3 != &local_48) {
           *pfVar3 = local_48;

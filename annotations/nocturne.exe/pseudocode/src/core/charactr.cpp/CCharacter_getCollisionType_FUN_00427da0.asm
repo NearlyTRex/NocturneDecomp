@@ -4,7 +4,8 @@
 ; undefined4 __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(int param_1,int *param_2)
 ;
 ;
-; XREF[13]:
+; XREF[14]:
+;   FUN_0040fc10 at 0040fc1a
 ;   FUN_004132a0 at 004132aa
 ;   FUN_00414c40 at 00414c56
 ;   FUN_00415a10 at 00415a1a
@@ -14,8 +15,7 @@
 ;   FUN_004b99b0 at 004b99ba
 ;   FUN_004bcfb0 at 004bcfba
 ;   FUN_004dc920 at 004dc92a
-;   FUN_00506a60 at 00506a6a
-;   ... and 3 more
+;   ... and 4 more
 ;
 ; *****************************************************************************
 

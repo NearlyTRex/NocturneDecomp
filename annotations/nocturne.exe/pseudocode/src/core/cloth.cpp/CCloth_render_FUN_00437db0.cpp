@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
 
 {
@@ -35,7 +33,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
   engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   uVar12 = 0x437e20;
   fVar9 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x37b48) * (float10)_DAT_0057aedd);
+                             ((float10)*(float *)(param_1 + 0x37b48) * (float10)65535);
   iVar1 = (int)ROUND(fVar9);
   if (iVar1 < 1000) {
     return;
@@ -69,7 +67,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
       uVar10 = 0xffffffff;
       uVar12 = *(uint *)(param_1 + 0x114);
     }
-    FUN_0050ddd0(0x01E57284,uVar12,iVar3 / 2,uVar10);
+    core_set_cpp_FUN_0050ddd0(0x01E57284,uVar12,iVar3 / 2,uVar10);
     iVar3 = *(int *)(param_1 + 0x110) / 2;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
               (0x01E57284,*(uint *)(param_1 + 0x104),iVar3,
@@ -108,7 +106,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
       uVar12 = *(uint *)(param_1 + 0x110);
       uVar10 = *(uint *)(param_1 + 0x114);
     }
-    FUN_0050ddd0(0x01E57284,uVar10,uVar12,uVar11);
+    core_set_cpp_FUN_0050ddd0(0x01E57284,uVar10,uVar12,uVar11);
     local_20 = *(int *)(param_1 + 0x110);
     if (1000 < local_20) {
       local_20 = 1000;
@@ -149,7 +147,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
   }
   uVar12 = 0x267;
 LAB_00437faa:
-  FUN_0050ddd0(0x01E57284,puVar4,local_20,uVar12);
+  core_set_cpp_FUN_0050ddd0(0x01E57284,puVar4,local_20,uVar12);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
   return;

@@ -9,21 +9,21 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   undefined4 s_batman-die.wav_00578d2d+2
+;   TerminatedCString s_batman_die_wav_00578d2f
 ;   string s_batman-hurt?.wav_00578d3e
-;   undefined4 DAT_00578d4f
+;   double DOUBLE_00578d4f = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0
+;   core_charactr.cpp_FUN_00427730
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-;   FUN_00427730
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
@@ -81,8 +81,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004149a6
     PUSH EAX                            ; 004149aa
     PUSH ESI                            ; 004149ab
-    CALL FUN_00427730                   ; 004149ac
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined FUN_00427730()
+    CALL core_charactr.cpp_FUN_00427730 ; 004149ac
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
     ADD ESP,0x18                        ; 004149b1
     PUSH EDI                            ; 004149b4
         ;   Label: LAB_004149b4
@@ -162,7 +162,7 @@ section .text
         ;   Label: LAB_00414a57
     LEA EAX,[EDI + 0x1c]                ; 00414a5a
     FLD ST0                             ; 00414a5d
-    FMUL double ptr [0x00578d4f]        ; 00414a5f | DAT_00578d4f
+    FMUL double ptr [0x00578d4f]        ; 00414a5f | DOUBLE_00578d4f
     PUSH EAX                            ; 00414a65
     LEA EAX,[ESP + 0x10]                ; 00414a66
     XOR EBX,EBX                         ; 00414a6a
@@ -217,7 +217,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00414ae1
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 00414ae6
-    PUSH 0x578d2f                       ; 00414ae9 | s_batman-die.wav_00578d2d+2
+    PUSH 0x578d2f                       ; 00414ae9 | = "batman-die.wav"
     MOV EAX,dword ptr [ESI + 0x14c]     ; 00414aee
     PUSH ESI                            ; 00414af4
     CALL dword ptr [EAX + 0x24]         ; 00414af5

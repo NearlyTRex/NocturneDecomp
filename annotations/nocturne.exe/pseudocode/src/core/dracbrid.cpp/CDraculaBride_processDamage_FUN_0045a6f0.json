@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 444,
+    "complexity_score": 428,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 34,
+    "pseudocode_lines": 88,
+    "suspect_count": 33,
     "suspect_types": [
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 376
+    "total_lines": 375
   },
   "cross_references": [],
   "function": {
@@ -164,6 +163,11 @@
       "addr": "0040dea0",
       "is_variadic": false,
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
+    },
+    {
+      "addr": "00427730",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00427730"
     },
     {
       "addr": "0045a6a0",
@@ -196,11 +200,6 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380"
     },
     {
-      "addr": "00427730",
-      "is_variadic": false,
-      "name": "FUN_00427730"
-    },
-    {
       "addr": "0045ab40",
       "is_variadic": false,
       "name": "FUN_0045ab40"
@@ -209,8 +208,8 @@
   "globals": [
     {
       "addr": "0057d836",
-      "name": "s_bride-launch.wav_0057d834+2",
-      "type": "undefined4",
+      "name": "s_bride_launch_wav_0057d836",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -227,9 +226,9 @@
     },
     {
       "addr": "0057d866",
-      "name": "DAT_0057d866",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d866",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005b80f0",
@@ -318,16 +317,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)",
@@ -335,7 +326,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)",
@@ -343,7 +334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x28) == 7) {",
@@ -351,23 +342,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_0057d866;",
+      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_0057d866;",
+      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
@@ -375,7 +366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
@@ -383,7 +374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x30) == 0x68) {",
@@ -391,7 +382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x30) == 0x6c) {",
@@ -399,7 +390,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x150,local_3c,0);",
@@ -407,7 +398,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,uVar3);",
@@ -415,23 +406,23 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00427730(param_1,local_24,0,0,0x41200000,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00427730(param_1,local_24,0,0,0x41200000,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
       "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
@@ -439,7 +430,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
@@ -447,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
@@ -455,7 +446,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1 + 0x150;",
@@ -463,7 +454,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2434) = fVar1;",
@@ -471,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2434) = 0;",
@@ -479,31 +470,31 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"4@bride-launch.wav\" + 2);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"4@bride-launch.wav\" + 2);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"4@bride-launch.wav\" + 2);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_0045ab40(param_1,\"bride-die?.wav\",0x40000000);",
@@ -511,7 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -519,7 +510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -527,7 +518,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar3,1);",
@@ -535,7 +526,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,4,1);",
@@ -543,7 +534,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,5,1);",
@@ -551,7 +542,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_0045ab40(param_1,\"bride-hurt?.wav\",0x40000000);",
@@ -559,7 +550,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -567,7 +558,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -575,7 +566,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -583,7 +574,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",

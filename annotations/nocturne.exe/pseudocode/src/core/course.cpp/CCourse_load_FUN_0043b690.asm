@@ -15,11 +15,11 @@
 ;   core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0 at 0054eaa7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b261
-;   undefined4 DAT_0057b264
+;   TerminatedCString s_rt_0057b261
+;   TerminatedCString s_data_0057b264
 ;   string s_..\\core\\course.cpp_0057b269
 ;   string s_CCourse::load_-_can't_open_data\\_0057b27c
-;   undefined4 DAT_0057b29f
+;   TerminatedCString s_d_0057b29f
 ;   string s_%d,%d_0057b2a3
 ;   string s_%f,%f,%f,_%f,%f,%f,%f_0057b2aa
 ;   undefined4 DAT_01cc4800
@@ -50,9 +50,9 @@ section .text
     CALL core_course.cpp_CCourse_free_FUN_0043b7c0 ; 0043b6a0
         ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_free_FUN_0043b7c0()
     ADD ESP,0x4                         ; 0043b6a5
-    PUSH 0x57b261                       ; 0043b6a8 | DAT_0057b261
+    PUSH 0x57b261                       ; 0043b6a8 | = "rt"
     PUSH EBX                            ; 0043b6ad
-    PUSH 0x57b264                       ; 0043b6ae | DAT_0057b264
+    PUSH 0x57b264                       ; 0043b6ae | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0043b6b3
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0043b6b8
@@ -76,7 +76,7 @@ section .text
     MOV EAX,ESP                         ; 0043b6d9
         ;   Label: LAB_0043b6d9
     PUSH EAX                            ; 0043b6db
-    PUSH 0x57b29f                       ; 0043b6dc | DAT_0057b29f
+    PUSH 0x57b29f                       ; 0043b6dc | = "%d\n"
     PUSH EBP                            ; 0043b6e1
     MOV EBX,EBP                         ; 0043b6e2
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0043b6e4

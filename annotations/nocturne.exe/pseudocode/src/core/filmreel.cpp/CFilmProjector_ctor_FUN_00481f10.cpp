@@ -31,7 +31,7 @@ int core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00580fdc;
+  pcVar3 = "none";
   *(uint *)(iVar2 + 0x1e8) = 0;
   pcVar4 = (char *)(iVar2 + 0x180);
   *(uint *)(iVar2 + 0x17c) = 0;

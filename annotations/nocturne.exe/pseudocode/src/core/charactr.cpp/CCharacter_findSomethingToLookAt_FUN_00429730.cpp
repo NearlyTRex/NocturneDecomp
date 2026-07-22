@@ -87,7 +87,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
               fStack_e8 = *(float *)(iVar3 + 0x24);
               fStack_e4 = *(float *)(iVar3 + 0x28);
             }
-            fStack_e8 = fStack_e8 + _DAT_0057a2d2;
+            fStack_e8 = fStack_e8 + 5.3619766690650802e-315._0_4_;
           }
           else {
             uVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
@@ -109,27 +109,28 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
                (fVar6 = fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c,
                fStack_24 = fVar6, (int)fVar6 < 0x44610001)) &&
               (core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                         (&fStack_44,&fStack_50), ABS(fStack_40) <= (float)_DAT_0057a2da)) &&
-             (ABS(fStack_44) <= (float)_DAT_0057a2e2)) {
+                         (&fStack_44,&fStack_50), ABS(fStack_40) <= (float)1.3962634015555599)) &&
+             (ABS(fStack_44) <= (float)0.78539816337500001)) {
             fStack_100 = 10.0;
             iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar3,_DAT_01bcdef4);
             if (((iVar2 != 0) && (iStack_1c == 0)) &&
                (fStack_100 = 30.0, param_1 == *(int *)(iVar2 + 0xbca4))) {
               fStack_100 = 40.0;
             }
-            if ((fStack_100 < (float)_DAT_0057a2fa) &&
+            if ((fStack_100 < (float)10) &&
                (iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar3,"CHero"), iVar2 != 0))
             {
               fStack_100 = 15.0;
             }
-            if ((fStack_100 < (float)_DAT_0057a302) && (0 < iStack_1c)) {
+            if ((fStack_100 < (float)15) && (0 < iStack_1c)) {
               fStack_100 = 15.0;
             }
-            fStack_100 = ((float)_DAT_0057a30a / (SQRT(fVar6) + (float)_DAT_0057a30a)) * fStack_100;
+            fStack_100 = ((float)20 / (SQRT(fVar6) + (float)20)) *
+                         fStack_100;
             if (iVar3 == *(int *)(param_1 + 0x25c8)) {
-              fStack_100 = fStack_100 * (float)_DAT_0057a2ca;
+              fStack_100 = fStack_100 * (float)1.1000000000000001;
             }
-            if (_DAT_0057a312 <= fStack_100) {
+            if (-1.0f <= fStack_100) {
               core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
               core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
               core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,iVar3);
@@ -179,7 +180,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
         fStack_70 = *(float *)(iVar1 + 0x24);
         fStack_6c = *(float *)(iVar1 + 0x28);
       }
-      fStack_70 = fStack_70 + _DAT_0057a2d2;
+      fStack_70 = fStack_70 + 5.3619766690650802e-315._0_4_;
     }
     else {
       uVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
@@ -203,30 +204,31 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
       fStack_d0 = pfVar4[1];
       fStack_cc = pfVar4[2];
     }
-    if ((float)_DAT_0057a2da < ABS(fStack_d0)) {
+    if ((float)1.3962634015555599 < ABS(fStack_d0)) {
       *(uint *)(param_1 + 0x25c8) = 0;
     }
-    if ((float)_DAT_0057a2e2 < ABS(fStack_d4)) {
+    if ((float)0.78539816337500001 < ABS(fStack_d4)) {
       *(uint *)(param_1 + 0x25c8) = 0;
       goto LAB_00429793;
     }
   }
   if (*(int *)(param_1 + 0x25c8) != 0) {
-    fVar6 = param_2 / _DAT_0057a2ea + *(float *)(param_1 + 0x25d8);
+    fVar6 = param_2 / 5.2220990168285998e-315._0_4_ + *(float *)(param_1 + 0x25d8);
     *(float *)(param_1 + 0x25d8) = fVar6;
     if (1.0 < fVar6) {
       *(uint *)(param_1 + 0x25d8) = 0x3f800000;
     }
     fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                  (fStack_d0 - *(float *)(param_1 + 0x25d0));
-    *(float *)(param_1 + 0x25d0) = fStack_14 * (float)_DAT_0057a2f2 + *(float *)(param_1 + 0x25d0);
+    *(float *)(param_1 + 0x25d0) = fStack_14 * (float)0.40000000000000002 + *(float *)(param_1 + 0x25d0)
+    ;
     fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                              (fStack_d4 - *(float *)(param_1 + 0x25d4));
-    *(float *)(param_1 + 0x25d4) = fVar6 * (float)_DAT_0057a2f2 + *(float *)(param_1 + 0x25d4);
+    *(float *)(param_1 + 0x25d4) = fVar6 * (float)0.40000000000000002 + *(float *)(param_1 + 0x25d4);
     return;
   }
 LAB_00429793:
-  fVar6 = *(float *)(param_1 + 0x25d8) - param_2 / _DAT_0057a2ea;
+  fVar6 = *(float *)(param_1 + 0x25d8) - param_2 / 5.2220990168285998e-315._0_4_;
   *(float *)(param_1 + 0x25d8) = fVar6;
   if (fVar6 < 0.0) {
     *(uint *)(param_1 + 0x25d4) = 0;

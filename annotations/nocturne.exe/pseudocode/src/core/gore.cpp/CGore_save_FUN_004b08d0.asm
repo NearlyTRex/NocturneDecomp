@@ -8,9 +8,9 @@
 ;   FUN_004d8720 at 004d8a4c
 ;
 ; Referenced Globals:
-;   string s_---_Gore_---_005851e0
-;   undefined4 DAT_005851ee
-;   undefined4 DAT_005851f2
+;   TerminatedCString s_Gore_005851e0
+;   TerminatedCString s_d_005851ee
+;   TerminatedCString s_d_005851f2
 ;   undefined4 DAT_01c7ccf0
 ;   undefined4 DAT_01c9e038
 ;
@@ -36,7 +36,7 @@ section .text
     ADD ESP,0x8                         ; 004b08e3
     MOV EDX,dword ptr [0x01c9e038]      ; 004b08e6 | DAT_01c9e038
     PUSH EDX                            ; 004b08ec
-    PUSH 0x5851ee                       ; 004b08ed | DAT_005851ee
+    PUSH 0x5851ee                       ; 004b08ed | = "%d\n"
     PUSH EDI                            ; 004b08f2
     XOR ESI,ESI                         ; 004b08f3
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004b08f5
@@ -64,7 +64,7 @@ section .text
     MOV EAX,[0x01c7ccf0]                ; 004b0930 | DAT_01c7ccf0
         ;   Label: LAB_004b0930
     PUSH EAX                            ; 004b0935
-    PUSH 0x5851f2                       ; 004b0936 | DAT_005851f2
+    PUSH 0x5851f2                       ; 004b0936 | = "%d\n"
     PUSH EDI                            ; 004b093b
     XOR EBX,EBX                         ; 004b093c
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004b093e

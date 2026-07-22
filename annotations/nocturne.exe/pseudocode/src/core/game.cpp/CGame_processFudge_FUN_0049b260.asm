@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de22
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005823fa
+;   double DOUBLE_005823fa = 0.100000000000000
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_01cc30e4
 ;
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 0049b2bb (CONDITIONAL_JUMP)  ; LAB_0049b2bb
     FLD float ptr [ESP]                 ; 0049b2ab
     FLD ST0                             ; 0049b2ae
-    FMUL double ptr [0x005823fa]        ; 0049b2b0 | DAT_005823fa
+    FMUL double ptr [0x005823fa]        ; 0049b2b0 | DOUBLE_005823fa
     FSTP ST1                            ; 0049b2b6
     FSTP float ptr [ESP]                ; 0049b2b8
     PUSH 0x4b                           ; 0049b2bb

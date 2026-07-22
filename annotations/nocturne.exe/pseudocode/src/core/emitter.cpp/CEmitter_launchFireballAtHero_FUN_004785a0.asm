@@ -26,11 +26,11 @@
 ;   FUN_0054e130 at 0054e183
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f1ac
-;   undefined4 DAT_0057f1b4
-;   undefined4 DAT_0057f1bc
-;   undefined4 DAT_0057f1c4
-;   undefined4 DAT_0057f1cc
+;   double DOUBLE_0057f1ac = 5.35679601527854E-315
+;   double DOUBLE_0057f1b4 = -1.30899693895833
+;   double DOUBLE_0057f1bc = 32
+;   double DOUBLE_0057f1c4 = 1.30899693895833
+;   float FLOAT_0057f1cc = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004785fa
         ;   Label: LAB_004785fa
     PUSH 0x41000000                     ; 004785fe
-    FADD float ptr [0x0057f1ac]         ; 00478603 | DAT_0057f1ac
+    FADD float ptr [0x0057f1ac]         ; 00478603 | DOUBLE_0057f1ac
     PUSH 0xc1000000                     ; 00478609
     FSTP float ptr [ESP + 0x10]         ; 0047860e
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00478612
@@ -92,11 +92,11 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 00478630
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00478634
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
-    FLD double ptr [0x0057f1b4]         ; 00478639 | DAT_0057f1b4
+    FLD double ptr [0x0057f1b4]         ; 00478639 | DOUBLE_0057f1b4
     FLD ST0                             ; 0047863f
     MOV dword ptr [ESP + 0x68],EAX      ; 00478641
     FSIN                                ; 00478645
-    FLD double ptr [0x0057f1c4]         ; 00478647 | DAT_0057f1c4
+    FLD double ptr [0x0057f1c4]         ; 00478647 | DOUBLE_0057f1c4
     FPTAN                               ; 0047864d
     FSTP ST0                            ; 0047864f
     FLD float ptr [ESP + 0x68]          ; 00478651
@@ -124,9 +124,9 @@ section .text
     FMUL double ptr [ESP + 0x34]        ; 0047868d
     FSUB float ptr [ESP + 0x8]          ; 00478691
     FLD ST2                             ; 00478695
-    FMUL float ptr [0x0057f1cc]         ; 00478697 | DAT_0057f1cc
+    FMUL float ptr [0x0057f1cc]         ; 00478697 | FLOAT_0057f1cc
     FLD double ptr [ESP + 0x34]         ; 0047869d
-    FMUL double ptr [0x0057f1bc]        ; 004786a1 | DAT_0057f1bc
+    FMUL double ptr [0x0057f1bc]        ; 004786a1 | DOUBLE_0057f1bc
     FXCH                                ; 004786a7
     FMUL ST4                            ; 004786a9
     FXCH                                ; 004786ab

@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x44]:1  local_44
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f17c
-;   undefined4 DAT_0057f184
+;   double DOUBLE_0057f17c = 3.14159265350000
+;   double DOUBLE_0057f184 = 0.00555555555555555
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_01b4d738
@@ -143,8 +143,8 @@ section .text
     FSTP float ptr [ESP + 0x30]         ; 00478259
     FLD float ptr [EBX + 0x570]         ; 0047825d
         ;   Label: LAB_0047825d
-    FMUL double ptr [0x0057f17c]        ; 00478263 | DAT_0057f17c
-    FMUL double ptr [0x0057f184]        ; 00478269 | DAT_0057f184
+    FMUL double ptr [0x0057f17c]        ; 00478263 | DOUBLE_0057f17c
+    FMUL double ptr [0x0057f184]        ; 00478269 | DOUBLE_0057f184
     SUB ESP,0x4                         ; 0047826f
     FSTP float ptr [ESP]                ; 00478272
     PUSH 0x0                            ; 00478275

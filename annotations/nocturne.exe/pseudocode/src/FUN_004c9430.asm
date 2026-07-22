@@ -18,10 +18,10 @@
 ;   undefined4 DAT_005a0250
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00409d30
 ;   FUN_004ca410
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH EDI                            ; 004c9435
     PUSH ESI                            ; 004c9436
     PUSH EBX                            ; 004c9437
-    CALL FUN_00409d30                   ; 004c9438
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004c9438
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 004c943d
     ADD EAX,0x150                       ; 004c9440
     PUSH EAX                            ; 004c9445

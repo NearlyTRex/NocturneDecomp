@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_00584dbc+1
+;   TerminatedCString s_speed_00584dbd
 ;   string s_modelName_00584dc3
 ;   string s_guardDistance_00584dcd
 ;   string s_livesLeft_00584ddb
@@ -21,8 +21,8 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH 0x584de5                       ; 004aaeab | = "motion state"
     LEA EAX,[EBX + 0x150]               ; 004aaeb0
     PUSH EAX                            ; 004aaeb6
-    CALL FUN_0040cb00                   ; 004aaeb7
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004aaeb7
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004aaebc
     CMP dword ptr [0x005b9650],0x6      ; 004aaebf | DAT_005b9650
         ;   Label: LAB_004aaebf
@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 004aaee3 (CONDITIONAL_JUMP)  ; LAB_004aaee3
     POP EBX                             ; 004aaec8
     RET                                 ; 004aaec9
-    PUSH 0x584dbd                       ; 004aaeca | s_speed_00584dbc+1
+    PUSH 0x584dbd                       ; 004aaeca | = "speed"
         ;   Label: LAB_004aaeca
     LEA EAX,[EBX + 0xbc8c]              ; 004aaecf
     PUSH EAX                            ; 004aaed5

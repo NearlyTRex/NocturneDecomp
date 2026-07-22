@@ -128,7 +128,7 @@ void FUN_00469ce0(int *param_1,float param_2,int param_3)
   local_134[(uint)bVar12 * -2] = aiStack_14c[(uint)bVar12 * -2];
   local_134[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
        aiStack_14c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-  fVar14 = (float10)_DAT_0057e24e;
+  fVar14 = (float10)0.00390625;
   local_20 = local_134[1];
   local_15c = (float)((float10)local_138 * fVar14);
   local_158 = (float)((float10)local_134[0] * fVar14);
@@ -145,7 +145,8 @@ void FUN_00469ce0(int *param_1,float param_2,int param_3)
   local_13c = (int)ROUND(fVar15);
   fVar11 = (float)param_1[6];
   fVar3 = (float)param_1[0xc];
-  fVar15 = (float10)round((float10)param_2 * (float10)_DAT_0057e256);
+  fVar15 = (float10)round((float10)param_2 * (float10)5.5951060894592141e-315._0_4_)
+  ;
   iVar7 = _DAT_01cc5118;
   iVar9 = (int)ROUND(fVar15);
   local_150 = iVar9;
@@ -245,9 +246,9 @@ void FUN_00469ce0(int *param_1,float param_2,int param_3)
   local_178 = 0;
   local_174 = 0;
   local_170 = 0;
-  dVar5 = (double)(float)param_1[10] * _DAT_0057e25e;
-  dVar6 = (double)(float)param_1[0xb] * _DAT_0057e25e;
-  dStack_1c0 = (double)(float)param_1[0xc] * _DAT_0057e25e;
+  dVar5 = (double)(float)param_1[10] * 256;
+  dVar6 = (double)(float)param_1[0xb] * 256;
+  dStack_1c0 = (double)(float)param_1[0xc] * 256;
   iStack_118 = 999;
   local_114 = 999;
   local_110 = 999;

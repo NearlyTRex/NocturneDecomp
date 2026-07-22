@@ -8,7 +8,7 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428571
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a026
+;   float FLOAT_0057a026 = 0.5
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00427ad3
     FADD float ptr [EDX + 0x4]          ; 00427ad6
     FXCH                                ; 00427ad9
-    FLD float ptr [0x0057a026]          ; 00427adb | DAT_0057a026
+    FLD float ptr [0x0057a026]          ; 00427adb | FLOAT_0057a026
     FXCH                                ; 00427ae1
     FMUL ST1                            ; 00427ae3
     FXCH ST2                            ; 00427ae5

@@ -24,12 +24,12 @@
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
+;   core_set.cpp_FUN_0050ddd0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
-;   FUN_0050ddd0
 ;
 ; *****************************************************************************
 
@@ -222,8 +222,8 @@ section .text
     PUSH EBX                            ; 0043f532
     MOV EBX,dword ptr [0x005be368]      ; 0043f533 | DAT_005be368
     PUSH EBX                            ; 0043f539 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 0043f53a
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 0043f53a
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
     ADD ESP,0x10                        ; 0043f53f
     TEST EBP,EBP                        ; 0043f542
         ;   Label: LAB_0043f542
@@ -278,8 +278,8 @@ section .text
     PUSH EDI                            ; 0043f5cd
     MOV EBX,dword ptr [0x005be368]      ; 0043f5ce | DAT_005be368
     PUSH EBX                            ; 0043f5d4 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 0043f5d5
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 0043f5d5
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
     ADD ESP,0x10                        ; 0043f5da
     PUSH 0x0                            ; 0043f5dd
         ;   Label: LAB_0043f5dd

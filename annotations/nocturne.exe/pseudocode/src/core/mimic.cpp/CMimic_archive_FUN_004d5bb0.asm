@@ -21,8 +21,8 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5894d6                       ; 004d5c3a | = "motion state"
         ;   Label: LAB_004d5c3a
     PUSH ESI                            ; 004d5c3f
-    CALL FUN_0040cb00                   ; 004d5c40
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004d5c40
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004d5c45
     PUSH 0x5894e3                       ; 004d5c48 | = "morphActorType"
     LEA ESI,[EBX + 0x46924]             ; 004d5c4d

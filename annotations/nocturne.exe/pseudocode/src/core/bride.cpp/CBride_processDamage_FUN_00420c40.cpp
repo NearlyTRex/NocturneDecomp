@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bride_cpp_CBride_processDamage_FUN_00420c40(int param_1,int param_2)
 
 {
@@ -22,7 +20,7 @@ void core_bride_cpp_CBride_processDamage_FUN_00420c40(int param_1,int param_2)
   sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd50));
   if (*(int *)(param_2 + 0x28) == 7) {
     iVar3 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00579bf5;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,param_2 + 0x1c);
     do {
       iVar3 = iVar3 + 1;
@@ -34,7 +32,7 @@ void core_bride_cpp_CBride_processDamage_FUN_00420c40(int param_1,int param_2)
     uVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                       (param_1 + 0x150,local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,uVar1);
-    FUN_00427730(param_1,local_30,0,0,0x41200000,0);
+    core_charactr_cpp_FUN_00427730(param_1,local_30,0,0,0x41200000,0);
   }
   core_bride_cpp_CBride_processDismemberment_FUN_00420a10(param_1,param_2);
   *(float *)(param_1 + 0x2434) = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);

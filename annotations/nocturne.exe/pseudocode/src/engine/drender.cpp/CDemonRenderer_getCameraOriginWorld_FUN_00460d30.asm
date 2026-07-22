@@ -10,19 +10,19 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   FUN_0044f0b0 at 0044f225
-;   FUN_0044f9b0 at 0044f9e1
-;   FUN_0050e080 at 0050e097
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044cea8
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350 at 004514a2
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 0045055c
+;   core_dlight.cpp_FUN_0044f0b0 at 0044f225
+;   core_dlight.cpp_FUN_0044f9b0 at 0044f9e1
 ;   core_fire.cpp_CGunFlame_render_FUN_00488580 at 00488660
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00485b5a
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d317
+;   core_set.cpp_FUN_0050e080 at 0050e097
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310 at 00549336
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057dc6d
+;   double DOUBLE_0057dc6d = 0.00390625
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraOrigin_FUN_004ce760
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ce760()
     MOV EAX,dword ptr [ESP]             ; 00460d45
     MOV dword ptr [ESP + 0xc],EAX       ; 00460d48
-    FLD double ptr [0x0057dc6d]         ; 00460d4c | DAT_0057dc6d
+    FLD double ptr [0x0057dc6d]         ; 00460d4c | DOUBLE_0057dc6d
     FILD dword ptr [ESP + 0xc]          ; 00460d52
     FMUL ST1                            ; 00460d56
     FSTP float ptr [EBX]                ; 00460d58

@@ -17,7 +17,7 @@
 ;   FUN_0046baa0 at 0046bca6
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dtrace.cpp_0057e3dd+1
+;   TerminatedCString s_core_dtrace_cpp_0057e3de
 ;   string s_Parity_Check_999_0057e3f1
 ;   undefined4 DAT_005b6d08
 ;   undefined4 DAT_01cc4800
@@ -124,7 +124,7 @@ section .text
     TEST EAX,EAX                        ; 0046c09f
     JNZ 0x0046c0c6                      ; 0046c0a1
         ;   XREF to: 0046c0c6 (CONDITIONAL_JUMP)  ; LAB_0046c0c6
-    MOV EDX,0x57e3de                    ; 0046c0a3 | s_..\core\dtrace.cpp_0057e3dd+1
+    MOV EDX,0x57e3de                    ; 0046c0a3 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb19                       ; 0046c0a8
     PUSH 0x57e3f1                       ; 0046c0ad | = "Parity Check 999"
     MOV dword ptr [0x01cc4800],EDX      ; 0046c0b2 | DAT_01cc4800

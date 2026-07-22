@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00409590 at 004097f1
 ;   FUN_004f9dd0 at 004f9fc4
+;   engine_3d.c_FUN_00409590 at 004097f1
 ;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 0056306b
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0 at 00562bd0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 0045819a

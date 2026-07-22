@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(uint param_1,float *param_2,int param_3)
 
 {
@@ -29,10 +27,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
   uint uVar16;
   
   if (param_3 == 0) {
-    fVar4 = (float10)_DAT_0057dc35;
+    fVar4 = (float10)0.31830988619288902;
     fVar1 = param_2[2];
     fVar2 = *param_2;
-    fVar5 = (float10)_DAT_0057dc3d;
+    fVar5 = (float10)32768;
     uVar16 = 0x460ae3;
     fVar6 = (float10)round((float10)param_2[1] * fVar4 * fVar5);
     uVar14 = 0x460aea;
@@ -44,11 +42,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
               ((int)ROUND(fVar4),(int)ROUND(fVar7),uVar13,iVar12,uVar14,uVar16);
     return;
   }
-  fVar4 = (float10)_DAT_0057dc35;
+  fVar4 = (float10)0.31830988619288902;
   fVar1 = param_2[1];
   fVar2 = param_2[2];
   fVar3 = *param_2;
-  fVar5 = (float10)_DAT_0057dc3d;
+  fVar5 = (float10)32768;
   fVar6 = (float10)round();
   fVar7 = (float10)round();
   uVar15 = 0x460b6f;

@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 184,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -178,20 +177,20 @@
   "globals": [
     {
       "addr": "005851e0",
-      "name": "s_---_Gore_---_005851e0",
-      "type": "string",
+      "name": "s_Gore_005851e0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005851ee",
-      "name": "DAT_005851ee",
-      "type": "undefined4",
+      "name": "s_d_005851ee",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005851f2",
-      "name": "DAT_005851f2",
-      "type": "undefined4",
+      "name": "s_d_005851f2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -300,16 +299,8 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005851ee,_DAT_01c9e038);",
+      "text": "_fprintf(param_2,\"%d\\n\",_DAT_01c9e038);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005851ee",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005851ee,_DAT_01c9e038);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -324,16 +315,8 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = _fprintf(param_2,&DAT_005851f2,_DAT_01c7ccf0);",
+      "text": "uVar1 = _fprintf(param_2,\"%d\\n\",_DAT_01c7ccf0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005851f2",
-      "severity": "mild",
-      "text": "uVar1 = _fprintf(param_2,&DAT_005851f2,_DAT_01c7ccf0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

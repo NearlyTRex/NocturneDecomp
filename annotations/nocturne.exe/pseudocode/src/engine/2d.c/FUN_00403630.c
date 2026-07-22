@@ -1,14 +1,14 @@
-// Name: FUN_00403630
+// Name: engine_2d.c_FUN_00403630
 // Address: 00403630
 // Address Range: [[00403630, 00403754]]
 // Convention: unknown
-// Signature: void FUN_00403630(char *param_1)
+// Signature: void engine_2d_c_FUN_00403630(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00403630(char *param_1)
+void engine_2d_c_FUN_00403630(char *param_1)
 
 {
   char cVar1;
@@ -40,19 +40,19 @@ void FUN_00403630(char *param_1)
   pcVar4 = (char *)0x0;
 LAB_00403672:
   if (pcVar4 == (char *)0x0) {
-    _DAT_01cc4800 = "?..\\engine\\2d.c" + 1;
+    _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0x76e;
     FUN_004c8440("hose!");
   }
-  _sprintf(pcVar4,&DAT_00577259);
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577261,local_5c,&DAT_0057725e);
+  _sprintf(pcVar4,".map");
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"rb");
   if (iVar2 != 0) {
     _fread(&DAT_01bf7720,1,0x8000,iVar2);
     _fclose(iVar2);
     return;
   }
   engine_2d_c_buildColorLookupTable_FUN_00403570();
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577268,local_5c,&DAT_00577265);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
   if (iVar2 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0x775;

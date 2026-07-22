@@ -25,7 +25,7 @@ void core_fire_cpp_CToss_create_FUN_004873b0(int *param_1,int param_2,uint param
   param_1[0xf8] = 0;
   if (*param_1 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-              (param_1 + 1,"@\\@dynamitestick.kfm" + 3);
+              (param_1 + 1,"dynamitestick.kfm");
     local_14 = 0x3f800000;
   }
   else {

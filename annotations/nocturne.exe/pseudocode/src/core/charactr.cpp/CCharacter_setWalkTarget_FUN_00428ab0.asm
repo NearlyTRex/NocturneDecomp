@@ -8,7 +8,7 @@
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_00557020 at 0055704d
 ;
 ; Referenced Globals:
-;   undefined4 s_STAND_0057a0f9+1
+;   TerminatedCString s_STAND_0057a0fa
 ;   string s_STAND_0057a100
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     RET                                 ; 00428b23
     PUSH 0x0                            ; 00428b24
         ;   Label: LAB_00428b24
-    PUSH 0x57a0fa                       ; 00428b26 | s_STAND_0057a0f9+1
+    PUSH 0x57a0fa                       ; 00428b26 | = "STAND"
     PUSH ESI                            ; 00428b2b
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 00428b2c
         ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()

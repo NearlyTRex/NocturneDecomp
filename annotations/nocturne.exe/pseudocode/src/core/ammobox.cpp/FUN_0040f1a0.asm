@@ -9,7 +9,7 @@
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0 at 0053beec
 ;
 ; Referenced Globals:
-;   string s_..\\core\\ammobox.cpp_0057836d
+;   TerminatedCString s_core_ammobox_cpp_0057836d
 ;   string s_Out_of_memory_00578381
 ;   string s_Some_ammo_0057838f
 ;   undefined4 s_ome_ammo_0057838f+1

@@ -44,7 +44,7 @@ LAB_004062cd:
   _DAT_01c039a0 = 0xd9;
   _DAT_01c039a4 = 1;
   engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
-  FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+  engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
 LAB_0040629e:
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 4;
 }

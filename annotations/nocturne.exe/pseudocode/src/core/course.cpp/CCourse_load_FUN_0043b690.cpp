@@ -19,7 +19,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(int *param_1,uint param_2
   uint local_14;
   
   core_course_cpp_CCourse_free_FUN_0043b7c0(param_1);
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057b264,param_2,&DAT_0057b261);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rt");
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\core\\course.cpp";
     _DAT_01cc4804 = 0x7c;
@@ -29,7 +29,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(int *param_1,uint param_2
     iVar2 = _fgetc(iVar1);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(iVar1,&DAT_0057b29f,auStack_18);
+  _fscanf(iVar1,"%d\n",auStack_18);
   do {
     iVar2 = _fgetc(iVar1);
     if (iVar2 < 0) break;

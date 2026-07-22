@@ -13,7 +13,7 @@ void __cdecl core_fire_cpp_CFireEffect_save_FUN_0048c850(uint param_1,uint param
   
   _fprintf(param_2,"Fire state\n");
   puVar1 = (byte *)0x1c625f8;
-  _fprintf(param_2,&DAT_0058153c);
+  _fprintf(param_2,&CHAR_1_0058153c);
   do {
     core_fire_cpp_CCrater_save_FUN_00487e90(puVar1,param_2);
     puVar1 = puVar1 + 0x70;

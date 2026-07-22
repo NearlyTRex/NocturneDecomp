@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   string s_..\\core\\dmodel.cpp_0057cc8e
 ;   string s_CKeyFramedModel::calcNormals()_-_0057cca1
-;   undefined4 DAT_0057cce6
+;   double DOUBLE_0057cce6 = 65535
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 00453649 (UNCONDITIONAL_JUMP)  ; LAB_00453649
     FLD double ptr [ESP + 0x8]          ; 00453787
         ;   Label: LAB_00453787
-    FLD double ptr [0x0057cce6]         ; 0045378b | DAT_0057cce6
+    FLD double ptr [0x0057cce6]         ; 0045378b | DOUBLE_0057cce6
     FDIV double ptr [ESP]               ; 00453791
     FXCH                                ; 00453794
     FMUL ST1                            ; 00453796

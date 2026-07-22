@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   string s_stake_b.kfm_00579dba
-;   string s_..\\core\\charactr.cpp_00579dc6
+;   TerminatedCString s_core_charactr_cpp_00579dc6
 ;   string s_%s_is_carrying_%s,_but_%s_thinks_00579ddb
 ;   string s_bip01_head_00579e16
 ;   undefined4 DAT_0059b094

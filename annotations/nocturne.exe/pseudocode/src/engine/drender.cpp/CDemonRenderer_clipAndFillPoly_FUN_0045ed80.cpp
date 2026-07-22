@@ -27,7 +27,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(int 
   else {
     if (((*(int *)(param_1 + 4) == 0) || ((DAT_01c039a0 & 1) != 0)) && ((DAT_01c039a0 & 5) != 0)) {
       if ((DAT_01c039a1 & 2) == 0) {
-        FUN_00432cd0(param_2,param_3);
+        engine_clipper_c_FUN_00432cd0(param_2,param_3);
         return;
       }
       engine_clipper_c_clipPolygonToViewport_FUN_004349a0(param_2,param_3);

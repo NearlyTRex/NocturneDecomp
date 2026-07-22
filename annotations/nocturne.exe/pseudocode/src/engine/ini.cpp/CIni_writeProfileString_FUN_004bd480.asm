@@ -14,10 +14,10 @@
 ;   engine_ini.cpp_writeProfileString_FUN_004bd830 at 004bd84b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058657d
+;   TerminatedCString s_rt_0058657d
 ;   string s_..\\engine\\ini.cpp_00586580
 ;   string s_cIni::writeProfileString:_Unable_00586592
-;   undefined4 DAT_005865c1
+;   TerminatedCString s_wt_005865c1
 ;   string s_..\\engine\\ini.cpp_005865c4
 ;   string s_cIni::writeProfileString:_Unable_005865d6
 ;   string s_[%s]_00586606
@@ -76,7 +76,7 @@ section .text
     POP ESI                             ; 004bd4d8
     POP EBX                             ; 004bd4d9
     RET                                 ; 004bd4da
-    PUSH 0x58657d                       ; 004bd4db | DAT_0058657d
+    PUSH 0x58657d                       ; 004bd4db | = "rt"
         ;   Label: LAB_004bd4db
     PUSH ESI                            ; 004bd4e0
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004bd4e1
@@ -121,7 +121,7 @@ section .text
     NOT ECX                             ; 004bd548
     DEC ECX                             ; 004bd54a
     MOV AH,0x78                         ; 004bd54b
-    PUSH 0x5865c1                       ; 004bd54d | DAT_005865c1
+    PUSH 0x5865c1                       ; 004bd54d | = "wt"
     MOV byte ptr [ESP + ECX*0x1 + 0x103],AH ; 004bd552
     LEA EAX,[ESP + 0x104]               ; 004bd559
     PUSH EAX                            ; 004bd560

@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   FUN_00414340 at 00414486
 ;   FUN_0045a260 at 0045a3b5
+;   core_batman.cpp_FUN_00414340 at 00414486
 ;   core_fire.cpp_CTrail_render_FUN_00489360 at 004893d3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057dc95
+;   double DOUBLE_0057dc95 = 65535
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -25,7 +25,7 @@ section .text
     SUB ESP,0x4                         ; 00461020
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020
     FLD float ptr [ESP + 0xc]           ; 00461023
-    FMUL double ptr [0x0057dc95]        ; 00461027 | DAT_0057dc95
+    FMUL double ptr [0x0057dc95]        ; 00461027 | DOUBLE_0057dc95
     CALL crt_math.c_round_FUN_00563a30  ; 0046102d
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP]               ; 00461032

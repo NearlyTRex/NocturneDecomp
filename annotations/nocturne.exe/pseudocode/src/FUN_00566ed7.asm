@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_pure_virtual_function_called!_00598af4
+;   TerminatedCString s_pure_virtual_function_ca_00598af4
 ;   undefined2 DAT_005c1f4c
 ;
 ; Called Functions:

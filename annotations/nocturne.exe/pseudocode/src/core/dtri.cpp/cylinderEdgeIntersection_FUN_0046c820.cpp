@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(float *param_1)
 
 {
@@ -81,11 +79,11 @@ uint __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(float *param_1)
     fVar5 = param_1[0x15] - param_1[4];
     fVar3 = param_1[0x16] - param_1[5];
     fVar1 = param_1[7] * param_1[7] + param_1[6] * param_1[6];
-    fVar2 = (param_1[7] * fVar3 + param_1[6] * fVar5) * _DAT_0057e45e;
+    fVar2 = (param_1[7] * fVar3 + param_1[6] * fVar5) * -2.0f;
     fVar5 = fVar2 * fVar2 -
-            fVar1 * _DAT_0057e462 * ((fVar3 * fVar3 + fVar5 * fVar5) - param_1[8] * param_1[8]);
+            fVar1 * 4.0f * ((fVar3 * fVar3 + fVar5 * fVar5) - param_1[8] * param_1[8]);
     if (0.0 <= fVar5) {
-      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * _DAT_0057e466);
+      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * 5.3049894774131808e-315._0_4_);
       param_1[0x13] = fVar1;
       if (((0.0 <= fVar1) && (fVar1 <= 1.0)) && (param_1[0x13] < *param_1)) {
         return 1;

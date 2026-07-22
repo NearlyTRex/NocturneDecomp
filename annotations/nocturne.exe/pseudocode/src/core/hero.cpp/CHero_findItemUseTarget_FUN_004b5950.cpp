@@ -32,7 +32,7 @@ uint __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)
   do {
     if (*(int *)(0x01E57284 + 0x14cd6c) <= local_18) {
       iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                        (*(uint *)(local_20 + 0x334),"@CTrap" + 1);
+                        (*(uint *)(local_20 + 0x334),"CTrap");
       if (iVar3 != 0) {
         *(uint *)(param_1 + 0x1fa1c) = *(uint *)(local_20 + 0x334);
       }
@@ -48,12 +48,12 @@ uint __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)
         local_1c = (uint *)(iVar1 + 0x20);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_3c,local_1c);
         local_30 = (double)local_38;
-        if ((((1.0 <= local_30) && (local_30 <= ram0x005858b3)) &&
-            (local_28 = (double)local_34, (float)_DAT_005858bb <= local_34)) &&
-           ((local_28 <= _DAT_005858c3 && (ABS(local_3c) <= (float)_DAT_005858c3)))) {
+        if ((((1.0 <= local_30) && (local_30 <= 6)) &&
+            (local_28 = (double)local_34, (float)0.5 <= local_34)) &&
+           ((local_28 <= 3 && (ABS(local_3c) <= (float)3)))) {
           iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                             (local_48,&local_3c);
-          if ((ABS(*(float *)(iVar2 + 4)) <= (float)_DAT_005858cb) &&
+          if ((ABS(*(float *)(iVar2 + 4)) <= (float)60) &&
              (iVar1 = *(int *)(iVar1 + 0x150), *(int *)(param_1 + 0x1fa1c) = iVar1, iVar1 != 0)) {
             if ((uint *)(param_1 + 0x1fa20) != local_1c) {
               *(uint *)(param_1 + 0x1fa20) = *local_1c;

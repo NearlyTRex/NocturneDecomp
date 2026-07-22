@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
 
 {
@@ -52,26 +50,26 @@ uint __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
           (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_80);
           fStack_68 = local_80 + fStack_74;
           fStack_64 = fStack_7c + fStack_70;
-          fStack_50 = fStack_68 * _DAT_00585873;
-          fStack_4c = fStack_64 * _DAT_00585873;
+          fStack_50 = fStack_68 * 0.5f;
+          fStack_4c = fStack_64 * 0.5f;
           fStack_60 = fStack_78 + fStack_6c;
-          fStack_48 = fStack_60 * _DAT_00585873;
+          fStack_48 = fStack_60 * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar3,auStack_5c,&fStack_50);
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,auStack_38,auStack_5c);
           fStack_20 = fStack_74 - local_80;
           fStack_18 = fStack_6c - fStack_78;
-          fStack_44 = fStack_20 * _DAT_00585873;
-          fStack_3c = fStack_18 * _DAT_00585873;
+          fStack_44 = fStack_20 * 0.5f;
+          fStack_3c = fStack_18 * 0.5f;
           uStack_40 = 0;
           fStack_1c = fStack_70 - fStack_7c;
           if (((fStack_30 - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=
-                (float)_DAT_0058587b) && (1.0 <= (double)fStack_34)) &&
-             ((double)fStack_34 <= _DAT_00585883)) {
+                (float)1.2) && (1.0 <= (double)fStack_34)) &&
+             ((double)fStack_34 <= 5)) {
             iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                               (auStack_2c,auStack_38);
             fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                          (*(uint *)(iVar4 + 4));
-            if (ABS(fStack_14) <= (float)_DAT_0058588b) {
+            if (ABS(fStack_14) <= (float)0.61086523818055505) {
               *(int *)(param_1 + 0x1fa0c) = iVar3;
               break;
             }

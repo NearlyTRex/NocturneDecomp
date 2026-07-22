@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   FUN_005576a0 at 005577b4
-;   FUN_00561940 at 00561a89
 ;   core_gabriela.cpp_CGabriella_renderTransparent_FUN_00498db0 at 00498dcc
 ;   core_stranger.cpp_CStranger_renderTransparent_FUN_0053d6c0 at 0053d6c6
+;   core_zombie.cpp_FUN_00561940 at 00561a89
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_00427290

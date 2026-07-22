@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(uint param_1,int param_2)
 
 {
@@ -21,8 +19,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(uin
   float10 fVar8;
   
   iVar3 = 0;
-  fVar4 = (float10)((float)param_2 * (float)_DAT_0057bafb);
-  fVar5 = (float10)_DAT_0057bb03;
+  fVar4 = (float10)((float)param_2 * (float)1.52587890625e-05);
+  fVar5 = (float10)0.0039215686274509803;
   iVar2 = 0;
   do {
     fVar7 = fVar4;

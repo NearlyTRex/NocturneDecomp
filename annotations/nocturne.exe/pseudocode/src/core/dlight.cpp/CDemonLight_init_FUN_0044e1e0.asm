@@ -12,18 +12,18 @@
 ;   core_setutil.cpp_C3DSLight_create_FUN_005151f0 at 0051523e
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c53e
-;   string s_CDemonCamera::init_-_Unable_to_a_0057c551
-;   undefined4 DAT_0057c586
+;   TerminatedCString s_core_dlight_cpp_0057c53e
+;   TerminatedCString s_CDemonCamera_init_Unable_0057c551
+;   double DOUBLE_0057c586 = 7
 ;   undefined4 DAT_005ad51c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
+;   core_dlight.cpp_FUN_0044e2c0
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_0044e2c0
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x4                         ; 0044e1e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0044e1e5
     PUSH EBX                            ; 0044e1e9
-    CALL FUN_0044e2c0                   ; 0044e1ea
-        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e2c0()
+    CALL core_dlight.cpp_FUN_0044e2c0   ; 0044e1ea
+        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044e2c0()
     MOV EDX,dword ptr [EBX + 0x1cc0]    ; 0044e1ef
     IMUL EDX,dword ptr [EBX + 0x1cc4]   ; 0044e1f5
     ADD EDX,EDX                         ; 0044e1fc
@@ -68,7 +68,7 @@ section .text
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0044e248
         ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
     FLD float ptr [EBX + 0x2fa8]        ; 0044e24d
-    FMUL double ptr [0x0057c586]        ; 0044e253 | DAT_0057c586
+    FMUL double ptr [0x0057c586]        ; 0044e253 | DOUBLE_0057c586
     ADD ESP,0x4                         ; 0044e259
     MOV dword ptr [EBX + 0x2fa0],EAX    ; 0044e25c
     PUSH 0x0                            ; 0044e262

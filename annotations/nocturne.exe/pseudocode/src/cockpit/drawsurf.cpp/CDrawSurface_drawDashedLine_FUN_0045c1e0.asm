@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057d976
+;   double DOUBLE_0057d976 = 0.0000152587890625
 ;   undefined4 DAT_005ae6f4
 ;   undefined4 DAT_005ae6f8
 ;   undefined4 DAT_01b4d478
@@ -127,7 +127,7 @@ section .text
     RET                                 ; 0045c2da
     FILD dword ptr [0x01bd1d80]         ; 0045c2db | DAT_01bd1d80
         ;   Label: LAB_0045c2db
-    FMUL double ptr [0x0057d976]        ; 0045c2e1 | DAT_0057d976
+    FMUL double ptr [0x0057d976]        ; 0045c2e1 | DOUBLE_0057d976
     FLD float ptr [0x01b4d478]          ; 0045c2e7 | DAT_01b4d478
     FXCH                                ; 0045c2ed
     FADD ST0,ST1                        ; 0045c2ef

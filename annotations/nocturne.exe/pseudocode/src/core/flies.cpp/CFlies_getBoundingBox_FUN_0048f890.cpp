@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_flies_cpp_CFlies_getBoundingBox_FUN_0048f890(int param_1,float *param_2)
 
 {
@@ -16,9 +14,9 @@ void core_flies_cpp_CFlies_getBoundingBox_FUN_0048f890(int param_1,float *param_
   
   param_2[1] = 0.0;
   param_2[4] = *(float *)(param_1 + 0x154);
-  fVar1 = (float)_DAT_0058172f;
+  fVar1 = (float)-0.5;
   *param_2 = *(float *)(param_1 + 0x150) * fVar1;
-  fVar2 = (float)_DAT_00581737;
+  fVar2 = (float)0.5;
   param_2[3] = *(float *)(param_1 + 0x150) * fVar2;
   param_2[2] = *(float *)(param_1 + 0x158) * fVar1;
   param_2[5] = fVar2 * *(float *)(param_1 + 0x158);

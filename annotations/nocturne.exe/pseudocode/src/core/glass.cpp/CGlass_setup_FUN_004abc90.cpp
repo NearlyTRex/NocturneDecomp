@@ -75,7 +75,7 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
     local_7c = 0;
     local_80 = 0;
     pfStack_e0 = local_a8;
-    local_84 = *(float *)(param_1 + 0x150) * _DAT_00584f98;
+    local_84 = *(float *)(param_1 + 0x150) * 0.5f;
     pfVar5 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(param_1 + 0x3c);
     local_78 = *(float *)(param_1 + 0x20) + *pfVar5;
     local_74 = *(float *)(param_1 + 0x24) + pfVar5[1];
@@ -127,7 +127,7 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
   }
   pfStack_dc = (float *)0x4abce0;
   fVar9 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x150) * (float10)_DAT_00584fa0);
+                             ((float10)*(float *)(param_1 + 0x150) * (float10)0.5);
   local_18 = (int)ROUND(fVar9);
   *(int *)(param_1 + 0xb24) = local_18 + 1;
   if (4 < local_18 + 1) {
@@ -135,7 +135,7 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
   }
   pfStack_e0 = (float *)0x4abd15;
   fVar9 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x154) * (float10)_DAT_00584fa0);
+                             ((float10)*(float *)(param_1 + 0x154) * (float10)0.5);
   local_1c = (int)ROUND(fVar9);
   *(int *)(param_1 + 0xb28) = local_1c + 1;
   if (4 < local_1c + 1) {
@@ -158,7 +158,7 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
   local_d8 = 0.0;
   local_30 = param_1 + 900;
   for (local_28 = 0; local_28 < *(int *)(param_1 + 0xb28) + 1; local_28 = local_28 + 1) {
-    pfStack_e0 = (float *)(-*(float *)(param_1 + 0x150) * (float)_DAT_00584fa0);
+    pfStack_e0 = (float *)(-*(float *)(param_1 + 0x150) * (float)0.5);
     pfVar5 = (float *)(iVar3 * 0xc + local_30);
     iVar4 = iVar3 * 4 + param_1;
     for (iVar6 = 0; iVar6 < *(int *)(param_1 + 0xb24) + 1; iVar6 = iVar6 + 1) {
@@ -167,8 +167,8 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
         pfVar5[1] = (float)pfStack_dc;
         pfVar5[2] = local_d8;
       }
-      fVar9 = (float10)_DAT_00584fa8;
-      fVar10 = (float10)_DAT_00584fb0;
+      fVar9 = (float10)16515072;
+      fVar10 = (float10)131072;
       local_1c = iVar6;
       fVar11 = (float10)round
                                   (((float10)iVar6 / (float10)*(int *)(param_1 + 0xb24)) * fVar9 +
@@ -229,7 +229,7 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
     } while (local_24 < *(int *)(param_1 + 0xb28));
   }
   *(uint *)(param_1 + 0xfc) = (uint)(*(int *)(param_1 + 0x174) < 0xfde9);
-  iVar3 = _stricmp(param_1 + 0x17c,&DAT_00584f23);
+  iVar3 = _stricmp(param_1 + 0x17c,"none");
   if (iVar3 == 0) {
     *(byte *)(param_1 + 0x17c) = 0;
   }

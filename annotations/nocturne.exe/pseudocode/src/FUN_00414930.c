@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00414930(int param_1,int param_2)
 
 {
@@ -23,7 +21,7 @@ void FUN_00414930(int param_1,int param_2)
   sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbdd4));
   if (*(int *)(param_2 + 0x28) == 7) {
     iVar4 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00578d4f;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);
     do {
       iVar4 = iVar4 + 1;
@@ -35,7 +33,7 @@ void FUN_00414930(int param_1,int param_2)
     uVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                       (param_1 + 0x150,local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,uVar2);
-    FUN_00427730(param_1,local_24,0,0,0x41200000,0);
+    core_charactr_cpp_FUN_00427730(param_1,local_24,0,0,0x41200000,0);
   }
   core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(param_1,param_2);
   fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
@@ -47,8 +45,7 @@ void FUN_00414930(int param_1,int param_2)
     if ((*(int *)(iVar3 + 0x24) != 7) && (*(int *)(iVar3 + 0x24) != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,7,1);
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbdd8));
-      uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
-                        (param_1,"4@batman-die.wav" + 2);
+      uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"batman-die.wav");
       *(uint *)(param_1 + 0xbdd8) = uVar2;
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
       return;

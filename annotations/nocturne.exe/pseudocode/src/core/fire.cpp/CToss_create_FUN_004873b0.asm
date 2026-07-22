@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_0048c310 at 0048c33e
 ;
 ; Referenced Globals:
-;   undefined4 s_dynamitestick.kfm_00581241+3
+;   TerminatedCString s_dynamitestick_kfm_00581244
 ;   string s_..\\core\\fire.cpp_00581256
 ;   string s_CToss::create_-_invalid_toss_typ_00581267
 ;   undefined4 DAT_01cc4800
@@ -119,7 +119,7 @@ section .text
     POP ESI                             ; 004874ae
     POP EBX                             ; 004874af
     RET                                 ; 004874b0
-    PUSH 0x581244                       ; 004874b1 | s_dynamitestick.kfm_00581241+3
+    PUSH 0x581244                       ; 004874b1 | = "dynamitestick.kfm"
         ;   Label: LAB_004874b1
     LEA EAX,[EBX + 0x4]                 ; 004874b6
     PUSH EAX                            ; 004874b9

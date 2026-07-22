@@ -18,7 +18,7 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60
 ;   engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH ECX                            ; 0040842d
     MOV [0x01c039a0],EAX                ; 0040842e | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDX      ; 00408433 | DAT_01c039a4
-    CALL FUN_00432cd0                   ; 00408439
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 00408439
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 0040843e
     MOV ESI,dword ptr [EBX + 0x4]       ; 00408441
         ;   Label: LAB_00408441

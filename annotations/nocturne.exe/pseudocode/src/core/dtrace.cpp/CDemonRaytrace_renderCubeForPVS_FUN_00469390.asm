@@ -57,10 +57,10 @@
 ;   FUN_00469ce0 at 0046a365
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dtrace.cpp_0057e1fd+1
+;   TerminatedCString s_core_dtrace_cpp_0057e1fe
 ;   string s_Too_many_drawn_cubes._Need_to_re_0057e211
-;   undefined4 DAT_0057e23e
-;   undefined4 DAT_0057e246
+;   double DOUBLE_0057e23e = -256
+;   double DOUBLE_0057e246 = 256
 ;   undefined4 DAT_0059c8a0
 ;   undefined4 DAT_005ae700
 ;   undefined4 DAT_005ae704
@@ -533,7 +533,7 @@ section .text
     CMP ECX,0x4e20                      ; 004699e0
     JL 0x004693ea                       ; 004699e6
         ;   XREF to: 004693ea (CONDITIONAL_JUMP)  ; LAB_004693ea
-    MOV ESI,0x57e1fe                    ; 004699ec | s_..\core\dtrace.cpp_0057e1fd+1
+    MOV ESI,0x57e1fe                    ; 004699ec | = "..\\core\\dtrace.cpp"
     MOV EDI,0x792                       ; 004699f1
     PUSH 0x57e211                       ; 004699f6 | = "Too many drawn cubes.  Need to recomp..."
     MOV dword ptr [0x01cc4800],ESI      ; 004699fb | DAT_01cc4800
@@ -559,7 +559,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469a3d
     FMUL float ptr [ESI + 0x30]         ; 00469a44
     FADD float ptr [ESI + 0x18]         ; 00469a47
-    FMUL double ptr [0x0057e23e]        ; 00469a4a | DAT_0057e23e
+    FMUL double ptr [0x0057e23e]        ; 00469a4a | DOUBLE_0057e23e
     MOV EAX,0x5                         ; 00469a50
     MOV dword ptr [ESP + 0x18],EBX      ; 00469a55
     MOV dword ptr [ESP + 0x20],EAX      ; 00469a59
@@ -587,7 +587,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469aa3
     FMUL float ptr [ESI + 0x30]         ; 00469aaa
     FADD float ptr [ESI + 0x18]         ; 00469aad
-    FMUL double ptr [0x0057e246]        ; 00469ab0 | DAT_0057e246
+    FMUL double ptr [0x0057e246]        ; 00469ab0 | DOUBLE_0057e246
     MOV ECX,0x2                         ; 00469ab6
     MOV EDX,0x6                         ; 00469abb
     MOV EBX,0x3                         ; 00469ac0
@@ -617,7 +617,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469b15
     FMUL float ptr [ESI + 0x28]         ; 00469b1c
     FADD float ptr [ESI + 0x10]         ; 00469b1f
-    FMUL double ptr [0x0057e23e]        ; 00469b22 | DAT_0057e23e
+    FMUL double ptr [0x0057e23e]        ; 00469b22 | DOUBLE_0057e23e
     MOV EDX,0x3                         ; 00469b28
     MOV ECX,dword ptr [0x005ae700]      ; 00469b2d | DAT_005ae700
     MOV EBX,0x4                         ; 00469b33
@@ -647,7 +647,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469b85
     FMUL float ptr [ESI + 0x28]         ; 00469b8c
     FADD float ptr [ESI + 0x10]         ; 00469b8f
-    FMUL double ptr [0x0057e246]        ; 00469b92 | DAT_0057e246
+    FMUL double ptr [0x0057e246]        ; 00469b92 | DOUBLE_0057e246
     MOV EDX,0x5                         ; 00469b98
     MOV ECX,dword ptr [0x005ae700]      ; 00469b9d | DAT_005ae700
     MOV EAX,0x6                         ; 00469ba3
@@ -678,7 +678,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469bfb
     FMUL float ptr [ESI + 0x2c]         ; 00469c02
     FADD float ptr [ESI + 0x14]         ; 00469c05
-    FMUL double ptr [0x0057e246]        ; 00469c08 | DAT_0057e246
+    FMUL double ptr [0x0057e246]        ; 00469c08 | DOUBLE_0057e246
     MOV ECX,0x4                         ; 00469c0e
     MOV EBX,0x5                         ; 00469c13
     MOV EDX,0x7                         ; 00469c18
@@ -709,7 +709,7 @@ section .text
     FILD dword ptr [ESP + 0xc0]         ; 00469c75
     FMUL float ptr [ESI + 0x2c]         ; 00469c7c
     FADD float ptr [ESI + 0x14]         ; 00469c7f
-    FMUL double ptr [0x0057e23e]        ; 00469c82 | DAT_0057e23e
+    FMUL double ptr [0x0057e23e]        ; 00469c82 | DOUBLE_0057e23e
     MOV ECX,dword ptr [0x005ae700]      ; 00469c88 | DAT_005ae700
     XOR EBX,EBX                         ; 00469c8e
     MOV EDX,0x3                         ; 00469c90

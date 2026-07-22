@@ -46,7 +46,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(uint param_1)
   } while (iVar2 != 0x1000);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320();
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(local_34,"stats",0x280);
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00584687,"credits.txt");
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("data","credits.txt");
   if (iVar3 == 0) {
     engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(local_34);
     return;
@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(uint param_1)
   for (iVar2 = local_1c << 2; ((*(byte *)(iVar3 + 0xc) & 0x10) == 0 && (iVar2 < 0x1000));
       iVar2 = iVar2 + 4) {
     _fgets(local_134,0xff,iVar3);
-    iVar4 = _strcmp(local_134,&DAT_0058468c);
+    iVar4 = _strcmp(local_134,"end\n");
     if (iVar4 == 0) break;
     uVar6 = 0xffffffff;
     pcVar5 = local_134;
@@ -161,6 +161,6 @@ LAB_004a722b:
     iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);
     if (iVar4 != 0) goto LAB_004a722b;
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(unaff_retaddr);
-    local_18 = local_18 - *(float *)(unaff_retaddr + 0x264) * _DAT_005846d6;
+    local_18 = local_18 - *(float *)(unaff_retaddr + 0x264) * 32.0f;
   } while( true );
 }

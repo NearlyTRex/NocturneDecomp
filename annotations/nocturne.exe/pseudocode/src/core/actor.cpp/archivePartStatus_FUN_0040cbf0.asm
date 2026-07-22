@@ -15,21 +15,21 @@
 ;   core_zombie.cpp_CZombie_archive_FUN_00561aa0 at 00561b24
 ;
 ; Referenced Globals:
-;   string s_part_status_opening_brace_00577cdc
-;   undefined4 DAT_00577cf6
-;   undefined4 DAT_00577cf9
+;   TerminatedCString s_part_status_opening_brac_00577cdc
+;   TerminatedCString s_d_00577cf6
+;   TerminatedCString s_d_00577cf9
 ;   string s_description_00577cfc
 ;   string s_part_status_entry_00577d08
-;   undefined4 DAT_00577d1a
-;   undefined4 DAT_00577d1c
+;   TerminatedCString s_anon_00577d1a
+;   TerminatedCString s_d_00577d1c
 ;   string s_description_00577d1f
 ;   string s_part_texture_entry_00577d2b
-;   undefined4 DAT_00577d3e
-;   string s_part_status_info_closing_brace_00577d40
-;   string s_%s{_//_%s_00577d5f
-;   string s_%s%d_00577d6a
-;   undefined4 DAT_00577d70
-;   undefined4 DAT_00577d73
+;   TerminatedCString s_anon_00577d3e
+;   TerminatedCString s_part_status_info_closing_00577d40
+;   TerminatedCString s_s_s_00577d5f
+;   TerminatedCString s_s_d_00577d6a
+;   TerminatedCString s_s_00577d70
+;   TerminatedCString s_d_00577d73
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 0040cc0c (CONDITIONAL_JUMP)  ; LAB_0040cc0c
     MOV EAX,ESP                         ; 0040cc2a
     PUSH EAX                            ; 0040cc2c
-    PUSH 0x577cf6                       ; 0040cc2d | DAT_00577cf6
+    PUSH 0x577cf6                       ; 0040cc2d | = "%d"
     MOV ESI,dword ptr [0x00763e84]      ; 0040cc32 | DAT_00763e84
     PUSH ESI                            ; 0040cc38
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040cc39
@@ -90,7 +90,7 @@ section .text
     LEA ESI,[EBP + 0x2140]              ; 0040cc53
     PUSH ESI                            ; 0040cc59
         ;   Label: LAB_0040cc59
-    PUSH 0x577cf9                       ; 0040cc5a | DAT_00577cf9
+    PUSH 0x577cf9                       ; 0040cc5a | = "%d"
     MOV EDX,dword ptr [0x00763e84]      ; 0040cc5f | DAT_00763e84
     PUSH EDX                            ; 0040cc65
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040cc66
@@ -111,7 +111,7 @@ section .text
     CMP EBX,ECX                         ; 0040cc8c
     JL 0x0040cc59                       ; 0040cc8e
         ;   XREF to: 0040cc59 (CONDITIONAL_JUMP)  ; LAB_0040cc59
-    PUSH 0x577d1a                       ; 0040cc90 | DAT_00577d1a
+    PUSH 0x577d1a                       ; 0040cc90 | = " "
         ;   Label: LAB_0040cc90
     MOV EBX,dword ptr [0x00763e84]      ; 0040cc95 | DAT_00763e84
     PUSH EBX                            ; 0040cc9b
@@ -130,7 +130,7 @@ section .text
     LEA ESI,[EBP + 0x21b8]              ; 0040ccb6
     PUSH ESI                            ; 0040ccbc
         ;   Label: LAB_0040ccbc
-    PUSH 0x577d1c                       ; 0040ccbd | DAT_00577d1c
+    PUSH 0x577d1c                       ; 0040ccbd | = "%d"
     MOV EBP,dword ptr [0x00763e84]      ; 0040ccc2 | DAT_00763e84
     PUSH EBP                            ; 0040ccc8
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040ccc9
@@ -151,7 +151,7 @@ section .text
     CMP EBX,EAX                         ; 0040ccef
     JL 0x0040ccbc                       ; 0040ccf1
         ;   XREF to: 0040ccbc (CONDITIONAL_JUMP)  ; LAB_0040ccbc
-    PUSH 0x577d3e                       ; 0040ccf3 | DAT_00577d3e
+    PUSH 0x577d3e                       ; 0040ccf3 | = " "
         ;   Label: LAB_0040ccf3
     MOV EDX,dword ptr [0x00763e84]      ; 0040ccf8 | DAT_00763e84
     PUSH EDX                            ; 0040ccfe
@@ -223,7 +223,7 @@ section .text
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x10                        ; 0040cd97
     PUSH 0x5acc90                       ; 0040cd9a | DAT_005acc90
-    PUSH 0x577d70                       ; 0040cd9f | DAT_00577d70
+    PUSH 0x577d70                       ; 0040cd9f | = "%s"
     MOV ESI,dword ptr [0x00763e84]      ; 0040cda4 | DAT_00763e84
     PUSH ESI                            ; 0040cdaa
     MOV EBX,EBP                         ; 0040cdab
@@ -234,7 +234,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2140]    ; 0040cdb8
         ;   Label: LAB_0040cdb8
     PUSH EAX                            ; 0040cdbe
-    PUSH 0x577d73                       ; 0040cdbf | DAT_00577d73
+    PUSH 0x577d73                       ; 0040cdbf | = "%d "
     MOV EDX,dword ptr [0x00763e84]      ; 0040cdc4 | DAT_00763e84
     PUSH EDX                            ; 0040cdca
     ADD EBX,0x4                         ; 0040cdcb
@@ -244,14 +244,14 @@ section .text
     CMP EBX,ESI                         ; 0040cdd6
     JNZ 0x0040cdb8                      ; 0040cdd8
         ;   XREF to: 0040cdb8 (CONDITIONAL_JUMP)  ; LAB_0040cdb8
-    PUSH 0x577d77                       ; 0040cdda | DAT_00577d77
+    PUSH 0x577d77                       ; 0040cdda | = "\n"
     MOV ECX,dword ptr [0x00763e84]      ; 0040cddf | DAT_00763e84
     PUSH ECX                            ; 0040cde5
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040cde6
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x8                         ; 0040cdeb
     PUSH 0x5acc90                       ; 0040cdee | DAT_005acc90
-    PUSH 0x577d79                       ; 0040cdf3 | DAT_00577d79
+    PUSH 0x577d79                       ; 0040cdf3 | = "%s"
     MOV EBX,dword ptr [0x00763e84]      ; 0040cdf8 | DAT_00763e84
     PUSH EBX                            ; 0040cdfe
     XOR ESI,ESI                         ; 0040cdff
@@ -265,7 +265,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x21b8]    ; 0040ce0f
         ;   Label: LAB_0040ce0f
     PUSH EBP                            ; 0040ce15
-    PUSH 0x577d7c                       ; 0040ce16 | DAT_00577d7c
+    PUSH 0x577d7c                       ; 0040ce16 | = "%d "
     MOV EAX,[0x00763e84]                ; 0040ce1b | DAT_00763e84
     PUSH EAX                            ; 0040ce20
     ADD EBX,0x4                         ; 0040ce21
@@ -279,7 +279,7 @@ section .text
     LEA EAX,[EAX]                       ; 0040ce31
     LEA EDX,[EDX]                       ; 0040ce37
     LEA EAX,[EAX]                       ; 0040ce3d
-    PUSH 0x577d80                       ; 0040ce40 | DAT_00577d80
+    PUSH 0x577d80                       ; 0040ce40 | = "\n"
         ;   Label: LAB_0040ce40
     MOV EDX,dword ptr [0x00763e84]      ; 0040ce45 | DAT_00763e84
     PUSH EDX                            ; 0040ce4b
@@ -291,7 +291,7 @@ section .text
         ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
     ADD ESP,0x4                         ; 0040ce5b
     PUSH 0x5acc90                       ; 0040ce5e | DAT_005acc90
-    PUSH 0x577d82                       ; 0040ce63 | DAT_00577d82
+    PUSH 0x577d82                       ; 0040ce63 | = "%s}\n"
     MOV ECX,dword ptr [0x00763e84]      ; 0040ce68 | DAT_00763e84
     PUSH ECX                            ; 0040ce6e
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040ce6f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(int param_1,int *param_2)
 
 {
@@ -45,7 +43,7 @@ switchD_00420a49_default:
      ((iVar1 == *(int *)(param_1 + 0xbd30) || (iVar1 == *(int *)(param_1 + 0xbd44))))) {
     local_20 = (float)param_2[0xb];
     if (*(int *)(param_1 + 0xbd44) == *param_2) {
-      local_20 = local_20 * (float)_DAT_00579bb5;
+      local_20 = local_20 * (float)0.33300000000000002;
     }
     if (*(int *)(0x01C775EC + 0x1e0) != 0) {
       local_20 = 1.0;
@@ -71,16 +69,16 @@ switchD_00420a49_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd44) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_00579bbd);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   iVar1 = *param_2;
   if (iVar1 == *(int *)(param_1 + 0xbd44)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00579bcd);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar1 != *(int *)(param_1 + 0xbd40)) && (iVar1 != *(int *)(param_1 + 0xbd3c))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00579bc5);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

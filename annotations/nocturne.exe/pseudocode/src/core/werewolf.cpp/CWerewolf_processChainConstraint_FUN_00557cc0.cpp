@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(int param_1)
 
 {
@@ -42,7 +40,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(int
               (&local_5c,&local_50,*(int *)(param_1 + 0xbd38) * 0x30 + param_1 + 0xfd0);
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
               (param_1,&local_68,*(int *)(param_1 + 0xbd50) + 0x20);
-    if (local_64 < (float)_DAT_00597f09) {
+    if (local_64 < (float)2) {
       local_44[0] = local_68;
       local_44[2] = local_60;
       local_44[1] = 0.0;

@@ -58,7 +58,7 @@ LAB_0042d4cf:
     pcVar7 = (char *)0x0;
   }
 LAB_0042d4f3:
-  pcVar5 = (char *)0x57a6e2;
+  pcVar5 = ".ACT";
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;
@@ -68,7 +68,7 @@ LAB_0042d4f3:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(0x57a6ea,acStack_ac,0x57a6e7);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",acStack_ac,"rb");
   if (iVar2 == 0) {
     puVar6 = (uint *)0x1c00948;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {

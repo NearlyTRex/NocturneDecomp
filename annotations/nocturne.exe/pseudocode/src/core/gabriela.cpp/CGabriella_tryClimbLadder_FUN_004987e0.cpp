@@ -52,18 +52,18 @@ uint __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(int param_
       local_60 = *(float *)(param_1 + 0x20) - *(float *)(iVar1 + 0x20);
       local_5c = *(float *)(param_1 + 0x24) - *(float *)(iVar1 + 0x24);
       local_58 = *(float *)(param_1 + 0x28) - *(float *)(iVar1 + 0x28);
-      if ((ABS(local_5c) <= (float)_DAT_00582182) &&
-         (local_5c = 0.0, SQRT(local_58 * local_58 + local_60 * local_60) <= (float)_DAT_0058218a))
-      {
+      if ((ABS(local_5c) <= (float)5) &&
+         (local_5c = 0.0, SQRT(local_58 * local_58 + local_60 * local_60) <= (float)3)
+         ) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                   (param_1,&local_90,(float *)(iVar1 + 0x20));
-        if ((ABS(local_90) <= (float)_DAT_00582192) &&
-           (((float)_DAT_0058219a <= local_88 && ((double)local_88 <= _DAT_0058218a)))) {
+        if ((ABS(local_90) <= (float)0.29999999999999999) &&
+           (((float)0.5 <= local_88 && ((double)local_88 <= 3)))) {
           iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                             (local_54,&local_90);
           local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                       (*(uint *)(iVar2 + 4));
-          if (ABS(local_18) <= (float)_DAT_005821a2) {
+          if (ABS(local_18) <= (float)0.17453292519444399) {
             local_20 = 0;
             pfVar3 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                                         (iVar1,local_78,(float *)(param_1 + 0x20));
@@ -76,13 +76,13 @@ uint __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(int param_
               local_20 = 1;
               local_88 = -local_88;
             }
-            if (((ABS(local_90) <= (float)_DAT_00582192) && ((float)_DAT_0058219a <= local_88)) &&
-               ((double)local_88 <= _DAT_0058218a)) {
+            if (((ABS(local_90) <= (float)0.29999999999999999) && ((float)0.5 <= local_88))
+               && ((double)local_88 <= 3)) {
               iVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                                 (local_30,&local_90);
               local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                           (*(uint *)(iVar1 + 4));
-              if (ABS(local_18) <= (float)_DAT_005821a2) {
+              if (ABS(local_18) <= (float)0.17453292519444399) {
                 *(int *)(param_1 + 0x1fa14) = local_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                           (param_1 + 0x150,0x16,1);

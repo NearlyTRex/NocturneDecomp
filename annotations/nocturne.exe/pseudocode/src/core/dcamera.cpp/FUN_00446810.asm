@@ -38,7 +38,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_00444645
 ;   string s_%s.fog_0057b9fb
-;   undefined4 DAT_0057ba02
+;   TerminatedCString s_rb_0057ba02
 ;   string s_backdrop_0057ba05
 ;   string s_backdrop\\%s_0057ba0e
 ;   string s_..\\core\\dcamera.cpp_0057ba1a
@@ -49,7 +49,7 @@
 ;   string s_Not_all_bytes_consumed_compressi_0057ba7b
 ;   string s_..\\core\\dcamera.cpp_0057baa1
 ;   string s_Error_writing_compressed_file_%s_0057bab5
-;   undefined4 DAT_0057badb
+;   double DOUBLE_0057badb = 256
 ;   undefined4 DAT_005a47a0
 ;   ... and 16 more
 ;
@@ -108,7 +108,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0044687d
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 00446882
-    PUSH 0x57ba02                       ; 00446885 | DAT_0057ba02
+    PUSH 0x57ba02                       ; 00446885 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0044688a
     PUSH EAX                            ; 0044688e
     PUSH 0x57ba05                       ; 0044688f | = "backdrop"
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 00565a13 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ostream_write_FUN_00565a13()
     ADD ESP,0xc                         ; 00446963
     MOV EAX,dword ptr [ESP + 0x27c]     ; 00446966
-    FLD double ptr [0x0057badb]         ; 0044696d | DAT_0057badb
+    FLD double ptr [0x0057badb]         ; 0044696d | DOUBLE_0057badb
     FLD float ptr [EAX + 0x104]         ; 00446973
     FMUL ST1                            ; 00446979
     CALL crt_math.c_round_FUN_00563a30  ; 0044697b

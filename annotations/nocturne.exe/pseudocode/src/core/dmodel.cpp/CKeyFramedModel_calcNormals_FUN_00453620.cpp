@@ -68,7 +68,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(int param_
         dVar3 = (double)iVar1;
         dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar2 * dVar2);
         if (0.0 < dVar2) {
-          fVar9 = (float10)_DAT_0057cce6 / (float10)dVar2;
+          fVar9 = (float10)65535 / (float10)dVar2;
           fVar10 = (float10)round((float10)*piVar5 * fVar9);
           fVar11 = (float10)round((float10)iVar7 * fVar9);
           fVar9 = (float10)round((float10)iVar1 * fVar9);

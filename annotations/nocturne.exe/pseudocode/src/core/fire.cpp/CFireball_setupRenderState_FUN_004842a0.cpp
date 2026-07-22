@@ -55,7 +55,7 @@ void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004842a0(void)
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  fVar5 = (float10)_DAT_0058110c;
+  fVar5 = (float10)-65536;
   fVar6 = (float10)round((float10)local_60 * fVar5);
   fVar7 = (float10)round((float10)local_54 * fVar5);
   fVar5 = (float10)round((float10)local_48 * fVar5);

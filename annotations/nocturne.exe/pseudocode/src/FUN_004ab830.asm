@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004ab814 = 004ab89d
-;   undefined4 DAT_00584e95
-;   undefined4 DAT_00584e9d
-;   undefined4 DAT_00584ea5
+;   double DOUBLE_00584e95 = 0.5
+;   double DOUBLE_00584e9d = 0.700000000000000
+;   double DOUBLE_00584ea5 = 0.300000000000000
 ;   undefined4 DAT_01c78c14
 ;   undefined4 DAT_01c78c28
 ;   undefined4 DAT_01c78c2c
@@ -101,15 +101,15 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 004ab8e0
     IMUL EDX,EBX,0xc                    ; 004ab8e4
         ;   Label: LAB_004ab8e4
-    FLD double ptr [0x00584e95]         ; 004ab8e7 | DAT_00584e95
+    FLD double ptr [0x00584e95]         ; 004ab8e7 | DOUBLE_00584e95
     FLD float ptr [ESP + 0x18]          ; 004ab8ed
     FMUL ST1                            ; 004ab8f1
     FLD float ptr [ESP + 0x1c]          ; 004ab8f3
-    FMUL double ptr [0x00584e9d]        ; 004ab8f7 | DAT_00584e9d
+    FMUL double ptr [0x00584e9d]        ; 004ab8f7 | DOUBLE_00584e9d
     FLD float ptr [ESP + 0x30]          ; 004ab8fd
     FMULP ST3                           ; 004ab901
     FLD float ptr [ESP + 0x34]          ; 004ab903
-    FMUL double ptr [0x00584ea5]        ; 004ab907 | DAT_00584ea5
+    FMUL double ptr [0x00584ea5]        ; 004ab907 | DOUBLE_00584ea5
     MOV EAX,dword ptr [EBP + 0x18]      ; 004ab90d
     FADDP                               ; 004ab910
     FXCH ST2                            ; 004ab912

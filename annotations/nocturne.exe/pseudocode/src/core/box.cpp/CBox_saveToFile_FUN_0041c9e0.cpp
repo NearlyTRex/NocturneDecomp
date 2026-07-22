@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_saveToFile_FUN_0041c9e0(float *param_1,uint param_2,uint param_3)
 
 {

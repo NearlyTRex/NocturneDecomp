@@ -19,19 +19,19 @@
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 at 00453072
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057cb6e
+;   double DOUBLE_0057cb6e = 250
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
+;   core_set.cpp_FUN_0050ddd0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
-;   FUN_0050ddd0
 ;
 ; *****************************************************************************
 
@@ -161,7 +161,7 @@ section .text
     FMUL float ptr [ESP + 0x8]          ; 004532c7
     FADDP                               ; 004532cb
     FSQRT                               ; 004532cd
-    FCOMP double ptr [0x0057cb6e]       ; 004532cf | DAT_0057cb6e
+    FCOMP double ptr [0x0057cb6e]       ; 004532cf | DOUBLE_0057cb6e
     FNSTSW AX                           ; 004532d5
     SAHF                                ; 004532d7
     JA 0x004531a1                       ; 004532d8
@@ -198,8 +198,8 @@ section .text
     PUSH EAX                            ; 00453325
     MOV EDX,dword ptr [0x005be368]      ; 00453326 | DAT_005be368
     PUSH EDX                            ; 0045332c | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 0045332d
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 0045332d
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
     ADD ESP,0x10                        ; 00453332
     JMP 0x00453219                      ; 00453335
         ;   XREF to: 00453219 (UNCONDITIONAL_JUMP)  ; LAB_00453219
@@ -245,8 +245,8 @@ section .text
     PUSH EAX                            ; 0045339b
     MOV EDX,dword ptr [0x005be368]      ; 0045339c | DAT_005be368
     PUSH EDX                            ; 004533a2 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 004533a3
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 004533a3
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
     ADD ESP,0x10                        ; 004533a8
     CMP EBX,dword ptr [ESP + 0x24]      ; 004533ab
     JL 0x00453348                       ; 004533af

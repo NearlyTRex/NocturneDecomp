@@ -67,9 +67,9 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,auStack_88,0);
   fVar8 = ((float10)_DAT_0059d214 - (float10)*param_1) / (float10)_DAT_0059d214;
   dVar19 = (double)fVar8;
-  fVar1 = (float)(fVar8 * (float10)_DAT_005813cc + (float10)_DAT_005813d4);
+  fVar1 = (float)(fVar8 * (float10)4 + (float10)0.40000000000000002);
   fStack_d4 = fVar1;
-  if ((float10)dVar19 < (float10)_DAT_005813d4) {
+  if ((float10)dVar19 < (float10)0.40000000000000002) {
     pfVar7 = (float *)engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
                                 (DAT_005ae704,local_94);
     fVar5 = *pfVar7 - param_1[1];
@@ -87,23 +87,23 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
                         SQRT(((float10)pfVar7[2] - (float10)param_1[3]) * (float10)fVar3 +
                              fVar9 * fVar9 +
                              ((float10)pfVar7[1] - (float10)param_1[2]) * (float10)fVar2))) *
-                        ((float10)1 - (float10)dVar19 * (float10)_DAT_005813dc) *
-                        (float10)_DAT_005813e4) * (float10)fVar1);
+                        ((float10)1 - (float10)dVar19 * (float10)2.5) *
+                        (float10)2) * (float10)fVar1);
   }
-  local_78 = fVar1 * _DAT_005813ec * (float)_DAT_005813f4;
-  fStack_7c = -fStack_d4 * _DAT_005813ec * (float)_DAT_005813f4;
+  local_78 = fVar1 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;
+  fStack_7c = -fStack_d4 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;
   local_74 = 0.0;
   local_4c = (int)ROUND(fStack_7c * _DAT_0059d1f8);
   local_48 = (int)ROUND(local_78 * _DAT_0059d1f8);
   local_44 = (int)ROUND(_DAT_0059d1f8 * 0.0);
   fStack_2c = fStack_7c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);
-  fStack_7c = fStack_d4 * (float)_DAT_005813fc * (float)_DAT_005813f4;
+  fStack_7c = fStack_d4 * (float)128 * (float)0.00390625;
   local_58 = (int)ROUND(fStack_7c * _DAT_0059d1f8);
   local_54 = (int)ROUND(local_78 * _DAT_0059d1f8);
   local_50 = (int)ROUND(local_74 * _DAT_0059d1f8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);
-  local_78 = -fVar1 * (float)_DAT_005813fc * (float)_DAT_005813f4;
+  local_78 = -fVar1 * (float)128 * (float)0.00390625;
   local_64 = (int)ROUND(fStack_7c * _DAT_0059d1f8);
   local_60 = (int)ROUND(local_78 * _DAT_0059d1f8);
   local_5c = (int)ROUND(local_74 * _DAT_0059d1f8);
@@ -114,14 +114,14 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
   local_68 = (int)ROUND(local_74 * _DAT_0059d1f8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_70);
   piVar6 = DAT_005ae704;
-  fVar14 = ((float10)_DAT_00581408 - (float10)(float)fVar8) * (float10)(float)fVar8;
-  fVar8 = (float10)_DAT_00581410;
-  fVar9 = (float10)_DAT_00581418;
-  fVar10 = (float10)_DAT_0058141c;
+  fVar14 = ((float10)2.0f - (float10)(float)fVar8) * (float10)(float)fVar8;
+  fVar8 = (float10)200.0f;
+  fVar9 = (float10)150.0f;
+  fVar10 = (float10)5.4940833406217561e-315._0_4_;
   *(uint *)(*DAT_005ae704 + 0x18) = 0x20000;
-  fVar11 = ((float10)1 - fVar14) * (float10)_DAT_0058140c;
+  fVar11 = ((float10)1 - fVar14) * (float10)255.0f;
   *(uint *)(*piVar6 + 0x1c) = 0x20000;
-  fVar12 = (float10)_DAT_00581414;
+  fVar12 = (float10)256.0f;
   *(uint *)(*piVar6 + 0x48) = 0xfe0000;
   *(uint *)(*piVar6 + 0x4c) = 0x20000;
   *(uint *)(*piVar6 + 0x78) = 0xfe0000;

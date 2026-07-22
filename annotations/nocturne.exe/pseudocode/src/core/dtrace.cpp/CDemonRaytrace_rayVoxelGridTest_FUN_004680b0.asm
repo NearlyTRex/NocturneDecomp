@@ -40,7 +40,7 @@
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30 at 0050fa49
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e1de
+;   float FLOAT_0057e1de = 2.684355E+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
@@ -184,7 +184,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 0046821e
     FLD ST0                             ; 00468222
     FABS                                ; 00468224
-    FLD float ptr [0x0057e1de]          ; 00468226 | DAT_0057e1de
+    FLD float ptr [0x0057e1de]          ; 00468226 | FLOAT_0057e1de
     FDIV float ptr [ESP + 0x8]          ; 0046822c
     FXCH                                ; 00468230
     FMUL ST1                            ; 00468232

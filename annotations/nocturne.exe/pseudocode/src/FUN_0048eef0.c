@@ -12,7 +12,7 @@ int FUN_0048eef0(uint param_1)
   int iVar1;
   uint local_c [3];
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = __arrinit(iVar1 + 0x160,200,&DAT_0059db10);
   *(byte ***)(iVar1 + -0x14) = &PTR_core_flies_cpp_CFlies_setup_FUN_0048efb0_0059da34;
   *(uint *)(iVar1 + -4) = 0x14;

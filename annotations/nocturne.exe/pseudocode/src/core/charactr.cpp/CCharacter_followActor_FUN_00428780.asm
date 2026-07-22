@@ -18,20 +18,20 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00428c00 at 00428e98
 ;   FUN_004b6d80 at 004b784a
+;   core_charactr.cpp_FUN_00428c00 at 00428e98
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d822
 ;
 ; Referenced Globals:
 ;   string s_%s_tried_to_follow_NULL_actor!_0057a053
 ;   string s_%s_confused_while_following_%s_0057a073
 ;   string s_%s_confused_after_pathmap_call_w_0057a093
-;   undefined4 DAT_0057a0ca
-;   undefined4 DAT_0057a0d2
-;   undefined4 DAT_0057a0da
-;   undefined4 DAT_0057a0e2
-;   undefined4 DAT_0057a0ea
-;   undefined4 DAT_0057a0f2
+;   double DOUBLE_0057a0ca = 20
+;   double DOUBLE_0057a0d2 = 40
+;   double DOUBLE_0057a0da = 0.100000000000000
+;   double DOUBLE_0057a0e2 = 0.0100000000000000
+;   double DOUBLE_0057a0ea = 0.0349065850388889
+;   double DOUBLE_0057a0f2 = 0.174532925194444
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_02dd1184
@@ -83,21 +83,21 @@ section .text
         ;   XREF to: 004288b2 (CONDITIONAL_JUMP)  ; LAB_004288b2
     FLD float ptr [ESP + 0x4]           ; 004287d2
     FABS                                ; 004287d6
-    FCOMP double ptr [0x0057a0ca]       ; 004287d8 | DAT_0057a0ca
+    FCOMP double ptr [0x0057a0ca]       ; 004287d8 | DOUBLE_0057a0ca
     FNSTSW AX                           ; 004287de
     SAHF                                ; 004287e0
     JA 0x004289ce                       ; 004287e1
         ;   XREF to: 004289ce (CONDITIONAL_JUMP)  ; LAB_004289ce
     FLD float ptr [ESP]                 ; 004287e7
     FABS                                ; 004287ea
-    FCOMP double ptr [0x0057a0d2]       ; 004287ec | DAT_0057a0d2
+    FCOMP double ptr [0x0057a0d2]       ; 004287ec | DOUBLE_0057a0d2
     FNSTSW AX                           ; 004287f2
     SAHF                                ; 004287f4
     JA 0x004289ce                       ; 004287f5
         ;   XREF to: 004289ce (CONDITIONAL_JUMP)  ; LAB_004289ce
     FLD float ptr [ESP + 0x8]           ; 004287fb
     FABS                                ; 004287ff
-    FCOMP double ptr [0x0057a0d2]       ; 00428801 | DAT_0057a0d2
+    FCOMP double ptr [0x0057a0d2]       ; 00428801 | DOUBLE_0057a0d2
     FNSTSW AX                           ; 00428807
     SAHF                                ; 00428809
     JA 0x004289ce                       ; 0042880a
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 004289f1 (CONDITIONAL_JUMP)  ; LAB_004289f1
     FLD float ptr [EBP + 0x1c]          ; 0042883d
         ;   Label: LAB_0042883d
-    FMUL double ptr [0x0057a0da]        ; 00428840 | DAT_0057a0da
+    FMUL double ptr [0x0057a0da]        ; 00428840 | DOUBLE_0057a0da
     MOV EAX,dword ptr [EBX]             ; 00428846
     FSTP float ptr [ESP + 0x30]         ; 00428848
     TEST EAX,EAX                        ; 0042884c
@@ -134,7 +134,7 @@ section .text
         ;   Label: LAB_0042885b
     FLD float ptr [EBP + 0x1c]          ; 0042885e
         ;   Label: LAB_0042885e
-    FCOMP double ptr [0x0057a0e2]       ; 00428861 | DAT_0057a0e2
+    FCOMP double ptr [0x0057a0e2]       ; 00428861 | DOUBLE_0057a0e2
     FNSTSW AX                           ; 00428867
     SAHF                                ; 00428869
     JNC 0x00428873                      ; 0042886a
@@ -194,7 +194,7 @@ section .text
         ;   XREF to: 00428985 (CONDITIONAL_JUMP)  ; LAB_00428985
     FLD float ptr [ESI + 0x2410]        ; 004288ea
     FABS                                ; 004288f0
-    FCOMP double ptr [0x0057a0f2]       ; 004288f2 | DAT_0057a0f2
+    FCOMP double ptr [0x0057a0f2]       ; 004288f2 | DOUBLE_0057a0f2
     FNSTSW AX                           ; 004288f8
     SAHF                                ; 004288fa
     JBE 0x004289aa                      ; 004288fb
@@ -243,7 +243,7 @@ section .text
     FLD float ptr [ESI + 0x2410]        ; 00428985
         ;   Label: LAB_00428985
     FABS                                ; 0042898b
-    FCOMP double ptr [0x0057a0ea]       ; 0042898d | DAT_0057a0ea
+    FCOMP double ptr [0x0057a0ea]       ; 0042898d | DOUBLE_0057a0ea
     FNSTSW AX                           ; 00428993
     SAHF                                ; 00428995
     JNC 0x00428901                      ; 00428996

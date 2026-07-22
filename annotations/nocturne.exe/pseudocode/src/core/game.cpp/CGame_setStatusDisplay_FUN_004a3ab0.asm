@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004259f0 at 00425aca
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 0042863a
+;   core_charactr.cpp_FUN_004259f0 at 00425aca
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d88d
 ;
 ; Called Functions:

@@ -4,7 +4,8 @@
 ; void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(int param_1)
 ;
 ;
-; XREF[30]:
+; XREF[31]:
+;   FUN_0040fa00 at 0040fa17
 ;   FUN_004150b0 at 004150ba
 ;   FUN_00415430 at 00415447
 ;   FUN_004b48d0 at 004b48dc
@@ -14,8 +15,7 @@
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412177
 ;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134b7
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 0041880e
-;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fc31
-;   ... and 20 more
+;   ... and 21 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00

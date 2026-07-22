@@ -57,11 +57,11 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
+;   core_xform.cpp_FUN_0055d4a0
+;   core_xform.cpp_FUN_0055d4e0
+;   core_xform.cpp_FUN_0055d520
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
-;   FUN_0055d4a0
-;   FUN_0055d4e0
-;   FUN_0055d520
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     MOV EAX,[0x02dc9f68]                ; 0053a291 | DAT_02dc9f68
     LEA EDI,[ESP + 0x18]                ; 0053a296
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0053a29a
-    CALL FUN_0055d4e0                   ; 0053a2a1
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 0053a2a1
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0x8]                 ; 0053a2a6
     ADD ESP,0x4                         ; 0053a2aa
     MOVSD ES:EDI,ESI                    ; 0053a2ad
@@ -97,8 +97,8 @@ section .text
     PUSH 0xbfc90fdb                     ; 0053a2b1
     LEA ESI,[ESP + 0xf8]                ; 0053a2b6
     LEA EDI,[ESP + 0x28]                ; 0053a2bd
-    CALL FUN_0055d520                   ; 0053a2c1
-        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d520()
+    CALL core_xform.cpp_FUN_0055d520    ; 0053a2c1
+        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d520()
     ADD ESP,0x4                         ; 0053a2c6
     LEA EAX,[EBX + 0x1fa50]             ; 0053a2c9
     LEA ESI,[ESP + 0xf4]                ; 0053a2cf
@@ -172,8 +172,8 @@ section .text
     LEA ESI,[ESP + 0x194]               ; 0053a3a9
     PUSH dword ptr [EAX + 0xc]          ; 0053a3b0
     LEA EDI,[ESP + 0x78]                ; 0053a3b3
-    CALL FUN_0055d4e0                   ; 0053a3b7
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 0053a3b7
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 0053a3bc
     LEA EAX,[ESP + 0x74]                ; 0053a3bf
     LEA ESI,[ESP + 0x194]               ; 0053a3c3
@@ -186,8 +186,8 @@ section .text
     LEA ESI,[ESP + 0x48]                ; 0053a3d6
     PUSH dword ptr [EAX + 0x8]          ; 0053a3da
     LEA EDI,[ESP + 0x6c]                ; 0053a3dd
-    CALL FUN_0055d4a0                   ; 0053a3e1
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 0053a3e1
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     LEA ESI,[ESP + 0x4c]                ; 0053a3e6
     ADD ESP,0x4                         ; 0053a3ea
     LEA EAX,[ESP + 0x68]                ; 0053a3ed
@@ -316,8 +316,8 @@ section .text
     MOV EAX,[0x02dc9f64]                ; 0053a575 | DAT_02dc9f64
     LEA EDI,[ESP + 0x18]                ; 0053a57a
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0053a57e
-    CALL FUN_0055d4e0                   ; 0053a585
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 0053a585
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0xc8]                ; 0053a58a
     ADD ESP,0x4                         ; 0053a591
     MOVSD ES:EDI,ESI                    ; 0053a594
@@ -327,8 +327,8 @@ section .text
     PUSH 0x3fc90fdb                     ; 0053a598
     LEA ESI,[ESP + 0x38]                ; 0053a59d
     LEA EDI,[ESP + 0x28]                ; 0053a5a1
-    CALL FUN_0055d520                   ; 0053a5a5
-        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d520()
+    CALL core_xform.cpp_FUN_0055d520    ; 0053a5a5
+        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d520()
     ADD ESP,0x4                         ; 0053a5aa
     LEA EAX,[EBX + 0x1fa70]             ; 0053a5ad
     LEA ESI,[ESP + 0x34]                ; 0053a5b3
@@ -338,8 +338,8 @@ section .text
         ;   Label: LAB_0053a5bc
     LEA ESI,[ESP + 0x188]               ; 0053a5c1
     LEA EDI,[ESP + 0xe8]                ; 0053a5c8
-    CALL FUN_0055d4a0                   ; 0053a5cf
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 0053a5cf
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 0053a5d4
     LEA EAX,[ESP + 0xe4]                ; 0053a5d7
     LEA ESI,[ESP + 0x184]               ; 0053a5de

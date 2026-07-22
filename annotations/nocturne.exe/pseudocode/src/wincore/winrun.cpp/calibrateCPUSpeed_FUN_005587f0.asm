@@ -16,8 +16,8 @@
 ;   void* PTR_MessageBoxA_0057544c = 001759e0
 ;   void* PTR_QueryPerformanceCounter_00575570 = 00175ef6
 ;   void* PTR_QueryPerformanceFrequency_00575574 = 00175f10
-;   undefined4 s_Unable_to_set_timer_00597f10+1
-;   undefined4 DAT_00597f29
+;   TerminatedCString s_Unable_to_set_timer_00597f11
+;   double DOUBLE_00597f29 = 4294967296
 ;   string s_Nocturne_0059815f
 ;   void* PTR_s_Nocturne_005c165c = 0059815f
 ;   undefined4 DAT_01c03950
@@ -53,7 +53,7 @@ section .text
     JNZ 0x005589ca                      ; 00558808
         ;   XREF to: 005589ca (CONDITIONAL_JUMP)  ; LAB_005589ca
     FILD dword ptr [0x02de07e4]         ; 0055880e | DAT_02de07e4
-    FMUL double ptr [0x00597f29]        ; 00558814 | DAT_00597f29
+    FMUL double ptr [0x00597f29]        ; 00558814 | DOUBLE_00597f29
     XOR EDX,EDX                         ; 0055881a
     MOV EAX,[0x02de07e0]                ; 0055881c | DAT_02de07e0
     MOV dword ptr [EBP + -0xc],EDX      ; 00558821
@@ -213,7 +213,7 @@ section .text
     PUSH 0x31                           ; 005589e5
     MOV EBX,dword ptr [0x005c165c]      ; 005589e7 | PTR_s_Nocturne_005c165c
     PUSH EBX                            ; 005589ed | = "Nocturne"
-    PUSH 0x597f11                       ; 005589ee | s_Unable_to_set_timer_00597f10+1
+    PUSH 0x597f11                       ; 005589ee | = "Unable to set timer"
     MOV ESI,dword ptr [0x02de2098]      ; 005589f3 | DAT_02de2098
     PUSH ESI                            ; 005589f9
     CALL dword ptr CS:[0x57544c]        ; 005589fa | PTR_MessageBoxA_0057544c

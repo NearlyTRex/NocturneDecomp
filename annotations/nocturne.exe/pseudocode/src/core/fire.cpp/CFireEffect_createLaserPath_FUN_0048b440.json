@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 438,
+    "complexity_score": 422,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 34,
+    "pseudocode_lines": 77,
+    "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
       "self_copy_guard",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 296
+    "total_lines": 295
   },
   "cross_references": [
     {
@@ -168,21 +167,21 @@
   "globals": [
     {
       "addr": "005814c8",
-      "name": "DAT_005814c8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005814c8",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005814cc",
-      "name": "DAT_005814cc",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005814cc",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "005814d4",
-      "name": "DAT_005814d4",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005814d4",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "0059d210",
@@ -475,16 +474,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -492,7 +483,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -500,7 +491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -508,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -516,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -524,7 +515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -532,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_7",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -540,7 +531,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_8",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -548,7 +539,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_9",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -556,7 +547,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_10",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1,float *param_2,float *param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8,uint param_9,uint param_10)",
@@ -564,7 +555,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_7",
       "severity": "mild",
       "text": "local_80 = param_7;",
@@ -572,15 +563,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_7",
       "severity": "mild",
-      "text": "local_88 = param_7 * _DAT_005814c8;",
+      "text": "local_88 = param_7 * 0.05f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "local_70 = *param_2;",
@@ -588,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_2",
       "severity": "mild",
       "text": "local_6c = param_2[1];",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "local_68 = param_2[2];",
@@ -604,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_3",
       "severity": "mild",
       "text": "local_28 = *param_3;",
@@ -612,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_3",
       "severity": "mild",
       "text": "local_24 = param_3[1];",
@@ -620,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = param_3[2];",
@@ -628,7 +619,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -636,7 +627,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_4",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -644,7 +635,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_6",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -652,7 +643,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_8",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -660,7 +651,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_9",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -668,7 +659,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_10",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);",
@@ -676,7 +667,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -684,7 +675,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_4",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -692,7 +683,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_5",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -700,7 +691,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_6",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -708,7 +699,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_8",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -716,7 +707,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_9",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -724,7 +715,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_10",
       "severity": "mild",
       "text": "(param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,",
@@ -732,7 +723,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_70 != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_70 != &local_40) {",

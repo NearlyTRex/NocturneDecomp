@@ -14,7 +14,7 @@
 ; XREF[3]:
 ;   FUN_0041fe40 at 004208c1
 ;   FUN_004a9270 at 004aad1b
-;   FUN_0055ef50 at 0055fa63
+;   core_zombie.cpp_FUN_0055ef50 at 0055fa63
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b96c4

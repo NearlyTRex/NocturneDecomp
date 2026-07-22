@@ -82,7 +82,7 @@ int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50(int param_1)
       piVar4 = piVar4 + 3;
       *(int *)(&DAT_005c5030 + iVar2 * 0x30) = iVar3;
     }
-    FUN_00432cd0(iVar6,&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(iVar6,&DAT_006b029c);
   }
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(int param_1,float *param_2,float *param_3,int param_4,uint *param_5)
 
 {
@@ -58,7 +56,7 @@ uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(int param_1,float 
                    fStack_78 * fStack_78 + fStack_74 * fStack_74);
       uVar5 = 0x42838f;
       fVar4 = (float10)round
-                                 ((float10)*(float *)(param_4 + 4) * (float10)_DAT_0057a03a);
+                                 ((float10)*(float *)(param_4 + 4) * (float10)0.40000000000000002);
       iStack_1c = (int)ROUND(fVar4);
       iVar2 = iStack_1c + 1;
       if (fVar1 <= 0.0) {
@@ -72,17 +70,17 @@ uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(int param_1,float 
         fStack_78 = fStack_78 * fVar1;
         fStack_74 = fStack_74 * fVar1;
       }
-      fStack_40 = fStack_7c * _DAT_0057a042;
-      fStack_3c = fStack_78 * _DAT_0057a042;
-      fStack_38 = fStack_74 * _DAT_0057a042;
+      fStack_40 = fStack_7c * 10.0f;
+      fStack_3c = fStack_78 * 10.0f;
+      fStack_38 = fStack_74 * 10.0f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_28,auStack_64,uVar5)
       ;
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
                 (0x01C78C7C,auStack_28,&fStack_40,iVar2,*(uint *)(param_1 + 0x2608));
     }
-    fStack_34 = (fStack_4c + fStack_58) * _DAT_0057a046;
-    fStack_30 = (local_48 + local_54) * _DAT_0057a046;
-    fStack_2c = (fStack_44 + fStack_50) * _DAT_0057a046;
+    fStack_34 = (fStack_4c + fStack_58) * 0.5f;
+    fStack_30 = (local_48 + local_54) * 0.5f;
+    fStack_2c = (fStack_44 + fStack_50) * 0.5f;
     if ((float *)(param_4 + 0x1c) != &fStack_34) {
       *(float *)(param_4 + 0x1c) = fStack_34;
       *(float *)(param_4 + 0x20) = fStack_30;

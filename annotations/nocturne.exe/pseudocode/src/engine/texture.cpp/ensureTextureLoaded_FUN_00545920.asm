@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_004270e0 at 0042717f
 ;   FUN_0048f490 at 0048f637
+;   core_charactr.cpp_FUN_004270e0 at 0042717f
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e47
 ;   engine_3d.c_updateAnimatedTexture_FUN_00406690 at 004066fd
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 at 00461eb7

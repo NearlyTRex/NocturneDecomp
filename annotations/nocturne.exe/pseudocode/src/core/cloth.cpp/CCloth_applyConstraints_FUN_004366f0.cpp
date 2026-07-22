@@ -186,8 +186,8 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
           local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
-          local_88 = *(float *)(iVar5 + 0x14) * (float)_DAT_0057ae1d * local_ac * local_44;
-          local_84 = (float)_DAT_0057ae1d * *(float *)(iVar5 + 0x18) * local_a8 * local_44;
+          local_88 = *(float *)(iVar5 + 0x14) * (float)1.05 * local_ac * local_44;
+          local_84 = (float)1.05 * *(float *)(iVar5 + 0x18) * local_a8 * local_44;
           local_80 = local_a4;
           pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                                       (iVar5 + 0x78,local_10c,&local_88);

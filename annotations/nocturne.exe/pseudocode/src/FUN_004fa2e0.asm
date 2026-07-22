@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00432cd0 at 00432ded
+;   engine_clipper.c_FUN_00432cd0 at 00432ded
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be1e4

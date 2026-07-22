@@ -11,7 +11,7 @@
 ;   FUN_004a4170 at 004a4aba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058152c
+;   TerminatedCString s_d_0058152c
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_load_FUN_00487d50
@@ -45,7 +45,7 @@ section .text
     ADD ESP,0xc                         ; 0048c809
     LEA EBX,[ESP + 0x100]               ; 0048c80c
     PUSH EBX                            ; 0048c813
-    PUSH 0x58152c                       ; 0048c814 | DAT_0058152c
+    PUSH 0x58152c                       ; 0048c814 | = "%d\n"
     PUSH EDI                            ; 0048c819
     MOV EBX,0x1c625f8                   ; 0048c81a
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0048c81f

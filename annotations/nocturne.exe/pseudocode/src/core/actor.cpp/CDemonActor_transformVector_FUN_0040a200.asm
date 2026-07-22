@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[54]:
-;   FUN_0040b300 at 0040b3aa
 ;   FUN_0043d1c0 at 0043d23b
 ;   FUN_00477890 at 00477998
 ;   FUN_00478120 at 0047818a
@@ -15,6 +14,7 @@
 ;   FUN_004b27c0 at 004b283b
 ;   FUN_004b6d80 at 004b7225
 ;   FUN_004c71a0 at 004c7246
+;   FUN_004c7ca0 at 004c7d1e
 ;   ... and 44 more
 ;
 ; Called Functions:

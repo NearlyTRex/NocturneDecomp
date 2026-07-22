@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581464
+;   double DOUBLE_00581464 = 4
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b8bbc
@@ -255,7 +255,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489f2b
         ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
     FLD float ptr [EBP + 0x18]          ; 00489f30
-    FMUL double ptr [0x00581464]        ; 00489f33 | DAT_00581464
+    FMUL double ptr [0x00581464]        ; 00489f33 | DOUBLE_00581464
     MOV EAX,0xffff                      ; 00489f39
     MOV EDX,dword ptr [0x01c038f4]      ; 00489f3e | DAT_01c038f4
     ADD ESP,0xc                         ; 00489f44

@@ -43,7 +43,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(uint 
   }
   uVar12 = 0x4717ca;
   fVar9 = (float10)round
-                             ((float10)local_2c * (float10)_DAT_0057e8c2 + (float10)_DAT_0057e8ca);
+                             ((float10)local_2c * (float10)100 +
+                              (float10)0.5);
   iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30(uVar12);
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
   if (((int)ROUND(fVar9) != *(int *)(iVar1 + 0x1bcd250)) ||
@@ -63,7 +64,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(uint 
     uVar12 = 0x4718cf;
     fVar9 = (float10)round
                                ((float10)((iVar8 - iVar7) + 1) * (float10)local_30 +
-                                (float10)_DAT_0057e8ca);
+                                (float10)0.5);
     iVar6 = (int)ROUND(fVar9) + iVar7;
     if (iVar7 < iVar6) {
       if (iVar8 <= iVar6) {
@@ -73,19 +74,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(uint 
     }
     if (0 < iVar4) {
       fVar2 = (float)(iVar5 - *(int *)((_DAT_01bcd07c + -1) * 0x1d8 + 0x1bcd24c)) *
-              (float)_DAT_0057e8d2;
+              (float)8.4771050347222196e-07;
       dVar11 = (double)fVar2;
-      if ((float)_DAT_0057e8da < fVar2) {
+      if ((float)5 < fVar2) {
         uVar12 = 0x471966;
         fVar9 = (float10)round
                                    ((((float10)param_3 - (float10)param_2) * (float10)fVar2) /
-                                    (float10)param_2 + (float10)_DAT_0057e8ca);
+                                    (float10)param_2 + (float10)0.5);
         iVar1 = (int)ROUND(fVar9);
         if (0 < iVar1) {
           uVar10 = 0x4719a2;
           fVar9 = (float10)round
                                      ((float10)__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar11),0),uVar12)) +
-                                      (float10)_DAT_0057e8ca);
+                                      (float10)0.5);
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff,uVar10);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
                     (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c64 - _DAT_01bcd9bc,

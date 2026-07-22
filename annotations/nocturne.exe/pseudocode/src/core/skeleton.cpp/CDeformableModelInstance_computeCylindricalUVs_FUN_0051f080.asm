@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004270e0 at 004271e1
+;   core_charactr.cpp_FUN_004270e0 at 004271e1
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\skeleton.cpp_00591d6f

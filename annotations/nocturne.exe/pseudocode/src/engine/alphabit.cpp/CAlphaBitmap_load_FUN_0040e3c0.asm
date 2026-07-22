@@ -21,21 +21,21 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\alphabit.cpp_00578098+1
+;   TerminatedCString s_engine_alphabit_cpp_00578099
 ;   string s_CAlphaBitmap::load_-_Out_of_memo_005780b0
 ;   string s_..\\engine\\alphabit.cpp_005780d3
-;   string s_CAlphaBitmap::load_-_Out_of_memo_005780ea
-;   string s_..\\engine\\alphabit.cpp_0057810d
-;   string s_CAlphaBitmap::load_-_Out_of_memo_00578124
-;   string s_%s.raw_00578147
-;   undefined4 DAT_0057814e
-;   undefined4 DAT_00578151
-;   string s_..\\engine\\alphabit.cpp_00578155
-;   string s_CAlphaBitmap::load_-_Can't_open_%_0057816c
-;   string s_%s.act_0057818f
-;   undefined4 DAT_00578196
-;   undefined4 DAT_00578199
-;   string s_..\\engine\\alphabit.cpp_0057819d
+;   TerminatedCString s_CAlphaBitmap_load_Out_of_005780ea
+;   TerminatedCString s_engine_alphabit_cpp_0057810d
+;   TerminatedCString s_CAlphaBitmap_load_Out_of_00578124
+;   TerminatedCString s_s_raw_00578147
+;   TerminatedCString s_rb_0057814e
+;   TerminatedCString s_art_00578151
+;   TerminatedCString s_engine_alphabit_cpp_00578155
+;   TerminatedCString s_CAlphaBitmap_load_Can_t_0057816c
+;   TerminatedCString s_s_act_0057818f
+;   TerminatedCString s_rb_00578196
+;   TerminatedCString s_art_00578199
+;   TerminatedCString s_engine_alphabit_cpp_0057819d
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -123,10 +123,10 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040e49d
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0040e4a2
-    PUSH 0x57814e                       ; 0040e4a5 | DAT_0057814e
+    PUSH 0x57814e                       ; 0040e4a5 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0040e4aa
     PUSH EAX                            ; 0040e4ae
-    PUSH 0x578151                       ; 0040e4af | DAT_00578151
+    PUSH 0x578151                       ; 0040e4af | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e4b4
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0040e4b9
@@ -168,10 +168,10 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040e52b
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0040e530
-    PUSH 0x578196                       ; 0040e533 | DAT_00578196
+    PUSH 0x578196                       ; 0040e533 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0040e538
     PUSH EAX                            ; 0040e53c
-    PUSH 0x578199                       ; 0040e53d | DAT_00578199
+    PUSH 0x578199                       ; 0040e53d | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e542
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0040e547
@@ -232,10 +232,10 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040e5f0
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0040e5f5
-    PUSH 0x5781de                       ; 0040e5f8 | DAT_005781de
+    PUSH 0x5781de                       ; 0040e5f8 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0040e5fd
     PUSH EAX                            ; 0040e601
-    PUSH 0x5781e1                       ; 0040e602 | DAT_005781e1
+    PUSH 0x5781e1                       ; 0040e602 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e607
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EDI,EAX                         ; 0040e60c
@@ -269,7 +269,7 @@ section .text
     POP ESI                             ; 0040e658
     POP EBX                             ; 0040e659
     RET                                 ; 0040e65a
-    MOV ESI,0x578099                    ; 0040e65b | s_..\engine\alphabit.cpp_00578098+1
+    MOV ESI,0x578099                    ; 0040e65b | = "..\\engine\\alphabit.cpp"
         ;   Label: LAB_0040e65b
     MOV EDI,0x53                        ; 0040e660
     PUSH 0x5780b0                       ; 0040e665 | = "CAlphaBitmap::load - Out of memory"

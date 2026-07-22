@@ -8,8 +8,8 @@
 ;   FUN_0041f3d0 at 0041f5e1
 ;   FUN_004777a0 at 0047787b
 ;   FUN_004c79a0 at 004c7b8e
-;   FUN_00509a80 at 00509ac8
 ;   FUN_00515db0 at 00515e8b
+;   core_set.cpp_FUN_00509a80 at 00509ac8
 ;   core_weapon.cpp_CWeapon_process_FUN_00554030 at 00554160
 ;
 ; Referenced Globals:

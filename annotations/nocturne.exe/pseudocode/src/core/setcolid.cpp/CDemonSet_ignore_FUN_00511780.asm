@@ -5,8 +5,6 @@
 ;
 ;
 ; XREF[38]:
-;   FUN_0040a140 at 0040a166
-;   FUN_0040b300 at 0040b7da
 ;   FUN_00418a00 at 00418ec2
 ;   FUN_0043d1c0 at 0043d330
 ;   FUN_00477890 at 00477aa2
@@ -15,6 +13,8 @@
 ;   FUN_00498de0 at 00499025
 ;   FUN_004998c0 at 00499939
 ;   FUN_004a9270 at 004a942b
+;   FUN_004b27c0 at 004b2954
+;   FUN_004c4970 at 004c4af3
 ;   ... and 28 more
 ;
 ; Referenced Globals:

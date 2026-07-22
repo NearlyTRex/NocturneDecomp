@@ -48,21 +48,21 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508bb2
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dcamera.cpp_0057b819+2
+;   TerminatedCString s_core_dcamera_cpp_0057b81b
 ;   string s_CDemonCamera::loadImage_-_no_ext_0057b82f
-;   undefined1 DAT_0057b856
-;   undefined1 DAT_0057b857
-;   undefined1 DAT_0057b858
-;   undefined1 DAT_0057b859
-;   undefined4 DAT_0057b85b
+;   TerminatedCString s_ACT_0057b856
+;   undefined4 s_ACT_0057b856+1
+;   undefined4 s_ACT_0057b856+2
+;   undefined4 s_ACT_0057b856+3
+;   TerminatedCString s_rb_0057b85b
 ;   string s_backdrop_0057b85e
-;   undefined4 DAT_0057b867
-;   undefined4 DAT_0057b86a
+;   TerminatedCString s_rb_0057b867
+;   TerminatedCString s_art_0057b86a
 ;   string s_..\\core\\dcamera.cpp_0057b86e
 ;   string s_CDemonCamera::loadImage_-_no_ext_0057b882
-;   undefined1 DAT_0057b8a3
-;   undefined1 DAT_0057b8a4
-;   undefined1 DAT_0057b8a5
+;   TerminatedCString s_fog_0057b8a3
+;   undefined4 s_fog_0057b8a3+1
+;   undefined4 s_fog_0057b8a3+2
 ;   ... and 46 more
 ;
 ; Called Functions:
@@ -134,7 +134,7 @@ section .text
     TEST ESI,ESI                        ; 0044329b
     JNZ 0x004432c2                      ; 0044329d
         ;   XREF to: 004432c2 (CONDITIONAL_JUMP)  ; LAB_004432c2
-    MOV EDX,0x57b81b                    ; 0044329f | s_..\core\dcamera.cpp_0057b819+2
+    MOV EDX,0x57b81b                    ; 0044329f | = "..\\core\\dcamera.cpp"
     MOV ECX,0x982                       ; 004432a4
     PUSH 0x57b82f                       ; 004432a9 | = "CDemonCamera::loadImage - no extention"
     MOV dword ptr [0x01cc4800],EDX      ; 004432ae | DAT_01cc4800
@@ -142,16 +142,16 @@ section .text
     CALL FUN_004c8440                   ; 004432ba
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 004432bf
-    MOV ESI,0x57b856                    ; 004432c2 | DAT_0057b856
+    MOV ESI,0x57b856                    ; 004432c2 | = ".ACT"
         ;   Label: LAB_004432c2
     PUSH EDI                            ; 004432c7
-    MOV AL,byte ptr [ESI]               ; 004432c8 | DAT_0057b856 | DAT_0057b858
+    MOV AL,byte ptr [ESI]               ; 004432c8 | = ".ACT" | s_ACT_0057b856+2
         ;   Label: LAB_004432c8
     MOV byte ptr [EDI],AL               ; 004432ca
     CMP AL,0x0                          ; 004432cc
     JZ 0x004432e0                       ; 004432ce
         ;   XREF to: 004432e0 (CONDITIONAL_JUMP)  ; LAB_004432e0
-    MOV AL,byte ptr [ESI + 0x1]         ; 004432d0 | DAT_0057b857 | DAT_0057b859
+    MOV AL,byte ptr [ESI + 0x1]         ; 004432d0 | s_ACT_0057b856+1 | s_ACT_0057b856+3
     ADD ESI,0x2                         ; 004432d3
     MOV byte ptr [EDI + 0x1],AL         ; 004432d6
     ADD EDI,0x2                         ; 004432d9
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 004432c8 (CONDITIONAL_JUMP)  ; LAB_004432c8
     POP EDI                             ; 004432e0
         ;   Label: LAB_004432e0
-    PUSH 0x57b85b                       ; 004432e1 | DAT_0057b85b
+    PUSH 0x57b85b                       ; 004432e1 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 004432e6
     PUSH EAX                            ; 004432ea
     PUSH 0x57b85e                       ; 004432eb | = "backdrop"
@@ -235,16 +235,16 @@ section .text
     CALL FUN_004c8440                   ; 00443384
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 00443389
-    MOV ESI,0x57b8a3                    ; 0044338c | DAT_0057b8a3
+    MOV ESI,0x57b8a3                    ; 0044338c | = ".fog"
         ;   Label: LAB_0044338c
     PUSH EDI                            ; 00443391
-    MOV AL,byte ptr [ESI]               ; 00443392 | DAT_0057b8a3 | DAT_0057b8a5
+    MOV AL,byte ptr [ESI]               ; 00443392 | = ".fog" | s_fog_0057b8a3+2
         ;   Label: LAB_00443392
     MOV byte ptr [EDI],AL               ; 00443394
     CMP AL,0x0                          ; 00443396
     JZ 0x004433aa                       ; 00443398
         ;   XREF to: 004433aa (CONDITIONAL_JUMP)  ; LAB_004433aa
-    MOV AL,byte ptr [ESI + 0x1]         ; 0044339a | DAT_0057b8a4 | DAT_0057b8a6
+    MOV AL,byte ptr [ESI + 0x1]         ; 0044339a | s_fog_0057b8a3+1 | s_fog_0057b8a3+3
     ADD ESI,0x2                         ; 0044339d
     MOV byte ptr [EDI + 0x1],AL         ; 004433a0
     ADD EDI,0x2                         ; 004433a3
@@ -253,7 +253,7 @@ section .text
         ;   XREF to: 00443392 (CONDITIONAL_JUMP)  ; LAB_00443392
     POP EDI                             ; 004433aa
         ;   Label: LAB_004433aa
-    PUSH 0x57b8a8                       ; 004433ab | DAT_0057b8a8
+    PUSH 0x57b8a8                       ; 004433ab | = "rb"
     LEA EAX,[ESP + 0x54]                ; 004433b0
     PUSH EAX                            ; 004433b4
     PUSH 0x57b8ab                       ; 004433b5 | = "backdrop"
@@ -296,7 +296,7 @@ section .text
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
     ADD ESP,0x10                        ; 00443439
     XOR AH,AH                           ; 0044343c
-    PUSH 0x57b8b4                       ; 0044343e | DAT_0057b8b4
+    PUSH 0x57b8b4                       ; 0044343e | = "LZW"
     MOV byte ptr [ESP + 0xab],AH        ; 00443443
     LEA EAX,[ESP + 0xa8]                ; 0044344a
     PUSH EAX                            ; 00443451
@@ -462,7 +462,7 @@ section .text
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004436cc
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004436d1
-    PUSH 0x57b955                       ; 004436d4 | DAT_0057b955
+    PUSH 0x57b955                       ; 004436d4 | = "rb"
         ;   Label: LAB_004436d4
     MOV EBX,dword ptr [ESP + 0x150]     ; 004436d9
     PUSH EBX                            ; 004436e0
@@ -708,11 +708,11 @@ section .text
     POP ESI                             ; 00443a29
     POP EBX                             ; 00443a2a
     RET                                 ; 00443a2b
-    PUSH 0x57b867                       ; 00443a2c | DAT_0057b867
+    PUSH 0x57b867                       ; 00443a2c | = "rb"
         ;   Label: LAB_00443a2c
     LEA EAX,[ESP + 0x4]                 ; 00443a31
     PUSH EAX                            ; 00443a35
-    PUSH 0x57b86a                       ; 00443a36 | DAT_0057b86a
+    PUSH 0x57b86a                       ; 00443a36 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00443a3b
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00443a40
@@ -722,7 +722,7 @@ section .text
         ;   XREF to: 00443a21 (CONDITIONAL_JUMP)  ; LAB_00443a21
     JMP 0x00443302                      ; 00443a49
         ;   XREF to: 00443302 (UNCONDITIONAL_JUMP)  ; LAB_00443302
-    PUSH 0x57b8b8                       ; 00443a4e | DAT_0057b8b8
+    PUSH 0x57b8b8                       ; 00443a4e | = "EFD"
         ;   Label: LAB_00443a4e
     LEA EAX,[ESP + 0xa8]                ; 00443a53
     PUSH EAX                            ; 00443a5a
@@ -770,10 +770,10 @@ section .text
     ADD ESP,0xc                         ; 00443ad3
     JMP 0x004436c4                      ; 00443ad6
         ;   XREF to: 004436c4 (UNCONDITIONAL_JUMP)  ; LAB_004436c4
-    PUSH 0x57b961                       ; 00443adb | DAT_0057b961
+    PUSH 0x57b961                       ; 00443adb | = "rb"
         ;   Label: LAB_00443adb
     PUSH EBX                            ; 00443ae0
-    PUSH 0x57b964                       ; 00443ae1 | DAT_0057b964
+    PUSH 0x57b964                       ; 00443ae1 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00443ae6
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00443aeb

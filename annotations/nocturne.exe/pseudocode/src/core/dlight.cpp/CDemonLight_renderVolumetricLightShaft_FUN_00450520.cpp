@@ -94,8 +94,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
       local_84 = pfVar4[2];
     }
     local_28 = local_88 * local_88;
-    local_20 = ((local_84 * (float)_DAT_0057c866) / *(float *)(param_1 + 0x138)) *
-               (float)_DAT_0057c86e;
+    local_20 = ((local_84 * (float)18) / *(float *)(param_1 + 0x138)) *
+               (float)2;
     local_1c = local_8c * local_8c + local_28;
     local_24 = local_20 * local_20;
     if (local_1c <= local_24) {
@@ -124,12 +124,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
         pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                                     (param_1 + 0x110,local_104,&local_ec);
         if (0.0 < (local_30 * pfVar4[2] + local_38 * *pfVar4 + local_34 * pfVar4[1]) * local_14 *
-                  _DAT_0057c876) {
+                  1.525902e-05f) {
           iVar5 = 0;
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
           do {
-            fVar2 = (float)iVar5 * _DAT_0057c87a * *(float *)(param_1 + 0x100);
-            local_18 = (fVar2 * (float)_DAT_0057c866) / *(float *)(param_1 + 0x138);
+            fVar2 = (float)iVar5 * 0.04f * *(float *)(param_1 + 0x100);
+            local_18 = (fVar2 * (float)18) / *(float *)(param_1 + 0x138);
             local_bc = *(float *)(param_1 + 0x118);
             local_b0 = local_bc * fVar2;
             local_b8 = *(float *)(param_1 + 0x124);

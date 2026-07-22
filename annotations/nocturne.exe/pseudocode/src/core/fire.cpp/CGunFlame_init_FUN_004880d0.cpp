@@ -30,11 +30,11 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(int param_1)
          (fVar2 = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 4),
          fVar4 = *(float *)(iVar6 + 0x24) - *(float *)(param_1 + 8),
          fVar3 = *(float *)(iVar6 + 0x28) - *(float *)(param_1 + 0xc),
-         fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= _DAT_0058138c)) {
+         fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= 5.4526381103294656e-315._0_4_)) {
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(iVar6 + 0x150);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                   (iVar6,local_40,(float *)(param_1 + 4));
-        FUN_00427730(iVar6,local_40,0,0,0x3f800000,*(int *)(param_1 + 0x20) == 2);
+        core_charactr_cpp_FUN_00427730(iVar6,local_40,0,0,0x3f800000,*(int *)(param_1 + 0x20) == 2);
       }
       local_20 = local_20 + 4;
       iVar5 = iVar5 + 1;
@@ -49,7 +49,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(int param_1)
       fVar2 = *(float *)(iVar1 + 0x20) - *local_24;
       fVar4 = *(float *)(iVar1 + 0x24) - local_24[1];
       fVar3 = *(float *)(iVar1 + 0x28) - local_24[2];
-      if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= (float)_DAT_00581394) {
+      if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= (float)25) {
         core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(iVar1);
       }
       iVar5 = iVar5 + 1;

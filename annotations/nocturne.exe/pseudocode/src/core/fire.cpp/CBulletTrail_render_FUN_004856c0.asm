@@ -34,8 +34,8 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a863
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058115c
-;   undefined4 DAT_00581164
+;   double DOUBLE_0058115c = 5.16407569540752E-315
+;   double DOUBLE_00581164 = 0.0100000000000000
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -152,12 +152,12 @@ section .text
         ;   Label: LAB_004857d6
     FILD dword ptr [ESP + 0x6c]         ; 004857da
     FST float ptr [ESP + 0x68]          ; 004857de
-    FMUL float ptr [0x0058115c]         ; 004857e2 | DAT_0058115c
+    FMUL float ptr [0x0058115c]         ; 004857e2 | DOUBLE_0058115c
     MOV dword ptr [ESP + 0x6c],EDI      ; 004857e8
     FILD dword ptr [ESP + 0x6c]         ; 004857ec
     FDIVP                               ; 004857f0
     FST float ptr [ESP]                 ; 004857f2
-    FCOMP double ptr [0x00581164]       ; 004857f5 | DAT_00581164
+    FCOMP double ptr [0x00581164]       ; 004857f5 | DOUBLE_00581164
     FNSTSW AX                           ; 004857fb
     SAHF                                ; 004857fd
     JA 0x00485826                       ; 004857fe

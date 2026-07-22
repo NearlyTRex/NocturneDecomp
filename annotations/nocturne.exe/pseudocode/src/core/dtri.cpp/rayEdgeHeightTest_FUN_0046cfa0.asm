@@ -18,8 +18,8 @@
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110 at 0046d2c1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e46e
-;   undefined4 DAT_0057e476
+;   double DOUBLE_0057e46e = 2
+;   double DOUBLE_0057e476 = 4
 ;
 ; *****************************************************************************
 
@@ -60,7 +60,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 0046cff2
     FMUL ST0                            ; 0046cff5
     FLD double ptr [ESP + 0x40]         ; 0046cff7
-    FMUL double ptr [0x0057e476]        ; 0046cffb | DAT_0057e476
+    FMUL double ptr [0x0057e476]        ; 0046cffb | DOUBLE_0057e476
     FLD float ptr [EDX]                 ; 0046d001
     FMUL ST0                            ; 0046d003
     FLD float ptr [EDX]                 ; 0046d005
@@ -71,7 +71,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 0046d011
     FMUL ST0                            ; 0046d014
     FXCH ST3                            ; 0046d016
-    FMUL double ptr [0x0057e46e]        ; 0046d018 | DAT_0057e46e
+    FMUL double ptr [0x0057e46e]        ; 0046d018 | DOUBLE_0057e46e
     FXCH ST3                            ; 0046d01e
     FSUBP ST2,ST0                       ; 0046d020
     FMULP                               ; 0046d022
@@ -93,7 +93,7 @@ section .text
     FSQRT                               ; 0046d04f
     FSUBP                               ; 0046d051
     FLD double ptr [ESP + 0x40]         ; 0046d053
-    FMUL double ptr [0x0057e46e]        ; 0046d057 | DAT_0057e46e
+    FMUL double ptr [0x0057e46e]        ; 0046d057 | DOUBLE_0057e46e
     FDIVP                               ; 0046d05d
     FLDZ                                ; 0046d05f
     XOR ECX,ECX                         ; 0046d061
@@ -130,7 +130,7 @@ section .text
     FSQRT                               ; 0046d0aa
     FSUB double ptr [ESP + 0x38]        ; 0046d0ac
     FLD double ptr [ESP + 0x40]         ; 0046d0b0
-    FMUL double ptr [0x0057e46e]        ; 0046d0b4 | DAT_0057e46e
+    FMUL double ptr [0x0057e46e]        ; 0046d0b4 | DOUBLE_0057e46e
     FDIVP                               ; 0046d0ba
     FLDZ                                ; 0046d0bc
     FXCH                                ; 0046d0be

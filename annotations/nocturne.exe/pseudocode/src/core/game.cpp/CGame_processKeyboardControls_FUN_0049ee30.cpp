@@ -25,36 +25,36 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(int param_
   pfVar1 = (float *)(param_2 + 8);
   if ((&DAT_01c02598)[*(int *)(param_1 + 0x38)] == '\0') {
     if ((((&DAT_01c02598)[*(int *)(param_1 + 0x3c)] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
-       (*pfVar1 = *(float *)(0x01C775EC + 0x264) / _DAT_005829ea + *pfVar1,
+       (*pfVar1 = *(float *)(0x01C775EC + 0x264) / 0.01f + *pfVar1,
        0x3f800000 < (int)*pfVar1)) {
       *pfVar1 = 1.0;
     }
   }
-  else if ((_DAT_005829ee < *pfVar1) &&
-          (fVar2 = *pfVar1 - *(float *)(0x01C775EC + 0x264) / _DAT_005829ea, *pfVar1 = fVar2,
-          fVar2 < _DAT_005829ee)) {
+  else if ((-1.0f < *pfVar1) &&
+          (fVar2 = *pfVar1 - *(float *)(0x01C775EC + 0x264) / 0.01f, *pfVar1 = fVar2,
+          fVar2 < -1.0f)) {
     *pfVar1 = -1.0;
   }
   if ((&DAT_01c02598)[*(int *)(param_1 + 0x34)] == '\0') {
     if (((&DAT_01c02598)[*(int *)(param_1 + 0x44)] != '\0') ||
        ((&DAT_01c02598)[*(int *)(param_1 + 0x40)] != '\0')) {
-      fVar2 = (float)*(int *)(param_1 + 0x9c) * (float)_DAT_005829fa * (float)_DAT_00582a02;
+      fVar2 = (float)*(int *)(param_1 + 0x9c) * (float)0.29999999999999999 * (float)1.52587890625e-05;
       pfVar1 = (float *)(param_2 + 9);
       if ((&DAT_01c02598)[*(int *)(param_1 + 0x44)] == '\0') {
         if ((((&DAT_01c02598)[*(int *)(param_1 + 0x40)] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
-           (*pfVar1 = (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / fVar2 + *pfVar1,
+           (*pfVar1 = (*(float *)(0x01C775EC + 0x264) * 0.25f) / fVar2 + *pfVar1,
            0x3e800000 < (int)*pfVar1)) {
           *pfVar1 = 0.25;
         }
       }
-      else if ((_DAT_00582a0a < *pfVar1) &&
-              (fVar2 = *pfVar1 - (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / fVar2,
-              *pfVar1 = fVar2, fVar2 < _DAT_00582a0a)) {
+      else if ((-0.25f < *pfVar1) &&
+              (fVar2 = *pfVar1 - (*(float *)(0x01C775EC + 0x264) * 0.25f) / fVar2,
+              *pfVar1 = fVar2, fVar2 < -0.25f)) {
         *pfVar1 = -0.25;
       }
       goto LAB_0049ef39;
     }
-    fVar2 = (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / _DAT_005829f6;
+    fVar2 = (*(float *)(0x01C775EC + 0x264) * 0.25f) / 0.05f;
     pfVar1 = (float *)(param_2 + 9);
     if (0.0 <= *pfVar1) {
       *pfVar1 = *pfVar1 - fVar2;
@@ -70,17 +70,17 @@ LAB_0049ef26:
     pfVar1 = (float *)(param_2 + 8);
     if ((&DAT_01c02598)[*(int *)(param_1 + 0x44)] == '\0') {
       if ((((&DAT_01c02598)[*(int *)(param_1 + 0x40)] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
-         (*pfVar1 = *(float *)(0x01C775EC + 0x264) / _DAT_005829ea + *pfVar1,
+         (*pfVar1 = *(float *)(0x01C775EC + 0x264) / 0.01f + *pfVar1,
          0x3f800000 < (int)*pfVar1)) {
         *pfVar1 = 1.0;
       }
     }
-    else if ((_DAT_005829ee < *pfVar1) &&
-            (fVar2 = *pfVar1 - *(float *)(0x01C775EC + 0x264) / _DAT_005829ea, *pfVar1 = fVar2,
-            fVar2 < _DAT_005829ee)) {
+    else if ((-1.0f < *pfVar1) &&
+            (fVar2 = *pfVar1 - *(float *)(0x01C775EC + 0x264) / 0.01f, *pfVar1 = fVar2,
+            fVar2 < -1.0f)) {
       *pfVar1 = -1.0;
     }
-    fVar2 = (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / _DAT_005829f6;
+    fVar2 = (*(float *)(0x01C775EC + 0x264) * 0.25f) / 0.05f;
     pfVar1 = (float *)(param_2 + 9);
     if (*pfVar1 < 0.0) {
       fVar2 = *pfVar1 + fVar2;
@@ -95,7 +95,7 @@ joined_r0x0049f5c7:
 LAB_0049ef39:
   if (((&DAT_01c02598)[*(int *)(param_1 + 0x60)] == '\0') &&
      ((&DAT_01c02598)[*(int *)(param_1 + 100)] == '\0')) {
-    fVar2 = (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / _DAT_00582a0e;
+    fVar2 = (*(float *)(0x01C775EC + 0x264) * 0.25f) / 0.1f;
     pfVar1 = (float *)(param_2 + 10);
     if (0.0 <= *pfVar1) {
       *pfVar1 = *pfVar1 - fVar2;
@@ -111,18 +111,18 @@ LAB_0049ef39:
     }
   }
   else {
-    fVar2 = (float)*(int *)(param_1 + 0xa0) * (float)_DAT_00582a12 * (float)_DAT_00582a02;
+    fVar2 = (float)*(int *)(param_1 + 0xa0) * (float)0.20000000000000001 * (float)1.52587890625e-05;
     pfVar1 = (float *)(param_2 + 10);
     if ((&DAT_01c02598)[*(int *)(param_1 + 0x60)] == '\0') {
       if ((((&DAT_01c02598)[*(int *)(param_1 + 100)] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
-         (*pfVar1 = (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / fVar2 + *pfVar1,
+         (*pfVar1 = (*(float *)(0x01C775EC + 0x264) * 0.25f) / fVar2 + *pfVar1,
          0x3e800000 < (int)*pfVar1)) {
         *pfVar1 = 0.25;
       }
     }
-    else if ((_DAT_00582a0a < *pfVar1) &&
-            (fVar2 = *pfVar1 - (*(float *)(0x01C775EC + 0x264) * _DAT_005829f2) / fVar2,
-            *pfVar1 = fVar2, fVar2 < _DAT_00582a0a)) {
+    else if ((-0.25f < *pfVar1) &&
+            (fVar2 = *pfVar1 - (*(float *)(0x01C775EC + 0x264) * 0.25f) / fVar2,
+            *pfVar1 = fVar2, fVar2 < -0.25f)) {
       *pfVar1 = -0.25;
     }
   }

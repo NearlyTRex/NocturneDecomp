@@ -10,15 +10,15 @@
 ;   core_filmreel.cpp_CFilmProjector_process_FUN_00482010 at 0048212d
 ;
 ; Referenced Globals:
-;   undefined4 s_movscrn.raw_0057c06c+1
+;   TerminatedCString s_movscrn_raw_0057c06d
 ;   string s_movscrn.raw_0057c079
 ;   string s_%s.txt_0057c085
-;   undefined4 DAT_0057c08c
+;   TerminatedCString s_rt_0057c08c
 ;   string s_..\\core\\dfilter.cpp_0057c08f
 ;   string s_Can't_open_movie_%s.txt_0057c0a3
-;   undefined4 DAT_0057c0bb
+;   TerminatedCString s_d_0057c0bb
 ;   string s_%s.mov_0057c0bf
-;   undefined4 DAT_0057c0c6
+;   TerminatedCString s_rb_0057c0c6
 ;   string s_..\\core\\dfilter.cpp_0057c0c9
 ;   string s_Can't_open_movie_%s.mov_0057c0dd
 ;   undefined4 DAT_005ad54c
@@ -63,7 +63,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0044c344
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0044c349
-    PUSH 0x57c08c                       ; 0044c34c | DAT_0057c08c
+    PUSH 0x57c08c                       ; 0044c34c | = "rt"
     LEA EAX,[ESP + 0x8]                 ; 0044c351
     PUSH EAX                            ; 0044c355
     PUSH EBX                            ; 0044c356
@@ -85,7 +85,7 @@ section .text
     ADD ESP,0x8                         ; 0044c386
     PUSH ESI                            ; 0044c389
         ;   Label: LAB_0044c389
-    PUSH 0x57c0bb                       ; 0044c38a | DAT_0057c0bb
+    PUSH 0x57c0bb                       ; 0044c38a | = "%d\n"
     PUSH EDI                            ; 0044c38f
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0044c390
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -108,7 +108,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0044c3bd
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 0044c3c2
-    PUSH 0x57c0c6                       ; 0044c3c5 | DAT_0057c0c6
+    PUSH 0x57c0c6                       ; 0044c3c5 | = "rb"
     LEA EAX,[ESP + 0x8]                 ; 0044c3ca
     PUSH EAX                            ; 0044c3ce
     PUSH EBX                            ; 0044c3cf
@@ -157,7 +157,7 @@ section .text
     MOV byte ptr [ECX + EBX*0x1 + -0x1],AL ; 0044c42b
     JMP 0x0044c403                      ; 0044c42f
         ;   XREF to: 0044c403 (UNCONDITIONAL_JUMP)  ; LAB_0044c403
-    PUSH 0x57c06d                       ; 0044c431 | s_movscrn.raw_0057c06c+1
+    PUSH 0x57c06d                       ; 0044c431 | = "movscrn.raw"
         ;   Label: LAB_0044c431
     MOV EBX,dword ptr [0x005ad54c]      ; 0044c436 | DAT_005ad54c
     PUSH EBX                            ; 0044c43c

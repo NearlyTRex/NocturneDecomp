@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_0058165e+1
+;   TerminatedCString s_modelName_0058165f
 ;   string s_onFire_00581669
 ;   string s_timeToExplode_00581670
 ;   string s_onFireCondition_0058167e
@@ -28,7 +28,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0048e836
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0048e83b
-    PUSH 0x58165f                       ; 0048e83e | s_modelName_0058165e+1
+    PUSH 0x58165f                       ; 0048e83e | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 0048e843
     PUSH EAX                            ; 0048e849
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0048e84a

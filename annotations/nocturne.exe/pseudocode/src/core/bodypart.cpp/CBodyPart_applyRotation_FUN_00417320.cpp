@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(int param_1,uint param_2)
 
 {
@@ -66,10 +64,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(int param_1,
   fVar11 = (float10)round();
   local_30 = (int)ROUND(fVar11);
   fVar12 = (float10)local_8c;
-  fVar11 = (float10)_DAT_005790c2;
+  fVar11 = (float10)5.9266679317975379e-315._0_4_;
   fVar13 = (float10)round();
   local_30 = (int)ROUND(fVar13);
-  fVar13 = (float10)_DAT_005790c2;
+  fVar13 = (float10)5.9266679317975379e-315._0_4_;
   iVar8 = 0;
   iVar7 = *(int *)(param_1 + 0x16c);
   fVar14 = (float10)round();

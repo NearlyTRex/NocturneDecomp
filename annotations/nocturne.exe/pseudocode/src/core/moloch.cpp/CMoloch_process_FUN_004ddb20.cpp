@@ -41,7 +41,7 @@ void core_moloch_cpp_CMoloch_process_FUN_004ddb20(int param_1,float param_2)
   if (*(int *)(param_1 + 0x1fa38) == 4) {
     return;
   }
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 == 0) {
     return;
   }
@@ -64,7 +64,7 @@ void core_moloch_cpp_CMoloch_process_FUN_004ddb20(int param_1,float param_2)
   if (*(int *)(iVar3 + 0x228) != 0) {
     *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0058a7da;
   }
-  iVar3 = FUN_00428c00(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar3 == 0) {
     if (*(int *)(param_1 + 0xbc90) == 2) {
       core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(param_1,param_2);
@@ -170,7 +170,7 @@ LAB_004ddd8e:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   if (*(int *)(param_1 + 0x21cf4) == 0) {
     if (*(int *)(param_1 + 0x21cf0) == 0) {
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30

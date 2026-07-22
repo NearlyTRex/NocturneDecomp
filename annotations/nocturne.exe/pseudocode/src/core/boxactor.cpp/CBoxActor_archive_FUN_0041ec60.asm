@@ -12,10 +12,10 @@
 ;   core_boxactor.cpp_CLightActor_archive_FUN_0041f600 at 0041f60a
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_0057981f+2
+;   TerminatedCString s_modelName_00579821
 ;   string s_weightInPounds_0057982b
-;   undefined4 DAT_0057983a
-;   undefined4 DAT_0057983e
+;   TerminatedCString s_fps_0057983a
+;   TerminatedCString s_rpm_0057983e
 ;   string s_loopWavName_00579842
 ;   string s_collisionWavName_0057984e
 ;   string s_canBeCarried_0057985f
@@ -37,7 +37,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
 ;   core_actor.cpp_archiveVector_FUN_0040c450
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
-;   FUN_0040ce80
+;   core_actor.cpp_FUN_0040ce80
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0041ec70
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0041ec75
-    PUSH 0x579821                       ; 0041ec78 | s_modelName_0057981f+2
+    PUSH 0x579821                       ; 0041ec78 | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 0041ec7d
     PUSH EAX                            ; 0041ec83
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0041ec84
@@ -64,13 +64,13 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041ec98
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 0041ec9d
-    PUSH 0x57983a                       ; 0041eca0 | DAT_0057983a
+    PUSH 0x57983a                       ; 0041eca0 | = "fps"
     LEA EAX,[EBX + 0x304]               ; 0041eca5
     PUSH EAX                            ; 0041ecab
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041ecac
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 0041ecb1
-    PUSH 0x57983e                       ; 0041ecb4 | DAT_0057983e
+    PUSH 0x57983e                       ; 0041ecb4 | = "rpm"
     LEA EAX,[EBX + 0x2f8]               ; 0041ecb9
     PUSH EAX                            ; 0041ecbf
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0041ecc0
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5798ab                       ; 0041ed84 | = "simBox"
     LEA EAX,[EBX + 0x38c]               ; 0041ed89
     PUSH EAX                            ; 0041ed8f
-    CALL FUN_0040ce80                   ; 0041ed90
-        ;   XREF to: 0040ce80 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce80()
+    CALL core_actor.cpp_FUN_0040ce80    ; 0041ed90
+        ;   XREF to: 0040ce80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce80()
     ADD ESP,0x8                         ; 0041ed95
     CMP dword ptr [0x005ad09c],0x5      ; 0041ed98 | DAT_005ad09c
         ;   Label: LAB_0041ed98

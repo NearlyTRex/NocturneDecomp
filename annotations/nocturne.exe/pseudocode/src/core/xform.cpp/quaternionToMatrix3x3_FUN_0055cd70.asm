@@ -19,16 +19,16 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[7]:
-;   FUN_0055d5e0 at 0055d5f2
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 at 0051d428
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 at 0051d175
 ;   core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 at 0051f243
+;   core_xform.cpp_FUN_0055d5e0 at 0055d5f2
 ;   core_xform.cpp_lerpMatrix3x4_FUN_0055cc30 at 0055cd0c
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0 at 0055d5c2
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_0055ced0 at 0055cee1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059834e
+;   double DOUBLE_0059834e = 2
 ;
 ; *****************************************************************************
 
@@ -53,7 +53,7 @@ section .text
     FADDP ST2,ST0                       ; 0055cda0
     FLD ST0                             ; 0055cda2
     FXCH ST2                            ; 0055cda4
-    FDIVR double ptr [0x0059834e]       ; 0055cda6 | DAT_0059834e
+    FDIVR double ptr [0x0059834e]       ; 0055cda6 | DOUBLE_0059834e
     FXCH ST2                            ; 0055cdac
     FMUL ST2                            ; 0055cdae
     FLD float ptr [EAX + 0x8]           ; 0055cdb0

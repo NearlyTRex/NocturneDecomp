@@ -54,7 +54,7 @@ int engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(int param_1)
     }
     if (((DAT_006b494c == 0) || (0x9c3 < DAT_006b4950)) ||
        (iVar2 = *(int *)(param_1 + 4), 4 < iVar2)) {
-      FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
+      engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
     }
     else {
       iVar8 = 0;

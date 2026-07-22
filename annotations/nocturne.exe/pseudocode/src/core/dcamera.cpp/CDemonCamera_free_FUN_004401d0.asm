@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   FUN_0043ff30 at 0043ff36
-;   FUN_0050ad20 at 0050ad9a
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 0044001d
+;   core_set.cpp_FUN_0050ad20 at 0050ad9a
 ;
 ; Called Functions:
 ;   FUN_005638d0

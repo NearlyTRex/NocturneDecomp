@@ -37,7 +37,7 @@ int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(uint param_1)
   *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -0x10);
   *(uint *)(iVar2 + -0x14) = *(uint *)(iVar2 + -0x18);
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (iVar2 + -0x1f92c,"?gabriela.dfm" + 1);
+            (iVar2 + -0x1f92c,"gabriela.dfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (*(int *)(iVar2 + -0x1ac) + 0x150,"gabgun.kfm");
   return iVar2 + -0x1fa7c;

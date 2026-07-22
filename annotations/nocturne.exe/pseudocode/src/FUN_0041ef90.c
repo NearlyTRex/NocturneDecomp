@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0041ef90(int param_1,uint param_2,float *param_3)
 
 {
@@ -32,7 +30,7 @@ void FUN_0041ef90(int param_1,uint param_2,float *param_3)
     fStack_14 = (float)core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
                                  (local_60,&local_48,&local_24,auStack_3c);
     if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
-      fStack_18 = (float)_DAT_0057995d - fStack_14;
+      fStack_18 = (float)1.01 - fStack_14;
       fStack_30 = *param_3 * fStack_18;
       fStack_2c = param_3[1] * fStack_18;
       fStack_28 = param_3[2] * fStack_18;

@@ -21,9 +21,22 @@ import argparse
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def find_type(dtm, name):
-    """First data type in dtm whose getName() == name, preferring composites/typedefs."""
-    hits = [dt for dt in dtm.getAllDataTypes() if dt.getName() == name]
+def build_index(dtm):
+    """name -> [data types], built in one pass.
+
+    A bulk import asks for thousands of names; rescanning the whole DTM per
+    name is quadratic and dominates the run.
+    """
+    idx = {}
+    it = dtm.getAllDataTypes()
+    while it.hasNext():
+        dt = it.next()
+        idx.setdefault(dt.getName(), []).append(dt)
+    return idx
+
+
+def pick_type(hits):
+    """Preferred data type among same-named candidates."""
     if not hits:
         return None
     from ghidra.program.model.data import Composite, TypeDef, Enum
@@ -40,11 +53,21 @@ def main():
     ap.add_argument("project_name")
     ap.add_argument("src_program")
     ap.add_argument("dst_program")
-    ap.add_argument("types", help="comma-separated top-level type names")
+    ap.add_argument("types", nargs="?", default="",
+                    help="comma-separated top-level type names")
+    ap.add_argument("--types-file",
+                    help="file with one type name per line ('#' comments ignored); "
+                         "for bulk imports too large for a command line")
     ap.add_argument("--apply", action="store_true", help="Write + save the destination program")
     args = ap.parse_args()
 
     want = [t.strip() for t in args.types.split(",") if t.strip()]
+    if args.types_file:
+        with open(args.types_file) as fh:
+            want += [ln.split("#", 1)[0].strip() for ln in fh]
+    want = [t for t in dict.fromkeys(want) if t]
+    if not want:
+        ap.error("no type names given (use <types> or --types-file)")
     project_path = os.path.abspath(args.project_path)
 
     import pyghidra
@@ -63,9 +86,10 @@ def main():
                 monitor = ConsoleTaskMonitor()
 
                 before = set(dt.getName() for dt in dst_dtm.getAllDataTypes())
+                src_index = build_index(src_dtm)
                 plan = []
                 for name in want:
-                    dt = find_type(src_dtm, name)
+                    dt = pick_type(src_index.get(name))
                     if dt is None:
                         plan.append((name, "NOT-IN-SRC", None))
                     elif name in before:
@@ -73,10 +97,23 @@ def main():
                     else:
                         plan.append((name, "IMPORT", dt))
 
+                from collections import Counter
+                counts = Counter(a for _, a, _ in plan)
                 print("\n=== plan ===")
-                for name, action, dt in plan:
-                    extra = ("  (%s, %d bytes)" % (dt.getPathName(), dt.getLength())) if dt else ""
-                    print("  %-14s %s%s" % (action, name, extra))
+                for action in ("IMPORT", "ALREADY-IN-DST", "NOT-IN-SRC"):
+                    if counts[action]:
+                        print("  %-14s %d" % (action, counts[action]))
+                # Listing thousands of names helps nobody; the ones that could
+                # not be found are the only actionable detail.
+                if len(plan) <= 40:
+                    for name, action, dt in plan:
+                        extra = ("  (%s, %d bytes)" % (dt.getPathName(), dt.getLength())) if dt else ""
+                        print("  %-14s %s%s" % (action, name, extra))
+                elif counts["NOT-IN-SRC"]:
+                    missing = [n for n, a, _ in plan if a == "NOT-IN-SRC"]
+                    print("  not found in %s: %s%s"
+                          % (args.src_program, ", ".join(missing[:20]),
+                             " ..." if len(missing) > 20 else ""))
 
                 to_import = [dt for _, a, dt in plan if a == "IMPORT"]
                 if args.apply and to_import:

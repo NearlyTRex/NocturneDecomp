@@ -34,10 +34,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046
   float local_18;
   
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(param_2,local_20);
-  fVar13 = (float10)_DAT_0057dc0d;
-  fVar14 = (float10)_DAT_0057dc0d;
-  fVar15 = (float10)_DAT_0057dc15;
-  fVar4 = (float10)_DAT_0057dc15;
+  fVar13 = (float10)0.31830988619288902;
+  fVar14 = (float10)0.31830988619288902;
+  fVar15 = (float10)32768;
+  fVar4 = (float10)32768;
   fVar9 = (float10)round();
   _DAT_01c039e8 = (uint)ROUND(fVar9);
   fVar9 = (float10)round();
@@ -47,12 +47,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046
   fVar9 = (float10)round();
   _DAT_01c039f4 = (uint)ROUND(fVar9);
   fVar1 = *(float *)(param_2 + 0x1c);
-  fVar9 = (float10)_DAT_0057dc1d;
+  fVar9 = (float10)65536;
   fVar10 = (float10)round();
   iVar5 = DAT_005b7648;
   _DAT_01c039f8 = (uint)ROUND(fVar10);
   fVar2 = *(float *)(param_2 + 0x20);
-  fVar10 = (float10)_DAT_0057dc1d;
+  fVar10 = (float10)65536;
   fVar11 = (float10)round();
   fVar12 = (float10)round();
   fVar9 = (float10)round((float10)fVar1 * fVar9);

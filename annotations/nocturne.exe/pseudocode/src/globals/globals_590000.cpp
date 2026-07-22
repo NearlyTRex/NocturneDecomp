@@ -150,20 +150,6 @@ string DAT_00597615 = "`A..\\core\\wateract.cpp";
 string DAT_00597738 = "CWayPoint";
 string DAT_00597B91 = "CWeapon";
 string DAT_00597C18 = "?noLightningFlash";
-string DAT_00597C6C = "BnoLightningFlash";
-string DAT_00597CC9 = "CWerewolf";
-string DAT_00597E40 = "?speed";
-string DAT_00597F10 = "@Unable to set timer";
-string DAT_00597F47 = "2@%s\n\nFile: %s\nLine: %d";
-string DAT_00598236 = "..\\core\\xform.cpp";
-string DAT_00598248 = "Somebody write me!";
-string DAT_0059878D = "?%s can't pick up %s, sombody else beat me to it!\n";
-string DAT_0059893D = "@lookForHead";
-string DAT_0059899D = "?CTentacle";
-string DAT_00598B9C = "compiler error: eliminated virtual function call!";
-string DAT_00598BEC = "Not enough memory to allocate file structures\r\n";
-string DAT_00599288 = "C_FILE_INFO";
-string DAT_00599294 = "C_FILE_INFO=";
 
 // undefined1
 undefined1 DAT_005992ac = 0x00;

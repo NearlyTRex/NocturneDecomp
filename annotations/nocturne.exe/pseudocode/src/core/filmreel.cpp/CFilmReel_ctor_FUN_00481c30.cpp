@@ -14,11 +14,11 @@ int core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   *(byte ***)(iVar2 + -4) = &PTR_core_filmreel_cpp_CFilmReel_setup_FUN_00481ca0_0059cf84;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"filmreel.kfm");
-  pcVar3 = &DAT_00580f99;
+  pcVar3 = "movie3";
   pcVar4 = (char *)(iVar2 + 0x180);
   do {
     cVar1 = *pcVar3;

@@ -27,7 +27,7 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *p
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = _strcmp(param_2,&DAT_00578228);
+  iVar2 = _strcmp(param_2,"CGun");
   if (iVar2 == 0) {
     switch(*(uint *)(param_1 + 0x310)) {
     case 1:

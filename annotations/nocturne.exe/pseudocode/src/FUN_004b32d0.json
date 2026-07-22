@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,25 +122,26 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 542,
-    "complexity_score": 1474,
+    "complexity_score": 1490,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 249,
-    "suspect_count": 118,
+    "pseudocode_lines": 250,
+    "suspect_count": 119,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 791
+    "total_lines": 792
   },
   "cross_references": [],
   "function": {
@@ -181,6 +182,21 @@
       "addr": "004259a0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
+    },
+    {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_004259f0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00428c00"
+    },
+    {
+      "addr": "0042a150",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042a150"
     },
     {
       "addr": "004b3e00",
@@ -238,24 +254,14 @@
       "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
     },
     {
+      "addr": "0055d610",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_0055d610"
+    },
+    {
       "addr": "0043ac60",
       "is_variadic": false,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
-    },
-    {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "FUN_00428c00"
-    },
-    {
-      "addr": "0042a150",
-      "is_variadic": false,
-      "name": "FUN_0042a150"
     },
     {
       "addr": "004b5110",
@@ -271,11 +277,6 @@
       "addr": "004b52f0",
       "is_variadic": false,
       "name": "FUN_004b52f0"
-    },
-    {
-      "addr": "0055d610",
-      "is_variadic": false,
-      "name": "FUN_0055d610"
     }
   ],
   "globals": [
@@ -293,51 +294,51 @@
     },
     {
       "addr": "0058557d",
-      "name": "DAT_0058557d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058557d",
+      "type": "double",
+      "value": "12.5663706140000"
     },
     {
       "addr": "00585585",
-      "name": "DAT_00585585",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585585",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "0058558d",
-      "name": "DAT_0058558d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058558d",
+      "type": "double",
+      "value": "32"
     },
     {
       "addr": "00585595",
-      "name": "DAT_00585595",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585595",
+      "type": "double",
+      "value": "-1.57079632675000"
     },
     {
       "addr": "0058559d",
-      "name": "DAT_0058559d",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058559d",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005855a5",
-      "name": "DAT_005855a5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005855a5",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "005855ad",
-      "name": "DAT_005855ad",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005855ad",
+      "type": "double",
+      "value": "1.59386252192652E-314"
     },
     {
       "addr": "005855b5",
-      "name": "DAT_005855b5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005855b5",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "005ad350",
@@ -592,7 +593,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = FUN_004259f0(param_1,param_2);",
+      "text": "iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -600,7 +601,7 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = FUN_004259f0(param_1,param_2);",
+      "text": "iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -632,7 +633,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = param_2 * (float)_DAT_0058557d;",
+      "text": "*(float *)(param_1 + 0x2430) = param_2 * (float)12.566370614;",
       "type": "unnamed_param"
     },
     {
@@ -640,7 +641,7 @@
       "line": 44,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = param_2 * (float)_DAT_0058557d;",
+      "text": "*(float *)(param_1 + 0x2430) = param_2 * (float)12.566370614;",
       "type": "unnamed_param"
     },
     {
@@ -648,7 +649,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_00585585;",
+      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;",
       "type": "unnamed_param"
     },
     {
@@ -656,7 +657,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_00585585;",
+      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;",
       "type": "unnamed_param"
     },
     {
@@ -752,7 +753,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = FUN_00428c00(param_1,param_2);",
+      "text": "iVar3 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -760,7 +761,7 @@
       "line": 57,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = FUN_00428c00(param_1,param_2);",
+      "text": "iVar3 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -1008,7 +1009,7 @@
       "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058558d;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1016,7 +1017,7 @@
       "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058558d;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1024,7 +1025,7 @@
       "line": 162,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058558d;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1244,11 +1245,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 197,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_90 = local_90 + 1.5938625219265179e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 199,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = param_2 * (float)_DAT_005855b5;",
+      "text": "local_20 = param_2 * (float)3.1415926535000001;",
       "type": "unnamed_param"
     },
     {
@@ -1389,23 +1398,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055d610(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,&LAB_0051b650);",
+      "text": "(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,&LAB_0051b650);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0055d610(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,&LAB_0051b650);",
+      "text": "(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,&LAB_0051b650);",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 237,
+      "line": 238,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "puVar8 = &stack0xffffff84;",
@@ -1413,7 +1422,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 239,
+      "line": 240,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar7 * 0xfffffffe * 4) =",
@@ -1421,7 +1430,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 240,
+      "line": 241,
       "match": "&stack0xffffff78",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff78 + (uint)bVar7 * -8);",
@@ -1429,7 +1438,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 242,
+      "line": 243,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -1437,7 +1446,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 246,
+      "line": 247,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
@@ -1445,23 +1454,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 250,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0042a150(param_1,param_2);",
+      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 250,
+      "line": 251,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0042a150(param_1,param_2);",
+      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffff88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 239,
+      "line": 240,
       "match": "(int)&stack0xffffff88",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar7 * 0xfffffffe * 4) =",
@@ -1469,7 +1478,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 246,
+      "line": 247,
       "match": "(int)(&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
@@ -1485,7 +1494,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 239,
+      "line": 240,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar7 * 0xfffffffe * 4) =",

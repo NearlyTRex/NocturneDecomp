@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_summonEvent_00578697+1
+;   TerminatedCString s_summonEvent_00578698
 ;   string s_goAwayEvent_005786a4
 ;   string s_summoned_005786b0
 ;   undefined4 DAT_005acf3c
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 0041109b (CONDITIONAL_JUMP)  ; LAB_0041109b
     POP EBX                             ; 00411099
     RET                                 ; 0041109a
-    PUSH 0x578698                       ; 0041109b | s_summonEvent_00578697+1
+    PUSH 0x578698                       ; 0041109b | = "summonEvent"
         ;   Label: LAB_0041109b
     LEA EAX,[EBX + 0x1fa3c]             ; 004110a0
     PUSH EAX                            ; 004110a6

@@ -162,9 +162,9 @@
 ;   core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750 at 005548e5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005814dc
-;   undefined4 DAT_005814e4
-;   undefined4 DAT_005814ec
+;   double DOUBLE_005814dc = 5.30498947741318E-315
+;   double DOUBLE_005814e4 = 0.25
+;   double DOUBLE_005814ec = -1
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_00765a98
 ;   undefined4 DAT_01e57284
@@ -472,7 +472,7 @@ section .text
     FMUL float ptr [ESI + 0x8]          ; 0048ba1f
     FADDP                               ; 0048ba22
     FST double ptr [EBP + -0x1a]        ; 0048ba24
-    FCOMP double ptr [0x005814ec]       ; 0048ba27 | DAT_005814ec
+    FCOMP double ptr [0x005814ec]       ; 0048ba27 | DOUBLE_005814ec
     FNSTSW AX                           ; 0048ba2d
     SAHF                                ; 0048ba2f
     JA 0x0048c091                       ; 0048ba30
@@ -511,7 +511,7 @@ section .text
     FLD float ptr [EBP + -0x1e]         ; 0048ba82
     FMUL float ptr [ESI + 0x8]          ; 0048ba85
     FADDP                               ; 0048ba88
-    FMUL float ptr [0x005814dc]         ; 0048ba8a | DAT_005814dc
+    FMUL float ptr [0x005814dc]         ; 0048ba8a | DOUBLE_005814dc
     FLD float ptr [EBP + -0x26]         ; 0048ba90
     FXCH                                ; 0048ba93
     FSTP float ptr [EBP + 0x4e]         ; 0048ba95
@@ -703,7 +703,7 @@ section .text
     FLD float ptr [EBX + 0x50]          ; 0048bd1b
     FLD1                                ; 0048bd1e
     FSUBRP                              ; 0048bd20
-    FMUL double ptr [0x005814e4]        ; 0048bd22 | DAT_005814e4
+    FMUL double ptr [0x005814e4]        ; 0048bd22 | DOUBLE_005814e4
     FLD float ptr [EBP + 0x56]          ; 0048bd28
     FXCH                                ; 0048bd2b
     FMUL ST1                            ; 0048bd2d
@@ -879,7 +879,7 @@ section .text
     FLD float ptr [EBX + 0x48]          ; 0048bf8d
     FLD1                                ; 0048bf90
     FSUBRP                              ; 0048bf92
-    FMUL double ptr [0x005814e4]        ; 0048bf94 | DAT_005814e4
+    FMUL double ptr [0x005814e4]        ; 0048bf94 | DOUBLE_005814e4
     FLD float ptr [EBP + 0x56]          ; 0048bf9a
     FXCH                                ; 0048bf9d
     FMUL ST1                            ; 0048bf9f

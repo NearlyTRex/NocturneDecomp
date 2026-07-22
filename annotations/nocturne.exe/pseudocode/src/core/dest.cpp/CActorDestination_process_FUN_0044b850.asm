@@ -18,8 +18,8 @@
 ;   core_filmreel.cpp_CFilmProjector_process_FUN_00482010 at 00482043
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057be0f
-;   undefined4 DAT_0057be17
+;   double DOUBLE_0057be0f = 0.25
+;   double DOUBLE_0057be17 = 0.100000000000000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
@@ -76,7 +76,7 @@ section .text
     FMUL float ptr [ESP + 0x14]         ; 0044b8c1
     FADDP                               ; 0044b8c5
     FSQRT                               ; 0044b8c7
-    FCOMP double ptr [0x0057be17]       ; 0044b8c9 | DAT_0057be17
+    FCOMP double ptr [0x0057be17]       ; 0044b8c9 | DOUBLE_0057be17
     FNSTSW AX                           ; 0044b8cf
     SAHF                                ; 0044b8d1
     JC 0x0044b8da                       ; 0044b8d2
@@ -120,21 +120,21 @@ section .text
     FLD float ptr [ESP + 0x18]          ; 0044b92d
         ;   Label: LAB_0044b92d
     FABS                                ; 0044b931
-    FCOMP double ptr [0x0057be0f]       ; 0044b933 | DAT_0057be0f
+    FCOMP double ptr [0x0057be0f]       ; 0044b933 | DOUBLE_0057be0f
     FNSTSW AX                           ; 0044b939
     SAHF                                ; 0044b93b
     JNC 0x0044b9e9                      ; 0044b93c
         ;   XREF to: 0044b9e9 (CONDITIONAL_JUMP)  ; LAB_0044b9e9
     FLD float ptr [ESP + 0x1c]          ; 0044b942
     FABS                                ; 0044b946
-    FCOMP double ptr [0x0057be0f]       ; 0044b948 | DAT_0057be0f
+    FCOMP double ptr [0x0057be0f]       ; 0044b948 | DOUBLE_0057be0f
     FNSTSW AX                           ; 0044b94e
     SAHF                                ; 0044b950
     JNC 0x0044b9e9                      ; 0044b951
         ;   XREF to: 0044b9e9 (CONDITIONAL_JUMP)  ; LAB_0044b9e9
     FLD float ptr [ESP + 0x20]          ; 0044b957
     FABS                                ; 0044b95b
-    FCOMP double ptr [0x0057be0f]       ; 0044b95d | DAT_0057be0f
+    FCOMP double ptr [0x0057be0f]       ; 0044b95d | DOUBLE_0057be0f
     FNSTSW AX                           ; 0044b963
     SAHF                                ; 0044b965
     JNC 0x0044b9e9                      ; 0044b966

@@ -29,13 +29,13 @@ void FUN_00401010(void)
   wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
             (*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),
              *(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);
-  FUN_00401bd0("vga.act");
-  FUN_00403460("vga.lte");
-  FUN_00403630("vga.map");
-  FUN_00401990("vga.act");
+  engine_2d_c_FUN_00401bd0("vga.act");
+  engine_2d_c_FUN_00403460("vga.lte");
+  engine_2d_c_FUN_00403630("vga.map");
+  engine_2d_c_FUN_00401990("vga.act");
   wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0();
   iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                    ("startup","font.ndx",&DAT_0057705f);
+                    ("startup","font.ndx","rb");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0xa1;
@@ -44,7 +44,7 @@ void FUN_00401010(void)
   puVar5 = &DAT_006afabc;
   do {
     puVar6 = puVar5 + 1;
-    _fscanf(iVar3,&DAT_0057709a,puVar5);
+    _fscanf(iVar3,"%d\n",puVar5);
     puVar5 = puVar6;
   } while (puVar6 != (uint *)0x6afc3c);
   _fclose(iVar3);
@@ -56,7 +56,7 @@ void FUN_00401010(void)
     FUN_004c8440("Unable to malloc font memory");
   }
   iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                    ("startup","font.bin",&DAT_005770db);
+                    ("startup","font.bin","rb");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";
     _DAT_01cc4804 = 0xac;
@@ -81,7 +81,8 @@ void FUN_00401010(void)
     *(int *)(&DAT_01c00c80 + iVar3) = (int)(0xffffffff / uVar2);
     iVar3 = iVar3 + 4;
   } while (uVar8 < 0x640);
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577125,"default.act",&DAT_00577116);
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("art","default.act","rb")
+  ;
   if (iVar3 == 0) {
     return;
   }

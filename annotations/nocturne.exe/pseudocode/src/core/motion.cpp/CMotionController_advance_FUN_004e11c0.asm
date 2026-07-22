@@ -20,7 +20,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[39]:
+; XREF[40]:
+;   FUN_0040fa20 at 0040fb11
 ;   FUN_00418a00 at 00418d83
 ;   FUN_0041fe40 at 0041ffd4
 ;   FUN_004a9270 at 004a9bf8
@@ -30,8 +31,7 @@
 ;   FUN_004da790 at 004da938
 ;   FUN_00540f50 at 00540fe1
 ;   FUN_00543c50 at 005440c0
-;   FUN_0055ef50 at 0055effc
-;   ... and 29 more
+;   ... and 30 more
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004e1194 = 004e12b6

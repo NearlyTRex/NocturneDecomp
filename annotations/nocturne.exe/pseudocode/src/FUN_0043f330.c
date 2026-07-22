@@ -70,8 +70,9 @@ LAB_0043f474:
       }
     }
     else {
-      FUN_0050ddd0(0x01E57284,iVar3,*(int *)(param_1 + 0x1c724) * *(int *)(param_1 + 0x1c728) * 2,
-                   0xffffffff);
+      core_set_cpp_FUN_0050ddd0
+                (0x01E57284,iVar3,*(int *)(param_1 + 0x1c724) * *(int *)(param_1 + 0x1c728) * 2,
+                 0xffffffff);
     }
   }
   else if (_DAT_01c039c0 < 0) goto LAB_0043f474;
@@ -89,8 +90,9 @@ LAB_0043f474:
       }
     }
     else {
-      FUN_0050ddd0(0x01E57284,iVar3,*(int *)(param_1 + 0x1c724) * *(int *)(param_1 + 0x1c728) * 2,
-                   0xffffffff);
+      core_set_cpp_FUN_0050ddd0
+                (0x01E57284,iVar3,*(int *)(param_1 + 0x1c724) * *(int *)(param_1 + 0x1c728) * 2,
+                 0xffffffff);
     }
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);

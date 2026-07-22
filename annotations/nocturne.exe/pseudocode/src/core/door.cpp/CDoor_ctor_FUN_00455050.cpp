@@ -14,7 +14,7 @@ int core_door_cpp_CDoor_ctor_FUN_00455050(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   FUN_00481620(iVar2 + 800);
   *(byte ***)(iVar2 + -4) = &PTR_core_door_cpp_CDoor_setup_FUN_004551f0_0059c284;

@@ -35,7 +35,7 @@ void core_fire_cpp_CSpark_process_FUN_004836e0(int param_1)
   core_game_cpp_CGame_slamDT_FUN_004a5f00
             (0x01C775EC,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
-             (float)_DAT_005810cc,uVar3);
+             (float)1.52587890625e-05,uVar3);
   core_particle_cpp_CParticle_process_FUN_004ef120(param_1);
   core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,uVar3);
   return;

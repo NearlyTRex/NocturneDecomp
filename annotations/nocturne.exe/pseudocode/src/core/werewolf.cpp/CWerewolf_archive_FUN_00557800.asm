@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_00597e40+1
+;   TerminatedCString s_speed_00597e41
 ;   string s_modelName_00597e47
 ;   string s_guardDistance_00597e51
 ;   string s_motion_state_00597e5f
 ;   string s_lightUpEyes_00597e6c
 ;   string s_chainAnchor_00597e78
 ;   string s_chainLength_00597e84
-;   undefined4 DAT_00597e90
+;   TerminatedCString s_type_00597e90
 ;   string s_phase_00597e95
 ;   string s_phaseTimer_00597e9b
 ;   string s_alpha1_00597ea6
@@ -24,8 +24,8 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 00557806
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 0055780b
-    PUSH 0x597e41                       ; 0055780e | s_speed_00597e40+1
+    PUSH 0x597e41                       ; 0055780e | = "speed"
     LEA EAX,[EBX + 0xbc8c]              ; 00557813
     PUSH EAX                            ; 00557819
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0055781a
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_00557845
     LEA EAX,[EBX + 0x150]               ; 0055784a
     PUSH EAX                            ; 00557850
-    CALL FUN_0040cb00                   ; 00557851
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 00557851
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     MOV ECX,dword ptr [0x005c1614]      ; 00557856 | DAT_005c1614
     ADD ESP,0x8                         ; 0055785c
     CMP ECX,0x2                         ; 0055785f
@@ -91,7 +91,7 @@ section .text
         ;   Label: LAB_005578a9
     JL 0x005578c6                       ; 005578b0
         ;   XREF to: 005578c6 (CONDITIONAL_JUMP)  ; LAB_005578c6
-    PUSH 0x597e90                       ; 005578b2 | DAT_00597e90
+    PUSH 0x597e90                       ; 005578b2 | = "type"
     LEA EAX,[EBX + 0xbd24]              ; 005578b7
     PUSH EAX                            ; 005578bd
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 005578be

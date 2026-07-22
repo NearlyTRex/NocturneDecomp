@@ -61,12 +61,12 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,flo
     iVar2 = *(int *)(param_1 + 0x154);
     if ((0x44ac8000 < iVar2) && (iVar2 < 0x44c58000)) {
       if (iVar2 < 0x44b90000) {
-        local_10 = (*(float *)(param_1 + 0x154) + _DAT_00581d18) * (float)_DAT_00581d08 *
-                   (float)_DAT_00581d20 + _DAT_00581d28;
+        local_10 = (*(float *)(param_1 + 0x154) + -1380.0f) * (float)0.01 *
+                   (float)30 + 20.0f;
       }
       else {
-        local_10 = (_DAT_00581d00 - *(float *)(param_1 + 0x154)) * (float)_DAT_00581d08 *
-                   (float)_DAT_00581d10;
+        local_10 = (1580.0f - *(float *)(param_1 + 0x154)) * (float)0.01 *
+                   (float)50;
       }
       iVar2 = core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0
                         (param_1,local_10,param_2);
@@ -163,7 +163,7 @@ switchD_004949bb_caseD_4:
   default:
     _DAT_01cc4800 = "..\\core\\frankgen.cpp";
     _DAT_01cc4804 = 0x13e;
-    FUN_004c8440(&DAT_00581cfa);
+    FUN_004c8440("WTF!");
     return;
   }
 }

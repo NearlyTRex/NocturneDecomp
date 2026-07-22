@@ -57,7 +57,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
       fVar1 = 0x40400000;
       iVar3 = 0;
       if (0 < *(int *)(param_1 + 0x2f08)) {
-        fVar2 = (float)_DAT_00579fda;
+        fVar2 = (float)65535;
         iVar8 = param_1;
         do {
           iVar3 = iVar3 + 1;
@@ -74,7 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
         iVar8 = 0;
         local_34 = iVar4;
         do {
-          if ((float)_DAT_00579fda <= *(float *)((int)&DAT_00765aa0 + iVar8)) {
+          if ((float)65535 <= *(float *)((int)&DAT_00765aa0 + iVar8)) {
             iVar3 = iVar3 + 1;
           }
           if (*(int *)(local_34 + 0x288c) == -1) {
@@ -93,8 +93,8 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
         *(uint *)(param_1 + 0xb644) = 0x3f800000;
         *(uint *)(param_1 + 0xb640) = 1;
       }
-      local_4c = (float)*(int *)(param_1 + 0x2f08) * (float)_DAT_00579fe2 * (float)_DAT_00579fea +
-                 (float)_DAT_00579ff2;
+      local_4c = (float)*(int *)(param_1 + 0x2f08) * (float)0.59999999999999998 * (float)0.02
+                 + (float)0.40000000000000002;
       iVar4 = sound_sndmain_cpp_setSfxVolume_FUN_005270d0
                         (*(uint *)(param_1 + 0xb63c),local_4c);
       if (iVar4 == 0) {
@@ -112,8 +112,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
     *(float *)(param_1 + 0xb644) = fVar1;
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xb63c));
-      (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
-                (param_1,"?character-onfire-fallapart.wav" + 1);
+      (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_dismember_FUN_00427b60(param_1,0,0xbf800000,0);
     }
   }
@@ -134,7 +133,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
         *puVar10 = *puVar6;
         puVar10[1] = puVar6[1];
         puVar10[2] = puVar6[2];
-        fVar1 = (float)_DAT_00579ffa;
+        fVar1 = (float)0.5;
         *(float *)(local_24 + 0x3514) = (float)piVar9[5] * fVar1;
         *(int *)(local_24 + 0x3518) = piVar9[5];
         iVar4 = local_28 * 0x29c + local_48;

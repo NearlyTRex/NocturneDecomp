@@ -18,7 +18,7 @@ void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)
   char *pcVar5;
   
   core_inv_cpp_CInventory_initialize_FUN_004bef10(param_1 + 0x1f5a0);
-  uVar2 = core_actor_cpp_createActorByName_FUN_0040d540(&DAT_005857f6,_DAT_02ddf9a8);
+  uVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CGun",_DAT_02ddf9a8);
   pcVar3 = (char *)core_actor_cpp_castToClassHash_FUN_0040d890(uVar2);
   if (pcVar3 == (char *)0x0) {
     _DAT_01cc4800 = "..\\core\\hero.cpp";

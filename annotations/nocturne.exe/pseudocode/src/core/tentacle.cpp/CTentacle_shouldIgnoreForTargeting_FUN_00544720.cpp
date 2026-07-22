@@ -18,6 +18,6 @@ uint core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(int param
   if (iVar2 == 0) {
     return 1;
   }
-  uVar1 = FUN_0040d830(param_1);
+  uVar1 = core_actor_cpp_FUN_0040d830(param_1);
   return uVar1;
 }

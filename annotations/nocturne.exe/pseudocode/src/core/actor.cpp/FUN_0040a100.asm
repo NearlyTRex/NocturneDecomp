@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0040a100(void)
+; undefined4 core_actor_cpp_FUN_0040a100(void)
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\actor.cpp_005776a4
-;   string s_CDemonActor::customGetFloorHeigh_005776b6
+;   TerminatedCString s_core_actor_cpp_005776a4
+;   TerminatedCString s_CDemonActor_customGetFlo_005776b6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -18,7 +18,7 @@
 section .text
 
     MOV EDX,0x5776a4                    ; 0040a100 | = "..\\core\\actor.cpp"
-        ;   Label: FUN_0040a100
+        ;   Label: core_actor.cpp_FUN_0040a100
     MOV ECX,0x2a0                       ; 0040a105
     PUSH 0x5776b6                       ; 0040a10a | = "CDemonActor::customGetFloorHeight sho..."
     MOV dword ptr [0x01cc4800],EDX      ; 0040a10f | DAT_01cc4800

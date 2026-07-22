@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057d48e
+;   double DOUBLE_0057d48e = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -205,7 +205,7 @@ section .text
     TEST EDI,EDI                        ; 004573be
     JZ 0x00457440                       ; 004573c0
         ;   XREF to: 00457440 (CONDITIONAL_JUMP)
-    FLD double ptr [0x0057d48e]         ; 004573c6 | DAT_0057d48e
+    FLD double ptr [0x0057d48e]         ; 004573c6 | DOUBLE_0057d48e
     FLD float ptr [EDI]                 ; 004573cc
     FMUL ST1                            ; 004573ce
     FLD float ptr [EDI + 0x4]           ; 004573d0

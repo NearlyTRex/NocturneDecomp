@@ -50,7 +50,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param
     do {
       uVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,iVar6);
       iVar6 = iVar6 + 1;
-      iVar7 = _sprintf(puVar8,&DAT_0057eddf,uVar4);
+      iVar7 = _sprintf(puVar8,"%s\n",uVar4);
       puVar8 = puVar8 + iVar7;
     } while (iVar6 < *param_1);
   }

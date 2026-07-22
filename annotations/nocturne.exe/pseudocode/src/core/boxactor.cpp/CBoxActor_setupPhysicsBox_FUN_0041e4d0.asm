@@ -11,7 +11,7 @@
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 at 0041e4b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579809
+;   float FLOAT_00579809 = 0.5
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     FADD float ptr [ESP + 0x10]         ; 0041e535
     FXCH                                ; 0041e539
     FST float ptr [ESP + 0x30]          ; 0041e53b
-    FLD float ptr [0x00579809]          ; 0041e53f | DAT_00579809
+    FLD float ptr [0x00579809]          ; 0041e53f | FLOAT_00579809
     FXCH                                ; 0041e545
     FMUL ST1                            ; 0041e547
     FXCH ST2                            ; 0041e549

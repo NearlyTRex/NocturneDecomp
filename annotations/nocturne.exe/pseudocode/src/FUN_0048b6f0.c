@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int param_5)
 
 {
@@ -260,7 +258,7 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
         }
         fVar2 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];
         local_98 = (double)fVar2;
-        if ((float)_DAT_005814ec < fVar2) {
+        if ((float)-1 < fVar2) {
           if (local_98 < 1.0) {
             fVar5 = (float10)acos((float10)fVar2);
             local_2c = (float)fVar5;
@@ -281,7 +279,7 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
       }
       if (0.0 < param_4[0x14]) {
         local_30 = (local_9c * param_3[2] + local_a4 * *param_3 + local_a0 * param_3[1]) *
-                   _DAT_005814dc;
+                   5.3049894774131808e-315._0_4_;
         local_d4 = local_a4 * local_30;
         local_d0 = local_a0 * local_30;
         local_cc = local_9c * local_30;
@@ -329,7 +327,7 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
         local_1ec = param_4[0x14];
         FUN_0048b6f0(param_1,&local_134,&local_bc,&local_23c,local_54);
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
-        local_28 = (1.0 - param_4[0x14]) * (float)_DAT_005814e4 * local_28;
+        local_28 = (1.0 - param_4[0x14]) * (float)0.25 * local_28;
       }
       if (param_4[0x12] <= 0.0) goto LAB_0048bfa9;
       if ((param_4[0x12] != 1.0) || (param_4[0x13] != param_4[0x11])) break;
@@ -391,7 +389,7 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
     local_19c = param_4[0x13];
     local_198 = param_4[0x14];
     FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);
-    local_28 = (1.0 - param_4[0x12]) * (float)_DAT_005814e4 * local_28;
+    local_28 = (1.0 - param_4[0x12]) * (float)0.25 * local_28;
 LAB_0048bfa9:
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370
               (param_1,&local_e0,&local_134,*param_4,local_28,&local_a4,param_4[3],param_4[4],

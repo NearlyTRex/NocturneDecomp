@@ -90,7 +90,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
             puVar9 = puVar8;
             if (-1 < iVar6) {
               local_14 = iVar6 * 0x10;
-              FUN_0055d0d0(param_2 + iVar6 * 4);
+              core_xform_cpp_FUN_0055d0d0(param_2 + iVar6 * 4);
               puVar9 = &stack0xffffff58;
               local_a8 = local_c8;
               *(uint *)((int)&stack0xffffff5c + (uint)bVar10 * 0xfffffffe * 4) =

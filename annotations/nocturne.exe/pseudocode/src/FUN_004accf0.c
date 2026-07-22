@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param_5)
 
 {
@@ -141,11 +139,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
       local_1dc = param_2[2];
     }
     local_80 = *param_2 + param_2[3];
-    local_170 = local_80 / _DAT_00585038;
+    local_170 = local_80 / 2.0f;
     local_7c = param_2[1] + param_2[4];
     local_78 = param_2[2] + param_2[5];
-    local_16c = local_7c * _DAT_0058503c;
-    local_168 = local_78 * _DAT_0058503c;
+    local_16c = local_7c * 0.5f;
+    local_168 = local_78 * 0.5f;
     if (&local_1d8 != &local_170) {
       local_1d8 = local_170;
       local_1d4 = local_16c;
@@ -158,22 +156,22 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_10c = local_124 + param_2[7];
     local_108 = local_120 + param_2[8];
     local_ec = local_110 + param_2[9];
-    local_98 = local_ec / _DAT_00585040;
+    local_98 = local_ec / 4.0f;
     local_e8 = local_10c + param_2[10];
     local_e4 = local_108 + param_2[0xb];
-    local_94 = local_e8 * _DAT_00585044;
-    local_90 = local_e4 * _DAT_00585044;
+    local_94 = local_e8 * 0.25f;
+    local_90 = local_e4 * 0.25f;
     if (&local_1cc != &local_98) {
       local_1cc = local_98;
       local_1c8 = local_94;
       local_1c4 = local_90;
     }
     local_50 = *param_2 + param_2[9];
-    local_5c = local_50 / _DAT_00585038;
+    local_5c = local_50 / 2.0f;
     local_4c = param_2[1] + param_2[10];
     local_48 = param_2[2] + param_2[0xb];
-    local_58 = local_4c * _DAT_0058503c;
-    local_54 = local_48 * _DAT_0058503c;
+    local_58 = local_4c * 0.5f;
+    local_54 = local_48 * 0.5f;
     if (&local_1c0 != &local_5c) {
       local_1c0 = local_5c;
       local_1bc = local_58;
@@ -193,11 +191,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_198 = (*param_4 + param_4[3]) / 2;
     FUN_004accf0(param_1,&local_1e4,&local_1b4,&local_1a4,param_5 + 1);
     local_44 = *param_2 + param_2[3];
-    local_14c = local_44 / _DAT_00585038;
+    local_14c = local_44 / 2.0f;
     local_40 = param_2[1] + param_2[4];
     local_3c = param_2[2] + param_2[5];
-    local_148 = local_40 * _DAT_0058503c;
-    local_144 = local_3c * _DAT_0058503c;
+    local_148 = local_40 * 0.5f;
+    local_144 = local_3c * 0.5f;
     if (&local_1e4 != &local_14c) {
       local_1e4 = local_14c;
       local_1e0 = local_148;
@@ -209,11 +207,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
       local_1d0 = param_2[5];
     }
     local_20 = param_2[3] + param_2[6];
-    local_104 = local_20 / _DAT_00585038;
+    local_104 = local_20 / 2.0f;
     local_1c = param_2[4] + param_2[7];
     local_18 = param_2[5] + param_2[8];
-    local_100 = local_1c * _DAT_0058503c;
-    local_fc = local_18 * _DAT_0058503c;
+    local_100 = local_1c * 0.5f;
+    local_fc = local_18 * 0.5f;
     if (&local_1cc != &local_104) {
       local_1cc = local_104;
       local_1c8 = local_100;
@@ -226,11 +224,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_dc = local_c4 + param_2[7];
     local_d8 = local_c0 + param_2[8];
     local_2c = local_e0 + param_2[9];
-    local_17c = local_2c / _DAT_00585040;
+    local_17c = local_2c / 4.0f;
     local_28 = local_dc + param_2[10];
     local_24 = local_d8 + param_2[0xb];
-    local_178 = local_28 * _DAT_00585044;
-    local_174 = local_24 * _DAT_00585044;
+    local_178 = local_28 * 0.25f;
+    local_174 = local_24 * 0.25f;
     if (&local_1c0 != &local_17c) {
       local_1c0 = local_17c;
       local_1bc = local_178;
@@ -256,22 +254,22 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_a0 = local_184 + param_2[7];
     local_9c = local_180 + param_2[8];
     local_38 = local_a4 + param_2[9];
-    local_f8 = local_38 / _DAT_00585040;
+    local_f8 = local_38 / 4.0f;
     local_34 = local_a0 + param_2[10];
     local_30 = local_9c + param_2[0xb];
-    local_f4 = local_34 * _DAT_00585044;
-    local_f0 = local_30 * _DAT_00585044;
+    local_f4 = local_34 * 0.25f;
+    local_f0 = local_30 * 0.25f;
     if (&local_1e4 != &local_f8) {
       local_1e4 = local_f8;
       local_1e0 = local_f4;
       local_1dc = local_f0;
     }
     local_164 = param_2[3] + param_2[6];
-    local_74 = local_164 / _DAT_00585038;
+    local_74 = local_164 / 2.0f;
     local_160 = param_2[4] + param_2[7];
     local_15c = param_2[5] + param_2[8];
-    local_70 = local_160 * _DAT_0058503c;
-    local_6c = local_15c * _DAT_0058503c;
+    local_70 = local_160 * 0.5f;
+    local_6c = local_15c * 0.5f;
     if (&local_1d8 != &local_74) {
       local_1d8 = local_74;
       local_1d4 = local_70;
@@ -283,11 +281,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
       local_1c4 = param_2[8];
     }
     local_158 = param_2[6] + param_2[9];
-    local_194 = local_158 / _DAT_00585038;
+    local_194 = local_158 / 2.0f;
     local_154 = param_2[7] + param_2[10];
     local_150 = param_2[8] + param_2[0xb];
-    local_190 = local_154 * _DAT_0058503c;
-    local_18c = local_150 * _DAT_0058503c;
+    local_190 = local_154 * 0.5f;
+    local_18c = local_150 * 0.5f;
     if (&local_1c0 != &local_194) {
       local_1c0 = local_194;
       local_1bc = local_190;
@@ -307,11 +305,11 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_198 = (local_19c + param_4[3]) / 2;
     FUN_004accf0(param_1,&local_1e4,&local_1b4,&local_1a4,param_5 + 1);
     local_11c = *param_2 + param_2[9];
-    local_134 = local_11c / _DAT_00585038;
+    local_134 = local_11c / 2.0f;
     local_118 = param_2[1] + param_2[10];
     local_114 = param_2[2] + param_2[0xb];
-    local_130 = local_118 * _DAT_0058503c;
-    local_12c = local_114 * _DAT_0058503c;
+    local_130 = local_118 * 0.5f;
+    local_12c = local_114 * 0.5f;
     if (&local_1e4 != &local_134) {
       local_1e4 = local_134;
       local_1e0 = local_130;
@@ -324,22 +322,22 @@ void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param
     local_d0 = local_64 + param_2[7];
     local_cc = local_60 + param_2[8];
     local_bc = local_d4 + param_2[9];
-    local_8c = local_bc / _DAT_00585040;
+    local_8c = local_bc / 4.0f;
     local_b8 = local_d0 + param_2[10];
     local_b4 = local_cc + param_2[0xb];
-    local_88 = local_b8 * _DAT_00585044;
-    local_84 = local_b4 * _DAT_00585044;
+    local_88 = local_b8 * 0.25f;
+    local_84 = local_b4 * 0.25f;
     if (&local_1d8 != &local_8c) {
       local_1d8 = local_8c;
       local_1d4 = local_88;
       local_1d0 = local_84;
     }
     local_b0 = param_2[6] + param_2[9];
-    local_140 = local_b0 / _DAT_00585038;
+    local_140 = local_b0 / 2.0f;
     local_ac = param_2[7] + param_2[10];
     local_a8 = param_2[8] + param_2[0xb];
-    local_13c = local_ac * _DAT_0058503c;
-    local_138 = local_a8 * _DAT_0058503c;
+    local_13c = local_ac * 0.5f;
+    local_138 = local_a8 * 0.5f;
     if (&local_1cc != &local_140) {
       local_1cc = local_140;
       local_1c8 = local_13c;

@@ -4,7 +4,8 @@
 ; void core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(int param_1,char *param_2)
 ;
 ;
-; XREF[51]:
+; XREF[52]:
+;   FUN_0040f960 at 0040f98d
 ;   FUN_00412100 at 00412122
 ;   FUN_00415050 at 00415072
 ;   FUN_00418630 at 00418674
@@ -14,8 +15,7 @@
 ;   FUN_00454660 at 00454682
 ;   FUN_004b30a0 at 004b30d6
 ;   FUN_004b6610 at 004b6638
-;   FUN_004b9af0 at 004b9b18
-;   ... and 41 more
+;   ... and 42 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0

@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00422050 at 00422151
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004224f1
 ;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 00421417
 ;   core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0 at 004227a5
+;   core_bugs.cpp_FUN_00422050 at 00422151
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579d85
-;   undefined4 DAT_00579d89
+;   float FLOAT_00579d85 = -0.3333333
+;   float FLOAT_00579d89 = 0.3333333
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
@@ -74,7 +74,7 @@ section .text
     FLD float ptr [EDI + 0x19844]       ; 00423708
     FLD float ptr [EDI + 0x19848]       ; 0042370e
     FXCH ST5                            ; 00423714
-    FLD float ptr [0x00579d85]          ; 00423716 | DAT_00579d85
+    FLD float ptr [0x00579d85]          ; 00423716 | FLOAT_00579d85
     FXCH                                ; 0042371c
     FADD ST0,ST1                        ; 0042371e
     FXCH ST5                            ; 00423720
@@ -82,7 +82,7 @@ section .text
     FXCH ST4                            ; 00423724
     FADDP                               ; 00423726
     FXCH ST2                            ; 00423728
-    FLD float ptr [0x00579d89]          ; 0042372a | DAT_00579d89
+    FLD float ptr [0x00579d89]          ; 0042372a | FLOAT_00579d89
     FXCH                                ; 00423730
     FADD ST0,ST1                        ; 00423732
     FXCH ST2                            ; 00423734

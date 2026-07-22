@@ -17,13 +17,13 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[9]:
-;   FUN_004110f0 at 00411280
-;   FUN_00414340 at 00414413
 ;   FUN_00415760 at 0041583c
 ;   FUN_0045a260 at 0045a333
 ;   FUN_004de550 at 004de632
 ;   FUN_00541640 at 005416fc
 ;   FUN_0054dac0 at 0054db86
+;   core_baron.cpp_FUN_004110f0 at 00411280
+;   core_batman.cpp_FUN_00414340 at 00414413
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 004264d3
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5aa1
 ;

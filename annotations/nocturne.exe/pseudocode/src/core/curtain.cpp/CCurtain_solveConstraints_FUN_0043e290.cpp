@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1,int param_2)
 
 {
@@ -52,7 +50,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1
     pfVar13 = (float *)(param_1 + 0x1c720);
     local_1c = (float *)&DAT_0077c288;
     do {
-      if (((((float)_DAT_0057b4fe <= *(float *)(param_2 + 0x30)) ||
+      if (((((float)-0.5 <= *(float *)(param_2 + 0x30)) ||
            (fVar6 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],
            fVar6 <= *(float *)(param_2 + 0x24))) ||
           (*(float *)(param_2 + 0x24) <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||
@@ -169,7 +167,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1
         *(float *)(param_2 + 0x30) = *(float *)(param_2 + 0x30) - fVar9 * fVar3;
         *(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) - fVar7 * fVar4;
       }
-      if ((fVar5 < fVar6) && ((float)_DAT_0057b506 < fVar5)) {
+      if ((fVar5 < fVar6) && ((float)0.01 < fVar5)) {
         fVar6 = fVar6 - fVar5;
         fVar5 = 1.0 / fVar5;
         fVar3 = local_e0 * fVar6 * fVar5 * *pfVar13;

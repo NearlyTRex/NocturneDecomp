@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(int param_1,int *param_2)
 
 {
@@ -82,13 +80,13 @@ switchD_0043c396_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd4c) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_0057b3fa);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   if (*(int *)(param_1 + 0xbd30) != *param_2) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_0057b402);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
-  param_2[1] = (int)((float)param_2[1] * (float)_DAT_0057b40a);
+  param_2[1] = (int)((float)param_2[1] * (float)2.5);
   return;
 }

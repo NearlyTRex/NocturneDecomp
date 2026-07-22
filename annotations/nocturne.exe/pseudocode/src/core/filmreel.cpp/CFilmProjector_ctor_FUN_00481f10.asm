@@ -10,10 +10,10 @@
 ;   undefined4 s_FilmReel_00580fd2+1
 ;   undefined4 s_ilmReel_00580fd2+2
 ;   undefined4 s_lmReel_00580fd2+3
-;   undefined1 DAT_00580fdc
-;   undefined1 DAT_00580fdd
-;   undefined1 DAT_00580fde
-;   undefined1 DAT_00580fdf
+;   TerminatedCString s_none_00580fdc
+;   undefined4 s_one_00580fdc+1
+;   undefined4 s_ne_00580fdc+2
+;   undefined4 s_e_00580fdc+3
 ;   undefined1* PTR_core_filmreel.cpp_CFilmProjector_setup_FUN_00481fd0_0059d064 = 00481fd0
 ;
 ; Called Functions:
@@ -66,18 +66,18 @@ section .text
         ;   XREF to: 00481f68 (CONDITIONAL_JUMP)  ; LAB_00481f68
     POP EDI                             ; 00481f80
         ;   Label: LAB_00481f80
-    MOV ESI,0x580fdc                    ; 00481f81 | DAT_00580fdc
+    MOV ESI,0x580fdc                    ; 00481f81 | = "none"
     MOV dword ptr [EBX + 0x3d4],0x0     ; 00481f86
     LEA EDI,[EBX + 0x36c]               ; 00481f90
     MOV dword ptr [EBX + 0x368],0x0     ; 00481f96
     PUSH EDI                            ; 00481fa0
-    MOV AL,byte ptr [ESI]               ; 00481fa1 | DAT_00580fdc | DAT_00580fde
+    MOV AL,byte ptr [ESI]               ; 00481fa1 | = "none" | s_ne_00580fdc+2
         ;   Label: LAB_00481fa1
     MOV byte ptr [EDI],AL               ; 00481fa3
     CMP AL,0x0                          ; 00481fa5
     JZ 0x00481fb9                       ; 00481fa7
         ;   XREF to: 00481fb9 (CONDITIONAL_JUMP)  ; LAB_00481fb9
-    MOV AL,byte ptr [ESI + 0x1]         ; 00481fa9 | DAT_00580fdd | DAT_00580fdf
+    MOV AL,byte ptr [ESI + 0x1]         ; 00481fa9 | s_one_00580fdc+1 | s_e_00580fdc+3
     ADD ESI,0x2                         ; 00481fac
     MOV byte ptr [EDI + 0x1],AL         ; 00481faf
     ADD EDI,0x2                         ; 00481fb2

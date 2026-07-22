@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_glassSize_00584fc7+1
+;   TerminatedCString s_glassSize_00584fc8
 ;   string s_glassTexture_00584fd2
 ;   string s_opacity_00584fdf
 ;   string s_shattered_00584fe7
@@ -33,7 +33,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004acbc6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004acbcb
-    PUSH 0x584fc8                       ; 004acbce | s_glassSize_00584fc7+1
+    PUSH 0x584fc8                       ; 004acbce | = "glassSize"
     LEA EAX,[EBX + 0x150]               ; 004acbd3
     PUSH EAX                            ; 004acbd9
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 004acbda

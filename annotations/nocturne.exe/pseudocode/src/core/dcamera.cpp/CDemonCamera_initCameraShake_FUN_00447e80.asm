@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0050e660 at 0050e675
+;   core_set.cpp_FUN_0050e660 at 0050e675
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057bb6b
+;   double DOUBLE_0057bb6b = 65536
 ;   undefined4 DAT_005ad444
 ;   undefined4 DAT_005ad448
 ;   undefined4 DAT_005ad44c
@@ -27,7 +27,7 @@ section .text
 
     PUSH EBX                            ; 00447e80
         ;   Label: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80
-    FLD double ptr [0x0057bb6b]         ; 00447e81 | DAT_0057bb6b
+    FLD double ptr [0x0057bb6b]         ; 00447e81 | DOUBLE_0057bb6b
     FLD float ptr [ESP + 0xc]           ; 00447e87
     FMUL ST1                            ; 00447e8b
     FLD float ptr [ESP + 0x14]          ; 00447e8d

@@ -15,7 +15,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507e7c
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dtrace.cpp_0057e264+2
+;   TerminatedCString s_core_dtrace_cpp_0057e266
 ;   string s_CDemonRaytrace::setPVS_-_Too_man_0057e279
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
@@ -136,7 +136,7 @@ section .text
     POP EBP                             ; 0046ae06
     POP EBX                             ; 0046ae07
     RET                                 ; 0046ae08
-    MOV ECX,0x57e266                    ; 0046ae09 | s_..\core\dtrace.cpp_0057e264+2
+    MOV ECX,0x57e266                    ; 0046ae09 | = "..\\core\\dtrace.cpp"
         ;   Label: LAB_0046ae09
     MOV ESI,0x8c9                       ; 0046ae0e
     PUSH 0x57e279                       ; 0046ae13 | = "CDemonRaytrace::setPVS - Too many dra..."

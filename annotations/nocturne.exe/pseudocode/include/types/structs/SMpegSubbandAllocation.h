@@ -1,0 +1,13 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Structure: SMpegSubbandAllocation
+// Ghidra size: 0x80 (128 bytes)
+#pragma pack(push, 1)
+typedef struct SMpegSubbandAllocation {
+    int bit_allocations[32]; // 0x0
+} SMpegSubbandAllocation;
+#pragma pack(pop)
+

@@ -15,9 +15,9 @@
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0 at 0048d227
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581617
-;   undefined4 DAT_0058161f
-;   undefined4 DAT_00581627
+;   double DOUBLE_00581617 = 0.5
+;   double DOUBLE_0058161f = 65535
+;   double DOUBLE_00581627 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -47,7 +47,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0048e252
     MOV dword ptr [ESP + 0x8],EAX       ; 0048e254
     FLD float ptr [EBX + 0x154]         ; 0048e258
-    FMUL double ptr [0x00581617]        ; 0048e25e | DAT_00581617
+    FMUL double ptr [0x00581617]        ; 0048e25e | DOUBLE_00581617
     MOV EAX,ESP                         ; 0048e264
     LEA ESI,[EBX + 0x160]               ; 0048e266
     PUSH EAX                            ; 0048e26c
@@ -70,7 +70,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 0048e29d
     FLD float ptr [ESP + 0x1c]          ; 0048e2a1
     FADD float ptr [EBX + 0x278]        ; 0048e2a5
-    FMUL double ptr [0x0058161f]        ; 0048e2ab | DAT_0058161f
+    FMUL double ptr [0x0058161f]        ; 0048e2ab | DOUBLE_0058161f
     ADD ESP,0x8                         ; 0048e2b1
     CALL crt_math.c_round_FUN_00563a30  ; 0048e2b4
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
@@ -90,7 +90,7 @@ section .text
     MOV byte ptr [ESI + 0x1c],AL        ; 0048e2de
     FLD float ptr [EBX + 0x154]         ; 0048e2e1
     FMUL float ptr [EBX + 0x1a4]        ; 0048e2e7
-    FMUL double ptr [0x00581627]        ; 0048e2ed | DAT_00581627
+    FMUL double ptr [0x00581627]        ; 0048e2ed | DOUBLE_00581627
     SUB ESP,0x4                         ; 0048e2f3
     FSTP float ptr [ESP]                ; 0048e2f6
     PUSH ESI                            ; 0048e2f9

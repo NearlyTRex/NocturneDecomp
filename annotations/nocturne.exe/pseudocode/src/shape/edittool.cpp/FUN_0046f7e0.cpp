@@ -18,7 +18,7 @@ uint FUN_0046f7e0(uint param_1,char *param_2,uint param_3,byte param_4,uint para
   char local_150 [320];
   
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "?..\\shape\\edittool.cpp" + 1;
+    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
     _DAT_01cc4804 = 0x8b;
     FUN_004c8440("gEdFont must be set by the application.");
   }

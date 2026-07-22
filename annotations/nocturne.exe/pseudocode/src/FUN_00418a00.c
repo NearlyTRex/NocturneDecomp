@@ -101,7 +101,7 @@ void FUN_00418a00(int param_1,float param_2)
     }
     core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(param_1 + 0x150,5,0);
   }
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) goto LAB_00418c90;
   if ((*(int *)(param_1 + 0xc344) == 1) && (0.0 < *(float *)(param_1 + 0x2434))) {
     fVar2 = *(float *)(param_1 + 0xc348) + param_2;
@@ -147,7 +147,7 @@ void FUN_00418a00(int param_1,float param_2)
         (afStack_128 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
              (afStack_128 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1];
         core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(pfVar5,puVar11);
-        local_88 = *(float *)(param_1 + 0xc348) * (float)_DAT_00579366 + local_88;
+        local_88 = *(float *)(param_1 + 0xc348) * (float)6.2831853070000001 + local_88;
         *(float *)((int)local_44 + 0x20) = local_ac;
         *(float *)((int)local_44 + 0x24) = local_a8;
         *(float *)((int)local_44 + 0x28) = local_a4;
@@ -185,10 +185,10 @@ void FUN_00418a00(int param_1,float param_2)
       } while (iVar7 < *(int *)(param_1 + 0xbda0));
     }
     *(uint *)(param_1 + 0xc344) = 0;
-    fVar2 = *(float *)(param_1 + 0xbd9c) * (float)_DAT_00579336;
+    fVar2 = *(float *)(param_1 + 0xbd9c) * (float)0.5;
     *(uint *)(param_1 + 0x2434) = 0x42c80000;
     *(float *)(param_1 + 0xbd9c) = fVar2;
-    if (fVar2 <= (float)_DAT_0057933e) {
+    if (fVar2 <= (float)2.5) {
       *(uint *)(param_1 + 0xbd9c) = 0x40200000;
     }
   }
@@ -210,14 +210,14 @@ void FUN_00418a00(int param_1,float param_2)
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar7);
     }
   }
-  fVar3 = (float)_DAT_00579346;
-  fVar2 = (float)_DAT_0057934e;
+  fVar3 = (float)3.1415926535000001;
+  fVar2 = (float)0.25;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c) * fVar2;
   iVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
   iVar7 = *(int *)(iVar7 + 0x24);
   local_34 = iVar7;
-  iVar6 = FUN_00428c00(param_1,param_2);
+  iVar6 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar6 == 0) {
     switch(iVar7) {
     case 0:
@@ -262,7 +262,7 @@ void FUN_00418a00(int param_1,float param_2)
           else {
             fVar2 = *(float *)(param_1 + 0x20) - *(float *)(*(int *)(param_1 + 0xbca4) + 0x20);
             fVar3 = *(float *)(param_1 + 0x28) - *(float *)(*(int *)(param_1 + 0xbca4) + 0x28);
-            if ((SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= local_30 + (float)_DAT_00579336) &&
+            if ((SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= local_30 + (float)0.5) &&
                (*(float *)(param_1 + 0xbca0) <= 0.0)) {
               if (*(int *)(param_1 + 0x24f0) == 0) {
                 uVar9 = 2;
@@ -303,11 +303,11 @@ void FUN_00418a00(int param_1,float param_2)
       if (iVar4 != 0) {
         (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_144);
         local_10c = local_144 + local_138;
-        local_c4 = local_10c * _DAT_00579356;
+        local_c4 = local_10c * 5.2220990168285998e-315._0_4_;
         local_108 = local_140 + local_134;
         local_104 = local_13c + local_130;
-        local_c0 = local_108 * _DAT_00579356;
-        local_bc = local_104 * _DAT_00579356;
+        local_c0 = local_108 * 5.2220990168285998e-315._0_4_;
+        local_bc = local_104 * 5.2220990168285998e-315._0_4_;
         if (&local_f4 != &local_c4) {
           local_f4 = local_c4;
           local_f0 = local_c0;
@@ -376,7 +376,7 @@ LAB_0041907c:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                 (0x01E57284,*(uint *)(param_1 + 0xbca4));
     }
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057935e;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_64 = *(float *)(param_1 + 0x2420) * param_2;
     local_60 = *(float *)(param_1 + 0x2424) * param_2;
     local_5c = param_2 * *(float *)(param_1 + 0x2428);
@@ -396,7 +396,7 @@ LAB_0041907c:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   if ((local_34 == 1) &&
      (iVar4 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880
                         ((double)*(float *)(param_1 + 0x20),(double)*(float *)(param_1 + 0x24),

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_TlsGetValue_005755c8 = 0017609c
-;   string s_Thread_has_no_thread-specific_da_00599174
+;   TerminatedCString s_Thread_has_no_thread_spe_00599174
 ;   undefined4 DAT_005c1ab8
 ;
 ; Called Functions:

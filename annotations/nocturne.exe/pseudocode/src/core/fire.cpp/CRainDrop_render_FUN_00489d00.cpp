@@ -113,7 +113,7 @@ void core_fire_cpp_CRainDrop_render_FUN_00489d00(float *param_1)
   uVar4 = 0x489fa3;
   local_10 = local_14;
   fVar3 = (float10)round
-                             ((float10)local_14 * (float10)param_1[6] * (float10)_DAT_00581464);
+                             ((float10)local_14 * (float10)param_1[6] * (float10)4);
   DAT_005c5040 = (int)ROUND(fVar3);
   _DAT_005c50c0 = 0x900000;
   iStack_30 = (int)ROUND(*param_1 * _DAT_0059d1f8);

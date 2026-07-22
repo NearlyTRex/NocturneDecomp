@@ -20,8 +20,8 @@
 ;   FUN_004998c0 at 004999f7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00582286
-;   undefined4 DAT_0058228a
+;   float FLOAT_00582286 = -0.3000000
+;   double DOUBLE_0058228a = 0.5
 ;   undefined4 DAT_0059dcb8
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[ESP + 0x1b28]              ; 00499b4a
     MOV ECX,dword ptr [EBP + 0x14]      ; 00499b51
     PUSH EAX                            ; 00499b54
-    FADD float ptr [0x00582286]         ; 00499b55 | DAT_00582286
+    FADD float ptr [0x00582286]         ; 00499b55 | FLOAT_00582286
     PUSH ECX                            ; 00499b5b
     FSTP float ptr [ESP + 0x1b28]       ; 00499b5c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00499b63
@@ -162,7 +162,7 @@ section .text
     FLD float ptr [ESP + 0x1b30]        ; 00499c64
         ;   Label: LAB_00499c64
     FADD float ptr [ESP]                ; 00499c6b
-    FMUL double ptr [0x0058228a]        ; 00499c6e | DAT_0058228a
+    FMUL double ptr [0x0058228a]        ; 00499c6e | DOUBLE_0058228a
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00499c74
     INC EBX                             ; 00499c77
     FSTP float ptr [EAX]                ; 00499c78

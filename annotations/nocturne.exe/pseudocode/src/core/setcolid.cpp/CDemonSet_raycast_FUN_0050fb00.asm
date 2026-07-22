@@ -16,7 +16,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[17]:
-;   FUN_0040b300 at 0040b81f
 ;   FUN_0043d1c0 at 0043d35f
 ;   FUN_00477890 at 00477ad4
 ;   FUN_0048b6f0 at 0048b7d3
@@ -26,6 +25,7 @@
 ;   FUN_004fda20 at 004fdc84
 ;   FUN_00515ea0 at 0051611e
 ;   FUN_00545c30 at 00545e95
+;   core_actor.cpp_FUN_0040b300 at 0040b81f
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -19,7 +19,7 @@
 ;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50 at 00442c72
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b813
+;   double DOUBLE_0057b813 = 0.00390625
 ;   undefined4 DAT_01410280
 ;   undefined4 DAT_01410282
 ;   undefined4 DAT_01410284
@@ -115,7 +115,7 @@ section .text
     JZ 0x00442706                       ; 004426e6
         ;   XREF to: 00442706 (CONDITIONAL_JUMP)  ; LAB_00442706
     FILD dword ptr [EAX + 0x8]          ; 004426e8 | DAT_01410288 | DAT_02de5d88
-    FMUL double ptr [0x0057b813]        ; 004426eb | DAT_0057b813
+    FMUL double ptr [0x0057b813]        ; 004426eb | DOUBLE_0057b813
     FSTP float ptr [EBP + -0x10]        ; 004426f1
     FLD float ptr [EBP + -0x10]         ; 004426f4
     FCOMP float ptr [ESI + 0x100]       ; 004426f7

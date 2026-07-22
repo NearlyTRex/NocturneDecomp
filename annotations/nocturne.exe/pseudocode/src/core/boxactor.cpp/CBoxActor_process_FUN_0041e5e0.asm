@@ -25,10 +25,10 @@
 ;   FUN_0041f3d0 at 0041f3e7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057980d
-;   undefined4 DAT_00579811
-;   undefined4 DAT_00579815
-;   undefined4 DAT_0057981d
+;   float FLOAT_0057980d = 0.1047198
+;   float FLOAT_00579811 = 0.5
+;   double DOUBLE_00579815 = 3
+;   float FLOAT_0057981d = 0.2000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01e57284
@@ -118,7 +118,7 @@ section .text
     FSTP float ptr [ESP + 0xac]         ; 0041e6d6
     FLD float ptr [EAX + 0x4]           ; 0041e6dd
     FMUL ST1                            ; 0041e6e0
-    FLD float ptr [0x0057980d]          ; 0041e6e2 | DAT_0057980d
+    FLD float ptr [0x0057980d]          ; 0041e6e2 | FLOAT_0057980d
     FLD float ptr [ESP + 0xac]          ; 0041e6e8
     FMUL ST1                            ; 0041e6ef
     FXCH ST2                            ; 0041e6f1
@@ -281,7 +281,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0041e8bd
     FADD float ptr [EDX + 0x4]          ; 0041e8c0
     FXCH                                ; 0041e8c3
-    FLD float ptr [0x00579811]          ; 0041e8c5 | DAT_00579811
+    FLD float ptr [0x00579811]          ; 0041e8c5 | FLOAT_00579811
     FXCH                                ; 0041e8cb
     FMUL ST1                            ; 0041e8cd
     FXCH ST2                            ; 0041e8cf
@@ -345,7 +345,7 @@ section .text
     FADDP                               ; 0041e9a0
     FSQRT                               ; 0041e9a2
     FST float ptr [ESP]                 ; 0041e9a4
-    FCOMP double ptr [0x00579815]       ; 0041e9a7 | DAT_00579815
+    FCOMP double ptr [0x00579815]       ; 0041e9a7 | DOUBLE_00579815
     FNSTSW AX                           ; 0041e9ad
     SAHF                                ; 0041e9af
     JBE 0x0041e7d6                      ; 0041e9b0
@@ -359,7 +359,7 @@ section .text
     FLD float ptr [ESP]                 ; 0041e9c7
     FMUL float ptr [EBX + 0x388]        ; 0041e9ca
     PUSH EAX                            ; 0041e9d0
-    FMUL float ptr [0x0057981d]         ; 0041e9d1 | DAT_0057981d
+    FMUL float ptr [0x0057981d]         ; 0041e9d1 | FLOAT_0057981d
     PUSH ESI                            ; 0041e9d7
     LEA EAX,[ESP + 0x78]                ; 0041e9d8
     MOV dword ptr [ESP + 0x40],EBX      ; 0041e9dc

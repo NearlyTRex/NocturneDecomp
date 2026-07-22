@@ -53,5 +53,5 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00472c90(voi
   if (_DAT_01bcd078 != (char *)0x0) {
     return _DAT_01bcd078;
   }
-  return &DAT_0057ea91;
+  return &CHAR_00h_0057ea91;
 }

@@ -14,7 +14,7 @@ int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   iVar2 = core_flame_cpp_CFlame_ctor_FUN_0048cf60(iVar2 + 0x26c);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x2a0);

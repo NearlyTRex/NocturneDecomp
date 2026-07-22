@@ -79,7 +79,7 @@ LAB_00507d51:
         if (*(int *)(*(int *)(iVar3 + 0x15a8d0) + 0x178) != 0) {
           FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
         }
-        FUN_0050e080(param_1,iVar1,1);
+        core_set_cpp_FUN_0050e080(param_1,iVar1,1);
         FUN_00469ce0(&DAT_01fba938,param_2,0);
         iVar1 = iVar1 + 1;
         core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(param_1);
@@ -94,7 +94,7 @@ LAB_00507d51:
       if (*(int *)(*(int *)(iVar3 + 0x15a8d0) + 0x178) != 0) {
         FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
       }
-      FUN_0050e080(param_1,iVar1,0);
+      core_set_cpp_FUN_0050e080(param_1,iVar1,0);
       FUN_00469ce0(&DAT_01fba938,param_2,0);
       iVar3 = iVar3 + 4;
       iVar1 = iVar1 + 1;

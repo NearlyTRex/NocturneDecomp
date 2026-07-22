@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581707
-;   undefined4 DAT_0058170f
+;   float FLOAT_00581707 = 0.5
+;   double DOUBLE_0058170f = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -67,7 +67,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 0048f0f7
         ;   Label: LAB_0048f0f7
     FLD ST0                             ; 0048f0fa
-    FMUL double ptr [0x0058170f]        ; 0048f0fc | DAT_0058170f
+    FMUL double ptr [0x0058170f]        ; 0048f0fc | DOUBLE_0058170f
     XOR EBX,EBX                         ; 0048f102
     MOV ESI,dword ptr [EDI + 0x15c]     ; 0048f104
     MOV dword ptr [ESP + 0x40],EBX      ; 0048f10a
@@ -138,7 +138,7 @@ section .text
     PUSH EDI                            ; 0048f1a3
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0048f1a4
         ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
-    FLD float ptr [0x00581707]          ; 0048f1a9 | DAT_00581707
+    FLD float ptr [0x00581707]          ; 0048f1a9 | FLOAT_00581707
     FLD float ptr [EAX]                 ; 0048f1af
     FMUL ST1                            ; 0048f1b1
     ADD ESP,0xc                         ; 0048f1b3

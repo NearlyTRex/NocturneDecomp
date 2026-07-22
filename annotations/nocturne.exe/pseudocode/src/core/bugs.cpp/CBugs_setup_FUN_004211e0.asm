@@ -17,9 +17,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579c45
-;   undefined4 DAT_00579c49
-;   undefined4 DAT_00579c4d
+;   float FLOAT_00579c45 = 12
+;   float FLOAT_00579c49 = -12
+;   double DOUBLE_00579c4d = 0.5
 ;   undefined4 DAT_0059aea8
 ;
 ; Called Functions:
@@ -118,9 +118,9 @@ section .text
         ;   XREF to: 00421413 (CONDITIONAL_JUMP)  ; LAB_00421413
     FLD float ptr [0x0059aea8]          ; 004212d9 | DAT_0059aea8
     FLD ST0                             ; 004212df
-    FMUL float ptr [0x00579c45]         ; 004212e1 | DAT_00579c45
+    FMUL float ptr [0x00579c45]         ; 004212e1 | FLOAT_00579c45
     FXCH                                ; 004212e7
-    FMUL float ptr [0x00579c49]         ; 004212e9 | DAT_00579c49
+    FMUL float ptr [0x00579c49]         ; 004212e9 | FLOAT_00579c49
     MOV EDI,dword ptr [EBP + 0x14]      ; 004212ef
     ADD EAX,0xbd2c                      ; 004212f2
     MOV EBX,dword ptr [EBP + 0x14]      ; 004212f7
@@ -147,7 +147,7 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0042133f
         ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
     ADD ESP,0x8                         ; 00421344
-    FLD double ptr [0x00579c4d]         ; 00421347 | DAT_00579c4d
+    FLD double ptr [0x00579c4d]         ; 00421347 | DOUBLE_00579c4d
     FLD float ptr [ESP]                 ; 0042134d
     FMUL ST1                            ; 00421350
     FLD float ptr [ESP + 0x4]           ; 00421352

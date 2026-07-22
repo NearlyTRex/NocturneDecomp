@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[26]:
+; XREF[27]:
+;   FUN_0040f960 at 0040f968
 ;   FUN_00412100 at 00412106
 ;   FUN_00415050 at 00415056
 ;   FUN_00418630 at 0041863b
@@ -16,14 +17,13 @@
 ;   FUN_004bb760 at 004bb766
 ;   FUN_00505920 at 00505926
 ;   FUN_00540b40 at 00540b48
-;   FUN_00543b60 at 00543b66
-;   ... and 16 more
+;   ... and 17 more
 ;
 ; Referenced Globals:
-;   undefined1 DAT_0057f2be
-;   undefined1 DAT_0057f2bf
-;   undefined1 DAT_0057f2c0
-;   undefined1 DAT_0057f2c1
+;   TerminatedCString s_ene_0057f2be
+;   undefined4 s_ne_0057f2be+1
+;   undefined4 s_e_0057f2be+2
+;   undefined4 s__0057f2be+3
 ;   void* PTR_core_enemy.cpp_CEnemy_setup_FUN_004796b0_0059cdb4 = 004796b0
 ;
 ; Called Functions:
@@ -83,7 +83,7 @@ section .text
     PUSH 0x1fff                         ; 0047964d
     ADD EAX,0x10000                     ; 00479652
     PUSH 0xffffe001                     ; 00479657
-    MOV ESI,0x57f2be                    ; 0047965c | DAT_0057f2be
+    MOV ESI,0x57f2be                    ; 0047965c | = "ene"
     MOV dword ptr [EBX + 0x10c],EAX     ; 00479661
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00479667
         ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
@@ -92,13 +92,13 @@ section .text
     LEA EDI,[EBX + 0x11c]               ; 00479674
     MOV dword ptr [EBX + 0x110],EAX     ; 0047967a
     PUSH EDI                            ; 00479680
-    MOV AL,byte ptr [ESI]               ; 00479681 | DAT_0057f2be | DAT_0057f2c0
+    MOV AL,byte ptr [ESI]               ; 00479681 | = "ene" | s_e_0057f2be+2
         ;   Label: LAB_00479681
     MOV byte ptr [EDI],AL               ; 00479683
     CMP AL,0x0                          ; 00479685
     JZ 0x00479699                       ; 00479687
         ;   XREF to: 00479699 (CONDITIONAL_JUMP)  ; LAB_00479699
-    MOV AL,byte ptr [ESI + 0x1]         ; 00479689 | DAT_0057f2bf | DAT_0057f2c1
+    MOV AL,byte ptr [ESI + 0x1]         ; 00479689 | s_ne_0057f2be+1 | s__0057f2be+3
     ADD ESI,0x2                         ; 0047968c
     MOV byte ptr [EDI + 0x1],AL         ; 0047968f
     ADD EDI,0x2                         ; 00479692

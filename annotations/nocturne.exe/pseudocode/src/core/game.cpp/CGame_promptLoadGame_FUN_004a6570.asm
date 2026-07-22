@@ -13,10 +13,10 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df6a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00584562
-;   undefined4 DAT_00584566
+;   TerminatedCString s_noc_00584562
+;   TerminatedCString s_noc_00584566
 ;   string s_*.noc_0058456b
-;   undefined4 DAT_00584571
+;   TerminatedCString s_save_00584571
 ;   string s_Select_file_to_load_00584576
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01c78598
@@ -51,7 +51,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 004a65a4
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004a65a9
-    PUSH 0x584562                       ; 004a65ac | DAT_00584562
+    PUSH 0x584562                       ; 004a65ac | = "noc"
     LEA EAX,[ESP + 0x108]               ; 004a65b1
     PUSH EAX                            ; 004a65b8
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a65b9
@@ -60,7 +60,7 @@ section .text
     TEST EAX,EAX                        ; 004a65c1
     JZ 0x004a65de                       ; 004a65c3
         ;   XREF to: 004a65de (CONDITIONAL_JUMP)  ; LAB_004a65de
-    PUSH 0x584566                       ; 004a65c5 | DAT_00584566
+    PUSH 0x584566                       ; 004a65c5 | = ".noc"
     LEA EAX,[ESP + 0x108]               ; 004a65ca
     PUSH EAX                            ; 004a65d1
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a65d2
@@ -93,7 +93,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004a6601
     PUSH EAX                            ; 004a6605
     PUSH 0x58456b                       ; 004a6606 | = "*.noc"
-    PUSH 0x584571                       ; 004a660b | DAT_00584571
+    PUSH 0x584571                       ; 004a660b | = "save"
     PUSH 0x584576                       ; 004a6610 | = "Select file to load"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a6615
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()

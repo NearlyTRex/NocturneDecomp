@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_keyReel_00581050+3
+;   TerminatedCString s_keyReel_00581053
 ;   string s_keyEvent_0058105b
 ;   undefined4 DAT_005b801c
 ;
@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 004822db (CONDITIONAL_JUMP)  ; LAB_004822db
     POP EBX                             ; 004822d9
     RET                                 ; 004822da
-    PUSH 0x581053                       ; 004822db | s_keyReel_00581050+3
+    PUSH 0x581053                       ; 004822db | = "keyReel"
         ;   Label: LAB_004822db
     LEA EAX,[EBX + 0x368]               ; 004822e0
     PUSH EAX                            ; 004822e6

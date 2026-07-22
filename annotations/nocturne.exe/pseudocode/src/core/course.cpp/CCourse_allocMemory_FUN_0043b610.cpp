@@ -27,7 +27,7 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int p
       return;
     }
   }
-  _DAT_01cc4800 = "?..\\core\\course.cpp" + 1;
+  _DAT_01cc4800 = "..\\core\\course.cpp";
   _DAT_01cc4804 = 0x6e;
   FUN_004c8440("CCourse::allocMemory - out of hunk!");
   return;

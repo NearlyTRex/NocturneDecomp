@@ -13,25 +13,24 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(uint para
 {
   char *pcVar1;
   char *pcVar2;
-  byte *puVar3;
-  char *pcVar4;
+  char *pcVar3;
   
-  pcVar1 = DAT_00763e8c;
-  pcVar2 = "(unknown)";
-  pcVar4 = "(unknown)";
+  pcVar2 = DAT_00763e8c;
+  pcVar1 = "(unknown)";
+  pcVar3 = "(unknown)";
   if (DAT_00763e8c != (char *)0x0) {
-    pcVar2 = (char *)core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);
-    pcVar4 = pcVar1;
+    pcVar1 = (char *)core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);
+    pcVar3 = pcVar2;
   }
   if (param_2 == (char *)0x0) {
     param_2 = "(unknown)";
   }
-  puVar3 = &DAT_00577b75;
+  pcVar2 = "load";
   if (DAT_00763e88 == 2) {
-    puVar3 = &DAT_00577b7a;
+    pcVar2 = "save";
   }
   _DAT_01cc4800 = "..\\core\\actor.cpp";
   _DAT_01cc4804 = 0x7fb;
-  FUN_004c8440("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",puVar3,pcVar4,pcVar2,param_2,param_1);
+  FUN_004c8440("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar2,pcVar3,pcVar1,param_2,param_1);
   return;
 }

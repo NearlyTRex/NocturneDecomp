@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 393,
+    "complexity_score": 377,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 25,
+    "pseudocode_lines": 102,
+    "suspect_count": 24,
     "suspect_types": [
       "displaced_global_access",
       "param_count_too_few",
@@ -136,10 +136,9 @@
       "pointer_truncation",
       "suspect_float",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 335
+    "total_lines": 334
   },
   "cross_references": [
     {
@@ -192,9 +191,9 @@
   "globals": [
     {
       "addr": "0057a002",
-      "name": "DAT_0057a002",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057a002",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "0059b090",
@@ -373,16 +372,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2f08) == 0) {",
@@ -398,7 +389,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005ad1fc);",
@@ -406,7 +397,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_005ad1fc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005ad1fc);",
@@ -414,7 +405,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar11 = param_1 + 0x150;",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0xb640) != 0) {",
@@ -430,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar11 = *(int *)(param_1 + 0x2380);",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_00765aa0",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00765aa0 + iVar7) = 0;",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x2f08)) {",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar7 = param_1;",
@@ -462,7 +453,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 50,
       "match": "DAT_00765aa0",
       "severity": "mild",
       "text": "(&DAT_00765aa0)[*(int *)(iVar7 + 0x2f18)] =",
@@ -470,7 +461,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_00765aa0",
       "severity": "mild",
       "text": "(float)(&DAT_00765aa0)[*(int *)(iVar7 + 0x2f18)] +",
@@ -478,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)(param_1 + 0x2f08));",
@@ -486,15 +477,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 62,
       "match": "DAT_00765aa0",
       "severity": "mild",
-      "text": "if ((float)_DAT_0057a002 <= (float)(&DAT_00765aa0)[iVar7]) {",
+      "text": "if ((float)65535 <= (float)(&DAT_00765aa0)[iVar7]) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xb644) = 0x3f800000;",
@@ -502,7 +493,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xb640) = 1;",
@@ -510,7 +501,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 84,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "for (iVar5 = 0; piVar3 = DAT_005ae704, iVar5 < (int)(uint)*pbVar10; iVar5 = iVar5 + 1) {",
@@ -518,7 +509,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 87,
       "match": "DAT_00765aa0",
       "severity": "mild",
       "text": "(float10)(float)(&DAT_00765aa0)[pbVar9[1]]);",
@@ -526,7 +517,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 93,
+      "line": 91,
       "match": "6.101353e-39",
       "severity": "mild",
       "text": "local_30 = (float)local_18 + 6.101353e-39;",
@@ -534,7 +525,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x150,0xffffffff,0x163,0,1);",
@@ -542,7 +533,7 @@
     },
     {
       "description": "Pointer value `&DAT_00765aa0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)&DAT_00765aa0",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00765aa0 + iVar7) = 0;",
@@ -550,7 +541,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00765aa0 + iVar7) = 0;",

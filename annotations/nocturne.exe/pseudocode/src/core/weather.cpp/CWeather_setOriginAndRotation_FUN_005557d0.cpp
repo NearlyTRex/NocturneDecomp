@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(int *param_1,float *param_2,int *param_3)
 
 {
@@ -46,8 +44,8 @@ void core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(int *param_1,fl
       local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x42480000);
       local_14 = local_18;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                  ((float)param_3[1] + (float)_DAT_00597cb9,
-                                   (float)param_3[1] + (float)_DAT_00597cb1);
+                                  ((float)param_3[1] + (float)-0.78539816337500001,
+                                   (float)param_3[1] + (float)0.78539816337500001);
       fVar4 = (float10)fsin((float10)local_14);
       fVar5 = (float10)fcos((float10)local_14);
       local_38 = (float)(fVar4 * (float10)local_18 + (float10)*param_2);
@@ -63,8 +61,8 @@ void core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(int *param_1,fl
         local_40 = local_34;
         local_3c = local_30;
       }
-      local_4c = local_4c + _DAT_00597cc1;
-      local_40 = local_40 + _DAT_00597cc5;
+      local_4c = local_4c + 50.0f;
+      local_40 = local_40 + -50.0f;
       core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(0x01E57284);
       local_14 = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
@@ -73,7 +71,7 @@ void core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(int *param_1,fl
       *(float *)(iVar3 + 0x2de0388) = fVar1;
       local_24 = (double)fVar1;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-      local_34 = local_14 * (float)_DAT_00597ca9 + (float)local_24;
+      local_34 = local_14 * (float)100 + (float)local_24;
       if (pfVar2 != &local_38) {
         *pfVar2 = local_38;
         pfVar2[1] = local_34;

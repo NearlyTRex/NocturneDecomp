@@ -26,10 +26,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_charactr.cpp_FUN_0042af70
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_0042af70
 ;
 ; *****************************************************************************
 
@@ -308,8 +308,8 @@ section .text
         ;   XREF to: 004de346 (CONDITIONAL_JUMP)  ; LAB_004de346
     PUSH dword ptr [EBP + 0x18]         ; 004de4e1
     PUSH EBX                            ; 004de4e4
-    CALL FUN_0042af70                   ; 004de4e5
-        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined FUN_0042af70()
+    CALL core_charactr.cpp_FUN_0042af70 ; 004de4e5
+        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042af70()
     ADD ESP,0x8                         ; 004de4ea
     CMP EAX,0x1                         ; 004de4ed
     JC 0x004de346                       ; 004de4f0

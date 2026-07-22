@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(int param_1)
 
 {
@@ -29,7 +27,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(i
     do {
       pfVar4 = (float *)(*(int *)(param_1 + 0x350) + local_1c);
       piVar2 = (int *)(*(int *)(param_1 + 0x10c) + local_18 * *(int *)(param_1 + 0x104) * 0xc);
-      local_20 = (float)_DAT_0057ccee;
+      local_20 = (float)0.00390625;
       local_28 = (float)*piVar2 * local_20;
       local_24 = (float)piVar2[1] * local_20;
       local_20 = (float)piVar2[2] * local_20;
@@ -46,9 +44,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(i
       iVar3 = 1;
       if (1 < *(int *)(param_1 + 0x104)) {
         do {
-          local_28 = (float)piVar2[3] * (float)_DAT_0057ccee;
-          local_24 = (float)piVar2[4] * (float)_DAT_0057ccee;
-          local_20 = (float)piVar2[5] * (float)_DAT_0057ccee;
+          local_28 = (float)piVar2[3] * (float)0.00390625;
+          local_24 = (float)piVar2[4] * (float)0.00390625;
+          local_20 = (float)piVar2[5] * (float)0.00390625;
           piVar2 = piVar2 + 3;
           iVar3 = iVar3 + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pfVar4,&local_28);

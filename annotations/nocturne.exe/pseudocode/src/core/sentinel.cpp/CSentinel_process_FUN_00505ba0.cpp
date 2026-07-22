@@ -77,7 +77,7 @@ void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -152,7 +152,7 @@ LAB_00505bf9:
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
   iVar5 = *(int *)(iVar5 + 0x24);
   local_1c = iVar5;
-  iVar6 = FUN_00428c00(param_1,param_2);
+  iVar6 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar6 == 0) {
     if ((iVar5 == 10) || (iVar5 == 0xb)) {
       *(uint *)(param_1 + 0x2dd8) = 0x3f000000;
@@ -402,6 +402,6 @@ switchD_00505ff7_caseD_5:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

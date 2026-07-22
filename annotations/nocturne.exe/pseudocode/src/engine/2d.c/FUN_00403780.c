@@ -1,14 +1,14 @@
-// Name: FUN_00403780
+// Name: engine_2d.c_FUN_00403780
 // Address: 00403780
 // Address Range: [[00403780, 004038fd]]
 // Convention: unknown
-// Signature: void FUN_00403780(int param_1,int param_2,int param_3)
+// Signature: void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00403780(int param_1,int param_2,int param_3)
+void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
 
 {
   int iVar1;

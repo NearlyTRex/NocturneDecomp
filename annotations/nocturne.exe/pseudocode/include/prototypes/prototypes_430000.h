@@ -14,14 +14,14 @@ void engine_clipper_c_interpolateVertexRightClip_FUN_00431630(int *param_1,int *
 void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int *param_2,int *param_3);
 void engine_clipper_c_interpolateVertexTopClip_FUN_00431830(int *param_1,int *param_2,int *param_3);
 void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(int *param_1,int *param_2,int *param_3);
-void FUN_00431f50(void);
+void engine_clipper_c_FUN_00431f50(void);
 void engine_clipper_c_normalizeClippedVertices_FUN_00432150(void);
-int * FUN_00432cd0(int *param_1,int *param_2);
+int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2);
 void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004337a0(int *param_1,int *param_2,int *param_3);
 void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0(int *param_1,int *param_2,int *param_3);
 void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00(int *param_1,int *param_2,int *param_3);
 void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00433b30(int *param_1,int *param_2,int *param_3);
-void FUN_00433ef0(void);
+void engine_clipper_c_FUN_00433ef0(void);
 int * __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(uint param_1,int *param_2);
 int __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(undefined4 param_1);
 void __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(int param_1);

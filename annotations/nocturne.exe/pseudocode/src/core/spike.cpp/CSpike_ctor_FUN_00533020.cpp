@@ -14,7 +14,7 @@ int core_spike_cpp_CSpike_ctor_FUN_00533020(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   pcVar3 = &DAT_0059501b;
   *(byte ***)(iVar2 + -4) = &PTR_core_spike_cpp_CSpike_setup_FUN_00533160_005a2334;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00429e60(int param_1)
+; void core_charactr_cpp_FUN_00429e60(int param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
@@ -13,7 +13,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   FUN_0042a150 at 0042a15f
+;   core_charactr.cpp_FUN_0042a150 at 0042a15f
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\charactr.cpp_0057a316
@@ -22,18 +22,18 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
+;   core_xform.cpp_FUN_0055d4a0
+;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;   FUN_004c8440
-;   FUN_0055d4a0
-;   FUN_0055d4e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00429e60
-        ;   Label: FUN_00429e60
+        ;   Label: core_charactr.cpp_FUN_00429e60
     SUB ESP,0x70                        ; 00429e61
     MOV EBX,dword ptr [ESP + 0x78]      ; 00429e64
     FLD float ptr [EBX + 0x25d8]        ; 00429e68
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_00429e8a
     LEA ESI,[ESP + 0x5c]                ; 00429e90
     LEA EDI,[ESP + 0x3c]                ; 00429e94
-    CALL FUN_0055d4a0                   ; 00429e98
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 00429e98
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     LEA ESI,[ESP + 0x5c]                ; 00429e9d
     ADD ESP,0x4                         ; 00429ea1
     MOVSD ES:EDI,ESI                    ; 00429ea4
@@ -65,8 +65,8 @@ section .text
     PUSH dword ptr [EBX + 0x25d0]       ; 00429ead
     LEA ESI,[ESP + 0x70]                ; 00429eb3
     LEA EDI,[ESP + 0x30]                ; 00429eb7
-    CALL FUN_0055d4e0                   ; 00429ebb
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 00429ebb
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0x70]                ; 00429ec0
     ADD ESP,0x4                         ; 00429ec4
     MOVSD ES:EDI,ESI                    ; 00429ec7

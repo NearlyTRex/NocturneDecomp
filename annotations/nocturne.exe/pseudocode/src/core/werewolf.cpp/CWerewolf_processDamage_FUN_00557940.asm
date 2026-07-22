@@ -9,10 +9,10 @@
 ;
 ; Referenced Globals:
 ;   string s_werewolf-die?.wav_00597eb4
-;   string s_werewolf-hurt?.wav_00597ec6
-;   undefined4 DAT_00597ed9
-;   undefined4 DAT_00597ee1
-;   undefined4 DAT_00597ee9
+;   TerminatedCString s_werewolf_hurt_wav_00597ec6
+;   double DOUBLE_00597ed9 = 2
+;   double DOUBLE_00597ee1 = 5
+;   double DOUBLE_00597ee9 = -5
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fb1ce4
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 00557a0b (CONDITIONAL_JUMP)  ; LAB_00557a0b
     FLD float ptr [ESI + 0x20]          ; 005579ef
     FST double ptr [ESP]                ; 005579f2
-    FCOMP double ptr [0x00597ee1]       ; 005579f5 | DAT_00597ee1
+    FCOMP double ptr [0x00597ee1]       ; 005579f5 | DOUBLE_00597ee1
     FNSTSW AX                           ; 005579fb
     SAHF                                ; 005579fd
     JBE 0x00557adc                      ; 005579fe
@@ -158,7 +158,7 @@ section .text
         ;   Label: LAB_00557a87
     LEA EAX,[EDI + 0x1c]                ; 00557a8a
     FLD ST0                             ; 00557a8d
-    FMUL double ptr [0x00597ed9]        ; 00557a8f | DAT_00597ed9
+    FMUL double ptr [0x00597ed9]        ; 00557a8f | DOUBLE_00597ed9
     PUSH EAX                            ; 00557a95
     LEA EAX,[ESP + 0xc]                 ; 00557a96
     XOR EBX,EBX                         ; 00557a9a
@@ -190,7 +190,7 @@ section .text
         ;   XREF to: 00557980 (UNCONDITIONAL_JUMP)  ; LAB_00557980
     FLD double ptr [ESP]                ; 00557adc
         ;   Label: LAB_00557adc
-    FCOMP double ptr [0x00597ee9]       ; 00557adf | DAT_00597ee9
+    FCOMP double ptr [0x00597ee9]       ; 00557adf | DOUBLE_00597ee9
     FNSTSW AX                           ; 00557ae5
     SAHF                                ; 00557ae7
     JNC 0x00557a0b                      ; 00557ae8

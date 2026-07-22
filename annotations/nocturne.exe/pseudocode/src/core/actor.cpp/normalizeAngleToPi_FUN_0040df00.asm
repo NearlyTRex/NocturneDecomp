@@ -10,8 +10,6 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[54]:
-;   FUN_00410cc0 at 00410d4e
-;   FUN_00428c00 at 00428daa
 ;   FUN_00439f50 at 0043a069
 ;   FUN_00495a20 at 004962e5
 ;   FUN_004b32d0 at 004b33f2
@@ -20,15 +18,17 @@
 ;   FUN_004baba0 at 004badce
 ;   FUN_004c4970 at 004c4f0f
 ;   FUN_004d4f30 at 004d5173
+;   FUN_004da790 at 004db21f
+;   FUN_004f6170 at 004f6b94
 ;   ... and 44 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578069
-;   undefined4 DAT_00578071
-;   undefined4 DAT_00578079
-;   undefined4 DAT_00578081
-;   undefined4 DAT_00578089
-;   undefined4 DAT_00578091
+;   double DOUBLE_00578069 = -3.14159265350000
+;   double DOUBLE_00578071 = 3.14159265350000
+;   double DOUBLE_00578079 = 0.159154943096444
+;   double DOUBLE_00578081 = -6.28318530700000
+;   double DOUBLE_00578089 = -0.159154943096444
+;   double DOUBLE_00578091 = 6.28318530700000
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005648c0
@@ -44,13 +44,13 @@ section .text
     AND ESP,0xfffffff8                  ; 0040df06
     FLD float ptr [EBP + 0x8]           ; 0040df09
     FST double ptr [ESP]                ; 0040df0c
-    FCOMP double ptr [0x00578069]       ; 0040df0f | DAT_00578069
+    FCOMP double ptr [0x00578069]       ; 0040df0f | DOUBLE_00578069
     FNSTSW AX                           ; 0040df15
     SAHF                                ; 0040df17
     JC 0x0040df37                       ; 0040df18
         ;   XREF to: 0040df37 (CONDITIONAL_JUMP)  ; LAB_0040df37
     FLD double ptr [ESP]                ; 0040df1a
-    FCOMP double ptr [0x00578071]       ; 0040df1d | DAT_00578071
+    FCOMP double ptr [0x00578071]       ; 0040df1d | DOUBLE_00578071
     FNSTSW AX                           ; 0040df23
     SAHF                                ; 0040df25
     JA 0x0040df73                       ; 0040df26
@@ -64,8 +64,8 @@ section .text
     RET                                 ; 0040df36
     FLD double ptr [ESP]                ; 0040df37
         ;   Label: LAB_0040df37
-    FADD double ptr [0x00578071]        ; 0040df3a | DAT_00578071
-    FMUL double ptr [0x00578089]        ; 0040df40 | DAT_00578089
+    FADD double ptr [0x00578071]        ; 0040df3a | DOUBLE_00578071
+    FMUL double ptr [0x00578089]        ; 0040df40 | DOUBLE_00578089
     SUB ESP,0x8                         ; 0040df46
     FSTP double ptr [ESP]               ; 0040df49
     CALL crt_math.c_floor_FUN_005648c0  ; 0040df4c
@@ -75,7 +75,7 @@ section .text
     FLD double ptr [ESP + 0x10]         ; 0040df59
     FLD1                                ; 0040df5d
     FADDP                               ; 0040df5f
-    FMUL double ptr [0x00578091]        ; 0040df61 | DAT_00578091
+    FMUL double ptr [0x00578091]        ; 0040df61 | DOUBLE_00578091
     ADD ESP,0x8                         ; 0040df67
     FADD double ptr [ESP]               ; 0040df6a
     FSTP float ptr [ESP + 0x10]         ; 0040df6d
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 0040df2f (UNCONDITIONAL_JUMP)  ; LAB_0040df2f
     FLD double ptr [ESP]                ; 0040df73
         ;   Label: LAB_0040df73
-    FADD double ptr [0x00578069]        ; 0040df76 | DAT_00578069
-    FMUL double ptr [0x00578079]        ; 0040df7c | DAT_00578079
+    FADD double ptr [0x00578069]        ; 0040df76 | DOUBLE_00578069
+    FMUL double ptr [0x00578079]        ; 0040df7c | DOUBLE_00578079
     SUB ESP,0x8                         ; 0040df82
     FSTP double ptr [ESP]               ; 0040df85
     CALL crt_math.c_floor_FUN_005648c0  ; 0040df88
@@ -94,7 +94,7 @@ section .text
     FLD double ptr [ESP + 0x10]         ; 0040df95
     FLD1                                ; 0040df99
     FADDP                               ; 0040df9b
-    FMUL double ptr [0x00578081]        ; 0040df9d | DAT_00578081
+    FMUL double ptr [0x00578081]        ; 0040df9d | DOUBLE_00578081
     ADD ESP,0x8                         ; 0040dfa3
     FADD double ptr [ESP]               ; 0040dfa6
     FSTP float ptr [ESP + 0x10]         ; 0040dfa9

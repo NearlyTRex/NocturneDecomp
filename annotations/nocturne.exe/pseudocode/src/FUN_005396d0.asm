@@ -22,8 +22,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90
 ;   core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
+;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0
-;   FUN_0055d4e0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH 0x3f800000                     ; 0053974a
     FSTP float ptr [ESP + 0x1ad4]       ; 0053974f
     PUSH dword ptr [ESP + 0x1ad4]       ; 00539756
-    CALL FUN_0055d4e0                   ; 0053975d
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 0053975d
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00539762
     LEA EAX,[ESP + 0x1aa8]              ; 00539765
     PUSH EAX                            ; 0053976c

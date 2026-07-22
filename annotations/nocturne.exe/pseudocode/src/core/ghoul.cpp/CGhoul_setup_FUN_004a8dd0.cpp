@@ -18,8 +18,7 @@ void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(int param_1)
   iVar1 = param_1 + 0x150;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(iVar1);
   uVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(iVar1);
-  _DAT_01c78c14 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar2,"@Bip01 Head" + 1,1);
+  _DAT_01c78c14 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar2,"Bip01 Head",1);
   _DAT_01c78c20 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar2,"Bip01 L ForeArm",1);
   _DAT_01c78c24 =

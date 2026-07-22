@@ -16,8 +16,8 @@
 ;   undefined1* PTR_core_flame.cpp_CFlame_setup_FUN_0048d050_0059d584 = 0048d050
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     SUB ESP,0x4                         ; 0048cf61
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048cf64
     PUSH EDX                            ; 0048cf68
-    CALL FUN_00409d30                   ; 0048cf69
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 0048cf69
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0048cf6e
     MOV dword ptr [EAX + 0x14c],0x59d584 ; 0048cf71 | PTR_core_flame.cpp_CFlame_setup_FUN_0048d050_0059d584
     MOV EBX,EAX                         ; 0048cf7b

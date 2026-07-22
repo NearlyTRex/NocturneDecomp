@@ -25,12 +25,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00507f80 at 0050807d
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b65
+;   core_set.cpp_FUN_00507f80 at 0050807d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b803
-;   undefined4 DAT_0057b80b
+;   double DOUBLE_0057b803 = 0.00390625
+;   double DOUBLE_0057b80b = 0.00787401574803150
 ;   undefined4 DAT_005ad45c
 ;   undefined4 DAT_005ad460
 ;   undefined4 DAT_005ad47c
@@ -186,7 +186,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0044231f
     MOV dword ptr [ESP + 0x6c],EAX      ; 00442321
     SHR EDX,0x8                         ; 00442325
-    FLD double ptr [0x0057b80b]         ; 00442328 | DAT_0057b80b
+    FLD double ptr [0x0057b80b]         ; 00442328 | DOUBLE_0057b80b
     FILD word ptr [ESP + 0x6c]          ; 0044232e
     FMUL ST1                            ; 00442332
     AND EDX,0xff                        ; 00442334
@@ -240,7 +240,7 @@ section .text
         ;   Label: LAB_004423e3
     MOV dword ptr [ESP + 0x68],EAX      ; 004423e6
     FILD dword ptr [ESP + 0x68]         ; 004423ea
-    FMUL double ptr [0x0057b803]        ; 004423ee | DAT_0057b803
+    FMUL double ptr [0x0057b803]        ; 004423ee | DOUBLE_0057b803
     MOV EAX,dword ptr [EBP + 0x14]      ; 004423f4
     XOR ESI,ESI                         ; 004423f7
     MOV EBX,EAX                         ; 004423f9

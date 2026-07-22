@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 835,
+    "complexity_score": 795,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 230,
-    "suspect_count": 58,
+    "suspect_count": 54,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -58,56 +58,56 @@
   "globals": [
     {
       "addr": "00598a98",
-      "name": "s_%a_%b_%d_%H:%M:%S_%Y_00598a98",
-      "type": "string",
+      "name": "s_a_b_d_H_M_S_Y_00598a98",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ab0",
-      "name": "s_%m/%d/%y_00598ab0",
-      "type": "string",
+      "name": "s_m_d_y_00598ab0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598abc",
-      "name": "DAT_00598abc",
-      "type": "undefined1",
+      "name": "s_anon_00598abc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ac0",
-      "name": "s_%I:%M:%S_%p_00598ac0",
-      "type": "string",
+      "name": "s_I_M_S_p_00598ac0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598acc",
-      "name": "DAT_00598acc",
-      "type": "undefined1",
+      "name": "s_AM_00598acc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ad0",
-      "name": "DAT_00598ad0",
-      "type": "undefined1",
+      "name": "s_PM_00598ad0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ad4",
-      "name": "DAT_00598ad4",
-      "type": "undefined1",
+      "name": "s_anon_00598ad4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ad8",
-      "name": "s_%a_%b_%d,_%Y_00598ad8",
-      "type": "string",
+      "name": "s_a_b_d_Y_00598ad8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598ae8",
-      "name": "s_%H:%M:%S_00598ae8",
-      "type": "string",
+      "name": "s_H_M_S_00598ae8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -568,36 +568,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_00598abc",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00598abc;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 159,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((int)param_4[2] < 0xc) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_00598acc",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00598acc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_00598ad0",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00598ad0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -614,14 +590,6 @@
       "severity": "mild",
       "text": "param_3 = \"%I:%M:%S %p\";",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 173,
-      "match": "DAT_00598ad4",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00598ad4;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

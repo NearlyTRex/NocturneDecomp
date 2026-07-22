@@ -14,10 +14,10 @@ int core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   iVar2 = core_flame_cpp_CFlame_ctor_FUN_0048cf60(iVar2 + 0x1e8);
-  pcVar3 = &DAT_00581646;
+  pcVar3 = "none";
   *(byte ***)(iVar2 + -0x1ec) = &PTR_core_flamecan_cpp_CFlameCan_setup_FUN_0048e410_0059d684;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (iVar2 + -0x1e8,"question.kfm");

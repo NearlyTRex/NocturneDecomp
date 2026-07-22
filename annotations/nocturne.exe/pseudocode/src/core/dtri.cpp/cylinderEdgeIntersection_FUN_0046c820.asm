@@ -25,9 +25,9 @@
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0 at 0046ce06
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e45e
-;   undefined4 DAT_0057e462
-;   undefined4 DAT_0057e466
+;   float FLOAT_0057e45e = -2
+;   float FLOAT_0057e462 = 4
+;   double DOUBLE_0057e466 = 5.30498947741318E-315
 ;
 ; *****************************************************************************
 
@@ -212,14 +212,14 @@ section .text
     FMULP                               ; 0046c9fa
     FXCH ST4                            ; 0046c9fc
     FST float ptr [ESP + 0x38]          ; 0046c9fe
-    FMUL float ptr [0x0057e462]         ; 0046ca02 | DAT_0057e462
+    FMUL float ptr [0x0057e462]         ; 0046ca02 | FLOAT_0057e462
     FXCH ST4                            ; 0046ca08
     FADDP ST3,ST0                       ; 0046ca0a
     FADDP                               ; 0046ca0c
     FLD float ptr [EDX + 0x20]          ; 0046ca0e
     FMUL ST0                            ; 0046ca11
     FXCH                                ; 0046ca13
-    FMUL float ptr [0x0057e45e]         ; 0046ca15 | DAT_0057e45e
+    FMUL float ptr [0x0057e45e]         ; 0046ca15 | FLOAT_0057e45e
     FXCH                                ; 0046ca1b
     FSUBP ST2,ST0                       ; 0046ca1d
     FXCH ST2                            ; 0046ca1f
@@ -242,7 +242,7 @@ section .text
     FSQRT                               ; 0046ca4a
     FSUBP                               ; 0046ca4c
     FLD float ptr [ESP + 0x38]          ; 0046ca4e
-    FMUL float ptr [0x0057e466]         ; 0046ca52 | DAT_0057e466
+    FMUL float ptr [0x0057e466]         ; 0046ca52 | DOUBLE_0057e466
     FDIVP                               ; 0046ca58
     FLDZ                                ; 0046ca5a
     FXCH                                ; 0046ca5c

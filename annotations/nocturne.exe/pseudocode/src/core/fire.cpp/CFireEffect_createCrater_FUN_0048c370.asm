@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00410cc0 at 00410da6
 ;   FUN_0048c0d0 at 0048c139
+;   core_baron.cpp_FUN_00410cc0 at 00410da6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c625f4

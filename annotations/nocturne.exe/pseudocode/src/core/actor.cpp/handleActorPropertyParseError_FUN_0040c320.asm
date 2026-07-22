@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_0040cb00 at 0040cb65
-;   FUN_0040ce80 at 0040cee5
+;   core_actor.cpp_FUN_0040cb00 at 0040cb65
+;   core_actor.cpp_FUN_0040ce80 at 0040cee5
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cfc7
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3e0
 ;   core_actor.cpp_archiveFloat_FUN_0040c880 at 0040c8c9
@@ -21,8 +21,8 @@
 ;   string s_(unknown)_00577b57
 ;   string s_(unknown)_00577b61
 ;   string s_(unknown)_00577b6b
-;   undefined4 DAT_00577b75
-;   undefined4 DAT_00577b7a
+;   TerminatedCString s_load_00577b75
+;   TerminatedCString s_save_00577b7a
 ;   string s_..\\core\\actor.cpp_00577b7f
 ;   string s_Error_%sing_actor_property._Acto_00577b91
 ;   undefined4 DAT_00763e88
@@ -57,18 +57,18 @@ section .text
     MOV ESI,0x577b6b                    ; 0040c340 | = "(unknown)"
     MOV ECX,dword ptr [0x00763e88]      ; 0040c345 | DAT_00763e88
         ;   Label: LAB_0040c345
-    MOV EDX,0x577b75                    ; 0040c34b | DAT_00577b75
+    MOV EDX,0x577b75                    ; 0040c34b | = "load"
     CMP ECX,0x2                         ; 0040c350
     JNZ 0x0040c35a                      ; 0040c353
         ;   XREF to: 0040c35a (CONDITIONAL_JUMP)  ; LAB_0040c35a
-    MOV EDX,0x577b7a                    ; 0040c355 | DAT_00577b7a
+    MOV EDX,0x577b7a                    ; 0040c355 | = "save"
     MOV ECX,dword ptr [ESP + 0x14]      ; 0040c35a
         ;   Label: LAB_0040c35a
     PUSH ECX                            ; 0040c35e
     PUSH ESI                            ; 0040c35f | = "(unknown)"
     PUSH EAX                            ; 0040c360 | = "(unknown)"
     PUSH EBX                            ; 0040c361 | = "(unknown)"
-    PUSH EDX                            ; 0040c362 | DAT_00577b7a | DAT_00577b75
+    PUSH EDX                            ; 0040c362 | = "save" | s_load_00577b75
     MOV EDI,0x577b7f                    ; 0040c363 | = "..\\core\\actor.cpp"
     MOV EBP,0x7fb                       ; 0040c368
     PUSH 0x577b91                       ; 0040c36d | = "Error %sing actor property.\nActor na..."

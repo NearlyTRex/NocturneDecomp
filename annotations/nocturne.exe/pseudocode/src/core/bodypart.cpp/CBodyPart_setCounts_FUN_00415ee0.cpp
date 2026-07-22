@@ -29,7 +29,7 @@ void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2
   *(uint *)(param_1 + 0x180) = uVar1;
   if ((0 < *(int *)(param_1 + 0x16c)) &&
      ((*(int *)(param_1 + 0x170) == 0 || (*(int *)(param_1 + 0x174) == 0)))) {
-    _DAT_01cc4800 = " A..\\core\\bodypart.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
     _DAT_01cc4804 = 0xb2;
     FUN_004c8440("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",*(uint *)(param_1 + 0x16c));
   }

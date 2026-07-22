@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00561010 at 00561208
+;   core_zombie.cpp_FUN_00561010 at 00561208
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0

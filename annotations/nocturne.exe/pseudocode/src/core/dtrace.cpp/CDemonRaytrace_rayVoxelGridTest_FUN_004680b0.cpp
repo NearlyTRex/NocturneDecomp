@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0(int param_1,float *param_2,float *param_3)
 
 {
@@ -112,7 +110,7 @@ uint __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0(int pa
     fVar8 = (float10)local_a8;
     fVar9 = (float10)fStack_a4;
     fVar10 = (float10)fStack_ac;
-    fVar11 = (float10)_DAT_0057e1de / (float10)uStack_b4._4_4_;
+    fVar11 = (float10)2.684355e+08f / (float10)uStack_b4._4_4_;
     auStack_bc._0_4_ = 0x468243;
     fVar12 = (float10)round(ABS(fVar10) * fVar11);
     local_54 = (float)(int)ROUND(fVar12);

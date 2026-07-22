@@ -59,7 +59,7 @@ void FUN_0053a260(int param_1,int param_2)
   if (param_2 == 0) {
     local_24 = _DAT_02dc9f5c;
     local_28 = _DAT_02dc9f64;
-    FUN_0055d4e0(0x3fc90fdb);
+    core_xform_cpp_FUN_0055d4e0(0x3fc90fdb);
     local_1cc = local_11c;
     *(uint *)((int)&stack0xfffffe38 + (uint)bVar5 * 0xfffffffe * 4) =
          auStack_198[(uint)bVar5 * 0xfffffffe + 0x20];
@@ -69,14 +69,14 @@ void FUN_0053a260(int param_1,int param_2)
      ((int)(&stack0xfffffe3c + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
          (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x21)
          [(uint)bVar5 * -2 + 1];
-    FUN_0055d520(0x3fc90fdb);
+    core_xform_cpp_FUN_0055d520(0x3fc90fdb);
     local_20 = param_1 + 0x1fa70;
     puVar4 = (uint *)local_1ac;
   }
   else {
     local_24 = _DAT_02dc9f60;
     local_28 = _DAT_02dc9f68;
-    FUN_0055d4e0(0xbfc90fdb);
+    core_xform_cpp_FUN_0055d4e0(0xbfc90fdb);
     local_1cc = local_1dc;
     *(uint *)((int)&stack0xfffffe38 + (uint)bVar5 * 0xfffffffe * 4) =
          *(uint *)(&stack0xfffffe28 + (uint)bVar5 * -8);
@@ -87,7 +87,7 @@ void FUN_0053a260(int param_1,int param_2)
          *(uint *)
           ((int)(&stack0xfffffe2c + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
           ((uint)bVar5 * -2 + 1) * 4);
-    FUN_0055d520(0xbfc90fdb);
+    core_xform_cpp_FUN_0055d520(0xbfc90fdb);
     local_20 = param_1 + 0x1fa50;
     puVar4 = (uint *)local_ec;
   }
@@ -112,7 +112,7 @@ void FUN_0053a260(int param_1,int param_2)
     local_18 = local_34;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (iVar3,uVar1,local_34,fVar6,local_24,&LAB_0051b650);
-    FUN_0055d4e0(*(uint *)(local_20 + 0xc));
+    core_xform_cpp_FUN_0055d4e0(*(uint *)(local_20 + 0xc));
     puVar4 = auStack_198 + 0xb;
     local_16c[0] = local_4c;
     auStack_198[(uint)bVar5 * 0xfffffffe + 0xc] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x24];
@@ -121,7 +121,7 @@ void FUN_0053a260(int param_1,int param_2)
     (auStack_198 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xd)[(uint)bVar5 * -2 + 1]
          = (auStack_d8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0x25)
            [(uint)bVar5 * -2 + 1];
-    FUN_0055d4a0(*(uint *)(local_20 + 8),puVar4);
+    core_xform_cpp_FUN_0055d4a0(*(uint *)(local_20 + 8),puVar4);
     local_17c[0] = local_19c;
     auStack_198[(uint)bVar5 * 0xfffffffe + 8] = auStack_198[(uint)bVar5 * 0xfffffffe];
     auStack_198[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 9] =
@@ -189,7 +189,7 @@ void FUN_0053a260(int param_1,int param_2)
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (local_1c,auStack_198 + 0x17,fVar7,local_28,&LAB_0051b650);
     if ((float)_DAT_00595967 < *(float *)(param_1 + 0x1faf4)) {
-      FUN_0055d4a0(0x3fc90fdb);
+      core_xform_cpp_FUN_0055d4a0(0x3fc90fdb);
       puVar4 = auStack_198 + 0x27;
       local_fc[0] = local_5c;
       auStack_198[(uint)bVar5 * 0xfffffffe + 0x28] = auStack_d8[(uint)bVar5 * 0xfffffffe + 0x20];

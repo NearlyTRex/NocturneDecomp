@@ -10,7 +10,7 @@
 ;   core_weather.cpp_CWeather_update_FUN_00554980 at 00554c64
 ;
 ; Referenced Globals:
-;   string s_thndr?.wav_00597c9d
+;   TerminatedCString s_thndr_wav_00597c9d
 ;   undefined4 DAT_005bed68
 ;
 ; Called Functions:

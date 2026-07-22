@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00403630(char *param_1)
+; void engine_2d_c_FUN_00403630(char *param_1)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c
@@ -11,13 +11,13 @@
 ;   FUN_00401010 at 00401076
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\2d.c_00577243+1
-;   string s_hose!_00577253
-;   undefined4 DAT_00577259
-;   undefined4 DAT_0057725e
-;   undefined4 DAT_00577261
-;   undefined4 DAT_00577265
-;   undefined4 DAT_00577268
+;   TerminatedCString s_engine_2d_c_00577244
+;   TerminatedCString s_hose_00577253
+;   TerminatedCString s_map_00577259
+;   TerminatedCString s_rb_0057725e
+;   TerminatedCString s_fog_00577261
+;   TerminatedCString s_wb_00577265
+;   TerminatedCString s_fog_00577268
 ;   string s_..\\engine\\2d.c_0057726c
 ;   string s_Unable_to_write_quick_map!_0057727b
 ;   undefined4 DAT_01bf7720
@@ -38,7 +38,7 @@
 section .text
 
     PUSH EBX                            ; 00403630
-        ;   Label: FUN_00403630
+        ;   Label: engine_2d.c_FUN_00403630
     PUSH ESI                            ; 00403631
     PUSH EDI                            ; 00403632
     SUB ESP,0x50                        ; 00403633
@@ -86,7 +86,7 @@ section .text
     TEST ESI,ESI                        ; 00403674
     JNZ 0x0040369b                      ; 00403676
         ;   XREF to: 0040369b (CONDITIONAL_JUMP)  ; LAB_0040369b
-    MOV EDX,0x577244                    ; 00403678 | s_..\engine\2d.c_00577243+1
+    MOV EDX,0x577244                    ; 00403678 | = "..\\engine\\2d.c"
     MOV ECX,0x76e                       ; 0040367d
     PUSH 0x577253                       ; 00403682 | = "hose!"
     MOV dword ptr [0x01cc4800],EDX      ; 00403687 | DAT_01cc4800
@@ -94,16 +94,16 @@ section .text
     CALL FUN_004c8440                   ; 00403693
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 00403698
-    PUSH 0x577259                       ; 0040369b | DAT_00577259
+    PUSH 0x577259                       ; 0040369b | = ".map"
         ;   Label: LAB_0040369b
     PUSH EBX                            ; 004036a0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004036a1
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 004036a6
-    PUSH 0x57725e                       ; 004036a9 | DAT_0057725e
+    PUSH 0x57725e                       ; 004036a9 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 004036ae
     PUSH EAX                            ; 004036b2
-    PUSH 0x577261                       ; 004036b3 | DAT_00577261
+    PUSH 0x577261                       ; 004036b3 | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004036b8
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004036bd
@@ -113,10 +113,10 @@ section .text
         ;   XREF to: 00403730 (CONDITIONAL_JUMP)  ; LAB_00403730
     CALL engine_2d.c_buildColorLookupTable_FUN_00403570 ; 004036c6
         ;   XREF to: 00403570 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_buildColorLookupTable_FUN_00403570()
-    PUSH 0x577265                       ; 004036cb | DAT_00577265
+    PUSH 0x577265                       ; 004036cb | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 004036d0
     PUSH EAX                            ; 004036d4
-    PUSH 0x577268                       ; 004036d5 | DAT_00577268
+    PUSH 0x577268                       ; 004036d5 | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004036da
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004036df

@@ -41,7 +41,7 @@ int core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
             iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x4c))(iVar1,auStack_a8);
             if (0 < iVar2) {
               fStack_30 = *local_14 - *(float *)(iVar1 + 0x20);
-              fStack_2c = (local_14[1] - *(float *)(iVar1 + 0x24)) * (float)_DAT_005858eb;
+              fStack_2c = (local_14[1] - *(float *)(iVar1 + 0x24)) * (float)2;
               fStack_28 = local_14[2] - *(float *)(iVar1 + 0x28);
               fStack_18 = fStack_28 * fStack_28 + fStack_30 * fStack_30 + fStack_2c * fStack_2c;
               if (fStack_18 < *param_2) {

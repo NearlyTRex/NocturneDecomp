@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(int param_1)
 
 {
@@ -38,13 +36,13 @@ uint __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(int param
     if ((*(char *)(iVar1 + 0x252c) != '\0') && (iVar1 != param_1)) {
       local_20[0] = *(float *)(iVar1 + 0x20) - *(float *)(param_1 + 0x20);
       local_20[2] = *(float *)(iVar1 + 0x28) - *(float *)(param_1 + 0x28);
-      if (ABS(*(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24)) <= (float)_DAT_0058582b) {
+      if (ABS(*(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24)) <= (float)4) {
         local_20[1] = 0.0;
-        if (SQRT(local_20[2] * local_20[2] + local_20[0] * local_20[0]) <= (float)_DAT_00585833) {
+        if (SQRT(local_20[2] * local_20[2] + local_20[0] * local_20[0]) <= (float)5) {
           uVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                             (param_1,local_2c,local_20);
           iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_44,uVar2);
-          if (ABS(*(float *)(iVar3 + 4)) <= (float)_DAT_0058583b) {
+          if (ABS(*(float *)(iVar3 + 4)) <= (float)0.34906585038888899) {
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,iVar1 + 0x252c);
             return 1;
           }

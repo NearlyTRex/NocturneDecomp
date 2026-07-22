@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   string s_..\\shape\\edittool.cpp_0057ed88
 ;   string s_CStrList::copyToClipboard_-_out_o_0057ed9e
-;   undefined4 DAT_0057eddf
+;   TerminatedCString s_s_0057eddf
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
     ADD ESP,0x8                         ; 0047440a
     PUSH EAX                            ; 0047440d
-    PUSH 0x57eddf                       ; 0047440e | DAT_0057eddf
+    PUSH 0x57eddf                       ; 0047440e | = "%s\n"
     PUSH EDI                            ; 00474413
     INC ESI                             ; 00474414
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00474415

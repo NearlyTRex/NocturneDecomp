@@ -58,13 +58,13 @@
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425cb1
 ;
 ; Referenced Globals:
-;   undefined4 s_headlite.raw_00579f69+1
-;   undefined4 s_eadlite.raw_00579f69+2
-;   undefined4 s_adlite.raw_00579f69+3
-;   undefined4 s_dlite.raw_00579f69+4
-;   undefined4 DAT_00579f7a
-;   undefined4 DAT_00579f82
-;   undefined4 DAT_00579f8a
+;   TerminatedCString s_headlite_raw_00579f6a
+;   undefined4 s_headlite_raw_00579f6a+1
+;   undefined4 s_headlite_raw_00579f6a+2
+;   undefined4 s_headlite_raw_00579f6a+3
+;   double DOUBLE_00579f7a = 0.5
+;   double DOUBLE_00579f82 = 3.14159265350000
+;   double DOUBLE_00579f8a = 0.0416666666666667
 ;   undefined4 DAT_0059b070
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_007658c4
@@ -109,7 +109,7 @@ section .text
     POP ESI                             ; 00425ce6
     POP EBX                             ; 00425ce7
     RET                                 ; 00425ce8
-    MOV ESI,0x579f6a                    ; 00425ce9 | s_headlite.raw_00579f69+1
+    MOV ESI,0x579f6a                    ; 00425ce9 | = "headlite.raw"
         ;   Label: LAB_00425ce9
     MOV EDI,0x7658cc                    ; 00425cee | DAT_007658cc
     MOV dword ptr [ESP + 0x24],EAX      ; 00425cf3
@@ -117,13 +117,13 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425cfb
     MOV dword ptr [ESP + 0x18],EAX      ; 00425cff
     PUSH EDI                            ; 00425d03 | DAT_007658cc
-    MOV AL,byte ptr [ESI]               ; 00425d04 | s_headlite.raw_00579f69+1 | s_adlite.raw_00579f69+3
+    MOV AL,byte ptr [ESI]               ; 00425d04 | = "headlite.raw" | s_headlite_raw_00579f6a+2
         ;   Label: LAB_00425d04
     MOV byte ptr [EDI],AL               ; 00425d06 | DAT_007658cc | DAT_007658ce
     CMP AL,0x0                          ; 00425d08
     JZ 0x00425d1c                       ; 00425d0a
         ;   XREF to: 00425d1c (CONDITIONAL_JUMP)  ; LAB_00425d1c
-    MOV AL,byte ptr [ESI + 0x1]         ; 00425d0c | s_eadlite.raw_00579f69+2 | s_dlite.raw_00579f69+4
+    MOV AL,byte ptr [ESI + 0x1]         ; 00425d0c | s_headlite_raw_00579f6a+1 | s_headlite_raw_00579f6a+3
     ADD ESI,0x2                         ; 00425d0f
     MOV byte ptr [EDI + 0x1],AL         ; 00425d12 | DAT_007658cd | DAT_007658cf
     ADD EDI,0x2                         ; 00425d15
@@ -390,8 +390,8 @@ section .text
     ADD EAX,EAX                         ; 004260cb
     MOV dword ptr [ESP + 0xe0],EAX      ; 004260cd
     FILD dword ptr [ESP + 0xe0]         ; 004260d4
-    FMUL double ptr [0x00579f82]        ; 004260db | DAT_00579f82
-    FMUL double ptr [0x00579f8a]        ; 004260e1 | DAT_00579f8a
+    FMUL double ptr [0x00579f82]        ; 004260db | DOUBLE_00579f82
+    FMUL double ptr [0x00579f8a]        ; 004260e1 | DOUBLE_00579f8a
     MOV dword ptr [ESP + 0x4],EAX       ; 004260e7
     FLD ST0                             ; 004260eb
     FSIN                                ; 004260ed
@@ -535,8 +535,8 @@ section .text
         ;   Label: LAB_004262e0
     MOV dword ptr [ESP + 0xe0],EAX      ; 004262e4
     FILD dword ptr [ESP + 0xe0]         ; 004262eb
-    FMUL double ptr [0x00579f82]        ; 004262f2 | DAT_00579f82
-    FMUL double ptr [0x00579f8a]        ; 004262f8 | DAT_00579f8a
+    FMUL double ptr [0x00579f82]        ; 004262f2 | DOUBLE_00579f82
+    FMUL double ptr [0x00579f8a]        ; 004262f8 | DOUBLE_00579f8a
     FLD ST0                             ; 004262fe
     FSIN                                ; 00426300
     FXCH                                ; 00426302
@@ -629,7 +629,7 @@ section .text
         ;   Label: LAB_00426414
     FLD float ptr [ESP + 0xc]           ; 00426417
     FLD float ptr [EAX + 0x2614]        ; 0042641b
-    FMUL double ptr [0x00579f7a]        ; 00426421 | DAT_00579f7a
+    FMUL double ptr [0x00579f7a]        ; 00426421 | DOUBLE_00579f7a
     FADDP                               ; 00426427
     FSTP float ptr [ESP + 0xc0]         ; 00426429
     JMP 0x0042608f                      ; 00426430

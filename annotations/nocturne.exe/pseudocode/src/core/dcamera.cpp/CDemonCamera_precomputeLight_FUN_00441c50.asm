@@ -31,11 +31,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_00507f80 at 00508253
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508ffe
+;   core_set.cpp_FUN_00507f80 at 00508253
 ;
 ; Referenced Globals:
-;   undefined4 s_movscrn.raw_0057b79a+1
+;   TerminatedCString s_movscrn_raw_0057b79b
 ;   string s_..\\core\\dcamera.cpp_0057b7a7
 ;   string s_CDemonCamera::precomputeLight_-_T_0057b7bb
 ;   undefined4 DAT_00b0e604
@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00441c59
     MOV EBX,dword ptr [EBP + 0x18]      ; 00441c5c
     MOV EDX,0x80                        ; 00441c5f
-    PUSH 0x57b79b                       ; 00441c64 | s_movscrn.raw_0057b79a+1
+    PUSH 0x57b79b                       ; 00441c64 | = "movscrn.raw"
     LEA EAX,[EBX + 0x1c74]              ; 00441c69
     XOR ECX,ECX                         ; 00441c6f
     PUSH EAX                            ; 00441c71

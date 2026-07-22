@@ -31,6 +31,6 @@ byte * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1)
     engine_3d_c_rasterizePolygonHardware_FUN_00494260(param_1 + 0x18,*(uint *)(param_1 + 4));
     return &DAT_006b0288;
   }
-  FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+  engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   return &DAT_006b0288;
 }

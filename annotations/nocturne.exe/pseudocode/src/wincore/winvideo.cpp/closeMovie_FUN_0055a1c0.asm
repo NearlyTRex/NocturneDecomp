@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0055a510 at 0055a58b
+;   wincore_winvideo.cpp_FUN_0055a510 at 0055a58b
 ;
 ; Referenced Globals:
 ;   void* PTR_mciSendStringA_005753e0 = 00175816

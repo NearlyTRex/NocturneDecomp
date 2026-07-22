@@ -18,9 +18,9 @@
 ;   FUN_0053fc60 at 0053ff0d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585893
-;   undefined4 DAT_0058589b
-;   undefined4 DAT_005858a3
+;   double DOUBLE_00585893 = 10
+;   double DOUBLE_0058589b = 1.04719755116667
+;   double DOUBLE_005858a3 = 5
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
@@ -79,7 +79,7 @@ section .text
     FXCH                                ; 004b57bf
     FSUB float ptr [ESI + 0x8]          ; 004b57c1
     FSTP float ptr [ESP + 0x28]         ; 004b57c4
-    FCOMP double ptr [0x00585893]       ; 004b57c8 | DAT_00585893
+    FCOMP double ptr [0x00585893]       ; 004b57c8 | DOUBLE_00585893
     FNSTSW AX                           ; 004b57ce
     SAHF                                ; 004b57d0
     JBE 0x004b57f9                      ; 004b57d1
@@ -115,7 +115,7 @@ section .text
     FADDP                               ; 004b5807
     MOV dword ptr [ESP + 0x24],EAX      ; 004b5809
     FSQRT                               ; 004b580d
-    FCOMP double ptr [0x00585893]       ; 004b580f | DAT_00585893
+    FCOMP double ptr [0x00585893]       ; 004b580f | DOUBLE_00585893
     FNSTSW AX                           ; 004b5815
     SAHF                                ; 004b5817
     JA 0x004b57d3                       ; 004b5818
@@ -140,7 +140,7 @@ section .text
     FLD float ptr [ESP + 0x70]          ; 004b5845
     FABS                                ; 004b5849
     ADD ESP,0x4                         ; 004b584b
-    FCOMP double ptr [0x0058589b]       ; 004b584e | DAT_0058589b
+    FCOMP double ptr [0x0058589b]       ; 004b584e | DOUBLE_0058589b
     FNSTSW AX                           ; 004b5854
     SAHF                                ; 004b5856
     JA 0x004b57d3                       ; 004b5857
@@ -192,7 +192,7 @@ section .text
     FMUL ST0                            ; 004b58d7
     FADDP                               ; 004b58d9
     FSQRT                               ; 004b58db
-    FCOMP double ptr [0x005858a3]       ; 004b58dd | DAT_005858a3
+    FCOMP double ptr [0x005858a3]       ; 004b58dd | DOUBLE_005858a3
     FNSTSW AX                           ; 004b58e3
     SAHF                                ; 004b58e5
     JA 0x004b57d3                       ; 004b58e6

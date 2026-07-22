@@ -37,7 +37,7 @@ uint FUN_0056b960(LPCSTR param_1,uint param_2,uint param_3,int *param_4)
   local_28.lpSecurityDescriptor = (LPVOID)0x0;
   local_28.bInheritHandle = (BOOL)((param_2 & 0x80) == 0);
   if ((DAT_005c1d5c == (code *)0x0) ||
-     (iVar2 = _stricmp(param_1,&DAT_00598bd0), iVar2 != 0)) {
+     (iVar2 = _stricmp(param_1,"con"), iVar2 != 0)) {
     if ((param_2 & 0x20) == 0) {
       if ((param_2 & 0x40) == 0) {
 LAB_0056ba9b:

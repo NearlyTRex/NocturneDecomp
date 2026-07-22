@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00479b60(int param_1,float param_2)
 
 {
@@ -38,7 +36,7 @@ void FUN_00479b60(int param_1,float param_2)
   if (iVar6 == 0) {
     if (((*(int *)(0x01C775EC + 0x1d4) != 0) || (*(int *)(0x01C775EC + 0x230) == 0)) ||
        (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                          (0x01C03A10,"?Capture" + 1), iVar6 != 0)) {
+                          (0x01C03A10,"Capture"), iVar6 != 0)) {
       *(uint *)(param_1 + 0xbc98) = 0;
       *(uint *)(param_1 + 0xbca8) = 0;
       *(uint *)(param_1 + 0xbca4) = 0;
@@ -70,7 +68,7 @@ void FUN_00479b60(int param_1,float param_2)
           fVar3 = *(float *)(iVar9 + 0x24) - local_28[1];
           fVar4 = *(float *)(iVar9 + 0x28) - local_28[2];
           if ((ABS(fVar3) <= fVar1) &&
-             (fVar3 = fVar3 * _DAT_0057f38b,
+             (fVar3 = fVar3 * 3.0f,
              fStack_30 = fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3, fStack_30 <= local_38)) {
             *(int *)(&DAT_01bcdef8 + local_20) = iVar9;
             *(float *)(local_20 + 0x1bcfe38) = fStack_30;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0043dad0(int param_1)
 
 {
@@ -56,7 +54,7 @@ void FUN_0043dad0(int param_1)
     iVar4 = (iVar10 + 1) * ((int)fVar1 + 1);
     *(int *)(param_1 + 0x1fc) = iVar4;
     if (iVar4 < 0x3e9) break;
-    *(float *)(param_1 + 500) = *(float *)(param_1 + 500) * (float)_DAT_0057b4de;
+    *(float *)(param_1 + 500) = *(float *)(param_1 + 500) * (float)2;
   }
   fVar2 = *(float *)(param_1 + 0x150);
   iVar4 = 0;
@@ -105,12 +103,13 @@ void FUN_0043dad0(int param_1)
             *(int *)(iVar5 + 0x48 + *(int *)(iVar5 + 0x44) * 4) = local_18 + 1;
             *(int *)(iVar5 + 0x44) = *(int *)(iVar5 + 0x44) + 1;
           }
-          fVar12 = (float10)_DAT_0057b4ee;
-          fVar13 = (float10)_DAT_0057b4f6;
+          fVar12 = (float10)252;
+          fVar13 = (float10)65536;
           fVar14 = (float10)round
                                       ((((float10)*(float *)(param_1 + 0x150) *
-                                         (float10)_DAT_0057b4e6 + (float10)*(float *)(iVar5 + 0xc))
-                                       / (float10)*(float *)(param_1 + 0x150)) * fVar12 * fVar13);
+                                         (float10)0.5 + (float10)*(float *)(iVar5 + 0xc)
+                                        ) / (float10)*(float *)(param_1 + 0x150)) * fVar12 * fVar13)
+          ;
           unaff_EBP = (int)ROUND(fVar14);
           *(int *)(iVar5 + 0x18) = unaff_EBP + 0x20000;
           fVar6 = (float)((int)fVar6 + 1);

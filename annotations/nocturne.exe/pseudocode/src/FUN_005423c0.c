@@ -99,7 +99,7 @@ void FUN_005423c0(int param_1,float param_2)
         iStack_20 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = FUN_0042af70(param_1,param_2), uVar6 != 0)) {
+        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
           if (uVar6 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }
@@ -155,7 +155,7 @@ void FUN_005423c0(int param_1,float param_2)
         }
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = FUN_0042af70(param_1,param_2), uVar6 != 0)) {
+        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
           if (uVar6 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }

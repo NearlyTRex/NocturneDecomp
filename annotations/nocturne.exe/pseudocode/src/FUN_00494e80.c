@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_00494e80(int param_1)
 
 {
@@ -41,7 +39,7 @@ int FUN_00494e80(int param_1)
         uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
       }
       else if (iVar1 < 0x44ed8000) {
-        fStack_38 = *(float *)(param_1 + 0x154) + _DAT_00581d54;
+        fStack_38 = *(float *)(param_1 + 0x154) + -1800.0f;
         uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
       }
       else if (iVar1 < 0x44fa0000) {
@@ -49,14 +47,14 @@ int FUN_00494e80(int param_1)
         uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
       }
       else {
-        fVar2 = (*(float *)(param_1 + 0x154) + _DAT_00581d2c) * (float)_DAT_00581d30;
-        uStack_1c = (double)floor((double)(fVar2 * _DAT_00581d38));
-        fVar5 = (float10)fVar2 - (float10)uStack_1c * (float10)_DAT_00581d40;
+        fVar2 = (*(float *)(param_1 + 0x154) + -2000.0f) * (float)3;
+        uStack_1c = (double)floor((double)(fVar2 * 0.005f));
+        fVar5 = (float10)fVar2 - (float10)uStack_1c * (float10)200;
         fStack_38 = (float)fVar5;
-        if ((float10)_DAT_00581d48 < fVar5) {
-          fStack_38 = _DAT_00581d4c - fStack_38;
+        if ((float10)100.0f < fVar5) {
+          fStack_38 = 200.0f - fStack_38;
         }
-        fStack_38 = fStack_38 + _DAT_00581d50;
+        fStack_38 = fStack_38 + 99.0f;
       }
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (param_1 + 0x304,fStack_38,0xffffffff);

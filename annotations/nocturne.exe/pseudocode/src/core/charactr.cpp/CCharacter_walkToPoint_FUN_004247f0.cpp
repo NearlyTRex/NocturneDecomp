@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(int param_1,float *param_2,int param_3,float *param_4,float param_5,float param_6)
 
 {
@@ -71,16 +69,16 @@ uint __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(int param_1,f
     local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_20 - fVar5);
     local_fc = ABS(local_18);
   }
-  if (((ABS(fVar2 - fVar1) < param_5 + (float)_DAT_00579f0a) &&
-      (local_fc < param_6 + (float)_DAT_00579f0a)) && (ABS(local_b8) < (float)_DAT_00579f12)) {
+  if (((ABS(fVar2 - fVar1) < param_5 + (float)0.01) &&
+      (local_fc < param_6 + (float)0.01)) && (ABS(local_b8) < (float)5)) {
     local_4c = 1;
   }
   *(uint *)(param_1 + 0x23ac) = 0;
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
-  if ((fVar1 * (float)_DAT_00579f2a + (float)_DAT_00579f32 +
-       ABS(fVar5) * (float)_DAT_00579f1a * (float)_DAT_00579f22 <= fVar2) || (1.0 < ABS(local_b8)))
-  {
+  if ((fVar1 * (float)1.5 + (float)0.5 +
+       ABS(fVar5) * (float)0.31830988619288902 * (float)2 <= fVar2) ||
+     (1.0 < ABS(local_b8))) {
     if (param_3 == 0) {
       param_3 = core_path_cpp_getPathMap_FUN_004f1e00(param_2);
     }
@@ -110,7 +108,7 @@ uint __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(int param_1,f
     *(float *)(param_1 + 0x2410) = *(float *)(param_1 + 0x2410) + fVar4;
   }
   else {
-    if (fVar4 * (float)_DAT_00579f3a + fVar1 <= fVar2) {
+    if (fVar4 * (float)4 + fVar1 <= fVar2) {
       local_64 = -fVar4;
       local_3c = fVar2 - fVar1;
       local_30 = local_64;

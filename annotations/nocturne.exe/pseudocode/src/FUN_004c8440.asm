@@ -8,15 +8,15 @@
 ;
 ; XREF[454]:
 ;   FUN_00401010 at 00401129
-;   FUN_00401bd0 at 00401c2a
-;   FUN_00403070 at 00403129
-;   FUN_00403130 at 0040318a
-;   FUN_00403500 at 0040355a
-;   FUN_00403630 at 00403693
-;   FUN_00403780 at 004038f1
-;   FUN_00404430 at 00404466
-;   FUN_00409f70 at 00409f8b
-;   FUN_0040a0a0 at 0040a0c1
+;   FUN_0040f1a0 at 0040f220
+;   FUN_0042e7b0 at 0042e96f
+;   FUN_004303d0 at 004304e8
+;   FUN_00446810 at 0044690f
+;   FUN_0044ac30 at 0044ac64
+;   FUN_0044c560 at 0044c8ed
+;   FUN_00456750 at 00456791
+;   FUN_00456f60 at 00456fd5
+;   FUN_00461720 at 004619ad
 ;   ... and 444 more
 ;
 ; Referenced Globals:
@@ -28,9 +28,9 @@
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
 ;   FUN_004012a0
-;   FUN_00559500
 ;   thunk_FUN_00527e10
 ;   wincore_winrun.cpp_endPeriod_FUN_00558a20
+;   wincore_winrun.cpp_FUN_00559500
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_endPeriod_FUN_00558a20()
     PUSH 0x1cc3700                      ; 004c84c3
-    CALL FUN_00559500                   ; 004c84c8
-        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; undefined FUN_00559500()
+    CALL wincore_winrun.cpp_FUN_00559500 ; 004c84c8
+        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559500()
     ADD ESP,0x4                         ; 004c84cd
     ADD ESP,0x4                         ; 004c84d0
     POP EDI                             ; 004c84d3

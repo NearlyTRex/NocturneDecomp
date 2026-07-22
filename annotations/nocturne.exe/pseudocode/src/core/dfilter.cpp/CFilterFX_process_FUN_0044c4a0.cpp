@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(int *param_1)
 
 {
@@ -22,7 +20,8 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(int *param_1)
   iVar1 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(0x014B8DE8,"movscrn.raw")
   ;
   if ((iVar1 != 0) && (param_1[1] != 0)) {
-    param_1[2] = (int)(*(float *)(0x01C775EC + 0x264) * (float)_DAT_0057c105 + (float)param_1[2]);
+    param_1[2] = (int)(*(float *)(0x01C775EC + 0x264) * (float)30 + (float)param_1[2]
+                      );
     if ((float)*param_1 <= (float)param_1[2]) {
       param_1[2] = 0;
     }

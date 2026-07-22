@@ -22,7 +22,7 @@ void __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(int param_1
   if (param_2 < 7) {
     if ((param_2 == 1) && (*(int *)(param_1 + 0x2408) != 0)) {
       uVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-                        (iVar1,"?Bip01 L Foot" + 1,0);
+                        (iVar1,"Bip01 L Foot",0);
       iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar3);
       if (-1 < iVar4) {
         iVar2 = *(int *)(param_1 + 0x14c);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(int param_1,int param_2)
 
 {
@@ -26,7 +24,7 @@ void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(int param_1,int para
   }
   if (*(int *)(param_2 + 0x28) == 3) {
     iVar4 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00597ed9;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_28,param_2 + 0x1c);
     do {
       iVar4 = iVar4 + 1;
@@ -43,8 +41,8 @@ void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(int param_1,int para
     if ((*(int *)(iVar2 + 0x24) != 0xd) && (*(int *)(iVar2 + 0x24) != 0xc)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,0xc,1);
       if ((*(int *)(param_1 + 0xbd24) == 0) && (*(int *)(0x01E57284 + 0x15aa60) != 0)) {
-        if (*(float *)(param_1 + 0x20) <= (float)_DAT_00597ee1) {
-          if ((double)*(float *)(param_1 + 0x20) < _DAT_00597ee9) {
+        if (*(float *)(param_1 + 0x20) <= (float)5) {
+          if ((double)*(float *)(param_1 + 0x20) < -5) {
             *(uint *)(param_1 + 0x34) = 0x3fc90fdb;
           }
         }

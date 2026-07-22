@@ -11,8 +11,8 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d861e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005851d8
-;   undefined4 DAT_005851dc
+;   TerminatedCString s_d_005851d8
+;   TerminatedCString s_d_005851dc
 ;   undefined4 DAT_01c7ccf0
 ;   undefined4 DAT_01c9e038
 ;
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
     ADD ESP,0xc                         ; 004b0841
     PUSH 0x1c9e038                      ; 004b0844 | DAT_01c9e038
-    PUSH 0x5851d8                       ; 004b0849 | DAT_005851d8
+    PUSH 0x5851d8                       ; 004b0849 | = "%d\n"
     PUSH EDI                            ; 004b084e
     XOR ESI,ESI                         ; 004b084f
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004b0851
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 004b0868 (CONDITIONAL_JUMP)  ; LAB_004b0868
     PUSH 0x1c7ccf0                      ; 004b0880 | DAT_01c7ccf0
         ;   Label: LAB_004b0880
-    PUSH 0x5851dc                       ; 004b0885 | DAT_005851dc
+    PUSH 0x5851dc                       ; 004b0885 | = "%d\n"
     PUSH EDI                            ; 004b088a
     XOR ESI,ESI                         ; 004b088b
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004b088d

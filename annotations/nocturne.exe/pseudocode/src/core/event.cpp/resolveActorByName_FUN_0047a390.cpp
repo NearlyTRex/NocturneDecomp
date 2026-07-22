@@ -38,7 +38,7 @@ int __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *param_1,uint pa
     iVar2 = core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(0x01C03A10,param_1);
   }
   else {
-    iVar2 = _stricmp(param_1,&DAT_0057f3de);
+    iVar2 = _stricmp(param_1,"$");
     if (iVar2 != 0) {
       iVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(0x01CC9450,param_1);
       if (iVar2 == 0) {

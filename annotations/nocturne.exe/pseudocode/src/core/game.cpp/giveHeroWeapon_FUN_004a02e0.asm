@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a13f8
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\game.cpp_00582b51+1
+;   TerminatedCString s_core_game_cpp_00582b52
 ;   string s_giveHeroWeapon_-_This_is_not_a_w_00582b63
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cae0e8
@@ -82,7 +82,7 @@ section .text
     POP ESI                             ; 004a036e
     POP EBX                             ; 004a036f
     RET                                 ; 004a0370
-    MOV EBP,0x582b52                    ; 004a0371 | s_..\core\game.cpp_00582b51+1
+    MOV EBP,0x582b52                    ; 004a0371 | = "..\\core\\game.cpp"
         ;   Label: LAB_004a0371
     MOV EAX,0xa0b                       ; 004a0376
     PUSH 0x582b63                       ; 004a037b | = "giveHeroWeapon - This is not a weapon"

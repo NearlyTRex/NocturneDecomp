@@ -19,7 +19,7 @@ uint shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(uint para
     auStack_40[0] = 0;
   }
   else {
-    _sprintf(auStack_40,0x57e7fa,(double)*param_3,(double)param_3[1],(double)param_3[2]);
+    _sprintf(auStack_40,"%g,%g,%g",(double)*param_3,(double)param_3[1],(double)param_3[2]);
   }
   while( true ) {
     iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600();

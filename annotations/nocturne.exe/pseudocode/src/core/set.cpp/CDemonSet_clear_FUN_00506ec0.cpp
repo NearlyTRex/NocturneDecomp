@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_clear_FUN_00506ec0(int param_1)
 {
   int iVar1;
   
-  FUN_00452f10(0x1fbacc8);
+  core_dmodel_cpp_FUN_00452f10(0x1fbacc8);
   iVar1 = param_1 + 4;
   do {
     FUN_00514430(iVar1);

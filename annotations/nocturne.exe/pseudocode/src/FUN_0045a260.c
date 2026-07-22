@@ -40,7 +40,7 @@ int FUN_0045a260(int param_1)
             fStack_30 = (1.0 - *(float *)(param_1 + 0xbdb4)) / 0x3F800000;
           }
           else {
-            fStack_30 = ((float)_DAT_0057d756 - *(float *)(param_1 + 0xbdb4)) / 0x3F800000;
+            fStack_30 = ((float)0.5 - *(float *)(param_1 + 0xbdb4)) / 0x3F800000;
             if (fStack_30 < 0.0) {
               fStack_30 = 0.0;
             }
@@ -50,7 +50,7 @@ int FUN_0045a260(int param_1)
             engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020
                       (DAT_005ae704,fStack_30);
             engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,1);
-            if ((double)fStack_30 <= _DAT_0057d756) {
+            if ((double)fStack_30 <= 0.5) {
               uVar3 = 0x267;
             }
             else {

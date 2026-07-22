@@ -11,8 +11,8 @@ void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(int param_1)
 {
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
   if (1 < 0x00000004) {
-    FUN_0040cb00(param_1 + 0x150,"@human model motion state" + 1);
-    FUN_0040cb00(param_1 + 0xbd24,"bat model motion state");
+    core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"@human model motion state" + 1);
+    core_actor_cpp_FUN_0040cb00(param_1 + 0xbd24,"bat model motion state");
   }
   if (2 < 0x00000004) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xbedb4,"wayPoint0");

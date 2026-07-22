@@ -34,8 +34,8 @@
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+;   core_xform.cpp_FUN_0055d610
 ;   FUN_004c8440
-;   FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -174,8 +174,8 @@ section .text
     PUSH ESI                            ; 0041a27d
     LEA ESI,[ESP + 0x4]                 ; 0041a27e
     ADD EBP,0x48                        ; 0041a282
-    CALL FUN_0055d610                   ; 0041a285
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 0041a285
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     ADD ESP,0x4                         ; 0041a28a
     MOV ESI,ESP                         ; 0041a28d
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0041a28f

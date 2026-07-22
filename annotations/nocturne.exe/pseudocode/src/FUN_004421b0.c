@@ -99,7 +99,7 @@ void FUN_004421b0(int param_1)
                *(uint *)(&stack0xffffffbc + (uint)bVar11 * -8 + (uint)bVar11 * -8);
           *(int *)(local_2c + 0xac2af8) = local_74;
           uVar10 = *puVar4;
-          fVar1 = (float)_DAT_0057b80b;
+          fVar1 = (float)0.0078740157480314994;
           uVar3 = *puVar4;
           *(float *)(local_24 + 0x9bb178) = (float)(short)(char)(*puVar4 >> 0x10) * fVar1;
           *(float *)(local_24 + 0x9bb17c) = (float)(short)(char)(uVar10 >> 8) * fVar1;
@@ -118,7 +118,7 @@ void FUN_004421b0(int param_1)
     } while (local_38 < *(int *)(param_1 + 0x154));
   }
   local_18 = local_80;
-  *(float *)(param_1 + 0x100) = (float)local_80 * (float)_DAT_0057b803;
+  *(float *)(param_1 + 0x100) = (float)local_80 * (float)0.00390625;
   FUN_00446810(param_1);
   _DAT_00b0e604 = 0;
   _DAT_01216608 = 0;

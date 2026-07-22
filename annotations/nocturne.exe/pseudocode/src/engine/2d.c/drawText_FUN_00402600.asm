@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[20]:
-;   FUN_00402760 at 00402770
-;   FUN_00402780 at 004027d1
-;   FUN_004027f0 at 00402812
-;   FUN_004028b0 at 004028db
-;   FUN_00402980 at 004029af
 ;   FUN_0049cc10 at 0049d0f6
 ;   FUN_004c8510 at 004c8527
-;   FUN_00507f80 at 0050813b
-;   FUN_0050aa70 at 0050ab4c
 ;   FUN_005138e0 at 00513b56
+;   core_event.cpp_CEventList_render_FUN_0047dd80 at 0047ddd0
+;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf999
+;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d9370
+;   core_motion.cpp_CMotionController_render_FUN_004e22b0 at 004e237e
+;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb5e1
+;   core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370 at 004ea441
+;   core_path.cpp_CPathMap_previewPathfinding_FUN_004f1500 at 004f15a7
 ;   ... and 10 more
 ;
 ; Referenced Globals:

@@ -11,7 +11,6 @@
 ; XREF[10]:
 ;   FUN_00489990 at 00489bc0
 ;   FUN_0048d5d0 at 0048d905
-;   FUN_00509a80 at 00509d5b
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 at 0041d001
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 00484a63
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489f2b
@@ -19,6 +18,7 @@
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482c25
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483958
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae4c8
+;   core_set.cpp_FUN_00509a80 at 00509d5b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059bddc

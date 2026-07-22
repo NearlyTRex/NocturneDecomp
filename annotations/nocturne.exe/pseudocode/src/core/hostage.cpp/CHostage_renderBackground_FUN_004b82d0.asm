@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_ScatDazzle_00585cb1+1
+;   TerminatedCString s_ScatDazzle_00585cb2
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
@@ -28,7 +28,7 @@ section .text
     POP EBX                             ; 004b82ea
         ;   Label: LAB_004b82ea
     RET                                 ; 004b82eb
-    PUSH 0x585cb2                       ; 004b82ec | s_ScatDazzle_00585cb1+1
+    PUSH 0x585cb2                       ; 004b82ec | = "ScatDazzle"
         ;   Label: LAB_004b82ec
     PUSH EBX                            ; 004b82f1
     CALL crt_string.c__stricmp_FUN_00564520 ; 004b82f2

@@ -13,7 +13,7 @@ void core_grave_cpp_CGrave_archive_FUN_004b0e20(int param_1)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"model name");
-  core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d0,&DAT_00585213);
+  core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d0,"fps");
   if (0x00000004 < 2) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&local_c,"active");
     *(uint *)(param_1 + 0x2d8) = 0;

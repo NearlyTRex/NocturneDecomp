@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0050a260 at 0050a5c7
 ;   FUN_00513720 at 005137f8
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404e1
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df04c
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec66
+;   core_set.cpp_FUN_0050a260 at 0050a5c7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

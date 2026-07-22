@@ -9,7 +9,7 @@
 void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2)
 
 {
-  FUN_0040ab10(param_1,param_2);
+  core_actor_cpp_FUN_0040ab10(param_1,param_2);
   if ((*(int *)(param_1 + 0x16c) == 5) && (*(int *)(param_1 + 0x2ec) == *(int *)(param_2 + 8))) {
     *(uint *)(param_1 + 0x2e8) = 1;
   }

@@ -9,7 +9,7 @@
 ;   FUN_0046c100 at 0046c1eb
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dcube.cpp_0057bbba+1
+;   TerminatedCString s_core_dcube_cpp_0057bbbb
 ;   string s_CDemonCube::allocMemory_-_Out_of_0057bbcd
 ;   string s_..\\core\\dcube.cpp_0057bbfb
 ;   string s_CDemonCube::allocMemory_-_Out_of_0057bc0d
@@ -38,7 +38,7 @@ section .text
     JNZ 0x0044ac6d                      ; 0044ac46
         ;   XREF to: 0044ac6d (CONDITIONAL_JUMP)  ; LAB_0044ac6d
     PUSH ESI                            ; 0044ac48
-    MOV ECX,0x57bbbb                    ; 0044ac49 | s_..\core\dcube.cpp_0057bbba+1
+    MOV ECX,0x57bbbb                    ; 0044ac49 | = "..\\core\\dcube.cpp"
     MOV ESI,0x5f3                       ; 0044ac4e
     PUSH 0x57bbcd                       ; 0044ac53 | = "CDemonCube::allocMemory - Out of voxe..."
     MOV dword ptr [0x01cc4800],ECX      ; 0044ac58 | DAT_01cc4800

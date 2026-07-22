@@ -60,7 +60,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 == 0) {
     iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     if (*(int *)(iVar3 + 0x24) == 8) {
@@ -79,13 +79,13 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
     uVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(iVar3,&local_2c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar4);
   }
-  fVar2 = (float)_DAT_005849f8;
+  fVar2 = (float)3.1415926535000001;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar2 * *(float *)(param_1 + 0xbc8c);
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar3);
   iVar5 = *(int *)(iVar5 + 0x24);
   local_28 = iVar5;
-  iVar6 = FUN_00428c00(param_1,param_2);
+  iVar6 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar6 == 0) {
     switch(iVar5) {
     case 0:
@@ -121,7 +121,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_68,&local_a4);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_64 - *(float *)(param_1 + 0x34));
-            if (ABS(local_14) < (float)_DAT_00584a00) {
+            if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,3,1);
             }
           }
@@ -205,7 +205,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
                 ;
                 local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                             (local_c4 - *(float *)(param_1 + 0x34));
-                if (ABS(local_14) < (float)_DAT_00584a00) {
+                if (ABS(local_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                             (param_1 + 0x150,3,1);
                   *(uint *)(param_1 + 0xbca0) = 0x3f800000;
@@ -278,7 +278,7 @@ LAB_004a7bc7:
     if (uVar1 != 3) goto LAB_004a7bc7;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"?%s confused while walking to scriptDest!\n" + 1,param_1);
+              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   *(uint *)(param_1 + 0x23ac) = 0;
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
@@ -289,7 +289,7 @@ switchD_004a818f_caseD_4:
   }
   iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(param_1);
   if (iVar3 != 0) {
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_00584a08;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_98 = *(float *)(param_1 + 0x2420) * param_2;
     local_94 = *(float *)(param_1 + 0x2424) * param_2;
     local_90 = param_2 * *(float *)(param_1 + 0x2428);
@@ -310,7 +310,7 @@ switchD_004a818f_caseD_4:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
   iVar3 = local_28;
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   if (iVar3 == 5) {
     *(int *)(param_1 + 0xbd6c) = *(int *)(param_1 + 0xbd54) << 8;
     *(int *)(param_1 + 0xbd70) = *(int *)(param_1 + 0xbd58) << 8;

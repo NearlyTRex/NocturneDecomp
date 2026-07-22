@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 472,
+    "complexity_score": 455,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 39,
+    "pseudocode_lines": 65,
+    "suspect_count": 38,
     "suspect_types": [
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 288
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -166,6 +165,11 @@
       "name": "core_batman.cpp_CBatman_processDismemberment_FUN_004145f0"
     },
     {
+      "addr": "00427730",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00427730"
+    },
+    {
       "addr": "00479f70",
       "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00479f70"
@@ -191,11 +195,6 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380"
     },
     {
-      "addr": "00427730",
-      "is_variadic": false,
-      "name": "FUN_00427730"
-    },
-    {
       "addr": "00526c50",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00526c50"
@@ -209,8 +208,8 @@
   "globals": [
     {
       "addr": "00578d2f",
-      "name": "s_batman-die.wav_00578d2d+2",
-      "type": "undefined4",
+      "name": "s_batman_die_wav_00578d2f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -221,9 +220,9 @@
     },
     {
       "addr": "00578d4f",
-      "name": "DAT_00578d4f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578d4f",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005b80f0",
@@ -312,16 +311,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_00414930(int param_1,int param_2)",
@@ -329,7 +320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_00414930(int param_1,int param_2)",
@@ -337,7 +328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbddc));",
@@ -345,7 +336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbdd4));",
@@ -353,7 +344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x28) == 7) {",
@@ -361,23 +352,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00578d4f;",
+      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00578d4f;",
+      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
@@ -385,7 +376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x30) == 0x6c) {",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x150,local_3c,0);",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,uVar2);",
@@ -417,23 +408,23 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00427730(param_1,local_24,0,0,0x41200000,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00427730(param_1,local_24,0,0,0x41200000,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
       "text": "core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(param_1,param_2);",
@@ -441,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = param_1 + 0x150;",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2434) = fVar1;",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2434) = 0;",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbdd8));",
@@ -489,31 +480,31 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-die.wav\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-die.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,\"4@batman-die.wav\" + 2);",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-die.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbdd8) = uVar2;",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,5,1);",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbdd8));",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 60,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-hurt?.wav\");",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-hurt?.wav\");",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"batman-hurt?.wav\");",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbdd8) = uVar2;",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",

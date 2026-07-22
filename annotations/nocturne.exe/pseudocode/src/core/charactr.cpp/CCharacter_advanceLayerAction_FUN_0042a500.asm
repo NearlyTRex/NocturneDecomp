@@ -18,7 +18,7 @@
 ;   FUN_0053f310 at 0053f434
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\charactr.cpp_0057a385+1
+;   TerminatedCString s_core_charactr_cpp_0057a386
 ;   string s_CCharacter::advanceLayerAction_-_0057a39b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -45,7 +45,7 @@ section .text
     CMP EDX,dword ptr [EBX + 0x2620]    ; 0042a519
     JL 0x0042a544                       ; 0042a51f
         ;   XREF to: 0042a544 (CONDITIONAL_JUMP)  ; LAB_0042a544
-    MOV EDI,0x57a386                    ; 0042a521 | s_..\core\charactr.cpp_0057a385+1
+    MOV EDI,0x57a386                    ; 0042a521 | = "..\\core\\charactr.cpp"
         ;   Label: LAB_0042a521
     MOV EBP,0xf00                       ; 0042a526
     PUSH 0x57a39b                       ; 0042a52b | = "CCharacter::advanceLayerAction - inva..."

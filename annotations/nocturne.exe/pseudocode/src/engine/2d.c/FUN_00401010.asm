@@ -8,21 +8,21 @@
 ;   FUN_004c85f0 at 004c8745
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\2d.c_00577004
+;   TerminatedCString s_engine_2d_c_00577004
 ;   string s_No_room_for_frame_buffer._Please_00577013
 ;   string s_vga.act_0057703f
-;   string s_vga.lte_00577047
-;   string s_vga.map_0057704f
-;   string s_vga.act_00577057
-;   undefined4 DAT_0057705f
+;   TerminatedCString s_vga_lte_00577047
+;   TerminatedCString s_vga_map_0057704f
+;   TerminatedCString s_vga_act_00577057
+;   TerminatedCString s_rb_0057705f
 ;   string s_font.ndx_00577062
 ;   string s_startup_0057706b
-;   string s_..\\engine\\2d.c_00577073
+;   TerminatedCString s_engine_2d_c_00577073
 ;   string s_Unable_to_open_font.ndx_00577082
-;   undefined4 DAT_0057709a
-;   string s_font.bin_0057709e
+;   TerminatedCString s_d_0057709a
+;   TerminatedCString s_font_bin_0057709e
 ;   string s_startup_005770a7
-;   string s_..\\engine\\2d.c_005770af
+;   TerminatedCString s_engine_2d_c_005770af
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -30,12 +30,12 @@
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fscanf_FUN_00563350
+;   engine_2d.c_FUN_00401990
+;   engine_2d.c_FUN_00401bd0
+;   engine_2d.c_FUN_00403460
+;   engine_2d.c_FUN_00403630
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_00401990
-;   FUN_00401bd0
-;   FUN_00403460
-;   FUN_00403630
 ;   FUN_004c8440
 ;   FUN_00552b40
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
@@ -72,24 +72,24 @@ section .text
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
     ADD ESP,0xc                         ; 00401054
     PUSH 0x57703f                       ; 00401057 | = "vga.act"
-    CALL FUN_00401bd0                   ; 0040105c
-        ;   XREF to: 00401bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00401bd0()
+    CALL engine_2d.c_FUN_00401bd0       ; 0040105c
+        ;   XREF to: 00401bd0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401bd0()
     ADD ESP,0x4                         ; 00401061
     PUSH 0x577047                       ; 00401064 | = "vga.lte"
-    CALL FUN_00403460                   ; 00401069
-        ;   XREF to: 00403460 (UNCONDITIONAL_CALL)  ; undefined FUN_00403460()
+    CALL engine_2d.c_FUN_00403460       ; 00401069
+        ;   XREF to: 00403460 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403460()
     ADD ESP,0x4                         ; 0040106e
     PUSH 0x57704f                       ; 00401071 | = "vga.map"
-    CALL FUN_00403630                   ; 00401076
-        ;   XREF to: 00403630 (UNCONDITIONAL_CALL)  ; undefined FUN_00403630()
+    CALL engine_2d.c_FUN_00403630       ; 00401076
+        ;   XREF to: 00403630 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403630()
     ADD ESP,0x4                         ; 0040107b
     PUSH 0x577057                       ; 0040107e | = "vga.act"
-    CALL FUN_00401990                   ; 00401083
-        ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; undefined FUN_00401990()
+    CALL engine_2d.c_FUN_00401990       ; 00401083
+        ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401990()
     ADD ESP,0x4                         ; 00401088
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 ; 0040108b
         ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
-    PUSH 0x57705f                       ; 00401090 | DAT_0057705f
+    PUSH 0x57705f                       ; 00401090 | = "rb"
     PUSH 0x577062                       ; 00401095 | = "font.ndx"
     PUSH 0x57706b                       ; 0040109a | = "startup"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040109f
@@ -106,7 +106,7 @@ section .text
     ADD EBX,0x80                        ; 004010c1
     PUSH EBX                            ; 004010c7 | DAT_006afabc | DAT_006afac0
         ;   Label: LAB_004010c7
-    PUSH 0x57709a                       ; 004010c8 | DAT_0057709a
+    PUSH 0x57709a                       ; 004010c8 | = "%d\n"
     PUSH ESI                            ; 004010cd
     ADD EBX,0x4                         ; 004010ce
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004010d1
@@ -142,7 +142,7 @@ section .text
     CALL FUN_004c8440                   ; 00401129
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 0040112e
-    PUSH 0x5770db                       ; 00401131 | DAT_005770db
+    PUSH 0x5770db                       ; 00401131 | = "rb"
         ;   Label: LAB_00401131
     PUSH 0x5770de                       ; 00401136 | = "font.bin"
     PUSH 0x5770e7                       ; 0040113b | = "startup"
@@ -196,9 +196,9 @@ section .text
     CMP EBX,0x640                       ; 004011ca
     JC 0x004011ba                       ; 004011d0
         ;   XREF to: 004011ba (CONDITIONAL_JUMP)  ; LAB_004011ba
-    PUSH 0x577116                       ; 004011d2 | DAT_00577116
+    PUSH 0x577116                       ; 004011d2 | = "rb"
     PUSH 0x577119                       ; 004011d7 | = "default.act"
-    PUSH 0x577125                       ; 004011dc | DAT_00577125
+    PUSH 0x577125                       ; 004011dc | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004011e1
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV EBX,EAX                         ; 004011e6

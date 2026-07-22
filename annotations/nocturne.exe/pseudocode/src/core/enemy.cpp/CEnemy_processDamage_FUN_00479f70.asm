@@ -4,18 +4,18 @@
 ; void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(int param_1,int param_2)
 ;
 ;
-; XREF[23]:
-;   FUN_00413040 at 00413157
+; XREF[24]:
+;   FUN_0040fbc0 at 0040fbef
 ;   FUN_00414930 at 00414a47
 ;   FUN_004151b0 at 004151c1
 ;   FUN_004219d0 at 004219e1
 ;   FUN_004ab450 at 004ab61b
 ;   FUN_00541810 at 00541821
+;   core_batcreat.cpp_FUN_00413040 at 00413157
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041596a
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f89
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420d67
-;   core_cow.cpp_CZombieCow_processDamage_FUN_0043c5e0 at 0043c63c
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00765a98

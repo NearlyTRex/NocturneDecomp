@@ -8,7 +8,7 @@
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00515350 at 00515412
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dlight.cpp_0057c825+1
+;   TerminatedCString s_core_dlight_cpp_0057c826
 ;   string s_CDemonLight::allocateFilter_-_Ou_0057c839
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -34,7 +34,7 @@ section .text
     RET                                 ; 0045018b
     PUSH EBX                            ; 0045018c
         ;   Label: LAB_0045018c
-    MOV ECX,0x57c826                    ; 0045018d | s_..\core\dlight.cpp_0057c825+1
+    MOV ECX,0x57c826                    ; 0045018d | = "..\\core\\dlight.cpp"
     MOV EBX,0x541                       ; 00450192
     PUSH 0x57c839                       ; 00450197 | = "CDemonLight::allocateFilter - Out of ..."
     MOV dword ptr [0x01cc4800],ECX      ; 0045019c | DAT_01cc4800

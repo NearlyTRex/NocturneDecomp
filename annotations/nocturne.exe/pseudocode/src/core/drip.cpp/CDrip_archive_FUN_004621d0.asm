@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   string s_modelName_0057de01
-;   undefined4 DAT_0057de0b
+;   TerminatedCString s_type_0057de0b
 ;   string s_autoDrop_0057de10
 ;   string s_homePos_0057de19
-;   undefined4 DAT_0057de21
+;   TerminatedCString s_vel_0057de21
 ;   string s_minAutoDripTime_0057de25
 ;   string s_maxAutoDripTime_0057de35
 ;   string s_dripRadius_0057de45
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 004621ee
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00()
     ADD ESP,0x8                         ; 004621f3
-    PUSH 0x57de0b                       ; 004621f6 | DAT_0057de0b
+    PUSH 0x57de0b                       ; 004621f6 | = "type"
     LEA EAX,[EBX + 0x2cc]               ; 004621fb
     PUSH EAX                            ; 00462201
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00462202
@@ -61,7 +61,7 @@ section .text
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0046222a
         ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
     ADD ESP,0x8                         ; 0046222f
-    PUSH 0x57de21                       ; 00462232 | DAT_0057de21
+    PUSH 0x57de21                       ; 00462232 | = "vel"
     LEA EAX,[EBX + 0x2fc]               ; 00462237
     PUSH EAX                            ; 0046223d
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0046223e

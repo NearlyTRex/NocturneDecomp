@@ -16,8 +16,8 @@
 ;
 ; XREF[4]:
 ;   FUN_004b2430 at 004b2531
-;   FUN_0050d910 at 0050db18
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df0f4
+;   core_set.cpp_FUN_0050d910 at 0050db18
 ;   engine_light.cpp_calculatePhongLighting_FUN_004c6a70 at 004c6b8f
 ;
 ; Referenced Globals:

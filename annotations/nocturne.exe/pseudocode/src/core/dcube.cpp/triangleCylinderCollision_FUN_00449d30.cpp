@@ -42,7 +42,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(int *param_1,
   float local_30;
   float local_2c;
   
-  if ((float)param_1[4] <= (float)_DAT_0057bbab) {
+  if ((float)param_1[4] <= (float)-0.34000000000000002) {
     fVar1 = *(float *)*param_1 - *param_2;
     fVar9 = *(float *)(*param_1 + 4);
     fVar2 = *(float *)(*param_1 + 8) - param_2[2];
@@ -126,7 +126,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(int *param_1,
           _DAT_014b846c = 0;
           _DAT_014b8474 = 0;
         }
-        if (_DAT_0057bbb3 <= (double)fVar9) {
+        if (0.01 <= (double)fVar9) {
           param_3 = param_3 / fVar9;
           local_34 = (float)param_1[3] * param_3 + *param_2;
           local_2c = param_3 * (float)param_1[5] + param_2[2];

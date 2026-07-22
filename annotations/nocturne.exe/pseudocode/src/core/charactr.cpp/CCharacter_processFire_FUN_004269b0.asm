@@ -22,16 +22,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004259f0 at 00425a22
+;   core_charactr.cpp_FUN_004259f0 at 00425a22
 ;
 ; Referenced Globals:
-;   undefined4 s_character-onfire-fallapart.wav_00579f99+1
+;   TerminatedCString s_character_onfire_fallapa_00579f9a
 ;   string s_character-onfire-loop.wav_00579fb9
-;   undefined4 DAT_00579fda
-;   undefined4 DAT_00579fe2
-;   undefined4 DAT_00579fea
-;   undefined4 DAT_00579ff2
-;   undefined4 DAT_00579ffa
+;   double DOUBLE_00579fda = 65535
+;   double DOUBLE_00579fe2 = 0.600000000000000
+;   double DOUBLE_00579fea = 0.0200000000000000
+;   double DOUBLE_00579ff2 = 0.400000000000000
+;   double DOUBLE_00579ffa = 0.5
 ;   undefined4 DAT_0059b08c
 ;   undefined4 DAT_0059b090
 ;   undefined4 DAT_00765aa0
@@ -111,7 +111,7 @@ section .text
     JLE 0x00426a7e                      ; 00426a3a
         ;   XREF to: 00426a7e (CONDITIONAL_JUMP)  ; LAB_00426a7e
     FLD float ptr [0x0059b090]          ; 00426a3c | DAT_0059b090
-    FLD double ptr [0x00579fda]         ; 00426a42 | DAT_00579fda
+    FLD double ptr [0x00579fda]         ; 00426a42 | DOUBLE_00579fda
     MOV ESI,EBX                         ; 00426a48
     FLD float ptr [ESI + 0x2f28]        ; 00426a4a
         ;   Label: LAB_00426a4a
@@ -144,7 +144,7 @@ section .text
     XOR EDI,EDI                         ; 00426aa4
     FLD float ptr [EDI + 0x765aa0]      ; 00426aa6 | DAT_00765aa0 | DAT_00765aa4
         ;   Label: LAB_00426aa6
-    FCOMP double ptr [0x00579fda]       ; 00426aac | DAT_00579fda
+    FCOMP double ptr [0x00579fda]       ; 00426aac | DOUBLE_00579fda
     FNSTSW AX                           ; 00426ab2
     SAHF                                ; 00426ab4
     JC 0x00426ab8                       ; 00426ab5
@@ -189,9 +189,9 @@ section .text
     MOV dword ptr [EBX + 0xb640],0x1    ; 00426b24
     FILD dword ptr [EBX + 0x2f08]       ; 00426b2e
         ;   Label: LAB_00426b2e
-    FMUL double ptr [0x00579fe2]        ; 00426b34 | DAT_00579fe2
-    FMUL double ptr [0x00579fea]        ; 00426b3a | DAT_00579fea
-    FADD double ptr [0x00579ff2]        ; 00426b40 | DAT_00579ff2
+    FMUL double ptr [0x00579fe2]        ; 00426b34 | DOUBLE_00579fe2
+    FMUL double ptr [0x00579fea]        ; 00426b3a | DOUBLE_00579fea
+    FADD double ptr [0x00579ff2]        ; 00426b40 | DOUBLE_00579ff2
     MOV EAX,dword ptr [EBX + 0xb63c]    ; 00426b46
     FSTP float ptr [ESP + 0x1c]         ; 00426b4c
     PUSH dword ptr [ESP + 0x1c]         ; 00426b50
@@ -246,7 +246,7 @@ section .text
     MOV dword ptr [EDI + 0x4],ECX       ; 00426bef
     MOV ECX,dword ptr [EAX + 0x8]       ; 00426bf2
     MOV dword ptr [EDI + 0x8],ECX       ; 00426bf5
-    FLD double ptr [0x00579ffa]         ; 00426bf8 | DAT_00579ffa
+    FLD double ptr [0x00579ffa]         ; 00426bf8 | DOUBLE_00579ffa
     FLD float ptr [ESI + 0x14]          ; 00426bfe
     FMUL ST1                            ; 00426c01
     MOV EAX,dword ptr [ESP + 0x44]      ; 00426c03
@@ -331,7 +331,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00426cf3
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 00426cf8
-    PUSH 0x579f9a                       ; 00426cfb | s_character-onfire-fallapart.wav_00579f99+1
+    PUSH 0x579f9a                       ; 00426cfb | = "character-onfire-fallapart.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00426d00
     PUSH EBX                            ; 00426d06
     CALL dword ptr [EAX + 0x24]         ; 00426d07

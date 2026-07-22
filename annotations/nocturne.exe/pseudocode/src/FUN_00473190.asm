@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057eaaa
-;   undefined4 DAT_0057eaae
+;   float FLOAT_0057eaaa = 0.2000000
+;   double DOUBLE_0057eaae = 0.0000305175853213768
 ;   undefined4 DAT_0059ca4c
 ;   undefined4 DAT_01c00c70
 ;
@@ -91,23 +91,23 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00473277
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     FLD float ptr [ESI]                 ; 0047327c
-    FMUL float ptr [0x0057eaaa]         ; 0047327e | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 0047327e | FLOAT_0057eaaa
     ADD ESP,0x8                         ; 00473284
     FSTP float ptr [ESP + 0xa8]         ; 00473287
     FLD float ptr [ESI + 0x4]           ; 0047328e
-    FMUL float ptr [0x0057eaaa]         ; 00473291 | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 00473291 | FLOAT_0057eaaa
     FSTP float ptr [ESP + 0xac]         ; 00473297
     FLD float ptr [ESI + 0x8]           ; 0047329e
-    FMUL float ptr [0x0057eaaa]         ; 004732a1 | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 004732a1 | FLOAT_0057eaaa
     FSTP float ptr [ESP + 0xb0]         ; 004732a7
     FLD float ptr [EBP]                 ; 004732ae
-    FMUL float ptr [0x0057eaae]         ; 004732b1 | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 004732b1 | DOUBLE_0057eaae
     FSTP float ptr [ESP + 0xd8]         ; 004732b7
     FLD float ptr [EBP + 0x4]           ; 004732be
-    FMUL float ptr [0x0057eaae]         ; 004732c1 | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 004732c1 | DOUBLE_0057eaae
     FSTP float ptr [ESP + 0xdc]         ; 004732c7
     FLD float ptr [EBP + 0x8]           ; 004732ce
-    FMUL float ptr [0x0057eaae]         ; 004732d1 | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 004732d1 | DOUBLE_0057eaae
     LEA EBX,[ESP + 0x84]                ; 004732d7
     LEA EAX,[ESP + 0xcc]                ; 004732de
     FLD float ptr [ESP + 0xd8]          ; 004732e5
@@ -172,23 +172,23 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 004733c9
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
     FLD float ptr [ESI]                 ; 004733ce
-    FMUL float ptr [0x0057eaaa]         ; 004733d0 | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 004733d0 | FLOAT_0057eaaa
     ADD ESP,0x8                         ; 004733d6
     FSTP float ptr [ESP + 0x78]         ; 004733d9
     FLD float ptr [ESI + 0x4]           ; 004733dd
-    FMUL float ptr [0x0057eaaa]         ; 004733e0 | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 004733e0 | FLOAT_0057eaaa
     FSTP float ptr [ESP + 0x7c]         ; 004733e6
     FLD float ptr [ESI + 0x8]           ; 004733ea
-    FMUL float ptr [0x0057eaaa]         ; 004733ed | DAT_0057eaaa
+    FMUL float ptr [0x0057eaaa]         ; 004733ed | FLOAT_0057eaaa
     FSTP float ptr [ESP + 0x80]         ; 004733f3
     FLD float ptr [EBP]                 ; 004733fa
-    FMUL float ptr [0x0057eaae]         ; 004733fd | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 004733fd | DOUBLE_0057eaae
     FSTP float ptr [ESP + 0x9c]         ; 00473403
     FLD float ptr [EBP + 0x4]           ; 0047340a
-    FMUL float ptr [0x0057eaae]         ; 0047340d | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 0047340d | DOUBLE_0057eaae
     FSTP float ptr [ESP + 0xa0]         ; 00473413
     FLD float ptr [EBP + 0x8]           ; 0047341a
-    FMUL float ptr [0x0057eaae]         ; 0047341d | DAT_0057eaae
+    FMUL float ptr [0x0057eaae]         ; 0047341d | DOUBLE_0057eaae
     FLD float ptr [ESP + 0x9c]          ; 00473423
     FADD float ptr [ESP + 0x78]         ; 0047342a
     FLD float ptr [ESP + 0xa0]          ; 0047342e
@@ -252,7 +252,7 @@ section .text
     PUSH 0x0                            ; 0047350b
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 0047350d
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_transformToCache_FUN_004cd210()
-    FLD float ptr [0x0057eaaa]          ; 00473512 | DAT_0057eaaa
+    FLD float ptr [0x0057eaaa]          ; 00473512 | FLOAT_0057eaaa
     FLD float ptr [ESI]                 ; 00473518
     FMUL ST1                            ; 0047351a
     ADD ESP,0x8                         ; 0047351c
@@ -262,7 +262,7 @@ section .text
     FSTP float ptr [ESP + 0x94]         ; 0047352b
     FMUL float ptr [ESI + 0x8]          ; 00473532
     FSTP float ptr [ESP + 0x98]         ; 00473535
-    FLD float ptr [0x0057eaae]          ; 0047353c | DAT_0057eaae
+    FLD float ptr [0x0057eaae]          ; 0047353c | DOUBLE_0057eaae
     FLD float ptr [EBP]                 ; 00473542
     FMUL ST1                            ; 00473545
     FSTP float ptr [ESP + 0x6c]         ; 00473547

@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 at 00471816
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   string s_..\\shape\\edittool.cpp_0057e9f6
 ;   string s_CEditorTools::paintWindow()_call_0057ea0c
@@ -139,7 +139,7 @@ section .text
     POP ESI                             ; 0047239b
     POP EBX                             ; 0047239c
     RET                                 ; 0047239d
-    MOV ECX,0x57e4fa                    ; 0047239e | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 0047239e | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_0047239e
     MOV EBX,0x8b                        ; 004723a3
     PUSH 0x57e510                       ; 004723a8 | = "gEdFont must be set by the application."

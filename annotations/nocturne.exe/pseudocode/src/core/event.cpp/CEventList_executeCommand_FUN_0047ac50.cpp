@@ -138,7 +138,7 @@ uint __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(int *param_1,
       param_2 = param_2 + 1;
     }
     local_f0 = (uint)(_DAT_01c08b5c == 0);
-    local_ec = &DAT_0057f586;
+    local_ec = &CHAR_00h_0057f586;
     pcVar9 = param_2;
     do {
       pcVar8 = pcVar9;
@@ -380,7 +380,7 @@ LAB_0047acd1:
             while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0057f7a5,local_163c);
+            iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",local_163c);
             if (iVar3 < 0) {
               uVar5 = FUN_0047a210();
               return uVar5;
@@ -681,7 +681,7 @@ LAB_0047aec8:
                                         (local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",
                                          local_153d + 1,local_219 + 1,local_110,local_10c,local_108,
                                          &local_9c,&local_a4);
-                              local_9c = local_9c * (float)_DAT_00580217;
+                              local_9c = local_9c * (float)0.017453292519444399;
                               if (local_a4 < 0) {
                                 local_9c = -1.0;
                                 sscanf
@@ -1009,7 +1009,7 @@ LAB_0047aec8:
                                       }
                                       if (local_f0 != 0) {
                                         iVar3 = _strnicmp
-                                                          (local_13ad + 1,&DAT_0057fbe2,3);
+                                                          (local_13ad + 1,"cue",3);
                                         if (iVar3 == 0) {
                                           iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490
                                                             ();
@@ -1095,7 +1095,7 @@ LAB_0047aec8:
                                         if (local_f0 != 0) {
                                           core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0
                                                     (0x01E57284,iVar3,
-                                                     local_78 * (float)_DAT_0058021f);
+                                                     local_78 * (float)0.01);
                                         }
                                       }
                                       else {
@@ -1203,7 +1203,7 @@ LAB_0047aec8:
                                             if (local_f0 != 0) {
                                               core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510
                                                         (0x01E57284,local_64,
-                                                         local_60 * (float)_DAT_0058021f);
+                                                         local_60 * (float)0.01);
                                             }
                                           }
                                           else {
@@ -1573,27 +1573,27 @@ LAB_0047aec8:
                                                     ;
                                                   }
                                                   iVar3 = _stricmp
-                                                                    (local_e35 + 1,&DAT_0057ffbc);
+                                                                    (local_e35 + 1,"none");
                                                   uVar5 = 0;
                                                   if (iVar3 != 0) {
                                                     iVar3 = _stricmp
-                                                                      (local_e35 + 1,&DAT_0057ffc1);
+                                                                      (local_e35 + 1,"rain"
+                                                                      );
                                                     if (iVar3 == 0) {
                                                       uVar5 = 1;
                                                     }
                                                     else {
                                                       iVar3 = _stricmp
-                                                                        (local_e35 + 1,&DAT_0057ffc6
-                                                                        );
+                                                                        (local_e35 + 1,
+                                                                         "snow");
                                                       if (iVar3 != 0) {
                                                         _sprintf(&DAT_01c08b60,
-                                                                                                                                      
-                                                  "Invalid weather type: %s",local_e35 + 1)
-                                                  ;
-                                                  return 0;
-                                                  }
-                                                  uVar5 = 2;
-                                                  }
+                                                                   "Invalid weather type: %s"
+                                                                   ,local_e35 + 1);
+                                                        return 0;
+                                                      }
+                                                      uVar5 = 2;
+                                                    }
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
@@ -1626,8 +1626,9 @@ LAB_0047aec8:
                                                   }
                                                   local_ec = local_ec + local_24;
                                                   if (local_f0 != 0) {
-                                                    FUN_0050e660(0x01E57284,local_30,local_2c,
-                                                                 local_80,local_28);
+                                                    core_set_cpp_FUN_0050e660
+                                                              (0x01E57284,local_30,local_2c,
+                                                               local_80,local_28);
                                                   }
                                                   }
                                                   else {

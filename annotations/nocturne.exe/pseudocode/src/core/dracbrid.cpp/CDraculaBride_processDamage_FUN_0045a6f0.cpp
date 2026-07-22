@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)
 
 {
@@ -23,7 +21,7 @@ void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int 
   bVar2 = false;
   if (*(int *)(param_2 + 0x28) == 7) {
     iVar5 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_0057d866;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);
     do {
       iVar5 = iVar5 + 1;
@@ -39,7 +37,7 @@ void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int 
     uVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                       (param_1 + 0x150,local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,uVar3);
-    FUN_00427730(param_1,local_24,0,0,0x41200000,0);
+    core_charactr_cpp_FUN_00427730(param_1,local_24,0,0,0x41200000,0);
   }
   core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);
   fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
@@ -52,7 +50,7 @@ void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int 
     if ((((iVar4 != 0x11) && (iVar4 != 0x10)) && (iVar4 != 10)) && (iVar4 != 7)) {
       if (bVar2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar5,7,1);
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,"4@bride-launch.wav" + 2);
+        (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,"bride-launch.wav");
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar5,10,1);

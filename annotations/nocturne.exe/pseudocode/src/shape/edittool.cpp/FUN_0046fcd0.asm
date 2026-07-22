@@ -21,7 +21,7 @@
 ;   ... and 10 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   string s_Error_0057e5d7
 ;   undefined4 DAT_005bac64
@@ -66,7 +66,7 @@ section .text
     CMP dword ptr [0x01bcd070],0x0      ; 0046fcdb | DAT_01bcd070
     JNZ 0x0046fd07                      ; 0046fce2
         ;   XREF to: 0046fd07 (CONDITIONAL_JUMP)  ; LAB_0046fd07
-    MOV ECX,0x57e4fa                    ; 0046fce4 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 0046fce4 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fce9
     PUSH 0x57e510                       ; 0046fcee | = "gEdFont must be set by the application."
     MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | DAT_01cc4800

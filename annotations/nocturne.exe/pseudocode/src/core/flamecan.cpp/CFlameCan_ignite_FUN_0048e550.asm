@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_0040b300 at 0040bb68
 ;   FUN_00477890 at 00477f6a
 ;   FUN_004b27c0 at 004b2cae
 ;   FUN_00515ea0 at 005165b1
 ;   FUN_00545c30 at 00546165
+;   core_actor.cpp_FUN_0040b300 at 0040bb68
 ;   core_fire.cpp_CGunFlame_init_FUN_004880d0 at 0048820c
 ;   core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0 at 0048e5d1
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 0050959e

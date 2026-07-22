@@ -18,7 +18,7 @@ void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0(LPCSTR param
   DWORD local_8;
   
   bVar5 = 0;
-  LVar2 = RegCreateKeyExA((HKEY)0x80000002,param_1,0,&DAT_00598151,0,0x20006,
+  LVar2 = RegCreateKeyExA((HKEY)0x80000002,param_1,0,"suck",0,0x20006,
                           (LPSECURITY_ATTRIBUTES)0x0,&local_c,&local_8);
   if (LVar2 != 0) {
     return;

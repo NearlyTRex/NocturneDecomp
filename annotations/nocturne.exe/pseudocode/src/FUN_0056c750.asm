@@ -12,9 +12,9 @@
 ;   void* PTR_CreateFileA_00575498 = 00175b06
 ;   void* PTR_GetFileType_00575514 = 00175d4e
 ;   void* PTR_GetLastError_0057551c = 00175d70
-;   undefined4 DAT_00598bd4
-;   string s_conin$_00598bd8
-;   undefined4 DAT_00598be0
+;   TerminatedCString s_con_00598bd4
+;   TerminatedCString s_conin_00598bd8
+;   TerminatedCString s_EXE_00598be0
 ;   undefined2 DAT_005c1d11
 ;
 ; Called Functions:
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_0056c773
     JZ 0x0056c7f7                       ; 0056c777
         ;   XREF to: 0056c7f7 (CONDITIONAL_JUMP)  ; LAB_0056c7f7
-    PUSH 0x598bd4                       ; 0056c77d | DAT_00598bd4
+    PUSH 0x598bd4                       ; 0056c77d | = "con"
     PUSH ESI                            ; 0056c782
     CALL crt_string.c__stricmp_FUN_00564520 ; 0056c783
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_0056c831
     JZ 0x0056c84b                       ; 0056c833
         ;   XREF to: 0056c84b (CONDITIONAL_JUMP)  ; LAB_0056c84b
-    PUSH 0x598be0                       ; 0056c835 | DAT_00598be0
+    PUSH 0x598be0                       ; 0056c835 | = "EXE"
     INC ESI                             ; 0056c83a
     PUSH ESI                            ; 0056c83b
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0056c83c

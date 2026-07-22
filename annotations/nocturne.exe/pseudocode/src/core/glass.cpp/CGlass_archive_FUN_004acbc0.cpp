@@ -10,7 +10,7 @@ void core_glass_cpp_CGlass_archive_FUN_004acbc0(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"?glassSize" + 1);
+  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"glassSize");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x164,"glassTexture");
   if (1 < 0x00000006) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x174,"opacity");

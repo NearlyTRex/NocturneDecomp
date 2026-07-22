@@ -35,7 +35,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
     iVar1 = _fgetc(param_2);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  _fscanf(param_2,&DAT_0057ca34,&local_44);
+  _fscanf(param_2,"%d\n",&local_44);
   if (local_44 < 5) {
     _DAT_01cc4800 = "..\\core\\dmodel.cpp";
     _DAT_01cc4804 = 0x128;
@@ -59,7 +59,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
     iVar1 = _fgetc(param_2);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  _fscanf(param_2,&DAT_0057cad0,&local_48);
+  _fscanf(param_2,"%d\n",&local_48);
   if (local_44 < 6) {
     *(uint *)(param_1 + 0x35c) = 0;
   }
@@ -69,7 +69,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
       iVar1 = _fgetc(param_2);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-    _fscanf(param_2,&DAT_0057cad4,param_1 + 0x35c);
+    _fscanf(param_2,"%d\n",param_1 + 0x35c);
   }
   if (local_44 < 8) {
     *(uint *)(param_1 + 0x360) = 0;
@@ -80,7 +80,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
       iVar1 = _fgetc(param_2);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-    _fscanf(param_2,&DAT_0057cad8,param_1 + 0x360);
+    _fscanf(param_2,"%d\n",param_1 + 0x360);
   }
   local_2c = 0;
   if (6 < local_44) {
@@ -89,7 +89,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
       iVar1 = _fgetc(param_2);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-    _fscanf(param_2,&DAT_0057cadc,&local_2c);
+    _fscanf(param_2,"%d\n",&local_2c);
   }
   iVar3 = 1;
   do {
@@ -127,7 +127,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
           iVar1 = iVar1 + 0xc;
         } while (iVar3 < *(int *)(local_14 + 4));
       }
-      _fscanf(param_2,&DAT_0057cafb);
+      _fscanf(param_2,"\n");
       local_24 = local_24 + 4;
       local_20 = local_20 + 0x48;
       local_1c = local_1c + 1;
@@ -149,7 +149,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
     iVar3 = 0;
     if (0 < *(int *)(param_1 + 0x110)) {
       do {
-        _fscanf(param_2,&DAT_0057cb31,local_28);
+        _fscanf(param_2,"%d\n",local_28);
         *(byte *)(*(int *)(param_1 + 0x11c) + iVar3) = local_28[0];
         iVar3 = iVar3 + 1;
       } while (iVar3 < *(int *)(param_1 + 0x110));

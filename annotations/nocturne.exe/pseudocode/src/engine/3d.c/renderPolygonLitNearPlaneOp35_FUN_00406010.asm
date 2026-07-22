@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00404710
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH ESI                            ; 00406066
     MOV EAX,dword ptr [EBX + 0x4]       ; 00406067
     PUSH EAX                            ; 0040606a
-    CALL FUN_00432cd0                   ; 0040606b
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 0040606b
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 00406070
     POP EDI                             ; 00406073
     MOV EAX,dword ptr [EBX + 0x4]       ; 00406074

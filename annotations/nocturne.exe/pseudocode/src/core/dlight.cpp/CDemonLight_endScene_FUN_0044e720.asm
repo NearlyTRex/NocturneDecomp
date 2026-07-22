@@ -7,15 +7,15 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   FUN_0050a260 at 0050a474
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508643
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509961
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fe6
+;   core_set.cpp_FUN_0050a260 at 0050a474
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dlight.cpp_0057c697
 ;   string s_CDemonLight::endScene_-_Scene_no_0057c6aa
-;   undefined4 DAT_0057c6d6
+;   double DOUBLE_0057c6d6 = 0.00390625
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd2fa0
@@ -75,7 +75,7 @@ section .text
     MOV dword ptr [ESP],EBX             ; 0044e778
         ;   Label: LAB_0044e778
     FILD dword ptr [ESP]                ; 0044e77b
-    FMUL double ptr [0x0057c6d6]        ; 0044e77e | DAT_0057c6d6
+    FMUL double ptr [0x0057c6d6]        ; 0044e77e | DOUBLE_0057c6d6
     FSTP float ptr [ESI + 0x100]        ; 0044e784
     PUSH 0x0                            ; 0044e78a
         ;   Label: LAB_0044e78a

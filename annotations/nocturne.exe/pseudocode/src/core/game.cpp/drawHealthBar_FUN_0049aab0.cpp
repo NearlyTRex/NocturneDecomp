@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_game_cpp_drawHealthBar_FUN_0049aab0(int param_1,uint param_2,int param_3,uint param_4,float param_5)
 
 {
@@ -15,10 +13,10 @@ void core_game_cpp_drawHealthBar_FUN_0049aab0(int param_1,uint param_2,int param
   float10 fVar2;
   
   uVar1 = 2;
-  if (param_5 < (float)_DAT_005823ca) {
+  if (param_5 < (float)0.59999999999999998) {
     uVar1 = 0xfb;
   }
-  if (param_5 < (float)_DAT_005823d2) {
+  if (param_5 < (float)0.34999999999999998) {
     uVar1 = 1;
   }
   engine_2d_c_fillRectWithBorder_FUN_00403ef0(param_1,param_2,param_3,param_4,0,0);

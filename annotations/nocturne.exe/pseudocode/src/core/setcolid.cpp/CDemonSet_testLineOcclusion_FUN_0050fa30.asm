@@ -11,9 +11,9 @@
 ;   FUN_00499b00 at 00499c48
 ;   FUN_0052d790 at 0052d875
 ;   FUN_0052dff0 at 0052e36b
-;   FUN_0055ef50 at 0055f1f6
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429ac9
 ;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910 at 0053e099
+;   core_zombie.cpp_FUN_0055ef50 at 0055f1f6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fba938

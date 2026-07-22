@@ -4,8 +4,9 @@
 ; int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(undefined4 param_1,char *param_2)
 ;
 ;
-; XREF[47]:
-;   FUN_00410490 at 004104be
+; XREF[49]:
+;   FUN_0040f610 at 0040f626
+;   FUN_0040fa20 at 0040fafa
 ;   FUN_00418a00 at 00418a23
 ;   FUN_00421480 at 004214d9
 ;   FUN_00478790 at 004787d2
@@ -14,12 +15,11 @@
 ;   FUN_004b6d80 at 004b817a
 ;   FUN_004d49f0 at 004d4acf
 ;   FUN_004da790 at 004daa08
-;   FUN_004f6170 at 004f61d0
-;   ... and 37 more
+;   ... and 39 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058022c
-;   undefined4 DAT_00580231
+;   TerminatedCString s_none_0058022c
+;   TerminatedCString s_s_00580231
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01c08b5c
@@ -48,7 +48,7 @@ section .text
     POP EBX                             ; 0047dc40
         ;   Label: LAB_0047dc40
     RET                                 ; 0047dc41
-    PUSH 0x58022c                       ; 0047dc42 | DAT_0058022c
+    PUSH 0x58022c                       ; 0047dc42 | = "none"
         ;   Label: LAB_0047dc42
     PUSH EBX                            ; 0047dc47
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047dc48
@@ -69,7 +69,7 @@ section .text
     JGE 0x0047dc40                      ; 0047dc6c
         ;   XREF to: 0047dc40 (CONDITIONAL_JUMP)  ; LAB_0047dc40
     PUSH 0x1c08b60                      ; 0047dc6e | DAT_01c08b60
-    PUSH 0x580231                       ; 0047dc73 | DAT_00580231
+    PUSH 0x580231                       ; 0047dc73 | = "%s\n"
     MOV EBX,dword ptr [0x005ad350]      ; 0047dc78 | PTR_DAT_005ad350
     PUSH EBX                            ; 0047dc7e | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0047dc7f

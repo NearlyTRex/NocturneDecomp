@@ -39,9 +39,9 @@ void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,uint param_2)
   }
   engine_console_cpp_CConsole_writeChar_FUN_0043ad30(param_1,0);
   if (*param_1 != 0) {
-    iVar3 = _fopen("console.txt",&DAT_0057b1c4);
+    iVar3 = _fopen("console.txt","at");
     if (iVar3 != 0) {
-      _fprintf(iVar3,&DAT_0057b1c7,local_1014);
+      _fprintf(iVar3,"%s",local_1014);
       _fclose(iVar3);
       return;
     }

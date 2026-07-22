@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -143,7 +143,7 @@
     {
       "addr": "0055ef50",
       "from_addr": "005603c9",
-      "name": "FUN_0055ef50",
+      "name": "core_zombie.cpp_FUN_0055ef50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,8 +157,8 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_00561010",
-    "signature": "undefined4 FUN_00561010(int param_1,float param_2)"
+    "name": "core_zombie.cpp_FUN_00561010",
+    "signature": "undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -235,8 +235,8 @@
   "globals": [
     {
       "addr": "0059878e",
-      "name": "s_%s_can't_pick_up_%s,_sombody_els_0059878d+1",
-      "type": "undefined4",
+      "name": "s_s_can_t_pick_up_s_sombod_0059878e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -266,13 +266,13 @@
     {
       "addr": "0059882b",
       "name": "s_CBodyPart_0059882b",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00598835",
-      "name": "s_%s_is_going_to_try_to_pick_up_%s_00598835",
-      "type": "string",
+      "name": "s_s_is_going_to_try_to_pic_00598835",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -372,7 +372,7 @@
       {
         "call_addr": "005603c9",
         "call_type": "direct",
-        "caller": "FUN_0055ef50",
+        "caller": "core_zombie.cpp_FUN_0055ef50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -532,7 +532,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_00561010(int param_1,float param_2)",
+      "text": "uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +540,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_00561010(int param_1,float param_2)",
+      "text": "uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -836,7 +836,7 @@
       "line": 148,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"?%s can't pick up %s, sombody else beat me to it!\\n\" + 1,param_1,",
+      "text": "(PTR_DAT_005ad350,\"%s can't pick up %s, sombody else beat me to it!\\n\",param_1,",
       "type": "unnamed_param"
     },
     {

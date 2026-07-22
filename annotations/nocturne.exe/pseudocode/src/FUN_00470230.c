@@ -28,7 +28,7 @@ bool FUN_00470230(uint param_1,uint param_2)
   uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                     ("[N]o, please, I didn't mean to do it!");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_17c,uVar2);
-  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_0057e64b);
+  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("yn");
   pcVar5 = local_168;
   do {
     cVar1 = *pcVar3;

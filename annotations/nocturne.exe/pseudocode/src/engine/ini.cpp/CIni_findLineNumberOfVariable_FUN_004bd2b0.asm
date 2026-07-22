@@ -14,7 +14,7 @@
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004bd480 at 004bd4bb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058652d
+;   TerminatedCString s_rt_0058652d
 ;   string s_..\\engine\\ini.cpp_00586530
 ;   string s_cIni::FindLineNumberOfVariable:_U_00586542
 ;   string s_[%s]_00586577
@@ -40,7 +40,7 @@ section .text
     PUSH EBP                            ; 004bd2b3
     SUB ESP,0x204                       ; 004bd2b4
     MOV EAX,dword ptr [ESP + 0x218]     ; 004bd2ba
-    PUSH 0x58652d                       ; 004bd2c1 | DAT_0058652d
+    PUSH 0x58652d                       ; 004bd2c1 | = "rt"
     MOV EDX,dword ptr [ESP + 0x228]     ; 004bd2c6
     XOR EBX,EBX                         ; 004bd2cd
     PUSH EDX                            ; 004bd2cf

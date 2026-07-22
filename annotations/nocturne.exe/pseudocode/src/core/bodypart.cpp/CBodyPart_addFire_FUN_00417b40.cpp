@@ -39,7 +39,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(int param_1,uint *
     pcVar8 = (char *)(param_1 + 400);
     puVar6[0x59] = 0x3fc00000;
     *(uint *)(param_1 + 0xfc) = 1;
-    pcVar7 = "GCHAR2.RAW" + 1;
+    pcVar7 = "CHAR2.RAW";
     *(uint *)(param_1 + 0x184) = 1;
     do {
       cVar1 = *pcVar7;

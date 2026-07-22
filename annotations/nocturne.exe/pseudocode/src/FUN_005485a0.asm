@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0040b300 at 0040b630
 ;   FUN_0043d1c0 at 0043d547
 ;   FUN_00477890 at 00477d3e
 ;   FUN_004b27c0 at 004b2f07
 ;   FUN_004c71a0 at 004c7720
 ;   FUN_00515ea0 at 005163a6
 ;   FUN_00545c30 at 005463c1
+;   core_actor.cpp_FUN_0040b300 at 0040b630
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af53
 ;
 ; Called Functions:

@@ -111,7 +111,7 @@ void FUN_004980d0(int param_1,uint param_2)
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                      (*(uint *)(iVar2 + 0x330),"?CCrossbow" + 1);
+                      (*(uint *)(iVar2 + 0x330),"CCrossbow");
     if (iVar2 != 0) {
       core_xform_cpp_getTranslation_FUN_0055bc00(local_2ec,local_40);
       core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_2ec,local_34);

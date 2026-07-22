@@ -9,7 +9,7 @@
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004243a7
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\cloth.cpp_0057aee4+1
+;   TerminatedCString s_core_cloth_cpp_0057aee5
 ;   string s_CClothList::load_-_out_of_memory_0057aef7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -61,7 +61,7 @@ section .text
     TEST EAX,EAX                        ; 004382b4
     JNZ 0x004382da                      ; 004382b6
         ;   XREF to: 004382da (CONDITIONAL_JUMP)  ; LAB_004382da
-    MOV ECX,0x57aee5                    ; 004382b8 | s_..\core\cloth.cpp_0057aee4+1
+    MOV ECX,0x57aee5                    ; 004382b8 | = "..\\core\\cloth.cpp"
     MOV EAX,0x5a9                       ; 004382bd
     PUSH 0x57aef7                       ; 004382c2 | = "CClothList::load - out of memory for ..."
     MOV dword ptr [0x01cc4800],ECX      ; 004382c7 | DAT_01cc4800

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bat_cpp_CBat_process_FUN_00411c40(int param_1,float param_2)
 
 {
@@ -24,15 +22,15 @@ void core_bat_cpp_CBat_process_FUN_00411c40(int param_1,float param_2)
   *(float *)(param_1 + 0x2fc) = *(float *)(param_1 + 0x300) * param_2 + *(float *)(param_1 + 0x2fc);
   core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(param_1);
   fVar2 = *(float *)(param_1 + 0x24) - fVar2;
-  fVar6 = (fVar2 * (float)_DAT_00578807) / param_2 + (float)_DAT_0057880f;
-  if (fVar6 < (float)_DAT_00578817) {
+  fVar6 = (fVar2 * (float)4) / param_2 + (float)35;
+  if (fVar6 < (float)10) {
     fVar6 = 10.0;
   }
-  if ((float)_DAT_0057881f < fVar6) {
+  if ((float)60 < fVar6) {
     fVar6 = 60.0;
   }
   *(float *)(param_1 + 0x308) =
-       (fVar6 - *(float *)(param_1 + 0x308)) * (float)_DAT_00578827 + *(float *)(param_1 + 0x308);
+       (fVar6 - *(float *)(param_1 + 0x308)) * (float)0.69999999999999996 + *(float *)(param_1 + 0x308);
   *(float *)(param_1 + 0x17c) =
        param_2 * *(float *)(param_1 + 0x308) * *(float *)(param_1 + 0x304) +
        *(float *)(param_1 + 0x17c);

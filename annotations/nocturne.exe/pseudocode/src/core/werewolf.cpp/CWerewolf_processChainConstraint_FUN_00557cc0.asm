@@ -34,8 +34,8 @@
 ;   core_werewolf.cpp_CWerewolf_process_FUN_00555c60 at 00556068
 ;
 ; Referenced Globals:
-;   string s_Chain_stretched_to_%f_00597ef1
-;   undefined4 DAT_00597f09
+;   TerminatedCString s_Chain_stretched_to_f_00597ef1
+;   double DOUBLE_00597f09 = 2
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
     FLD float ptr [EBP + -0x54]         ; 00557d34
     ADD ESP,0xc                         ; 00557d37
-    FCOMP double ptr [0x00597f09]       ; 00557d3a | DAT_00597f09
+    FCOMP double ptr [0x00597f09]       ; 00557d3a | DOUBLE_00597f09
     FNSTSW AX                           ; 00557d40
     SAHF                                ; 00557d42
     JC 0x00557e5b                       ; 00557d43

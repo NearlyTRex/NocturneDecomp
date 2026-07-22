@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param_1,float *param_2,float *param_3)
 
 {
@@ -25,26 +23,26 @@ float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param
   param_2[1] = local_18;
   param_2[1] = param_2[1] * param_2[1] * *(float *)(param_1 + 0x154);
   local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                              (*(float *)(param_1 + 0x150) * (float)_DAT_00581747,
-                               *(float *)(param_1 + 0x150) * (float)_DAT_0058173f);
+                              (*(float *)(param_1 + 0x150) * (float)-0.5,
+                               *(float *)(param_1 + 0x150) * (float)0.5);
   *param_2 = local_18;
   fVar6 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                           (*(float *)(param_1 + 0x158) * (float)_DAT_00581747,
-                            *(float *)(param_1 + 0x158) * (float)_DAT_0058173f);
+                           (*(float *)(param_1 + 0x158) * (float)-0.5,
+                            *(float *)(param_1 + 0x158) * (float)0.5);
   param_2[2] = fVar6;
   if (param_3 != (float *)0x0) {
     fVar6 = *param_2 - *param_3;
     fVar4 = param_2[1] - param_3[1];
     fVar5 = param_2[2] - param_3[2];
     fVar3 = SQRT(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
-    if ((float)_DAT_0058174f < fVar3) {
-      fVar4 = fVar4 * _DAT_00581757;
-      fVar5 = fVar5 * _DAT_00581757;
+    if ((float)4 < fVar3) {
+      fVar4 = fVar4 * 4.0f;
+      fVar5 = fVar5 * 4.0f;
       fVar3 = 1.0 / fVar3;
       fVar1 = param_3[1];
       fVar2 = param_3[2];
       if (param_2 != local_2c) {
-        *param_2 = *param_3 + fVar6 * _DAT_00581757 * fVar3;
+        *param_2 = *param_3 + fVar6 * 4.0f * fVar3;
         param_2[1] = fVar1 + fVar4 * fVar3;
         param_2[2] = fVar2 + fVar5 * fVar3;
         return param_2;

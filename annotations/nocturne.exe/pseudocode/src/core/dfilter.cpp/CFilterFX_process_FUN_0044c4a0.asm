@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   string s_movscrn.raw_0057c0f5
-;   undefined4 DAT_0057c105
+;   double DOUBLE_0057c105 = 30
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 0044c4c9
     MOV ESI,dword ptr [0x005b9354]      ; 0044c4ca | DAT_005b9354
     FLD float ptr [ESI + 0x264]         ; 0044c4d0 | DAT_01c77850
-    FMUL double ptr [0x0057c105]        ; 0044c4d6 | DAT_0057c105
+    FMUL double ptr [0x0057c105]        ; 0044c4d6 | DOUBLE_0057c105
     LEA EAX,[EBX + 0x8]                 ; 0044c4dc
     FADD float ptr [EAX]                ; 0044c4df
     FSTP float ptr [EAX]                ; 0044c4e1

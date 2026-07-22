@@ -15,9 +15,9 @@
 ;   undefined4 DAT_01c77850
 ;
 ; Called Functions:
+;   core_charactr.cpp_FUN_004259f0
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   FUN_004259f0
 ;   FUN_00535900
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005357d4
     PUSH dword ptr [ESP + 0x14]         ; 005357d8
     PUSH EBX                            ; 005357dc
-    CALL FUN_004259f0                   ; 005357dd
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 005357dd
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 005357e2
     TEST EAX,EAX                        ; 005357e5
     JNZ 0x0053585b                      ; 005357e7

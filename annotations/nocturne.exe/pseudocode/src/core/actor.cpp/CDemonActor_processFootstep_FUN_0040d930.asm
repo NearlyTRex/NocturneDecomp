@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578011
+;   float FLOAT_00578011 = 10000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3fd0
@@ -53,7 +53,7 @@ section .text
     FSUB float ptr [ESP + 0x8]          ; 0040d974
     FMUL ST0                            ; 0040d978
     FADDP                               ; 0040d97a
-    FCOMP float ptr [0x00578011]        ; 0040d97c | DAT_00578011
+    FCOMP float ptr [0x00578011]        ; 0040d97c | FLOAT_00578011
     FNSTSW AX                           ; 0040d982
     SAHF                                ; 0040d984
     JBE 0x0040d990                      ; 0040d985

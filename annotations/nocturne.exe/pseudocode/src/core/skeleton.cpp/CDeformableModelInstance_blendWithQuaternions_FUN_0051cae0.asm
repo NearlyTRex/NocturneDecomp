@@ -37,10 +37,10 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10
+;   core_xform.cpp_FUN_0055d0d0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;   FUN_004c8440
-;   FUN_0055d0d0
 ;
 ; *****************************************************************************
 
@@ -308,8 +308,8 @@ section .text
     PUSH EAX                            ; 0051ced2
     LEA ESI,[ESP + 0x24]                ; 0051ced3
     LEA EDI,[ESP + 0x44]                ; 0051ced7
-    CALL FUN_0055d0d0                   ; 0051cedb
-        ;   XREF to: 0055d0d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d0d0()
+    CALL core_xform.cpp_FUN_0055d0d0    ; 0051cedb
+        ;   XREF to: 0055d0d0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d0d0()
     ADD ESP,0x4                         ; 0051cee0
     LEA EAX,[ESP + 0x40]                ; 0051cee3
     LEA ESI,[ESP + 0x20]                ; 0051cee7

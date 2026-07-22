@@ -34,10 +34,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b4de
-;   undefined4 DAT_0057b4e6
-;   undefined4 DAT_0057b4ee
-;   undefined4 DAT_0057b4f6
+;   double DOUBLE_0057b4de = 2
+;   double DOUBLE_0057b4e6 = 0.5
+;   double DOUBLE_0057b4ee = 252
+;   double DOUBLE_0057b4f6 = 65536
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -136,7 +136,7 @@ section .text
     FLD float ptr [EBX + 0x150]         ; 0043dbe0
         ;   Label: LAB_0043dbe0
     FCHS                                ; 0043dbe6
-    FMUL double ptr [0x0057b4e6]        ; 0043dbe8 | DAT_0057b4e6
+    FMUL double ptr [0x0057b4e6]        ; 0043dbe8 | DOUBLE_0057b4e6
     MOV ECX,dword ptr [ESP + 0x58]      ; 0043dbee
     XOR EDX,EDX                         ; 0043dbf2
     FSTP float ptr [ESP + 0x64]         ; 0043dbf4
@@ -230,13 +230,13 @@ section .text
     FLD float ptr [EBX + 0x150]         ; 0043dcde
         ;   Label: LAB_0043dcde
     FLD ST0                             ; 0043dce4
-    FMUL double ptr [0x0057b4e6]        ; 0043dce6 | DAT_0057b4e6
+    FMUL double ptr [0x0057b4e6]        ; 0043dce6 | DOUBLE_0057b4e6
     FADD float ptr [EAX + 0xc]          ; 0043dcec
     FDIVRP                              ; 0043dcef
-    FLD double ptr [0x0057b4ee]         ; 0043dcf1 | DAT_0057b4ee
+    FLD double ptr [0x0057b4ee]         ; 0043dcf1 | DOUBLE_0057b4ee
     FXCH                                ; 0043dcf7
     FMUL ST1                            ; 0043dcf9
-    FLD double ptr [0x0057b4f6]         ; 0043dcfb | DAT_0057b4f6
+    FLD double ptr [0x0057b4f6]         ; 0043dcfb | DOUBLE_0057b4f6
     FXCH                                ; 0043dd01
     FMUL ST1                            ; 0043dd03
     CALL crt_math.c_round_FUN_00563a30  ; 0043dd05
@@ -545,7 +545,7 @@ section .text
     FLD float ptr [EBX + 0x1f4]         ; 0043e0ad
         ;   Label: LAB_0043e0ad
     FLD ST0                             ; 0043e0b3
-    FMUL double ptr [0x0057b4de]        ; 0043e0b5 | DAT_0057b4de
+    FMUL double ptr [0x0057b4de]        ; 0043e0b5 | DOUBLE_0057b4de
     FSTP ST1                            ; 0043e0bb
     FSTP float ptr [EBX + 0x1f4]        ; 0043e0bd
     JMP 0x0043dafe                      ; 0043e0c3

@@ -33,7 +33,7 @@ uint __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(int 
   uVar3 = core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(param_1,param_4);
 LAB_00453e56:
   if (*(int *)(param_1 + 0x358) == 0) {
-    _DAT_01cc4800 = "p?..\\core\\dmodel.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
     _DAT_01cc4804 = 0x40e;
     uVar3 = FUN_004c8440("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",param_1);
   }

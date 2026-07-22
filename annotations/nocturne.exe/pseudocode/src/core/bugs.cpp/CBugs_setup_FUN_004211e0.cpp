@@ -62,8 +62,8 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
   }
   local_28 = 0;
   if (0 < *(int *)(param_1 + 0xbd28)) {
-    fVar11 = _DAT_0059aea8 * _DAT_00579c45;
-    fVar12 = _DAT_0059aea8 * _DAT_00579c49;
+    fVar11 = _DAT_0059aea8 * 12.0f;
+    fVar12 = _DAT_0059aea8 * -12.0f;
     puVar10 = (uint *)(param_1 + 0xbd4c);
     puVar7 = (uint *)(param_1 + 0xbd40);
     local_2c = (uint *)(param_1 + 0xbd34);
@@ -72,8 +72,8 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
       *puVar8 = 0;
       uVar4 = core_actor_cpp_getRandomInt_FUN_0040de00
                         (0,*(int *)(param_1 + 0x1212c) + -1,fVar11,fVar12);
-      fVar1 = fVar11 * (float)_DAT_00579c4d;
-      fVar2 = fVar12 * (float)_DAT_00579c4d;
+      fVar1 = fVar11 * (float)0.5;
+      fVar2 = fVar12 * (float)0.5;
       puVar8[1] = uVar4;
       uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar2,fVar1);
       puVar8[3] = 0;

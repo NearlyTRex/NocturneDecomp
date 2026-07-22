@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005576a0(int param_1)
 
 {
@@ -25,9 +23,9 @@ uint FUN_005576a0(int param_1)
     return 0;
   }
   if (1.0 < *(float *)(param_1 + 0xbd68)) {
-    *(float *)(param_1 + 0xbd68) = *(float *)(param_1 + 0xbd68) + _DAT_00597e35;
+    *(float *)(param_1 + 0xbd68) = *(float *)(param_1 + 0xbd68) + -1.0f;
   }
-  if (*(float *)(param_1 + 0xbd68) <= (float)_DAT_00597e39) {
+  if (*(float *)(param_1 + 0xbd68) <= (float)0.80000000000000004) {
     if (*(int *)(param_1 + 0x2618) != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
       puVar3 = (uint *)(param_1 + 0xfd0 + *(int *)(param_1 + 0xbd38) * 0x30);

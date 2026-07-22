@@ -1,0 +1,27 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+#include "types/classes/CFileBitStream.h"
+#include "types/classes/CMemoryBitStream.h"
+
+// Structure: CMP3Decoder
+// Ghidra size: 0x8630 (34352 bytes)
+#pragma pack(push, 1)
+typedef struct CMP3Decoder {
+    char filename[256]; // 0x0
+    int sample_rate; // 0x100
+    int num_channels; // 0x104
+    int available_samples; // 0x108
+    short* decode_buffer_pos; // 0x10c
+    short decode_buffer[2304]; // 0x110
+    CMemoryBitStream memory_bitstream; // 0x1310
+    CFileBitStream file_bitstream; // 0x5320
+    int main_data_offset; // 0x534c
+    float synthesis_v_buffer[2][1024]; // 0x5350
+    int synthesis_buffer_index[2]; // 0x7350
+    int layer3_scalefactors[54]; // 0x7358
+    float synthesis_history[2][32][18]; // 0x7430
+} CMP3Decoder;
+#pragma pack(pop)
+

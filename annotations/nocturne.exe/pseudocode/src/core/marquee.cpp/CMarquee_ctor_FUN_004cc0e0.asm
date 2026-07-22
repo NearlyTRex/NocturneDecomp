@@ -12,8 +12,8 @@
 ;   undefined1* PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4 = 004cc2e0
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDI                            ; 004cc0e1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cc0e2
     PUSH EDX                            ; 004cc0e6
-    CALL FUN_00409d30                   ; 004cc0e7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004cc0e7
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 004cc0ec
     ADD EAX,0x19c                       ; 004cc0ef
     PUSH EAX                            ; 004cc0f4

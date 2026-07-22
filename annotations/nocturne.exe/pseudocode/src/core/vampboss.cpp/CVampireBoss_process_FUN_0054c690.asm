@@ -95,10 +95,10 @@
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428780
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_cloth.cpp_CCloth_process_FUN_00436e50
-;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
         ;   XREF to: 0054c6a7 (CONDITIONAL_JUMP)  ; LAB_0054c6a7
     PUSH dword ptr [EBP + 0x18]         ; 0054c6bb
     PUSH EBX                            ; 0054c6be
-    CALL FUN_004259f0                   ; 0054c6bf
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 0054c6bf
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 0054c6c4
     TEST EAX,EAX                        ; 0054c6c7
     JZ 0x0054cca8                       ; 0054c6c9
@@ -1162,8 +1162,8 @@ section .text
     ADD ESP,0x4                         ; 0054d348
     PUSH dword ptr [EBP + 0x18]         ; 0054d34b
     PUSH EBX                            ; 0054d34e
-    CALL FUN_0042a150                   ; 0054d34f
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 0054d34f
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 0054d354
     PUSH ESI                            ; 0054d357
     PUSH dword ptr [EBX + 0x240c]       ; 0054d358

@@ -51,7 +51,7 @@ void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(int param_1,int param_2)
          ((*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde8) * 4) != 0 ||
           (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0)))) {
         uVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                          (param_1 + 0x150,"@lookForHead" + 1,0);
+                          (param_1 + 0x150,"lookForHead",0);
         iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar2);
         if (-1 < iVar1) {
           uVar3 = 9;

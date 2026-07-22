@@ -11,7 +11,7 @@ uint FUN_00467890(uint param_1,uint param_2)
 {
   int iVar1;
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057e1d5,param_2,&DAT_0057e1d2);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rb");
   if (iVar1 == 0) {
     return 0;
   }

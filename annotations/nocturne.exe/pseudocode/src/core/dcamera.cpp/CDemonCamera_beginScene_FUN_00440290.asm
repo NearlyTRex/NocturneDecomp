@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00507f80 at 0050803f
-;   FUN_00509a80 at 00509b0a
-;   FUN_0050aba0 at 0050acb9
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b07
+;   core_set.cpp_FUN_00507f80 at 0050803f
+;   core_set.cpp_FUN_00509a80 at 00509b0a
+;   core_set.cpp_FUN_0050aba0 at 0050acb9
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_3_0044028c = 00440316

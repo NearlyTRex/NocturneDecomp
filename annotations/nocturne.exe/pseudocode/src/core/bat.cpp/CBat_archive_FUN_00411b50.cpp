@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bat_cpp_CBat_archive_FUN_00411b50(int param_1)
 
 {
@@ -16,7 +14,7 @@ void core_bat_cpp_CBat_archive_FUN_00411b50(int param_1)
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2fc,"param");
   if (0x00000004 < 3) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x304,"speed");
-    *(float *)(param_1 + 0x300) = *(float *)(param_1 + 0x304) * (float)_DAT_005787ff;
+    *(float *)(param_1 + 0x300) = *(float *)(param_1 + 0x304) * (float)30;
   }
   else {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x304,"flapSpeedMult");

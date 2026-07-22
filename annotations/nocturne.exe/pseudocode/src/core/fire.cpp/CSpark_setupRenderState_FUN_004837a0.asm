@@ -14,7 +14,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a7fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005810d4
+;   double DOUBLE_005810d4 = -65536
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
@@ -90,7 +90,7 @@ section .text
     MOV EDI,ESP                         ; 0048386e
     LEA ESI,[ESP + 0x28]                ; 00483870
     MOVSD.REP ES:EDI,ESI                ; 00483874
-    FLD double ptr [0x005810d4]         ; 00483876 | DAT_005810d4
+    FLD double ptr [0x005810d4]         ; 00483876 | DOUBLE_005810d4
     FLD float ptr [ESP + 0x8]           ; 0048387c
     FMUL ST1                            ; 00483880
     FLD float ptr [ESP + 0x14]          ; 00483882

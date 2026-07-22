@@ -21,15 +21,15 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0(void)
   
   BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&DAT_02de07e0);
   if (BVar1 == 1) {
-    _DAT_02de07e8 = (double)_DAT_02de07e0 + (double)_DAT_02de07e4 * _DAT_00597f29;
+    _DAT_02de07e8 = (double)_DAT_02de07e0 + (double)_DAT_02de07e4 * 4294967296;
     QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02de07d8);
   }
   else {
     _DAT_02de07f4 = 1;
     MVar4 = timeBeginPeriod(1);
     if (MVar4 != 0) {
-      iVar2 = MessageBoxA(_DAT_02de2098,"@Unable to set timer" + 1,PTR_s_Nocturne_005c165c,
-                          0x31);
+      iVar2 = MessageBoxA(_DAT_02de2098,"Unable to set timer",PTR_s_Nocturne_005c165c,0x31)
+      ;
       if (iVar2 == 2) {
         _DAT_02de20a0 = 1;
       }

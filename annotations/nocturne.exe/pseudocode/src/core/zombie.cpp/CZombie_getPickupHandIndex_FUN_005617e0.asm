@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0055ef50 at 0055f40d
-;   FUN_00561010 at 005611be
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880 at 0056188b
+;   core_zombie.cpp_FUN_0055ef50 at 0055f40d
+;   core_zombie.cpp_FUN_00561010 at 005611be
 ;
 ; Referenced Globals:
 ;   string s_jeff.dfm_0059887a
-;   undefined4 DAT_00598883
+;   TerminatedCString s_new_00598883
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
@@ -42,7 +42,7 @@ section .text
     PUSH 0x3                            ; 00561806
         ;   Label: LAB_00561806
     MOV EAX,dword ptr [EBP + 0xc]       ; 00561808
-    PUSH 0x598883                       ; 0056180b | DAT_00598883
+    PUSH 0x598883                       ; 0056180b | = "new"
     ADD EAX,0x23b0                      ; 00561810
     PUSH EAX                            ; 00561815
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 00561816

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_00428100
+;   core_charactr.cpp_FUN_00428100
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00540937
     PUSH ESI                            ; 0054093b
     PUSH EBX                            ; 0054093c
-    CALL FUN_00428100                   ; 0054093d
-        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; undefined FUN_00428100()
+    CALL core_charactr.cpp_FUN_00428100 ; 0054093d
+        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428100()
     ADD ESP,0xc                         ; 00540942
     POP ESI                             ; 00540945
     POP EBX                             ; 00540946

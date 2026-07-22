@@ -72,7 +72,8 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(uint param_1,u
   local_30 = 1.0 / param_4;
   iVar2 = 1;
   do {
-    fVar4 = (float10)iVar2 * ((float10)_DAT_0057c93e / (float10)local_bc) * (float10)_DAT_0057c916;
+    fVar4 = (float10)iVar2 * ((float10)18 / (float10)local_bc) *
+            (float10)0.125;
     local_c0 = (float)fVar4;
     Var8 = fpatan(fVar4,(float10)1);
     fVar4 = (float10)fcos(Var8);
@@ -80,12 +81,12 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(uint param_1,u
     local_1c = (float)(fVar4 * (float10)param_4);
     do {
       piVar1 = DAT_005ae704;
-      fVar4 = (float10)iVar3 * (float10)_DAT_0057c91e * (float10)_DAT_0057c926 *
-              (float10)_DAT_0057c92e;
+      fVar4 = (float10)iVar3 * (float10)5.1392085562440189e-315._0_4_ * (float10)3.1415926535000001 *
+              (float10)2;
       iVar3 = iVar3 + 1;
       fVar5 = (float10)fsin(fVar4);
-      fVar9 = (float10)iVar3 * (float10)_DAT_0057c91e * (float10)_DAT_0057c926 *
-              (float10)_DAT_0057c92e;
+      fVar9 = (float10)iVar3 * (float10)5.1392085562440189e-315._0_4_ * (float10)3.1415926535000001 *
+              (float10)2;
       fVar6 = (float10)fsin(fVar9);
       fVar4 = (float10)fcos(fVar4);
       fVar9 = (float10)fcos(fVar9);
@@ -99,7 +100,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(uint param_1,u
       local_90 = local_88 * local_2c;
       fVar4 = (float10)local_88;
       local_8c = local_88 * local_28;
-      fVar6 = (float10)_DAT_0057c936;
+      fVar6 = (float10)1024;
       uVar11 = 0x451d45;
       local_40 = local_88;
       local_18 = iVar3;

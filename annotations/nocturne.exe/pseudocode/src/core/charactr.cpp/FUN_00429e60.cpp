@@ -1,15 +1,15 @@
-// Name: FUN_00429e60
+// Name: core_charactr.cpp_FUN_00429e60
 // Address: 00429e60
 // Address Range: [[00429e60, 00429f58]]
 // Convention: unknown
-// Signature: void FUN_00429e60(int param_1)
+// Signature: void core_charactr_cpp_FUN_00429e60(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00429e60(int param_1)
+void core_charactr_cpp_FUN_00429e60(int param_1)
 
 {
   uint *puVar1;
@@ -31,7 +31,7 @@ void FUN_00429e60(int param_1)
       _DAT_01cc4804 = 0xdf9;
       FUN_004c8440("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s",param_1);
     }
-    FUN_0055d4a0(*(uint *)(param_1 + 0x25d4));
+    core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x25d4));
     local_44 = local_24;
     *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8);
@@ -42,7 +42,7 @@ void FUN_00429e60(int param_1)
          *(uint *)
           ((int)(&stack0xffffffe4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
           ((uint)bVar3 * -2 + 1) * 4);
-    FUN_0055d4e0(*(uint *)(param_1 + 0x25d0),&stack0xffffffbc);
+    core_xform_cpp_FUN_0055d4e0(*(uint *)(param_1 + 0x25d0),&stack0xffffffbc);
     local_54 = local_14;
     *(uint *)((int)&stack0xffffffb0 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8);

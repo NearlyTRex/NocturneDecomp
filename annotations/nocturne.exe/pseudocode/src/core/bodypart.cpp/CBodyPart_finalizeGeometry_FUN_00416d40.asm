@@ -42,8 +42,8 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005790b2
-;   undefined4 DAT_005790ba
+;   double DOUBLE_005790b2 = 0.00390625
+;   double DOUBLE_005790ba = 65535
 ;   undefined4 DAT_02dd1184
 ;   undefined4 DAT_02dd1188
 ;   undefined4 DAT_02dd118c
@@ -203,7 +203,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x44]      ; 00416eae
     MOV dword ptr [ESP + 0x84],EAX      ; 00416eb2
     ADD ECX,EBX                         ; 00416eb9
-    FLD double ptr [0x005790b2]         ; 00416ebb | DAT_005790b2
+    FLD double ptr [0x005790b2]         ; 00416ebb | DOUBLE_005790b2
     FILD dword ptr [ESP + 0x84]         ; 00416ec1
     FMUL ST1                            ; 00416ec8
     MOV dword ptr [ESP + 0x44],ECX      ; 00416eca
@@ -439,7 +439,7 @@ section .text
     JNC 0x00417305                      ; 004171d8
         ;   XREF to: 00417305 (CONDITIONAL_JUMP)  ; LAB_00417305
     FLD double ptr [ESP + 0x18]         ; 004171de
-    FLD double ptr [0x005790ba]         ; 004171e2 | DAT_005790ba
+    FLD double ptr [0x005790ba]         ; 004171e2 | DOUBLE_005790ba
     FDIV double ptr [ESP]               ; 004171e8
     FXCH                                ; 004171eb
     FMUL ST1                            ; 004171ed

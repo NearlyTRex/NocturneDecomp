@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005810cc
+;   double DOUBLE_005810cc = 0.0000152587890625
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01c775ec
@@ -43,7 +43,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00483710
     MOV dword ptr [ESP + 0x4],EAX       ; 00483714
     FILD dword ptr [ESP + 0x4]          ; 00483718
-    FMUL double ptr [0x005810cc]        ; 0048371c | DAT_005810cc
+    FMUL double ptr [0x005810cc]        ; 0048371c | DOUBLE_005810cc
     SUB ESP,0x4                         ; 00483722
     MOV EDI,dword ptr [0x005b9354]      ; 00483725 | DAT_005b9354
     FSTP float ptr [ESP]                ; 0048372b

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0055ef50 at 0055f094
-;   FUN_00561010 at 00561413
+;   core_zombie.cpp_FUN_0055ef50 at 0055f094
+;   core_zombie.cpp_FUN_00561010 at 00561413
 ;
 ; Referenced Globals:
-;   string s_CHASE_2_005989a8
+;   TerminatedCString s_CHASE_2_005989a8
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00

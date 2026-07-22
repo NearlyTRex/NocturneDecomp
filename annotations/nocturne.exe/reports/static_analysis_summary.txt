@@ -10,31 +10,31 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with static analysis data: 511
-  Functions flagged by multiple tools: 1
+  Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
-    Files analyzed:      7
-    Files with findings: 7
-    Total diagnostics:   14
+    Files analyzed:      8
+    Files with findings: 8
+    Total diagnostics:   17
 
   Cppcheck (quick):
     Files analyzed:      505
     Files with findings: 505
-    Total diagnostics:   2110
+    Total diagnostics:   2109
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  bugprone-integer-division                                   8  [likely decompiler artifact]
-  bugprone-swapped-arguments                                  4  [likely decompiler artifact]
-  cert-flp30-c                                                2
+  bugprone-integer-division                                   9  [likely decompiler artifact]
+  cert-flp30-c                                                4
+  bugprone-swapped-arguments                                  4
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                1030  [likely decompiler artifact]
+  uninitvar                                                1028  [likely decompiler artifact]
   objectIndex                                               430  [likely decompiler artifact]
   legacyUninitvar                                           191
   shiftTooManyBitsSigned                                    171
@@ -44,7 +44,7 @@ TOP FINDINGS - Cppcheck (quick)
   arrayIndexOutOfBounds                                      30
   ignoredReturnValue                                         26
   selfAssignment                                             14
-  invalidPointerCast                                          9
+  invalidPointerCast                                         10
   identicalInnerCondition                                     9
   shiftNegativeLHS                                            7
   nullPointer                                                 5

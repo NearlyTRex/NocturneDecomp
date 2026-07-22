@@ -1,0 +1,15 @@
+#pragma once
+
+// Enum: EWeaponType
+enum {
+    WEAPON_TYPE_GUN = 0x0,
+    WEAPON_TYPE_SHOTGUN = 0x1,
+    WEAPON_TYPE_LIGHT_GUN = 0x2,
+    WEAPON_TYPE_DYNAMITE = 0x3,
+    WEAPON_TYPE_TOMMY_GUN = 0x4,
+    WEAPON_TYPE_FLASHLIGHT = 0x5,
+    WEAPON_TYPE_MELEE = 0x6,
+    WEAPON_TYPE_BARON = 0x7
+};
+typedef int EWeaponType;
+

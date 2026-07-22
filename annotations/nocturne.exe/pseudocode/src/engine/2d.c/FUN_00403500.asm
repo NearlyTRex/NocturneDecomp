@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00403500(undefined4 param_1)
+; void engine_2d_c_FUN_00403500(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_00403460 at 0040349e
+;   engine_2d.c_FUN_00403460 at 0040349e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00577207
-;   undefined4 DAT_0057720a
-;   string s_..\\engine\\2d.c_0057720e
+;   TerminatedCString s_wb_00577207
+;   TerminatedCString s_fog_0057720a
+;   TerminatedCString s_engine_2d_c_0057720e
 ;   string s_Unable_to_write_light_tab_0057721d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -26,11 +26,11 @@
 section .text
 
     PUSH EBX                            ; 00403500
-        ;   Label: FUN_00403500
-    PUSH 0x577207                       ; 00403501 | DAT_00577207
+        ;   Label: engine_2d.c_FUN_00403500
+    PUSH 0x577207                       ; 00403501 | = "wb"
     MOV EDX,dword ptr [ESP + 0xc]       ; 00403506
     PUSH EDX                            ; 0040350a
-    PUSH 0x57720a                       ; 0040350b | DAT_0057720a
+    PUSH 0x57720a                       ; 0040350b | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403510
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00403515

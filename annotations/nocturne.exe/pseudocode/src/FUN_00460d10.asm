@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_0044f9b0 at 0044fb30
 ;   FUN_00469ce0 at 00469d34
-;   FUN_0050d910 at 0050d95f
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0 at 00441061
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350 at 004513a4
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f4a6
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450695
+;   core_dlight.cpp_FUN_0044f9b0 at 0044fb30
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d303
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0 at 0050d6f5
+;   core_set.cpp_FUN_0050d910 at 0050d95f
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraOrigin_FUN_004ce760

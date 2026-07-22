@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
@@ -33,11 +31,11 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_
       uVar6 = (int)(param_3 - (uint)pbVar5[2]) >> 0x1f;
       fVar3 = ABS(SQRT((float)param_3 * (float)param_3 +
                        (float)param_2 * (float)param_2 + (float)param_1 * (float)param_1) *
-                  (float)_DAT_0057712c - *(float *)((int)&DAT_006af638 + iVar7));
+                  (float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));
       fVar4 = (float)(int)((param_3 - (uint)pbVar5[2] ^ uVar6) - uVar6);
-      fVar1 = fVar3 * fVar3 * (float)_DAT_0057714c +
-              fVar4 * fVar4 * (float)_DAT_00577144 +
-              fVar2 * fVar2 * (float)_DAT_0057713c + fVar1 * fVar1 * (float)_DAT_00577134;
+      fVar1 = fVar3 * fVar3 * (float)0.14999999999999999 +
+              fVar4 * fVar4 * (float)0.11 +
+              fVar2 * fVar2 * (float)0.58999999999999997 + fVar1 * fVar1 * (float)0.29999999999999999;
       if (fVar1 < local_20) {
         unaff_EDI = param_4;
         local_20 = fVar1;

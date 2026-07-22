@@ -1,24 +1,24 @@
-// Name: FUN_00403070
+// Name: engine_2d.c_FUN_00403070
 // Address: 00403070
 // Address Range: [[00403070, 0040312f]]
 // Convention: unknown
-// Signature: void FUN_00403070(undefined4 param_1,undefined4 param_2)
+// Signature: void engine_2d_c_FUN_00403070(undefined4 param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00403070(uint param_1,uint param_2)
+void engine_2d_c_FUN_00403070(uint param_1,uint param_2)
 
 {
   int iVar1;
   int iVar2;
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057718f,param_1,&DAT_0057718c);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("fog",param_1,"rb");
   if (iVar1 == 0) {
-    FUN_00402e90(param_2);
-    FUN_00403130(param_1);
-    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00577196,param_1,&DAT_00577193);
+    engine_2d_c_FUN_00402e90(param_2);
+    engine_2d_c_FUN_00403130(param_1);
+    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("fog",param_1,"rb");
   }
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\2d.c";

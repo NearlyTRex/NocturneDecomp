@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(int param_1,int *param_2)
 
 {
@@ -16,7 +14,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(int par
   puVar1 = PTR_DAT_005ad350;
   if (((param_2[0xc] != 0x6c) && (*param_2 == *(int *)(param_1 + 0xbd3c))) && (param_2[0xc] == 0x68)
      ) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_0057d82e);
+    param_2[1] = (int)((float)param_2[1] * (float)20);
     engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar1,"Shot thru the heart\n");
     return;
   }

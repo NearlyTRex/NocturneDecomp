@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00402d30 at 00402d46
-;   FUN_00402d60 at 00402dba
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d9b2
+;   engine_2d.c_FUN_00402d30 at 00402d46
+;   engine_2d.c_FUN_00402d60 at 00402dba
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextColor_FUN_00402a60

@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   FUN_00422050 at 00422340
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422597
+;   core_bugs.cpp_FUN_00422050 at 00422340
 ;
 ; *****************************************************************************
 

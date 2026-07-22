@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_004027f0 at 004027fb
-;   FUN_004028b0 at 004028bb
-;   FUN_00402980 at 00402996
+;   engine_2d.c_FUN_004027f0 at 004027fb
+;   engine_2d.c_FUN_004028b0 at 004028bb
+;   engine_2d.c_FUN_00402980 at 00402996
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_00402c20 at 00402c2b
 ;   engine_2d.c_drawTextCenteredColor_FUN_00402cf0 at 00402d06
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402b60 at 00402b6b

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00432cd0 at 00432e3f
 ;   FUN_004fa2e0 at 004fa3b1
+;   engine_clipper.c_FUN_00432cd0 at 00432e3f
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434ae0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 004580fd
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00 at 00457a81

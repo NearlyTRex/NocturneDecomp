@@ -13,7 +13,7 @@
 ;   string s_modelName_005787c5
 ;   string s_periodicSoundTimerMin_005787cf
 ;   string s_periodicSoundTimerMax_005787e5
-;   undefined4 DAT_005787ff
+;   double DOUBLE_005787ff = 30
 ;   undefined4 DAT_005acf94
 ;
 ; Called Functions:
@@ -83,7 +83,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 00411be7
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     FLD float ptr [EBX + 0x304]         ; 00411bec
-    FMUL double ptr [0x005787ff]        ; 00411bf2 | DAT_005787ff
+    FMUL double ptr [0x005787ff]        ; 00411bf2 | DOUBLE_005787ff
     ADD ESP,0x8                         ; 00411bf8
     FSTP float ptr [EBX + 0x300]        ; 00411bfb
     JMP 0x00411bb9                      ; 00411c01

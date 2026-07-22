@@ -12,12 +12,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   FUN_0055d610 at 0055d642
-;   FUN_0055d660 at 0055d692
+;   core_xform.cpp_FUN_0055d610 at 0055d642
+;   core_xform.cpp_FUN_0055d660 at 0055d692
 ;   core_xform.cpp_lerpMatrix3x4_FUN_0055cc30 at 0055cc9c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00598356
+;   double DOUBLE_00598356 = 0.5
 ;
 ; *****************************************************************************
 
@@ -61,7 +61,7 @@ section .text
     FLD1                                ; 0055cf5e
     FADDP                               ; 0055cf60
     FSQRT                               ; 0055cf62
-    FLD double ptr [0x00598356]         ; 0055cf64 | DAT_00598356
+    FLD double ptr [0x00598356]         ; 0055cf64 | DOUBLE_00598356
     FLD ST0                             ; 0055cf6a
     FDIV ST0,ST2                        ; 0055cf6c
     FLD ST2                             ; 0055cf6e
@@ -101,7 +101,7 @@ section .text
         ;   Label: LAB_0055cfb7
     FADD double ptr [ESP]               ; 0055cfb9
     FSQRT                               ; 0055cfbc
-    FLD double ptr [0x00598356]         ; 0055cfbe | DAT_00598356
+    FLD double ptr [0x00598356]         ; 0055cfbe | DOUBLE_00598356
     FLD ST0                             ; 0055cfc4
     FDIV ST0,ST2                        ; 0055cfc6
     FLD ST2                             ; 0055cfc8
@@ -131,7 +131,7 @@ section .text
     FLD1                                ; 0055d001
     FADDP                               ; 0055d003
     FSQRT                               ; 0055d005
-    FLD double ptr [0x00598356]         ; 0055d007 | DAT_00598356
+    FLD double ptr [0x00598356]         ; 0055d007 | DOUBLE_00598356
     FLD ST0                             ; 0055d00d
     FDIV ST0,ST2                        ; 0055d00f
     FLD ST2                             ; 0055d011
@@ -179,7 +179,7 @@ section .text
     FLD1                                ; 0055d06d
     FADDP                               ; 0055d06f
     FSQRT                               ; 0055d071
-    FLD double ptr [0x00598356]         ; 0055d073 | DAT_00598356
+    FLD double ptr [0x00598356]         ; 0055d073 | DOUBLE_00598356
     FLD ST0                             ; 0055d079
     FDIV ST0,ST2                        ; 0055d07b
     FLD ST2                             ; 0055d07d

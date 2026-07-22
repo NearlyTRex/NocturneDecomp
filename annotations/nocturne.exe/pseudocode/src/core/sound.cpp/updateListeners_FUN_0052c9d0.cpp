@@ -174,7 +174,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
               local_160 = (fVar1 + (float)_DAT_005949fe) * (float)_DAT_005949de + 0.0;
             }
             local_80 = (float)(int)local_8c * fVar2 + 1.0;
-            local_14 = (float)FUN_0050f910(0x01E57284);
+            local_14 = (float)core_setcolid_cpp_FUN_0050f910(0x01E57284);
             if ((float)_DAT_00594a06 < local_14 - local_80) {
               local_160 = ((local_14 - local_80) + (float)_DAT_00594a0e) * (float)_DAT_005949e6 +
                           local_160;

@@ -16,7 +16,7 @@ int core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(uint param_1)
   
   iVar2 = FUN_004f5d90(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_0059b734;
-  pcVar3 = &DAT_0057b1d4;
+  pcVar3 = "none";
   *(uint *)(iVar2 + 0x720) = 0x3f800000;
   *(uint *)(iVar2 + 0x728) = 0x3f800000;
   *(uint *)(iVar2 + 0x724) = 0x3dcccccd;
@@ -31,7 +31,7 @@ int core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_0057b1d9;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x79c);
   do {
     cVar1 = *pcVar3;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_1,float *param_2)
 
 {
@@ -46,14 +44,14 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
   }
   local_80 = SUB84(__BITCAST_UINT64(dVar1),0);
   fVar3 = -param_1[9] * (float)dVar1;
-  if ((float)_DAT_005982c6 < fVar3) {
+  if ((float)-1 < fVar3) {
     if ((double)fVar3 < 1.0) {
       fVar5 = (float10)fVar3;
       fVar6 = (float10)asin(fVar5);
       *param_2 = (float)fVar6;
       dVar1 = (double)SQRT((float10)1 - fVar5 * fVar5);
-      if (fVar6 < (float10)_DAT_005982ce) {
-        *param_2 = *param_2 + _DAT_005982d6;
+      if (fVar6 < (float10)-3.1415926535900001) {
+        *param_2 = *param_2 + 5.3700914947311079e-315._0_4_;
       }
       if (0.0 < dVar1) {
         dVar1 = 1.0 / dVar1;
@@ -63,8 +61,8 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
         uStack_34 = SUB84(__BITCAST_UINT64(dVar2),0);
         local_30 = (uint)((ulonglong)dVar2 >> 0x20);
         uStack_64 = SUB84(__BITCAST_UINT64(dVar1),0);
-        if ((_DAT_005982de <= dVar2) || (dVar2 <= _DAT_005982e6)) {
-          if ((_DAT_005982c6 < dVar1) && (dVar1 < 1.0)) {
+        if ((0.70699999999999996 <= dVar2) || (dVar2 <= -0.70699999999999996)) {
+          if ((-1 < dVar1) && (dVar1 < 1.0)) {
             fVar5 = (float10)acos((float10)dVar1);
             local_18 = (float)fVar5;
           }
@@ -76,14 +74,14 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
           fVar5 = (float10)asin((float10)dVar2);
           local_18 = (float)fVar5;
           if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
-            local_18 = (float)_DAT_005982ee - local_18;
+            local_18 = (float)3.1415926535900001 - local_18;
           }
         }
-        if (local_18 < (float)_DAT_005982ce) {
-          local_18 = local_18 + _DAT_005982d6;
+        if (local_18 < (float)-3.1415926535900001) {
+          local_18 = local_18 + 5.3700914947311079e-315._0_4_;
         }
-        if ((float)_DAT_005982ee < local_18) {
-          local_18 = local_18 + _DAT_005982f6;
+        if ((float)3.1415926535900001 < local_18) {
+          local_18 = local_18 + -6.283185f;
         }
         param_2[1] = local_18;
         fVar3 = param_1[1] * fVar3 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
@@ -92,8 +90,8 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
         dVar1 = (double)fVar3;
         uStack_b0 = SUB84(__BITCAST_UINT64(dVar1),0);
         dVar2 = (double)fVar4;
-        if ((_DAT_005982de <= dVar1) || (dVar1 <= _DAT_005982e6)) {
-          if (_DAT_005982c6 < dVar2) {
+        if ((0.70699999999999996 <= dVar1) || (dVar1 <= -0.70699999999999996)) {
+          if (-1 < dVar2) {
             if (dVar2 < 1.0) {
               fVar5 = (float10)acos((float10)fVar4);
               dVar1 = __BITCAST_DOUBLE(CONCAT44((float)fVar5,uStack_b0));
@@ -112,11 +110,11 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
         else {
           asin((float10)fVar3);
         }
-        if (local_20 < (float)_DAT_005982ce) {
-          local_20 = local_20 + _DAT_005982d6;
+        if (local_20 < (float)-3.1415926535900001) {
+          local_20 = local_20 + 5.3700914947311079e-315._0_4_;
         }
-        if ((float)_DAT_005982ee < local_20) {
-          local_20 = local_20 + _DAT_005982f6;
+        if ((float)3.1415926535900001 < local_20) {
+          local_20 = local_20 + -6.283185f;
         }
         param_2[2] = local_20;
         return param_2;
@@ -135,8 +133,8 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
   fVar4 = *param_1 * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
   dVar1 = (double)fVar3;
   dVar2 = (double)fVar4;
-  if ((_DAT_005982de <= dVar1) || (dVar1 <= _DAT_005982e6)) {
-    if (_DAT_005982c6 < dVar2) {
+  if ((0.70699999999999996 <= dVar1) || (dVar1 <= -0.70699999999999996)) {
+    if (-1 < dVar2) {
       if (dVar2 < 1.0) {
         acos((float10)fVar4);
       }
@@ -154,11 +152,11 @@ float * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(float *param_
   else {
     asin((float10)fVar3);
   }
-  if (local_18 < (float)_DAT_005982ce) {
-    local_18 = local_18 + _DAT_005982d6;
+  if (local_18 < (float)-3.1415926535900001) {
+    local_18 = local_18 + 5.3700914947311079e-315._0_4_;
   }
-  if ((float)_DAT_005982ee < local_18) {
-    local_18 = local_18 + _DAT_005982f6;
+  if ((float)3.1415926535900001 < local_18) {
+    local_18 = local_18 + -6.283185f;
   }
   param_2[1] = local_18;
   return param_2;

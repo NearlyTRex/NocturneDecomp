@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_undefined_constructor_or_destruc_005989b8
+;   TerminatedCString s_undefined_constructor_or_005989b8
 ;
 ; Called Functions:
 ;   FUN_0056af76

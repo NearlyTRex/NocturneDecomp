@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0040b1a0
+;   core_actor.cpp_FUN_0040b1a0
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 00554574
     MOV ECX,dword ptr [ESP + 0x8]       ; 00554575
     PUSH ECX                            ; 00554579
-    CALL FUN_0040b1a0                   ; 0055457a
-        ;   XREF to: 0040b1a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b1a0()
+    CALL core_actor.cpp_FUN_0040b1a0    ; 0055457a
+        ;   XREF to: 0040b1a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b1a0()
     ADD ESP,0x8                         ; 0055457f
     RET                                 ; 00554582
 

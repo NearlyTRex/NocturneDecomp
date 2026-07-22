@@ -145,8 +145,8 @@ LAB_0048394f:
   iVar2 = 0;
   fVar4 = 0.025;
   do {
-    fVar4 = fVar4 * (float)_DAT_005810dc;
-    fVar5 = (float)_DAT_005810dc * fVar5;
+    fVar4 = fVar4 * (float)0.69999999999999996;
+    fVar5 = (float)0.69999999999999996 * fVar5;
     local_ac = local_a0 * fVar4;
     local_9c = local_9c - fVar4 * param_1[7];
     local_a4 = local_98 * fVar4;

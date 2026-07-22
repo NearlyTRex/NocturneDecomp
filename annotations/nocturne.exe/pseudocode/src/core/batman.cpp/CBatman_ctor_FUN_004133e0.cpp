@@ -19,7 +19,7 @@ int core_batman_cpp_CBatman_ctor_FUN_004133e0(uint param_1)
   char *pcVar6;
   
   iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  pcVar5 = &DAT_00578aa2;
+  pcVar5 = "none";
   *(byte ***)(iVar4 + 0x14c) = &PTR_core_batman_cpp_CBatman_setup_FUN_004134a0_0059a164;
   pcVar6 = (char *)(iVar4 + 0xbd24);
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar4 + 0x150,"batman.dfm");

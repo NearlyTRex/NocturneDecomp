@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_0043b7c0
+;   core_dmodel.cpp_FUN_00452f10
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360
-;   FUN_00452f10
 ;
 ; *****************************************************************************
 
@@ -43,12 +43,12 @@ section .text
         ;   XREF to: 004dea74 (CONDITIONAL_JUMP)  ; LAB_004dea74
     LEA EBX,[EDI + 0x8]                 ; 004dea84
     PUSH EBX                            ; 004dea87
-    CALL FUN_00452f10                   ; 004dea88
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 004dea88
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 004dea8d
     PUSH 0x1cce1bc                      ; 004dea90
-    CALL FUN_00452f10                   ; 004dea95
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 004dea95
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 004dea9a
     POP EDI                             ; 004dea9d
     POP ESI                             ; 004dea9e

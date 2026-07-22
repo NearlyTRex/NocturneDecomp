@@ -11,8 +11,8 @@
 ;   FUN_0049cc10 at 0049cc88
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_:_%3.2f_ms_00584485+1
-;   undefined4 s_gFilterFX->process()_005844b1+1
+;   TerminatedCString s_s_3_2f_ms_00584486
+;   TerminatedCString s_gFilterFX_process_005844b2
 ;   string s_gScript->process()_005844c7
 ;   string s_gSet->process()_005844da
 ;   string s_gGore->process()_005844ea
@@ -20,9 +20,9 @@
 ;   string s_gEventList->process()_0058450c
 ;   string s_gSit->process()_00584522
 ;   string s_simulate_:_%3.2f_ms_00584532
-;   undefined4 DAT_0058454a
-;   undefined4 DAT_00584552
-;   undefined4 DAT_0058455a
+;   double DOUBLE_0058454a = 0.0555555555555556
+;   double DOUBLE_00584552 = 0.0000152587890625
+;   double DOUBLE_0058455a = 1000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ad550
 ;   undefined4 DAT_005b7650
@@ -102,17 +102,17 @@ section .text
     SUB EAX,ECX                         ; 004a609a
     MOV dword ptr [ESP + 0x8],EAX       ; 004a609c
     FILD dword ptr [ESP + 0x8]          ; 004a60a0
-    FMUL double ptr [0x0058454a]        ; 004a60a4 | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a60a4 | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a60aa | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a60af | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a60af | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a60b5 | DAT_01c77850
     FXCH                                ; 004a60bb
-    FMUL double ptr [0x0058455a]        ; 004a60bd | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a60bd | DOUBLE_0058455a
     FDIVRP                              ; 004a60c3
     SUB ESP,0x8                         ; 004a60c5
     FSTP double ptr [ESP]               ; 004a60c8
-    PUSH 0x5844b2                       ; 004a60cb | s_gFilterFX->process()_005844b1+1
-    PUSH 0x584486                       ; 004a60d0 | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x5844b2                       ; 004a60cb | = "gFilterFX->process()"
+    PUSH 0x584486                       ; 004a60d0 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x005ad350]      ; 004a60d5 | PTR_DAT_005ad350
     PUSH EDI                            ; 004a60db | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a60dc
@@ -143,17 +143,17 @@ section .text
     SUB EAX,ECX                         ; 004a6125
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6127
     FILD dword ptr [ESP + 0x8]          ; 004a612b
-    FMUL double ptr [0x0058454a]        ; 004a612f | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a612f | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a6135 | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a613a | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a613a | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a6140 | DAT_01c77850
     FXCH                                ; 004a6146
-    FMUL double ptr [0x0058455a]        ; 004a6148 | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a6148 | DOUBLE_0058455a
     FDIVRP                              ; 004a614e
     SUB ESP,0x8                         ; 004a6150
     FSTP double ptr [ESP]               ; 004a6153
     PUSH 0x5844c7                       ; 004a6156 | = "gScript->process()"
-    PUSH 0x584486                       ; 004a615b | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a615b | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x005ad350]      ; 004a6160 | PTR_DAT_005ad350
     PUSH EDI                            ; 004a6166 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6167
@@ -194,17 +194,17 @@ section .text
     SUB EAX,ECX                         ; 004a61cc
     MOV dword ptr [ESP + 0x8],EAX       ; 004a61ce
     FILD dword ptr [ESP + 0x8]          ; 004a61d2
-    FMUL double ptr [0x0058454a]        ; 004a61d6 | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a61d6 | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a61dc | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a61e1 | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a61e1 | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a61e7 | DAT_01c77850
     FXCH                                ; 004a61ed
-    FMUL double ptr [0x0058455a]        ; 004a61ef | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a61ef | DOUBLE_0058455a
     FDIVRP                              ; 004a61f5
     SUB ESP,0x8                         ; 004a61f7
     FSTP double ptr [ESP]               ; 004a61fa
     PUSH 0x5844da                       ; 004a61fd | = "gSet->process()"
-    PUSH 0x584486                       ; 004a6202 | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a6202 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x005ad350]      ; 004a6207 | PTR_DAT_005ad350
     PUSH EDI                            ; 004a620d | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a620e
@@ -235,17 +235,17 @@ section .text
     SUB EAX,ECX                         ; 004a6257
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6259
     FILD dword ptr [ESP + 0x8]          ; 004a625d
-    FMUL double ptr [0x0058454a]        ; 004a6261 | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a6261 | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a6267 | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a626c | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a626c | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a6272 | DAT_01c77850
     FXCH                                ; 004a6278
-    FMUL double ptr [0x0058455a]        ; 004a627a | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a627a | DOUBLE_0058455a
     FDIVRP                              ; 004a6280
     SUB ESP,0x8                         ; 004a6282
     FSTP double ptr [ESP]               ; 004a6285
     PUSH 0x5844ea                       ; 004a6288 | = "gGore->process()"
-    PUSH 0x584486                       ; 004a628d | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a628d | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x005ad350]      ; 004a6292 | PTR_DAT_005ad350
     PUSH EDI                            ; 004a6298 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6299
@@ -282,17 +282,17 @@ section .text
     SUB EAX,EBP                         ; 004a62f4
     MOV dword ptr [ESP + 0x8],EAX       ; 004a62f6
     FILD dword ptr [ESP + 0x8]          ; 004a62fa
-    FMUL double ptr [0x0058454a]        ; 004a62fe | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a62fe | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a6304 | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a6309 | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a6309 | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a630f | DAT_01c77850
     FXCH                                ; 004a6315
-    FMUL double ptr [0x0058455a]        ; 004a6317 | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a6317 | DOUBLE_0058455a
     FDIVRP                              ; 004a631d
     SUB ESP,0x8                         ; 004a631f
     FSTP double ptr [ESP]               ; 004a6322
     PUSH 0x5844fb                       ; 004a6325 | = "gFire->process()"
-    PUSH 0x584486                       ; 004a632a | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a632a | = "%s : %3.2f ms\n"
     MOV EAX,[0x005ad350]                ; 004a632f | PTR_DAT_005ad350
     PUSH EAX                            ; 004a6334 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6335
@@ -323,17 +323,17 @@ section .text
     SUB EAX,EBP                         ; 004a637f
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6381
     FILD dword ptr [ESP + 0x8]          ; 004a6385
-    FMUL double ptr [0x0058454a]        ; 004a6389 | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a6389 | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a638f | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a6394 | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a6394 | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a639a | DAT_01c77850
     FXCH                                ; 004a63a0
-    FMUL double ptr [0x0058455a]        ; 004a63a2 | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a63a2 | DOUBLE_0058455a
     FDIVRP                              ; 004a63a8
     SUB ESP,0x8                         ; 004a63aa
     FSTP double ptr [ESP]               ; 004a63ad
     PUSH 0x58450c                       ; 004a63b0 | = "gEventList->process()"
-    PUSH 0x584486                       ; 004a63b5 | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a63b5 | = "%s : %3.2f ms\n"
     MOV EAX,[0x005ad350]                ; 004a63ba | PTR_DAT_005ad350
     PUSH EAX                            ; 004a63bf | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a63c0
@@ -384,17 +384,17 @@ section .text
     SUB EAX,ECX                         ; 004a6441
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6443
     FILD dword ptr [ESP + 0x8]          ; 004a6447
-    FMUL double ptr [0x0058454a]        ; 004a644b | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a644b | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a6451 | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a6456 | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a6456 | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a645c | DAT_01c77850
     FXCH                                ; 004a6462
-    FMUL double ptr [0x0058455a]        ; 004a6464 | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a6464 | DOUBLE_0058455a
     FDIVRP                              ; 004a646a
     SUB ESP,0x8                         ; 004a646c
     FSTP double ptr [ESP]               ; 004a646f
     PUSH 0x584522                       ; 004a6472 | = "gSit->process()"
-    PUSH 0x584486                       ; 004a6477 | s_%s_:_%3.2f_ms_00584485+1
+    PUSH 0x584486                       ; 004a6477 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x005ad350]      ; 004a647c | PTR_DAT_005ad350
     PUSH EDI                            ; 004a6482 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6483
@@ -457,12 +457,12 @@ section .text
     SUB EAX,ESI                         ; 004a6523
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6525
     FILD dword ptr [ESP + 0x8]          ; 004a6529
-    FMUL double ptr [0x0058454a]        ; 004a652d | DAT_0058454a
+    FMUL double ptr [0x0058454a]        ; 004a652d | DOUBLE_0058454a
     MOV EAX,[0x005b9354]                ; 004a6533 | DAT_005b9354
-    FMUL double ptr [0x00584552]        ; 004a6538 | DAT_00584552
+    FMUL double ptr [0x00584552]        ; 004a6538 | DOUBLE_00584552
     FLD float ptr [EAX + 0x264]         ; 004a653e | DAT_01c77850
     FXCH                                ; 004a6544
-    FMUL double ptr [0x0058455a]        ; 004a6546 | DAT_0058455a
+    FMUL double ptr [0x0058455a]        ; 004a6546 | DOUBLE_0058455a
     FDIVRP                              ; 004a654c
     SUB ESP,0x8                         ; 004a654e
     FSTP double ptr [ESP]               ; 004a6551

@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 s_gargoyle-shatter.wav_00584a6f+1
+;   TerminatedCString s_gargoyle_shatter_wav_00584a70
 ;   string s_gargoyle-hurt?.wav_00584a85
 ;   undefined4 DAT_005b80f0
 ;
@@ -103,7 +103,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004a8690
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 004a8695
-    PUSH 0x584a70                       ; 004a8698 | s_gargoyle-shatter.wav_00584a6f+1
+    PUSH 0x584a70                       ; 004a8698 | = "gargoyle-shatter.wav"
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004a869d
     PUSH ESI                            ; 004a86a3
     CALL dword ptr [EAX + 0x24]         ; 004a86a4

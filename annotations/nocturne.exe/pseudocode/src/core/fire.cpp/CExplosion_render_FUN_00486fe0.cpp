@@ -47,7 +47,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(int param_1)
   uStack_98 = 0x487015;
   fVar4 = (float10)round
                              (((float10)1 - (float10)*(float *)(param_1 + 0xc)) *
-                              (float10)_DAT_00581214);
+                              (float10)27);
   local_20 = (int)ROUND(fVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (DAT_005ae704,&DAT_005b858c + local_20 * 0x30);
@@ -55,12 +55,13 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(int param_1)
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(DAT_005ae704,local_5c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,local_5c,0);
   fVar1 = *(float *)(param_1 + 0x10);
-  fVar4 = (float10)_DAT_0058121c;
-  fVar5 = (float10)_DAT_00581224;
+  fVar4 = (float10)5.5407092247005829e-315._0_4_;
+  fVar5 = (float10)0.00390625;
   iVar2 = *(int *)(param_1 + 0x18);
   uVar8 = 0x4870a6;
   fVar6 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x10) * (float10)_DAT_0058122c * fVar5);
+                             ((float10)*(float *)(param_1 + 0x10) * (float10)148 * fVar5
+                             );
   uVar7 = 0x4870ad;
   fVar4 = (float10)round(-(float10)fVar1 * fVar4 * fVar5);
   local_1c = (int)ROUND(fVar6);
@@ -71,7 +72,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(int param_1)
   }
   local_18 = local_20;
   local_40 = (float)local_20;
-  local_3c = *(float *)(param_1 + 0x10) * _DAT_00581234 * (float)_DAT_00581224;
+  local_3c = *(float *)(param_1 + 0x10) * 5.5585177220918014e-315._0_4_ * (float)0.00390625;
   local_38 = 0.0;
   local_34 = (int)ROUND(local_40 * _DAT_0059d1f8);
   local_30 = (int)ROUND(local_3c * _DAT_0059d1f8);
@@ -84,7 +85,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(int param_1)
   iStack_54 = (int)ROUND(local_3c * _DAT_0059d1f8);
   iStack_50 = (int)ROUND(local_38 * _DAT_0059d1f8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);
-  local_3c = -*(float *)(param_1 + 0x10) * (float)_DAT_0058123c * (float)_DAT_00581224;
+  local_3c = -*(float *)(param_1 + 0x10) * (float)113 * (float)0.00390625;
   local_4c = (int)ROUND(local_40 * _DAT_0059d1f8);
   local_48 = (int)ROUND(local_3c * _DAT_0059d1f8);
   local_44 = (int)ROUND(local_38 * _DAT_0059d1f8);

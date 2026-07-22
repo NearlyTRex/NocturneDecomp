@@ -27,7 +27,7 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(int *param_1,uint para
       } while (iVar1 < *param_1);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(0xffffffff);
-    _fprintf(DAT_00763e84,&DAT_00577e6b,&DAT_005acc90);
+    _fprintf(DAT_00763e84,"%s}\n",&DAT_005acc90);
     return;
   }
   do {
@@ -37,7 +37,7 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(int *param_1,uint para
                 ("Cloth list opening brace",param_2);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(DAT_00763e84,&DAT_00577df2,param_1);
+  iVar1 = _fscanf(DAT_00763e84,"%d",param_1);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("cloth count",param_2);
   }

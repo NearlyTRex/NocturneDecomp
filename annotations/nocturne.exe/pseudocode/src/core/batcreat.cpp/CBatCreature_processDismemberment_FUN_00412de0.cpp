@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_batcreat_cpp_CBatCreature_processDismemberment_FUN_00412de0(int param_1,int *param_2)
 
 {
@@ -95,7 +93,7 @@ switchD_00412e16_default:
     if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd24) * 4) == 0) {
       param_2[1] = 0x461c3c00;
     }
-    param_2[2] = (int)((float)param_2[2] * (float)_DAT_00578a5f);
+    param_2[2] = (int)((float)param_2[2] * (float)7);
     return;
   }
   return;

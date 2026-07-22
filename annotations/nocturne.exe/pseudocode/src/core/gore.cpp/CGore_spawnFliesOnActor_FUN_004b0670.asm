@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0040b090 at 0040b0ba
 ;   FUN_004996b0 at 004997ee
 ;   FUN_0053e860 at 0053eb19
+;   core_actor.cpp_FUN_0040b090 at 0040b0ba
 ;   core_colonel.cpp_CColonel_processDamage_FUN_0043aa00 at 0043aae6
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004b4000 at 004b4100
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004bb4e0 at 004bb626

@@ -4,18 +4,18 @@
 ; undefined4 * __cdecl crt_memory_c___vec_delete_FUN_0056445f(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[132]:
+; XREF[136]:
+;   FUN_0040ef90 at 0040efbc
+;   FUN_0040f4b0 at 0040f4dc
+;   FUN_0040f8b0 at 0040f8dc
+;   FUN_0040fc30 at 0040fcc7
 ;   FUN_004100f0 at 0041011c
 ;   FUN_00411610 at 0041163c
 ;   FUN_00411660 at 0041168c
 ;   FUN_004118c0 at 004118ec
 ;   FUN_004132c0 at 00413357
 ;   FUN_00414c60 at 00414cf7
-;   FUN_00414fa0 at 00414fcc
-;   FUN_00415250 at 004152e7
-;   FUN_00415a30 at 00415ad7
-;   FUN_0041fa10 at 0041fa63
-;   ... and 122 more
+;   ... and 126 more
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f

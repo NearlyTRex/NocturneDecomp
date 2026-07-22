@@ -10,7 +10,7 @@ void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004850b0(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c09338,"@gunflash.kfm" + 1);
+            (0x1c09338,"gunflash.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c09338);
   return;
 }

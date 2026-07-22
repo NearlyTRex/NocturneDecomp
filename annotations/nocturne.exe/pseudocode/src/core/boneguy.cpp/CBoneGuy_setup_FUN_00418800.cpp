@@ -17,8 +17,7 @@ void core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(int param_1)
   iVar2 = param_1 + 0x150;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(iVar2);
   uVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(iVar2);
-  DAT_00764794 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
-                           (uVar1,"CBip01 Head" + 1,1);
+  DAT_00764794 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 Head",1);
   _DAT_007647a0 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L ForeArm",1);
   _DAT_007647a4 =

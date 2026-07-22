@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00427a60 at 00427a9d
+;   core_charactr.cpp_FUN_00427a60 at 00427a9d
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780

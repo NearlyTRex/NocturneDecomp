@@ -32,7 +32,7 @@ void core_gore_cpp_CBloodPool_render_FUN_004af340(uint *param_1)
   
   iStack_54 = 0x4af359;
   fVar2 = (float10)round
-                             ((float10)(float)param_1[6] * (float10)_DAT_00585128);
+                             ((float10)(float)param_1[6] * (float10)8);
   local_18 = (int)ROUND(fVar2);
   if (local_18 < 0) {
     local_18 = 0;

@@ -79,20 +79,20 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *par
   pfStack_b8 = &local_54;
   piStack_bc = (int *)&DAT_01fba938;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0();
-  fVar7 = (float)_DAT_0057dfae;
+  fVar7 = (float)0.5;
   _DAT_01b7b728 = (local_60 + local_54) * fVar7;
   _DAT_01b7b730 = (local_58 + local_4c) * fVar7;
-  local_34 = (local_54 - local_60) * fVar7 * (float)_DAT_0057dfb6;
+  local_34 = (local_54 - local_60) * fVar7 * (float)1.4139999999999999;
   _DAT_005b0678 = 0.0;
   _DAT_01b7b72c = local_5c;
   if (0.0 < local_34) {
     _DAT_005b0678 = local_34;
   }
-  local_2c = (local_50 - local_5c) * (float)_DAT_0057dfb6;
+  local_2c = (local_50 - local_5c) * (float)1.4139999999999999;
   if (_DAT_005b0678 < local_2c) {
     _DAT_005b0678 = local_2c;
   }
-  local_30 = (local_4c - local_58) * (float)_DAT_0057dfae * (float)_DAT_0057dfb6;
+  local_30 = (local_4c - local_58) * (float)0.5 * (float)1.4139999999999999;
   if (_DAT_005b0678 < local_30) {
     _DAT_005b0678 = local_30;
   }
@@ -107,9 +107,9 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *par
   local_a8 = 0;
   local_ac = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0();
-  fVar11 = (float10)fsin((float10)_DAT_0057dfbe);
+  fVar11 = (float10)fsin((float10)0.58904862253125001);
   fVar12 = (float10)_DAT_005b0678;
-  fVar13 = (float10)_DAT_0057dfc6;
+  fVar13 = (float10)256;
   pfStack_b8 = (float *)0x463718;
   fVar11 = (float10)round(fVar11 * fVar12 * fVar13);
   piVar4 = DAT_005ae704;

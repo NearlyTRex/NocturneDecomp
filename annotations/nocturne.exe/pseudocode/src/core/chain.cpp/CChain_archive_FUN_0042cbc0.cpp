@@ -10,7 +10,7 @@ void core_chain_cpp_CChain_archive_FUN_0042cbc0(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x150,"?vertexCount" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x150,"vertexCount");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x154,"chainLength");
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x15c,"target");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x160,"targetBone");

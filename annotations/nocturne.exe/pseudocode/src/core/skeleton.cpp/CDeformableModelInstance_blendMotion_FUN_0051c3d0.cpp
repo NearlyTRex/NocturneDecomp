@@ -153,7 +153,7 @@ void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(int par
             }
             else {
               local_18 = iVar10 * 0x10;
-              FUN_0055d0d0(local_934 + iVar10 * 4);
+              core_xform_cpp_FUN_0055d0d0(local_934 + iVar10 * 4);
               puVar11 = auStack_f0 + 0xf;
               iVar10 = (int)local_934 + local_48;
               local_b4[0] = auStack_f0[3];

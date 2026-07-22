@@ -22,7 +22,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(int param
       core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(param_1);
     }
     if (0.0 < *(float *)(param_1 + 0xb648)) {
-      FUN_004270e0(param_1);
+      core_charactr_cpp_FUN_004270e0(param_1);
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(param_1);

@@ -32,7 +32,7 @@ void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(int param_1,int par
         if (param_3 == 0) {
           return;
         }
-        FUN_00409cd0(iVar1);
+        core_actor_cpp_FUN_00409cd0(iVar1);
         return;
       }
       iVar2 = iVar2 + 1;

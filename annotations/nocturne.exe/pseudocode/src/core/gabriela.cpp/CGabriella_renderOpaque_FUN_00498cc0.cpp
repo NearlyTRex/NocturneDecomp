@@ -22,7 +22,7 @@ int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(int param_1)
     iVar2 = *(int *)(param_1 + 0x1f8d0);
     if (((iVar2 != 0) &&
         ((**(code **)(*(int *)(iVar2 + 0x14c) + 8))(iVar2),
-        (float)_DAT_005821fa < *(float *)(param_1 + 0x1fa44))) &&
+        (float)0.90000000000000002 < *(float *)(param_1 + 0x1fa44))) &&
        ((iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                            (*(uint *)(param_1 + 0x1f8d0),_DAT_01bca0c0), iVar2 == 0 ||
         (0.0 < SQRT(*(float *)(iVar2 + 0x57c) * *(float *)(iVar2 + 0x57c) +

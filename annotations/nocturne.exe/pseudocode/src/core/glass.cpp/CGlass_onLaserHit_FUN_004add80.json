@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -151,6 +151,11 @@
   },
   "function_calls": [
     {
+      "addr": "0040ab10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ab10"
+    },
+    {
       "addr": "00563a30",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_00563a30"
@@ -159,25 +164,20 @@
       "addr": "00461eb0",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0"
-    },
-    {
-      "addr": "0040ab10",
-      "is_variadic": false,
-      "name": "FUN_0040ab10"
     }
   ],
   "globals": [
     {
       "addr": "00585070",
-      "name": "DAT_00585070",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585070",
+      "type": "double",
+      "value": "0.0000152590218966964"
     },
     {
       "addr": "00585078",
-      "name": "DAT_00585078",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585078",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005ae704",
@@ -318,7 +318,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040ab10(param_1,param_2);",
+      "text": "core_actor_cpp_FUN_0040ab10(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -326,7 +326,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0040ab10(param_1,param_2);",
+      "text": "core_actor_cpp_FUN_0040ab10(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -342,7 +342,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)_DAT_00585070;",
+      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;",
       "type": "unnamed_param"
     },
     {
@@ -350,7 +350,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)_DAT_00585070;",
+      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;",
       "type": "unnamed_param"
     },
     {

@@ -13,8 +13,8 @@
 ;   undefined4 DAT_0077ad0c
 ;
 ; Called Functions:
+;   core_dmodel.cpp_FUN_00452f10
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_00452f10
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 004c5fbf
     PUSH 0x1cc3290                      ; 004c5fc2
-    CALL FUN_00452f10                   ; 004c5fc7
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 004c5fc7
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 004c5fcc
     RET                                 ; 004c5fcf
 

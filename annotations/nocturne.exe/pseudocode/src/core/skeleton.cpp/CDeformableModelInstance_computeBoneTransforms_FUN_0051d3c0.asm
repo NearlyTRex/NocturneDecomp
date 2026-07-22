@@ -17,14 +17,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[14]:
-;   FUN_004270e0 at 004271ac
-;   FUN_0042a150 at 0042a16e
 ;   FUN_004d4650 at 004d48b1
 ;   FUN_004d4f30 at 004d5702
 ;   FUN_00535900 at 0053631a
 ;   FUN_00540c20 at 00540e6e
 ;   FUN_00543c50 at 00543df0
 ;   FUN_0054c3e0 at 0054c4a6
+;   core_charactr.cpp_FUN_004270e0 at 004271ac
+;   core_charactr.cpp_FUN_0042a150 at 0042a16e
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435dc5
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef70e
 ;   ... and 4 more

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(int param_1,float param_2,char *param_3)
 
 {
@@ -42,7 +40,7 @@ uint __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(in
      (fVar1 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20),
      fVar3 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24),
      fVar2 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28),
-     (float)_DAT_0057a37a <= SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1))) {
+     (float)4 <= SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1))) {
     if (*(int *)(param_1 + 0x25e8) == 0) goto LAB_0042a274;
     if (*(int *)(param_1 + 0x25e4) == 0) goto LAB_0042a27e;
     uVar8 = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680
@@ -67,7 +65,7 @@ LAB_0042a27e:
          (fVar1 = *local_1c - *(float *)(iVar5 + 0x20),
          fVar3 = local_1c[1] - *(float *)(iVar5 + 0x24),
          fVar2 = local_1c[2] - *(float *)(iVar5 + 0x28),
-         _DAT_0057a382 <= SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1))) {
+         20.0f <= SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1))) {
         iVar6 = iVar7 + 4;
         local_28 = local_28 + 1;
         *(int *)((int)local_1f80 + iVar7) = iVar5;

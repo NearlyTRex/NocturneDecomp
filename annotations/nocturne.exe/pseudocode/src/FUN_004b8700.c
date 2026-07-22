@@ -123,7 +123,7 @@ void FUN_004b8700(int param_1,int param_2)
     puVar3 = local_174;
   }
   else {
-    FUN_00429490(param_1,param_2);
+    core_charactr_cpp_FUN_00429490(param_1,param_2);
     puVar3 = local_144;
   }
   puVar4 = local_294;

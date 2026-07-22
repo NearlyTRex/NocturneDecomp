@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_00584a0e+2
+;   TerminatedCString s_speed_00584a10
 ;   string s_modelName_00584a16
 ;   string s_motion_state_00584a20
 ;   string s_stoneRed_00584a2d
@@ -19,8 +19,8 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 004a8277
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 004a827c
-    PUSH 0x584a10                       ; 004a827f | s_speed_00584a0e+2
+    PUSH 0x584a10                       ; 004a827f | = "speed"
     LEA ESI,[EBX + 0xbc8c]              ; 004a8284
     PUSH ESI                            ; 004a828a
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004a828b
@@ -48,8 +48,8 @@ section .text
     ADD ESP,0x8                         ; 004a82a4
     PUSH 0x584a20                       ; 004a82a7 | = "motion state"
     PUSH ESI                            ; 004a82ac
-    CALL FUN_0040cb00                   ; 004a82ad
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004a82ad
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     MOV EDX,dword ptr [0x005b9624]      ; 004a82b2 | DAT_005b9624
     ADD ESP,0x8                         ; 004a82b8
     CMP EDX,0x2                         ; 004a82bb

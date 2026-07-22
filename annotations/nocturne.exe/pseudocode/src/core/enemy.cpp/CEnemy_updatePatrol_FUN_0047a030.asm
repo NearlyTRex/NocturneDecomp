@@ -11,14 +11,14 @@
 ;   FUN_004c4970 at 004c4e7c
 ;   FUN_004da790 at 004db158
 ;   FUN_00540f50 at 0054144b
-;   FUN_0055ef50 at 0056017b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412a43
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413f7a
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043c12b
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454b21
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 s_Capture_0057f38d+2
+;   TerminatedCString s_Capture_0057f38f
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c777c0
@@ -38,7 +38,7 @@ section .text
     CMP dword ptr [EAX + 0x1d4],0x0     ; 0047a03a | DAT_01c777c0
     JNZ 0x0047a05b                      ; 0047a041
         ;   XREF to: 0047a05b (CONDITIONAL_JUMP)  ; LAB_0047a05b
-    PUSH 0x57f38f                       ; 0047a043 | s_Capture_0057f38d+2
+    PUSH 0x57f38f                       ; 0047a043 | = "Capture"
     MOV ECX,dword ptr [0x005b7650]      ; 0047a048 | DAT_005b7650
     PUSH ECX                            ; 0047a04e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0047a04f

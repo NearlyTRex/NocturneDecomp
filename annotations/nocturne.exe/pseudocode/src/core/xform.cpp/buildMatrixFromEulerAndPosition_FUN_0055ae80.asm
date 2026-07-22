@@ -16,11 +16,11 @@
 ;   FUN_004f6170 at 004f6381
 ;   FUN_00543c50 at 00543f19
 ;   FUN_00549cd0 at 00549dbd
-;   FUN_0055d660 at 0055d681
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 0041754e
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422470
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 0042763c
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 00429050
+;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_004363e0 at 004364da
 ;   ... and 3 more
 ;
 ; *****************************************************************************

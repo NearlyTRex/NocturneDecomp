@@ -52,7 +52,7 @@ int engine_3d_c_renderPolygonFogColorOp6_FUN_004048b0(int param_1)
     }
     _DAT_01c039a0 = 4;
     _DAT_01c039a4 = 0;
-    FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   }
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 4;
 }

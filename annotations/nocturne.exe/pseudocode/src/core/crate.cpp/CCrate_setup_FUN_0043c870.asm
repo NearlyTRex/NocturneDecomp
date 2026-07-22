@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b433
+;   double DOUBLE_0057b433 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -40,7 +40,7 @@ section .text
     FXCH                                ; 0043c8ab
     FSUB float ptr [ESP + 0x8]          ; 0043c8ad
     FXCH                                ; 0043c8b1
-    FLD double ptr [0x0057b433]         ; 0043c8b3 | DAT_0057b433
+    FLD double ptr [0x0057b433]         ; 0043c8b3 | DOUBLE_0057b433
     FXCH                                ; 0043c8b9
     FMUL ST1                            ; 0043c8bb
     FXCH ST2                            ; 0043c8bd

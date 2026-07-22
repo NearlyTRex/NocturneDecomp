@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)
 
 {
@@ -23,9 +21,9 @@ uint core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)
          ((*(int *)(param_1 + 0xbca4) != 0 || (*(int *)(param_1 + 0xbca8) != 0)))) ||
         ((*(int *)(param_1 + 0xbcac) != 0 ||
          ((*(int *)(param_1 + 0xbcb0) != 0 ||
-          ((float)_DAT_005858e3 < ABS(*(float *)(param_1 + 0xbcb4)))))))) ||
-       (((float)_DAT_005858e3 < ABS(*(float *)(param_1 + 0xbcb8)) ||
-        (((float)_DAT_005858e3 < ABS(*(float *)(param_1 + 0xbcbc)) ||
+          ((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb4)))))))) ||
+       (((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb8)) ||
+        (((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcbc)) ||
          (*(int *)(param_1 + 0x2408) == 0)))))) {
       return 1;
     }

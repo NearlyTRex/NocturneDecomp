@@ -14,7 +14,7 @@ int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   iVar2 = __arrinit(iVar2 + 0x17c,4,&DAT_0059b030);
   iVar2 = __arrinit(iVar2 + 0x668,4,&DAT_005a3d20);

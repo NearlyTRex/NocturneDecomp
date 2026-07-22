@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(uint param_1,char *param_2)
 
 {
@@ -38,8 +36,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
     break;
   case 4:
     if (0 < iVar3) {
-      _sprintf(param_2,"?Blocks: %d Total: %.1fk Max: %.1fk" + 1,iVar3,
-                 (double)iVar6 * _DAT_0057eb0a,(double)(int)uVar4 * _DAT_0057eb0a);
+      _sprintf(param_2,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,(double)iVar6 * 0.0009765625,
+                 (double)(int)uVar4 * 0.0009765625);
       return;
     }
   case 1:

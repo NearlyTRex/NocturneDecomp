@@ -51,7 +51,7 @@ void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,i
     }
   }
   else {
-    _DAT_01cc4800 = "@..\\core\\icepick.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\icepick.cpp";
     _DAT_01cc4804 = 0x28a;
     FUN_004c8440("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }

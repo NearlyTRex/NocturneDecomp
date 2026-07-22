@@ -11,7 +11,7 @@ int FUN_004b41f0(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
   *(byte ***)(iVar1 + -4) = &PTR_FUN_0059ea14;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,"bullet.kfm");

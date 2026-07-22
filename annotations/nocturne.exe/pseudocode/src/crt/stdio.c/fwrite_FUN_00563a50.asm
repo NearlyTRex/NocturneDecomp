@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00403130 at 0040315b
-;   FUN_00403500 at 0040352b
-;   FUN_00403630 at 00403718
 ;   FUN_004f2990 at 004f2aa4
 ;   FUN_00513670 at 005136c7
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 at 004f4c0d
+;   engine_2d.c_FUN_00403130 at 0040315b
+;   engine_2d.c_FUN_00403500 at 0040352b
+;   engine_2d.c_FUN_00403630 at 00403718
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1abc = 005671dc

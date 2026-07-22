@@ -50,7 +50,7 @@ int FUN_00421540(int param_1)
               fStack_28 = fStack_1c;
               fStack_24 = fStack_18;
             }
-            FUN_0050e370(0x01E57284,&fStack_2c);
+            core_set_cpp_FUN_0050e370(0x01E57284,&fStack_2c);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                       (*(int *)(iStack_8 + 4) * 0x17c + iStack_10,0,0x2e7);
@@ -60,7 +60,7 @@ int FUN_00421540(int param_1)
             pfVar3 = pfVar3 + 0x10;
           } while (iVar1 < *(int *)(param_1 + 0xbd28));
         }
-        FUN_0050e370(0x01E57284,0);
+        core_set_cpp_FUN_0050e370(0x01E57284,0);
       }
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       return iStack_14;

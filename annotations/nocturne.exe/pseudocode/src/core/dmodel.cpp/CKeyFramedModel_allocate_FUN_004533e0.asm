@@ -9,7 +9,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990 at 00452a74
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dmodel.cpp_0057cb73+3
+;   TerminatedCString s_core_dmodel_cpp_0057cb76
 ;   string s_Too_many_materials!_0057cb89
 ;   string s_..\\core\\dmodel.cpp_0057cb9d
 ;   string s_Too_many_parts!_0057cbb0
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01cc4804
 ;
 ; Called Functions:
-;   FUN_00452f10
+;   core_dmodel.cpp_FUN_00452f10
 ;   FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -36,8 +36,8 @@ section .text
     PUSH EBP                            ; 004533e3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004533e4
     PUSH EBX                            ; 004533e8
-    CALL FUN_00452f10                   ; 004533e9
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 004533e9
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 004533ee
     MOV EAX,dword ptr [ESP + 0x18]      ; 004533f1
     MOV dword ptr [EBX + 0x104],EAX     ; 004533f5
@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 00453573 (CONDITIONAL_JUMP)  ; LAB_00453573
     PUSH EBX                            ; 004534f8
         ;   Label: LAB_004534f8
-    CALL FUN_00452f10                   ; 004534f9
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 004534f9
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 004534fe
     MOV EDI,dword ptr [EBX + 0x110]     ; 00453501
     PUSH EDI                            ; 00453507
@@ -141,7 +141,7 @@ section .text
     POP ESI                             ; 00453548
     POP EBX                             ; 00453549
     RET                                 ; 0045354a
-    MOV ECX,0x57cb76                    ; 0045354b | s_..\core\dmodel.cpp_0057cb73+3
+    MOV ECX,0x57cb76                    ; 0045354b | = "..\\core\\dmodel.cpp"
         ;   Label: LAB_0045354b
     MOV ESI,0x2c0                       ; 00453550
     PUSH 0x57cb89                       ; 00453555 | = "Too many materials!"

@@ -106,7 +106,7 @@ int core_bodypart_cpp_CBodyPart_archive_FUN_00416570(int param_1)
     }
   }
   if (1 < 0x00000005) {
-    FUN_0040ce80(param_1 + 0xcb4,"simBox");
+    core_actor_cpp_FUN_0040ce80(param_1 + 0xcb4,"simBox");
     iVar4 = core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xf10,"carriedByActor");
   }
   if (2 < 0x00000005) {

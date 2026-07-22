@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_00410cc0 at 00410cdb
 ;   FUN_004baba0 at 004bacbe
 ;   FUN_005423c0 at 005424de
+;   core_baron.cpp_FUN_00410cc0 at 00410cdb
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a533
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00496de9
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 at 004b394c
 ;   core_scat.cpp_CScat_updateAI_FUN_004fc610 at 004fc6c6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005858eb
+;   double DOUBLE_005858eb = 2
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01ccdc10
@@ -127,7 +127,7 @@ section .text
     FSUB float ptr [EAX + 0x4]          ; 004b5e04
     FST float ptr [ESP + 0x7c]          ; 004b5e07
     FLD ST0                             ; 004b5e0b
-    FMUL double ptr [0x005858eb]        ; 004b5e0d | DAT_005858eb
+    FMUL double ptr [0x005858eb]        ; 004b5e0d | DOUBLE_005858eb
     FLD float ptr [EDX + 0x8]           ; 004b5e13
     FSUB float ptr [EAX + 0x8]          ; 004b5e16
     FXCH                                ; 004b5e19

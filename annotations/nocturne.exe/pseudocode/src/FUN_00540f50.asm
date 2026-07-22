@@ -53,15 +53,15 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_cloth.cpp_CClothList_process_FUN_00438550
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00540f59
     PUSH dword ptr [EBP + 0x18]         ; 00540f5c
     PUSH EBX                            ; 00540f5f
-    CALL FUN_004259f0                   ; 00540f60
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 00540f60
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 00540f65
     TEST EAX,EAX                        ; 00540f68
     JZ 0x0054139a                       ; 00540f6a
@@ -158,8 +158,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00541036
     PUSH EBX                            ; 00541039
     MOV EDI,dword ptr [EAX + 0x24]      ; 0054103a
-    CALL FUN_00428c00                   ; 0054103d
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 0054103d
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 00541042
     TEST EAX,EAX                        ; 00541045
     JZ 0x005415be                       ; 00541047
@@ -277,8 +277,8 @@ section .text
     ADD ESP,0x4                         ; 00541189
     PUSH dword ptr [EBP + 0x18]         ; 0054118c
     PUSH EBX                            ; 0054118f
-    CALL FUN_0042a150                   ; 00541190
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 00541190
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 00541195
     PUSH ESI                            ; 00541198
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00541199

@@ -164,8 +164,8 @@ LAB_004ae466:
   local_44 = param_1[5];
   iVar5 = 0;
   do {
-    local_ec = local_ec * (float)_DAT_00585088;
-    local_f0 = (float)_DAT_00585088 * local_f0;
+    local_ec = local_ec * (float)0.69999999999999996;
+    local_f0 = (float)0.69999999999999996 * local_f0;
     local_a0 = local_4c * local_ec;
     local_48 = local_48 - local_ec * param_1[7];
     local_98 = local_44 * local_ec;
@@ -178,7 +178,7 @@ LAB_004ae466:
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
               (DAT_005ae704,&DAT_01c78ca8,0);
     dVar6 = (double)local_f0;
-    local_ac = local_f0 * (float)_DAT_00585090;
+    local_ac = local_f0 * (float)-0.10000000000000001;
     local_a4 = 0;
     local_d0 = (int)ROUND(local_ac * _DAT_0059e4d4);
     local_cc = (int)ROUND(local_ac * _DAT_0059e4d4);
@@ -186,7 +186,7 @@ LAB_004ae466:
     local_a8 = local_ac;
     local_18 = local_ac;
     wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_d0,dVar6);
-    local_ac = (float)((float10)dVar6 * (float10)_DAT_00585098);
+    local_ac = (float)((float10)dVar6 * (float10)0.10000000000000001);
     local_a4 = 0;
     local_a8 = local_18;
     local_94 = (int)ROUND(local_ac * _DAT_0059e4d4);

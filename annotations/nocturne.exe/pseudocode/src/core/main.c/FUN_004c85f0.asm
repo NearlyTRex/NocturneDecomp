@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00559260 at 005594de
+;   wincore_winrun.cpp_FUN_00559260 at 005594de
 ;
 ; Referenced Globals:
 ;   string s_PROCESSOR_LEVEL_00587b55
@@ -670,8 +670,8 @@ section .text
     PUSH 0x587e04                       ; 004c8ba8 | = "opening.avi"
         ;   Label: LAB_004c8ba8
     PUSH 0x587e10                       ; 004c8bad | = "video"
-    CALL FUN_0055a510                   ; 004c8bb2
-        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a510()
+    CALL wincore_winvideo.cpp_FUN_0055a510 ; 004c8bb2
+        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_FUN_0055a510()
     ADD ESP,0x8                         ; 004c8bb7
     CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004c8bba
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()

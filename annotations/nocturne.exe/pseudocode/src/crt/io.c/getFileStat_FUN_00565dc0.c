@@ -28,7 +28,7 @@ uint __cdecl getFileStat(LPCSTR param_1,int *param_2)
   short asStack_14 [2];
   
   bVar1 = false;
-  if ((*param_1 == '\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {
+  if ((*param_1 == '\0') || (iVar3 = FUN_00570870(param_1,"*?"), iVar3 != 0)) {
     FUN_00568e80(1);
     uVar4 = 0xffffffff;
   }

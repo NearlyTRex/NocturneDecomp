@@ -21,7 +21,7 @@
 ;   FUN_004d4ba0 at 004d4da0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00598346
+;   double DOUBLE_00598346 = 2
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x30                        ; 0055ca91
     MOV EAX,ESI                         ; 0055ca94
     FLD float ptr [ESP + 0x38]          ; 0055ca96
-    FMUL double ptr [0x00598346]        ; 0055ca9a | DAT_00598346
+    FMUL double ptr [0x00598346]        ; 0055ca9a | DOUBLE_00598346
     MOV EDX,0x3f800000                  ; 0055caa0
     MOV EDI,0xbf800000                  ; 0055caa5
     XOR ECX,ECX                         ; 0055caaa

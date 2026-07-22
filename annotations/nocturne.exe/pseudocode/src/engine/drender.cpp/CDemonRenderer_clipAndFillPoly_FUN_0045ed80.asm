@@ -31,9 +31,9 @@
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
+;   engine_clipper.c_FUN_00432cd0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
-;   FUN_00432cd0
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -143,8 +143,8 @@ section .text
     PUSH ESI                            ; 0045ee49
         ;   Label: LAB_0045ee49
     PUSH EBX                            ; 0045ee4a
-    CALL FUN_00432cd0                   ; 0045ee4b
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 0045ee4b
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 0045ee50
     POP EBP                             ; 0045ee53
     POP EDI                             ; 0045ee54

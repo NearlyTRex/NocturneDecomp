@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[12]:
-;   FUN_00410490 at 004107d0
 ;   FUN_00462300 at 0046257a
 ;   FUN_00478790 at 00478ac2
+;   core_baron.cpp_FUN_00410490 at 004107d0
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413b3d
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042adc3
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 004590d1

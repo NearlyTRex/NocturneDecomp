@@ -227,7 +227,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
         local_1cc = pfVar5[2];
       }
       local_60 = local_1d0 * local_1d0;
-      local_58 = ((local_1cc * (float)_DAT_00581184) / 448.0) * (float)_DAT_0058118c;
+      local_58 = ((local_1cc * (float)18) / 448.0) * (float)2;
       local_50 = local_1d4 * local_1d4 + local_60;
       local_5c = local_58 * local_58;
       if (local_50 < local_5c) {
@@ -250,16 +250,16 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
   if ((0.0 < local_2e8) && (*(int *)(0x01C775EC + 0xc) != 0)) {
     fVar1 = param_1[6];
-    fVar3 = 1.0 - local_2e8 * (float)_DAT_0058118c;
+    fVar3 = 1.0 - local_2e8 * (float)2;
     local_2e0 = local_2e0 * fVar3;
     local_2f4 = fVar3 * local_2f4;
     iVar8 = 0;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
     do {
-      local_2dc = (float)iVar8 * _DAT_00581194 * fVar2;
+      local_2dc = (float)iVar8 * 5.0679227589555217e-315._0_4_ * fVar2;
       local_28 = local_44;
       if (param_1[0xf] <= 0.0) {
-        local_28 = (float)_DAT_00581184 / 448.0;
+        local_28 = (float)18 / 448.0;
       }
       local_28 = local_28 * local_2dc;
       local_1b0 = local_218 * local_2dc;
@@ -316,7 +316,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
       local_230 = 0;
       uVar13 = 0x4860cb;
       fVar11 = (float10)round
-                                  ((float10)(local_2e8 * fVar1) * (float10)_DAT_0058119c);
+                                  ((float10)(local_2e8 * fVar1) * (float10)8192);
       iStack_78 = (int)ROUND(fVar11);
       *(int *)(*piVar4 + 0x2c) = iStack_78;
       *(float *)(*piVar4 + 0x20) = param_1[0xb];
@@ -372,14 +372,14 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
     local_20 = 0;
     local_18 = local_38;
     if (-1 < (int)local_24) {
-      local_48 = (fVar2 * _DAT_005811a4) / _DAT_005811a8;
+      local_48 = (fVar2 * 16777220.0f) / 30.0f;
       local_30 = 0x100;
       do {
         piVar4 = DAT_005ae704;
         local_1c = local_20;
         local_18 = local_24;
-        fVar11 = ((float10)local_20 / (float10)(int)local_24) * (float10)_DAT_0058118c *
-                 (float10)_DAT_005811ac;
+        fVar11 = ((float10)local_20 / (float10)(int)local_24) * (float10)2 *
+                 (float10)3.1415926535000001;
         fVar12 = (float10)fsin(fVar11);
         fVar11 = (float10)fcos(fVar11);
         puVar6 = (uint *)*DAT_005ae704;
@@ -408,7 +408,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
         wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*piVar4,&local_a8);
         local_cc = local_68 * local_38;
         local_c8 = local_6c * local_38;
-        local_c4 = fVar2 + (float)_DAT_005811c4;
+        local_c4 = fVar2 + (float)-0.10000000000000001;
         local_108 = (int)ROUND(local_cc * _DAT_0059d1f8);
         local_104 = (int)ROUND(local_c8 * _DAT_0059d1f8);
         local_100 = (int)ROUND(local_c4 * _DAT_0059d1f8);
@@ -460,7 +460,8 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(piVar4,1,uVar13);
           fVar1 = local_44;
           uVar13 = 0x486803;
-          fVar11 = (float10)round((float10)448.0 * (float10)_DAT_005811b4);
+          fVar11 = (float10)round((float10)448.0 * (float10)32767.5)
+          ;
           piVar4 = DAT_005ae704;
           local_34 = (int)ROUND(fVar11);
           if (fVar1 == 0.0) {
@@ -488,9 +489,9 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(float *param_1)
     local_138 = local_1a4 * local_130;
     local_134 = local_1a0 * local_130;
     local_130 = local_19c * local_130;
-    local_114 = local_138 * _DAT_005811bc;
-    local_110 = local_134 * _DAT_005811bc;
-    local_10c = local_130 * _DAT_005811bc;
+    local_114 = local_138 * 5.122630465115234e-315._0_4_;
+    local_110 = local_134 * 5.122630465115234e-315._0_4_;
+    local_10c = local_130 * 5.122630465115234e-315._0_4_;
     local_12c = param_1[3] - local_114;
     local_128 = param_1[4] - local_110;
     local_124 = param_1[5] - local_10c;

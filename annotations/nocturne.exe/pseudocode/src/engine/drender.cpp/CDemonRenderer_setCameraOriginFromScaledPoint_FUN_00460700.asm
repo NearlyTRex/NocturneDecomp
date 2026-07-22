@@ -8,7 +8,6 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[12]:
-;   FUN_0050a260 at 0050a58e
 ;   FUN_005125a0 at 00512d93
 ;   FUN_00513720 at 005137b1
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 00440498
@@ -18,10 +17,11 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610 at 004d6620
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df05d
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec77
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e19f
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057dc05
+;   double DOUBLE_0057dc05 = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -35,7 +35,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
     SUB ESP,0x8                         ; 00460701
     MOV EAX,dword ptr [ESP + 0x14]      ; 00460704
-    FLD double ptr [0x0057dc05]         ; 00460708 | DAT_0057dc05
+    FLD double ptr [0x0057dc05]         ; 00460708 | DOUBLE_0057dc05
     FLD float ptr [EAX + 0x8]           ; 0046070e
     FMUL ST1                            ; 00460711
     FLD float ptr [EAX + 0x4]           ; 00460713

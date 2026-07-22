@@ -65,21 +65,21 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)
   iVar4 = *(int *)(param_1 + 0x24c);
   iVar6 = *(int *)(param_1 + 0x254);
   puStack_54c = (byte *)0x4a6718;
-  fVar12 = (float10)round((float10)fVar1 * (float10)_DAT_005845ca);
+  fVar12 = (float10)round((float10)fVar1 * (float10)0.00027777777777777799);
   local_24 = (int)ROUND(fVar12);
-  fVar13 = (float10)fVar1 - (float10)local_24 * (float10)_DAT_005845d2;
+  fVar13 = (float10)fVar1 - (float10)local_24 * (float10)3600;
   uStack_550 = 0x4a6749;
   local_18 = local_24;
-  fVar12 = (float10)round(fVar13 * (float10)_DAT_005845da);
+  fVar12 = (float10)round(fVar13 * (float10)0.016666666666666701);
   iStack_34 = (int)ROUND(fVar12);
-  *(float *)(param_1 + 0x250) = (float)(fVar13 - (float10)iStack_34 * (float10)_DAT_005845e2);
+  *(float *)(param_1 + 0x250) = (float)(fVar13 - (float10)iStack_34 * (float10)60);
   pcStack_554 = (char *)0x4a6778;
   local_1c = iStack_34;
   fVar12 = (float10)round();
   iStack_34 = (int)ROUND(fVar12);
   fVar13 = (float10)*(float *)(param_1 + 0x250) - (float10)iStack_34;
   *(float *)(param_1 + 0x250) = (float)fVar13;
-  fVar12 = (float10)_DAT_005845ea;
+  fVar12 = (float10)100;
   uStack_558 = "Level time";
   *(int *)(param_1 + 0x254) = iVar6 + iVar4;
   uVar14 = 0x4a67b6;
@@ -97,7 +97,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  pcVar9 = &DAT_0058459b;
+  pcVar9 = "\n\n";
   iVar4 = -1;
   pcVar3 = (char *)&uStack_558;
   do {
@@ -177,7 +177,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  pcVar9 = &DAT_005845bb;
+  pcVar9 = "\n\n";
   iVar4 = -1;
   pcVar3 = (char *)&uStack_558;
   do {
@@ -198,7 +198,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  _sprintf(acStack_158,&DAT_005845be,*(uint *)(unaff_EDI + 0x24c));
+  _sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
   uVar14 = _DAT_014b9900;
   pcVar3 = acStack_158;
   iVar4 = -1;

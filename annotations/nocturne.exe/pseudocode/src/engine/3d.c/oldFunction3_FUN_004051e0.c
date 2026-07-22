@@ -9,6 +9,6 @@
 int engine_3d_c_oldFunction3_FUN_004051e0(int param_1)
 
 {
-  FUN_00408e80(*(int *)(param_1 + 4) + param_1);
+  engine_3d_c_FUN_00408e80(*(int *)(param_1 + 4) + param_1);
   return param_1 + 8;
 }

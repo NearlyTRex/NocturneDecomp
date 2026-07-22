@@ -21,7 +21,7 @@ int FUN_004f5d90(uint param_1)
   int iVar3;
   
   bVar8 = 0;
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
   iVar1 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar1 + 0x1b8);
   *(byte ***)(iVar1 + -0x1bc) = &PTR_FUN_005a1384;
@@ -50,7 +50,7 @@ int FUN_004f5d90(uint param_1)
     *(uint *)(iVar1 + 0x10) = *(uint *)(iVar1 + 0x1c);
     *(uint *)(iVar1 + 0x14) = *(uint *)(iVar1 + 0x20);
   }
-  FUN_0055d610(iVar1 + -0x2d8);
+  core_xform_cpp_FUN_0055d610(iVar1 + -0x2d8);
   puVar4 = (uint *)(iVar1 + 0x38 + (uint)bVar8 * -8);
   *(uint *)(iVar1 + 0x34) = local_14;
   puVar5 = puVar4 + (uint)bVar8 * -2 + 1;

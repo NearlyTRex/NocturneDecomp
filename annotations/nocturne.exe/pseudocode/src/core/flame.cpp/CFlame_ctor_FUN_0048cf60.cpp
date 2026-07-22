@@ -12,7 +12,7 @@ int __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(uint param_1)
   int iVar1;
   uint uVar2;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   *(byte ***)(iVar1 + 0x14c) = &PTR_core_flame_cpp_CFlame_setup_FUN_0048d050_0059d584;
   *(uint *)(iVar1 + 0x150) = 0x3f800000;
   *(uint *)(iVar1 + 0x154) = 0x40000000;

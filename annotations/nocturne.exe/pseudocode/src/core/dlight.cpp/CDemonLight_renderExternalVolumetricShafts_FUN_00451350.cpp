@@ -97,7 +97,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   
   bVar6 = 0;
   if (((*(int *)(param_1 + 0x1cbc) != 0) &&
-      ((float)_DAT_0057c8c6 <= *(float *)(0x01E57284 + 0x15a888))) &&
+      ((float)0.10000000000000001 <= *(float *)(0x01E57284 + 0x15a888))) &&
      (*(int *)(0x01C775EC + 0xc) != 0)) {
     FUN_00460d10(DAT_005ae704);
     local_9c = local_f0;
@@ -133,12 +133,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
         local_134 = pfVar4[1];
         local_130 = pfVar4[2];
       }
-      fVar1 = ((local_130 * (float)_DAT_0057c8ce) / *(float *)(param_1 + 0x138)) *
-              (float)_DAT_0057c8d6;
+      fVar1 = ((local_130 * (float)18) / *(float *)(param_1 + 0x138)) *
+              (float)2;
       fVar2 = local_138 * local_138 + local_134 * local_134;
       fVar1 = fVar1 * fVar1;
       local_58 = 1.0 - fVar2 / fVar1;
-      if ((fVar1 <= fVar2) || (local_58 <= (float)_DAT_0057c8de)) {
+      if ((fVar1 <= fVar2) || (local_58 <= (float)0.5)) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,param_1 + 0x104);
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(param_1 + 0x110,local_b4);
@@ -147,8 +147,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,puVar13,0);
         do {
           fVar7 = (float10)local_50 *
-                  ((float10)_DAT_0057c8ce / (float10)*(float *)(param_1 + 0x138)) *
-                  (float10)_DAT_0057c8e6;
+                  ((float10)18 / (float10)*(float *)(param_1 + 0x138)) *
+                  (float10)0.0625;
           local_4c = (float)fVar7;
           Var11 = fpatan(fVar7,(float10)1);
           fVar8 = (float10)fcos(Var11);
@@ -156,11 +156,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
           local_44 = (float)((float10)1 - fVar7);
           local_40 = (float)fVar8;
           do {
-            fVar7 = (float10)local_48 * (float10)_DAT_0057c8ee * (float10)_DAT_0057c8f6 *
-                    (float10)_DAT_0057c8d6;
+            fVar7 = (float10)local_48 * (float10)5.0977633259517284e-315._0_4_ * (float10)3.1415926535000001 *
+                    (float10)2;
             fVar8 = (float10)fsin(fVar7);
-            fVar12 = (float10)(local_48 + 1) * (float10)_DAT_0057c8ee * (float10)_DAT_0057c8f6 *
-                     (float10)_DAT_0057c8d6;
+            fVar12 = (float10)(local_48 + 1) * (float10)5.0977633259517284e-315._0_4_ *
+                     (float10)3.1415926535000001 * (float10)2;
             fVar9 = (float10)fsin(fVar12);
             fVar7 = (float10)fcos(fVar7);
             fVar12 = (float10)fcos(fVar12);
@@ -180,20 +180,22 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
                                        ((float10)local_18 * (float10)local_34 + (float10)local_18);
             local_70 = (int)ROUND(fVar7);
             local_2c = (float)*(ushort *)((iVar5 + local_70) * 2 + *(int *)(param_1 + 0x2f94)) *
-                       (float)_DAT_0057c8fe;
+                       (float)0.00390625;
             local_24 = 0;
             local_3c = (float)(fVar9 * fVar10);
             local_38 = (float)(fVar10 * fVar12);
             local_28 = local_2c;
             do {
               local_6c = *(float *)(param_1 + 0x100);
-              local_20 = (float)local_24 * local_40 * local_6c * _DAT_0057c906;
+              local_20 = (float)local_24 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;
               local_14 = local_24 + 1;
-              local_1c = (float)local_14 * local_40 * local_6c * _DAT_0057c906;
+              local_1c = (float)local_14 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;
               local_60 = *(float *)(param_1 + 0x2fa8) *
-                         (local_6c - local_20) * (1.0 / local_6c) * (float)_DAT_0057c90e * local_44;
-              local_5c = local_44 * (local_6c - local_1c) * (1.0 / local_6c) * (float)_DAT_0057c90e
-                         * *(float *)(param_1 + 0x2fa8);
+                         (local_6c - local_20) * (1.0 / local_6c) * (float)512 *
+                         local_44;
+              local_5c = local_44 *
+                         (local_6c - local_1c) * (1.0 / local_6c) * (float)512 *
+                         *(float *)(param_1 + 0x2fa8);
               local_68 = (int)ROUND(local_60);
               local_64 = (int)ROUND(local_5c);
               local_f4 = local_28;

@@ -11,7 +11,7 @@
 ;   string s_shell.kfm_00581434
 ;   string s_sh-sh?c_@_.15_0058143e
 ;   string s_44-sh?c_@_.2_0058144c
-;   undefined4 DAT_0058145c
+;   double DOUBLE_0058145c = 0.25
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005bed68
 ;
@@ -38,7 +38,7 @@ section .text
     SUB EAX,EDX                         ; 00489864
     MOV dword ptr [EBP + -0x4],EAX      ; 00489866
     FILD dword ptr [EBP + -0x4]         ; 00489869
-    FMUL double ptr [0x0058145c]        ; 0048986c | DAT_0058145c
+    FMUL double ptr [0x0058145c]        ; 0048986c | DOUBLE_0058145c
     FST float ptr [EBP + -0x8]          ; 00489872
     FLDZ                                ; 00489875
     FCOMPP                              ; 00489877

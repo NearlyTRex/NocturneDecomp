@@ -157,8 +157,8 @@
 ;   core_event.cpp_CEventList_executeCommandString_FUN_0047ab90 at 0047ac04
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f581
-;   undefined4 DAT_0057f586
+;   TerminatedCString s_none_0057f581
+;   char CHAR_00h_0057f586 = \x00
 ;   string s_Event_name_%s_is_too_long_0057f587
 ;   string s_..\\core\\event.cpp_0057f5a1
 ;   string s_Too_many_events_0057f5b3
@@ -222,7 +222,7 @@ section .text
     POP ESI                             ; 0047ac80
     POP EBX                             ; 0047ac81
     RET                                 ; 0047ac82
-    PUSH 0x57f581                       ; 0047ac83 | DAT_0057f581
+    PUSH 0x57f581                       ; 0047ac83 | = "none"
         ;   Label: LAB_0047ac83
     PUSH EBX                            ; 0047ac88
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047ac89
@@ -238,12 +238,12 @@ section .text
     CMP dword ptr [0x01c08b5c],0x0      ; 0047ac9b | DAT_01c08b5c
         ;   Label: LAB_0047ac9b
     SETZ AL                             ; 0047aca2
-    MOV ECX,0x57f586                    ; 0047aca5 | DAT_0057f586
+    MOV ECX,0x57f586                    ; 0047aca5 | CHAR_00h_0057f586
     MOV DL,0x28                         ; 0047acaa
     AND EAX,0xff                        ; 0047acac
     MOV ESI,EBX                         ; 0047acb1
     MOV dword ptr [EBP + -0x62],EAX     ; 0047acb3
-    MOV dword ptr [EBP + -0x5e],ECX     ; 0047acb6 | DAT_0057f586
+    MOV dword ptr [EBP + -0x5e],ECX     ; 0047acb6 | CHAR_00h_0057f586
     MOV AL,byte ptr [ESI]               ; 0047acb9
         ;   Label: LAB_0047acb9
     CMP AL,DL                           ; 0047acbb
@@ -1013,7 +1013,7 @@ section .text
         ;   Label: LAB_0047b3c5
     LEA EAX,[EBP + 0xffffea52]          ; 0047b3c8
     PUSH EAX                            ; 0047b3ce
-    PUSH 0x57f7a5                       ; 0047b3cf | DAT_0057f7a5
+    PUSH 0x57f7a5                       ; 0047b3cf | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 0047b3d4
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     MOV ECX,EAX                         ; 0047b3d9
@@ -1921,7 +1921,7 @@ section .text
         ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
     FLD float ptr [EBP + -0xe]          ; 0047bc40
     FLD ST0                             ; 0047bc43
-    FMUL double ptr [0x00580217]        ; 0047bc45 | DAT_00580217
+    FMUL double ptr [0x00580217]        ; 0047bc45 | DOUBLE_00580217
     MOV EDI,dword ptr [EBP + -0x16]     ; 0047bc4b
     ADD ESP,0x24                        ; 0047bc4e
     FSTP ST1                            ; 0047bc51
@@ -2836,7 +2836,7 @@ section .text
     JZ 0x0047aead                       ; 0047c4b3
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
     PUSH 0x3                            ; 0047c4b9
-    PUSH 0x57fbe2                       ; 0047c4bb | DAT_0057fbe2
+    PUSH 0x57fbe2                       ; 0047c4bb | = "cue"
     LEA EAX,[EBP + 0xffffece2]          ; 0047c4c0
     PUSH EAX                            ; 0047c4c6
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0047c4c7
@@ -3056,7 +3056,7 @@ section .text
     JZ 0x0047aead                       ; 0047c6d8
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
     FLD float ptr [EBP + 0x16]          ; 0047c6de
-    FMUL double ptr [0x0058021f]        ; 0047c6e1 | DAT_0058021f
+    FMUL double ptr [0x0058021f]        ; 0047c6e1 | DOUBLE_0058021f
     SUB ESP,0x4                         ; 0047c6e7
     FSTP float ptr [ESP]                ; 0047c6ea
     PUSH ECX                            ; 0047c6ed
@@ -3357,7 +3357,7 @@ section .text
     JZ 0x0047aead                       ; 0047c9a3
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
     FLD float ptr [EBP + 0x2e]          ; 0047c9a9
-    FMUL double ptr [0x0058021f]        ; 0047c9ac | DAT_0058021f
+    FMUL double ptr [0x0058021f]        ; 0047c9ac | DOUBLE_0058021f
     SUB ESP,0x4                         ; 0047c9b2
     FSTP float ptr [ESP]                ; 0047c9b5
     MOV EDX,dword ptr [EBP + 0x2a]      ; 0047c9b8
@@ -4266,7 +4266,7 @@ section .text
         ;   XREF to: 0047d1ba (CONDITIONAL_JUMP)  ; LAB_0047d1ba
     JMP 0x0047d1ce                      ; 0047d219
         ;   XREF to: 0047d1ce (UNCONDITIONAL_JUMP)  ; LAB_0047d1ce
-    PUSH 0x57ffbc                       ; 0047d21b | DAT_0057ffbc
+    PUSH 0x57ffbc                       ; 0047d21b | = "none"
         ;   Label: LAB_0047d21b
     LEA EAX,[EBP + 0xfffff25a]          ; 0047d220
     PUSH EAX                            ; 0047d226
@@ -4288,7 +4288,7 @@ section .text
     ADD ESP,0x8                         ; 0047d24a
     JMP 0x0047aead                      ; 0047d24d
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead
-    PUSH 0x57ffc1                       ; 0047d252 | DAT_0057ffc1
+    PUSH 0x57ffc1                       ; 0047d252 | = "rain"
         ;   Label: LAB_0047d252
     LEA EAX,[EBP + 0xfffff25a]          ; 0047d257
     PUSH EAX                            ; 0047d25d
@@ -4301,7 +4301,7 @@ section .text
     MOV EAX,0x1                         ; 0047d26a
     JMP 0x0047d233                      ; 0047d26f
         ;   XREF to: 0047d233 (UNCONDITIONAL_JUMP)  ; LAB_0047d233
-    PUSH 0x57ffc6                       ; 0047d271 | DAT_0057ffc6
+    PUSH 0x57ffc6                       ; 0047d271 | = "snow"
         ;   Label: LAB_0047d271
     LEA EAX,[EBP + 0xfffff25a]          ; 0047d276
     PUSH EAX                            ; 0047d27c
@@ -4393,8 +4393,8 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0047d34a | DAT_005be368
     PUSH dword ptr [EBP + 0x5e]         ; 0047d350
     PUSH EDI                            ; 0047d353 | DAT_01e57284
-    CALL FUN_0050e660                   ; 0047d354
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e660()
+    CALL core_set.cpp_FUN_0050e660      ; 0047d354
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
     ADD ESP,0x14                        ; 0047d359
     JMP 0x0047aead                      ; 0047d35c
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead

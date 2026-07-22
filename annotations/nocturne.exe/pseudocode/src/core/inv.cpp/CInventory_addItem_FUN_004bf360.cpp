@@ -63,7 +63,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     if (iVar3 != 0) {
-      _sprintf(acStack_134,&DAT_00586e71,*(uint *)(iVar3 + 0x30c));
+      _sprintf(acStack_134,"%d ",*(uint *)(iVar3 + 0x30c));
       pcVar8 = acStack_134;
       iVar3 = -1;
       pcVar4 = acStack_334;
@@ -767,7 +767,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_0058701a);
+      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
       iVar7 = -1;
       pcVar8 = acStack_234;
       do {
@@ -913,7 +913,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_0058703e);
+      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
       iVar3 = -1;
       pcVar8 = acStack_234;
       do {
@@ -949,7 +949,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
                           (_DAT_014b9904,(char *)(param_1 + 0x34c));
-    *(float *)(param_1 + 0x344) = (float)iStack_14 * (float)_DAT_00587161;
+    *(float *)(param_1 + 0x344) = (float)iStack_14 * (float)0.025000000000000001;
   }
   iStack_24 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);
   if (iStack_24 != 0) {
@@ -1043,7 +1043,7 @@ LAB_004bfff1:
       (*(code *)**(uint **)(iVar3 + 0x14c))(iVar3);
       *(uint *)(iVar3 + 0x560) = *(uint *)(iStack_24 + 0x30c);
       (**(code **)(*(int *)(iVar3 + 0x14c) + 0x80))(iVar3,*(uint *)(param_1 + 4));
-      FUN_00409cd0(param_2);
+      core_actor_cpp_FUN_00409cd0(param_2);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Found dynamite.  Creating weapon for it.\n");
       core_inv_cpp_CInventory_addItem_FUN_004bf360(param_1,iVar3,1);
@@ -1107,7 +1107,7 @@ LAB_004bfff1:
             *(uint *)(iVar10 + 0x564) = *(uint *)(iVar7 + 0x310);
             (**(code **)(*(int *)(iVar10 + 0x14c) + 0x80))(iVar10,*(uint *)(param_1 + 4));
             (**(code **)(*(int *)(iVar10 + 0x14c) + 100))(iVar10,param_1);
-            FUN_00409cd0(*(uint *)(iStack_18 + 0xc));
+            core_actor_cpp_FUN_00409cd0(*(uint *)(iStack_18 + 0xc));
             *(int *)(iStack_18 + 0xc) = iVar10;
             uVar5 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar3);
             bVar2 = true;

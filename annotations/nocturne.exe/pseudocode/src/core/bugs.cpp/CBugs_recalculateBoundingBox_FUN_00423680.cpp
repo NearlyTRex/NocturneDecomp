@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint * __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(int param_1)
 
 {
@@ -44,12 +42,12 @@ uint * __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(int param
       iVar8 = iVar8 + 0x40;
     } while (iVar9 < *(int *)(param_1 + 0xbd28));
   }
-  fVar2 = *(float *)(param_1 + 0x19834) + _DAT_00579d85;
-  fVar3 = *(float *)(param_1 + 0x1983c) + _DAT_00579d85;
-  fVar4 = *(float *)(param_1 + 0x19840) + _DAT_00579d89;
-  fVar5 = *(float *)(param_1 + 0x19844) + _DAT_00579d89;
-  fVar6 = *(float *)(param_1 + 0x19848) + _DAT_00579d89;
-  *(float *)(param_1 + 0x19838) = *(float *)(param_1 + 0x19838) + _DAT_00579d85;
+  fVar2 = *(float *)(param_1 + 0x19834) + -0.3333333f;
+  fVar3 = *(float *)(param_1 + 0x1983c) + -0.3333333f;
+  fVar4 = *(float *)(param_1 + 0x19840) + 0.3333333f;
+  fVar5 = *(float *)(param_1 + 0x19844) + 0.3333333f;
+  fVar6 = *(float *)(param_1 + 0x19848) + 0.3333333f;
+  *(float *)(param_1 + 0x19838) = *(float *)(param_1 + 0x19838) + -0.3333333f;
   *(float *)(param_1 + 0x1983c) = fVar3;
   *(float *)(param_1 + 0x19840) = fVar4;
   *(float *)(param_1 + 0x19844) = fVar5;

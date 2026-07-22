@@ -21,9 +21,9 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\bodypart.cpp_00578e79+1
+;   TerminatedCString s_core_bodypart_cpp_00578e7a
 ;   string s_Can't_create_body_part!_00578e8f
-;   undefined4 DAT_00578eaa
+;   float FLOAT_00578eaa = 10
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 00415b5a
     JNZ 0x00415b81                      ; 00415b5c
         ;   XREF to: 00415b81 (CONDITIONAL_JUMP)  ; LAB_00415b81
-    MOV EDX,0x578e7a                    ; 00415b5e | s_..\core\bodypart.cpp_00578e79+1
+    MOV EDX,0x578e7a                    ; 00415b5e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00415b63
     PUSH 0x578e8f                       ; 00415b68 | = "Can't create body part!"
     MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | DAT_01cc4800
@@ -171,7 +171,7 @@ section .text
     FXCH                                ; 00415c84
     FSIN                                ; 00415c86
     FXCH ST2                            ; 00415c88
-    FLD float ptr [0x00578eaa]          ; 00415c8a | DAT_00578eaa
+    FLD float ptr [0x00578eaa]          ; 00415c8a | FLOAT_00578eaa
     FXCH                                ; 00415c90
     FMUL ST1                            ; 00415c92
     FXCH ST2                            ; 00415c94

@@ -16,6 +16,6 @@ uint core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(int param_1)
   if (*(int *)(iVar1 + 0x24) == 0xe) {
     return 1;
   }
-  uVar2 = FUN_0040d830(param_1);
+  uVar2 = core_actor_cpp_FUN_0040d830(param_1);
   return uVar2;
 }

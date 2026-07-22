@@ -25,7 +25,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041a310(int param_1)
     puVar3 = (uint *)(param_1 + 0xbddc);
     iVar2 = param_1;
     do {
-      FUN_0055d610(*(int *)(iVar2 + 0xbde8) + 0x30);
+      core_xform_cpp_FUN_0055d610(*(int *)(iVar2 + 0xbde8) + 0x30);
       puVar4 = (uint *)(iVar2 + 0xbdc0 + (uint)bVar6 * -8);
       *(uint *)(iVar2 + 0xbdbc) = local_24;
       puVar5 = puVar4 + (uint)bVar6 * -2 + 1;

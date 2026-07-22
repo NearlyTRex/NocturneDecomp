@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_00422050 at 0042219f
 ;   FUN_004baba0 at 004bb137
 ;   FUN_005423c0 at 00542957
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 0042261d
+;   core_bugs.cpp_FUN_00422050 at 0042219f
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 00424959
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a893
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 at 004a91e0

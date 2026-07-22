@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00402e90 at 00402ff2
-;   FUN_004031a0 at 0040330a
+;   engine_2d.c_FUN_00402e90 at 00402ff2
+;   engine_2d.c_FUN_004031a0 at 0040330a
 ;   engine_2d.c_buildColorLookupTable_FUN_00403570 at 004035f2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057712c
-;   undefined4 DAT_00577134
-;   undefined4 DAT_0057713c
-;   undefined4 DAT_00577144
-;   undefined4 DAT_0057714c
+;   double DOUBLE_0057712c = 0.577350270000000
+;   double DOUBLE_00577134 = 0.300000000000000
+;   double DOUBLE_0057713c = 0.590000000000000
+;   double DOUBLE_00577144 = 0.110000000000000
+;   double DOUBLE_0057714c = 0.150000000000000
 ;   undefined4 DAT_006af638
 ;
 ; *****************************************************************************
@@ -56,7 +56,7 @@ section .text
     FADDP                               ; 00401897
     FSQRT                               ; 00401899
     MOV EDX,0x7149f2ca                  ; 0040189b
-    FMUL double ptr [0x0057712c]        ; 004018a0 | DAT_0057712c
+    FMUL double ptr [0x0057712c]        ; 004018a0 | DOUBLE_0057712c
     MOV dword ptr [ESP + 0x20],EDX      ; 004018a6
     MOV EBX,ESI                         ; 004018aa
     MOV EAX,dword ptr [ESP + 0x54]      ; 004018ac
@@ -102,19 +102,19 @@ section .text
     FABS                                ; 00401917
     FLD float ptr [ESP + 0x8]           ; 00401919
     FMUL ST0                            ; 0040191d
-    FMUL double ptr [0x00577134]        ; 0040191f | DAT_00577134
+    FMUL double ptr [0x00577134]        ; 0040191f | DOUBLE_00577134
     FLD float ptr [ESP]                 ; 00401925
     FMUL ST0                            ; 00401928
-    FMUL double ptr [0x0057713c]        ; 0040192a | DAT_0057713c
+    FMUL double ptr [0x0057713c]        ; 0040192a | DOUBLE_0057713c
     FADDP                               ; 00401930
     FILD dword ptr [ESP + 0x2c]         ; 00401932
     FMUL ST0                            ; 00401936
-    FMUL double ptr [0x00577144]        ; 00401938 | DAT_00577144
+    FMUL double ptr [0x00577144]        ; 00401938 | DOUBLE_00577144
     FADDP                               ; 0040193e
     FLD ST1                             ; 00401940
     FMULP ST2                           ; 00401942
     FXCH                                ; 00401944
-    FMUL double ptr [0x0057714c]        ; 00401946 | DAT_0057714c
+    FMUL double ptr [0x0057714c]        ; 00401946 | DOUBLE_0057714c
     FADDP                               ; 0040194c
     FST float ptr [ESP + 0x24]          ; 0040194e
     FCOMP float ptr [ESP + 0x20]        ; 00401952

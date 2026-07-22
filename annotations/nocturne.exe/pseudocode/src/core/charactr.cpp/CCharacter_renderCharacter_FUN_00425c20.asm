@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_00414340 at 004143e7
 ;   FUN_00415760 at 00415865
 ;   FUN_00419c20 at 00419c9d
-;   FUN_00426510 at 00426551
 ;   FUN_0045a260 at 0045a35b
 ;   FUN_004de550 at 004de66c
 ;   FUN_004efa60 at 004efac2
 ;   FUN_00541640 at 005417af
+;   core_batman.cpp_FUN_00414340 at 004143e7
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 004264a6
+;   core_charactr.cpp_FUN_00426510 at 00426551
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -26,10 +26,10 @@
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0
+;   core_charactr.cpp_FUN_004270e0
 ;   core_cloth.cpp_CClothList_render_FUN_004385a0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   FUN_004270e0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     JNC 0x00425c6b                      ; 00425c60
         ;   XREF to: 00425c6b (CONDITIONAL_JUMP)  ; LAB_00425c6b
     PUSH EBX                            ; 00425c62
-    CALL FUN_004270e0                   ; 00425c63
-        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004270e0()
+    CALL core_charactr.cpp_FUN_004270e0 ; 00425c63
+        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004270e0()
     ADD ESP,0x4                         ; 00425c68
     PUSH EBX                            ; 00425c6b
         ;   Label: LAB_00425c6b

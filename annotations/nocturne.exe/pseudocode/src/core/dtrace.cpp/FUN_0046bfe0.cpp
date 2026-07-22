@@ -46,7 +46,7 @@ void FUN_0046bfe0(int param_1,uint param_2)
     piVar1 = (int *)core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
                               (param_1,local_40,local_3c,local_38);
     if (piVar1 == (int *)0x0) {
-      _DAT_01cc4800 = "?..\\core\\dtrace.cpp" + 1;
+      _DAT_01cc4800 = "..\\core\\dtrace.cpp";
       _DAT_01cc4804 = 0xb19;
       FUN_004c8440("Parity Check 999");
     }

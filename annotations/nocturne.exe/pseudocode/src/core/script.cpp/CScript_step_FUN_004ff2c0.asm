@@ -3504,8 +3504,8 @@ section .text
     PUSH ESI                            ; 0050173c
     MOV ECX,dword ptr [0x005be368]      ; 0050173d | DAT_005be368
     PUSH ECX                            ; 00501743 | DAT_01e57284
-    CALL FUN_0050e550                   ; 00501744
-        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e550()
+    CALL core_set.cpp_FUN_0050e550      ; 00501744
+        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e550()
     ADD ESP,0xc                         ; 00501749
     JMP 0x004ff36b                      ; 0050174c
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b

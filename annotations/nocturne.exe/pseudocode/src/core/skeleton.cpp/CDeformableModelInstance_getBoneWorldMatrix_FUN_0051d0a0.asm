@@ -28,8 +28,8 @@
 ;   FUN_00499b00 at 00499beb
 ;   FUN_004ab110 at 004ab133
 ;   FUN_004d4f30 at 004d51d4
-;   FUN_00561940 at 00561983
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 at 0051d346
+;   core_zombie.cpp_FUN_00561940 at 00561983
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

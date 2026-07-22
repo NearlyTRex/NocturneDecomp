@@ -4,29 +4,697 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              0
-Fully clean structs:        0
-Structs with issues:        0
-Unreferenced structs:       0
+Total structs:              477
+Fully clean structs:        464
+Structs with issues:        13
+Unreferenced structs:       152
 
-Total fields:               0
-Clean fields:               0
-Unknown (unk*) fields:      0
-Padding (pad*) fields:      0
-Reserved (reserved*) fields:0
+Total fields:               3640
+Clean fields:               3621
+Unknown (unk*) fields:      10
+Padding (pad*) fields:      4
+Reserved (reserved*) fields:5
 Default (field_*) fields:   0
-Overall field quality:      100.0%
+Overall field quality:      99.5%
 
 ======================================================================
-UNREFERENCED STRUCTS (0)
+UNREFERENCED STRUCTS (152)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
+  CActorPropertyList                        /Nocturne/Class/Game
+  CCharacter_full_vtable                    /Nocturne/Class/Game
+  CDemonActorType                           /Nocturne/Class/Game
+  CEnemy_full_vtable                        /Nocturne/Class/Game
+  CExternalRenderer                         /Nocturne/Class/Game
+  CHero_full_vtable                         /Nocturne/Class/Game
+  CKeys                                     /Nocturne/Class/Game
+  CLodFace                                  /Nocturne/Class/Game
+  CLodMeshPrecomputeEntry                   /Nocturne/Class/Game
+  CMatrix3x3d                               /Nocturne/Class/Game
+  CMoon                                     /Nocturne/Class/Game
+  CMouse                                    /Nocturne/Class/Game
+  COrientation                              /Nocturne/Class/Game
+  CPolyIntersectResult                      /Nocturne/Class/Game
+  CRock                                     /Nocturne/Class/Game
+  CSfxSlot                                  /Nocturne/Class/Game
+  CShell                                    /Nocturne/Class/Game
+  CSlew                                     /Nocturne/Class/Game
+  CSpark                                    /Nocturne/Class/Game
+  CSpike                                    /Nocturne/Class/Game
+  CSpotView                                 /Nocturne/Class/Game
+  CStake                                    /Nocturne/Class/Game
+  CTerrain                                  /Nocturne/Class/Game
+  CTrail                                    /Nocturne/Class/Game
+  CVec                                      /Nocturne/Class/Game
+  CVector2f                                 /Nocturne/Class/Game
+  CWater                                    /Nocturne/Class/Game
+  CWavOutDevice                             /Nocturne/Class/Game
+  CWeapon_full_vtable                       /Nocturne/Class/Game
+  SActorRayHit                              /Nocturne/Struct/Game
+  SActorVarBlock                            /Nocturne/Struct/Game
+  SAlphaEntry                               /Nocturne/Struct/Game
+  SAudioFormatDescriptor                    /Nocturne/Struct/Game
+  SBat                                      /Nocturne/Struct/Game
+  SBoneData                                 /Nocturne/Struct/Game
+  SCPUInfo                                  /Nocturne/Struct/Game
+  SCameraDepthEntry                         /Nocturne/Struct/Game
+  SCameraEdge                               /Nocturne/Struct/Game
+  SCameraViewportState                      /Nocturne/Struct/Game
+  SChatOutMessage                           /Nocturne/Struct/Game
+  SColorBox                                 /Nocturne/Struct/Game
+  SColorQuantMapper                         /Nocturne/Struct/Game
+  SConditionVariable                        /Nocturne/Struct/Game
+  SCorona                                   /Nocturne/Struct/Game
+  SCoronaLightCache                         /Nocturne/Struct/Game
+  SCounterBlock                             /Nocturne/Struct/Game
+  SCram                                     /Nocturne/Struct/Game
+  SCramRectangle                            /Nocturne/Struct/Game
+  SDirectSoundDeviceInfo                    /Nocturne/Struct/Game
+  SDisplayListSortEntry                     /Nocturne/Struct/Game
+  SEdgeChainEntry                           /Nocturne/Struct/Game
+  SEdgeList                                 /Nocturne/Struct/Game
+  SEdgeTableEntry                           /Nocturne/Struct/Game
+  SEnumPair                                 /Nocturne/Struct/Game
+  SEpdDirEntry                              /Nocturne/Struct/Game
+  SEpdHeader                                /Nocturne/Struct/Game
+  SEventNameBlock                           /Nocturne/Struct/Game
+  SFileTrackingEntry                        /Nocturne/Struct/Game
+  SFogGrid                                  /Nocturne/Struct/Game
+  SFogImagePlane                            /Nocturne/Struct/Game
+  SFontGlyph                                /Nocturne/Struct/Game
+  SFoundFileInfo                            /Nocturne/Struct/Game
+  SFreaky                                   /Nocturne/Struct/Game
+  SHuffmanTable                             /Nocturne/Struct/Game
+  SHuffmanTableSource                       /Nocturne/Struct/Game
+  SInteractionInfo                          /Nocturne/Struct/Game
+  SInventoryItemInfo                        /Nocturne/Struct/Game
+  SLightGlowTable                           /Nocturne/Struct/Game
+  SLineStrip2Index                          /Nocturne/Struct/Game
+  SLineStrip3Index                          /Nocturne/Struct/Game
+  SLodSamplePoint                           /Nocturne/Struct/Game
+  SLodUvAccum                               /Nocturne/Struct/Game
+  SMRGLAnimatedTexture                      /Nocturne/Struct/Game
+  SMRGLIndexBlock                           /Nocturne/Struct/Game
+  SMRGLKeyframeModel                        /Nocturne/Struct/Game
+  SMRGLKeyframeModelOnDisk                  /Nocturne/Struct/Game
+  SMRGLLightPrimitive                       /Nocturne/Struct/Game
+  SMRGLModelBounds                          /Nocturne/Struct/Game
+  SMRGLPointerArray                         /Nocturne/Struct/Game
+  SMRGLPrimitiveBigPoly                     /Nocturne/Struct/Game
+  SMRGLPrimitiveBigPolyIndex                /Nocturne/Struct/Game
+  SMRGLPrimitivePoly                        /Nocturne/Struct/Game
+  SMRGLPrimitiveQuadIndex                   /Nocturne/Struct/Game
+  SMRGLPrimitiveTriangleIndex               /Nocturne/Struct/Game
+  SMRGLSkyTexture                           /Nocturne/Struct/Game
+  SMRGLTextureList                          /Nocturne/Struct/Game
+  SMRGLVertexBlock                          /Nocturne/Struct/Game
+  SMemHead                                  /Nocturne/Struct/Game
+  SMixBuffer                                /Nocturne/Struct/Game
+  SModelPartName                            /Nocturne/Struct/Game
+  SMorphControlPoint                        /Nocturne/Struct/Game
+  SMovieFrame                               /Nocturne/Struct/Game
+  SMpegFrameDecodeContext                   /Nocturne/Struct/Game
+  SMpegLayer3BandIndex                      /Nocturne/Struct/Game
+  SMpegLayer3SideInfo                       /Nocturne/Struct/Game
+  SMpegScalefactorBandData                  /Nocturne/Struct/Game
+  SMpegStereoSubbandSamples                 /Nocturne/Struct/Game
+  SMpegSubbandAllocation                    /Nocturne/Struct/Game
+  SMpegSubbandQuantizedSamples              /Nocturne/Struct/Game
+  SMpegSubbandSCFSI                         /Nocturne/Struct/Game
+  SMpegSubbandScalefactors                  /Nocturne/Struct/Game
+  SNetPacket_ChatMessage                    /Nocturne/Struct/Game
+  SNetPacket_GameSettings                   /Nocturne/Struct/Game
+  SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
+  SNetPacket_PlayerInput                    /Nocturne/Struct/Game
+  SNetPacket_PlayerState                    /Nocturne/Struct/Game
+  SNetPacket_ServerAccept                   /Nocturne/Struct/Game
+  SNetPacket_SimFrame                       /Nocturne/Struct/Game
+  SNetPacket_Simple                         /Nocturne/Struct/Game
+  SPBMFileHeader                            /Nocturne/Struct/Game
+  SPaletteEntry                             /Nocturne/Struct/Game
+  SPlayer                                   /Nocturne/Struct/Game
+  SPod1DirEntry                             /Nocturne/Struct/Game
+  SPod1Header                               /Nocturne/Struct/Game
+  SPod2Header                               /Nocturne/Struct/Game
+  SPod3Header                               /Nocturne/Struct/Game
+  SPodDirEntryOnDisk                        /Nocturne/Struct/Game
+  SPodManageRecord                          /Nocturne/Struct/Game
+  SPoint2i                                  /Nocturne/Struct/Game
+  SPolygonScreenData                        /Nocturne/Struct/Game
+  SPropertyFlag                             /Nocturne/Struct/Game
+  SQuadVertices                             /Nocturne/Struct/Game
+  SRA4HQPoint                               /Nocturne/Struct/Game
+  SRGBColorPalette                          /Nocturne/Struct/Game
+  SRecordingDeviceInfo                      /Nocturne/Struct/Game
+  SRenderBufferEntry                        /Nocturne/Struct/Game
+  SResolutionEntry                          /Nocturne/Struct/Game
+  SS3DFaceMatch                             /Nocturne/Struct/Game
+  SScanlineSpans                            /Nocturne/Struct/Game
+  SScreenCoord                              /Nocturne/Struct/Game
+  SSfxBlock                                 /Nocturne/Struct/Game
+  SShapeEditorPolygon                       /Nocturne/Struct/Game
+  SSkeleditBiasEntry                        /Nocturne/Struct/Game
+  SSoftwareEdge                             /Nocturne/Struct/Game
+  SSoundDeviceInfo                          /Nocturne/Struct/Game
+  SSoundModeEntry                           /Nocturne/Struct/Game
+  SSpatialGrid                              /Nocturne/Struct/Game
+  SSpatialTreeNode                          /Nocturne/Struct/Game
+  SStereoBuffers                            /Nocturne/Struct/Game
+  SStereoGains                              /Nocturne/Struct/Game
+  STimerBlock                               /Nocturne/Struct/Game
+  STimestampRecord                          /Nocturne/Struct/Game
+  STreeNode                                 /Nocturne/Struct/Game
+  STriangleBoundsEntry                      /Nocturne/Struct/Game
+  SVPHHeader                                /Nocturne/Struct/Game
+  SVPHVertexLink                            /Nocturne/Struct/Game
+  SVersionControlSession                    /Nocturne/Struct/Game
+  SVertexData                               /Nocturne/Struct/Game
+  SVertexPair                               /Nocturne/Struct/Game
+  SWavChunkHeader                           /Nocturne/Struct/Game
+  SWavFmtChunk                              /Nocturne/Struct/Game
+  SWindow                                   /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (0)
+STRUCTS WITH PROBLEMATIC FIELDS (13)
 ----------------------------------------------------------------------
 
+SVPHHeader                                 33.3% complete  (1/3 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SMRGLSkyTexture                            66.7% complete  (2/3 fields clean) [unreferenced]
+  Issues: 1 reserved
+  Fields: reserved
+
+SMRGLTextureList                           66.7% complete  (2/3 fields clean) [unreferenced]
+  Issues: 1 reserved
+  Fields: reserved
+
+SPBMFileHeader                             71.4% complete  (5/7 fields clean) [unreferenced]
+  Issues: 2 reserved
+  Fields: reserved1, reserved2
+
+SS3DFaceMatch                              71.4% complete  (5/7 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SEpdHeader                                 75.0% complete  (3/4 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk1
+
+SVPHVertexLink                             75.0% complete  (3/4 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+SPod3Header                                76.9% complete  (10/13 fields clean) [unreferenced]
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+SEpdDirEntry                               80.0% complete  (4/5 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk1
+
+CCramTex                                   89.5% complete  (17/19 fields clean)
+  Issues: 2 padding
+  Fields: padded_width, padded_height
+
+CExternalRenderer                          90.0% complete  (9/10 fields clean) [unreferenced]
+  Issues: 1 reserved
+  Fields: reserved
+
+SCram                                      90.0% complete  (9/10 fields clean) [unreferenced]
+  Issues: 1 padding
+  Fields: padding_size
+
+SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
 ======================================================================
-FULLY CLEAN STRUCTS (0)
+FULLY CLEAN STRUCTS (464)
 ----------------------------------------------------------------------
+  C3DSCamera
+  C3DSLight
+  CActorDestination
+  CActorProperty
+  CActorPropertyList
+  CAlphaBitmap
+  CAmmo
+  CAmmoBox
+  CAnvil
+  CArmour
+  CBackgroundActor
+  CBassPlayer
+  CBat
+  CBatCreature
+  CBatman
+  CBattery
+  CBeast
+  CBiggs
+  CBitFont
+  CBloodParticle
+  CBloodPool
+  CBloodSplat
+  CBodyPart
+  CBoneGuy
+  CBoundingBox3D
+  CBox
+  CBoxActor
+  CBride
+  CBugs
+  CBulletHole
+  CCameraTransformState
+  CCameraView
+  CCameraView_vtable
+  CChain
+  CCharacter
+  CCharacter_full_vtable
+  CCharacter_vtable
+  CClippedPoly
+  CCloth
+  CClothList
+  CCodec
+  CCodec_vtable
+  CColor3f
+  CColor3i
+  CConsole
+  CConveyor
+  CCourse
+  CCourseFrame
+  CCrate
+  CCrater
+  CCrossbow
+  CCryptVessel
+  CCurtain
+  CDeformableModel
+  CDeformableModelInstance
+  CDemonActor
+  CDemonActorTransformState
+  CDemonActorType
+  CDemonActor_vtable
+  CDemonCamera
+  CDemonCube
+  CDemonCubeTriangle
+  CDemonFilter
+  CDemonGlobe
+  CDemonLight
+  CDemonPart
+  CDemonPod
+  CDemonPod_vtable
+  CDemonRaytrace
+  CDemonRenderer
+  CDemonSet
+  CDemonTriangle
+  CDoor
+  CDraculaBride
+  CDrawSurface
+  CDrip
+  CDrone
+  CDrummer
+  CEdButton
+  CEdScrollBar
+  CEditorTools
+  CEmitter
+  CEnemy
+  CEnemy_full_vtable
+  CEnemy_vtable
+  CExplosion
+  CFileBitStream
+  CFileFinder
+  CFilmProjector
+  CFilmReel
+  CFilterCache
+  CFlame
+  CFlameCan
+  CFlies
+  CFont
+  CFont_vtable
+  CFootstep
+  CFrankenstienMachine
+  CGabriella
+  CGargoyle
+  CGasMask
+  CGhoul
+  CGlass
+  CGlassParticle
+  CGrave
+  CGround
+  CHealthItem
+  CHero
+  CHero_full_vtable
+  CHero_vtable
+  CHighPriestOfGardath
+  CHiram
+  CHostage
+  CHotDemon
+  CImp
+  CIniFile
+  CInputString
+  CInventory
+  CKeyActor
+  CKeyFramedModel
+  CKeyFramedModelInstance
+  CKeyFramedModelPart
+  CKeys
+  CKeys_vtable
+  CLZWCompress
+  CLZWDecompress
+  CLZWDictionary
+  CLZWDictionaryNode
+  CLadder
+  CLarva
+  CLaserBeam
+  CLever
+  CLightActor
+  CLightGun
+  CLightningBolt
+  CLocation
+  CLodFace
+  CLodMeshPrecomputeEntry
+  CMP3Decoder
+  CMansionPuzzleCircle
+  CMarquee
+  CMatrix3x3d
+  CMatrix3x3f
+  CMatrix3x3i
+  CMatrix3x4f
+  CMemoryBitStream
+  CMimic
+  CMineCar
+  CMirror
+  CMirrorHack
+  CMirrorReflection
+  CMobster
+  CMoloch
+  CMoon
+  CMorph
+  CMorphModel
+  CMotionController
+  CMotionController_vtable
+  CMotionList
+  CMouse
+  CNPC
+  CNetGame
+  CObj
+  CObj_vtable
+  COrientation
+  CP2D
+  CP3D
+  CPackedBitmap
+  CPackedBitmapSet
+  CParticle
+  CParticle_vtable
+  CPassenger
+  CPathMap
+  CPendulum
+  CPickList
+  CPlatform
+  CPod
+  CPodDirectoryEntry
+  CPodFile
+  CPod_vtable
+  CPoly
+  CPolyIntersectResult
+  CPoly_vtable
+  CQuaternion4f
+  CRainDrop
+  CRect
+  CRock
+  CRuleList
+  CSampleInfo
+  CScript
+  CSentinel
+  CSfxOptions
+  CSfxSample
+  CSfxSlot
+  CShell
+  CSimBox
+  CSkeleton
+  CSlew
+  CSmiley
+  CSoundDevice
+  CSoundDeviceFull_vtable
+  CSpark
+  CSpike
+  CSpotView
+  CStairs
+  CStake
+  CStrList
+  CStrList_vtable
+  CStranger
+  CSuccubus
+  CSvetlana
+  CTVBat
+  CTeleportDest
+  CTempleStone
+  CTentacle
+  CTerrain
+  CTextureList
+  CTire
+  CToss
+  CTrail
+  CTrap
+  CTrash
+  CTrigger
+  CTurret
+  CVampireBoss
+  CVec
+  CVector2d
+  CVector2f
+  CVector2i
+  CVector3d
+  CVector3f
+  CVector3i
+  CVehicle
+  CVert
+  CWater
+  CWaterActor
+  CWavOutDevice
+  CWayPoint
+  CWeapon
+  CWeapon_full_vtable
+  CWeapon_vtable
+  CWeather
+  CWerewolf
+  CWinFont
+  CZombie
+  CZombieCow
+  CZombieDog
+  SActorRayHit
+  SActorVarBlock
+  SAlphaEntry
+  SArmAimData
+  SAudioFormatDescriptor
+  SBat
+  SBitBuffer
+  SBodyPartFire
+  SBodyPartModel
+  SBone
+  SBoneData
+  SBoneGuyBox
+  SBug
+  SCPUInfo
+  SCameraDepthEntry
+  SCameraEdge
+  SCameraViewportState
+  SCarryHand
+  SChainVertex
+  SChatHistory
+  SChatOutMessage
+  SClipPlane
+  SClothBone
+  SClothVertex
+  SCollisionInfo
+  SCollisionReturnInfo
+  SColorBox
+  SColorQuantBox
+  SColorQuantCentroid
+  SColorQuantMapper
+  SConditionVariable
+  SCorona
+  SCoronaLightCache
+  SCoronaLightEntry
+  SCounterBlock
+  SCramRectangle
+  SCurtainMeshData
+  SCurtainVertex
+  SDamageDecal
+  SDamageInfo
+  SDialogEntry
+  SDirectSoundDeviceInfo
+  SDisplayListSortEntry
+  SEdge
+  SEdgeChainEntry
+  SEdgeList
+  SEdgeTableEntry
+  SEnumPair
+  SEventNameBlock
+  SExpandedEdge
+  SFace
+  SFileTrackingEntry
+  SFire
+  SFly
+  SFog
+  SFogGrid
+  SFogGridPlane
+  SFogImagePlane
+  SFontGlyph
+  SFoundFileInfo
+  SFreaky
+  SGameSettingsPlayer
+  SGem
+  SGroundCell
+  SHardwareEdge
+  SHuffmanTable
+  SHuffmanTableSource
+  SInputFace
+  SInteractionInfo
+  SIntersectXZCylinder
+  SInventoryItemInfo
+  SLaserInfo
+  SLayerAction
+  SLightGlowParams
+  SLightGlowSprite
+  SLightGlowTable
+  SLineStrip
+  SLineStrip2Index
+  SLineStrip3Index
+  SLod
+  SLodSamplePoint
+  SLodUvAccum
+  SMRGLAnimatedTexture
+  SMRGLHeaderBasic
+  SMRGLHeaderBasicCountOnly
+  SMRGLHeaderExtended
+  SMRGLHeaderPrimitive
+  SMRGLIndexBlock
+  SMRGLKeyframe
+  SMRGLKeyframeModel
+  SMRGLKeyframeModelOnDisk
+  SMRGLLightPrimitive
+  SMRGLModelBounds
+  SMRGLPointerArray
+  SMRGLPrimitiveBigPoly
+  SMRGLPrimitiveBigPolyIndex
+  SMRGLPrimitivePoly
+  SMRGLPrimitivePolyIndex
+  SMRGLPrimitiveQuad
+  SMRGLPrimitiveQuadIndex
+  SMRGLPrimitiveTriangle
+  SMRGLPrimitiveTriangleIndex
+  SMRGLTextureBasic
+  SMRGLTextureListEntry
+  SMRGLTextureLod
+  SMRGLVertex
+  SMRGLVertexBlock
+  SMemHead
+  SMixBuffer
+  SModelPartName
+  SMorphControlPoint
+  SMorphPart
+  SMorphPoint
+  SMotion
+  SMotionSignal
+  SMotionTransition
+  SMovieFrame
+  SMpegAllocationEntry
+  SMpegFrame
+  SMpegFrameDecodeContext
+  SMpegLayer3BandIndex
+  SMpegLayer3GranuleInfo
+  SMpegLayer3ScalefactorGranule
+  SMpegLayer3SideInfo
+  SMpegLayer3SideInfoChannel
+  SMpegScalefactorBandData
+  SMpegStereoSubbandSamples
+  SMpegSubbandAllocation
+  SMpegSubbandQuantizedSamples
+  SMpegSubbandSCFSI
+  SMpegSubbandSamples
+  SMpegSubbandScalefactors
+  SNetPacketHeader
+  SNetPacket_ChatMessage
+  SNetPacket_GameSettings
+  SNetPacket_PlayerAnnounce
+  SNetPacket_PlayerInput
+  SNetPacket_PlayerState
+  SNetPacket_ServerAccept
+  SNetPacket_SimFrame
+  SNetPacket_Simple
+  SNetPlayer
+  SNetworkAddr
+  SPaletteEntry
+  SPanel
+  SPart
+  SPartInstanceData
+  SPlatformAttachment
+  SPlayer
+  SPlayerActionState
+  SPlayerInput
+  SPod1DirEntry
+  SPod1Header
+  SPod2Header
+  SPodDirEntryOnDisk
+  SPodManageRecord
+  SPoint2i
+  SPolygonScreenData
+  SPose
+  SPoseData
+  SProjectedVertex
+  SProjectionParams
+  SPropertyFlag
+  SQuadVertices
+  SRA4HQPoint
+  SRGBColor
+  SRGBColorPalette
+  SRayQueryState
+  SRaytraceState
+  SRecordingDeviceInfo
+  SReflector
+  SRenderBufferEntry
+  SRenderVertex
+  SResolutionEntry
+  SRoom
+  SScanlineSpans
+  SScrape
+  SScreenCoord
+  SScriptLine
+  SScriptXRef
+  SSfxBlock
+  SSfxEntry
+  SShapeEditorPolygon
+  SSimFrame
+  SSkeleditBiasEntry
+  SSoftwareEdge
+  SSoundDeviceInfo
+  SSoundModeEntry
+  SSpatialGrid
+  SSpatialTreeNode
+  SStereoBuffers
+  SStereoGains
+  SSurfacePlane
+  SSwarmVertex
+  STextureAtlasEntry
+  STextureSet
+  STimerBlock
+  STimestampRecord
+  STrainNoise
+  STreeNode
+  STriangleBoundsEntry
+  STrianglePackedIndices
+  STriangleRef
+  STriangleVertices
+  SVDBox
+  SVersionControlSession
+  SVert
+  SVertexData
+  SVertexPair
+  SVoxelCubeMetadata
+  SVoxelGrid
+  SWaterVertex
+  SWavChunkHeader
+  SWavFmtChunk
+  SWayPointAdjacency
+  SWindow
+  SWindowRect

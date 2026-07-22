@@ -153,20 +153,6 @@ extern string DAT_00597615;
 extern string DAT_00597738;
 extern string DAT_00597B91;
 extern string DAT_00597C18;
-extern string DAT_00597C6C;
-extern string DAT_00597CC9;
-extern string DAT_00597E40;
-extern string DAT_00597F10;
-extern string DAT_00597F47;
-extern string DAT_00598236;
-extern string DAT_00598248;
-extern string DAT_0059878D;
-extern string DAT_0059893D;
-extern string DAT_0059899D;
-extern string DAT_00598B9C;
-extern string DAT_00598BEC;
-extern string DAT_00599288;
-extern string DAT_00599294;
 
 // undefined1
 extern undefined1 DAT_005992ac;

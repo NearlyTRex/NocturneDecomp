@@ -60,7 +60,7 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(int param_1)
         iVar3 = 0;
         if (0 < *(int *)(param_1 + 0x15a8cc)) {
           do {
-            FUN_0050e080(param_1,iVar3,0);
+            core_set_cpp_FUN_0050e080(param_1,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;

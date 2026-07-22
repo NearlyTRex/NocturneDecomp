@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 729,
+    "complexity_score": 719,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 61,
+    "suspect_count": 60,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -221,7 +221,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
+      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,\"*?\"), iVar3 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -229,16 +229,8 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
+      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,\"*?\"), iVar3 != 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00598be4",
-      "severity": "mild",
-      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

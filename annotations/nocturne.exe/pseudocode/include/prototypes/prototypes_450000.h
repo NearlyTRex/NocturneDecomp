@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x450000
@@ -22,7 +23,7 @@ undefined4 __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630(undefined4 
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,char *param_2);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(int param_1,undefined4 param_2);
 int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param_1,int param_2);
-void FUN_00452f10(int param_1);
+void core_dmodel_cpp_FUN_00452f10(int param_1);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 int __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(int param_1,int param_2);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(int param_1,undefined4 param_2);
@@ -37,7 +38,7 @@ undefined4 __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(i
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(int param_1);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(int param_1,undefined4 *param_2);
 int __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(undefined4 param_1);
-void FUN_00454460(void);
+void core_dmodel_cpp_FUN_00454460(void);
 int __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(int param_1);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(undefined4 *param_1);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(undefined4 param_1,float param_2);

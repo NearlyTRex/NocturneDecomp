@@ -16,7 +16,7 @@ void FUN_0044ac30(int *param_1)
   iVar1 = FUN_00565c50(0x40,1);
   *param_1 = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "?..\\core\\dcube.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\dcube.cpp";
     _DAT_01cc4804 = 0x5f3;
     FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
   }

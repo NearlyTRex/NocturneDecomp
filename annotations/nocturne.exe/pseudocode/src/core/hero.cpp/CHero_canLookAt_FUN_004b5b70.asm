@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005858e3
+;   double DOUBLE_005858e3 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -46,21 +46,21 @@ section .text
         ;   XREF to: 004b5c25 (CONDITIONAL_JUMP)  ; LAB_004b5c25
     FLD float ptr [EBX + 0xbcb4]        ; 004b5bdf
     FABS                                ; 004b5be5
-    FCOMP double ptr [0x005858e3]       ; 004b5be7 | DAT_005858e3
+    FCOMP double ptr [0x005858e3]       ; 004b5be7 | DOUBLE_005858e3
     FNSTSW AX                           ; 004b5bed
     SAHF                                ; 004b5bef
     JA 0x004b5c25                       ; 004b5bf0
         ;   XREF to: 004b5c25 (CONDITIONAL_JUMP)  ; LAB_004b5c25
     FLD float ptr [EBX + 0xbcb8]        ; 004b5bf2
     FABS                                ; 004b5bf8
-    FCOMP double ptr [0x005858e3]       ; 004b5bfa | DAT_005858e3
+    FCOMP double ptr [0x005858e3]       ; 004b5bfa | DOUBLE_005858e3
     FNSTSW AX                           ; 004b5c00
     SAHF                                ; 004b5c02
     JA 0x004b5c25                       ; 004b5c03
         ;   XREF to: 004b5c25 (CONDITIONAL_JUMP)  ; LAB_004b5c25
     FLD float ptr [EBX + 0xbcbc]        ; 004b5c05
     FABS                                ; 004b5c0b
-    FCOMP double ptr [0x005858e3]       ; 004b5c0d | DAT_005858e3
+    FCOMP double ptr [0x005858e3]       ; 004b5c0d | DOUBLE_005858e3
     FNSTSW AX                           ; 004b5c13
     SAHF                                ; 004b5c15
     JA 0x004b5c25                       ; 004b5c16

@@ -94,7 +94,7 @@ LAB_00405670:
     piVar4 = piVar4 + 3;
     *(int *)(&DAT_005c5030 + iVar2 * 0x30) = iVar3;
   }
-  FUN_00432cd0(iVar6,&DAT_006b029c);
+  engine_clipper_c_FUN_00432cd0(iVar6,&DAT_006b029c);
 LAB_0040571f:
   return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;
 }

@@ -14,7 +14,7 @@ int core_drip_cpp_CDrip_ctor_FUN_00462060(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   *(byte ***)(iVar2 + -4) = &PTR_core_drip_cpp_CDrip_setup_FUN_00462140_0059c5e4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"stalag.kfm");
@@ -26,7 +26,7 @@ int core_drip_cpp_CDrip_ctor_FUN_00462060(uint param_1)
   *(uint *)(iVar2 + 0x188) = 0x40a00000;
   *(uint *)(iVar2 + 0x18c) = 0x41200000;
   *(uint *)(iVar2 + 0x184) = 0;
-  pcVar3 = &DAT_0057dde9;
+  pcVar3 = "rock-x.wav";
   *(uint *)(iVar2 + 400) = 0;
   *(uint *)(iVar2 + 0x1b8) = 0x41200000;
   pcVar4 = (char *)(iVar2 + 0x1bc);

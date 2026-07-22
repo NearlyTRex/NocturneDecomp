@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(int param_1,int param_2,int param_3)
 
 {
@@ -78,7 +76,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(int param
                                         (float10)local_6c[0] +
                                         fVar14 * fVar14 +
                                         ((float10)pfVar11[1] - (float10)pfVar10[1]) * (float10)fVar3
-                                       ) * (float10)_DAT_00579f92);
+                                       ) * (float10)0.5);
       local_1c = (int)ROUND(fVar14);
       local_30 = local_1c + 1;
       iVar8 = 0;
@@ -125,7 +123,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(int param
           *(uint *)(iVar9 + 0x28) = puVar7[2];
           *(uint *)(param_1 + 0x3568 + (*(int *)(param_1 + 0x2f08) + -1) * 0x29c) = 0;
           puVar12[5] = 0x3f000000;
-          fVar4 = (float)_DAT_00579f92;
+          fVar4 = (float)0.5;
           *(float *)(param_1 + 0x3514 + (*(int *)(param_1 + 0x2f08) + -1) * 0x29c) =
                (float)puVar12[5] * fVar4;
           *(uint *)(param_1 + 0x3518 + (*(int *)(param_1 + 0x2f08) + -1) * 0x29c) = puVar12[5]

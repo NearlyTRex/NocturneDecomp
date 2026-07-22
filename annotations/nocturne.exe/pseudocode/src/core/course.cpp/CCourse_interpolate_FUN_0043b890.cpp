@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(int *param_1,float param_2,float *param_3,uint *param_4)
 
 {
@@ -84,7 +82,7 @@ void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(int *param_1,float
 LAB_0043b8ca:
   local_90 = (uint)((ulonglong)(double)local_7c >> 0x20);
   iVar4 = local_1c * 0x1c;
-  if ((double)local_7c <= _DAT_0057b2c2) {
+  if ((double)local_7c <= 0.001) {
     pfVar5 = (float *)(param_1[1] + iVar4);
     if (&local_40 != pfVar5) {
       local_40 = *pfVar5;

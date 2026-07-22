@@ -29,9 +29,9 @@ float core_fire_cpp_computeScreenSpaceSize_FUN_004859a0(float param_1,float para
   local_30 = (int)ROUND(_DAT_0059d1f8 * 0.0);
   local_2c = (int)ROUND(param_1 * _DAT_0059d1f8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_34);
-  fVar2 = (float)_DAT_00581174;
-  fVar1 = (((float)*(int *)(*DAT_005ae704 + 8) * (float)_DAT_0058116c) /
-          ((float)DAT_005b7648 * fVar2)) * _DAT_0058117c;
+  fVar2 = (float)1.52587890625e-05;
+  fVar1 = (((float)*(int *)(*DAT_005ae704 + 8) * (float)0.00390625) /
+          ((float)DAT_005b7648 * fVar2)) * 5.1640756954075245e-315._0_4_;
   local_8 = param_2;
   fVar3 = ABS(fVar1 / ((float)_DAT_01c00c48 * fVar2));
   fVar1 = ABS(fVar1 / ((float)_DAT_01c00c4c * fVar2));

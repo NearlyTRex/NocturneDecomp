@@ -46,7 +46,7 @@ void FUN_0048df20(int param_1,int param_2)
           fStack_1c = *(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24);
           fStack_18 = *(float *)(param_1 + 0x28) - *(float *)(iVar3 + 0x28);
           if ((SQRT(fStack_18 * fStack_18 + fStack_20 * fStack_20 + fStack_1c * fStack_1c) <
-               (float)_DAT_00581597) && (*(int *)(iVar3 + 0x298) == 1)) {
+               (float)5) && (*(int *)(iVar3 + 0x298) == 1)) {
             return;
           }
         }

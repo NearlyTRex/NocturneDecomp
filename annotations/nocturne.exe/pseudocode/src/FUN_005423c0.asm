@@ -28,13 +28,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_charactr.cpp_FUN_0042af70
 ;   core_hero.cpp_CHero_closestEnemy_FUN_004b5d00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600
 ;   core_path.cpp_getPathMap_FUN_004f1e00
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_0042af70
 ;
 ; *****************************************************************************
 
@@ -428,8 +428,8 @@ section .text
         ;   XREF to: 005425c7 (CONDITIONAL_JUMP)  ; LAB_005425c7
     PUSH dword ptr [EBP + 0x18]         ; 005428a8
     PUSH EBX                            ; 005428ab
-    CALL FUN_0042af70                   ; 005428ac
-        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined FUN_0042af70()
+    CALL core_charactr.cpp_FUN_0042af70 ; 005428ac
+        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042af70()
     ADD ESP,0x8                         ; 005428b1
     CMP EAX,0x1                         ; 005428b4
     JC 0x005425c7                       ; 005428b7
@@ -551,8 +551,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00542a4e
         ;   Label: LAB_00542a4e
     PUSH EBX                            ; 00542a51
-    CALL FUN_0042af70                   ; 00542a52
-        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined FUN_0042af70()
+    CALL core_charactr.cpp_FUN_0042af70 ; 00542a52
+        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042af70()
     ADD ESP,0x8                         ; 00542a57
     CMP EAX,0x1                         ; 00542a5a
     JC 0x00542949                       ; 00542a5d

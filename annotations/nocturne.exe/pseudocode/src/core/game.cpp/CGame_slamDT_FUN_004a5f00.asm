@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   string s_..\\core\\game.cpp_00584452
 ;   string s_CGame::slamDT_-_invalid_dt!_00584463
-;   undefined4 DAT_00584482
+;   float FLOAT_00584482 = 65536
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_004a5f12
     MOV dword ptr [EBX + 0x264],EAX     ; 004a5f16
     FLD float ptr [EBX + 0x264]         ; 004a5f1c
-    FMUL float ptr [0x00584482]         ; 004a5f22 | DAT_00584482
+    FMUL float ptr [0x00584482]         ; 004a5f22 | FLOAT_00584482
     CALL crt_math.c_round_FUN_00563a30  ; 004a5f28
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [EBX + 0x260]       ; 004a5f2d

@@ -8,10 +8,10 @@
 ;   FUN_005633fc at 00563412
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00598b30
-;   undefined1 DAT_00598b34
-;   void* PTR_DAT_005c1b10 = 00598b30
-;   undefined1* PTR_DAT_005c1b14 = 00598b34
+;   TerminatedCString s_TMP_00598b30
+;   TerminatedCString s_TEMP_00598b34
+;   void* PTR_s_TMP_005c1b10 = 00598b30
+;   undefined1* PTR_s_TEMP_005c1b14 = 00598b34
 ;   undefined1 DAT_005c1b23
 ;   undefined1 DAT_005c1b24
 ;   undefined1 DAT_005c1b25
@@ -34,10 +34,10 @@ section .text
     CMP byte ptr [0x005c1b24],0x0       ; 005687bf | DAT_005c1b24
     JNZ 0x00568881                      ; 005687c6
         ;   XREF to: 00568881 (CONDITIONAL_JUMP)  ; LAB_00568881
-    MOV EBX,0x5c1b10                    ; 005687cc | PTR_DAT_005c1b10
+    MOV EBX,0x5c1b10                    ; 005687cc | PTR_s_TMP_005c1b10
     JMP 0x00568814                      ; 005687d1
         ;   XREF to: 00568814 (UNCONDITIONAL_JUMP)  ; LAB_00568814
-    PUSH EDX                            ; 005687d3 | DAT_00598b30
+    PUSH EDX                            ; 005687d3 | = "TMP"
         ;   Label: LAB_005687d3
     CALL crt_env.c_getenv_FUN_00566e10  ; 005687d4
         ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
@@ -70,9 +70,9 @@ section .text
         ;   XREF to: 0056881b (UNCONDITIONAL_JUMP)  ; LAB_0056881b
     ADD EBX,0x4                         ; 00568811
         ;   Label: LAB_00568811
-    MOV EDX,dword ptr [EBX]             ; 00568814 | PTR_DAT_005c1b10 | PTR_DAT_005c1b14
+    MOV EDX,dword ptr [EBX]             ; 00568814 | PTR_s_TMP_005c1b10 | PTR_s_TEMP_005c1b14
         ;   Label: LAB_00568814
-    CMP byte ptr [EDX],0x0              ; 00568816 | DAT_00598b30 | DAT_00598b34
+    CMP byte ptr [EDX],0x0              ; 00568816 | = "TMP" | s_TEMP_00598b34
     JNZ 0x005687d3                      ; 00568819
         ;   XREF to: 005687d3 (CONDITIONAL_JUMP)  ; LAB_005687d3
     CMP byte ptr [0x005c1b24],0x0       ; 0056881b | DAT_005c1b24

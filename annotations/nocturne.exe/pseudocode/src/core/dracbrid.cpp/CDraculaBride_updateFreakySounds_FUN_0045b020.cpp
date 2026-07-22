@@ -63,7 +63,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(int
         local_1c = (float *)(local_34 + 0x20);
         *(float *)(local_34 + 0x1c) = *(float *)(local_34 + 0x1c) + param_2;
         while (1.0 < *(float *)(local_20 + 0x1c)) {
-          *(float *)(local_20 + 0x1c) = *(float *)(local_20 + 0x1c) + ram0x0057d882;
+          *(float *)(local_20 + 0x1c) = *(float *)(local_20 + 0x1c) + -1.0f;
           if (pfVar3 != local_1c) {
             *local_1c = *pfVar3;
             local_1c[1] = *(float *)(puVar5 + 0x30);
@@ -107,9 +107,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(int
           *(uint *)(local_20 + 0xc) = puVar7[2];
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"@%5.2f %5.2f %5.2f\n" + 1,
-                   (double)*(float *)(local_20 + 4),(double)*(float *)(local_20 + 8),
-                   (double)*(float *)(local_20 + 0xc));
+                  (PTR_DAT_005ad350,"%5.2f %5.2f %5.2f\n",(double)*(float *)(local_20 + 4),
+                   (double)*(float *)(local_20 + 8),(double)*(float *)(local_20 + 0xc));
         puVar7 = (uint *)
                  core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0
                            (local_88,local_5c,local_20 + 0x20,local_20 + 0x2c,local_20 + 0x38);

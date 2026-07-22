@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   string s_bow-!.wav_0057b485
-;   undefined4 DAT_0057b496
-;   undefined4 DAT_0057b49e
+;   double DOUBLE_0057b496 = 1.5
+;   double DOUBLE_0057b49e = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005be368
@@ -110,7 +110,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 0043d272
     FSTP float ptr [ESP + 0x5c]         ; 0043d276
     FLD float ptr [EBX + 0x2e0]         ; 0043d27a
-    FDIVR double ptr [0x0057b496]       ; 0043d280 | DAT_0057b496
+    FDIVR double ptr [0x0057b496]       ; 0043d280 | DOUBLE_0057b496
     FLD float ptr [ESP + 0x60]          ; 0043d286
     FXCH                                ; 0043d28a
     FSTP float ptr [ESP + 0xd8]         ; 0043d28c
@@ -419,7 +419,7 @@ section .text
     FMUL float ptr [ESP + 0x50]         ; 0043d669
     FADDP                               ; 0043d66d
     FSQRT                               ; 0043d66f
-    FDIVR double ptr [0x0057b49e]       ; 0043d671 | DAT_0057b49e
+    FDIVR double ptr [0x0057b49e]       ; 0043d671 | DOUBLE_0057b49e
     FLD float ptr [ESP + 0x48]          ; 0043d677
     FXCH                                ; 0043d67b
     FSTP float ptr [ESP + 0xe4]         ; 0043d67d

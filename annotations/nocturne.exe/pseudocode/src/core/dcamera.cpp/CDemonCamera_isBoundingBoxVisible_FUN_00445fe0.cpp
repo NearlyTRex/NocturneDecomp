@@ -101,7 +101,7 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int
   piStack_134 = DAT_005ae704;
   iStack_138 = 0x446012;
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0();
-  fVar10 = (float10)_DAT_0057b9e3;
+  fVar10 = (float10)256;
   fVar2 = *(float *)(param_1 + 0x10c);
   fVar3 = *(float *)(param_1 + 0x108);
   fVar4 = param_2[1];

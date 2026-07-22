@@ -33,7 +33,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a78c
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\fire.cpp_00581077+1
+;   TerminatedCString s_core_fire_cpp_00581078
 ;   string s_CSmokeParticle::render_-_Frame_o_00581089
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
@@ -115,7 +115,7 @@ section .text
     CMP ECX,0x28                        ; 004829c6
     JL 0x004829ee                       ; 004829c9
         ;   XREF to: 004829ee (CONDITIONAL_JUMP)  ; LAB_004829ee
-    MOV ESI,0x581078                    ; 004829cb | s_..\core\fire.cpp_00581077+1
+    MOV ESI,0x581078                    ; 004829cb | = "..\\core\\fire.cpp"
         ;   Label: LAB_004829cb
     MOV EBP,0x11d                       ; 004829d0
     PUSH 0x581089                       ; 004829d5 | = "CSmokeParticle::render - Frame out of..."

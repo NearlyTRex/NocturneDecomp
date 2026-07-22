@@ -18,8 +18,8 @@
 ;   core_dcube.cpp_triangleCylinderCollision_FUN_00449d30 at 00449ef7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057bb9b
-;   undefined4 DAT_0057bba3
+;   double DOUBLE_0057bb9b = 2
+;   double DOUBLE_0057bba3 = 4
 ;
 ; *****************************************************************************
 
@@ -60,7 +60,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 00449c12
     FMUL ST0                            ; 00449c15
     FLD double ptr [ESP + 0x40]         ; 00449c17
-    FMUL double ptr [0x0057bba3]        ; 00449c1b | DAT_0057bba3
+    FMUL double ptr [0x0057bba3]        ; 00449c1b | DOUBLE_0057bba3
     FLD float ptr [EDX]                 ; 00449c21
     FMUL ST0                            ; 00449c23
     FLD float ptr [EDX]                 ; 00449c25
@@ -71,7 +71,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 00449c31
     FMUL ST0                            ; 00449c34
     FXCH ST3                            ; 00449c36
-    FMUL double ptr [0x0057bb9b]        ; 00449c38 | DAT_0057bb9b
+    FMUL double ptr [0x0057bb9b]        ; 00449c38 | DOUBLE_0057bb9b
     FXCH ST3                            ; 00449c3e
     FSUBP ST2,ST0                       ; 00449c40
     FMULP                               ; 00449c42
@@ -93,7 +93,7 @@ section .text
     FSQRT                               ; 00449c6f
     FSUBP                               ; 00449c71
     FLD double ptr [ESP + 0x40]         ; 00449c73
-    FMUL double ptr [0x0057bb9b]        ; 00449c77 | DAT_0057bb9b
+    FMUL double ptr [0x0057bb9b]        ; 00449c77 | DOUBLE_0057bb9b
     FDIVP                               ; 00449c7d
     FLDZ                                ; 00449c7f
     XOR ECX,ECX                         ; 00449c81
@@ -130,7 +130,7 @@ section .text
     FSQRT                               ; 00449cca
     FSUB double ptr [ESP + 0x38]        ; 00449ccc
     FLD double ptr [ESP + 0x40]         ; 00449cd0
-    FMUL double ptr [0x0057bb9b]        ; 00449cd4 | DAT_0057bb9b
+    FMUL double ptr [0x0057bb9b]        ; 00449cd4 | DOUBLE_0057bb9b
     FDIVP                               ; 00449cda
     FLDZ                                ; 00449cdc
     FXCH                                ; 00449cde

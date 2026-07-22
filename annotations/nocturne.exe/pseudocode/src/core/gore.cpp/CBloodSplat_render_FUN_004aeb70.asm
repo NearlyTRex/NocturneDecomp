@@ -40,8 +40,8 @@
 ;   FUN_004afe80 at 004afecc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005850a8
-;   undefined4 DAT_005850b0
+;   double DOUBLE_005850a8 = 8
+;   double DOUBLE_005850b0 = 4
 ;   undefined4 DAT_0059e4d4
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b96ec
@@ -78,8 +78,8 @@ section .text
     SUB ESP,0x7c                        ; 004aeb74
     MOV ESI,dword ptr [ESP + 0x90]      ; 004aeb77
     FLD float ptr [ESI + 0x24]          ; 004aeb7e
-    FMUL double ptr [0x005850a8]        ; 004aeb81 | DAT_005850a8
-    FADD double ptr [0x005850b0]        ; 004aeb87 | DAT_005850b0
+    FMUL double ptr [0x005850a8]        ; 004aeb81 | DOUBLE_005850a8
+    FADD double ptr [0x005850b0]        ; 004aeb87 | DOUBLE_005850b0
     CALL crt_math.c_round_FUN_00563a30  ; 004aeb8d
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x78]        ; 004aeb92

@@ -1,0 +1,138 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+
+// =============================================================================
+// WINSOCK - System Header
+// =============================================================================
+
+// Structure: HOSTENT
+typedef struct HOSTENT {
+    char* h_name;
+    char** h_aliases;
+    short h_addrtype;
+    short h_length;
+    char** h_addr_list;
+} HOSTENT;
+
+// Typedef: LPWSADATA
+// pointer to WSADATA
+typedef struct WSADATA* LPWSADATA;
+
+// Typedef: PHOSTENT
+// pointer to HOSTENT
+typedef struct HOSTENT* PHOSTENT;
+
+// Typedef: PSERVENT
+// pointer to SERVENT
+typedef struct SERVENT* PSERVENT;
+
+// Typedef: PSOCKADDR
+// pointer to SOCKADDR
+typedef struct SOCKADDR* PSOCKADDR;
+
+// Structure: SERVENT
+typedef struct SERVENT {
+    char* s_name;
+    char** s_aliases;
+    int s_port;
+    char* s_proto;
+} SERVENT;
+
+// Structure: SOCKADDR
+typedef struct SOCKADDR {
+    short sin_family;
+    ushort sin_port;
+    int sin_addr;
+    char zero[8];
+} SOCKADDR;
+
+// Structure: SOCKADDR_IN
+#pragma pack(push, 1)
+typedef struct SOCKADDR_IN {
+    ushort sin_family;
+    ushort sin_port;
+    uint sin_addr;
+    char padding_0x08[8];
+} SOCKADDR_IN;
+#pragma pack(pop)
+
+// Structure: WSADATA
+#pragma pack(push, 1)
+typedef struct WSADATA {
+    WORD wVersion;
+    WORD wHighVersion;
+    char szDescription[257];
+    char szSystemStatus[129];
+    ushort iMaxSockets;
+    ushort iMaxUdpDg;
+    char* lpVendorInfo;
+} WSADATA;
+#pragma pack(pop)
+
+// Typedef: _SOCKET
+// Unsigned Integer (compiler-specific size)
+typedef uint _SOCKET;
+
+// =============================================================================
+// WINSOCK FUNCTIONS
+// =============================================================================
+//
+// Winsock function declarations.
+// The CRT transform in transforms.py converts crt_wsock32_c_* calls to
+// standard winsock function names (e.g., crt_wsock32_c_recv_FUN_XXXX -> recv).
+//
+// Implementations are in shims/winsock.cpp (POSIX BSD sockets).
+//
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Byte Order Conversion
+// ---------------------------------------------------------------------------
+
+extern ushort htons(ushort hostshort);
+extern ulong htonl(ulong hostlong);
+extern ushort ntohs(ushort netshort);
+extern ulong ntohl(ulong netlong);
+
+// ---------------------------------------------------------------------------
+// Winsock Initialization
+// ---------------------------------------------------------------------------
+
+extern int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData);
+extern int WSACleanup(void);
+
+// ---------------------------------------------------------------------------
+// Socket Operations
+// ---------------------------------------------------------------------------
+
+extern _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen);
+extern int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen);
+extern int closesocket(_SOCKET s);
+extern int connect(_SOCKET s, const struct SOCKADDR* name, int namelen);
+extern int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen);
+extern int ioctlsocket(_SOCKET s, long cmd, uint* argp);
+extern int listen(_SOCKET s, int backlog);
+extern int recv(_SOCKET s, char* buf, int len, int flags);
+extern int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
+extern int send(_SOCKET s, const char* buf, int len, int flags);
+extern int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen);
+extern int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen);
+extern int shutdown(_SOCKET s, int how);
+
+// ---------------------------------------------------------------------------
+// Name Resolution
+// ---------------------------------------------------------------------------
+
+extern struct HOSTENT* gethostbyname(const char* name);
+extern ulong inet_addr(const char* cp);
+extern int gethostname(char* name, int namelen);
+extern struct SERVENT* getservbyport(int port, const char* proto);
+
+// ---------------------------------------------------------------------------
+// Socket Creation
+// ---------------------------------------------------------------------------
+
+extern _SOCKET socket(int af, int type, int protocol);
+

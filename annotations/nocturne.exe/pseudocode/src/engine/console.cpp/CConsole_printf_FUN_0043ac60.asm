@@ -8,21 +8,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[79]:
-;   FUN_0040b300 at 0040b6be
-;   FUN_00410490 at 0041082d
 ;   FUN_00416300 at 00416404
 ;   FUN_00418a00 at 0041947d
 ;   FUN_004196b0 at 00419959
-;   FUN_00423790 at 00423881
-;   FUN_00428c00 at 00428ec1
-;   FUN_0042af70 at 0042b378
 ;   FUN_00439f50 at 0043a20a
 ;   FUN_00479b60 at 00479f0b
+;   FUN_00495a20 at 00496627
+;   FUN_0049cc10 at 0049cf20
+;   FUN_004a9270 at 004a9c32
+;   FUN_004ab450 at 004ab691
+;   FUN_004b32d0 at 004b35aa
 ;   ... and 69 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b1c4
-;   undefined4 DAT_0057b1c7
+;   TerminatedCString s_at_0057b1c4
+;   TerminatedCString s_s_0057b1c7
 ;   string s_console.txt_005ad358
 ;
 ; Called Functions:
@@ -98,7 +98,7 @@ section .text
     POP ESI                             ; 0043acea
     POP EBX                             ; 0043aceb
     RET                                 ; 0043acec
-    PUSH 0x57b1c4                       ; 0043aced | DAT_0057b1c4
+    PUSH 0x57b1c4                       ; 0043aced | = "at"
         ;   Label: LAB_0043aced
     PUSH 0x5ad358                       ; 0043acf2 | = "console.txt"
     CALL crt_stdio.c_fopen_FUN_0056568c ; 0043acf7
@@ -110,7 +110,7 @@ section .text
         ;   XREF to: 0043ace2 (CONDITIONAL_JUMP)  ; LAB_0043ace2
     MOV EAX,ESP                         ; 0043ad05
     PUSH EAX                            ; 0043ad07
-    PUSH 0x57b1c7                       ; 0043ad08 | DAT_0057b1c7
+    PUSH 0x57b1c7                       ; 0043ad08 | = "%s"
     PUSH EBX                            ; 0043ad0d
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0043ad0e
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()

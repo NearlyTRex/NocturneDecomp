@@ -4,18 +4,18 @@
 ; void __cdecl shape_memdbg_cpp_free_FUN_00564486(undefined4 param_1)
 ;
 ;
-; XREF[145]:
+; XREF[149]:
+;   FUN_0040ef90 at 0040efc5
+;   FUN_0040f4b0 at 0040f4e5
+;   FUN_0040f8b0 at 0040f8e5
+;   FUN_0040fc30 at 0040fcd0
 ;   FUN_004100f0 at 00410125
 ;   FUN_00411610 at 00411645
 ;   FUN_00411660 at 00411695
 ;   FUN_004118c0 at 004118f5
 ;   FUN_004132c0 at 00413360
 ;   FUN_00414c60 at 00414d00
-;   FUN_00414fa0 at 00414fd5
-;   FUN_00415250 at 004152f0
-;   FUN_00415a30 at 00415ae0
-;   FUN_0041fa10 at 0041fa6c
-;   ... and 135 more
+;   ... and 139 more
 ;
 ; Called Functions:
 ;   FUN_00564494

@@ -18,8 +18,8 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057f33f
-;   undefined4 DAT_0057f347
+;   double DOUBLE_0057f33f = 1.20000000000000
+;   double DOUBLE_0057f347 = 0.25
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -70,9 +70,9 @@ section .text
     JNC 0x004798fb                      ; 0047992e
         ;   XREF to: 004798fb (CONDITIONAL_JUMP)  ; LAB_004798fb
     FLD double ptr [ESP]                ; 00479930
-    FMUL double ptr [0x0057f33f]        ; 00479933 | DAT_0057f33f
+    FMUL double ptr [0x0057f33f]        ; 00479933 | DOUBLE_0057f33f
     MOV EAX,dword ptr [EBX]             ; 00479939
-    FMUL double ptr [0x0057f347]        ; 0047993b | DAT_0057f347
+    FMUL double ptr [0x0057f347]        ; 0047993b | DOUBLE_0057f347
     MOV dword ptr [ESP + 0x8],EAX       ; 00479941
     LEA EAX,[EBX + 0x4]                 ; 00479945
     PUSH 0x0                            ; 00479948

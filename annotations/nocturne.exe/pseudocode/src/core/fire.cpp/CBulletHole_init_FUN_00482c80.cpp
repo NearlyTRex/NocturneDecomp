@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(float *param_1,float *param_2,float *param_3)
 
 {
@@ -37,9 +35,9 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(float *param_1,float *p
     param_1[1] = param_2[1];
     param_1[2] = param_2[2];
   }
-  local_4c = *param_3 * _DAT_005810b8;
-  local_48 = param_3[1] * _DAT_005810b8;
-  local_44 = _DAT_005810b8 * param_3[2];
+  local_4c = *param_3 * 0.1f;
+  local_48 = param_3[1] * 0.1f;
+  local_44 = 0.1f * param_3[2];
   local_34 = *param_1 + local_4c;
   local_30 = param_1[1] + local_48;
   local_2c = param_1[2] + local_44;

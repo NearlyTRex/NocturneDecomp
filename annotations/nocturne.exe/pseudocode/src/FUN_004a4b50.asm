@@ -26,16 +26,16 @@
 ;   FUN_004d23d0 at 004d263f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00583db6
+;   TerminatedCString s_rt_00583db6
 ;   string s_world_00583db9
-;   undefined4 DAT_00583dbf
+;   TerminatedCString s_rb_00583dbf
 ;   string s_enemy.pod_00583dc2
-;   undefined4 DAT_00583dcc
-;   undefined4 DAT_00583dcd
+;   char CHAR_00h_00583dcc = \x00
+;   TerminatedCString s_rt_00583dcd
 ;   string s_pod.ini_00583dd0
-;   undefined4 DAT_00583dd8
+;   TerminatedCString s_Game_00583dd8
 ;   string s_system\\nocturne.ini_00583ddd
-;   string s_Act1Code_00583df1
+;   TerminatedCString s_Act1Code_00583df1
 ;   string s_Act2Code_00583dfa
 ;   string s_Act3Code_00583e03
 ;   string s_Act4Code_00583e0c
@@ -71,9 +71,9 @@ section .text
     PUSH EDI                            ; 004a4b52
     PUSH EBP                            ; 004a4b53
     SUB ESP,0x4a4                       ; 004a4b54
-    PUSH 0x583dbf                       ; 004a4b5a | DAT_00583dbf
+    PUSH 0x583dbf                       ; 004a4b5a | = "rb"
     PUSH 0x583dc2                       ; 004a4b5f | = "enemy.pod"
-    PUSH 0x583dcc                       ; 004a4b64 | DAT_00583dcc
+    PUSH 0x583dcc                       ; 004a4b64 | CHAR_00h_00583dcc
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a4b69
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004a4b6e
@@ -87,7 +87,7 @@ section .text
     MOV dword ptr [EAX + 0x254],0x0     ; 004a4b95
     MOV dword ptr [EAX + 0x248],0x0     ; 004a4b9f
     MOV dword ptr [EAX + 0x250],0x0     ; 004a4ba9
-    PUSH 0x583dcd                       ; 004a4bb3 | DAT_00583dcd
+    PUSH 0x583dcd                       ; 004a4bb3 | = "rt"
     MOV dword ptr [EAX + 0x234],0x0     ; 004a4bb8
     MOV EAX,[0x01bcd070]                ; 004a4bc2 | DAT_01bcd070
     PUSH 0x583dd0                       ; 004a4bc7 | = "pod.ini"
@@ -117,7 +117,7 @@ section .text
     JZ 0x004a4c1c                       ; 004a4c0f
         ;   XREF to: 004a4c1c (CONDITIONAL_JUMP)  ; LAB_004a4c1c
     MOV dword ptr [ESP + 0x4bc],0x1     ; 004a4c11
-    PUSH 0x583dd8                       ; 004a4c1c | DAT_00583dd8
+    PUSH 0x583dd8                       ; 004a4c1c | = "Game"
         ;   Label: LAB_004a4c1c
     XOR EAX,EAX                         ; 004a4c21
     PUSH 0x583ddd                       ; 004a4c23 | = "system\\nocturne.ini"
@@ -235,7 +235,7 @@ section .text
         ;   XREF to: 004a4da0 (CONDITIONAL_JUMP)  ; LAB_004a4da0
     POP EDI                             ; 004a4db8
         ;   Label: LAB_004a4db8
-    PUSH 0x5842fe                       ; 004a4db9 | DAT_005842fe
+    PUSH 0x5842fe                       ; 004a4db9 | = "rt"
     LEA EAX,[ESP + 0x374]               ; 004a4dbe
     PUSH EAX                            ; 004a4dc5
     PUSH 0x584301                       ; 004a4dc6 | = "world"
@@ -443,7 +443,7 @@ section .text
     TEST EBP,EBP                        ; 004a4ff7
     JLE 0x004a503d                      ; 004a4ff9
         ;   XREF to: 004a503d (CONDITIONAL_JUMP)  ; LAB_004a503d
-    PUSH 0x583f4c                       ; 004a4ffb | DAT_00583f4c
+    PUSH 0x583f4c                       ; 004a4ffb | = "rt"
         ;   Label: LAB_004a4ffb
     MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a5000 | DAT_005b9451 | DAT_005b9485
     PUSH EDX                            ; 004a5006
@@ -581,7 +581,7 @@ section .text
     CMP EBX,EAX                         ; 004a5198
     JGE 0x004a5232                      ; 004a519a
         ;   XREF to: 004a5232 (CONDITIONAL_JUMP)  ; LAB_004a5232
-    PUSH 0x583db6                       ; 004a51a0 | DAT_00583db6
+    PUSH 0x583db6                       ; 004a51a0 | = "rt"
     MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a51a5 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
     PUSH EDX                            ; 004a51ab
     PUSH 0x583db9                       ; 004a51ac | = "world"
@@ -733,7 +733,7 @@ section .text
     CMP EBX,EAX                         ; 004a5329
     JGE 0x004a5386                      ; 004a532b
         ;   XREF to: 004a5386 (CONDITIONAL_JUMP)  ; LAB_004a5386
-    PUSH 0x583db6                       ; 004a532d | DAT_00583db6
+    PUSH 0x583db6                       ; 004a532d | = "rt"
     MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5332 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
     PUSH EAX                            ; 004a5338
     PUSH 0x583db9                       ; 004a5339 | = "world"
@@ -909,7 +909,7 @@ section .text
     CMP EBX,EAX                         ; 004a5509
     JGE 0x004a5546                      ; 004a550b
         ;   XREF to: 004a5546 (CONDITIONAL_JUMP)  ; LAB_004a5546
-    PUSH 0x583db6                       ; 004a550d | DAT_00583db6
+    PUSH 0x583db6                       ; 004a550d | = "rt"
     MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a5512 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
     PUSH EDX                            ; 004a5518
     PUSH 0x583db9                       ; 004a5519 | = "world"
@@ -1002,7 +1002,7 @@ section .text
     CMP EBX,EAX                         ; 004a55f7
     JGE 0x004a5634                      ; 004a55f9
         ;   XREF to: 004a5634 (CONDITIONAL_JUMP)  ; LAB_004a5634
-    PUSH 0x583db6                       ; 004a55fb | DAT_00583db6
+    PUSH 0x583db6                       ; 004a55fb | = "rt"
     MOV ECX,dword ptr [ESI + 0x5b9450]  ; 004a5600 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
     PUSH ECX                            ; 004a5606
     PUSH 0x583db9                       ; 004a5607 | = "world"
@@ -1065,7 +1065,7 @@ section .text
     CMP EBX,EAX                         ; 004a568b
     JGE 0x004a56c8                      ; 004a568d
         ;   XREF to: 004a56c8 (CONDITIONAL_JUMP)  ; LAB_004a56c8
-    PUSH 0x583db6                       ; 004a568f | DAT_00583db6
+    PUSH 0x583db6                       ; 004a568f | = "rt"
     MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5694 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
     PUSH EAX                            ; 004a569a
     PUSH 0x583db9                       ; 004a569b | = "world"

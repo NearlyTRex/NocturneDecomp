@@ -67,7 +67,7 @@ void engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(int param_1,uint pa
                 (*(uint *)(param_1 + 4),&DAT_006b029c);
       return;
     }
-    FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
   }
   return;
 }

@@ -48,7 +48,7 @@ int engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240(int param_
       *(int *)(&DAT_005c5030 + *piVar3 * 0x30) = piVar3[2];
       piVar3 = piVar3 + 3;
     }
-    FUN_00432cd0(iVar5,&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);
   }
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
 }

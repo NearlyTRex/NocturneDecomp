@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
 
 {
@@ -68,7 +66,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
   int local_1c;
   uint uStack_18;
   
-  if (*(float *)(param_1 + 0x564) < _DAT_0057a58a) {
+  if (*(float *)(param_1 + 0x564) < -9900.0f) {
     uStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x38))(param_1,0x3dcccccd,0);
     *(uint *)(param_1 + 0x564) = uStack_18;
   }
@@ -119,7 +117,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
     pfVar6[2] = *local_40 * pfVar6[2];
     local_d4 = 0;
     local_dc = 0;
-    local_44 = *(float *)(param_1 + 0x554) * (float)_DAT_0057a58e;
+    local_44 = *(float *)(param_1 + 0x554) * (float)0.03125;
     local_b8 = (1.0 / local_44) * 0.0;
     local_d8 = 0.0 - *(float *)(param_1 + 0x554);
     local_b4 = local_d8 * (1.0 / local_44);
@@ -226,7 +224,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
   local_54 = 0;
   local_50 = 0;
   if (*(int *)(param_1 + 0x56c) != 0) {
-    if (local_ec < *(float *)(param_1 + 0x154) * (float)_DAT_0057a596) {
+    if (local_ec < *(float *)(param_1 + 0x154) * (float)0.90000000000000002) {
       pfVar6 = (float *)(param_1 + 0x2a8);
       local_f0 = 0.0;
       for (iVar5 = 0; iVar5 < *(int *)(param_1 + 0x150) + -1; iVar5 = iVar5 + 1) {
@@ -236,7 +234,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
         pfVar6 = pfVar6 + 9;
         local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;
       }
-      if (*(float *)(param_1 + 0x154) * (float)_DAT_0057a596 < local_f0) {
+      if (*(float *)(param_1 + 0x154) * (float)0.90000000000000002 < local_f0) {
         local_50 = 1;
       }
     }
@@ -244,7 +242,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
     local_a0 = local_64 - *(float *)(param_1 + 0x284 + iVar5 * 0x24);
     local_9c = local_60 - *(float *)(param_1 + 0x288 + iVar5 * 0x24);
     local_98 = local_5c - *(float *)(param_1 + 0x28c + iVar5 * 0x24);
-    if (param_2 * (float)_DAT_0057a59e <
+    if (param_2 * (float)0.10000000000000001 <
         SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {
       local_54 = 1;
     }

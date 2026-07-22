@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   string s_hickdad.dfm_005859f3
-;   undefined1 DAT_005859ff
-;   undefined1 DAT_00585a00
-;   undefined1 DAT_00585a01
-;   undefined1 DAT_00585a02
+;   TerminatedCString s_true_005859ff
+;   undefined4 s_rue_005859ff+1
+;   undefined4 s_ue_005859ff+2
+;   undefined4 s_e_005859ff+3
 ;   undefined1* PTR_core_hostage.cpp_CHostage_setup_FUN_004b6b20_0059ef44 = 004b6b20
 ;
 ; Called Functions:
@@ -38,20 +38,20 @@ section .text
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     MOV dword ptr [EBX + 0x1f91c],0x0   ; 004b6a1d
     MOV dword ptr [EBX + 0x1f924],0x0   ; 004b6a27
-    MOV ESI,0x5859ff                    ; 004b6a31 | DAT_005859ff
+    MOV ESI,0x5859ff                    ; 004b6a31 | = "true"
     MOV dword ptr [EBX + 0x1f928],0x0   ; 004b6a36
     ADD ESP,0x8                         ; 004b6a40
     MOV dword ptr [EBX + 0x1f92c],0x0   ; 004b6a43
     LEA EDI,[EBX + 0x1f574]             ; 004b6a4d
     MOV dword ptr [EBX + 0x1f570],0x40a00000 ; 004b6a53
     PUSH EDI                            ; 004b6a5d
-    MOV AL,byte ptr [ESI]               ; 004b6a5e | DAT_005859ff | DAT_00585a01
+    MOV AL,byte ptr [ESI]               ; 004b6a5e | = "true" | s_ue_005859ff+2
         ;   Label: LAB_004b6a5e
     MOV byte ptr [EDI],AL               ; 004b6a60
     CMP AL,0x0                          ; 004b6a62
     JZ 0x004b6a76                       ; 004b6a64
         ;   XREF to: 004b6a76 (CONDITIONAL_JUMP)  ; LAB_004b6a76
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b6a66 | DAT_00585a00 | DAT_00585a02
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b6a66 | s_rue_005859ff+1 | s_e_005859ff+3
     ADD ESI,0x2                         ; 004b6a69
     MOV byte ptr [EDI + 0x1],AL         ; 004b6a6c
     ADD EDI,0x2                         ; 004b6a6f

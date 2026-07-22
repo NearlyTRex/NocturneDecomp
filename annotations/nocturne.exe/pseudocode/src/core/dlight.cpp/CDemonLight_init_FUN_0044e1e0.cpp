@@ -16,7 +16,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1)
   int iVar3;
   float10 fVar4;
   
-  FUN_0044e2c0(param_1);
+  core_dlight_cpp_FUN_0044e2c0(param_1);
   iVar1 = malloc
                     (*(int *)(param_1 + 0x1cc0) * *(int *)(param_1 + 0x1cc4) * 2 + 0x210);
   *(int *)(param_1 + 0x2f98) = iVar1;
@@ -30,7 +30,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1)
   iVar3 = iVar1 >> 0x1f;
   uVar2 = malloc
                     ((int)((iVar1 + iVar3 * -8) - (uint)(iVar3 << 2 < 0)) >> 3);
-  fVar4 = (float10)_DAT_0057c586;
+  fVar4 = (float10)7;
   *(uint *)(param_1 + 0x2fa0) = uVar2;
   uVar2 = 0x44e269;
   fVar4 = (float10)round((float10)*(float *)(param_1 + 0x2fa8) * fVar4);

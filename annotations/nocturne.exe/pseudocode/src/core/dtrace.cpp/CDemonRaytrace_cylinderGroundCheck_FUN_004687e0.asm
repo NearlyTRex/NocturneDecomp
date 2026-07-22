@@ -30,8 +30,8 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050ef24
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e1ea
-;   undefined4 DAT_0057e1ee
+;   float FLOAT_0057e1ea = 2
+;   double DOUBLE_0057e1ee = 131072.094299316
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500
@@ -63,13 +63,13 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0046880c
     FLD float ptr [ESP + 0x1c]          ; 0046880e
     MOV dword ptr [ESP + 0x4],EAX       ; 00468812
-    FADD float ptr [0x0057e1ea]         ; 00468816 | DAT_0057e1ea
+    FADD float ptr [0x0057e1ea]         ; 00468816 | FLOAT_0057e1ea
     FLD float ptr [ESP + 0x4]           ; 0046881c
     MOV EAX,dword ptr [EDX]             ; 00468820
     FXCH                                ; 00468822
     FST float ptr [ESP + 0x1c]          ; 00468824
     FXCH                                ; 00468828
-    FADD float ptr [0x0057e1ee]         ; 0046882a | DAT_0057e1ee
+    FADD float ptr [0x0057e1ee]         ; 0046882a | DOUBLE_0057e1ee
     MOV dword ptr [ESP + 0x8],EAX       ; 00468830
     FSTP float ptr [ESP + 0x4]          ; 00468834
     FSUB float ptr [EBP + 0x14]         ; 00468838

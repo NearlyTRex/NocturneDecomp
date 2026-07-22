@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(int param_1)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(int param_1)
     iVar1 = rand();
     iVar3 = iVar2 + 4;
     *(float *)(iVar2 + 0x19c) =
-         (float)iVar1 * _DAT_00586d79 * (float)_DAT_00586d81 * (float)_DAT_00586d89;
+         (float)iVar1 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
     iVar2 = iVar3;
   } while (iVar3 != param_1 + 400);
   if (*(int *)(param_1 + 0x458) != 0) {

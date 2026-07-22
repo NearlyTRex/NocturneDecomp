@@ -14,10 +14,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00410490 at 00410946
+;   core_baron.cpp_FUN_00410490 at 00410946
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581524
+;   double DOUBLE_00581524 = 8
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createTrailSegment_FUN_0048c530
@@ -65,7 +65,7 @@ section .text
     FADDP                               ; 0048c5f0
     MOV dword ptr [ESP + 0xc],EAX       ; 0048c5f2
     FSQRT                               ; 0048c5f6
-    FMUL double ptr [0x00581524]        ; 0048c5f8 | DAT_00581524
+    FMUL double ptr [0x00581524]        ; 0048c5f8 | DOUBLE_00581524
     FDIV float ptr [EBP + 0x20]         ; 0048c5fe
     FLD1                                ; 0048c601
     FADDP                               ; 0048c603

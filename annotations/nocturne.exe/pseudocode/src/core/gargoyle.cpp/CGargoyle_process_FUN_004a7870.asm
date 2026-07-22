@@ -50,13 +50,13 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004a7858 = 004a7ce0
-;   undefined4 s_%s_confused_while_walking_to_scr_0058498f+1
+;   TerminatedCString s_s_confused_while_walking_00584990
 ;   string s_gargoyle-alive?.wav_005849ba
 ;   string s_gargoyle-stone.wav_005849ce
 ;   string s_gargoyle-stone.wav_005849e1
-;   undefined4 DAT_005849f8
-;   undefined4 DAT_00584a00
-;   undefined4 DAT_00584a08
+;   double DOUBLE_005849f8 = 3.14159265350000
+;   double DOUBLE_00584a00 = 0.523598775583333
+;   double DOUBLE_00584a08 = 32
 ;   undefined4 DAT_0059df3c
 ;   undefined4 DAT_0059df48
 ;   void* PTR_DAT_005ad350 = 0077ad0c
@@ -75,12 +75,12 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
-;   core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004a7710
-;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 004a787f
     PUSH dword ptr [EBP + 0x92]         ; 004a7885
     PUSH EBX                            ; 004a788b
-    CALL FUN_004259f0                   ; 004a788c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 004a788c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 004a7891
     TEST EAX,EAX                        ; 004a7894
     JZ 0x004a78ea                       ; 004a7896
@@ -159,7 +159,7 @@ section .text
     FLD float ptr [EBX + 0xbc8c]        ; 004a790e
         ;   Label: LAB_004a790e
     FLD float ptr [EBP + 0x92]          ; 004a7914
-    FMUL double ptr [0x005849f8]        ; 004a791a | DAT_005849f8
+    FMUL double ptr [0x005849f8]        ; 004a791a | DOUBLE_005849f8
     FMULP                               ; 004a7920
     FLD float ptr [EBX + 0x23ac]        ; 004a7922
     PUSH ESI                            ; 004a7928
@@ -172,8 +172,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x24]      ; 004a7943
     PUSH EBX                            ; 004a7946
     MOV dword ptr [EBP + 0x62],EDI      ; 004a7947
-    CALL FUN_00428c00                   ; 004a794a
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 004a794a
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 004a794f
     TEST EAX,EAX                        ; 004a7952
     JZ 0x004a8186                       ; 004a7954
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 004a7a87 (CONDITIONAL_JUMP)  ; LAB_004a7a87
     FLD float ptr [EBP + 0x92]          ; 004a79cf
     FLD ST0                             ; 004a79d5
-    FMUL double ptr [0x00584a08]        ; 004a79d7 | DAT_00584a08
+    FMUL double ptr [0x00584a08]        ; 004a79d7 | DOUBLE_00584a08
     FLD float ptr [EBX + 0x2424]        ; 004a79dd
     FXCH                                ; 004a79e3
     FSUBR ST0,ST1                       ; 004a79e5
@@ -292,8 +292,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004a7a9f
     PUSH EBX                            ; 004a7aa5
     MOV ESI,dword ptr [EBP + 0x62]      ; 004a7aa6
-    CALL FUN_0042a150                   ; 004a7aa9
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 004a7aa9
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 004a7aae
     CMP ESI,0x5                         ; 004a7ab1
     JNZ 0x004a8196                      ; 004a7ab4
@@ -366,7 +366,7 @@ section .text
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 004a7ba2
     PUSH EBX                            ; 004a7ba5
-    PUSH 0x584990                       ; 004a7ba6 | s_%s_confused_while_walking_to_scr_0058498f+1
+    PUSH 0x584990                       ; 004a7ba6 | = "%s confused while walking to scriptDe..."
     MOV ECX,dword ptr [0x005ad350]      ; 004a7bab | PTR_DAT_005ad350
     PUSH ECX                            ; 004a7bb1 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a7bb2
@@ -595,7 +595,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004a7e2b
     FABS                                ; 004a7e2e
     ADD ESP,0x4                         ; 004a7e30
-    FCOMP double ptr [0x00584a00]       ; 004a7e33 | DAT_00584a00
+    FCOMP double ptr [0x00584a00]       ; 004a7e33 | DOUBLE_00584a00
     FNSTSW AX                           ; 004a7e39
     SAHF                                ; 004a7e3b
     JNC 0x004a7d6f                      ; 004a7e3c
@@ -873,7 +873,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004a8123
     FABS                                ; 004a8126
     ADD ESP,0x4                         ; 004a8128
-    FCOMP double ptr [0x00584a00]       ; 004a812b | DAT_00584a00
+    FCOMP double ptr [0x00584a00]       ; 004a812b | DOUBLE_00584a00
     FNSTSW AX                           ; 004a8131
     SAHF                                ; 004a8133
     JNC 0x004a8153                      ; 004a8134

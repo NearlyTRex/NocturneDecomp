@@ -25,12 +25,12 @@ int core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(uint param_1)
   uVar6 = 0x41200000;
   uVar5 = 0x40800000;
   uVar4 = 0x4a8cfc;
-  fVar3 = (float10)round((float10)fVar2 * (float10)_DAT_00584acd);
+  fVar3 = (float10)round((float10)fVar2 * (float10)65536);
   *(int *)(iVar1 + 0xbd28) = (int)ROUND(fVar3);
   fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uVar4,uVar5,uVar6);
   *(uint *)(iVar1 + 0xbd30) = 0xa0000;
   *(uint *)(iVar1 + 0xbd34) = 0xffffffff;
-  fVar3 = (float10)_DAT_00584acd;
+  fVar3 = (float10)65536;
   *(uint *)(iVar1 + 0xbd38) = 0;
   *(uint *)(iVar1 + 0xbd44) = 2;
   uVar5 = 3;

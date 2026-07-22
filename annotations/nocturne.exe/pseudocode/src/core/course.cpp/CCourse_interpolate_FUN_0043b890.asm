@@ -33,7 +33,7 @@
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800 at 0043b829
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b2c2
+;   double DOUBLE_0057b2c2 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
@@ -77,7 +77,7 @@ section .text
     LEA ECX,[EAX*0x8 + 0x0]             ; 0043b8d8
     FLD double ptr [ESP]                ; 0043b8df
     SUB ECX,EAX                         ; 0043b8e2
-    FCOMP double ptr [0x0057b2c2]       ; 0043b8e4 | DAT_0057b2c2
+    FCOMP double ptr [0x0057b2c2]       ; 0043b8e4 | DOUBLE_0057b2c2
     FNSTSW AX                           ; 0043b8ea
     SAHF                                ; 0043b8ec
     JBE 0x0043bb0f                      ; 0043b8ed

@@ -3,6 +3,10 @@
 // Function prototypes for engine/3d.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_3d.c_FUN_00404430
+// Address: 00404430
+undefined * FUN_00404430(undefined4 *param_1);
+
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0
 undefined4 badMRGLStruct(undefined4 param_1);
@@ -18,6 +22,10 @@ int transformAndBufferVertices(int param_1);
 // Original: engine_3d.c_isVisiblePlane_FUN_00404610
 // Address: 00404610
 undefined4 __cdecl isVisiblePlane(int *param_1);
+
+// Original: engine_3d.c_FUN_00404680
+// Address: 00404680
+int FUN_00404680(int param_1,int param_2);
 
 // Original: engine_3d.c_calculatePolygonLighting_FUN_00404710
 // Address: 00404710
@@ -47,6 +55,10 @@ int renderPolygonTexturedLitOp7(int param_1);
 // Address: 00404a70
 int renderPolygonFogTexturedWrappedOp8(int param_1);
 
+// Original: engine_3d.c_FUN_00404b10
+// Address: 00404b10
+int FUN_00404b10(int param_1);
+
 // Original: engine_3d.c_processPolygonColor_FUN_00405140
 // Address: 00405140
 int processPolygonColor(int param_1);
@@ -54,6 +66,10 @@ int processPolygonColor(int param_1);
 // Original: engine_3d.c_oldFunction3_FUN_004051e0
 // Address: 004051e0
 int oldFunction3(int param_1);
+
+// Original: engine_3d.c_FUN_00405200
+// Address: 00405200
+int FUN_00405200(int param_1);
 
 // Original: engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240
 // Address: 00405240
@@ -71,6 +87,10 @@ undefined * oldFunction5(undefined4 *param_1);
 // Address: 00405540
 int renderPolygonSolidLitClampedOp17(int param_1);
 
+// Original: engine_3d.c_FUN_00405740
+// Address: 00405740
+int FUN_00405740(int param_1);
+
 // Original: engine_3d.c_setRelativeCoord_FUN_00405750
 // Address: 00405750
 int setRelativeCoord(int param_1);
@@ -86,6 +106,10 @@ void __cdecl setActiveRenderColor(void);
 // Original: engine_3d.c_drawLineStrip2D_FUN_00405870
 // Address: 00405870
 int drawLineStrip2D(int param_1);
+
+// Original: engine_3d.c_FUN_00405900
+// Address: 00405900
+int FUN_00405900(int param_1);
 
 // Original: engine_3d.c_oldFunction7_FUN_00405990
 // Address: 00405990
@@ -271,6 +295,10 @@ void __cdecl renderPolygonWithRenderFlags(int param_1,uint param_2,int param_3);
 // Address: 00408d10
 void renderPolygonWithRenderFlagsUV(int param_1,uint param_2,int param_3);
 
+// Original: engine_3d.c_FUN_00408e80
+// Address: 00408e80
+void FUN_00408e80(int *param_1);
+
 // Original: engine_3d.c_flushRenderQueue_FUN_00408f50
 // Address: 00408f50
 void flushRenderQueue(void);
@@ -278,6 +306,10 @@ void flushRenderQueue(void);
 // Original: engine_3d.c_clipAndDrawLine2D_FUN_00409290
 // Address: 00409290
 void clipAndDrawLine2D(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
+
+// Original: engine_3d.c_FUN_00409590
+// Address: 00409590
+uint FUN_00409590(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);
 
 // Original: engine_3d.c_rasterizePolygonHardware_FUN_00494260
 // Address: 00494260

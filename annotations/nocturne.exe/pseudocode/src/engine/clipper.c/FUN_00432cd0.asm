@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * FUN_00432cd0(int *param_1,int *param_2)
+; int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x150]:4  local_150
@@ -53,7 +53,7 @@
 ;   void* PTR_caseD_3_00432cb8 = 00433165
 ;   void* switchdataD_00432cbc = 0043362e
 ;   void* PTR_caseD_3_00432cc8 = 00433673
-;   string s_..\\engine\\clipper.c_0057ac47
+;   TerminatedCString s_engine_clipper_c_0057ac47
 ;   ... and 39 more
 ;
 ; Called Functions:
@@ -73,7 +73,7 @@
 section .text
 
     PUSH EBX                            ; 00432cd0
-        ;   Label: FUN_00432cd0
+        ;   Label: engine_clipper.c_FUN_00432cd0
     PUSH ESI                            ; 00432cd1
     PUSH EDI                            ; 00432cd2
     PUSH EBP                            ; 00432cd3

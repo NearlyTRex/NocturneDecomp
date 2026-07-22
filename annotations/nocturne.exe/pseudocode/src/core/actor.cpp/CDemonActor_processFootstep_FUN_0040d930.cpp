@@ -19,7 +19,7 @@ uint core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(int param_1,uint pa
   pfVar1 = (float *)(param_1 + 0x20);
   fVar3 = *(float *)(param_1 + 0x24) - _DAT_01fb8610;
   fVar2 = *(float *)(param_1 + 0x28) - _DAT_01fb8614;
-  if (_DAT_00578011 <
+  if (10000.0f <
       fVar2 * fVar2 + fVar3 * fVar3 + (*pfVar1 - _DAT_01fb860c) * (*pfVar1 - _DAT_01fb860c)) {
     return 0;
   }

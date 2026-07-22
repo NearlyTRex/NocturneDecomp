@@ -60,8 +60,8 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
                                 (param_1,param_2[2],param_2[4]);
     param_2[3] = (int)local_14;
     if (param_4 == (float *)0x0) {
-      local_40 = _DAT_0059aea8 * _DAT_00579d41 * (float)_DAT_00579d45;
-      local_18 = _DAT_0059aea8 * _DAT_00579d4d * (float)_DAT_00579d45;
+      local_40 = _DAT_0059aea8 * 12.0f * (float)0.5;
+      local_18 = _DAT_0059aea8 * 1.6018581507970269e-314._0_4_ * (float)0.5;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,local_40);
       param_2[8] = (int)local_14;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,local_40);
@@ -117,7 +117,7 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
   local_88 = (float)param_2[3] + local_64;
   local_84 = (float)param_2[4] + local_60;
   local_30 = (float)core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(param_1,local_8c,local_84);
-  if (local_30 - (float)param_2[3] <= local_90 * (float)_DAT_00579d55) {
+  if (local_30 - (float)param_2[3] <= local_90 * (float)0.40000000000000002) {
     if (pfVar1 != &local_8c) {
       *pfVar1 = local_8c;
       param_2[3] = (int)local_88;
@@ -142,7 +142,7 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
   local_24 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_58);
   local_14 = local_24;
   local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_5c);
-  local_20 = param_3 * (float)_DAT_00579d5d * (float)_DAT_00579d65;
+  local_20 = param_3 * (float)3.1415926535000001 * (float)4;
   local_38 = -local_20;
   if (local_24 < local_38) {
     local_24 = local_38;

@@ -13,8 +13,8 @@
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044be0e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c05d
-;   undefined4 DAT_0057c065
+;   double DOUBLE_0057c05d = 256
+;   double DOUBLE_0057c065 = 0.25
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20
@@ -93,8 +93,8 @@ section .text
     JNZ 0x0044c28e                      ; 0044c225
         ;   XREF to: 0044c28e (CONDITIONAL_JUMP)  ; LAB_0044c28e
     FLD float ptr [ESP]                 ; 0044c227
-    FMUL double ptr [0x0057c05d]        ; 0044c22a | DAT_0057c05d
-    FMUL double ptr [0x0057c065]        ; 0044c230 | DAT_0057c065
+    FMUL double ptr [0x0057c05d]        ; 0044c22a | DOUBLE_0057c05d
+    FMUL double ptr [0x0057c065]        ; 0044c230 | DOUBLE_0057c065
     CALL crt_math.c_round_FUN_00563a30  ; 0044c236
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
         ;   Label: LAB_0044c236

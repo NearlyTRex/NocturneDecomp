@@ -22,11 +22,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 00509ba4
+;   core_set.cpp_FUN_00509a80 at 00509ba4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b973
-;   undefined4 DAT_0057b97b
+;   double DOUBLE_0057b973 = 256
+;   double DOUBLE_0057b97b = 3.32192809489000
 ;   undefined4 DAT_00b0e5fc
 ;   undefined4 DAT_00b0e600
 ;   undefined4 DAT_012b022c
@@ -41,9 +41,9 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
+;   core_dlight.cpp_FUN_0044f0b0
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdlib.c_rand_FUN_0056488c
-;   FUN_0044f0b0
 ;
 ; *****************************************************************************
 
@@ -98,16 +98,16 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 004449a0
         ;   Label: LAB_004449a0
     PUSH EDI                            ; 004449a3
-    CALL FUN_0044f0b0                   ; 004449a4
-        ;   XREF to: 0044f0b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044f0b0()
+    CALL core_dlight.cpp_FUN_0044f0b0   ; 004449a4
+        ;   XREF to: 0044f0b0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044f0b0()
     FLD float ptr [EDI + 0x100]         ; 004449a9
-    FMUL double ptr [0x0057b973]        ; 004449af | DAT_0057b973
+    FMUL double ptr [0x0057b973]        ; 004449af | DOUBLE_0057b973
     ADD ESP,0x4                         ; 004449b5
     FLD ST0                             ; 004449b8
     FLDLG2                              ; 004449ba
     FXCH                                ; 004449bc
     FYL2X                               ; 004449be
-    FMUL double ptr [0x0057b97b]        ; 004449c0 | DAT_0057b97b
+    FMUL double ptr [0x0057b97b]        ; 004449c0 | DOUBLE_0057b97b
     FXCH                                ; 004449c6
     CALL crt_math.c_round_FUN_00563a30  ; 004449c8
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

@@ -198,7 +198,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
           pfStack_d8 = &fStack_d4;
           fVar7 = (float10)round
                                      (((float10)(int)param_4 * (float10)(float)param_1[0xc] +
-                                      (float10)(float)param_1[6]) * (float10)_DAT_0057e23e);
+                                      (float10)(float)param_1[6]) * (float10)-256);
           piStack_e0 = piVar1;
           local_c4 = (int)ROUND(fVar7);
           local_bc = 1;
@@ -218,7 +218,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
             local_cc = iVar3;
             fVar7 = (float10)round
                                        (((float10)(int)local_18 * (float10)(float)param_1[0xc] +
-                                        (float10)(float)param_1[6]) * (float10)_DAT_0057e246);
+                                        (float10)(float)param_1[6]) * (float10)256);
             piStack_e4 = piVar1;
             local_c8 = (int)ROUND(fVar7);
             piStack_e8 = (int *)0x469af2;
@@ -237,7 +237,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
               local_c4 = iVar3;
               fVar7 = (float10)round
                                          (((float10)(int)param_2 * (float10)(float)param_1[10] +
-                                          (float10)(float)param_1[4]) * (float10)_DAT_0057e23e);
+                                          (float10)(float)param_1[4]) * (float10)-256);
               piStack_e8 = piVar1;
               local_cc = (int)ROUND(fVar7);
               fVar4 = (float)engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
@@ -255,7 +255,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
                 local_d0 = (int)fVar4;
                 fVar7 = (float10)round
                                            (((float10)(int)local_20 * (float10)(float)param_1[10] +
-                                            (float10)(float)param_1[4]) * (float10)_DAT_0057e246);
+                                            (float10)(float)param_1[4]) * (float10)256);
                 local_d0 = (int)ROUND(fVar7);
                 local_c8 = 2;
                 puVar5 = (byte *)
@@ -275,8 +275,8 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
                   puStack_dc = puVar5;
                   fVar7 = (float10)round
                                              (((float10)(int)local_24 * (float10)(float)param_1[0xb]
-                                              + (float10)(float)param_1[5]) * (float10)_DAT_0057e246
-                                             );
+                                              + (float10)(float)param_1[5]) *
+                                              (float10)256);
                   fStack_d4 = (float)(int)ROUND(fVar7);
                   piVar6 = (int *)engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                             (piVar1,uVar8);
@@ -294,8 +294,8 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
                     fVar7 = (float10)round
                                                (((float10)(int)unaff_ESI *
                                                  (float10)(float)param_1[0xb] +
-                                                (float10)(float)param_1[5]) * (float10)_DAT_0057e23e
-                                               );
+                                                (float10)(float)param_1[5]) *
+                                                (float10)-256);
                     pfStack_d8 = (float *)(int)ROUND(fVar7);
                     local_d0 = 1;
                     iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
@@ -329,7 +329,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
         }
         _DAT_01b7b744 = _DAT_01b7b744 + 1;
         if (19999 < _DAT_01b7b744) {
-          _DAT_01cc4800 = ">..\\core\\dtrace.cpp" + 1;
+          _DAT_01cc4800 = "..\\core\\dtrace.cpp";
           _DAT_01cc4804 = 0x792;
           FUN_004c8440("Too many drawn cubes.  Need to recompile.");
           return;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
 
 {
@@ -44,7 +42,7 @@ void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
   uint local_18;
   float local_14;
   
-  iVar5 = FUN_004259f0(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar5 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd34));
     return;
@@ -58,15 +56,15 @@ void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
     uVar8 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(iVar5,&local_20);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar8);
   }
-  fVar4 = (float)_DAT_0057df14;
-  fVar3 = (float)_DAT_0057df1c;
-  fVar2 = (float)_DAT_0057df0c;
+  fVar4 = (float)3.1415926535000001;
+  fVar3 = (float)0.5;
+  fVar2 = (float)2;
   *(float *)(param_1 + 0x242c) = *(float *)(param_1 + 0x23ac) * fVar2;
   *(float *)(param_1 + 0x2430) = param_2 * fVar4 * *(float *)(param_1 + 0xbc8c) * fVar3 * fVar2;
   iVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar5);
   iVar6 = *(int *)(iVar6 + 0x24);
   local_1c = iVar6;
-  iVar7 = FUN_00428c00(param_1,param_2);
+  iVar7 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar7 == 0) {
     switch(iVar6) {
     case 0:
@@ -207,7 +205,7 @@ switchD_00463074_caseD_3:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                 (0x01E57284,*(uint *)(param_1 + 0xbca4));
     }
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057df24;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_7c = *(float *)(param_1 + 0x2420) * param_2;
     local_78 = *(float *)(param_1 + 0x2424) * param_2;
     local_74 = param_2 * *(float *)(param_1 + 0x2428);
@@ -227,6 +225,6 @@ switchD_00463074_caseD_3:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

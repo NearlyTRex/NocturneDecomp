@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   string s_..\\core\\ghoul.cpp_00584be4
 ;   string s_CGhoul::findDarkWayPoint_-_Can't_00584bf6
-;   undefined4 s_darkPoint*_00584eac+1
-;   void* PTR_s_darkPoint*_00584eac+1_005b9654 = 00584ead
+;   TerminatedCString s_darkPoint_00584ead
+;   void* PTR_s_darkPoint_00584ead_005b9654 = 00584ead
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c78c10
 ;   undefined4 DAT_01cc4800
@@ -112,8 +112,8 @@ section .text
     PUSH 0x0                            ; 004a90f5
         ;   Label: LAB_004a90f5
     PUSH EAX                            ; 004a90f7
-    MOV EBX,dword ptr [0x005b9654]      ; 004a90f8 | PTR_s_darkPoint*_00584eac+1_005b9654
-    PUSH EBX                            ; 004a90fe | s_darkPoint*_00584eac+1
+    MOV EBX,dword ptr [0x005b9654]      ; 004a90f8 | PTR_s_darkPoint_00584ead_005b9654
+    PUSH EBX                            ; 004a90fe | = "darkPoint*"
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 004a90ff
         ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
     ADD ESP,0xc                         ; 004a9104

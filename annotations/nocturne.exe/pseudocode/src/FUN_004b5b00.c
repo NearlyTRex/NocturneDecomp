@@ -15,8 +15,7 @@ uint FUN_004b5b00(int param_1)
   if (*(int *)(param_1 + 0x1f8d4) == 0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                    (*(int *)(param_1 + 0x1f8d4),"N@CHealthItem" + 2);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(int *)(param_1 + 0x1f8d4),"CHealthItem");
   if (iVar1 == 0) {
     iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x140))(param_1);
     if (iVar1 != 0) {

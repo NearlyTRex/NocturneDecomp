@@ -9,23 +9,23 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   undefined4 s_bride-launch.wav_0057d834+2
+;   TerminatedCString s_bride_launch_wav_0057d836
 ;   string s_bride-die?.wav_0057d847
 ;   string s_bride-hurt?.wav_0057d856
-;   undefined4 DAT_0057d866
+;   double DOUBLE_0057d866 = 2
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_actor.cpp_randomChance_FUN_0040dea0
+;   core_charactr.cpp_FUN_00427730
 ;   core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-;   FUN_00427730
 ;   FUN_0045ab40
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0045a74e
     PUSH EAX                            ; 0045a752
     PUSH ESI                            ; 0045a753
-    CALL FUN_00427730                   ; 0045a754
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined FUN_00427730()
+    CALL core_charactr.cpp_FUN_00427730 ; 0045a754
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
     ADD ESP,0x18                        ; 0045a759
     PUSH EDI                            ; 0045a75c
         ;   Label: LAB_0045a75c
@@ -122,7 +122,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 0045a7bf
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 0045a7c4
-    PUSH 0x57d836                       ; 0045a7c7 | s_bride-launch.wav_0057d834+2
+    PUSH 0x57d836                       ; 0045a7c7 | = "bride-launch.wav"
     MOV EAX,dword ptr [ESI + 0x14c]     ; 0045a7cc
     PUSH ESI                            ; 0045a7d2
     CALL dword ptr [EAX + 0x28]         ; 0045a7d3
@@ -151,7 +151,7 @@ section .text
         ;   Label: LAB_0045a800
     LEA EAX,[EDI + 0x1c]                ; 0045a803
     FLD ST0                             ; 0045a806
-    FMUL double ptr [0x0057d866]        ; 0045a808 | DAT_0057d866
+    FMUL double ptr [0x0057d866]        ; 0045a808 | DOUBLE_0057d866
     PUSH EAX                            ; 0045a80e
     LEA EAX,[ESP + 0x10]                ; 0045a80f
     XOR EBX,EBX                         ; 0045a813

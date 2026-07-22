@@ -22,15 +22,15 @@ uint FUN_004703f0(uint param_1,uint param_2)
   _vsprintf(0x1bcbcd0,param_2,&puStack_10);
   puStack_10 = (byte *)0x0;
   FUN_00474c90(auStack_180);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e65c);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
   uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Yes to [A]ll");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e66f);
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
   uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[C]ancel");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_180,uVar2);
-  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(0x57e67d);
+  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("yanc");
   pcVar5 = acStack_16c;
   do {
     cVar1 = *pcVar3;

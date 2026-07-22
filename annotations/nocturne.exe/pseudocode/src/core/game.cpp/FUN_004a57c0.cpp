@@ -39,7 +39,7 @@ void FUN_004a57c0(int param_1)
   }
   iVar4 = param_1 + 0x8b4;
   *(uint *)(param_1 + 0xcc) = 0;
-  iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058437c,iVar4);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",iVar4);
   if (iVar2 < 0) {
     FUN_0046fcd0(0x01BCD074,"Can't open %s",iVar4);
     *(byte *)(param_1 + 0x8b4) = 0;
@@ -53,7 +53,7 @@ void FUN_004a57c0(int param_1)
     return;
   }
   splitpath(iVar4,0,0,local_130,0);
-  pcVar6 = &DAT_005843be;
+  pcVar6 = ".act";
   iVar4 = -1;
   pcVar8 = local_130;
   do {
@@ -74,7 +74,7 @@ void FUN_004a57c0(int param_1)
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005843c6,local_130,&DAT_005843c3);
+  iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_130,"rb");
   if (iVar4 == 0) {
     FUN_0046fcd0(0x01BCD074,"Can't open %s",local_130);
   }
@@ -118,7 +118,7 @@ void FUN_004a57c0(int param_1)
     local_18 = malloc
                          (*(int *)(param_1 + 0x9b4) * *(int *)(param_1 + 0x9b8));
     if (local_18 != 0) {
-      iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005843db,param_1 + 0x8b4,&DAT_005843d8);
+      iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1 + 0x8b4,"rb");
       if (iVar4 == 0) {
         _DAT_01cc4800 = "..\\core\\game.cpp";
         _DAT_01cc4804 = 0x1028;

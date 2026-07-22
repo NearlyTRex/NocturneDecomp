@@ -51,26 +51,26 @@ uint core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(int param_1,uint *param_2
                               (iVar4,local_88,_DAT_01c78c20);
   local_34 = *pfVar2 + *pfVar1;
   local_30 = pfVar2[1] + pfVar1[1];
-  local_58 = local_34 * _DAT_00584e1d;
+  local_58 = local_34 * 0.5f;
   local_2c = pfVar2[2] + pfVar1[2];
-  local_54 = local_30 * _DAT_00584e1d;
-  local_50 = local_2c * _DAT_00584e1d;
+  local_54 = local_30 * 0.5f;
+  local_50 = local_2c * 0.5f;
   pfVar1 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                               (iVar4,local_94,_DAT_01c78c1c);
   pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                               (iVar4,local_4c,_DAT_01c78c24);
   local_7c = *pfVar2 + *pfVar1;
   local_78 = pfVar2[1] + pfVar1[1];
-  local_64 = local_7c * _DAT_00584e1d;
-  local_60 = local_78 * _DAT_00584e1d;
+  local_64 = local_7c * 0.5f;
+  local_60 = local_78 * 0.5f;
   local_74 = pfVar2[2] + pfVar1[2];
   local_28 = local_58 + local_64;
-  local_5c = local_74 * _DAT_00584e1d;
-  local_70 = local_28 * _DAT_00584e1d;
+  local_5c = local_74 * 0.5f;
+  local_70 = local_28 * 0.5f;
   local_24 = local_54 + local_60;
-  local_6c = local_24 * _DAT_00584e1d;
+  local_6c = local_24 * 0.5f;
   local_20 = local_50 + local_5c;
-  local_68 = local_20 * _DAT_00584e1d;
+  local_68 = local_20 * 0.5f;
   puVar3 = (uint *)
            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1c,&local_70);
   if (param_2 != puVar3) {

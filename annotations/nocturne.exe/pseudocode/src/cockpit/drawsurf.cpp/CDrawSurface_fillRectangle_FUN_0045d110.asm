@@ -14,7 +14,7 @@
 ;   FUN_0045d2b0 at 0045d2c2
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\cockpit\\drawsurf.cpp_0057da55+1
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057da56
 ;   string s_Invalid_bitsPerPixel!_0057da6e
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710
@@ -208,7 +208,7 @@ section .text
     CMP EAX,0x20                        ; 0045d279
     JZ 0x0045d20c                       ; 0045d27c
         ;   XREF to: 0045d20c (CONDITIONAL_JUMP)  ; LAB_0045d20c
-    MOV EDX,0x57da56                    ; 0045d27e | s_..\cockpit\drawsurf.cpp_0057da55+1
+    MOV EDX,0x57da56                    ; 0045d27e | = "..\\cockpit\\drawsurf.cpp"
         ;   Label: LAB_0045d27e
     MOV ECX,0x524                       ; 0045d283
     PUSH 0x57da6e                       ; 0045d288 | = "Invalid bitsPerPixel!"

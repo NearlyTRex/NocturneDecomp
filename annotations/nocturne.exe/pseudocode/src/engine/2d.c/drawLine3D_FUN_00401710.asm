@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00409590 at 0040982b
+;   engine_3d.c_FUN_00409590 at 0040982b
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 at 0046138d
 ;
 ; Called Functions:

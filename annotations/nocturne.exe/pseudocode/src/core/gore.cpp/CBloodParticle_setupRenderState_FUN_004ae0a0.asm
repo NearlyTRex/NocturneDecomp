@@ -14,7 +14,7 @@
 ;   core_gore.cpp_CGore_renderParticles_FUN_004afe00 at 004afe4a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585080
+;   double DOUBLE_00585080 = -65536
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
@@ -80,7 +80,7 @@ section .text
     MOV EDI,ESP                         ; 004ae134
     LEA ESI,[ESP + 0x28]                ; 004ae136
     MOVSD.REP ES:EDI,ESI                ; 004ae13a
-    FLD double ptr [0x00585080]         ; 004ae13c | DAT_00585080
+    FLD double ptr [0x00585080]         ; 004ae13c | DOUBLE_00585080
     FLD float ptr [ESP + 0x8]           ; 004ae142
     FMUL ST1                            ; 004ae146
     FLD float ptr [ESP + 0x14]          ; 004ae148

@@ -79,13 +79,13 @@
 ;   string s_%s_gave_up_chase_-_I'm_confused_005792ea
 ;   string s_boneguy-swing?.wav_0057930b
 ;   string s_boneGuy-walkloop.wav_0057931e
-;   undefined4 DAT_00579336
-;   undefined4 DAT_0057933e
-;   undefined4 DAT_00579346
-;   undefined4 DAT_0057934e
-;   undefined4 DAT_00579356
-;   undefined4 DAT_0057935e
-;   undefined4 DAT_00579366
+;   double DOUBLE_00579336 = 0.5
+;   double DOUBLE_0057933e = 2.5
+;   double DOUBLE_00579346 = 3.14159265350000
+;   double DOUBLE_0057934e = 0.25
+;   double DOUBLE_00579356 = 5.22209901682860E-315
+;   double DOUBLE_0057935e = 32
+;   double DOUBLE_00579366 = 6.28318530700000
 ;   undefined4 DAT_0059a898
 ;   undefined4 DAT_0059a89c
 ;   undefined4 DAT_0059a8a8
@@ -102,11 +102,11 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
+;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackLine_FUN_00479990
-;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
-;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
-;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   ... and 22 more
 ;
 ; *****************************************************************************
@@ -154,8 +154,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00418a73
         ;   Label: LAB_00418a73
     PUSH EBX                            ; 00418a79
-    CALL FUN_004259f0                   ; 00418a7a
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004259f0()
+    CALL core_charactr.cpp_FUN_004259f0 ; 00418a7a
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
     ADD ESP,0x8                         ; 00418a7f
     TEST EAX,EAX                        ; 00418a82
     JZ 0x00418c90                       ; 00418a84
@@ -271,7 +271,7 @@ section .text
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0 ; 00418bd9
         ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0()
     FLD float ptr [EBX + 0xc348]        ; 00418bde
-    FMUL double ptr [0x00579366]        ; 00418be4 | DAT_00579366
+    FMUL double ptr [0x00579366]        ; 00418be4 | DOUBLE_00579366
     MOV ESI,dword ptr [EBP + 0x46]      ; 00418bea
     FLD float ptr [EBP + 0x2]           ; 00418bed
     FXCH                                ; 00418bf0
@@ -392,11 +392,11 @@ section .text
         ;   Label: LAB_00418d10
     MOV dword ptr [EBX + 0xc344],0x0    ; 00418d16
     FLD ST0                             ; 00418d20
-    FMUL double ptr [0x00579336]        ; 00418d22 | DAT_00579336
+    FMUL double ptr [0x00579336]        ; 00418d22 | DOUBLE_00579336
     MOV dword ptr [EBX + 0x2434],0x42c80000 ; 00418d28
     FSTP ST1                            ; 00418d32
     FST float ptr [EBX + 0xbd9c]        ; 00418d34
-    FCOMP double ptr [0x0057933e]       ; 00418d3a | DAT_0057933e
+    FCOMP double ptr [0x0057933e]       ; 00418d3a | DOUBLE_0057933e
     FNSTSW AX                           ; 00418d40
     SAHF                                ; 00418d42
     JBE 0x00418d9c                      ; 00418d43
@@ -458,9 +458,9 @@ section .text
     FLD float ptr [EBX + 0xbc8c]        ; 00418dcf
         ;   Label: LAB_00418dcf
     FLD float ptr [EBP + 0x92]          ; 00418dd5
-    FMUL double ptr [0x00579346]        ; 00418ddb | DAT_00579346
+    FMUL double ptr [0x00579346]        ; 00418ddb | DOUBLE_00579346
     FMULP                               ; 00418de1
-    FMUL double ptr [0x0057934e]        ; 00418de3 | DAT_0057934e
+    FMUL double ptr [0x0057934e]        ; 00418de3 | DOUBLE_0057934e
     FLD float ptr [EBX + 0x23ac]        ; 00418de9
     PUSH ESI                            ; 00418def
     FSTP float ptr [EBX + 0x242c]       ; 00418df0
@@ -472,8 +472,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x24]      ; 00418e0a
     PUSH EBX                            ; 00418e0d
     MOV dword ptr [EBP + 0x56],EDI      ; 00418e0e
-    CALL FUN_00428c00                   ; 00418e11
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 00418e11
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 00418e16
     TEST EAX,EAX                        ; 00418e19
     JZ 0x0041949d                       ; 00418e1b
@@ -541,7 +541,7 @@ section .text
     FLD float ptr [EBP + 0x92]          ; 00418eca
         ;   Label: LAB_00418eca
     FLD ST0                             ; 00418ed0
-    FMUL double ptr [0x0057935e]        ; 00418ed2 | DAT_0057935e
+    FMUL double ptr [0x0057935e]        ; 00418ed2 | DOUBLE_0057935e
     FLD float ptr [EBX + 0x2424]        ; 00418ed8
     FXCH                                ; 00418ede
     FSUBR ST0,ST1                       ; 00418ee0
@@ -610,8 +610,8 @@ section .text
     ADD ESP,0x4                         ; 00418f97
     PUSH dword ptr [EBP + 0x92]         ; 00418f9a
     PUSH EBX                            ; 00418fa0
-    CALL FUN_0042a150                   ; 00418fa1
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 00418fa1
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     MOV ECX,dword ptr [EBP + 0x56]      ; 00418fa6
     ADD ESP,0x8                         ; 00418fa9
     CMP ECX,0x1                         ; 00418fac
@@ -757,7 +757,7 @@ section .text
     FLD float ptr [EBP + 0xffffff46]    ; 00419134
     FADD float ptr [EBP + 0xffffff52]   ; 0041913a
     FST float ptr [EBP + 0xffffff7e]    ; 00419140
-    FLD float ptr [0x00579356]          ; 00419146 | DAT_00579356
+    FLD float ptr [0x00579356]          ; 00419146 | DOUBLE_00579356
     FXCH                                ; 0041914c
     FMUL ST1                            ; 0041914e
     FLD float ptr [EBP + 0xffffff4e]    ; 00419150
@@ -1002,7 +1002,7 @@ section .text
     FADDP                               ; 004193ff
     FSQRT                               ; 00419401
     FLD float ptr [EBP + 0x5a]          ; 00419403
-    FADD double ptr [0x00579336]        ; 00419406 | DAT_00579336
+    FADD double ptr [0x00579336]        ; 00419406 | DOUBLE_00579336
     FCOMPP                              ; 0041940c
     FNSTSW AX                           ; 0041940e
     SAHF                                ; 00419410

@@ -64,7 +64,7 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(int param_1)
   (&local_60)[(uint)bVar6 * -2] = afStack_78[(uint)bVar6 * -2];
   (&local_60)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
        afStack_78[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-  local_68 = (float)_DAT_0057c7de;
+  local_68 = (float)0.00390625;
   afStack_78[2] = (float)local_64 * local_68;
   local_14 = local_5c;
   afStack_78[3] = (float)(int)local_60 * local_68;
@@ -99,7 +99,7 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(int param_1)
   uVar8 = 0x44f667;
   fVar7 = (float10)round
                              (fVar7 * (float10)local_1c * (float10)local_1c * (float10)local_1c *
-                              (float10)_DAT_0057c7e6);
+                              (float10)65536);
   local_1c = (float)(int)ROUND(fVar7);
   lVar1 = (longlong)(0xffff - iVar4) * (longlong)(int)local_1c;
   uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;

@@ -23,6 +23,10 @@ void __cdecl CKeyFramedModel::readBinaryModel(int param_1,undefined4 param_2);
 // Address: 00452990
 int __cdecl CKeyFramedModel::readTextModel(int param_1,int param_2);
 
+// Original: core_dmodel.cpp_FUN_00452f10
+// Address: 00452f10
+void FUN_00452f10(int param_1);
+
 // Original: core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
 // Address: 00453040
 void __cdecl CKeyFramedModel::prepareForRender(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
@@ -78,6 +82,10 @@ void __cdecl CKeyFramedModel::populateCollisionList(int param_1,undefined4 *para
 // Original: core_dmodel.cpp_loadModel_FUN_004543b0
 // Address: 004543b0
 int __cdecl loadModel(undefined4 param_1);
+
+// Original: core_dmodel.cpp_FUN_00454460
+// Address: 00454460
+void FUN_00454460(void);
 
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 // Address: 00454490

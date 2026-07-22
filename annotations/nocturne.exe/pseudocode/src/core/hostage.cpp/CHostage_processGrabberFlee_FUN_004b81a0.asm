@@ -15,7 +15,7 @@
 ;   FUN_004b6d80 at 004b7697
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00585caa
+;   double DOUBLE_00585caa = 1.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -43,7 +43,7 @@ section .text
     JNC 0x004b829e                      ; 004b81cc
         ;   XREF to: 004b829e (CONDITIONAL_JUMP)  ; LAB_004b829e
     FLD float ptr [EBX + 0x2dcc]        ; 004b81d2
-    FCOMP double ptr [0x00585caa]       ; 004b81d8 | DAT_00585caa
+    FCOMP double ptr [0x00585caa]       ; 004b81d8 | DOUBLE_00585caa
     FNSTSW AX                           ; 004b81de
     SAHF                                ; 004b81e0
     JA 0x004b829e                       ; 004b81e1

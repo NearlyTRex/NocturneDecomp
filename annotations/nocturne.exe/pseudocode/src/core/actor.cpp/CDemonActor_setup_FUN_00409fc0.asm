@@ -4,7 +4,9 @@
 ; void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(int param_1)
 ;
 ;
-; XREF[41]:
+; XREF[44]:
+;   FUN_0040f0f0 at 0040f105
+;   FUN_0040f5f0 at 0040f5f5
 ;   FUN_00414de0 at 00414de6
 ;   FUN_0043dad0 at 0043dae0
 ;   FUN_004a8a60 at 004a8a65
@@ -13,9 +15,7 @@
 ;   FUN_004c34c0 at 004c34d7
 ;   FUN_004c4340 at 004c4345
 ;   FUN_004c8190 at 004c8195
-;   FUN_004c9580 at 004c959c
-;   FUN_004cbb50 at 004cbb55
-;   ... and 31 more
+;   ... and 34 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000

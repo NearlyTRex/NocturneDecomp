@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0040a140 at 0040a156
 ;   FUN_0048b6f0 at 0048bc05
 ;   FUN_004c71a0 at 004c7381
+;   core_actor.cpp_FUN_0040a140 at 0040a156
 ;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0 at 004c70b6
 ;
 ; Referenced Globals:

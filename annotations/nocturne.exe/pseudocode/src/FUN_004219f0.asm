@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00423790 at 004238a9
+;   core_bugs.cpp_FUN_00423790 at 004238a9
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0

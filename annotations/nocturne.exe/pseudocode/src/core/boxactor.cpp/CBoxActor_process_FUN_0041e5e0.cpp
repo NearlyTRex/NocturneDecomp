@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(int param_1,float param_2)
 
 {
@@ -68,10 +66,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(int param_1,float 
   }
   fStack_38 = *(float *)(param_1 + 0x2f8) * param_2;
   local_34 = *(float *)(param_1 + 0x2fc) * param_2;
-  fStack_8c = fStack_38 * _DAT_0057980d;
+  fStack_8c = fStack_38 * 0.1047198f;
   local_30 = *(float *)(param_1 + 0x300) * param_2;
-  local_88 = local_34 * _DAT_0057980d;
-  local_84 = local_30 * _DAT_0057980d;
+  local_88 = local_34 * 0.1047198f;
+  local_84 = local_30 * 0.1047198f;
   *(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) + fStack_8c;
   *(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_88;
   *(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x38) + local_84;
@@ -107,10 +105,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(int param_1,float 
     pfVar3 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))();
     fStack_50 = *pfVar3 + pfVar3[3];
     fStack_4c = pfVar3[1] + pfVar3[4];
-    local_68 = fStack_50 * _DAT_00579811;
+    local_68 = fStack_50 * 0.5f;
     fStack_48 = pfVar3[2] + pfVar3[5];
-    fStack_64 = fStack_4c * _DAT_00579811;
-    fStack_60 = fStack_48 * _DAT_00579811;
+    fStack_64 = fStack_4c * 0.5f;
+    fStack_60 = fStack_48 * 0.5f;
     local_80 = -local_68;
     fStack_7c = -fStack_64;
     fStack_78 = -fStack_60;
@@ -125,9 +123,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(int param_1,float 
     fVar5 = SQRT(*(float *)(param_1 + 0x3d4) * *(float *)(param_1 + 0x3d4) +
                  *(float *)(param_1 + 0x3cc) * *(float *)(param_1 + 0x3cc) +
                  *(float *)(param_1 + 0x3d0) * *(float *)(param_1 + 0x3d0));
-    if ((float)_DAT_00579815 < fVar5) {
+    if ((float)3 < fVar5) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_e0,fVar5);
-      fStack_dc = fVar5 * *(float *)(param_1 + 0x388) * _DAT_0057981d;
+      fStack_dc = fVar5 * *(float *)(param_1 + 0x388) * 0.2f;
       iStack_ac = param_1;
       iStack_a8 = param_1;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880

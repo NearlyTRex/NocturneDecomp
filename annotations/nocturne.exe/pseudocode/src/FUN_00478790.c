@@ -55,7 +55,7 @@ void FUN_00478790(int param_1,float param_2)
   float local_14;
   
   iVar5 = *(int *)(param_1 + 0x484);
-  iVar2 = _strcmp(param_1 + 0x164,"@none" + 1);
+  iVar2 = _strcmp(param_1 + 0x164,"none");
   if ((iVar2 != 0) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x164)
      , uVar4 = 0x01E57284, iVar2 != 0)) {
@@ -145,10 +145,11 @@ LAB_0047883d:
     local_ac = *(float *)(iVar5 + 0x20) - *(float *)(param_1 + 0x20);
     local_a8 = *(float *)(iVar5 + 0x24) - *(float *)(param_1 + 0x24);
     local_a4 = *(float *)(iVar5 + 0x28) - *(float *)(param_1 + 0x28);
-    if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) < (float)_DAT_0057f1ec
-       ) {
+    if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) <
+        (float)2.5) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290();
-      FUN_00427730(*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),local_a0,0,0,0x3f800000,1);
+      core_charactr_cpp_FUN_00427730
+                (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),local_a0,0,0,0x3f800000,1);
     }
     break;
   case 6:
@@ -164,7 +165,7 @@ LAB_0047883d:
       local_48 = *(float *)(param_1 + 0x24);
       local_44 = *(uint *)(param_1 + 0x28);
     }
-    local_48 = *(float *)(param_1 + 0x158) * (float)_DAT_0057f1e4 + local_48;
+    local_48 = *(float *)(param_1 + 0x158) * (float)0.5 + local_48;
     core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(param_1 + 0x444,&local_4c);
     iVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(0,0x7fff);
     *(int *)(param_1 + 0x480) = iVar5;
@@ -188,10 +189,10 @@ LAB_00478902:
       pfVar3 = (float *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0x14))(iVar5,auStack_e8);
       fStack_c4 = *pfVar3 + pfVar3[3];
       fStack_c0 = pfVar3[1] + pfVar3[4];
-      fStack_88 = fStack_c4 * _DAT_0057f1dc;
+      fStack_88 = fStack_c4 * 5.2220990168285998e-315._0_4_;
       fStack_bc = pfVar3[2] + pfVar3[5];
-      fStack_84 = fStack_c0 * _DAT_0057f1dc;
-      fStack_80 = fStack_bc * _DAT_0057f1dc;
+      fStack_84 = fStack_c0 * 5.2220990168285998e-315._0_4_;
+      fStack_80 = fStack_bc * 5.2220990168285998e-315._0_4_;
       pfVar3 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200();
       iVar5 = *(int *)(param_1 + 0x3c8);
       fStack_7c = *(float *)(iVar5 + 0x20) + *pfVar3;

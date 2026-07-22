@@ -30,6 +30,7 @@ undefined4 FUN_00511c60(undefined4 param_1);
 undefined4 FUN_00511c70(undefined4 param_1);
 undefined4 FUN_00511c80(undefined4 param_1);
 undefined4 FUN_00511c90(undefined4 param_1);
+void FUN_00511ca0(undefined4 *param_1,undefined4 *param_2);
 undefined4 FUN_00511d20(undefined4 param_1);
 undefined4 FUN_00511d30(undefined4 param_1);
 undefined4 FUN_005125a0(int *param_1,int param_2,int param_3);

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_00422050 at 004221b7
 ;   FUN_00479b60 at 00479d96
 ;   FUN_004baba0 at 004bb15b
 ;   FUN_005423c0 at 0054297b
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422638
+;   core_bugs.cpp_FUN_00422050 at 004221b7
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 00424978
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a8a9
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00497277

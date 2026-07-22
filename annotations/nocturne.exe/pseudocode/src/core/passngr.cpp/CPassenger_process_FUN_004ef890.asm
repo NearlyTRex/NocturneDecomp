@@ -16,13 +16,13 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
+;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
-;   FUN_0042a150
 ;   FUN_004d9110
 ;
 ; *****************************************************************************
@@ -203,8 +203,8 @@ section .text
     ADD ESP,0x4                         ; 004efa41
     PUSH dword ptr [EBP + 0x18]         ; 004efa44
     PUSH EBX                            ; 004efa47
-    CALL FUN_0042a150                   ; 004efa48
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 004efa48
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 004efa4d
     MOV ESP,EBP                         ; 004efa50
     POP EBP                             ; 004efa52

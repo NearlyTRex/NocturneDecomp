@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   FUN_0040ce80 at 0040cf3c
+;   core_actor.cpp_FUN_0040ce80 at 0040cf3c
 ;
 ; Referenced Globals:
 ;   string s_%sboxVersion_0057974b
@@ -21,8 +21,8 @@
 ;   string s_%s%f_00579793
 ;   string s_%s%f,%f,%f_00579799
 ;   string s_%s%f,%f,%f_005797a5
-;   string s_%s%d_005797b1
-;   undefined4 DAT_005797bd
+;   TerminatedCString s_s_d_005797b1
+;   double DOUBLE_005797bd = 32
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005644f0
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     FLD float ptr [EBX + 0x94]          ; 0041caa1
     ADD ESP,0x24                        ; 0041caa7
-    FMUL double ptr [0x005797bd]        ; 0041caaa | DAT_005797bd
+    FMUL double ptr [0x005797bd]        ; 0041caaa | DOUBLE_005797bd
     SUB ESP,0x8                         ; 0041cab0
     FSTP double ptr [ESP]               ; 0041cab3
     PUSH EDI                            ; 0041cab6

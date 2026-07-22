@@ -50,7 +50,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(int param_1)
                 (**(code **)(*(int *)(*(int *)(iVar4 + 0x15f300) + 0x14c) + 8))();
                 if (0 < *(int *)(param_1 + 0x15a8cc)) {
                   do {
-                    FUN_0050e080(param_1,iVar5);
+                    core_set_cpp_FUN_0050e080(param_1,iVar5);
                     (**(code **)(*(int *)(*(int *)(iVar4 + 0x15f300) + 0x14c) + 8))();
                     iVar5 = iVar5 + 1;
                     core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190();

@@ -10,11 +10,11 @@
 ;   FUN_00535450 at 0053563f
 ;   FUN_005384d0 at 0053966b
 ;   FUN_0053a260 at 0053a34a
-;   FUN_0055ef50 at 00560164
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 at 0042a888
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00429520 at 00429546
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d536
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 00495994
+;   core_hostage.cpp_CHostage_setup_FUN_004b6b20 at 004b6cda
 ;   ... and 8 more
 ;
 ; Referenced Globals:

@@ -16,11 +16,11 @@
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 at 00471b24
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
-;   undefined4 s_..\\shape\\edittool.cpp_0057e8e1+1
+;   TerminatedCString s_shape_edittool_cpp_0057e8e2
 ;   string s_Can't_open_another_window!_0057e8f8
-;   undefined4 DAT_0057e913
+;   TerminatedCString s_s_0057e913
 ;   string s_..\\shape\\edittool.cpp_0057e917
 ;   string s_out_of_memory_to_open_editor_win_0057e92d
 ;   undefined4 DAT_005b761c
@@ -72,7 +72,7 @@ section .text
     CMP EDI,0x5                         ; 00471b95
     JL 0x00471bbc                       ; 00471b98
         ;   XREF to: 00471bbc (CONDITIONAL_JUMP)  ; LAB_00471bbc
-    MOV EBP,0x57e8e2                    ; 00471b9a | s_..\shape\edittool.cpp_0057e8e1+1
+    MOV EBP,0x57e8e2                    ; 00471b9a | = "..\\shape\\edittool.cpp"
     MOV EAX,0x674                       ; 00471b9f
     PUSH 0x57e8f8                       ; 00471ba4 | = "Can't open another window!"
     MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | DAT_01cc4800
@@ -167,7 +167,7 @@ section .text
     MOV EBP,0x1bcc0d0                   ; 00471cff
     PUSH EBP                            ; 00471d04
         ;   Label: LAB_00471d04
-    PUSH 0x57e913                       ; 00471d05 | DAT_0057e913
+    PUSH 0x57e913                       ; 00471d05 | = "%s\n"
     PUSH EBX                            ; 00471d0a
     INC ESI                             ; 00471d0b
     ADD EBP,0xc8                        ; 00471d0c
@@ -414,7 +414,7 @@ section .text
     POP ESI                             ; 00472055
     POP EBX                             ; 00472056
     RET                                 ; 00472057
-    MOV ECX,0x57e4fa                    ; 00472058 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 00472058 | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_00472058
     MOV EBX,0x8b                        ; 0047205d
     PUSH 0x57e510                       ; 00472062 | = "gEdFont must be set by the application."

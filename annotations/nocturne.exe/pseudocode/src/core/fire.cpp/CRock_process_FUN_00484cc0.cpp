@@ -26,7 +26,7 @@ void core_fire_cpp_CRock_process_FUN_00484cc0(int param_1)
                                    (float10)*(float *)(param_1 + 0xc) *
                                    (float10)*(float *)(param_1 + 0xc) +
                                    (float10)*(float *)(param_1 + 0x10) *
-                                   (float10)*(float *)(param_1 + 0x10)) * (float10)_DAT_00581134);
+                                   (float10)*(float *)(param_1 + 0x10)) * (float10)32767.700000000001);
   iVar3 = _DAT_01bd1d80;
   lVar2 = (longlong)((int)(iVar1 - (uint)(iVar4 << 1 < 0)) >> 2) * (longlong)(int)ROUND(fVar5);
   *(uint *)(param_1 + 0x38) =

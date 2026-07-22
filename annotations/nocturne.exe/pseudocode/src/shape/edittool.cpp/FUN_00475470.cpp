@@ -54,7 +54,7 @@ void FUN_00475470(int *param_1,uint param_2,uint param_3)
         piVar5 = piVar5 + 1;
         if (*pcVar3 == '\0') break;
         if (9 < iVar10) {
-          _DAT_01cc4800 = "A..\\shape\\edittool.cpp" + 1;
+          _DAT_01cc4800 = "..\\shape\\edittool.cpp";
           _DAT_01cc4804 = 0xd01;
           FUN_004c8440("Too many picklist columns!");
         }

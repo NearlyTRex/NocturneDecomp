@@ -8,7 +8,7 @@
 ;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b71b
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\course.cpp_0057b229+1
+;   TerminatedCString s_core_course_cpp_0057b22a
 ;   string s_CCourse::allocMemory_-_out_of_hu_0057b23d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -62,7 +62,7 @@ section .text
     POP ESI                             ; 0043b658
     POP EBX                             ; 0043b659
     RET                                 ; 0043b65a
-    MOV ECX,0x57b22a                    ; 0043b65b | s_..\core\course.cpp_0057b229+1
+    MOV ECX,0x57b22a                    ; 0043b65b | = "..\\core\\course.cpp"
         ;   Label: LAB_0043b65b
     MOV EBX,0x6e                        ; 0043b660
     PUSH 0x57b23d                       ; 0043b665 | = "CCourse::allocMemory - out of hunk!"

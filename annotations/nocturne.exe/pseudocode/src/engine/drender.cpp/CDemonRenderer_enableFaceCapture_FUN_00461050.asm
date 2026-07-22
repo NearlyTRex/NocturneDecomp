@@ -6,7 +6,6 @@
 ;
 ; XREF[16]:
 ;   FUN_0041d050 at 0041d0ee
-;   FUN_0050a260 at 0050a432
 ;   FUN_005125a0 at 005131d5
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160fe
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437fcc
@@ -15,6 +14,7 @@
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dffa1
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004dfcb0 at 004dfe84
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750 at 00508848
+;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a75a
 ;   ... and 6 more
 ;
 ; Referenced Globals:

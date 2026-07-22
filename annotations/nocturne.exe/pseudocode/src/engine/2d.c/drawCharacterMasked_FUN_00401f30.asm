@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00402660 at 00402697
+;   engine_2d.c_FUN_00402660 at 00402697
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a4b80

@@ -21,8 +21,8 @@
 ;   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700 at 0051a732
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005797c9
-;   undefined4 DAT_005797cd
+;   float FLOAT_005797c9 = 0.5
+;   double DOUBLE_005797cd = 0.00390625
 ;   undefined4 DAT_0059aa80
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b7648
@@ -51,7 +51,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 0041d468
     FADD float ptr [EAX + 0x4]          ; 0041d46b
     FXCH                                ; 0041d46e
-    FLD float ptr [0x005797c9]          ; 0041d470 | DAT_005797c9
+    FLD float ptr [0x005797c9]          ; 0041d470 | FLOAT_005797c9
     FXCH                                ; 0041d476
     FMUL ST1                            ; 0041d478
     FXCH ST2                            ; 0041d47a
@@ -98,7 +98,7 @@ section .text
     FSUB float ptr [ESI + 0x4]          ; 0041d4fb
     MOV dword ptr [ESP + 0x2c],EAX      ; 0041d4fe
     FILD dword ptr [ESP + 0x2c]         ; 0041d502
-    FMUL double ptr [0x005797cd]        ; 0041d506 | DAT_005797cd
+    FMUL double ptr [0x005797cd]        ; 0041d506 | DOUBLE_005797cd
     FDIVP                               ; 0041d50c
     FILD dword ptr [0x01c00c4c]         ; 0041d50e | DAT_01c00c4c
     FMULP                               ; 0041d514

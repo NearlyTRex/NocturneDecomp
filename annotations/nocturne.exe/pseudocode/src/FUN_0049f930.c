@@ -115,7 +115,7 @@ LAB_0049f9d8:
     else {
       lVar8 = (ulonglong)uVar2 << 0x20;
     }
-    FUN_005090f0(0x01E57284,iVar4 != 0,lVar8);
+    core_set_cpp_FUN_005090f0(0x01E57284,iVar4 != 0,lVar8);
   }
   if (((*(int *)(param_1 + 0x210) != 0) && (_DAT_01c78ac8 == 0)) &&
      ((iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar4 != 0 &&
@@ -145,7 +145,7 @@ LAB_0049f9d8:
   if ((*(int *)(param_1 + 0x1dc) == 0) &&
      (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x43), iVar4 != 0)) {
     iVar4 = engine_dosio_cpp_getFile_FUN_00456a60
-                      (&DAT_00582a9e,"quicksavedgame.noc",&DAT_00582a88);
+                      ("save","quicksavedgame.noc","rb");
     if (iVar4 == 0) {
       uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                         ("No quicked saved game to load",0x40000000);
@@ -190,7 +190,7 @@ LAB_0049fc23:
        (iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x3f), piVar3 = 0x01E57284,
        iVar4 != 0)) {
       *(uint *)(param_1 + 0x278) = 1;
-      FUN_005090f0(piVar3,0,0,0xf0);
+      core_set_cpp_FUN_005090f0(piVar3,0,0,0xf0);
       iVar4 = 0x01E56DA0;
       *(uint *)(param_1 + 0x1dc) = 1;
       if (*(int *)(iVar4 + 0x18) == 1) {
@@ -222,7 +222,8 @@ LAB_0049fc23:
     if (iVar4 < 0x8000) {
       *(uint *)(param_1 + 0x224) = 0x8000;
     }
-    _sprintf(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42);
+    _sprintf(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05
+              );
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_21c,0x3f800000);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }
@@ -233,7 +234,8 @@ LAB_0049fc23:
     if (0x10000 < iVar4) {
       *(uint *)(param_1 + 0x224) = 0x10000;
     }
-    _sprintf(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * _DAT_00582b42);
+    _sprintf(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05
+              );
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_11c,0x3f800000);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }
@@ -251,7 +253,7 @@ LAB_0049fc23:
       fStack_18 = -0.02;
     }
     iStack_1c = _DAT_01fb96f0;
-    fStack_220 = (float)_DAT_01fb96f0 * (float)_DAT_00582b4a + fStack_18;
+    fStack_220 = (float)_DAT_01fb96f0 * (float)1.5259021896696401e-05 + fStack_18;
     if (fStack_220 < 0.0) {
       fStack_220 = 0.0;
     }

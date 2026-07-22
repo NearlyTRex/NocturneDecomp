@@ -168,6 +168,6 @@ int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)
     uVar13 = engine_model_c_getMRGLSize_FUN_004dd520(puVar19);
     puVar19 = (uint *)((int)puVar19 + (uVar13 & 0xfffffffc));
   } while (*puVar19 != 0);
-  FUN_00408e80(*(uint *)(param_1 + 0x14));
+  engine_3d_c_FUN_00408e80(*(uint *)(param_1 + 0x14));
   return param_1 + 0x158;
 }

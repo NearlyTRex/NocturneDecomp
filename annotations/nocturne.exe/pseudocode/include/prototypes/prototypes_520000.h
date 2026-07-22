@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x520000

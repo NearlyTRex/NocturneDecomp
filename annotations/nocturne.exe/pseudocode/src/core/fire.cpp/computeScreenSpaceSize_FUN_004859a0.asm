@@ -18,9 +18,9 @@
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 004862ed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058116c
-;   undefined4 DAT_00581174
-;   undefined4 DAT_0058117c
+;   double DOUBLE_0058116c = 0.00390625
+;   double DOUBLE_00581174 = 0.0000152587890625
+;   double DOUBLE_0058117c = 5.16407569540752E-315
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b7648
@@ -64,8 +64,8 @@ section .text
     MOV EAX,[0x005ae704]                ; 004859ef | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 004859f4 | DAT_01b4d738
     FILD dword ptr [EAX + 0x8]          ; 004859f6
-    FMUL double ptr [0x0058116c]        ; 004859f9 | DAT_0058116c
-    FLD double ptr [0x00581174]         ; 004859ff | DAT_00581174
+    FMUL double ptr [0x0058116c]        ; 004859f9 | DOUBLE_0058116c
+    FLD double ptr [0x00581174]         ; 004859ff | DOUBLE_00581174
     FILD dword ptr [0x005b7648]         ; 00485a05 | DAT_005b7648
     FMUL ST1                            ; 00485a0b
     FDIVP ST2,ST0                       ; 00485a0d
@@ -73,7 +73,7 @@ section .text
     FMUL ST1                            ; 00485a15
     ADD ESP,0x8                         ; 00485a17
     FXCH ST2                            ; 00485a1a
-    FMUL float ptr [0x0058117c]         ; 00485a1c | DAT_0058117c
+    FMUL float ptr [0x0058117c]         ; 00485a1c | DOUBLE_0058117c
     FXCH ST2                            ; 00485a22
     FDIVR ST0,ST2                       ; 00485a24
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00485a26

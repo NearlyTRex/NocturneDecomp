@@ -18,7 +18,7 @@ byte * FUN_005687bc(void)
   
   bVar6 = 0;
   if (DAT_005c1b24 == '\0') {
-    for (ppuVar4 = &PTR_DAT_005c1b10; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1) {
+    for (ppuVar4 = &PTR_s_TMP_005c1b10; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1) {
       pcVar2 = (char *)getenv(*ppuVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;

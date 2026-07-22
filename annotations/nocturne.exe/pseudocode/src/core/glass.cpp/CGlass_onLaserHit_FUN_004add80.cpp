@@ -21,9 +21,9 @@ void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
   uint local_20;
   uint local_1c;
   
-  FUN_0040ab10(param_1,param_2);
+  core_actor_cpp_FUN_0040ab10(param_1,param_2);
   if (*(int *)(param_1 + 0x1e0) == 0) {
-    *(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)_DAT_00585070;
+    *(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;
     return;
   }
   if (*(int *)(param_1 + 0x178) == 0) {
@@ -34,7 +34,7 @@ void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
     fVar2 = *(float *)(param_1 + 0x154);
     fVar3 = *(float *)(param_2 + 0x2c);
     fVar4 = *(float *)(param_1 + 0x150);
-    fVar5 = (float)_DAT_00585078;
+    fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x36c);
     fVar6 = (float10)DAT_005b762c;
     fVar7 = (float10)round((float10)(fVar3 / fVar4 + fVar5) * fVar6);

@@ -25,17 +25,17 @@
 ;   string s_eopen_-_ext_not_found!_00585270
 ;   string s_..\\core\\ground.cpp_00585287
 ;   string s_eopen_-_Cannot_open_file_0058529a
-;   undefined4 DAT_005853e5
-;   undefined1 DAT_005853e8
-;   undefined1 DAT_005853e9
-;   undefined1 DAT_005853ea
-;   undefined1 DAT_005853eb
-;   undefined4 DAT_005853ec
-;   undefined4 DAT_005853f1
-;   undefined1 DAT_005853f4
-;   undefined1 DAT_005853f5
-;   undefined1 DAT_005853f6
-;   undefined1 DAT_005853f7
+;   TerminatedCString s_rb_005853e5
+;   TerminatedCString s_raw_005853e8
+;   undefined4 s_aw_005853e8+1
+;   undefined4 s_w_005853e8+2
+;   undefined4 s__005853e8+3
+;   TerminatedCString s_data_005853ec
+;   TerminatedCString s_rb_005853f1
+;   TerminatedCString s_clr_005853f4
+;   undefined4 s_lr_005853f4+1
+;   undefined4 s_r_005853f4+2
+;   undefined4 s__005853f4+3
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -57,11 +57,11 @@ section .text
     PUSH EBP                            ; 004b14d3
     SUB ESP,0xbc                        ; 004b14d4
     MOV EBX,dword ptr [ESP + 0xd0]      ; 004b14da
-    MOV EDX,0x5853ec                    ; 004b14e1 | DAT_005853ec
-    MOV EBP,0x5853e8                    ; 004b14e6 | DAT_005853e8
+    MOV EDX,0x5853ec                    ; 004b14e1 | = "data"
+    MOV EBP,0x5853e8                    ; 004b14e6 | = "raw"
     MOV ESI,dword ptr [ESP + 0xd4]      ; 004b14eb
     MOV EDI,ESP                         ; 004b14f2
-    MOV ECX,0x5853e5                    ; 004b14f4 | DAT_005853e5
+    MOV ECX,0x5853e5                    ; 004b14f4 | = "rb"
     PUSH EDI                            ; 004b14f9
     MOV AL,byte ptr [ESI]               ; 004b14fa
         ;   Label: LAB_004b14fa
@@ -79,9 +79,9 @@ section .text
     POP EDI                             ; 004b1512
         ;   Label: LAB_004b1512
     MOV ESI,ESP                         ; 004b1513
-    MOV dword ptr [ESP + 0xa8],EDX      ; 004b1515 | DAT_005853ec
+    MOV dword ptr [ESP + 0xa8],EDX      ; 004b1515 | = "data"
     MOV DL,0x2e                         ; 004b151c
-    MOV dword ptr [ESP + 0xac],ECX      ; 004b151e | DAT_005853e5
+    MOV dword ptr [ESP + 0xac],ECX      ; 004b151e | = "rb"
     MOV AL,byte ptr [ESI]               ; 004b1525
         ;   Label: LAB_004b1525
     CMP AL,DL                           ; 004b1527
@@ -111,13 +111,13 @@ section .text
     MOV ESI,EBP                         ; 004b1548
     MOV EDX,dword ptr [ESP + 0xac]      ; 004b154a
     PUSH EDI                            ; 004b1551
-    MOV AL,byte ptr [ESI]               ; 004b1552 | DAT_005853e8 | DAT_005853ea
+    MOV AL,byte ptr [ESI]               ; 004b1552 | = "raw" | s_w_005853e8+2
         ;   Label: LAB_004b1552
     MOV byte ptr [EDI],AL               ; 004b1554
     CMP AL,0x0                          ; 004b1556
     JZ 0x004b156a                       ; 004b1558
         ;   XREF to: 004b156a (CONDITIONAL_JUMP)  ; LAB_004b156a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b155a | DAT_005853e9 | DAT_005853eb
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b155a | s_aw_005853e8+1 | s__005853e8+3
     ADD ESI,0x2                         ; 004b155d
     MOV byte ptr [EDI + 0x1],AL         ; 004b1560
     ADD EDI,0x2                         ; 004b1563
@@ -126,11 +126,11 @@ section .text
         ;   XREF to: 004b1552 (CONDITIONAL_JUMP)  ; LAB_004b1552
     POP EDI                             ; 004b156a
         ;   Label: LAB_004b156a
-    PUSH EDX                            ; 004b156b | DAT_005853e5
+    PUSH EDX                            ; 004b156b | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 004b156c
     PUSH EAX                            ; 004b1570
     MOV ECX,dword ptr [ESP + 0xb0]      ; 004b1571
-    PUSH ECX                            ; 004b1578 | DAT_005853ec
+    PUSH ECX                            ; 004b1578 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004b1579
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004b157e
@@ -199,16 +199,16 @@ section .text
         ;   XREF to: 004b15ba (CONDITIONAL_JUMP)  ; LAB_004b15ba
     PUSH ESI                            ; 004b161e
         ;   Label: LAB_004b161e
-    MOV EBP,0x5853f8                    ; 004b161f | DAT_005853f8
+    MOV EBP,0x5853f8                    ; 004b161f | = "data"
     LEA EDI,[ESP + 0x54]                ; 004b1624
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004b1628
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
-    MOV EAX,0x5853f1                    ; 004b162d | DAT_005853f1
+    MOV EAX,0x5853f1                    ; 004b162d | = "rb"
     ADD ESP,0x4                         ; 004b1632
     MOV DL,0x2e                         ; 004b1635
     MOV ESI,dword ptr [ESP + 0xd4]      ; 004b1637
-    MOV dword ptr [ESP + 0xa4],EBP      ; 004b163e | DAT_005853f8
-    MOV dword ptr [ESP + 0xa0],EAX      ; 004b1645 | DAT_005853f1
+    MOV dword ptr [ESP + 0xa4],EBP      ; 004b163e | = "data"
+    MOV dword ptr [ESP + 0xa0],EAX      ; 004b1645 | = "rb"
     PUSH EDI                            ; 004b164c
     MOV AL,byte ptr [ESI]               ; 004b164d
         ;   Label: LAB_004b164d
@@ -226,7 +226,7 @@ section .text
     POP EDI                             ; 004b1665
         ;   Label: LAB_004b1665
     LEA ESI,[ESP + 0x50]                ; 004b1666
-    MOV EBP,0x5853f4                    ; 004b166a | DAT_005853f4
+    MOV EBP,0x5853f4                    ; 004b166a | = "clr"
     MOV AL,byte ptr [ESI]               ; 004b166f
         ;   Label: LAB_004b166f
     CMP AL,DL                           ; 004b1671
@@ -263,13 +263,13 @@ section .text
         ;   Label: LAB_004b16b0
     MOV ESI,EBP                         ; 004b16b1
     PUSH EDI                            ; 004b16b3
-    MOV AL,byte ptr [ESI]               ; 004b16b4 | DAT_005853f4 | DAT_005853f6
+    MOV AL,byte ptr [ESI]               ; 004b16b4 | = "clr" | s_r_005853f4+2
         ;   Label: LAB_004b16b4
     MOV byte ptr [EDI],AL               ; 004b16b6
     CMP AL,0x0                          ; 004b16b8
     JZ 0x004b16cc                       ; 004b16ba
         ;   XREF to: 004b16cc (CONDITIONAL_JUMP)  ; LAB_004b16cc
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b16bc | DAT_005853f5 | DAT_005853f7
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b16bc | s_lr_005853f4+1 | s__005853f4+3
     ADD ESI,0x2                         ; 004b16bf
     MOV byte ptr [EDI + 0x1],AL         ; 004b16c2
     ADD EDI,0x2                         ; 004b16c5
@@ -279,11 +279,11 @@ section .text
     POP EDI                             ; 004b16cc
         ;   Label: LAB_004b16cc
     MOV ESI,dword ptr [ESP + 0xa0]      ; 004b16cd
-    PUSH ESI                            ; 004b16d4 | DAT_005853f1
+    PUSH ESI                            ; 004b16d4 | = "rb"
     LEA EAX,[ESP + 0x54]                ; 004b16d5
     PUSH EAX                            ; 004b16d9
     MOV EDI,dword ptr [ESP + 0xac]      ; 004b16da
-    PUSH EDI                            ; 004b16e1 | DAT_005853f8
+    PUSH EDI                            ; 004b16e1 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004b16e2
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004b16e7

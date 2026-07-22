@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0040b120(void)
+; undefined4 core_actor_cpp_FUN_0040b120(void)
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\actor.cpp_00577747
-;   string s_CDemonActor::processActionButton_00577759
+;   TerminatedCString s_core_actor_cpp_00577747
+;   TerminatedCString s_CDemonActor_processActio_00577759
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -18,7 +18,7 @@
 section .text
 
     MOV EDX,0x577747                    ; 0040b120 | = "..\\core\\actor.cpp"
-        ;   Label: FUN_0040b120
+        ;   Label: core_actor.cpp_FUN_0040b120
     MOV ECX,0x562                       ; 0040b125
     PUSH 0x577759                       ; 0040b12a | = "CDemonActor::processActionButton - sh..."
     MOV dword ptr [0x01cc4800],EDX      ; 0040b12f | DAT_01cc4800

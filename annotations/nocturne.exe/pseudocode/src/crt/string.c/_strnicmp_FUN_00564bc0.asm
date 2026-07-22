@@ -8,13 +8,13 @@
 ;   FUN_00478790 at 004789e0
 ;   FUN_004a4170 at 004a45e4
 ;   FUN_0052dff0 at 0052e104
-;   FUN_00560cd0 at 00560d2f
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 00428738
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004255e8
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ae25
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680 at 004d96af
 ;   core_script.cpp_CScript_skipCommands_FUN_00504c70 at 00504cef
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 004ff4e7
+;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 005079a3
 ;   ... and 4 more
 ;
 ; *****************************************************************************

@@ -34,7 +34,7 @@
 ;   FUN_00495a20 at 00496173
 ;
 ; Referenced Globals:
-;   undefined4 s_CCrossbow_00582129+1
+;   TerminatedCString s_CCrossbow_0058212a
 ;   undefined4 DAT_0059dca4
 ;   undefined4 DAT_01c713c0
 ;   undefined4 DAT_01c713dc
@@ -160,7 +160,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x7a]      ; 00498239
     ADD ESP,0x8                         ; 0049823c
     MOVSD.REP ES:EDI,ESI                ; 0049823f
-    PUSH 0x58212a                       ; 00498241 | s_CCrossbow_00582129+1
+    PUSH 0x58212a                       ; 00498241 | = "CCrossbow"
     MOV EAX,dword ptr [EAX + 0x330]     ; 00498246
     PUSH EAX                            ; 0049824c
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0049824d

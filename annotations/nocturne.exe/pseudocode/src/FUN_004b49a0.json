@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 307,
+    "complexity_score": 297,
     "cross_reference_count": 9,
     "function_call_count": 11,
     "global_count": 20,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 67,
-    "suspect_count": 23,
+    "suspect_count": 22,
     "suspect_types": [
       "undefined_data",
       "unnamed_param"
@@ -235,6 +235,11 @@
       "name": "core_actor.cpp_CDemonActor_archive_FUN_0040d2d0"
     },
     {
+      "addr": "0040cb00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cb00"
+    },
+    {
       "addr": "004244b0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_archive_FUN_004244b0"
@@ -253,11 +258,6 @@
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
-      "addr": "0040cb00",
-      "is_variadic": false,
-      "name": "FUN_0040cb00"
     }
   ],
   "globals": [
@@ -341,8 +341,8 @@
     },
     {
       "addr": "00585765",
-      "name": "DAT_00585765",
-      "type": "undefined4",
+      "name": "s_keys_00585765",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -676,14 +676,6 @@
       "severity": "mild",
       "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa0c,\"pushedObject\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00585765",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(local_c,&DAT_00585765);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

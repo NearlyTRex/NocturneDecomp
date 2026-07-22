@@ -28,8 +28,8 @@ void FUN_0048ab60(uint param_1,float *param_2,int param_3,uint param_4,int param
   int local_14;
   
   bVar7 = 0;
-  if ((*(float *)(param_3 + 4) < (float)_DAT_005814a4) &&
-     (_DAT_005814ac < (double)*(float *)(param_3 + 4))) {
+  if ((*(float *)(param_3 + 4) < (float)0.20000000000000001) &&
+     (-0.20000000000000001 < (double)*(float *)(param_3 + 4))) {
     pfVar4 = (float *)&DAT_01c20148;
     local_14 = 1;
     if ((param_5 == 0) ||
@@ -45,7 +45,7 @@ void FUN_0048ab60(uint param_1,float *param_2,int param_3,uint param_4,int param
             fStack_24 = local_18;
           }
           if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
-              (float)_DAT_005814b4) goto LAB_0048ac45;
+              (float)0.057799999999999997) goto LAB_0048ac45;
           iVar1 = iVar1 + 1;
           pfVar4 = pfVar4 + 0xf;
         } while (iVar1 < _DAT_01c20140);

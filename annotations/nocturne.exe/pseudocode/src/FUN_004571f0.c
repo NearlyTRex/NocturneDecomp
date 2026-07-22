@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004571f0(int param_1,uint param_2,float *param_3)
 
 {
@@ -78,7 +76,7 @@ void FUN_004571f0(int param_1,uint param_2,float *param_3)
     }
   }
   if (param_3 != (float *)0x0) {
-    fVar7 = (float10)_DAT_0057d48e;
+    fVar7 = (float10)256;
     fVar2 = param_3[1];
     fVar3 = param_3[2];
     iVar5 = *(int *)(param_1 + 0x20);
@@ -101,7 +99,7 @@ void FUN_004571f0(int param_1,uint param_2,float *param_3)
     }
   }
   core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120(param_1);
-  fVar2 = (float)_DAT_0057d496;
+  fVar2 = (float)0.00390625;
   *(float *)(param_1 + 0x36c) = (float)*(int *)(param_1 + 0x354) * fVar2;
   *(float *)(param_1 + 0x370) = (float)*(int *)(param_1 + 0x358) * fVar2;
   *(float *)(param_1 + 0x374) = (float)*(int *)(param_1 + 0x35c) * fVar2;

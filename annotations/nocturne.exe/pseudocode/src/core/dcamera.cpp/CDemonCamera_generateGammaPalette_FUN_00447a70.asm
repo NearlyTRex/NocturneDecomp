@@ -13,9 +13,9 @@
 ;   core_set.cpp_CDemonSet_setGamma_FUN_0050e400 at 0050e413
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057bafb
-;   undefined4 DAT_0057bb03
-;   undefined4 DAT_0057bb0b
+;   double DOUBLE_0057bafb = 0.0000152587890625
+;   double DOUBLE_0057bb03 = 0.00392156862745098
+;   double DOUBLE_0057bb0b = 255
 ;   undefined4 DAT_005ad450
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
@@ -39,13 +39,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 00447a77
     MOV dword ptr [EBP + -0x4],EAX      ; 00447a7a
     FILD dword ptr [EBP + -0x4]         ; 00447a7d
-    FMUL double ptr [0x0057bafb]        ; 00447a80 | DAT_0057bafb
+    FMUL double ptr [0x0057bafb]        ; 00447a80 | DOUBLE_0057bafb
     XOR EDX,EDX                         ; 00447a86
     XOR ECX,ECX                         ; 00447a88
     FSTP float ptr [EBP + -0x8]         ; 00447a8a
-    FLD double ptr [0x0057bb0b]         ; 00447a8d | DAT_0057bb0b
+    FLD double ptr [0x0057bb0b]         ; 00447a8d | DOUBLE_0057bb0b
     FLD float ptr [EBP + -0x8]          ; 00447a93
-    FLD double ptr [0x0057bb03]         ; 00447a96 | DAT_0057bb03
+    FLD double ptr [0x0057bb03]         ; 00447a96 | DOUBLE_0057bb03
     MOV dword ptr [EBP + -0x4],EDX      ; 00447a9c
         ;   Label: LAB_00447a9c
     FILD dword ptr [EBP + -0x4]         ; 00447a9f

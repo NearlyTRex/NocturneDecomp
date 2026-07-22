@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004af700(int param_1)
 
 {
   *(float *)(param_1 + 0x18) = *(float *)(0x01C775EC + 0x264) + *(float *)(param_1 + 0x18);
-  if (*(float *)(param_1 + 0x18) <= (float)_DAT_00585130) {
+  if (*(float *)(param_1 + 0x18) <= (float)3.625) {
     return;
   }
   *(uint *)(param_1 + 0x18) = 0x40680000;

@@ -23,8 +23,8 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_charactr.cpp_CCharacter_archive_FUN_004244b0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     ADD ESP,0x8                         ; 004eed44
     PUSH 0x58cb47                       ; 004eed47 | = "motion state"
     PUSH ESI                            ; 004eed4c
-    CALL FUN_0040cb00                   ; 004eed4d
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004eed4d
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004eed52
     CMP dword ptr [0x005be074],0x4      ; 004eed55 | DAT_005be074
         ;   Label: LAB_004eed55

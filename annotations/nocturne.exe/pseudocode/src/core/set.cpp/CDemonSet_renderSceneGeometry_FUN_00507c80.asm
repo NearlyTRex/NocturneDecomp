@@ -9,12 +9,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_00507f80 at 00508061
-;   FUN_0050a260 at 0050a3cf
 ;   FUN_00513720 at 00513809
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508634
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
+;   core_set.cpp_FUN_00507f80 at 00508061
+;   core_set.cpp_FUN_0050a260 at 0050a3cf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -36,6 +36,7 @@
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
+;   core_set.cpp_FUN_0050e080
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
 ;   core_water.cpp_CWater_render_FUN_00550cb0
@@ -43,7 +44,6 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70
 ;   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
-;   FUN_00469ce0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -207,8 +207,8 @@ section .text
         ;   Label: LAB_00507e29
     PUSH EDI                            ; 00507e2b
     PUSH EBX                            ; 00507e2c
-    CALL FUN_0050e080                   ; 00507e2d
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e080()
+    CALL core_set.cpp_FUN_0050e080      ; 00507e2d
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
     ADD ESP,0xc                         ; 00507e32
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
@@ -314,8 +314,8 @@ section .text
         ;   Label: LAB_00507f3d
     PUSH ESI                            ; 00507f3f
     PUSH EBX                            ; 00507f40
-    CALL FUN_0050e080                   ; 00507f41
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e080()
+    CALL core_set.cpp_FUN_0050e080      ; 00507f41
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
     ADD ESP,0xc                         ; 00507f46
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b

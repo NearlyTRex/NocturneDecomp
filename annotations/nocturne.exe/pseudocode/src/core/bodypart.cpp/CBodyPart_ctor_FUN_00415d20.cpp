@@ -11,7 +11,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = __arrinit(iVar1 + 0x288,3,&DAT_0059a820);
   iVar1 = __arrinit(iVar1 + 0x4c0,2,&DAT_0059a840);
   iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x56c);

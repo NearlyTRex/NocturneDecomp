@@ -25,16 +25,16 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(int param_1,uint param_
   byte local_10 [4];
   
   _fgets(local_144,0xff,param_2);
-  _fscanf(param_2,&DAT_00579705,local_10);
+  _fscanf(param_2," %d\n",local_10);
   _fgets(local_144,0xff,param_2);
   _fscanf(param_2," %f,%f,%f\n",local_20,local_1c,local_18);
   _fscanf(param_2," %f,%f,%f\n",local_2c,local_24,local_28);
   _fscanf(param_2," %f,%f,%f\n",local_44,local_40,local_3c);
-  _fscanf(param_2,&DAT_0057972b,&local_14);
+  _fscanf(param_2," %f\n",&local_14);
   core_box_cpp_CBox_setupCorners_FUN_0041a6e0(param_1,local_20,local_2c,local_44,local_14);
   _fscanf(param_2," %f,%f,%f\n",param_1 + 0x4c,param_1 + 0x50,param_1 + 0x54);
   _fscanf(param_2," %f,%f,%f\n",param_1 + 0x70,param_1 + 0x74,param_1 + 0x78);
-  _fscanf(param_2,&DAT_00579746,param_1 + 0x254);
+  _fscanf(param_2," %d\n",param_1 + 0x254);
   puVar1 = (uint *)
            core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                      (param_1 + 0x18,local_38,param_1 + 0x4c);

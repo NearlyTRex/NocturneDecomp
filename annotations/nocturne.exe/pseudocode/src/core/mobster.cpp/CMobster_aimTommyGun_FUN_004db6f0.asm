@@ -46,10 +46,10 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+;   core_xform.cpp_FUN_0055d4a0
+;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;   FUN_004c8440
-;   FUN_0055d4a0
-;   FUN_0055d4e0
 ;
 ; *****************************************************************************
 
@@ -279,8 +279,8 @@ section .text
     PUSH dword ptr [ESP + 0x5c]         ; 004db94a
     LEA ESI,[ESP + 0x2c]                ; 004db94e
     LEA EDI,[ESP + 0xc]                 ; 004db952
-    CALL FUN_0055d4a0                   ; 004db956
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 004db956
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     LEA ESI,[ESP + 0x2c]                ; 004db95b
     ADD ESP,0x4                         ; 004db95f
     MOVSD ES:EDI,ESI                    ; 004db962
@@ -301,8 +301,8 @@ section .text
     ADD ESP,0x14                        ; 004db990
     LEA ESI,[ESP + 0x18]                ; 004db993
     PUSH dword ptr [ESP + 0x60]         ; 004db997
-    CALL FUN_0055d4e0                   ; 004db99b
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 004db99b
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 004db9a0
     LEA EDI,[ESP + 0x8]                 ; 004db9a3
     PUSH 0x51b650                       ; 004db9a7 | LAB_0051b650

@@ -16,9 +16,9 @@
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0 at 0049e856
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00582a1a
-;   undefined4 DAT_00582a22
-;   undefined4 DAT_00582a2a
+;   double DOUBLE_00582a1a = 0.0000152587890625
+;   double DOUBLE_00582a22 = 0.75
+;   double DOUBLE_00582a2a = -1
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005be368
@@ -105,12 +105,12 @@ section .text
     FILD dword ptr [ESP + 0x24]         ; 0049f7be
     FILD dword ptr [ESP + 0x28]         ; 0049f7c2
     FDIVP                               ; 0049f7c6
-    FLD double ptr [0x00582a1a]         ; 0049f7c8 | DAT_00582a1a
+    FLD double ptr [0x00582a1a]         ; 0049f7c8 | DOUBLE_00582a1a
     FILD dword ptr [EDI + 0x9c]         ; 0049f7ce
     FMUL ST1                            ; 0049f7d4
     FILD dword ptr [EDI + 0xa0]         ; 0049f7d6
     FMULP ST2                           ; 0049f7dc
-    FMUL double ptr [0x00582a22]        ; 0049f7de | DAT_00582a22
+    FMUL double ptr [0x00582a22]        ; 0049f7de | DOUBLE_00582a22
     FMUL ST3                            ; 0049f7e4
     FXCH ST2                            ; 0049f7e6
     FXCH                                ; 0049f7e8
@@ -123,7 +123,7 @@ section .text
     FSTP ST2                            ; 0049f7f8
     FXCH                                ; 0049f7fa
     FSTP float ptr [ESP]                ; 0049f7fc
-    FCOMP double ptr [0x00582a2a]       ; 0049f7ff | DAT_00582a2a
+    FCOMP double ptr [0x00582a2a]       ; 0049f7ff | DOUBLE_00582a2a
     FNSTSW AX                           ; 0049f805
     SAHF                                ; 0049f807
     JNC 0x0049f812                      ; 0049f808
@@ -140,7 +140,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x3f800000 ; 0049f81f
     FLD float ptr [ESP]                 ; 0049f827
         ;   Label: LAB_0049f827
-    FCOMP double ptr [0x00582a2a]       ; 0049f82a | DAT_00582a2a
+    FCOMP double ptr [0x00582a2a]       ; 0049f82a | DOUBLE_00582a2a
     FNSTSW AX                           ; 0049f830
     SAHF                                ; 0049f832
     JNC 0x0049f83c                      ; 0049f833

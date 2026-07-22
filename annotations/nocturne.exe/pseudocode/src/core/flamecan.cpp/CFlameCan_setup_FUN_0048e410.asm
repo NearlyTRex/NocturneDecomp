@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058164f
+;   double DOUBLE_0058164f = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -84,7 +84,7 @@ section .text
     FSTP double ptr [ESP + 0x8]         ; 0048e4de
     MOV dword ptr [EBX + 0x4d8],0x0     ; 0048e4e2
     FLD double ptr [ESP + 0x8]          ; 0048e4ec
-    FMUL double ptr [0x0058164f]        ; 0048e4f0 | DAT_0058164f
+    FMUL double ptr [0x0058164f]        ; 0048e4f0 | DOUBLE_0058164f
     FLD float ptr [EBX + 0x48c]         ; 0048e4f6
     MOV dword ptr [EBX + 0x4dc],0x0     ; 0048e4fc
     FXCH                                ; 0048e506

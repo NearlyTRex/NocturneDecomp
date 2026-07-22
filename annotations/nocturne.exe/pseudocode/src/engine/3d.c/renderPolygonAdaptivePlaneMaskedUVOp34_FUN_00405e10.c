@@ -59,7 +59,7 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(int param_1)
         engine_light_cpp_calculateLighting_FUN_004c6cc0
                   (*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
                    *(uint *)(param_1 + 0x10));
-        _DAT_01c00c70 = FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+        _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
       }
     }
     else {
@@ -92,7 +92,7 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(int param_1)
       *(int *)(&DAT_005c5030 + *piVar3 * 0x30) = piVar3[2];
       piVar3 = piVar3 + 3;
     }
-    FUN_00432cd0(iVar5,&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);
   }
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
 }

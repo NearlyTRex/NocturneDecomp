@@ -17,7 +17,7 @@
 ;   FUN_0048c0d0 at 0048c0f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581210
+;   float FLOAT_00581210 = 30
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -27,7 +27,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_fire.cpp_CFireEffect_createRock_FUN_0048b320
-;   FUN_0050e660
+;   core_set.cpp_FUN_0050e660
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     MOV dword ptr [ESI + 0xc],0x3f800000 ; 00486e7b
     PUSH EDX                            ; 00486e82 | DAT_01e57284
     MOV dword ptr [ESI + 0x10],EAX      ; 00486e83
-    CALL FUN_0050e660                   ; 00486e86
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e660()
+    CALL core_set.cpp_FUN_0050e660      ; 00486e86
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
     ADD ESP,0x14                        ; 00486e8b
     LEA EDI,[ESI + 0x4]                 ; 00486e8e
     PUSH 0x3f000000                     ; 00486e91
@@ -99,11 +99,11 @@ section .text
     FXCH                                ; 00486ef2
     FSIN                                ; 00486ef4
     FXCH ST2                            ; 00486ef6
-    FMUL float ptr [0x00581210]         ; 00486ef8 | DAT_00581210
+    FMUL float ptr [0x00581210]         ; 00486ef8 | FLOAT_00581210
     FXCH                                ; 00486efe
-    FMUL float ptr [0x00581210]         ; 00486f00 | DAT_00581210
+    FMUL float ptr [0x00581210]         ; 00486f00 | FLOAT_00581210
     FXCH ST2                            ; 00486f06
-    FMUL float ptr [0x00581210]         ; 00486f08 | DAT_00581210
+    FMUL float ptr [0x00581210]         ; 00486f08 | FLOAT_00581210
     FXCH                                ; 00486f0e
     FMUL ST3                            ; 00486f10
     FXCH ST2                            ; 00486f12

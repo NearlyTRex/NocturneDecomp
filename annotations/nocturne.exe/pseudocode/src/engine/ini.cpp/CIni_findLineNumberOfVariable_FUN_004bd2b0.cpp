@@ -25,7 +25,7 @@ int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint
   iVar5 = 0;
   bVar2 = false;
   *param_1 = 1;
-  iVar3 = _fopen(param_4,&DAT_0058652d);
+  iVar3 = _fopen(param_4,"rt");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\ini.cpp";
     _DAT_01cc4804 = 0xf5;

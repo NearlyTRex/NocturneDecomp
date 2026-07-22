@@ -2,6 +2,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x550000
@@ -126,8 +129,8 @@ void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00558ba0(undefined4 param_1);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_00558d50(void);
 void wincore_winrun_cpp_setCursorPosition_FUN_00558d60(int param_1,int param_2);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005591c0(void);
-undefined4 FUN_00559260(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
-void FUN_00559500(undefined4 param_1);
+undefined4 wincore_winrun_cpp_FUN_00559260(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+void wincore_winrun_cpp_FUN_00559500(undefined4 param_1);
 char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1);
 void __cdecl wincore_winrun_cpp_createMutex_FUN_00559bc0(void);
 bool __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE param_1);
@@ -138,14 +141,14 @@ void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_00559c80(HANDLE param_1,ui
 void __cdecl wincore_winrun_cpp_sleep_FUN_00559cc0(double param_1);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0(LPCSTR param_1,LPCSTR param_2,BYTE *param_3);
 MMRESULT __cdecl wincore_winrun_cpp_initJoystick_FUN_00559e20(void);
-void FUN_00559e90(void);
+void wincore_winrun_cpp_FUN_00559e90(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00559eb0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(HWND param_1);
-undefined4 FUN_0055a510(undefined4 param_1,undefined4 param_2);
+undefined4 wincore_winvideo_cpp_FUN_0055a510(undefined4 param_1,undefined4 param_2);
 float * __cdecl core_xform_cpp_transformVector3x4_FUN_0055a8b0(float *param_1,float *param_2,float *param_3);
 float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(float *param_1,float *param_2);
 void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2);
-undefined4 * FUN_0055abb0(undefined4 *param_1,undefined4 param_2);
+undefined4 * core_xform_cpp_FUN_0055abb0(undefined4 *param_1,undefined4 param_2);
 void core_xform_cpp_setIdentityMatrix3x4_FUN_0055abf0(undefined4 *param_1);
 void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_0055ac80(undefined4 *param_1);
 void core_xform_cpp_normalizeMatrix_FUN_0055acd0(float *param_1);
@@ -166,29 +169,29 @@ void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(undefined4 *param_1,undefined4 *p
 void __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(float *param_1,float *param_2);
 void core_xform_cpp_quaternionToMatrix3x4_FUN_0055ced0(undefined4 param_1);
 void core_xform_cpp_matrixToQuaternion_FUN_0055cf10(float *param_1);
-void FUN_0055d0d0(float *param_1);
+void core_xform_cpp_FUN_0055d0d0(float *param_1);
 void core_xform_cpp_setIdentityQuaternion_FUN_0055d110(undefined4 *param_1);
 void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_2);
 void core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(float *param_1,float *param_2,float *param_3);
 float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3);
-void FUN_0055d4a0(float param_1);
-void FUN_0055d4e0(float param_1);
-void FUN_0055d520(float param_1);
-void FUN_0055d560(float param_1,float *param_2);
+void core_xform_cpp_FUN_0055d4a0(float param_1);
+void core_xform_cpp_FUN_0055d4e0(float param_1);
+void core_xform_cpp_FUN_0055d520(float param_1);
+void core_xform_cpp_FUN_0055d560(float param_1,float *param_2);
 undefined4 __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_0055d5e0(undefined4 param_1,undefined4 param_2);
-void FUN_0055d610(undefined4 param_1);
-void FUN_0055d660(undefined4 param_1);
+undefined4 core_xform_cpp_FUN_0055d5e0(undefined4 param_1,undefined4 param_2);
+void core_xform_cpp_FUN_0055d610(undefined4 param_1);
+void core_xform_cpp_FUN_0055d660(undefined4 param_1);
 void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_0055d6b0(int *param_1,int *param_2,int *param_3);
 void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_0055d770(int *param_1,int *param_2,int *param_3);
 void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_0055d830(int *param_1,int *param_2,int *param_3);
 void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(int *param_1,int *param_2,int *param_3);
 void core_xform_cpp_clipPolygonStage2_FUN_0055db30(void);
-void FUN_0055de20(void);
+void core_xform_cpp_FUN_0055de20(void);
 int * core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2);
 undefined4 __cdecl core_zombie_cpp_classifyObjectShape_FUN_0055e940(float *param_1);
-undefined4 FUN_0055eab0(void);
+undefined4 core_zombie_cpp_FUN_0055eab0(void);
 int core_zombie_cpp_CZombie_ctor_FUN_0055eac0(undefined4 param_1);
 void core_zombie_cpp_CZombie_setup_FUN_0055ec20(int param_1);
-void FUN_0055ef50(int param_1,float param_2);
+void core_zombie_cpp_FUN_0055ef50(int param_1,float param_2);
 

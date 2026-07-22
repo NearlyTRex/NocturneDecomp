@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 at 00474e80
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057ee29+1
+;   TerminatedCString s_shape_edittool_cpp_0057ee2a
 ;   string s_Too_many_picklist_columns!_0057ee40
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
@@ -119,7 +119,7 @@ section .text
     CMP EBP,0xa                         ; 00475537
     JL 0x004754f0                       ; 0047553a
         ;   XREF to: 004754f0 (CONDITIONAL_JUMP)  ; LAB_004754f0
-    MOV EAX,0x57ee2a                    ; 0047553c | s_..\shape\edittool.cpp_0057ee29+1
+    MOV EAX,0x57ee2a                    ; 0047553c | = "..\\shape\\edittool.cpp"
     MOV EDX,0xd01                       ; 00475541
     PUSH 0x57ee40                       ; 00475546 | = "Too many picklist columns!"
     MOV [0x01cc4800],EAX                ; 0047554b | DAT_01cc4800

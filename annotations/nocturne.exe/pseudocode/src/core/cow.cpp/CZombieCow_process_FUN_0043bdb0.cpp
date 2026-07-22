@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
 
 {
@@ -41,7 +39,7 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
   uint local_18;
   uint local_14;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -54,13 +52,13 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
     uVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(iVar4,&local_1c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar6);
   }
-  fVar3 = (float)_DAT_0057b3aa;
-  fVar2 = (float)_DAT_0057b3b2;
+  fVar3 = (float)3.1415926535000001;
+  fVar2 = (float)0.25;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c) * fVar2;
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
   uVar6 = *(uint *)(iVar5 + 0x24);
-  iVar5 = FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar5 == 0) {
     switch(uVar6) {
     case 0:
@@ -170,7 +168,7 @@ switchD_0043c2cd_caseD_3:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                 (0x01E57284,*(uint *)(param_1 + 0xbca4));
     }
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057b3ba;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_48 = *(float *)(param_1 + 0x2420) * param_2;
     local_44 = *(float *)(param_1 + 0x2424) * param_2;
     local_40 = param_2 * *(float *)(param_1 + 0x2428);
@@ -190,6 +188,6 @@ switchD_0043c2cd_caseD_3:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

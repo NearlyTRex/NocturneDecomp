@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(int param_1,int *param_2)
 
 {
@@ -99,25 +97,25 @@ switchD_00414626_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd88) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_00578d0f);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   iVar4 = *param_2;
   if (iVar4 == *(int *)(param_1 + 0xbd88)) {
-    fVar2 = (float)param_2[1] * (float)_DAT_00578d1f;
+    fVar2 = (float)param_2[1] * (float)2.5;
   }
   else {
     if ((iVar4 == *(int *)(param_1 + 0xbda0)) || (iVar4 == *(int *)(param_1 + 0xbd8c))) {
       param_2[1] = param_2[1];
       goto LAB_004147e1;
     }
-    fVar2 = (float)param_2[1] * (float)_DAT_00578d17;
+    fVar2 = (float)param_2[1] * (float)0.5;
   }
   param_2[1] = (int)fVar2;
 LAB_004147e1:
   puVar3 = PTR_DAT_005ad350;
   if ((*(int *)(param_1 + 0xbd8c) == *param_2) && (param_2[0xc] == 0x68)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00578d27);
+    param_2[1] = (int)((float)param_2[1] * (float)20);
     engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar3,"Shot thru the heart\n");
     iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
     if (iVar4 != 0) {

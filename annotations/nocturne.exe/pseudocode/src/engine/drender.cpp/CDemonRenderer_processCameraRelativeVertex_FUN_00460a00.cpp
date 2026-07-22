@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(uint param_1,float *param_2)
 
 {
@@ -18,7 +16,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0
   uint uStack_14;
   int iStack_10;
   
-  fVar1 = (float10)_DAT_0057dc25;
+  fVar1 = (float10)256;
   uStack_14 = 0x460a16;
   fVar2 = (float10)round((float10)*param_2 * fVar1);
   iStack_10 = (int)ROUND(fVar2);

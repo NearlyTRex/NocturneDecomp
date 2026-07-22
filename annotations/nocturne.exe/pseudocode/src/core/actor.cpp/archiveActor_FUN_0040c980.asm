@@ -4,7 +4,8 @@
 ; void __cdecl core_actor_cpp_archiveActor_FUN_0040c980(undefined4 *param_1,undefined4 param_2)
 ;
 ;
-; XREF[34]:
+; XREF[35]:
+;   FUN_0040f390 at 0040f43e
 ;   FUN_00419ce0 at 00419e90
 ;   FUN_0043cc50 at 0043cc8b
 ;   FUN_004b49a0 at 004b4a14
@@ -14,11 +15,10 @@
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00416570 at 00416709
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ed1f
 ;   core_chain.cpp_CChain_archive_FUN_0042cbc0 at 0042cc02
-;   core_charactr.cpp_CCharacter_archive_FUN_004244b0 at 00424592
-;   ... and 24 more
+;   ... and 25 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00577c89
+;   TerminatedCString s_s_00577c89
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_00763e84
@@ -62,7 +62,7 @@ section .text
     PUSH EDI                            ; 0040c9b8
         ;   Label: LAB_0040c9b8
     PUSH 0x5acc90                       ; 0040c9b9 | DAT_005acc90
-    PUSH 0x577c89                       ; 0040c9be | DAT_00577c89
+    PUSH 0x577c89                       ; 0040c9be | = "%s"
     MOV ECX,dword ptr [0x00763e84]      ; 0040c9c3 | DAT_00763e84
     PUSH ECX                            ; 0040c9c9
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c9ca

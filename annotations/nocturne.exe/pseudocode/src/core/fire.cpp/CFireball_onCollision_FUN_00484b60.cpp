@@ -20,7 +20,7 @@ uint core_fire_cpp_CFireball_onCollision_FUN_00484b60(float *param_1)
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
                 (0x01C08D04,param_1,0,0x10000,0x10000,0,0xffff);
     } while (iVar1 < 8);
-    FUN_0050e660();
+    core_set_cpp_FUN_0050e660();
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
     sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00525f50
               ((double)*param_1,(double)param_1[1],(double)param_1[2]);

@@ -2,6 +2,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winbase.h"
+#include "system/windef.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x570000

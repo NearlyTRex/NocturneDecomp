@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004ab174 = 004ab1cd
 ;   string s_limb?.wav_00584e21
-;   undefined4 DAT_00584e2d
-;   undefined4 DAT_00584e35
-;   undefined4 DAT_00584e3d
+;   double DOUBLE_00584e2d = 7
+;   double DOUBLE_00584e35 = 0.5
+;   double DOUBLE_00584e3d = 2.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600
 ;   undefined4 DAT_01c777cc
@@ -219,7 +219,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 004ab34c
         ;   Label: LAB_004ab34c
     FLD ST0                             ; 004ab34f
-    FMUL double ptr [0x00584e2d]        ; 004ab351 | DAT_00584e2d
+    FMUL double ptr [0x00584e2d]        ; 004ab351 | DOUBLE_00584e2d
     FSTP ST1                            ; 004ab357
     FSTP float ptr [ESI + 0x8]          ; 004ab359
     MOV EDX,dword ptr [EBX + 0xbd70]    ; 004ab35c
@@ -288,7 +288,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004ab412
         ;   Label: LAB_004ab412
     FLD ST0                             ; 004ab415
-    FMUL double ptr [0x00584e3d]        ; 004ab417 | DAT_00584e3d
+    FMUL double ptr [0x00584e3d]        ; 004ab417 | DOUBLE_00584e3d
     FSTP ST1                            ; 004ab41d
     FSTP float ptr [ESI + 0x4]          ; 004ab41f
     ADD ESP,0xc                         ; 004ab422
@@ -300,7 +300,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004ab42a
         ;   Label: LAB_004ab42a
     FLD ST0                             ; 004ab42d
-    FMUL double ptr [0x00584e35]        ; 004ab42f | DAT_00584e35
+    FMUL double ptr [0x00584e35]        ; 004ab42f | DOUBLE_00584e35
     FSTP ST1                            ; 004ab435
     FSTP float ptr [ESI + 0x4]          ; 004ab437
     ADD ESP,0xc                         ; 004ab43a

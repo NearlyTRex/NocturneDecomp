@@ -41,7 +41,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(int param_1
       goto LAB_00428579;
     }
     if (4 < uVar2) {
-      FUN_00427a60(param_1);
+      core_charactr_cpp_FUN_00427a60(param_1);
       goto LAB_00428579;
     }
 LAB_0042865c:
@@ -59,12 +59,12 @@ LAB_0042865c:
       }
       if (uVar2 != 0x6a) goto LAB_00428579;
     }
-    FUN_004286d0(param_1,0x40000000);
+    core_charactr_cpp_FUN_004286d0(param_1,0x40000000);
   }
 LAB_00428579:
   if (param_2[10] == 5) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_28,param_2 + 7);
-    FUN_00427730(param_1,local_28,*param_2,0,0x3f800000,0);
+    core_charactr_cpp_FUN_00427730(param_1,local_28,*param_2,0,0x3f800000,0);
   }
   if (0.0 < (float)param_2[2]) {
     puVar7 = param_2 + 7;

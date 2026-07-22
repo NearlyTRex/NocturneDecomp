@@ -8,7 +8,7 @@
 ;   core_gore.cpp_CGore_process_FUN_004b0030 at 004b006d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005850b8
+;   double DOUBLE_005850b8 = 2
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
 ;
@@ -24,7 +24,7 @@ section .text
     FADD float ptr [EAX]                ; 004af143
     FSTP float ptr [EAX]                ; 004af145
     FLD float ptr [ECX + 0x24]          ; 004af147
-    FCOMP double ptr [0x005850b8]       ; 004af14a | DAT_005850b8
+    FCOMP double ptr [0x005850b8]       ; 004af14a | DOUBLE_005850b8
     FNSTSW AX                           ; 004af150
     SAHF                                ; 004af152
     JA 0x004af156                       ; 004af153

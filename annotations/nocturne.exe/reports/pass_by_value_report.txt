@@ -32,10 +32,10 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
 
 --------------------------------------------------------------------------------
 
-FUN_00409590
+engine_3d.c_FUN_00409590
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (1):
-    FUN_00405900                             @ 0x00405986   2x SRenderVertex
+    engine_3d.c_FUN_00405900                 @ 0x00405986   2x SRenderVertex
 
 --------------------------------------------------------------------------------
 
@@ -61,8 +61,8 @@ These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
-  FUN_00405900                                       current: 0x60  required: 0xc0  (+0x60 for by-value args)
   FUN_00473190                                       current: 0x100  required: 0x160  (+0x60 for by-value args)
+  engine_3d.c_FUN_00405900                           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLineStrip2D_FUN_00405870           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   FUN_00523170                                       current: 0x30  required: 0x5c  (+0x2c for by-value args)
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0       current: 0x5c  required: 0x88  (+0x2c for by-value args)

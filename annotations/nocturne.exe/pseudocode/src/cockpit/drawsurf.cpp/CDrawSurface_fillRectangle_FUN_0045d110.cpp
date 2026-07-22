@@ -48,7 +48,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(int par
             return iVar4;
           }
 LAB_0045d27e:
-          _DAT_01cc4800 = ">..\\cockpit\\drawsurf.cpp" + 1;
+          _DAT_01cc4800 = "..\\cockpit\\drawsurf.cpp";
           _DAT_01cc4804 = 0x524;
           iVar4 = FUN_004c8440("Invalid bitsPerPixel!");
           return iVar4;

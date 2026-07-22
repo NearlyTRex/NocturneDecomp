@@ -40,10 +40,10 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060
+;   core_charactr.cpp_FUN_00428c00
+;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_game.cpp_CGame_slamDT_FUN_004a5f00
-;   core_hero.cpp_CHero_stopNearbyInteraction_FUN_004b5920
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -881,8 +881,8 @@ section .text
     ADD ESP,0x4                         ; 00536352
     PUSH dword ptr [EBP + 0x18]         ; 00536355
     PUSH EBX                            ; 00536358
-    CALL FUN_0042a150                   ; 00536359
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a150()
+    CALL core_charactr.cpp_FUN_0042a150 ; 00536359
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
     ADD ESP,0x8                         ; 0053635e
     PUSH 0x6                            ; 00536361
     LEA ESI,[EBX + 0x150]               ; 00536363
@@ -1909,8 +1909,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00537112
         ;   Label: LAB_00537112
     PUSH EBX                            ; 00537115
-    CALL FUN_00428c00                   ; 00537116
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00428c00()
+    CALL core_charactr.cpp_FUN_00428c00 ; 00537116
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
     ADD ESP,0x8                         ; 0053711b
     LEA EDX,[EBX + 0x150]               ; 0053711e
     TEST EAX,EAX                        ; 00537124

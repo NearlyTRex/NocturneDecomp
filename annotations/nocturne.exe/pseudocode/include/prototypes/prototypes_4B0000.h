@@ -41,7 +41,7 @@ void core_grave_cpp_CGrave_archive_FUN_004b0e20(int param_1);
 undefined4 * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,undefined4 *param_2);
 undefined4 FUN_004b1000(void);
 undefined4 FUN_004b1010(undefined4 param_1,byte param_2);
-undefined * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1);
+char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1);
 undefined4 core_ground_cpp_getGroundTypeColor_FUN_004b12f0(undefined4 param_1);
 void core_ground_cpp_CGround_ctor_FUN_004b1350(int *param_1,int param_2,int param_3);
 undefined4 FUN_004b13b0(undefined4 param_1);

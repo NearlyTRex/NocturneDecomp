@@ -20,10 +20,10 @@
 ;   void* PTR_core_charactr.cpp_CCharacter_setup_FUN_00424260_0059b0a4 = 00424260
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_cloth.cpp_CClothList_ctor_FUN_00438210
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_ctor_FUN_00423f40
     MOV EDX,dword ptr [ESP + 0x10]      ; 00423f43
     PUSH EDX                            ; 00423f47
-    CALL FUN_00409d30                   ; 00423f48
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00423f48
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 00423f4d
     ADD EAX,0x150                       ; 00423f50
     PUSH EAX                            ; 00423f55

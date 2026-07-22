@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[14]:
-;   FUN_0040b300 at 0040b7ca
 ;   FUN_0043d1c0 at 0043d321
 ;   FUN_00477890 at 00477a93
 ;   FUN_00498de0 at 00499015
@@ -15,6 +14,7 @@
 ;   FUN_00515ea0 at 005160d8
 ;   FUN_0053d100 at 0053d195
 ;   FUN_00545c30 at 00545e4f
+;   core_actor.cpp_FUN_0040b300 at 0040b7ca
 ;   ... and 4 more
 ;
 ; Referenced Globals:

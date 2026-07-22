@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0050e080 at 0050e14a
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5909
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1d9
+;   core_set.cpp_FUN_0050e080 at 0050e14a
 ;
 ; *****************************************************************************
 

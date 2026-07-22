@@ -10,7 +10,7 @@ void core_barrier_cpp_CBarrier_archive_FUN_00411800(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,&DAT_00578750);
+  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"size");
   if (0x00000002 < 2) {
     return;
   }

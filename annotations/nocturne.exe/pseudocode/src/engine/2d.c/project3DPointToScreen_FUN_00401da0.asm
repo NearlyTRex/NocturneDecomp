@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00403780 at 004037c9
+;   engine_2d.c_FUN_00403780 at 004037c9
 ;   engine_2d.c_project3DPointClipped_FUN_00401df0 at 00401e1a
 ;
 ; Referenced Globals:

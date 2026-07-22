@@ -13,7 +13,7 @@ uint __cdecl core_event_cpp_CEventList_resolveVariable_FUN_0047dba0(int param_1,
   int iVar2;
   int iVar3;
   
-  iVar1 = _stricmp(param_2,&DAT_00580227);
+  iVar1 = _stricmp(param_2,"TRUE");
   if (iVar1 != 0) {
     iVar1 = 0;
     if (0 < *(int *)(param_1 + 0xc84)) {

@@ -17,7 +17,7 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a641
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581074
+;   float FLOAT_00581074 = 30
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c77850
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x264]     ; 0048282d | DAT_01c77850
     MOV dword ptr [ESP + 0x18],EAX      ; 00482833
     FLD float ptr [ESP + 0x18]          ; 00482837
-    FMUL float ptr [0x00581074]         ; 0048283b | DAT_00581074
+    FMUL float ptr [0x00581074]         ; 0048283b | FLOAT_00581074
     FADD float ptr [EBX + 0x18]         ; 00482841
     FSTP float ptr [EBX + 0x18]         ; 00482844
     CMP dword ptr [EBX + 0x18],0x42200000 ; 00482847

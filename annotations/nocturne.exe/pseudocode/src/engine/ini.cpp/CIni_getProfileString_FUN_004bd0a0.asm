@@ -13,7 +13,7 @@
 ;   engine_ini.cpp_getProfileString_FUN_004bd750 at 004bd777
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005864e5
+;   TerminatedCString s_rt_005864e5
 ;   string s_..\\engine\\ini.cpp_005864e8
 ;   string s_cIni::getProfileString:_Unable_t_005864fa
 ;   string s_[%s]_00586527
@@ -38,7 +38,7 @@ section .text
     PUSH EDI                            ; 004bd0a2
     PUSH EBP                            ; 004bd0a3
     SUB ESP,0x200                       ; 004bd0a4
-    PUSH 0x5864e5                       ; 004bd0aa | DAT_005864e5
+    PUSH 0x5864e5                       ; 004bd0aa | = "rt"
     MOV EDX,dword ptr [ESP + 0x230]     ; 004bd0af
     PUSH EDX                            ; 004bd0b6
     XOR EDI,EDI                         ; 004bd0b7

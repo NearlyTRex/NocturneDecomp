@@ -54,7 +54,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581114
+;   double DOUBLE_00581114 = 0.700000000000000
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b84cc
@@ -430,7 +430,7 @@ section .text
     FLD float ptr [ESP + 0x4]           ; 004847e5
         ;   Label: LAB_004847e5
     FLD ST0                             ; 004847e9
-    FLD double ptr [0x00581114]         ; 004847eb | DAT_00581114
+    FLD double ptr [0x00581114]         ; 004847eb | DOUBLE_00581114
     FXCH                                ; 004847f1
     FMUL ST1                            ; 004847f3
     FLD float ptr [ESP]                 ; 004847f5

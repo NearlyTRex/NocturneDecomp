@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
 
 {
@@ -63,7 +61,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
     if (iVar3 != 0) {
       *(uint *)(param_1 + 0x188) = 1;
     }
-    iVar3 = _strcmp(param_1 + 0x18c,&DAT_0057b50e);
+    iVar3 = _strcmp(param_1 + 0x18c,"none");
     if ((iVar3 == 0) || (*(int *)(param_1 + 0x188) != 0)) {
       if (*(int *)(param_1 + 0x65b24) != 0) {
         uStack_14 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x38))(param_1,0x3dcccccd,0);
@@ -133,7 +131,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
           iVar3 = 0;
           do {
             if (pfVar5[0x1a] == 0.0) {
-              if ((float)_DAT_0057b536 <
+              if ((float)0.10000000000000001 <
                   SQRT(pfVar5[0xd] * pfVar5[0xd] +
                        pfVar5[0xb] * pfVar5[0xb] + pfVar5[0xc] * pfVar5[0xc])) {
                 *(uint *)(param_1 + 0x65b2c) = 1;
@@ -142,7 +140,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
               fStack_b8 = pfVar5[3] - *pfVar5;
               fStack_b4 = pfVar5[4] - pfVar5[1];
               fStack_b0 = pfVar5[5] - pfVar5[2];
-              if ((float)_DAT_0057b536 <
+              if ((float)0.10000000000000001 <
                   SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {
                 *(uint *)(param_1 + 0x65b2c) = 1;
                 goto LAB_0043eed9;
@@ -171,17 +169,17 @@ LAB_0043eed9:
         iVar3 = param_1 + 0x200;
         do {
           if (*(int *)(iVar3 + 0x68) == 0) {
-            fVar2 = (float)_DAT_0057b516;
+            fVar2 = (float)0.84999999999999998;
             *(float *)(iVar3 + 0x2c) = *(float *)(iVar3 + 0x2c) * fVar2;
             fVar1 = *(float *)(param_1 + 0x65b10);
             *(float *)(iVar3 + 0x34) = fVar2 * *(float *)(iVar3 + 0x34);
             *(float *)(iVar3 + 0x30) = fVar1 * *(float *)(iVar3 + 0x30);
             fStack_e0 = *(float *)(param_1 + 0x65b0c);
             if (*(int *)(iVar3 + 0x70) != 0) {
-              fStack_e0 = fStack_e0 * (float)_DAT_0057b51e;
+              fStack_e0 = fStack_e0 * (float)4;
             }
             fStack_44 = 1.0 / param_2;
-            fStack_18 = fStack_e0 * (float)_DAT_0057b526;
+            fStack_18 = fStack_e0 * (float)0.03125;
             fStack_64 = -*(float *)(iVar3 + 0x2c);
             fStack_60 = -*(float *)(iVar3 + 0x30);
             fStack_4c = fStack_64 * fStack_44;
@@ -192,10 +190,10 @@ LAB_0043eed9:
             fStack_94 = fStack_4c * fStack_18;
             fStack_90 = fStack_48 * fStack_18;
             fStack_8c = fStack_44 * fStack_18;
-            fStack_70 = fStack_94 * _DAT_0057b52e + 0.0;
+            fStack_70 = fStack_94 * 5.0811852348229435e-315._0_4_ + 0.0;
             fStack_58 = fStack_70 * fStack_50;
-            fStack_6c = (0.0 - fStack_e0) + fStack_90 * _DAT_0057b52e;
-            fStack_68 = fStack_8c * _DAT_0057b52e + 0.0;
+            fStack_6c = (0.0 - fStack_e0) + fStack_90 * 5.0811852348229435e-315._0_4_;
+            fStack_68 = fStack_8c * 5.0811852348229435e-315._0_4_ + 0.0;
             fStack_54 = fStack_6c * fStack_50;
             fStack_50 = fStack_68 * fStack_50;
             if (&fStack_c4 != &fStack_58) {

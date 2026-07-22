@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004259f0 at 00425a2f
+;   core_charactr.cpp_FUN_004259f0 at 00425a2f
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890

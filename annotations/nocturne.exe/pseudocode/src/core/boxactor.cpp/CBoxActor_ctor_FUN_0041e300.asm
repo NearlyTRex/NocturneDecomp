@@ -9,14 +9,14 @@
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f315
 ;
 ; Referenced Globals:
-;   undefined4 s_question.kfm_005797f8+1
+;   TerminatedCString s_question_kfm_005797f9
 ;   undefined1* PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_0059aad4 = 0041e430
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_box.cpp_CBox_ctor_FUN_0041a610
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   Label: core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300
     MOV EBX,dword ptr [ESP + 0x8]       ; 0041e301
     PUSH EBX                            ; 0041e305
-    CALL FUN_00409d30                   ; 0041e306
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 0041e306
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0041e30b
     ADD EAX,0x150                       ; 0041e30e
     PUSH EAX                            ; 0041e313
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [EBX + 0x310],0x0     ; 0041e399
     ADD ESP,0x4                         ; 0041e3a3
     MOV dword ptr [EBX + 0x318],0x0     ; 0041e3a6
-    PUSH 0x5797f9                       ; 0041e3b0 | s_question.kfm_005797f8+1
+    PUSH 0x5797f9                       ; 0041e3b0 | = "question.kfm"
     MOV byte ptr [EBX + 0x324],0x0      ; 0041e3b5
     LEA EAX,[EBX + 0x150]               ; 0041e3bc
     MOV dword ptr [EBX + 0x31c],0x0     ; 0041e3c2

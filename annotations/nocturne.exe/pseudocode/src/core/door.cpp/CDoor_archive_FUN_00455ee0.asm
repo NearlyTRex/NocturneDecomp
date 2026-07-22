@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_0057d0c9+1
+;   TerminatedCString s_modelName_0057d0ca
 ;   string s_doorType_0057d0d4
 ;   string s_doorSide_0057d0dd
 ;   string s_doorState_0057d0e6
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 00455ee7
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 00455eec
-    PUSH 0x57d0ca                       ; 00455eef | s_modelName_0057d0c9+1
+    PUSH 0x57d0ca                       ; 00455eef | = "modelName"
     LEA EDI,[EBX + 0x150]               ; 00455ef4
     PUSH EDI                            ; 00455efa
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 00455efb
@@ -255,16 +255,16 @@ section .text
         ;   XREF to: 004560af (UNCONDITIONAL_JUMP)  ; LAB_004560af
     PUSH ESI                            ; 00456182
         ;   Label: LAB_00456182
-    MOV ESI,0x57d1c0                    ; 00456183 | DAT_0057d1c0
+    MOV ESI,0x57d1c0                    ; 00456183 | = "true"
     LEA EDI,[EBX + 0x474]               ; 00456188
     PUSH EDI                            ; 0045618e
-    MOV AL,byte ptr [ESI]               ; 0045618f | DAT_0057d1c0 | DAT_0057d1c2
+    MOV AL,byte ptr [ESI]               ; 0045618f | = "true" | s_ue_0057d1c0+2
         ;   Label: LAB_0045618f
     MOV byte ptr [EDI],AL               ; 00456191
     CMP AL,0x0                          ; 00456193
     JZ 0x004561a7                       ; 00456195
         ;   XREF to: 004561a7 (CONDITIONAL_JUMP)  ; LAB_004561a7
-    MOV AL,byte ptr [ESI + 0x1]         ; 00456197 | DAT_0057d1c1 | DAT_0057d1c3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00456197 | s_rue_0057d1c0+1 | s_e_0057d1c0+3
     ADD ESI,0x2                         ; 0045619a
     MOV byte ptr [EDI + 0x1],AL         ; 0045619d
     ADD EDI,0x2                         ; 004561a0

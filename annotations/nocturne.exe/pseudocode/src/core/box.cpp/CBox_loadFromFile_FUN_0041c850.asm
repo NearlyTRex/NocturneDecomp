@@ -19,17 +19,17 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   FUN_0040ce80 at 0040ceb9
+;   core_actor.cpp_FUN_0040ce80 at 0040ceb9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579705
-;   string s_%f,%f,%f_0057970a
+;   TerminatedCString s_d_00579705
+;   TerminatedCString s_f_f_f_0057970a
 ;   string s_%f,%f,%f_00579715
 ;   string s_%f,%f,%f_00579720
-;   undefined4 DAT_0057972b
+;   TerminatedCString s_f_0057972b
 ;   string s_%f,%f,%f_00579730
 ;   string s_%f,%f,%f_0057973b
-;   undefined4 DAT_00579746
+;   TerminatedCString s_d_00579746
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041a6e0
@@ -57,7 +57,7 @@ section .text
     ADD ESP,0xc                         ; 0041c877
     LEA EAX,[ESP + 0x134]               ; 0041c87a
     PUSH EAX                            ; 0041c881
-    PUSH 0x579705                       ; 0041c882 | DAT_00579705
+    PUSH 0x579705                       ; 0041c882 | = " %d\n"
     PUSH EBX                            ; 0041c887
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0041c888
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -104,7 +104,7 @@ section .text
     ADD ESP,0x14                        ; 0041c912
     LEA EAX,[ESP + 0x130]               ; 0041c915
     PUSH EAX                            ; 0041c91c
-    PUSH 0x57972b                       ; 0041c91d | DAT_0057972b
+    PUSH 0x57972b                       ; 0041c91d | = " %f\n"
     PUSH EBX                            ; 0041c922
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0041c923
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -144,7 +144,7 @@ section .text
     ADD ESP,0x14                        ; 0041c984
     LEA EAX,[ESI + 0x254]               ; 0041c987
     PUSH EAX                            ; 0041c98d
-    PUSH 0x579746                       ; 0041c98e | DAT_00579746
+    PUSH 0x579746                       ; 0041c98e | = " %d\n"
     PUSH EBX                            ; 0041c993
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0041c994
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

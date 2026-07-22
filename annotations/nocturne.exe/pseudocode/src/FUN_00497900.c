@@ -74,7 +74,7 @@ void FUN_00497900(int param_1)
   local_78 = *(float *)(param_1 + 0x1fa6c);
   local_70 = 0;
   local_74 = *(float *)(param_1 + 0x1fa70);
-  FUN_0055d610(&local_78);
+  core_xform_cpp_FUN_0055d610(&local_78);
   local_1a4 = local_124;
   *(uint *)((int)&stack0xfffffe60 + (uint)bVar3 * 0xfffffffe * 4) =
        *(uint *)(&stack0xfffffee0 + (uint)bVar3 * -8);
@@ -95,9 +95,10 @@ void FUN_00497900(int param_1)
                         ((*(float *)(param_1 + 0x1fa44) - 0x3F51EB85) / (1.0 - 0x3F51EB85))) *
                  local_28;
     }
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(uint *)(param_1 + 0x1f8d0),&DAT_005820f6);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
+                      (*(uint *)(param_1 + 0x1f8d0),&FLOAT_005820f6);
     if (iVar1 == 0) {
-      if ((float)_DAT_00582102 < local_28) {
+      if ((float)0.001 < local_28) {
         local_24 = *(float *)(param_1 + 0x1fa44);
         if (0x3F51EB85 < local_24) {
           local_24 = 0x3F51EB85;
@@ -120,7 +121,7 @@ void FUN_00497900(int param_1)
           if (local_2c < *(float *)(param_1 + 0x1fa74)) {
             local_2c = *(float *)(param_1 + 0x1fa74);
           }
-          if ((float)_DAT_00582102 < local_2c) {
+          if ((float)0.001 < local_2c) {
             local_58 = (double)*(float *)(param_1 + 0x1fa74);
             local_34 = 0.0;
             if (0.0 < local_58) {
@@ -128,15 +129,15 @@ void FUN_00497900(int param_1)
             }
             local_14 = (float)(param_1 + 0x150);
             core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                      (local_14,_DAT_01c713d0,local_34,local_2c * (float)_DAT_0058210a,_DAT_01c713e0
-                       ,&LAB_0051b650);
-            local_84 = _DAT_01c71388 * _DAT_00582112;
-            local_6c = local_84 / _DAT_00582116;
-            local_80 = _DAT_01c7138c * _DAT_00582112;
-            local_7c = _DAT_01c71390 * _DAT_00582112;
-            local_68 = local_80 * _DAT_0058211a;
-            local_64 = local_7c * _DAT_0058211a;
-            FUN_0055d610(&local_6c,&stack0xfffffe5c);
+                      (local_14,_DAT_01c713d0,local_34,local_2c * (float)0.90000000000000002,
+                       _DAT_01c713e0,&LAB_0051b650);
+            local_84 = _DAT_01c71388 * 3.141593f;
+            local_6c = local_84 / 180.0f;
+            local_80 = _DAT_01c7138c * 3.141593f;
+            local_7c = _DAT_01c71390 * 3.141593f;
+            local_68 = local_80 * 0.005555556f;
+            local_64 = local_7c * 0.005555556f;
+            core_xform_cpp_FUN_0055d610(&local_6c,&stack0xfffffe5c);
             local_174 = local_184;
             *(uint *)((int)&stack0xfffffe90 + (uint)bVar3 * 0xfffffffe * 4) =
                  *(uint *)(&stack0xfffffe80 + (uint)bVar3 * -8);
@@ -206,7 +207,7 @@ void FUN_00497900(int param_1)
            *(uint *)
             ((int)(&stack0xfffffe44 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
             ((uint)bVar3 * -2 + 1) * 4);
-      if ((float)_DAT_00582102 < local_28) {
+      if ((float)0.001 < local_28) {
         local_20 = *(float *)(param_1 + 0x1fa44);
         if (0x3F51EB85 < local_20) {
           local_20 = 0x3F51EB85;
@@ -225,10 +226,10 @@ void FUN_00497900(int param_1)
                   (param_1 + 0x150,_DAT_01c713cc,local_44,local_28,_DAT_01c713a8,&LAB_0051b650);
         if ((0x3F51EB85 <= *(float *)(param_1 + 0x1fa44)) &&
            (local_40 = ((*(float *)(param_1 + 0x1fa44) - 0x3F51EB85) / (1.0 - 0x3F51EB85)) *
-                       *(float *)(param_1 + 0x1fa78), (float)_DAT_00582102 < local_40)) {
+                       *(float *)(param_1 + 0x1fa78), (float)0.001 < local_40)) {
           if ((DAT_01c71354 & 1) == 0) {
             DAT_01c71354 = DAT_01c71354 | 1;
-            FUN_0055d520(0xbfc90fdb);
+            core_xform_cpp_FUN_0055d520(0xbfc90fdb);
             puVar4 = &stack0xffffff5c;
             local_a4 = local_e4;
             *(uint *)((int)&stack0xffffff60 + (uint)bVar3 * 0xfffffffe * 4) =
@@ -241,7 +242,7 @@ void FUN_00497900(int param_1)
                  *(uint *)
                   ((int)(&stack0xffffff24 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
                   ((uint)bVar3 * -2 + 1) * 4);
-            FUN_0055d4e0(0xbfc90fdb,puVar4);
+            core_xform_cpp_FUN_0055d4e0(0xbfc90fdb,puVar4);
             local_b4 = local_1f4;
             *(uint *)((int)&stack0xffffff50 + (uint)bVar3 * 0xfffffffe * 4) =
                  *(uint *)(&stack0xfffffe10 + (uint)bVar3 * -8);
@@ -288,7 +289,7 @@ void FUN_00497900(int param_1)
         }
       }
       if (0.0 < *(float *)(param_1 + 0x1fa74)) {
-        fVar5 = (float)_DAT_0058210a;
+        fVar5 = (float)0.90000000000000002;
         *(uint *)(param_1 + 0x23a0) = 2;
         local_18 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
                              (param_1 + 0x150,_DAT_01c713d4,
@@ -303,7 +304,7 @@ void FUN_00497900(int param_1)
   local_3c = 0x3f490fdb;
   local_30 = 0xbfdf66f3;
   local_38 = 0x3fdf66f3;
-  if (local_78 < _DAT_0058211e) {
+  if (local_78 < -1.22173f) {
     local_78 = -1.2217305;
   }
   if (0.7853982 < local_78) {
@@ -315,8 +316,9 @@ void FUN_00497900(int param_1)
   if (1.7453293 < local_74) {
     local_74 = 1.7453293;
   }
-  FUN_0055d610(&local_78,*(float *)(param_1 + 0x1fa48) * *(float *)(param_1 + 0x1fa78),_DAT_01c71398
-               ,&LAB_0051b650);
+  core_xform_cpp_FUN_0055d610
+            (&local_78,*(float *)(param_1 + 0x1fa48) * *(float *)(param_1 + 0x1fa78),_DAT_01c71398,
+             &LAB_0051b650);
   puVar4 = &stack0xfffffe6c;
   iVar1 = param_1 + 0x150;
   local_194 = local_c4;
@@ -335,12 +337,13 @@ void FUN_00497900(int param_1)
   local_14 = (float)FUN_00497860(param_1);
   _DAT_01c71394 =
        (1.0 - (*(float *)(param_1 + 0x1fa50) - local_4c) / (local_14 - local_4c)) *
-       (float)_DAT_00582122;
+       (float)1.3;
   if (1.0 < _DAT_01c71394) {
     _DAT_01c71394 = 1.0;
   }
-  FUN_0055d4a0(*(uint *)(param_1 + 0x1fa50),*(uint *)(param_1 + 0x1fa4c),_DAT_01c7139c,
-               &LAB_004955c0);
+  core_xform_cpp_FUN_0055d4a0
+            (*(uint *)(param_1 + 0x1fa50),*(uint *)(param_1 + 0x1fa4c),_DAT_01c7139c,
+             &LAB_004955c0);
   puVar4 = &stack0xfffffeac;
   local_154 = local_d4;
   *(uint *)((int)&stack0xfffffeb0 + (uint)bVar3 * 0xfffffffe * 4) =
@@ -352,7 +355,7 @@ void FUN_00497900(int param_1)
        *(uint *)
         ((int)(&stack0xffffff34 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)
   ;
-  FUN_0055d4e0(0x3fc90fdb,puVar4);
+  core_xform_cpp_FUN_0055d4e0(0x3fc90fdb,puVar4);
   local_164 = local_134;
   *(uint *)((int)&stack0xfffffea0 + (uint)bVar3 * 0xfffffffe * 4) =
        *(uint *)(&stack0xfffffed0 + (uint)bVar3 * -8);

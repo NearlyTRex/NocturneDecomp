@@ -24,7 +24,7 @@ void core_filmreel_cpp_CFilmProjector_process_FUN_00482010(int param_1,float par
     }
   }
   else {
-    fVar1 = (float)_DAT_0058104b;
+    fVar1 = (float)3.1415926535000001;
     *(float *)(*(int *)(param_1 + 0x150) + 0x38) =
          *(float *)(*(int *)(param_1 + 0x150) + 0x38) - param_2 * fVar1;
     *(float *)(param_1 + 0x3d0) = *(float *)(param_1 + 0x3d0) - param_2 * fVar1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40(int param_1)
 
 {
@@ -30,15 +28,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_00440d4
   float10 fVar17;
   
   iVar1 = *(int *)(param_1 + 0x17c);
-  fVar8 = (float)_DAT_0057b78b;
+  fVar8 = (float)1.52587890625e-05;
   iVar2 = *(int *)(param_1 + 0x180);
-  fVar10 = (float)_DAT_0057b78b;
+  fVar10 = (float)1.52587890625e-05;
   iVar3 = *(int *)(param_1 + 0x188);
-  fVar6 = (float)_DAT_0057b78b;
+  fVar6 = (float)1.52587890625e-05;
   iVar4 = *(int *)(param_1 + 0x18c);
-  fVar7 = (float)_DAT_0057b78b;
+  fVar7 = (float)1.52587890625e-05;
   iVar5 = *(int *)(param_1 + 400);
-  fVar9 = (float)_DAT_0057b78b;
+  fVar9 = (float)1.52587890625e-05;
   fVar11 = (float10)round();
   *(int *)(param_1 + 0x19c) = (int)ROUND(fVar11);
   fVar11 = (float10)round();

@@ -17,8 +17,8 @@
 ;   undefined4 DAT_005a3fd0
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDI                            ; 00551221
     MOV EDX,dword ptr [ESP + 0xc]       ; 00551222
     PUSH EDX                            ; 00551226
-    CALL FUN_00409d30                   ; 00551227
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00551227
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0055122c
     PUSH 0x5a3fd0                       ; 0055122f | DAT_005a3fd0
     PUSH 0x3e8                          ; 00551234

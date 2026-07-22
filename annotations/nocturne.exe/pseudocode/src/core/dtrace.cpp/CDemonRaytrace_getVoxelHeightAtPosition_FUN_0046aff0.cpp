@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0(int param_1,float *param_2)
 
 {
@@ -27,7 +25,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046af
   round
             (((float10)*param_2 - (float10)*(float *)(param_1 + 0x10)) /
              (float10)*(float *)(param_1 + 0x28));
-  fVar6 = (float10)_DAT_0057e3ae;
+  fVar6 = (float10)0.125f;
   round();
   fVar7 = (float10)round();
   iStack_34 = (int)ROUND(fVar7);
@@ -55,7 +53,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046af
                                 (param_1,0x46b073,iStack_34,0x46b098,iVar8,uVar9);
       if (piVar4 == (int *)0x0) break;
       if ((*piVar4 != 0) && ((*(byte *)(iStack_30 + iVar5 + *piVar4) & bRam00a21d54) != 0)) {
-        return (float)iStack_30 * *(float *)(param_1 + 0x2c) * _DAT_0057e3ae +
+        return (float)iStack_30 * *(float *)(param_1 + 0x2c) * 0.125f +
                (float)iStack_34 * *(float *)(param_1 + 0x2c) + *(float *)(param_1 + 0x14);
       }
       iStack_30 = iStack_30 + -1;

@@ -11,8 +11,8 @@
 ;   FUN_005289f0 at 00528b32
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058673b
-;   undefined4 DAT_0058673e
+;   TerminatedCString s_g_0058673b
+;   TerminatedCString s_f_0058673e
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -30,7 +30,7 @@ section .text
     SUB ESP,0x8                         ; 004bdac8
     FLD float ptr [EAX]                 ; 004bdacb
     FSTP double ptr [ESP]               ; 004bdacd
-    PUSH 0x58673b                       ; 004bdad0 | DAT_0058673b
+    PUSH 0x58673b                       ; 004bdad0 | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 004bdad5
     PUSH EAX                            ; 004bdad9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bdada
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x10                        ; 004bdaf8
     MOV EBX,dword ptr [ESP + 0x74]      ; 004bdafb
     PUSH EBX                            ; 004bdaff
-    PUSH 0x58673e                       ; 004bdb00 | DAT_0058673e
+    PUSH 0x58673e                       ; 004bdb00 | = "%f"
     LEA EAX,[ESP + 0x8]                 ; 004bdb05
     PUSH EAX                            ; 004bdb09
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004bdb0a

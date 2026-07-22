@@ -41,10 +41,10 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004a3820(void)
     pfVar2 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_6c);
     fStack_18 = *pfVar2 + pfVar2[3];
     fStack_14 = pfVar2[1] + pfVar2[4];
-    fStack_3c = fStack_18 * _DAT_00583afa;
+    fStack_3c = fStack_18 * 0.5f;
     fStack_10 = pfVar2[2] + pfVar2[5];
-    fStack_38 = fStack_14 * _DAT_00583afa;
-    fStack_34 = fStack_10 * _DAT_00583afa;
+    fStack_38 = fStack_14 * 0.5f;
+    fStack_34 = fStack_10 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (*(uint *)(0x01E56DA0 + 0xc),&fStack_48,&fStack_3c);
     iStack_54 = (int)ROUND(fStack_48 * _DAT_0059de84);

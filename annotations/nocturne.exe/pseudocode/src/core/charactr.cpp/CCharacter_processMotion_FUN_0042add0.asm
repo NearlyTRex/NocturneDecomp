@@ -16,14 +16,14 @@
 ;   FUN_004b6d80 at 004b6e53
 ;   FUN_004da790 at 004da94b
 ;   FUN_00540f50 at 00540ffa
-;   FUN_0055ef50 at 0055f023
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004126a3
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413a51
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 00415708
+;   core_colonel.cpp_CColonel_processMotionEvents_FUN_0043a980 at 0043a9c3
 ;   ... and 21 more
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_L_Foot_0057a499+1
+;   TerminatedCString s_Bip01_L_Foot_0057a49a
 ;   string s_Bip01_R_Foot_0057a4a7
 ;   string s_Bip01_L_Foot_0057a4b4
 ;   string s_Bip01_R_Foot_0057a4c1
@@ -62,7 +62,7 @@ section .text
     RET                                 ; 0042ae01
     PUSH 0x0                            ; 0042ae02
         ;   Label: LAB_0042ae02
-    PUSH 0x57a49a                       ; 0042ae04 | s_Bip01_L_Foot_0057a499+1
+    PUSH 0x57a49a                       ; 0042ae04 | = "Bip01 L Foot"
     PUSH ESI                            ; 0042ae09
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ae0a
         ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()

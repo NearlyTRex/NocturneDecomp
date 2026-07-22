@@ -75,14 +75,14 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
     if (*(int *)(param_1 + 0x1fa38) == 3) {
       local_120 = 0.0;
     }
-    if ((float)_DAT_00582082 <= local_120) {
+    if ((float)4 <= local_120) {
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
                         (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0xbcc0,param_1 + 0x20,local_c0,
                          *(uint *)(param_1 + 0x6c));
       if (iVar4 != 0) {
         fVar3 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                  (local_bc - *(float *)(param_1 + 0x34));
-        fVar3 = fVar3 * (float)_DAT_0058208a * (float)_DAT_00582082;
+        fVar3 = fVar3 * (float)0.31830988619288902 * (float)4;
         *(float *)(param_1 + 0xbcb8) = fVar3;
         if (fVar3 < -local_1c) {
           *(float *)(param_1 + 0xbcb8) = -local_1c;
@@ -98,7 +98,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
           local_98 = *(float *)(param_1 + 0x24) - *(float *)(iVar4 + 0x24);
           local_94 = *(float *)(param_1 + 0x28) - *(float *)(iVar4 + 0x28);
         }
-        if ((float)_DAT_00582092 <
+        if ((float)10 <
             SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
           *(uint *)(param_1 + 0xbc9c) = 1;
           return;
@@ -111,7 +111,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
       if ((*(int *)(param_1 + 0x1fa38) == 2) || (*(int *)(param_1 + 0x1fa38) == 3)) {
         iVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,&local_11c);
       }
-      if ((iVar4 == 0) || ((float)_DAT_0058209a <= local_11c)) {
+      if ((iVar4 == 0) || ((float)30 <= local_11c)) {
         if (*(int *)(param_1 + 0x1fa3c) != 0) {
           iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
           if (*(int *)(iVar4 + 0x24) == 0) {
@@ -134,7 +134,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
         ;
         local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (*(float *)(iVar1 + 4) - *(float *)(param_1 + 0x34));
-        fVar3 = local_18 * (float)_DAT_0058208a * (float)_DAT_00582082;
+        fVar3 = local_18 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
         if (fVar3 < local_24) {
@@ -143,25 +143,25 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if (((float)_DAT_005820a2 < *(float *)(param_1 + 0xbcb8)) &&
-           ((double)*(float *)(param_1 + 0xbcb8) < _DAT_005820aa)) {
+        if (((float)-0.050000000000000003 < *(float *)(param_1 + 0xbcb8)) &&
+           ((double)*(float *)(param_1 + 0xbcb8) < 0.050000000000000003)) {
           pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_fc);
           fStack_d8 = *pfVar2 + pfVar2[3];
           fStack_d4 = pfVar2[1] + pfVar2[4];
-          fStack_54 = fStack_d8 * _DAT_005820b2;
+          fStack_54 = fStack_d8 * 0.5f;
           fStack_d0 = pfVar2[2] + pfVar2[5];
-          fStack_50 = fStack_d4 * _DAT_005820b2;
-          fStack_4c = fStack_d0 * _DAT_005820b2;
+          fStack_50 = fStack_d4 * 0.5f;
+          fStack_4c = fStack_d0 * 0.5f;
           fStack_78 = *(float *)(param_1 + 0x20) + fStack_54;
           fStack_74 = *(float *)(param_1 + 0x24) + fStack_50;
           fStack_70 = *(float *)(param_1 + 0x28) + fStack_4c;
           pfVar2 = (float *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,auStack_114);
           fStack_30 = *pfVar2 + pfVar2[3];
           fStack_2c = pfVar2[1] + pfVar2[4];
-          fStack_60 = fStack_30 * _DAT_005820b2;
+          fStack_60 = fStack_30 * 0.5f;
           fStack_28 = pfVar2[2] + pfVar2[5];
-          fStack_5c = fStack_2c * _DAT_005820b2;
-          fStack_58 = fStack_28 * _DAT_005820b2;
+          fStack_5c = fStack_2c * 0.5f;
+          fStack_58 = fStack_28 * 0.5f;
           fStack_48 = *(float *)(iVar4 + 0x20) + fStack_60;
           fStack_44 = *(float *)(iVar4 + 0x24) + fStack_5c;
           fStack_cc = fStack_48 - fStack_78;
@@ -180,9 +180,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(int param_1)
             fStack_c8 = fStack_c8 * fVar3;
             fStack_c4 = fStack_c4 * fVar3;
           }
-          fStack_3c = fStack_cc * _DAT_005820b6;
-          fStack_38 = fStack_c8 * _DAT_005820b6;
-          fStack_34 = fStack_c4 * _DAT_005820b6;
+          fStack_3c = fStack_cc * 3.0f;
+          fStack_38 = fStack_c8 * 3.0f;
+          fStack_34 = fStack_c4 * 3.0f;
           fStack_a8 = fStack_48 + fStack_3c;
           fStack_a4 = fStack_44 + fStack_38;
           fStack_a0 = fStack_40 + fStack_34;

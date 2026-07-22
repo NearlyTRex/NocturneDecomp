@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0050ddd0 at 0050debd
+;   core_set.cpp_FUN_0050ddd0 at 0050debd
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0

@@ -33,7 +33,8 @@ void FUN_004a4b50(int param_1,int param_2)
   int local_18;
   uint local_14;
   
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00583dcc,"enemy.pod",&DAT_00583dbf);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60
+                    (&CHAR_00h_00583dcc,"enemy.pod","rb");
   if (iVar2 != 0) {
     _fclose(iVar2);
   }
@@ -45,7 +46,7 @@ void FUN_004a4b50(int param_1,int param_2)
   *(uint *)(param_1 + 0x234) = 0;
   local_1c = _DAT_01bcd070;
   _DAT_01bcd070 = _DAT_014b9900;
-  iVar2 = _fopen("pod.ini",&DAT_00583dcd);
+  iVar2 = _fopen("pod.ini","rt");
   if (iVar2 != 0) {
     _fclose(iVar2);
   }
@@ -54,7 +55,8 @@ void FUN_004a4b50(int param_1,int param_2)
     param_2 = 1;
   }
   local_18 = 0;
-  engine_ini_cpp_CIniFile_ctor_FUN_004bd860(local_4b4,"system\\nocturne.ini",&DAT_00583dd8);
+  engine_ini_cpp_CIniFile_ctor_FUN_004bd860
+            (local_4b4,"system\\nocturne.ini","Game");
   local_2c = 0;
   local_28 = 0;
   local_24 = 0;
@@ -114,7 +116,7 @@ void FUN_004a4b50(int param_1,int param_2)
         if (0 < local_2b4[0]) {
           do {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar2),&DAT_00583f4c
+                              ("world",*(uint *)(&DAT_005b9450 + iVar2),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar4,0);
@@ -168,7 +170,7 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           while (iVar2 < local_2b4[0]) {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar7),&DAT_00583db6
+                              ("world",*(uint *)(&DAT_005b9450 + iVar7),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar2,0);
@@ -213,7 +215,7 @@ LAB_004a50dc:
           iVar7 = 0x34;
           for (iVar2 = 0; iVar2 < local_2b4[0]; iVar2 = iVar2 + 1) {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar7),&DAT_00583db6
+                              ("world",*(uint *)(&DAT_005b9450 + iVar7),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar2,0);
@@ -265,7 +267,7 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           for (iVar2 = 0; iVar2 < local_2b4[0]; iVar2 = iVar2 + 1) {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar7),&DAT_00583db6
+                              ("world",*(uint *)(&DAT_005b9450 + iVar7),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar2,0);
@@ -296,7 +298,7 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           for (iVar2 = 0; iVar2 < local_2b4[0]; iVar2 = iVar2 + 1) {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar7),&DAT_00583db6
+                              ("world",*(uint *)(&DAT_005b9450 + iVar7),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar2,0);
@@ -318,7 +320,7 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           for (iVar2 = 0; iVar2 < local_2b4[0]; iVar2 = iVar2 + 1) {
             iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
-                              ("world",*(uint *)(&DAT_005b9450 + iVar7),&DAT_00583db6
+                              ("world",*(uint *)(&DAT_005b9450 + iVar7),"rt"
                               );
             if (iVar3 == 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_2b4,iVar2,0);
@@ -351,7 +353,7 @@ LAB_004a50dc:
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("world",local_144,&DAT_005842fe);
+    iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("world",local_144,"rt");
     if (iVar2 == 0) {
       return;
     }

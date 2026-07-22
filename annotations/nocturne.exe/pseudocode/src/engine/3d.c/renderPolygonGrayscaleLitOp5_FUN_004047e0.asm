@@ -15,10 +15,10 @@
 ;   undefined4 DAT_01c039a4
 ;
 ; Called Functions:
+;   engine_3d.c_FUN_00404680
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
+;   engine_clipper.c_FUN_00432cd0
 ;   engine_light.cpp_calculateLighting_FUN_004c6cc0
-;   FUN_00404680
-;   FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -64,15 +64,15 @@ section .text
     MOV EDI,dword ptr [0x006b0260]      ; 00404843 | DAT_006b0260
     PUSH EDI                            ; 00404849
     MOV [0x01c00c74],EAX                ; 0040484a | DAT_01c00c74
-    CALL FUN_00404680                   ; 0040484f
-        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; undefined FUN_00404680()
+    CALL engine_3d.c_FUN_00404680       ; 0040484f
+        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00404680()
     ADD ESP,0x8                         ; 00404854
     PUSH ESI                            ; 00404857
     MOV EBP,dword ptr [EBX + 0x4]       ; 00404858
     PUSH EBP                            ; 0040485b
     MOV [0x01c00c70],EAX                ; 0040485c | DAT_01c00c70
-    CALL FUN_00432cd0                   ; 00404861
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 00404861
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 00404866
     POP EDI                             ; 00404869
     MOV ESI,dword ptr [EBX + 0x4]       ; 0040486a

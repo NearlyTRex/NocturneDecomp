@@ -11,7 +11,7 @@
 ;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84 = 00409fc0
 ;
 ; Called Functions:
-;   FUN_00409d30
+;   core_actor.cpp_FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b5f90
         ;   Label: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
     PUSH EDX                            ; 004b5f94
-    CALL FUN_00409d30                   ; 004b5f95
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004b5f95
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     MOV dword ptr [EAX + 0x14c],0x59ec84 ; 004b5f9a | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84
     MOV dword ptr [EAX + 0xfc],0x1      ; 004b5fa4
     ADD ESP,0x4                         ; 004b5fae

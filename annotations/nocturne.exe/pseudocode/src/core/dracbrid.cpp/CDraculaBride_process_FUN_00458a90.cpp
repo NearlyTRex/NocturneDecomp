@@ -124,7 +124,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
       iVar4 = 0;
       if (0 < *(int *)(param_1 + 0xbdd0)) {
         fVar7 = (float10)_DAT_0059c40c;
-        fVar8 = (float10)_DAT_0057d716;
+        fVar8 = (float10)65535;
         iVar3 = param_1;
         do {
           iVar6 = *(int *)(iVar3 + 0xbdd4);
@@ -155,7 +155,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
     }
   }
   core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(param_1,param_2);
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -196,7 +196,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
     *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
     *(float *)(param_1 + 0x2430) = fVar2 * *(float *)(param_1 + 0xbc8c);
   }
-  iVar3 = FUN_00428c00(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar3 != 0) {
     uVar1 = *(uint *)(param_1 + 0x25a8);
     if (uVar1 < 2) {
@@ -302,7 +302,7 @@ LAB_00458f79:
                 (0x01C08D04,local_f4,param_1 + 0x30,1,0);
       local_9c = *(uint *)(param_1 + 0x34);
       local_98 = *(uint *)(param_1 + 0x38);
-      local_a0 = *(float *)(param_1 + 0x30) + _DAT_0057d72e;
+      local_a0 = *(float *)(param_1 + 0x30) + 1.5897179988972888e-314._0_4_;
       core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(0x01C08D04,local_f4,&local_a0,1,0);
     }
     break;
@@ -365,12 +365,12 @@ LAB_00458f79:
             local_78 = local_120;
             local_74 = local_11c;
           }
-          if ((float)_DAT_0057d71e <
+          if ((float)10 <
               SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_70,&local_7c);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_6c - *(float *)(param_1 + 0x34));
-            if (ABS(local_14) < (float)_DAT_0057d726) {
+            if (ABS(local_14) < (float)0.39269908168750001) {
               local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                                           (0xbf490fdb,0x3f490fdb);
               *(float *)(param_1 + 0x34) = local_14 + *(float *)(param_1 + 0x34);
@@ -569,7 +569,7 @@ LAB_00459978:
           local_198 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0xbdc4);
           local_194 = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0xbdc8);
           if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <
-              (float)_DAT_0057d746) goto switchD_00458fa0_default;
+              (float)5) goto switchD_00458fa0_default;
         }
         local_1c = local_1c + 4;
       }
@@ -642,7 +642,7 @@ switchD_00458fa0_default:
   if ((((local_28 != 0x11) && (local_28 != 0x10)) && (local_28 != 0xf)) ||
      (*(int *)(param_1 + 0xdc) != 0)) {
     if (local_28 == 3) {
-      *(float *)(param_1 + 0x23ac) = *(float *)(param_1 + 0x23ac) * (float)_DAT_0057d736;
+      *(float *)(param_1 + 0x23ac) = *(float *)(param_1 + 0x23ac) * (float)2;
     }
     iVar4 = *(int *)(param_1 + 0xbca4);
     if ((iVar4 != 0) &&
@@ -650,7 +650,7 @@ switchD_00458fa0_default:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                 (0x01E57284,*(uint *)(param_1 + 0xbca4));
     }
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057d73e;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_160 = *(float *)(param_1 + 0x2420) * param_2;
     local_15c = *(float *)(param_1 + 0x2424) * param_2;
     local_158 = param_2 * *(float *)(param_1 + 0x2428);
@@ -673,7 +673,7 @@ switchD_00458fa0_default:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 switchD_00459f4d_caseD_10:
   *(uint *)(param_1 + 0xbc90) = 1;

@@ -9,9 +9,9 @@
 ; undefined        Stack[-0x48]:1  local_48
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a03a
-;   undefined4 DAT_0057a042
-;   undefined4 DAT_0057a046
+;   double DOUBLE_0057a03a = 0.400000000000000
+;   float FLOAT_0057a042 = 10
+;   float FLOAT_0057a046 = 0.5
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -95,7 +95,7 @@ section .text
     FADDP                               ; 0042837d
     FSQRT                               ; 0042837f
     FLD double ptr [ESP]                ; 00428381
-    FMUL double ptr [0x0057a03a]        ; 00428384 | DAT_0057a03a
+    FMUL double ptr [0x0057a03a]        ; 00428384 | DOUBLE_0057a03a
     CALL crt_math.c_round_FUN_00563a30  ; 0042838a
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x78]        ; 0042838f
@@ -122,7 +122,7 @@ section .text
     FSTP float ptr [ESP + 0x18]         ; 004283c7
     FSTP float ptr [ESP + 0x1c]         ; 004283cb
     FSTP float ptr [ESP + 0x20]         ; 004283cf
-    FLD float ptr [0x0057a042]          ; 004283d3 | DAT_0057a042
+    FLD float ptr [0x0057a042]          ; 004283d3 | FLOAT_0057a042
         ;   Label: LAB_004283d3
     FLD float ptr [ESP + 0x18]          ; 004283d9
     FMUL ST1                            ; 004283dd
@@ -158,7 +158,7 @@ section .text
         ;   Label: LAB_0042842d
     FADD float ptr [ESP + 0x3c]         ; 00428431
     FST float ptr [ESP + 0xc]           ; 00428435
-    FLD float ptr [0x0057a046]          ; 00428439 | DAT_0057a046
+    FLD float ptr [0x0057a046]          ; 00428439 | FLOAT_0057a046
     FXCH                                ; 0042843f
     FMUL ST1                            ; 00428441
     FLD float ptr [ESP + 0x50]          ; 00428443

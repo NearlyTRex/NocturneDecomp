@@ -4,8 +4,8 @@
 ; void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(int param_1)
 ;
 ;
-; XREF[38]:
-;   FUN_00410490 at 004106e4
+; XREF[39]:
+;   FUN_0040fa20 at 0040fad8
 ;   FUN_00418a00 at 00418f92
 ;   FUN_0041fe40 at 00420888
 ;   FUN_00439f50 at 0043a17b
@@ -15,7 +15,7 @@
 ;   FUN_004b6d80 at 004b72a8
 ;   FUN_004b9fe0 at 004ba281
 ;   FUN_004c4970 at 004c4bc0
-;   ... and 28 more
+;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00591b63

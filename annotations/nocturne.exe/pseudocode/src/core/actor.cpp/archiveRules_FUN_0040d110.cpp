@@ -30,7 +30,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(int *param_1,uint param_2)
       } while (iVar1 < *param_1);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(0xffffffff);
-    _fprintf(DAT_00763e84,&DAT_00577f00,&DAT_005acc90);
+    _fprintf(DAT_00763e84,"%s}\n",&DAT_005acc90);
     return;
   }
   do {
@@ -40,7 +40,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(int *param_1,uint param_2)
                 ("Rule list opening brace",param_2);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(DAT_00763e84,&DAT_00577e88,param_1);
+  iVar1 = _fscanf(DAT_00763e84,"%d",param_1);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule count",param_2);
   }
@@ -52,7 +52,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(int *param_1,uint param_2)
     do {
       iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\" => \"%[^\"]\"\n",piVar4,piVar3);
       if (iVar2 != 2) {
-        core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(&DAT_00577eb5,param_2);
+        core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule",param_2);
       }
       piVar4 = piVar4 + 0x19;
       iVar1 = iVar1 + 1;

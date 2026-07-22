@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,35 +122,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 676,
+    "complexity_score": 660,
     "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 101,
-    "suspect_count": 54,
+    "pseudocode_lines": 100,
+    "suspect_count": 53,
     "suspect_types": [
       "bitcast_double_pair",
       "extra_output",
       "param_count_too_few",
       "sub84_truncation",
       "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 281
+    "total_lines": 280
   },
   "cross_references": [
     {
       "addr": "00418a00",
       "from_addr": "00418bb6",
       "name": "FUN_00418a00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00429e60",
-      "from_addr": "00429f09",
-      "name": "FUN_00429e60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -169,6 +162,12 @@
       "addr": "0053a260",
       "from_addr": "0053a431",
       "name": "FUN_0053a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00429e60",
+      "from_addr": "00429f09",
+      "name": "core_charactr.cpp_FUN_00429e60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -249,9 +248,9 @@
   "globals": [
     {
       "addr": "0059836e",
-      "name": "DAT_0059836e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059836e",
+      "type": "double",
+      "value": "0.999990000000000"
     }
   ],
   "param_estimates": {
@@ -274,7 +273,7 @@
       {
         "call_addr": "00429f09",
         "call_type": "direct",
-        "caller": "FUN_00429e60",
+        "caller": "core_charactr.cpp_FUN_00429e60",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -570,28 +569,28 @@
         {
           "check_id": "uninitvar",
           "column": 19,
-          "line": 80,
+          "line": 78,
           "message": "Uninitialized variable: extraout_ECX",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 17,
-          "line": 81,
+          "line": 79,
           "message": "Uninitialized variable: extraout_EDX",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 12,
-          "line": 105,
+          "line": 103,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "warning"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 16,
-          "line": 106,
+          "line": 104,
           "message": "Uninitialized variable: local_54",
           "severity": "error"
         }
@@ -602,16 +601,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
@@ -619,7 +610,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
@@ -627,7 +618,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
@@ -635,7 +626,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 8,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "float *extraout_ECX;",
@@ -643,7 +634,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 9,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "float *extraout_EDX;",
@@ -651,7 +642,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
@@ -659,7 +650,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_3",
       "severity": "mild",
       "text": "dVar1 = (double)param_3;",
@@ -667,7 +658,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1;",
@@ -675,7 +666,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 = param_1;",
@@ -683,7 +674,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
       "text": "local_5c = *param_2;",
@@ -691,7 +682,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "local_58 = param_2[1];",
@@ -699,7 +690,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "local_60 = param_2[2];",
@@ -707,7 +698,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_2",
       "severity": "mild",
       "text": "local_54 = param_2[3];",
@@ -715,7 +706,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "dVar2 = (double)(*param_1 * *param_2 +",
@@ -723,7 +714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "dVar2 = (double)(*param_1 * *param_2 +",
@@ -731,7 +722,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -739,7 +730,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -747,7 +738,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -755,7 +746,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -763,7 +754,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -771,7 +762,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
@@ -779,7 +770,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 52,
+      "line": 50,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "afStack_1830[0x5ec] = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -787,7 +778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "local_54 = -param_2[3];",
@@ -795,15 +786,15 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 61,
+      "line": 59,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= _DAT_0059836e) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= 0.99999000000000005) {",
       "type": "bitcast_double_pair"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 62,
+      "line": 60,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar8 = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));",
@@ -811,7 +802,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar10 = (float10)fsin(((float10)1 - (float10)param_3) * fVar9);",
@@ -819,7 +810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)param_3 * fVar9);",
@@ -827,7 +818,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 67,
+      "line": 65,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_74 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -835,7 +826,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 70,
+      "line": 68,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_7c = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -843,7 +834,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 72,
+      "line": 70,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_18 = __BITCAST_DOUBLE(CONCAT44(uStack_74,local_78));",
@@ -851,7 +842,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 71,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "unaff_ESI = extraout_ECX;",
@@ -859,7 +850,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 73,
+      "line": 71,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = extraout_ECX;",
@@ -867,7 +858,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
+      "line": 72,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "param_1 = extraout_EDX;",
@@ -875,7 +866,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = extraout_EDX;",
@@ -883,7 +874,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = (double)param_3;",
@@ -891,7 +882,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 78,
+      "line": 76,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_70 = SUB84(1.0 - local_18,0);",
@@ -899,7 +890,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 81,
+      "line": 79,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_78 = SUB84(local_18,0);",
@@ -907,7 +898,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 82,
+      "line": 80,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar3 = (float)__BITCAST_DOUBLE(CONCAT44(local_70,uStack_74));",
@@ -915,7 +906,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 83,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = local_50 + 3;",
@@ -923,7 +914,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "local_3c = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[2] * fVar3;",
@@ -931,7 +922,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 86,
+      "line": 84,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_3c = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[2] * fVar3;",
@@ -939,7 +930,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "local_38 = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[3] * fVar3;",
@@ -947,7 +938,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 87,
+      "line": 85,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_38 = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[3] * fVar3;",
@@ -955,7 +946,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "local_50[3] = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + *param_1 * fVar3;",
@@ -963,7 +954,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 88,
+      "line": 86,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_50[3] = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + *param_1 * fVar3;",
@@ -971,7 +962,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "local_40 = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[1] * fVar3;",
@@ -979,7 +970,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 89,
+      "line": 87,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_40 = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[1] * fVar3;",
@@ -987,7 +978,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar4 = param_2 + (uint)bVar7 * -2 + 1;",
@@ -995,7 +986,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_2",
       "severity": "mild",
       "text": "*pfVar5 = *param_2;",
@@ -1003,7 +994,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 96,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar5 = unaff_ESI + (uint)bVar7 * -2 + 1;",
@@ -1011,7 +1002,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 97,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = local_54;",
@@ -1019,7 +1010,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 104,
+      "line": 102,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -1038,7 +1029,7 @@
     },
     {
       "description": "Uninitialized variable: extraout_ECX",
-      "line": 80,
+      "line": 78,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "unaff_ESI = extraout_ECX;",
@@ -1046,7 +1037,7 @@
     },
     {
       "description": "Uninitialized variable: extraout_EDX",
-      "line": 81,
+      "line": 79,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "param_1 = extraout_EDX;",
@@ -1054,7 +1045,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 105,
+      "line": 103,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "pfVar5 = unaff_ESI + (uint)bVar7 * -2 + 1;",
@@ -1062,7 +1053,7 @@
     },
     {
       "description": "Uninitialized variable: local_54",
-      "line": 106,
+      "line": 104,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "*unaff_ESI = local_54;",

@@ -8,13 +8,13 @@
 ;   FUN_004571f0 at 004572fd
 ;   FUN_00478790 at 004787b4
 ;   FUN_004edfc0 at 004ee15f
-;   FUN_00507f80 at 0050820a
 ;   FUN_0056c750 at 0056c83c
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 at 0040ed9f
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_004386b0 at 004386d0
 ;   core_curtain.cpp_CCurtain_process_FUN_0043ebf0 at 0043ec60
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 00443452
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 00441c7a
+;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 at 0044be79
 ;   ... and 19 more
 ;
 ; *****************************************************************************

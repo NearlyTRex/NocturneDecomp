@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00509a80 at 00509af1
+;   core_set.cpp_FUN_00509a80 at 00509af1
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0

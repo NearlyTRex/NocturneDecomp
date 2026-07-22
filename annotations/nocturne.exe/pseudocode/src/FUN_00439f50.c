@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_00439f50(int param_1,float param_2)
 
@@ -43,7 +42,7 @@ void FUN_00439f50(int param_1,float param_2)
   float local_14;
   
   bVar7 = 0;
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 == 0) {
     return;
   }
@@ -59,10 +58,10 @@ void FUN_00439f50(int param_1,float param_2)
   if (*(int *)(param_1 + 0xbc90) == 2) {
     core_colonel_cpp_CColonel_processAI_FUN_0043a470(param_1,param_2);
   }
-  fVar2 = (float)_DAT_0057b13c;
+  fVar2 = (float)12.566370614;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar2;
-  iVar4 = FUN_00428c00(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar4 == 0) {
     iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     switch(*(uint *)(iVar4 + 0x24)) {
@@ -151,7 +150,7 @@ LAB_0043a023:
   }
 switchD_0043a387_caseD_4:
   if (*(int *)(param_1 + 0x2590) == 0) {
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0057b144;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_38 = *(float *)(param_1 + 0x2420) * param_2;
     local_34 = *(float *)(param_1 + 0x2424) * param_2;
     local_30 = param_2 * *(float *)(param_1 + 0x2428);
@@ -176,13 +175,13 @@ switchD_0043a387_caseD_4:
       iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_44,uVar5);
       local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar4 + 4));
       local_98 = local_14;
-      if (local_14 < (float)_DAT_0057b14c) {
-        local_98 = local_14 + _DAT_0057b154;
+      if (local_14 < (float)-1.57079632675) {
+        local_98 = local_14 + 5.3286462644388174e-315._0_4_;
       }
-      if ((float)_DAT_0057b15c < local_98) {
-        local_98 = local_98 + _DAT_0057b164;
+      if ((float)1.57079632675 < local_98) {
+        local_98 = local_98 + 1.5938625219265179e-314._0_4_;
       }
-      local_1c = param_2 * (float)_DAT_0057b16c;
+      local_1c = param_2 * (float)3.1415926535000001;
       local_20 = -local_1c;
       if (local_98 < local_20) {
         local_98 = local_20;
@@ -216,7 +215,8 @@ LAB_0043a164:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iStack_18);
   iVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   if (iVar4 == 0) {
-    FUN_0055d610(param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),DAT_0077ac8c,&LAB_0051b650);
+    core_xform_cpp_FUN_0055d610
+              (param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),DAT_0077ac8c,&LAB_0051b650);
     iVar4 = iStack_18;
     puVar8 = &stack0xffffff7c;
     uStack_84 = uStack_94;
@@ -231,7 +231,7 @@ LAB_0043a164:
           ((uint)bVar7 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(iVar4,puVar8);
   }
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
 switchD_0043a387_caseD_6:
   return;
 }

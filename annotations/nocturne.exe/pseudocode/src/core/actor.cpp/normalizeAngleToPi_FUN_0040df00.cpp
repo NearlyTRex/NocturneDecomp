@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_actor_cpp_normalizeAngleToPi_FUN_0040df00(float param_1)
 
 {
@@ -15,14 +13,14 @@ float core_actor_cpp_normalizeAngleToPi_FUN_0040df00(float param_1)
   uint local_8;
   
   dVar1 = (double)param_1;
-  if (param_1 < (float)_DAT_00578069) {
-    dVar1 = (double)floor((dVar1 + _DAT_00578071) * _DAT_00578089);
-    local_8 = ((float)dVar1 + 1.0) * (float)_DAT_00578091 + param_1;
+  if (param_1 < (float)-3.1415926535000001) {
+    dVar1 = (double)floor((dVar1 + 3.1415926535000001) * -0.15915494309644401);
+    local_8 = ((float)dVar1 + 1.0) * (float)6.2831853070000001 + param_1;
   }
   else {
-    if (_DAT_00578071 < dVar1) {
-      dVar1 = (double)floor((dVar1 + _DAT_00578069) * _DAT_00578079);
-      return ((float)dVar1 + 1.0) * (float)_DAT_00578081 + param_1;
+    if (3.1415926535000001 < dVar1) {
+      dVar1 = (double)floor((dVar1 + -3.1415926535000001) * 0.15915494309644401);
+      return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + param_1;
     }
     local_8 = param_1;
   }

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   string s_Fire_state_00581530
-;   undefined4 DAT_0058153c
+;   char CHAR_1_0058153c = 1
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_save_FUN_00487e90
@@ -29,7 +29,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048c85d
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
     ADD ESP,0x8                         ; 0048c862
-    PUSH 0x58153c                       ; 0048c865 | DAT_0058153c
+    PUSH 0x58153c                       ; 0048c865 | CHAR_1_0058153c
     MOV EBX,0x1c625f8                   ; 0048c86a
     PUSH ESI                            ; 0048c86f
     LEA EDI,[EBX + 0x8c0]               ; 0048c870

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0041f6e0(int param_1)
 
 {
@@ -50,10 +48,10 @@ void FUN_0041f6e0(int param_1)
                 (iVar3,"flashlit.kfm");
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_90);
-      fVar2 = _DAT_005799e1;
-      *(float *)(param_1 + 0x3614) = (local_90 + fStack_84) * _DAT_005799e1;
+      fVar2 = 0.5f;
+      *(float *)(param_1 + 0x3614) = (local_90 + fStack_84) * 0.5f;
       *(float *)(param_1 + 0x3618) = (fStack_8c + fStack_80) * fVar2;
-      *(float *)(param_1 + 0x361c) = fStack_7c + (float)_DAT_005799e5;
+      *(float *)(param_1 + 0x361c) = fStack_7c + (float)0.10000000000000001;
       *(uint *)(param_1 + 0x3628) = 0;
       *(uint *)(param_1 + 0x3624) = *(uint *)(param_1 + 0x3628);
       *(uint *)(param_1 + 0x3620) = *(uint *)(param_1 + 0x3624);
@@ -68,13 +66,13 @@ void FUN_0041f6e0(int param_1)
                 (iVar3,"lantern.kfm");
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_a8);
-      fStack_4c = _DAT_005799e1;
+      fStack_4c = 0.5f;
       fStack_48 = local_a8 + fStack_9c;
-      fStack_3c = fStack_48 * _DAT_005799e1;
+      fStack_3c = fStack_48 * 0.5f;
       fStack_44 = fStack_a4 + fStack_98;
       fStack_40 = fStack_a0 + fStack_94;
-      fStack_38 = fStack_44 * _DAT_005799e1;
-      fStack_34 = fStack_40 * _DAT_005799e1;
+      fStack_38 = fStack_44 * 0.5f;
+      fStack_34 = fStack_40 * 0.5f;
       *(float *)(param_1 + 0x3614) = fStack_3c;
       fStack_6c = local_a8 + fStack_9c;
       fStack_54 = fStack_6c * fStack_4c;

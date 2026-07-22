@@ -15,7 +15,7 @@
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 004716e4
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
@@ -45,7 +45,7 @@ section .text
     CMP dword ptr [0x01bcd070],0x0      ; 00471a8c | DAT_01bcd070
     JNZ 0x00471ab8                      ; 00471a93
         ;   XREF to: 00471ab8 (CONDITIONAL_JUMP)  ; LAB_00471ab8
-    MOV ECX,0x57e4fa                    ; 00471a95 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 00471a95 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00471a9a
     PUSH 0x57e510                       ; 00471a9f | = "gEdFont must be set by the application."
     MOV dword ptr [0x01cc4800],ECX      ; 00471aa4 | DAT_01cc4800

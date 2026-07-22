@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_fire_cpp_CExplosion_activate_FUN_00486e40(uint *param_1,uint *param_2,uint param_3,uint param_4)
 
 {
@@ -34,7 +32,7 @@ void core_fire_cpp_CExplosion_activate_FUN_00486e40(uint *param_1,uint *param_2,
   uVar1 = 0x01E57284;
   param_1[3] = 0x3f800000;
   param_1[4] = param_3;
-  FUN_0050e660(uVar1,0x43480000,0,0,0x40000000);
+  core_set_cpp_FUN_0050e660(uVar1,0x43480000,0,0,0x40000000);
   iVar2 = 0;
   uVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
   param_1[6] = uVar1;
@@ -47,9 +45,9 @@ void core_fire_cpp_CExplosion_activate_FUN_00486e40(uint *param_1,uint *param_2,
     fVar4 = (float10)fcos((float10)local_28);
     fVar5 = (float10)fsin((float10)local_14);
     fVar6 = (float10)fsin((float10)local_28);
-    local_4c = (float)(fVar6 * (float10)_DAT_00581210);
-    local_50 = (float)(fVar3 * (float10)_DAT_00581210 * fVar4);
-    local_48 = (float)(fVar5 * (float10)_DAT_00581210 * fVar4);
+    local_4c = (float)(fVar6 * (float10)30.0f);
+    local_50 = (float)(fVar3 * (float10)30.0f * fVar4);
+    local_48 = (float)(fVar5 * (float10)30.0f * fVar4);
     local_44 = *param_1;
     local_3c = param_1[2];
     local_40 = (float)param_1[1] + 1.0;

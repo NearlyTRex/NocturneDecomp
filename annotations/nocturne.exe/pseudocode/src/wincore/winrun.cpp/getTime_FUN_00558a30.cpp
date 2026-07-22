@@ -25,11 +25,11 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_00558a30(void)
   iVar1 = _DAT_02de07f0;
   fVar3 = (float10)round
                              (((((float10)_DAT_02de07d8 +
-                                (float10)_DAT_02de07dc * (float10)_DAT_00597f31) -
+                                (float10)_DAT_02de07dc * (float10)4294967296) -
                                ((float10)_DAT_02de07d0 +
-                               (float10)_DAT_02de07d4 * (float10)_DAT_00597f31)) /
-                              (float10)_DAT_02de07e8) * (float10)_DAT_00597f39 *
-                              (float10)_DAT_00597f41);
+                               (float10)_DAT_02de07d4 * (float10)4294967296)) /
+                              (float10)_DAT_02de07e8) * (float10)65536 *
+                              (float10)18);
   _DAT_02de07f0 = iVar1 + (int)ROUND(fVar3);
   return iVar1 + (int)ROUND(fVar3);
 }

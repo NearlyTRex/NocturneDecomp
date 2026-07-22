@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
 
 {
@@ -53,7 +51,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
   fVar2 = 0x40400000;
   iVar5 = 0;
   if (0 < *(int *)(param_1 + 0x2f08)) {
-    fVar1 = (float)_DAT_0057a002;
+    fVar1 = (float)65535;
     iVar7 = param_1;
     do {
       (&DAT_00765aa0)[*(int *)(iVar7 + 0x2f18)] =
@@ -68,7 +66,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
   iVar5 = local_20;
   if (0 < *(int *)(iVar4 + 0x28558)) {
     do {
-      if ((float)_DAT_0057a002 <= (float)(&DAT_00765aa0)[iVar7]) {
+      if ((float)65535 <= (float)(&DAT_00765aa0)[iVar7]) {
         iVar8 = iVar8 + 1;
       }
       if (*(int *)(iVar5 + 0x288c) == -1) {
@@ -99,7 +97,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
       pbVar9 = pbVar9 + 1;
       local_30 = (float)local_18 + 6.101353e-39;
     }
-    if ((float)_DAT_0057a002 < local_30) {
+    if ((float)65535 < local_30) {
       local_30 = 65535.0;
     }
     fVar12 = (float10)round((float10)local_30);

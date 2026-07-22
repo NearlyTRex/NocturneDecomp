@@ -72,6 +72,6 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(int param_1,float param_2)
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   return;
 }

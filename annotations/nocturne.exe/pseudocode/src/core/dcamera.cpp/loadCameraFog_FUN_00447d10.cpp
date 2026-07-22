@@ -20,6 +20,6 @@ void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00447d10(int param_1,uint param_
     *(uint *)(param_1 + 0x20) = 0x42480000;
     return;
   }
-  _fscanf(param_2,&DAT_0057bb2e,param_1 + 0x20);
+  _fscanf(param_2,"%f\n",param_1 + 0x20);
   return;
 }

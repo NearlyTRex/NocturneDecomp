@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
-;   FUN_00432cd0
+;   engine_clipper.c_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
     PUSH 0x6b029c                       ; 004079e4 | DAT_006b029c
         ;   Label: LAB_004079e4
     PUSH EDI                            ; 004079e9
-    CALL FUN_00432cd0                   ; 004079ea
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00432cd0()
+    CALL engine_clipper.c_FUN_00432cd0  ; 004079ea
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
     ADD ESP,0x8                         ; 004079ef
     POP EBX                             ; 004079f2
     POP ESI                             ; 004079f3

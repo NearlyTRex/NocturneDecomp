@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0044e1c0 at 0044e1d4
+;   core_dlight.cpp_FUN_0044e1c0 at 0044e1d4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0

@@ -13,10 +13,10 @@
 ;   FUN_004bb4d0 at 004bb4d5
 ;   FUN_0053d100 at 0053d116
 ;   FUN_00544440 at 00544466
-;   FUN_00561900 at 0056192d
 ;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0 at 00419c09
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_00498cc0 at 00498cca
 ;   core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0 at 004b6d36
+;   core_scat.cpp_CScat_renderOpaque_FUN_004fcb20 at 004fcb29
 ;   ... and 2 more
 ;
 ; Referenced Globals:

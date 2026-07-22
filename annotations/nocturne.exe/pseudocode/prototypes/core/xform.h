@@ -15,6 +15,10 @@ float * __cdecl transformVector3x4InPlace(float *param_1,float *param_2);
 // Address: 0055aa00
 void multiplyMatrix3x4(float *param_1,float *param_2);
 
+// Original: core_xform.cpp_FUN_0055abb0
+// Address: 0055abb0
+undefined4 * FUN_0055abb0(undefined4 *param_1,undefined4 param_2);
+
 // Original: core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0
 // Address: 0055abf0
 void setIdentityMatrix3x4(undefined4 *param_1);
@@ -95,6 +99,10 @@ void quaternionToMatrix3x4(undefined4 param_1);
 // Address: 0055cf10
 void matrixToQuaternion(float *param_1);
 
+// Original: core_xform.cpp_FUN_0055d0d0
+// Address: 0055d0d0
+void FUN_0055d0d0(float *param_1);
+
 // Original: core_xform.cpp_setIdentityQuaternion_FUN_0055d110
 // Address: 0055d110
 void setIdentityQuaternion(undefined4 *param_1);
@@ -111,9 +119,37 @@ void quaternionToAxisAngle(float *param_1,float *param_2,float *param_3);
 // Address: 0055d2d0
 float * slerpQuaternion(float *param_1,float *param_2,float param_3);
 
+// Original: core_xform.cpp_FUN_0055d4a0
+// Address: 0055d4a0
+void FUN_0055d4a0(float param_1);
+
+// Original: core_xform.cpp_FUN_0055d4e0
+// Address: 0055d4e0
+void FUN_0055d4e0(float param_1);
+
+// Original: core_xform.cpp_FUN_0055d520
+// Address: 0055d520
+void FUN_0055d520(float param_1);
+
+// Original: core_xform.cpp_FUN_0055d560
+// Address: 0055d560
+void FUN_0055d560(float param_1,float *param_2);
+
 // Original: core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0
 // Address: 0055d5b0
 undefined4 __cdecl quaternionToEulerAngles(undefined4 param_1,undefined4 param_2);
+
+// Original: core_xform.cpp_FUN_0055d5e0
+// Address: 0055d5e0
+undefined4 FUN_0055d5e0(undefined4 param_1,undefined4 param_2);
+
+// Original: core_xform.cpp_FUN_0055d610
+// Address: 0055d610
+void FUN_0055d610(undefined4 param_1);
+
+// Original: core_xform.cpp_FUN_0055d660
+// Address: 0055d660
+void FUN_0055d660(undefined4 param_1);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0
 // Address: 0055d6b0
@@ -134,6 +170,10 @@ void __cdecl clipInterpolateBottomPlane(int *param_1,int *param_2,int *param_3);
 // Original: core_xform.cpp_clipPolygonStage2_FUN_0055db30
 // Address: 0055db30
 void clipPolygonStage2(void);
+
+// Original: core_xform.cpp_FUN_0055de20
+// Address: 0055de20
+void FUN_0055de20(void);
 
 // Original: core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 // Address: 0055e040

@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,33 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 114,
+    "complexity_score": 98,
     "cross_reference_count": 54,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [
-    {
-      "addr": "00410cc0",
-      "from_addr": "00410d4e",
-      "name": "FUN_00410cc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00428c00",
-      "from_addr": "00428daa",
-      "name": "FUN_00428c00",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00439f50",
       "from_addr": "0043a069",
@@ -252,6 +239,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00410cc0",
+      "from_addr": "00410d4e",
+      "name": "core_baron.cpp_FUN_00410cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00412480",
       "from_addr": "004128ca",
       "name": "core_batcreat.cpp_CBatCreature_process_FUN_00412480",
@@ -297,6 +290,12 @@
       "addr": "004247f0",
       "from_addr": "004249b3",
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428c00",
+      "from_addr": "00428daa",
+      "name": "core_charactr.cpp_FUN_00428c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -485,39 +484,39 @@
   "globals": [
     {
       "addr": "00578069",
-      "name": "DAT_00578069",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578069",
+      "type": "double",
+      "value": "-3.14159265350000"
     },
     {
       "addr": "00578071",
-      "name": "DAT_00578071",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578071",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00578079",
-      "name": "DAT_00578079",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578079",
+      "type": "double",
+      "value": "0.159154943096444"
     },
     {
       "addr": "00578081",
-      "name": "DAT_00578081",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578081",
+      "type": "double",
+      "value": "-6.28318530700000"
     },
     {
       "addr": "00578089",
-      "name": "DAT_00578089",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578089",
+      "type": "double",
+      "value": "-0.159154943096444"
     },
     {
       "addr": "00578091",
-      "name": "DAT_00578091",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00578091",
+      "type": "double",
+      "value": "6.28318530700000"
     }
   ],
   "param_estimates": {
@@ -742,16 +741,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float core_actor_cpp_normalizeAngleToPi_FUN_0040df00(float param_1)",
@@ -759,7 +750,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "dVar1 = (double)param_1;",
@@ -767,31 +758,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 < (float)_DAT_00578069) {",
+      "text": "if (param_1 < (float)-3.1415926535000001) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_8 = ((float)dVar1 + 1.0) * (float)_DAT_00578091 + param_1;",
+      "text": "local_8 = ((float)dVar1 + 1.0) * (float)6.2831853070000001 + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return ((float)dVar1 + 1.0) * (float)_DAT_00578081 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "local_8 = param_1;",

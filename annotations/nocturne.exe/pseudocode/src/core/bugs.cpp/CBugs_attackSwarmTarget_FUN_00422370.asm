@@ -15,12 +15,12 @@
 ;
 ; XREF[2]:
 ;   FUN_00421480 at 0042151c
-;   FUN_00422050 at 0042235a
+;   core_bugs.cpp_FUN_00422050 at 0042235a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00579d2d
-;   undefined4 DAT_00579d35
-;   undefined4 DAT_00579d3d
+;   double DOUBLE_00579d2d = 2
+;   double DOUBLE_00579d35 = 0.0500000000000000
+;   float FLOAT_00579d3d = 0.5
 ;   undefined4 DAT_0059aeb4
 ;   undefined4 DAT_00765a98
 ;
@@ -29,6 +29,7 @@
 ;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
+;   core_bugs.cpp_FUN_00421b80
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -39,7 +40,6 @@
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
-;   FUN_00421b80
 ;
 ; *****************************************************************************
 
@@ -114,7 +114,7 @@ section .text
     MOV dword ptr [ESP + 0x170],EDI     ; 00422415
     MOV EAX,ESP                         ; 0042241c
     FILD dword ptr [ESP + 0x170]        ; 0042241e
-    FMUL double ptr [0x00579d35]        ; 00422425 | DAT_00579d35
+    FMUL double ptr [0x00579d35]        ; 00422425 | DOUBLE_00579d35
     PUSH EAX                            ; 0042242b
     MOV dword ptr [ESP + 0x38],EBX      ; 0042242c
     MOV dword ptr [ESP + 0x3c],EBX      ; 00422430
@@ -198,7 +198,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00422510
     FADD float ptr [ESI + 0x4]          ; 00422513
     FXCH                                ; 00422516
-    FLD float ptr [0x00579d3d]          ; 00422518 | DAT_00579d3d
+    FLD float ptr [0x00579d3d]          ; 00422518 | FLOAT_00579d3d
     FXCH                                ; 0042251e
     FMUL ST1                            ; 00422520
     FXCH ST2                            ; 00422522
@@ -260,7 +260,7 @@ section .text
     FXCH                                ; 004225dc
     FSUB float ptr [ESI + 0x28]         ; 004225de
     FSTP float ptr [ESP + 0x144]        ; 004225e1
-    FCOMP double ptr [0x00579d2d]       ; 004225e8 | DAT_00579d2d
+    FCOMP double ptr [0x00579d2d]       ; 004225e8 | DOUBLE_00579d2d
     FNSTSW AX                           ; 004225ee
     SAHF                                ; 004225f0
     JBE 0x00422753                      ; 004225f1
@@ -358,29 +358,29 @@ section .text
     ADD ESP,0x8                         ; 00422742
     PUSH EBX                            ; 00422745
         ;   Label: LAB_00422745
-    CALL FUN_00421b80                   ; 00422746
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined FUN_00421b80()
+    CALL core_bugs.cpp_FUN_00421b80     ; 00422746
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
     ADD ESP,0x4                         ; 0042274b
     JMP 0x004223c4                      ; 0042274e
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4
     FLD float ptr [ESP + 0x13c]         ; 00422753
         ;   Label: LAB_00422753
     FABS                                ; 0042275a
-    FCOMP double ptr [0x00579d2d]       ; 0042275c | DAT_00579d2d
+    FCOMP double ptr [0x00579d2d]       ; 0042275c | DOUBLE_00579d2d
     FNSTSW AX                           ; 00422762
     SAHF                                ; 00422764
     JA 0x004225f7                       ; 00422765
         ;   XREF to: 004225f7 (CONDITIONAL_JUMP)  ; LAB_004225f7
     FLD float ptr [ESP + 0x144]         ; 0042276b
     FABS                                ; 00422772
-    FCOMP double ptr [0x00579d2d]       ; 00422774 | DAT_00579d2d
+    FCOMP double ptr [0x00579d2d]       ; 00422774 | DOUBLE_00579d2d
     FNSTSW AX                           ; 0042277a
     SAHF                                ; 0042277c
     JA 0x004225f7                       ; 0042277d
         ;   XREF to: 004225f7 (CONDITIONAL_JUMP)  ; LAB_004225f7
     PUSH EBX                            ; 00422783
-    CALL FUN_00421b80                   ; 00422784
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined FUN_00421b80()
+    CALL core_bugs.cpp_FUN_00421b80     ; 00422784
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
     ADD ESP,0x4                         ; 00422789
     JMP 0x004223c4                      ; 0042278c
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4

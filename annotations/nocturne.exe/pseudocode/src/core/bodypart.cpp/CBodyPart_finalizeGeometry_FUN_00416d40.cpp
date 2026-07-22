@@ -71,7 +71,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(int param
     local_60 = local_60 + local_18;
     local_58 = local_58 + iVar13;
     local_5c = local_5c + iVar12;
-    local_6c = (float)_DAT_005790b2;
+    local_6c = (float)0.00390625;
     *(float *)(param_1 + 0x154) = (float)local_54 * local_6c;
     *(float *)(param_1 + 0x158) = (float)local_50 * local_6c;
     *(float *)(param_1 + 0x15c) = (float)local_4c * local_6c;
@@ -159,7 +159,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(int param
           *piVar7 = piVar7[2];
         }
         else {
-          fVar14 = (float10)_DAT_005790ba / (float10)dVar2;
+          fVar14 = (float10)65535 / (float10)dVar2;
           fVar15 = (float10)round((float10)*piVar7 * fVar14);
           fVar16 = (float10)round((float10)iVar13 * fVar14);
           fVar14 = (float10)round((float10)iVar11 * fVar14);

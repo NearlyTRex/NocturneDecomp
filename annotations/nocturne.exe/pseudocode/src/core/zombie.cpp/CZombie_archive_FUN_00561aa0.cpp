@@ -16,7 +16,7 @@ void core_zombie_cpp_CZombie_archive_FUN_00561aa0(int param_1)
     if (0x0000000B < 0xb) {
       core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc9c,"guardDistance");
     }
-    FUN_0040cb00(param_1 + 0x150,"motion state");
+    core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
   }
   if (2 < 0x0000000B) {
     core_actor_cpp_archivePartStatus_FUN_0040cbf0(param_1 + 0x150,"partStatus");

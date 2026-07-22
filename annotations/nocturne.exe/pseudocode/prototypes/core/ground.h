@@ -5,7 +5,7 @@
 
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004b11b0
 // Address: 004b11b0
-undefined * __cdecl getGroundTypeCode(undefined4 param_1);
+char * __cdecl getGroundTypeCode(undefined4 param_1);
 
 // Original: core_ground.cpp_getGroundTypeColor_FUN_004b12f0
 // Address: 004b12f0

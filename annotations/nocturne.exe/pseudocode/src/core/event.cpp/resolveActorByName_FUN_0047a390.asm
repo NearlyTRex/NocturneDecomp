@@ -14,7 +14,7 @@
 ;   undefined4 s_ust_specify_actor_name_0057f3c6+1
 ;   undefined4 s_st_specify_actor_name_0057f3c6+2
 ;   undefined4 s_t_specify_actor_name_0057f3c6+3
-;   undefined4 DAT_0057f3de
+;   TerminatedCString s_anon_0057f3de
 ;   string s_Can't_use_'$'_actor_specifier_in_0057f3e0
 ;   string s_Actor_\"%s\"_does_not_exist._0057f40e
 ;   string s_Actor_\"%s\"_is_of_type_%s,_this_c_0057f429
@@ -97,7 +97,7 @@ section .text
     POP ESI                             ; 0047a3ef
     POP EBX                             ; 0047a3f0
     RET                                 ; 0047a3f1
-    PUSH 0x57f3de                       ; 0047a3f2 | DAT_0057f3de
+    PUSH 0x57f3de                       ; 0047a3f2 | = "$"
         ;   Label: LAB_0047a3f2
     PUSH EBX                            ; 0047a3f7
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a3f8

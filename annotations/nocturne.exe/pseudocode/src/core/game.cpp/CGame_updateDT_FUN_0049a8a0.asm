@@ -15,8 +15,8 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d220a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005823be
-;   undefined4 DAT_005823c2
+;   float FLOAT_005823be = 65536
+;   double DOUBLE_005823c2 = 0.0000152587890625
 ;   undefined4 DAT_005b9360
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01c78acc
@@ -65,7 +65,7 @@ section .text
     FILD dword ptr [EBX + 0x260]        ; 0049a8ff
         ;   Label: LAB_0049a8ff
     MOV EAX,dword ptr [EBX + 0x260]     ; 0049a905
-    FMUL double ptr [0x005823c2]        ; 0049a90b | DAT_005823c2
+    FMUL double ptr [0x005823c2]        ; 0049a90b | DOUBLE_005823c2
     MOV [0x01bd1d80],EAX                ; 0049a911 | DAT_01bd1d80
     FSTP float ptr [EBX + 0x264]        ; 0049a916
     POP EDI                             ; 0049a91c
@@ -80,7 +80,7 @@ section .text
         ;   Label: LAB_0049a92c
     JMP 0x0049a8de                      ; 0049a936
         ;   XREF to: 0049a8de (UNCONDITIONAL_JUMP)  ; LAB_0049a8de
-    FLD float ptr [0x005823be]          ; 0049a938 | DAT_005823be
+    FLD float ptr [0x005823be]          ; 0049a938 | FLOAT_005823be
         ;   Label: LAB_0049a938
     FDIV float ptr [0x005b9360]         ; 0049a93e | DAT_005b9360
     FMUL float ptr [EBX + 0x1ec]        ; 0049a944

@@ -13,7 +13,7 @@ void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int par
   
   iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   if (0 < iVar1) {
-    iVar1 = _stricmp(param_1,"?ScatDazzle" + 1);
+    iVar1 = _stricmp(param_1,"ScatDazzle");
     if (iVar1 != 0) {
       if (param_2 != 0) {
         *(uint *)(param_1 + 0x2404) = 1;

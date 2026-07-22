@@ -48,7 +48,7 @@ void FUN_004fd1d0(int param_1,int param_2)
   if (param_2 == 0) {
     local_1c = _DAT_01e53394;
     local_18 = _DAT_01e5339c;
-    FUN_0055d4e0(0x3fc90fdb);
+    core_xform_cpp_FUN_0055d4e0(0x3fc90fdb);
     local_fc = local_cc;
     *(uint *)((int)&stack0xffffff08 + (uint)bVar5 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffff38 + (uint)bVar5 * -8);
@@ -59,13 +59,13 @@ void FUN_004fd1d0(int param_1,int param_2)
          *(uint *)
           ((int)(&stack0xffffff3c + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
           ((uint)bVar5 * -2 + 1) * 4);
-    FUN_0055d520(0x3fc90fdb);
+    core_xform_cpp_FUN_0055d520(0x3fc90fdb);
     puVar2 = (uint *)local_bc;
   }
   else {
     local_1c = _DAT_01e53398;
     local_18 = _DAT_01e533a0;
-    FUN_0055d4e0(0xbfc90fdb);
+    core_xform_cpp_FUN_0055d4e0(0xbfc90fdb);
     local_fc = local_ac;
     *(uint *)((int)&stack0xffffff08 + (uint)bVar5 * 0xfffffffe * 4) =
          auStack_a8[(uint)bVar5 * 0xfffffffe];
@@ -75,7 +75,7 @@ void FUN_004fd1d0(int param_1,int param_2)
      ((int)(&stack0xffffff0c + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
          (auStack_a8 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 1)
          [(uint)bVar5 * -2 + 1];
-    FUN_0055d520(0xbfc90fdb);
+    core_xform_cpp_FUN_0055d520(0xbfc90fdb);
     puVar2 = (uint *)local_9c;
   }
   puVar3 = puVar2 + (uint)bVar5 * -2 + 1;
@@ -90,7 +90,7 @@ void FUN_004fd1d0(int param_1,int param_2)
   if (local_160 <= 0.0) {
     return;
   }
-  FUN_0055d4e0(*(uint *)(param_1 + 0x1fa58));
+  core_xform_cpp_FUN_0055d4e0(*(uint *)(param_1 + 0x1fa58));
   local_10c = auStack_88[3];
   *(uint *)((int)&stack0xfffffef8 + (uint)bVar5 * 0xfffffffe * 4) =
        auStack_88[(uint)bVar5 * 0xfffffffe + 4];
@@ -99,7 +99,7 @@ void FUN_004fd1d0(int param_1,int param_2)
   *(uint *)
    ((int)(&stack0xfffffefc + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
        (auStack_88 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 5)[(uint)bVar5 * -2 + 1];
-  FUN_0055d4a0(*(uint *)(param_1 + 0x1fa54),&stack0xfffffef4);
+  core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x1fa54),&stack0xfffffef4);
   local_11c = local_14c;
   *(uint *)((int)&stack0xfffffee8 + (uint)bVar5 * 0xfffffffe * 4) =
        *(uint *)(&stack0xfffffeb8 + (uint)bVar5 * -8);

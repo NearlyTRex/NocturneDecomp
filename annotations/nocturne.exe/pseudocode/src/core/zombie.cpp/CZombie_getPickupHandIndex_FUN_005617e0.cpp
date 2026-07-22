@@ -16,7 +16,7 @@ uint __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(int param_1
   {
     return 0xffffffff;
   }
-  iVar1 = _strnicmp(param_1 + 0x23b0,&DAT_00598883,3);
+  iVar1 = _strnicmp(param_1 + 0x23b0,"new",3);
   if (iVar1 == 0) {
     if (param_2 < 2) {
       if (param_2 != 1) {

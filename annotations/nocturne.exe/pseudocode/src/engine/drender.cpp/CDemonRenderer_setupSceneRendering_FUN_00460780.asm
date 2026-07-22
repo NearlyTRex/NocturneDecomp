@@ -7,7 +7,6 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[8]:
-;   FUN_0050a260 at 0050a5b4
 ;   FUN_005125a0 at 00512dbe
 ;   FUN_00513720 at 005137dc
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0d95
@@ -15,6 +14,7 @@
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df08a
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec9f
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1c8
+;   core_set.cpp_FUN_0050a260 at 0050a5b4
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0

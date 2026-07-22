@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,float *param_2,float param_3,uint param_4)
 
 {
@@ -73,10 +71,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,fl
   pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_84);
   fStack_30 = *pfVar2 + pfVar2[3];
   fStack_2c = pfVar2[1] + pfVar2[4];
-  fStack_54 = fStack_30 * _DAT_0057d74e;
-  fStack_50 = fStack_2c * _DAT_0057d74e;
+  fStack_54 = fStack_30 * 5.2220990168285998e-315._0_4_;
+  fStack_50 = fStack_2c * 5.2220990168285998e-315._0_4_;
   fStack_28 = pfVar2[2] + pfVar2[5];
-  fStack_4c = fStack_28 * _DAT_0057d74e;
+  fStack_4c = fStack_28 * 5.2220990168285998e-315._0_4_;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_60,&fStack_54);
   if (*(int *)(param_1 + 0xb640) == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200

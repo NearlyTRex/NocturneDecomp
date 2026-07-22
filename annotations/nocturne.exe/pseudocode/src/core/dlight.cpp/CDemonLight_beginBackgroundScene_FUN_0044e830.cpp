@@ -20,7 +20,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int p
   
   bVar6 = 0;
   if (*(int *)(param_1 + 0x11e4) == 0) {
-    _DAT_01cc4800 = "p?..\\core\\dlight.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\dlight.cpp";
     _DAT_01cc4804 = 0x1af;
     FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
   }

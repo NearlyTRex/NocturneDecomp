@@ -47,7 +47,7 @@ void FUN_004fbf20(int param_1,float param_2)
   float local_14;
   
   bVar14 = 0;
-  iVar12 = FUN_004259f0(param_1,param_2);
+  iVar12 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   iVar13 = 0x01C775EC;
   if (iVar12 == 0) {
     return;
@@ -66,7 +66,7 @@ void FUN_004fbf20(int param_1,float param_2)
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
   core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(param_1,param_2);
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
-  iVar13 = FUN_00428c00(param_1,param_2);
+  iVar13 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar13 == 0) {
     if (*(int *)(param_1 + 0xbc90) == 2) {
       core_scat_cpp_CScat_updateAI_FUN_004fc610(param_1,param_2);
@@ -275,7 +275,8 @@ LAB_004fc138:
   iVar13 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(param_1);
   if ((iVar13 == 0) &&
      (iVar13 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1), iVar13 == 0)) {
-    FUN_0055d610(param_1 + 0x1fa40,*(uint *)(param_1 + 0x1fa4c),_DAT_01e53388,&LAB_0051b650);
+    core_xform_cpp_FUN_0055d610
+              (param_1 + 0x1fa40,*(uint *)(param_1 + 0x1fa4c),_DAT_01e53388,&LAB_0051b650);
     iVar13 = iStack_20;
     puVar15 = &stack0xffffff7c;
     uStack_84 = uStack_74;
@@ -290,7 +291,7 @@ LAB_004fc138:
             ((uint)bVar14 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(iVar13,puVar15);
   }
-  FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150(param_1,param_2);
   FUN_004fdd00(param_1);
 switchD_004fc3b6_caseD_5:
   return;

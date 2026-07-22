@@ -12,19 +12,19 @@
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 at 0044c44b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057bf1e
-;   undefined4 DAT_0057bf21
+;   TerminatedCString s_rb_0057bf1e
+;   TerminatedCString s_art_0057bf21
 ;   string s_..\\core\\dfilter.cpp_0057bf25
 ;   string s_CDemonFilter::load_-_Bad_filenam_0057bf39
-;   undefined4 DAT_0057bf60
+;   TerminatedCString s_art_0057bf60
 ;   string s_..\\core\\dfilter.cpp_0057bf64
 ;   string s_CDemonFilter::load_-_Non-square_f_0057bf78
 ;   string s_..\\core\\dfilter.cpp_0057bfa5
 ;   string s_CDemonFilter::load_-_Bad_filter_s_0057bfb9
 ;   string s_..\\core\\dfilter.cpp_0057bfe1
 ;   string s_CDemonFilter::load_-_Bad_filter_s_0057bff5
-;   undefined4 DAT_0057c01d
-;   undefined4 DAT_0057c020
+;   TerminatedCString s_rb_0057c01d
+;   TerminatedCString s_art_0057c020
 ;   string s_..\\core\\dfilter.cpp_0057c024
 ;   string s_CDemonFilter::load_-_Bad_filenam_0057c038
 ;   ... and 2 more
@@ -50,9 +50,9 @@ section .text
     SUB ESP,0x4                         ; 0044bf94
     MOV EBX,dword ptr [ESP + 0x18]      ; 0044bf97
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0044bf9b
-    PUSH 0x57bf1e                       ; 0044bf9f | DAT_0057bf1e
+    PUSH 0x57bf1e                       ; 0044bf9f | = "rb"
     PUSH EDI                            ; 0044bfa4
-    PUSH 0x57bf21                       ; 0044bfa5 | DAT_0057bf21
+    PUSH 0x57bf21                       ; 0044bfa5 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0044bfaa
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0044bfaf
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 0044bfc2
     PUSH EDI                            ; 0044bfc5
-    PUSH 0x57bf60                       ; 0044bfc6 | DAT_0057bf60
+    PUSH 0x57bf60                       ; 0044bfc6 | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 0044bfcb
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 0044bfd0
@@ -135,9 +135,9 @@ section .text
     CALL core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20 ; 0044c082
         ;   XREF to: 0044bf20 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20()
     ADD ESP,0x4                         ; 0044c087
-    PUSH 0x57c01d                       ; 0044c08a | DAT_0057c01d
+    PUSH 0x57c01d                       ; 0044c08a | = "rb"
     PUSH EDI                            ; 0044c08f
-    PUSH 0x57c020                       ; 0044c090 | DAT_0057c020
+    PUSH 0x57c020                       ; 0044c090 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0044c095
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0044c09a

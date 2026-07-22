@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -123,7 +123,7 @@
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 105,
-    "cross_reference_count": 51,
+    "cross_reference_count": 53,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -138,9 +138,15 @@
   },
   "cross_references": [
     {
-      "addr": "0040b300",
-      "from_addr": "0040b533",
-      "name": "FUN_0040b300",
+      "addr": "0040ef70",
+      "from_addr": "0040ef7a",
+      "name": "FUN_0040ef70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f480",
+      "from_addr": "0040f49a",
+      "name": "FUN_0040f480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -153,12 +159,6 @@
       "addr": "004196b0",
       "from_addr": "00419ac0",
       "name": "FUN_004196b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00427730",
-      "from_addr": "00427764",
-      "name": "FUN_00427730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,9 +234,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00561010",
-      "from_addr": "0056167d",
-      "name": "FUN_00561010",
+      "addr": "0040b300",
+      "from_addr": "0040b533",
+      "name": "core_actor.cpp_FUN_0040b300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -261,6 +261,12 @@
       "addr": "00429730",
       "from_addr": "004299fa",
       "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00427730",
+      "from_addr": "00427764",
+      "name": "core_charactr.cpp_FUN_00427730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -442,6 +448,12 @@
       "from_addr": "005623fa",
       "name": "core_zombie.cpp_CZombie_isGrabbable_FUN_005623f0",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561010",
+      "from_addr": "0056167d",
+      "name": "core_zombie.cpp_FUN_00561010",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -470,7 +482,7 @@
       {
         "call_addr": "00427764",
         "call_type": "direct",
-        "caller": "FUN_00427730",
+        "caller": "core_charactr.cpp_FUN_00427730",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -61,8 +61,8 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a8d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581424
-;   undefined4 DAT_0058142c
+;   double DOUBLE_00581424 = 256
+;   double DOUBLE_0058142c = 0.25
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b8b14
@@ -223,7 +223,7 @@ section .text
     JC 0x00488f71                       ; 00488d9f
         ;   XREF to: 00488f71 (CONDITIONAL_JUMP)  ; LAB_00488f71
     FLD float ptr [EBP + 0x10]          ; 00488da5
-    FMUL double ptr [0x0058142c]        ; 00488da8 | DAT_0058142c
+    FMUL double ptr [0x0058142c]        ; 00488da8 | DOUBLE_0058142c
     FSTP float ptr [ESP + 0x34]         ; 00488dae
     MOV EAX,dword ptr [EBP + 0x10]      ; 00488db2
         ;   Label: LAB_00488db2
@@ -440,7 +440,7 @@ section .text
         ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformPoint_FUN_00530a25()
     FLD float ptr [EBP + 0x18]          ; 00489083
     MOV EDX,dword ptr [0x005ae704]      ; 00489086 | DAT_005ae704
-    FLD double ptr [0x00581424]         ; 0048908c | DAT_00581424
+    FLD double ptr [0x00581424]         ; 0048908c | DOUBLE_00581424
     FXCH                                ; 00489092
     FMUL ST1                            ; 00489094
     MOV EAX,dword ptr [EDX]             ; 00489096 | DAT_01b4d738

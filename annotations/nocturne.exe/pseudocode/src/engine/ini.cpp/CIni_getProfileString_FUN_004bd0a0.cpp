@@ -26,7 +26,7 @@ uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint
   
   bVar9 = 0;
   bVar3 = false;
-  iVar4 = _fopen(param_7,&DAT_005864e5);
+  iVar4 = _fopen(param_7,"rt");
   if (iVar4 == 0) {
     _DAT_01cc4800 = "..\\engine\\ini.cpp";
     _DAT_01cc4804 = 0x57;

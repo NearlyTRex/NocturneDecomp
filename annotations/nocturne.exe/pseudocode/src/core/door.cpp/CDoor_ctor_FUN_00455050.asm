@@ -21,9 +21,9 @@
 ;   undefined1* PTR_core_door.cpp_CDoor_setup_FUN_004551f0_0059c284 = 004551f0
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;   FUN_00481620
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH EDI                            ; 00455052
     MOV EBX,dword ptr [ESP + 0x10]      ; 00455053
     PUSH EBX                            ; 00455057
-    CALL FUN_00409d30                   ; 00455058
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00455058
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0045505d
     ADD EAX,0x150                       ; 00455060
     PUSH EAX                            ; 00455065

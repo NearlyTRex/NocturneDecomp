@@ -72,11 +72,11 @@ void FUN_00499ca0(int param_1,float param_2)
   if (iVar1 == 0) goto LAB_00499d1a;
   (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_a0);
   fStack_28 = local_a0 + fStack_94;
-  fStack_88 = fStack_28 * _DAT_005822ca;
+  fStack_88 = fStack_28 * 0.5f;
   fStack_24 = fStack_9c + fStack_90;
   fStack_20 = fStack_98 + fStack_8c;
-  fStack_84 = fStack_24 * _DAT_005822ca;
-  fStack_80 = fStack_20 * _DAT_005822ca;
+  fStack_84 = fStack_24 * 0.5f;
+  fStack_80 = fStack_20 * 0.5f;
   if (&local_1c != &fStack_88) {
     local_1c = fStack_88;
     local_18 = fStack_84;
@@ -92,7 +92,7 @@ void FUN_00499ca0(int param_1,float param_2)
       local_18 = fStack_90;
     }
     else {
-      _DAT_01cc4800 = "?..\\core\\gabriela.cpp" + 1;
+      _DAT_01cc4800 = "..\\core\\gabriela.cpp";
       _DAT_01cc4804 = 0x945;
       FUN_004c8440("Don't know how to carry light %s",iVar1);
     }
@@ -131,7 +131,7 @@ LAB_00499f65:
     local_54 = puVar3[1];
     local_50 = puVar3[2];
   }
-  local_14 = fStack_8c * (float)_DAT_005822da + fStack_98 * (float)_DAT_005822d2;
+  local_14 = fStack_8c * (float)0.29999999999999999 + fStack_98 * (float)0.69999999999999996;
 LAB_00499d1a:
   if (param_2 == 0.0) {
     local_60 = param_2;

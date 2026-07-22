@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004ab190(int param_1,int *param_2)
 
 {
@@ -92,16 +90,16 @@ switchD_004ab1c6_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd70) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_00584e2d);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   iVar2 = *param_2;
   if (iVar2 == *(int *)(param_1 + 0xbd70)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00584e3d);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar2 != *(int *)(param_1 + 0xbd68)) && (iVar2 != *(int *)(param_1 + 0xbd6c))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00584e35);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

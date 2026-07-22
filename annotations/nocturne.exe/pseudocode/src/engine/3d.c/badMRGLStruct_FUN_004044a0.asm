@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\3d.c_005774e5
-;   string s_Bad_MRGL_struct_005774f4
+;   TerminatedCString s_engine_3d_c_005774e5
+;   TerminatedCString s_Bad_MRGL_struct_005774f4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

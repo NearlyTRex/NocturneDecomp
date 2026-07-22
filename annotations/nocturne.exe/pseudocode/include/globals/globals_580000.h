@@ -7,105 +7,86 @@
 // GLOBAL VARIABLES - Range 0x580000
 // =============================================================================
 
+// byte[50]
+extern byte BYTE_ARRAY_00582e3d[50];
+extern byte BYTE_ARRAY_00583552[50];
+extern byte BYTE_ARRAY_00583706[50];
+extern byte BYTE_ARRAY_00583738[50];
+extern byte BYTE_ARRAY_00583a2e[50];
+
+// byte[51]
+extern byte BYTE_ARRAY_00582cc2[51];
+extern byte BYTE_ARRAY_00582e8c[51];
+extern byte BYTE_ARRAY_0058343f[51];
+extern byte BYTE_ARRAY_0058348d[51];
+extern byte BYTE_ARRAY_005835a2[51];
+extern byte BYTE_ARRAY_005835e1[51];
+extern byte BYTE_ARRAY_005836c7[51];
+
+// byte[52]
+extern byte BYTE_ARRAY_00582c4d[52];
+extern byte BYTE_ARRAY_00582d20[52];
+extern byte BYTE_ARRAY_00582d81[52];
+extern byte BYTE_ARRAY_00582dea[52];
+extern byte BYTE_ARRAY_005832e7[52];
+extern byte BYTE_ARRAY_005838e3[52];
+extern byte BYTE_ARRAY_005839aa[52];
+extern byte BYTE_ARRAY_005839f5[52];
+
+// byte[53]
+extern byte BYTE_ARRAY_00582c8d[53];
+extern byte BYTE_ARRAY_005831c0[53];
+extern byte BYTE_ARRAY_0058385e[53];
+extern byte BYTE_ARRAY_00583964[53];
+extern byte BYTE_ARRAY_00583a65[53];
+
+// byte[54]
+extern byte BYTE_ARRAY_0058283a[54];
+extern byte BYTE_ARRAY_00582bde[54];
+extern byte BYTE_ARRAY_00582ef6[54];
+extern byte BYTE_ARRAY_00583111[54];
+extern byte BYTE_ARRAY_00583281[54];
+extern byte BYTE_ARRAY_00583620[54];
+extern byte BYTE_ARRAY_005837f2[54];
+extern byte BYTE_ARRAY_00583828[54];
+
+// byte[55]
+extern byte BYTE_ARRAY_00582ebf[55];
+extern byte BYTE_ARRAY_0058331b[55];
+extern byte BYTE_ARRAY_005833de[55];
+extern byte BYTE_ARRAY_005834cc[55];
+extern byte BYTE_ARRAY_00583793[55];
+extern byte BYTE_ARRAY_00583917[55];
+
+// byte[56]
+extern byte BYTE_ARRAY_005825f0[56];
+extern byte BYTE_ARRAY_00582a32[56];
+extern byte BYTE_ARRAY_00582aee[56];
+extern byte BYTE_ARRAY_00582fe6[56];
+extern byte BYTE_ARRAY_00583167[56];
+
+// byte[58]
+extern byte BYTE_ARRAY_00583066[58];
+
+// byte[59]
+extern byte BYTE_ARRAY_0058321f[59];
+extern byte BYTE_ARRAY_00583a9f[59];
+
+// byte[60]
+extern byte BYTE_ARRAY_005830c0[60];
+
+// byte[65]
+extern byte BYTE_ARRAY_00582f76[65];
+
+// char
+extern char CHAR_1_0058153c;
+extern char CHAR_00h_00583c06;
+extern char CHAR_00h_00583dcc;
+
 // string
-extern string DAT_00580A05;
-extern string DAT_00580EDB;
-extern string DAT_00580EED;
-extern string DAT_00580F0F;
-extern string DAT_00580F21;
-extern string DAT_00580F3F;
-extern string DAT_00580F51;
-extern string DAT_00580F73;
-extern string DAT_00580F7D;
-extern string DAT_00580FAA;
-extern string DAT_00581050;
-extern string DAT_00581077;
-extern string DAT_0058113B;
-extern string DAT_00581241;
-extern string DAT_0058153F;
-extern string DAT_005815AE;
-extern string DAT_0058162E;
-extern string DAT_0058165E;
-extern string DAT_0058168E;
-extern string DAT_005816B6;
-extern string DAT_005816CF;
-extern string DAT_0058175A;
-extern string DAT_00581912;
-extern string DAT_00581925;
-extern string DAT_005819A1;
-extern string DAT_00581A26;
-extern string DAT_00581A43;
-extern string DAT_00581A77;
-extern string DAT_00581AD0;
-extern string DAT_00581AE1;
-extern string DAT_00581AF8;
-extern string DAT_00581E02;
-extern string DAT_00581E49;
-extern string DAT_00582129;
-extern string DAT_005821A9;
-extern string DAT_00582291;
-extern string DAT_005822E5;
-extern string DAT_005823D9;
-extern string DAT_00582401;
-extern string DAT_00582768;
-extern string DAT_005829A9;
-extern string DAT_00582B51;
-extern string DAT_00583B10;
-extern string DAT_005843FE;
-extern string DAT_00584425;
-extern string DAT_0058442B;
-extern string DAT_00584442;
-extern string DAT_00584485;
-extern string DAT_005844B1;
-extern string DAT_005845F0;
-extern string DAT_0058471A;
-extern string DAT_00584820;
-extern string DAT_0058498F;
-extern string DAT_00584A0E;
-extern string DAT_00584A6F;
-extern string DAT_00584A98;
-extern string DAT_00584AD4;
-extern string DAT_00584DBC;
-extern string DAT_00584E44;
-extern string DAT_00584EAC;
-extern string DAT_00584EB8;
-extern string DAT_00584FC7;
-extern string DAT_00585047;
-extern string DAT_00585197;
-extern string DAT_005851F6;
-extern string DAT_005852DD;
-extern string DAT_005852E9;
-extern string DAT_005852F9;
-extern string DAT_00585305;
-extern string DAT_00585312;
-extern string DAT_0058531F;
-extern string DAT_0058532C;
-extern string DAT_00585338;
-extern string DAT_00585346;
-extern string DAT_00585351;
-extern string DAT_0058535F;
-extern string DAT_0058536C;
-extern string DAT_00585443;
 extern string DAT_0058562B;
-extern string DAT_00585689;
-extern string DAT_005858AA;
-extern string DAT_005858D1;
-extern string DAT_005858F2;
 extern string DAT_005859C4;
-extern string DAT_005859EA;
-extern string DAT_00585CB1;
 extern string DAT_00585DED;
-extern string DAT_00585F7B;
-extern string DAT_00585FCC;
-extern string DAT_00586002;
-extern string DAT_005861B9;
-extern string DAT_0058647C;
-extern string DAT_005864BC;
-extern string DAT_00586624;
-extern string DAT_00586636;
-extern string DAT_00587168;
-extern string DAT_00587179;
-extern string DAT_00587187;
 extern string DAT_005874F8;
 extern string DAT_00587574;
 extern string DAT_005875A3;
@@ -323,12 +304,6 @@ extern string DAT_0058FAB1;
 extern string DAT_0058FF1D;
 
 // undefined1
-extern undefined1 DAT_0058459d;
-extern undefined1 DAT_005845bd;
-extern undefined1 DAT_0058461a;
-extern undefined1 DAT_00584640;
-extern undefined1 DAT_005853eb;
-extern undefined1 DAT_005853f7;
 extern undefined1 DAT_00587cd0;
 extern undefined1 DAT_00587d01;
 extern undefined1 DAT_00587d35;

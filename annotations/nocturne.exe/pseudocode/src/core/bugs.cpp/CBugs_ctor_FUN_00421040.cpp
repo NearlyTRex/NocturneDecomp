@@ -30,7 +30,7 @@ int core_bugs_cpp_CBugs_ctor_FUN_00421040(uint param_1)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + -0x11fe0,"guul.dfm")
   ;
   *(uint *)(iVar2 + 0x830) = 0;
-  pcVar3 = &DAT_00579c32;
+  pcVar3 = "true";
   *(uint *)(iVar2 + 0x834) = 0;
   *(uint *)(iVar2 + 0x86c) = 0;
   pcVar4 = (char *)(iVar2 + 0x75d8);
@@ -44,7 +44,7 @@ int core_bugs_cpp_CBugs_ctor_FUN_00421040(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00579c37;
+  pcVar3 = "true";
   pcVar4 = (char *)(iVar2 + 0x763c);
   *(uint *)(iVar2 + 0x75d4) = 0;
   do {

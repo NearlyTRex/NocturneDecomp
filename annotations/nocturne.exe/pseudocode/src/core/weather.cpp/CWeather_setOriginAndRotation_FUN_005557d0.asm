@@ -23,11 +23,11 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508e12
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597ca9
-;   undefined4 DAT_00597cb1
-;   undefined4 DAT_00597cb9
-;   undefined4 DAT_00597cc1
-;   undefined4 DAT_00597cc5
+;   double DOUBLE_00597ca9 = 100
+;   double DOUBLE_00597cb1 = 0.785398163375000
+;   double DOUBLE_00597cb9 = -0.785398163375000
+;   float FLOAT_00597cc1 = 50
+;   float FLOAT_00597cc5 = -50
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_02ddfa28
@@ -90,10 +90,10 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 0055583a
     FLD float ptr [EAX + 0x4]           ; 0055583e
     FLD ST0                             ; 00555841
-    FADD double ptr [0x00597cb1]        ; 00555843 | DAT_00597cb1
+    FADD double ptr [0x00597cb1]        ; 00555843 | DOUBLE_00597cb1
     SUB ESP,0x4                         ; 00555849
     FSTP float ptr [ESP]                ; 0055584c
-    FADD double ptr [0x00597cb9]        ; 0055584f | DAT_00597cb9
+    FADD double ptr [0x00597cb9]        ; 0055584f | DOUBLE_00597cb9
     SUB ESP,0x4                         ; 00555855
     FSTP float ptr [ESP]                ; 00555858
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0055585b
@@ -145,9 +145,9 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 005558e1
     PUSH EAX                            ; 005558e5 | DAT_01e57284
     FXCH                                ; 005558e6
-    FADD float ptr [0x00597cc1]         ; 005558e8 | DAT_00597cc1
+    FADD float ptr [0x00597cc1]         ; 005558e8 | FLOAT_00597cc1
     FXCH                                ; 005558ee
-    FADD float ptr [0x00597cc5]         ; 005558f0 | DAT_00597cc5
+    FADD float ptr [0x00597cc5]         ; 005558f0 | FLOAT_00597cc5
     FXCH                                ; 005558f6
     FSTP float ptr [ESP + 0x8]          ; 005558f8
     FSTP float ptr [ESP + 0x14]         ; 005558fc
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     MOV dword ptr [ESP + 0x44],EAX      ; 0055595c
     FLD float ptr [ESP + 0x44]          ; 00555960
-    FMUL double ptr [0x00597ca9]        ; 00555964 | DAT_00597ca9
+    FMUL double ptr [0x00597ca9]        ; 00555964 | DOUBLE_00597ca9
     ADD ESP,0x8                         ; 0055596a
     FADD double ptr [ESP + 0x2c]        ; 0055596d
     LEA EAX,[ESP + 0x18]                ; 00555971

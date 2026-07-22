@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057dc65
+;   double DOUBLE_0057dc65 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -22,7 +22,7 @@ section .text
         ;   Label: FUN_00460c90
     SUB ESP,0x8                         ; 00460c91
     MOV EAX,dword ptr [ESP + 0x14]      ; 00460c94
-    FLD double ptr [0x0057dc65]         ; 00460c98 | DAT_0057dc65
+    FLD double ptr [0x0057dc65]         ; 00460c98 | DOUBLE_0057dc65
     FLD float ptr [EAX + 0x8]           ; 00460c9e
     FMUL ST1                            ; 00460ca1
     FLD float ptr [EAX + 0x4]           ; 00460ca3

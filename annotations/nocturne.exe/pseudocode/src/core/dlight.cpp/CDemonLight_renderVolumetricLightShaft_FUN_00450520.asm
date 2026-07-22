@@ -75,10 +75,10 @@
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f979
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c866
-;   undefined4 DAT_0057c86e
-;   undefined4 DAT_0057c876
-;   undefined4 DAT_0057c87a
+;   double DOUBLE_0057c866 = 18
+;   double DOUBLE_0057c86e = 2
+;   float FLOAT_0057c876 = 0.00001525902
+;   float FLOAT_0057c87a = 0.04000000
 ;   undefined4 DAT_0057c87e
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_0059c038
@@ -175,7 +175,7 @@ section .text
     MOV dword ptr [ESP + 0xb4],EAX      ; 004505eb
     FLD float ptr [ESP + 0xb4]          ; 004505f2
         ;   Label: LAB_004505f2
-    FMUL double ptr [0x0057c866]        ; 004505f9 | DAT_0057c866
+    FMUL double ptr [0x0057c866]        ; 004505f9 | DOUBLE_0057c866
     MOV EAX,dword ptr [EBP + 0x14]      ; 004505ff
     FDIV float ptr [EAX + 0x138]        ; 00450602
     FLD float ptr [ESP + 0xb0]          ; 00450608
@@ -183,7 +183,7 @@ section .text
     FLD float ptr [ESP + 0xac]          ; 00450611
     FMUL ST0                            ; 00450618
     FXCH ST2                            ; 0045061a
-    FMUL double ptr [0x0057c86e]        ; 0045061c | DAT_0057c86e
+    FMUL double ptr [0x0057c86e]        ; 0045061c | DOUBLE_0057c86e
     FXCH                                ; 00450622
     FSTP float ptr [ESP + 0x110]        ; 00450624
     FXCH                                ; 0045062b
@@ -298,7 +298,7 @@ section .text
     FMUL float ptr [EAX + 0x8]          ; 004507ec
     FADDP                               ; 004507ef
     FMUL float ptr [ESP + 0x124]        ; 004507f1
-    FMUL float ptr [0x0057c876]         ; 004507f8 | DAT_0057c876
+    FMUL float ptr [0x0057c876]         ; 004507f8 | FLOAT_0057c876
     FLDZ                                ; 004507fe
     FCOMPP                              ; 00450800
     FNSTSW AX                           ; 00450802
@@ -315,13 +315,13 @@ section .text
     MOV dword ptr [ESP + 0x124],ESI     ; 0045081d
         ;   Label: LAB_0045081d
     FILD dword ptr [ESP + 0x124]        ; 00450824
-    FMUL float ptr [0x0057c87a]         ; 0045082b | DAT_0057c87a
+    FMUL float ptr [0x0057c87a]         ; 0045082b | FLOAT_0057c87a
     MOV EAX,dword ptr [EBP + 0x14]      ; 00450831
     FMUL float ptr [EAX + 0x100]        ; 00450834
     FLD float ptr [EAX + 0x138]         ; 0045083a
     FXCH                                ; 00450840
     FST float ptr [ESP]                 ; 00450842
-    FMUL double ptr [0x0057c866]        ; 00450845 | DAT_0057c866
+    FMUL double ptr [0x0057c866]        ; 00450845 | DOUBLE_0057c866
     FDIVRP                              ; 0045084b
     MOV EAX,dword ptr [EAX + 0x118]     ; 0045084d
     MOV dword ptr [ESP + 0x7c],EAX      ; 00450853

@@ -12,9 +12,9 @@
 ;   FUN_00535900 at 00536d98
 ;   FUN_00546e10 at 005471fd
 ;   FUN_00547670 at 005476d8
-;   FUN_0055ef50 at 0055f74f
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a83a
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429907
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 004288c1
 ;   ... and 8 more
 ;
 ; Called Functions:

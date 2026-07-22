@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
       local_28 = *(float *)(param_1 + 0x24) - *(float *)(iVar1 + 0x24);
       local_24 = *(float *)(param_1 + 0x28) - *(float *)(iVar1 + 0x28);
       if ((SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28) <
-           (float)_DAT_0057be17) &&
+           (float)0.10000000000000001) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
                             (param_1,*(uint *)(0x01E57284 + iVar2 + 0x14cd70)), iVar1 != 0))
       break;
@@ -49,8 +47,8 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
       local_1c = local_34;
       local_18 = local_30;
     }
-    if ((((float)_DAT_0057be0f <= ABS(local_20)) || ((float)_DAT_0057be0f <= ABS(local_1c))) ||
-       ((float)_DAT_0057be0f <= ABS(local_18))) {
+    if ((((float)0.25 <= ABS(local_20)) || ((float)0.25 <= ABS(local_1c))) ||
+       ((float)0.25 <= ABS(local_18))) {
       *(uint *)(param_1 + 0x17c) = 0;
       *(uint *)(param_1 + 0x1e8) = 0;
       return;

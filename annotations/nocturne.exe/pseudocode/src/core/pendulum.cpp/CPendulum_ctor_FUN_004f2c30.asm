@@ -17,9 +17,9 @@
 ;   undefined1* PTR_core_pendulum.cpp_CPendulum_setup_FUN_004f2d40_005a1244 = 004f2d40
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EDI                            ; 004f2c32
     MOV EBX,dword ptr [ESP + 0x10]      ; 004f2c33
     PUSH EBX                            ; 004f2c37
-    CALL FUN_00409d30                   ; 004f2c38
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004f2c38
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 004f2c3d
     ADD EAX,0x150                       ; 004f2c40
     PUSH EAX                            ; 004f2c45

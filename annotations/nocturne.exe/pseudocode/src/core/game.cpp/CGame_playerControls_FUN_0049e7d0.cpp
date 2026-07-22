@@ -37,7 +37,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(int param_1)
       core_game_cpp_CGame_processJoystickControls_FUN_0049ec80(param_1,uVar2);
     }
     else {
-      _DAT_01cc4800 = "@..\\core\\game.cpp" + 1;
+      _DAT_01cc4800 = "..\\core\\game.cpp";
       _DAT_01cc4804 = 0x71d;
       FUN_004c8440("CGame::playerControls - unknown control type");
     }

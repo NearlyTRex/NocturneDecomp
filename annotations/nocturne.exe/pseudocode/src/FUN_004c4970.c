@@ -78,7 +78,7 @@ void FUN_004c4970(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar4 = FUN_004259f0(param_1,param_2);
+  iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar4 != 0) {
     *(uint *)(param_1 + 0x23ac) = 0;
     *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
@@ -143,7 +143,7 @@ void FUN_004c4970(int param_1,float param_2)
     iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660();
     local_30 = *(uint *)(iVar4 + 0x24);
     local_28 = local_30;
-    iVar4 = FUN_00428c00(param_1,param_2);
+    iVar4 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
     if (iVar4 == 0) {
       if (local_28 == 0) {
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
@@ -298,7 +298,7 @@ void FUN_004c4970(int param_1,float param_2)
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_004259a0();
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0();
-    FUN_0042a150(param_1,param_2);
+    core_charactr_cpp_FUN_0042a150(param_1,param_2);
   }
   return;
 }

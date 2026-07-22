@@ -29,10 +29,10 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
   
   bVar9 = 0;
   if (param_3 == (char *)0x0) {
-    param_3 = &DAT_0057e72c;
+    param_3 = &CHAR_00h_0057e72c;
   }
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "?..\\shape\\edittool.cpp" + 1;
+    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
     _DAT_01cc4804 = 0x8b;
     FUN_004c8440("gEdFont must be set by the application.");
   }
@@ -127,7 +127,7 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
 LAB_004711e7:
         if (pcVar2 == (char *)0x0) {
           if (*param_4 != '.') {
-            pcVar2 = &DAT_0057e74f;
+            pcVar2 = ".";
             iVar5 = -1;
             pcVar7 = local_158;
             do {

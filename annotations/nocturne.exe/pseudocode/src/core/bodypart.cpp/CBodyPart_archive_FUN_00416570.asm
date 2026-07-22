@@ -29,11 +29,11 @@
 ;   core_actor.cpp_archiveActor_FUN_0040c980
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
+;   core_actor.cpp_FUN_0040ce80
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_0040ce80
 ;
 ; *****************************************************************************
 
@@ -182,8 +182,8 @@ section .text
     PUSH 0x579009                       ; 004166e9 | = "simBox"
     LEA EAX,[EBX + 0xcb4]               ; 004166ee
     PUSH EAX                            ; 004166f4
-    CALL FUN_0040ce80                   ; 004166f5
-        ;   XREF to: 0040ce80 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce80()
+    CALL core_actor.cpp_FUN_0040ce80    ; 004166f5
+        ;   XREF to: 0040ce80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce80()
     ADD ESP,0x8                         ; 004166fa
     PUSH 0x579010                       ; 004166fd | = "carriedByActor"
     LEA EAX,[EBX + 0xf10]               ; 00416702

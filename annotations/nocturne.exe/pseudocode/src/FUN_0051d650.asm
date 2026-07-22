@@ -12,9 +12,9 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+;   core_xform.cpp_FUN_0055d4a0
+;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
-;   FUN_0055d4a0
-;   FUN_0055d4e0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     LEA ESI,[ESP + 0x74]                ; 0051d6e1
     PUSH dword ptr [ESP + 0x90]         ; 0051d6e5
     LEA EDI,[ESP + 0x8]                 ; 0051d6ec
-    CALL FUN_0055d4a0                   ; 0051d6f0
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 0051d6f0
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 0051d6f5
     LEA EAX,[ESP + 0x4]                 ; 0051d6f8
     LEA ESI,[ESP + 0x74]                ; 0051d6fc
@@ -82,8 +82,8 @@ section .text
     PUSH dword ptr [ESP + 0x98]         ; 0051d705
     LEA ESI,[ESP + 0x4c]                ; 0051d70c
     LEA EDI,[ESP + 0x2c]                ; 0051d710
-    CALL FUN_0055d4e0                   ; 0051d714
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 0051d714
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0x4c]                ; 0051d719
     ADD ESP,0x4                         ; 0051d71d
     LEA EAX,[ESP + 0x28]                ; 0051d720

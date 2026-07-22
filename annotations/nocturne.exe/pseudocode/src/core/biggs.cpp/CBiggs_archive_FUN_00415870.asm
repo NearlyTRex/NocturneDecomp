@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_00578e2c+2
+;   TerminatedCString s_speed_00578e2e
 ;   string s_modelName_00578e34
 ;   string s_motion_state_00578e3e
 ;   string s_morphing_00578e4b
@@ -17,8 +17,8 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 00415877
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 0041587c
-    PUSH 0x578e2e                       ; 0041587f | s_speed_00578e2c+2
+    PUSH 0x578e2e                       ; 0041587f | = "speed"
     LEA ESI,[EBX + 0xbc8c]              ; 00415884
     PUSH ESI                            ; 0041588a
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041588b
@@ -46,8 +46,8 @@ section .text
     ADD ESP,0x8                         ; 004158a4
     PUSH 0x578e3e                       ; 004158a7 | = "motion state"
     PUSH ESI                            ; 004158ac
-    CALL FUN_0040cb00                   ; 004158ad
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004158ad
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004158b2
     PUSH 0x578e4b                       ; 004158b5 | = "morphing"
     LEA ESI,[EBX + 0xbea0]              ; 004158ba

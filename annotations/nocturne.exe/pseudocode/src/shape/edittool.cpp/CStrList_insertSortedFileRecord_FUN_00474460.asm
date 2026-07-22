@@ -21,7 +21,7 @@
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 004747bd
 ;
 ; Referenced Globals:
-;   string s_%[^_]_%[^_]_0057ede3
+;   TerminatedCString s_anon_0057ede3
 ;   string s_%m/%d/%y_%I:%M:%S_%p_0057edef
 ;   string s_%s_%s_%d_%s_%s_0057ee04
 ;   undefined4 DAT_005b7078

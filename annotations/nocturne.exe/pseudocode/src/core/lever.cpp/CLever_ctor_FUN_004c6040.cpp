@@ -11,7 +11,7 @@ int core_lever_cpp_CLever_ctor_FUN_004c6040(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00409d30(param_1);
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
   FUN_00481620(iVar1 + 0x2c8);
   *(byte ***)(iVar1 + -4) = &PTR_core_lever_cpp_CLever_setup_FUN_004c6110_0059fc44;

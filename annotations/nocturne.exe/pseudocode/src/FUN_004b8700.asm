@@ -62,9 +62,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
+;   core_charactr.cpp_FUN_00429490
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
-;   FUN_00429490
 ;
 ; *****************************************************************************
 
@@ -347,8 +347,8 @@ section .text
     PUSH ESI                            ; 004b8b47
     LEA ESI,[ESP + 0x158]               ; 004b8b48
     LEA EDI,[ESP + 0x8]                 ; 004b8b4f
-    CALL FUN_00429490                   ; 004b8b53
-        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; undefined FUN_00429490()
+    CALL core_charactr.cpp_FUN_00429490 ; 004b8b53
+        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429490()
     MOV ECX,0xc                         ; 004b8b58
     LEA ESI,[ESP + 0x158]               ; 004b8b5d
     JMP 0x004b8846                      ; 004b8b64

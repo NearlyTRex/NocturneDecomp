@@ -17,12 +17,12 @@
 ;   core_dskybox.cpp_renderSkyDome_FUN_00463580 at 004638ac
 ;
 ; Referenced Globals:
-;   undefined4 s__0057df76+0xc
-;   undefined4 DAT_0057df86
-;   undefined4 DAT_0057df8e
-;   undefined4 DAT_0057df96
-;   undefined4 DAT_0057df9e
-;   undefined4 DAT_0057dfa6
+;   float FLOAT_0057df82 = 0.0625
+;   double DOUBLE_0057df86 = 3.14159265350000
+;   double DOUBLE_0057df8e = 2
+;   double DOUBLE_0057df96 = 5.18065378653631E-315
+;   double DOUBLE_0057df9e = 0.5
+;   double DOUBLE_0057dfa6 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b0678
 ;   undefined4 DAT_005c5034
@@ -51,9 +51,9 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 00463452
     MOV dword ptr [ESP + 0x30],EDX      ; 00463455
     FILD dword ptr [ESP + 0x30]         ; 00463459
-    FMUL float ptr [0x0057df82]         ; 0046345d | s__0057df76+0xc
-    FMUL double ptr [0x0057df86]        ; 00463463 | DAT_0057df86
-    FMUL double ptr [0x0057df8e]        ; 00463469 | DAT_0057df8e
+    FMUL float ptr [0x0057df82]         ; 0046345d | FLOAT_0057df82
+    FMUL double ptr [0x0057df86]        ; 00463463 | DOUBLE_0057df86
+    FMUL double ptr [0x0057df8e]        ; 00463469 | DOUBLE_0057df8e
     FSTP float ptr [ESP + 0x2c]         ; 0046346f
     TEST EAX,EAX                        ; 00463473
     JNZ 0x00463559                      ; 00463475
@@ -88,7 +88,7 @@ section .text
     FLD ST2                             ; 004634c8
     FMUL double ptr [ESP + 0x18]        ; 004634ca
     FXCH ST4                            ; 004634ce
-    FLD double ptr [0x0057dfa6]         ; 004634d0 | DAT_0057dfa6
+    FLD double ptr [0x0057dfa6]         ; 004634d0 | DOUBLE_0057dfa6
     FXCH                                ; 004634d6
     FMUL ST1                            ; 004634d8
     FXCH ST2                            ; 004634da
@@ -141,9 +141,9 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 00463559
         ;   Label: LAB_00463559
     FILD dword ptr [ESP + 0x30]         ; 0046355d
-    FMUL float ptr [0x0057df96]         ; 00463561 | DAT_0057df96
-    FMUL double ptr [0x0057df86]        ; 00463567 | DAT_0057df86
-    FMUL double ptr [0x0057df9e]        ; 0046356d | DAT_0057df9e
+    FMUL float ptr [0x0057df96]         ; 00463561 | DOUBLE_0057df96
+    FMUL double ptr [0x0057df86]        ; 00463567 | DOUBLE_0057df86
+    FMUL double ptr [0x0057df9e]        ; 0046356d | DOUBLE_0057df9e
     FSTP float ptr [ESP]                ; 00463573
     JMP 0x00463482                      ; 00463576
         ;   XREF to: 00463482 (UNCONDITIONAL_JUMP)  ; LAB_00463482

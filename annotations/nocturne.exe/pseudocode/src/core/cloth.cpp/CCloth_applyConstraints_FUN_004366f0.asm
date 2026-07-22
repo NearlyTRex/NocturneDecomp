@@ -75,7 +75,7 @@
 ;   core_cloth.cpp_CCloth_step_FUN_00436e80 at 00437a3e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057ae1d
+;   double DOUBLE_0057ae1d = 1.05000000000000
 ;   undefined4 DAT_01c7070c
 ;   undefined4 DAT_01c70710
 ;
@@ -438,7 +438,7 @@ section .text
     FSTP float ptr [ESP + 0xa8]         ; 00436c39
     FSTP float ptr [ESP + 0xac]         ; 00436c40
     FSTP float ptr [ESP + 0xb0]         ; 00436c47
-    FLD double ptr [0x0057ae1d]         ; 00436c4e | DAT_0057ae1d
+    FLD double ptr [0x0057ae1d]         ; 00436c4e | DOUBLE_0057ae1d
     FLD float ptr [ESI + 0x14]          ; 00436c54
     FMUL ST1                            ; 00436c57
     FLD float ptr [ESP + 0xa8]          ; 00436c59

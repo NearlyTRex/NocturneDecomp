@@ -12,6 +12,6 @@ void core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(int param_1,uint param
   if (*(int *)(param_1 + 0x2f08) != 0) {
     return;
   }
-  FUN_0040b090(param_1,param_2,param_3);
+  core_actor_cpp_FUN_0040b090(param_1,param_2,param_3);
   return;
 }

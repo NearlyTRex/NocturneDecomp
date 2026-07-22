@@ -8,19 +8,19 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de0a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00582a32
+;   byte[56] BYTE_ARRAY_00582a32
 ;   string s_quicksavedgame.noc_00582a6a
 ;   string s_Quick_Save_00582a7d
-;   undefined4 DAT_00582a88
+;   TerminatedCString s_rb_00582a88
 ;   string s_quicksavedgame.noc_00582a8b
-;   undefined4 DAT_00582a9e
+;   TerminatedCString s_save_00582a9e
 ;   string s_Restore_quick_saved_game?_00582aa3
 ;   string s_quicksavedgame.noc_00582abd
 ;   undefined4 s_uicksavedgame.noc_00582abd+1
 ;   undefined4 s_icksavedgame.noc_00582abd+2
 ;   undefined4 s_cksavedgame.noc_00582abd+3
 ;   string s_No_quicked_saved_game_to_load_00582ad0
-;   undefined4 DAT_00582aee
+;   byte[56] BYTE_ARRAY_00582aee
 ;   string s_Gamma_:_%f_00582b26
 ;   string s_Gamma_:_%f_00582b31
 ;   ... and 20 more
@@ -31,6 +31,7 @@
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
 ;   core_set.cpp_CDemonSet_setGamma_FUN_0050e400
+;   core_set.cpp_FUN_005090f0
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0
 ;   core_sound.cpp_CSound_shutdown_FUN_0052df90
 ;   crt_env.c_getenv_FUN_00566e10
@@ -40,7 +41,6 @@
 ;   FUN_00470230
 ;   FUN_004940d0
 ;   FUN_004a3b90
-;   FUN_00504d60
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -229,8 +229,8 @@ section .text
     PUSH EAX                            ; 0049faff
     MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | DAT_005be368
     PUSH ECX                            ; 0049fb06 | DAT_01e57284
-    CALL FUN_005090f0                   ; 0049fb07
-        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005090f0()
+    CALL core_set.cpp_FUN_005090f0      ; 0049fb07
+        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005090f0()
         ;   Label: LAB_0049fb07
     ADD ESP,0x10                        ; 0049fb0c
     CMP dword ptr [EBX + 0x210],0x0     ; 0049fb0f
@@ -363,7 +363,7 @@ section .text
     MOV dword ptr [EBX + 0x224],0x8000  ; 0049fc5e
     FILD dword ptr [EBX + 0x224]        ; 0049fc68
         ;   Label: LAB_0049fc68
-    FMUL double ptr [0x00582b42]        ; 0049fc6e | DAT_00582b42
+    FMUL double ptr [0x00582b42]        ; 0049fc6e | DOUBLE_00582b42
     SUB ESP,0x8                         ; 0049fc74
     FSTP double ptr [ESP]               ; 0049fc77
     PUSH 0x582b26                       ; 0049fc7a | = "Gamma : %f"
@@ -405,7 +405,7 @@ section .text
     MOV dword ptr [EBX + 0x224],0x10000 ; 0049fce3
     FILD dword ptr [EBX + 0x224]        ; 0049fced
         ;   Label: LAB_0049fced
-    FMUL double ptr [0x00582b42]        ; 0049fcf3 | DAT_00582b42
+    FMUL double ptr [0x00582b42]        ; 0049fcf3 | DOUBLE_00582b42
     SUB ESP,0x8                         ; 0049fcf9
     FSTP double ptr [ESP]               ; 0049fcfc
     PUSH 0x582b31                       ; 0049fcff | = "Gamma : %f"
@@ -574,7 +574,7 @@ section .text
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
     JMP 0x0049f9c8                      ; 0049febb
         ;   XREF to: 0049f9c8 (UNCONDITIONAL_JUMP)  ; LAB_0049f9c8
-    PUSH 0x582a32                       ; 0049fec0 | DAT_00582a32
+    PUSH 0x582a32                       ; 0049fec0 | BYTE_ARRAY_00582a32
         ;   Label: LAB_0049fec0
     CALL support_newmsg.cpp_decryptMessage_FUN_004ee3f0 ; 0049fec5
         ;   XREF to: 004ee3f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_decryptMessage_FUN_004ee3f0()
@@ -691,9 +691,9 @@ section .text
     TEST EAX,EAX                        ; 0049ffe4
     JZ 0x0049fbc4                       ; 0049ffe6
         ;   XREF to: 0049fbc4 (CONDITIONAL_JUMP)  ; LAB_0049fbc4
-    PUSH 0x582a88                       ; 0049ffec | DAT_00582a88
+    PUSH 0x582a88                       ; 0049ffec | = "rb"
     PUSH 0x582a8b                       ; 0049fff1 | = "quicksavedgame.noc"
-    PUSH 0x582a9e                       ; 0049fff6 | DAT_00582a9e
+    PUSH 0x582a9e                       ; 0049fff6 | = "save"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0049fffb
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004a0000
@@ -751,7 +751,7 @@ section .text
     ADD ESP,0xc                         ; 004a0082
     JMP 0x0049fbc4                      ; 004a0085
         ;   XREF to: 0049fbc4 (UNCONDITIONAL_JUMP)  ; LAB_0049fbc4
-    PUSH 0x582aee                       ; 004a008a | DAT_00582aee
+    PUSH 0x582aee                       ; 004a008a | BYTE_ARRAY_00582aee
         ;   Label: LAB_004a008a
     CALL support_newmsg.cpp_decryptMessage_FUN_004ee3f0 ; 004a008f
         ;   XREF to: 004ee3f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_decryptMessage_FUN_004ee3f0()
@@ -785,8 +785,8 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004a00d5 | DAT_005be368
     PUSH ECX                            ; 004a00db | DAT_01e57284
     MOV dword ptr [EBX + 0x278],0x1     ; 004a00dc
-    CALL FUN_005090f0                   ; 004a00e6
-        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005090f0()
+    CALL core_set.cpp_FUN_005090f0      ; 004a00e6
+        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005090f0()
     MOV EAX,[0x005be220]                ; 004a00eb | DAT_005be220
     MOV dword ptr [EBX + 0x1dc],0x1     ; 004a00f0
     MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | DAT_01e56db8
@@ -884,7 +884,7 @@ section .text
         ;   Label: LAB_004a01e9
     MOV dword ptr [ESP + 0x204],EAX     ; 004a01ee
     FILD dword ptr [ESP + 0x204]        ; 004a01f5
-    FMUL double ptr [0x00582b4a]        ; 004a01fc | DAT_00582b4a
+    FMUL double ptr [0x00582b4a]        ; 004a01fc | DOUBLE_00582b4a
     FADD float ptr [ESP + 0x208]        ; 004a0202
     FST float ptr [ESP]                 ; 004a0209
     FLDZ                                ; 004a020c

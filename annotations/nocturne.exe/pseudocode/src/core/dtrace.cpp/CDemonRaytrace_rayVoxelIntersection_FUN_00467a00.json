@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 1262,
+    "complexity_score": 1246,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 237,
-    "suspect_count": 98,
+    "pseudocode_lines": 236,
+    "suspect_count": 97,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -137,18 +137,11 @@
       "sub84_truncation",
       "suspect_float",
       "unknown_field",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 795
+    "total_lines": 794
   },
   "cross_references": [
-    {
-      "addr": "0050f910",
-      "from_addr": "0050f987",
-      "name": "FUN_0050f910",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0041ad10",
       "from_addr": "0041adaf",
@@ -177,6 +170,12 @@
       "addr": "0050fb00",
       "from_addr": "0050fb50",
       "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f910",
+      "from_addr": "0050f987",
+      "name": "core_setcolid.cpp_FUN_0050f910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -224,9 +223,9 @@
   "globals": [
     {
       "addr": "0057e1da",
-      "name": "DAT_0057e1da",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0057e1da",
+      "type": "float",
+      "value": "2.684355E+8"
     }
   ],
   "param_estimates": {
@@ -262,7 +261,7 @@
       {
         "call_addr": "0050f987",
         "call_type": "direct",
-        "caller": "FUN_0050f910",
+        "caller": "core_setcolid.cpp_FUN_0050f910",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -692,105 +691,105 @@
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 109,
+          "line": 107,
           "message": "Uninitialized variable: local_50",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 32,
-          "line": 109,
+          "line": 107,
           "message": "Uninitialized variable: local_70",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 10,
-          "line": 110,
+          "line": 108,
           "message": "Uninitialized variable: local_54",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 10,
-          "line": 113,
+          "line": 111,
           "message": "Uninitialized variable: local_4c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 34,
-          "line": 104,
+          "line": 102,
           "message": "Uninitialized variable: local_b0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 27,
-          "line": 176,
+          "line": 174,
           "message": "Uninitialized variable: iStack_6c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 191,
+          "line": 189,
           "message": "Uninitialized variable: local_64",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 155,
+          "line": 153,
           "message": "Uninitialized variable: local_60",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 36,
-          "line": 159,
+          "line": 157,
           "message": "Uninitialized variable: local_60",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 144,
+          "line": 142,
           "message": "Uninitialized variable: local_5c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 36,
-          "line": 149,
+          "line": 147,
           "message": "Uninitialized variable: local_5c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 192,
+          "line": 190,
           "message": "Uninitialized variable: local_5c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 165,
+          "line": 163,
           "message": "Uninitialized variable: local_58",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 36,
-          "line": 169,
+          "line": 167,
           "message": "Uninitialized variable: local_58",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 193,
+          "line": 191,
           "message": "Uninitialized variable: local_58",
           "severity": "error"
         }
@@ -801,16 +800,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)",
@@ -818,7 +809,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)",
@@ -826,7 +817,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)",
@@ -834,7 +825,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)",
@@ -842,7 +833,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5)",
@@ -850,7 +841,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a8 = (*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -858,7 +849,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a8 = (*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -866,7 +857,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a8 = (*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -874,7 +865,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a4 = (param_2[1] - *(float *)(param_1 + 0x14)) / *(float *)(param_1 + 0x2c);",
@@ -882,7 +873,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a4 = (param_2[1] - *(float *)(param_1 + 0x14)) / *(float *)(param_1 + 0x2c);",
@@ -890,7 +881,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a4 = (param_2[1] - *(float *)(param_1 + 0x14)) / *(float *)(param_1 + 0x2c);",
@@ -898,7 +889,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "local_ac = (param_2[2] - *(float *)(param_1 + 0x18)) / *(float *)(param_1 + 0x30);",
@@ -906,7 +897,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "local_ac = (param_2[2] - *(float *)(param_1 + 0x18)) / *(float *)(param_1 + 0x30);",
@@ -914,7 +905,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "local_ac = (param_2[2] - *(float *)(param_1 + 0x18)) / *(float *)(param_1 + 0x30);",
@@ -922,7 +913,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 55,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_c0._4_4_ = 0x467a5e;",
@@ -930,7 +921,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 59,
+      "line": 57,
       "match": "6.47241e-39",
       "severity": "mild",
       "text": "local_b8._4_4_ = 6.47241e-39;",
@@ -938,7 +929,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 57,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_b8._4_4_ = 6.47241e-39;",
@@ -946,7 +937,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 61,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c0._0_4_ = 0x467a87;",
@@ -954,7 +945,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 65,
+      "line": 63,
       "match": "6.472467e-39",
       "severity": "mild",
       "text": "local_b8._0_4_ = 6.472467e-39;",
@@ -962,7 +953,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 65,
+      "line": 63,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_b8._0_4_ = 6.472467e-39;",
@@ -970,7 +961,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 67,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_c0 = (byte  [8])(double)local_b8._4_4_;",
@@ -978,7 +969,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar5 = (*param_3 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -986,7 +977,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (*param_3 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -994,7 +985,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (*param_3 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28);",
@@ -1002,7 +993,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar18 = param_3[1];",
@@ -1010,7 +1001,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x14);",
@@ -1018,7 +1009,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar17 = *(float *)(param_1 + 0x2c);",
@@ -1026,7 +1017,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar2 = param_3[2];",
@@ -1034,7 +1025,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_1 + 0x18);",
@@ -1042,7 +1033,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = *(float *)(param_1 + 0x30);",
@@ -1050,7 +1041,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 76,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_c0._4_4_ = 0x467ae3;",
@@ -1058,7 +1049,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 83,
+      "line": 81,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c0._0_4_ = (uint)((ulonglong)dVar16 >> 0x20);",
@@ -1066,7 +1057,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 82,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_c0._4_4_ = (fVar18 - fVar1) / fVar17;",
@@ -1074,7 +1065,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 87,
+      "line": 85,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "dVar16 = (double)floor(SUB84(__BITCAST_UINT64(dVar16),0));",
@@ -1082,7 +1073,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 88,
+      "line": 86,
       "match": "6.472641e-39",
       "severity": "mild",
       "text": "auStack_c0._0_4_ = 6.472641e-39;",
@@ -1090,7 +1081,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 88,
+      "line": 86,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c0._0_4_ = 6.472641e-39;",
@@ -1098,7 +1089,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 90,
       "match": "._0_4_",
       "severity": "mild",
       "text": "dVar16 = (double)floor((double)(float)auStack_c0._0_4_);",
@@ -1106,7 +1097,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 98,
+      "line": 96,
       "match": "6.472755e-39",
       "severity": "mild",
       "text": "fVar18 = 6.472755e-39;",
@@ -1114,7 +1105,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 101,
       "match": "._4_4_",
       "severity": "mild",
       "text": "if ((local_54 < 0) && ((int)local_7c._4_4_ < 0)) {",
@@ -1122,7 +1113,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((local_50 < *(int *)(param_1 + 0x40)) || (local_70 < *(int *)(param_1 + 0x40))) &&",
@@ -1130,7 +1121,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((local_50 < *(int *)(param_1 + 0x40)) || (local_70 < *(int *)(param_1 + 0x40))) &&",
@@ -1138,7 +1129,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 108,
       "match": "._4_4_",
       "severity": "mild",
       "text": "((local_54 < *(int *)(param_1 + 0x44) || ((int)local_7c._4_4_ < *(int *)(param_1 + 0x44)))))",
@@ -1146,7 +1137,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "((local_54 < *(int *)(param_1 + 0x44) || ((int)local_7c._4_4_ < *(int *)(param_1 + 0x44)))))",
@@ -1154,7 +1145,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "((local_54 < *(int *)(param_1 + 0x44) || ((int)local_7c._4_4_ < *(int *)(param_1 + 0x44)))))",
@@ -1162,7 +1153,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "&& ((local_4c < *(int *)(param_1 + 0x48) || (iStack_74 < *(int *)(param_1 + 0x48))))) {",
@@ -1170,7 +1161,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "&& ((local_4c < *(int *)(param_1 + 0x48) || (iStack_74 < *(int *)(param_1 + 0x48))))) {",
@@ -1178,7 +1169,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_3",
       "severity": "mild",
       "text": "local_a8 = *param_3 - *param_2;",
@@ -1186,7 +1177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a8 = *param_3 - *param_2;",
@@ -1194,7 +1185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 111,
       "match": "param_3",
       "severity": "mild",
       "text": "local_a4 = param_3[1] - param_2[1];",
@@ -1202,7 +1193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 111,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a4 = param_3[1] - param_2[1];",
@@ -1210,7 +1201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 113,
       "match": "param_3",
       "severity": "mild",
       "text": "local_a0[0] = param_3[2] - param_2[2];",
@@ -1218,7 +1209,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a0[0] = param_3[2] - param_2[2];",
@@ -1226,7 +1217,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 116,
+      "line": 114,
       "match": "._4_4_",
       "severity": "mild",
       "text": "if ((local_50 != local_70) || ((local_54 != local_7c._4_4_ || (local_4c != iStack_74)))) {",
@@ -1234,7 +1225,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 117,
+      "line": 115,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_b8._0_4_ = SQRT(local_a0[0] * local_a0[0] + local_a8 * local_a8 + local_a4 * local_a4)",
@@ -1242,7 +1233,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 121,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fVar15 = (float10)(float)auStack_c0._4_4_;",
@@ -1250,7 +1241,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 126,
+      "line": 124,
       "match": "6.47312e-39",
       "severity": "mild",
       "text": "fVar17 = 6.47312e-39;",
@@ -1258,7 +1249,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 128,
+      "line": 126,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(ABS((float10)local_ac - (float10)(float)auStack_c0._0_4_) *",
@@ -1266,7 +1257,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 135,
       "match": "._0_4_",
       "severity": "mild",
       "text": "iVar6 = local_5c - local_7c._0_4_;",
@@ -1274,7 +1265,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 138,
+      "line": 136,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_8c._0_4_ = fVar17 - (float)local_5c;",
@@ -1282,7 +1273,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 142,
+      "line": 140,
       "match": "._0_4_",
       "severity": "mild",
       "text": "iVar6 = local_7c._0_4_ - local_5c;",
@@ -1290,7 +1281,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 143,
+      "line": 141,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_8c._0_4_ = (float)(local_5c + 1) - fVar17;",
@@ -1298,7 +1289,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 144,
+      "line": 142,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_44 = 1.4013e-45;",
@@ -1306,7 +1297,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 146,
       "match": "._0_4_",
       "severity": "mild",
       "text": "iVar7 = local_60 - local_84._0_4_;",
@@ -1314,7 +1305,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 147,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_8c._4_4_ = fVar18 - (float)local_60;",
@@ -1322,7 +1313,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 150,
       "match": "._0_4_",
       "severity": "mild",
       "text": "iVar7 = local_84._0_4_ - local_60;",
@@ -1330,7 +1321,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 153,
+      "line": 151,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_8c._4_4_ = (float)(local_60 + 1) - fVar18;",
@@ -1338,7 +1329,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 156,
       "match": "._4_4_",
       "severity": "mild",
       "text": "iVar8 = local_58 - local_84._4_4_;",
@@ -1346,7 +1337,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 159,
+      "line": 157,
       "match": "6.473141e-39",
       "severity": "mild",
       "text": "local_64 = 6.473141e-39 - (float)local_58;",
@@ -1354,7 +1345,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 160,
       "match": "._4_4_",
       "severity": "mild",
       "text": "iVar8 = local_84._4_4_ - local_58;",
@@ -1362,7 +1353,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 163,
+      "line": 161,
       "match": "6.473141e-39",
       "severity": "mild",
       "text": "local_64 = (float)(local_58 + 1) - 6.473141e-39;",
@@ -1370,7 +1361,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 171,
+      "line": 169,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar9 = (float10)(float)local_8c._0_4_;",
@@ -1378,7 +1369,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 172,
+      "line": 170,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fVar15 = (float10)(float)local_8c._4_4_;",
@@ -1386,7 +1377,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 175,
+      "line": 173,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(fVar10 * (float10)(float)local_8c._0_4_ -",
@@ -1394,7 +1385,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 176,
+      "line": 174,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fVar12 * (float10)(float)local_8c._4_4_);",
@@ -1402,7 +1393,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 190,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,local_68,iStack_6c,local_64);",
@@ -1410,7 +1401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 195,
+      "line": 193,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar6,param_2,auStack_c0,(int)&local_b8 + 4,local_a0);",
@@ -1418,7 +1409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 195,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_4 != (float *)0x0) && (param_4 != (float *)((int)&local_b8 + 4))) {",
@@ -1426,7 +1417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 195,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_4 != (float *)0x0) && (param_4 != (float *)((int)&local_b8 + 4))) {",
@@ -1434,7 +1425,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 198,
+      "line": 196,
       "match": "._4_4_",
       "severity": "mild",
       "text": "*param_4 = local_b8._4_4_;",
@@ -1442,7 +1433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 196,
       "match": "param_4",
       "severity": "mild",
       "text": "*param_4 = local_b8._4_4_;",
@@ -1450,7 +1441,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 197,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[1] = local_b0;",
@@ -1458,7 +1449,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 198,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[2] = local_ac;",
@@ -1466,7 +1457,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 203,
+      "line": 201,
       "match": "param_5",
       "severity": "mild",
       "text": "if (param_5 != (float *)0x0) {",
@@ -1474,7 +1465,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 202,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = local_a0[0];",
@@ -1482,7 +1473,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 214,
+      "line": 212,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar1 = (float)((int)local_64 + local_7c._0_4_);",
@@ -1490,7 +1481,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 216,
+      "line": 214,
       "match": "._4_4_",
       "severity": "mild",
       "text": "iVar7 = local_58 - local_7c._4_4_;",
@@ -1498,7 +1489,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 227,
+      "line": 225,
       "match": "._4_4_",
       "severity": "mild",
       "text": "iStack_6c = iStack_6c + local_84._4_4_;",
@@ -1506,7 +1497,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 228,
+      "line": 226,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_60 = local_60 - local_7c._4_4_;",
@@ -1514,7 +1505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 234,
+      "line": 232,
       "match": "param_5",
       "severity": "mild",
       "text": "if (param_5 != (float *)0x0) {",
@@ -1522,7 +1513,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 235,
+      "line": 233,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "*param_5 = 1.4013e-45;",
@@ -1530,7 +1521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 233,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = 1.4013e-45;",
@@ -1538,7 +1529,7 @@
     },
     {
       "description": "Pointer value `&local_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 195,
+      "line": 193,
       "match": "(int)&local_b8",
       "severity": "moderate",
       "text": "(iVar6,param_2,auStack_c0,(int)&local_b8 + 4,local_a0);",
@@ -1546,7 +1537,7 @@
     },
     {
       "description": "Pointer value `&local_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 197,
+      "line": 195,
       "match": "(int)&local_b8",
       "severity": "moderate",
       "text": "if ((param_4 != (float *)0x0) && (param_4 != (float *)((int)&local_b8 + 4))) {",
@@ -1554,7 +1545,7 @@
     },
     {
       "description": "Raw hex address 0x467b3f assigned to bare local `uVar19`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar19` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 93,
+      "line": 91,
       "match": "0x467b3f",
       "severity": "moderate",
       "text": "uVar19 = 0x467b3f;",
@@ -1562,7 +1553,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 195,
+      "line": 193,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(iVar6,param_2,auStack_c0,(int)&local_b8 + 4,local_a0);",
@@ -1570,7 +1561,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 197,
+      "line": 195,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if ((param_4 != (float *)0x0) && (param_4 != (float *)((int)&local_b8 + 4))) {",
@@ -1589,7 +1580,7 @@
     },
     {
       "description": "Uninitialized variable: local_50",
-      "line": 109,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((-1 < local_50) || (-1 < local_70)) {",
@@ -1597,7 +1588,7 @@
     },
     {
       "description": "Uninitialized variable: local_70",
-      "line": 109,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((-1 < local_50) || (-1 < local_70)) {",
@@ -1605,7 +1596,7 @@
     },
     {
       "description": "Uninitialized variable: local_54",
-      "line": 110,
+      "line": 108,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((local_54 < 0) && ((int)local_7c._4_4_ < 0)) {",
@@ -1613,7 +1604,7 @@
     },
     {
       "description": "Uninitialized variable: local_4c",
-      "line": 113,
+      "line": 111,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((local_4c < 0) && (iStack_74 < 0)) {",
@@ -1621,7 +1612,7 @@
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 104,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "dVar16 = (double)floor((double)local_b0,uVar19);",
@@ -1629,7 +1620,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_6c",
-      "line": 176,
+      "line": 174,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fVar12 = (float10)iStack_6c;",
@@ -1637,7 +1628,7 @@
     },
     {
       "description": "Uninitialized variable: local_64",
-      "line": 191,
+      "line": 189,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fVar1 = local_64;",
@@ -1645,7 +1636,7 @@
     },
     {
       "description": "Uninitialized variable: local_60",
-      "line": 155,
+      "line": 153,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar7 = local_60 - local_84._0_4_;",
@@ -1653,7 +1644,7 @@
     },
     {
       "description": "Uninitialized variable: local_60",
-      "line": 159,
+      "line": 157,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar7 = local_84._0_4_ - local_60;",
@@ -1661,7 +1652,7 @@
     },
     {
       "description": "Uninitialized variable: local_5c",
-      "line": 144,
+      "line": 142,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar6 = local_5c - local_7c._0_4_;",
@@ -1669,7 +1660,7 @@
     },
     {
       "description": "Uninitialized variable: local_5c",
-      "line": 149,
+      "line": 147,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar6 = local_7c._0_4_ - local_5c;",
@@ -1677,7 +1668,7 @@
     },
     {
       "description": "Uninitialized variable: local_5c",
-      "line": 192,
+      "line": 190,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar6 = local_5c;",
@@ -1685,7 +1676,7 @@
     },
     {
       "description": "Uninitialized variable: local_58",
-      "line": 165,
+      "line": 163,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar8 = local_58 - local_84._4_4_;",
@@ -1693,7 +1684,7 @@
     },
     {
       "description": "Uninitialized variable: local_58",
-      "line": 169,
+      "line": 167,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar8 = local_84._4_4_ - local_58;",
@@ -1701,7 +1692,7 @@
     },
     {
       "description": "Uninitialized variable: local_58",
-      "line": 193,
+      "line": 191,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar7 = local_58;",

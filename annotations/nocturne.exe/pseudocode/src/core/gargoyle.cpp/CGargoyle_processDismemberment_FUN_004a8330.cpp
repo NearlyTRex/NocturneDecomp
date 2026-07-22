@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004a8330(int param_1,int *param_2)
 
 {
@@ -89,16 +87,16 @@ switchD_004a8366_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd4c) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_00584a58);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
     }
   }
   iVar2 = *param_2;
   if (iVar2 == *(int *)(param_1 + 0xbd4c)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00584a68);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar2 != *(int *)(param_1 + 0xbd44)) && (iVar2 != *(int *)(param_1 + 0xbd48))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00584a60);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

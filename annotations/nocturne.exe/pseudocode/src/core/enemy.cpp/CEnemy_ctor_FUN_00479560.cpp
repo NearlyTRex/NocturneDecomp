@@ -36,7 +36,7 @@ int __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00479560(uint param_1)
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0xffffe001,0x1fff);
   *(int *)(iVar2 + 0x108) = iVar4 + 0x10000;
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0xffffe001,0x1fff);
-  pcVar5 = &DAT_0057f2be;
+  pcVar5 = "ene";
   *(int *)(iVar2 + 0x10c) = iVar4 + 0x10000;
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0xffffe001,0x1fff);
   pcVar6 = (char *)(iVar2 + 0x11c);

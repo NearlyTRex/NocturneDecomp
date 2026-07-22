@@ -8,7 +8,7 @@
 ;   FUN_0046ec80 at 0046ecb8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058151c
+;   double DOUBLE_0058151c = 0.000100000000000000
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_0048c310
@@ -24,7 +24,7 @@ section .text
     PUSH EDI                            ; 0048c2a2
     PUSH EBP                            ; 0048c2a3
     FLD float ptr [ESP + 0x24]          ; 0048c2a4
-    FCOMP double ptr [0x0058151c]       ; 0048c2a8 | DAT_0058151c
+    FCOMP double ptr [0x0058151c]       ; 0048c2a8 | DOUBLE_0058151c
     FNSTSW AX                           ; 0048c2ae
     SAHF                                ; 0048c2b0
     JNC 0x0048c2bb                      ; 0048c2b1

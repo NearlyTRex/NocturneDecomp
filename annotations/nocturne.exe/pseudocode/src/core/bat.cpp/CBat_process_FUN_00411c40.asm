@@ -17,11 +17,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578807
-;   undefined4 DAT_0057880f
-;   undefined4 DAT_00578817
-;   undefined4 DAT_0057881f
-;   undefined4 DAT_00578827
+;   double DOUBLE_00578807 = 4
+;   double DOUBLE_0057880f = 35
+;   double DOUBLE_00578817 = 10
+;   double DOUBLE_0057881f = 60
+;   double DOUBLE_00578827 = 0.700000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -65,23 +65,23 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 00411c91
     FSUB float ptr [ESP + 0x14]         ; 00411c94
     FST float ptr [ESP + 0x8]           ; 00411c98
-    FMUL double ptr [0x00578807]        ; 00411c9c | DAT_00578807
+    FMUL double ptr [0x00578807]        ; 00411c9c | DOUBLE_00578807
     FDIV float ptr [EBP + 0x14]         ; 00411ca2
     FLD float ptr [ESI + 0x8]           ; 00411ca5
     FSUB float ptr [ESP + 0x18]         ; 00411ca8
     FXCH                                ; 00411cac
-    FADD double ptr [0x0057880f]        ; 00411cae | DAT_0057880f
+    FADD double ptr [0x0057880f]        ; 00411cae | DOUBLE_0057880f
     FXCH                                ; 00411cb4
     FSTP float ptr [ESP + 0xc]          ; 00411cb6
     FST float ptr [ESP]                 ; 00411cba
-    FCOMP double ptr [0x00578817]       ; 00411cbd | DAT_00578817
+    FCOMP double ptr [0x00578817]       ; 00411cbd | DOUBLE_00578817
     FNSTSW AX                           ; 00411cc3
     SAHF                                ; 00411cc5
     JC 0x00411d7a                       ; 00411cc6
         ;   XREF to: 00411d7a (CONDITIONAL_JUMP)  ; LAB_00411d7a
     FLD float ptr [ESP]                 ; 00411ccc
         ;   Label: LAB_00411ccc
-    FCOMP double ptr [0x0057881f]       ; 00411ccf | DAT_0057881f
+    FCOMP double ptr [0x0057881f]       ; 00411ccf | DOUBLE_0057881f
     FNSTSW AX                           ; 00411cd5
     SAHF                                ; 00411cd7
     JBE 0x00411ce1                      ; 00411cd8
@@ -90,7 +90,7 @@ section .text
     FLD float ptr [ESP]                 ; 00411ce1
         ;   Label: LAB_00411ce1
     FSUB float ptr [EBX + 0x308]        ; 00411ce4
-    FMUL double ptr [0x00578827]        ; 00411cea | DAT_00578827
+    FMUL double ptr [0x00578827]        ; 00411cea | DOUBLE_00578827
     FLD float ptr [EBX + 0x308]         ; 00411cf0
     FXCH                                ; 00411cf6
     FADD ST0,ST1                        ; 00411cf8

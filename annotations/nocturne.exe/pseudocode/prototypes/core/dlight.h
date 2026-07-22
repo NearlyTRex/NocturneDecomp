@@ -7,9 +7,17 @@
 // Address: 0044e110
 void CDemonLight::ctor(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
+// Original: core_dlight.cpp_FUN_0044e1c0
+// Address: 0044e1c0
+void FUN_0044e1c0(undefined4 param_1);
+
 // Original: core_dlight.cpp_CDemonLight_init_FUN_0044e1e0
 // Address: 0044e1e0
 void __cdecl CDemonLight::init(int param_1);
+
+// Original: core_dlight.cpp_FUN_0044e2c0
+// Address: 0044e2c0
+void FUN_0044e2c0(int param_1);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_0044e340
 // Address: 0044e340
@@ -55,13 +63,29 @@ void CDemonLight::restoreDirtyRegions(int param_1);
 // Address: 0044ec60
 int __cdecl CDemonLight::projectLightAndMarkVisibility(int param_1,int *param_2,byte param_3,byte param_4);
 
+// Original: core_dlight.cpp_FUN_0044ed50
+// Address: 0044ed50
+void FUN_0044ed50(int param_1,int param_2,int param_3);
+
+// Original: core_dlight.cpp_FUN_0044ed80
+// Address: 0044ed80
+void FUN_0044ed80(int param_1,int param_2,int param_3,int param_4);
+
 // Original: core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0
 // Address: 0044efb0
 void __cdecl CDemonLight::clearCircularShadowMapEdges(int param_1);
 
+// Original: core_dlight.cpp_FUN_0044f0b0
+// Address: 0044f0b0
+void FUN_0044f0b0(int param_1);
+
 // Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 // Address: 0044f430
 void CDemonLight::renderLightBloomQuad(int param_1);
+
+// Original: core_dlight.cpp_FUN_0044f9b0
+// Address: 0044f9b0
+void FUN_0044f9b0(int param_1);
 
 // Original: core_dlight.cpp_CDemonLight_allocateFilter_FUN_00450170
 // Address: 00450170

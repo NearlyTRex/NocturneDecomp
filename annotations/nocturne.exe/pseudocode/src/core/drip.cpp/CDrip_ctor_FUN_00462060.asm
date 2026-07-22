@@ -6,16 +6,16 @@
 ;
 ; Referenced Globals:
 ;   string s_stalag.kfm_0057ddde
-;   undefined1 DAT_0057dde9
-;   undefined1 DAT_0057ddea
-;   undefined1 DAT_0057ddeb
-;   string s_k-x.wav_0057ddec
+;   TerminatedCString s_rock_x_wav_0057dde9
+;   undefined4 s_rock_x_wav_0057dde9+1
+;   undefined4 s_rock_x_wav_0057dde9+2
+;   undefined4 s_rock_x_wav_0057dde9+3
 ;   undefined1* PTR_core_drip.cpp_CDrip_setup_FUN_00462140_0059c5e4 = 00462140
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDI                            ; 00462062
     MOV EBX,dword ptr [ESP + 0x10]      ; 00462063
     PUSH EBX                            ; 00462067
-    CALL FUN_00409d30                   ; 00462068
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 00462068
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0046206d
     ADD EAX,0x150                       ; 00462070
     PUSH EAX                            ; 00462075
@@ -53,20 +53,20 @@ section .text
     MOV dword ptr [EBX + 0x2d8],0x40a00000 ; 004620cb
     MOV dword ptr [EBX + 0x2dc],0x41200000 ; 004620d5
     MOV dword ptr [EBX + 0x2d4],0x0     ; 004620df
-    MOV ESI,0x57dde9                    ; 004620e9 | DAT_0057dde9
+    MOV ESI,0x57dde9                    ; 004620e9 | = "rock-x.wav"
     MOV dword ptr [EBX + 0x2e0],0x0     ; 004620ee
     ADD ESP,0x8                         ; 004620f8
     MOV dword ptr [EBX + 0x308],0x41200000 ; 004620fb
     LEA EDI,[EBX + 0x30c]               ; 00462105
     MOV dword ptr [EBX + 0x330],0x0     ; 0046210b
     PUSH EDI                            ; 00462115
-    MOV AL,byte ptr [ESI]               ; 00462116 | DAT_0057dde9 | DAT_0057ddeb
+    MOV AL,byte ptr [ESI]               ; 00462116 | = "rock-x.wav" | s_rock_x_wav_0057dde9+2
         ;   Label: LAB_00462116
     MOV byte ptr [EDI],AL               ; 00462118
     CMP AL,0x0                          ; 0046211a
     JZ 0x0046212e                       ; 0046211c
         ;   XREF to: 0046212e (CONDITIONAL_JUMP)  ; LAB_0046212e
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046211e | DAT_0057ddea | = "k-x.wav"
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046211e | s_rock_x_wav_0057dde9+1 | s_rock_x_wav_0057dde9+3
     ADD ESI,0x2                         ; 00462121
     MOV byte ptr [EDI + 0x1],AL         ; 00462124
     ADD EDI,0x2                         ; 00462127

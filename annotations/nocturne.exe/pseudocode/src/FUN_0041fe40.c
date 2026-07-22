@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0041fe40(int param_1,float param_2)
 
 {
@@ -66,7 +64,7 @@ void FUN_0041fe40(int param_1,float param_2)
   float local_18;
   float local_14;
   
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 != 0) {
     if (0.0 <= *(float *)(param_1 + 0xbd48)) {
       *(float *)(param_1 + 0xbd48) = *(float *)(param_1 + 0xbd48) - param_2;
@@ -111,10 +109,10 @@ void FUN_0041fe40(int param_1,float param_2)
             *(uint *)(param_1 + 0xbd50) = uVar5;
           }
         }
-        fVar2 = (float)_DAT_00579b6d;
+        fVar2 = (float)1.57079632675;
         iVar3 = param_1 + 0x150;
-        *(float *)(param_1 + 0x242c) = *(float *)(param_1 + 0xbc8c) * (float)_DAT_00579b55 * param_2
-        ;
+        *(float *)(param_1 + 0x242c) =
+             *(float *)(param_1 + 0xbc8c) * (float)3 * param_2;
         *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0xbc8c) * fVar2 * param_2;
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
         if (*(int *)(param_1 + 0xbca4) == 0) {
@@ -172,12 +170,12 @@ void FUN_0041fe40(int param_1,float param_2)
                                       (iVar3);
           local_4c = (double)local_20;
           local_14 = local_20;
-          if (local_20 <= (float)_DAT_00579b55) {
+          if (local_20 <= (float)3) {
             local_18 = 0x40200000;
-            if ((local_4c < 1.0) || (_DAT_00579b3d < local_4c)) {
+            if ((local_4c < 1.0) || (2 < local_4c)) {
               local_44 = (double)local_20;
-              if (((float)_DAT_00579b55 <= local_20) &&
-                 ((local_44 <= _DAT_00579b5d &&
+              if (((float)3 <= local_20) &&
+                 ((local_44 <= 4 &&
                   (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd28) * 4) != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(local_140);
                 local_13c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -229,11 +227,11 @@ void FUN_0041fe40(int param_1,float param_2)
                                       (iVar3);
           local_54 = (double)local_1c;
           local_14 = local_1c;
-          if (local_1c <= (float)_DAT_00579b35) {
+          if (local_1c <= (float)8) {
             local_18 = 0x40200000;
-            if (((1.0 <= local_54) && (local_54 <= _DAT_00579b3d)) ||
-               ((local_2c = (double)local_1c, (float)_DAT_00579b45 <= local_1c &&
-                (local_2c <= _DAT_00579b4d)))) {
+            if (((1.0 <= local_54) && (local_54 <= 2)) ||
+               ((local_2c = (double)local_1c, (float)5 <= local_1c &&
+                (local_2c <= 6)))) {
               if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd30) * 4) != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(local_17c);
                 local_178 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -251,9 +249,9 @@ void FUN_0041fe40(int param_1,float param_2)
             }
             else {
               local_5c = (double)local_1c;
-              if (((((float)_DAT_00579b55 <= local_1c) && (local_5c <= _DAT_00579b5d)) ||
-                  ((local_34 = (double)local_1c, (float)_DAT_00579b65 <= local_1c &&
-                   (local_34 <= _DAT_00579b35)))) &&
+              if (((((float)3 <= local_1c) && (local_5c <= 4)) ||
+                  ((local_34 = (double)local_1c, (float)7 <= local_1c &&
+                   (local_34 <= 8)))) &&
                  (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd28) * 4) != 0)) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(local_1b8);
                 local_1b4 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -285,8 +283,9 @@ void FUN_0041fe40(int param_1,float param_2)
       *(uint *)(param_1 + 0xbc90) = 1;
     }
     if ((*(int *)(param_1 + 0xbca4) != 0) && (0.0 <= local_18)) {
-      fVar2 = (float)_DAT_00579b75;
-      *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0xbc8c) * (float)_DAT_00579b6d * param_2;
+      fVar2 = (float)2.5;
+      *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0xbc8c) * (float)1.57079632675 * param_2
+      ;
       *(float *)(param_1 + 0x242c) = param_2 * fVar2 * *(float *)(param_1 + 0xbc8c);
       local_8c = 0;
       local_84 = local_18;
@@ -317,7 +316,8 @@ void FUN_0041fe40(int param_1,float param_2)
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
     iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(param_1);
     if (iVar3 != 0) {
-      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_00579b7d;
+      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32
+      ;
       local_bc = *(float *)(param_1 + 0x2420) * param_2;
       local_b8 = *(float *)(param_1 + 0x2424) * param_2;
       local_b4 = param_2 * *(float *)(param_1 + 0x2428);
@@ -333,7 +333,7 @@ void FUN_0041fe40(int param_1,float param_2)
       core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_ec);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);
-    FUN_0042a150(param_1,param_2);
+    core_charactr_cpp_FUN_0042a150(param_1,param_2);
     if (*(int *)(param_1 + 0xbc90) == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
                 (param_1,*(uint *)(param_1 + 0xbd24),DAT_00764b40,0x3e4ccccd);

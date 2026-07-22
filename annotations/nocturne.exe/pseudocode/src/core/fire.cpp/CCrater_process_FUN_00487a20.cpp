@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(int *param_1)
 
 {
@@ -24,8 +22,8 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(int *param_1)
       param_1[2] = 0;
     }
     param_1[6] = (int)(*(float *)(0x01C775EC + 0x264) + (float)param_1[6]);
-    if ((float)_DAT_005812ac < (float)param_1[6]) {
-      param_1[6] = (int)((float)param_1[6] + _DAT_005812b4);
+    if ((float)0.20000000000000001 < (float)param_1[6]) {
+      param_1[6] = (int)((float)param_1[6] + -0.2f);
       local_18 = 0;
       local_14 = 0x3f800000;
       piVar1 = param_1 + 7;

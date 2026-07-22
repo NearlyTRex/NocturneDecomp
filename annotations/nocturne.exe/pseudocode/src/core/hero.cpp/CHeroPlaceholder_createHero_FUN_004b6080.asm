@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b6050 = 004b609a
-;   undefined4 s_CGabriella_005858f2+1
+;   TerminatedCString s_CGabriella_005858f3
 ;   string s_CSvetlana_005858fe
 ;   string s_CStranger_00585908
 ;   string s_CScat_00585912
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x01cae124]      ; 004b609a | DAT_01cae124
         ;   Label: caseD_0
     PUSH ESI                            ; 004b60a0
-    PUSH 0x5858f3                       ; 004b60a1 | s_CGabriella_005858f2+1
+    PUSH 0x5858f3                       ; 004b60a1 | = "CGabriella"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b60a6
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
         ;   Label: LAB_004b60a6

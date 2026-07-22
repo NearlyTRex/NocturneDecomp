@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(int param_1,float *param_2,uint *param_3,uint *param_4,uint *param_5,uint param_6)
 
 {
@@ -54,11 +52,11 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(int param_1,float *p
   local_70 = param_2[1] + param_2[4];
   local_6c = param_2[2] + param_2[5];
   local_44 = local_74 + param_2[6];
-  local_80 = local_44 / _DAT_0058114c;
+  local_80 = local_44 / 3.0f;
   local_40 = local_70 + param_2[7];
   local_3c = local_6c + param_2[8];
-  local_7c = local_40 * _DAT_00581150;
-  local_78 = local_3c * _DAT_00581150;
+  local_7c = local_40 * 0.3333333f;
+  local_78 = local_3c * 0.3333333f;
   if (&local_50 != &local_80) {
     local_50 = local_80;
     local_4c = local_7c;
@@ -110,7 +108,7 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(int param_1,float *p
   local_88 = *(float *)(param_1 + 0x94) - *(float *)(param_1 + 0x7c);
   local_84 = *(float *)(param_1 + 0x98) - *(float *)(param_1 + 0x80);
   local_28 = SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88) *
-             (float)_DAT_00581154;
+             (float)10;
   local_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f490fdb,0x3fc90fdb);
   local_10 = local_1c;
   local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40c90fdb);

@@ -12,11 +12,11 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507907
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c956
+;   TerminatedCString s_rb_0057c956
 ;   string s_models_0057c959
 ;   string s_..\\core\\dmodel.cpp_0057c960
 ;   string s_Can't_open_keyframed_model_%s_0057c973
-;   undefined4 DAT_0057c991
+;   TerminatedCString s_rt_0057c991
 ;   string s_models_0057c994
 ;   string s_..\\core\\dmodel.cpp_0057c99b
 ;   string s_Can't_open_keyframed_model_%s_0057c9ae
@@ -28,11 +28,11 @@
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990
+;   core_dmodel.cpp_FUN_00452f10
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_ungetc_FUN_00564740
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_00452f10
 ;   FUN_004c8440
 ;
 ; *****************************************************************************
@@ -46,10 +46,10 @@ section .text
     PUSH EBP                            ; 00452653
     MOV EBX,dword ptr [ESP + 0x14]      ; 00452654
     PUSH EBX                            ; 00452658
-    CALL FUN_00452f10                   ; 00452659
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00452f10()
+    CALL core_dmodel.cpp_FUN_00452f10   ; 00452659
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00452f10()
     ADD ESP,0x4                         ; 0045265e
-    PUSH 0x57c956                       ; 00452661 | DAT_0057c956
+    PUSH 0x57c956                       ; 00452661 | = "rb"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00452666
     PUSH EDX                            ; 0045266a
     PUSH 0x57c959                       ; 0045266b | = "models"
@@ -96,7 +96,7 @@ section .text
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004526c1
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 004526c6
-    PUSH 0x57c991                       ; 004526c9 | DAT_0057c991
+    PUSH 0x57c991                       ; 004526c9 | = "rt"
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004526ce
     PUSH EBP                            ; 004526d2
     PUSH 0x57c994                       ; 004526d3 | = "models"

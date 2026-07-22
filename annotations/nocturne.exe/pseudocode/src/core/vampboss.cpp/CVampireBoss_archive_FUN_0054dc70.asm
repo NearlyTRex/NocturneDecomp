@@ -19,8 +19,8 @@
 ;   core_actor.cpp_archiveActor_FUN_0040c980
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -75,14 +75,14 @@ section .text
         ;   Label: LAB_0054dced
     LEA EAX,[EBX + 0x150]               ; 0054dcf2
     PUSH EAX                            ; 0054dcf8
-    CALL FUN_0040cb00                   ; 0054dcf9
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 0054dcf9
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 0054dcfe
     PUSH 0x59717e                       ; 0054dd01 | = "bat model motion state"
     LEA EAX,[EBX + 0xbd24]              ; 0054dd06
     PUSH EAX                            ; 0054dd0c
-    CALL FUN_0040cb00                   ; 0054dd0d
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 0054dd0d
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 0054dd12
     JMP 0x0054dc89                      ; 0054dd15
         ;   XREF to: 0054dc89 (UNCONDITIONAL_JUMP)  ; LAB_0054dc89

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[32]:
-;   FUN_004110f0 at 0041121f
-;   FUN_00414340 at 00414473
-;   FUN_004270e0 at 004270f9
 ;   FUN_0042c4c0 at 0042c5bb
-;   FUN_0044f9b0 at 0044fcca
 ;   FUN_0045a260 at 0045a3a2
 ;   FUN_00489990 at 00489c72
 ;   FUN_0048d5d0 at 0048da5e
 ;   FUN_004ca790 at 004cab69
-;   FUN_0050d910 at 0050dd01
+;   FUN_00551c00 at 00551c77
+;   core_baron.cpp_FUN_004110f0 at 0041121f
+;   core_batman.cpp_FUN_00414340 at 00414473
+;   core_charactr.cpp_FUN_004270e0 at 004270f9
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f902
 ;   ... and 22 more
 ;
 ; Called Functions:

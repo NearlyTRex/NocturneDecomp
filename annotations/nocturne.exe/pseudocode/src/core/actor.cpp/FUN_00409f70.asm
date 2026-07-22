@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00409f70(void)
+; undefined4 core_actor_cpp_FUN_00409f70(void)
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\actor.cpp_00577586
+;   TerminatedCString s_core_actor_cpp_00577586
 ;   string s_CDemonActor::getActorType_called_00577598
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -18,7 +18,7 @@
 section .text
 
     MOV EDX,0x577586                    ; 00409f70 | = "..\\core\\actor.cpp"
-        ;   Label: FUN_00409f70
+        ;   Label: core_actor.cpp_FUN_00409f70
     MOV ECX,0x22c                       ; 00409f75
     PUSH 0x577598                       ; 00409f7a | = "CDemonActor::getActorType called.  Sh..."
     MOV dword ptr [0x01cc4800],EDX      ; 00409f7f | DAT_01cc4800

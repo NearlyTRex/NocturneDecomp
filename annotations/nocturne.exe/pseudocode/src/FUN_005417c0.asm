@@ -12,8 +12,8 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
+;   core_actor.cpp_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
-;   FUN_0040cb00
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     ADD ESP,0x8                         ; 005417f4
     PUSH 0x5961dc                       ; 005417f7 | = "motion state"
     PUSH EBX                            ; 005417fc
-    CALL FUN_0040cb00                   ; 005417fd
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 005417fd
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 00541802
     POP ESI                             ; 00541805
     POP EBX                             ; 00541806

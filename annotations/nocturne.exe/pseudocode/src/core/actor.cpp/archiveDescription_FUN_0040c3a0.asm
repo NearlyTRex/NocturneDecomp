@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   string s_//_%s_00577bf7
-;   undefined4 DAT_00577c02
+;   TerminatedCString s_anon_00577c02
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e90
@@ -95,7 +95,7 @@ section .text
     POP ESI                             ; 0040c419
     POP EBX                             ; 0040c41a
     RET                                 ; 0040c41b
-    PUSH 0x577c02                       ; 0040c41c | DAT_00577c02
+    PUSH 0x577c02                       ; 0040c41c | = "\n"
         ;   Label: LAB_0040c41c
     MOV EBP,dword ptr [0x00763e84]      ; 0040c421 | DAT_00763e84
     PUSH EBP                            ; 0040c427

@@ -37,7 +37,8 @@ void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1)
     iVar5 = iStack_2c;
     do {
       iStack_3c = (int)ROUND((fVar2 + fVar1) * _DAT_0059ae90);
-      iStack_38 = (int)ROUND((*(float *)(iVar5 + 0x12720) + (float)_DAT_00579c55) * _DAT_0059ae90);
+      iStack_38 = (int)ROUND((*(float *)(iVar5 + 0x12720) + (float)0.25) * _DAT_0059ae90)
+      ;
       iStack_34 = (int)ROUND(((float)iVar3 * _DAT_0059aea8 + *(float *)(param_1 + 0x19858)) *
                              _DAT_0059ae90);
       iStack_18 = iVar3;

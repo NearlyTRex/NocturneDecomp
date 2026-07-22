@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578750
+;   TerminatedCString s_size_00578750
 ;   string s_effectClassNameList_00578755
 ;   string s_addToPathGrid_00578769
 ;   undefined4 DAT_005acf80
@@ -27,7 +27,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 00411806
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0041180b
-    PUSH 0x578750                       ; 0041180e | DAT_00578750
+    PUSH 0x578750                       ; 0041180e | = "size"
     LEA EAX,[EBX + 0x150]               ; 00411813
     PUSH EAX                            ; 00411819
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0041181a

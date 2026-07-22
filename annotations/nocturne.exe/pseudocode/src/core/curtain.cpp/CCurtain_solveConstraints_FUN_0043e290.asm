@@ -91,8 +91,8 @@
 ;   core_curtain.cpp_CCurtain_process_FUN_0043ebf0 at 0043f313
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b4fe
-;   undefined4 DAT_0057b506
+;   double DOUBLE_0057b4fe = -0.5
+;   double DOUBLE_0057b506 = 0.0100000000000000
 ;   undefined4 DAT_0077bdb8
 ;   undefined4 DAT_0077bdbc
 ;   undefined4 DAT_0077bdc0
@@ -199,7 +199,7 @@ section .text
     FSTP float ptr [ESP + 0xb0]         ; 0043e3d3
     FLD float ptr [EBX + 0x30]          ; 0043e3da
         ;   Label: LAB_0043e3da
-    FCOMP double ptr [0x0057b4fe]       ; 0043e3dd | DAT_0057b4fe
+    FCOMP double ptr [0x0057b4fe]       ; 0043e3dd | DOUBLE_0057b4fe
     FNSTSW AX                           ; 0043e3e3
     SAHF                                ; 0043e3e5
     JNC 0x0043e7e7                      ; 0043e3e6
@@ -382,7 +382,7 @@ section .text
     JNC 0x0043e7a9                      ; 0043e686
         ;   XREF to: 0043e7a9 (CONDITIONAL_JUMP)  ; LAB_0043e7a9
     FLD float ptr [ESP]                 ; 0043e68c
-    FCOMP double ptr [0x0057b506]       ; 0043e68f | DAT_0057b506
+    FCOMP double ptr [0x0057b506]       ; 0043e68f | DOUBLE_0057b506
     FNSTSW AX                           ; 0043e695
     SAHF                                ; 0043e697
     JBE 0x0043e7a9                      ; 0043e698

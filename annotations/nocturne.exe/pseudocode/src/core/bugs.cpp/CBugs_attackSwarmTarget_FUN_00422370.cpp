@@ -74,8 +74,8 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
     local_4c = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
     local_48 = *(float *)(param_1 + 0x24) - *(float *)(iVar4 + 0x24);
     local_44 = *(float *)(param_1 + 0x28) - *(float *)(iVar4 + 0x28);
-    if ((((float)_DAT_00579d2d < ABS(local_48)) || ((float)_DAT_00579d2d < ABS(local_4c))) ||
-       ((float)_DAT_00579d2d < ABS(local_44))) {
+    if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||
+       ((float)2 < ABS(local_44))) {
       iVar4 = (**(code **)(*(int *)(*(int *)(param_1 + 0x12960) + 0x14c) + 0xbc))
                         (*(int *)(param_1 + 0x12960));
       if (iVar4 == 0) {
@@ -105,10 +105,10 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
         *(uint *)(param_1 + 0x28) = uStack_38;
         core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(param_1,&uStack_70);
       }
-      FUN_00421b80(param_1);
+      core_bugs_cpp_FUN_00421b80(param_1);
     }
     else {
-      FUN_00421b80(param_1);
+      core_bugs_cpp_FUN_00421b80(param_1);
     }
   }
   if ((0 < (int)puVar5) &&
@@ -118,7 +118,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(*(uint *)(param_1 + 0x12960),uVar2);
     if (iVar4 != 0) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_188);
-      local_184 = (float)(int)puVar5 * (float)_DAT_00579d35;
+      local_184 = (float)(int)puVar5 * (float)0.050000000000000003;
       local_154 = param_1;
       local_150 = param_1;
       local_18 = puVar5;
@@ -153,10 +153,10 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
   core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(param_1);
   fStack_58 = *(float *)(param_1 + 0x19834) + *(float *)(param_1 + 0x19840);
   fStack_54 = *(float *)(param_1 + 0x19838) + *(float *)(param_1 + 0x19844);
-  fStack_88 = fStack_58 * _DAT_00579d3d;
+  fStack_88 = fStack_58 * 0.5f;
   fStack_50 = *(float *)(param_1 + 0x1983c) + *(float *)(param_1 + 0x19848);
-  fStack_84 = fStack_54 * _DAT_00579d3d;
-  fStack_80 = fStack_50 * _DAT_00579d3d;
+  fStack_84 = fStack_54 * 0.5f;
+  fStack_80 = fStack_50 * 0.5f;
   fStack_34 = *(float *)(param_1 + 0x20) + fStack_88;
   fStack_30 = *(float *)(param_1 + 0x24) + fStack_84;
   fStack_2c = *(float *)(param_1 + 0x28) + fStack_80;

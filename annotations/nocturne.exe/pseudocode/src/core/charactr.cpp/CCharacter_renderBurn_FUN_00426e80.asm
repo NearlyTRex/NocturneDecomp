@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425c4d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a002
+;   double DOUBLE_0057a002 = 65535
 ;   undefined4 DAT_0059b090
 ;   undefined4 DAT_005ad1fc
 ;   undefined4 DAT_005ae704
@@ -106,7 +106,7 @@ section .text
     JLE 0x00426f74                      ; 00426f2d
         ;   XREF to: 00426f74 (CONDITIONAL_JUMP)  ; LAB_00426f74
     FLD float ptr [0x0059b090]          ; 00426f2f | DAT_0059b090
-    FLD double ptr [0x0057a002]         ; 00426f35 | DAT_0057a002
+    FLD double ptr [0x0057a002]         ; 00426f35 | DOUBLE_0057a002
     MOV EDX,EAX                         ; 00426f3b
     FLD float ptr [EDX + 0x2f28]        ; 00426f3d
         ;   Label: LAB_00426f3d
@@ -136,7 +136,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00426f82
     FLD float ptr [ECX*0x4 + 0x765aa0]  ; 00426f86 | DAT_00765aa0 | DAT_00765aa4
         ;   Label: LAB_00426f86
-    FCOMP double ptr [0x0057a002]       ; 00426f8d | DAT_0057a002
+    FCOMP double ptr [0x0057a002]       ; 00426f8d | DOUBLE_0057a002
     FNSTSW AX                           ; 00426f93
     SAHF                                ; 00426f95
     JC 0x00426f99                       ; 00426f96
@@ -225,7 +225,7 @@ section .text
         ;   XREF to: 00426fbd (UNCONDITIONAL_JUMP)  ; LAB_00426fbd
     FLD float ptr [ESP]                 ; 0042706b
         ;   Label: LAB_0042706b
-    FCOMP double ptr [0x0057a002]       ; 0042706e | DAT_0057a002
+    FCOMP double ptr [0x0057a002]       ; 0042706e | DOUBLE_0057a002
     FNSTSW AX                           ; 00427074
     SAHF                                ; 00427076
     JBE 0x00427080                      ; 00427077

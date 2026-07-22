@@ -73,7 +73,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
         puVar3[2] = *(uint *)(iVar1 + 0x38);
       }
       puVar3 = puVar3 + 0x12;
-      FUN_0055d610(iVar1 + 0x30);
+      core_xform_cpp_FUN_0055d610(iVar1 + 0x30);
       iVar1 = local_1c + 0x48;
       local_18 = local_18 + 1;
       puVar2 = (uint *)(local_1c + 0xbdd0 + (uint)bVar5 * -8);

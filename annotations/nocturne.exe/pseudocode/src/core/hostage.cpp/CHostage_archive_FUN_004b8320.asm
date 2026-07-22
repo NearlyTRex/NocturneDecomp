@@ -31,7 +31,7 @@
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
-;   FUN_0040cb00
+;   core_actor.cpp_FUN_0040cb00
 ;   FUN_004eed10
 ;
 ; *****************************************************************************
@@ -204,8 +204,8 @@ section .text
     ADD ESP,0x8                         ; 004b84fc
     PUSH 0x585ced                       ; 004b84ff | = "motion state"
     PUSH ESI                            ; 004b8504
-    CALL FUN_0040cb00                   ; 004b8505
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cb00()
+    CALL core_actor.cpp_FUN_0040cb00    ; 004b8505
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004b850a
     JMP 0x004b837a                      ; 004b850d
         ;   XREF to: 004b837a (UNCONDITIONAL_JUMP)  ; LAB_004b837a

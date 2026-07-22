@@ -37,8 +37,8 @@ int FUN_004b5110(int param_1)
       iVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                         (param_1,local_24,iVar2 + 0x20);
       if ((0.0 < *(float *)(iVar3 + 8)) &&
-         ((ABS(fVar6) <= (float)_DAT_00585843 &&
-          (SQRT(fVar1 * fVar1 + fVar5 * fVar5) < (float)_DAT_0058584b)))) {
+         ((ABS(fVar6) <= (float)5 &&
+          (SQRT(fVar1 * fVar1 + fVar5 * fVar5) < (float)4)))) {
         iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_00481890(iVar2 + 0x470,fVar5,0);
         if (iVar3 != 0) {
           return 1;

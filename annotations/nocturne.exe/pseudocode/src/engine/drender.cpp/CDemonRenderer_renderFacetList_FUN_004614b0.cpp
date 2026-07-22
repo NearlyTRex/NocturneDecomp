@@ -69,7 +69,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(int 
               *(int *)(&DAT_005ae70c + local_18) = param_2;
               local_18 = iVar2;
               if (1999 < iVar3) {
-                _DAT_01cc4800 = "@..\\engine\\drender.cpp" + 1;
+                _DAT_01cc4800 = "..\\engine\\drender.cpp";
                 _DAT_01cc4804 = 0x967;
                 FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
               }

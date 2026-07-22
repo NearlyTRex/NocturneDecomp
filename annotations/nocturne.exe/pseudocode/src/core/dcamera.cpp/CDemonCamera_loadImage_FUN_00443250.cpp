@@ -104,11 +104,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(int param_1,ch
   pcVar22 = (char *)0x0;
 LAB_00443299:
   if (pcVar22 == (char *)0x0) {
-    _DAT_01cc4800 = "p?..\\core\\dcamera.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
     _DAT_01cc4804 = 0x982;
     FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
-  pcVar24 = &DAT_0057b856;
+  pcVar24 = ".ACT";
   do {
     cVar4 = *pcVar24;
     *pcVar22 = cVar4;
@@ -118,9 +118,9 @@ LAB_00443299:
     pcVar22[1] = cVar4;
     pcVar22 = pcVar22 + 2;
   } while (cVar4 != '\0');
-  iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_144,&DAT_0057b85b);
+  iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_144,"rb");
   if ((iVar5 != 0) ||
-     (iVar5 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057b86a,local_144,&DAT_0057b867),
+     (iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_144,"rb"),
      iVar5 != 0)) {
     _fread(&DAT_00b0daf8,0x100,3,iVar5);
     _fclose(iVar5);
@@ -151,7 +151,7 @@ LAB_00443363:
       _DAT_01cc4804 = 0x995;
       FUN_004c8440("CDemonCamera::loadImage - no ext");
     }
-    pcVar22 = &DAT_0057b8a3;
+    pcVar22 = ".fog";
     do {
       cVar4 = *pcVar22;
       *pcVar24 = cVar4;
@@ -161,7 +161,7 @@ LAB_00443363:
       pcVar24[1] = cVar4;
       pcVar24 = pcVar24 + 2;
     } while (cVar4 != '\0');
-    local_14 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_f4,&DAT_0057b8a8);
+    local_14 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_f4,"rb");
     if (local_14 != 0) {
       _fread(0x140d784,0x1000,1,local_14);
       iVar5 = local_14;
@@ -175,9 +175,9 @@ LAB_00443363:
         }
         _fread(local_a0,3,1,local_14);
         local_9d = 0;
-        iVar6 = _strcmp(local_a0,&DAT_0057b8b4);
+        iVar6 = _strcmp(local_a0,"LZW");
         if ((iVar6 == 0) ||
-           (iVar6 = _strcmp(local_a0,&DAT_0057b8b8), iVar6 == 0)) {
+           (iVar6 = _strcmp(local_a0,"EFD"), iVar6 == 0)) {
           iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
           local_9c = iVar5 - 0x1003;
           if ((int)local_9c < 1) {
@@ -242,9 +242,9 @@ LAB_00443363:
       }
       _fclose(local_14);
     }
-    iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",param_2,&DAT_0057b955);
+    iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",param_2,"rb");
     if ((iVar5 != 0) ||
-       (iVar5 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0057b964,param_2,&DAT_0057b961),
+       (iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rb"),
        iVar5 != 0)) {
       iVar15 = 0;
       iVar6 = 0;

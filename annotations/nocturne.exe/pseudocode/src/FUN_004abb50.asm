@@ -9,10 +9,10 @@
 ;   undefined4 s_EADLITE.RAW_00584ebf+1
 ;   undefined4 s_ADLITE.RAW_00584ebf+2
 ;   undefined4 s_DLITE.RAW_00584ebf+3
-;   undefined1 DAT_00584ecc
-;   undefined1 DAT_00584ecd
-;   undefined1 DAT_00584ece
-;   undefined1 DAT_00584ecf
+;   TerminatedCString s_true_00584ecc
+;   undefined4 s_rue_00584ecc+1
+;   undefined4 s_ue_00584ecc+2
+;   undefined4 s_e_00584ecc+3
 ;   string s_7YEARS.RAW_00584ed1
 ;   undefined4 s_YEARS.RAW_00584ed1+1
 ;   undefined4 s_EARS.RAW_00584ed1+2
@@ -21,9 +21,9 @@
 ;   undefined1* PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4 = 004abc90
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_00409d30
 ;   core_mirror.cpp_CMirror_ctor_FUN_004d6550
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDI                            ; 004abb51
     MOV EDX,dword ptr [ESP + 0xc]       ; 004abb52
     PUSH EDX                            ; 004abb56
-    CALL FUN_00409d30                   ; 004abb57
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    CALL core_actor.cpp_FUN_00409d30    ; 004abb57
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 004abb5c
     ADD EAX,0x1e4                       ; 004abb5f
     PUSH EAX                            ; 004abb64
@@ -76,18 +76,18 @@ section .text
     MOV dword ptr [EDX + 0x15c],0xd     ; 004abbdf
     MOV dword ptr [EDX + 0x174],0x8000  ; 004abbe9
     MOV dword ptr [EDX + 0x178],0x0     ; 004abbf3
-    MOV ESI,0x584ecc                    ; 004abbfd | DAT_00584ecc
+    MOV ESI,0x584ecc                    ; 004abbfd | = "true"
     MOV byte ptr [EDX + 0x17c],0x0      ; 004abc02
     LEA EDI,[EDX + 0x304]               ; 004abc09
     MOV dword ptr [EDX + 0x1e0],0x0     ; 004abc0f
     PUSH EDI                            ; 004abc19
-    MOV AL,byte ptr [ESI]               ; 004abc1a | DAT_00584ecc | DAT_00584ece
+    MOV AL,byte ptr [ESI]               ; 004abc1a | = "true" | s_ue_00584ecc+2
         ;   Label: LAB_004abc1a
     MOV byte ptr [EDI],AL               ; 004abc1c
     CMP AL,0x0                          ; 004abc1e
     JZ 0x004abc32                       ; 004abc20
         ;   XREF to: 004abc32 (CONDITIONAL_JUMP)  ; LAB_004abc32
-    MOV AL,byte ptr [ESI + 0x1]         ; 004abc22 | DAT_00584ecd | DAT_00584ecf
+    MOV AL,byte ptr [ESI + 0x1]         ; 004abc22 | s_rue_00584ecc+1 | s_e_00584ecc+3
     ADD ESI,0x2                         ; 004abc25
     MOV byte ptr [EDI + 0x1],AL         ; 004abc28
     ADD EDI,0x2                         ; 004abc2b

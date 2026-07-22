@@ -27,13 +27,13 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
+;   core_set.cpp_FUN_0050ddd0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
-;   FUN_0050ddd0
 ;
 ; *****************************************************************************
 
@@ -197,8 +197,8 @@ section .text
     PUSH EBX                            ; 00551dcd
     MOV EDX,dword ptr [0x005be368]      ; 00551dce | DAT_005be368
     PUSH EDX                            ; 00551dd4 | DAT_01e57284
-    CALL FUN_0050ddd0                   ; 00551dd5
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ddd0()
+    CALL core_set.cpp_FUN_0050ddd0      ; 00551dd5
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
     ADD ESP,0x10                        ; 00551dda
     LEA EAX,[EAX]                       ; 00551ddd
     PUSH 0x0                            ; 00551de0

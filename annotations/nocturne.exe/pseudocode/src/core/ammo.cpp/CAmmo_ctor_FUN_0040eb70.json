@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 95,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -165,6 +163,11 @@
   },
   "function_calls": [
     {
+      "addr": "00409d30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00409d30"
+    },
+    {
       "addr": "00454490",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490"
@@ -173,11 +176,6 @@
       "addr": "00454580",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580"
-    },
-    {
-      "addr": "00409d30",
-      "is_variadic": false,
-      "name": "FUN_00409d30"
     }
   ],
   "globals": [
@@ -189,31 +187,31 @@
     },
     {
       "addr": "005781f6",
-      "name": "DAT_005781f6",
-      "type": "undefined1",
+      "name": "s_CGun_005781f6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005781f7",
-      "name": "DAT_005781f7",
-      "type": "undefined1",
+      "name": "s_Gun_005781f6+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005781f8",
-      "name": "DAT_005781f8",
-      "type": "undefined1",
+      "name": "s_un_005781f6+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005781f9",
-      "name": "DAT_005781f9",
-      "type": "undefined1",
+      "name": "s_n_005781f6+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00599454",
-      "name": "PTR_LAB_00599454",
+      "name": "PTR_core_ammo.cpp_FUN_0040ec00_00599454",
       "type": "undefined1*",
       "value": "0040ec00"
     }
@@ -362,16 +360,8 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_00409d30(param_1);",
+      "text": "iVar2 = core_actor_cpp_FUN_00409d30(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005781f6",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005781f6;",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -380,17 +370,17 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 8,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAmmo",
+        "offset": 0,
+        "vtable_addr": "00599534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

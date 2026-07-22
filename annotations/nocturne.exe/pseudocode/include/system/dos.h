@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/time.h"
 
 // =============================================================================
 // DOS - System Header
@@ -32,4 +33,15 @@ typedef struct IMAGE_DOS_HEADER {
     byte e_program[64]; // Actual DOS program
 } IMAGE_DOS_HEADER;
 #pragma pack(pop)
+
+// Structure: _find_t
+typedef struct _find_t {
+    uchar attrib;
+    uchar padding_0x1[3];
+    time_t wr_time;
+    time_t cr_time;
+    time_t ac_time;
+    long size;
+    char name[260];
+} _find_t;
 

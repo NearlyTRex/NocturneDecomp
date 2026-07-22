@@ -17,7 +17,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80(uint par
   float10 fVar4;
   float10 fVar5;
   
-  fVar2 = (float10)_DAT_0057bb6b;
+  fVar2 = (float10)65536;
   uVar1 = 0;
   _DAT_012ceb60 = 0;
   fVar3 = (float10)round();

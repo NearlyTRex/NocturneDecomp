@@ -8,7 +8,7 @@
 ;   FUN_004c85f0 at 004c878f
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dfont.cpp_0057c10b+2
+;   TerminatedCString s_core_dfont_cpp_0057c10d
 ;   string s_Medium_font_object_not_allocated_0057c11f
 ;   string s_nocfont.raw_0057c141
 ;   string s_..\\core\\dfont.cpp_0057c14d
@@ -375,7 +375,7 @@ section .text
     ADD ESP,0x4                         ; 0044c97f
     JMP 0x0044c579                      ; 0044c982
         ;   XREF to: 0044c579 (UNCONDITIONAL_JUMP)  ; LAB_0044c579
-    MOV EDX,0x57c10d                    ; 0044c987 | s_..\core\dfont.cpp_0057c10b+2
+    MOV EDX,0x57c10d                    ; 0044c987 | = "..\\core\\dfont.cpp"
         ;   Label: LAB_0044c987
     MOV ECX,0x41                        ; 0044c98c
     PUSH 0x57c11f                       ; 0044c991 | = "Medium font object not allocated!"

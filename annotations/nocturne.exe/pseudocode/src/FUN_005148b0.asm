@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00507f80 at 00508030
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508a45
+;   core_set.cpp_FUN_00507f80 at 00508030
 ;
 ; Referenced Globals:
 ;   string s_Ambient_set_low_by_script_00590d03

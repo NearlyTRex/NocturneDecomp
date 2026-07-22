@@ -17,16 +17,16 @@
 ;   FUN_004a3b90 at 004a4075
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
-;   undefined4 DAT_0057e72c
+;   char CHAR_00h_0057e72c = \x00
 ;   string s_Directory:_0057e72d
 ;   string s_Filename:_0057e739
 ;   string s_Filename:_0057e744
-;   undefined1 DAT_0057e74f
-;   undefined1 DAT_0057e750
-;   undefined1 DAT_0057e751
-;   undefined1 DAT_0057e752
+;   TerminatedCString s_anon_0057e74f
+;   undefined4 s_anon_0057e74f+1
+;   TerminatedCString s_d_0057e751
+;   undefined4 s_d_0057e751+1
 ;   undefined4 DAT_005b7630
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_005c168c
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00470ecf
     JNZ 0x00470efb                      ; 00470ed6
         ;   XREF to: 00470efb (CONDITIONAL_JUMP)  ; LAB_00470efb
-    MOV ESI,0x57e4fa                    ; 00470ed8 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ESI,0x57e4fa                    ; 00470ed8 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00470edd
     PUSH 0x57e510                       ; 00470ee2 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | DAT_01cc4800
@@ -269,7 +269,7 @@ section .text
     ADD ESP,0x4                         ; 00471113
     JMP 0x00470f92                      ; 00471116
         ;   XREF to: 00470f92 (UNCONDITIONAL_JUMP)  ; LAB_00470f92
-    MOV dword ptr [ESP + 0x36c],0x57e72c ; 0047111b | DAT_0057e72c
+    MOV dword ptr [ESP + 0x36c],0x57e72c ; 0047111b | CHAR_00h_0057e72c
         ;   Label: LAB_0047111b
     JMP 0x00470ecf                      ; 00471126
         ;   XREF to: 00470ecf (UNCONDITIONAL_JUMP)  ; LAB_00470ecf
@@ -360,7 +360,7 @@ section .text
     CMP DL,byte ptr [EBP]               ; 004711ef
     JZ 0x00471222                       ; 004711f2
         ;   XREF to: 00471222 (CONDITIONAL_JUMP)  ; LAB_00471222
-    MOV ESI,0x57e74f                    ; 004711f4 | DAT_0057e74f
+    MOV ESI,0x57e74f                    ; 004711f4 | = "."
     LEA EDI,[ESP + 0x208]               ; 004711f9
     PUSH EDI                            ; 00471200
     SUB ECX,ECX                         ; 00471201
@@ -368,13 +368,13 @@ section .text
     MOV AL,0x0                          ; 00471204
     SCASB.REPNE ES:EDI                  ; 00471206
     DEC EDI                             ; 00471208
-    MOV AL,byte ptr [ESI]               ; 00471209 | DAT_0057e74f | DAT_0057e751
+    MOV AL,byte ptr [ESI]               ; 00471209 | = "." | s_d_0057e751
         ;   Label: LAB_00471209
     MOV byte ptr [EDI],AL               ; 0047120b
     CMP AL,0x0                          ; 0047120d
     JZ 0x00471221                       ; 0047120f
         ;   XREF to: 00471221 (CONDITIONAL_JUMP)  ; LAB_00471221
-    MOV AL,byte ptr [ESI + 0x1]         ; 00471211 | DAT_0057e750 | DAT_0057e752
+    MOV AL,byte ptr [ESI + 0x1]         ; 00471211 | s_anon_0057e74f+1 | s_d_0057e751+1
     ADD ESI,0x2                         ; 00471214
     MOV byte ptr [EDI + 0x1],AL         ; 00471217
     ADD EDI,0x2                         ; 0047121a

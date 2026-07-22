@@ -35,8 +35,8 @@
 ;   core_fire.cpp_CFireEffect_createCrater_FUN_0048c370 at 0048c38e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058129c
-;   undefined4 DAT_005812a4
+;   double DOUBLE_0058129c = 0.5
+;   double DOUBLE_005812a4 = 0.150000000000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;
@@ -99,7 +99,7 @@ section .text
     MOV dword ptr [ESP + 0x6c],EAX      ; 00487758
     FLD float ptr [ESP + 0x6c]          ; 0048775c
     ADD ESP,0x8                         ; 00487760
-    FMUL double ptr [0x0058129c]        ; 00487763 | DAT_0058129c
+    FMUL double ptr [0x0058129c]        ; 00487763 | DOUBLE_0058129c
     PUSH dword ptr [ESP + 0x84]         ; 00487769
     FADD float ptr [ESI + 0xc]          ; 00487770
     PUSH dword ptr [ESP + 0x64]         ; 00487773
@@ -110,7 +110,7 @@ section .text
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
     MOV dword ptr [ESP + 0x6c],EAX      ; 00487785
     FLD float ptr [ESP + 0x6c]          ; 00487789
-    FMUL double ptr [0x0058129c]        ; 0048778d | DAT_0058129c
+    FMUL double ptr [0x0058129c]        ; 0048778d | DOUBLE_0058129c
     ADD EBX,0xc                         ; 00487793
     FADD float ptr [ESI + 0x14]         ; 00487796
     ADD ESP,0x8                         ; 00487799
@@ -244,7 +244,7 @@ section .text
     PUSH 0x0                            ; 00487938
     MOV EDX,dword ptr [0x005be368]      ; 0048793a | DAT_005be368
     PUSH EAX                            ; 00487940
-    FADD double ptr [0x005812a4]        ; 00487941 | DAT_005812a4
+    FADD double ptr [0x005812a4]        ; 00487941 | DOUBLE_005812a4
     PUSH EDX                            ; 00487947 | DAT_01e57284
     FSTP float ptr [ESI + 0x44]         ; 00487948
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0048794b
@@ -256,7 +256,7 @@ section .text
     PUSH 0x0                            ; 0048795e
     MOV ECX,dword ptr [0x005be368]      ; 00487960 | DAT_005be368
     PUSH EAX                            ; 00487966
-    FADD double ptr [0x005812a4]        ; 00487967 | DAT_005812a4
+    FADD double ptr [0x005812a4]        ; 00487967 | DOUBLE_005812a4
     PUSH ECX                            ; 0048796d | DAT_01e57284
     FSTP float ptr [ESI + 0x50]         ; 0048796e
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 00487971
@@ -268,7 +268,7 @@ section .text
     PUSH 0x0                            ; 00487984
     MOV EBX,dword ptr [0x005be368]      ; 00487986 | DAT_005be368
     PUSH EAX                            ; 0048798c
-    FADD double ptr [0x005812a4]        ; 0048798d | DAT_005812a4
+    FADD double ptr [0x005812a4]        ; 0048798d | DOUBLE_005812a4
     PUSH EBX                            ; 00487993 | DAT_01e57284
     FSTP float ptr [ESI + 0x5c]         ; 00487994
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 00487997
@@ -278,7 +278,7 @@ section .text
     MOV dword ptr [ESP + 0x70],EAX      ; 004879a2
     FABS                                ; 004879a6
     FLD float ptr [ESP + 0x70]          ; 004879a8
-    FADD double ptr [0x005812a4]        ; 004879ac | DAT_005812a4
+    FADD double ptr [0x005812a4]        ; 004879ac | DOUBLE_005812a4
     ADD ESP,0xc                         ; 004879b2
     FSTP float ptr [ESI + 0x68]         ; 004879b5
     FLD1                                ; 004879b8

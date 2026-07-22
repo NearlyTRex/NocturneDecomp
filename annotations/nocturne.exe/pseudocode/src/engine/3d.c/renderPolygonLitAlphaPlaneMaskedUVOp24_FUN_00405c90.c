@@ -55,7 +55,7 @@ LAB_00405d98:
     *(int *)(&DAT_005c5030 + (*piVar2 + DAT_006b0264) * 0x30) = piVar2[2];
     piVar2 = piVar2 + 3;
   }
-  FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
+  engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
 LAB_00405cb0:
   return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
 }

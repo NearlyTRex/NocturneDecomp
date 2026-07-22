@@ -8,7 +8,7 @@
 ;   core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0 at 004b8315
 ;
 ; Called Functions:
-;   FUN_00426510
+;   core_charactr.cpp_FUN_00426510
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDX                            ; 004eecff
         ;   Label: LAB_004eecff
     PUSH EAX                            ; 004eed00
-    CALL FUN_00426510                   ; 004eed01
-        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; undefined FUN_00426510()
+    CALL core_charactr.cpp_FUN_00426510 ; 004eed01
+        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00426510()
     ADD ESP,0x8                         ; 004eed06
     RET                                 ; 004eed09
         ;   Label: LAB_004eed09

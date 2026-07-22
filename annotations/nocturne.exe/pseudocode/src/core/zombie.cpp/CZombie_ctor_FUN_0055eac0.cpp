@@ -20,7 +20,7 @@ int core_zombie_cpp_CZombie_ctor_FUN_0055eac0(uint param_1)
   char *pcVar7;
   
   iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  pcVar6 = &DAT_005983f2;
+  pcVar6 = "true";
   *(byte ***)(iVar3 + 0x14c) = &PTR_core_zombie_cpp_CZombie_setup_FUN_0055ec20_005a4554;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar3 + 0x150,"zombie1.dfm")
   ;

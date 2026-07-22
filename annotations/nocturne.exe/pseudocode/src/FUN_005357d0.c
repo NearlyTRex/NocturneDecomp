@@ -15,7 +15,7 @@ void FUN_005357d0(int param_1,float param_2)
   bool bVar2;
   int iVar3;
   
-  iVar3 = FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
   if (iVar3 == 0) {
     return;
   }

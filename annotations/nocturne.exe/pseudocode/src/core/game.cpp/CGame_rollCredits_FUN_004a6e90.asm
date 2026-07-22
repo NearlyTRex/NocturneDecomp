@@ -21,14 +21,14 @@
 ;
 ; Referenced Globals:
 ;   string s_stats_00584672
-;   undefined4 DAT_00584678
+;   TerminatedCString s_rt_00584678
 ;   string s_credits.txt_0058467b
-;   undefined4 DAT_00584687
-;   undefined4 DAT_0058468c
+;   TerminatedCString s_data_00584687
+;   TerminatedCString s_end_0058468c
 ;   string s_..\\core\\game.cpp_00584691
 ;   string s_CGame::rollCredits_-_Out_of_memo_005846a2
 ;   string s_faded-remix.mp3_005846c5
-;   undefined4 DAT_005846d6
+;   float FLOAT_005846d6 = 32
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_01cc30e4
@@ -89,9 +89,9 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004a6eeb
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004a6ef0
-    PUSH 0x584678                       ; 004a6ef3 | DAT_00584678
+    PUSH 0x584678                       ; 004a6ef3 | = "rt"
     PUSH 0x58467b                       ; 004a6ef8 | = "credits.txt"
-    PUSH 0x584687                       ; 004a6efd | DAT_00584687
+    PUSH 0x584687                       ; 004a6efd | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a6f02
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004a6f07
@@ -117,7 +117,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004a6f3c
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
     ADD ESP,0xc                         ; 004a6f41
-    PUSH 0x58468c                       ; 004a6f44 | DAT_0058468c
+    PUSH 0x58468c                       ; 004a6f44 | = "end\n"
     LEA EAX,[ESP + 0x100c]              ; 004a6f49
     PUSH EAX                            ; 004a6f50
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004a6f51
@@ -284,7 +284,7 @@ section .text
     ADD ESP,0x4                         ; 004a712c
     MOV EAX,dword ptr [ESP + 0x1140]    ; 004a712f
     FLD float ptr [EAX + 0x264]         ; 004a7136
-    FMUL float ptr [0x005846d6]         ; 004a713c | DAT_005846d6
+    FMUL float ptr [0x005846d6]         ; 004a713c | FLOAT_005846d6
     FSUBR float ptr [ESP + 0x1128]      ; 004a7142
     FSTP float ptr [ESP + 0x1128]       ; 004a7149
     JMP 0x004a6fea                      ; 004a7150

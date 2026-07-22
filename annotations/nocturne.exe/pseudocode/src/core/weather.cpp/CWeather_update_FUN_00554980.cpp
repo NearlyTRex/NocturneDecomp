@@ -66,7 +66,7 @@ LAB_005549ac:
     fVar1 = *(float *)(&DAT_02ddfa2c + iVar5) - (float)param_1[1] * fVar2;
     *(float *)(&DAT_02ddfa2c + iVar5) = fVar1;
     if ((fVar1 < *(float *)(iVar7 + 0x2de0388)) &&
-       (*(float *)(&DAT_02ddfa2c + iVar5) = *(float *)(&DAT_02ddfa2c + iVar5) + _DAT_00597c69,
+       (*(float *)(&DAT_02ddfa2c + iVar5) = *(float *)(&DAT_02ddfa2c + iVar5) + 100.0f,
        *param_1 == 1)) {
       local_28 = *(uint *)(&DAT_02ddfa28 + iVar5);
       local_20 = *(uint *)(&DAT_02ddfa30 + iVar5);

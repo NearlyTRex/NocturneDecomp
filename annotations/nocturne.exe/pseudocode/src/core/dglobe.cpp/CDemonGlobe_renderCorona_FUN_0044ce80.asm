@@ -32,7 +32,7 @@
 ;   FUN_00445750 at 0044593e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c389
+;   double DOUBLE_0057c389 = 0.00390625
 ;   undefined4 DAT_0059bff0
 ;   undefined4 DAT_005ad594
 ;   undefined4 DAT_005ad598
@@ -113,7 +113,7 @@ section .text
     PUSH EDI                            ; 0044cf06
     PUSH ESI                            ; 0044cf07
     FLD float ptr [EBP + 0x30]          ; 0044cf08
-    FMUL double ptr [0x0057c389]        ; 0044cf0b | DAT_0057c389
+    FMUL double ptr [0x0057c389]        ; 0044cf0b | DOUBLE_0057c389
     XOR EDI,EDI                         ; 0044cf11
     XOR ESI,ESI                         ; 0044cf13
     FSTP float ptr [ESP + 0x60]         ; 0044cf15

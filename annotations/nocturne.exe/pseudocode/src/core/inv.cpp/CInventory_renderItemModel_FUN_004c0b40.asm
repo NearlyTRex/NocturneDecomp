@@ -35,7 +35,7 @@
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 at 004c22a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005871ad
+;   TerminatedCString s_CGun_005871ad
 ;   string s_CKeyActor_005871b2
 ;   string s_CKeyActor_005871bc
 ;   string s_axe1.kfm_005871c6
@@ -232,7 +232,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x1c]     ; 004c0d1a
     MOV dword ptr [EBP + -0x4],EAX      ; 004c0d1d
         ;   Label: LAB_004c0d1d
-    PUSH 0x5871ad                       ; 004c0d20 | DAT_005871ad
+    PUSH 0x5871ad                       ; 004c0d20 | = "CGun"
     PUSH EBX                            ; 004c0d25
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c0d26
         ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()

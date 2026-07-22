@@ -18,181 +18,181 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
   if (param_1 < 0x34) {
     if (0x18 < param_1) {
       if (param_1 < 0x1a) {
-        return &DAT_00597f9b;
+        return "P";
       }
       if (param_1 < 0x26) {
         if (param_1 < 0x1f) {
           if (param_1 < 0x1c) {
             if (param_1 < 0x1b) {
-              return &DAT_00597f9d;
+              return "[";
             }
-            return &DAT_00597f9f;
+            return "]";
           }
           if (0x1c < param_1) {
             if (param_1 < 0x1e) {
               return "LeftCtrl";
             }
-            return &DAT_00597fb0;
+            return "A";
           }
           return "Enter";
         }
         if (param_1 < 0x20) {
-          return &DAT_00597fb2;
+          return "S";
         }
         if (0x21 < param_1) {
           if (param_1 < 0x23) {
-            return &DAT_00597fb8;
+            return "G";
           }
           if (param_1 < 0x24) {
-            return &DAT_00597fba;
+            return "H";
           }
           if (param_1 < 0x25) {
-            return &DAT_00597fbc;
+            return "J";
           }
-          return &DAT_00597fbe;
+          return "K";
         }
         if (param_1 < 0x21) {
-          return &DAT_00597fb4;
+          return "D";
         }
-        return &DAT_00597fb6;
+        return "F";
       }
       if (param_1 < 0x27) {
-        return &DAT_00597fc0;
+        return "L";
       }
       if (param_1 < 0x2d) {
         if (param_1 < 0x29) {
           if (param_1 < 0x28) {
-            return &DAT_00597fc2;
+            return ";";
           }
-          return &DAT_00597fc4;
+          return "'";
         }
         if (param_1 < 0x2a) {
-          return &DAT_00597fc6;
+          return "`";
         }
         if (param_1 < 0x2b) {
           return "LeftShift";
         }
         if (param_1 == 0x2c) {
-          return &DAT_00597fd2;
+          return "Z";
         }
         return "(invalid key)";
       }
       if (param_1 < 0x2e) {
-        return &DAT_00597fd4;
+        return "X";
       }
       if (param_1 < 0x30) {
         if (param_1 < 0x2f) {
-          return &DAT_00597fd6;
+          return "C";
         }
-        return &DAT_00597fd8;
+        return "V";
       }
       if (param_1 < 0x31) {
-        return &DAT_00597fda;
+        return "B";
       }
       if (param_1 < 0x32) {
-        return &DAT_00597fdc;
+        return "N";
       }
       if (param_1 < 0x33) {
-        return &DAT_00597fde;
+        return "M";
       }
-      return &DAT_00597fe0;
+      return ",";
     }
     if (0xb < param_1) {
       if (param_1 < 0xd) {
-        return &DAT_00597f77;
+        return "-";
       }
       if (param_1 < 0x12) {
         if (param_1 < 0xf) {
           if (param_1 < 0xe) {
-            return &DAT_00597f79;
+            return "=";
           }
           return "BackSpace";
         }
         if (0xf < param_1) {
           if (param_1 < 0x11) {
-            return &DAT_00597f89;
+            return "Q";
           }
-          return &DAT_00597f8b;
+          return "W";
         }
-        return &DAT_00597f85;
+        return "Tab";
       }
       if (param_1 < 0x13) {
-        return &DAT_00597f8d;
+        return "E";
       }
       if (0x14 < param_1) {
         if (param_1 < 0x16) {
-          return &DAT_00597f93;
+          return "Y";
         }
         if (param_1 < 0x17) {
-          return &DAT_00597f95;
+          return "U";
         }
         if (param_1 < 0x18) {
-          return &DAT_00597f97;
+          return "I";
         }
-        return &DAT_00597f99;
+        return "O";
       }
       if (param_1 < 0x14) {
-        return &DAT_00597f8f;
+        return "R";
       }
-      return &DAT_00597f91;
+      return "T";
     }
     if (5 < param_1) {
       if (param_1 < 7) {
-        return &DAT_00597f6b;
+        return "5";
       }
       if (param_1 < 9) {
         if (param_1 < 8) {
-          return &DAT_00597f6d;
+          return "6";
         }
-        return &DAT_00597f6f;
+        return "7";
       }
       if (param_1 < 10) {
-        return &DAT_00597f71;
+        return "8";
       }
       if (param_1 < 0xb) {
-        return &DAT_00597f73;
+        return "9";
       }
-      return &DAT_00597f75;
+      return "0";
     }
     if (2 < param_1) {
       if (param_1 < 4) {
-        return &DAT_00597f65;
+        return "2";
       }
       if (param_1 < 5) {
-        return &DAT_00597f67;
+        return "3";
       }
-      return &DAT_00597f69;
+      return "4";
     }
     if (param_1 != 0) {
       if (1 < param_1) {
-        return &DAT_00597f63;
+        return "1";
       }
-      return &DAT_00597f5f;
+      return "Esc";
     }
   }
   else {
     if (param_1 < 0x35) {
-      return &DAT_00597fe2;
+      return ".";
     }
     if (param_1 < 0x4d) {
       if (0x3f < param_1) {
         if (param_1 < 0x41) {
-          return &DAT_0059801f;
+          return "F6";
         }
         if (param_1 < 0x46) {
           if (param_1 < 0x43) {
             if (param_1 < 0x42) {
-              return &DAT_00598022;
+              return "F7";
             }
-            return &DAT_00598025;
+            return "F8";
           }
           if (0x43 < param_1) {
             if (param_1 < 0x45) {
-              return &DAT_0059802b;
+              return "F10";
             }
             return "Pause";
           }
-          return &DAT_00598028;
+          return "F9";
         }
         if (param_1 < 0x47) {
           return "ScrollLock";
@@ -217,7 +217,7 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
       if (param_1 < 0x3a) {
         if (param_1 < 0x37) {
           if (param_1 < 0x36) {
-            return &DAT_00597fe4;
+            return "/";
           }
           return "RightShift";
         }
@@ -234,17 +234,17 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
       }
       if (0x3c < param_1) {
         if (param_1 < 0x3e) {
-          return &DAT_00598016;
+          return "F3";
         }
         if (param_1 < 0x3f) {
-          return &DAT_00598019;
+          return "F4";
         }
-        return &DAT_0059801c;
+        return "F5";
       }
       if (param_1 < 0x3c) {
-        return &DAT_00598010;
+        return "F1";
       }
-      return &DAT_00598013;
+      return "F2";
     }
     if (param_1 < 0x4e) {
       return "NumPad6";
@@ -288,10 +288,10 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
       }
       if (0x56 < param_1) {
         if (param_1 < 0x58) {
-          return &DAT_005980a8;
+          return "F11";
         }
         if (param_1 == 0x58) {
-          return &DAT_005980ac;
+          return "F12";
         }
         return "(invalid key)";
       }
@@ -304,18 +304,18 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
         if (param_1 < 0x149) {
           if (0x146 < param_1) {
             if (param_1 < 0x148) {
-              return &DAT_005980df;
+              return "Home";
             }
-            return &DAT_005980e4;
+            return "Up";
           }
         }
         else {
           if (param_1 < 0x14a) {
-            return &DAT_005980e7;
+            return "PgUp";
           }
           if (0x14a < param_1) {
             if (param_1 < 0x14c) {
-              return &DAT_005980ec;
+              return "Left";
             }
             if (param_1 == 0x14d) {
               return "Right";
@@ -326,20 +326,20 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(uint param_1)
       }
       else {
         if (param_1 < 0x150) {
-          return &DAT_005980f7;
+          return "End";
         }
         if (param_1 < 0x152) {
           if (param_1 < 0x151) {
-            return &DAT_005980fb;
+            return "Down";
           }
-          return &DAT_00598100;
+          return "PgDn";
         }
         if (param_1 < 0x153) {
-          return &DAT_00598105;
+          return "Ins";
         }
         if (param_1 < 0x200) {
           if (param_1 == 0x153) {
-            return &DAT_00598109;
+            return "Del";
           }
         }
         else {

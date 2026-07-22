@@ -9,12 +9,12 @@
 ;   FUN_004b3110 at 004b3138
 ;   FUN_004b6d80 at 004b71cb
 ;   FUN_004d4650 at 004d46b7
-;   FUN_0050a260 at 0050a298
 ;   FUN_00535450 at 0053547c
 ;   FUN_00540c20 at 00540cec
 ;   FUN_0054c3e0 at 0054c5ba
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102e8
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412192
+;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134d2
 ;   ... and 29 more
 ;
 ; Referenced Globals:

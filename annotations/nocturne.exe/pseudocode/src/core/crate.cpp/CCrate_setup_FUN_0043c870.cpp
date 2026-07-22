@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_crate_cpp_CCrate_setup_FUN_0043c870(int param_1)
 
 {
@@ -21,8 +19,8 @@ void core_crate_cpp_CCrate_setup_FUN_0043c870(int param_1)
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,afStack_24);
-  fVar1 = (fStack_18 - afStack_24[0]) * (float)_DAT_0057b433;
-  fVar2 = (fStack_10 - fStack_1c) * (float)_DAT_0057b433;
+  fVar1 = (fStack_18 - afStack_24[0]) * (float)0.5;
+  fVar2 = (fStack_10 - fStack_1c) * (float)0.5;
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }

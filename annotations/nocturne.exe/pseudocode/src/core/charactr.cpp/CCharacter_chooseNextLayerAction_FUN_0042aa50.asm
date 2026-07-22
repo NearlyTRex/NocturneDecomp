@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   string s_..\\core\\charactr.cpp_0057a410
 ;   string s_CCharacter::chooseNextLayerActio_0057a425
-;   undefined4 DAT_0057a462
-;   undefined4 DAT_0057a46a
+;   double DOUBLE_0057a462 = 0.0000100000000000000
+;   double DOUBLE_0057a46a = 0.999990000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -58,7 +58,7 @@ section .text
     FLD float ptr [EBX + 0x2a88]        ; 0042aa96
         ;   Label: LAB_0042aa96
     FST double ptr [ESP]                ; 0042aa9c
-    FCOMP double ptr [0x0057a462]       ; 0042aa9f | DAT_0057a462
+    FCOMP double ptr [0x0057a462]       ; 0042aa9f | DOUBLE_0057a462
     FNSTSW AX                           ; 0042aaa5
     SAHF                                ; 0042aaa7
     JNC 0x0042ab1d                      ; 0042aaa8
@@ -113,7 +113,7 @@ section .text
     RET                                 ; 0042ab1c
     FLD double ptr [ESP]                ; 0042ab1d
         ;   Label: LAB_0042ab1d
-    FCOMP double ptr [0x0057a46a]       ; 0042ab20 | DAT_0057a46a
+    FCOMP double ptr [0x0057a46a]       ; 0042ab20 | DOUBLE_0057a46a
     FNSTSW AX                           ; 0042ab26
     SAHF                                ; 0042ab28
     JBE 0x0042ab16                      ; 0042ab29

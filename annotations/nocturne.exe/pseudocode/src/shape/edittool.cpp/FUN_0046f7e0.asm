@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 at 00471618
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   string s_gEdFont_must_be_set_by_the_appli_0057e510
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
@@ -137,7 +137,7 @@ section .text
     ADD ESP,0x4                         ; 0046f8db
     JMP 0x0046f89c                      ; 0046f8de
         ;   XREF to: 0046f89c (UNCONDITIONAL_JUMP)  ; LAB_0046f89c
-    MOV ECX,0x57e4fa                    ; 0046f8e0 | s_..\shape\edittool.cpp_0057e4f9+1
+    MOV ECX,0x57e4fa                    ; 0046f8e0 | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_0046f8e0
     MOV EBP,0x8b                        ; 0046f8e5
     PUSH 0x57e510                       ; 0046f8ea | = "gEdFont must be set by the application."

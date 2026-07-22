@@ -29,7 +29,7 @@ void __cdecl core_actor_cpp_archiveDescription_FUN_0040c3a0(uint param_1,int par
     }
   }
   else {
-    _fprintf(DAT_00763e84,&DAT_00577c02);
+    _fprintf(DAT_00763e84,"\n");
     if ((*(byte *)(DAT_00763e84 + 0xc) & 0x20) == 0) {
       return;
     }

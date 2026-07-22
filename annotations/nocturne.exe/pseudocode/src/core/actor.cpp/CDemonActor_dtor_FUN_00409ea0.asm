@@ -4,18 +4,18 @@
 ; int __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(int param_1,uint param_2)
 ;
 ;
-; XREF[88]:
+; XREF[92]:
+;   FUN_0040ef90 at 0040ef9f
+;   FUN_0040f4b0 at 0040f4bf
+;   FUN_0040f8b0 at 0040f8bf
+;   FUN_0040fc30 at 0040fcaa
 ;   FUN_004100f0 at 004100ff
 ;   FUN_004118c0 at 004118cf
 ;   FUN_004132c0 at 0041333a
 ;   FUN_00414c60 at 00414cda
 ;   FUN_00414fa0 at 00414faf
 ;   FUN_00415250 at 004152ca
-;   FUN_00415a30 at 00415aba
-;   FUN_0041fa10 at 0041fa46
-;   FUN_0041fa90 at 0041fab6
-;   FUN_00420f20 at 00420f9a
-;   ... and 78 more
+;   ... and 82 more
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4 = 00409fc0

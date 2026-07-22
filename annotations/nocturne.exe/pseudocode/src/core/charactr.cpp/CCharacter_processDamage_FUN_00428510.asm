@@ -33,12 +33,12 @@
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0
+;   core_charactr.cpp_FUN_00427730
+;   core_charactr.cpp_FUN_00427a60
+;   core_charactr.cpp_FUN_004286d0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
 ;   crt_math.c_round_FUN_00563a30
-;   FUN_00427730
-;   FUN_00427a60
-;   FUN_004286d0
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0042859d
     PUSH EAX                            ; 004285a1
     PUSH EBX                            ; 004285a2
-    CALL FUN_00427730                   ; 004285a3
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined FUN_00427730()
+    CALL core_charactr.cpp_FUN_00427730 ; 004285a3
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
     ADD ESP,0x18                        ; 004285a8
     FLD float ptr [ESI + 0x8]           ; 004285ab
         ;   Label: LAB_004285ab
@@ -207,8 +207,8 @@ section .text
     PUSH 0x40000000                     ; 0042867e
         ;   Label: LAB_0042867e
     PUSH EBX                            ; 00428683
-    CALL FUN_004286d0                   ; 00428684
-        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004286d0()
+    CALL core_charactr.cpp_FUN_004286d0 ; 00428684
+        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004286d0()
     ADD ESP,0x8                         ; 00428689
     JMP 0x00428579                      ; 0042868c
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579
@@ -235,8 +235,8 @@ section .text
         ;   XREF to: 0042865c (CONDITIONAL_JUMP)  ; LAB_0042865c
         ;   Label: LAB_004286ae
     PUSH EBX                            ; 004286b0
-    CALL FUN_00427a60                   ; 004286b1
-        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; undefined FUN_00427a60()
+    CALL core_charactr.cpp_FUN_00427a60 ; 004286b1
+        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427a60()
     ADD ESP,0x4                         ; 004286b6
     JMP 0x00428579                      ; 004286b9
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579

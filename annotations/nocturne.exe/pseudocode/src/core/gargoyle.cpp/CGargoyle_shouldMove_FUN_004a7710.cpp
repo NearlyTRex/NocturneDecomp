@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(int param_1)
 
 {
@@ -38,7 +36,7 @@ uint __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(int param_1)
       }
       fVar5 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                (*(float *)(*(int *)(param_1 + 0xbca4) + 0x34) - local_20);
-      if ((fVar5 < (float)_DAT_00584980) || ((float)_DAT_00584988 < fVar5)) {
+      if ((fVar5 < (float)-0.31415926534999999) || ((float)0.31415926534999999 < fVar5)) {
         return 1;
       }
     }

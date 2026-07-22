@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   FUN_00559260 at 005594eb
+;   wincore_winrun.cpp_FUN_00559260 at 005594eb
 ;
 ; Referenced Globals:
 ;   string s_load%d_00587e78
@@ -28,6 +28,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
+;   core_dmodel.cpp_FUN_00454460
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
@@ -42,7 +43,6 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
-;   engine_pod.cpp_CPod_cleanup_FUN_004f8b40
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -279,8 +279,8 @@ section .text
     CALL thunk_FUN_00527e10             ; 004c934a
         ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_00527e10()
     ADD ESP,0x4                         ; 004c934f
-    CALL FUN_00454460                   ; 004c9352
-        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; undefined FUN_00454460()
+    CALL core_dmodel.cpp_FUN_00454460   ; 004c9352
+        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00454460()
     CALL FUN_0051f650                   ; 004c9357
         ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; undefined FUN_0051f650()
     CALL core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 ; 004c935c
@@ -295,8 +295,8 @@ section .text
         ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_005458d0()
     CALL FUN_0044cc00                   ; 004c9375
         ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; undefined FUN_0044cc00()
-    CALL FUN_00559e90                   ; 004c937a
-        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; undefined FUN_00559e90()
+    CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a
+        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559e90()
     MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | DAT_005be1cc
     PUSH EDX                            ; 004c9385
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004c9386

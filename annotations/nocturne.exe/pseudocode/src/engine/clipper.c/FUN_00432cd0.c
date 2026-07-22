@@ -1,8 +1,8 @@
-// Name: FUN_00432cd0
+// Name: engine_clipper.c_FUN_00432cd0
 // Address: 00432cd0
 // Address Range: [[00432cd0, 0043376b]]
 // Convention: unknown
-// Signature: int * FUN_00432cd0(int *param_1,int *param_2)
+// Signature: int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int * FUN_00432cd0(int *param_1,int *param_2)
+int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
 
 {
   longlong lVar1;

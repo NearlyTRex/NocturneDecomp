@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processFudge_FUN_0049b260(int param_1)
 
 {
@@ -19,7 +17,7 @@ void __cdecl core_game_cpp_CGame_processFudge_FUN_0049b260(int param_1)
     uStack_18 = *(float *)(param_1 + 0x9c0);
     iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x38);
     if (iVar1 != 0) {
-      uStack_18 = uStack_18 * (float)_DAT_005823fa;
+      uStack_18 = uStack_18 * (float)0.10000000000000001;
     }
     iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4b);
     if (iVar1 != 0) {

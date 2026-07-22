@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(float *param_1,float *param_2,float *param_3,float param_4)
 
 {
@@ -33,9 +31,9 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(float *param_1,float
     param_1[5] = param_3[2];
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(param_1 + 6,param_1 + 3);
-  fVar2 = (float)_DAT_0057968d;
+  fVar2 = (float)0.03125;
   param_1[0x25] = param_4 * fVar2;
-  fVar1 = (float)_DAT_00579695;
+  fVar1 = (float)0.083333333333333301;
   param_1[0x26] =
        param_4 * fVar2 * fVar1 * (param_1[0x2b] * param_1[0x2b] + param_1[0x2a] * param_1[0x2a]);
   param_1[0x27] =

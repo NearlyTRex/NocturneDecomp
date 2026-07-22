@@ -107,7 +107,7 @@ uint __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0
             fStack_64 = fStack_64 * fVar2;
             fStack_60 = fStack_60 * fVar2;
           }
-          if (fStack_60 <= (float)_DAT_00582172) goto LAB_00498579;
+          if (fStack_60 <= (float)-0.80000000000000004) goto LAB_00498579;
         }
       }
       else if (((uStack_20 < 3) || (uStack_20 == 3)) && (*(int *)(param_1 + 0x24ac) == 0)) {
@@ -115,7 +115,7 @@ LAB_00498579:
         fStack_44 = *(float *)(iVar1 + 0x20) - local_bc[uStack_20 * 3];
         fStack_40 = *(float *)(iVar1 + 0x24) - local_bc[uStack_20 * 3 + 1];
         fStack_3c = *(float *)(iVar1 + 0x28) - local_bc[uStack_20 * 3 + 2];
-        if (ABS(fStack_40) <= (float)_DAT_0058217a) {
+        if (ABS(fStack_40) <= (float)2) {
           fStack_1c = fStack_44 * fStack_44 + fStack_3c * fStack_3c;
           if (fStack_1c <= local_24) {
             local_24 = fStack_1c;

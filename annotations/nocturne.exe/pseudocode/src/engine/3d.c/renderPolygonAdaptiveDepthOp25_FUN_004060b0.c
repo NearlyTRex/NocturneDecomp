@@ -75,8 +75,8 @@ int engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004060b0(int param_1)
          engine_light_cpp_calculateLighting_FUN_004c6cc0
                    (*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
                     *(uint *)(param_1 + 0x10));
-    _DAT_01c00c70 = FUN_00404680(DAT_006b0260,_DAT_01c00c74);
-    FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+    _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   }
   return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;
 }

@@ -32,9 +32,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"@gFilterFX->process()" + 1,
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gFilterFX->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     _DAT_01c78b14 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -43,9 +43,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gScript->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gScript->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   if (*(int *)(param_1 + 0xcc) != 0) {
     if (*(int *)(param_1 + 0x228) == 0) {
@@ -66,9 +66,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gSet->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gSet->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     _DAT_01c78b14 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -77,9 +77,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gGore->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gGore->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   core_water_cpp_CWater_process_FUN_00550860();
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
@@ -89,9 +89,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gFire->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gFire->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     _DAT_01c78b14 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -100,9 +100,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gEventList->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gEventList->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   core_terrain_cpp_CTerrain_process_FUN_00549410();
   core_weather_cpp_CWeather_update_FUN_00554980();
@@ -115,9 +115,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
   if (*(int *)(0x01C775EC + 0x20c) == 1) {
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"G%s : %3.2f ms\n" + 1,"gSit->process()",
-               ((double)(iVar2 - _DAT_01c78b14) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
-               (double)*(float *)(0x01C775EC + 0x264));
+              (PTR_DAT_005ad350,"%s : %3.2f ms\n","gSit->process()",
+               ((double)(iVar2 - _DAT_01c78b14) * 0.055555555555555601 * 1.52587890625e-05 *
+               1000) / (double)*(float *)(0x01C775EC + 0x264));
   }
   iVar2 = 0x01C775EC;
   *(uint *)(param_1 + 0x23c) = 0;
@@ -125,7 +125,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (PTR_DAT_005ad350,"simulate : %3.2f ms\n",
-               ((double)(iVar2 - unaff_ESI) * _DAT_0058454a * _DAT_00584552 * _DAT_0058455a) /
+               ((double)(iVar2 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                (double)*(float *)(0x01C775EC + 0x264));
   }
   *(float *)(param_1 + 0x250) = *(float *)(param_1 + 0x264) + *(float *)(param_1 + 0x250);

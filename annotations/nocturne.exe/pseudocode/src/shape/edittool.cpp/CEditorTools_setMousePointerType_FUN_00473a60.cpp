@@ -26,7 +26,7 @@ void shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(uint param
       goto LAB_00473a96;
     }
     if (param_2 != 2) {
-      _DAT_01cc4800 = "P?..\\shape\\edittool.cpp" + 2;
+      _DAT_01cc4800 = "..\\shape\\edittool.cpp";
       _DAT_01cc4804 = 0x93b;
       FUN_004c8440("CEditorTools::setMousePointerType - invalid type!");
       DAT_005b6d54 = param_4;

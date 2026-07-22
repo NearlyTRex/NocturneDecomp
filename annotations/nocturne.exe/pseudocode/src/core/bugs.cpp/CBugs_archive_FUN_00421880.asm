@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_count_00579c5c+1
+;   TerminatedCString s_count_00579c5d
 ;   string s_modelCount_00579c63
-;   undefined4 DAT_00579c6e
+;   char CHAR_00h_00579c6e = \x00
 ;   string s_modelName_00579c6f
 ;   string s_allowChase_00579c79
 ;   string s_allowSwarm_00579c84
@@ -37,7 +37,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 00421889
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 0042188e
-    PUSH 0x579c5d                       ; 00421891 | s_count_00579c5c+1
+    PUSH 0x579c5d                       ; 00421891 | = "count"
     LEA EBX,[EDI + 0xbd28]              ; 00421896
     PUSH EBX                            ; 0042189c
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0042189d
@@ -56,7 +56,7 @@ section .text
     LEA ESI,[EDI + 0x12130]             ; 004218c4
     MOV EBX,ESI                         ; 004218ca
     ADD ESI,0x5f0                       ; 004218cc
-    PUSH 0x579c6e                       ; 004218d2 | DAT_00579c6e
+    PUSH 0x579c6e                       ; 004218d2 | CHAR_00h_00579c6e
         ;   Label: LAB_004218d2
     PUSH EBX                            ; 004218d7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004218d8

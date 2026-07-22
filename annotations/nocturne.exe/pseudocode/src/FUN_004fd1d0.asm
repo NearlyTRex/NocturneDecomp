@@ -40,11 +40,11 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
+;   core_xform.cpp_FUN_0055d4a0
+;   core_xform.cpp_FUN_0055d4e0
+;   core_xform.cpp_FUN_0055d520
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
-;   FUN_0055d4a0
-;   FUN_0055d4e0
-;   FUN_0055d520
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV dword ptr [ESP + 0x14c],ESI     ; 004fd204
     LEA ESI,[ESP + 0xb8]                ; 004fd20b
     LEA EDI,[ESP + 0x68]                ; 004fd212
-    CALL FUN_0055d4e0                   ; 004fd216
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 004fd216
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0xb8]                ; 004fd21b
     ADD ESP,0x4                         ; 004fd222
     MOVSD ES:EDI,ESI                    ; 004fd225
@@ -80,8 +80,8 @@ section .text
     PUSH 0xbfc90fdb                     ; 004fd229
     LEA ESI,[ESP + 0xc8]                ; 004fd22e
     LEA EDI,[ESP + 0x28]                ; 004fd235
-    CALL FUN_0055d520                   ; 004fd239
-        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d520()
+    CALL core_xform.cpp_FUN_0055d520    ; 004fd239
+        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d520()
     LEA ESI,[ESP + 0xc8]                ; 004fd23e
     ADD ESP,0x4                         ; 004fd245
         ;   Label: LAB_004fd245
@@ -112,8 +112,8 @@ section .text
     MOV dword ptr [ESP + 0x14c],ESI     ; 004fd280
     LEA ESI,[ESP + 0x98]                ; 004fd287
     LEA EDI,[ESP + 0x68]                ; 004fd28e
-    CALL FUN_0055d4e0                   ; 004fd292
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 004fd292
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0x98]                ; 004fd297
     ADD ESP,0x4                         ; 004fd29e
     MOVSD ES:EDI,ESI                    ; 004fd2a1
@@ -123,8 +123,8 @@ section .text
     PUSH 0x3fc90fdb                     ; 004fd2a5
     LEA ESI,[ESP + 0xa8]                ; 004fd2aa
     LEA EDI,[ESP + 0x28]                ; 004fd2b1
-    CALL FUN_0055d520                   ; 004fd2b5
-        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d520()
+    CALL core_xform.cpp_FUN_0055d520    ; 004fd2b5
+        ;   XREF to: 0055d520 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d520()
     LEA ESI,[ESP + 0xa8]                ; 004fd2ba
     JMP 0x004fd245                      ; 004fd2c1
         ;   XREF to: 004fd245 (UNCONDITIONAL_JUMP)  ; LAB_004fd245
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_004fd2c3
     LEA ESI,[ESP + 0xe8]                ; 004fd2c9
     LEA EDI,[ESP + 0x58]                ; 004fd2d0
-    CALL FUN_0055d4e0                   ; 004fd2d4
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4e0()
+    CALL core_xform.cpp_FUN_0055d4e0    ; 004fd2d4
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     LEA ESI,[ESP + 0xe8]                ; 004fd2d9
     ADD ESP,0x4                         ; 004fd2e0
     MOVSD ES:EDI,ESI                    ; 004fd2e3
@@ -145,8 +145,8 @@ section .text
     PUSH dword ptr [EBX + 0x1fa54]      ; 004fd2ec
     LEA ESI,[ESP + 0x1c]                ; 004fd2f2
     LEA EDI,[ESP + 0x4c]                ; 004fd2f6
-    CALL FUN_0055d4a0                   ; 004fd2fa
-        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d4a0()
+    CALL core_xform.cpp_FUN_0055d4a0    ; 004fd2fa
+        ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     LEA ESI,[ESP + 0x1c]                ; 004fd2ff
     ADD ESP,0x4                         ; 004fd303
     MOVSD ES:EDI,ESI                    ; 004fd306

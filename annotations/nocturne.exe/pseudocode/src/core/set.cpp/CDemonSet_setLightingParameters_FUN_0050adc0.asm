@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[11]:
-;   FUN_0050a260 at 0050a4af
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a723
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 0048446f
 ;   core_fire.cpp_CRock_render_FUN_00484d40 at 00484ded
@@ -15,6 +14,7 @@
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750 at 005087d8
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a6fb
 ;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0 at 0050a89b
+;   core_set.cpp_FUN_0050a260 at 0050a4af
 ;   ... and 1 more
 ;
 ; Referenced Globals:

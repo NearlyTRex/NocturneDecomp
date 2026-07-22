@@ -11,7 +11,7 @@
 ;   FUN_00535900 at 00536099
 ;
 ; Referenced Globals:
-;   string s_Open_pct_:_%f_0057835e
+;   TerminatedCString s_Open_pct_f_0057835e
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;

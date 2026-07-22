@@ -22,9 +22,9 @@
 ;   string s_game.cpp_built_on_%s_%s_005827f2
 ;   string s_System_RAM:_%d_0058280c
 ;   string s_Swap_file:_%d_0058281c
-;   undefined4 DAT_0058282b
+;   TerminatedCString s_s_0058282b
 ;   string s_ESP:_%08X_0058282f
-;   undefined4 DAT_0058283a
+;   byte[54] BYTE_ARRAY_0058283a
 ;   string s_Flashlight_00582870
 ;   undefined4 s_lashlight_00582870+1
 ;   undefined4 s_ashlight_00582870+2
@@ -111,7 +111,7 @@ section .text
     ADD ESP,0x8                         ; 0049dab5
     LEA EAX,[EBP + 0xfffffef0]          ; 0049dab8
     PUSH EAX                            ; 0049dabe
-    PUSH 0x58282b                       ; 0049dabf | DAT_0058282b
+    PUSH 0x58282b                       ; 0049dabf | = "%s\n"
     MOV EAX,[0x005ad350]                ; 0049dac4 | PTR_DAT_005ad350
     PUSH EAX                            ; 0049dac9 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049daca
@@ -158,7 +158,7 @@ section .text
     MOV dword ptr [EAX + 0x244],ECX     ; 0049dbec
     MOV dword ptr [EAX + 0x220],ECX     ; 0049dbf2
     MOV dword ptr [EAX + 0x218],ECX     ; 0049dbf8
-    PUSH 0x58283a                       ; 0049dbfe | DAT_0058283a
+    PUSH 0x58283a                       ; 0049dbfe | BYTE_ARRAY_0058283a
     MOV dword ptr [EAX + 0x21c],ECX     ; 0049dc03
     MOV dword ptr [0x01c78420],ECX      ; 0049dc09 | DAT_01c78420
     MOV dword ptr [EAX + 0x210],ECX     ; 0049dc0f
@@ -431,7 +431,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 0049df1a
         ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 0049df1f
-    PUSH 0x582993                       ; 0049df22 | DAT_00582993
+    PUSH 0x582993                       ; 0049df22 | = "Quit"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049df27
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0049df2c
@@ -504,8 +504,8 @@ section .text
     ADD ESP,0x4                         ; 0049dfe1
     MOV EAX,[0x005be368]                ; 0049dfe4 | DAT_005be368
     PUSH EAX                            ; 0049dfe9 | DAT_01e57284
-    CALL FUN_0050ad20                   ; 0049dfea
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ad20()
+    CALL core_set.cpp_FUN_0050ad20      ; 0049dfea
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ad20()
     ADD ESP,0x4                         ; 0049dfef
     PUSH 0x1c78424                      ; 0049dff2 | DAT_01c78424
     MOV dword ptr [EDI + 0x1ec],0x3f800000 ; 0049dff7
@@ -715,7 +715,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 0049e254
         ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 0049e259
-    PUSH 0x582963                       ; 0049e25c | DAT_00582963
+    PUSH 0x582963                       ; 0049e25c | = "Quit"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049e261
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0049e266
@@ -836,7 +836,7 @@ section .text
         ;   Label: LAB_0049e393
     JNZ 0x0049e3bc                      ; 0049e396
         ;   XREF to: 0049e3bc (CONDITIONAL_JUMP)  ; LAB_0049e3bc
-    PUSH 0x582984                       ; 0049e398 | DAT_00582984
+    PUSH 0x582984                       ; 0049e398 | = "Quit"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049e39d
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0049e3a2
@@ -1004,7 +1004,7 @@ section .text
     FLD float ptr [EBP + -0x4]          ; 0049e550
     FADD float ptr [EAX + 0x264]        ; 0049e553
     FST float ptr [EBP + -0x4]          ; 0049e559
-    FCOMP double ptr [0x005829a2]       ; 0049e55c | DAT_005829a2
+    FCOMP double ptr [0x005829a2]       ; 0049e55c | DOUBLE_005829a2
     FNSTSW AX                           ; 0049e562
     SAHF                                ; 0049e564
     JBE 0x0049e13c                      ; 0049e565

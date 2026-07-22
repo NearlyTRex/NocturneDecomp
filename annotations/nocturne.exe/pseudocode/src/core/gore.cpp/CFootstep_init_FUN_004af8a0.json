@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 479,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 39,
+    "pseudocode_lines": 58,
+    "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 198
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -170,27 +169,27 @@
   "globals": [
     {
       "addr": "00585180",
-      "name": "DAT_00585180",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585180",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00585188",
-      "name": "DAT_00585188",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00585188",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "00585190",
-      "name": "DAT_00585190",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00585190",
+      "type": "float",
+      "value": "-3"
     },
     {
       "addr": "00585194",
-      "name": "DAT_00585194",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00585194",
+      "type": "float",
+      "value": "0.08333334"
     },
     {
       "addr": "005ba82c",
@@ -341,7 +340,7 @@
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 46,
+          "line": 44,
           "message": "Uninitialized variable: local_30",
           "severity": "warning"
         }
@@ -352,16 +351,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -369,7 +360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -377,7 +368,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -385,7 +376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *param_2,int param_3,uint param_4,uint param_5 ,uint param_6)",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar4 = (float *)(param_1 + 2);",
@@ -417,7 +408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar5 = (float10)fsin((float10)*(float *)(param_3 + 4));",
@@ -425,7 +416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar6 = (float10)fcos((float10)*(float *)(param_3 + 4));",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_005ba83c",
       "severity": "mild",
       "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -441,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_005ba82c",
       "severity": "mild",
       "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_005ba83c",
       "severity": "mild",
       "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 30,
       "match": "DAT_005ba82c",
       "severity": "mild",
       "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "local_30 = param_2[1];",
@@ -489,7 +480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "local_3c = param_2[1] + 1.0;",
@@ -497,7 +488,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_01fba938",
       "severity": "mild",
       "text": "(&DAT_01fba938,&local_40,&local_34,0,0);",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar3 = param_1 + 3;",
@@ -513,15 +504,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float)_DAT_00585180 < ABS((float)param_1[3] - (float)puVar3[3])) {",
+      "text": "if ((float)0.5 < ABS((float)param_1[3] - (float)puVar3[3])) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar3[3] = param_1[3];",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (puVar3 != param_1 + 0xc);",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 0;",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe] = param_5;",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_5",
       "severity": "mild",
       "text": "param_1[0xe] = param_5;",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xf] = param_4;",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_4",
       "severity": "mild",
       "text": "param_1[0xf] = param_4;",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_6;",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_6",
       "severity": "mild",
       "text": "param_1[1] = param_6;",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Pointer value `&DAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "(int)&DAT_005ba83c",
       "severity": "moderate",
       "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Pointer value `&DAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "(int)&DAT_005ba82c",
       "severity": "moderate",
       "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Pointer value `&DAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)&DAT_005ba83c",
       "severity": "moderate",
       "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Pointer value `&DAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)&DAT_005ba82c",
       "severity": "moderate",
       "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_34 != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_34 != &local_40) {",
@@ -633,7 +624,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -641,7 +632,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
@@ -649,7 +640,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
@@ -657,7 +648,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
@@ -665,10 +656,10 @@
     },
     {
       "description": "Uninitialized variable: local_30",
-      "line": 46,
+      "line": 44,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_30 = local_30 + _DAT_00585190;",
+      "text": "local_30 = local_30 + -3.0f;",
       "type": "static_uninitvar"
     }
   ]

@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   string s_batman.dfm_00578a97
-;   undefined1 DAT_00578aa2
-;   undefined1 DAT_00578aa3
-;   undefined1 DAT_00578aa4
-;   undefined1 DAT_00578aa5
+;   TerminatedCString s_none_00578aa2
+;   undefined4 s_one_00578aa2+1
+;   undefined4 s_ne_00578aa2+2
+;   undefined4 s_e_00578aa2+3
 ;   undefined4 DAT_0059a150
 ;   undefined4 DAT_0059a154
 ;   undefined1* PTR_core_batman.cpp_CBatman_setup_FUN_004134a0_0059a164 = 004134a0
@@ -34,7 +34,7 @@ section .text
     MOV EBX,EAX                         ; 004133f0
     PUSH 0x578a97                       ; 004133f2 | = "batman.dfm"
     ADD EAX,0x150                       ; 004133f7
-    MOV ESI,0x578aa2                    ; 004133fc | DAT_00578aa2
+    MOV ESI,0x578aa2                    ; 004133fc | = "none"
     PUSH EAX                            ; 00413401
     MOV dword ptr [EAX + -0x4],0x59a164 ; 00413402 | PTR_core_batman.cpp_CBatman_setup_FUN_004134a0_0059a164
     LEA EDI,[EBX + 0xbd24]              ; 00413409
@@ -49,13 +49,13 @@ section .text
     FSTP float ptr [EBX + 0x2ddc]       ; 00413439
     FSTP float ptr [EBX + 0x2de0]       ; 0041343f
     PUSH EDI                            ; 00413445
-    MOV AL,byte ptr [ESI]               ; 00413446 | DAT_00578aa2 | DAT_00578aa4
+    MOV AL,byte ptr [ESI]               ; 00413446 | = "none" | s_ne_00578aa2+2
         ;   Label: LAB_00413446
     MOV byte ptr [EDI],AL               ; 00413448
     CMP AL,0x0                          ; 0041344a
     JZ 0x0041345e                       ; 0041344c
         ;   XREF to: 0041345e (CONDITIONAL_JUMP)  ; LAB_0041345e
-    MOV AL,byte ptr [ESI + 0x1]         ; 0041344e | DAT_00578aa3 | DAT_00578aa5
+    MOV AL,byte ptr [ESI + 0x1]         ; 0041344e | s_one_00578aa2+1 | s_e_00578aa2+3
     ADD ESI,0x2                         ; 00413451
     MOV byte ptr [EDI + 0x1],AL         ; 00413454
     ADD EDI,0x2                         ; 00413457

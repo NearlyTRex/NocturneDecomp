@@ -4,7 +4,9 @@
 ; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(int param_1)
 ;
 ;
-; XREF[45]:
+; XREF[48]:
+;   FUN_0040f0f0 at 0040f0fc
+;   FUN_0040f5f0 at 0040f607
 ;   FUN_00414de0 at 00414df5
 ;   FUN_00415430 at 00415456
 ;   FUN_0041f6e0 at 0041f737
@@ -13,9 +15,7 @@
 ;   FUN_004b4250 at 004b425a
 ;   FUN_004c34c0 at 004c34ca
 ;   FUN_004c4340 at 004c4357
-;   FUN_004c9580 at 004c95ab
-;   FUN_004cbb50 at 004cbb67
-;   ... and 35 more
+;   ... and 38 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_loadModel_FUN_004543b0

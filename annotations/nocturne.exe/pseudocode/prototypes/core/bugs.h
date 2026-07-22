@@ -27,9 +27,17 @@ undefined4 CBugs::getDeathState(int param_1);
 // Address: 00421ad0
 void __cdecl CBugs::addSwarmGraphEdge(int param_1,int param_2,int param_3,int param_4);
 
+// Original: core_bugs.cpp_FUN_00421b80
+// Address: 00421b80
+void FUN_00421b80(int param_1);
+
 // Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00
 // Address: 00421f00
 undefined4 CBugs::sampleGroundHeight(int param_1,float param_2);
+
+// Original: core_bugs.cpp_FUN_00422050
+// Address: 00422050
+void FUN_00422050(int param_1,float param_2);
 
 // Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
 // Address: 00422370
@@ -47,9 +55,17 @@ undefined4 CBugs::updateBugPathfinding(undefined4 param_1,int *param_2,float par
 // Address: 00422c70
 void CBugs::updateBugRenderingData(int param_1,int param_2,float param_3);
 
+// Original: core_bugs.cpp_FUN_00423480
+// Address: 00423480
+void FUN_00423480(int param_1,int param_2);
+
 // Original: core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680
 // Address: 00423680
 undefined4 * __cdecl CBugs::recalculateBoundingBox(int param_1);
+
+// Original: core_bugs.cpp_FUN_00423790
+// Address: 00423790
+void FUN_00423790(int param_1,undefined4 param_2);
 
 // Original: core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50
 // Address: 00423a50
@@ -62,3 +78,19 @@ int __cdecl getDeformableModelName(int param_1);
 // Original: core_bugs.cpp_maxFloat_FUN_00423d60
 // Address: 00423d60
 float maxFloat(float param_1,float param_2);
+
+// Original: core_bugs.cpp_FUN_00423d90
+// Address: 00423d90
+int FUN_00423d90(int param_1,byte param_2);
+
+// Original: core_bugs.cpp_FUN_00423e60
+// Address: 00423e60
+undefined4 FUN_00423e60(undefined4 param_1);
+
+// Original: core_bugs.cpp_FUN_00423e70
+// Address: 00423e70
+undefined4 FUN_00423e70(undefined4 param_1);
+
+// Original: core_bugs.cpp_FUN_00423e80
+// Address: 00423e80
+void FUN_00423e80(undefined4 param_1);

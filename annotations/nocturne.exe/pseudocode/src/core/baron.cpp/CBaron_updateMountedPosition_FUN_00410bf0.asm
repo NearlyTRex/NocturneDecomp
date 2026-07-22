@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00410490 at 00410807
+;   core_baron.cpp_FUN_00410490 at 00410807
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00765a98

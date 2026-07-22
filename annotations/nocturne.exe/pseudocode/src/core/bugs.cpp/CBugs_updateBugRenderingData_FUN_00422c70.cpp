@@ -85,14 +85,14 @@ void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(int param_1,int par
     iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(param_1,param_2,param_3,&local_6c)
     ;
     if (iVar9 != 0) {
-      FUN_00423480(param_1,param_2);
+      core_bugs_cpp_FUN_00423480(param_1,param_2);
       *(uint *)(param_2 + 0x34) = 0;
       return;
     }
   }
   else {
     if (*(float *)(param_2 + 0x38) <= 0.0) {
-      FUN_00423480(param_1,param_2);
+      core_bugs_cpp_FUN_00423480(param_1,param_2);
       *(uint *)(param_2 + 0x34) = 0;
     }
     else {
@@ -103,10 +103,10 @@ void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(int param_1,int par
         fVar3 = local_118 * fVar4 + fVar2;
         *(float *)(param_2 + 0x34) = fVar3;
         if (fVar3 < 1.0) break;
-        FUN_00423480(param_1,param_2);
+        core_bugs_cpp_FUN_00423480(param_1,param_2);
         local_118 = local_118 - (1.0 - fVar2) / fVar4;
-        *(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) + _DAT_00579d6d;
-        if ((local_118 < (float)_DAT_00579d75) || (iVar9 = iVar9 + 1, 2 < iVar9)) break;
+        *(float *)(param_2 + 0x34) = *(float *)(param_2 + 0x34) + 1.5873523201947252e-314._0_4_;
+        if ((local_118 < (float)0.001) || (iVar9 = iVar9 + 1, 2 < iVar9)) break;
       }
       if (*(float *)(param_2 + 0x34) < 0.0) {
         *(uint *)(param_2 + 0x34) = 0;

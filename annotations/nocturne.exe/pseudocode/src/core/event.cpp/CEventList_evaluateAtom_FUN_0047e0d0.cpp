@@ -198,7 +198,7 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
     return uVar6;
   }
   local_dc = 0xffffffff;
-  iVar7 = _stricmp(local_150,&DAT_005802c4);
+  iVar7 = _stricmp(local_150,"cmp");
   if (iVar7 != 0) {
     iVar7 = _stricmp(local_150,"exists");
     if (iVar7 == 0) {
@@ -911,7 +911,7 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                     } while (cVar1 != '\0');
                     return 0xffffffff;
                   }
-                  if (((double)local_a88 < 0.0) || (_DAT_005809e7 < (double)local_a88)) {
+                  if (((double)local_a88 < 0.0) || (180 < (double)local_a88)) {
                     pcVar11 = "isFacing() angle must be in range 0..180.";
                     pcVar13 = &DAT_01c08b60;
                     do {
@@ -956,7 +956,7 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                   local_10c = 0;
                   iVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                                     (local_f8,local_110);
-                  if (local_a88 * (float)_DAT_005809ef * (float)_DAT_005809f7 <
+                  if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 <
                       ABS(*(float *)(iVar7 + 4))) {
                     local_dc = 0;
                   }
@@ -1168,7 +1168,7 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                                      fVar4 = *(float *)(iVar8 + 0x24) - local_34[1],
                                      fVar3 = *(float *)(iVar8 + 0x28) - local_34[2],
                                      SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) <=
-                                     (float)_DAT_005809ff)) {
+                                     (float)30)) {
                                     local_dc = 1;
                                     break;
                                   }
@@ -1439,30 +1439,30 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
     memmove(local_219 + 1,local_c8,iVar7);
     iVar7 = iVar7 + -1;
   }
-  iVar8 = _strcmp(local_219 + 1,&DAT_0057f3b3);
+  iVar8 = _strcmp(local_219 + 1,"<");
   iVar7 = 0;
   if (iVar8 != 0) {
-    iVar7 = _strcmp(local_219 + 1,&DAT_0057f3b5);
+    iVar7 = _strcmp(local_219 + 1,"<=");
     if (iVar7 == 0) {
       iVar7 = 1;
     }
     else {
-      iVar7 = _strcmp(local_219 + 1,&DAT_0057f3b8);
+      iVar7 = _strcmp(local_219 + 1,"==");
       if (iVar7 == 0) {
         iVar7 = 2;
       }
       else {
-        iVar7 = _strcmp(local_219 + 1,&DAT_0057f3bb);
+        iVar7 = _strcmp(local_219 + 1,"!=");
         if (iVar7 == 0) {
           iVar7 = 3;
         }
         else {
-          iVar7 = _strcmp(local_219 + 1,&DAT_0057f3be);
+          iVar7 = _strcmp(local_219 + 1,">");
           if (iVar7 == 0) {
             iVar7 = 5;
           }
           else {
-            iVar7 = _strcmp(local_219 + 1,&DAT_0057f3c0);
+            iVar7 = _strcmp(local_219 + 1,">=");
             if (iVar7 == 0) {
               iVar7 = 4;
             }
@@ -1491,12 +1491,12 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
     return 0xffffffff;
   }
   *param_3 = *param_3 + local_c0;
-  iVar9 = sscanf(acStack_8bd + 1,&DAT_0057f3c3,&local_c4);
+  iVar9 = sscanf(acStack_8bd + 1,"%d",&local_c4);
   iVar8 = local_c4;
   if (iVar9 != 1) {
     iVar8 = core_event_cpp_CEventList_getCounterValue_FUN_004807e0(0x01C03A10,acStack_8bd + 1);
   }
-  iVar9 = sscanf(local_345 + 1,&DAT_0057f3c3,&local_74);
+  iVar9 = sscanf(local_345 + 1,"%d",&local_74);
   if (iVar9 == 1) {
     switch(iVar7) {
     case 0:

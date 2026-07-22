@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b45b
+;   float FLOAT_0057b45b = 0.5
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0043cd37
     FADD float ptr [EDX + 0x4]          ; 0043cd3a
     FXCH                                ; 0043cd3d
-    FLD float ptr [0x0057b45b]          ; 0043cd3f | DAT_0057b45b
+    FLD float ptr [0x0057b45b]          ; 0043cd3f | FLOAT_0057b45b
     FXCH                                ; 0043cd45
     FMUL ST1                            ; 0043cd47
     FXCH ST2                            ; 0043cd49

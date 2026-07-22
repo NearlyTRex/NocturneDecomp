@@ -28,7 +28,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(int param_1,int 
   if ((0 < param_2) && (param_3 != (int *)0x0)) {
     _DAT_01b7b744 = param_2;
     if (20000 < param_2) {
-      _DAT_01cc4800 = "p@..\\core\\dtrace.cpp" + 2;
+      _DAT_01cc4800 = "..\\core\\dtrace.cpp";
       _DAT_01cc4804 = 0x8c9;
       FUN_004c8440("CDemonRaytrace::setPVS - Too many drawn cubes in pvs!");
     }

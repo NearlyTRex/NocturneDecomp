@@ -21,7 +21,7 @@ void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,f
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
-    _DAT_01cc4800 = "@..\\core\\dcube.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\dcube.cpp";
     _DAT_01cc4804 = 0x6e;
     FUN_004c8440("Bad clip!");
   }

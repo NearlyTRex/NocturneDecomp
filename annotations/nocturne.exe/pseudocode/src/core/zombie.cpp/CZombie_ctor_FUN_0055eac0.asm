@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   string s_zombie1.dfm_005983e6
-;   undefined1 DAT_005983f2
-;   undefined1 DAT_005983f3
-;   undefined1 DAT_005983f4
-;   undefined1 DAT_005983f5
+;   TerminatedCString s_true_005983f2
+;   undefined4 s_rue_005983f2+1
+;   undefined4 s_ue_005983f2+2
+;   undefined4 s_e_005983f2+3
 ;   string s_mine.geo_005983f7
 ;   undefined4 DAT_005a453c
 ;   undefined4 DAT_005a4540
@@ -44,7 +44,7 @@ section .text
     MOV EBX,EAX                         ; 0055ead9
     ADD EAX,0x150                       ; 0055eadb
     PUSH EAX                            ; 0055eae0
-    MOV ESI,0x5983f2                    ; 0055eae1 | DAT_005983f2
+    MOV ESI,0x5983f2                    ; 0055eae1 | = "true"
     MOV dword ptr [EAX + -0x4],0x5a4554 ; 0055eae6 | PTR_core_zombie.cpp_CZombie_setup_FUN_0055ec20_005a4554
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0055eaed
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
@@ -60,13 +60,13 @@ section .text
     FSTP float ptr [EBX + 0x2ddc]       ; 0055eb31
     FSTP float ptr [EBX + 0x2de0]       ; 0055eb37
     PUSH EDI                            ; 0055eb3d
-    MOV AL,byte ptr [ESI]               ; 0055eb3e | DAT_005983f2 | DAT_005983f4
+    MOV AL,byte ptr [ESI]               ; 0055eb3e | = "true" | s_ue_005983f2+2
         ;   Label: LAB_0055eb3e
     MOV byte ptr [EDI],AL               ; 0055eb40
     CMP AL,0x0                          ; 0055eb42
     JZ 0x0055eb56                       ; 0055eb44
         ;   XREF to: 0055eb56 (CONDITIONAL_JUMP)  ; LAB_0055eb56
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055eb46 | DAT_005983f3 | DAT_005983f5
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055eb46 | s_rue_005983f2+1 | s_e_005983f2+3
     ADD ESI,0x2                         ; 0055eb49
     MOV byte ptr [EDI + 0x1],AL         ; 0055eb4c
     ADD EDI,0x2                         ; 0055eb4f

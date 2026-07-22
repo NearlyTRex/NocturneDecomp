@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float param_2)
 
 {
@@ -249,7 +247,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_33c = param_1[2];
     }
     local_10c = local_10c + 1.0;
-    local_340 = local_340 + _DAT_005796ad;
+    local_340 = local_340 + 1.6145507525740408e-314._0_4_;
     local_18 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
                                 (&DAT_01fba938,&local_110,&local_344,local_1f4,0);
     if ((local_18 <= 0.0) || (1.0 <= local_18)) {
@@ -271,7 +269,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
     } while (pfVar6 != param_1 + 0x98);
     local_318 = 0;
     local_320 = 0;
-    local_31c = -param_1[0x25] * (float)_DAT_005796b5;
+    local_31c = -param_1[0x25] * (float)32;
     pfVar5 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                                 (param_1 + 6,local_2fc,&local_320);
     pfVar6 = param_1 + 0x19;
@@ -323,8 +321,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
     param_1[0x1e] = fVar2 + local_324;
     fVar1 = SQRT((fVar2 + local_324) * param_1[0x1e] +
                  *pfVar6 * *pfVar6 + (fVar1 + local_328) * param_1[0x1d]);
-    if ((float)_DAT_005796bd < fVar1) {
-      local_60 = (float)_DAT_005796bd / fVar1;
+    if ((float)25.132741228 < fVar1) {
+      local_60 = (float)25.132741228 / fVar1;
       *pfVar6 = *pfVar6 * local_60;
       param_1[0x1d] = param_1[0x1d] * local_60;
       param_1[0x1e] = param_1[0x1e] * local_60;
@@ -400,7 +398,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
           local_80 = *pfVar6 - *local_6c;
           local_7c = pfVar6[1] - local_6c[1];
           local_78 = pfVar6[2] - local_6c[2];
-          if ((float)_DAT_005796ed <
+          if ((float)0.01 <
               SQRT(local_78 * local_78 + local_80 * local_80 + local_7c * local_7c)) {
             local_18 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
                                         (&DAT_01fba938,local_6c,pfVar6,local_28 + 10,0);
@@ -417,7 +415,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
             local_6c[1] = pfVar6[1];
             local_6c[2] = pfVar6[2];
           }
-          pfVar7[0x34] = param_1[0x96] + (float)_DAT_005796f5;
+          pfVar7[0x34] = param_1[0x96] + (float)0.5;
           fVar1 = param_1[0x96];
           pfVar7[0x37] = 0.0;
           pfVar7[0x38] = 1.0;
@@ -439,7 +437,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_1dc = local_50[local_3d0[0] * 0xd + 3] - local_50[local_3d0[0] * 0xd + 6];
       local_1d8 = local_50[local_3d0[0] * 0xd + 4] - local_50[local_3d0[0] * 0xd + 7];
       local_1d4 = local_50[local_3d0[0] * 0xd + 5] - local_50[local_3d0[0] * 0xd + 8];
-      local_5c = (1.0 - param_1[local_3d0[0] * 0xd + 0x36]) * (float)_DAT_005796c5;
+      local_5c = (1.0 - param_1[local_3d0[0] * 0xd + 0x36]) * (float)1.01;
       local_1a0 = local_1dc * local_5c;
       local_19c = local_1d8 * local_5c;
       local_198 = local_1d4 * local_5c;
@@ -453,7 +451,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_370 = param_1[0x14];
       local_36c = param_1[0x15];
       local_48 = (local_18c * param_1[0x15] + local_194 * *pfVar6 + local_190 * param_1[0x14]) *
-                 _DAT_005796cd;
+                 2.0f;
       local_104 = local_194 * local_48;
       local_100 = local_190 * local_48;
       local_fc = local_18c * local_48;
@@ -465,9 +463,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
         local_13c = local_1e4;
         local_138 = local_1e0;
       }
-      local_140 = local_140 * _DAT_005796d1 * _DAT_005796d5;
-      local_13c = local_13c * _DAT_005796d1 * _DAT_005796d5;
-      local_138 = local_138 * _DAT_005796d1 * _DAT_005796d5;
+      local_140 = local_140 * -1.0f * 0.5f;
+      local_13c = local_13c * -1.0f * 0.5f;
+      local_138 = local_138 * -1.0f * 0.5f;
       pfVar6 = param_1 + 0x25;
       local_bc = local_140 - param_1[0x13];
       local_b8 = local_13c - param_1[0x14];
@@ -488,10 +486,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       pfVar6 = param_1 + iVar8 * 0xd + 0x2d;
       local_11c = pfVar6[1] * local_300 - pfVar6[2] * local_304;
       local_118 = pfVar6[2] * local_308 - *pfVar6 * local_300;
-      local_b0 = local_11c * _DAT_005796d9;
+      local_b0 = local_11c * 0.1f;
       local_114 = *pfVar6 * local_304 - pfVar6[1] * local_308;
-      local_ac = local_118 * _DAT_005796d9;
-      local_a8 = local_114 * _DAT_005796d9;
+      local_ac = local_118 * 0.1f;
+      local_a8 = local_114 * 0.1f;
       param_1[0x22] = param_1[0x22] + local_b0;
       param_1[0x23] = param_1[0x23] + local_ac;
       param_1[0x24] = param_1[0x24] + local_a8;
@@ -500,7 +498,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_384 = pfVar6[2];
       local_8c = 0.0;
       local_84 = 0.0;
-      local_88 = param_1[0x25] * (float)_DAT_005796b5;
+      local_88 = param_1[0x25] * (float)32;
       pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                                   (param_1 + 6,local_188,&local_8c);
       if (&local_8c != pfVar6) {
@@ -519,7 +517,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_23c = param_1[local_3d0[0] * 0xd + 0x30] - param_1[local_3d0[0] * 0xd + 0x33];
       local_238 = param_1[local_3d0[0] * 0xd + 0x31] - param_1[local_3d0[0] * 0xd + 0x34];
       local_234 = param_1[local_3d0[0] * 0xd + 0x32] - param_1[local_3d0[0] * 0xd + 0x35];
-      local_4c = (1.0 - param_1[local_3d0[0] * 0xd + 0x36]) * (float)_DAT_005796dd;
+      local_4c = (1.0 - param_1[local_3d0[0] * 0xd + 0x36]) * (float)-1.01;
       local_1ac = local_23c * local_4c;
       local_68 = local_3d0[1];
       local_1a8 = local_238 * local_4c;
@@ -527,7 +525,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_26c = param_1[local_3d0[1] * 0xd + 0x30] - param_1[local_3d0[1] * 0xd + 0x33];
       local_268 = param_1[local_3d0[1] * 0xd + 0x31] - param_1[local_3d0[1] * 0xd + 0x34];
       local_264 = param_1[local_3d0[1] * 0xd + 0x32] - param_1[local_3d0[1] * 0xd + 0x35];
-      local_64 = (1.0 - param_1[local_3d0[1] * 0xd + 0x36]) * (float)_DAT_005796dd;
+      local_64 = (1.0 - param_1[local_3d0[1] * 0xd + 0x36]) * (float)-1.01;
       local_a0 = local_268 * local_64;
       local_a4 = local_26c * local_64;
       local_9c = local_264 * local_64;
@@ -558,7 +556,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_364 = param_1[0x14];
       local_360 = param_1[0x15];
       local_58 = (local_330 * param_1[0x15] + local_338 * *pfVar6 + local_334 * param_1[0x14]) *
-                 _DAT_005796cd;
+                 2.0f;
       local_2d8 = local_338 * local_58;
       local_2d4 = local_334 * local_58;
       local_2d0 = local_330 * local_58;
@@ -570,9 +568,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
         local_1cc = local_d0;
         local_1c8 = local_cc;
       }
-      local_1d0 = local_1d0 * _DAT_005796d1 * _DAT_005796e5;
-      local_1cc = local_1cc * _DAT_005796d1 * _DAT_005796e5;
-      local_1c8 = local_1c8 * _DAT_005796d1 * _DAT_005796e5;
+      local_1d0 = local_1d0 * -1.0f * 0.25f;
+      local_1cc = local_1cc * -1.0f * 0.25f;
+      local_1c8 = local_1c8 * -1.0f * 0.25f;
       pfVar6 = param_1 + 0x25;
       local_260 = local_1d0 - param_1[0x13];
       local_25c = local_1cc - param_1[0x14];
@@ -593,10 +591,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       pfVar7 = param_1 + local_3d0[0] * 0xd + 0x2d;
       local_200 = pfVar7[1] * local_12c - pfVar7[2] * local_130;
       local_1fc = pfVar7[2] * local_134 - *pfVar7 * local_12c;
-      local_3a4 = local_200 * _DAT_005796d9;
-      local_3a0 = local_1fc * _DAT_005796d9;
+      local_3a4 = local_200 * 0.1f;
+      local_3a0 = local_1fc * 0.1f;
       local_1f8 = *pfVar7 * local_130 - pfVar7[1] * local_134;
-      local_39c = local_1f8 * _DAT_005796d9;
+      local_39c = local_1f8 * 0.1f;
       pfVar6 = param_1 + 0x22;
       *pfVar6 = *pfVar6 + local_3a4;
       param_1[0x23] = param_1[0x23] + local_3a0;
@@ -605,9 +603,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_35c = pfVar5[1] * local_12c - pfVar5[2] * local_130;
       local_358 = pfVar5[2] * local_134 - *pfVar5 * local_12c;
       local_354 = *pfVar5 * local_130 - pfVar5[1] * local_134;
-      local_3b0 = local_35c * _DAT_005796d9;
-      local_3ac = local_358 * _DAT_005796d9;
-      local_3a8 = local_354 * _DAT_005796d9;
+      local_3b0 = local_35c * 0.1f;
+      local_3ac = local_358 * 0.1f;
+      local_3a8 = local_354 * 0.1f;
       *pfVar6 = *pfVar6 + local_3b0;
       param_1[0x23] = param_1[0x23] + local_3ac;
       param_1[0x24] = param_1[0x24] + local_3a8;
@@ -619,18 +617,18 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       local_e4 = pfVar5[2];
       local_2f0 = 0.0;
       local_2e8 = 0.0;
-      local_2ec = param_1[0x25] * (float)_DAT_005796b5;
+      local_2ec = param_1[0x25] * (float)32;
       pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                                   (param_1 + 6,local_2cc,&local_2f0);
-      local_24c = _DAT_005796d5;
+      local_24c = 0.5f;
       if (&local_2f0 != pfVar6) {
         local_2f0 = *pfVar6;
         local_2ec = pfVar6[1];
         local_2e8 = pfVar6[2];
       }
-      local_98 = local_2f0 * _DAT_005796d5;
-      local_94 = local_2ec * _DAT_005796d5;
-      local_90 = local_2e8 * _DAT_005796d5;
+      local_98 = local_2f0 * 0.5f;
+      local_94 = local_2ec * 0.5f;
+      local_90 = local_2e8 * 0.5f;
       pfVar6 = param_1 + 0x22;
       local_128 = local_28c * local_90 - local_288 * local_94;
       local_124 = local_288 * local_98 - local_290 * local_90;
@@ -661,7 +659,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
           local_398 = local_38[iVar9 * 0xd + 3] - local_38[iVar9 * 0xd + 6];
           local_394 = local_38[iVar9 * 0xd + 4] - local_38[iVar9 * 0xd + 7];
           local_390 = local_38[iVar9 * 0xd + 5] - local_38[iVar9 * 0xd + 8];
-          local_24 = (1.0 - param_1[iVar9 * 0xd + 0x36]) * (float)_DAT_005796dd;
+          local_24 = (1.0 - param_1[iVar9 * 0xd + 0x36]) * (float)-1.01;
           local_154 = (local_38[iVar9 * 0xd + 4] - local_38[iVar9 * 0xd + 7]) * local_24;
           local_158 = (local_38[iVar9 * 0xd + 3] - local_38[iVar9 * 0xd + 6]) * local_24;
           local_150 = (local_38[iVar9 * 0xd + 5] - local_38[iVar9 * 0xd + 8]) * local_24;
@@ -688,19 +686,19 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                 (param_1 + 6,&local_278,local_38 + local_3c * 0xd + 10);
       fVar1 = (local_270 * param_1[0x15] + local_278 * *pfVar6 + local_274 * param_1[0x14]) *
-              _DAT_005796cd;
+              2.0f;
       if (&local_2a8 != local_218) {
         local_2a8 = local_278 * fVar1 - *pfVar6;
         local_2a4 = local_274 * fVar1 - param_1[0x14];
         local_2a0 = local_270 * fVar1 - param_1[0x15];
       }
-      fVar2 = local_2a4 * _DAT_005796d1 * _DAT_005796e9;
-      fVar1 = local_2a0 * _DAT_005796d1 * _DAT_005796e9;
+      fVar2 = local_2a4 * -1.0f * 0.2f;
+      fVar1 = local_2a0 * -1.0f * 0.2f;
       pfVar6 = param_1 + 0x25;
       param_2 = 1.0 / param_2;
       param_1[0x19] =
            param_1[0x19] +
-           (local_2a8 * _DAT_005796d1 * _DAT_005796e9 - param_1[0x13]) * *pfVar6 * param_2;
+           (local_2a8 * -1.0f * 0.2f - param_1[0x13]) * *pfVar6 * param_2;
       param_1[0x1a] = param_1[0x1a] + (fVar2 - param_1[0x14]) * *pfVar6 * param_2;
       param_1[0x1b] = param_1[0x1b] + (fVar1 - param_1[0x15]) * *pfVar6 * param_2;
       param_1[0x1e] = 0.0;
@@ -715,7 +713,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float 
       pfVar6 = param_1;
       if (0 < (int)param_1[0x2c]) {
         do {
-          if (ABS(pfVar6[0x31] - param_1[0x96]) < (float)_DAT_005796fd) {
+          if (ABS(pfVar6[0x31] - param_1[0x96]) < (float)0.10000000000000001) {
             iVar9 = iVar9 + 1;
           }
           iVar8 = iVar8 + 1;

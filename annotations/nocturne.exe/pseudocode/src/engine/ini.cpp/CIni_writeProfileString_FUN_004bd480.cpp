@@ -31,7 +31,7 @@ uint __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,ui
   if (*param_1 == 0) {
     return 1;
   }
-  iVar3 = _fopen(param_5,&DAT_0058657d);
+  iVar3 = _fopen(param_5,"rt");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\ini.cpp";
     _DAT_01cc4804 = 0x182;
@@ -57,7 +57,7 @@ uint __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,ui
     pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
   } while (cVar1 != '\0');
   acStack_216[~uVar5] = 'x';
-  iVar4 = _fopen(acStack_216 + 2,&DAT_005865c1);
+  iVar4 = _fopen(acStack_216 + 2,"wt");
   if (iVar4 == 0) {
     _DAT_01cc4800 = "..\\engine\\ini.cpp";
     _DAT_01cc4804 = 0x186;

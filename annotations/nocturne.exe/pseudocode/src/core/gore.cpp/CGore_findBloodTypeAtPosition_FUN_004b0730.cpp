@@ -18,9 +18,9 @@ uint __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(uint param
   if (0 < _DAT_01c9e038) {
     iVar1 = 0x1c9e03c;
     do {
-      if (((ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)_DAT_005851c8) &&
-          (ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)_DAT_005851d0)) &&
-         (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005851d0)) {
+      if (((ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)0.5) &&
+          (ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)1.333)) &&
+         (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)1.333)) {
         *param_3 = *(uint *)(iVar1 + 0x10);
         return 1;
       }
@@ -33,9 +33,9 @@ uint __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(uint param
     iVar1 = 0x1c7ccf4;
     do {
       if (((*(int *)(iVar1 + 0x10) == 0) &&
-          (ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)_DAT_005851c8)) &&
-         ((ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)_DAT_005851c8 &&
-          (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005851c8)))) {
+          (ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)0.5)) &&
+         ((ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)0.5 &&
+          (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)0.5)))) {
         *param_3 = *(uint *)(iVar1 + 0x14);
         return 1;
       }

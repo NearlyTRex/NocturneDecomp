@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,uint *param_2,uint param_3,int param_4)
 
 {
@@ -31,8 +29,8 @@ uint __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,uin
       uVar2 = param_2[1];
       uVar4 = 0x479951;
       fVar3 = (float10)round
-                                 ((float10)*(float *)(param_4 + 4) * (float10)_DAT_0057f33f *
-                                  (float10)_DAT_0057f347);
+                                 ((float10)*(float *)(param_4 + 4) * (float10)1.2 *
+                                  (float10)0.25);
       iStack_18 = (int)ROUND(fVar3);
       uStack_1c = param_2[2];
       uStack_20 = uVar2;

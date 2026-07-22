@@ -16,7 +16,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0 at 0046142b
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\drender.cpp_0057dc9c+1
+;   TerminatedCString s_engine_drender_cpp_0057dc9d
 ;   string s_CDemonRenderer::demonGZFacetList_0057dcb3
 ;   undefined4 DAT_005ae70c
 ;   undefined4 DAT_005b7624
@@ -244,7 +244,7 @@ section .text
     JL 0x004616d7                       ; 004616b2
         ;   XREF to: 004616d7 (CONDITIONAL_JUMP)  ; LAB_004616d7
     PUSH EBP                            ; 004616b4
-    MOV ECX,0x57dc9d                    ; 004616b5 | s_..\engine\drender.cpp_0057dc9c+1
+    MOV ECX,0x57dc9d                    ; 004616b5 | = "..\\engine\\drender.cpp"
     MOV EAX,0x967                       ; 004616ba
     PUSH 0x57dcb3                       ; 004616bf | = "CDemonRenderer::demonGZFacetList - To..."
     MOV dword ptr [0x01cc4800],ECX      ; 004616c4 | DAT_01cc4800

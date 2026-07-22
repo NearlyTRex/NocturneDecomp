@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "globals.h"
 #include "constants.h"
 
 // =============================================================================
@@ -37,9 +38,9 @@ static undefined1* DAT_005C182C = (undefined1*)s_Saturday_00598a20;
 static undefined1* DAT_005C1864 = (undefined1*)s_February_00598a34;
 static undefined1* DAT_005C1868 = (undefined1*)s_March_00598a40;
 static undefined1* DAT_005C186C = (undefined1*)s_April_00598a48;
-static undefined1* DAT_005C1870 = (undefined1*)0x00598A50; // DAT_00598a50
-static undefined1* DAT_005C1874 = (undefined1*)0x00598A54; // DAT_00598a54
-static undefined1* DAT_005C1878 = (undefined1*)0x00598A5C; // DAT_00598a5c
+static undefined1* DAT_005C1870 = (undefined1*)s_May_00598a50;
+static undefined1* DAT_005C1874 = (undefined1*)s_June_00598a54;
+static undefined1* DAT_005C1878 = (undefined1*)s_July_00598a5c;
 static undefined1* DAT_005C187C = (undefined1*)s_August_00598a64;
 static undefined1* DAT_005C1880 = (undefined1*)s_September_00598a6c;
 static undefined1* DAT_005C1884 = (undefined1*)s_October_00598a78;
@@ -47,35 +48,35 @@ static undefined1* DAT_005C1888 = (undefined1*)s_November_00598a80;
 static undefined1* DAT_005C188C = (undefined1*)s_December_00598a8c;
 static undefined1* DAT_005C1B18 = (undefined1*)s_TMPDIR_00598b3c;
 static undefined1* DAT_005C1B1C = (undefined1*)s_TEMPDIR_00598b44;
-static undefined1* DAT_005C2070 = (undefined1*)0x00599108; // DAT_00599108
-static undefined1* DAT_005C2074 = (undefined1*)0x0059910D; // DAT_0059910d
-static undefined1* DAT_005C2078 = (undefined1*)0x00599112; // DAT_00599112
-static undefined1* DAT_005C207C = (undefined1*)0x00599117; // DAT_00599117
-static undefined1* DAT_005C2080 = (undefined1*)0x0059911B; // DAT_0059911b
-static undefined1* DAT_005C2084 = (undefined1*)0x00599120; // DAT_00599120
-static undefined1* DAT_005C2088 = (undefined1*)0x00599125; // DAT_00599125
+static undefined1* DAT_005C2070 = (undefined1*)s_acos_00599108;
+static undefined1* DAT_005C2074 = (undefined1*)s_asin_0059910d;
+static undefined1* DAT_005C2078 = (undefined1*)s_sqrt_00599112;
+static undefined1* DAT_005C207C = (undefined1*)s_exp_00599117;
+static undefined1* DAT_005C2080 = (undefined1*)s_cosh_0059911b;
+static undefined1* DAT_005C2084 = (undefined1*)s_sinh_00599120;
+static undefined1* DAT_005C2088 = (undefined1*)s_pow_00599125;
 static undefined1* DAT_005C208C = (undefined1*)s_acosh_00599129;
-static undefined1* DAT_005C2090 = (undefined1*)0x0059912F; // DAT_0059912f
-static undefined1* DAT_005C2094 = (undefined1*)0x00599134; // DAT_00599134
+static undefined1* DAT_005C2090 = (undefined1*)s_log2_0059912f;
+static undefined1* DAT_005C2094 = (undefined1*)s_log_00599134;
 static undefined1* DAT_005C2098 = (undefined1*)s_log10_00599138;
 static undefined1* DAT_005C209C = (undefined1*)s_atanh_0059913e;
 static undefined1* DAT_005C20A0 = (undefined1*)s_atan2_00599144;
-static undefined1* DAT_005C20A4 = (undefined1*)0x0059914A; // DAT_0059914a
+static undefined1* DAT_005C20A4 = (undefined1*)s_ipow_0059914a;
 static undefined1* DAT_005C20A8 = (undefined1*)s_dpowi_0059914f;
-static undefined1* DAT_005C20AC = (undefined1*)0x00599155; // DAT_00599155
-static undefined1* DAT_005C20B0 = (undefined1*)0x00599159; // DAT_00599159
-static undefined1* DAT_005C20B4 = (undefined1*)0x0059915D; // DAT_0059915d
-static undefined1* DAT_005C20B8 = (undefined1*)0x00599161; // DAT_00599161
-static undefined1* DAT_005C20BC = (undefined1*)0x00599164; // DAT_00599164
-static undefined1* DAT_005C20C0 = (undefined1*)0x00599167; // DAT_00599167
-static undefined1* DAT_005C20C4 = (undefined1*)0x0059916A; // DAT_0059916a
+static undefined1* DAT_005C20AC = (undefined1*)s_cos_00599155;
+static undefined1* DAT_005C20B0 = (undefined1*)s_sin_00599159;
+static undefined1* DAT_005C20B4 = (undefined1*)s_tan_0059915d;
+static undefined1* DAT_005C20B8 = (undefined1*)s_y0_00599161;
+static undefined1* DAT_005C20BC = (undefined1*)s_y1_00599164;
+static undefined1* DAT_005C20C0 = (undefined1*)s_yn_00599167;
+static undefined1* DAT_005C20C4 = (undefined1*)s_mod_0059916a;
 static undefined1* DAT_005C20C8 = (undefined1*)s_cotan_0059916e;
 static undefined1* DAT_005C214C = (undefined1*)s_Domain_error_005991fc;
 static undefined1* DAT_005C2150 = (undefined1*)s_Argument_singularity_00599209;
 static undefined1* DAT_005C2154 = (undefined1*)s_Overflow_range_error_0059921e;
 static undefined1* DAT_005C2158 = (undefined1*)s_Underflow_range_error_00599233;
-static undefined1* DAT_005C215C = (undefined1*)s_Total_loss_of_significance_00599249;
-static undefined1* DAT_005C2160 = (undefined1*)s_Partial_loss_of_significance_00599264;
+static undefined1* DAT_005C215C = (undefined1*)s_Total_loss_of_significan_00599249;
+static undefined1* DAT_005C2160 = (undefined1*)s_Partial_loss_of_signific_00599264;
 static undefined1* DAT_005C3F88 = (undefined1*)0x0056BF77; // LAB_0056bf77
 static undefined1* DAT_005C3F8C = (undefined1*)0x0056BF7C; // LAB_0056bf7c
 static undefined1* DAT_005C3F90 = (undefined1*)0x0056BF82; // LAB_0056bf82

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_buildColorLookupTable_FUN_00403570(void)
 
 {
@@ -24,7 +22,7 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00403570(void)
   byte *puVar11;
   
   iVar6 = 0;
-  fVar4 = (float)_DAT_0057723c;
+  fVar4 = (float)0.57735027000000005;
   iVar8 = 0;
   do {
     pbVar1 = &DAT_01c00648 + iVar6;

@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 163,
-    "cross_reference_count": 47,
+    "complexity_score": 143,
+    "cross_reference_count": 49,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -139,9 +139,15 @@
   },
   "cross_references": [
     {
-      "addr": "00410490",
-      "from_addr": "004104be",
-      "name": "FUN_00410490",
+      "addr": "0040f610",
+      "from_addr": "0040f626",
+      "name": "FUN_0040f610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040fa20",
+      "from_addr": "0040fafa",
+      "name": "FUN_0040fa20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -223,9 +229,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055ef50",
-      "from_addr": "0055ff99",
-      "name": "FUN_0055ef50",
+      "addr": "00410490",
+      "from_addr": "004104be",
+      "name": "core_baron.cpp_FUN_00410490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -419,6 +425,12 @@
       "from_addr": "00554b04",
       "name": "core_weather.cpp_CWeather_update_FUN_00554980",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ef50",
+      "from_addr": "0055ff99",
+      "name": "core_zombie.cpp_FUN_0055ef50",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -453,14 +465,14 @@
   "globals": [
     {
       "addr": "0058022c",
-      "name": "DAT_0058022c",
-      "type": "undefined4",
+      "name": "s_none_0058022c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00580231",
-      "name": "DAT_00580231",
-      "type": "undefined4",
+      "name": "s_s_00580231",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -687,16 +699,8 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_0058022c);",
+      "text": "iVar2 = _stricmp(param_2,\"none\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0058022c",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_0058022c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -716,18 +720,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00580231",
-      "severity": "mild",
-      "text": "(PTR_DAT_005ad350,&DAT_00580231,&DAT_01c08b60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_01c08b60",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,&DAT_00580231,&DAT_01c08b60);",
+      "text": "engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,\"%s\\n\",&DAT_01c08b60)",
       "type": "undefined_data"
     },
     {

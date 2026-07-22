@@ -8,7 +8,7 @@
 ;   FUN_004b46d0 at 004b47ce
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005857f6
+;   TerminatedCString s_CGun_005857f6
 ;   string s_..\\core\\hero.cpp_005857fb
 ;   string s_Out_of_memory!_0058580c
 ;   string s_Your_weapon_0058581b
@@ -43,7 +43,7 @@ section .text
     ADD ESP,0x4                         ; 004b4de2
     MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | DAT_02ddf9a8
     PUSH EDX                            ; 004b4deb
-    PUSH 0x5857f6                       ; 004b4dec | DAT_005857f6
+    PUSH 0x5857f6                       ; 004b4dec | = "CGun"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b4df1
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
     ADD ESP,0x4                         ; 004b4df6

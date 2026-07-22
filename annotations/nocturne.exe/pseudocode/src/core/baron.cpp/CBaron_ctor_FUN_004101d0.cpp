@@ -22,7 +22,7 @@ int core_baron_cpp_CBaron_ctor_FUN_004101d0(uint param_1)
   *(uint *)(iVar2 + 0x1fb08) = *(uint *)(iVar2 + 0x1fb0c);
   *(uint *)(iVar2 + 0x1fb04) = *(uint *)(iVar2 + 0x1fb08);
   *(uint *)(iVar2 + 0x1fb14) = 0;
-  pcVar3 = &DAT_00578516;
+  pcVar3 = "none";
   *(uint *)(iVar2 + 0x1fb18) = 0;
   *(uint *)(iVar2 + 0xfc) = 1;
   pcVar4 = (char *)(iVar2 + 0x1fa3c);
@@ -36,7 +36,7 @@ int core_baron_cpp_CBaron_ctor_FUN_004101d0(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_0057851b;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x1faa0);
   do {
     cVar1 = *pcVar3;

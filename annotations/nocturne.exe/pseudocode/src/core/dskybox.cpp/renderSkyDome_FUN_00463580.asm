@@ -50,10 +50,10 @@
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000
-;   undefined4 DAT_0057dfae
-;   undefined4 DAT_0057dfb6
-;   undefined4 DAT_0057dfbe
-;   undefined4 DAT_0057dfc6
+;   double DOUBLE_0057dfae = 0.5
+;   double DOUBLE_0057dfb6 = 1.41400000000000
+;   double DOUBLE_0057dfbe = 0.589048622531250
+;   double DOUBLE_0057dfc6 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b0678
 ;   undefined4 DAT_01b4d738
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0x8                         ; 004635e0
     FLD float ptr [ESP + 0x54]          ; 004635e3
     FADD float ptr [ESP + 0x60]         ; 004635e7
-    FLD double ptr [0x0057dfae]         ; 004635eb | DAT_0057dfae
+    FLD double ptr [0x0057dfae]         ; 004635eb | DOUBLE_0057dfae
     FXCH                                ; 004635f1
     FMUL ST1                            ; 004635f3
     FLD float ptr [ESP + 0x5c]          ; 004635f5
@@ -129,7 +129,7 @@ section .text
     FMUL ST3                            ; 00463609
     FXCH                                ; 0046360b
     FMULP ST3                           ; 0046360d
-    FMUL double ptr [0x0057dfb6]        ; 0046360f | DAT_0057dfb6
+    FMUL double ptr [0x0057dfb6]        ; 0046360f | DOUBLE_0057dfb6
     FLDZ                                ; 00463615
     XOR EDX,EDX                         ; 00463617
     MOV EAX,dword ptr [ESP + 0x58]      ; 00463619
@@ -149,7 +149,7 @@ section .text
     FLD float ptr [ESP + 0x64]          ; 00463651
         ;   Label: LAB_00463651
     FSUB float ptr [ESP + 0x58]         ; 00463655
-    FMUL double ptr [0x0057dfb6]        ; 00463659 | DAT_0057dfb6
+    FMUL double ptr [0x0057dfb6]        ; 00463659 | DOUBLE_0057dfb6
     FST float ptr [ESP + 0x88]          ; 0046365f
     FCOMP float ptr [0x005b0678]        ; 00463666 | DAT_005b0678
     FNSTSW AX                           ; 0046366c
@@ -161,8 +161,8 @@ section .text
     FLD float ptr [ESP + 0x68]          ; 0046367d
         ;   Label: LAB_0046367d
     FSUB float ptr [ESP + 0x5c]         ; 00463681
-    FMUL double ptr [0x0057dfae]        ; 00463685 | DAT_0057dfae
-    FMUL double ptr [0x0057dfb6]        ; 0046368b | DAT_0057dfb6
+    FMUL double ptr [0x0057dfae]        ; 00463685 | DOUBLE_0057dfae
+    FMUL double ptr [0x0057dfb6]        ; 0046368b | DOUBLE_0057dfb6
     FST float ptr [ESP + 0x84]          ; 00463691
     FCOMP float ptr [0x005b0678]        ; 00463698 | DAT_005b0678
     FNSTSW AX                           ; 0046369e
@@ -191,13 +191,13 @@ section .text
     MOV dword ptr [ESP + 0x10],ESI      ; 004636e5
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004636e9
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
-    FLD double ptr [0x0057dfbe]         ; 004636ee | DAT_0057dfbe
+    FLD double ptr [0x0057dfbe]         ; 004636ee | DOUBLE_0057dfbe
     FSIN                                ; 004636f4
     ADD ESP,0x8                         ; 004636f6
     FLD float ptr [0x005b0678]          ; 004636f9 | DAT_005b0678
     FXCH                                ; 004636ff
     FMUL ST1                            ; 00463701
-    FLD double ptr [0x0057dfc6]         ; 00463703 | DAT_0057dfc6
+    FLD double ptr [0x0057dfc6]         ; 00463703 | DOUBLE_0057dfc6
     FXCH                                ; 00463709
     FMUL ST1                            ; 0046370b
     FXCH ST2                            ; 0046370d

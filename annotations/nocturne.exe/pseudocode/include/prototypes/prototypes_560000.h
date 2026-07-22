@@ -2,33 +2,35 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x560000
 // =============================================================================
 
-void FUN_00560cd0(int param_1,int param_2);
-undefined4 FUN_00561010(int param_1,float param_2);
+void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2);
+undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2);
 undefined4 __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(int param_1,uint param_2);
 undefined4 __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(int param_1,undefined4 param_2);
 void core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(int param_1);
-undefined4 FUN_00561900(int param_1);
-undefined4 FUN_00561940(int param_1);
+undefined4 core_zombie_cpp_FUN_00561900(int param_1);
+undefined4 core_zombie_cpp_FUN_00561940(int param_1);
 void core_zombie_cpp_CZombie_archive_FUN_00561aa0(int param_1);
 undefined4 core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(int param_1,undefined4 *param_2);
 void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_00561cf0(int param_1,int *param_2);
 void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(int param_1,int param_2);
-int FUN_005621f0(int param_1,float *param_2);
+int core_zombie_cpp_FUN_005621f0(int param_1,float *param_2);
 undefined4 core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(undefined4 param_1,undefined4 param_2);
 bool core_zombie_cpp_CZombie_canBeGrabbed_FUN_00562430(undefined4 param_1,undefined4 param_2,int param_3);
 undefined4 core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(int param_1,undefined4 param_2,int param_3);
 undefined4 core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(int param_1);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(int param_1);
-int FUN_00562550(int param_1,byte param_2);
+int core_zombie_cpp_FUN_00562550(int param_1,byte param_2);
 void engine_3d_c_addRasterizerEdge_FUN_00562620(int param_1,int param_2);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(int *param_1,int param_2);
 void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(int *param_1,int param_2,code *param_3);
-undefined4 FUN_005632c8(int param_1,undefined4 param_2,undefined4 param_3);
+undefined4 crt_unknown_c_FUN_005632c8(int param_1,undefined4 param_2,undefined4 param_3);
 void crt_stdio_c_fscanf_FUN_00563350(undefined4 param_1,undefined4 param_2);
 undefined4 __cdecl crt_stdio_c_fclose_FUN_00563380(int param_1);
 undefined4 FUN_005633c4(undefined4 param_1,undefined4 param_2);

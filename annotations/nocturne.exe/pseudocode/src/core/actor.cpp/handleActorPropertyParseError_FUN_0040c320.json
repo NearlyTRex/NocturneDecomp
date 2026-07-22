@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,32 +122,32 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 186,
+    "complexity_score": 165,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 14,
+    "pseudocode_lines": 25,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 78
+    "total_lines": 77
   },
   "cross_references": [
     {
       "addr": "0040cb00",
       "from_addr": "0040cb65",
-      "name": "FUN_0040cb00",
+      "name": "core_actor.cpp_FUN_0040cb00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040ce80",
       "from_addr": "0040cee5",
-      "name": "FUN_0040ce80",
+      "name": "core_actor.cpp_FUN_0040ce80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -262,14 +262,14 @@
     },
     {
       "addr": "00577b75",
-      "name": "DAT_00577b75",
-      "type": "undefined4",
+      "name": "s_load_00577b75",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00577b7a",
-      "name": "DAT_00577b7a",
-      "type": "undefined4",
+      "name": "s_save_00577b7a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -414,7 +414,7 @@
       {
         "call_addr": "0040cb65",
         "call_type": "direct",
-        "caller": "FUN_0040cb00",
+        "caller": "core_actor.cpp_FUN_0040cb00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -489,15 +489,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 11,
       "match": "DAT_00763e8c",
       "severity": "mild",
-      "text": "pcVar1 = DAT_00763e8c;",
+      "text": "pcVar2 = DAT_00763e8c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_00763e8c",
       "severity": "mild",
       "text": "if (DAT_00763e8c != (char *)0x0) {",
@@ -505,15 +505,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_00763e8c",
       "severity": "mild",
-      "text": "pcVar2 = (char *)core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);",
+      "text": "pcVar1 = (char *)core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == (char *)0x0) {",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = \"(unknown)\";",
@@ -530,41 +530,25 @@
     {
       "description": "Undefined global data reference",
       "line": 22,
-      "match": "DAT_00577b75",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_00577b75;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "if (DAT_00763e88 == 2) {",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00577b7a",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_00577b7a;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Error %sing actor property.\\nActor name: %s\\nActor type: %s\\nProperty description: %s\\nProperty type: %s\\n\",puVar3,pcVar4,pcVar2,param_2,param_1);",
+      "text": "FUN_004c8440(\"Error %sing actor property.\\nActor name: %s\\nActor type: %s\\nProperty description: %s\\nProperty type: %s\\n\",pcVar2,pcVar3,pcVar1,param_2,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Error %sing actor property.\\nActor name: %s\\nActor type: %s\\nProperty description: %s\\nProperty type: %s\\n\",puVar3,pcVar4,pcVar2,param_2,param_1);",
+      "text": "FUN_004c8440(\"Error %sing actor property.\\nActor name: %s\\nActor type: %s\\nProperty description: %s\\nProperty type: %s\\n\",pcVar2,pcVar3,pcVar1,param_2,param_1);",
       "type": "unnamed_param"
     },
     {

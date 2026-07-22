@@ -8,7 +8,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fc7
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\dlight.cpp_0057c6dc+2
+;   TerminatedCString s_core_dlight_cpp_0057c6de
 ;   string s_CDemonLight::beginBackgroundScen_0057c6f1
 ;   string s_..\\core\\dlight.cpp_0057c724
 ;   string s_CDemonLight::beginBackgroundScen_0057c737
@@ -105,7 +105,7 @@ section .text
     POP ESI                             ; 0044e8f3
     POP EBX                             ; 0044e8f4
     RET                                 ; 0044e8f5
-    MOV ECX,0x57c6de                    ; 0044e8f6 | s_..\core\dlight.cpp_0057c6dc+2
+    MOV ECX,0x57c6de                    ; 0044e8f6 | = "..\\core\\dlight.cpp"
         ;   Label: LAB_0044e8f6
     MOV ESI,0x1af                       ; 0044e8fb
     PUSH 0x57c6f1                       ; 0044e900 | = "CDemonLight::beginBackgroundScene - S..."

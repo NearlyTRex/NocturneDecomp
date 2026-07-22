@@ -14,15 +14,15 @@
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047456d
 ;
 ; Referenced Globals:
-;   string s_%a_%b_%d_%H:%M:%S_%Y_00598a98
-;   string s_%m/%d/%y_00598ab0
-;   undefined1 DAT_00598abc
-;   string s_%I:%M:%S_%p_00598ac0
-;   undefined1 DAT_00598acc
-;   undefined1 DAT_00598ad0
-;   undefined1 DAT_00598ad4
-;   string s_%a_%b_%d,_%Y_00598ad8
-;   string s_%H:%M:%S_00598ae8
+;   TerminatedCString s_a_b_d_H_M_S_Y_00598a98
+;   TerminatedCString s_m_d_y_00598ab0
+;   TerminatedCString s_anon_00598abc
+;   TerminatedCString s_I_M_S_p_00598ac0
+;   TerminatedCString s_AM_00598acc
+;   TerminatedCString s_PM_00598ad0
+;   TerminatedCString s_anon_00598ad4
+;   TerminatedCString s_a_b_d_Y_00598ad8
+;   TerminatedCString s_H_M_S_00598ae8
 ;   undefined4 DAT_005c17f8
 ;   undefined1* PTR_s_Sunday_005c1814 = 005989e8
 ;   undefined4 DAT_005c1830
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [ESP + 0x84],EDX      ; 00566655
     MOV dword ptr [ESP + 0x88],EAX      ; 0056665c
     MOV dword ptr [ESP + 0x8c],EDX      ; 00566663
-    MOV AH,byte ptr [EBP]               ; 0056666a | = "%a %b %d, %Y" | s_%I:%M:%S_%p_00598ac0 | s_%a_%b_%d_%H:%M:%S_%Y_00598a98
+    MOV AH,byte ptr [EBP]               ; 0056666a | = "%a %b %d, %Y" | s_I_M_S_p_00598ac0 | s_a_b_d_H_M_S_Y_00598a98
         ;   Label: LAB_0056666a
     MOV ESI,ESP                         ; 0056666d
     TEST AH,AH                          ; 0056666f
@@ -324,7 +324,7 @@ section .text
     ADD ESP,0x8                         ; 005668c9
     JMP 0x00566a20                      ; 005668cc
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
-    MOV ESI,0x598abc                    ; 005668d1 | DAT_00598abc
+    MOV ESI,0x598abc                    ; 005668d1 | = "\n"
         ;   Label: LAB_005668d1
     JMP 0x00566a20                      ; 005668d6
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -337,10 +337,10 @@ section .text
         ;   Label: LAB_005668ec
     JGE 0x005668fc                      ; 005668f0
         ;   XREF to: 005668fc (CONDITIONAL_JUMP)  ; LAB_005668fc
-    MOV ESI,0x598acc                    ; 005668f2 | DAT_00598acc
+    MOV ESI,0x598acc                    ; 005668f2 | = "AM"
     JMP 0x00566a20                      ; 005668f7
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
-    MOV ESI,0x598ad0                    ; 005668fc | DAT_00598ad0
+    MOV ESI,0x598ad0                    ; 005668fc | = "PM"
         ;   Label: LAB_005668fc
     JMP 0x00566a20                      ; 00566901
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -354,7 +354,7 @@ section .text
     ADD ESP,0x8                         ; 00566913
     JMP 0x00566a20                      ; 00566916
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
-    MOV ESI,0x598ad4                    ; 0056691b | DAT_00598ad4
+    MOV ESI,0x598ad4                    ; 0056691b | = "\t"
         ;   Label: LAB_0056691b
     JMP 0x00566a20                      ; 00566920
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -467,7 +467,7 @@ section .text
     SUB ECX,ECX                         ; 00566a28
     DEC ECX                             ; 00566a2a
     XOR EAX,EAX                         ; 00566a2b
-    SCASB.REPNE ES:EDI                  ; 00566a2d | DAT_00598ad4 | DAT_00598acc | DAT_00598ad0
+    SCASB.REPNE ES:EDI                  ; 00566a2d | = "\t" | s_AM_00598acc | s_PM_00598ad0
     NOT ECX                             ; 00566a2f
     DEC ECX                             ; 00566a31
     POP ES                              ; 00566a32

@@ -10,7 +10,7 @@
 ;   string s_CFilmProjector::Need_to_put_CFil_00581002
 ;   string s_35-start.wav_00581031
 ;   string s_35-end.wav_0058103e
-;   undefined4 DAT_0058104b
+;   double DOUBLE_0058104b = 3.14159265350000
 ;   undefined4 DAT_005ad550
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01c08cc4
@@ -61,7 +61,7 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 00482053
         ;   Label: LAB_00482053
     MOV EAX,dword ptr [EBX + 0x150]     ; 00482057
-    FMUL double ptr [0x0058104b]        ; 0048205d | DAT_0058104b
+    FMUL double ptr [0x0058104b]        ; 0048205d | DOUBLE_0058104b
     FLD float ptr [EAX + 0x38]          ; 00482063
     FLD ST0                             ; 00482066
     FSUB ST0,ST2                        ; 00482068

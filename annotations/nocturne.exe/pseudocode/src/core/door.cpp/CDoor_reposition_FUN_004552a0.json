@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 26,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 150,
-        "line": 142,
+        "line": 143,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 144,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
         "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 153,
+        "line": 146,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 152,
-        "line": 151,
+        "line": 152,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 61,
+        "line": 64,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 63,
+        "line": 66,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 129,
+        "column": 44,
+        "line": 132,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 136,
+        "line": 139,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 140,
+        "line": 143,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 143,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
         "column": 87,
-        "line": 30,
+        "line": 32,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 49,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
         "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
+        "column": 93,
+        "line": 53,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 56,
-        "line": 170,
+        "line": 172,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 208,
+        "line": 210,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 217,
+        "line": 219,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 322,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
+        "column": 20,
+        "line": 337,
+        "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 266,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 266,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 267,
+        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 808,
+    "complexity_score": 843,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 64,
+    "suspect_count": 67,
     "suspect_types": [
       "param_count_too_few",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -218,27 +219,27 @@
     },
     {
       "addr": "0057d0aa",
-      "name": "DAT_0057d0aa",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d0aa",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "0057d0b2",
-      "name": "DAT_0057d0b2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d0b2",
+      "type": "double",
+      "value": "5.22209901682860E-315"
     },
     {
       "addr": "0057d0ba",
-      "name": "DAT_0057d0ba",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d0ba",
+      "type": "double",
+      "value": "-0.300000000000000"
     },
     {
       "addr": "0057d0c2",
-      "name": "DAT_0057d0c2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0057d0c2",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "01cc4800",
@@ -537,7 +538,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa + *(float *)(param_1 + 0x99c);",
+      "text": "fVar1 = *(float *)(param_1 + 0x9a4) * (float)1.57079632675 + *(float *)(param_1 + 0x99c);",
       "type": "unnamed_param"
     },
     {
@@ -545,7 +546,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa + *(float *)(param_1 + 0x99c);",
+      "text": "fVar1 = *(float *)(param_1 + 0x9a4) * (float)1.57079632675 + *(float *)(param_1 + 0x99c);",
       "type": "unnamed_param"
     },
     {
@@ -553,7 +554,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;",
+      "text": "fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)1.57079632675;",
       "type": "unnamed_param"
     },
     {
@@ -561,7 +562,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;",
+      "text": "fVar1 = *(float *)(param_1 + 0x99c) - *(float *)(param_1 + 0x9a4) * (float)1.57079632675;",
       "type": "unnamed_param"
     },
     {
@@ -745,7 +746,7 @@
       "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;",
+      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)1.57079632675;",
       "type": "unnamed_param"
     },
     {
@@ -753,7 +754,7 @@
       "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)_DAT_0057d0aa;",
+      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x9a4) * (float)1.57079632675;",
       "type": "unnamed_param"
     },
     {
@@ -763,6 +764,30 @@
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 110,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_5c = fStack_b0 * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_58 = fStack_ac * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_54 = fStack_a8 * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",

@@ -21,24 +21,6 @@
   },
   "cross_references": [
     {
-      "addr": "00403130",
-      "from_addr": "0040315b",
-      "name": "FUN_00403130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00403500",
-      "from_addr": "0040352b",
-      "name": "FUN_00403500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00403630",
-      "from_addr": "00403718",
-      "name": "FUN_00403630",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f2990",
       "from_addr": "004f2aa4",
       "name": "FUN_004f2990",
@@ -54,6 +36,24 @@
       "addr": "004f4bb0",
       "from_addr": "004f4c0d",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403130",
+      "from_addr": "0040315b",
+      "name": "engine_2d.c_FUN_00403130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403500",
+      "from_addr": "0040352b",
+      "name": "engine_2d.c_FUN_00403500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403630",
+      "from_addr": "00403718",
+      "name": "engine_2d.c_FUN_00403630",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
       {
         "call_addr": "0040352b",
         "call_type": "direct",
-        "caller": "FUN_00403500",
+        "caller": "engine_2d.c_FUN_00403500",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "00403718",
         "call_type": "direct",
-        "caller": "FUN_00403630",
+        "caller": "engine_2d.c_FUN_00403630",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +209,7 @@
       {
         "call_addr": "0040315b",
         "call_type": "direct",
-        "caller": "FUN_00403130",
+        "caller": "engine_2d.c_FUN_00403130",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

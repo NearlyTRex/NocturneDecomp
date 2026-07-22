@@ -22,7 +22,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uint 
   
   bVar7 = 0;
   if (param_2 == (char *)0x0) {
-    param_2 = &DAT_0057ea92;
+    param_2 = &CHAR_00h_0057ea92;
   }
   uVar4 = 0xffffffff;
   pcVar3 = param_2;

@@ -32,14 +32,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
   
   bVar11 = 0;
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "?..\\shape\\edittool.cpp" + 1;
+    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
     _DAT_01cc4804 = 0x8b;
     FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(uint *)(_DAT_01bcd070 + 0x3168);
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (4 < _DAT_01bcd07c) {
-    _DAT_01cc4800 = "@..\\shape\\edittool.cpp" + 1;
+    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
     _DAT_01cc4804 = 0x674;
     FUN_004c8440("Can't open another window!");
   }
@@ -71,7 +71,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
       iVar6 = 0x1bcc0d0;
       do {
         iVar8 = iVar8 + 1;
-        iVar2 = _sprintf(piVar5,&DAT_0057e913,iVar6);
+        iVar2 = _sprintf(piVar5,"%s\n",iVar6);
         piVar5 = (int *)((int)piVar5 + iVar2);
         iVar6 = iVar6 + 200;
       } while (iVar8 < iVar1);

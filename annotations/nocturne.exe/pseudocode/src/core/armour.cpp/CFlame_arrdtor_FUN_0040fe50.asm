@@ -4,18 +4,18 @@
 ; void __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(undefined4 param_1)
 ;
 ;
-; XREF[36]:
+; XREF[37]:
+;   FUN_0040fc30 at 0040fc49
 ;   FUN_004132c0 at 004132d9
 ;   FUN_00414c60 at 00414c79
 ;   FUN_00415250 at 00415269
 ;   FUN_00415a30 at 00415a59
 ;   FUN_00420f20 at 00420f39
-;   FUN_00423d90 at 00423db9
 ;   FUN_0043c6f0 at 0043c709
 ;   FUN_00454f30 at 00454f49
 ;   FUN_0045b350 at 0045b369
 ;   FUN_00463310 at 00463329
-;   ... and 26 more
+;   ... and 27 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00599940

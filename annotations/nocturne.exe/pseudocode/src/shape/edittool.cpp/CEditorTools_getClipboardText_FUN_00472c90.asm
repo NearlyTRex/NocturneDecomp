@@ -11,7 +11,7 @@
 ;   void* PTR_CloseClipboard_00575418 = 00175904
 ;   void* PTR_GetClipboardData_00575430 = 0017596c
 ;   void* PTR_OpenClipboard_00575454 = 001759fc
-;   undefined4 DAT_0057ea91
+;   char CHAR_00h_0057ea91 = \x00
 ;   undefined4 DAT_01bcd078
 ;   undefined4 DAT_02de2098
 ;
@@ -38,7 +38,7 @@ section .text
     TEST EBX,EBX                        ; 00472ca9
     JNZ 0x00472d0c                      ; 00472cab
         ;   XREF to: 00472d0c (CONDITIONAL_JUMP)  ; LAB_00472d0c
-    MOV EAX,0x57ea91                    ; 00472cad | DAT_0057ea91
+    MOV EAX,0x57ea91                    ; 00472cad | CHAR_00h_0057ea91
     POP EBX                             ; 00472cb2
     RET                                 ; 00472cb3
     PUSH EDI                            ; 00472cb4

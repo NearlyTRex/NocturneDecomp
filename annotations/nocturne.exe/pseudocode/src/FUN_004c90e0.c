@@ -78,7 +78,7 @@ void FUN_004c90e0(void)
   FUN_004ee680(0x01D465C0);
   FUN_004d7e90(0x01CC9450);
   thunk_FUN_00527e10(0x02DC9450);
-  FUN_00454460();
+  core_dmodel_cpp_FUN_00454460();
   FUN_0051f650();
   core_skeleton_cpp_freeAllSkeletons_FUN_0051f730();
   FUN_004cca50();
@@ -86,7 +86,7 @@ void FUN_004c90e0(void)
   FUN_004012a0();
   thunk_FUN_005458d0();
   FUN_0044cc00();
-  FUN_00559e90();
+  wincore_winrun_cpp_FUN_00559e90();
   engine_pod_cpp_CPod_cleanup_FUN_004f8b40(0x01E528D0);
   core_inivar_cpp_writeIniData_FUN_004be2d0();
   return;

@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578015
-;   undefined4 DAT_00578019
+;   float FLOAT_00578015 = 10000
+;   double DOUBLE_00578019 = -1
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3fd0
@@ -66,7 +66,7 @@ section .text
     FSUB float ptr [ESP + 0x14]         ; 0040da47
     FMUL ST0                            ; 0040da4b
     FADDP                               ; 0040da4d
-    FCOMP float ptr [0x00578015]        ; 0040da4f | DAT_00578015
+    FCOMP float ptr [0x00578015]        ; 0040da4f | FLOAT_00578015
     FNSTSW AX                           ; 0040da55
     SAHF                                ; 0040da57
     JBE 0x0040da61                      ; 0040da58
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
     ADD ESP,0x4                         ; 0040dac7
     FLD float ptr [ESP + 0x24]          ; 0040daca
-    FADD double ptr [0x00578019]        ; 0040dace | DAT_00578019
+    FADD double ptr [0x00578019]        ; 0040dace | DOUBLE_00578019
     FLD float ptr [ESP + 0x20]          ; 0040dad4
     FCOMPP                              ; 0040dad8
     FNSTSW AX                           ; 0040dada

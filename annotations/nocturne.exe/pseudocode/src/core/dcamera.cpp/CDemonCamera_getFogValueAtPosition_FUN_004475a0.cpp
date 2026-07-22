@@ -24,7 +24,7 @@ int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1
   uVar6 = 0x447622;
   fVar3 = (float10)round
                              (SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3) *
-                              (float10)_DAT_0057baf3);
+                              (float10)256);
   iVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80
                     (0x140d784,param_1 + 0x16c,param_2,(int)ROUND(fVar3),uVar6);
   uVar2 = (uint)(iVar1 * 0xff) >> 0xe;

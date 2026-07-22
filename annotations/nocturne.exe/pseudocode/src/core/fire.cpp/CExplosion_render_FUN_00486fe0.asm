@@ -40,12 +40,12 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a87e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581214
-;   undefined4 DAT_0058121c
-;   undefined4 DAT_00581224
-;   undefined4 DAT_0058122c
-;   undefined4 DAT_00581234
-;   undefined4 DAT_0058123c
+;   double DOUBLE_00581214 = 27
+;   double DOUBLE_0058121c = 5.54070922470058E-315
+;   double DOUBLE_00581224 = 0.00390625
+;   double DOUBLE_0058122c = 148
+;   double DOUBLE_00581234 = 5.55851772209180E-315
+;   double DOUBLE_0058123c = 113
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b858c
@@ -84,7 +84,7 @@ section .text
     FLD float ptr [ESI + 0xc]           ; 00487003
     FLD1                                ; 00487006
     FSUBRP                              ; 00487008
-    FMUL double ptr [0x00581214]        ; 0048700a | DAT_00581214
+    FMUL double ptr [0x00581214]        ; 0048700a | DOUBLE_00581214
     CALL crt_math.c_round_FUN_00563a30  ; 00487010
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x78]        ; 00487015
@@ -120,12 +120,12 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00487070
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
     FLD float ptr [ESI + 0x10]          ; 00487075
-    FMUL double ptr [0x0058122c]        ; 00487078 | DAT_0058122c
+    FMUL double ptr [0x0058122c]        ; 00487078 | DOUBLE_0058122c
     FLD float ptr [ESI + 0x10]          ; 0048707e
     FCHS                                ; 00487081
-    FMUL float ptr [0x0058121c]         ; 00487083 | DAT_0058121c
+    FMUL float ptr [0x0058121c]         ; 00487083 | DOUBLE_0058121c
     FXCH                                ; 00487089
-    FLD double ptr [0x00581224]         ; 0048708b | DAT_00581224
+    FLD double ptr [0x00581224]         ; 0048708b | DOUBLE_00581224
     FXCH                                ; 00487091
     FMUL ST1                            ; 00487093
     FXCH ST2                            ; 00487095
@@ -158,8 +158,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x7c]      ; 004870fa
     MOV dword ptr [ESP + 0x60],EAX      ; 004870fe
     FLD float ptr [ESI + 0x10]          ; 00487102
-    FMUL float ptr [0x00581234]         ; 00487105 | DAT_00581234
-    FMUL double ptr [0x00581224]        ; 0048710b | DAT_00581224
+    FMUL float ptr [0x00581234]         ; 00487105 | DOUBLE_00581234
+    FMUL double ptr [0x00581224]        ; 0048710b | DOUBLE_00581224
     MOV EDX,dword ptr [0x005ae704]      ; 00487111 | DAT_005ae704
     XOR EBX,EBX                         ; 00487117
     LEA EAX,[ESP + 0x60]                ; 00487119
@@ -207,8 +207,8 @@ section .text
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
     FLD float ptr [ESI + 0x10]          ; 004871b4
     FCHS                                ; 004871b7
-    FMUL double ptr [0x0058123c]        ; 004871b9 | DAT_0058123c
-    FMUL double ptr [0x00581224]        ; 004871bf | DAT_00581224
+    FMUL double ptr [0x0058123c]        ; 004871b9 | DOUBLE_0058123c
+    FMUL double ptr [0x00581224]        ; 004871bf | DOUBLE_00581224
     LEA EBX,[ESP + 0x5c]                ; 004871c5
     LEA EAX,[ESP + 0x68]                ; 004871c9
     ADD ESP,0x8                         ; 004871cd

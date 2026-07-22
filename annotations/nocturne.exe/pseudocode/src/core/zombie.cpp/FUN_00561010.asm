@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00561010(int param_1,float param_2)
+; undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0055ef50 at 005603c9
+;   core_zombie.cpp_FUN_0055ef50 at 005603c9
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_can't_pick_up_%s,_sombody_els_0059878d+1
+;   TerminatedCString s_s_can_t_pick_up_s_sombod_0059878e
 ;   string s_%s_can't_pick_up_%s,_giving_up_005987c0
 ;   string s_%s_beginning_to_pickup_%s_005987e0
 ;   string s_..\\core\\zombie.cpp_005987fb
 ;   string s_Invalid_zombie_object_shape!_0059880e
-;   string s_CBodyPart_0059882b
-;   string s_%s_is_going_to_try_to_pick_up_%s_00598835
+;   TerminatedCString s_CBodyPart_0059882b
+;   TerminatedCString s_s_is_going_to_try_to_pic_00598835
 ;   undefined4 DAT_0059885e
 ;   undefined4 DAT_00598866
 ;   undefined4 DAT_0059886e
@@ -52,7 +52,7 @@
 section .text
 
     PUSH EBX                            ; 00561010
-        ;   Label: FUN_00561010
+        ;   Label: core_zombie.cpp_FUN_00561010
     PUSH ESI                            ; 00561011
     PUSH EDI                            ; 00561012
     PUSH EBP                            ; 00561013
@@ -349,7 +349,7 @@ section .text
         ;   Label: LAB_005613ea
     PUSH EAX                            ; 005613f0
     PUSH ESI                            ; 005613f1
-    PUSH 0x59878e                       ; 005613f2 | s_%s_can't_pick_up_%s,_sombody_els_0059878d+1
+    PUSH 0x59878e                       ; 005613f2 | = "%s can't pick up %s, sombody else bea..."
     MOV EDX,dword ptr [0x005ad350]      ; 005613f7 | PTR_DAT_005ad350
     PUSH EDX                            ; 005613fd | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005613fe

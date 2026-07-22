@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_00423790 at 004238c3
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004224bb
+;   core_bugs.cpp_FUN_00423790 at 004238c3
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0 at 004df5bb
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004df770 at 004df782
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60 at 0051dea9

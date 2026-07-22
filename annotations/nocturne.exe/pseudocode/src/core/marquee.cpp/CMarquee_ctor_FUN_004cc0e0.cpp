@@ -14,7 +14,7 @@ int core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar2 + 0x19c);
   pcVar3 = &DAT_00588193;
   *(byte ***)(iVar2 + -0x50) = &PTR_core_marquee_cpp_CMarquee_setup_FUN_004cc2e0_005a02d4;

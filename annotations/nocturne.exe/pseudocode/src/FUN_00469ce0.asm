@@ -101,9 +101,9 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507d0e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e24e
-;   undefined4 DAT_0057e256
-;   undefined4 DAT_0057e25e
+;   double DOUBLE_0057e24e = 0.00390625
+;   double DOUBLE_0057e256 = 5.59510608945921E-315
+;   double DOUBLE_0057e25e = 256
 ;   undefined4 DAT_005ae700
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b7b734
@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [ESP + 0x190],EAX     ; 00469d47
     FILD dword ptr [ESP + 0x190]        ; 00469d4e
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00469d55
-    FLD double ptr [0x0057e24e]         ; 00469d59 | DAT_0057e24e
+    FLD double ptr [0x0057e24e]         ; 00469d59 | DOUBLE_0057e24e
     FXCH                                ; 00469d5f
     FMUL ST1                            ; 00469d61
     MOV dword ptr [ESP + 0x190],EAX     ; 00469d63
@@ -200,7 +200,7 @@ section .text
     FSUB float ptr [EBX + 0x18]         ; 00469dc6
     FDIV float ptr [EBX + 0x30]         ; 00469dc9
     FLD float ptr [EBP + 0x18]          ; 00469dcc
-    FMUL float ptr [0x0057e256]         ; 00469dcf | DAT_0057e256
+    FMUL float ptr [0x0057e256]         ; 00469dcf | DOUBLE_0057e256
     CALL crt_math.c_round_FUN_00563a30  ; 00469dd5
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x6c]        ; 00469dda
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [ESP + 0x48],ECX      ; 0046a098
     MOV dword ptr [ESP + 0x4c],ECX      ; 0046a09c
     MOV dword ptr [ESP + 0x50],ECX      ; 0046a0a0
-    FLD double ptr [0x0057e25e]         ; 0046a0a4 | DAT_0057e25e
+    FLD double ptr [0x0057e25e]         ; 0046a0a4 | DOUBLE_0057e25e
     FLD float ptr [EBX + 0x28]          ; 0046a0aa
     FMUL ST1                            ; 0046a0ad
     FLD float ptr [EBX + 0x2c]          ; 0046a0af

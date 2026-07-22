@@ -8,7 +8,7 @@
 ;   FUN_00535900 at 005373c1
 ;
 ; Referenced Globals:
-;   undefined4 s_CHealthItem_005858d1+2
+;   TerminatedCString s_CHealthItem_005858d3
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -34,7 +34,7 @@ section .text
     POP ESI                             ; 004b5b19
     POP EBX                             ; 004b5b1a
     RET                                 ; 004b5b1b
-    PUSH 0x5858d3                       ; 004b5b1c | s_CHealthItem_005858d1+2
+    PUSH 0x5858d3                       ; 004b5b1c | = "CHealthItem"
         ;   Label: LAB_004b5b1c
     PUSH EAX                            ; 004b5b21
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b5b22

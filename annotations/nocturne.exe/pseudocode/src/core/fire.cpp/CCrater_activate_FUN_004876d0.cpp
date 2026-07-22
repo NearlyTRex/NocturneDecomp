@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_fire_cpp_CCrater_activate_FUN_004876d0(uint *param_1,uint *param_2,float param_3)
 
 {
@@ -50,11 +48,11 @@ void core_fire_cpp_CCrater_activate_FUN_004876d0(uint *param_1,uint *param_2,flo
   do {
     local_18 = -param_3;
     local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,param_3);
-    puVar3[7] = local_14 * (float)_DAT_0058129c + (float)param_1[3];
+    puVar3[7] = local_14 * (float)0.5 + (float)param_1[3];
     puVar3[8] = param_1[4];
     local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,param_3);
     puVar4 = puVar3 + 3;
-    puVar3[9] = local_14 * (float)_DAT_0058129c + (float)param_1[5];
+    puVar3[9] = local_14 * (float)0.5 + (float)param_1[5];
     puVar3 = puVar4;
   } while (puVar4 != param_1 + 9);
   local_48 = (float)param_1[3] + local_18;
@@ -97,18 +95,18 @@ void core_fire_cpp_CCrater_activate_FUN_004876d0(uint *param_1,uint *param_2,flo
                               (0x01E57284,param_1 + 0x10,0,local_18,0,local_18,param_3,0,param_3,
                                param_3,0,-param_3);
   uVar1 = 0x01E57284;
-  param_1[0x11] = local_14 + (float)_DAT_005812a4;
+  param_1[0x11] = local_14 + (float)0.14999999999999999;
   local_14 = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                               (uVar1,param_1 + 0x13,0);
   uVar1 = 0x01E57284;
-  param_1[0x14] = local_14 + (float)_DAT_005812a4;
+  param_1[0x14] = local_14 + (float)0.14999999999999999;
   local_14 = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                               (uVar1,param_1 + 0x16,0);
   uVar1 = 0x01E57284;
-  param_1[0x17] = local_14 + (float)_DAT_005812a4;
+  param_1[0x17] = local_14 + (float)0.14999999999999999;
   fVar2 = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                            (uVar1,param_1 + 0x19,0);
-  param_1[0x1a] = fVar2 + (float)_DAT_005812a4;
+  param_1[0x1a] = fVar2 + (float)0.14999999999999999;
   if (1.0 < ABS((float)param_1[0x11] - (float)param_1[4])) {
     param_1[0x11] = param_1[4];
   }

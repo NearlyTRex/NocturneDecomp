@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(int param_1,float param_2)
   }
   *(float *)(param_1 + 0x264) = param_2;
   fVar1 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x264) * (float10)_DAT_00584482);
+                             ((float10)*(float *)(param_1 + 0x264) * (float10)65536.0f);
   *(int *)(param_1 + 0x260) = (int)ROUND(fVar1);
   _DAT_01bd1d80 = *(uint *)(param_1 + 0x260);
   return;

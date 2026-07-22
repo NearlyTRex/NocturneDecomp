@@ -8,8 +8,8 @@
 ;   core_stranger.cpp_CStranger_getDeathState_FUN_00540890 at 005408b0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057a04a
-;   undefined4 DAT_0057a04e
+;   float FLOAT_0057a04a = 6.362932E-39
+;   TerminatedCString s_DEAD_0057a04e
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0
@@ -32,7 +32,7 @@ section .text
     RET                                 ; 00428720
     PUSH 0x3                            ; 00428721
         ;   Label: LAB_00428721
-    PUSH 0x57a04a                       ; 00428723 | DAT_0057a04a
+    PUSH 0x57a04a                       ; 00428723 | FLOAT_0057a04a
     ADD EBX,0x150                       ; 00428728
     PUSH EBX                            ; 0042872e
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 0042872f
@@ -48,7 +48,7 @@ section .text
     MOV EAX,0x1                         ; 00428744
     POP EBX                             ; 00428749
     RET                                 ; 0042874a
-    PUSH 0x57a04e                       ; 0042874b | DAT_0057a04e
+    PUSH 0x57a04e                       ; 0042874b | = "DEAD"
         ;   Label: LAB_0042874b
     PUSH EBX                            ; 00428750
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 00428751

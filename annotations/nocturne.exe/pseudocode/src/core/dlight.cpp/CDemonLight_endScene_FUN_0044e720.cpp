@@ -33,7 +33,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(int param_1)
       }
       puVar3 = puVar3 + 1;
     }
-    *(float *)(param_1 + 0x100) = (float)uVar5 * (float)_DAT_0057c6d6;
+    *(float *)(param_1 + 0x100) = (float)uVar5 * (float)0.00390625;
   }
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);

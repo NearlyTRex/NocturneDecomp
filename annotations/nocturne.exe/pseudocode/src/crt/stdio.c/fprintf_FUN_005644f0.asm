@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[34]:
-;   FUN_0040cb00 at 0040cb99
-;   FUN_0040ce80 at 0040cf19
 ;   FUN_004a3b90 at 004a3c84
 ;   FUN_004d8720 at 004d8762
 ;   FUN_005055f0 at 00505602
 ;   core_actor.cpp_CDemonActor_save_FUN_0040c040 at 0040c096
+;   core_actor.cpp_FUN_0040cb00 at 0040cb99
+;   core_actor.cpp_FUN_0040ce80 at 0040cf19
 ;   core_actor.cpp_archiveActor_FUN_0040c980 at 0040c9ca
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040d078
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c404

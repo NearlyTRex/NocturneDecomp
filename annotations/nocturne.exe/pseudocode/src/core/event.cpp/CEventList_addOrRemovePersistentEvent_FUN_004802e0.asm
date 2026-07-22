@@ -9,7 +9,7 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b6d1
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\event.cpp_00580a05+2
+;   TerminatedCString s_core_event_cpp_00580a07
 ;   string s_Too_many_persistent_events!_00580a19
 ;   string s_..\\core\\event.cpp_00580a35
 ;   string s_Event_name_%s_too_long!_00580a47
@@ -115,7 +115,7 @@ section .text
     POP ESI                             ; 004803a2
     POP EBX                             ; 004803a3
     RET                                 ; 004803a4
-    MOV EBP,0x580a07                    ; 004803a5 | s_..\core\event.cpp_00580a05+2
+    MOV EBP,0x580a07                    ; 004803a5 | = "..\\core\\event.cpp"
         ;   Label: LAB_004803a5
     MOV EAX,0x9f5                       ; 004803aa
     PUSH 0x580a19                       ; 004803af | = "Too many persistent events!"

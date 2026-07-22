@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004270e0 at 00427225
+;   core_charactr.cpp_FUN_004270e0 at 00427225
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 at 0051da0b
 ;
 ; Referenced Globals:

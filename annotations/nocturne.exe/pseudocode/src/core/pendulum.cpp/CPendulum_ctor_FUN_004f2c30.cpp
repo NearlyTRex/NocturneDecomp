@@ -14,7 +14,7 @@ int core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_00409d30(param_1);
+  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
   *(byte ***)(iVar2 + -4) = &PTR_core_pendulum_cpp_CPendulum_setup_FUN_004f2d40_005a1244;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"pend.kfm");

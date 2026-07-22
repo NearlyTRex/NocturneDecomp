@@ -1,0 +1,17 @@
+#pragma once
+
+// Enum: ERenderStateFlagBits
+enum {
+    RENDER_TEX_ENABLE = 0x1,
+    RENDER_FORCE_SOLID_LOOP = 0x2,
+    RENDER_FOG_COLOR = 0x4,
+    RENDER_SOLID_ALPHA_BLEND = 0x8,
+    RENDER_LIGHTING_COLOR = 0x10,
+    RENDER_BLEND_READ_DEST = 0x20,
+    RENDER_DEPTH_TEST = 0x40,
+    RENDER_DEPTH_WRITE = 0x80,
+    RENDER_ALPHA_FROM_VERTEX = 0x100,
+    RENDER_COLOR_FROM_VERTEX = 0x200
+};
+typedef int ERenderStateFlagBits;
+

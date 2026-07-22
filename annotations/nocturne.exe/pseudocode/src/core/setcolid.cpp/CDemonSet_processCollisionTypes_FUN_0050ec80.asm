@@ -22,11 +22,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_0040a140 at 0040a18c
 ;   FUN_0053c800 at 0053ce36
 ;   FUN_00546e10 at 00547456
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da81
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ab
+;   core_actor.cpp_FUN_0040a140 at 0040a18c
 ;   core_fire.cpp_CCrater_activate_FUN_004876d0 at 00487725
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b
 ;

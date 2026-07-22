@@ -10,9 +10,9 @@
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 at 004c23d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00586d91
+;   TerminatedCString s_rt_00586d91
 ;   string s_invsize.txt_00586d94
-;   undefined4 DAT_00586da0
+;   TerminatedCString s_data_00586da0
 ;   string s_%d,%d_00586da5
 ;   string s_invback_00586dac
 ;   string s_invback2_00586db4
@@ -42,10 +42,10 @@ section .text
     PUSH EBX                            ; 004befa0
         ;   Label: core_inv.cpp_loadAssets_FUN_004befa0
     PUSH EBP                            ; 004befa1
-    PUSH 0x586d91                       ; 004befa2 | DAT_00586d91
+    PUSH 0x586d91                       ; 004befa2 | = "rt"
     PUSH 0x586d94                       ; 004befa7 | = "invsize.txt"
     MOV EAX,[0x005b7620]                ; 004befac | DAT_005b7620
-    PUSH 0x586da0                       ; 004befb1 | DAT_00586da0
+    PUSH 0x586da0                       ; 004befb1 | = "data"
     MOV [0x01cc30a0],EAX                ; 004befb6 | DAT_01cc30a0
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004befbb
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
@@ -232,7 +232,7 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0 ; 004bf1e5
         ;   XREF to: 0040e9e0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0()
     ADD ESP,0xc                         ; 004bf1ea
-    PUSH 0x586e50                       ; 004bf1ed | DAT_00586e50
+    PUSH 0x586e50                       ; 004bf1ed | = "rt"
         ;   Label: LAB_004bf1ed
     PUSH 0x586e53                       ; 004bf1f2 | = "itemlist.txt"
     XOR EBX,EBX                         ; 004bf1f7

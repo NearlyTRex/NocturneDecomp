@@ -8,15 +8,15 @@
 ;
 ; XREF[6]:
 ;   FUN_004777a0 at 00477860
-;   FUN_0050a260 at 0050a36d
 ;   FUN_00515db0 at 00515e70
 ;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0 at 004c7091
+;   core_set.cpp_FUN_0050a260 at 0050a36d
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00515350 at 005153bf
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0 at 005544d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057c946
-;   undefined4 DAT_0057c94e
+;   double DOUBLE_0057c946 = 7
+;   double DOUBLE_0057c94e = 3
 ;   undefined4 DAT_005ad51c
 ;   undefined4 DAT_005ad53c
 ;
@@ -39,7 +39,7 @@ section .text
     PUSH EBX                            ; 0045209d
     FLD float ptr [EAX + 0x2fa8]        ; 0045209e
     PUSH 0x0                            ; 004520a4
-    FMUL double ptr [0x0057c94e]        ; 004520a6 | DAT_0057c94e
+    FMUL double ptr [0x0057c94e]        ; 004520a6 | DOUBLE_0057c94e
     PUSH 0x0                            ; 004520ac
     CALL crt_math.c_round_FUN_00563a30  ; 004520ae
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
@@ -58,7 +58,7 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 004520d3
         ;   Label: LAB_004520d3
     PUSH 0x0                            ; 004520d9
-    FMUL double ptr [0x0057c946]        ; 004520db | DAT_0057c946
+    FMUL double ptr [0x0057c946]        ; 004520db | DOUBLE_0057c946
     PUSH 0x0                            ; 004520e1
     CALL crt_math.c_round_FUN_00563a30  ; 004520e3
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

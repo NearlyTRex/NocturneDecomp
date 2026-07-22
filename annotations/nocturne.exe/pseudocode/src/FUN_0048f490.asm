@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x58]:1  local_58
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00581717
-;   undefined4 DAT_0058171f
-;   undefined4 DAT_00581727
+;   double DOUBLE_00581717 = 0.015625
+;   float FLOAT_0058171f = 64
+;   double DOUBLE_00581727 = 0.5
 ;   undefined4 DAT_0059da10
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b761c
@@ -98,8 +98,8 @@ section .text
     MOV dword ptr [ESP + 0x88],EBX      ; 0048f51b
         ;   Label: LAB_0048f51b
     FILD dword ptr [ESP + 0x88]         ; 0048f522
-    FADD double ptr [0x00581727]        ; 0048f529 | DAT_00581727
-    FMUL double ptr [0x00581717]        ; 0048f52f | DAT_00581717
+    FADD double ptr [0x00581727]        ; 0048f529 | DOUBLE_00581727
+    FMUL double ptr [0x00581717]        ; 0048f52f | DOUBLE_00581717
     PUSH 0x0                            ; 0048f535
     SUB ESP,0x4                         ; 0048f537
     FSTP float ptr [ESP]                ; 0048f53a
@@ -182,7 +182,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x80]      ; 0048f662
         ;   Label: LAB_0048f662
     FLD float ptr [EAX]                 ; 0048f669
-    FMUL float ptr [0x0058171f]         ; 0048f66b | DAT_0058171f
+    FMUL float ptr [0x0058171f]         ; 0048f66b | FLOAT_0058171f
     CALL crt_math.c_round_FUN_00563a30  ; 0048f671
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x84]        ; 0048f676

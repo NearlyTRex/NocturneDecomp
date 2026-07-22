@@ -38,11 +38,11 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0054a920
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
+;   core_xform.cpp_FUN_0055d610
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   FUN_004c8440
-;   FUN_0055d610
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130
@@ -299,8 +299,8 @@ section .text
     PUSH ESI                            ; 00549b46
     LEA ESI,[ESP + 0xbc]                ; 00549b47
     LEA EDI,[ESP + 0x6c]                ; 00549b4e
-    CALL FUN_0055d610                   ; 00549b52
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 00549b52
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     LEA ESI,[ESP + 0xbc]                ; 00549b57
     ADD ESP,0x4                         ; 00549b5e
     MOVSD ES:EDI,ESI                    ; 00549b61
@@ -310,8 +310,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xdc]      ; 00549b65
     PUSH EDI                            ; 00549b6c
     LEA ESI,[ESP + 0x8c]                ; 00549b6d
-    CALL FUN_0055d610                   ; 00549b74
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined FUN_0055d610()
+    CALL core_xform.cpp_FUN_0055d610    ; 00549b74
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
     LEA EDI,[ESP + 0xac]                ; 00549b79
     LEA ESI,[ESP + 0x8c]                ; 00549b80
     ADD ESP,0x4                         ; 00549b87
