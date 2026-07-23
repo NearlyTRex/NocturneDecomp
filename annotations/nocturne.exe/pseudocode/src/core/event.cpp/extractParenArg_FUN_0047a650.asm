@@ -8,9 +8,9 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ae76
 ;
 ; Referenced Globals:
-;   string s_No_opening_parenthesis_0057f4ac
-;   string s_Argument_too_long_0057f4c3
-;   string s_Can't_find_closing_parenthesis_0057f4d5
+;   TerminatedCString s_No_opening_parenthesis_0057f4ac
+;   TerminatedCString s_Argument_too_long_0057f4c3
+;   TerminatedCString s_Can_t_find_closing_paren_0057f4d5
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:

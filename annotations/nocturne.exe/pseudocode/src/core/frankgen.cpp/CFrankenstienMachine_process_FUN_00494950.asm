@@ -10,20 +10,20 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00494928 = 004949c2
-;   string s_frankx-bed1.wav_00581bf6
-;   string s_frankx-bed2.wav_00581c06
-;   string s_frankx-bed3.wav_00581c16
-;   string s_frankx-bed4.wav_00581c26
-;   string s_frankx-water-dip.wav_00581c36
-;   string s_frankx-big-ramp-bed5.wav_00581c4b
-;   string s_frankx-crane1.wav_00581c64
-;   string s_frankx-crane2.wav_00581c76
-;   string s_frankx-crane3.wav_00581c88
-;   string s_frankx-arm.wav_00581c9a
-;   string s_frankx-flap-up.wav_00581ca9
-;   string s_frankx-flap-down.wav_00581cbc
-;   string s_frankx-big-ramp.wav_00581cd1
-;   string s_..\\core\\frankgen.cpp_00581ce5
+;   TerminatedCString s_frankx_bed1_wav_00581bf6
+;   TerminatedCString s_frankx_bed2_wav_00581c06
+;   TerminatedCString s_frankx_bed3_wav_00581c16
+;   TerminatedCString s_frankx_bed4_wav_00581c26
+;   TerminatedCString s_frankx_water_dip_wav_00581c36
+;   TerminatedCString s_frankx_big_ramp_bed5_wav_00581c4b
+;   TerminatedCString s_frankx_crane1_wav_00581c64
+;   TerminatedCString s_frankx_crane2_wav_00581c76
+;   TerminatedCString s_frankx_crane3_wav_00581c88
+;   TerminatedCString s_frankx_arm_wav_00581c9a
+;   TerminatedCString s_frankx_flap_up_wav_00581ca9
+;   TerminatedCString s_frankx_flap_down_wav_00581cbc
+;   TerminatedCString s_frankx_big_ramp_wav_00581cd1
+;   TerminatedCString s_core_frankgen_cpp_00581ce5
 ;   ... and 13 more
 ;
 ; Called Functions:

@@ -10,20 +10,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00579446
-;   string s_modelName_0057944c
-;   string s_guardDistance_00579456
-;   string s_motion_state_00579464
-;   string s_deathEvent_00579471
-;   string s_recombineTime_0057947c
-;   string s_blownUp_0057948a
-;   string s_param_00579492
-;   string s_boxCount_00579498
-;   string s_partStatus_005794a1
-;   string s_boxListPos_005794ac
-;   string s_boxListOrient_005794b7
-;   string s_boxListDestOrient_005794c5
-;   string s_boxListStartOrient_005794d7
-;   string s_sourcePos_005794ea
+;   TerminatedCString s_modelName_0057944c
+;   TerminatedCString s_guardDistance_00579456
+;   TerminatedCString s_motion_state_00579464
+;   TerminatedCString s_deathEvent_00579471
+;   TerminatedCString s_recombineTime_0057947c
+;   TerminatedCString s_blownUp_0057948a
+;   TerminatedCString s_param_00579492
+;   TerminatedCString s_boxCount_00579498
+;   TerminatedCString s_partStatus_005794a1
+;   TerminatedCString s_boxListPos_005794ac
+;   TerminatedCString s_boxListOrient_005794b7
+;   TerminatedCString s_boxListDestOrient_005794c5
+;   TerminatedCString s_boxListStartOrient_005794d7
+;   TerminatedCString s_sourcePos_005794ea
 ;   ... and 3 more
 ;
 ; Called Functions:

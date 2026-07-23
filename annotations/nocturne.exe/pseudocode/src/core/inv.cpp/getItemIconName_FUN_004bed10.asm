@@ -9,7 +9,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bf436
 ;
 ; Referenced Globals:
-;   string s_Add_to_dict:_%s_00586d48
+;   TerminatedCString s_Add_to_dict_s_00586d48
 ;   undefined4 DAT_01cb03d0
 ;
 ; Called Functions:

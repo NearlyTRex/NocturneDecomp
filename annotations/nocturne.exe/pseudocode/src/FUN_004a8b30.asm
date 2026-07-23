@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_00584ab3
+;   TerminatedCString s_modelName_00584ab3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00

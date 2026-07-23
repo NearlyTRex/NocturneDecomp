@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 261,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 65,
     "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 257
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -193,20 +193,20 @@
     },
     {
       "addr": "0057d255",
-      "name": "s_The_door_is_locked_from_the_othe_0057d255",
-      "type": "string",
+      "name": "s_The_door_is_locked_from_0057d255",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057d27d",
-      "name": "s_..\\core\\door.cpp_0057d27d",
-      "type": "string",
+      "name": "s_core_door_cpp_0057d27d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057d28e",
-      "name": "s_CDoor::getMoveType_-_invalid_doo_0057d28e",
-      "type": "string",
+      "name": "s_CDoor_getMoveType_invali_0057d28e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -341,7 +341,7 @@
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 21,
+          "line": 20,
           "message": "Uninitialized variable: local_10",
           "severity": "error"
         }
@@ -393,7 +393,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(byte *)(param_1 + 0x9d0) & 2) != 0) goto LAB_0045663d;",
@@ -401,7 +401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x9d0) != 0) {",
@@ -409,7 +409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "core_door_cpp_CDoor_onLocked_FUN_00456650(param_1);",
@@ -417,7 +417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(byte *)(param_1 + 0x9d0) & 1) != 0) {",
@@ -425,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(*(uint *)(param_1 + 0x2d0)) {",
@@ -433,7 +433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2dc) != 0) {",
@@ -441,7 +441,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2d8) != 0) {",
@@ -449,7 +449,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2d8) == 0) {",
@@ -457,7 +457,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x9d0) != 0) {",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "core_door_cpp_CDoor_onLocked_FUN_00456650(param_1);",
@@ -473,7 +473,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2d4) != 1) {",
@@ -481,7 +481,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2d8) != 0) {",
@@ -500,7 +500,7 @@
     },
     {
       "description": "Uninitialized variable: local_10",
-      "line": 21,
+      "line": 20,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_10 <= 0.0) {",

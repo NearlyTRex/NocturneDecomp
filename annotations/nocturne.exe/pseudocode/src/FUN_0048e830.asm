@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0058165f
-;   string s_onFire_00581669
-;   string s_timeToExplode_00581670
-;   string s_onFireCondition_0058167e
+;   TerminatedCString s_onFire_00581669
+;   TerminatedCString s_timeToExplode_00581670
+;   TerminatedCString s_onFireCondition_0058167e
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880

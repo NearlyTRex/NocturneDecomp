@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Stop_hardware_sfx_secondary_buff_00594104
-;   string s_DirectSoundDevice::killSfx_-_han_005947d0
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Stop_hardware_sfx_second_00594104
+;   TerminatedCString s_DirectSoundDevice_killSf_005947d0
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

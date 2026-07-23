@@ -28,19 +28,19 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005922b0
-;   string s_SfxSlot::kill_-_must_be_locked!_005922c5
-;   string s_sound_00592778
+;   TerminatedCString s_sound_sndmain_cpp_005922b0
+;   TerminatedCString s_SfxSlot_kill_must_be_loc_005922c5
+;   TerminatedCString s_sound_00592778
 ;   TerminatedCString s_mp3_0059277e
 ;   TerminatedCString s_mp3_00592782
 ;   TerminatedCString s_mp3_00592787
 ;   TerminatedCString s_mp3_0059278b
-;   string s_sound_00592790
-;   string s_..\\sound\\sndmain.cpp_00592796
-;   string s_Out_of_memory._005927ab
+;   TerminatedCString s_sound_00592790
+;   TerminatedCString s_sound_sndmain_cpp_00592796
+;   TerminatedCString s_Out_of_memory_005927ab
 ;   TerminatedCString s_rb_005927ba
-;   string s_sound_005927bd
-;   string s_startSfx_-_can't_get_sample_%s_0059356d
+;   TerminatedCString s_sound_005927bd
+;   TerminatedCString s_startSfx_can_t_get_sampl_0059356d
 ;   float FLOAT_005a2174 = 2
 ;   undefined4 DAT_005bea40
 ;   ... and 14 more

@@ -10,11 +10,11 @@
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00528500 at 0052857c
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_create_DirectSound_object_00594859
-;   string s_Set_cooperative_level_00594873
-;   string s_Create_the_primary_buffer_00594889
-;   string s_Create_the_primary_buffer_005948a3
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_create_DirectSound_objec_00594859
+;   TerminatedCString s_Set_cooperative_level_00594873
+;   TerminatedCString s_Create_the_primary_buffe_00594889
+;   TerminatedCString s_Create_the_primary_buffe_005948a3
 ;   undefined4 DAT_005c3908
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9218

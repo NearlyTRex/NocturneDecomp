@@ -6,15 +6,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flameSize_005815af
-;   string s_whichFlame_005815b9
-;   string s_globeScalar_005815c4
-;   string s_onEvent_005815d0
-;   string s_onEvent_005815d8
-;   string s_flameState_005815e0
-;   string s_intensity_005815eb
-;   string s_randomness_005815f5
-;   string s_burnHero_00581600
-;   string s_burnEnemy_00581609
+;   TerminatedCString s_whichFlame_005815b9
+;   TerminatedCString s_globeScalar_005815c4
+;   TerminatedCString s_onEvent_005815d0
+;   TerminatedCString s_onEvent_005815d8
+;   TerminatedCString s_flameState_005815e0
+;   TerminatedCString s_intensity_005815eb
+;   TerminatedCString s_randomness_005815f5
+;   TerminatedCString s_burnHero_00581600
+;   TerminatedCString s_burnEnemy_00581609
 ;   undefined4 DAT_005b91c0
 ;
 ; Called Functions:

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_dog.dfm_0057cf31
+;   TerminatedCString s_dog_dfm_0057cf31
 ;   float FLOAT_0059c0dc = 50
 ;   float FLOAT_0059c0e0 = 100
 ;   undefined1* PTR_core_dog.cpp_CZombieDog_setup_FUN_004546d0_0059c0f4 = 004546d0

@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_trigger_cpp_00596b23
-;   string s_CTrigger::containsActor_-_invali_00596b37
-;   string s_..\\core\\trigger.cpp_00596b71
-;   string s_Hell_froze..._00596b85
+;   TerminatedCString s_CTrigger_containsActor_i_00596b37
+;   TerminatedCString s_core_trigger_cpp_00596b71
+;   TerminatedCString s_Hell_froze_00596b85
 ;   float FLOAT_00596b93 = 0.5
 ;   double DOUBLE_00596b97 = 0.25
 ;   undefined4 DAT_00765a98

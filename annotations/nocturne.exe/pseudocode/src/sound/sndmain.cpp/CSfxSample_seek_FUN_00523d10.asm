@@ -14,14 +14,14 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526adc
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00592a41
-;   string s_SfxSample::seek_-_'%s'_isn't_str_00592a56
-;   string s_..\\sound\\sndmain.cpp_00592a7d
-;   string s_SfxSample::seek_-_invalid_destPt_00592a92
-;   string s_..\\sound\\sndmain.cpp_00592ab4
-;   string s_Error_seeking_%s_to_%d_00592ac9
-;   string s_..\\sound\\sndmain.cpp_00592ae0
-;   string s_SfxSample::seek_-_no_MP3_and_no_w_00592af5
+;   TerminatedCString s_sound_sndmain_cpp_00592a41
+;   TerminatedCString s_SfxSample_seek_s_isn_t_s_00592a56
+;   TerminatedCString s_sound_sndmain_cpp_00592a7d
+;   TerminatedCString s_SfxSample_seek_invalid_d_00592a92
+;   TerminatedCString s_sound_sndmain_cpp_00592ab4
+;   TerminatedCString s_Error_seeking_s_to_d_00592ac9
+;   TerminatedCString s_sound_sndmain_cpp_00592ae0
+;   TerminatedCString s_SfxSample_seek_no_MP3_an_00592af5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

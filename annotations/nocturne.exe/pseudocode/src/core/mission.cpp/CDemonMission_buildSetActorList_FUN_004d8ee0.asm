@@ -10,8 +10,8 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d9051
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589ca4
-;   string s_CDemonMission::buildSetActorList_00589cb8
+;   TerminatedCString s_core_mission_cpp_00589ca4
+;   TerminatedCString s_CDemonMission_buildSetAc_00589cb8
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

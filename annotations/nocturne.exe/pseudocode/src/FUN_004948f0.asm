@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_whichPart_00581be0
-;   string s_masterFrame_00581bea
+;   TerminatedCString s_whichPart_00581be0
+;   TerminatedCString s_masterFrame_00581bea
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880

@@ -25,8 +25,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045624c = 004562b4
-;   string s_..\\core\\door.cpp_0057d21a
-;   string s_CDoor::getOpenStandPos_-_invalid_0057d22b
+;   TerminatedCString s_core_door_cpp_0057d21a
+;   TerminatedCString s_CDoor_getOpenStandPos_in_0057d22b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

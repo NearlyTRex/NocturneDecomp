@@ -23,16 +23,16 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526b72
 ;
 ; Referenced Globals:
-;   string s_\"RIFF\"_ID_not_found_at_offset_00_00592132
-;   string s_WAV_file_is_invalid:_%s_0059215a
-;   string s_\"WAVE\"_ID_not_found_at_offset_00_00592173
-;   string s_\"data\"_chunk_preceeds_\"fmt\"_chun_0059219b
-;   string s_Required_\"fmt\"_chunk_not_found_005921bd
-;   string s_File_contains_invalid_\"fmt\"_chun_005921dc
-;   string s_Invalid_\"fmt\"_chunk_tag:_%04X_(M_005921fe
-;   string s_Invalid_number_of_channels:_%u_(_00592245
-;   string s_Invalid_bytes/sec_value:_%u_(%04_00592276
-;   string s_No_\"data\"_chunk_found_0059229a
+;   TerminatedCString s_RIFF_ID_not_found_at_off_00592132
+;   TerminatedCString s_WAV_file_is_invalid_s_0059215a
+;   TerminatedCString s_WAVE_ID_not_found_at_off_00592173
+;   TerminatedCString s_data_chunk_preceeds_fmt_0059219b
+;   TerminatedCString s_Required_fmt_chunk_not_f_005921bd
+;   TerminatedCString s_File_contains_invalid_fm_005921dc
+;   TerminatedCString s_Invalid_fmt_chunk_tag_04_005921fe
+;   TerminatedCString s_Invalid_number_of_channe_00592245
+;   TerminatedCString s_Invalid_bytes_sec_value_00592276
+;   TerminatedCString s_No_data_chunk_found_0059229a
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380

@@ -59,7 +59,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ad78
-;   string s_CMorph::getReady_-_can't_do_this_0058ad8a
+;   TerminatedCString s_CMorph_getReady_can_t_do_0058ad8a
 ;   undefined4 DAT_005993f0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

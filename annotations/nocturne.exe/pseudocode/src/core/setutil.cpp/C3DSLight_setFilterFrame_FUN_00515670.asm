@@ -8,10 +8,10 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047cb16
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setutil.cpp_00590ef5
-;   string s_C3DSLight::advanceFilter_-_NULL_C_00590f09
-;   string s_..\\core\\setutil.cpp_00590f3e
-;   string s_C3DSLight::setFilterFrame_-_inva_00590f52
+;   TerminatedCString s_core_setutil_cpp_00590ef5
+;   TerminatedCString s_C3DSLight_advanceFilter_00590f09
+;   TerminatedCString s_core_setutil_cpp_00590f3e
+;   TerminatedCString s_C3DSLight_setFilterFrame_00590f52
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

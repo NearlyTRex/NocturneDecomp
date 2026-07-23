@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_question.kfm_005783ef
-;   string s_acmeanvilinc_005783fc
+;   TerminatedCString s_question_kfm_005783ef
+;   TerminatedCString s_acmeanvilinc_005783fc
 ;   undefined4 s_cmeanvilinc_005783fc+1
 ;   undefined4 s_meanvilinc_005783fc+2
 ;   undefined4 s_eanvilinc_005783fc+3

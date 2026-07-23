@@ -10,21 +10,21 @@
 ;   FUN_004c85f0 at 004c86bb
 ;
 ; Referenced Globals:
-;   string s_..\\core\\inivar.cpp_00586744
-;   string s_Please_copy_Nocturne_to_your_har_00586757
-;   string s_gamePIXX_0058677f
-;   string s_gamePIXY_00586788
-;   string s_gameBPP_00586791
-;   string s_useDirect3D_00586799
-;   string s_useAGPFlag_005867a5
-;   string s_rendererDLLPath_005867b0
-;   string s_gamma_005867c0
-;   string s_heroNumber_005867c6
-;   string s_haloMode_005867d1
-;   string s_firstTimeFlag_005867da
-;   string s_subtitleMode_005867e8
-;   string s_bloodFlag_005867f5
-;   string s_nudityFlag_005867ff
+;   TerminatedCString s_core_inivar_cpp_00586744
+;   TerminatedCString s_Please_copy_Nocturne_to_00586757
+;   TerminatedCString s_gamePIXX_0058677f
+;   TerminatedCString s_gamePIXY_00586788
+;   TerminatedCString s_gameBPP_00586791
+;   TerminatedCString s_useDirect3D_00586799
+;   TerminatedCString s_useAGPFlag_005867a5
+;   TerminatedCString s_rendererDLLPath_005867b0
+;   TerminatedCString s_gamma_005867c0
+;   TerminatedCString s_heroNumber_005867c6
+;   TerminatedCString s_haloMode_005867d1
+;   TerminatedCString s_firstTimeFlag_005867da
+;   TerminatedCString s_subtitleMode_005867e8
+;   TerminatedCString s_bloodFlag_005867f5
+;   TerminatedCString s_nudityFlag_005867ff
 ;   ... and 77 more
 ;
 ; Called Functions:

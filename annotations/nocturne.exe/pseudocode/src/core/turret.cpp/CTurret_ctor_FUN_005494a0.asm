@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   string s_gturret_head.kfm_00596ce5
-;   string s_gturret_tripod.kfm_00596cf6
-;   string s_CCharacter_00596d09
+;   TerminatedCString s_gturret_head_kfm_00596ce5
+;   TerminatedCString s_gturret_tripod_kfm_00596cf6
+;   TerminatedCString s_CCharacter_00596d09
 ;   undefined4 s_Character_00596d09+1
 ;   undefined4 s_haracter_00596d09+2
 ;   undefined4 s_aracter_00596d09+3

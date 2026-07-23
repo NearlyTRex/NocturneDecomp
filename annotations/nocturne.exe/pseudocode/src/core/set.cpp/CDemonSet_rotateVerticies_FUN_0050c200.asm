@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590652
-;   string s_CDemonSet::rotateVerticies_-_tri_00590662
+;   TerminatedCString s_CDemonSet_rotateVerticie_00590662
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc4800

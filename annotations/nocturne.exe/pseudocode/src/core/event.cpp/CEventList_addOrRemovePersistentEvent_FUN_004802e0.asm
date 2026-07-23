@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00580a07
-;   string s_Too_many_persistent_events!_00580a19
-;   string s_..\\core\\event.cpp_00580a35
-;   string s_Event_name_%s_too_long!_00580a47
+;   TerminatedCString s_Too_many_persistent_even_00580a19
+;   TerminatedCString s_core_event_cpp_00580a35
+;   TerminatedCString s_Event_name_s_too_long_00580a47
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

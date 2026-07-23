@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_shatter_wav_00584a70
-;   string s_gargoyle-hurt?.wav_00584a85
+;   TerminatedCString s_gargoyle_hurt_wav_00584a85
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:

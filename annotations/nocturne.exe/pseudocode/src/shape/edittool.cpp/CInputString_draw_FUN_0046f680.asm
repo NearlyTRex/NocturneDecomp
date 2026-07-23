@@ -11,8 +11,8 @@
 ;   FUN_00470eb0 at 004710e2
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057e584
-;   string s_CInputString::draw_-_string_too_b_0057e59a
+;   TerminatedCString s_shape_edittool_cpp_0057e584
+;   TerminatedCString s_CInputString_draw_string_0057e59a
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcdddc

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005829aa
-;   string s_CGame::playerControls_-_unknown_c_005829bb
+;   TerminatedCString s_CGame_playerControls_unk_005829bb
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01bd1d94

@@ -20,12 +20,12 @@
 ;   ... and 40 more
 ;
 ; Referenced Globals:
-;   string s_location_00577f05
-;   string s_orient_00577f0e
+;   TerminatedCString s_location_00577f05
+;   TerminatedCString s_orient_00577f0e
 ;   float FLOAT_00577f15 = 1.087655E-38
-;   string s_wasCreated_00577f19
-;   string s_createProb_00577f24
-;   string s_createEvent_00577f2f
+;   TerminatedCString s_wasCreated_00577f19
+;   TerminatedCString s_createProb_00577f24
+;   TerminatedCString s_createEvent_00577f2f
 ;   undefined4 DAT_005acc88
 ;
 ; Called Functions:

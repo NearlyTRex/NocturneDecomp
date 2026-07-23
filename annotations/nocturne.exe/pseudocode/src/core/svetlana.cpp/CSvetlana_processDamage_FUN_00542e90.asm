@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_svet-die.wav_00596460
-;   string s_svet-hurt?.wav_0059646d
+;   TerminatedCString s_svet_die_wav_00596460
+;   TerminatedCString s_svet_hurt_wav_0059646d
 ;   undefined4 DAT_005a2a68
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4

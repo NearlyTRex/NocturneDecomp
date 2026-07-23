@@ -10,12 +10,12 @@
 ;   core_mission.cpp_CDemonMission_load_FUN_004d7ee0 at 004d7f40
 ;
 ; Referenced Globals:
-;   string s_CHero_00589fd1
-;   string s_Warning:_mission_has_no_hero_pla_00589fd7
-;   string s_Mission_has_no_hero_placeholders_0058a010
-;   string s_..\\core\\mission.cpp_0058a0d2
-;   string s_Hell_froze_finding_hero._0058a0e6
-;   string s_Replaced_hero_OK._You_will_need_t_0058a0ff
+;   TerminatedCString s_CHero_00589fd1
+;   TerminatedCString s_Warning_mission_has_no_h_00589fd7
+;   TerminatedCString s_Mission_has_no_hero_plac_0058a010
+;   TerminatedCString s_core_mission_cpp_0058a0d2
+;   TerminatedCString s_Hell_froze_finding_hero_0058a0e6
+;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cae160
 ;   undefined4 DAT_01cc4800

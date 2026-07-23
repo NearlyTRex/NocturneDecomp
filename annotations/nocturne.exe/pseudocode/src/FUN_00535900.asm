@@ -14,18 +14,18 @@
 ;   void* switchdataD_005358a0 = 0053737b
 ;   void* switchdataD_005358b8 = 005371d5
 ;   TerminatedCString s_DebugActionPending_005954d7
-;   string s_grabbedBy=%s_005954ea
-;   string s_pushedObject=%s_005954f8
-;   string s_ladder_00595509
-;   string s_pickup_00595511
-;   string s_hurt_00595519
-;   string s_door_0059551f
-;   string s_sitting_00595525
-;   string s_stashinventory_0059552e
-;   string s_placeobject_0059553e
-;   string s_putdownobject_0059554b
-;   string s_toss_0059555a
-;   string s_attackmelee_00595560
+;   TerminatedCString s_grabbedBy_s_005954ea
+;   TerminatedCString s_pushedObject_s_005954f8
+;   TerminatedCString s_ladder_00595509
+;   TerminatedCString s_pickup_00595511
+;   TerminatedCString s_hurt_00595519
+;   TerminatedCString s_door_0059551f
+;   TerminatedCString s_sitting_00595525
+;   TerminatedCString s_stashinventory_0059552e
+;   TerminatedCString s_placeobject_0059553e
+;   TerminatedCString s_putdownobject_0059554b
+;   TerminatedCString s_toss_0059555a
+;   TerminatedCString s_attackmelee_00595560
 ;   ... and 53 more
 ;
 ; Called Functions:

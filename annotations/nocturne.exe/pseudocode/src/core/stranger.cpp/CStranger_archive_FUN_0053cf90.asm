@@ -6,17 +6,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_objectToPickUp_00595bf7
-;   string s_doorToOpen_00595c06
-;   string s_leverToPull_00595c11
-;   string s_ladderToClimb_00595c1d
-;   string s_lhCarryObject_00595c2b
-;   string s_rhCarryObject_00595c39
-;   string s_ladderToDescend_00595c47
-;   string s_gunsDrawn_00595c57
-;   string s_weapon_00595c61
-;   string s_actionPending_00595c68
-;   string s_layerActionIndex_00595c76
-;   string s_layerActionT_00595c87
+;   TerminatedCString s_doorToOpen_00595c06
+;   TerminatedCString s_leverToPull_00595c11
+;   TerminatedCString s_ladderToClimb_00595c1d
+;   TerminatedCString s_lhCarryObject_00595c2b
+;   TerminatedCString s_rhCarryObject_00595c39
+;   TerminatedCString s_ladderToDescend_00595c47
+;   TerminatedCString s_gunsDrawn_00595c57
+;   TerminatedCString s_weapon_00595c61
+;   TerminatedCString s_actionPending_00595c68
+;   TerminatedCString s_layerActionIndex_00595c76
+;   TerminatedCString s_layerActionT_00595c87
 ;   undefined4 DAT_005c0ff0
 ;
 ; Called Functions:

@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dc9d
-;   string s_CDemonRenderer::demonGZFacetList_0057dcb3
+;   TerminatedCString s_CDemonRenderer_demonGZFa_0057dcb3
 ;   undefined4 DAT_005ae70c
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_006b0280

@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
-;   string s_%s_confused_while_walking_to_scr_00578ded
+;   TerminatedCString s_s_confused_while_walking_00578ded
 ;   double DOUBLE_00578e1e = 3.14159265350000
 ;   double DOUBLE_00578e26 = 32
 ;   float FLOAT_0059a5a0 = 4

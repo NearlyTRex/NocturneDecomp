@@ -12,11 +12,11 @@
 ;   core_set.cpp_FUN_00507f80 at 005083f0
 ;
 ; Referenced Globals:
-;   string s_Initializing_scene_00590382
-;   string s_..\\core\\set.cpp_00590395
-;   string s_CDemonSet::initScene_-_Memory_le_005903a5
-;   string s_..\\core\\set.cpp_005903e6
-;   string s_CDemonSet::initScene_-_Too_many_s_005903f6
+;   TerminatedCString s_Initializing_scene_00590382
+;   TerminatedCString s_core_set_cpp_00590395
+;   TerminatedCString s_CDemonSet_initScene_Memo_005903a5
+;   TerminatedCString s_core_set_cpp_005903e6
+;   TerminatedCString s_CDemonSet_initScene_Too_005903f6
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_005baca0
 ;   undefined4 DAT_005c15b8

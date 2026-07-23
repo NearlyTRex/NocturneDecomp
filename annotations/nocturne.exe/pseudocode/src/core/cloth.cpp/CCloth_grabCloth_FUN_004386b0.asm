@@ -8,8 +8,8 @@
 ;   FUN_005402f0 at 0054043a
 ;
 ; Referenced Globals:
-;   string s_..\\core\\cloth.cpp_0057af91
-;   string s_CCloth::grabCloth_-_Can't_find_b_0057afa3
+;   TerminatedCString s_core_cloth_cpp_0057af91
+;   TerminatedCString s_CCloth_grabCloth_Can_t_f_0057afa3
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

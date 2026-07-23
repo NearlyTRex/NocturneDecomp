@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 89,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 113
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -253,12 +253,12 @@
       "line": 16,
       "match": "DAT_01c78ad0",
       "severity": "mild",
-      "text": "(0x01BCD074,\"Enter number of frames to record (or 0 to record until CTRL+V is pressed)\",&DAT_01c78ad0,1,0,",
+      "text": "(0x01BCD074,\"Enter number of frames to record (or 0 to record until CTRL+V is pressed)\",&DAT_01c78ad0,1,0,99999,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_005b9364",
       "severity": "mild",
       "text": "(0x01BCD074,\"Enter image width\",&DAT_005b9364,1,1,9999,1);",
@@ -266,7 +266,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 22,
       "match": "DAT_005b9368",
       "severity": "mild",
       "text": "(0x01BCD074,\"Enter image height\",&DAT_005b9368,1,1,9999,1);",

@@ -19,8 +19,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_manpuz_chargegemloop_red_00587fca
-;   string s_manpuz-chargegemloop-green.wav_00587fe7
-;   string s_manpuz-chargegemloop-blue.wav_00588006
+;   TerminatedCString s_manpuz_chargegemloop_gre_00587fe7
+;   TerminatedCString s_manpuz_chargegemloop_blu_00588006
 ;   float FLOAT_00588026 = 255
 ;   float FLOAT_005a0044 = 2
 ;   float FLOAT_005a0048 = 2

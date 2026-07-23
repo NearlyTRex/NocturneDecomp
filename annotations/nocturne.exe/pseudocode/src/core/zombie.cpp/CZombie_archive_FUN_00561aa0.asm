@@ -5,17 +5,17 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_speed_00598887
-;   string s_modelName_0059888d
-;   string s_guardDistance_00598897
-;   string s_motion_state_005988a5
-;   string s_partStatus_005988b2
-;   string s_carriedActor_005988bd
-;   string s_riseFromGraveCondition_005988ca
-;   string s_graveActor_005988e1
-;   string s_clothList_005988ec
-;   string s_isMinerZombie_005988f6
-;   string s_alwaysChaseFast_00598904
+;   TerminatedCString s_speed_00598887
+;   TerminatedCString s_modelName_0059888d
+;   TerminatedCString s_guardDistance_00598897
+;   TerminatedCString s_motion_state_005988a5
+;   TerminatedCString s_partStatus_005988b2
+;   TerminatedCString s_carriedActor_005988bd
+;   TerminatedCString s_riseFromGraveCondition_005988ca
+;   TerminatedCString s_graveActor_005988e1
+;   TerminatedCString s_clothList_005988ec
+;   TerminatedCString s_isMinerZombie_005988f6
+;   TerminatedCString s_alwaysChaseFast_00598904
 ;   undefined4 DAT_005c166c
 ;
 ; Called Functions:

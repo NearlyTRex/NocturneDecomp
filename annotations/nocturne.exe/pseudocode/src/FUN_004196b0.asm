@@ -14,10 +14,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_can_t_pick_up_s_sombod_0057937e
-;   string s_%s_can't_pick_up_%s,_giving_up!!_005793b0
-;   string s_%s_beginning_to_pickup_%s_005793d4
-;   string s_CBodyPart_005793ef
-;   string s_%s_is_going_to_try_to_pick_up_%s_005793f9
+;   TerminatedCString s_s_can_t_pick_up_s_giving_005793b0
+;   TerminatedCString s_s_beginning_to_pickup_s_005793d4
+;   TerminatedCString s_CBodyPart_005793ef
+;   TerminatedCString s_s_is_going_to_try_to_pic_005793f9
 ;   double DOUBLE_0057941e = 0.333333333333333
 ;   double DOUBLE_00579426 = 5
 ;   double DOUBLE_0057942e = 0.400000000000000

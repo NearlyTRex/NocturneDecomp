@@ -9,12 +9,12 @@
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240da
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_0059299a
-;   string s_SfxSample::lock_-_already_locked_005929af
-;   string s_..\\sound\\sndmain.cpp_005929d1
-;   string s_SfxSample::lock_-_invalid_region_005929e6
-;   string s_..\\sound\\sndmain.cpp_00592a07
-;   string s_SfxSample::lock_-_nothing_alloca_00592a1c
+;   TerminatedCString s_sound_sndmain_cpp_0059299a
+;   TerminatedCString s_SfxSample_lock_already_l_005929af
+;   TerminatedCString s_sound_sndmain_cpp_005929d1
+;   TerminatedCString s_SfxSample_lock_invalid_r_005929e6
+;   TerminatedCString s_sound_sndmain_cpp_00592a07
+;   TerminatedCString s_SfxSample_lock_nothing_a_00592a1c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc8318

@@ -11,8 +11,8 @@
 ;   core_set.cpp_FUN_0050a260 at 0050a3af
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c616
-;   string s_CDemonLight::beginScene_-_Scene_a_0057c629
+;   TerminatedCString s_core_dlight_cpp_0057c616
+;   TerminatedCString s_CDemonLight_beginScene_S_0057c629
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d1fc
 ;   undefined4 DAT_01b4d738

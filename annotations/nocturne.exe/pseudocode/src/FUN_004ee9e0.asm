@@ -12,7 +12,7 @@
 ;   core_tbplayer.cpp_CDrummer_setup_FUN_005433d0 at 005433d7
 ;
 ; Referenced Globals:
-;   string s_priest.dfm_0058cacb
+;   TerminatedCString s_priest_dfm_0058cacb
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260

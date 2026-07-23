@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ccf6
-;   string s_Tried_to_call_CKeyFramedModel::i_0057cd09
+;   TerminatedCString s_Tried_to_call_CKeyFramed_0057cd09
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

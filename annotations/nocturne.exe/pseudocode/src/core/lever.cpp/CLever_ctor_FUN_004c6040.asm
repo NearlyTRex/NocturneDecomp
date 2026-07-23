@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_glever.kfm_005878f4
+;   TerminatedCString s_glever_kfm_005878f4
 ;   undefined1* PTR_core_lever.cpp_CLever_setup_FUN_004c6110_0059fc44 = 004c6110
 ;
 ; Called Functions:

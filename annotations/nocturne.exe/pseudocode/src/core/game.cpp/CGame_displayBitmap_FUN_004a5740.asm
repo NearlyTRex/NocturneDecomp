@@ -8,8 +8,8 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b40c
 ;
 ; Referenced Globals:
-;   string s_..\\core\\game.cpp_0058432a
-;   string s_CGame::displayBitmap_-_tried_to_q_0058433b
+;   TerminatedCString s_core_game_cpp_0058432a
+;   TerminatedCString s_CGame_displayBitmap_trie_0058433b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

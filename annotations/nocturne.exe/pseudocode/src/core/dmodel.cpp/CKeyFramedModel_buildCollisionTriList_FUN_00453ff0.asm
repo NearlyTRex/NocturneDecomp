@@ -9,8 +9,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990 at 00452ef2
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057ce07
-;   string s_CKeyFramedModel::buildCollisionT_0057ce1a
+;   TerminatedCString s_core_dmodel_cpp_0057ce07
+;   TerminatedCString s_CKeyFramedModel_buildCol_0057ce1a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dd1184

@@ -16,10 +16,10 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 at 0045278d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057c9cc
-;   string s_Error_reading_keyframed_model_fi_0057c9df
-;   string s_..\\core\\dmodel.cpp_0057ca02
-;   string s_KFM_file_is_invalid_version_%d_0057ca15
+;   TerminatedCString s_core_dmodel_cpp_0057c9cc
+;   TerminatedCString s_Error_reading_keyframed_0057c9df
+;   TerminatedCString s_core_dmodel_cpp_0057ca02
+;   TerminatedCString s_KFM_file_is_invalid_vers_0057ca15
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

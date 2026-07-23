@@ -14,8 +14,8 @@
 ;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 at 0050df12
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\drender.cpp_0057dcfa
-;   string s_CDemonRenderer::demonGZFacetList_0057dd10
+;   TerminatedCString s_engine_drender_cpp_0057dcfa
+;   TerminatedCString s_CDemonRenderer_demonGZFa_0057dd10
 ;   undefined4 DAT_005ae70c
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_006b0280

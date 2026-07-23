@@ -49,7 +49,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591b6b
-;   string s_Write_me!_00591b80
+;   TerminatedCString s_Write_me_00591b80
 ;   double DOUBLE_00591b8b = 0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

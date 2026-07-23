@@ -5,17 +5,17 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_005974c5
+;   TerminatedCString s_modelName_005974c5
 ;   TerminatedCString s_prey_005974cf
-;   string s_neutral_005974d4
-;   string s_destroyedEvent_005974dc
-;   string s_startLoc_005974eb
-;   string s_endLoc_005974f4
-;   string s_state_005974fb
-;   string s_timer_00597501
-;   string s_winEvent_00597507
-;   string s_eatDistance_00597510
-;   string s_visualType_0059751c
+;   TerminatedCString s_neutral_005974d4
+;   TerminatedCString s_destroyedEvent_005974dc
+;   TerminatedCString s_startLoc_005974eb
+;   TerminatedCString s_endLoc_005974f4
+;   TerminatedCString s_state_005974fb
+;   TerminatedCString s_timer_00597501
+;   TerminatedCString s_winEvent_00597507
+;   TerminatedCString s_eatDistance_00597510
+;   TerminatedCString s_visualType_0059751c
 ;   undefined4 DAT_005c11c4
 ;
 ; Called Functions:

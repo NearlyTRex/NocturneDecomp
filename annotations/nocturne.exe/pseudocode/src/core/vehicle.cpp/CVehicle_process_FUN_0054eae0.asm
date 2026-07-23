@@ -25,12 +25,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_model_t_horn_wav_00597320
-;   string s_..\\core\\vehicle.cpp_00597332
-;   string s_CMobster::process_-_Out_of_memor_00597346
-;   string s_mobster3.dfm_00597369
-;   string s_mobster4.dfm_00597376
-;   string s_ext-modelt-fast_??.wav_00597383
-;   string s_skid_??.wav_0059739a
+;   TerminatedCString s_core_vehicle_cpp_00597332
+;   TerminatedCString s_CMobster_process_Out_of_00597346
+;   TerminatedCString s_mobster3_dfm_00597369
+;   TerminatedCString s_mobster4_dfm_00597376
+;   TerminatedCString s_ext_modelt_fast_wav_00597383
+;   TerminatedCString s_skid_wav_0059739a
 ;   float FLOAT_005973a8 = 2
 ;   float FLOAT_005973ac = 3.700000
 ;   float FLOAT_005973b0 = 1.570796

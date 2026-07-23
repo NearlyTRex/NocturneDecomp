@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b983
-;   string s_Unable_to_lock_hold_buffer._Plea_0057b997
+;   TerminatedCString s_Unable_to_lock_hold_buff_0057b997
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

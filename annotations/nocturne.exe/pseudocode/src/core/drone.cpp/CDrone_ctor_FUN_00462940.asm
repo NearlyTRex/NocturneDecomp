@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_drone.dfm_0057de8b
+;   TerminatedCString s_drone_dfm_0057de8b
 ;   float FLOAT_0059c6fc = 50
 ;   undefined4 DAT_0059c700
 ;   undefined1* PTR_core_drone.cpp_CDrone_setup_FUN_004629b0_0059c714 = 004629b0

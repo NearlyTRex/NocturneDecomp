@@ -8,9 +8,9 @@
 ;   FUN_005055f0 at 00505757
 ;
 ; Referenced Globals:
-;   string s_\"%s\"_0058fcba
-;   string s_\"%s\"_0058fcc0
-;   string s_(none)_005be228
+;   TerminatedCString s_s_0058fcba
+;   TerminatedCString s_s_0058fcc0
+;   TerminatedCString s_none_005be228
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005644f0

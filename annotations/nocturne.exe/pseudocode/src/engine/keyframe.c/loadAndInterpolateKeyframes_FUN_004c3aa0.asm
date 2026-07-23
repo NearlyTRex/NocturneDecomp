@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_keyframe_c_005875dc
-;   string s_Bad_key_frame_005875f1
-;   string s_..\\engine\\keyframe.c_005875ff
-;   string s_Key_frame_vertex_mismatch_00587614
+;   TerminatedCString s_Bad_key_frame_005875f1
+;   TerminatedCString s_engine_keyframe_c_005875ff
+;   TerminatedCString s_Key_frame_vertex_mismatc_00587614
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

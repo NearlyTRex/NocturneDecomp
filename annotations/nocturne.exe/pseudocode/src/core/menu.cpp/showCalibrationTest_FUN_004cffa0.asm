@@ -9,12 +9,12 @@
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0c82
 ;
 ; Referenced Globals:
-;   string s_brightness_0058857c
-;   string s_1._Turn_off_all_the_lights_in_yo_00588587
-;   string s_2._Turn_your_brightness_up,_so_t_005885b0
-;   string s_3._Turn_down_the_brightness,_so_t_00588603
-;   string s_4._Turn_your_contrast_all_the_wa_0058864f
-;   string s_You're_done_with_calibration._00588675
+;   TerminatedCString s_brightness_0058857c
+;   TerminatedCString s_s_1_Turn_off_all_the_lig_00588587
+;   TerminatedCString s_s_2_Turn_your_brightness_005885b0
+;   TerminatedCString s_s_3_Turn_down_the_bright_00588603
+;   TerminatedCString s_s_4_Turn_your_contrast_a_0058864f
+;   TerminatedCString s_You_re_done_with_calibra_00588675
 ;   undefined4 DAT_014b9904
 ;
 ; Called Functions:

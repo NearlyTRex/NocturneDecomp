@@ -11,16 +11,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_0057c06d
-;   string s_movscrn.raw_0057c079
-;   string s_%s.txt_0057c085
+;   TerminatedCString s_movscrn_raw_0057c079
+;   TerminatedCString s_s_txt_0057c085
 ;   TerminatedCString s_rt_0057c08c
-;   string s_..\\core\\dfilter.cpp_0057c08f
-;   string s_Can't_open_movie_%s.txt_0057c0a3
+;   TerminatedCString s_core_dfilter_cpp_0057c08f
+;   TerminatedCString s_Can_t_open_movie_s_txt_0057c0a3
 ;   TerminatedCString s_d_0057c0bb
-;   string s_%s.mov_0057c0bf
+;   TerminatedCString s_s_mov_0057c0bf
 ;   TerminatedCString s_rb_0057c0c6
-;   string s_..\\core\\dfilter.cpp_0057c0c9
-;   string s_Can't_open_movie_%s.mov_0057c0dd
+;   TerminatedCString s_core_dfilter_cpp_0057c0c9
+;   TerminatedCString s_Can_t_open_movie_s_mov_0057c0dd
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

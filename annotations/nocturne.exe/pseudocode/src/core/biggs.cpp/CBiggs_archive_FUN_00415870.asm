@@ -6,11 +6,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00578e2e
-;   string s_modelName_00578e34
-;   string s_motion_state_00578e3e
-;   string s_morphing_00578e4b
-;   string s_morphTimer_00578e54
-;   string s_morphEvent_00578e5f
+;   TerminatedCString s_modelName_00578e34
+;   TerminatedCString s_motion_state_00578e3e
+;   TerminatedCString s_morphing_00578e4b
+;   TerminatedCString s_morphTimer_00578e54
+;   TerminatedCString s_morphEvent_00578e5f
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80

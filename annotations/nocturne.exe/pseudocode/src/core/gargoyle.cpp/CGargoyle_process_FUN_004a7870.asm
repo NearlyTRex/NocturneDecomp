@@ -51,9 +51,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004a7858 = 004a7ce0
 ;   TerminatedCString s_s_confused_while_walking_00584990
-;   string s_gargoyle-alive?.wav_005849ba
-;   string s_gargoyle-stone.wav_005849ce
-;   string s_gargoyle-stone.wav_005849e1
+;   TerminatedCString s_gargoyle_alive_wav_005849ba
+;   TerminatedCString s_gargoyle_stone_wav_005849ce
+;   TerminatedCString s_gargoyle_stone_wav_005849e1
 ;   double DOUBLE_005849f8 = 3.14159265350000
 ;   double DOUBLE_00584a00 = 0.523598775583333
 ;   double DOUBLE_00584a08 = 32

@@ -11,7 +11,7 @@
 ;   void* PTR_MessageBoxA_0057544c = 001759e0
 ;   void* PTR_ExitProcess_005754b4 = 00175b8a
 ;   TerminatedCString s_s_File_s_Line_d_00597f49
-;   string s_Nocturne_00598156
+;   TerminatedCString s_Nocturne_00598156
 ;   void* PTR_s_Nocturne_005c1658 = 00598156
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

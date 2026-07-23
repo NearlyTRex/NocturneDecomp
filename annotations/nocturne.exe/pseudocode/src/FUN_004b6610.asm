@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_hiram.dfm_005859cb
-;   string s_killHiram_005859d5
+;   TerminatedCString s_hiram_dfm_005859cb
+;   TerminatedCString s_killHiram_005859d5
 ;   undefined4 s_illHiram_005859d5+1
 ;   undefined4 s_llHiram_005859d5+2
 ;   undefined4 s_lHiram_005859d5+3

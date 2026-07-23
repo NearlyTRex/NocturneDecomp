@@ -18,8 +18,8 @@
 ;   ... and 69 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057cea8
-;   string s_Tried_to_do_something_with_model_0057cebb
+;   TerminatedCString s_core_dmodel_cpp_0057cea8
+;   TerminatedCString s_Tried_to_do_something_wi_0057cebb
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

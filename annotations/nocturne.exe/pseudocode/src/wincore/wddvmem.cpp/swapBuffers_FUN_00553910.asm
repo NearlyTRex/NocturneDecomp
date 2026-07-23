@@ -26,10 +26,10 @@
 ;   ... and 29 more
 ;
 ; Referenced Globals:
-;   string s_..\\wincore\\wddvmem.cpp_00597ae0
-;   string s_Unable_to_lock_front_buffer_00597af7
-;   string s_..\\wincore\\wddvmem.cpp_00597b13
-;   string s_Unable_to_unlock_front_buffer_00597b2a
+;   TerminatedCString s_wincore_wddvmem_cpp_00597ae0
+;   TerminatedCString s_Unable_to_lock_front_buf_00597af7
+;   TerminatedCString s_wincore_wddvmem_cpp_00597b13
+;   TerminatedCString s_Unable_to_unlock_front_b_00597b2a
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

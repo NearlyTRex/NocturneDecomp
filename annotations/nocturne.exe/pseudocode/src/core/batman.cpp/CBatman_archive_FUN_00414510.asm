@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00578ca7
-;   string s_modelName_00578cad
-;   string s_motion_state_00578cb7
-;   string s_fallEvent_00578cc4
-;   string s_mistState_00578cce
-;   string s_vanishTimer_00578cd8
-;   string s_newPos_00578ce4
+;   TerminatedCString s_modelName_00578cad
+;   TerminatedCString s_motion_state_00578cb7
+;   TerminatedCString s_fallEvent_00578cc4
+;   TerminatedCString s_mistState_00578cce
+;   TerminatedCString s_vanishTimer_00578cd8
+;   TerminatedCString s_newPos_00578ce4
 ;   undefined4 DAT_005acfbc
 ;
 ; Called Functions:

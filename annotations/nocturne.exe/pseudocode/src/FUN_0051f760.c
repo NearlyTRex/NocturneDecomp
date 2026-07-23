@@ -39,7 +39,6 @@ void FUN_0051f760(uint param_1)
       iVar1 = iVar1 + 0x2ac0;
     } while (iVar3 < _DAT_0268cef0);
   }
-  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,
-             iVar5);
+  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,iVar5);
   return;
 }

@@ -17,13 +17,13 @@
 ;   void* switchdataD_0053b60c = 0053b971
 ;   void* switchdataD_0053b61c = 0053bbc2
 ;   TerminatedCString s_Picking_up_heavy_s_shelf_005959c3
-;   string s_Picking_up_heavy_%s_crate_005959de
-;   string s_%s_out_of_reach_-_canceling_pick_005959f9
-;   string s_Picking_up_%s_waist_level_00595a1d
-;   string s_Picking_up_%s_off_ground_00595a38
-;   string s_Rummaging_%s_00595a52
-;   string s_..\\core\\stranger.cpp_00595a60
-;   string s_Hell_froze_-_invalid_pickUpType:_00595a75
+;   TerminatedCString s_Picking_up_heavy_s_crate_005959de
+;   TerminatedCString s_s_out_of_reach_canceling_005959f9
+;   TerminatedCString s_Picking_up_s_waist_level_00595a1d
+;   TerminatedCString s_Picking_up_s_off_ground_00595a38
+;   TerminatedCString s_Rummaging_s_00595a52
+;   TerminatedCString s_core_stranger_cpp_00595a60
+;   TerminatedCString s_Hell_froze_invalid_pickU_00595a75
 ;   double DOUBLE_00595a9f = 0.990000000000000
 ;   float FLOAT_00595aa7 = 0.5
 ;   double DOUBLE_00595aaf = 2.5

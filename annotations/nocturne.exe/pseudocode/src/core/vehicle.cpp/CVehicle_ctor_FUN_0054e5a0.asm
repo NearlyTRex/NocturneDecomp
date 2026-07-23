@@ -5,15 +5,15 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_32ford.kfm_005972c1
-;   string s_32ltire.kfm_005972cc
-;   string s_32ltire.kfm_005972d8
-;   string s_32rtire.kfm_005972e4
-;   string s_32rtire.kfm_005972f0
-;   string s_chicpath.pth_005972fc
-;   undefined4 s_hicpath.pth_005972fc+1
-;   undefined4 s_icpath.pth_005972fc+2
-;   undefined4 s_cpath.pth_005972fc+3
+;   TerminatedCString s_s_32ford_kfm_005972c1
+;   TerminatedCString s_s_32ltire_kfm_005972cc
+;   TerminatedCString s_s_32ltire_kfm_005972d8
+;   TerminatedCString s_s_32rtire_kfm_005972e4
+;   TerminatedCString s_s_32rtire_kfm_005972f0
+;   TerminatedCString s_chicpath_pth_005972fc
+;   undefined4 s_chicpath_pth_005972fc+1
+;   undefined4 s_chicpath_pth_005972fc+2
+;   undefined4 s_chicpath_pth_005972fc+3
 ;   undefined4 DAT_0059b030
 ;   undefined1* PTR_core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0_005a3c44 = 0054e7f0
 ;   undefined4 DAT_005a3d20
@@ -139,13 +139,13 @@ section .text
     LEA EDI,[EBX + 0x102c]              ; 0054e79d
     MOV dword ptr [EBX + 0x1028],0x42c80000 ; 0054e7a3
     PUSH EDI                            ; 0054e7ad
-    MOV AL,byte ptr [ESI]               ; 0054e7ae | = "chicpath.pth" | s_icpath.pth_005972fc+2
+    MOV AL,byte ptr [ESI]               ; 0054e7ae | = "chicpath.pth" | s_chicpath_pth_005972fc+2
         ;   Label: LAB_0054e7ae
     MOV byte ptr [EDI],AL               ; 0054e7b0
     CMP AL,0x0                          ; 0054e7b2
     JZ 0x0054e7c6                       ; 0054e7b4
         ;   XREF to: 0054e7c6 (CONDITIONAL_JUMP)  ; LAB_0054e7c6
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054e7b6 | s_hicpath.pth_005972fc+1 | s_cpath.pth_005972fc+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054e7b6 | s_chicpath_pth_005972fc+1 | s_chicpath_pth_005972fc+3
     ADD ESI,0x2                         ; 0054e7b9
     MOV byte ptr [EDI + 0x1],AL         ; 0054e7bc
     ADD EDI,0x2                         ; 0054e7bf

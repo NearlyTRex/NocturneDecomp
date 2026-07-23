@@ -16,15 +16,15 @@
 ;   FUN_004f2990 at 004f2b3a
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\pcx.c_0058cee5
-;   string s_saveScreenRaw16_-_No_ext_found_0058cef5
+;   TerminatedCString s_engine_pcx_c_0058cee5
+;   TerminatedCString s_saveScreenRaw16_No_ext_f_0058cef5
 ;   TerminatedCString s_RAW_0058cf14
 ;   undefined4 s_RAW_0058cf14+1
 ;   undefined4 s_RAW_0058cf14+2
 ;   undefined4 s_RAW_0058cf14+3
 ;   TerminatedCString s_wb_0058cf19
-;   string s_..\\engine\\pcx.c_0058cf1c
-;   string s_saveScreenRaw16_-_Unable_to_open_0058cf2c
+;   TerminatedCString s_engine_pcx_c_0058cf1c
+;   TerminatedCString s_saveScreenRaw16_Unable_t_0058cf2c
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01bd2fa0

@@ -13,8 +13,8 @@
 ;   engine_2d.c_clipLineGlobal_FUN_00403940 at 00403974
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\2d.c_005772d1
-;   string s_2d_line_clipping_exceeded_max_it_005772e0
+;   TerminatedCString s_engine_2d_c_005772d1
+;   TerminatedCString s_s_2d_line_clipping_excee_005772e0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

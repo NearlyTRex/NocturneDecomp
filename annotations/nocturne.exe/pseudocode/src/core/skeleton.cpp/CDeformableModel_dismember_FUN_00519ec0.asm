@@ -26,14 +26,14 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0 at 0051e948
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_005918f8
-;   string s_CDeformableModel::dismember_-_ca_0059190d
-;   string s_..\\core\\skeleton.cpp_00591947
-;   string s_CDeformableModel::dismember_-_to_0059195c
-;   string s_..\\core\\skeleton.cpp_0059198d
-;   string s_CDeformableModel::dismember_-_He_005919a2
-;   string s_..\\core\\skeleton.cpp_005919ce
-;   string s_CDeformableModel::dismember_-_He_005919e3
+;   TerminatedCString s_core_skeleton_cpp_005918f8
+;   TerminatedCString s_CDeformableModel_dismemb_0059190d
+;   TerminatedCString s_core_skeleton_cpp_00591947
+;   TerminatedCString s_CDeformableModel_dismemb_0059195c
+;   TerminatedCString s_core_skeleton_cpp_0059198d
+;   TerminatedCString s_CDeformableModel_dismemb_005919a2
+;   TerminatedCString s_core_skeleton_cpp_005919ce
+;   TerminatedCString s_CDeformableModel_dismemb_005919e3
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

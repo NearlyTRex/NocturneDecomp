@@ -67,8 +67,8 @@ bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(uint param_1,int 
                        (float)*(double *)(param_2 + 0x14),1);
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_804,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx 3d buffer position",uVar5);
+      _sprintf(auStack_804,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer position",
+                 uVar5);
       FUN_00529980();
     }
     bVar6 = iVar4 == 0;
@@ -80,8 +80,8 @@ bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(uint param_1,int 
                        (float)*(double *)(param_2 + 0x34),1);
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_994,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx 3d buffer velocity",uVar5);
+      _sprintf(auStack_994,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer velocity",
+                 uVar5);
       bVar6 = false;
       FUN_00529980();
     }
@@ -115,8 +115,8 @@ LAB_0052b3c8:
     dVar1 = stack0xffffffcc;
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_4e4,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx secondary buffer volume",uVar5);
+      _sprintf(auStack_4e4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer volume",
+                 uVar5);
       bVar6 = false;
       FUN_00529980();
       dVar1 = stack0xffffffcc;
@@ -132,8 +132,8 @@ LAB_0052b3c8:
     iVar4 = (**(code **)(*local_24 + 0x44))(local_24,auStack_38._0_4_);
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_b24,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx secondary buffer frequency",uVar5);
+      _sprintf(auStack_b24,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer frequency",
+                 uVar5);
       bVar6 = false;
       FUN_00529980();
     }
@@ -146,8 +146,8 @@ LAB_0052b3c8:
     iVar4 = (**(code **)(*piVar2 + 0x48))(piVar2,uVar5,1);
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_674,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx 3d buffer mode",uVar5);
+      _sprintf(auStack_674,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer mode",
+                 uVar5);
       bVar6 = false;
       FUN_00529980();
     }
@@ -161,8 +161,8 @@ LAB_0052b3c8:
     auVar3 = auStack_38;
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar4);
-      _sprintf(auStack_360,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx 3d buffer minimum distance",uVar5);
+      _sprintf(auStack_360,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer minimum distance",
+                 uVar5);
       bVar6 = false;
       FUN_00529980(auStack_360);
       auVar3 = auStack_38;
@@ -172,8 +172,8 @@ LAB_0052b3c8:
     auStack_38 = auVar3;
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_cb4,"DirectSux: Unable to %s.  (%s)",
-                 "Set hardware sfx 3d buffer maximum distance",uVar5);
+      _sprintf(auStack_cb4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer maximum distance",
+                 uVar5);
       bVar6 = false;
       FUN_00529980();
     }
@@ -186,8 +186,8 @@ LAB_0052b4a2:
     iVar4 = (**(code **)(*_DAT_02dc9220 + 0x44))();
     if (iVar4 != 0) {
       uVar5 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90();
-      _sprintf(auStack_1c4,"DirectSux: Unable to %s.  (%s)",
-                 "Commit hardware sfx 3d buffer settings",uVar5);
+      _sprintf(auStack_1c4,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings",
+                 uVar5);
       FUN_00529980();
       goto LAB_0052b4e4;
     }

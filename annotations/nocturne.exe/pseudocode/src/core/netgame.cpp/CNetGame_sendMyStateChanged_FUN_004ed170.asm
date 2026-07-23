@@ -18,8 +18,8 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb596
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c525
-;   string s_CNetGame::sendMyStateChanged_-_s_0058c539
+;   TerminatedCString s_core_netgame_cpp_0058c525
+;   TerminatedCString s_CNetGame_sendMyStateChan_0058c539
 ;   undefined4 DAT_005bdee4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

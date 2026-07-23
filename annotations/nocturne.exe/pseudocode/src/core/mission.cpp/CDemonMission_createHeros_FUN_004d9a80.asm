@@ -10,9 +10,9 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb4d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589f69
-;   string s_CDemonMission::createHeros_-_too_00589f7d
-;   string s_CHeroPlaceholder_00589fc0
+;   TerminatedCString s_core_mission_cpp_00589f69
+;   TerminatedCString s_CDemonMission_createHero_00589f7d
+;   TerminatedCString s_CHeroPlaceholder_00589fc0
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_01c776ac

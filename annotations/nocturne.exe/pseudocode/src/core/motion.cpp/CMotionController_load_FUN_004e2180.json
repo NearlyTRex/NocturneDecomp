@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 177,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 23,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 87
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -182,26 +182,26 @@
     },
     {
       "addr": "0058b3b7",
-      "name": "s_%d,%f_0058b3b7",
-      "type": "string",
+      "name": "s_d_f_0058b3b7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058b3bd",
-      "name": "s_\"%[^\"]\"_,_%f_0058b3bd",
-      "type": "string",
+      "name": "s_f_0058b3bd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058b3ca",
-      "name": "s_..\\core\\motion.cpp_0058b3ca",
-      "type": "string",
+      "name": "s_core_motion_cpp_0058b3ca",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058b3dd",
-      "name": "s_CMotionController::load_-_error_p_0058b3dd",
-      "type": "string",
+      "name": "s_CMotionController_load_e_0058b3dd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -350,7 +350,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8), iVar1 != 2)) {",
+      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8),",
       "type": "unnamed_param"
     },
     {
@@ -358,7 +358,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8), iVar1 != 2)) {",
+      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8),",
       "type": "unnamed_param"
     },
     {
@@ -366,12 +366,12 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8), iVar1 != 2)) {",
+      "text": "(iVar1 = _fscanf(param_2,\"\\\"%[^\\\"]\\\" , %f\",param_1 + 0x30,param_1 + 8),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",

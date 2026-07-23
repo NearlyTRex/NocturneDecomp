@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a386
-;   string s_CCharacter::advanceLayerAction_-_0057a39b
+;   TerminatedCString s_CCharacter_advanceLayerA_0057a39b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

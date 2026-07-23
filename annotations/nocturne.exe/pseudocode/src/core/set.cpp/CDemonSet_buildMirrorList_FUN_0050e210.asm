@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590832
-;   string s_CDemonSet::buildMirrorList_-_Too_00590842
+;   TerminatedCString s_CDemonSet_buildMirrorLis_00590842
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c78c78

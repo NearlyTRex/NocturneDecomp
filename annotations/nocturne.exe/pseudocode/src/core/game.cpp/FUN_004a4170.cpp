@@ -85,8 +85,7 @@ void FUN_004a4170(int param_1,char *param_2,int param_3)
   do {
     if (param_2 == (char *)0x0) {
       uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                        ("Select file to load","save","*.noc",local_534,1
-                        );
+                        ("Select file to load","save","*.noc",local_534,1);
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
                         (0x01BCD074,uVar6);
       if (iVar3 == 0) {

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_batman.dfm_00578a97
+;   TerminatedCString s_batman_dfm_00578a97
 ;   TerminatedCString s_none_00578aa2
 ;   undefined4 s_one_00578aa2+1
 ;   undefined4 s_ne_00578aa2+2

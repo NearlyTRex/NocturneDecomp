@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_imp.dfm_00586282
+;   TerminatedCString s_imp_dfm_00586282
 ;   undefined4 DAT_0059f570
 ;   undefined4 DAT_0059f574
 ;   undefined1* PTR_core_imp.cpp_CImp_setup_FUN_004bb7d0_0059f584 = 004bb7d0

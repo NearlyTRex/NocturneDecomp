@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00577586
-;   string s_CDemonActor::getActorType_called_00577598
+;   TerminatedCString s_CDemonActor_getActorType_00577598
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

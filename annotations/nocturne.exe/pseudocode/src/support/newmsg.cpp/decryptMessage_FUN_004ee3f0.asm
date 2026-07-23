@@ -13,12 +13,12 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dc15
 ;
 ; Referenced Globals:
-;   string s_..\\support\\newmsg.cpp_0058c9d4
-;   string s_decryptMessage_-_invalid_initial_0058c9ea
-;   string s_..\\support\\newmsg.cpp_0058ca17
-;   string s_decryptMessage_-_error_decryptin_0058ca2d
-;   string s_..\\support\\newmsg.cpp_0058ca55
-;   string s_decryptMessage_-_premature_null_t_0058ca6b
+;   TerminatedCString s_support_newmsg_cpp_0058c9d4
+;   TerminatedCString s_decryptMessage_invalid_i_0058c9ea
+;   TerminatedCString s_support_newmsg_cpp_0058ca17
+;   TerminatedCString s_decryptMessage_error_dec_0058ca2d
+;   TerminatedCString s_support_newmsg_cpp_0058ca55
+;   TerminatedCString s_decryptMessage_premature_0058ca6b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

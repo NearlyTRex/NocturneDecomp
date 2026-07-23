@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_icepick_die01.wav_00586255
-;   string s_icepick_injured??.wav_00586267
+;   TerminatedCString s_icepick_die01_wav_00586255
+;   TerminatedCString s_icepick_injured_wav_00586267
 ;   undefined4 DAT_0059f3d8
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4

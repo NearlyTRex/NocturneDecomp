@@ -5,18 +5,18 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_HEADLITE.RAW_00584ebf
-;   undefined4 s_EADLITE.RAW_00584ebf+1
-;   undefined4 s_ADLITE.RAW_00584ebf+2
-;   undefined4 s_DLITE.RAW_00584ebf+3
+;   TerminatedCString s_HEADLITE_RAW_00584ebf
+;   undefined4 s_HEADLITE_RAW_00584ebf+1
+;   undefined4 s_HEADLITE_RAW_00584ebf+2
+;   undefined4 s_HEADLITE_RAW_00584ebf+3
 ;   TerminatedCString s_true_00584ecc
 ;   undefined4 s_rue_00584ecc+1
 ;   undefined4 s_ue_00584ecc+2
 ;   undefined4 s_e_00584ecc+3
-;   string s_7YEARS.RAW_00584ed1
-;   undefined4 s_YEARS.RAW_00584ed1+1
-;   undefined4 s_EARS.RAW_00584ed1+2
-;   undefined4 s_ARS.RAW_00584ed1+3
+;   TerminatedCString s_s_7YEARS_RAW_00584ed1
+;   undefined4 s_s_7YEARS_RAW_00584ed1+1
+;   undefined4 s_s_7YEARS_RAW_00584ed1+2
+;   undefined4 s_s_7YEARS_RAW_00584ed1+3
 ;   undefined4 DAT_005993b0
 ;   undefined1* PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4 = 004abc90
 ;
@@ -57,13 +57,13 @@ section .text
     LEA EDI,[EDX + 0x164]               ; 004abbab
     MOV dword ptr [EDX + 0x158],0x3dcccccd ; 004abbb1
     PUSH EDI                            ; 004abbbb
-    MOV AL,byte ptr [ESI]               ; 004abbbc | = "HEADLITE.RAW" | s_ADLITE.RAW_00584ebf+2
+    MOV AL,byte ptr [ESI]               ; 004abbbc | = "HEADLITE.RAW" | s_HEADLITE_RAW_00584ebf+2
         ;   Label: LAB_004abbbc
     MOV byte ptr [EDI],AL               ; 004abbbe
     CMP AL,0x0                          ; 004abbc0
     JZ 0x004abbd4                       ; 004abbc2
         ;   XREF to: 004abbd4 (CONDITIONAL_JUMP)  ; LAB_004abbd4
-    MOV AL,byte ptr [ESI + 0x1]         ; 004abbc4 | s_EADLITE.RAW_00584ebf+1 | s_DLITE.RAW_00584ebf+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004abbc4 | s_HEADLITE_RAW_00584ebf+1 | s_HEADLITE_RAW_00584ebf+3
     ADD ESI,0x2                         ; 004abbc7
     MOV byte ptr [EDI + 0x1],AL         ; 004abbca
     ADD EDI,0x2                         ; 004abbcd
@@ -100,13 +100,13 @@ section .text
     LEA EDI,[EDX + 0x374]               ; 004abc38
     MOV dword ptr [EDX + 0x368],0x0     ; 004abc3e
     PUSH EDI                            ; 004abc48
-    MOV AL,byte ptr [ESI]               ; 004abc49 | = "7YEARS.RAW" | s_EARS.RAW_00584ed1+2
+    MOV AL,byte ptr [ESI]               ; 004abc49 | = "7YEARS.RAW" | s_s_7YEARS_RAW_00584ed1+2
         ;   Label: LAB_004abc49
     MOV byte ptr [EDI],AL               ; 004abc4b
     CMP AL,0x0                          ; 004abc4d
     JZ 0x004abc61                       ; 004abc4f
         ;   XREF to: 004abc61 (CONDITIONAL_JUMP)  ; LAB_004abc61
-    MOV AL,byte ptr [ESI + 0x1]         ; 004abc51 | s_YEARS.RAW_00584ed1+1 | s_ARS.RAW_00584ed1+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004abc51 | s_s_7YEARS_RAW_00584ed1+1 | s_s_7YEARS_RAW_00584ed1+3
     ADD ESI,0x2                         ; 004abc54
     MOV byte ptr [EDI + 0x1],AL         ; 004abc57
     ADD EDI,0x2                         ; 004abc5a

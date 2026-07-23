@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_0057e751
 ;   TerminatedCString s_d_0057e754
-;   string s_Please_enter_a_valid_integer._0057e757
-;   string s_Please_enter_a_valid_integer_bet_0057e775
+;   TerminatedCString s_Please_enter_a_valid_int_0057e757
+;   TerminatedCString s_Please_enter_a_valid_int_0057e775
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

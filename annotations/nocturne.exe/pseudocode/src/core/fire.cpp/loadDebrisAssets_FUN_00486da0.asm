@@ -8,11 +8,11 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 at 0048afd0
 ;
 ; Referenced Globals:
-;   string s_debris01.kfm_005811cc
-;   string s_debris02.kfm_005811d9
-;   string s_debris03.kfm_005811e6
-;   string s_debris04.kfm_005811f3
-;   string s_debris05.kfm_00581200
+;   TerminatedCString s_debris01_kfm_005811cc
+;   TerminatedCString s_debris02_kfm_005811d9
+;   TerminatedCString s_debris03_kfm_005811e6
+;   TerminatedCString s_debris04_kfm_005811f3
+;   TerminatedCString s_debris05_kfm_00581200
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510

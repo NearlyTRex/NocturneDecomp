@@ -9,7 +9,7 @@
 ;   FUN_00569850 at 00569860
 ;
 ; Referenced Globals:
-;   string s_Floating-point_support_not_loade_005990e4
+;   TerminatedCString s_Floating_point_support_n_005990e4
 ;
 ; Called Functions:
 ;   FUN_0056ddc0

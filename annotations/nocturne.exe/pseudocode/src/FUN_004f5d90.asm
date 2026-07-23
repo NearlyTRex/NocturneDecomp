@@ -11,7 +11,7 @@
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 at 0043b057
 ;
 ; Referenced Globals:
-;   string s_slider1.kfm_0058d75f
+;   TerminatedCString s_slider1_kfm_0058d75f
 ;   undefined1* PTR_FUN_005a1384 = 004f5f60
 ;
 ; Called Functions:

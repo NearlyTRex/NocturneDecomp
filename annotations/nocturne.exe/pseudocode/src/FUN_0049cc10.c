@@ -266,14 +266,12 @@ LAB_0049cf70:
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x16);
     _DAT_01c71e38 = _DAT_01c71e38 + 1;
     _DAT_01c71e30 = _DAT_01c71e30 + (double)*(float *)(param_1 + 0x264);
-    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",
-               1.0 / (double)*(float *)(param_1 + 0x264),(double)_DAT_01c71e38 / _DAT_01c71e30,
-               _DAT_01e52ef8);
+    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",1.0 / (double)*(float *)(param_1 + 0x264),
+               (double)_DAT_01c71e38 / _DAT_01c71e30,_DAT_01e52ef8);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0xb);
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
-               (double)*(float *)(iVar4 + 0x20),(double)*(float *)(iVar4 + 0x24),
-               (double)*(float *)(iVar4 + 0x28),
+    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",(double)*(float *)(iVar4 + 0x20),
+               (double)*(float *)(iVar4 + 0x24),(double)*(float *)(iVar4 + 0x28),
                180 * (double)*(float *)(iVar4 + 0x30) * 0.31830988619288902,
                (double)*(float *)(iVar4 + 0x38) * 0.31830988619288902 * 180,
                (double)*(float *)(iVar4 + 0x34) * 0.31830988619288902 * 180);

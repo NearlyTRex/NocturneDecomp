@@ -8,8 +8,8 @@
 ;   FUN_004c85f0 at 004c86df
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\dosio.c_0057d2b7
-;   string s_addGetFileInfoHook_-_too_many!_0057d2c9
+;   TerminatedCString s_engine_dosio_c_0057d2b7
+;   TerminatedCString s_addGetFileInfoHook_too_m_0057d2c9
 ;   undefined4 DAT_01af4ed8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

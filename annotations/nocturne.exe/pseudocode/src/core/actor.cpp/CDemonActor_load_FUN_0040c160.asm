@@ -14,14 +14,14 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d8377
 ;
 ; Referenced Globals:
-;   string s_{_%s_\"%[^\"]\"_00577a80
-;   string s_..\\core\\actor.cpp_00577a8f
-;   string s_Start_of_actor_file_tag_mismatch_00577aa1
-;   string s_}_%s_\"%[^\"]\"_00577acf
-;   string s_..\\core\\actor.cpp_00577ade
-;   string s_End_of_actor_file_tag_mismatch_f_00577af0
-;   string s_..\\core\\actor.cpp_00577b26
-;   string s_IO_Error_after_reading_%s_\"%s\"_00577b38
+;   TerminatedCString s_s_00577a80
+;   TerminatedCString s_core_actor_cpp_00577a8f
+;   TerminatedCString s_Start_of_actor_file_tag_00577aa1
+;   TerminatedCString s_s_00577acf
+;   TerminatedCString s_core_actor_cpp_00577ade
+;   TerminatedCString s_End_of_actor_file_tag_mi_00577af0
+;   TerminatedCString s_core_actor_cpp_00577b26
+;   TerminatedCString s_IO_Error_after_reading_s_00577b38
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c

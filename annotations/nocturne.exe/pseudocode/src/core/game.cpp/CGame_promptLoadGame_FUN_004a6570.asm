@@ -15,9 +15,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_noc_00584562
 ;   TerminatedCString s_noc_00584566
-;   string s_*.noc_0058456b
+;   TerminatedCString s_noc_0058456b
 ;   TerminatedCString s_save_00584571
-;   string s_Select_file_to_load_00584576
+;   TerminatedCString s_Select_file_to_load_00584576
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01c78598
 ;   undefined4 DAT_01c78599

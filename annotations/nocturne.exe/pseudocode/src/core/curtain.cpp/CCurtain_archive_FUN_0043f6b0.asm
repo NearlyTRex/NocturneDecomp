@@ -8,20 +8,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_curtainSize_0057b54e
-;   string s_curtainTexture_0057b55a
-;   string s_opacity_0057b569
-;   string s_cinched_0057b571
-;   string s_weight_0057b579
-;   string s_dampen_0057b580
-;   string s_spring_0057b587
-;   string s_friction_0057b58e
-;   string s_gravity_0057b597
-;   string s_hitFloor_0057b59f
-;   string s_simulateMe_0057b5a8
-;   string s_cinchedTop_0057b5b3
-;   string s_cinchedBottom_0057b5be
-;   string s_cinchedLeft_0057b5cc
-;   string s_cinchedRight_0057b5d8
+;   TerminatedCString s_curtainTexture_0057b55a
+;   TerminatedCString s_opacity_0057b569
+;   TerminatedCString s_cinched_0057b571
+;   TerminatedCString s_weight_0057b579
+;   TerminatedCString s_dampen_0057b580
+;   TerminatedCString s_spring_0057b587
+;   TerminatedCString s_friction_0057b58e
+;   TerminatedCString s_gravity_0057b597
+;   TerminatedCString s_hitFloor_0057b59f
+;   TerminatedCString s_simulateMe_0057b5a8
+;   TerminatedCString s_cinchedTop_0057b5b3
+;   TerminatedCString s_cinchedBottom_0057b5be
+;   TerminatedCString s_cinchedLeft_0057b5cc
+;   TerminatedCString s_cinchedRight_0057b5d8
 ;   ... and 5 more
 ;
 ; Called Functions:

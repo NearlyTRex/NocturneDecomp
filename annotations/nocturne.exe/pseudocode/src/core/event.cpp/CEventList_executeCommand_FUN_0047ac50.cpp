@@ -370,8 +370,7 @@ LAB_0047acd1:
             }
             local_d0 = -1;
             sscanf
-                      (local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4,
-                       &local_d0);
+                      (local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4,&local_d0);
             if (local_d0 < 0) {
               uVar5 = FUN_0047a210();
               return uVar5;
@@ -422,8 +421,7 @@ LAB_0047acd1:
                 }
                 local_b8 = -1;
                 sscanf
-                          (local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc
-                           ,&local_b8);
+                          (local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc,&local_b8);
                 if (local_b8 < 0) {
                   _sprintf(&DAT_01c08b60,"Error parsing fadeSfx parms");
                   return 0;
@@ -549,8 +547,8 @@ LAB_0047aec8:
                           }
                           local_b4 = -1;
                           sscanf
-                                    (local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,
-                                     local_2e1 + 1,&local_b0,&local_b4);
+                                    (local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,&local_b0,
+                                     &local_b4);
                           if (local_b4 < 2) {
                             uVar5 = FUN_0047a210();
                             return uVar5;
@@ -612,8 +610,7 @@ LAB_0047aec8:
                           iVar3 = core_event_cpp_parseDamageType_FUN_0047a8f0
                                             (local_2e1 + 1,&local_ac);
                           if (iVar3 == 0) {
-                            uVar5 = FUN_0047a210("Unknown damage type \"%s\" in hurtCharacter command.",
-                                                 local_2e1 + 1);
+                            uVar5 = FUN_0047a210("Unknown damage type \"%s\" in hurtCharacter command.",local_2e1 + 1);
                             return uVar5;
                           }
                           if (local_f0 != 0) {
@@ -678,22 +675,20 @@ LAB_0047aec8:
                               local_a4 = -1;
                               local_9c = 0.0;
                               sscanf
-                                        (local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",
-                                         local_153d + 1,local_219 + 1,local_110,local_10c,local_108,
-                                         &local_9c,&local_a4);
+                                        (local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,local_219 + 1,
+                                         local_110,local_10c,local_108,&local_9c,&local_a4);
                               local_9c = local_9c * (float)0.017453292519444399;
                               if (local_a4 < 0) {
                                 local_9c = -1.0;
                                 sscanf
-                                          (local_ec," ( %[^,], %[^,], %f , %f , %f )%n",
-                                           local_153d + 1,local_219 + 1,local_110,local_10c,
-                                           local_108,&local_a4);
+                                          (local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,local_219 + 1,
+                                           local_110,local_10c,local_108,&local_a4);
                               }
                               if (local_a4 < 0) {
                                 local_a0 = (byte *)0x0;
                                 sscanf
-                                          (local_ec," ( %[^,], %[^)])%n",local_153d + 1,
-                                           local_219 + 1,&local_a4);
+                                          (local_ec," ( %[^,], %[^)])%n",local_153d + 1,local_219 + 1,
+                                           &local_a4);
                               }
                               if (local_a4 < 0) {
                                 uVar5 = FUN_0047a210();
@@ -792,8 +787,8 @@ LAB_0047aec8:
                                 iVar3 = core_event_cpp_parseDeathType_FUN_0047a760
                                                   (local_27c,&local_90);
                                 if (iVar3 == 0) {
-                                  uVar5 = FUN_0047a210("Unknown death type \"%s\" in killHero command.",
-                                                       local_27c);
+                                  uVar5 = FUN_0047a210("Unknown death type \"%s\" in killHero command.",local_27c)
+                                  ;
                                   return uVar5;
                                 }
                                 if ((local_f0 != 0) &&
@@ -815,8 +810,7 @@ LAB_0047aec8:
                                   sscanf
                                             (local_ec,"(%[^,)]%n",local_efd + 1,&local_8c);
                                   if (local_8c < 3) {
-                                    _sprintf(&DAT_01c08b60,"Error parsing killSfx parms")
-                                    ;
+                                    _sprintf(&DAT_01c08b60,"Error parsing killSfx parms");
                                     return 0;
                                   }
                                   local_ec = local_ec + local_8c;
@@ -847,8 +841,7 @@ LAB_0047aec8:
                                     sscanf
                                               (local_ec,",%f%n",&local_88,&local_8c);
                                     if (local_8c < 3) {
-                                      _sprintf(&DAT_01c08b60,
-                                                 "Error parsing killSfx parms");
+                                      _sprintf(&DAT_01c08b60,"Error parsing killSfx parms");
                                       return 0;
                                     }
                                     local_ec = local_ec + local_8c;
@@ -859,8 +852,7 @@ LAB_0047aec8:
                                   } while (((&DAT_005c168c)[(byte)(*pcVar9 + 1)] & 2) != 0);
                                   if (*pcVar9 != ')') {
                                     local_ec = pcVar9;
-                                    _sprintf(&DAT_01c08b60,
-                                               "Can't find matching ) in killSfx command");
+                                    _sprintf(&DAT_01c08b60,"Can't find matching ) in killSfx command");
                                     return 0;
                                   }
                                   if (local_f0 != 0) {
@@ -886,11 +878,10 @@ LAB_0047aec8:
                                       local_ec = local_ec + 1;
                                     }
                                     local_84 = -1;
-                                    sscanf
-                                              (local_ec,"( )%n",&local_84);
+                                    sscanf(local_ec,"( )%n",&local_84)
+                                    ;
                                     if (local_84 < 2) {
-                                      _sprintf(&DAT_01c08b60,
-                                                 "Error parsing lightning command");
+                                      _sprintf(&DAT_01c08b60,"Error parsing lightning command");
                                       return 0;
                                     }
                                     local_ec = local_ec + local_84;
@@ -910,11 +901,10 @@ LAB_0047aec8:
                                       }
                                       local_7c = -1;
                                       sscanf
-                                                (local_ec,"(%[^,)]%n",local_13ad + 1,
-                                                 &local_7c);
+                                                (local_ec,"(%[^,)]%n",local_13ad + 1,&local_7c);
                                       if (local_7c < 3) {
-                                        _sprintf(&DAT_01c08b60,
-                                                   "Error parsing playSfx parms");
+                                        _sprintf(&DAT_01c08b60,"Error parsing playSfx parms"
+                                                  );
                                         return 0;
                                       }
                                       local_ec = local_ec + local_7c;
@@ -1003,8 +993,8 @@ LAB_0047aec8:
                                       } while (((&DAT_005c168c)[(byte)(*pcVar9 + 1)] & 2) != 0);
                                       if (*pcVar9 != ')') {
                                         local_ec = pcVar9;
-                                        _sprintf(&DAT_01c08b60,
-                                                   "Can't find matching ) in playSfx command");
+                                        _sprintf(&DAT_01c08b60,"Can't find matching ) in playSfx command"
+                                                  );
                                         return 0;
                                       }
                                       if (local_f0 != 0) {
@@ -1047,8 +1037,8 @@ LAB_0047aec8:
                                         }
                                         local_74 = -1;
                                         sscanf
-                                                  (local_ec,"(%[^,], %f)%n",local_12e5 + 1,
-                                                   &local_78,&local_74);
+                                                  (local_ec,"(%[^,], %f)%n",local_12e5 + 1,&local_78,
+                                                   &local_74);
                                         if (local_74 < 3) {
                                           _sprintf(&DAT_01c08b60,
                                                      "Error parsing setCameraAmbient parms");
@@ -1111,8 +1101,7 @@ LAB_0047aec8:
                                           }
                                           local_6c = -1;
                                           sscanf
-                                                    (local_ec,"( %[^,)]%n",local_ca5 + 1,
-                                                     &local_6c);
+                                                    (local_ec,"( %[^,)]%n",local_ca5 + 1,&local_6c);
                                           if (local_6c < 5) {
                                             _sprintf(&DAT_01c08b60,
                                                        "Error parsing setCounter arguments");
@@ -1146,12 +1135,10 @@ LAB_0047aec8:
                                           if (*local_ec == ',') {
                                             local_6c = -1;
                                             sscanf
-                                                      (local_ec,",%d%n",&local_68,&local_6c
-                                                      );
+                                                      (local_ec,",%d%n",&local_68,&local_6c);
                                             if (local_6c < 1) {
                                               _sprintf(&DAT_01c08b60,
-                                                         "Error parsing setCounter value argument"
-                                                        );
+                                                         "Error parsing setCounter value argument");
                                               return 0;
                                             }
                                             local_ec = local_ec + local_6c;
@@ -1185,19 +1172,18 @@ LAB_0047aec8:
                                             }
                                             local_5c = -1;
                                             sscanf
-                                                      (local_ec,"(%d, %f)%n",&local_64,
-                                                       &local_60,&local_5c);
+                                                      (local_ec,"(%d, %f)%n",&local_64,&local_60
+                                                       ,&local_5c);
                                             if (local_5c < 3) {
                                               _sprintf(&DAT_01c08b60,
-                                                         "Error parsing setGroupAmbient parms"
-                                                        );
+                                                         "Error parsing setGroupAmbient parms");
                                               return 0;
                                             }
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
                                               _sprintf(&DAT_01c08b60,
-                                                         "Ambient value %g is out of range (1..100)"
-                                                         ,(double)local_60);
+                                                         "Ambient value %g is out of range (1..100)",
+                                                         (double)local_60);
                                               return 0;
                                             }
                                             if (local_f0 != 0) {
@@ -1220,8 +1206,8 @@ LAB_0047aec8:
                                               }
                                               local_58 = -1;
                                               sscanf
-                                                        (local_ec,"( %[^ ,] , %d )%n",
-                                                         local_7f4,&local_54,&local_58);
+                                                        (local_ec,"( %[^ ,] , %d )%n",local_7f4,&local_54
+                                                         ,&local_58);
                                               if (local_58 < 0) {
                                                 uVar5 = FUN_0047a210();
                                                 return uVar5;
@@ -1238,17 +1224,16 @@ LAB_0047aec8:
                                               if ((local_54 < 0) ||
                                                  (*(int *)(local_50 + 0x11ec) <= local_54)) {
                                                 uVar5 = FUN_0047a210(
-                                                  "Invalid filter frame, %s has %d filters",
-                                                  local_7f4,*(uint *)(local_50 + 0x11ec));
+                                                  "Invalid filter frame, %s has %d filters",local_7f4,
+                                                  *(uint *)(local_50 + 0x11ec));
                                                 return uVar5;
                                               }
                                               if (local_f0 != 0) {
                                                 if (local_4c == 0) {
                                                   _DAT_01cc4800 = "..\\core\\event.cpp";
                                                   _DAT_01cc4804 = 0x4e0;
-                                                  FUN_004c8440(
-                                                  "Can't find CDemonLight for light %s in setLightFilterFrame meta-command",
-                                                  local_7f4);
+                                                  FUN_004c8440("Can't find CDemonLight for light %s in setLightFilterFrame meta-command",
+                                                               local_7f4);
                                                 }
                                                 core_setutil_cpp_C3DSLight_setFilterFrame_FUN_00515670
                                                           (local_50,local_54,local_4c);
@@ -1268,12 +1253,11 @@ LAB_0047aec8:
                                                 }
                                                 local_48 = -1;
                                                 sscanf
-                                                          (local_ec,"(%[^,], %[^)])%n",
-                                                           local_d6d + 1,local_1475 + 1,&local_48);
+                                                          (local_ec,"(%[^,], %[^)])%n",local_d6d + 1,
+                                                           local_1475 + 1,&local_48);
                                                 if (local_48 < 5) {
                                                   _sprintf(&DAT_01c08b60,
-                                                                                                                          
-                                                  "Error parsing setLeverState command parms");
+                                                             "Error parsing setLeverState command parms");
                                                   return 0;
                                                 }
                                                 local_ec = local_ec + local_48;
@@ -1368,13 +1352,12 @@ LAB_0047aec8:
                                                   }
                                                   local_40 = -1;
                                                   sscanf
-                                                            (local_ec,"(%[^,], %[^)])%n",
-                                                             local_985 + 1,local_8bd + 1,&local_40);
+                                                            (local_ec,"(%[^,], %[^)])%n",local_985 + 1,
+                                                             local_8bd + 1,&local_40);
                                                   if (local_40 < 5) {
                                                     _sprintf(&DAT_01c08b60,
-                                                                                                                              
-                                                  "Error parsing setModelState command parms");
-                                                  return 0;
+                                                               "Error parsing setModelState command parms");
+                                                    return 0;
                                                   }
                                                   local_ec = local_ec + local_40;
                                                   uVar6 = 0xffffffff;
@@ -1441,10 +1424,9 @@ LAB_0047aec8:
                                                             (uVar5);
                                                   if (iVar3 < 0) {
                                                     _sprintf(&DAT_01c08b60,
-                                                                                                                              
-                                                  "Model %s does not have state %s",
-                                                  uVar6 + 0x23b0,local_8bd + 1);
-                                                  return 0;
+                                                               "Model %s does not have state %s",
+                                                               uVar6 + 0x23b0,local_8bd + 1);
+                                                    return 0;
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
@@ -1466,61 +1448,60 @@ LAB_0047aec8:
                                                     }
                                                     local_38 = -1;
                                                     sscanf
-                                                              (local_ec,"(%[^,], %f)%n",
-                                                               local_a4d + 1,&local_3c,&local_38);
+                                                              (local_ec,"(%[^,], %f)%n",local_a4d + 1
+                                                               ,&local_3c,&local_38);
                                                     if (local_38 < 3) {
                                                       _sprintf(&DAT_01c08b60,
-                                                                                                                                  
-                                                  "Error parsing setTimer command parms");
-                                                  return 0;
-                                                  }
-                                                  local_ec = local_ec + local_38;
-                                                  uVar6 = 0xffffffff;
-                                                  pcVar9 = local_a4d + 1;
-                                                  do {
-                                                    if (uVar6 == 0) break;
-                                                    uVar6 = uVar6 - 1;
-                                                    cVar1 = *pcVar9;
-                                                    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-                                                  } while (cVar1 != '\0');
-                                                  iVar3 = ~uVar6 - 1;
-                                                  if (0 < iVar3) {
-                                                    pcVar9 = local_a4d + ~uVar6;
+                                                                 "Error parsing setTimer command parms"
+                                                                );
+                                                      return 0;
+                                                    }
+                                                    local_ec = local_ec + local_38;
+                                                    uVar6 = 0xffffffff;
+                                                    pcVar9 = local_a4d + 1;
                                                     do {
-                                                      if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)] &
-                                                          2) == 0) break;
-                                                      iVar3 = iVar3 + -1;
-                                                      pcVar9 = pcVar9 + -1;
-                                                    } while (0 < iVar3);
-                                                  }
-                                                  (local_a4d + 1)[iVar3] = '\0';
-                                                  while (((&DAT_005c168c)[(byte)(local_a4d[1] + 1)]
-                                                         & 2) != 0) {
-                                                    memmove(local_a4d + 1)
-                                                    ;
-                                                  }
-                                                  uVar6 = 0xffffffff;
-                                                  pcVar9 = local_a4d + 1;
-                                                  do {
-                                                    if (uVar6 == 0) break;
-                                                    uVar6 = uVar6 - 1;
-                                                    cVar1 = *pcVar9;
-                                                    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-                                                  } while (cVar1 != '\0');
-                                                  if (0x1f < ~uVar6 - 1) {
-                                                    _sprintf(&DAT_01c08b60,
-                                                                                                                              
-                                                  "Timer name \"%s\" is too long, (max %d chars)",
-                                                  local_a4d + 1,0x1f);
-                                                  return 0;
-                                                  }
-                                                  if (local_3c < 0.0) {
-                                                    _sprintf(&DAT_01c08b60,
-                                                               "Invalid timer duration");
-                                                    return 0;
-                                                  }
-                                                  if (local_f0 != 0) {
-                                                                                                        
+                                                      if (uVar6 == 0) break;
+                                                      uVar6 = uVar6 - 1;
+                                                      cVar1 = *pcVar9;
+                                                      pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
+                                                    } while (cVar1 != '\0');
+                                                    iVar3 = ~uVar6 - 1;
+                                                    if (0 < iVar3) {
+                                                      pcVar9 = local_a4d + ~uVar6;
+                                                      do {
+                                                        if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)]
+                                                            & 2) == 0) break;
+                                                        iVar3 = iVar3 + -1;
+                                                        pcVar9 = pcVar9 + -1;
+                                                      } while (0 < iVar3);
+                                                    }
+                                                    (local_a4d + 1)[iVar3] = '\0';
+                                                    while (((&DAT_005c168c)
+                                                            [(byte)(local_a4d[1] + 1)] & 2) != 0) {
+                                                      memmove
+                                                                (local_a4d + 1);
+                                                    }
+                                                    uVar6 = 0xffffffff;
+                                                    pcVar9 = local_a4d + 1;
+                                                    do {
+                                                      if (uVar6 == 0) break;
+                                                      uVar6 = uVar6 - 1;
+                                                      cVar1 = *pcVar9;
+                                                      pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
+                                                    } while (cVar1 != '\0');
+                                                    if (0x1f < ~uVar6 - 1) {
+                                                      _sprintf(&DAT_01c08b60,
+                                                                 "Timer name \"%s\" is too long, (max %d chars)"
+                                                                 ,local_a4d + 1,0x1f);
+                                                      return 0;
+                                                    }
+                                                    if (local_3c < 0.0) {
+                                                      _sprintf(&DAT_01c08b60,
+                                                                 "Invalid timer duration");
+                                                      return 0;
+                                                    }
+                                                    if (local_f0 != 0) {
+                                                                                                            
                                                   core_event_cpp_CEventList_setTimerEvent_FUN_00480550
                                                             (param_1,local_a4d + 1,local_3c);
                                                   }
@@ -1539,8 +1520,8 @@ LAB_0047aec8:
                                                       }
                                                       local_34 = -1;
                                                       sscanf
-                                                                (local_ec,"(%[^)])%n",
-                                                                 local_e35 + 1,&local_34);
+                                                                (local_ec,"(%[^)])%n",local_e35 + 1
+                                                                 ,&local_34);
                                                       if (local_34 < 3) {
                                                         _sprintf(&DAT_01c08b60,
                                                                                                                                       
@@ -1615,21 +1596,21 @@ LAB_0047aec8:
                                                     }
                                                     local_24 = -1;
                                                     sscanf
-                                                              (local_ec,
-                                                  "( %f, %f, %f, %f )%n",&local_30,
-                                                  &local_2c,&local_80,&local_28,&local_24);
-                                                  if (local_24 < 5) {
-                                                    _sprintf(&DAT_01c08b60,
-                                                                                                                              
-                                                  "Error parsing shakeScreen command parms");
-                                                  return 0;
-                                                  }
-                                                  local_ec = local_ec + local_24;
-                                                  if (local_f0 != 0) {
-                                                    core_set_cpp_FUN_0050e660
-                                                              (0x01E57284,local_30,local_2c,
-                                                               local_80,local_28);
-                                                  }
+                                                              (local_ec,"( %f, %f, %f, %f )%n",
+                                                               &local_30,&local_2c,&local_80,
+                                                               &local_28,&local_24);
+                                                    if (local_24 < 5) {
+                                                      _sprintf(&DAT_01c08b60,
+                                                                 "Error parsing shakeScreen command parms"
+                                                                );
+                                                      return 0;
+                                                    }
+                                                    local_ec = local_ec + local_24;
+                                                    if (local_f0 != 0) {
+                                                      core_set_cpp_FUN_0050e660
+                                                                (0x01E57284,local_30,local_2c,
+                                                                 local_80,local_28);
+                                                    }
                                                   }
                                                   else {
                                                     iVar3 = _strnicmp
@@ -1645,65 +1626,64 @@ LAB_0047aec8:
                                                     }
                                                     local_20 = -1;
                                                     sscanf
-                                                              (local_ec,"(%[^,], %[^)])%n",
-                                                               local_72d + 1,local_40d + 1,&local_20
-                                                              );
+                                                              (local_ec,"(%[^,], %[^)])%n",local_72d + 1,
+                                                               local_40d + 1,&local_20);
                                                     if (local_20 < 5) {
                                                       _sprintf(&DAT_01c08b60,
-                                                                                                                                  
-                                                  "Error parsing slamModelToMotion command parms");
-                                                  return 0;
-                                                  }
-                                                  local_ec = local_ec + local_20;
-                                                  uVar6 = 0xffffffff;
-                                                  pcVar9 = local_72d + 1;
-                                                  do {
-                                                    if (uVar6 == 0) break;
-                                                    uVar6 = uVar6 - 1;
-                                                    cVar1 = *pcVar9;
-                                                    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-                                                  } while (cVar1 != '\0');
-                                                  iVar3 = ~uVar6 - 1;
-                                                  if (0 < iVar3) {
-                                                    pcVar9 = local_72d + ~uVar6;
+                                                                 "Error parsing slamModelToMotion command parms"
+                                                                );
+                                                      return 0;
+                                                    }
+                                                    local_ec = local_ec + local_20;
+                                                    uVar6 = 0xffffffff;
+                                                    pcVar9 = local_72d + 1;
                                                     do {
-                                                      if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)] &
-                                                          2) == 0) break;
-                                                      iVar3 = iVar3 + -1;
-                                                      pcVar9 = pcVar9 + -1;
-                                                    } while (0 < iVar3);
-                                                  }
-                                                  (local_72d + 1)[iVar3] = '\0';
-                                                  while (((&DAT_005c168c)[(byte)(local_72d[1] + 1)]
-                                                         & 2) != 0) {
-                                                    memmove(local_72d + 1)
-                                                    ;
-                                                  }
-                                                  uVar6 = 0xffffffff;
-                                                  pcVar9 = local_40d + 1;
-                                                  do {
-                                                    if (uVar6 == 0) break;
-                                                    uVar6 = uVar6 - 1;
-                                                    cVar1 = *pcVar9;
-                                                    pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
-                                                  } while (cVar1 != '\0');
-                                                  iVar3 = ~uVar6 - 1;
-                                                  if (0 < iVar3) {
-                                                    pcVar9 = local_40d + ~uVar6;
+                                                      if (uVar6 == 0) break;
+                                                      uVar6 = uVar6 - 1;
+                                                      cVar1 = *pcVar9;
+                                                      pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
+                                                    } while (cVar1 != '\0');
+                                                    iVar3 = ~uVar6 - 1;
+                                                    if (0 < iVar3) {
+                                                      pcVar9 = local_72d + ~uVar6;
+                                                      do {
+                                                        if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)]
+                                                            & 2) == 0) break;
+                                                        iVar3 = iVar3 + -1;
+                                                        pcVar9 = pcVar9 + -1;
+                                                      } while (0 < iVar3);
+                                                    }
+                                                    (local_72d + 1)[iVar3] = '\0';
+                                                    while (((&DAT_005c168c)
+                                                            [(byte)(local_72d[1] + 1)] & 2) != 0) {
+                                                      memmove
+                                                                (local_72d + 1);
+                                                    }
+                                                    uVar6 = 0xffffffff;
+                                                    pcVar9 = local_40d + 1;
                                                     do {
-                                                      if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)] &
-                                                          2) == 0) break;
-                                                      iVar3 = iVar3 + -1;
-                                                      pcVar9 = pcVar9 + -1;
-                                                    } while (0 < iVar3);
-                                                  }
-                                                  (local_40d + 1)[iVar3] = '\0';
-                                                  while (((&DAT_005c168c)[(byte)(local_40d[1] + 1)]
-                                                         & 2) != 0) {
-                                                    memmove(local_40d + 1)
-                                                    ;
-                                                  }
-                                                  uVar6 = 
+                                                      if (uVar6 == 0) break;
+                                                      uVar6 = uVar6 - 1;
+                                                      cVar1 = *pcVar9;
+                                                      pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
+                                                    } while (cVar1 != '\0');
+                                                    iVar3 = ~uVar6 - 1;
+                                                    if (0 < iVar3) {
+                                                      pcVar9 = local_40d + ~uVar6;
+                                                      do {
+                                                        if (((&DAT_005c168c)[(byte)(pcVar9[-1] + 1)]
+                                                            & 2) == 0) break;
+                                                        iVar3 = iVar3 + -1;
+                                                        pcVar9 = pcVar9 + -1;
+                                                      } while (0 < iVar3);
+                                                    }
+                                                    (local_40d + 1)[iVar3] = '\0';
+                                                    while (((&DAT_005c168c)
+                                                            [(byte)(local_40d[1] + 1)] & 2) != 0) {
+                                                      memmove
+                                                                (local_40d + 1);
+                                                    }
+                                                    uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_72d + 1,DAT_00765a98,
                                                              &DAT_00765a60);
@@ -1720,10 +1700,9 @@ LAB_0047aec8:
                                                             (uVar5);
                                                   if (iVar4 < 0) {
                                                     _sprintf(&DAT_01c08b60,
-                                                                                                                              
-                                                  "Model %s does not have motion %s",
-                                                  uVar6 + 0x23b0,local_40d + 1);
-                                                  return 0;
+                                                               "Model %s does not have motion %s",
+                                                               uVar6 + 0x23b0,local_40d + 1);
+                                                    return 0;
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
@@ -1760,8 +1739,8 @@ LAB_0047aec8:
                                                     }
                                                     local_ec = param_2;
                                                     sscanf
-                                                              (param_2," ( %[^ ,)]%n",
-                                                               local_344,&local_1c);
+                                                              (param_2," ( %[^ ,)]%n",local_344,
+                                                               &local_1c);
                                                     if (local_1c < 2) {
                                                       uVar5 = FUN_0047a210();
                                                       return uVar5;
@@ -1813,8 +1792,7 @@ LAB_0047aec8:
                                                        (((&DAT_005c168c)[(byte)(param_2[6] + 1)] &
                                                         0xe0) != 0)) {
                                                       uVar5 = FUN_0047a210(
-                                                  "Unknown meta-function starting at %s",
-                                                  param_2);
+                                                  "Unknown meta-function starting at %s",param_2);
                                                   return uVar5;
                                                   }
                                                   local_ec = param_2 + 6;
@@ -1824,8 +1802,8 @@ LAB_0047aec8:
                                                   }
                                                   local_18 = -1;
                                                   sscanf
-                                                            (local_ec,"(%[^,], %[^)])%n",
-                                                             local_bdd + 1,local_59d + 1,&local_18);
+                                                            (local_ec,"(%[^,], %[^)])%n",local_bdd + 1,
+                                                             local_59d + 1,&local_18);
                                                   if (local_18 < 5) {
                                                     uVar5 = FUN_0047a210();
                                                     return uVar5;
@@ -1895,8 +1873,7 @@ LAB_0047aec8:
                                                   }
                                                   local_18 = -1;
                                                   sscanf
-                                                            (local_59d + 1,
-                                                             "%f,%f,%f,%f,%f,%f%n",
+                                                            (local_59d + 1,"%f,%f,%f,%f,%f,%f%n",
                                                              &local_11c,&local_118,&local_114,
                                                              &local_134,&local_12c,&local_130,
                                                              &local_18);
@@ -1909,10 +1886,9 @@ LAB_0047aec8:
                                                       local_12c = *(uint *)(uVar6 + 0x38);
                                                     }
                                                     sscanf
-                                                              (local_59d + 1,
-                                                               "%f,%f,%f,%f%n",&local_11c,
-                                                               &local_118,&local_114,&local_130,
-                                                               &local_18);
+                                                              (local_59d + 1,"%f,%f,%f,%f%n",
+                                                               &local_11c,&local_118,&local_114,
+                                                               &local_130,&local_18);
                                                   }
                                                   if (local_18 < 0) {
                                                     if ((local_f0 != 0) &&

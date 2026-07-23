@@ -102,8 +102,7 @@ void FUN_00479b60(int param_1,float param_2)
         puVar5 = PTR_DAT_005ad350;
         if (iVar8 != 0) {
           *(int *)(param_1 + 0xbca4) = local_1c;
-          engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar5,"%s can see hero\n",param_1)
-          ;
+          engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar5,"%s can see hero\n",param_1);
           return;
         }
         if ((((*(int *)(param_1 + 0xbd20) != 0) ||

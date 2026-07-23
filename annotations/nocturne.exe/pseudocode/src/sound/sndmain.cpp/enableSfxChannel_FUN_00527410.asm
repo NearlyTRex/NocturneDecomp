@@ -11,8 +11,8 @@
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de96
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_0059368b
-;   string s_enableSfxChannel_-_invalid_chann_005936a0
+;   TerminatedCString s_sound_sndmain_cpp_0059368b
+;   TerminatedCString s_enableSfxChannel_invalid_005936a0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dbd494

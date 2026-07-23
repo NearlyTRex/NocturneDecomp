@@ -11,8 +11,8 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528cc1
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593818
-;   string s_getSoundDeviceInfo_-_invalid_ind_0059382d
+;   TerminatedCString s_sound_sndmain_cpp_00593818
+;   TerminatedCString s_getSoundDeviceInfo_inval_0059382d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

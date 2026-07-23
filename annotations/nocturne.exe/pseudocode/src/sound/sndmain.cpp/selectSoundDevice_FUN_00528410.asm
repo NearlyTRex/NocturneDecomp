@@ -10,8 +10,8 @@
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00528500 at 00528513
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593850
-;   string s_selectSoundDevice_-_device_alrea_00593865
+;   TerminatedCString s_sound_sndmain_cpp_00593850
+;   TerminatedCString s_selectSoundDevice_device_00593865
 ;   undefined4 DAT_005bea74
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

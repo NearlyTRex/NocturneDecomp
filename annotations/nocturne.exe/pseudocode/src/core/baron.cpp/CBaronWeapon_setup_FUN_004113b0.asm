@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_baron.dfm_005786c8
+;   TerminatedCString s_baron_dfm_005786c8
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_getDeformableModel_FUN_0051f570

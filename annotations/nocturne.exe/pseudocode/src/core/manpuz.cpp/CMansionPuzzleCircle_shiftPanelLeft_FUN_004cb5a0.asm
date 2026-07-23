@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00588032
-;   string s_CMansionPuzzleCircle::shiftPanel_00588045
-;   string s_manpuz-doorslide.wav_00588075
+;   TerminatedCString s_CMansionPuzzleCircle_shi_00588045
+;   TerminatedCString s_manpuz_doorslide_wav_00588075
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

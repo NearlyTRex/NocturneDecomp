@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 371,
+    "complexity_score": 370,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 60,
     "suspect_count": 30,
     "suspect_types": [
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 244
+    "total_lines": 243
   },
   "cross_references": [],
   "function": {
@@ -188,14 +188,14 @@
   "globals": [
     {
       "addr": "00585f9a",
-      "name": "s_hotdemon-die.wav_00585f9a",
-      "type": "string",
+      "name": "s_hotdemon_die_wav_00585f9a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00585fab",
-      "name": "s_hotdemon-hurt?.wav_00585fab",
-      "type": "string",
+      "name": "s_hotdemon_hurt_wav_00585fab",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -457,7 +457,7 @@
       "line": 55,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\")",
+      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\");",
       "type": "unresolved_funcptr"
     },
     {
@@ -465,7 +465,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\")",
+      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -473,12 +473,12 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\")",
+      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"hotdemon-hurt?.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbd28) = uVar4;",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -494,7 +494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -502,7 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -510,7 +510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",

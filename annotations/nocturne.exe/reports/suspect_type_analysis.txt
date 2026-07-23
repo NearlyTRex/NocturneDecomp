@@ -9,8 +9,8 @@ SUSPECT TYPE COUNTS
   param_count_too_few             2077 (  2.6%)
   unresolved_funcptr              1719 (  2.1%)
   warning_overlapping_globals     1353 (  1.7%)
-  pointer_cast                    1200 (  1.5%)
-  static_uninitvar                1028 (  1.3%)
+  pointer_cast                    1201 (  1.5%)
+  static_uninitvar                1041 (  1.3%)
   pointer_truncation               987 (  1.2%)
   unaffected_reg                   677 (  0.8%)
   unrolled_memcpy                  660 (  0.8%)
@@ -20,7 +20,7 @@ SUSPECT TYPE COUNTS
   unrolled_strcpy                  465 (  0.6%)
   static_object_index              430 (  0.5%)
   register_param                   409 (  0.5%)
-  unknown_field                    273 (  0.3%)
+  unknown_field                    272 (  0.3%)
   unrolled_strlen                  234 (  0.3%)
   nonstandard_int                  229 (  0.3%)
   static_legacy_uninitvar          191 (  0.2%)
@@ -72,6 +72,7 @@ SUSPECT TYPE COUNTS
   undefined_type                     2 (  0.0%)
   dropped_self_copy                  2 (  0.0%)
   undefined_ram                      1 (  0.0%)
+  unresolved_register                1 (  0.0%)
   loop_clobbered_constant            1 (  0.0%)
   static_memleak                     1 (  0.0%)
   warning_max_restarts               1 (  0.0%)
@@ -9288,7 +9289,7 @@ Functions:
   wincore_winvideo.cpp_closeMovie_FUN_0055a1c0
 
 ====================================================================================================
-TYPE: pointer_cast (1200 occurrences)
+TYPE: pointer_cast (1201 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -9585,11 +9586,11 @@ Functions:
   wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
-TYPE: static_uninitvar (1028 occurrences)
+TYPE: static_uninitvar (1041 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1028x  Cppcheck: uninitialized variable
+  1041x  Cppcheck: uninitialized variable
 
 Functions:
   FUN_0041206c
@@ -9833,6 +9834,7 @@ Functions:
   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0
   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30
   core_mmx.c_detectCPUFeatures_FUN_004d9e70
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac
   core_mmx.c_detectMMXSupport_FUN_004d9f59
   core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0
   core_moloch.cpp_CMoloch_processAI_FUN_004de1b0
@@ -11352,7 +11354,7 @@ Functions:
   wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
 
 ====================================================================================================
-TYPE: unknown_field (273 occurrences)
+TYPE: unknown_field (272 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -11362,7 +11364,6 @@ Unique patterns:
      7x  ._0_2_
      3x  ._2_1_
      1x  ._3_1_
-     1x  ._12_4_
      1x  ._1_1_
 
 Functions:
@@ -11427,7 +11428,6 @@ Functions:
   core_fire.cpp_computeScreenSpaceSize_FUN_004859a0
   core_flame.cpp_CFlame_process_FUN_0048d0c0
   core_menu.cpp_configureSoundOptions_FUN_004d12e0
-  core_mmx.c_detectIntelProcessor_FUN_004d9eac
   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
   core_moloch.cpp_CMoloch_process_FUN_004ddb20
   core_moon.cpp_CMoon_update_FUN_004deae0
@@ -12909,6 +12909,16 @@ Unique patterns:
 
 Functions:
   engine_2d.c_FUN_00402e90
+
+====================================================================================================
+TYPE: unresolved_register (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  register0x0000000c
+
+Functions:
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac
 
 ====================================================================================================
 TYPE: loop_clobbered_constant (1 occurrences)

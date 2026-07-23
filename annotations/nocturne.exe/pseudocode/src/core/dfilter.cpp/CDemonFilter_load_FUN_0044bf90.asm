@@ -14,19 +14,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0057bf1e
 ;   TerminatedCString s_art_0057bf21
-;   string s_..\\core\\dfilter.cpp_0057bf25
-;   string s_CDemonFilter::load_-_Bad_filenam_0057bf39
+;   TerminatedCString s_core_dfilter_cpp_0057bf25
+;   TerminatedCString s_CDemonFilter_load_Bad_fi_0057bf39
 ;   TerminatedCString s_art_0057bf60
-;   string s_..\\core\\dfilter.cpp_0057bf64
-;   string s_CDemonFilter::load_-_Non-square_f_0057bf78
-;   string s_..\\core\\dfilter.cpp_0057bfa5
-;   string s_CDemonFilter::load_-_Bad_filter_s_0057bfb9
-;   string s_..\\core\\dfilter.cpp_0057bfe1
-;   string s_CDemonFilter::load_-_Bad_filter_s_0057bff5
+;   TerminatedCString s_core_dfilter_cpp_0057bf64
+;   TerminatedCString s_CDemonFilter_load_Non_sq_0057bf78
+;   TerminatedCString s_core_dfilter_cpp_0057bfa5
+;   TerminatedCString s_CDemonFilter_load_Bad_fi_0057bfb9
+;   TerminatedCString s_core_dfilter_cpp_0057bfe1
+;   TerminatedCString s_CDemonFilter_load_Bad_fi_0057bff5
 ;   TerminatedCString s_rb_0057c01d
 ;   TerminatedCString s_art_0057c020
-;   string s_..\\core\\dfilter.cpp_0057c024
-;   string s_CDemonFilter::load_-_Bad_filenam_0057c038
+;   TerminatedCString s_core_dfilter_cpp_0057c024
+;   TerminatedCString s_CDemonFilter_load_Bad_fi_0057c038
 ;   ... and 2 more
 ;
 ; Called Functions:

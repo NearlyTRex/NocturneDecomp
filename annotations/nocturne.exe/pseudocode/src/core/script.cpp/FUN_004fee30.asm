@@ -10,10 +10,10 @@
 ;   FUN_004febd0 at 004fed01
 ;
 ; Referenced Globals:
-;   string s_..\\core\\script.cpp_0058e2f7
-;   string s_Out_of_memory_loading_script_at_l_0058e30a
-;   string s_..\\core\\script.cpp_0058e332
-;   string s_Out_of_memory_loading_script_at_l_0058e345
+;   TerminatedCString s_core_script_cpp_0058e2f7
+;   TerminatedCString s_Out_of_memory_loading_sc_0058e30a
+;   TerminatedCString s_core_script_cpp_0058e332
+;   TerminatedCString s_Out_of_memory_loading_sc_0058e345
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01e55c18

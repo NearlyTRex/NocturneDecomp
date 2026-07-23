@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_drummer.dfm_005964ba
+;   TerminatedCString s_drummer_dfm_005964ba
 ;   undefined1* PTR_core_tbplayer.cpp_CDrummer_setup_FUN_005433d0_005a2d44 = 005433d0
 ;
 ; Called Functions:

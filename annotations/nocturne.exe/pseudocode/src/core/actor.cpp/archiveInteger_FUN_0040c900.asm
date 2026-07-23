@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_00577c81
 ;   TerminatedCString s_s_d_00577c84
-;   string s_Integer_value_005acc78
+;   TerminatedCString s_Integer_value_005acc78
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

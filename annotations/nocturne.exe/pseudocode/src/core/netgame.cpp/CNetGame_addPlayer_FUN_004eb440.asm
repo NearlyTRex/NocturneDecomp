@@ -10,8 +10,8 @@
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eaa18
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c124
-;   string s_CNetGame::addPlayer_-_too_many_p_0058c138
+;   TerminatedCString s_core_netgame_cpp_0058c124
+;   TerminatedCString s_CNetGame_addPlayer_too_m_0058c138
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cea3f8

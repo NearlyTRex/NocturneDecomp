@@ -13,7 +13,7 @@
 ;   undefined4 s_one_0057f19a+1
 ;   undefined4 s_ne_0057f19a+2
 ;   undefined4 s_e_0057f19a+3
-;   string s_stalrock.kfm_0057f19f
+;   TerminatedCString s_stalrock_kfm_0057f19f
 ;   undefined1* PTR_core_emitter.cpp_CEmitter_setup_FUN_00478520_0059cc74 = 00478520
 ;
 ; Called Functions:

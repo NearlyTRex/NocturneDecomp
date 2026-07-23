@@ -13,20 +13,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00579821
-;   string s_weightInPounds_0057982b
+;   TerminatedCString s_weightInPounds_0057982b
 ;   TerminatedCString s_fps_0057983a
 ;   TerminatedCString s_rpm_0057983e
-;   string s_loopWavName_00579842
-;   string s_collisionWavName_0057984e
-;   string s_canBeCarried_0057985f
-;   string s_pickupType_0057986c
-;   string s_carriedByActor_00579877
-;   string s_canBePushed_00579886
-;   string s_pushedByActor_00579892
-;   string s_groundType_005798a0
-;   string s_simBox_005798ab
-;   string s_plotInShadowFlag_005798b2
-;   string s_collisionFlag_005798c3
+;   TerminatedCString s_loopWavName_00579842
+;   TerminatedCString s_collisionWavName_0057984e
+;   TerminatedCString s_canBeCarried_0057985f
+;   TerminatedCString s_pickupType_0057986c
+;   TerminatedCString s_carriedByActor_00579877
+;   TerminatedCString s_canBePushed_00579886
+;   TerminatedCString s_pushedByActor_00579892
+;   TerminatedCString s_groundType_005798a0
+;   TerminatedCString s_simBox_005798ab
+;   TerminatedCString s_plotInShadowFlag_005798b2
+;   TerminatedCString s_collisionFlag_005798c3
 ;   ... and 9 more
 ;
 ; Called Functions:

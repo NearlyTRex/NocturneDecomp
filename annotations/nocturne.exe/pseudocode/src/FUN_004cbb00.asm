@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_mirrhack.kfm_0058815a
+;   TerminatedCString s_mirrhack_kfm_0058815a
 ;   undefined1* PTR_FUN_005a0134 = 004cbb50
 ;
 ; Called Functions:

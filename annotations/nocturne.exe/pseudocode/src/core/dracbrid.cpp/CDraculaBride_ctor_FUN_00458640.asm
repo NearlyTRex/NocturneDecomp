@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_nbride2.dfm_0057d4ac
+;   TerminatedCString s_nbride2_dfm_0057d4ac
 ;   float FLOAT_0059c3f0 = 50
 ;   float FLOAT_0059c3f4 = 100
 ;   undefined1* PTR_core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730_0059c414 = 00458730

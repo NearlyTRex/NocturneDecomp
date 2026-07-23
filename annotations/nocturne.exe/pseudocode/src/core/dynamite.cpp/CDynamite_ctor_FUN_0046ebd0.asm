@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_dynamitestick.kfm_0057e4d0
+;   TerminatedCString s_dynamitestick_kfm_0057e4d0
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059c924 = 00553f10
 ;
 ; Called Functions:

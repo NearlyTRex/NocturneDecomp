@@ -63,8 +63,8 @@ uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
     }
     if (*(int *)(param_1 + 0x114) == 1) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"  delayRemaining = %7.2fs\n",*(uint *)(param_1 + 0x4c)
-                 ,*(uint *)(param_1 + 0x50));
+                (PTR_DAT_005ad350,"  delayRemaining = %7.2fs\n",*(uint *)(param_1 + 0x4c),
+                 *(uint *)(param_1 + 0x50));
     }
     *(uint *)(param_1 + 0x78) = *(uint *)(param_1 + 0x48);
     if (*(int *)(param_1 + 0x114) == 1) {

@@ -75,10 +75,10 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004189e0 = 004192c0
-;   string s_%s_confused_while_walking_to_scr_005792c0
-;   string s_%s_gave_up_chase_-_I'm_confused_005792ea
-;   string s_boneguy-swing?.wav_0057930b
-;   string s_boneGuy-walkloop.wav_0057931e
+;   TerminatedCString s_s_confused_while_walking_005792c0
+;   TerminatedCString s_s_gave_up_chase_I_m_conf_005792ea
+;   TerminatedCString s_boneguy_swing_wav_0057930b
+;   TerminatedCString s_boneGuy_walkloop_wav_0057931e
 ;   double DOUBLE_00579336 = 0.5
 ;   double DOUBLE_0057933e = 2.5
 ;   double DOUBLE_00579346 = 3.14159265350000

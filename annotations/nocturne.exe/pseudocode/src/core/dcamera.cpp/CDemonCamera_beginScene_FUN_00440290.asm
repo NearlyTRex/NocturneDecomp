@@ -12,11 +12,11 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_3_0044028c = 00440316
-;   string s_Attack_:_0057b6a3
-;   string s_Sustain_:_0057b6ad
-;   string s_Decay_:_0057b6b8
-;   string s_..\\core\\dcamera.cpp_0057b6c1
-;   string s_CDemonCamera::beginScene_-_Scene_0057b6d5
+;   TerminatedCString s_Attack_0057b6a3
+;   TerminatedCString s_Sustain_0057b6ad
+;   TerminatedCString s_Decay_0057b6b8
+;   TerminatedCString s_core_dcamera_cpp_0057b6c1
+;   TerminatedCString s_CDemonCamera_beginScene_0057b6d5
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ad444
 ;   undefined4 DAT_005ad448

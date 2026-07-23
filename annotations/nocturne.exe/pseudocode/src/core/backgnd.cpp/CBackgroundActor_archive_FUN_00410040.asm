@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_005784d5
-;   string s_collideWithMe_005784df
-;   string s_groundType_005784ed
+;   TerminatedCString s_modelName_005784d5
+;   TerminatedCString s_collideWithMe_005784df
+;   TerminatedCString s_groundType_005784ed
 ;   undefined4 DAT_005acf20
 ;
 ; Called Functions:

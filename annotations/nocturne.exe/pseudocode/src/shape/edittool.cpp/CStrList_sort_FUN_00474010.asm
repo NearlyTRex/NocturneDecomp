@@ -8,8 +8,8 @@
 ;   shape_edittool.cpp_CPickList_sort_FUN_004761a0 at 004761bf
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ecb1
-;   string s_CStrList::sort_-_invalid_range!_0057ecc7
+;   TerminatedCString s_shape_edittool_cpp_0057ecb1
+;   TerminatedCString s_CStrList_sort_invalid_ra_0057ecc7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

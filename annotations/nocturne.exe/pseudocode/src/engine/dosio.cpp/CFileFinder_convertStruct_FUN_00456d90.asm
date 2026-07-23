@@ -26,8 +26,8 @@
 ; Referenced Globals:
 ;   void* PTR_FileTimeToLocalFileTime_005754c0 = 00175bbe
 ;   void* PTR_FileTimeToSystemTime_005754c4 = 00175bd8
-;   string s_..\\engine\\dosio.c_0057d321
-;   string s_CFileFinder::convertStruct_-_fil_0057d333
+;   TerminatedCString s_engine_dosio_c_0057d321
+;   TerminatedCString s_CFileFinder_convertStruc_0057d333
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -8,8 +8,8 @@
 ;   core_cloth.cpp_CCloth_load_FUN_00435240 at 0043549a
 ;
 ; Referenced Globals:
-;   string s_..\\core\\cloth.cpp_0057ac75
-;   string s_CCloth::allocMemory_-_Out_of_mem_0057ac87
+;   TerminatedCString s_core_cloth_cpp_0057ac75
+;   TerminatedCString s_CCloth_allocMemory_Out_o_0057ac87
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

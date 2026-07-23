@@ -24,9 +24,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004973b4 = 00497448
-;   string s_kick1.wav_005820ba
-;   string s_hit-gh[4,7].wav_005820c4
-;   string s_gb-fall1.wav_005820d4
+;   TerminatedCString s_kick1_wav_005820ba
+;   TerminatedCString s_hit_gh_4_7_wav_005820c4
+;   TerminatedCString s_gb_fall1_wav_005820d4
 ;   double DOUBLE_005820e2 = 0.200000000000000
 ;   double DOUBLE_005820ea = 0.400000000000000
 ;   undefined4 DAT_005b96c4

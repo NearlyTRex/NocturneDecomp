@@ -12,10 +12,10 @@
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0 at 004796b5
 ;
 ; Referenced Globals:
-;   string s_stake_b.kfm_00579dba
+;   TerminatedCString s_stake_b_kfm_00579dba
 ;   TerminatedCString s_core_charactr_cpp_00579dc6
-;   string s_%s_is_carrying_%s,_but_%s_thinks_00579ddb
-;   string s_bip01_head_00579e16
+;   TerminatedCString s_s_is_carrying_s_but_s_th_00579ddb
+;   TerminatedCString s_bip01_head_00579e16
 ;   undefined4 DAT_0059b094
 ;   undefined4 DAT_007658e4
 ;   undefined4 DAT_01cc4800

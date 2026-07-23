@@ -18,8 +18,8 @@
 ;   ... and 13 more
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\drender.cpp_0057db72
-;   string s_CDemonRenderer::clipAndFillPoly_-_0057db88
+;   TerminatedCString s_engine_drender_cpp_0057db72
+;   TerminatedCString s_CDemonRenderer_clipAndFi_0057db88
 ;   undefined4 DAT_00766c70
 ;   undefined4 DAT_00766c74
 ;   undefined4 DAT_01c039a0

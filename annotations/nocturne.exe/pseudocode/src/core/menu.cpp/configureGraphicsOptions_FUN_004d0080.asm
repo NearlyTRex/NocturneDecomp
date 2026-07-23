@@ -17,20 +17,20 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d0050 = 004d05b5
-;   string s_tridx6.dll_00588693
+;   TerminatedCString s_tridx6_dll_00588693
 ;   char CHAR_00h_0058869e = \x00
-;   string s_tri3dfx.dll_0058869f
+;   TerminatedCString s_tri3dfx_dll_0058869f
 ;   char CHAR_00h_005886ab = \x00
-;   string s_tri3dfx.dll_005886ac
+;   TerminatedCString s_tri3dfx_dll_005886ac
 ;   TerminatedCString s_tri3dfx_dll_005886b8
 ;   undefined4 s_tri3dfx_dll_005886b8+1
 ;   undefined4 s_tri3dfx_dll_005886b8+2
 ;   undefined4 s_tri3dfx_dll_005886b8+3
-;   string s_tri3dfx.dll_005886c4
-;   string s_tridx6.dll_005886d0
-;   undefined4 s_ridx6.dll_005886d0+1
-;   undefined4 s_idx6.dll_005886d0+2
-;   undefined4 s_dx6.dll_005886d0+3
+;   TerminatedCString s_tri3dfx_dll_005886c4
+;   TerminatedCString s_tridx6_dll_005886d0
+;   undefined4 s_tridx6_dll_005886d0+1
+;   undefined4 s_tridx6_dll_005886d0+2
+;   undefined4 s_tridx6_dll_005886d0+3
 ;   ... and 89 more
 ;
 ; Called Functions:
@@ -561,13 +561,13 @@ section .text
     MOV ESI,0x5886d0                    ; 004d067c | = "tridx6.dll"
     MOV EDI,0x5c0e80                    ; 004d0681 | DAT_005c0e80
     PUSH EDI                            ; 004d0686 | DAT_005c0e80
-    MOV AL,byte ptr [ESI]               ; 004d0687 | = "tridx6.dll" | s_idx6.dll_005886d0+2
+    MOV AL,byte ptr [ESI]               ; 004d0687 | = "tridx6.dll" | s_tridx6_dll_005886d0+2
         ;   Label: LAB_004d0687
     MOV byte ptr [EDI],AL               ; 004d0689 | DAT_005c0e80 | DAT_005c0e82
     CMP AL,0x0                          ; 004d068b
     JZ 0x004d069f                       ; 004d068d
         ;   XREF to: 004d069f (CONDITIONAL_JUMP)  ; LAB_004d069f
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d068f | s_ridx6.dll_005886d0+1 | s_dx6.dll_005886d0+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d068f | s_tridx6_dll_005886d0+1 | s_tridx6_dll_005886d0+3
     ADD ESI,0x2                         ; 004d0692
     MOV byte ptr [EDI + 0x1],AL         ; 004d0695 | DAT_005c0e81 | = "d3d.dll"
     ADD EDI,0x2                         ; 004d0698
@@ -1040,13 +1040,13 @@ section .text
     MOV EDI,0x5c0e80                    ; 004d0b7a | DAT_005c0e80
         ;   Label: LAB_004d0b7a
     PUSH EDI                            ; 004d0b7f | DAT_005c0e80
-    MOV AL,byte ptr [ESI]               ; 004d0b80 | = "tridx6.dll" | s_idx6.dll_0058897a+2 | s_trid3d_dll_005889a6
+    MOV AL,byte ptr [ESI]               ; 004d0b80 | = "tridx6.dll" | s_tridx6_dll_0058897a+2 | s_trid3d_dll_005889a6
         ;   Label: LAB_004d0b80
     MOV byte ptr [EDI],AL               ; 004d0b82 | DAT_005c0e80 | DAT_005c0e82
     CMP AL,0x0                          ; 004d0b84
     JZ 0x004d0b98                       ; 004d0b86
         ;   XREF to: 004d0b98 (CONDITIONAL_JUMP)  ; LAB_004d0b98
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d0b88 | s_ridx6.dll_0058897a+1 | s_dx6.dll_0058897a+3 | s_trid3d_dll_005889a6+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d0b88 | s_tridx6_dll_0058897a+1 | s_tridx6_dll_0058897a+3 | s_trid3d_dll_005889a6+1
     ADD ESI,0x2                         ; 004d0b8b
     MOV byte ptr [EDI + 0x1],AL         ; 004d0b8e | DAT_005c0e81 | = "d3d.dll"
     ADD EDI,0x2                         ; 004d0b91

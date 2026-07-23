@@ -64,10 +64,10 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   string s_larva-blow1.wav_00587784
-;   string s_%s_confused_while_walking_to_scr_00587794
-;   string s_%s_gave_up_chase_-_I'm_confused_005877be
-;   string s_slime.wav_@%f_*%f_005877df
+;   TerminatedCString s_larva_blow1_wav_00587784
+;   TerminatedCString s_s_confused_while_walking_00587794
+;   TerminatedCString s_s_gave_up_chase_I_m_conf_005877be
+;   TerminatedCString s_slime_wav_f_f_005877df
 ;   double DOUBLE_005877f4 = 0.392699081687500
 ;   double DOUBLE_005877fc = 3
 ;   double DOUBLE_00587804 = 12

@@ -8,9 +8,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_shell.kfm_00581434
-;   string s_sh-sh?c_@_.15_0058143e
-;   string s_44-sh?c_@_.2_0058144c
+;   TerminatedCString s_shell_kfm_00581434
+;   TerminatedCString s_sh_sh_c_15_0058143e
+;   TerminatedCString s_s_44_sh_c_2_0058144c
 ;   double DOUBLE_0058145c = 0.25
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005bed68

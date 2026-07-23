@@ -14,8 +14,8 @@
 ;   FUN_0049cc10 at 0049d5a3
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ea49
-;   string s_CEditorTools::setMousePointerTyp_0057ea5f
+;   TerminatedCString s_shape_edittool_cpp_0057ea49
+;   TerminatedCString s_CEditorTools_setMousePoi_0057ea5f
 ;   undefined4 DAT_005b6d54
 ;   undefined4 DAT_005b6d58
 ;   undefined4 DAT_005b761c

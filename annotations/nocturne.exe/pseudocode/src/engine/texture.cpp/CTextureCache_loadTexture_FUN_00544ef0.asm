@@ -13,15 +13,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_00596708
-;   string s_CTextureCache::load_-_Bad_textur_0059670c
-;   string s_..\\engine\\texture.cpp_0059673d
-;   string s_..\\engine\\texture.cpp_00596753
-;   string s_CTextureCache::load_-_Can't_find_00596769
+;   TerminatedCString s_CTextureCache_load_Bad_t_0059670c
+;   TerminatedCString s_engine_texture_cpp_0059673d
+;   TerminatedCString s_engine_texture_cpp_00596753
+;   TerminatedCString s_CTextureCache_load_Can_t_00596769
 ;   TerminatedCString s_act_00596794
 ;   TerminatedCString s_rb_00596799
 ;   TerminatedCString s_art_0059679c
-;   string s_..\\engine\\texture.cpp_005967a0
-;   string s_CTextureCache::load_-_Out_of_mem_005967b6
+;   TerminatedCString s_engine_texture_cpp_005967a0
+;   TerminatedCString s_CTextureCache_load_Out_o_005967b6
 ;   TerminatedCString s_raw_00596809
 ;   TerminatedCString s_rb_0059680e
 ;   TerminatedCString s_art_00596811

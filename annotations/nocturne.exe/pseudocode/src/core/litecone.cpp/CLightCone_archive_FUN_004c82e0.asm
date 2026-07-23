@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fov_00587ae5
-;   string s_falloff_00587ae9
-;   string s_state_00587af1
-;   string s_onEvent_00587af7
-;   string s_offEvent_00587aff
+;   TerminatedCString s_falloff_00587ae9
+;   TerminatedCString s_state_00587af1
+;   TerminatedCString s_onEvent_00587af7
+;   TerminatedCString s_offEvent_00587aff
 ;   undefined4 DAT_005bacf8
 ;
 ; Called Functions:

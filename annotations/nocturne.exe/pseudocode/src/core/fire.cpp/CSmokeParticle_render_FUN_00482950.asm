@@ -34,7 +34,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fire_cpp_00581078
-;   string s_CSmokeParticle::render_-_Frame_o_00581089
+;   TerminatedCString s_CSmokeParticle_render_Fr_00581089
 ;   undefined4 DAT_0059d1f8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f4

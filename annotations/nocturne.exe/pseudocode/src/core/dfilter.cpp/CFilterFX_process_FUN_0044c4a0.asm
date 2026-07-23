@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6077
 ;
 ; Referenced Globals:
-;   string s_movscrn.raw_0057c0f5
+;   TerminatedCString s_movscrn_raw_0057c0f5
 ;   double DOUBLE_0057c105 = 30
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_005b9354

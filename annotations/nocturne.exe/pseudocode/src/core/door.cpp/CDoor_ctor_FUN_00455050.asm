@@ -5,19 +5,19 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_churchd01.kfm_0057d008
-;   string s_defaultDoorOpen_0057d016
+;   TerminatedCString s_churchd01_kfm_0057d008
+;   TerminatedCString s_defaultDoorOpen_0057d016
 ;   undefined4 s_efaultDoorOpen_0057d016+1
 ;   undefined4 s_faultDoorOpen_0057d016+2
 ;   undefined4 s_aultDoorOpen_0057d016+3
-;   string s_defaultDoorClose_0057d026
+;   TerminatedCString s_defaultDoorClose_0057d026
 ;   undefined4 s_efaultDoorClose_0057d026+1
 ;   undefined4 s_faultDoorClose_0057d026+2
 ;   undefined4 s_aultDoorClose_0057d026+3
-;   string s_door-locked.wav_0057d037
-;   undefined4 s_oor-locked.wav_0057d037+1
-;   undefined4 s_or-locked.wav_0057d037+2
-;   undefined4 s_r-locked.wav_0057d037+3
+;   TerminatedCString s_door_locked_wav_0057d037
+;   undefined4 s_door_locked_wav_0057d037+1
+;   undefined4 s_door_locked_wav_0057d037+2
+;   undefined4 s_door_locked_wav_0057d037+3
 ;   undefined1* PTR_core_door.cpp_CDoor_setup_FUN_004551f0_0059c284 = 004551f0
 ;
 ; Called Functions:
@@ -114,13 +114,13 @@ section .text
     LEA EDI,[EBX + 0x924]               ; 0045513c
     MOV byte ptr [EBX + 0x8c0],0x0      ; 00455142
     PUSH EDI                            ; 00455149
-    MOV AL,byte ptr [ESI]               ; 0045514a | = "door-locked.wav" | s_or-locked.wav_0057d037+2
+    MOV AL,byte ptr [ESI]               ; 0045514a | = "door-locked.wav" | s_door_locked_wav_0057d037+2
         ;   Label: LAB_0045514a
     MOV byte ptr [EDI],AL               ; 0045514c
     CMP AL,0x0                          ; 0045514e
     JZ 0x00455162                       ; 00455150
         ;   XREF to: 00455162 (CONDITIONAL_JUMP)  ; LAB_00455162
-    MOV AL,byte ptr [ESI + 0x1]         ; 00455152 | s_oor-locked.wav_0057d037+1 | s_r-locked.wav_0057d037+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00455152 | s_door_locked_wav_0057d037+1 | s_door_locked_wav_0057d037+3
     ADD ESI,0x2                         ; 00455155
     MOV byte ptr [EDI + 0x1],AL         ; 00455158
     ADD EDI,0x2                         ; 0045515b

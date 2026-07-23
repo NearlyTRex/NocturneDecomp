@@ -17,8 +17,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_00581244
-;   string s_..\\core\\fire.cpp_00581256
-;   string s_CToss::create_-_invalid_toss_typ_00581267
+;   TerminatedCString s_core_fire_cpp_00581256
+;   TerminatedCString s_CToss_create_invalid_tos_00581267
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

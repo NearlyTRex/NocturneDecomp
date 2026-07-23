@@ -15,10 +15,10 @@
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 at 004df452
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058abd4
-;   string s_CMorphModel::setFaceList_-_inval_0058abe6
-;   string s_..\\core\\morph.cpp_0058ac14
-;   string s_CMorphModel::setFaceList_-_inval_0058ac26
+;   TerminatedCString s_core_morph_cpp_0058abd4
+;   TerminatedCString s_CMorphModel_setFaceList_0058abe6
+;   TerminatedCString s_core_morph_cpp_0058ac14
+;   TerminatedCString s_CMorphModel_setFaceList_0058ac26
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cd4314

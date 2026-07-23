@@ -11,9 +11,9 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb5f
 ;
 ; Referenced Globals:
-;   string s_Can't_run_mission_-_no_heros_00589e67
-;   string s_Can't_run_mission_-_no_local_her_00589e84
-;   string s_Loading_script_00589ea6
+;   TerminatedCString s_Can_t_run_mission_no_her_00589e67
+;   TerminatedCString s_Can_t_run_mission_no_loc_00589e84
+;   TerminatedCString s_Loading_script_00589ea6
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354

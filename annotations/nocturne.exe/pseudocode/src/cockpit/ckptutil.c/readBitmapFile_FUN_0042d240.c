@@ -18,7 +18,8 @@ int __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(uint param_1,int para
   if (param_2 == 0) {
     param_2 = malloc(param_3);
     if (param_2 == 0) {
-      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).",param_3,param_1);
+      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).",param_3,param_1)
+      ;
       _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
       _DAT_01cc4804 = 0xd2;
       FUN_004c8440(local_60);

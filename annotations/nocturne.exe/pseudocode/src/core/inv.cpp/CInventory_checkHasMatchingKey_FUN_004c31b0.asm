@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_used_a_key_005874f9
-;   string s_key-unlock.wav_00587509
-;   string s_You_need_the_right_key_00587518
+;   TerminatedCString s_key_unlock_wav_00587509
+;   TerminatedCString s_You_need_the_right_key_00587518
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01cc30e0

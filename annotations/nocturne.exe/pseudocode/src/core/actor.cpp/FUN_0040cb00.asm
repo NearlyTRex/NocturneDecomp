@@ -18,8 +18,8 @@
 ;   ... and 19 more
 ;
 ; Referenced Globals:
-;   string s_motion_state_info_opening_brace_00577c8c
-;   string s_motion_state_info_closing_brace_00577cac
+;   TerminatedCString s_motion_state_info_openin_00577c8c
+;   TerminatedCString s_motion_state_info_closin_00577cac
 ;   TerminatedCString s_s_s_00577ccc
 ;   TerminatedCString s_s_00577cd7
 ;   undefined1 DAT_005acc90

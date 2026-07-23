@@ -15,10 +15,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_can_t_pick_up_s_sombod_0059878e
-;   string s_%s_can't_pick_up_%s,_giving_up_005987c0
-;   string s_%s_beginning_to_pickup_%s_005987e0
-;   string s_..\\core\\zombie.cpp_005987fb
-;   string s_Invalid_zombie_object_shape!_0059880e
+;   TerminatedCString s_s_can_t_pick_up_s_giving_005987c0
+;   TerminatedCString s_s_beginning_to_pickup_s_005987e0
+;   TerminatedCString s_core_zombie_cpp_005987fb
+;   TerminatedCString s_Invalid_zombie_object_sh_0059880e
 ;   TerminatedCString s_CBodyPart_0059882b
 ;   TerminatedCString s_s_is_going_to_try_to_pic_00598835
 ;   double DOUBLE_0059885e = 0.333333333333333

@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_humanToDemonCond_0058a83a
-;   string s_demonToHumanCond_0058a84b
-;   string s_inHumanForm_0058a85c
-;   string s_morphing_0058a868
-;   string s_morphTimer_0058a871
+;   TerminatedCString s_humanToDemonCond_0058a83a
+;   TerminatedCString s_demonToHumanCond_0058a84b
+;   TerminatedCString s_inHumanForm_0058a85c
+;   TerminatedCString s_morphing_0058a868
+;   TerminatedCString s_morphTimer_0058a871
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880

@@ -13,9 +13,9 @@
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d127c
 ;
 ; Referenced Globals:
-;   string s_%d,%d,%x_005884ec
-;   string s_Center_gamepad,_press_ENTER_005884f5
-;   string s_Move_gamepad_in_all_directions,_p_00588511
+;   TerminatedCString s_d_d_x_005884ec
+;   TerminatedCString s_Center_gamepad_press_ENT_005884f5
+;   TerminatedCString s_Move_gamepad_in_all_dire_00588511
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_014b98f8

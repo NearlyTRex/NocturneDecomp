@@ -48,21 +48,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_..\\core\\glass.cpp_00584edc
-;   string s_CGlass::setup_-_Too_many_vertici_00584eee
+;   TerminatedCString s_core_glass_cpp_00584edc
+;   TerminatedCString s_CGlass_setup_Too_many_ve_00584eee
 ;   TerminatedCString s_none_00584f23
-;   string s_7YEARS.RAW_00584f28
-;   string s_factwin.raw_00584f33
-;   string s_factwinx.raw_00584f3f
-;   undefined4 s_actwinx.raw_00584f3f+1
-;   undefined4 s_ctwinx.raw_00584f3f+2
-;   undefined4 s_twinx.raw_00584f3f+3
-;   string s_dockwin.raw_00584f4c
-;   string s_dockwinx.raw_00584f58
-;   undefined4 s_ockwinx.raw_00584f58+1
-;   undefined4 s_ckwinx.raw_00584f58+2
-;   undefined4 s_kwinx.raw_00584f58+3
-;   string s_windo10.raw_00584f65
+;   TerminatedCString s_s_7YEARS_RAW_00584f28
+;   TerminatedCString s_factwin_raw_00584f33
+;   TerminatedCString s_factwinx_raw_00584f3f
+;   undefined4 s_factwinx_raw_00584f3f+1
+;   undefined4 s_factwinx_raw_00584f3f+2
+;   undefined4 s_factwinx_raw_00584f3f+3
+;   TerminatedCString s_dockwin_raw_00584f4c
+;   TerminatedCString s_dockwinx_raw_00584f58
+;   undefined4 s_dockwinx_raw_00584f58+1
+;   undefined4 s_dockwinx_raw_00584f58+2
+;   undefined4 s_dockwinx_raw_00584f58+3
+;   TerminatedCString s_windo10_raw_00584f65
 ;   ... and 17 more
 ;
 ; Called Functions:
@@ -560,13 +560,13 @@ section .text
     MOV ESI,0x584f58                    ; 004ac314 | = "dockwinx.raw"
     LEA EDI,[EBX + 0x374]               ; 004ac319
     PUSH EDI                            ; 004ac31f
-    MOV AL,byte ptr [ESI]               ; 004ac320 | = "dockwinx.raw" | s_ckwinx.raw_00584f58+2
+    MOV AL,byte ptr [ESI]               ; 004ac320 | = "dockwinx.raw" | s_dockwinx_raw_00584f58+2
         ;   Label: LAB_004ac320
     MOV byte ptr [EDI],AL               ; 004ac322
     CMP AL,0x0                          ; 004ac324
     JZ 0x004ac338                       ; 004ac326
         ;   XREF to: 004ac338 (CONDITIONAL_JUMP)  ; LAB_004ac338
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ac328 | s_ockwinx.raw_00584f58+1 | s_kwinx.raw_00584f58+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ac328 | s_dockwinx_raw_00584f58+1 | s_dockwinx_raw_00584f58+3
     ADD ESI,0x2                         ; 004ac32b
     MOV byte ptr [EDI + 0x1],AL         ; 004ac32e
     ADD EDI,0x2                         ; 004ac331
@@ -588,13 +588,13 @@ section .text
     MOV ESI,0x584f71                    ; 004ac351 | = "windo10x.raw"
     LEA EDI,[EBX + 0x374]               ; 004ac356
     PUSH EDI                            ; 004ac35c
-    MOV AL,byte ptr [ESI]               ; 004ac35d | = "windo10x.raw" | s_ndo10x.raw_00584f71+2
+    MOV AL,byte ptr [ESI]               ; 004ac35d | = "windo10x.raw" | s_windo10x_raw_00584f71+2
         ;   Label: LAB_004ac35d
     MOV byte ptr [EDI],AL               ; 004ac35f
     CMP AL,0x0                          ; 004ac361
     JZ 0x004ac375                       ; 004ac363
         ;   XREF to: 004ac375 (CONDITIONAL_JUMP)  ; LAB_004ac375
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ac365 | s_indo10x.raw_00584f71+1 | s_do10x.raw_00584f71+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ac365 | s_windo10x_raw_00584f71+1 | s_windo10x_raw_00584f71+3
     ADD ESI,0x2                         ; 004ac368
     MOV byte ptr [EDI + 0x1],AL         ; 004ac36b
     ADD EDI,0x2                         ; 004ac36e
@@ -616,13 +616,13 @@ section .text
     MOV ESI,0x584f8a                    ; 004ac392 | = "windo11x.raw"
     LEA EDI,[EBX + 0x374]               ; 004ac397
     PUSH EDI                            ; 004ac39d
-    MOV AL,byte ptr [ESI]               ; 004ac39e | = "windo11x.raw" | s_ndo11x.raw_00584f8a+2
+    MOV AL,byte ptr [ESI]               ; 004ac39e | = "windo11x.raw" | s_windo11x_raw_00584f8a+2
         ;   Label: LAB_004ac39e
     MOV byte ptr [EDI],AL               ; 004ac3a0
     CMP AL,0x0                          ; 004ac3a2
     JZ 0x004ac3b6                       ; 004ac3a4
         ;   XREF to: 004ac3b6 (CONDITIONAL_JUMP)  ; LAB_004ac3b6
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ac3a6 | s_indo11x.raw_00584f8a+1 | s_do11x.raw_00584f8a+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ac3a6 | s_windo11x_raw_00584f8a+1 | s_windo11x_raw_00584f8a+3
     ADD ESI,0x2                         ; 004ac3a9
     MOV byte ptr [EDI + 0x1],AL         ; 004ac3ac
     ADD EDI,0x2                         ; 004ac3af
@@ -640,13 +640,13 @@ section .text
     MOV ESI,0x584f3f                    ; 004ac3be | = "factwinx.raw"
         ;   Label: LAB_004ac3be
     PUSH EDI                            ; 004ac3c3
-    MOV AL,byte ptr [ESI]               ; 004ac3c4 | = "factwinx.raw" | s_ctwinx.raw_00584f3f+2
+    MOV AL,byte ptr [ESI]               ; 004ac3c4 | = "factwinx.raw" | s_factwinx_raw_00584f3f+2
         ;   Label: LAB_004ac3c4
     MOV byte ptr [EDI],AL               ; 004ac3c6
     CMP AL,0x0                          ; 004ac3c8
     JZ 0x004ac3dc                       ; 004ac3ca
         ;   XREF to: 004ac3dc (CONDITIONAL_JUMP)  ; LAB_004ac3dc
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ac3cc | s_actwinx.raw_00584f3f+1 | s_twinx.raw_00584f3f+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ac3cc | s_factwinx_raw_00584f3f+1 | s_factwinx_raw_00584f3f+3
     ADD ESI,0x2                         ; 004ac3cf
     MOV byte ptr [EDI + 0x1],AL         ; 004ac3d2
     ADD EDI,0x2                         ; 004ac3d5

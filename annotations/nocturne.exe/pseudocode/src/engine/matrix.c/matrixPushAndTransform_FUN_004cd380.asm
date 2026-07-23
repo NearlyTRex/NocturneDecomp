@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005881eb
-;   string s_Matrix_unbalance_005881fe
+;   TerminatedCString s_Matrix_unbalance_005881fe
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
 ;   undefined4 DAT_01c039c0

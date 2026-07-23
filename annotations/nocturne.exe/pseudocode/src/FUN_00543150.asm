@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_bassplayer.dfm_00596491
+;   TerminatedCString s_bassplayer_dfm_00596491
 ;   undefined1* PTR_core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180_005a2c04 = 00543180
 ;
 ; Called Functions:

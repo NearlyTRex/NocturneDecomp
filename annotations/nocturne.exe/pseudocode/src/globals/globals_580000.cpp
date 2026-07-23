@@ -338,12 +338,3 @@ char CHAR_00h_0058e756 = '\0';
 char CHAR_00h_0058ede4 = '\0';
 char CHAR_00h_0058ee1f = '\0';
 
-// string
-string DAT_0058562B = "CHealthItem";
-string DAT_005859C4 = "CHiram";
-string DAT_00585DED = "CHotDemon";
-string DAT_00587574 = "CKeyActor";
-string DAT_005878ED = "CLever";
-string DAT_00589237 = "CMimic";
-string DAT_005895E1 = "CMineCar";
-

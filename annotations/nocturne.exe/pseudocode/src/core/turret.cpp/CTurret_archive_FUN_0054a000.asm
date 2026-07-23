@@ -5,18 +5,18 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_homeOrient_00596ddd
-;   string s_state_00596de8
-;   string s_activateEvent_00596dee
-;   string s_chargeTime_00596dfc
-;   string s_patrolTime_00596e07
-;   string s_powerDownTime_00596e12
-;   string s_fireDelayTime_00596e20
-;   string s_timer_00596e2e
-;   string s_guardZoneTriggerPtr_00596e34
-;   string s_allowedVictimTypes_00596e48
-;   string s_rotateDegPerSec_00596e5b
-;   string s_canManualAim_00596e6b
+;   TerminatedCString s_homeOrient_00596ddd
+;   TerminatedCString s_state_00596de8
+;   TerminatedCString s_activateEvent_00596dee
+;   TerminatedCString s_chargeTime_00596dfc
+;   TerminatedCString s_patrolTime_00596e07
+;   TerminatedCString s_powerDownTime_00596e12
+;   TerminatedCString s_fireDelayTime_00596e20
+;   TerminatedCString s_timer_00596e2e
+;   TerminatedCString s_guardZoneTriggerPtr_00596e34
+;   TerminatedCString s_allowedVictimTypes_00596e48
+;   TerminatedCString s_rotateDegPerSec_00596e5b
+;   TerminatedCString s_canManualAim_00596e6b
 ;   undefined4 DAT_005c1160
 ;
 ; Called Functions:

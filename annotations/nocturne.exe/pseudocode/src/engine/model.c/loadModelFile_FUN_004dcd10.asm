@@ -10,19 +10,19 @@
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3bf2
 ;
 ; Referenced Globals:
-;   string s_models_0058a4f4
-;   string s_Unable_to_get_file_size:_%s_0058a4fb
-;   string s_..\\engine\\model.c_0058a517
+;   TerminatedCString s_models_0058a4f4
+;   TerminatedCString s_Unable_to_get_file_size_0058a4fb
+;   TerminatedCString s_engine_model_c_0058a517
 ;   TerminatedCString s_rb_0058a529
-;   string s_models_0058a52c
-;   string s_Unable_to_open_model:_%s_0058a533
-;   string s_..\\engine\\model.c_0058a54c
-;   string s_Out_of_model_memory:_%s_0058a55e
-;   string s_..\\engine\\model.c_0058a576
-;   string s_Model_file_read_error:_%s_0058a588
-;   string s_..\\engine\\model.c_0058a5a2
-;   string s_Invalid_model:_%s_0058a5b4
-;   string s_..\\engine\\model.c_0058a5c6
+;   TerminatedCString s_models_0058a52c
+;   TerminatedCString s_Unable_to_open_model_s_0058a533
+;   TerminatedCString s_engine_model_c_0058a54c
+;   TerminatedCString s_Out_of_model_memory_s_0058a55e
+;   TerminatedCString s_engine_model_c_0058a576
+;   TerminatedCString s_Model_file_read_error_s_0058a588
+;   TerminatedCString s_engine_model_c_0058a5a2
+;   TerminatedCString s_Invalid_model_s_0058a5b4
+;   TerminatedCString s_engine_model_c_0058a5c6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

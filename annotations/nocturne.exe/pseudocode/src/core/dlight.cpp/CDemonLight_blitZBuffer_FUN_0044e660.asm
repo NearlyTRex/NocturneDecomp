@@ -8,8 +8,8 @@
 ;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 at 0044eba7
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c656
-;   string s_CDemonLight::blitZBuffer_-_No_ma_0057c669
+;   TerminatedCString s_core_dlight_cpp_0057c656
+;   TerminatedCString s_CDemonLight_blitZBuffer_0057c669
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

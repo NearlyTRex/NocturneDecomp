@@ -15,21 +15,21 @@
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0 at 00479731
 ;
 ; Referenced Globals:
-;   string s_hitPoints_00579e21
-;   string s_numCarryHands_00579e2b
-;   string s_carry_hand_00579e39
-;   string s_carry_actor_00579e44
-;   string s_numCarryHands_00579e50
-;   string s_carry_hand_00579e5e
-;   string s_carry_actor_00579e69
-;   string s_talkToMeEvent_00579e75
-;   string s_grabbedBy_00579e83
-;   string s_grabbedType_00579e8d
-;   string s_clothList_00579e99
-;   string s_sizeScale_00579ea3
-;   string s_healthBarMode_00579ead
-;   string s_descriptiveName_00579ebb
-;   string s_maxHitPoints_00579ecb
+;   TerminatedCString s_hitPoints_00579e21
+;   TerminatedCString s_numCarryHands_00579e2b
+;   TerminatedCString s_carry_hand_00579e39
+;   TerminatedCString s_carry_actor_00579e44
+;   TerminatedCString s_numCarryHands_00579e50
+;   TerminatedCString s_carry_hand_00579e5e
+;   TerminatedCString s_carry_actor_00579e69
+;   TerminatedCString s_talkToMeEvent_00579e75
+;   TerminatedCString s_grabbedBy_00579e83
+;   TerminatedCString s_grabbedType_00579e8d
+;   TerminatedCString s_clothList_00579e99
+;   TerminatedCString s_sizeScale_00579ea3
+;   TerminatedCString s_healthBarMode_00579ead
+;   TerminatedCString s_descriptiveName_00579ebb
+;   TerminatedCString s_maxHitPoints_00579ecb
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -8,7 +8,7 @@
 ;   FUN_00540f50 at 00541202
 ;
 ; Referenced Globals:
-;   string s_hotdemon.dfm_00585df7
+;   TerminatedCString s_hotdemon_dfm_00585df7
 ;   float FLOAT_0059f0c0 = 50
 ;   float FLOAT_0059f0c4 = 100
 ;   undefined1* PTR_core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00_0059f0d4 = 004b8d00

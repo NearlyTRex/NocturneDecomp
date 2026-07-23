@@ -25,8 +25,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_LAB_0044afd0 = 0044b114
-;   string s_..\\core\\dcube.cpp_0057bd80
-;   string s_CDemonCube::rotateVerticies_-_tr_0057bd92
+;   TerminatedCString s_core_dcube_cpp_0057bd80
+;   TerminatedCString s_CDemonCube_rotateVertici_0057bd92
 ;   float FLOAT_0057bdeb = 127
 ;   undefined4 DAT_0059be10
 ;   undefined4 DAT_005ae704

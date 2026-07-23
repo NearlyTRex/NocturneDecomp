@@ -58,11 +58,11 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0041245c = 004127d1
-;   string s_%s_confused_while_walking_to_scr_0057899e
-;   string s_batman-attack?.wav_005789c8
-;   string s_batman-alert.wav_005789db
-;   string s_batman-attack?.wav_005789ec
-;   string s_batman-attack?.wav_005789ff
+;   TerminatedCString s_s_confused_while_walking_0057899e
+;   TerminatedCString s_batman_attack_wav_005789c8
+;   TerminatedCString s_batman_alert_wav_005789db
+;   TerminatedCString s_batman_attack_wav_005789ec
+;   TerminatedCString s_batman_attack_wav_005789ff
 ;   double DOUBLE_00578a17 = 3.14159265350000
 ;   double DOUBLE_00578a1f = 0.523598775583333
 ;   double DOUBLE_00578a27 = 2

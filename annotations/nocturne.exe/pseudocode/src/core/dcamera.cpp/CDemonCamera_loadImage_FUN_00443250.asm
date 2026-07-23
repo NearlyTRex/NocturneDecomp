@@ -49,17 +49,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b81b
-;   string s_CDemonCamera::loadImage_-_no_ext_0057b82f
+;   TerminatedCString s_CDemonCamera_loadImage_n_0057b82f
 ;   TerminatedCString s_ACT_0057b856
 ;   undefined4 s_ACT_0057b856+1
 ;   undefined4 s_ACT_0057b856+2
 ;   undefined4 s_ACT_0057b856+3
 ;   TerminatedCString s_rb_0057b85b
-;   string s_backdrop_0057b85e
+;   TerminatedCString s_backdrop_0057b85e
 ;   TerminatedCString s_rb_0057b867
 ;   TerminatedCString s_art_0057b86a
-;   string s_..\\core\\dcamera.cpp_0057b86e
-;   string s_CDemonCamera::loadImage_-_no_ext_0057b882
+;   TerminatedCString s_core_dcamera_cpp_0057b86e
+;   TerminatedCString s_CDemonCamera_loadImage_n_0057b882
 ;   TerminatedCString s_fog_0057b8a3
 ;   undefined4 s_fog_0057b8a3+1
 ;   undefined4 s_fog_0057b8a3+2

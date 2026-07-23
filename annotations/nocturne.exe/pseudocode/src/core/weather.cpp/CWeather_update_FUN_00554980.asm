@@ -20,8 +20,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noLightningFlash_00597c19
-;   string s_noLightningFlash_00597c2a
-;   string s_rain.wav_@_.1_00597c3b
+;   TerminatedCString s_noLightningFlash_00597c2a
+;   TerminatedCString s_rain_wav_1_00597c3b
 ;   double DOUBLE_00597c49 = 0.0000152590218966964
 ;   double DOUBLE_00597c51 = 0.600000000000000
 ;   double DOUBLE_00597c59 = 15

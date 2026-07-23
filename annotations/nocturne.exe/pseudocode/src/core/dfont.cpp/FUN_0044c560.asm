@@ -9,20 +9,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dfont_cpp_0057c10d
-;   string s_Medium_font_object_not_allocated_0057c11f
-;   string s_nocfont.raw_0057c141
-;   string s_..\\core\\dfont.cpp_0057c14d
-;   string s_Tiny_font_object_not_allocated!_0057c15f
-;   string s_nocsmall.raw_0057c17f
-;   string s_..\\core\\dfont.cpp_0057c18c
-;   string s_Theme_font_object_not_allocated!_0057c19e
-;   string s_menufont.raw_0057c1bf
-;   string s_..\\core\\dfont.cpp_0057c1cc
-;   string s_Debug_font_object_not_allocated!_0057c1de
-;   string s_fnte_pfd.RAW_0057c1ff
-;   string s_..\\core\\dfont.cpp_0057c20c
-;   string s_Console_font_object_not_allocate_0057c21e
-;   string s_fnte_f.RAW_0057c241
+;   TerminatedCString s_Medium_font_object_not_a_0057c11f
+;   TerminatedCString s_nocfont_raw_0057c141
+;   TerminatedCString s_core_dfont_cpp_0057c14d
+;   TerminatedCString s_Tiny_font_object_not_all_0057c15f
+;   TerminatedCString s_nocsmall_raw_0057c17f
+;   TerminatedCString s_core_dfont_cpp_0057c18c
+;   TerminatedCString s_Theme_font_object_not_al_0057c19e
+;   TerminatedCString s_menufont_raw_0057c1bf
+;   TerminatedCString s_core_dfont_cpp_0057c1cc
+;   TerminatedCString s_Debug_font_object_not_al_0057c1de
+;   TerminatedCString s_fnte_pfd_RAW_0057c1ff
+;   TerminatedCString s_core_dfont_cpp_0057c20c
+;   TerminatedCString s_Console_font_object_not_0057c21e
+;   TerminatedCString s_fnte_f_RAW_0057c241
 ;   ... and 26 more
 ;
 ; Called Functions:

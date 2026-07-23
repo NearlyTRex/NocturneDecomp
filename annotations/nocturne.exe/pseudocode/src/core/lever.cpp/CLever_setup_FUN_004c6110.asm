@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_elevbutton.kfm_005878ff
-;   string s_lever-metal.wav_0058790e
-;   undefined4 s_ever-metal.wav_0058790e+1
-;   undefined4 s_ver-metal.wav_0058790e+2
-;   undefined4 s_er-metal.wav_0058790e+3
+;   TerminatedCString s_elevbutton_kfm_005878ff
+;   TerminatedCString s_lever_metal_wav_0058790e
+;   undefined4 s_lever_metal_wav_0058790e+1
+;   undefined4 s_lever_metal_wav_0058790e+2
+;   undefined4 s_lever_metal_wav_0058790e+3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -59,13 +59,13 @@ section .text
     MOV ESI,0x58790e                    ; 004c6158 | = "lever-metal.wav"
     LEA EDI,[EBX + 0x3a0]               ; 004c615d
     PUSH EDI                            ; 004c6163
-    MOV AL,byte ptr [ESI]               ; 004c6164 | = "lever-metal.wav" | s_ver-metal.wav_0058790e+2
+    MOV AL,byte ptr [ESI]               ; 004c6164 | = "lever-metal.wav" | s_lever_metal_wav_0058790e+2
         ;   Label: LAB_004c6164
     MOV byte ptr [EDI],AL               ; 004c6166
     CMP AL,0x0                          ; 004c6168
     JZ 0x004c617c                       ; 004c616a
         ;   XREF to: 004c617c (CONDITIONAL_JUMP)  ; LAB_004c617c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c616c | s_ever-metal.wav_0058790e+1 | s_er-metal.wav_0058790e+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c616c | s_lever_metal_wav_0058790e+1 | s_lever_metal_wav_0058790e+3
     ADD ESI,0x2                         ; 004c616f
     MOV byte ptr [EDI + 0x1],AL         ; 004c6172
     ADD EDI,0x2                         ; 004c6175

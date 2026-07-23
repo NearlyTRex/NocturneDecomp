@@ -6,17 +6,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00597e41
-;   string s_modelName_00597e47
-;   string s_guardDistance_00597e51
-;   string s_motion_state_00597e5f
-;   string s_lightUpEyes_00597e6c
-;   string s_chainAnchor_00597e78
-;   string s_chainLength_00597e84
+;   TerminatedCString s_modelName_00597e47
+;   TerminatedCString s_guardDistance_00597e51
+;   TerminatedCString s_motion_state_00597e5f
+;   TerminatedCString s_lightUpEyes_00597e6c
+;   TerminatedCString s_chainAnchor_00597e78
+;   TerminatedCString s_chainLength_00597e84
 ;   TerminatedCString s_type_00597e90
-;   string s_phase_00597e95
-;   string s_phaseTimer_00597e9b
-;   string s_alpha1_00597ea6
-;   string s_alpha2_00597ead
+;   TerminatedCString s_phase_00597e95
+;   TerminatedCString s_phaseTimer_00597e9b
+;   TerminatedCString s_alpha1_00597ea6
+;   TerminatedCString s_alpha2_00597ead
 ;   undefined4 DAT_005c1614
 ;
 ; Called Functions:

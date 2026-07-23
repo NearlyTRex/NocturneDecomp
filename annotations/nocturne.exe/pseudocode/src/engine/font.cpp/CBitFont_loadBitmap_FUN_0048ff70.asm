@@ -14,12 +14,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_0058175b
-;   string s_Too_many_bitmaps_0058176e
+;   TerminatedCString s_Too_many_bitmaps_0058176e
 ;   TerminatedCString s_art_0058177f
-;   string s_Invalid_font_file_size_(%s)._00581783
-;   string s_..\\engine\\font.cpp_005817a0
-;   string s_Unable_to_allocate_memory_for_fo_005817b3
-;   string s_..\\engine\\font.cpp_005817e3
+;   TerminatedCString s_Invalid_font_file_size_s_00581783
+;   TerminatedCString s_engine_font_cpp_005817a0
+;   TerminatedCString s_Unable_to_allocate_memor_005817b3
+;   TerminatedCString s_engine_font_cpp_005817e3
 ;   TerminatedCString s_act_005817f6
 ;   TerminatedCString s_rb_005817fa
 ;   TerminatedCString s_art_005817fd

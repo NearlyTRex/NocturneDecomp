@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b3dd4 = 004b3e34
-;   string s_box-swing?.wav_0058560d
-;   string s_box-punch?.wav_0058561c
+;   TerminatedCString s_box_swing_wav_0058560d
+;   TerminatedCString s_box_punch_wav_0058561c
 ;   undefined4 DAT_01cae04c
 ;   undefined4 DAT_01cae050
 ;

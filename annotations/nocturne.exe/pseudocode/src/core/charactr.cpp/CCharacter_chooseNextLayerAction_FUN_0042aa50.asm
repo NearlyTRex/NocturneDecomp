@@ -15,8 +15,8 @@
 ;   FUN_0053f310 at 0053f644
 ;
 ; Referenced Globals:
-;   string s_..\\core\\charactr.cpp_0057a410
-;   string s_CCharacter::chooseNextLayerActio_0057a425
+;   TerminatedCString s_core_charactr_cpp_0057a410
+;   TerminatedCString s_CCharacter_chooseNextLay_0057a425
 ;   double DOUBLE_0057a462 = 0.0000100000000000000
 ;   double DOUBLE_0057a46a = 0.999990000000000
 ;   undefined4 DAT_01cc4800

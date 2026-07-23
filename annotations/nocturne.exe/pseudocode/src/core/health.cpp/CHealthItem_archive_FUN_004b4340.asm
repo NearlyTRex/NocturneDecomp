@@ -7,10 +7,10 @@
 ; undefined        Stack[-0x104]:1  local_104
 ;
 ; Referenced Globals:
-;   string s_modelName_00585642
-;   string s_useCount_0058564c
-;   string s_hpRestored_00585655
-;   string s_descriptiveName_00585660
+;   TerminatedCString s_modelName_00585642
+;   TerminatedCString s_useCount_0058564c
+;   TerminatedCString s_hpRestored_00585655
+;   TerminatedCString s_descriptiveName_00585660
 ;   undefined4 DAT_005ba928
 ;
 ; Called Functions:

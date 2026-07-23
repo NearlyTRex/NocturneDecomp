@@ -10,7 +10,7 @@
 ;   core_zombie.cpp_FUN_00561010 at 005611be
 ;
 ; Referenced Globals:
-;   string s_jeff.dfm_0059887a
+;   TerminatedCString s_jeff_dfm_0059887a
 ;   TerminatedCString s_new_00598883
 ;
 ; Called Functions:

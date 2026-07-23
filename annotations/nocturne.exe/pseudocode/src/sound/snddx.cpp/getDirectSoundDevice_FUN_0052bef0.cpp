@@ -69,8 +69,8 @@ uint __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
           return 0x2dc93a0;
         }
         uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
-        _sprintf(auStack_2d4,"DirectSux: Unable to %s.  (%s)",
-                   "Set cooperative level",uVar2);
+        _sprintf(auStack_2d4,"DirectSux: Unable to %s.  (%s)","Set cooperative level",
+                   uVar2);
         puVar3 = auStack_2d4;
       }
       else {

@@ -10,21 +10,21 @@
 ;   FUN_004a3b90 at 004a3d28
 ;
 ; Referenced Globals:
-;   string s_//_CScript_version_0058fdd5
+;   TerminatedCString s_CScript_version_0058fdd5
 ;   TerminatedCString s_d_0058fde9
-;   string s_//_gGame->letterboxMode_0058fded
+;   TerminatedCString s_gGame_letterboxMode_0058fded
 ;   TerminatedCString s_d_0058fe06
-;   string s_//_gGame->allowDamageFlag_0058fe0a
+;   TerminatedCString s_gGame_allowDamageFlag_0058fe0a
 ;   TerminatedCString s_d_0058fe25
-;   string s_//_gGame->allowEnemyAttackFlag_0058fe29
+;   TerminatedCString s_gGame_allowEnemyAttackFl_0058fe29
 ;   TerminatedCString s_d_0058fe49
-;   string s_//_letterBoxBlackT_0058fe4d
+;   TerminatedCString s_letterBoxBlackT_0058fe4d
 ;   TerminatedCString s_g_0058fe61
-;   string s_//_nextCmd_0058fe65
+;   TerminatedCString s_nextCmd_0058fe65
 ;   TerminatedCString s_d_0058fe71
-;   string s_//_currentMessage_0058fe75
-;   string s_\"%s\"_0058fe88
-;   string s_//_cmdTimer_0058fe8e
+;   TerminatedCString s_currentMessage_0058fe75
+;   TerminatedCString s_s_0058fe88
+;   TerminatedCString s_cmdTimer_0058fe8e
 ;   ... and 17 more
 ;
 ; Called Functions:

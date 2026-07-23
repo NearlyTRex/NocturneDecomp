@@ -10,8 +10,8 @@
 ;   shape_edittool.cpp_CInputString_draw_FUN_0046f680 at 0046f753
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057e538
-;   string s_CInputString::calcX_-_string_too_0057e54e
+;   TerminatedCString s_shape_edittool_cpp_0057e538
+;   TerminatedCString s_CInputString_calcX_strin_0057e54e
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

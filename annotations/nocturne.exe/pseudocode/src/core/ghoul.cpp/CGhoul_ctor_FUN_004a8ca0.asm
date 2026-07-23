@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   string s_guul.dfm_00584ac4
+;   TerminatedCString s_guul_dfm_00584ac4
 ;   double DOUBLE_00584acd = 65536
 ;   float FLOAT_0059e210 = 50
 ;   float FLOAT_0059e214 = 100

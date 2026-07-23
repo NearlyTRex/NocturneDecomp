@@ -8,11 +8,11 @@
 ;   FUN_005524d0 at 005524d5
 ;
 ; Referenced Globals:
-;   string s_nobody_00596988
+;   TerminatedCString s_nobody_00596988
 ;   undefined4 s_obody_00596988+1
 ;   undefined4 s_body_00596988+2
 ;   undefined4 s_ody_00596988+3
-;   string s_CDemonActor_0059698f
+;   TerminatedCString s_CDemonActor_0059698f
 ;   undefined4 s_DemonActor_0059698f+1
 ;   undefined4 s_emonActor_0059698f+2
 ;   undefined4 s_monActor_0059698f+3

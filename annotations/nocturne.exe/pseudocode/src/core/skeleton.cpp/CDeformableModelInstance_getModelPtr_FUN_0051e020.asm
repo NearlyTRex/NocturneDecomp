@@ -19,9 +19,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591c8b
-;   string s_CDeformableModelInstance::getMod_00591ca0
-;   string s_..\\core\\skeleton.cpp_00591cee
-;   string s_Tried_to_do_something_with_model_00591d03
+;   TerminatedCString s_CDeformableModelInstance_00591ca0
+;   TerminatedCString s_core_skeleton_cpp_00591cee
+;   TerminatedCString s_Tried_to_do_something_wi_00591d03
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

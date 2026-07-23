@@ -8,8 +8,8 @@
 ;   FUN_004fbc00 at 004fbc57
 ;
 ; Referenced Globals:
-;   string s_CBaronWeapon_0058de58
-;   string s_BaronProxy_0058de65
+;   TerminatedCString s_CBaronWeapon_0058de58
+;   TerminatedCString s_BaronProxy_0058de65
 ;   undefined4 s_aronProxy_0058de65+1
 ;   undefined4 s_ronProxy_0058de65+2
 ;   undefined4 s_onProxy_0058de65+3

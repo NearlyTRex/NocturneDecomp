@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_elephantgun.kfm_0057f109
+;   TerminatedCString s_elephantgun_kfm_0057f109
 ;   undefined4 DAT_0059cb2c
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059cb34 = 00553f10
 ;

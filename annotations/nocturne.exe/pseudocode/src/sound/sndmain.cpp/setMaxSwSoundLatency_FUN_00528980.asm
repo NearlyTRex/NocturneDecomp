@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005939be
-;   string s_setMaxSwSoundLatency_-_can't_do_t_005939d3
+;   TerminatedCString s_setMaxSwSoundLatency_can_005939d3
 ;   double DOUBLE_00593a0e = 0.0500000000000000
 ;   double DOUBLE_00593a16 = 2
 ;   undefined4 DAT_005bea98

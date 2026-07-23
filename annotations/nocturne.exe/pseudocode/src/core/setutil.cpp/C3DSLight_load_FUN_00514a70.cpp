@@ -99,7 +99,8 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
         *(uint *)(param_1 + 0x1774 + local_1c) = 0;
       }
       else {
-        _fscanf(param_2,"%f,%d,%s\n",iVar2,local_28 + local_1c,local_14);
+        _fscanf(param_2,"%f,%d,%s\n",iVar2,local_28 + local_1c,local_14)
+        ;
       }
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
@@ -157,8 +158,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
         }
         else {
           iVar1 = local_24 + iVar2;
-          _fscanf(param_2,"%d,%d,%d,%d,%d\n",local_40,iVar1,iVar1 + 4,iVar1 + 8,
-                     iVar1 + 0xc);
+          _fscanf(param_2,"%d,%d,%d,%d,%d\n",local_40,iVar1,iVar1 + 4,iVar1 + 8,iVar1 + 0xc);
           *(byte *)(iVar3 + 0x128) = local_40[0];
         }
         iVar2 = iVar2 + 0x10;
@@ -173,8 +173,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
     iVar3 = 0;
     if (0 < local_48) {
       do {
-        _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_30,&local_34,
-                   &local_2c);
+        _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_30,&local_34,&local_2c);
         if (0xf9 < local_3c) {
           _DAT_01cc4800 = "..\\core\\setutil.cpp";
           _DAT_01cc4804 = 0x2a5;

@@ -15,8 +15,8 @@
 ;   void* PTR_joyGetDevCapsA_005753d4 = 001757e2
 ;   void* PTR_GetModuleHandleA_0057552c = 00175dbc
 ;   void* PTR_GetProcAddress_00575534 = 00175ddc
-;   string s_winmm.dll_00598168
-;   string s_joyGetPosEx_00598172
+;   TerminatedCString s_winmm_dll_00598168
+;   TerminatedCString s_joyGetPosEx_00598172
 ;   undefined4 DAT_005b7634
 ;   undefined4 DAT_01c0390c
 ;   undefined4 DAT_01c0391c

@@ -74,8 +74,7 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
           if (iVar5 == 0) {
             _fclose(iVar6);
             iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(param_1 + 0x30);
-            FUN_0046fcd0(0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1)
-            ;
+            FUN_0046fcd0(0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
             FUN_004fe500(param_1);
             return 0;
           }

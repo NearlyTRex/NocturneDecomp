@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\snddx.cpp_005942a2
-;   string s_DirectSoundDevice::freeSample_-_I_005942b5
+;   TerminatedCString s_sound_snddx_cpp_005942a2
+;   TerminatedCString s_DirectSoundDevice_freeSa_005942b5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc9244

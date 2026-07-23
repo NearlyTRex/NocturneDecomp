@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 1141,
+    "complexity_score": 1139,
     "cross_reference_count": 1,
     "function_call_count": 54,
     "global_count": 66,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 356,
+    "pseudocode_lines": 354,
     "suspect_count": 74,
     "suspect_types": [
       "param_count_too_few",
@@ -140,7 +140,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1451
+    "total_lines": 1449
   },
   "cross_references": [
     {
@@ -438,14 +438,14 @@
   "globals": [
     {
       "addr": "00582386",
-      "name": "s_noc%05d.raw_00582386",
-      "type": "string",
+      "name": "s_noc_05d_raw_00582386",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00582392",
-      "name": "s_Movie_recording_active:_movie\\%s_00582392",
-      "type": "string",
+      "name": "s_Movie_recording_active_m_00582392",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -457,13 +457,13 @@
     {
       "addr": "005823b6",
       "name": "s_movie_005823b6",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005825d7",
-      "name": "s_screen_paint_:_%3.2f_ms_005825d7",
-      "type": "string",
+      "name": "s_screen_paint_3_2f_ms_005825d7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -474,50 +474,50 @@
     },
     {
       "addr": "00582628",
-      "name": "s_demon%d.pcx_00582628",
-      "type": "string",
+      "name": "s_demon_d_pcx_00582628",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00582634",
-      "name": "s_Camera:_\"%s\"_Group_%d_00582634",
-      "type": "string",
+      "name": "s_Camera_s_Group_d_00582634",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058264a",
-      "name": "s_FR:_%f,_AVG:_%f,_PC:_%d_0058264a",
-      "type": "string",
+      "name": "s_FR_f_AVG_f_PC_d_0058264a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00582662",
-      "name": "s_Hero_:_%4.2f,%4.2f,%4.2f_xyz_and_00582662",
-      "type": "string",
+      "name": "s_Hero_4_2f_4_2f_4_2f_xyz_00582662",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00582699",
-      "name": "s_Slew_:_%s,_Virtual_Director_:_%s_00582699",
-      "type": "string",
+      "name": "s_Slew_s_Virtual_Director_00582699",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005826ba",
-      "name": "s_Fudge:_%g,%g,%g_005826ba",
-      "type": "string",
+      "name": "s_Fudge_g_g_g_005826ba",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005826ca",
-      "name": "s_SFX:_%d_Samples:_Active:_%d/%.1f_005826ca",
-      "type": "string",
+      "name": "s_SFX_d_Samples_Active_d_1_005826ca",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058271b",
-      "name": "s_You're_dead._Game_over._0058271b",
-      "type": "string",
+      "name": "s_You_re_dead_Game_over_0058271b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -1591,15 +1591,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 263,
+      "line": 262,
       "match": "param_1",
       "severity": "mild",
-      "text": "1.0 / (double)*(float *)(param_1 + 0x264),(double)_DAT_01c71e38 / _DAT_01c71e30,",
+      "text": "_sprintf(local_2dc,\"FR: %f, AVG: %f, PC: %d\",1.0 / (double)*(float *)(param_1 + 0x264),",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 265,
+      "line": 264,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0xb);",
@@ -1607,7 +1607,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 275,
+      "line": 273,
       "match": "param_1",
       "severity": "mild",
       "text": "(&PTR_s_Off_005b9358)[*(int *)(param_1 + 0x1fc)],",
@@ -1615,7 +1615,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 276,
+      "line": 274,
       "match": "param_1",
       "severity": "mild",
       "text": "(&PTR_s_Off_005b9358)[*(int *)(param_1 + 0x274)]);",
@@ -1623,7 +1623,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 278,
+      "line": 276,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar2 = *(float **)(param_1 + 0x9bc);",
@@ -1631,7 +1631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 282,
+      "line": 280,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x4d);",
@@ -1639,7 +1639,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 293,
+      "line": 291,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x42);",
@@ -1647,7 +1647,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 293,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x37);",
@@ -1655,7 +1655,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 297,
+      "line": 295,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x2c);",
@@ -1663,7 +1663,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 298,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(param_1 + 0xd0,0,DAT_005b7620 + -0x21);",
@@ -1671,7 +1671,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 298,
+      "line": 296,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(param_1 + 0xd0,0,DAT_005b7620 + -0x21);",
@@ -1679,7 +1679,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 312,
+      "line": 310,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1d8) != 0) {",
@@ -1687,7 +1687,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 313,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x1dc) != 0) && (*(int *)(param_1 + 0x278) != 0)) {",
@@ -1695,7 +1695,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 313,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x1dc) != 0) && (*(int *)(param_1 + 0x278) != 0)) {",
@@ -1703,7 +1703,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 314,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "FUN_004fe9d0(0x01E56DA0,0,0xf0,DAT_005b761c + -1,DAT_005b7620 + -1);",
@@ -1711,7 +1711,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 314,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "FUN_004fe9d0(0x01E56DA0,0,0xf0,DAT_005b761c + -1,DAT_005b7620 + -1);",
@@ -1719,7 +1719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 316,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1f8) != 0) {",
@@ -1727,7 +1727,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 320,
+      "line": 318,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_3dc,0,DAT_005b7620 + -0x42);",
@@ -1735,7 +1735,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 323,
+      "line": 321,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);",
@@ -1743,7 +1743,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 338,
+      "line": 336,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "(_DAT_014b98f8,0,DAT_005b761c,DAT_005b7620 + *(int *)(_DAT_014b98f8 + 0x316c) * -2,",
@@ -1751,7 +1751,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 338,
+      "line": 336,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "(_DAT_014b98f8,0,DAT_005b761c,DAT_005b7620 + *(int *)(_DAT_014b98f8 + 0x316c) * -2,",
@@ -1759,7 +1759,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 339,
+      "line": 337,
       "match": "DAT_01bff320",
       "severity": "mild",
       "text": "DAT_01bff320,0,local_4dc);",
@@ -1767,7 +1767,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 339,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0xac8) != 0) {",
@@ -1775,7 +1775,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 340,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_showCustomizableKeys_FUN_0049b4e0(param_1);",
@@ -1783,7 +1783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 344,
+      "line": 342,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x280) != 0) {",
@@ -1791,7 +1791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 348,
+      "line": 346,
       "match": "DAT_01c78424",
       "severity": "mild",
       "text": "FUN_004759d0(&DAT_01c78424);",
@@ -1799,7 +1799,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 348,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1fc) != 0) {",
@@ -1815,7 +1815,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 328,
+      "line": 326,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

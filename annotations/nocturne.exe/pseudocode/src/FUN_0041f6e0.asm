@@ -12,9 +12,9 @@
 ;   core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0 at 0041f3a6
 ;
 ; Referenced Globals:
-;   string s_flashlit.kfm_005799b8
-;   string s_lantern.kfm_005799c5
-;   string s_lantern%d.raw_005799d1
+;   TerminatedCString s_flashlit_kfm_005799b8
+;   TerminatedCString s_lantern_kfm_005799c5
+;   TerminatedCString s_lantern_d_raw_005799d1
 ;   float FLOAT_005799e1 = 0.5
 ;   double DOUBLE_005799e5 = 0.100000000000000
 ;   undefined4 DAT_007647fc

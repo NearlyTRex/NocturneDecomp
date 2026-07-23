@@ -32,11 +32,11 @@
 ;   core_set.cpp_FUN_005090f0 at 00509127
 ;
 ; Referenced Globals:
-;   string s_..\\core\\set.cpp_00590422
-;   string s_CDemonSet::setCameraView_-_inval_00590432
-;   string s_%s.raw_0059045f
-;   string s_..\\core\\set.cpp_00590466
-;   string s_CDemonSet::setCameraView_-_Too_m_00590476
+;   TerminatedCString s_core_set_cpp_00590422
+;   TerminatedCString s_CDemonSet_setCameraView_00590432
+;   TerminatedCString s_s_raw_0059045f
+;   TerminatedCString s_core_set_cpp_00590466
+;   TerminatedCString s_CDemonSet_setCameraView_00590476
 ;   undefined4 DAT_005b0674
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b96c4

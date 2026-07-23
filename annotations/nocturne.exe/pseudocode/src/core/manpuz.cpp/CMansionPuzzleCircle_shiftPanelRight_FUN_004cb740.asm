@@ -8,9 +8,9 @@
 ;   FUN_004cb010 at 004cb2a3
 ;
 ; Referenced Globals:
-;   string s_..\\core\\manpuz.cpp_0058808a
-;   string s_CMansionPuzzleCircle::shiftPanel_0058809d
-;   string s_manpuz-doorslide.wav_005880ce
+;   TerminatedCString s_core_manpuz_cpp_0058808a
+;   TerminatedCString s_CMansionPuzzleCircle_shi_0058809d
+;   TerminatedCString s_manpuz_doorslide_wav_005880ce
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

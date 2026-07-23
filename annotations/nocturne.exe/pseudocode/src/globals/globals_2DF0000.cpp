@@ -105,28 +105,6 @@ IMAGE_RESOURCE_DIRECTORY DAT_02DFF0D8 = {
     .NumberOfIdEntries = 0x0001
 };
 
-// TerminatedUnicode
-TerminatedUnicode DAT_02DFF4B2 = L"StringFileInfo";
-TerminatedUnicode DAT_02DFF4D6 = L"040904b0";
-TerminatedUnicode DAT_02DFF4EE = L"CompanyName";
-TerminatedUnicode DAT_02DFF508 = L"Terminal Reality Inc.";
-TerminatedUnicode DAT_02DFF53A = L"FileDescription";
-TerminatedUnicode DAT_02DFF55C = L"Nocturne(TM)";
-TerminatedUnicode DAT_02DFF57E = L"FileVersion";
-TerminatedUnicode DAT_02DFF598 = L"1.00.52";
-TerminatedUnicode DAT_02DFF5AE = L"InternalName";
-TerminatedUnicode DAT_02DFF5C8 = L"Nocturne";
-TerminatedUnicode DAT_02DFF5E2 = L"LegalCopyright";
-TerminatedUnicode DAT_02DFF600 = L" 1995-1999 Terminal Reality Inc.";
-TerminatedUnicode DAT_02DFF64A = L"OriginalFilename";
-TerminatedUnicode DAT_02DFF66C = L"Nocturne.exe";
-TerminatedUnicode DAT_02DFF68E = L"ProductName";
-TerminatedUnicode DAT_02DFF6A8 = L"Nocturne";
-TerminatedUnicode DAT_02DFF6C2 = L"ProductVersion";
-TerminatedUnicode DAT_02DFF6E0 = L"1.00.52";
-TerminatedUnicode DAT_02DFF6F6 = L"VarFileInfo";
-TerminatedUnicode DAT_02DFF716 = L"Translation";
-
 // VS_VERSION_INFO
 VS_VERSION_INFO Rsrc_Version_1_0 = {
     .StructLength = 0x02E4,

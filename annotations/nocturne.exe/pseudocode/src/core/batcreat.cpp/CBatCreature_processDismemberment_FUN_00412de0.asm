@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00412dc8 = 00412e1d
-;   string s_limb?.wav_00578a54
+;   TerminatedCString s_limb_wav_00578a54
 ;   double DOUBLE_00578a5f = 7
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600

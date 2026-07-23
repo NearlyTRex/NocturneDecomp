@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00589612
-;   string s_world_00589615
-;   string s_..\\core\\mission.cpp_0058961b
-;   string s_CDemonMission::load_-_Unable_to_o_0058962f
-;   string s_Loading_mission_00589659
+;   TerminatedCString s_world_00589615
+;   TerminatedCString s_core_mission_cpp_0058961b
+;   TerminatedCString s_CDemonMission_load_Unabl_0058962f
+;   TerminatedCString s_Loading_mission_00589659
 ;   undefined4 DAT_005baca0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

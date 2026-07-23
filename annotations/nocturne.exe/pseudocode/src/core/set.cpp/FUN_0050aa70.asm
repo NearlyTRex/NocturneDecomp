@@ -10,8 +10,8 @@
 ;   FUN_0049cc10 at 0049cfe2
 ;
 ; Referenced Globals:
-;   string s_%d_omni_lights_005905b3
-;   string s_%d_spot_lights_005905c2
+;   TerminatedCString s_d_omni_lights_005905b3
+;   TerminatedCString s_d_spot_lights_005905c2
 ;   undefined4 DAT_005be37c
 ;   undefined4 DAT_005be380
 ;   undefined4 DAT_005be384

@@ -14,9 +14,9 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_start_FUN_00529f60 at 00529fcc
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Lock_secondary_buffer_005940d6
-;   string s_Unlock_secondary_buffer_005940ec
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Lock_secondary_buffer_005940d6
+;   TerminatedCString s_Unlock_secondary_buffer_005940ec
 ;   undefined4 DAT_02dc921c
 ;   undefined4 DAT_02dc9228
 ;   undefined4 DAT_02dc922c

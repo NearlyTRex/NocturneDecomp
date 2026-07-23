@@ -7,11 +7,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_Bip01_Spine3_00597cdf
-;   string s_Bip01_L_Finger1_00597cec
-;   string s_Bip01_R_Finger1_00597cfc
-;   string s_Bip01jaw2_00597d0c
-;   string s_Bip01_Head_00597d16
+;   TerminatedCString s_Bip01_Spine3_00597cdf
+;   TerminatedCString s_Bip01_L_Finger1_00597cec
+;   TerminatedCString s_Bip01_R_Finger1_00597cfc
+;   TerminatedCString s_Bip01jaw2_00597d0c
+;   TerminatedCString s_Bip01_Head_00597d16
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0

@@ -13,13 +13,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0057c956
-;   string s_models_0057c959
-;   string s_..\\core\\dmodel.cpp_0057c960
-;   string s_Can't_open_keyframed_model_%s_0057c973
+;   TerminatedCString s_models_0057c959
+;   TerminatedCString s_core_dmodel_cpp_0057c960
+;   TerminatedCString s_Can_t_open_keyframed_mod_0057c973
 ;   TerminatedCString s_rt_0057c991
-;   string s_models_0057c994
-;   string s_..\\core\\dmodel.cpp_0057c99b
-;   string s_Can't_open_keyframed_model_%s_0057c9ae
+;   TerminatedCString s_models_0057c994
+;   TerminatedCString s_core_dmodel_cpp_0057c99b
+;   TerminatedCString s_Can_t_open_keyframed_mod_0057c9ae
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

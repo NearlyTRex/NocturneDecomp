@@ -14,16 +14,16 @@
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 at 004d870b
 ;
 ; Referenced Globals:
-;   string s_world_0058e265
+;   TerminatedCString s_world_0058e265
 ;   TerminatedCString s_txt_0058e26b
 ;   undefined4 s_txt_0058e26b+1
 ;   undefined4 s_txt_0058e26b+2
 ;   undefined4 s_txt_0058e26b+3
 ;   TerminatedCString s_rt_0058e270
-;   string s_world_0058e273
-;   string s_Probable_non-text_file_%s_detect_0058e279
-;   string s_..\\core\\script.cpp_0058e2be
-;   string s_%s_failed_syntax_check_on_line_%_0058e2d1
+;   TerminatedCString s_world_0058e273
+;   TerminatedCString s_Probable_non_text_file_s_0058e279
+;   TerminatedCString s_core_script_cpp_0058e2be
+;   TerminatedCString s_s_failed_syntax_check_on_0058e2d1
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; Referenced Globals:
-;   string s_45-dry-!.wav_0058540a
-;   string s_45.wav_00585417
-;   string s_gatbullet.kfm_0058541e
+;   TerminatedCString s_s_45_dry_wav_0058540a
+;   TerminatedCString s_s_45_wav_00585417
+;   TerminatedCString s_gatbullet_kfm_0058541e
 ;   double DOUBLE_0058542d = 1.5
 ;   double DOUBLE_00585435 = 1.57491875110704E-314
 ;   double DOUBLE_0058543d = 10

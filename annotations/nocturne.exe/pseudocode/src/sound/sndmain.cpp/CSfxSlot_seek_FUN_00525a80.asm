@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593236
-;   string s_SfxSlot::seek_-_no_sample?!_0059324b
+;   TerminatedCString s_SfxSlot_seek_no_sample_0059324b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

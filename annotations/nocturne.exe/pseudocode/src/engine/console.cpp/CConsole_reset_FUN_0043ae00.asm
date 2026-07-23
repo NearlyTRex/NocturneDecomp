@@ -9,7 +9,7 @@
 ;   engine_console.cpp_CConsole_ctor_FUN_0043abe0 at 0043ac2c
 ;
 ; Referenced Globals:
-;   string s_console.txt_005ad358
+;   TerminatedCString s_console_txt_005ad358
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

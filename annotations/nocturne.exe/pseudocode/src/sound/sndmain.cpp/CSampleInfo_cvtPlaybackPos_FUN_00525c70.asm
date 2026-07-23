@@ -13,14 +13,14 @@
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d60
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593267
-;   string s_SampleInfo::cvtPlaybackPos_-_can_0059327c
-;   string s_..\\sound\\sndmain.cpp_005932dc
-;   string s_SampleInfo::cvtPlaybackPos_-_Inv_005932f1
-;   string s_..\\sound\\sndmain.cpp_0059332c
-;   string s_SampleInfo::cvtPlaybackPos_-_can_00593341
-;   string s_..\\sound\\sndmain.cpp_005933a1
-;   string s_SampleInfo::cvtPlaybackPos_-_Inv_005933b6
+;   TerminatedCString s_sound_sndmain_cpp_00593267
+;   TerminatedCString s_SampleInfo_cvtPlaybackPo_0059327c
+;   TerminatedCString s_sound_sndmain_cpp_005932dc
+;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005932f1
+;   TerminatedCString s_sound_sndmain_cpp_0059332c
+;   TerminatedCString s_SampleInfo_cvtPlaybackPo_00593341
+;   TerminatedCString s_sound_sndmain_cpp_005933a1
+;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005933b6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

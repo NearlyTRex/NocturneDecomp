@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00589d44
-;   string s_..\\core\\mission.cpp_00589d49
-;   string s_CDemonMission::buildActiveSetAct_00589d5d
+;   TerminatedCString s_core_mission_cpp_00589d49
+;   TerminatedCString s_CDemonMission_buildActiv_00589d5d
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800

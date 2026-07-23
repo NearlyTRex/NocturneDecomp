@@ -8,8 +8,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00 at 0051de03
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591b08
-;   string s_CDeformableModelInstance::allocP_00591b1d
+;   TerminatedCString s_core_skeleton_cpp_00591b08
+;   TerminatedCString s_CDeformableModelInstance_00591b1d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

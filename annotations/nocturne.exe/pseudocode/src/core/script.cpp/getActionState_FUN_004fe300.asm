@@ -9,11 +9,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_walk_0058e16d
-;   string s_backup_0058e172
+;   TerminatedCString s_backup_0058e172
 ;   TerminatedCString s_run_0058e179
 ;   TerminatedCString s_fire_0058e17d
-;   string s_useItem_0058e182
-;   string s_light_0058e18a
+;   TerminatedCString s_useItem_0058e182
+;   TerminatedCString s_light_0058e18a
 ;   TerminatedCString s_draw_0058e190
 ;   TerminatedCString s_jump_0058e195
 ;

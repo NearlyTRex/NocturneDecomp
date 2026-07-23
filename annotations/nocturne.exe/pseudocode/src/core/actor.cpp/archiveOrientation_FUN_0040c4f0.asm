@@ -15,9 +15,9 @@
 ;   core_turret.cpp_CTurret_archive_FUN_0054a000 at 0054a01a
 ;
 ; Referenced Globals:
-;   string s_%f,%f,%f_00577c18
-;   string s_%s%g,%g,%g_00577c21
-;   string s_Euler_PBH_orientation_005acc20
+;   TerminatedCString s_f_f_f_00577c18
+;   TerminatedCString s_s_g_g_g_00577c21
+;   TerminatedCString s_Euler_PBH_orientation_005acc20
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

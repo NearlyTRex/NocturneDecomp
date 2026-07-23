@@ -24,20 +24,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0057ca34
-;   string s_..\\core\\dmodel.cpp_0057ca38
-;   string s_KFM_file_is_invalid_version_%d_0057ca4b
-;   string s_..\\core\\dmodel.cpp_0057ca6a
-;   string s_KFM_file_is_version_%d,_this_.ex_0057ca7d
-;   string s_%d,%d,%d,%d,%d_0057cac0
+;   TerminatedCString s_core_dmodel_cpp_0057ca38
+;   TerminatedCString s_KFM_file_is_invalid_vers_0057ca4b
+;   TerminatedCString s_core_dmodel_cpp_0057ca6a
+;   TerminatedCString s_KFM_file_is_version_d_th_0057ca7d
+;   TerminatedCString s_d_d_d_d_d_0057cac0
 ;   TerminatedCString s_d_0057cad0
 ;   TerminatedCString s_d_0057cad4
 ;   TerminatedCString s_d_0057cad8
 ;   TerminatedCString s_d_0057cadc
-;   string s_%d,%d,%d_0057cae0
-;   string s_%d,%d_0057caea
-;   string s_,_%d,%d,%d_0057caf0
+;   TerminatedCString s_d_d_d_0057cae0
+;   TerminatedCString s_d_d_0057caea
+;   TerminatedCString s_d_d_d_0057caf0
 ;   TerminatedCString s_anon_0057cafb
-;   string s_..\\core\\dmodel.cpp_0057cafd
+;   TerminatedCString s_core_dmodel_cpp_0057cafd
 ;   ... and 8 more
 ;
 ; Called Functions:

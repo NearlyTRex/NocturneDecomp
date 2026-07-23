@@ -8,10 +8,10 @@
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0 at 004df5ff
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058aaeb
-;   string s_CMorphModel::addPart_-_too_many_p_0058aafd
-;   string s_..\\core\\morph.cpp_0058ab24
-;   string s_CMorphModel::setup_-_out_of_memo_0058ab36
+;   TerminatedCString s_core_morph_cpp_0058aaeb
+;   TerminatedCString s_CMorphModel_addPart_too_0058aafd
+;   TerminatedCString s_core_morph_cpp_0058ab24
+;   TerminatedCString s_CMorphModel_setup_out_of_0058ab36
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

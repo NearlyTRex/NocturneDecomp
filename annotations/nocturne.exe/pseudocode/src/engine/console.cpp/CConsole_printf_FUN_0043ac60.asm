@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_at_0057b1c4
 ;   TerminatedCString s_s_0057b1c7
-;   string s_console.txt_005ad358
+;   TerminatedCString s_console_txt_005ad358
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380

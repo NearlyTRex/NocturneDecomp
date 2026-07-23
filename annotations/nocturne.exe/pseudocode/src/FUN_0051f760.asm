@@ -8,7 +8,7 @@
 ;   FUN_0049cc10 at 0049d37c
 ;
 ; Referenced Globals:
-;   string s_%d_skeletons,_%d_bytes,_%d_model_00591e81
+;   TerminatedCString s_d_skeletons_d_bytes_d_mo_00591e81
 ;   undefined4 DAT_0268cef0
 ;   undefined4 DAT_02737ef4
 ;

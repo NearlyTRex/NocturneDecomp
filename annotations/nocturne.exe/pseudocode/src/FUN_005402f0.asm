@@ -9,19 +9,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Forearm_00595ebf
-;   string s_Bip01_L_Forearm_00595ecf
-;   string s_Bip01_L_Forearm_00595edf
-;   string s_Bip01_L_Forearm_00595eef
-;   string s_Bip01_L_Forearm_00595eff
-;   string s_Bip01_L_Forearm_00595f0f
-;   string s_Bip01_R_Forearm_00595f1f
-;   string s_Bip01_R_Forearm_00595f2f
-;   string s_Bip01_R_Forearm_00595f3f
-;   string s_Bip01_R_Forearm_00595f4f
-;   string s_Bip01_R_Forearm_00595f5f
-;   string s_Bip01_R_Forearm_00595f6f
-;   string s_Bip01_L_Forearm_00595f7f
-;   string s_Bip01_L_Forearm_00595f8f
+;   TerminatedCString s_Bip01_L_Forearm_00595ecf
+;   TerminatedCString s_Bip01_L_Forearm_00595edf
+;   TerminatedCString s_Bip01_L_Forearm_00595eef
+;   TerminatedCString s_Bip01_L_Forearm_00595eff
+;   TerminatedCString s_Bip01_L_Forearm_00595f0f
+;   TerminatedCString s_Bip01_R_Forearm_00595f1f
+;   TerminatedCString s_Bip01_R_Forearm_00595f2f
+;   TerminatedCString s_Bip01_R_Forearm_00595f3f
+;   TerminatedCString s_Bip01_R_Forearm_00595f4f
+;   TerminatedCString s_Bip01_R_Forearm_00595f5f
+;   TerminatedCString s_Bip01_R_Forearm_00595f6f
+;   TerminatedCString s_Bip01_L_Forearm_00595f7f
+;   TerminatedCString s_Bip01_L_Forearm_00595f8f
 ;   double DOUBLE_00595f9f = 0.700000000000000
 ;   ... and 5 more
 ;

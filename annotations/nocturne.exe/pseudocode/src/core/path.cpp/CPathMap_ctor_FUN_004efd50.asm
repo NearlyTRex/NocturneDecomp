@@ -9,8 +9,8 @@
 ;   FUN_004ee950 at 004ee964
 ;
 ; Referenced Globals:
-;   string s_..\\core\\path.cpp_0058cc99
-;   string s_Too_many_pathmaps!_0058ccaa
+;   TerminatedCString s_core_path_cpp_0058cc99
+;   TerminatedCString s_Too_many_pathmaps_0058ccaa
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01e312f8

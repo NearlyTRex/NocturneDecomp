@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00590cc7
-;   string s_..\\core\\setutil.cpp_00590ccb
-;   string s_Out_of_memory_for_pvsList_-_%d_00590cdf
+;   TerminatedCString s_core_setutil_cpp_00590ccb
+;   TerminatedCString s_Out_of_memory_for_pvsLis_00590cdf
 ;   TerminatedCString s_d_00590cfe
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

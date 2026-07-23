@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_005900a1
-;   string s_guardDistance_005900ab
-;   string s_motion_state_005900b9
+;   TerminatedCString s_modelName_005900a1
+;   TerminatedCString s_guardDistance_005900ab
+;   TerminatedCString s_motion_state_005900b9
 ;   undefined4 DAT_005be310
 ;
 ; Called Functions:

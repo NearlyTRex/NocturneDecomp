@@ -10,14 +10,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_00587411
-;   string s_CShotgun_00587416
-;   string s_CCrossbow_0058741f
-;   string s_CTommyGun_00587429
-;   string s_CElephantGun_00587433
-;   string s_CFlameThrower_00587440
-;   string s_CLightGun_0058744e
-;   string s_CMelee_00587458
-;   string s_CDynamite_0058745f
+;   TerminatedCString s_CShotgun_00587416
+;   TerminatedCString s_CCrossbow_0058741f
+;   TerminatedCString s_CTommyGun_00587429
+;   TerminatedCString s_CElephantGun_00587433
+;   TerminatedCString s_CFlameThrower_00587440
+;   TerminatedCString s_CLightGun_0058744e
+;   TerminatedCString s_CMelee_00587458
+;   TerminatedCString s_CDynamite_0058745f
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0

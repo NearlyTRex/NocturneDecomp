@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   string s_nextWayPoint_005977af
-;   string s_adjCount_005977bc
+;   TerminatedCString s_nextWayPoint_005977af
+;   TerminatedCString s_adjCount_005977bc
 ;   undefined4 DAT_005c1578
 ;
 ; Called Functions:

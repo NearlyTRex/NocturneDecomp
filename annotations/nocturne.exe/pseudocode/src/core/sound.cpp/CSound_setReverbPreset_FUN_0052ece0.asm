@@ -8,8 +8,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508d2d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\sound.cpp_00594c03
-;   string s_CSound::setReverbPreset_-_invali_00594c15
+;   TerminatedCString s_core_sound_cpp_00594c03
+;   TerminatedCString s_CSound_setReverbPreset_i_00594c15
 ;   undefined4 DAT_005bed70
 ;   undefined4 DAT_005bed74
 ;   undefined4 DAT_005bed78

@@ -9,10 +9,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0058b3b5
-;   string s_%d,%f_0058b3b7
-;   string s_\"%[^\"]\"_,_%f_0058b3bd
-;   string s_..\\core\\motion.cpp_0058b3ca
-;   string s_CMotionController::load_-_error_p_0058b3dd
+;   TerminatedCString s_d_f_0058b3b7
+;   TerminatedCString s_f_0058b3bd
+;   TerminatedCString s_core_motion_cpp_0058b3ca
+;   TerminatedCString s_CMotionController_load_e_0058b3dd
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

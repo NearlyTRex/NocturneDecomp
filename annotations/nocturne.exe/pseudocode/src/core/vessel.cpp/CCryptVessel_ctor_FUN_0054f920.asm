@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_vsslbase.kfm_00597448
+;   TerminatedCString s_vsslbase_kfm_00597448
 ;   TerminatedCString s_none_00597455
 ;   undefined4 s_one_00597455+1
 ;   undefined4 s_ne_00597455+2
@@ -14,7 +14,7 @@
 ;   undefined4 s_one_0059745a+1
 ;   undefined4 s_ne_0059745a+2
 ;   undefined4 s_e_0059745a+3
-;   string s_vsslorb.kfm_0059745f
+;   TerminatedCString s_vsslorb_kfm_0059745f
 ;   undefined1* PTR_FUN_005a3d84 = 0054fa80
 ;
 ; Called Functions:

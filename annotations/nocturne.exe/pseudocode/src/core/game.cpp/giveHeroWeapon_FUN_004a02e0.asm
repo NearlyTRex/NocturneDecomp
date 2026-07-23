@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_00582b52
-;   string s_giveHeroWeapon_-_This_is_not_a_w_00582b63
+;   TerminatedCString s_giveHeroWeapon_This_is_n_00582b63
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc4800

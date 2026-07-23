@@ -27,6 +27,65 @@
 // CONSTANTS
 // =============================================================================
 
+// TerminatedCString constants
+static TerminatedCString s_s_3D_vector_005acc10 = "3D vector";
+static TerminatedCString s_Euler_PBH_orientation_005acc20 = "Euler PBH orientation";
+static TerminatedCString s_s_4D_location_005acc38 = "4D location";
+static TerminatedCString s_Quaternion_005acc48 = "Quaternion";
+static TerminatedCString s_String_005acc58 = "String";
+static TerminatedCString s_Floating_point_value_005acc60 = "Floating point value";
+static TerminatedCString s_Integer_value_005acc78 = "Integer value";
+static TerminatedCString s_SDamageInfo_005ace34 = "$SDamageInfo$$";
+static TerminatedCString s_CBoundingBox3D_005ace54 = "$CBoundingBox3D$$";
+static TerminatedCString s_CDemonActor_005ace74 = "$CDemonActor$$";
+static TerminatedCString s_CBackgroundActor_005acf28 = "$CBackgroundActor$$";
+static TerminatedCString s_BLUEGLOW_RAW_005acf48 = "BLUEGLOW.RAW";
+static TerminatedCString s_CBaronWeapon_005acf70 = "$CBaronWeapon$$";
+static TerminatedCString s_CBarrier_005acf88 = "$CBarrier$$";
+static TerminatedCString s_CBatCreature_005acfac = "$CBatCreature$$";
+static TerminatedCString s_CBattery_005acfd8 = "$CBattery$$";
+static TerminatedCString s_SBodyPartFire_005ad028 = "$SBodyPartFire$$";
+static TerminatedCString s_SBodyPartModel_005ad040 = "$SBodyPartModel$$";
+static TerminatedCString s_CBoxActor_005ad0a8 = "$CBoxActor$$";
+static TerminatedCString s_CLightActor_005ad0bc = "$CLightActor$$";
+static TerminatedCString s_CDemonFilter_005ad0d0 = "$CDemonFilter$$";
+static TerminatedCString s_CKeyFramedModelInstance_005ad10c = "$CKeyFramedModelInstance$$";
+static TerminatedCString s_BOLT1_RAW_005ad148 = "BOLT1.RAW";
+static TerminatedCString s_BOLT2_RAW_005ad160 = "BOLT2.RAW";
+static TerminatedCString s_noCollision_005ad1f0 = "noCollision";
+static TerminatedCString s_CHAR2_RAW_005ad204 = "CHAR2.RAW";
+static TerminatedCString s_CCharacter_005ad224 = "$CCharacter$$";
+static TerminatedCString s_SChainVertex_005ad268 = "$SChainVertex$$";
+static TerminatedCString s_SClothBone_005ad28c = "$SClothBone$$";
+static TerminatedCString s_SClothVertex_005ad29e = "$SClothVertex$$";
+static TerminatedCString s_CLZWCompress_005ad2b2 = "$CLZWCompress$$";
+static TerminatedCString s_CLZWDecompress_005ad2c6 = "$CLZWDecompress$$";
+static TerminatedCString s_ofstream_005ad2dc = "$ofstream$$";
+static TerminatedCString s_istrstream_005ad2fc = "$istrstream$$";
+static TerminatedCString s_ostrstream_005ad30e = "$ostrstream$$";
+static TerminatedCString s_CColonel_005ad334 = "$CColonel$$";
+static TerminatedCString s_console_txt_005ad358 = "console.txt";
+static TerminatedCString s_CConsole_005ad374 = "$CConsole$$";
+static TerminatedCString s_CPlatform_005ad388 = "$CPlatform$$";
+static TerminatedCString s_CConveyor_005ad39c = "$CConveyor$$";
+static TerminatedCString s_CCurtain_005ad3f8 = "$CCurtain$$";
+static TerminatedCString s_SCurtainVertex_005ad408 = "$SCurtainVertex$$";
+static TerminatedCString s_SCollisionInfo_005ad420 = "$SCollisionInfo$$";
+static TerminatedCString s_BACKGND_RAW_005ad4a4 = "BACKGND.RAW";
+static TerminatedCString s_CActorDestination_005ad4c4 = "$CActorDestination$$";
+static TerminatedCString s_CFilterFX_005ad558 = "$CFilterFX$$";
+static TerminatedCString s_CFilterCache_005ad56c = "$CFilterCache$$";
+static TerminatedCString s_headlite_raw_005ad584 = "headlite.raw";
+static TerminatedCString s_LITEFUZZ_RAW_005ae460 = "LITEFUZZ.RAW";
+static TerminatedCString s_HEADLITE_RAW_005ae478 = "HEADLITE.RAW";
+static TerminatedCString s_SUNCRAM_RAW_005ae520 = "SUNCRAM.RAW";
+static TerminatedCString s_SUNCRAM_RAW_005ae5e0 = "SUNCRAM.RAW";
+static TerminatedCString s_SUNCRAM_RAW_005ae610 = "SUNCRAM.RAW";
+static TerminatedCString s_CKeyFramedModel_005ae64c = "$CKeyFramedModel$$";
+static TerminatedCString s_CDemonTriangle_005ae663 = "$CDemonTriangle$$";
+static TerminatedCString s_CFileFinder_005ae6a5 = "$CFileFinder$$";
+static TerminatedCString s_CDraculaBride_005ae6d0 = "$CDraculaBride$$";
+
 // float constants
 static float FLOAT_005a003c = 0.5235988f;
 static float FLOAT_005a0040 = 2.0f;
@@ -95,17 +154,6 @@ static float FLOAT_005a42f4 = 100.0f;
 static float FLOAT_005a42f8 = 10.0f;
 static float FLOAT_005a42fc = 0.2f;
 static float FLOAT_005a4300 = 0.2f;
-
-// string constants
-static string s_3D_vector_005acc10 = "3D vector";
-static string s_Euler_PBH_orientation_005acc20 = "Euler PBH orientation";
-static string s_4D_location_005acc38 = "4D location";
-static string s_Quaternion_005acc48 = "Quaternion";
-static string s_String_005acc58 = "String";
-static string s_Floating_point_value_005acc60 = "Floating point value";
-static string s_Integer_value_005acc78 = "Integer value";
-static string s_noCollision_005ad1f0 = "noCollision";
-static string s_console_txt_005ad358 = "console.txt";
 
 // undefined1* constants
 static undefined1* DAT_005A0058 = (undefined1*)0x004C9CF0; // FUN_004c9cf0

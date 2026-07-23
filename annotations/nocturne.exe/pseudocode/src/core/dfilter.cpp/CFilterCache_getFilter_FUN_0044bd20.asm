@@ -10,10 +10,10 @@
 ;   core_setutil.cpp_C3DSLight_create_FUN_005151f0 at 005152d1
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dfilter.cpp_0057be5d
-;   string s_CFilterCache::getFilter_-_Too_ma_0057be71
-;   string s_..\\core\\dfilter.cpp_0057be9c
-;   string s_CFilterCache::getFilter_-_Out_of_0057beb0
+;   TerminatedCString s_core_dfilter_cpp_0057be5d
+;   TerminatedCString s_CFilterCache_getFilter_T_0057be71
+;   TerminatedCString s_core_dfilter_cpp_0057be9c
+;   TerminatedCString s_CFilterCache_getFilter_O_0057beb0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

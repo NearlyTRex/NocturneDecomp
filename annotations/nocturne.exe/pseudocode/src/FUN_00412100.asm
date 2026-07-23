@@ -8,7 +8,7 @@
 ;   FUN_004120d0 at 004120e3
 ;
 ; Referenced Globals:
-;   string s_batcreat.dfm_0057883c
+;   TerminatedCString s_batcreat_dfm_0057883c
 ;   float FLOAT_00599fb0 = 50
 ;   float FLOAT_00599fb4 = 100
 ;   undefined1* PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4 = 00412160

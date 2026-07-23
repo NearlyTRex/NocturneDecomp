@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_count_005816d6
-;   string s_followActor_005816dc
-;   string s_gatherCount_005816e8
-;   string s_gatherTime_005816f4
-;   string s_boxSize_005816ff
+;   TerminatedCString s_count_005816d6
+;   TerminatedCString s_followActor_005816dc
+;   TerminatedCString s_gatherCount_005816e8
+;   TerminatedCString s_gatherTime_005816f4
+;   TerminatedCString s_boxSize_005816ff
 ;   undefined4 DAT_005b9210
 ;
 ; Called Functions:

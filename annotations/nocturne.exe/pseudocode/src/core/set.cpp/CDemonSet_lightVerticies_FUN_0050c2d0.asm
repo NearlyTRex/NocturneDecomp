@@ -77,12 +77,12 @@
 ;   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00518470 at 0051849d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\set.cpp_005906b9
-;   string s_CDemonSet::lightVerticies_-_trie_005906c9
-;   string s_..\\core\\set.cpp_0059071e
-;   string s_Too_many_normals_on_this_packed_t_0059072e
-;   string s_..\\core\\set.cpp_00590757
-;   string s_Need_more_normals_for_packed_mod_00590767
+;   TerminatedCString s_core_set_cpp_005906b9
+;   TerminatedCString s_CDemonSet_lightVerticies_005906c9
+;   TerminatedCString s_core_set_cpp_0059071e
+;   TerminatedCString s_Too_many_normals_on_this_0059072e
+;   TerminatedCString s_core_set_cpp_00590757
+;   TerminatedCString s_Need_more_normals_for_pa_00590767
 ;   double DOUBLE_00590792 = 65535
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005c5010

@@ -72,8 +72,7 @@ void FUN_004a4b50(int param_1,int param_2)
                           ("'Dark Reign of the Vampire King'");
   local_40[1] = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("'Tomb of the Underground God'");
-  local_40[2] = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Windy City Massacre'")
-  ;
+  local_40[2] = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Windy City Massacre'");
   local_40[3] = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("'The House on the Edge of Hell'");
   iVar4 = -1;
@@ -106,8 +105,7 @@ void FUN_004a4b50(int param_1,int param_2)
                         ("Volume 4 - 'The House on the Edge of Hell'");
       shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
       if (local_18 != 0) {
-        uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Volume 5 - 'Epilogue'")
-        ;
+        uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Volume 5 - 'Epilogue'");
         shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
       }
       if (local_14 == 0) {
@@ -155,8 +153,8 @@ LAB_004a50dc:
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 1 - 'Your New Partner'");
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
-          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                            ("Chapter 2 - 'Sentinels'");
+          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Chapter 2 - 'Sentinels'")
+          ;
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 3 - 'Werewolf Forest'");
@@ -164,8 +162,7 @@ LAB_004a50dc:
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 4 - 'Castle Gaustadt'");
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
-          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                            ("Chapter 5 - 'Dungeon'");
+          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Chapter 5 - 'Dungeon'");
           iVar2 = 0;
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           while (iVar2 < local_2b4[0]) {
@@ -204,12 +201,11 @@ LAB_004a50dc:
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 5 - 'Temple of the God'");
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
-          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                            ("Chapter 6 - 'Epilogue'");
+          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Chapter 6 - 'Epilogue'");
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           if (local_14 == 0) {
-            uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("Chapter X - 'Failure'");
+            uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Chapter X - 'Failure'")
+            ;
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           }
           iVar7 = 0x34;
@@ -287,8 +283,8 @@ LAB_004a50dc:
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 1 - 'Headquarters'");
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
-          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                            ("Chapter 2 - 'Graveyard'");
+          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Chapter 2 - 'Graveyard'")
+          ;
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,uVar6);
           uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                             ("Chapter 3 - 'House of Hell'");
@@ -330,8 +326,8 @@ LAB_004a50dc:
             }
             iVar7 = iVar7 + 4;
           }
-          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                            ("'Epilogue'",0xffffffff);
+          uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Epilogue'",0xffffffff)
+          ;
           iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
                             (local_2b4,uVar6);
         }

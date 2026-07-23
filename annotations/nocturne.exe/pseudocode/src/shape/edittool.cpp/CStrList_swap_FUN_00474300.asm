@@ -8,8 +8,8 @@
 ;   shape_edittool.cpp_CPickList_swap_FUN_00476200 at 0047621f
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ed51
-;   string s_CStrList::swap_-_invalid_indices_0057ed67
+;   TerminatedCString s_shape_edittool_cpp_0057ed51
+;   TerminatedCString s_CStrList_swap_invalid_in_0057ed67
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -5,17 +5,17 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_0057de01
+;   TerminatedCString s_modelName_0057de01
 ;   TerminatedCString s_type_0057de0b
-;   string s_autoDrop_0057de10
-;   string s_homePos_0057de19
+;   TerminatedCString s_autoDrop_0057de10
+;   TerminatedCString s_homePos_0057de19
 ;   TerminatedCString s_vel_0057de21
-;   string s_minAutoDripTime_0057de25
-;   string s_maxAutoDripTime_0057de35
-;   string s_dripRadius_0057de45
-;   string s_damage_0057de50
-;   string s_hitSound_0057de57
-;   string s_noRockFlag_0057de60
+;   TerminatedCString s_minAutoDripTime_0057de25
+;   TerminatedCString s_maxAutoDripTime_0057de35
+;   TerminatedCString s_dripRadius_0057de45
+;   TerminatedCString s_damage_0057de50
+;   TerminatedCString s_hitSound_0057de57
+;   TerminatedCString s_noRockFlag_0057de60
 ;   undefined4 DAT_005b064c
 ;
 ; Called Functions:

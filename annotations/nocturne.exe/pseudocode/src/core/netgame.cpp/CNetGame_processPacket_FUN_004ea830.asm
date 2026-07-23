@@ -43,14 +43,14 @@
 ; Referenced Globals:
 ;   undefined4 caseD_0
 ;   void* switchdataD_004ea7e4 = 004ea5dc
-;   string s_..\\core\\netgame.cpp_0058ba54
-;   string s_allocSimFrame_-_sim_history_list_0058ba68
-;   string s_You_have_been_disconnected_from_t_0058c030
+;   TerminatedCString s_core_netgame_cpp_0058ba54
+;   TerminatedCString s_allocSimFrame_sim_histor_0058ba68
+;   TerminatedCString s_You_have_been_disconnect_0058c030
 ;   char CHAR_00h_0058c059 = \x00
-;   string s_..\\core\\netgame.cpp_0058c05a
-;   string s_Player_list_mismatch_processing_S_0058c06e
-;   string s_..\\core\\netgame.cpp_0058c0a6
-;   string s_Player_list_mismatch!_0058c0ba
+;   TerminatedCString s_core_netgame_cpp_0058c05a
+;   TerminatedCString s_Player_list_mismatch_pro_0058c06e
+;   TerminatedCString s_core_netgame_cpp_0058c0a6
+;   TerminatedCString s_Player_list_mismatch_0058c0ba
 ;   double DOUBLE_0058c0d2 = 0.0000152587890625
 ;   double DOUBLE_0058c0da = -30
 ;   double DOUBLE_0058c0e2 = 30

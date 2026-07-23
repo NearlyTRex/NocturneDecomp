@@ -71,7 +71,7 @@
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de2d
 ;
 ; Referenced Globals:
-;   string s_castle_005949c6
+;   TerminatedCString s_castle_005949c6
 ;   double DOUBLE_005949ce = 0.000100000000000000
 ;   double DOUBLE_005949d6 = 0.00390625
 ;   double DOUBLE_005949de = 0.0200000000000000

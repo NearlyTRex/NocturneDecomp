@@ -51,8 +51,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_water_cpp_0059753f
-;   string s_Too_many_visible_water_tiles!_00597551
-;   string s_Vis_water_tiles_:_%d,_SqFt_:_%f_0059756f
+;   TerminatedCString s_Too_many_visible_water_t_00597551
+;   TerminatedCString s_Vis_water_tiles_d_SqFt_f_0059756f
 ;   double DOUBLE_0059758f = 0.5
 ;   double DOUBLE_00597597 = 1.10000000000000
 ;   undefined4 DAT_005a3e8c

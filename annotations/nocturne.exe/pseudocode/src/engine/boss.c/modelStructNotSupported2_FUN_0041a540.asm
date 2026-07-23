@@ -8,8 +8,8 @@
 ;   engine_model.c_loadModelFile_FUN_004dcd10 at 004dcecf
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\boss.c_005795a1
-;   string s_modelStruct_not_supported_005795b2
+;   TerminatedCString s_engine_boss_c_005795a1
+;   TerminatedCString s_modelStruct_not_supporte_005795b2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -13,8 +13,8 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054c6e2
 ;
 ; Referenced Globals:
-;   string s_wing?.wav_@%f_00597135
-;   string s_wing?.wav_@1.5_*1.2_00597143
+;   TerminatedCString s_wing_wav_f_00597135
+;   TerminatedCString s_wing_wav_1_5_1_2_00597143
 ;   double DOUBLE_0059715d = 2.5
 ;
 ; Called Functions:

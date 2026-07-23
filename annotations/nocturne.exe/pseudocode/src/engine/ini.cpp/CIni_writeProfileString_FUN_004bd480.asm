@@ -15,15 +15,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0058657d
-;   string s_..\\engine\\ini.cpp_00586580
-;   string s_cIni::writeProfileString:_Unable_00586592
+;   TerminatedCString s_engine_ini_cpp_00586580
+;   TerminatedCString s_cIni_writeProfileString_00586592
 ;   TerminatedCString s_wt_005865c1
-;   string s_..\\engine\\ini.cpp_005865c4
-;   string s_cIni::writeProfileString:_Unable_005865d6
-;   string s_[%s]_00586606
-;   string s_%s=%s_0058660c
-;   string s_%s=%s_00586613
-;   string s_%s=%s_0058661a
+;   TerminatedCString s_engine_ini_cpp_005865c4
+;   TerminatedCString s_cIni_writeProfileString_005865d6
+;   TerminatedCString s_s_00586606
+;   TerminatedCString s_s_s_0058660c
+;   TerminatedCString s_s_s_00586613
+;   TerminatedCString s_s_s_0058661a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

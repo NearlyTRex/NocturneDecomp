@@ -52,7 +52,6 @@ void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(int *param_1,int p
   core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(param_1);
   _DAT_01cc4800 = "..\\core\\skeleton.cpp";
   _DAT_01cc4804 = 0x2ae;
-  FUN_004c8440("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",param_1 + 0xb,param_1 + 0x15,
-               param_1 + 0x1a);
+  FUN_004c8440("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",param_1 + 0xb,param_1 + 0x15,param_1 + 0x1a);
   return;
 }

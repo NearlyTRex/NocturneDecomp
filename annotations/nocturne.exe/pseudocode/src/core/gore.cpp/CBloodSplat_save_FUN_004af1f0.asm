@@ -12,10 +12,10 @@
 ;   core_gore.cpp_CGore_save_FUN_004b08d0 at 004b0958
 ;
 ; Referenced Globals:
-;   string s_%f,%f,%f_005850f4
-;   string s_%d,%d,%d_005850fe
-;   string s_%f,%f,%f_00585108
-;   string s_%d,%d,%d,%d,%d,%d,%d_00585112
+;   TerminatedCString s_f_f_f_005850f4
+;   TerminatedCString s_d_d_d_005850fe
+;   TerminatedCString s_f_f_f_00585108
+;   TerminatedCString s_d_d_d_d_d_d_d_00585112
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005644f0

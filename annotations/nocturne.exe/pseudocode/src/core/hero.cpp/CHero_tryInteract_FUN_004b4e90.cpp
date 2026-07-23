@@ -33,10 +33,10 @@ uint __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(int param_1)
   pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_64);
   fStack_34 = *pfVar2 + pfVar2[3];
   fStack_30 = pfVar2[1] + pfVar2[4];
-  fStack_28 = fStack_34 * ram0x00585827;
+  fStack_28 = fStack_34 * _DAT_00585827;
   fStack_2c = pfVar2[2] + pfVar2[5];
-  fStack_3c = fStack_30 * ram0x00585827;
-  fStack_20 = fStack_2c * ram0x00585827;
+  fStack_3c = fStack_30 * _DAT_00585827;
+  fStack_20 = fStack_2c * _DAT_00585827;
   uStack_40 = 0;
   uStack_38 = 0x3fc00000;
   iVar3 = 0;

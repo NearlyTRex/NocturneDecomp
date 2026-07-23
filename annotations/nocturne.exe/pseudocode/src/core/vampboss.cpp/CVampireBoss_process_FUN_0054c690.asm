@@ -68,12 +68,12 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0054c654 = 0054d5ef
 ;   undefined1* switchdataD_0054c664 = 0054d239
-;   string s_..\\core\\vampboss.cpp_00597073
-;   string s_CVampireBoss::process_-_Need_4_w_00597088
-;   string s_morphCompleted_005970b1
-;   string s_backToHuman_005970c0
-;   string s_morphToBat_005970cc
-;   string s_flyout_005970d7
+;   TerminatedCString s_core_vampboss_cpp_00597073
+;   TerminatedCString s_CVampireBoss_process_Nee_00597088
+;   TerminatedCString s_morphCompleted_005970b1
+;   TerminatedCString s_backToHuman_005970c0
+;   TerminatedCString s_morphToBat_005970cc
+;   TerminatedCString s_flyout_005970d7
 ;   double DOUBLE_005970e5 = 25
 ;   double DOUBLE_005970ed = 5
 ;   double DOUBLE_005970f5 = 10

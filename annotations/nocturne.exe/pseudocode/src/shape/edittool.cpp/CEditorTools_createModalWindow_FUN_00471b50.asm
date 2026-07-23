@@ -17,12 +17,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
-;   string s_gEdFont_must_be_set_by_the_appli_0057e510
+;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   TerminatedCString s_shape_edittool_cpp_0057e8e2
-;   string s_Can't_open_another_window!_0057e8f8
+;   TerminatedCString s_Can_t_open_another_windo_0057e8f8
 ;   TerminatedCString s_s_0057e913
-;   string s_..\\shape\\edittool.cpp_0057e917
-;   string s_out_of_memory_to_open_editor_win_0057e92d
+;   TerminatedCString s_shape_edittool_cpp_0057e917
+;   TerminatedCString s_out_of_memory_to_open_ed_0057e92d
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

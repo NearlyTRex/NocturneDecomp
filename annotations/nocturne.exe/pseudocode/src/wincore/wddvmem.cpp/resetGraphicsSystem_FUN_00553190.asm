@@ -8,11 +8,11 @@
 ;   engine_2d.c_resetGraphicsSystem_FUN_00403760 at 00403760
 ;
 ; Referenced Globals:
-;   string s_You_have_hit_a_kludge_in_the_pro_0059788f
-;   string s_You_are_setting_acceleration_mod_005978b5
-;   string s_the_appropriate_bit_depth_first._005978e7
-;   string s_I_am_forcing_the_screen_to_switc_00597908
-;   string s_Press_any_key_to_continue._00597939
+;   TerminatedCString s_You_have_hit_a_kludge_in_0059788f
+;   TerminatedCString s_You_are_setting_accelera_005978b5
+;   TerminatedCString s_the_appropriate_bit_dept_005978e7
+;   TerminatedCString s_I_am_forcing_the_screen_00597908
+;   TerminatedCString s_Press_any_key_to_continu_00597939
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

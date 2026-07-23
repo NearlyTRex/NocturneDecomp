@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bride_launch_wav_0057d836
-;   string s_bride-die?.wav_0057d847
-;   string s_bride-hurt?.wav_0057d856
+;   TerminatedCString s_bride_die_wav_0057d847
+;   TerminatedCString s_bride_hurt_wav_0057d856
 ;   double DOUBLE_0057d866 = 2
 ;   undefined4 DAT_005b80f0
 ;

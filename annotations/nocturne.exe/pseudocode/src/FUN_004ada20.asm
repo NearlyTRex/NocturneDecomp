@@ -61,7 +61,7 @@
 ;   undefined4 s_s_7YEARS_RAW_00585048+1
 ;   undefined4 s_s_7YEARS_RAW_00585048+2
 ;   undefined4 s_s_7YEARS_RAW_00585048+3
-;   string s_glass-1.wav@2.0_00585053
+;   TerminatedCString s_glass_1_wav_2_0_00585053
 ;   double DOUBLE_00585068 = 0.5
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005ae704

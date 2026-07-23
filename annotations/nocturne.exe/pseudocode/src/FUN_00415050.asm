@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_beast.dfm_00578d9f
+;   TerminatedCString s_beast_dfm_00578d9f
 ;   undefined4 DAT_0059a408
 ;   undefined4 DAT_0059a40c
 ;   undefined1* PTR_FUN_0059a414 = 004150b0

@@ -15,11 +15,11 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d957c
 ;
 ; Referenced Globals:
-;   string s_moon.kfm_005878ac
-;   string s_load1_005878b5
-;   string s_load2_005878bb
-;   string s_load3_005878c1
-;   string s_load4_005878c7
+;   TerminatedCString s_moon_kfm_005878ac
+;   TerminatedCString s_load1_005878b5
+;   TerminatedCString s_load2_005878bb
+;   TerminatedCString s_load3_005878c1
+;   TerminatedCString s_load4_005878c7
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005baca4
 ;   undefined4 DAT_01b4d738

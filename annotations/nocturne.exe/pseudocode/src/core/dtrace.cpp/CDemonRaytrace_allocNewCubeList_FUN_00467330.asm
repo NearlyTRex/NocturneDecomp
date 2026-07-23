@@ -8,8 +8,8 @@
 ;   FUN_004676c0 at 004677d7
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dtrace.cpp_0057e010
-;   string s_CDemonRaytrace::allocNewCubeList_0057e023
+;   TerminatedCString s_core_dtrace_cpp_0057e010
+;   TerminatedCString s_CDemonRaytrace_allocNewC_0057e023
 ;   undefined4 DAT_0059c8c0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

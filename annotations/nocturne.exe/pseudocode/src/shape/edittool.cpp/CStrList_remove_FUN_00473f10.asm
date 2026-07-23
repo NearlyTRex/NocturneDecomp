@@ -8,8 +8,8 @@
 ;   shape_edittool.cpp_CPickList_remove_FUN_00476100 at 0047611f
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ec7a
-;   string s_CStrList::remove_-_invalid_range_0057ec90
+;   TerminatedCString s_shape_edittool_cpp_0057ec7a
+;   TerminatedCString s_CStrList_remove_invalid_0057ec90
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

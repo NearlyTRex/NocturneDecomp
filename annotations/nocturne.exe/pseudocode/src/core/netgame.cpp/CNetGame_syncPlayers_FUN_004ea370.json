@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 507,
+    "complexity_score": 506,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 126,
     "suspect_count": 35,
     "suspect_types": [
       "param_count_too_few",
@@ -137,7 +137,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 451
+    "total_lines": 450
   },
   "cross_references": [
     {
@@ -227,20 +227,20 @@
     },
     {
       "addr": "0058bd3e",
-      "name": "s_CNetGame::syncPlayers_-_don't_us_0058bd3e",
-      "type": "string",
+      "name": "s_CNetGame_syncPlayers_don_0058bd3e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058bd76",
-      "name": "s_Syncing_stage_%d._0058bd76",
-      "type": "string",
+      "name": "s_Syncing_stage_d_0058bd76",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058bd88",
-      "name": "s_Waiting_on:_0058bd88",
-      "type": "string",
+      "name": "s_Waiting_on_0058bd88",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -251,20 +251,20 @@
     },
     {
       "addr": "0058bdd5",
-      "name": "s_Waiting_on_sync_code_%d_from_ser_0058bdd5",
-      "type": "string",
+      "name": "s_Waiting_on_sync_code_d_f_0058bdd5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058bdfc",
-      "name": "s_..\\core\\netgame.cpp_0058bdfc",
-      "type": "string",
+      "name": "s_core_netgame_cpp_0058bdfc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058be10",
-      "name": "s_CNetGame::syncPlayers_-_invalid_m_0058be10",
-      "type": "string",
+      "name": "s_CNetGame_syncPlayers_inv_0058be10",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -786,12 +786,12 @@
       "line": 113,
       "match": "param_2",
       "severity": "mild",
-      "text": "_sprintf(local_94,\"Waiting on sync code %d from server...\",param_2)",
+      "text": "_sprintf(local_94,\"Waiting on sync code %d from server...\",param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 118,
+      "line": 117,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
+      "line": 117,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",

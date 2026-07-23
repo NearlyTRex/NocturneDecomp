@@ -8,8 +8,8 @@
 ;   FUN_004b48d0 at 004b48fe
 ;
 ; Referenced Globals:
-;   string s_..\\core\\inv.cpp_00587310
-;   string s_CInventory::setupItems_-_we_shou_00587320
+;   TerminatedCString s_core_inv_cpp_00587310
+;   TerminatedCString s_CInventory_setupItems_we_00587320
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

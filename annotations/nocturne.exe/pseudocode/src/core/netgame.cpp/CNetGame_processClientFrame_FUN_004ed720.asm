@@ -13,8 +13,8 @@
 ;   FUN_0049cc10 at 0049cc79
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c6e5
-;   string s_CNetGame::processClientFrame_-_I_0058c6f9
+;   TerminatedCString s_core_netgame_cpp_0058c6e5
+;   TerminatedCString s_CNetGame_processClientFr_0058c6f9
 ;   double DOUBLE_0058c732 = 0.0000152587890625
 ;   double DOUBLE_0058c73a = 30
 ;   double DOUBLE_0058c742 = 0.100000000000000

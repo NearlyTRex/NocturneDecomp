@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_0057bbbb
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bbcd
-;   string s_..\\core\\dcube.cpp_0057bbfb
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bc0d
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bbcd
+;   TerminatedCString s_core_dcube_cpp_0057bbfb
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bc0d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -6,16 +6,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_homePos_00596ee5
-;   string s_modelName_00596eed
-;   string s_speed_00596ef7
-;   string s_maxDistance_00596efd
-;   string s_maxHeight_00596f09
-;   string s_rotSpeed_00596f13
-;   string s_moveSpeed_00596f1c
-;   string s_followOrders_00596f26
-;   string s_state_00596f33
-;   string s_periodicSoundTimerMin_00596f39
-;   string s_periodicSoundTimerMax_00596f4f
+;   TerminatedCString s_modelName_00596eed
+;   TerminatedCString s_speed_00596ef7
+;   TerminatedCString s_maxDistance_00596efd
+;   TerminatedCString s_maxHeight_00596f09
+;   TerminatedCString s_rotSpeed_00596f13
+;   TerminatedCString s_moveSpeed_00596f1c
+;   TerminatedCString s_followOrders_00596f26
+;   TerminatedCString s_state_00596f33
+;   TerminatedCString s_periodicSoundTimerMin_00596f39
+;   TerminatedCString s_periodicSoundTimerMax_00596f4f
 ;   undefined4 DAT_005c1174
 ;
 ; Called Functions:

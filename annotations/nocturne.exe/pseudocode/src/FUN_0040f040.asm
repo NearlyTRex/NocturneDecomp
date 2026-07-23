@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_ammobag.kfm_0057834d
+;   TerminatedCString s_ammobag_kfm_0057834d
 ;   TerminatedCString s_CGun_00578359
 ;   undefined4 s_Gun_00578359+1
 ;   undefined4 s_un_00578359+2

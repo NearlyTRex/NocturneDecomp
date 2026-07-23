@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_gargoyle.dfm_0058482a
+;   TerminatedCString s_gargoyle_dfm_0058482a
 ;   float FLOAT_0059df40 = 50
 ;   float FLOAT_0059df44 = 100
 ;   undefined1* PTR_core_gargoyle.cpp_CGargoyle_setup_FUN_004a7450_0059df54 = 004a7450

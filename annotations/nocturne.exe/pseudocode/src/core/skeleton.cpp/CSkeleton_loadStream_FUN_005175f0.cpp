@@ -77,8 +77,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
         iVar2 = iVar1 + 0xc;
         do {
           iVar3 = iVar3 + 1;
-          _fscanf(param_2,"%f,%f,%f,%f\n",iVar1,local_14,iVar4,iVar2)
-          ;
+          _fscanf(param_2,"%f,%f,%f,%f\n",iVar1,local_14,iVar4,iVar2);
           iVar4 = iVar4 + 0x10;
           iVar1 = iVar1 + 0x10;
           local_14 = local_14 + 0x10;

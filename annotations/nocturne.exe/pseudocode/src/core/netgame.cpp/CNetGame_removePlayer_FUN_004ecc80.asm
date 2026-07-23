@@ -12,10 +12,10 @@
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eb09a
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c3a9
-;   string s_CNetGame::removePlayer_-_invalid_0058c3bd
-;   string s_..\\core\\netgame.cpp_0058c3eb
-;   string s_CNetGame::removePlayer_-_tried_t_0058c3ff
+;   TerminatedCString s_core_netgame_cpp_0058c3a9
+;   TerminatedCString s_CNetGame_removePlayer_in_0058c3bd
+;   TerminatedCString s_core_netgame_cpp_0058c3eb
+;   TerminatedCString s_CNetGame_removePlayer_tr_0058c3ff
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01d06610

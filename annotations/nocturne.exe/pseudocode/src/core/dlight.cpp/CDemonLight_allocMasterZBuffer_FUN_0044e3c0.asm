@@ -8,8 +8,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fb3
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c5cc
-;   string s_CDemonLight::allocMasterZBuffer_-_0057c5df
+;   TerminatedCString s_core_dlight_cpp_0057c5cc
+;   TerminatedCString s_CDemonLight_allocMasterZ_0057c5df
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

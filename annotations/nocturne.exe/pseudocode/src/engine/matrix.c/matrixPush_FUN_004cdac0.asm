@@ -9,8 +9,8 @@
 ;   engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0 at 00460be0
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\matrix.c_0058820f
-;   string s_Matrix_unbalance_00588222
+;   TerminatedCString s_engine_matrix_c_0058820f
+;   TerminatedCString s_Matrix_unbalance_00588222
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
 ;   undefined4 DAT_01c039c0

@@ -27,20 +27,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00583db6
-;   string s_world_00583db9
+;   TerminatedCString s_world_00583db9
 ;   TerminatedCString s_rb_00583dbf
-;   string s_enemy.pod_00583dc2
+;   TerminatedCString s_enemy_pod_00583dc2
 ;   char CHAR_00h_00583dcc = \x00
 ;   TerminatedCString s_rt_00583dcd
-;   string s_pod.ini_00583dd0
+;   TerminatedCString s_pod_ini_00583dd0
 ;   TerminatedCString s_Game_00583dd8
-;   string s_system\\nocturne.ini_00583ddd
+;   TerminatedCString s_system_nocturne_ini_00583ddd
 ;   TerminatedCString s_Act1Code_00583df1
-;   string s_Act2Code_00583dfa
-;   string s_Act3Code_00583e03
-;   string s_Act4Code_00583e0c
-;   string s_'Dark_Reign_of_the_Vampire_King'_00583e15
-;   string s_'Tomb_of_the_Underground_God'_00583e36
+;   TerminatedCString s_Act2Code_00583dfa
+;   TerminatedCString s_Act3Code_00583e03
+;   TerminatedCString s_Act4Code_00583e0c
+;   TerminatedCString s_Dark_Reign_of_the_Vampir_00583e15
+;   TerminatedCString s_Tomb_of_the_Underground_00583e36
 ;   ... and 71 more
 ;
 ; Called Functions:
@@ -582,7 +582,7 @@ section .text
     JGE 0x004a5232                      ; 004a519a
         ;   XREF to: 004a5232 (CONDITIONAL_JUMP)  ; LAB_004a5232
     PUSH 0x583db6                       ; 004a51a0 | = "rt"
-    MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a51a5 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
+    MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a51a5 | DAT_005b9450 | PTR_s_gtown_msn_005846ed_005b9454
     PUSH EDX                            ; 004a51ab
     PUSH 0x583db9                       ; 004a51ac | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a51b1
@@ -734,7 +734,7 @@ section .text
     JGE 0x004a5386                      ; 004a532b
         ;   XREF to: 004a5386 (CONDITIONAL_JUMP)  ; LAB_004a5386
     PUSH 0x583db6                       ; 004a532d | = "rt"
-    MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5332 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
+    MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5332 | DAT_005b9450 | PTR_s_gtown_msn_005846ed_005b9454
     PUSH EAX                            ; 004a5338
     PUSH 0x583db9                       ; 004a5339 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a533e
@@ -910,7 +910,7 @@ section .text
     JGE 0x004a5546                      ; 004a550b
         ;   XREF to: 004a5546 (CONDITIONAL_JUMP)  ; LAB_004a5546
     PUSH 0x583db6                       ; 004a550d | = "rt"
-    MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a5512 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
+    MOV EDX,dword ptr [ESI + 0x5b9450]  ; 004a5512 | DAT_005b9450 | PTR_s_gtown_msn_005846ed_005b9454
     PUSH EDX                            ; 004a5518
     PUSH 0x583db9                       ; 004a5519 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a551e
@@ -1003,7 +1003,7 @@ section .text
     JGE 0x004a5634                      ; 004a55f9
         ;   XREF to: 004a5634 (CONDITIONAL_JUMP)  ; LAB_004a5634
     PUSH 0x583db6                       ; 004a55fb | = "rt"
-    MOV ECX,dword ptr [ESI + 0x5b9450]  ; 004a5600 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
+    MOV ECX,dword ptr [ESI + 0x5b9450]  ; 004a5600 | DAT_005b9450 | PTR_s_gtown_msn_005846ed_005b9454
     PUSH ECX                            ; 004a5606
     PUSH 0x583db9                       ; 004a5607 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a560c
@@ -1066,7 +1066,7 @@ section .text
     JGE 0x004a56c8                      ; 004a568d
         ;   XREF to: 004a56c8 (CONDITIONAL_JUMP)  ; LAB_004a56c8
     PUSH 0x583db6                       ; 004a568f | = "rt"
-    MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5694 | DAT_005b9450 | PTR_s_gtown.msn_005b9454
+    MOV EAX,dword ptr [ESI + 0x5b9450]  ; 004a5694 | DAT_005b9450 | PTR_s_gtown_msn_005846ed_005b9454
     PUSH EAX                            ; 004a569a
     PUSH 0x583db9                       ; 004a569b | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a56a0

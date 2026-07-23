@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_grave1.kfm_005851fd
+;   TerminatedCString s_grave1_kfm_005851fd
 ;   undefined1* PTR_FUN_0059e5d4 = 004b0bd0
 ;
 ; Called Functions:

@@ -17,16 +17,16 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526c2f
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00592f82
-;   string s_SfxSlot::kill_-_must_be_locked!_00592f97
-;   string s_[NULLsamplePtr]_00592fb7
-;   string s_Killing_sfx_%s_00592fc7
-;   string s_..\\sound\\sndmain.cpp_00592fd7
-;   string s_SfxSlot::kill_-_ref_count_out_of_00592fec
-;   string s_..\\sound\\sndmain.cpp_00593016
-;   string s_refCount_for_streaming_Sfx_%s_>_1_0059302b
-;   string s_..\\sound\\sndmain.cpp_0059304d
-;   string s_streaming_sample_sfx_index_misma_00593062
+;   TerminatedCString s_sound_sndmain_cpp_00592f82
+;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592f97
+;   TerminatedCString s_NULLsamplePtr_00592fb7
+;   TerminatedCString s_Killing_sfx_s_00592fc7
+;   TerminatedCString s_sound_sndmain_cpp_00592fd7
+;   TerminatedCString s_SfxSlot_kill_ref_count_o_00592fec
+;   TerminatedCString s_sound_sndmain_cpp_00593016
+;   TerminatedCString s_refCount_for_streaming_S_0059302b
+;   TerminatedCString s_sound_sndmain_cpp_0059304d
+;   TerminatedCString s_streaming_sample_sfx_ind_00593062
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01cc4800

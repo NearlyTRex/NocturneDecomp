@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_005781fb
-;   string s_weaponClassName_00578205
-;   string s_ammoCount_00578215
-;   string s_ammoType_0057821f
+;   TerminatedCString s_modelName_005781fb
+;   TerminatedCString s_weaponClassName_00578205
+;   TerminatedCString s_ammoCount_00578215
+;   TerminatedCString s_ammoType_0057821f
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900

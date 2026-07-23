@@ -31,10 +31,10 @@
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setcolid.cpp_0059097d
-;   string s_info.keyFramedModelInstancePtr_!_00590992
-;   string s_..\\core\\setcolid.cpp_005909de
-;   string s_Invalid_collision_type!_005909f3
+;   TerminatedCString s_core_setcolid_cpp_0059097d
+;   TerminatedCString s_info_keyFramedModelInsta_00590992
+;   TerminatedCString s_core_setcolid_cpp_005909de
+;   TerminatedCString s_Invalid_collision_type_005909f3
 ;   float FLOAT_00590a0d = 2
 ;   float FLOAT_00590a11 = -10
 ;   undefined4 DAT_005993b0

@@ -8,8 +8,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8ebf
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\mp3.cpp_0058b60b
-;   string s_hputbuf_-_Not_Supported_yet!!_Fi_0058b61c
+;   TerminatedCString s_sound_mp3_cpp_0058b60b
+;   TerminatedCString s_hputbuf_Not_Supported_ye_0058b61c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

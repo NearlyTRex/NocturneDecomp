@@ -9,9 +9,9 @@
 ;   core_script.cpp_parseConditionExpr_FUN_004fe140 at 004fe14c
 ;
 ; Referenced Globals:
-;   string s_No_opening_parenthesis_0058e020
-;   string s_Argument_too_long_0058e037
-;   string s_Can't_find_closing_parenthesis_0058e049
+;   TerminatedCString s_No_opening_parenthesis_0058e020
+;   TerminatedCString s_Argument_too_long_0058e037
+;   TerminatedCString s_Can_t_find_closing_paren_0058e049
 ;
 ; Called Functions:
 ;   core_script.cpp_skipWhitespace_FUN_004fe070

@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_00578399
-;   string s_weaponClassName_005783a3
-;   string s_ammoCount_005783b3
-;   string s_ammoType_005783bd
+;   TerminatedCString s_modelName_00578399
+;   TerminatedCString s_weaponClassName_005783a3
+;   TerminatedCString s_ammoCount_005783b3
+;   TerminatedCString s_ammoType_005783bd
 ;   TerminatedCString s_item_005783c6
-;   string s_hasCollision_005783cb
-;   string s_openSound_005783d8
+;   TerminatedCString s_hasCollision_005783cb
+;   TerminatedCString s_openSound_005783d8
 ;   undefined4 DAT_005aceb4
 ;
 ; Called Functions:

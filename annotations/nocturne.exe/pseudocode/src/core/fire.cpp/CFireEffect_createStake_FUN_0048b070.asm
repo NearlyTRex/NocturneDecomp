@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0048b038 = 0048b091
-;   string s_a-wood?.wav_005814bc
+;   TerminatedCString s_a_wood_wav_005814bc
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01c23d48
 ;   undefined4 DAT_01c23d4c

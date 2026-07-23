@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_FindNextFileA_005754d0 = 00175c0e
-;   string s_..\\engine\\dosio.c_0057d2e8
-;   string s_CFileFinder::open_-_search_not_o_0057d2fa
+;   TerminatedCString s_engine_dosio_c_0057d2e8
+;   TerminatedCString s_CFileFinder_open_search_0057d2fa
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

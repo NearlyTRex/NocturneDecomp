@@ -47,19 +47,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058746d
-;   string s_CTommyGun_00587472
-;   string s_CShotgun_0058747c
-;   string s_CElephantGun_00587485
+;   TerminatedCString s_CTommyGun_00587472
+;   TerminatedCString s_CShotgun_0058747c
+;   TerminatedCString s_CElephantGun_00587485
 ;   TerminatedCString s_CGun_00587492
 ;   TerminatedCString s_d_00587497
-;   string s_%s_%d_0058749a
-;   string s_%s_%s_005874a0
-;   string s_%s_%s_%s_005874a7
-;   string s_are_loaded._005874b1
-;   string s_%s_%s_005874be
-;   string s_%d_x%3.0f%%_005874c5
+;   TerminatedCString s_s_d_0058749a
+;   TerminatedCString s_s_s_005874a0
+;   TerminatedCString s_s_s_s_005874a7
+;   TerminatedCString s_are_loaded_005874b1
+;   TerminatedCString s_s_s_005874be
+;   TerminatedCString s_d_x_3_0f_005874c5
 ;   TerminatedCString s_s_005874d1
-;   string s_%s_%s_005874d4
+;   TerminatedCString s_s_s_005874d4
 ;   float FLOAT_005874dd = 65535
 ;   ... and 21 more
 ;

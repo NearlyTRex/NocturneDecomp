@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c0ea
-;   string s_CNetGame::send_-_invalid_player_i_0058c0fe
+;   TerminatedCString s_CNetGame_send_invalid_pl_0058c0fe
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

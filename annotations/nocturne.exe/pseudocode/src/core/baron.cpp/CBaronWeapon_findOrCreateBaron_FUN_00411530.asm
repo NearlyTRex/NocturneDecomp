@@ -11,7 +11,7 @@
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0 at 004114f9
 ;
 ; Referenced Globals:
-;   string s_CBaron_00578729
+;   TerminatedCString s_CBaron_00578729
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_00764368

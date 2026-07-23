@@ -50,9 +50,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   string s_CVampireBoss_00596f65
-;   string s_..\\core\\tvbat.cpp_00596f72
-;   string s_CTVBat::process_-_can't_follow_o_00596f84
+;   TerminatedCString s_CVampireBoss_00596f65
+;   TerminatedCString s_core_tvbat_cpp_00596f72
+;   TerminatedCString s_CTVBat_process_can_t_fol_00596f84
 ;   float FLOAT_00596fbd = 4
 ;   double DOUBLE_00596fc5 = 4
 ;   double DOUBLE_00596fcd = 0.5

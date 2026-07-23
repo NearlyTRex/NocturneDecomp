@@ -11,8 +11,8 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d7da
 ;
 ; Referenced Globals:
-;   string s_..\\core\\vampboss.cpp_0059726b
-;   string s_CVampireBoss::chooseDestWayPoint_00597280
+;   TerminatedCString s_core_vampboss_cpp_0059726b
+;   TerminatedCString s_CVampireBoss_chooseDestW_00597280
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

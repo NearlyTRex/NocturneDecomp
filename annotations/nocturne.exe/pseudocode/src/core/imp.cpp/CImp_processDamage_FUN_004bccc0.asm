@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_imp_die_wav_005864bd
-;   string s_imp-hurt?.wav_005864ca
+;   TerminatedCString s_imp_hurt_wav_005864ca
 ;   double DOUBLE_005864dd = 2
 ;   undefined4 DAT_005b80f0
 ;

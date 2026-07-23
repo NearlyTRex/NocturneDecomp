@@ -9,7 +9,7 @@
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10b8
 ;
 ; Referenced Globals:
-;   string s_%s%s_\"%s\"_005872ae
+;   TerminatedCString s_s_s_s_005872ae
 ;   undefined1 DAT_005acc90
 ;
 ; Called Functions:

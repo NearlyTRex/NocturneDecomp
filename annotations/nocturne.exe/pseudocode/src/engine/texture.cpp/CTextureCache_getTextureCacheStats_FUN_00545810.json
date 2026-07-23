@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 135,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 39,
     "suspect_count": 9,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 115
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -164,14 +164,14 @@
   "globals": [
     {
       "addr": "00596821",
-      "name": "s_Texture_cache_has_wrapped._Make_i_00596821",
-      "type": "string",
+      "name": "s_Texture_cache_has_wrappe_00596821",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596855",
-      "name": "s_Total:_%d,_32:_%d,_64:_%d,_128:_%_00596855",
-      "type": "string",
+      "name": "s_Total_d_32_d_64_d_128_d_00596855",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -285,7 +285,7 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "_sprintf(param_2,\"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d\",param_1[0x34c02],iVar4,iVar6,",
+      "text": "_sprintf(param_2,\"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d\",param_1[0x34c02],iVar4,iVar6,iVar5,iVar2);",
       "type": "unnamed_param"
     },
     {
@@ -293,12 +293,12 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "_sprintf(param_2,\"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d\",param_1[0x34c02],iVar4,iVar6,",
+      "text": "_sprintf(param_2,\"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d\",param_1[0x34c02],iVar4,iVar6,iVar5,iVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "_sprintf(param_2,\"Texture cache has wrapped.  Make it bigger, please.\");",

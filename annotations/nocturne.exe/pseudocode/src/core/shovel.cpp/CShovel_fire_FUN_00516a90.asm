@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Warning:_called_fire()_for_melee_005910d1
+;   TerminatedCString s_Warning_called_fire_for_005910d1
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;

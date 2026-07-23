@@ -11,10 +11,10 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10 at 0045cb4c
 ;
 ; Referenced Globals:
-;   string s_..\\cockpit\\drawsurf.cpp_0057d9ed
-;   string s_Invalid_bitsPerPixel!_0057da05
-;   string s_..\\cockpit\\drawsurf.cpp_0057da1b
-;   string s_Invalid_bitsPerPixel!_0057da33
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057d9ed
+;   TerminatedCString s_Invalid_bitsPerPixel_0057da05
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057da1b
+;   TerminatedCString s_Invalid_bitsPerPixel_0057da33
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c

@@ -21,13 +21,13 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d961d
 ;
 ; Referenced Globals:
-;   string s_stats_0058458a
-;   string s_Level_time_00584590
+;   TerminatedCString s_stats_0058458a
+;   TerminatedCString s_Level_time_00584590
 ;   TerminatedCString s_anon_0058459b
 ;   undefined4 s_anon_0058459b+1
 ;   undefined4 s_anon_0058459b+2
-;   string s_%2d:%2d:%2d.%2d_0058459e
-;   string s_Body_count_005845b0
+;   TerminatedCString s_s_2d_2d_2d_2d_0058459e
+;   TerminatedCString s_Body_count_005845b0
 ;   TerminatedCString s_anon_005845bb
 ;   undefined4 s_anon_005845bb+1
 ;   undefined4 s_anon_005845bb+2

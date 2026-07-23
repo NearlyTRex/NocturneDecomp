@@ -8,7 +8,7 @@
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bda4
 ;
 ; Referenced Globals:
-;   string s_unnamed_0057bed8
+;   TerminatedCString s_unnamed_0057bed8
 ;   undefined4 s_nnamed_0057bed8+1
 ;   undefined4 s_named_0057bed8+2
 ;   undefined4 s_amed_0057bed8+3

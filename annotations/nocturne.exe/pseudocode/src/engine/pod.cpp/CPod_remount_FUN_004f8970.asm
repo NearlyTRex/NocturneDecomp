@@ -8,8 +8,8 @@
 ; undefined1       Stack[-0x10f]:1  local_10f
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\pod.cpp_0058dc0d
-;   string s_Can't_re-mount_%s_0058dc1f
+;   TerminatedCString s_engine_pod_cpp_0058dc0d
+;   TerminatedCString s_Can_t_re_mount_s_0058dc1f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -18,7 +18,7 @@
 ;   core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0 at 00519af0
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591aee
+;   TerminatedCString s_core_skeleton_cpp_00591aee
 ;   TerminatedCString s_Bug_00591b03
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

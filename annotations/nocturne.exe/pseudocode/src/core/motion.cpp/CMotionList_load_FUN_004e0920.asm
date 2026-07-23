@@ -20,19 +20,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058adcd
-;   string s_..\\core\\motion.cpp_0058add1
-;   string s_Error_reading_motion_list._0058ade4
-;   string s_..\\core\\motion.cpp_0058adff
-;   string s_Can't_read_motion_list_-_it's_ve_0058ae12
+;   TerminatedCString s_core_motion_cpp_0058add1
+;   TerminatedCString s_Error_reading_motion_lis_0058ade4
+;   TerminatedCString s_core_motion_cpp_0058adff
+;   TerminatedCString s_Can_t_read_motion_list_i_0058ae12
 ;   TerminatedCString s_d_0058ae85
 ;   TerminatedCString s_s_0058ae89
 ;   TerminatedCString s_d_0058ae8d
-;   string s_\"%[^\"]\",%f,%d,%d,%d_0058ae91
-;   string s_%d,%d,%f_0058aea6
-;   string s_%d,%f,%d_0058aeb0
-;   string s_%d,%f_0058aeba
+;   TerminatedCString s_f_d_d_d_0058ae91
+;   TerminatedCString s_d_d_f_0058aea6
+;   TerminatedCString s_d_f_d_0058aeb0
+;   TerminatedCString s_d_f_0058aeba
 ;   TerminatedCString s_d_0058aec1
-;   string s_%d,%d,%d,%f,%f,%d_0058aec5
+;   TerminatedCString s_d_d_d_f_f_d_0058aec5
 ;   TerminatedCString s_d_0058aed8
 ;   ... and 5 more
 ;

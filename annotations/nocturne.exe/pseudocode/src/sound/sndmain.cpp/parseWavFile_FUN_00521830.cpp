@@ -45,21 +45,19 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
               iVar2 = iVar2 + local_14 + 8;
               if (((local_18 == 'd') && (local_17 == 'a')) &&
                  ((local_16 == 't' && (local_15 == 'a')))) {
-                FUN_00529980("WAV file is invalid: %s\n",
-                             "\"data\" chunk preceeds \"fmt\" chunk");
+                FUN_00529980("WAV file is invalid: %s\n","\"data\" chunk preceeds \"fmt\" chunk");
                 goto LAB_00521857;
               }
               if (((local_18 == 'f') && (local_17 == 'm')) && (local_16 == 't')) {
                 if (local_14 < 10) {
-                  FUN_00529980("WAV file is invalid: %s\n",
-                               "File contains invalid \"fmt\" chunk");
+                  FUN_00529980("WAV file is invalid: %s\n","File contains invalid \"fmt\" chunk")
+                  ;
                   goto LAB_00521857;
                 }
                 iVar3 = _fread(&local_24,10,1,param_1);
                 if (iVar3 != 1) goto LAB_00521857;
                 if ((short)local_24 != 1) {
-                  _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff
-                            );
+                  _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff);
                   FUN_00529980("WAV file is invalid: %s\n",&local_88);
                   goto LAB_00521857;
                 }
@@ -83,18 +81,15 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
                 goto LAB_00521857;
               }
             } while (iVar2 <= iVar4);
-            FUN_00529980("WAV file is invalid: %s\n",
-                         "Required \"fmt\" chunk not found");
+            FUN_00529980("WAV file is invalid: %s\n","Required \"fmt\" chunk not found");
           }
           else {
-            FUN_00529980("WAV file is invalid: %s\n",
-                         "\"WAVE\" ID not found at offset 00000008h");
+            FUN_00529980("WAV file is invalid: %s\n","\"WAVE\" ID not found at offset 00000008h");
           }
         }
       }
       else {
-        FUN_00529980("WAV file is invalid: %s\n","\"RIFF\" ID not found at offset 00000000h")
-        ;
+        FUN_00529980("WAV file is invalid: %s\n","\"RIFF\" ID not found at offset 00000000h");
       }
     }
   }

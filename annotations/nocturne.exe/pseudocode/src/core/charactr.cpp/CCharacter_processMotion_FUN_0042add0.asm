@@ -24,9 +24,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Foot_0057a49a
-;   string s_Bip01_R_Foot_0057a4a7
-;   string s_Bip01_L_Foot_0057a4b4
-;   string s_Bip01_R_Foot_0057a4c1
+;   TerminatedCString s_Bip01_R_Foot_0057a4a7
+;   TerminatedCString s_Bip01_L_Foot_0057a4b4
+;   TerminatedCString s_Bip01_R_Foot_0057a4c1
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0

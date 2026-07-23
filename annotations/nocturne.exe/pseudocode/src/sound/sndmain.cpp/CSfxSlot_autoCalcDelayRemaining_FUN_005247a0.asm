@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592dc6
-;   string s_SfxSlot::autoCalcDelayRemaining_-_00592ddb
+;   TerminatedCString s_SfxSlot_autoCalcDelayRem_00592ddb
 ;   undefined4 DAT_005a2150
 ;   undefined4 DAT_005bea80
 ;   undefined4 DAT_01cc4800

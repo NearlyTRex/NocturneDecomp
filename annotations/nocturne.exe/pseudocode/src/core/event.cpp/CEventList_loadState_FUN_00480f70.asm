@@ -15,20 +15,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00580cc1
-;   string s_..\\core\\event.cpp_00580cc5
-;   string s_CEventList::loadState_-_file_ver_00580cd7
+;   TerminatedCString s_core_event_cpp_00580cc5
+;   TerminatedCString s_CEventList_loadState_fil_00580cd7
 ;   TerminatedCString s_d_00580d3a
-;   string s_%[^_]_00580d3e
+;   TerminatedCString s_anon_00580d3e
 ;   TerminatedCString s_d_00580d45
-;   string s_%[^_]_00580d49
+;   TerminatedCString s_anon_00580d49
 ;   TerminatedCString s_d_00580d50
-;   string s_%[^_]_00580d54
+;   TerminatedCString s_anon_00580d54
 ;   TerminatedCString s_d_00580d5b
-;   string s_%f,_%[^_]_00580d5f
+;   TerminatedCString s_f_00580d5f
 ;   TerminatedCString s_d_00580d6a
-;   string s_%d,_%[^_]_00580d6e
+;   TerminatedCString s_d_00580d6e
 ;   TerminatedCString s_d_00580d79
-;   string s_\"%[^\"]\"_,_\"%[^\"]\"_00580d7d
+;   TerminatedCString s_anon_00580d7d
 ;   ... and 4 more
 ;
 ; Called Functions:

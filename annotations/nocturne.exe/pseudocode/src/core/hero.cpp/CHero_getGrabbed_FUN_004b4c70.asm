@@ -10,11 +10,11 @@
 ;   core_stranger.cpp_CStranger_getGrabbed_FUN_00540770 at 005407ab
 ;
 ; Referenced Globals:
-;   string s_GETGRABBED_0058579d
-;   string s_GETGRABBED_FRONT_005857a8
-;   string s_GETGRABBED_FRONT_005857b9
-;   string s_GETGRABBED_BACK_005857ca
-;   string s_GETGRABBED_005857da
+;   TerminatedCString s_GETGRABBED_0058579d
+;   TerminatedCString s_GETGRABBED_FRONT_005857a8
+;   TerminatedCString s_GETGRABBED_FRONT_005857b9
+;   TerminatedCString s_GETGRABBED_BACK_005857ca
+;   TerminatedCString s_GETGRABBED_005857da
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290

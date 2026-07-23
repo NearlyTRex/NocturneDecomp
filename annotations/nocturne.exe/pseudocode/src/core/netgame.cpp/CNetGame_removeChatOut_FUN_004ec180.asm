@@ -29,7 +29,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058ba22
-;   string s_removeChatOut_-_invalid_index_0058ba36
+;   TerminatedCString s_removeChatOut_invalid_in_0058ba36
 ;   double DOUBLE_0058c2fa = 0.0000152587890625
 ;   double DOUBLE_0058c302 = 4
 ;   double DOUBLE_0058c30a = 30

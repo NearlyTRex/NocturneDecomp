@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c58e
-;   string s_getRestoreMemory_-_Need_more_sta_0057c5a1
+;   TerminatedCString s_getRestoreMemory_Need_mo_0057c5a1
 ;   undefined4 DAT_01ab99ec
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

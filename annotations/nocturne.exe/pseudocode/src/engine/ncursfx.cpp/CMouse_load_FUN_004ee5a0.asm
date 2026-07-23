@@ -12,10 +12,10 @@
 ;   FUN_004c85f0 at 004c8d2c
 ;
 ; Referenced Globals:
-;   string s_crsr%d_0058ca97
-;   string s_flame%d_0058ca9e
-;   string s_crsrskll%d_0058caa6
-;   string s_crsrskll7_0058cab1
+;   TerminatedCString s_crsr_d_0058ca97
+;   TerminatedCString s_flame_d_0058ca9e
+;   TerminatedCString s_crsrskll_d_0058caa6
+;   TerminatedCString s_crsrskll7_0058cab1
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

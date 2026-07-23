@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_gb-die[1,6].wav_00582262
-;   string s_gb-hit[1,6].wav_00582272
+;   TerminatedCString s_gb_die_1_6_wav_00582262
+;   TerminatedCString s_gb_hit_1_6_wav_00582272
 ;   float FLOAT_00582282 = 50
 ;   float FLOAT_0059dcb4 = 0.5
 ;   undefined4 DAT_005b9354

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   string s_bat.kfm_00596ed4
+;   TerminatedCString s_bat_kfm_00596ed4
 ;   float FLOAT_00596edd = 10
 ;   float FLOAT_00596ee1 = 2
 ;   undefined1* PTR_core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0_005a38f4 = 0054b2a0

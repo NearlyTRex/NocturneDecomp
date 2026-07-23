@@ -11,20 +11,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00586d91
-;   string s_invsize.txt_00586d94
+;   TerminatedCString s_invsize_txt_00586d94
 ;   TerminatedCString s_data_00586da0
-;   string s_%d,%d_00586da5
-;   string s_invback_00586dac
-;   string s_invback2_00586db4
-;   string s_weapback_00586dbd
-;   string s_weapback2_00586dc6
-;   string s_battery_00586dd0
-;   string s_hbar1_00586dd8
-;   string s_hbar2_00586dde
-;   string s_tommyclip24x24_00586de4
-;   string s_bullet24x24_00586df3
-;   string s_lithium24x24_00586dff
-;   string s_mercurybullet24x24_00586e0c
+;   TerminatedCString s_d_d_00586da5
+;   TerminatedCString s_invback_00586dac
+;   TerminatedCString s_invback2_00586db4
+;   TerminatedCString s_weapback_00586dbd
+;   TerminatedCString s_weapback2_00586dc6
+;   TerminatedCString s_battery_00586dd0
+;   TerminatedCString s_hbar1_00586dd8
+;   TerminatedCString s_hbar2_00586dde
+;   TerminatedCString s_tommyclip24x24_00586de4
+;   TerminatedCString s_bullet24x24_00586df3
+;   TerminatedCString s_lithium24x24_00586dff
+;   TerminatedCString s_mercurybullet24x24_00586e0c
 ;   ... and 13 more
 ;
 ; Called Functions:

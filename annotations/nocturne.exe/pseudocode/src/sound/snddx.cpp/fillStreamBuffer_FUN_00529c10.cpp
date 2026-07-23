@@ -46,8 +46,8 @@ uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
     iVar1 = (**(code **)(*_DAT_02dc921c + 0x2c))();
     if (iVar1 != 0) {
       uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
-      _sprintf(&piStack_380,"DirectSux: Unable to %s.  (%s)",
-                 "Lock secondary buffer",uVar4);
+      _sprintf(&piStack_380,"DirectSux: Unable to %s.  (%s)","Lock secondary buffer",
+                 uVar4);
       FUN_00529980(&piStack_380);
       return 0;
     }
@@ -74,8 +74,8 @@ uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
                         (_DAT_02dc921c,iStack_3c,iStack_38,iStack_40,uStack_34);
       if (iVar1 != 0) {
         uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
-        _sprintf(auStack_204,"DirectSux: Unable to %s.  (%s)",
-                   "Unlock secondary buffer",uVar4);
+        _sprintf(auStack_204,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
+                   ,uVar4);
         FUN_00529980(auStack_204);
         return 0;
       }

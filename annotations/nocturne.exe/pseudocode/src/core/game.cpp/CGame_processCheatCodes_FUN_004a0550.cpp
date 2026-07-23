@@ -598,8 +598,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
                              0x43700000,1);
           if ((((iVar5 != 0) &&
                (iVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
-                                  (0x01BCD074,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
-                                   &DAT_01c78ad0,1,0,99999,1), iVar5 != 0)) &&
+                                  (0x01BCD074,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",&DAT_01c78ad0,1,
+                                   0,99999,1), iVar5 != 0)) &&
               (iVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
                                  (0x01BCD074,"Enter image width",&DAT_005b9364,1,1,9999,1
                                  ), iVar5 != 0)) &&

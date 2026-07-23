@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_CHero_00588468
+;   TerminatedCString s_CHero_00588468
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0

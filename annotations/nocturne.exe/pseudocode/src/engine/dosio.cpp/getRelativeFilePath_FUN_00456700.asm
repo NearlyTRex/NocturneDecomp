@@ -10,7 +10,7 @@
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456a87
 ;
 ; Referenced Globals:
-;   string s_%s\\%s_0057d2b1
+;   TerminatedCString s_s_s_0057d2b1
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

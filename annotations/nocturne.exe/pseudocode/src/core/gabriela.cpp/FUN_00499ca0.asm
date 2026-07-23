@@ -32,7 +32,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_00582292
-;   string s_Don't_know_how_to_carry_light_%s_005822a7
+;   TerminatedCString s_Don_t_know_how_to_carry_005822a7
 ;   float FLOAT_005822ca = 0.5
 ;   double DOUBLE_005822d2 = 0.700000000000000
 ;   double DOUBLE_005822da = 0.300000000000000

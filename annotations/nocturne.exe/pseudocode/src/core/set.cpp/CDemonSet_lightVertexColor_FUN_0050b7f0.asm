@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005905ea
-;   string s_CDemonSet::lightVertexColor_-_Qu_005905fa
+;   TerminatedCString s_CDemonSet_lightVertexCol_005905fa
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5038

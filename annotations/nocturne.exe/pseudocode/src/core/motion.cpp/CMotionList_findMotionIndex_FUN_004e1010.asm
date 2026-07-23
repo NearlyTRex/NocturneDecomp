@@ -18,8 +18,8 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\motion.cpp_0058b181
-;   string s_Can't_find_motion_\"%s\"_in_motion_0058b194
+;   TerminatedCString s_core_motion_cpp_0058b181
+;   TerminatedCString s_Can_t_find_motion_s_in_m_0058b194
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

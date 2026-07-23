@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_005777b9
-;   string s_%s_causing_%5.2f_damage_to_%s_005777bf
-;   string s_CHero_005777de
-;   string s_%s_causing_%5.2f_damage_to_%s_005777e4
+;   TerminatedCString s_s_causing_5_2f_damage_to_005777bf
+;   TerminatedCString s_CHero_005777de
+;   TerminatedCString s_s_causing_5_2f_damage_to_005777e4
 ;   double DOUBLE_00577809 = 0.5
 ;   double DOUBLE_00577811 = 10
 ;   void* PTR_DAT_005ad350 = 0077ad0c

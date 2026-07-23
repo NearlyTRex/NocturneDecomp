@@ -19,21 +19,21 @@
 ;   FUN_004febd0 at 004fec82
 ;
 ; Referenced Globals:
-;   string s_world_0058fb9c
+;   TerminatedCString s_world_0058fb9c
 ;   TerminatedCString s_rt_0058fba2
-;   string s_world_0058fba5
-;   string s_..\\core\\script.cpp_0058fbab
-;   string s_Can't_open_world\\%s_0058fbbe
+;   TerminatedCString s_world_0058fba5
+;   TerminatedCString s_core_script_cpp_0058fbab
+;   TerminatedCString s_Can_t_open_world_s_0058fbbe
 ;   TerminatedCString s_anon_0058fbd2
-;   string s_%[^,],_%[^,],_%[^_]_0058fbd4
-;   string s_..\\core\\script.cpp_0058fbe9
-;   string s_SCScipt::dbLoad_-_error_parsing_%_0058fbfc
-;   string s_stranger_0058fc29
+;   TerminatedCString s_anon_0058fbd4
+;   TerminatedCString s_core_script_cpp_0058fbe9
+;   TerminatedCString s_SCScipt_dbLoad_error_par_0058fbfc
+;   TerminatedCString s_stranger_0058fc29
 ;   TerminatedCString s_anon_0058fc32
 ;   undefined4 s_anon_0058fc32+1
-;   string s_Warning!_Duplicate_wav_string_%s_0058fc34
-;   undefined4 s_arning!_Duplicate_wav_string_%s_d_0058fc34+1
-;   string s_%s.wav_0058fc64
+;   TerminatedCString s_Warning_Duplicate_wav_st_0058fc34
+;   undefined4 s_Warning_Duplicate_wav_st_0058fc34+1
+;   TerminatedCString s_s_wav_0058fc64
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -162,13 +162,13 @@ section .text
     MOV ESI,0x58fc32                    ; 00504fa6 | = "$"
     LEA EDI,[ESP + 0x80]                ; 00504fab
     PUSH EDI                            ; 00504fb2
-    MOV AL,byte ptr [ESI]               ; 00504fb3 | = "$" | s_Warning!_Duplicate_wav_string_%s_0058fc34
+    MOV AL,byte ptr [ESI]               ; 00504fb3 | = "$" | s_Warning_Duplicate_wav_st_0058fc34
         ;   Label: LAB_00504fb3
     MOV byte ptr [EDI],AL               ; 00504fb5
     CMP AL,0x0                          ; 00504fb7
     JZ 0x00504fcb                       ; 00504fb9
         ;   XREF to: 00504fcb (CONDITIONAL_JUMP)  ; LAB_00504fcb
-    MOV AL,byte ptr [ESI + 0x1]         ; 00504fbb | s_anon_0058fc32+1 | s_arning!_Duplicate_wav_string_%s_d_0058fc34+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 00504fbb | s_anon_0058fc32+1 | s_Warning_Duplicate_wav_st_0058fc34+1
     ADD ESI,0x2                         ; 00504fbe
     MOV byte ptr [EDI + 0x1],AL         ; 00504fc1
     ADD EDI,0x2                         ; 00504fc4

@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_succubus.dfm_00595ffe
-;   string s_hotdemon.dfm_0059600b
-;   string s_hdwing.cth_00596018
-;   undefined4 s_dwing.cth_00596018+1
-;   undefined4 s_wing.cth_00596018+2
-;   undefined4 s_ing.cth_00596018+3
+;   TerminatedCString s_succubus_dfm_00595ffe
+;   TerminatedCString s_hotdemon_dfm_0059600b
+;   TerminatedCString s_hdwing_cth_00596018
+;   undefined4 s_hdwing_cth_00596018+1
+;   undefined4 s_hdwing_cth_00596018+2
+;   undefined4 s_hdwing_cth_00596018+3
 ;   float FLOAT_005a28cc = 50
 ;   float FLOAT_005a28d0 = 100
 ;   undefined1* PTR_FUN_005a28e4 = 00540c20
@@ -75,13 +75,13 @@ section .text
     FSTP float ptr [EBX + 0x2ddc]       ; 00540be9
     FSTP float ptr [EBX + 0x2de0]       ; 00540bef
     PUSH EDI                            ; 00540bf5
-    MOV AL,byte ptr [ESI]               ; 00540bf6 | = "hdwing.cth" | s_wing.cth_00596018+2
+    MOV AL,byte ptr [ESI]               ; 00540bf6 | = "hdwing.cth" | s_hdwing_cth_00596018+2
         ;   Label: LAB_00540bf6
     MOV byte ptr [EDI],AL               ; 00540bf8
     CMP AL,0x0                          ; 00540bfa
     JZ 0x00540c0e                       ; 00540bfc
         ;   XREF to: 00540c0e (CONDITIONAL_JUMP)  ; LAB_00540c0e
-    MOV AL,byte ptr [ESI + 0x1]         ; 00540bfe | s_dwing.cth_00596018+1 | s_ing.cth_00596018+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00540bfe | s_hdwing_cth_00596018+1 | s_hdwing_cth_00596018+3
     ADD ESI,0x2                         ; 00540c01
     MOV byte ptr [EDI + 0x1],AL         ; 00540c04
     ADD EDI,0x2                         ; 00540c07

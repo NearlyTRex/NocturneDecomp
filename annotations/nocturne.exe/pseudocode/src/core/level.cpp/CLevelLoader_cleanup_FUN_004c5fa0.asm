@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049ddaf
 ;
 ; Referenced Globals:
-;   string s_gLevelIndicator:_Used_%d_calls_005878cd
+;   TerminatedCString s_gLevelIndicator_Used_d_c_005878cd
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;

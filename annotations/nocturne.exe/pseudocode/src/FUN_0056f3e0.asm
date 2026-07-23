@@ -18,7 +18,7 @@
 ;   FUN_00569928 at 00569d58
 ;
 ; Referenced Globals:
-;   string s_0123456789abcdefghijklmnopqrstuv_005c1ff0
+;   TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0
 ;
 ; Called Functions:
 ;   FUN_00571a9d

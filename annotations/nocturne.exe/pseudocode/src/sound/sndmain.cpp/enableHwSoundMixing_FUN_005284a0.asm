@@ -9,8 +9,8 @@
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2198
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_0059388e
-;   string s_enableHwSoundMixing_-_Can't_do_t_005938a3
+;   TerminatedCString s_sound_sndmain_cpp_0059388e
+;   TerminatedCString s_enableHwSoundMixing_Can_005938a3
 ;   undefined4 DAT_005bea78
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

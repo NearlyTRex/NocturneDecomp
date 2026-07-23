@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_shell.kfm_0059108d
-;   string s_shotgun-cock.wav_00591097
+;   TerminatedCString s_shell_kfm_0059108d
+;   TerminatedCString s_shotgun_cock_wav_00591097
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:

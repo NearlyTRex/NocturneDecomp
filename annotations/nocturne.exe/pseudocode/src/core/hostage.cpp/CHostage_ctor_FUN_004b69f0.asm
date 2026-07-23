@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_hickdad.dfm_005859f3
+;   TerminatedCString s_hickdad_dfm_005859f3
 ;   TerminatedCString s_true_005859ff
 ;   undefined4 s_rue_005859ff+1
 ;   undefined4 s_ue_005859ff+2

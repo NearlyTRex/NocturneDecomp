@@ -18,7 +18,7 @@
 ;   void* PTR_QueryPerformanceFrequency_00575574 = 00175f10
 ;   TerminatedCString s_Unable_to_set_timer_00597f11
 ;   double DOUBLE_00597f29 = 4294967296
-;   string s_Nocturne_0059815f
+;   TerminatedCString s_Nocturne_0059815f
 ;   void* PTR_s_Nocturne_005c165c = 0059815f
 ;   undefined4 DAT_01c03950
 ;   undefined4 DAT_02de07d8

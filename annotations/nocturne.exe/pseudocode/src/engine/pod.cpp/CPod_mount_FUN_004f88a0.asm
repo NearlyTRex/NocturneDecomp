@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\pod.cpp_0058db9c
-;   string s_Too_many_.POD_files_at_once!_0058dbae
-;   string s_..\\engine\\pod.cpp_0058dbcb
-;   string s_Out_of_memory!_0058dbdd
-;   string s_..\\engine\\pod.cpp_0058dbec
-;   string s_Can't_mount_%s_0058dbfe
+;   TerminatedCString s_engine_pod_cpp_0058db9c
+;   TerminatedCString s_Too_many_POD_files_at_on_0058dbae
+;   TerminatedCString s_engine_pod_cpp_0058dbcb
+;   TerminatedCString s_Out_of_memory_0058dbdd
+;   TerminatedCString s_engine_pod_cpp_0058dbec
+;   TerminatedCString s_Can_t_mount_s_0058dbfe
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

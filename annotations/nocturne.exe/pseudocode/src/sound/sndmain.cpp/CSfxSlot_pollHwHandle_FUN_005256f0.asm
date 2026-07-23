@@ -8,10 +8,10 @@
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810 at 00529863
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_0059308c
-;   string s_SfxSlot::pollHwHandle_-_no_sampl_005930a1
-;   string s_Killing_looped_sfx_%s,_which_die_005930c4
-;   string s_Error_setting_hw_sfx_%d_options_(_005930e9
+;   TerminatedCString s_sound_sndmain_cpp_0059308c
+;   TerminatedCString s_SfxSlot_pollHwHandle_no_005930a1
+;   TerminatedCString s_Killing_looped_sfx_s_whi_005930c4
+;   TerminatedCString s_Error_setting_hw_sfx_d_o_005930e9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc8318

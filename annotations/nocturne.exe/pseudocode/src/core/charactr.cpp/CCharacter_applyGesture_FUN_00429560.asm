@@ -12,8 +12,8 @@
 ;   core_charactr.cpp_FUN_0042a150 at 0042a156
 ;
 ; Referenced Globals:
-;   string s_..\\core\\charactr.cpp_0057a210
-;   string s_CCharacter::applyGesture_-_never_0057a225
+;   TerminatedCString s_core_charactr_cpp_0057a210
+;   TerminatedCString s_CCharacter_applyGesture_0057a225
 ;   float FLOAT_0057a26a = 0.3000000
 ;   float FLOAT_0057a26e = 0.8500000
 ;   undefined4 DAT_01cc4800

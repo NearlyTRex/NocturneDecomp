@@ -30,8 +30,8 @@
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 at 0051b1ae
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_005918d5
-;   string s_Out_of_memory_005918ea
+;   TerminatedCString s_core_skeleton_cpp_005918d5
+;   TerminatedCString s_Out_of_memory_005918ea
 ;   undefined4 DAT_005a1eb0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

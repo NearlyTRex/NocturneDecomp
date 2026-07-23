@@ -17,12 +17,12 @@
 ;   undefined4 s_wav_0058e36d+1
 ;   undefined4 s_wav_0058e36d+2
 ;   undefined4 s_wav_0058e36d+3
-;   string s_smill.wav_0058e372
+;   TerminatedCString s_smill_wav_0058e372
 ;   TerminatedCString s_s_0_85_0058e37c
 ;   undefined4 s_s_0_85_0058e37c+1
 ;   undefined4 s_s_0_85_0058e37c+2
 ;   undefined4 s_s_0_85_0058e37c+3
-;   string s_town.wav_0058e382
+;   TerminatedCString s_town_wav_0058e382
 ;   TerminatedCString s_s_0_85_0058e38b
 ;   undefined4 s_s_0_85_0058e38b+1
 ;   undefined4 s_s_0_85_0058e38b+2

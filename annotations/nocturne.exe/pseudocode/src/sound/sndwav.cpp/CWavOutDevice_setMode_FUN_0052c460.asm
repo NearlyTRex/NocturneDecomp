@@ -8,7 +8,7 @@
 ;   void* PTR_waveOutOpen_005753f8 = 0017587e
 ;   void* PTR_GlobalAlloc_00575544 = 00175e26
 ;   void* PTR_GlobalLock_0057554c = 00175e42
-;   string s_waveOutOpen_failed_00594942
+;   TerminatedCString s_waveOutOpen_failed_00594942
 ;   undefined4 DAT_005bed44
 ;   undefined4 DAT_02dc93a4
 ;   undefined4 DAT_02dc9428

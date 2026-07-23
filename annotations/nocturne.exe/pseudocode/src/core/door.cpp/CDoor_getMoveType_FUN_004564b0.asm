@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00456498 = 00456566
-;   string s_The_door_is_locked_from_the_othe_0057d255
-;   string s_..\\core\\door.cpp_0057d27d
-;   string s_CDoor::getMoveType_-_invalid_doo_0057d28e
+;   TerminatedCString s_The_door_is_locked_from_0057d255
+;   TerminatedCString s_core_door_cpp_0057d27d
+;   TerminatedCString s_CDoor_getMoveType_invali_0057d28e
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01cc4800

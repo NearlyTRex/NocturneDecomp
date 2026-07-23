@@ -15,8 +15,8 @@
 ;   TerminatedCString s_sml_0058785f
 ;   TerminatedCString s_med_00587863
 ;   TerminatedCString s_big_00587867
-;   string s_l%s-die?.wav_0058787c
-;   string s_l%s-shot?.wav_00587889
+;   TerminatedCString s_l_s_die_wav_0058787c
+;   TerminatedCString s_l_s_shot_wav_00587889
 ;   double DOUBLE_0058789c = 0.300000000000000
 ;   double DOUBLE_005878a4 = 0.700000000000000
 ;   undefined4 DAT_005b96c4

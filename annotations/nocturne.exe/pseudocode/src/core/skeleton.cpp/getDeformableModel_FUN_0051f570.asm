@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591dd3
-;   string s_Can't_load_%s_because_deformable_00591de8
+;   TerminatedCString s_Can_t_load_s_because_def_00591de8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_0268cef0

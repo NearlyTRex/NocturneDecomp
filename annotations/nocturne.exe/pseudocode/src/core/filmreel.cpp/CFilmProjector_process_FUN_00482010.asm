@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_35-loop.wav_00580fe1
-;   string s_..\\core\\filmreel.cpp_00580fed
-;   string s_CFilmProjector::Need_to_put_CFil_00581002
-;   string s_35-start.wav_00581031
-;   string s_35-end.wav_0058103e
+;   TerminatedCString s_s_35_loop_wav_00580fe1
+;   TerminatedCString s_core_filmreel_cpp_00580fed
+;   TerminatedCString s_CFilmProjector_Need_to_p_00581002
+;   TerminatedCString s_s_35_start_wav_00581031
+;   TerminatedCString s_s_35_end_wav_0058103e
 ;   double DOUBLE_0058104b = 3.14159265350000
 ;   undefined4 DAT_005ad550
 ;   undefined4 DAT_005b7650

@@ -49,8 +49,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(int param_1)
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4bc,"blockVirtualDirectorFlag");
   }
   if (3 < 0x0000000B) {
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              (param_1 + 0x4c0,"renderInBackgroundWhenNotMovingFlag");
+    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4c0,"renderInBackgroundWhenNotMovingFlag");
   }
   if (4 < 0x0000000B) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x4c4,"cameraWhileMoving");

@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057adb6
-;   string s_Too_many_connecting_verticies_0057adc8
+;   TerminatedCString s_Too_many_connecting_vert_0057adc8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

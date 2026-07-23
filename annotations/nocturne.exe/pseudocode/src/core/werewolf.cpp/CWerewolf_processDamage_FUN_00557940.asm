@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; Referenced Globals:
-;   string s_werewolf-die?.wav_00597eb4
+;   TerminatedCString s_werewolf_die_wav_00597eb4
 ;   TerminatedCString s_werewolf_hurt_wav_00597ec6
 ;   double DOUBLE_00597ed9 = 2
 ;   double DOUBLE_00597ee1 = 5

@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_defaultDoorOpen_0057d047
-;   string s_%sOpen_0057d057
-;   string s_defaultDoorClose_0057d05e
-;   string s_%sClose_0057d06f
+;   TerminatedCString s_defaultDoorOpen_0057d047
+;   TerminatedCString s_sOpen_0057d057
+;   TerminatedCString s_defaultDoorClose_0057d05e
+;   TerminatedCString s_sClose_0057d06f
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

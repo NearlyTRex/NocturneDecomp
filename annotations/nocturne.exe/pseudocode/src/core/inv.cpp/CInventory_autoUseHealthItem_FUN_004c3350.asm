@@ -8,9 +8,9 @@
 ;   FUN_0053e860 at 0053e937
 ;
 ; Referenced Globals:
-;   string s_Auto_use_selected_health_0058752f
-;   string s_Auto_use_health_00587549
-;   string s_no_more_auto_health_left_0058755a
+;   TerminatedCString s_Auto_use_selected_health_0058752f
+;   TerminatedCString s_Auto_use_health_00587549
+;   TerminatedCString s_no_more_auto_health_left_0058755a
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01cae0d0

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Lock_hw_sample_buffer_005942e8
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Lock_hw_sample_buffer_005942e8
 ;   undefined4 DAT_02dc9244
 ;
 ; Called Functions:

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mimic.cpp_005893d1
-;   string s_CMimic::setup_-_can't_use_mimic_i_005893e3
+;   TerminatedCString s_core_mimic_cpp_005893d1
+;   TerminatedCString s_CMimic_setup_can_t_use_m_005893e3
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_01cae0e8

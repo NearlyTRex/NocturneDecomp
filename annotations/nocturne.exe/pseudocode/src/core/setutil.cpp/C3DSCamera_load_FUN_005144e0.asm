@@ -11,15 +11,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00590c71
-;   string s_%f,%f,%f_00590c75
-;   string s_%f,%f,%f_00590c7f
+;   TerminatedCString s_f_f_f_00590c75
+;   TerminatedCString s_f_f_f_00590c7f
 ;   TerminatedCString s_f_00590c89
-;   string s_%f,%f,%f_00590c8d
-;   string s_%f,%f,%f_00590c97
-;   string s_%f,%f,%f_00590ca1
+;   TerminatedCString s_f_f_f_00590c8d
+;   TerminatedCString s_f_f_f_00590c97
+;   TerminatedCString s_f_f_f_00590ca1
 ;   TerminatedCString s_d_00590cab
-;   string s_%f,%f,%f_00590caf
-;   string s_%f,%f,%f_00590cb9
+;   TerminatedCString s_f_f_f_00590caf
+;   TerminatedCString s_f_f_f_00590cb9
 ;   TerminatedCString s_d_00590cc3
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284

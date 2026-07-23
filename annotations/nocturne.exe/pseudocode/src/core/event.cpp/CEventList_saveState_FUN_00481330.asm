@@ -13,21 +13,21 @@
 ;   FUN_004a3b90 at 004a3d18
 ;
 ; Referenced Globals:
-;   string s_//_CEventList_version_00580d9b
+;   TerminatedCString s_CEventList_version_00580d9b
 ;   TerminatedCString s_d_00580db2
-;   string s_//_eventCount,_list_00580db6
+;   TerminatedCString s_eventCount_list_00580db6
 ;   TerminatedCString s_d_00580dcb
 ;   TerminatedCString s_s_00580dcf
-;   string s_//_currentEventCount,_list_00580dd3
+;   TerminatedCString s_currentEventCount_list_00580dd3
 ;   TerminatedCString s_d_00580def
 ;   TerminatedCString s_s_00580df3
-;   string s_//_persistentEventCount,_list_00580df7
+;   TerminatedCString s_persistentEventCount_lis_00580df7
 ;   TerminatedCString s_d_00580e16
 ;   TerminatedCString s_s_00580e1a
-;   string s_//_timerCount,_list(duration,_na_00580e1e
+;   TerminatedCString s_timerCount_list_duration_00580e1e
 ;   TerminatedCString s_d_00580e43
-;   string s_%f,_%s_00580e47
-;   string s_//_counterCount,_list(value,_nam_00580e4f
+;   TerminatedCString s_f_s_00580e47
+;   TerminatedCString s_counterCount_list_value_00580e4f
 ;   ... and 8 more
 ;
 ; Called Functions:

@@ -37,19 +37,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_noc_00583c33
 ;   TerminatedCString s_noc_00583c37
-;   string s_*.noc_00583c3c
+;   TerminatedCString s_noc_00583c3c
 ;   TerminatedCString s_save_00583c42
-;   string s_Select_file_to_load_00583c47
+;   TerminatedCString s_Select_file_to_load_00583c47
 ;   TerminatedCString s_rt_00583c5b
 ;   TerminatedCString s_save_00583c5e
 ;   TerminatedCString s_LZW_00583c63
 ;   undefined4 s_ZW_00583c63+1
 ;   TerminatedCString s_save_00583c67
 ;   TerminatedCString s_save_00583c6c
-;   string s_%s\\%s_00583c71
-;   string s_Can't_open_saved_game_file._00583c77
-;   string s_Can't_create_temp_file_to_load_s_00583c93
-;   string s_Error_writing_temp_file_to_load_s_00583cc3
+;   TerminatedCString s_s_s_00583c71
+;   TerminatedCString s_Can_t_open_saved_game_fi_00583c77
+;   TerminatedCString s_Can_t_create_temp_file_t_00583c93
+;   TerminatedCString s_Error_writing_temp_file_00583cc3
 ;   ... and 44 more
 ;
 ; Called Functions:
@@ -654,7 +654,7 @@ section .text
     LEA EDI,[ESP + 0x410]               ; 004a4839
     MOV ESI,0x5b9388                    ; 004a4840 | = "(file corrupt)"
     PUSH EBX                            ; 004a4845
-    MOVSD.REP ES:EDI,ESI                ; 004a4846 | = "(file corrupt)" | s_e_corrupt)_005b9388+4
+    MOVSD.REP ES:EDI,ESI                ; 004a4846 | = "(file corrupt)" | s_file_corrupt_005b9388+4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a4848
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     ADD ESP,0xc                         ; 004a484d

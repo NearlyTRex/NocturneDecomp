@@ -24,13 +24,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_To_be_continued_005845f2
-;   string s_stats_00584605
-;   string s_Mission_time_0058460b
+;   TerminatedCString s_stats_00584605
+;   TerminatedCString s_Mission_time_0058460b
 ;   TerminatedCString s_anon_00584618
 ;   undefined4 s_anon_00584618+1
 ;   undefined4 s_anon_00584618+2
-;   string s_%2d:%2d:%2d.%2d_0058461b
-;   string s_Total_body_count_0058462d
+;   TerminatedCString s_s_2d_2d_2d_2d_0058461b
+;   TerminatedCString s_Total_body_count_0058462d
 ;   TerminatedCString s_anon_0058463e
 ;   undefined4 s_anon_0058463e+1
 ;   undefined4 s_anon_0058463e+2

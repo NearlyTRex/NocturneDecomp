@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   string s_GlassHiram_005859df
+;   TerminatedCString s_GlassHiram_005859df
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01c78c78

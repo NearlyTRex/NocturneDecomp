@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_..\\sound\\snddx.cpp_005942fe
-;   string s_DirectSoundDevice::unlockSample_-_00594311
-;   string s_Unlock_hw_sample_buffer_00594353
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_sound_snddx_cpp_005942fe
+;   TerminatedCString s_DirectSoundDevice_unlock_00594311
+;   TerminatedCString s_Unlock_hw_sample_buffer_00594353
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc9244

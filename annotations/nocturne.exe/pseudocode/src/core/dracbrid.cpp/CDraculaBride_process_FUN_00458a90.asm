@@ -104,19 +104,19 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00458a14 = 00458fa7
 ;   undefined1* switchdataD_00458a24 = 00459bbb
-;   string s_brideexplosion.wav_0057d600
-;   string s_%s_confused_while_walking_to_scr_0057d613
-;   string s_bride-%d?.wav_0057d63d
-;   string s_hotbride-disappear.wav_0057d64b
-;   string s_bride-%d?.wav_0057d662
-;   string s_%s_gave_up_chase_-_I'm_confused_0057d670
-;   string s_hotbride-bite?.wav_0057d691
-;   string s_CHero_0057d6a4
-;   string s_bride-%d?.wav_0057d6aa
-;   string s_hotbride-disappear.wav_0057d6b8
-;   string s_bride-%d?.wav_0057d6cf
-;   string s_%s_gave_up_chase_-_I'm_confused_0057d6dd
-;   string s_hotbride-swipe?.wav_0057d6fe
+;   TerminatedCString s_brideexplosion_wav_0057d600
+;   TerminatedCString s_s_confused_while_walking_0057d613
+;   TerminatedCString s_bride_d_wav_0057d63d
+;   TerminatedCString s_hotbride_disappear_wav_0057d64b
+;   TerminatedCString s_bride_d_wav_0057d662
+;   TerminatedCString s_s_gave_up_chase_I_m_conf_0057d670
+;   TerminatedCString s_hotbride_bite_wav_0057d691
+;   TerminatedCString s_CHero_0057d6a4
+;   TerminatedCString s_bride_d_wav_0057d6aa
+;   TerminatedCString s_hotbride_disappear_wav_0057d6b8
+;   TerminatedCString s_bride_d_wav_0057d6cf
+;   TerminatedCString s_s_gave_up_chase_I_m_conf_0057d6dd
+;   TerminatedCString s_hotbride_swipe_wav_0057d6fe
 ;   ... and 32 more
 ;
 ; Called Functions:

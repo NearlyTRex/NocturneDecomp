@@ -8,8 +8,8 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a641e
 ;
 ; Referenced Globals:
-;   string s_Changing_sets..._00589da6
-;   string s_Insert_wipe_here..._00589db7
+;   TerminatedCString s_Changing_sets_00589da6
+;   TerminatedCString s_Insert_wipe_here_00589db7
 ;   undefined4 DAT_005be220
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cae0e8

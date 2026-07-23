@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   void* switchdataD_004736bc = 0047370c
 ;   TerminatedCString s_Blocks_d_Total_1fk_Max_1_0057eab6
-;   string s_Heap_is_empty._0057ead9
-;   undefined4 s_eap_is_empty._0057ead9+1
-;   undefined4 s_ap_is_empty._0057ead9+2
-;   undefined4 s_p_is_empty._0057ead9+3
-;   string s_Memory_corruption_detected!_0057eae8
-;   undefined4 s_emory_corruption_detected!_0057eae8+1
+;   TerminatedCString s_Heap_is_empty_0057ead9
+;   undefined4 s_Heap_is_empty_0057ead9+1
+;   undefined4 s_Heap_is_empty_0057ead9+2
+;   undefined4 s_Heap_is_empty_0057ead9+3
+;   TerminatedCString s_Memory_corruption_detect_0057eae8
+;   undefined4 s_Memory_corruption_detect_0057eae8+1
 ;   double DOUBLE_0057eb0a = 0.0009765625
 ;
 ; Called Functions:
@@ -70,13 +70,13 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 00473711
         ;   Label: LAB_00473711
     PUSH EDI                            ; 00473714
-    MOV AL,byte ptr [ESI]               ; 00473715 | = "Heap is empty." | s_ap_is_empty._0057ead9+2 | s_Memory_corruption_detected!_0057eae8
+    MOV AL,byte ptr [ESI]               ; 00473715 | = "Heap is empty." | s_Heap_is_empty_0057ead9+2 | s_Memory_corruption_detect_0057eae8
         ;   Label: LAB_00473715
     MOV byte ptr [EDI],AL               ; 00473717
     CMP AL,0x0                          ; 00473719
     JZ 0x0047372d                       ; 0047371b
         ;   XREF to: 0047372d (CONDITIONAL_JUMP)  ; LAB_0047372d
-    MOV AL,byte ptr [ESI + 0x1]         ; 0047371d | s_eap_is_empty._0057ead9+1 | s_p_is_empty._0057ead9+3 | s_emory_corruption_detected!_0057eae8+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 0047371d | s_Heap_is_empty_0057ead9+1 | s_Heap_is_empty_0057ead9+3 | s_Memory_corruption_detect_0057eae8+1
     ADD ESI,0x2                         ; 00473720
     MOV byte ptr [EDI + 0x1],AL         ; 00473723
     ADD EDI,0x2                         ; 00473726

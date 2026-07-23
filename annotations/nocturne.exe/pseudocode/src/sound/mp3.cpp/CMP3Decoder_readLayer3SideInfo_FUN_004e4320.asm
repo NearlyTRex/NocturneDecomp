@@ -29,9 +29,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b6e8
-;   string s_Side_info_bad:_block_type_==_0_i_0058b6f9
-;   string s_..\\sound\\mp3.cpp_0058b732
-;   string s_Side_info_bad:_block_type_==_0_i_0058b743
+;   TerminatedCString s_Side_info_bad_block_type_0058b6f9
+;   TerminatedCString s_sound_mp3_cpp_0058b732
+;   TerminatedCString s_Side_info_bad_block_type_0058b743
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cd8b28

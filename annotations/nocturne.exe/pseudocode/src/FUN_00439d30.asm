@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_colonel.dfm_0057b00d
+;   TerminatedCString s_colonel_dfm_0057b00d
 ;   undefined1* PTR_FUN_0059b574 = 00439da0
 ;
 ; Called Functions:

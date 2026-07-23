@@ -21,12 +21,12 @@
 ;   FUN_0049cc10 at 0049d433
 ;
 ; Referenced Globals:
-;   string s_Game_Flag:_%s_00580242
-;   string s_Persistent:_%s_00580250
-;   string s_Timer:_%5.2f_%s_0058025f
-;   string s_%s=%d_0058026f
-;   string s_%s=%s_00580275
-;   string s_%s=%s_%.1f_0058027b
+;   TerminatedCString s_Game_Flag_s_00580242
+;   TerminatedCString s_Persistent_s_00580250
+;   TerminatedCString s_Timer_5_2f_s_0058025f
+;   TerminatedCString s_s_d_0058026f
+;   TerminatedCString s_s_s_00580275
+;   TerminatedCString s_s_s_1f_0058027b
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60

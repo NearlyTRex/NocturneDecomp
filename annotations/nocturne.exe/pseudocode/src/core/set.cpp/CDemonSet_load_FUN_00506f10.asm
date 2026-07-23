@@ -36,21 +36,21 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d9048
 ;
 ; Referenced Globals:
-;   string s_Loading_set_005900f8
+;   TerminatedCString s_Loading_set_005900f8
 ;   TerminatedCString s_rt_00590104
-;   string s_models_00590107
-;   string s_..\\core\\set.cpp_0059010e
-;   string s_CDemonSet::Unable_to_open_%s_0059011e
+;   TerminatedCString s_models_00590107
+;   TerminatedCString s_core_set_cpp_0059010e
+;   TerminatedCString s_CDemonSet_Unable_to_open_0059011e
 ;   TerminatedCString s_d_0059013b
 ;   TerminatedCString s_f_0059013f
 ;   TerminatedCString s_s_00590143
 ;   TerminatedCString s_s_00590147
 ;   TerminatedCString s_f_0059014b
-;   string s_%d,%d,%d,%d_0059014f
-;   string s_%f,%f,%f_0059015c
-;   string s_%f,%f,%f,%f_00590166
-;   string s_%f,%f_00590173
-;   string s_%d,%s_0059017a
+;   TerminatedCString s_d_d_d_d_0059014f
+;   TerminatedCString s_f_f_f_0059015c
+;   TerminatedCString s_f_f_f_f_00590166
+;   TerminatedCString s_f_f_00590173
+;   TerminatedCString s_d_s_0059017a
 ;   ... and 56 more
 ;
 ; Called Functions:
@@ -1020,13 +1020,13 @@ section .text
     MOV ESI,0x590195                    ; 005079de | = "NITESKY.RAW"
         ;   Label: LAB_005079de
     PUSH EDI                            ; 005079e3
-    MOV AL,byte ptr [ESI]               ; 005079e4 | = "NITESKY.RAW" | s_TESKY.RAW_00590195+2
+    MOV AL,byte ptr [ESI]               ; 005079e4 | = "NITESKY.RAW" | s_NITESKY_RAW_00590195+2
         ;   Label: LAB_005079e4
     MOV byte ptr [EDI],AL               ; 005079e6
     CMP AL,0x0                          ; 005079e8
     JZ 0x005079fc                       ; 005079ea
         ;   XREF to: 005079fc (CONDITIONAL_JUMP)  ; LAB_005079fc
-    MOV AL,byte ptr [ESI + 0x1]         ; 005079ec | s_ITESKY.RAW_00590195+1 | s_ESKY.RAW_00590195+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 005079ec | s_NITESKY_RAW_00590195+1 | s_NITESKY_RAW_00590195+3
     ADD ESI,0x2                         ; 005079ef
     MOV byte ptr [EDI + 0x1],AL         ; 005079f2
     ADD EDI,0x2                         ; 005079f5

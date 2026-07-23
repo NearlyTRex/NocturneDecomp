@@ -8,8 +8,8 @@
 ;   FUN_004cb010 at 004cb279
 ;
 ; Referenced Globals:
-;   string s_..\\core\\manpuz.cpp_0058810f
-;   string s_CMansionPuzzleCircle::panelOccup_00588122
+;   TerminatedCString s_core_manpuz_cpp_0058810f
+;   TerminatedCString s_CMansionPuzzleCircle_pan_00588122
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

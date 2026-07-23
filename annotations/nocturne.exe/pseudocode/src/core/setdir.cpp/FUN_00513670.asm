@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_wb_00590c0d
 ;   TerminatedCString s_data_00590c10
-;   string s_..\\core\\setdir.cpp_00590c15
-;   string s_Can't_create_%s_00590c28
-;   string s_..\\core\\setdir.cpp_00590c38
-;   string s_Error_writing_%s_00590c4b
+;   TerminatedCString s_core_setdir_cpp_00590c15
+;   TerminatedCString s_Can_t_create_s_00590c28
+;   TerminatedCString s_core_setdir_cpp_00590c38
+;   TerminatedCString s_Error_writing_s_00590c4b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

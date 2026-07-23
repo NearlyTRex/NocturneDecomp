@@ -11,15 +11,15 @@
 ;   core_actor.cpp_archiveActor_FUN_0040c980 at 0040c9a6
 ;
 ; Referenced Globals:
-;   string s_(unknown)_00589b84
-;   string s_(unknown)_00589b8e
-;   string s_..\\core\\mission.cpp_00589b98
-;   string s_Error_reading_actor_pointer._Own_00589bac
-;   string s_%[^\"]_00589be4
-;   string s_WARNING._Can't_find_actor_'%s'_i_00589bea
+;   TerminatedCString s_unknown_00589b84
+;   TerminatedCString s_unknown_00589b8e
+;   TerminatedCString s_core_mission_cpp_00589b98
+;   TerminatedCString s_Error_reading_actor_poin_00589bac
+;   TerminatedCString s_anon_00589be4
+;   TerminatedCString s_WARNING_Can_t_find_actor_00589bea
 ;   TerminatedCString s_x_00589c44
 ;   undefined4 DAT_005b6d50
-;   string s_(none)_005bb0d0
+;   TerminatedCString s_none_005bb0d0
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

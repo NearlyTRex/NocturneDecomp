@@ -5,15 +5,15 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Stop_hardware_sfx_secondary_buff_00594104
-;   string s_..\\sound\\snddx.cpp_0059436b
-;   string s_DirectSoundDevice::allocateSfx_-_0059437e
-;   string s_..\\sound\\snddx.cpp_005943b9
-;   string s_DirectSoundDevice::allocateSfx_-_005943cc
-;   string s_DirectSoundDevice::allocateSfx_-_00594403
-;   string s_Duplicate_sound_buffer_00594435
-;   string s_get_DirectSound3DBuffer_interfac_0059444c
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Stop_hardware_sfx_second_00594104
+;   TerminatedCString s_sound_snddx_cpp_0059436b
+;   TerminatedCString s_DirectSoundDevice_alloca_0059437e
+;   TerminatedCString s_sound_snddx_cpp_005943b9
+;   TerminatedCString s_DirectSoundDevice_alloca_005943cc
+;   TerminatedCString s_DirectSoundDevice_alloca_00594403
+;   TerminatedCString s_Duplicate_sound_buffer_00594435
+;   TerminatedCString s_get_DirectSound3DBuffer_0059444c
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005c3918
 ;   undefined4 DAT_0077ad0c

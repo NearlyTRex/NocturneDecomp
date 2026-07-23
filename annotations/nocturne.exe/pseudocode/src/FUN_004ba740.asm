@@ -11,7 +11,7 @@
 ;   FUN_004b9fe0 at 004ba2e7
 ;
 ; Referenced Globals:
-;   string s_shoot_0058618a
+;   TerminatedCString s_shoot_0058618a
 ;   double DOUBLE_00586192 = 2
 ;   double DOUBLE_0058619a = 3.14159265350000
 ;   double DOUBLE_005861a2 = 0.785398163375000

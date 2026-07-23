@@ -8,8 +8,8 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Get_position_of_secondary_buffer_0059422c
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Get_position_of_secondar_0059422c
 ;   undefined4 DAT_02dc921c
 ;   undefined4 DAT_02dc9220
 ;   undefined4 DAT_02dc9238

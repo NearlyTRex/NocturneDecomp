@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_stand_00595fdc
+;   TerminatedCString s_stand_00595fdc
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960

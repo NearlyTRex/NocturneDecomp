@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   void* switchdataD_0053fc3c = 0053fce7
 ;   TerminatedCString s_eDoorMoveNone_returned_b_00595e17
-;   string s_eDoorMoveNone_returned_by_checkD_00595e54
-;   string s_!CBodyPart_00595e91
-;   string s_CBodyPart_00595e9c
+;   TerminatedCString s_eDoorMoveNone_returned_b_00595e54
+;   TerminatedCString s_CBodyPart_00595e91
+;   TerminatedCString s_CBodyPart_00595e9c
 ;   double DOUBLE_00595ea7 = 0.999900000000000
 ;   double DOUBLE_00595eaf = 0.990000000000000
 ;   undefined4 DAT_005b6d50

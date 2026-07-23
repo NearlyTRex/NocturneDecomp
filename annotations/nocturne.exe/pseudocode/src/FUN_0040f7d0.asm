@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00578420
-;   string s_dropCondition_0057842a
-;   string s_dropHeight_00578438
-;   string s_triggered_00578443
+;   TerminatedCString s_dropCondition_0057842a
+;   TerminatedCString s_dropHeight_00578438
+;   TerminatedCString s_triggered_00578443
 ;   TerminatedCString s_yvel_0057844d
 ;
 ; Called Functions:

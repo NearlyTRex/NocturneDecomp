@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   string s_stalrock.kfm_0057ddf4
+;   TerminatedCString s_stalrock_kfm_0057ddf4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0

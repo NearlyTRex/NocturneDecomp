@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 455,
+    "complexity_score": 454,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
+    "pseudocode_lines": 124,
     "suspect_count": 30,
     "suspect_types": [
       "concat_reconstruction",
@@ -137,7 +137,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 475
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -214,14 +214,14 @@
     },
     {
       "addr": "00597551",
-      "name": "s_Too_many_visible_water_tiles!_00597551",
-      "type": "string",
+      "name": "s_Too_many_visible_water_t_00597551",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059756f",
-      "name": "s_Vis_water_tiles_:_%d,_SqFt_:_%f_0059756f",
-      "type": "string",
+      "name": "s_Vis_water_tiles_d_SqFt_f_0059756f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(*(uint *)(param_1 + 4),iVar4);",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 128,
+      "line": 127,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(*(uint *)(param_1 + 4),iVar4);",

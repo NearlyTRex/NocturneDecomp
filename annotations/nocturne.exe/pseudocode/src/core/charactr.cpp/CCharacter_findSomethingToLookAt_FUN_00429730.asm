@@ -8,9 +8,9 @@
 ;   FUN_004b6d80 at 004b736b
 ;
 ; Referenced Globals:
-;   string s_CHero_0057a272
-;   string s_..\\core\\charactr.cpp_0057a278
-;   string s_CCharacter::findSomethingToLookA_0057a28d
+;   TerminatedCString s_CHero_0057a272
+;   TerminatedCString s_core_charactr_cpp_0057a278
+;   TerminatedCString s_CCharacter_findSomething_0057a28d
 ;   double DOUBLE_0057a2ca = 1.10000000000000
 ;   double DOUBLE_0057a2d2 = 5.36197666906508E-315
 ;   double DOUBLE_0057a2da = 1.39626340155556

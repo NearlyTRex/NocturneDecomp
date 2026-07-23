@@ -13,19 +13,19 @@
 ; Referenced Globals:
 ;   void* switchdataD_0040ed54 = 0040edc2
 ;   TerminatedCString s_CGun_00578228
-;   string s_gatbullet.kfm_0057822d
-;   string s_holybullet.kfm_0057823b
-;   string s_woodbullet.kfm_0057824a
-;   string s_silverbullet.kfm_00578259
-;   string s_goldbullet.kfm_0057826a
-;   string s_lithiumbullet.kfm_00578279
-;   string s_mercurybullet.kfm_0057828b
-;   string s_CShotgun_0057829d
-;   string s_shell.kfm_005782a6
-;   string s_CCrossbow_005782b0
-;   string s_holystake.kfm_005782ba
-;   string s_stake.kfm_005782c8
-;   string s_CDynamite_005782d2
+;   TerminatedCString s_gatbullet_kfm_0057822d
+;   TerminatedCString s_holybullet_kfm_0057823b
+;   TerminatedCString s_woodbullet_kfm_0057824a
+;   TerminatedCString s_silverbullet_kfm_00578259
+;   TerminatedCString s_goldbullet_kfm_0057826a
+;   TerminatedCString s_lithiumbullet_kfm_00578279
+;   TerminatedCString s_mercurybullet_kfm_0057828b
+;   TerminatedCString s_CShotgun_0057829d
+;   TerminatedCString s_shell_kfm_005782a6
+;   TerminatedCString s_CCrossbow_005782b0
+;   TerminatedCString s_holystake_kfm_005782ba
+;   TerminatedCString s_stake_kfm_005782c8
+;   TerminatedCString s_CDynamite_005782d2
 ;   ... and 7 more
 ;
 ; Called Functions:

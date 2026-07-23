@@ -8,21 +8,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_vertexCount_00578f7a
-;   string s_triCount_00578f86
-;   string s_textureCount_00578f8f
-;   string s_%d,%d,%d_00578f9c
-;   string s_%d,_%d,%d,%d,_%d,%d,%d,_%d,%d,%d_00578fa6
-;   string s_\"%[^\"]\"_00578fca
-;   string s_%d,%d,%d_00578fd4
-;   string s_%d,_%d,%d,%d,_%d,%d,%d,_%d,%d,%d_00578fdf
-;   string s_\"%s\"_00579002
-;   string s_simBox_00579009
-;   string s_carriedByActor_00579010
-;   string s_bloodType_0057901f
-;   string s_dontUseNormals_00579029
-;   string s_transparentGeometryFlag_00579038
-;   string s_renderInBackground_00579050
+;   TerminatedCString s_vertexCount_00578f7a
+;   TerminatedCString s_triCount_00578f86
+;   TerminatedCString s_textureCount_00578f8f
+;   TerminatedCString s_d_d_d_00578f9c
+;   TerminatedCString s_d_d_d_d_d_d_d_d_d_d_00578fa6
+;   TerminatedCString s_anon_00578fca
+;   TerminatedCString s_d_d_d_00578fd4
+;   TerminatedCString s_d_d_d_d_d_d_d_d_d_d_00578fdf
+;   TerminatedCString s_s_00579002
+;   TerminatedCString s_simBox_00579009
+;   TerminatedCString s_carriedByActor_00579010
+;   TerminatedCString s_bloodType_0057901f
+;   TerminatedCString s_dontUseNormals_00579029
+;   TerminatedCString s_transparentGeometryFlag_00579038
+;   TerminatedCString s_renderInBackground_00579050
 ;   ... and 4 more
 ;
 ; Called Functions:

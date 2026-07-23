@@ -12,8 +12,8 @@
 ;   FUN_004950a0 at 004950ca
 ;
 ; Referenced Globals:
-;   string s_..\\core\\frankgen.cpp_00581dbb
-;   string s_CFrankenstienMachine::setCourseF_00581dd0
+;   TerminatedCString s_core_frankgen_cpp_00581dbb
+;   TerminatedCString s_CFrankenstienMachine_set_00581dd0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

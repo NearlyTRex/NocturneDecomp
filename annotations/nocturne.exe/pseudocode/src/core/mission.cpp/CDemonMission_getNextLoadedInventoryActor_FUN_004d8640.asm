@@ -8,10 +8,10 @@
 ;   core_inv.cpp_CInventory_load_FUN_004c1190 at 004c1300
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589999
-;   string s_CDemonMission::getNextLoadedInve_005899ad
-;   string s_..\\core\\mission.cpp_005899e3
-;   string s_CDemonMission::getNextLoadedInve_005899f7
+;   TerminatedCString s_core_mission_cpp_00589999
+;   TerminatedCString s_CDemonMission_getNextLoa_005899ad
+;   TerminatedCString s_core_mission_cpp_005899e3
+;   TerminatedCString s_CDemonMission_getNextLoa_005899f7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x4]:1  local_4
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_Get_active_sfx_secondary_00594687
 ;
 ; Called Functions:

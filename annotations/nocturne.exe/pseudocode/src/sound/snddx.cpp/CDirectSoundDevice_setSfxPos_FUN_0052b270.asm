@@ -15,20 +15,20 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_..\\sound\\snddx.cpp_00594488
-;   string s_DirectSoundDevice::setSfxPos_-_i_0059449b
-;   string s_Set_hardware_sfx_3d_buffer_posit_005944c9
-;   string s_Set_hardware_sfx_3d_buffer_veloc_005944ed
-;   string s_Set_hardware_sfx_secondary_buffe_00594511
-;   string s_Set_hardware_sfx_secondary_buffe_0059453a
-;   string s_Set_hardware_sfx_3d_buffer_mode_00594566
-;   string s_Set_hardware_sfx_3d_buffer_minim_00594586
-;   string s_Set_hardware_sfx_3d_buffer_maxim_005945b2
-;   string s_..\\sound\\snddx.cpp_005945de
-;   string s_DirectSoundDevice::setSfxOpt_-_n_005945f1
-;   string s_Commit_hardware_sfx_3d_buffer_se_0059462b
-;   string s_DirectSoundDevice::setSfxOpt_-_f_00594652
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_sound_snddx_cpp_00594488
+;   TerminatedCString s_DirectSoundDevice_setSfx_0059449b
+;   TerminatedCString s_Set_hardware_sfx_3d_buff_005944c9
+;   TerminatedCString s_Set_hardware_sfx_3d_buff_005944ed
+;   TerminatedCString s_Set_hardware_sfx_seconda_00594511
+;   TerminatedCString s_Set_hardware_sfx_seconda_0059453a
+;   TerminatedCString s_Set_hardware_sfx_3d_buff_00594566
+;   TerminatedCString s_Set_hardware_sfx_3d_buff_00594586
+;   TerminatedCString s_Set_hardware_sfx_3d_buff_005945b2
+;   TerminatedCString s_sound_snddx_cpp_005945de
+;   TerminatedCString s_DirectSoundDevice_setSfx_005945f1
+;   TerminatedCString s_Commit_hardware_sfx_3d_b_0059462b
+;   TerminatedCString s_DirectSoundDevice_setSfx_00594652
 ;   double DOUBLE_0059467f = 868.589000000000
 ;   ... and 3 more
 ;

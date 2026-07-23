@@ -17,8 +17,8 @@
 ;   FUN_0046bd90 at 0046bf96
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dtrace.cpp_0057e402
-;   string s_Parity_Check_999_0057e415
+;   TerminatedCString s_core_dtrace_cpp_0057e402
+;   TerminatedCString s_Parity_Check_999_0057e415
 ;   undefined4 DAT_005b6d08
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

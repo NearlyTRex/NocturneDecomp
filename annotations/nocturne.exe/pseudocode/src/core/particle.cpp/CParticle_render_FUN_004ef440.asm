@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\particle.cpp_0058cb94
-;   string s_Base_class_shouldn't_render_0058cba9
+;   TerminatedCString s_core_particle_cpp_0058cb94
+;   TerminatedCString s_Base_class_shouldn_t_ren_0058cba9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

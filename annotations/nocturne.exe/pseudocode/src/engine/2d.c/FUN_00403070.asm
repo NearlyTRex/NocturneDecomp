@@ -9,8 +9,8 @@
 ;   TerminatedCString s_fog_0057718f
 ;   TerminatedCString s_rb_00577193
 ;   TerminatedCString s_fog_00577196
-;   string s_..\\engine\\2d.c_0057719a
-;   string s_Unable_to_read_fog_table._005771a9
+;   TerminatedCString s_engine_2d_c_0057719a
+;   TerminatedCString s_Unable_to_read_fog_table_005771a9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

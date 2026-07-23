@@ -18,8 +18,8 @@
 ;   TerminatedCString s_fog_00577261
 ;   TerminatedCString s_wb_00577265
 ;   TerminatedCString s_fog_00577268
-;   string s_..\\engine\\2d.c_0057726c
-;   string s_Unable_to_write_quick_map!_0057727b
+;   TerminatedCString s_engine_2d_c_0057726c
+;   TerminatedCString s_Unable_to_write_quick_ma_0057727b
 ;   undefined4 DAT_01bf7720
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

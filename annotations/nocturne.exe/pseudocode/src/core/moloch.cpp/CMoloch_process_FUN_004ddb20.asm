@@ -23,11 +23,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_%s_confused_while_walking_to_scr_0058a76f
-;   string s_moloch_h.dfm_0058a799
-;   string s_moloch_d.dfm_0058a7a6
-;   string s_moloch_d.dfm_0058a7b3
-;   string s_moloch_h.dfm_0058a7c0
+;   TerminatedCString s_s_confused_while_walking_0058a76f
+;   TerminatedCString s_moloch_h_dfm_0058a799
+;   TerminatedCString s_moloch_d_dfm_0058a7a6
+;   TerminatedCString s_moloch_d_dfm_0058a7b3
+;   TerminatedCString s_moloch_h_dfm_0058a7c0
 ;   double DOUBLE_0058a7d2 = 12.5663706140000
 ;   double DOUBLE_0058a7da = 0.333333333333333
 ;   double DOUBLE_0058a7e2 = 32

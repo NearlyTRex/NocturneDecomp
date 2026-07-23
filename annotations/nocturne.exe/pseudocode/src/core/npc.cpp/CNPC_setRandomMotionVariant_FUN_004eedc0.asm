@@ -11,8 +11,8 @@
 ;   FUN_004eeea0 at 004eeefb
 ;
 ; Referenced Globals:
-;   string s_%s_%d_0058cb63
-;   string s_%s_%d_0058cb69
+;   TerminatedCString s_s_d_0058cb63
+;   TerminatedCString s_s_d_0058cb69
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00

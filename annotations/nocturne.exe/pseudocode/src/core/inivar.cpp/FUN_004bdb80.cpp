@@ -14,8 +14,7 @@ void FUN_004bdb80(void)
   int iVar1;
   byte local_204 [512];
   
-  iVar1 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180)
-  ;
+  iVar1 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
   if (iVar1 != 0) {
     _DAT_01cc4800 = "..\\core\\inivar.cpp";
     _DAT_01cc4804 = 0x54;

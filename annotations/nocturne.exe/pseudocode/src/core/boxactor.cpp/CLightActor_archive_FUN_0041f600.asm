@@ -7,13 +7,13 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_lightType_0057996b
-;   string s_bLightPos_00579975
-;   string s_lightOrient_0057997f
-;   string s_lightFov_0057998b
-;   string s_lightFov_00579994
-;   string s_light_status_0057999d
-;   string s_light_falloff_005799aa
+;   TerminatedCString s_lightType_0057996b
+;   TerminatedCString s_bLightPos_00579975
+;   TerminatedCString s_lightOrient_0057997f
+;   TerminatedCString s_lightFov_0057998b
+;   TerminatedCString s_lightFov_00579994
+;   TerminatedCString s_light_status_0057999d
+;   TerminatedCString s_light_falloff_005799aa
 ;   undefined4 DAT_00763e88
 ;
 ; Called Functions:

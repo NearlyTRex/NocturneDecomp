@@ -8,10 +8,10 @@
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 at 005176de
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591173
-;   string s_Too_bony!_00591188
-;   string s_..\\core\\skeleton.cpp_00591192
-;   string s_Out_of_hunk_in_CSkeleton::allocM_005911a7
+;   TerminatedCString s_core_skeleton_cpp_00591173
+;   TerminatedCString s_Too_bony_00591188
+;   TerminatedCString s_core_skeleton_cpp_00591192
+;   TerminatedCString s_Out_of_hunk_in_CSkeleton_005911a7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
-;   string s_gEdFont_must_be_set_by_the_appli_0057e510
-;   string s_..\\shape\\edittool.cpp_0057e9f6
-;   string s_CEditorTools::paintWindow()_call_0057ea0c
+;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
+;   TerminatedCString s_shape_edittool_cpp_0057e9f6
+;   TerminatedCString s_CEditorTools_paintWindow_0057ea0c
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bcd9b8

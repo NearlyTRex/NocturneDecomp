@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_null.kfm_0058772c
+;   TerminatedCString s_null_kfm_0058772c
 ;   undefined1* PTR_FUN_0059f954 = 004c4340
 ;
 ; Called Functions:

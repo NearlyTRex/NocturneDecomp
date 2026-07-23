@@ -10,7 +10,7 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ada7
 ;
 ; Referenced Globals:
-;   string s_Event_command_parse_error:_0057f397
+;   TerminatedCString s_Event_command_parse_erro_0057f397
 ;   undefined4 DAT_01c08b60
 ;
 ; Called Functions:

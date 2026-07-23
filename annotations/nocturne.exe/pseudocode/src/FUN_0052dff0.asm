@@ -45,14 +45,14 @@
 ;   TerminatedCString s_int_00594afb
 ;   TerminatedCString s_ext_00594aff
 ;   TerminatedCString s_int_00594b03
-;   string s_trainext.wav_00594b07
-;   string s_railnoiz.wav_00594b14
-;   string s_rail?%s.wav_00594b21
+;   TerminatedCString s_trainext_wav_00594b07
+;   TerminatedCString s_railnoiz_wav_00594b14
+;   TerminatedCString s_rail_s_wav_00594b21
 ;   TerminatedCString s_bump_wav_00594b2d
 ;   undefined4 s_bump_wav_00594b2d+1
 ;   undefined4 s_bump_wav_00594b2d+2
 ;   undefined4 s_bump_wav_00594b2d+3
-;   string s_%s_@_%g_00594b37
+;   TerminatedCString s_s_g_00594b37
 ;   TerminatedCString s_wind_ctl_wav_00594b66
 ;   ... and 47 more
 ;

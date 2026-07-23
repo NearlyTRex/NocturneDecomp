@@ -10,11 +10,11 @@
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9ad7
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589eb5
-;   string s_CDemonMission::createOneHero_-_t_00589ec9
-;   string s_..\\core\\mission.cpp_00589ef8
-;   string s_CDemonMission::createOneHero_-_h_00589f0c
-;   string s_Can't_find_hero_placeholder_for_h_00589f41
+;   TerminatedCString s_core_mission_cpp_00589eb5
+;   TerminatedCString s_CDemonMission_createOneH_00589ec9
+;   TerminatedCString s_core_mission_cpp_00589ef8
+;   TerminatedCString s_CDemonMission_createOneH_00589f0c
+;   TerminatedCString s_Can_t_find_hero_placehol_00589f41
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cae0d4

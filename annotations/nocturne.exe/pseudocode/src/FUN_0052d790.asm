@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_%s_@_%g_00594b37
+;   TerminatedCString s_s_g_00594b37
 ;   float FLOAT_00594b42 = 20
 ;   double DOUBLE_00594b46 = 1.5
 ;   double DOUBLE_00594b5e = 510

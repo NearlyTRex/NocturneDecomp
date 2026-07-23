@@ -207,8 +207,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
           FUN_004c8440();
         }
         local_cc = *(uint ***)
-                    ("$CMotionController$$" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10
-                    );
+                    ("$CMotionController$$" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10);
       }
       local_bc = local_d4;
       local_b0 = (int *)((*piStack_e4 != 0) + 1);

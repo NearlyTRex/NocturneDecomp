@@ -17,7 +17,7 @@
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20 at 0052dd38
 ;
 ; Referenced Globals:
-;   string s_%s\\%s_0057ee19
+;   TerminatedCString s_s_s_0057ee19
 ;   undefined4 DAT_005be1cc
 ;
 ; Called Functions:

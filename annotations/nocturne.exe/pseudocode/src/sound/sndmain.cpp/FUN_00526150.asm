@@ -8,8 +8,8 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d330
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005933f1
-;   string s_setNextSfxUserData_-_invalid_use_00593406
+;   TerminatedCString s_sound_sndmain_cpp_005933f1
+;   TerminatedCString s_setNextSfxUserData_inval_00593406
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc1b74

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_0057bb73
-;   string s_Bad_clip!_0057bb85
+;   TerminatedCString s_Bad_clip_0057bb85
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

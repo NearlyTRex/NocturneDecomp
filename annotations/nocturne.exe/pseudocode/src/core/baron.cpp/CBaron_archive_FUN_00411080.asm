@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_summonEvent_00578698
-;   string s_goAwayEvent_005786a4
-;   string s_summoned_005786b0
+;   TerminatedCString s_goAwayEvent_005786a4
+;   TerminatedCString s_summoned_005786b0
 ;   undefined4 DAT_005acf3c
 ;
 ; Called Functions:

@@ -15,18 +15,18 @@
 ;   TerminatedCString s_sound_00592656
 ;   TerminatedCString s_wav_0059265c
 ;   TerminatedCString s_rb_00592660
-;   string s_sound_00592663
-;   string s_..\\sound\\sndmain.cpp_00592669
-;   string s_Can't_open_%s_0059267e
-;   string s_Failed_to_lock_sample_%s_0059268c
-;   string s_Error_reading_file_data_for_%s_005926a6
+;   TerminatedCString s_sound_00592663
+;   TerminatedCString s_sound_sndmain_cpp_00592669
+;   TerminatedCString s_Can_t_open_s_0059267e
+;   TerminatedCString s_Failed_to_lock_sample_s_0059268c
+;   TerminatedCString s_Error_reading_file_data_005926a6
 ;   TerminatedCString s_mp3_005926c6
-;   string s_..\\sound\\sndmain.cpp_005926ca
-;   string s_Don't_know_length_of_sample_%s_005926df
-;   string s_Failed_to_lock_sample_%s_005926fe
-;   string s_Error_decoding_file_data_from_%s_00592718
-;   string s_..\\sound\\sndmain.cpp_0059273a
-;   string s_Unknown_sample_file_format_exten_0059274f
+;   TerminatedCString s_sound_sndmain_cpp_005926ca
+;   TerminatedCString s_Don_t_know_length_of_sam_005926df
+;   TerminatedCString s_Failed_to_lock_sample_s_005926fe
+;   TerminatedCString s_Error_decoding_file_data_00592718
+;   TerminatedCString s_sound_sndmain_cpp_0059273a
+;   TerminatedCString s_Unknown_sample_file_form_0059274f
 ;   ... and 9 more
 ;
 ; Called Functions:

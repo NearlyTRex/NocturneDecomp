@@ -8,8 +8,8 @@
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004ddf04
 ;
 ; Referenced Globals:
-;   string s_moloch-morph-todemon.wav_0058a87c
-;   string s_moloch-morph-tohuman.wav_0058a895
+;   TerminatedCString s_moloch_morph_todemon_wav_0058a87c
+;   TerminatedCString s_moloch_morph_tohuman_wav_0058a895
 ;
 ; *****************************************************************************
 

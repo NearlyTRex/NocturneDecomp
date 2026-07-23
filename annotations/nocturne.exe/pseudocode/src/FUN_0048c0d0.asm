@@ -13,7 +13,7 @@
 ;   core_vessel.cpp_CCryptVessel_process_FUN_0054fc60 at 00550120
 ;
 ; Referenced Globals:
-;   string s_xplode?.wav_@_6.0_005814f4
+;   TerminatedCString s_xplode_wav_6_0_005814f4
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01c5d704

@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004145cc = 0041462d
-;   string s_limb?.wav_00578ceb
-;   string s_Shot_thru_the_heart_00578cf5
+;   TerminatedCString s_limb_wav_00578ceb
+;   TerminatedCString s_Shot_thru_the_heart_00578cf5
 ;   double DOUBLE_00578d0f = 7
 ;   double DOUBLE_00578d17 = 0.5
 ;   double DOUBLE_00578d1f = 2.5

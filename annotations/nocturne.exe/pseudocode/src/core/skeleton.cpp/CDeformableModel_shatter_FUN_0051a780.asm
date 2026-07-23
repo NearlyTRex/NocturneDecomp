@@ -40,8 +40,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30 at 0051ed74
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591a59
-;   string s_CDeformableModel::shatter_-_too_m_00591a6e
+;   TerminatedCString s_core_skeleton_cpp_00591a59
+;   TerminatedCString s_CDeformableModel_shatter_00591a6e
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005a1eb0
 ;   undefined4 DAT_005b80f0

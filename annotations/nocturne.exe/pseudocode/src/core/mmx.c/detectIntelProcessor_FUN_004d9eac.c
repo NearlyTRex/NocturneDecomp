@@ -62,7 +62,7 @@ ulonglong __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
         (uint)((uVar6 & 0x40000) != 0) * 0x40000) != uVar10) {
       DAT_005bb11b = 1;
       piVar3 = (int *)cpuid_basic_info(0);
-      "GenuineIntel"._12_4_ = piVar3[1];
+      register0x0000000c = piVar3[1];
       _DAT_005bb110 = piVar3[2];
       _DAT_005bb114 = piVar3[3];
       iVar7 = 1;

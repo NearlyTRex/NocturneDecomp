@@ -28,8 +28,8 @@
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5aa1
 ;
 ; Referenced Globals:
-;   string s_%s_->_%s_0058b4cc
-;   string s_%s_:_%5.2f_0058b4d5
+;   TerminatedCString s_s_s_0058b4cc
+;   TerminatedCString s_s_5_2f_0058b4d5
 ;   undefined4 DAT_005a0d00
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738

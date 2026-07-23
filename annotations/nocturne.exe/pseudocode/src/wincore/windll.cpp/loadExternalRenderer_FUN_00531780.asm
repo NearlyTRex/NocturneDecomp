@@ -12,21 +12,21 @@
 ;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0 at 005324ca
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\special.c_00594d27
-;   string s_Unable_to_find_function!_00594d3b
-;   string s_APIDLLInformation_00594d54
-;   string s_APIDLLinit_00594d66
-;   string s_APIDLLkill_00594d71
-;   string s_APIDLLtoggle_00594d7c
-;   string s_APIDLLsetVideoMode_00594d89
-;   string s_APIDLLsetVideoMode2_00594d9c
-;   string s_APIDLLrestoreVideoMode_00594db0
-;   string s_APIDLLbeginScene_00594dc7
-;   string s_APIDLLendScene_00594dd8
-;   string s_APIDLLlockFrame_00594de7
-;   string s_APIDLLunlockFrame_00594df7
-;   string s_APIDLLselectTexture_00594e09
-;   string s_APIDLLupdateTexture_00594e1d
+;   TerminatedCString s_engine_special_c_00594d27
+;   TerminatedCString s_Unable_to_find_function_00594d3b
+;   TerminatedCString s_APIDLLInformation_00594d54
+;   TerminatedCString s_APIDLLinit_00594d66
+;   TerminatedCString s_APIDLLkill_00594d71
+;   TerminatedCString s_APIDLLtoggle_00594d7c
+;   TerminatedCString s_APIDLLsetVideoMode_00594d89
+;   TerminatedCString s_APIDLLsetVideoMode2_00594d9c
+;   TerminatedCString s_APIDLLrestoreVideoMode_00594db0
+;   TerminatedCString s_APIDLLbeginScene_00594dc7
+;   TerminatedCString s_APIDLLendScene_00594dd8
+;   TerminatedCString s_APIDLLlockFrame_00594de7
+;   TerminatedCString s_APIDLLunlockFrame_00594df7
+;   TerminatedCString s_APIDLLselectTexture_00594e09
+;   TerminatedCString s_APIDLLupdateTexture_00594e1d
 ;   ... and 95 more
 ;
 ; Called Functions:

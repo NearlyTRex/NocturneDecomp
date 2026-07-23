@@ -19,12 +19,12 @@
 ;   sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130 at 0052c1e4
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_0059282b
-;   string s_SfxSlot::kill_-_must_be_locked!_00592840
-;   string s_..\\sound\\sndmain.cpp_00592860
-;   string s_nextMixingBuffer_-_shouldn't_hav_00592875
+;   TerminatedCString s_sound_sndmain_cpp_0059282b
+;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592840
+;   TerminatedCString s_sound_sndmain_cpp_00592860
+;   TerminatedCString s_nextMixingBuffer_shouldn_00592875
 ;   TerminatedCString s_sound_sndmain_cpp_00593af6
-;   string s_pollSfx_-_must_be_locked!_00593b0b
+;   TerminatedCString s_pollSfx_must_be_locked_00593b0b
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c

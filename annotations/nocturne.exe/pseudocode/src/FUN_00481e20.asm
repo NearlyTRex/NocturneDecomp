@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_00580fb1
-;   string s_movieName_00580fbb
+;   TerminatedCString s_modelName_00580fb1
+;   TerminatedCString s_movieName_00580fbb
 ;   undefined4 DAT_005b8018
 ;
 ; Called Functions:

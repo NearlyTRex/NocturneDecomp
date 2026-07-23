@@ -16,21 +16,21 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d94bb
 ;
 ; Referenced Globals:
-;   string s_Nocturne_is_alive_and_kicking_005827be
-;   string s_15:09:32_005827dd
-;   string s_Nov_02_1999_005827e6
-;   string s_game.cpp_built_on_%s_%s_005827f2
-;   string s_System_RAM:_%d_0058280c
-;   string s_Swap_file:_%d_0058281c
+;   TerminatedCString s_Nocturne_is_alive_and_ki_005827be
+;   TerminatedCString s_s_15_09_32_005827dd
+;   TerminatedCString s_Nov_02_1999_005827e6
+;   TerminatedCString s_game_cpp_built_on_s_s_005827f2
+;   TerminatedCString s_System_RAM_d_0058280c
+;   TerminatedCString s_Swap_file_d_0058281c
 ;   TerminatedCString s_s_0058282b
-;   string s_ESP:_%08X_0058282f
+;   TerminatedCString s_ESP_08X_0058282f
 ;   byte[54] BYTE_ARRAY_0058283a
-;   string s_Flashlight_00582870
+;   TerminatedCString s_Flashlight_00582870
 ;   undefined4 s_lashlight_00582870+1
 ;   undefined4 s_ashlight_00582870+2
 ;   undefined4 s_shlight_00582870+3
-;   string s_Leave_network_game_0058287b
-;   string s_Return_to_game_0058288e
+;   TerminatedCString s_Leave_network_game_0058287b
+;   TerminatedCString s_Return_to_game_0058288e
 ;   ... and 55 more
 ;
 ; Called Functions:

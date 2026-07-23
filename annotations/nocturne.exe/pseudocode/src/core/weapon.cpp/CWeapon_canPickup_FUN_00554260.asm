@@ -8,8 +8,8 @@
 ;   core_turret.cpp_CTurret_canPickup_FUN_0054b030 at 0054b04c
 ;
 ; Referenced Globals:
-;   string s_CIcePick_00597bf2
-;   string s_CHero_00597bfb
+;   TerminatedCString s_CIcePick_00597bf2
+;   TerminatedCString s_CHero_00597bfb
 ;   double DOUBLE_00597c01 = 0.5
 ;
 ; Called Functions:

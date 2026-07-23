@@ -77,18 +77,18 @@
 ;   undefined1* switchdataD_004b6d40 = 004b6da4
 ;   undefined1* switchdataD_004b6d58 = 004b79f4
 ;   undefined1* switchdataD_004b6d68 = 004b7693
-;   string s_%s_escaping_from_%s_00585aaf
-;   string s_%s_confused_while_walking_to_scr_00585ac4
-;   string s_%s_rescued,_entering_follow_mode_00585aee
-;   string s_%s_was_led_close_enough,_going_h_00585b10
-;   string s_%s_left_behind!_00585b36
-;   string s_%s_was_left_behind,_but_now_can_f_00585b47
-;   string s_%s_doesn't_know_next_waypoint_go_00585b76
-;   string s_%s_reached_waypoint_%s!_00585bab
-;   string s_%s_rescued_and_taken_home!_00585bc4
-;   string s_%s_got_confused_going_home._Help_00585be0
-;   string s_Bip01_L_Forearm_00585c07
-;   string s_deputeFireShotgun_00585c17
+;   TerminatedCString s_s_escaping_from_s_00585aaf
+;   TerminatedCString s_s_confused_while_walking_00585ac4
+;   TerminatedCString s_s_rescued_entering_follo_00585aee
+;   TerminatedCString s_s_was_led_close_enough_g_00585b10
+;   TerminatedCString s_s_left_behind_00585b36
+;   TerminatedCString s_s_was_left_behind_but_no_00585b47
+;   TerminatedCString s_s_doesn_t_know_next_wayp_00585b76
+;   TerminatedCString s_s_reached_waypoint_s_00585bab
+;   TerminatedCString s_s_rescued_and_taken_home_00585bc4
+;   TerminatedCString s_s_got_confused_going_hom_00585be0
+;   TerminatedCString s_Bip01_L_Forearm_00585c07
+;   TerminatedCString s_deputeFireShotgun_00585c17
 ;   ... and 29 more
 ;
 ; Called Functions:

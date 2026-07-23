@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_crossbow.kfm_0057b478
+;   TerminatedCString s_crossbow_kfm_0057b478
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059bb54 = 00553f10
 ;
 ; Called Functions:

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Bip01_L_Hand_005964a0
-;   string s_Bip01_R_Hand_005964ad
+;   TerminatedCString s_Bip01_L_Hand_005964a0
+;   TerminatedCString s_Bip01_R_Hand_005964ad
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

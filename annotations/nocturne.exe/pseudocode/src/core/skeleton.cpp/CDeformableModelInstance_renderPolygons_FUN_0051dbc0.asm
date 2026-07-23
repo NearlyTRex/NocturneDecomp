@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591bd3
-;   string s_CDeformableModelInstance::render_00591be8
+;   TerminatedCString s_CDeformableModelInstance_00591be8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

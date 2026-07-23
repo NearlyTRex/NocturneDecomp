@@ -20,7 +20,7 @@
 ;   ... and 21 more
 ;
 ; Referenced Globals:
-;   string s_%s_can't_figure_out_next_waypoin_0057a106
+;   TerminatedCString s_s_can_t_figure_out_next_0057a106
 ;   double DOUBLE_0057a142 = 0.628318530700000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c

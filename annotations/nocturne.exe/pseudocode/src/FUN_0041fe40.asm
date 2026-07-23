@@ -56,9 +56,9 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   string s_ub-attack?.wav_00579b06
-;   string s_ub-howl?.wav_00579b15
-;   string s_ub-attack?.wav_00579b22
+;   TerminatedCString s_ub_attack_wav_00579b06
+;   TerminatedCString s_ub_howl_wav_00579b15
+;   TerminatedCString s_ub_attack_wav_00579b22
 ;   double DOUBLE_00579b35 = 8
 ;   double DOUBLE_00579b3d = 2
 ;   double DOUBLE_00579b45 = 5

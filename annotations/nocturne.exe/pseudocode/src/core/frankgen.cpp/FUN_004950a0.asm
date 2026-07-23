@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00495078 = 004950c1
-;   string s_..\\core\\frankgen.cpp_00581d58
+;   TerminatedCString s_core_frankgen_cpp_00581d58
 ;   TerminatedCString s_WTF_00581d6d
 ;   undefined4 DAT_0059db58
 ;   float FLOAT_0059db70 = 2300

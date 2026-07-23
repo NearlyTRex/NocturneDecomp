@@ -18,8 +18,8 @@
 ;   core_charactr.cpp_FUN_004259f0 at 00425bd3
 ;
 ; Referenced Globals:
-;   string s_..\\core\\charactr.cpp_0057a1d1
-;   string s_CCharacter::computePickup_-_inva_0057a1e6
+;   TerminatedCString s_core_charactr_cpp_0057a1d1
+;   TerminatedCString s_CCharacter_computePickup_0057a1e6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

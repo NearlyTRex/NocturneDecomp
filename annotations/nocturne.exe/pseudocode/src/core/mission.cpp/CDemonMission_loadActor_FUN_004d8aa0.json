@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 415,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 59,
     "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -198,38 +198,38 @@
   "globals": [
     {
       "addr": "00589b84",
-      "name": "s_(unknown)_00589b84",
-      "type": "string",
+      "name": "s_unknown_00589b84",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589b8e",
-      "name": "s_(unknown)_00589b8e",
-      "type": "string",
+      "name": "s_unknown_00589b8e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589b98",
-      "name": "s_..\\core\\mission.cpp_00589b98",
-      "type": "string",
+      "name": "s_core_mission_cpp_00589b98",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589bac",
-      "name": "s_Error_reading_actor_pointer._Own_00589bac",
-      "type": "string",
+      "name": "s_Error_reading_actor_poin_00589bac",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589be4",
-      "name": "s_%[^\"]_00589be4",
-      "type": "string",
+      "name": "s_anon_00589be4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589bea",
-      "name": "s_WARNING._Can't_find_actor_'%s'_i_00589bea",
-      "type": "string",
+      "name": "s_WARNING_Can_t_find_actor_00589bea",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -246,8 +246,8 @@
     },
     {
       "addr": "005bb0d0",
-      "name": "s_(none)_005bb0d0",
-      "type": "string",
+      "name": "s_none_005bb0d0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -347,7 +347,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 13,
-          "line": 62,
+          "line": 61,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -514,20 +514,20 @@
       "line": 35,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_0046fcd0(0x01BCD074,\"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)\",local_dc,param_3,",
+      "text": "FUN_0046fcd0(0x01BCD074,\"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)\",local_dc,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4);",
+      "text": "FUN_0046fcd0(0x01BCD074,\"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)\",local_dc,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "iVar1 = unaff_ESI;",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "_ungetc(iVar1,param_2);",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fscanf(param_2,\"%x\",&local_14);",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_3",
       "severity": "mild",
       "text": "FUN_004c8440(\"Error reading actor pointer.\\nOwner: %s\\nDescription: %s\\n\",param_3,param_4);",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_4",
       "severity": "mild",
       "text": "FUN_004c8440(\"Error reading actor pointer.\\nOwner: %s\\nDescription: %s\\n\",param_3,param_4);",
@@ -575,7 +575,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 54,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "iVar1 = unaff_ESI;",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "while (unaff_ESI = iVar1, iVar2 = _fgetc(param_2), iVar2 != -1) {",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "while (unaff_ESI = iVar1, iVar2 = _fgetc(param_2), iVar2 != -1) {",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 57,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "iVar1 = unaff_ESI;",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 59,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 62,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iVar1 = unaff_ESI;",

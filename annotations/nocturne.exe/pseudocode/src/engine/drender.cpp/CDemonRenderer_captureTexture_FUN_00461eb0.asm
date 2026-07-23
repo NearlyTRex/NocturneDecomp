@@ -18,8 +18,8 @@
 ;   ... and 57 more
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\drender.cpp_0057dd98
-;   string s_CDR::texture_-_Too_many_captured_0057ddae
+;   TerminatedCString s_engine_drender_cpp_0057dd98
+;   TerminatedCString s_CDR_texture_Too_many_cap_0057ddae
 ;   undefined4 DAT_01b4d7b0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

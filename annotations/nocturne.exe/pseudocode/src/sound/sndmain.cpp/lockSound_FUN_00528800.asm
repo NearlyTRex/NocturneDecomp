@@ -18,10 +18,10 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593909
-;   string s_lockSound_-_unable_to_create_mut_0059391e
-;   string s_..\\sound\\sndmain.cpp_00593948
-;   string s_lockSound_-_lock_imbalance?_0059395d
+;   TerminatedCString s_sound_sndmain_cpp_00593909
+;   TerminatedCString s_lockSound_unable_to_crea_0059391e
+;   TerminatedCString s_sound_sndmain_cpp_00593948
+;   TerminatedCString s_lockSound_lock_imbalance_0059395d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc84b8

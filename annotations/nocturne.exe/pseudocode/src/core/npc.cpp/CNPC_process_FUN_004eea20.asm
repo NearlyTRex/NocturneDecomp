@@ -10,11 +10,11 @@
 ;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004b9b80 at 004b9b8a
 ;
 ; Referenced Globals:
-;   string s_STAND_0058cad6
-;   string s_%s_confused_while_walking_to_scr_0058cadc
+;   TerminatedCString s_STAND_0058cad6
+;   TerminatedCString s_s_confused_while_walking_0058cadc
 ;   TerminatedCString s_RUN_0058cb06
 ;   TerminatedCString s_WALK_0058cb0a
-;   string s_STAND_0058cb0f
+;   TerminatedCString s_STAND_0058cb0f
 ;   double DOUBLE_0058cb1b = 3.14159265350000
 ;   double DOUBLE_0058cb23 = 0.5
 ;   double DOUBLE_0058cb2b = 32

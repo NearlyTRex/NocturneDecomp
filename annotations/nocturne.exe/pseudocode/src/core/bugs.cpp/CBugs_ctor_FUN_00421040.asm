@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_roach.kfm_00579c09
-;   string s_hroach.kfm_00579c13
-;   string s_mroach.kfm_00579c1e
-;   string s_guul.dfm_00579c29
+;   TerminatedCString s_roach_kfm_00579c09
+;   TerminatedCString s_hroach_kfm_00579c13
+;   TerminatedCString s_mroach_kfm_00579c1e
+;   TerminatedCString s_guul_dfm_00579c29
 ;   TerminatedCString s_true_00579c32
 ;   undefined4 s_rue_00579c32+1
 ;   undefined4 s_ue_00579c32+2
@@ -17,7 +17,7 @@
 ;   undefined4 s_rue_00579c37+1
 ;   undefined4 s_ue_00579c37+2
 ;   undefined4 s_e_00579c37+3
-;   string s_false_00579c3c
+;   TerminatedCString s_false_00579c3c
 ;   undefined4 s_alse_00579c3c+1
 ;   undefined4 s_lse_00579c3c+2
 ;   ... and 4 more

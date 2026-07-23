@@ -10,7 +10,7 @@
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d120b
 ;
 ; Referenced Globals:
-;   string s_%4.2f_0058853d
+;   TerminatedCString s_s_4_2f_0058853d
 ;   double DOUBLE_00588543 = 0.0000152587890625
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c

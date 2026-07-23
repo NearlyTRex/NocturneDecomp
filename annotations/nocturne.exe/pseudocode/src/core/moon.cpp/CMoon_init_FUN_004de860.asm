@@ -12,15 +12,15 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2335
 ;
 ; Referenced Globals:
-;   string s_taylor_head.kfm_0058a8ae
-;   string s_moon.kfm_0058a8be
-;   string s_menubat.kfm_0058a8c7
-;   string s_menucld2_0058a8d3
-;   string s_menu1.pth_0058a8dc
-;   string s_menu2.pth_0058a8e6
-;   string s_menu3.pth_0058a8f0
-;   string s_noc00000_0058a96e
-;   string s_noc00001_0058a977
+;   TerminatedCString s_taylor_head_kfm_0058a8ae
+;   TerminatedCString s_moon_kfm_0058a8be
+;   TerminatedCString s_menubat_kfm_0058a8c7
+;   TerminatedCString s_menucld2_0058a8d3
+;   TerminatedCString s_menu1_pth_0058a8dc
+;   TerminatedCString s_menu2_pth_0058a8e6
+;   TerminatedCString s_menu3_pth_0058a8f0
+;   TerminatedCString s_noc00000_0058a96e
+;   TerminatedCString s_noc00001_0058a977
 ;   undefined4 DAT_005b9354
 ;   void* PTR_s_noc00000_005bb198 = 0058a96e
 ;   undefined1* PTR_s_noc00001_005bb19c = 0058a977

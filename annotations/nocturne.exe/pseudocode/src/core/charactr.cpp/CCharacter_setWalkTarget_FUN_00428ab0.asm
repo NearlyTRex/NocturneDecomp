@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_0057a0fa
-;   string s_STAND_0057a100
+;   TerminatedCString s_STAND_0057a100
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890

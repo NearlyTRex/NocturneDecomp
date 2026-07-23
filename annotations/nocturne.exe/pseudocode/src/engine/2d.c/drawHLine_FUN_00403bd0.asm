@@ -13,8 +13,8 @@
 ;   shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 at 00476375
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\2d.c_00577309
-;   string s_hLine_-_invalid_bitsPerPixel_00577318
+;   TerminatedCString s_engine_2d_c_00577309
+;   TerminatedCString s_hLine_invalid_bitsPerPix_00577318
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01c00c58

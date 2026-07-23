@@ -20,10 +20,10 @@
 ;   core_svetlana.cpp_CSvetlana_advanceMotion_FUN_00542ad0 at 00542b00
 ;
 ; Referenced Globals:
-;   string s_..\\core\\svetlana.cpp_00596401
-;   string s_Can't_find_svetlana's_parent_bon_00596416
-;   string s_svetlana-attack?.wav_00596438
-;   string s_svetlana-miss?.wav_0059644d
+;   TerminatedCString s_core_svetlana_cpp_00596401
+;   TerminatedCString s_Can_t_find_svetlana_s_pa_00596416
+;   TerminatedCString s_svetlana_attack_wav_00596438
+;   TerminatedCString s_svetlana_miss_wav_0059644d
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

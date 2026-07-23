@@ -11,10 +11,10 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500e8a
 ;
 ; Referenced Globals:
-;   string s_..\\core\\event.cpp_00580b77
-;   string s_Tried_to_assign_actor_var_%s_an_a_00580b89
-;   string s_..\\core\\event.cpp_00580bc7
-;   string s_CEventList::setActorVariable_-_a_00580bd9
+;   TerminatedCString s_core_event_cpp_00580b77
+;   TerminatedCString s_Tried_to_assign_actor_va_00580b89
+;   TerminatedCString s_core_event_cpp_00580bc7
+;   TerminatedCString s_CEventList_setActorVaria_00580bd9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

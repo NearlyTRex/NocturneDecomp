@@ -11,15 +11,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058a661
-;   string s_models_0058a664
-;   string s_Unable_to_open_model:_%s_0058a66b
-;   string s_..\\engine\\model.c_0058a684
-;   string s_Out_of_partial_model_mem_:_%s_0058a696
-;   string s_..\\engine\\model.c_0058a6b4
-;   string s_..\\engine\\model.c_0058a6c6
-;   string s_Model_read_hose_0058a6d8
-;   string s_..\\engine\\model.c_0058a6e8
-;   string s_Bad_model!_0058a6fa
+;   TerminatedCString s_models_0058a664
+;   TerminatedCString s_Unable_to_open_model_s_0058a66b
+;   TerminatedCString s_engine_model_c_0058a684
+;   TerminatedCString s_Out_of_partial_model_mem_0058a696
+;   TerminatedCString s_engine_model_c_0058a6b4
+;   TerminatedCString s_engine_model_c_0058a6c6
+;   TerminatedCString s_Model_read_hose_0058a6d8
+;   TerminatedCString s_engine_model_c_0058a6e8
+;   TerminatedCString s_Bad_model_0058a6fa
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -9,8 +9,8 @@
 ;   FUN_005350c0 at 005352e3
 ;
 ; Referenced Globals:
-;   string s_..\\core\\charactr.cpp_0057a3d5
-;   string s_CCharacter::addLayerAction_-_too_0057a3ea
+;   TerminatedCString s_core_charactr_cpp_0057a3d5
+;   TerminatedCString s_CCharacter_addLayerActio_0057a3ea
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -45,17 +45,17 @@
 ; Referenced Globals:
 ;   void* switchdataD_004d12b0 = 004d1b5e
 ;   TerminatedCString s_Sound_00588b4b
-;   string s_Muted_00588b54
+;   TerminatedCString s_Muted_00588b54
 ;   TerminatedCString s_On_00588b5a
-;   string s_Sound_effects_:_00588b5d
+;   TerminatedCString s_Sound_effects_00588b5d
 ;   TerminatedCString s_d_00588b6e
 ;   TerminatedCString s_anon_00588b71
-;   string s_Sound_effects_:_Off_00588b74
-;   string s_Dialog_:_00588b88
+;   TerminatedCString s_Sound_effects_Off_00588b74
+;   TerminatedCString s_Dialog_00588b88
 ;   TerminatedCString s_d_00588b92
 ;   TerminatedCString s_anon_00588b95
-;   string s_Dialog_:_Off_00588b98
-;   string s_Music_Vol_:_00588ba5
+;   TerminatedCString s_Dialog_Off_00588b98
+;   TerminatedCString s_Music_Vol_00588ba5
 ;   TerminatedCString s_d_00588bb2
 ;   TerminatedCString s_anon_00588bb5
 ;   ... and 42 more

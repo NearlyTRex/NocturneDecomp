@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 370,
+    "complexity_score": 369,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 114,
     "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 403
+    "total_lines": 402
   },
   "cross_references": [
     {
@@ -229,7 +229,7 @@
     {
       "addr": "0058fb9c",
       "name": "s_world_0058fb9c",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -241,19 +241,19 @@
     {
       "addr": "0058fba5",
       "name": "s_world_0058fba5",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fbab",
-      "name": "s_..\\core\\script.cpp_0058fbab",
-      "type": "string",
+      "name": "s_core_script_cpp_0058fbab",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fbbe",
-      "name": "s_Can't_open_world\\%s_0058fbbe",
-      "type": "string",
+      "name": "s_Can_t_open_world_s_0058fbbe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -264,26 +264,26 @@
     },
     {
       "addr": "0058fbd4",
-      "name": "s_%[^,],_%[^,],_%[^_]_0058fbd4",
-      "type": "string",
+      "name": "s_anon_0058fbd4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fbe9",
-      "name": "s_..\\core\\script.cpp_0058fbe9",
-      "type": "string",
+      "name": "s_core_script_cpp_0058fbe9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fbfc",
-      "name": "s_SCScipt::dbLoad_-_error_parsing_%_0058fbfc",
-      "type": "string",
+      "name": "s_SCScipt_dbLoad_error_par_0058fbfc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc29",
       "name": "s_stranger_0058fc29",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -300,50 +300,50 @@
     },
     {
       "addr": "0058fc34",
-      "name": "s_Warning!_Duplicate_wav_string_%s_0058fc34",
-      "type": "string",
+      "name": "s_Warning_Duplicate_wav_st_0058fc34",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc35",
-      "name": "s_arning!_Duplicate_wav_string_%s_d_0058fc34+1",
+      "name": "s_Warning_Duplicate_wav_st_0058fc34+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058fc64",
-      "name": "s_%s.wav_0058fc64",
-      "type": "string",
+      "name": "s_s_wav_0058fc64",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc6b",
       "name": "s_sound_0058fc6b",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc71",
-      "name": "s_%s.mp3_0058fc71",
-      "type": "string",
+      "name": "s_s_mp3_0058fc71",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc78",
       "name": "s_sound_0058fc78",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc7e",
-      "name": "s_..\\core\\script.cpp_0058fc7e",
-      "type": "string",
+      "name": "s_core_script_cpp_0058fc7e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc91",
-      "name": "s_SCScipt::dbLoad_-_out_of_memory_0058fc91",
-      "type": "string",
+      "name": "s_SCScipt_dbLoad_out_of_me_0058fc91",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -505,7 +505,7 @@
         {
           "check_id": "AssignmentAddressToInteger",
           "column": 11,
-          "line": 110,
+          "line": 109,
           "message": "Assigning a pointer to an integer is not portable.",
           "severity": "portability"
         }
@@ -576,20 +576,20 @@
       "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,",
+      "text": "FUN_004c8440(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1c));",
+      "text": "FUN_004c8440(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(param_1,local_334);",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 79,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_0046fcd0(0x01BCD074,\"Warning! Duplicate wav string %s detected in %s\",local_334,param_2);",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 0x1c) + 1;",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x1c) = iVar3;",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = realloc(*(uint *)(param_1 + 0x20),iVar3 * 0x226);",
@@ -629,7 +629,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x20) = iVar3;",
@@ -637,7 +637,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar6 = (uint *)(*(int *)(param_1 + 0x20) + (*(int *)(param_1 + 0x1c) + -1) * 0x226);",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar6 = (uint *)(*(int *)(param_1 + 0x20) + (*(int *)(param_1 + 0x1c) + -1) * 0x226);",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 90,
+      "line": 89,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 112,
+      "line": 111,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {",

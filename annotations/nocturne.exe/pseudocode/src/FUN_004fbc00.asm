@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_scat.dfm_0058dd12
-;   string s_draw_stand2coatPocket_0058dd1b
-;   string s_draw_coatPocket2aimPistols_0058dd31
+;   TerminatedCString s_scat_dfm_0058dd12
+;   TerminatedCString s_draw_stand2coatPocket_0058dd1b
+;   TerminatedCString s_draw_coatPocket2aimPisto_0058dd31
 ;   undefined1* PTR_core_scat.cpp_CScat_setup_FUN_004fbcc0_005a1554 = 004fbcc0
 ;
 ; Called Functions:

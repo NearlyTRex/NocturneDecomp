@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_nosfer.dfm_0059702a
-;   string s_batboss.dfm_00597035
+;   TerminatedCString s_nosfer_dfm_0059702a
+;   TerminatedCString s_batboss_dfm_00597035
 ;   undefined1* PTR_FUN_005a3a94 = 0054c3e0
 ;
 ; Called Functions:

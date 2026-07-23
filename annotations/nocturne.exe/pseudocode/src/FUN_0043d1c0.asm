@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x64]:1  local_64
 ;
 ; Referenced Globals:
-;   string s_bow-!.wav_0057b485
+;   TerminatedCString s_bow_wav_0057b485
 ;   double DOUBLE_0057b496 = 1.5
 ;   double DOUBLE_0057b49e = 10
 ;   undefined4 DAT_005b80f0

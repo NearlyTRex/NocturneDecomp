@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_CBarrier_00578730
+;   TerminatedCString s_CBarrier_00578730
 ;   undefined4 DAT_005acf80
 ;   undefined4 DAT_00763e48
 ;   undefined4 DAT_00764524

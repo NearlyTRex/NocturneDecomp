@@ -10,10 +10,10 @@
 ;   core_actor.cpp_FUN_0040cb00 at 0040cbbc
 ;
 ; Referenced Globals:
-;   string s_..\\core\\motion.cpp_0058b40a
-;   string s_Tried_to_save_motion_controller_s_0058b41d
-;   string s_%s\"%s\",%g_//_current_motion_name_0058b468
-;   string s_%s\"%s\",%g_//_current_motion_name_0058b49a
+;   TerminatedCString s_core_motion_cpp_0058b40a
+;   TerminatedCString s_Tried_to_save_motion_con_0058b41d
+;   TerminatedCString s_s_s_g_current_motion_nam_0058b468
+;   TerminatedCString s_s_s_g_current_motion_nam_0058b49a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

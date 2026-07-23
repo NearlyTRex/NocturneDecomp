@@ -15,9 +15,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0058652d
-;   string s_..\\engine\\ini.cpp_00586530
-;   string s_cIni::FindLineNumberOfVariable:_U_00586542
-;   string s_[%s]_00586577
+;   TerminatedCString s_engine_ini_cpp_00586530
+;   TerminatedCString s_cIni_FindLineNumberOfVar_00586542
+;   TerminatedCString s_s_00586577
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

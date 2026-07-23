@@ -24,21 +24,21 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 005072b2
 ;
 ; Referenced Globals:
-;   string s_%[^_]_00590d49
-;   string s_%f,%f,%f_00590d50
-;   string s_%f,%f,%f_00590d5a
+;   TerminatedCString s_anon_00590d49
+;   TerminatedCString s_f_f_f_00590d50
+;   TerminatedCString s_f_f_f_00590d5a
 ;   TerminatedCString s_f_00590d64
 ;   TerminatedCString s_f_00590d68
 ;   TerminatedCString s_f_00590d6c
 ;   TerminatedCString s_d_00590d70
-;   string s_%f,%f,%f,%f,%f_00590d74
-;   string s_%d,%d_00590d84
+;   TerminatedCString s_f_f_f_f_f_00590d74
+;   TerminatedCString s_d_d_00590d84
 ;   TerminatedCString s_d_00590d8b
 ;   TerminatedCString s_d_00590d8f
-;   string s_%f,%s_00590d93
-;   string s_%f,%d,%s_00590d9a
+;   TerminatedCString s_f_s_00590d93
+;   TerminatedCString s_f_d_s_00590d9a
 ;   TerminatedCString s_d_00590da4
-;   string s_%d,%d,%d,%d,%d_00590da8
+;   TerminatedCString s_d_d_d_d_d_00590da8
 ;   ... and 11 more
 ;
 ; Called Functions:

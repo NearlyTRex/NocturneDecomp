@@ -18,8 +18,8 @@
 ;   ... and 29 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_005913b0
-;   string s_Can't_find_bone_%s_in_skeleton_%_005913c5
+;   TerminatedCString s_core_skeleton_cpp_005913b0
+;   TerminatedCString s_Can_t_find_bone_s_in_ske_005913c5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

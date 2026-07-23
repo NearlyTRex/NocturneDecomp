@@ -21,20 +21,20 @@
 ;   core_mission.cpp_CDemonMission_load_FUN_004d7ee0 at 004d7f2a
 ;
 ; Referenced Globals:
-;   string s_%d,%d_005896b0
-;   string s_..\\core\\mission.cpp_005896b7
-;   string s_Invalid_mission_version_number:_%_005896cb
-;   string s_..\\core\\mission.cpp_00589727
-;   string s_This_mission_uses_actor_format_v_0058973b
-;   string s_..\\core\\mission.cpp_00589786
-;   string s_No_name_in_mission_0058979a
+;   TerminatedCString s_d_d_005896b0
+;   TerminatedCString s_core_mission_cpp_005896b7
+;   TerminatedCString s_Invalid_mission_version_005896cb
+;   TerminatedCString s_core_mission_cpp_00589727
+;   TerminatedCString s_This_mission_uses_actor_0058973b
+;   TerminatedCString s_core_mission_cpp_00589786
+;   TerminatedCString s_No_name_in_mission_0058979a
 ;   TerminatedCString s_s_005897ad
 ;   TerminatedCString s_d_005897b1
 ;   TerminatedCString s_s_005897b5
 ;   TerminatedCString s_d_005897b9
-;   string s_%s_%d_005897bd
-;   string s_..\\core\\mission.cpp_005897c4
-;   string s_Actor_type_%s_is_saved_in_missio_005897d8
+;   TerminatedCString s_s_d_005897bd
+;   TerminatedCString s_core_mission_cpp_005897c4
+;   TerminatedCString s_Actor_type_s_is_saved_in_005897d8
 ;   TerminatedCString s_d_00589841
 ;   ... and 22 more
 ;
@@ -235,7 +235,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x16c]     ; 004d81c1
     MOV ESI,0x5baf98                    ; 004d81c8 | = "corrupt!"
     PUSH EDX                            ; 004d81cd
-    MOVSD.REP ES:EDI,ESI                ; 004d81ce | = "corrupt!" | s_upt!_005baf98+4
+    MOVSD.REP ES:EDI,ESI                ; 004d81ce | = "corrupt!" | s_corrupt_005baf98+4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d81d0
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     ADD ESP,0x10                        ; 004d81d5

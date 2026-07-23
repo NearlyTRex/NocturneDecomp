@@ -24,8 +24,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0051e960 at 0051e9a8
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591a0f
-;   string s_CDeformableModel::exactRayTrace_-_00591a24
+;   TerminatedCString s_core_skeleton_cpp_00591a0f
+;   TerminatedCString s_CDeformableModel_exactRa_00591a24
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005a1eb0
 ;   undefined4 DAT_01cc4800

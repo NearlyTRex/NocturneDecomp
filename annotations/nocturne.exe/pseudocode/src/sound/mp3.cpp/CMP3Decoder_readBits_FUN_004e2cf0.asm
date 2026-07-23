@@ -15,8 +15,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0 at 004e497c
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\mp3.cpp_0058b5de
-;   string s_Buffer_overflow!!_File:_%s_0058b5ef
+;   TerminatedCString s_sound_mp3_cpp_0058b5de
+;   TerminatedCString s_Buffer_overflow_File_s_0058b5ef
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
 ;   undefined4 DAT_01cc4800

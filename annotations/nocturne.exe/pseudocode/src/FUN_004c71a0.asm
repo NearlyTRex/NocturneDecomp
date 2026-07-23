@@ -7,18 +7,18 @@
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; Referenced Globals:
-;   string s_CDraculaBride_005879ef
-;   string s_CBatman_005879fd
-;   string s_CBatCreature_00587a05
-;   string s_CBride_00587a12
-;   string s_CGhoul_00587a19
-;   string s_CTVBat_00587a20
-;   string s_CBatCreature_00587a27
-;   string s_CWerewolf_00587a34
-;   string s_CSvetlana_00587a3e
-;   string s_CTrigger_||_CGlass_00587a48
+;   TerminatedCString s_CDraculaBride_005879ef
+;   TerminatedCString s_CBatman_005879fd
+;   TerminatedCString s_CBatCreature_00587a05
+;   TerminatedCString s_CBride_00587a12
+;   TerminatedCString s_CGhoul_00587a19
+;   TerminatedCString s_CTVBat_00587a20
+;   TerminatedCString s_CBatCreature_00587a27
+;   TerminatedCString s_CWerewolf_00587a34
+;   TerminatedCString s_CSvetlana_00587a3e
+;   TerminatedCString s_CTrigger_CGlass_00587a48
 ;   TerminatedCString s_s_in_volume_00587a61
-;   string s_cre-fire.wav_00587a6f
+;   TerminatedCString s_cre_fire_wav_00587a6f
 ;   double DOUBLE_00587a7d = 1.5
 ;   float FLOAT_00587a85 = 0.5
 ;   float FLOAT_0059fd60 = 30

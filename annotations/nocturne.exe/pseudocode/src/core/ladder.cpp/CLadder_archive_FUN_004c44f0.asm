@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_model_0058774c
-;   string s_ladderSize_00587752
-;   string s_masterActor_0058775d
-;   string s_groundType_00587769
+;   TerminatedCString s_ladderSize_00587752
+;   TerminatedCString s_masterActor_0058775d
+;   TerminatedCString s_groundType_00587769
 ;   undefined4 DAT_005bac68
 ;
 ; Called Functions:

@@ -8,8 +8,8 @@
 ;   FUN_00475470 at 00475873
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057f06e
-;   string s_CEdScrollBar::setPosition_-_inva_0057f084
+;   TerminatedCString s_shape_edittool_cpp_0057f06e
+;   TerminatedCString s_CEdScrollBar_setPosition_0057f084
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

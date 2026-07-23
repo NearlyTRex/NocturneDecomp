@@ -23,7 +23,7 @@
 ;   TerminatedCString s_core_actor_cpp_00577fa2
 ;   TerminatedCString s_Can_t_create_instance_of_00577fb4
 ;   TerminatedCString s_core_actor_cpp_00577fde
-;   string s_Not_enough_memory_to_create_%s_00577ff0
+;   TerminatedCString s_Not_enough_memory_to_cre_00577ff0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

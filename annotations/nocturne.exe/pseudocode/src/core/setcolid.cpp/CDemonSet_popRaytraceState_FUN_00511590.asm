@@ -11,8 +11,8 @@
 ;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0 at 004c7186
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setcolid.cpp_00590b04
-;   string s_CDemonSet::popRaytraceState_-_st_00590b19
+;   TerminatedCString s_core_setcolid_cpp_00590b04
+;   TerminatedCString s_CDemonSet_popRaytraceSta_00590b19
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_020842d0

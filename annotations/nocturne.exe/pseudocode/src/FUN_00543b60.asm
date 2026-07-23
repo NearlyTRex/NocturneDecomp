@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_tentacle.dfm_00596512
+;   TerminatedCString s_tentacle_dfm_00596512
 ;   undefined1* PTR_core_tentacle.cpp_CTentacle_setup_FUN_00543bc0_005a3104 = 00543bc0
 ;
 ; Called Functions:

@@ -58,7 +58,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   string s_CShotgun_00585de4
+;   TerminatedCString s_CShotgun_00585de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0

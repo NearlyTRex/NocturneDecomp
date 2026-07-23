@@ -24,10 +24,10 @@
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 at 004e99c7
 ;
 ; Referenced Globals:
-;   string s_Disconnecting_from_server..._0058bc84
-;   string s_Couldn't_contact_server_to_disco_0058bca1
-;   string s_Disconnecting..._0058bcc8
-;   string s_Couldn't_connect_to_all_clients_t_0058bcd9
+;   TerminatedCString s_Disconnecting_from_serve_0058bc84
+;   TerminatedCString s_Couldn_t_contact_server_0058bca1
+;   TerminatedCString s_Disconnecting_0058bcc8
+;   TerminatedCString s_Couldn_t_connect_to_all_0058bcd9
 ;   double DOUBLE_0058bd0a = 0.0000152587890625
 ;   float FLOAT_0058bd12 = 1000
 ;   double DOUBLE_0058bd1a = 30

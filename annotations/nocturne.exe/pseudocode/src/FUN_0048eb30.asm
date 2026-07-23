@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
-;   string s_fl-throw.wav_005816a9
+;   TerminatedCString s_fl_throw_wav_005816a9
 ;   undefined4 DAT_0059d7a0
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005bed68

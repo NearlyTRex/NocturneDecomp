@@ -22,8 +22,7 @@ void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d
   if (iVar1 != 0) {
     _DAT_01cc4800 = "..\\core\\mission.cpp";
     _DAT_01cc4804 = 0x18b;
-    FUN_004c8440("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",param_2,
-                 *(uint *)(param_1 + 0x854));
+    FUN_004c8440("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",param_2,*(uint *)(param_1 + 0x854));
   }
   *(uint *)(param_1 + 0x854) = *(uint *)(*(int *)(param_1 + 0x854) + 0x144);
   return;

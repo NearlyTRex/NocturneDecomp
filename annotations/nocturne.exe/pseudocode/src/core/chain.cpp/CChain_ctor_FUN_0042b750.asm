@@ -5,18 +5,18 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_CHAINLINK.RAW_0057a55d
-;   undefined4 s_HAINLINK.RAW_0057a55d+1
-;   undefined4 s_AINLINK.RAW_0057a55d+2
-;   undefined4 s_INLINK.RAW_0057a55d+3
-;   string s_chain-pull.wav_0057a56b
-;   undefined4 s_hain-pull.wav_0057a56b+1
-;   undefined4 s_ain-pull.wav_0057a56b+2
-;   undefined4 s_in-pull.wav_0057a56b+3
-;   string s_chain-move.wav_0057a57a
-;   undefined4 s_hain-move.wav_0057a57a+1
-;   undefined4 s_ain-move.wav_0057a57a+2
-;   undefined4 s_in-move.wav_0057a57a+3
+;   TerminatedCString s_CHAINLINK_RAW_0057a55d
+;   undefined4 s_CHAINLINK_RAW_0057a55d+1
+;   undefined4 s_CHAINLINK_RAW_0057a55d+2
+;   undefined4 s_CHAINLINK_RAW_0057a55d+3
+;   TerminatedCString s_chain_pull_wav_0057a56b
+;   undefined4 s_chain_pull_wav_0057a56b+1
+;   undefined4 s_chain_pull_wav_0057a56b+2
+;   undefined4 s_chain_pull_wav_0057a56b+3
+;   TerminatedCString s_chain_move_wav_0057a57a
+;   undefined4 s_chain_move_wav_0057a57a+1
+;   undefined4 s_chain_move_wav_0057a57a+2
+;   undefined4 s_chain_move_wav_0057a57a+3
 ;   undefined1* PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244 = 0042b8f0
 ;   undefined4 DAT_0059b320
 ;
@@ -56,13 +56,13 @@ section .text
     LEA EDI,[EDX + 0x16c]               ; 0042b7cf
     MOV dword ptr [EDX + 0x160],0x0     ; 0042b7d5
     PUSH EDI                            ; 0042b7df
-    MOV AL,byte ptr [ESI]               ; 0042b7e0 | = "CHAINLINK.RAW" | s_AINLINK.RAW_0057a55d+2
+    MOV AL,byte ptr [ESI]               ; 0042b7e0 | = "CHAINLINK.RAW" | s_CHAINLINK_RAW_0057a55d+2
         ;   Label: LAB_0042b7e0
     MOV byte ptr [EDI],AL               ; 0042b7e2
     CMP AL,0x0                          ; 0042b7e4
     JZ 0x0042b7f8                       ; 0042b7e6
         ;   XREF to: 0042b7f8 (CONDITIONAL_JUMP)  ; LAB_0042b7f8
-    MOV AL,byte ptr [ESI + 0x1]         ; 0042b7e8 | s_HAINLINK.RAW_0057a55d+1 | s_INLINK.RAW_0057a55d+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0042b7e8 | s_CHAINLINK_RAW_0057a55d+1 | s_CHAINLINK_RAW_0057a55d+3
     ADD ESI,0x2                         ; 0042b7eb
     MOV byte ptr [EDI + 0x1],AL         ; 0042b7ee
     ADD EDI,0x2                         ; 0042b7f1
@@ -78,13 +78,13 @@ section .text
     LEA EDI,[EDX + 0x1ac]               ; 0042b81c
     MOV dword ptr [EDX + 0xf8],0x0      ; 0042b822
     PUSH EDI                            ; 0042b82c
-    MOV AL,byte ptr [ESI]               ; 0042b82d | = "chain-pull.wav" | s_ain-pull.wav_0057a56b+2
+    MOV AL,byte ptr [ESI]               ; 0042b82d | = "chain-pull.wav" | s_chain_pull_wav_0057a56b+2
         ;   Label: LAB_0042b82d
     MOV byte ptr [EDI],AL               ; 0042b82f
     CMP AL,0x0                          ; 0042b831
     JZ 0x0042b845                       ; 0042b833
         ;   XREF to: 0042b845 (CONDITIONAL_JUMP)  ; LAB_0042b845
-    MOV AL,byte ptr [ESI + 0x1]         ; 0042b835 | s_hain-pull.wav_0057a56b+1 | s_in-pull.wav_0057a56b+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0042b835 | s_chain_pull_wav_0057a56b+1 | s_chain_pull_wav_0057a56b+3
     ADD ESI,0x2                         ; 0042b838
     MOV byte ptr [EDI + 0x1],AL         ; 0042b83b
     ADD EDI,0x2                         ; 0042b83e
@@ -96,13 +96,13 @@ section .text
     MOV ESI,0x57a57a                    ; 0042b846 | = "chain-move.wav"
     LEA EDI,[EDX + 0x214]               ; 0042b84b
     PUSH EDI                            ; 0042b851
-    MOV AL,byte ptr [ESI]               ; 0042b852 | = "chain-move.wav" | s_ain-move.wav_0057a57a+2
+    MOV AL,byte ptr [ESI]               ; 0042b852 | = "chain-move.wav" | s_chain_move_wav_0057a57a+2
         ;   Label: LAB_0042b852
     MOV byte ptr [EDI],AL               ; 0042b854
     CMP AL,0x0                          ; 0042b856
     JZ 0x0042b86a                       ; 0042b858
         ;   XREF to: 0042b86a (CONDITIONAL_JUMP)  ; LAB_0042b86a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0042b85a | s_hain-move.wav_0057a57a+1 | s_in-move.wav_0057a57a+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0042b85a | s_chain_move_wav_0057a57a+1 | s_chain_move_wav_0057a57a+3
     ADD ESI,0x2                         ; 0042b85d
     MOV byte ptr [EDI + 0x1],AL         ; 0042b860
     ADD EDI,0x2                         ; 0042b863

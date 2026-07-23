@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gore_cpp_00585198
-;   string s_Can't_create_flies!_005851a9
+;   TerminatedCString s_Can_t_create_flies_005851a9
 ;   double DOUBLE_005851c0 = 60
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800

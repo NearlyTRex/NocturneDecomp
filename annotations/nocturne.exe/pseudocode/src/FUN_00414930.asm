@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batman_die_wav_00578d2f
-;   string s_batman-hurt?.wav_00578d3e
+;   TerminatedCString s_batman_hurt_wav_00578d3e
 ;   double DOUBLE_00578d4f = 2
 ;   undefined4 DAT_005b80f0
 ;

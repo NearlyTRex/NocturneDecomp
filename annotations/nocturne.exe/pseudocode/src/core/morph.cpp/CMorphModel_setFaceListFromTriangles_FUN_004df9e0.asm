@@ -15,10 +15,10 @@
 ;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460 at 004df597
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058ac56
-;   string s_CMorphModel::setFaceList_-_inval_0058ac68
-;   string s_..\\core\\morph.cpp_0058ac96
-;   string s_CMorphModel::setFaceList_-_inval_0058aca8
+;   TerminatedCString s_core_morph_cpp_0058ac56
+;   TerminatedCString s_CMorphModel_setFaceList_0058ac68
+;   TerminatedCString s_core_morph_cpp_0058ac96
+;   TerminatedCString s_CMorphModel_setFaceList_0058aca8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cd4314

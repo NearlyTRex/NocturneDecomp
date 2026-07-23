@@ -10,18 +10,18 @@
 ; Referenced Globals:
 ;   void* switchdataD_004b6050 = 004b609a
 ;   TerminatedCString s_CGabriella_005858f3
-;   string s_CSvetlana_005858fe
-;   string s_CStranger_00585908
-;   string s_CScat_00585912
-;   string s_CBaron_00585918
-;   string s_CIcePick_0058591f
-;   string s_CHaystack_00585928
-;   string s_CColonel_00585932
-;   string s_CMoloch_0058593b
-;   string s_..\\core\\hero.cpp_00585943
-;   string s_CHeroPlaceholder::createHero_-_i_00585954
-;   string s_..\\core\\hero.cpp_00585986
-;   string s_CHeroPlaceholder::createHero_-_f_00585997
+;   TerminatedCString s_CSvetlana_005858fe
+;   TerminatedCString s_CStranger_00585908
+;   TerminatedCString s_CScat_00585912
+;   TerminatedCString s_CBaron_00585918
+;   TerminatedCString s_CIcePick_0058591f
+;   TerminatedCString s_CHaystack_00585928
+;   TerminatedCString s_CColonel_00585932
+;   TerminatedCString s_CMoloch_0058593b
+;   TerminatedCString s_core_hero_cpp_00585943
+;   TerminatedCString s_CHeroPlaceholder_createH_00585954
+;   TerminatedCString s_core_hero_cpp_00585986
+;   TerminatedCString s_CHeroPlaceholder_createH_00585997
 ;   undefined4 DAT_005baf90
 ;   ... and 3 more
 ;

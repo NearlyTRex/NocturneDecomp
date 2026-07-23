@@ -9,8 +9,8 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb843
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c430
-;   string s_CNetGame::gameSettingsChanged_-_s_0058c444
+;   TerminatedCString s_core_netgame_cpp_0058c430
+;   TerminatedCString s_CNetGame_gameSettingsCha_0058c444
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cea3f4

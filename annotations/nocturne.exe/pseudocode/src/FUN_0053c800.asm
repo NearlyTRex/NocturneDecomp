@@ -43,7 +43,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_00595b87
-;   string s_Delta_to_dest_:_%3.2f,%3.2f,%3.2_00595baf
+;   TerminatedCString s_Delta_to_dest_3_2f_3_2f_00595baf
 ;   double DOUBLE_00595bd7 = 0.990000000000000
 ;   double DOUBLE_00595bdf = 3
 ;   double DOUBLE_00595be7 = 2

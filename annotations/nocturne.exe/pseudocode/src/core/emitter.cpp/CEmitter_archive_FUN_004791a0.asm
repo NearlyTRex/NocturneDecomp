@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_emitterType_0057f204
-;   string s_emitterSize_0057f210
-;   string s_eventOn_0057f21c
-;   string s_eventOff_0057f224
-;   string s_emitterState_0057f22d
-;   string s_laserR_0057f23a
-;   string s_laserG_0057f241
-;   string s_laserB_0057f248
-;   string s_laserType_0057f24f
-;   string s_maxEmitTime_0057f259
-;   string s_emitPeriod_0057f265
-;   string s_modelName_0057f270
-;   string s_rockSpeed_0057f27a
-;   string s_periodicFlag_0057f284
-;   string s_maxWaitTime_0057f291
+;   TerminatedCString s_emitterSize_0057f210
+;   TerminatedCString s_eventOn_0057f21c
+;   TerminatedCString s_eventOff_0057f224
+;   TerminatedCString s_emitterState_0057f22d
+;   TerminatedCString s_laserR_0057f23a
+;   TerminatedCString s_laserG_0057f241
+;   TerminatedCString s_laserB_0057f248
+;   TerminatedCString s_laserType_0057f24f
+;   TerminatedCString s_maxEmitTime_0057f259
+;   TerminatedCString s_emitPeriod_0057f265
+;   TerminatedCString s_modelName_0057f270
+;   TerminatedCString s_rockSpeed_0057f27a
+;   TerminatedCString s_periodicFlag_0057f284
+;   TerminatedCString s_maxWaitTime_0057f291
 ;   ... and 4 more
 ;
 ; Called Functions:

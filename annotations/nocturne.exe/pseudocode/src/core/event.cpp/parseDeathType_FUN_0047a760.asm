@@ -8,17 +8,17 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047be2d
 ;
 ; Referenced Globals:
-;   string s_generic_0057f4f4
-;   string s_drown_0057f4fc
+;   TerminatedCString s_generic_0057f4f4
+;   TerminatedCString s_drown_0057f4fc
 ;   TerminatedCString s_fall_0057f502
-;   string s_explode_0057f507
-;   string s_fallApart_0057f50f
-;   string s_shatter_0057f519
-;   string s_electrocute_0057f521
+;   TerminatedCString s_explode_0057f507
+;   TerminatedCString s_fallApart_0057f50f
+;   TerminatedCString s_shatter_0057f519
+;   TerminatedCString s_electrocute_0057f521
 ;   TerminatedCString s_gas_0057f52d
-;   string s_Chopped_0057f531
-;   string s_Crushed_0057f539
-;   string s_Impale_0057f541
+;   TerminatedCString s_Chopped_0057f531
+;   TerminatedCString s_Crushed_0057f539
+;   TerminatedCString s_Impale_0057f541
 ;   TerminatedCString s_Fire_0057f548
 ;
 ; Called Functions:

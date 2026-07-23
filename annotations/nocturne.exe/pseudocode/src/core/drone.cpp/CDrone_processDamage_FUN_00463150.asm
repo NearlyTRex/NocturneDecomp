@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_drone-die?.wav_0057df57
-;   string s_drone-hurt?.wav_0057df66
+;   TerminatedCString s_drone_die_wav_0057df57
+;   TerminatedCString s_drone_hurt_wav_0057df66
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00

@@ -13,14 +13,14 @@
 ;   FUN_00467890 at 004678b6
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dtrace.cpp_0057e0c0
-;   string s_CDemonRaytrace::loadBinary_-_inv_0057e0d3
-;   string s_..\\core\\dtrace.cpp_0057e100
-;   string s_CDemonRaytrace::loadBinary_-_fil_0057e113
-;   string s_..\\core\\dtrace.cpp_0057e149
-;   string s_Release_build_doesn't_support_ol_0057e15c
-;   string s_..\\core\\dtrace.cpp_0057e187
-;   string s_CDemonRaytrace::loadBinary_-_err_0057e19a
+;   TerminatedCString s_core_dtrace_cpp_0057e0c0
+;   TerminatedCString s_CDemonRaytrace_loadBinar_0057e0d3
+;   TerminatedCString s_core_dtrace_cpp_0057e100
+;   TerminatedCString s_CDemonRaytrace_loadBinar_0057e113
+;   TerminatedCString s_core_dtrace_cpp_0057e149
+;   TerminatedCString s_Release_build_doesn_t_su_0057e15c
+;   TerminatedCString s_core_dtrace_cpp_0057e187
+;   TerminatedCString s_CDemonRaytrace_loadBinar_0057e19a
 ;   float FLOAT_0057e1ca = 8
 ;   float FLOAT_0057e1ce = 0.125
 ;   undefined4 DAT_005b6d00

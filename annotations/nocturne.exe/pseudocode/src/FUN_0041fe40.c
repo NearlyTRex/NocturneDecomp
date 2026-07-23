@@ -104,8 +104,7 @@ void FUN_0041fe40(int param_1,float param_2)
           if ((iVar3 == 0) &&
              (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd50))
              , iVar3 == 0)) {
-            uVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"ub-howl?.wav")
-            ;
+            uVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"ub-howl?.wav");
             *(uint *)(param_1 + 0xbd50) = uVar5;
           }
         }

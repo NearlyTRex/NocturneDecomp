@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_killEvent_00585ff8
+;   TerminatedCString s_killEvent_00585ff8
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveString_FUN_0040c6d0

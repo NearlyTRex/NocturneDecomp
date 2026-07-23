@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_course_cpp_0057b22a
-;   string s_CCourse::allocMemory_-_out_of_hu_0057b23d
+;   TerminatedCString s_CCourse_allocMemory_out_0057b23d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

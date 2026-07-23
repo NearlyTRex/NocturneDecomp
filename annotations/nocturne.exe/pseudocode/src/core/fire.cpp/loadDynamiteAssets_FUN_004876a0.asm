@@ -8,7 +8,7 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 at 0048afbc
 ;
 ; Referenced Globals:
-;   string s_dynamitestick.kfm_0058128a
+;   TerminatedCString s_dynamitestick_kfm_0058128a
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_loadModel_FUN_004543b0

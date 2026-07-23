@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_pend.kfm_0058cff2
+;   TerminatedCString s_pend_kfm_0058cff2
 ;   TerminatedCString s_true_0058cffb
 ;   undefined4 s_rue_0058cffb+1
 ;   undefined4 s_ue_0058cffb+2

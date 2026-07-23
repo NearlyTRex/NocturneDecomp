@@ -7,66 +7,8 @@
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
 
-// string
-extern string s_d3d_dll_005c0e83;
-extern string DAT_005C0FE0;
-extern string DAT_005C0FF8;
-extern string DAT_005C102C;
-extern string DAT_005C105C;
-extern string DAT_005C1088;
-extern string DAT_005C10A0;
-extern string DAT_005C10B8;
-extern string DAT_005C10E0;
-extern string DAT_005C1138;
-extern string DAT_005C1150;
-extern string DAT_005C1190;
-extern string DAT_005C11CC;
-extern string DAT_005C11FC;
-extern string DAT_005C1214;
-extern string DAT_005C122C;
-extern string DAT_005C1244;
-extern string DAT_005C125C;
-extern string DAT_005C1274;
-extern string DAT_005C128C;
-extern string DAT_005C12A4;
-extern string DAT_005C12BC;
-extern string DAT_005C12D4;
-extern string DAT_005C12EC;
-extern string DAT_005C1304;
-extern string DAT_005C131C;
-extern string DAT_005C1334;
-extern string DAT_005C134C;
-extern string DAT_005C1364;
-extern string DAT_005C13D4;
-extern string DAT_005C13EC;
-extern string DAT_005C1404;
-extern string DAT_005C141C;
-extern string DAT_005C1434;
-extern string DAT_005C144C;
-extern string DAT_005C1464;
-extern string DAT_005C147C;
-extern string DAT_005C1494;
-extern string DAT_005C14AC;
-extern string DAT_005C14C4;
-extern string DAT_005C14DC;
-extern string DAT_005C14F4;
-extern string DAT_005C150C;
-extern string DAT_005C1524;
-extern string DAT_005C153C;
-extern string DAT_005C1554;
-extern string DAT_005C1568;
-extern string DAT_005C1598;
-extern string DAT_005C15C4;
-extern string DAT_005C15DC;
-extern string DAT_005C15F4;
-extern string DAT_005C1608;
-extern string DAT_005C1620;
-extern string DAT_005C179C;
-extern string DAT_005C17AB;
-extern string DAT_005C17CB;
-extern string DAT_005C17DA;
-extern string DAT_005C1D2C;
-extern string DAT_005C1D3D;
+// TerminatedCString
+extern TerminatedCString s_d3d_dll_005c0e83;
 
 // undefined1
 extern undefined1 DAT_005c0e80;

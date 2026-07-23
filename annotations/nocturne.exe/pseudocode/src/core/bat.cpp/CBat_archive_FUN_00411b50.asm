@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_courseFilename_00578790
-;   string s_param_0057879f
-;   string s_speed_005787a5
-;   string s_flapSpeedMult_005787ab
-;   string s_courseSpeed_005787b9
-;   string s_modelName_005787c5
-;   string s_periodicSoundTimerMin_005787cf
-;   string s_periodicSoundTimerMax_005787e5
+;   TerminatedCString s_courseFilename_00578790
+;   TerminatedCString s_param_0057879f
+;   TerminatedCString s_speed_005787a5
+;   TerminatedCString s_flapSpeedMult_005787ab
+;   TerminatedCString s_courseSpeed_005787b9
+;   TerminatedCString s_modelName_005787c5
+;   TerminatedCString s_periodicSoundTimerMin_005787cf
+;   TerminatedCString s_periodicSoundTimerMax_005787e5
 ;   double DOUBLE_005787ff = 30
 ;   undefined4 DAT_005acf94
 ;

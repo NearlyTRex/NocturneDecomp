@@ -11,13 +11,13 @@
 ;   core_zombie.cpp_CZombie_archive_FUN_00561aa0 at 00561ba1
 ;
 ; Referenced Globals:
-;   string s_Cloth_list_opening_brace_00577dd9
+;   TerminatedCString s_Cloth_list_opening_brace_00577dd9
 ;   TerminatedCString s_d_00577df2
-;   string s_cloth_count_00577df5
-;   string s_clothCount_00577e01
+;   TerminatedCString s_cloth_count_00577df5
+;   TerminatedCString s_clothCount_00577e01
 ;   TerminatedCString s_anon_00577e0c
-;   string s_cloth_filename_entry_00577e16
-;   string s_Cloth_list_closing_brace_00577e2b
+;   TerminatedCString s_cloth_filename_entry_00577e16
+;   TerminatedCString s_Cloth_list_closing_brace_00577e2b
 ;   TerminatedCString s_s_s_00577e44
 ;   TerminatedCString s_s_d_clothCount_00577e4f
 ;   TerminatedCString s_s_s_00577e63

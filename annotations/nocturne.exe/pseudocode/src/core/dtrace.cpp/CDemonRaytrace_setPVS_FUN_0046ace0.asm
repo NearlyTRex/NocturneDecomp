@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e266
-;   string s_CDemonRaytrace::setPVS_-_Too_man_0057e279
+;   TerminatedCString s_CDemonRaytrace_setPVS_To_0057e279
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750

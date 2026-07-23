@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_armour.wav_005784ae
+;   TerminatedCString s_armour_wav_005784ae
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60

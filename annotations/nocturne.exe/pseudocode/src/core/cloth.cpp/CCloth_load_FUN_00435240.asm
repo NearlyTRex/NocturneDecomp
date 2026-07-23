@@ -25,15 +25,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0057acab
-;   string s_models_0057acae
-;   string s_..\\core\\cloth.cpp_0057acb5
-;   string s_CCloth::load_-_Unable_to_open_fi_0057acc7
+;   TerminatedCString s_models_0057acae
+;   TerminatedCString s_core_cloth_cpp_0057acb5
+;   TerminatedCString s_CCloth_load_Unable_to_op_0057acc7
 ;   TerminatedCString s_d_0057aced
-;   string s_..\\core\\cloth.cpp_0057acf1
-;   string s_%s_is_version_%d,_this_.EXE_is_o_0057ad03
+;   TerminatedCString s_core_cloth_cpp_0057acf1
+;   TerminatedCString s_s_is_version_d_this_EXE_0057ad03
 ;   TerminatedCString s_s_0057ad4b
-;   string s_%f,%f,%f,%f,%f,%f_0057ad4f
-;   string s_%f,%f,%f,%f,%f,%f,%f,%f_0057ad62
+;   TerminatedCString s_f_f_f_f_f_f_0057ad4f
+;   TerminatedCString s_f_f_f_f_f_f_f_f_0057ad62
 ;   TerminatedCString s_f_0057ad7b
 ;   TerminatedCString s_d_0057ad7f
 ;   TerminatedCString s_d_0057ad83

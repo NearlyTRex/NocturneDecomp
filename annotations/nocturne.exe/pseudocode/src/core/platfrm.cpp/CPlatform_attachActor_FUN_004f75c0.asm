@@ -13,8 +13,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500b22
 ;
 ; Referenced Globals:
-;   string s_..\\core\\platfrm.cpp_0058d971
-;   string s_CPlatform::attachActor_-_too_man_0058d985
+;   TerminatedCString s_core_platfrm_cpp_0058d971
+;   TerminatedCString s_CPlatform_attachActor_to_0058d985
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

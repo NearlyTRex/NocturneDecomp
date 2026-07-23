@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_smiley.dfm_00591eed
+;   TerminatedCString s_smiley_dfm_00591eed
 ;   float FLOAT_005a1f9c = 50
 ;   float FLOAT_005a1fa0 = 100
 ;   undefined1* PTR_core_smiley.cpp_CSmiley_setup_FUN_0051fd90_005a1fb4 = 0051fd90

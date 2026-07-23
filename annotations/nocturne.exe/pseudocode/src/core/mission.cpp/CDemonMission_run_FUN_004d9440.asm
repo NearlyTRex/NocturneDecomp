@@ -10,12 +10,12 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5ec4
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589dcb
-;   string s_CDemonMission::run_-_hero_list_e_00589ddf
-;   string s_..\\core\\mission.cpp_00589e04
-;   string s_CDemonMission::run_-_no_gLocalHe_00589e18
-;   string s_hq.geo_00589e3b
-;   string s_Press_any_key_to_continue..._00589e42
+;   TerminatedCString s_core_mission_cpp_00589dcb
+;   TerminatedCString s_CDemonMission_run_hero_l_00589ddf
+;   TerminatedCString s_core_mission_cpp_00589e04
+;   TerminatedCString s_CDemonMission_run_no_gLo_00589e18
+;   TerminatedCString s_hq_geo_00589e3b
+;   TerminatedCString s_Press_any_key_to_continu_00589e42
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005baca0
 ;   undefined4 DAT_005be368

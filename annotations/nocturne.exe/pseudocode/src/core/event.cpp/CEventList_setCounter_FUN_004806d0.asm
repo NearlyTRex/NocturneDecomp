@@ -9,8 +9,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d49
 ;
 ; Referenced Globals:
-;   string s_..\\core\\event.cpp_00580b39
-;   string s_CEventList::setCounter_-_too_man_00580b4b
+;   TerminatedCString s_core_event_cpp_00580b39
+;   TerminatedCString s_CEventList_setCounter_to_00580b4b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

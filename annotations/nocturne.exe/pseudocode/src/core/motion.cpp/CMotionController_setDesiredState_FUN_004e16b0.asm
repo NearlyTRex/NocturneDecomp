@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b2cd
-;   string s_CMotionController::setDesiredSta_0058b2e0
+;   TerminatedCString s_CMotionController_setDes_0058b2e0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

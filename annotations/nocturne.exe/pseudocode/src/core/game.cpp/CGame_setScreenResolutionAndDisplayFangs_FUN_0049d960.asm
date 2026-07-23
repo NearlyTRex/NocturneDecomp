@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfce
 ;
 ; Referenced Globals:
-;   string s_fangs_005827b8
+;   TerminatedCString s_fangs_005827b8
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_014b9900

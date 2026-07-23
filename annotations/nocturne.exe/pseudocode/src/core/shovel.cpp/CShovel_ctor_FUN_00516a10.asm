@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_shoveit.kfm_005910c5
+;   TerminatedCString s_shoveit_kfm_005910c5
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1c34 = 00553f10
 ;
 ; Called Functions:

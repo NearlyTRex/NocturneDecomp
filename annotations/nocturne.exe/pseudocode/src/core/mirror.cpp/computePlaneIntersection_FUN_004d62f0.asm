@@ -20,8 +20,8 @@
 ;   core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 at 004d6500
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mirror.cpp_005895ea
-;   string s_Bad_clip!_005895fd
+;   TerminatedCString s_core_mirror_cpp_005895ea
+;   TerminatedCString s_Bad_clip_005895fd
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

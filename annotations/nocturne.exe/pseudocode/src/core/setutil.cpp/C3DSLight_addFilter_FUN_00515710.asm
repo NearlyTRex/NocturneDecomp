@@ -8,8 +8,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005008a4
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setutil.cpp_00590f8a
-;   string s_C3DSLight::addFilter_-_too_many_f_00590f9e
+;   TerminatedCString s_core_setutil_cpp_00590f8a
+;   TerminatedCString s_C3DSLight_addFilter_too_00590f9e
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

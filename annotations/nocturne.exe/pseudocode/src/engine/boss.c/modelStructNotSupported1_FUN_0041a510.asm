@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\boss.c_00579576
-;   string s_modelStruct_not_supported_00579587
+;   TerminatedCString s_engine_boss_c_00579576
+;   TerminatedCString s_modelStruct_not_supporte_00579587
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

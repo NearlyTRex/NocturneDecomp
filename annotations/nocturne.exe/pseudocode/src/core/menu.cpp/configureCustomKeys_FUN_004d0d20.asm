@@ -14,20 +14,20 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d0cf4 = 004d102c
-;   string s_Control_:_Keyboard_005889c8
-;   string s_Control_:_Keyboard/Mouse_005889db
-;   string s_Control_:_Gamepad_005889f4
-;   string s_Customize_Keys_00588a06
-;   string s_Always_run_:_ON_00588a15
-;   string s_Always_run_:_OFF_00588a25
-;   string s_Aiming_:_Auto_00588a36
-;   string s_Aiming_:_Kindof_auto_00588a44
-;   string s_Aiming_:_Manual_00588a59
-;   string s_Auto_use_health_:_On_00588a69
-;   string s_Auto_use_health_:_Off_00588a7e
-;   string s_X-axis_sensitivity_:_00588a94
-;   string s_%5.2f_00588aaa
-;   string s_Y-axis_sensitivity_:_00588ab0
+;   TerminatedCString s_Control_Keyboard_005889c8
+;   TerminatedCString s_Control_Keyboard_Mouse_005889db
+;   TerminatedCString s_Control_Gamepad_005889f4
+;   TerminatedCString s_Customize_Keys_00588a06
+;   TerminatedCString s_Always_run_ON_00588a15
+;   TerminatedCString s_Always_run_OFF_00588a25
+;   TerminatedCString s_Aiming_Auto_00588a36
+;   TerminatedCString s_Aiming_Kindof_auto_00588a44
+;   TerminatedCString s_Aiming_Manual_00588a59
+;   TerminatedCString s_Auto_use_health_On_00588a69
+;   TerminatedCString s_Auto_use_health_Off_00588a7e
+;   TerminatedCString s_X_axis_sensitivity_00588a94
+;   TerminatedCString s_s_5_2f_00588aaa
+;   TerminatedCString s_Y_axis_sensitivity_00588ab0
 ;   ... and 21 more
 ;
 ; Called Functions:

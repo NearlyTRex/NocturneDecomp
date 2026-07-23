@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_005857f6
-;   string s_..\\core\\hero.cpp_005857fb
-;   string s_Out_of_memory!_0058580c
-;   string s_Your_weapon_0058581b
+;   TerminatedCString s_core_hero_cpp_005857fb
+;   TerminatedCString s_Out_of_memory_0058580c
+;   TerminatedCString s_Your_weapon_0058581b
 ;   undefined4 s_our_weapon_0058581b+1
 ;   undefined4 s_ur_weapon_0058581b+2
 ;   undefined4 s_r_weapon_0058581b+3

@@ -9,8 +9,8 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
-;   string s_rock-x.wav_0058111c
-;   string s_rock-x.wav_00581127
+;   TerminatedCString s_rock_x_wav_0058111c
+;   TerminatedCString s_rock_x_wav_00581127
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284

@@ -9,16 +9,16 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050071f
 ;
 ; Referenced Globals:
-;   string s_Must_specify_actor_name_0058e068
+;   TerminatedCString s_Must_specify_actor_name_0058e068
 ;   undefined4 s_ust_specify_actor_name_0058e068+1
 ;   undefined4 s_st_specify_actor_name_0058e068+2
 ;   undefined4 s_t_specify_actor_name_0058e068+3
-;   string s_Actor_variable_%s_not_defined,_o_0058e080
+;   TerminatedCString s_Actor_variable_s_not_def_0058e080
 ;   TerminatedCString s_anon_0058e0c6
-;   string s_Can't_use_'$'_actor_specifier_in_0058e0c8
-;   string s_Hero_doesn't_exist!!?!_0058e0f6
-;   string s_Actor_\"%s\"_does_not_exist._0058e10d
-;   string s_Actor_\"%s\"_is_of_type_%s,_this_c_0058e128
+;   TerminatedCString s_Can_t_use_actor_specifie_0058e0c8
+;   TerminatedCString s_Hero_doesn_t_exist_0058e0f6
+;   TerminatedCString s_Actor_s_does_not_exist_0058e10d
+;   TerminatedCString s_Actor_s_is_of_type_s_thi_0058e128
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005bdee0

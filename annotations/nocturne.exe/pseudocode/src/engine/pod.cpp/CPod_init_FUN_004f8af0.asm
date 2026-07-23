@@ -8,8 +8,8 @@
 ;   FUN_004c85f0 at 004c86d2
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\pod.cpp_0058dc31
-;   string s_CPod::init_-_No_.POD_to_init!_0058dc43
+;   TerminatedCString s_engine_pod_cpp_0058dc31
+;   TerminatedCString s_CPod_init_No_POD_to_init_0058dc43
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

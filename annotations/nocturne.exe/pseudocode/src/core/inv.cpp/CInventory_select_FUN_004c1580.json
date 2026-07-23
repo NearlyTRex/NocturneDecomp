@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 445,
+    "complexity_score": 444,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 119,
     "suspect_count": 29,
     "suspect_types": [
       "param_count_too_few",
@@ -138,7 +138,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 402
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -227,49 +227,49 @@
     {
       "addr": "00587360",
       "name": "s_CAmmo_00587360",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587366",
-      "name": "s_..\\core\\inv.cpp_00587366",
-      "type": "string",
+      "name": "s_core_inv_cpp_00587366",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587376",
-      "name": "s_CInventory::select_-_Catch_22_00587376",
-      "type": "string",
+      "name": "s_CInventory_select_Catch_00587376",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587394",
       "name": "s_CWeapon_00587394",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058739c",
       "name": "s_CHealthItem_0058739c",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005873a8",
-      "name": "s_..\\core\\inv.cpp_005873a8",
-      "type": "string",
+      "name": "s_core_inv_cpp_005873a8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005873b8",
-      "name": "s_CInventory::select_-_Catch_22_005873b8",
-      "type": "string",
+      "name": "s_CInventory_select_Catch_005873b8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005873d6",
-      "name": "s_You_have_used_:_005873d6",
-      "type": "string",
+      "name": "s_You_have_used_005873d6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -281,13 +281,13 @@
     {
       "addr": "005873e9",
       "name": "s_CGasMask_005873e9",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005873f2",
       "name": "s_CBoxActor_005873f2",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -620,7 +620,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar4 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(param_2);",
@@ -628,7 +628,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_removeItem_FUN_004c07b0(param_1,param_2,1);",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 107,
       "match": "param_2",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_removeItem_FUN_004c07b0(param_1,param_2,1);",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 113,
       "match": "DAT_007641f4",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);",
@@ -660,7 +660,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*(uint *)(iVar2 + 0x310));",
@@ -668,7 +668,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -676,7 +676,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -684,7 +684,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 95,
+      "line": 94,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -692,7 +692,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 65,
+      "line": 64,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 86,
+      "line": 85,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -708,7 +708,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 65,
+      "line": 64,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -716,7 +716,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 86,
+      "line": 85,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

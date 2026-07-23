@@ -8,8 +8,8 @@
 ;   FUN_004219f0 at 00421a39
 ;
 ; Referenced Globals:
-;   string s_..\\core\\bugs.cpp_00579cbc
-;   string s_CBugs::addSwarmGraphEdge_-_Too_m_00579ccd
+;   TerminatedCString s_core_bugs_cpp_00579cbc
+;   TerminatedCString s_CBugs_addSwarmGraphEdge_00579ccd
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -15,9 +15,9 @@
 ;   void* PTR_waveOutPrepareHeader_005753fc = 0017588c
 ;   void* PTR_waveOutUnprepareHeader_00575404 = 001758b4
 ;   void* PTR_waveOutWrite_00575408 = 001758ce
-;   string s_waveOutUnprepareHeader_failed!_005948bd
-;   string s_waveOutPrepareHeader_failed!_005948dc
-;   string s_waveOutWrite_failed!_005948f9
+;   TerminatedCString s_waveOutUnprepareHeader_f_005948bd
+;   TerminatedCString s_waveOutPrepareHeader_fai_005948dc
+;   TerminatedCString s_waveOutWrite_failed_005948f9
 ;   undefined4 DAT_02dc93a4
 ;   undefined4 DAT_02dc9428
 ;   undefined4 DAT_02dc942c

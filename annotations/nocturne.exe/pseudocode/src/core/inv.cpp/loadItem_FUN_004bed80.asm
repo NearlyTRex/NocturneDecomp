@@ -8,7 +8,7 @@
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004bf229
 ;
 ; Referenced Globals:
-;   string s_\"%[^\"]\",_\"%[^\"]\",_\"%[^\"]\"_00586d58
+;   TerminatedCString s_anon_00586d58
 ;
 ; Called Functions:
 ;   crt_stdio.c_fscanf_FUN_00563350

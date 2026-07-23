@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_strangerCannotDie_00595fe2
+;   TerminatedCString s_strangerCannotDie_00595fe2
 ;   undefined4 DAT_005b7650
 ;
 ; Called Functions:

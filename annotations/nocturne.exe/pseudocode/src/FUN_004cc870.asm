@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_courseName_0058819d
-;   string s_totalTime_005881a8
-;   string s_param_005881b2
-;   string s_phase_005881b8
+;   TerminatedCString s_courseName_0058819d
+;   TerminatedCString s_totalTime_005881a8
+;   TerminatedCString s_param_005881b2
+;   TerminatedCString s_phase_005881b8
 ;   TerminatedCString s_type_005881be
 ;
 ; Called Functions:

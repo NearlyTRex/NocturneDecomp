@@ -10,9 +10,9 @@
 ;   core_script.cpp_CScript_loadState_FUN_005052c0 at 0050548c
 ;
 ; Referenced Globals:
-;   string s_\"%[^\"]\"_0058fcb1
+;   TerminatedCString s_anon_0058fcb1
 ;   undefined4 DAT_005baf90
-;   string s_(none)_005be228
+;   TerminatedCString s_none_005be228
 ;   undefined4 DAT_005be230
 ;   undefined4 DAT_005be234
 ;

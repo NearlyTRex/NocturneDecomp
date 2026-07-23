@@ -247,8 +247,8 @@ LAB_005567cd:
             FUN_004c8440();
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"Phase: %d, Timer: %f\n",
-                     *(uint *)(param_1 + 0xbd60),(double)*(float *)(param_1 + 0xbd64));
+                    (PTR_DAT_005ad350,"Phase: %d, Timer: %f\n",*(uint *)(param_1 + 0xbd60),
+                     (double)*(float *)(param_1 + 0xbd64));
           if ((*(int *)(param_1 + 0xbd60) == 1) || (*(int *)(param_1 + 0xbd60) == 3)) {
             iVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                               (*(uint *)(param_1 + 0xbca4),local_f8,

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ef58
-;   string s_CPickList::remove_-_can't_do_thi_0057ef6e
+;   TerminatedCString s_shape_edittool_cpp_0057ef58
+;   TerminatedCString s_CPickList_remove_can_t_d_0057ef6e
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -26,15 +26,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_005956b3
-;   string s_actionPending_=_%d_stranger.cpp_l_005956db
-;   string s_Object_to_pick_up_is_now_NULL_st_00595703
-;   string s_actionPending_=_%d_stranger.cpp_l_00595736
-;   string s_actionPending_=_%d_stranger.cpp_l_0059575e
-;   string s_kick1.wav_00595786
-;   string s_hit-gh[4,7].wav_00595790
-;   string s_fall-1.wav_005957a0
-;   string s_actionPending_=_%d_stranger.cpp_l_005957ab
-;   string s_doorToOpen_==_NULL_stranger.cpp_l_005957d3
+;   TerminatedCString s_actionPending_d_stranger_005956db
+;   TerminatedCString s_Object_to_pick_up_is_now_00595703
+;   TerminatedCString s_actionPending_d_stranger_00595736
+;   TerminatedCString s_actionPending_d_stranger_0059575e
+;   TerminatedCString s_kick1_wav_00595786
+;   TerminatedCString s_hit_gh_4_7_wav_00595790
+;   TerminatedCString s_fall_1_wav_005957a0
+;   TerminatedCString s_actionPending_d_stranger_005957ab
+;   TerminatedCString s_doorToOpen_NULL_stranger_005957d3
 ;   double DOUBLE_005957ff = 0.200000000000000
 ;   double DOUBLE_00595807 = 0.400000000000000
 ;   float FLOAT_005a2710 = 10

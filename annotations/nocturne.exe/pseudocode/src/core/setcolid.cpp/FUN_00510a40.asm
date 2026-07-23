@@ -40,10 +40,10 @@
 ;   core_zombie.cpp_FUN_0055ef50 at 0055fef4
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setcolid.cpp_00590a2d
-;   string s_info.keyFramedModelInstancePtr_!_00590a42
-;   string s_..\\core\\setcolid.cpp_00590a8e
-;   string s_Invalid_collision_type!_00590aa3
+;   TerminatedCString s_core_setcolid_cpp_00590a2d
+;   TerminatedCString s_info_keyFramedModelInsta_00590a42
+;   TerminatedCString s_core_setcolid_cpp_00590a8e
+;   TerminatedCString s_Invalid_collision_type_00590aa3
 ;   double DOUBLE_00590abd = -0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

@@ -14,11 +14,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_CBugs_00595d3f
-;   string s_Using_auto_health_00595d45
-;   string s_hit_points:_%3.2f_00595d58
-;   string s_stranger_die??.wav_00595d6b
-;   string s_stranger_hit??.wav_00595d7e
+;   TerminatedCString s_CBugs_00595d3f
+;   TerminatedCString s_Using_auto_health_00595d45
+;   TerminatedCString s_hit_points_3_2f_00595d58
+;   TerminatedCString s_stranger_die_wav_00595d6b
+;   TerminatedCString s_stranger_hit_wav_00595d7e
 ;   double DOUBLE_00595d97 = 0.0500000000000000
 ;   double DOUBLE_00595d9f = 0.75
 ;   float FLOAT_00595da7 = 50

@@ -342,8 +342,7 @@ uint __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(uint *param_1,uint param_
           if ((iVar4 == 0) && (((&DAT_005c168c)[(byte)(pcVar12[0x12] + 1)] & 0xe0) == 0)) {
             local_118 = (char *)core_script_cpp_skipWhitespace_FUN_004fe070(pcVar12 + 0x12);
             local_e8 = -1;
-            sscanf
-                      (local_118," ( %[^,], %[^)])%n",local_e1c,local_27e4,&local_e8);
+            sscanf(local_118," ( %[^,], %[^)])%n",local_e1c,local_27e4,&local_e8);
             if (local_e8 < 3) {
               _sprintf(&DAT_01e56420,"Error parsing addItemToInventory command parms");
               return 0xffffffff;
@@ -365,8 +364,7 @@ uint __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(uint *param_1,uint param_
               local_118 = (char *)core_script_cpp_skipWhitespace_FUN_004fe070(pcVar12 + 0xe);
               local_e0 = -1;
               sscanf
-                        (local_118,"( %[^,], %[^,], %f )%n",local_5d4,local_3e0,&local_a0,
-                         &local_e0);
+                        (local_118,"( %[^,], %[^,], %f )%n",local_5d4,local_3e0,&local_a0,&local_e0);
               if (local_e0 < 5) {
                 _sprintf(&DAT_01e56420,"Error parsing addLightFilter command parms");
                 return 0xffffffff;
@@ -453,8 +451,7 @@ LAB_0050064d:
                                                     (pcVar12 + 0x15);
                       local_10c = -1;
                       sscanf
-                                (local_118,"(%[^,], %[^)])%n",local_190c,local_d54,
-                                 &local_10c);
+                                (local_118,"(%[^,], %[^)])%n",local_190c,local_d54,&local_10c);
                       if (local_10c < 2) {
                         _sprintf(&DAT_01e56420,"Error parsing attachActorToPlatform command parms");
                         return 0xffffffff;
@@ -502,8 +499,7 @@ LAB_0050064d:
                             local_118 = (char *)core_script_cpp_skipWhitespace_FUN_004fe070
                                                           (pcVar12 + 10);
                             if (_DAT_01e56418 == 0) {
-                              _sprintf(local_958,"Script breakpoint reached at line %d",
-                                         local_11c);
+                              _sprintf(local_958,"Script breakpoint reached at line %d",local_11c);
                               core_game_cpp_CGame_displayMessage_FUN_0049aa30
                                         (0x01C775EC,local_958,0x40a00000);
                               param_1[6] = 2;
@@ -650,11 +646,10 @@ LAB_00500e2e:
                                                             (pcVar12 + 5);
                                       local_108 = -1;
                                       sscanf
-                                                (local_118,"(%[^)])%n",local_570,&local_108
-                                                );
+                                                (local_118,"(%[^)])%n",local_570,&local_108);
                                       if (local_108 < 3) {
-                                        _sprintf(&DAT_01e56420,
-                                                   "Error parsing dbSay arguments");
+                                        _sprintf(&DAT_01e56420,"Error parsing dbSay arguments"
+                                                  );
                                         return 0xffffffff;
                                       }
                                       core_script_cpp_trimString_FUN_004fe000(local_570);
@@ -664,8 +659,8 @@ LAB_00500e2e:
                                       if (iVar4 < 0) {
                                         local_104 = local_226c;
                                         local_e4 = "$";
-                                        _sprintf(local_226c,"[Can't find %s in database]"
-                                                   ,local_570);
+                                        _sprintf(local_226c,"[Can't find %s in database]",
+                                                   local_570);
                                         shape_edittool_cpp_CStrList_add_FUN_00473cb0
                                                   (0x1e56c30,local_226c);
                                       }
@@ -713,8 +708,7 @@ LAB_00500e2e:
                                                             (pcVar12 + 10);
                                         local_fc = -1;
                                         sscanf
-                                                  (local_118,"(%[^)])%n",local_444,
-                                                   &local_fc);
+                                                  (local_118,"(%[^)])%n",local_444,&local_fc);
                                         if (local_fc < 3) {
                                           _sprintf(&DAT_01e56420,
                                                      "Error parsing dbSay arguments");
@@ -727,8 +721,7 @@ LAB_00500e2e:
                                         if (iVar4 < 0) {
                                           local_f4 = local_2654;
                                           local_f8 = "$";
-                                          _sprintf(local_2654,
-                                                     "[Can't find %s in database]",
+                                          _sprintf(local_2654,"[Can't find %s in database]",
                                                      local_444);
                                           shape_edittool_cpp_CStrList_add_FUN_00473cb0
                                                     (0x1e56c30,local_2654);
@@ -774,8 +767,8 @@ joined_r0x00504194:
                                           if (pcVar12 != (char *)0x0) goto LAB_00500e2e;
                                           if (_DAT_01e56418 == 0) {
                                             FUN_0046fe60(0x01BCD074,
-                                                         "Script debug message at line %d:\n%s"
-                                                         ,local_11c,local_3784);
+                                                         "Script debug message at line %d:\n%s",
+                                                         local_11c,local_3784);
                                           }
                                         }
                                         else {
@@ -789,12 +782,11 @@ joined_r0x00504194:
                                                             (pcVar12 + 9);
                                             local_5c = -1;
                                             sscanf
-                                                      (local_118,"(%[^,], %[^,)]%n",
-                                                       local_2bcc,local_1844,&local_5c);
+                                                      (local_118,"(%[^,], %[^,)]%n",local_2bcc,local_1844,
+                                                       &local_5c);
                                             if (local_5c < 5) {
                                               _sprintf(&DAT_01e56420,
-                                                                                                                  
-                                                  "Error parsing dismember command parms");
+                                                         "Error parsing dismember command parms");
                                               return 0xffffffff;
                                             }
                                             local_118 = local_118 + local_5c;
@@ -814,13 +806,11 @@ joined_r0x00504194:
                                             if (*local_118 == ',') {
                                               local_5c = -1;
                                               sscanf
-                                                        (local_118,",%f ,%f ,%f ,%f %n",
-                                                         local_148,local_144,local_140,&local_3f80,
-                                                         &local_5c);
+                                                        (local_118,",%f ,%f ,%f ,%f %n",local_148,
+                                                         local_144,local_140,&local_3f80,&local_5c);
                                               if (local_5c < 5) {
                                                 _sprintf(&DAT_01e56420,
-                                                                                                                      
-                                                  "Error parsing dismember command parms");
+                                                           "Error parsing dismember command parms");
                                                 return 0xffffffff;
                                               }
                                               local_118 = local_118 + local_5c;
@@ -847,9 +837,8 @@ joined_r0x00504194:
                                             }
                                             if (*local_118 != ')') {
                                               _sprintf(&DAT_01e56420,
-                                                                                                                  
-                                                  "Error parsing dismember command parms near '%s'",
-                                                  local_118);
+                                                         "Error parsing dismember command parms near '%s'",
+                                                         local_118);
                                               return 0xffffffff;
                                             }
                                             local_118 = local_118 + 1;
@@ -886,9 +875,8 @@ joined_r0x00504194:
                                                                 (&local_118,param_1 + 0x13,0x400);
                                               if (iVar4 != 0) {
                                                 _sprintf(&DAT_01e56420,
-                                                                                                                      
-                                                  "Error parsing message text on display statament: %s",iVar4)
-                                                ;
+                                                           "Error parsing message text on display statament: %s",iVar4
+                                                          );
                                                 return 0xffffffff;
                                               }
                                             }
@@ -906,9 +894,8 @@ joined_r0x00504194:
                                                             (param_1,param_1[0x10],1);
                                                 if (iVar4 < 0) {
                                                   _sprintf(&DAT_01e56420,
-                                                                                                                          
-                                                  "Can't skip next command after else statement on line %d",
-                                                  local_11c);
+                                                             "Can't skip next command after else statement on line %d",
+                                                             local_11c);
                                                   return 0xffffffff;
                                                 }
                                                 param_1[0x10] = iVar4;
@@ -925,13 +912,12 @@ joined_r0x00504194:
                                                             (pcVar12 + 0xc);
                                                   local_48 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_307c,local_2d5c,&local_48);
+                                                            (local_118,"(%[^,], %[^)])%n",local_307c,
+                                                             local_2d5c,&local_48);
                                                   if (local_48 < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing enableCamera parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing enableCamera parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_48;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -943,10 +929,9 @@ joined_r0x00504194:
                                                             (0x01E57284,local_307c);
                                                   if (iVar4 < 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Camera \"%s\" does not exist.",local_307c)
-                                                  ;
-                                                  return 0xffffffff;
+                                                               "Camera \"%s\" does not exist.",
+                                                               local_307c);
+                                                    return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                     uVar8 = 
@@ -988,13 +973,12 @@ joined_r0x00504194:
                                                             (pcVar12 + 0x11);
                                                   local_44 = -1;
                                                   sscanf
-                                                            (local_118,"(%d , %[^)])%n",
-                                                             &local_a8,local_1dbc,&local_44);
+                                                            (local_118,"(%d , %[^)])%n",&local_a8,
+                                                             local_1dbc,&local_44);
                                                   if (local_44 < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing enableCameraGroup parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing enableCameraGroup parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_44;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1040,13 +1024,12 @@ LAB_00501802:
                                                             (pcVar12 + 0xf);
                                                   local_dc = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_32d4,local_1f4c,&local_dc);
+                                                            (local_118,"(%[^,], %[^)])%n",local_32d4,
+                                                             local_1f4c,&local_dc);
                                                   if (local_dc < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing enableHealthBar parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing enableHealthBar parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_dc;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1073,8 +1056,7 @@ LAB_00501802:
                                                       if (iVar9 != 0) {
                                                         _sprintf(&DAT_01e56420,
                                                                                                                                       
-                                                  "Invalid health bar mode '%s'",local_1f4c
-                                                  );
+                                                  "Invalid health bar mode '%s'",local_1f4c);
                                                   return 0xffffffff;
                                                   }
                                                   uVar8 = 2;
@@ -1166,13 +1148,12 @@ LAB_00501802:
                                                             (pcVar12 + 7);
                                                   local_d8 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_1a9c,local_19d4,&local_d8);
+                                                            (local_118,"(%[^,], %[^)])%n",local_1a9c,
+                                                             local_19d4,&local_d8);
                                                   if (local_d8 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing gesture command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing gesture command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_d8;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1202,9 +1183,8 @@ LAB_00501802:
                                                   core_bugs_cpp_getDeformableModelName_FUN_00423d30
                                                             (iVar4 + 0x150);
                                                   _sprintf(&DAT_01e56420,
-                                                                                                                          
-                                                  "Gesture name %s is not valid for actor %s, model %s",
-                                                  local_19d4,local_1a9c,uVar8);
+                                                             "Gesture name %s is not valid for actor %s, model %s",
+                                                             local_19d4,local_1a9c,uVar8);
                                                   return 0xffffffff;
                                                   }
                                                   }
@@ -1220,13 +1200,12 @@ LAB_00501802:
                                                             (pcVar12 + 9);
                                                   local_d4 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^,)] )%n"
-                                                             ,local_145c,local_1e84,&local_d4);
+                                                            (local_118,"(%[^,], %[^,)] )%n",local_145c,
+                                                             local_1e84,&local_d4);
                                                   if (local_d4 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing getIniInt command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing getIniInt command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_d4;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1259,13 +1238,12 @@ LAB_00501802:
                                                             (pcVar12 + 0xf);
                                                   local_c8 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_16b4,local_1b64,&local_c8);
+                                                            (local_118,"(%[^,], %[^)])%n",local_16b4,
+                                                             local_1b64,&local_c8);
                                                   if (local_c8 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing getTriggerActor command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing getTriggerActor command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_c8;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1303,24 +1281,22 @@ LAB_00501802:
                                                             (param_1,local_118);
                                                   if (iVar4 < 0) {
                                                     dVar2 = __BITCAST_DOUBLE(CONCAT44(local_11c,local_118));
-                                                    pcVar12 = 
-                                                  "Undefined label %s used in gosub statement on line %d";
+                                                    pcVar12 = "Undefined label %s used in gosub statement on line %d";
 LAB_004ff42f:
-                                                  _sprintf(&DAT_01e56420,pcVar12,dVar2);
-                                                  return 0xffffffff;
+                                                    _sprintf(&DAT_01e56420,pcVar12,dVar2);
+                                                    return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                     if (7 < (int)param_1[0x115]) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Call stack overflow detected on script line %d.",
-                                                  local_11c);
-                                                  return 0xffffffff;
-                                                  }
-                                                  param_1[param_1[0x115] + 0x116] = param_1[0x10];
-                                                  param_1[0x10] = iVar4;
-                                                  param_1[0x115] = param_1[0x115] + 1;
-                                                  local_118 = &CHAR_00h_0058ede4;
+                                                                 "Call stack overflow detected on script line %d."
+                                                                 ,local_11c);
+                                                      return 0xffffffff;
+                                                    }
+                                                    param_1[param_1[0x115] + 0x116] = param_1[0x10];
+                                                    param_1[0x10] = iVar4;
+                                                    param_1[0x115] = param_1[0x115] + 1;
+                                                    local_118 = &CHAR_00h_0058ede4;
                                                   }
                                                   else {
                                                     local_118 = &CHAR_00h_0058ede4;
@@ -1340,9 +1316,8 @@ LAB_004ff42f:
                                                             (param_1,local_118);
                                                   if (iVar4 < 0) {
                                                     dVar2 = __BITCAST_DOUBLE(CONCAT44(local_11c,local_118));
-                                                    pcVar12 = 
-                                                  "Undefined label %s used in goto statement on line %d";
-                                                  goto LAB_004ff42f;
+                                                    pcVar12 = "Undefined label %s used in goto statement on line %d";
+                                                    goto LAB_004ff42f;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                     param_1[0x10] = iVar4;
@@ -1367,11 +1342,10 @@ LAB_004ff42f:
                                                   if (pcVar12 != (char *)0x0) goto LAB_00501802;
                                                   if (_DAT_01e56418 == 0) {
                                                     FUN_0046fcd0(0x01BCD074,
-                                                                                                                                  
-                                                  "Script GTFO at line %d:\n%s\nTerminating mission.",
-                                                  local_11c,local_3400);
-                                                  *param_1 = 1;
-                                                  local_124 = 0;
+                                                                 "Script GTFO at line %d:\n%s\nTerminating mission.",
+                                                                 local_11c,local_3400);
+                                                    *param_1 = 1;
+                                                    local_124 = 0;
                                                   }
                                                   }
                                                   else {
@@ -1386,13 +1360,12 @@ LAB_004ff42f:
                                                             (pcVar12 + 0xd);
                                                   local_c4 = 0xffffffff;
                                                   sscanf
-                                                            (local_118,"(%[^,)]%n",
-                                                             local_1524,&local_c4);
+                                                            (local_118,"(%[^,)]%n",local_1524,
+                                                             &local_c4);
                                                   if ((int)local_c4 < 2) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing holsterWeapon command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing holsterWeapon command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_c4;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1416,29 +1389,30 @@ LAB_004ff42f:
                                                     local_c4 = uVar10;
                                                     if ((int)uVar10 < 1) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing holsterWeapon command parms");
-                                                  return 0xffffffff;
-                                                  }
-                                                  pcVar12 = local_118;
-                                                  pcVar14 = acStack_fad + 1;
-                                                  for (uVar11 = uVar10 >> 2; uVar11 != 0;
-                                                      uVar11 = uVar11 - 1) {
-                                                    *(uint *)pcVar14 = *(uint *)pcVar12;
-                                                    pcVar12 = pcVar12 + (uint)bVar15 * -8 + 4;
-                                                    pcVar14 = pcVar14 + (uint)bVar15 * -8 + 4;
-                                                  }
-                                                  for (uVar10 = uVar10 & 3; uVar10 != 0;
-                                                      uVar10 = uVar10 - 1) {
-                                                    *pcVar14 = *pcVar12;
-                                                    pcVar12 = pcVar12 + (uint)bVar15 * -2 + 1;
-                                                    pcVar14 = pcVar14 + (uint)bVar15 * -2 + 1;
-                                                  }
-                                                  pcVar12 = local_118 + local_c4;
-                                                  acStack_fad[local_c4 + 1] = '\0';
-                                                  local_118 = pcVar12;
-                                                  if (_DAT_01e56418 == 0) {
-                                                    local_bc = 
+                                                                 "Error parsing holsterWeapon command parms"
+                                                                );
+                                                      return 0xffffffff;
+                                                    }
+                                                    pcVar12 = local_118;
+                                                    pcVar14 = acStack_fad + 1;
+                                                    for (uVar11 = uVar10 >> 2; uVar11 != 0;
+                                                        uVar11 = uVar11 - 1) {
+                                                      *(uint *)pcVar14 =
+                                                           *(uint *)pcVar12;
+                                                      pcVar12 = pcVar12 + (uint)bVar15 * -8 + 4;
+                                                      pcVar14 = pcVar14 + (uint)bVar15 * -8 + 4;
+                                                    }
+                                                    for (uVar10 = uVar10 & 3; uVar10 != 0;
+                                                        uVar10 = uVar10 - 1) {
+                                                      *pcVar14 = *pcVar12;
+                                                      pcVar12 = pcVar12 + (uint)bVar15 * -2 + 1;
+                                                      pcVar14 = pcVar14 + (uint)bVar15 * -2 + 1;
+                                                    }
+                                                    pcVar12 = local_118 + local_c4;
+                                                    acStack_fad[local_c4 + 1] = '\0';
+                                                    local_118 = pcVar12;
+                                                    if (_DAT_01e56418 == 0) {
+                                                      local_bc = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                                             (0x01C03A10,acStack_fad + 1);
                                                   }
@@ -1451,9 +1425,8 @@ LAB_004ff42f:
                                                   }
                                                   if (*local_118 != ')') {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Missing closing ')' in holsterWeapon command");
-                                                  return 0xffffffff;
+                                                               "Missing closing ')' in holsterWeapon command");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + 1;
                                                   if (_DAT_01e56418 == 0) {
@@ -1495,10 +1468,9 @@ LAB_004ff42f:
                                                             (param_1,param_1[0x10],0);
                                                   if (iVar4 < 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Can't skip next command after if statement on line %d",
-                                                  local_11c);
-                                                  return 0xffffffff;
+                                                               "Can't skip next command after if statement on line %d",
+                                                               local_11c);
+                                                    return 0xffffffff;
                                                   }
                                                   iVar9 = _strnicmp
                                                                     (*(uint *)
@@ -1527,9 +1499,8 @@ LAB_004ff42f:
                                                   iVar4 = 0x01C775EC;
                                                   if (local_18 < 2) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing finishedAct command");
-                                                  return 0xffffffff;
+                                                               "Error parsing finishedAct command");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_18;
                                                   if (_DAT_01e56418 == 0) {
@@ -1586,8 +1557,8 @@ LAB_005021b8:
                                                   }
                                                   else if (iVar9 < 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                               "Invalid letterBox mode: %s"
-                                                               ,local_890);
+                                                               "Invalid letterBox mode: %s",
+                                                               local_890);
                                                     return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
@@ -1654,13 +1625,12 @@ LAB_005021b8:
                                                             (pcVar12 + 6);
                                                   local_b4 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,)]%n",
-                                                             local_1394,&local_b4);
+                                                            (local_118,"(%[^,)]%n",local_1394,
+                                                             &local_b4);
                                                   if (local_b4 < 2) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing lookAt command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing lookAt command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_b4;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1679,27 +1649,26 @@ joined_r0x00500ad6:
                                                   if (*local_118 == ',') {
                                                     local_b4 = -1;
                                                     sscanf
-                                                              (local_118,", %[^)]%n",
-                                                               local_2fb4,&local_b4);
+                                                              (local_118,", %[^)]%n",local_2fb4,
+                                                               &local_b4);
                                                     if (local_b4 < 3) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing lookAt command parms");
-                                                  return 0xffffffff;
-                                                  }
-                                                  local_118 = local_118 + local_b4;
-                                                  core_script_cpp_trimString_FUN_004fe000
-                                                            (local_2fb4);
-                                                  iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_2fb4,DAT_00763e80,
-                                                                     &DAT_00763e48);
-                                                  if (iVar9 == 0) goto joined_r0x00500ad6;
+                                                                 "Error parsing lookAt command parms"
+                                                                );
+                                                      return 0xffffffff;
+                                                    }
+                                                    local_118 = local_118 + local_b4;
+                                                    core_script_cpp_trimString_FUN_004fe000
+                                                              (local_2fb4);
+                                                    iVar9 = core_script_cpp_getActor_FUN_004fe180
+                                                                      (local_2fb4,DAT_00763e80,
+                                                                       &DAT_00763e48);
+                                                    if (iVar9 == 0) goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Missing closing ')' in lookAt command");
-                                                  return 0xffffffff;
+                                                               "Missing closing ')' in lookAt command");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + 1;
                                                   if (_DAT_01e56418 == 0) {
@@ -1720,15 +1689,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 0xc);
                                                   local_b0 = -1;
                                                   sscanf
-                                                            (local_118,
-                                                             "(%[^,], %f , %f )%n",
-                                                             local_177c,&local_3f70,&local_3f7c,
-                                                             &local_b0);
+                                                            (local_118,"(%[^,], %f , %f )%n",local_177c,
+                                                             &local_3f70,&local_3f7c,&local_b0);
                                                   if (local_b0 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing movePlatform command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing movePlatform command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_b0;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1739,9 +1705,8 @@ joined_r0x00500ad6:
                                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   if ((local_3f70 < 0.0) || (1.0 < local_3f70)) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Paramater must be in range 0.0 .. 1.0");
-                                                  return 0xffffffff;
+                                                               "Paramater must be in range 0.0 .. 1.0");
+                                                    return 0xffffffff;
                                                   }
                                                   dVar2 = (double)local_3f7c;
                                                   if (dVar2 <= 0.0) {
@@ -1766,13 +1731,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 8);
                                                   local_ac = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_28ac,local_3144,&local_ac);
+                                                            (local_118,"(%[^,], %[^)])%n",local_28ac,
+                                                             local_3144,&local_ac);
                                                   if (local_ac < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing openDoor command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing openDoor command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_ac;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1815,13 +1779,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 0xb);
                                                   local_a4 = -1;
                                                   sscanf
-                                                            (local_118,"( %[^,], %[^)])%n",
-                                                             local_250,local_50c,&local_a4);
+                                                            (local_118,"( %[^,], %[^)])%n",local_250,
+                                                             local_50c,&local_a4);
                                                   if (local_a4 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing pressButton() command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing pressButton() command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_a4;
                                                   core_script_cpp_trimString_FUN_004fe000(local_250)
@@ -1865,10 +1828,9 @@ joined_r0x00500ad6:
                                                                     (&local_118,local_1ec,100);
                                                   if (iVar4 != 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing event expression on raise statament: %s",iVar4)
-                                                  ;
-                                                  return 0xffffffff;
+                                                               "Error parsing event expression on raise statament: %s",
+                                                               iVar4);
+                                                    return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
@@ -1908,13 +1870,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 0xd);
                                                   local_9c = -1;
                                                   sscanf
-                                                            (local_118,"( %[^,], %[^)])%n",
-                                                             local_bb0,local_c14,&local_9c);
+                                                            (local_118,"( %[^,], %[^)])%n",local_bb0,
+                                                             local_c14,&local_9c);
                                                   if (local_9c < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing releaseButton() command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing releaseButton() command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_9c;
                                                   core_script_cpp_trimString_FUN_004fe000(local_bb0)
@@ -1958,13 +1919,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 0x1b);
                                                   local_98 = -1;
                                                   sscanf
-                                                            (local_118," ( %[^)])%n",
-                                                             local_271c,&local_98);
+                                                            (local_118," ( %[^)])%n",local_271c,
+                                                             &local_98);
                                                   if (local_98 < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing removeAllItemsFromInventory command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing removeAllItemsFromInventory command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_98;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -1990,13 +1950,12 @@ joined_r0x00500ad6:
                                                             (pcVar12 + 0x17);
                                                   local_94 = -1;
                                                   sscanf
-                                                            (local_118," ( %[^,], %[^)])%n",
-                                                             local_20dc,local_2014,&local_94);
+                                                            (local_118," ( %[^,], %[^)])%n",local_20dc,
+                                                             local_2014,&local_94);
                                                   if (local_94 < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing removeItemFromInventory command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing removeItemFromInventory command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_94;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2032,16 +1991,14 @@ joined_r0x00500ad6:
                                                              &local_8c);
                                                   if (local_8c < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing removeKeys() command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing removeKeys() command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_8c;
                                                   if (*0x01CEA280 != 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Can't use removeKeys command in multi-player");
-                                                  return 0xffffffff;
+                                                               "Can't use removeKeys command in multi-player");
+                                                    return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
@@ -2064,13 +2021,12 @@ joined_r0x00500ad6:
                                                     iVar4 = param_1[0x115];
                                                     if (iVar4 < 1) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Return without gosub detected on script line %d.",
-                                                  local_11c);
-                                                  return 0xffffffff;
-                                                  }
-                                                  param_1[0x115] = iVar4 + -1;
-                                                  param_1[0x10] = param_1[iVar4 + 0x115];
+                                                                 "Return without gosub detected on script line %d."
+                                                                 ,local_11c);
+                                                      return 0xffffffff;
+                                                    }
+                                                    param_1[0x115] = iVar4 + -1;
+                                                    param_1[0x10] = param_1[iVar4 + 0x115];
                                                   }
                                                   }
                                                   else {
@@ -2090,9 +2046,8 @@ joined_r0x00500ad6:
                                                   iVar4 = 0x01C775EC;
                                                   if (local_88 < 2) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing rollCredits command");
-                                                  return 0xffffffff;
+                                                               "Error parsing rollCredits command");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_88;
                                                   if (_DAT_01e56418 == 0) {
@@ -2131,13 +2086,12 @@ LAB_00503106:
                                                   }
                                                   local_84 = -1;
                                                   sscanf
-                                                            (local_3978,"%[^,], %[^,], %n",
-                                                             local_2eec,local_12cc,&local_84);
+                                                            (local_3978,"%[^,], %[^,], %n",local_2eec,
+                                                             local_12cc,&local_84);
                                                   if (local_84 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing speaker and wav arguments");
-                                                  return 0xffffffff;
+                                                               "Error parsing speaker and wav arguments");
+                                                    return 0xffffffff;
                                                   }
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_2eec);
@@ -2176,13 +2130,12 @@ LAB_00503106:
                                                             (pcVar12 + 0xc);
                                                   local_80 = -1;
                                                   sscanf
-                                                            (local_118," (%[^,], %[^)])%n",
-                                                             local_700,local_69c,&local_80);
+                                                            (local_118," (%[^,], %[^)])%n",local_700,
+                                                             local_69c,&local_80);
                                                   if (local_80 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing selectWeapon parameters.");
-                                                  return 0xffffffff;
+                                                               "Error parsing selectWeapon parameters.");
+                                                    return 0xffffffff;
                                                   }
                                                   core_script_cpp_trimString_FUN_004fe000(local_700)
                                                   ;
@@ -2203,8 +2156,7 @@ LAB_00503106:
                                                   if (iVar9 != 0) {
                                                     do {
                                                       if (iVar9 == 0) {
-                                                        _DAT_01cc4800 =
-                                                             "..\\core\\script.cpp";
+                                                        _DAT_01cc4800 = "..\\core\\script.cpp";
                                                         _DAT_01cc4804 = 0xad9;
                                                         FUN_004c8440(
                                                   "script selectWeapon() command - hell froze.");
@@ -2239,13 +2191,12 @@ LAB_00503106:
                                                             (pcVar12 + 0x10);
                                                   local_74 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_258c,local_24c4,&local_74);
+                                                            (local_118,"(%[^,], %[^)])%n",local_258c,
+                                                             local_24c4,&local_74);
                                                   if (local_74 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setActorVariable command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing setActorVariable command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_74;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2302,13 +2253,12 @@ LAB_00503106:
                                                             (pcVar12 + 0xe);
                                                   local_6c = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %d)%n",
-                                                             local_2b04,&local_70,&local_6c);
+                                                            (local_118,"(%[^,], %d)%n",local_2b04,
+                                                             &local_70,&local_6c);
                                                   if (local_6c < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setCameragroup parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing setCameragroup parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_6c;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2318,10 +2268,9 @@ LAB_00503106:
                                                             (0x01E57284,local_2b04);
                                                   if (iVar4 < 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Camera \"%s\" does not exist.",local_2b04)
-                                                  ;
-                                                  return 0xffffffff;
+                                                               "Camera \"%s\" does not exist.",
+                                                               local_2b04);
+                                                    return 0xffffffff;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                     *(uint *)
@@ -2341,13 +2290,12 @@ LAB_00503106:
                                                             (pcVar12 + 0x12);
                                                   local_64 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %f)%n",
-                                                             local_23fc,&local_68,&local_64);
+                                                            (local_118,"(%[^,], %f)%n",local_23fc,
+                                                             &local_68,&local_64);
                                                   if (local_64 < 3) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setCharacterHealth parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing setCharacterHealth parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_64;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2410,13 +2358,12 @@ LAB_00503106:
                                                             (pcVar12 + 0xb);
                                                   local_60 = -1;
                                                   sscanf
-                                                            (local_118," (%[^,], %[^)])%n",
-                                                             local_638,local_82c,&local_60);
+                                                            (local_118," (%[^,], %[^)])%n",local_638,
+                                                             local_82c,&local_60);
                                                   if (local_60 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setHeroTask parameters.");
-                                                  return 0xffffffff;
+                                                               "Error parsing setHeroTask parameters.");
+                                                    return 0xffffffff;
                                                   }
                                                   core_script_cpp_trimString_FUN_004fe000(local_638)
                                                   ;
@@ -2481,13 +2428,12 @@ LAB_00503106:
                                                             (pcVar12 + 9);
                                                   local_54 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %d )%n",
-                                                             local_1074,&local_58,&local_54);
+                                                            (local_118,"(%[^,], %d )%n",local_1074,
+                                                             &local_58,&local_54);
                                                   if (local_54 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setIniInt command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing setIniInt command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_54;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2517,9 +2463,8 @@ LAB_00503106:
                                                              &local_50);
                                                   if (local_50 < 1) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setSayTimeOverride parameters.");
-                                                  return 0xffffffff;
+                                                               "Error parsing setSayTimeOverride parameters.");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_50;
                                                   local_4c = 0xbf800000;
@@ -2529,15 +2474,15 @@ LAB_00503106:
                                                   else {
                                                     local_50 = -1;
                                                     sscanf
-                                                              (local_118,"%f )%n",&local_4c
-                                                               ,&local_50);
+                                                              (local_118,"%f )%n",&local_4c,
+                                                               &local_50);
                                                     if (local_50 < 1) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing setSayTimeOverride parameters.");
-                                                  return 0xffffffff;
-                                                  }
-                                                  local_118 = local_118 + local_50;
+                                                                 "Error parsing setSayTimeOverride parameters."
+                                                                );
+                                                      return 0xffffffff;
+                                                    }
+                                                    local_118 = local_118 + local_50;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
                                                     param_1[0x113] = local_4c;
@@ -2670,13 +2615,12 @@ LAB_00503b62:
                                                             (pcVar12 + 9);
                                                   local_40 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,)]%n",
-                                                             local_1cf4,&local_40);
+                                                            (local_118,"(%[^,)]%n",local_1cf4,
+                                                             &local_40);
                                                   if (local_40 < 2) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing setVictim command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing setVictim command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_40;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2689,31 +2633,31 @@ LAB_00503b62:
                                                   if (*local_118 == ',') {
                                                     local_40 = -1;
                                                     sscanf
-                                                              (local_118,", %[^)]%n",
-                                                               local_1204,&local_40);
+                                                              (local_118,", %[^)]%n",local_1204,
+                                                               &local_40);
                                                     if (local_40 < 3) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing setVictim command parms");
-                                                  return 0xffffffff;
-                                                  }
-                                                  local_118 = local_118 + local_40;
-                                                  core_script_cpp_trimString_FUN_004fe000
-                                                            (local_1204);
-                                                  iVar7 = _stricmp
-                                                                    (local_1204,"disable");
-                                                  iVar9 = 0xFFFFFFFF;
-                                                  if ((iVar7 != 0) &&
-                                                     (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                        (local_1204,DAT_00765a98,
-                                                                         &DAT_00765a60), iVar9 == 0)
-                                                     ) goto joined_r0x00500ad6;
+                                                                 "Error parsing setVictim command parms")
+                                                      ;
+                                                      return 0xffffffff;
+                                                    }
+                                                    local_118 = local_118 + local_40;
+                                                    core_script_cpp_trimString_FUN_004fe000
+                                                              (local_1204);
+                                                    iVar7 = _stricmp
+                                                                      (local_1204,"disable"
+                                                                      );
+                                                    iVar9 = 0xFFFFFFFF;
+                                                    if ((iVar7 != 0) &&
+                                                       (iVar9 = 
+                                                  core_script_cpp_getActor_FUN_004fe180
+                                                            (local_1204,DAT_00765a98,&DAT_00765a60),
+                                                  iVar9 == 0)) goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Missing closing ')' in setVictim command");
-                                                  return 0xffffffff;
+                                                               "Missing closing ')' in setVictim command");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + 1;
                                                   if (_DAT_01e56418 == 0) {
@@ -2733,13 +2677,12 @@ LAB_00503b62:
                                                             (pcVar12 + 10);
                                                   local_3c = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_2c94,local_1c2c,&local_3c);
+                                                            (local_118,"(%[^,], %[^)])%n",local_2c94,
+                                                             local_1c2c,&local_3c);
                                                   if (local_3c < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error snaping turnToFace command parms");
-                                                  return 0xffffffff;
+                                                               "Error snaping turnToFace command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_3c;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -2796,13 +2739,12 @@ LAB_00503b62:
                                                   }
                                                   local_38 = -1;
                                                   sscanf
-                                                            (local_3b6c,"%[^,], %[^,], %n",
-                                                             local_15ec,local_21a4,&local_38);
+                                                            (local_3b6c,"%[^,], %[^,], %n",local_15ec,
+                                                             local_21a4,&local_38);
                                                   if (local_38 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing speaker and wav arguments");
-                                                  return 0xffffffff;
+                                                               "Error parsing speaker and wav arguments");
+                                                    return 0xffffffff;
                                                   }
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_15ec);
@@ -2883,21 +2825,20 @@ LAB_0050421a:
                                                             (local_ee4,"%[^,],%n",local_7c8,
                                                              &local_34);
                                                   if (local_34 < 1) {
-                                                    pcVar12 = 
-                                                  "Error parsing out camera name";
-                                                  pcVar14 = &DAT_01e56420;
-                                                  do {
-                                                    cVar3 = *pcVar12;
-                                                    *pcVar14 = cVar3;
-                                                    if (cVar3 == '\0') {
-                                                      return 0xffffffff;
-                                                    }
-                                                    cVar3 = pcVar12[1];
-                                                    pcVar12 = pcVar12 + 2;
-                                                    pcVar14[1] = cVar3;
-                                                    pcVar14 = pcVar14 + 2;
-                                                  } while (cVar3 != '\0');
-                                                  return 0xffffffff;
+                                                    pcVar12 = "Error parsing out camera name";
+                                                    pcVar14 = &DAT_01e56420;
+                                                    do {
+                                                      cVar3 = *pcVar12;
+                                                      *pcVar14 = cVar3;
+                                                      if (cVar3 == '\0') {
+                                                        return 0xffffffff;
+                                                      }
+                                                      cVar3 = pcVar12[1];
+                                                      pcVar12 = pcVar12 + 2;
+                                                      pcVar14[1] = cVar3;
+                                                      pcVar14 = pcVar14 + 2;
+                                                    } while (cVar3 != '\0');
+                                                    return 0xffffffff;
                                                   }
                                                   core_script_cpp_trimString_FUN_004fe000(local_7c8)
                                                   ;
@@ -2906,8 +2847,8 @@ LAB_0050421a:
                                                             (0x01E57284,local_7c8);
                                                   if (iVar4 < 0) {
                                                     _sprintf(&DAT_01e56420,
-                                                               "Camera \"%s\" doesn't exist."
-                                                               ,local_7c8);
+                                                               "Camera \"%s\" doesn't exist.",
+                                                               local_7c8);
                                                     return 0xffffffff;
                                                   }
                                                   local_3f78 = 1e+10;
@@ -3001,13 +2942,12 @@ LAB_005043d6:
                                                             (pcVar12 + 10);
                                                   local_cc = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^)])%n",
-                                                             local_320c,local_2974,&local_cc);
+                                                            (local_118,"(%[^,], %[^)])%n",local_320c,
+                                                             local_2974,&local_cc);
                                                   if (local_cc < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing turnToFace command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing turnToFace command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_cc;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -3042,9 +2982,8 @@ LAB_005043d6:
                                                              &local_28);
                                                   if (local_28 < 1) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing time value on wait statament");
-                                                  return 0xffffffff;
+                                                               "Error parsing time value on wait statament");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_28;
                                                   if (_DAT_01e56418 == 0) {
@@ -3081,22 +3020,20 @@ LAB_005043d6:
                                                     if ((iVar4 != 0) ||
                                                        (((&DAT_005c168c)[(byte)(pcVar12[6] + 1)] &
                                                         0xe0) != 0)) {
-                                                      pcVar12 = 
-                                                  "Unknown command on line %d: %s";
-                                                  goto LAB_004ff42f;
-                                                  }
-                                                  local_118 = (char *)
+                                                      pcVar12 = "Unknown command on line %d: %s";
+                                                      goto LAB_004ff42f;
+                                                    }
+                                                    local_118 = (char *)
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar12 + 6);
                                                   local_20 = -1;
                                                   sscanf
-                                                            (local_118,"(%[^,], %[^,)] %n",
-                                                             local_2a3c,local_113c,&local_20);
+                                                            (local_118,"(%[^,], %[^,)] %n",local_2a3c,
+                                                             local_113c,&local_20);
                                                   if (local_20 < 5) {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Error parsing walkTo command parms");
-                                                  return 0xffffffff;
+                                                               "Error parsing walkTo command parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + local_20;
                                                   core_script_cpp_trimString_FUN_004fe000
@@ -3107,35 +3044,34 @@ LAB_005043d6:
                                                   if (*local_118 == ',') {
                                                     local_20 = -1;
                                                     sscanf
-                                                              (local_118,",%f %n",
-                                                               &local_120,&local_20);
+                                                              (local_118,",%f %n",&local_120,
+                                                               &local_20);
                                                     if (local_20 < 1) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing walkTo command parms");
-                                                  return 0xffffffff;
-                                                  }
-                                                  local_118 = local_118 + local_20;
+                                                                 "Error parsing walkTo command parms"
+                                                                );
+                                                      return 0xffffffff;
+                                                    }
+                                                    local_118 = local_118 + local_20;
                                                   }
                                                   local_1c = 0x501502f9;
                                                   if (*local_118 == ',') {
                                                     local_20 = -1;
                                                     sscanf
-                                                              (local_118,",%f %n",&local_1c
-                                                               ,&local_20);
+                                                              (local_118,",%f %n",&local_1c,
+                                                               &local_20);
                                                     if (local_20 < 1) {
                                                       _sprintf(&DAT_01e56420,
-                                                                                                                                  
-                                                  "Error parsing walkTo command parms");
-                                                  return 0xffffffff;
-                                                  }
-                                                  local_118 = local_118 + local_20;
+                                                                 "Error parsing walkTo command parms"
+                                                                );
+                                                      return 0xffffffff;
+                                                    }
+                                                    local_118 = local_118 + local_20;
                                                   }
                                                   if (*local_118 != ')') {
                                                     _sprintf(&DAT_01e56420,
-                                                                                                                              
-                                                  "Missing closing parenthesis on walkTo parms");
-                                                  return 0xffffffff;
+                                                               "Missing closing parenthesis on walkTo parms");
+                                                    return 0xffffffff;
                                                   }
                                                   local_118 = local_118 + 1;
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180

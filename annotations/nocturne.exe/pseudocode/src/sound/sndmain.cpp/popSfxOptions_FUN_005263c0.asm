@@ -18,8 +18,8 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005934ab
-;   string s_popSfxOptions_-_stack_empty_005934c0
+;   TerminatedCString s_sound_sndmain_cpp_005934ab
+;   TerminatedCString s_popSfxOptions_stack_empt_005934c0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc1b74

@@ -21,10 +21,10 @@
 ;   core_terrain.cpp_CTerrain_init_FUN_005492b0 at 005492db
 ;
 ; Referenced Globals:
-;   string s_..\\core\\ground.cpp_0058525d
-;   string s_eopen_-_ext_not_found!_00585270
-;   string s_..\\core\\ground.cpp_00585287
-;   string s_eopen_-_Cannot_open_file_0058529a
+;   TerminatedCString s_core_ground_cpp_0058525d
+;   TerminatedCString s_eopen_ext_not_found_00585270
+;   TerminatedCString s_core_ground_cpp_00585287
+;   TerminatedCString s_eopen_Cannot_open_file_0058529a
 ;   TerminatedCString s_rb_005853e5
 ;   TerminatedCString s_raw_005853e8
 ;   undefined4 s_aw_005853e8+1

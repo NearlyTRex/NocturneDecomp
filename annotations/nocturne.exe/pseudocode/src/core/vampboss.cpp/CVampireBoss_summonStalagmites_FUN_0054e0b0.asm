@@ -8,7 +8,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d1a9
 ;
 ; Referenced Globals:
-;   string s_voicusummon.wav_00597229
+;   TerminatedCString s_voicusummon_wav_00597229
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b7b32c
 ;   undefined4 DAT_01fa3ff0

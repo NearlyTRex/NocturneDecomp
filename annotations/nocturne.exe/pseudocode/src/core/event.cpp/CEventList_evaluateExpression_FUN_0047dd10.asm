@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_validateCondition_FUN_0047dc90 at 0047dcb1
 ;
 ; Referenced Globals:
-;   string s_Syntax_error_00580235
+;   TerminatedCString s_Syntax_error_00580235
 ;   undefined4 s_yntax_error_00580235+1
 ;   undefined4 s_ntax_error_00580235+2
 ;   undefined4 s_tax_error_00580235+3

@@ -90,8 +90,8 @@ uint sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(float param_1,float pa
            (*(int *)((int)param_1 + 0x138) <= *(int *)((int)param_1 + 0x140))) {
           _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
           _DAT_01cc4804 = 0x81a;
-          FUN_004c8440("nextLoadSampleDest = %d, allocLength = %d",
-                       *(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));
+          FUN_004c8440("nextLoadSampleDest = %d, allocLength = %d",*(uint *)((int)param_1 + 0x140),
+                       *(uint *)((int)param_1 + 0x138));
         }
         iVar14 = *(int *)((int)param_1 + 0x138) - *(int *)((int)param_1 + 0x140);
         if (iVar4 < iVar14) {

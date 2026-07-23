@@ -7,9 +7,9 @@
 ; undefined8       Stack[-0x338]:8  local_338
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Position_secondary_buffer_to_0_00594127
-;   string s_Play_the_secondary_buffer_00594146
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Position_secondary_buffe_00594127
+;   TerminatedCString s_Play_the_secondary_buffe_00594146
 ;   double DOUBLE_00594167 = 0.5
 ;   undefined4 DAT_02dc921c
 ;   undefined4 DAT_02dc9228

@@ -13,7 +13,7 @@
 ;   FUN_0056f544 at 0056f567
 ;
 ; Referenced Globals:
-;   string s_0123456789abcdefghijklmnopqrstuv_005c2018
+;   TerminatedCString s_s_0123456789abcdefghijkl_005c2018
 ;
 ; *****************************************************************************
 

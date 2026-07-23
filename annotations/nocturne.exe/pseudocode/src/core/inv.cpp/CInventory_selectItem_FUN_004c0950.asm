@@ -8,10 +8,10 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f179
 ;
 ; Referenced Globals:
-;   string s_CWeapon_00587191
-;   string s_CAmmo_00587199
-;   string s_CWeapon_0058719f
-;   string s_CAmmo_005871a7
+;   TerminatedCString s_CWeapon_00587191
+;   TerminatedCString s_CAmmo_00587199
+;   TerminatedCString s_CWeapon_0058719f
+;   TerminatedCString s_CAmmo_005871a7
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0

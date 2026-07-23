@@ -16,9 +16,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a14a
-;   string s_CCharacter::pickupObjectNow_-_in_0057a15f
-;   string s_..\\core\\charactr.cpp_0057a190
-;   string s_CCharacter::pickupObjectNow_-_in_0057a1a5
+;   TerminatedCString s_CCharacter_pickupObjectN_0057a15f
+;   TerminatedCString s_core_charactr_cpp_0057a190
+;   TerminatedCString s_CCharacter_pickupObjectN_0057a1a5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -89,11 +89,11 @@ bugprone-swapped-arguments (4)
     argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
 
 ====================================================================================================
-Cppcheck (quick) (2113 diagnostics)
+Cppcheck (quick) (2104 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (1028)
+uninitvar (1041)
 ----------------------------------------------------------------------------------------------------
 
   FUN_0041206c                                       line 17
@@ -624,11 +624,11 @@ uninitvar (1028)
     File: .
     Uninitialized variable: local_74
 
-  FUN_004a3b90                                       line 140
+  FUN_004a3b90                                       line 137
     File: .
     Uninitialized variable: local_e8
 
-  FUN_004a3b90                                       line 148
+  FUN_004a3b90                                       line 145
     File: .
     Uninitialized variable: local_6c
 
@@ -2240,7 +2240,7 @@ uninitvar (1028)
     File: core/dmodel.cpp
     Uninitialized variable: local_a4
 
-  core_door.cpp_CDoor_getMoveType_FUN_004564b0       line 21
+  core_door.cpp_CDoor_getMoveType_FUN_004564b0       line 20
     File: core/door.cpp
     Uninitialized variable: local_10
 
@@ -2716,11 +2716,11 @@ uninitvar (1028)
     File: core/gabriela.cpp
     Uninitialized variable: fStack_12c
 
-  FUN_004a4170                                       line 166
+  FUN_004a4170                                       line 165
     File: core/game.cpp
     Uninitialized variable: local_104
 
-  FUN_004a4170                                       line 175
+  FUN_004a4170                                       line 174
     File: core/game.cpp
     Uninitialized variable: local_88
 
@@ -2895,6 +2895,58 @@ uninitvar (1028)
   core_mmx.c_detectCPUFeatures_FUN_004d9e70          line 21
     File: core/mmx.c
     Uninitialized variable: in_EAX
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 42
+    File: core/mmx.c
+    Uninitialized variable: in_NT
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 42
+    File: core/mmx.c
+    Uninitialized variable: in_OF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 42
+    File: core/mmx.c
+    Uninitialized variable: in_IF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 43
+    File: core/mmx.c
+    Uninitialized variable: in_TF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 43
+    File: core/mmx.c
+    Uninitialized variable: in_SF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 43
+    File: core/mmx.c
+    Uninitialized variable: in_ZF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 44
+    File: core/mmx.c
+    Uninitialized variable: in_AF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 44
+    File: core/mmx.c
+    Uninitialized variable: in_PF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 44
+    File: core/mmx.c
+    Uninitialized variable: in_CF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 45
+    File: core/mmx.c
+    Uninitialized variable: in_ID
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 45
+    File: core/mmx.c
+    Uninitialized variable: in_VIP
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 46
+    File: core/mmx.c
+    Uninitialized variable: in_VIF
+
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 46
+    File: core/mmx.c
+    Uninitialized variable: in_AC
 
   core_mmx.c_detectMMXSupport_FUN_004d9f59           line 17
     File: core/mmx.c
@@ -4084,15 +4136,15 @@ uninitvar (1028)
     File: sound/mp3.cpp
     Uninitialized variable: local_90
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 622
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 621
     File: sound/mp3.cpp
     Uninitialized variable: local_104
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 622
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 621
     File: sound/mp3.cpp
     Uninitialized variable: iStack_114
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 629
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 628
     File: sound/mp3.cpp
     Uninitialized variable: local_100
 
@@ -6308,19 +6360,19 @@ legacyUninitvar (191)
     File: core/dtrace.cpp
     Uninitialized variable: unaff_EDI
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 722
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 716
     File: core/event.cpp
     Uninitialized variable: local_100
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 721
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 715
     File: core/event.cpp
     Uninitialized variable: local_fc
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 722
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 716
     File: core/event.cpp
     Uninitialized variable: local_e8
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 721
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 715
     File: core/event.cpp
     Uninitialized variable: local_e4
 
@@ -6372,7 +6424,7 @@ legacyUninitvar (191)
     File: core/gore.cpp
     Uninitialized variable: local_44
 
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 62
+  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 61
     File: core/mission.cpp
     Uninitialized variable: unaff_ESI
 
@@ -6640,11 +6692,11 @@ legacyUninitvar (191)
     File: sound/mp3.cpp
     Uninitialized variable: afStack_e78[local_f8]
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 615
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 614
     File: sound/mp3.cpp
     Uninitialized variable: iStack_108
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 214
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 213
     File: sound/mp3.cpp
     Uninitialized variable: piStack_e4
 
@@ -6652,7 +6704,7 @@ legacyUninitvar (191)
     File: sound/mp3.cpp
     Uninitialized variable: local_c8
 
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 435
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 434
     File: sound/mp3.cpp
     Uninitialized variable: local_b8
 
@@ -7112,7 +7164,7 @@ shiftTooManyBitsSigned (171)
     File: core/keyactor.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 541
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 540
     File: core/menu.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -7376,7 +7428,7 @@ shiftTooManyBitsSigned (171)
     File: sound/sndmain.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 108
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 103
     File: sound/sndmain.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -7389,162 +7441,74 @@ shiftTooManyBitsSigned (171)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (76)
+invalidscanf (54)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 206
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 278
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 277
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 333
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 331
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 498
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 494
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 559
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 555
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 590
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 585
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 734
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 728
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 819
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 812
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 972
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 964
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1040
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1032
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1095
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1086
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1133
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1124
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1188
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1178
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1225
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1214
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1281
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1269
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1353
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1340
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 264
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 372
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 424
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 551
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 633
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 680
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 687
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 694
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 782
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 815
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 912
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 953
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1049
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1113
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1222
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1270
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1370
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1468
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1541
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1647
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1762
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1826
-    File: core/event.cpp
-    sscanf() without field width limits can crash with huge input data.
-
-  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 24
+  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 23
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -7552,139 +7516,139 @@ invalidscanf (76)
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 367
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 366
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 455
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 453
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 652
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 648
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 715
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 710
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 791
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 784
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 927
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 914
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 990
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 975
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1042
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1026
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1168
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1150
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1222
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1202
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1261
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1240
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1388
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1362
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1656
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1627
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1681
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1651
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1722
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1691
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1768
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1733
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1817
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1781
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1910
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1872
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1960
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1921
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1992
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1952
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2133
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2088
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2178
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2132
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2241
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2193
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2304
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2255
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2343
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2292
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2412
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2360
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2483
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2430
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2672
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2617
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2691
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2635
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2735
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2679
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2798
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2741
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2882
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2824
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3003
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2944
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3092
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 3030
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -8004,7 +7968,7 @@ AssignmentAddressToInteger (45)
     File: core/script.cpp
     Assigning a pointer to an integer is not portable.
 
-  core_script.cpp_CScript_dbLoad_FUN_00504e70        line 110
+  core_script.cpp_CScript_dbLoad_FUN_00504e70        line 109
     File: core/script.cpp
     Assigning a pointer to an integer is not portable.
 
@@ -8184,7 +8148,7 @@ arrayIndexOutOfBounds (30)
     File: .
     Array 'auStack_d8[7]' accessed at index 25, which is out of bounds.
 
-  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 190
+  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 189
     File: core/skeleton.cpp
     Array 'local_74[2]' accessed at index 2, which is out of bounds.
 

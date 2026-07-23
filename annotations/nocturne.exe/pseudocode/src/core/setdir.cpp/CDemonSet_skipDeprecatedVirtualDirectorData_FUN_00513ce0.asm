@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00590c5f
-;   string s_\"%*[^\"]\",_%d_00590c63
+;   TerminatedCString s_d_00590c63
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_00564b20

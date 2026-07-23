@@ -21,7 +21,7 @@
 ;   core_moloch.cpp_CMoloch_processAI_FUN_004de1b0 at 004de4e5
 ;
 ; Referenced Globals:
-;   string s_%s_was_in_the_way,_but_couldn't_f_0057a4ce
+;   TerminatedCString s_s_was_in_the_way_but_cou_0057a4ce
 ;   double DOUBLE_0057a50a = 0.785398163375000
 ;   double DOUBLE_0057a512 = 1.5
 ;   double DOUBLE_0057a51a = 4

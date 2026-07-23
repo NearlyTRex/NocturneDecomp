@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutGetDevCapsA_005753f4 = 00175868
-;   string s_WavOutWrite:_005949a0
+;   TerminatedCString s_WavOutWrite_005949a0
 ;
 ; Called Functions:
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370

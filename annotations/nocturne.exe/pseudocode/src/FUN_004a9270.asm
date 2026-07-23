@@ -125,19 +125,19 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004a91f0 = 004a96c0
 ;   undefined1* switchdataD_004a9228 = 004aa0e7
-;   string s_ghoul-eat-?.wav_00584c29
-;   string s_ghoul-dig-?.wav_@1.3_00584c39
-;   string s_ghoul-eat-?.wav_@1.3_00584c4e
-;   string s_ghoul-eat-?.wav_@1.3_00584c63
-;   undefined4 s_houl-eat-?.wav_@1.3_00584c63+1
-;   string s_ghoul-dig-?.wav_@1.3_00584c78
-;   undefined4 s_houl-dig-?.wav_@1.3_00584c78+1
-;   undefined4 s_oul-dig-?.wav_@1.3_00584c78+2
-;   undefined4 s_ul-dig-?.wav_@1.3_00584c78+3
-;   string s_%s_confused_while_walking_to_scr_00584c8d
-;   string s_ghoul-alert-?.wav_00584cb7
-;   string s_ghoul-scream-!-?.wav_00584cc9
-;   string s_gh-hits?.wav_00584cde
+;   TerminatedCString s_ghoul_eat_wav_00584c29
+;   TerminatedCString s_ghoul_dig_wav_1_3_00584c39
+;   TerminatedCString s_ghoul_eat_wav_1_3_00584c4e
+;   TerminatedCString s_ghoul_eat_wav_1_3_00584c63
+;   undefined4 s_ghoul_eat_wav_1_3_00584c63+1
+;   TerminatedCString s_ghoul_dig_wav_1_3_00584c78
+;   undefined4 s_ghoul_dig_wav_1_3_00584c78+1
+;   undefined4 s_ghoul_dig_wav_1_3_00584c78+2
+;   undefined4 s_ghoul_dig_wav_1_3_00584c78+3
+;   TerminatedCString s_s_confused_while_walking_00584c8d
+;   TerminatedCString s_ghoul_alert_wav_00584cb7
+;   TerminatedCString s_ghoul_scream_wav_00584cc9
+;   TerminatedCString s_gh_hits_wav_00584cde
 ;   ... and 50 more
 ;
 ; Called Functions:
@@ -954,13 +954,13 @@ section .text
     LEA EDI,[EBP + 0xfffffe2a]          ; 004a9ba1
         ;   Label: LAB_004a9ba1
     PUSH EDI                            ; 004a9ba7
-    MOV AL,byte ptr [ESI]               ; 004a9ba8 | = "ghoul-dig-?.wav @1.3" | s_oul-dig-?.wav_@1.3_00584c78+2 | s_ghoul-eat-?.wav_@1.3_00584c63
+    MOV AL,byte ptr [ESI]               ; 004a9ba8 | = "ghoul-dig-?.wav @1.3" | s_ghoul_dig_wav_1_3_00584c78+2 | s_ghoul_eat_wav_1_3_00584c63
         ;   Label: LAB_004a9ba8
     MOV byte ptr [EDI],AL               ; 004a9baa
     CMP AL,0x0                          ; 004a9bac
     JZ 0x004a9bc0                       ; 004a9bae
         ;   XREF to: 004a9bc0 (CONDITIONAL_JUMP)  ; LAB_004a9bc0
-    MOV AL,byte ptr [ESI + 0x1]         ; 004a9bb0 | s_houl-dig-?.wav_@1.3_00584c78+1 | s_ul-dig-?.wav_@1.3_00584c78+3 | s_houl-eat-?.wav_@1.3_00584c63+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a9bb0 | s_ghoul_dig_wav_1_3_00584c78+1 | s_ghoul_dig_wav_1_3_00584c78+3 | s_ghoul_eat_wav_1_3_00584c63+1
     ADD ESI,0x2                         ; 004a9bb3
     MOV byte ptr [EDI + 0x1],AL         ; 004a9bb6
     ADD EDI,0x2                         ; 004a9bb9

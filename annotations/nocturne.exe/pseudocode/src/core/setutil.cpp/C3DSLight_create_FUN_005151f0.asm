@@ -10,8 +10,8 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 005086f2
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setutil.cpp_00590e25
-;   string s_C3DSLight::create_-_Out_of_memor_00590e39
+;   TerminatedCString s_core_setutil_cpp_00590e25
+;   TerminatedCString s_C3DSLight_create_Out_of_00590e39
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

@@ -16,7 +16,7 @@
 ;   core_vessel.cpp_CCryptVessel_process_FUN_0054fc60 at 0054ff63
 ;
 ; Referenced Globals:
-;   string s_torch.wav_*_%f_00581546
+;   TerminatedCString s_torch_wav_f_00581546
 ;   double DOUBLE_00581557 = 0.5
 ;   double DOUBLE_0058155f = 16
 ;   double DOUBLE_00581567 = 1.59978588928241E-314

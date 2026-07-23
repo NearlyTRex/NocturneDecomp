@@ -387,8 +387,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
       pcVar15 = pcVar15 + 2;
     } while (cVar2 != '\0');
     iVar11 = local_24 + 1;
-    pcVar15 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                ("Output quality : ");
+    pcVar15 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Output quality : ");
     pcVar4 = &DAT_01cc6ed8 + iVar11 * 0x100;
     pcVar14 = pcVar4;
     do {

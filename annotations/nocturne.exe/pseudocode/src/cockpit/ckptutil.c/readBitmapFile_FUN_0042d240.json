@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 230,
+    "complexity_score": 231,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 156
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -203,14 +203,14 @@
   "globals": [
     {
       "addr": "0057a625",
-      "name": "s_Unable_to_allocate_%u_bytes_for_b_0057a625",
-      "type": "string",
+      "name": "s_Unable_to_allocate_u_byt_0057a625",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057a657",
-      "name": "s_..\\cockpit\\ckptutil.c_0057a657",
-      "type": "string",
+      "name": "s_cockpit_ckptutil_c_0057a657",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -227,26 +227,26 @@
     },
     {
       "addr": "0057a674",
-      "name": "s_Unable_to_open_bitmap_file_(%s)._0057a674",
-      "type": "string",
+      "name": "s_Unable_to_open_bitmap_fi_0057a674",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057a695",
-      "name": "s_..\\cockpit\\ckptutil.c_0057a695",
-      "type": "string",
+      "name": "s_cockpit_ckptutil_c_0057a695",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057a6ab",
-      "name": "s_Unable_to_read_bitmap_file_(%s)._0057a6ab",
-      "type": "string",
+      "name": "s_Unable_to_read_bitmap_fi_0057a6ab",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057a6cc",
-      "name": "s_..\\cockpit\\ckptutil.c_0057a6cc",
-      "type": "string",
+      "name": "s_cockpit_ckptutil_c_0057a6cc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -433,7 +433,7 @@
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "_sprintf(local_60,\"Unable to allocate %u bytes for bitmap file (%s).\",param_3,param_1);",
+      "text": "_sprintf(local_60,\"Unable to allocate %u bytes for bitmap file (%s).\",param_3,param_1)",
       "type": "unnamed_param"
     },
     {
@@ -441,12 +441,12 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "_sprintf(local_60,\"Unable to allocate %u bytes for bitmap file (%s).\",param_3,param_1);",
+      "text": "_sprintf(local_60,\"Unable to allocate %u bytes for bitmap file (%s).\",param_3,param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"rb\");",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf(local_60,\"Unable to open bitmap file (%s).\",param_1);",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fread(param_2,param_3,1,iVar1);",
@@ -470,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar2 = _fread(param_2,param_3,1,iVar1);",
@@ -478,7 +478,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "return param_2;",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf(local_60,\"Unable to read bitmap file (%s).\",param_1);",
@@ -494,7 +494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
       "text": "return param_2;",

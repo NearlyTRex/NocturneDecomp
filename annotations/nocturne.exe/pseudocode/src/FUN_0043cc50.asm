@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_0057b441
-;   string s_lastPlatform_0057b44b
+;   TerminatedCString s_modelName_0057b441
+;   TerminatedCString s_lastPlatform_0057b44b
 ;   undefined4 DAT_005ad3c4
 ;
 ; Called Functions:

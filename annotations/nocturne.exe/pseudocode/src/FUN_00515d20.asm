@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_shotgun.kfm_00591036
+;   TerminatedCString s_shotgun_kfm_00591036
 ;   undefined4 DAT_005a1aec
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1af4 = 00553f10
 ;

@@ -18,8 +18,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_005918a1
-;   string s_Can't_find_part_%s_in_model_%s_005918b6
+;   TerminatedCString s_core_skeleton_cpp_005918a1
+;   TerminatedCString s_Can_t_find_part_s_in_mod_005918b6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

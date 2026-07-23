@@ -62,7 +62,7 @@
 ;   double DOUBLE_00579f4a = 1.20000000000000
 ;   double DOUBLE_00579f52 = 0.900000000000000
 ;   double DOUBLE_00579f5a = -0.0100000000000000
-;   string s_noCollision_005ad1f0
+;   TerminatedCString s_noCollision_005ad1f0
 ;   undefined4 s_llision_005ad1f0+4
 ;   undefined4 s_ion_005ad1f0+8
 ;   undefined4 DAT_005b9284

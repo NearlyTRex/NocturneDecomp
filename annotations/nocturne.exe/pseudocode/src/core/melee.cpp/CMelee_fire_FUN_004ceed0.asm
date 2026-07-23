@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\melee.cpp_0058842d
-;   string s_CMelee::fire_-_should_never_be_c_0058843f
+;   TerminatedCString s_core_melee_cpp_0058842d
+;   TerminatedCString s_CMelee_fire_should_never_0058843f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

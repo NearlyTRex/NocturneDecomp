@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 424,
+    "complexity_score": 421,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 169,
+    "pseudocode_lines": 166,
     "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 704
+    "total_lines": 701
   },
   "cross_references": [
     {
@@ -355,13 +355,13 @@
     {
       "addr": "00583b44",
       "name": "s_Save_game_00583b44",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00583b4e",
-      "name": "s_%s.noc_00583b4e",
-      "type": "string",
+      "name": "s_s_noc_00583b4e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -378,14 +378,14 @@
     },
     {
       "addr": "00583b65",
-      "name": "s_Warning!_Your_game_didn't_save._00583b65",
-      "type": "string",
+      "name": "s_Warning_Your_game_didn_t_00583b65",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00583b86",
-      "name": "s_//_.NOC_file_version_00583b86",
-      "type": "string",
+      "name": "s_NOC_file_version_00583b86",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -396,14 +396,14 @@
     },
     {
       "addr": "00583ba0",
-      "name": "s_//_Hero_count,_local_hero_index,_00583ba0",
-      "type": "string",
+      "name": "s_Hero_count_local_hero_in_00583ba0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00583bcc",
-      "name": "s_%d,_%d_00583bcc",
-      "type": "string",
+      "name": "s_d_d_00583bcc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -415,7 +415,7 @@
     {
       "addr": "00583bd8",
       "name": "s_Light_state_00583bd8",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -433,13 +433,13 @@
     {
       "addr": "00583bed",
       "name": "s_Game_stats_00583bed",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00583bf9",
-      "name": "s_%f,%f,%d,%d_00583bf9",
-      "type": "string",
+      "name": "s_f_f_d_d_00583bf9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -450,8 +450,8 @@
     },
     {
       "addr": "00583c07",
-      "name": "s_Warning!_Your_game_didn't_save._00583c07",
-      "type": "string",
+      "name": "s_Warning_Your_game_didn_t_00583c07",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -462,8 +462,8 @@
     },
     {
       "addr": "00583c2d",
-      "name": "s_%s\\%s_00583c2d",
-      "type": "string",
+      "name": "s_s_s_00583c2d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -492,8 +492,8 @@
     },
     {
       "addr": "005b9370",
-      "name": "s_save\\$$SAVE$$.TMP_005b9370",
-      "type": "string",
+      "name": "s_save_SAVE_TMP_005b9370",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -845,14 +845,14 @@
         {
           "check_id": "uninitvar",
           "column": 9,
-          "line": 140,
+          "line": 137,
           "message": "Uninitialized variable: local_e8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 9,
-          "line": 148,
+          "line": 145,
           "message": "Uninitialized variable: local_6c",
           "severity": "error"
         }
@@ -952,7 +952,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_00763e90",
       "severity": "mild",
       "text": "DAT_00763e90 = iVar2;",
@@ -960,7 +960,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 106,
       "match": "DAT_01c7869c",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(0x01E57284,&DAT_01c7869c);",
@@ -968,7 +968,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(iVar2,\"%f,%f,%d,%d\\n\",(double)*(float *)(param_1 + 0x250),",
@@ -976,7 +976,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(double)*(float *)(param_1 + 0x248),*(uint *)(param_1 + 0x24c),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "(double)*(float *)(param_1 + 0x248),*(uint *)(param_1 + 0x24c),",
@@ -985,14 +993,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)*(float *)(param_1 + 0x248),*(uint *)(param_1 + 0x24c),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x254));",
@@ -1000,7 +1000,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 121,
       "match": "DAT_00763e90",
       "severity": "mild",
       "text": "DAT_00763e90 = 0;",
@@ -1008,7 +1008,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 160,
+      "line": 157,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "pcVar5 = &DAT_01c78598;",
@@ -1032,7 +1032,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 161,
+      "line": 158,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1051,7 +1051,7 @@
     },
     {
       "description": "Uninitialized variable: local_e8",
-      "line": 140,
+      "line": 137,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_e8 != 0) {",
@@ -1059,7 +1059,7 @@
     },
     {
       "description": "Uninitialized variable: local_6c",
-      "line": 148,
+      "line": 145,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_6c != 0) {",

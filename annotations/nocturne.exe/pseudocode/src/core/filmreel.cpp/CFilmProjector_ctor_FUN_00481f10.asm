@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_filmreel.kfm_00580fc5
-;   string s_CFilmReel_00580fd2
+;   TerminatedCString s_filmreel_kfm_00580fc5
+;   TerminatedCString s_CFilmReel_00580fd2
 ;   undefined4 s_FilmReel_00580fd2+1
 ;   undefined4 s_ilmReel_00580fd2+2
 ;   undefined4 s_lmReel_00580fd2+3

@@ -11,8 +11,8 @@
 ;   core_charactr.cpp_FUN_004270e0 at 004271e1
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591d6f
-;   string s_CDeformableModelInstance::comput_00591d84
+;   TerminatedCString s_core_skeleton_cpp_00591d6f
+;   TerminatedCString s_CDeformableModelInstance_00591d84
 ;   double DOUBLE_00591dcb = 2670176.85779676
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738

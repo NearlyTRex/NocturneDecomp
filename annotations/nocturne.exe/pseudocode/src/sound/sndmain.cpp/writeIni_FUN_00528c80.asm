@@ -19,15 +19,15 @@
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0 at 004be498
 ;
 ; Referenced Globals:
-;   string s_DeviceName_00593a80
+;   TerminatedCString s_DeviceName_00593a80
 ;   TerminatedCString s_Bits_00593a8b
-;   string s_Channels_00593a90
+;   TerminatedCString s_Channels_00593a90
 ;   TerminatedCString s_Hz_00593a99
-;   string s_HwMixingEnabled_00593a9c
-;   string s_MaxSwLatency_00593aac
+;   TerminatedCString s_HwMixingEnabled_00593a9c
+;   TerminatedCString s_MaxSwLatency_00593aac
 ;   TerminatedCString s_Mute_00593ab9
-;   string s_SfxChannel%dEnabled_00593abe
-;   string s_SfxChannel%dVol_00593ad2
+;   TerminatedCString s_SfxChannel_dEnabled_00593abe
+;   TerminatedCString s_SfxChannel_dVol_00593ad2
 ;   undefined4 DAT_005bea60
 ;   undefined4 DAT_005bea74
 ;   undefined4 DAT_005beba0

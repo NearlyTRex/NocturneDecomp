@@ -38,20 +38,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_00582402
-;   string s_Quick_help_0058240a
-;   string s_F1_=_Toggle_help_00582415
-;   string s_F2_=_Save_game_00582426
-;   string s_F3_=_Restore_game_00582435
-;   string s_F5_=_Toggle_mute_00582447
-;   string s_F6_=_Quick_save_00582458
-;   string s_F9_=_Quick_load_00582468
-;   string s_ESC_=_Pause_game_00582478
-;   string s_Forward_00582489
+;   TerminatedCString s_Quick_help_0058240a
+;   TerminatedCString s_F1_Toggle_help_00582415
+;   TerminatedCString s_F2_Save_game_00582426
+;   TerminatedCString s_F3_Restore_game_00582435
+;   TerminatedCString s_F5_Toggle_mute_00582447
+;   TerminatedCString s_F6_Quick_save_00582458
+;   TerminatedCString s_F9_Quick_load_00582468
+;   TerminatedCString s_ESC_Pause_game_00582478
+;   TerminatedCString s_Forward_00582489
 ;   TerminatedCString s_Back_00582491
 ;   TerminatedCString s_Walk_00582496
 ;   TerminatedCString s_Run_0058249b
-;   string s_Strafe_on_0058249f
-;   string s_Strafe_left_005824a9
+;   TerminatedCString s_Strafe_on_0058249f
+;   TerminatedCString s_Strafe_left_005824a9
 ;   ... and 31 more
 ;
 ; Called Functions:

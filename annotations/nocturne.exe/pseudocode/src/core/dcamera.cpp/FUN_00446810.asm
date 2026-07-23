@@ -37,18 +37,18 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00444645
-;   string s_%s.fog_0057b9fb
+;   TerminatedCString s_s_fog_0057b9fb
 ;   TerminatedCString s_rb_0057ba02
-;   string s_backdrop_0057ba05
-;   string s_backdrop\\%s_0057ba0e
-;   string s_..\\core\\dcamera.cpp_0057ba1a
-;   string s_Can't_create_%s_0057ba2e
-;   string s_..\\core\\dcamera.cpp_0057ba3e
-;   string s_Error_compressing_%s_0057ba52
-;   string s_..\\core\\dcamera.cpp_0057ba67
-;   string s_Not_all_bytes_consumed_compressi_0057ba7b
-;   string s_..\\core\\dcamera.cpp_0057baa1
-;   string s_Error_writing_compressed_file_%s_0057bab5
+;   TerminatedCString s_backdrop_0057ba05
+;   TerminatedCString s_backdrop_s_0057ba0e
+;   TerminatedCString s_core_dcamera_cpp_0057ba1a
+;   TerminatedCString s_Can_t_create_s_0057ba2e
+;   TerminatedCString s_core_dcamera_cpp_0057ba3e
+;   TerminatedCString s_Error_compressing_s_0057ba52
+;   TerminatedCString s_core_dcamera_cpp_0057ba67
+;   TerminatedCString s_Not_all_bytes_consumed_c_0057ba7b
+;   TerminatedCString s_core_dcamera_cpp_0057baa1
+;   TerminatedCString s_Error_writing_compressed_0057bab5
 ;   double DOUBLE_0057badb = 256
 ;   undefined4 DAT_005a47a0
 ;   ... and 16 more

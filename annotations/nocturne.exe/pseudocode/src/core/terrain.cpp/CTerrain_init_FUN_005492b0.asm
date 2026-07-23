@@ -8,7 +8,7 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 0050725e
 ;
 ; Referenced Globals:
-;   string s_junk.jnk_00596cc5
+;   TerminatedCString s_junk_jnk_00596cc5
 ;   undefined4 DAT_005ba8ec
 ;   undefined4 DAT_02dd10cc
 ;

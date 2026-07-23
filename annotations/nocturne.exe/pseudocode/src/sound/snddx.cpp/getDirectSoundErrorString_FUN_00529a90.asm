@@ -22,17 +22,17 @@
 ;   TerminatedCString s_DSERR_ALREADYINITIALIZED_00593c07
 ;   TerminatedCString s_DSERR_BADFORMAT_The_spec_00593c44
 ;   TerminatedCString s_DSERR_BUFFERLOST_The_buf_00593c81
-;   string s_DSERR_CONTROLUNAVAIL:_The_contro_00593cc9
-;   string s_DSERR_GENERIC:_An_undetermined_e_00593d31
-;   string s_DSERR_INVALIDCALL:_This_function_00593d81
-;   string s_DSERR_INVALIDPARAM:_An_invalid_p_00593dd5
-;   string s_DSERR_NOAGGREGATION:_The_object_d_00593e24
-;   string s_DSERR_NODRIVER:_No_sound_driver_i_00593e62
-;   string s_DSERR_OTHERAPPHASPRIO:_This_valu_00593e98
-;   string s_DSERR_OUTOFMEMORY:_The_DirectSou_00593ed7
-;   string s_DSERR_PRIOLEVELNEEDED:_The_calle_00593f4b
-;   string s_DSERR_UNINITIALIZED:_The_IDirect_00593fb4
-;   string s_DSERR_UNSUPPORTED:_The_function_c_00594047
+;   TerminatedCString s_DSERR_CONTROLUNAVAIL_The_00593cc9
+;   TerminatedCString s_DSERR_GENERIC_An_undeter_00593d31
+;   TerminatedCString s_DSERR_INVALIDCALL_This_f_00593d81
+;   TerminatedCString s_DSERR_INVALIDPARAM_An_in_00593dd5
+;   TerminatedCString s_DSERR_NOAGGREGATION_The_00593e24
+;   TerminatedCString s_DSERR_NODRIVER_No_sound_00593e62
+;   TerminatedCString s_DSERR_OTHERAPPHASPRIO_Th_00593e98
+;   TerminatedCString s_DSERR_OUTOFMEMORY_The_Di_00593ed7
+;   TerminatedCString s_DSERR_PRIOLEVELNEEDED_Th_00593f4b
+;   TerminatedCString s_DSERR_UNINITIALIZED_The_00593fb4
+;   TerminatedCString s_DSERR_UNSUPPORTED_The_fu_00594047
 ;   ... and 1 more
 ;
 ; *****************************************************************************

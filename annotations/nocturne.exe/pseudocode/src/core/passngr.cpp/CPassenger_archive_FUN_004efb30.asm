@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_transformEvent_0058cc10
-;   string s_wolfModelName_0058cc1f
-;   string s_morphTime_0058cc2d
-;   string s_modelName_0058cc37
-;   string s_motion_state_0058cc41
-;   string s_wolfSize_0058cc4e
-;   string s_nameOfWolf_0058cc57
-;   string s_transformWav_0058cc62
+;   TerminatedCString s_transformEvent_0058cc10
+;   TerminatedCString s_wolfModelName_0058cc1f
+;   TerminatedCString s_morphTime_0058cc2d
+;   TerminatedCString s_modelName_0058cc37
+;   TerminatedCString s_motion_state_0058cc41
+;   TerminatedCString s_wolfSize_0058cc4e
+;   TerminatedCString s_nameOfWolf_0058cc57
+;   TerminatedCString s_transformWav_0058cc62
 ;   undefined4 DAT_005be078
 ;
 ; Called Functions:

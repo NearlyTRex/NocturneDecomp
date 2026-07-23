@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_none_00597768
 ;   TerminatedCString s_true_0059776d
-;   string s_..\\core\\waypoint.cpp_00597772
-;   string s_Can't_have_creation_event_for_wa_00597787
+;   TerminatedCString s_core_waypoint_cpp_00597772
+;   TerminatedCString s_Can_t_have_creation_even_00597787
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

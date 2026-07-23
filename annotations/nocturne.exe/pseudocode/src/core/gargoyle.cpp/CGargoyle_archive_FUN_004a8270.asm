@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00584a10
-;   string s_modelName_00584a16
-;   string s_motion_state_00584a20
-;   string s_stoneRed_00584a2d
-;   string s_stoneGreen_00584a36
-;   string s_stoneBlue_00584a41
-;   string s_homeBase_00584a4b
+;   TerminatedCString s_modelName_00584a16
+;   TerminatedCString s_motion_state_00584a20
+;   TerminatedCString s_stoneRed_00584a2d
+;   TerminatedCString s_stoneGreen_00584a36
+;   TerminatedCString s_stoneBlue_00584a41
+;   TerminatedCString s_homeBase_00584a4b
 ;   undefined4 DAT_005b9624
 ;
 ; Called Functions:

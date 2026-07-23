@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_00590e69
-;   string s_C3DSLight::process_-_NULL_CDemon_00590e7d
+;   TerminatedCString s_C3DSLight_process_NULL_C_00590e7d
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01bd1d80

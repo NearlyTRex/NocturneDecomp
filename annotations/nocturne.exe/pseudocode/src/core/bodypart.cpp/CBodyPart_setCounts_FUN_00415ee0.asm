@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_00578eae
-;   string s_CBodyPart::setCounts_-_out_of_me_00578ec3
-;   string s_..\\core\\bodypart.cpp_00578f08
-;   string s_CBodyPart::setCounts_-_out_of_me_00578f1d
+;   TerminatedCString s_CBodyPart_setCounts_out_00578ec3
+;   TerminatedCString s_core_bodypart_cpp_00578f08
+;   TerminatedCString s_CBodyPart_setCounts_out_00578f1d
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

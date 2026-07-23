@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\2d.c_00577296
-;   string s_draw320x200SizeDot:_unknown_grap_005772a5
+;   TerminatedCString s_engine_2d_c_00577296
+;   TerminatedCString s_draw320x200SizeDot_unkno_005772a5
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c

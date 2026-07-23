@@ -18,8 +18,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setcolid.cpp_00590b80
-;   string s_CDemonSet::setRayType_-_use_setR_00590b95
+;   TerminatedCString s_core_setcolid_cpp_00590b80
+;   TerminatedCString s_CDemonSet_setRayType_use_00590b95
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

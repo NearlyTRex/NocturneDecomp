@@ -15,7 +15,7 @@
 ;   FUN_00541d00 at 005421df
 ;
 ; Referenced Globals:
-;   undefined4 s__0058581b+0xc
+;   undefined4 DAT_00585827
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
@@ -50,7 +50,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004b4ebf
     FADD float ptr [EDX + 0x4]          ; 004b4ec2
     FXCH                                ; 004b4ec5
-    FLD float ptr [0x00585827]          ; 004b4ec7 | s__0058581b+0xc
+    FLD float ptr [0x00585827]          ; 004b4ec7 | DAT_00585827
     FXCH                                ; 004b4ecd
     FMUL ST1                            ; 004b4ecf
     FXCH ST2                            ; 004b4ed1

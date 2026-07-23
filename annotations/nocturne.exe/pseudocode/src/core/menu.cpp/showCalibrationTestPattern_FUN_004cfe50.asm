@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Press_any_key_to_continu_0058854b
-;   string s_Monitor_calibration_00588568
+;   TerminatedCString s_Monitor_calibration_00588568
 ;   undefined4 DAT_014b9904
 ;
 ; Called Functions:

@@ -32,15 +32,15 @@
 ;   TerminatedCString s_noc_00583b36
 ;   TerminatedCString s_noc_00583b3b
 ;   TerminatedCString s_save_00583b3f
-;   string s_Save_game_00583b44
-;   string s_%s.noc_00583b4e
+;   TerminatedCString s_Save_game_00583b44
+;   TerminatedCString s_s_noc_00583b4e
 ;   TerminatedCString s_save_00583b55
 ;   TerminatedCString s_wt_00583b5a
-;   string s_Warning!_Your_game_didn't_save._00583b65
-;   string s_//_.NOC_file_version_00583b86
+;   TerminatedCString s_Warning_Your_game_didn_t_00583b65
+;   TerminatedCString s_NOC_file_version_00583b86
 ;   TerminatedCString s_d_00583b9c
-;   string s_//_Hero_count,_local_hero_index,_00583ba0
-;   string s_%d,_%d_00583bcc
+;   TerminatedCString s_Hero_count_local_hero_in_00583ba0
+;   TerminatedCString s_d_d_00583bcc
 ;   TerminatedCString s_s_00583bd4
 ;   ... and 30 more
 ;

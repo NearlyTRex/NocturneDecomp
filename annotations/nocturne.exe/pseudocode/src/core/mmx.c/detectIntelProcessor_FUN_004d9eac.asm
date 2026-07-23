@@ -9,7 +9,7 @@
 ;   core_mmx.c_getCPUInfo_FUN_004d9f6f at 004d9f80
 ;
 ; Referenced Globals:
-;   string s_GenuineIntel_005bb100
+;   TerminatedCString s_GenuineIntel_005bb100
 ;   undefined4 s__005bb100+0xc
 ;   undefined4 DAT_005bb110
 ;   undefined4 DAT_005bb114

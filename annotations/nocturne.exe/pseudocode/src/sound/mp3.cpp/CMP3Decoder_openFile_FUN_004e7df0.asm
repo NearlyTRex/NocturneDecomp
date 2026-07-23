@@ -11,14 +11,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_0058b938
-;   string s_..\\sound\\mp3.cpp_0058b93e
-;   string s_Can't_open_%s_0058b94f
+;   TerminatedCString s_sound_mp3_cpp_0058b93e
+;   TerminatedCString s_Can_t_open_s_0058b94f
 ;   TerminatedCString s_rb_0058b95d
-;   string s_sound_0058b960
-;   string s_..\\sound\\mp3.cpp_0058b966
-;   string s_Can't_open_%s_0058b977
-;   string s_..\\sound\\mp3.cpp_0058b985
-;   string s_Error_preparing_to_decode_%s_0058b996
+;   TerminatedCString s_sound_0058b960
+;   TerminatedCString s_sound_mp3_cpp_0058b966
+;   TerminatedCString s_Can_t_open_s_0058b977
+;   TerminatedCString s_sound_mp3_cpp_0058b985
+;   TerminatedCString s_Error_preparing_to_decod_0058b996
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

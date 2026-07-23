@@ -222,8 +222,7 @@ LAB_0049fc23:
     if (iVar4 < 0x8000) {
       *(uint *)(param_1 + 0x224) = 0x8000;
     }
-    _sprintf(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05
-              );
+    _sprintf(auStack_21c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05);
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_21c,0x3f800000);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }
@@ -234,8 +233,7 @@ LAB_0049fc23:
     if (0x10000 < iVar4) {
       *(uint *)(param_1 + 0x224) = 0x10000;
     }
-    _sprintf(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05
-              );
+    _sprintf(auStack_11c,"Gamma : %f",(double)*(int *)(param_1 + 0x224) * 1.52587890625e-05);
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,auStack_11c,0x3f800000);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   }

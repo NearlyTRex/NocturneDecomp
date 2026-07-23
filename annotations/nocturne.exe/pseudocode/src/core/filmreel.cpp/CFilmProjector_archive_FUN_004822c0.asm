@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_keyReel_00581053
-;   string s_keyEvent_0058105b
+;   TerminatedCString s_keyEvent_0058105b
 ;   undefined4 DAT_005b801c
 ;
 ; Called Functions:

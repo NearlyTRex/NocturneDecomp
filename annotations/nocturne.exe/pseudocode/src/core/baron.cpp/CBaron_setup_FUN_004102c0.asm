@@ -5,21 +5,21 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Bip01_head_0057852f
-;   string s_Bip01_L_Clavicle_0057853a
-;   string s_Bip01_R_Clavicle_0057854b
-;   string s_Bip01_L_UpperArm_0057855c
-;   string s_Bip01_R_UpperArm_0057856d
-;   string s_Bip01_L_ForeArm_0057857e
-;   string s_Bip01_R_ForeArm_0057858e
-;   string s_Bip01_L_Foot_0057859e
-;   string s_Bip01_R_Foot_005785ab
-;   string s_Bip01_L_Thigh_005785b8
-;   string s_Bip01_R_Thigh_005785c6
-;   string s_Bip01_L_Calf_005785d4
-;   string s_Bip01_R_Calf_005785e1
-;   string s_Bip01_L_Hand_005785ee
-;   string s_Bip01_R_Hand_005785fb
+;   TerminatedCString s_Bip01_head_0057852f
+;   TerminatedCString s_Bip01_L_Clavicle_0057853a
+;   TerminatedCString s_Bip01_R_Clavicle_0057854b
+;   TerminatedCString s_Bip01_L_UpperArm_0057855c
+;   TerminatedCString s_Bip01_R_UpperArm_0057856d
+;   TerminatedCString s_Bip01_L_ForeArm_0057857e
+;   TerminatedCString s_Bip01_R_ForeArm_0057858e
+;   TerminatedCString s_Bip01_L_Foot_0057859e
+;   TerminatedCString s_Bip01_R_Foot_005785ab
+;   TerminatedCString s_Bip01_L_Thigh_005785b8
+;   TerminatedCString s_Bip01_R_Thigh_005785c6
+;   TerminatedCString s_Bip01_L_Calf_005785d4
+;   TerminatedCString s_Bip01_R_Calf_005785e1
+;   TerminatedCString s_Bip01_L_Hand_005785ee
+;   TerminatedCString s_Bip01_R_Hand_005785fb
 ;   ... and 21 more
 ;
 ; Called Functions:

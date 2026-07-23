@@ -15,10 +15,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\keyframe.c_0058762e
-;   string s_Bad_keyframe_1_00587643
-;   string s_..\\engine\\keyframe.c_00587652
-;   string s_ZBP_not_found!_00587667
+;   TerminatedCString s_engine_keyframe_c_0058762e
+;   TerminatedCString s_Bad_keyframe_1_00587643
+;   TerminatedCString s_engine_keyframe_c_00587652
+;   TerminatedCString s_ZBP_not_found_00587667
 ;   double DOUBLE_0058767c = 0.0000152587890625
 ;   float FLOAT_00587684 = -0.5
 ;   float FLOAT_00587688 = 0.5

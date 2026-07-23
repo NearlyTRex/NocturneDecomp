@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c242
-;   string s_CNetGame::updatePing_-_invalid_p_0058c256
+;   TerminatedCString s_CNetGame_updatePing_inva_0058c256
 ;   double DOUBLE_0058c282 = 0.0000152587890625
 ;   double DOUBLE_0058c28a = 30
 ;   double DOUBLE_0058c292 = 0.400000000000000

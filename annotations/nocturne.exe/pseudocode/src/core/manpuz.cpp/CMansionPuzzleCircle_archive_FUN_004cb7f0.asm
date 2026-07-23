@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_pGemPos_005880e3
-;   string s_pGemOrient_005880eb
-;   string s_pEmitterPos_005880f6
-;   string s_exists_00588102
+;   TerminatedCString s_pGemPos_005880e3
+;   TerminatedCString s_pGemOrient_005880eb
+;   TerminatedCString s_pEmitterPos_005880f6
+;   TerminatedCString s_exists_00588102
 ;   TerminatedCString s_r_00588109
 ;   TerminatedCString s_g_0058810b
 ;   TerminatedCString s_b_0058810d

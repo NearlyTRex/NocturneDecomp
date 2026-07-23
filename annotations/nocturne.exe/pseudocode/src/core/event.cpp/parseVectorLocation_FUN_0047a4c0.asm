@@ -11,9 +11,9 @@
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047f1b8
 ;
 ; Referenced Globals:
-;   string s_{_%f,_%f,_%f_}%n_0057f46e
-;   string s_%[^_,(){}]%n_0057f480
-;   string s_Error_parsing_vector_location_0057f48e
+;   TerminatedCString s_f_f_f_n_0057f46e
+;   TerminatedCString s_n_0057f480
+;   TerminatedCString s_Error_parsing_vector_loc_0057f48e
 ;   undefined4 DAT_0059cf1c
 ;   undefined4 DAT_00763e48
 ;   undefined4 DAT_00763e80

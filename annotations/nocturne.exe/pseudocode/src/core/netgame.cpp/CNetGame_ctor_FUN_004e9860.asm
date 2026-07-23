@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_MyComputer_0058ba8e
+;   TerminatedCString s_MyComputer_0058ba8e
 ;   undefined4 s_yComputer_0058ba8e+1
 ;   undefined4 s_Computer_0058ba8e+2
 ;   undefined4 s_omputer_0058ba8e+3

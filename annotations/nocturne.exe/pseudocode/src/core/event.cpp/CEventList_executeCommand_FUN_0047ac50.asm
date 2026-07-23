@@ -159,19 +159,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057f581
 ;   char CHAR_00h_0057f586 = \x00
-;   string s_Event_name_%s_is_too_long_0057f587
-;   string s_..\\core\\event.cpp_0057f5a1
-;   string s_Too_many_events_0057f5b3
-;   string s_Event_name_%s_is_not_valid_0057f5c3
-;   string s_advanceLightFilter_0057f5de
-;   string s_SpotLight_%s_doesn't_exist._0057f5f1
-;   string s_..\\core\\event.cpp_0057f60d
-;   string s_Can't_find_CDemonLight_for_light_0057f61f
-;   string s_createExplosion_0057f666
-;   string s_(_%f_,_%n_0057f676
-;   string s_Error_parsing_createExplosion()_p_0057f680
-;   string s_%f_,_%f_,_%f_%n_0057f6a6
-;   string s_%[^,)]_%n_0057f6b6
+;   TerminatedCString s_Event_name_s_is_too_long_0057f587
+;   TerminatedCString s_core_event_cpp_0057f5a1
+;   TerminatedCString s_Too_many_events_0057f5b3
+;   TerminatedCString s_Event_name_s_is_not_vali_0057f5c3
+;   TerminatedCString s_advanceLightFilter_0057f5de
+;   TerminatedCString s_SpotLight_s_doesn_t_exis_0057f5f1
+;   TerminatedCString s_core_event_cpp_0057f60d
+;   TerminatedCString s_Can_t_find_CDemonLight_f_0057f61f
+;   TerminatedCString s_createExplosion_0057f666
+;   TerminatedCString s_f_n_0057f676
+;   TerminatedCString s_Error_parsing_createExpl_0057f680
+;   TerminatedCString s_f_f_f_n_0057f6a6
+;   TerminatedCString s_n_0057f6b6
 ;   ... and 155 more
 ;
 ; Called Functions:

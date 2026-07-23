@@ -10,21 +10,21 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3b39
 ;
 ; Referenced Globals:
-;   string s_(none)_00588d69
-;   string s_Mouse_X-Axis_00588d70
-;   string s_Mouse_Y-Axis_00588d7d
-;   string s_Mouse_B1_00588d8a
-;   string s_Mouse_B2_00588d93
-;   string s_Mouse_B3_00588d9c
-;   string s_Button_1_00588da5
-;   string s_Button_2_00588dae
-;   string s_Button_3_00588db7
-;   string s_Button_4_00588dc0
-;   string s_Button_5_00588dc9
-;   string s_Button_6_00588dd2
-;   string s_Button_7_00588ddb
-;   string s_Button_8_00588de4
-;   string s_Button_9_00588ded
+;   TerminatedCString s_none_00588d69
+;   TerminatedCString s_Mouse_X_Axis_00588d70
+;   TerminatedCString s_Mouse_Y_Axis_00588d7d
+;   TerminatedCString s_Mouse_B1_00588d8a
+;   TerminatedCString s_Mouse_B2_00588d93
+;   TerminatedCString s_Mouse_B3_00588d9c
+;   TerminatedCString s_Button_1_00588da5
+;   TerminatedCString s_Button_2_00588dae
+;   TerminatedCString s_Button_3_00588db7
+;   TerminatedCString s_Button_4_00588dc0
+;   TerminatedCString s_Button_5_00588dc9
+;   TerminatedCString s_Button_6_00588dd2
+;   TerminatedCString s_Button_7_00588ddb
+;   TerminatedCString s_Button_8_00588de4
+;   TerminatedCString s_Button_9_00588ded
 ;   ... and 6 more
 ;
 ; Called Functions:

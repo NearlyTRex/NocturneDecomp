@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_0059766f
-;   string s_opacity_00597674
-;   string s_heightDelta_0059767c
-;   string s_timeToMove_00597688
-;   string s_moveSound_00597693
-;   string s_moveEvent_0059769d
-;   string s_param_005976a7
-;   string s_heightDelta_005976ad
-;   string s_timeToMoveUp_005976b9
-;   string s_timeToMoveDown_005976c6
-;   string s_moveUpSound_005976d5
-;   string s_moveDownSound_005976e1
-;   string s_moveUpEvent_005976ef
-;   string s_moveDownEvent_005976fb
-;   string s_param_00597709
+;   TerminatedCString s_opacity_00597674
+;   TerminatedCString s_heightDelta_0059767c
+;   TerminatedCString s_timeToMove_00597688
+;   TerminatedCString s_moveSound_00597693
+;   TerminatedCString s_moveEvent_0059769d
+;   TerminatedCString s_param_005976a7
+;   TerminatedCString s_heightDelta_005976ad
+;   TerminatedCString s_timeToMoveUp_005976b9
+;   TerminatedCString s_timeToMoveDown_005976c6
+;   TerminatedCString s_moveUpSound_005976d5
+;   TerminatedCString s_moveDownSound_005976e1
+;   TerminatedCString s_moveUpEvent_005976ef
+;   TerminatedCString s_moveDownEvent_005976fb
+;   TerminatedCString s_param_00597709
 ;   ... and 7 more
 ;
 ; Called Functions:

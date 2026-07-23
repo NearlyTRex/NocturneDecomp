@@ -58,7 +58,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e1fe
-;   string s_Too_many_drawn_cubes._Need_to_re_0057e211
+;   TerminatedCString s_Too_many_drawn_cubes_Nee_0057e211
 ;   double DOUBLE_0057e23e = -256
 ;   double DOUBLE_0057e246 = 256
 ;   undefined4 DAT_0059c8a0

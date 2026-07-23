@@ -10,13 +10,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057cb76
-;   string s_Too_many_materials!_0057cb89
-;   string s_..\\core\\dmodel.cpp_0057cb9d
-;   string s_Too_many_parts!_0057cbb0
-;   string s_..\\core\\dmodel.cpp_0057cbc0
-;   string s_Out_of_memory_in_CKeyFramedModel_0057cbd3
-;   string s_..\\core\\dmodel.cpp_0057cc2c
-;   string s_Out_of_memory_for_vertex_normals_0057cc3f
+;   TerminatedCString s_Too_many_materials_0057cb89
+;   TerminatedCString s_core_dmodel_cpp_0057cb9d
+;   TerminatedCString s_Too_many_parts_0057cbb0
+;   TerminatedCString s_core_dmodel_cpp_0057cbc0
+;   TerminatedCString s_Out_of_memory_in_CKeyFra_0057cbd3
+;   TerminatedCString s_core_dmodel_cpp_0057cc2c
+;   TerminatedCString s_Out_of_memory_for_vertex_0057cc3f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

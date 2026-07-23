@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_armour.dfm_0057845a
+;   TerminatedCString s_armour_dfm_0057845a
 ;   TerminatedCString s_none_00578465
 ;   undefined4 s_one_00578465+1
 ;   undefined4 s_ne_00578465+2

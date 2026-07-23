@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_candle.kfm_005784ca
+;   TerminatedCString s_candle_kfm_005784ca
 ;   undefined1* PTR_core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30_005999a4 = 0040ff30
 ;
 ; Called Functions:

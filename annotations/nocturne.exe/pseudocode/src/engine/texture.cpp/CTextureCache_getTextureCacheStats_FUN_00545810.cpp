@@ -41,8 +41,7 @@ void __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00545810(
         piVar1 = piVar1 + 1;
       } while (iVar3 < param_1[0x34c02]);
     }
-    _sprintf(param_2,"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d",param_1[0x34c02],iVar4,iVar6,
-               iVar5,iVar2);
+    _sprintf(param_2,"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d",param_1[0x34c02],iVar4,iVar6,iVar5,iVar2);
     return;
   }
   _sprintf(param_2,"Texture cache has wrapped.  Make it bigger, please.");

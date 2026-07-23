@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0057d0ca
-;   string s_doorType_0057d0d4
-;   string s_doorSide_0057d0dd
-;   string s_doorState_0057d0e6
-;   string s_doorSwing_0057d0f0
-;   string s_openEvent_0057d0fa
-;   string s_closeEvent_0057d104
-;   string s_openSound_0057d10f
-;   string s_closeSound_0057d119
-;   string s_keyMask_0057d124
-;   string s_origPos_0057d12c
-;   string s_origOrient_0057d134
-;   string s_param_0057d13f
-;   string s_maxParam_0057d145
-;   string s_openSpeed_0057d14e
+;   TerminatedCString s_doorType_0057d0d4
+;   TerminatedCString s_doorSide_0057d0dd
+;   TerminatedCString s_doorState_0057d0e6
+;   TerminatedCString s_doorSwing_0057d0f0
+;   TerminatedCString s_openEvent_0057d0fa
+;   TerminatedCString s_closeEvent_0057d104
+;   TerminatedCString s_openSound_0057d10f
+;   TerminatedCString s_closeSound_0057d119
+;   TerminatedCString s_keyMask_0057d124
+;   TerminatedCString s_origPos_0057d12c
+;   TerminatedCString s_origOrient_0057d134
+;   TerminatedCString s_param_0057d13f
+;   TerminatedCString s_maxParam_0057d145
+;   TerminatedCString s_openSpeed_0057d14e
 ;   ... and 17 more
 ;
 ; Called Functions:

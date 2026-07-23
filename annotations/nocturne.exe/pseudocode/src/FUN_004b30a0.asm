@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_haystack.dfm_0058544f
+;   TerminatedCString s_haystack_dfm_0058544f
 ;   undefined1* PTR_FUN_0059e884 = 004b3110
 ;
 ; Called Functions:

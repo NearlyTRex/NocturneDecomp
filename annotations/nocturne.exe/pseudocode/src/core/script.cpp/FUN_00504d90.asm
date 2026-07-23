@@ -10,9 +10,9 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e3c8
 ;
 ; Referenced Globals:
-;   string s_Error_processing_script_to_skip_c_0058faf7
-;   string s_..\\core\\script.cpp_0058fb46
-;   string s_Infinite_loop_detected_trying_to_0058fb59
+;   TerminatedCString s_Error_processing_script_0058faf7
+;   TerminatedCString s_core_script_cpp_0058fb46
+;   TerminatedCString s_Infinite_loop_detected_t_0058fb59
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77814

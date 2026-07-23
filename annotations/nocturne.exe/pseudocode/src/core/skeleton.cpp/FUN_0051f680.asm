@@ -8,8 +8,8 @@
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0 at 005180b2
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591e2e
-;   string s_Can't_load_%s_because_skeleton_m_00591e43
+;   TerminatedCString s_core_skeleton_cpp_00591e2e
+;   TerminatedCString s_Can_t_load_s_because_ske_00591e43
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02737ef4

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00577489
-;   string s_unmapFrameBuffer_-_frame_buffer_w_00577498
+;   TerminatedCString s_unmapFrameBuffer_frame_b_00577498
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

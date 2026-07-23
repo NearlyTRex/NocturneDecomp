@@ -13,17 +13,17 @@
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350 at 004c33d4
 ;
 ; Referenced Globals:
-;   string s_CAmmo_00587360
-;   string s_..\\core\\inv.cpp_00587366
-;   string s_CInventory::select_-_Catch_22_00587376
-;   string s_CWeapon_00587394
-;   string s_CHealthItem_0058739c
-;   string s_..\\core\\inv.cpp_005873a8
-;   string s_CInventory::select_-_Catch_22_005873b8
-;   string s_You_have_used_:_005873d6
+;   TerminatedCString s_CAmmo_00587360
+;   TerminatedCString s_core_inv_cpp_00587366
+;   TerminatedCString s_CInventory_select_Catch_00587376
+;   TerminatedCString s_CWeapon_00587394
+;   TerminatedCString s_CHealthItem_0058739c
+;   TerminatedCString s_core_inv_cpp_005873a8
+;   TerminatedCString s_CInventory_select_Catch_005873b8
+;   TerminatedCString s_You_have_used_005873d6
 ;   TerminatedCString s_anon_005873e7
-;   string s_CGasMask_005873e9
-;   string s_CBoxActor_005873f2
+;   TerminatedCString s_CGasMask_005873e9
+;   TerminatedCString s_CBoxActor_005873f2
 ;   double DOUBLE_00587401 = 98
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354

@@ -9,15 +9,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005973d0
-;   string s_tireCount_005973da
-;   string s_static_bpos_005973e4
-;   string s_radius_005973f0
-;   string s_width_005973f7
-;   string s_curTime_005973fd
-;   string s_totalTime_00597405
-;   string s_courseName_0059740f
-;   string s_lastMobsterLeft_0059741a
-;   string s_lastMobsterRight_0059742a
+;   TerminatedCString s_tireCount_005973da
+;   TerminatedCString s_static_bpos_005973e4
+;   TerminatedCString s_radius_005973f0
+;   TerminatedCString s_width_005973f7
+;   TerminatedCString s_curTime_005973fd
+;   TerminatedCString s_totalTime_00597405
+;   TerminatedCString s_courseName_0059740f
+;   TerminatedCString s_lastMobsterLeft_0059741a
+;   TerminatedCString s_lastMobsterRight_0059742a
 ;   undefined4 DAT_005c11a0
 ;
 ; Called Functions:

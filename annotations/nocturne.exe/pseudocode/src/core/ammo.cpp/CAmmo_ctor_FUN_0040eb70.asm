@@ -9,7 +9,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b25
 ;
 ; Referenced Globals:
-;   string s_bullet.kfm_005781eb
+;   TerminatedCString s_bullet_kfm_005781eb
 ;   TerminatedCString s_CGun_005781f6
 ;   undefined4 s_Gun_005781f6+1
 ;   undefined4 s_un_005781f6+2

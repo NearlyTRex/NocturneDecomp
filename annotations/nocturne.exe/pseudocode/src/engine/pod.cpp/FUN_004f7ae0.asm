@@ -31,10 +31,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058d9ac
-;   string s_..\\engine\\pod.cpp_0058d9af
-;   string s_Out_of_memory!_0058d9c1
-;   string s_..\\engine\\pod.cpp_0058d9d0
-;   string s_Out_of_memory!_0058d9e2
+;   TerminatedCString s_engine_pod_cpp_0058d9af
+;   TerminatedCString s_Out_of_memory_0058d9c1
+;   TerminatedCString s_engine_pod_cpp_0058d9d0
+;   TerminatedCString s_Out_of_memory_0058d9e2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

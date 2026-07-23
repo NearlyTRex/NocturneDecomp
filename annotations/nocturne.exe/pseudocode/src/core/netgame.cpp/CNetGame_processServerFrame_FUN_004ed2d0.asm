@@ -21,16 +21,16 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dda1
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058ba54
-;   string s_allocSimFrame_-_sim_history_list_0058ba68
-;   string s_..\\core\\netgame.cpp_0058c583
-;   string s_CNetGame::processServerFrame_-_I_0058c597
-;   string s_..\\core\\netgame.cpp_0058c5ce
-;   string s_CNetGame::processServerFrame_-_I_0058c5e2
-;   string s_..\\core\\netgame.cpp_0058c628
-;   string s_CNetGame::processServerFrame_-_p_0058c63c
-;   string s_..\\core\\netgame.cpp_0058c67d
-;   string s_CNetGame::processServerFrame_-_c_0058c691
+;   TerminatedCString s_core_netgame_cpp_0058ba54
+;   TerminatedCString s_allocSimFrame_sim_histor_0058ba68
+;   TerminatedCString s_core_netgame_cpp_0058c583
+;   TerminatedCString s_CNetGame_processServerFr_0058c597
+;   TerminatedCString s_core_netgame_cpp_0058c5ce
+;   TerminatedCString s_CNetGame_processServerFr_0058c5e2
+;   TerminatedCString s_core_netgame_cpp_0058c628
+;   TerminatedCString s_CNetGame_processServerFr_0058c63c
+;   TerminatedCString s_core_netgame_cpp_0058c67d
+;   TerminatedCString s_CNetGame_processServerFr_0058c691
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
 ;   undefined4 DAT_01cc4800

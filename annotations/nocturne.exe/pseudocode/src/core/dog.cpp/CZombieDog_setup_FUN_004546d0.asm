@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Bip01_Spine1_0057cf39
-;   string s_Bip01_Head_0057cf46
+;   TerminatedCString s_Bip01_Spine1_0057cf39
+;   TerminatedCString s_Bip01_Head_0057cf46
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0

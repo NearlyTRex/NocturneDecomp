@@ -22,9 +22,9 @@
 ;   ... and 14 more
 ;
 ; Referenced Globals:
-;   string s_%f,%f,%f_00577c04
-;   string s_%s%g,%g,%g_00577c0d
-;   string s_3D_vector_005acc10
+;   TerminatedCString s_f_f_f_00577c04
+;   TerminatedCString s_s_g_g_g_00577c0d
+;   TerminatedCString s_s_3D_vector_005acc10
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

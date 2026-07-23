@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_GETGRABBED_00585792
+;   TerminatedCString s_GETGRABBED_00585792
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890

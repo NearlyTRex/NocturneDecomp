@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 192,
+    "complexity_score": 191,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -187,8 +187,8 @@
   "globals": [
     {
       "addr": "00577c46",
-      "name": "s_%f,%f,%f,%f_00577c46",
-      "type": "string",
+      "name": "s_f_f_f_f_00577c46",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -200,7 +200,7 @@
     {
       "addr": "005acc48",
       "name": "s_Quaternion_005acc48",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -369,7 +369,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,param_1 + 3);",
       "type": "unnamed_param"
     },
     {
@@ -377,7 +377,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,param_1 + 3);",
       "type": "unnamed_param"
     },
     {
@@ -385,7 +385,15 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,param_1 + 3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,param_1 + 3);",
       "type": "unnamed_param"
     },
     {
@@ -393,20 +401,12 @@
       "line": 8,
       "match": "DAT_00763e84",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2,param_1 + 3);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 + 3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g,%g\",&DAT_005acc90,(double)*param_1,(double)param_1[1],",
@@ -414,7 +414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g,%g\",&DAT_005acc90,(double)*param_1,(double)param_1[1],",
@@ -422,7 +422,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g,%g\",&DAT_005acc90,(double)*param_1,(double)param_1[1],",
@@ -430,7 +430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g,%g\",&DAT_005acc90,(double)*param_1,(double)param_1[1],",
@@ -438,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "(double)param_1[2],(double)param_1[3]);",
@@ -446,7 +446,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "(double)param_1[2],(double)param_1[3]);",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_archiveDescription_FUN_0040c3a0(\"Quaternion\",param_2);",

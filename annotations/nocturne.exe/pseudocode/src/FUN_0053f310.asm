@@ -25,9 +25,9 @@
 ; Referenced Globals:
 ;   void* switchdataD_0053f2c8 = 0053f7ba
 ;   void* switchdataD_0053f2ec = 0053f487
-;   string s_CShotgun_00595dcf
-;   string s_CTrap_00595dd8
-;   string s_actionPending_=_%d_stranger.cpp_l_00595dde
+;   TerminatedCString s_CShotgun_00595dcf
+;   TerminatedCString s_CTrap_00595dd8
+;   TerminatedCString s_actionPending_d_stranger_00595dde
 ;   double DOUBLE_00595e07 = 25
 ;   double DOUBLE_00595e0f = 0.990000000000000
 ;   float FLOAT_005a2704 = 10

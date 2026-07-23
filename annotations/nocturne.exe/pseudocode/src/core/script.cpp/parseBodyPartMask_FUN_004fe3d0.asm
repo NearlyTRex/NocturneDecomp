@@ -11,8 +11,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501331
 ;
 ; Referenced Globals:
-;   string s_%[^_),]%n_0058e19a
-;   string s_Character_%s_model_%s_does_not_h_0058e1a6
+;   TerminatedCString s_n_0058e19a
+;   TerminatedCString s_Character_s_model_s_does_0058e1a6
 ;   undefined4 DAT_01e56420
 ;
 ; Called Functions:

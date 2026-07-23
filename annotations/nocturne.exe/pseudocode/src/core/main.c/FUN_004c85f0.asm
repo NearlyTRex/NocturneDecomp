@@ -8,20 +8,20 @@
 ;   wincore_winrun.cpp_FUN_00559260 at 005594de
 ;
 ; Referenced Globals:
-;   string s_PROCESSOR_LEVEL_00587b55
+;   TerminatedCString s_PROCESSOR_LEVEL_00587b55
 ;   TerminatedCString s_rb_00587b65
-;   string s_stderr.txt_00587b68
-;   string s_stderr.txt_00587b73
-;   string s_..\\core\\main.c_00587b7e
-;   string s_Please_copy_Nocturne_to_your_har_00587b8d
+;   TerminatedCString s_stderr_txt_00587b68
+;   TerminatedCString s_stderr_txt_00587b73
+;   TerminatedCString s_core_main_c_00587b7e
+;   TerminatedCString s_Please_copy_Nocturne_to_00587b8d
 ;   TerminatedCString s_wt_00587bb5
-;   string s_stderr.txt_00587bb8
-;   string s_msglist.txt_00587bc3
-;   string s_..\\core\\main.c_00587bcf
-;   string s_This_CPU_does_not_have_an_MMX_un_00587bde
-;   string s_..\\core\\main.c_00587c02
-;   string s_Unable_to_set_640x480x32bpp._Ple_00587c11
-;   string s_Windows_is_reporting_00587ca2
+;   TerminatedCString s_stderr_txt_00587bb8
+;   TerminatedCString s_msglist_txt_00587bc3
+;   TerminatedCString s_core_main_c_00587bcf
+;   TerminatedCString s_This_CPU_does_not_have_a_00587bde
+;   TerminatedCString s_core_main_c_00587c02
+;   TerminatedCString s_Unable_to_set_640x480x32_00587c11
+;   TerminatedCString s_Windows_is_reporting_00587ca2
 ;   TerminatedCString s_s_1f_00587cb8
 ;   ... and 73 more
 ;
@@ -271,13 +271,13 @@ section .text
     MOV AL,0x0                          ; 004c8873
     SCASB.REPNE ES:EDI                  ; 004c8875
     DEC EDI                             ; 004c8877
-    MOV AL,byte ptr [ESI]               ; 004c8878 | = "\n" | s_Nocturne_requires_at_least_64MB_o_00587cd1
+    MOV AL,byte ptr [ESI]               ; 004c8878 | = "\n" | s_Nocturne_requires_at_lea_00587cd1
         ;   Label: LAB_004c8878
     MOV byte ptr [EDI],AL               ; 004c887a
     CMP AL,0x0                          ; 004c887c
     JZ 0x004c8890                       ; 004c887e
         ;   XREF to: 004c8890 (CONDITIONAL_JUMP)  ; LAB_004c8890
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c8880 | s_anon_00587ccf+1 | s_octurne_requires_at_least_64MB_o_00587cd1+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c8880 | s_anon_00587ccf+1 | s_Nocturne_requires_at_lea_00587cd1+1
     ADD ESI,0x2                         ; 004c8883
     MOV byte ptr [EDI + 0x1],AL         ; 004c8886
     ADD EDI,0x2                         ; 004c8889
@@ -321,13 +321,13 @@ section .text
     MOV AL,0x0                          ; 004c88d9
     SCASB.REPNE ES:EDI                  ; 004c88db
     DEC EDI                             ; 004c88dd
-    MOV AL,byte ptr [ESI]               ; 004c88de | = "\n" | s_If_you_think_you_have_at_least_6_00587d02
+    MOV AL,byte ptr [ESI]               ; 004c88de | = "\n" | s_If_you_think_you_have_at_00587d02
         ;   Label: LAB_004c88de
     MOV byte ptr [EDI],AL               ; 004c88e0
     CMP AL,0x0                          ; 004c88e2
     JZ 0x004c88f6                       ; 004c88e4
         ;   XREF to: 004c88f6 (CONDITIONAL_JUMP)  ; LAB_004c88f6
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c88e6 | s_anon_00587d00+1 | s_f_you_think_you_have_at_least_64_00587d02+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c88e6 | s_anon_00587d00+1 | s_If_you_think_you_have_at_00587d02+1
     ADD ESI,0x2                         ; 004c88e9
     MOV byte ptr [EDI + 0x1],AL         ; 004c88ec
     ADD EDI,0x2                         ; 004c88ef
@@ -371,13 +371,13 @@ section .text
     MOV AL,0x0                          ; 004c893f
     SCASB.REPNE ES:EDI                  ; 004c8941
     DEC EDI                             ; 004c8943
-    MOV AL,byte ptr [ESI]               ; 004c8944 | = "\n" | s_then_ignore_this_message._00587d36
+    MOV AL,byte ptr [ESI]               ; 004c8944 | = "\n" | s_then_ignore_this_message_00587d36
         ;   Label: LAB_004c8944
     MOV byte ptr [EDI],AL               ; 004c8946
     CMP AL,0x0                          ; 004c8948
     JZ 0x004c895c                       ; 004c894a
         ;   XREF to: 004c895c (CONDITIONAL_JUMP)  ; LAB_004c895c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c894c | s_anon_00587d34+1 | s_hen_ignore_this_message._00587d36+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c894c | s_anon_00587d34+1 | s_then_ignore_this_message_00587d36+1
     ADD ESI,0x2                         ; 004c894f
     MOV byte ptr [EDI + 0x1],AL         ; 004c8952
     ADD EDI,0x2                         ; 004c8955
@@ -421,13 +421,13 @@ section .text
     MOV AL,0x0                          ; 004c89a5
     SCASB.REPNE ES:EDI                  ; 004c89a7
     DEC EDI                             ; 004c89a9
-    MOV AL,byte ptr [ESI]               ; 004c89aa | = "\n" | s_See_README.TXT_for_more_informat_00587d52
+    MOV AL,byte ptr [ESI]               ; 004c89aa | = "\n" | s_See_README_TXT_for_more_00587d52
         ;   Label: LAB_004c89aa
     MOV byte ptr [EDI],AL               ; 004c89ac
     CMP AL,0x0                          ; 004c89ae
     JZ 0x004c89c2                       ; 004c89b0
         ;   XREF to: 004c89c2 (CONDITIONAL_JUMP)  ; LAB_004c89c2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c89b2 | s_anon_00587d50+1 | s_ee_README.TXT_for_more_informati_00587d52+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c89b2 | s_anon_00587d50+1 | s_See_README_TXT_for_more_00587d52+1
     ADD ESI,0x2                         ; 004c89b5
     MOV byte ptr [EDI + 0x1],AL         ; 004c89b8
     ADD EDI,0x2                         ; 004c89bb
@@ -564,13 +564,13 @@ section .text
     MOV AL,0x0                          ; 004c8adc
     SCASB.REPNE ES:EDI                  ; 004c8ade
     DEC EDI                             ; 004c8ae0
-    MOV AL,byte ptr [ESI]               ; 004c8ae1 | = "\n" | s_Nocturne_runs_best_with_at_least_00587db0
+    MOV AL,byte ptr [ESI]               ; 004c8ae1 | = "\n" | s_Nocturne_runs_best_with_00587db0
         ;   Label: LAB_004c8ae1
     MOV byte ptr [EDI],AL               ; 004c8ae3
     CMP AL,0x0                          ; 004c8ae5
     JZ 0x004c8af9                       ; 004c8ae7
         ;   XREF to: 004c8af9 (CONDITIONAL_JUMP)  ; LAB_004c8af9
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c8ae9 | s_anon_00587dae+1 | s_octurne_runs_best_with_at_least_2_00587db0+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c8ae9 | s_anon_00587dae+1 | s_Nocturne_runs_best_with_00587db0+1
     ADD ESI,0x2                         ; 004c8aec
     MOV byte ptr [EDI + 0x1],AL         ; 004c8aef
     ADD EDI,0x2                         ; 004c8af2

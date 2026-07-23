@@ -20,8 +20,8 @@
 ;   core_set.cpp_FUN_0050aba0 at 0050acfd
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c76e
-;   string s_CDemonLight::blitZBuffer_-_No_ma_0057c781
+;   TerminatedCString s_core_dlight_cpp_0057c76e
+;   TerminatedCString s_CDemonLight_blitZBuffer_0057c781
 ;   undefined4 DAT_01abacb4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

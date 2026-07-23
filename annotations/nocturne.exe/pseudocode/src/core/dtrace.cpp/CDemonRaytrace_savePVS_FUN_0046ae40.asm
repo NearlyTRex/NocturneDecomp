@@ -8,14 +8,14 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507d49
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dtrace.cpp_0057e2af
-;   string s_CDemonRenderer::getPVS_-_PVS_is_n_0057e2c2
-;   string s_..\\core\\dtrace.cpp_0057e2ed
-;   string s_CDemonRaytrace::getPVS_-_no_cube_0057e300
-;   string s_..\\core\\dtrace.cpp_0057e32e
-;   string s_CDemonRaytrace::getPVS_-_out_of_m_0057e341
-;   string s_..\\core\\dtrace.cpp_0057e368
-;   string s_CDemonRenderer::savePVS_-_can't_f_0057e37b
+;   TerminatedCString s_core_dtrace_cpp_0057e2af
+;   TerminatedCString s_CDemonRenderer_getPVS_PV_0057e2c2
+;   TerminatedCString s_core_dtrace_cpp_0057e2ed
+;   TerminatedCString s_CDemonRaytrace_getPVS_no_0057e300
+;   TerminatedCString s_core_dtrace_cpp_0057e32e
+;   TerminatedCString s_CDemonRaytrace_getPVS_ou_0057e341
+;   TerminatedCString s_core_dtrace_cpp_0057e368
+;   TerminatedCString s_CDemonRenderer_savePVS_c_0057e37b
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750

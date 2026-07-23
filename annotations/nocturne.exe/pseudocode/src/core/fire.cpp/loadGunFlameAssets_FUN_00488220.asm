@@ -8,7 +8,7 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 at 0048afc1
 ;
 ; Referenced Globals:
-;   string s_fr46%03d.raw_0058139c
+;   TerminatedCString s_fr46_03d_raw_0058139c
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;

@@ -11,13 +11,13 @@
 ;   core_turret.cpp_CTurret_archive_FUN_0054a000 at 0054a006
 ;
 ; Referenced Globals:
-;   string s_modelName_00597ba1
-;   string s_carriedByActor_00597bab
-;   string s_weaponState_00597bba
-;   string s_ammoCount_00597bc6
-;   string s_ammoType_00597bd0
-;   string s_descriptiveName_00597bd9
-;   string s_simTimer_00597be9
+;   TerminatedCString s_modelName_00597ba1
+;   TerminatedCString s_carriedByActor_00597bab
+;   TerminatedCString s_weaponState_00597bba
+;   TerminatedCString s_ammoCount_00597bc6
+;   TerminatedCString s_ammoType_00597bd0
+;   TerminatedCString s_descriptiveName_00597bd9
+;   TerminatedCString s_simTimer_00597be9
 ;   undefined4 DAT_005c1590
 ;
 ; Called Functions:

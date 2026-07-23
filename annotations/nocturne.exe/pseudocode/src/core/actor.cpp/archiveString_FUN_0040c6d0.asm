@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00577c60
 ;   TerminatedCString s_s_s_00577c66
-;   string s_String_005acc58
+;   TerminatedCString s_String_005acc58
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_00763e84

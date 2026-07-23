@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 at 0052829a
 ;
 ; Referenced Globals:
-;   string s_DirectSound:_%s_00594849
+;   TerminatedCString s_DirectSound_s_00594849
 ;   undefined4 DAT_005bed40
 ;
 ; Called Functions:

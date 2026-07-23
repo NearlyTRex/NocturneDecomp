@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_0058fab2
-;   string s_CScript::processTimer_-_invalidT_0058fac5
+;   TerminatedCString s_CScript_processTimer_inv_0058fac5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

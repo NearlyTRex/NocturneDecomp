@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_splash_music_44_wav_00594bd6
-;   string s_splash-music-22.wav_00594bea
+;   TerminatedCString s_splash_music_22_wav_00594bea
 ;   float FLOAT_005a22e4 = 0.25
 ;   float FLOAT_005a22e8 = 0.25
 ;   float FLOAT_005a22ec = 1

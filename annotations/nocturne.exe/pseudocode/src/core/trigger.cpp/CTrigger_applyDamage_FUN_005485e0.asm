@@ -19,7 +19,7 @@
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af84
 ;
 ; Referenced Globals:
-;   string s_%s_received_%g_damage,_hitpoints_00596af2
+;   TerminatedCString s_s_received_g_damage_hitp_00596af2
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;

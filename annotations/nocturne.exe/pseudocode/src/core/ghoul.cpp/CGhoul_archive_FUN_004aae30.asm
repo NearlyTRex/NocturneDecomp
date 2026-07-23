@@ -6,14 +6,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00584dbd
-;   string s_modelName_00584dc3
-;   string s_guardDistance_00584dcd
-;   string s_livesLeft_00584ddb
-;   string s_motion_state_00584de5
-;   string s_partStatus_00584df2
-;   string s_spasmCount_00584dfd
-;   string s_livesLeft_00584e08
-;   string s_ariseTimer_00584e12
+;   TerminatedCString s_modelName_00584dc3
+;   TerminatedCString s_guardDistance_00584dcd
+;   TerminatedCString s_livesLeft_00584ddb
+;   TerminatedCString s_motion_state_00584de5
+;   TerminatedCString s_partStatus_00584df2
+;   TerminatedCString s_spasmCount_00584dfd
+;   TerminatedCString s_livesLeft_00584e08
+;   TerminatedCString s_ariseTimer_00584e12
 ;   undefined4 DAT_005b9650
 ;
 ; Called Functions:

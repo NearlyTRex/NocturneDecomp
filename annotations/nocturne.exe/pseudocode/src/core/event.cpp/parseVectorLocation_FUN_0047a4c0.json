@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 268,
+    "complexity_score": 267,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 153
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -176,20 +176,20 @@
   "globals": [
     {
       "addr": "0057f46e",
-      "name": "s_{_%f,_%f,_%f_}%n_0057f46e",
-      "type": "string",
+      "name": "s_f_f_f_n_0057f46e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057f480",
-      "name": "s_%[^_,(){}]%n_0057f480",
-      "type": "string",
+      "name": "s_n_0057f480",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0057f48e",
-      "name": "s_Error_parsing_vector_location_0057f48e",
-      "type": "string",
+      "name": "s_Error_parsing_vector_loc_0057f48e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -305,7 +305,7 @@
         {
           "check_id": "invalidscanf",
           "column": 3,
-          "line": 24,
+          "line": 23,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -344,7 +344,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,&local_14);",
       "type": "unnamed_param"
     },
     {
@@ -352,7 +352,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,&local_14);",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +360,7 @@
       "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,&local_14);",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +368,7 @@
       "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,&local_14);",
       "type": "unnamed_param"
     },
     {
@@ -376,20 +376,12 @@
       "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "text": "(param_1 + *param_2,\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,&local_14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + local_14;",
@@ -397,7 +389,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *param_2 + local_14;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "sscanf(param_1 + *param_2,\" %[^ ,(){}]%n\",local_78,&local_14);",
@@ -405,7 +405,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "sscanf(param_1 + *param_2,\" %[^ ,(){}]%n\",local_78,&local_14);",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 18,
       "match": "DAT_01c08b60",
       "severity": "mild",
       "text": "_sprintf(&DAT_01c08b60,\"Error parsing vector location\");",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_00763e80",
       "severity": "mild",
       "text": "iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390(local_78,DAT_00763e80,&DAT_00763e48);",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_00763e48",
       "severity": "mild",
       "text": "iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390(local_78,DAT_00763e80,&DAT_00763e48);",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + local_14;",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + local_14;",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (uint *)(iVar1 + 0x20)) {",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = *(uint *)(iVar1 + 0x20);",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = *(uint *)(iVar1 + 0x24);",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[2] = *(uint *)(iVar1 + 0x28);",

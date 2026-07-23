@@ -56,9 +56,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c32a
-;   string s_CNetGame::applyNewGameSettings_-_0058c33e
+;   TerminatedCString s_CNetGame_applyNewGameSet_0058c33e
 ;   TerminatedCString s_core_netgame_cpp_0058c38a
-;   string s_Hell_froze_0058c39e
+;   TerminatedCString s_Hell_froze_0058c39e
 ;   undefined4 DAT_005bdee4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

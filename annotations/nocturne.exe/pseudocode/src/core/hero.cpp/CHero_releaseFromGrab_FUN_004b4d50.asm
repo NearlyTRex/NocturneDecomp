@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_GETGRABBED_005857e5
-;   string s_STAND_005857f0
+;   TerminatedCString s_GETGRABBED_005857e5
+;   TerminatedCString s_STAND_005857f0
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:

@@ -33,19 +33,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005922e5
 ;   TerminatedCString s_klp_005922e8
-;   string s_sound_005922ec
+;   TerminatedCString s_sound_005922ec
 ;   TerminatedCString s_sfx_005922f2
-;   string s_sound_005922f6
+;   TerminatedCString s_sound_005922f6
 ;   TerminatedCString s_rb_005922fc
-;   string s_sound_005922ff
-;   string s_refDist_=%f_00592305
-;   string s_..\\sound\\sndmain.cpp_00592311
-;   string s_Reference_distance_specified_in_%_00592326
-;   string s_..\\sound\\sndmain.cpp_0059236b
-;   string s_Reference_volume_distance_%g_is_t_00592380
-;   string s_minDist_=%f_005923b9
-;   string s_..\\sound\\sndmain.cpp_005923c5
-;   string s_Minimum_distance_specified_in_%s_005923da
+;   TerminatedCString s_sound_005922ff
+;   TerminatedCString s_refDist_f_00592305
+;   TerminatedCString s_sound_sndmain_cpp_00592311
+;   TerminatedCString s_Reference_distance_speci_00592326
+;   TerminatedCString s_sound_sndmain_cpp_0059236b
+;   TerminatedCString s_Reference_volume_distanc_00592380
+;   TerminatedCString s_minDist_f_005923b9
+;   TerminatedCString s_sound_sndmain_cpp_005923c5
+;   TerminatedCString s_Minimum_distance_specifi_005923da
 ;   ... and 28 more
 ;
 ; Called Functions:

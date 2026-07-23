@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005927f6
-;   string s_allocMixBuffers_-_out_of_memory_0059280b
+;   TerminatedCString s_allocMixBuffers_out_of_m_0059280b
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

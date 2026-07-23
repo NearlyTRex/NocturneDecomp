@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b32a4 = 004b35d3
-;   string s_%s_confused_while_walking_to_scr_0058554e
+;   TerminatedCString s_s_confused_while_walking_0058554e
 ;   double DOUBLE_0058557d = 12.5663706140000
 ;   double DOUBLE_00585585 = 0.333333333333333
 ;   double DOUBLE_0058558d = 32

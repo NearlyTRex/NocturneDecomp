@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0057df2c
-;   string s_modelName_0057df32
-;   string s_guardDistance_0057df3c
-;   string s_motion_state_0057df4a
+;   TerminatedCString s_modelName_0057df32
+;   TerminatedCString s_guardDistance_0057df3c
+;   TerminatedCString s_motion_state_0057df4a
 ;   undefined4 DAT_005b0660
 ;
 ; Called Functions:

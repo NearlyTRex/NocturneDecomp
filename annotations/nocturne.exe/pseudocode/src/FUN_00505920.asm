@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_sentinel.dfm_0058ff27
+;   TerminatedCString s_sentinel_dfm_0058ff27
 ;   float FLOAT_005a173c = 50
 ;   float FLOAT_005a1740 = 100
 ;   undefined1* PTR_core_sentinel.cpp_CSentinel_setup_FUN_00505990_005a1754 = 00505990

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_flashlit.kfm_005816c2
+;   TerminatedCString s_flashlit_kfm_005816c2
 ;   undefined4 DAT_0059d8ec
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d8f4 = 00553f10
 ;

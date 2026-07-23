@@ -11,8 +11,8 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052a994
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593b25
-;   string s_SfxSlot::kill_-_must_be_locked!_00593b3a
+;   TerminatedCString s_sound_sndmain_cpp_00593b25
+;   TerminatedCString s_SfxSlot_kill_must_be_loc_00593b3a
 ;   double DOUBLE_00593b5e = 8.47710503472222E-7
 ;   double DOUBLE_00593b66 = 0.25
 ;   undefined4 DAT_01cc4800

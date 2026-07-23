@@ -334,8 +334,7 @@ LAB_004bbb59:
         if ((iVar4 == 0) &&
            (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd28)),
            iVar4 == 0)) {
-          uVar6 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"imp-laugh?.wav")
-          ;
+          uVar6 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"imp-laugh?.wav");
           *(uint *)(param_1 + 0xbd24) = uVar6;
           local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                                       (0x41200000,0x41a00000);

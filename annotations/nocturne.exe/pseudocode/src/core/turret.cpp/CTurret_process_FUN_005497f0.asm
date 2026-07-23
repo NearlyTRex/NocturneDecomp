@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_005497d0 = 00549822
 ;   TerminatedCString s_turret_ani_wav_00596d1d
-;   string s_turret-ani?.wav_00596d2d
-;   string s_..\\core\\turret.cpp_00596d3d
-;   string s_CTurret::process_-_invalid_state_00596d50
-;   string s_turret-loop.wav_*_%f_00596d71
-;   string s_turret-tail.wav_00596d86
+;   TerminatedCString s_turret_ani_wav_00596d2d
+;   TerminatedCString s_core_turret_cpp_00596d3d
+;   TerminatedCString s_CTurret_process_invalid_00596d50
+;   TerminatedCString s_turret_loop_wav_f_00596d71
+;   TerminatedCString s_turret_tail_wav_00596d86
 ;   double DOUBLE_00596d9d = 2
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01cc4800

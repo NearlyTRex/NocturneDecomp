@@ -9,8 +9,8 @@
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 at 0044c082
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dfilter.cpp_0057bee0
-;   string s_CDemonFilter::allocMemory_-_Out_o_0057bef4
+;   TerminatedCString s_core_dfilter_cpp_0057bee0
+;   TerminatedCString s_CDemonFilter_allocMemory_0057bef4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

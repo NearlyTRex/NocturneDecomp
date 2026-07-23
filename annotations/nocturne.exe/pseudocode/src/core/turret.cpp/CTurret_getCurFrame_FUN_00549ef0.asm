@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00549ed4 = 00549f8d
 ;   TerminatedCString s_core_turret_cpp_00596da5
-;   string s_CTurret::getCurFrame_-_invalid_s_00596db8
+;   TerminatedCString s_CTurret_getCurFrame_inva_00596db8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   string s_voicuhurt.wav_005971c9
-;   string s_VampireBossBitesIt_005971d7
-;   string s_voicudeath.wav_@_2.5_005971ea
+;   TerminatedCString s_voicuhurt_wav_005971c9
+;   TerminatedCString s_VampireBossBitesIt_005971d7
+;   TerminatedCString s_voicudeath_wav_2_5_005971ea
 ;   double DOUBLE_00597205 = 2
 ;   double DOUBLE_0059720d = 25
 ;   undefined4 DAT_005b7650

@@ -11,8 +11,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 at 0045f666
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\drender.cpp_0057dd57
-;   string s_CDR::captureFace_-_too_many_face_0057dd6d
+;   TerminatedCString s_engine_drender_cpp_0057dd57
+;   TerminatedCString s_CDR_captureFace_too_many_0057dd6d
 ;   undefined4 DAT_01b4d7ac
 ;   undefined4 DAT_01b4d7b0
 ;   undefined4 DAT_01cc4800

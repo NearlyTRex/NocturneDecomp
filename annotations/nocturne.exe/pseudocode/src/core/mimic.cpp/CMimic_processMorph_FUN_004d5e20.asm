@@ -11,8 +11,8 @@
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00 at 004d5db9
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mimic.cpp_00589588
-;   string s_CMimic::processMorph_-_can't_pro_0058959a
+;   TerminatedCString s_core_mimic_cpp_00589588
+;   TerminatedCString s_CMimic_processMorph_can_0058959a
 ;   float FLOAT_005a05e4 = 1
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800

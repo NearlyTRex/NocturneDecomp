@@ -39,8 +39,7 @@ int __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(uint param_1,u
         else {
           unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(param_1,local_dc);
           if (unaff_ESI == 0) {
-            FUN_0046fcd0(0x01BCD074,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,param_3,
-                         param_4);
+            FUN_0046fcd0(0x01BCD074,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,param_3,param_4);
           }
         }
         iVar2 = _fgetc(param_2);

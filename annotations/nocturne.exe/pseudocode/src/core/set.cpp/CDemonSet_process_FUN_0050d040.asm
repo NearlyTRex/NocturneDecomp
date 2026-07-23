@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_son_0059079a
-;   string s_%soff_0059079f
+;   TerminatedCString s_soff_0059079f
 ;   TerminatedCString s_moon_005907a5
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01fb99d4

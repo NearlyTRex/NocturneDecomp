@@ -12,15 +12,15 @@
 ;   core_actor.cpp_FUN_0040ce80 at 0040cf3c
 ;
 ; Referenced Globals:
-;   string s_%sboxVersion_0057974b
-;   string s_%s%d_00579759
-;   string s_%sboxStateInfo_0057975f
-;   string s_%s%f,%f,%f_0057976f
-;   string s_%s%f,%f,%f_0057977b
-;   string s_%s%f,%f,%f_00579787
-;   string s_%s%f_00579793
-;   string s_%s%f,%f,%f_00579799
-;   string s_%s%f,%f,%f_005797a5
+;   TerminatedCString s_sboxVersion_0057974b
+;   TerminatedCString s_s_d_00579759
+;   TerminatedCString s_sboxStateInfo_0057975f
+;   TerminatedCString s_s_f_f_f_0057976f
+;   TerminatedCString s_s_f_f_f_0057977b
+;   TerminatedCString s_s_f_f_f_00579787
+;   TerminatedCString s_s_f_00579793
+;   TerminatedCString s_s_f_f_f_00579799
+;   TerminatedCString s_s_f_f_f_005797a5
 ;   TerminatedCString s_s_d_005797b1
 ;   double DOUBLE_005797bd = 32
 ;

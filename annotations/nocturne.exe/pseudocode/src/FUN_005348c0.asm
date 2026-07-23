@@ -7,9 +7,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rise_00595182
 ;   TerminatedCString s_run_00595187
-;   string s_width_0059518b
-;   string s_count_00595191
-;   string s_groundType_00595197
+;   TerminatedCString s_width_0059518b
+;   TerminatedCString s_count_00595191
+;   TerminatedCString s_groundType_00595197
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880

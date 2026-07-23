@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_cow.dfm_0057b2d5
+;   TerminatedCString s_cow_dfm_0057b2d5
 ;   float FLOAT_0059b88c = 50
 ;   float FLOAT_0059b890 = 100
 ;   undefined1* PTR_core_cow.cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4 = 0043bc50

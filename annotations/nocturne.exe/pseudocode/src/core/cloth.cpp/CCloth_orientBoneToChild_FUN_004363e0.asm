@@ -19,8 +19,8 @@
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435f6b
 ;
 ; Referenced Globals:
-;   string s_..\\core\\cloth.cpp_0057ade6
-;   string s_Can't_orient_bone_with_no_childr_0057adf8
+;   TerminatedCString s_core_cloth_cpp_0057ade6
+;   TerminatedCString s_Can_t_orient_bone_with_n_0057adf8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -67,7 +67,7 @@ int FUN_00418630(uint param_1)
   local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x42d40000,0x43800000);
   local_8 = local_c;
   core_boneguy_cpp_hsvToRgb_FUN_00418480(local_20,&local_14);
-  fVar8 = (float10)ram0x0057919e;
+  fVar8 = (float10)_DAT_0057919e;
   fVar9 = (float10)round((float10)local_20[0] * fVar8);
   *(int *)(iVar4 + -0xbc9c) = (int)ROUND(fVar9);
   fVar9 = (float10)round((float10)local_20[0] * fVar8);

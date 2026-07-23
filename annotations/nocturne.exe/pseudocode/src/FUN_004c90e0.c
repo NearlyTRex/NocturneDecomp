@@ -58,8 +58,7 @@ void FUN_004c90e0(void)
       }
       iVar1 = iVar4;
     } while (0 < iVar6);
-    uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                      ("Press any key to continue...");
+    uVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press any key to continue...");
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b98f8,uVar5);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
               (_DAT_014b98f8,uVar5,0x140 - iVar1 / 2,iVar2 * -2 + 0x1e0,7,0);

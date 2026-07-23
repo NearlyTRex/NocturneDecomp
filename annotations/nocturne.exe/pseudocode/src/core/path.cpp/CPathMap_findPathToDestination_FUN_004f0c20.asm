@@ -58,13 +58,13 @@
 ; Referenced Globals:
 ;   void* switchdataD_004f0bf4 = 004f0c8c
 ;   TerminatedCString s_core_path_cpp_0058cd97
-;   string s_Out_of_bounds1!_0058cda8
-;   string s_..\\core\\path.cpp_0058cdb8
-;   string s_Out_of_bounds2!_0058cdc9
-;   string s_..\\core\\path.cpp_0058cdd9
-;   string s_Out_of_bounds3!_0058cdea
-;   string s_..\\core\\path.cpp_0058cdfa
-;   string s_Out_of_bounds4!_0058ce0b
+;   TerminatedCString s_Out_of_bounds1_0058cda8
+;   TerminatedCString s_core_path_cpp_0058cdb8
+;   TerminatedCString s_Out_of_bounds2_0058cdc9
+;   TerminatedCString s_core_path_cpp_0058cdd9
+;   TerminatedCString s_Out_of_bounds3_0058cdea
+;   TerminatedCString s_core_path_cpp_0058cdfa
+;   TerminatedCString s_Out_of_bounds4_0058ce0b
 ;   undefined4 DAT_005be0e8
 ;   undefined4 DAT_005be10c
 ;   undefined4 DAT_01cc4800

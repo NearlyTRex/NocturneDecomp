@@ -13,7 +13,7 @@
 ;   core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 at 004ef4e8
 ;
 ; Referenced Globals:
-;   string s_priest.dfm_0058cac0
+;   TerminatedCString s_priest_dfm_0058cac0
 ;   undefined1* PTR_FUN_005a0eb4 = 004ee9e0
 ;
 ; Called Functions:

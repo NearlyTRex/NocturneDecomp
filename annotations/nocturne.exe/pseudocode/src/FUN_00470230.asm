@@ -14,8 +14,8 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e3ac
 ;
 ; Referenced Globals:
-;   string s_[Y]es,_I_know_what_I'm_doing_and_0057e5e5
-;   string s_[N]o,_please,_I_didn't_mean_to_d_0057e625
+;   TerminatedCString s_Y_es_I_know_what_I_m_doi_0057e5e5
+;   TerminatedCString s_N_o_please_I_didn_t_mean_0057e625
 ;   TerminatedCString s_yn_0057e64b
 ;
 ; Called Functions:

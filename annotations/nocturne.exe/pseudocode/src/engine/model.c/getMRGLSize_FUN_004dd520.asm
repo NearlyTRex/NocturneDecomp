@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004dd40c = 004dd53f
-;   string s_MRGLSize:_Bad_type_:_%d_0058a637
-;   string s_..\\engine\\model.c_0058a64f
+;   TerminatedCString s_MRGLSize_Bad_type_d_0058a637
+;   TerminatedCString s_engine_model_c_0058a64f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

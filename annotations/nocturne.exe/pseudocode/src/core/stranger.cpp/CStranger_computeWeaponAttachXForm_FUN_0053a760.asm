@@ -198,7 +198,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_0059596f
-;   string s_Don't_know_how_to_carry_light_%s_00595984
+;   TerminatedCString s_Don_t_know_how_to_carry_00595984
 ;   float FLOAT_005959a7 = 0.5
 ;   double DOUBLE_005959af = 0.700000000000000
 ;   double DOUBLE_005959b7 = 0.300000000000000

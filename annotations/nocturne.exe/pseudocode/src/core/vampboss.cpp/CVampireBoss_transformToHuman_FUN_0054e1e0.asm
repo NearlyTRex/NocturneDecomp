@@ -8,8 +8,8 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054cd9f
 ;
 ; Referenced Globals:
-;   string s_float_00597256
-;   string s_voicuhuman.wav_0059725c
+;   TerminatedCString s_float_00597256
+;   TerminatedCString s_voicuhuman_wav_0059725c
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960

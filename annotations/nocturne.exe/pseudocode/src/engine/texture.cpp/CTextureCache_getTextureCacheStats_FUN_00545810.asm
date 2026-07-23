@@ -8,8 +8,8 @@
 ;   engine_texture.cpp_getTextureCacheStats_FUN_00545a80 at 00545a8c
 ;
 ; Referenced Globals:
-;   string s_Texture_cache_has_wrapped._Make_i_00596821
-;   string s_Total:_%d,_32:_%d,_64:_%d,_128:_%_00596855
+;   TerminatedCString s_Texture_cache_has_wrappe_00596821
+;   TerminatedCString s_Total_d_32_d_64_d_128_d_00596855
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

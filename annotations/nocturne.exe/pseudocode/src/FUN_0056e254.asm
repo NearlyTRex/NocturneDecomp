@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_InitializeCriticalSection_00575558 = 00175e76
-;   string s_Unable_to_allocate_semaphore_dat_00598c1c
-;   string s_Unable_to_allocate_semaphore_dat_00598c40
+;   TerminatedCString s_Unable_to_allocate_semap_00598c1c
+;   TerminatedCString s_Unable_to_allocate_semap_00598c40
 ;   undefined4 DAT_02de5c10
 ;   undefined4 DAT_02de5c14
 ;   undefined4 DAT_02de5c18

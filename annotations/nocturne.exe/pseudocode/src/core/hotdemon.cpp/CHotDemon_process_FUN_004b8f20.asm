@@ -48,9 +48,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b8ee0 = 004b9267
-;   string s_%s_confused_while_walking_to_scr_00585f0c
-;   string s_hotdemon-attack.wav_00585f36
-;   string s_hotdemon-attack.wav_00585f4a
+;   TerminatedCString s_s_confused_while_walking_00585f0c
+;   TerminatedCString s_hotdemon_attack_wav_00585f36
+;   TerminatedCString s_hotdemon_attack_wav_00585f4a
 ;   double DOUBLE_00585f65 = 3.14159265350000
 ;   double DOUBLE_00585f6d = 0.523598775583333
 ;   double DOUBLE_00585f75 = 32

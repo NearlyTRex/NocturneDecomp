@@ -11,21 +11,21 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2315
 ;
 ; Referenced Globals:
-;   string s_gamePIXX_00586a1c
-;   string s_gamePIXY_00586a25
-;   string s_gameBPP_00586a2e
-;   string s_useDirect3D_00586a36
-;   string s_useAGPFlag_00586a42
-;   string s_rendererDLLPath_00586a4d
-;   string s_gamma_00586a5d
-;   string s_heroNumber_00586a63
-;   string s_haloMode_00586a6e
-;   string s_firstTimeFlag_00586a77
-;   string s_subtitleMode_00586a85
-;   string s_bloodFlag_00586a92
-;   string s_nudityFlag_00586a9c
-;   string s_foulLanguageFlag_00586aa7
-;   string s_shadowFlag_00586ab8
+;   TerminatedCString s_gamePIXX_00586a1c
+;   TerminatedCString s_gamePIXY_00586a25
+;   TerminatedCString s_gameBPP_00586a2e
+;   TerminatedCString s_useDirect3D_00586a36
+;   TerminatedCString s_useAGPFlag_00586a42
+;   TerminatedCString s_rendererDLLPath_00586a4d
+;   TerminatedCString s_gamma_00586a5d
+;   TerminatedCString s_heroNumber_00586a63
+;   TerminatedCString s_haloMode_00586a6e
+;   TerminatedCString s_firstTimeFlag_00586a77
+;   TerminatedCString s_subtitleMode_00586a85
+;   TerminatedCString s_bloodFlag_00586a92
+;   TerminatedCString s_nudityFlag_00586a9c
+;   TerminatedCString s_foulLanguageFlag_00586aa7
+;   TerminatedCString s_shadowFlag_00586ab8
 ;   ... and 110 more
 ;
 ; Called Functions:

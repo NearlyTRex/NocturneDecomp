@@ -35,8 +35,8 @@ void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,i
   iVar1 = (**(code **)(*piStack_1b4 + 0x4c))();
   if (iVar1 != 0) {
     uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
-    _sprintf(&piStack_1b4,"DirectSux: Unable to %s.  (%s)",
-               "Unlock hw sample buffer",uVar2);
+    _sprintf(&piStack_1b4,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
+               uVar2);
     FUN_00529980(&piStack_1b4);
     return;
   }

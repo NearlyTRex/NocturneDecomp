@@ -22,8 +22,8 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\font.cpp_005818c4
-;   string s_CBitFont::drawText_-_OSFont_not_s_005818d7
+;   TerminatedCString s_engine_font_cpp_005818c4
+;   TerminatedCString s_CBitFont_drawText_OSFont_005818d7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

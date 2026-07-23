@@ -128,8 +128,7 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
     fVar2 = (float)_DAT_02dd1234 * *(float *)(param_1 + 8) * *(float *)(param_1 + 8);
     *(float *)(param_1 + 0xc) = fVar2;
     uVar10 = engine_console_cpp_CConsole_printf_FUN_0043ac60
-                       (PTR_DAT_005ad350,"Vis water tiles : %d, SqFt : %f",iVar8,
-                        (double)fVar2);
+                       (PTR_DAT_005ad350,"Vis water tiles : %d, SqFt : %f",iVar8,(double)fVar2);
     return uVar10;
   }
   return CONCAT44(*(uint *)(param_1 + 4),iVar4);

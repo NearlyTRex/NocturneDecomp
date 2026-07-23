@@ -14,8 +14,8 @@
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00528210 at 00528221
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005937cc
-;   string s_setSoundOutputMode_-_can't_do_th_005937e1
+;   TerminatedCString s_sound_sndmain_cpp_005937cc
+;   TerminatedCString s_setSoundOutputMode_can_t_005937e1
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c

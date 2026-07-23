@@ -66,8 +66,8 @@
 ;   void* switchdataD_004efe64 = 004eff85
 ;   void* switchdataD_004efe74 = 004efff8
 ;   void* switchdataD_004efe94 = 004f0218
-;   string s_..\\core\\path.cpp_0058ccbd
-;   string s_CPathMap::getDirection_-_Should_n_0058ccce
+;   TerminatedCString s_core_path_cpp_0058ccbd
+;   TerminatedCString s_CPathMap_getDirection_Sh_0058ccce
 ;   float FLOAT_0058cd47 = 100
 ;   float FLOAT_0058cd4b = 0.01000000
 ;   double DOUBLE_0058cd4f = 1.58735232019473E-314

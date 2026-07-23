@@ -50,20 +50,20 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de51
 ;
 ; Referenced Globals:
-;   string s_noc%05d.raw_00582386
-;   string s_Movie_recording_active:_movie\\%s_00582392
+;   TerminatedCString s_noc_05d_raw_00582386
+;   TerminatedCString s_Movie_recording_active_m_00582392
 ;   TerminatedCString s_wb_005823b3
-;   string s_movie_005823b6
-;   string s_screen_paint_:_%3.2f_ms_005825d7
+;   TerminatedCString s_movie_005823b6
+;   TerminatedCString s_screen_paint_3_2f_ms_005825d7
 ;   byte[56] BYTE_ARRAY_005825f0
-;   string s_demon%d.pcx_00582628
-;   string s_Camera:_\"%s\"_Group_%d_00582634
-;   string s_FR:_%f,_AVG:_%f,_PC:_%d_0058264a
-;   string s_Hero_:_%4.2f,%4.2f,%4.2f_xyz_and_00582662
-;   string s_Slew_:_%s,_Virtual_Director_:_%s_00582699
-;   string s_Fudge:_%g,%g,%g_005826ba
-;   string s_SFX:_%d_Samples:_Active:_%d/%.1f_005826ca
-;   string s_You're_dead._Game_over._0058271b
+;   TerminatedCString s_demon_d_pcx_00582628
+;   TerminatedCString s_Camera_s_Group_d_00582634
+;   TerminatedCString s_FR_f_AVG_f_PC_d_0058264a
+;   TerminatedCString s_Hero_4_2f_4_2f_4_2f_xyz_00582662
+;   TerminatedCString s_Slew_s_Virtual_Director_00582699
+;   TerminatedCString s_Fudge_g_g_g_005826ba
+;   TerminatedCString s_SFX_d_Samples_Active_d_1_005826ca
+;   TerminatedCString s_You_re_dead_Game_over_0058271b
 ;   double DOUBLE_0058273a = 0.0555555555555556
 ;   ... and 51 more
 ;

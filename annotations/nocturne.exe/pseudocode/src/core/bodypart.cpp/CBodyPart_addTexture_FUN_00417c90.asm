@@ -8,8 +8,8 @@
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 at 0051a2b0
 ;
 ; Referenced Globals:
-;   string s_..\\core\\bodypart.cpp_005790e8
-;   string s_Too_many_body_part_textures!_005790fd
+;   TerminatedCString s_core_bodypart_cpp_005790e8
+;   TerminatedCString s_Too_many_body_part_textu_005790fd
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

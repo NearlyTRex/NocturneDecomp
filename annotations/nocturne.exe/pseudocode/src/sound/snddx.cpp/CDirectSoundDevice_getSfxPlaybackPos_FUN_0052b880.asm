@@ -8,10 +8,10 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_..\\sound\\snddx.cpp_005946ae
-;   string s_DirectSoundDevice::getSfxPlaybac_005946c1
-;   string s_Get_playback_cursor_of_hardware_s_005946f7
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_sound_snddx_cpp_005946ae
+;   TerminatedCString s_DirectSoundDevice_getSfx_005946c1
+;   TerminatedCString s_Get_playback_cursor_of_h_005946f7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

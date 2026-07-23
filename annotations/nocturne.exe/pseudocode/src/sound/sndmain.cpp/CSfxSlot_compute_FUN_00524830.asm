@@ -31,20 +31,20 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526812
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00592e0d
-;   string s_SfxSlot::compute_-_must_be_locke_00592e22
-;   string s_SFXDBG:_sample_=_%s_00592e45
-;   string s_Killing_%s_in_compute()_00592e5a
-;   string s_auto_computing_delay..._00592e73
-;   string s_delayRemaining_=_%7.2fs_00592e8e
-;   string s_freq_=_%5.2f_00592ea9
-;   string s_distToEar_=_%7.2fs_00592eb9
-;   string s_doppler_=_%5.2f_00592ecf
-;   string s_doppler_(clamped)_=_%5.2f_00592ee2
-;   string s_non_spatialized_00592eff
-;   string s_vol_=_%5.2f_00592f12
-;   string s_channelVol[%d]_=_%5.2f_00592f21
-;   string s_effFreq_=_%5.2f_00592f3b
+;   TerminatedCString s_sound_sndmain_cpp_00592e0d
+;   TerminatedCString s_SfxSlot_compute_must_be_00592e22
+;   TerminatedCString s_SFXDBG_sample_s_00592e45
+;   TerminatedCString s_Killing_s_in_compute_00592e5a
+;   TerminatedCString s_auto_computing_delay_00592e73
+;   TerminatedCString s_delayRemaining_7_2fs_00592e8e
+;   TerminatedCString s_freq_5_2f_00592ea9
+;   TerminatedCString s_distToEar_7_2fs_00592eb9
+;   TerminatedCString s_doppler_5_2f_00592ecf
+;   TerminatedCString s_doppler_clamped_5_2f_00592ee2
+;   TerminatedCString s_non_spatialized_00592eff
+;   TerminatedCString s_vol_5_2f_00592f12
+;   TerminatedCString s_channelVol_d_5_2f_00592f21
+;   TerminatedCString s_effFreq_5_2f_00592f3b
 ;   undefined4 DAT_005a2148
 ;   ... and 18 more
 ;

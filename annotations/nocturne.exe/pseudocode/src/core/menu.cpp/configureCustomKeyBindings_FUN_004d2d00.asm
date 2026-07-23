@@ -19,20 +19,20 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d2ce0 = 004d3c8d
-;   string s_..\\core\\menu.cpp_00588d42
-;   string s_Too_many_custom_keys!_00588d53
-;   string s_Forward_00588e38
+;   TerminatedCString s_core_menu_cpp_00588d42
+;   TerminatedCString s_Too_many_custom_keys_00588d53
+;   TerminatedCString s_Forward_00588e38
 ;   TerminatedCString s_Back_00588e40
 ;   TerminatedCString s_Walk_00588e45
 ;   TerminatedCString s_Run_00588e4a
-;   string s_Strafe_on_00588e4e
-;   string s_Strafe_left_00588e58
-;   string s_Strafe_right_00588e64
-;   string s_Turn_left_00588e71
-;   string s_Turn_right_00588e7b
-;   string s_Fire_/_Action_00588e86
-;   string s_Use_item_00588e94
-;   string s_Light_00588e9d
+;   TerminatedCString s_Strafe_on_00588e4e
+;   TerminatedCString s_Strafe_left_00588e58
+;   TerminatedCString s_Strafe_right_00588e64
+;   TerminatedCString s_Turn_left_00588e71
+;   TerminatedCString s_Turn_right_00588e7b
+;   TerminatedCString s_Fire_Action_00588e86
+;   TerminatedCString s_Use_item_00588e94
+;   TerminatedCString s_Light_00588e9d
 ;   ... and 196 more
 ;
 ; Called Functions:

@@ -18,7 +18,7 @@
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0 at 004bb33b
 ;
 ; Referenced Globals:
-;   string s_icepick-punch?.wav_00586242
+;   TerminatedCString s_icepick_punch_wav_00586242
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa5f34

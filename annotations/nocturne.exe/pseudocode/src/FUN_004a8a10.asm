@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a3094
 ;
 ; Referenced Globals:
-;   string s_gasmask.kfm_00584aa1
+;   TerminatedCString s_gasmask_kfm_00584aa1
 ;   undefined1* PTR_FUN_0059e0e4 = 004a8a60
 ;
 ; Called Functions:

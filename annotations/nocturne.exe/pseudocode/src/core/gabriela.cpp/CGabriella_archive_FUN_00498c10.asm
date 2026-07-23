@@ -6,11 +6,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_objectToPickUp_005821aa
-;   string s_doorToOpen_005821b9
-;   string s_leverToPull_005821c4
-;   string s_ladderToClimb_005821d0
-;   string s_lhCarryObject_005821de
-;   string s_rhCarryObject_005821ec
+;   TerminatedCString s_doorToOpen_005821b9
+;   TerminatedCString s_leverToPull_005821c4
+;   TerminatedCString s_ladderToClimb_005821d0
+;   TerminatedCString s_lhCarryObject_005821de
+;   TerminatedCString s_rhCarryObject_005821ec
 ;   undefined4 DAT_005b92a8
 ;
 ; Called Functions:

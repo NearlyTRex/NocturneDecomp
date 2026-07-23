@@ -11,7 +11,7 @@
 ;   FUN_00418a00 at 00418ac4
 ;
 ; Referenced Globals:
-;   string s_boneguy-comeback.wav_00579561
+;   TerminatedCString s_boneguy_comeback_wav_00579561
 ;
 ; Called Functions:
 ;   core_xform.cpp_FUN_0055d610

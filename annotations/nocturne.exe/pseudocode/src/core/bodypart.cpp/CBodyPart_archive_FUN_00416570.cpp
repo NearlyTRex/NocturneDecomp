@@ -42,9 +42,9 @@ int core_bodypart_cpp_CBodyPart_archive_FUN_00416570(int param_1)
       do {
         iVar6 = *(int *)(param_1 + 0x17c) + iVar4;
         iVar4 = iVar4 + 0x3c;
-        _fscanf(DAT_00763e84,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   *(int *)(param_1 + 0x180) + iVar5,iVar6 + 0x18,iVar6 + 0x1c,iVar6 + 0x20,
-                   iVar6 + 0x24,iVar6 + 0x28,iVar6 + 0x2c,iVar6 + 0x30,iVar6 + 0x34,iVar6 + 0x38);
+        _fscanf(DAT_00763e84,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",*(int *)(param_1 + 0x180) + iVar5,
+                   iVar6 + 0x18,iVar6 + 0x1c,iVar6 + 0x20,iVar6 + 0x24,iVar6 + 0x28,iVar6 + 0x2c,
+                   iVar6 + 0x30,iVar6 + 0x34,iVar6 + 0x38);
         iVar5 = iVar5 + 4;
         *(uint *)(iVar6 + 4) = 3;
         local_14 = local_14 + 1;

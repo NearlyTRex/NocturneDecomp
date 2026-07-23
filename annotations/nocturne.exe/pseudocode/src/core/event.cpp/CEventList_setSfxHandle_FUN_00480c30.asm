@@ -8,10 +8,10 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c532
 ;
 ; Referenced Globals:
-;   string s_..\\core\\event.cpp_00580c26
-;   string s_CEventList::setSfxHandle_-_too_m_00580c38
-;   string s_..\\core\\event.cpp_00580c61
-;   string s_CEventList::setSfxHandle_-_sfx_h_00580c73
+;   TerminatedCString s_core_event_cpp_00580c26
+;   TerminatedCString s_CEventList_setSfxHandle_00580c38
+;   TerminatedCString s_core_event_cpp_00580c61
+;   TerminatedCString s_CEventList_setSfxHandle_00580c73
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

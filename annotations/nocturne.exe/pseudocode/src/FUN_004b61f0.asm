@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_index_005859be
+;   TerminatedCString s_index_005859be
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900

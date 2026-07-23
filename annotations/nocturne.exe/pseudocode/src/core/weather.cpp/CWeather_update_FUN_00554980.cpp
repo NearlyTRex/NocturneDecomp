@@ -136,8 +136,7 @@ LAB_005549ac:
     iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(_DAT_02de0770);
     if (iVar5 == 0) {
       _DAT_02de0770 =
-           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                     (0x02DC9450,param_1,"rain.wav @ .1");
+           core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,"rain.wav @ .1");
       return;
     }
   }

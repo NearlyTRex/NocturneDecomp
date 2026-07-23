@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_0123456789abcdef_005c1f74
+;   TerminatedCString s_s_0123456789abcdef_005c1f74
 ;
 ; *****************************************************************************
 

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_disableBodyPartDamage_00579070
+;   TerminatedCString s_disableBodyPartDamage_00579070
 ;   double DOUBLE_0057908a = 3
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368

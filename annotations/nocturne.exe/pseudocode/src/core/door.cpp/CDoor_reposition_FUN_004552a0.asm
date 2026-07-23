@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045528c = 004552da
-;   string s_..\\core\\door.cpp_0057d077
-;   string s_CDoor::reposition_-_Unknown_type_0057d088
+;   TerminatedCString s_core_door_cpp_0057d077
+;   TerminatedCString s_CDoor_reposition_Unknown_0057d088
 ;   double DOUBLE_0057d0aa = 1.57079632675000
 ;   double DOUBLE_0057d0b2 = 5.22209901682860E-315
 ;   double DOUBLE_0057d0ba = -0.300000000000000

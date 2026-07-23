@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DIE_0058cb6f
 ;   TerminatedCString s_HURT_0058cb73
-;   string s_DAMAGE_0058cb78
+;   TerminatedCString s_DAMAGE_0058cb78
 ;   TerminatedCString s_SHOT_0058cb7f
 ;
 ; Called Functions:

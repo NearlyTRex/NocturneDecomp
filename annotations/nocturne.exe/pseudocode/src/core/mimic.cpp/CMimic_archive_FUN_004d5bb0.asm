@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_speed_0058949a
-;   string s_modelName_005894a0
-;   string s_attackCondition_005894aa
-;   string s_attackMode_005894ba
-;   string s_mirrorPlaneActor_005894c5
-;   string s_motion_state_005894d6
-;   string s_morphActorType_005894e3
-;   string s_mirrorCondition_005894f2
+;   TerminatedCString s_speed_0058949a
+;   TerminatedCString s_modelName_005894a0
+;   TerminatedCString s_attackCondition_005894aa
+;   TerminatedCString s_attackMode_005894ba
+;   TerminatedCString s_mirrorPlaneActor_005894c5
+;   TerminatedCString s_motion_state_005894d6
+;   TerminatedCString s_morphActorType_005894e3
+;   TerminatedCString s_mirrorCondition_005894f2
 ;   undefined4 DAT_005baf48
 ;
 ; Called Functions:

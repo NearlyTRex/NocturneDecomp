@@ -21,8 +21,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Nocturne_c_1999_Terminal_0058847b
-;   string s_Nocturne_1999_Terminal_Reality_I_005884b4
-;   string s__005884ea
+;   TerminatedCString s_Nocturne_1999_Terminal_R_005884b4
+;   TerminatedCString s_anon_005884ea
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_014b9904

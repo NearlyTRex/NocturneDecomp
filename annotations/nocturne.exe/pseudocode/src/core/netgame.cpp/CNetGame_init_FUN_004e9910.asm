@@ -8,10 +8,10 @@
 ;   FUN_004c85f0 at 004c8d4a
 ;
 ; Referenced Globals:
-;   string s_netlog.txt_0058ba99
-;   string s_USERNAME_0058baa4
-;   string s_COMPUTERNAME_0058baad
-;   string s_MyComputer_0058baba
+;   TerminatedCString s_netlog_txt_0058ba99
+;   TerminatedCString s_USERNAME_0058baa4
+;   TerminatedCString s_COMPUTERNAME_0058baad
+;   TerminatedCString s_MyComputer_0058baba
 ;   undefined4 s_yComputer_0058baba+1
 ;   undefined4 s_Computer_0058baba+2
 ;   undefined4 s_omputer_0058baba+3

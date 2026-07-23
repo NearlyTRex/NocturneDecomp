@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_shell.kfm_0057f164
-;   string s_sh-cock.wav_0057f16e
+;   TerminatedCString s_shell_kfm_0057f164
+;   TerminatedCString s_sh_cock_wav_0057f16e
 ;   undefined4 DAT_005b80f0
 ;
 ; Called Functions:

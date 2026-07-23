@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cre_charge_wav_00587a89
-;   string s_lgunmask.raw_00587a98
+;   TerminatedCString s_lgunmask_raw_00587a98
 ;   double DOUBLE_00587aa5 = 100
 ;   float FLOAT_0059fd60 = 30
 ;   float FLOAT_0059fd68 = 2

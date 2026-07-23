@@ -6,14 +6,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_glassSize_00584fc8
-;   string s_glassTexture_00584fd2
-;   string s_opacity_00584fdf
-;   string s_shattered_00584fe7
-;   string s_breakEvent_00584ff1
-;   string s_mirrorFlag_00584ffc
-;   string s_breakableCondition_00585007
-;   string s_backgroundFlag_0058501a
-;   string s_brokenTexture_00585029
+;   TerminatedCString s_glassTexture_00584fd2
+;   TerminatedCString s_opacity_00584fdf
+;   TerminatedCString s_shattered_00584fe7
+;   TerminatedCString s_breakEvent_00584ff1
+;   TerminatedCString s_mirrorFlag_00584ffc
+;   TerminatedCString s_breakableCondition_00585007
+;   TerminatedCString s_backgroundFlag_0058501a
+;   TerminatedCString s_brokenTexture_00585029
 ;   undefined4 DAT_005b9668
 ;
 ; Called Functions:

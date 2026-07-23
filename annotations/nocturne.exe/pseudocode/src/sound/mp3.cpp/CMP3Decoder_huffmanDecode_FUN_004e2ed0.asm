@@ -10,8 +10,8 @@
 ;   FUN_004e5200 at 004e5384
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\mp3.cpp_0058b644
-;   string s_Illegal_Huffman_code_in_data._Fi_0058b655
+;   TerminatedCString s_sound_mp3_cpp_0058b644
+;   TerminatedCString s_Illegal_Huffman_code_in_0058b655
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cd944c

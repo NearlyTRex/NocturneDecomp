@@ -18,17 +18,17 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   string s_speed_0057f2c2
-;   string s_hitPoints_0057f2c8
-;   string s_poolMe_0057f2d2
-;   string s_speed_0057f2d9
-;   string s_poolMe_0057f2df
-;   string s_randomizeMe_0057f2e6
-;   string s_scriptVictim_0057f2f2
-;   string s_patrolNamePattern_0057f2ff
-;   string s_guardDistance_0057f311
-;   string s_victimHeight_0057f31f
-;   string s_victim_0057f32c
+;   TerminatedCString s_speed_0057f2c2
+;   TerminatedCString s_hitPoints_0057f2c8
+;   TerminatedCString s_poolMe_0057f2d2
+;   TerminatedCString s_speed_0057f2d9
+;   TerminatedCString s_poolMe_0057f2df
+;   TerminatedCString s_randomizeMe_0057f2e6
+;   TerminatedCString s_scriptVictim_0057f2f2
+;   TerminatedCString s_patrolNamePattern_0057f2ff
+;   TerminatedCString s_guardDistance_0057f311
+;   TerminatedCString s_victimHeight_0057f31f
+;   TerminatedCString s_victim_0057f32c
 ;   undefined4 DAT_005b7604
 ;
 ; Called Functions:

@@ -87,13 +87,13 @@
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410 at 004e84ed
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\mp3.cpp_0058b4e0
-;   string s_MPEG_Layer_2_-_pick_table_-_can'_0058b4f1
-;   string s_..\\sound\\mp3.cpp_0058b52a
-;   string s_js_bound_bad_layer/modext_(%d/%d_0058b53b
+;   TerminatedCString s_sound_mp3_cpp_0058b4e0
+;   TerminatedCString s_MPEG_Layer_2_pick_table_0058b4f1
+;   TerminatedCString s_sound_mp3_cpp_0058b52a
+;   TerminatedCString s_js_bound_bad_layer_modex_0058b53b
 ;   TerminatedCString s_sound_mp3_cpp_0058b9c0
-;   string s_Not_enough_main_data_to_decode_f_0058b9d1
-;   undefined4 s_ntroller$$_005bb246+0xa
+;   TerminatedCString s_Not_enough_main_data_to_0058b9d1
+;   undefined4 s_CMotionController_005bb246+0xa
 ;   undefined4 DAT_005bbc48
 ;   undefined4 DAT_005bbc88
 ;   undefined4 DAT_005bbdf0
@@ -332,7 +332,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x6048]    ; 004e8861
         ;   Label: LAB_004e8861
     SHL EAX,0x4                         ; 004e8868
-    MOV EAX,dword ptr [EAX + EDI*0x4 + 0x5bb250] ; 004e886b | s_ntroller$$_005bb246+0xa
+    MOV EAX,dword ptr [EAX + EDI*0x4 + 0x5bb250] ; 004e886b | s_CMotionController_005bb246+0xa
     MOV dword ptr [ESI + 0x14],EAX      ; 004e8872
         ;   Label: LAB_004e8872
     MOV EAX,dword ptr [ESP + 0x6000]    ; 004e8875

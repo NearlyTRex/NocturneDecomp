@@ -9,10 +9,10 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e2ba
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057ee5b
-;   string s_CPickList::enableItem_-_invalid_i_0057ee71
-;   string s_..\\shape\\edittool.cpp_0057ee97
-;   string s_Out_of_memory_0057eead
+;   TerminatedCString s_shape_edittool_cpp_0057ee5b
+;   TerminatedCString s_CPickList_enableItem_inv_0057ee71
+;   TerminatedCString s_shape_edittool_cpp_0057ee97
+;   TerminatedCString s_Out_of_memory_0057eead
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

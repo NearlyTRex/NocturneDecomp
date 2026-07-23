@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_WavOutDevice::poll_-_NULL_pointe_00594955
-;   string s_WavOutDevice::poll_-_sendBuffer_f_00594979
+;   TerminatedCString s_WavOutDevice_poll_NULL_p_00594955
+;   TerminatedCString s_WavOutDevice_poll_sendBu_00594979
 ;   undefined4 DAT_02dc943c
 ;
 ; Called Functions:

@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   string s_hotdemon-die.wav_00585f9a
-;   string s_hotdemon-hurt?.wav_00585fab
+;   TerminatedCString s_hotdemon_die_wav_00585f9a
+;   TerminatedCString s_hotdemon_hurt_wav_00585fab
 ;   double DOUBLE_00585fc5 = 2
 ;   undefined4 DAT_005b80f0
 ;

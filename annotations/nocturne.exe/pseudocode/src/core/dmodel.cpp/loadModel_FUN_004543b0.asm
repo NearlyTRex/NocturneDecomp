@@ -13,8 +13,8 @@
 ;   core_shotgun.cpp_CShotgun_onFired_FUN_00516620 at 005166f2
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057ce51
-;   string s_Can't_load_%s_because_keyFrame_m_0057ce64
+;   TerminatedCString s_core_dmodel_cpp_0057ce51
+;   TerminatedCString s_Can_t_load_s_because_key_0057ce64
 ;   undefined4 DAT_01abb658
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

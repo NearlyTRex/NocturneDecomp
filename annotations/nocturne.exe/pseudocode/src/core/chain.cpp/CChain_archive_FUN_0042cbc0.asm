@@ -6,17 +6,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vertexCount_0057a5a6
-;   string s_chainLength_0057a5b2
-;   string s_target_0057a5be
-;   string s_targetBone_0057a5c5
-;   string s_weight_0057a5d0
-;   string s_dampen_0057a5d7
-;   string s_friction_0057a5de
-;   string s_gravity_0057a5e7
-;   string s_textureName_0057a5ef
-;   string s_pullWavName_0057a5fb
-;   string s_moveWavName_0057a607
-;   string s_groundCollideFlag_0057a613
+;   TerminatedCString s_chainLength_0057a5b2
+;   TerminatedCString s_target_0057a5be
+;   TerminatedCString s_targetBone_0057a5c5
+;   TerminatedCString s_weight_0057a5d0
+;   TerminatedCString s_dampen_0057a5d7
+;   TerminatedCString s_friction_0057a5de
+;   TerminatedCString s_gravity_0057a5e7
+;   TerminatedCString s_textureName_0057a5ef
+;   TerminatedCString s_pullWavName_0057a5fb
+;   TerminatedCString s_moveWavName_0057a607
+;   TerminatedCString s_groundCollideFlag_0057a613
 ;   undefined4 DAT_005ad250
 ;
 ; Called Functions:

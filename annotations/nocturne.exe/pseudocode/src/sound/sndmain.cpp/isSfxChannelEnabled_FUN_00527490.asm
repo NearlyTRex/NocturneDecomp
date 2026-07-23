@@ -15,8 +15,8 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528dda
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005936cd
-;   string s_isSfxChannelEnabled_-_invalid_ch_005936e2
+;   TerminatedCString s_sound_sndmain_cpp_005936cd
+;   TerminatedCString s_isSfxChannelEnabled_inva_005936e2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -95,12 +95,3 @@ extern char CHAR_00h_0058e756;
 extern char CHAR_00h_0058ede4;
 extern char CHAR_00h_0058ee1f;
 
-// string
-extern string DAT_0058562B;
-extern string DAT_005859C4;
-extern string DAT_00585DED;
-extern string DAT_00587574;
-extern string DAT_005878ED;
-extern string DAT_00589237;
-extern string DAT_005895E1;
-

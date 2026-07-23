@@ -8,8 +8,8 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047af47
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setutil.cpp_00590eac
-;   string s_C3DSLight::advanceFilter_-_NULL_C_00590ec0
+;   TerminatedCString s_core_setutil_cpp_00590eac
+;   TerminatedCString s_C3DSLight_advanceFilter_00590ec0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

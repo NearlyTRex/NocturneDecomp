@@ -113,8 +113,8 @@ joined_r0x00521ffd:
         if (*(float *)(param_1 + 0x114) < (float)0.10000000000000001) {
           _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
           _DAT_01cc4804 = 0x294;
-          FUN_004c8440("Reference volume distance %g is too small in %s line %d!",
-                       (double)*(float *)(param_1 + 0x114),local_340,local_38);
+          FUN_004c8440("Reference volume distance %g is too small in %s line %d!",(double)*(float *)(param_1 + 0x114),
+                       local_340,local_38);
         }
         if (local_18 == 0) {
           *(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;
@@ -132,8 +132,8 @@ joined_r0x00521ffd:
           if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {
             _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
             _DAT_01cc4804 = 0x29c;
-            FUN_004c8440("Reference volume distance %g is too small in %s line %d!",
-                         (double)*(float *)(param_1 + 0x118),local_340,local_38);
+            FUN_004c8440("Reference volume distance %g is too small in %s line %d!",(double)*(float *)(param_1 + 0x118),
+                         local_340,local_38);
           }
         }
         else {
@@ -149,15 +149,14 @@ joined_r0x00521ffd:
               if (local_18 != 0) {
                 _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
                 _DAT_01cc4804 = 0x2a7;
-                FUN_004c8440("Minimum distance specified in %s on line %d, then again on line %d",local_340,local_18,local_38
-                            );
+                FUN_004c8440("Minimum distance specified in %s on line %d, then again on line %d",local_340,local_18,local_38);
               }
               local_18 = local_38;
               if (local_470 < (float)0.001) {
                 _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
                 _DAT_01cc4804 = 0x2a9;
-                FUN_004c8440("maxVol %g is too small in %s line %d!",(double)local_470,local_340
-                             ,local_38);
+                FUN_004c8440("maxVol %g is too small in %s line %d!",(double)local_470,local_340,
+                             local_38);
               }
               *(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;
             }
@@ -167,14 +166,12 @@ joined_r0x00521ffd:
                 if (-1 < *(int *)(param_1 + 0x110)) {
                   _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
                   _DAT_01cc4804 = 0x2b0;
-                  FUN_004c8440("Length for %s already known, then specified again in %s line %d",param_1,local_340,
-                               local_38);
+                  FUN_004c8440("Length for %s already known, then specified again in %s line %d",param_1,local_340,local_38);
                 }
                 if (local_34 < 1) {
                   _DAT_01cc4804 = 0x2b1;
                   _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-                  FUN_004c8440("Invalid length %d in %s line %d",local_34,local_340,
-                               local_38);
+                  FUN_004c8440("Invalid length %d in %s line %d",local_34,local_340,local_38);
                 }
                 *(int *)(param_1 + 0x110) = local_34;
               }
@@ -186,8 +183,7 @@ joined_r0x00521ffd:
                 else {
                   _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
                   _DAT_01cc4804 = 0x2be;
-                  FUN_004c8440("Error parsing %s line %d: %s",local_340,local_38,local_46c)
-                  ;
+                  FUN_004c8440("Error parsing %s line %d: %s",local_340,local_38,local_46c);
                 }
               }
             }

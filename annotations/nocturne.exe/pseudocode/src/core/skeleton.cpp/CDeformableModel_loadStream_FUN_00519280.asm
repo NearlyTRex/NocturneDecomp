@@ -41,20 +41,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_005916d9
-;   string s_..\\core\\skeleton.cpp_005916dd
-;   string s_Deformable_model_file_is_corrupt_005916f2
-;   string s_..\\core\\skeleton.cpp_00591713
-;   string s_Can't_load_model_of_version_%d,_t_00591728
-;   string s_%d,%d,%d,%d,%d_00591773
-;   string s_%d,%d,%d,%d_00591783
-;   string s_%d,%d,%d,%d,%d_00591790
-;   string s_%d,%d,%d,%d,%d,%d_005917a0
-;   string s_%[^_]_005917b3
-;   string s_\"%[^\"]\",_%d_005917ba
-;   string s_\"%[^\"]\",_%d,_%d_005917c7
+;   TerminatedCString s_core_skeleton_cpp_005916dd
+;   TerminatedCString s_Deformable_model_file_is_005916f2
+;   TerminatedCString s_core_skeleton_cpp_00591713
+;   TerminatedCString s_Can_t_load_model_of_vers_00591728
+;   TerminatedCString s_d_d_d_d_d_00591773
+;   TerminatedCString s_d_d_d_d_00591783
+;   TerminatedCString s_d_d_d_d_d_00591790
+;   TerminatedCString s_d_d_d_d_d_d_005917a0
+;   TerminatedCString s_anon_005917b3
+;   TerminatedCString s_d_005917ba
+;   TerminatedCString s_d_d_005917c7
 ;   TerminatedCString s_d_005917d8
-;   string s_%d,%d_005917dc
-;   string s_\"%[^\"]\",%d,%d,%d_005917e3
+;   TerminatedCString s_d_d_005917dc
+;   TerminatedCString s_d_d_d_005917e3
 ;   ... and 15 more
 ;
 ; Called Functions:

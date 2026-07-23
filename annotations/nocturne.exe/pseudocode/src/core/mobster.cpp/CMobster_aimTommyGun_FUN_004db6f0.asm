@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mobster_cpp_0058a361
-;   string s_CMobster::aimTommyGun_-_I'm_not_c_0058a375
+;   TerminatedCString s_CMobster_aimTommyGun_I_m_0058a375
 ;   float FLOAT_0058a3a5 = 3
 ;   double DOUBLE_0058a3a9 = 5.34643470770547E-315
 ;   double DOUBLE_0058a3b1 = 2

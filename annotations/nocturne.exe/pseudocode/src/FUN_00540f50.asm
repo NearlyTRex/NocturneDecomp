@@ -30,13 +30,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_confused_while_walking_0059614c
-;   string s_succubus-morph.wav_00596176
-;   string s_hdwing.cth_00596189
-;   undefined4 s_dwing.cth_00596189+1
-;   undefined4 s_wing.cth_00596189+2
-;   undefined4 s_ing.cth_00596189+3
-;   string s_succubusShutUp_00596194
-;   string s_succubus-horny-?.wav_005961a3
+;   TerminatedCString s_succubus_morph_wav_00596176
+;   TerminatedCString s_hdwing_cth_00596189
+;   undefined4 s_hdwing_cth_00596189+1
+;   undefined4 s_hdwing_cth_00596189+2
+;   undefined4 s_hdwing_cth_00596189+3
+;   TerminatedCString s_succubusShutUp_00596194
+;   TerminatedCString s_succubus_horny_wav_005961a3
 ;   double DOUBLE_005961bc = 3.14159265350000
 ;   double DOUBLE_005961c4 = 32
 ;   float FLOAT_005a28c8 = 1.5
@@ -362,13 +362,13 @@ section .text
     LEA EDI,[EAX + 0x2a90]              ; 0054126f
     MOV dword ptr [EAX + 0x2a8c],0x1    ; 00541275
     PUSH EDI                            ; 0054127f
-    MOV AL,byte ptr [ESI]               ; 00541280 | = "hdwing.cth" | s_wing.cth_00596189+2
+    MOV AL,byte ptr [ESI]               ; 00541280 | = "hdwing.cth" | s_hdwing_cth_00596189+2
         ;   Label: LAB_00541280
     MOV byte ptr [EDI],AL               ; 00541282
     CMP AL,0x0                          ; 00541284
     JZ 0x00541298                       ; 00541286
         ;   XREF to: 00541298 (CONDITIONAL_JUMP)  ; LAB_00541298
-    MOV AL,byte ptr [ESI + 0x1]         ; 00541288 | s_dwing.cth_00596189+1 | s_ing.cth_00596189+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00541288 | s_hdwing_cth_00596189+1 | s_hdwing_cth_00596189+3
     ADD ESI,0x2                         ; 0054128b
     MOV byte ptr [EDI + 0x1],AL         ; 0054128e
     ADD EDI,0x2                         ; 00541291

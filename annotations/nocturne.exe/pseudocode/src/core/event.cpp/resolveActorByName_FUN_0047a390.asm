@@ -10,14 +10,14 @@
 ;   core_event.cpp_parseVectorLocation_FUN_0047a4c0 at 0047a55e
 ;
 ; Referenced Globals:
-;   string s_Must_specify_actor_name_0057f3c6
+;   TerminatedCString s_Must_specify_actor_name_0057f3c6
 ;   undefined4 s_ust_specify_actor_name_0057f3c6+1
 ;   undefined4 s_st_specify_actor_name_0057f3c6+2
 ;   undefined4 s_t_specify_actor_name_0057f3c6+3
 ;   TerminatedCString s_anon_0057f3de
-;   string s_Can't_use_'$'_actor_specifier_in_0057f3e0
-;   string s_Actor_\"%s\"_does_not_exist._0057f40e
-;   string s_Actor_\"%s\"_is_of_type_%s,_this_c_0057f429
+;   TerminatedCString s_Can_t_use_actor_specifie_0057f3e0
+;   TerminatedCString s_Actor_s_does_not_exist_0057f40e
+;   TerminatedCString s_Actor_s_is_of_type_s_thi_0057f429
 ;   undefined4 DAT_0059cf1c
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005baf90

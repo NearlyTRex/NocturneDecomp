@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_0057a472
-;   string s_Bip01_head_0057a47d
+;   TerminatedCString s_Bip01_head_0057a47d
 ;   double DOUBLE_0057a48a = 32
 ;   float FLOAT_0057a492 = 0.2000000
 ;   float FLOAT_0057a496 = 1.5

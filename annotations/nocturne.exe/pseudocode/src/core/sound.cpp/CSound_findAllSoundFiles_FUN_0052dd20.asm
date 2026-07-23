@@ -8,10 +8,10 @@
 ;   FUN_004c85f0 at 004c8c7c
 ;
 ; Referenced Globals:
-;   string s_*.wav_005949ae
-;   string s_sound_005949b4
-;   string s_*.mp3_005949ba
-;   string s_sound_005949c0
+;   TerminatedCString s_wav_005949ae
+;   TerminatedCString s_sound_005949b4
+;   TerminatedCString s_mp3_005949ba
+;   TerminatedCString s_sound_005949c0
 ;   undefined4 DAT_02dc9610
 ;
 ; Called Functions:

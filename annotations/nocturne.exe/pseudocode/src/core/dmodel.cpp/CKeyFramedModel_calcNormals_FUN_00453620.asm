@@ -15,8 +15,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 at 00452751
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057cc8e
-;   string s_CKeyFramedModel::calcNormals()_-_0057cca1
+;   TerminatedCString s_core_dmodel_cpp_0057cc8e
+;   TerminatedCString s_CKeyFramedModel_calcNorm_0057cca1
 ;   double DOUBLE_0057cce6 = 65535
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

@@ -14,8 +14,8 @@
 ;   FUN_004a9270 at 004aa38d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\ghoul.cpp_00584be4
-;   string s_CGhoul::findDarkWayPoint_-_Can't_00584bf6
+;   TerminatedCString s_core_ghoul_cpp_00584be4
+;   TerminatedCString s_CGhoul_findDarkWayPoint_00584bf6
 ;   TerminatedCString s_darkPoint_00584ead
 ;   void* PTR_s_darkPoint_00584ead_005b9654 = 00584ead
 ;   undefined4 DAT_005be368

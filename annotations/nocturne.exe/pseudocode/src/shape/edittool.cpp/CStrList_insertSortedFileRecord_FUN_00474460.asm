@@ -22,8 +22,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0057ede3
-;   string s_%m/%d/%y_%I:%M:%S_%p_0057edef
-;   string s_%s_%s_%d_%s_%s_0057ee04
+;   TerminatedCString s_m_d_y_I_M_S_p_0057edef
+;   TerminatedCString s_s_s_d_s_s_0057ee04
 ;   undefined4 DAT_005b7078
 ;   undefined4 DAT_005b707c
 ;   undefined4 DAT_005b7278

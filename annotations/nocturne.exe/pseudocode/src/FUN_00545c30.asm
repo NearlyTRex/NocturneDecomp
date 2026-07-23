@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; Referenced Globals:
-;   string s_45-dry-!.wav_@2.0_00596898
-;   string s_bullet.kfm_005968aa
+;   TerminatedCString s_s_45_dry_wav_2_0_00596898
+;   TerminatedCString s_bullet_kfm_005968aa
 ;   float FLOAT_005968b5 = 0.1000000
 ;   double DOUBLE_005968b9 = 2.5
 ;   float FLOAT_005968c1 = -0.125

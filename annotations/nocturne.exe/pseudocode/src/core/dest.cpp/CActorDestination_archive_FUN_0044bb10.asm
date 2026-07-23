@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_whoGoesHere_0057be1f
-;   string s_whatEvent_0057be2b
-;   string s_destActor_0057be35
-;   string s_destClass_0057be3f
-;   string s_persistantEventFlag_0057be49
+;   TerminatedCString s_whatEvent_0057be2b
+;   TerminatedCString s_destActor_0057be35
+;   TerminatedCString s_destClass_0057be3f
+;   TerminatedCString s_persistantEventFlag_0057be49
 ;   undefined4 DAT_005ad4bc
 ;
 ; Called Functions:

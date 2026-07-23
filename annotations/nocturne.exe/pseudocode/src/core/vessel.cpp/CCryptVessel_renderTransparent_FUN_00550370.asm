@@ -17,7 +17,7 @@
 ;   undefined4 s_MENUCLD2_RAW_005974ab+1
 ;   undefined4 s_MENUCLD2_RAW_005974ab+2
 ;   undefined4 s_MENUCLD2_RAW_005974ab+3
-;   string s_BWATER%d.RAW_005974b8
+;   TerminatedCString s_BWATER_d_RAW_005974b8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;

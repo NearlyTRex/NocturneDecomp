@@ -64,8 +64,8 @@
 ;   FUN_004d49f0 at 004d4a72
 ;
 ; Referenced Globals:
-;   string s_gh-alrt[1,4].wav_00589414
-;   string s_gh-hits[1,4].wav_00589425
+;   TerminatedCString s_gh_alrt_1_4_wav_00589414
+;   TerminatedCString s_gh_hits_1_4_wav_00589425
 ;   double DOUBLE_00589437 = 2
 ;   float FLOAT_0058943f = 4.242857
 ;   float FLOAT_00589443 = 12.22222

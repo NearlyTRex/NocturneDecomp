@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_cre.kfm_005879e7
+;   TerminatedCString s_cre_kfm_005879e7
 ;   float FLOAT_0059fd5c = 8
 ;   float FLOAT_0059fd60 = 30
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059fd94 = 00553f10

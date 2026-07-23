@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Stop_hardware_sfx_secondary_buff_00594104
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Stop_hardware_sfx_second_00594104
 ;   TerminatedCString s_Stop_secondary_sound_buf_0059416f
-;   string s_Stop_primary_sound_buffer_0059418b
+;   TerminatedCString s_Stop_primary_sound_buffe_0059418b
 ;   undefined4 DAT_02dc9218
 ;   undefined4 DAT_02dc921c
 ;   undefined4 DAT_02dc92ac

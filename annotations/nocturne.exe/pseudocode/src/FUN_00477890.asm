@@ -7,8 +7,8 @@
 ; undefined        Stack[-0xb0]:1  local_b0
 ;
 ; Referenced Globals:
-;   string s_shotgun-noammo.wav_0057f119
-;   string s_elephantgun.wav_0057f12c
+;   TerminatedCString s_shotgun_noammo_wav_0057f119
+;   TerminatedCString s_elephantgun_wav_0057f12c
 ;   double DOUBLE_0057f13c = 3.14159265350000
 ;   double DOUBLE_0057f144 = 0.00555555555555555
 ;   double DOUBLE_0057f14c = 1.57491875110704E-314

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c826
-;   string s_CDemonLight::allocateFilter_-_Ou_0057c839
+;   TerminatedCString s_CDemonLight_allocateFilt_0057c839
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

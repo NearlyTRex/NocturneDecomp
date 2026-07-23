@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_bride.dfm_005799f4
+;   TerminatedCString s_bride_dfm_005799f4
 ;   undefined4 DAT_0059ad10
 ;   undefined4 DAT_0059ad14
 ;   undefined1* PTR_core_bride.cpp_CBride_setup_FUN_0041fc20_0059ad24 = 0041fc20

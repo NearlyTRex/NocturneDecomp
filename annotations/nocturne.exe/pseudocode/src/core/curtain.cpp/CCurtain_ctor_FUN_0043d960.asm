@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_SGLASS.RAW_0057b4c7
-;   undefined4 s_GLASS.RAW_0057b4c7+1
-;   undefined4 s_LASS.RAW_0057b4c7+2
-;   undefined4 s_ASS.RAW_0057b4c7+3
+;   TerminatedCString s_SGLASS_RAW_0057b4c7
+;   undefined4 s_SGLASS_RAW_0057b4c7+1
+;   undefined4 s_SGLASS_RAW_0057b4c7+2
+;   undefined4 s_SGLASS_RAW_0057b4c7+3
 ;   TerminatedCString s_none_0057b4d2
 ;   undefined4 s_one_0057b4d2+1
 ;   undefined4 s_ne_0057b4d2+2
@@ -47,13 +47,13 @@ section .text
     LEA EDI,[EDX + 0x164]               ; 0043d9b0
     MOV dword ptr [EDX + 0x158],0x3dcccccd ; 0043d9b6
     PUSH EDI                            ; 0043d9c0
-    MOV AL,byte ptr [ESI]               ; 0043d9c1 | = "SGLASS.RAW" | s_LASS.RAW_0057b4c7+2
+    MOV AL,byte ptr [ESI]               ; 0043d9c1 | = "SGLASS.RAW" | s_SGLASS_RAW_0057b4c7+2
         ;   Label: LAB_0043d9c1
     MOV byte ptr [EDI],AL               ; 0043d9c3
     CMP AL,0x0                          ; 0043d9c5
     JZ 0x0043d9d9                       ; 0043d9c7
         ;   XREF to: 0043d9d9 (CONDITIONAL_JUMP)  ; LAB_0043d9d9
-    MOV AL,byte ptr [ESI + 0x1]         ; 0043d9c9 | s_GLASS.RAW_0057b4c7+1 | s_ASS.RAW_0057b4c7+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0043d9c9 | s_SGLASS_RAW_0057b4c7+1 | s_SGLASS_RAW_0057b4c7+3
     ADD ESI,0x2                         ; 0043d9cc
     MOV byte ptr [EDI + 0x1],AL         ; 0043d9cf
     ADD EDI,0x2                         ; 0043d9d2

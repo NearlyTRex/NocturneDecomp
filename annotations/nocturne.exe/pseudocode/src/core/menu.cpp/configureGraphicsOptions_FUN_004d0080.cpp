@@ -267,8 +267,7 @@ LAB_004d039c:
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    pcVar9 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Bits per pixel : ")
-    ;
+    pcVar9 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Bits per pixel : ");
     pcVar11 = &DAT_01cc6080;
     do {
       cVar1 = *pcVar9;
@@ -321,8 +320,8 @@ LAB_004d039c:
     } while (cVar1 != '\0');
     if (0x01C775EC[8] == 0) {
       if (0x01C775EC[6] == 0) {
-        pcVar10 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                    ("Rating: Teen");
+        pcVar10 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Rating: Teen")
+        ;
         pcVar9 = &DAT_01cc6380;
         do {
           cVar1 = *pcVar10;

@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Actor_variable_name_must_0058dfaa
-;   string s_Actor_variable_name_\"%s\"_is_too_l_0058dfd2
-;   string s_Actor_variable_name_\"%s\"_is_not_v_0058dff7
+;   TerminatedCString s_Actor_variable_name_s_is_0058dfd2
+;   TerminatedCString s_Actor_variable_name_s_is_0058dff7
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:

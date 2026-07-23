@@ -8,14 +8,14 @@
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280 at 0051938b
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_005913e8
-;   string s_Too_many_texture_sets_in_CDeform_005913fd
-;   string s_..\\core\\skeleton.cpp_0059144f
-;   string s_Too_many_textures_in_CDeformable_00591464
-;   string s_..\\core\\skeleton.cpp_005914b2
-;   string s_Too_many_parts_in_CDeformableMod_005914c7
-;   string s_..\\core\\skeleton.cpp_00591512
-;   string s_Too_many_LODs_in_CDeformableMode_00591527
+;   TerminatedCString s_core_skeleton_cpp_005913e8
+;   TerminatedCString s_Too_many_texture_sets_in_005913fd
+;   TerminatedCString s_core_skeleton_cpp_0059144f
+;   TerminatedCString s_Too_many_textures_in_CDe_00591464
+;   TerminatedCString s_core_skeleton_cpp_005914b2
+;   TerminatedCString s_Too_many_parts_in_CDefor_005914c7
+;   TerminatedCString s_core_skeleton_cpp_00591512
+;   TerminatedCString s_Too_many_LODs_in_CDeform_00591527
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

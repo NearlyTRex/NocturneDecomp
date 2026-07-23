@@ -18,12 +18,12 @@
 ;   TerminatedCString s_part_status_opening_brac_00577cdc
 ;   TerminatedCString s_d_00577cf6
 ;   TerminatedCString s_d_00577cf9
-;   string s_description_00577cfc
-;   string s_part_status_entry_00577d08
+;   TerminatedCString s_description_00577cfc
+;   TerminatedCString s_part_status_entry_00577d08
 ;   TerminatedCString s_anon_00577d1a
 ;   TerminatedCString s_d_00577d1c
-;   string s_description_00577d1f
-;   string s_part_texture_entry_00577d2b
+;   TerminatedCString s_description_00577d1f
+;   TerminatedCString s_part_texture_entry_00577d2b
 ;   TerminatedCString s_anon_00577d3e
 ;   TerminatedCString s_part_status_info_closing_00577d40
 ;   TerminatedCString s_s_s_00577d5f

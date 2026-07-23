@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e3de
-;   string s_Parity_Check_999_0057e3f1
+;   TerminatedCString s_Parity_Check_999_0057e3f1
 ;   undefined4 DAT_005b6d08
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

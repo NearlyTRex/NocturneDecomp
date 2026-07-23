@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_go_berzerk_00584e45
-;   string s_ghoul-die-!-?.wav_@1.6_00584e51
-;   string s_guul_flinch%d_00584e68
-;   string s_ghoul-mad-!-?.wav_00584e76
+;   TerminatedCString s_ghoul_die_wav_1_6_00584e51
+;   TerminatedCString s_guul_flinch_d_00584e68
+;   TerminatedCString s_ghoul_mad_wav_00584e76
 ;   double DOUBLE_00584e8d = 65536
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c

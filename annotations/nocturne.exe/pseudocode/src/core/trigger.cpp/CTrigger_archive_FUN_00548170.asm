@@ -9,20 +9,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_triggerState_005969c7
-;   string s_triggerSize_005969d4
-;   string s_triggerType_005969e0
-;   string s_onName_005969ec
-;   string s_offName_005969f3
-;   string s_whoTriggers_005969fb
-;   string s_actorTriggerName_00596a07
-;   string s_lightMin_00596a18
-;   string s_lightMax_00596a21
-;   string s_laserType_00596a2a
-;   string s_actorTriggerTypes_00596a34
-;   string s_hitPoints_00596a46
-;   string s_pressurePlate_00596a50
-;   string s_whoTriggers_00596a5e
-;   string s_actorTriggerName_00596a6a
+;   TerminatedCString s_triggerSize_005969d4
+;   TerminatedCString s_triggerType_005969e0
+;   TerminatedCString s_onName_005969ec
+;   TerminatedCString s_offName_005969f3
+;   TerminatedCString s_whoTriggers_005969fb
+;   TerminatedCString s_actorTriggerName_00596a07
+;   TerminatedCString s_lightMin_00596a18
+;   TerminatedCString s_lightMax_00596a21
+;   TerminatedCString s_laserType_00596a2a
+;   TerminatedCString s_actorTriggerTypes_00596a34
+;   TerminatedCString s_hitPoints_00596a46
+;   TerminatedCString s_pressurePlate_00596a50
+;   TerminatedCString s_whoTriggers_00596a5e
+;   TerminatedCString s_actorTriggerName_00596a6a
 ;   ... and 11 more
 ;
 ; Called Functions:

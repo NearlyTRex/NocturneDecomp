@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_question.kfm_00596932
+;   TerminatedCString s_question_kfm_00596932
 ;   undefined1* PTR_core_trash.cpp_CTrash_setup_FUN_00546ce0_005a3544 = 00546ce0
 ;
 ; Called Functions:

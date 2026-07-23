@@ -9,8 +9,8 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 at 00494967
 ;
 ; Referenced Globals:
-;   string s_..\\core\\frankgen.cpp_00581d72
-;   string s_CFrankenstienMachine::findLeader_00581d87
+;   TerminatedCString s_core_frankgen_cpp_00581d72
+;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c7133c
 ;   undefined4 DAT_01cc4800

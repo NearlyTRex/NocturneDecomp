@@ -54,8 +54,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
       if ((float)98 < *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434)) {
         return 1;
       }
-      pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 ("You have used : ");
+      pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("You have used : ");
       pcVar4 = local_114;
       do {
         cVar1 = *pcVar3;

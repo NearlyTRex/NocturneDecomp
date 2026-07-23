@@ -10,17 +10,17 @@
 ;   core_inv.cpp_getItemIconName_FUN_004bed10 at 004bed21
 ;
 ; Referenced Globals:
-;   string s_CWeapon_00586cb9
-;   string s_CAmmo_00586cc1
-;   string s_CKeyActor_00586cc7
-;   string s_CBoxActor_00586cd1
-;   string s_CHealthItem_00586cdb
-;   string s_CGasMask_00586ce7
-;   string s_CFilmReel_00586cf0
-;   string s_CTrap_00586cfa
-;   string s_CBattery_00586d00
-;   string s_..\\core\\inv.cpp_00586d09
-;   string s_getModel_-_Can't_classify_:_%s_00586d19
+;   TerminatedCString s_CWeapon_00586cb9
+;   TerminatedCString s_CAmmo_00586cc1
+;   TerminatedCString s_CKeyActor_00586cc7
+;   TerminatedCString s_CBoxActor_00586cd1
+;   TerminatedCString s_CHealthItem_00586cdb
+;   TerminatedCString s_CGasMask_00586ce7
+;   TerminatedCString s_CFilmReel_00586cf0
+;   TerminatedCString s_CTrap_00586cfa
+;   TerminatedCString s_CBattery_00586d00
+;   TerminatedCString s_core_inv_cpp_00586d09
+;   TerminatedCString s_getModel_Can_t_classify_00586d19
 ;   undefined4 DAT_007641f4
 ;   undefined4 DAT_007646ac
 ;   undefined4 DAT_00764838

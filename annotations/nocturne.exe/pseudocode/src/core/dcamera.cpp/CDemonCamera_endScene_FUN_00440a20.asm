@@ -11,8 +11,8 @@
 ;   core_set.cpp_FUN_0050aba0 at 0050acde
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dcamera.cpp_0057b704
-;   string s_CDemonCamera::endScene_-_Scene_n_0057b718
+;   TerminatedCString s_core_dcamera_cpp_0057b704
+;   TerminatedCString s_CDemonCamera_endScene_Sc_0057b718
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd4260

@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_m_gun1_wav_2_3_f_005968d1
-;   string s_m-gun-t.wav_005968e7
+;   TerminatedCString s_m_gun_t_wav_005968e7
 ;   float FLOAT_005968f5 = 6
 ;   float FLOAT_005968f9 = 0.1666667
 ;   undefined4 DAT_005b9284

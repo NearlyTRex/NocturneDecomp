@@ -13,20 +13,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0058d785
-;   string s_toStartEvent_0058d78f
-;   string s_toEndEvent_0058d79c
-;   string s_stopEvent_0058d7a7
-;   string s_startSound_0058d7b1
-;   string s_stopSound_0058d7bc
-;   string s_activeSound_0058d7c6
-;   string s_courseFilename_0058d7d2
-;   string s_startPos_0058d7e1
-;   string s_origOrient_0058d7ea
-;   string s_endPos_0058d7f5
-;   string s_endOrient_0058d7fc
-;   string s_state_0058d806
-;   string s_param_0058d80c
-;   string s_travelTimeToStart_0058d812
+;   TerminatedCString s_toStartEvent_0058d78f
+;   TerminatedCString s_toEndEvent_0058d79c
+;   TerminatedCString s_stopEvent_0058d7a7
+;   TerminatedCString s_startSound_0058d7b1
+;   TerminatedCString s_stopSound_0058d7bc
+;   TerminatedCString s_activeSound_0058d7c6
+;   TerminatedCString s_courseFilename_0058d7d2
+;   TerminatedCString s_startPos_0058d7e1
+;   TerminatedCString s_origOrient_0058d7ea
+;   TerminatedCString s_endPos_0058d7f5
+;   TerminatedCString s_endOrient_0058d7fc
+;   TerminatedCString s_state_0058d806
+;   TerminatedCString s_param_0058d80c
+;   TerminatedCString s_travelTimeToStart_0058d812
 ;   ... and 22 more
 ;
 ; Called Functions:

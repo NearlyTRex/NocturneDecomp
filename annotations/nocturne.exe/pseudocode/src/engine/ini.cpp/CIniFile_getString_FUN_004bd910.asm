@@ -11,10 +11,10 @@
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 at 004bda4f
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\ini.cpp_00586644
-;   string s_CIniFile::getString_-_filename_n_00586656
-;   string s_..\\engine\\ini.cpp_00586680
-;   string s_CIniFile::getString_-_section_no_00586692
+;   TerminatedCString s_engine_ini_cpp_00586644
+;   TerminatedCString s_CIniFile_getString_filen_00586656
+;   TerminatedCString s_engine_ini_cpp_00586680
+;   TerminatedCString s_CIniFile_getString_secti_00586692
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -8,10 +8,10 @@
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280 at 005193f7
 ;
 ; Referenced Globals:
-;   string s_..\\core\\skeleton.cpp_00591571
-;   string s_CDeformableModel::allocLOD_-_inv_00591586
-;   string s_..\\core\\skeleton.cpp_005915b9
-;   string s_Out_of_hunk_in_CDeformableModel:_005915ce
+;   TerminatedCString s_core_skeleton_cpp_00591571
+;   TerminatedCString s_CDeformableModel_allocLO_00591586
+;   TerminatedCString s_core_skeleton_cpp_005915b9
+;   TerminatedCString s_Out_of_hunk_in_CDeformab_005915ce
 ;   undefined4 DAT_005a1ee0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

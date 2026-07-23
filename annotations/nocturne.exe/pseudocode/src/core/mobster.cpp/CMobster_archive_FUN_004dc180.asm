@@ -6,16 +6,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0058a3e1
-;   string s_modelName_0058a3e7
-;   string s_guardDistance_0058a3f1
-;   string s_motion_state_0058a3ff
-;   string s_clothList_0058a40c
-;   string s_postMode_0058a416
-;   string s_ourPost_0058a41f
-;   string s_vehicle_0058a427
-;   string s_sideOfCar_0058a42f
-;   string s_holdPosFlag_0058a439
-;   string s_holdPosCond_0058a445
+;   TerminatedCString s_modelName_0058a3e7
+;   TerminatedCString s_guardDistance_0058a3f1
+;   TerminatedCString s_motion_state_0058a3ff
+;   TerminatedCString s_clothList_0058a40c
+;   TerminatedCString s_postMode_0058a416
+;   TerminatedCString s_ourPost_0058a41f
+;   TerminatedCString s_vehicle_0058a427
+;   TerminatedCString s_sideOfCar_0058a42f
+;   TerminatedCString s_holdPosFlag_0058a439
+;   TerminatedCString s_holdPosCond_0058a445
 ;   undefined4 DAT_005bb124
 ;
 ; Called Functions:

@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_00578e7a
-;   string s_Can't_create_body_part!_00578e8f
+;   TerminatedCString s_Can_t_create_body_part_00578e8f
 ;   float FLOAT_00578eaa = 10
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800

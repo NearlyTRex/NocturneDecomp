@@ -16,19 +16,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_Movie_FPS_005822e6
-;   string s_Enter_number_of_frames_to_record_005822f6
-;   string s_Enter_image_width_00582340
-;   string s_Enter_image_height_00582352
-;   string s_Press_CTRL+V_to_begin_recording._00582365
-;   string s_cheat-1.wav_00582b89
-;   string s_headOfHorror_00582b95
-;   string s_The_horror_has_been_unleashed._00582ba2
-;   string s_cheat-1.wav_00582bc1
-;   string s_Enter_cheat_code_00582bcd
+;   TerminatedCString s_Enter_number_of_frames_t_005822f6
+;   TerminatedCString s_Enter_image_width_00582340
+;   TerminatedCString s_Enter_image_height_00582352
+;   TerminatedCString s_Press_CTRL_V_to_begin_re_00582365
+;   TerminatedCString s_cheat_1_wav_00582b89
+;   TerminatedCString s_headOfHorror_00582b95
+;   TerminatedCString s_The_horror_has_been_unle_00582ba2
+;   TerminatedCString s_cheat_1_wav_00582bc1
+;   TerminatedCString s_Enter_cheat_code_00582bcd
 ;   byte[54] BYTE_ARRAY_00582bde
-;   string s_Quit_cheating!!!_00582c14
-;   string s_Buy_Fly!_today!_00582c25
-;   string s_buy-fly-today.wav_@_4.0_00582c35
+;   TerminatedCString s_Quit_cheating_00582c14
+;   TerminatedCString s_Buy_Fly_today_00582c25
+;   TerminatedCString s_buy_fly_today_wav_4_0_00582c35
 ;   byte[52] BYTE_ARRAY_00582c4d
 ;   ... and 180 more
 ;

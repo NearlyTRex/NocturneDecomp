@@ -71,8 +71,8 @@ LAB_004e0a23:
       if (-1 < iVar2) {
         if (iVar2 != 10) goto LAB_004e0a23;
       }
-      _fscanf(param_2,"\"%[^\"]\",%f,%d,%d,%d\n",piVar3,piVar3 + 8,piVar3 + 9,piVar3 + 0x18,
-                 piVar3 + 0x19);
+      _fscanf(param_2,"\"%[^\"]\",%f,%d,%d,%d\n",piVar3,piVar3 + 8,piVar3 + 9,piVar3 + 0x18,piVar3 + 0x19
+                );
       do {
         iVar2 = _fgetc(param_2);
         if (iVar2 < 0) break;
@@ -82,7 +82,8 @@ LAB_004e0a23:
         iVar2 = _fgetc(param_2);
         if (iVar2 < 0) break;
       } while (iVar2 != 10);
-      _fscanf(param_2,"%d,%f,%d\n",&local_38,piVar3 + 0xf,piVar3 + 0x10);
+      _fscanf(param_2,"%d,%f,%d\n",&local_38,piVar3 + 0xf,piVar3 + 0x10)
+      ;
       piVar3[0xc] = local_38;
       do {
         iVar2 = _fgetc(param_2);
@@ -103,8 +104,8 @@ LAB_004e0a23:
         piVar4 = piVar3 + 0x20;
         do {
           local_30 = local_24 + iVar2 * 6;
-          _fscanf(param_2,"%d,%d,%d,%f,%f,%d\n",local_30,&local_38,local_1c,local_14,
-                     local_18,piVar4);
+          _fscanf(param_2,"%d,%d,%d,%f,%f,%d\n",local_30,&local_38,local_1c,local_14,local_18,
+                     piVar4);
           iVar2 = iVar2 + 1;
           local_14 = local_14 + 6;
           local_30[1] = local_38;

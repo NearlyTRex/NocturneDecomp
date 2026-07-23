@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00591135
-;   string s_weight_0059113f
-;   string s_initialVelocity_00591146
-;   string s_initRotVel_00591156
-;   string s_triggerEvent_00591161
+;   TerminatedCString s_weight_0059113f
+;   TerminatedCString s_initialVelocity_00591146
+;   TerminatedCString s_initRotVel_00591156
+;   TerminatedCString s_triggerEvent_00591161
 ;   TerminatedCString s_type_0059116e
 ;   undefined4 DAT_005be964
 ;

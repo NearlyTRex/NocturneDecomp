@@ -70,7 +70,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b8b0
-;   string s_Error_in_streo_processing._File:_0058b8c1
+;   TerminatedCString s_Error_in_streo_processin_0058b8c1
 ;   double DOUBLE_0058b8e8 = 0.261799387799149
 ;   double DOUBLE_0058b8f0 = 0.707106782373095
 ;   undefined4 DAT_005bc0f8

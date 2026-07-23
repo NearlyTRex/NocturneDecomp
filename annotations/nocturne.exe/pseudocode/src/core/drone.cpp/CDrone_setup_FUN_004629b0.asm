@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Bipn04_0057de95
-;   string s_Bipn09_0057de9c
+;   TerminatedCString s_Bipn04_0057de95
+;   TerminatedCString s_Bipn09_0057de9c
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0

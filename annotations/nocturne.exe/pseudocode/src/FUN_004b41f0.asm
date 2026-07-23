@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_bullet.kfm_00585637
+;   TerminatedCString s_bullet_kfm_00585637
 ;   undefined1* PTR_FUN_0059ea14 = 004b4250
 ;
 ; Called Functions:

@@ -8,7 +8,7 @@
 ;   FUN_004a3b90 at 004a3d38
 ;
 ; Referenced Globals:
-;   string s_Fire_state_00581530
+;   TerminatedCString s_Fire_state_00581530
 ;   char CHAR_1_0058153c = 1
 ;
 ; Called Functions:

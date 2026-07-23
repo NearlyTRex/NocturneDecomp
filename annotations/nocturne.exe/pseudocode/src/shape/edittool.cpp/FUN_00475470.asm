@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ee2a
-;   string s_Too_many_picklist_columns!_0057ee40
+;   TerminatedCString s_Too_many_picklist_column_0057ee40
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620

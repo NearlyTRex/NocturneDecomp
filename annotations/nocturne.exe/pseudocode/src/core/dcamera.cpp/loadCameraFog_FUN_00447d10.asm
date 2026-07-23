@@ -11,9 +11,9 @@
 ;   core_setutil.cpp_C3DSCamera_load_FUN_005144e0 at 005146c2
 ;
 ; Referenced Globals:
-;   string s_%d,%d,%d_0057bb13
-;   string s_%f,%f,%f_0057bb1d
-;   string s_%f,%f_0057bb27
+;   TerminatedCString s_d_d_d_0057bb13
+;   TerminatedCString s_f_f_f_0057bb1d
+;   TerminatedCString s_f_f_0057bb27
 ;   TerminatedCString s_f_0057bb2e
 ;
 ; Called Functions:

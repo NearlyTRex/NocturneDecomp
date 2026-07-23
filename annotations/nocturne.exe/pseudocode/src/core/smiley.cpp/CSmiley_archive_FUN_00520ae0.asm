@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_speed_005920a9
-;   string s_modelName_005920af
-;   string s_guardDistance_005920b9
-;   string s_motion_state_005920c7
+;   TerminatedCString s_speed_005920a9
+;   TerminatedCString s_modelName_005920af
+;   TerminatedCString s_guardDistance_005920b9
+;   TerminatedCString s_motion_state_005920c7
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80

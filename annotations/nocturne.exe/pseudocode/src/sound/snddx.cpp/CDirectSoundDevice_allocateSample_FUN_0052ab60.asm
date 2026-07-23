@@ -16,9 +16,9 @@
 ; undefined2       Stack[-0x16]:2  local_16
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_Create_secondary_buffer_00594257
-;   string s_DirectSoundDevice::allocateSampl_0059426f
+;   TerminatedCString s_DirectSoundDevice_alloca_0059426f
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9248
 ;   undefined4 DAT_02dc924c

@@ -11,20 +11,20 @@
 ;   FUN_004d7f80 at 004d7fa5
 ;
 ; Referenced Globals:
-;   string s_Preparing_actors..._00589a4d
-;   string s_//_mission_version,_actor_versio_00589a61
-;   string s_%d,%d_00589a84
-;   string s_//_Root_name_of_mission_00589a8b
+;   TerminatedCString s_Preparing_actors_00589a4d
+;   TerminatedCString s_mission_version_actor_ve_00589a61
+;   TerminatedCString s_d_d_00589a84
+;   TerminatedCString s_Root_name_of_mission_00589a8b
 ;   TerminatedCString s_s_00589aa4
-;   string s_//_setList_00589aa8
+;   TerminatedCString s_setList_00589aa8
 ;   TerminatedCString s_d_00589ab4
 ;   TerminatedCString s_s_00589ab8
 ;   TerminatedCString s_actorTypeList_00589abc
 ;   TerminatedCString s_d_00589ace
-;   string s_%s_%d_00589ad2
-;   string s_//_actor_count_00589ad9
+;   TerminatedCString s_s_d_00589ad2
+;   TerminatedCString s_actor_count_00589ad9
 ;   TerminatedCString s_d_00589ae9
-;   string s_//_inventory_actor_count_00589aed
+;   TerminatedCString s_inventory_actor_count_00589aed
 ;   TerminatedCString s_d_00589b07
 ;   ... and 15 more
 ;

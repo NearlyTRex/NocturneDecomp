@@ -59,8 +59,8 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,uint param_2)
   _fgets(local_138,0xff,iVar12);
   local_38 = param_1 + 0x37b2c;
   if (*(int *)(param_1 + 0x3ab20) < 3) {
-    _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",param_1 + 0x37b18,param_1 + 0x37b1c,
-               param_1 + 0x37b20,param_1 + 0x37b24,param_1 + 0x37b28,local_38);
+    _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",param_1 + 0x37b18,param_1 + 0x37b1c,param_1 + 0x37b20
+               ,param_1 + 0x37b24,param_1 + 0x37b28,local_38);
     fVar6 = 0.05f;
     fVar5 = 0.5f;
     fVar4 = 0.5f;

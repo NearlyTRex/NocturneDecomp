@@ -11,10 +11,10 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528cfa
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\ini.cpp_005866bb
-;   string s_CIniFile::setString_-_filename_n_005866cd
-;   string s_..\\engine\\ini.cpp_005866f7
-;   string s_CIniFile::setString_-_section_no_00586709
+;   TerminatedCString s_engine_ini_cpp_005866bb
+;   TerminatedCString s_CIniFile_setString_filen_005866cd
+;   TerminatedCString s_engine_ini_cpp_005866f7
+;   TerminatedCString s_CIniFile_setString_secti_00586709
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

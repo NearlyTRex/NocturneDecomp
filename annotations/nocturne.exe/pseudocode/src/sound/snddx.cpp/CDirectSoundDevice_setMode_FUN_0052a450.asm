@@ -12,11 +12,11 @@
 ; undefined2       Stack[-0x3a]:2  local_3a
 ;
 ; Referenced Globals:
-;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   string s_Create_temp_secondary_buffer_for_005941a5
-;   string s_Set_Primary_buffer_format_005941dc
-;   string s_Get_Primary_buffer_format_005941f6
-;   string s_Create_the_secondary_buffer_00594210
+;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
+;   TerminatedCString s_Create_temp_secondary_bu_005941a5
+;   TerminatedCString s_Set_Primary_buffer_forma_005941dc
+;   TerminatedCString s_Get_Primary_buffer_forma_005941f6
+;   TerminatedCString s_Create_the_secondary_buf_00594210
 ;   undefined4 DAT_005bed10
 ;   undefined4 DAT_005bed20
 ;   undefined4 DAT_005c3918

@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c74a
-;   string s_CNetGame::applySimFrameHistory_-_0058c75e
+;   TerminatedCString s_CNetGame_applySimFrameHi_0058c75e
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

@@ -11,14 +11,14 @@
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9893
 ;
 ; Referenced Globals:
-;   string s_initSection_0058e391
-;   string s_initSectionEnd_0058e39d
-;   string s_..\\core\\script.cpp_0058e3ac
-;   string s_Script_has_\"initSection\"_label,_b_0058e3bf
-;   string s_..\\core\\script.cpp_0058e3fe
-;   string s_Error_processing_script._Line:_%_0058e411
-;   string s_..\\core\\script.cpp_0058e44e
-;   string s_Infinite_loop_detected_in_initSe_0058e461
+;   TerminatedCString s_initSection_0058e391
+;   TerminatedCString s_initSectionEnd_0058e39d
+;   TerminatedCString s_core_script_cpp_0058e3ac
+;   TerminatedCString s_Script_has_initSection_l_0058e3bf
+;   TerminatedCString s_core_script_cpp_0058e3fe
+;   TerminatedCString s_Error_processing_script_0058e411
+;   TerminatedCString s_core_script_cpp_0058e44e
+;   TerminatedCString s_Infinite_loop_detected_i_0058e461
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01cc4800

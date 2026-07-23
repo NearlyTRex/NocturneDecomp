@@ -19,16 +19,16 @@
 ;   core_ground.cpp_CGround_load_FUN_004b14d0 at 004b179c
 ;
 ; Referenced Globals:
-;   string s_..\\core\\texlist.cpp_005965f5
-;   string s_CTextureList::load_-_No_extensio_00596609
+;   TerminatedCString s_core_texlist_cpp_005965f5
+;   TerminatedCString s_CTextureList_load_No_ext_00596609
 ;   TerminatedCString s_tex_00596631
 ;   undefined4 s_tex_00596631+1
 ;   undefined4 s_tex_00596631+2
 ;   undefined4 s_tex_00596631+3
 ;   TerminatedCString s_rt_00596636
 ;   TerminatedCString s_data_00596639
-;   string s_..\\core\\texlist.cpp_0059663e
-;   string s_CTextureList::load_-_Bad_filenam_00596652
+;   TerminatedCString s_core_texlist_cpp_0059663e
+;   TerminatedCString s_CTextureList_load_Bad_fi_00596652
 ;   TerminatedCString s_d_00596675
 ;   TerminatedCString s_s_00596679
 ;   undefined4 DAT_01cc4800

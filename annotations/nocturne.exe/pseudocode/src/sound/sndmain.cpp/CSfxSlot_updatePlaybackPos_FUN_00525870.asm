@@ -14,12 +14,12 @@
 ;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 at 00525090
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593142
-;   string s_SfxSlot::updatePlaybackPos_-_no_s_00593157
-;   string s_..\\sound\\sndmain.cpp_00593181
-;   string s_SfxSlot::updatePlaybackPos_-_inv_00593196
-;   string s_..\\sound\\sndmain.cpp_005931cb
-;   string s_SfxSlot::updatePlaybackPos_-_ste_005931e0
+;   TerminatedCString s_sound_sndmain_cpp_00593142
+;   TerminatedCString s_SfxSlot_updatePlaybackPo_00593157
+;   TerminatedCString s_sound_sndmain_cpp_00593181
+;   TerminatedCString s_SfxSlot_updatePlaybackPo_00593196
+;   TerminatedCString s_sound_sndmain_cpp_005931cb
+;   TerminatedCString s_SfxSlot_updatePlaybackPo_005931e0
 ;   double DOUBLE_0059322e = 0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

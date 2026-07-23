@@ -18,9 +18,9 @@
 ;   TerminatedCString s_d_005872bd
 ;   TerminatedCString s_d_005872c1
 ;   TerminatedCString s_f_005872c5
-;   string s_%s_\"%[^\"]\"_005872c9
-;   string s_..\\core\\inv.cpp_005872d6
-;   string s_CInventory::load_-_Can't_find_yo_005872e6
+;   TerminatedCString s_s_005872c9
+;   TerminatedCString s_core_inv_cpp_005872d6
+;   TerminatedCString s_CInventory_load_Can_t_fi_005872e6
 ;   undefined4 DAT_005bab68
 ;   undefined4 DAT_005bab6c
 ;   undefined4 DAT_005babd0

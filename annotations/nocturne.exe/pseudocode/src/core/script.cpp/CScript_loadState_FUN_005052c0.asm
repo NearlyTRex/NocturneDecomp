@@ -13,14 +13,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058fcc6
-;   string s_..\\core\\script.cpp_0058fcca
-;   string s_CScript::loadState_-_file_versio_0058fcdd
+;   TerminatedCString s_core_script_cpp_0058fcca
+;   TerminatedCString s_CScript_loadState_file_v_0058fcdd
 ;   TerminatedCString s_d_0058fd12
 ;   TerminatedCString s_d_0058fd16
 ;   TerminatedCString s_d_0058fd1a
 ;   TerminatedCString s_g_0058fd1e
 ;   TerminatedCString s_d_0058fd22
-;   string s_\"%[^\"]_0058fd26
+;   TerminatedCString s_anon_0058fd26
 ;   TerminatedCString s_anon_0058fd2d
 ;   TerminatedCString s_g_0058fd30
 ;   TerminatedCString s_g_0058fd34

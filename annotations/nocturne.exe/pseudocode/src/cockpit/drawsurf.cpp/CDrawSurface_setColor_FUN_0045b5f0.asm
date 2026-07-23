@@ -10,8 +10,8 @@
 ;   FUN_004fe9d0 at 004fea18
 ;
 ; Referenced Globals:
-;   string s_..\\cockpit\\drawsurf.cpp_0057d886
-;   string s_Invalid_bitsPerPixel_in_CDrawSur_0057d89e
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057d886
+;   TerminatedCString s_Invalid_bitsPerPixel_in_0057d89e
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d714

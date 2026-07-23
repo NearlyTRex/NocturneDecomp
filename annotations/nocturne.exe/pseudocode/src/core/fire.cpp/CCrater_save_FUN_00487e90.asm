@@ -12,13 +12,13 @@
 ;   core_fire.cpp_CFireEffect_save_FUN_0048c850 at 0048c880
 ;
 ; Referenced Globals:
-;   string s_%d,%d,%f,%f_00581301
-;   string s_%f,%f,%f_0058130e
-;   string s_%f,%f,%f_00581318
-;   string s_%f,%f,%f_00581322
-;   string s_%f,%f,%f_0058132c
-;   string s_%f,%f,%f_00581336
-;   string s_%f,%f,%f_00581340
+;   TerminatedCString s_d_d_f_f_00581301
+;   TerminatedCString s_f_f_f_0058130e
+;   TerminatedCString s_f_f_f_00581318
+;   TerminatedCString s_f_f_f_00581322
+;   TerminatedCString s_f_f_f_0058132c
+;   TerminatedCString s_f_f_f_00581336
+;   TerminatedCString s_f_f_f_00581340
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005644f0

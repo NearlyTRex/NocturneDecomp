@@ -9,8 +9,8 @@
 ;   core_set.cpp_FUN_00507f80 at 00508030
 ;
 ; Referenced Globals:
-;   string s_Ambient_set_low_by_script_00590d03
-;   string s_Ambient_set_ridiculously_high_00590d1e
+;   TerminatedCString s_Ambient_set_low_by_scrip_00590d03
+;   TerminatedCString s_Ambient_set_ridiculously_00590d1e
 ;   double DOUBLE_00590d41 = 0.25
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368

@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -165,20 +165,20 @@
   "globals": [
     {
       "addr": "0058515d",
-      "name": "s_%f,%f,%f_0058515d",
-      "type": "string",
+      "name": "s_f_f_f_0058515d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00585167",
-      "name": "s_%d,%d_00585167",
-      "type": "string",
+      "name": "s_d_d_00585167",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058516e",
-      "name": "s_%d,%f,%d,%d,%d_0058516e",
-      "type": "string",
+      "name": "s_d_f_d_d_d_0058516e",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -337,7 +337,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],",
+      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],param_1[8]",
       "type": "unnamed_param"
     },
     {
@@ -345,7 +345,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],",
+      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],param_1[8]",
       "type": "unnamed_param"
     },
     {
@@ -353,7 +353,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],",
+      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],param_1[8]",
       "type": "unnamed_param"
     },
     {
@@ -361,7 +361,15 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],",
+      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],param_1[8]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fprintf(param_2,\"%d,%f,%d,%d,%d\\n\",param_1[5],(double)(float)param_1[6],param_1[7],param_1[8]",
       "type": "unnamed_param"
     },
     {
@@ -369,15 +377,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8],param_1[9]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[8],param_1[9]);",
+      "text": ",param_1[9]);",
       "type": "unnamed_param"
     },
     {

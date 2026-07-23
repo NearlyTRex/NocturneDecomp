@@ -21,9 +21,9 @@
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f7b
 ;
 ; Referenced Globals:
-;   string s_..\\core\\boneguy.cpp_0057950d
-;   string s_CBoneGuy::explode_-_Not_enough_c_00579521
-;   string s_boneguy-fallapart.wav_0057954b
+;   TerminatedCString s_core_boneguy_cpp_0057950d
+;   TerminatedCString s_CBoneGuy_explode_Not_eno_00579521
+;   TerminatedCString s_boneguy_fallapart_wav_0057954b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

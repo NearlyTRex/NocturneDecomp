@@ -19,8 +19,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320 at 004e4344
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\mp3.cpp_0058b591
-;   string s_Cannot_read_or_write_more_than_%_0058b5a2
+;   TerminatedCString s_sound_mp3_cpp_0058b591
+;   TerminatedCString s_Cannot_read_or_write_mor_0058b5a2
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
 ;   undefined4 DAT_01cc4800

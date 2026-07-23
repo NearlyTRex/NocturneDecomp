@@ -20,14 +20,14 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2374
 ;
 ; Referenced Globals:
-;   string s_stats_00584672
+;   TerminatedCString s_stats_00584672
 ;   TerminatedCString s_rt_00584678
-;   string s_credits.txt_0058467b
+;   TerminatedCString s_credits_txt_0058467b
 ;   TerminatedCString s_data_00584687
 ;   TerminatedCString s_end_0058468c
-;   string s_..\\core\\game.cpp_00584691
-;   string s_CGame::rollCredits_-_Out_of_memo_005846a2
-;   string s_faded-remix.mp3_005846c5
+;   TerminatedCString s_core_game_cpp_00584691
+;   TerminatedCString s_CGame_rollCredits_Out_of_005846a2
+;   TerminatedCString s_faded_remix_mp3_005846c5
 ;   float FLOAT_005846d6 = 32
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_014b9900

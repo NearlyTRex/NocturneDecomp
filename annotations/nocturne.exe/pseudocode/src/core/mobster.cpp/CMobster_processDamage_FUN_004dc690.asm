@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_die_wav_0058a489
-;   string s_mobster-hit-?.wav_0058a49b
+;   TerminatedCString s_mobster_hit_wav_0058a49b
 ;   undefined4 DAT_02dd1008
 ;
 ; Called Functions:

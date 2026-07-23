@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c6de
-;   string s_CDemonLight::beginBackgroundScen_0057c6f1
-;   string s_..\\core\\dlight.cpp_0057c724
-;   string s_CDemonLight::beginBackgroundScen_0057c737
+;   TerminatedCString s_CDemonLight_beginBackgro_0057c6f1
+;   TerminatedCString s_core_dlight_cpp_0057c724
+;   TerminatedCString s_CDemonLight_beginBackgro_0057c737
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01ab99f0
 ;   undefined4 DAT_01ab99f4

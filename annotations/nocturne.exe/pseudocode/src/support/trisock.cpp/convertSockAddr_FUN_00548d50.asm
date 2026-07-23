@@ -9,8 +9,8 @@
 ;   support_trisock.cpp_receiveSocketData_FUN_00549010 at 00549072
 ;
 ; Referenced Globals:
-;   string s_..\\support\\trisock.cpp_00596c29
-;   string s_sockaddr_is_not_of_AF_INET_famil_00596c40
+;   TerminatedCString s_support_trisock_cpp_00596c29
+;   TerminatedCString s_sockaddr_is_not_of_AF_IN_00596c40
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

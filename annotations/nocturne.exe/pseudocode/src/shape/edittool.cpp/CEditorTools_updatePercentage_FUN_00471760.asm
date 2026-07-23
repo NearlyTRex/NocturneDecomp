@@ -20,9 +20,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e833
-;   string s_CEditorTools::updatePercentageWi_0057e849
-;   string s_%d%%_complete_0057e880
-;   string s_%d:%02d_elapsed,_approximately_%_0057e88e
+;   TerminatedCString s_CEditorTools_updatePerce_0057e849
+;   TerminatedCString s_d_complete_0057e880
+;   TerminatedCString s_d_02d_elapsed_approximat_0057e88e
 ;   double DOUBLE_0057e8c2 = 100
 ;   double DOUBLE_0057e8ca = 0.5
 ;   double DOUBLE_0057e8d2 = 8.47710503472222E-7

@@ -22,15 +22,15 @@
 ;   char CHAR_00h_0058c926 = \x00
 ;   TerminatedCString s_d_0058c927
 ;   TerminatedCString s_d_0058c92b
-;   string s_..\\support\\newmsg.cpp_0058c92f
-;   string s_Unknown_message_file_version_0058c945
-;   string s_\"%[^\"]\"_0058c962
+;   TerminatedCString s_support_newmsg_cpp_0058c92f
+;   TerminatedCString s_Unknown_message_file_ver_0058c945
+;   TerminatedCString s_anon_0058c962
 ;   TerminatedCString s_anon_0058c96b
-;   string s_\"%[^\"]\",_\"%[^\"]\"_0058c96d
-;   string s_..\\support\\newmsg.cpp_0058c97f
-;   string s_Error_reading_%s_0058c995
-;   string s_..\\support\\newmsg.cpp_0058c9a6
-;   string s_Too_many_messages_in_%s_0058c9bc
+;   TerminatedCString s_anon_0058c96d
+;   TerminatedCString s_support_newmsg_cpp_0058c97f
+;   TerminatedCString s_Error_reading_s_0058c995
+;   TerminatedCString s_support_newmsg_cpp_0058c9a6
+;   TerminatedCString s_Too_many_messages_in_s_0058c9bc
 ;   undefined4 DAT_005bdf50
 ;   ... and 8 more
 ;

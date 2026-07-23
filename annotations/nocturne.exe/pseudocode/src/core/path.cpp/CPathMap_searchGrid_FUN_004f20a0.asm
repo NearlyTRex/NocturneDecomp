@@ -15,8 +15,8 @@
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f1242
 ;
 ; Referenced Globals:
-;   string s_..\\core\\path.cpp_0058cc6f
-;   string s_queuePop_-_empty_queue?!_0058cc80
+;   TerminatedCString s_core_path_cpp_0058cc6f
+;   TerminatedCString s_queuePop_empty_queue_0058cc80
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01e312f4

@@ -23,9 +23,9 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d822
 ;
 ; Referenced Globals:
-;   string s_%s_tried_to_follow_NULL_actor!_0057a053
-;   string s_%s_confused_while_following_%s_0057a073
-;   string s_%s_confused_after_pathmap_call_w_0057a093
+;   TerminatedCString s_s_tried_to_follow_NULL_a_0057a053
+;   TerminatedCString s_s_confused_while_followi_0057a073
+;   TerminatedCString s_s_confused_after_pathmap_0057a093
 ;   double DOUBLE_0057a0ca = 20
 ;   double DOUBLE_0057a0d2 = 40
 ;   double DOUBLE_0057a0da = 0.100000000000000

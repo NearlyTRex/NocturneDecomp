@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_waveOutClose_005753f0 = 00175858
 ;   void* PTR_GlobalFree_00575548 = 00175e34
-;   string s_waveOutClose_failed._0059490e
+;   TerminatedCString s_waveOutClose_failed_0059490e
 ;   undefined4 DAT_02dc93a4
 ;
 ; Called Functions:

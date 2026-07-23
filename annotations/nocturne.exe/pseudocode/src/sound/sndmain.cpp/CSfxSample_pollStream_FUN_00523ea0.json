@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 1686,
+    "complexity_score": 1696,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 216,
-    "suspect_count": 143,
+    "suspect_count": 144,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -243,98 +243,98 @@
     },
     {
       "addr": "00592917",
-      "name": "s_generateSilence_-_invalid_bit_de_00592917",
-      "type": "string",
+      "name": "s_generateSilence_invalid_00592917",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592b2d",
-      "name": "s_..\\sound\\sndmain.cpp_00592b2d",
-      "type": "string",
+      "name": "s_sound_sndmain_cpp_00592b2d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592b42",
-      "name": "s_SfxSlot::kill_-_must_be_locked!_00592b42",
-      "type": "string",
+      "name": "s_SfxSlot_kill_must_be_loc_00592b42",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592b62",
-      "name": "s_..\\sound\\sndmain.cpp_00592b62",
-      "type": "string",
+      "name": "s_sound_sndmain_cpp_00592b62",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592b77",
-      "name": "s_SfxSample::pollStream_-_my_sfx_i_00592b77",
-      "type": "string",
+      "name": "s_SfxSample_pollStream_my_00592b77",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592bac",
-      "name": "s_SfxSample::pollStream_-_no_sound_00592bac",
-      "type": "string",
+      "name": "s_SfxSample_pollStream_no_00592bac",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592bd6",
-      "name": "s_SfxSample::pollStream_-_error_qu_00592bd6",
-      "type": "string",
+      "name": "s_SfxSample_pollStream_err_00592bd6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592c14",
-      "name": "s_..\\sound\\sndmain.cpp_00592c14",
-      "type": "string",
+      "name": "s_sound_sndmain_cpp_00592c14",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592c29",
-      "name": "s_nextLoadSampleDest_=_%d,_allocLe_00592c29",
-      "type": "string",
+      "name": "s_nextLoadSampleDest_d_all_00592c29",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592c53",
-      "name": "s_Error_locking_%s_while_streaming_00592c53",
-      "type": "string",
+      "name": "s_Error_locking_s_while_st_00592c53",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592c75",
-      "name": "s_..\\sound\\sndmain.cpp_00592c75",
-      "type": "string",
+      "name": "s_sound_sndmain_cpp_00592c75",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592c8a",
-      "name": "s_Can't_stream_unless_we_have_mp3_d_00592c8a",
-      "type": "string",
+      "name": "s_Can_t_stream_unless_we_h_00592c8a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592cc4",
-      "name": "s_Error_reading_%s_while_streaming_00592cc4",
-      "type": "string",
+      "name": "s_Error_reading_s_while_st_00592cc4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592ce6",
-      "name": "s_Error_locking_%s_while_streaming_00592ce6",
-      "type": "string",
+      "name": "s_Error_locking_s_while_st_00592ce6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592d08",
-      "name": "s_..\\sound\\sndmain.cpp_00592d08",
-      "type": "string",
+      "name": "s_sound_sndmain_cpp_00592d08",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592d1d",
-      "name": "s_MP3_decoded_more_than_batch:_r_=_00592d1d",
-      "type": "string",
+      "name": "s_MP3_decoded_more_than_ba_00592d1d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -867,18 +867,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));",
+      "text": "FUN_004c8440(\"nextLoadSampleDest = %d, allocLength = %d\",*(uint *)((int)param_1 + 0x140),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004c8440(\"nextLoadSampleDest = %d, allocLength = %d\",*(uint *)((int)param_1 + 0x140),",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));",
+      "text": "*(uint *)((int)param_1 + 0x138));",
       "type": "pointer_cast"
     },
     {
@@ -886,15 +894,7 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));",
+      "text": "*(uint *)((int)param_1 + 0x138));",
       "type": "unnamed_param"
     },
     {
@@ -1515,10 +1515,18 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 87,
+      "line": 86,
       "match": "(uint *)((int)param_1 + 0x140)",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x140),*(uint *)((int)param_1 + 0x138));",
+      "text": "FUN_004c8440(\"nextLoadSampleDest = %d, allocLength = %d\",*(uint *)((int)param_1 + 0x140),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 87,
+      "match": "(uint *)((int)param_1 + 0x138)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0x138));",
       "type": "pointer_cast"
     },
     {

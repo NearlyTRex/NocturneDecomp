@@ -12,8 +12,8 @@
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 at 004785b1
 ;
 ; Referenced Globals:
-;   string s_..\\core\\hero.cpp_0058569a
-;   string s_closestHeroToPoint_-_no_heros!_005856ab
+;   TerminatedCString s_core_hero_cpp_0058569a
+;   TerminatedCString s_closestHeroToPoint_no_he_005856ab
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

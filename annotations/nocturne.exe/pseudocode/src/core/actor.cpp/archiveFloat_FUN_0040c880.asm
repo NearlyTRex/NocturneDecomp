@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_f_00577c79
 ;   TerminatedCString s_s_g_00577c7c
-;   string s_Floating_point_value_005acc60
+;   TerminatedCString s_Floating_point_value_005acc60
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

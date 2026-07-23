@@ -11,7 +11,7 @@
 ;   void* PTR_mciSendStringA_005753e0 = 00175816
 ;   void* PTR_InvalidateRect_0057543c = 001759a8
 ;   void* PTR_UpdateWindow_00575484 = 00175ac4
-;   string s_close_mov_0059818f
+;   TerminatedCString s_close_mov_0059818f
 ;   undefined4 DAT_02de3120
 ;   undefined4 DAT_02de3124
 ;

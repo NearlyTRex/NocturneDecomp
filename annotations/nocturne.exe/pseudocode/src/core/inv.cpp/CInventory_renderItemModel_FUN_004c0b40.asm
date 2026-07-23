@@ -36,10 +36,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_005871ad
-;   string s_CKeyActor_005871b2
-;   string s_CKeyActor_005871bc
-;   string s_axe1.kfm_005871c6
-;   string s_ax.kfm_005871cf
+;   TerminatedCString s_CKeyActor_005871b2
+;   TerminatedCString s_CKeyActor_005871bc
+;   TerminatedCString s_axe1_kfm_005871c6
+;   TerminatedCString s_ax_kfm_005871cf
 ;   float FLOAT_005871d9 = 0.5
 ;   double DOUBLE_005871e1 = 2
 ;   float FLOAT_005871e9 = -0.5

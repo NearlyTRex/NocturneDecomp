@@ -10,13 +10,13 @@ Total functions: 4321
 Clean functions: 251 (5.8%)
 Functions with suspects: 4070 (94.2%)
 
-Total suspect patterns: 81123
-Average suspects per function: 18.77
+Total suspect patterns: 81137
+Average suspects per function: 18.78
 
 Virtual files: 199 total, 0 at 100%, 0 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3164, Average: 46.0
+  Min: 4, Max: 3156, Average: 45.9
 
 Average complexity score: 242.4
 
@@ -33,8 +33,8 @@ SUSPECT PATTERN BREAKDOWN
   param_count_too_few       2077
   unresolved_funcptr        1719
   warning_overlapping_globals 1353
-  pointer_cast              1200
-  static_uninitvar          1028
+  pointer_cast              1201
+  static_uninitvar          1041
   pointer_truncation        987
   unaffected_reg            677
   unrolled_memcpy           660
@@ -44,7 +44,7 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strcpy           465
   static_object_index       430
   register_param            409
-  unknown_field             273
+  unknown_field             272
   unrolled_strlen           234
   nonstandard_int           229
   static_legacy_uninitvar   191
@@ -96,6 +96,7 @@ SUSPECT PATTERN BREAKDOWN
   undefined_type            2
   dropped_self_copy         2
   undefined_ram             1
+  unresolved_register       1
   loop_clobbered_constant   1
   static_memleak            1
   warning_max_restarts      1
@@ -157,12 +158,12 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 7089, suspects: 386, lines: 3164)
+  004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 7081, suspects: 386, lines: 3156)
   00535900: FUN_00535900 (score: 5682, suspects: 455, lines: 1097)
-  0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 5561, suspects: 350, lines: 1996)
+  0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 5545, suspects: 350, lines: 1980)
   0055ef50: core_zombie.cpp_FUN_0055ef50 (score: 5276, suspects: 426, lines: 971)
   004a9270: FUN_004a9270 (score: 5132, suspects: 419, lines: 892)
-  0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 4634, suspects: 305, lines: 1544)
+  0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 4621, suspects: 305, lines: 1531)
   004a0550: core_game.cpp_CGame_processCheatCodes_FUN_004a0550 (score: 4267, suspects: 216, lines: 2057)
   0041ad10: core_box.cpp_CBox_processPhysics_FUN_0041ad10 (score: 4025, suspects: 327, lines: 720)
   00458a90: core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 (score: 3885, suspects: 318, lines: 670)
@@ -178,14 +179,14 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004349a0: engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (score: 2897, suspects: 243, lines: 432)
   004accf0: FUN_004accf0 (score: 2828, suspects: 241, lines: 398)
   00569928: FUN_00569928 (score: 2800, suspects: 239, lines: 360)
-  004bbaf0: core_imp.cpp_CImp_process_FUN_004bbaf0 (score: 2577, suspects: 211, lines: 442)
+  004bbaf0: core_imp.cpp_CImp_process_FUN_004bbaf0 (score: 2576, suspects: 211, lines: 441)
   004a7870: core_gargoyle.cpp_CGargoyle_process_FUN_004a7870 (score: 2468, suspects: 209, lines: 358)
   00469ce0: FUN_00469ce0 (score: 2432, suspects: 168, lines: 707)
   00505ba0: core_sentinel.cpp_CSentinel_process_FUN_00505ba0 (score: 2426, suspects: 201, lines: 396)
   00413800: core_batman.cpp_CBatman_process_FUN_00413800 (score: 2421, suspects: 200, lines: 401)
   00497900: FUN_00497900 (score: 2358, suspects: 194, lines: 373)
-  00418a00: FUN_00418a00 (score: 2304, suspects: 186, lines: 409)
-  0041fe40: FUN_0041fe40 (score: 2171, suspects: 181, lines: 346)
+  00418a00: FUN_00418a00 (score: 2303, suspects: 186, lines: 408)
+  0041fe40: FUN_0041fe40 (score: 2170, suspects: 181, lines: 345)
   005200c0: core_smiley.cpp_CSmiley_process_FUN_005200c0 (score: 2106, suspects: 175, lines: 336)
 
 FUNCTIONS BY SUSPECT TYPE
@@ -377,7 +378,7 @@ FUNCTIONS BY SUSPECT TYPE
     004d9f59: core_mmx.c_detectMMXSupport_FUN_004d9f59
     ... and 42 more
 
-  unknown_field (81 functions):
+  unknown_field (80 functions):
     0040db50: core_actor.cpp_FUN_0040db50
     00417320: core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320
     00418a00: FUN_00418a00
@@ -388,7 +389,7 @@ FUNCTIONS BY SUSPECT TYPE
     00422050: core_bugs.cpp_FUN_00422050
     004227b0: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
     00422c70: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
-    ... and 71 more
+    ... and 70 more
 
   unrolled_strlen (68 functions):
     004014a0: FUN_004014a0
@@ -766,6 +767,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   undefined_ram (1 functions):
     00402e90: engine_2d.c_FUN_00402e90
+
+  unresolved_register (1 functions):
+    004d9eac: core_mmx.c_detectIntelProcessor_FUN_004d9eac
 
   loop_clobbered_constant (1 functions):
     004e58d0: sound_mp3.cpp_requantizeLayer3Samples_FUN_004e58d0

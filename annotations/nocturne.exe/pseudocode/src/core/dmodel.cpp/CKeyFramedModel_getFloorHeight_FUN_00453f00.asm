@@ -8,8 +8,8 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050f77a
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dmodel.cpp_0057cd81
-;   string s_Tried_to_call_CKeyFramedModel::g_0057cd94
+;   TerminatedCString s_core_dmodel_cpp_0057cd81
+;   TerminatedCString s_Tried_to_call_CKeyFramed_0057cd94
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

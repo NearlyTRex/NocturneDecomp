@@ -10,10 +10,10 @@
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 at 005538ff
 ;
 ; Referenced Globals:
-;   string s_..\\wincore\\wddvmem.cpp_005979d1
-;   string s_setColorTable16_-_Unable_to_lock_005979e8
-;   string s_..\\wincore\\wddvmem.cpp_00597a16
-;   string s_setColorTable16_-_Unable_to_unlo_00597a2d
+;   TerminatedCString s_wincore_wddvmem_cpp_005979d1
+;   TerminatedCString s_setColorTable16_Unable_t_005979e8
+;   TerminatedCString s_wincore_wddvmem_cpp_00597a16
+;   TerminatedCString s_setColorTable16_Unable_t_00597a2d
 ;   undefined4 DAT_01c00624
 ;   undefined4 DAT_01c00628
 ;   undefined4 DAT_01c0062c

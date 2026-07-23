@@ -20,20 +20,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592902
-;   string s_generateSilence_-_invalid_bit_de_00592917
-;   string s_..\\sound\\sndmain.cpp_00592b2d
-;   string s_SfxSlot::kill_-_must_be_locked!_00592b42
-;   string s_..\\sound\\sndmain.cpp_00592b62
-;   string s_SfxSample::pollStream_-_my_sfx_i_00592b77
-;   string s_SfxSample::pollStream_-_no_sound_00592bac
-;   string s_SfxSample::pollStream_-_error_qu_00592bd6
-;   string s_..\\sound\\sndmain.cpp_00592c14
-;   string s_nextLoadSampleDest_=_%d,_allocLe_00592c29
-;   string s_Error_locking_%s_while_streaming_00592c53
-;   string s_..\\sound\\sndmain.cpp_00592c75
-;   string s_Can't_stream_unless_we_have_mp3_d_00592c8a
-;   string s_Error_reading_%s_while_streaming_00592cc4
-;   string s_Error_locking_%s_while_streaming_00592ce6
+;   TerminatedCString s_generateSilence_invalid_00592917
+;   TerminatedCString s_sound_sndmain_cpp_00592b2d
+;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592b42
+;   TerminatedCString s_sound_sndmain_cpp_00592b62
+;   TerminatedCString s_SfxSample_pollStream_my_00592b77
+;   TerminatedCString s_SfxSample_pollStream_no_00592bac
+;   TerminatedCString s_SfxSample_pollStream_err_00592bd6
+;   TerminatedCString s_sound_sndmain_cpp_00592c14
+;   TerminatedCString s_nextLoadSampleDest_d_all_00592c29
+;   TerminatedCString s_Error_locking_s_while_st_00592c53
+;   TerminatedCString s_sound_sndmain_cpp_00592c75
+;   TerminatedCString s_Can_t_stream_unless_we_h_00592c8a
+;   TerminatedCString s_Error_reading_s_while_st_00592cc4
+;   TerminatedCString s_Error_locking_s_while_st_00592ce6
 ;   ... and 10 more
 ;
 ; Called Functions:

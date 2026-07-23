@@ -19,9 +19,9 @@
 ;   core_set.cpp_FUN_0050aba0 at 0050acc4
 ;
 ; Referenced Globals:
-;   string s_..\\core\\set.cpp_005907aa
-;   string s_CSet::buildActorDisplayList_-_Do_005907ba
-;   string s_buildDispList_%d_items_:_%3.2f_m_005907ed
+;   TerminatedCString s_core_set_cpp_005907aa
+;   TerminatedCString s_CSet_buildActorDisplayLi_005907ba
+;   TerminatedCString s_buildDispList_d_items_3_005907ed
 ;   float FLOAT_00590812 = 0.5
 ;   double DOUBLE_0059081a = 0.0555555555555556
 ;   double DOUBLE_00590822 = 0.0000152587890625

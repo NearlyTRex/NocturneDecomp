@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_%s%s__00577361
+;   TerminatedCString s_s_s_00577361
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

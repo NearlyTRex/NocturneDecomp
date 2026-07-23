@@ -73,7 +73,7 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   string s_CCharacter::walkToPoint_-_go_som_00579ed8
+;   TerminatedCString s_CCharacter_walkToPoint_g_00579ed8
 ;   double DOUBLE_00579f0a = 0.0100000000000000
 ;   double DOUBLE_00579f12 = 5
 ;   double DOUBLE_00579f1a = 0.318309886192889

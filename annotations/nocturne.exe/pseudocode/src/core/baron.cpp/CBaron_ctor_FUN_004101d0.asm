@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_baron.dfm_0057850c
+;   TerminatedCString s_baron_dfm_0057850c
 ;   TerminatedCString s_none_00578516
 ;   undefined4 s_one_00578516+1
 ;   undefined4 s_ne_00578516+2
@@ -14,7 +14,7 @@
 ;   undefined4 s_one_0057851b+1
 ;   undefined4 s_ne_0057851b+2
 ;   undefined4 s_e_0057851b+3
-;   string s_baronshell.kfm_00578520
+;   TerminatedCString s_baronshell_kfm_00578520
 ;   undefined1* PTR_core_baron.cpp_CBaron_setup_FUN_004102c0_00599ac4 = 004102c0
 ;   undefined4 DAT_0076436c
 ;

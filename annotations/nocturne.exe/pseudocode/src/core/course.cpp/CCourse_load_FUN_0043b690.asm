@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0057b261
 ;   TerminatedCString s_data_0057b264
-;   string s_..\\core\\course.cpp_0057b269
-;   string s_CCourse::load_-_can't_open_data\\_0057b27c
+;   TerminatedCString s_core_course_cpp_0057b269
+;   TerminatedCString s_CCourse_load_can_t_open_0057b27c
 ;   TerminatedCString s_d_0057b29f
-;   string s_%d,%d_0057b2a3
-;   string s_%f,%f,%f,_%f,%f,%f,%f_0057b2aa
+;   TerminatedCString s_d_d_0057b2a3
+;   TerminatedCString s_f_f_f_f_f_f_f_0057b2aa
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

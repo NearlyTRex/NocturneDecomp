@@ -30,8 +30,8 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int pa
       iVar3 = *(int *)(iVar4 + 0x1ccdb94) + 1;
       *(int *)(iVar4 + 0x1ccdb94) = iVar3;
       if (((*(int *)(iVar1 + 0x1c) != 0) || (param_2 != 1)) || (iVar3 != 6)) {
-        _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",*(byte *)(param_1 + 0xbd38)
-                   ,local_1c,*(uint *)(iVar4 + 0x1ccdb94));
+        _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",*(byte *)(param_1 + 0xbd38),
+                   local_1c,*(uint *)(iVar4 + 0x1ccdb94));
         local_14 = FUN_0052ebc0(0x02DC9450,local_80);
         *(uint *)(param_1 + 0xbd3c) = local_14;
         if (0.0 < *(float *)(param_1 + 0xbd3c)) break;

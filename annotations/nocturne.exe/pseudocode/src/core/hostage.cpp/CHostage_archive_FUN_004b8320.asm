@@ -5,21 +5,21 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_followState_00585cbd
-;   string s_hostageState_00585cc9
-;   string s_goalWayPoint_00585cd6
-;   string s_modelName_00585ce3
-;   string s_motion_state_00585ced
-;   string s_partStatus_00585cfa
-;   string s_rescueDistance_00585d05
-;   string s_rescueCondition_00585d14
-;   string s_clothList_00585d24
-;   string s_rescueEvent_00585d2e
-;   string s_heroFoundMeEvent_00585d3a
-;   string s_heroLeftMeEvent_00585d4b
-;   string s_heroCameBackEvent_00585d5b
-;   string s_goingToSitDownEvent_00585d6d
-;   string s_sitDownEvent_00585d81
+;   TerminatedCString s_followState_00585cbd
+;   TerminatedCString s_hostageState_00585cc9
+;   TerminatedCString s_goalWayPoint_00585cd6
+;   TerminatedCString s_modelName_00585ce3
+;   TerminatedCString s_motion_state_00585ced
+;   TerminatedCString s_partStatus_00585cfa
+;   TerminatedCString s_rescueDistance_00585d05
+;   TerminatedCString s_rescueCondition_00585d14
+;   TerminatedCString s_clothList_00585d24
+;   TerminatedCString s_rescueEvent_00585d2e
+;   TerminatedCString s_heroFoundMeEvent_00585d3a
+;   TerminatedCString s_heroLeftMeEvent_00585d4b
+;   TerminatedCString s_heroCameBackEvent_00585d5b
+;   TerminatedCString s_goingToSitDownEvent_00585d6d
+;   TerminatedCString s_sitDownEvent_00585d81
 ;   ... and 7 more
 ;
 ; Called Functions:

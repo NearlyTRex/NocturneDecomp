@@ -9,14 +9,14 @@
 ;   core_lever.cpp_CLever_archive_FUN_004c66f0 at 004c6855
 ;
 ; Referenced Globals:
-;   string s_Rule_list_opening_brace_00577e70
+;   TerminatedCString s_Rule_list_opening_brace_00577e70
 ;   TerminatedCString s_d_00577e88
-;   string s_rule_count_00577e8b
+;   TerminatedCString s_rule_count_00577e8b
 ;   TerminatedCString s_ruleCount_00577e96
 ;   TerminatedCString s_anon_00577ea0
 ;   TerminatedCString s_rule_00577eb5
 ;   TerminatedCString s_Rule_list_closing_brace_00577eba
-;   string s_%s{_//_%s_00577ed2
+;   TerminatedCString s_s_s_00577ed2
 ;   TerminatedCString s_s_d_ruleCount_00577edd
 ;   TerminatedCString s_s_s_s_00577ef0
 ;   TerminatedCString s_s_00577f00

@@ -7,14 +7,14 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   string s_model_name_00585208
+;   TerminatedCString s_model_name_00585208
 ;   TerminatedCString s_fps_00585213
-;   string s_active_00585217
-;   string s_graveState_0058521e
-;   string s_curFrame_00585229
-;   string s_hideOnFirstFrame_00585232
-;   string s_startCondition_00585243
-;   string s_startSound_00585252
+;   TerminatedCString s_active_00585217
+;   TerminatedCString s_graveState_0058521e
+;   TerminatedCString s_curFrame_00585229
+;   TerminatedCString s_hideOnFirstFrame_00585232
+;   TerminatedCString s_startCondition_00585243
+;   TerminatedCString s_startSound_00585252
 ;   undefined4 DAT_005ba8c8
 ;
 ; Called Functions:

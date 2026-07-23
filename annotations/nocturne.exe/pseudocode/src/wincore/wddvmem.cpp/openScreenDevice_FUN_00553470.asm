@@ -13,8 +13,8 @@
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e
 ;
 ; Referenced Globals:
-;   string s_..\\wincore\\wddvmem.cpp_00597954
-;   string s_openScreenDevice_-_Unable_to_loc_0059796b
+;   TerminatedCString s_wincore_wddvmem_cpp_00597954
+;   TerminatedCString s_openScreenDevice_Unable_0059796b
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4

@@ -36,10 +36,10 @@
 ; Referenced Globals:
 ;   void* switchdataD_004e1194 = 004e12b6
 ;   void* switchdataD_004e11a4 = 004e144e
-;   string s_..\\core\\motion.cpp_0058b1f2
-;   string s_CMotionController::advance:_Twee_0058b205
-;   string s_..\\core\\motion.cpp_0058b24b
-;   string s_Invalid_transition_command_retur_0058b25e
+;   TerminatedCString s_core_motion_cpp_0058b1f2
+;   TerminatedCString s_CMotionController_advanc_0058b205
+;   TerminatedCString s_core_motion_cpp_0058b24b
+;   TerminatedCString s_Invalid_transition_comma_0058b25e
 ;   double DOUBLE_0058b2ad = 0.0000100000000000000
 ;   double DOUBLE_0058b2b5 = 0.5
 ;   double DOUBLE_0058b2bd = 0.499900000000000

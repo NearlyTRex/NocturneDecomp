@@ -36,7 +36,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005958e7
-;   string s_CStranger::makeDrawDecision_-_dr_005958fc
+;   TerminatedCString s_CStranger_makeDrawDecisi_005958fc
 ;   double DOUBLE_00595937 = 0.25
 ;   double DOUBLE_0059593f = 4
 ;   double DOUBLE_00595947 = -0.75

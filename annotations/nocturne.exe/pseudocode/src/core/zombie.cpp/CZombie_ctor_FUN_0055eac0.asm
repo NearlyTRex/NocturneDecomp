@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_zombie1.dfm_005983e6
+;   TerminatedCString s_zombie1_dfm_005983e6
 ;   TerminatedCString s_true_005983f2
 ;   undefined4 s_rue_005983f2+1
 ;   undefined4 s_ue_005983f2+2
 ;   undefined4 s_e_005983f2+3
-;   string s_mine.geo_005983f7
+;   TerminatedCString s_mine_geo_005983f7
 ;   undefined4 DAT_005a453c
 ;   undefined4 DAT_005a4540
 ;   undefined1* PTR_core_zombie.cpp_CZombie_setup_FUN_0055ec20_005a4554 = 0055ec20

@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_005864e5
-;   string s_..\\engine\\ini.cpp_005864e8
-;   string s_cIni::getProfileString:_Unable_t_005864fa
-;   string s_[%s]_00586527
+;   TerminatedCString s_engine_ini_cpp_005864e8
+;   TerminatedCString s_cIni_getProfileString_Un_005864fa
+;   TerminatedCString s_s_00586527
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

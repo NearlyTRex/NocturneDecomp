@@ -7,21 +7,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_svetlanax.dfm_00596200
-;   string s_svetlana.dfm_0059620e
-;   string s_Bip01_head_0059621b
-;   string s_Bip01_L_Clavicle_00596226
-;   string s_Bip01_R_Clavicle_00596237
-;   string s_Bip01_L_UpperArm_00596248
-;   string s_Bip01_R_UpperArm_00596259
-;   string s_Bip01_L_ForeArm_0059626a
-;   string s_Bip01_R_ForeArm_0059627a
-;   string s_Bip01_L_Foot_0059628a
-;   string s_Bip01_R_Foot_00596297
-;   string s_Bip01_L_Thigh_005962a4
-;   string s_Bip01_R_Thigh_005962b2
-;   string s_Bip01_L_Calf_005962c0
-;   string s_Bip01_R_Calf_005962cd
+;   TerminatedCString s_svetlanax_dfm_00596200
+;   TerminatedCString s_svetlana_dfm_0059620e
+;   TerminatedCString s_Bip01_head_0059621b
+;   TerminatedCString s_Bip01_L_Clavicle_00596226
+;   TerminatedCString s_Bip01_R_Clavicle_00596237
+;   TerminatedCString s_Bip01_L_UpperArm_00596248
+;   TerminatedCString s_Bip01_R_UpperArm_00596259
+;   TerminatedCString s_Bip01_L_ForeArm_0059626a
+;   TerminatedCString s_Bip01_R_ForeArm_0059627a
+;   TerminatedCString s_Bip01_L_Foot_0059628a
+;   TerminatedCString s_Bip01_R_Foot_00596297
+;   TerminatedCString s_Bip01_L_Thigh_005962a4
+;   TerminatedCString s_Bip01_R_Thigh_005962b2
+;   TerminatedCString s_Bip01_L_Calf_005962c0
+;   TerminatedCString s_Bip01_R_Calf_005962cd
 ;   ... and 31 more
 ;
 ; Called Functions:

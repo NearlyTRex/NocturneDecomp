@@ -36,21 +36,21 @@
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 at 0052eaa8
 ;
 ; Referenced Globals:
-;   string s_[%d,%d]%n_00594a1a
-;   string s_..\\core\\sound.cpp_00594a24
-;   string s_Invalid_sfx_string:_%s_00594a36
+;   TerminatedCString s_d_d_n_00594a1a
+;   TerminatedCString s_core_sound_cpp_00594a24
+;   TerminatedCString s_Invalid_sfx_string_s_00594a36
 ;   TerminatedCString s_anon_00594a4d
 ;   TerminatedCString s_anon_00594a4f
 ;   TerminatedCString s_wav_00594a51
 ;   undefined4 s_wav_00594a51+1
 ;   undefined4 s_wav_00594a51+2
 ;   undefined4 s_wav_00594a51+3
-;   string s_Can't_find_wav:_%s_00594a56
-;   string s_@%f%n_00594a6a
-;   string s_..\\core\\sound.cpp_00594a70
-;   string s_Invalid_sfx_string:_%s_00594a82
-;   string s_*%f%n_00594a99
-;   string s_..\\core\\sound.cpp_00594a9f
+;   TerminatedCString s_Can_t_find_wav_s_00594a56
+;   TerminatedCString s_f_n_00594a6a
+;   TerminatedCString s_core_sound_cpp_00594a70
+;   TerminatedCString s_Invalid_sfx_string_s_00594a82
+;   TerminatedCString s_f_n_00594a99
+;   TerminatedCString s_core_sound_cpp_00594a9f
 ;   ... and 13 more
 ;
 ; Called Functions:

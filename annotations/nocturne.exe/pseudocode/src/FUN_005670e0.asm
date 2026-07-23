@@ -9,7 +9,7 @@
 ;   FUN_0057301c at 0057319f
 ;
 ; Referenced Globals:
-;   string s_Stack_Overflow!_005c1aa4
+;   TerminatedCString s_Stack_Overflow_005c1aa4
 ;
 ; Called Functions:
 ;   FUN_0056ddc0

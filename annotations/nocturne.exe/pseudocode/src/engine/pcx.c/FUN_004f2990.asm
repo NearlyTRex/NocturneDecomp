@@ -23,8 +23,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_0058cfc3
-;   string s_..\\engine\\pcx.c_0058cfc6
-;   string s_Cannot_write_.PCX_0058cfd6
+;   TerminatedCString s_engine_pcx_c_0058cfc6
+;   TerminatedCString s_Cannot_write_PCX_0058cfd6
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

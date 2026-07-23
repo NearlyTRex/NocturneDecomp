@@ -72,8 +72,8 @@ LAB_005192e4:
         iVar1 = _fgetc(param_2);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d\n",&local_50,&local_4c,&local_48,
-                         &local_44,&local_60,&local_40);
+      iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d\n",&local_50,&local_4c,&local_48,&local_44,
+                         &local_60,&local_40);
       if (iVar1 != 6) goto LAB_005192c1;
       core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(param_1,1,1,local_44,local_40);
       core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(param_1,0,local_50,local_4c,local_48)
@@ -94,8 +94,8 @@ LAB_005192e4:
           iVar1 = _fgetc(param_2);
           if (iVar1 < 0) break;
         } while (iVar1 != 10);
-        iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_5c,&local_58,&local_54,&local_60
-                           ,&local_68);
+        iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_5c,&local_58,&local_54,&local_60,
+                           &local_68);
         if (iVar1 != 5) goto LAB_005192c1;
       }
       core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0
@@ -125,8 +125,7 @@ LAB_005192e4:
     if (local_64 < 3) {
       for (iVar1 = 0; iVar1 < param_1[0x300]; iVar1 = iVar1 + 1) {
         piVar3 = param_1 + iVar1 * 0x18 + 0x301;
-        iVar2 = _fscanf(param_2,"\"%[^\"]\",%d,%d,%d\n",piVar3,piVar3 + 8,piVar3 + 0xd,
-                           piVar3 + 0x12);
+        iVar2 = _fscanf(param_2,"\"%[^\"]\",%d,%d,%d\n",piVar3,piVar3 + 8,piVar3 + 0xd,piVar3 + 0x12);
         if (iVar2 != 4) goto LAB_005192c1;
         for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
           iVar5 = _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
@@ -141,7 +140,8 @@ LAB_005192e4:
           _fscanf(param_2,"\"%[^\"]\", %d\n",piVar3,piVar3 + 0x12);
         }
         else {
-          _fscanf(param_2,"\"%[^\"]\", %d, %d\n",piVar3,piVar3 + 0x17,piVar3 + 0x12);
+          _fscanf(param_2,"\"%[^\"]\", %d, %d\n",piVar3,piVar3 + 0x17,piVar3 + 0x12)
+          ;
         }
         for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
           _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
@@ -164,8 +164,8 @@ LAB_005192e4:
         *pbVar6 = local_30[0];
         for (iVar1 = 0; iVar1 < (int)(uint)*pbVar6; iVar1 = iVar1 + 1) {
           pbVar4 = pbVar6 + iVar1 * 0xc + 0x10;
-          iVar2 = _fscanf(param_2,"%d,%f,%f,%f,%f\n",local_2c,pbVar6 + iVar1 * 4 + 4,
-                             pbVar4,pbVar4 + 4,pbVar4 + 8);
+          iVar2 = _fscanf(param_2,"%d,%f,%f,%f,%f\n",local_2c,pbVar6 + iVar1 * 4 + 4,pbVar4,
+                             pbVar4 + 4,pbVar4 + 8);
           if (iVar2 != 5) goto LAB_005192c1;
           pbVar6[iVar1 + 1] = local_2c[0];
         }
@@ -179,9 +179,8 @@ LAB_005192e4:
       for (iVar1 = 0; iVar2 = local_14, iVar1 < param_1[local_14 + 0x15] + param_1[local_14 + 0x1a];
           iVar1 = iVar1 + 1) {
         local_1c = param_1[local_14 + 0x1f] + iVar1 * 0x12;
-        iVar5 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_28,local_74,
-                           &local_80,&local_8c,local_70,local_7c,local_88,local_6c,local_78,local_84
-                          );
+        iVar5 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_28,local_74,&local_80,
+                           &local_8c,local_70,local_7c,local_88,local_6c,local_78,local_84);
         if (iVar5 != 10) goto LAB_005192c1;
         *(uint *)(param_1[iVar2 + 0x24] + iVar1 * 4) = local_28;
         iVar2 = 0;
@@ -222,7 +221,8 @@ LAB_005192e4:
     } while (iVar1 != 10);
     for (iVar1 = 0; iVar1 < local_60; iVar1 = iVar1 + 1) {
       piVar3 = param_1 + iVar1 * 3 + 0x5d4;
-      iVar2 = _fscanf(param_2,"%f,%f,%f\n",piVar3,piVar3 + 1,piVar3 + 2);
+      iVar2 = _fscanf(param_2,"%f,%f,%f\n",piVar3,piVar3 + 1,piVar3 + 2)
+      ;
       if (iVar2 != 3) goto LAB_005192c1;
     }
     if (local_64 < 2) {

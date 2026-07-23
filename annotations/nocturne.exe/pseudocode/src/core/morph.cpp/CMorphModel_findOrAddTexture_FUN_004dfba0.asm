@@ -9,8 +9,8 @@
 ;   core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0 at 004dfaa9
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058acd8
-;   string s_CMorphModel::findOrAddTexture_-_t_0058acea
+;   TerminatedCString s_core_morph_cpp_0058acd8
+;   TerminatedCString s_CMorphModel_findOrAddTex_0058acea
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

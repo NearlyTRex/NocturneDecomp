@@ -10,8 +10,8 @@
 ;   FUN_005125a0 at 00513209
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\drender.cpp_0057dbbe
-;   string s_Can't_use_demonZFacetCount_in_sh_0057dbd4
+;   TerminatedCString s_engine_drender_cpp_0057dbbe
+;   TerminatedCString s_Can_t_use_demonZFacetCou_0057dbd4
 ;   undefined4 DAT_01b4d764
 ;   undefined4 DAT_01b4d76c
 ;   undefined4 DAT_01b4d770

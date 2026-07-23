@@ -12,10 +12,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hitPoints_0058cb33
-;   string s_modelName_0058cb3d
-;   string s_motion_state_0058cb47
-;   string s_shootMe_0058cb54
-;   string s_poolMe_0058cb5c
+;   TerminatedCString s_modelName_0058cb3d
+;   TerminatedCString s_motion_state_0058cb47
+;   TerminatedCString s_shootMe_0058cb54
+;   TerminatedCString s_poolMe_0058cb5c
 ;   undefined4 DAT_005be074
 ;
 ; Called Functions:

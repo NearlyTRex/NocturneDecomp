@@ -9,8 +9,8 @@
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 at 0049f8cb
 ;
 ; Referenced Globals:
-;   string s_..\\core\\netgame.cpp_0058c79b
-;   string s_CNetGame::getMyControls_-_I'm_no_0058c7af
+;   TerminatedCString s_core_netgame_cpp_0058c79b
+;   TerminatedCString s_CNetGame_getMyControls_I_0058c7af
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

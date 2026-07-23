@@ -15,21 +15,21 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500788
 ;
 ; Referenced Globals:
-;   string s_You've_found_:_00586e61
+;   TerminatedCString s_You_ve_found_00586e61
 ;   TerminatedCString s_d_00586e71
-;   string s_CHealthItem_00586e75
-;   string s_Press_00586e81
-;   string s_and_00586e88
-;   string s_to_cycle_through_your_inventory._00586e8e
-;   string s_to_use_this_item_to_restore_some_00586eb8
-;   string s_CGasMask_00586ee2
-;   string s_Press_00586eeb
-;   string s_and_00586ef2
-;   string s_to_cycle_through_your_inventory._00586ef8
-;   string s_to_put_on_and_off_the_mask._00586f22
-;   string s_CKeyActor_00586f3f
-;   string s_With_your_guns_put_away,_press_00586f49
-;   string s_to_open_a_previously_locked_door_00586f69
+;   TerminatedCString s_CHealthItem_00586e75
+;   TerminatedCString s_Press_00586e81
+;   TerminatedCString s_and_00586e88
+;   TerminatedCString s_to_cycle_through_your_in_00586e8e
+;   TerminatedCString s_to_use_this_item_to_rest_00586eb8
+;   TerminatedCString s_CGasMask_00586ee2
+;   TerminatedCString s_Press_00586eeb
+;   TerminatedCString s_and_00586ef2
+;   TerminatedCString s_to_cycle_through_your_in_00586ef8
+;   TerminatedCString s_to_put_on_and_off_the_ma_00586f22
+;   TerminatedCString s_CKeyActor_00586f3f
+;   TerminatedCString s_With_your_guns_put_away_00586f49
+;   TerminatedCString s_to_open_a_previously_loc_00586f69
 ;   ... and 43 more
 ;
 ; Called Functions:

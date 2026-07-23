@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   void* PTR_GetProcAddress_00575534 = 00175ddc
 ;   void* PTR_LoadLibraryA_00575560 = 00175eaa
-;   string s_USER32.DLL_00598c64
-;   string s_GetActiveWindow_00598c70
+;   TerminatedCString s_USER32_DLL_00598c64
+;   TerminatedCString s_GetActiveWindow_00598c70
 ;
 ; Called Functions:
 ;   GetProcAddress

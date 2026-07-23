@@ -43,8 +43,8 @@
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 at 005296e2
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00592f4e
-;   string s_SfxSlot::mix_-_must_be_locked!_00592f63
+;   TerminatedCString s_sound_sndmain_cpp_00592f4e
+;   TerminatedCString s_SfxSlot_mix_must_be_lock_00592f63
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc8340

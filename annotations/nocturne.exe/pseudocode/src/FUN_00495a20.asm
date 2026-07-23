@@ -84,10 +84,10 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00495a0c = 00496b8d
-;   string s_%s_confused_while_walking_to_scr_00581f93
-;   string s_flashlit.wav_00581fbd
-;   string s_draw-f.wav_@_1.5_00581fca
-;   string s_undraw-s.wav_@_.7_00581fdb
+;   TerminatedCString s_s_confused_while_walking_00581f93
+;   TerminatedCString s_flashlit_wav_00581fbd
+;   TerminatedCString s_draw_f_wav_1_5_00581fca
+;   TerminatedCString s_undraw_s_wav_7_00581fdb
 ;   double DOUBLE_00581ff2 = 12.5663706140000
 ;   double DOUBLE_00581ffa = 0.333333333333333
 ;   float FLOAT_00582002 = 0.5

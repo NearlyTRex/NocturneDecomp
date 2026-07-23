@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   string s_batwing.cth_00597041
-;   string s_noscape.cth_0059704d
-;   string s_nosskirt.cth_00597059
-;   string s_Bip01_Spine2_00597066
+;   TerminatedCString s_batwing_cth_00597041
+;   TerminatedCString s_noscape_cth_0059704d
+;   TerminatedCString s_nosskirt_cth_00597059
+;   TerminatedCString s_Bip01_Spine2_00597066
 ;   undefined4 DAT_01cd4314
 ;
 ; Called Functions:

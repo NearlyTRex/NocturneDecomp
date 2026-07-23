@@ -10,13 +10,13 @@
 ;   core_fire.cpp_CFireEffect_load_FUN_0048c7d0 at 0048c82f
 ;
 ; Referenced Globals:
-;   string s_%d,%d,%f,%f_005812b8
-;   string s_%f,%f,%f_005812c5
-;   string s_%f,%f,%f_005812cf
-;   string s_%f,%f,%f_005812d9
-;   string s_%f,%f,%f_005812e3
-;   string s_%f,%f,%f_005812ed
-;   string s_%f,%f,%f_005812f7
+;   TerminatedCString s_d_d_f_f_005812b8
+;   TerminatedCString s_f_f_f_005812c5
+;   TerminatedCString s_f_f_f_005812cf
+;   TerminatedCString s_f_f_f_005812d9
+;   TerminatedCString s_f_f_f_005812e3
+;   TerminatedCString s_f_f_f_005812ed
+;   TerminatedCString s_f_f_f_005812f7
 ;
 ; Called Functions:
 ;   crt_stdio.c_fscanf_FUN_00563350

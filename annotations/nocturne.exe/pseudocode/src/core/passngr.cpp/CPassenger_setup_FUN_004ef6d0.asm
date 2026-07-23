@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_CWerewolf_0058cbfc
-;   string s_transform_0058cc06
+;   TerminatedCString s_CWerewolf_0058cbfc
+;   TerminatedCString s_transform_0058cc06
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040d540

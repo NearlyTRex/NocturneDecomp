@@ -7,21 +7,21 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   string s_nbride2.dfm_0057d4b8
-;   string s_nbride2x.dfm_0057d4c4
-;   string s_nbride3.dfm_0057d4d1
-;   string s_nbride3x.dfm_0057d4dd
-;   string s_nbride4.dfm_0057d4ea
-;   string s_nbride4x.dfm_0057d4f6
-;   string s_nbride2x.dfm_0057d503
-;   string s_nbride2.dfm_0057d510
-;   string s_nbride3x.dfm_0057d51c
-;   string s_nbride3.dfm_0057d529
-;   string s_nbride4x.dfm_0057d535
-;   string s_nbride4.dfm_0057d542
-;   string s_Bip01_Head_0057d54e
-;   string s_Bip01_L_Hand_0057d559
-;   string s_Bip01_R_Hand_0057d566
+;   TerminatedCString s_nbride2_dfm_0057d4b8
+;   TerminatedCString s_nbride2x_dfm_0057d4c4
+;   TerminatedCString s_nbride3_dfm_0057d4d1
+;   TerminatedCString s_nbride3x_dfm_0057d4dd
+;   TerminatedCString s_nbride4_dfm_0057d4ea
+;   TerminatedCString s_nbride4x_dfm_0057d4f6
+;   TerminatedCString s_nbride2x_dfm_0057d503
+;   TerminatedCString s_nbride2_dfm_0057d510
+;   TerminatedCString s_nbride3x_dfm_0057d51c
+;   TerminatedCString s_nbride3_dfm_0057d529
+;   TerminatedCString s_nbride4x_dfm_0057d535
+;   TerminatedCString s_nbride4_dfm_0057d542
+;   TerminatedCString s_Bip01_Head_0057d54e
+;   TerminatedCString s_Bip01_L_Hand_0057d559
+;   TerminatedCString s_Bip01_R_Hand_0057d566
 ;   ... and 24 more
 ;
 ; Called Functions:

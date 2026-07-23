@@ -18,13 +18,13 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   string s_(unknown)_00577b57
-;   string s_(unknown)_00577b61
-;   string s_(unknown)_00577b6b
+;   TerminatedCString s_unknown_00577b57
+;   TerminatedCString s_unknown_00577b61
+;   TerminatedCString s_unknown_00577b6b
 ;   TerminatedCString s_load_00577b75
 ;   TerminatedCString s_save_00577b7a
-;   string s_..\\core\\actor.cpp_00577b7f
-;   string s_Error_%sing_actor_property._Acto_00577b91
+;   TerminatedCString s_core_actor_cpp_00577b7f
+;   TerminatedCString s_Error_sing_actor_propert_00577b91
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c
 ;   undefined4 DAT_01cc4800

@@ -10,7 +10,7 @@
 ;   undefined1* PTR_caseD_1_00551a70 = 00551b4e
 ;   undefined1* PTR_caseD_3_00551a78 = 00551b83
 ;   TerminatedCString s_core_wateract_cpp_00597617
-;   string s_CWaterActor::process_-_Bad_state_0059762c
+;   TerminatedCString s_CWaterActor_process_Bad_0059762c
 ;   double DOUBLE_0059764f = 65536
 ;   double DOUBLE_00597657 = 8
 ;   undefined4 DAT_005b7650

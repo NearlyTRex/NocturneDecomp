@@ -14,12 +14,12 @@
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 at 005532f4
 ;
 ; Referenced Globals:
-;   string s_..\\wincore\\wddvmem.cpp_005977c5
-;   string s_WDDVMEM:_Fatal_-_out_of_frame_bu_005977dc
-;   string s_..\\wincore\\wddvmem.cpp_00597808
-;   string s_WDDVMEM:_Fatal_-_out_of_Z_buffer_0059781f
-;   string s_..\\wincore\\wddvmem.cpp_00597847
-;   string s_setScreenResolution_-_Create_bac_0059785e
+;   TerminatedCString s_wincore_wddvmem_cpp_005977c5
+;   TerminatedCString s_WDDVMEM_Fatal_out_of_fra_005977dc
+;   TerminatedCString s_wincore_wddvmem_cpp_00597808
+;   TerminatedCString s_WDDVMEM_Fatal_out_of_Z_b_0059781f
+;   TerminatedCString s_wincore_wddvmem_cpp_00597847
+;   TerminatedCString s_setScreenResolution_Crea_0059785e
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

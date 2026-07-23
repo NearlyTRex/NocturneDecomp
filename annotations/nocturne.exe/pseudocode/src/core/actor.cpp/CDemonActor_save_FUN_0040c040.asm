@@ -17,7 +17,7 @@
 ;   TerminatedCString s_s_s_s_00577a2c
 ;   TerminatedCString s_s_s_s_00577a39
 ;   TerminatedCString s_core_actor_cpp_00577a46
-;   string s_IO_Error_after_writing_actor_of_t_00577a58
+;   TerminatedCString s_IO_Error_after_writing_a_00577a58
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

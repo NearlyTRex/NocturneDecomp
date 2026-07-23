@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0049469c = 004946f3
-;   string s_frankxbed.kfm_00581b0d
-;   string s_frankxbed.pth_00581b1b
-;   undefined4 s_rankxbed.pth_00581b1b+1
-;   undefined4 s_ankxbed.pth_00581b1b+2
-;   undefined4 s_nkxbed.pth_00581b1b+3
-;   string s_frankxbody.kfm_00581b29
-;   string s_frankxcrn1.kfm_00581b38
-;   string s_frankxcrn2.kfm_00581b47
-;   string s_frankxcrn3.kfm_00581b56
-;   string s_frankxstch.kfm_00581b65
-;   string s_frankxarm.kfm_00581b74
-;   string s_frankxflap1.kfm_00581b82
-;   string s_frankxflap1.pth_00581b92
-;   undefined4 s_rankxflap1.pth_00581b92+1
+;   TerminatedCString s_frankxbed_kfm_00581b0d
+;   TerminatedCString s_frankxbed_pth_00581b1b
+;   undefined4 s_frankxbed_pth_00581b1b+1
+;   undefined4 s_frankxbed_pth_00581b1b+2
+;   undefined4 s_frankxbed_pth_00581b1b+3
+;   TerminatedCString s_frankxbody_kfm_00581b29
+;   TerminatedCString s_frankxcrn1_kfm_00581b38
+;   TerminatedCString s_frankxcrn2_kfm_00581b47
+;   TerminatedCString s_frankxcrn3_kfm_00581b56
+;   TerminatedCString s_frankxstch_kfm_00581b65
+;   TerminatedCString s_frankxarm_kfm_00581b74
+;   TerminatedCString s_frankxflap1_kfm_00581b82
+;   TerminatedCString s_frankxflap1_pth_00581b92
+;   undefined4 s_frankxflap1_pth_00581b92+1
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -60,13 +60,13 @@ section .text
     MOV ESI,0x581b1b                    ; 00494707 | = "frankxbed.pth"
     LEA EDI,[EBX + 0x158]               ; 0049470c
     PUSH EDI                            ; 00494712
-    MOV AL,byte ptr [ESI]               ; 00494713 | = "frankxbed.pth" | s_ankxbed.pth_00581b1b+2
+    MOV AL,byte ptr [ESI]               ; 00494713 | = "frankxbed.pth" | s_frankxbed_pth_00581b1b+2
         ;   Label: LAB_00494713
     MOV byte ptr [EDI],AL               ; 00494715
     CMP AL,0x0                          ; 00494717
     JZ 0x0049472b                       ; 00494719
         ;   XREF to: 0049472b (CONDITIONAL_JUMP)  ; LAB_0049472b
-    MOV AL,byte ptr [ESI + 0x1]         ; 0049471b | s_rankxbed.pth_00581b1b+1 | s_nkxbed.pth_00581b1b+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0049471b | s_frankxbed_pth_00581b1b+1 | s_frankxbed_pth_00581b1b+3
     ADD ESI,0x2                         ; 0049471e
     MOV byte ptr [EDI + 0x1],AL         ; 00494721
     ADD EDI,0x2                         ; 00494724
@@ -161,13 +161,13 @@ section .text
     MOV ESI,0x581b92                    ; 0049481c | = "frankxflap1.pth"
     LEA EDI,[EBX + 0x158]               ; 00494821
     PUSH EDI                            ; 00494827
-    MOV AL,byte ptr [ESI]               ; 00494828 | = "frankxflap1.pth" | s_ankxflap1.pth_00581b92+2
+    MOV AL,byte ptr [ESI]               ; 00494828 | = "frankxflap1.pth" | s_frankxflap1_pth_00581b92+2
         ;   Label: LAB_00494828
     MOV byte ptr [EDI],AL               ; 0049482a
     CMP AL,0x0                          ; 0049482c
     JZ 0x00494840                       ; 0049482e
         ;   XREF to: 00494840 (CONDITIONAL_JUMP)  ; LAB_00494840
-    MOV AL,byte ptr [ESI + 0x1]         ; 00494830 | s_rankxflap1.pth_00581b92+1 | s_nkxflap1.pth_00581b92+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00494830 | s_frankxflap1_pth_00581b92+1 | s_frankxflap1_pth_00581b92+3
     ADD ESI,0x2                         ; 00494833
     MOV byte ptr [EDI + 0x1],AL         ; 00494836
     ADD EDI,0x2                         ; 00494839
@@ -188,13 +188,13 @@ section .text
     MOV ESI,0x581bb2                    ; 0049485a | = "frankxflap2.pth"
     LEA EDI,[EBX + 0x158]               ; 0049485f
     PUSH EDI                            ; 00494865
-    MOV AL,byte ptr [ESI]               ; 00494866 | = "frankxflap2.pth" | s_ankxflap2.pth_00581bb2+2
+    MOV AL,byte ptr [ESI]               ; 00494866 | = "frankxflap2.pth" | s_frankxflap2_pth_00581bb2+2
         ;   Label: LAB_00494866
     MOV byte ptr [EDI],AL               ; 00494868
     CMP AL,0x0                          ; 0049486a
     JZ 0x0049487e                       ; 0049486c
         ;   XREF to: 0049487e (CONDITIONAL_JUMP)  ; LAB_0049487e
-    MOV AL,byte ptr [ESI + 0x1]         ; 0049486e | s_rankxflap2.pth_00581bb2+1 | s_nkxflap2.pth_00581bb2+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0049486e | s_frankxflap2_pth_00581bb2+1 | s_frankxflap2_pth_00581bb2+3
     ADD ESI,0x2                         ; 00494871
     MOV byte ptr [EDI + 0x1],AL         ; 00494874
     ADD EDI,0x2                         ; 00494877
@@ -215,13 +215,13 @@ section .text
     MOV ESI,0x581bd1                    ; 00494898 | = "frankxramp.pth"
     LEA EDI,[EBX + 0x158]               ; 0049489d
     PUSH EDI                            ; 004948a3
-    MOV AL,byte ptr [ESI]               ; 004948a4 | = "frankxramp.pth" | s_ankxramp.pth_00581bd1+2
+    MOV AL,byte ptr [ESI]               ; 004948a4 | = "frankxramp.pth" | s_frankxramp_pth_00581bd1+2
         ;   Label: LAB_004948a4
     MOV byte ptr [EDI],AL               ; 004948a6
     CMP AL,0x0                          ; 004948a8
     JZ 0x004948bc                       ; 004948aa
         ;   XREF to: 004948bc (CONDITIONAL_JUMP)  ; LAB_004948bc
-    MOV AL,byte ptr [ESI + 0x1]         ; 004948ac | s_rankxramp.pth_00581bd1+1 | s_nkxramp.pth_00581bd1+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004948ac | s_frankxramp_pth_00581bd1+1 | s_frankxramp_pth_00581bd1+3
     ADD ESI,0x2                         ; 004948af
     MOV byte ptr [EDI + 0x1],AL         ; 004948b2
     ADD EDI,0x2                         ; 004948b5

@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rt_005911eb
 ;   TerminatedCString s_data_005911ee
-;   string s_..\\core\\skeleton.cpp_005911f3
-;   string s_CSkeleton::load_-_Can't_open_%s_00591208
+;   TerminatedCString s_core_skeleton_cpp_005911f3
+;   TerminatedCString s_CSkeleton_load_Can_t_ope_00591208
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce3f
-;   string s_Global_pathmap_list_corruption_0058ce50
+;   TerminatedCString s_Global_pathmap_list_corr_0058ce50
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01e312f8

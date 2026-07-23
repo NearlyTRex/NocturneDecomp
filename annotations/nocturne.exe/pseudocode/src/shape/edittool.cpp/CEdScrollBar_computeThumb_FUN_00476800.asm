@@ -9,8 +9,8 @@
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 at 00476932
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057f0b4
-;   string s_CEdScrollBar::computeThumb_-_inv_0057f0ca
+;   TerminatedCString s_shape_edittool_cpp_0057f0b4
+;   TerminatedCString s_CEdScrollBar_computeThum_0057f0ca
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

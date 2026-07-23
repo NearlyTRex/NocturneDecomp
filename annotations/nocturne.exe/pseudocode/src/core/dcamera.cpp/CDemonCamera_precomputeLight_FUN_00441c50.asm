@@ -36,8 +36,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_0057b79b
-;   string s_..\\core\\dcamera.cpp_0057b7a7
-;   string s_CDemonCamera::precomputeLight_-_T_0057b7bb
+;   TerminatedCString s_core_dcamera_cpp_0057b7a7
+;   TerminatedCString s_CDemonCamera_precomputeL_0057b7bb
 ;   undefined4 DAT_00b0e604
 ;   undefined4 DAT_01216608
 ;   undefined4 DAT_01cc4800

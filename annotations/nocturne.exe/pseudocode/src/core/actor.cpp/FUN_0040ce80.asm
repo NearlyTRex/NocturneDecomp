@@ -9,9 +9,9 @@
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ed90
 ;
 ; Referenced Globals:
-;   string s_sim_box_state_info_opening_brace_00577d87
-;   string s_sim_box_state_info_closing_brace_00577da8
-;   string s_%s{_//_%s_00577dc9
+;   TerminatedCString s_sim_box_state_info_openi_00577d87
+;   TerminatedCString s_sim_box_state_info_closi_00577da8
+;   TerminatedCString s_s_s_00577dc9
 ;   TerminatedCString s_s_00577dd4
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84

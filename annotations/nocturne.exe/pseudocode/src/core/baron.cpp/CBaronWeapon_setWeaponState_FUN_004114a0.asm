@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_..\\core\\baron.cpp_005786d2
-;   string s_CBaronWeapon::setWeaponState_-_I_005786e4
+;   TerminatedCString s_core_baron_cpp_005786d2
+;   TerminatedCString s_CBaronWeapon_setWeaponSt_005786e4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

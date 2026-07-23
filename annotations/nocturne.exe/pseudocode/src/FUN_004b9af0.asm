@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_priest.dfm_00585fe2
-;   string s_killPriest_00585fed
+;   TerminatedCString s_priest_dfm_00585fe2
+;   TerminatedCString s_killPriest_00585fed
 ;   undefined4 s_illPriest_00585fed+1
 ;   undefined4 s_llPriest_00585fed+2
 ;   undefined4 s_lPriest_00585fed+3

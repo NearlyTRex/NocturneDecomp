@@ -8,10 +8,10 @@
 ;   shape_edittool.cpp_CPickList_insert_FUN_004760a0 at 004760bf
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057eb5a
-;   string s_CStrList::insert_-_invalid_index_0057eb70
-;   string s_..\\shape\\edittool.cpp_0057eb91
-;   string s_CStrList::insert_-_out_of_memory_0057eba7
+;   TerminatedCString s_shape_edittool_cpp_0057eb5a
+;   TerminatedCString s_CStrList_insert_invalid_0057eb70
+;   TerminatedCString s_shape_edittool_cpp_0057eb91
+;   TerminatedCString s_CStrList_insert_out_of_m_0057eba7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

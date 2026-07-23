@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_icepick.dfm_0058600b
+;   TerminatedCString s_icepick_dfm_0058600b
 ;   undefined1* PTR_core_icepick.cpp_CIcePick_setup_FUN_004b9db0_0059f3e4 = 004b9db0
 ;
 ; Called Functions:

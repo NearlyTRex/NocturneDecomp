@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
-;   string s_CHero_CNPC_0059653b
-;   string s_CEnemy_CHero_CNPC_00596546
+;   TerminatedCString s_CHero_CNPC_0059653b
+;   TerminatedCString s_CEnemy_CHero_CNPC_00596546
 ;   double DOUBLE_00596558 = 1.04719755116667
 ;   double DOUBLE_00596560 = 25
 ;   double DOUBLE_00596568 = 0.785398163375000

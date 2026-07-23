@@ -18,8 +18,8 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_00593979
-;   string s_unlockSound_-_sound_was_not_lock_0059398e
+;   TerminatedCString s_sound_sndmain_cpp_00593979
+;   TerminatedCString s_unlockSound_sound_was_no_0059398e
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc84b8

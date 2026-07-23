@@ -9,10 +9,10 @@
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0 at 004e00f9
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058aa7c
-;   string s_CMorphModel::addPart_-_too_many_p_0058aa8e
-;   string s_..\\core\\morph.cpp_0058aab5
-;   string s_CMorphModel::setup_-_out_of_memo_0058aac7
+;   TerminatedCString s_core_morph_cpp_0058aa7c
+;   TerminatedCString s_CMorphModel_addPart_too_0058aa8e
+;   TerminatedCString s_core_morph_cpp_0058aab5
+;   TerminatedCString s_CMorphModel_setup_out_of_0058aac7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

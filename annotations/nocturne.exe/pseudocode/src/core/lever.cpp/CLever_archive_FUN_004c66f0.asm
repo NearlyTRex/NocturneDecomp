@@ -9,20 +9,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00587945
-;   string s_modelName_0058794f
-;   string s_leverType_00587959
-;   string s_onEvent_00587963
-;   string s_offEvent_0058796b
-;   string s_sound_00587974
-;   string s_param_0058797a
-;   string s_momentaryFlag_00587980
-;   string s_linkedLever_0058798e
-;   string s_endVertexIndex_0058799a
-;   string s_moving_005879a9
-;   string s_moveToPct_005879b0
-;   string s_rules_005879ba
-;   string s_allowedSides_005879c0
-;   string s_enableCollision_005879cd
+;   TerminatedCString s_modelName_0058794f
+;   TerminatedCString s_leverType_00587959
+;   TerminatedCString s_onEvent_00587963
+;   TerminatedCString s_offEvent_0058796b
+;   TerminatedCString s_sound_00587974
+;   TerminatedCString s_param_0058797a
+;   TerminatedCString s_momentaryFlag_00587980
+;   TerminatedCString s_linkedLever_0058798e
+;   TerminatedCString s_endVertexIndex_0058799a
+;   TerminatedCString s_moving_005879a9
+;   TerminatedCString s_moveToPct_005879b0
+;   TerminatedCString s_rules_005879ba
+;   TerminatedCString s_allowedSides_005879c0
+;   TerminatedCString s_enableCollision_005879cd
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_batpath.pth_0057877c
-;   undefined4 s_atpath.pth_0057877c+1
-;   undefined4 s_tpath.pth_0057877c+2
-;   undefined4 s_path.pth_0057877c+3
-;   string s_bat.kfm_00578788
+;   TerminatedCString s_batpath_pth_0057877c
+;   undefined4 s_batpath_pth_0057877c+1
+;   undefined4 s_batpath_pth_0057877c+2
+;   undefined4 s_batpath_pth_0057877c+3
+;   TerminatedCString s_bat_kfm_00578788
 ;   undefined1* PTR_core_bat.cpp_CBat_setup_FUN_00411ae0_00599e94 = 00411ae0
 ;
 ; Called Functions:
@@ -51,13 +51,13 @@ section .text
     LEA EDI,[EBX + 0x150]               ; 00411a77
     MOV dword ptr [EBX + 0x308],0x41f00000 ; 00411a7d
     PUSH EDI                            ; 00411a87
-    MOV AL,byte ptr [ESI]               ; 00411a88 | = "batpath.pth" | s_tpath.pth_0057877c+2
+    MOV AL,byte ptr [ESI]               ; 00411a88 | = "batpath.pth" | s_batpath_pth_0057877c+2
         ;   Label: LAB_00411a88
     MOV byte ptr [EDI],AL               ; 00411a8a
     CMP AL,0x0                          ; 00411a8c
     JZ 0x00411aa0                       ; 00411a8e
         ;   XREF to: 00411aa0 (CONDITIONAL_JUMP)  ; LAB_00411aa0
-    MOV AL,byte ptr [ESI + 0x1]         ; 00411a90 | s_atpath.pth_0057877c+1 | s_path.pth_0057877c+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00411a90 | s_batpath_pth_0057877c+1 | s_batpath_pth_0057877c+3
     ADD ESI,0x2                         ; 00411a93
     MOV byte ptr [EDI + 0x1],AL         ; 00411a96
     ADD EDI,0x2                         ; 00411a99

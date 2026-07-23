@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stranger_dfm_005951ef
-;   string s_gat.kfm_005951fc
-;   string s_draw_stand2holsters_00595204
-;   string s_draw_holsters2aimPistols_00595218
-;   string s_draw_stand2coatPocket_00595231
-;   string s_draw_coatPocket2aimShotgun_00595247
-;   string s_draw_coatPocket2aimFlameThrower_00595262
-;   string s_draw_holsters2CoatPocket_00595282
-;   string s_draw_stand2TossAim_0059529b
-;   string s_draw_tossAim2Stand_005952ae
-;   string s_draw_shotGunRecoil_005952c1
-;   string s_draw_coatPocket2aimTommy_005952d4
-;   string s_draw_tommyRecoil_005952ed
-;   string s_draw_stand2spearhold_005952fe
-;   string s_draw_spearStab_00595313
+;   TerminatedCString s_gat_kfm_005951fc
+;   TerminatedCString s_draw_stand2holsters_00595204
+;   TerminatedCString s_draw_holsters2aimPistols_00595218
+;   TerminatedCString s_draw_stand2coatPocket_00595231
+;   TerminatedCString s_draw_coatPocket2aimShotg_00595247
+;   TerminatedCString s_draw_coatPocket2aimFlame_00595262
+;   TerminatedCString s_draw_holsters2CoatPocket_00595282
+;   TerminatedCString s_draw_stand2TossAim_0059529b
+;   TerminatedCString s_draw_tossAim2Stand_005952ae
+;   TerminatedCString s_draw_shotGunRecoil_005952c1
+;   TerminatedCString s_draw_coatPocket2aimTommy_005952d4
+;   TerminatedCString s_draw_tommyRecoil_005952ed
+;   TerminatedCString s_draw_stand2spearhold_005952fe
+;   TerminatedCString s_draw_spearStab_00595313
 ;   ... and 7 more
 ;
 ; Called Functions:

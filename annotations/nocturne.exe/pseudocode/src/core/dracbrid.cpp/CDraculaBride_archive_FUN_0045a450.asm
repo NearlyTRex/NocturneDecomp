@@ -8,20 +8,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0057d75e
-;   string s_modelName_0057d764
-;   string s_guardDistance_0057d76e
-;   string s_riseEvent_0057d77c
-;   string s_initialState_0057d786
-;   string s_vincoffin_0057d793
-;   string s_incoffin_0057d79d
-;   string s_motionState_0057d7a6
-;   string s_clothCount_0057d7b2
-;   string s_freakyVoiceNumber_0057d7bd
-;   string s_exploded_0057d7cf
-;   string s_partCount_0057d7d8
-;   string s_fadeTimer_0057d7e2
-;   string s_partList_0057d7ec
-;   string s_mistState_0057d7f5
+;   TerminatedCString s_modelName_0057d764
+;   TerminatedCString s_guardDistance_0057d76e
+;   TerminatedCString s_riseEvent_0057d77c
+;   TerminatedCString s_initialState_0057d786
+;   TerminatedCString s_vincoffin_0057d793
+;   TerminatedCString s_incoffin_0057d79d
+;   TerminatedCString s_motionState_0057d7a6
+;   TerminatedCString s_clothCount_0057d7b2
+;   TerminatedCString s_freakyVoiceNumber_0057d7bd
+;   TerminatedCString s_exploded_0057d7cf
+;   TerminatedCString s_partCount_0057d7d8
+;   TerminatedCString s_fadeTimer_0057d7e2
+;   TerminatedCString s_partList_0057d7ec
+;   TerminatedCString s_mistState_0057d7f5
 ;   ... and 4 more
 ;
 ; Called Functions:

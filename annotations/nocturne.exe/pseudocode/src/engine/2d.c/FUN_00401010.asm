@@ -9,19 +9,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00577004
-;   string s_No_room_for_frame_buffer._Please_00577013
-;   string s_vga.act_0057703f
+;   TerminatedCString s_No_room_for_frame_buffer_00577013
+;   TerminatedCString s_vga_act_0057703f
 ;   TerminatedCString s_vga_lte_00577047
 ;   TerminatedCString s_vga_map_0057704f
 ;   TerminatedCString s_vga_act_00577057
 ;   TerminatedCString s_rb_0057705f
-;   string s_font.ndx_00577062
-;   string s_startup_0057706b
+;   TerminatedCString s_font_ndx_00577062
+;   TerminatedCString s_startup_0057706b
 ;   TerminatedCString s_engine_2d_c_00577073
-;   string s_Unable_to_open_font.ndx_00577082
+;   TerminatedCString s_Unable_to_open_font_ndx_00577082
 ;   TerminatedCString s_d_0057709a
 ;   TerminatedCString s_font_bin_0057709e
-;   string s_startup_005770a7
+;   TerminatedCString s_startup_005770a7
 ;   TerminatedCString s_engine_2d_c_005770af
 ;   ... and 25 more
 ;

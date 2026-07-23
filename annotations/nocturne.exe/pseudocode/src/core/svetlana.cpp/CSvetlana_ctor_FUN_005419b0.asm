@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_svetlana.dfm_005961f3
+;   TerminatedCString s_svetlana_dfm_005961f3
 ;   undefined1* PTR_core_svetlana.cpp_CSvetlana_setup_FUN_00541a40_005a2a74 = 00541a40
 ;
 ; Called Functions:

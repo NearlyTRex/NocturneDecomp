@@ -67,9 +67,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00505b40 = 00505db1
 ;   undefined1* switchdataD_00505b54 = 00505ffe
-;   string s_wing?.wav_00590021
-;   string s_sentinel-fall.wav_0059002b
-;   string s_%s_confused_while_walking_to_scr_0059003d
+;   TerminatedCString s_wing_wav_00590021
+;   TerminatedCString s_sentinel_fall_wav_0059002b
+;   TerminatedCString s_s_confused_while_walking_0059003d
 ;   double DOUBLE_0059006d = 3.14159265350000
 ;   double DOUBLE_00590075 = 0.523598775583333
 ;   double DOUBLE_0059007d = 32

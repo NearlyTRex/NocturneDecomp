@@ -9,8 +9,8 @@
 ;   support_codec.cpp_CLZWDecompress_init_FUN_00439a30 at 00439a45
 ;
 ; Referenced Globals:
-;   string s_..\\support\\codec.cpp_0057afca
-;   string s_CLZWDictionary::init_-_out_of_me_0057afdf
+;   TerminatedCString s_support_codec_cpp_0057afca
+;   TerminatedCString s_CLZWDictionary_init_out_0057afdf
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

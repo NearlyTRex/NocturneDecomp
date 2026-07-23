@@ -22,7 +22,7 @@
 ;   TerminatedCString s_s_0_00597f75
 ;   TerminatedCString s_anon_00597f77
 ;   TerminatedCString s_anon_00597f79
-;   string s_BackSpace_00597f7b
+;   TerminatedCString s_BackSpace_00597f7b
 ;   ... and 88 more
 ;
 ; Called Functions:

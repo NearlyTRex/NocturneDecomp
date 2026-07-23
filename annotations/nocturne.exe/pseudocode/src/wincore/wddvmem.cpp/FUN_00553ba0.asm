@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFocus_00575470 = 00175a70
-;   string s_..\\wincore\\wddvmem.cpp_00597b48
-;   string s_videoRestore_-_Unable_to_set_fro_00597b5f
+;   TerminatedCString s_wincore_wddvmem_cpp_00597b48
+;   TerminatedCString s_videoRestore_Unable_to_s_00597b5f
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624

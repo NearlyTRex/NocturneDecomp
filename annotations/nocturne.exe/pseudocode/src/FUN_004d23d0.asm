@@ -13,15 +13,15 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d23b8 = 004d25ec
-;   string s_fblurl_00588d05
-;   string s_fblurm_00588d0c
-;   string s_fblurr_00588d13
-;   string s_S_T_A_R_T_00588d1a
-;   string s_O_P_T_I_O_N_S_00588d24
-;   string s_L_O_A_D_00588d32
-;   string s_Q_U_I_T_00588d3a
-;   string s_f0100_00589207
-;   string s_f0300_0058920d
+;   TerminatedCString s_fblurl_00588d05
+;   TerminatedCString s_fblurm_00588d0c
+;   TerminatedCString s_fblurr_00588d13
+;   TerminatedCString s_S_T_A_R_T_00588d1a
+;   TerminatedCString s_O_P_T_I_O_N_S_00588d24
+;   TerminatedCString s_L_O_A_D_00588d32
+;   TerminatedCString s_Q_U_I_T_00588d3a
+;   TerminatedCString s_f0100_00589207
+;   TerminatedCString s_f0300_0058920d
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005bac64

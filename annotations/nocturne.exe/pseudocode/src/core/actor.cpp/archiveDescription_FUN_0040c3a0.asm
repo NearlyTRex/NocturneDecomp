@@ -16,7 +16,7 @@
 ;   core_actor.cpp_archiveVector_FUN_0040c450 at 0040c48b
 ;
 ; Referenced Globals:
-;   string s_//_%s_00577bf7
+;   TerminatedCString s_s_00577bf7
 ;   TerminatedCString s_anon_00577c02
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

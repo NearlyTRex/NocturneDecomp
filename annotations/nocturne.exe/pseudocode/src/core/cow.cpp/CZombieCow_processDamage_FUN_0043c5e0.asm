@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_cow?.wav_0057b412
+;   TerminatedCString s_cow_wav_0057b412
 ;   undefined4 DAT_005bed68
 ;
 ; Called Functions:

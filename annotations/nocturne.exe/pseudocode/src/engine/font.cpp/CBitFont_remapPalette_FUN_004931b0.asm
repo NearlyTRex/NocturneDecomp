@@ -20,8 +20,8 @@
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049018d
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\font.cpp_00581954
-;   string s_CBitFont::remapPalette_-_Invalid_00581967
+;   TerminatedCString s_engine_font_cpp_00581954
+;   TerminatedCString s_CBitFont_remapPalette_In_00581967
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bf7720
 ;   undefined4 DAT_01c00624

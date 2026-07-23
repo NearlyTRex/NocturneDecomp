@@ -11,8 +11,8 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6102
 ;
 ; Referenced Globals:
-;   string s_Error_processing_script._Line:_%_0058e1d6
-;   string s_!WARNING!_Infinite_loop_detected_0058e213
+;   TerminatedCString s_Error_processing_script_0058e1d6
+;   TerminatedCString s_WARNING_Infinite_loop_de_0058e213
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec

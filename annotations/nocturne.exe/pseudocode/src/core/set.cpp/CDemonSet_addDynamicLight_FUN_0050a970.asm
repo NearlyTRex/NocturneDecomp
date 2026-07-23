@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_0059058a
-;   string s_Too_many_dynamic_lights!_0059059a
+;   TerminatedCString s_Too_many_dynamic_lights_0059059a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01fba2d8

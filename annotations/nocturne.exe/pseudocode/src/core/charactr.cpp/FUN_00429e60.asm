@@ -16,8 +16,8 @@
 ;   core_charactr.cpp_FUN_0042a150 at 0042a15f
 ;
 ; Referenced Globals:
-;   string s_..\\core\\charactr.cpp_0057a316
-;   string s_CCharacter::applyLookAt_-_never_s_0057a32b
+;   TerminatedCString s_core_charactr_cpp_0057a316
+;   TerminatedCString s_CCharacter_applyLookAt_n_0057a32b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

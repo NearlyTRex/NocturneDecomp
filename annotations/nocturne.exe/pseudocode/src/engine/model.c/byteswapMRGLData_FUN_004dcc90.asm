@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004dcb84 = 004dccbd
 ;   TerminatedCString s_engine_model_c_0058a4cd
-;   string s_Need_a_new_byteswap!_0058a4df
+;   TerminatedCString s_Need_a_new_byteswap_0058a4df
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

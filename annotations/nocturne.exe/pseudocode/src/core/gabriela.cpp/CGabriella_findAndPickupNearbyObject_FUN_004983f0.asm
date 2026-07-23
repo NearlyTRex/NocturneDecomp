@@ -34,8 +34,8 @@
 ;   FUN_00495a20 at 00496721
 ;
 ; Referenced Globals:
-;   string s_..\\core\\gabriela.cpp_00582134
-;   string s_Hell_froze_-_invalid_pickUpType:_00582149
+;   TerminatedCString s_core_gabriela_cpp_00582134
+;   TerminatedCString s_Hell_froze_invalid_pickU_00582149
 ;   double DOUBLE_00582172 = -0.800000000000000
 ;   double DOUBLE_0058217a = 2
 ;   undefined4 DAT_005993b0

@@ -34,28 +34,6 @@ extern IMAGE_RESOURCE_DIRECTORY DAT_02DFF0A8;
 extern IMAGE_RESOURCE_DIRECTORY DAT_02DFF0C0;
 extern IMAGE_RESOURCE_DIRECTORY DAT_02DFF0D8;
 
-// TerminatedUnicode
-extern TerminatedUnicode DAT_02DFF4B2;
-extern TerminatedUnicode DAT_02DFF4D6;
-extern TerminatedUnicode DAT_02DFF4EE;
-extern TerminatedUnicode DAT_02DFF508;
-extern TerminatedUnicode DAT_02DFF53A;
-extern TerminatedUnicode DAT_02DFF55C;
-extern TerminatedUnicode DAT_02DFF57E;
-extern TerminatedUnicode DAT_02DFF598;
-extern TerminatedUnicode DAT_02DFF5AE;
-extern TerminatedUnicode DAT_02DFF5C8;
-extern TerminatedUnicode DAT_02DFF5E2;
-extern TerminatedUnicode DAT_02DFF600;
-extern TerminatedUnicode DAT_02DFF64A;
-extern TerminatedUnicode DAT_02DFF66C;
-extern TerminatedUnicode DAT_02DFF68E;
-extern TerminatedUnicode DAT_02DFF6A8;
-extern TerminatedUnicode DAT_02DFF6C2;
-extern TerminatedUnicode DAT_02DFF6E0;
-extern TerminatedUnicode DAT_02DFF6F6;
-extern TerminatedUnicode DAT_02DFF716;
-
 // VS_VERSION_INFO
 extern VS_VERSION_INFO Rsrc_Version_1_0;
 

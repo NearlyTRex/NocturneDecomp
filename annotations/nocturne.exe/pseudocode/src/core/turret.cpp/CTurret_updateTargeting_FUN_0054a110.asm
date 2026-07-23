@@ -10,7 +10,7 @@
 ;   core_turret.cpp_CTurret_process_FUN_005497f0 at 005499e6
 ;
 ; Referenced Globals:
-;   string s_%s_has_no_guard_trigger!_00596e78
+;   TerminatedCString s_s_has_no_guard_trigger_00596e78
 ;   float FLOAT_00596e95 = -15
 ;   float FLOAT_00596e99 = 15
 ;   float FLOAT_00596e9d = 0.5

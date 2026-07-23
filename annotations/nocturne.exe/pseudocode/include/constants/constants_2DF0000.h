@@ -299,6 +299,28 @@ static StringTable DAT_02DFF4D0 = {
     .wType = 0x0001
 };
 
+// TerminatedUnicode constants
+static TerminatedUnicode s_StringFileInfo_02dff4b2 = L"StringFileInfo";
+static TerminatedUnicode s_s_040904b0_02dff4d6 = L"040904b0";
+static TerminatedUnicode s_CompanyName_02dff4ee = L"CompanyName";
+static TerminatedUnicode s_Terminal_Reality_Inc_02dff508 = L"Terminal Reality Inc.";
+static TerminatedUnicode s_FileDescription_02dff53a = L"FileDescription";
+static TerminatedUnicode s_Nocturne_TM_02dff55c = L"Nocturne(TM)";
+static TerminatedUnicode s_FileVersion_02dff57e = L"FileVersion";
+static TerminatedUnicode s_s_1_00_52_02dff598 = L"1.00.52";
+static TerminatedUnicode s_InternalName_02dff5ae = L"InternalName";
+static TerminatedUnicode s_Nocturne_02dff5c8 = L"Nocturne";
+static TerminatedUnicode s_LegalCopyright_02dff5e2 = L"LegalCopyright";
+static TerminatedUnicode s_s_1995_1999_Terminal_Rea_02dff600 = L" 1995-1999 Terminal Reality Inc.";
+static TerminatedUnicode s_OriginalFilename_02dff64a = L"OriginalFilename";
+static TerminatedUnicode s_Nocturne_exe_02dff66c = L"Nocturne.exe";
+static TerminatedUnicode s_ProductName_02dff68e = L"ProductName";
+static TerminatedUnicode s_Nocturne_02dff6a8 = L"Nocturne";
+static TerminatedUnicode s_ProductVersion_02dff6c2 = L"ProductVersion";
+static TerminatedUnicode s_s_1_00_52_02dff6e0 = L"1.00.52";
+static TerminatedUnicode s_VarFileInfo_02dff6f6 = L"VarFileInfo";
+static TerminatedUnicode s_Translation_02dff716 = L"Translation";
+
 // Var constants
 static Var DAT_02DFF710 = {
     .wLength = 0x0024,

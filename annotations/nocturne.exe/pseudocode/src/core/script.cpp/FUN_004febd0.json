@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 344,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
+    "pseudocode_lines": 93,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
@@ -137,7 +137,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 318
+    "total_lines": 317
   },
   "cross_references": [
     {
@@ -245,7 +245,7 @@
     {
       "addr": "0058e265",
       "name": "s_world_0058e265",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -281,25 +281,25 @@
     {
       "addr": "0058e273",
       "name": "s_world_0058e273",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e279",
-      "name": "s_Probable_non-text_file_%s_detect_0058e279",
-      "type": "string",
+      "name": "s_Probable_non_text_file_s_0058e279",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e2be",
-      "name": "s_..\\core\\script.cpp_0058e2be",
-      "type": "string",
+      "name": "s_core_script_cpp_0058e2be",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e2d1",
-      "name": "s_%s_failed_syntax_check_on_line_%_0058e2d1",
-      "type": "string",
+      "name": "s_s_failed_syntax_check_on_0058e2d1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -514,12 +514,12 @@
       "line": 70,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0046fcd0(0x01BCD074,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,iVar3 + 1)",
+      "text": "FUN_0046fcd0(0x01BCD074,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,iVar3 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004fe500(param_1);",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004fee30(param_1);",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 85,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004feff0(param_1);",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = FUN_004fef60(param_1,&local_18);",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 95,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_004c8440(\"%s failed syntax check on line %d: %s\",param_2,local_18 + 1,iVar3);",

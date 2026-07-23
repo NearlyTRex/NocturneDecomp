@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_bipp02_0059651f
-;   string s_bipp05_00596526
-;   string s_bipp06_0059652d
-;   string s_bipp09_00596534
+;   TerminatedCString s_bipp02_0059651f
+;   TerminatedCString s_bipp05_00596526
+;   TerminatedCString s_bipp06_0059652d
+;   TerminatedCString s_bipp09_00596534
 ;   undefined4 DAT_02dca1d0
 ;   undefined4 DAT_02dca1d4
 ;   undefined4 DAT_02dca1d8

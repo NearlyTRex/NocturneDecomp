@@ -11,10 +11,10 @@
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0 at 004df7e8
 ;
 ; Referenced Globals:
-;   string s_..\\core\\morph.cpp_0058ab5a
-;   string s_CMorphModel::animate_-_invalid_p_0058ab6c
-;   string s_..\\core\\morph.cpp_0058ab96
-;   string s_CMorphModel::animate_-_invalid_v_0058aba8
+;   TerminatedCString s_core_morph_cpp_0058ab5a
+;   TerminatedCString s_CMorphModel_animate_inva_0058ab6c
+;   TerminatedCString s_core_morph_cpp_0058ab96
+;   TerminatedCString s_CMorphModel_animate_inva_0058aba8
 ;   undefined4 DAT_005a0cc8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

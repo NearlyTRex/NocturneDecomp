@@ -12,14 +12,14 @@
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 00490099
 ;
 ; Referenced Globals:
-;   string s_Unable_to_allocate_%u_bytes_for_b_0057a625
-;   string s_..\\cockpit\\ckptutil.c_0057a657
+;   TerminatedCString s_Unable_to_allocate_u_byt_0057a625
+;   TerminatedCString s_cockpit_ckptutil_c_0057a657
 ;   TerminatedCString s_rb_0057a66d
 ;   TerminatedCString s_art_0057a670
-;   string s_Unable_to_open_bitmap_file_(%s)._0057a674
-;   string s_..\\cockpit\\ckptutil.c_0057a695
-;   string s_Unable_to_read_bitmap_file_(%s)._0057a6ab
-;   string s_..\\cockpit\\ckptutil.c_0057a6cc
+;   TerminatedCString s_Unable_to_open_bitmap_fi_0057a674
+;   TerminatedCString s_cockpit_ckptutil_c_0057a695
+;   TerminatedCString s_Unable_to_read_bitmap_fi_0057a6ab
+;   TerminatedCString s_cockpit_ckptutil_c_0057a6cc
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

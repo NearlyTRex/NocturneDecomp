@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Set_state_version_00590882
 ;   TerminatedCString s_s_1_00590898
-;   string s_//_Camera_count,_enabled_list_0059089b
+;   TerminatedCString s_Camera_count_enabled_lis_0059089b
 ;   TerminatedCString s_d_005908ba
 ;   TerminatedCString s_d_005908be
 ;

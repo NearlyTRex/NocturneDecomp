@@ -47,8 +47,8 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(int *param_1,uint param_2
       iVar3 = param_1[1] + iVar4;
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x1c;
-      _fscanf(iVar1,"%f,%f,%f, %f,%f,%f,%f\n",iVar3,iVar3 + 4,iVar3 + 8,iVar3 + 0xc,
-                 iVar3 + 0x10,iVar3 + 0x14,iVar3 + 0x18);
+      _fscanf(iVar1,"%f,%f,%f, %f,%f,%f,%f\n",iVar3,iVar3 + 4,iVar3 + 8,iVar3 + 0xc,iVar3 + 0x10,
+                 iVar3 + 0x14,iVar3 + 0x18);
     } while (iVar2 < *param_1);
   }
   _fclose(iVar1);

@@ -18,11 +18,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
-;   string s_gEdFont_must_be_set_by_the_appli_0057e510
+;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   char CHAR_00h_0057e72c = \x00
-;   string s_Directory:_0057e72d
-;   string s_Filename:_0057e739
-;   string s_Filename:_0057e744
+;   TerminatedCString s_Directory_0057e72d
+;   TerminatedCString s_Filename_0057e739
+;   TerminatedCString s_Filename_0057e744
 ;   TerminatedCString s_anon_0057e74f
 ;   undefined4 s_anon_0057e74f+1
 ;   TerminatedCString s_d_0057e751

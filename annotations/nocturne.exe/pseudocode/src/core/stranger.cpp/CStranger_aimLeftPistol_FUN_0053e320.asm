@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_00595cf7
-;   string s_CStranger::aimLeftPistol_-_no_we_00595d0c
+;   TerminatedCString s_CStranger_aimLeftPistol_00595d0c
 ;   double DOUBLE_00595d37 = 0.0100000000000000
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730

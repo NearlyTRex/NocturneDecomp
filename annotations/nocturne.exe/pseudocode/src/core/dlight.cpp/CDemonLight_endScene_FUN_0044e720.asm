@@ -13,8 +13,8 @@
 ;   core_set.cpp_FUN_0050a260 at 0050a474
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dlight.cpp_0057c697
-;   string s_CDemonLight::endScene_-_Scene_no_0057c6aa
+;   TerminatedCString s_core_dlight_cpp_0057c697
+;   TerminatedCString s_CDemonLight_endScene_Sce_0057c6aa
 ;   double DOUBLE_0057c6d6 = 0.00390625
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738

@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0058647d
-;   string s_modelName_00586483
-;   string s_motion_state_0058648d
+;   TerminatedCString s_modelName_00586483
+;   TerminatedCString s_motion_state_0058648d
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80

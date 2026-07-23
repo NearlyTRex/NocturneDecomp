@@ -17,7 +17,7 @@
 ;   FUN_0053fc60 at 0053febf
 ;
 ; Referenced Globals:
-;   string s_Climbing_ladder_%s_00595af7
+;   TerminatedCString s_Climbing_ladder_s_00595af7
 ;   double DOUBLE_00595b0f = 0.990000000000000
 ;   float FLOAT_00595b17 = 0.5
 ;   double DOUBLE_00595b1f = 2

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_rb_00577154
 ;   TerminatedCString s_art_00577157
 ;   TerminatedCString s_engine_2d_c_0057715b
-;   string s_Unable_to_open_VGA_palette_0057716a
+;   TerminatedCString s_Unable_to_open_VGA_palet_0057716a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

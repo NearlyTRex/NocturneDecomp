@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 435,
-    "complexity_score": 565,
+    "complexity_score": 566,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
+    "pseudocode_lines": 151,
     "suspect_count": 39,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 585
+    "total_lines": 586
   },
   "cross_references": [
     {
@@ -184,26 +184,26 @@
     },
     {
       "addr": "0058add1",
-      "name": "s_..\\core\\motion.cpp_0058add1",
-      "type": "string",
+      "name": "s_core_motion_cpp_0058add1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058ade4",
-      "name": "s_Error_reading_motion_list._0058ade4",
-      "type": "string",
+      "name": "s_Error_reading_motion_lis_0058ade4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058adff",
-      "name": "s_..\\core\\motion.cpp_0058adff",
-      "type": "string",
+      "name": "s_core_motion_cpp_0058adff",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058ae12",
-      "name": "s_Can't_read_motion_list_-_it's_ve_0058ae12",
-      "type": "string",
+      "name": "s_Can_t_read_motion_list_i_0058ae12",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,26 +226,26 @@
     },
     {
       "addr": "0058ae91",
-      "name": "s_\"%[^\"]\",%f,%d,%d,%d_0058ae91",
-      "type": "string",
+      "name": "s_f_d_d_d_0058ae91",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058aea6",
-      "name": "s_%d,%d,%f_0058aea6",
-      "type": "string",
+      "name": "s_d_d_f_0058aea6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058aeb0",
-      "name": "s_%d,%f,%d_0058aeb0",
-      "type": "string",
+      "name": "s_d_f_d_0058aeb0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058aeba",
-      "name": "s_%d,%f_0058aeba",
-      "type": "string",
+      "name": "s_d_f_0058aeba",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -256,8 +256,8 @@
     },
     {
       "addr": "0058aec5",
-      "name": "s_%d,%d,%d,%f,%f,%d_0058aec5",
-      "type": "string",
+      "name": "s_d_d_d_f_f_d_0058aec5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -268,8 +268,8 @@
     },
     {
       "addr": "0058aedc",
-      "name": "s_%d,%d_0058aedc",
-      "type": "string",
+      "name": "s_d_d_0058aedc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -587,7 +587,7 @@
       "line": 67,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\",%f,%d,%d,%d\\n\",piVar3,piVar3 + 8,piVar3 + 9,piVar3 + 0x18,",
+      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\",%f,%d,%d,%d\\n\",piVar3,piVar3 + 8,piVar3 + 9,piVar3 + 0x18,piVar3 + 0x19",
       "type": "unnamed_param"
     },
     {
@@ -619,12 +619,12 @@
       "line": 78,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%f,%d\\n\",&local_38,piVar3 + 0xf,piVar3 + 0x10);",
+      "text": "_fscanf(param_2,\"%d,%f,%d\\n\",&local_38,piVar3 + 0xf,piVar3 + 0x10)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -632,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d,%f\\n\",piVar3 + 0x14,piVar3 + 0x15);",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 87,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 91,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d\\n\",piVar3 + 0x1a);",
@@ -656,15 +656,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d,%d,%f,%f,%d\\n\",local_30,&local_38,local_1c,local_14,",
+      "text": "_fscanf(param_2,\"%d,%d,%d,%f,%f,%d\\n\",local_30,&local_38,local_1c,local_14,local_18,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 111,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -672,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 115,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d\\n\",piVar3 + 0x129);",
@@ -680,7 +680,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d,%d\\n\",local_20 + iVar1,piVar4);",
@@ -688,7 +688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -696,7 +696,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 135,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d\",piVar3 + 0x148);",
@@ -704,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 140,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d\",piVar4);",
@@ -712,7 +712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 145,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = _fgetc(param_2);",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 152,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_28 < param_1[0x259]);",

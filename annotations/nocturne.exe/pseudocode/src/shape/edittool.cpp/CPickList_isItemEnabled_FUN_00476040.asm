@@ -10,8 +10,8 @@
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00474ec7
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057eebb
-;   string s_CPickList::isItemEnabled_-_inval_0057eed1
+;   TerminatedCString s_shape_edittool_cpp_0057eebb
+;   TerminatedCString s_CPickList_isItemEnabled_0057eed1
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

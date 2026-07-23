@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1481,
-    "complexity_score": 1746,
+    "complexity_score": 1745,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 57,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 811,
+    "pseudocode_lines": 810,
     "suspect_count": 87,
     "suspect_types": [
       "bitcast_double_pair",
@@ -144,7 +144,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2292
+    "total_lines": 2291
   },
   "cross_references": [
     {
@@ -410,7 +410,7 @@
     {
       "addr": "00588b54",
       "name": "s_Muted_00588b54",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -421,8 +421,8 @@
     },
     {
       "addr": "00588b5d",
-      "name": "s_Sound_effects_:_00588b5d",
-      "type": "string",
+      "name": "s_Sound_effects_00588b5d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -439,14 +439,14 @@
     },
     {
       "addr": "00588b74",
-      "name": "s_Sound_effects_:_Off_00588b74",
-      "type": "string",
+      "name": "s_Sound_effects_Off_00588b74",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588b88",
-      "name": "s_Dialog_:_00588b88",
-      "type": "string",
+      "name": "s_Dialog_00588b88",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -463,14 +463,14 @@
     },
     {
       "addr": "00588b98",
-      "name": "s_Dialog_:_Off_00588b98",
-      "type": "string",
+      "name": "s_Dialog_Off_00588b98",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588ba5",
-      "name": "s_Music_Vol_:_00588ba5",
-      "type": "string",
+      "name": "s_Music_Vol_00588ba5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -487,14 +487,14 @@
     },
     {
       "addr": "00588bb8",
-      "name": "s_Music_Vol_:_Off_00588bb8",
-      "type": "string",
+      "name": "s_Music_Vol_Off_00588bb8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588bc8",
-      "name": "s_Output_rate_:_00588bc8",
-      "type": "string",
+      "name": "s_Output_rate_00588bc8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -511,8 +511,8 @@
     },
     {
       "addr": "00588bdd",
-      "name": "s_Output_quality_:_00588bdd",
-      "type": "string",
+      "name": "s_Output_quality_00588bdd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -529,50 +529,50 @@
     },
     {
       "addr": "00588bf6",
-      "name": "s_Output_type_:_MONO_00588bf6",
-      "type": "string",
+      "name": "s_Output_type_MONO_00588bf6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c09",
-      "name": "s_Output_type_:_STEREO_00588c09",
-      "type": "string",
+      "name": "s_Output_type_STEREO_00588c09",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c1e",
-      "name": "s_Device_:_00588c1e",
-      "type": "string",
+      "name": "s_Device_00588c1e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c28",
-      "name": "s_Hardware_mixing:_On_00588c28",
-      "type": "string",
+      "name": "s_Hardware_mixing_On_00588c28",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c3c",
-      "name": "s_Hardware_mixing:_Off_00588c3c",
-      "type": "string",
+      "name": "s_Hardware_mixing_Off_00588c3c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c51",
       "name": "s_Sound_Options_00588c51",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c5f",
-      "name": "s_colt45-0.wav_00588c5f",
-      "type": "string",
+      "name": "s_colt45_0_wav_00588c5f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588c6c",
       "name": "s_Select_sound_device_00588c6c",
-      "type": "string",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -1082,7 +1082,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 23,
-          "line": 541,
+          "line": 540,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
@@ -1205,7 +1205,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 385,
+      "line": 384,
       "match": "DAT_01cc6ed8",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01cc6ed8 + iVar11 * 0x100;",
@@ -1213,7 +1213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 455,
+      "line": 454,
       "match": "DAT_01cc6ed8",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cc6ed8 + iVar11 * 0x100,uVar20);",
@@ -1221,7 +1221,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 468,
+      "line": 467,
       "match": "DAT_01cc6ed8",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01cc6ed8 + iVar3;",
@@ -1229,7 +1229,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 481,
+      "line": 480,
       "match": "DAT_01cc6ed8",
       "severity": "mild",
       "text": "pcVar14 = &DAT_01cc6ed8 + iVar3;",
@@ -1237,7 +1237,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 503,
+      "line": 502,
       "match": "DAT_01cc6ed8",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01cc6ed8 + iVar11;",
@@ -1245,7 +1245,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 531,
+      "line": 530,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "local_1c = DAT_005b761c / 0x14;",
@@ -1253,7 +1253,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 532,
+      "line": 531,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "local_18 = DAT_005b761c / iVar3;",
@@ -1261,7 +1261,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 551,
+      "line": 550,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "uStack_44 = __BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)) *",
@@ -1269,7 +1269,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 552,
+      "line": 551,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(local_808,uStack_80c));",
@@ -1277,7 +1277,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 554,
+      "line": 553,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(iVar11,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)));",
@@ -1285,7 +1285,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 555,
+      "line": 554,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar9 = DAT_005b7620 + -1;",
@@ -1293,7 +1293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 558,
+      "line": 557,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "((float10)DAT_005b7620 -",
@@ -1301,7 +1301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 559,
+      "line": 558,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "(float10)fVar8 * (float10)DAT_005b7620 *",
@@ -1309,7 +1309,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 563,
+      "line": 562,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "dVar21 = __BITCAST_DOUBLE(CONCAT44(uVar10,iVar13));",
@@ -1317,7 +1317,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 674,
+      "line": 673,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_7f0 = local_7f0 + 1.5774054650233886e-314._0_4_;",
@@ -1325,7 +1325,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 810,
+      "line": 809,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -1333,7 +1333,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 810,
+      "line": 809,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -1341,7 +1341,7 @@
     },
     {
       "description": "Raw hex address 0x4d1ac4 assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 556,
+      "line": 555,
       "match": "0x4d1ac4",
       "severity": "moderate",
       "text": "uVar10 = 0x4d1ac4;",
@@ -1453,7 +1453,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 387,
+      "line": 386,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1461,7 +1461,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 411,
+      "line": 410,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1469,7 +1469,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 431,
+      "line": 430,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1477,7 +1477,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 469,
+      "line": 468,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1485,7 +1485,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 491,
+      "line": 490,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1493,7 +1493,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 513,
+      "line": 512,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1541,7 +1541,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 445,
+      "line": 444,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar10,uVar5);",
@@ -1549,7 +1549,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 451,
+      "line": 450,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar10,uVar5);",
@@ -1557,7 +1557,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 510,
+      "line": 509,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,pcVar14);",
@@ -1565,7 +1565,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 731,
+      "line": 730,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,0x02DC9450);",
@@ -1573,7 +1573,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 751,
+      "line": 750,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,0x02DC9450);",
@@ -1581,7 +1581,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 766,
+      "line": 765,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,0x02DC9450);",
@@ -1589,7 +1589,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 771,
+      "line": 770,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,local_7e8);",
@@ -1597,7 +1597,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 779,
+      "line": 778,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,local_560);",
@@ -1605,7 +1605,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 804,
+      "line": 803,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,0x02DC9450);",
@@ -1613,7 +1613,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 809,
+      "line": 808,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar20 = CONCAT44(uVar6,1);",
@@ -1693,7 +1693,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 402,
+      "line": 401,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1701,7 +1701,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 422,
+      "line": 421,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1709,7 +1709,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 482,
+      "line": 481,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1773,7 +1773,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 402,
+      "line": 401,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1781,7 +1781,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 422,
+      "line": 421,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1789,7 +1789,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 482,
+      "line": 481,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1797,7 +1797,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 541,
+      "line": 540,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar16 = iVar11 >> 0x1f;",

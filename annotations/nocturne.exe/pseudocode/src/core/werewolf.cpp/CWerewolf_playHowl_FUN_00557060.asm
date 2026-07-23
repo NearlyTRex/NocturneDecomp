@@ -9,7 +9,7 @@
 ;   core_werewolf.cpp_CWerewolf_process_FUN_00555c60 at 005567c3
 ;
 ; Referenced Globals:
-;   string s_were?.wav_00597e29
+;   TerminatedCString s_were_wav_00597e29
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50

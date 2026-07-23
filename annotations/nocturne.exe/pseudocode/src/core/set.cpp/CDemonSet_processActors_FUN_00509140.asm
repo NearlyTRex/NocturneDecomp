@@ -24,8 +24,8 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a63f6
 ;
 ; Referenced Globals:
-;   string s_%d._%s_:_%3.2f_ms_005904a6
-;   string s_Process_time_(%d_actors)_:_%3.2f_005904b9
+;   TerminatedCString s_d_s_3_2f_ms_005904a6
+;   TerminatedCString s_Process_time_d_actors_3_005904b9
 ;   double DOUBLE_005904e2 = 0.0555555555555556
 ;   double DOUBLE_005904ea = 0.0000152587890625
 ;   double DOUBLE_005904f2 = 1000

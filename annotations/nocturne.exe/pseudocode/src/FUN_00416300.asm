@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   string s_%s_going_into_background_00578f60
+;   TerminatedCString s_s_going_into_background_00578f60
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368

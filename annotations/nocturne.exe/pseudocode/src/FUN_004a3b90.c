@@ -89,8 +89,7 @@ void FUN_004a3b90(int param_1,char *param_2)
   local_14 = 1;
   iVar2 = _fopen("save\\$$SAVE$$.TMP","wt");
   if (iVar2 == 0) {
-    uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                      ("Warning!  Your game didn't save.");
+    uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Warning!  Your game didn't save.");
     FUN_0046fcd0(0x01BCD074,uVar4);
     DAT_00763e90 = iVar2;
     return;
@@ -132,11 +131,9 @@ void FUN_004a3b90(int param_1,char *param_2)
                          (&CHAR_00h_00583c06,"save\\$$SAVE$$.TMP");
     crt_fstream_cpp_ifstream_ctor_FUN_005652fe(local_14c,0);
     crt_fstream_cpp_ofstream_ctor_FUN_0056536a(local_cc,0);
-    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                      ("Warning!  Your game didn't save.");
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Warning!  Your game didn't save.");
     uVar4 = 0x000001A4;
-    crt_fstream_cpp_openFile_FUN_00565eb5(local_14c,"save\\$$SAVE$$.TMP",0x121,0x000001A4)
-    ;
+    crt_fstream_cpp_openFile_FUN_00565eb5(local_14c,"save\\$$SAVE$$.TMP",0x121,0x000001A4);
     if (local_e8 != 0) {
       FUN_0046fcd0(0x01BCD074,uVar3);
       crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);

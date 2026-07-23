@@ -205,8 +205,7 @@ LAB_004d4fed:
                                 (param_1,local_130,local_ac,0x3e4ccccd,local_1e4);
               iVar3 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(param_1,uVar2);
               if (iVar3 != 0) {
-                (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"gh-hits[1,4].wav")
-                ;
+                (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"gh-hits[1,4].wav");
               }
             }
           }

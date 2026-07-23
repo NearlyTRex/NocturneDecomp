@@ -21,10 +21,10 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0048ab04 = 0048acc0
 ;   undefined1* switchdataD_0048ab2c = 0048ace3
-;   string s_ric-%s!?.wav_0058146c
-;   string s_ric-%s!?.wav_00581479
-;   string s_ric-%s!?.wav_00581486
-;   string s_ric-%s.wav_00581493
+;   TerminatedCString s_ric_s_wav_0058146c
+;   TerminatedCString s_ric_s_wav_00581479
+;   TerminatedCString s_ric_s_wav_00581486
+;   TerminatedCString s_ric_s_wav_00581493
 ;   double DOUBLE_005814a4 = 0.200000000000000
 ;   double DOUBLE_005814ac = -0.200000000000000
 ;   double DOUBLE_005814b4 = 0.0578000000000000

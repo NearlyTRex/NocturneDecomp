@@ -12,18 +12,18 @@
 ;   FUN_004b49a0 at 004b4be9
 ;
 ; Referenced Globals:
-;   string s_%s{_//_Inventory_005871f5
-;   string s_%s//_fileVersion_00587207
-;   string s_%s%d_00587219
-;   string s_%s//_itemCount_0058721f
-;   string s_%s%d_0058722f
-;   string s_%s//_currentWeapon_00587235
-;   string s_%s%d_00587249
-;   string s_%s//_battery_strength_0058724f
-;   string s_%s%f_00587266
-;   string s_%s//_actor_name_list_0058726c
-;   string s_%s//_actor_data_list_00587282
-;   string s_%s}_//_End_inventory_00587298
+;   TerminatedCString s_s_Inventory_005871f5
+;   TerminatedCString s_s_fileVersion_00587207
+;   TerminatedCString s_s_d_00587219
+;   TerminatedCString s_s_itemCount_0058721f
+;   TerminatedCString s_s_d_0058722f
+;   TerminatedCString s_s_currentWeapon_00587235
+;   TerminatedCString s_s_d_00587249
+;   TerminatedCString s_s_battery_strength_0058724f
+;   TerminatedCString s_s_f_00587266
+;   TerminatedCString s_s_actor_name_list_0058726c
+;   TerminatedCString s_s_actor_data_list_00587282
+;   TerminatedCString s_s_End_inventory_00587298
 ;   undefined1 DAT_005acc90
 ;
 ; Called Functions:

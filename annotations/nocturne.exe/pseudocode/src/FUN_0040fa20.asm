@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; Referenced Globals:
-;   string s_armour.wav_0057846a
+;   TerminatedCString s_armour_wav_0057846a
 ;   double DOUBLE_0057847a = 3.14159265350000
 ;   undefined4 DAT_005b7650
 ;

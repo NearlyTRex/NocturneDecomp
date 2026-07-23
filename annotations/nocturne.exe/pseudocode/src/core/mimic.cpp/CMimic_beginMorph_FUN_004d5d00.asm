@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_00589513
-;   string s_CMimic::beginMorph()_-_can't_do_t_00589525
-;   string s_%s_morphing_into_type_%s_0058956e
+;   TerminatedCString s_CMimic_beginMorph_can_t_00589525
+;   TerminatedCString s_s_morphing_into_type_s_0058956e
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01cc4800

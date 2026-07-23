@@ -22,12 +22,12 @@
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049017f
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\font.cpp_00581829
-;   string s_Out_of_memory_0058183c
-;   string s_No_character_markers_found_in_fo_0058184a
-;   string s_..\\engine\\font.cpp_00581878
-;   string s_Too_many_chars:_fontfile_%s,_cha_0058188b
-;   string s_..\\engine\\font.cpp_005818b1
+;   TerminatedCString s_engine_font_cpp_00581829
+;   TerminatedCString s_Out_of_memory_0058183c
+;   TerminatedCString s_No_character_markers_fou_0058184a
+;   TerminatedCString s_engine_font_cpp_00581878
+;   TerminatedCString s_Too_many_chars_fontfile_0058188b
+;   TerminatedCString s_engine_font_cpp_005818b1
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

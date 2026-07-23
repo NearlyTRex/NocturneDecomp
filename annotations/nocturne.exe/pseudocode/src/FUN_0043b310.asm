@@ -6,11 +6,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_0057b1de
-;   string s_direction_0057b1e3
-;   string s_startEvent_0057b1ed
-;   string s_stopEvent_0057b1f8
-;   string s_state_0057b202
-;   string s_actorClass_0057b208
+;   TerminatedCString s_direction_0057b1e3
+;   TerminatedCString s_startEvent_0057b1ed
+;   TerminatedCString s_stopEvent_0057b1f8
+;   TerminatedCString s_state_0057b202
+;   TerminatedCString s_actorClass_0057b208
 ;   undefined4 DAT_005ad380
 ;
 ; Called Functions:

@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_doorpuzz.kfm_00587ef3
-;   string s_puzz-rec.kfm_00587f00
-;   string s_mirrhack.kfm_00587f0d
-;   string s_headlite.raw_00587f1a
-;   undefined4 s_eadlite.raw_00587f1a+1
-;   undefined4 s_adlite.raw_00587f1a+2
-;   undefined4 s_dlite.raw_00587f1a+3
+;   TerminatedCString s_doorpuzz_kfm_00587ef3
+;   TerminatedCString s_puzz_rec_kfm_00587f00
+;   TerminatedCString s_mirrhack_kfm_00587f0d
+;   TerminatedCString s_headlite_raw_00587f1a
+;   undefined4 s_headlite_raw_00587f1a+1
+;   undefined4 s_headlite_raw_00587f1a+2
+;   undefined4 s_headlite_raw_00587f1a+3
 ;   undefined1* PTR_FUN_005a0054 = 004c9580
 ;   undefined4 DAT_005a0210
 ;   undefined4 DAT_005a0230
@@ -96,13 +96,13 @@ section .text
     MOV ESI,0x587f1a                    ; 004c94f5 | = "headlite.raw"
     LEA EDI,[EBX + 0x14c0]              ; 004c94fa
     PUSH EDI                            ; 004c9500
-    MOV AL,byte ptr [ESI]               ; 004c9501 | = "headlite.raw" | s_adlite.raw_00587f1a+2
+    MOV AL,byte ptr [ESI]               ; 004c9501 | = "headlite.raw" | s_headlite_raw_00587f1a+2
         ;   Label: LAB_004c9501
     MOV byte ptr [EDI],AL               ; 004c9503
     CMP AL,0x0                          ; 004c9505
     JZ 0x004c9519                       ; 004c9507
         ;   XREF to: 004c9519 (CONDITIONAL_JUMP)  ; LAB_004c9519
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c9509 | s_eadlite.raw_00587f1a+1 | s_dlite.raw_00587f1a+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c9509 | s_headlite_raw_00587f1a+1 | s_headlite_raw_00587f1a+3
     ADD ESI,0x2                         ; 004c950c
     MOV byte ptr [EDI + 0x1],AL         ; 004c950f
     ADD EDI,0x2                         ; 004c9512

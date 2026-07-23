@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ad2c
-;   string s_CMorphModel::rotatePoints_-_too_m_0058ad3e
+;   TerminatedCString s_CMorphModel_rotatePoints_0058ad3e
 ;   undefined4 DAT_005a0cc0
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368

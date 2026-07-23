@@ -10,7 +10,7 @@
 ;   FUN_0053f310 at 0053f8cf
 ;
 ; Referenced Globals:
-;   string s_fuse.wav_0057e4e2
+;   TerminatedCString s_fuse_wav_0057e4e2
 ;   undefined4 DAT_0059c91c
 ;
 ; Called Functions:

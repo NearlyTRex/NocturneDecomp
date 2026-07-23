@@ -4,66 +4,8 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x5C0000
 // =============================================================================
 
-// string
-string s_d3d_dll_005c0e83 = "d3d.dll";
-string DAT_005C0FE0 = "$CTempleStone$$";
-string DAT_005C0FF8 = "$CStranger$$";
-string DAT_005C102C = "BACKGND.RAW";
-string DAT_005C105C = "$CBassPlayer$$";
-string DAT_005C1088 = "$CTeleportDest$$";
-string DAT_005C10A0 = "$CTeleport$$";
-string DAT_005C10B8 = "$CTentacle$$";
-string DAT_005C10E0 = "$CTextureList$$";
-string DAT_005C1138 = "$CTrigger$$";
-string DAT_005C1150 = "DIRT.RAW";
-string DAT_005C1190 = "$CVampireBoss$$";
-string DAT_005C11CC = "$CCryptVessel$$";
-string DAT_005C11FC = "WATER0.RAW";
-string DAT_005C1214 = "WATER1.RAW";
-string DAT_005C122C = "WATER2.RAW";
-string DAT_005C1244 = "WATER3.RAW";
-string DAT_005C125C = "WATER4.RAW";
-string DAT_005C1274 = "WATER5.RAW";
-string DAT_005C128C = "WATER6.RAW";
-string DAT_005C12A4 = "WATER7.RAW";
-string DAT_005C12BC = "WATER8.RAW";
-string DAT_005C12D4 = "WATER9.RAW";
-string DAT_005C12EC = "WATER10.RAW";
-string DAT_005C1304 = "WATER11.RAW";
-string DAT_005C131C = "WATER12.RAW";
-string DAT_005C1334 = "WATER13.RAW";
-string DAT_005C134C = "WATER14.RAW";
-string DAT_005C1364 = "WATER15.RAW";
-string DAT_005C13D4 = "WATER0.RAW";
-string DAT_005C13EC = "WATER1.RAW";
-string DAT_005C1404 = "WATER2.RAW";
-string DAT_005C141C = "WATER3.RAW";
-string DAT_005C1434 = "WATER4.RAW";
-string DAT_005C144C = "WATER5.RAW";
-string DAT_005C1464 = "WATER6.RAW";
-string DAT_005C147C = "WATER7.RAW";
-string DAT_005C1494 = "WATER8.RAW";
-string DAT_005C14AC = "WATER9.RAW";
-string DAT_005C14C4 = "WATER10.RAW";
-string DAT_005C14DC = "WATER11.RAW";
-string DAT_005C14F4 = "WATER12.RAW";
-string DAT_005C150C = "WATER13.RAW";
-string DAT_005C1524 = "WATER14.RAW";
-string DAT_005C153C = "WATER15.RAW";
-string DAT_005C1554 = "$CWaterActor$$";
-string DAT_005C1568 = "$SWaterVertex$$";
-string DAT_005C1598 = "$CDemonGlobe$$";
-string DAT_005C15C4 = "RAINDRP1.RAW";
-string DAT_005C15DC = "RAINSPLT.RAW";
-string DAT_005C15F4 = "SNOWFLKE.RAW";
-string DAT_005C1608 = "$CWeather$$";
-string DAT_005C1620 = "REDSPARK.RAW";
-string DAT_005C179C = "$ostream$$";
-string DAT_005C17AB = "$strstreambase$$";
-string DAT_005C17CB = "$istream$$";
-string DAT_005C17DA = "$fstreambase$$";
-string DAT_005C1D2C = "$streambuf$$";
-string DAT_005C1D3D = "$strstreambuf$$";
+// TerminatedCString
+TerminatedCString s_d3d_dll_005c0e83 = "d3d.dll";
 
 // undefined1
 undefined1 DAT_005c0e80 = 0x74;

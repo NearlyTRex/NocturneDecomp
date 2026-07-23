@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005882c3
-;   string s_Too_many_3D_windows_005882d6
+;   TerminatedCString s_Too_many_3D_windows_005882d6
 ;   undefined4 DAT_005b7648
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c

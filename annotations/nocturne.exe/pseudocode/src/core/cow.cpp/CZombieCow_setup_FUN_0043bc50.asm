@@ -5,18 +5,18 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_Bip01_Spine2_0057b2dd
-;   string s_Bip01_Head_0057b2ea
-;   string s_head01_0057b2f5
-;   string s_neck01_0057b2fc
-;   string s_lfrontleg01_0057b303
-;   string s_rfrontleg01_0057b30f
-;   string s_rbackleg01_0057b31b
-;   string s_lbackleg01_0057b326
-;   string s_torso01_0057b331
-;   string s_utter01_0057b339
-;   string s_back01_0057b341
-;   string s_tail01_0057b348
+;   TerminatedCString s_Bip01_Spine2_0057b2dd
+;   TerminatedCString s_Bip01_Head_0057b2ea
+;   TerminatedCString s_head01_0057b2f5
+;   TerminatedCString s_neck01_0057b2fc
+;   TerminatedCString s_lfrontleg01_0057b303
+;   TerminatedCString s_rfrontleg01_0057b30f
+;   TerminatedCString s_rbackleg01_0057b31b
+;   TerminatedCString s_lbackleg01_0057b326
+;   TerminatedCString s_torso01_0057b331
+;   TerminatedCString s_utter01_0057b339
+;   TerminatedCString s_back01_0057b341
+;   TerminatedCString s_tail01_0057b348
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0

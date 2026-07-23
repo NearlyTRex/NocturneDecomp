@@ -25,8 +25,8 @@ void FUN_0053fc60(int param_1)
       switch(uVar4) {
       case 0:
         if (*(int *)(param_1 + 0x1fa04) != 0) {
-          FUN_0046fcd0(0x01BCD074,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",
-                       *(int *)(param_1 + 0x1fa04));
+          FUN_0046fcd0(0x01BCD074,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",*(int *)(param_1 + 0x1fa04))
+          ;
         }
         break;
       case 1:

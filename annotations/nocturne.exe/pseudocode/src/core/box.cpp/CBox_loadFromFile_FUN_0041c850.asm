@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_00579705
 ;   TerminatedCString s_f_f_f_0057970a
-;   string s_%f,%f,%f_00579715
-;   string s_%f,%f,%f_00579720
+;   TerminatedCString s_f_f_f_00579715
+;   TerminatedCString s_f_f_f_00579720
 ;   TerminatedCString s_f_0057972b
-;   string s_%f,%f,%f_00579730
-;   string s_%f,%f,%f_0057973b
+;   TerminatedCString s_f_f_f_00579730
+;   TerminatedCString s_f_f_f_0057973b
 ;   TerminatedCString s_d_00579746
 ;
 ; Called Functions:

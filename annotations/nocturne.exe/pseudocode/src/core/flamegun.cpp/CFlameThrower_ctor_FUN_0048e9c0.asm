@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_flamegun.kfm_0058169c
+;   TerminatedCString s_flamegun_kfm_0058169c
 ;   undefined4 DAT_0059d79c
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d7b4 = 00553f10
 ;

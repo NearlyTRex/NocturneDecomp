@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057da56
-;   string s_Invalid_bitsPerPixel!_0057da6e
+;   TerminatedCString s_Invalid_bitsPerPixel_0057da6e
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c

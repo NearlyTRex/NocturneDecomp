@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0058d090
-;   string s_startEvent_0058d09a
-;   string s_moving_0058d0a5
-;   string s_param_0058d0ac
-;   string s_maxAngle_0058d0b2
-;   string s_swooshSound_0058d0bb
-;   string s_creak1Sound_0058d0c7
-;   string s_creak2Sound_0058d0d3
-;   string s_swooshPhaseBias_0058d0df
-;   string s_killHero_0058d0ef
-;   string s_killEnemy_0058d0f8
-;   string s_decay_0058d102
-;   string s_decayTimer_0058d108
-;   string s_groundType_0058d113
-;   string s_stopEvent_0058d11e
+;   TerminatedCString s_startEvent_0058d09a
+;   TerminatedCString s_moving_0058d0a5
+;   TerminatedCString s_param_0058d0ac
+;   TerminatedCString s_maxAngle_0058d0b2
+;   TerminatedCString s_swooshSound_0058d0bb
+;   TerminatedCString s_creak1Sound_0058d0c7
+;   TerminatedCString s_creak2Sound_0058d0d3
+;   TerminatedCString s_swooshPhaseBias_0058d0df
+;   TerminatedCString s_killHero_0058d0ef
+;   TerminatedCString s_killEnemy_0058d0f8
+;   TerminatedCString s_decay_0058d102
+;   TerminatedCString s_decayTimer_0058d108
+;   TerminatedCString s_groundType_0058d113
+;   TerminatedCString s_stopEvent_0058d11e
 ;   ... and 2 more
 ;
 ; Called Functions:

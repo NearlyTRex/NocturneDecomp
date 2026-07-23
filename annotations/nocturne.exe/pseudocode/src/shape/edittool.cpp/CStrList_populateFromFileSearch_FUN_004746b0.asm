@@ -22,7 +22,7 @@
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 00470589
 ;
 ; Referenced Globals:
-;   string s_%s\\%s_0057ee13
+;   TerminatedCString s_s_s_0057ee13
 ;   undefined4 DAT_005be1cc
 ;
 ; Called Functions:

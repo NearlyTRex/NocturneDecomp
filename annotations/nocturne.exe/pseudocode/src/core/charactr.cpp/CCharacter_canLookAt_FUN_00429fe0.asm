@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_STAND_0057a36b
+;   TerminatedCString s_STAND_0057a36b
 ;   double DOUBLE_0057a372 = 0.950000000000000
 ;
 ; Called Functions:

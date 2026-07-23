@@ -9,12 +9,70 @@
 // CONSTANTS
 // =============================================================================
 
-// string constants
-static string s_Stack_Overflow_005c1aa4 = "Stack Overflow!\r\n";
-static string s_0123456789abcdefghijklmnopqrstuv_005c1f24 = "0123456789abcdefghijklmnopqrstuvwxyz";
-static string s_0123456789abcdef_005c1f74 = "0123456789abcdef";
-static string s_0123456789abcdefghijklmnopqrstuv_005c1ff0 = "0123456789abcdefghijklmnopqrstuvwxyz";
-static string s_0123456789abcdefghijklmnopqrstuv_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
+// TerminatedCString constants
+static TerminatedCString s_CTempleStone_005c0fe0 = "$CTempleStone$$";
+static TerminatedCString s_CStranger_005c0ff8 = "$CStranger$$";
+static TerminatedCString s_BACKGND_RAW_005c102c = "BACKGND.RAW";
+static TerminatedCString s_CBassPlayer_005c105c = "$CBassPlayer$$";
+static TerminatedCString s_CTeleportDest_005c1088 = "$CTeleportDest$$";
+static TerminatedCString s_CTeleport_005c10a0 = "$CTeleport$$";
+static TerminatedCString s_CTentacle_005c10b8 = "$CTentacle$$";
+static TerminatedCString s_CTextureList_005c10e0 = "$CTextureList$$";
+static TerminatedCString s_CTrigger_005c1138 = "$CTrigger$$";
+static TerminatedCString s_DIRT_RAW_005c1150 = "DIRT.RAW";
+static TerminatedCString s_CVampireBoss_005c1190 = "$CVampireBoss$$";
+static TerminatedCString s_CCryptVessel_005c11cc = "$CCryptVessel$$";
+static TerminatedCString s_WATER0_RAW_005c11fc = "WATER0.RAW";
+static TerminatedCString s_WATER1_RAW_005c1214 = "WATER1.RAW";
+static TerminatedCString s_WATER2_RAW_005c122c = "WATER2.RAW";
+static TerminatedCString s_WATER3_RAW_005c1244 = "WATER3.RAW";
+static TerminatedCString s_WATER4_RAW_005c125c = "WATER4.RAW";
+static TerminatedCString s_WATER5_RAW_005c1274 = "WATER5.RAW";
+static TerminatedCString s_WATER6_RAW_005c128c = "WATER6.RAW";
+static TerminatedCString s_WATER7_RAW_005c12a4 = "WATER7.RAW";
+static TerminatedCString s_WATER8_RAW_005c12bc = "WATER8.RAW";
+static TerminatedCString s_WATER9_RAW_005c12d4 = "WATER9.RAW";
+static TerminatedCString s_WATER10_RAW_005c12ec = "WATER10.RAW";
+static TerminatedCString s_WATER11_RAW_005c1304 = "WATER11.RAW";
+static TerminatedCString s_WATER12_RAW_005c131c = "WATER12.RAW";
+static TerminatedCString s_WATER13_RAW_005c1334 = "WATER13.RAW";
+static TerminatedCString s_WATER14_RAW_005c134c = "WATER14.RAW";
+static TerminatedCString s_WATER15_RAW_005c1364 = "WATER15.RAW";
+static TerminatedCString s_WATER0_RAW_005c13d4 = "WATER0.RAW";
+static TerminatedCString s_WATER1_RAW_005c13ec = "WATER1.RAW";
+static TerminatedCString s_WATER2_RAW_005c1404 = "WATER2.RAW";
+static TerminatedCString s_WATER3_RAW_005c141c = "WATER3.RAW";
+static TerminatedCString s_WATER4_RAW_005c1434 = "WATER4.RAW";
+static TerminatedCString s_WATER5_RAW_005c144c = "WATER5.RAW";
+static TerminatedCString s_WATER6_RAW_005c1464 = "WATER6.RAW";
+static TerminatedCString s_WATER7_RAW_005c147c = "WATER7.RAW";
+static TerminatedCString s_WATER8_RAW_005c1494 = "WATER8.RAW";
+static TerminatedCString s_WATER9_RAW_005c14ac = "WATER9.RAW";
+static TerminatedCString s_WATER10_RAW_005c14c4 = "WATER10.RAW";
+static TerminatedCString s_WATER11_RAW_005c14dc = "WATER11.RAW";
+static TerminatedCString s_WATER12_RAW_005c14f4 = "WATER12.RAW";
+static TerminatedCString s_WATER13_RAW_005c150c = "WATER13.RAW";
+static TerminatedCString s_WATER14_RAW_005c1524 = "WATER14.RAW";
+static TerminatedCString s_WATER15_RAW_005c153c = "WATER15.RAW";
+static TerminatedCString s_CWaterActor_005c1554 = "$CWaterActor$$";
+static TerminatedCString s_SWaterVertex_005c1568 = "$SWaterVertex$$";
+static TerminatedCString s_CDemonGlobe_005c1598 = "$CDemonGlobe$$";
+static TerminatedCString s_RAINDRP1_RAW_005c15c4 = "RAINDRP1.RAW";
+static TerminatedCString s_RAINSPLT_RAW_005c15dc = "RAINSPLT.RAW";
+static TerminatedCString s_SNOWFLKE_RAW_005c15f4 = "SNOWFLKE.RAW";
+static TerminatedCString s_CWeather_005c1608 = "$CWeather$$";
+static TerminatedCString s_REDSPARK_RAW_005c1620 = "REDSPARK.RAW";
+static TerminatedCString s_ostream_005c179c = "$ostream$$";
+static TerminatedCString s_strstreambase_005c17ab = "$strstreambase$$";
+static TerminatedCString s_istream_005c17cb = "$istream$$";
+static TerminatedCString s_fstreambase_005c17da = "$fstreambase$$";
+static TerminatedCString s_Stack_Overflow_005c1aa4 = "Stack Overflow!\r\n";
+static TerminatedCString s_streambuf_005c1d2c = "$streambuf$$";
+static TerminatedCString s_strstreambuf_005c1d3d = "$strstreambuf$$";
+static TerminatedCString s_s_0123456789abcdefghijkl_005c1f24 = "0123456789abcdefghijklmnopqrstuvwxyz";
+static TerminatedCString s_s_0123456789abcdef_005c1f74 = "0123456789abcdef";
+static TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0 = "0123456789abcdefghijklmnopqrstuvwxyz";
+static TerminatedCString s_s_0123456789abcdefghijkl_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 // undefined1 constants
 static undefined1 DAT_005c18a0 = 0x01;

@@ -16,8 +16,7 @@ uint __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(int param_1,int param_
   float local_10;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,local_18,param_2 + 0x20);
-  uVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                    ("The door is locked from the other side.");
+  uVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("The door is locked from the other side.");
   if (local_10 <= 0.0) {
     if ((*(byte *)(param_1 + 0x9d0) & 2) != 0) goto LAB_0045663d;
     if (*(int *)(param_1 + 0x9d0) != 0) {

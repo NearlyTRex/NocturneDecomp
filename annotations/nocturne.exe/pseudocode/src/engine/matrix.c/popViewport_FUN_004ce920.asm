@@ -9,8 +9,8 @@
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 at 00460e70
 ;
 ; Referenced Globals:
-;   string s_..\\engine\\matrix.c_005882ea
-;   string s_3D_Window_unbalance_005882fd
+;   TerminatedCString s_engine_matrix_c_005882ea
+;   TerminatedCString s_s_3D_Window_unbalance_005882fd
 ;   undefined4 DAT_005b7648
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c

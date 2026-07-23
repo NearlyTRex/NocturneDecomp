@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058e24e
-;   string s_(No_script_loaded.)_0058e251
+;   TerminatedCString s_No_script_loaded_0058e251
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70

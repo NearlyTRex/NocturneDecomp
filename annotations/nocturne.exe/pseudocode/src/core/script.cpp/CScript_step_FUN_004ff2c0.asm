@@ -191,21 +191,21 @@
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe661
 ;
 ; Referenced Globals:
-;   string s_..\\core\\script.cpp_0058e489
-;   string s_CScript::step_-_Invalid_instruct_0058e49c
-;   string s_(no_error_message_provided)_0058e536
-;   undefined4 s_no_error_message_provided)_0058e536+1
-;   undefined4 s_o_error_message_provided)_0058e536+2
-;   undefined4 s_error_message_provided)_0058e536+3
+;   TerminatedCString s_core_script_cpp_0058e489
+;   TerminatedCString s_CScript_step_Invalid_ins_0058e49c
+;   TerminatedCString s_no_error_message_provide_0058e536
+;   undefined4 s_no_error_message_provide_0058e536+1
+;   undefined4 s_no_error_message_provide_0058e536+2
+;   undefined4 s_no_error_message_provide_0058e536+3
 ;   char CHAR_00h_0058e552 = \x00
-;   string s_Invalid_label_\"%s\"_on_line_0058e553
-;   string s_..\\core\\script.cpp_0058e56e
-;   string s_Internal_script_error_checking_f_0058e581
-;   string s_Duplicate_label_%s_on_lines_%d_a_0058e5b5
+;   TerminatedCString s_Invalid_label_s_on_line_0058e553
+;   TerminatedCString s_core_script_cpp_0058e56e
+;   TerminatedCString s_Internal_script_error_ch_0058e581
+;   TerminatedCString s_Duplicate_label_s_on_lin_0058e5b5
 ;   char CHAR_00h_0058e5db = \x00
-;   string s_syntaxCheckOn_0058e5dc
+;   TerminatedCString s_syntaxCheckOn_0058e5dc
 ;   char CHAR_00h_0058e5ea = \x00
-;   string s_syntaxCheckOff_0058e5eb
+;   TerminatedCString s_syntaxCheckOff_0058e5eb
 ;   ... and 312 more
 ;
 ; Called Functions:
@@ -259,13 +259,13 @@ section .text
         ;   Label: LAB_004ff301
     MOV EDI,0x1e56420                   ; 004ff306
     PUSH EDI                            ; 004ff30b | DAT_01e56420
-    MOV AL,byte ptr [ESI]               ; 004ff30c | = "(no error message provided)" | s_o_error_message_provided)_0058e536+2
+    MOV AL,byte ptr [ESI]               ; 004ff30c | = "(no error message provided)" | s_no_error_message_provide_0058e536+2
         ;   Label: LAB_004ff30c
     MOV byte ptr [EDI],AL               ; 004ff30e | DAT_01e56420 | DAT_01e56422
     CMP AL,0x0                          ; 004ff310
     JZ 0x004ff324                       ; 004ff312
         ;   XREF to: 004ff324 (CONDITIONAL_JUMP)  ; LAB_004ff324
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ff314 | s_no_error_message_provided)_0058e536+1 | s_error_message_provided)_0058e536+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ff314 | s_no_error_message_provide_0058e536+1 | s_no_error_message_provide_0058e536+3
     ADD ESI,0x2                         ; 004ff317
     MOV byte ptr [EDI + 0x1],AL         ; 004ff31a | DAT_01e56421 | DAT_01e56423
     ADD EDI,0x2                         ; 004ff31d
@@ -7104,13 +7104,13 @@ section .text
     MOV ESI,0x58f855                    ; 00504294 | = "Error parsing out camera name"
     MOV EDI,0x1e56420                   ; 00504299
     PUSH EDI                            ; 0050429e | DAT_01e56420
-    MOV AL,byte ptr [ESI]               ; 0050429f | = "Error parsing out camera name" | s_ror_parsing_out_camera_name_0058f855+2
+    MOV AL,byte ptr [ESI]               ; 0050429f | = "Error parsing out camera name" | s_Error_parsing_out_camera_0058f855+2
         ;   Label: LAB_0050429f
     MOV byte ptr [EDI],AL               ; 005042a1 | DAT_01e56420 | DAT_01e56422
     CMP AL,0x0                          ; 005042a3
     JZ 0x005042b7                       ; 005042a5
         ;   XREF to: 005042b7 (CONDITIONAL_JUMP)  ; LAB_005042b7
-    MOV AL,byte ptr [ESI + 0x1]         ; 005042a7 | s_rror_parsing_out_camera_name_0058f855+1 | s_or_parsing_out_camera_name_0058f855+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 005042a7 | s_Error_parsing_out_camera_0058f855+1 | s_Error_parsing_out_camera_0058f855+3
     ADD ESI,0x2                         ; 005042aa
     MOV byte ptr [EDI + 0x1],AL         ; 005042ad | DAT_01e56421 | DAT_01e56423
     ADD EDI,0x2                         ; 005042b0

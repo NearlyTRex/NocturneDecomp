@@ -22,11 +22,9 @@ bool FUN_00470230(uint param_1,uint param_2)
   _vsprintf(0x1bcb4d0,param_2,&local_c);
   local_c = (byte *)0x0;
   FUN_00474c90(local_17c);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                    ("[Y]es, I know what I'm doing and I hate these annoying prompts.");
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es, I know what I'm doing and I hate these annoying prompts.");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_17c,uVar2);
-  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                    ("[N]o, please, I didn't mean to do it!");
+  uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o, please, I didn't mean to do it!");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_17c,uVar2);
   pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("yn");
   pcVar5 = local_168;

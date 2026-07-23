@@ -196,8 +196,7 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
             uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar3);
             if (*(int *)(param_1 + 0x228) == 1) {
-              uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Skip cinematic.")
-              ;
+              uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Skip cinematic.");
               shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar3);
             }
             if (*(int *)(param_1 + 0x228) != 0) {

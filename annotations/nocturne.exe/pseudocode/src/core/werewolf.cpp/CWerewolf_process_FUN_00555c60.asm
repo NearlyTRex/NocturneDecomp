@@ -96,12 +96,12 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   string s_%s_confused_while_walking_to_scr_00597d21
-;   string s_..\\core\\werewolf.cpp_00597d4b
-;   string s_Alpha_werewolf_requires_2_waypoi_00597d60
-;   string s_Phase:_%d,_Timer:_%f_00597d84
-;   string s_%s_gave_up_chase_-_I'm_confused_00597d9a
-;   string s_werewolf-eat.wav_00597dbb
+;   TerminatedCString s_s_confused_while_walking_00597d21
+;   TerminatedCString s_core_werewolf_cpp_00597d4b
+;   TerminatedCString s_Alpha_werewolf_requires_00597d60
+;   TerminatedCString s_Phase_d_Timer_f_00597d84
+;   TerminatedCString s_s_gave_up_chase_I_m_conf_00597d9a
+;   TerminatedCString s_werewolf_eat_wav_00597dbb
 ;   double DOUBLE_00597dd1 = 3.14159265350000
 ;   double DOUBLE_00597dd9 = 4
 ;   double DOUBLE_00597de1 = 32

@@ -5,16 +5,16 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_allowedAttackTypes_00588390
-;   string s_strengthLo_005883a3
-;   string s_strengthHi_005883ae
-;   string s_canAttachLight_005883b9
-;   string s_dismemberProb_005883c8
-;   string s_canGoInInventory_005883d6
-;   string s_ammoType_005883e7
-;   string s_thrustHitCharacterSound_005883f0
-;   string s_swingHitCharacterSound_00588408
-;   string s_hitOtherSound_0058841f
+;   TerminatedCString s_allowedAttackTypes_00588390
+;   TerminatedCString s_strengthLo_005883a3
+;   TerminatedCString s_strengthHi_005883ae
+;   TerminatedCString s_canAttachLight_005883b9
+;   TerminatedCString s_dismemberProb_005883c8
+;   TerminatedCString s_canGoInInventory_005883d6
+;   TerminatedCString s_ammoType_005883e7
+;   TerminatedCString s_thrustHitCharacterSound_005883f0
+;   TerminatedCString s_swingHitCharacterSound_00588408
+;   TerminatedCString s_hitOtherSound_0058841f
 ;   undefined4 DAT_005bade4
 ;
 ; Called Functions:

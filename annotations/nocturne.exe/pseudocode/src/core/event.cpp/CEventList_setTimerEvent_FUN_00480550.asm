@@ -11,10 +11,10 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d0ce
 ;
 ; Referenced Globals:
-;   string s_..\\core\\event.cpp_00580ab0
-;   string s_CEventList::setTimerEvent_-_inva_00580ac2
-;   string s_..\\core\\event.cpp_00580afa
-;   string s_CEventList::setTimerEvent_-_too_m_00580b0c
+;   TerminatedCString s_core_event_cpp_00580ab0
+;   TerminatedCString s_CEventList_setTimerEvent_00580ac2
+;   TerminatedCString s_core_event_cpp_00580afa
+;   TerminatedCString s_CEventList_setTimerEvent_00580b0c
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

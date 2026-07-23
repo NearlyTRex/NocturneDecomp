@@ -20,21 +20,21 @@
 ;   core_stranger.cpp_CStranger_archive_FUN_0053cf90 at 0053cf96
 ;
 ; Referenced Globals:
-;   string s_motion_state_005856ca
-;   string s_partStatus_005856d7
-;   string s_grabbedBy_005856e2
-;   string s_hitPoints_005856ec
-;   string s_motion_state_005856f6
-;   string s_partStatus_00585703
-;   string s_grabbedBy_0058570e
-;   string s_controlType_00585718
-;   string s_objectToPickUp_00585724
-;   string s_doorToOpen_00585733
-;   string s_leverToPull_0058573e
-;   string s_ladderToClimb_0058574a
-;   string s_pushedObject_00585758
+;   TerminatedCString s_motion_state_005856ca
+;   TerminatedCString s_partStatus_005856d7
+;   TerminatedCString s_grabbedBy_005856e2
+;   TerminatedCString s_hitPoints_005856ec
+;   TerminatedCString s_motion_state_005856f6
+;   TerminatedCString s_partStatus_00585703
+;   TerminatedCString s_grabbedBy_0058570e
+;   TerminatedCString s_controlType_00585718
+;   TerminatedCString s_objectToPickUp_00585724
+;   TerminatedCString s_doorToOpen_00585733
+;   TerminatedCString s_leverToPull_0058573e
+;   TerminatedCString s_ladderToClimb_0058574a
+;   TerminatedCString s_pushedObject_00585758
 ;   TerminatedCString s_keys_00585765
-;   string s_keyNameList[%d]_0058576a
+;   TerminatedCString s_keyNameList_d_0058576a
 ;   ... and 5 more
 ;
 ; Called Functions:

@@ -8,9 +8,9 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 at 0048afb2
 ;
 ; Referenced Globals:
-;   string s_fball.kfm_005810e4
-;   string s_smfball.kfm_005810ee
-;   string s_grnball.kfm_005810fa
+;   TerminatedCString s_fball_kfm_005810e4
+;   TerminatedCString s_smfball_kfm_005810ee
+;   TerminatedCString s_grnball_kfm_005810fa
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510

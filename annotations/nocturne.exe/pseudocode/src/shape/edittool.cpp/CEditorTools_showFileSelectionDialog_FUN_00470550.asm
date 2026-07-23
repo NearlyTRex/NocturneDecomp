@@ -15,7 +15,7 @@
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570 at 004a6625
 ;
 ; Referenced Globals:
-;   string s_No_files_found_0057e682
+;   TerminatedCString s_No_files_found_0057e682
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_0056626c

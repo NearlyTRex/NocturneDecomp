@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_stalag.kfm_0057ddde
+;   TerminatedCString s_stalag_kfm_0057ddde
 ;   TerminatedCString s_rock_x_wav_0057dde9
 ;   undefined4 s_rock_x_wav_0057dde9+1
 ;   undefined4 s_rock_x_wav_0057dde9+2

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_0059693f
-;   string s_homePos_00596949
+;   TerminatedCString s_modelName_0059693f
+;   TerminatedCString s_homePos_00596949
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00

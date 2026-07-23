@@ -18,8 +18,8 @@
 ;   ... and 28 more
 ;
 ; Referenced Globals:
-;   string s_..\\core\\setcolid.cpp_00590b43
-;   string s_CDemonSet::ignore_-_ignore_list_i_00590b58
+;   TerminatedCString s_core_setcolid_cpp_00590b43
+;   TerminatedCString s_CDemonSet_ignore_ignore_00590b58
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

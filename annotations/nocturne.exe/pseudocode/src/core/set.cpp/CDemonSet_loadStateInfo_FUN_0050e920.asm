@@ -12,13 +12,13 @@
 ;   FUN_004a4170 at 004a4a0e
 ;
 ; Referenced Globals:
-;   string s_%*[^_]_005908c2
+;   TerminatedCString s_anon_005908c2
 ;   TerminatedCString s_d_005908ca
-;   string s_..\\core\\set.cpp_005908ce
-;   string s_Set_saveState_info_is_invalid_ve_005908de
-;   string s_%*[^_]_00590907
+;   TerminatedCString s_core_set_cpp_005908ce
+;   TerminatedCString s_Set_saveState_info_is_in_005908de
+;   TerminatedCString s_anon_00590907
 ;   TerminatedCString s_d_0059090f
-;   string s_The_set_has_changed_since_you_sa_00590913
+;   TerminatedCString s_The_set_has_changed_sinc_00590913
 ;   TerminatedCString s_d_00590979
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cc4800

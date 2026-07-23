@@ -9,8 +9,8 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   string s_ub-die?.wav_00579bd5
-;   string s_ub-hurt?.wav_00579be1
+;   TerminatedCString s_ub_die_wav_00579bd5
+;   TerminatedCString s_ub_hurt_wav_00579be1
 ;   double DOUBLE_00579bf5 = 2
 ;   undefined4 DAT_005b80f0
 ;

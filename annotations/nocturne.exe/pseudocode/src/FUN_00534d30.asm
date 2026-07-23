@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_destActor_005951b7
+;   TerminatedCString s_destActor_005951b7
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980

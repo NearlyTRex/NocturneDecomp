@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005875a4
-;   string s_keyMask_005875ae
-;   string s_descriptiveName_005875b6
+;   TerminatedCString s_keyMask_005875ae
+;   TerminatedCString s_descriptiveName_005875b6
 ;   undefined4 DAT_005bac4c
 ;
 ; Called Functions:

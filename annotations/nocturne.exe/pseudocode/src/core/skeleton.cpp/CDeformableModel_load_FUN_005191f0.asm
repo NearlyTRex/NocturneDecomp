@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00591693
-;   string s_models_00591696
-;   string s_..\\core\\skeleton.cpp_0059169d
-;   string s_CDeformableModel::load_-_Can't_o_005916b2
+;   TerminatedCString s_models_00591696
+;   TerminatedCString s_core_skeleton_cpp_0059169d
+;   TerminatedCString s_CDeformableModel_load_Ca_005916b2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

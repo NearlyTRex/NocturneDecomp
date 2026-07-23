@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d40
 ;
 ; Referenced Globals:
-;   string s_Error_polling_hw_playback_pos_%s_00593120
+;   TerminatedCString s_Error_polling_hw_playbac_00593120
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:

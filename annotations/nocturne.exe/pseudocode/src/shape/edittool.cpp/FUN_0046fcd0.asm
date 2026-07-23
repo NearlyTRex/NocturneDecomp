@@ -22,8 +22,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
-;   string s_gEdFont_must_be_set_by_the_appli_0057e510
-;   string s_Error_0057e5d7
+;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
+;   TerminatedCString s_Error_0057e5d7
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8

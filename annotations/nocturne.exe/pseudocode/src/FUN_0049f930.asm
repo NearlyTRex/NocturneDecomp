@@ -9,20 +9,20 @@
 ;
 ; Referenced Globals:
 ;   byte[56] BYTE_ARRAY_00582a32
-;   string s_quicksavedgame.noc_00582a6a
-;   string s_Quick_Save_00582a7d
+;   TerminatedCString s_quicksavedgame_noc_00582a6a
+;   TerminatedCString s_Quick_Save_00582a7d
 ;   TerminatedCString s_rb_00582a88
-;   string s_quicksavedgame.noc_00582a8b
+;   TerminatedCString s_quicksavedgame_noc_00582a8b
 ;   TerminatedCString s_save_00582a9e
-;   string s_Restore_quick_saved_game?_00582aa3
-;   string s_quicksavedgame.noc_00582abd
-;   undefined4 s_uicksavedgame.noc_00582abd+1
-;   undefined4 s_icksavedgame.noc_00582abd+2
-;   undefined4 s_cksavedgame.noc_00582abd+3
-;   string s_No_quicked_saved_game_to_load_00582ad0
+;   TerminatedCString s_Restore_quick_saved_game_00582aa3
+;   TerminatedCString s_quicksavedgame_noc_00582abd
+;   undefined4 s_quicksavedgame_noc_00582abd+1
+;   undefined4 s_quicksavedgame_noc_00582abd+2
+;   undefined4 s_quicksavedgame_noc_00582abd+3
+;   TerminatedCString s_No_quicked_saved_game_to_00582ad0
 ;   byte[56] BYTE_ARRAY_00582aee
-;   string s_Gamma_:_%f_00582b26
-;   string s_Gamma_:_%f_00582b31
+;   TerminatedCString s_Gamma_f_00582b26
+;   TerminatedCString s_Gamma_f_00582b31
 ;   ... and 20 more
 ;
 ; Called Functions:
@@ -721,13 +721,13 @@ section .text
     LEA EDI,[EBX + 0x9c8]               ; 004a003a
     MOV dword ptr [EBX + 0x9c4],0x1     ; 004a0040
     PUSH EDI                            ; 004a004a
-    MOV AL,byte ptr [ESI]               ; 004a004b | = "quicksavedgame.noc" | s_icksavedgame.noc_00582abd+2
+    MOV AL,byte ptr [ESI]               ; 004a004b | = "quicksavedgame.noc" | s_quicksavedgame_noc_00582abd+2
         ;   Label: LAB_004a004b
     MOV byte ptr [EDI],AL               ; 004a004d
     CMP AL,0x0                          ; 004a004f
     JZ 0x004a0063                       ; 004a0051
         ;   XREF to: 004a0063 (CONDITIONAL_JUMP)  ; LAB_004a0063
-    MOV AL,byte ptr [ESI + 0x1]         ; 004a0053 | s_uicksavedgame.noc_00582abd+1 | s_cksavedgame.noc_00582abd+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a0053 | s_quicksavedgame_noc_00582abd+1 | s_quicksavedgame_noc_00582abd+3
     ADD ESI,0x2                         ; 004a0056
     MOV byte ptr [EDI + 0x1],AL         ; 004a0059
     ADD EDI,0x2                         ; 004a005c

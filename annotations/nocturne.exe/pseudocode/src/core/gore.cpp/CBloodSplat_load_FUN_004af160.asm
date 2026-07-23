@@ -8,10 +8,10 @@
 ;   core_gore.cpp_CGore_load_FUN_004b0820 at 004b08a7
 ;
 ; Referenced Globals:
-;   string s_%f,%f,%f_005850c0
-;   string s_%d,%d,%d_005850ca
-;   string s_%f,%f,%f_005850d4
-;   string s_%d,%d,%d,%d,%d,%d,%d_005850de
+;   TerminatedCString s_f_f_f_005850c0
+;   TerminatedCString s_d_d_d_005850ca
+;   TerminatedCString s_f_f_f_005850d4
+;   TerminatedCString s_d_d_d_d_d_d_d_005850de
 ;
 ; Called Functions:
 ;   crt_stdio.c_fscanf_FUN_00563350

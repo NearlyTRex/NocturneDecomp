@@ -15,20 +15,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00591228
-;   string s_..\\core\\skeleton.cpp_0059122c
-;   string s_Invalid_skeleton_version_00591241
-;   string s_..\\core\\skeleton.cpp_0059125a
-;   string s_Old_skeleton_version_%d_not_supp_0059126f
-;   string s_..\\core\\skeleton.cpp_00591295
-;   string s_Skeleton_version_%d_is_newer_tha_005912aa
-;   string s_%d,%d_005912fa
-;   string s_\"%[^\"]\",%d_00591301
-;   string s_%f,%f,%f,%f_0059130d
-;   string s_%f,%f,%f_0059131a
-;   string s_%f,%f,%f_00591324
-;   string s_..\\core\\skeleton.cpp_0059132e
-;   string s_CSkeleton::loadStream_-_error_re_00591343
-;   string s_..\\core\\skeleton.cpp_0059136f
+;   TerminatedCString s_core_skeleton_cpp_0059122c
+;   TerminatedCString s_Invalid_skeleton_version_00591241
+;   TerminatedCString s_core_skeleton_cpp_0059125a
+;   TerminatedCString s_Old_skeleton_version_d_n_0059126f
+;   TerminatedCString s_core_skeleton_cpp_00591295
+;   TerminatedCString s_Skeleton_version_d_is_ne_005912aa
+;   TerminatedCString s_d_d_005912fa
+;   TerminatedCString s_d_00591301
+;   TerminatedCString s_f_f_f_f_0059130d
+;   TerminatedCString s_f_f_f_0059131a
+;   TerminatedCString s_f_f_f_00591324
+;   TerminatedCString s_core_skeleton_cpp_0059132e
+;   TerminatedCString s_CSkeleton_loadStream_err_00591343
+;   TerminatedCString s_core_skeleton_cpp_0059136f
 ;   ... and 4 more
 ;
 ; Called Functions:

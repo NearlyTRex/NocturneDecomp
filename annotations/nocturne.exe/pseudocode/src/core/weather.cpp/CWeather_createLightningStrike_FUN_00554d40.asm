@@ -36,7 +36,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noLightningFlash_00597c6d
-;   string s_light?.wav_00597c7e
+;   TerminatedCString s_light_wav_00597c7e
 ;   double DOUBLE_00597c89 = 0.5
 ;   double DOUBLE_00597c91 = 0.0000152590218966964
 ;   float FLOAT_00597c99 = 0.6500000

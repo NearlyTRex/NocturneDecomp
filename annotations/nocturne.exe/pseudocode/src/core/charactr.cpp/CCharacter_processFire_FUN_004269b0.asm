@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_character_onfire_fallapa_00579f9a
-;   string s_character-onfire-loop.wav_00579fb9
+;   TerminatedCString s_character_onfire_loop_wa_00579fb9
 ;   double DOUBLE_00579fda = 65535
 ;   double DOUBLE_00579fe2 = 0.600000000000000
 ;   double DOUBLE_00579fea = 0.0200000000000000

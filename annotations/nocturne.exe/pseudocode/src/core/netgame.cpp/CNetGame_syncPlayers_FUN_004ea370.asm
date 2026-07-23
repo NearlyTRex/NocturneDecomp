@@ -22,13 +22,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058bd2a
-;   string s_CNetGame::syncPlayers_-_don't_us_0058bd3e
-;   string s_Syncing_stage_%d._0058bd76
-;   string s_Waiting_on:_0058bd88
+;   TerminatedCString s_CNetGame_syncPlayers_don_0058bd3e
+;   TerminatedCString s_Syncing_stage_d_0058bd76
+;   TerminatedCString s_Waiting_on_0058bd88
 ;   TerminatedCString s_d_0058bd94
-;   string s_Waiting_on_sync_code_%d_from_ser_0058bdd5
-;   string s_..\\core\\netgame.cpp_0058bdfc
-;   string s_CNetGame::syncPlayers_-_invalid_m_0058be10
+;   TerminatedCString s_Waiting_on_sync_code_d_f_0058bdd5
+;   TerminatedCString s_core_netgame_cpp_0058bdfc
+;   TerminatedCString s_CNetGame_syncPlayers_inv_0058be10
 ;   double DOUBLE_0058be3a = 0.0000152587890625
 ;   double DOUBLE_0058be42 = 30
 ;   double DOUBLE_0058be4a = 0.100000000000000

@@ -13,13 +13,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_3_2f_ms_00584486
 ;   TerminatedCString s_gFilterFX_process_005844b2
-;   string s_gScript->process()_005844c7
-;   string s_gSet->process()_005844da
-;   string s_gGore->process()_005844ea
-;   string s_gFire->process()_005844fb
-;   string s_gEventList->process()_0058450c
-;   string s_gSit->process()_00584522
-;   string s_simulate_:_%3.2f_ms_00584532
+;   TerminatedCString s_gScript_process_005844c7
+;   TerminatedCString s_gSet_process_005844da
+;   TerminatedCString s_gGore_process_005844ea
+;   TerminatedCString s_gFire_process_005844fb
+;   TerminatedCString s_gEventList_process_0058450c
+;   TerminatedCString s_gSit_process_00584522
+;   TerminatedCString s_simulate_3_2f_ms_00584532
 ;   double DOUBLE_0058454a = 0.0555555555555556
 ;   double DOUBLE_00584552 = 0.0000152587890625
 ;   double DOUBLE_0058455a = 1000

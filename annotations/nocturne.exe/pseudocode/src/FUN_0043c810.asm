@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_question.kfm_0057b422
+;   TerminatedCString s_question_kfm_0057b422
 ;   undefined1* PTR_core_crate.cpp_CCrate_setup_FUN_0043c870_0059ba34 = 0043c870
 ;
 ; Called Functions:

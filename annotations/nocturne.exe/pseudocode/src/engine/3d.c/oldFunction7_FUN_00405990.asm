@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_00577504
-;   string s_old_func_00577513
+;   TerminatedCString s_old_func_00577513
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

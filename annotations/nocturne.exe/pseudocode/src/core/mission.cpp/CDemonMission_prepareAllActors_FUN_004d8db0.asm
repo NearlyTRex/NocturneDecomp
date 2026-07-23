@@ -12,10 +12,10 @@
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d97a9
 ;
 ; Referenced Globals:
-;   string s_Setting_up_actors_00589c5c
-;   string s_Setting_up_actors_00589c6e
-;   string s_Setting_up_actors_00589c80
-;   string s_Setting_up_actors_00589c92
+;   TerminatedCString s_Setting_up_actors_00589c5c
+;   TerminatedCString s_Setting_up_actors_00589c6e
+;   TerminatedCString s_Setting_up_actors_00589c80
+;   TerminatedCString s_Setting_up_actors_00589c92
 ;   undefined4 DAT_005baca0
 ;
 ; Called Functions:

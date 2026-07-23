@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   void* switchdataD_004d21ac = 004d22ed
 ;   TerminatedCString s_Graphic_options_00588cc3
-;   string s_Sound_options_00588cd3
-;   string s_Control_options_00588ce1
-;   string s_Credits_00588cf1
-;   string s_Option_Menu_00588cf9
+;   TerminatedCString s_Sound_options_00588cd3
+;   TerminatedCString s_Control_options_00588ce1
+;   TerminatedCString s_Credits_00588cf1
+;   TerminatedCString s_Option_Menu_00588cf9
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_005bed68

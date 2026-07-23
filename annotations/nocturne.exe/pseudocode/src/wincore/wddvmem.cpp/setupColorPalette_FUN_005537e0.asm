@@ -9,10 +9,10 @@
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 at 00553140
 ;
 ; Referenced Globals:
-;   string s_..\\wincore\\wddvmem.cpp_00597a5d
-;   string s_setpal_-_Unable_to_create_palett_00597a74
-;   string s_..\\wincore\\wddvmem.cpp_00597a9d
-;   string s_setpal_-_Unable_to_set_front_buf_00597ab4
+;   TerminatedCString s_wincore_wddvmem_cpp_00597a5d
+;   TerminatedCString s_setpal_Unable_to_create_00597a74
+;   TerminatedCString s_wincore_wddvmem_cpp_00597a9d
+;   TerminatedCString s_setpal_Unable_to_set_fro_00597ab4
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01c00648
 ;   undefined4 DAT_01c0064c

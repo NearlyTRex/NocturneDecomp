@@ -20,8 +20,8 @@
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e3e
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057e952
-;   string s_CEditorTools::closeWindow()_call_0057e968
+;   TerminatedCString s_shape_edittool_cpp_0057e952
+;   TerminatedCString s_CEditorTools_closeWindow_0057e968
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bd2fa0

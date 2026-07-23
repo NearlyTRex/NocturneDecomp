@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_00596916
-;   string s_wolfInTrap_00596920
+;   TerminatedCString s_modelName_00596916
+;   TerminatedCString s_wolfInTrap_00596920
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980

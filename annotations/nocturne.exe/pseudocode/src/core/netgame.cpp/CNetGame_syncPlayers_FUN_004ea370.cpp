@@ -117,8 +117,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
     }
     while (_DAT_01cea400 < param_2) {
       wincore_windll_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(local_94,"Waiting on sync code %d from server...",param_2)
-      ;
+      _sprintf(local_94,"Waiting on sync code %d from server...",param_2);
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);

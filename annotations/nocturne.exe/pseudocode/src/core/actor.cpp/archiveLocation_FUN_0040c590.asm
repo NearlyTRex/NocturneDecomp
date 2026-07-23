@@ -12,9 +12,9 @@
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d2e1
 ;
 ; Referenced Globals:
-;   string s_%d,%f,%f,%f_00577c2c
-;   string s_%s%d,%g,%g,%g_00577c38
-;   string s_4D_location_005acc38
+;   TerminatedCString s_d_f_f_f_00577c2c
+;   TerminatedCString s_s_d_g_g_g_00577c38
+;   TerminatedCString s_s_4D_location_005acc38
 ;   undefined1 DAT_005acc90
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88

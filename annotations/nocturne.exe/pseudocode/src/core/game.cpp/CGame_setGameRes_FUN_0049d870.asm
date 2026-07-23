@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0058276a
-;   string s_CGame::setGameRes_-_Unable_to_se_0058277b
+;   TerminatedCString s_CGame_setGameRes_Unable_0058277b
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_014b9904

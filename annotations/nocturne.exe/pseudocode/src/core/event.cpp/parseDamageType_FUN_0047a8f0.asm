@@ -8,13 +8,13 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ba2c
 ;
 ; Referenced Globals:
-;   string s_generic_0057f54d
-;   string s_bullet_0057f555
+;   TerminatedCString s_generic_0057f54d
+;   TerminatedCString s_bullet_0057f555
 ;   TerminatedCString s_Fire_0057f55c
-;   string s_Blade_0057f561
-;   string s_Stake_0057f567
+;   TerminatedCString s_Blade_0057f561
+;   TerminatedCString s_Stake_0057f567
 ;   TerminatedCString s_Gas_0057f56d
-;   string s_electrocute_0057f571
+;   TerminatedCString s_electrocute_0057f571
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520

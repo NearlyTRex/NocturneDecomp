@@ -68,8 +68,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004da760 = 004db058
-;   string s_mob-scream?.wav_0058a2f9
-;   string s_%s_confused_while_walking_to_scr_0058a309
+;   TerminatedCString s_mob_scream_wav_0058a2f9
+;   TerminatedCString s_s_confused_while_walking_0058a309
 ;   double DOUBLE_0058a339 = 3.14159265350000
 ;   double DOUBLE_0058a341 = 0.5
 ;   double DOUBLE_0058a349 = 0.523598775583333

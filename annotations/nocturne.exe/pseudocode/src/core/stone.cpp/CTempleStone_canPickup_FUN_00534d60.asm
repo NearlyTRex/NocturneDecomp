@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_CHero_005951c1
+;   TerminatedCString s_CHero_005951c1
 ;   undefined4 DAT_014b8a54
 ;
 ; Called Functions:

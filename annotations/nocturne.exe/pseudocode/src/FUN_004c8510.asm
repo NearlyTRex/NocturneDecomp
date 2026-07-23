@@ -8,9 +8,9 @@
 ;   FUN_004d23d0 at 004d270d
 ;
 ; Referenced Globals:
-;   string s_Nocturne(R)_Debug/editor_Menu_00587b08
-;   string s_1._Play_a_mission_00587b26
-;   string s_Z._Display_memory_usage_info_00587b38
+;   TerminatedCString s_Nocturne_R_Debug_editor_00587b08
+;   TerminatedCString s_s_1_Play_a_mission_00587b26
+;   TerminatedCString s_Z_Display_memory_usage_i_00587b38
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec

@@ -9,12 +9,12 @@
 ;   undefined4 s_wolfbrn_dfm_0058cbd0+1
 ;   undefined4 s_wolfbrn_dfm_0058cbd0+2
 ;   undefined4 s_wolfbrn_dfm_0058cbd0+3
-;   string s_false_0058cbdc
+;   TerminatedCString s_false_0058cbdc
 ;   undefined4 s_alse_0058cbdc+1
 ;   undefined4 s_lse_0058cbdc+2
 ;   undefined4 s_se_0058cbdc+3
-;   string s_trainman.dfm_0058cbe2
-;   string s_nameMePlease_0058cbef
+;   TerminatedCString s_trainman_dfm_0058cbe2
+;   TerminatedCString s_nameMePlease_0058cbef
 ;   undefined4 s_ameMePlease_0058cbef+1
 ;   undefined4 s_meMePlease_0058cbef+2
 ;   undefined4 s_eMePlease_0058cbef+3

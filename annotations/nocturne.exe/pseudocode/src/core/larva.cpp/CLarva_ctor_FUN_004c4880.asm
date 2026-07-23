@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_worm.dfm_0058777b
+;   TerminatedCString s_worm_dfm_0058777b
 ;   float FLOAT_0059fa70 = 20
 ;   float FLOAT_0059fa74 = 100
 ;   undefined1* PTR_core_larva.cpp_CLarva_setup_FUN_004c4910_0059fa84 = 004c4910

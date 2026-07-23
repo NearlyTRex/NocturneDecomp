@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_0057f36f
-;   string s_%s_can_see_hero_0057f377
+;   TerminatedCString s_s_can_see_hero_0057f377
 ;   float FLOAT_0057f38b = 3
 ;   undefined4 DAT_0059cda8
 ;   void* PTR_DAT_005ad350 = 0077ad0c

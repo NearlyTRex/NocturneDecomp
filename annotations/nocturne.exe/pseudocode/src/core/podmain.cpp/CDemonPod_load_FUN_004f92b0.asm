@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0058dced
-;   string s_pod.ini_0058dcf0
-;   string s_*.pod_0058dcf8
+;   TerminatedCString s_pod_ini_0058dcf0
+;   TerminatedCString s_pod_0058dcf8
 ;   TerminatedCString s_d_0058dcfe
 ;   TerminatedCString s_s_0058dd02
 ;

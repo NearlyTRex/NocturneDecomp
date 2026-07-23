@@ -22,8 +22,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_alphabit_cpp_00578099
-;   string s_CAlphaBitmap::load_-_Out_of_memo_005780b0
-;   string s_..\\engine\\alphabit.cpp_005780d3
+;   TerminatedCString s_CAlphaBitmap_load_Out_of_005780b0
+;   TerminatedCString s_engine_alphabit_cpp_005780d3
 ;   TerminatedCString s_CAlphaBitmap_load_Out_of_005780ea
 ;   TerminatedCString s_engine_alphabit_cpp_0057810d
 ;   TerminatedCString s_CAlphaBitmap_load_Out_of_00578124

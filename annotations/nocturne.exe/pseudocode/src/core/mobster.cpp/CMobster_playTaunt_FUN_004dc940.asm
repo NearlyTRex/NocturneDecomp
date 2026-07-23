@@ -13,7 +13,7 @@
 ;   FUN_004da790 at 004daeda
 ;
 ; Referenced Globals:
-;   string s_mobster-cheese-%c-%c-%d.wav_0058a4ad
+;   TerminatedCString s_mobster_cheese_c_c_d_wav_0058a4ad
 ;   float FLOAT_0058a4c9 = 5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368

@@ -153,8 +153,8 @@ uint sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(uint *param_1,int p
     }
     else {
       uVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
-      _sprintf(auStack_520,"DirectSux: Unable to %s.  (%s)",
-                 "Set Primary buffer format",uVar3);
+      _sprintf(auStack_520,"DirectSux: Unable to %s.  (%s)","Set Primary buffer format",
+                 uVar3);
       FUN_00529980(auStack_520);
     }
   }

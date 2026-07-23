@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057aee5
-;   string s_CClothList::load_-_out_of_memory_0057aef7
+;   TerminatedCString s_CClothList_load_out_of_m_0057aef7
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

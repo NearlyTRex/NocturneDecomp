@@ -8,7 +8,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f09f
 ;
 ; Referenced Globals:
-;   string s_tommygun.kfm_0059688b
+;   TerminatedCString s_tommygun_kfm_0059688b
 ;   undefined4 DAT_005a32dc
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a32e4 = 00553f10
 ;

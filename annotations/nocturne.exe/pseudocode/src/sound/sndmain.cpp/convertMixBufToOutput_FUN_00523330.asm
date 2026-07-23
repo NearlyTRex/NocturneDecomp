@@ -20,8 +20,8 @@
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 at 00529761
 ;
 ; Referenced Globals:
-;   string s_..\\sound\\sndmain.cpp_005928a9
-;   string s_convertMixBufToOutput_-_invalid_b_005928be
+;   TerminatedCString s_sound_sndmain_cpp_005928a9
+;   TerminatedCString s_convertMixBufToOutput_in_005928be
 ;   float FLOAT_005928ea = 32766
 ;   float FLOAT_005928ee = 127
 ;   double DOUBLE_005928f6 = -1

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_wb_005771c3
 ;   TerminatedCString s_fog_005771c6
 ;   TerminatedCString s_engine_2d_c_005771ca
-;   string s_Unable_to_write_fog_tab_005771d9
+;   TerminatedCString s_Unable_to_write_fog_tab_005771d9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

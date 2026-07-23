@@ -13,7 +13,7 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502df0
 ;
 ; Referenced Globals:
-;   string s_CAmmo_00586d73
+;   TerminatedCString s_CAmmo_00586d73
 ;   float FLOAT_00586d79 = 0.00003051851
 ;   double DOUBLE_00586d81 = 3.14159265350000
 ;   double DOUBLE_00586d89 = 2

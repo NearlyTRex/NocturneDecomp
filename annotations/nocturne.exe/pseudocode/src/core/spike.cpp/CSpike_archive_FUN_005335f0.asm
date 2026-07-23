@@ -6,20 +6,20 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0059503a
-;   string s_spikeType_00595044
-;   string s_spikeState_0059504e
-;   string s_areWeActive_00595059
-;   string s_extendDistance_00595065
-;   string s_startEvent_00595074
-;   string s_stopEvent_0059507f
-;   string s_extendEvent_00595089
-;   string s_retractEvent_00595095
-;   string s_extendTime_005950a2
-;   string s_retractTime_005950ad
-;   string s_extendSound_005950b9
-;   string s_retractSound_005950c5
-;   string s_period_005950d2
-;   string s_damageStrength_005950d9
+;   TerminatedCString s_spikeType_00595044
+;   TerminatedCString s_spikeState_0059504e
+;   TerminatedCString s_areWeActive_00595059
+;   TerminatedCString s_extendDistance_00595065
+;   TerminatedCString s_startEvent_00595074
+;   TerminatedCString s_stopEvent_0059507f
+;   TerminatedCString s_extendEvent_00595089
+;   TerminatedCString s_retractEvent_00595095
+;   TerminatedCString s_extendTime_005950a2
+;   TerminatedCString s_retractTime_005950ad
+;   TerminatedCString s_extendSound_005950b9
+;   TerminatedCString s_retractSound_005950c5
+;   TerminatedCString s_period_005950d2
+;   TerminatedCString s_damageStrength_005950d9
 ;   ... and 1 more
 ;
 ; Called Functions:

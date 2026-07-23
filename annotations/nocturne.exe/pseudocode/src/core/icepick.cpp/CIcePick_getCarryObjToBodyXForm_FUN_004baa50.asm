@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_icepick_cpp_005861ba
-;   string s_CIcePick::getCarryObjToBodyXForm_005861ce
+;   TerminatedCString s_CIcePick_getCarryObjToBo_005861ce
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

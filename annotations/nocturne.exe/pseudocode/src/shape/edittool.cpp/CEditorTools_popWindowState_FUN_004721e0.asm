@@ -9,8 +9,8 @@
 ;   FUN_004720c0 at 004721a5
 ;
 ; Referenced Globals:
-;   string s_..\\shape\\edittool.cpp_0057e9a5
-;   string s_CEditorTools::popWindow()_called_0057e9bb
+;   TerminatedCString s_shape_edittool_cpp_0057e9a5
+;   TerminatedCString s_CEditorTools_popWindow_c_0057e9bb
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c

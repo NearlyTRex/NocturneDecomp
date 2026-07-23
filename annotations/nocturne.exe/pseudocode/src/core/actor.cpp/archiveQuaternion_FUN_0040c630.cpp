@@ -12,8 +12,7 @@ void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(float *param_1,uint p
   int iVar1;
   
   if (DAT_00763e88 == 1) {
-    iVar1 = _fscanf(DAT_00763e84,"%f,%f,%f,%f",param_1,param_1 + 1,param_1 + 2,
-                       param_1 + 3);
+    iVar1 = _fscanf(DAT_00763e84,"%f,%f,%f,%f",param_1,param_1 + 1,param_1 + 2,param_1 + 3);
     if (iVar1 != 4) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320();
     }

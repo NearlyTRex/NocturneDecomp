@@ -8,10 +8,10 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b7db
 ;
 ; Referenced Globals:
-;   string s_..\\core\\event.cpp_00580a5f
-;   string s_Too_many_game_flags!_00580a71
-;   string s_..\\core\\event.cpp_00580a86
-;   string s_Event_name_%s_too_long!_00580a98
+;   TerminatedCString s_core_event_cpp_00580a5f
+;   TerminatedCString s_Too_many_game_flags_00580a71
+;   TerminatedCString s_core_event_cpp_00580a86
+;   TerminatedCString s_Event_name_s_too_long_00580a98
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

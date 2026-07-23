@@ -50,8 +50,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
     if (iVar3 != 3) {
       _DAT_01cc4800 = "..\\core\\script.cpp";
       _DAT_01cc4804 = 0xed6;
-      FUN_004c8440("SCScipt::dbLoad - error parsing %s record %d",param_2,
-                   *(uint *)(param_1 + 0x1c));
+      FUN_004c8440("SCScipt::dbLoad - error parsing %s record %d",param_2,*(uint *)(param_1 + 0x1c));
     }
     core_script_cpp_trimString_FUN_004fe000(local_334);
     core_script_cpp_trimString_FUN_004fe000(local_2bc);

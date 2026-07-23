@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_00581e4a
-;   string s_gabgun.kfm_00581e57
+;   TerminatedCString s_gabgun_kfm_00581e57
 ;   float FLOAT_0059dcdc = 10
 ;   undefined1* PTR_core_gabriela.cpp_CGabriella_setup_FUN_004957c0_0059dcf4 = 004957c0
 ;

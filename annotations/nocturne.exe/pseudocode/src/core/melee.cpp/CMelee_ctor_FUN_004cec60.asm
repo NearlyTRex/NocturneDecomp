@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_melee.kfm_00588362
-;   string s_shovel?.wav_0058836c
-;   undefined4 s_hovel?.wav_0058836c+1
-;   undefined4 s_ovel?.wav_0058836c+2
-;   undefined4 s_vel?.wav_0058836c+3
+;   TerminatedCString s_melee_kfm_00588362
+;   TerminatedCString s_shovel_wav_0058836c
+;   undefined4 s_shovel_wav_0058836c+1
+;   undefined4 s_shovel_wav_0058836c+2
+;   undefined4 s_shovel_wav_0058836c+3
 ;   TerminatedCString s_shvl_f_wav_00588378
 ;   undefined4 s_shvl_f_wav_00588378+1
 ;   undefined4 s_shvl_f_wav_00588378+2
@@ -65,13 +65,13 @@ section .text
     LEA EDI,[EBX + 0x598]               ; 004ced35
     MOV dword ptr [EBX + 0x594],0x0     ; 004ced3b
     PUSH EDI                            ; 004ced45
-    MOV AL,byte ptr [ESI]               ; 004ced46 | = "shovel?.wav" | s_ovel?.wav_0058836c+2
+    MOV AL,byte ptr [ESI]               ; 004ced46 | = "shovel?.wav" | s_shovel_wav_0058836c+2
         ;   Label: LAB_004ced46
     MOV byte ptr [EDI],AL               ; 004ced48
     CMP AL,0x0                          ; 004ced4a
     JZ 0x004ced5e                       ; 004ced4c
         ;   XREF to: 004ced5e (CONDITIONAL_JUMP)  ; LAB_004ced5e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ced4e | s_hovel?.wav_0058836c+1 | s_vel?.wav_0058836c+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ced4e | s_shovel_wav_0058836c+1 | s_shovel_wav_0058836c+3
     ADD ESI,0x2                         ; 004ced51
     MOV byte ptr [EDI + 0x1],AL         ; 004ced54
     ADD EDI,0x2                         ; 004ced57

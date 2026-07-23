@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057ae4d
-;   string s_CCloth::saveJoinedLight_-_Can't_s_0057ae5f
-;   string s_..\\core\\cloth.cpp_0057ae99
-;   string s_CCloth::saveJoinedLight_-_Model_w_0057aeab
+;   TerminatedCString s_CCloth_saveJoinedLight_C_0057ae5f
+;   TerminatedCString s_core_cloth_cpp_0057ae99
+;   TerminatedCString s_CCloth_saveJoinedLight_M_0057aeab
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc4800

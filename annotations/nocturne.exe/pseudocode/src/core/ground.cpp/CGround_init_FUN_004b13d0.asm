@@ -8,10 +8,10 @@
 ;   core_terrain.cpp_CTerrain_init_FUN_005492b0 at 005492c2
 ;
 ; Referenced Globals:
-;   string s_..\\core\\ground.cpp_00585382
-;   string s_CGround::init_-_Out_of_memory_00585395
-;   string s_..\\core\\ground.cpp_005853b3
-;   string s_CGround::init_-_Out_of_memory2_005853c6
+;   TerminatedCString s_core_ground_cpp_00585382
+;   TerminatedCString s_CGround_init_Out_of_memo_00585395
+;   TerminatedCString s_core_ground_cpp_005853b3
+;   TerminatedCString s_CGround_init_Out_of_memo_005853c6
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00587f72
-;   string s_CMansionPuzzleCircle::processPan_00587f85
+;   TerminatedCString s_CMansionPuzzleCircle_pro_00587f85
 ;   float FLOAT_005a0040 = 2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804

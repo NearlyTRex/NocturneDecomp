@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 215,
+    "complexity_score": 213,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 83,
     "suspect_count": 11,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 337
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -213,20 +213,20 @@
   "globals": [
     {
       "addr": "005884ec",
-      "name": "s_%d,%d,%x_005884ec",
-      "type": "string",
+      "name": "s_d_d_x_005884ec",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005884f5",
-      "name": "s_Center_gamepad,_press_ENTER_005884f5",
-      "type": "string",
+      "name": "s_Center_gamepad_press_ENT_005884f5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588511",
-      "name": "s_Move_gamepad_in_all_directions,_p_00588511",
-      "type": "string",
+      "name": "s_Move_gamepad_in_all_dire_00588511",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 37,
+      "line": 36,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 40,
+      "line": 39,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 58,
+      "line": 56,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);",
@@ -434,7 +434,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 69,
+      "line": 67,
       "match": "*(code **)(*0x01CC30E4",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Raw hex address 0x1c775ec assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 59,
+      "line": 57,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "iVar3 = 0x01C775EC;",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Raw hex address 0x1c775ec assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 85,
+      "line": 83,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "iVar5 = 0x01C775EC;",

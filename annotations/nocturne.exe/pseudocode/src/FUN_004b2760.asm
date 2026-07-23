@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_gat.kfm_00585402
+;   TerminatedCString s_gat_kfm_00585402
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059e744 = 00553f10
 ;
 ; Called Functions:

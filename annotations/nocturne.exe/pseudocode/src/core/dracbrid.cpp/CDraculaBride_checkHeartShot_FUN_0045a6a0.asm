@@ -8,7 +8,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a75e
 ;
 ; Referenced Globals:
-;   string s_Shot_thru_the_heart_0057d812
+;   TerminatedCString s_Shot_thru_the_heart_0057d812
 ;   double DOUBLE_0057d82e = 20
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c

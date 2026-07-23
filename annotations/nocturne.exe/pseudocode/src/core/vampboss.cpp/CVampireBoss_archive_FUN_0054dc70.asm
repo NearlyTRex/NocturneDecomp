@@ -6,13 +6,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_human_model_motion_state_00597165
-;   string s_bat_model_motion_state_0059717e
-;   string s_wayPoint0_00597195
-;   string s_wayPoint1_0059719f
-;   string s_wayPoint2_005971a9
-;   string s_wayPoint3_005971b3
+;   TerminatedCString s_bat_model_motion_state_0059717e
+;   TerminatedCString s_wayPoint0_00597195
+;   TerminatedCString s_wayPoint1_0059719f
+;   TerminatedCString s_wayPoint2_005971a9
+;   TerminatedCString s_wayPoint3_005971b3
 ;   TerminatedCString s_form_005971bd
-;   string s_morphT_005971c2
+;   TerminatedCString s_morphT_005971c2
 ;   undefined4 DAT_005c1188
 ;
 ; Called Functions:

@@ -8,16 +8,16 @@
 ;   core_dcube.cpp_CDemonCube_load_FUN_0044aed0 at 0044af93
 ;
 ; Referenced Globals:
-;   string s_..\\core\\dcube.cpp_0057bc3b
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bc4d
-;   string s_..\\core\\dcube.cpp_0057bc7c
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bc8e
-;   string s_..\\core\\dcube.cpp_0057bcba
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bccc
-;   string s_..\\core\\dcube.cpp_0057bd00
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bd12
-;   string s_..\\core\\dcube.cpp_0057bd40
-;   string s_CDemonCube::allocMemory_-_Out_of_0057bd52
+;   TerminatedCString s_core_dcube_cpp_0057bc3b
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bc4d
+;   TerminatedCString s_core_dcube_cpp_0057bc7c
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bc8e
+;   TerminatedCString s_core_dcube_cpp_0057bcba
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bccc
+;   TerminatedCString s_core_dcube_cpp_0057bd00
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bd12
+;   TerminatedCString s_core_dcube_cpp_0057bd40
+;   TerminatedCString s_CDemonCube_allocMemory_O_0057bd52
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

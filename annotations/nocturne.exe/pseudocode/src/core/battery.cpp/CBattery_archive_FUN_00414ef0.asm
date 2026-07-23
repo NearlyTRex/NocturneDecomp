@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_modelName_00578d73
-;   string s_rechargeTime_00578d7d
-;   string s_dischargeTime_00578d8a
+;   TerminatedCString s_modelName_00578d73
+;   TerminatedCString s_rechargeTime_00578d7d
+;   TerminatedCString s_dischargeTime_00578d8a
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880

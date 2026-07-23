@@ -15,8 +15,7 @@ uint __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *pa
   
   local_14 = -1;
   sscanf
-            (param_1 + *param_2," { %f, %f, %f }%n",param_3,param_3 + 1,param_3 + 2,
-             &local_14);
+            (param_1 + *param_2," { %f, %f, %f }%n",param_3,param_3 + 1,param_3 + 2,&local_14);
   if (6 < local_14) {
     *param_2 = *param_2 + local_14;
     return 1;

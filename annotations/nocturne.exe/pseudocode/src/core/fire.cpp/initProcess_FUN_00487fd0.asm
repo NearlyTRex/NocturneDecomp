@@ -8,8 +8,8 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a57d
 ;
 ; Referenced Globals:
-;   string s_..\\core\\fire.cpp_0058134a
-;   string s_CGunFlame::initProcess_-_too_man_0058135b
+;   TerminatedCString s_core_fire_cpp_0058134a
+;   TerminatedCString s_CGunFlame_initProcess_to_0058135b
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c09e08
 ;   undefined4 DAT_01c09e0c

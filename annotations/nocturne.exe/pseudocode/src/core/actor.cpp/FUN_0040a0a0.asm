@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005775e7
-;   string s_CDemonActor::customRayIntersect_s_005775f9
+;   TerminatedCString s_CDemonActor_customRayInt_005775f9
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

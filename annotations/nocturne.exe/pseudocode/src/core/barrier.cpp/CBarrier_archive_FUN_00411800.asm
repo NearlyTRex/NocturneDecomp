@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_00578750
-;   string s_effectClassNameList_00578755
-;   string s_addToPathGrid_00578769
+;   TerminatedCString s_effectClassNameList_00578755
+;   TerminatedCString s_addToPathGrid_00578769
 ;   undefined4 DAT_005acf80
 ;
 ; Called Functions:

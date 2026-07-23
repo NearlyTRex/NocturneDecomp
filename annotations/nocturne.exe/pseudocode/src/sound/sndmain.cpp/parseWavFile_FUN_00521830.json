@@ -106,13 +106,13 @@
       {
         "category": "other",
         "column": 35,
-        "line": 266,
+        "line": 408,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 266,
+        "line": 408,
         "message": "invalid digit 'C' in decimal constant"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 454,
+    "complexity_score": 449,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 114,
     "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 488
+    "total_lines": 483
   },
   "cross_references": [
     {
@@ -198,62 +198,62 @@
   "globals": [
     {
       "addr": "00592132",
-      "name": "s_\"RIFF\"_ID_not_found_at_offset_00_00592132",
-      "type": "string",
+      "name": "s_RIFF_ID_not_found_at_off_00592132",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059215a",
-      "name": "s_WAV_file_is_invalid:_%s_0059215a",
-      "type": "string",
+      "name": "s_WAV_file_is_invalid_s_0059215a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592173",
-      "name": "s_\"WAVE\"_ID_not_found_at_offset_00_00592173",
-      "type": "string",
+      "name": "s_WAVE_ID_not_found_at_off_00592173",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059219b",
-      "name": "s_\"data\"_chunk_preceeds_\"fmt\"_chun_0059219b",
-      "type": "string",
+      "name": "s_data_chunk_preceeds_fmt_0059219b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005921bd",
-      "name": "s_Required_\"fmt\"_chunk_not_found_005921bd",
-      "type": "string",
+      "name": "s_Required_fmt_chunk_not_f_005921bd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005921dc",
-      "name": "s_File_contains_invalid_\"fmt\"_chun_005921dc",
-      "type": "string",
+      "name": "s_File_contains_invalid_fm_005921dc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005921fe",
-      "name": "s_Invalid_\"fmt\"_chunk_tag:_%04X_(M_005921fe",
-      "type": "string",
+      "name": "s_Invalid_fmt_chunk_tag_04_005921fe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592245",
-      "name": "s_Invalid_number_of_channels:_%u_(_00592245",
-      "type": "string",
+      "name": "s_Invalid_number_of_channe_00592245",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00592276",
-      "name": "s_Invalid_bytes/sec_value:_%u_(%04_00592276",
-      "type": "string",
+      "name": "s_Invalid_bytes_sec_value_00592276",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059229a",
-      "name": "s_No_\"data\"_chunk_found_0059229a",
-      "type": "string",
+      "name": "s_No_data_chunk_found_0059229a",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -440,7 +440,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 108,
+          "line": 103,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
@@ -574,7 +574,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fread(&local_24,10,1,param_1);",
@@ -582,7 +582,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 57,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 57,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -598,7 +598,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 58,
       "match": "._2_2_",
       "severity": "mild",
       "text": "_sprintf(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",local_24._2_2_);",
@@ -606,7 +606,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 62,
       "match": "._2_2_",
       "severity": "mild",
       "text": "sVar1 = local_24._2_2_ * (short)local_20;",
@@ -614,7 +614,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x104) = 8;",
@@ -622,7 +622,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x104) = 0x10;",
@@ -630,7 +630,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fread(&local_18,8,1,param_1);",
@@ -638,7 +638,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + iVar2 + 8;",
@@ -646,7 +646,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + iVar2 + 8;",
@@ -654,7 +654,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 95,
       "match": "._2_2_",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
@@ -662,7 +662,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 95,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
@@ -670,7 +670,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 96,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",
@@ -678,7 +678,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 97,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x110) =",
@@ -686,7 +686,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 98,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
@@ -694,7 +694,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 100,
       "match": "param_3",
       "severity": "mild",
       "text": "(uint)((int)((*(int *)(param_3 + 0x104) + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3",
@@ -702,7 +702,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 102,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x10c) = local_20 & 0xffff;",
@@ -710,7 +710,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
@@ -718,7 +718,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 108,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
@@ -726,7 +726,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != 0) {",
@@ -734,7 +734,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "_fclose(param_1);",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 108,
+      "line": 103,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",

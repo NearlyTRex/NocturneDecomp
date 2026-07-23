@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592956
-;   string s_SfxSample::freeMemory_-_freeing_s_0059296b
+;   TerminatedCString s_SfxSample_freeMemory_fre_0059296b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

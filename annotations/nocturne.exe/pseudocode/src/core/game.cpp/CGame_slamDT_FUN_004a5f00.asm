@@ -12,8 +12,8 @@
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980 at 004ed9b0
 ;
 ; Referenced Globals:
-;   string s_..\\core\\game.cpp_00584452
-;   string s_CGame::slamDT_-_invalid_dt!_00584463
+;   TerminatedCString s_core_game_cpp_00584452
+;   TerminatedCString s_CGame_slamDT_invalid_dt_00584463
 ;   float FLOAT_00584482 = 65536
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01cc4800

@@ -33,11 +33,11 @@
 ;   void* PTR_GetCurrentProcess_005754f8 = 00175cbe
 ;   void* PTR_SetThreadPriority_005755b0 = 00176034
 ;   void* PTR_Sleep_005755b8 = 00176066
-;   string s_where_mov_source_0059817e
-;   string s_open_\"%s\"_alias_mov_style_child_p_00598199
-;   string s_status_mov_window_handle_005981c3
-;   string s_Unable_to_open_.AVI!_005981dc
-;   string s_play_mov_fullscreen_notify_005981f1
+;   TerminatedCString s_where_mov_source_0059817e
+;   TerminatedCString s_open_s_alias_mov_style_c_00598199
+;   TerminatedCString s_status_mov_window_handle_005981c3
+;   TerminatedCString s_Unable_to_open_AVI_005981dc
+;   TerminatedCString s_play_mov_fullscreen_noti_005981f1
 ;   TerminatedCString s_play_mov_window_notify_0059820c
 ;   ... and 8 more
 ;

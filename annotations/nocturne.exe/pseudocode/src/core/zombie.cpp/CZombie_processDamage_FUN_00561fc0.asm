@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_lookForHead_0059893e
 ;   TerminatedCString s_f_zombie_die_wav_0059894a
-;   string s_zom-d0?.wav_0059895c
+;   TerminatedCString s_zom_d0_wav_0059895c
 ;   TerminatedCString s_f_zombie_hit_wav_00598968
 ;   TerminatedCString s_zom_s0_wav_0059897a
 ;

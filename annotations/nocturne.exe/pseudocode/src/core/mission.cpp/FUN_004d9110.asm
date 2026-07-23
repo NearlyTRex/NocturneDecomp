@@ -15,8 +15,8 @@
 ;   core_werewolf.cpp_CWerewolf_process_FUN_00555c60 at 00555da8
 ;
 ; Referenced Globals:
-;   string s_..\\core\\mission.cpp_00589cfb
-;   string s_CDemonMission::markActorToDelete_00589d0f
+;   TerminatedCString s_core_mission_cpp_00589cfb
+;   TerminatedCString s_CDemonMission_markActorT_00589d0f
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;

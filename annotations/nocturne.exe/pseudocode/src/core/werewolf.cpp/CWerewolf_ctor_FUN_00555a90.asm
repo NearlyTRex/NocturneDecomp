@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_wolfbrn.dfm_00597cd3
+;   TerminatedCString s_wolfbrn_dfm_00597cd3
 ;   float FLOAT_005a42f0 = 50
 ;   float FLOAT_005a42f4 = 100
 ;   float FLOAT_005a42f8 = 10

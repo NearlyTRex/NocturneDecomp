@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_beartrap.kfm_00596903
+;   TerminatedCString s_beartrap_kfm_00596903
 ;   undefined1* PTR_FUN_005a3424 = 00546870
 ;
 ; Called Functions:

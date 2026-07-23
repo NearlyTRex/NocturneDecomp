@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scat_die_wav_0058df26
-;   string s_scat-hurt-?.wav_0058df35
+;   TerminatedCString s_scat_hurt_wav_0058df35
 ;   undefined4 DAT_005a1548
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4

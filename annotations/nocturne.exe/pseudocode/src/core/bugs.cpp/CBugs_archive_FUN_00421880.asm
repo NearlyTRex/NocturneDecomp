@@ -6,14 +6,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_count_00579c5d
-;   string s_modelCount_00579c63
+;   TerminatedCString s_modelCount_00579c63
 ;   char CHAR_00h_00579c6e = \x00
-;   string s_modelName_00579c6f
-;   string s_allowChase_00579c79
-;   string s_allowSwarm_00579c84
-;   string s_allowChaseEvent_00579c8f
-;   string s_allowSwarmEvent_00579c9f
-;   string s_animateEvent_00579caf
+;   TerminatedCString s_modelName_00579c6f
+;   TerminatedCString s_allowChase_00579c79
+;   TerminatedCString s_allowSwarm_00579c84
+;   TerminatedCString s_allowChaseEvent_00579c8f
+;   TerminatedCString s_allowSwarmEvent_00579c9f
+;   TerminatedCString s_animateEvent_00579caf
 ;   undefined4 DAT_00763e88
 ;
 ; Called Functions:

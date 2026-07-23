@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_sentinel-die.wav_005900c6
-;   string s_sentinel-hurt?.wav_005900d7
+;   TerminatedCString s_sentinel_die_wav_005900c6
+;   TerminatedCString s_sentinel_hurt_wav_005900d7
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00

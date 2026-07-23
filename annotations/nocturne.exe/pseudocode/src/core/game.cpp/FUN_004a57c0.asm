@@ -21,19 +21,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_0058437c
-;   string s_Can't_open_%s_00584380
-;   string s_%s_is_%d_bytes,_but_expected_%dx_0058438e
+;   TerminatedCString s_Can_t_open_s_00584380
+;   TerminatedCString s_s_is_d_bytes_but_expecte_0058438e
 ;   TerminatedCString s_act_005843be
 ;   undefined4 s_act_005843be+1
 ;   undefined4 s_act_005843be+2
 ;   undefined4 s_act_005843be+3
 ;   TerminatedCString s_rb_005843c3
 ;   TerminatedCString s_art_005843c6
-;   string s_Can't_open_%s_005843ca
+;   TerminatedCString s_Can_t_open_s_005843ca
 ;   TerminatedCString s_rb_005843d8
 ;   TerminatedCString s_art_005843db
-;   string s_..\\core\\game.cpp_005843df
-;   string s_Can't_open_%s_005843f0
+;   TerminatedCString s_core_game_cpp_005843df
+;   TerminatedCString s_Can_t_open_s_005843f0
 ;   undefined4 DAT_005b6d50
 ;   ... and 15 more
 ;

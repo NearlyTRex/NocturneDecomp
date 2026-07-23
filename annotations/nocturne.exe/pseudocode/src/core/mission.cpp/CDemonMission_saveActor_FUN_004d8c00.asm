@@ -10,9 +10,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_08x_00589c47
 ;   TerminatedCString s_s_00589c4c
-;   string s_//_%s_00589c51
+;   TerminatedCString s_s_00589c51
 ;   TerminatedCString s_anon_00589c5a
-;   string s_(none)_005bb0d0
+;   TerminatedCString s_none_005bb0d0
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005644f0

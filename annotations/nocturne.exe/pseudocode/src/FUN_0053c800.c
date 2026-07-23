@@ -51,8 +51,8 @@ uint FUN_0053c800(int param_1)
           fVar2 = pfVar11[2];
           fVar3 = pfVar10[2];
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n",
-                     (double)(fVar5 - fVar1),(double)(fVar8 - fVar12));
+                    (PTR_DAT_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n",(double)(fVar5 - fVar1),
+                     (double)(fVar8 - fVar12));
           if ((((0.0 < fVar2 - fVar3) &&
                ((fVar2 - fVar3 < (float)3 &&
                 (ABS(fVar5 - fVar1) < (float)2)))) &&

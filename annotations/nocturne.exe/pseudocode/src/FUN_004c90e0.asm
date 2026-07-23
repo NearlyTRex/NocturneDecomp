@@ -10,12 +10,12 @@
 ;   wincore_winrun.cpp_FUN_00559260 at 005594eb
 ;
 ; Referenced Globals:
-;   string s_load%d_00587e78
-;   string s_In_stores_10/26/99_00587e7f
-;   string s_www.nocturnegame.com_00587e92
-;   string s_Press_any_key_to_continue..._00587ea7
+;   TerminatedCString s_load_d_00587e78
+;   TerminatedCString s_In_stores_10_26_99_00587e7f
+;   TerminatedCString s_www_nocturnegame_com_00587e92
+;   TerminatedCString s_Press_any_key_to_continu_00587ea7
 ;   TerminatedCString s_rb_00587ec4
-;   string s_enemy.pod_00587ec7
+;   TerminatedCString s_enemy_pod_00587ec7
 ;   undefined4 DAT_00587ed1
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005bac64

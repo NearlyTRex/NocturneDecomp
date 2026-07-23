@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_question.kfm_00581639
+;   TerminatedCString s_question_kfm_00581639
 ;   TerminatedCString s_none_00581646
 ;   undefined4 s_one_00581646+1
 ;   undefined4 s_ne_00581646+2
