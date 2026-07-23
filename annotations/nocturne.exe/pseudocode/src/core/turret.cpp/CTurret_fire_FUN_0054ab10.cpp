@@ -137,7 +137,7 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
       fStack_8c = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
       fStack_88 = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
       fStack_84 = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-      fStack_1c = (float)_DAT_00596ec5 /
+      fStack_1c = (float)10 /
                   SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
       fStack_50 = fStack_8c * fStack_1c;
       fStack_4c = fStack_88 * fStack_1c;
@@ -171,7 +171,7 @@ LAB_0054aea2:
   } while (iStack_24 < 4);
   fStack_44 = fStack_a4;
   fStack_3c = fStack_9c;
-  fStack_40 = fStack_a0 + _DAT_00596ec1;
+  fStack_40 = fStack_a0 + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_44,param_1 + 0x3c);
   *(uint *)(param_1 + 0x8a8) = 2;
   *(uint *)(param_1 + 0x2f8) = *(uint *)(param_1 + 0x76c);

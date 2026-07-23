@@ -35,7 +35,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_0058212a
-;   undefined4 DAT_0059dca4
+;   float FLOAT_0059dca4 = 0.6400000
 ;   undefined4 DAT_01c713c0
 ;   undefined4 DAT_01c713dc
 ;   undefined4 DAT_02dd1184
@@ -82,7 +82,7 @@ section .text
     LEA EAX,[EBX + 0x1f5a0]             ; 00498114
     ADD ESP,0xc                         ; 0049811a
     MOV dword ptr [EBP + 0x7a],EAX      ; 0049811d
-    FCOMP float ptr [0x0059dca4]        ; 00498120 | DAT_0059dca4
+    FCOMP float ptr [0x0059dca4]        ; 00498120 | FLOAT_0059dca4
     FNSTSW AX                           ; 00498126
     SAHF                                ; 00498128
     JC 0x00498352                       ; 00498129

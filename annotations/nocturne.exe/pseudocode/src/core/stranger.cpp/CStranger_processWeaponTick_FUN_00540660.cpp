@@ -11,7 +11,7 @@
 void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(int param_1,uint param_2)
 
 {
-  uint uVar1;
+  float fVar1;
   int iVar2;
   int iVar3;
   
@@ -29,9 +29,9 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(int para
         (**(code **)(*(int *)(iVar2 + 0x14c) + 0xdc))(iVar2);
         *(uint *)(param_1 + 0x1fa94) = 0;
         *(uint *)(param_1 + 0x2a84) = 0;
-        uVar1 = 0x41200000;
+        fVar1 = 10.0f;
         *(uint *)(param_1 + 0x2a88) = 0;
-        *(uint *)(param_1 + 0x1fa4c) = uVar1;
+        *(float *)(param_1 + 0x1fa4c) = fVar1;
         if (*(int *)(param_1 + 0x1faa0) == 3) {
           *(uint *)(param_1 + 0x1faa0) = 0;
           return;

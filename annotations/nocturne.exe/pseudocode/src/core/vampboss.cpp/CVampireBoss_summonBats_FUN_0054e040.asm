@@ -8,7 +8,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d3b2
 ;
 ; Referenced Globals:
-;   undefined4 s_voicusummon.wav_00597218+1
+;   TerminatedCString s_voicusummon_wav_00597219
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 0054e041
     PUSH EDI                            ; 0054e042
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054e043
-    PUSH 0x597219                       ; 0054e047 | s_voicusummon.wav_00597218+1
+    PUSH 0x597219                       ; 0054e047 | = "voicusummon.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0054e04c
     PUSH EBX                            ; 0054e052
     XOR ESI,ESI                         ; 0054e053

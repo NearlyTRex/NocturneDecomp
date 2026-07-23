@@ -30,7 +30,7 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(int par
     return;
   }
   if (fVar3 < 1.0) {
-    fVar3 = (1.0 - fVar3) * param_2 * (float)_DAT_005958bf;
+    fVar3 = (1.0 - fVar3) * param_2 * (float)10;
     if (fVar3 <= ABS(*(float *)(param_1 + 0x1fab8))) {
       if (0.0 <= *(float *)(param_1 + 0x1fab8)) {
         *(float *)(param_1 + 0x1fab8) = *(float *)(param_1 + 0x1fab8) - fVar3;
@@ -48,19 +48,19 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(int par
   if (*(float *)(param_1 + 0x1fab8) < 0.0) {
     *(uint *)(param_1 + 0x1faec) = _DAT_02dc9fa4;
   }
-  if (*(float *)(param_1 + 0x1fabc) <= (float)_DAT_005958c7) {
+  if (*(float *)(param_1 + 0x1fabc) <= (float)0.20000000000000001) {
     *(uint *)(param_1 + 0x1fac4) = 0;
   }
   else {
     *(float *)(param_1 + 0x1fac4) = *(float *)(param_1 + 0x1fac4) + param_2;
   }
   if ((*(float *)(param_1 + 0x1fac0) <= 0.0) &&
-     (((float)_DAT_005958cf <= *(float *)(param_1 + 0x1fabc) ||
+     (((float)0.5 <= *(float *)(param_1 + 0x1fabc) ||
       (1.0 < *(float *)(param_1 + 0x1fac4))))) {
     *(float *)(param_1 + 0x1fac0) = (1.0 - *(float *)(param_1 + 0x1fabc)) * 1.6;
   }
   if (*(float *)(param_1 + 0x1fac0) <= 0.0) {
-    local_34 = ABS(*(float *)(param_1 + 0x1fab8) * (float)_DAT_005958d7);
+    local_34 = ABS(*(float *)(param_1 + 0x1fab8) * (float)0.31830988619288902);
     if (iVar1 != *(int *)(param_1 + 0x1faec)) {
       local_34 = 0.0;
     }
@@ -69,7 +69,7 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(int par
     }
     fVar3 = (local_34 - *(float *)(param_1 + 0x1fabc)) + *(float *)(param_1 + 0x1fabc);
     *(float *)(param_1 + 0x1fabc) = fVar3;
-    if ((float)_DAT_005958df < fVar3) {
+    if ((float)0.001 < fVar3) {
       *(int *)(param_1 + 0x1faec) = iVar1;
       return;
     }

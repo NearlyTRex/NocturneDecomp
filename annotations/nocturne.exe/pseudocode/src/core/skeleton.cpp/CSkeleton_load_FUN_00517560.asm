@@ -8,8 +8,8 @@
 ;   FUN_0051f680 at 0051f716
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005911eb
-;   undefined4 DAT_005911ee
+;   TerminatedCString s_rt_005911eb
+;   TerminatedCString s_data_005911ee
 ;   string s_..\\core\\skeleton.cpp_005911f3
 ;   string s_CSkeleton::load_-_Can't_open_%s_00591208
 ;   undefined4 DAT_01cc4800
@@ -49,9 +49,9 @@ section .text
         ;   XREF to: 00517574 (CONDITIONAL_JUMP)  ; LAB_00517574
     POP EDI                             ; 0051758c
         ;   Label: LAB_0051758c
-    PUSH 0x5911eb                       ; 0051758d | DAT_005911eb
+    PUSH 0x5911eb                       ; 0051758d | = "rt"
     PUSH EBX                            ; 00517592
-    PUSH 0x5911ee                       ; 00517593 | DAT_005911ee
+    PUSH 0x5911ee                       ; 00517593 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00517598
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0051759d

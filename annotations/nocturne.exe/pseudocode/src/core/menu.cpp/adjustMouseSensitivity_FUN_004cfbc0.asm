@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   string s_%4.2f_0058853d
-;   undefined4 DAT_00588543
+;   double DOUBLE_00588543 = 0.0000152587890625
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005bac64
@@ -181,7 +181,7 @@ section .text
     ADD ESP,0x14                        ; 004cfd3a
     MOV dword ptr [ESP + 0xc],ESI       ; 004cfd3d
     FILD dword ptr [ESP + 0xc]          ; 004cfd41
-    FMUL double ptr [0x00588543]        ; 004cfd45 | DAT_00588543
+    FMUL double ptr [0x00588543]        ; 004cfd45 | DOUBLE_00588543
     SUB ESP,0x8                         ; 004cfd4b
     FSTP double ptr [ESP]               ; 004cfd4e
     PUSH 0x58853d                       ; 004cfd51 | = "%4.2f"

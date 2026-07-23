@@ -206,7 +206,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(uint para
             } while (uVar6 != 0xc);
             iVar7 = *(int *)((int)param_3 + iVar4 + 0x2c);
             if (iVar7 == 0) {
-              _DAT_01cc4800 = ">..\\sound\\mp3.cpp" + 1;
+              _DAT_01cc4800 = "..\\sound\\mp3.cpp";
               _DAT_01cc4804 = 0x65b;
               FUN_004c8440("Side info bad: block_type == 0 in split block.  File: %s",&DAT_01cd8b28);
             }

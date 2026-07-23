@@ -13,7 +13,7 @@
 ;   FUN_00543c50 at 00543d33
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005965e8
+;   double DOUBLE_005965e8 = 3
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa5f34
 ;   undefined4 DAT_01fa5f38
@@ -74,7 +74,7 @@ section .text
     FSUB float ptr [ESI + 0x4]          ; 00544557
     FST float ptr [ESP + 0x4]           ; 0054455a
     FLD ST0                             ; 0054455e
-    FMUL double ptr [0x005965e8]        ; 00544560 | DAT_005965e8
+    FMUL double ptr [0x005965e8]        ; 00544560 | DOUBLE_005965e8
     FLD float ptr [EAX + 0x8]           ; 00544566
     FSUB float ptr [ESI + 0x8]          ; 00544569
     FXCH                                ; 0054456c

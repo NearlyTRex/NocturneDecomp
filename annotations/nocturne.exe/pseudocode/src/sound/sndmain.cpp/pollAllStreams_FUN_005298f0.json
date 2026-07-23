@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 93,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -178,27 +177,27 @@
   "globals": [
     {
       "addr": "00593b6e",
-      "name": "DAT_00593b6e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00593b6e",
+      "type": "double",
+      "value": "-0.300000000000000"
     },
     {
       "addr": "00593b76",
-      "name": "DAT_00593b76",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00593b76",
+      "type": "double",
+      "value": "-0.100000000000000"
     },
     {
       "addr": "00593b7e",
-      "name": "DAT_00593b7e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00593b7e",
+      "type": "double",
+      "value": "-0.200000000000000"
     },
     {
       "addr": "005a2174",
-      "name": "DAT_005a2174",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2174",
+      "type": "float",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -298,16 +297,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int param_1)",
@@ -315,7 +306,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != 0) {",
@@ -323,7 +314,7 @@
     },
     {
       "description": "Raw hex address 0x2dc1edc assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 18,
       "match": "0x2dc1edc",
       "severity": "moderate",
       "text": "iVar2 = 0x2dc1edc;",

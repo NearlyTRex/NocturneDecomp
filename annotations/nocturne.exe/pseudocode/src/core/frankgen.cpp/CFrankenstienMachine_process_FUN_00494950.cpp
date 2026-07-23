@@ -43,17 +43,17 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,flo
   _DAT_01c71340 = *(float *)(param_1 + 0x154);
   iVar2 = core_frankgen_cpp_findLeader_FUN_00495240();
   if (iVar2 == param_1) {
-    fVar1 = param_2 * _DAT_0059db6c + *(float *)(param_1 + 0x154);
+    fVar1 = param_2 * 30.0f + *(float *)(param_1 + 0x154);
     *(float *)(param_1 + 0x154) = fVar1;
-    if (0x450FC000 <= fVar1) {
-      *(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 0x450FC000;
+    if (2300.0f <= fVar1) {
+      *(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 2300.0f;
     }
   }
   else {
     *(uint *)(param_1 + 0x154) = *(uint *)(iVar2 + 0x154);
   }
   if (*(float *)(param_1 + 0x154) < _DAT_01c71340) {
-    _DAT_01c71340 = _DAT_01c71340 - 0x450FC000;
+    _DAT_01c71340 = _DAT_01c71340 - 2300.0f;
   }
   FUN_004950a0(param_1);
   switch(*(uint *)(param_1 + 0x150)) {

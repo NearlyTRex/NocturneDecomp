@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005621d8 = 0056225d
-;   undefined4 DAT_00598986
-;   undefined4 DAT_0059898e
-;   undefined4 DAT_00598996
+;   double DOUBLE_00598986 = 0.5
+;   double DOUBLE_0059898e = 0.700000000000000
+;   double DOUBLE_00598996 = 0.300000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
@@ -96,15 +96,15 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 005622a0
     IMUL EDX,ESI,0xc                    ; 005622a4
         ;   Label: LAB_005622a4
-    FLD double ptr [0x00598986]         ; 005622a7 | DAT_00598986
+    FLD double ptr [0x00598986]         ; 005622a7 | DOUBLE_00598986
     FLD float ptr [ESP + 0x18]          ; 005622ad
     FMUL ST1                            ; 005622b1
     FLD float ptr [ESP + 0x1c]          ; 005622b3
-    FMUL double ptr [0x0059898e]        ; 005622b7 | DAT_0059898e
+    FMUL double ptr [0x0059898e]        ; 005622b7 | DOUBLE_0059898e
     FLD float ptr [ESP + 0x30]          ; 005622bd
     FMULP ST3                           ; 005622c1
     FLD float ptr [ESP + 0x34]          ; 005622c3
-    FMUL double ptr [0x00598996]        ; 005622c7 | DAT_00598996
+    FMUL double ptr [0x00598996]        ; 005622c7 | DOUBLE_00598996
     MOV EAX,dword ptr [EBP + 0x18]      ; 005622cd
     FADDP                               ; 005622d0
     FXCH ST2                            ; 005622d2

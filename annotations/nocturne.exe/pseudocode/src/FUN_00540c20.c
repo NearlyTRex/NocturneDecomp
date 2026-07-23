@@ -73,7 +73,7 @@ void FUN_00540c20(int param_1)
   ;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(iVar2);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(iVar1);
-  *(float *)(param_1 + 0x7fc) = *(float *)(param_1 + 0x7fc) + _DAT_00596148;
+  *(float *)(param_1 + 0x7fc) = *(float *)(param_1 + 0x7fc) + 0.4f;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(iVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(iVar2);
   iVar5 = param_1 + 0xe1a4;

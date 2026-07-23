@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_004f6170(int param_1,float param_2)
 
@@ -303,13 +302,13 @@ LAB_004f6a33:
       goto LAB_004f6a33;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&fStack_4c,iVar2 + 0x20);
-    if ((fStack_9c < fStack_48) || (fStack_48 < fStack_a8 + (float)_DAT_0058d76d))
+    if ((fStack_9c < fStack_48) || (fStack_48 < fStack_a8 + (float)-20))
     goto LAB_004f6a33;
     core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(auStack_ac,&fStack_70,&fStack_4c);
     fStack_40 = fStack_4c - fStack_70;
     fStack_3c = fStack_48 - fStack_6c;
     fStack_38 = fStack_44 - fStack_68;
-    if (((float)_DAT_0058d775 < ABS(fStack_40)) || ((float)_DAT_0058d775 < ABS(fStack_38)))
+    if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))
     goto LAB_004f6a33;
     fStack_3c = 0.0;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_d4);
@@ -321,7 +320,7 @@ LAB_004f6a33:
     goto LAB_004f6a33;
     fVar3 = SQRT(fVar3);
     if ((double)fVar3 <= 0.0) goto LAB_004f6a33;
-    fStack_1c = (fStack_b8 + (float)_DAT_0058d77d) / fVar3;
+    fStack_1c = (fStack_b8 + (float)0.050000000000000003) / fVar3;
     fStack_40 = fStack_40 * fStack_1c;
     fStack_3c = fStack_3c * fStack_1c;
     fStack_38 = fStack_38 * fStack_1c;

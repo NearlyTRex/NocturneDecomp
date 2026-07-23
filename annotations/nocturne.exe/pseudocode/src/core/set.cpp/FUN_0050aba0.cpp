@@ -28,7 +28,7 @@ int core_set_cpp_FUN_0050aba0(int param_1)
           *(float *)(param_1 + 0x104 + *(int *)(param_1 + 0x15aabc) * 0x1a0);
   local_2c = (*(float *)(iVar3 + 0x24) -
              *(float *)(param_1 + 0x108 + *(int *)(param_1 + 0x15aabc) * 0x1a0)) +
-             (float)_DAT_005905d2;
+             (float)4;
   local_28 = *(float *)(iVar3 + 0x28) -
              *(float *)(param_1 + 0x10c + *(int *)(param_1 + 0x15aabc) * 0x1a0);
   atan2((float10)fVar2);

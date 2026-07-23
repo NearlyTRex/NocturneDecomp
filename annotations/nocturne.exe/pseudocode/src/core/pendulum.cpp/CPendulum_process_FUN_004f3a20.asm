@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d080
-;   undefined4 DAT_0058d088
+;   double DOUBLE_0058d080 = -1
+;   double DOUBLE_0058d088 = 0.100000000000000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01bcdef4
@@ -58,7 +58,7 @@ section .text
     CALL core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430 ; 004f3a74
         ;   XREF to: 004f3430 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430()
     FLD float ptr [ESI + 0x428]         ; 004f3a79
-    FMUL double ptr [0x0058d080]        ; 004f3a7f | DAT_0058d080
+    FMUL double ptr [0x0058d080]        ; 004f3a7f | DOUBLE_0058d080
     FMUL float ptr [ESI + 0x42c]        ; 004f3a85
     FLD1                                ; 004f3a8b
     FLDL2E                              ; 004f3a8d
@@ -70,7 +70,7 @@ section .text
     FSCALE                              ; 004f3a99
     FSTP ST1                            ; 004f3a9b
     ADD ESP,0x8                         ; 004f3a9d
-    FCOMP double ptr [0x0058d088]       ; 004f3aa0 | DAT_0058d088
+    FCOMP double ptr [0x0058d088]       ; 004f3aa0 | DOUBLE_0058d088
     FNSTSW AX                           ; 004f3aa6
     SAHF                                ; 004f3aa8
     JBE 0x004f3b77                      ; 004f3aa9

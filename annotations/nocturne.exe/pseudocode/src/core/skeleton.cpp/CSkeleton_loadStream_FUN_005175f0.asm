@@ -14,7 +14,7 @@
 ;   core_skeleton.cpp_CSkeleton_load_FUN_00517560 at 005175ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591228
+;   TerminatedCString s_d_00591228
 ;   string s_..\\core\\skeleton.cpp_0059122c
 ;   string s_Invalid_skeleton_version_00591241
 ;   string s_..\\core\\skeleton.cpp_0059125a
@@ -71,7 +71,7 @@ section .text
     MOV EAX,ESP                         ; 00517622
         ;   Label: LAB_00517622
     PUSH EAX                            ; 00517624
-    PUSH 0x591228                       ; 00517625 | DAT_00591228
+    PUSH 0x591228                       ; 00517625 | = "%d\n"
     MOV EBX,dword ptr [ESP + 0x34]      ; 0051762a
     PUSH EBX                            ; 0051762e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0051762f

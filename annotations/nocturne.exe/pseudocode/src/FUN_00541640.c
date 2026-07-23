@@ -41,7 +41,7 @@ int FUN_00541640(int param_1)
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380
                     (iVar2,1,*(uint *)(param_1 + 0xe16c),0,2);
           core_morph_cpp_CMorph_render_FUN_004e0820
-                    (iVar2,*(float *)(param_1 + 0xe1a0) / _DAT_005a28d8);
+                    (iVar2,*(float *)(param_1 + 0xe1a0) / 4.0f);
         }
       }
       else {

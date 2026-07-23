@@ -20,9 +20,9 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d22d2
 ;
 ; Referenced Globals:
-;   undefined4 s_Nocturne_(c)_1999_Terminal_Reali_0058847a+1
-;   undefined4 DAT_005884b4
-;   undefined4 DAT_005884ea
+;   TerminatedCString s_Nocturne_c_1999_Terminal_0058847b
+;   string s_Nocturne_1999_Terminal_Reality_I_005884b4
+;   string s__005884ea
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_014b9904
@@ -186,13 +186,13 @@ section .text
     TEST ESI,ESI                        ; 004cf5b1
     JZ 0x004cf784                       ; 004cf5b3
         ;   XREF to: 004cf784 (CONDITIONAL_JUMP)  ; LAB_004cf784
-    PUSH 0x58847b                       ; 004cf5b9 | s_Nocturne_(c)_1999_Terminal_Reali_0058847a+1
+    PUSH 0x58847b                       ; 004cf5b9 | = "Nocturne (c) 1999 Terminal Reality In..."
     MOV EDX,dword ptr [0x014b9904]      ; 004cf5be | DAT_014b9904
     PUSH EDX                            ; 004cf5c4
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf5c5
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
     ADD ESP,0x8                         ; 004cf5ca
-    PUSH 0x58847b                       ; 004cf5cd | s_Nocturne_(c)_1999_Terminal_Reali_0058847a+1
+    PUSH 0x58847b                       ; 004cf5cd | = "Nocturne (c) 1999 Terminal Reality In..."
     MOV ECX,dword ptr [0x014b9904]      ; 004cf5d2 | DAT_014b9904
     PUSH ECX                            ; 004cf5d8
     MOV EBX,EAX                         ; 004cf5d9
@@ -207,7 +207,7 @@ section .text
     PUSH EDX                            ; 004cf5f6
     SUB EAX,EBX                         ; 004cf5f7
     PUSH EAX                            ; 004cf5f9
-    PUSH 0x58847b                       ; 004cf5fa | s_Nocturne_(c)_1999_Terminal_Reali_0058847a+1
+    PUSH 0x58847b                       ; 004cf5fa | = "Nocturne (c) 1999 Terminal Reality In..."
     MOV EBX,dword ptr [0x014b9904]      ; 004cf5ff | DAT_014b9904
     PUSH EBX                            ; 004cf605
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf606
@@ -222,7 +222,7 @@ section .text
     PUSH 0xf8                           ; 004cf61d
     PUSH 0x63                           ; 004cf622
     PUSH 0x206                          ; 004cf624
-    PUSH 0x5884ea                       ; 004cf629 | DAT_005884ea
+    PUSH 0x5884ea                       ; 004cf629 | = ""
     MOV ESI,dword ptr [0x014b9904]      ; 004cf62e | DAT_014b9904
     PUSH ESI                            ; 004cf634
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf635
@@ -373,14 +373,14 @@ section .text
         ;   Label: LAB_004cf777
     JMP 0x004cf540                      ; 004cf77f
         ;   XREF to: 004cf540 (UNCONDITIONAL_JUMP)  ; LAB_004cf540
-    PUSH 0x5884b4                       ; 004cf784 | DAT_005884b4
+    PUSH 0x5884b4                       ; 004cf784 | = "Nocturne 1999 Terminal Reality Inc.  ..."
         ;   Label: LAB_004cf784
     MOV EDI,dword ptr [0x014b9904]      ; 004cf789 | DAT_014b9904
     PUSH EDI                            ; 004cf78f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf790
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
     ADD ESP,0x8                         ; 004cf795
-    PUSH 0x5884b4                       ; 004cf798 | DAT_005884b4
+    PUSH 0x5884b4                       ; 004cf798 | = "Nocturne 1999 Terminal Reality Inc.  ..."
     MOV EBP,dword ptr [0x014b9904]      ; 004cf79d | DAT_014b9904
     PUSH EBP                            ; 004cf7a3
     MOV EBX,EAX                         ; 004cf7a4
@@ -395,7 +395,7 @@ section .text
     PUSH EDX                            ; 004cf7c0
     SUB EAX,EBX                         ; 004cf7c1
     PUSH EAX                            ; 004cf7c3
-    PUSH 0x5884b4                       ; 004cf7c4 | DAT_005884b4
+    PUSH 0x5884b4                       ; 004cf7c4 | = "Nocturne 1999 Terminal Reality Inc.  ..."
     MOV EAX,[0x014b9904]                ; 004cf7c9 | DAT_014b9904
     PUSH EAX                            ; 004cf7ce
     JMP 0x004cf606                      ; 004cf7cf

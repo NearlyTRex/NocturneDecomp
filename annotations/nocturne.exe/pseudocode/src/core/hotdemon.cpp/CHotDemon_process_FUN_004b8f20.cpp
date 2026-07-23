@@ -113,7 +113,7 @@ LAB_004b9178:
       local_bc = *(float *)(iVar3 + 0x28) - *(float *)(param_1 + 0x28);
       local_28 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0);
       local_24 = local_28;
-      if (local_28 < 0x40000000) {
+      if (local_28 < 2.0f) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_40,&local_c4);
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (local_3c - *(float *)(param_1 + 0x34));
@@ -134,7 +134,7 @@ LAB_004b9178:
         }
       }
       if (local_24 < *(float *)(param_1 + 0xbc9c)) {
-        if (_DAT_0059f0c8 <= local_24) {
+        if (10.0f <= local_24) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,7,1);
           *(uint *)(param_1 + 0xbca0) = 0;
         }
@@ -152,10 +152,10 @@ LAB_004b9178:
   case 7:
   case 0xf:
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-    fVar2 = 0x40000000;
+    fVar2 = 2.0f;
     iVar3 = param_1 + 0x150;
     if (*(int *)(param_1 + 0xbca4) != 0) {
-      local_1c = 0x40000000;
+      local_1c = 2.0f;
       *(uint *)(param_1 + 0x23ac) = 0;
       *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
       *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
@@ -172,7 +172,7 @@ LAB_004b9178:
         local_90 = 0;
         local_20 = SQRT(local_8c * local_8c + local_94 * local_94);
         local_18 = local_20;
-        if ((_DAT_0059f0c8 < local_20) && (iVar4 != 7)) {
+        if ((10.0f < local_20) && (iVar4 != 7)) {
           *(uint *)(param_1 + 0xbca0) = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,7,1);
         }

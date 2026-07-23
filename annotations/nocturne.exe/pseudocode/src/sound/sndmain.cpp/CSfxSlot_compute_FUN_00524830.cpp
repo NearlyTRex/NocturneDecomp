@@ -94,12 +94,12 @@ uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (PTR_DAT_005ad350,"  doppler = %5.2f\n",local_60);
       }
-      dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(0x40100000,DAT_005a2158));
+      dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));
       if (local_60 < dVar2) {
         local_60 = dVar2;
       }
-      if (__BITCAST_DOUBLE(CONCAT44(0x40100000,DAT_005a2158)) < local_60) {
-        local_60 = __BITCAST_DOUBLE(CONCAT44(0x40100000,DAT_005a2158));
+      if (__BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158)) < local_60) {
+        local_60 = __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));
       }
       if (*(int *)(param_1 + 0x114) == 1) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -129,11 +129,11 @@ uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
         iVar11 = iVar11 + 4;
       } while (iVar10 < DAT_005bea68);
     }
-    if (*(float *)(param_1 + 0x78) < (float)(1.0 / _DAT_005a2160)) {
-      *(float *)(param_1 + 0x78) = (float)(1.0 / _DAT_005a2160);
+    if (*(float *)(param_1 + 0x78) < (float)(1.0 / _FLOAT_005a2160)) {
+      *(float *)(param_1 + 0x78) = (float)(1.0 / _FLOAT_005a2160);
     }
-    if ((float)_DAT_005a2160 < *(float *)(param_1 + 0x78)) {
-      *(float *)(param_1 + 0x78) = (float)_DAT_005a2160;
+    if ((float)_FLOAT_005a2160 < *(float *)(param_1 + 0x78)) {
+      *(float *)(param_1 + 0x78) = (float)_FLOAT_005a2160;
     }
     if (*(int *)(param_1 + 0x114) == 1) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60

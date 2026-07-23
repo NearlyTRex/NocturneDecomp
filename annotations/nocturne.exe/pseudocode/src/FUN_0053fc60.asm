@@ -12,12 +12,12 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0053fc3c = 0053fce7
-;   undefined4 s_eDoorMoveNone_returned_by_checkD_00595e16+1
+;   TerminatedCString s_eDoorMoveNone_returned_b_00595e17
 ;   string s_eDoorMoveNone_returned_by_checkD_00595e54
 ;   string s_!CBodyPart_00595e91
 ;   string s_CBodyPart_00595e9c
-;   undefined4 DAT_00595ea7
-;   undefined4 DAT_00595eaf
+;   double DOUBLE_00595ea7 = 0.999900000000000
+;   double DOUBLE_00595eaf = 0.990000000000000
 ;   undefined4 DAT_005b6d50
 ;
 ; Called Functions:
@@ -86,7 +86,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 0053fcb9
     ADD ESP,0x8                         ; 0053fcbd
     FADD float ptr [ESP]                ; 0053fcc0
-    FCOMP double ptr [0x00595ea7]       ; 0053fcc3 | DAT_00595ea7
+    FCOMP double ptr [0x00595ea7]       ; 0053fcc3 | DOUBLE_00595ea7
     FNSTSW AX                           ; 0053fcc9
     SAHF                                ; 0053fccb
     JBE 0x0053fd06                      ; 0053fccc
@@ -139,7 +139,7 @@ section .text
     RET                                 ; 0053fd42
     PUSH EDI                            ; 0053fd43
         ;   Label: LAB_0053fd43
-    PUSH 0x595e17                       ; 0053fd44 | s_eDoorMoveNone_returned_by_checkD_00595e16+1
+    PUSH 0x595e17                       ; 0053fd44 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x005b6d50]                ; 0053fd49 | DAT_005b6d50
     PUSH EAX                            ; 0053fd4e
     CALL FUN_0046fcd0                   ; 0053fd4f
@@ -281,7 +281,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0053fe9b
     FLD float ptr [ESP + 0xc]           ; 0053fe9f
     ADD ESP,0x8                         ; 0053fea3
-    FCOMP double ptr [0x00595eaf]       ; 0053fea6 | DAT_00595eaf
+    FCOMP double ptr [0x00595eaf]       ; 0053fea6 | DOUBLE_00595eaf
     FNSTSW AX                           ; 0053feac
     SAHF                                ; 0053feae
     JBE 0x0053fe6f                      ; 0053feaf

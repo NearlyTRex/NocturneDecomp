@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)
 
 {
@@ -37,7 +35,7 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
   local_2c = local_2c + -0.3f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,local_30);
   local_18 = *param_3;
-  local_1b48 = param_2 / _DAT_0059dcb8 + local_18;
+  local_1b48 = param_2 / 0.05f + local_18;
   if (1.0 < local_1b48) {
     local_1b48 = 1.0;
   }

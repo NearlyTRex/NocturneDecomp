@@ -52,13 +52,13 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(uint 
     local_38 = 128.0;
     local_3c = 128.0;
   }
-  if ((float)_DAT_0059064a < local_3c) {
+  if ((float)255 < local_3c) {
     local_3c = 255.0;
   }
-  if ((float)_DAT_0059064a < local_40) {
+  if ((float)255 < local_40) {
     local_40 = 255.0;
   }
-  if ((float)_DAT_0059064a < local_38) {
+  if ((float)255 < local_38) {
     local_38 = 255.0;
   }
   fVar7 = (float10)round((float10)local_3c);

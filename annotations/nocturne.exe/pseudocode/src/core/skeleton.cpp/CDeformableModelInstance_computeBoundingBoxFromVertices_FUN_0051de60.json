@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -180,9 +180,9 @@
   "globals": [
     {
       "addr": "00591c87",
-      "name": "DAT_00591c87",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00591c87",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005a1eb0",
@@ -512,7 +512,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * _DAT_00591c87;",
+      "text": "fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * 0.05f;",
       "type": "unnamed_param"
     },
     {
@@ -520,7 +520,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * _DAT_00591c87;",
+      "text": "fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * 0.05f;",
       "type": "unnamed_param"
     },
     {
@@ -528,7 +528,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * _DAT_00591c87;",
+      "text": "fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * 0.05f;",
       "type": "unnamed_param"
     },
     {
@@ -536,7 +536,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * _DAT_00591c87;",
+      "text": "fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * 0.05f;",
       "type": "unnamed_param"
     },
     {

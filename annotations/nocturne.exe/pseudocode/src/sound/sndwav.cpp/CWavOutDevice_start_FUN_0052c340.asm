@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00594925
+;   double DOUBLE_00594925 = 0.333333333333333
 ;   undefined4 DAT_02dc942c
 ;   undefined4 DAT_02dc9434
 ;   undefined4 DAT_02dc9438
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_0052c3a6
     FILD dword ptr [0x02dc942c]         ; 0052c3ac | DAT_02dc942c
     FDIVP                               ; 0052c3b2
-    FMUL double ptr [0x00594925]        ; 0052c3b4 | DAT_00594925
+    FMUL double ptr [0x00594925]        ; 0052c3b4 | DOUBLE_00594925
     SUB ESP,0x8                         ; 0052c3ba
     FSTP double ptr [ESP]               ; 0052c3bd
     CALL sound_sndmain.cpp_startSoundThread_FUN_005286d0 ; 0052c3c0

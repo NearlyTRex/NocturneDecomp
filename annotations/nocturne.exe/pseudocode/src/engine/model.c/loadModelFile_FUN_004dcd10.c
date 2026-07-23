@@ -43,7 +43,7 @@ LAB_004dcd36:
     _DAT_01cc4804 = 0xf0;
     FUN_004c8440(local_5c);
   }
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,&DAT_0058a529);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,"rb");
   if (iVar2 == 0) {
     _sprintf(local_5c,"Unable to open model: %s",param_1);
     _DAT_01cc4804 = 0xf5;

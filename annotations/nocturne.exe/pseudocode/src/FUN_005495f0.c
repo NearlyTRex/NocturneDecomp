@@ -24,7 +24,7 @@ void FUN_005495f0(int param_1)
                             (iVar2,*(int *)(iVar2 + 0x100) + -1);
   local_18 = -1e+30;
   for (iVar4 = 0; iVar4 < *(int *)(iVar2 + 0x104); iVar4 = iVar4 + 1) {
-    fVar1 = (float)piVar3[2] + (float)piVar3[1] * (float)_DAT_00596d15;
+    fVar1 = (float)piVar3[2] + (float)piVar3[1] * (float)0.20000000000000001;
     if (local_18 < fVar1) {
       *(float *)(param_1 + 0x858) = (float)*piVar3 * _DAT_005a3788;
       *(float *)(param_1 + 0x85c) = (float)piVar3[1] * _DAT_005a3788;

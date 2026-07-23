@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d21ac = 004d22ed
-;   undefined4 s_Graphic_options_00588cc2+1
+;   TerminatedCString s_Graphic_options_00588cc3
 ;   string s_Sound_options_00588cd3
 ;   string s_Control_options_00588ce1
 ;   string s_Credits_00588cf1
@@ -93,7 +93,7 @@ section .text
     CALL core_moon.cpp_CMoon_render_FUN_004dec50 ; 004d2230
         ;   XREF to: 004dec50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_render_FUN_004dec50()
     ADD ESP,0x4                         ; 004d2235
-    PUSH 0x588cc3                       ; 004d2238 | s_Graphic_options_00588cc2+1
+    PUSH 0x588cc3                       ; 004d2238 | = "Graphic options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d223d
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d2242

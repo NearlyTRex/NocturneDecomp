@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 271,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 66,
-    "suspect_count": 19,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 250
@@ -216,8 +215,8 @@
   "globals": [
     {
       "addr": "0058e24e",
-      "name": "DAT_0058e24e",
-      "type": "undefined4",
+      "name": "s_d_0058e24e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -475,14 +474,6 @@
       "severity": "mild",
       "text": "else if (*(int *)(param_1 + 0x18) == 1) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_0058e24e",
-      "severity": "mild",
-      "text": "_sprintf(local_a4,&DAT_0058e24e,iVar1 + 1);",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

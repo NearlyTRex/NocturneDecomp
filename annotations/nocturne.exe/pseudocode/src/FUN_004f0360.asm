@@ -15,7 +15,7 @@
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 0050935a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058cd8f
+;   double DOUBLE_0058cd8f = 4
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01fba938
 ;
@@ -63,21 +63,21 @@ section .text
     FABS                                ; 004f03bb
     FXCH                                ; 004f03bd
     FSTP float ptr [ESP + 0x8]          ; 004f03bf
-    FCOMP double ptr [0x0058cd8f]       ; 004f03c3 | DAT_0058cd8f
+    FCOMP double ptr [0x0058cd8f]       ; 004f03c3 | DOUBLE_0058cd8f
     FNSTSW AX                           ; 004f03c9
     SAHF                                ; 004f03cb
     JNC 0x004f03f0                      ; 004f03cc
         ;   XREF to: 004f03f0 (CONDITIONAL_JUMP)  ; LAB_004f03f0
     FLD float ptr [ESP + 0x4]           ; 004f03ce
     FABS                                ; 004f03d2
-    FCOMP double ptr [0x0058cd8f]       ; 004f03d4 | DAT_0058cd8f
+    FCOMP double ptr [0x0058cd8f]       ; 004f03d4 | DOUBLE_0058cd8f
     FNSTSW AX                           ; 004f03da
     SAHF                                ; 004f03dc
     JNC 0x004f03f0                      ; 004f03dd
         ;   XREF to: 004f03f0 (CONDITIONAL_JUMP)  ; LAB_004f03f0
     FLD float ptr [ESP + 0x8]           ; 004f03df
     FABS                                ; 004f03e3
-    FCOMP double ptr [0x0058cd8f]       ; 004f03e5 | DAT_0058cd8f
+    FCOMP double ptr [0x0058cd8f]       ; 004f03e5 | DOUBLE_0058cd8f
     FNSTSW AX                           ; 004f03eb
     SAHF                                ; 004f03ed
     JC 0x004f0441                       ; 004f03ee

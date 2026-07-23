@@ -55,7 +55,7 @@ void FUN_004f2990(uint param_1)
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  piVar1 = (int *)_fopen(param_1,&DAT_0058cfc3);
+  piVar1 = (int *)_fopen(param_1,"wb");
   if (piVar1 == (int *)0x0) {
     _DAT_01cc4800 = "..\\engine\\pcx.c";
     _DAT_01cc4804 = 0xee;

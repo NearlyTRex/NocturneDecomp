@@ -26,7 +26,7 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
   bVar6 = 0;
   local_18 = 0;
   if (*(float *)(param_1 + 0x44c) < 0.0) {
-    iVar2 = sscanf(param_3,&DAT_0058fa9a,&local_28);
+    iVar2 = sscanf(param_3,&DOUBLE_0058fa9a,&local_28);
     if (iVar2 != 1) {
       local_28 = (float)FUN_0052ebc0(0x02DC9450,param_3);
       local_14 = local_28;
@@ -42,7 +42,7 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
         } while (cVar1 != '\0');
         local_24 = ~uVar4 - 1;
         uStack_20 = 0;
-        local_28 = (float)((float10)local_24 * (float10)_DAT_0058faa2 + (float10)_DAT_0058faaa);
+        local_28 = (float)((float10)local_24 * (float10)0.02 + (float10)0.40000000000000002);
       }
       if (_DAT_01e56418 == 0) {
         local_18 = 1;

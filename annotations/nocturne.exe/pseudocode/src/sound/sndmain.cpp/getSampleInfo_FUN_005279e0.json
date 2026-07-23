@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 426,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 96,
-    "suspect_count": 30,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -250,14 +250,14 @@
     },
     {
       "addr": "0059373a",
-      "name": "DAT_0059373a",
-      "type": "undefined4",
+      "name": "s_wav_0059373a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059373e",
-      "name": "DAT_0059373e",
-      "type": "undefined4",
+      "name": "s_rb_0059373e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -268,8 +268,8 @@
     },
     {
       "addr": "00593747",
-      "name": "DAT_00593747",
-      "type": "undefined4",
+      "name": "s_mp3_00593747",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -501,22 +501,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0059373a",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&local_114,&DAT_0059373a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00593747",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&local_114,&DAT_00593747);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_02dbd348",
       "severity": "mild",
@@ -624,16 +608,8 @@
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_1,&DAT_0059373e);",
+      "text": "iVar5 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_1,\"rb\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_0059373e",
-      "severity": "mild",
-      "text": "iVar5 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_1,&DAT_0059373e);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

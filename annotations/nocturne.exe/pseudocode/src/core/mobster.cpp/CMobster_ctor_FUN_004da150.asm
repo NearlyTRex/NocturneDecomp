@@ -8,13 +8,13 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f083
 ;
 ; Referenced Globals:
-;   undefined4 s_mobster1.dfm_0058a180+1
-;   undefined1 DAT_0058a18e
-;   undefined1 DAT_0058a18f
-;   undefined1 DAT_0058a190
-;   undefined1 DAT_0058a191
-;   undefined4 DAT_005a0920
-;   undefined4 DAT_005a0924
+;   TerminatedCString s_mobster1_dfm_0058a181
+;   TerminatedCString s_none_0058a18e
+;   undefined4 s_one_0058a18e+1
+;   undefined4 s_ne_0058a18e+2
+;   undefined4 s_e_0058a18e+3
+;   float FLOAT_005a0920 = 50
+;   float FLOAT_005a0924 = 100
 ;   undefined1* PTR_core_mobster.cpp_CMobster_setup_FUN_004da290_005a0934 = 004da290
 ;
 ; Called Functions:
@@ -35,17 +35,17 @@ section .text
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004da158
         ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
     ADD ESP,0x4                         ; 004da15d
-    PUSH 0x58a181                       ; 004da160 | s_mobster1.dfm_0058a180+1
+    PUSH 0x58a181                       ; 004da160 | = "mobster1.dfm"
     MOV EBX,EAX                         ; 004da165
     ADD EAX,0x150                       ; 004da167
     PUSH EAX                            ; 004da16c
     MOV dword ptr [EAX + -0x4],0x5a0934 ; 004da16d | PTR_core_mobster.cpp_CMobster_setup_FUN_004da290_005a0934
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004da174
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
-    FLD float ptr [0x005a0920]          ; 004da179 | DAT_005a0920
+    FLD float ptr [0x005a0920]          ; 004da179 | FLOAT_005a0920
     ADD ESP,0x8                         ; 004da17f
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004da182
-    FLD float ptr [0x005a0924]          ; 004da18c | DAT_005a0924
+    FLD float ptr [0x005a0924]          ; 004da18c | FLOAT_005a0924
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 004da192
     PUSH 0xff                           ; 004da19c
     FXCH                                ; 004da1a1
@@ -71,20 +71,20 @@ section .text
     MOV dword ptr [EBX + 0xbd40],0x0    ; 004da218
     MOV dword ptr [EBX + 0xbd44],0x0    ; 004da222
     MOV dword ptr [EBX + 0xbd48],0x0    ; 004da22c
-    MOV ESI,0x58a18e                    ; 004da236 | DAT_0058a18e
+    MOV ESI,0x58a18e                    ; 004da236 | = "none"
     MOV dword ptr [EBX + 0xbd4c],0x0    ; 004da23b
     ADD ESP,0x8                         ; 004da245
     MOV dword ptr [EBX + 0xbd50],0x0    ; 004da248
     LEA EDI,[EBX + 0xbd54]              ; 004da252
     MOV byte ptr [EBX + 0xbd38],AL      ; 004da258
     PUSH EDI                            ; 004da25e
-    MOV AL,byte ptr [ESI]               ; 004da25f | DAT_0058a18e | DAT_0058a190
+    MOV AL,byte ptr [ESI]               ; 004da25f | = "none" | s_ne_0058a18e+2
         ;   Label: LAB_004da25f
     MOV byte ptr [EDI],AL               ; 004da261
     CMP AL,0x0                          ; 004da263
     JZ 0x004da277                       ; 004da265
         ;   XREF to: 004da277 (CONDITIONAL_JUMP)  ; LAB_004da277
-    MOV AL,byte ptr [ESI + 0x1]         ; 004da267 | DAT_0058a18f | DAT_0058a191
+    MOV AL,byte ptr [ESI + 0x1]         ; 004da267 | s_one_0058a18e+1 | s_e_0058a18e+3
     ADD ESI,0x2                         ; 004da26a
     MOV byte ptr [EDI + 0x1],AL         ; 004da26d
     ADD EDI,0x2                         ; 004da270

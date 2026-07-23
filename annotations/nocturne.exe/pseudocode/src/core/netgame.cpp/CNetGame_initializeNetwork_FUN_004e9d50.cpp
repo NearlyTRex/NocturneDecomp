@@ -15,7 +15,7 @@ uint __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(int param_
   int iVar2;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-            (0x01BCD074,"?Initializing network..." + 1);
+            (0x01BCD074,"Initializing network...");
   iVar2 = param_1 + 0x170;
   support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(iVar2);
   iVar1 = support_trisock_cpp_createUDPSocket_FUN_00548f30(iVar2);

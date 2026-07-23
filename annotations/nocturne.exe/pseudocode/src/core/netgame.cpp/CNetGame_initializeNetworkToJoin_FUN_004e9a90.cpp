@@ -63,14 +63,14 @@ uint __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(uint
     pcStack_18 = (char *)(param_1 + 2);
     do {
       aiStack_24[1] = _DAT_01cea3f8 - iVar3;
-      fStack_60 = (float)(_DAT_01cea3f8 - iVar3) * (float)ram0x0058bbba;
+      fStack_60 = (float)(_DAT_01cea3f8 - iVar3) * (float)1.52587890625e-05;
       if (fStack_60 < 0.0) {
         fStack_60 = 0.0;
       }
-      if ((float)_DAT_0058bbc2 < fStack_60) {
+      if ((float)30 < fStack_60) {
         fStack_60 = 30.0;
       }
-      if ((float)_DAT_0058bbca < fStack_60) {
+      if ((float)0.20000000000000001 < fStack_60) {
         uStack_5c = 0x29;
         uStack_58 = 1;
         uStack_57 = uStack_28;

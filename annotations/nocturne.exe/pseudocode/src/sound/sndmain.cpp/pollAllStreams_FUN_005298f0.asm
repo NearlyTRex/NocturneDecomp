@@ -12,10 +12,10 @@
 ;   sound_sndmain.cpp_processAudio_FUN_005288f0 at 0052893f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00593b6e
-;   undefined4 DAT_00593b76
-;   undefined4 DAT_00593b7e
-;   undefined4 DAT_005a2174
+;   double DOUBLE_00593b6e = -0.300000000000000
+;   double DOUBLE_00593b76 = -0.100000000000000
+;   double DOUBLE_00593b7e = -0.200000000000000
+;   float FLOAT_005a2174 = 2
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
@@ -35,13 +35,13 @@ section .text
     AND ESP,0xfffffff8                  ; 005298f8
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005298fb
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
-    FLD float ptr [0x005a2174]          ; 00529900 | DAT_005a2174
+    FLD float ptr [0x005a2174]          ; 00529900 | FLOAT_005a2174
     MOV EDX,dword ptr [EBP + 0x10]      ; 00529906
     FST double ptr [ESP]                ; 00529909
     FLD ST0                             ; 0052990c
-    FADD double ptr [0x00593b6e]        ; 0052990e | DAT_00593b6e
+    FADD double ptr [0x00593b6e]        ; 0052990e | DOUBLE_00593b6e
     FXCH                                ; 00529914
-    FADD double ptr [0x00593b76]        ; 00529916 | DAT_00593b76
+    FADD double ptr [0x00593b76]        ; 00529916 | DOUBLE_00593b76
     FXCH                                ; 0052991c
     FSTP float ptr [ESP + 0xc]          ; 0052991e
     FSTP float ptr [ESP + 0x8]          ; 00529922
@@ -71,8 +71,8 @@ section .text
     RET                                 ; 0052995a
     FLD double ptr [ESP]                ; 0052995b
         ;   Label: LAB_0052995b
-    MOV EBX,dword ptr [0x005a2174]      ; 0052995e | DAT_005a2174
-    FADD double ptr [0x00593b7e]        ; 00529964 | DAT_00593b7e
+    MOV EBX,dword ptr [0x005a2174]      ; 0052995e | FLOAT_005a2174
+    FADD double ptr [0x00593b7e]        ; 00529964 | DOUBLE_00593b7e
     MOV dword ptr [ESP + 0x8],EBX       ; 0052996a
     FSTP float ptr [ESP + 0xc]          ; 0052996e
     JMP 0x0052992a                      ; 00529972

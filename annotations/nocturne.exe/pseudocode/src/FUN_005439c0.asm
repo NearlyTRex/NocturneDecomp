@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005964f8
-;   undefined4 DAT_00596500
+;   double DOUBLE_005964f8 = 0.5
+;   double DOUBLE_00596500 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005439c4
     FLD float ptr [EDX + 0x150]         ; 005439c8
     FCHS                                ; 005439ce
-    FLD double ptr [0x005964f8]         ; 005439d0 | DAT_005964f8
+    FLD double ptr [0x005964f8]         ; 005439d0 | DOUBLE_005964f8
     FXCH                                ; 005439d6
     FMUL ST1                            ; 005439d8
     MOV dword ptr [EAX + 0x4],0xbdcccccd ; 005439da
@@ -30,7 +30,7 @@ section .text
     FMUL ST1                            ; 005439f6
     FSTP float ptr [EAX + 0xc]          ; 005439f8
     FLD float ptr [EDX + 0x154]         ; 005439fb
-    FADD double ptr [0x00596500]        ; 00543a01 | DAT_00596500
+    FADD double ptr [0x00596500]        ; 00543a01 | DOUBLE_00596500
     FSTP float ptr [EAX + 0x10]         ; 00543a07
     FMUL float ptr [EDX + 0x158]        ; 00543a0a
     FSTP float ptr [EAX + 0x14]         ; 00543a10

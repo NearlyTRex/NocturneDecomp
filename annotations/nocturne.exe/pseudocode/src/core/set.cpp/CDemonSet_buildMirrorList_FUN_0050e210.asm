@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507d71
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\set.cpp_00590831+1
+;   TerminatedCString s_core_set_cpp_00590832
 ;   string s_CDemonSet::buildMirrorList_-_Too_00590842
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
@@ -84,7 +84,7 @@ section .text
     CMP EDX,0x64                        ; 0050e2a8
     JL 0x0050e2cf                       ; 0050e2ab
         ;   XREF to: 0050e2cf (CONDITIONAL_JUMP)  ; LAB_0050e2cf
-    MOV EBX,0x590832                    ; 0050e2ad | s_..\core\set.cpp_00590831+1
+    MOV EBX,0x590832                    ; 0050e2ad | = "..\\core\\set.cpp"
     MOV EAX,0x1118                      ; 0050e2b2
     PUSH 0x590842                       ; 0050e2b7 | = "CDemonSet::buildMirrorList - Too many..."
     MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | DAT_01cc4800

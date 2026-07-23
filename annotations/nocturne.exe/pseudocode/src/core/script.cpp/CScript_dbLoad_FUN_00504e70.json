@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 405,
+    "complexity_score": 370,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 115,
-    "suspect_count": 26,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
@@ -235,8 +234,8 @@
     },
     {
       "addr": "0058fba2",
-      "name": "DAT_0058fba2",
-      "type": "undefined4",
+      "name": "s_rt_0058fba2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -259,8 +258,8 @@
     },
     {
       "addr": "0058fbd2",
-      "name": "DAT_0058fbd2",
-      "type": "undefined4",
+      "name": "s_anon_0058fbd2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -289,14 +288,14 @@
     },
     {
       "addr": "0058fc32",
-      "name": "DAT_0058fc32",
-      "type": "undefined1",
+      "name": "s_anon_0058fc32",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058fc33",
-      "name": "DAT_0058fc33",
-      "type": "undefined1",
+      "name": "s_anon_0058fc32+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -561,16 +560,8 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"world\",param_2,&DAT_0058fba2);",
+      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"world\",param_2,\"rt\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0058fba2",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"world\",param_2,&DAT_0058fba2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -579,14 +570,6 @@
       "severity": "mild",
       "text": "FUN_004c8440(\"Can't open world\\\\%s\",param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0058fbd2",
-      "severity": "mild",
-      "text": "_fscanf(iVar2,&DAT_0058fbd2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -603,14 +586,6 @@
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1c));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_0058fc32",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_0058fc32;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

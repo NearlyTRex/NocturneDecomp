@@ -8,7 +8,7 @@
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 0053827e
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_=_%d_stranger.cpp_l_00595ace+1
+;   TerminatedCString s_actionPending_d_stranger_00595acf
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_00764230
 ;
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_0053bf0b
     PUSH 0xd49                          ; 0053bf0c
     PUSH ECX                            ; 0053bf11
-    PUSH 0x595acf                       ; 0053bf12 | s_actionPending_=_%d_stranger.cpp_l_00595ace+1
+    PUSH 0x595acf                       ; 0053bf12 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x005b6d50]      ; 0053bf17 | DAT_005b6d50
     PUSH EDI                            ; 0053bf1d
     CALL FUN_0046fb40                   ; 0053bf1e

@@ -43,9 +43,9 @@ void FUN_00541d00(int param_1,float param_2)
   float local_14;
   
   bVar8 = 0;
-  if ((*(float *)(param_1 + 0x2434) < (float)_DAT_00596379) &&
+  if ((*(float *)(param_1 + 0x2434) < (float)100) &&
      (fVar1 = *(float *)(param_1 + 0x2434) + param_2, *(float *)(param_1 + 0x2434) = fVar1,
-     (float)_DAT_00596379 < fVar1)) {
+     (float)100 < fVar1)) {
     *(uint *)(param_1 + 0x2434) = 0x42c80000;
   }
   iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
@@ -55,7 +55,7 @@ switchD_005420d7_caseD_9:
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(param_1,param_2);
   fVar1 = *(float *)(param_1 + 0xbc8c) - param_2;
-  fVar3 = (float)_DAT_00596381;
+  fVar3 = (float)12.566370614;
   *(float *)(param_1 + 0xbc8c) = fVar1;
   *(float *)(param_1 + 0x2430) = param_2 * fVar3;
   if (fVar1 < 0.0) {
@@ -185,7 +185,8 @@ switchD_005420d7_caseD_4:
     local_54 = *(float *)(param_1 + 0x23ac);
     iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     if (*(int *)(iVar4 + 0x24) != 0x1a) {
-      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_00596389;
+      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32
+      ;
     }
     local_44 = *(float *)(param_1 + 0x2420) * param_2;
     local_40 = *(float *)(param_1 + 0x2424) * param_2;
@@ -204,7 +205,7 @@ switchD_005420d7_caseD_4:
     }
     iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
     if (*(int *)(iVar4 + 0x24) == 0x1a) {
-      *(float *)(param_1 + 0x24) = param_2 * (float)_DAT_00596391 + *(float *)(param_1 + 0x24);
+      *(float *)(param_1 + 0x24) = param_2 * (float)3 + *(float *)(param_1 + 0x24);
     }
     goto LAB_00541f87;
   }
@@ -214,13 +215,13 @@ switchD_005420d7_caseD_4:
     iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_50,uVar5);
     local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar4 + 4));
     local_98 = local_14;
-    if (local_14 < (float)_DAT_00596399) {
-      local_98 = local_14 + _DAT_005963a1;
+    if (local_14 < (float)-1.57079632675) {
+      local_98 = local_14 + 3.141593f;
     }
-    if ((float)_DAT_005963a9 < local_98) {
-      local_98 = local_98 + _DAT_005963b1;
+    if ((float)1.57079632675 < local_98) {
+      local_98 = local_98 + 1.5938625219265179e-314._0_4_;
     }
-    local_18 = param_2 * (float)_DAT_005963b9;
+    local_18 = param_2 * (float)3.1415926535000001;
     local_20 = -local_18;
     if (local_98 < local_20) {
       local_98 = local_20;

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 103,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 59
@@ -173,8 +172,8 @@
   "globals": [
     {
       "addr": "00587ae5",
-      "name": "DAT_00587ae5",
-      "type": "undefined4",
+      "name": "s_fov_00587ae5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -270,16 +269,8 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x150,&DAT_00587ae5);",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x150,\"fov\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00587ae5",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x150,&DAT_00587ae5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

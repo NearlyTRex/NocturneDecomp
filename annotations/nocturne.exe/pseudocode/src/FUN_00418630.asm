@@ -19,8 +19,8 @@
 ;   undefined4 s_neguydie_00579192+2
 ;   undefined4 s_eguydie_00579192+3
 ;   undefined4 s__00579192+0xc
-;   undefined4 DAT_0059a8a0
-;   undefined4 DAT_0059a8a4
+;   float FLOAT_0059a8a0 = 50
+;   float FLOAT_0059a8a4 = 100
 ;   undefined1* PTR_core_boneguy.cpp_CBoneGuy_setup_FUN_00418800_0059a8b4 = 00418800
 ;   undefined4 DAT_0059aa00
 ;
@@ -68,9 +68,9 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 00418692
     LEA EDI,[EBX + 0xbd38]              ; 0041869c
     MOV dword ptr [EBX + 0xc344],0x0    ; 004186a2
-    FLD float ptr [0x0059a8a0]          ; 004186ac | DAT_0059a8a0
+    FLD float ptr [0x0059a8a0]          ; 004186ac | FLOAT_0059a8a0
     MOV dword ptr [EBX + 0x2608],0x2    ; 004186b2
-    FLD float ptr [0x0059a8a4]          ; 004186bc | DAT_0059a8a4
+    FLD float ptr [0x0059a8a4]          ; 004186bc | FLOAT_0059a8a4
     MOV dword ptr [EBX + 0xbd9c],0x41200000 ; 004186c2
     ADD ESP,0x8                         ; 004186cc
     FXCH                                ; 004186cf

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)
@@ -34,7 +33,7 @@ double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int 
     local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
     fVar12 = (float10)round
                                 (((float10)_param_4 - (float10)(longlong)local_34) *
-                                 (float10)_DAT_0059294e);
+                                 (float10)4294967296);
     local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
     uVar8 = local_34._0_4_;
     local_34 = (double)floor();
@@ -44,7 +43,7 @@ double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int 
     local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
     fVar12 = (float10)round
                                 (((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) -
-                                 (float10)(longlong)local_34) * (float10)_DAT_0059294e);
+                                 (float10)(longlong)local_34) * (float10)4294967296);
     local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
     fVar3 = *param_3;
     fVar4 = param_3[1];

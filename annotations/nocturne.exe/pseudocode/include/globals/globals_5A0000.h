@@ -7,6 +7,10 @@
 // GLOBAL VARIABLES - Range 0x5A0000
 // =============================================================================
 
+// float
+extern float FLOAT_005a2158;
+extern float FLOAT_005a2160;
+
 // string
 extern string DAT_005ACE34;
 extern string DAT_005ACE54;
@@ -63,7 +67,6 @@ extern undefined1 DAT_005acc90;
 extern undefined1 DAT_005acc91;
 
 // undefined4
-extern undefined4 DAT_005a2158;
 extern undefined4 DAT_005a4b78;
 extern undefined4 DAT_005acaa4;
 extern undefined4 DAT_005acaa8;

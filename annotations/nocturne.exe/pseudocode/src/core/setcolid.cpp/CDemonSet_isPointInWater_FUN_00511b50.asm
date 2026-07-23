@@ -11,7 +11,7 @@
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042acc4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590bc1
+;   float FLOAT_00590bc1 = -10
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_02dd1214
 ;   undefined4 DAT_02ddd5d0
@@ -97,7 +97,7 @@ section .text
     CALL dword ptr [EDX + 0x14]         ; 00511bdd
     ADD ESP,0x8                         ; 00511be0
     FLD float ptr [ESP + 0x4]           ; 00511be3
-    FADD float ptr [0x00590bc1]         ; 00511be7 | DAT_00590bc1
+    FADD float ptr [0x00590bc1]         ; 00511be7 | FLOAT_00590bc1
     FLD float ptr [ESP]                 ; 00511bed
     FXCH                                ; 00511bf0
     FSTP float ptr [ESP + 0x4]          ; 00511bf2

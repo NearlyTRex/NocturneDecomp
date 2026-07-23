@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00549ed4 = 00549f8d
-;   undefined4 s_..\\core\\turret.cpp_00596da4+1
+;   TerminatedCString s_core_turret_cpp_00596da5
 ;   string s_CTurret::getCurFrame_-_invalid_s_00596db8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -76,7 +76,7 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 00549f64
     JMP 0x00549f8d                      ; 00549f68
         ;   XREF to: 00549f8d (UNCONDITIONAL_JUMP)  ; caseD_0
-    MOV ECX,0x596da5                    ; 00549f6a | s_..\core\turret.cpp_00596da4+1
+    MOV ECX,0x596da5                    ; 00549f6a | = "..\\core\\turret.cpp"
         ;   Label: default
     MOV ESI,0x1c1                       ; 00549f6f
     PUSH 0x596db8                       ; 00549f74 | = "CTurret::getCurFrame - invalid state"

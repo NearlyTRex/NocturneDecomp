@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   string s_..\\engine\\pcx.c_0058cf54
 ;   string s_saveScreenRaw32_-_No_ext_found_0058cf64
-;   undefined1 DAT_0058cf83
-;   undefined1 DAT_0058cf84
-;   undefined1 DAT_0058cf85
-;   undefined1 DAT_0058cf86
-;   undefined4 DAT_0058cf88
+;   TerminatedCString s_RAW_0058cf83
+;   undefined4 s_RAW_0058cf83+1
+;   undefined4 s_RAW_0058cf83+2
+;   undefined4 s_RAW_0058cf83+3
+;   TerminatedCString s_wb_0058cf88
 ;   string s_..\\engine\\pcx.c_0058cf8b
 ;   string s_saveScreenRaw32_-_Unable_to_open_0058cf9b
 ;   undefined4 DAT_005b761c
@@ -92,16 +92,16 @@ section .text
     TEST ESI,ESI                        ; 004f2825
     JZ 0x004f2960                       ; 004f2827
         ;   XREF to: 004f2960 (CONDITIONAL_JUMP)  ; LAB_004f2960
-    MOV ESI,0x58cf83                    ; 004f282d | DAT_0058cf83
+    MOV ESI,0x58cf83                    ; 004f282d | = ".RAW"
         ;   Label: LAB_004f282d
     PUSH EDI                            ; 004f2832
-    MOV AL,byte ptr [ESI]               ; 004f2833 | DAT_0058cf83 | DAT_0058cf85
+    MOV AL,byte ptr [ESI]               ; 004f2833 | = ".RAW" | s_RAW_0058cf83+2
         ;   Label: LAB_004f2833
     MOV byte ptr [EDI],AL               ; 004f2835
     CMP AL,0x0                          ; 004f2837
     JZ 0x004f284b                       ; 004f2839
         ;   XREF to: 004f284b (CONDITIONAL_JUMP)  ; LAB_004f284b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004f283b | DAT_0058cf84 | DAT_0058cf86
+    MOV AL,byte ptr [ESI + 0x1]         ; 004f283b | s_RAW_0058cf83+1 | s_RAW_0058cf83+3
     ADD ESI,0x2                         ; 004f283e
     MOV byte ptr [EDI + 0x1],AL         ; 004f2841
     ADD EDI,0x2                         ; 004f2844
@@ -110,7 +110,7 @@ section .text
         ;   XREF to: 004f2833 (CONDITIONAL_JUMP)  ; LAB_004f2833
     POP EDI                             ; 004f284b
         ;   Label: LAB_004f284b
-    PUSH 0x58cf88                       ; 004f284c | DAT_0058cf88
+    PUSH 0x58cf88                       ; 004f284c | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 004f2851
     PUSH EAX                            ; 004f2855
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f2856

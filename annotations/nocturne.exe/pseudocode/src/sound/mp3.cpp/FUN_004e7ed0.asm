@@ -34,7 +34,7 @@
 ;   string s_js_bound_bad_layer/modext_(%d/%d_0058b53b
 ;   string s_..\\sound\\mp3.cpp_0058b567
 ;   string s_Out_of_memory._File:_%s_0058b578
-;   undefined4 DAT_0058b9b8
+;   double DOUBLE_0058b9b8 = 1000
 ;   undefined4 s_ntroller$$_005bb246+0xa
 ;   undefined4 DAT_005bbc48
 ;   undefined4 DAT_005bbc88
@@ -313,7 +313,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 004e819e
     SHL EDX,0x5                         ; 004e81a2
     FLD double ptr [EDX + EAX*0x8 + 0x5bbc48] ; 004e81a5 | DAT_005bbc48
-    FMUL double ptr [0x0058b9b8]        ; 004e81ac | DAT_0058b9b8
+    FMUL double ptr [0x0058b9b8]        ; 004e81ac | DOUBLE_0058b9b8
     PUSH 0x0                            ; 004e81b2
     MOV EAX,dword ptr [ESP + 0x80]      ; 004e81b4
     MOV EDX,dword ptr [ESP + 0x80]      ; 004e81bb

@@ -54,7 +54,7 @@ void core_scat_cpp_CScat_processDamage_FUN_004fcbd0(int param_1,int param_2)
       core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(0x01C78C7C,param_1,0x32,0x42480000,0);
     }
   }
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"?scat-die-?.wav" + 1);
+  (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"scat-die-?.wav");
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);
   return;
 }

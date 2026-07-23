@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -267,27 +267,27 @@
     },
     {
       "addr": "00595d97",
-      "name": "DAT_00595d97",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595d97",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "00595d9f",
-      "name": "DAT_00595d9f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595d9f",
+      "type": "double",
+      "value": "0.75"
     },
     {
       "addr": "00595da7",
-      "name": "DAT_00595da7",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595da7",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005a26f8",
-      "name": "DAT_005a26f8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a26f8",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005ad350",
@@ -537,7 +537,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbc8c) = _DAT_005a26f8;",
+      "text": "*(float *)(param_1 + 0xbc8c) = 2.0f;",
       "type": "unnamed_param"
     },
     {
@@ -641,7 +641,7 @@
       "line": 71,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_18 = *(float *)(param_2 + 4) * (float)_DAT_00595d97;",
+      "text": "local_18 = *(float *)(param_2 + 4) * (float)0.050000000000000003;",
       "type": "unnamed_param"
     },
     {
@@ -993,7 +993,7 @@
       "line": 96,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "uVar6 = CONCAT44(uVar5,(local_14 <= _DAT_00595da7) + 0x25);",
+      "text": "uVar6 = CONCAT44(uVar5,(local_14 <= 50.0f) + 0x25);",
       "type": "concat_reconstruction"
     }
   ],

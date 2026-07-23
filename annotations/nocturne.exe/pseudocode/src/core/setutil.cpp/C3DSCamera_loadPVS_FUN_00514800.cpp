@@ -15,7 +15,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(int param_1,uint p
   int iVar2;
   int iVar3;
   
-  _fscanf(param_2,&DAT_00590cc7,param_1 + 400);
+  _fscanf(param_2,"%d\n",param_1 + 400);
   iVar1 = realloc
                     (*(uint *)(param_1 + 0x194),*(int *)(param_1 + 400) << 2);
   *(int *)(param_1 + 0x194) = iVar1;
@@ -32,7 +32,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(int param_1,uint p
         iVar2 = *(int *)(param_1 + 0x194) + iVar3;
         iVar1 = iVar1 + 1;
         iVar3 = iVar3 + 4;
-        _fscanf(param_2,&DAT_00590cfe,iVar2);
+        _fscanf(param_2,"\t%d\n",iVar2);
       } while (iVar1 < *(int *)(param_1 + 400));
     }
   }

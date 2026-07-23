@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_cre.kfm_005879e7
-;   undefined4 DAT_0059fd5c
-;   undefined4 DAT_0059fd60
+;   float FLOAT_0059fd5c = 8
+;   float FLOAT_0059fd60 = 30
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059fd94 = 00553f10
 ;
 ; Called Functions:
@@ -40,9 +40,9 @@ section .text
     MOV dword ptr [EBX + 0x2dc],0x0     ; 004c6e89
     MOV dword ptr [EBX + 0x2e0],0x42000000 ; 004c6e93
     MOV dword ptr [EBX + 0x2e4],0x1     ; 004c6e9d
-    FLD float ptr [0x0059fd5c]          ; 004c6ea7 | DAT_0059fd5c
+    FLD float ptr [0x0059fd5c]          ; 004c6ea7 | FLOAT_0059fd5c
     MOV dword ptr [EBX + 0x2e8],0x0     ; 004c6ead
-    FLD float ptr [0x0059fd60]          ; 004c6eb7 | DAT_0059fd60
+    FLD float ptr [0x0059fd60]          ; 004c6eb7 | FLOAT_0059fd60
     MOV dword ptr [EBX + 0x580],0x0     ; 004c6ebd
     ADD ESP,0x8                         ; 004c6ec7
     MOV dword ptr [EBX + 0x57c],0x3f800000 ; 004c6eca

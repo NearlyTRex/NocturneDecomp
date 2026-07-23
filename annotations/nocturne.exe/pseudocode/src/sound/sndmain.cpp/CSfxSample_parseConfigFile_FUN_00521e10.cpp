@@ -39,23 +39,23 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(int param
   
   bVar11 = 0;
   fVar3 = (float)_DAT_005bea88;
-  fVar2 = _DAT_005a216c * fVar3;
+  fVar2 = 20.0f * fVar3;
   fVar4 = _DAT_02dbd370 * fVar3;
-  fVar3 = _DAT_005a2170 * fVar3;
+  fVar3 = 10000.0f * fVar3;
   *(uint *)(param_1 + 0x124) = 0;
   *(float *)(param_1 + 0x114) = fVar2;
   *(float *)(param_1 + 0x118) = fVar4;
   *(float *)(param_1 + 0x11c) = fVar3;
   splitpath(param_1,0,0,local_138,0);
-  makepath(local_23c,0,0,local_138,&DAT_005922e8);
+  makepath(local_23c,0,0,local_138,"klp");
   iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_23c);
   if (0 < iVar5) {
     *(uint *)(param_1 + 0x124) = 1;
   }
-  makepath(local_340,0,0,local_138,&DAT_005922f2);
+  makepath(local_340,0,0,local_138,"sfx");
   iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_340);
   if ((iVar5 < 1) ||
-     (local_20 = engine_dosio_cpp_getFile_FUN_00456a60("sound",local_340,&DAT_005922fc),
+     (local_20 = engine_dosio_cpp_getFile_FUN_00456a60("sound",local_340,"rb"),
      local_20 == 0)) {
     return;
   }
@@ -71,7 +71,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(int param
     local_38 = local_38 + 1;
     iVar5 = _fgets(local_46c,300,iVar5);
     if (iVar5 == 0) break;
-    puVar7 = (byte *)strstr(local_46c,&DAT_005922e5);
+    puVar7 = (byte *)strstr(local_46c,"//");
     pcVar9 = local_46c;
     if (puVar7 != (byte *)0x0) {
       *puVar7 = 0;
@@ -110,14 +110,14 @@ joined_r0x00521ffd:
           FUN_004c8440("Reference distance specified in %s on line %d, then again on line %d",local_340,local_1c,local_38);
         }
         local_1c = local_38;
-        if (*(float *)(param_1 + 0x114) < (float)_DAT_0059264e) {
+        if (*(float *)(param_1 + 0x114) < (float)0.10000000000000001) {
           _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
           _DAT_01cc4804 = 0x294;
           FUN_004c8440("Reference volume distance %g is too small in %s line %d!",
                        (double)*(float *)(param_1 + 0x114),local_340,local_38);
         }
         if (local_18 == 0) {
-          *(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / _DAT_005a2168;
+          *(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;
         }
       }
       else {
@@ -129,7 +129,7 @@ joined_r0x00521ffd:
             FUN_004c8440("Minimum distance specified in %s on line %d, then again on line %d",local_340,local_18,local_38);
           }
           local_18 = local_38;
-          if (*(float *)(param_1 + 0x118) < (float)_DAT_0059264e) {
+          if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {
             _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
             _DAT_01cc4804 = 0x29c;
             FUN_004c8440("Reference volume distance %g is too small in %s line %d!",
@@ -153,7 +153,7 @@ joined_r0x00521ffd:
                             );
               }
               local_18 = local_38;
-              if (local_470 < (float)_DAT_00592646) {
+              if (local_470 < (float)0.001) {
                 _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
                 _DAT_01cc4804 = 0x2a9;
                 FUN_004c8440("maxVol %g is too small in %s line %d!",(double)local_470,local_340
@@ -179,7 +179,7 @@ joined_r0x00521ffd:
                 *(int *)(param_1 + 0x110) = local_34;
               }
               else {
-                iVar5 = _stricmp(local_46c,&DAT_0059260a);
+                iVar5 = _stricmp(local_46c,"loop");
                 if (iVar5 == 0) {
                   *(uint *)(param_1 + 0x124) = 1;
                 }

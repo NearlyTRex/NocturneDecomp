@@ -74,9 +74,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(uint param_1,i
     fVar5 = pfVar1[3];
     fVar6 = pfVar1[4];
     fVar7 = pfVar1[5];
-    local_2c = (fVar5 - fVar2) * _DAT_005871d9;
-    local_28 = (fVar6 - fVar3) * _DAT_005871d9;
-    local_24 = (fVar7 - fVar4) * _DAT_005871d9;
+    local_2c = (fVar5 - fVar2) * 0.5f;
+    local_28 = (fVar6 - fVar3) * 0.5f;
+    local_24 = (fVar7 - fVar4) * 0.5f;
     if (((local_2c <= local_28) || (local_14 = local_2c, local_2c <= local_24)) &&
        (local_14 = local_24, local_24 < local_28)) {
       local_14 = local_28;
@@ -84,9 +84,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(uint param_1,i
     iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CGun");
     if ((iVar8 != 0) ||
        (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CKeyActor"), iVar8 != 0)) {
-      local_14 = local_14 * (float)_DAT_005871e1;
+      local_14 = local_14 * (float)2;
     }
-    local_48 = -local_14 * (float)_DAT_005871e1;
+    local_48 = -local_14 * (float)2;
     local_50 = 0;
     local_4c = 0;
     local_18 = local_48;
@@ -97,30 +97,30 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(uint param_1,i
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (DAT_005ae704,&DAT_02dd1184);
     local_44 = fVar2 + fVar5;
-    local_5c = local_44 * _DAT_005871e9;
+    local_5c = local_44 * -0.5f;
     local_40 = fVar3 + fVar6;
     local_3c = fVar4 + fVar7;
-    local_58 = local_40 * _DAT_005871e9;
-    local_54 = local_3c * _DAT_005871e9;
+    local_58 = local_40 * -0.5f;
+    local_54 = local_3c * -0.5f;
     _DAT_01c038f4 = 0;
     local_38 = 0.0;
     local_30 = 0.0;
     local_34 = param_6;
     iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CKeyActor");
     if (iVar8 != 0) {
-      local_38 = local_38 + _DAT_005871ed;
+      local_38 = local_38 + 1.570796f;
     }
     iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01cc56dc);
     if (iVar8 != 0) {
       iVar9 = _stricmp(iVar8 + 0x1c8,"axe1.kfm");
       if (iVar9 == 0) {
-        local_38 = local_38 + _DAT_005871f1;
-        local_30 = local_30 + _DAT_005871f1;
+        local_38 = local_38 + -1.570796f;
+        local_30 = local_30 + -1.570796f;
       }
       iVar8 = _stricmp(iVar8 + 0x1c8,"ax.kfm");
       if (iVar8 == 0) {
-        local_38 = local_38 + _DAT_005871f1;
-        local_30 = local_30 + _DAT_005871f1;
+        local_38 = local_38 + -1.570796f;
+        local_30 = local_30 + -1.570796f;
       }
     }
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,&local_38,0);

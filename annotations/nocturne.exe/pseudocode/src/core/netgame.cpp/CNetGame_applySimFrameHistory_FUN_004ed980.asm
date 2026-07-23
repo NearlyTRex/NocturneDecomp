@@ -9,7 +9,7 @@
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0 at 004ed4c8
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058c749+1
+;   TerminatedCString s_core_netgame_cpp_0058c74a
 ;   string s_CNetGame::applySimFrameHistory_-_0058c75e
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01cc4800
@@ -80,7 +80,7 @@ section .text
     POP ESI                             ; 004eda0d
     POP EBX                             ; 004eda0e
     RET                                 ; 004eda0f
-    MOV ECX,0x58c74a                    ; 004eda10 | s_..\core\netgame.cpp_0058c749+1
+    MOV ECX,0x58c74a                    ; 004eda10 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004eda10
     MOV EBX,0x9cd                       ; 004eda15
     PUSH 0x58c75e                       ; 004eda1a | = "CNetGame::applySimFrameHistory - I'm ..."

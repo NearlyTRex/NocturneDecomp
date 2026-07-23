@@ -37,7 +37,7 @@ LAB_00520e74:
     if ((*(int *)(iVar3 + 0x24) != 8) && (*(int *)(iVar3 + 0x24) != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar1,7,1);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);
-      (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"@smiley_die??.wav" + 1);
+      (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"smiley_die??.wav");
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
     return;

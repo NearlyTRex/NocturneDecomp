@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 340,
+    "complexity_score": 324,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 40,
-    "suspect_count": 29,
+    "pseudocode_lines": 39,
+    "suspect_count": 28,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 127
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -183,9 +182,9 @@
   "globals": [
     {
       "addr": "0058cb84",
-      "name": "DAT_0058cb84",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058cb84",
+      "type": "float",
+      "value": "10"
     }
   ],
   "param_estimates": {
@@ -295,16 +294,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(uint *param_1,uint *param_2,uint *param_3)",
@@ -312,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(uint *param_1,uint *param_2,uint *param_3)",
@@ -320,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(uint *param_1,uint *param_2,uint *param_3)",
@@ -328,7 +319,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[7] = 0xc2000000;",
@@ -336,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != param_2) {",
@@ -344,7 +335,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_1 != param_2) {",
@@ -352,7 +343,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_2;",
@@ -360,7 +351,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_1 = *param_2;",
@@ -368,7 +359,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_2[1];",
@@ -376,7 +367,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[1] = param_2[1];",
@@ -384,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = param_2[2];",
@@ -392,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[2] = param_2[2];",
@@ -400,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (uint *)0x0) {",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 + 3 != param_3) {",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_1 + 3 != param_3) {",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = *param_3;",
@@ -432,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_3",
       "severity": "mild",
       "text": "param_1[3] = *param_3;",
@@ -440,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_3[1];",
@@ -448,7 +439,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "param_1[4] = param_3[1];",
@@ -456,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_3[2];",
@@ -464,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "param_1[5] = param_3[2];",
@@ -472,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = 0x40a00000;",
@@ -480,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xc] = 0;",
@@ -488,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = (float)(fVar6 * fVar7);",
@@ -496,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = (float)(fVar3 * fVar7 * fVar4);",
@@ -504,7 +495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = (float)(fVar5 * fVar7 * fVar4);",
@@ -512,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = 0x40a00000;",
@@ -520,7 +511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xc] = 0;",

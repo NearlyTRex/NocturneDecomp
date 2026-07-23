@@ -179,7 +179,7 @@ LAB_0051133f:
                   }
                   else {
                     dStack_278 = SQRT((double)fVar5) - (double)fVar7;
-                    if (_DAT_00590abd < dStack_278) {
+                    if (-0.001 < dStack_278) {
                       dStack_278 = -0.001;
                     }
                     if ((float)dStack_278 < local_14c) {

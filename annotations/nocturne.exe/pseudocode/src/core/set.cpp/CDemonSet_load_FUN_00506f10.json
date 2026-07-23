@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1169,
-    "complexity_score": 2065,
+    "complexity_score": 1805,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 71,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 410,
-    "suspect_count": 161,
+    "suspect_count": 135,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -318,8 +318,8 @@
     },
     {
       "addr": "00590104",
-      "name": "DAT_00590104",
-      "type": "undefined4",
+      "name": "s_rt_00590104",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -342,32 +342,32 @@
     },
     {
       "addr": "0059013b",
-      "name": "DAT_0059013b",
-      "type": "undefined4",
+      "name": "s_d_0059013b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059013f",
-      "name": "DAT_0059013f",
-      "type": "undefined4",
+      "name": "s_f_0059013f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590143",
-      "name": "DAT_00590143",
-      "type": "undefined4",
+      "name": "s_s_00590143",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590147",
-      "name": "DAT_00590147",
-      "type": "undefined4",
+      "name": "s_s_00590147",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059014b",
-      "name": "DAT_0059014b",
-      "type": "undefined4",
+      "name": "s_f_0059014b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -402,20 +402,20 @@
     },
     {
       "addr": "00590181",
-      "name": "DAT_00590181",
-      "type": "undefined4",
+      "name": "s_d_00590181",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590185",
-      "name": "DAT_00590185",
-      "type": "undefined4",
+      "name": "s_ndun_00590185",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059018a",
-      "name": "DAT_0059018a",
-      "type": "undefined4",
+      "name": "s_d_0059018a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -456,32 +456,32 @@
     },
     {
       "addr": "005901a8",
-      "name": "DAT_005901a8",
-      "type": "undefined1",
+      "name": "s_none_005901a8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005901a9",
-      "name": "DAT_005901a9",
-      "type": "undefined1",
+      "name": "s_one_005901a8+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005901aa",
-      "name": "DAT_005901aa",
-      "type": "undefined1",
+      "name": "s_ne_005901a8+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005901ab",
-      "name": "DAT_005901ab",
-      "type": "undefined1",
+      "name": "s_e_005901a8+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005901ad",
-      "name": "DAT_005901ad",
-      "type": "undefined4",
+      "name": "s_d_005901ad",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -492,26 +492,26 @@
     },
     {
       "addr": "005901b7",
-      "name": "DAT_005901b7",
-      "type": "undefined4",
+      "name": "s_d_005901b7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005901bb",
-      "name": "DAT_005901bb",
-      "type": "undefined4",
+      "name": "s_d_005901bb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005901bf",
-      "name": "DAT_005901bf",
-      "type": "undefined4",
+      "name": "s_d_005901bf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005901c3",
-      "name": "DAT_005901c3",
-      "type": "undefined4",
+      "name": "s_d_005901c3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -534,8 +534,8 @@
     },
     {
       "addr": "005901e5",
-      "name": "DAT_005901e5",
-      "type": "undefined4",
+      "name": "s_d_005901e5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -546,8 +546,8 @@
     },
     {
       "addr": "005901ef",
-      "name": "DAT_005901ef",
-      "type": "undefined4",
+      "name": "s_h109_005901ef",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -564,14 +564,14 @@
     },
     {
       "addr": "00590201",
-      "name": "DAT_00590201",
-      "type": "undefined4",
+      "name": "s_ndun_00590201",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590206",
-      "name": "DAT_00590206",
-      "type": "undefined4",
+      "name": "s_d_00590206",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -582,8 +582,8 @@
     },
     {
       "addr": "00590210",
-      "name": "DAT_00590210",
-      "type": "undefined4",
+      "name": "s_h109_00590210",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -606,20 +606,20 @@
     },
     {
       "addr": "00590229",
-      "name": "DAT_00590229",
-      "type": "undefined4",
+      "name": "s_ndun_00590229",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059022e",
-      "name": "DAT_0059022e",
-      "type": "undefined4",
+      "name": "s_d_0059022e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590232",
-      "name": "DAT_00590232",
-      "type": "undefined4",
+      "name": "s_d_00590232",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -648,14 +648,14 @@
     },
     {
       "addr": "00590269",
-      "name": "DAT_00590269",
-      "type": "undefined4",
+      "name": "s_rb_00590269",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059026c",
-      "name": "DAT_0059026c",
-      "type": "undefined4",
+      "name": "s_data_0059026c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -672,26 +672,26 @@
     },
     {
       "addr": "005902a7",
-      "name": "DAT_005902a7",
-      "type": "undefined1",
+      "name": "s_zth_005902a7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005902a8",
-      "name": "DAT_005902a8",
-      "type": "undefined1",
+      "name": "s_zth_005902a7+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005902a9",
-      "name": "DAT_005902a9",
-      "type": "undefined1",
+      "name": "s_zth_005902a7+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005902aa",
-      "name": "DAT_005902aa",
-      "type": "undefined1",
+      "name": "s_zth_005902a7+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -1027,16 +1027,8 @@
       "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_2,&DAT_00590104);",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_2,\"rt\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00590104",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_2,&DAT_00590104);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1051,64 +1043,24 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059013b,param_1 + 0x56a31);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x56a31);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_0059013b",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059013b,param_1 + 0x56a31);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059013f,param_1 + 0x56aab);",
+      "text": "_fscanf(iVar3,\"%f\\n\",param_1 + 0x56aab);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0059013f",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059013f,param_1 + 0x56aab);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00590143",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590143,local_228);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00590147",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590147,local_128);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059014b,param_1 + 0x5335a);",
+      "text": "_fscanf(iVar3,\"%f\\n\",param_1 + 0x5335a);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_0059014b",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059014b,param_1 + 0x5335a);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1239,22 +1191,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_00590185",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_128,&DAT_00590185,4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_00590181",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590181,0x02DD1210);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 87,
       "match": "param_1",
@@ -1275,16 +1211,8 @@
       "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059018a,param_1 + 0x58490);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x58490);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_0059018a",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059018a,param_1 + 0x58490);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1351,14 +1279,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_005901a8",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005901a8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 114,
       "match": "param_1",
@@ -1411,16 +1331,8 @@
       "line": 134,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901ad,param_1 + 0x584a0);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x584a0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_005901ad",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901ad,param_1 + 0x584a0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1451,16 +1363,8 @@
       "line": 150,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901b7,param_1 + 0x6591);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x6591);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 150,
-      "match": "DAT_005901b7",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901b7,param_1 + 0x6591);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1499,16 +1403,8 @@
       "line": 163,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901bb,param_1);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_005901bb",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901bb,param_1);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1559,14 +1455,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 178,
-      "match": "DAT_005901ef",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_128,&DAT_005901ef,4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 180,
       "match": "param_1",
@@ -1591,14 +1479,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_00590201",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_128,&DAT_00590201,4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 192,
       "match": "param_1",
@@ -1619,32 +1499,16 @@
       "line": 198,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901bf,param_1 + 0x56ab4);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x56ab4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 198,
-      "match": "DAT_005901bf",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901bf,param_1 + 0x56ab4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901c3,param_1 + 0x56ab5);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x56ab5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_005901c3",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901c3,param_1 + 0x56ab5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1719,14 +1583,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_005901e5",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_005901e5,local_40);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 224,
       "match": "param_1",
@@ -1757,14 +1613,6 @@
       "severity": "mild",
       "text": "param_1[0x57ca5] = 8;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 233,
-      "match": "DAT_00590210",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_128,&DAT_00590210,4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1799,14 +1647,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 249,
-      "match": "DAT_00590229",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_128,&DAT_00590229,4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 251,
       "match": "param_1",
@@ -1819,16 +1659,8 @@
       "line": 256,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590206,param_1 + 0x57ca5);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x57ca5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 256,
-      "match": "DAT_00590206",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590206,param_1 + 0x57ca5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1851,16 +1683,8 @@
       "line": 263,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059022e,param_1 + 0x56a25);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x56a25);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 263,
-      "match": "DAT_0059022e",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_0059022e,param_1 + 0x56a25);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -1907,16 +1731,8 @@
       "line": 274,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590232,param_1 + 0x56c0a);",
+      "text": "_fscanf(iVar3,\"%d\\n\",param_1 + 0x56c0a);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 274,
-      "match": "DAT_00590232",
-      "severity": "mild",
-      "text": "_fscanf(iVar3,&DAT_00590232,param_1 + 0x56c0a);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -2072,22 +1888,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 335,
-      "match": "DAT_0059026c",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059026c,piVar6,&DAT_00590269);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 335,
-      "match": "DAT_00590269",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059026c,piVar6,&DAT_00590269);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 345,
       "match": "DAT_01fba938",
       "severity": "mild",
@@ -2117,14 +1917,6 @@
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 386,
-      "match": "DAT_005902a7",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005902a7;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

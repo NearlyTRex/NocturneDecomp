@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0(int param_1,int param_2,float param_3)
 
 {
@@ -105,9 +103,9 @@ LAB_004cb32e:
     local_40 = (float)piVar1[5] + pfVar2[2];
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,&local_48);
     local_60 = 0;
-    local_5c = (*(float *)(param_1 + 0x5c8) - *(float *)(param_1 + 0x5e0)) * _DAT_0058802e;
-    local_58 = -(*(float *)(param_1 + 0x1504) * _DAT_0058802a + *(float *)(param_1 + 0x5e4) +
-                *(float *)(param_1 + 0x5cc)) * _DAT_0058802e;
+    local_5c = (*(float *)(param_1 + 0x5c8) - *(float *)(param_1 + 0x5e0)) * 4.0f;
+    local_58 = -(*(float *)(param_1 + 0x1504) * 2.0f + *(float *)(param_1 + 0x5e4) +
+                *(float *)(param_1 + 0x5cc)) * 4.0f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(local_1c,local_30,&local_60);
     core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_54,local_30);
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_0058d08f+1
+;   TerminatedCString s_modelName_0058d090
 ;   string s_startEvent_0058d09a
 ;   string s_moving_0058d0a5
 ;   string s_param_0058d0ac
@@ -40,7 +40,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004f3c56
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004f3c5b
-    PUSH 0x58d090                       ; 004f3c5e | s_modelName_0058d08f+1
+    PUSH 0x58d090                       ; 004f3c5e | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 004f3c63
     PUSH EAX                            ; 004f3c69
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 004f3c6a

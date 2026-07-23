@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005357d0(int param_1,float param_2)
 
 {
@@ -45,7 +43,7 @@ void FUN_005357d0(int param_1,float param_2)
     bVar2 = true;
   }
   if ((*(int *)(param_1 + 0x1faa0) == 7) || (bVar2)) {
-    param_2 = param_2 * (float)_DAT_005954cf;
+    param_2 = param_2 * (float)0.25;
     FUN_00535900(param_1,param_2);
     FUN_00535900(param_1,param_2);
     FUN_00535900(param_1,param_2);

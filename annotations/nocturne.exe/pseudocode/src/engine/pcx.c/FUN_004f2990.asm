@@ -22,7 +22,7 @@
 ;   FUN_0049cc10 at 0049cfa9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058cfc3
+;   TerminatedCString s_wb_0058cfc3
 ;   string s_..\\engine\\pcx.c_0058cfc6
 ;   string s_Cannot_write_.PCX_0058cfd6
 ;   undefined4 DAT_005b761c
@@ -106,7 +106,7 @@ section .text
     DEC EAX                             ; 004f2a54
     MOV word ptr [ESP + 0x50],DI        ; 004f2a55
     MOV word ptr [ESP + 0x12],AX        ; 004f2a5a
-    PUSH 0x58cfc3                       ; 004f2a5f | DAT_0058cfc3
+    PUSH 0x58cfc3                       ; 004f2a5f | = "wb"
         ;   Label: LAB_004f2a5f
     PUSH EBX                            ; 004f2a64
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f2a65

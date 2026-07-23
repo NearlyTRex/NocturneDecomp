@@ -106,7 +106,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
     core_cloth_cpp_CCloth_process_FUN_00436e50
               (param_1 + 0xdfd8,param_1 + 0x20,param_1 + 0x30,param_2,
                *(uint *)(param_1 + 0x240c),param_1 + 0xbd24);
-    if (*(float *)(param_1 + 0x2434) < (float)_DAT_005970e5) {
+    if (*(float *)(param_1 + 0x2434) < (float)25) {
       *(uint *)(param_1 + 0x2434) = 0x41c7fdf4;
       if ((*(int *)(param_1 + 0xbedac) != 2) && (*(int *)(param_1 + 0xbedac) != 3)) {
         core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(param_1);
@@ -120,9 +120,9 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
       local_f0 = *(float *)(param_1 + 0x24) - *(float *)(iVar7 + 0x24);
       local_ec = *(float *)(param_1 + 0x28) - *(float *)(iVar7 + 0x28);
       fVar1 = SQRT(local_f4 * local_f4 + local_ec * local_ec);
-      if (fVar1 < (float)_DAT_005970ed) {
+      if (fVar1 < (float)5) {
         *(uint *)(param_1 + 0xbedac) = 1;
-        local_18 = (float)(uint)(local_f0 < (float)_DAT_005970f5);
+        local_18 = (float)(uint)(local_f0 < (float)10);
         if ((float10)0 != ABS((float10)(int)local_18)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(local_244);
           local_240 = 0x41200000;
@@ -132,7 +132,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
           (**(code **)(*(int *)(iVar7 + 0x14c) + 0x100))(iVar7,local_244);
         }
       }
-      if ((float)_DAT_005970fd < fVar1) {
+      if ((float)40 < fVar1) {
         *(uint *)(param_1 + 0xbed9c) = 0x40a00000;
         *(uint *)(param_1 + 0xbeda4) = 0;
         *(uint *)(param_1 + 0xbedac) = 0;
@@ -145,7 +145,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
       }
       iVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0xbd24);
       if ((((*(int *)(iVar7 + 0x24) == 0) && (*(int *)(param_1 + 0xbedac) == 0)) &&
-          (fVar1 < (float)_DAT_00597105)) && (*(int *)(param_1 + 0xbeda4) == 0)) {
+          (fVar1 < (float)24)) && (*(int *)(param_1 + 0xbeda4) == 0)) {
         *(uint *)(param_1 + 0xbeda4) = 1;
         iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
         if (iVar7 == 0) {
@@ -174,7 +174,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
       if ((*(float *)(param_1 + 0xbeda0) <= 0.0) ||
          (fVar1 = local_b8 - *(float *)(param_1 + 0x20),
          fVar2 = local_b0 - *(float *)(param_1 + 0x28),
-         SQRT(fVar2 * fVar2 + fVar1 * fVar1) < (float)_DAT_00597115)) {
+         SQRT(fVar2 * fVar2 + fVar1 * fVar1) < (float)6)) {
         *(uint *)(param_1 + 0xbeda0) = 0x40a00000;
         *(uint *)(param_1 + 0xbedac) = 3;
       }
@@ -191,11 +191,11 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
       if ((fVar1 <= 0.0) ||
          (fVar1 = local_b8 - *(float *)(param_1 + 0x20),
          fVar2 = local_b0 - *(float *)(param_1 + 0x28),
-         SQRT(fVar2 * fVar2 + fVar1 * fVar1) < (float)_DAT_0059710d)) {
+         SQRT(fVar2 * fVar2 + fVar1 * fVar1) < (float)4)) {
         core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(param_1);
       }
     }
-    local_b4 = local_b4 + _DAT_0059711d;
+    local_b4 = local_b4 + 4.0f;
     local_e8 = local_b8 - *(float *)(param_1 + 0x20);
     local_e4 = local_b4 - *(float *)(param_1 + 0x24);
     local_e0 = local_b0 - *(float *)(param_1 + 0x28);
@@ -226,8 +226,8 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
     local_60 = -0.3926991;
     fStack_2c = 0.3926991;
     *(float *)(param_1 + 0x30) = local_40 * param_2 * fStack_70 + *(float *)(param_1 + 0x30);
-    if ((*(float *)(param_1 + 0x2434) < (float)_DAT_005970e5) && (*(int *)(param_1 + 0xbedac) == 0))
-    {
+    if ((*(float *)(param_1 + 0x2434) < (float)25) &&
+       (*(int *)(param_1 + 0xbedac) == 0)) {
       fStack_2c = 1.5707964;
       local_60 = -1.5707964;
     }
@@ -270,7 +270,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
     goto LAB_0054cc7f;
   }
   if (iVar7 == 1) {
-    fVar1 = param_2 / _DAT_005a3a7c + *(float *)(param_1 + 0xbed98);
+    fVar1 = param_2 / 5.0f + *(float *)(param_1 + 0xbed98);
     *(float *)(param_1 + 0xbed98) = fVar1;
     uVar14 = 0x01C03A10;
     if (1.0 <= fVar1) {
@@ -317,7 +317,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
     goto LAB_0054cc7f;
   }
   if (iVar7 == 3) {
-    local_64 = param_2 / _DAT_005a3a7c;
+    local_64 = param_2 / 5.0f;
     local_60 = *(float *)(param_1 + 0xbed98);
     *(float *)(param_1 + 0xbed98) = local_60 - local_64;
     uVar14 = 0x01C03A10;
@@ -430,19 +430,19 @@ LAB_0054d1ae:
   iVar7 = *(int *)(iVar7 + 0x24);
   switch(iVar7) {
   case 0:
-    *(float *)(param_1 + 0x2430) = _DAT_005a3a84 * param_2;
+    *(float *)(param_1 + 0x2430) = 3.141593f * param_2;
     uVar14 = 0x01C03A10;
     if (*(int *)(iVar5 + 0x228) == 0) {
-      *(float *)(param_1 + 0x242c) = _DAT_005a3a80 * param_2;
+      *(float *)(param_1 + 0x242c) = 10.0f * param_2;
       core_charactr_cpp_CCharacter_followActor_FUN_00428780
                 (param_1,*(uint *)(param_1 + 0xbedb4 + *(int *)(param_1 + 0xbedb0) * 4),
                  0x3e4ccccd,0x497423f0,param_1 + 0xbedc4);
       switch(*(uint *)(param_1 + 0xbedc4)) {
       default:
-        fVar1 = (*(float *)(param_1 + 0x2438) * param_2) / _DAT_005a3a88 +
+        fVar1 = (*(float *)(param_1 + 0x2438) * param_2) / 120.0f +
                 *(float *)(param_1 + 0x2434);
         *(float *)(param_1 + 0x2434) = fVar1;
-        if ((float)_DAT_00597125 < fVar1) goto LAB_0054d280;
+        if ((float)50 < fVar1) goto LAB_0054d280;
         iVar5 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0
                           ((float *)(param_1 + 0x20),0x41400000);
         if (iVar5 == 0) {
@@ -535,7 +535,7 @@ LAB_0054d280:
     local_100 = *(float *)(param_1 + 0x2414) + *(float *)(param_1 + 0x23a4);
     local_f8 = *(float *)(param_1 + 0x241c) + *(float *)(param_1 + 0x23ac);
     local_fc = (*(float *)(param_1 + 0x2418) + *(float *)(param_1 + 0x23a8)) -
-               param_2 * (float)_DAT_0059712d;
+               param_2 * (float)3;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_100);
   }
   *(uint *)(param_1 + 0x241c) = 0;

@@ -22,10 +22,10 @@
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_005928a9
 ;   string s_convertMixBufToOutput_-_invalid_b_005928be
-;   undefined4 DAT_005928ea
-;   undefined4 DAT_005928ee
-;   undefined4 DAT_005928f6
-;   undefined4 DAT_005928fe
+;   float FLOAT_005928ea = 32766
+;   float FLOAT_005928ee = 127
+;   double DOUBLE_005928f6 = -1
+;   float FLOAT_005928fe = 128
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [EBP + -0xc],EAX      ; 00523367
     FLD float ptr [EBP + -0xc]          ; 0052336a
     FST double ptr [EBP + -0x34]        ; 0052336d
-    FCOMP double ptr [0x005928f6]       ; 00523370 | DAT_005928f6
+    FCOMP double ptr [0x005928f6]       ; 00523370 | DOUBLE_005928f6
     FNSTSW AX                           ; 00523376
     SAHF                                ; 00523378
     JBE 0x00523443                      ; 00523379
@@ -112,7 +112,7 @@ section .text
     MOV dword ptr [EBP + -0x24],EAX     ; 005233ca
     FLD float ptr [EBP + -0x24]         ; 005233cd
     FST double ptr [EBP + -0x2c]        ; 005233d0
-    FCOMP double ptr [0x005928f6]       ; 005233d3 | DAT_005928f6
+    FCOMP double ptr [0x005928f6]       ; 005233d3 | DOUBLE_005928f6
     FNSTSW AX                           ; 005233d9
     SAHF                                ; 005233db
     JBE 0x0052340d                      ; 005233dc
@@ -147,8 +147,8 @@ section .text
         ;   XREF to: 005233ee (UNCONDITIONAL_JUMP)  ; LAB_005233ee
     FLD float ptr [EBP + -0x24]         ; 00523415
         ;   Label: LAB_00523415
-    FMUL float ptr [0x005928ee]         ; 00523418 | DAT_005928ee
-    FADD float ptr [0x005928fe]         ; 0052341e | DAT_005928fe
+    FMUL float ptr [0x005928ee]         ; 00523418 | FLOAT_005928ee
+    FADD float ptr [0x005928fe]         ; 0052341e | FLOAT_005928fe
     FSTP float ptr [EBP + -0x1c]        ; 00523424
     FLD float ptr [EBP + 0xffffffe4]    ; 00523427
     FISTP dword ptr [EBP + 0xffffffe8]  ; 0052342d
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 00523395 (UNCONDITIONAL_JUMP)  ; LAB_00523395
     FLD float ptr [EBP + -0xc]          ; 00523450
         ;   Label: LAB_00523450
-    FMUL float ptr [0x005928ea]         ; 00523453 | DAT_005928ea
+    FMUL float ptr [0x005928ea]         ; 00523453 | FLOAT_005928ea
     FSTP float ptr [EBP + -0x14]        ; 00523459
     FLD float ptr [EBP + 0xffffffec]    ; 0052345c
     FISTP dword ptr [EBP + 0xfffffff0]  ; 00523462

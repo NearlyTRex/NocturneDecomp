@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 395,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 125,
-    "suspect_count": 25,
+    "pseudocode_lines": 124,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 364
+    "total_lines": 363
   },
   "cross_references": [
     {
@@ -168,45 +167,45 @@
   "globals": [
     {
       "addr": "0058b6b0",
-      "name": "DAT_0058b6b0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6b0",
+      "type": "double",
+      "value": "0.0490873852120000"
     },
     {
       "addr": "0058b6b8",
-      "name": "DAT_0058b6b8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6b8",
+      "type": "double",
+      "value": "1000000000"
     },
     {
       "addr": "0058b6c0",
-      "name": "DAT_0058b6c0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6c0",
+      "type": "double",
+      "value": "1.00000000000000E-9"
     },
     {
       "addr": "0058b6c8",
-      "name": "DAT_0058b6c8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6c8",
+      "type": "double",
+      "value": "0.785398163397000"
     },
     {
       "addr": "0058b6d0",
-      "name": "DAT_0058b6d0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6d0",
+      "type": "double",
+      "value": "-0.5"
     },
     {
       "addr": "0058b6d8",
-      "name": "DAT_0058b6d8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6d8",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "0058b6e0",
-      "name": "DAT_0058b6e0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b6e0",
+      "type": "double",
+      "value": "0.0000100000000000000"
     },
     {
       "addr": "005bb3a0",
@@ -468,16 +467,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4)",
@@ -485,7 +476,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4)",
@@ -493,7 +484,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4)",
@@ -501,7 +492,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4)",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 32,
       "match": "DAT_005bbba0",
       "severity": "mild",
       "text": "if (DAT_005bbba0 != 0) {",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_01cd4320",
       "severity": "mild",
       "text": "local_24 = (float *)&DAT_01cd4320;",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 64,
       "match": "DAT_005bbba0",
       "severity": "mild",
       "text": "DAT_005bbba0 = 0;",
@@ -533,7 +524,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar5 = param_3 * 4 + param_1;",
@@ -541,7 +532,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_3 * 4 + param_1;",
@@ -549,7 +540,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "local_44 = (float *)(param_1 + 0x5350 + param_3 * 0x1000 + uVar9 * 4);",
@@ -557,7 +548,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_3",
       "severity": "mild",
       "text": "local_44 = (float *)(param_1 + 0x5350 + param_3 * 0x1000 + uVar9 * 4);",
@@ -565,15 +556,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((float)_DAT_0058b6e0 < ABS(*(float *)(iVar5 * 4 + param_2))) {",
+      "text": "if ((float)1.0000000000000001e-05 < ABS(*(float *)(iVar5 * 4 + param_2))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 81,
       "match": "DAT_01cd4320",
       "severity": "mild",
       "text": "local_40 = &DAT_01cd4320 + local_20 * 0x80;",
@@ -581,7 +572,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "local_3c = param_2;",
@@ -589,7 +580,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 87,
       "match": "DAT_01cd4320",
       "severity": "mild",
       "text": "fVar4 = *(float *)(&DAT_01cd4320 + local_20 * 0x80 + aiStack_e4[iVar5] * 4) *",
@@ -597,7 +588,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 88,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + aiStack_e4[iVar5] * 4) + fVar4;",
@@ -605,7 +596,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar10 = param_1 + 0x5350 + param_3 * 0x1000;",
@@ -613,7 +604,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar10 = param_1 + 0x5350 + param_3 * 0x1000;",
@@ -621,7 +612,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar9 = local_48 + *(int *)(param_1 + param_3 * 4 + 0x7350);",
@@ -629,7 +620,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_3",
       "severity": "mild",
       "text": "uVar9 = local_48 + *(int *)(param_1 + param_3 * 4 + 0x7350);",
@@ -637,7 +628,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 110,
       "match": "DAT_005bb420",
       "severity": "mild",
       "text": "fVar4 = *(float *)(&DAT_005bb420 + iVar2) * *(float *)(iVar10 + uVar8 * 4) +",
@@ -645,7 +636,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 111,
       "match": "DAT_005bb3a0",
       "severity": "mild",
       "text": "*(float *)(&DAT_005bb3a0 + iVar1) * *(float *)(iVar10 + uVar7 * 4) + fVar4;",
@@ -653,7 +644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 123,
       "match": "param_4",
       "severity": "mild",
       "text": "*(short *)(local_48 * 2 + param_4) = (short)local_30;",

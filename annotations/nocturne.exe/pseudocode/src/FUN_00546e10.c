@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00546e10(int param_1,float param_2)
 
 {
@@ -127,20 +125,20 @@ void FUN_00546e10(int param_1,float param_2)
   pfVar1 = (float *)(param_1 + 0x310);
   local_28 = *(float *)(0x01E57284 + 0x15a878) - *pfVar1;
   local_24 = *(float *)(0x01E57284 + 0x15a87c) - *(float *)(param_1 + 0x314);
-  local_ac = local_28 * _DAT_00596953;
+  local_ac = local_28 * 0.05f;
   local_20 = *(float *)(0x01E57284 + 0x15a880) - *(float *)(param_1 + 0x318);
-  local_a8 = local_24 * _DAT_00596953;
-  local_a4 = local_20 * _DAT_00596953;
+  local_a8 = local_24 * 0.05f;
+  local_a4 = local_20 * 0.05f;
   pfVar8 = (float *)(param_1 + 0x2f8);
   *pfVar1 = *pfVar1 + local_ac;
   *(float *)(param_1 + 0x314) = *(float *)(param_1 + 0x314) + local_a8;
   *(float *)(param_1 + 0x318) = *(float *)(param_1 + 0x318) + local_a4;
   local_94 = *pfVar1 - *pfVar8;
   local_90 = *(float *)(param_1 + 0x314) - *(float *)(param_1 + 0x2fc);
-  local_40 = local_94 * _DAT_00596957;
+  local_40 = local_94 * 0.07f;
   local_8c = *(float *)(param_1 + 0x318) - *(float *)(param_1 + 0x300);
-  local_3c = local_90 * _DAT_00596957;
-  local_38 = local_8c * _DAT_00596957;
+  local_3c = local_90 * 0.07f;
+  local_38 = local_8c * 0.07f;
   *pfVar8 = *pfVar8 + local_40;
   *(float *)(param_1 + 0x2fc) = *(float *)(param_1 + 0x2fc) + local_3c;
   *(float *)(param_1 + 0x300) = *(float *)(param_1 + 0x300) + local_38;
@@ -161,13 +159,13 @@ void FUN_00546e10(int param_1,float param_2)
   local_44 = local_d4;
   pfVar8 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                               (param_1,local_70,pfVar8);
-  local_a0 = *pfVar8 * _DAT_0059695b;
-  local_9c = pfVar8[1] * _DAT_0059695b;
-  local_98 = _DAT_0059695b * pfVar8[2];
+  local_a0 = *pfVar8 * 0.5f;
+  local_9c = pfVar8[1] * 0.5f;
+  local_98 = 0.5f * pfVar8[2];
   pfVar8 = (float *)(param_1 + 0x2ec);
-  fVar3 = *(float *)(param_1 + 0x2f0) * _DAT_0059695f;
-  fVar4 = *(float *)(param_1 + 0x2f4) * _DAT_0059695f;
-  *pfVar8 = *pfVar8 * _DAT_0059695f;
+  fVar3 = *(float *)(param_1 + 0x2f0) * 0.8f;
+  fVar4 = *(float *)(param_1 + 0x2f4) * 0.8f;
+  *pfVar8 = *pfVar8 * 0.8f;
   *(float *)(param_1 + 0x2f0) = fVar3;
   *(float *)(param_1 + 0x2f4) = fVar4;
   *pfVar8 = *pfVar8 + local_a0;
@@ -181,7 +179,7 @@ void FUN_00546e10(int param_1,float param_2)
   *(float *)(param_1 + 0x2e8) = *(float *)(param_1 + 0x2e8) + local_74;
   fVar3 = SQRT(*(float *)(param_1 + 0x2f4) * *(float *)(param_1 + 0x2f4) +
                *pfVar8 * *pfVar8 + *(float *)(param_1 + 0x2f0) * *(float *)(param_1 + 0x2f0)) *
-          (float)_DAT_00596963;
+          (float)0.15915494309644401;
   if (1.0 < fVar3) {
     fVar3 = 1.0 / fVar3;
     *pfVar8 = *pfVar8 * fVar3;
@@ -211,12 +209,12 @@ void FUN_00546e10(int param_1,float param_2)
   *(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + local_50;
   local_1c = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                               (0x01E57284,pfVar1,
-                               *(float *)(param_1 + 0x308) * (float)_DAT_0059696b);
+                               *(float *)(param_1 + 0x308) * (float)0.90000000000000002);
   if (local_1c <= *(float *)(param_1 + 0x24)) {
     if (!bVar5) goto LAB_005474f0;
   }
   else {
-    fVar3 = (float)_DAT_00596973;
+    fVar3 = (float)1.5;
     *(float *)(param_1 + 0x24) = local_1c;
     if (*(float *)(param_1 + 0x308) * fVar3 + local_c0 < *(float *)(param_1 + 0x24)) {
       *pfVar1 = local_c4;
@@ -224,9 +222,9 @@ void FUN_00546e10(int param_1,float param_2)
       *(float *)(param_1 + 0x28) = local_bc;
     }
   }
-  fVar3 = *(float *)(param_1 + 0x2f0) * (float)"?333?CTrigger"._1_4_;
-  fVar4 = *(float *)(param_1 + 0x2f4) * (float)"?333?CTrigger"._1_4_;
-  *(float *)(param_1 + 0x2ec) = *(float *)(param_1 + 0x2ec) * (float)"?333?CTrigger"._1_4_;
+  fVar3 = *(float *)(param_1 + 0x2f0) * 0.7f;
+  fVar4 = *(float *)(param_1 + 0x2f4) * 0.7f;
+  *(float *)(param_1 + 0x2ec) = *(float *)(param_1 + 0x2ec) * 0.7f;
   *(float *)(param_1 + 0x2f0) = fVar3;
   *(float *)(param_1 + 0x2f4) = fVar4;
 LAB_005474f0:

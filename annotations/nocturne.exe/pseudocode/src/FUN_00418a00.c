@@ -243,9 +243,9 @@ void FUN_00418a00(int param_1,float param_2)
       else {
         iVar4 = FUN_004196b0(param_1,param_2);
         if (iVar4 == 0) {
-          local_30 = 0x40000000;
+          local_30 = 2.0f;
           if (*(int *)(param_1 + 0x24f0) != 0) {
-            local_30 = 0x40400000;
+            local_30 = 3.0f;
           }
           local_d0 = 0;
           local_c8 = local_30;

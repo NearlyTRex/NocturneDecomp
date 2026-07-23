@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(int param_1)
 
 {
@@ -34,8 +32,8 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(int param_1)
   float local_14;
   int local_10;
   
-  local_18 = *(float *)(param_1 + 0x158) * (float)_DAT_005951a2;
-  local_14 = -*(float *)(param_1 + 0x158) * (float)_DAT_005951a2;
+  local_18 = *(float *)(param_1 + 0x158) * (float)0.5;
+  local_14 = -*(float *)(param_1 + 0x158) * (float)0.5;
   iVar2 = 0;
   if (0 < *(int *)(param_1 + 0x164)) {
     iVar3 = param_1 + 0x168;

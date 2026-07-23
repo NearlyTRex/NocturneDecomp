@@ -23,8 +23,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e90c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b77c
-;   undefined4 DAT_0058b77f
+;   TerminatedCString s_d_0058b77c
+;   TerminatedCString s_u_0058b77f
 ;   string s_..\\sound\\mp3.cpp_0058b782
 ;   string s_wrong_table_number_%u._File:_%s_0058b793
 ;   string s_..\\sound\\mp3.cpp_0058b7b4
@@ -257,7 +257,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],ECX      ; 004e546d
     PUSH EBP                            ; 004e5471
         ;   Label: LAB_004e5471
-    PUSH 0x58b77c                       ; 004e5472 | DAT_0058b77c
+    PUSH 0x58b77c                       ; 004e5472 | = "%d"
     MOV EDI,dword ptr [ESP + 0x34]      ; 004e5477
     PUSH EDI                            ; 004e547b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004e547c
@@ -282,7 +282,7 @@ section .text
     MOV dword ptr [EBX + 0x1cd8c38],EAX ; 004e54d2
     LEA EAX,[ESP + 0x10]                ; 004e54d8
     PUSH EAX                            ; 004e54dc
-    PUSH 0x58b77f                       ; 004e54dd | DAT_0058b77f
+    PUSH 0x58b77f                       ; 004e54dd | = "%u"
     PUSH EDI                            ; 004e54e2
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004e54e3
         ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()

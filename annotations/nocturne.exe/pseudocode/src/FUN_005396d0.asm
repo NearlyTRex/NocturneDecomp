@@ -14,7 +14,7 @@
 ;   FUN_005384d0 at 0053857e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005958b7
+;   double DOUBLE_005958b7 = 40
 ;   undefined4 DAT_02dc9f50
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x8                         ; 005396ef
     FLD float ptr [ESI + 0x1fabc]       ; 005396f2
     PUSH -0x1                           ; 005396f8
-    FMUL double ptr [0x005958b7]        ; 005396fa | DAT_005958b7
+    FMUL double ptr [0x005958b7]        ; 005396fa | DOUBLE_005958b7
     SUB ESP,0x4                         ; 00539700
     FSTP float ptr [ESP]                ; 00539703
     MOV EDX,dword ptr [ESI + 0x1faec]   ; 00539706

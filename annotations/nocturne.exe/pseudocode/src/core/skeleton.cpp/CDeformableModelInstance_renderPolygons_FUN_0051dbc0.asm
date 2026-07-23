@@ -9,7 +9,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 at 0051da0b
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\skeleton.cpp_00591bd2+1
+;   TerminatedCString s_core_skeleton_cpp_00591bd3
 ;   string s_CDeformableModelInstance::render_00591be8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -56,7 +56,7 @@ section .text
     RET                                 ; 0051dc04
     PUSH ESI                            ; 0051dc05
         ;   Label: LAB_0051dc05
-    MOV ECX,0x591bd3                    ; 0051dc06 | s_..\core\skeleton.cpp_00591bd2+1
+    MOV ECX,0x591bd3                    ; 0051dc06 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd23                       ; 0051dc0b
     PUSH 0x591be8                       ; 0051dc10 | = "CDeformableModelInstance::renderPolyg..."
     MOV dword ptr [0x01cc4800],ECX      ; 0051dc15 | DAT_01cc4800

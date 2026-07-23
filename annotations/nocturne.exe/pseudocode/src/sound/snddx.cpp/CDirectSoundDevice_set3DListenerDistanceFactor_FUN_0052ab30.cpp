@@ -15,6 +15,6 @@ void sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0052ab30
     return;
   }
   (**(code **)(*_DAT_02dc9220 + 0x2c))
-            (_DAT_02dc9220,(float)((float10)param_2 * (float10)_DAT_0059424f),0);
+            (_DAT_02dc9220,(float)((float10)param_2 * (float10)0.30480000000000002),0);
   return;
 }

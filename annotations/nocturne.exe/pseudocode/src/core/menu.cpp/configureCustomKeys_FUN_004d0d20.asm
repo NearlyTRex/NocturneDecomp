@@ -206,7 +206,7 @@ section .text
         ;   Label: LAB_004d0ed5
     MOV EAX,[0x005b9354]                ; 004d0ed6 | DAT_005b9354
     FILD dword ptr [EAX + 0x9c]         ; 004d0edb | DAT_01c77688
-    FMUL double ptr [0x00588b43]        ; 004d0ee1 | DAT_00588b43
+    FMUL double ptr [0x00588b43]        ; 004d0ee1 | DOUBLE_00588b43
     SUB ESP,0x8                         ; 004d0ee7
     FSTP double ptr [ESP]               ; 004d0eea
     PUSH 0x588aaa                       ; 004d0eed | = "%5.2f"
@@ -264,7 +264,7 @@ section .text
         ;   Label: LAB_004d0f57
     MOV EAX,[0x005b9354]                ; 004d0f58 | DAT_005b9354
     FILD dword ptr [EAX + 0xa0]         ; 004d0f5d | DAT_01c7768c
-    FMUL double ptr [0x00588b43]        ; 004d0f63 | DAT_00588b43
+    FMUL double ptr [0x00588b43]        ; 004d0f63 | DOUBLE_00588b43
     SUB ESP,0x8                         ; 004d0f69
     FSTP double ptr [ESP]               ; 004d0f6c
     PUSH 0x588ac6                       ; 004d0f6f | = "%5.2f"

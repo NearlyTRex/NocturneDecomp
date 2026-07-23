@@ -18,13 +18,13 @@ int core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(int param_1,
   float local_28;
   float local_20;
   
-  local_30 = (float)*param_2 * _DAT_0059bff8;
-  local_2c = (float)param_2[1] * _DAT_0059bff8;
-  local_28 = (float)param_2[2] * _DAT_0059bff8;
+  local_30 = (float)*param_2 * 0.00390625f;
+  local_2c = (float)param_2[1] * 0.00390625f;
+  local_28 = (float)param_2[2] * 0.00390625f;
   if (&local_30 != local_48) {
-    local_30 = (float)*param_2 * _DAT_0059bff8 - *(float *)(param_1 + 0x24);
-    local_2c = (float)param_2[1] * _DAT_0059bff8 - *(float *)(param_1 + 0x28);
-    local_28 = (float)param_2[2] * _DAT_0059bff8 - *(float *)(param_1 + 0x2c);
+    local_30 = (float)*param_2 * 0.00390625f - *(float *)(param_1 + 0x24);
+    local_2c = (float)param_2[1] * 0.00390625f - *(float *)(param_1 + 0x28);
+    local_28 = (float)param_2[2] * 0.00390625f - *(float *)(param_1 + 0x2c);
   }
   fVar1 = local_28 * local_28 + local_30 * local_30 + local_2c * local_2c;
   if (*(float *)(param_1 + 0x18) < fVar1) {

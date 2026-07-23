@@ -60,7 +60,7 @@ void FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5)
           uVar4 = 0xff;
         }
         cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_0045b5f0(uVar4);
-        _sprintf(local_a4,&DAT_0058e24e,iVar1 + 1);
+        _sprintf(local_a4,"%d",iVar1 + 1);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30
                   (local_40,local_a4,2,iVar2);
         uVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(local_14,iVar1,0x1e,iVar2);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(uint param_1,int param_2)
 
 {
@@ -28,10 +26,10 @@ uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(uint param_1,int para
   pfVar1 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_4c);
   fStack_1c = *pfVar1 + pfVar1[3];
   fStack_18 = pfVar1[1] + pfVar1[4];
-  fStack_34 = fStack_1c * _DAT_00587a5d;
+  fStack_34 = fStack_1c * 0.5f;
   fStack_14 = pfVar1[2] + pfVar1[5];
-  fStack_30 = fStack_18 * _DAT_00587a5d;
-  fStack_2c = fStack_14 * _DAT_00587a5d;
+  fStack_30 = fStack_18 * 0.5f;
+  fStack_2c = fStack_14 * 0.5f;
   uVar4 = 0;
   iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,auStack_28,&fStack_34);

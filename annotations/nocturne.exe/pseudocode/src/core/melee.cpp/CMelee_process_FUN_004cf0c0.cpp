@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
 
 {
@@ -20,7 +18,7 @@ void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
   if ((0 < *(int *)(param_1 + 0x588)) &&
      (param_2 = *(float *)(param_1 + 0x58c) - param_2, *(float *)(param_1 + 0x58c) = param_2,
      param_2 <= 0.0)) {
-    fVar1 = *(float *)(param_1 + 0x590) * (float)_DAT_00588473;
+    fVar1 = *(float *)(param_1 + 0x590) * (float)1.1499999999999999;
     *(int *)(param_1 + 0x588) = *(int *)(param_1 + 0x588) + -1;
     *(float *)(param_1 + 0x590) = fVar1;
     *(float *)(param_1 + 0x58c) = fVar1;

@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_dog.dfm_0057cf31
-;   undefined4 DAT_0059c0dc
-;   undefined4 DAT_0059c0e0
+;   float FLOAT_0059c0dc = 50
+;   float FLOAT_0059c0e0 = 100
 ;   undefined1* PTR_core_dog.cpp_CZombieDog_setup_FUN_004546d0_0059c0f4 = 004546d0
 ;
 ; Called Functions:
@@ -32,9 +32,9 @@ section .text
     MOV dword ptr [EAX + -0x4],0x59c0f4 ; 0045467b | PTR_core_dog.cpp_CZombieDog_setup_FUN_004546d0_0059c0f4
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00454682
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
-    FLD float ptr [0x0059c0dc]          ; 00454687 | DAT_0059c0dc
+    FLD float ptr [0x0059c0dc]          ; 00454687 | FLOAT_0059c0dc
     MOV dword ptr [EBX + 0x2dd4],0x3f400000 ; 0045468d
-    FLD float ptr [0x0059c0e0]          ; 00454697 | DAT_0059c0e0
+    FLD float ptr [0x0059c0e0]          ; 00454697 | FLOAT_0059c0e0
     MOV dword ptr [EBX + 0x2dd8],0x3fc00000 ; 0045469d
     ADD ESP,0x8                         ; 004546a7
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 004546aa

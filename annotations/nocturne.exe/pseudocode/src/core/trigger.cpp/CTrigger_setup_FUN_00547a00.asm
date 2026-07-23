@@ -8,8 +8,8 @@
 ;   core_waypoint.cpp_CWaypoint_setup_FUN_00552510 at 0055251b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059699b
-;   undefined4 DAT_005969a0
+;   TerminatedCString s_none_0059699b
+;   TerminatedCString s_none_005969a0
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc9454
 ;
@@ -47,7 +47,7 @@ section .text
     JNZ 0x00547a65                      ; 00547a59
         ;   XREF to: 00547a65 (CONDITIONAL_JUMP)  ; LAB_00547a65
     MOV dword ptr [EBX + 0x100],0x0     ; 00547a5b
-    PUSH 0x59699b                       ; 00547a65 | DAT_0059699b
+    PUSH 0x59699b                       ; 00547a65 | = "none"
         ;   Label: LAB_00547a65
     LEA EAX,[EBX + 0x21c]               ; 00547a6a
     MOV dword ptr [EBX + 0x2e8],0x0     ; 00547a70
@@ -60,7 +60,7 @@ section .text
     JNZ 0x00547a98                      ; 00547a8f
         ;   XREF to: 00547a98 (CONDITIONAL_JUMP)  ; LAB_00547a98
     MOV byte ptr [EBX + 0x21c],0x0      ; 00547a91
-    PUSH 0x5969a0                       ; 00547a98 | DAT_005969a0
+    PUSH 0x5969a0                       ; 00547a98 | = "none"
         ;   Label: LAB_00547a98
     LEA EAX,[EBX + 0x280]               ; 00547a9d
     PUSH EAX                            ; 00547aa3

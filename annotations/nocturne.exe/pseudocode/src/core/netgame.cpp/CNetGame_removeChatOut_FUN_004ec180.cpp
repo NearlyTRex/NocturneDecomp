@@ -53,15 +53,15 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(int param_1)
     do {
       local_2c = local_3c;
       local_18 = _DAT_01cea3f8 - *local_3c;
-      local_154 = (float)local_18 * (float)ram0x0058c2fa;
+      local_154 = (float)local_18 * (float)1.52587890625e-05;
       local_30 = 1;
       if (local_154 < 0.0) {
         local_154 = 0.0;
       }
-      if ((float)_DAT_0058c30a < local_154) {
+      if ((float)30 < local_154) {
         local_154 = 30.0;
       }
-      if ((local_154 < (float)_DAT_0058c312) && (local_28 = 0, 0 < *(int *)(param_1 + 0x1c))) {
+      if ((local_154 < (float)20) && (local_28 = 0, 0 < *(int *)(param_1 + 0x1c))) {
         local_34 = local_3c + 5;
         local_20 = local_3c;
         local_24 = param_1;
@@ -69,20 +69,20 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(int param_1)
         piVar3 = local_3c;
         do {
           if ((char)local_20[2] == '\0') {
-            local_150 = *(float *)(local_24 + 0x48) * (float)_DAT_0058c302;
+            local_150 = *(float *)(local_24 + 0x48) * (float)4;
             local_30 = 0;
-            if (local_150 < (float)_DAT_0058c31a) {
+            if (local_150 < (float)2) {
               local_150 = 2.0;
             }
-            if ((float)_DAT_0058c322 < local_150) {
+            if ((float)5 < local_150) {
               local_150 = 5.0;
             }
             local_18 = _DAT_01cea3f8 - piVar3[3];
-            local_158 = (float)local_18 * (float)ram0x0058c2fa;
+            local_158 = (float)local_18 * (float)1.52587890625e-05;
             if (local_158 < 0.0) {
               local_158 = 0.0;
             }
-            if ((float)_DAT_0058c30a < local_158) {
+            if ((float)30 < local_158) {
               local_158 = 30.0;
             }
             if (local_150 < local_158) {
@@ -118,7 +118,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(int param_1)
       }
       else {
         if ((local_38 < 0) || (_DAT_01d06610 <= local_38)) {
-          _DAT_01cc4800 = ">@..\\core\\netgame.cpp" + 2;
+          _DAT_01cc4800 = "..\\core\\netgame.cpp";
           _DAT_01cc4804 = 0x107;
           FUN_004c8440("removeChatOut - invalid index");
         }

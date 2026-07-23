@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_homePos_00596ee4+1
+;   TerminatedCString s_homePos_00596ee5
 ;   string s_modelName_00596eed
 ;   string s_speed_00596ef7
 ;   string s_maxDistance_00596efd
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 0054b328
         ;   Label: LAB_0054b328
-    PUSH 0x596ee5                       ; 0054b32b | s_homePos_00596ee4+1
+    PUSH 0x596ee5                       ; 0054b32b | = "homePos"
     LEA EAX,[EBX + 0xbeac]              ; 0054b330
     PUSH EAX                            ; 0054b336
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0054b337

@@ -24,19 +24,19 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s_model-t-horn?.wav_0059731f+1
+;   TerminatedCString s_model_t_horn_wav_00597320
 ;   string s_..\\core\\vehicle.cpp_00597332
 ;   string s_CMobster::process_-_Out_of_memor_00597346
 ;   string s_mobster3.dfm_00597369
 ;   string s_mobster4.dfm_00597376
 ;   string s_ext-modelt-fast_??.wav_00597383
 ;   string s_skid_??.wav_0059739a
-;   undefined4 DAT_005973a8
-;   undefined4 DAT_005973ac
-;   undefined4 DAT_005973b0
-;   undefined4 DAT_005973b8
-;   undefined4 DAT_005973c0
-;   undefined4 DAT_005973c8
+;   float FLOAT_005973a8 = 2
+;   float FLOAT_005973ac = 3.700000
+;   float FLOAT_005973b0 = 1.570796
+;   double DOUBLE_005973b8 = 200
+;   double DOUBLE_005973c0 = 0.200000000000000
+;   double DOUBLE_005973c8 = 30
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005be368
 ;   ... and 13 more
@@ -179,7 +179,7 @@ section .text
     FSTP float ptr [ESP + 0xe4]         ; 0054ec82
     LEA EAX,[EBX + 0x8bc]               ; 0054ec89
         ;   Label: LAB_0054ec89
-    FLD float ptr [0x005973a8]          ; 0054ec8f | DAT_005973a8
+    FLD float ptr [0x005973a8]          ; 0054ec8f | FLOAT_005973a8
     FLD float ptr [EAX]                 ; 0054ec95
     FMUL ST1                            ; 0054ec97
     FSTP float ptr [ESP + 0xd4]         ; 0054ec99
@@ -247,9 +247,9 @@ section .text
     XOR EDI,EDI                         ; 0054ed68
     PUSH EAX                            ; 0054ed6a
     FXCH                                ; 0054ed6b
-    FADD float ptr [0x005973ac]         ; 0054ed6d | DAT_005973ac
+    FADD float ptr [0x005973ac]         ; 0054ed6d | FLOAT_005973ac
     FXCH                                ; 0054ed73
-    FADD float ptr [0x005973b0]         ; 0054ed75 | DAT_005973b0
+    FADD float ptr [0x005973b0]         ; 0054ed75 | FLOAT_005973b0
     FXCH                                ; 0054ed7b
     FSTP float ptr [EBX + 0x24]         ; 0054ed7d
     PUSH EBX                            ; 0054ed80
@@ -366,7 +366,7 @@ section .text
         ;   XREF to: 0054ef11 (CONDITIONAL_JUMP)  ; LAB_0054ef11
     FLD float ptr [ESP]                 ; 0054eec9
     FLD float ptr [ESP + 0x7c]          ; 0054eecc
-    FADD double ptr [0x005973c8]        ; 0054eed0 | DAT_005973c8
+    FADD double ptr [0x005973c8]        ; 0054eed0 | DOUBLE_005973c8
     FCOMPP                              ; 0054eed6
     FNSTSW AX                           ; 0054eed8
     SAHF                                ; 0054eeda
@@ -380,7 +380,7 @@ section .text
     TEST EAX,EAX                        ; 0054eef0
     JNZ 0x0054edcd                      ; 0054eef2
         ;   XREF to: 0054edcd (CONDITIONAL_JUMP)  ; LAB_0054edcd
-    PUSH 0x597320                       ; 0054eef8 | s_model-t-horn?.wav_0059731f+1
+    PUSH 0x597320                       ; 0054eef8 | = "model-t-horn?.wav"
     PUSH EBX                            ; 0054eefd
     CALL core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0 ; 0054eefe
         ;   XREF to: 0054f7a0 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0()
@@ -435,7 +435,7 @@ section .text
     FLD float ptr [EBX + 0x8c8]         ; 0054ef8c
     FABS                                ; 0054ef92
     ADD ESP,0x8                         ; 0054ef94
-    FCOMP double ptr [0x005973c0]       ; 0054ef97 | DAT_005973c0
+    FCOMP double ptr [0x005973c0]       ; 0054ef97 | DOUBLE_005973c0
     FNSTSW AX                           ; 0054ef9d
     SAHF                                ; 0054ef9f
     JA 0x0054f2e7                       ; 0054efa0
@@ -469,7 +469,7 @@ section .text
     FMUL float ptr [ESP + 0xd0]         ; 0054effa
     FADDP                               ; 0054f001
     FSQRT                               ; 0054f003
-    FCOMP double ptr [0x005973b8]       ; 0054f005 | DAT_005973b8
+    FCOMP double ptr [0x005973b8]       ; 0054f005 | DOUBLE_005973b8
     FNSTSW AX                           ; 0054f00b
     SAHF                                ; 0054f00d
     JBE 0x0054ef54                      ; 0054f00e

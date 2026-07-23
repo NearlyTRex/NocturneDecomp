@@ -8,7 +8,7 @@
 ;   core_actor.cpp_FUN_0040cb00 at 0040cb39
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b3b5
+;   TerminatedCString s_anon_0058b3b5
 ;   string s_%d,%f_0058b3b7
 ;   string s_\"%[^\"]\"_,_%f_0058b3bd
 ;   string s_..\\core\\motion.cpp_0058b3ca
@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e2182
     MOV EDI,dword ptr [ESP + 0x10]      ; 004e2186
     PUSH ESI                            ; 004e218a
-    PUSH 0x58b3b5                       ; 004e218b | DAT_0058b3b5
+    PUSH 0x58b3b5                       ; 004e218b | = " "
     PUSH EDI                            ; 004e2190
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004e2191
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

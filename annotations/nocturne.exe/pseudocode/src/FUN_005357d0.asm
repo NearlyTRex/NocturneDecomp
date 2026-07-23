@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0053577c = 005357ee
-;   undefined4 DAT_005954cf
+;   double DOUBLE_005954cf = 0.25
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01c77850
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00535892 (CONDITIONAL_JUMP)  ; LAB_00535892
     FLD float ptr [ESP + 0x18]          ; 00535800
         ;   Label: LAB_00535800
-    FMUL double ptr [0x005954cf]        ; 00535804 | DAT_005954cf
+    FMUL double ptr [0x005954cf]        ; 00535804 | DOUBLE_005954cf
     FSTP float ptr [ESP + 0x4]          ; 0053580a
     PUSH dword ptr [ESP + 0x4]          ; 0053580e
     PUSH EBX                            ; 00535812

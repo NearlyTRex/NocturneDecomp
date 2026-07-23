@@ -12,7 +12,7 @@ void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(int param_1,int param_2
 
 {
   if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
-    _DAT_01cc4800 = ">@..\\core\\netgame.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\netgame.cpp";
     _DAT_01cc4804 = 0x5c5;
     FUN_004c8440("CNetGame::send - invalid player index");
   }

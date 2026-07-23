@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(int param_1,uint *param_2)
 
 {
@@ -39,10 +37,10 @@ uint core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(int param_1,uint *param
             (iVar1,&local_4c,*(uint *)(param_1 + 0xbdbc));
   local_1c = local_34 + local_4c;
   local_18 = local_30 + local_48;
-  local_28 = local_1c * _DAT_00598916;
-  local_24 = local_18 * _DAT_00598916;
+  local_28 = local_1c * 0.5f;
+  local_24 = local_18 * 0.5f;
   local_14 = local_2c + local_44;
-  local_20 = local_14 * _DAT_00598916;
+  local_20 = local_14 * 0.5f;
   puVar2 = (uint *)
            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_40,&local_28);
   if (param_2 != puVar2) {

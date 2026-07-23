@@ -30,7 +30,7 @@ uint __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(int param_
           return 1;
         }
         uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                          ("@You used a key." + 1,0x40a00000);
+                          ("You used a key.",0x40a00000);
         core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,uVar2);
         iVar3 = *(int *)(param_1 + 4);
         if (iVar3 == 0) {

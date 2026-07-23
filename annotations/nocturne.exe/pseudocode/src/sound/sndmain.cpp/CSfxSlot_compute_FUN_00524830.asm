@@ -256,7 +256,7 @@ section .text
     FLD float ptr [ESI + 0x78]          ; 00524a30
         ;   Label: LAB_00524a30
     FLD1                                ; 00524a33
-    FDIV double ptr [0x005a2160]        ; 00524a35 | DAT_005a2160
+    FDIV double ptr [0x005a2160]        ; 00524a35 | FLOAT_005a2160
     FSTP double ptr [ESP + 0x50]        ; 00524a3b
     FCOMP double ptr [ESP + 0x50]       ; 00524a3f
     FNSTSW AX                           ; 00524a43
@@ -267,12 +267,12 @@ section .text
     FSTP float ptr [ESI + 0x78]         ; 00524a4c
     FLD float ptr [ESI + 0x78]          ; 00524a4f
         ;   Label: LAB_00524a4f
-    FCOMP double ptr [0x005a2160]       ; 00524a52 | DAT_005a2160
+    FCOMP double ptr [0x005a2160]       ; 00524a52 | FLOAT_005a2160
     FNSTSW AX                           ; 00524a58
     SAHF                                ; 00524a5a
     JBE 0x00524a66                      ; 00524a5b
         ;   XREF to: 00524a66 (CONDITIONAL_JUMP)  ; LAB_00524a66
-    FLD double ptr [0x005a2160]         ; 00524a5d | DAT_005a2160
+    FLD double ptr [0x005a2160]         ; 00524a5d | FLOAT_005a2160
     FSTP float ptr [ESI + 0x78]         ; 00524a63
     CMP dword ptr [ESI + 0x114],0x1     ; 00524a66
         ;   Label: LAB_00524a66
@@ -468,7 +468,7 @@ section .text
     ADD ESP,0x10                        ; 00524c6a
     FLD1                                ; 00524c6d
         ;   Label: LAB_00524c6d
-    FDIV double ptr [0x005a2158]        ; 00524c6f | DAT_005a2158
+    FDIV double ptr [0x005a2158]        ; 00524c6f | FLOAT_005a2158
     FLD double ptr [ESP + 0x18]         ; 00524c75
     FXCH                                ; 00524c79
     FSTP double ptr [ESP + 0x20]        ; 00524c7b
@@ -483,14 +483,14 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00524c94
     FLD double ptr [ESP + 0x18]         ; 00524c98
         ;   Label: LAB_00524c98
-    FCOMP double ptr [0x005a2158]       ; 00524c9c | DAT_005a2158
+    FCOMP double ptr [0x005a2158]       ; 00524c9c | FLOAT_005a2158
     FNSTSW AX                           ; 00524ca2
     SAHF                                ; 00524ca4
     JBE 0x00524cb9                      ; 00524ca5
         ;   XREF to: 00524cb9 (CONDITIONAL_JUMP)  ; LAB_00524cb9
-    MOV EAX,[0x005a2158]                ; 00524ca7 | DAT_005a2158
+    MOV EAX,[0x005a2158]                ; 00524ca7 | FLOAT_005a2158
     MOV dword ptr [ESP + 0x18],EAX      ; 00524cac
-    MOV EAX,[0x005a215c]                ; 00524cb0 | DAT_005a215c
+    MOV EAX,[0x005a215c]                ; 00524cb0 | FLOAT_005a215c
     MOV dword ptr [ESP + 0x1c],EAX      ; 00524cb5
     CMP dword ptr [ESI + 0x114],0x1     ; 00524cb9
         ;   Label: LAB_00524cb9

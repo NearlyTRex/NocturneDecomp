@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -171,8 +171,8 @@
   "globals": [
     {
       "addr": "00587f72",
-      "name": "s_..\\core\\manpuz.cpp_00587f71+1",
-      "type": "undefined4",
+      "name": "s_core_manpuz_cpp_00587f72",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -183,9 +183,9 @@
     },
     {
       "addr": "005a0040",
-      "name": "DAT_005a0040",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0040",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "01cc4800",
@@ -322,7 +322,7 @@
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = ((float)piVar3[2] * param_3) / _DAT_005a0040 + (float)piVar3[1];",
+      "text": "fVar1 = ((float)piVar3[2] * param_3) / 2.0f + (float)piVar3[1];",
       "type": "unnamed_param"
     },
     {

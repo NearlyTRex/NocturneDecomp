@@ -10,8 +10,7 @@ void core_spike_cpp_CSpike_archive_FUN_005335f0(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-            (param_1 + 0x150,">modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,"spikeType");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,"spikeState");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d4,"areWeActive");

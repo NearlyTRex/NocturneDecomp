@@ -114,15 +114,15 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
       local_30 = -0.5235988;
     }
   }
-  fVar8 = *(float *)(param_1 + 0xbcbc) * (float)_DAT_00595cb7 * (float)_DAT_00595cbf * param_3 +
+  fVar8 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_3 +
           *local_24;
   local_24[1] = 0.0;
   *local_24 = fVar8;
-  if (fVar8 < 0xBF860A92) {
-    *local_24 = 0xBF860A92;
+  if (fVar8 < -1.047198f) {
+    *local_24 = -1.047198f;
   }
-  if (0x3F9C61AA < *local_24) {
-    *local_24 = 0x3F9C61AA;
+  if (1.22173f < *local_24) {
+    *local_24 = 1.22173f;
   }
   if (local_24[3] < local_30) {
     local_24[3] = local_30;
@@ -201,11 +201,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
             fStack_b8 = fStack_dc - fStack_100;
             fStack_b4 = fStack_d8 - fStack_fc;
             fStack_b0 = fStack_d4 - fStack_f8;
-            if ((0.0 < (double)fStack_b0) && ((double)fStack_b0 <= _DAT_00595ce7)) {
+            if ((0.0 < (double)fStack_b0) && ((double)fStack_b0 <= 30)) {
               core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                         (&fStack_f4,&fStack_b8);
               fStack_1a8 = 0.5235988;
-              if (fStack_b0 < (float)_DAT_00595cef) {
+              if (fStack_b0 < (float)10) {
                 fStack_1a8 = 1.5707964;
               }
               if (((ABS(fStack_f4) <= fStack_1a8) && (local_30 <= fStack_f0)) &&
@@ -215,8 +215,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
                 fStack_b4 = fStack_b4 * fVar1;
                 fStack_b8 = fStack_b8 * fVar1;
                 fStack_b0 = fStack_b0 * fVar1;
-                fVar8 = fVar8 * (float)_DAT_00595cc7 +
-                        ((float)_DAT_00595cbf -
+                fVar8 = fVar8 * (float)0.033333333333333298 +
+                        ((float)2 -
                         (fStack_b0 * fStack_c8 + fStack_b8 * fStack_d0 + fStack_b4 * fStack_cc));
                 if (fVar8 < fStack_20) {
                   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
@@ -243,11 +243,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
       iStack_3c = iStack_3c + 4;
     }
   }
-  dVar2 = _DAT_00595ccf;
+  dVar2 = 1.5;
   if (local_48 != 0) {
-    dVar2 = _DAT_00595cd7;
+    dVar2 = 0.5;
   }
-  fStack_44 = param_3 * (float)_DAT_00595cb7 * (float)dVar2;
+  fStack_44 = param_3 * (float)3.1415926535000001 * (float)dVar2;
   fStack_4c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fStack_38 - local_24[3]);
   fStack_18 = fStack_4c;
   fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fStack_34 - local_24[2]);
@@ -271,8 +271,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
   fVar8 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_24[2] + fStack_50);
   local_24[2] = fVar8;
   local_24[5] = 1.0;
-  if (((local_24[7] == 1.4013e-45) && (ABS(local_24[3] - fStack_38) < (float)_DAT_00595cdf)) &&
-     (ABS(local_24[2] - fStack_34) < (float)_DAT_00595cdf)) {
+  if (((local_24[7] == 1.4013e-45) && (ABS(local_24[3] - fStack_38) < (float)0.01)) &&
+     (ABS(local_24[2] - fStack_34) < (float)0.01)) {
     local_24[7] = 2.8026e-45;
     return;
   }

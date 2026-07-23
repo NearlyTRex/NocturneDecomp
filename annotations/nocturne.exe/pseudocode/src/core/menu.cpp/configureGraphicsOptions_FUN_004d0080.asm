@@ -18,14 +18,14 @@
 ; Referenced Globals:
 ;   void* switchdataD_004d0050 = 004d05b5
 ;   string s_tridx6.dll_00588693
-;   undefined4 DAT_0058869e
+;   char CHAR_00h_0058869e = \x00
 ;   string s_tri3dfx.dll_0058869f
-;   undefined4 DAT_005886ab
+;   char CHAR_00h_005886ab = \x00
 ;   string s_tri3dfx.dll_005886ac
-;   undefined1 DAT_005886b8
-;   undefined1 DAT_005886b9
-;   undefined1 DAT_005886ba
-;   string s_3dfx.dll_005886bb
+;   TerminatedCString s_tri3dfx_dll_005886b8
+;   undefined4 s_tri3dfx_dll_005886b8+1
+;   undefined4 s_tri3dfx_dll_005886b8+2
+;   undefined4 s_tri3dfx_dll_005886b8+3
 ;   string s_tri3dfx.dll_005886c4
 ;   string s_tridx6.dll_005886d0
 ;   undefined4 s_ridx6.dll_005886d0+1
@@ -107,12 +107,12 @@ section .text
         ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00532cd0()
     ADD ESP,0xc                         ; 004d0129
     PUSH 0x588693                       ; 004d012c | = "tridx6.dll"
-    PUSH 0x58869e                       ; 004d0131 | DAT_0058869e
+    PUSH 0x58869e                       ; 004d0131 | CHAR_00h_0058869e
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004d0136
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 004d013b
     PUSH 0x58869f                       ; 004d013e | = "tri3dfx.dll"
-    PUSH 0x5886ab                       ; 004d0143 | DAT_005886ab
+    PUSH 0x5886ab                       ; 004d0143 | CHAR_00h_005886ab
     XOR EBX,EBX                         ; 004d0148
     MOV ESI,EAX                         ; 004d014a
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004d014c
@@ -166,16 +166,16 @@ section .text
     TEST EAX,EAX                        ; 004d0201
     JZ 0x004d028a                       ; 004d0203
         ;   XREF to: 004d028a (CONDITIONAL_JUMP)  ; LAB_004d028a
-    MOV ESI,0x5886b8                    ; 004d0209 | DAT_005886b8
+    MOV ESI,0x5886b8                    ; 004d0209 | = "tri3dfx.dll"
     MOV EDI,0x5c0e80                    ; 004d020e | DAT_005c0e80
     PUSH EDI                            ; 004d0213 | DAT_005c0e80
-    MOV AL,byte ptr [ESI]               ; 004d0214 | DAT_005886b8 | DAT_005886ba
+    MOV AL,byte ptr [ESI]               ; 004d0214 | = "tri3dfx.dll" | s_tri3dfx_dll_005886b8+2
         ;   Label: LAB_004d0214
     MOV byte ptr [EDI],AL               ; 004d0216 | DAT_005c0e80 | DAT_005c0e82
     CMP AL,0x0                          ; 004d0218
     JZ 0x004d022c                       ; 004d021a
         ;   XREF to: 004d022c (CONDITIONAL_JUMP)  ; LAB_004d022c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d021c | DAT_005886b9 | = "3dfx.dll"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d021c | s_tri3dfx_dll_005886b8+1 | s_tri3dfx_dll_005886b8+3
     ADD ESI,0x2                         ; 004d021f
     MOV byte ptr [EDI + 0x1],AL         ; 004d0222 | DAT_005c0e81 | = "d3d.dll"
     ADD EDI,0x2                         ; 004d0225
@@ -371,7 +371,7 @@ section .text
     MOV EAX,[0x005b9354]                ; 004d0476 | DAT_005b9354
     MOV EDI,dword ptr [EAX + 0x8]       ; 004d047b | DAT_01c775f4
     PUSH EDI                            ; 004d047e
-    PUSH 0x588902                       ; 004d047f | DAT_00588902
+    PUSH 0x588902                       ; 004d047f | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004d0484
     PUSH EAX                            ; 004d0488
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d0489
@@ -1040,13 +1040,13 @@ section .text
     MOV EDI,0x5c0e80                    ; 004d0b7a | DAT_005c0e80
         ;   Label: LAB_004d0b7a
     PUSH EDI                            ; 004d0b7f | DAT_005c0e80
-    MOV AL,byte ptr [ESI]               ; 004d0b80 | = "tridx6.dll" | s_idx6.dll_0058897a+2 | DAT_005889a6
+    MOV AL,byte ptr [ESI]               ; 004d0b80 | = "tridx6.dll" | s_idx6.dll_0058897a+2 | s_trid3d_dll_005889a6
         ;   Label: LAB_004d0b80
     MOV byte ptr [EDI],AL               ; 004d0b82 | DAT_005c0e80 | DAT_005c0e82
     CMP AL,0x0                          ; 004d0b84
     JZ 0x004d0b98                       ; 004d0b86
         ;   XREF to: 004d0b98 (CONDITIONAL_JUMP)  ; LAB_004d0b98
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d0b88 | s_ridx6.dll_0058897a+1 | s_dx6.dll_0058897a+3 | = "rid3d.dll"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d0b88 | s_ridx6.dll_0058897a+1 | s_dx6.dll_0058897a+3 | s_trid3d_dll_005889a6+1
     ADD ESI,0x2                         ; 004d0b8b
     MOV byte ptr [EDI + 0x1],AL         ; 004d0b8e | DAT_005c0e81 | = "d3d.dll"
     ADD EDI,0x2                         ; 004d0b91
@@ -1086,10 +1086,10 @@ section .text
     TEST EAX,EAX                        ; 004d0be9
     JNZ 0x004d0bfe                      ; 004d0beb
         ;   XREF to: 004d0bfe (CONDITIONAL_JUMP)  ; LAB_004d0bfe
-    MOV ESI,0x5889a6                    ; 004d0bed | DAT_005889a6
+    MOV ESI,0x5889a6                    ; 004d0bed | = "trid3d.dll"
     JMP 0x004d0b7a                      ; 004d0bf2
         ;   XREF to: 004d0b7a (UNCONDITIONAL_JUMP)  ; LAB_004d0b7a
-    MOV ESI,0x588990                    ; 004d0bf4 | DAT_00588990
+    MOV ESI,0x588990                    ; 004d0bf4 | = "tridx7.dll"
         ;   Label: LAB_004d0bf4
     JMP 0x004d0b7a                      ; 004d0bf9
         ;   XREF to: 004d0b7a (UNCONDITIONAL_JUMP)  ; LAB_004d0b7a
@@ -1102,7 +1102,7 @@ section .text
     TEST EAX,EAX                        ; 004d0c10
     JNZ 0x004d0b99                      ; 004d0c12
         ;   XREF to: 004d0b99 (CONDITIONAL_JUMP)  ; LAB_004d0b99
-    MOV ESI,0x5889bd                    ; 004d0c14 | DAT_005889bd
+    MOV ESI,0x5889bd                    ; 004d0c14 | = "trid3d.dll"
     JMP 0x004d0b7a                      ; 004d0c19
         ;   XREF to: 004d0b7a (UNCONDITIONAL_JUMP)  ; LAB_004d0b7a
     MOV ECX,dword ptr [0x01cc64a8]      ; 004d0c1e | DAT_01cc64a8

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597768
-;   undefined4 DAT_0059776d
+;   TerminatedCString s_none_00597768
+;   TerminatedCString s_true_0059776d
 ;   string s_..\\core\\waypoint.cpp_00597772
 ;   string s_Can't_have_creation_event_for_wa_00597787
 ;   undefined4 DAT_01cc4800
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 00552579
     POP EBX                             ; 0055257a
     RET                                 ; 0055257b
-    PUSH 0x597768                       ; 0055257c | DAT_00597768
+    PUSH 0x597768                       ; 0055257c | = "none"
         ;   Label: LAB_0055257c
     ADD ESI,0x78                        ; 00552581
     PUSH ESI                            ; 00552584
@@ -82,7 +82,7 @@ section .text
     TEST EAX,EAX                        ; 0055258d
     JZ 0x00552575                       ; 0055258f
         ;   XREF to: 00552575 (CONDITIONAL_JUMP)  ; LAB_00552575
-    PUSH 0x59776d                       ; 00552591 | DAT_0059776d
+    PUSH 0x59776d                       ; 00552591 | = "true"
     PUSH ESI                            ; 00552596
     CALL crt_string.c__stricmp_FUN_00564520 ; 00552597
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()

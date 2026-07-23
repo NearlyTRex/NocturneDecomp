@@ -22,7 +22,7 @@
 ;   core_morph.cpp_CMorphModel_render_FUN_004dfc70 at 004dfc8f
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\morph.cpp_0058ad2b+1
+;   TerminatedCString s_core_morph_cpp_0058ad2c
 ;   string s_CMorphModel::rotatePoints_-_too_m_0058ad3e
 ;   undefined4 DAT_005a0cc0
 ;   undefined4 DAT_005ae704
@@ -165,7 +165,7 @@ section .text
     POP ESI                             ; 004dfe07
     POP EBX                             ; 004dfe08
     RET                                 ; 004dfe09
-    MOV ECX,0x58ad2c                    ; 004dfe0a | s_..\core\morph.cpp_0058ad2b+1
+    MOV ECX,0x58ad2c                    ; 004dfe0a | = "..\\core\\morph.cpp"
         ;   Label: LAB_004dfe0a
     MOV EBX,0x1f8                       ; 004dfe0f
     PUSH 0x58ad3e                       ; 004dfe14 | = "CMorphModel::rotatePoints - too many ..."

@@ -10,7 +10,7 @@ uint __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(int param
 
 {
   int iVar1;
-  uint uVar2;
+  float fVar2;
   uint uVar3;
   
   iVar1 = *(int *)(param_1 + 0x24f0);
@@ -19,8 +19,8 @@ uint __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(int param
      ((*(int *)(param_1 + 0x1fa94) == 0 || (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) != 3)))) {
     return 0;
   }
-  uVar2 = 0x41200000;
+  fVar2 = 10.0f;
   *(uint *)(param_1 + 0x1faa0) = 3;
-  *(uint *)(param_1 + 0x1fa4c) = uVar2;
+  *(float *)(param_1 + 0x1fa4c) = fVar2;
   return 1;
 }

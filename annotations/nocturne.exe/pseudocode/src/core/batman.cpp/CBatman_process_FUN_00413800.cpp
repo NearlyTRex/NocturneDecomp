@@ -142,7 +142,8 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
         local_c8 = *(float *)(iVar3 + 0x20) - *(float *)(param_1 + 0x20);
         local_c4 = *(float *)(iVar3 + 0x24) - *(float *)(param_1 + 0x24);
         local_c0 = *(float *)(iVar3 + 0x28) - *(float *)(param_1 + 0x28);
-        if (SQRT(local_c0 * local_c0 + local_c8 * local_c8 + local_c4 * local_c4) < 0x40600000) {
+        if (SQRT(local_c0 * local_c0 + local_c8 * local_c8 + local_c4 * local_c4) < 3.5f)
+        {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_80,&local_c8);
           local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                       (local_7c - *(float *)(param_1 + 0x34));
@@ -156,7 +157,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
     case 1:
     case 2:
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-      fVar2 = 0x40600000;
+      fVar2 = 3.5f;
       iVar3 = param_1 + 0x150;
       if (*(int *)(param_1 + 0xbca4) == 0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
@@ -168,7 +169,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
         }
       }
       else {
-        local_2c = 0x40600000;
+        local_2c = 3.5f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);

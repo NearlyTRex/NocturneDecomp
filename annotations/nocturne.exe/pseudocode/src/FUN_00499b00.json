@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 322,
+    "complexity_score": 306,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 24,
+    "pseudocode_lines": 61,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -215,9 +214,9 @@
     },
     {
       "addr": "0059dcb8",
-      "name": "DAT_0059dcb8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059dcb8",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005be368",
@@ -421,7 +420,7 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 37,
+          "line": 35,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         }
@@ -432,16 +431,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint param_5,uint param_6)",
@@ -489,7 +480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x150,local_1b44);",
@@ -497,7 +488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x150,local_30,param_5);",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_5",
       "severity": "mild",
       "text": "(param_1 + 0x150,local_30,param_5);",
@@ -513,7 +504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,local_30);",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = *param_3;",
@@ -529,15 +520,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_1b48 = param_2 / _DAT_0059dcb8 + local_18;",
+      "text": "local_1b48 = param_2 / 0.05f + local_18;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = param_1 + 0x150;",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_3",
       "severity": "mild",
       "text": "(iVar2,0,0,*param_3,param_5,&LAB_0051b650);",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_5",
       "severity": "mild",
       "text": "(iVar2,0,0,*param_3,param_5,&LAB_0051b650);",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_4",
       "severity": "mild",
       "text": "core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(iVar2,param_4);",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_6",
       "severity": "mild",
       "text": "uVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_48,param_6,local_a8);",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,uVar1);",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_3",
       "severity": "mild",
       "text": "local_1b48 = *param_3;",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = *param_3;",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = (local_18 + local_1b48) * (float)0.5;",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -628,7 +619,7 @@
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 37,
+      "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_2c = local_2c + -0.3f;",

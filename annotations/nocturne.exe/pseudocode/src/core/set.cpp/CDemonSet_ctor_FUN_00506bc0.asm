@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005900ee
-;   undefined1 DAT_005900ef
-;   undefined1 DAT_005900f0
-;   undefined1 DAT_005900f1
-;   undefined1 DAT_005900f3
-;   undefined1 DAT_005900f4
-;   undefined1 DAT_005900f5
-;   undefined1 DAT_005900f6
+;   TerminatedCString s_none_005900ee
+;   undefined4 s_one_005900ee+1
+;   undefined4 s_ne_005900ee+2
+;   undefined4 s_e_005900ee+3
+;   TerminatedCString s_none_005900f3
+;   undefined4 s_one_005900f3+1
+;   undefined4 s_ne_005900f3+2
+;   undefined4 s_e_005900f3+3
 ;   undefined4 DAT_005a1970
 ;   undefined4 DAT_005a1990
 ;   undefined4 DAT_005a19b0
@@ -82,18 +82,18 @@ section .text
     MOV dword ptr [EBX + 0x15a898],0x0  ; 00506cdf
     MOV dword ptr [EBX + 0x15a89c],0x0  ; 00506ce9
     MOV dword ptr [EBX + 0x15a8a4],0x0  ; 00506cf3
-    MOV ESI,0x5900ee                    ; 00506cfd | DAT_005900ee
+    MOV ESI,0x5900ee                    ; 00506cfd | = "none"
     MOV dword ptr [EBX + 0x15a8a8],0x0  ; 00506d02
     LEA EDI,[EBX + 0x15a8b0]            ; 00506d0c
     MOV dword ptr [EBX + 0x15a8ac],0x0  ; 00506d12
     PUSH EDI                            ; 00506d1c
-    MOV AL,byte ptr [ESI]               ; 00506d1d | DAT_005900ee | DAT_005900f0
+    MOV AL,byte ptr [ESI]               ; 00506d1d | = "none" | s_ne_005900ee+2
         ;   Label: LAB_00506d1d
     MOV byte ptr [EDI],AL               ; 00506d1f
     CMP AL,0x0                          ; 00506d21
     JZ 0x00506d35                       ; 00506d23
         ;   XREF to: 00506d35 (CONDITIONAL_JUMP)  ; LAB_00506d35
-    MOV AL,byte ptr [ESI + 0x1]         ; 00506d25 | DAT_005900ef | DAT_005900f1
+    MOV AL,byte ptr [ESI + 0x1]         ; 00506d25 | s_one_005900ee+1 | s_e_005900ee+3
     ADD ESI,0x2                         ; 00506d28
     MOV byte ptr [EDI + 0x1],AL         ; 00506d2b
     ADD EDI,0x2                         ; 00506d2e
@@ -116,20 +116,20 @@ section .text
     MOV dword ptr [EBX + 0x15b028],0x0  ; 00506d8c
     MOV dword ptr [EBX + 0x15aaa0],0x10000 ; 00506d96
     MOV dword ptr [EBX + 0x15aaa4],0x10000 ; 00506da0
-    MOV ESI,0x5900f3                    ; 00506daa | DAT_005900f3
+    MOV ESI,0x5900f3                    ; 00506daa | = "none"
     MOV dword ptr [EBX + 0x15aaa8],0x10000 ; 00506daf
     ADD ESP,0x4                         ; 00506db9
     MOV dword ptr [EBX + 0x161270],0x0  ; 00506dbc
     LEA EDI,[EBX + 0x15aa68]            ; 00506dc6
     MOV dword ptr [EBX + 0x15aa64],0x0  ; 00506dcc
     PUSH EDI                            ; 00506dd6
-    MOV AL,byte ptr [ESI]               ; 00506dd7 | DAT_005900f3 | DAT_005900f5
+    MOV AL,byte ptr [ESI]               ; 00506dd7 | = "none" | s_ne_005900f3+2
         ;   Label: LAB_00506dd7
     MOV byte ptr [EDI],AL               ; 00506dd9
     CMP AL,0x0                          ; 00506ddb
     JZ 0x00506def                       ; 00506ddd
         ;   XREF to: 00506def (CONDITIONAL_JUMP)  ; LAB_00506def
-    MOV AL,byte ptr [ESI + 0x1]         ; 00506ddf | DAT_005900f4 | DAT_005900f6
+    MOV AL,byte ptr [ESI + 0x1]         ; 00506ddf | s_one_005900f3+1 | s_e_005900f3+3
     ADD ESI,0x2                         ; 00506de2
     MOV byte ptr [EDI + 0x1],AL         ; 00506de5
     ADD EDI,0x2                         ; 00506de8

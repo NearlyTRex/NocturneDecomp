@@ -54,7 +54,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
   float fStack_14;
   
   if (*(int *)(param_1 + 0x1fa94) == 0) {
-    _DAT_01cc4800 = "$@..\\core\\stranger.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\stranger.cpp";
     _DAT_01cc4804 = 0x10b4;
     FUN_004c8440("CStranger::aimLeftPistol - no weapon?");
   }
@@ -102,9 +102,9 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
   fStack_70 = fStack_58 - fStack_64;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(afStack_54,&fStack_78);
   fVar1 = SQRT(fStack_70 * fStack_70 + fStack_78 * fStack_78 + fStack_74 * fStack_74);
-  if ((float)_DAT_00595d37 < fVar1) {
+  if ((float)0.01 < fVar1) {
     fStack_20 = -local_9c[0];
-    if ((((float)_DAT_00595d37 <= fVar1) &&
+    if ((((float)0.01 <= fVar1) &&
         (fVar1 = SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1, fVar1 < 1.0)) &&
        (0.0 <= fVar1)) {
       uVar3 = 0x53e744;
@@ -119,7 +119,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
       afStack_54[0] = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(afStack_54[0],uVar3);
       fStack_18 = afStack_54[0];
     }
-    if ((((float)_DAT_00595d37 <= fStack_bc) &&
+    if ((((float)0.01 <= fStack_bc) &&
         (fStack_bc = SQRT(fStack_bc * fStack_bc - local_9c[0] * local_9c[0]) / fStack_bc,
         fStack_bc < 1.0)) && (0.0 <= fStack_bc)) {
       uVar3 = 0x53e7ea;
@@ -136,11 +136,11 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
   }
   fStack_1c = afStack_54[0];
   fStack_20 = fStack_58;
-  if (fStack_58 < 0xBF860A92) {
-    fStack_20 = 0xBF860A92;
+  if (fStack_58 < -1.047198f) {
+    fStack_20 = -1.047198f;
   }
-  if (0x3F9C61AA < fStack_20) {
-    fStack_20 = 0x3F9C61AA;
+  if (1.22173f < fStack_20) {
+    fStack_20 = 1.22173f;
   }
   if (afStack_54[0] < fStack_28) {
     fStack_1c = fStack_28;

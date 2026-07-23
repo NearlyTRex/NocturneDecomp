@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 172,
+    "complexity_score": 156,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 14,
+    "pseudocode_lines": 21,
+    "suspect_count": 13,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 66
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -158,15 +157,15 @@
   "globals": [
     {
       "addr": "00589507",
-      "name": "DAT_00589507",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589507",
+      "type": "double",
+      "value": "1.30000000000000"
     },
     {
       "addr": "0058950f",
-      "name": "DAT_0058950f",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058950f",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -217,16 +216,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_2)",
@@ -234,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_2)",
@@ -242,7 +233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[6] = *(int *)(param_1 + 0x2398);",
@@ -250,7 +241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2[6] = *(int *)(param_1 + 0x2398);",
@@ -258,7 +249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[7] = 0x3f800000;",
@@ -266,7 +257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*param_2 == 1) {",
@@ -274,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[5] = -0x42333333;",
@@ -282,31 +273,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[6] = (int)((float)param_2[6] + _DAT_0058950f);",
+      "text": "param_2[6] = (int)((float)param_2[6] + 0.5f);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[6] = (int)((float)param_2[6] + _DAT_0058950f);",
+      "text": "param_2[6] = (int)((float)param_2[6] + 0.5f);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[7] = (int)((float)param_2[7] * fVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[7] = (int)((float)param_2[7] * fVar1);",
@@ -314,7 +297,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[7] = (int)((float)param_2[7] * fVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[5] = 0x40000000;",
@@ -322,7 +313,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);",

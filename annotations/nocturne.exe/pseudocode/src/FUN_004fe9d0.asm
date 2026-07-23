@@ -15,7 +15,7 @@
 ;   FUN_0049cc10 at 0049d46f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058e24e
+;   TerminatedCString s_d_0058e24e
 ;   string s_(No_script_loaded.)_0058e251
 ;
 ; Called Functions:
@@ -135,7 +135,7 @@ section .text
     ADD ESP,0x4                         ; 004feaed
     LEA EDI,[EBX + 0x1]                 ; 004feaf0
     PUSH EDI                            ; 004feaf3
-    PUSH 0x58e24e                       ; 004feaf4 | DAT_0058e24e
+    PUSH 0x58e24e                       ; 004feaf4 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004feaf9
     PUSH EAX                            ; 004feafd
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004feafe

@@ -34,8 +34,7 @@ void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(int param_1,int param_
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);
       if (*(int *)(param_1 + 0xbdc0) == 0) {
         sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbdb8));
-        uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))
-                          (param_1,"@mobster-die-?.wav" + 1);
+        uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"mobster-die-?.wav");
         *(uint *)(param_1 + 0xbdc0) = 1;
         *(uint *)(param_1 + 0xbdb8) = uVar4;
         core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);

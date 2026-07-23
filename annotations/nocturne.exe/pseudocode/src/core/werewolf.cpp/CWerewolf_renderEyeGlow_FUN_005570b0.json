@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -189,15 +189,15 @@
     },
     {
       "addr": "005a42fc",
-      "name": "DAT_005a42fc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a42fc",
+      "type": "float",
+      "value": "0.2000000"
     },
     {
       "addr": "005a4300",
-      "name": "DAT_005a4300",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a4300",
+      "type": "float",
+      "value": "0.2000000"
     },
     {
       "addr": "005ae704",
@@ -805,7 +805,7 @@
       "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_e8 = *param_2 + 0x3E4CCCCD;",
+      "text": "local_e8 = *param_2 + 0.2f;",
       "type": "unnamed_param"
     },
     {
@@ -813,7 +813,7 @@
       "line": 83,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_e4 = param_2[1] + 0x3E4CCCCD;",
+      "text": "local_e4 = param_2[1] + 0.2f;",
       "type": "unnamed_param"
     },
     {
@@ -853,7 +853,7 @@
       "line": 103,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_60 = param_2[1] + 0x3E4CCCCD;",
+      "text": "local_60 = param_2[1] + 0.2f;",
       "type": "unnamed_param"
     },
     {
@@ -925,7 +925,7 @@
       "line": 144,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_f4 = *param_2 + 0x3E4CCCCD;",
+      "text": "local_f4 = *param_2 + 0.2f;",
       "type": "unnamed_param"
     },
     {

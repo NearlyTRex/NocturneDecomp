@@ -21,13 +21,13 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005497d0 = 00549822
-;   undefined4 s_turret-ani?.wav_00596d1c+1
+;   TerminatedCString s_turret_ani_wav_00596d1d
 ;   string s_turret-ani?.wav_00596d2d
 ;   string s_..\\core\\turret.cpp_00596d3d
 ;   string s_CTurret::process_-_invalid_state_00596d50
 ;   string s_turret-loop.wav_*_%f_00596d71
 ;   string s_turret-tail.wav_00596d86
-;   undefined4 DAT_00596d9d
+;   double DOUBLE_00596d9d = 2
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -98,7 +98,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0054987a
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 0054987f
-    PUSH 0x596d1d                       ; 00549882 | s_turret-ani?.wav_00596d1c+1
+    PUSH 0x596d1d                       ; 00549882 | = "turret-ani?.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00549887
         ;   Label: LAB_00549887
     PUSH EBX                            ; 0054988d
@@ -323,7 +323,7 @@ section .text
     FLD float ptr [EBX + 0x774]         ; 00549b91
     FADD ST0,ST1                        ; 00549b97
     FDIVP                               ; 00549b99
-    FMUL double ptr [0x00596d9d]        ; 00549b9b | DAT_00596d9d
+    FMUL double ptr [0x00596d9d]        ; 00549b9b | DOUBLE_00596d9d
     SUB ESP,0x4                         ; 00549ba1
     LEA EAX,[ESP + 0xac]                ; 00549ba4
     FSTP float ptr [ESP]                ; 00549bab

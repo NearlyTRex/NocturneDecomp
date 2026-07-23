@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 298,
+    "complexity_score": 283,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
       "unaffected_reg",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 147
@@ -59,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdlib.c__fullpath_FUN_00565d00",
-    "signature": "LPSTR __cdecl crt_stdlib_c__fullpath_FUN_00565d00(LPSTR param_1,LPCSTR param_2,uint param_3)"
+    "signature": "__cdecl char(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3)"
   },
   "function_calls": [
     {
@@ -107,8 +106,8 @@
     },
     {
       "addr": "005989e4",
-      "name": "DAT_005989e4",
-      "type": "undefined4",
+      "name": "s_con_005989e4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -224,7 +223,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "LPSTR __cdecl _fullpath(LPSTR param_1,LPCSTR param_2,uint param_3)",
+      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -232,7 +231,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "LPSTR __cdecl _fullpath(LPSTR param_1,LPCSTR param_2,uint param_3)",
+      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -240,7 +239,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "LPSTR __cdecl _fullpath(LPSTR param_1,LPCSTR param_2,uint param_3)",
+      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -248,7 +247,7 @@
       "line": 8,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "LPSTR unaff_EBP;",
+      "text": "char (*unaff_EBP) [4];",
       "type": "unaffected_reg"
     },
     {
@@ -256,7 +255,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == (LPSTR)0x0) {",
+      "text": "if (param_1 == (char (*) [4])0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -272,7 +271,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (LPSTR)malloc(0x104);",
+      "text": "param_1 = (char (*) [4])malloc(0x104);",
       "type": "unnamed_param"
     },
     {
@@ -296,7 +295,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == (LPSTR)0x0) {",
+      "text": "if (param_1 == (char (*) [4])0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -320,16 +319,8 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_005989e4);",
+      "text": "iVar2 = _stricmp(param_2,\"con\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005989e4",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_005989e4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -352,7 +343,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 0x006E6F63;",
+      "text": "*param_1 = \"con\";",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +351,7 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,param_1,&pCStack_14);",
+      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +359,7 @@
       "line": 31,
       "match": "param_3",
       "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,param_1,&pCStack_14);",
+      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -376,7 +367,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,param_1,&pCStack_14);",
+      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -392,7 +383,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = (LPSTR)FUN_0056c5f0(param_1,param_3);",
+      "text": "pacVar1 = (char (*) [4])FUN_0056c5f0(param_1,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +391,7 @@
       "line": 39,
       "match": "param_3",
       "severity": "mild",
-      "text": "pCVar1 = (LPSTR)FUN_0056c5f0(param_1,param_3);",
+      "text": "pacVar1 = (char (*) [4])FUN_0056c5f0(param_1,param_3);",
       "type": "unnamed_param"
     },
     {

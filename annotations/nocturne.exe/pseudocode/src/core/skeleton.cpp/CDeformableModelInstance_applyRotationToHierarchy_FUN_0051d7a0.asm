@@ -24,7 +24,7 @@
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539fe0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591bcb
+;   double DOUBLE_00591bcb = 0.0000100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -122,7 +122,7 @@ section .text
     FMUL float ptr [ESP + 0xc0]         ; 0051d881
     FST float ptr [ESP]                 ; 0051d888
     FABS                                ; 0051d88b
-    FCOMP double ptr [0x00591bcb]       ; 0051d88d | DAT_00591bcb
+    FCOMP double ptr [0x00591bcb]       ; 0051d88d | DOUBLE_00591bcb
     FNSTSW AX                           ; 0051d893
     SAHF                                ; 0051d895
     JBE 0x0051d81e                      ; 0051d896

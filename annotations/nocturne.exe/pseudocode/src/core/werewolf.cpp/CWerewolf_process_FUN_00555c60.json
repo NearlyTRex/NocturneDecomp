@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 3414,
+    "complexity_score": 3399,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 619,
-    "suspect_count": 276,
+    "suspect_count": 275,
     "suspect_types": [
       "raw_address_constant",
       "self_copy_guard",
       "undefined_data",
-      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -394,9 +393,9 @@
     },
     {
       "addr": "00597df1",
-      "name": "DOUBLE_00597df1",
-      "type": "double",
-      "value": "5.30498947741318E-315"
+      "name": "FLOAT_00597df1",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "00597df9",
@@ -442,15 +441,15 @@
     },
     {
       "addr": "005a42ec",
-      "name": "DAT_005a42ec",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a42ec",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "005a42f8",
-      "name": "DAT_005a42f8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a42f8",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "005ad350",
@@ -2132,7 +2131,7 @@
       "line": 290,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd64) = 0x41200000;",
+      "text": "*(float *)(param_1 + 0xbd64) = 10.0f;",
       "type": "unnamed_param"
     },
     {
@@ -2326,14 +2325,6 @@
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + -0.2617994f;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 364,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "else if ((local_28 < 0x40400000 * 5.3049894774131808e-315._0_4_) && (local_18 == 0xf)) {",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",

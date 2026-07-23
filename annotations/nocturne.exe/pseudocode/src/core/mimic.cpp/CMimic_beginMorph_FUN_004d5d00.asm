@@ -8,7 +8,7 @@
 ;   FUN_004d4f30 at 004d52ef
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\mimic.cpp_00589512+1
+;   TerminatedCString s_core_mimic_cpp_00589513
 ;   string s_CMimic::beginMorph()_-_can't_do_t_00589525
 ;   string s_%s_morphing_into_type_%s_0058956e
 ;   void* PTR_DAT_005ad350 = 0077ad0c
@@ -96,7 +96,7 @@ section .text
     RET                                 ; 004d5de9
     PUSH ESI                            ; 004d5dea
         ;   Label: LAB_004d5dea
-    MOV ECX,0x589513                    ; 004d5deb | s_..\core\mimic.cpp_00589512+1
+    MOV ECX,0x589513                    ; 004d5deb | = "..\\core\\mimic.cpp"
     MOV ESI,0x499                       ; 004d5df0
     PUSH 0x589525                       ; 004d5df5 | = "CMimic::beginMorph() - can't do this ..."
     MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | DAT_01cc4800

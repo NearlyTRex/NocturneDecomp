@@ -16,9 +16,9 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590095
-;   undefined4 DAT_00590099
-;   undefined4 DAT_0059009d
+;   float FLOAT_00590095 = 0.5
+;   float FLOAT_00590099 = -0.5
+;   float FLOAT_0059009d = -4
 ;   undefined4 DAT_01e5721c
 ;   undefined4 DAT_01e57220
 ;   undefined4 DAT_02dd1184
@@ -78,7 +78,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00506757
     FADD float ptr [EBX + 0x4]          ; 0050675a
     FXCH                                ; 0050675d
-    FLD float ptr [0x00590095]          ; 0050675f | DAT_00590095
+    FLD float ptr [0x00590095]          ; 0050675f | FLOAT_00590095
     FXCH                                ; 00506765
     FMUL ST1                            ; 00506767
     FXCH ST2                            ; 00506769
@@ -99,7 +99,7 @@ section .text
     FXCH                                ; 00506794
     FSTP float ptr [ESP + 0x34]         ; 00506796
     PUSH EAX                            ; 0050679a
-    FADD float ptr [0x00590099]         ; 0050679b | DAT_00590099
+    FADD float ptr [0x00590099]         ; 0050679b | FLOAT_00590099
     PUSH EDX                            ; 005067a1
     FSTP float ptr [ESP + 0x40]         ; 005067a2
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005067a6
@@ -109,7 +109,7 @@ section .text
     FLD float ptr [ESP + 0x24]          ; 005067b1
     PUSH EAX                            ; 005067b5
     LEA EAX,[ESP + 0x24]                ; 005067b6
-    FADD float ptr [0x0059009d]         ; 005067ba | DAT_0059009d
+    FADD float ptr [0x0059009d]         ; 005067ba | FLOAT_0059009d
     PUSH EAX                            ; 005067c0
     FSTP float ptr [ESP + 0x2c]         ; 005067c1
     MOV EDX,dword ptr [EDI + 0x14c]     ; 005067c5

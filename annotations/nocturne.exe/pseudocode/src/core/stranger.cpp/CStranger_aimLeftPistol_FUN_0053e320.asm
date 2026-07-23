@@ -10,11 +10,11 @@
 ;   FUN_00535900 at 0053632e
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\stranger.cpp_00595cf5+2
+;   TerminatedCString s_core_stranger_cpp_00595cf7
 ;   string s_CStranger::aimLeftPistol_-_no_we_00595d0c
-;   undefined4 DAT_00595d37
-;   undefined4 DAT_005a2730
-;   undefined4 DAT_005a2734
+;   double DOUBLE_00595d37 = 0.0100000000000000
+;   float FLOAT_005a2730 = -1.047198
+;   float FLOAT_005a2734 = 1.221730
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -240,7 +240,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x28]      ; 0053e5c0
     FST double ptr [ESP]                ; 0053e5c4
     MOV dword ptr [ESP + 0x30],EAX      ; 0053e5c7
-    FCOMP double ptr [0x00595d37]       ; 0053e5cb | DAT_00595d37
+    FCOMP double ptr [0x00595d37]       ; 0053e5cb | DOUBLE_00595d37
     FNSTSW AX                           ; 0053e5d1
     SAHF                                ; 0053e5d3
     JBE 0x0053e600                      ; 0053e5d4
@@ -253,7 +253,7 @@ section .text
     FLD float ptr [ESP + 0x30]          ; 0053e5e9
         ;   Label: LAB_0053e5e9
     FST double ptr [ESP + 0x10]         ; 0053e5ed
-    FCOMP double ptr [0x00595d37]       ; 0053e5f1 | DAT_00595d37
+    FCOMP double ptr [0x00595d37]       ; 0053e5f1 | DOUBLE_00595d37
     FNSTSW AX                           ; 0053e5f7
     SAHF                                ; 0053e5f9
     JNC 0x0053e7a9                      ; 0053e5fa
@@ -264,21 +264,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x94]      ; 0053e60e
     FLD float ptr [ESP + 0x94]          ; 0053e615
     MOV dword ptr [ESP + 0xcc],EAX      ; 0053e61c
-    FCOMP float ptr [0x005a2730]        ; 0053e623 | DAT_005a2730
+    FCOMP float ptr [0x005a2730]        ; 0053e623 | FLOAT_005a2730
     FNSTSW AX                           ; 0053e629
     SAHF                                ; 0053e62b
     JNC 0x0053e63a                      ; 0053e62c
         ;   XREF to: 0053e63a (CONDITIONAL_JUMP)  ; LAB_0053e63a
-    MOV EAX,[0x005a2730]                ; 0053e62e | DAT_005a2730
+    MOV EAX,[0x005a2730]                ; 0053e62e | FLOAT_005a2730
     MOV dword ptr [ESP + 0xcc],EAX      ; 0053e633
     FLD float ptr [ESP + 0xcc]          ; 0053e63a
         ;   Label: LAB_0053e63a
-    FCOMP float ptr [0x005a2734]        ; 0053e641 | DAT_005a2734
+    FCOMP float ptr [0x005a2734]        ; 0053e641 | FLOAT_005a2734
     FNSTSW AX                           ; 0053e647
     SAHF                                ; 0053e649
     JBE 0x0053e658                      ; 0053e64a
         ;   XREF to: 0053e658 (CONDITIONAL_JUMP)  ; LAB_0053e658
-    MOV EAX,[0x005a2734]                ; 0053e64c | DAT_005a2734
+    MOV EAX,[0x005a2734]                ; 0053e64c | FLOAT_005a2734
     MOV dword ptr [ESP + 0xcc],EAX      ; 0053e651
     FLD float ptr [ESP + 0xd0]          ; 0053e658
         ;   Label: LAB_0053e658
@@ -312,7 +312,7 @@ section .text
     POP ESI                             ; 0053e6c2
     POP EBX                             ; 0053e6c3
     RET                                 ; 0053e6c4
-    MOV ECX,0x595cf7                    ; 0053e6c5 | s_..\core\stranger.cpp_00595cf5+2
+    MOV ECX,0x595cf7                    ; 0053e6c5 | = "..\\core\\stranger.cpp"
         ;   Label: LAB_0053e6c5
     MOV ESI,0x10b4                      ; 0053e6ca
     PUSH 0x595d0c                       ; 0053e6cf | = "CStranger::aimLeftPistol - no weapon?"

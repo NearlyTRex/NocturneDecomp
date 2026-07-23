@@ -62,18 +62,18 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
     iVar3 = _fgetc(param_2);
     if (iVar3 < 0) break;
   } while (iVar3 != 10);
-  _fscanf(param_2,&DAT_005897ad,param_1 + 4);
+  _fscanf(param_2,"%s\n",param_1 + 4);
   do {
     iVar3 = _fgetc(param_2);
     if (iVar3 < 0) break;
   } while (iVar3 != 10);
   iVar3 = 0;
-  _fscanf(param_2,&DAT_005897b1,param_1 + 0x44);
+  _fscanf(param_2,"%d\n",param_1 + 0x44);
   if (0 < (int)param_1[0x44]) {
     puVar7 = param_1 + 0x45;
     do {
       iVar3 = iVar3 + 1;
-      _fscanf(param_2,&DAT_005897b5,puVar7);
+      _fscanf(param_2,"%s\n",puVar7);
       puVar7 = puVar7 + 0x40;
     } while (iVar3 < (int)param_1[0x44]);
   }
@@ -83,7 +83,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
       iVar3 = _fgetc(param_2);
       if (iVar3 < 0) break;
     } while (iVar3 != 10);
-    _fscanf(param_2,&DAT_005897b9,&local_20);
+    _fscanf(param_2,"%d\n",&local_20);
     iVar3 = 0;
     if (0 < local_20) {
       do {
@@ -113,7 +113,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
     iVar3 = _fgetc(param_2);
     if (iVar3 < 0) break;
   } while (iVar3 != 10);
-  _fscanf(param_2,&DAT_00589841,&local_28);
+  _fscanf(param_2,"%d\n",&local_28);
   local_24 = 0;
   if ((int)param_1[2] < 6) {
     param_1[3] = 0;
@@ -123,7 +123,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
       iVar3 = _fgetc(param_2);
       if (iVar3 < 0) break;
     } while (iVar3 != 10);
-    _fscanf(param_2,&DAT_00589845,&local_24);
+    _fscanf(param_2,"%d\n",&local_24);
     param_1[3] = 1;
   }
   do {

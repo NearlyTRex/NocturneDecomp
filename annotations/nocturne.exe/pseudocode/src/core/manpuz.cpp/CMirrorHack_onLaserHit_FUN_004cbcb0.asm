@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00588182
+;   double DOUBLE_00588182 = -0.0100000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040ab10
@@ -24,7 +24,7 @@ section .text
         ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ab10()
     FLD float ptr [EBX + 0x34]          ; 004cbcc0
     ADD ESP,0x8                         ; 004cbcc3
-    FCOMP double ptr [0x00588182]       ; 004cbcc6 | DAT_00588182
+    FCOMP double ptr [0x00588182]       ; 004cbcc6 | DOUBLE_00588182
     FNSTSW AX                           ; 004cbccc
     SAHF                                ; 004cbcce
     JA 0x004cbcd3                       ; 004cbccf

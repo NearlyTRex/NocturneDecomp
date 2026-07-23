@@ -294,7 +294,7 @@ LAB_00556967:
               if (3 < iVar8) {
                 *(uint *)(param_1 + 0xbd60) = 0;
               }
-              *(uint *)(param_1 + 0xbd64) = 0x41200000;
+              *(float *)(param_1 + 0xbd64) = 10.0f;
             }
           }
           else if ((*(float *)(param_1 + 0xbd64) <= 0.0) &&
@@ -302,8 +302,8 @@ LAB_00556967:
             *(uint *)(param_1 + 0xbd60) = 0;
           }
         }
-        local_1e0 = 0x40400000;
-        local_30 = 0x40400000;
+        local_1e0 = 3.0f;
+        local_30 = 3.0f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
@@ -368,7 +368,7 @@ LAB_00556967:
                 }
               }
             }
-            else if ((local_28 < 0x40400000 * 5.3049894774131808e-315._0_4_) && (local_18 == 0xf)) {
+            else if ((local_28 < 3.0f * 2.0f) && (local_18 == 0xf)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);
             }
           }

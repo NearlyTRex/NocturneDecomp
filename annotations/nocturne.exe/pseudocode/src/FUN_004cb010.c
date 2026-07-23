@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004cb010(int param_1,int param_2,float param_3)
 
 {
@@ -33,13 +31,13 @@ void FUN_004cb010(int param_1,int param_2,float param_3)
   float local_18;
   float local_14;
   
-  local_28 = param_3 * _DAT_00588026;
-  local_14 = local_28 / _DAT_005a0044;
+  local_28 = param_3 * 255.0f;
+  local_14 = local_28 / 2.0f;
   pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,pfVar12 + 9);
   uVar6 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
                     (pfVar12 + 3,pfVar12[6],local_14,pfVar12 + 0x2b,
-                     "p?manpuz-chargegemloop-red.wav" + 2,local_3c);
+                     "manpuz-chargegemloop-red.wav",local_3c);
   uVar7 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
                     (pfVar12 + 4,pfVar12[7],local_14,pfVar12 + 0x2c,
                      "manpuz-chargegemloop-green.wav",local_3c);
@@ -51,7 +49,7 @@ void FUN_004cb010(int param_1,int param_2,float param_3)
   pfVar12[6] = pfVar12[7];
   core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
             (param_1,param_2,&local_30,&local_2c,&local_24);
-  local_14 = local_28 / _DAT_005a0048;
+  local_14 = local_28 / 2.0f;
   local_20 = local_30 - *pfVar12;
   bVar5 = 1;
   if (local_20 < -local_14) {

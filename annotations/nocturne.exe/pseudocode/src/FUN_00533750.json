@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 370,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
-    "suspect_count": 18,
+    "pseudocode_lines": 159,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "self_copy_guard",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 529
+    "total_lines": 528
   },
   "cross_references": [
     {
@@ -215,27 +214,27 @@
   "globals": [
     {
       "addr": "005950ee",
-      "name": "DAT_005950ee",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005950ee",
+      "type": "float",
+      "value": "-0.1000000"
     },
     {
       "addr": "005950f2",
-      "name": "DAT_005950f2",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005950f2",
+      "type": "float",
+      "value": "0.1000000"
     },
     {
       "addr": "005950f6",
-      "name": "DAT_005950f6",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005950f6",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005950fa",
-      "name": "DAT_005950fa",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005950fa",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "005993b0",
@@ -377,84 +376,84 @@
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 81,
+          "line": 79,
           "message": "Uninitialized variable: fStack_e8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 82,
+          "line": 80,
           "message": "Uninitialized variable: fStack_e0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 83,
+          "line": 81,
           "message": "Uninitialized variable: fStack_dc",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 101,
+          "line": 99,
           "message": "Uninitialized variable: fStack_e4",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 68,
-          "line": 102,
+          "line": 100,
           "message": "Uninitialized variable: fStack_d8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 148,
+          "line": 146,
           "message": "Uninitialized variable: fStack_94",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 149,
+          "line": 147,
           "message": "Uninitialized variable: fStack_90",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 151,
+          "line": 149,
           "message": "Uninitialized variable: fStack_7c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 152,
+          "line": 150,
           "message": "Uninitialized variable: fStack_78",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 26,
-          "line": 159,
+          "line": 157,
           "message": "Uninitialized variable: uStack_a0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 26,
-          "line": 160,
+          "line": 158,
           "message": "Uninitialized variable: uStack_9c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 13,
-          "line": 135,
+          "line": 133,
           "message": "Uninitialized variable: fStack_64",
           "severity": "error"
         }
@@ -465,16 +464,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_00533750(int param_1)",
@@ -482,7 +473,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_ec);",
@@ -490,7 +481,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_ec);",
@@ -498,7 +489,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_ec);",
@@ -506,7 +497,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 78,
       "match": "DAT_005993b0",
       "severity": "mild",
       "text": "__arrinit(auStack_1cc,8,&DAT_005993b0);",
@@ -514,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_74,uVar4);",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_98,&uStack_bc);",
@@ -530,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "pfStack_20 = (float *)(param_1 + 0x20);",
@@ -538,7 +529,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
+      "line": 115,
       "match": "code *",
       "severity": "moderate",
       "text": "iStack_28 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x34))(iVar7,auStack_130);",
@@ -546,7 +537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&fStack_68,(float *)(iVar7 + 0x20));",
@@ -554,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_80,&fStack_68);",
@@ -562,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_168 = *(uint *)(param_1 + 0x550);",
@@ -570,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 155,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_138 = param_1;",
@@ -578,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_134 = param_1;",
@@ -586,7 +577,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 157,
+      "line": 155,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar7 + 0x14c) + 0x100))(iVar7,auStack_16c);",
@@ -594,7 +585,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&uStack_150 != &uStack_a4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 150,
+      "line": 148,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&uStack_150 != &uStack_a4) {",
@@ -613,31 +604,31 @@
     },
     {
       "description": "Uninitialized variable: fStack_e8",
-      "line": 81,
+      "line": 79,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fStack_e8 = fStack_e8 + _DAT_005950ee;",
+      "text": "fStack_e8 = fStack_e8 + -0.1f;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_e0",
-      "line": 82,
+      "line": 80,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fStack_e0 = fStack_e0 + _DAT_005950f2;",
+      "text": "fStack_e0 = fStack_e0 + 0.1f;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_dc",
-      "line": 83,
+      "line": 81,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fStack_dc = fStack_dc + _DAT_005950f2;",
+      "text": "fStack_dc = fStack_dc + 0.1f;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_e4",
-      "line": 101,
+      "line": 99,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_44 = SQRT(fStack_e4 * fStack_e4 + local_ec * local_ec + fStack_e8 * fStack_e8);",
@@ -645,7 +636,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_d8",
-      "line": 102,
+      "line": 100,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_34 = SQRT(fStack_dc * fStack_dc + fStack_e0 * fStack_e0 + fStack_d8 * fStack_d8);",
@@ -653,7 +644,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_94",
-      "line": 148,
+      "line": 146,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_58 = fStack_94 * fStack_18;",
@@ -661,7 +652,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_90",
-      "line": 149,
+      "line": 147,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_54 = fStack_90 * fStack_18;",
@@ -669,7 +660,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_7c",
-      "line": 151,
+      "line": 149,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_ac = fStack_7c + fStack_58;",
@@ -677,7 +668,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_78",
-      "line": 152,
+      "line": 150,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_a8 = fStack_78 + fStack_54;",
@@ -685,7 +676,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_a0",
-      "line": 159,
+      "line": 157,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "uStack_14c = uStack_a0;",
@@ -693,7 +684,7 @@
     },
     {
       "description": "Uninitialized variable: uStack_9c",
-      "line": 160,
+      "line": 158,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "uStack_148 = uStack_9c;",
@@ -701,7 +692,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_64",
-      "line": 135,
+      "line": 133,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (fStack_64 < fStack_e8) {",

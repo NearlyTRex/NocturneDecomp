@@ -13,11 +13,11 @@ float core_netgame_cpp_getElapsedSeconds_FUN_004e95d0(int param_1)
 {
   uint uStack_10;
   
-  uStack_10 = (float)(_DAT_01cea3f8 - param_1) * (float)_DAT_0058ba12;
+  uStack_10 = (float)(_DAT_01cea3f8 - param_1) * (float)1.52587890625e-05;
   if (uStack_10 < 0.0) {
     uStack_10 = 0.0;
   }
-  if (uStack_10 <= (float)_DAT_0058ba1a) {
+  if (uStack_10 <= (float)30) {
     return uStack_10;
   }
   return 30.0;

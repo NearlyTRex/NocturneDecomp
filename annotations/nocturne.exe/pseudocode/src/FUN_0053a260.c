@@ -188,7 +188,7 @@ void FUN_0053a260(int param_1,int param_2)
            [(uint)bVar5 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (local_1c,auStack_198 + 0x17,fVar7,local_28,&LAB_0051b650);
-    if ((float)_DAT_00595967 < *(float *)(param_1 + 0x1faf4)) {
+    if ((float)0.0001 < *(float *)(param_1 + 0x1faf4)) {
       core_xform_cpp_FUN_0055d4a0(0x3fc90fdb);
       puVar4 = auStack_198 + 0x27;
       local_fc[0] = local_5c;

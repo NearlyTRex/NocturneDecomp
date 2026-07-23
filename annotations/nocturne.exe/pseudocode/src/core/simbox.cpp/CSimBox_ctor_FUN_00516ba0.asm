@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   string s_question.kfm_00591105
-;   undefined1 DAT_00591112
-;   undefined1 DAT_00591113
-;   undefined1 DAT_00591114
-;   undefined1 DAT_00591115
+;   TerminatedCString s_none_00591112
+;   undefined4 s_one_00591112+1
+;   undefined4 s_ne_00591112+2
+;   undefined4 s_e_00591112+3
 ;   undefined1* PTR_core_simbox.cpp_CSimBox_setup_FUN_00516c60_005a1d74 = 00516c60
 ;
 ; Called Functions:
@@ -49,16 +49,16 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00516be8
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 00516bed
-    MOV ESI,0x591112                    ; 00516bf0 | DAT_00591112
+    MOV ESI,0x591112                    ; 00516bf0 | = "none"
     LEA EDI,[EBX + 0x2d4]               ; 00516bf5
     PUSH EDI                            ; 00516bfb
-    MOV AL,byte ptr [ESI]               ; 00516bfc | DAT_00591112 | DAT_00591114
+    MOV AL,byte ptr [ESI]               ; 00516bfc | = "none" | s_ne_00591112+2
         ;   Label: LAB_00516bfc
     MOV byte ptr [EDI],AL               ; 00516bfe
     CMP AL,0x0                          ; 00516c00
     JZ 0x00516c14                       ; 00516c02
         ;   XREF to: 00516c14 (CONDITIONAL_JUMP)  ; LAB_00516c14
-    MOV AL,byte ptr [ESI + 0x1]         ; 00516c04 | DAT_00591113 | DAT_00591115
+    MOV AL,byte ptr [ESI + 0x1]         ; 00516c04 | s_one_00591112+1 | s_e_00591112+3
     ADD ESI,0x2                         ; 00516c07
     MOV byte ptr [EDI + 0x1],AL         ; 00516c0a
     ADD EDI,0x2                         ; 00516c0d

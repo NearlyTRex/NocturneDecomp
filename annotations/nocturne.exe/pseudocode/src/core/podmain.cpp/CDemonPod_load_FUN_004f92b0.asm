@@ -9,11 +9,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058dced
+;   TerminatedCString s_rt_0058dced
 ;   string s_pod.ini_0058dcf0
 ;   string s_*.pod_0058dcf8
-;   undefined4 DAT_0058dcfe
-;   undefined4 DAT_0058dd02
+;   TerminatedCString s_d_0058dcfe
+;   TerminatedCString s_s_0058dd02
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -34,7 +34,7 @@ section .text
     PUSH EDI                            ; 004f92b1
     SUB ESP,0x168                       ; 004f92b2
     MOV EBX,dword ptr [ESP + 0x174]     ; 004f92b8
-    PUSH 0x58dced                       ; 004f92bf | DAT_0058dced
+    PUSH 0x58dced                       ; 004f92bf | = "rt"
     PUSH 0x58dcf0                       ; 004f92c4 | = "pod.ini"
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f92c9
         ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_004f9343
     LEA EDX,[ESP + 0x168]               ; 004f9344
     PUSH EDX                            ; 004f934b
-    PUSH 0x58dcfe                       ; 004f934c | DAT_0058dcfe
+    PUSH 0x58dcfe                       ; 004f934c | = "%d\n"
     PUSH EAX                            ; 004f9351
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004f9352
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 004f9367
         ;   Label: LAB_004f9367
     PUSH EAX                            ; 004f936e
-    PUSH 0x58dd02                       ; 004f936f | DAT_0058dd02
+    PUSH 0x58dd02                       ; 004f936f | = "%s\n"
     PUSH EDI                            ; 004f9374
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004f9375
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

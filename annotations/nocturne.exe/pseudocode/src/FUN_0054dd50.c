@@ -20,7 +20,7 @@ void FUN_0054dd50(int param_1,int param_2)
   
   if (*(int *)(param_2 + 0x28) == 7) {
     iVar2 = 0;
-    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)_DAT_00597205;
+    *(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,param_2 + 0x1c);
     do {
       iVar2 = iVar2 + 1;
@@ -62,7 +62,7 @@ void FUN_0054dd50(int param_1,int param_2)
     }
     fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
     *(float *)(param_1 + 0x2434) = fVar1;
-    if (fVar1 < (float)_DAT_0059720d) {
+    if (fVar1 < (float)25) {
       *(uint *)(param_1 + 0x2434) = 0x41c7fdf4;
     }
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);

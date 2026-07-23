@@ -23,7 +23,7 @@ void FUN_004996b0(int param_1,int param_2)
   if (*(int *)(0x01C775EC + 0x22c) == 0) {
     *(uint *)(param_2 + 4) = 0;
   }
-  *(uint *)(param_1 + 0xbc8c) = 0x3F000000;
+  *(float *)(param_1 + 0xbc8c) = 0.5f;
   fVar3 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
   iVar2 = param_1 + 0x150;
   *(float *)(param_1 + 0x2434) = fVar3;

@@ -28,10 +28,10 @@
 ;   string s_CShotgun_00595dcf
 ;   string s_CTrap_00595dd8
 ;   string s_actionPending_=_%d_stranger.cpp_l_00595dde
-;   undefined4 DAT_00595e07
-;   undefined4 DAT_00595e0f
-;   undefined4 DAT_005a2704
-;   undefined4 DAT_005a2708
+;   double DOUBLE_00595e07 = 25
+;   double DOUBLE_00595e0f = 0.990000000000000
+;   float FLOAT_005a2704 = 10
+;   float FLOAT_005a2708 = 70
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005baf90
@@ -400,16 +400,16 @@ section .text
     MOV dword ptr [ESP + 0x54],EAX      ; 0053f69a
     FLD float ptr [ESP + 0x54]          ; 0053f69e
     ADD ESP,0x8                         ; 0053f6a2
-    FCOMP double ptr [0x00595e0f]       ; 0053f6a5 | DAT_00595e0f
+    FCOMP double ptr [0x00595e0f]       ; 0053f6a5 | DOUBLE_00595e0f
     FNSTSW AX                           ; 0053f6ab
     SAHF                                ; 0053f6ad
     JBE 0x0053f424                      ; 0053f6ae
         ;   XREF to: 0053f424 (CONDITIONAL_JUMP)  ; LAB_0053f424
     FLD float ptr [EBP + 0x18]          ; 0053f6b4
-    FMUL double ptr [0x00595e07]        ; 0053f6b7 | DAT_00595e07
+    FMUL double ptr [0x00595e07]        ; 0053f6b7 | DOUBLE_00595e07
     FADD float ptr [EBX + 0x1fa4c]      ; 0053f6bd
     FST float ptr [EBX + 0x1fa4c]       ; 0053f6c3
-    FCOMP float ptr [0x005a2708]        ; 0053f6c9 | DAT_005a2708
+    FCOMP float ptr [0x005a2708]        ; 0053f6c9 | FLOAT_005a2708
     FNSTSW AX                           ; 0053f6cf
     SAHF                                ; 0053f6d1
     JA 0x0053f6e8                       ; 0053f6d2
@@ -422,7 +422,7 @@ section .text
         ;   Label: caseD_3
     JMP 0x0053f424                      ; 0053f6e3
         ;   XREF to: 0053f424 (UNCONDITIONAL_JUMP)  ; LAB_0053f424
-    MOV EAX,[0x005a2708]                ; 0053f6e8 | DAT_005a2708
+    MOV EAX,[0x005a2708]                ; 0053f6e8 | FLOAT_005a2708
         ;   Label: LAB_0053f6e8
     MOV dword ptr [EBX + 0x1fa4c],EAX   ; 0053f6ed
     JMP 0x0053f6d4                      ; 0053f6f3
@@ -709,7 +709,7 @@ section .text
     ADD ESP,0xc                         ; 0053f9b1
     MOV dword ptr [EBX + 0x1faa0],0x0   ; 0053f9b4
         ;   Label: LAB_0053f9b4
-    MOV EAX,[0x005a2704]                ; 0053f9be | DAT_005a2704
+    MOV EAX,[0x005a2704]                ; 0053f9be | FLOAT_005a2704
     MOV dword ptr [EBX + 0x1fa4c],EAX   ; 0053f9c3
     FLD float ptr [EBX + 0x2a88]        ; 0053f9c9
         ;   Label: LAB_0053f9c9

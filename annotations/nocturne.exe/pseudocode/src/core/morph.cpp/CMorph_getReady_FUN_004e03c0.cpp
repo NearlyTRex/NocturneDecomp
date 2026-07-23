@@ -59,7 +59,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(int param_1)
   int local_14;
   
   if ((*(int *)(param_1 + 0x54) < 3) || (*(int *)(param_1 + 0x65c) < 3)) {
-    _DAT_01cc4800 = "@..\\core\\morph.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\morph.cpp";
     _DAT_01cc4804 = 799;
     FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
   }

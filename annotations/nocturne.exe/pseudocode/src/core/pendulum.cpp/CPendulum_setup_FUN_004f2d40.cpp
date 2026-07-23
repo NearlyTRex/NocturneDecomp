@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(int param_1)
 
 {
@@ -37,14 +35,14 @@ void core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(int param_1)
     fStack_38 = pfVar3[5];
   }
   *(float *)(param_1 + 0x39c) =
-       SQRT((fStack_3c - fStack_48) * (float)_DAT_0058d008) * (float)_DAT_0058d010;
-  fVar1 = (fStack_48 + fStack_3c) * _DAT_0058d018;
-  fVar2 = (fStack_44 + fStack_38) * _DAT_0058d018;
+       SQRT((fStack_3c - fStack_48) * (float)0.03125) * (float)6.2831853070000001;
+  fVar1 = (fStack_48 + fStack_3c) * 0.5f;
+  fVar2 = (fStack_44 + fStack_38) * 0.5f;
   if ((float *)(param_1 + 0x408) == afStack_10) {
     *(float *)(param_1 + 0x40c) = fStack_48;
     return;
   }
-  *(float *)(param_1 + 0x408) = (fStack_4c + fStack_40) * _DAT_0058d018;
+  *(float *)(param_1 + 0x408) = (fStack_4c + fStack_40) * 0.5f;
   *(float *)(param_1 + 0x40c) = fVar1;
   *(float *)(param_1 + 0x410) = fVar2;
   *(float *)(param_1 + 0x40c) = fStack_48;

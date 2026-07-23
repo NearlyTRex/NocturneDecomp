@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -284,27 +284,27 @@
     },
     {
       "addr": "00595e07",
-      "name": "DAT_00595e07",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595e07",
+      "type": "double",
+      "value": "25"
     },
     {
       "addr": "00595e0f",
-      "name": "DAT_00595e0f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595e0f",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "005a2704",
-      "name": "DAT_005a2704",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2704",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "005a2708",
-      "name": "DAT_005a2708",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2708",
+      "type": "float",
+      "value": "70"
     },
     {
       "addr": "005b6d50",
@@ -756,7 +756,7 @@
       "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_00595e07 + *(float *)(param_1 + 0x1fa4c);",
+      "text": "fVar1 = param_2 * (float)25 + *(float *)(param_1 + 0x1fa4c);",
       "type": "unnamed_param"
     },
     {
@@ -764,7 +764,7 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_00595e07 + *(float *)(param_1 + 0x1fa4c);",
+      "text": "fVar1 = param_2 * (float)25 + *(float *)(param_1 + 0x1fa4c);",
       "type": "unnamed_param"
     },
     {
@@ -780,7 +780,7 @@
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1fa4c) = 0x428C0000;",
+      "text": "*(float *)(param_1 + 0x1fa4c) = 70.0f;",
       "type": "unnamed_param"
     },
     {
@@ -1012,7 +1012,7 @@
       "line": 206,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fa4c) = 0x41200000;",
+      "text": "*(float *)(param_1 + 0x1fa4c) = 10.0f;",
       "type": "unnamed_param"
     },
     {

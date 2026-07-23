@@ -20,7 +20,7 @@
 ;   core_set.cpp_FUN_00509a80 at 0050a23c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587469
+;   float FLOAT_00587469 = 65535
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b9354
@@ -103,7 +103,7 @@ section .text
     JBE 0x004c222e                      ; 004c2217
         ;   XREF to: 004c222e (CONDITIONAL_JUMP)  ; LAB_004c222e
     FLD float ptr [EBX + 0x338]         ; 004c2219
-    FMUL float ptr [0x00587469]         ; 004c221f | DAT_00587469
+    FMUL float ptr [0x00587469]         ; 004c221f | FLOAT_00587469
     CALL crt_math.c_round_FUN_00563a30  ; 004c2225
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x20]        ; 004c222a
@@ -195,7 +195,7 @@ section .text
     JBE 0x004c2349                      ; 004c2332
         ;   XREF to: 004c2349 (CONDITIONAL_JUMP)  ; LAB_004c2349
     FLD float ptr [EBX + 0x33c]         ; 004c2334
-    FMUL float ptr [0x00587469]         ; 004c233a | DAT_00587469
+    FMUL float ptr [0x00587469]         ; 004c233a | FLOAT_00587469
     CALL crt_math.c_round_FUN_00563a30  ; 004c2340
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x24]        ; 004c2345

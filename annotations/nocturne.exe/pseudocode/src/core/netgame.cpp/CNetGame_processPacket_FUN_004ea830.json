@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 1987,
+    "complexity_score": 1977,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 397,
-    "suspect_count": 155,
+    "suspect_count": 154,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -267,9 +267,9 @@
     },
     {
       "addr": "0058c059",
-      "name": "DAT_0058c059",
-      "type": "undefined4",
-      "value": null
+      "name": "CHAR_00h_0058c059",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "0058c05a",
@@ -297,21 +297,21 @@
     },
     {
       "addr": "0058c0d2",
-      "name": "DAT_0058c0d2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c0d2",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "0058c0da",
-      "name": "DAT_0058c0da",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c0da",
+      "type": "double",
+      "value": "-30"
     },
     {
       "addr": "0058c0e2",
-      "name": "DAT_0058c0e2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c0e2",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "01cc4800",
@@ -1157,7 +1157,7 @@
       "line": 166,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_ec = (float)(*(int *)(param_3 + 5) - local_1c[0xc]) * (float)_DAT_0058c0d2;",
+      "text": "local_ec = (float)(*(int *)(param_3 + 5) - local_1c[0xc]) * (float)1.52587890625e-05;",
       "type": "unnamed_param"
     },
     {
@@ -1165,7 +1165,7 @@
       "line": 177,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_e8 = (float)(_DAT_01cea3f8 - *(int *)(param_3 + 5)) * (float)_DAT_0058c0d2;",
+      "text": "local_e8 = (float)(_DAT_01cea3f8 - *(int *)(param_3 + 5)) * (float)1.52587890625e-05;",
       "type": "unnamed_param"
     },
     {
@@ -1677,15 +1677,7 @@
       "line": 324,
       "match": "DAT_02dd10c4",
       "severity": "mild",
-      "text": "(local_34,&DAT_02dd10c4,0,0,&DAT_0058c059,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 324,
-      "match": "DAT_0058c059",
-      "severity": "mild",
-      "text": "(local_34,&DAT_02dd10c4,0,0,&DAT_0058c059,",
+      "text": "(local_34,&DAT_02dd10c4,0,0,&CHAR_00h_0058c059,",
       "type": "undefined_data"
     },
     {

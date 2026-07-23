@@ -57,7 +57,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f0bf4 = 004f0c8c
-;   undefined4 s_..\\core\\path.cpp_0058cd96+1
+;   TerminatedCString s_core_path_cpp_0058cd97
 ;   string s_Out_of_bounds1!_0058cda8
 ;   string s_..\\core\\path.cpp_0058cdb8
 ;   string s_Out_of_bounds2!_0058cdc9
@@ -780,7 +780,7 @@ section .text
     POP ESI                             ; 004f14ad
     POP EBX                             ; 004f14ae
     RET                                 ; 004f14af
-    MOV ECX,0x58cd97                    ; 004f14b0 | s_..\core\path.cpp_0058cd96+1
+    MOV ECX,0x58cd97                    ; 004f14b0 | = "..\\core\\path.cpp"
         ;   Label: LAB_004f14b0
     MOV EAX,0x547                       ; 004f14b5
     PUSH 0x58cda8                       ; 004f14ba | = "Out of bounds1!"

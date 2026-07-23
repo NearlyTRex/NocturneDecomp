@@ -78,8 +78,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
     local_68 = local_c8 - _DAT_02dc9460;
     local_6c = local_cc - _DAT_02dc945c;
     local_64 = local_c4 - _DAT_02dc9464;
-    if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) < (float)_DAT_005949ce
-       ) {
+    if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) <
+        (float)0.0001) {
       return;
     }
     puVar4 = (uint *)&DAT_01fb8618;
@@ -162,7 +162,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             (&local_8c)[(uint)bVar6 * -2] = afStack_50[(uint)bVar6 * -2];
             (&local_8c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                  afStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-            fVar2 = (float)_DAT_005949d6;
+            fVar2 = (float)0.00390625;
             local_84 = (float)local_90 * fVar2;
             local_14 = (float)local_88;
             local_7c = (float)local_88 * fVar2;
@@ -170,27 +170,27 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             local_9c = local_84 - local_cc;
             local_94 = local_7c - local_c4;
             fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
-            if ((float)_DAT_005949f6 < fVar1) {
-              local_160 = (fVar1 + (float)_DAT_005949fe) * (float)_DAT_005949de + 0.0;
+            if ((float)50 < fVar1) {
+              local_160 = (fVar1 + (float)-50) * (float)0.02 + 0.0;
             }
             local_80 = (float)(int)local_8c * fVar2 + 1.0;
             local_14 = (float)core_setcolid_cpp_FUN_0050f910(0x01E57284);
-            if ((float)_DAT_00594a06 < local_14 - local_80) {
-              local_160 = ((local_14 - local_80) + (float)_DAT_00594a0e) * (float)_DAT_005949e6 +
-                          local_160;
+            if ((float)60 < local_14 - local_80) {
+              local_160 = ((local_14 - local_80) + (float)-60) * (float)0.016666666666666701
+                          + local_160;
             }
           }
           else {
             local_160 = 1.0;
           }
           if (0.0 < local_160) {
-            local_160 = local_160 + _DAT_00594a16;
+            local_160 = local_160 + 0.2f;
           }
           local_160 = local_160 * local_160;
           if (1.0 < local_160) {
             local_160 = 1.0;
           }
-          _DAT_02dc9468 = local_160 * _DAT_005949ee + _DAT_02dc9468;
+          _DAT_02dc9468 = local_160 * 0.015625f + _DAT_02dc9468;
           iVar3 = iVar3 + 2;
         } while (iVar3 != 0x21);
         local_1c = local_1c + 2;
@@ -198,7 +198,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
     }
     _DAT_02dc9468 = _DAT_02dc9468 * _DAT_02dc9468;
     if (0.0 < _DAT_02dc9468) {
-      _DAT_02dc9468 = _DAT_02dc9468 + _DAT_005949f2;
+      _DAT_02dc9468 = _DAT_02dc9468 + 0.3f;
     }
     if (1.0 < _DAT_02dc9468) {
       _DAT_02dc9468 = 1.0;

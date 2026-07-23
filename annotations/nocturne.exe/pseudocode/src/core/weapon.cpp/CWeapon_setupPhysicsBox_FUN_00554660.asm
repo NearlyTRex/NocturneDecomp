@@ -9,7 +9,7 @@
 ;   core_weapon.cpp_CWeapon_setup_FUN_00553f10 at 00553f2e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597c15
+;   float FLOAT_00597c15 = 0.5
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     FADD float ptr [ESP + 0x10]         ; 005546a2
     FXCH                                ; 005546a6
     FST float ptr [ESP + 0x3c]          ; 005546a8
-    FLD float ptr [0x00597c15]          ; 005546ac | DAT_00597c15
+    FLD float ptr [0x00597c15]          ; 005546ac | FLOAT_00597c15
     FXCH                                ; 005546b2
     FMUL ST1                            ; 005546b4
     FXCH ST2                            ; 005546b6

@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -26,12 +24,12 @@ int core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(uint param_1)
   *(uint *)(iVar3 + 0x2dd8) = 0x3f800000;
   *(byte *)(iVar3 + 0xbd48) = 0;
   *(uint *)(iVar3 + 0x2434) = 0x43070000;
-  uVar1 = _DAT_0059c3f0;
+  fVar1 = 50.0f;
   *(uint *)(iVar3 + 0xbdb0) = 0;
-  uVar2 = _DAT_0059c3f4;
+  fVar2 = 100.0f;
   *(uint *)(iVar3 + 0xbdb4) = 0;
-  *(uint *)(iVar3 + 0x2ddc) = uVar1;
-  *(uint *)(iVar3 + 0x2de0) = uVar2;
+  *(float *)(iVar3 + 0x2ddc) = fVar1;
+  *(float *)(iVar3 + 0x2de0) = fVar2;
   *(uint *)(iVar3 + 0xbdc8) = 0;
   *(uint *)(iVar3 + 0xbdc4) = *(uint *)(iVar3 + 0xbdc8);
   *(uint *)(iVar3 + 0xbdc0) = *(uint *)(iVar3 + 0xbdc4);

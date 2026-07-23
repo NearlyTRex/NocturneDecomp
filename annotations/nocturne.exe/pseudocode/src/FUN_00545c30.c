@@ -80,7 +80,7 @@ uint FUN_00545c30(int param_1)
   if (0.0 < *(float *)(param_1 + 0x2f8)) {
     return 0;
   }
-  *(float *)(param_1 + 0x2f8) = *(float *)(param_1 + 0x2f8) + _DAT_005968b5;
+  *(float *)(param_1 + 0x2f8) = *(float *)(param_1 + 0x2f8) + 0.1f;
   uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_60);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_9c,uVar1);
   iVar2 = core_weapon_cpp_CWeapon_fire_FUN_00554600(param_1);
@@ -102,7 +102,7 @@ uint FUN_00545c30(int param_1)
   fStack_c0 = fStack_9c + fStack_78;
   fStack_bc = fStack_98 + fStack_74;
   fStack_b8 = fStack_94 + fStack_70;
-  fStack_2c = (float)_DAT_005968b9 / *(float *)(param_1 + 0x2e0);
+  fStack_2c = (float)2.5 / *(float *)(param_1 + 0x2e0);
   fStack_cc = fStack_78 * fStack_2c;
   fStack_c8 = fStack_74 * fStack_2c;
   fStack_c4 = fStack_70 * fStack_2c;
@@ -187,7 +187,7 @@ uint FUN_00545c30(int param_1)
       fStack_d8 = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
       fStack_d4 = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
       fStack_d0 = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-      fStack_30 = (float)_DAT_005968c9 /
+      fStack_30 = (float)10 /
                   SQRT(fStack_d0 * fStack_d0 + fStack_d8 * fStack_d8 + fStack_d4 * fStack_d4);
       fStack_48 = fStack_d8 * fStack_30;
       fStack_44 = fStack_d4 * fStack_30;
@@ -223,7 +223,7 @@ LAB_00545ebe:
       if (*(int *)(param_1 + 0x56c) != 0) {
         fStack_6c = fStack_9c;
         fStack_64 = fStack_94;
-        fStack_68 = fStack_98 + _DAT_005968c1;
+        fStack_68 = fStack_98 + -0.125f;
         core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
                   (0x01C08D04,&fStack_6c,param_1 + 0x3c);
         uStack_84 = 0x40a00000;

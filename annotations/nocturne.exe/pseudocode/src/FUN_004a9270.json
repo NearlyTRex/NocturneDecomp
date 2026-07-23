@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -590,39 +590,39 @@
     },
     {
       "addr": "0059e1f8",
-      "name": "DAT_0059e1f8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e1f8",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "0059e1fc",
-      "name": "DAT_0059e1fc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e1fc",
+      "type": "float",
+      "value": "3.400000"
     },
     {
       "addr": "0059e200",
-      "name": "DAT_0059e200",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e200",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "0059e204",
-      "name": "DAT_0059e204",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e204",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "0059e208",
-      "name": "DAT_0059e208",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e208",
+      "type": "float",
+      "value": "5.5"
     },
     {
       "addr": "0059e20c",
-      "name": "DAT_0059e20c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e20c",
+      "type": "float",
+      "value": "0.7000000"
     },
     {
       "addr": "005ad350",
@@ -4450,7 +4450,7 @@
       "line": 826,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / _DAT_0059e20c;",
+      "text": "fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / 0.7f;",
       "type": "unnamed_param"
     },
     {
@@ -4458,7 +4458,7 @@
       "line": 826,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / _DAT_0059e20c;",
+      "text": "fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / 0.7f;",
       "type": "unnamed_param"
     },
     {

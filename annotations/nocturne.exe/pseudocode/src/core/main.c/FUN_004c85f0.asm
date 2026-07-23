@@ -9,12 +9,12 @@
 ;
 ; Referenced Globals:
 ;   string s_PROCESSOR_LEVEL_00587b55
-;   undefined4 DAT_00587b65
+;   TerminatedCString s_rb_00587b65
 ;   string s_stderr.txt_00587b68
 ;   string s_stderr.txt_00587b73
 ;   string s_..\\core\\main.c_00587b7e
 ;   string s_Please_copy_Nocturne_to_your_har_00587b8d
-;   undefined4 DAT_00587bb5
+;   TerminatedCString s_wt_00587bb5
 ;   string s_stderr.txt_00587bb8
 ;   string s_msglist.txt_00587bc3
 ;   string s_..\\core\\main.c_00587bcf
@@ -22,7 +22,7 @@
 ;   string s_..\\core\\main.c_00587c02
 ;   string s_Unable_to_set_640x480x32bpp._Ple_00587c11
 ;   string s_Windows_is_reporting_00587ca2
-;   undefined4 DAT_00587cb8
+;   TerminatedCString s_s_1f_00587cb8
 ;   ... and 73 more
 ;
 ; Called Functions:
@@ -69,7 +69,7 @@ section .text
     JNZ 0x004c8d70                      ; 004c862c
         ;   XREF to: 004c8d70 (CONDITIONAL_JUMP)  ; LAB_004c8d70
     MOV dword ptr [0x006af628],0x3      ; 004c8632 | DAT_006af628
-    PUSH 0x587b65                       ; 004c863c | DAT_00587b65
+    PUSH 0x587b65                       ; 004c863c | = "rb"
         ;   Label: LAB_004c863c
     PUSH 0x587b68                       ; 004c8641 | = "stderr.txt"
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004c8646
@@ -100,7 +100,7 @@ section .text
     ADD ESP,0x4                         ; 004c8691
     PUSH 0x5c18c8                       ; 004c8694 | DAT_005c18c8
         ;   Label: LAB_004c8694
-    PUSH 0x587bb5                       ; 004c8699 | DAT_00587bb5
+    PUSH 0x587bb5                       ; 004c8699 | = "wt"
     PUSH 0x587bb8                       ; 004c869e | = "stderr.txt"
     MOV EBX,0x3                         ; 004c86a3
     CALL crt_stdio.c_freopen_FUN_00565724 ; 004c86a8
@@ -204,10 +204,10 @@ section .text
     POP EDI                             ; 004c87d3
         ;   Label: LAB_004c87d3
     FILD dword ptr [0x02de20a8]         ; 004c87d4 | DAT_02de20a8
-    FMUL float ptr [0x00587e64]         ; 004c87da | DAT_00587e64
+    FMUL float ptr [0x00587e64]         ; 004c87da | FLOAT_00587e64
     SUB ESP,0x8                         ; 004c87e0
     FSTP double ptr [ESP]               ; 004c87e3
-    PUSH 0x587cb8                       ; 004c87e6 | DAT_00587cb8
+    PUSH 0x587cb8                       ; 004c87e6 | = "%.1f"
     LEA EAX,[ESP + 0x50c]               ; 004c87eb
     PUSH EAX                            ; 004c87f2
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004c87f3
@@ -263,7 +263,7 @@ section .text
         ;   XREF to: 004c884a (CONDITIONAL_JUMP)  ; LAB_004c884a
     POP EDI                             ; 004c8862
         ;   Label: LAB_004c8862
-    MOV ESI,0x587ccf                    ; 004c8863 | DAT_00587ccf
+    MOV ESI,0x587ccf                    ; 004c8863 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 004c8868
     PUSH EDI                            ; 004c886f
     SUB ECX,ECX                         ; 004c8870
@@ -271,13 +271,13 @@ section .text
     MOV AL,0x0                          ; 004c8873
     SCASB.REPNE ES:EDI                  ; 004c8875
     DEC EDI                             ; 004c8877
-    MOV AL,byte ptr [ESI]               ; 004c8878 | DAT_00587ccf | = "Nocturne requires at least 64MB of sy..."
+    MOV AL,byte ptr [ESI]               ; 004c8878 | = "\n" | s_Nocturne_requires_at_least_64MB_o_00587cd1
         ;   Label: LAB_004c8878
     MOV byte ptr [EDI],AL               ; 004c887a
     CMP AL,0x0                          ; 004c887c
     JZ 0x004c8890                       ; 004c887e
         ;   XREF to: 004c8890 (CONDITIONAL_JUMP)  ; LAB_004c8890
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c8880 | DAT_00587cd0 | s_octurne_requires_at_least_64MB_o_00587cd1+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c8880 | s_anon_00587ccf+1 | s_octurne_requires_at_least_64MB_o_00587cd1+1
     ADD ESI,0x2                         ; 004c8883
     MOV byte ptr [EDI + 0x1],AL         ; 004c8886
     ADD EDI,0x2                         ; 004c8889
@@ -313,7 +313,7 @@ section .text
         ;   XREF to: 004c88b0 (CONDITIONAL_JUMP)  ; LAB_004c88b0
     POP EDI                             ; 004c88c8
         ;   Label: LAB_004c88c8
-    MOV ESI,0x587d00                    ; 004c88c9 | DAT_00587d00
+    MOV ESI,0x587d00                    ; 004c88c9 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 004c88ce
     PUSH EDI                            ; 004c88d5
     SUB ECX,ECX                         ; 004c88d6
@@ -321,13 +321,13 @@ section .text
     MOV AL,0x0                          ; 004c88d9
     SCASB.REPNE ES:EDI                  ; 004c88db
     DEC EDI                             ; 004c88dd
-    MOV AL,byte ptr [ESI]               ; 004c88de | DAT_00587d00 | = "If you think you have at least 64MB o..."
+    MOV AL,byte ptr [ESI]               ; 004c88de | = "\n" | s_If_you_think_you_have_at_least_6_00587d02
         ;   Label: LAB_004c88de
     MOV byte ptr [EDI],AL               ; 004c88e0
     CMP AL,0x0                          ; 004c88e2
     JZ 0x004c88f6                       ; 004c88e4
         ;   XREF to: 004c88f6 (CONDITIONAL_JUMP)  ; LAB_004c88f6
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c88e6 | DAT_00587d01 | s_f_you_think_you_have_at_least_64_00587d02+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c88e6 | s_anon_00587d00+1 | s_f_you_think_you_have_at_least_64_00587d02+1
     ADD ESI,0x2                         ; 004c88e9
     MOV byte ptr [EDI + 0x1],AL         ; 004c88ec
     ADD EDI,0x2                         ; 004c88ef
@@ -363,7 +363,7 @@ section .text
         ;   XREF to: 004c8916 (CONDITIONAL_JUMP)  ; LAB_004c8916
     POP EDI                             ; 004c892e
         ;   Label: LAB_004c892e
-    MOV ESI,0x587d34                    ; 004c892f | DAT_00587d34
+    MOV ESI,0x587d34                    ; 004c892f | = "\n"
     LEA EDI,[ESP + 0x200]               ; 004c8934
     PUSH EDI                            ; 004c893b
     SUB ECX,ECX                         ; 004c893c
@@ -371,13 +371,13 @@ section .text
     MOV AL,0x0                          ; 004c893f
     SCASB.REPNE ES:EDI                  ; 004c8941
     DEC EDI                             ; 004c8943
-    MOV AL,byte ptr [ESI]               ; 004c8944 | DAT_00587d34 | = "then ignore this message."
+    MOV AL,byte ptr [ESI]               ; 004c8944 | = "\n" | s_then_ignore_this_message._00587d36
         ;   Label: LAB_004c8944
     MOV byte ptr [EDI],AL               ; 004c8946
     CMP AL,0x0                          ; 004c8948
     JZ 0x004c895c                       ; 004c894a
         ;   XREF to: 004c895c (CONDITIONAL_JUMP)  ; LAB_004c895c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c894c | DAT_00587d35 | s_hen_ignore_this_message._00587d36+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c894c | s_anon_00587d34+1 | s_hen_ignore_this_message._00587d36+1
     ADD ESI,0x2                         ; 004c894f
     MOV byte ptr [EDI + 0x1],AL         ; 004c8952
     ADD EDI,0x2                         ; 004c8955
@@ -413,7 +413,7 @@ section .text
         ;   XREF to: 004c897c (CONDITIONAL_JUMP)  ; LAB_004c897c
     POP EDI                             ; 004c8994
         ;   Label: LAB_004c8994
-    MOV ESI,0x587d50                    ; 004c8995 | DAT_00587d50
+    MOV ESI,0x587d50                    ; 004c8995 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 004c899a
     PUSH EDI                            ; 004c89a1
     SUB ECX,ECX                         ; 004c89a2
@@ -421,13 +421,13 @@ section .text
     MOV AL,0x0                          ; 004c89a5
     SCASB.REPNE ES:EDI                  ; 004c89a7
     DEC EDI                             ; 004c89a9
-    MOV AL,byte ptr [ESI]               ; 004c89aa | DAT_00587d50 | = "See README.TXT for more information."
+    MOV AL,byte ptr [ESI]               ; 004c89aa | = "\n" | s_See_README.TXT_for_more_informat_00587d52
         ;   Label: LAB_004c89aa
     MOV byte ptr [EDI],AL               ; 004c89ac
     CMP AL,0x0                          ; 004c89ae
     JZ 0x004c89c2                       ; 004c89b0
         ;   XREF to: 004c89c2 (CONDITIONAL_JUMP)  ; LAB_004c89c2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c89b2 | DAT_00587d51 | s_ee_README.TXT_for_more_informati_00587d52+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c89b2 | s_anon_00587d50+1 | s_ee_README.TXT_for_more_informati_00587d52+1
     ADD ESI,0x2                         ; 004c89b5
     MOV byte ptr [EDI + 0x1],AL         ; 004c89b8
     ADD EDI,0x2                         ; 004c89bb
@@ -497,10 +497,10 @@ section .text
     POP EDI                             ; 004c8a4b
         ;   Label: LAB_004c8a4b
     FILD dword ptr [0x02de20ac]         ; 004c8a4c | DAT_02de20ac
-    FMUL float ptr [0x00587e64]         ; 004c8a52 | DAT_00587e64
+    FMUL float ptr [0x00587e64]         ; 004c8a52 | FLOAT_00587e64
     SUB ESP,0x8                         ; 004c8a58
     FSTP double ptr [ESP]               ; 004c8a5b
-    PUSH 0x587d8d                       ; 004c8a5e | DAT_00587d8d
+    PUSH 0x587d8d                       ; 004c8a5e | = "%.1f"
     LEA EAX,[ESP + 0x60c]               ; 004c8a63
     PUSH EAX                            ; 004c8a6a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004c8a6b
@@ -556,7 +556,7 @@ section .text
         ;   XREF to: 004c8ab8 (CONDITIONAL_JUMP)  ; LAB_004c8ab8
     POP EDI                             ; 004c8ad0
         ;   Label: LAB_004c8ad0
-    MOV ESI,0x587dae                    ; 004c8ad1 | DAT_00587dae
+    MOV ESI,0x587dae                    ; 004c8ad1 | = "\n"
     MOV EDI,ESP                         ; 004c8ad6
     PUSH EDI                            ; 004c8ad8
     SUB ECX,ECX                         ; 004c8ad9
@@ -564,13 +564,13 @@ section .text
     MOV AL,0x0                          ; 004c8adc
     SCASB.REPNE ES:EDI                  ; 004c8ade
     DEC EDI                             ; 004c8ae0
-    MOV AL,byte ptr [ESI]               ; 004c8ae1 | DAT_00587dae | = "Nocturne runs best with at least 200M..."
+    MOV AL,byte ptr [ESI]               ; 004c8ae1 | = "\n" | s_Nocturne_runs_best_with_at_least_00587db0
         ;   Label: LAB_004c8ae1
     MOV byte ptr [EDI],AL               ; 004c8ae3
     CMP AL,0x0                          ; 004c8ae5
     JZ 0x004c8af9                       ; 004c8ae7
         ;   XREF to: 004c8af9 (CONDITIONAL_JUMP)  ; LAB_004c8af9
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c8ae9 | DAT_00587daf | s_octurne_runs_best_with_at_least_2_00587db0+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c8ae9 | s_anon_00587dae+1 | s_octurne_runs_best_with_at_least_2_00587db0+1
     ADD ESI,0x2                         ; 004c8aec
     MOV byte ptr [EDI + 0x1],AL         ; 004c8aef
     ADD EDI,0x2                         ; 004c8af2
@@ -606,7 +606,7 @@ section .text
         ;   XREF to: 004c8b14 (CONDITIONAL_JUMP)  ; LAB_004c8b14
     POP EDI                             ; 004c8b2c
         ;   Label: LAB_004c8b2c
-    MOV ESI,0x587ddd                    ; 004c8b2d | DAT_00587ddd
+    MOV ESI,0x587ddd                    ; 004c8b2d | = "\n"
     MOV EDI,ESP                         ; 004c8b32
     PUSH EDI                            ; 004c8b34
     SUB ECX,ECX                         ; 004c8b35
@@ -614,13 +614,13 @@ section .text
     MOV AL,0x0                          ; 004c8b38
     SCASB.REPNE ES:EDI                  ; 004c8b3a
     DEC EDI                             ; 004c8b3c
-    MOV AL,byte ptr [ESI]               ; 004c8b3d | DAT_00587ddd | = "See README.TXT for more information."
+    MOV AL,byte ptr [ESI]               ; 004c8b3d | = "\n" | s_See_README_TXT_for_more_00587ddf
         ;   Label: LAB_004c8b3d
     MOV byte ptr [EDI],AL               ; 004c8b3f
     CMP AL,0x0                          ; 004c8b41
     JZ 0x004c8b55                       ; 004c8b43
         ;   XREF to: 004c8b55 (CONDITIONAL_JUMP)  ; LAB_004c8b55
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c8b45 | DAT_00587dde | s_ee_README.TXT_for_more_informati_00587ddf+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c8b45 | s_anon_00587ddd+1 | s_See_README_TXT_for_more_00587ddf+1
     ADD ESI,0x2                         ; 004c8b48
     MOV byte ptr [EDI + 0x1],AL         ; 004c8b4b
     ADD EDI,0x2                         ; 004c8b4e
@@ -754,9 +754,9 @@ section .text
     MOV dword ptr [ESP + 0x714],EBX     ; 004c8c97
         ;   Label: LAB_004c8c97
     FILD dword ptr [ESP + 0x714]        ; 004c8c9e
-    FMUL double ptr [0x00587e68]        ; 004c8ca5 | DAT_00587e68
+    FMUL double ptr [0x00587e68]        ; 004c8ca5 | DOUBLE_00587e68
     PUSH 0x0                            ; 004c8cab
-    FADD double ptr [0x00587e68]        ; 004c8cad | DAT_00587e68
+    FADD double ptr [0x00587e68]        ; 004c8cad | DOUBLE_00587e68
     SUB ESP,0x4                         ; 004c8cb3
     FSTP float ptr [ESP]                ; 004c8cb6
     MOV EDI,dword ptr [ESI + 0x5ad51c]  ; 004c8cb9 | DAT_005ad51c | DAT_005ad520
@@ -777,11 +777,11 @@ section .text
     MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8ce1 | DAT_005ad53c | DAT_005ad540
     FILD dword ptr [ESP + 0x714]        ; 004c8ce7
     MOV dword ptr [EAX],EDI             ; 004c8cee | DAT_014b8a58 | DAT_014b8aa4
-    FMUL double ptr [0x00587e70]        ; 004c8cf0 | DAT_00587e70
+    FMUL double ptr [0x00587e70]        ; 004c8cf0 | DOUBLE_00587e70
     MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8cf6 | DAT_005ad53c | DAT_005ad540
     PUSH 0x0                            ; 004c8cfc
     MOV dword ptr [EAX + 0x4],EDI       ; 004c8cfe | DAT_014b8a5c | DAT_014b8aa8
-    FADD double ptr [0x00587e70]        ; 004c8d01 | DAT_00587e70
+    FADD double ptr [0x00587e70]        ; 004c8d01 | DOUBLE_00587e70
     SUB ESP,0x4                         ; 004c8d07
     FSTP float ptr [ESP]                ; 004c8d0a
     MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8d0d | DAT_005ad53c | DAT_005ad540
@@ -809,7 +809,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_004e9910 ; 004c8d4a
         ;   XREF to: 004e9910 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_init_FUN_004e9910()
     ADD ESP,0x4                         ; 004c8d4f
-    PUSH 0x587e27                       ; 004c8d52 | DAT_00587e27
+    PUSH 0x587e27                       ; 004c8d52 | = "0"
     PUSH 0x587e29                       ; 004c8d57 | = "Flip on VBlank"
     PUSH 0x587e38                       ; 004c8d5c | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."
     CALL wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0 ; 004c8d61

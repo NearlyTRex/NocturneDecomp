@@ -11,7 +11,7 @@
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c4029
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\keyframe.c_005875db+1
+;   TerminatedCString s_engine_keyframe_c_005875dc
 ;   string s_Bad_key_frame_005875f1
 ;   string s_..\\engine\\keyframe.c_005875ff
 ;   string s_Key_frame_vertex_mismatch_00587614
@@ -99,7 +99,7 @@ section .text
     CMP EAX,0x2                         ; 004c3b3d
     JZ 0x004c3b65                       ; 004c3b40
         ;   XREF to: 004c3b65 (CONDITIONAL_JUMP)  ; LAB_004c3b65
-    MOV EDX,0x5875dc                    ; 004c3b42 | s_..\engine\keyframe.c_005875db+1
+    MOV EDX,0x5875dc                    ; 004c3b42 | = "..\\engine\\keyframe.c"
     MOV ECX,0xfd                        ; 004c3b47
     PUSH 0x5875f1                       ; 004c3b4c | = "Bad key frame"
     MOV dword ptr [0x01cc4800],EDX      ; 004c3b51 | DAT_01cc4800

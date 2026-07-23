@@ -22,10 +22,10 @@
 ;   string s_..\\core\\set.cpp_005907aa
 ;   string s_CSet::buildActorDisplayList_-_Do_005907ba
 ;   string s_buildDispList_%d_items_:_%3.2f_m_005907ed
-;   undefined4 DAT_00590812
-;   undefined4 DAT_0059081a
-;   undefined4 DAT_00590822
-;   undefined4 DAT_0059082a
+;   float FLOAT_00590812 = 0.5
+;   double DOUBLE_0059081a = 0.0555555555555556
+;   double DOUBLE_00590822 = 0.0000152587890625
+;   double DOUBLE_0059082a = 1000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b9354
@@ -214,7 +214,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0050d4a9
     FADD float ptr [EDX + 0x4]          ; 0050d4ac
     FXCH                                ; 0050d4af
-    FLD float ptr [0x00590812]          ; 0050d4b1 | DAT_00590812
+    FLD float ptr [0x00590812]          ; 0050d4b1 | FLOAT_00590812
     FXCH                                ; 0050d4b7
     FMUL ST1                            ; 0050d4b9
     FXCH ST2                            ; 0050d4bb
@@ -326,12 +326,12 @@ section .text
     SUB EAX,EDX                         ; 0050d5e3
     MOV dword ptr [ESP + 0x70],EAX      ; 0050d5e5
     FILD dword ptr [ESP + 0x70]         ; 0050d5e9
-    FMUL double ptr [0x0059081a]        ; 0050d5ed | DAT_0059081a
+    FMUL double ptr [0x0059081a]        ; 0050d5ed | DOUBLE_0059081a
     MOV EAX,[0x005b9354]                ; 0050d5f3 | DAT_005b9354
-    FMUL double ptr [0x00590822]        ; 0050d5f8 | DAT_00590822
+    FMUL double ptr [0x00590822]        ; 0050d5f8 | DOUBLE_00590822
     FLD float ptr [EAX + 0x264]         ; 0050d5fe | DAT_01c77850
     FXCH                                ; 0050d604
-    FMUL double ptr [0x0059082a]        ; 0050d606 | DAT_0059082a
+    FMUL double ptr [0x0059082a]        ; 0050d606 | DOUBLE_0059082a
     FDIVRP                              ; 0050d60c
     SUB ESP,0x8                         ; 0050d60e
     MOV ECX,dword ptr [0x02080430]      ; 0050d611 | DAT_02080430

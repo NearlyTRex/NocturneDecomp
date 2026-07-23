@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   undefined4 s_Get_active_sfx_secondary_buffer_s_00594686+1
+;   TerminatedCString s_Get_active_sfx_secondary_00594687
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
     ADD ESP,0x4                         ; 0052b850
     PUSH EAX                            ; 0052b853
-    PUSH 0x594687                       ; 0052b854 | s_Get_active_sfx_secondary_buffer_s_00594686+1
+    PUSH 0x594687                       ; 0052b854 | = "Get active sfx secondary buffer status"
     PUSH 0x5940b7                       ; 0052b859 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0052b85e
     PUSH EAX                            ; 0052b862

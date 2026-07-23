@@ -47,13 +47,13 @@ int FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,in
     local_1c = 0x1cd8c28;
     do {
       iVar9 = local_1c;
-      _sprintf(local_1c,&DAT_0058b77c,iVar6);
+      _sprintf(local_1c,"%d",iVar6);
       *(uint *)(&DAT_01cd944c + iVar1) = *(uint *)(&DAT_005bdba0 + local_18);
       *(uint *)(iVar1 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_18);
       *(uint *)(iVar1 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_18);
       *(uint *)(iVar1 + 0x1cd8c34) = *(uint *)(&DAT_005bdbac + local_18);
       *(int *)(iVar1 + 0x1cd8c38) = (1 << (*(byte *)(iVar1 + 0x1cd8c34) & 0x1f)) + -1;
-      sscanf(iVar9,&DAT_0058b77f,&local_38);
+      sscanf(iVar9,"%u",&local_38);
       if (iVar6 != local_38) {
         _DAT_01cc4800 = "..\\sound\\mp3.cpp";
         _DAT_01cc4804 = 0xd6b;

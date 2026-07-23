@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -331,15 +331,15 @@
     },
     {
       "addr": "0059db6c",
-      "name": "DAT_0059db6c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059db6c",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "0059db70",
-      "name": "DAT_0059db70",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059db70",
+      "type": "float",
+      "value": "2300"
     },
     {
       "addr": "005b80f0",
@@ -517,7 +517,7 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2 * _DAT_0059db6c + *(float *)(param_1 + 0x154);",
+      "text": "fVar1 = param_2 * 30.0f + *(float *)(param_1 + 0x154);",
       "type": "unnamed_param"
     },
     {
@@ -525,7 +525,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 * _DAT_0059db6c + *(float *)(param_1 + 0x154);",
+      "text": "fVar1 = param_2 * 30.0f + *(float *)(param_1 + 0x154);",
       "type": "unnamed_param"
     },
     {
@@ -541,7 +541,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 0x450FC000;",
+      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 2300.0f;",
       "type": "unnamed_param"
     },
     {
@@ -549,7 +549,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 0x450FC000;",
+      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 2300.0f;",
       "type": "unnamed_param"
     },
     {

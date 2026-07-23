@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_00581e4a
 ;   string s_gabgun.kfm_00581e57
-;   undefined4 DAT_0059dcdc
+;   float FLOAT_0059dcdc = 10
 ;   undefined1* PTR_core_gabriela.cpp_CGabriella_setup_FUN_004957c0_0059dcf4 = 004957c0
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [EBX + 0x1fa6c],0x0   ; 0049571b
     MOV dword ptr [EBX + 0x1fa64],0x0   ; 00495725
     MOV dword ptr [EBX + 0x1fa78],0x0   ; 0049572f
-    FLD float ptr [0x0059dcdc]          ; 00495739 | DAT_0059dcdc
+    FLD float ptr [0x0059dcdc]          ; 00495739 | FLOAT_0059dcdc
     MOV dword ptr [EBX + 0x1fa54],0x0   ; 0049573f
     ADD ESP,0x4                         ; 00495749
     FSTP float ptr [EBX + 0x5a5ac]      ; 0049574c

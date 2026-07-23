@@ -25,7 +25,7 @@
 ;   FUN_00535900 at 00535aeb
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_=_%d_stranger.cpp_l_005956b2+1
+;   TerminatedCString s_actionPending_d_stranger_005956b3
 ;   string s_actionPending_=_%d_stranger.cpp_l_005956db
 ;   string s_Object_to_pick_up_is_now_NULL_st_00595703
 ;   string s_actionPending_=_%d_stranger.cpp_l_00595736
@@ -35,10 +35,10 @@
 ;   string s_fall-1.wav_005957a0
 ;   string s_actionPending_=_%d_stranger.cpp_l_005957ab
 ;   string s_doorToOpen_==_NULL_stranger.cpp_l_005957d3
-;   undefined4 DAT_005957ff
-;   undefined4 DAT_00595807
-;   undefined4 DAT_005a2710
-;   undefined4 DAT_005a2718
+;   double DOUBLE_005957ff = 0.200000000000000
+;   double DOUBLE_00595807 = 0.400000000000000
+;   float FLOAT_005a2710 = 10
+;   float FLOAT_005a2718 = 8
 ;   undefined4 DAT_005b6d50
 ;   ... and 5 more
 ;
@@ -195,8 +195,8 @@ section .text
         ;   XREF to: 00537df4 (CONDITIONAL_JUMP)  ; LAB_00537df4
     PUSH 0x75e                          ; 00537e47
     PUSH EAX                            ; 00537e4c
-    MOV EAX,0x5956b3                    ; 00537e4d | s_actionPending_=_%d_stranger.cpp_l_005956b2+1
-    PUSH EAX                            ; 00537e52 | s_actionPending_=_%d_stranger.cpp_l_005956b2+1
+    MOV EAX,0x5956b3                    ; 00537e4d | = "actionPending = %d\nstranger.cpp line %d"
+    PUSH EAX                            ; 00537e52 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x005b6d50]                ; 00537e53 | DAT_005b6d50
     PUSH EAX                            ; 00537e58
     CALL FUN_0046fb40                   ; 00537e59
@@ -342,7 +342,7 @@ section .text
     MOV dword ptr [ESP + 0xac],EAX      ; 00537fd9
     FLD float ptr [ESP + 0xac]          ; 00537fe0
     ADD ESP,0x8                         ; 00537fe7
-    FCOMP double ptr [0x00595807]       ; 00537fea | DAT_00595807
+    FCOMP double ptr [0x00595807]       ; 00537fea | DOUBLE_00595807
     FNSTSW AX                           ; 00537ff0
     SAHF                                ; 00537ff2
     JA 0x00538078                       ; 00537ff3
@@ -354,7 +354,7 @@ section .text
     MOV dword ptr [ESP + 0xac],EAX      ; 00538001
     FLD float ptr [ESP + 0xac]          ; 00538008
     ADD ESP,0x8                         ; 0053800f
-    FCOMP double ptr [0x00595807]       ; 00538012 | DAT_00595807
+    FCOMP double ptr [0x00595807]       ; 00538012 | DOUBLE_00595807
     FNSTSW AX                           ; 00538018
     SAHF                                ; 0053801a
     JBE 0x00538094                      ; 0053801b
@@ -408,7 +408,7 @@ section .text
     MOV dword ptr [ESP + 0xac],EAX      ; 0053809c
     FLD float ptr [ESP + 0xac]          ; 005380a3
     ADD ESP,0x8                         ; 005380aa
-    FCOMP double ptr [0x00595807]       ; 005380ad | DAT_00595807
+    FCOMP double ptr [0x00595807]       ; 005380ad | DOUBLE_00595807
     FNSTSW AX                           ; 005380b3
     SAHF                                ; 005380b5
     JBE 0x00537da2                      ; 005380b6
@@ -502,7 +502,7 @@ section .text
     JNC 0x00538212                      ; 005381c5
         ;   XREF to: 00538212 (CONDITIONAL_JUMP)  ; LAB_00538212
     FLD double ptr [ESP]                ; 005381c7
-    FMUL double ptr [0x005957ff]        ; 005381ca | DAT_005957ff
+    FMUL double ptr [0x005957ff]        ; 005381ca | DOUBLE_005957ff
     CALL crt_math.c_round_FUN_00563a30  ; 005381d0
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0xa4]        ; 005381d5
@@ -586,12 +586,12 @@ section .text
     ADD ESP,0x4                         ; 005382b0
     JMP 0x00537da2                      ; 005382b3
         ;   XREF to: 00537da2 (UNCONDITIONAL_JUMP)  ; LAB_00537da2
-    MOV EAX,[0x005a2710]                ; 005382b8 | DAT_005a2710
+    MOV EAX,[0x005a2710]                ; 005382b8 | FLOAT_005a2710
         ;   Label: LAB_005382b8
     MOV dword ptr [EBX + 0x2424],EAX    ; 005382bd
     JMP 0x00537da2                      ; 005382c3
         ;   XREF to: 00537da2 (UNCONDITIONAL_JUMP)  ; LAB_00537da2
-    MOV EAX,[0x005a2718]                ; 005382c8 | DAT_005a2718
+    MOV EAX,[0x005a2718]                ; 005382c8 | FLOAT_005a2718
         ;   Label: LAB_005382c8
     MOV dword ptr [EBX + 0x2424],EAX    ; 005382cd
     JMP 0x00537da2                      ; 005382d3

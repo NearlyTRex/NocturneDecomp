@@ -28,7 +28,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
   
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   if (param_2 < 1) {
-    _DAT_01cc4800 = "?..\\core\\netgame.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\netgame.cpp";
     _DAT_01cc4804 = 0x337;
     FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
   }
@@ -64,7 +64,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
           if (piVar3[0x17] < param_2) {
             local_1c = 0.0;
             engine_2d_c_drawText_FUN_00402600(local_20 + iVar2 * 0x1e,0,local_18);
-            _sprintf(local_194,&DAT_0058bd94,piVar3[0x17]);
+            _sprintf(local_194,"%d",piVar3[0x17]);
             engine_2d_c_drawText_FUN_00402600(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
@@ -77,14 +77,14 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
       local_14 = _DAT_01cea3f8 - local_24;
-      local_198 = (float)local_14 * (float)_DAT_0058be3a;
+      local_198 = (float)local_14 * (float)1.52587890625e-05;
       if (local_198 < 0.0) {
         local_198 = fVar1;
       }
-      if ((float)_DAT_0058be42 < local_198) {
+      if ((float)30 < local_198) {
         local_198 = 30.0;
       }
-      if ((float)_DAT_0058be4a < local_198) {
+      if ((float)0.10000000000000001 < local_198) {
         local_24 = _DAT_01cea3f8;
         local_2c = 8;
         local_30 = 9;

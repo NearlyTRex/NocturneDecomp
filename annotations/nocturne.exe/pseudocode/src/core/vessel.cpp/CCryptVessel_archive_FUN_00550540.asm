@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   string s_modelName_005974c5
-;   undefined4 DAT_005974cf
+;   TerminatedCString s_prey_005974cf
 ;   string s_neutral_005974d4
 ;   string s_destroyedEvent_005974dc
 ;   string s_startLoc_005974eb
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0055055a
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00()
     ADD ESP,0x8                         ; 0055055f
-    PUSH 0x5974cf                       ; 00550562 | DAT_005974cf
+    PUSH 0x5974cf                       ; 00550562 | = "prey"
     LEA EAX,[EBX + 0x2d0]               ; 00550567
     PUSH EAX                            ; 0055056d
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0055056e

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -230,51 +230,51 @@
   "globals": [
     {
       "addr": "00595cb7",
-      "name": "DAT_00595cb7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cb7",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00595cbf",
-      "name": "DAT_00595cbf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cbf",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "00595cc7",
-      "name": "DAT_00595cc7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cc7",
+      "type": "double",
+      "value": "0.0333333333333333"
     },
     {
       "addr": "00595ccf",
-      "name": "DAT_00595ccf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595ccf",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "00595cd7",
-      "name": "DAT_00595cd7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cd7",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00595cdf",
-      "name": "DAT_00595cdf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cdf",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "00595ce7",
-      "name": "DAT_00595ce7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595ce7",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "00595cef",
-      "name": "DAT_00595cef",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595cef",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005993b0",
@@ -284,15 +284,15 @@
     },
     {
       "addr": "005a2730",
-      "name": "DAT_005a2730",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2730",
+      "type": "float",
+      "value": "-1.047198"
     },
     {
       "addr": "005a2734",
-      "name": "DAT_005a2734",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2734",
+      "type": "float",
+      "value": "1.221730"
     },
     {
       "addr": "005be368",
@@ -636,7 +636,7 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = *(float *)(param_1 + 0xbcbc) * (float)_DAT_00595cb7 * (float)_DAT_00595cbf * param_3 +",
+      "text": "fVar8 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_3 +",
       "type": "unnamed_param"
     },
     {
@@ -644,7 +644,7 @@
       "line": 110,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar8 = *(float *)(param_1 + 0xbcbc) * (float)_DAT_00595cb7 * (float)_DAT_00595cbf * param_3 +",
+      "text": "fVar8 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_3 +",
       "type": "unnamed_param"
     },
     {
@@ -764,7 +764,7 @@
       "line": 243,
       "match": "param_3",
       "severity": "mild",
-      "text": "fStack_44 = param_3 * (float)_DAT_00595cb7 * (float)dVar2;",
+      "text": "fStack_44 = param_3 * (float)3.1415926535000001 * (float)dVar2;",
       "type": "unnamed_param"
     },
     {
@@ -772,7 +772,7 @@
       "line": 267,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "if (((local_24[7] == 1.4013e-45) && (ABS(local_24[3] - fStack_38) < (float)_DAT_00595cdf)) &&",
+      "text": "if (((local_24[7] == 1.4013e-45) && (ABS(local_24[3] - fStack_38) < (float)0.01)) &&",
       "type": "suspect_float"
     },
     {

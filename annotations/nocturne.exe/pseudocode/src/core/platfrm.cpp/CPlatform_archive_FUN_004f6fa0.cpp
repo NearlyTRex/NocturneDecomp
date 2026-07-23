@@ -18,8 +18,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(int param_1)
   int local_14;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-            (param_1 + 0x150,"?modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x34c,"toStartEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3b0,"toEndEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x414,"stopEvent");

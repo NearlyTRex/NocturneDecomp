@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x30]:1  local_30
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005974a3
+;   double DOUBLE_005974a3 = 65535
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -104,7 +104,7 @@ section .text
     SAHF                                ; 005502d5
     JNC 0x00550353                      ; 005502d6
         ;   XREF to: 00550353 (CONDITIONAL_JUMP)  ; LAB_00550353
-    FLD double ptr [0x005974a3]         ; 005502d8 | DAT_005974a3
+    FLD double ptr [0x005974a3]         ; 005502d8 | DOUBLE_005974a3
     FLD double ptr [ESP]                ; 005502de
     FMUL ST1                            ; 005502e1
     FSUBP                               ; 005502e3

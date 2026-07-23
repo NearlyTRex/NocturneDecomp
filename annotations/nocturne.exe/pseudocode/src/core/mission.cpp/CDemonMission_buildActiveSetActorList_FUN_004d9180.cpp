@@ -25,7 +25,7 @@ void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *pa
     if (*param_1 == *(int *)(iVar1 + 0x2c)) {
       if (*(int *)(iVar1 + 0x70) == 0) {
         if (*(char *)(iVar1 + 0x78) != '\0') {
-          iVar2 = _stricmp(iVar1 + 0x78,&DAT_00589d44);
+          iVar2 = _stricmp(iVar1 + 0x78,"none");
           if ((iVar2 != 0) &&
              (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                 (0x01C03A10,iVar1 + 0x78), iVar2 == 0)) goto LAB_004d927a;

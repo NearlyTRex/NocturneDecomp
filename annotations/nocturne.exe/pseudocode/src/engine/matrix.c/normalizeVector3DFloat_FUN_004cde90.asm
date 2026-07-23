@@ -21,7 +21,7 @@
 ;   engine_light.cpp_calculatePhongLighting_FUN_004c6a70 at 004c6b8f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00588283
+;   double DOUBLE_00588283 = 65535
 ;
 ; *****************************************************************************
 
@@ -64,7 +64,7 @@ section .text
     FDIV double ptr [EBP + -0x2c]       ; 004cdedb
     FLD double ptr [EBP + -0x24]        ; 004cdede
     FMUL ST1                            ; 004cdee1
-    FLD double ptr [0x00588283]         ; 004cdee3 | DAT_00588283
+    FLD double ptr [0x00588283]         ; 004cdee3 | DOUBLE_00588283
     FXCH                                ; 004cdee9
     FMUL ST1                            ; 004cdeeb
     FSTP double ptr [EBP + -0x24]       ; 004cdeed

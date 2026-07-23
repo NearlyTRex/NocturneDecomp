@@ -8,7 +8,7 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500f8d
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\script.cpp_0058fab1+1
+;   TerminatedCString s_core_script_cpp_0058fab2
 ;   string s_CScript::processTimer_-_invalidT_0058fac5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -56,7 +56,7 @@ section .text
     POP ESI                             ; 00504bb5
     POP EBX                             ; 00504bb6
     RET                                 ; 00504bb7
-    MOV EDX,0x58fab2                    ; 00504bb8 | s_..\core\script.cpp_0058fab1+1
+    MOV EDX,0x58fab2                    ; 00504bb8 | = "..\\core\\script.cpp"
         ;   Label: LAB_00504bb8
     MOV ECX,0xdf7                       ; 00504bbd
     PUSH 0x58fac5                       ; 00504bc2 | = "CScript::processTimer - invalidTimeTo..."

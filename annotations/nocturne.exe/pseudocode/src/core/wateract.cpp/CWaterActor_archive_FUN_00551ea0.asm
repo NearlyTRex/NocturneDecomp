@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059766f
+;   TerminatedCString s_size_0059766f
 ;   string s_opacity_00597674
 ;   string s_heightDelta_0059767c
 ;   string s_timeToMove_00597688
@@ -40,7 +40,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 00551ea6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 00551eab
-    PUSH 0x59766f                       ; 00551eae | DAT_0059766f
+    PUSH 0x59766f                       ; 00551eae | = "size"
     LEA EAX,[EBX + 0x150]               ; 00551eb3
     PUSH EAX                            ; 00551eb9
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 00551eba
@@ -173,20 +173,20 @@ section .text
     ADD ESP,0x8                         ; 0055204c
     JMP 0x00551ee5                      ; 0055204f
         ;   XREF to: 00551ee5 (UNCONDITIONAL_JUMP)  ; LAB_00551ee5
-    PUSH 0x597729                       ; 00552054 | DAT_00597729
+    PUSH 0x597729                       ; 00552054 | = "colR"
         ;   Label: LAB_00552054
     LEA EAX,[EBX + 0x284]               ; 00552059
     PUSH EAX                            ; 0055205f
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00552060
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 00552065
-    PUSH 0x59772e                       ; 00552068 | DAT_0059772e
+    PUSH 0x59772e                       ; 00552068 | = "colG"
     LEA EAX,[EBX + 0x288]               ; 0055206d
     PUSH EAX                            ; 00552073
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00552074
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 00552079
-    PUSH 0x597733                       ; 0055207c | DAT_00597733
+    PUSH 0x597733                       ; 0055207c | = "colB"
     ADD EBX,0x28c                       ; 00552081
     PUSH EBX                            ; 00552087
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00552088

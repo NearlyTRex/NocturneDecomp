@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -477,27 +477,27 @@
     },
     {
       "addr": "0058b2ad",
-      "name": "DAT_0058b2ad",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b2ad",
+      "type": "double",
+      "value": "0.0000100000000000000"
     },
     {
       "addr": "0058b2b5",
-      "name": "DAT_0058b2b5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b2b5",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "0058b2bd",
-      "name": "DAT_0058b2bd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b2bd",
+      "type": "double",
+      "value": "0.499900000000000"
     },
     {
       "addr": "0058b2c5",
-      "name": "DAT_0058b2c5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b2c5",
+      "type": "double",
+      "value": "0.000100000000000000"
     },
     {
       "addr": "01cc4800",
@@ -867,7 +867,7 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*param_2 <= (float)_DAT_0058b2ad) break;",
+      "text": "if (*param_2 <= (float)1.0000000000000001e-05) break;",
       "type": "unnamed_param"
     },
     {
@@ -971,7 +971,7 @@
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_44 = (float)_DAT_0058b2b5 - *(float *)(param_1 + 0x14);",
+      "text": "local_44 = (float)0.5 - *(float *)(param_1 + 0x14);",
       "type": "unnamed_param"
     },
     {

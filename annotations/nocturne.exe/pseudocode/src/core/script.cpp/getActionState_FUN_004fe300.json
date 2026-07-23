@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 292,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 24,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 150
@@ -166,8 +165,8 @@
   "globals": [
     {
       "addr": "0058e16d",
-      "name": "DAT_0058e16d",
-      "type": "undefined4",
+      "name": "s_walk_0058e16d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -178,14 +177,14 @@
     },
     {
       "addr": "0058e179",
-      "name": "DAT_0058e179",
-      "type": "undefined4",
+      "name": "s_run_0058e179",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e17d",
-      "name": "DAT_0058e17d",
-      "type": "undefined4",
+      "name": "s_fire_0058e17d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -202,14 +201,14 @@
     },
     {
       "addr": "0058e190",
-      "name": "DAT_0058e190",
-      "type": "undefined4",
+      "name": "s_draw_0058e190",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e195",
-      "name": "DAT_0058e195",
-      "type": "undefined4",
+      "name": "s_jump_0058e195",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -298,16 +297,8 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e16d);",
+      "text": "iVar1 = _stricmp(param_2,\"walk\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_0058e16d",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e16d);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -338,16 +329,8 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e179);",
+      "text": "iVar1 = _stricmp(param_2,\"run\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0058e179",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e179);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -362,16 +345,8 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e17d);",
+      "text": "iVar1 = _stricmp(param_2,\"fire\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0058e17d",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e17d);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -418,16 +393,8 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e190);",
+      "text": "iVar1 = _stricmp(param_2,\"draw\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0058e190",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e190);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -442,16 +409,8 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e195);",
+      "text": "iVar1 = _stricmp(param_2,\"jump\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_0058e195",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_0058e195);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

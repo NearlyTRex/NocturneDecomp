@@ -117,7 +117,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
           local_9c = *(float *)(iVar5 + 0x28) - *(float *)(param_1 + 0x28);
           local_1c = SQRT(local_9c * local_9c + local_a4 * local_a4 + local_a0 * local_a0);
           local_18 = local_1c;
-          if (local_1c < 0x40400000) {
+          if (local_1c < 3.0f) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_68,&local_a4);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_64 - *(float *)(param_1 + 0x34));
@@ -126,7 +126,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
             }
           }
           if (*(float *)(param_1 + 0xbc9c) <= local_1c) break;
-          if (_DAT_0059df48 <= local_1c) {
+          if (10.0f <= local_1c) {
             iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0x3dcccccd);
             if (iVar3 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);
@@ -170,7 +170,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
           }
           else {
             *(uint *)(param_1 + 0x23ac) = 0;
-            local_78 = 0x40400000;
+            local_78 = 3.0f;
             *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
             *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
             local_20 = local_78;
@@ -186,7 +186,7 @@ void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(int param_1,float param_2)
               local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);
               local_58 = iVar5;
               local_24 = local_30;
-              if (_DAT_0059df48 < local_30) {
+              if (10.0f < local_30) {
                 iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0x3dcccccd);
                 if (iVar5 == 0) {
                   uVar4 = 2;

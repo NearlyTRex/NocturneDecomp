@@ -23,7 +23,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
   int local_a8;
   uint local_a4;
   uint local_a0;
-  uint local_9c;
+  float local_9c;
   byte local_98 [12];
   byte local_8c [12];
   float local_80;
@@ -45,7 +45,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
   float local_30;
   float local_24;
   float local_20;
-  uint local_1c;
+  float local_1c;
   float local_18;
   float local_14;
   
@@ -124,8 +124,8 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
            && (iVar4 == 1)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar5,2,1);
         }
-        local_9c = 0x40400000;
-        local_1c = 0x40400000;
+        local_9c = 3.0f;
+        local_1c = 3.0f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);

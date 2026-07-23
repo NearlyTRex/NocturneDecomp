@@ -25,7 +25,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(uint param_1,i
     if (iVar1 != 0) {
       uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
       _sprintf(&piStack_19c,"DirectSux: Unable to %s.  (%s)",
-                 "@Get active sfx secondary buffer status" + 1,uVar2);
+                 "Get active sfx secondary buffer status",uVar2);
       FUN_00529980(&piStack_19c);
       return 0;
     }

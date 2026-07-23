@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_zombie_cpp_FUN_005621f0(int param_1,float *param_2)
 
 {
@@ -53,8 +51,8 @@ LAB_0056227c:
           local_44 = pfVar3[1];
           local_40 = pfVar3[2];
         }
-        local_44 = local_2c * (float)_DAT_00598996 + local_44 * (float)_DAT_0059898e;
-        local_48 = local_30 * (float)_DAT_00598986 + local_48 * (float)_DAT_00598986;
+        local_44 = local_2c * (float)0.29999999999999999 + local_44 * (float)0.69999999999999996;
+        local_48 = local_30 * (float)0.5 + local_48 * (float)0.5;
         pfVar3 = param_2 + iVar5 * 3;
         if (pfVar3 != &local_48) {
           *pfVar3 = local_48;

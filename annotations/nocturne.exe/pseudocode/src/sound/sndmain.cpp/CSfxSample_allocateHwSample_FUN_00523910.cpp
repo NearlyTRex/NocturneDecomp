@@ -58,7 +58,7 @@ uint __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(int para
           iVar7 = iVar7 + 1;
         } while (iVar7 < 0x40);
       } while (iVar7 < 0x40);
-      FUN_00529980("?allocateHwSample - failed\n" + 1);
+      FUN_00529980("allocateHwSample - failed\n");
     }
     iVar5 = 0;
 LAB_005239c5:

@@ -12,15 +12,15 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526923
 ;
 ; Referenced Globals:
-;   undefined4 s_sound_00592655+1
-;   undefined4 DAT_0059265c
-;   undefined4 DAT_00592660
+;   TerminatedCString s_sound_00592656
+;   TerminatedCString s_wav_0059265c
+;   TerminatedCString s_rb_00592660
 ;   string s_sound_00592663
 ;   string s_..\\sound\\sndmain.cpp_00592669
 ;   string s_Can't_open_%s_0059267e
 ;   string s_Failed_to_lock_sample_%s_0059268c
 ;   string s_Error_reading_file_data_for_%s_005926a6
-;   undefined4 DAT_005926c6
+;   TerminatedCString s_mp3_005926c6
 ;   string s_..\\sound\\sndmain.cpp_005926ca
 ;   string s_Don't_know_length_of_sample_%s_005926df
 ;   string s_Failed_to_lock_sample_%s_005926fe
@@ -124,7 +124,7 @@ section .text
         ;   Label: LAB_00522531
     PUSH EDX                            ; 00522538
     XOR EAX,EAX                         ; 00522539
-    PUSH 0x592656                       ; 0052253b | s_sound_00592655+1
+    PUSH 0x592656                       ; 0052253b | = "sound"
     MOV dword ptr [ESP + 0x108],EAX     ; 00522540
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00522547
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
@@ -178,7 +178,7 @@ section .text
     CALL crt_string.c_memmove_FUN_00566170 ; 005225b0
         ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
     ADD ESP,0xc                         ; 005225b5
-    PUSH 0x59265c                       ; 005225b8 | DAT_0059265c
+    PUSH 0x59265c                       ; 005225b8 | = "wav"
         ;   Label: LAB_005225b8
     LEA EAX,[ESP + 0x4]                 ; 005225bd
     PUSH EAX                            ; 005225c1
@@ -188,7 +188,7 @@ section .text
     TEST EAX,EAX                        ; 005225ca
     JNZ 0x005227e7                      ; 005225cc
         ;   XREF to: 005227e7 (CONDITIONAL_JUMP)  ; LAB_005227e7
-    PUSH 0x592660                       ; 005225d2 | DAT_00592660
+    PUSH 0x592660                       ; 005225d2 | = "rb"
     MOV EDX,dword ptr [ESP + 0x11c]     ; 005225d7
     PUSH EDX                            ; 005225de
     PUSH 0x592663                       ; 005225df | = "sound"
@@ -365,7 +365,7 @@ section .text
     PUSH 0x5926a6                       ; 005227dd | = "Error reading file data for %s\n"
     JMP 0x005226f0                      ; 005227e2
         ;   XREF to: 005226f0 (UNCONDITIONAL_JUMP)  ; LAB_005226f0
-    PUSH 0x5926c6                       ; 005227e7 | DAT_005926c6
+    PUSH 0x5926c6                       ; 005227e7 | = "mp3"
         ;   Label: LAB_005227e7
     LEA EAX,[ESP + 0x4]                 ; 005227ec
     PUSH EAX                            ; 005227f0

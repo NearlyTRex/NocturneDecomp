@@ -16,7 +16,7 @@ int core_spike_cpp_CSpike_ctor_FUN_00533020(uint param_1)
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  pcVar3 = &DAT_0059501b;
+  pcVar3 = "none";
   *(byte ***)(iVar2 + -4) = &PTR_core_spike_cpp_CSpike_setup_FUN_00533160_005a2334;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"bgate.kfm");
   *(uint *)(iVar2 + 0x17c) = 0;
@@ -32,7 +32,7 @@ int core_spike_cpp_CSpike_ctor_FUN_00533020(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00595020;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x1fc);
   do {
     cVar1 = *pcVar3;
@@ -43,7 +43,7 @@ int core_spike_cpp_CSpike_ctor_FUN_00533020(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00595025;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x260);
   do {
     cVar1 = *pcVar3;
@@ -54,7 +54,7 @@ int core_spike_cpp_CSpike_ctor_FUN_00533020(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_0059502a;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x2c4);
   do {
     cVar1 = *pcVar3;

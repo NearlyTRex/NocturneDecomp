@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 146,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -194,8 +193,8 @@
   "globals": [
     {
       "addr": "0058dced",
-      "name": "DAT_0058dced",
-      "type": "undefined4",
+      "name": "s_rt_0058dced",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -212,14 +211,14 @@
     },
     {
       "addr": "0058dcfe",
-      "name": "DAT_0058dcfe",
-      "type": "undefined4",
+      "name": "s_d_0058dcfe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058dd02",
-      "name": "DAT_0058dd02",
-      "type": "undefined4",
+      "name": "s_s_0058dd02",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -300,14 +299,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0058dced",
-      "severity": "mild",
-      "text": "iVar1 = _fopen(\"pod.ini\",&DAT_0058dced);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 16,
       "match": "code *",
@@ -330,22 +321,6 @@
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,local_170);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_0058dcfe",
-      "severity": "mild",
-      "text": "_fscanf(iVar1,&DAT_0058dcfe,&local_c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0058dd02",
-      "severity": "mild",
-      "text": "_fscanf(iVar1,&DAT_0058dd02,local_5c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

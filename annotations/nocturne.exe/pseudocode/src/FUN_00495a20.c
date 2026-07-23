@@ -150,11 +150,11 @@ void FUN_00495a20(int param_1,float param_2)
     *(float *)(param_1 + 0x242c) = *(float *)(param_1 + 0x242c) - local_14 * _DAT_01c71360;
     local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(iVar9,0x14)
     ;
-    local_20 = 0.0 - local_14 * _DAT_0059dcd8;
+    local_20 = 0.0 - local_14 * 2.0f;
     local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(iVar9,0x15)
     ;
     iVar9 = 0x01C775EC;
-    fVar8 = local_14 * _DAT_0059dcd8;
+    fVar8 = local_14 * 2.0f;
     *(float *)(param_1 + 0x2430) = param_2 * (float)12.566370614;
     local_20 = fVar8 + local_20;
     if (*(int *)(iVar9 + 0x228) != 0) {
@@ -443,14 +443,14 @@ LAB_00496834:
     }
   }
   if ((*(byte *)(param_1 + 0x1fa3c) & 1) == 0) {
-    fVar8 = *(float *)(param_1 + 0x1fa40) - param_2 / _DAT_0059dc9c;
+    fVar8 = *(float *)(param_1 + 0x1fa40) - param_2 / 1.2f;
     *(float *)(param_1 + 0x1fa40) = fVar8;
     if (fVar8 < 0.0) {
       *(uint *)(param_1 + 0x1fa40) = 0;
     }
   }
   else {
-    fVar8 = param_2 / _DAT_0059dc98 + *(float *)(param_1 + 0x1fa40);
+    fVar8 = param_2 / 1.1f + *(float *)(param_1 + 0x1fa40);
     *(float *)(param_1 + 0x1fa40) = fVar8;
     if (1.0 < fVar8) {
       *(uint *)(param_1 + 0x1fa40) = 0x3f800000;
@@ -458,12 +458,12 @@ LAB_00496834:
   }
   if ((*(byte *)(param_1 + 0x1fa3c) & 2) == 0) {
     local_30 = *(float *)(param_1 + 0x1fa44);
-    fVar8 = local_30 - param_2 / _DAT_0059dc9c;
+    fVar8 = local_30 - param_2 / 1.2f;
     *(float *)(param_1 + 0x1fa44) = fVar8;
     if (fVar8 < 0.0) {
       *(uint *)(param_1 + 0x1fa44) = 0;
     }
-    local_38 = _DAT_0059dca4 + (float)0.14000000000000001;
+    local_38 = 0.64f + (float)0.14000000000000001;
     if ((local_38 <= local_30) && (*(float *)(param_1 + 0x1fa44) < local_38)) {
       pcVar18 = "undraw-s.wav @ .7";
       goto LAB_00495f6c;
@@ -471,12 +471,12 @@ LAB_00496834:
   }
   else {
     local_44 = *(float *)(param_1 + 0x1fa44);
-    fVar8 = param_2 / _DAT_0059dc98 + local_44;
+    fVar8 = param_2 / 1.1f + local_44;
     *(float *)(param_1 + 0x1fa44) = fVar8;
     if (1.0 < fVar8) {
       *(uint *)(param_1 + 0x1fa44) = 0x3f800000;
     }
-    local_40 = _DAT_0059dca4 + (float)-0.14999999999999999;
+    local_40 = 0.64f + (float)-0.14999999999999999;
     if ((local_44 <= local_40) && (local_40 < *(float *)(param_1 + 0x1fa44))) {
       FUN_004a3a70(0x01C775EC);
       pcVar18 = "draw-f.wav @ 1.5";
@@ -485,21 +485,21 @@ LAB_00495f6c:
     }
   }
   if ((*(byte *)(param_1 + 0x1fa3c) & 3) == 0) {
-    fVar8 = *(float *)(param_1 + 0x1fa48) - param_2 / _DAT_0059dc9c;
+    fVar8 = *(float *)(param_1 + 0x1fa48) - param_2 / 1.2f;
     *(float *)(param_1 + 0x1fa48) = fVar8;
     if (fVar8 < 0.0) {
       *(uint *)(param_1 + 0x1fa48) = 0;
     }
   }
   else {
-    fVar8 = param_2 / _DAT_0059dc98 + *(float *)(param_1 + 0x1fa48);
+    fVar8 = param_2 / 1.1f + *(float *)(param_1 + 0x1fa48);
     *(float *)(param_1 + 0x1fa48) = fVar8;
     if (1.0 < fVar8) {
       *(uint *)(param_1 + 0x1fa48) = 0x3f800000;
     }
   }
   if (bVar7 || (bVar6 || (bVar5 || (bVar4 || (bVar16 || (bVar15 || (bVar14 || bVar3))))))) {
-    fVar8 = (param_2 / _DAT_0059dc9c) * (float)3;
+    fVar8 = (param_2 / 1.2f) * (float)3;
 LAB_00495fcb:
     fVar8 = *(float *)(param_1 + 0x1fa4c) - fVar8;
   }
@@ -507,10 +507,10 @@ LAB_00495fcb:
     if (((iVar9 == 0) || (*(int *)(iVar9 + 0x231c) == 0)) ||
        (iVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150),
        *(int *)(iVar9 + 0x24) == 5)) {
-      fVar8 = param_2 / _DAT_0059dc9c;
+      fVar8 = param_2 / 1.2f;
       goto LAB_00495fcb;
     }
-    fVar8 = param_2 / _DAT_0059dc98 + *(float *)(param_1 + 0x1fa4c);
+    fVar8 = param_2 / 1.1f + *(float *)(param_1 + 0x1fa4c);
   }
   *(float *)(param_1 + 0x1fa4c) = fVar8;
   if (*(float *)(param_1 + 0x1fa4c) < 0.0) {
@@ -522,7 +522,7 @@ LAB_00495fcb:
   core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0
             (param_1,param_2,
              bVar7 || (bVar6 || (bVar5 || (bVar4 || (bVar16 || (bVar15 || (bVar14 || bVar3)))))));
-  fVar8 = *(float *)(param_1 + 0x1fa74) - param_2 / _DAT_0059dcac;
+  fVar8 = *(float *)(param_1 + 0x1fa74) - param_2 / 0.2f;
   *(float *)(param_1 + 0x1fa74) = fVar8;
   if (((fVar8 <= 0.0) &&
       (*(uint *)(param_1 + 0x1fa74) = 0,
@@ -605,10 +605,10 @@ LAB_00495fcb:
       else {
         fVar8 = param_2 * (float)25 + *(float *)(param_1 + 0x5a5ac);
         *(float *)(param_1 + 0x5a5ac) = fVar8;
-        if (0x42700000 < fVar8) {
+        if (60.0f < fVar8) {
           *(uint *)(param_1 + 0xbca0) = 0;
           *(uint *)(param_1 + 0x1fa54) = 2;
-          *(float *)(param_1 + 0x5a5ac) = 0x42700000;
+          *(float *)(param_1 + 0x5a5ac) = 60.0f;
         }
       }
       local_e8 = *(uint *)(param_1 + 0x1fa6c);
@@ -631,7 +631,7 @@ LAB_00495fcb:
     }
     *(uint *)(param_1 + 0x1fa54) = 2;
 LAB_004961ba:
-    *(uint *)(param_1 + 0x5a5ac) = _DAT_0059dcdc;
+    *(float *)(param_1 + 0x5a5ac) = 10.0f;
     iVar9 = core_gabriela_cpp_CGabriella_canFireWeapon_FUN_00498af0(param_1);
     if (iVar9 == 0) goto LAB_00496cd2;
     *(uint *)(param_1 + 0x1fa54) = 1;

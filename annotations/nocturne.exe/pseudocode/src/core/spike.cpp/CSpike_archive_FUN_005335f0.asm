@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_00595039+1
+;   TerminatedCString s_modelName_0059503a
 ;   string s_spikeType_00595044
 ;   string s_spikeState_0059504e
 ;   string s_areWeActive_00595059
@@ -40,7 +40,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 005335f6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 005335fb
-    PUSH 0x59503a                       ; 005335fe | s_modelName_00595039+1
+    PUSH 0x59503a                       ; 005335fe | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 00533603
     PUSH EAX                            ; 00533609
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0053360a

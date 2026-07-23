@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 184,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 15,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 74
@@ -166,14 +165,14 @@
   "globals": [
     {
       "addr": "00590882",
-      "name": "s_//_Set_state_version_00590881+1",
-      "type": "undefined4",
+      "name": "s_Set_state_version_00590882",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590898",
-      "name": "DAT_00590898",
-      "type": "undefined4",
+      "name": "s_s_1_00590898",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -184,14 +183,14 @@
     },
     {
       "addr": "005908ba",
-      "name": "DAT_005908ba",
-      "type": "undefined4",
+      "name": "s_d_005908ba",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005908be",
-      "name": "DAT_005908be",
-      "type": "undefined4",
+      "name": "s_d_005908be",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -272,7 +271,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"@// Set state version\\n\" + 1);",
+      "text": "_fprintf(param_2,\"// Set state version\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -280,16 +279,8 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00590898);",
+      "text": "_fprintf(param_2,\"1\\n\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00590898",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00590898);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -304,7 +295,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005908ba,*param_1);",
+      "text": "_fprintf(param_2,\"%d\\n\",*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -312,16 +303,8 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005908ba,*param_1);",
+      "text": "_fprintf(param_2,\"%d\\n\",*param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005908ba",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005908ba,*param_1);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -344,16 +327,8 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005908be,piVar2[0x68]);",
+      "text": "_fprintf(param_2,\"%d\\n\",piVar2[0x68]);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005908be",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_005908be,piVar2[0x68]);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

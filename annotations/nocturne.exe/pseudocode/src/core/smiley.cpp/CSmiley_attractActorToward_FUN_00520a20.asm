@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005920a5
+;   float FLOAT_005920a5 = -4
 ;   undefined4 DAT_02da8a7c
 ;   undefined4 DAT_02dd1184
 ;
@@ -73,7 +73,7 @@ section .text
     FLD float ptr [ESP + 0x4]           ; 00520aa7
     PUSH EAX                            ; 00520aab
     LEA EAX,[ESP + 0x4]                 ; 00520aac
-    FADD float ptr [0x005920a5]         ; 00520ab0 | DAT_005920a5
+    FADD float ptr [0x005920a5]         ; 00520ab0 | FLOAT_005920a5
     PUSH EAX                            ; 00520ab6
     FSTP float ptr [ESP + 0xc]          ; 00520ab7
     MOV EDX,dword ptr [EBX + 0x14c]     ; 00520abb

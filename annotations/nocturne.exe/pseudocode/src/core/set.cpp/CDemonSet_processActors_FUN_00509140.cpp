@@ -223,7 +223,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
             iVar8 = iVar7 + 1;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (PTR_DAT_005ad350,"%d. %s : %3.2f ms\n",iVar7,*puVar2,
-                       ((double)*piVar1 * _DAT_005904e2 * _DAT_005904ea * _DAT_005904f2) /
+                       ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                        (double)fVar3);
             iVar7 = iVar8;
           } while (iVar8 < iVar6);
@@ -233,8 +233,8 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
       iStack_18 = iStack_18 - local_44;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Process time (%d actors) : %3.2f ms\n",local_20,
-                 ((double)iStack_18 * _DAT_005904e2 * _DAT_005904ea * _DAT_005904f2) / (double)fVar3
-                );
+                 ((double)iStack_18 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
+                 (double)fVar3);
     }
     iVar6 = 0;
     if (0 < *(int *)(param_1 + 0x14cd6c)) {

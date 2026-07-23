@@ -17,15 +17,15 @@
 ;   FUN_004c85f0 at 004c86f9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058c922
-;   undefined4 DAT_0058c923
-;   undefined4 DAT_0058c926
-;   undefined4 DAT_0058c927
-;   undefined4 DAT_0058c92b
+;   char CHAR_00h_0058c922 = \x00
+;   TerminatedCString s_rt_0058c923
+;   char CHAR_00h_0058c926 = \x00
+;   TerminatedCString s_d_0058c927
+;   TerminatedCString s_d_0058c92b
 ;   string s_..\\support\\newmsg.cpp_0058c92f
 ;   string s_Unknown_message_file_version_0058c945
 ;   string s_\"%[^\"]\"_0058c962
-;   undefined4 DAT_0058c96b
+;   TerminatedCString s_anon_0058c96b
 ;   string s_\"%[^\"]\",_\"%[^\"]\"_0058c96d
 ;   string s_..\\support\\newmsg.cpp_0058c97f
 ;   string s_Error_reading_%s_0058c995
@@ -57,7 +57,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x320]     ; 004edfca
     PUSH EBP                            ; 004edfd1
     XOR EDX,EDX                         ; 004edfd2
-    PUSH 0x58c922                       ; 004edfd4 | DAT_0058c922
+    PUSH 0x58c922                       ; 004edfd4 | CHAR_00h_0058c922
     MOV dword ptr [ESP + 0x308],EDX     ; 004edfd9
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004edfe0
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
@@ -75,10 +75,10 @@ section .text
     LEA EAX,[EAX]                       ; 004edff8
     MOV EDX,EDX                         ; 004edffe
     RET                                 ; 004ee000
-    PUSH 0x58c923                       ; 004ee001 | DAT_0058c923
+    PUSH 0x58c923                       ; 004ee001 | = "rt"
         ;   Label: LAB_004ee001
     PUSH EBP                            ; 004ee006
-    PUSH 0x58c926                       ; 004ee007 | DAT_0058c926
+    PUSH 0x58c926                       ; 004ee007 | CHAR_00h_0058c926
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004ee00c
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV ESI,EAX                         ; 004ee011
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0xc                         ; 004ee03e
     LEA EAX,[ESP + 0x300]               ; 004ee041
     PUSH EAX                            ; 004ee048
-    PUSH 0x58c927                       ; 004ee049 | DAT_0058c927
+    PUSH 0x58c927                       ; 004ee049 | = "%d\n"
     PUSH ESI                            ; 004ee04e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee04f
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
     ADD ESP,0xc                         ; 004ee067
     PUSH 0x1d16810                      ; 004ee06a | DAT_01d16810
-    PUSH 0x58c92b                       ; 004ee06f | DAT_0058c92b
+    PUSH 0x58c92b                       ; 004ee06f | = "%d\n"
     PUSH ESI                            ; 004ee074
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee075
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -137,7 +137,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee0a9
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     ADD ESP,0xc                         ; 004ee0ae
-    PUSH 0x58c96b                       ; 004ee0b1 | DAT_0058c96b
+    PUSH 0x58c96b                       ; 004ee0b1 | = " "
         ;   Label: LAB_004ee0b1
     PUSH EBX                            ; 004ee0b6
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee0b7

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_stranger.dfm_005951ed+2
+;   TerminatedCString s_stranger_dfm_005951ef
 ;   string s_gat.kfm_005951fc
 ;   string s_draw_stand2holsters_00595204
 ;   string s_draw_holsters2aimPistols_00595218
@@ -70,12 +70,12 @@ section .text
     MOV dword ptr [EBX + 0x1fa98],0x0   ; 0053519f
     MOV dword ptr [EBX + 0x1faa4],0x0   ; 005351a9
     MOV dword ptr [EBX + 0x1faa8],0x0   ; 005351b3
-    FLD float ptr [0x005a2704]          ; 005351bd | DAT_005a2704
+    FLD float ptr [0x005a2704]          ; 005351bd | FLOAT_005a2704
     MOV dword ptr [EBX + 0x1faac],0x0   ; 005351c3
     ADD ESP,0x4                         ; 005351cd
     FSTP float ptr [EBX + 0x1fa4c]      ; 005351d0
     MOV dword ptr [EBX + 0x1fb18],0xf149f2ca ; 005351d6
-    PUSH 0x5951ef                       ; 005351e0 | s_stranger.dfm_005951ed+2
+    PUSH 0x5951ef                       ; 005351e0 | = "stranger.dfm"
     MOV dword ptr [EBX + 0x1fb00],0xf149f2ca ; 005351e5
     LEA EAX,[EBX + 0x150]               ; 005351ef
     FLD float ptr [EBX + 0x1fa58]       ; 005351f5

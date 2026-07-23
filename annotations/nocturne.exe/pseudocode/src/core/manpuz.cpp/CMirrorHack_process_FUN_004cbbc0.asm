@@ -7,9 +7,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058816a
-;   undefined4 DAT_00588172
-;   undefined4 DAT_0058817a
+;   double DOUBLE_0058816a = 6.28318530700000
+;   double DOUBLE_00588172 = 30
+;   double DOUBLE_0058817a = 0.200000000000000
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_01cc30e4
 ;
@@ -28,8 +28,8 @@ section .text
     AND ESP,0xfffffff8                  ; 004cbbc7
     MOV EBX,dword ptr [EBP + 0xc]       ; 004cbbca
     FLD float ptr [EBP + 0x10]          ; 004cbbcd
-    FMUL double ptr [0x0058816a]        ; 004cbbd0 | DAT_0058816a
-    FDIV double ptr [0x00588172]        ; 004cbbd6 | DAT_00588172
+    FMUL double ptr [0x0058816a]        ; 004cbbd0 | DOUBLE_0058816a
+    FDIV double ptr [0x00588172]        ; 004cbbd6 | DOUBLE_00588172
     PUSH 0x38                           ; 004cbbdc
     MOV EAX,[0x005bac64]                ; 004cbbde | DAT_005bac64
     PUSH EAX                            ; 004cbbe3 | DAT_01cc30e4
@@ -41,7 +41,7 @@ section .text
     JZ 0x004cbbff                       ; 004cbbf1
         ;   XREF to: 004cbbff (CONDITIONAL_JUMP)  ; LAB_004cbbff
     FLD float ptr [ESP]                 ; 004cbbf3
-    FMUL double ptr [0x0058817a]        ; 004cbbf6 | DAT_0058817a
+    FMUL double ptr [0x0058817a]        ; 004cbbf6 | DOUBLE_0058817a
     FSTP float ptr [ESP]                ; 004cbbfc
     PUSH 0x33                           ; 004cbbff
         ;   Label: LAB_004cbbff

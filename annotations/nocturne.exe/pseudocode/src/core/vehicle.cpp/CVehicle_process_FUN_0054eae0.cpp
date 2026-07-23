@@ -99,9 +99,9 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
                     *(float *)(param_1 + 0x8bc) * *(float *)(param_1 + 0x8bc) +
                     *(float *)(param_1 + 0x8c0) * *(float *)(param_1 + 0x8c0));
   }
-  local_34 = *(float *)(param_1 + 0x8bc) * _DAT_005973a8;
-  local_30 = *(float *)(param_1 + 0x8c0) * _DAT_005973a8;
-  local_2c = _DAT_005973a8 * *(float *)(param_1 + 0x8c4);
+  local_34 = *(float *)(param_1 + 0x8bc) * 2.0f;
+  local_30 = *(float *)(param_1 + 0x8c0) * 2.0f;
+  local_2c = 2.0f * *(float *)(param_1 + 0x8c4);
   if ((float *)(param_1 + 0x1058) != &local_34) {
     *(float *)(param_1 + 0x1058) = local_34;
     *(float *)(param_1 + 0x105c) = local_30;
@@ -126,8 +126,8 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
     } while (iVar9 < *(int *)(param_1 + 0x930));
   }
   *(uint *)(param_1 + 0x30) = 0;
-  fVar3 = *(float *)(param_1 + 0x34) + _DAT_005973b0;
-  *(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + _DAT_005973ac;
+  fVar3 = *(float *)(param_1 + 0x34) + 1.570796f;
+  *(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + 3.7f;
   *(float *)(param_1 + 0x34) = fVar3;
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_a0);
   iStack_18 = 0;
@@ -149,11 +149,11 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
           uStack_100 = 0x4479c000;
           (**(code **)(*(int *)(iVar9 + 0x14c) + 0x100))(iVar9,auStack_104);
         }
-        else if ((fStack_5c - fStack_ac < fStack_8c + (float)_DAT_005973c8) &&
+        else if ((fStack_5c - fStack_ac < fStack_8c + (float)30) &&
                 (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50
                                    (*(uint *)(param_1 + 0x104c)), iVar9 == 0)) {
           uVar7 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_0054f7a0
-                            (param_1,"?model-t-horn?.wav" + 1);
+                            (param_1,"model-t-horn?.wav");
           *(uint *)(param_1 + 0x104c) = uVar7;
         }
       }
@@ -166,7 +166,7 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
   fStack_3c = *(float *)(param_1 + 0x24) - *(float *)(iVar10 + 0x24);
   fStack_38 = *(float *)(param_1 + 0x28) - *(float *)(iVar10 + 0x28);
   if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
-       (float)_DAT_005973b8) || (0x671 < *(int *)(0x01E57284 + 0x14cd6c))) goto LAB_0054ef54;
+       (float)200) || (0x671 < *(int *)(0x01E57284 + 0x14cd6c))) goto LAB_0054ef54;
   iVar10 = 0;
   iStack_20 = 0;
   iStack_1c = 0;
@@ -264,7 +264,7 @@ LAB_0054ef54:
   }
   sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(*(uint *)(param_1 + 0x1050),0x3f800000);
   fVar3 = ABS(*(float *)(param_1 + 0x8c8));
-  fVar4 = (float)_DAT_005973c0;
+  fVar4 = (float)0.20000000000000001;
   uVar8 = (uint)(ushort)((ushort)(fVar3 < fVar4) << 8 | (ushort)(NAN(fVar3) || NAN(fVar4)) << 10 |
                         (ushort)(fVar3 == fVar4) << 0xe);
   if ((fVar3 >= fVar4 && (fVar3 == fVar4) == 0) &&

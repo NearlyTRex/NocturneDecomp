@@ -109,9 +109,9 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(int param_1)
     if (*(int *)(0x01C775EC + 0x20c) != 0) {
       iVar3 = wincore_winrun_cpp_getTime_FUN_00558a30();
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"@renderStaticLights : %3.2f ms\n" + 1,
-                 ((double)(iVar3 - local_38) * _DAT_0059051a * _DAT_00590522 * _DAT_0059052a) /
-                 (double)*(float *)(0x01C775EC + 0x264));
+                (PTR_DAT_005ad350,"renderStaticLights : %3.2f ms\n",
+                 ((double)(iVar3 - local_38) * 0.055555555555555601 * 1.52587890625e-05 * 1000)
+                 / (double)*(float *)(0x01C775EC + 0x264));
       return;
     }
   }

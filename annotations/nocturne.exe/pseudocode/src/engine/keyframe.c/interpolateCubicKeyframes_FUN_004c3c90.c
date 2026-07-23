@@ -80,15 +80,15 @@ int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)
     _DAT_01cc4804 = 0x16b;
     FUN_004c8440("Bad keyframe 1");
   }
-  fVar23 = (float10)uVar16 * (float10)_DAT_0058767c;
+  fVar23 = (float10)uVar16 * (float10)1.52587890625e-05;
   fVar24 = fVar23 * fVar23;
-  fVar27 = (float10)_DAT_0058769c;
-  fVar26 = (float10)_DAT_00587694;
-  fVar6 = (float10)_DAT_005876a0;
-  fVar7 = (float10)_DAT_00587688;
-  fVar8 = (float10)_DAT_00587698;
-  fVar9 = (float10)_DAT_0058768c;
-  fVar10 = (float10)_DAT_0058768c;
+  fVar27 = (float10)2.0f;
+  fVar26 = (float10)1.5f;
+  fVar6 = (float10)-1.5f;
+  fVar7 = (float10)0.5f;
+  fVar8 = (float10)-2.5f;
+  fVar9 = (float10)65536;
+  fVar10 = (float10)65536;
   piVar14 = (int *)(*(int *)(param_1 + 0x14) + 0x14);
   piVar18 = (int *)(*(int *)(iVar17 * 4 + param_1 + 0x118) + 0x14);
   piVar20 = (int *)(*(int *)(local_1c * 4 + param_1 + 0x118) + 0x14);

@@ -26,7 +26,7 @@ void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(uint *par
   uint local_14;
   
   bVar10 = 0;
-  local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_00596708,param_2);
+  local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",param_2);
   if (local_14 < 0x1000) {
     if (local_14 == 0x400) {
       unaff_EBP = 0x20;
@@ -83,8 +83,8 @@ LAB_00544f77:
     _DAT_01cc4804 = 0xfa;
     FUN_004c8440("CTextureCache::load - Can't find extension");
   }
-  _sprintf(pcVar4,&DAT_00596794);
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059679c,local_114,&DAT_00596799);
+  _sprintf(pcVar4,".act");
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (iVar2 == 0) {
     puVar7 = (uint *)&DAT_01c00648;
     puVar9 = param_1 + param_1[0x34c02] * 0xc0 + 0x4c02;
@@ -155,8 +155,8 @@ LAB_00544f77:
   } while (*pcVar4 != '\0');
   pcVar4 = (char *)0x0;
 LAB_0054511b:
-  _sprintf(pcVar4,&DAT_00596809);
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00596811,local_114,&DAT_0059680e);
+  _sprintf(pcVar4,".raw");
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (iVar2 == 0) {
     memset(param_1[param_1[0x34c02] + 0x402],0,unaff_EBP * unaff_EBP);
     pcVar6 = local_114;
@@ -186,8 +186,8 @@ LAB_0054511b:
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_005451a6:
-  _sprintf(pcVar6,&DAT_00596815);
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059681d,local_114,&DAT_0059681a);
+  _sprintf(pcVar6,".opa");
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (iVar2 == 0) {
     if (param_1[param_1[0x34c02] + 0x802] != 0) {
       FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);

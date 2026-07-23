@@ -32,7 +32,7 @@ uint FUN_0053c800(int param_1)
   if ((((*(int *)(param_1 + 0x1fa08) == 0) && (*(int *)(param_1 + 0x24f0) != 0)) &&
       ((*(int *)(param_1 + 0x2a84) == 0xe ||
        (fVar5 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                 (param_1,0), (float)_DAT_00595bd7 <= fVar5)))) &&
+                                 (param_1,0), (float)0.98999999999999999 <= fVar5)))) &&
      (fVar5 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                (param_1 + 0x150,0), 1.0 <= fVar5)) {
     iVar6 = *(int *)(param_1 + 0x24f0);
@@ -54,9 +54,9 @@ uint FUN_0053c800(int param_1)
                     (PTR_DAT_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n",
                      (double)(fVar5 - fVar1),(double)(fVar8 - fVar12));
           if ((((0.0 < fVar2 - fVar3) &&
-               ((fVar2 - fVar3 < (float)_DAT_00595bdf && (ABS(fVar5 - fVar1) < (float)_DAT_00595be7)
-                ))) && (dVar4 = (double)(fVar8 - fVar12), 0.0 < dVar4)) && (dVar4 < _DAT_00595bef))
-          {
+               ((fVar2 - fVar3 < (float)3 &&
+                (ABS(fVar5 - fVar1) < (float)2)))) &&
+              (dVar4 = (double)(fVar8 - fVar12), 0.0 < dVar4)) && (dVar4 < 4)) {
             *(uint *)(param_1 + 0x1faa0) = 2;
             if ((uint *)(param_1 + 0x1fa20) != (uint *)(iVar6 + 0x20)) {
               *(uint *)(param_1 + 0x1fa20) = *(uint *)(iVar6 + 0x20);
@@ -85,10 +85,10 @@ uint FUN_0053c800(int param_1)
           pfVar10 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290();
           pfVar11 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290();
           if ((0.0 < pfVar11[2] - pfVar10[2]) &&
-             ((((pfVar11[2] - pfVar10[2] < (float)_DAT_00595bdf &&
-                (ABS(*pfVar11 - *pfVar10) < (float)_DAT_00595be7)) &&
+             ((((pfVar11[2] - pfVar10[2] < (float)3 &&
+                (ABS(*pfVar11 - *pfVar10) < (float)2)) &&
                (0.0 < (double)(pfVar11[1] - pfVar10[1]))) &&
-              ((double)(pfVar11[1] - pfVar10[1]) < _DAT_00595bef)))) {
+              ((double)(pfVar11[1] - pfVar10[1]) < 4)))) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0();
             puVar7 = (uint *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290();
             if ((uint *)(param_1 + 0x1fb00) != puVar7) {
@@ -102,7 +102,7 @@ uint FUN_0053c800(int param_1)
             *(float *)(param_1 + 0x1fb04) =
                  ((fVar5 - fVar1) - fVar8) + *(float *)(param_1 + 0x1fb04);
             if (*(int *)(param_1 + 0x1faa0) != 0) {
-              FUN_0046fb40(0x01BCD074,"?actionPending = %d\nstranger.cpp line %d" + 1,
+              FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
                            *(int *)(param_1 + 0x1faa0),0xe6f);
             }
             *(uint *)(param_1 + 0x1faa0) = 2;
@@ -158,7 +158,7 @@ uint FUN_0053c800(int param_1)
           if ((iVar13 != 0) &&
              (fVar12 = *(float *)(iVar13 + 0x20) - fVar5, fVar2 = *(float *)(iVar13 + 0x24) - fVar8,
              fVar3 = *(float *)(iVar13 + 0x28) - fVar1,
-             SQRT(fVar3 * fVar3 + fVar12 * fVar12 + fVar2 * fVar2) < (float)_DAT_00595be7)) break;
+             SQRT(fVar3 * fVar3 + fVar12 * fVar12 + fVar2 * fVar2) < (float)2)) break;
           iVar6 = iVar6 + 1;
           iVar9 = iVar9 + 4;
         }

@@ -237,11 +237,12 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
     iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
     dVar2 = 1.0 / (double)*(float *)(0x01C775EC + 0x264);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"@comp: %3.2f/%3.2f actren : %3.2f\n" + 1,
-               (double)(local_44 - local_40) * _DAT_0059055a * _DAT_00590562 * _DAT_0059056a * dVar2
-               ,(double)(local_3c - local_40) * _DAT_0059055a * _DAT_00590562 * _DAT_0059056a *
-                dVar2,(double)(iVar4 - local_3c) * _DAT_0059055a * _DAT_00590562 * _DAT_0059056a *
-                      dVar2);
+              (PTR_DAT_005ad350,"comp: %3.2f/%3.2f actren : %3.2f\n",
+               (double)(local_44 - local_40) * 0.055555555555555601 * 1.52587890625e-05 * 1000 *
+               dVar2,(double)(local_3c - local_40) * 0.055555555555555601 * 1.52587890625e-05 *
+                     1000 * dVar2,
+               (double)(iVar4 - local_3c) * 0.055555555555555601 * 1.52587890625e-05 * 1000 *
+               dVar2);
   }
   if (*(int *)(0x01C775EC + 0x1e8) != 0) {
     FUN_005138e0();

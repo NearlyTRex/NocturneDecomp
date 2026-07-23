@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -326,7 +326,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(0x58d308,param_1,0x58d305);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"rb\");",
       "type": "unnamed_param"
     },
     {

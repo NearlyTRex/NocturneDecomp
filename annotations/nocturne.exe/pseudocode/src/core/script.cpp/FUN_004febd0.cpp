@@ -36,7 +36,7 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
       return 1;
     }
     splitpath(param_2,0,0,local_11c,0);
-    pcVar8 = &DAT_0058e26b;
+    pcVar8 = ".txt";
     iVar6 = -1;
     pcVar10 = local_11c;
     do {
@@ -58,7 +58,7 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_00504e70(param_1,local_11c);
-    iVar6 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,&DAT_0058e270);
+    iVar6 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
     if (iVar6 == 0) {
       return 1;
     }

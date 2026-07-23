@@ -34,7 +34,7 @@ void FUN_004c4970(int param_1,float param_2)
   uint local_114;
   uint local_110;
   uint local_10c;
-  uint local_108;
+  float local_108;
   float local_104;
   float local_100;
   float local_fc;
@@ -68,7 +68,7 @@ void FUN_004c4970(int param_1,float param_2)
   float local_44;
   float local_40;
   uint local_3c;
-  uint local_38;
+  float local_38;
   uint local_30;
   float local_2c;
   uint local_28;
@@ -95,12 +95,12 @@ void FUN_004c4970(int param_1,float param_2)
           local_e8 = local_d0;
           local_e4 = local_cc;
         }
-        local_e8 = local_e8 + _DAT_0058781c;
+        local_e8 = local_e8 + 2.0f;
         local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000);
         local_ec = local_14 + local_ec;
         local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
-        Var7 = fsin((float10)_DAT_00587824);
-        fVar13 = (float10)fptan((float10)_DAT_0058782c);
+        Var7 = fsin((float10)-0.52359877558333301);
+        fVar13 = (float10)fptan((float10)0.52359877558333301);
         fVar11 = (float10)local_14 + (float10)local_e4;
         local_e4 = (float)fVar11;
         Var8 = atan2((float10)local_ec);
@@ -109,8 +109,8 @@ void FUN_004c4970(int param_1,float param_2)
         fVar9 = (float10)fsin(Var8);
         fVar10 = (float10)fcos(Var8);
         local_60 = (double)fVar2;
-        local_24 = fVar2 * (float)_DAT_00587814 * fVar2;
-        fVar11 = fVar12 * (float10)_DAT_0058781c * fVar12 *
+        local_24 = fVar2 * (float)32 * fVar2;
+        fVar11 = fVar12 * (float10)2.0f * fVar12 *
                  (fVar11 * (float10)fVar2 - (float10)local_e8);
         local_ac = (float)-fVar13;
         local_20 = (float)fVar11;
@@ -136,8 +136,8 @@ void FUN_004c4970(int param_1,float param_2)
         }
       }
     }
-    fVar3 = (float)_DAT_005877f4;
-    fVar2 = (float)_DAT_005877fc;
+    fVar3 = (float)0.39269908168750001;
+    fVar2 = (float)3;
     *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
     *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c) * fVar2;
     iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660();
@@ -162,7 +162,7 @@ void FUN_004c4970(int param_1,float param_2)
           local_2c = (float)(((int)local_54 >> 1) + _DAT_01c7070c);
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_80,&local_128);
           local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00();
-          if (((float)_DAT_005877f4 <= ABS(local_14)) || ((float)_DAT_00587804 < local_2c)) {
+          if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < local_2c)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0();
           }
           else if (*(float *)(param_1 + 0xbca0) <= 0.0) {
@@ -175,7 +175,7 @@ void FUN_004c4970(int param_1,float param_2)
       }
       else if (local_28 < 2) {
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-        uVar6 = 0x41A00000;
+        fVar2 = 20.0f;
         if (*(int *)(param_1 + 0xbca4) == 0) {
           iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
           if (iVar4 == 0) {
@@ -183,13 +183,13 @@ void FUN_004c4970(int param_1,float param_2)
           }
         }
         else {
-          local_38 = 0x41A00000;
+          local_38 = 20.0f;
           *(uint *)(param_1 + 0x23ac) = 0;
           *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
           local_110 = 0;
           local_10c = 0;
-          local_108 = uVar6;
+          local_108 = fVar2;
           uVar6 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                             (*(int *)(param_1 + 0xbca4),&local_110,0x3f000000,0x3e32b8c2);
           iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
@@ -217,7 +217,7 @@ void FUN_004c4970(int param_1,float param_2)
               local_14 = (float)local_3c;
               local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00();
               local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00();
-              if (ABS(local_14) < (float)_DAT_005877f4) {
+              if (ABS(local_14) < (float)0.39269908168750001) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0();
                 *(uint *)(param_1 + 0xbca0) = 0x40c00000;
               }
@@ -255,7 +255,7 @@ void FUN_004c4970(int param_1,float param_2)
         fVar13 = (float10)1;
         fVar11 = (float10)1.4426950408889634 *
                  (float10)0.6931471805599453 * (float10)*(float *)(param_1 + 0x2614) *
-                 (float10)_DAT_0058780c;
+                 (float10)-0.20000000000000001;
         fVar12 = (float10)f2xm1(fVar11 - (fVar11 / fVar13) * fVar13);
         fVar13 = (float10)fscale(fVar12 + fVar13,fVar11);
         local_68 = (double)fVar13;
@@ -278,7 +278,8 @@ void FUN_004c4970(int param_1,float param_2)
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                   (0x01E57284,*(uint *)(param_1 + 0xbca4));
       }
-      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_00587814;
+      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32
+      ;
       local_104 = *(float *)(param_1 + 0x2420) * param_2;
       local_100 = *(float *)(param_1 + 0x2424) * param_2;
       local_fc = param_2 * *(float *)(param_1 + 0x2428);

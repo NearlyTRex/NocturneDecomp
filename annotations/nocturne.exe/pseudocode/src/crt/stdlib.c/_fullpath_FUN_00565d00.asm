@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; LPSTR __cdecl crt_stdlib_c__fullpath_FUN_00565d00(LPSTR param_1,LPCSTR param_2,uint param_3)
+; __cdecl char(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3)
 ;
 ;
 ; XREF[5]:
@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetFullPathNameA_00575518 = 00175d5c
-;   undefined4 DAT_005989e4
+;   TerminatedCString s_con_005989e4
 ;   undefined4 DAT_006e6f63
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     POP ESI                             ; 00565d56
     POP EBX                             ; 00565d57
     RET                                 ; 00565d58
-    PUSH 0x5989e4                       ; 00565d59 | DAT_005989e4
+    PUSH 0x5989e4                       ; 00565d59 | = "con"
         ;   Label: LAB_00565d59
     PUSH ESI                            ; 00565d5e
     CALL crt_string.c__stricmp_FUN_00564520 ; 00565d5f
@@ -105,7 +105,7 @@ section .text
     POP ESI                             ; 00565d8a
     POP EBX                             ; 00565d8b
     RET                                 ; 00565d8c
-    MOV EAX,[0x005989e4]                ; 00565d8d | DAT_005989e4
+    MOV EAX,[0x005989e4]                ; 00565d8d | = "con"
         ;   Label: LAB_00565d8d
     MOV dword ptr [EBX],EAX             ; 00565d92 | DAT_006e6f63
     JMP 0x00565db6                      ; 00565d94

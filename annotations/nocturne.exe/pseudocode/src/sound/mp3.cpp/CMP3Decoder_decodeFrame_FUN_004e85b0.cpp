@@ -434,7 +434,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
         if (local_74 < 0) {
           ppiStack_60d8 = (int **)(local_b8 + -1);
           ppiStack_60dc = (int **)"Not enough main data to decode frame %d.";
-          _DAT_01cc4800 = "@..\\sound\\mp3.cpp" + 1;
+          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
           _DAT_01cc4804 = 0xf90;
           ppiStack_60e0 = (int **)0x4e8fdf;
           FUN_004c8440();

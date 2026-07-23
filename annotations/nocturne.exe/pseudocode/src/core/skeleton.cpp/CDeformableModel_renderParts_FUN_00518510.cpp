@@ -135,7 +135,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(int par
                 fStack_124 = 127.0;
               }
               else {
-                fStack_124 = (float)_DAT_0059168b / SQRT(fVar4);
+                fStack_124 = (float)127 / SQRT(fVar4);
               }
               fVar12 = (float10)fStack_124;
               local_28 = (float)((float10)fVar2 * fVar12);
@@ -143,7 +143,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(int par
               local_2c = (float)((float10)fVar5 * fVar12);
               fVar13 = (float10)local_30;
               fVar14 = (float10)local_28;
-              fVar15 = (float10)_DAT_00591683;
+              fVar15 = (float10)127.0f;
               local_128 = 0x518c23;
               fVar12 = (float10)round((float10)fVar5 * fVar12 + fVar15);
               local_12c = 0x518c2a;

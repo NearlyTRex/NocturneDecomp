@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_render_FUN_004dfc70(uint param_1,float param_2,uint param_3)
 
 {
-  if (param_2 < (float)_DAT_0058ad24) {
+  if (param_2 < (float)0.01) {
     return;
   }
   core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(param_1,param_2,param_3);

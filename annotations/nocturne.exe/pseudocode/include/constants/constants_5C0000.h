@@ -26,9 +26,9 @@ static undefined1 DAT_005c26d5 = 0x28;
 static undefined1 DAT_005c26f9 = 0x0E;
 
 // undefined1* constants
-static undefined1* DAT_005C0E70 = (undefined1*)0x00595005; // DAT_00595005
-static undefined1* DAT_005C0E74 = (undefined1*)0x00595007; // DAT_00595007
-static undefined1* DAT_005C0E78 = (undefined1*)0x00595008; // DAT_00595008
+static undefined1* DAT_005C0E70 = (undefined1*)s_anon_00595005;
+static undefined1* DAT_005C0E74 = (undefined1*)s_e_m_e_e_00595007;
+static undefined1* DAT_005C0E78 = (undefined1*)s_anon_00595008;
 static undefined1* DAT_005C1818 = (undefined1*)s_Monday_005989f0;
 static undefined1* DAT_005C181C = (undefined1*)s_Tuesday_005989f8;
 static undefined1* DAT_005C1820 = (undefined1*)s_Wednesday_00598a00;

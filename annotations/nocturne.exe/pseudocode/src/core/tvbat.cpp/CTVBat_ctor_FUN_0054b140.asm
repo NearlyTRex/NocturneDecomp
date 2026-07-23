@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   string s_bat.kfm_00596ed4
-;   undefined4 DAT_00596edd
-;   undefined4 DAT_00596ee1
+;   float FLOAT_00596edd = 10
+;   float FLOAT_00596ee1 = 2
 ;   undefined1* PTR_core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0_005a38f4 = 0054b2a0
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0054b1da
     FLD float ptr [ESP + 0xc]           ; 0054b1de
     ADD ESP,0x8                         ; 0054b1e2
-    FMUL float ptr [0x00596edd]         ; 0054b1e5 | DAT_00596edd
+    FMUL float ptr [0x00596edd]         ; 0054b1e5 | FLOAT_00596edd
     PUSH 0x3f8ccccd                     ; 0054b1eb
     PUSH 0x3f666666                     ; 0054b1f0
     FSTP float ptr [EBX + 0xbec4]       ; 0054b1f5
@@ -72,7 +72,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0054b200
     FLD float ptr [ESP + 0xc]           ; 0054b204
     ADD ESP,0x8                         ; 0054b208
-    FMUL float ptr [0x00596ee1]         ; 0054b20b | DAT_00596ee1
+    FMUL float ptr [0x00596ee1]         ; 0054b20b | FLOAT_00596ee1
     PUSH 0x3f800000                     ; 0054b211
     FSTP float ptr [ESP + 0x4]          ; 0054b216
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054b21a

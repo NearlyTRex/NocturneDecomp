@@ -20,7 +20,7 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_004f1e90(void)
     iVar2 = 0;
     do {
       if (*(int *)(iVar2 + 0x1e312fc) == 0) {
-        _DAT_01cc4800 = "p@..\\core\\path.cpp" + 2;
+        _DAT_01cc4800 = "..\\core\\path.cpp";
         _DAT_01cc4804 = 0x6a1;
         FUN_004c8440("Global pathmap list corruption");
       }

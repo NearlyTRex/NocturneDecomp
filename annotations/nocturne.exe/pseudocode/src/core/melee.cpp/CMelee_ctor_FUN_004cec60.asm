@@ -10,14 +10,14 @@
 ;   undefined4 s_hovel?.wav_0058836c+1
 ;   undefined4 s_ovel?.wav_0058836c+2
 ;   undefined4 s_vel?.wav_0058836c+3
-;   undefined1 DAT_00588378
-;   undefined1 DAT_00588379
-;   undefined1 DAT_0058837a
-;   string s_l-f?.wav_0058837b
-;   undefined1 DAT_00588384
-;   undefined1 DAT_00588385
-;   undefined1 DAT_00588386
-;   string s_l-s?.wav_00588387
+;   TerminatedCString s_shvl_f_wav_00588378
+;   undefined4 s_shvl_f_wav_00588378+1
+;   undefined4 s_shvl_f_wav_00588378+2
+;   undefined4 s_shvl_f_wav_00588378+3
+;   TerminatedCString s_shvl_s_wav_00588384
+;   undefined4 s_shvl_s_wav_00588384+1
+;   undefined4 s_shvl_s_wav_00588384+2
+;   undefined4 s_shvl_s_wav_00588384+3
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a03f4 = 00553f10
 ;
 ; Called Functions:
@@ -80,16 +80,16 @@ section .text
         ;   XREF to: 004ced46 (CONDITIONAL_JUMP)  ; LAB_004ced46
     POP EDI                             ; 004ced5e
         ;   Label: LAB_004ced5e
-    MOV ESI,0x588378                    ; 004ced5f | DAT_00588378
+    MOV ESI,0x588378                    ; 004ced5f | = "shvl-f?.wav"
     LEA EDI,[EBX + 0x5fc]               ; 004ced64
     PUSH EDI                            ; 004ced6a
-    MOV AL,byte ptr [ESI]               ; 004ced6b | DAT_00588378 | DAT_0058837a
+    MOV AL,byte ptr [ESI]               ; 004ced6b | = "shvl-f?.wav" | s_shvl_f_wav_00588378+2
         ;   Label: LAB_004ced6b
     MOV byte ptr [EDI],AL               ; 004ced6d
     CMP AL,0x0                          ; 004ced6f
     JZ 0x004ced83                       ; 004ced71
         ;   XREF to: 004ced83 (CONDITIONAL_JUMP)  ; LAB_004ced83
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ced73 | DAT_00588379 | = "l-f?.wav"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ced73 | s_shvl_f_wav_00588378+1 | s_shvl_f_wav_00588378+3
     ADD ESI,0x2                         ; 004ced76
     MOV byte ptr [EDI + 0x1],AL         ; 004ced79
     ADD EDI,0x2                         ; 004ced7c
@@ -98,16 +98,16 @@ section .text
         ;   XREF to: 004ced6b (CONDITIONAL_JUMP)  ; LAB_004ced6b
     POP EDI                             ; 004ced83
         ;   Label: LAB_004ced83
-    MOV ESI,0x588384                    ; 004ced84 | DAT_00588384
+    MOV ESI,0x588384                    ; 004ced84 | = "shvl-s?.wav"
     LEA EDI,[EBX + 0x660]               ; 004ced89
     PUSH EDI                            ; 004ced8f
-    MOV AL,byte ptr [ESI]               ; 004ced90 | DAT_00588384 | DAT_00588386
+    MOV AL,byte ptr [ESI]               ; 004ced90 | = "shvl-s?.wav" | s_shvl_s_wav_00588384+2
         ;   Label: LAB_004ced90
     MOV byte ptr [EDI],AL               ; 004ced92
     CMP AL,0x0                          ; 004ced94
     JZ 0x004ceda8                       ; 004ced96
         ;   XREF to: 004ceda8 (CONDITIONAL_JUMP)  ; LAB_004ceda8
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ced98 | DAT_00588385 | = "l-s?.wav"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ced98 | s_shvl_s_wav_00588384+1 | s_shvl_s_wav_00588384+3
     ADD ESI,0x2                         ; 004ced9b
     MOV byte ptr [EDI + 0x1],AL         ; 004ced9e
     ADD EDI,0x2                         ; 004ceda1

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
 
@@ -68,9 +67,9 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
         local_50 = *param_1 - *pfVar1;
         local_4c = param_1[1] - param_1[10];
         local_48 = param_1[2] - param_1[0xb];
-        local_68 = *pfVar1 + local_50 * local_14 * _DAT_0058cb88;
-        local_64 = param_1[10] + local_4c * local_14 * _DAT_0058cb88;
-        local_60 = param_1[0xb] + local_48 * local_14 * _DAT_0058cb88;
+        local_68 = *pfVar1 + local_50 * local_14 * 0.8f;
+        local_64 = param_1[10] + local_4c * local_14 * 0.8f;
+        local_60 = param_1[0xb] + local_48 * local_14 * 0.8f;
         if (param_1 != &local_68) {
           *param_1 = local_68;
           param_1[1] = local_64;
@@ -80,17 +79,17 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
         if (iVar4 == 0) {
           pfVar1 = param_1 + 3;
           fVar3 = (fStack_24 * param_1[5] + afStack_34[2] * *pfVar1 + afStack_34[3] * param_1[4]) *
-                  _DAT_0058cb8c;
+                  2.0f;
           if (pfVar1 != afStack_5c) {
             *pfVar1 = afStack_34[2] * fVar3 - *pfVar1;
             param_1[4] = afStack_34[3] * fVar3 - param_1[4];
             param_1[5] = fStack_24 * fVar3 - param_1[5];
           }
           pfVar1 = param_1 + 3;
-          fVar3 = param_1[4] * _DAT_0058cb90;
-          fVar2 = _DAT_0058cb90 * param_1[5];
+          fVar3 = param_1[4] * -0.7f;
+          fVar2 = -0.7f * param_1[5];
           if (pfVar1 != afStack_44) {
-            *pfVar1 = *pfVar1 * _DAT_0058cb90;
+            *pfVar1 = *pfVar1 * -0.7f;
             param_1[4] = fVar3;
             param_1[5] = fVar2;
           }

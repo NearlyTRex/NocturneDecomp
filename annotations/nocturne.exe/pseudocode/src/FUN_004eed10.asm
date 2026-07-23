@@ -11,7 +11,7 @@
 ;   core_passngr.cpp_CPassenger_archive_FUN_004efb30 at 004efb37
 ;
 ; Referenced Globals:
-;   undefined4 s_hitPoints_0058cb31+2
+;   TerminatedCString s_hitPoints_0058cb33
 ;   string s_modelName_0058cb3d
 ;   string s_motion_state_0058cb47
 ;   string s_shootMe_0058cb54
@@ -78,7 +78,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004eed7f
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004eed84
-    PUSH 0x58cb33                       ; 004eed87 | s_hitPoints_0058cb31+2
+    PUSH 0x58cb33                       ; 004eed87 | = "hitPoints"
     ADD EBX,0x2434                      ; 004eed8c
     PUSH EBX                            ; 004eed92
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004eed93

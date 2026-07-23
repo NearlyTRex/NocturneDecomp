@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591bc3
+;   double DOUBLE_00591bc3 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xb0]      ; 0051d658
     MOV ESI,dword ptr [ESP + 0xb4]      ; 0051d65f
     FLD float ptr [ESP + 0xb8]          ; 0051d666
-    FCOMP double ptr [0x00591bc3]       ; 0051d66d | DAT_00591bc3
+    FCOMP double ptr [0x00591bc3]       ; 0051d66d | DOUBLE_00591bc3
     FNSTSW AX                           ; 0051d673
     SAHF                                ; 0051d675
     JA 0x0051d681                       ; 0051d676

@@ -32,14 +32,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
   core_inv_cpp_CInventory_initialize_FUN_004bef10(param_1);
   _fgets(local_1dc,0xff,param_2);
   _fgets(local_1dc,0xff,param_2);
-  _fscanf(param_2,&DAT_005872b9,param_1 + 0x32c);
+  _fscanf(param_2,"%d\n",param_1 + 0x32c);
   _fgets(local_1dc,0xff,param_2);
-  _fscanf(param_2,&DAT_005872bd,param_1 + 8);
+  _fscanf(param_2,"%d\n",param_1 + 8);
   _fgets(local_1dc,0xff,param_2);
-  _fscanf(param_2,&DAT_005872c1,&local_14);
+  _fscanf(param_2,"%d\n",&local_14);
   if (0 < *(int *)(param_1 + 0x32c)) {
     _fgets(local_1dc,0xff,param_2);
-    _fscanf(param_2,&DAT_005872c5,param_1);
+    _fscanf(param_2,"%f\n",param_1);
   }
   _fgets(local_1dc,0xff,param_2);
   iVar6 = 0;

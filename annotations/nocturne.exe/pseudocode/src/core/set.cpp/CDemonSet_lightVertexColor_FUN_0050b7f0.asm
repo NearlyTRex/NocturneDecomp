@@ -14,7 +14,7 @@
 ;   core_set.cpp_FUN_0050e370 at 0050e3be
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\set.cpp_005905e9+1
+;   TerminatedCString s_core_set_cpp_005905ea
 ;   string s_CDemonSet::lightVertexColor_-_Qu_005905fa
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5034
@@ -54,7 +54,7 @@ section .text
     TEST EDI,EDI                        ; 0050b80d
     JNZ 0x0050b834                      ; 0050b80f
         ;   XREF to: 0050b834 (CONDITIONAL_JUMP)  ; LAB_0050b834
-    MOV ESI,0x5905ea                    ; 0050b811 | s_..\core\set.cpp_005905e9+1
+    MOV ESI,0x5905ea                    ; 0050b811 | = "..\\core\\set.cpp"
     MOV EBP,0xaf6                       ; 0050b816
     PUSH 0x5905fa                       ; 0050b81b | = "CDemonSet::lightVertexColor - Quick l..."
     MOV dword ptr [0x01cc4800],ESI      ; 0050b820 | DAT_01cc4800

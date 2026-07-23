@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_mobster-die-?.wav_0058a488+1
+;   TerminatedCString s_mobster_die_wav_0058a489
 ;   string s_mobster-hit-?.wav_0058a49b
 ;   undefined4 DAT_02dd1008
 ;
@@ -144,7 +144,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004dc7b6
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 004dc7bb
-    PUSH 0x58a489                       ; 004dc7be | s_mobster-die-?.wav_0058a488+1
+    PUSH 0x58a489                       ; 004dc7be | = "mobster-die-?.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004dc7c3
     PUSH EBX                            ; 004dc7c9
     CALL dword ptr [EAX + 0x24]         ; 004dc7ca

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_mimic_cpp_CMimic_ctor_FUN_004d4450(uint param_1)
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
@@ -23,14 +21,14 @@ int core_mimic_cpp_CMimic_ctor_FUN_004d4450(uint param_1)
   iVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar4 + 0x3ab60);
   *(byte ***)(iVar4 + -0x46800) = &PTR_FUN_005a05f4;
   *(uint *)(iVar4 + -0x43b78) = 0x3f000000;
-  pcVar5 = &DAT_0058923e;
+  pcVar5 = "CGhoul";
   *(uint *)(iVar4 + -0x43b74) = 0x3f800000;
-  uVar2 = _DAT_005a05dc;
+  fVar2 = 50.0f;
   *(byte *)(iVar4 + -0x3ac28) = 0;
-  uVar3 = _DAT_005a05e0;
+  fVar3 = 100.0f;
   *(byte *)(iVar4 + -0x3abc4) = 0;
-  *(uint *)(iVar4 + -0x43b70) = uVar2;
-  *(uint *)(iVar4 + -0x43b6c) = uVar3;
+  *(float *)(iVar4 + -0x43b70) = fVar2;
+  *(float *)(iVar4 + -0x43b6c) = fVar3;
   *(uint *)(iVar4 + -0x30) = 0;
   pcVar6 = (char *)(iVar4 + -0x28);
   *(uint *)(iVar4 + -0x2c) = 0;

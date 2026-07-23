@@ -45,25 +45,25 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
-  _fscanf(param_2,&DAT_00590d64,param_1 + 0x11c);
+  _fscanf(param_2,"%f\n",param_1 + 0x11c);
   if (*(int *)(0x01E57284 + 0x15a8c4) < 0x15) {
     *(uint *)(param_1 + 0x120) = 0x3f800000;
   }
   else {
     _fgets(local_148,0xff,param_2);
-    _fscanf(param_2,&DAT_00590d68,param_1 + 0x120);
+    _fscanf(param_2,"%f\n",param_1 + 0x120);
   }
   if (*(int *)(0x01E57284 + 0x15a8c4) < 0x16) {
     *(uint *)(param_1 + 0x124) = 0x3f800000;
   }
   else {
     _fgets(local_148,0xff,param_2);
-    _fscanf(param_2,&DAT_00590d6c,param_1 + 0x124);
+    _fscanf(param_2,"%f\n",param_1 + 0x124);
   }
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
-  _fscanf(param_2,&DAT_00590d70,param_1);
+  _fscanf(param_2,"%d\n",param_1);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
@@ -76,7 +76,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
-  _fscanf(param_2,&DAT_00590d8b,param_1 + 0x11ec);
+  _fscanf(param_2,"%d\n",param_1 + 0x11ec);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
@@ -84,7 +84,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
     *(uint *)(param_1 + 0x11f0) = 1;
   }
   else {
-    _fscanf(param_2,&DAT_00590d8f,param_1 + 0x11f0);
+    _fscanf(param_2,"%d\n",param_1 + 0x11f0);
   }
   iVar3 = 0;
   if (0 < *(int *)(param_1 + 0x11ec)) {
@@ -112,7 +112,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_148,0xff,param_2);
   }
-  _fscanf(param_2,&DAT_00590da4,param_1 + 0x1890);
+  _fscanf(param_2,"%d\n",param_1 + 0x1890);
   if (*(int *)(0x01E57284 + 0x15a8c4) < 0x13) {
     *(uint *)(param_1 + 0x17f8) = 0;
     *(uint *)(param_1 + 0x17fc) = 0;
@@ -147,7 +147,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
       iVar3 = param_1;
       do {
         if (*(int *)(0x01E57284 + 0x15a8c4) < 2) {
-          _fscanf(param_2,&DAT_00590dbf,local_44);
+          _fscanf(param_2,"%d\n",local_44);
           *(byte *)(iVar3 + 0x128) = local_44[0];
           iVar1 = param_1 + iVar2;
           *(uint *)(iVar1 + 0x224) = 1;
@@ -169,7 +169,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
   else {
     memset(param_1 + 0x128,0,0xfa);
     memset(param_1 + 0x224,0,4000);
-    _fscanf(param_2,&DAT_00590dd3,&local_48);
+    _fscanf(param_2,"%d\n",&local_48);
     iVar3 = 0;
     if (0 < local_48) {
       do {

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 446,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 201,
-    "suspect_count": 23,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
+      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -208,63 +209,63 @@
     },
     {
       "addr": "0058cd47",
-      "name": "DAT_0058cd47",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058cd47",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0058cd4b",
-      "name": "DAT_0058cd4b",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058cd4b",
+      "type": "float",
+      "value": "0.01000000"
     },
     {
       "addr": "0058cd4f",
-      "name": "DAT_0058cd4f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd4f",
+      "type": "double",
+      "value": "1.58735232019473E-314"
     },
     {
       "addr": "0058cd57",
-      "name": "DAT_0058cd57",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd57",
+      "type": "double",
+      "value": "-2.35619449012500"
     },
     {
       "addr": "0058cd5f",
-      "name": "DAT_0058cd5f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd5f",
+      "type": "double",
+      "value": "2.35619449012500"
     },
     {
       "addr": "0058cd67",
-      "name": "DAT_0058cd67",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd67",
+      "type": "double",
+      "value": "-0.785398163375000"
     },
     {
       "addr": "0058cd6f",
-      "name": "DAT_0058cd6f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd6f",
+      "type": "double",
+      "value": "0.785398163375000"
     },
     {
       "addr": "0058cd77",
-      "name": "DAT_0058cd77",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd77",
+      "type": "double",
+      "value": "-1.57079632675000"
     },
     {
       "addr": "0058cd7f",
-      "name": "DAT_0058cd7f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd7f",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "0058cd87",
-      "name": "DAT_0058cd87",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058cd87",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "01cc4800",
@@ -880,6 +881,22 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 124,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_48 = local_48 + 1.5873523201947252e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 142,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_50 = local_50 + 1.5873523201947252e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 147,
       "match": "param_2",
@@ -926,6 +943,22 @@
       "severity": "mild",
       "text": "switch(param_4) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 178,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_48 = local_48 + 1.5873523201947252e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 194,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_50 = local_50 + 1.5873523201947252e-314._0_4_;",
+      "type": "unknown_field"
     },
     {
       "call_site_count": 2,

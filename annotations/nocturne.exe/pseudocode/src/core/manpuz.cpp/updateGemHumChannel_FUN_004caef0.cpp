@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004caef0(float *param_1,float param_2,float param_3,uint *param_4,uint param_5,float *param_6)
 
 {
@@ -32,7 +30,7 @@ uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004caef0(float *param_1,flo
   *param_1 = param_3;
 LAB_004caf37:
   fVar1 = *param_1;
-  fVar2 = (float)_DAT_00587fc2;
+  fVar2 = (float)0.0039215686274509803;
   if (fVar1 * fVar2 <= 0.0) {
     sound_sndmain_cpp_killSfx_FUN_00527230();
     return uVar5;

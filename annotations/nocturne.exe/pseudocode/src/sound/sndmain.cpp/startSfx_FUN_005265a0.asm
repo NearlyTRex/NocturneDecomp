@@ -31,17 +31,17 @@
 ;   string s_..\\sound\\sndmain.cpp_005922b0
 ;   string s_SfxSlot::kill_-_must_be_locked!_005922c5
 ;   string s_sound_00592778
-;   undefined4 DAT_0059277e
-;   undefined4 DAT_00592782
-;   undefined4 DAT_00592787
-;   undefined4 DAT_0059278b
+;   TerminatedCString s_mp3_0059277e
+;   TerminatedCString s_mp3_00592782
+;   TerminatedCString s_mp3_00592787
+;   TerminatedCString s_mp3_0059278b
 ;   string s_sound_00592790
 ;   string s_..\\sound\\sndmain.cpp_00592796
 ;   string s_Out_of_memory._005927ab
-;   undefined4 DAT_005927ba
+;   TerminatedCString s_rb_005927ba
 ;   string s_sound_005927bd
 ;   string s_startSfx_-_can't_get_sample_%s_0059356d
-;   undefined4 DAT_005a2174
+;   float FLOAT_005a2174 = 2
 ;   undefined4 DAT_005bea40
 ;   ... and 14 more
 ;
@@ -351,7 +351,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 005268de
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 005268e3
-    PUSH 0x59277e                       ; 005268e6 | DAT_0059277e
+    PUSH 0x59277e                       ; 005268e6 | = "mp3"
     LEA EAX,[ESP + 0x204]               ; 005268eb
     PUSH EAX                            ; 005268f2
     CALL crt_string.c__stricmp_FUN_00564520 ; 005268f3
@@ -360,7 +360,7 @@ section .text
     TEST EAX,EAX                        ; 005268fb
     JZ 0x005266dc                       ; 005268fd
         ;   XREF to: 005266dc (CONDITIONAL_JUMP)  ; LAB_005266dc
-    PUSH 0x592782                       ; 00526903 | DAT_00592782
+    PUSH 0x592782                       ; 00526903 | = ".mp3"
     LEA EAX,[ESP + 0x204]               ; 00526908
     PUSH EAX                            ; 0052690f
     CALL crt_string.c__stricmp_FUN_00564520 ; 00526910
@@ -395,7 +395,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 0052695e
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 00526963
-    PUSH 0x592787                       ; 00526966 | DAT_00592787
+    PUSH 0x592787                       ; 00526966 | = "mp3"
     LEA EAX,[ESP + 0x104]               ; 0052696b
     PUSH EAX                            ; 00526972
     CALL crt_string.c__stricmp_FUN_00564520 ; 00526973
@@ -479,7 +479,7 @@ section .text
     MOV dword ptr [EDI + 0x12c],0x0     ; 00526a70
     FILD dword ptr [EDI + 0x10c]        ; 00526a7a
     MOV dword ptr [EDI + 0x130],0x0     ; 00526a80
-    FMUL float ptr [0x005a2174]         ; 00526a8a | DAT_005a2174
+    FMUL float ptr [0x005a2174]         ; 00526a8a | FLOAT_005a2174
     MOV dword ptr [EDI + 0x13c],0x0     ; 00526a90
     ADD ESP,0x4                         ; 00526a9a
     MOV dword ptr [EDI + 0x140],0x0     ; 00526a9d
@@ -506,7 +506,7 @@ section .text
     MOV EAX,EDI                         ; 00526ae4
     JMP 0x0052673b                      ; 00526ae6
         ;   XREF to: 0052673b (UNCONDITIONAL_JUMP)  ; LAB_0052673b
-    PUSH 0x59278b                       ; 00526aeb | DAT_0059278b
+    PUSH 0x59278b                       ; 00526aeb | = ".mp3"
         ;   Label: LAB_00526aeb
     LEA EAX,[ESP + 0x104]               ; 00526af0
     PUSH EAX                            ; 00526af7
@@ -516,7 +516,7 @@ section .text
     TEST EAX,EAX                        ; 00526b00
     JZ 0x00526983                       ; 00526b02
         ;   XREF to: 00526983 (CONDITIONAL_JUMP)  ; LAB_00526983
-    PUSH 0x5927ba                       ; 00526b08 | DAT_005927ba
+    PUSH 0x5927ba                       ; 00526b08 | = "rb"
     PUSH ESI                            ; 00526b0d
     PUSH 0x5927bd                       ; 00526b0e | = "sound"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00526b13
@@ -570,7 +570,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x374]     ; 00526b92
     FILD dword ptr [EAX + 0x10c]        ; 00526b99
     MOV dword ptr [EAX + 0x128],0x0     ; 00526b9f
-    FMUL float ptr [0x005a2174]         ; 00526ba9 | DAT_005a2174
+    FMUL float ptr [0x005a2174]         ; 00526ba9 | FLOAT_005a2174
     MOV dword ptr [EAX + 0x12c],0x0     ; 00526baf
     MOV EDX,dword ptr [ESP + 0x374]     ; 00526bb9
     MOV dword ptr [EAX + 0x130],0x0     ; 00526bc0

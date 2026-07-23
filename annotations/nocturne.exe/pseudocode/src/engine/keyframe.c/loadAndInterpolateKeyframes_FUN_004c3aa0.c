@@ -51,7 +51,7 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(int para
     do {
       iVar11 = *(int *)(iVar3 + 0x118);
       if (*(int *)(iVar11 + 8) != 2) {
-        _DAT_01cc4800 = "@..\\engine\\keyframe.c" + 1;
+        _DAT_01cc4800 = "..\\engine\\keyframe.c";
         _DAT_01cc4804 = 0xfd;
         FUN_004c8440("Bad key frame");
       }

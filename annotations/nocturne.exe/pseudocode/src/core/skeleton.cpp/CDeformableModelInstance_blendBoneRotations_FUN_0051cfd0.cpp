@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
   uint uStack_14;
   
   bVar6 = 0;
-  if ((float)_DAT_00591bbb < param_3) {
+  if ((float)0.001 < param_3) {
     iVar2 = 0;
     local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
     if (0 < *(int *)(local_1c + 0x28558)) {

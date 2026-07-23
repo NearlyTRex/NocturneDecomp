@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 165,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 14,
+    "pseudocode_lines": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [],
   "function": {
@@ -152,15 +151,15 @@
   "globals": [
     {
       "addr": "005969b7",
-      "name": "DAT_005969b7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005969b7",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005969bf",
-      "name": "DAT_005969bf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005969bf",
+      "type": "double",
+      "value": "0.100000000000000"
     }
   ],
   "param_estimates": {
@@ -198,16 +197,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_00548110(int param_1,float *param_2)",
@@ -215,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_00548110(int param_1,float *param_2)",
@@ -223,7 +214,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1 + 0x158);",
@@ -231,7 +222,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[1] = -0.1;",
@@ -239,7 +230,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = -fVar1 * fVar2;",
@@ -247,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[2] = -*(float *)(param_1 + 0x160) * fVar2;",
@@ -255,7 +246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2[2] = -*(float *)(param_1 + 0x160) * fVar2;",
@@ -263,7 +254,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[3] = *(float *)(param_1 + 0x158) * fVar2;",
@@ -271,7 +262,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2[3] = *(float *)(param_1 + 0x158) * fVar2;",
@@ -279,23 +270,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = *(float *)(param_1 + 0x15c) + (float)_DAT_005969bf;",
+      "text": "param_2[4] = *(float *)(param_1 + 0x15c) + (float)0.10000000000000001;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2[4] = *(float *)(param_1 + 0x15c) + (float)_DAT_005969bf;",
+      "text": "param_2[4] = *(float *)(param_1 + 0x15c) + (float)0.10000000000000001;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[5] = fVar2 * *(float *)(param_1 + 0x160);",
@@ -303,7 +294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2[5] = fVar2 * *(float *)(param_1 + 0x160);",

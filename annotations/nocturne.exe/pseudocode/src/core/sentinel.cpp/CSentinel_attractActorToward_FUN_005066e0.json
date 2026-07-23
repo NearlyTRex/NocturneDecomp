@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -165,21 +165,21 @@
   "globals": [
     {
       "addr": "00590095",
-      "name": "DAT_00590095",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00590095",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "00590099",
-      "name": "DAT_00590099",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00590099",
+      "type": "float",
+      "value": "-0.5"
     },
     {
       "addr": "0059009d",
-      "name": "DAT_0059009d",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059009d",
+      "type": "float",
+      "value": "-4"
     },
     {
       "addr": "01e5721c",
@@ -448,7 +448,7 @@
       "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_24 = local_24 + _DAT_0059009d;",
+      "text": "local_24 = local_24 + -4.0f;",
       "type": "static_uninitvar"
     }
   ],

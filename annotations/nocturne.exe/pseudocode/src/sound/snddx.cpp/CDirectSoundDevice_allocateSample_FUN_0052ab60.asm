@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
-;   undefined4 s_Create_secondary_buffer_00594256+1
+;   TerminatedCString s_Create_secondary_buffer_00594257
 ;   string s_DirectSoundDevice::allocateSampl_0059426f
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9248
@@ -165,7 +165,7 @@ section .text
         ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
     ADD ESP,0x4                         ; 0052acf9
     PUSH EAX                            ; 0052acfc
-    PUSH 0x594257                       ; 0052acfd | s_Create_secondary_buffer_00594256+1
+    PUSH 0x594257                       ; 0052acfd | = "Create secondary buffer"
     PUSH 0x5940b7                       ; 0052ad02 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0052ad07
     PUSH EAX                            ; 0052ad0b

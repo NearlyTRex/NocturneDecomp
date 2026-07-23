@@ -23,7 +23,7 @@
 ;   string s_SfxSlot::kill_-_must_be_locked!_00592840
 ;   string s_..\\sound\\sndmain.cpp_00592860
 ;   string s_nextMixingBuffer_-_shouldn't_hav_00592875
-;   undefined4 s_..\\sound\\sndmain.cpp_00593af3+3
+;   TerminatedCString s_sound_sndmain_cpp_00593af6
 ;   string s_pollSfx_-_must_be_locked!_00593b0b
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
@@ -285,7 +285,7 @@ section .text
     MOV dword ptr [ESP + 0x80],EBX      ; 0052979f
     JMP 0x0052959d                      ; 005297a6
         ;   XREF to: 0052959d (UNCONDITIONAL_JUMP)  ; LAB_0052959d
-    MOV ECX,0x593af6                    ; 005297ab | s_..\sound\sndmain.cpp_00593af3+3
+    MOV ECX,0x593af6                    ; 005297ab | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_005297ab
     MOV EBX,0x1442                      ; 005297b0
     PUSH 0x593b0b                       ; 005297b5 | = "pollSfx - must be locked!"

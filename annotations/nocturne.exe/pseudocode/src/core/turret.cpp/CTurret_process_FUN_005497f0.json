@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -230,8 +230,8 @@
     },
     {
       "addr": "00596d1d",
-      "name": "s_turret-ani?.wav_00596d1c+1",
-      "type": "undefined4",
+      "name": "s_turret_ani_wav_00596d1d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -266,9 +266,9 @@
     },
     {
       "addr": "00596d9d",
-      "name": "DAT_00596d9d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596d9d",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005b7650",
@@ -968,7 +968,7 @@
       "line": 119,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)_DAT_00596d9d);",
+      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)2);",
       "type": "unnamed_param"
     },
     {
@@ -976,7 +976,7 @@
       "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)_DAT_00596d9d);",
+      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)2);",
       "type": "unnamed_param"
     },
     {
@@ -984,7 +984,7 @@
       "line": 119,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)_DAT_00596d9d);",
+      "text": "(param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)2);",
       "type": "unnamed_param"
     },
     {

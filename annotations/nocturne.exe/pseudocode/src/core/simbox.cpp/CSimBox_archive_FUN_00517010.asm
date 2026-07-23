@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_00591134+1
+;   TerminatedCString s_modelName_00591135
 ;   string s_weight_0059113f
 ;   string s_initialVelocity_00591146
 ;   string s_initRotVel_00591156
 ;   string s_triggerEvent_00591161
-;   undefined4 DAT_0059116e
+;   TerminatedCString s_type_0059116e
 ;   undefined4 DAT_005be964
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 00517016
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0051701b
-    PUSH 0x591135                       ; 0051701e | s_modelName_00591134+1
+    PUSH 0x591135                       ; 0051701e | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 00517023
     PUSH EAX                            ; 00517029
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0051702a
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 005170a3 (CONDITIONAL_JUMP)  ; LAB_005170a3
     POP EBX                             ; 005170a1
     RET                                 ; 005170a2
-    PUSH 0x59116e                       ; 005170a3 | DAT_0059116e
+    PUSH 0x59116e                       ; 005170a3 | = "type"
         ;   Label: LAB_005170a3
     ADD EBX,0x2cc                       ; 005170a8
     PUSH EBX                            ; 005170ae

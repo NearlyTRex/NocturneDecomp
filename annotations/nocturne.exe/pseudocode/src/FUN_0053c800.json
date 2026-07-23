@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -235,8 +235,8 @@
   "globals": [
     {
       "addr": "00595b87",
-      "name": "s_actionPending_=_%d_stranger.cpp_l_00595b86+1",
-      "type": "undefined4",
+      "name": "s_actionPending_d_stranger_00595b87",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -247,27 +247,27 @@
     },
     {
       "addr": "00595bd7",
-      "name": "DAT_00595bd7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595bd7",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "00595bdf",
-      "name": "DAT_00595bdf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595bdf",
+      "type": "double",
+      "value": "3"
     },
     {
       "addr": "00595be7",
-      "name": "DAT_00595be7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595be7",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "00595bef",
-      "name": "DAT_00595bef",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595bef",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "005ad350",
@@ -691,7 +691,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0), (float)_DAT_00595bd7 <= fVar5)))) &&",
+      "text": "(param_1,0), (float)0.98999999999999999 <= fVar5)))) &&",
       "type": "unnamed_param"
     },
     {

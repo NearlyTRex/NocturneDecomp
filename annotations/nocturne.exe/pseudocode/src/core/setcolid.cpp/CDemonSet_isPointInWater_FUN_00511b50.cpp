@@ -36,7 +36,7 @@ uint __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1
         if (iVar1 != 0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar1,&local_1c,param_2);
           (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,&fStack_34);
-          fStack_30 = fStack_30 + _DAT_00590bc1;
+          fStack_30 = fStack_30 + -10.0f;
           if ((((fStack_34 <= local_1c) && (fStack_30 <= fStack_18)) && (fStack_2c <= fStack_14)) &&
              (((local_1c <= fStack_28 && (fStack_18 <= fStack_24)) && (fStack_14 <= fStack_20)))) {
             return 1;

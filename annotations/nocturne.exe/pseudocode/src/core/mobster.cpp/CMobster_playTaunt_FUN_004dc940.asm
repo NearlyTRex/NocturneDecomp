@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   string s_mobster-cheese-%c-%c-%d.wav_0058a4ad
-;   undefined4 DAT_0058a4c9
+;   float FLOAT_0058a4c9 = 5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
@@ -126,7 +126,7 @@ section .text
     FLD float ptr [ESI + 0xbd3c]        ; 004dca0f
         ;   Label: LAB_004dca0f
     MOV EBX,dword ptr [ESI + 0xbdc4]    ; 004dca15
-    FADD float ptr [0x0058a4c9]         ; 004dca1b | DAT_0058a4c9
+    FADD float ptr [0x0058a4c9]         ; 004dca1b | FLOAT_0058a4c9
     PUSH EBX                            ; 004dca21
     FSTP float ptr [ESI + 0xbd3c]       ; 004dca22
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004dca28

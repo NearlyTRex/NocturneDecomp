@@ -87,7 +87,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *para
     pcVar5 = (char *)0x0;
 LAB_0052d1a2:
     if (pcVar5 == (char *)0x0) {
-      pcVar5 = &DAT_00594a51;
+      pcVar5 = ".wav";
       iVar1 = -1;
       pcVar6 = local_170;
       do {

@@ -53,7 +53,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
   byte local_1b4 [12];
   uint local_1a8;
   uint local_1a4;
-  uint local_1a0;
+  float local_1a0;
   float local_19c;
   float local_198;
   float local_194;
@@ -104,10 +104,10 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
   byte local_64 [12];
   uint local_58;
   uint local_54;
-  uint local_50;
+  float local_50;
   byte local_4c [20];
   float local_38;
-  uint local_34;
+  float local_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -123,7 +123,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
     if (0.0 <= fVar2) {
       iVar4 = 0;
       if (0 < *(int *)(param_1 + 0xbdd0)) {
-        fVar7 = (float10)_DAT_0059c40c;
+        fVar7 = (float10)5.0f;
         fVar8 = (float10)65535;
         iVar3 = param_1;
         do {
@@ -175,7 +175,7 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
       local_170 = 0x41a00000;
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_ac,&local_178);
       core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(param_1,local_ac,0xbf800000,1);
-      fVar2 = _DAT_0059c40c;
+      fVar2 = 5.0f;
       *(uint *)(param_1 + 0xbe4c) = 1;
       *(float *)(param_1 + 0xbe50) = fVar2;
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,"brideexplosion.wav");
@@ -187,12 +187,12 @@ void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(int param_1,float para
   iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
   iVar4 = *(int *)(iVar4 + 0x24);
   if (iVar4 == 9) {
-    fVar2 = _DAT_0059c400 * param_2;
-    *(float *)(param_1 + 0x2430) = _DAT_0059c404 * param_2 * *(float *)(param_1 + 0xbc8c);
+    fVar2 = 6.0f * param_2;
+    *(float *)(param_1 + 0x2430) = 3.141593f * param_2 * *(float *)(param_1 + 0xbc8c);
     *(float *)(param_1 + 0x242c) = *(float *)(param_1 + 0xbc8c) * fVar2;
   }
   else {
-    fVar2 = _DAT_0059c3fc * param_2;
+    fVar2 = 1.570796f * param_2;
     *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
     *(float *)(param_1 + 0x2430) = fVar2 * *(float *)(param_1 + 0xbc8c);
   }
@@ -315,7 +315,7 @@ LAB_00458f79:
       }
     }
     else {
-      if ((*(float *)(param_1 + 0x2434) < _DAT_0059c3f8) || (*(float *)(param_1 + 0xbdbc) < 0.0)) {
+      if ((*(float *)(param_1 + 0x2434) < 20.0f) || (*(float *)(param_1 + 0xbdbc) < 0.0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);
         local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40000000,0x41a00000)
         ;
@@ -344,7 +344,7 @@ LAB_00458f79:
     if (*(int *)(param_1 + 0xbca4) != 0) {
       if (0.0 <= *(float *)(param_1 + 0xbdbc)) {
         local_58 = 0;
-        local_50 = 0x40000000;
+        local_50 = 2.0f;
         local_54 = 0;
         uVar10 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                            (*(int *)(param_1 + 0xbca4),&local_58,0x3f000000,0x3db2b8c2);
@@ -416,7 +416,7 @@ LAB_00459978:
       }
     }
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-    uVar10 = 0x3FC00000;
+    fVar2 = 1.5f;
     iVar4 = param_1 + 0x150;
     if (*(int *)(param_1 + 0xbca4) == 0) {
       iVar3 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
@@ -425,13 +425,13 @@ LAB_00459978:
       }
     }
     else {
-      local_34 = 0x3FC00000;
+      local_34 = 1.5f;
       *(uint *)(param_1 + 0x23ac) = 0;
       *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
       *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
       local_1a8 = 0;
       local_1a4 = 0;
-      local_1a0 = uVar10;
+      local_1a0 = fVar2;
       uVar10 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                          (*(int *)(param_1 + 0xbca4),&local_1a8,0x3f000000,0x3db2b8c2);
       iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
@@ -535,9 +535,9 @@ LAB_00459978:
     case 1:
       fVar2 = *(float *)(param_1 + 0xbdb4) + param_2;
       *(float *)(param_1 + 0xbdb4) = fVar2;
-      if (0x3F800000 < fVar2) {
+      if (1.0f < fVar2) {
         *(uint *)(param_1 + 0xbdb0) = 2;
-        *(float *)(param_1 + 0xbdb4) = 0x3F800000;
+        *(float *)(param_1 + 0xbdb4) = 1.0f;
       }
       local_2c = param_1 + 0x150;
       iVar3 = 0;
@@ -560,7 +560,7 @@ LAB_00459978:
     case 2:
       local_30 = 1;
       local_1c = 0;
-      for (local_18 = 0; fVar2 = 0x3F800000, local_18 < *(int *)(0x01E57284 + 0x14ecb0);
+      for (local_18 = 0; fVar2 = 1.0f, local_18 < *(int *)(0x01E57284 + 0x14ecb0);
           local_18 = local_18 + 1) {
         iVar4 = *(int *)(0x01E57284 + local_1c + 0x14ecb4);
         if (((iVar4 != 0) && (iVar4 != param_1)) &&

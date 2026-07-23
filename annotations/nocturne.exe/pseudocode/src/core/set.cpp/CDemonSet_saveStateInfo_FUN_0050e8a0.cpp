@@ -12,16 +12,16 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(int *param_1,uint
   int iVar1;
   int *piVar2;
   
-  _fprintf(param_2,"@// Set state version\n" + 1);
-  _fprintf(param_2,&DAT_00590898);
+  _fprintf(param_2,"// Set state version\n");
+  _fprintf(param_2,"1\n");
   _fprintf(param_2,"// Camera count, enabled list\n");
   iVar1 = 0;
-  _fprintf(param_2,&DAT_005908ba,*param_1);
+  _fprintf(param_2,"%d\n",*param_1);
   piVar2 = param_1;
   if (0 < *param_1) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(param_2,&DAT_005908be,piVar2[0x68]);
+      _fprintf(param_2,"%d\n",piVar2[0x68]);
       piVar2 = piVar2 + 0x68;
     } while (iVar1 < *param_1);
   }

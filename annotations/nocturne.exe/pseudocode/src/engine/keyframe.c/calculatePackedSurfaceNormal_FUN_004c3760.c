@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004c3760(int param_1,int param_2)
 
 {
@@ -45,7 +43,7 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004c3760(int par
   }
   local_30 = 1.0 / local_30;
   iVar4 = *(int *)(param_2 + 0x18);
-  fVar9 = (float)_DAT_005875cc;
+  fVar9 = (float)65535;
   fVar7 = fVar8 * local_30 * fVar9;
   fVar6 = fVar6 * local_30 * fVar9;
   iVar2 = *(int *)(param_1 + 4 + iVar4 * 0xc);

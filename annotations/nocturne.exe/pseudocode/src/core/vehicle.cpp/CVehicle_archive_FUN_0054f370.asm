@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005973ce+2
+;   TerminatedCString s_modelName_005973d0
 ;   string s_tireCount_005973da
 ;   string s_static_bpos_005973e4
 ;   string s_radius_005973f0
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 0054f37f
     MOV EAX,dword ptr [ESP + 0x14]      ; 0054f382
-    PUSH 0x5973d0                       ; 0054f386 | s_modelName_005973ce+2
+    PUSH 0x5973d0                       ; 0054f386 | = "modelName"
     ADD EAX,0x150                       ; 0054f38b
     PUSH EAX                            ; 0054f390
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0054f391

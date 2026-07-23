@@ -8,14 +8,14 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502ad7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058e16d
+;   TerminatedCString s_walk_0058e16d
 ;   string s_backup_0058e172
-;   undefined4 DAT_0058e179
-;   undefined4 DAT_0058e17d
+;   TerminatedCString s_run_0058e179
+;   TerminatedCString s_fire_0058e17d
 ;   string s_useItem_0058e182
 ;   string s_light_0058e18a
-;   undefined4 DAT_0058e190
-;   undefined4 DAT_0058e195
+;   TerminatedCString s_draw_0058e190
+;   TerminatedCString s_jump_0058e195
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 004fe301
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fe302
     MOV ESI,dword ptr [ESP + 0x10]      ; 004fe306
-    PUSH 0x58e16d                       ; 004fe30a | DAT_0058e16d
+    PUSH 0x58e16d                       ; 004fe30a | = "walk"
     PUSH ESI                            ; 004fe30f
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe310
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
@@ -54,7 +54,7 @@ section .text
     POP ESI                             ; 004fe336
     POP EBX                             ; 004fe337
     RET                                 ; 004fe338
-    PUSH 0x58e179                       ; 004fe339 | DAT_0058e179
+    PUSH 0x58e179                       ; 004fe339 | = "run"
         ;   Label: LAB_004fe339
     PUSH ESI                            ; 004fe33e
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe33f
@@ -67,7 +67,7 @@ section .text
     POP ESI                             ; 004fe34e
     POP EBX                             ; 004fe34f
     RET                                 ; 004fe350
-    PUSH 0x58e17d                       ; 004fe351 | DAT_0058e17d
+    PUSH 0x58e17d                       ; 004fe351 | = "fire"
         ;   Label: LAB_004fe351
     PUSH ESI                            ; 004fe356
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe357
@@ -106,7 +106,7 @@ section .text
     POP ESI                             ; 004fe396
     POP EBX                             ; 004fe397
     RET                                 ; 004fe398
-    PUSH 0x58e190                       ; 004fe399 | DAT_0058e190
+    PUSH 0x58e190                       ; 004fe399 | = "draw"
         ;   Label: LAB_004fe399
     PUSH ESI                            ; 004fe39e
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe39f
@@ -119,7 +119,7 @@ section .text
     POP ESI                             ; 004fe3ae
     POP EBX                             ; 004fe3af
     RET                                 ; 004fe3b0
-    PUSH 0x58e195                       ; 004fe3b1 | DAT_0058e195
+    PUSH 0x58e195                       ; 004fe3b1 | = "jump"
         ;   Label: LAB_004fe3b1
     PUSH ESI                            ; 004fe3b6
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe3b7

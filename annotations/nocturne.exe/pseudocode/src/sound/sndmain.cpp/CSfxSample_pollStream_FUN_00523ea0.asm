@@ -19,7 +19,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005267ff
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_00592901+1
+;   TerminatedCString s_sound_sndmain_cpp_00592902
 ;   string s_generateSilence_-_invalid_bit_de_00592917
 ;   string s_..\\sound\\sndmain.cpp_00592b2d
 ;   string s_SfxSlot::kill_-_must_be_locked!_00592b42
@@ -364,7 +364,7 @@ section .text
     CMP EAX,0x8                         ; 00524210
     JNC 0x0052435b                      ; 00524213
         ;   XREF to: 0052435b (CONDITIONAL_JUMP)  ; LAB_0052435b
-    MOV EDX,0x592902                    ; 00524219 | s_..\sound\sndmain.cpp_00592901+1
+    MOV EDX,0x592902                    ; 00524219 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00524219
     MOV ECX,0x5c4                       ; 0052421e
     PUSH 0x592917                       ; 00524223 | = "generateSilence - invalid bit depth!"

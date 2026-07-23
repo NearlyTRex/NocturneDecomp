@@ -29,7 +29,7 @@
 ;   string s_DirectSoundDevice::setSfxOpt_-_n_005945f1
 ;   string s_Commit_hardware_sfx_3d_buffer_se_0059462b
 ;   string s_DirectSoundDevice::setSfxOpt_-_f_00594652
-;   undefined4 DAT_0059467f
+;   double DOUBLE_0059467f = 868.589000000000
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -369,7 +369,7 @@ section .text
     FLDLN2                              ; 0052b602
     FXCH                                ; 0052b604
     FYL2X                               ; 0052b606
-    FMUL double ptr [0x0059467f]        ; 0052b608 | DAT_0059467f
+    FMUL double ptr [0x0059467f]        ; 0052b608 | DOUBLE_0059467f
     SUB ESP,0x8                         ; 0052b60e
     FSTP double ptr [ESP]               ; 0052b611
     CALL crt_math.c_floor_FUN_005648c0  ; 0052b614

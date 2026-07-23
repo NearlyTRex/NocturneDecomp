@@ -19,8 +19,8 @@
 ;   FUN_004da790 at 004db6d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058a2d9
-;   undefined4 DAT_0058a2e1
+;   double DOUBLE_0058a2d9 = 1.57079632675000
+;   double DOUBLE_0058a2e1 = -1.57079632675000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -55,7 +55,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbd48]    ; 004da5e6
         ;   Label: LAB_004da5e6
     FLD float ptr [EAX + 0x34]          ; 004da5ec
-    FADD double ptr [0x0058a2e1]        ; 004da5ef | DAT_0058a2e1
+    FADD double ptr [0x0058a2e1]        ; 004da5ef | DOUBLE_0058a2e1
     FSTP float ptr [EBX + 0x34]         ; 004da5f5
         ;   Label: LAB_004da5f5
     LEA EAX,[ESP + 0x18]                ; 004da5f8
@@ -96,7 +96,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbd48]    ; 004da659
         ;   Label: LAB_004da659
     FLD float ptr [EAX + 0x34]          ; 004da65f
-    FADD double ptr [0x0058a2d9]        ; 004da662 | DAT_0058a2d9
+    FADD double ptr [0x0058a2d9]        ; 004da662 | DOUBLE_0058a2d9
     JMP 0x004da5f5                      ; 004da668
         ;   XREF to: 004da5f5 (UNCONDITIONAL_JUMP)  ; LAB_004da5f5
 

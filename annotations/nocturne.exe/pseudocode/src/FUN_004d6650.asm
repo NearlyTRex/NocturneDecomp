@@ -127,7 +127,7 @@
 ;   core_set.cpp_FUN_0050e080 at 0050e139
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058960a
+;   double DOUBLE_0058960a = 0.0000152587890625
 ;   undefined4 DAT_01c039e8
 ;   undefined4 DAT_01c039ec
 ;   undefined4 DAT_01c039f0
@@ -763,28 +763,28 @@ section .text
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d70ba
         ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
     FILD dword ptr [0x01c039e8]         ; 004d70bf | DAT_01c039e8
-    FMUL double ptr [0x0058960a]        ; 004d70c5 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d70c5 | DOUBLE_0058960a
     FILD dword ptr [0x01c039ec]         ; 004d70cb | DAT_01c039ec
-    FMUL double ptr [0x0058960a]        ; 004d70d1 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d70d1 | DOUBLE_0058960a
     FILD dword ptr [0x01c039f0]         ; 004d70d7 | DAT_01c039f0
-    FMUL double ptr [0x0058960a]        ; 004d70dd | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d70dd | DOUBLE_0058960a
     FILD dword ptr [0x01c039f4]         ; 004d70e3 | DAT_01c039f4
-    FMUL double ptr [0x0058960a]        ; 004d70e9 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d70e9 | DOUBLE_0058960a
     FILD dword ptr [0x01c039f8]         ; 004d70ef | DAT_01c039f8
-    FMUL double ptr [0x0058960a]        ; 004d70f5 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d70f5 | DOUBLE_0058960a
     FILD dword ptr [0x01c039fc]         ; 004d70fb | DAT_01c039fc
-    FMUL double ptr [0x0058960a]        ; 004d7101 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d7101 | DOUBLE_0058960a
     FILD dword ptr [0x01c03a00]         ; 004d7107 | DAT_01c03a00
     ADD ESP,0x4                         ; 004d710d
-    FMUL double ptr [0x0058960a]        ; 004d7110 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d7110 | DOUBLE_0058960a
     FXCH ST6                            ; 004d7116
     FSTP float ptr [ESP + 0x20c]        ; 004d7118
     FILD dword ptr [0x01c03a04]         ; 004d711f | DAT_01c03a04
-    FMUL double ptr [0x0058960a]        ; 004d7125 | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d7125 | DOUBLE_0058960a
     FXCH ST5                            ; 004d712b
     FSTP float ptr [ESP + 0x21c]        ; 004d712d
     FILD dword ptr [0x01c03a08]         ; 004d7134 | DAT_01c03a08
-    FMUL double ptr [0x0058960a]        ; 004d713a | DAT_0058960a
+    FMUL double ptr [0x0058960a]        ; 004d713a | DOUBLE_0058960a
     LEA EAX,[ESP + 0x20c]               ; 004d7140
     LEA ESI,[ESP + 0x2c]                ; 004d7147
     PUSH EAX                            ; 004d714b

@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00520b44 = 00520bf0
 ;   string s_limb?.wav_005920d4
-;   undefined4 DAT_005920e5
-;   undefined4 DAT_005920ed
-;   undefined4 DAT_005920f5
+;   double DOUBLE_005920e5 = 7
+;   double DOUBLE_005920ed = 0.5
+;   double DOUBLE_005920f5 = 2.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c777cc
 ;
@@ -223,7 +223,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 00520d3b
         ;   Label: LAB_00520d3b
     FLD ST0                             ; 00520d3e
-    FMUL double ptr [0x005920e5]        ; 00520d40 | DAT_005920e5
+    FMUL double ptr [0x005920e5]        ; 00520d40 | DOUBLE_005920e5
     FSTP ST1                            ; 00520d46
     FSTP float ptr [ESI + 0x8]          ; 00520d48
     MOV EDX,dword ptr [EBX + 0xbd54]    ; 00520d4b
@@ -301,7 +301,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 00520e10
         ;   Label: LAB_00520e10
     FLD ST0                             ; 00520e13
-    FMUL double ptr [0x005920f5]        ; 00520e15 | DAT_005920f5
+    FMUL double ptr [0x005920f5]        ; 00520e15 | DOUBLE_005920f5
     FSTP ST1                            ; 00520e1b
     FSTP float ptr [ESI + 0x4]          ; 00520e1d
     ADD ESP,0xc                         ; 00520e20
@@ -313,7 +313,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 00520e28
         ;   Label: LAB_00520e28
     FLD ST0                             ; 00520e2b
-    FMUL double ptr [0x005920ed]        ; 00520e2d | DAT_005920ed
+    FMUL double ptr [0x005920ed]        ; 00520e2d | DOUBLE_005920ed
     FSTP ST1                            ; 00520e33
     FSTP float ptr [ESI + 0x4]          ; 00520e35
     ADD ESP,0xc                         ; 00520e38

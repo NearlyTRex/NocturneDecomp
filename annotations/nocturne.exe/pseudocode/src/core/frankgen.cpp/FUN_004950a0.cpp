@@ -31,7 +31,7 @@ void FUN_004950a0(char *param_1)
   bVar7 = 0;
   switch(*(uint *)(param_1 + 0x150)) {
   case 0:
-    apcStack_3c[0] = 0x450FC000;
+    apcStack_3c[0] = (char *)2300.0f;
     uVar2 = 0;
     goto LAB_004950c9;
   case 1:

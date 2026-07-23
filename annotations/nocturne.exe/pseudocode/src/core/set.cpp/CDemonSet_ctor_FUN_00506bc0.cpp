@@ -42,7 +42,7 @@ uint * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1)
   *(uint *)(iVar3 + -0x794) = 0;
   *(uint *)(iVar3 + -0x790) = 0;
   *(uint *)(iVar3 + -0x788) = 0;
-  pcVar4 = &DAT_005900ee;
+  pcVar4 = "none";
   *(uint *)(iVar3 + -0x784) = 0;
   pcVar5 = (char *)(iVar3 + -0x77c);
   *(uint *)(iVar3 + -0x780) = 0;
@@ -67,7 +67,7 @@ uint * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1)
   *(uint *)(iVar3 + -4) = 0;
   *(uint *)(iVar3 + -0x58c) = 0x10000;
   *(uint *)(iVar3 + -0x588) = 0x10000;
-  pcVar4 = &DAT_005900f3;
+  pcVar4 = "none";
   *(uint *)(iVar3 + -0x584) = 0x10000;
   *(uint *)(iVar3 + 0x6244) = 0;
   pcVar5 = (char *)(iVar3 + -0x5c4);

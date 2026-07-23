@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -152,8 +152,8 @@
   "globals": [
     {
       "addr": "00595fcf",
-      "name": "s_flashlit.wav_00595fce+1",
-      "type": "undefined4",
+      "name": "s_flashlit_wav_00595fcf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -262,7 +262,7 @@
       "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?flashlit.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"flashlit.wav\");",
       "type": "unresolved_funcptr"
     },
     {
@@ -270,7 +270,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?flashlit.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"flashlit.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -278,7 +278,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?flashlit.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"flashlit.wav\");",
       "type": "unnamed_param"
     }
   ],

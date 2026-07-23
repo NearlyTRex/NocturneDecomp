@@ -33,9 +33,9 @@ void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(int param_1)
     } while (iVar6 < *(int *)(param_1 + 0x368));
   }
   if (*(char *)(param_1 + 0x78) != '\0') {
-    iVar6 = _stricmp(param_1 + 0x78,&DAT_00597768);
+    iVar6 = _stricmp(param_1 + 0x78,"none");
     if ((iVar6 != 0) &&
-       (iVar6 = _stricmp(param_1 + 0x78,&DAT_0059776d), iVar6 != 0)) {
+       (iVar6 = _stricmp(param_1 + 0x78,"true"), iVar6 != 0)) {
       _DAT_01cc4800 = "..\\core\\waypoint.cpp";
       _DAT_01cc4804 = 0x79;
       FUN_004c8440("Can't have creation event for waypoint.");

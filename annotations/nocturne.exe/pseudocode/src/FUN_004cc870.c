@@ -14,6 +14,6 @@ void FUN_004cc870(int param_1)
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x170,"totalTime");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x174,"param");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x178,"phase");
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x198,&DAT_005881be);
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x198,"type");
   return;
 }

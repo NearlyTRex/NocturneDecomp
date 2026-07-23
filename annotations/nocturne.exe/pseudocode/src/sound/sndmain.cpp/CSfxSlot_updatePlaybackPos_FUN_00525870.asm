@@ -20,7 +20,7 @@
 ;   string s_SfxSlot::updatePlaybackPos_-_inv_00593196
 ;   string s_..\\sound\\sndmain.cpp_005931cb
 ;   string s_SfxSlot::updatePlaybackPos_-_ste_005931e0
-;   undefined4 DAT_0059322e
+;   double DOUBLE_0059322e = 0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -182,7 +182,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x74]      ; 00525a07
         ;   Label: LAB_00525a07
     FILD dword ptr [EDX + 0x138]        ; 00525a0a
-    FADD double ptr [0x0059322e]        ; 00525a10 | DAT_0059322e
+    FADD double ptr [0x0059322e]        ; 00525a10 | DOUBLE_0059322e
     FCOMP double ptr [ESP]              ; 00525a16
     FNSTSW AX                           ; 00525a19
     SAHF                                ; 00525a1b

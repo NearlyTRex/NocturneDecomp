@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -172,8 +172,8 @@
   "globals": [
     {
       "addr": "005939be",
-      "name": "s_..\\sound\\sndmain.cpp_005939bd+1",
-      "type": "undefined4",
+      "name": "s_sound_sndmain_cpp_005939be",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -184,15 +184,15 @@
     },
     {
       "addr": "00593a0e",
-      "name": "DAT_00593a0e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00593a0e",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "00593a16",
-      "name": "DAT_00593a16",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00593a16",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005bea98",
@@ -296,7 +296,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 < (float)_DAT_00593a0e) {",
+      "text": "if (param_1 < (float)0.050000000000000003) {",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +312,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 <= (float)_DAT_00593a16) {",
+      "text": "if (param_1 <= (float)2) {",
       "type": "unnamed_param"
     },
     {

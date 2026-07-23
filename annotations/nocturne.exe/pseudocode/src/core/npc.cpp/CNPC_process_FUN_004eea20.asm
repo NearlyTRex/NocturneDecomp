@@ -12,12 +12,12 @@
 ; Referenced Globals:
 ;   string s_STAND_0058cad6
 ;   string s_%s_confused_while_walking_to_scr_0058cadc
-;   undefined4 DAT_0058cb06
-;   undefined4 DAT_0058cb0a
+;   TerminatedCString s_RUN_0058cb06
+;   TerminatedCString s_WALK_0058cb0a
 ;   string s_STAND_0058cb0f
-;   undefined4 DAT_0058cb1b
-;   undefined4 DAT_0058cb23
-;   undefined4 DAT_0058cb2b
+;   double DOUBLE_0058cb1b = 3.14159265350000
+;   double DOUBLE_0058cb23 = 0.5
+;   double DOUBLE_0058cb2b = 32
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_0077ad0c
@@ -147,8 +147,8 @@ section .text
     MOV dword ptr [EBX + 0x1f56c],0x1   ; 004eeafb
     FLD float ptr [EBP + 0x18]          ; 004eeb05
         ;   Label: LAB_004eeb05
-    FMUL double ptr [0x0058cb1b]        ; 004eeb08 | DAT_0058cb1b
-    FMUL double ptr [0x0058cb23]        ; 004eeb0e | DAT_0058cb23
+    FMUL double ptr [0x0058cb1b]        ; 004eeb08 | DOUBLE_0058cb1b
+    FMUL double ptr [0x0058cb23]        ; 004eeb0e | DOUBLE_0058cb23
     PUSH dword ptr [EBP + 0x18]         ; 004eeb14
     MOV EAX,dword ptr [EBX + 0x23ac]    ; 004eeb17
     MOV dword ptr [EBX + 0x242c],EAX    ; 004eeb1d
@@ -169,7 +169,7 @@ section .text
         ;   XREF to: 004eecd2 (CONDITIONAL_JUMP)  ; LAB_004eecd2
     PUSH 0x1                            ; 004eeb4e
         ;   Label: LAB_004eeb4e
-    PUSH 0x58cb0a                       ; 004eeb50 | DAT_0058cb0a
+    PUSH 0x58cb0a                       ; 004eeb50 | = "WALK"
     LEA EAX,[EBX + 0x150]               ; 004eeb55
         ;   Label: LAB_004eeb55
     PUSH EAX                            ; 004eeb5b
@@ -185,7 +185,7 @@ section .text
     MOV dword ptr [EAX],EDX             ; 004eeb7a
     FLD float ptr [EBP + 0x18]          ; 004eeb7c
         ;   Label: LAB_004eeb7c
-    FMUL double ptr [0x0058cb2b]        ; 004eeb7f | DAT_0058cb2b
+    FMUL double ptr [0x0058cb2b]        ; 004eeb7f | DOUBLE_0058cb2b
     FLD float ptr [EBX + 0x2424]        ; 004eeb85
     FXCH                                ; 004eeb8b
     FSUBR ST0,ST1                       ; 004eeb8d
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 004eeb61 (UNCONDITIONAL_JUMP)  ; LAB_004eeb61
     PUSH 0x0                            ; 004eec96
         ;   Label: LAB_004eec96
-    PUSH 0x58cb06                       ; 004eec98 | DAT_0058cb06
+    PUSH 0x58cb06                       ; 004eec98 | = "RUN"
     PUSH ESI                            ; 004eec9d
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004eec9e
         ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()

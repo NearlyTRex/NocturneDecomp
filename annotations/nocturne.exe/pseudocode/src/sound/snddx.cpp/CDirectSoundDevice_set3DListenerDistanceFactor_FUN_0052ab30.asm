@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059424f
+;   double DOUBLE_0059424f = 0.304800000000000
 ;   undefined4 DAT_02dc9220
 ;
 ; *****************************************************************************
@@ -22,7 +22,7 @@ section .text
     RET                                 ; 0052ab3a
     FLD double ptr [ESP + 0x8]          ; 0052ab3b
         ;   Label: LAB_0052ab3b
-    FMUL double ptr [0x0059424f]        ; 0052ab3f | DAT_0059424f
+    FMUL double ptr [0x0059424f]        ; 0052ab3f | DOUBLE_0059424f
     PUSH 0x0                            ; 0052ab45
     MOV EAX,EDX                         ; 0052ab47
     SUB ESP,0x4                         ; 0052ab49

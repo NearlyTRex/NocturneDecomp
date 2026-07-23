@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00589507
-;   undefined4 DAT_0058950f
+;   double DOUBLE_00589507 = 1.30000000000000
+;   float FLOAT_0058950f = 0.5
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -46,9 +46,9 @@ section .text
     MOV dword ptr [EAX + 0x14],0xbdcccccd ; 004d5ccc
     FLD ST1                             ; 004d5cd3
     FXCH                                ; 004d5cd5
-    FADD float ptr [0x0058950f]         ; 004d5cd7 | DAT_0058950f
+    FADD float ptr [0x0058950f]         ; 004d5cd7 | FLOAT_0058950f
     FXCH                                ; 004d5cdd
-    FMUL double ptr [0x00589507]        ; 004d5cdf | DAT_00589507
+    FMUL double ptr [0x00589507]        ; 004d5cdf | DOUBLE_00589507
     FXCH                                ; 004d5ce5
     FSTP float ptr [EAX + 0x18]         ; 004d5ce7
     FSTP ST1                            ; 004d5cea

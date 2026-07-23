@@ -70,7 +70,7 @@
 ;   double DOUBLE_00579d6d = 1.58735232019473E-314
 ;   double DOUBLE_00579d75 = 0.00100000000000000
 ;   undefined4 DAT_0059ae98
-;   undefined4 DAT_0059aeac
+;   float FLOAT_0059aeac = 1
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
@@ -106,7 +106,7 @@ section .text
     SAHF                                ; 00422c9e
     JNC 0x004233c2                      ; 00422c9f
         ;   XREF to: 004233c2 (CONDITIONAL_JUMP)  ; LAB_004233c2
-    FLD float ptr [0x0059aeac]          ; 00422ca5 | DAT_0059aeac
+    FLD float ptr [0x0059aeac]          ; 00422ca5 | FLOAT_0059aeac
     FDIV float ptr [ESI + 0x38]         ; 00422cab
     XOR EBX,EBX                         ; 00422cae
     FSTP float ptr [ESP + 0x8]          ; 00422cb0

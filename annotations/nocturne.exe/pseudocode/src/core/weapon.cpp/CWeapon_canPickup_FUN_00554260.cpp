@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,uint param_2)
 
 {
@@ -15,7 +13,7 @@ uint __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,uint par
   
   if (((((*(int *)(param_1 + 0x2fc) == 0) && (*(int *)(param_1 + 0x2cc) == 0)) &&
        (*(int *)(param_1 + 0x554) != 0)) &&
-      ((float)_DAT_00597c01 <
+      ((float)0.5 <
        SQRT(*(float *)(param_1 + 0x354) * *(float *)(param_1 + 0x354) +
             *(float *)(param_1 + 0x34c) * *(float *)(param_1 + 0x34c) +
             *(float *)(param_1 + 0x350) * *(float *)(param_1 + 0x350)))) ||

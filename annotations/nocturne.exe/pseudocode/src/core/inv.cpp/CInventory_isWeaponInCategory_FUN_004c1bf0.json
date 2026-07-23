@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 265,
+    "complexity_score": 250,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 50,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 204
@@ -172,8 +171,8 @@
   "globals": [
     {
       "addr": "00587411",
-      "name": "DAT_00587411",
-      "type": "undefined4",
+      "name": "s_CGun_00587411",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -368,16 +367,8 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,&DAT_00587411), iVar1 != 0)) {",
+      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"CGun\"), iVar1 != 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00587411",
-      "severity": "mild",
-      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,&DAT_00587411), iVar1 != 0)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

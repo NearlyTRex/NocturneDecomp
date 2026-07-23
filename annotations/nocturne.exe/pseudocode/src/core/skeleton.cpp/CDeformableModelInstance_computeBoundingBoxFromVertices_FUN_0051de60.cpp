@@ -81,9 +81,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
   *pfVar7 = (float)local_4c * _DAT_005a1eb0;
   *(float *)(param_1 + 0x2248) = (float)local_48 * _DAT_005a1eb0;
   *(float *)(param_1 + 0x224c) = (float)local_44 * _DAT_005a1eb0;
-  fVar2 = (*pfVar7 - *pfVar1) * _DAT_00591c87;
-  fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * _DAT_00591c87;
-  fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * _DAT_00591c87;
+  fVar2 = (*pfVar7 - *pfVar1) * 0.05f;
+  fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * 0.05f;
+  fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * 0.05f;
   *pfVar1 = *pfVar1 - fVar2;
   *(float *)(param_1 + 0x223c) = *(float *)(param_1 + 0x223c) - fVar3;
   *(float *)(param_1 + 0x2240) = *(float *)(param_1 + 0x2240) - fVar4;

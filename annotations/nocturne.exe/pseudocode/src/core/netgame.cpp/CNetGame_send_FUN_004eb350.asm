@@ -15,7 +15,7 @@
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10 at 004ebf9b
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058c0e8+2
+;   TerminatedCString s_core_netgame_cpp_0058c0ea
 ;   string s_CNetGame::send_-_invalid_player_i_0058c0fe
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -61,7 +61,7 @@ section .text
     RET                                 ; 004eb38c
     PUSH EDI                            ; 004eb38d
         ;   Label: LAB_004eb38d
-    MOV ECX,0x58c0ea                    ; 004eb38e | s_..\core\netgame.cpp_0058c0e8+2
+    MOV ECX,0x58c0ea                    ; 004eb38e | = "..\\core\\netgame.cpp"
     MOV EDI,0x5c5                       ; 004eb393
     PUSH 0x58c0fe                       ; 004eb398 | = "CNetGame::send - invalid player index"
     MOV dword ptr [0x01cc4800],ECX      ; 004eb39d | DAT_01cc4800

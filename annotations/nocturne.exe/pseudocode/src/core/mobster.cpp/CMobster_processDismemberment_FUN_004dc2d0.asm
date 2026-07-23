@@ -15,11 +15,11 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004dc2b4 = 004dc310
 ;   string s_limb?.wav_0058a451
-;   undefined4 DAT_0058a461
-;   undefined4 DAT_0058a469
-;   undefined4 DAT_0058a471
-;   undefined4 DAT_0058a479
-;   undefined4 DAT_0058a481
+;   double DOUBLE_0058a461 = 0.333000000000000
+;   double DOUBLE_0058a469 = 0.666000000000000
+;   double DOUBLE_0058a471 = 7
+;   double DOUBLE_0058a479 = 0.5
+;   double DOUBLE_0058a481 = 2.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77600
 ;   undefined4 DAT_01c777cc
@@ -92,7 +92,7 @@ section .text
     FLD float ptr [ESP + 0x20]          ; 004dc342
     ADD ESP,0x8                         ; 004dc346
     FST double ptr [ESP]                ; 004dc349
-    FCOMP double ptr [0x0058a461]       ; 004dc34c | DAT_0058a461
+    FCOMP double ptr [0x0058a461]       ; 004dc34c | DOUBLE_0058a461
     FNSTSW AX                           ; 004dc352
     SAHF                                ; 004dc354
     JNC 0x004dc613                      ; 004dc355
@@ -262,7 +262,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 004dc500
         ;   Label: LAB_004dc500
     FLD ST0                             ; 004dc503
-    FMUL double ptr [0x0058a471]        ; 004dc505 | DAT_0058a471
+    FMUL double ptr [0x0058a471]        ; 004dc505 | DOUBLE_0058a471
     MOV EAX,dword ptr [ESI]             ; 004dc50b
     FSTP ST1                            ; 004dc50d
     FSTP float ptr [ESI + 0x8]          ; 004dc50f
@@ -356,7 +356,7 @@ section .text
         ;   XREF to: 004dc56a (UNCONDITIONAL_JUMP)  ; LAB_004dc56a
     FLD double ptr [ESP]                ; 004dc613
         ;   Label: LAB_004dc613
-    FCOMP double ptr [0x0058a469]       ; 004dc616 | DAT_0058a469
+    FCOMP double ptr [0x0058a469]       ; 004dc616 | DOUBLE_0058a469
     FNSTSW AX                           ; 004dc61c
     SAHF                                ; 004dc61e
     JNC 0x004dc363                      ; 004dc61f
@@ -383,7 +383,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004dc65e
         ;   Label: LAB_004dc65e
     FLD ST0                             ; 004dc661
-    FMUL double ptr [0x0058a481]        ; 004dc663 | DAT_0058a481
+    FMUL double ptr [0x0058a481]        ; 004dc663 | DOUBLE_0058a481
     FSTP ST1                            ; 004dc669
     FSTP float ptr [ESI + 0x4]          ; 004dc66b
     MOV ESP,EBP                         ; 004dc66e
@@ -395,7 +395,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004dc675
         ;   Label: LAB_004dc675
     FLD ST0                             ; 004dc678
-    FMUL double ptr [0x0058a479]        ; 004dc67a | DAT_0058a479
+    FMUL double ptr [0x0058a479]        ; 004dc67a | DOUBLE_0058a479
     FSTP ST1                            ; 004dc680
     FSTP float ptr [ESI + 0x4]          ; 004dc682
     MOV ESP,EBP                         ; 004dc685

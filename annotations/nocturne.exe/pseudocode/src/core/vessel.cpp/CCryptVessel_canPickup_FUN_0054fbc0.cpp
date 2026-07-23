@@ -12,7 +12,7 @@ uint core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,uint param_
   int iVar1;
   
   if (((*(int *)(param_1 + 0x7e0) == 0) && (*(int *)(param_1 + 0x3b0) == 0)) &&
-     (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"?CHero" + 1), iVar1 != 0)) {
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CHero"), iVar1 != 0)) {
     return 4;
   }
   return 0;

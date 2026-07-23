@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597310
-;   undefined4 DAT_00597318
+;   double DOUBLE_00597310 = 0.03125
+;   double DOUBLE_00597318 = 0.0833333333333333
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -109,7 +109,7 @@ section .text
     MOV dword ptr [EDX + 0x8],EAX       ; 0054e8cc
     FLD float ptr [EBX + 0x910]         ; 0054e8cf
         ;   Label: LAB_0054e8cf
-    FMUL double ptr [0x00597310]        ; 0054e8d5 | DAT_00597310
+    FMUL double ptr [0x00597310]        ; 0054e8d5 | DOUBLE_00597310
     FLD float ptr [EBX + 0x928]         ; 0054e8db
     FMUL ST0                            ; 0054e8e1
     FLD float ptr [EBX + 0x924]         ; 0054e8e3
@@ -126,7 +126,7 @@ section .text
     FADDP ST5,ST0                       ; 0054e90d
     FXCH ST5                            ; 0054e90f
     FST float ptr [EBX + 0x914]         ; 0054e911
-    FLD double ptr [0x00597318]         ; 0054e917 | DAT_00597318
+    FLD double ptr [0x00597318]         ; 0054e917 | DOUBLE_00597318
     FXCH                                ; 0054e91d
     FMUL ST1                            ; 0054e91f
     FXCH ST6                            ; 0054e921

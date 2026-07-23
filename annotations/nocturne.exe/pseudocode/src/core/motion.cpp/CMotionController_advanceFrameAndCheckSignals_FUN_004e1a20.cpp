@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)
 
 {
@@ -27,15 +25,15 @@ uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0
   if (0 < *(int *)(iVar4 + 0x4a4)) {
     do {
       iVar1 = *(int *)(iVar2 + 0x4a8);
-      if ((*param_3 <= (float)iVar1) && ((float)iVar1 <= local_20 + (float)_DAT_0058b395)) {
-        local_20 = (float)iVar1 + (float)_DAT_0058b395;
+      if ((*param_3 <= (float)iVar1) && ((float)iVar1 <= local_20 + (float)0.001)) {
+        local_20 = (float)iVar1 + (float)0.001;
         uVar5 = *(uint *)(iVar2 + 0x4ac);
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 8;
     } while (iVar3 < *(int *)(iVar4 + 0x4a4));
   }
-  if ((double)local_20 < (double)*(int *)(iVar4 + 100) + _DAT_0058b385) {
+  if ((double)local_20 < (double)*(int *)(iVar4 + 100) + -0.0001) {
     (**(code **)(param_1[0x14] + 8))
               (param_1,(float)*(int *)(iVar4 + 0x60) + *param_3,
                (float)*(int *)(iVar4 + 0x60) + local_20,param_5);
@@ -54,7 +52,7 @@ uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0
     return uVar5;
   }
   fStack_18 = *(float *)(iVar4 + 0x38);
-  if (fStack_18 == _DAT_0058b38d) {
+  if (fStack_18 == 1.5873523201947252e-314._0_4_) {
     iVar2 = (**(code **)(param_1[0x14] + 4))
                       (param_1,*param_2,(float)(*(int *)(iVar4 + 100) + -1),
                        *(uint *)(iVar4 + 0x34));

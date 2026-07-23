@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 808,
+    "complexity_score": 792,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 69,
+    "pseudocode_lines": 97,
+    "suspect_count": 68,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 436
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -162,45 +161,45 @@
   "globals": [
     {
       "addr": "00591ead",
-      "name": "DAT_00591ead",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591ead",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "00591eb5",
-      "name": "DAT_00591eb5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591eb5",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "00591ebd",
-      "name": "DAT_00591ebd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591ebd",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00591ec5",
-      "name": "DAT_00591ec5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591ec5",
+      "type": "double",
+      "value": "8"
     },
     {
       "addr": "00591ecd",
-      "name": "DAT_00591ecd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591ecd",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "00591ed5",
-      "name": "DAT_00591ed5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591ed5",
+      "type": "double",
+      "value": "-1.57079632675000"
     },
     {
       "addr": "00591edd",
-      "name": "DAT_00591edd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591edd",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "005b9354",
@@ -320,16 +319,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_slew_cpp_CSlew_processInput_FUN_0051f980(float *param_1)",
@@ -337,7 +328,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 15,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x38);",
@@ -345,15 +336,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a), dVar4 = _DAT_00591ead, iVar5 != 0)) {",
+      "text": "(iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a), dVar4 = 10, iVar5 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x4f);",
@@ -361,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[4] - fVar1;",
@@ -369,7 +360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[4] - fVar1;",
@@ -377,7 +368,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x51);",
@@ -385,7 +376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[4] + fVar1;",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[4] + fVar1;",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
+      "line": 32,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x48);",
@@ -409,10 +400,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar6 = (float10)fsin((float10)param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = (float)(fVar6 * (float10)fVar2 + (float10)*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = (float)(fVar6 * (float10)fVar2 + (float10)*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -420,36 +435,12 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar6 = (float10)fsin((float10)param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar6 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar6 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
       "text": "param_1[2] = (float)(fVar7 * (float10)fVar2 + (float10)param_1[2]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = (float)(fVar7 * (float10)fVar2 + (float10)param_1[2]);",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x50);",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)param_1[4]);",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float10)fsin((float10)param_1[4]);",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = (float)((float10)*param_1 - fVar6 * (float10)fVar2);",
@@ -489,7 +480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = (float)((float10)*param_1 - fVar6 * (float10)fVar2);",
@@ -497,7 +488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = (float)((float10)param_1[2] - fVar7 * (float10)fVar2);",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = (float)((float10)param_1[2] - fVar7 * (float10)fVar2);",
@@ -513,7 +504,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x4b);",
@@ -521,10 +512,34 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar7 = (float10)fsin((float10)param_1[4] + (float10)-1.57079632675);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar6 = (float10)fcos((float10)param_1[4] + (float10)-1.57079632675);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)param_1[4] + (float10)_DAT_00591ed5);",
+      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -532,36 +547,12 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar6 = (float10)fcos((float10)param_1[4] + (float10)_DAT_00591ed5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
       "text": "param_1[2] = (float)(fVar6 * (float10)fVar2 + (float10)param_1[2]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = (float)(fVar6 * (float10)fVar2 + (float10)param_1[2]);",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
+      "line": 53,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x4d);",
@@ -577,10 +568,34 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar7 = (float10)fsin((float10)param_1[4] + (float10)1.57079632675);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar6 = (float10)fcos((float10)param_1[4] + (float10)1.57079632675);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)param_1[4] + (float10)_DAT_00591edd);",
+      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -588,36 +603,12 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar6 = (float10)fcos((float10)param_1[4] + (float10)_DAT_00591edd);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)(fVar7 * (float10)fVar2 + (float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
       "text": "param_1[2] = (float)(fVar6 * (float10)fVar2 + (float10)param_1[2]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = (float)(fVar6 * (float10)fVar2 + (float10)param_1[2]);",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
+      "line": 60,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x10);",
@@ -633,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_1[1] + fVar2;",
@@ -641,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_1[1] + fVar2;",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 66,
+      "line": 64,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1e);",
@@ -657,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_1[1] - fVar2;",
@@ -665,7 +656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_1[1] - fVar2;",
@@ -673,7 +664,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
+      "line": 68,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x3f);",
@@ -681,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[3] - fVar1;",
@@ -689,7 +680,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[3] - fVar1;",
@@ -697,7 +688,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
+      "line": 72,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x42);",
@@ -705,7 +696,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[3] + fVar1;",
@@ -713,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[3] + fVar1;",
@@ -721,7 +712,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 78,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x47);",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_1[5] - fVar1;",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_1[5] - fVar1;",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
+      "line": 80,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x49);",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_1[5] + fVar1;",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_1[5] + fVar1;",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 86,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0xc);",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = param_1[6] - local_2c * fVar3;",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = param_1[6] - local_2c * fVar3;",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0xd);",
@@ -801,7 +792,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = param_1[6] + local_2c * fVar3;",
@@ -809,7 +800,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = param_1[6] + local_2c * fVar3;",
@@ -817,7 +808,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
+      "line": 92,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x4c);",
@@ -825,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = 0.0;",
@@ -833,7 +824,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[5];",
@@ -841,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = param_1[5];",
@@ -849,7 +840,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[4];",
@@ -857,7 +848,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = param_1[4];",

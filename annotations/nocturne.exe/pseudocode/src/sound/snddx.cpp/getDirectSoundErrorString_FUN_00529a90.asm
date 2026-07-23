@@ -18,10 +18,10 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   string s_DSERR_ALLOCATED:_The_request_fai_00593b8f
-;   string s_DSERR_ALREADYINITIALIZED:_The_ob_00593c07
-;   string s_DSERR_BADFORMAT:_The_specified_w_00593c44
-;   string s_DSERR_BUFFERLOST:_The_buffer_mem_00593c81
+;   TerminatedCString s_DSERR_ALLOCATED_The_requ_00593b8f
+;   TerminatedCString s_DSERR_ALREADYINITIALIZED_00593c07
+;   TerminatedCString s_DSERR_BADFORMAT_The_spec_00593c44
+;   TerminatedCString s_DSERR_BUFFERLOST_The_buf_00593c81
 ;   string s_DSERR_CONTROLUNAVAIL:_The_contro_00593cc9
 ;   string s_DSERR_GENERIC:_An_undetermined_e_00593d31
 ;   string s_DSERR_INVALIDCALL:_This_function_00593d81

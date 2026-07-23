@@ -39,8 +39,7 @@ uint __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *param_
     _sprintf(&DAT_01e56420,"Actor variable name \"%s\" is too long",param_1);
   }
   else {
-    _sprintf(&DAT_01e56420,"?Actor variable name must begin with '@'" + 1)
-    ;
+    _sprintf(&DAT_01e56420,"Actor variable name must begin with '@'");
   }
   return 0;
 }

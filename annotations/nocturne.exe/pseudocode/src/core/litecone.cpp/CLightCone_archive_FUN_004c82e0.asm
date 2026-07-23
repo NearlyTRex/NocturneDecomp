@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587ae5
+;   TerminatedCString s_fov_00587ae5
 ;   string s_falloff_00587ae9
 ;   string s_state_00587af1
 ;   string s_onEvent_00587af7
@@ -29,7 +29,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004c82e6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004c82eb
-    PUSH 0x587ae5                       ; 004c82ee | DAT_00587ae5
+    PUSH 0x587ae5                       ; 004c82ee | = "fov"
     LEA EAX,[EBX + 0x150]               ; 004c82f3
     PUSH EAX                            ; 004c82f9
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004c82fa

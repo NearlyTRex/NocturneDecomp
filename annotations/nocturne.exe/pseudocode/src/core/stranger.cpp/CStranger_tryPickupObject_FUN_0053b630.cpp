@@ -82,7 +82,7 @@ uint __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(int param_
   
   if ((((0.0 < *(float *)(param_1 + 0x1faa8)) || (*(int *)(param_1 + 0x1fa08) != 0)) ||
       (local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                   (param_1,0), local_14 < (float)_DAT_00595a9f)) ||
+                                   (param_1,0), local_14 < (float)0.98999999999999999)) ||
      (((local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                     (param_1 + 0x150,0), local_14 < 1.0 ||
        (*(int *)(param_1 + 0x24ac) != 0)) || (*(int *)(param_1 + 0x24f0) != 0)))) {
@@ -141,16 +141,16 @@ LAB_0053b782:
           pfVar4 = (float *)(**(code **)(*(int *)(iVar7 + 0x14c) + 0x14))(iVar7,auStack_154);
           fStack_d0 = *pfVar4 + pfVar4[3];
           fStack_cc = pfVar4[1] + pfVar4[4];
-          fStack_58 = fStack_d0 * _DAT_00595aa7;
-          fStack_54 = fStack_cc * _DAT_00595aa7;
+          fStack_58 = fStack_d0 * 0.5f;
+          fStack_54 = fStack_cc * 0.5f;
           fStack_c8 = pfVar4[2] + pfVar4[5];
-          fStack_50 = fStack_c8 * _DAT_00595aa7;
+          fStack_50 = fStack_c8 * 0.5f;
           pfVar4 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                       (iVar7,auStack_130,&fStack_58);
           fStack_100 = *pfVar4 - *pfVar3;
           fStack_fc = pfVar4[1] - pfVar3[1];
           fStack_f8 = pfVar4[2] - pfVar3[2];
-          if (((ABS(fStack_fc) <= (float)_DAT_00595ac7) &&
+          if (((ABS(fStack_fc) <= (float)5) &&
               (fStack_20 = fStack_100 * fStack_100 + fStack_f8 * fStack_f8, fStack_20 <= local_28))
              && (iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar7,param_2), iVar2 != 0)) {
             local_28 = fStack_20;
@@ -167,7 +167,7 @@ LAB_0053b782:
              ABS(afStack_a0[0]) <= 1.0 &&
              (iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                                 (auStack_88,afStack_a0),
-             ABS(*(float *)(iVar2 + 4)) <= (float)_DAT_00595abf)))))) {
+             ABS(*(float *)(iVar2 + 4)) <= (float)20)))))) {
           uStack_4c = 0;
           uStack_48 = 0x40400000;
           uStack_44 = 0x40000000;
@@ -199,10 +199,10 @@ LAB_0053b782:
   }
   fStack_70 = *(float *)(param_1 + 0x1fb0c) + *(float *)(param_1 + 0x1fb18);
   fStack_6c = *(float *)(param_1 + 0x1fb10) + *(float *)(param_1 + 0x1fb1c);
-  fStack_40 = fStack_70 * _DAT_00595aa7;
+  fStack_40 = fStack_70 * 0.5f;
   fStack_68 = *(float *)(param_1 + 0x1fb14) + *(float *)(param_1 + 0x1fb20);
-  fStack_3c = fStack_6c * _DAT_00595aa7;
-  fStack_38 = fStack_68 * _DAT_00595aa7;
+  fStack_3c = fStack_6c * 0.5f;
+  fStack_38 = fStack_68 * 0.5f;
   uVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     (*(uint *)(param_1 + 0x1fa08),auStack_e8,&fStack_40);
   puVar5 = (uint *)
@@ -225,7 +225,7 @@ LAB_0053b782:
     if ((iVar7 == 0) ||
        (iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x7c))(iVar7,param_1), iVar7 != 4)) {
       iVar7 = param_1 + 0x150;
-      if (*(float *)(param_1 + 0x1fb04) <= (float)_DAT_00595ab7) {
+      if (*(float *)(param_1 + 0x1fb04) <= (float)2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar7,0x13,1);
         uVar6 = *(uint *)(param_1 + 0x1fa08);
         pcVar8 = "Picking up %s off ground\n";
@@ -241,7 +241,7 @@ LAB_0053b782:
         fStack_124 = fStack_ac - *(float *)(param_1 + 0x1fb00);
         fStack_120 = fStack_a8 - *(float *)(param_1 + 0x1fb04);
         fStack_11c = fStack_a4 - *(float *)(param_1 + 0x1fb08);
-        if ((float)_DAT_00595ab7 <
+        if ((float)2 <
             ABS(SQRT(fStack_5c * fStack_5c + fStack_64 * fStack_64 + fStack_60 * fStack_60) -
                 SQRT(fStack_11c * fStack_11c + fStack_124 * fStack_124 + fStack_120 * fStack_120)))
         {
@@ -260,7 +260,7 @@ LAB_0053b782:
       iVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                         (*(uint *)(param_1 + 0x1fa08),auStack_f4,param_1 + 0x20);
       *(uint *)(param_1 + 0x1faf0) = (uint)(0.0 < *(float *)(iVar7 + 8));
-      if ((float)_DAT_00595aaf < *(float *)(param_1 + 0x1fb04)) {
+      if ((float)2.5 < *(float *)(param_1 + 0x1fb04)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x18,1);
         puVar5 = (uint *)
                  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -271,7 +271,7 @@ LAB_0053b782:
           *(uint *)(param_1 + 0x1fb08) = puVar5[2];
         }
         uVar6 = *(uint *)(param_1 + 0x1fa08);
-        pcVar8 = ">Picking up heavy %s shelf\n" + 1;
+        pcVar8 = "Picking up heavy %s shelf\n";
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x17,1);

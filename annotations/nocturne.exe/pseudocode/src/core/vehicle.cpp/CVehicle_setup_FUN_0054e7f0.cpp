@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0(int param_1)
 
 {
@@ -44,9 +42,9 @@ void core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0(int param_1)
     *(float *)(param_1 + 0x928) = local_18;
     *(float *)(param_1 + 0x92c) = local_14;
   }
-  fVar2 = *(float *)(param_1 + 0x910) * (float)_DAT_00597310;
+  fVar2 = *(float *)(param_1 + 0x910) * (float)0.03125;
   *(float *)(param_1 + 0x914) = fVar2;
-  fVar3 = (float)_DAT_00597318;
+  fVar3 = (float)0.083333333333333301;
   *(float *)(param_1 + 0x918) =
        fVar2 * fVar3 *
        (*(float *)(param_1 + 0x92c) * *(float *)(param_1 + 0x92c) +

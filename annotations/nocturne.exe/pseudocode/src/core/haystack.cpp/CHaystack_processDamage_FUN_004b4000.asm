@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059e878
+;   float FLOAT_0059e878 = 0.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_01c777bc
@@ -42,7 +42,7 @@ section .text
     TEST ESI,ESI                        ; 004b403b
     JZ 0x004b40a8                       ; 004b403d
         ;   XREF to: 004b40a8 (CONDITIONAL_JUMP)  ; LAB_004b40a8
-    MOV EAX,[0x0059e878]                ; 004b403f | DAT_0059e878
+    MOV EAX,[0x0059e878]                ; 004b403f | FLOAT_0059e878
         ;   Label: LAB_004b403f
     MOV dword ptr [EBX + 0xbc8c],EAX    ; 004b4044
     FLD float ptr [EDI + 0x4]           ; 004b404a

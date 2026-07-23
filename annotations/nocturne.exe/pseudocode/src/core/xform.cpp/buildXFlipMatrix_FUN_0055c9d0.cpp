@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_xform_cpp_buildXFlipMatrix_FUN_0055c9d0(float param_1)
 
 {
@@ -35,7 +33,7 @@ void core_xform_cpp_buildXFlipMatrix_FUN_0055c9d0(float param_1)
   local_10 = 0;
   local_c = 0x3f800000;
   local_8 = 0;
-  local_34[3] = param_1 * (float)_DAT_00598336;
+  local_34[3] = param_1 * (float)2;
   pfVar2 = local_34;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *pfVar2;

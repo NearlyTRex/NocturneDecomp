@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(uint param_1,float *param_2,float *param_3)
 
 {
@@ -49,19 +47,19 @@ float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(uint param_1,flo
   local_44 = 0.0;
   local_14 = 0.0;
   do {
-    local_64 = local_4c * _DAT_00590a1d;
-    local_60 = local_48 * _DAT_00590a1d;
-    local_5c = local_44 * _DAT_00590a1d;
-    local_34 = local_58 * _DAT_00590a21;
-    local_30 = local_54 * _DAT_00590a21;
-    local_2c = local_50 * _DAT_00590a21;
+    local_64 = local_4c * 0.005f;
+    local_60 = local_48 * 0.005f;
+    local_5c = local_44 * 0.005f;
+    local_34 = local_58 * 0.1f;
+    local_30 = local_54 * 0.1f;
+    local_2c = local_50 * 0.1f;
     local_10 = 0.1;
     local_28 = local_70 + local_34 + local_64;
     local_24 = local_6c + local_30 + local_60;
     local_20 = local_68 + local_2c + local_5c;
     local_18 = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(param_1,&local_70,&local_28);
     if ((0.0 <= local_18) && (local_18 <= 1.0)) {
-      return local_18 * _DAT_00590a21 + local_14;
+      return local_18 * 0.1f + local_14;
     }
     if (&local_70 != &local_28) {
       local_70 = local_28;

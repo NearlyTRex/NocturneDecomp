@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526757
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_00593232+4
+;   TerminatedCString s_sound_sndmain_cpp_00593236
 ;   string s_SfxSlot::seek_-_no_sample?!_0059324b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -37,7 +37,7 @@ section .text
     CMP dword ptr [EBX + 0x74],0x0      ; 00525a8b
     JNZ 0x00525ab4                      ; 00525a8f
         ;   XREF to: 00525ab4 (CONDITIONAL_JUMP)  ; LAB_00525ab4
-    MOV ECX,0x593236                    ; 00525a91 | s_..\sound\sndmain.cpp_00593232+4
+    MOV ECX,0x593236                    ; 00525a91 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xbf0                       ; 00525a96
     PUSH 0x59324b                       ; 00525a9b | = "SfxSlot::seek - no sample?!"
     MOV dword ptr [0x01cc4800],ECX      ; 00525aa0 | DAT_01cc4800

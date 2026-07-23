@@ -39,7 +39,7 @@ void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int p
   bVar9 = 0;
   if (_DAT_02dc84bc < 1) {
     pcStack_70 = "pollSfx - must be locked!";
-    _DAT_01cc4800 = "!\t@..\\sound\\sndmain.cpp" + 3;
+    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
     _DAT_01cc4804 = 0x1442;
     puStack_74 = (byte *)0x5297cb;
     FUN_004c8440();

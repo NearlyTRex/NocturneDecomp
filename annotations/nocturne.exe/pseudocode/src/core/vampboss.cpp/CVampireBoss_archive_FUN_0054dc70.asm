@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_human_model_motion_state_00597164+1
+;   TerminatedCString s_human_model_motion_state_00597165
 ;   string s_bat_model_motion_state_0059717e
 ;   string s_wayPoint0_00597195
 ;   string s_wayPoint1_0059719f
 ;   string s_wayPoint2_005971a9
 ;   string s_wayPoint3_005971b3
-;   undefined4 DAT_005971bd
+;   TerminatedCString s_form_005971bd
 ;   string s_morphT_005971c2
 ;   undefined4 DAT_005c1188
 ;
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 0054dd1a (CONDITIONAL_JUMP)  ; LAB_0054dd1a
     POP EBX                             ; 0054dceb
     RET                                 ; 0054dcec
-    PUSH 0x597165                       ; 0054dced | s_human_model_motion_state_00597164+1
+    PUSH 0x597165                       ; 0054dced | = "human model motion state"
         ;   Label: LAB_0054dced
     LEA EAX,[EBX + 0x150]               ; 0054dcf2
     PUSH EAX                            ; 0054dcf8
@@ -86,7 +86,7 @@ section .text
     ADD ESP,0x8                         ; 0054dd12
     JMP 0x0054dc89                      ; 0054dd15
         ;   XREF to: 0054dc89 (UNCONDITIONAL_JUMP)  ; LAB_0054dc89
-    PUSH 0x5971bd                       ; 0054dd1a | DAT_005971bd
+    PUSH 0x5971bd                       ; 0054dd1a | = "form"
         ;   Label: LAB_0054dd1a
     LEA EAX,[EBX + 0xbe168]             ; 0054dd1f
     PUSH EAX                            ; 0054dd25

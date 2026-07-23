@@ -20,12 +20,12 @@
 ;
 ; Referenced Globals:
 ;   string s_DeviceName_00593a80
-;   undefined4 DAT_00593a8b
+;   TerminatedCString s_Bits_00593a8b
 ;   string s_Channels_00593a90
-;   undefined4 DAT_00593a99
+;   TerminatedCString s_Hz_00593a99
 ;   string s_HwMixingEnabled_00593a9c
 ;   string s_MaxSwLatency_00593aac
-;   undefined4 DAT_00593ab9
+;   TerminatedCString s_Mute_00593ab9
 ;   string s_SfxChannel%dEnabled_00593abe
 ;   string s_SfxChannel%dVol_00593ad2
 ;   undefined4 DAT_005bea60
@@ -115,7 +115,7 @@ section .text
     ADD ESP,0xc                         ; 00528d1f
     MOV ESI,dword ptr [ESP + 0x284]     ; 00528d22
     PUSH ESI                            ; 00528d29
-    PUSH 0x593a8b                       ; 00528d2a | DAT_00593a8b
+    PUSH 0x593a8b                       ; 00528d2a | = "Bits"
     PUSH EBP                            ; 00528d2f
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 00528d30
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_setInteger_FUN_004bda80()
@@ -129,7 +129,7 @@ section .text
     ADD ESP,0xc                         ; 00528d4b
     MOV EAX,dword ptr [ESP + 0x280]     ; 00528d4e
     PUSH EAX                            ; 00528d55
-    PUSH 0x593a99                       ; 00528d56 | DAT_00593a99
+    PUSH 0x593a99                       ; 00528d56 | = "Hz"
     PUSH EBP                            ; 00528d5b
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 00528d5c
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_setInteger_FUN_004bda80()
@@ -156,7 +156,7 @@ section .text
     CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 00528d9f
         ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
     PUSH EAX                            ; 00528da4
-    PUSH 0x593ab9                       ; 00528da5 | DAT_00593ab9
+    PUSH 0x593ab9                       ; 00528da5 | = "Mute"
     PUSH EBP                            ; 00528daa
     XOR EBX,EBX                         ; 00528dab
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 00528dad

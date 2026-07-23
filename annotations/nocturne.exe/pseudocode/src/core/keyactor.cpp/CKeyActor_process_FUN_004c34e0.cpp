@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)
 
 {
@@ -18,12 +16,12 @@ void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)
   uint uVar5;
   
   iVar1 = param_1 + 0x2d4;
-  *(float *)(param_1 + 0x2d0) = param_2 * (float)_DAT_0058758c + *(float *)(param_1 + 0x2d0);
+  *(float *)(param_1 + 0x2d0) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x2d0);
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(iVar1,param_1 + 0x20);
   fVar4 = (float10)fsin((float10)*(float *)(param_1 + 0x2d0));
   uVar5 = 0x4c3531;
   fVar4 = (float10)round
-                             (fVar4 * (float10)_DAT_00587594 + (float10)_DAT_0058759c);
+                             (fVar4 * (float10)8192 + (float10)16384);
   iVar2 = (int)ROUND(fVar4);
   *(int *)(param_1 + 0x310) = iVar2;
   iVar2 = (iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0);

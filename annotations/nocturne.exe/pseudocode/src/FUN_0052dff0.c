@@ -53,7 +53,7 @@ int FUN_0052dff0(uint param_1)
   
   bVar10 = 0;
   local_3c = *(float *)(0x01C775EC + 0x264);
-  local_20 = local_3c * (float)_DAT_00594b86;
+  local_20 = local_3c * (float)0.5;
   local_30 = local_3c;
   core_sound_cpp_updateListeners_FUN_0052c9d0();
   local_38 = -local_20;
@@ -65,7 +65,7 @@ int FUN_0052dff0(uint param_1)
     local_24 = local_20;
   }
   _DAT_02dc946c = _DAT_02dc946c + local_24;
-  if (_DAT_02dc946c <= (float)_DAT_00594b8e) {
+  if (_DAT_02dc946c <= (float)0.001) {
     core_sound_cpp_CSound_killSound_FUN_0052ebb0(param_1,_DAT_02dc9454);
     _DAT_02dc946c = 0.0;
   }
@@ -78,10 +78,10 @@ int FUN_0052dff0(uint param_1)
   }
   local_138 = 0.0;
   if (((0.0 < *(float *)(0x02DD1210 + 0xc)) &&
-      (iVar3 = _strnicmp(0x01E57284 + 0x14cd08,&DAT_00594b73,4),
+      (iVar3 = _strnicmp(0x01E57284 + 0x14cd08,"NDUN",4),
       iVar3 == 0)) &&
-     (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)_DAT_00594b96 + (float)_DAT_00594b9e
-     , (float)_DAT_00594ba6 < local_138)) {
+     (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +
+                  (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
     local_138 = 0.7;
   }
   local_34 = -local_20;
@@ -93,7 +93,7 @@ int FUN_0052dff0(uint param_1)
     local_28 = local_20;
   }
   _DAT_02dc9470 = _DAT_02dc9470 + local_28;
-  if (_DAT_02dc9470 <= (float)_DAT_00594b8e) {
+  if (_DAT_02dc9470 <= (float)0.001) {
     core_sound_cpp_CSound_killSound_FUN_0052ebb0(param_1,_DAT_02dc9458);
     _DAT_02dc9470 = 0.0;
   }
@@ -137,14 +137,14 @@ int FUN_0052dff0(uint param_1)
         local_6c = 0;
         local_40 = _DAT_02dc9464;
         local_64 = 0;
-        local_44 = _DAT_02dc9460 + _DAT_00594bae;
+        local_44 = _DAT_02dc9460 + 20.0f;
         iVar3 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
                           (0x01E57284,&local_54,&local_48);
         if (iVar3 == 0) {
-          PTR_DAT_005bed60 = &DAT_00594aff;
+          PTR_s_int_005bed60 = "ext";
         }
         else {
-          PTR_DAT_005bed60 = &DAT_00594afb;
+          PTR_s_int_005bed60 = "int";
         }
         core_setcolid_cpp_CDemonSet_init_FUN_00511750();
         _DAT_02dc9d54 = *(int *)(0x01E57284 + 0x15aabc);
@@ -152,12 +152,12 @@ int FUN_0052dff0(uint param_1)
     }
     else {
       _DAT_02dc9d54 = -1;
-      PTR_DAT_005bed60 = &DAT_00594af7;
+      PTR_s_int_005bed60 = "ext";
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
     sound_sndmain_cpp_setNextSfxFlags_FUN_00526240();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
-    iVar3 = _stricmp(PTR_DAT_005bed60,&DAT_00594b03);
+    iVar3 = _stricmp(PTR_s_int_005bed60,"int");
     if (iVar3 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00527230();
       local_13c = 0.4;
@@ -180,15 +180,16 @@ int FUN_0052dff0(uint param_1)
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
     else {
-      iVar3 = _stricmp(PTR_DAT_005bed64,PTR_DAT_005bed60);
+      iVar3 = _stricmp(PTR_s_x_005bed64,PTR_s_int_005bed60);
       if (iVar3 != 0) {
-        sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,local_13c * (float)_DAT_00594bb6);
+        sound_sndmain_cpp_setSfxVolume_FUN_005270d0
+                  (_DAT_02dc9d58,local_13c * (float)1.5);
       }
     }
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     pfVar6 = (float *)&DAT_02dc9ca4;
     iVar3 = 0;
-    PTR_DAT_005bed64 = PTR_DAT_005bed60;
+    PTR_s_x_005bed64 = PTR_s_int_005bed60;
     _DAT_02dc9d44 = 0.0;
     _DAT_02dc9d48 = 0.0;
     _DAT_02dc9d4c = 30.0;
@@ -207,7 +208,7 @@ int FUN_0052dff0(uint param_1)
         pfVar6[1] = pfVar6[1] + local_5c;
         pfVar6[2] = pfVar6[2] + local_58;
         uVar5 = (ushort)((uint)iVar4 >> 0x10);
-        if ((float)_DAT_00594bce < ABS(*(float *)(&DAT_02dc9cac + iVar3 * 0x10))) {
+        if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar3 * 0x10))) {
           sound_sndmain_cpp_killSfx_FUN_00527230();
           uVar5 = extraout_var;
         }
@@ -236,14 +237,14 @@ int FUN_0052dff0(uint param_1)
       switch(iVar4 % 5) {
       case 0:
       case 1:
-        fVar11 = local_13c * (float)_DAT_00594bc6;
+        fVar11 = local_13c * (float)0.59999999999999998;
         local_2c = 25.0;
-        _sprintf(local_d0,"rail?%s.wav",PTR_DAT_005bed60,fVar11);
+        _sprintf(local_d0,"rail?%s.wav",PTR_s_int_005bed60,fVar11);
         break;
       case 2:
       case 3:
-        fVar11 = local_13c * (float)_DAT_00594bbe;
-        pcVar7 = &DAT_00594b2d;
+        fVar11 = local_13c * (float)0.80000000000000004;
+        pcVar7 = "bump?.wav";
         local_2c = 20.0;
         pcVar9 = local_d0;
         do {

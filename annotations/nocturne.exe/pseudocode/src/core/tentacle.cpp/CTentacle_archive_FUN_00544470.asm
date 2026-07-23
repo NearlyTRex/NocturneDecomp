@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005965a6+2
+;   TerminatedCString s_modelName_005965a8
 ;   string s_guardDistance_005965b2
 ;   string s_motion_state_005965c0
 ;   string s_partStatus_005965cd
@@ -32,7 +32,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 00544477
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 0054447c
-    PUSH 0x5965a8                       ; 0054447f | s_modelName_005965a6+2
+    PUSH 0x5965a8                       ; 0054447f | = "modelName"
     LEA ESI,[EBX + 0x150]               ; 00544484
     PUSH ESI                            ; 0054448a
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0054448b

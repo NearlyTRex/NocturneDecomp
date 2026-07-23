@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int param_2,int param_3)
 
 {
@@ -43,8 +41,8 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
   
   if (DAT_005bbc40 == 1) {
     iVar10 = 0;
-    fVar12 = (float10)_DAT_0058b8f8;
-    fVar13 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0;
     do {
       fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
@@ -53,8 +51,8 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
       iVar11 = iVar11 + 8;
     } while (iVar10 < 0x24);
     iVar10 = 0;
-    fVar12 = (float10)_DAT_0058b8f8;
-    fVar13 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0;
     do {
       fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
@@ -70,9 +68,9 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
       iVar11 = iVar10;
     } while (iVar10 != 0xc0);
     iVar10 = 0x18;
-    fVar12 = (float10)_DAT_0058b900;
-    fVar13 = (float10)_DAT_0058b920;
-    fVar14 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)-18;
+    fVar14 = (float10)0.5;
     iVar11 = 0xc0;
     do {
       fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);
@@ -95,9 +93,9 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
       iVar11 = iVar10;
     } while (iVar10 != 0x30);
     iVar10 = 6;
-    fVar12 = (float10)_DAT_0058b900;
-    fVar13 = (float10)_DAT_0058b928;
-    fVar14 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)-6;
+    fVar14 = (float10)0.5;
     iVar11 = 0x30;
     do {
       fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);
@@ -113,8 +111,8 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
       iVar11 = iVar10;
     } while (iVar10 != 0x90);
     iVar10 = 0x12;
-    fVar12 = (float10)_DAT_0058b8f8;
-    fVar13 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0x90;
     do {
       fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
@@ -123,8 +121,8 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
       iVar11 = iVar11 + 8;
     } while (iVar10 < 0x24);
     iVar10 = 0;
-    fVar12 = (float10)_DAT_0058b900;
-    fVar13 = (float10)_DAT_0058b918;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0;
     do {
       fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
@@ -144,7 +142,7 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
     local_30 = 0xc;
     do {
       iVar9 = 1;
-      fVar12 = (float10)_DAT_0058b908;
+      fVar12 = (float10)0.13089969389957501;
       iVar10 = local_24;
       do {
         fVar13 = (float10)fcos((float10)iVar9 * (float10)(iVar11 + 6) * fVar12);
@@ -160,7 +158,7 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
     local_20 = 0;
     do {
       iVar10 = local_20 * 2 + 0x13;
-      fVar12 = (float10)_DAT_0058b910;
+      fVar12 = (float10)0.043633231299858202;
       iVar11 = local_20 * 0x90;
       do {
         local_14 = iVar10 % 0x90;
@@ -181,7 +179,7 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int 
     local_44 = 0;
     do {
       iVar10 = local_44;
-      if ((float)_DAT_0058b930 < ABS(param_1[iVar11])) {
+      if ((float)1.0000000000000001e-05 < ABS(param_1[iVar11])) {
         local_44 = local_44 + 1;
         aiStack_9c[iVar10] = iVar11;
       }

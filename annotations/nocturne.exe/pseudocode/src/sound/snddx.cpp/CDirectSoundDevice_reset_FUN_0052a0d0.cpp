@@ -28,7 +28,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(void)
     if (iVar4 != 0) {
       uVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar4);
       _sprintf(auStack_1a4,"DirectSux: Unable to %s.  (%s)",
-                 "?Stop secondary sound buffer" + 1,uVar3);
+                 "Stop secondary sound buffer",uVar3);
       FUN_00529980(auStack_1a4);
       local_14 = 0;
     }

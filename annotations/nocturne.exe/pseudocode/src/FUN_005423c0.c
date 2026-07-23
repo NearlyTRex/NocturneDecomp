@@ -89,7 +89,7 @@ void FUN_005423c0(int param_1,float param_2)
     fVar1 = SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68);
     *(uint *)(param_1 + 0x2410) = 0;
     fStack_18 = fVar1;
-    if ((float)_DAT_005963c1 <= fVar1) {
+    if ((float)6 <= fVar1) {
       iStack_20 = 0;
       if (bVar2) {
         *(uint *)(param_1 + 0x2dbc) = 0;
@@ -117,7 +117,7 @@ void FUN_005423c0(int param_1,float param_2)
       if (iVar4 != 0) {
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (fStack_44 - *(float *)(param_1 + 0x34));
-        fVar3 = fStack_14 * (float)_DAT_005963c9 * (float)_DAT_005963d1;
+        fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
         if (fVar3 < fStack_38) {
@@ -126,7 +126,7 @@ void FUN_005423c0(int param_1,float param_2)
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if (((float)_DAT_005963d9 <= fVar1) || (bVar2)) {
+        if (((float)10 <= fVar1) || (bVar2)) {
           *(uint *)(param_1 + 0xbc9c) = 1;
           *(uint *)(param_1 + 0xbc94) = 1;
         }
@@ -170,7 +170,7 @@ void FUN_005423c0(int param_1,float param_2)
                           (auStack_54,&local_6c);
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
-        fVar1 = fStack_14 * (float)_DAT_005963c9 * (float)_DAT_005963d1;
+        fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar1;
         if (fVar1 < fStack_34) {
@@ -179,8 +179,8 @@ void FUN_005423c0(int param_1,float param_2)
         if (local_1c < *(float *)(param_1 + 0xbcb8)) {
           *(float *)(param_1 + 0xbcb8) = local_1c;
         }
-        if ((((float)_DAT_005963e1 < *(float *)(param_1 + 0xbcb8)) &&
-            ((double)*(float *)(param_1 + 0xbcb8) < _DAT_005963e9)) &&
+        if ((((float)-0.25 < *(float *)(param_1 + 0xbcb8)) &&
+            ((double)*(float *)(param_1 + 0xbcb8) < 0.25)) &&
            (*(int *)(param_1 + 0xbca0) != 0)) {
           *(uint *)(param_1 + 0xbcb8) = 0;
         }
@@ -220,11 +220,11 @@ void FUN_005423c0(int param_1,float param_2)
       fStack_8c = -local_24;
     }
     fStack_98 = fStack_8c - *(float *)(param_1 + 0x950ac);
-    if (param_2 * (float)_DAT_005963f1 < fStack_98) {
-      fStack_98 = param_2 * (float)_DAT_005963f1;
+    if (param_2 * (float)3.1415926535000001 < fStack_98) {
+      fStack_98 = param_2 * (float)3.1415926535000001;
     }
-    if (fStack_98 < param_2 * (float)_DAT_005963f9) {
-      fStack_98 = param_2 * (float)_DAT_005963f9;
+    if (fStack_98 < param_2 * (float)-3.1415926535000001) {
+      fStack_98 = param_2 * (float)-3.1415926535000001;
     }
     *(float *)(param_1 + 0x950ac) = *(float *)(param_1 + 0x950ac) + fStack_98;
   }

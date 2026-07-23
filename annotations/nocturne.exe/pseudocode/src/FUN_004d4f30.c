@@ -96,15 +96,15 @@ void FUN_004d4f30(int param_1,float param_2)
       iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
       if (((iVar3 == 0) && (*(int *)(0x01C775EC + 0x1d4) == 0)) &&
          (ABS(*(float *)(param_1 + 0x24) -
-              *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x24)) <= (float)_DAT_00589457))
-      {
+              *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x24)) <= (float)15)
+         ) {
         iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_58,&local_70)
         ;
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar3 + 4))
         ;
         if (SQRT(local_68 * local_68 + local_70 * local_70 + local_6c * local_6c) <
-            (1.0 - ABS(local_14) * (float)_DAT_0058945f) * (float)_DAT_00589467 +
-            (float)_DAT_0058946f) {
+            (1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +
+            (float)30) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
                     (local_18,_DAT_01cc9094);
           local_48 = 0x3f333333;
@@ -145,11 +145,11 @@ LAB_004d4fed:
     if (-local_110 <= SQRT(local_d4 * local_d4 + local_dc * local_dc)) {
       iVar3 = param_1 + 0x150;
       local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(iVar3,1);
-      *(float *)(param_1 + 0x242c) = local_14 * _DAT_0058943f;
+      *(float *)(param_1 + 0x242c) = local_14 * 4.242857f;
       local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(iVar3,2);
-      fVar1 = (float)_DAT_00589447;
-      *(float *)(param_1 + 0x242c) = local_14 * _DAT_00589443 + *(float *)(param_1 + 0x242c);
-      local_e0 = 0x40200000;
+      fVar1 = (float)1.57079632675;
+      *(float *)(param_1 + 0x242c) = local_14 * 12.22222f + *(float *)(param_1 + 0x242c);
+      local_e0 = 2.5f;
       *(float *)(param_1 + 0x2430) = param_2 * fVar1 * *(float *)(param_1 + 0xbc8c);
       *(float *)(param_1 + 0x242c) =
            *(float *)(param_1 + 0xbc8c) * param_2 * *(float *)(param_1 + 0x242c);
@@ -167,7 +167,7 @@ LAB_004d4fed:
           goto LAB_004d5024;
         }
         if (ABS(*(float *)(param_1 + 0x2410)) / (param_2 * *(float *)(param_1 + 0xbc8c)) <=
-            (float)_DAT_0058944f) {
+            (float)0.78539816337500001) {
           uVar2 = 2;
         }
         else {
@@ -188,8 +188,8 @@ LAB_004d4fed:
                                       (local_18);
           local_38 = (double)local_20;
           local_14 = local_20;
-          if (local_20 <= (float)_DAT_00589437) {
-            local_1c = 0x40200000;
+          if (local_20 <= (float)2) {
+            local_1c = 2.5f;
             if (1.0 <= local_38) {
               local_24 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                                           (0x40e00000,0x41700000);
@@ -234,7 +234,7 @@ LAB_004d501c:
   }
 LAB_004d5024:
   if (0.0 <= local_1c) {
-    fVar1 = (float)_DAT_00589477;
+    fVar1 = (float)3.1415926535000001;
     *(float *)(param_1 + 0x242c) = *(float *)(param_1 + 0xbc8c) * param_2;
     *(float *)(param_1 + 0x2430) = param_2 * fVar1 * *(float *)(param_1 + 0xbc8c);
     local_5c = local_1c;
@@ -272,7 +272,7 @@ LAB_004d5024:
   iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar3);
   uVar4 = *(uint *)(iVar3 + 0x24);
   if (((uVar4 == 0xc) || (uVar4 == 0)) && (*(int *)(param_1 + 0xdc) == 0)) goto LAB_004d56f2;
-  *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058947f;
+  *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
   local_d0 = *(float *)(param_1 + 0x2420) * param_2;
   local_cc = *(float *)(param_1 + 0x2424) * param_2;
   local_c8 = param_2 * *(float *)(param_1 + 0x2428);

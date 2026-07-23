@@ -47,7 +47,7 @@
 ;   double DOUBLE_0057cfb6 = 2
 ;   double DOUBLE_0057cfbe = 0.5
 ;   double DOUBLE_0057cfc6 = 32
-;   undefined4 DAT_0059c0d8
+;   float FLOAT_0059c0d8 = 3
 ;   undefined4 DAT_0059c0e4
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b96c4
@@ -550,7 +550,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00454c76
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 00454c7b
-    MOV EAX,[0x0059c0d8]                ; 00454c7e | DAT_0059c0d8
+    MOV EAX,[0x0059c0d8]                ; 00454c7e | FLOAT_0059c0d8
         ;   Label: LAB_00454c7e
     PUSH 0x3e32b8c2                     ; 00454c83
     MOV dword ptr [EBP + 0x6e],EAX      ; 00454c88

@@ -13,7 +13,7 @@
 ;   string s_models_0058a4f4
 ;   string s_Unable_to_get_file_size:_%s_0058a4fb
 ;   string s_..\\engine\\model.c_0058a517
-;   undefined4 DAT_0058a529
+;   TerminatedCString s_rb_0058a529
 ;   string s_models_0058a52c
 ;   string s_Unable_to_open_model:_%s_0058a533
 ;   string s_..\\engine\\model.c_0058a54c
@@ -99,7 +99,7 @@ section .text
     CALL FUN_004c8440                   ; 004dcd81
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 004dcd86
-    PUSH 0x58a529                       ; 004dcd89 | DAT_0058a529
+    PUSH 0x58a529                       ; 004dcd89 | = "rb"
         ;   Label: LAB_004dcd89
     PUSH EBX                            ; 004dcd8e
     PUSH 0x58a52c                       ; 004dcd8f | = "models"

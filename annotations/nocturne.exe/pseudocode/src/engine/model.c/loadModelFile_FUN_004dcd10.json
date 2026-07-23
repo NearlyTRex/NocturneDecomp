@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 229,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strchr",
       "warning_overlapping_globals"
@@ -226,8 +225,8 @@
     },
     {
       "addr": "0058a529",
-      "name": "DAT_0058a529",
-      "type": "undefined4",
+      "name": "s_rb_0058a529",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -413,16 +412,8 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,&DAT_0058a529);",
+      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,\"rb\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0058a529",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,&DAT_0058a529);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

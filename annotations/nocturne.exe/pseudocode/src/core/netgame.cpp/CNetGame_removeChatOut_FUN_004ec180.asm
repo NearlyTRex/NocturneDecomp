@@ -28,14 +28,14 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 at 004ea7d5
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058ba20+2
+;   TerminatedCString s_core_netgame_cpp_0058ba22
 ;   string s_removeChatOut_-_invalid_index_0058ba36
-;   undefined4 s__0058c2b6+0x44
-;   undefined4 DAT_0058c302
-;   undefined4 DAT_0058c30a
-;   undefined4 DAT_0058c312
-;   undefined4 DAT_0058c31a
-;   undefined4 DAT_0058c322
+;   double DOUBLE_0058c2fa = 0.0000152587890625
+;   double DOUBLE_0058c302 = 4
+;   double DOUBLE_0058c30a = 30
+;   double DOUBLE_0058c312 = 20
+;   double DOUBLE_0058c31a = 2
+;   double DOUBLE_0058c322 = 5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cea3f4
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [ESP + 0x140],EDX     ; 004ec21a
     MOV EBX,0x1                         ; 004ec221
     FILD dword ptr [ESP + 0x140]        ; 004ec226
-    FMUL double ptr [0x0058c2fa]        ; 004ec22d | s__0058c2b6+0x44
+    FMUL double ptr [0x0058c2fa]        ; 004ec22d | DOUBLE_0058c2fa
     MOV dword ptr [ESP + 0x128],EBX     ; 004ec233
     FST float ptr [ESP + 0x4]           ; 004ec23a
     FLDZ                                ; 004ec23e
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 004ec3c9 (CONDITIONAL_JUMP)  ; LAB_004ec3c9
     FLD float ptr [ESP + 0x4]           ; 004ec24b
         ;   Label: LAB_004ec24b
-    FCOMP double ptr [0x0058c30a]       ; 004ec24f | DAT_0058c30a
+    FCOMP double ptr [0x0058c30a]       ; 004ec24f | DOUBLE_0058c30a
     FNSTSW AX                           ; 004ec255
     SAHF                                ; 004ec257
     JBE 0x004ec262                      ; 004ec258
@@ -123,7 +123,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x41f00000 ; 004ec25a
     FLD float ptr [ESP + 0x4]           ; 004ec262
         ;   Label: LAB_004ec262
-    FCOMP double ptr [0x0058c312]       ; 004ec266 | DAT_0058c312
+    FCOMP double ptr [0x0058c312]       ; 004ec266 | DOUBLE_0058c312
     FNSTSW AX                           ; 004ec26c
     SAHF                                ; 004ec26e
     JNC 0x004ec32a                      ; 004ec26f
@@ -180,7 +180,7 @@ section .text
     CMP EBX,dword ptr [0x01d06610]      ; 004ec343 | DAT_01d06610
     JL 0x004ec36d                       ; 004ec349
         ;   XREF to: 004ec36d (CONDITIONAL_JUMP)  ; LAB_004ec36d
-    MOV EAX,0x58ba22                    ; 004ec34b | s_..\core\netgame.cpp_0058ba20+2
+    MOV EAX,0x58ba22                    ; 004ec34b | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ec34b
     MOV EDX,0x107                       ; 004ec350
     PUSH 0x58ba36                       ; 004ec355 | = "removeChatOut - invalid index"
@@ -232,10 +232,10 @@ section .text
         ;   Label: LAB_004ec3d4
     XOR ESI,ESI                         ; 004ec3db
     FLD float ptr [EAX + 0x48]          ; 004ec3dd
-    FMUL double ptr [0x0058c302]        ; 004ec3e0 | DAT_0058c302
+    FMUL double ptr [0x0058c302]        ; 004ec3e0 | DOUBLE_0058c302
     MOV dword ptr [ESP + 0x128],ESI     ; 004ec3e6
     FST float ptr [ESP + 0x8]           ; 004ec3ed
-    FCOMP double ptr [0x0058c31a]       ; 004ec3f1 | DAT_0058c31a
+    FCOMP double ptr [0x0058c31a]       ; 004ec3f1 | DOUBLE_0058c31a
     FNSTSW AX                           ; 004ec3f7
     SAHF                                ; 004ec3f9
     JNC 0x004ec404                      ; 004ec3fa
@@ -243,7 +243,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x40000000 ; 004ec3fc
     FLD float ptr [ESP + 0x8]           ; 004ec404
         ;   Label: LAB_004ec404
-    FCOMP double ptr [0x0058c322]       ; 004ec408 | DAT_0058c322
+    FCOMP double ptr [0x0058c322]       ; 004ec408 | DOUBLE_0058c322
     FNSTSW AX                           ; 004ec40e
     SAHF                                ; 004ec410
     JBE 0x004ec41b                      ; 004ec411
@@ -255,7 +255,7 @@ section .text
     SUB EDX,EAX                         ; 004ec424
     MOV dword ptr [ESP + 0x140],EDX     ; 004ec426
     FILD dword ptr [ESP + 0x140]        ; 004ec42d
-    FMUL double ptr [0x0058c2fa]        ; 004ec434 | s__0058c2b6+0x44
+    FMUL double ptr [0x0058c2fa]        ; 004ec434 | DOUBLE_0058c2fa
     FST float ptr [ESP]                 ; 004ec43a
     FLDZ                                ; 004ec43d
     FCOMPP                              ; 004ec43f
@@ -267,7 +267,7 @@ section .text
     MOV dword ptr [ESP],EDX             ; 004ec448
     FLD float ptr [ESP]                 ; 004ec44b
         ;   Label: LAB_004ec44b
-    FCOMP double ptr [0x0058c30a]       ; 004ec44e | DAT_0058c30a
+    FCOMP double ptr [0x0058c30a]       ; 004ec44e | DOUBLE_0058c30a
     FNSTSW AX                           ; 004ec454
     SAHF                                ; 004ec456
     JBE 0x004ec460                      ; 004ec457

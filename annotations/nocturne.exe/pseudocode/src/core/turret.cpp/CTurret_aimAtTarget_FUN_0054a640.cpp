@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2,float param_3)
 
 {
@@ -38,7 +36,7 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
   local_c = local_34;
   local_c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                              (local_30 - *(float *)(param_1 + 0x30));
-  local_10 = param_3 * *(float *)(param_1 + 0x770) * (float)_DAT_00596ea5;
+  local_10 = param_3 * *(float *)(param_1 + 0x770) * (float)0.017453292519444399;
   local_18 = -local_10;
   if (local_34 < local_18) {
     local_34 = local_18;
@@ -57,8 +55,8 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
   *(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_34;
   *(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) + local_38;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
-  if (((float10)0 != ABS((float10)(local_34 < (float)_DAT_00596ead))) &&
-     ((float10)0 != ABS((float10)(local_38 < (float)_DAT_00596ead)))) {
+  if (((float10)0 != ABS((float10)(local_34 < (float)0.001))) &&
+     ((float10)0 != ABS((float10)(local_38 < (float)0.001)))) {
     return 1;
   }
   return 0;

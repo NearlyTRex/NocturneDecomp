@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 136,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 67,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
@@ -135,7 +135,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 190
+    "total_lines": 191
   },
   "cross_references": [],
   "function": {
@@ -231,15 +231,15 @@
     },
     {
       "addr": "0059a8a0",
-      "name": "DAT_0059a8a0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059a8a0",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "0059a8a4",
-      "name": "DAT_0059a8a4",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059a8a4",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0059a8b4",
@@ -368,23 +368,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
+      "text": "iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_0059aa00",
       "severity": "mild",
-      "text": "iVar3 = __arrinit(iVar3 + 0xbda4,0x14,&DAT_0059aa00);",
+      "text": "iVar4 = __arrinit(iVar4 + 0xbda4,0x14,&DAT_0059aa00);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

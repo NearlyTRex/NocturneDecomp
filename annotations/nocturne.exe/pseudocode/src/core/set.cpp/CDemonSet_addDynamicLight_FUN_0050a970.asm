@@ -13,7 +13,7 @@
 ;   core_weapon.cpp_CWeapon_process_FUN_00554030 at 00554160
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\set.cpp_00590589+1
+;   TerminatedCString s_core_set_cpp_0059058a
 ;   string s_Too_many_dynamic_lights!_0059059a
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -63,7 +63,7 @@ section .text
     RET                                 ; 0050a9c2
     PUSH EDI                            ; 0050a9c3
         ;   Label: LAB_0050a9c3
-    MOV ECX,0x59058a                    ; 0050a9c4 | s_..\core\set.cpp_00590589+1
+    MOV ECX,0x59058a                    ; 0050a9c4 | = "..\\core\\set.cpp"
     MOV EDI,0x865                       ; 0050a9c9
     PUSH 0x59059a                       ; 0050a9ce | = "Too many dynamic lights!"
     MOV dword ptr [0x01cc4800],ECX      ; 0050a9d3 | DAT_01cc4800

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -236,81 +236,81 @@
     },
     {
       "addr": "00596fbd",
-      "name": "DAT_00596fbd",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00596fbd",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "00596fc5",
-      "name": "DAT_00596fc5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fc5",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "00596fcd",
-      "name": "DAT_00596fcd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fcd",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00596fd5",
-      "name": "DAT_00596fd5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fd5",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "00596fdd",
-      "name": "DAT_00596fdd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fdd",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "00596fe5",
-      "name": "DAT_00596fe5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fe5",
+      "type": "double",
+      "value": "35"
     },
     {
       "addr": "00596fed",
-      "name": "DAT_00596fed",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596fed",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "00596ff5",
-      "name": "DAT_00596ff5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596ff5",
+      "type": "double",
+      "value": "60"
     },
     {
       "addr": "00596ffd",
-      "name": "DAT_00596ffd",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596ffd",
+      "type": "double",
+      "value": "0.700000000000000"
     },
     {
       "addr": "00597005",
-      "name": "DAT_00597005",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597005",
+      "type": "double",
+      "value": "-32"
     },
     {
       "addr": "0059700d",
-      "name": "DAT_0059700d",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059700d",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "00597011",
-      "name": "DAT_00597011",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00597011",
+      "type": "float",
+      "value": "0.8000000"
     },
     {
       "addr": "00597015",
-      "name": "DAT_00597015",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597015",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005b96c4",
@@ -796,7 +796,7 @@
         },
         {
           "check_id": "uninitvar",
-          "column": 72,
+          "column": 60,
           "line": 150,
           "message": "Uninitialized variable: local_54",
           "severity": "warning"
@@ -908,7 +908,7 @@
       "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + _DAT_00596fbd;",
+      "text": "*(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + 4.0f;",
       "type": "unnamed_param"
     },
     {
@@ -916,7 +916,7 @@
       "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + _DAT_00596fbd;",
+      "text": "*(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + 4.0f;",
       "type": "unnamed_param"
     },
     {
@@ -956,7 +956,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)_DAT_00597005 + *(float *)(param_1 + 0xbed8);",
+      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)-32 + *(float *)(param_1 + 0xbed8);",
       "type": "unnamed_param"
     },
     {
@@ -964,7 +964,7 @@
       "line": 97,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)_DAT_00597005 + *(float *)(param_1 + 0xbed8);",
+      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)-32 + *(float *)(param_1 + 0xbed8);",
       "type": "unnamed_param"
     },
     {
@@ -972,7 +972,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)_DAT_00597005 + *(float *)(param_1 + 0xbed8);",
+      "text": "*(float *)(param_1 + 0xbed8) = param_2 * (float)-32 + *(float *)(param_1 + 0xbed8);",
       "type": "unnamed_param"
     },
     {
@@ -1068,7 +1068,7 @@
       "line": 105,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 * *(float *)(param_1 + 0xbec0) * _DAT_0059700d + *(float *)(param_1 + 0x38);",
+      "text": "param_2 * *(float *)(param_1 + 0xbec0) * 2.0f + *(float *)(param_1 + 0x38);",
       "type": "unnamed_param"
     },
     {
@@ -1076,7 +1076,7 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2 * *(float *)(param_1 + 0xbec0) * _DAT_0059700d + *(float *)(param_1 + 0x38);",
+      "text": "param_2 * *(float *)(param_1 + 0xbec0) * 2.0f + *(float *)(param_1 + 0x38);",
       "type": "unnamed_param"
     },
     {
@@ -1084,7 +1084,7 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2 * *(float *)(param_1 + 0xbec0) * _DAT_0059700d + *(float *)(param_1 + 0x38);",
+      "text": "param_2 * *(float *)(param_1 + 0xbec0) * 2.0f + *(float *)(param_1 + 0x38);",
       "type": "unnamed_param"
     },
     {
@@ -1092,7 +1092,7 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = (*(float *)(param_1 + 0x24) - local_d8) * fVar5 * _DAT_00597011;",
+      "text": "fVar2 = (*(float *)(param_1 + 0x24) - local_d8) * fVar5 * 0.8f;",
       "type": "unnamed_param"
     },
     {
@@ -1100,7 +1100,7 @@
       "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = (*(float *)(param_1 + 0x28) - local_d4) * fVar5 * _DAT_00597011;",
+      "text": "fVar3 = (*(float *)(param_1 + 0x28) - local_d4) * fVar5 * 0.8f;",
       "type": "unnamed_param"
     },
     {
@@ -1236,7 +1236,7 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xbec8) + (float)_DAT_00596fc5 + local_54;",
+      "text": "*(float *)(param_1 + 0xbec8) + (float)4 + local_54;",
       "type": "unnamed_param"
     },
     {
@@ -1420,7 +1420,7 @@
       "line": 189,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = *(float *)(param_1 + 0xbec8) + (float)_DAT_00596fc5 + local_54;",
+      "text": "local_54 = *(float *)(param_1 + 0xbec8) + (float)4 + local_54;",
       "type": "unnamed_param"
     },
     {
@@ -1860,7 +1860,7 @@
       "line": 263,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_170 = (local_c8 * (float)_DAT_00596fc5) / param_2 + (float)_DAT_00596fe5;",
+      "text": "local_170 = (local_c8 * (float)4) / param_2 + (float)35;",
       "type": "unnamed_param"
     },
     {
@@ -1876,7 +1876,7 @@
       "line": 271,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_170 - *(float *)(param_1 + 0xbea8)) * (float)_DAT_00596ffd +",
+      "text": "(local_170 - *(float *)(param_1 + 0xbea8)) * (float)0.69999999999999996 +",
       "type": "unnamed_param"
     },
     {
@@ -2196,7 +2196,7 @@
       "line": 150,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*(float *)(param_1 + 0xbec8) + (float)_DAT_00596fc5 + local_54;",
+      "text": "*(float *)(param_1 + 0xbec8) + (float)4 + local_54;",
       "type": "static_uninitvar"
     }
   ],

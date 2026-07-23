@@ -14,7 +14,7 @@ void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(int 
   uint uVar1;
   
   if (*(int *)(param_1 + 0x2230) < 0) {
-    _DAT_01cc4800 = ">..\\core\\skeleton.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
     _DAT_01cc4804 = 0xd23;
     FUN_004c8440("CDeformableModelInstance::renderPolygons called but LOD is not set!");
   }

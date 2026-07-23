@@ -72,21 +72,23 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(uint *param_1,int 
   }
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   if (_DAT_01d16810 == 0) {
-    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b9904,&DAT_005884b4);
-    iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_014b9904,&DAT_005884b4);
-    pcVar8 = &DAT_005884b4;
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
+                      (_DAT_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+    iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
+                      (_DAT_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+    pcVar8 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (_DAT_014b9904,"?Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending." + 1);
+                      (_DAT_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                      (_DAT_014b9904,"?Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending." + 1);
-    pcVar8 = "?Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending." + 1;
+                      (_DAT_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
+    pcVar8 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawText_FUN_00490980
             (_DAT_014b9904,pcVar8,0x27f - iVar2,0x1df - iVar3,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0x8000);
-  engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_014b9904,&DAT_005884ea,0x206,99,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_014b9904,"",0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   pcVar8 = (char *)param_1[*param_3];
   do {

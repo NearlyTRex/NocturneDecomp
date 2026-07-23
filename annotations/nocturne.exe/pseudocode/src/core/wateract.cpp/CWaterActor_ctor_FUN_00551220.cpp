@@ -28,7 +28,7 @@ int core_wateract_cpp_CWaterActor_ctor_FUN_00551220(uint param_1)
   *(uint *)(iVar2 + -0x130) = 0x3f800000;
   *(uint *)(iVar2 + -300) = 0x3f800000;
   *(uint *)(iVar2 + -0x134) = 0;
-  pcVar3 = &DAT_005975cb;
+  pcVar3 = "none";
   *(uint *)(iVar2 + -0x20) = 0;
   *(byte *)(iVar2 + -0x128) = 0;
   pcVar4 = (char *)(iVar2 + -0xe8);
@@ -42,7 +42,7 @@ int core_wateract_cpp_CWaterActor_ctor_FUN_00551220(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_005975d0;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + -0x84);
   do {
     cVar1 = *pcVar3;

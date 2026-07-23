@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(int param_1)
 
 {
@@ -33,7 +31,7 @@ uint core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(int param_1)
       }
       fVar3 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
                                (param_1,uVar2);
-      if ((float)_DAT_0058df1e < fVar3) {
+      if ((float)0.94999999999999996 < fVar3) {
         (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa50) + 0x14c) + 0xe8))
                   (*(int *)(param_1 + 0x1fa50));
         return 1;

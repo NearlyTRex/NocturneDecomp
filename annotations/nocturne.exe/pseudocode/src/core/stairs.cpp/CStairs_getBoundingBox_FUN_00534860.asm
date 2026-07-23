@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s__00595170+0xa
+;   double DOUBLE_0059517a = 0.5
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00534864
     FLD float ptr [EDX + 0x158]         ; 00534868
     FCHS                                ; 0053486e
-    FLD double ptr [0x0059517a]         ; 00534870 | s__00595170+0xa
+    FLD double ptr [0x0059517a]         ; 00534870 | DOUBLE_0059517a
     FXCH                                ; 00534876
     FMUL ST1                            ; 00534878
     FSTP float ptr [EAX]                ; 0053487a

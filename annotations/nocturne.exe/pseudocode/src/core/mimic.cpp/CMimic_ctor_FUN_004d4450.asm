@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1 DAT_0058923e
-;   undefined1 DAT_0058923f
-;   undefined1 DAT_00589240
-;   undefined1 DAT_00589241
-;   undefined4 DAT_005a05dc
-;   undefined4 DAT_005a05e0
+;   TerminatedCString s_CGhoul_0058923e
+;   undefined4 s_Ghoul_0058923e+1
+;   undefined4 s_houl_0058923e+2
+;   undefined4 s_oul_0058923e+3
+;   float FLOAT_005a05dc = 50
+;   float FLOAT_005a05e0 = 100
 ;   undefined1* PTR_FUN_005a05f4 = 004d4650
 ;
 ; Called Functions:
@@ -42,11 +42,11 @@ section .text
     LEA EDX,[EAX + 0xfffb96b4]          ; 004d4478
     MOV dword ptr [EDX + 0x14c],0x5a05f4 ; 004d447e | PTR_FUN_005a05f4
     MOV dword ptr [EDX + 0x2dd4],0x3f000000 ; 004d4488
-    MOV ESI,0x58923e                    ; 004d4492 | DAT_0058923e
+    MOV ESI,0x58923e                    ; 004d4492 | = "CGhoul"
     MOV dword ptr [EDX + 0x2dd8],0x3f800000 ; 004d4497
-    FLD float ptr [0x005a05dc]          ; 004d44a1 | DAT_005a05dc
+    FLD float ptr [0x005a05dc]          ; 004d44a1 | FLOAT_005a05dc
     MOV byte ptr [EDX + 0xbd24],0x0     ; 004d44a7
-    FLD float ptr [0x005a05e0]          ; 004d44ae | DAT_005a05e0
+    FLD float ptr [0x005a05e0]          ; 004d44ae | FLOAT_005a05e0
     MOV byte ptr [EDX + 0xbd88],0x0     ; 004d44b4
     ADD ESP,0x4                         ; 004d44bb
     FXCH                                ; 004d44be
@@ -56,13 +56,13 @@ section .text
     LEA EDI,[EDX + 0x46924]             ; 004d44d6
     MOV dword ptr [EDX + 0x46920],0x0   ; 004d44dc
     PUSH EDI                            ; 004d44e6
-    MOV AL,byte ptr [ESI]               ; 004d44e7 | DAT_0058923e | DAT_00589240
+    MOV AL,byte ptr [ESI]               ; 004d44e7 | = "CGhoul" | s_houl_0058923e+2
         ;   Label: LAB_004d44e7
     MOV byte ptr [EDI],AL               ; 004d44e9
     CMP AL,0x0                          ; 004d44eb
     JZ 0x004d44ff                       ; 004d44ed
         ;   XREF to: 004d44ff (CONDITIONAL_JUMP)  ; LAB_004d44ff
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d44ef | DAT_0058923f | DAT_00589241
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d44ef | s_Ghoul_0058923e+1 | s_oul_0058923e+3
     ADD ESI,0x2                         ; 004d44f2
     MOV byte ptr [EDI + 0x1],AL         ; 004d44f5
     ADD EDI,0x2                         ; 004d44f8

@@ -10,7 +10,7 @@
 ;   sound_sndwav.cpp_CWavOutDevice_reset_FUN_0052c3f0 at 0052c426
 ;
 ; Referenced Globals:
-;   undefined4 s_killSoundThread_-_failed!_005938ea+4
+;   TerminatedCString s_killSoundThread_failed_005938ee
 ;   undefined4 DAT_02dc84b0
 ;   undefined4 DAT_02dc84b4
 ;
@@ -58,7 +58,7 @@ section .text
     POP EBP                             ; 005287d9
     POP EBX                             ; 005287da
     RET                                 ; 005287db
-    PUSH 0x5938ee                       ; 005287dc | s_killSoundThread_-_failed!_005938ea+4
+    PUSH 0x5938ee                       ; 005287dc | = "killSoundThread - failed!\n"
         ;   Label: LAB_005287dc
     CALL FUN_00529980                   ; 005287e1
         ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 848,
+    "complexity_score": 863,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 178,
-    "suspect_count": 64,
+    "suspect_count": 65,
     "suspect_types": [
+      "loop_clobbered_constant",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
@@ -170,21 +171,21 @@
   "globals": [
     {
       "addr": "0058b898",
-      "name": "DAT_0058b898",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b898",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "0058b8a0",
-      "name": "DAT_0058b8a0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b8a0",
+      "type": "double",
+      "value": "1.33333333333333"
     },
     {
       "addr": "0058b8a8",
-      "name": "DAT_0058b8a8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b8a8",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005bbbb4",
@@ -1031,6 +1032,14 @@
       "severity": "moderate",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Loop body reassigns `fVar10` (initialized to a literal constant before the loop) via swap-chain `fVar10 = fVar12; fVar12 = fVar2;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
+      "line": 66,
+      "match": "do { ...A used in math...; A = B; B = C; ...} with pre-loop `A = <literal>;`",
+      "severity": "moderate",
+      "text": "fVar10 = fVar12;",
+      "type": "loop_clobbered_constant"
     },
     {
       "call_site_count": 1,

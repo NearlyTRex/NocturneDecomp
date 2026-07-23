@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 210,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 16,
+    "pseudocode_lines": 34,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -172,27 +171,27 @@
   "globals": [
     {
       "addr": "00597748",
-      "name": "DAT_00597748",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597748",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "00597750",
-      "name": "DAT_00597750",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597750",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "00597758",
-      "name": "DAT_00597758",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597758",
+      "type": "double",
+      "value": "8"
     },
     {
       "addr": "00597760",
-      "name": "DAT_00597760",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597760",
+      "type": "double",
+      "value": "25"
     }
   ],
   "param_estimates": {
@@ -340,16 +339,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)",
@@ -357,7 +348,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)",
@@ -365,7 +356,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)",
@@ -373,7 +364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = *param_1 - *param_2;",
@@ -381,7 +372,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "local_24 = *param_1 - *param_2;",
@@ -389,7 +380,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "local_20 = param_1[1] - param_2[1];",
@@ -397,7 +388,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "local_20 = param_1[1] - param_2[1];",
@@ -405,7 +396,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = param_1[2] - param_2[2];",
@@ -413,7 +404,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "local_1c = param_1[2] - param_2[2];",
@@ -421,7 +412,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -429,7 +420,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "local_18 = *param_1;",
@@ -437,7 +428,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = param_1[1];",
@@ -445,7 +436,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "local_10 = param_1[2];",
@@ -453,7 +444,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar1 = core_path_cpp_getPathMap_FUN_004f1e00(param_2);",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(int param_1,int param_2)
 
 {
@@ -23,7 +21,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(int 
   
   local_10 = param_2;
   iVar3 = param_1 + 0x5e8 + param_2 * 100;
-  fVar1 = ((float)param_2 + *(float *)(iVar3 + 4)) * _DAT_005a003c;
+  fVar1 = ((float)param_2 + *(float *)(iVar3 + 4)) * 0.5235988f;
   *(uint *)(iVar3 + 0x18) = 0;
   *(uint *)(iVar3 + 0x20) = 0;
   *(float *)(iVar3 + 0x1c) = fVar1;

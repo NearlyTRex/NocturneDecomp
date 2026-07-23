@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
 
 {
@@ -53,8 +51,8 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
     FUN_004b0480(0x01C78C7C,auStack_30,0);
     *(uint *)(param_1 + 0x1f56c) = 1;
   }
-  fVar3 = (float)_DAT_0058cb1b;
-  fVar2 = (float)_DAT_0058cb23;
+  fVar3 = (float)3.1415926535000001;
+  fVar2 = (float)0.5;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * fVar2;
   iVar4 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
@@ -63,7 +61,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
   if (uVar1 < 2) {
     if (uVar1 == 1) {
 LAB_004eeb4e:
-      pcVar7 = &DAT_0058cb0a;
+      pcVar7 = "WALK";
     }
     else {
 LAB_004eecd2:
@@ -74,7 +72,7 @@ LAB_004eecd2:
   else {
     iVar4 = param_1 + 0x150;
     if (uVar1 < 3) {
-      uVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(iVar4,&DAT_0058cb06,0);
+      uVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(iVar4,"RUN",0);
       iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(uVar5);
       if (iVar6 < 0) goto LAB_004eeb4e;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,iVar6,1);
@@ -91,7 +89,7 @@ LAB_004eecd2:
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
   *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
 LAB_004eeb7c:
-  *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058cb2b;
+  *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
   fStack_3c = *(float *)(param_1 + 0x2420) * param_2;
   fStack_38 = *(float *)(param_1 + 0x2424) * param_2;
   fStack_34 = *(float *)(param_1 + 0x2428) * param_2;

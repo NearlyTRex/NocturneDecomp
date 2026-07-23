@@ -10,7 +10,7 @@ void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(int param_1)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,&DAT_0059766f);
+  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"size");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x15c,"opacity");
   if (0x00000006 == 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x160,"heightDelta");
@@ -39,8 +39,8 @@ void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(int param_1)
   if (0x00000006 < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x284,&DAT_00597729);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x288,&DAT_0059772e);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x28c,&DAT_00597733);
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x284,"colR");
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x288,"colG");
+  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x28c,"colB");
   return;
 }

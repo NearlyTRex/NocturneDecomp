@@ -33,7 +33,8 @@ int FUN_00415760(int param_1)
       uVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0xbd24,0,0)
       ;
       core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(iVar3,1,uVar1);
-      core_morph_cpp_CMorph_render_FUN_004e0820(iVar3,*(float *)(param_1 + 0xbea4) / 0x40800000);
+      core_morph_cpp_CMorph_render_FUN_004e0820(iVar3,*(float *)(param_1 + 0xbea4) / 4.0f)
+      ;
     }
     if (_DAT_01cd4318 != 0) {
       iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);

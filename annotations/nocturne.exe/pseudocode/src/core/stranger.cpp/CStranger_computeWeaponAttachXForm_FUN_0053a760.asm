@@ -197,12 +197,12 @@
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 at 0053a6b6
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\stranger.cpp_0059596e+1
+;   TerminatedCString s_core_stranger_cpp_0059596f
 ;   string s_Don't_know_how_to_carry_light_%s_00595984
-;   undefined4 DAT_005959a7
-;   undefined4 DAT_005959af
-;   undefined4 DAT_005959b7
-;   undefined4 DAT_005959bf
+;   float FLOAT_005959a7 = 0.5
+;   double DOUBLE_005959af = 0.700000000000000
+;   double DOUBLE_005959b7 = 0.300000000000000
+;   float FLOAT_005959bf = 0.3330000
 ;   undefined4 DAT_00764ad4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -820,7 +820,7 @@ section .text
     FLD float ptr [EBP + 0xfffffe6a]    ; 0053afab
     FADD float ptr [EBP + 0xfffffe76]   ; 0053afb1
     FST float ptr [EBP + 0xffffff4e]    ; 0053afb7
-    FLD float ptr [0x005959a7]          ; 0053afbd | DAT_005959a7
+    FLD float ptr [0x005959a7]          ; 0053afbd | FLOAT_005959a7
     FXCH                                ; 0053afc3
     FMUL ST1                            ; 0053afc5
     FLD float ptr [EBP + 0xfffffe72]    ; 0053afc7
@@ -1080,7 +1080,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0053b33e
     FADD float ptr [ESI + 0x4]          ; 0053b341
     FXCH                                ; 0053b344
-    FLD float ptr [0x005959a7]          ; 0053b346 | DAT_005959a7
+    FLD float ptr [0x005959a7]          ; 0053b346 | FLOAT_005959a7
     FXCH                                ; 0053b34c
     FMUL ST1                            ; 0053b34e
     FXCH ST2                            ; 0053b350
@@ -1112,7 +1112,7 @@ section .text
     FSUB float ptr [EBP + 0xfffffe86]   ; 0053b3aa
     PUSH ESI                            ; 0053b3b0
     FXCH                                ; 0053b3b1
-    FADD float ptr [0x005959bf]         ; 0053b3b3 | DAT_005959bf
+    FADD float ptr [0x005959bf]         ; 0053b3b3 | FLOAT_005959bf
     FXCH                                ; 0053b3b9
     FSUBR float ptr [EBP + -0x7e]       ; 0053b3bb
     FXCH                                ; 0053b3be
@@ -1223,9 +1223,9 @@ section .text
     MOV dword ptr [EBP + 0xa],EAX       ; 0053b523
     FLD float ptr [EBP + 0xfffffe72]    ; 0053b526
         ;   Label: LAB_0053b526
-    FMUL double ptr [0x005959af]        ; 0053b52c | DAT_005959af
+    FMUL double ptr [0x005959af]        ; 0053b52c | DOUBLE_005959af
     FLD float ptr [EBP + 0xfffffe7e]    ; 0053b532
-    FMUL double ptr [0x005959b7]        ; 0053b538 | DAT_005959b7
+    FMUL double ptr [0x005959b7]        ; 0053b538 | DOUBLE_005959b7
     FADDP                               ; 0053b53e
     FSTP float ptr [EBP + 0xffffff0e]   ; 0053b540
     JMP 0x0053b05b                      ; 0053b546
@@ -1256,7 +1256,7 @@ section .text
     JZ 0x0053b04f                       ; 0053b58c
         ;   XREF to: 0053b04f (CONDITIONAL_JUMP)  ; LAB_0053b04f
     PUSH ESI                            ; 0053b592
-    MOV EDI,0x59596f                    ; 0053b593 | s_..\core\stranger.cpp_0059596e+1
+    MOV EDI,0x59596f                    ; 0053b593 | = "..\\core\\stranger.cpp"
     MOV EAX,0xc44                       ; 0053b598
     PUSH 0x595984                       ; 0053b59d | = "Don't know how to carry light %s"
     MOV dword ptr [0x01cc4800],EDI      ; 0053b5a2 | DAT_01cc4800

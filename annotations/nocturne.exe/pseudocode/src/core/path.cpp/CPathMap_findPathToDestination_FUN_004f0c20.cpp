@@ -267,7 +267,7 @@ LAB_004f0ce0:
         iVar4 = iVar4 - *(int *)(&DAT_005be0e8 + uVar7 * 4);
         iVar6 = iVar6 - *(int *)(&DAT_005be10c + uVar7 * 4);
         if (iVar4 < 0) {
-          _DAT_01cc4800 = "@..\\core\\path.cpp" + 1;
+          _DAT_01cc4800 = "..\\core\\path.cpp";
           _DAT_01cc4804 = 0x547;
           FUN_004c8440("Out of bounds1!");
         }

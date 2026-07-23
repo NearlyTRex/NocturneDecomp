@@ -29,7 +29,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_confused_while_walking_to_scr_0059614b+1
+;   TerminatedCString s_s_confused_while_walking_0059614c
 ;   string s_succubus-morph.wav_00596176
 ;   string s_hdwing.cth_00596189
 ;   undefined4 s_dwing.cth_00596189+1
@@ -37,11 +37,11 @@
 ;   undefined4 s_ing.cth_00596189+3
 ;   string s_succubusShutUp_00596194
 ;   string s_succubus-horny-?.wav_005961a3
-;   undefined4 DAT_005961bc
-;   undefined4 DAT_005961c4
-;   undefined4 DAT_005a28c8
-;   undefined4 DAT_005a28d4
-;   undefined4 DAT_005a28d8
+;   double DOUBLE_005961bc = 3.14159265350000
+;   double DOUBLE_005961c4 = 32
+;   float FLOAT_005a28c8 = 1.5
+;   float FLOAT_005a28d4 = 15
+;   float FLOAT_005a28d8 = 4
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
 ;   ... and 3 more
@@ -145,7 +145,7 @@ section .text
     FLD float ptr [EBX + 0xbc8c]        ; 00541004
         ;   Label: LAB_00541004
     FLD float ptr [EBP + 0x18]          ; 0054100a
-    FMUL double ptr [0x005961bc]        ; 0054100d | DAT_005961bc
+    FMUL double ptr [0x005961bc]        ; 0054100d | DOUBLE_005961bc
     FMULP                               ; 00541013
     FLD float ptr [EBX + 0x23ac]        ; 00541015
     LEA ESI,[EBX + 0x150]               ; 0054101b
@@ -208,7 +208,7 @@ section .text
         ;   XREF to: 00541174 (CONDITIONAL_JUMP)  ; LAB_00541174
     FLD float ptr [EBP + 0x18]          ; 005410bf
     FLD ST0                             ; 005410c2
-    FMUL double ptr [0x005961c4]        ; 005410c4 | DAT_005961c4
+    FMUL double ptr [0x005961c4]        ; 005410c4 | DOUBLE_005961c4
     FLD float ptr [EBX + 0x2424]        ; 005410ca
     FXCH                                ; 005410d0
     FSUBR ST0,ST1                       ; 005410d2
@@ -305,7 +305,7 @@ section .text
     FLD float ptr [EBX + 0xe1a0]        ; 005411d2
     FADD float ptr [EBP + 0x18]         ; 005411d8
     FST float ptr [EBX + 0xe1a0]        ; 005411db
-    FCOMP float ptr [0x005a28d8]        ; 005411e1 | DAT_005a28d8
+    FCOMP float ptr [0x005a28d8]        ; 005411e1 | FLOAT_005a28d8
     FNSTSW AX                           ; 005411e7
     SAHF                                ; 005411e9
     JBE 0x0054131f                      ; 005411ea
@@ -473,7 +473,7 @@ section .text
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 005413ab
     PUSH EBX                            ; 005413ae
-    PUSH 0x59614c                       ; 005413af | s_%s_confused_while_walking_to_scr_0059614b+1
+    PUSH 0x59614c                       ; 005413af | = "%s confused while walking to scriptDe..."
     MOV ECX,dword ptr [0x005ad350]      ; 005413b4 | PTR_DAT_005ad350
     PUSH ECX                            ; 005413ba | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005413bb
@@ -595,7 +595,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005414df
     MOV EDX,dword ptr [EAX + 0x4]       ; 005414e2
     MOV dword ptr [EAX],EDX             ; 005414e5
-    MOV EAX,[0x005a28c8]                ; 005414e7 | DAT_005a28c8
+    MOV EAX,[0x005a28c8]                ; 005414e7 | FLOAT_005a28c8
     MOV dword ptr [EBP + -0x58],ECX     ; 005414ec
     MOV dword ptr [EBP + -0x50],EAX     ; 005414ef
     LEA EAX,[EBP + -0x58]               ; 005414f2
@@ -636,7 +636,7 @@ section .text
     FMUL float ptr [EBP + -0x5c]        ; 0054155a
     FADDP                               ; 0054155d
     FSQRT                               ; 0054155f
-    FCOMP float ptr [0x005a28d4]        ; 00541561 | DAT_005a28d4
+    FCOMP float ptr [0x005a28d4]        ; 00541561 | FLOAT_005a28d4
     FNSTSW AX                           ; 00541567
     SAHF                                ; 00541569
     JNC 0x00541090                      ; 0054156a

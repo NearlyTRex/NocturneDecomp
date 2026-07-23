@@ -25,8 +25,8 @@
 ;   FUN_0049cc10 at 0049cf55
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_Head_00590571+1
-;   undefined4 DAT_00590582
+;   TerminatedCString s_Bip01_Head_00590572
+;   double DOUBLE_00590582 = 0.261799387791667
 ;   undefined4 DAT_005a18f0
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b761c
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
     ADD ESP,0x4                         ; 0050a28d
     PUSH 0x0                            ; 0050a290
-    PUSH 0x590572                       ; 0050a292 | s_Bip01_Head_00590571+1
+    PUSH 0x590572                       ; 0050a292 | = "Bip01 Head"
     PUSH EAX                            ; 0050a297
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0050a298
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
@@ -128,7 +128,7 @@ section .text
     MOV dword ptr [EBP + -0xc],ECX      ; 0050a303
     MOV dword ptr [EBP + -0x8],ECX      ; 0050a306
     FXCH                                ; 0050a309
-    FADD double ptr [0x00590582]        ; 0050a30b | DAT_00590582
+    FADD double ptr [0x00590582]        ; 0050a30b | DOUBLE_00590582
     MOV dword ptr [0x01c762fc],ECX      ; 0050a311 | DAT_01c762fc
     FSTP float ptr [EBP + -0x10]        ; 0050a317
     FADD float ptr [EBX + 0x34]         ; 0050a31a

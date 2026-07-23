@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2)
 
 {
@@ -77,10 +75,10 @@ void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2)
     pfVar3 = (float *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,local_c4);
     local_34 = *pfVar3 + pfVar3[3];
     local_30 = pfVar3[1] + pfVar3[4];
-    local_4c = local_34 * _DAT_00598782;
+    local_4c = local_34 * 0.5f;
     local_2c = pfVar3[2] + pfVar3[5];
-    local_48 = local_30 * _DAT_00598782;
-    local_44 = local_2c * _DAT_00598782;
+    local_48 = local_30 * 0.5f;
+    local_44 = local_2c * 0.5f;
     if (&local_64 != &local_4c) {
       local_64 = local_4c;
       local_60 = local_48;
@@ -114,9 +112,9 @@ void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2)
     local_18 = local_d8 + local_cc;
     local_14 = local_d4 + local_c8;
     core_actor_cpp_CVector_ctor_FUN_0040e160(&local_7c);
-    local_7c = local_1c * _DAT_00598782;
-    local_78 = local_18 * _DAT_00598782;
-    local_74 = local_d4 + (float)_DAT_00598786;
+    local_7c = local_1c * 0.5f;
+    local_78 = local_18 * 0.5f;
+    local_74 = local_d4 + (float)0.40000000000000002;
     if (&local_64 != &local_7c) {
       local_64 = local_7c;
       local_60 = local_78;

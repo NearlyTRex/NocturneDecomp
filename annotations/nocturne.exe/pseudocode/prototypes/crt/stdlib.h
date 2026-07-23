@@ -17,7 +17,7 @@ void __cdecl srand(undefined4 param_1);
 
 // Original: crt_stdlib.c__fullpath_FUN_00565d00
 // Address: 00565d00
-LPSTR __cdecl ::fullpath(LPSTR param_1,LPCSTR param_2,uint param_3);
+__cdecl ::fullpath(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3);
 
 // Original: crt_stdlib.c_atoi_FUN_00566f30
 // Address: 00566f30

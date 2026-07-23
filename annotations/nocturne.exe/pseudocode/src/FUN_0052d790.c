@@ -56,27 +56,27 @@ int FUN_0052d790(void)
       uStack_34 = 0x41a00000;
       fStack_3c = _DAT_02dc9464;
       uStack_30 = 0;
-      fStack_40 = _DAT_02dc9460 + _DAT_00594b42;
+      fStack_40 = _DAT_02dc9460 + 20.0f;
       iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
                         (0x01E57284,&uStack_50,&uStack_44);
       if (iVar2 == 0) {
-        PTR_DAT_005bed60 = &DAT_00594aff;
+        PTR_s_int_005bed60 = "ext";
       }
       else {
-        PTR_DAT_005bed60 = &DAT_00594afb;
+        PTR_s_int_005bed60 = "int";
       }
       core_setcolid_cpp_CDemonSet_init_FUN_00511750();
       _DAT_02dc9d54 = *(int *)(0x01E57284 + 0x15aabc);
     }
   }
   else {
-    PTR_DAT_005bed60 = &DAT_00594af7;
+    PTR_s_int_005bed60 = "ext";
     _DAT_02dc9d54 = -1;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
   sound_sndmain_cpp_setNextSfxFlags_FUN_00526240();
   sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
-  iVar2 = _stricmp(PTR_DAT_005bed60,&DAT_00594b03);
+  iVar2 = _stricmp(PTR_s_int_005bed60,"int");
   if (iVar2 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00527230();
     fVar10 = 0.4;
@@ -99,15 +99,15 @@ int FUN_0052d790(void)
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   else {
-    iVar2 = _stricmp(PTR_DAT_005bed64,PTR_DAT_005bed60);
+    iVar2 = _stricmp(PTR_s_x_005bed64,PTR_s_int_005bed60);
     if (iVar2 != 0) {
-      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,fVar10 * (float)_DAT_00594b46);
+      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,fVar10 * (float)1.5);
     }
   }
   sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   pfVar5 = (float *)&DAT_02dc9ca4;
   iVar2 = 0;
-  PTR_DAT_005bed64 = PTR_DAT_005bed60;
+  PTR_s_x_005bed64 = PTR_s_int_005bed60;
   _DAT_02dc9d44 = 0.0;
   _DAT_02dc9d48 = 0.0;
   pfStack_1c = (float *)0x0;
@@ -126,7 +126,7 @@ int FUN_0052d790(void)
       pfVar5[1] = pfVar5[1] + fStack_28;
       pfVar5[2] = pfVar5[2] + fStack_24;
       uVar4 = (ushort)((uint)iVar3 >> 0x10);
-      if ((float)_DAT_00594b5e < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {
+      if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {
         sound_sndmain_cpp_killSfx_FUN_00527230();
         uVar4 = extraout_var;
       }
@@ -155,16 +155,16 @@ int FUN_0052d790(void)
     switch(iVar3 % 5) {
     case 0:
     case 1:
-      fVar11 = fVar10 * (float)_DAT_00594b56;
+      fVar11 = fVar10 * (float)0.59999999999999998;
       fStack_20 = 25.0;
-      _sprintf(acStack_118,"rail?%s.wav",PTR_DAT_005bed60,fVar10,fVar11);
+      _sprintf(acStack_118,"rail?%s.wav",PTR_s_int_005bed60,fVar10,fVar11);
       break;
     case 2:
     case 3:
-      fVar11 = fVar10 * (float)_DAT_00594b4e;
+      fVar11 = fVar10 * (float)0.80000000000000004;
       pcVar8 = acStack_118;
       fStack_20 = 20.0;
-      pcVar6 = &DAT_00594b2d;
+      pcVar6 = "bump?.wav";
       do {
         cVar1 = *pcVar6;
         *pcVar8 = cVar1;

@@ -21,17 +21,17 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebae9
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058bd29+1
+;   TerminatedCString s_core_netgame_cpp_0058bd2a
 ;   string s_CNetGame::syncPlayers_-_don't_us_0058bd3e
 ;   string s_Syncing_stage_%d._0058bd76
 ;   string s_Waiting_on:_0058bd88
-;   undefined4 DAT_0058bd94
+;   TerminatedCString s_d_0058bd94
 ;   string s_Waiting_on_sync_code_%d_from_ser_0058bdd5
 ;   string s_..\\core\\netgame.cpp_0058bdfc
 ;   string s_CNetGame::syncPlayers_-_invalid_m_0058be10
-;   undefined4 DAT_0058be3a
-;   undefined4 DAT_0058be42
-;   undefined4 DAT_0058be4a
+;   double DOUBLE_0058be3a = 0.0000152587890625
+;   double DOUBLE_0058be42 = 30
+;   double DOUBLE_0058be4a = 0.100000000000000
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_01cc30e4
 ;   undefined4 DAT_01cc4800
@@ -161,7 +161,7 @@ section .text
     ADD ESP,0xc                         ; 004ea4a7
     MOV ECX,dword ptr [EBX + 0x5c]      ; 004ea4aa
     PUSH ECX                            ; 004ea4ad
-    PUSH 0x58bd94                       ; 004ea4ae | DAT_0058bd94
+    PUSH 0x58bd94                       ; 004ea4ae | = "%d"
     LEA EAX,[ESP + 0xc]                 ; 004ea4b3
     PUSH EAX                            ; 004ea4b7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ea4b8
@@ -199,7 +199,7 @@ section .text
     SUB EAX,EDI                         ; 004ea516
     MOV dword ptr [ESP + 0x184],EAX     ; 004ea518
     FILD dword ptr [ESP + 0x184]        ; 004ea51f
-    FMUL double ptr [0x0058be3a]        ; 004ea526 | DAT_0058be3a
+    FMUL double ptr [0x0058be3a]        ; 004ea526 | DOUBLE_0058be3a
     FST float ptr [ESP]                 ; 004ea52c
     FLDZ                                ; 004ea52f
     FCOMPP                              ; 004ea531
@@ -210,7 +210,7 @@ section .text
     MOV dword ptr [ESP],EBX             ; 004ea538
     FLD float ptr [ESP]                 ; 004ea53b
         ;   Label: LAB_004ea53b
-    FCOMP double ptr [0x0058be42]       ; 004ea53e | DAT_0058be42
+    FCOMP double ptr [0x0058be42]       ; 004ea53e | DOUBLE_0058be42
     FNSTSW AX                           ; 004ea544
     SAHF                                ; 004ea546
     JBE 0x004ea550                      ; 004ea547
@@ -218,7 +218,7 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 004ea549
     FLD float ptr [ESP]                 ; 004ea550
         ;   Label: LAB_004ea550
-    FCOMP double ptr [0x0058be4a]       ; 004ea553 | DAT_0058be4a
+    FCOMP double ptr [0x0058be4a]       ; 004ea553 | DOUBLE_0058be4a
     FNSTSW AX                           ; 004ea559
     SAHF                                ; 004ea55b
     JBE 0x004ea5bd                      ; 004ea55c
@@ -276,7 +276,7 @@ section .text
     POP ESI                             ; 004ea5e0
     POP EBX                             ; 004ea5e1
     RET                                 ; 004ea5e2
-    MOV ECX,0x58bd2a                    ; 004ea5e3 | s_..\core\netgame.cpp_0058bd29+1
+    MOV ECX,0x58bd2a                    ; 004ea5e3 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ea5e3
     MOV EBX,0x337                       ; 004ea5e8
     PUSH 0x58bd3e                       ; 004ea5ed | = "CNetGame::syncPlayers - don't use 0!"

@@ -83,7 +83,7 @@
 ;   string s_Too_many_normals_on_this_packed_t_0059072e
 ;   string s_..\\core\\set.cpp_00590757
 ;   string s_Need_more_normals_for_packed_mod_00590767
-;   undefined4 DAT_00590792
+;   double DOUBLE_00590792 = 65535
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_005c5014
@@ -672,7 +672,7 @@ section .text
     SUB ECX,EDX                         ; 0050c981
     MOV dword ptr [ESP + 0x148],ECX     ; 0050c983
     FLD float ptr [ESP + 0x148]         ; 0050c98a
-    FMUL double ptr [0x00590792]        ; 0050c991 | DAT_00590792
+    FMUL double ptr [0x00590792]        ; 0050c991 | DOUBLE_00590792
     FXCH ST3                            ; 0050c997
     FMUL ST3                            ; 0050c999
     FXCH ST2                            ; 0050c99b
@@ -984,7 +984,7 @@ section .text
     SUB ECX,EAX                         ; 0050cdb9
     MOV dword ptr [ESP + 0xe4],ECX      ; 0050cdbb
     FLD float ptr [ESP + 0xe4]          ; 0050cdc2
-    FMUL double ptr [0x00590792]        ; 0050cdc9 | DAT_00590792
+    FMUL double ptr [0x00590792]        ; 0050cdc9 | DOUBLE_00590792
     FLD ST1                             ; 0050cdcf
     FMUL ST1                            ; 0050cdd1
     FLD ST3                             ; 0050cdd3
@@ -1087,7 +1087,7 @@ section .text
     SUB EDX,EAX                         ; 0050ceeb
     MOV dword ptr [ESP + 0xf4],EDX      ; 0050ceed
     FLD float ptr [ESP + 0xf4]          ; 0050cef4
-    FMUL double ptr [0x00590792]        ; 0050cefb | DAT_00590792
+    FMUL double ptr [0x00590792]        ; 0050cefb | DOUBLE_00590792
     FLD float ptr [ESI]                 ; 0050cf01 | DAT_02045abc | DAT_02045ab0
     FMUL ST1                            ; 0050cf03
     FLD float ptr [ESI + 0x4]           ; 0050cf05 | DAT_02045ac0
@@ -1141,7 +1141,7 @@ section .text
     SUB EDX,EAX                         ; 0050cf99
     MOV dword ptr [ESP + 0x100],EDX     ; 0050cf9b
     FLD float ptr [ESP + 0x100]         ; 0050cfa2
-    FMUL double ptr [0x00590792]        ; 0050cfa9 | DAT_00590792
+    FMUL double ptr [0x00590792]        ; 0050cfa9 | DOUBLE_00590792
     FLD float ptr [ESI]                 ; 0050cfaf | DAT_02045ab0 | DAT_02045abc
     FMUL ST1                            ; 0050cfb1
     FLD float ptr [ESI + 0x4]           ; 0050cfb3 | DAT_02045ab4

@@ -73,10 +73,10 @@ void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
         piStack_38[4] = piVar2[4];
         piStack_38[5] = piVar2[5];
       }
-      _sprintf(auStack_170,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
-                 (double)(float)piStack_34[0x5f],(double)(float)piStack_34[0x60],
-                 (double)(float)piStack_34[0x61],(double)(float)piStack_34[0x62],
-                 (double)(float)piStack_34[99],(double)(float)piStack_34[100]);
+      _sprintf(auStack_170,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",(double)(float)piStack_34[0x5f],
+                 (double)(float)piStack_34[0x60],(double)(float)piStack_34[0x61],
+                 (double)(float)piStack_34[0x62],(double)(float)piStack_34[99],
+                 (double)(float)piStack_34[100]);
       engine_2d_c_drawText_FUN_00402600();
       iStack_1c = 0x21;
       iStack_24 = param_1[0x6591];

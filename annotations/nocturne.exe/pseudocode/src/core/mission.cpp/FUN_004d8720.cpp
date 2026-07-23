@@ -27,20 +27,20 @@ void FUN_004d8720(int param_1,uint param_2)
   _fprintf(param_2,"// mission version, actor version\n");
   _fprintf(param_2,"%d,%d\n",*(uint *)(param_1 + 8),4);
   _fprintf(param_2,"// Root name of mission\n");
-  _fprintf(param_2,&DAT_00589aa4,param_1 + 0x10);
+  _fprintf(param_2,"%s\n",param_1 + 0x10);
   _fprintf(param_2,"// setList\n");
   iVar4 = 0;
-  _fprintf(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));
+  _fprintf(param_2,"%d\n",*(uint *)(param_1 + 0x110));
   if (0 < *(int *)(param_1 + 0x110)) {
     iVar5 = param_1 + 0x114;
     do {
       iVar4 = iVar4 + 1;
-      _fprintf(param_2,&DAT_00589ab8,iVar5);
+      _fprintf(param_2,"%s\n",iVar5);
       iVar5 = iVar5 + 0x100;
     } while (iVar4 < *(int *)(param_1 + 0x110));
   }
   _fprintf(param_2,"// actorTypeList\n");
-  _fprintf(param_2,&DAT_00589ace,DAT_00763e94);
+  _fprintf(param_2,"%d\n",DAT_00763e94);
   core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0();
   iVar4 = 0;
   if (0 < DAT_00763e94) {
@@ -54,7 +54,7 @@ void FUN_004d8720(int param_1,uint param_2)
   }
   _fprintf(param_2,"// actor count\n");
   uVar2 = core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(param_1);
-  _fprintf(param_2,&DAT_00589ae9,uVar2);
+  _fprintf(param_2,"%d\n",uVar2);
   iVar5 = 0;
   _fprintf(param_2,"// inventory actor count\n");
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
@@ -63,7 +63,7 @@ void FUN_004d8720(int param_1,uint param_2)
       iVar5 = iVar5 + *(int *)(iVar3 + 0x1f5a8);
     }
   }
-  _fprintf(param_2,&DAT_00589b07,iVar5);
+  _fprintf(param_2,"%d\n",iVar5);
   _fprintf(param_2,"// actor name list\n");
   iVar4 = *(int *)(param_1 + 0x514);
   *(uint *)(param_1 + 0x858) = 0;

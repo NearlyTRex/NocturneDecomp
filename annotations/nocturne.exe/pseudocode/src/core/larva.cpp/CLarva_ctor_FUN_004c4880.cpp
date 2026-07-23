@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_larva_cpp_CLarva_ctor_FUN_004c4880(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   int iVar3;
   
   iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
@@ -21,12 +19,12 @@ int core_larva_cpp_CLarva_ctor_FUN_004c4880(uint param_1)
   *(uint *)(iVar3 + 0x2dd4) = 0x3e800000;
   *(uint *)(iVar3 + 0x2dd8) = 0x3f000000;
   *(uint *)(iVar3 + 0x2608) = 1;
-  uVar1 = _DAT_0059fa70;
+  fVar1 = 20.0f;
   *(uint *)(iVar3 + 0x2434) = 0x41700000;
-  uVar2 = _DAT_0059fa74;
+  fVar2 = 100.0f;
   *(uint *)(iVar3 + 0xbd28) = 0;
   *(uint *)(iVar3 + 0xbd2c) = 0;
-  *(uint *)(iVar3 + 0x2ddc) = uVar1;
-  *(uint *)(iVar3 + 0x2de0) = uVar2;
+  *(float *)(iVar3 + 0x2ddc) = fVar1;
+  *(float *)(iVar3 + 0x2de0) = fVar2;
   return iVar3;
 }

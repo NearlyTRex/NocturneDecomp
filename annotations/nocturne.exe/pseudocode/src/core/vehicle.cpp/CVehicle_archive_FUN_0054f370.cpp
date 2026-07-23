@@ -15,8 +15,7 @@ void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(int param_1)
   int iVar4;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-            (param_1 + 0x150,">@modelName" + 2);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x930,"tireCount");
   iVar1 = 0;
   if (0 < *(int *)(param_1 + 0x930)) {

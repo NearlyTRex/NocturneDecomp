@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 77,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 64
@@ -233,22 +232,6 @@
       "severity": "mild",
       "text": "splitpath(param_1,0,0,0,auStack_100);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0059277e",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(auStack_100,&DAT_0059277e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00592782",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(auStack_100,&DAT_00592782);",
-      "type": "undefined_data"
     }
   ]
 }

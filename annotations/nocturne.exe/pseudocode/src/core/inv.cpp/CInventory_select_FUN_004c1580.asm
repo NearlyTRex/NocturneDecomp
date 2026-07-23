@@ -21,10 +21,10 @@
 ;   string s_..\\core\\inv.cpp_005873a8
 ;   string s_CInventory::select_-_Catch_22_005873b8
 ;   string s_You_have_used_:_005873d6
-;   undefined4 DAT_005873e7
+;   TerminatedCString s_anon_005873e7
 ;   string s_CGasMask_005873e9
 ;   string s_CBoxActor_005873f2
-;   undefined4 DAT_00587401
+;   double DOUBLE_00587401 = 98
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_007641f4
@@ -135,7 +135,7 @@ section .text
         ;   Label: LAB_004c1669
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c166e
     FLD float ptr [EAX + 0x2434]        ; 004c1675
-    FCOMP double ptr [0x00587401]       ; 004c167b | DAT_00587401
+    FCOMP double ptr [0x00587401]       ; 004c167b | DOUBLE_00587401
     FNSTSW AX                           ; 004c1681
     SAHF                                ; 004c1683
     JBE 0x004c16b1                      ; 004c1684
@@ -212,7 +212,7 @@ section .text
         ;   XREF to: 004c16f2 (CONDITIONAL_JUMP)  ; LAB_004c16f2
     POP EDI                             ; 004c170a
         ;   Label: LAB_004c170a
-    PUSH 0x5873e7                       ; 004c170b | DAT_005873e7
+    PUSH 0x5873e7                       ; 004c170b | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c1710
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004c1715

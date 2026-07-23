@@ -64,7 +64,7 @@ uint FUN_004f7ae0(uint *param_1,char *param_2)
   }
   uVar3 = engine_dosio_cpp_getFileTimestamp_FUN_00456910(0,param_1 + 1);
   param_1[0x41] = uVar3;
-  iVar2 = _fopen(param_1 + 1,&DAT_0058d9ac);
+  iVar2 = _fopen(param_1 + 1,"rb");
   local_1c = iVar2;
   if (iVar2 != 0) {
     _fread(&local_110,1,0x60,iVar2);

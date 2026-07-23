@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_004f7360(int param_1,int param_2)
 
 {
@@ -45,8 +43,8 @@ uint FUN_004f7360(int param_1,int param_2)
       *(uint *)(param_1 + 0x30) = uStack_18;
       uStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(param_1 + 0x38));
       *(uint *)(param_1 + 0x38) = uStack_18;
-      if ((ABS(*(float *)(param_1 + 0x30)) <= (float)_DAT_0058d965) &&
-         (ABS(*(float *)(param_1 + 0x38)) <= (float)_DAT_0058d965)) {
+      if ((ABS(*(float *)(param_1 + 0x30)) <= (float)0.01) &&
+         (ABS(*(float *)(param_1 + 0x38)) <= (float)0.01)) {
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_60);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&fStack_24,param_2 + 0x20)
         ;
@@ -61,7 +59,7 @@ uint FUN_004f7360(int param_1,int param_2)
             uStack_30 = 0;
             uStack_2c = 0x3f800000;
             uStack_28 = 0;
-            fStack_44 = fStack_70 + _DAT_0058d96d + fStack_20;
+            fStack_44 = fStack_70 + -1.0f + fStack_20;
             uVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                               (param_1 + 0x150,0,&fStack_48,&uStack_30,auStack_3c);
             fVar3 = (float)core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(uVar2);

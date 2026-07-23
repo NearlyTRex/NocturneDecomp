@@ -28,9 +28,9 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithPoseData_FUN_0051cab0 at 0051cacd
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\skeleton.cpp_00591b8f+4
+;   TerminatedCString s_core_skeleton_cpp_00591b93
 ;   string s_Write_me!_00591ba8
-;   undefined4 DAT_00591bb3
+;   double DOUBLE_00591bb3 = 0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -53,7 +53,7 @@ section .text
     PUSH EBP                            ; 0051cae3
     SUB ESP,0xd8                        ; 0051cae4
     FLD float ptr [ESP + 0xf8]          ; 0051caea
-    FCOMP double ptr [0x00591bb3]       ; 0051caf1 | DAT_00591bb3
+    FCOMP double ptr [0x00591bb3]       ; 0051caf1 | DOUBLE_00591bb3
     FNSTSW AX                           ; 0051caf7
     SAHF                                ; 0051caf9
     JA 0x0051cb07                       ; 0051cafa
@@ -342,7 +342,7 @@ section .text
     ADD ESP,0x8                         ; 0051cf2e
     JMP 0x0051ce29                      ; 0051cf31
         ;   XREF to: 0051ce29 (UNCONDITIONAL_JUMP)  ; LAB_0051ce29
-    MOV EBP,0x591b93                    ; 0051cf36 | s_..\core\skeleton.cpp_00591b8f+4
+    MOV EBP,0x591b93                    ; 0051cf36 | = "..\\core\\skeleton.cpp"
         ;   Label: LAB_0051cf36
     MOV EAX,0xad5                       ; 0051cf3b
     PUSH 0x591ba8                       ; 0051cf40 | = "Write me!"

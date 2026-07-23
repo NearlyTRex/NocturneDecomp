@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   int iVar3;
   
   iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
@@ -33,12 +31,12 @@ int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(uint param_1)
   *(uint *)(iVar3 + 0xbd58) = 0x80;
   *(uint *)(iVar3 + 0xbd5c) = 0x80;
   *(uint *)(iVar3 + 0xbd60) = 0;
-  uVar1 = _DAT_0059df40;
+  fVar1 = 50.0f;
   *(uint *)(iVar3 + 0xbd78) = 0;
-  uVar2 = _DAT_0059df44;
+  fVar2 = 100.0f;
   *(uint *)(iVar3 + 0xbd7c) = 0;
   *(uint *)(iVar3 + 0x261c) = 0;
-  *(uint *)(iVar3 + 0x2ddc) = uVar1;
-  *(uint *)(iVar3 + 0x2de0) = uVar2;
+  *(float *)(iVar3 + 0x2ddc) = fVar1;
+  *(float *)(iVar3 + 0x2de0) = fVar2;
   return iVar3;
 }

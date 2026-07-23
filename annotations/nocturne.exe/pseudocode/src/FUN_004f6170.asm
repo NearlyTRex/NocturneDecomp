@@ -16,9 +16,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004f6150 = 004f61c1
-;   undefined4 DAT_0058d76d
-;   undefined4 DAT_0058d775
-;   undefined4 DAT_0058d77d
+;   double DOUBLE_0058d76d = -20
+;   double DOUBLE_0058d775 = 10
+;   double DOUBLE_0058d77d = 0.0500000000000000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
@@ -564,7 +564,7 @@ section .text
     JA 0x004f6a33                       ; 004f678c
         ;   XREF to: 004f6a33 (CONDITIONAL_JUMP)  ; LAB_004f6a33
     FLD float ptr [ESP + 0x288]         ; 004f6792
-    FADD double ptr [0x0058d76d]        ; 004f6799 | DAT_0058d76d
+    FADD double ptr [0x0058d76d]        ; 004f6799 | DOUBLE_0058d76d
     FLD float ptr [ESP + 0x2e8]         ; 004f679f
     FCOMPP                              ; 004f67a6
     FNSTSW AX                           ; 004f67a8
@@ -592,14 +592,14 @@ section .text
     FXCH                                ; 004f6806
     FSTP float ptr [ESP + 0x2f4]        ; 004f6808
     FSTP float ptr [ESP + 0x2f8]        ; 004f680f
-    FCOMP double ptr [0x0058d775]       ; 004f6816 | DAT_0058d775
+    FCOMP double ptr [0x0058d775]       ; 004f6816 | DOUBLE_0058d775
     FNSTSW AX                           ; 004f681c
     SAHF                                ; 004f681e
     JA 0x004f6a33                       ; 004f681f
         ;   XREF to: 004f6a33 (CONDITIONAL_JUMP)  ; LAB_004f6a33
     FLD float ptr [ESP + 0x2f8]         ; 004f6825
     FABS                                ; 004f682c
-    FCOMP double ptr [0x0058d775]       ; 004f682e | DAT_0058d775
+    FCOMP double ptr [0x0058d775]       ; 004f682e | DOUBLE_0058d775
     FNSTSW AX                           ; 004f6834
     SAHF                                ; 004f6836
     JA 0x004f6a33                       ; 004f6837
@@ -663,7 +663,7 @@ section .text
     JNC 0x004f6a33                      ; 004f6907
         ;   XREF to: 004f6a33 (CONDITIONAL_JUMP)  ; LAB_004f6a33
     FLD float ptr [ESP + 0x278]         ; 004f690d
-    FADD double ptr [0x0058d77d]        ; 004f6914 | DAT_0058d77d
+    FADD double ptr [0x0058d77d]        ; 004f6914 | DOUBLE_0058d77d
     FDIV double ptr [ESP]               ; 004f691a
     FLD float ptr [ESP + 0x2f0]         ; 004f691d
     FXCH                                ; 004f6924

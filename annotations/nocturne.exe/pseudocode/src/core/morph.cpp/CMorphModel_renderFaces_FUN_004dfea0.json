@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -201,15 +201,15 @@
   "globals": [
     {
       "addr": "0058ad6c",
-      "name": "DAT_0058ad6c",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058ad6c",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "0058ad74",
-      "name": "DAT_0058ad74",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058ad74",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005ae704",
@@ -365,7 +365,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "((float10)param_2 * (float10)_DAT_0058ad6c *",
+      "text": "((float10)param_2 * (float10)65535 *",
       "type": "unnamed_param"
     },
     {
@@ -373,7 +373,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "((float10)_DAT_0058ad74 - (float10)param_2));",
+      "text": "((float10)2.0f - (float10)param_2));",
       "type": "unnamed_param"
     },
     {

@@ -62,10 +62,10 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int
     pfVar2 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_b8);
     fStack_58 = *pfVar2 + pfVar2[3];
     fStack_54 = pfVar2[1] + pfVar2[4];
-    fStack_34 = fStack_58 * _DAT_0058d01c;
+    fStack_34 = fStack_58 * 0.5f;
     fStack_50 = pfVar2[2] + pfVar2[5];
-    fStack_30 = fStack_54 * _DAT_0058d01c;
-    fStack_2c = fStack_50 * _DAT_0058d01c;
+    fStack_30 = fStack_54 * 0.5f;
+    fStack_2c = fStack_50 * 0.5f;
     fStack_7c = *(float *)(param_2 + 0x20) + fStack_34;
     fStack_78 = *(float *)(param_2 + 0x24) + fStack_30;
     fStack_74 = *(float *)(param_2 + 0x28) + fStack_2c;
@@ -121,10 +121,10 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int
         pfVar2 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_d0);
         fStack_94 = *pfVar2 + pfVar2[3];
         fStack_90 = pfVar2[1] + pfVar2[4];
-        fStack_88 = fStack_94 * _DAT_0058d01c;
+        fStack_88 = fStack_94 * 0.5f;
         fStack_8c = pfVar2[2] + pfVar2[5];
-        fStack_84 = fStack_90 * _DAT_0058d01c;
-        fStack_80 = fStack_8c * _DAT_0058d01c;
+        fStack_84 = fStack_90 * 0.5f;
+        fStack_80 = fStack_8c * 0.5f;
         fStack_4c = *(float *)(param_2 + 0x20) + fStack_88;
         fStack_48 = *(float *)(param_2 + 0x24) + fStack_84;
         fStack_44 = *(float *)(param_2 + 0x28) + fStack_80;

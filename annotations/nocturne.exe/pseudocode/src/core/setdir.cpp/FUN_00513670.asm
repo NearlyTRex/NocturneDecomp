@@ -8,8 +8,8 @@
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610 at 00513642
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590c0d
-;   undefined4 DAT_00590c10
+;   TerminatedCString s_wb_00590c0d
+;   TerminatedCString s_data_00590c10
 ;   string s_..\\core\\setdir.cpp_00590c15
 ;   string s_Can't_create_%s_00590c28
 ;   string s_..\\core\\setdir.cpp_00590c38
@@ -33,9 +33,9 @@ section .text
     PUSH EDI                            ; 00513672
     PUSH EBP                            ; 00513673
     MOV ESI,dword ptr [ESP + 0x18]      ; 00513674
-    PUSH 0x590c0d                       ; 00513678 | DAT_00590c0d
+    PUSH 0x590c0d                       ; 00513678 | = "wb"
     PUSH ESI                            ; 0051367d
-    PUSH 0x590c10                       ; 0051367e | DAT_00590c10
+    PUSH 0x590c10                       ; 0051367e | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00513683
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 00513688

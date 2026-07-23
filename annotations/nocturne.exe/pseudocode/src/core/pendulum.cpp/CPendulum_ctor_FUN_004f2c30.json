@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 122,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -175,50 +174,50 @@
     },
     {
       "addr": "0058cffb",
-      "name": "DAT_0058cffb",
-      "type": "undefined1",
+      "name": "s_true_0058cffb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058cffc",
-      "name": "DAT_0058cffc",
-      "type": "undefined1",
+      "name": "s_rue_0058cffb+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cffd",
-      "name": "DAT_0058cffd",
-      "type": "undefined1",
+      "name": "s_ue_0058cffb+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cffe",
-      "name": "DAT_0058cffe",
-      "type": "undefined1",
+      "name": "s_e_0058cffb+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058d000",
-      "name": "DAT_0058d000",
-      "type": "undefined1",
+      "name": "s_none_0058d000",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058d001",
-      "name": "DAT_0058d001",
-      "type": "undefined1",
+      "name": "s_one_0058d000+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058d002",
-      "name": "DAT_0058d002",
-      "type": "undefined1",
+      "name": "s_ne_0058d000+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058d003",
-      "name": "DAT_0058d003",
-      "type": "undefined1",
+      "name": "s_e_0058d000+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -285,22 +284,6 @@
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_FUN_00409d30(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0058cffb",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058cffb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0058d000",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058d000;",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

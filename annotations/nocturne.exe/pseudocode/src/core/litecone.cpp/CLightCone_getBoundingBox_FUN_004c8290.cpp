@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(int param_1,float *param_2)
 
 {
   float fVar1;
   
-  fVar1 = ((float)_DAT_00587add / *(float *)(param_1 + 0x150)) * *(float *)(param_1 + 0x154);
+  fVar1 = ((float)18 / *(float *)(param_1 + 0x150)) * *(float *)(param_1 + 0x154);
   param_2[2] = 0.0;
   param_2[3] = fVar1;
   param_2[4] = fVar1;

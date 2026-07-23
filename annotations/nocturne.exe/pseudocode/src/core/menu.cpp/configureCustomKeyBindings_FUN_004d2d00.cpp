@@ -45,7 +45,6 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
   char *pcVar32;
   bool bVar33;
   byte bVar34;
-  byte *puVar35;
   char local_844 [512];
   char local_644 [512];
   char acStack_444 [512];
@@ -79,7 +78,7 @@ LAB_004d2d2e:
       pcVar30 = pcVar30 + 2;
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
-    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_00588e40);
+    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Back");
     iVar28 = 0x01C775EC + 0x2c;
     if (0x1d < _DAT_01cc8120) {
       _DAT_01cc4800 = "..\\core\\menu.cpp";
@@ -99,12 +98,12 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     if (*(int *)(0x01C775EC + 0x98) == 0) {
-      puVar35 = &DAT_00588e4a;
+      pcVar2 = "Run";
     }
     else {
-      puVar35 = &DAT_00588e45;
+      pcVar2 = "Walk";
     }
-    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(puVar35);
+    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar2);
     iVar28 = 0x01C775EC + 0x30;
     if (0x1d < _DAT_01cc8120) {
       _DAT_01cc4800 = "..\\core\\menu.cpp";
@@ -294,7 +293,7 @@ LAB_004d2d2e:
       pcVar30 = pcVar30 + 2;
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
-    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_00588eb0);
+    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Draw");
     iVar28 = 0x01C775EC + 0x58;
     if (0x1d < _DAT_01cc8120) {
       _DAT_01cc4800 = "..\\core\\menu.cpp";
@@ -351,7 +350,7 @@ LAB_004d2d2e:
       pcVar30 = pcVar30 + 2;
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
-    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_00588ec9);
+    pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Jump");
     iVar28 = 0x01C775EC + 0x5c;
     if (0x1d < _DAT_01cc8120) {
       _DAT_01cc4800 = "..\\core\\menu.cpp";
@@ -817,15 +816,15 @@ LAB_004d3ec0:
     shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_244,0);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Forward");
     iVar28 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x28,uVar3);
-    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_00589083);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Back");
     iVar29 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x2c,uVar3);
     if (*(int *)(0x01C775EC + 0x98) == 0) {
-      puVar35 = &DAT_0058908d;
+      pcVar2 = "Run";
     }
     else {
-      puVar35 = &DAT_00589088;
+      pcVar2 = "Walk";
     }
-    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(puVar35);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar2);
     iVar31 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x30,uVar3);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe on");
     iVar4 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x34,uVar3);
@@ -845,13 +844,13 @@ LAB_004d3ec0:
     iVar11 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x50,uVar3);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Night Vision");
     iVar12 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x54,uVar3);
-    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_005890f3);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Draw");
     iVar13 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x58,uVar3);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point up");
     iVar14 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x60,uVar3);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point down");
     iVar15 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 100,uVar3);
-    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_0058910c);
+    uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Jump");
     iVar16 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x5c,uVar3);
     uVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select pistol weapons");
     iVar17 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(0x01C775EC + 0x68,uVar3);

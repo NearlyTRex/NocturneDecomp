@@ -30,7 +30,7 @@ uint sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
     } while (iVar3 < _DAT_02dc943c);
   }
   iVar3 = sound_sndmain_cpp_startSoundThread_FUN_005286d0
-                    (((double)_DAT_02dc9434 / (double)_DAT_02dc942c) * _DAT_00594925);
+                    (((double)_DAT_02dc9434 / (double)_DAT_02dc942c) * 0.33333333333333298);
   if (iVar3 != 0) {
     return 1;
   }

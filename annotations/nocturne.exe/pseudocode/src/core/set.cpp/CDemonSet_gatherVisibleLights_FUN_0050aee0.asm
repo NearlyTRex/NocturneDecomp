@@ -43,8 +43,8 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 at 0050b5ed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005905da
-;   undefined4 DAT_005905e2
+;   float FLOAT_005905da = 0.6660000
+;   double DOUBLE_005905e2 = 2
 ;   undefined4 DAT_005a18f0
 ;   undefined4 DAT_01c7070c
 ;   undefined4 DAT_01fb9b54
@@ -600,10 +600,10 @@ section .text
     FLD1                                ; 0050b54b
     FSUBRP                              ; 0050b54d
     FLD ST0                             ; 0050b54f
-    FMUL float ptr [0x005905da]         ; 0050b551 | DAT_005905da
+    FMUL float ptr [0x005905da]         ; 0050b551 | FLOAT_005905da
     FST ST1                             ; 0050b557
     FMUL float ptr [EDX + 0x11c4]       ; 0050b559
-    FLD double ptr [0x005905e2]         ; 0050b55f | DAT_005905e2
+    FLD double ptr [0x005905e2]         ; 0050b55f | DOUBLE_005905e2
     FXCH                                ; 0050b565
     FMUL ST1                            ; 0050b567
     FLD float ptr [ESP + 0x30]          ; 0050b569

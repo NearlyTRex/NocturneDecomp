@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float sound_sndmain_cpp_calculateDistanceGain_FUN_00522ea0(float param_1,float param_2,float param_3,float param_4)
 
 {
@@ -17,7 +15,7 @@ float sound_sndmain_cpp_calculateDistanceGain_FUN_00522ea0(float param_1,float p
   if (param_4 < param_1) {
     param_1 = param_4;
   }
-  if (param_1 <= param_2 * (float)_DAT_005927ee) {
+  if (param_1 <= param_2 * (float)0.050000000000000003) {
     return 20.0;
   }
   return param_2 / param_1;

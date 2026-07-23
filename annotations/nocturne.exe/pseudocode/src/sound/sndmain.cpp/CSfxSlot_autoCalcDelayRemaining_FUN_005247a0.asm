@@ -8,7 +8,7 @@
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 at 00524b4d
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_00592dc5+1
+;   TerminatedCString s_sound_sndmain_cpp_00592dc6
 ;   string s_SfxSlot::autoCalcDelayRemaining_-_00592ddb
 ;   undefined4 DAT_005a2150
 ;   undefined4 DAT_005bea80
@@ -44,7 +44,7 @@ section .text
     RET                                 ; 005247c9
     PUSH ESI                            ; 005247ca
         ;   Label: LAB_005247ca
-    MOV ECX,0x592dc6                    ; 005247cb | s_..\sound\sndmain.cpp_00592dc5+1
+    MOV ECX,0x592dc6                    ; 005247cb | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x935                       ; 005247d0
     PUSH 0x592ddb                       ; 005247d5 | = "SfxSlot::autoCalcDelayRemaining - mus..."
     MOV dword ptr [0x01cc4800],ECX      ; 005247da | DAT_01cc4800

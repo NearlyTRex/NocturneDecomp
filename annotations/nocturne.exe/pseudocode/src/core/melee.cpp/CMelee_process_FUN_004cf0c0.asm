@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00588473
+;   double DOUBLE_00588473 = 1.15000000000000
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_02dd1184
 ;
@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 004cf0fe
     FLD float ptr [EBX + 0x590]         ; 004cf0ff
     FLD ST0                             ; 004cf105
-    FMUL double ptr [0x00588473]        ; 004cf107 | DAT_00588473
+    FMUL double ptr [0x00588473]        ; 004cf107 | DOUBLE_00588473
     LEA EDX,[ESP + 0x8]                 ; 004cf10d
     MOV ECX,dword ptr [EBX + 0x588]     ; 004cf111
     PUSH EDX                            ; 004cf117

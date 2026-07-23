@@ -11,9 +11,9 @@
 ;   string s_pGemOrient_005880eb
 ;   string s_pEmitterPos_005880f6
 ;   string s_exists_00588102
-;   undefined4 DAT_00588109
-;   undefined4 DAT_0058810b
-;   undefined4 DAT_0058810d
+;   TerminatedCString s_r_00588109
+;   TerminatedCString s_g_0058810b
+;   TerminatedCString s_b_0058810d
 ;   undefined4 DAT_005bad50
 ;
 ; Called Functions:
@@ -60,17 +60,17 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb849
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 004cb84e
-    PUSH 0x588109                       ; 004cb851 | DAT_00588109
+    PUSH 0x588109                       ; 004cb851 | = "r"
     PUSH ESI                            ; 004cb856
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb857
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 004cb85c
-    PUSH 0x58810b                       ; 004cb85f | DAT_0058810b
+    PUSH 0x58810b                       ; 004cb85f | = "g"
     PUSH EDI                            ; 004cb864
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb865
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 004cb86a
-    PUSH 0x58810d                       ; 004cb86d | DAT_0058810d
+    PUSH 0x58810d                       ; 004cb86d | = "b"
     INC EBX                             ; 004cb872
     PUSH EBP                            ; 004cb873
     ADD ESI,0x64                        ; 004cb874

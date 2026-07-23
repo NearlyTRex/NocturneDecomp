@@ -15,7 +15,7 @@
 ;   core_set.cpp_FUN_00509a80 at 0050a0fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005905d2
+;   double DOUBLE_005905d2 = 4
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01fb8618
 ;   undefined4 DAT_01fb9b54
@@ -62,7 +62,7 @@ section .text
     SHL EAX,0x5                         ; 0050abf4
     FLD float ptr [EDX + 0x24]          ; 0050abf7
     FSUB float ptr [EBX + EAX*0x1 + 0x108] ; 0050abfa
-    FADD double ptr [0x005905d2]        ; 0050ac01 | DAT_005905d2
+    FADD double ptr [0x005905d2]        ; 0050ac01 | DOUBLE_005905d2
     FSTP float ptr [ESP + 0x4]          ; 0050ac07
     MOV ESI,dword ptr [EBX + 0x15aabc]  ; 0050ac0b
     LEA EAX,[ESI*0x4 + 0x0]             ; 0050ac11

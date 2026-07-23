@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   int iVar3;
   
   iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
@@ -23,12 +21,12 @@ int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(uint param_1)
   *(uint *)(iVar3 + 0x2dd4) = 0x3f19999a;
   *(uint *)(iVar3 + 0x2dd8) = 0x3f666666;
   *(uint *)(iVar3 + 0xbd58) = 0;
-  uVar1 = _DAT_005a1f9c;
+  fVar1 = 50.0f;
   *(uint *)(iVar3 + 0xbd5c) = 0;
-  uVar2 = _DAT_005a1fa0;
+  fVar2 = 100.0f;
   *(uint *)(iVar3 + 0xbd60) = 0;
   *(uint *)(iVar3 + 0xbd64) = 1;
-  *(uint *)(iVar3 + 0x2ddc) = uVar1;
-  *(uint *)(iVar3 + 0x2de0) = uVar2;
+  *(float *)(iVar3 + 0x2ddc) = fVar1;
+  *(float *)(iVar3 + 0x2de0) = fVar2;
   return iVar3;
 }

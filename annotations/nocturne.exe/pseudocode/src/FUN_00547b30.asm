@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00547af4 = 00547b63
 ;   undefined1* switchdataD_00547b1c = 00547bdb
-;   undefined4 DAT_005969a7
-;   undefined4 DAT_005969af
+;   float FLOAT_005969a7 = 0.5
+;   double DOUBLE_005969af = 65536
 ;   undefined4 DAT_005a3640
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
@@ -225,7 +225,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00547d16
     FADD float ptr [EBX + 0x4]          ; 00547d19
     FXCH                                ; 00547d1c
-    FLD float ptr [0x005969a7]          ; 00547d1e | DAT_005969a7
+    FLD float ptr [0x005969a7]          ; 00547d1e | FLOAT_005969a7
     FXCH                                ; 00547d24
     FMUL ST1                            ; 00547d26
     FXCH ST2                            ; 00547d28
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0()
     FLD float ptr [ESI + 0x214]         ; 00547dba
     ADD ESP,0xc                         ; 00547dc0
-    FMUL double ptr [0x005969af]        ; 00547dc3 | DAT_005969af
+    FMUL double ptr [0x005969af]        ; 00547dc3 | DOUBLE_005969af
     MOV dword ptr [ESP + 0xa8],EAX      ; 00547dc9
     FILD dword ptr [ESP + 0xa8]         ; 00547dd0
     FSTP double ptr [ESP]               ; 00547dd7
@@ -290,7 +290,7 @@ section .text
     JA 0x00547bc9                       ; 00547de0
         ;   XREF to: 00547bc9 (CONDITIONAL_JUMP)  ; default
     FLD float ptr [ESI + 0x218]         ; 00547de6
-    FMUL double ptr [0x005969af]        ; 00547dec | DAT_005969af
+    FMUL double ptr [0x005969af]        ; 00547dec | DOUBLE_005969af
     FCOMP double ptr [ESP]              ; 00547df2
     FNSTSW AX                           ; 00547df5
     SAHF                                ; 00547df7

@@ -8,7 +8,7 @@
 ;   core_set.cpp_CDemonSet_process_FUN_0050d040 at 0050d0df
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\setutil.cpp_00590e68+1
+;   TerminatedCString s_core_setutil_cpp_00590e69
 ;   string s_C3DSLight::process_-_NULL_CDemon_00590e7d
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
@@ -145,7 +145,7 @@ section .text
     POP ESI                             ; 0051559d
     POP EBX                             ; 0051559e
     RET                                 ; 0051559f
-    MOV EDX,0x590e69                    ; 005155a0 | s_..\core\setutil.cpp_00590e68+1
+    MOV EDX,0x590e69                    ; 005155a0 | = "..\\core\\setutil.cpp"
         ;   Label: LAB_005155a0
     MOV ECX,0x31e                       ; 005155a5
     PUSH 0x590e7d                       ; 005155aa | = "C3DSLight::process - NULL CDemonLight..."

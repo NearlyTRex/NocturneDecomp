@@ -76,7 +76,7 @@ int sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(uint param_1,
       else {
         uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar3);
         _sprintf(&piStack_1d8,"DirectSux: Unable to %s.  (%s)",
-                   "?Create secondary buffer" + 1,uVar4);
+                   "Create secondary buffer",uVar4);
         FUN_00529980(&piStack_1d8);
       }
       FUN_00529980("DirectSoundDevice::allocateSample - access failed\n");

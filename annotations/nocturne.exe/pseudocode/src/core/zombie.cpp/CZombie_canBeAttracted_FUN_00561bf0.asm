@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00598916
+;   float FLOAT_00598916 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -82,7 +82,7 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 00561c60
     FXCH                                ; 00561c64
     FST float ptr [ESP + 0x30]          ; 00561c66
-    FLD float ptr [0x00598916]          ; 00561c6a | DAT_00598916
+    FLD float ptr [0x00598916]          ; 00561c6a | FLOAT_00598916
     FXCH                                ; 00561c70
     FMUL ST1                            ; 00561c72
     FXCH ST2                            ; 00561c74

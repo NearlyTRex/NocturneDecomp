@@ -17,8 +17,8 @@
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0 at 004e14cc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b39d
-;   undefined4 DAT_0058b3a5
+;   double DOUBLE_0058b39d = -0.000100000000000000
+;   double DOUBLE_0058b3a5 = 0.00100000000000000
 ;
 ; *****************************************************************************
 
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004e1c1a (CONDITIONAL_JUMP)  ; LAB_004e1c1a
     FILD dword ptr [EBX + 0x28]         ; 004e1c42
         ;   Label: LAB_004e1c42
-    FADD double ptr [0x0058b39d]        ; 004e1c45 | DAT_0058b39d
+    FADD double ptr [0x0058b39d]        ; 004e1c45 | DOUBLE_0058b39d
     FLD float ptr [ESP + 0xc]           ; 004e1c4b
     FCOMPP                              ; 004e1c4f
     FNSTSW AX                           ; 004e1c51
@@ -132,7 +132,7 @@ section .text
     RET                                 ; 004e1cdd
     FLD float ptr [ESP + 0xc]           ; 004e1cde
         ;   Label: LAB_004e1cde
-    FADD double ptr [0x0058b3a5]        ; 004e1ce2 | DAT_0058b3a5
+    FADD double ptr [0x0058b3a5]        ; 004e1ce2 | DOUBLE_0058b3a5
     FLD float ptr [ESP + 0x8]           ; 004e1ce8
     FSTP double ptr [ESP]               ; 004e1cec
     FCOMP double ptr [ESP]              ; 004e1cef
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 004e1c34 (CONDITIONAL_JUMP)  ; LAB_004e1c34
     FLD double ptr [ESP]                ; 004e1cfb
     MOV EAX,dword ptr [ECX + 0x4ac]     ; 004e1cfe
-    FADD double ptr [0x0058b3a5]        ; 004e1d04 | DAT_0058b3a5
+    FADD double ptr [0x0058b3a5]        ; 004e1d04 | DOUBLE_0058b3a5
     MOV dword ptr [ESP + 0x10],EAX      ; 004e1d0a
     FSTP float ptr [ESP + 0xc]          ; 004e1d0e
     JMP 0x004e1c34                      ; 004e1d12

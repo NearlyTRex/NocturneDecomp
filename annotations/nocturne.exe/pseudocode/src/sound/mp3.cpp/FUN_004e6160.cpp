@@ -164,7 +164,7 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
               if (sVar4 != 7) {
                 if (local_e0 == 0) {
                   fVar16 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar14 + 2) *
-                                          (float10)_DAT_0058b8e8);
+                                          (float10)0.26179938779914902);
                   *(float *)((int)afStack_e78 + local_90) = (float)fVar16;
                 }
                 else {
@@ -250,7 +250,7 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                   if (sVar4 != 7) {
                     if (local_e0 == 0) {
                       fVar16 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar14 + 2) *
-                                              (float10)_DAT_0058b8e8);
+                                              (float10)0.26179938779914902);
                       *(float *)((int)afStack_e78 + local_80) = (float)fVar16;
                     }
                     else {
@@ -341,7 +341,7 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                 if (sVar4 != 7) {
                   if (local_e0 == 0) {
                     fVar16 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar14 + 2) *
-                                            (float10)_DAT_0058b8e8);
+                                            (float10)0.26179938779914902);
                     *(float *)((int)afStack_e78 + local_70) = (float)fVar16;
                   }
                   else {
@@ -424,7 +424,7 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
                   if (sVar4 != 7) {
                     if (local_e0 == 0) {
                       fVar16 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar14 + 2) *
-                                              (float10)_DAT_0058b8e8);
+                                              (float10)0.26179938779914902);
                       *(float *)((int)afStack_e78 + local_64) = (float)fVar16;
                     }
                     else {
@@ -485,7 +485,7 @@ void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param
             pfVar13[0x240] = pfVar8[0x240];
           }
           else {
-            fVar2 = (float)_DAT_0058b8f0;
+            fVar2 = (float)0.70710678237309499;
             *pfVar13 = (*pfVar8 + pfVar8[0x240]) * fVar2;
             fVar2 = (*pfVar8 - pfVar8[0x240]) * fVar2;
 LAB_004e6377:
@@ -504,7 +504,7 @@ LAB_004e6377:
             }
             goto LAB_004e6377;
           }
-          _DAT_01cc4800 = "@..\\sound\\mp3.cpp" + 1;
+          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
           _DAT_01cc4804 = 0x9b8;
           FUN_004c8440("Error in streo processing.  File: %s",&DAT_01cd8b28);
         }

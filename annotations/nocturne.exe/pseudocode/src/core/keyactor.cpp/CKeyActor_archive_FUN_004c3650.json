@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 12,
     "suspect_count": 4,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -172,8 +172,8 @@
   "globals": [
     {
       "addr": "005875a4",
-      "name": "s_modelName_005875a3+1",
-      "type": "undefined4",
+      "name": "s_modelName_005875a4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -262,15 +262,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,\"@modelName\" + 1);",
+      "text": "core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,\"modelName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,\"keyMask\");",

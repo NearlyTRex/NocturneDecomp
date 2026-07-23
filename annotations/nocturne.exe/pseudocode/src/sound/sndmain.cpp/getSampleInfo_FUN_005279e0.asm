@@ -13,10 +13,10 @@
 ;
 ; Referenced Globals:
 ;   string s_sound_00593734
-;   undefined4 DAT_0059373a
-;   undefined4 DAT_0059373e
+;   TerminatedCString s_wav_0059373a
+;   TerminatedCString s_rb_0059373e
 ;   string s_sound_00593741
-;   undefined4 DAT_00593747
+;   TerminatedCString s_mp3_00593747
 ;   string s_..\\sound\\sndmain.cpp_0059374b
 ;   string s_Unknown_sample_file_format_exten_00593760
 ;   string s_..\\sound\\sndmain.cpp_00593789
@@ -136,7 +136,7 @@ section .text
     CALL crt_string.c_memmove_FUN_00566170 ; 00527a8e
         ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
     ADD ESP,0xc                         ; 00527a93
-    PUSH 0x59373a                       ; 00527a96 | DAT_0059373a
+    PUSH 0x59373a                       ; 00527a96 | = "wav"
         ;   Label: LAB_00527a96
     LEA EAX,[ESP + 0x4]                 ; 00527a9b
     PUSH EAX                            ; 00527a9f
@@ -146,7 +146,7 @@ section .text
     TEST EAX,EAX                        ; 00527aa8
     JNZ 0x00527b3f                      ; 00527aaa
         ;   XREF to: 00527b3f (CONDITIONAL_JUMP)  ; LAB_00527b3f
-    PUSH 0x59373e                       ; 00527ab0 | DAT_0059373e
+    PUSH 0x59373e                       ; 00527ab0 | = "rb"
     PUSH EBP                            ; 00527ab5
     PUSH 0x593741                       ; 00527ab6 | = "sound"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00527abb
@@ -209,7 +209,7 @@ section .text
     POP ESI                             ; 00527b3c
     POP EBX                             ; 00527b3d
     RET                                 ; 00527b3e
-    PUSH 0x593747                       ; 00527b3f | DAT_00593747
+    PUSH 0x593747                       ; 00527b3f | = "mp3"
         ;   Label: LAB_00527b3f
     LEA EAX,[ESP + 0x4]                 ; 00527b44
     PUSH EAX                            ; 00527b48

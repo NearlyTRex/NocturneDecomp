@@ -11,7 +11,7 @@ int __cdecl core_script_cpp_getActionState_FUN_004fe300(int param_1,uint param_2
 {
   int iVar1;
   
-  iVar1 = _stricmp(param_2,&DAT_0058e16d);
+  iVar1 = _stricmp(param_2,"walk");
   if (iVar1 == 0) {
     return param_1;
   }
@@ -19,11 +19,11 @@ int __cdecl core_script_cpp_getActionState_FUN_004fe300(int param_1,uint param_2
   if (iVar1 == 0) {
     return param_1 + 4;
   }
-  iVar1 = _stricmp(param_2,&DAT_0058e179);
+  iVar1 = _stricmp(param_2,"run");
   if (iVar1 == 0) {
     return param_1 + 8;
   }
-  iVar1 = _stricmp(param_2,&DAT_0058e17d);
+  iVar1 = _stricmp(param_2,"fire");
   if (iVar1 == 0) {
     return param_1 + 0xc;
   }
@@ -35,11 +35,11 @@ int __cdecl core_script_cpp_getActionState_FUN_004fe300(int param_1,uint param_2
   if (iVar1 == 0) {
     return param_1 + 0x14;
   }
-  iVar1 = _stricmp(param_2,&DAT_0058e190);
+  iVar1 = _stricmp(param_2,"draw");
   if (iVar1 == 0) {
     return param_1 + 0x18;
   }
-  iVar1 = _stricmp(param_2,&DAT_0058e195);
+  iVar1 = _stricmp(param_2,"jump");
   if (iVar1 == 0) {
     return param_1 + 0x1c;
   }

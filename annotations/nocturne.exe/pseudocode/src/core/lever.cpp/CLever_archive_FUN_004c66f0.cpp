@@ -17,7 +17,7 @@ void core_lever_cpp_CLever_archive_FUN_004c66f0(int param_1)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   pcVar3 = local_d4;
   if (DAT_00763e88 == 1) {
-    core_actor_cpp_archiveString_FUN_0040c6d0(local_d4,"?modelName" + 1);
+    core_actor_cpp_archiveString_FUN_0040c6d0(local_d4,"modelName");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(param_1 + 0x150,local_d4);
   }
   else {

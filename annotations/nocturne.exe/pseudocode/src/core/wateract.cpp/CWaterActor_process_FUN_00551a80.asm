@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00551a70 = 00551b4e
 ;   undefined1* PTR_caseD_3_00551a78 = 00551b83
-;   undefined4 s_..\\core\\wateract.cpp_00597615+2
+;   TerminatedCString s_core_wateract_cpp_00597617
 ;   string s_CWaterActor::process_-_Bad_state_0059762c
-;   undefined4 DAT_0059764f
-;   undefined4 DAT_00597657
+;   double DOUBLE_0059764f = 65536
+;   double DOUBLE_00597657 = 8
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0x4                         ; 00551a83
     MOV EBX,dword ptr [ESP + 0x14]      ; 00551a86
     FLD float ptr [ESP + 0x18]          ; 00551a8a
-    FMUL double ptr [0x0059764f]        ; 00551a8e | DAT_0059764f
-    FMUL double ptr [0x00597657]        ; 00551a94 | DAT_00597657
+    FMUL double ptr [0x0059764f]        ; 00551a8e | DOUBLE_0059764f
+    FMUL double ptr [0x00597657]        ; 00551a94 | DOUBLE_00597657
     MOV EDX,dword ptr [EBX + 0x2b224]   ; 00551a9a
     CALL crt_math.c_round_FUN_00563a30  ; 00551aa0
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
@@ -129,7 +129,7 @@ section .text
     POP ESI                             ; 00551bcf
     POP EBX                             ; 00551bd0
     RET                                 ; 00551bd1
-    MOV ECX,0x597617                    ; 00551bd2 | s_..\core\wateract.cpp_00597615+2
+    MOV ECX,0x597617                    ; 00551bd2 | = "..\\core\\wateract.cpp"
         ;   Label: default
     MOV ESI,0x1a5                       ; 00551bd7
     PUSH 0x59762c                       ; 00551bdc | = "CWaterActor::process - Bad state"

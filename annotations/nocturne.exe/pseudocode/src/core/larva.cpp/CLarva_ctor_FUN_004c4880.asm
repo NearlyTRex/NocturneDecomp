@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_worm.dfm_0058777b
-;   undefined4 DAT_0059fa70
-;   undefined4 DAT_0059fa74
+;   float FLOAT_0059fa70 = 20
+;   float FLOAT_0059fa74 = 100
 ;   undefined1* PTR_core_larva.cpp_CLarva_setup_FUN_004c4910_0059fa84 = 004c4910
 ;
 ; Called Functions:
@@ -35,9 +35,9 @@ section .text
     MOV dword ptr [EBX + 0x2dd4],0x3e800000 ; 004c48a7
     MOV dword ptr [EBX + 0x2dd8],0x3f000000 ; 004c48b1
     MOV dword ptr [EBX + 0x2608],0x1    ; 004c48bb
-    FLD float ptr [0x0059fa70]          ; 004c48c5 | DAT_0059fa70
+    FLD float ptr [0x0059fa70]          ; 004c48c5 | FLOAT_0059fa70
     MOV dword ptr [EBX + 0x2434],0x41700000 ; 004c48cb
-    FLD float ptr [0x0059fa74]          ; 004c48d5 | DAT_0059fa74
+    FLD float ptr [0x0059fa74]          ; 004c48d5 | FLOAT_0059fa74
     MOV dword ptr [EBX + 0xbd28],0x0    ; 004c48db
     ADD ESP,0x8                         ; 004c48e5
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 004c48e8

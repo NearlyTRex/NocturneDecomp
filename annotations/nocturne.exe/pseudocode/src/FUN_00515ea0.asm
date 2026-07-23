@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   string s_shotgun-noammo.wav_00591042
 ;   string s_shotgun.wav_00591055
-;   undefined4 DAT_00591065
-;   undefined4 DAT_0059106d
-;   undefined4 DAT_00591075
-;   undefined4 DAT_0059107d
-;   undefined4 DAT_00591085
+;   double DOUBLE_00591065 = 3.14159265350000
+;   double DOUBLE_0059106d = 0.00555555555555555
+;   float FLOAT_00591075 = -0.125
+;   double DOUBLE_0059107d = 1.5
+;   double DOUBLE_00591085 = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005be368
@@ -76,8 +76,8 @@ section .text
     JZ 0x00516233                       ; 00515ee7
         ;   XREF to: 00516233 (CONDITIONAL_JUMP)  ; LAB_00516233
     FLD float ptr [EBX + 0x570]         ; 00515eed
-    FMUL double ptr [0x00591065]        ; 00515ef3 | DAT_00591065
-    FMUL double ptr [0x0059106d]        ; 00515ef9 | DAT_0059106d
+    FMUL double ptr [0x00591065]        ; 00515ef3 | DOUBLE_00591065
+    FMUL double ptr [0x0059106d]        ; 00515ef9 | DOUBLE_0059106d
     FPTAN                               ; 00515eff
     FSTP ST0                            ; 00515f01
     PUSH 0xf                            ; 00515f03
@@ -157,7 +157,7 @@ section .text
     FSTP float ptr [ESP + 0x94]         ; 00516024
     FSTP float ptr [ESP + 0x98]         ; 0051602b
     FLD float ptr [EBX + 0x2e0]         ; 00516032
-    FDIVR double ptr [0x0059107d]       ; 00516038 | DAT_0059107d
+    FDIVR double ptr [0x0059107d]       ; 00516038 | DOUBLE_0059107d
     FLD float ptr [ESP + 0xc0]          ; 0051603e
     FXCH                                ; 00516045
     FSTP float ptr [ESP + 0xec]         ; 00516047
@@ -256,7 +256,7 @@ section .text
     LEA EAX,[ESP + 0x88]                ; 005161ab
     FLD float ptr [ESP + 0x8c]          ; 005161b2
     PUSH EAX                            ; 005161b9
-    FADD float ptr [0x00591075]         ; 005161ba | DAT_00591075
+    FADD float ptr [0x00591075]         ; 005161ba | FLOAT_00591075
     PUSH EDX                            ; 005161c0
     FSTP float ptr [ESP + 0x94]         ; 005161c1
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20 ; 005161c8
@@ -475,7 +475,7 @@ section .text
     FMUL float ptr [ESP + 0x50]         ; 0051645d
     FADDP                               ; 00516461
     FSQRT                               ; 00516463
-    FDIVR double ptr [0x00591085]       ; 00516465 | DAT_00591085
+    FDIVR double ptr [0x00591085]       ; 00516465 | DOUBLE_00591085
     FLD float ptr [ESP + 0x48]          ; 0051646b
     FXCH                                ; 0051646f
     FSTP float ptr [ESP + 0x10c]        ; 00516471

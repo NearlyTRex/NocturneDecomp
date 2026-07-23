@@ -46,7 +46,7 @@ int core_melee_cpp_CMelee_ctor_FUN_004cec60(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00588378;
+  pcVar3 = "shvl-f?.wav";
   pcVar4 = (char *)(iVar2 + 0x5fc);
   do {
     cVar1 = *pcVar3;
@@ -57,7 +57,7 @@ int core_melee_cpp_CMelee_ctor_FUN_004cec60(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00588384;
+  pcVar3 = "shvl-s?.wav";
   pcVar4 = (char *)(iVar2 + 0x660);
   do {
     cVar1 = *pcVar3;

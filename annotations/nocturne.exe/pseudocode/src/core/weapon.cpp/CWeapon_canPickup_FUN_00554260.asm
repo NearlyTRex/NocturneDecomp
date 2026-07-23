@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   string s_CIcePick_00597bf2
 ;   string s_CHero_00597bfb
-;   undefined4 DAT_00597c01
+;   double DOUBLE_00597c01 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -42,7 +42,7 @@ section .text
     FMUL ST0                            ; 00554295
     FADDP                               ; 00554297
     FSQRT                               ; 00554299
-    FCOMP double ptr [0x00597c01]       ; 0055429b | DAT_00597c01
+    FCOMP double ptr [0x00597c01]       ; 0055429b | DOUBLE_00597c01
     FNSTSW AX                           ; 005542a1
     SAHF                                ; 005542a3
     JA 0x005542af                       ; 005542a4

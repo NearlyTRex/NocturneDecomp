@@ -19,7 +19,7 @@
 ;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00518440 at 0051845f
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\set.cpp_00590650+2
+;   TerminatedCString s_core_set_cpp_00590652
 ;   string s_CDemonSet::rotateVerticies_-_tri_00590662
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
@@ -104,7 +104,7 @@ section .text
     PUSH 0x4e20                         ; 0050c28a
         ;   Label: LAB_0050c28a
     PUSH EDX                            ; 0050c28f
-    MOV ECX,0x590652                    ; 0050c290 | s_..\core\set.cpp_00590650+2
+    MOV ECX,0x590652                    ; 0050c290 | = "..\\core\\set.cpp"
     MOV EBX,0xce7                       ; 0050c295
     PUSH 0x590662                       ; 0050c29a | = "CDemonSet::rotateVerticies - tried to..."
     MOV dword ptr [0x01cc4800],ECX      ; 0050c29f | DAT_01cc4800

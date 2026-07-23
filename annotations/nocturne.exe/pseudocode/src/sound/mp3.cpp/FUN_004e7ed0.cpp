@@ -140,7 +140,7 @@ void FUN_004e7ed0(int param_1,int param_2,int param_3)
   fVar7 = (float10)round
                              ((float10)*(double *)
                                         (&DAT_005bbc48 + local_6c * 8 + (int)ppiVar9 * 0x20) *
-                              (float10)_DAT_0058b9b8);
+                              (float10)1000);
   *(int *)(unaff_retaddr + 0x100) = (int)ROUND(fVar7);
   *(uint *)(unaff_retaddr + 0x104) = uStack_40;
   sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(unaff_retaddr,uVar1,uVar8);

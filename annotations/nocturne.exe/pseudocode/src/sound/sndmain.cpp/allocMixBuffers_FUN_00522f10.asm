@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0 at 0052814a
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_005927f5+1
+;   TerminatedCString s_sound_sndmain_cpp_005927f6
 ;   string s_allocMixBuffers_-_out_of_memory_0059280b
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_01cc4800
@@ -93,7 +93,7 @@ section .text
     TEST ESI,ESI                        ; 00522fc5
     JNZ 0x005230a7                      ; 00522fc7
         ;   XREF to: 005230a7 (CONDITIONAL_JUMP)  ; LAB_005230a7
-    MOV EBP,0x5927f6                    ; 00522fcd | s_..\sound\sndmain.cpp_005927f5+1
+    MOV EBP,0x5927f6                    ; 00522fcd | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00522fcd
     MOV EAX,0x4ac                       ; 00522fd2
     PUSH 0x59280b                       ; 00522fd7 | = "allocMixBuffers - out of memory"

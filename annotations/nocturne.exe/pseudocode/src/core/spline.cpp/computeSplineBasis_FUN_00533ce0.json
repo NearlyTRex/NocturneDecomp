@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 283,
+    "complexity_score": 267,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 23,
+    "pseudocode_lines": 37,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 164
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -172,39 +171,39 @@
   "globals": [
     {
       "addr": "005950fe",
-      "name": "DAT_005950fe",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005950fe",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00595106",
-      "name": "DAT_00595106",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595106",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "0059510a",
-      "name": "DAT_0059510a",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059510a",
+      "type": "float",
+      "value": "-3"
     },
     {
       "addr": "0059510e",
-      "name": "DAT_0059510e",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059510e",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "00595112",
-      "name": "DAT_00595112",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595112",
+      "type": "float",
+      "value": "-2"
     },
     {
       "addr": "00595116",
-      "name": "DAT_00595116",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595116",
+      "type": "float",
+      "value": "4"
     }
   ],
   "param_estimates": {
@@ -351,16 +350,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *param_1,float param_2,float param_3)",
@@ -368,7 +359,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *param_1,float param_2,float param_3)",
@@ -376,7 +367,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *param_1,float param_2,float param_3)",
@@ -384,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_2 * param_2;",
@@ -392,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_2 * param_2;",
@@ -400,15 +391,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar3 = (1.0 - param_3) * (float)_DAT_005950fe;",
+      "text": "fVar3 = (1.0 - param_3) * (float)0.5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar2 = fVar1 * param_2;",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = fVar5 * fVar1 + fVar6 * fVar2 + 1.0;",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[3] = fVar3 * fVar2 - fVar3 * fVar1;",
@@ -432,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = (fVar8 * param_2 + fVar7 * fVar1) - fVar3;",
@@ -440,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[4] = (fVar8 * param_2 + fVar7 * fVar1) - fVar3;",
@@ -448,23 +439,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[5] = fVar5 * _DAT_00595106 * param_2 + fVar6 * fVar1;",
+      "text": "param_1[5] = fVar5 * 2.0f * param_2 + fVar6 * fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1[5] = fVar5 * 2.0f * param_2 + fVar6 * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[5] = fVar5 * _DAT_00595106 * param_2 + fVar6 * fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[7] = fVar11 * fVar1 - fVar4 * param_2;",
@@ -472,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[7] = fVar11 * fVar1 - fVar4 * param_2;",
@@ -480,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = (-fVar3 * fVar2 + fVar4 * fVar1) - fVar3 * param_2;",
@@ -488,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_1 = (-fVar3 * fVar2 + fVar4 * fVar1) - fVar3 * param_2;",
@@ -496,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = fVar9 * fVar1 + fVar10 * fVar2 + fVar3 * param_2;",
@@ -504,7 +495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[2] = fVar9 * fVar1 + fVar10 * fVar2 + fVar3 * param_2;",
@@ -512,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6] = fVar5 * fVar1 + fVar7 * param_2 + fVar3;",
@@ -520,7 +511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[6] = fVar5 * fVar1 + fVar7 * param_2 + fVar3;",

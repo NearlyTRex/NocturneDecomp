@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1bd0(int *param_1,int param_2,float param_3,float *param_4,uint *param_5)
 
 {
@@ -32,15 +30,15 @@ uint __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1
   if (0 < *(int *)(iVar4 + 0x4a4)) {
     do {
       iVar1 = *(int *)(iVar3 + 0x4a8);
-      if ((param_3 <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)_DAT_0058b3a5)) {
+      if ((param_3 <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)0.001)) {
         local_20 = *(uint *)(iVar3 + 0x4ac);
-        local_24 = (float)iVar1 + (float)_DAT_0058b3a5;
+        local_24 = (float)iVar1 + (float)0.001;
       }
       iVar5 = iVar5 + 1;
       iVar3 = iVar3 + 8;
     } while (iVar5 < *(int *)(iVar4 + 0x4a4));
   }
-  if ((double)local_24 < (double)*(int *)(iVar4 + 0x28) + _DAT_0058b39d) {
+  if ((double)local_24 < (double)*(int *)(iVar4 + 0x28) + -0.0001) {
     (**(code **)(param_1[0x14] + 8))
               (param_1,(float)*(int *)(iVar4 + 0x60) + param_3,
                (float)*(int *)(iVar4 + 0x60) + local_24,0x3f800000);

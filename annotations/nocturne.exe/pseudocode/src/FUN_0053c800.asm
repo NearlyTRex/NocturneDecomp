@@ -42,12 +42,12 @@
 ;   FUN_0053fc60 at 0053fd07
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_=_%d_stranger.cpp_l_00595b86+1
+;   TerminatedCString s_actionPending_d_stranger_00595b87
 ;   string s_Delta_to_dest_:_%3.2f,%3.2f,%3.2_00595baf
-;   undefined4 DAT_00595bd7
-;   undefined4 DAT_00595bdf
-;   undefined4 DAT_00595be7
-;   undefined4 DAT_00595bef
+;   double DOUBLE_00595bd7 = 0.990000000000000
+;   double DOUBLE_00595bdf = 3
+;   double DOUBLE_00595be7 = 2
+;   double DOUBLE_00595bef = 4
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005be368
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [ESP + 0xe0],EAX      ; 0053c83d
     FLD float ptr [ESP + 0xe0]          ; 0053c844
     ADD ESP,0x8                         ; 0053c84b
-    FCOMP double ptr [0x00595bd7]       ; 0053c84e | DAT_00595bd7
+    FCOMP double ptr [0x00595bd7]       ; 0053c84e | DOUBLE_00595bd7
     FNSTSW AX                           ; 0053c854
     SAHF                                ; 0053c856
     JC 0x0053cf5b                       ; 0053c857
@@ -248,14 +248,14 @@ section .text
     JNC 0x0053c984                      ; 0053ca09
         ;   XREF to: 0053c984 (CONDITIONAL_JUMP)  ; LAB_0053c984
     FLD float ptr [ESP + 0x60]          ; 0053ca0f
-    FCOMP double ptr [0x00595bdf]       ; 0053ca13 | DAT_00595bdf
+    FCOMP double ptr [0x00595bdf]       ; 0053ca13 | DOUBLE_00595bdf
     FNSTSW AX                           ; 0053ca19
     SAHF                                ; 0053ca1b
     JNC 0x0053c984                      ; 0053ca1c
         ;   XREF to: 0053c984 (CONDITIONAL_JUMP)  ; LAB_0053c984
     FLD float ptr [ESP + 0x58]          ; 0053ca22
     FABS                                ; 0053ca26
-    FCOMP double ptr [0x00595be7]       ; 0053ca28 | DAT_00595be7
+    FCOMP double ptr [0x00595be7]       ; 0053ca28 | DOUBLE_00595be7
     FNSTSW AX                           ; 0053ca2e
     SAHF                                ; 0053ca30
     JNC 0x0053c984                      ; 0053ca31
@@ -270,7 +270,7 @@ section .text
     JNC 0x0053c984                      ; 0053ca48
         ;   XREF to: 0053c984 (CONDITIONAL_JUMP)  ; LAB_0053c984
     FLD double ptr [ESP]                ; 0053ca4e
-    FCOMP double ptr [0x00595bef]       ; 0053ca51 | DAT_00595bef
+    FCOMP double ptr [0x00595bef]       ; 0053ca51 | DOUBLE_00595bef
     FNSTSW AX                           ; 0053ca57
     SAHF                                ; 0053ca59
     JNC 0x0053c984                      ; 0053ca5a
@@ -319,7 +319,7 @@ section .text
         ;   XREF to: 0053cb06 (CONDITIONAL_JUMP)  ; LAB_0053cb06
     PUSH 0xe6f                          ; 0053caec
     PUSH EDX                            ; 0053caf1
-    PUSH 0x595b87                       ; 0053caf2 | s_actionPending_=_%d_stranger.cpp_l_00595b86+1
+    PUSH 0x595b87                       ; 0053caf2 | = "actionPending = %d\nstranger.cpp line %d"
     MOV ESI,dword ptr [0x005b6d50]      ; 0053caf7 | DAT_005b6d50
     PUSH ESI                            ; 0053cafd
     CALL FUN_0046fb40                   ; 0053cafe
@@ -418,14 +418,14 @@ section .text
     JNC 0x0053c8ef                      ; 0053cbfb
         ;   XREF to: 0053c8ef (CONDITIONAL_JUMP)  ; LAB_0053c8ef
     FLD float ptr [ESP + 0x18]          ; 0053cc01
-    FCOMP double ptr [0x00595bdf]       ; 0053cc05 | DAT_00595bdf
+    FCOMP double ptr [0x00595bdf]       ; 0053cc05 | DOUBLE_00595bdf
     FNSTSW AX                           ; 0053cc0b
     SAHF                                ; 0053cc0d
     JNC 0x0053c8ef                      ; 0053cc0e
         ;   XREF to: 0053c8ef (CONDITIONAL_JUMP)  ; LAB_0053c8ef
     FLD float ptr [ESP + 0x10]          ; 0053cc14
     FABS                                ; 0053cc18
-    FCOMP double ptr [0x00595be7]       ; 0053cc1a | DAT_00595be7
+    FCOMP double ptr [0x00595be7]       ; 0053cc1a | DOUBLE_00595be7
     FNSTSW AX                           ; 0053cc20
     SAHF                                ; 0053cc22
     JNC 0x0053c8ef                      ; 0053cc23
@@ -440,7 +440,7 @@ section .text
     JNC 0x0053c8ef                      ; 0053cc3c
         ;   XREF to: 0053c8ef (CONDITIONAL_JUMP)  ; LAB_0053c8ef
     FLD double ptr [ESP + 0x8]          ; 0053cc42
-    FCOMP double ptr [0x00595bef]       ; 0053cc46 | DAT_00595bef
+    FCOMP double ptr [0x00595bef]       ; 0053cc46 | DOUBLE_00595bef
     FNSTSW AX                           ; 0053cc4c
     SAHF                                ; 0053cc4e
     JNC 0x0053c8ef                      ; 0053cc4f
@@ -676,7 +676,7 @@ section .text
     FMUL float ptr [ESP + 0xa8]         ; 0053cf45
     FADDP                               ; 0053cf4c
     FSQRT                               ; 0053cf4e
-    FCOMP double ptr [0x00595be7]       ; 0053cf50 | DAT_00595be7
+    FCOMP double ptr [0x00595be7]       ; 0053cf50 | DOUBLE_00595be7
     FNSTSW AX                           ; 0053cf56
     SAHF                                ; 0053cf58
     JNC 0x0053cee0                      ; 0053cf59

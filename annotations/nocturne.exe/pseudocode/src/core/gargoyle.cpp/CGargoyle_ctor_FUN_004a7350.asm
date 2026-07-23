@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_gargoyle.dfm_0058482a
-;   undefined4 DAT_0059df40
-;   undefined4 DAT_0059df44
+;   float FLOAT_0059df40 = 50
+;   float FLOAT_0059df44 = 100
 ;   undefined1* PTR_core_gargoyle.cpp_CGargoyle_setup_FUN_004a7450_0059df54 = 004a7450
 ;
 ; Called Functions:
@@ -46,9 +46,9 @@ section .text
     MOV dword ptr [EBX + 0xbd58],0x80   ; 004a73e5
     MOV dword ptr [EBX + 0xbd5c],0x80   ; 004a73ef
     MOV dword ptr [EBX + 0xbd60],0x0    ; 004a73f9
-    FLD float ptr [0x0059df40]          ; 004a7403 | DAT_0059df40
+    FLD float ptr [0x0059df40]          ; 004a7403 | FLOAT_0059df40
     MOV dword ptr [EBX + 0xbd78],0x0    ; 004a7409
-    FLD float ptr [0x0059df44]          ; 004a7413 | DAT_0059df44
+    FLD float ptr [0x0059df44]          ; 004a7413 | FLOAT_0059df44
     MOV dword ptr [EBX + 0xbd7c],0x0    ; 004a7419
     ADD ESP,0x8                         ; 004a7423
     MOV dword ptr [EBX + 0x261c],0x0    ; 004a7426

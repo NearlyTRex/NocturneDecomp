@@ -22,9 +22,9 @@
 ;   string s_..\\core\\menu.cpp_00588d42
 ;   string s_Too_many_custom_keys!_00588d53
 ;   string s_Forward_00588e38
-;   undefined4 DAT_00588e40
-;   undefined4 DAT_00588e45
-;   undefined4 DAT_00588e4a
+;   TerminatedCString s_Back_00588e40
+;   TerminatedCString s_Walk_00588e45
+;   TerminatedCString s_Run_00588e4a
 ;   string s_Strafe_on_00588e4e
 ;   string s_Strafe_left_00588e58
 ;   string s_Strafe_right_00588e64
@@ -118,7 +118,7 @@ section .text
         ;   Label: LAB_004d2da9
     MOV ECX,dword ptr [0x01cc8120]      ; 004d2daa | DAT_01cc8120
     INC ECX                             ; 004d2db0
-    PUSH 0x588e40                       ; 004d2db1 | DAT_00588e40
+    PUSH 0x588e40                       ; 004d2db1 | = "Back"
     MOV dword ptr [0x01cc8120],ECX      ; 004d2db6 | DAT_01cc8120
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2dbc
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -167,7 +167,7 @@ section .text
     TEST EBX,EBX                        ; 004d2e43
     JZ 0x004d3bfc                       ; 004d2e45
         ;   XREF to: 004d3bfc (CONDITIONAL_JUMP)  ; LAB_004d3bfc
-    PUSH 0x588e45                       ; 004d2e4b | DAT_00588e45
+    PUSH 0x588e45                       ; 004d2e4b | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2e50
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
         ;   Label: LAB_004d2e50
@@ -595,7 +595,7 @@ section .text
         ;   Label: LAB_004d3340
     MOV ECX,dword ptr [0x01cc8120]      ; 004d3341 | DAT_01cc8120
     INC ECX                             ; 004d3347
-    PUSH 0x588eb0                       ; 004d3348 | DAT_00588eb0
+    PUSH 0x588eb0                       ; 004d3348 | = "Draw"
     MOV dword ptr [0x01cc8120],ECX      ; 004d334d | DAT_01cc8120
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d3353
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -724,7 +724,7 @@ section .text
         ;   Label: LAB_004d34c3
     MOV ECX,dword ptr [0x01cc8120]      ; 004d34c4 | DAT_01cc8120
     INC ECX                             ; 004d34ca
-    PUSH 0x588ec9                       ; 004d34cb | DAT_00588ec9
+    PUSH 0x588ec9                       ; 004d34cb | = "Jump"
     MOV dword ptr [0x01cc8120],ECX      ; 004d34d0 | DAT_01cc8120
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d34d6
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1338,7 +1338,7 @@ section .text
     POP EBP                             ; 004d3bf9
     POP EBX                             ; 004d3bfa
     RET                                 ; 004d3bfb
-    PUSH 0x588e4a                       ; 004d3bfc | DAT_00588e4a
+    PUSH 0x588e4a                       ; 004d3bfc | = "Run"
         ;   Label: LAB_004d3bfc
     JMP 0x004d2e50                      ; 004d3c01
         ;   XREF to: 004d2e50 (UNCONDITIONAL_JUMP)  ; LAB_004d2e50
@@ -1760,7 +1760,7 @@ section .text
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40 ; 004d3fa8
         ;   XREF to: 004d2b40 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40()
     ADD ESP,0x8                         ; 004d3fad
-    PUSH 0x589083                       ; 004d3fb0 | DAT_00589083
+    PUSH 0x589083                       ; 004d3fb0 | = "Back"
     MOV EBX,EAX                         ; 004d3fb5
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d3fb7
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1778,7 +1778,7 @@ section .text
     TEST EBP,EBP                        ; 004d3fde
     JZ 0x004d435c                       ; 004d3fe0
         ;   XREF to: 004d435c (CONDITIONAL_JUMP)  ; LAB_004d435c
-    PUSH 0x589088                       ; 004d3fe6 | DAT_00589088
+    PUSH 0x589088                       ; 004d3fe6 | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d3feb
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
         ;   Label: LAB_004d3feb
@@ -1900,7 +1900,7 @@ section .text
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40 ; 004d4128
         ;   XREF to: 004d2b40 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40()
     ADD ESP,0x8                         ; 004d412d
-    PUSH 0x5890f3                       ; 004d4130 | DAT_005890f3
+    PUSH 0x5890f3                       ; 004d4130 | = "Draw"
     OR EBX,EAX                          ; 004d4135
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d4137
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -1937,7 +1937,7 @@ section .text
         ;   XREF to: 004d2b40 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40()
     ADD ESP,0x8                         ; 004d4190
     OR EBX,EAX                          ; 004d4193
-    PUSH 0x58910c                       ; 004d4195 | DAT_0058910c
+    PUSH 0x58910c                       ; 004d4195 | = "Jump"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d419a
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d419f
@@ -2098,7 +2098,7 @@ section .text
     POP EBP                             ; 004d4359
     POP EBX                             ; 004d435a
     RET                                 ; 004d435b
-    PUSH 0x58908d                       ; 004d435c | DAT_0058908d
+    PUSH 0x58908d                       ; 004d435c | = "Run"
         ;   Label: LAB_004d435c
     JMP 0x004d3feb                      ; 004d4361
         ;   XREF to: 004d3feb (UNCONDITIONAL_JUMP)  ; LAB_004d3feb

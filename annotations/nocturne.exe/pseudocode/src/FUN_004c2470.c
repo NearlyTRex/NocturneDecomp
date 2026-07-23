@@ -95,8 +95,8 @@ void FUN_004c2470(float *param_1)
   }
   local_68 = 0xffff;
   if (param_1[0xce] < 1.0) {
-    fVar13 = (float10)round((float10)param_1[0xce] * (float10)_DAT_005874dd)
-    ;
+    fVar13 = (float10)round
+                                ((float10)param_1[0xce] * (float10)65535.0f);
     local_6c = (int)ROUND(fVar13);
   }
   iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1[0xcc],_DAT_01cc36c0);
@@ -118,7 +118,7 @@ void FUN_004c2470(float *param_1)
       if (iVar3 != 0) {
         iVar4 = 0x1cc3064;
       }
-      iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1[0xcc],&DAT_00587492);
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1[0xcc],"CGun");
       if (iVar3 != 0) {
         if (*(int *)((int)param_1[0xcc] + 0x564) == 0) {
           iVar4 = 0x1cc3028;
@@ -140,7 +140,7 @@ void FUN_004c2470(float *param_1)
         engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(iVar4,iVar7,iVar10,local_6c);
       }
       if ((param_1[0xd2] <= 0.0) || (param_1[0x113] != 0.0)) {
-        _sprintf(local_67c,&DAT_00587497,*(uint *)((int)param_1[0xcc] + 0x560));
+        _sprintf(local_67c,"%d",*(uint *)((int)param_1[0xcc] + 0x560));
       }
       else {
         uVar5 = core_inv_cpp_getItemDisplayName_FUN_004beca0
@@ -160,9 +160,9 @@ void FUN_004c2470(float *param_1)
   else {
     uVar18 = 0x4c25da;
     fVar13 = (float10)round
-                                ((float10)*(float *)(iVar3 + 0x57c) * (float10)_DAT_005874e1);
+                                ((float10)*(float *)(iVar3 + 0x57c) * (float10)100);
     local_1c = (int)ROUND(fVar13);
-    _sprintf(auStack_480,&DAT_0058746d,local_1c,uVar18);
+    _sprintf(auStack_480,"%d%%",local_1c,uVar18);
     iVar3 = local_4c;
     iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_4c,0x58);
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(iVar3,auStack_480);
@@ -263,7 +263,7 @@ LAB_004c27a0:
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1[0xcd],_DAT_01c08cc4);
     if (iVar4 != 0) {
       uVar5 = core_inv_cpp_getItemDisplayName_FUN_004beca0();
-      _sprintf(auStack_27c,&DAT_005874d1,uVar5);
+      _sprintf(auStack_27c,"%s",uVar5);
       iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
       iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(local_48,auStack_27c);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
@@ -302,7 +302,7 @@ LAB_004c27a0:
     fVar13 = (float10)round
                                 ((float10)local_18 +
                                  (float10)(iStack_7c - local_18) * (float10)*param_1 *
-                                 (float10)_DAT_005874e9);
+                                 (float10)0.01);
     iVar10 = DAT_005b7620;
     iStack_80 = (int)ROUND(fVar13);
     engine_2d_c_fillRectColor_FUN_00403e60(6,iStack_80,uVar5,uVar6,uVar17);
@@ -315,11 +315,11 @@ LAB_004c27a0:
     }
     local_68 = 0xffff;
     if (local_680 < 1.0) {
-      fVar13 = (float10)round((float10)local_680 * (float10)_DAT_005874dd);
+      fVar13 = (float10)round((float10)local_680 * (float10)65535.0f);
       local_6c = (int)ROUND(fVar13);
     }
-    fStack_684 = *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) * (float)_DAT_005874e9
-    ;
+    fStack_684 = *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) *
+                 (float)0.01;
     if (fStack_684 < 0.0) {
       fStack_684 = 0.0;
     }
@@ -347,7 +347,7 @@ LAB_004c27a0:
   if (0.0 < fVar1) {
     local_64 = 0xffff;
     if (fVar1 < 1.0) {
-      fVar13 = (float10)round((float10)fVar1 * (float10)_DAT_005874f1);
+      fVar13 = (float10)round((float10)fVar1 * (float10)65535);
       local_68 = (int)ROUND(fVar13);
     }
     engine_3d_c_setRenderAlpha_FUN_00408370();

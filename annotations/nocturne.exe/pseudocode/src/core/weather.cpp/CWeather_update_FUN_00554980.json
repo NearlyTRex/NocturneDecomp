@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -214,8 +214,8 @@
   "globals": [
     {
       "addr": "00597c19",
-      "name": "s_noLightningFlash_00597c18+1",
-      "type": "undefined4",
+      "name": "s_noLightningFlash_00597c19",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -232,27 +232,27 @@
     },
     {
       "addr": "00597c49",
-      "name": "DAT_00597c49",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597c49",
+      "type": "double",
+      "value": "0.0000152590218966964"
     },
     {
       "addr": "00597c51",
-      "name": "DAT_00597c51",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597c51",
+      "type": "double",
+      "value": "0.600000000000000"
     },
     {
       "addr": "00597c59",
-      "name": "DAT_00597c59",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597c59",
+      "type": "double",
+      "value": "15"
     },
     {
       "addr": "00597c61",
-      "name": "DAT_00597c61",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597c61",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "00597c69",
@@ -731,7 +731,7 @@
       "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float)_DAT_00597c59 <= (float)param_1[0xd]) {",
+      "text": "if ((float)15 <= (float)param_1[0xd]) {",
       "type": "unnamed_param"
     },
     {

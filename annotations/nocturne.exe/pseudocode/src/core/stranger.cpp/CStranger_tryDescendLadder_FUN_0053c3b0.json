@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -198,45 +198,45 @@
   "globals": [
     {
       "addr": "00595b3f",
-      "name": "s_Ladder_dot_:_%f_00595b3e+1",
-      "type": "undefined4",
+      "name": "s_Ladder_dot_f_00595b3f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00595b57",
-      "name": "DAT_00595b57",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b57",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "00595b5f",
-      "name": "DAT_00595b5f",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595b5f",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "00595b67",
-      "name": "DAT_00595b67",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b67",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "00595b6f",
-      "name": "DAT_00595b6f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b6f",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "00595b77",
-      "name": "DAT_00595b77",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b77",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "00595b7f",
-      "name": "DAT_00595b7f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b7f",
+      "type": "double",
+      "value": "0.261799387791667"
     },
     {
       "addr": "005ad350",
@@ -503,7 +503,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((float)_DAT_00595b57 <= local_18) && (*(int *)(param_1 + 0x24ac) == 0)) &&",
+      "text": "if ((((float)0.98999999999999999 <= local_18) && (*(int *)(param_1 + 0x24ac) == 0)) &&",
       "type": "unnamed_param"
     },
     {

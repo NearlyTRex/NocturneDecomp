@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 463,
+    "complexity_score": 447,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
-    "suspect_count": 27,
+    "pseudocode_lines": 157,
+    "suspect_count": 26,
     "suspect_types": [
       "self_copy_guard",
       "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 446
+    "total_lines": 445
   },
   "cross_references": [],
   "function": {
@@ -190,15 +189,15 @@
     },
     {
       "addr": "00598782",
-      "name": "DAT_00598782",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00598782",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "00598786",
-      "name": "DAT_00598786",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00598786",
+      "type": "double",
+      "value": "0.400000000000000"
     },
     {
       "addr": "02dd1184",
@@ -606,77 +605,77 @@
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 113,
+          "line": 111,
           "message": "Uninitialized variable: local_d0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 114,
+          "line": 112,
           "message": "Uninitialized variable: local_d8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 114,
+          "line": 112,
           "message": "Uninitialized variable: local_cc",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 115,
+          "line": 113,
           "message": "Uninitialized variable: local_d4",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 115,
+          "line": 113,
           "message": "Uninitialized variable: local_c8",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 157,
+          "line": 155,
           "message": "Uninitialized variable: local_3c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 158,
+          "line": 156,
           "message": "Uninitialized variable: local_38",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 159,
+          "line": 157,
           "message": "Uninitialized variable: local_100",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 160,
+          "line": 158,
           "message": "Uninitialized variable: local_f0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 161,
+          "line": 159,
           "message": "Uninitialized variable: local_e0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 164,
+          "line": 162,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -687,16 +686,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2)",
@@ -704,7 +695,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2)",
@@ -712,7 +703,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -720,7 +711,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = param_2 * 0x44 + param_1;",
@@ -728,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = param_2 * 0x44 + param_1;",
@@ -736,7 +727,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *(uint *)(param_1 + 0xbd38);",
@@ -744,7 +735,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
+      "line": 68,
       "match": "code *",
       "severity": "moderate",
       "text": "pfVar3 = (float *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,local_c4);",
@@ -752,7 +743,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar5 = (uint *)(param_2 * 0x44 + param_1 + 0x24b0);",
@@ -760,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar5 = (uint *)(param_2 * 0x44 + param_1 + 0x24b0);",
@@ -768,7 +759,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = _strnicmp(param_1 + 0x23b0,\"new\",3);",
@@ -776,7 +767,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 101,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(local_16c,&DAT_02dd1184,&local_94);",
@@ -784,7 +775,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_dc);",
@@ -792,7 +783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "if (local_10 == *(int *)(param_1 + 0xbdb8)) {",
@@ -800,7 +791,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
       "text": "(puVar8,puVar5,local_10 * 0x30 + param_1 + 0xfd0);",
@@ -808,7 +799,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_16c,local_10 * 0x30 + param_1 + 0xfd0);",
@@ -816,7 +807,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 157,
+      "line": 155,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar5;",
@@ -824,7 +815,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 159,
+      "line": 157,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar7 * -2 + 1;",
@@ -832,7 +823,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 159,
+      "line": 157,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar7 * -2 + 1;",
@@ -840,7 +831,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 82,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -848,7 +839,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 143,
+      "line": 141,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -856,7 +847,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 156,
+      "line": 154,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -864,7 +855,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_64 != &local_4c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 77,
+      "line": 75,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_64 != &local_4c) {",
@@ -872,7 +863,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_64 != &local_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_64 != &local_7c) {",
@@ -904,7 +895,7 @@
     },
     {
       "description": "Uninitialized variable: local_d0",
-      "line": 113,
+      "line": 111,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_1c = local_dc + local_d0;",
@@ -912,7 +903,7 @@
     },
     {
       "description": "Uninitialized variable: local_d8",
-      "line": 114,
+      "line": 112,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_18 = local_d8 + local_cc;",
@@ -920,7 +911,7 @@
     },
     {
       "description": "Uninitialized variable: local_cc",
-      "line": 114,
+      "line": 112,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_18 = local_d8 + local_cc;",
@@ -928,7 +919,7 @@
     },
     {
       "description": "Uninitialized variable: local_d4",
-      "line": 115,
+      "line": 113,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_14 = local_d4 + local_c8;",
@@ -936,7 +927,7 @@
     },
     {
       "description": "Uninitialized variable: local_c8",
-      "line": 115,
+      "line": 113,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_14 = local_d4 + local_c8;",
@@ -944,7 +935,7 @@
     },
     {
       "description": "Uninitialized variable: local_3c",
-      "line": 157,
+      "line": 155,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_9c = local_3c - pfVar3[1];",
@@ -952,7 +943,7 @@
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 158,
+      "line": 156,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_98 = local_38 - pfVar3[2];",
@@ -960,7 +951,7 @@
     },
     {
       "description": "Uninitialized variable: local_100",
-      "line": 159,
+      "line": 157,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_100 = local_100 + (local_40 - *pfVar3);",
@@ -968,7 +959,7 @@
     },
     {
       "description": "Uninitialized variable: local_f0",
-      "line": 160,
+      "line": 158,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_f0 = local_f0 + (local_3c - pfVar3[1]);",
@@ -976,7 +967,7 @@
     },
     {
       "description": "Uninitialized variable: local_e0",
-      "line": 161,
+      "line": 159,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_e0 = local_e0 + (local_38 - pfVar3[2]);",
@@ -984,7 +975,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 164,
+      "line": 162,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_ESI = *puVar5;",

@@ -52,7 +52,7 @@ LAB_004f2663:
     _DAT_01cc4804 = 0x68;
     FUN_004c8440("saveScreenRaw16 - No ext found");
   }
-  pcVar6 = &DAT_0058cf14;
+  pcVar6 = ".RAW";
   do {
     cVar1 = *pcVar6;
     *pcVar8 = cVar1;
@@ -62,7 +62,7 @@ LAB_004f2663:
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  iVar3 = _fopen(local_70,&DAT_0058cf19);
+  iVar3 = _fopen(local_70,"wb");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\engine\\pcx.c";
     _DAT_01cc4804 = 0x6e;

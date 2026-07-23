@@ -11,7 +11,7 @@ void FUN_004eed10(int param_1)
 {
   if (0x00000004 < 2) {
     core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2434,"@@hitPoints" + 2);
+    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2434,"hitPoints");
     return;
   }
   core_charactr_cpp_CCharacter_archive_FUN_004244b0(param_1);

@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x5c]:1  local_5c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00596ec1
-;   undefined4 DAT_00596ec5
+;   float FLOAT_00596ec1 = -0.125
+;   double DOUBLE_00596ec5 = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_00765a98
@@ -237,7 +237,7 @@ section .text
     FMUL float ptr [ESP + 0x64]         ; 0054ad8d
     FADDP                               ; 0054ad91
     FSQRT                               ; 0054ad93
-    FDIVR double ptr [0x00596ec5]       ; 0054ad95 | DAT_00596ec5
+    FDIVR double ptr [0x00596ec5]       ; 0054ad95 | DOUBLE_00596ec5
     FLD float ptr [ESP + 0x5c]          ; 0054ad9b
     FXCH                                ; 0054ad9f
     FSTP float ptr [ESP + 0xcc]         ; 0054ada1
@@ -334,7 +334,7 @@ section .text
     LEA EAX,[ESP + 0xa8]                ; 0054aeee
     FLD float ptr [ESP + 0xac]          ; 0054aef5
     PUSH EAX                            ; 0054aefc
-    FADD float ptr [0x00596ec1]         ; 0054aefd | DAT_00596ec1
+    FADD float ptr [0x00596ec1]         ; 0054aefd | FLOAT_00596ec1
     PUSH EDX                            ; 0054af03
     FSTP float ptr [ESP + 0xb4]         ; 0054af04
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20 ; 0054af0b

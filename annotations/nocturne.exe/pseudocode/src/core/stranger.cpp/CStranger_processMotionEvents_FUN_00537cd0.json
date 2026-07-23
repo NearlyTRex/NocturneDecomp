@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -260,8 +260,8 @@
   "globals": [
     {
       "addr": "005956b3",
-      "name": "s_actionPending_=_%d_stranger.cpp_l_005956b2+1",
-      "type": "undefined4",
+      "name": "s_actionPending_d_stranger_005956b3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -320,27 +320,27 @@
     },
     {
       "addr": "005957ff",
-      "name": "DAT_005957ff",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005957ff",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "00595807",
-      "name": "DAT_00595807",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595807",
+      "type": "double",
+      "value": "0.400000000000000"
     },
     {
       "addr": "005a2710",
-      "name": "DAT_005a2710",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2710",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "005a2718",
-      "name": "DAT_005a2718",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2718",
+      "type": "float",
+      "value": "8"
     },
     {
       "addr": "005b6d50",
@@ -1335,7 +1335,7 @@
       "line": 257,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2424) = 0x41200000;",
+      "text": "*(float *)(param_1 + 0x2424) = 10.0f;",
       "type": "unnamed_param"
     },
     {
@@ -1343,7 +1343,7 @@
       "line": 261,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2424) = 0x41000000;",
+      "text": "*(float *)(param_1 + 0x2424) = 8.0f;",
       "type": "unnamed_param"
     },
     {

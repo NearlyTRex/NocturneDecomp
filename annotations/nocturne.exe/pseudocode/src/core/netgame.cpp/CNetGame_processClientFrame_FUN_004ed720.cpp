@@ -81,14 +81,14 @@ LAB_004ed785:
       }
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
       if (*param_1 == 2) {
-        local_20 = (float)(_DAT_01cea3f8 - _DAT_01cea408) * (float)_DAT_0058c732;
+        local_20 = (float)(_DAT_01cea3f8 - _DAT_01cea408) * (float)1.52587890625e-05;
         if (local_20 < 0.0) {
           local_20 = 0.0;
         }
-        if ((float)_DAT_0058c73a < local_20) {
+        if ((float)30 < local_20) {
           local_20 = 30.0;
         }
-        if ((float)_DAT_0058c742 < local_20) {
+        if ((float)0.10000000000000001 < local_20) {
           core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(param_1);
         }
         goto LAB_004ed785;

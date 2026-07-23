@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00533750(int param_1)
 
 {
@@ -77,10 +75,10 @@ void FUN_00533750(int param_1)
   uStack_8c = 0x3dcccccd;
   uStack_88 = 0x3dcccccd;
   uStack_84 = 0;
-  local_ec = local_ec + _DAT_005950ee;
-  fStack_e8 = fStack_e8 + _DAT_005950ee;
-  fStack_e0 = fStack_e0 + _DAT_005950f2;
-  fStack_dc = fStack_dc + _DAT_005950f2;
+  local_ec = local_ec + -0.1f;
+  fStack_e8 = fStack_e8 + -0.1f;
+  fStack_e0 = fStack_e0 + 0.1f;
+  fStack_dc = fStack_dc + 0.1f;
   core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(auStack_d4);
   iVar7 = 0;
   puVar6 = auStack_1cc;
@@ -105,7 +103,7 @@ void FUN_00533750(int param_1)
     fStack_30 = fStack_34;
   }
   fStack_b4 = fStack_d8 - fStack_e4;
-  fStack_30 = fStack_30 * _DAT_005950f6 + _DAT_005950fa;
+  fStack_30 = fStack_30 * 2.0f + 10.0f;
   fStack_2c = fStack_30 * fStack_30;
   uStack_bc = 0;
   uStack_b8 = 0;

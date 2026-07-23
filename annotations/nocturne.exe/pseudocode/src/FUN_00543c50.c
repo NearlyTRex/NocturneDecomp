@@ -88,8 +88,8 @@ void FUN_00543c50(int param_1,float param_2)
             fStack_4c = fStack_a0 - *(float *)(iVar3 + 0x20);
             fStack_48 = fStack_9c - *(float *)(iVar3 + 0x24);
             fStack_44 = fStack_98 - *(float *)(iVar3 + 0x28);
-            if (((ABS(fStack_48) <= (float)_DAT_00596598) &&
-                (fStack_4c * fStack_4c + fStack_44 * fStack_44 <= (float)_DAT_005965a0)) &&
+            if (((ABS(fStack_48) <= (float)6) &&
+                (fStack_4c * fStack_4c + fStack_44 * fStack_44 <= (float)16)) &&
                (iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe4))
                                   (*(int *)(param_1 + 0xbca4),param_1,1), iVar3 != 0)) {
               *(uint *)(param_1 + 0xbd30) = 0;
@@ -188,7 +188,7 @@ void FUN_00543c50(int param_1,float param_2)
     else if (uVar5 < 3) {
       fVar1 = *(float *)(param_1 + 0xbd28) + param_2;
       *(float *)(param_1 + 0xbd28) = fVar1;
-      if (fVar1 < (float)_DAT_00596560) {
+      if (fVar1 < (float)25) {
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
         iVar3 = *(int *)(param_1 + 0xbca4);
         if (iVar3 != 0) {
@@ -199,7 +199,7 @@ void FUN_00543c50(int param_1,float param_2)
                             (auStack_70,&fStack_88);
           fStack_254 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
-          fStack_2c = param_2 * (float)_DAT_00596568;
+          fStack_2c = param_2 * (float)0.78539816337500001;
           *(float *)(param_1 + 0x2410) = fStack_254;
           fStack_38 = -fStack_2c;
           if (*(float *)(param_1 + 0x2410) < fStack_38) {
@@ -209,14 +209,14 @@ void FUN_00543c50(int param_1,float param_2)
             *(float *)(param_1 + 0x2410) = fStack_2c;
           }
           fStack_18 = fStack_254;
-          if ((float)_DAT_00596570 < *(float *)(param_1 + 0xbd28)) {
+          if ((float)5 < *(float *)(param_1 + 0xbd28)) {
             iVar3 = *(int *)(param_1 + 0xbca4);
             fVar1 = *(float *)(param_1 + 0x20) - *(float *)(iVar3 + 0x20);
             fVar2 = *(float *)(param_1 + 0x28) - *(float *)(iVar3 + 0x28);
             fVar1 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
-            if (((fStack_254 < (float)_DAT_00596578) &&
-                (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24)) < (float)_DAT_00596580))
-               && ((float)_DAT_00596588 < fVar1 && fVar1 < (float)_DAT_00596590)) {
+            if (((fStack_254 < (float)0.17453292519444399) &&
+                (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar3 + 0x24)) < (float)4
+                )) && ((float)7 < fVar1 && fVar1 < (float)12)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);
               *(uint *)(param_1 + 0xbd24) = 0x41c80000;
             }
@@ -240,7 +240,7 @@ void FUN_00543c50(int param_1,float param_2)
                         (auStack_58,&fStack_64);
       fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                    (*(float *)(iVar3 + 4) - *(float *)(param_1 + 0x34));
-      fStack_30 = param_2 * (float)_DAT_00596558;
+      fStack_30 = param_2 * (float)1.04719755116667;
       *(float *)(param_1 + 0x2410) = fStack_18;
       fStack_34 = -fStack_30;
       if (fStack_18 < fStack_34) {

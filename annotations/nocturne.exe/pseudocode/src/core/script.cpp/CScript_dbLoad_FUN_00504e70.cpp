@@ -31,7 +31,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
   if (local_c < 1) {
     return;
   }
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,&DAT_0058fba2);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
   if (iVar2 == 0) {
     _DAT_01cc4800 = "..\\core\\script.cpp";
     _DAT_01cc4804 = 0xec2;
@@ -40,7 +40,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
   iVar3 = _ftell(iVar2);
   local_c = local_c + iVar3;
   do {
-    _fscanf(iVar2,&DAT_0058fbd2);
+    _fscanf(iVar2," ");
     iVar3 = _ftell(iVar2);
     if (local_c <= iVar3) {
       _fclose(iVar2);
@@ -58,7 +58,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
     core_script_cpp_trimString_FUN_004fe000(local_29e);
     iVar3 = _stricmp(local_2bc,"stranger");
     if (iVar3 == 0) {
-      pcVar4 = &DAT_0058fc32;
+      pcVar4 = "$";
       pcVar5 = local_2bc;
       do {
         cVar1 = *pcVar4;

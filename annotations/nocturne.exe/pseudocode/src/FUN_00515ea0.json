@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -284,33 +284,33 @@
     },
     {
       "addr": "00591065",
-      "name": "DAT_00591065",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591065",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "0059106d",
-      "name": "DAT_0059106d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059106d",
+      "type": "double",
+      "value": "0.00555555555555555"
     },
     {
       "addr": "00591075",
-      "name": "DAT_00591075",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00591075",
+      "type": "float",
+      "value": "-0.125"
     },
     {
       "addr": "0059107d",
-      "name": "DAT_0059107d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059107d",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "00591085",
-      "name": "DAT_00591085",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591085",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005b80f0",
@@ -639,7 +639,7 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)_DAT_00591065 *",
+      "text": "fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)3.1415926535000001 *",
       "type": "unnamed_param"
     },
     {
@@ -671,7 +671,7 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_3c = (float)_DAT_0059107d / *(float *)(param_1 + 0x2e0);",
+      "text": "fStack_3c = (float)1.5 / *(float *)(param_1 + 0x2e0);",
       "type": "unnamed_param"
     },
     {
@@ -895,7 +895,7 @@
       "line": 227,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "fStack_a0 = fStack_7c + _DAT_00591075;",
+      "text": "fStack_a0 = fStack_7c + -0.125f;",
       "type": "static_legacy_uninitvar"
     },
     {

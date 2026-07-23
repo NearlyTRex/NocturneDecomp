@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 byte core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,char *param_2)
 
 {
@@ -27,7 +25,7 @@ byte core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,char *param_2)
   *(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x11c);
   uVar6 = 0x5153af;
   fVar5 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x120) * (float10)_DAT_00590e61);
+                             ((float10)*(float *)(param_1 + 0x120) * (float10)65536);
   *(int *)(param_2 + 0x2fa4) = (int)ROUND(fVar5);
   pcVar3 = (char *)(param_1 + 4);
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080

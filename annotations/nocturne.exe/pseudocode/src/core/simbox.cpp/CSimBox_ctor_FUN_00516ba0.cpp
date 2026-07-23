@@ -20,7 +20,7 @@ int core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(uint param_1)
   *(byte ***)(iVar2 + -0x204) = &PTR_core_simbox_cpp_CSimBox_setup_FUN_00516c60_005a1d74;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (iVar2 + -0x200,"question.kfm");
-  pcVar3 = &DAT_00591112;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + -0x7c);
   do {
     cVar1 = *pcVar3;

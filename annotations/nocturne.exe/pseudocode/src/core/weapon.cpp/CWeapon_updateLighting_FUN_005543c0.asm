@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597c09
-;   undefined4 DAT_00597c0d
-;   undefined4 DAT_00597c11
+;   float FLOAT_00597c09 = 0.3490658
+;   float FLOAT_00597c0d = 15
+;   float FLOAT_00597c11 = 0.06666667
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c74640
@@ -82,7 +82,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00554448
     FLD float ptr [ESP + 0xc]           ; 0055444c
     PUSH EAX                            ; 00554450
-    FADD float ptr [0x00597c09]         ; 00554451 | DAT_00597c09
+    FADD float ptr [0x00597c09]         ; 00554451 | FLOAT_00597c09
     PUSH 0x1c74750                      ; 00554457 | DAT_01c74750
     FSTP float ptr [ESP + 0x14]         ; 0055445c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00554460
@@ -109,13 +109,13 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1f5a0]   ; 005544a7
     MOV dword ptr [ESP + 0x24],EAX      ; 005544ad
     FLD float ptr [ESP + 0x24]          ; 005544b1
-    FCOMP float ptr [0x00597c0d]        ; 005544b5 | DAT_00597c0d
+    FCOMP float ptr [0x00597c0d]        ; 005544b5 | FLOAT_00597c0d
     FNSTSW AX                           ; 005544bb
     SAHF                                ; 005544bd
     JNC 0x005544ce                      ; 005544be
         ;   XREF to: 005544ce (CONDITIONAL_JUMP)  ; LAB_005544ce
     FLD float ptr [ESP + 0x24]          ; 005544c0
-    FMUL float ptr [0x00597c11]         ; 005544c4 | DAT_00597c11
+    FMUL float ptr [0x00597c11]         ; 005544c4 | FLOAT_00597c11
     FSTP float ptr [ESP + 0x28]         ; 005544ca
     PUSH dword ptr [ESP + 0x28]         ; 005544ce
         ;   Label: LAB_005544ce

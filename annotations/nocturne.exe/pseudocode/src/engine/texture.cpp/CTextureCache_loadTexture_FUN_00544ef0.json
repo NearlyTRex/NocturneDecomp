@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 1266,
+    "complexity_score": 1166,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 206,
-    "suspect_count": 101,
+    "suspect_count": 91,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -213,8 +213,8 @@
   "globals": [
     {
       "addr": "00596708",
-      "name": "DAT_00596708",
-      "type": "undefined4",
+      "name": "s_art_00596708",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -243,20 +243,20 @@
     },
     {
       "addr": "00596794",
-      "name": "DAT_00596794",
-      "type": "undefined4",
+      "name": "s_act_00596794",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596799",
-      "name": "DAT_00596799",
-      "type": "undefined4",
+      "name": "s_rb_00596799",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059679c",
-      "name": "DAT_0059679c",
-      "type": "undefined4",
+      "name": "s_art_0059679c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -273,38 +273,38 @@
     },
     {
       "addr": "00596809",
-      "name": "DAT_00596809",
-      "type": "undefined4",
+      "name": "s_raw_00596809",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059680e",
-      "name": "DAT_0059680e",
-      "type": "undefined4",
+      "name": "s_rb_0059680e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596811",
-      "name": "DAT_00596811",
-      "type": "undefined4",
+      "name": "s_art_00596811",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596815",
-      "name": "DAT_00596815",
-      "type": "undefined4",
+      "name": "s_opa_00596815",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059681a",
-      "name": "DAT_0059681a",
-      "type": "undefined4",
+      "name": "s_rb_0059681a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059681d",
-      "name": "DAT_0059681d",
-      "type": "undefined4",
+      "name": "s_art_0059681d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -514,16 +514,8 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_00596708,param_2);",
+      "text": "local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"art\",param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00596708",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_00596708,param_2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
@@ -572,30 +564,6 @@
       "severity": "mild",
       "text": "pcVar4 = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_00596794",
-      "severity": "mild",
-      "text": "_sprintf(pcVar4,&DAT_00596794);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_0059679c",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059679c,local_114,&DAT_00596799);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_00596799",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059679c,local_114,&DAT_00596799);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -822,30 +790,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 151,
-      "match": "DAT_00596809",
-      "severity": "mild",
-      "text": "_sprintf(pcVar4,&DAT_00596809);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 152,
-      "match": "DAT_00596811",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00596811,local_114,&DAT_0059680e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 152,
-      "match": "DAT_0059680e",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00596811,local_114,&DAT_0059680e);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 154,
       "match": "unaff_EBP",
@@ -940,30 +884,6 @@
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 182,
-      "match": "DAT_00596815",
-      "severity": "mild",
-      "text": "_sprintf(pcVar6,&DAT_00596815);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_0059681d",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059681d,local_114,&DAT_0059681a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_0059681a",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059681d,local_114,&DAT_0059681a);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

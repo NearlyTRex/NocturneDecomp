@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005415cb) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_00540f50(int param_1,float param_2)
 
@@ -24,7 +23,7 @@ void FUN_00540f50(int param_1,float param_2)
   uint uVar10;
   uint local_68;
   uint local_64;
-  uint local_60;
+  float local_60;
   float local_5c;
   float local_58;
   float local_54;
@@ -62,7 +61,7 @@ void FUN_00540f50(int param_1,float param_2)
   while (0.0 < local_24) {
     core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0xbd24,&local_24);
   }
-  fVar3 = (float)_DAT_005961bc;
+  fVar3 = (float)3.1415926535000001;
   iVar6 = param_1 + 0x150;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c);
@@ -105,7 +104,7 @@ void FUN_00540f50(int param_1,float param_2)
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
         local_68 = 0;
-        local_60 = 0x3FC00000;
+        local_60 = 1.5f;
         local_64 = 0;
         uVar10 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                            (*(int *)(param_1 + 0xbca4),&local_68,0x3f000000,0x3e32b8c2);
@@ -116,7 +115,7 @@ void FUN_00540f50(int param_1,float param_2)
             fVar3 = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 0x20),
             fVar4 = *(float *)(iVar6 + 0x24) - *(float *)(param_1 + 0x24),
             fVar5 = *(float *)(iVar6 + 0x28) - *(float *)(param_1 + 0x28),
-            SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4) < _DAT_005a28d4)) &&
+            SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4) < 15.0f)) &&
            (*(int *)(param_1 + 0xe19c) == 0)) {
           *(uint *)(param_1 + 0xe19c) = 1;
           *(uint *)(param_1 + 0xe1a0) = 0;
@@ -145,7 +144,7 @@ LAB_005413d0:
     if (uVar2 != 3) goto LAB_005413d0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar6,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,">%s confused while walking to scriptDest!\n" + 1,param_1);
+              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   *(uint *)(param_1 + 0x23ac) = 0;
   *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
@@ -156,7 +155,7 @@ LAB_00541090:
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(param_1);
   if (iVar6 != 0) {
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_005961c4;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_5c = *(float *)(param_1 + 0x2420) * param_2;
     local_58 = *(float *)(param_1 + 0x2424) * param_2;
     local_54 = param_2 * *(float *)(param_1 + 0x2428);
@@ -185,7 +184,7 @@ LAB_00541090:
             (param_1 + 0xbd24);
   if ((*(int *)(param_1 + 0xe19c) != 0) &&
      (fVar3 = *(float *)(param_1 + 0xe1a0) + param_2, *(float *)(param_1 + 0xe1a0) = fVar3,
-     _DAT_005a28d8 < fVar3)) {
+     4.0f < fVar3)) {
     iVar7 = FUN_0056497c(0xbd58);
     iVar6 = 0;
     if (iVar7 != 0) {

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 550,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 270,
-    "suspect_count": 23,
+    "pseudocode_lines": 271,
+    "suspect_count": 17,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
@@ -141,7 +141,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 910
+    "total_lines": 911
   },
   "cross_references": [
     {
@@ -305,32 +305,32 @@
     },
     {
       "addr": "00594af5",
-      "name": "DAT_00594af5",
-      "type": "undefined4",
+      "name": "s_x_00594af5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594af7",
-      "name": "DAT_00594af7",
-      "type": "undefined4",
+      "name": "s_ext_00594af7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594afb",
-      "name": "DAT_00594afb",
-      "type": "undefined4",
+      "name": "s_int_00594afb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594aff",
-      "name": "DAT_00594aff",
-      "type": "undefined4",
+      "name": "s_ext_00594aff",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594b03",
-      "name": "DAT_00594b03",
-      "type": "undefined4",
+      "name": "s_int_00594b03",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -353,26 +353,26 @@
     },
     {
       "addr": "00594b2d",
-      "name": "DAT_00594b2d",
-      "type": "undefined1",
+      "name": "s_bump_wav_00594b2d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594b2e",
-      "name": "DAT_00594b2e",
-      "type": "undefined1",
+      "name": "s_bump_wav_00594b2d+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00594b2f",
-      "name": "DAT_00594b2f",
-      "type": "undefined1",
+      "name": "s_bump_wav_00594b2d+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00594b30",
-      "name": "s_p?.wav_00594b30",
-      "type": "string",
+      "name": "s_bump_wav_00594b2d+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -383,14 +383,14 @@
     },
     {
       "addr": "00594b66",
-      "name": "s_wind-ctl.wav_00594b65+1",
-      "type": "undefined4",
+      "name": "s_wind_ctl_wav_00594b66",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00594b73",
-      "name": "DAT_00594b73",
-      "type": "undefined4",
+      "name": "s_NDUN_00594b73",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -401,63 +401,63 @@
     },
     {
       "addr": "00594b86",
-      "name": "DAT_00594b86",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b86",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00594b8e",
-      "name": "DAT_00594b8e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b8e",
+      "type": "double",
+      "value": "0.00100000000000000"
     },
     {
       "addr": "00594b96",
-      "name": "DAT_00594b96",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b96",
+      "type": "double",
+      "value": "0.0277777777777778"
     },
     {
       "addr": "00594b9e",
-      "name": "DAT_00594b9e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b9e",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "00594ba6",
-      "name": "DAT_00594ba6",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594ba6",
+      "type": "double",
+      "value": "0.700000000000000"
     },
     {
       "addr": "00594bae",
-      "name": "DAT_00594bae",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00594bae",
+      "type": "float",
+      "value": "20"
     },
     {
       "addr": "00594bb6",
-      "name": "DAT_00594bb6",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594bb6",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "00594bbe",
-      "name": "DAT_00594bbe",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594bbe",
+      "type": "double",
+      "value": "0.800000000000000"
     },
     {
       "addr": "00594bc6",
-      "name": "DAT_00594bc6",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594bc6",
+      "type": "double",
+      "value": "0.600000000000000"
     },
     {
       "addr": "00594bce",
-      "name": "DAT_00594bce",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594bce",
+      "type": "double",
+      "value": "510"
     },
     {
       "addr": "005b9354",
@@ -473,13 +473,13 @@
     },
     {
       "addr": "005bed60",
-      "name": "PTR_DAT_005bed60",
+      "name": "PTR_s_int_005bed60",
       "type": "void*",
       "value": "00594af1"
     },
     {
       "addr": "005bed64",
-      "name": "PTR_DAT_005bed64",
+      "name": "PTR_s_x_005bed64",
       "type": "void*",
       "value": "00594af5"
     },
@@ -987,7 +987,7 @@
         {
           "check_id": "uninitvar",
           "column": 19,
-          "line": 212,
+          "line": 213,
           "message": "Uninitialized variable: extraout_var",
           "severity": "error"
         }
@@ -1038,14 +1038,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_00594b73",
-      "severity": "mild",
-      "text": "(iVar3 = _strnicmp(0x01E57284 + 0x14cd08,&DAT_00594b73,4),",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_1",
@@ -1063,39 +1055,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_00594aff",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594aff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_00594afb",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594afb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 148,
-      "match": "DAT_00594af7",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594af7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_00594b03",
-      "severity": "mild",
-      "text": "iVar3 = _stricmp(PTR_DAT_005bed60,&DAT_00594b03);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 182,
+      "line": 183,
       "match": "DAT_02dc9ca4",
       "severity": "mild",
       "text": "pfVar6 = (float *)&DAT_02dc9ca4;",
@@ -1103,15 +1063,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 204,
       "match": "DAT_02dc9cac",
       "severity": "mild",
-      "text": "if ((float)_DAT_00594bce < ABS(*(float *)(&DAT_02dc9cac + iVar3 * 0x10))) {",
+      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar3 * 0x10))) {",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 205,
+      "line": 206,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "uVar5 = extraout_var;",
@@ -1119,7 +1079,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 212,
+      "line": 213,
       "match": "NAN(",
       "severity": "severe",
       "text": "iVar3 = CONCAT22(uVar5,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
@@ -1127,18 +1087,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 219,
       "match": "DAT_005bef88",
       "severity": "mild",
       "text": "puVar8 = &DAT_005bef88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 239,
-      "match": "DAT_00594b2d",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_00594b2d;",
       "type": "undefined_data"
     },
     {
@@ -1151,7 +1103,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 242,
+      "line": 243,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1159,7 +1111,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 221,
+      "line": 222,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -1167,7 +1119,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 212,
+      "line": 213,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "iVar3 = CONCAT22(uVar5,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
@@ -1186,7 +1138,7 @@
     },
     {
       "description": "Uninitialized variable: extraout_var",
-      "line": 212,
+      "line": 213,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "uVar5 = extraout_var;",

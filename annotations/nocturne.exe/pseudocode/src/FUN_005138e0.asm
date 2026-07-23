@@ -31,7 +31,7 @@
 ;   core_set.cpp_FUN_00509a80 at 0050a08e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590c5c
+;   TerminatedCString s_g_00590c5c
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
@@ -223,7 +223,7 @@ section .text
     SUB ESP,0x8                         ; 00513b22
     FLD float ptr [EAX*0x4 + 0x2663604] ; 00513b25
     FSTP double ptr [ESP]               ; 00513b2c
-    PUSH 0x590c5c                       ; 00513b2f | DAT_00590c5c
+    PUSH 0x590c5c                       ; 00513b2f | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 00513b34
     PUSH EAX                            ; 00513b38
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00513b39

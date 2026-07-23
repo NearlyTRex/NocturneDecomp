@@ -135,7 +135,7 @@ LAB_005241ef:
           local_20 = iVar14;
           if (uVar7 < 8) {
 LAB_00524219:
-            _DAT_01cc4800 = "C..\\sound\\sndmain.cpp" + 1;
+            _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
             _DAT_01cc4804 = 0x5c4;
             FUN_004c8440("generateSilence - invalid bit depth!");
           }

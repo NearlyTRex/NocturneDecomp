@@ -10,7 +10,7 @@
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9836
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00589a49
+;   TerminatedCString s_scr_00589a49
 ;   undefined4 DAT_005be220
 ;   undefined4 DAT_01e56da0
 ;
@@ -25,7 +25,7 @@ section .text
     SUB ESP,0x104                       ; 004d86d0
         ;   Label: core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0
     MOV EAX,dword ptr [ESP + 0x108]     ; 004d86d6
-    PUSH 0x589a49                       ; 004d86dd | DAT_00589a49
+    PUSH 0x589a49                       ; 004d86dd | = "scr"
     ADD EAX,0x10                        ; 004d86e2
     PUSH EAX                            ; 004d86e5
     PUSH 0x0                            ; 004d86e6

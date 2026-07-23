@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(int param_1,uint param_2)
 
 {
@@ -79,12 +77,12 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(int param_1,ui
   fStack_90 = 999.0;
   fStack_8c = 999.0;
   fStack_88 = 999.0;
-  fStack_cc = fStack_cc + _DAT_00596e95;
-  fStack_c8 = fStack_c8 + _DAT_00596e95;
-  fStack_c4 = fStack_c4 + _DAT_00596e95;
-  fStack_c0 = fStack_c0 + _DAT_00596e99;
-  fStack_bc = fStack_bc + _DAT_00596e99;
-  fStack_b8 = fStack_b8 + _DAT_00596e99;
+  fStack_cc = fStack_cc + -15.0f;
+  fStack_c8 = fStack_c8 + -15.0f;
+  fStack_c4 = fStack_c4 + -15.0f;
+  fStack_c0 = fStack_c0 + 15.0f;
+  fStack_bc = fStack_bc + 15.0f;
+  fStack_b8 = fStack_b8 + 15.0f;
   iVar6 = 0;
   iVar5 = 0;
   do {
@@ -120,10 +118,10 @@ LAB_0054a296:
       pfVar4 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_e4);
       fStack_30 = *pfVar4 + pfVar4[3];
       fStack_2c = pfVar4[1] + pfVar4[4];
-      fStack_60 = fStack_30 * _DAT_00596e9d;
+      fStack_60 = fStack_30 * 0.5f;
       fStack_28 = pfVar4[2] + pfVar4[5];
-      fStack_5c = fStack_2c * _DAT_00596e9d;
-      fStack_58 = fStack_28 * _DAT_00596e9d;
+      fStack_5c = fStack_2c * 0.5f;
+      fStack_58 = fStack_28 * 0.5f;
       if (&fStack_15c != &fStack_60) {
         fStack_15c = fStack_60;
         fStack_158 = fStack_5c;

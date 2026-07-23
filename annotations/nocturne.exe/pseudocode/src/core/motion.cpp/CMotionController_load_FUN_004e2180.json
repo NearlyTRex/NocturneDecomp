@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 192,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -177,8 +176,8 @@
   "globals": [
     {
       "addr": "0058b3b5",
-      "name": "DAT_0058b3b5",
-      "type": "undefined4",
+      "name": "s_anon_0058b3b5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -303,16 +302,8 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_0058b3b5);",
+      "text": "_fscanf(param_2,\" \");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0058b3b5",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_0058b3b5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

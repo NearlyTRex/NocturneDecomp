@@ -28,7 +28,7 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
     *(uint *)(param_1 + 0x3e0) = *(uint *)(param_1 + 0x24);
     *(uint *)(param_1 + 0x3e4) = *(uint *)(param_1 + 0x28);
     *(uint *)(param_1 + 1000) = *(uint *)(param_1 + 0x2c);
-    *(float *)(param_1 + 0x3e0) = *(float *)(param_1 + 0x3e0) + _DAT_0059749b;
+    *(float *)(param_1 + 0x3e0) = *(float *)(param_1 + 0x3e0) + 1.7f;
     if ((uint *)(param_1 + 0x3ec) != (uint *)(param_1 + 0x30)) {
       *(uint *)(param_1 + 0x3ec) = *(uint *)(param_1 + 0x30);
       *(uint *)(param_1 + 0x3f0) = *(uint *)(param_1 + 0x34);
@@ -37,13 +37,13 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
     core_flame_cpp_CFlame_process_FUN_0048d0c0(param_1 + 0x3bc,param_2);
   }
   else if (*(int *)(param_1 + 0x3ac) == 0) {
-    *(float *)(param_1 + 0x658) = param_2 * (float)_DAT_00597493 + *(float *)(param_1 + 0x658);
+    *(float *)(param_1 + 0x658) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x658);
   }
   else {
-    fVar3 = param_2 * (float)ram0x0059747b + *(float *)(param_1 + 0x7dc);
+    fVar3 = param_2 * (float)8 + *(float *)(param_1 + 0x7dc);
     *(float *)(param_1 + 0x7dc) = fVar3;
-    if ((float)_DAT_00597483 <= fVar3) {
-      *(float *)(param_1 + 0x7dc) = *(float *)(param_1 + 0x7dc) + _DAT_0059748b;
+    if ((float)16 <= fVar3) {
+      *(float *)(param_1 + 0x7dc) = *(float *)(param_1 + 0x7dc) + -16.0f;
     }
   }
   if (*(int *)(param_1 + 0x2cc) == 0) {

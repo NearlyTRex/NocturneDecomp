@@ -63,7 +63,7 @@ LAB_005224ea:
     FUN_00564bb0(&DAT_005bea30);
   }
   local_14 = 0;
-  iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("?sound" + 1,param_1);
+  iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_1);
   pcVar10 = param_1;
   pcVar7 = pcVar5;
   if (iVar6 < 1) goto LAB_005226f8;
@@ -88,9 +88,9 @@ LAB_005224ea:
     } while (cVar1 != '\0');
     memmove(&local_114,local_113,~uVar4 - 1);
   }
-  iVar6 = _stricmp(&local_114,&DAT_0059265c);
+  iVar6 = _stricmp(&local_114,"wav");
   if (iVar6 == 0) {
-    local_14 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,&DAT_00592660);
+    local_14 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,"rb");
     if (local_14 == 0) {
       _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
       _DAT_01cc4804 = 0x300;
@@ -142,7 +142,7 @@ LAB_005224ea:
     }
   }
   else {
-    iVar6 = _stricmp(&local_114,&DAT_005926c6);
+    iVar6 = _stricmp(&local_114,"mp3");
     if (iVar6 != 0) {
       _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
       _DAT_01cc4804 = 0x37d;

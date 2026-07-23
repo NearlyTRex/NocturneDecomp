@@ -79,8 +79,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,in
             iVar4 = realloc(*(uint *)(param_1 + 0x14),iStack_18);
             *(int *)(param_1 + 0x14) = iVar4;
             if (iVar4 == 0) {
-              _sprintf(auStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",param_1,iStack_24,
-                         iStack_18);
+              _sprintf(auStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",param_1,iStack_24,iStack_18
+                        );
               _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
               _DAT_01cc4804 = 0x3b5;
               FUN_004c8440(auStack_154);

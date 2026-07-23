@@ -19,13 +19,13 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a63de
 ;
 ; Referenced Globals:
-;   undefined4 s_noLightningFlash_00597c18+1
+;   TerminatedCString s_noLightningFlash_00597c19
 ;   string s_noLightningFlash_00597c2a
 ;   string s_rain.wav_@_.1_00597c3b
-;   undefined4 DAT_00597c49
-;   undefined4 DAT_00597c51
-;   undefined4 DAT_00597c59
-;   undefined4 DAT_00597c61
+;   double DOUBLE_00597c49 = 0.0000152590218966964
+;   double DOUBLE_00597c51 = 0.600000000000000
+;   double DOUBLE_00597c59 = 15
+;   double DOUBLE_00597c61 = 0.100000000000000
 ;   float FLOAT_00597c69 = 100
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
@@ -193,7 +193,7 @@ section .text
         ;   Label: LAB_00554b14
     FLD float ptr [EAX + 0x34]          ; 00554b17
     FST double ptr [ESP]                ; 00554b1a
-    FCOMP double ptr [0x00597c59]       ; 00554b1d | DAT_00597c59
+    FCOMP double ptr [0x00597c59]       ; 00554b1d | DOUBLE_00597c59
     FNSTSW AX                           ; 00554b23
     SAHF                                ; 00554b25
     JNC 0x00554d0c                      ; 00554b26
@@ -203,7 +203,7 @@ section .text
     FXCH                                ; 00554b31
     FYL2X                               ; 00554b33
     FLD float ptr [ESP + 0x8]           ; 00554b35
-    FMUL double ptr [0x00597c61]        ; 00554b39 | DAT_00597c61
+    FMUL double ptr [0x00597c61]        ; 00554b39 | DOUBLE_00597c61
     FADDP                               ; 00554b3f
     FLD1                                ; 00554b41
     FLDL2E                              ; 00554b43
@@ -242,7 +242,7 @@ section .text
     SAHF                                ; 00554b87
     JA 0x00554bf9                       ; 00554b88
         ;   XREF to: 00554bf9 (CONDITIONAL_JUMP)  ; LAB_00554bf9
-    PUSH 0x597c19                       ; 00554b8a | s_noLightningFlash_00597c18+1
+    PUSH 0x597c19                       ; 00554b8a | = "noLightningFlash"
     MOV ECX,dword ptr [0x005b7650]      ; 00554b8f | DAT_005b7650
     PUSH ECX                            ; 00554b95
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00554b96
@@ -254,7 +254,7 @@ section .text
     MOV EAX,[0x01fb96f0]                ; 00554ba2 | DAT_01fb96f0
     MOV dword ptr [ESP + 0x24],EAX      ; 00554ba7
     FILD dword ptr [ESP + 0x24]         ; 00554bab
-    FMUL double ptr [0x00597c49]        ; 00554baf | DAT_00597c49
+    FMUL double ptr [0x00597c49]        ; 00554baf | DOUBLE_00597c49
     FSUB float ptr [ESP + 0x1c]         ; 00554bb5
     MOV EAX,dword ptr [EBP + 0x14]      ; 00554bb9
     FST float ptr [ESP + 0x20]          ; 00554bbc
@@ -332,7 +332,7 @@ section .text
     MOV EAX,[0x01fb96f0]                ; 00554c77 | DAT_01fb96f0
     MOV dword ptr [ESP + 0x24],EAX      ; 00554c7c
     FILD dword ptr [ESP + 0x24]         ; 00554c80
-    FMUL double ptr [0x00597c49]        ; 00554c84 | DAT_00597c49
+    FMUL double ptr [0x00597c49]        ; 00554c84 | DOUBLE_00597c49
     PUSH 0x3e99999a                     ; 00554c8a
     MOV EDX,dword ptr [EBP + 0x14]      ; 00554c8f
     FSTP float ptr [ESP + 0x10]         ; 00554c92
@@ -355,7 +355,7 @@ section .text
     MOV dword ptr [ESP + 0xc],0x3f800000 ; 00554cc3
     FLD float ptr [ESP + 0xc]           ; 00554ccb
         ;   Label: LAB_00554ccb
-    FMUL double ptr [0x00597c51]        ; 00554ccf | DAT_00597c51
+    FMUL double ptr [0x00597c51]        ; 00554ccf | DOUBLE_00597c51
     SUB ESP,0x4                         ; 00554cd5
     FSTP float ptr [ESP]                ; 00554cd8
     PUSH 0x3c23d70a                     ; 00554cdb

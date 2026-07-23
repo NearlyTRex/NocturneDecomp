@@ -27,12 +27,12 @@ void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(int param_1)
     iVar3 = param_1 + 0x634;
     do {
       core_actor_cpp_archiveInteger_FUN_0040c900(iVar1 * 100 + param_1 + 0x5e8,"exists");
-      core_actor_cpp_archiveInteger_FUN_0040c900(iVar3,&DAT_00588109);
-      core_actor_cpp_archiveInteger_FUN_0040c900(iVar4,&DAT_0058810b);
+      core_actor_cpp_archiveInteger_FUN_0040c900(iVar3,"r");
+      core_actor_cpp_archiveInteger_FUN_0040c900(iVar4,"g");
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 100;
       iVar4 = iVar4 + 100;
-      core_actor_cpp_archiveInteger_FUN_0040c900(iVar2,&DAT_0058810d);
+      core_actor_cpp_archiveInteger_FUN_0040c900(iVar2,"b");
       iVar2 = iVar2 + 100;
     } while (iVar1 < 0xc);
   }

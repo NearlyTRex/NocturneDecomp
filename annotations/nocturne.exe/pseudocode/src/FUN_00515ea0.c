@@ -84,8 +84,8 @@ uint FUN_00515ea0(int param_1)
               (0x02DC9450,param_1,"shotgun-noammo.wav",&fStack_80);
     return 0;
   }
-  fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)_DAT_00591065 *
-                         (float10)_DAT_0059106d);
+  fVar9 = (float10)fptan((float10)*(float *)(param_1 + 0x570) * (float10)3.1415926535000001 *
+                         (float10)0.0055555555555555497);
   fStack_44 = (float)(fVar9 * (float10)*(float *)(param_1 + 0x2e0));
   fStack_38 = (float)core_actor_cpp_getRandomInt_FUN_0040de00(10,0xf);
   iStack_40 = 0;
@@ -109,7 +109,7 @@ uint FUN_00515ea0(int param_1)
       fStack_98 = fStack_80 + fStack_68;
       fStack_94 = fStack_7c + fStack_64;
       fStack_90 = fStack_78 + fStack_60;
-      fStack_3c = (float)_DAT_0059107d / *(float *)(param_1 + 0x2e0);
+      fStack_3c = (float)1.5 / *(float *)(param_1 + 0x2e0);
       fStack_d4 = fStack_68 * fStack_3c;
       fStack_d0 = fStack_64 * fStack_3c;
       fStack_cc = fStack_60 * fStack_3c;
@@ -188,7 +188,7 @@ uint FUN_00515ea0(int param_1)
           fStack_e0 = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
           fStack_dc = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
           fStack_d8 = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
-          fStack_1c = (float)_DAT_00591085 /
+          fStack_1c = (float)10 /
                       SQRT(fStack_d8 * fStack_d8 + fStack_e0 * fStack_e0 + fStack_dc * fStack_dc);
           fStack_bc = fStack_e0 * fStack_1c;
           fStack_b8 = fStack_dc * fStack_1c;
@@ -224,7 +224,7 @@ uint FUN_00515ea0(int param_1)
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   fStack_a4 = fStack_80;
   fStack_9c = fStack_78;
-  fStack_a0 = fStack_7c + _DAT_00591075;
+  fStack_a0 = fStack_7c + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_a4,param_1 + 0x3c);
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (0x02DC9450,param_1,"shotgun.wav",&fStack_80);

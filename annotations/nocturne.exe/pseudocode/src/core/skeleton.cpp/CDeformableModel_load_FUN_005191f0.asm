@@ -8,7 +8,7 @@
 ;   core_skeleton.cpp_getDeformableModel_FUN_0051f570 at 0051f629
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591693
+;   TerminatedCString s_rt_00591693
 ;   string s_models_00591696
 ;   string s_..\\core\\skeleton.cpp_0059169d
 ;   string s_CDeformableModel::load_-_Can't_o_005916b2
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 00519204 (CONDITIONAL_JUMP)  ; LAB_00519204
     POP EDI                             ; 0051921c
         ;   Label: LAB_0051921c
-    PUSH 0x591693                       ; 0051921d | DAT_00591693
+    PUSH 0x591693                       ; 0051921d | = "rt"
     PUSH EBX                            ; 00519222
     PUSH 0x591696                       ; 00519223 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00519228

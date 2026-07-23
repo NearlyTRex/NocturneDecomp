@@ -8,7 +8,7 @@
 ;   FUN_0053fc60 at 0053fc84
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a2704
+;   float FLOAT_005a2704 = 10
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     CMP dword ptr [ECX + 0x2d8],0x3     ; 0053ff6c
     JNZ 0x0053ffa8                      ; 0053ff73
         ;   XREF to: 0053ffa8 (CONDITIONAL_JUMP)  ; LAB_0053ffa8
-    FLD float ptr [0x005a2704]          ; 0053ff75 | DAT_005a2704
+    FLD float ptr [0x005a2704]          ; 0053ff75 | FLOAT_005a2704
         ;   Label: LAB_0053ff75
     MOV dword ptr [EBX + 0x1faa0],0x3   ; 0053ff7b
     MOV EAX,0x1                         ; 0053ff85

@@ -46,14 +46,14 @@
 ;   string s_..\\core\\netgame.cpp_0058ba54
 ;   string s_allocSimFrame_-_sim_history_list_0058ba68
 ;   string s_You_have_been_disconnected_from_t_0058c030
-;   undefined4 DAT_0058c059
+;   char CHAR_00h_0058c059 = \x00
 ;   string s_..\\core\\netgame.cpp_0058c05a
 ;   string s_Player_list_mismatch_processing_S_0058c06e
 ;   string s_..\\core\\netgame.cpp_0058c0a6
 ;   string s_Player_list_mismatch!_0058c0ba
-;   undefined4 DAT_0058c0d2
-;   undefined4 DAT_0058c0da
-;   undefined4 DAT_0058c0e2
+;   double DOUBLE_0058c0d2 = 0.0000152587890625
+;   double DOUBLE_0058c0da = -30
+;   double DOUBLE_0058c0e2 = 30
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   ... and 8 more
@@ -446,9 +446,9 @@ section .text
     SUB EDX,EAX                         ; 004eabb8
     MOV dword ptr [ESP + 0xdc],EDX      ; 004eabba
     FILD dword ptr [ESP + 0xdc]         ; 004eabc1
-    FMUL double ptr [0x0058c0d2]        ; 004eabc8 | DAT_0058c0d2
+    FMUL double ptr [0x0058c0d2]        ; 004eabc8 | DOUBLE_0058c0d2
     FST float ptr [ESP + 0x4]           ; 004eabce
-    FCOMP double ptr [0x0058c0da]       ; 004eabd2 | DAT_0058c0da
+    FCOMP double ptr [0x0058c0da]       ; 004eabd2 | DOUBLE_0058c0da
     FNSTSW AX                           ; 004eabd8
     SAHF                                ; 004eabda
     JNC 0x004eabe5                      ; 004eabdb
@@ -456,7 +456,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0xc1f00000 ; 004eabdd
     FLD float ptr [ESP + 0x4]           ; 004eabe5
         ;   Label: LAB_004eabe5
-    FCOMP double ptr [0x0058c0e2]       ; 004eabe9 | DAT_0058c0e2
+    FCOMP double ptr [0x0058c0e2]       ; 004eabe9 | DOUBLE_0058c0e2
     FNSTSW AX                           ; 004eabef
     SAHF                                ; 004eabf1
     JBE 0x004eabfc                      ; 004eabf2
@@ -476,7 +476,7 @@ section .text
     SUB EDX,EAX                         ; 004eac16
     MOV dword ptr [ESP + 0xdc],EDX      ; 004eac18
     FILD dword ptr [ESP + 0xdc]         ; 004eac1f
-    FMUL double ptr [0x0058c0d2]        ; 004eac26 | DAT_0058c0d2
+    FMUL double ptr [0x0058c0d2]        ; 004eac26 | DOUBLE_0058c0d2
     FST float ptr [ESP + 0x8]           ; 004eac2c
     FLDZ                                ; 004eac30
     FCOMPP                              ; 004eac32
@@ -488,7 +488,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004eac3b
     FLD float ptr [ESP + 0x8]           ; 004eac3f
         ;   Label: LAB_004eac3f
-    FCOMP double ptr [0x0058c0e2]       ; 004eac43 | DAT_0058c0e2
+    FCOMP double ptr [0x0058c0e2]       ; 004eac43 | DOUBLE_0058c0e2
     FNSTSW AX                           ; 004eac49
     SAHF                                ; 004eac4b
     JBE 0x004eac56                      ; 004eac4c
@@ -759,16 +759,16 @@ section .text
     SUB ECX,EAX                         ; 004eaefc
     MOV dword ptr [ESP + 0xdc],ECX      ; 004eaefe
     FILD dword ptr [ESP + 0xdc]         ; 004eaf05
-    FMUL double ptr [0x0058c0d2]        ; 004eaf0c | DAT_0058c0d2
+    FMUL double ptr [0x0058c0d2]        ; 004eaf0c | DOUBLE_0058c0d2
     FST float ptr [ESP]                 ; 004eaf12
-    FCOMP double ptr [0x0058c0da]       ; 004eaf15 | DAT_0058c0da
+    FCOMP double ptr [0x0058c0da]       ; 004eaf15 | DOUBLE_0058c0da
     FNSTSW AX                           ; 004eaf1b
     SAHF                                ; 004eaf1d
     JC 0x004eafa1                       ; 004eaf1e
         ;   XREF to: 004eafa1 (CONDITIONAL_JUMP)  ; LAB_004eafa1
     FLD float ptr [ESP]                 ; 004eaf24
         ;   Label: LAB_004eaf24
-    FCOMP double ptr [0x0058c0e2]       ; 004eaf27 | DAT_0058c0e2
+    FCOMP double ptr [0x0058c0e2]       ; 004eaf27 | DOUBLE_0058c0e2
     FNSTSW AX                           ; 004eaf2d
     SAHF                                ; 004eaf2f
     JBE 0x004eaf39                      ; 004eaf30
@@ -949,7 +949,7 @@ section .text
         ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90()
     ADD ESP,0x8                         ; 004eb0d8
     PUSH 0x58c030                       ; 004eb0db | = "You have been disconnected from the game"
-    PUSH 0x58c059                       ; 004eb0e0 | DAT_0058c059
+    PUSH 0x58c059                       ; 004eb0e0 | CHAR_00h_0058c059
     PUSH 0x0                            ; 004eb0e5
     PUSH 0x0                            ; 004eb0e7
     PUSH 0x2dd10c4                      ; 004eb0e9

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float
     if (*(int *)(param_1 + 0x778) != 0) {
       pfVar1 = (float *)(param_1 + 0x844);
       iVar4 = core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640
-                        (param_1,pfVar1,param_2 * (float)_DAT_00596eb5);
+                        (param_1,pfVar1,param_2 * (float)0.33333333333333298);
       if (iVar4 != 0) {
         (**(code **)(*(int *)(*(int *)(param_1 + 0x778) + 0x14c) + 0x14))
                   (*(int *)(param_1 + 0x778),&fStack_54);
@@ -59,7 +57,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float
           }
           fVar3 = *(float *)(param_1 + 0x848) - fStack_38;
           fVar2 = *(float *)(param_1 + 0x84c) - fStack_34;
-          if (_DAT_00596ebd <
+          if (25.0f <
               fVar2 * fVar2 + fVar3 * fVar3 + (*pfVar1 - fStack_3c) * (*pfVar1 - fStack_3c)) break;
           iVar4 = iVar4 + 1;
           if (4 < iVar4) {

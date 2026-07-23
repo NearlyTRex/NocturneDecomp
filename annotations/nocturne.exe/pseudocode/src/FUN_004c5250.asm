@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_00587833+1
+;   TerminatedCString s_speed_00587834
 ;   string s_modelName_0058783a
 ;   string s_guardDistance_00587844
 ;   string s_motion_state_00587852
@@ -28,7 +28,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 004c5256
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
     ADD ESP,0x4                         ; 004c525b
-    PUSH 0x587834                       ; 004c525e | s_speed_00587833+1
+    PUSH 0x587834                       ; 004c525e | = "speed"
     LEA EAX,[EBX + 0xbc8c]              ; 004c5263
     PUSH EAX                            ; 004c5269
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004c526a

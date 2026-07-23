@@ -34,7 +34,7 @@ void FUN_005464a0(int param_1,uint param_2)
     }
     else {
       sound_sndmain_cpp_lockSound_FUN_00528800();
-      local_20 = (double)(fVar2 * _DAT_005968f5);
+      local_20 = (double)(fVar2 * 6.0f);
       local_28 = (double)floor(local_20);
       fVar5 = (float10)local_28;
       fVar6 = (float10)local_20;
@@ -46,7 +46,7 @@ void FUN_005464a0(int param_1,uint param_2)
         uVar4 = 0x54667c;
         fVar6 = (float10)round
                                    ((float10)local_a4 * (float10)(float)(fVar6 - fVar5) *
-                                    (float10)_DAT_005968f9);
+                                    (float10)0.1666667f);
         sound_sndmain_cpp_pushSfxOptions_FUN_00526340(uVar4);
         local_20 = __BITCAST_DOUBLE(CONCAT44((int)ROUND(fVar6),(uint)local_20));
         dVar1 = (double)(int)ROUND(fVar6);
@@ -74,7 +74,7 @@ void FUN_005464a0(int param_1,uint param_2)
                       (*(uint *)(param_1 + 0x574),fVar2);
     if (iVar3 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0x574));
-      _sprintf(local_8c,"$@m-gun1.wav @ 2.3 * %f" + 2,(double)fVar2);
+      _sprintf(local_8c,"m-gun1.wav @ 2.3 * %f",(double)fVar2);
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0x578));
       uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,local_8c);
       *(uint *)(param_1 + 0x574) = uVar4;

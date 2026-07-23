@@ -16,7 +16,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(int param_1)
   int iVar3;
   
   iVar3 = 0;
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"?voicusummon.wav" + 1);
+  (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"voicusummon.wav");
   for (iVar2 = 0; iVar2 < *(int *)(0x01E57284 + 0x14cd6c); iVar2 = iVar2 + 1) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                       (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),_DAT_02dd1144);

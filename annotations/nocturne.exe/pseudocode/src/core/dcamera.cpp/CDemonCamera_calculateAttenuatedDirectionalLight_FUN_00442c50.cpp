@@ -29,9 +29,9 @@ uint core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442
     fVar5 = (float)param_2[1] * _DAT_0059bde4 - *(float *)(param_3 + 0x108);
     fVar6 = (float)param_2[2] * _DAT_0059bde4 - *(float *)(param_3 + 0x10c);
     fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
-    lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * _DAT_0059bde0) * (longlong)*param_4;
-    lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * _DAT_0059bde0) * (longlong)param_4[1];
-    lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * _DAT_0059bde0) * (longlong)param_4[2];
+    lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * 65536.0f) * (longlong)*param_4;
+    lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * 65536.0f) * (longlong)param_4[1];
+    lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * 65536.0f) * (longlong)param_4[2];
     iVar7 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_setcolid_cpp_FUN_0050f910(int param_1,uint *param_2)
 
 {
@@ -31,8 +29,8 @@ float core_setcolid_cpp_FUN_0050f910(int param_1,uint *param_2)
     local_28 = (float)param_2[1];
     local_24 = param_2[2];
   }
-  local_1c = local_1c + _DAT_00590a15;
-  local_28 = local_28 + _DAT_00590a19;
+  local_1c = local_1c + -1.0f;
+  local_28 = local_28 + 150.0f;
   local_10 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
                               (&DAT_01fba938,&local_20,&local_2c,param_1 + 0x14cd40,
                                param_1 + 0x14cd4c);

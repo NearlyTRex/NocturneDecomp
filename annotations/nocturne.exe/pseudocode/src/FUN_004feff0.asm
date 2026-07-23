@@ -13,20 +13,20 @@
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9884
 ;
 ; Referenced Globals:
-;   undefined1 DAT_0058e36d
-;   undefined1 DAT_0058e36e
-;   undefined1 DAT_0058e36f
-;   undefined1 DAT_0058e370
+;   TerminatedCString s_wav_0058e36d
+;   undefined4 s_wav_0058e36d+1
+;   undefined4 s_wav_0058e36d+2
+;   undefined4 s_wav_0058e36d+3
 ;   string s_smill.wav_0058e372
-;   undefined1 DAT_0058e37c
-;   undefined1 DAT_0058e37d
-;   undefined1 DAT_0058e37e
-;   undefined1 DAT_0058e37f
+;   TerminatedCString s_s_0_85_0058e37c
+;   undefined4 s_s_0_85_0058e37c+1
+;   undefined4 s_s_0_85_0058e37c+2
+;   undefined4 s_s_0_85_0058e37c+3
 ;   string s_town.wav_0058e382
-;   undefined1 DAT_0058e38b
-;   undefined1 DAT_0058e38c
-;   undefined1 DAT_0058e38d
-;   undefined1 DAT_0058e38e
+;   TerminatedCString s_s_0_85_0058e38b
+;   undefined4 s_s_0_85_0058e38b+1
+;   undefined4 s_s_0_85_0058e38b+2
+;   undefined4 s_s_0_85_0058e38b+3
 ;   undefined4 DAT_005b9354
 ;   ... and 8 more
 ;
@@ -77,7 +77,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 004ff093
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 004ff098
-    MOV ESI,0x58e36d                    ; 004ff09b | DAT_0058e36d
+    MOV ESI,0x58e36d                    ; 004ff09b | = ".wav"
     MOV EDI,ESP                         ; 004ff0a0
     PUSH EDI                            ; 004ff0a2
     SUB ECX,ECX                         ; 004ff0a3
@@ -85,13 +85,13 @@ section .text
     MOV AL,0x0                          ; 004ff0a6
     SCASB.REPNE ES:EDI                  ; 004ff0a8
     DEC EDI                             ; 004ff0aa
-    MOV AL,byte ptr [ESI]               ; 004ff0ab | DAT_0058e36d | DAT_0058e36f
+    MOV AL,byte ptr [ESI]               ; 004ff0ab | = ".wav" | s_wav_0058e36d+2
         ;   Label: LAB_004ff0ab
     MOV byte ptr [EDI],AL               ; 004ff0ad
     CMP AL,0x0                          ; 004ff0af
     JZ 0x004ff0c3                       ; 004ff0b1
         ;   XREF to: 004ff0c3 (CONDITIONAL_JUMP)  ; LAB_004ff0c3
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ff0b3 | DAT_0058e36e | DAT_0058e370
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ff0b3 | s_wav_0058e36d+1 | s_wav_0058e36d+3
     ADD ESI,0x2                         ; 004ff0b6
     MOV byte ptr [EDI + 0x1],AL         ; 004ff0b9
     ADD EDI,0x2                         ; 004ff0bc
@@ -109,7 +109,7 @@ section .text
     TEST EAX,EAX                        ; 004ff0d6
     JNZ 0x004ff103                      ; 004ff0d8
         ;   XREF to: 004ff103 (CONDITIONAL_JUMP)  ; LAB_004ff103
-    MOV ESI,0x58e37c                    ; 004ff0da | DAT_0058e37c
+    MOV ESI,0x58e37c                    ; 004ff0da | = "@0.85"
     MOV EDI,ESP                         ; 004ff0df
     PUSH EDI                            ; 004ff0e1
     SUB ECX,ECX                         ; 004ff0e2
@@ -117,13 +117,13 @@ section .text
     MOV AL,0x0                          ; 004ff0e5
     SCASB.REPNE ES:EDI                  ; 004ff0e7
     DEC EDI                             ; 004ff0e9
-    MOV AL,byte ptr [ESI]               ; 004ff0ea | DAT_0058e37c | DAT_0058e37e
+    MOV AL,byte ptr [ESI]               ; 004ff0ea | = "@0.85" | s_s_0_85_0058e37c+2
         ;   Label: LAB_004ff0ea
     MOV byte ptr [EDI],AL               ; 004ff0ec
     CMP AL,0x0                          ; 004ff0ee
     JZ 0x004ff102                       ; 004ff0f0
         ;   XREF to: 004ff102 (CONDITIONAL_JUMP)  ; LAB_004ff102
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ff0f2 | DAT_0058e37d | DAT_0058e37f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ff0f2 | s_s_0_85_0058e37c+1 | s_s_0_85_0058e37c+3
     ADD ESI,0x2                         ; 004ff0f5
     MOV byte ptr [EDI + 0x1],AL         ; 004ff0f8
     ADD EDI,0x2                         ; 004ff0fb
@@ -156,7 +156,7 @@ section .text
     POP ESI                             ; 004ff136
     POP EBX                             ; 004ff137
     RET                                 ; 004ff138
-    MOV ESI,0x58e38b                    ; 004ff139 | DAT_0058e38b
+    MOV ESI,0x58e38b                    ; 004ff139 | = "@0.85"
         ;   Label: LAB_004ff139
     MOV EDI,ESP                         ; 004ff13e
     PUSH EDI                            ; 004ff140
@@ -165,13 +165,13 @@ section .text
     MOV AL,0x0                          ; 004ff144
     SCASB.REPNE ES:EDI                  ; 004ff146
     DEC EDI                             ; 004ff148
-    MOV AL,byte ptr [ESI]               ; 004ff149 | DAT_0058e38b | DAT_0058e38d
+    MOV AL,byte ptr [ESI]               ; 004ff149 | = "@0.85" | s_s_0_85_0058e38b+2
         ;   Label: LAB_004ff149
     MOV byte ptr [EDI],AL               ; 004ff14b
     CMP AL,0x0                          ; 004ff14d
     JZ 0x004ff161                       ; 004ff14f
         ;   XREF to: 004ff161 (CONDITIONAL_JUMP)  ; LAB_004ff161
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ff151 | DAT_0058e38c | DAT_0058e38e
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ff151 | s_s_0_85_0058e38b+1 | s_s_0_85_0058e38b+3
     ADD ESI,0x2                         ; 004ff154
     MOV byte ptr [EDI + 0x1],AL         ; 004ff157
     ADD EDI,0x2                         ; 004ff15a

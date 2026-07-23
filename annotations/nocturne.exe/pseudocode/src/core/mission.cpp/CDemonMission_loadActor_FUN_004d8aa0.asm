@@ -17,7 +17,7 @@
 ;   string s_Error_reading_actor_pointer._Own_00589bac
 ;   string s_%[^\"]_00589be4
 ;   string s_WARNING._Can't_find_actor_'%s'_i_00589bea
-;   undefined4 DAT_00589c44
+;   TerminatedCString s_x_00589c44
 ;   undefined4 DAT_005b6d50
 ;   string s_(none)_005bb0d0
 ;   undefined4 DAT_005c168c
@@ -173,7 +173,7 @@ section .text
     ADD ESP,0x8                         ; 004d8bd1
     LEA EAX,[ESP + 0xc8]                ; 004d8bd4
     PUSH EAX                            ; 004d8bdb
-    PUSH 0x589c44                       ; 004d8bdc | DAT_00589c44
+    PUSH 0x589c44                       ; 004d8bdc | = "%x"
     PUSH EBX                            ; 004d8be1
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d8be2
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

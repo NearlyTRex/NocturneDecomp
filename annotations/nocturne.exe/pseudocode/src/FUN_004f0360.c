@@ -31,8 +31,8 @@ void FUN_004f0360(float *param_1,float *param_2,int param_3)
       local_28 = *param_2 - param_1[0x4e30];
       local_24 = param_2[1] - param_1[0x4e31];
       local_20 = param_2[2] - param_1[0x4e32];
-      if (((ABS(local_28) < (float)_DAT_0058cd8f) && (ABS(local_24) < (float)_DAT_0058cd8f)) &&
-         (ABS(local_20) < (float)_DAT_0058cd8f)) {
+      if (((ABS(local_28) < (float)4) && (ABS(local_24) < (float)4)) &&
+         (ABS(local_20) < (float)4)) {
         return;
       }
     }

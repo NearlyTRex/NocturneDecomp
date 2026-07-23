@@ -14,9 +14,9 @@
 ;   FUN_00535900 at 005364ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587409
-;   undefined4 DAT_0059f7f0
-;   undefined4 DAT_0059f7f4
+;   double DOUBLE_00587409 = 100
+;   float FLOAT_0059f7f0 = 30
+;   float FLOAT_0059f7f4 = 120
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_007646ac
 ;   undefined4 DAT_01c7782c
@@ -73,7 +73,7 @@ section .text
     CMP dword ptr [EAX + 0x244],0x0     ; 004c18ae | DAT_01c77830
     JZ 0x004c1a41                       ; 004c18b5
         ;   XREF to: 004c1a41 (CONDITIONAL_JUMP)  ; LAB_004c1a41
-    MOV EAX,[0x0059f7f0]                ; 004c18bb | DAT_0059f7f0
+    MOV EAX,[0x0059f7f0]                ; 004c18bb | FLOAT_0059f7f0
         ;   Label: LAB_004c18bb
     MOV EDI,dword ptr [EBX + 0x8]       ; 004c18c0
     XOR ESI,ESI                         ; 004c18c3
@@ -103,7 +103,7 @@ section .text
     MOV EAX,[0x005b9354]                ; 004c18f5 | DAT_005b9354
         ;   Label: LAB_004c18f5
     FLD float ptr [EAX + 0x264]         ; 004c18fa | DAT_01c77850
-    FMUL double ptr [0x00587409]        ; 004c1900 | DAT_00587409
+    FMUL double ptr [0x00587409]        ; 004c1900 | DOUBLE_00587409
     FDIV float ptr [ESP + 0x4]          ; 004c1906
     FSUBR float ptr [EBX]               ; 004c190a
     FST float ptr [EBX]                 ; 004c190c
@@ -219,7 +219,7 @@ section .text
         ;   Label: LAB_004c1a41
     JNZ 0x004c18bb                      ; 004c1a48
         ;   XREF to: 004c18bb (CONDITIONAL_JUMP)  ; LAB_004c18bb
-    FLD float ptr [0x0059f7f4]          ; 004c1a4e | DAT_0059f7f4
+    FLD float ptr [0x0059f7f4]          ; 004c1a4e | FLOAT_0059f7f4
     FLD1                                ; 004c1a54
     FDIVRP                              ; 004c1a56
     MOV ECX,dword ptr [EBX + 0x8]       ; 004c1a58
@@ -249,7 +249,7 @@ section .text
         ;   XREF to: 004c1a66 (CONDITIONAL_JUMP)  ; LAB_004c1a66
     MOV EAX,[0x005b9354]                ; 004c1a88 | DAT_005b9354
         ;   Label: LAB_004c1a88
-    FLD double ptr [0x00587409]         ; 004c1a8d | DAT_00587409
+    FLD double ptr [0x00587409]         ; 004c1a8d | DOUBLE_00587409
     FLD float ptr [EAX + 0x264]         ; 004c1a93 | DAT_01c77850
     FMUL ST1                            ; 004c1a99
     FMUL float ptr [ESP]                ; 004c1a9b

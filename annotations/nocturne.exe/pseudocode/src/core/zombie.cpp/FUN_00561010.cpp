@@ -122,8 +122,8 @@ uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)
           fStack_84 = *(float *)(iVar8 + 0x28) - local_1c[2];
           fStack_88 = fStack_88 * fStack_88;
           fVar2 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
-          if (((float)_DAT_00598866 <= fVar2) &&
-             (fVar2 <= *(float *)(param_1 + 0xbd24) * _DAT_00598876)) {
+          if (((float)5 <= fVar2) &&
+             (fVar2 <= *(float *)(param_1 + 0xbd24) * 15.0f)) {
             *(int *)((int)aiStack_138 + iVar7) = iStack_28;
             iVar9 = iVar7 + 4;
             local_24 = local_24 + 1;
@@ -161,7 +161,8 @@ uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)
   }
   fVar2 = *(float *)(param_1 + 0x20) - *(float *)(*(int *)(param_1 + 0xbd34) + 0x20);
   fVar3 = *(float *)(param_1 + 0x28) - *(float *)(*(int *)(param_1 + 0xbd34) + 0x28);
-  fStack_168 = (float)_DAT_00598866 - SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)_DAT_0059885e;
+  fStack_168 = (float)5 - SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)0.33333333333333298
+  ;
   if (fStack_168 < 1.0) {
     fStack_168 = 1.0;
   }
@@ -184,7 +185,7 @@ LAB_00561230:
         uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
                           (auStack_e0,auStack_b0,auStack_d4,auStack_80,&uStack_2c);
         core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
-        fStack_78 = fStack_d8 + (float)_DAT_0059886e;
+        fStack_78 = fStack_d8 + (float)0.40000000000000002;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_44,auStack_80);
         if (&uStack_a4 != &uStack_44) {
           uStack_a4 = uStack_44;
@@ -213,7 +214,7 @@ LAB_005614f8:
       uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
                         (auStack_f8,auStack_68,auStack_ec,auStack_bc,&uStack_30);
       core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
-      fStack_b4 = fStack_f0 + (float)_DAT_0059886e;
+      fStack_b4 = fStack_f0 + (float)0.40000000000000002;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_50,auStack_bc);
       if (&uStack_a4 != &uStack_50) {
         uStack_a4 = uStack_50;

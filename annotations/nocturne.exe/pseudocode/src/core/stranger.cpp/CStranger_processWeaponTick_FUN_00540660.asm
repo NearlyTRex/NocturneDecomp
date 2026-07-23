@@ -8,7 +8,7 @@
 ;   FUN_00535900 at 005364b8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a2704
+;   float FLOAT_005a2704 = 10
 ;   undefined4 DAT_01bca0c0
 ;
 ; Called Functions:
@@ -68,7 +68,7 @@ section .text
     CALL dword ptr [EAX + 0xdc]         ; 005406ce
     MOV dword ptr [EBX + 0x1fa94],0x0   ; 005406d4
     MOV dword ptr [EBX + 0x2a84],0x0    ; 005406de
-    FLD float ptr [0x005a2704]          ; 005406e8 | DAT_005a2704
+    FLD float ptr [0x005a2704]          ; 005406e8 | FLOAT_005a2704
     MOV dword ptr [EBX + 0x2a88],0x0    ; 005406ee
     ADD ESP,0x4                         ; 005406f8
     MOV EDI,dword ptr [EBX + 0x1faa0]   ; 005406fb

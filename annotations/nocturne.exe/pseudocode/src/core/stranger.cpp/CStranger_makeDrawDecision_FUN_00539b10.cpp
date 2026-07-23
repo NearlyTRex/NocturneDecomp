@@ -50,7 +50,7 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(int param
   
   bVar7 = 0;
   if ((*(int *)(param_1 + 0x2a84) < 0) || (0x10 < *(int *)(param_1 + 0x2a84))) {
-    _DAT_01cc4800 = "MbP?..\\core\\stranger.cpp" + 4;
+    _DAT_01cc4800 = "..\\core\\stranger.cpp";
     _DAT_01cc4804 = 0xa7c;
     FUN_004c8440("CStranger::makeDrawDecision - draw motion out of range!");
   }
@@ -80,12 +80,12 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(int param
   iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
   iVar2 = *(int *)(iVar2 + 0x24);
   if ((iVar2 == 0x17) || (iVar2 == 0x18)) {
-    fVar1 = fVar1 + (float)_DAT_00595947;
+    fVar1 = fVar1 + (float)-0.75;
 LAB_00539cb2:
-    local_1c = fVar1 * (float)_DAT_0059593f;
+    local_1c = fVar1 * (float)4;
   }
   else if ((iVar2 == 0x19) || (iVar2 == 0x1a)) {
-    fVar1 = (float)_DAT_00595937 - fVar1;
+    fVar1 = (float)0.25 - fVar1;
     goto LAB_00539cb2;
   }
   if ((int)local_1c < 0x3f800001) {
@@ -98,7 +98,7 @@ LAB_00539cb2:
   }
   local_f8 = local_f8 * local_1c;
 LAB_00539cea:
-  if (local_f8 <= (float)_DAT_0059594f) {
+  if (local_f8 <= (float)0.0001) {
     return;
   }
   if (1.0 < local_f8) {
@@ -154,15 +154,16 @@ LAB_00539cea:
           ((uint)bVar7 * -2 + 1) * 4);
   }
   if (*(int *)(param_1 + 0x2a84) == 1) {
-    fVar1 = (*(float *)(param_1 + 0x1fa58) + *(float *)(param_1 + 0x1fa78)) * (float)_DAT_00595957;
+    fVar1 = (*(float *)(param_1 + 0x1fa58) + *(float *)(param_1 + 0x1fa78)) * (float)0.5
+    ;
     local_100 = 0.0;
     local_28 = 0x3e860a92;
     local_2c = 0x3f19999a;
     if (fVar1 < 0.0) {
-      local_100 = ((fVar1 + _DAT_0059595f) / (0xBF860A92 + _DAT_0059595f)) * _DAT_00595963;
+      local_100 = ((fVar1 + 0.3490658f) / (-1.047198f + 0.3490658f)) * 0.6f;
     }
     if (0.0 < fVar1) {
-      local_100 = ((fVar1 - 0.2617994) / (0x3F9C61AA - 0.2617994)) * 0.6;
+      local_100 = ((fVar1 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
     }
     local_18 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,3)
     ;
@@ -250,8 +251,8 @@ LAB_00539cea:
   else if (*(int *)(param_1 + 0x2a84) != 0xe) {
     return;
   }
-  fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,(float10)1
-                         );
+  fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)2.7f,
+                          (float10)1);
   local_34 = (float)fVar8;
   core_xform_cpp_FUN_0055d4e0(local_34);
   puVar12 = &LAB_0051b650;

@@ -21,7 +21,7 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(int param_1,int p
   int local_18;
   
   if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
-    _DAT_01cc4800 = "?..\\core\\netgame.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\netgame.cpp";
     _DAT_01cc4804 = 0x735;
     FUN_004c8440("CNetGame::updatePing - invalid player index");
   }
@@ -39,24 +39,24 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(int param_1,int p
   _DAT_01cea3f4 = iVar1;
   _DAT_01cea3f8 = local_18;
   if (param_2 != *(int *)(param_1 + 0x114)) {
-    local_28 = (float)(local_18 - *(int *)(iVar2 + 0x2c)) * (float)_DAT_0058c282;
+    local_28 = (float)(local_18 - *(int *)(iVar2 + 0x2c)) * (float)1.52587890625e-05;
     if (local_28 < 0.0) {
       local_28 = 0.0;
     }
-    if ((float)_DAT_0058c28a < local_28) {
+    if ((float)30 < local_28) {
       local_28 = 30.0;
     }
-    if ((float)_DAT_0058c292 <= local_28) {
+    if ((float)0.40000000000000002 <= local_28) {
       local_18 = local_18 - *(int *)(iVar2 + 0x30);
-      local_2c = (float)local_18 * (float)_DAT_0058c282;
+      local_2c = (float)local_18 * (float)1.52587890625e-05;
       if (local_2c < 0.0) {
         local_2c = 0.0;
       }
-      if ((float)_DAT_0058c28a < local_2c) {
+      if ((float)30 < local_2c) {
         local_2c = 30.0;
       }
       if ((*(float *)(iVar2 + 0x28) < 0.0) || (param_3 <= local_2c)) {
-        if ((float)_DAT_0058c29a < local_2c) {
+        if ((float)5 < local_2c) {
           *(uint *)(iVar2 + 0x28) = 0xbf800000;
         }
         local_20 = 4;

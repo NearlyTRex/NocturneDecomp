@@ -8,7 +8,7 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508709
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590e61
+;   double DOUBLE_00590e61 = 65536
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -48,7 +48,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x11c]     ; 0051538f
     MOV dword ptr [EBP + 0x138],EAX     ; 00515395
     FLD float ptr [EBX + 0x120]         ; 0051539b
-    FMUL double ptr [0x00590e61]        ; 005153a1 | DAT_00590e61
+    FMUL double ptr [0x00590e61]        ; 005153a1 | DOUBLE_00590e61
     ADD ESP,0x8                         ; 005153a7
     CALL crt_math.c_round_FUN_00563a30  ; 005153aa
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

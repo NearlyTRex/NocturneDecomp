@@ -15,7 +15,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004d5d00(int param_1)
   byte *puVar2;
   
   if (*(int *)(param_1 + 0x4757c) == 0) {
-    _DAT_01cc4800 = "?..\\core\\mimic.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\mimic.cpp";
     _DAT_01cc4804 = 0x499;
     FUN_004c8440("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }

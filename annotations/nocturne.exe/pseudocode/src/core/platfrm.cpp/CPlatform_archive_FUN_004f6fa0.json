@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 510,
+    "complexity_score": 509,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 37,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 104,
     "suspect_count": 39,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 432
+    "total_lines": 431
   },
   "cross_references": [
     {
@@ -206,8 +206,8 @@
   "globals": [
     {
       "addr": "0058d785",
-      "name": "s_modelName_0058d784+1",
-      "type": "undefined4",
+      "name": "s_modelName_0058d785",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -536,15 +536,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,\"?modelName\" + 1);",
+      "text": "core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,\"modelName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x34c,\"toStartEvent\");",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3b0,\"toEndEvent\");",
@@ -560,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x414,\"stopEvent\");",
@@ -568,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x478,\"startSound\");",
@@ -576,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x48c,\"stopSound\");",
@@ -584,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x4a0,\"activeSound\");",
@@ -592,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2e8,\"courseFilename\");",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(char *)(param_1 + 0x2e8) == '\\0') {",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x314,\"startPos\");",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveQuaternion_FUN_0040c630(param_1 + 0x32c,\"origOrient\");",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 800,\"endPos\");",
@@ -632,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveQuaternion_FUN_0040c630(param_1 + 0x33c,\"endOrient\");",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,\"state\");",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d4,\"param\");",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2e4,\"travelTimeToStart\");",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2e0) = *(uint *)(param_1 + 0x2e4);",
@@ -672,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2e0) = *(uint *)(param_1 + 0x2e4);",
@@ -680,7 +680,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2e0,\"travelTimeToEnd\");",
@@ -688,7 +688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,\"groundType\");",
@@ -696,7 +696,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4b8,\"oneShot\");",
@@ -704,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4bc,\"blockVirtualDirectorFlag\");",
@@ -712,7 +712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x4c0,\"renderInBackgroundWhenNotMovingFlag\");",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x4c4,\"cameraWhileMoving\");",
@@ -728,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x504,\"plotAsBoxInShadow\");",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d8,\"goalParam\");",
@@ -744,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2dc,\"currentMovementRate\");",
@@ -752,7 +752,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "if (DAT_00763e88 == 1) {",
@@ -760,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1;",
@@ -768,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1;",
@@ -776,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 != param_1 + 0x208);",
@@ -784,7 +784,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1;",
@@ -792,7 +792,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar2 * 0x34 + param_1 + 0x514,\"attach actor\");",
@@ -800,7 +800,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x508,\"pushFlag\");",
@@ -808,7 +808,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x50c,\"recomputeFog\");",
@@ -816,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x510,\"plotInShadowFlag\");",

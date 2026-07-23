@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1 DAT_0058cbd0
-;   undefined1 DAT_0058cbd1
-;   undefined1 DAT_0058cbd2
-;   string s_fbrn.dfm_0058cbd3
+;   TerminatedCString s_wolfbrn_dfm_0058cbd0
+;   undefined4 s_wolfbrn_dfm_0058cbd0+1
+;   undefined4 s_wolfbrn_dfm_0058cbd0+2
+;   undefined4 s_wolfbrn_dfm_0058cbd0+3
 ;   string s_false_0058cbdc
 ;   undefined4 s_alse_0058cbdc+1
 ;   undefined4 s_lse_0058cbdc+2
@@ -40,7 +40,7 @@ section .text
     ADD ESP,0x4                         ; 004ef4ed
     ADD EAX,0x1f67c                     ; 004ef4f0
     PUSH EAX                            ; 004ef4f5
-    MOV ESI,0x58cbd0                    ; 004ef4f6 | DAT_0058cbd0
+    MOV ESI,0x58cbd0                    ; 004ef4f6 | = "wolfbrn.dfm"
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 004ef4fb
         ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
     LEA EBX,[EAX + 0xfffe0984]          ; 004ef500
@@ -48,13 +48,13 @@ section .text
     LEA EDI,[EBX + 0x1f5d4]             ; 004ef509
     MOV dword ptr [EBX + 0x14c],0x5a1074 ; 004ef50f | PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074
     PUSH EDI                            ; 004ef519
-    MOV AL,byte ptr [ESI]               ; 004ef51a | DAT_0058cbd0 | DAT_0058cbd2
+    MOV AL,byte ptr [ESI]               ; 004ef51a | = "wolfbrn.dfm" | s_wolfbrn_dfm_0058cbd0+2
         ;   Label: LAB_004ef51a
     MOV byte ptr [EDI],AL               ; 004ef51c
     CMP AL,0x0                          ; 004ef51e
     JZ 0x004ef532                       ; 004ef520
         ;   XREF to: 004ef532 (CONDITIONAL_JUMP)  ; LAB_004ef532
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ef522 | DAT_0058cbd1 | = "fbrn.dfm"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ef522 | s_wolfbrn_dfm_0058cbd0+1 | s_wolfbrn_dfm_0058cbd0+3
     ADD ESI,0x2                         ; 004ef525
     MOV byte ptr [EDI + 0x1],AL         ; 004ef528
     ADD EDI,0x2                         ; 004ef52b

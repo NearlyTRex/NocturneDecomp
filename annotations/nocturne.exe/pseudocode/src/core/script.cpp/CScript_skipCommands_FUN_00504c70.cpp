@@ -34,9 +34,9 @@ int core_script_cpp_CScript_skipCommands_FUN_00504c70(int param_1,int param_2,in
         iVar4 = iVar4 + -1;
       }
       else if (((iVar4 < 1) && (!bVar2)) ||
-              (iVar3 = _strnicmp(pcVar1,&DAT_0058faef,2), iVar3 != 0)) {
+              (iVar3 = _strnicmp(pcVar1,"if",2), iVar3 != 0)) {
         if (((iVar4 < 1) && (param_3 == 0)) ||
-           (iVar3 = _strnicmp(pcVar1,&DAT_0058faf2,4), iVar3 != 0)) {
+           (iVar3 = _strnicmp(pcVar1,"else",4), iVar3 != 0)) {
           if (iVar4 == 0) {
             if (!bVar2) {
               return param_2;

@@ -19,7 +19,7 @@
 ;   string s_%s_confused_while_walking_to_scr_00578ded
 ;   double DOUBLE_00578e1e = 3.14159265350000
 ;   double DOUBLE_00578e26 = 32
-;   undefined4 DAT_0059a5a0
+;   float FLOAT_0059a5a0 = 4
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_0077ad0c
@@ -231,7 +231,7 @@ section .text
     FLD float ptr [EBX + 0xbea4]        ; 004156da
     FADD float ptr [EBP + 0x14]         ; 004156e0
     FST float ptr [EBX + 0xbea4]        ; 004156e3
-    FCOMP float ptr [0x0059a5a0]        ; 004156e9 | DAT_0059a5a0
+    FCOMP float ptr [0x0059a5a0]        ; 004156e9 | FLOAT_0059a5a0
     FNSTSW AX                           ; 004156ef
     SAHF                                ; 004156f1
     JA 0x0041574d                       ; 004156f2
@@ -282,7 +282,7 @@ section .text
     PUSH 0x0                            ; 00415746
     JMP 0x00415564                      ; 00415748
         ;   XREF to: 00415564 (UNCONDITIONAL_JUMP)  ; LAB_00415564
-    MOV EAX,[0x0059a5a0]                ; 0041574d | DAT_0059a5a0
+    MOV EAX,[0x0059a5a0]                ; 0041574d | FLOAT_0059a5a0
         ;   Label: LAB_0041574d
     MOV dword ptr [EBX + 0xbea4],EAX    ; 00415752
     MOV ESP,EBP                         ; 00415758

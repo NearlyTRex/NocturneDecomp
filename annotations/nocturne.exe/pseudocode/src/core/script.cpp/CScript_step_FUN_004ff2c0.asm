@@ -197,14 +197,14 @@
 ;   undefined4 s_no_error_message_provided)_0058e536+1
 ;   undefined4 s_o_error_message_provided)_0058e536+2
 ;   undefined4 s_error_message_provided)_0058e536+3
-;   undefined1 DAT_0058e552
+;   char CHAR_00h_0058e552 = \x00
 ;   string s_Invalid_label_\"%s\"_on_line_0058e553
 ;   string s_..\\core\\script.cpp_0058e56e
 ;   string s_Internal_script_error_checking_f_0058e581
 ;   string s_Duplicate_label_%s_on_lines_%d_a_0058e5b5
-;   undefined1 DAT_0058e5db
+;   char CHAR_00h_0058e5db = \x00
 ;   string s_syntaxCheckOn_0058e5dc
-;   undefined1 DAT_0058e5ea
+;   char CHAR_00h_0058e5ea = \x00
 ;   string s_syntaxCheckOff_0058e5eb
 ;   ... and 312 more
 ;
@@ -289,14 +289,14 @@ section .text
     CMP AH,0x7b                         ; 004ff35b
     JNZ 0x004ff3c6                      ; 004ff35e
         ;   XREF to: 004ff3c6 (CONDITIONAL_JUMP)  ; LAB_004ff3c6
-    MOV dword ptr [ESP + 0x3e90],0x58e552 ; 004ff360 | DAT_0058e552
+    MOV dword ptr [ESP + 0x3e90],0x58e552 ; 004ff360 | CHAR_00h_0058e552
         ;   Label: LAB_004ff360
     CMP dword ptr [0x01e56418],0x2      ; 004ff36b | DAT_01e56418
         ;   Label: LAB_004ff36b
     JZ 0x004ff384                       ; 004ff372
         ;   XREF to: 004ff384 (CONDITIONAL_JUMP)  ; LAB_004ff384
     MOV EAX,dword ptr [ESP + 0x3e90]    ; 004ff374
-    CMP byte ptr [EAX],0x0              ; 004ff37b | DAT_0058e552 | DAT_0058e5db | DAT_0058ee1f
+    CMP byte ptr [EAX],0x0              ; 004ff37b | CHAR_00h_0058e552 | CHAR_00h_0058e5db | CHAR_00h_0058ee1f
     JNZ 0x0050492d                      ; 004ff37e
         ;   XREF to: 0050492d (CONDITIONAL_JUMP)  ; LAB_0050492d
     MOV EAX,dword ptr [ESP + 0x3e84]    ; 004ff384
@@ -400,7 +400,7 @@ section .text
         ;   Label: LAB_004ff473
     JNZ 0x004ff4b1                      ; 004ff47a
         ;   XREF to: 004ff4b1 (CONDITIONAL_JUMP)  ; LAB_004ff4b1
-    MOV dword ptr [ESP + 0x3e90],0x58e5db ; 004ff47c | DAT_0058e5db
+    MOV dword ptr [ESP + 0x3e90],0x58e5db ; 004ff47c | CHAR_00h_0058e5db
         ;   Label: LAB_004ff47c
     JMP 0x004ff36b                      ; 004ff487
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -1203,7 +1203,7 @@ section .text
         ;   XREF to: 00501569 (CONDITIONAL_JUMP)  ; LAB_00501569
     PUSH 0x4                            ; 004ffcfc
         ;   Label: LAB_004ffcfc
-    PUSH 0x58eaf8                       ; 004ffcfe | DAT_0058eaf8
+    PUSH 0x58eaf8                       ; 004ffcfe | = "else"
     PUSH ESI                            ; 004ffd03
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004ffd04
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1267,7 +1267,7 @@ section .text
         ;   XREF to: 0050185b (CONDITIONAL_JUMP)  ; LAB_0050185b
     PUSH 0x3                            ; 004ffda8
         ;   Label: LAB_004ffda8
-    PUSH 0x58ec4b                       ; 004ffdaa | DAT_0058ec4b
+    PUSH 0x58ec4b                       ; 004ffdaa | = "end"
     PUSH ESI                            ; 004ffdaf
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004ffdb0
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1379,7 +1379,7 @@ section .text
         ;   XREF to: 00501e67 (CONDITIONAL_JUMP)  ; LAB_00501e67
     PUSH 0x4                            ; 004ffed5
         ;   Label: LAB_004ffed5
-    PUSH 0x58ede5                       ; 004ffed7 | DAT_0058ede5
+    PUSH 0x58ede5                       ; 004ffed7 | = "goto"
     PUSH ESI                            ; 004ffedc
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004ffedd
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1395,7 +1395,7 @@ section .text
         ;   XREF to: 00501f18 (CONDITIONAL_JUMP)  ; LAB_00501f18
     PUSH 0x4                            ; 004fff00
         ;   Label: LAB_004fff00
-    PUSH 0x58ee20                       ; 004fff02 | DAT_0058ee20
+    PUSH 0x58ee20                       ; 004fff02 | = "gtfo"
     PUSH ESI                            ; 004fff07
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004fff08
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1427,7 +1427,7 @@ section .text
         ;   XREF to: 00501ffc (CONDITIONAL_JUMP)  ; LAB_00501ffc
     PUSH 0x4                            ; 004fff56
         ;   Label: LAB_004fff56
-    PUSH 0x58eeee                       ; 004fff58 | DAT_0058eeee
+    PUSH 0x58eeee                       ; 004fff58 | = "idle"
     PUSH ESI                            ; 004fff5d
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004fff5e
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1443,7 +1443,7 @@ section .text
         ;   XREF to: 0050222e (CONDITIONAL_JUMP)  ; LAB_0050222e
     PUSH 0x2                            ; 004fff81
         ;   Label: LAB_004fff81
-    PUSH 0x58eef3                       ; 004fff83 | DAT_0058eef3
+    PUSH 0x58eef3                       ; 004fff83 | = "if"
     PUSH ESI                            ; 004fff88
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004fff89
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1683,7 +1683,7 @@ section .text
         ;   XREF to: 0050303b (CONDITIONAL_JUMP)  ; LAB_0050303b
     PUSH 0x3                            ; 00500206
         ;   Label: LAB_00500206
-    PUSH 0x58f391                       ; 00500208 | DAT_0058f391
+    PUSH 0x58f391                       ; 00500208 | = "say"
     PUSH ESI                            ; 0050020d
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0050020e
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -1987,7 +1987,7 @@ section .text
         ;   XREF to: 005044ba (CONDITIONAL_JUMP)  ; LAB_005044ba
     PUSH 0x4                            ; 00500537
         ;   Label: LAB_00500537
-    PUSH 0x58f918                       ; 00500539 | DAT_0058f918
+    PUSH 0x58f918                       ; 00500539 | = "wait"
     PUSH ESI                            ; 0050053e
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0050053f
         ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
@@ -2045,7 +2045,7 @@ section .text
     JZ 0x005005de                       ; 005005d2
         ;   XREF to: 005005de (CONDITIONAL_JUMP)  ; LAB_005005de
     MOV dword ptr [0x01e56418],0x1      ; 005005d4 | DAT_01e56418
-    MOV dword ptr [ESP + 0x3e90],0x58e5ea ; 005005de | DAT_0058e5ea
+    MOV dword ptr [ESP + 0x3e90],0x58e5ea ; 005005de | CHAR_00h_0058e5ea
         ;   Label: LAB_005005de
     JMP 0x004ff36b                      ; 005005e9
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -2054,7 +2054,7 @@ section .text
     JZ 0x00500601                       ; 005005f5
         ;   XREF to: 00500601 (CONDITIONAL_JUMP)  ; LAB_00500601
     MOV dword ptr [0x01e56418],0x2      ; 005005f7 | DAT_01e56418
-    MOV dword ptr [ESP + 0x3e90],0x58e5fa ; 00500601 | DAT_0058e5fa
+    MOV dword ptr [ESP + 0x3e90],0x58e5fa ; 00500601 | CHAR_00h_0058e5fa
         ;   Label: LAB_00500601
     JMP 0x004ff36b                      ; 0050060c
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -2068,7 +2068,7 @@ section .text
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 00500621
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
     ADD ESP,0x8                         ; 00500626
-    MOV dword ptr [ESP + 0x3e90],0x58e756 ; 00500629 | DAT_0058e756
+    MOV dword ptr [ESP + 0x3e90],0x58e756 ; 00500629 | CHAR_00h_0058e756
         ;   Label: LAB_00500629
     JMP 0x004ff36b                      ; 00500634
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -2259,7 +2259,7 @@ section .text
     LEA EAX,[ESP + 0x3bc8]              ; 00500865
         ;   Label: LAB_00500865
     PUSH EAX                            ; 0050086c
-    PUSH 0x58e817                       ; 0050086d | DAT_0058e817
+    PUSH 0x58e817                       ; 0050086d | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00500872
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 00500877
@@ -2600,7 +2600,7 @@ section .text
         ;   Label: LAB_00500c87
     JMP 0x004ff43c                      ; 00500c88
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
-    PUSH 0x58e925                       ; 00500c8d | DAT_0058e925
+    PUSH 0x58e925                       ; 00500c8d | = "all"
         ;   Label: LAB_00500c8d
     LEA EAX,[ESP + 0x1c78]              ; 00500c92
     PUSH EAX                            ; 00500c99
@@ -2906,9 +2906,9 @@ section .text
     PUSH EAX                            ; 00500fe2
     PUSH 0x58e97b                       ; 00500fe3 | = "[Can't find %s in database]"
     LEA EAX,[ESP + 0x1d44]              ; 00500fe8
-    MOV ECX,0x58e979                    ; 00500fef | DAT_0058e979
+    MOV ECX,0x58e979                    ; 00500fef | = "$"
     PUSH EAX                            ; 00500ff4
-    MOV dword ptr [ESP + 0x3ed0],ECX    ; 00500ff5 | DAT_0058e979
+    MOV dword ptr [ESP + 0x3ed0],ECX    ; 00500ff5 | = "$"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500ffc
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 00501001
@@ -3012,7 +3012,7 @@ section .text
     LEA EAX,[ESP + 0x3b68]              ; 0050113c
     PUSH EAX                            ; 00501143
     MOV EDI,dword ptr [ESP + 0x3eb8]    ; 00501144
-    PUSH EDI                            ; 0050114b | DAT_0058e9ca
+    PUSH EDI                            ; 0050114b | = "$"
     PUSH EBX                            ; 0050114c
     CALL core_script.cpp_CScript_getDialogDuration_FUN_005049b0 ; 0050114d
         ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getDialogDuration_FUN_005049b0()
@@ -3043,9 +3043,9 @@ section .text
     PUSH EAX                            ; 005011a5
     PUSH 0x58e9cc                       ; 005011a6 | = "[Can't find %s in database]"
     LEA EAX,[ESP + 0x195c]              ; 005011ab
-    MOV ECX,0x58e9ca                    ; 005011b2 | DAT_0058e9ca
+    MOV ECX,0x58e9ca                    ; 005011b2 | = "$"
     PUSH EAX                            ; 005011b7
-    MOV dword ptr [ESP + 0x3ebc],ECX    ; 005011b8 | DAT_0058e9ca
+    MOV dword ptr [ESP + 0x3ebc],ECX    ; 005011b8 | = "$"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005011bf
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 005011c4
@@ -3262,8 +3262,8 @@ section .text
     JNC 0x0050152e                      ; 00501468
         ;   XREF to: 0050152e (CONDITIONAL_JUMP)  ; LAB_0050152e
     FLD double ptr [ESP + 0x10]         ; 0050146e
-    FMUL double ptr [0x0058fa7a]        ; 00501472 | DAT_0058fa7a
-    FMUL double ptr [0x0058fa82]        ; 00501478 | DAT_0058fa82
+    FMUL double ptr [0x0058fa7a]        ; 00501472 | DOUBLE_0058fa7a
+    FMUL double ptr [0x0058fa82]        ; 00501478 | DOUBLE_0058fa82
     FSTP float ptr [ESP + 0x28]         ; 0050147e
     PUSH dword ptr [ESP + 0x28]         ; 00501482
     FLD float ptr [ESP + 0x2c]          ; 00501486
@@ -3681,7 +3681,7 @@ section .text
     MOV dword ptr [ESI + 0x243c],EAX    ; 0050194c
     JMP 0x004ff36b                      ; 00501952
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
-    PUSH 0x58ec22                       ; 00501957 | DAT_0058ec22
+    PUSH 0x58ec22                       ; 00501957 | = "true"
         ;   Label: LAB_00501957
     LEA EAX,[ESP + 0x2060]              ; 0050195c
     PUSH EAX                            ; 00501963
@@ -3973,7 +3973,7 @@ section .text
     TEST EDI,EDI                        ; 00501cd3
     JNZ 0x004ff36b                      ; 00501cd5
         ;   XREF to: 004ff36b (CONDITIONAL_JUMP)  ; LAB_004ff36b
-    PUSH 0x58ed12                       ; 00501cdb | DAT_0058ed12
+    PUSH 0x58ed12                       ; 00501cdb | = "Game"
     PUSH 0x58ed17                       ; 00501ce0 | = "system\\nocturne.ini"
     LEA EAX,[ESP + 0x244]               ; 00501ce5
     PUSH EAX                            ; 00501cec
@@ -4110,7 +4110,7 @@ section .text
     CMP dword ptr [0x01e56418],0x0      ; 00501e88 | DAT_01e56418
     JZ 0x00501ebb                       ; 00501e8f
         ;   XREF to: 00501ebb (CONDITIONAL_JUMP)  ; LAB_00501ebb
-    MOV dword ptr [ESP + 0x3e90],0x58ede4 ; 00501e91 | DAT_0058ede4
+    MOV dword ptr [ESP + 0x3e90],0x58ede4 ; 00501e91 | CHAR_00h_0058ede4
     JMP 0x004ff36b                      ; 00501e9c
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
     MOV ECX,dword ptr [ESP + 0x3e8c]    ; 00501ea1
@@ -4134,7 +4134,7 @@ section .text
     MOV dword ptr [EBX + 0x40],EAX      ; 00501edf
     INC EDI                             ; 00501ee2
     MOV dword ptr [EBX + 0x454],EDI     ; 00501ee3
-    MOV dword ptr [ESP + 0x3e90],0x58ede4 ; 00501ee9 | DAT_0058ede4
+    MOV dword ptr [ESP + 0x3e90],0x58ede4 ; 00501ee9 | CHAR_00h_0058ede4
     JMP 0x004ff36b                      ; 00501ef4
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
     MOV EAX,dword ptr [ESP + 0x3e8c]    ; 00501ef9
@@ -4165,7 +4165,7 @@ section .text
     CMP dword ptr [0x01e56418],0x0      ; 00501f39 | DAT_01e56418
     JZ 0x00501f6c                       ; 00501f40
         ;   XREF to: 00501f6c (CONDITIONAL_JUMP)  ; LAB_00501f6c
-    MOV dword ptr [ESP + 0x3e90],0x58ee1f ; 00501f42 | DAT_0058ee1f
+    MOV dword ptr [ESP + 0x3e90],0x58ee1f ; 00501f42 | CHAR_00h_0058ee1f
     JMP 0x004ff36b                      ; 00501f4d
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
     MOV EAX,dword ptr [ESP + 0x3e8c]    ; 00501f52
@@ -4178,7 +4178,7 @@ section .text
         ;   XREF to: 004ff42f (UNCONDITIONAL_JUMP)  ; LAB_004ff42f
     MOV dword ptr [EBX + 0x40],EAX      ; 00501f6c
         ;   Label: LAB_00501f6c
-    MOV dword ptr [ESP + 0x3e90],0x58ee1f ; 00501f6f | DAT_0058ee1f
+    MOV dword ptr [ESP + 0x3e90],0x58ee1f ; 00501f6f | CHAR_00h_0058ee1f
     JMP 0x004ff36b                      ; 00501f7a
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
     ADD ESI,0x4                         ; 00501f7f
@@ -4452,7 +4452,7 @@ section .text
         ;   XREF to: 005022f3 (CONDITIONAL_JUMP)  ; LAB_005022f3
     PUSH 0x4                            ; 005022cd
     MOV EDX,dword ptr [EBX + 0x2c]      ; 005022cf
-    PUSH 0x58ef2c                       ; 005022d2 | DAT_0058ef2c
+    PUSH 0x58ef2c                       ; 005022d2 | = "else"
     MOV ECX,dword ptr [EDX + ESI*0x8 + 0x4] ; 005022d7
     PUSH ECX                            ; 005022db
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 005022dc
@@ -4546,7 +4546,7 @@ section .text
     JNZ 0x005023fe                      ; 005023fa
         ;   XREF to: 005023fe (CONDITIONAL_JUMP)  ; LAB_005023fe
     XOR ESI,ESI                         ; 005023fc
-    PUSH 0x58ef76                       ; 005023fe | DAT_0058ef76
+    PUSH 0x58ef76                       ; 005023fe | = "true"
         ;   Label: LAB_005023fe
     LEA EAX,[ESP + 0x371c]              ; 00502403
     PUSH EAX                            ; 0050240a
@@ -6258,7 +6258,7 @@ section .text
     MOV EAX,0x1                         ; 005038e1
     JMP 0x005038ac                      ; 005038e6
         ;   XREF to: 005038ac (UNCONDITIONAL_JUMP)  ; LAB_005038ac
-    PUSH 0x58f5d0                       ; 005038e8 | DAT_0058f5d0
+    PUSH 0x58f5d0                       ; 005038e8 | = "kill"
         ;   Label: LAB_005038e8
     LEA EAX,[ESP + 0x3780]              ; 005038ed
     PUSH EAX                            ; 005038f4
@@ -6351,7 +6351,7 @@ section .text
     TEST EDI,EDI                        ; 005039f8
     JNZ 0x004ff36b                      ; 005039fa
         ;   XREF to: 004ff36b (CONDITIONAL_JUMP)  ; LAB_004ff36b
-    PUSH 0x58f633                       ; 00503a00 | DAT_0058f633
+    PUSH 0x58f633                       ; 00503a00 | = "Game"
     PUSH 0x58f638                       ; 00503a05 | = "system\\nocturne.ini"
     LEA EAX,[ESP + 0x44]                ; 00503a0a
     PUSH EAX                            ; 00503a0e
@@ -6603,7 +6603,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 00503cd0
         ;   Label: LAB_00503cd0
     PUSH EAX                            ; 00503cd4
-    PUSH 0x58f703                       ; 00503cd5 | DAT_0058f703
+    PUSH 0x58f703                       ; 00503cd5 | = "%f"
     LEA EAX,[ESP + 0x3c98]              ; 00503cda
     MOV ECX,0xbf800000                  ; 00503ce1
     PUSH EAX                            ; 00503ce6
@@ -6620,7 +6620,7 @@ section .text
     JNC 0x00503d37                      ; 00503d04
         ;   XREF to: 00503d37 (CONDITIONAL_JUMP)  ; LAB_00503d37
     FLD double ptr [ESP + 0x20]         ; 00503d06
-    FCOMP double ptr [0x0058fa8a]       ; 00503d0a | DAT_0058fa8a
+    FCOMP double ptr [0x0058fa8a]       ; 00503d0a | DOUBLE_0058fa8a
     FNSTSW AX                           ; 00503d10
     SAHF                                ; 00503d12
     JA 0x00503d37                       ; 00503d13
@@ -7062,7 +7062,7 @@ section .text
         ;   Label: LAB_0050421a
     SETNZ AL                            ; 0050421c
     MOV ECX,0xffffffff                  ; 0050421f
-    MOV ESI,0x58f84a                    ; 00504224 | DAT_0058f84a
+    MOV ESI,0x58f84a                    ; 00504224 | = ","
     AND EAX,0xff                        ; 00504229
     LEA EDI,[ESP + 0x30c4]              ; 0050422e
     MOV dword ptr [ESP + 0x3ef0],EAX    ; 00504235
@@ -7073,13 +7073,13 @@ section .text
     MOV AL,0x0                          ; 00504247
     SCASB.REPNE ES:EDI                  ; 00504249
     DEC EDI                             ; 0050424b
-    MOV AL,byte ptr [ESI]               ; 0050424c | DAT_0058f84a | DAT_0058f84c
+    MOV AL,byte ptr [ESI]               ; 0050424c | = "," | s_n_0058f84c
         ;   Label: LAB_0050424c
     MOV byte ptr [EDI],AL               ; 0050424e
     CMP AL,0x0                          ; 00504250
     JZ 0x00504264                       ; 00504252
         ;   XREF to: 00504264 (CONDITIONAL_JUMP)  ; LAB_00504264
-    MOV AL,byte ptr [ESI + 0x1]         ; 00504254 | DAT_0058f84b | = "[^,],%n"
+    MOV AL,byte ptr [ESI + 0x1]         ; 00504254 | s_anon_0058f84a+1 | s_n_0058f84c+1
     ADD ESI,0x2                         ; 00504257
     MOV byte ptr [EDI + 0x1],AL         ; 0050425a
     ADD EDI,0x2                         ; 0050425d
@@ -7092,7 +7092,7 @@ section .text
     PUSH EAX                            ; 0050426c
     LEA EAX,[ESP + 0x37e4]              ; 0050426d
     PUSH EAX                            ; 00504274
-    PUSH 0x58f84c                       ; 00504275 | DAT_0058f84c
+    PUSH 0x58f84c                       ; 00504275 | = "%[^,],%n"
     LEA EAX,[ESP + 0x30d0]              ; 0050427a
     PUSH EAX                            ; 00504281
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00504282
@@ -7172,7 +7172,7 @@ section .text
     PUSH EAX                            ; 00504346
     MOV ECX,dword ptr [ESP + 0x3f78]    ; 00504347
     LEA EAX,[ESP + 0x30c8]              ; 0050434e
-    PUSH 0x58f88e                       ; 00504355 | DAT_0058f88e
+    PUSH 0x58f88e                       ; 00504355 | = "%f"
     ADD EAX,ECX                         ; 0050435a
     PUSH EAX                            ; 0050435c
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0050435d
@@ -7187,7 +7187,7 @@ section .text
     JA 0x0050438b                       ; 00504376
         ;   XREF to: 0050438b (CONDITIONAL_JUMP)  ; LAB_0050438b
     FLD double ptr [ESP + 0x8]          ; 00504378
-    FCOMP double ptr [0x0058fa92]       ; 0050437c | DAT_0058fa92
+    FCOMP double ptr [0x0058fa92]       ; 0050437c | DOUBLE_0058fa92
     FNSTSW AX                           ; 00504382
     SAHF                                ; 00504384
     JBE 0x005042fe                      ; 00504385
@@ -7651,7 +7651,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x3e8c]    ; 0050492d
         ;   Label: LAB_0050492d
     PUSH EBX                            ; 00504934
-    PUSH EAX                            ; 00504935 | DAT_0058e552
+    PUSH EAX                            ; 00504935 | CHAR_00h_0058e552
     PUSH 0x58fa32                       ; 00504936 | = "Extra characters \"%s\" on line %d"
     PUSH 0x1e56420                      ; 0050493b | DAT_01e56420
     MOV EDI,0xffffffff                  ; 00504940

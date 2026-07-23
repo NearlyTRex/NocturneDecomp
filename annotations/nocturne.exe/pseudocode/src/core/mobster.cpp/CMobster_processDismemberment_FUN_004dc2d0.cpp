@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mobster_cpp_CMobster_processDismemberment_FUN_004dc2d0(int param_1,int *param_2)
 
 {
@@ -51,8 +49,8 @@ switchD_004dc309_default:
      (iVar2 != *(int *)(param_1 + 0xbdf0))) goto LAB_004dc56a;
   if (*(int *)(param_1 + 0xbdec) == *param_2) {
     fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-    if ((float)_DAT_0058a461 <= fVar3) {
-      if (_DAT_0058a469 <= (double)fVar3) goto LAB_004dc363;
+    if ((float)0.33300000000000002 <= fVar3) {
+      if (0.66600000000000004 <= (double)fVar3) goto LAB_004dc363;
       iVar2 = *(int *)(param_1 + 0xbdd0);
     }
     else {
@@ -107,7 +105,7 @@ LAB_004dc363:
     if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf0) * 4) == 0) {
       param_2[1] = 0x461c3c00;
     }
-    param_2[2] = (int)((float)param_2[2] * (float)_DAT_0058a471);
+    param_2[2] = (int)((float)param_2[2] * (float)7);
     if ((*param_2 == *(int *)(param_1 + 0xbdd0)) || (*param_2 == *(int *)(param_1 + 0xbdd4))) {
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,0,0);
@@ -119,11 +117,11 @@ LAB_004dc363:
 LAB_004dc56a:
   iVar2 = *param_2;
   if (iVar2 == *(int *)(param_1 + 0xbdf0)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_0058a481);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar2 != *(int *)(param_1 + 0xbde8)) && (iVar2 != *(int *)(param_1 + 0xbdec))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_0058a479);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

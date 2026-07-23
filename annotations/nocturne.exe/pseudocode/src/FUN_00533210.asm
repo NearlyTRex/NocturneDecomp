@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00595032
+;   double DOUBLE_00595032 = 0.0000100000000000000
 ;   undefined4 DAT_005b7650
 ;
 ; Called Functions:
@@ -148,7 +148,7 @@ section .text
     FSUB float ptr [ESI + 0x8]          ; 00533377
     FMUL ST0                            ; 0053337a
     FADDP                               ; 0053337c
-    FCOMP double ptr [0x00595032]       ; 0053337e | DAT_00595032
+    FCOMP double ptr [0x00595032]       ; 0053337e | DOUBLE_00595032
     FNSTSW AX                           ; 00533384
     SAHF                                ; 00533386
     JA 0x00533516                       ; 00533387

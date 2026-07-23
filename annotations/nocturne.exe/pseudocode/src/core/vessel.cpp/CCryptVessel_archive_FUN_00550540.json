@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 173,
+    "complexity_score": 158,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 116
@@ -189,8 +188,8 @@
     },
     {
       "addr": "005974cf",
-      "name": "DAT_005974cf",
-      "type": "undefined4",
+      "name": "s_prey_005974cf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -326,16 +325,8 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2d0,&DAT_005974cf);",
+      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2d0,\"prey\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005974cf",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2d0,&DAT_005974cf);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

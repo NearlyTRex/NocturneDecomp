@@ -35,7 +35,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,f
   local_20 = param_1 + 4;
   local_14 = 0;
   do {
-    if (*param_2 <= (float)_DAT_0058b2ad) break;
+    if (*param_2 <= (float)1.0000000000000001e-05) break;
     iVar3 = core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(param_1);
     if (iVar3 != 0) goto LAB_004e1213;
     local_48 = *param_2;
@@ -68,7 +68,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,f
       goto LAB_004e1332;
     }
     if (*(int *)(param_1 + 0x20) == 0) {
-      local_44 = (float)_DAT_0058b2b5 - *(float *)(param_1 + 0x14);
+      local_44 = (float)0.5 - *(float *)(param_1 + 0x14);
     }
     else {
       local_44 = *(float *)(param_1 + 0x14);
@@ -122,7 +122,7 @@ LAB_004e12bd:
     if (*(int *)(param_1 + 0x20) == 0) {
       fVar2 = local_48 * *(float *)(param_1 + 0x10) + *(float *)(param_1 + 0x14);
       *(float *)(param_1 + 0x14) = fVar2;
-      if (((float)_DAT_0058b2bd < fVar2) &&
+      if (((float)0.49990000000000001 < fVar2) &&
          (core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(param_1),
          *(int *)(param_1 + 0x24) != 0)) {
         iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1);
@@ -132,7 +132,7 @@ LAB_004e12bd:
     else {
       fVar2 = *(float *)(param_1 + 0x14) - local_48 * *(float *)(param_1 + 0x10);
       *(float *)(param_1 + 0x14) = fVar2;
-      if (fVar2 < (float)_DAT_0058b2c5) {
+      if (fVar2 < (float)0.0001) {
         core_motion_cpp_CMotionController_clearTweenState_FUN_004e19f0(param_1);
       }
     }

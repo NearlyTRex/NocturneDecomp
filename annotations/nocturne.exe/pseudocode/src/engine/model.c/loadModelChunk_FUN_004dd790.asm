@@ -10,7 +10,7 @@
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3af8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058a661
+;   TerminatedCString s_rb_0058a661
 ;   string s_models_0058a664
 ;   string s_Unable_to_open_model:_%s_0058a66b
 ;   string s_..\\engine\\model.c_0058a684
@@ -43,7 +43,7 @@ section .text
     SUB ESP,0x50                        ; 004dd794
     MOV EBP,dword ptr [ESP + 0x64]      ; 004dd797
     MOV ESI,dword ptr [ESP + 0x68]      ; 004dd79b
-    PUSH 0x58a661                       ; 004dd79f | DAT_0058a661
+    PUSH 0x58a661                       ; 004dd79f | = "rb"
     PUSH EBP                            ; 004dd7a4
     PUSH 0x58a664                       ; 004dd7a5 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004dd7aa

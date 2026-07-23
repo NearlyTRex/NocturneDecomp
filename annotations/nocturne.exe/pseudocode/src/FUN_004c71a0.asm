@@ -17,11 +17,11 @@
 ;   string s_CWerewolf_00587a34
 ;   string s_CSvetlana_00587a3e
 ;   string s_CTrigger_||_CGlass_00587a48
-;   undefined4 s_%s_in_volume_00587a60+1
+;   TerminatedCString s_s_in_volume_00587a61
 ;   string s_cre-fire.wav_00587a6f
-;   undefined4 DAT_00587a7d
-;   undefined4 DAT_00587a85
-;   undefined4 DAT_0059fd60
+;   double DOUBLE_00587a7d = 1.5
+;   float FLOAT_00587a85 = 0.5
+;   float FLOAT_0059fd60 = 30
 ;   ... and 16 more
 ;
 ; Called Functions:
@@ -56,7 +56,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004c71ac
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c71af
     FLD float ptr [EAX + 0x578]         ; 004c71b2
-    FCOMP float ptr [0x0059fd60]        ; 004c71b8 | DAT_0059fd60
+    FCOMP float ptr [0x0059fd60]        ; 004c71b8 | FLOAT_0059fd60
     FNSTSW AX                           ; 004c71be
     SAHF                                ; 004c71c0
     JNC 0x004c71cc                      ; 004c71c1
@@ -118,7 +118,7 @@ section .text
     FSTP float ptr [ESP + 0xdc]         ; 004c7283
     FSTP float ptr [ESP + 0xe0]         ; 004c728a
     FLD float ptr [EDI + 0x2e0]         ; 004c7291
-    FDIVR double ptr [0x00587a7d]       ; 004c7297 | DAT_00587a7d
+    FDIVR double ptr [0x00587a7d]       ; 004c7297 | DOUBLE_00587a7d
     FLD float ptr [ESP + 0x90]          ; 004c729d
     FXCH                                ; 004c72a4
     FSTP float ptr [ESP + 0xf0]         ; 004c72a6
@@ -261,7 +261,7 @@ section .text
     JZ 0x004c75c3                       ; 004c747d
         ;   XREF to: 004c75c3 (CONDITIONAL_JUMP)  ; LAB_004c75c3
     PUSH ESI                            ; 004c7483
-    PUSH 0x587a61                       ; 004c7484 | s_%s_in_volume_00587a60+1
+    PUSH 0x587a61                       ; 004c7484 | = "%s in volume\n"
     MOV ECX,dword ptr [0x005ad350]      ; 004c7489 | PTR_DAT_005ad350
     PUSH ECX                            ; 004c748f | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c7490
@@ -302,7 +302,7 @@ section .text
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 004c7510
         ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
     ADD ESP,0x4                         ; 004c7515
-    FLD float ptr [0x00587a85]          ; 004c7518 | DAT_00587a85
+    FLD float ptr [0x00587a85]          ; 004c7518 | FLOAT_00587a85
     FLD float ptr [ESP + 0x84]          ; 004c751e
     FMUL ST1                            ; 004c7525
     FLD float ptr [ESP + 0x88]          ; 004c7527
@@ -436,7 +436,7 @@ section .text
         ;   XREF to: 004c73cd (CONDITIONAL_JUMP)  ; LAB_004c73cd
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c76d4
     MOV ESI,dword ptr [0x005be368]      ; 004c76d7 | DAT_005be368
-    FLD float ptr [0x0059fd60]          ; 004c76dd | DAT_0059fd60
+    FLD float ptr [0x0059fd60]          ; 004c76dd | FLOAT_0059fd60
     PUSH ESI                            ; 004c76e3 | DAT_01e57284
     FSTP float ptr [EAX + 0x578]        ; 004c76e4
     CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590 ; 004c76ea
@@ -660,7 +660,7 @@ section .text
         ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
     ADD ESP,0x10                        ; 004c792f
     MOV EDX,dword ptr [EDI + 0x574]     ; 004c7932
-    PUSH dword ptr [0x0059fd68]         ; 004c7938 | DAT_0059fd68
+    PUSH dword ptr [0x0059fd68]         ; 004c7938 | FLOAT_0059fd68
     PUSH EDX                            ; 004c793e
     CALL sound_sndmain.cpp_setSfxVolume_FUN_005270d0 ; 004c793f
         ;   XREF to: 005270d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxVolume_FUN_005270d0()

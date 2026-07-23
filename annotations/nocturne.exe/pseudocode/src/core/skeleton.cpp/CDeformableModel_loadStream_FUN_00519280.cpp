@@ -54,7 +54,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *par
     iVar1 = _fgetc(param_2);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  iVar1 = _fscanf(param_2,&DAT_005916d9,&local_64);
+  iVar1 = _fscanf(param_2,"%d\n",&local_64);
   if (iVar1 == 1) goto LAB_005192e4;
 LAB_005192c1:
   do {
@@ -129,7 +129,7 @@ LAB_005192e4:
                            piVar3 + 0x12);
         if (iVar2 != 4) goto LAB_005192c1;
         for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
-          iVar5 = _fscanf(param_2,&DAT_005917f5,param_1 + iVar1 * 0x18 + iVar2 + 0x314);
+          iVar5 = _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
           if (iVar5 != 1) goto LAB_005192c1;
         }
       }
@@ -144,7 +144,7 @@ LAB_005192e4:
           _fscanf(param_2,"\"%[^\"]\", %d, %d\n",piVar3,piVar3 + 0x17,piVar3 + 0x12);
         }
         for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
-          _fscanf(param_2,&DAT_005917d8,param_1 + iVar1 * 0x18 + iVar2 + 0x314);
+          _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
         }
         for (iVar2 = 0; iVar2 < *param_1; iVar2 = iVar2 + 1) {
           _fscanf(param_2,"%d,%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x309,
@@ -159,7 +159,7 @@ LAB_005192e4:
     for (local_20 = 0; local_20 < *param_1; local_20 = local_20 + 1) {
       for (local_18 = 0; local_18 < param_1[local_20 + 0xb]; local_18 = local_18 + 1) {
         pbVar6 = (byte *)(param_1[local_20 + 0x10] + local_18 * 0x34);
-        iVar1 = _fscanf(param_2,&DAT_005917f9,local_30);
+        iVar1 = _fscanf(param_2,"%d\n",local_30);
         if (iVar1 != 1) goto LAB_005192c1;
         *pbVar6 = local_30[0];
         for (iVar1 = 0; iVar1 < (int)(uint)*pbVar6; iVar1 = iVar1 + 1) {
@@ -202,7 +202,7 @@ LAB_005192e4:
     } while (iVar1 != 10);
     for (iVar1 = 0; iVar1 < *param_1; iVar1 = iVar1 + 1) {
       for (iVar2 = 0; iVar2 < param_1[iVar1 + 0x1a]; iVar2 = iVar2 + 1) {
-        iVar5 = _fscanf(param_2,&DAT_0059182c,param_1[iVar1 + 0x29] + iVar2 * 4);
+        iVar5 = _fscanf(param_2,"%d\n",param_1[iVar1 + 0x29] + iVar2 * 4);
         if (iVar5 != 1) goto LAB_005192c1;
       }
     }
@@ -255,7 +255,7 @@ LAB_005192e4:
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     for (iVar1 = 0; iVar1 < local_60; iVar1 = iVar1 + 1) {
-      _fscanf(param_2,&DAT_00591855,param_1 + iVar1 + 0x9bf);
+      _fscanf(param_2,"%d\n",param_1 + iVar1 + 0x9bf);
     }
   }
   if (local_64 < 7) {

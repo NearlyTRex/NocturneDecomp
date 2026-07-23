@@ -9,7 +9,7 @@
 ;   FUN_004c79a0 at 004c7b22
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059fd64
+;   float FLOAT_0059fd64 = 112
 ;   undefined4 DAT_01c74640
 ;   undefined4 DAT_01c74740
 ;   undefined4 DAT_01c74744
@@ -71,7 +71,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c7067
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 004c706c
-    FLD float ptr [0x0059fd64]          ; 004c706f | DAT_0059fd64
+    FLD float ptr [0x0059fd64]          ; 004c706f | FLOAT_0059fd64
     PUSH 0x3f800000                     ; 004c7075
     MOV dword ptr [0x01c74740],EBX      ; 004c707a | DAT_01c74740
     PUSH 0x1c74640                      ; 004c7080 | DAT_01c74640

@@ -11,7 +11,7 @@
 ;   string s_gb-die[1,6].wav_00582262
 ;   string s_gb-hit[1,6].wav_00582272
 ;   float FLOAT_00582282 = 50
-;   undefined4 DAT_0059dcb4
+;   float FLOAT_0059dcb4 = 0.5
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_01c775ec
@@ -55,7 +55,7 @@ section .text
     TEST EDI,EDI                        ; 004996ef
     JZ 0x00499823                       ; 004996f1
         ;   XREF to: 00499823 (CONDITIONAL_JUMP)  ; LAB_00499823
-    MOV EAX,[0x0059dcb4]                ; 004996f7 | DAT_0059dcb4
+    MOV EAX,[0x0059dcb4]                ; 004996f7 | FLOAT_0059dcb4
         ;   Label: LAB_004996f7
     MOV dword ptr [EBX + 0xbc8c],EAX    ; 004996fc
     FLD float ptr [ESI + 0x4]           ; 00499702

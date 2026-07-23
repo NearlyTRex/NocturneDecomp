@@ -22,10 +22,10 @@
 ;   core_set.cpp_FUN_00509a80 at 00509ad1
 ;
 ; Referenced Globals:
-;   undefined4 s_renderStaticLights_:_%3.2f_ms_005904f9+1
-;   undefined4 DAT_0059051a
-;   undefined4 DAT_00590522
-;   undefined4 DAT_0059052a
+;   TerminatedCString s_renderStaticLights_3_2f_005904fa
+;   double DOUBLE_0059051a = 0.0555555555555556
+;   double DOUBLE_00590522 = 0.0000152587890625
+;   double DOUBLE_0059052a = 1000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f0
@@ -331,16 +331,16 @@ section .text
     SUB EAX,EDI                         ; 00509a30
     MOV dword ptr [ESP + 0x2c],EAX      ; 00509a32
     FILD dword ptr [ESP + 0x2c]         ; 00509a36
-    FMUL double ptr [0x0059051a]        ; 00509a3a | DAT_0059051a
+    FMUL double ptr [0x0059051a]        ; 00509a3a | DOUBLE_0059051a
     MOV EAX,[0x005b9354]                ; 00509a40 | DAT_005b9354
-    FMUL double ptr [0x00590522]        ; 00509a45 | DAT_00590522
+    FMUL double ptr [0x00590522]        ; 00509a45 | DOUBLE_00590522
     FLD float ptr [EAX + 0x264]         ; 00509a4b | DAT_01c77850
     FXCH                                ; 00509a51
-    FMUL double ptr [0x0059052a]        ; 00509a53 | DAT_0059052a
+    FMUL double ptr [0x0059052a]        ; 00509a53 | DOUBLE_0059052a
     FDIVRP                              ; 00509a59
     SUB ESP,0x8                         ; 00509a5b
     FSTP double ptr [ESP]               ; 00509a5e
-    PUSH 0x5904fa                       ; 00509a61 | s_renderStaticLights_:_%3.2f_ms_005904f9+1
+    PUSH 0x5904fa                       ; 00509a61 | = "renderStaticLights : %3.2f ms\n"
     MOV EBP,dword ptr [0x005ad350]      ; 00509a66 | PTR_DAT_005ad350
     PUSH EBP                            ; 00509a6c | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00509a6d

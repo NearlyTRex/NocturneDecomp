@@ -12,8 +12,8 @@
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e30
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a216c
-;   undefined4 DAT_005a2170
+;   float FLOAT_005a216c = 20
+;   float FLOAT_005a2170 = 10000
 ;   undefined4 DAT_005bea88
 ;   undefined4 DAT_02dbd370
 ;
@@ -33,11 +33,11 @@ section .text
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00525b7d
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
     FLD double ptr [0x005bea88]         ; 00525b82 | DAT_005bea88
-    FLD float ptr [0x005a216c]          ; 00525b88 | DAT_005a216c
+    FLD float ptr [0x005a216c]          ; 00525b88 | FLOAT_005a216c
     FMUL ST1                            ; 00525b8e
     FLD float ptr [0x02dbd370]          ; 00525b90 | DAT_02dbd370
     FMUL ST2                            ; 00525b96
-    FLD float ptr [0x005a2170]          ; 00525b98 | DAT_005a2170
+    FLD float ptr [0x005a2170]          ; 00525b98 | FLOAT_005a2170
     FMULP ST3                           ; 00525b9e
     ADD ESP,0xc                         ; 00525ba0
     MOV EAX,EBX                         ; 00525ba3

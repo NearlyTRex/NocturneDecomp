@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 147,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
@@ -345,8 +345,8 @@
     },
     {
       "addr": "00587ec4",
-      "name": "DAT_00587ec4",
-      "type": "undefined4",
+      "name": "s_rb_00587ec4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -524,15 +524,7 @@
       "line": 15,
       "match": "DAT_00587ed1",
       "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00587ec4",
-      "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",&DAT_00587ec4);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",\"rb\");",
       "type": "undefined_data"
     },
     {

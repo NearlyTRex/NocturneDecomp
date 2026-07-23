@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -189,9 +189,9 @@
   "globals": [
     {
       "addr": "005938e6",
-      "name": "DAT_005938e6",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005938e6",
+      "type": "double",
+      "value": "0.00200000000000000"
     },
     {
       "addr": "02dc84a8",
@@ -355,7 +355,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < _DAT_005938e6) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < 0.002) {",
       "type": "unnamed_param"
     },
     {
@@ -363,7 +363,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < _DAT_005938e6) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < 0.002) {",
       "type": "unnamed_param"
     },
     {
@@ -371,7 +371,7 @@
       "line": 14,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < _DAT_005938e6) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < 0.002) {",
       "type": "bitcast_double_pair"
     },
     {

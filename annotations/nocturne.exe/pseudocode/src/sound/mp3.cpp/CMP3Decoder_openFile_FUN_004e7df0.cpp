@@ -15,13 +15,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char 
   int iVar2;
   int iVar3;
   
-  iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(">sound" + 1,param_2);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_2);
   if (iVar2 < 1) {
     _DAT_01cc4800 = "..\\sound\\mp3.cpp";
     _DAT_01cc4804 = 0xe0a;
     FUN_004c8440("Can't open %s",param_2);
   }
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,&DAT_0058b95d);
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,"rb");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\sound\\mp3.cpp";
     _DAT_01cc4804 = 0xe0f;

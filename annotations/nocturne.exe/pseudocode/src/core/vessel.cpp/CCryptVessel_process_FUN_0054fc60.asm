@@ -18,11 +18,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s__00597472+9
-;   undefined4 DAT_00597483
-;   undefined4 DAT_0059748b
-;   undefined4 DAT_00597493
-;   undefined4 DAT_0059749b
+;   double DOUBLE_0059747b = 8
+;   double DOUBLE_00597483 = 16
+;   float FLOAT_0059748b = -16
+;   double DOUBLE_00597493 = 3.14159265350000
+;   float FLOAT_0059749b = 1.700000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_01cae0e8
@@ -52,7 +52,7 @@ section .text
     JNZ 0x0054ff70                      ; 0054fc7c
         ;   XREF to: 0054ff70 (CONDITIONAL_JUMP)  ; LAB_0054ff70
     FLD float ptr [ESP + 0x50]          ; 0054fc82
-    FMUL double ptr [0x00597493]        ; 0054fc86 | DAT_00597493
+    FMUL double ptr [0x00597493]        ; 0054fc86 | DOUBLE_00597493
     FADD float ptr [EBX + 0x658]        ; 0054fc8c
     FSTP float ptr [EBX + 0x658]        ; 0054fc92
     MOV ESI,dword ptr [EBX + 0x2cc]     ; 0054fc98
@@ -269,7 +269,7 @@ section .text
     MOV dword ptr [ESI + 0xc],EAX       ; 0054ff26
     FLD float ptr [EBX + 0x3e0]         ; 0054ff29
     LEA EAX,[EBX + 0x3ec]               ; 0054ff2f
-    FADD float ptr [0x0059749b]         ; 0054ff35 | DAT_0059749b
+    FADD float ptr [0x0059749b]         ; 0054ff35 | FLOAT_0059749b
     LEA ESI,[EBX + 0x30]                ; 0054ff3b
     FSTP float ptr [EBX + 0x3e0]        ; 0054ff3e
     CMP EAX,ESI                         ; 0054ff44
@@ -292,16 +292,16 @@ section .text
         ;   XREF to: 0054fc98 (UNCONDITIONAL_JUMP)  ; LAB_0054fc98
     FLD float ptr [ESP + 0x50]          ; 0054ff70
         ;   Label: LAB_0054ff70
-    FMUL double ptr [0x0059747b]        ; 0054ff74 | s__00597472+9
+    FMUL double ptr [0x0059747b]        ; 0054ff74 | DOUBLE_0059747b
     FADD float ptr [EBX + 0x7dc]        ; 0054ff7a
     FST float ptr [EBX + 0x7dc]         ; 0054ff80
-    FCOMP double ptr [0x00597483]       ; 0054ff86 | DAT_00597483
+    FCOMP double ptr [0x00597483]       ; 0054ff86 | DOUBLE_00597483
     FNSTSW AX                           ; 0054ff8c
     SAHF                                ; 0054ff8e
     JC 0x0054fc98                       ; 0054ff8f
         ;   XREF to: 0054fc98 (CONDITIONAL_JUMP)  ; LAB_0054fc98
     FLD float ptr [EBX + 0x7dc]         ; 0054ff95
-    FADD float ptr [0x0059748b]         ; 0054ff9b | DAT_0059748b
+    FADD float ptr [0x0059748b]         ; 0054ff9b | FLOAT_0059748b
     FSTP float ptr [EBX + 0x7dc]        ; 0054ffa1
     JMP 0x0054fc98                      ; 0054ffa7
         ;   XREF to: 0054fc98 (UNCONDITIONAL_JUMP)  ; LAB_0054fc98

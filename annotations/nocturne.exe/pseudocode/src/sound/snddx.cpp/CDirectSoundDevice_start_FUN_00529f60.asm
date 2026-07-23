@@ -10,7 +10,7 @@
 ;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
 ;   string s_Position_secondary_buffer_to_0_00594127
 ;   string s_Play_the_secondary_buffer_00594146
-;   undefined4 DAT_00594167
+;   double DOUBLE_00594167 = 0.5
 ;   undefined4 DAT_02dc921c
 ;   undefined4 DAT_02dc9228
 ;   undefined4 DAT_02dc922c
@@ -54,7 +54,7 @@ section .text
     IMUL EAX,dword ptr [0x02dc9234]     ; 00529f9c | DAT_02dc9234
     MOV EBX,dword ptr [0x02dc9230]      ; 00529fa3 | DAT_02dc9230
     IMUL EAX,EBX                        ; 00529fa9
-    FMUL double ptr [0x00594167]        ; 00529fac | DAT_00594167
+    FMUL double ptr [0x00594167]        ; 00529fac | DOUBLE_00594167
     MOV ESI,dword ptr [0x02dc923c]      ; 00529fb2 | DAT_02dc923c
     FSTP double ptr [ESP]               ; 00529fb8
     XOR EBX,EBX                         ; 00529fbb

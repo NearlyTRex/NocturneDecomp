@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(int param_1)
           } while (iVar2 < _DAT_01fb9b54 * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00515420(piVar4,iVar1,local_18);
-        _sprintf(local_118,&DAT_0059079a,piVar4 + 1);
+        _sprintf(local_118,"%son",piVar4 + 1);
         iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,local_118);
         if (iVar2 != 0) {
           *(uint *)(iVar1 + 0x1cb4) = 1;
@@ -51,7 +51,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(int param_1)
         if (iVar2 != 0) {
           *(uint *)(iVar1 + 0x1cb4) = 0;
         }
-        iVar2 = _strnicmp(piVar4 + 1,&DAT_005907a5,4);
+        iVar2 = _strnicmp(piVar4 + 1,"moon",4);
         if (iVar2 == 0) {
           if (*(int *)(param_1 + 0x15aa60) == 0) {
             *(uint *)(iVar1 + 0x1cb4) = 0;

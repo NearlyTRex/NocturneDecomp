@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_smiley.dfm_00591eed
-;   undefined4 DAT_005a1f9c
-;   undefined4 DAT_005a1fa0
+;   float FLOAT_005a1f9c = 50
+;   float FLOAT_005a1fa0 = 100
 ;   undefined1* PTR_core_smiley.cpp_CSmiley_setup_FUN_0051fd90_005a1fb4 = 0051fd90
 ;
 ; Called Functions:
@@ -37,9 +37,9 @@ section .text
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0051fd2b
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 0051fd35
     MOV dword ptr [EBX + 0xbd58],0x0    ; 0051fd3f
-    FLD float ptr [0x005a1f9c]          ; 0051fd49 | DAT_005a1f9c
+    FLD float ptr [0x005a1f9c]          ; 0051fd49 | FLOAT_005a1f9c
     MOV dword ptr [EBX + 0xbd5c],0x0    ; 0051fd4f
-    FLD float ptr [0x005a1fa0]          ; 0051fd59 | DAT_005a1fa0
+    FLD float ptr [0x005a1fa0]          ; 0051fd59 | FLOAT_005a1fa0
     MOV dword ptr [EBX + 0xbd60],0x0    ; 0051fd5f
     ADD ESP,0x8                         ; 0051fd69
     MOV dword ptr [EBX + 0xbd64],0x1    ; 0051fd6c

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -186,8 +186,8 @@
   "globals": [
     {
       "addr": "0058ba22",
-      "name": "s_..\\core\\netgame.cpp_0058ba20+2",
-      "type": "undefined4",
+      "name": "s_core_netgame_cpp_0058ba22",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -198,39 +198,39 @@
     },
     {
       "addr": "0058c2fa",
-      "name": "s__0058c2b6+0x44",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c2fa",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "0058c302",
-      "name": "DAT_0058c302",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c302",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "0058c30a",
-      "name": "DAT_0058c30a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c30a",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "0058c312",
-      "name": "DAT_0058c312",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c312",
+      "type": "double",
+      "value": "20"
     },
     {
       "addr": "0058c31a",
-      "name": "DAT_0058c31a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c31a",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "0058c322",
-      "name": "DAT_0058c322",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058c322",
+      "type": "double",
+      "value": "5"
     },
     {
       "addr": "01cc4800",
@@ -578,7 +578,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((local_154 < (float)_DAT_0058c312) && (local_28 = 0, 0 < *(int *)(param_1 + 0x1c))) {",
+      "text": "if ((local_154 < (float)20) && (local_28 = 0, 0 < *(int *)(param_1 + 0x1c))) {",
       "type": "unnamed_param"
     },
     {

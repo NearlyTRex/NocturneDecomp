@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_00592d82
 ;   string s_SfxSlot::kill_-_must_be_locked!_00592d97
-;   undefined4 DAT_00592dbe
+;   double DOUBLE_00592dbe = 0.0500000000000000
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -138,7 +138,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 00524748
     FLD float ptr [ESP + 0x4]           ; 0052474b
         ;   Label: LAB_0052474b
-    FMUL double ptr [0x00592dbe]        ; 0052474f | DAT_00592dbe
+    FMUL double ptr [0x00592dbe]        ; 0052474f | DOUBLE_00592dbe
     FLD float ptr [ESP]                 ; 00524755
     FCOMPP                              ; 00524758
     FNSTSW AX                           ; 0052475a

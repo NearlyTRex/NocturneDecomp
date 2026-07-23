@@ -22,7 +22,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 at 00460b0e
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\matrix.c_005881ea+1
+;   TerminatedCString s_engine_matrix_c_005881eb
 ;   string s_Matrix_unbalance_005881fe
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
@@ -543,7 +543,7 @@ section .text
     MOV dword ptr [0x01c03a08],ECX      ; 004cda8a | DAT_01c03a08
     JMP 0x004cd4bd                      ; 004cda90
         ;   XREF to: 004cd4bd (UNCONDITIONAL_JUMP)  ; LAB_004cd4bd
-    MOV EBX,0x5881eb                    ; 004cda95 | s_..\engine\matrix.c_005881ea+1
+    MOV EBX,0x5881eb                    ; 004cda95 | = "..\\engine\\matrix.c"
         ;   Label: LAB_004cda95
     MOV ESI,0x31c                       ; 004cda9a
     PUSH 0x5881fe                       ; 004cda9f | = "Matrix unbalance"

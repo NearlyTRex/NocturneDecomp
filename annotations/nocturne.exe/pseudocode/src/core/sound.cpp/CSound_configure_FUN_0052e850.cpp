@@ -13,16 +13,16 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_0052e850(uint param_1)
   int iVar2;
   
   fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(1);
-  if (0x3E800000 < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(1,0x3E800000);
+  if (0.25f < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(1,0.25f);
   }
   fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(0);
-  if (0x3E800000 < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(0,0x3E800000);
+  if (0.25f < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(0,0.25f);
   }
   fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(2);
-  if (0x3F800000 < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(2,0x3F800000);
+  if (1.0f < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(2,1.0f);
   }
   iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
   if (iVar2 == 0) {
@@ -42,7 +42,7 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_0052e850(uint param_1)
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
       return;
     }
-    sound_sndmain_cpp_startSfx_FUN_005265a0("@splash-music-44.wav" + 1);
+    sound_sndmain_cpp_startSfx_FUN_005265a0("splash-music-44.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   return;

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00596d15
+;   double DOUBLE_00596d15 = 0.200000000000000
 ;   undefined4 DAT_005a3788
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     JGE 0x005496a0                      ; 00549651
         ;   XREF to: 005496a0 (CONDITIONAL_JUMP)  ; LAB_005496a0
     FILD dword ptr [EDX + 0x4]          ; 00549653
-    FMUL double ptr [0x00596d15]        ; 00549656 | DAT_00596d15
+    FMUL double ptr [0x00596d15]        ; 00549656 | DOUBLE_00596d15
     FILD dword ptr [EDX + 0x8]          ; 0054965c
     FADDP                               ; 0054965f
     FST float ptr [ESP + 0x4]           ; 00549661

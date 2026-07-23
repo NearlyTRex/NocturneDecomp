@@ -50,11 +50,11 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507eca
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\water.cpp_0059753e+1
+;   TerminatedCString s_core_water_cpp_0059753f
 ;   string s_Too_many_visible_water_tiles!_00597551
 ;   string s_Vis_water_tiles_:_%d,_SqFt_:_%f_0059756f
-;   undefined4 DAT_0059758f
-;   undefined4 DAT_00597597
+;   double DOUBLE_0059758f = 0.5
+;   double DOUBLE_00597597 = 1.10000000000000
 ;   undefined4 DAT_005a3e8c
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
@@ -129,7 +129,7 @@ section .text
     ADD ESP,0x8                         ; 00550882
     FLD float ptr [ESP + 0x70]          ; 00550885
     FADD float ptr [ESP + 0x28]         ; 00550889
-    FLD double ptr [0x0059758f]         ; 0055088d | DAT_0059758f
+    FLD double ptr [0x0059758f]         ; 0055088d | DOUBLE_0059758f
     FXCH                                ; 00550893
     FMUL ST1                            ; 00550895
     FLD float ptr [ESP + 0x78]          ; 00550897
@@ -141,7 +141,7 @@ section .text
     FMUL ST3                            ; 005508ab
     FXCH                                ; 005508ad
     FMULP ST3                           ; 005508af
-    FMUL double ptr [0x00597597]        ; 005508b1 | DAT_00597597
+    FMUL double ptr [0x00597597]        ; 005508b1 | DOUBLE_00597597
     XOR ECX,ECX                         ; 005508b7
     FLDZ                                ; 005508b9
     MOV dword ptr [0x02dd1224],ECX      ; 005508bb | DAT_02dd1224
@@ -173,8 +173,8 @@ section .text
     FLD float ptr [ESP + 0x30]          ; 00550924
         ;   Label: LAB_00550924
     FSUB float ptr [ESP + 0x78]         ; 00550928
-    FMUL double ptr [0x0059758f]        ; 0055092c | DAT_0059758f
-    FMUL double ptr [0x00597597]        ; 00550932 | DAT_00597597
+    FMUL double ptr [0x0059758f]        ; 0055092c | DOUBLE_0059758f
+    FMUL double ptr [0x00597597]        ; 00550932 | DOUBLE_00597597
     FST float ptr [ESP + 0x88]          ; 00550938
     FCOMP float ptr [ESP + 0x94]        ; 0055093f
     FNSTSW AX                           ; 00550946
@@ -413,7 +413,7 @@ section .text
     CMP dword ptr [0x02dd1234],0x1000   ; 00550c5a | DAT_02dd1234
     JL 0x00550c88                       ; 00550c64
         ;   XREF to: 00550c88 (CONDITIONAL_JUMP)  ; LAB_00550c88
-    MOV EAX,0x59753f                    ; 00550c66 | s_..\core\water.cpp_0059753e+1
+    MOV EAX,0x59753f                    ; 00550c66 | = "..\\core\\water.cpp"
     MOV EDX,0x136                       ; 00550c6b
     PUSH 0x597551                       ; 00550c70 | = "Too many visible water tiles!"
     MOV [0x01cc4800],EAX                ; 00550c75 | DAT_01cc4800

@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   string s_%s_has_no_guard_trigger!_00596e78
-;   undefined4 DAT_00596e95
-;   undefined4 DAT_00596e99
-;   undefined4 DAT_00596e9d
+;   float FLOAT_00596e95 = -15
+;   float FLOAT_00596e99 = 15
+;   float FLOAT_00596e9d = 0.5
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005a379c
 ;   undefined4 DAT_005a37a0
@@ -110,7 +110,7 @@ section .text
     MOV dword ptr [ESP + 0xd4],ECX      ; 0054a1ff
     MOV dword ptr [ESP + 0x148],EAX     ; 0054a206
     FXCH ST5                            ; 0054a20d
-    FLD float ptr [0x00596e95]          ; 0054a20f | DAT_00596e95
+    FLD float ptr [0x00596e95]          ; 0054a20f | FLOAT_00596e95
     FXCH                                ; 0054a215
     FADD ST0,ST1                        ; 0054a217
     FXCH ST5                            ; 0054a219
@@ -118,7 +118,7 @@ section .text
     FXCH ST4                            ; 0054a21d
     FADDP                               ; 0054a21f
     FXCH ST2                            ; 0054a221
-    FLD float ptr [0x00596e99]          ; 0054a223 | DAT_00596e99
+    FLD float ptr [0x00596e99]          ; 0054a223 | FLOAT_00596e99
     FXCH                                ; 0054a229
     FADD ST0,ST1                        ; 0054a22b
     FXCH ST2                            ; 0054a22d
@@ -244,7 +244,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0054a37d
     FADD float ptr [EDX + 0x4]          ; 0054a380
     FXCH                                ; 0054a383
-    FLD float ptr [0x00596e9d]          ; 0054a385 | DAT_00596e9d
+    FLD float ptr [0x00596e9d]          ; 0054a385 | FLOAT_00596e9d
     FXCH                                ; 0054a38b
     FMUL ST1                            ; 0054a38d
     FXCH ST2                            ; 0054a38f

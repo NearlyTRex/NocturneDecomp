@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 597,
+    "complexity_score": 581,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 112,
-    "suspect_count": 47,
+    "pseudocode_lines": 111,
+    "suspect_count": 46,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 432
+    "total_lines": 431
   },
   "cross_references": [
     {
@@ -247,8 +246,8 @@
     },
     {
       "addr": "00595e17",
-      "name": "s_eDoorMoveNone_returned_by_checkD_00595e16+1",
-      "type": "undefined4",
+      "name": "s_eDoorMoveNone_returned_b_00595e17",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -271,15 +270,15 @@
     },
     {
       "addr": "00595ea7",
-      "name": "DAT_00595ea7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595ea7",
+      "type": "double",
+      "value": "0.999900000000000"
     },
     {
       "addr": "00595eaf",
-      "name": "DAT_00595eaf",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595eaf",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "005b6d50",
@@ -370,16 +369,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_0053fc60(int param_1)",
@@ -387,7 +378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((*(int *)(param_1 + 0xbca0) != 0) && (*(int *)(param_1 + 0x1faa0) == 0)) &&",
@@ -395,7 +386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((*(int *)(param_1 + 0xbca0) != 0) && (*(int *)(param_1 + 0x1faa0) == 0)) &&",
@@ -403,7 +394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(param_1), iVar1 == 0)) &&",
@@ -411,7 +402,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x1fa3c) == 0)) {",
@@ -419,7 +410,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1 + 0x150;",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar4 = FUN_004b5110(param_1);",
@@ -435,23 +426,23 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x1fa04) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1fa04) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
       "text": "*(int *)(param_1 + 0x1fa04));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1fa04) != 0) {",
@@ -459,23 +450,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1fa04));",
+      "text": "FUN_0046fcd0(0x01BCD074,\"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s\",*(int *)(param_1 + 0x1fa04))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -483,7 +466,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x1c,1);",
@@ -491,7 +482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
@@ -499,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -507,7 +498,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
@@ -515,7 +506,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -523,7 +514,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
@@ -531,7 +522,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -539,7 +530,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_004b5270(param_1);",
@@ -547,7 +538,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -555,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_0053c800(param_1);",
@@ -563,7 +554,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -571,7 +562,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(param_1,\"!CBodyPart\");",
@@ -579,7 +570,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -587,7 +578,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(param_1);",
@@ -595,7 +586,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(param_1);",
@@ -603,7 +594,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -611,7 +602,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(param_1);",
@@ -619,7 +610,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);",
@@ -627,7 +618,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x24f0) == 0) &&",
@@ -635,15 +626,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0), (float)_DAT_00595eaf < fVar2)) {",
+      "text": "(param_1,0), (float)0.98999999999999999 < fVar2)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_004b52f0(param_1);",
@@ -651,7 +642,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -659,7 +650,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x1f,1);",
@@ -667,7 +658,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(param_1);",
@@ -675,7 +666,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -683,7 +674,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(param_1);",
@@ -691,7 +682,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -699,7 +690,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(param_1);",
@@ -707,7 +698,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -715,7 +706,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,\"CBodyPart\");",
@@ -723,7 +714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",
@@ -731,7 +722,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbca0) = 0;",

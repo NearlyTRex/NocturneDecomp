@@ -16,7 +16,7 @@ void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(uint param_1,int param_
   int local_14;
   
   if (20000 < param_2) {
-    _DAT_01cc4800 = "o@..\\core\\set.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\set.cpp";
     _DAT_01cc4804 = 0xce7;
     FUN_004c8440("CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",param_2,20000);
   }

@@ -18,12 +18,12 @@
 ;   FUN_004c9cf0 at 004c9d59
 ;
 ; Referenced Globals:
-;   undefined4 s_manpuz-chargegemloop-red.wav_00587fc8+2
+;   TerminatedCString s_manpuz_chargegemloop_red_00587fca
 ;   string s_manpuz-chargegemloop-green.wav_00587fe7
 ;   string s_manpuz-chargegemloop-blue.wav_00588006
-;   undefined4 DAT_00588026
-;   undefined4 DAT_005a0044
-;   undefined4 DAT_005a0048
+;   float FLOAT_00588026 = 255
+;   float FLOAT_005a0044 = 2
+;   float FLOAT_005a0048 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -48,9 +48,9 @@ section .text
     MOV ESI,dword ptr [ESP + 0x40]      ; 004cb017
     MOV EDI,dword ptr [ESP + 0x44]      ; 004cb01b
     FLD float ptr [ESP + 0x48]          ; 004cb01f
-    FMUL float ptr [0x00588026]         ; 004cb023 | DAT_00588026
+    FMUL float ptr [0x00588026]         ; 004cb023 | FLOAT_00588026
     FST float ptr [ESP + 0x14]          ; 004cb029
-    FDIV float ptr [0x005a0044]         ; 004cb02d | DAT_005a0044
+    FDIV float ptr [0x005a0044]         ; 004cb02d | FLOAT_005a0044
     LEA EAX,[EDI*0x4 + 0x0]             ; 004cb033
     SUB EAX,EDI                         ; 004cb03a
     SHL EAX,0x3                         ; 004cb03c
@@ -69,7 +69,7 @@ section .text
     ADD ESP,0xc                         ; 004cb05f
     MOV EAX,ESP                         ; 004cb062
     PUSH EAX                            ; 004cb064
-    PUSH 0x587fca                       ; 004cb065 | s_manpuz-chargegemloop-red.wav_00587fc8+2
+    PUSH 0x587fca                       ; 004cb065 | = "manpuz-chargegemloop-red.wav"
     LEA EAX,[EBX + 0xac]                ; 004cb06a
     PUSH EAX                            ; 004cb070
     PUSH dword ptr [ESP + 0x34]         ; 004cb071
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20()
     ADD ESP,0x14                        ; 004cb0fa
     FLD float ptr [ESP + 0x14]          ; 004cb0fd
-    FDIV float ptr [0x005a0048]         ; 004cb101 | DAT_005a0048
+    FDIV float ptr [0x005a0048]         ; 004cb101 | FLOAT_005a0048
     FLD float ptr [ESP + 0xc]           ; 004cb107
     FSUB float ptr [EBX]                ; 004cb10b
     MOV EDX,0x1                         ; 004cb10d

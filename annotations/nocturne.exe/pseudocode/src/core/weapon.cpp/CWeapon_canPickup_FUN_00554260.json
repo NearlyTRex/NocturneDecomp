@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 205,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 17,
+    "pseudocode_lines": 24,
+    "suspect_count": 16,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 101
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -177,9 +176,9 @@
     },
     {
       "addr": "00597c01",
-      "name": "DAT_00597c01",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00597c01",
+      "type": "double",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -250,16 +249,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,uint param_2)",
@@ -267,7 +258,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,uint param_2)",
@@ -275,7 +266,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((((*(int *)(param_1 + 0x2fc) == 0) && (*(int *)(param_1 + 0x2cc) == 0)) &&",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((((*(int *)(param_1 + 0x2fc) == 0) && (*(int *)(param_1 + 0x2cc) == 0)) &&",
@@ -291,7 +282,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x554) != 0)) &&",
@@ -299,7 +290,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "SQRT(*(float *)(param_1 + 0x354) * *(float *)(param_1 + 0x354) +",
@@ -307,7 +298,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "SQRT(*(float *)(param_1 + 0x354) * *(float *)(param_1 + 0x354) +",
@@ -315,7 +306,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x34c) * *(float *)(param_1 + 0x34c) +",
@@ -323,7 +314,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x34c) * *(float *)(param_1 + 0x34c) +",
@@ -331,7 +322,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x350) * *(float *)(param_1 + 0x350)))) ||",
@@ -339,7 +330,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x350) * *(float *)(param_1 + 0x350)))) ||",
@@ -347,7 +338,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x2fc) != 0)) {",
@@ -355,7 +346,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"CIcePick\");",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"CHero\");",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x2cc) != 0) && (*(int *)(param_1 + 0x2cc) != 3)) {",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x2cc) != 0) && (*(int *)(param_1 + 0x2cc) != 3)) {",

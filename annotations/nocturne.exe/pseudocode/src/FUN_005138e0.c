@@ -131,7 +131,7 @@ void FUN_005138e0(int *param_1)
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      _sprintf(local_c4,&DAT_00590c5c,(double)*(float *)(&DAT_02663604 + local_3c * 4));
+      _sprintf(local_c4,"%g",(double)*(float *)(&DAT_02663604 + local_3c * 4));
       iVar6 = local_2c;
       engine_2d_c_drawText_FUN_00402600(local_c4,local_2c);
       engine_2d_c_drawText_FUN_00402600(local_60 + local_3c * 0x68);

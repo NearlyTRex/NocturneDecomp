@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 100,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 49
@@ -197,8 +196,8 @@
     },
     {
       "addr": "005881be",
-      "name": "DAT_005881be",
-      "type": "undefined4",
+      "name": "s_type_005881be",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -293,16 +292,8 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x198,&DAT_005881be);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x198,\"type\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005881be",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x198,&DAT_005881be);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

@@ -16,7 +16,7 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(uint
     return;
   }
   if (*(int *)*param_1 <= param_2) {
-    _DAT_01cc4800 = "?..\\core\\motion.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\motion.cpp";
     _DAT_01cc4804 = 0x274;
     FUN_004c8440("CMotionController::setDesiredState - invalid state index");
   }

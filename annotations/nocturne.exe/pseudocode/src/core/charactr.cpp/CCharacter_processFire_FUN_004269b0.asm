@@ -32,8 +32,8 @@
 ;   double DOUBLE_00579fea = 0.0200000000000000
 ;   double DOUBLE_00579ff2 = 0.400000000000000
 ;   double DOUBLE_00579ffa = 0.5
-;   undefined4 DAT_0059b08c
-;   undefined4 DAT_0059b090
+;   float FLOAT_0059b08c = 2
+;   float FLOAT_0059b090 = 3
 ;   undefined4 DAT_00765aa0
 ;   undefined4 DAT_00765aa4
 ;
@@ -110,7 +110,7 @@ section .text
     TEST ESI,ESI                        ; 00426a38
     JLE 0x00426a7e                      ; 00426a3a
         ;   XREF to: 00426a7e (CONDITIONAL_JUMP)  ; LAB_00426a7e
-    FLD float ptr [0x0059b090]          ; 00426a3c | DAT_0059b090
+    FLD float ptr [0x0059b090]          ; 00426a3c | FLOAT_0059b090
     FLD double ptr [0x00579fda]         ; 00426a42 | DOUBLE_00579fda
     MOV ESI,EBX                         ; 00426a48
     FLD float ptr [ESI + 0x2f28]        ; 00426a4a
@@ -288,7 +288,7 @@ section .text
         ;   XREF to: 00426cc9 (CONDITIONAL_JUMP)  ; LAB_00426cc9
     FLD float ptr [EBP + 0x18]          ; 00426c7c
     LEA EAX,[EBX + 0x2f14]              ; 00426c7f
-    FMUL float ptr [0x0059b08c]         ; 00426c85 | DAT_0059b08c
+    FMUL float ptr [0x0059b08c]         ; 00426c85 | FLOAT_0059b08c
     MOV dword ptr [ESP + 0x48],EAX      ; 00426c8b
     FSTP float ptr [ESP + 0x2c]         ; 00426c8f
     MOV EAX,dword ptr [ESP + 0x48]      ; 00426c93
@@ -372,13 +372,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x48]      ; 00426d67
     FADD float ptr [EAX + 0x14]         ; 00426d6b
     FST float ptr [EAX + 0x14]          ; 00426d6e
-    FCOMP float ptr [0x0059b090]        ; 00426d71 | DAT_0059b090
+    FCOMP float ptr [0x0059b090]        ; 00426d71 | FLOAT_0059b090
     FNSTSW AX                           ; 00426d77
     SAHF                                ; 00426d79
     JBE 0x00426cab                      ; 00426d7a
         ;   XREF to: 00426cab (CONDITIONAL_JUMP)  ; LAB_00426cab
     MOV EAX,dword ptr [ESP + 0x48]      ; 00426d80
-    MOV EDX,dword ptr [0x0059b090]      ; 00426d84 | DAT_0059b090
+    MOV EDX,dword ptr [0x0059b090]      ; 00426d84 | FLOAT_0059b090
     MOV dword ptr [EAX + 0x14],EDX      ; 00426d8a
     MOV EAX,dword ptr [ESP + 0x50]      ; 00426d8d
     MOV EDI,dword ptr [EAX + 0x28558]   ; 00426d91

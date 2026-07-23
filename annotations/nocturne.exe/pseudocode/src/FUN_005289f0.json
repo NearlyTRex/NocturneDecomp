@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 264,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 17,
+    "pseudocode_lines": 73,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 285
+    "total_lines": 284
   },
   "cross_references": [
     {
@@ -262,14 +262,14 @@
   "globals": [
     {
       "addr": "00593a1e",
-      "name": "s_DeviceName_00593a1d+1",
-      "type": "undefined4",
+      "name": "s_DeviceName_00593a1e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00593a29",
-      "name": "DAT_00593a29",
-      "type": "undefined4",
+      "name": "s_Bits_00593a29",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -280,8 +280,8 @@
     },
     {
       "addr": "00593a37",
-      "name": "DAT_00593a37",
-      "type": "undefined4",
+      "name": "s_Hz_00593a37",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -298,8 +298,8 @@
     },
     {
       "addr": "00593a57",
-      "name": "DAT_00593a57",
-      "type": "undefined4",
+      "name": "s_Mute_00593a57",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -500,12 +500,12 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getString_FUN_004bd910(param_1,\"@DeviceName\" + 1,local_194,0x100)",
+      "text": "engine_ini_cpp_CIniFile_getString_FUN_004bd910(param_1,\"DeviceName\",local_194,0x100);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_005bea74",
       "severity": "mild",
       "text": "DAT_005bea74 = 0xffffffff;",
@@ -513,23 +513,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a29,&local_30);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Bits\",&local_30);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00593a29",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a29,&local_30);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Channels\",&local_2c);",
@@ -537,23 +529,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a37,&local_28);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Hz\",&local_28);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00593a37",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a37,&local_28);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"HwMixingEnabled\",&local_24);",
@@ -561,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(param_1,\"MaxSwLatency\",&local_20);",
@@ -569,23 +553,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a57,&local_24);",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Mute\",&local_24);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00593a57",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,&DAT_00593a57,&local_24);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,local_94,&local_1c);",
@@ -593,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(param_1,local_94,&local_18);",

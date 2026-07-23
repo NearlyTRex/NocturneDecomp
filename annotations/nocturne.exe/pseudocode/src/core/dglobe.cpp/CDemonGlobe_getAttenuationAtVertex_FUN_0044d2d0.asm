@@ -23,7 +23,7 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 at 0050b69f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059bff8
+;   float FLOAT_0059bff8 = 0.00390625
 ;   undefined4 DAT_0059bffc
 ;   undefined4 DAT_01c70710
 ;
@@ -43,13 +43,13 @@ section .text
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0044d2df
     LEA EBX,[EBP + -0x20]               ; 0044d2e2
     FILD dword ptr [EAX]                ; 0044d2e5
-    FMUL float ptr [0x0059bff8]         ; 0044d2e7 | DAT_0059bff8
+    FMUL float ptr [0x0059bff8]         ; 0044d2e7 | FLOAT_0059bff8
     FSTP float ptr [EBX]                ; 0044d2ed
     FILD dword ptr [EAX + 0x4]          ; 0044d2ef
-    FMUL float ptr [0x0059bff8]         ; 0044d2f2 | DAT_0059bff8
+    FMUL float ptr [0x0059bff8]         ; 0044d2f2 | FLOAT_0059bff8
     FSTP float ptr [EBX + 0x4]          ; 0044d2f8
     FILD dword ptr [EAX + 0x8]          ; 0044d2fb
-    FMUL float ptr [0x0059bff8]         ; 0044d2fe | DAT_0059bff8
+    FMUL float ptr [0x0059bff8]         ; 0044d2fe | FLOAT_0059bff8
     FSTP float ptr [EBX + 0x8]          ; 0044d304
     FLD float ptr [EBP + -0x20]         ; 0044d307
     LEA EAX,[EDX + 0x24]                ; 0044d30a

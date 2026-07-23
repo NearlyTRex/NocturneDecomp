@@ -21,7 +21,7 @@ int __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(int param_1,float pa
     _DAT_01cc4804 = 0x4c9;
     FUN_004c8440("CMimic::processMorph - can't process morph unless we've started morph!");
   }
-  fVar1 = param_2 / _DAT_005a05e4 + *(float *)(param_1 + 0x47578);
+  fVar1 = param_2 / 1.0f + *(float *)(param_1 + 0x47578);
   *(float *)(param_1 + 0x47578) = fVar1;
   if (1.0 <= fVar1) {
     core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720

@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_moloch_h.dfm_0058a712
-;   string s_molochToDemon_0058a71f
+;   TerminatedCString s_moloch_h_dfm_0058a712
+;   TerminatedCString s_molochToDemon_0058a71f
 ;   undefined4 s_olochToDemon_0058a71f+1
 ;   undefined4 s_lochToDemon_0058a71f+2
 ;   undefined4 s_ochToDemon_0058a71f+3
-;   string s_molochToHuman_0058a72d
+;   TerminatedCString s_molochToHuman_0058a72d
 ;   undefined4 s_olochToHuman_0058a72d+1
 ;   undefined4 s_lochToHuman_0058a72d+2
 ;   undefined4 s_ochToHuman_0058a72d+3

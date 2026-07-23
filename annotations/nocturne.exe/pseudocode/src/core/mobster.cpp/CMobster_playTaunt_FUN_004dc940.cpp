@@ -40,7 +40,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int pa
       iVar5 = iVar5 + 1;
     } while (iVar5 < 3);
     if (0.0 < *(float *)(param_1 + 0xbd3c)) {
-      *(float *)(param_1 + 0xbd3c) = *(float *)(param_1 + 0xbd3c) + _DAT_0058a4c9;
+      *(float *)(param_1 + 0xbd3c) = *(float *)(param_1 + 0xbd3c) + 5.0f;
       iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbdc4));
       if (iVar4 == 0) {
         iVar5 = 0;

@@ -43,7 +43,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   int local_14;
   
   bVar10 = 0;
-  if ((float)_DAT_00591bb3 < param_4) {
+  if ((float)0.001 < param_4) {
     iVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
     local_34 = param_1 + 0x6b0;
     if (*(int *)(param_1 + 0x2250) == 0) {
@@ -144,7 +144,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       }
     }
     else {
-      _DAT_01cc4800 = "MbP?..\\core\\skeleton.cpp" + 4;
+      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
       _DAT_01cc4804 = 0xad5;
       FUN_004c8440("Write me!");
     }

@@ -11,7 +11,7 @@
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30 at 00511b3d
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\path.cpp_0058ce3d+2
+;   TerminatedCString s_core_path_cpp_0058ce3f
 ;   string s_Global_pathmap_list_corruption_0058ce50
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -39,7 +39,7 @@ section .text
         ;   Label: LAB_004f1ea1
     JNZ 0x004f1ecc                      ; 004f1ea8
         ;   XREF to: 004f1ecc (CONDITIONAL_JUMP)  ; LAB_004f1ecc
-    MOV EAX,0x58ce3f                    ; 004f1eaa | s_..\core\path.cpp_0058ce3d+2
+    MOV EAX,0x58ce3f                    ; 004f1eaa | = "..\\core\\path.cpp"
     MOV EDX,0x6a1                       ; 004f1eaf
     PUSH 0x58ce50                       ; 004f1eb4 | = "Global pathmap list corruption"
     MOV [0x01cc4800],EAX                ; 004f1eb9 | DAT_01cc4800

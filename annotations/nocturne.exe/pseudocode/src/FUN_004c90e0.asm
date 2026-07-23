@@ -14,7 +14,7 @@
 ;   string s_In_stores_10/26/99_00587e7f
 ;   string s_www.nocturnegame.com_00587e92
 ;   string s_Press_any_key_to_continue..._00587ea7
-;   undefined4 DAT_00587ec4
+;   TerminatedCString s_rb_00587ec4
 ;   string s_enemy.pod_00587ec7
 ;   undefined4 DAT_00587ed1
 ;   undefined4 DAT_005b9284
@@ -55,7 +55,7 @@ section .text
     PUSH EDI                            ; 004c90e2
     PUSH EBP                            ; 004c90e3
     SUB ESP,0x100                       ; 004c90e4
-    PUSH 0x587ec4                       ; 004c90ea | DAT_00587ec4
+    PUSH 0x587ec4                       ; 004c90ea | = "rb"
     PUSH 0x587ec7                       ; 004c90ef | = "enemy.pod"
     PUSH 0x587ed1                       ; 004c90f4 | DAT_00587ed1
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004c90f9

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(uint param_1)
 
 {
@@ -26,9 +24,9 @@ int core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(uint param_1)
   *(uint *)(iVar1 + 0x194) = 0x40a00000;
   *(uint *)(iVar1 + 400) = 0x41700000;
   fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f8ccccd);
-  *(float *)(iVar1 + 0x19c) = fVar3 * _DAT_00596edd;
+  *(float *)(iVar1 + 0x19c) = fVar3 * 10.0f;
   fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f8ccccd);
-  *(float *)(iVar1 + 0x198) = fVar3 * _DAT_00596ee1;
+  *(float *)(iVar1 + 0x198) = fVar3 * 2.0f;
   uVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
   *(uint *)(iVar1 + 0x1a4) = 0;
   *(uint *)(iVar1 + 0x1a8) = 0;

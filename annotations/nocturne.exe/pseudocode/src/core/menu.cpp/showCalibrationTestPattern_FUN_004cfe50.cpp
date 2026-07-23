@@ -33,7 +33,7 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004cfe50(char *param_1
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                             (">  Press any key to continue." + 1);
+                             ("  Press any key to continue.");
   iVar5 = -1;
   pcVar6 = local_110;
   do {

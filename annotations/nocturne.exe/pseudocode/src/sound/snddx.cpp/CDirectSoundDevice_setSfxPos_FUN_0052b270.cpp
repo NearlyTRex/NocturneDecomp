@@ -93,7 +93,7 @@ bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(uint param_1,int 
     if (0.0 < dVar1) {
       if (dVar1 < 1.0) {
         join_0x00000008_0x00000000_ =
-             (double)floor(dVar1 * 0.6931471805599453 * _DAT_0059467f);
+             (double)floor(dVar1 * 0.6931471805599453 * 868.58900000000006);
         fVar7 = (float10)round((float10)join_0x00000008_0x00000000_);
         local_20 = (int *)(int)ROUND(fVar7);
         if ((int)local_20 < 1) {

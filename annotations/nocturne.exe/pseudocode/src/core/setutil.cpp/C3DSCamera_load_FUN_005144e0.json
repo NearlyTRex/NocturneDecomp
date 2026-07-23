@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 775,
+    "complexity_score": 730,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 69,
+    "suspect_count": 65,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "undefined_data",
       "unnamed_param",
       "unrolled_memcpy"
     ],
@@ -188,8 +187,8 @@
   "globals": [
     {
       "addr": "00590c71",
-      "name": "DAT_00590c71",
-      "type": "undefined4",
+      "name": "s_s_00590c71",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -206,8 +205,8 @@
     },
     {
       "addr": "00590c89",
-      "name": "DAT_00590c89",
-      "type": "undefined4",
+      "name": "s_f_00590c89",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -230,8 +229,8 @@
     },
     {
       "addr": "00590cab",
-      "name": "DAT_00590cab",
-      "type": "undefined4",
+      "name": "s_d_00590cab",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -248,8 +247,8 @@
     },
     {
       "addr": "00590cc3",
-      "name": "DAT_00590cc3",
-      "type": "undefined4",
+      "name": "s_d_00590cc3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -388,6 +387,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "C3DSCamera_load_FUN_005144e0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidscanf",
+          "column": 3,
+          "line": 20,
+          "message": "sscanf() without field width limits can crash with huge input data.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
@@ -434,16 +450,8 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "sscanf(local_110,&DAT_00590c71,param_1);",
+      "text": "sscanf(local_110,\"%s\\n\",param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00590c71",
-      "severity": "mild",
-      "text": "sscanf(local_110,&DAT_00590c71,param_1);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -538,7 +546,7 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590c89,param_1 + 0x140);",
+      "text": "_fscanf(param_2,\"%f\\n\",param_1 + 0x140);",
       "type": "unnamed_param"
     },
     {
@@ -546,16 +554,8 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590c89,param_1 + 0x140);",
+      "text": "_fscanf(param_2,\"%f\\n\",param_1 + 0x140);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_00590c89",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590c89,param_1 + 0x140);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -754,7 +754,7 @@
       "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cab,param_1 + 0x14c);",
+      "text": "_fscanf(param_2,\"%d\\n\",param_1 + 0x14c);",
       "type": "unnamed_param"
     },
     {
@@ -762,16 +762,8 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cab,param_1 + 0x14c);",
+      "text": "_fscanf(param_2,\"%d\\n\",param_1 + 0x14c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_00590cab",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cab,param_1 + 0x14c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -882,7 +874,7 @@
       "line": 61,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cc3,param_1 + 0x174);",
+      "text": "_fscanf(param_2,\"%d\\n\",param_1 + 0x174);",
       "type": "unnamed_param"
     },
     {
@@ -890,16 +882,8 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cc3,param_1 + 0x174);",
+      "text": "_fscanf(param_2,\"%d\\n\",param_1 + 0x174);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_00590cc3",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_00590cc3,param_1 + 0x174);",
-      "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

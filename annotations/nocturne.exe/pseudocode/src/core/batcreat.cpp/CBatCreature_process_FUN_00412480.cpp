@@ -102,7 +102,7 @@ void core_batcreat_cpp_CBatCreature_process_FUN_00412480(int param_1,float param
       local_ec = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
       local_28 = SQRT(local_ec * local_ec + local_f4 * local_f4 + local_f0 * local_f0);
       local_1c = local_28;
-      if (local_28 < 0x40600000) {
+      if (local_28 < 3.5f) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_b8,&local_f4);
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                     (local_b4 - *(float *)(param_1 + 0x34));
@@ -160,7 +160,7 @@ LAB_0041290b:
       break;
     case 1:
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-      fVar2 = 0x40600000;
+      fVar2 = 3.5f;
       if (*(int *)(param_1 + 0xbca4) == 0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         if (iVar4 == 0) {
@@ -171,7 +171,7 @@ LAB_0041290b:
         }
       }
       else {
-        local_24 = 0x40600000;
+        local_24 = 3.5f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);

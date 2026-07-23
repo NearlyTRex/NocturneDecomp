@@ -28,7 +28,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8e7c
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\mp3.cpp_0058b6e7+1
+;   TerminatedCString s_sound_mp3_cpp_0058b6e8
 ;   string s_Side_info_bad:_block_type_==_0_i_0058b6f9
 ;   string s_..\\sound\\mp3.cpp_0058b732
 ;   string s_Side_info_bad:_block_type_==_0_i_0058b743
@@ -221,7 +221,7 @@ section .text
     JNZ 0x004e45c3                      ; 004e44dd
         ;   XREF to: 004e45c3 (CONDITIONAL_JUMP)  ; LAB_004e45c3
     PUSH 0x1cd8b28                      ; 004e44e3 | DAT_01cd8b28
-    MOV EBP,0x58b6e8                    ; 004e44e8 | s_..\sound\mp3.cpp_0058b6e7+1
+    MOV EBP,0x58b6e8                    ; 004e44e8 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x65b                       ; 004e44ed
     PUSH 0x58b6f9                       ; 004e44f2 | = "Side info bad: block_type == 0 in spl..."
     MOV dword ptr [0x01cc4800],EBP      ; 004e44f7 | DAT_01cc4800

@@ -28,10 +28,10 @@
 ;   FUN_0049cc10 at 0049cd21
 ;
 ; Referenced Globals:
-;   undefined4 s_comp:_%3.2f/%3.2f_actren_:_%3.2f_00590531+1
-;   undefined4 DAT_0059055a
-;   undefined4 DAT_00590562
-;   undefined4 DAT_0059056a
+;   TerminatedCString s_comp_3_2f_3_2f_actren_3_00590532
+;   double DOUBLE_0059055a = 0.0555555555555556
+;   double DOUBLE_00590562 = 0.0000152587890625
+;   double DOUBLE_0059056a = 1000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
@@ -604,7 +604,7 @@ section .text
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
     SUB EAX,EDI                         ; 00509fea
     MOV dword ptr [EBP + -0x4],EAX      ; 00509fec
-    FLD double ptr [0x0059055a]         ; 00509fef | DAT_0059055a
+    FLD double ptr [0x0059055a]         ; 00509fef | DOUBLE_0059055a
     FILD dword ptr [EBP + -0x4]         ; 00509ff5
     FMUL ST1                            ; 00509ff8
     MOV EAX,[0x005b9354]                ; 00509ffa | DAT_005b9354
@@ -612,12 +612,12 @@ section .text
     FLD float ptr [EAX + 0x264]         ; 0050a002 | DAT_01c77850
     MOV EAX,EDI                         ; 0050a008
     FXCH                                ; 0050a00a
-    FLD double ptr [0x00590562]         ; 0050a00c | DAT_00590562
+    FLD double ptr [0x00590562]         ; 0050a00c | DOUBLE_00590562
     FXCH                                ; 0050a012
     FMUL ST1                            ; 0050a014
     SUB EAX,EDX                         ; 0050a016
     MOV dword ptr [EBP + -0x4],EAX      ; 0050a018
-    FLD double ptr [0x0059056a]         ; 0050a01b | DAT_0059056a
+    FLD double ptr [0x0059056a]         ; 0050a01b | DOUBLE_0059056a
     FXCH                                ; 0050a021
     FMUL ST1                            ; 0050a023
     FILD dword ptr [EBP + -0x4]         ; 0050a025
@@ -650,7 +650,7 @@ section .text
     FSTP double ptr [ESP]               ; 0050a062
     SUB ESP,0x8                         ; 0050a065
     FSTP double ptr [ESP]               ; 0050a068
-    PUSH 0x590532                       ; 0050a06b | s_comp:_%3.2f/%3.2f_actren_:_%3.2f_00590531+1
+    PUSH 0x590532                       ; 0050a06b | = "comp: %3.2f/%3.2f actren : %3.2f\n"
     MOV ESI,dword ptr [0x005ad350]      ; 0050a070 | PTR_DAT_005ad350
     PUSH ESI                            ; 0050a076 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0050a077

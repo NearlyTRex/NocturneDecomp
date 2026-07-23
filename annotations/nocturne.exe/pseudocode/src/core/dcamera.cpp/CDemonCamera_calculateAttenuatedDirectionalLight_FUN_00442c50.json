@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -167,9 +167,9 @@
   "globals": [
     {
       "addr": "0059bde0",
-      "name": "DAT_0059bde0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059bde0",
+      "type": "float",
+      "value": "65536"
     },
     {
       "addr": "0059bde4",
@@ -470,7 +470,7 @@
       "line": 25,
       "match": "param_4",
       "severity": "mild",
-      "text": "lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * _DAT_0059bde0) * (longlong)*param_4;",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * 65536.0f) * (longlong)*param_4;",
       "type": "unnamed_param"
     },
     {
@@ -478,7 +478,7 @@
       "line": 26,
       "match": "param_4",
       "severity": "mild",
-      "text": "lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * _DAT_0059bde0) * (longlong)param_4[1];",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * 65536.0f) * (longlong)param_4[1];",
       "type": "unnamed_param"
     },
     {
@@ -486,7 +486,7 @@
       "line": 27,
       "match": "param_4",
       "severity": "mild",
-      "text": "lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * _DAT_0059bde0) * (longlong)param_4[2];",
+      "text": "lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * 65536.0f) * (longlong)param_4[2];",
       "type": "unnamed_param"
     },
     {

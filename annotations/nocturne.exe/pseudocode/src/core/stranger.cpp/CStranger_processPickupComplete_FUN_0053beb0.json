@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -176,8 +176,8 @@
   "globals": [
     {
       "addr": "00595acf",
-      "name": "s_actionPending_=_%d_stranger.cpp_l_00595ace+1",
-      "type": "undefined4",
+      "name": "s_actionPending_d_stranger_00595acf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -274,10 +274,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1faa0),0xd49);",
+      "text": "FUN_0046fb40(0x01BCD074,\"actionPending = %d\\nstranger.cpp line %d\",*(int *)(param_1 + 0x1faa0),",
       "type": "unnamed_param"
     },
     {

@@ -15,9 +15,9 @@ uint sound_sndmain_cpp_isStreamableFile_FUN_00522970(uint param_1)
   iVar1 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_1);
   if (iVar1 < 0x200001) {
     splitpath(param_1,0,0,0,auStack_100);
-    iVar1 = _stricmp(auStack_100,&DAT_0059277e);
+    iVar1 = _stricmp(auStack_100,"mp3");
     if (iVar1 != 0) {
-      iVar1 = _stricmp(auStack_100,&DAT_00592782);
+      iVar1 = _stricmp(auStack_100,".mp3");
       if (iVar1 != 0) {
         return 0;
       }

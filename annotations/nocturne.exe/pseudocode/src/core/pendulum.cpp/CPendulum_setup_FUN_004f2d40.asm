@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x34]:1  local_34
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d008
-;   undefined4 DAT_0058d010
-;   undefined4 DAT_0058d018
+;   double DOUBLE_0058d008 = 0.03125
+;   double DOUBLE_0058d010 = 6.28318530700000
+;   float FLOAT_0058d018 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -59,14 +59,14 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 004f2da1
         ;   Label: LAB_004f2da1
     FSUB float ptr [ESP + 0x4]          ; 004f2da5
-    FMUL double ptr [0x0058d008]        ; 004f2da9 | DAT_0058d008
+    FMUL double ptr [0x0058d008]        ; 004f2da9 | DOUBLE_0058d008
     FSQRT                               ; 004f2daf
-    FMUL double ptr [0x0058d010]        ; 004f2db1 | DAT_0058d010
+    FMUL double ptr [0x0058d010]        ; 004f2db1 | DOUBLE_0058d010
     FSTP float ptr [EBX + 0x39c]        ; 004f2db7
     FLD float ptr [ESP]                 ; 004f2dbd
     FADD float ptr [ESP + 0xc]          ; 004f2dc0
     FST float ptr [ESP + 0x30]          ; 004f2dc4
-    FLD float ptr [0x0058d018]          ; 004f2dc8 | DAT_0058d018
+    FLD float ptr [0x0058d018]          ; 004f2dc8 | FLOAT_0058d018
     FXCH                                ; 004f2dce
     FMUL ST1                            ; 004f2dd0
     FLD float ptr [ESP + 0x8]           ; 004f2dd2

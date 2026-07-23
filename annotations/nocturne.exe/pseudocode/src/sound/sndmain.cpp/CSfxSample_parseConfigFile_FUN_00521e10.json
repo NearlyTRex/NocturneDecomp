@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 535,
+    "complexity_score": 485,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 190,
-    "suspect_count": 32,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -236,14 +236,14 @@
   "globals": [
     {
       "addr": "005922e5",
-      "name": "DAT_005922e5",
-      "type": "undefined4",
+      "name": "s_anon_005922e5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005922e8",
-      "name": "DAT_005922e8",
-      "type": "undefined4",
+      "name": "s_klp_005922e8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -254,8 +254,8 @@
     },
     {
       "addr": "005922f2",
-      "name": "DAT_005922f2",
-      "type": "undefined4",
+      "name": "s_sfx_005922f2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -266,8 +266,8 @@
     },
     {
       "addr": "005922fc",
-      "name": "DAT_005922fc",
-      "type": "undefined4",
+      "name": "s_rb_005922fc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -416,8 +416,8 @@
     },
     {
       "addr": "0059260a",
-      "name": "DAT_0059260a",
-      "type": "undefined4",
+      "name": "s_loop_0059260a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -434,33 +434,33 @@
     },
     {
       "addr": "00592646",
-      "name": "DAT_00592646",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00592646",
+      "type": "double",
+      "value": "0.00100000000000000"
     },
     {
       "addr": "0059264e",
-      "name": "DAT_0059264e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059264e",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005a2168",
-      "name": "DAT_005a2168",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2168",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "005a216c",
-      "name": "DAT_005a216c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a216c",
+      "type": "float",
+      "value": "20"
     },
     {
       "addr": "005a2170",
-      "name": "DAT_005a2170",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a2170",
+      "type": "float",
+      "value": "10000"
     },
     {
       "addr": "005bea88",
@@ -860,36 +860,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005922e8",
-      "severity": "mild",
-      "text": "makepath(local_23c,0,0,local_138,&DAT_005922e8);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x124) = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005922f2",
-      "severity": "mild",
-      "text": "makepath(local_340,0,0,local_138,&DAT_005922f2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005922fc",
-      "severity": "mild",
-      "text": "(local_20 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",local_340,&DAT_005922fc),",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -917,14 +893,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005922e5",
-      "severity": "mild",
-      "text": "puVar7 = (byte *)strstr(local_46c,&DAT_005922e5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 82,
       "match": "DAT_005c168c",
       "severity": "mild",
@@ -944,7 +912,7 @@
       "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x114) < (float)_DAT_0059264e) {",
+      "text": "if (*(float *)(param_1 + 0x114) < (float)0.10000000000000001) {",
       "type": "unnamed_param"
     },
     {
@@ -960,7 +928,7 @@
       "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / _DAT_005a2168;",
+      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
       "type": "unnamed_param"
     },
     {
@@ -968,7 +936,7 @@
       "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / _DAT_005a2168;",
+      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
       "type": "unnamed_param"
     },
     {
@@ -976,7 +944,7 @@
       "line": 125,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x118) < (float)_DAT_0059264e) {",
+      "text": "if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {",
       "type": "unnamed_param"
     },
     {
@@ -1026,14 +994,6 @@
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x110) = local_34;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 175,
-      "match": "DAT_0059260a",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(local_46c,&DAT_0059260a);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

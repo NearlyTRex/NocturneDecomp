@@ -17,7 +17,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint para
     _fgets(local_110,0xff,param_2);
   }
   _fgets(local_110,0xff,param_2);
-  sscanf(local_110,&DAT_00590c71,param_1);
+  sscanf(local_110,"%s\n",param_1);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_110,0xff,param_2);
   }
@@ -29,7 +29,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint para
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_110,0xff,param_2);
   }
-  _fscanf(param_2,&DAT_00590c89,param_1 + 0x140);
+  _fscanf(param_2,"%f\n",param_1 + 0x140);
   _fgets(local_110,0xff,param_2);
   _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x118,param_1 + 0x11c,param_1 + 0x120);
   _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x124,param_1 + 0x128,param_1 + 300);
@@ -50,7 +50,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint para
     *(uint *)(param_1 + 0x170) = *(uint *)(iVar1 + 0x15a868);
   }
   else {
-    _fscanf(param_2,&DAT_00590cab,param_1 + 0x14c);
+    _fscanf(param_2,"%d\n",param_1 + 0x14c);
     if (*(int *)(param_1 + 0x14c) == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00447d10
                 ((uint *)(param_1 + 0x150),param_2,*(uint *)(0x01E57284 + 0x15a8c4));
@@ -65,6 +65,6 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint para
     return;
   }
   _fgets(local_110,0xff,param_2);
-  _fscanf(param_2,&DAT_00590cc3,param_1 + 0x174);
+  _fscanf(param_2,"%d\n",param_1 + 0x174);
   return;
 }

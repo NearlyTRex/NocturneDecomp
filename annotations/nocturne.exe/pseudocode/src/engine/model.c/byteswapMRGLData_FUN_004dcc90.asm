@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004dcb84 = 004dccbd
-;   undefined4 s_..\\engine\\model.c_0058a4cc+1
+;   TerminatedCString s_engine_model_c_0058a4cd
 ;   string s_Need_a_new_byteswap!_0058a4df
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -63,7 +63,7 @@ section .text
     POP ESI                             ; 004dccd1
     POP EBX                             ; 004dccd2
     RET                                 ; 004dccd3
-    MOV EDX,0x58a4cd                    ; 004dccd4 | s_..\engine\model.c_0058a4cc+1
+    MOV EDX,0x58a4cd                    ; 004dccd4 | = "..\\engine\\model.c"
         ;   Label: caseD_13
     MOV ECX,0xce                        ; 004dccd9
     PUSH 0x58a4df                       ; 004dccde | = "Need a new byteswap!"

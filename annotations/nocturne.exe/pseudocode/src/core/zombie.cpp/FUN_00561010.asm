@@ -21,10 +21,10 @@
 ;   string s_Invalid_zombie_object_shape!_0059880e
 ;   TerminatedCString s_CBodyPart_0059882b
 ;   TerminatedCString s_s_is_going_to_try_to_pic_00598835
-;   undefined4 DAT_0059885e
-;   undefined4 DAT_00598866
-;   undefined4 DAT_0059886e
-;   undefined4 DAT_00598876
+;   double DOUBLE_0059885e = 0.333333333333333
+;   double DOUBLE_00598866 = 5
+;   double DOUBLE_0059886e = 0.400000000000000
+;   float FLOAT_00598876 = 15
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
@@ -171,8 +171,8 @@ section .text
     FMUL ST0                            ; 0056117a
     FADDP                               ; 0056117c
     FSQRT                               ; 0056117e
-    FMUL double ptr [0x0059885e]        ; 00561180 | DAT_0059885e
-    FSUBR double ptr [0x00598866]       ; 00561186 | DAT_00598866
+    FMUL double ptr [0x0059885e]        ; 00561180 | DOUBLE_0059885e
+    FSUBR double ptr [0x00598866]       ; 00561186 | DOUBLE_00598866
     FST float ptr [ESP]                 ; 0056118c
     FLD1                                ; 0056118f
     FCOMPP                              ; 00561191
@@ -261,7 +261,7 @@ section .text
     LEA EAX,[ESP + 0x128]               ; 00561298
     FLD float ptr [ESP + 0x94]          ; 0056129f
     PUSH EAX                            ; 005612a6
-    FADD double ptr [0x0059886e]        ; 005612a7 | DAT_0059886e
+    FADD double ptr [0x0059886e]        ; 005612a7 | DOUBLE_0059886e
     PUSH EBX                            ; 005612ad
     FSTP float ptr [ESP + 0xfc]         ; 005612ae
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005612b5
@@ -400,7 +400,7 @@ section .text
     LEA EAX,[ESP + 0x11c]               ; 00561489
     FLD float ptr [ESP + 0x7c]          ; 00561490
     PUSH EAX                            ; 00561494
-    FADD double ptr [0x0059886e]        ; 00561495 | DAT_0059886e
+    FADD double ptr [0x0059886e]        ; 00561495 | DOUBLE_0059886e
     PUSH EBX                            ; 0056149b
     FSTP float ptr [ESP + 0xc0]         ; 0056149c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005614a3
@@ -606,13 +606,13 @@ section .text
     FADDP                               ; 00561708
     FSQRT                               ; 0056170a
     FST float ptr [ESP + 0x4]           ; 0056170c
-    FCOMP double ptr [0x00598866]       ; 00561710 | DAT_00598866
+    FCOMP double ptr [0x00598866]       ; 00561710 | DOUBLE_00598866
     FNSTSW AX                           ; 00561716
     SAHF                                ; 00561718
     JC 0x0056112d                       ; 00561719
         ;   XREF to: 0056112d (CONDITIONAL_JUMP)  ; LAB_0056112d
     FLD float ptr [ESI + 0xbd24]        ; 0056171f
-    FMUL float ptr [0x00598876]         ; 00561725 | DAT_00598876
+    FMUL float ptr [0x00598876]         ; 00561725 | FLOAT_00598876
     FCOMP float ptr [ESP + 0x4]         ; 0056172b
     FNSTSW AX                           ; 0056172f
     SAHF                                ; 00561731

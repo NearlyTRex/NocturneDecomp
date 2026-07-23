@@ -15,14 +15,14 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float param_1)
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
-    _DAT_01cc4800 = "@..\\sound\\sndmain.cpp" + 1;
+    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
     _DAT_01cc4804 = 0x1329;
     FUN_004c8440("setMaxSwSoundLatency - can't do this while sound is active");
   }
-  if (param_1 < (float)_DAT_00593a0e) {
+  if (param_1 < (float)0.050000000000000003) {
     param_1 = 0.05;
   }
-  if (param_1 <= (float)_DAT_00593a16) {
+  if (param_1 <= (float)2) {
     DAT_005bea98 = param_1;
     return;
   }

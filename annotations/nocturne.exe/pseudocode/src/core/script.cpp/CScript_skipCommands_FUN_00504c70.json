@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 363,
+    "complexity_score": 338,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 48,
-    "suspect_count": 30,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 190
@@ -166,14 +165,14 @@
   "globals": [
     {
       "addr": "0058faef",
-      "name": "DAT_0058faef",
-      "type": "undefined4",
+      "name": "s_if_0058faef",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058faf2",
-      "name": "DAT_0058faf2",
-      "type": "undefined4",
+      "name": "s_else_0058faf2",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -364,28 +363,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0058faef",
-      "severity": "mild",
-      "text": "(iVar3 = _strnicmp(pcVar1,&DAT_0058faef,2), iVar3 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((iVar4 < 1) && (param_3 == 0)) ||",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0058faf2",
-      "severity": "mild",
-      "text": "(iVar3 = _strnicmp(pcVar1,&DAT_0058faf2,4), iVar3 != 0)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

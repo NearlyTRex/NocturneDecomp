@@ -34,7 +34,7 @@ float core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(int param_1,int param_2)
     }
     break;
   default:
-    _DAT_01cc4800 = "@..\\core\\turret.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\turret.cpp";
     _DAT_01cc4804 = 0x1c1;
     FUN_004c8440("CTurret::getCurFrame - invalid state");
   }

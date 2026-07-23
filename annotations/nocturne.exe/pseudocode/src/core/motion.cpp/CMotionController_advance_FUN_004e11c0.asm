@@ -40,10 +40,10 @@
 ;   string s_CMotionController::advance:_Twee_0058b205
 ;   string s_..\\core\\motion.cpp_0058b24b
 ;   string s_Invalid_transition_command_retur_0058b25e
-;   undefined4 DAT_0058b2ad
-;   undefined4 DAT_0058b2b5
-;   undefined4 DAT_0058b2bd
-;   undefined4 DAT_0058b2c5
+;   double DOUBLE_0058b2ad = 0.0000100000000000000
+;   double DOUBLE_0058b2b5 = 0.5
+;   double DOUBLE_0058b2bd = 0.499900000000000
+;   double DOUBLE_0058b2c5 = 0.000100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -84,7 +84,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 004e11f1
         ;   Label: LAB_004e11f1
     FLD float ptr [EAX]                 ; 004e11f4
-    FCOMP double ptr [0x0058b2ad]       ; 004e11f6 | DAT_0058b2ad
+    FCOMP double ptr [0x0058b2ad]       ; 004e11f6 | DOUBLE_0058b2ad
     FNSTSW AX                           ; 004e11fc
     SAHF                                ; 004e11fe
     JA 0x004e1223                       ; 004e11ff
@@ -217,7 +217,7 @@ section .text
     FMUL float ptr [EBX + 0x10]         ; 004e1315
     FSUBR float ptr [EBX + 0x14]        ; 004e1318
     FST float ptr [EBX + 0x14]          ; 004e131b
-    FCOMP double ptr [0x0058b2c5]       ; 004e131e | DAT_0058b2c5
+    FCOMP double ptr [0x0058b2c5]       ; 004e131e | DOUBLE_0058b2c5
     FNSTSW AX                           ; 004e1324
     SAHF                                ; 004e1326
     JNC 0x004e1332                      ; 004e1327
@@ -251,7 +251,7 @@ section .text
     POP ESI                             ; 004e1361
     POP EBX                             ; 004e1362
     RET                                 ; 004e1363
-    FLD double ptr [0x0058b2b5]         ; 004e1364 | DAT_0058b2b5
+    FLD double ptr [0x0058b2b5]         ; 004e1364 | DOUBLE_0058b2b5
         ;   Label: LAB_004e1364
     FSUB double ptr [ESP]               ; 004e136a
     JMP 0x004e125c                      ; 004e136d
@@ -321,7 +321,7 @@ section .text
     FMUL float ptr [EBX + 0x10]         ; 004e140e
     FADD float ptr [EBX + 0x14]         ; 004e1411
     FST float ptr [EBX + 0x14]          ; 004e1414
-    FCOMP double ptr [0x0058b2bd]       ; 004e1417 | DAT_0058b2bd
+    FCOMP double ptr [0x0058b2bd]       ; 004e1417 | DOUBLE_0058b2bd
     FNSTSW AX                           ; 004e141d
     SAHF                                ; 004e141f
     JBE 0x004e1332                      ; 004e1420

@@ -53,26 +53,26 @@ LAB_004ea004:
             _DAT_01cea3f4 = 0x20000;
           }
           _DAT_01cea3f8 = _DAT_01cea3f8 + _DAT_01cea3f4;
-          local_24 = (float)(_DAT_01cea3f8 - iVar2) * (float)_DAT_0058bd0a;
+          local_24 = (float)(_DAT_01cea3f8 - iVar2) * (float)1.52587890625e-05;
           if (local_24 < 0.0) {
             local_24 = 0.0;
           }
           _DAT_01cea3f4 = iVar1;
-          if (((float)_DAT_0058bd1a < local_24) || (0x40400000 < (int)local_24)) {
+          if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
             FUN_0046fe60(0x01BCD074,"Couldn't contact server to disconnect.");
             goto LAB_004ea004;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760
-                    (0x01BCD074,local_24 * _DAT_0058bd12,0x453b8000);
+                    (0x01BCD074,local_24 * 1000.0f,0x453b8000);
           while( true ) {
-            local_30 = (float)(_DAT_01cea3f8 - iVar3) * (float)_DAT_0058bd0a;
+            local_30 = (float)(_DAT_01cea3f8 - iVar3) * (float)1.52587890625e-05;
             if (local_30 < 0.0) {
               local_30 = 0.0;
             }
-            if ((float)_DAT_0058bd1a < local_30) {
+            if ((float)30 < local_30) {
               local_30 = 30.0;
             }
-            if ((float)_DAT_0058bd22 <= local_30) break;
+            if ((float)0.10000000000000001 <= local_30) break;
             iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
             _DAT_01cea3f4 = iVar1 / 0x12 - _DAT_01cea3f4;
             if (_DAT_01cea3f4 < 0) {
@@ -124,26 +124,26 @@ LAB_004ea227:
             _DAT_01cea3f4 = 0x20000;
           }
           _DAT_01cea3f8 = _DAT_01cea3f8 + _DAT_01cea3f4;
-          local_2c = (float)(_DAT_01cea3f8 - iVar2) * (float)_DAT_0058bd0a;
+          local_2c = (float)(_DAT_01cea3f8 - iVar2) * (float)1.52587890625e-05;
           if (local_2c < 0.0) {
             local_2c = 0.0;
           }
           _DAT_01cea3f4 = iVar1;
-          if (((float)_DAT_0058bd1a < local_2c) || (0x40a00000 < (int)local_2c)) {
+          if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
             FUN_0046fe60(0x01BCD074,"Couldn't connect to all clients to disconnect.");
             goto LAB_004ea227;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760
-                    (0x01BCD074,local_2c * _DAT_0058bd12,0x459c4000);
+                    (0x01BCD074,local_2c * 1000.0f,0x459c4000);
           while( true ) {
-            local_28 = (float)(_DAT_01cea3f8 - iVar3) * (float)_DAT_0058bd0a;
+            local_28 = (float)(_DAT_01cea3f8 - iVar3) * (float)1.52587890625e-05;
             if (local_28 < 0.0) {
               local_28 = 0.0;
             }
-            if ((float)_DAT_0058bd1a < local_28) {
+            if ((float)30 < local_28) {
               local_28 = 30.0;
             }
-            if ((float)_DAT_0058bd22 <= local_28) break;
+            if ((float)0.10000000000000001 <= local_28) break;
             iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
             _DAT_01cea3f4 = iVar1 / 0x12 - _DAT_01cea3f4;
             if (_DAT_01cea3f4 < 0) {

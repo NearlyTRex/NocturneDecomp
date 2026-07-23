@@ -63,8 +63,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0 at 0051dbf9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591683
-;   undefined4 DAT_0059168b
+;   float FLOAT_00591683 = 127
+;   double DOUBLE_0059168b = 127
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b4d738
@@ -528,7 +528,7 @@ section .text
         ;   XREF to: 00518cce (CONDITIONAL_JUMP)  ; LAB_00518cce
     FLD float ptr [ESP]                 ; 00518bb7
     FSQRT                               ; 00518bba
-    FDIVR double ptr [0x0059168b]       ; 00518bbc | DAT_0059168b
+    FDIVR double ptr [0x0059168b]       ; 00518bbc | DOUBLE_0059168b
     FSTP float ptr [ESP]                ; 00518bc2
     FLD float ptr [ESP]                 ; 00518bc5
         ;   Label: LAB_00518bc5
@@ -545,7 +545,7 @@ section .text
     FLD float ptr [ESP + 0xf4]          ; 00518bfa
     FLD float ptr [ESP + 0xfc]          ; 00518c01
     FXCH ST2                            ; 00518c08
-    FLD float ptr [0x00591683]          ; 00518c0a | DAT_00591683
+    FLD float ptr [0x00591683]          ; 00518c0a | FLOAT_00591683
     FXCH                                ; 00518c10
     FADD ST0,ST1                        ; 00518c12
     FXCH ST2                            ; 00518c14

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)
 
 {
@@ -21,11 +19,11 @@ float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *p
   
   iVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
   if (*(int *)(iVar7 + 0x110) < 1) {
-    fVar5 = (float)_DAT_0058773c;
+    fVar5 = (float)0.5;
     fVar1 = *(float *)(param_1 + 0x2d4);
     fVar2 = *(float *)(param_1 + 0x2cc);
     fVar3 = *(float *)(param_1 + 0x2d0);
-    fVar6 = (float)_DAT_00587744;
+    fVar6 = (float)0.10000000000000001;
     fVar4 = *(float *)(param_1 + 0x2d4);
     *param_2 = -*(float *)(param_1 + 0x2cc) * fVar5;
     param_2[1] = -0.1;

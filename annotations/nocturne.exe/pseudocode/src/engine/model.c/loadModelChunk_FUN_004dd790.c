@@ -17,7 +17,7 @@ char * __cdecl engine_model_c_loadModelChunk_FUN_004dd790(uint param_1,int param
   int iVar4;
   byte local_60 [80];
   
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,&DAT_0058a661);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,"rb");
   if (iVar2 == 0) {
     _sprintf(local_60,"Unable to open model: %s",param_1);
     _DAT_01cc4800 = "..\\engine\\model.c";

@@ -54,8 +54,8 @@ uint __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(int *param_1)
       _sprintf(acStack_130,"MyGameSettigsId: %d",_DAT_01cea404);
       engine_2d_c_drawText_FUN_00402600(acStack_130,400,0xb);
       engine_2d_c_drawText_FUN_00402600("Player",0,0x21);
-      engine_2d_c_drawText_FUN_00402600(0x58c1b1,100,0x21);
-      engine_2d_c_drawText_FUN_00402600(0x58c1b4,200,0x21);
+      engine_2d_c_drawText_FUN_00402600("IP",100,0x21);
+      engine_2d_c_drawText_FUN_00402600("Ping",200,0x21);
       engine_2d_c_drawText_FUN_00402600("Ready",300,0x21);
       engine_2d_c_drawText_FUN_00402600("heroType",400,0x21);
       engine_2d_c_drawText_FUN_00402600("gameSettings",500,0x21);
@@ -99,15 +99,15 @@ LAB_004eb75b:
         }
         else {
           if (*(float *)(iStack_1c + 0x28) < 0.0) {
-            pcVar7 = (char *)0x58c1ea;
+            pcVar7 = "?";
             goto LAB_004eb75b;
           }
           uVar10 = 0x4eb8c9;
           fVar9 = (float10)round
-                                     ((float10)*(float *)(iStack_1c + 0x28) * (float10)ram0x0058c222
-                                     );
+                                     ((float10)*(float *)(iStack_1c + 0x28) *
+                                      (float10)1000.0f);
           iStack_1c = (int)ROUND(fVar9);
-          _sprintf(&fStack_134,0x58c1e5,iStack_1c,uVar10);
+          _sprintf(&fStack_134,"%dms",iStack_1c,uVar10);
         }
         engine_2d_c_drawText_FUN_00402600(acStack_130,200,iVar3);
         if (*(int *)(iStack_1c + 0x44) == 0) {
@@ -127,10 +127,11 @@ LAB_004eb75b:
           pcVar5 = pcVar5 + 2;
         } while (cVar1 != '\0');
         engine_2d_c_drawText_FUN_00402600(acStack_130,300,iVar3);
-        _sprintf(acStack_130,0x58c1fc,*(uint *)(iStack_1c + 0x14));
+        _sprintf(acStack_130,"%d",*(uint *)(iStack_1c + 0x14))
+        ;
         engine_2d_c_drawText_FUN_00402600(acStack_130,400,iVar3);
         if (*param_1 == 1) {
-          _sprintf(acStack_130,0x58c1ff,*(uint *)(iStack_1c + 0x34));
+          _sprintf(acStack_130,"%d",*(uint *)(iStack_1c + 0x34));
           engine_2d_c_drawText_FUN_00402600(acStack_130,500,iVar3);
         }
         iVar3 = iVar3 + 0xb;
@@ -174,14 +175,14 @@ LAB_004eb75b:
             }
             if (_DAT_01cea404 != piVar4[0x15]) {
               iStack_18 = _DAT_01cea3f8 - piVar4[0x16];
-              fStack_138 = (float)iStack_18 * (float)_DAT_0058c22a;
+              fStack_138 = (float)iStack_18 * (float)1.52587890625e-05;
               if (fStack_138 < 0.0) {
                 fStack_138 = 0.0;
               }
-              if ((float)_DAT_0058c232 < fStack_138) {
+              if ((float)30 < fStack_138) {
                 fStack_138 = 30.0;
               }
-              if ((float)_DAT_0058c23a < fStack_138) {
+              if ((float)0.20000000000000001 < fStack_138) {
                 core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(param_1,iVar3);
               }
               bVar2 = false;
@@ -243,14 +244,14 @@ LAB_004eb75b:
       }
       if ((*param_1 == 2) && (DAT_005bdee4 != 0)) {
         iStack_18 = _DAT_01cea3f8 - param_1[param_1[0x45] * 0x1e + 0x18];
-        fStack_134 = (float)iStack_18 * (float)_DAT_0058c22a;
+        fStack_134 = (float)iStack_18 * (float)1.52587890625e-05;
         if (fStack_134 < 0.0) {
           fStack_134 = 0.0;
         }
-        if ((float)_DAT_0058c232 < fStack_134) {
+        if ((float)30 < fStack_134) {
           fStack_134 = 30.0;
         }
-        if ((float)_DAT_0058c23a < fStack_134) {
+        if ((float)0.20000000000000001 < fStack_134) {
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(param_1);
         }
       }

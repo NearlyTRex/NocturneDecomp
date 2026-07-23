@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 225,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 15,
+    "pseudocode_lines": 54,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 172
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -172,9 +171,9 @@
   "globals": [
     {
       "addr": "0059aea8",
-      "name": "DAT_0059aea8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059aea8",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -319,16 +318,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "uint core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2)",
@@ -336,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2)",
@@ -344,7 +335,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "((float10)((param_2 - *(float *)(param_1 + 0x19854)) *",
@@ -352,7 +343,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "((float10)((param_2 - *(float *)(param_1 + 0x19854)) *",
@@ -360,7 +351,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1 + local_18 * 0x30;",
@@ -368,7 +359,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + iVar3 * 0x30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + iVar3 * 0x30;",
@@ -377,14 +376,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + iVar3 * 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar7 = *(uint *)(param_1 + 0x12720);",
@@ -392,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + iVar2 * 4 + 0x12720));",
@@ -400,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x12724 + iVar2 * 4));",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar7 = *(uint *)(param_1 + 0x1274c);",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Raw hex address 0x421f40 assigned to bare local `uVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
+      "line": 16,
       "match": "0x421f40",
       "severity": "moderate",
       "text": "uVar9 = 0x421f40;",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Raw hex address 0x421f47 assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 20,
       "match": "0x421f47",
       "severity": "moderate",
       "text": "uVar8 = 0x421f47;",

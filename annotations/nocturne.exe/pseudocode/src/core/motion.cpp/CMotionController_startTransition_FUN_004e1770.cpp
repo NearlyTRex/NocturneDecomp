@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(int param_1,int param_2)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(int 
   uint local_18;
   
   local_18 = *(float *)(param_2 + 0xc);
-  if (local_18 == _DAT_0058b319) {
+  if (local_18 == -1.0f) {
     iVar3 = (**(code **)(*(int *)(param_1 + 0x50) + 4))
                       (param_1,*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
                        *(uint *)(param_2 + 8));

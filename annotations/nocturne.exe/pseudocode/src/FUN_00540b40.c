@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_00540b40(uint param_1)
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
@@ -30,12 +28,12 @@ int FUN_00540b40(uint param_1)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (iVar4 + -0x2480,"hotdemon.dfm");
   *(uint *)(iVar4 + -0xb3d0) = 0x3f19999a;
-  uVar2 = _DAT_005a28cc;
+  fVar2 = 50.0f;
   *(uint *)(iVar4 + -0xb3cc) = 0x3f666666;
-  uVar3 = _DAT_005a28d0;
+  fVar3 = 100.0f;
   *(uint *)(iVar4 + -0x1cc) = 1;
-  *(uint *)(iVar4 + -0xb3c8) = uVar2;
-  *(uint *)(iVar4 + -0xb3c4) = uVar3;
+  *(float *)(iVar4 + -0xb3c8) = fVar2;
+  *(float *)(iVar4 + -0xb3c4) = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

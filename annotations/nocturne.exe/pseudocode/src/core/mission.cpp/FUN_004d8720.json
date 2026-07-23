@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 745,
+    "complexity_score": 685,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 62,
+    "suspect_count": 56,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -249,8 +249,8 @@
     },
     {
       "addr": "00589aa4",
-      "name": "DAT_00589aa4",
-      "type": "undefined4",
+      "name": "s_s_00589aa4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -261,26 +261,26 @@
     },
     {
       "addr": "00589ab4",
-      "name": "DAT_00589ab4",
-      "type": "undefined4",
+      "name": "s_d_00589ab4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589ab8",
-      "name": "DAT_00589ab8",
-      "type": "undefined4",
+      "name": "s_s_00589ab8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589abc",
-      "name": "s_//_actorTypeList_00589abc",
-      "type": "string",
+      "name": "s_actorTypeList_00589abc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00589ace",
-      "name": "DAT_00589ace",
-      "type": "undefined4",
+      "name": "s_d_00589ace",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -297,8 +297,8 @@
     },
     {
       "addr": "00589ae9",
-      "name": "DAT_00589ae9",
-      "type": "undefined4",
+      "name": "s_d_00589ae9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -309,8 +309,8 @@
     },
     {
       "addr": "00589b07",
-      "name": "DAT_00589b07",
-      "type": "undefined4",
+      "name": "s_d_00589b07",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -572,7 +572,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589aa4,param_1 + 0x10);",
+      "text": "_fprintf(param_2,\"%s\\n\",param_1 + 0x10);",
       "type": "unnamed_param"
     },
     {
@@ -580,16 +580,8 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589aa4,param_1 + 0x10);",
+      "text": "_fprintf(param_2,\"%s\\n\",param_1 + 0x10);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_00589aa4",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589aa4,param_1 + 0x10);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -604,7 +596,7 @@
       "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));",
+      "text": "_fprintf(param_2,\"%d\\n\",*(uint *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
@@ -612,16 +604,8 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));",
+      "text": "_fprintf(param_2,\"%d\\n\",*(uint *)(param_1 + 0x110));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00589ab4",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ab4,*(uint *)(param_1 + 0x110));",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -644,16 +628,8 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ab8,iVar5);",
+      "text": "_fprintf(param_2,\"%s\\n\",iVar5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00589ab8",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ab8,iVar5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -676,23 +652,15 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ace,DAT_00763e94);",
+      "text": "_fprintf(param_2,\"%d\\n\",DAT_00763e94);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_00589ace",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ace,DAT_00763e94);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_00763e94",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ace,DAT_00763e94);",
+      "text": "_fprintf(param_2,\"%d\\n\",DAT_00763e94);",
       "type": "undefined_data"
     },
     {
@@ -748,16 +716,8 @@
       "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ae9,uVar2);",
+      "text": "_fprintf(param_2,\"%d\\n\",uVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00589ae9",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589ae9,uVar2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -780,16 +740,8 @@
       "line": 59,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589b07,iVar5);",
+      "text": "_fprintf(param_2,\"%d\\n\",iVar5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_00589b07",
-      "severity": "mild",
-      "text": "_fprintf(param_2,&DAT_00589b07,iVar5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

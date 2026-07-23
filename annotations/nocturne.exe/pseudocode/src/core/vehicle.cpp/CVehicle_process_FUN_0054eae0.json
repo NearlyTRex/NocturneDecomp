@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -248,8 +248,8 @@
   "globals": [
     {
       "addr": "00597320",
-      "name": "s_model-t-horn?.wav_0059731f+1",
-      "type": "undefined4",
+      "name": "s_model_t_horn_wav_00597320",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -290,39 +290,39 @@
     },
     {
       "addr": "005973a8",
-      "name": "DAT_005973a8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005973a8",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005973ac",
-      "name": "DAT_005973ac",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005973ac",
+      "type": "float",
+      "value": "3.700000"
     },
     {
       "addr": "005973b0",
-      "name": "DAT_005973b0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005973b0",
+      "type": "float",
+      "value": "1.570796"
     },
     {
       "addr": "005973b8",
-      "name": "DAT_005973b8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005973b8",
+      "type": "double",
+      "value": "200"
     },
     {
       "addr": "005973c0",
-      "name": "DAT_005973c0",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005973c0",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005973c8",
-      "name": "DAT_005973c8",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005973c8",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005baf90",
@@ -1002,7 +1002,7 @@
       "line": 95,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = *(float *)(param_1 + 0x8bc) * _DAT_005973a8;",
+      "text": "local_34 = *(float *)(param_1 + 0x8bc) * 2.0f;",
       "type": "unnamed_param"
     },
     {
@@ -1010,7 +1010,7 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = *(float *)(param_1 + 0x8c0) * _DAT_005973a8;",
+      "text": "local_30 = *(float *)(param_1 + 0x8c0) * 2.0f;",
       "type": "unnamed_param"
     },
     {
@@ -1018,7 +1018,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = _DAT_005973a8 * *(float *)(param_1 + 0x8c4);",
+      "text": "local_2c = 2.0f * *(float *)(param_1 + 0x8c4);",
       "type": "unnamed_param"
     },
     {
@@ -1138,7 +1138,7 @@
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x34) + _DAT_005973b0;",
+      "text": "fVar3 = *(float *)(param_1 + 0x34) + 1.570796f;",
       "type": "unnamed_param"
     },
     {
@@ -1146,7 +1146,7 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + _DAT_005973ac;",
+      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + 3.7f;",
       "type": "unnamed_param"
     },
     {
@@ -1154,7 +1154,7 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + _DAT_005973ac;",
+      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + 3.7f;",
       "type": "unnamed_param"
     },
     {
@@ -1250,7 +1250,7 @@
       "line": 149,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,\"?model-t-horn?.wav\" + 1);",
+      "text": "(param_1,\"model-t-horn?.wav\");",
       "type": "unnamed_param"
     },
     {

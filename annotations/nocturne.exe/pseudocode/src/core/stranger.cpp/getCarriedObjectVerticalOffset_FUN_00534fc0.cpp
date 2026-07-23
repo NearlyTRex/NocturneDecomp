@@ -44,7 +44,7 @@ float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(uint param_1
       }
       iVar4 = iVar4 + 0xc;
     }
-    return (float)(iVar1 - local_14) * (float)_DAT_005951e7;
+    return (float)(iVar1 - local_14) * (float)0.00390625;
   }
   return 0.0;
 }

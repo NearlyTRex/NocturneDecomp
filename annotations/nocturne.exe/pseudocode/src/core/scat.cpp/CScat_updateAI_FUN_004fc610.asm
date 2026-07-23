@@ -23,14 +23,14 @@
 ;   FUN_004fbf20 at 004fc393
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058dede
-;   undefined4 DAT_0058dee6
-;   undefined4 DAT_0058deee
-;   undefined4 DAT_0058def6
-;   undefined4 DAT_0058defe
-;   undefined4 DAT_0058df06
-;   undefined4 DAT_0058df0e
-;   undefined4 DAT_0058df16
+;   double DOUBLE_0058dede = 15
+;   double DOUBLE_0058dee6 = 0.900000000000000
+;   double DOUBLE_0058deee = 8
+;   double DOUBLE_0058def6 = 0.318309886192889
+;   double DOUBLE_0058defe = 4
+;   double DOUBLE_0058df06 = 10
+;   double DOUBLE_0058df0e = 3.14159265350000
+;   double DOUBLE_0058df16 = -3.14159265350000
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -178,7 +178,7 @@ section .text
     JNZ 0x004fc9d2                      ; 004fc785
         ;   XREF to: 004fc9d2 (CONDITIONAL_JUMP)  ; LAB_004fc9d2
     FLD float ptr [ESP + 0x14]          ; 004fc78b
-    FCOMP double ptr [0x0058deee]       ; 004fc78f | DAT_0058deee
+    FCOMP double ptr [0x0058deee]       ; 004fc78f | DOUBLE_0058deee
     FNSTSW AX                           ; 004fc795
     SAHF                                ; 004fc797
     JNC 0x004fc7cf                      ; 004fc798
@@ -237,9 +237,9 @@ section .text
         ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
     MOV dword ptr [ESP + 0x7c],EAX      ; 004fc823
     FLD float ptr [ESP + 0x7c]          ; 004fc827
-    FMUL double ptr [0x0058def6]        ; 004fc82b | DAT_0058def6
+    FMUL double ptr [0x0058def6]        ; 004fc82b | DOUBLE_0058def6
     ADD ESP,0x4                         ; 004fc831
-    FMUL double ptr [0x0058defe]        ; 004fc834 | DAT_0058defe
+    FMUL double ptr [0x0058defe]        ; 004fc834 | DOUBLE_0058defe
     FLD float ptr [ESP + 0x70]          ; 004fc83a
     FCHS                                ; 004fc83e
     FSTP float ptr [ESP + 0x6c]         ; 004fc840
@@ -262,7 +262,7 @@ section .text
     MOV dword ptr [EBX + 0xbcb8],EAX    ; 004fc870
     FLD float ptr [ESP + 0x14]          ; 004fc876
         ;   Label: LAB_004fc876
-    FCOMP double ptr [0x0058df06]       ; 004fc87a | DAT_0058df06
+    FCOMP double ptr [0x0058df06]       ; 004fc87a | DOUBLE_0058df06
     FNSTSW AX                           ; 004fc880
     SAHF                                ; 004fc882
     JNC 0x004fca3c                      ; 004fc883
@@ -346,7 +346,7 @@ section .text
     FXCH                                ; 004fc95f
     FSUB float ptr [EBX + 0x1fa44]      ; 004fc961
     FXCH                                ; 004fc967
-    FMUL double ptr [0x0058df0e]        ; 004fc969 | DAT_0058df0e
+    FMUL double ptr [0x0058df0e]        ; 004fc969 | DOUBLE_0058df0e
     FXCH                                ; 004fc96f
     FST float ptr [ESP + 0x10]          ; 004fc971
     FXCH                                ; 004fc975
@@ -360,7 +360,7 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 004fc985
     FLD float ptr [EBP + 0x18]          ; 004fc989
         ;   Label: LAB_004fc989
-    FMUL double ptr [0x0058df16]        ; 004fc98c | DAT_0058df16
+    FMUL double ptr [0x0058df16]        ; 004fc98c | DOUBLE_0058df16
     FLD float ptr [ESP + 0x10]          ; 004fc992
     FXCH                                ; 004fc996
     FSTP double ptr [ESP + 0x8]         ; 004fc998
@@ -389,7 +389,7 @@ section .text
         ;   XREF to: 004fc6e3 (UNCONDITIONAL_JUMP)  ; LAB_004fc6e3
     FLD float ptr [ESP + 0x14]          ; 004fc9d2
         ;   Label: LAB_004fc9d2
-    FCOMP double ptr [0x0058dede]       ; 004fc9d6 | DAT_0058dede
+    FCOMP double ptr [0x0058dede]       ; 004fc9d6 | DOUBLE_0058dede
     FNSTSW AX                           ; 004fc9dc
     SAHF                                ; 004fc9de
     JNC 0x004fc7cf                      ; 004fc9df
@@ -401,7 +401,7 @@ section .text
     JZ 0x004fca23                       ; 004fc9f0
         ;   XREF to: 004fca23 (CONDITIONAL_JUMP)  ; LAB_004fca23
     FLD float ptr [EBX + 0x2a88]        ; 004fc9f2
-    FCOMP double ptr [0x0058dee6]       ; 004fc9f8 | DAT_0058dee6
+    FCOMP double ptr [0x0058dee6]       ; 004fc9f8 | DOUBLE_0058dee6
     FNSTSW AX                           ; 004fc9fe
     SAHF                                ; 004fca00
     JBE 0x004fca16                      ; 004fca01

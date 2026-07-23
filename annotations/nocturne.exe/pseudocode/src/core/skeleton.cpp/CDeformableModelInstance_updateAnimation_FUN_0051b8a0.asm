@@ -18,7 +18,7 @@
 ;   ... and 29 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591b63
+;   double DOUBLE_00591b63 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920()
     FLD float ptr [EBX + 0x14]          ; 0051b8b4
     ADD ESP,0x10                        ; 0051b8b7
-    FCOMP double ptr [0x00591b63]       ; 0051b8ba | DAT_00591b63
+    FCOMP double ptr [0x00591b63]       ; 0051b8ba | DOUBLE_00591b63
     FNSTSW AX                           ; 0051b8c0
     SAHF                                ; 0051b8c2
     JA 0x0051b8c7                       ; 0051b8c3

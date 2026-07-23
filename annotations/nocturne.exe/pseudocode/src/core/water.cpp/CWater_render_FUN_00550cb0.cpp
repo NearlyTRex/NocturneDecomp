@@ -58,8 +58,8 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
               (DAT_005ae704,&DAT_005c11f4 + _DAT_02dd1230 * 0x18);
     _DAT_01c038f4 = 0;
     _DAT_02dd9260 =
-         *(float *)(0x01C775EC + 0x264) * (float)_DAT_0059759f * (float)_DAT_005975a7 *
-         (float)_DAT_005975af + _DAT_02dd9260;
+         *(float *)(0x01C775EC + 0x264) * (float)3.1415926535000001 * (float)0.5 *
+         (float)2 + _DAT_02dd9260;
     local_1c = 0;
     if (0 < _DAT_02dd1234) {
       local_18 = 0;
@@ -79,9 +79,10 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_68 = 0.0;
         local_64 = 0.0;
         if (*param_1 != 0) {
-          fVar3 = (float10)fsin((float10)iVar2 * (float10)_DAT_0059759f * (float10)_DAT_005975a7 +
-                                (float10)iVar1 * (float10)_DAT_0059759f + (float10)_DAT_02dd9260);
-          local_68 = (float)(fVar3 * (float10)_DAT_005975b7);
+          fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5
+                                + (float10)iVar1 * (float10)3.1415926535000001 + (float10)_DAT_02dd9260
+                               );
+          local_68 = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
         local_60 = (int)ROUND(_DAT_005a3e8c * 0.0);
@@ -93,10 +94,10 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_6c = (float)param_1[2];
         if (*param_1 != 0) {
           local_14 = iVar1 + 1;
-          fVar3 = (float10)fsin((float10)iVar2 * (float10)_DAT_0059759f * (float10)_DAT_005975a7 +
-                                (float10)local_14 * (float10)_DAT_0059759f + (float10)_DAT_02dd9260)
-          ;
-          local_68 = (float)(fVar3 * (float10)_DAT_005975b7);
+          fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5
+                                + (float10)local_14 * (float10)3.1415926535000001 +
+                                (float10)_DAT_02dd9260);
+          local_68 = (float)(fVar3 * (float10)0.25);
         }
         local_54 = (int)ROUND(local_6c * _DAT_005a3e8c);
         local_50 = (int)ROUND(local_68 * _DAT_005a3e8c);
@@ -107,10 +108,11 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_64 = (float)param_1[2];
         if (*param_1 != 0) {
           local_14 = iVar1 + 1;
-          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_0059759f *
-                                (float10)_DAT_005975a7 + (float10)local_14 * (float10)_DAT_0059759f
-                                + (float10)_DAT_02dd9260);
-          local_68 = (float)(fVar3 * (float10)_DAT_005975b7);
+          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
+                                (float10)0.5 +
+                                (float10)local_14 * (float10)3.1415926535000001 +
+                                (float10)_DAT_02dd9260);
+          local_68 = (float)(fVar3 * (float10)0.25);
         }
         local_48 = (int)ROUND(local_6c * _DAT_005a3e8c);
         local_44 = (int)ROUND(local_68 * _DAT_005a3e8c);
@@ -120,10 +122,10 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
                   (0x01E57284,&local_6c,&local_30,2);
         local_6c = 0.0;
         if (*param_1 != 0) {
-          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_0059759f *
-                                (float10)_DAT_005975a7 + (float10)iVar1 * (float10)_DAT_0059759f +
-                                (float10)_DAT_02dd9260);
-          local_68 = (float)(fVar3 * (float10)_DAT_005975b7);
+          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
+                                (float10)0.5 + (float10)iVar1 * (float10)3.1415926535000001
+                                + (float10)_DAT_02dd9260);
+          local_68 = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
         local_3c = (int)ROUND(_DAT_005a3e8c * 0.0);

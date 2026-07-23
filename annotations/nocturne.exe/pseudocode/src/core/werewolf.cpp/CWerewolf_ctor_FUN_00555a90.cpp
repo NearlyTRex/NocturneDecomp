@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   int iVar4;
   
   iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
@@ -25,15 +23,15 @@ int core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(uint param_1)
   *(uint *)(iVar4 + 0xbd24) = 0;
   *(uint *)(iVar4 + 0xbd3c) = 1;
   *(uint *)(iVar4 + 0xbd50) = 0;
-  uVar1 = _DAT_005a42f0;
+  fVar1 = 50.0f;
   *(uint *)(iVar4 + 0xbd54) = 0x40a00000;
-  uVar2 = _DAT_005a42f4;
+  fVar2 = 100.0f;
   *(uint *)(iVar4 + 0xbd58) = 0;
-  uVar3 = 0x41200000;
+  fVar3 = 10.0f;
   *(uint *)(iVar4 + 0xbd5c) = 0;
   *(uint *)(iVar4 + 0xbd60) = 0;
-  *(uint *)(iVar4 + 0x2ddc) = uVar1;
-  *(uint *)(iVar4 + 0x2de0) = uVar2;
-  *(uint *)(iVar4 + 0xbd64) = uVar3;
+  *(float *)(iVar4 + 0x2ddc) = fVar1;
+  *(float *)(iVar4 + 0x2de0) = fVar2;
+  *(float *)(iVar4 + 0xbd64) = fVar3;
   return iVar4;
 }

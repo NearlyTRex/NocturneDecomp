@@ -28,7 +28,7 @@
 ;   FUN_00534820 at 00534832
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005951a2
+;   double DOUBLE_005951a2 = 0.5
 ;
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
@@ -43,7 +43,7 @@ section .text
     PUSH EBP                            ; 00534ad2
     SUB ESP,0x4c                        ; 00534ad3
     MOV EBX,dword ptr [ESP + 0x5c]      ; 00534ad6
-    FLD double ptr [0x005951a2]         ; 00534ada | DAT_005951a2
+    FLD double ptr [0x005951a2]         ; 00534ada | DOUBLE_005951a2
     FLD float ptr [EBX + 0x158]         ; 00534ae0
     FMUL ST1                            ; 00534ae6
     FLD float ptr [EBX + 0x158]         ; 00534ae8

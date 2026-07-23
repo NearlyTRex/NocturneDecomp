@@ -47,16 +47,16 @@ uint __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(uint param_1)
   }
   engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(param_1,"DeviceName",local_184);
   sound_sndmain_cpp_getAudioFormat_FUN_00528160(&local_18,&local_20,&local_1c);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a8b,local_18);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"Bits",local_18);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"Channels",local_20);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a99,local_1c);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"Hz",local_1c);
   uVar2 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005284e0();
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"HwMixingEnabled",uVar2);
   local_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_00528970();
   engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(param_1,"MaxSwLatency",local_14);
   uVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
   iVar3 = 0;
-  uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593ab9,uVar2);
+  uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"Mute",uVar2);
   if (0 < 0x00000020) {
     do {
       _sprintf(local_84,"SfxChannel%dEnabled",iVar3);

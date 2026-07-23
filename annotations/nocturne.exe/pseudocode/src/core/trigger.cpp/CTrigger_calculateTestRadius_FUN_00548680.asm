@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00548658 = 0054869a
-;   undefined4 DAT_00596b17
+;   double DOUBLE_00596b17 = 10
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_00567121
@@ -53,7 +53,7 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 005486d7
     FADDP                               ; 005486db
     FSQRT                               ; 005486dd
-    FADD double ptr [0x00596b17]        ; 005486df | DAT_00596b17
+    FADD double ptr [0x00596b17]        ; 005486df | DOUBLE_00596b17
     SUB ESP,0x8                         ; 005486e5
     FSTP double ptr [ESP]               ; 005486e8
     CALL crt_math.c_ceil_FUN_00567121   ; 005486eb

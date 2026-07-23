@@ -86,7 +86,7 @@ uint FUN_0053d100(int param_1)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
   }
   local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,6);
-  if ((float)_DAT_00595c97 < local_14) {
+  if ((float)0.98999999999999999 < local_14) {
     iVar2 = 0;
     if (*(int *)(param_1 + 0x24f0) != 0) {
       iVar2 = *(int *)(param_1 + 0x24f0) + 0x20;
@@ -148,7 +148,7 @@ switchD_0053d2cf_caseD_3:
   }
   local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
                               (param_1,uVar3);
-  bVar1 = (float)_DAT_00595c9f < local_14;
+  bVar1 = (float)0.94999999999999996 < local_14;
   if ((*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 1) && (*(int *)(param_1 + 0x2a84) == 8)) {
     bVar1 = true;
 LAB_0053d31f:

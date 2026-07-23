@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -282,8 +282,8 @@
   "globals": [
     {
       "addr": "00591b6b",
-      "name": "s_..\\core\\skeleton.cpp_00591b67+4",
-      "type": "undefined4",
+      "name": "s_core_skeleton_cpp_00591b6b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -294,9 +294,9 @@
     },
     {
       "addr": "00591b8b",
-      "name": "DAT_00591b8b",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00591b8b",
+      "type": "double",
+      "value": "0.00100000000000000"
     },
     {
       "addr": "01cc4800",
@@ -697,7 +697,7 @@
       "line": 55,
       "match": "param_4",
       "severity": "mild",
-      "text": "if ((float)_DAT_00591b8b < param_4) {",
+      "text": "if ((float)0.001 < param_4) {",
       "type": "unnamed_param"
     },
     {

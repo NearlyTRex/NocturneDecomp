@@ -57,9 +57,9 @@ uint __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(uint *param_1)
       } while (cVar1 != '\0');
       memmove(&local_114,local_113,~uVar4 - 1);
     }
-    iVar5 = _stricmp(&local_114,&DAT_0059373a);
+    iVar5 = _stricmp(&local_114,"wav");
     if (iVar5 != 0) {
-      iVar5 = _stricmp(&local_114,&DAT_00593747);
+      iVar5 = _stricmp(&local_114,"mp3");
       if (iVar5 == 0) {
         if ((DAT_02dbd348 & 1) == 0) {
           DAT_02dbd348 = DAT_02dbd348 | 1;
@@ -89,7 +89,7 @@ LAB_00527b18:
       FUN_004c8440("getSampleInfo - can't determine length for %s",param_1);
       return 1;
     }
-    iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,&DAT_0059373e);
+    iVar5 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,"rb");
     if (iVar5 != 0) {
       local_14 = _ftell(iVar5);
       iVar3 = sound_sndmain_cpp_parseWavFile_FUN_00521830(iVar5,&local_14,param_1);

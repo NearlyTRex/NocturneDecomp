@@ -40,7 +40,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(uint
         if ((float)param_1[0x41] < local_30) {
           local_30 = (float)param_1[0x41];
         }
-        fVar3 = (float)param_1[0x3f] * (float)_DAT_00592dbe;
+        fVar3 = (float)param_1[0x3f] * (float)0.050000000000000003;
         if (local_30 < fVar3 || (local_30 == fVar3) != 0) {
           local_20 = 20.0;
         }

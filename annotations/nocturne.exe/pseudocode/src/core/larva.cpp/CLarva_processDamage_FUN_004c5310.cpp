@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_larva_cpp_CLarva_processDamage_FUN_004c5310(int param_1,int param_2)
 
 {
   float fVar1;
   int iVar2;
-  byte *puVar3;
+  char *pcVar3;
   uint uVar4;
   byte local_e8 [100];
   byte local_84 [100];
@@ -25,18 +23,18 @@ void core_larva_cpp_CLarva_processDamage_FUN_004c5310(int param_1,int param_2)
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd2c));
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbd28));
     if (iVar2 == 0) {
-      if ((float)_DAT_0058789c <= *(float *)(param_1 + 0x2614)) {
-        if (_DAT_005878a4 <= (double)*(float *)(param_1 + 0x2614)) {
-          puVar3 = &DAT_00587867;
+      if ((float)0.29999999999999999 <= *(float *)(param_1 + 0x2614)) {
+        if (0.69999999999999996 <= (double)*(float *)(param_1 + 0x2614)) {
+          pcVar3 = "big";
         }
         else {
-          puVar3 = &DAT_00587863;
+          pcVar3 = "med";
         }
       }
       else {
-        puVar3 = &DAT_0058785f;
+        pcVar3 = "sml";
       }
-      _sprintf(local_84,"l%s-shot?.wav",puVar3);
+      _sprintf(local_84,"l%s-shot?.wav",pcVar3);
       uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_84);
       *(uint *)(param_1 + 0xbd28) = uVar4;
     }
@@ -50,18 +48,18 @@ void core_larva_cpp_CLarva_processDamage_FUN_004c5310(int param_1,int param_2)
     }
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd28));
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0xbd2c));
-    if ((float)_DAT_0058789c <= *(float *)(param_1 + 0x2614)) {
-      if (_DAT_005878a4 <= (double)*(float *)(param_1 + 0x2614)) {
-        puVar3 = &DAT_00587867;
+    if ((float)0.29999999999999999 <= *(float *)(param_1 + 0x2614)) {
+      if (0.69999999999999996 <= (double)*(float *)(param_1 + 0x2614)) {
+        pcVar3 = "big";
       }
       else {
-        puVar3 = &DAT_00587863;
+        pcVar3 = "med";
       }
     }
     else {
-      puVar3 = &DAT_0058785f;
+      pcVar3 = "sml";
     }
-    _sprintf(local_e8,"l%s-die?.wav",puVar3);
+    _sprintf(local_e8,"l%s-die?.wav",pcVar3);
     uVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_e8);
     *(uint *)(param_1 + 0xbd28) = uVar4;
   }

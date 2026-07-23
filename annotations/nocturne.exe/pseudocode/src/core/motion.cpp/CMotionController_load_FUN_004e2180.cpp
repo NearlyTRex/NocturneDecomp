@@ -13,7 +13,7 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(int param_1,uin
 {
   int iVar1;
   
-  _fscanf(param_2,&DAT_0058b3b5);
+  _fscanf(param_2," ");
   *(byte *)(param_1 + 0x30) = 0;
   *(uint *)(param_1 + 4) = 0xffffffff;
   iVar1 = _fscanf(param_2,"%d,%f",param_1 + 4,param_1 + 8);

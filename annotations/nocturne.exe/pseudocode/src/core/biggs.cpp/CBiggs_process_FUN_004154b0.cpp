@@ -100,8 +100,8 @@ LAB_0041558b:
   }
   if ((*(int *)(param_1 + 0xbea0) != 0) &&
      (param_2 = *(float *)(param_1 + 0xbea4) + param_2, *(float *)(param_1 + 0xbea4) = param_2,
-     0x40800000 < param_2)) {
-    *(float *)(param_1 + 0xbea4) = 0x40800000;
+     4.0f < param_2)) {
+    *(float *)(param_1 + 0xbea4) = 4.0f;
     return;
   }
   return;

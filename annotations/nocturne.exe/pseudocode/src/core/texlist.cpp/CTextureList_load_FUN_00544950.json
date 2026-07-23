@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 561,
+    "complexity_score": 506,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 146,
-    "suspect_count": 37,
+    "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strchr",
       "unrolled_strcpy",
@@ -209,38 +208,38 @@
     },
     {
       "addr": "00596631",
-      "name": "DAT_00596631",
-      "type": "undefined1",
+      "name": "s_tex_00596631",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596632",
-      "name": "DAT_00596632",
-      "type": "undefined1",
+      "name": "s_tex_00596631+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00596633",
-      "name": "DAT_00596633",
-      "type": "undefined1",
+      "name": "s_tex_00596631+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00596634",
-      "name": "DAT_00596634",
-      "type": "undefined1",
+      "name": "s_tex_00596631+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00596636",
-      "name": "DAT_00596636",
-      "type": "undefined4",
+      "name": "s_rt_00596636",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596639",
-      "name": "DAT_00596639",
-      "type": "undefined4",
+      "name": "s_data_00596639",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -257,14 +256,14 @@
     },
     {
       "addr": "00596675",
-      "name": "DAT_00596675",
-      "type": "undefined4",
+      "name": "s_d_00596675",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00596679",
-      "name": "DAT_00596679",
-      "type": "undefined4",
+      "name": "s_s_00596679",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -507,44 +506,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_00596631",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_00596631;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_00596639",
-      "severity": "mild",
-      "text": "local_2c = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00596639,local_12c,&DAT_00596636);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_00596636",
-      "severity": "mild",
-      "text": "local_2c = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00596639,local_12c,&DAT_00596636);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(local_2c,&DAT_00596675,param_1);",
+      "text": "_fscanf(local_2c,\"%d\\n\",param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_00596675",
-      "severity": "mild",
-      "text": "_fscanf(local_2c,&DAT_00596675,param_1);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -601,14 +568,6 @@
       "severity": "mild",
       "text": "local_24 = param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_00596679",
-      "severity": "mild",
-      "text": "_fscanf(local_2c,&DAT_00596679,local_12c);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

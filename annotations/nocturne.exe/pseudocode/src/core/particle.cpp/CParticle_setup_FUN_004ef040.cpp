@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(uint *param_1,uint *param_2,uint *param_3)
 
 {
@@ -41,7 +39,7 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(uint *param_1,uint *
   fVar4 = (float10)fcos((float10)fVar1);
   fVar5 = (float10)fsin((float10)fVar2);
   fVar6 = (float10)fsin((float10)fVar1);
-  fVar7 = (float10)_DAT_0058cb84;
+  fVar7 = (float10)10.0f;
   param_1[4] = (float)(fVar6 * fVar7);
   param_1[3] = (float)(fVar3 * fVar7 * fVar4);
   param_1[5] = (float)(fVar5 * fVar7 * fVar4);

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 372,
+    "complexity_score": 322,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 187,
-    "suspect_count": 15,
+    "suspect_count": 10,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
@@ -263,21 +263,21 @@
     },
     {
       "addr": "00594b42",
-      "name": "DAT_00594b42",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00594b42",
+      "type": "float",
+      "value": "20"
     },
     {
       "addr": "00594b46",
-      "name": "DAT_00594b46",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b46",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "00594b5e",
-      "name": "DAT_00594b5e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00594b5e",
+      "type": "double",
+      "value": "510"
     },
     {
       "addr": "005b9354",
@@ -293,13 +293,13 @@
     },
     {
       "addr": "005bed60",
-      "name": "PTR_DAT_005bed60",
+      "name": "PTR_s_int_005bed60",
       "type": "void*",
       "value": "00594af1"
     },
     {
       "addr": "005bed64",
-      "name": "PTR_DAT_005bed64",
+      "name": "PTR_s_x_005bed64",
       "type": "void*",
       "value": "00594af5"
     },
@@ -487,38 +487,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_00594aff",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594aff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_00594afb",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594afb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00594af7",
-      "severity": "mild",
-      "text": "PTR_DAT_005bed60 = &DAT_00594af7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_00594b03",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(PTR_DAT_005bed60,&DAT_00594b03);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 101,
       "match": "DAT_02dc9ca4",
       "severity": "mild",
@@ -530,7 +498,7 @@
       "line": 122,
       "match": "DAT_02dc9cac",
       "severity": "mild",
-      "text": "if ((float)_DAT_00594b5e < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {",
+      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {",
       "type": "undefined_data"
     },
     {
@@ -555,14 +523,6 @@
       "match": "DAT_005bef88",
       "severity": "mild",
       "text": "puVar7 = &DAT_005bef88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_00594b2d",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00594b2d;",
       "type": "undefined_data"
     },
     {

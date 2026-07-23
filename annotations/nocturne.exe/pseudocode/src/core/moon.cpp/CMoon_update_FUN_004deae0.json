@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 188,
+    "complexity_score": 203,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 13,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -186,45 +187,45 @@
   "globals": [
     {
       "addr": "0058a8fe",
-      "name": "DAT_0058a8fe",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a8fe",
+      "type": "double",
+      "value": "0.0125000000000000"
     },
     {
       "addr": "0058a906",
-      "name": "DAT_0058a906",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a906",
+      "type": "double",
+      "value": "0.580000000000000"
     },
     {
       "addr": "0058a90e",
-      "name": "DAT_0058a90e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a90e",
+      "type": "double",
+      "value": "12"
     },
     {
       "addr": "0058a916",
-      "name": "DAT_0058a916",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a916",
+      "type": "double",
+      "value": "60"
     },
     {
       "addr": "0058a91e",
-      "name": "DAT_0058a91e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a91e",
+      "type": "double",
+      "value": "1.61170139299145E-314"
     },
     {
       "addr": "0058a926",
-      "name": "DAT_0058a926",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a926",
+      "type": "double",
+      "value": "20"
     },
     {
       "addr": "0058a92e",
-      "name": "DAT_0058a92e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a92e",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005bb210",
@@ -453,7 +454,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_0058a8fe + *(float *)(param_1 + 4);",
+      "text": "fVar1 = param_2 * (float)0.012500000000000001 + *(float *)(param_1 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -461,7 +462,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_0058a8fe + *(float *)(param_1 + 4);",
+      "text": "fVar1 = param_2 * (float)0.012500000000000001 + *(float *)(param_1 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -493,8 +494,16 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "_DAT_01ccdec4 = param_2 * (float)_DAT_0058a90e + _DAT_01ccdec4;",
+      "text": "_DAT_01ccdec4 = param_2 * (float)12 + _DAT_01ccdec4;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_DAT_01ccdec4 = _DAT_01ccdec4 + 1.6117013929914458e-314._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
@@ -506,10 +515,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(iVar3 + 0x1ccdef0) = param_2 * (float)_DAT_0058a926 + *(float *)(iVar3 + 0x1ccdef0)",
+      "text": "param_2 * (float)20 + *(float *)(iVar3 + 0x1ccdef0);",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +526,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar2 = param_2 * (float)_DAT_0058a92e + *(float *)(iVar3 + 0x1ccdef4);",
+      "text": "fVar2 = param_2 * (float)30 + *(float *)(iVar3 + 0x1ccdef4);",
       "type": "unnamed_param"
     },
     {

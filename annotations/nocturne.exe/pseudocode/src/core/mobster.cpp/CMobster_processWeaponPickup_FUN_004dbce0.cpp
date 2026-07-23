@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(int param_1,float param_2)
 
 {
@@ -69,7 +67,7 @@ uint __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(int para
             iVar1 = *(int *)(iVar7 + 0x14cd70 + 0x01E57284);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x8c))(iVar1);
             if ((iVar4 == 0) &&
-               (iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar1,"@CTommyGun" + 1),
+               (iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar1,"CTommyGun"),
                iVar4 != 0)) {
               fStack_5c = *(float *)(iVar1 + 0x20) - *local_20;
               fStack_58 = *(float *)(iVar1 + 0x24) - local_20[1];
@@ -77,7 +75,7 @@ uint __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(int para
               fStack_54 = *(float *)(iVar1 + 0x28) - local_20[2];
               fStack_58 = fStack_58 * fStack_58;
               fVar2 = SQRT(fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58);
-              if (((float)_DAT_0058a3d1 <= fVar2) && ((int)fVar2 < 0x41700001)) {
+              if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
                 *(int *)((int)aiStack_a8 + iVar6) = iVar1;
                 local_24 = local_24 + 1;
                 iVar6 = iVar6 + 4;
@@ -106,8 +104,8 @@ uint __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(int para
           }
           fVar2 = *(float *)(param_1 + 0x20) - *(float *)(*(int *)(param_1 + 0xbd30) + 0x20);
           fVar3 = *(float *)(param_1 + 0x28) - *(float *)(*(int *)(param_1 + 0xbd30) + 0x28);
-          fStack_b0 = (float)_DAT_0058a3d1 -
-                      SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)_DAT_0058a3c9;
+          fStack_b0 = (float)5 -
+                      SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)0.33333333333333298;
           if (fStack_b0 < 1.0) {
             fStack_b0 = 1.0;
           }
@@ -123,7 +121,7 @@ uint __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(int para
             uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
                               (auStack_80,auStack_38,auStack_74,auStack_44,&uStack_28);
             core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
-            fStack_3c = fStack_78 + (float)_DAT_0058a3d9;
+            fStack_3c = fStack_78 + (float)0.40000000000000002;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar7,auStack_50,auStack_44);
             uStack_68 = 0x3fc00000;
             uStack_64 = 0;

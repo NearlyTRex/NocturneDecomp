@@ -19,10 +19,10 @@
 ;   string s_hit_points:_%3.2f_00595d58
 ;   string s_stranger_die??.wav_00595d6b
 ;   string s_stranger_hit??.wav_00595d7e
-;   undefined4 DAT_00595d97
-;   undefined4 DAT_00595d9f
-;   undefined4 DAT_00595da7
-;   undefined4 DAT_005a26f8
+;   double DOUBLE_00595d97 = 0.0500000000000000
+;   double DOUBLE_00595d9f = 0.75
+;   float FLOAT_00595da7 = 50
+;   float FLOAT_005a26f8 = 2
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005b9354
@@ -88,7 +88,7 @@ section .text
     CMP dword ptr [ESI + 0x30],0xb      ; 0053e8ab
     JG 0x0053ebb2                       ; 0053e8af
         ;   XREF to: 0053ebb2 (CONDITIONAL_JUMP)  ; LAB_0053ebb2
-    FLD float ptr [0x005a26f8]          ; 0053e8b5 | DAT_005a26f8
+    FLD float ptr [0x005a26f8]          ; 0053e8b5 | FLOAT_005a26f8
         ;   Label: LAB_0053e8b5
     PUSH 0x595d3f                       ; 0053e8bb | = "CBugs"
     FSTP float ptr [EBX + 0xbc8c]       ; 0053e8c0
@@ -201,9 +201,9 @@ section .text
     FSTP float ptr [EBP + -0x10]        ; 0053e9e2
     FLD float ptr [ESI + 0x4]           ; 0053e9e5
         ;   Label: LAB_0053e9e5
-    FMUL double ptr [0x00595d97]        ; 0053e9e8 | DAT_00595d97
+    FMUL double ptr [0x00595d97]        ; 0053e9e8 | DOUBLE_00595d97
     FST float ptr [EBP + -0x8]          ; 0053e9ee
-    FCOMP double ptr [0x00595d9f]       ; 0053e9f1 | DAT_00595d9f
+    FCOMP double ptr [0x00595d9f]       ; 0053e9f1 | DOUBLE_00595d9f
     FNSTSW AX                           ; 0053e9f7
     SAHF                                ; 0053e9f9
     JNC 0x0053ea03                      ; 0053e9fa
@@ -395,7 +395,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 0053ebf7
     ADD ESP,0x8                         ; 0053ebfa
     FLD float ptr [EBP + -0x4]          ; 0053ebfd
-    FCOMP float ptr [0x00595da7]        ; 0053ec00 | DAT_00595da7
+    FCOMP float ptr [0x00595da7]        ; 0053ec00 | FLOAT_00595da7
     FNSTSW AX                           ; 0053ec06
     SAHF                                ; 0053ec08
     SETBE AL                            ; 0053ec09

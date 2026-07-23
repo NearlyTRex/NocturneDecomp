@@ -69,10 +69,10 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e9149
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\mp3.cpp_0058b8af+1
+;   TerminatedCString s_sound_mp3_cpp_0058b8b0
 ;   string s_Error_in_streo_processing._File:_0058b8c1
-;   undefined4 DAT_0058b8e8
-;   undefined4 DAT_0058b8f0
+;   double DOUBLE_0058b8e8 = 0.261799387799149
+;   double DOUBLE_0058b8f0 = 0.707106782373095
 ;   undefined4 DAT_005bc0f8
 ;   undefined4 DAT_005bc0fc
 ;   undefined4 DAT_005bc100
@@ -234,7 +234,7 @@ section .text
         ;   XREF to: 004e6f37 (CONDITIONAL_JUMP)  ; LAB_004e6f37
     FLD float ptr [EAX]                 ; 004e6359
     FADD float ptr [EAX + 0x900]        ; 004e635b
-    FLD double ptr [0x0058b8f0]         ; 004e6361 | DAT_0058b8f0
+    FLD double ptr [0x0058b8f0]         ; 004e6361 | DOUBLE_0058b8f0
     FXCH                                ; 004e6367
     FMUL ST1                            ; 004e6369
     FSTP float ptr [EDX]                ; 004e636b
@@ -741,7 +741,7 @@ section .text
         ;   XREF to: 004e679c (UNCONDITIONAL_JUMP)  ; LAB_004e679c
     FILD word ptr [ESP + EBX*0x1 + 0x1b08] ; 004e6ab1
         ;   Label: LAB_004e6ab1
-    FMUL double ptr [0x0058b8e8]        ; 004e6ab8 | DAT_0058b8e8
+    FMUL double ptr [0x0058b8e8]        ; 004e6ab8 | DOUBLE_0058b8e8
     FPTAN                               ; 004e6abe
     FSTP ST0                            ; 004e6ac0
     MOV EAX,dword ptr [ESP + 0x2010]    ; 004e6ac2
@@ -811,7 +811,7 @@ section .text
         ;   XREF to: 004e6938 (UNCONDITIONAL_JUMP)  ; LAB_004e6938
     FILD word ptr [ESP + EBX*0x1 + 0x1b08] ; 004e6bb5
         ;   Label: LAB_004e6bb5
-    FMUL double ptr [0x0058b8e8]        ; 004e6bbc | DAT_0058b8e8
+    FMUL double ptr [0x0058b8e8]        ; 004e6bbc | DOUBLE_0058b8e8
     FPTAN                               ; 004e6bc2
     FSTP ST0                            ; 004e6bc4
     MOV EAX,dword ptr [ESP + 0x201c]    ; 004e6bc6
@@ -1015,7 +1015,7 @@ section .text
         ;   XREF to: 004e6bf8 (UNCONDITIONAL_JUMP)  ; LAB_004e6bf8
     FILD word ptr [ESP + EBX*0x1 + 0x1b08] ; 004e6ed7
         ;   Label: LAB_004e6ed7
-    FMUL double ptr [0x0058b8e8]        ; 004e6ede | DAT_0058b8e8
+    FMUL double ptr [0x0058b8e8]        ; 004e6ede | DOUBLE_0058b8e8
     FPTAN                               ; 004e6ee4
     FSTP ST0                            ; 004e6ee6
     MOV EAX,dword ptr [ESP + 0x2000]    ; 004e6ee8
@@ -1038,7 +1038,7 @@ section .text
         ;   XREF to: 004e645f (UNCONDITIONAL_JUMP)  ; LAB_004e645f
     FILD word ptr [ESP + EBX*0x1 + 0x1b08] ; 004e6f13
         ;   Label: LAB_004e6f13
-    FMUL double ptr [0x0058b8e8]        ; 004e6f1a | DAT_0058b8e8
+    FMUL double ptr [0x0058b8e8]        ; 004e6f1a | DOUBLE_0058b8e8
     FPTAN                               ; 004e6f20
     FSTP ST0                            ; 004e6f22
     MOV EAX,dword ptr [ESP + 0x1ff0]    ; 004e6f24
@@ -1085,7 +1085,7 @@ section .text
         ;   XREF to: 004e6377 (UNCONDITIONAL_JUMP)  ; LAB_004e6377
     PUSH 0x1cd8b28                      ; 004e6fab
         ;   Label: LAB_004e6fab
-    MOV EAX,0x58b8b0                    ; 004e6fb0 | s_..\sound\mp3.cpp_0058b8af+1
+    MOV EAX,0x58b8b0                    ; 004e6fb0 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x9b8                       ; 004e6fb5
     PUSH 0x58b8c1                       ; 004e6fba | = "Error in streo processing.  File: %s"
     MOV [0x01cc4800],EAX                ; 004e6fbf | DAT_01cc4800

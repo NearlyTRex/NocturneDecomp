@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(uint param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   int iVar3;
   
   iVar3 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
@@ -27,12 +25,12 @@ int core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(uint param_1)
   *(uint *)(iVar3 + 0x2dc) = 0;
   *(uint *)(iVar3 + 0x2e0) = 0x42000000;
   *(uint *)(iVar3 + 0x2e4) = 1;
-  uVar1 = _DAT_0059fd5c;
+  fVar1 = 8.0f;
   *(uint *)(iVar3 + 0x2e8) = 0;
-  uVar2 = 0x41F00000;
+  fVar2 = 30.0f;
   *(uint *)(iVar3 + 0x580) = 0;
   *(uint *)(iVar3 + 0x57c) = 0x3f800000;
-  *(uint *)(iVar3 + 0x55c) = uVar1;
-  *(uint *)(iVar3 + 0x578) = uVar2;
+  *(float *)(iVar3 + 0x55c) = fVar1;
+  *(float *)(iVar3 + 0x578) = fVar2;
   return iVar3;
 }

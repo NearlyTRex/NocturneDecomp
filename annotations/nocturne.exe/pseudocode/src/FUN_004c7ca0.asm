@@ -7,10 +7,10 @@
 ; undefined        Stack[-0x94]:1  local_94
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587aad
-;   undefined4 DAT_00587ab5
-;   undefined4 DAT_00587abd
-;   undefined4 DAT_0059fd64
+;   double DOUBLE_00587aad = 18
+;   double DOUBLE_00587ab5 = 0.100000000000000
+;   double DOUBLE_00587abd = 0.015625
+;   float FLOAT_0059fd64 = 112
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_01b4d738
@@ -150,9 +150,9 @@ section .text
     FSTP float ptr [ESP + 0x6c]         ; 004c7de7
     FSTP float ptr [ESP + 0x70]         ; 004c7deb
     FSTP float ptr [ESP + 0x74]         ; 004c7def
-    FLD float ptr [0x0059fd64]          ; 004c7df3 | DAT_0059fd64
+    FLD float ptr [0x0059fd64]          ; 004c7df3 | FLOAT_0059fd64
         ;   Label: LAB_004c7df3
-    FDIVR double ptr [0x00587aad]       ; 004c7df9 | DAT_00587aad
+    FDIVR double ptr [0x00587aad]       ; 004c7df9 | DOUBLE_00587aad
     FLD1                                ; 004c7dff
     FPATAN                              ; 004c7e01
     FSTP float ptr [ESP + 0x4]          ; 004c7e03
@@ -178,7 +178,7 @@ section .text
     MOV dword ptr [ESI + 0x580],0x0     ; 004c7e4b
     FLD float ptr [ESP + 0x4]           ; 004c7e55
         ;   Label: LAB_004c7e55
-    FMUL double ptr [0x00587ab5]        ; 004c7e59 | DAT_00587ab5
+    FMUL double ptr [0x00587ab5]        ; 004c7e59 | DOUBLE_00587ab5
     MOV dword ptr [ESP + 0x88],EBX      ; 004c7e5f
     FILD dword ptr [ESP + 0x88]         ; 004c7e66
     FMULP                               ; 004c7e6d
@@ -239,7 +239,7 @@ section .text
     MOV dword ptr [ESP + 0x38],EAX      ; 004c7f19
     FLD float ptr [ESI + 0x584]         ; 004c7f1d
         ;   Label: LAB_004c7f1d
-    FMUL double ptr [0x00587abd]        ; 004c7f23 | DAT_00587abd
+    FMUL double ptr [0x00587abd]        ; 004c7f23 | DOUBLE_00587abd
     FLD float ptr [ESP + 0x30]          ; 004c7f29
     FXCH                                ; 004c7f2d
     FSTP float ptr [ESP + 0x84]         ; 004c7f2f

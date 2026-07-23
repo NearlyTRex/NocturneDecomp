@@ -24,7 +24,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00 at 0051de10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591c87
+;   float FLOAT_00591c87 = 0.05000000
 ;   undefined4 DAT_005a1eb0
 ;
 ; Called Functions:
@@ -153,7 +153,7 @@ section .text
     FLD float ptr [EBP + 0x4]           ; 0051df94
     FSUB float ptr [EDX + 0x4]          ; 0051df97
     FXCH                                ; 0051df9a
-    FLD float ptr [0x00591c87]          ; 0051df9c | DAT_00591c87
+    FLD float ptr [0x00591c87]          ; 0051df9c | FLOAT_00591c87
     FXCH                                ; 0051dfa2
     FMUL ST1                            ; 0051dfa4
     FXCH ST2                            ; 0051dfa6

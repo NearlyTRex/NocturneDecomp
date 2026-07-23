@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_zombie_cpp_CZombie_setup_FUN_0055ec20(int param_1)
 
 {
@@ -82,7 +80,7 @@ void core_zombie_cpp_CZombie_setup_FUN_0055ec20(int param_1)
   uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
   *(uint *)(param_1 + 0xbe0c) = uVar1;
   if ((-1 < *(int *)(param_1 + 0xbdf0)) && (*(float *)(param_1 + 0x2de8) < 0.0)) {
-    *(float *)(param_1 + 0x2de8) = *(float *)(param_1 + 0x2398) + (float)_DAT_00598506;
+    *(float *)(param_1 + 0x2de8) = *(float *)(param_1 + 0x2398) + (float)-0.75;
   }
   iVar3 = param_1 + 0x23b0;
   *(uint *)(param_1 + 0xbe00) = 0;

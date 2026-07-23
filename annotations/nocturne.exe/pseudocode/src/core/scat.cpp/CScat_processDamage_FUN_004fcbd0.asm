@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_scat-die-?.wav_0058df25+1
+;   TerminatedCString s_scat_die_wav_0058df26
 ;   string s_scat-hurt-?.wav_0058df35
 ;   undefined4 DAT_005a1548
 ;   undefined4 DAT_005b9354
@@ -118,7 +118,7 @@ section .text
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004fccb6
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()
     ADD ESP,0x14                        ; 004fccbb
-    PUSH 0x58df26                       ; 004fccbe | s_scat-die-?.wav_0058df25+1
+    PUSH 0x58df26                       ; 004fccbe | = "scat-die-?.wav"
         ;   Label: LAB_004fccbe
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004fccc3
     PUSH EBX                            ; 004fccc9

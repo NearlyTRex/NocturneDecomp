@@ -26,7 +26,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
     _DAT_02dc9238 =
          ((int)((_DAT_02dc9228 + (_DAT_02dc9228 >> 0x1f) * -8) -
                (uint)((_DAT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02dc9234 * _DAT_02dc9230;
-    local_338 = ((double)_DAT_02dc9234 / (double)_DAT_02dc922c) * _DAT_00594167;
+    local_338 = ((double)_DAT_02dc9234 / (double)_DAT_02dc922c) * 0.5;
     iVar4 = 0;
     _DAT_02dc9240 = 0;
     if (0 < _DAT_02dc923c) {

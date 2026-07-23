@@ -57,8 +57,8 @@
 ;   double DOUBLE_005849f8 = 3.14159265350000
 ;   double DOUBLE_00584a00 = 0.523598775583333
 ;   double DOUBLE_00584a08 = 32
-;   undefined4 DAT_0059df3c
-;   undefined4 DAT_0059df48
+;   float FLOAT_0059df3c = 3
+;   float FLOAT_0059df48 = 10
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01bd1d80
@@ -518,7 +518,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x72]      ; 004a7d57
     FLD float ptr [EBP + 0x72]          ; 004a7d5a
     MOV dword ptr [EBP + 0x6e],EAX      ; 004a7d5d
-    FCOMP float ptr [0x0059df3c]        ; 004a7d60 | DAT_0059df3c
+    FCOMP float ptr [0x0059df3c]        ; 004a7d60 | FLOAT_0059df3c
     FNSTSW AX                           ; 004a7d66
     SAHF                                ; 004a7d68
     JC 0x004a7e07                       ; 004a7d69
@@ -532,7 +532,7 @@ section .text
         ;   XREF to: 004a799d (CONDITIONAL_JUMP)  ; caseD_4
     FLD float ptr [EBP + 0x6e]          ; 004a7d81
     LEA ESI,[EBX + 0x150]               ; 004a7d84
-    FCOMP float ptr [0x0059df48]        ; 004a7d8a | DAT_0059df48
+    FCOMP float ptr [0x0059df48]        ; 004a7d8a | FLOAT_0059df48
     FNSTSW AX                           ; 004a7d90
     SAHF                                ; 004a7d92
     JNC 0x004a7e54                      ; 004a7d93
@@ -761,7 +761,7 @@ section .text
         ;   Label: LAB_004a7fec
     PUSH 0x3f000000                     ; 004a7ff1
     MOV dword ptr [EAX + 0x8],EDI       ; 004a7ff6
-    MOV EDX,dword ptr [0x0059df3c]      ; 004a7ff9 | DAT_0059df3c
+    MOV EDX,dword ptr [0x0059df3c]      ; 004a7ff9 | FLOAT_0059df3c
     MOV ECX,dword ptr [EAX + 0x8]       ; 004a7fff
     MOV dword ptr [EAX + 0x4],ECX       ; 004a8002
     MOV ECX,dword ptr [EAX + 0x4]       ; 004a8005
@@ -812,7 +812,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x5a]      ; 004a8088
     FLD float ptr [EBP + 0x5a]          ; 004a808b
     MOV dword ptr [EBP + 0x66],EAX      ; 004a808e
-    FCOMP float ptr [0x0059df48]        ; 004a8091 | DAT_0059df48
+    FCOMP float ptr [0x0059df48]        ; 004a8091 | FLOAT_0059df48
     FNSTSW AX                           ; 004a8097
     SAHF                                ; 004a8099
     JBE 0x004a80be                      ; 004a809a

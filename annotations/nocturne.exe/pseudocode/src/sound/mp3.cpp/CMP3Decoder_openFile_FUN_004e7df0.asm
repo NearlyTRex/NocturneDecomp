@@ -10,10 +10,10 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005269f5
 ;
 ; Referenced Globals:
-;   undefined4 s_sound_0058b937+1
+;   TerminatedCString s_sound_0058b938
 ;   string s_..\\sound\\mp3.cpp_0058b93e
 ;   string s_Can't_open_%s_0058b94f
-;   undefined4 DAT_0058b95d
+;   TerminatedCString s_rb_0058b95d
 ;   string s_sound_0058b960
 ;   string s_..\\sound\\mp3.cpp_0058b966
 ;   string s_Can't_open_%s_0058b977
@@ -40,7 +40,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004e7df4
     MOV ESI,dword ptr [ESP + 0x18]      ; 004e7df8
     PUSH ESI                            ; 004e7dfc
-    PUSH 0x58b938                       ; 004e7dfd | s_sound_0058b937+1
+    PUSH 0x58b938                       ; 004e7dfd | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004e7e02
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 004e7e07
@@ -48,7 +48,7 @@ section .text
     TEST EAX,EAX                        ; 004e7e0c
     JLE 0x004e7e7a                      ; 004e7e0e
         ;   XREF to: 004e7e7a (CONDITIONAL_JUMP)  ; LAB_004e7e7a
-    PUSH 0x58b95d                       ; 004e7e10 | DAT_0058b95d
+    PUSH 0x58b95d                       ; 004e7e10 | = "rb"
         ;   Label: LAB_004e7e10
     PUSH ESI                            ; 004e7e15
     PUSH 0x58b960                       ; 004e7e16 | = "sound"

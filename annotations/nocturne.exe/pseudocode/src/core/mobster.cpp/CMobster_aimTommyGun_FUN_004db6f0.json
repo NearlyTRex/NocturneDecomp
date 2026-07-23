@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 788,
+    "complexity_score": 803,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 60,
+    "suspect_count": 61,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -136,6 +136,7 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -223,8 +224,8 @@
   "globals": [
     {
       "addr": "0058a361",
-      "name": "s_..\\core\\mobster.cpp_0058a35f+2",
-      "type": "undefined4",
+      "name": "s_core_mobster_cpp_0058a361",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -235,21 +236,21 @@
     },
     {
       "addr": "0058a3a5",
-      "name": "DAT_0058a3a5",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058a3a5",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "0058a3a9",
-      "name": "DAT_0058a3a9",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a3a9",
+      "type": "double",
+      "value": "5.34643470770547E-315"
     },
     {
       "addr": "0058a3b1",
-      "name": "DAT_0058a3b1",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a3b1",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "01cae124",
@@ -665,6 +666,14 @@
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0xbca4),_DAT_01cae124);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fVar1 = 5.3464347077054713e-315._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",

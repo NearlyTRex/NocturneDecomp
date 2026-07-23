@@ -13,7 +13,7 @@ void FUN_00513670(uint *param_1,uint param_2)
 {
   int iVar1;
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00590c10,param_2,&DAT_00590c0d);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"wb");
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\core\\setdir.cpp";
     _DAT_01cc4804 = 0x2a2;

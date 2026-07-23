@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058773c
-;   undefined4 DAT_00587744
+;   double DOUBLE_0058773c = 0.5
+;   double DOUBLE_00587744 = 0.100000000000000
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
@@ -40,7 +40,7 @@ section .text
     FLD float ptr [EBX + 0x2cc]         ; 004c441b
     MOV ECX,0xbdcccccd                  ; 004c4421
     FCHS                                ; 004c4426
-    FLD double ptr [0x0058773c]         ; 004c4428 | DAT_0058773c
+    FLD double ptr [0x0058773c]         ; 004c4428 | DOUBLE_0058773c
     FXCH                                ; 004c442e
     FMUL ST1                            ; 004c4430
     MOV dword ptr [ESP + 0x4],ECX       ; 004c4432
@@ -53,7 +53,7 @@ section .text
     FMUL ST1                            ; 004c444d
     FSTP float ptr [ESP + 0xc]          ; 004c444f
     FLD float ptr [EBX + 0x2d0]         ; 004c4453
-    FADD double ptr [0x00587744]        ; 004c4459 | DAT_00587744
+    FADD double ptr [0x00587744]        ; 004c4459 | DOUBLE_00587744
     FSTP float ptr [ESP + 0x10]         ; 004c445f
     FMUL float ptr [EBX + 0x2d4]        ; 004c4463
     MOV EAX,dword ptr [ESP]             ; 004c4469

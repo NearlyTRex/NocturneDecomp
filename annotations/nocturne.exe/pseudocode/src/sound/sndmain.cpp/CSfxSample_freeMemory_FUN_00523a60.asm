@@ -16,7 +16,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526c0f
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_00592955+1
+;   TerminatedCString s_sound_sndmain_cpp_00592956
 ;   string s_SfxSample::freeMemory_-_freeing_s_0059296b
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -83,7 +83,7 @@ section .text
     RET                                 ; 00523adf
     PUSH ESI                            ; 00523ae0
         ;   Label: LAB_00523ae0
-    MOV ECX,0x592956                    ; 00523ae1 | s_..\sound\sndmain.cpp_00592955+1
+    MOV ECX,0x592956                    ; 00523ae1 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x70a                       ; 00523ae6
     PUSH 0x59296b                       ; 00523aeb | = "SfxSample::freeMemory - freeing sampl..."
     MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | DAT_01cc4800

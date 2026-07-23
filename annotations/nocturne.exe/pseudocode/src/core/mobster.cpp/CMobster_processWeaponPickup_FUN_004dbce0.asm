@@ -13,10 +13,10 @@
 ;   FUN_004da790 at 004db3ea
 ;
 ; Referenced Globals:
-;   undefined4 s_CTommyGun_0058a3b8+1
-;   undefined4 DAT_0058a3c9
-;   undefined4 DAT_0058a3d1
-;   undefined4 DAT_0058a3d9
+;   TerminatedCString s_CTommyGun_0058a3b9
+;   double DOUBLE_0058a3c9 = 0.333333333333333
+;   double DOUBLE_0058a3d1 = 5
+;   double DOUBLE_0058a3d9 = 0.400000000000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
@@ -158,8 +158,8 @@ section .text
     FMUL ST0                            ; 004dbe64
     FADDP                               ; 004dbe66
     FSQRT                               ; 004dbe68
-    FMUL double ptr [0x0058a3c9]        ; 004dbe6a | DAT_0058a3c9
-    FSUBR double ptr [0x0058a3d1]       ; 004dbe70 | DAT_0058a3d1
+    FMUL double ptr [0x0058a3c9]        ; 004dbe6a | DOUBLE_0058a3c9
+    FSUBR double ptr [0x0058a3d1]       ; 004dbe70 | DOUBLE_0058a3d1
     FST float ptr [ESP]                 ; 004dbe76
     FLD1                                ; 004dbe79
     FCOMPP                              ; 004dbe7b
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 004dbf2c
     FLD float ptr [ESP + 0x3c]          ; 004dbf30
     PUSH EAX                            ; 004dbf34
-    FADD double ptr [0x0058a3d9]        ; 004dbf35 | DAT_0058a3d9
+    FADD double ptr [0x0058a3d9]        ; 004dbf35 | DOUBLE_0058a3d9
     PUSH EBX                            ; 004dbf3b
     FSTP float ptr [ESP + 0x80]         ; 004dbf3c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004dbf43
@@ -308,7 +308,7 @@ section .text
     POP ESI                             ; 004dc000
     POP EBX                             ; 004dc001
     RET                                 ; 004dc002
-    PUSH 0x58a3b9                       ; 004dc003 | s_CTommyGun_0058a3b8+1
+    PUSH 0x58a3b9                       ; 004dc003 | = "CTommyGun"
         ;   Label: LAB_004dc003
     PUSH EBX                            ; 004dc008
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004dc009
@@ -342,7 +342,7 @@ section .text
     FADDP                               ; 004dc063
     FSQRT                               ; 004dc065
     FST float ptr [ESP + 0x4]           ; 004dc067
-    FCOMP double ptr [0x0058a3d1]       ; 004dc06b | DAT_0058a3d1
+    FCOMP double ptr [0x0058a3d1]       ; 004dc06b | DOUBLE_0058a3d1
     FNSTSW AX                           ; 004dc071
     SAHF                                ; 004dc073
     JC 0x004dbdb9                       ; 004dc074

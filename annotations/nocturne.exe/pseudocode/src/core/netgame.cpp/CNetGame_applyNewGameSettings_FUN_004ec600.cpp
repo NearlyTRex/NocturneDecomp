@@ -72,7 +72,7 @@ uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *pa
   
   bVar15 = 0;
   if ((*param_1 != 2) || (param_1[1] != 1)) {
-    _DAT_01cc4800 = "@..\\core\\netgame.cpp" + 1;
+    _DAT_01cc4800 = "..\\core\\netgame.cpp";
     _DAT_01cc4804 = 0x7e6;
     FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }

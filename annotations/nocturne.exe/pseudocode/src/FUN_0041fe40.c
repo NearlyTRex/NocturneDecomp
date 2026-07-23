@@ -123,7 +123,7 @@ void FUN_0041fe40(int param_1,float param_2)
         }
         else {
           local_104 = 0;
-          local_fc = 0x40200000;
+          local_fc = 2.5f;
           local_100 = 0;
           uVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                             (*(int *)(param_1 + 0xbca4),&local_104,0x3f800000,0x3e32b8c2);
@@ -171,7 +171,7 @@ void FUN_0041fe40(int param_1,float param_2)
           local_4c = (double)local_20;
           local_14 = local_20;
           if (local_20 <= (float)3) {
-            local_18 = 0x40200000;
+            local_18 = 2.5f;
             if ((local_4c < 1.0) || (2 < local_4c)) {
               local_44 = (double)local_20;
               if (((float)3 <= local_20) &&
@@ -228,7 +228,7 @@ void FUN_0041fe40(int param_1,float param_2)
           local_54 = (double)local_1c;
           local_14 = local_1c;
           if (local_1c <= (float)8) {
-            local_18 = 0x40200000;
+            local_18 = 2.5f;
             if (((1.0 <= local_54) && (local_54 <= 2)) ||
                ((local_2c = (double)local_1c, (float)5 <= local_1c &&
                 (local_2c <= 6)))) {

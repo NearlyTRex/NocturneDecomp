@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_004c9580(int param_1)
 
 {
@@ -84,7 +82,7 @@ void FUN_004c9580(int param_1)
   local_b4 = *(float *)(iVar4 + 0x348);
   local_b0 = *(float *)(iVar4 + 0x34c);
   *(uint *)(param_1 + 0x1504) = 0x414239c1;
-  fVar12 = (float10)fcos((float10)_DAT_005a003c * (float10)_DAT_00587f2a);
+  fVar12 = (float10)fcos((float10)0.5235988f * (float10)0.5);
   *(float *)(param_1 + 0x1500) =
        (float)(((float10)*(float *)(param_1 + 0x1504) + (float10)local_b0) / fVar12);
   *(float *)(param_1 + 0x1508) = local_b4 - local_c0;
@@ -92,7 +90,7 @@ void FUN_004c9580(int param_1)
            *(float *)(param_1 + 0x5dc) * *(float *)(param_1 + 0x5dc) +
            *(float *)(param_1 + 0x5e0) * *(float *)(param_1 + 0x5e0)) == 0.0) {
     *(uint *)(param_1 + 0x5dc) = 0;
-    fVar1 = (float)_DAT_00587f32;
+    fVar1 = (float)2;
     *(uint *)(param_1 + 0x5e4) = 0xbf8ccccd;
     *(float *)(param_1 + 0x5e0) = *(float *)(param_1 + 0x1508) + fVar1;
   }
@@ -131,7 +129,7 @@ void FUN_004c9580(int param_1)
     *(uint *)(iVar8 + 0xc) = *(uint *)(iVar8 + 0x10);
     *(uint *)(iVar8 + 0x1c) = *(uint *)(iVar8 + 0x20);
     local_14 = iVar4;
-    local_90 = (float)iVar4 * _DAT_005a003c;
+    local_90 = (float)iVar4 * 0.5235988f;
     *(uint *)(iVar8 + 0xac) = 0;
     *(uint *)(iVar8 + 0xb0) = 0;
     *(uint *)(iVar8 + 0x18) = *(uint *)(iVar8 + 0x1c);
@@ -202,12 +200,12 @@ void FUN_004c9580(int param_1)
     local_28 = local_28 + 0x2e;
     local_2c = local_2c + 0xb8;
   } while (iVar4 < 0xc);
-  fVar12 = (float10)fcos((float10)_DAT_005a003c);
-  fVar13 = (float10)fsin((float10)_DAT_005a003c);
-  fVar2 = (float)_DAT_00587f3a;
-  fVar14 = (float10)_DAT_00587f2a;
+  fVar12 = (float10)fcos((float10)0.5235988f);
+  fVar13 = (float10)fsin((float10)0.5235988f);
+  fVar2 = (float)0.75;
+  fVar14 = (float10)0.5;
   pfVar7 = (float *)(param_1 + 0x1344);
-  fVar1 = (float)_DAT_00587f42;
+  fVar1 = (float)0.25;
   *(float *)(param_1 + 0x134c) = (float)(fVar12 * (float10)*(float *)(param_1 + 0x1504) * fVar14);
   *pfVar7 = (float)((float10)*(float *)(param_1 + 0x1504) * fVar13 * fVar14);
   *(float *)(param_1 + 0x1348) =
@@ -220,7 +218,7 @@ void FUN_004c9580(int param_1)
   *(uint *)(param_1 + 0x1360) = 0xbda4de71;
   *(uint *)(param_1 + 0x1368) = 0;
   *(uint *)(param_1 + 0x1364) = 0xbfc529dc;
-  *(float *)(param_1 + 0x133c) = *(float *)(param_1 + 0x133c) + _DAT_00587f4a;
+  *(float *)(param_1 + 0x133c) = *(float *)(param_1 + 0x133c) + -4.0f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
             (param_1 + 0x136c,(uint *)(param_1 + 0x1360));
   *(uint *)(param_1 + 0x139c) = *(uint *)(param_1 + 0x133c);

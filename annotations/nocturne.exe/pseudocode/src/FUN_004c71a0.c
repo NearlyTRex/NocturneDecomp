@@ -63,7 +63,7 @@ uint FUN_004c71a0(int param_1)
   int iStack_18;
   float *pfStack_14;
   
-  if (*(float *)(param_1 + 0x578) < 0x41F00000) {
+  if (*(float *)(param_1 + 0x578) < 30.0f) {
     return 0;
   }
   *(uint *)(param_1 + 0x578) = 0;
@@ -77,7 +77,7 @@ uint FUN_004c71a0(int param_1)
   fStack_48 = fStack_a8 + fStack_90;
   fStack_44 = fStack_a4 + fStack_8c;
   fStack_40 = fStack_a0 + fStack_88;
-  fStack_30 = (float)_DAT_00587a7d / *(float *)(param_1 + 0x2e0);
+  fStack_30 = (float)1.5 / *(float *)(param_1 + 0x2e0);
   fStack_3c = fStack_90 * fStack_30;
   fStack_38 = fStack_8c * fStack_30;
   fStack_34 = fStack_88 * fStack_30;
@@ -113,7 +113,7 @@ uint FUN_004c71a0(int param_1)
       iVar4 = (**(code **)(*(int *)(iStack_1c + 0x14c) + 0xd8))(iStack_1c);
       iVar2 = 0x01E57284;
       if ((iVar4 != 0) && (iVar5 == 0)) {
-        *(float *)(param_1 + 0x578) = 0x41F00000;
+        *(float *)(param_1 + 0x578) = 30.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(iVar2);
         core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
         return 0;
@@ -146,7 +146,7 @@ uint FUN_004c71a0(int param_1)
       core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
       core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                 (0x02DC9450,param_1,"cre-fire.wav",&fStack_a8);
-      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),0x40000000);
+      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),2.0f);
       iVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
       if (iVar5 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
         FUN_004940d0(0x01C70F74);
@@ -176,7 +176,7 @@ uint FUN_004c71a0(int param_1)
                         (&DAT_01c74640,iVar5 + 0x20,iVar5 + 0x30,auStack_c0,auStack_b4);
       if (iVar2 != 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"?%s in volume\n" + 1,iVar5);
+                  (PTR_DAT_005ad350,"%s in volume\n",iVar5);
         iStack_18 = iVar5;
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(0x01E57284);
         pfVar3 = (float *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0x14))(iVar5,auStack_d8);
@@ -186,9 +186,9 @@ uint FUN_004c71a0(int param_1)
         fStack_98 = pfVar3[1] + pfStack_14[1];
         fStack_94 = pfVar3[2] + pfStack_14[2];
         core_actor_cpp_CVector_ctor_FUN_0040e160(&fStack_78);
-        fStack_78 = fStack_9c * _DAT_00587a85;
-        fStack_74 = fStack_98 * _DAT_00587a85;
-        fStack_70 = fStack_94 * _DAT_00587a85;
+        fStack_78 = fStack_9c * 0.5f;
+        fStack_74 = fStack_98 * 0.5f;
+        fStack_70 = fStack_94 * 0.5f;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar5,auStack_84,&fStack_78);
         iVar2 = 0;
         iStack_28 = 0;

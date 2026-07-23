@@ -27,7 +27,7 @@ void core_script_cpp_trimLine_FUN_004fdf60(char *param_1,char *param_2)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  puVar2 = (byte *)strstr(param_2,&DAT_0058e01d);
+  puVar2 = (byte *)strstr(param_2,"//");
   pcVar3 = param_2;
   if (puVar2 != (byte *)0x0) {
     *puVar2 = 0;

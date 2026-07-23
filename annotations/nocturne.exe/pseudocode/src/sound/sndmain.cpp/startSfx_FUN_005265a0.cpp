@@ -115,10 +115,10 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *param_1)
   if (iVar8 < 0x200001) {
     ppppcStack_390 = (char ****)local_18c;
     splitpath(&local_38c,0,0,0);
-    ppppcStack_390 = (char ****)&DAT_0059277e;
+    ppppcStack_390 = (char ****)"mp3";
     iVar8 = _stricmp(local_18c);
     if (iVar8 == 0) goto LAB_005266dc;
-    ppppcStack_390 = (char ****)&DAT_00592782;
+    ppppcStack_390 = (char ****)".mp3";
     iVar8 = _stricmp(local_18c);
     if (iVar8 == 0) goto LAB_005266dc;
     ppppcStack_390 = (char ****)&local_38c;
@@ -147,7 +147,7 @@ LAB_0052671f:
     if (local_18 != (char ***)0x0) {
       ppppcStack_390 = (char ****)local_28c;
       splitpath(&local_38c,0,0,0);
-      ppppcStack_390 = (char ****)&DAT_00592787;
+      ppppcStack_390 = (char ****)"mp3";
       iVar8 = _stricmp(local_28c);
       if (iVar8 == 0) {
 LAB_00526983:
@@ -192,7 +192,7 @@ LAB_00526983:
           pppcVar7[0x4a] = (char **)0x0;
           pppcVar7[0x4b] = (char **)0x0;
           pppcVar7[0x4c] = (char **)0x0;
-          fVar17 = (float10)0x40000000;
+          fVar17 = (float10)2.0f;
           pppcVar7[0x4f] = (char **)0x0;
           pppcVar7[0x50] = (char **)0x0;
           ppppcStack_390 = (char ****)pppcVar7;
@@ -210,10 +210,10 @@ LAB_00526ad0:
         }
       }
       else {
-        ppppcStack_390 = (char ****)&DAT_0059278b;
+        ppppcStack_390 = (char ****)".mp3";
         iVar8 = _stricmp(local_28c);
         if (iVar8 == 0) goto LAB_00526983;
-        ppppcStack_390 = (char ****)&DAT_005927ba;
+        ppppcStack_390 = (char ****)"rb";
         ppcVar6 = (char **)engine_dosio_cpp_getFile_FUN_00456a60("sound",&local_38c);
         pppcVar7 = local_18;
         local_18[0x53] = ppcVar6;
@@ -238,7 +238,7 @@ LAB_00526ad0:
           sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10();
           pppcVar7 = local_18;
           local_18[0x4a] = (char **)0x0;
-          fVar17 = (float10)0x40000000;
+          fVar17 = (float10)2.0f;
           local_18[0x4b] = (char **)0x0;
           local_18[0x4c] = (char **)0x0;
           ppppcStack_390 = (char ****)0x526bcf;

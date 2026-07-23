@@ -36,7 +36,7 @@ void FUN_0053e860(int param_1,int param_2)
     *(uint *)(param_2 + 4) = 0;
     return;
   }
-  *(uint *)(param_1 + 0xbc8c) = _DAT_005a26f8;
+  *(float *)(param_1 + 0xbc8c) = 2.0f;
   iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(uint *)(param_2 + 0x38),"CBugs");
   if (iVar3 != 0) {
     *(uint *)(param_1 + 0xbc8c) = 0x3e19999a;
@@ -75,8 +75,8 @@ void FUN_0053e860(int param_1,int param_2)
       local_20 = local_20 * fVar1;
     }
   }
-  local_18 = *(float *)(param_2 + 4) * (float)_DAT_00595d97;
-  if (local_18 < (float)_DAT_00595d9f) {
+  local_18 = *(float *)(param_2 + 4) * (float)0.050000000000000003;
+  if (local_18 < (float)0.75) {
     local_18 = 0.75;
   }
   if (1.0 < local_18) {
@@ -100,7 +100,7 @@ void FUN_0053e860(int param_1,int param_2)
           else {
             uVar5 = 1;
             local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x42c80000,1);
-            uVar6 = CONCAT44(uVar5,(local_14 <= _DAT_00595da7) + 0x25);
+            uVar6 = CONCAT44(uVar5,(local_14 <= 50.0f) + 0x25);
           }
         }
         else {

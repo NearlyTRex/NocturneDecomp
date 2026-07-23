@@ -42,8 +42,8 @@
 ;   FUN_004c9be0 at 004c9c7b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587f62
-;   undefined4 DAT_00587f6a
+;   float FLOAT_00587f62 = 256
+;   double DOUBLE_00587f6a = 0.0100000000000000
 ;   undefined4 DAT_005a0020
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
@@ -90,7 +90,7 @@ section .text
     PUSH EDX                            ; 004ca7cf | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004ca7d0
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
-    FLD float ptr [0x00587f62]          ; 004ca7d5 | DAT_00587f62
+    FLD float ptr [0x00587f62]          ; 004ca7d5 | FLOAT_00587f62
     FLD float ptr [ESI + 0x8]           ; 004ca7db
     FMUL ST1                            ; 004ca7de
     FLD float ptr [ESI + 0x4]           ; 004ca7e0
@@ -145,7 +145,7 @@ section .text
     JNZ 0x004caba4                      ; 004ca87e
         ;   XREF to: 004caba4 (CONDITIONAL_JUMP)  ; LAB_004caba4
     FLD float ptr [ESI + 0xc]           ; 004ca884
-    FCOMP double ptr [0x00587f6a]       ; 004ca887 | DAT_00587f6a
+    FCOMP double ptr [0x00587f6a]       ; 004ca887 | DOUBLE_00587f6a
     FNSTSW AX                           ; 004ca88d
     SAHF                                ; 004ca88f
     JBE 0x004cabbe                      ; 004ca890
@@ -264,7 +264,7 @@ section .text
     MOV EDX,0x3                         ; 004caa25
     MOV dword ptr [ESP + 0x44],EBP      ; 004caa2a
     MOV dword ptr [ESP + 0x3c],EDX      ; 004caa2e
-    FLD float ptr [0x00587f62]          ; 004caa32 | DAT_00587f62
+    FLD float ptr [0x00587f62]          ; 004caa32 | FLOAT_00587f62
     FLD float ptr [ESI + 0xc]           ; 004caa38
     FMUL ST1                            ; 004caa3b
     FLD float ptr [ESI + 0x10]          ; 004caa3d
@@ -377,13 +377,13 @@ section .text
     RET                                 ; 004cabbd
     FLD float ptr [ESI + 0x10]          ; 004cabbe
         ;   Label: LAB_004cabbe
-    FCOMP double ptr [0x00587f6a]       ; 004cabc1 | DAT_00587f6a
+    FCOMP double ptr [0x00587f6a]       ; 004cabc1 | DOUBLE_00587f6a
     FNSTSW AX                           ; 004cabc7
     SAHF                                ; 004cabc9
     JA 0x004ca896                       ; 004cabca
         ;   XREF to: 004ca896 (CONDITIONAL_JUMP)  ; LAB_004ca896
     FLD float ptr [ESI + 0x14]          ; 004cabd0
-    FCOMP double ptr [0x00587f6a]       ; 004cabd3 | DAT_00587f6a
+    FCOMP double ptr [0x00587f6a]       ; 004cabd3 | DOUBLE_00587f6a
     FNSTSW AX                           ; 004cabd9
     SAHF                                ; 004cabdb
     JA 0x004ca896                       ; 004cabdc

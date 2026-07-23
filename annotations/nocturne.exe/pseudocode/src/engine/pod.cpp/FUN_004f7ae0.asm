@@ -30,7 +30,7 @@
 ;   engine_pod.cpp_CPod_remount_FUN_004f8970 at 004f89b4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d9ac
+;   TerminatedCString s_rb_0058d9ac
 ;   string s_..\\engine\\pod.cpp_0058d9af
 ;   string s_Out_of_memory!_0058d9c1
 ;   string s_..\\engine\\pod.cpp_0058d9d0
@@ -102,7 +102,7 @@ section .text
     CALL engine_dosio.cpp_getFileTimestamp_FUN_00456910 ; 004f7b45
         ;   XREF to: 00456910 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileTimestamp_FUN_00456910()
     ADD ESP,0x8                         ; 004f7b4a
-    PUSH 0x58d9ac                       ; 004f7b4d | DAT_0058d9ac
+    PUSH 0x58d9ac                       ; 004f7b4d | = "rb"
     MOV EDX,dword ptr [ESP + 0x118]     ; 004f7b52
     PUSH EBX                            ; 004f7b59
     MOV dword ptr [EDX + 0x104],EAX     ; 004f7b5a

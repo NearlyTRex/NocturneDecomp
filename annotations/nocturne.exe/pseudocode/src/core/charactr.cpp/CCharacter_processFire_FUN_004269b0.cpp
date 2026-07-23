@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,float param_2)
 
 {
@@ -54,7 +52,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
           iVar3 = iVar3 + 4;
         } while (iVar8 < *(int *)(local_38 + 0x28558));
       }
-      fVar1 = 0x40400000;
+      fVar1 = 3.0f;
       iVar3 = 0;
       if (0 < *(int *)(param_1 + 0x2f08)) {
         fVar2 = (float)65535;
@@ -148,14 +146,14 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(int param_1,f
   }
   if ((*(int *)(param_1 + 0x260c) == 0) && (0 < *(int *)(param_1 + 0x2f08))) {
     local_20 = (int *)(param_1 + 0x2f14);
-    local_3c = param_2 * _DAT_0059b08c;
+    local_3c = param_2 * 2.0f;
     local_30 = 0;
     do {
       local_1c = local_20;
       if ((*(int *)(param_1 + 0x2290 + *local_20 * 4) != 0) &&
          (fVar1 = local_3c * *(float *)(param_1 + 0x2f10) + (float)local_20[5],
-         local_20[5] = (int)fVar1, 0x40400000 < fVar1)) {
-        local_20[5] = (int)0x40400000;
+         local_20[5] = (int)fVar1, 3.0f < fVar1)) {
+        local_20[5] = (int)3.0f;
         iVar3 = 0;
         iVar4 = local_18;
         if (0 < *(int *)(local_18 + 0x28558)) {

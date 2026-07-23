@@ -60,16 +60,16 @@ LAB_00537d35:
                 if (*(int *)(param_1 + 0x2408) != 0) {
                   local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                               (iVar1,3);
-                  if ((float)_DAT_00595807 < local_14) {
+                  if ((float)0.40000000000000002 < local_14) {
                     (**(code **)(*(int *)(param_1 + 0x14c) + 0x1c))(param_1,local_5c,0x3fd9999a);
                   }
                   else {
                     local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                                 (iVar1,1);
-                    if (local_14 <= (float)_DAT_00595807) {
+                    if (local_14 <= (float)0.40000000000000002) {
                       local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                                   (iVar1,2);
-                      if ((float)_DAT_00595807 < local_14) {
+                      if ((float)0.40000000000000002 < local_14) {
                         (**(code **)(*(int *)(param_1 + 0x14c) + 0x1c))(param_1,local_5c,0x3f800000)
                         ;
                       }
@@ -152,7 +152,7 @@ LAB_00537df4:
           }
           else {
             if (iVar5 == 6) goto LAB_00537df4;
-            FUN_0046fb40(0x01BCD074,"<actionPending = %d\nstranger.cpp line %d" + 1,iVar5,0x75e);
+            FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",iVar5,0x75e);
           }
           *(uint *)(param_1 + 0x1fa1c) = 0;
           if (*(int *)(param_1 + 0x2a84) == 0xe) {
@@ -190,7 +190,7 @@ LAB_00537df4:
           if (0.0 < local_ac) {
             uVar3 = 0x5381d5;
             fVar7 = (float10)round
-                                       ((float10)local_ac * (float10)_DAT_005957ff);
+                                       ((float10)local_ac * (float10)0.20000000000000001);
             local_18 = (int)ROUND(fVar7);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
                       (0x01C78C7C,auStack_3c,0,local_18 + 1,0,uVar3);
@@ -261,11 +261,11 @@ LAB_00537df4:
         if (uVar2 != 0x18) goto LAB_005383ca;
       }
       else if (uVar2 < 0x29b) {
-        *(uint *)(param_1 + 0x2424) = 0x41200000;
+        *(float *)(param_1 + 0x2424) = 10.0f;
       }
       else {
         if (uVar2 != 0x29b) goto LAB_005383ca;
-        *(uint *)(param_1 + 0x2424) = 0x41000000;
+        *(float *)(param_1 + 0x2424) = 8.0f;
       }
     }
     if (param_2 <= 0.0) {

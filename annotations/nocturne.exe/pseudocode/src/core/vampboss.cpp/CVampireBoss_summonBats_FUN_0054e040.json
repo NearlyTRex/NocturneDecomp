@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -171,8 +171,8 @@
   "globals": [
     {
       "addr": "00597219",
-      "name": "s_voicusummon.wav_00597218+1",
-      "type": "undefined4",
+      "name": "s_voicusummon_wav_00597219",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -285,7 +285,7 @@
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?voicusummon.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"voicusummon.wav\");",
       "type": "unresolved_funcptr"
     },
     {
@@ -293,7 +293,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?voicusummon.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"voicusummon.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -301,7 +301,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"?voicusummon.wav\" + 1);",
+      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"voicusummon.wav\");",
       "type": "unnamed_param"
     }
   ]

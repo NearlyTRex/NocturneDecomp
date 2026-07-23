@@ -42,7 +42,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(int *param_1)
   iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0();
   iVar2 = local_1c;
   iVar1 = local_24;
-  fVar4 = (float10)_DAT_00596cd5;
+  fVar4 = (float10)256;
   puStack_34 = (byte *)0x54938a;
   local_20 = iVar3;
   fVar5 = (float10)round((float10)local_30 * fVar4);

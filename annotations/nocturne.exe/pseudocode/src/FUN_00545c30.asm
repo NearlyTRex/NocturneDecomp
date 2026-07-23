@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   string s_45-dry-!.wav_@2.0_00596898
 ;   string s_bullet.kfm_005968aa
-;   undefined4 DAT_005968b5
-;   undefined4 DAT_005968b9
-;   undefined4 DAT_005968c1
-;   undefined4 DAT_005968c9
+;   float FLOAT_005968b5 = 0.1000000
+;   double DOUBLE_005968b9 = 2.5
+;   float FLOAT_005968c1 = -0.125
+;   double DOUBLE_005968c9 = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005be368
@@ -75,7 +75,7 @@ section .text
     LEA EAX,[ESP + 0xf0]                ; 00545c6a
     MOV ESI,dword ptr [EBX + 0x14c]     ; 00545c71
     PUSH EAX                            ; 00545c77
-    FADD float ptr [0x005968b5]         ; 00545c78 | DAT_005968b5
+    FADD float ptr [0x005968b5]         ; 00545c78 | FLOAT_005968b5
     PUSH EBX                            ; 00545c7e
     FSTP float ptr [EBX + 0x2f8]        ; 00545c7f
     CALL dword ptr [ESI + 0xd8]         ; 00545c85
@@ -157,7 +157,7 @@ section .text
     FSTP float ptr [ESP + 0x94]         ; 00545d88
     FSTP float ptr [ESP + 0x98]         ; 00545d8f
     FLD float ptr [EBX + 0x2e0]         ; 00545d96
-    FDIVR double ptr [0x005968b9]       ; 00545d9c | DAT_005968b9
+    FDIVR double ptr [0x005968b9]       ; 00545d9c | DOUBLE_005968b9
     FLD float ptr [ESP + 0xd8]          ; 00545da2
     FXCH                                ; 00545da9
     FSTP float ptr [ESP + 0x124]        ; 00545dab
@@ -251,7 +251,7 @@ section .text
     LEA EAX,[ESP + 0xe8]                ; 00545f0f
     FLD float ptr [ESP + 0xec]          ; 00545f16
     PUSH EAX                            ; 00545f1d
-    FADD float ptr [0x005968c1]         ; 00545f1e | DAT_005968c1
+    FADD float ptr [0x005968c1]         ; 00545f1e | FLOAT_005968c1
     PUSH EDI                            ; 00545f24
     FSTP float ptr [ESP + 0xf4]         ; 00545f25
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20 ; 00545f2c
@@ -509,7 +509,7 @@ section .text
     FMUL float ptr [ESP + 0x80]         ; 0054625b
     FADDP                               ; 00546262
     FSQRT                               ; 00546264
-    FDIVR double ptr [0x005968c9]       ; 00546266 | DAT_005968c9
+    FDIVR double ptr [0x005968c9]       ; 00546266 | DOUBLE_005968c9
     FLD float ptr [ESP + 0x78]          ; 0054626c
     FXCH                                ; 00546270
     FSTP float ptr [ESP + 0x120]        ; 00546272

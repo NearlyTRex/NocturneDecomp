@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 at 00529559
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005927c6
+;   double DOUBLE_005927c6 = 0.5
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea88
 ;   undefined4 DAT_02dc78e0
@@ -64,7 +64,7 @@ section .text
     RET                                 ; 00522d6d
     FLD double ptr [0x005bea88]         ; 00522d6e | DAT_005bea88
         ;   Label: LAB_00522d6e
-    FMUL double ptr [0x005927c6]        ; 00522d74 | DAT_005927c6
+    FMUL double ptr [0x005927c6]        ; 00522d74 | DOUBLE_005927c6
     FLD double ptr [0x02dc7910]         ; 00522d7a | DAT_02dc7910
     FMUL ST1                            ; 00522d80
     FLD double ptr [0x02dc7918]         ; 00522d82 | DAT_02dc7918

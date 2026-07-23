@@ -50,7 +50,7 @@ void core_turret_cpp_CTurret_process_FUN_005497f0(int param_1,float param_2)
     *(uint *)(param_1 + 0x6f8) = 1;
     *(uint *)(param_1 + 0x774) = *(uint *)(param_1 + 0x760);
     sound_sndmain_cpp_killSfx_FUN_00527230();
-    pcVar7 = "?turret-ani?.wav" + 1;
+    pcVar7 = "turret-ani?.wav";
     goto LAB_00549887;
   case 1:
     fVar1 = *(float *)(param_1 + 0x774) - param_2;
@@ -123,7 +123,7 @@ LAB_00549887:
            (auStack_8c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 9)[(uint)bVar5 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_0055d2d0
                 (&local_90,auStack_8c + 0xf,
-                 (param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)_DAT_00596d9d);
+                 (param_2 / (*(float *)(param_1 + 0x774) + param_2)) * (float)2);
       uVar6 = CONCAT44(auStack_8c + 3,local_30);
       auStack_8c[3] = local_60;
       auStack_8c[(uint)bVar5 * -2 + 4] = auStack_8c[(uint)bVar5 * -2 + 0xc];

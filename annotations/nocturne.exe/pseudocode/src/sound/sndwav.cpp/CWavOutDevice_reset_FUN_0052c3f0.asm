@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   void* PTR_waveOutReset_00575400 = 001758a4
 ;   void* PTR_waveOutUnprepareHeader_00575404 = 001758b4
-;   undefined4 s_waveOutReset_failed!_0059492c+1
+;   TerminatedCString s_waveOutReset_failed_0059492d
 ;   undefined4 DAT_02dc93a4
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 0052c43d
     JZ 0x0052c402                       ; 0052c43f
         ;   XREF to: 0052c402 (CONDITIONAL_JUMP)  ; LAB_0052c402
-    PUSH 0x59492d                       ; 0052c441 | s_waveOutReset_failed!_0059492c+1
+    PUSH 0x59492d                       ; 0052c441 | = "waveOutReset failed!"
     CALL FUN_00529980                   ; 0052c446
         ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
     XOR ESI,ESI                         ; 0052c44b

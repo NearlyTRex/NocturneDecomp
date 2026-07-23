@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *param_2,float param_3,float *param_4)
 
 {
@@ -55,13 +53,13 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
   local_60 = (float)param_2[10] - (float)param_2[4];
   local_90 = SQRT(local_60 * local_60 + local_68 * local_68 + local_64 * local_64);
   local_44 = local_90;
-  if (local_90 < _DAT_0059aea8) {
+  if (local_90 < 0.5f) {
     local_14 = (float)core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00
                                 (param_1,param_2[2],param_2[4]);
     param_2[3] = (int)local_14;
     if (param_4 == (float *)0x0) {
-      local_40 = _DAT_0059aea8 * 12.0f * (float)0.5;
-      local_18 = _DAT_0059aea8 * 1.6018581507970269e-314._0_4_ * (float)0.5;
+      local_40 = 0.5f * 12.0f * (float)0.5;
+      local_18 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,local_40);
       param_2[8] = (int)local_14;
       local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_18,local_40);
@@ -95,7 +93,7 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
       }
       local_90 = SQRT(local_60 * local_60 + local_68 * local_68 + local_64 * local_64);
       local_3c = local_90;
-      if (local_90 < _DAT_0059aea8) {
+      if (local_90 < 0.5f) {
         return 1;
       }
     }
@@ -104,7 +102,7 @@ uint core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(uint param_1,int *par
   if (local_90 <= 0.0) {
     return 1;
   }
-  local_1c = _DAT_0059aeb0 * param_3;
+  local_1c = 3.0f * param_3;
   if (local_90 < local_1c) {
     local_1c = local_90;
   }

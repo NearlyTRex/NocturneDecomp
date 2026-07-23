@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d94ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00589d44
+;   TerminatedCString s_none_00589d44
 ;   string s_..\\core\\mission.cpp_00589d49
 ;   string s_CDemonMission::buildActiveSetAct_00589d5d
 ;   undefined4 DAT_005b7650
@@ -104,7 +104,7 @@ section .text
     INC dword ptr [EAX + 0x14cd6c]      ; 004d9242 | DAT_01fa3ff0
     JMP 0x004d91a7                      ; 004d9248
         ;   XREF to: 004d91a7 (UNCONDITIONAL_JUMP)  ; LAB_004d91a7
-    PUSH 0x589d44                       ; 004d924d | DAT_00589d44
+    PUSH 0x589d44                       ; 004d924d | = "none"
         ;   Label: LAB_004d924d
     LEA ESI,[EBX + 0x78]                ; 004d9252
     PUSH ESI                            ; 004d9255

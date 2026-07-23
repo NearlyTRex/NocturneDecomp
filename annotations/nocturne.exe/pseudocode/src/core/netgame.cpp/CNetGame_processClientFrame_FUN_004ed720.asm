@@ -15,9 +15,9 @@
 ; Referenced Globals:
 ;   string s_..\\core\\netgame.cpp_0058c6e5
 ;   string s_CNetGame::processClientFrame_-_I_0058c6f9
-;   undefined4 DAT_0058c732
-;   undefined4 DAT_0058c73a
-;   undefined4 DAT_0058c742
+;   double DOUBLE_0058c732 = 0.0000152587890625
+;   double DOUBLE_0058c73a = 30
+;   double DOUBLE_0058c742 = 0.100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cea3f8
@@ -208,7 +208,7 @@ section .text
     SUB EDX,EAX                         ; 004ed8f5
     MOV dword ptr [ESP + 0xc],EDX       ; 004ed8f7
     FILD dword ptr [ESP + 0xc]          ; 004ed8fb
-    FMUL double ptr [0x0058c732]        ; 004ed8ff | DAT_0058c732
+    FMUL double ptr [0x0058c732]        ; 004ed8ff | DOUBLE_0058c732
     FST float ptr [ESP]                 ; 004ed905
     FLDZ                                ; 004ed908
     FCOMPP                              ; 004ed90a
@@ -220,7 +220,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004ed913
     FLD float ptr [ESP]                 ; 004ed916
         ;   Label: LAB_004ed916
-    FCOMP double ptr [0x0058c73a]       ; 004ed919 | DAT_0058c73a
+    FCOMP double ptr [0x0058c73a]       ; 004ed919 | DOUBLE_0058c73a
     FNSTSW AX                           ; 004ed91f
     SAHF                                ; 004ed921
     JBE 0x004ed92b                      ; 004ed922
@@ -228,7 +228,7 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 004ed924
     FLD float ptr [ESP]                 ; 004ed92b
         ;   Label: LAB_004ed92b
-    FCOMP double ptr [0x0058c742]       ; 004ed92e | DAT_0058c742
+    FCOMP double ptr [0x0058c742]       ; 004ed92e | DOUBLE_0058c742
     FNSTSW AX                           ; 004ed934
     SAHF                                ; 004ed936
     JBE 0x004ed785                      ; 004ed937

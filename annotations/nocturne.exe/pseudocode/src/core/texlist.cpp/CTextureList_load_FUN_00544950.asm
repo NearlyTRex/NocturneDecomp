@@ -21,16 +21,16 @@
 ; Referenced Globals:
 ;   string s_..\\core\\texlist.cpp_005965f5
 ;   string s_CTextureList::load_-_No_extensio_00596609
-;   undefined1 DAT_00596631
-;   undefined1 DAT_00596632
-;   undefined1 DAT_00596633
-;   undefined1 DAT_00596634
-;   undefined4 DAT_00596636
-;   undefined4 DAT_00596639
+;   TerminatedCString s_tex_00596631
+;   undefined4 s_tex_00596631+1
+;   undefined4 s_tex_00596631+2
+;   undefined4 s_tex_00596631+3
+;   TerminatedCString s_rt_00596636
+;   TerminatedCString s_data_00596639
 ;   string s_..\\core\\texlist.cpp_0059663e
 ;   string s_CTextureList::load_-_Bad_filenam_00596652
-;   undefined4 DAT_00596675
-;   undefined4 DAT_00596679
+;   TerminatedCString s_d_00596675
+;   TerminatedCString s_s_00596679
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -97,16 +97,16 @@ section .text
     TEST ESI,ESI                        ; 005449a2
     JZ 0x00544b26                       ; 005449a4
         ;   XREF to: 00544b26 (CONDITIONAL_JUMP)  ; LAB_00544b26
-    MOV ESI,0x596631                    ; 005449aa | DAT_00596631
+    MOV ESI,0x596631                    ; 005449aa | = ".tex"
         ;   Label: LAB_005449aa
     PUSH EDI                            ; 005449af
-    MOV AL,byte ptr [ESI]               ; 005449b0 | DAT_00596631 | DAT_00596633
+    MOV AL,byte ptr [ESI]               ; 005449b0 | = ".tex" | s_tex_00596631+2
         ;   Label: LAB_005449b0
     MOV byte ptr [EDI],AL               ; 005449b2
     CMP AL,0x0                          ; 005449b4
     JZ 0x005449c8                       ; 005449b6
         ;   XREF to: 005449c8 (CONDITIONAL_JUMP)  ; LAB_005449c8
-    MOV AL,byte ptr [ESI + 0x1]         ; 005449b8 | DAT_00596632 | DAT_00596634
+    MOV AL,byte ptr [ESI + 0x1]         ; 005449b8 | s_tex_00596631+1 | s_tex_00596631+3
     ADD ESI,0x2                         ; 005449bb
     MOV byte ptr [EDI + 0x1],AL         ; 005449be
     ADD EDI,0x2                         ; 005449c1
@@ -115,10 +115,10 @@ section .text
         ;   XREF to: 005449b0 (CONDITIONAL_JUMP)  ; LAB_005449b0
     POP EDI                             ; 005449c8
         ;   Label: LAB_005449c8
-    PUSH 0x596636                       ; 005449c9 | DAT_00596636
+    PUSH 0x596636                       ; 005449c9 | = "rt"
     LEA EAX,[ESP + 0x4]                 ; 005449ce
     PUSH EAX                            ; 005449d2
-    PUSH 0x596639                       ; 005449d3 | DAT_00596639
+    PUSH 0x596639                       ; 005449d3 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 005449d8
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 005449dd
@@ -136,7 +136,7 @@ section .text
     ADD ESP,0x4                         ; 00544a0b
     PUSH EBP                            ; 00544a0e
         ;   Label: LAB_00544a0e
-    PUSH 0x596675                       ; 00544a0f | DAT_00596675
+    PUSH 0x596675                       ; 00544a0f | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x108]     ; 00544a14
     PUSH EDI                            ; 00544a1b
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00544a1c
@@ -159,7 +159,7 @@ section .text
     MOV EAX,ESP                         ; 00544a63
         ;   Label: LAB_00544a63
     PUSH EAX                            ; 00544a65
-    PUSH 0x596679                       ; 00544a66 | DAT_00596679
+    PUSH 0x596679                       ; 00544a66 | = "%s\n"
     MOV EBX,dword ptr [ESP + 0x108]     ; 00544a6b
     PUSH EBX                            ; 00544a72
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00544a73

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 82,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 31
@@ -171,8 +170,8 @@
   "globals": [
     {
       "addr": "00589a49",
-      "name": "DAT_00589a49",
-      "type": "undefined4",
+      "name": "s_scr_00589a49",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -269,16 +268,8 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "makepath(local_104,0,0,param_1 + 0x10,&DAT_00589a49);",
+      "text": "makepath(local_104,0,0,param_1 + 0x10,\"scr\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00589a49",
-      "severity": "mild",
-      "text": "makepath(local_104,0,0,param_1 + 0x10,&DAT_00589a49);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

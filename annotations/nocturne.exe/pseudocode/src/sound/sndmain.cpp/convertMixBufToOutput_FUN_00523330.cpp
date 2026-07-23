@@ -31,11 +31,11 @@ LAB_0052347d:
     if (0 < param_4) {
       do {
         fVar1 = *param_1;
-        if (fVar1 <= (float)_DAT_005928f6) {
+        if (fVar1 <= (float)-1) {
           *(byte *)local_30 = 0;
         }
         else if (fVar1 < 1.0) {
-          local_28 = (byte)(int)ROUND(fVar1 * _DAT_005928ee + _DAT_005928fe);
+          local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);
           *(byte *)local_30 = local_28;
         }
         else {
@@ -53,11 +53,11 @@ LAB_0052347d:
     if (0 < param_4) {
       do {
         fVar1 = *param_1;
-        if (fVar1 <= (float)_DAT_005928f6) {
+        if (fVar1 <= (float)-1) {
           *local_30 = 0x8001;
         }
         else if (fVar1 < 1.0) {
-          local_20 = (ushort)(int)ROUND(fVar1 * _DAT_005928ea);
+          local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);
           *local_30 = local_20;
         }
         else {

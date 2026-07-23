@@ -22,8 +22,8 @@
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110 at 0054a5dd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00596ea5
-;   undefined4 DAT_00596ead
+;   double DOUBLE_00596ea5 = 0.0174532925194444
+;   double DOUBLE_00596ead = 0.00100000000000000
 ;   undefined4 DAT_005a379c
 ;   undefined4 DAT_005a37a0
 ;
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
     FLD float ptr [EBX + 0x770]         ; 0054a6e1
     MOV dword ptr [ESP + 0x30],EAX      ; 0054a6e7
-    FMUL double ptr [0x00596ea5]        ; 0054a6eb | DAT_00596ea5
+    FMUL double ptr [0x00596ea5]        ; 0054a6eb | DOUBLE_00596ea5
     FLD float ptr [ESP + 0x30]          ; 0054a6f1
     ADD ESP,0x4                         ; 0054a6f5
     FLD float ptr [EBP + 0x14]          ; 0054a6f8
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
     ADD ESP,0x4                         ; 0054a788
     FLD float ptr [ESP + 0x4]           ; 0054a78b
-    FCOMP double ptr [0x00596ead]       ; 0054a78f | DAT_00596ead
+    FCOMP double ptr [0x00596ead]       ; 0054a78f | DOUBLE_00596ead
     FNSTSW AX                           ; 0054a795
     SAHF                                ; 0054a797
     JNC 0x0054a7f0                      ; 0054a798
@@ -177,7 +177,7 @@ section .text
     JZ 0x0054a7f8                       ; 0054a7b0
         ;   XREF to: 0054a7f8 (CONDITIONAL_JUMP)  ; LAB_0054a7f8
     FLD float ptr [ESP]                 ; 0054a7b2
-    FCOMP double ptr [0x00596ead]       ; 0054a7b5 | DAT_00596ead
+    FCOMP double ptr [0x00596ead]       ; 0054a7b5 | DOUBLE_00596ead
     FNSTSW AX                           ; 0054a7bb
     SAHF                                ; 0054a7bd
     JNC 0x0054a7f4                      ; 0054a7be

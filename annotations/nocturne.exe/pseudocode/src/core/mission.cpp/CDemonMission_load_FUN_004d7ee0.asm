@@ -10,7 +10,7 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb3c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00589612
+;   TerminatedCString s_rt_00589612
 ;   string s_world_00589615
 ;   string s_..\\core\\mission.cpp_0058961b
 ;   string s_CDemonMission::load_-_Unable_to_o_0058962f
@@ -36,7 +36,7 @@ section .text
         ;   Label: core_mission.cpp_CDemonMission_load_FUN_004d7ee0
     PUSH EDI                            ; 004d7ee1
     PUSH EBP                            ; 004d7ee2
-    PUSH 0x589612                       ; 004d7ee3 | DAT_00589612
+    PUSH 0x589612                       ; 004d7ee3 | = "rt"
     MOV EDX,dword ptr [ESP + 0x18]      ; 004d7ee8
     PUSH EDX                            ; 004d7eec
     PUSH 0x589615                       ; 004d7eed | = "world"

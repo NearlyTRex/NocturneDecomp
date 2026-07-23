@@ -30,7 +30,7 @@ void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1)
   iStack_28 = 0;
   iStack_2c = param_1;
   do {
-    fVar2 = (float)iStack_28 * _DAT_0059aea8;
+    fVar2 = (float)iStack_28 * 0.5f;
     fVar1 = *(float *)(param_1 + 0x19854);
     iStack_1c = iStack_28 * 0x30;
     iVar3 = 0;
@@ -39,7 +39,7 @@ void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1)
       iStack_3c = (int)ROUND((fVar2 + fVar1) * _DAT_0059ae90);
       iStack_38 = (int)ROUND((*(float *)(iVar5 + 0x12720) + (float)0.25) * _DAT_0059ae90)
       ;
-      iStack_34 = (int)ROUND(((float)iVar3 * _DAT_0059aea8 + *(float *)(param_1 + 0x19858)) *
+      iStack_34 = (int)ROUND(((float)iVar3 * 0.5f + *(float *)(param_1 + 0x19858)) *
                              _DAT_0059ae90);
       iStack_18 = iVar3;
       wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iStack_1c,&iStack_3c)

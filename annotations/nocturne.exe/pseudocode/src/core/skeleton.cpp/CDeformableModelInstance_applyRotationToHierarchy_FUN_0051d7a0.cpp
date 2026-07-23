@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)
 
@@ -47,7 +46,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
       if (-1 < iVar1) {
         fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);
         fStack_e8 = fStack_18 * local_28;
-        if ((float)_DAT_00591bcb < ABS(fStack_e8)) {
+        if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {
           core_xform_cpp_FUN_0055d560(fStack_e8,local_34);
           uStack_64 = auStack_50[3];
           *(uint *)((int)auStack_60 + (uint)bVar5 * 0xfffffff8) =

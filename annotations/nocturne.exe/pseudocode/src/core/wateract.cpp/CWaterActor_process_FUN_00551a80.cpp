@@ -19,7 +19,8 @@ void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float para
   
   iVar3 = *(int *)((int)param_1 + 0x2b224);
   fVar5 = (float10)round
-                             ((float10)param_2 * (float10)_DAT_0059764f * (float10)_DAT_00597657);
+                             ((float10)param_2 * (float10)65536 * (float10)8
+                             );
   iVar3 = iVar3 + (int)ROUND(fVar5);
   *(int *)((int)param_1 + 0x2b224) = iVar3;
   if (0x10000 < iVar3) {
@@ -59,7 +60,7 @@ void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float para
     *(uint *)((int)param_1 + 0x274) = 0;
     break;
   default:
-    _DAT_01cc4800 = "`A..\\core\\wateract.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\wateract.cpp";
     _DAT_01cc4804 = 0x1a5;
     FUN_004c8440("CWaterActor::process - Bad state");
   }

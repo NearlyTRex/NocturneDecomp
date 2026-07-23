@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_004c7ca0(int param_1)
 
 {
@@ -78,7 +76,7 @@ int FUN_004c7ca0(int param_1)
       fStack_30 = fStack_30 * fVar1;
       fStack_2c = fStack_2c * fVar1;
     }
-    fVar5 = (float10)fpatan((float10)_DAT_00587aad / (float10)_DAT_0059fd64,(float10)1);
+    fVar5 = (float10)fpatan((float10)18 / (float10)112.0f,(float10)1);
     iVar2 = core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
                       (0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,(float)fVar5);
     if (*(int *)(param_1 + 0x580) != 0) {
@@ -89,7 +87,7 @@ int FUN_004c7ca0(int param_1)
         iStack_18 = iVar2;
         core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
                   (0x01C08D04,&fStack_4c,&fStack_40,0x3f800000,0xff,0xff,0xb4,
-                   (float)iVar2 * (float)fVar5 * (float)_DAT_00587ab5);
+                   (float)iVar2 * (float)fVar5 * (float)0.10000000000000001);
         iVar2 = iVar4;
       } while (iVar4 < 10);
       fStack_6c = fStack_3c - fStack_48;
@@ -110,7 +108,7 @@ int FUN_004c7ca0(int param_1)
         fStack_70 = 0.0;
         fStack_68 = 0.0;
       }
-      fStack_1c = *(float *)(param_1 + 0x584) * (float)_DAT_00587abd;
+      fStack_1c = *(float *)(param_1 + 0x584) * (float)0.015625;
       fStack_7c = fStack_70 * fStack_1c;
       fStack_78 = fStack_6c * fStack_1c;
       fStack_74 = fStack_68 * fStack_1c;

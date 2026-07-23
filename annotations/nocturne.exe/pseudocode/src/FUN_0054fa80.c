@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0054fa80(int param_1)
 
 {
@@ -28,7 +26,7 @@ void FUN_0054fa80(int param_1)
     fStack_c = *(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24);
     fStack_8 = *(float *)(iVar1 + 0x28) - *(float *)(param_1 + 0x28);
     if (SQRT(fStack_8 * fStack_8 + fStack_10 * fStack_10 + fStack_c * fStack_c) <
-        (float)_DAT_0059746b) {
+        (float)0.5) {
       iVar1 = *(int *)(param_1 + 0x3a0);
       *(float *)(param_1 + 0x20) = *(float *)(iVar1 + 0x20);
       *(uint *)(param_1 + 0x24) = *(uint *)(iVar1 + 0x24);

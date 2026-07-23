@@ -86,8 +86,8 @@
 ;   double DOUBLE_00579356 = 5.22209901682860E-315
 ;   double DOUBLE_0057935e = 32
 ;   double DOUBLE_00579366 = 6.28318530700000
-;   undefined4 DAT_0059a898
-;   undefined4 DAT_0059a89c
+;   float FLOAT_0059a898 = 2
+;   float FLOAT_0059a89c = 3
 ;   undefined4 DAT_0059a8a8
 ;   ... and 9 more
 ;
@@ -957,12 +957,12 @@ section .text
     TEST EAX,EAX                        ; 00419372
     JNZ 0x00418e64                      ; 00419374
         ;   XREF to: 00418e64 (CONDITIONAL_JUMP)  ; caseD_4
-    MOV EAX,[0x0059a898]                ; 0041937a | DAT_0059a898
+    MOV EAX,[0x0059a898]                ; 0041937a | FLOAT_0059a898
     MOV dword ptr [EBP + 0x5a],EAX      ; 0041937f
     CMP dword ptr [EBX + 0x24f0],0x0    ; 00419382
     JZ 0x00419393                       ; 00419389
         ;   XREF to: 00419393 (CONDITIONAL_JUMP)  ; LAB_00419393
-    MOV EAX,[0x0059a89c]                ; 0041938b | DAT_0059a89c
+    MOV EAX,[0x0059a89c]                ; 0041938b | FLOAT_0059a89c
     MOV dword ptr [EBP + 0x5a],EAX      ; 00419390
     PUSH 0x3e32b8c2                     ; 00419393
         ;   Label: LAB_00419393

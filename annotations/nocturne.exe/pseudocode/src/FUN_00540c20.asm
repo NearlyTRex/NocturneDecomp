@@ -245,7 +245,7 @@ section .text
         ;   XREF to: 0051b800 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800()
     FLD float ptr [EBX + 0x7fc]         ; 00540e58
     ADD ESP,0x4                         ; 00540e5e
-    FADD float ptr [0x00596148]         ; 00540e61 | DAT_00596148
+    FADD float ptr [0x00596148]         ; 00540e61 | FLOAT_00596148
     PUSH EBP                            ; 00540e67
     FSTP float ptr [EBX + 0x7fc]        ; 00540e68
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 ; 00540e6e

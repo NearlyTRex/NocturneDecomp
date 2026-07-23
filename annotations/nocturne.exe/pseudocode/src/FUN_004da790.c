@@ -150,7 +150,7 @@ void FUN_004da790(int param_1,float param_2)
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar5);
     }
   }
-  fVar3 = (float)_DAT_0058a339;
+  fVar3 = (float)3.1415926535000001;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar3 * *(float *)(param_1 + 0xbc8c);
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iVar4);
@@ -174,7 +174,7 @@ void FUN_004da790(int param_1,float param_2)
             local_d0 = *(float *)(param_1 + 0x20) - *(float *)(iVar5 + 0x20);
             local_cc = *(float *)(param_1 + 0x24) - *(float *)(iVar5 + 0x24);
             local_c8 = *(float *)(param_1 + 0x28) - *(float *)(iVar5 + 0x28);
-            if ((float)_DAT_0058a351 <
+            if ((float)2 <
                 SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc)) {
               *(uint *)(param_1 + 0xbd40) = 1;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,8,1);
@@ -192,17 +192,17 @@ void FUN_004da790(int param_1,float param_2)
           local_104 = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
           local_20 = SQRT(local_104 * local_104 + local_10c * local_10c + local_108 * local_108);
           local_18 = local_20;
-          if (local_20 < 0x40400000 + 1.0) {
+          if (local_20 < 3.0f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_70,&local_10c);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_6c - *(float *)(param_1 + 0x34));
-            if ((ABS(local_14) < (float)_DAT_0058a349) && (*(float *)(param_1 + 0xbca0) <= 0.0)) {
+            if ((ABS(local_14) < (float)0.52359877558333301) && (*(float *)(param_1 + 0xbca0) <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,9,1);
               *(uint *)(param_1 + 0xbca0) = 0x40000000;
             }
           }
           if (local_20 < *(float *)(param_1 + 0xbc9c)) {
-            if (_DAT_005a0928 <= local_20) {
+            if (20.0f <= local_20) {
               uVar6 = 8;
             }
             else {
@@ -220,7 +220,7 @@ void FUN_004da790(int param_1,float param_2)
           }
           break;
         }
-        if (*(float *)(param_1 + 0xbdf4) <= (float)_DAT_0058a341) break;
+        if (*(float *)(param_1 + 0xbdf4) <= (float)0.5) break;
         iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e800000);
         if (iVar4 != 0) {
           core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(param_1);
@@ -229,7 +229,7 @@ void FUN_004da790(int param_1,float param_2)
       }
       else {
         *(uint *)(param_1 + 0xbca4) = *(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        if (*(float *)(param_1 + 0xbdf4) <= (float)_DAT_0058a341) break;
+        if (*(float *)(param_1 + 0xbdf4) <= (float)0.5) break;
       }
       core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(param_1);
       break;
@@ -249,16 +249,16 @@ void FUN_004da790(int param_1,float param_2)
       else if (*(int *)(param_1 + 0xbd40) == 0) {
         iVar4 = core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(param_1,param_2);
         if (iVar4 == 0) {
-          local_24 = 0x40400000 + 1.0;
+          local_24 = 3.0f + 1.0;
           if (*(int *)(param_1 + 0x24f0) != 0) {
-            local_24 = 0x41F00000;
+            local_24 = 30.0f;
           }
           *(uint *)(param_1 + 0x23ac) = 0;
           *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
           local_a0 = 0;
-          local_28 = 0x40400000;
-          local_98 = 0x40400000;
+          local_28 = 3.0f;
+          local_98 = 3.0f;
           local_9c = 0;
           uVar6 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                             (*(int *)(param_1 + 0xbca4),&local_a0,0x3f000000,0x3e32b8c2);
@@ -281,13 +281,13 @@ void FUN_004da790(int param_1,float param_2)
                 ;
                 local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                             (local_f0 - *(float *)(param_1 + 0x34));
-                if (ABS(local_14) < (float)_DAT_0058a349) {
+                if (ABS(local_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                             (param_1 + 0x150,9,1);
                 }
               }
               else if (local_28 + 1.0 <= local_30) {
-                if (((float)_DAT_0058a341 < *(float *)(param_1 + 0xbdf4)) &&
+                if (((float)0.5 < *(float *)(param_1 + 0xbdf4)) &&
                    (*(float *)(param_1 + 0xbdf8) <= 0.0)) {
                   *(uint *)(param_1 + 0xbd3c) = 0;
                   iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e99999a);
@@ -316,8 +316,8 @@ void FUN_004da790(int param_1,float param_2)
                 ;
                 local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                             (local_54 - *(float *)(param_1 + 0x34));
-                if ((ABS(local_14) < (float)_DAT_0058a349) && (*(float *)(param_1 + 0xbca0) <= 0.0))
-                {
+                if ((ABS(local_14) < (float)0.52359877558333301) &&
+                   (*(float *)(param_1 + 0xbca0) <= 0.0)) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                             (param_1 + 0x150,9,1);
                   *(uint *)(param_1 + 0xbca0) = 0x40000000;
@@ -336,7 +336,7 @@ void FUN_004da790(int param_1,float param_2)
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
         local_88 = 0;
-        local_80 = 0x40400000;
+        local_80 = 3.0f;
         local_84 = 0;
         uVar6 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbd44) + 0x14c) + 0xbc))
                           (*(int *)(param_1 + 0xbd44),&local_88,0x3f000000,0x3e32b8c2);
@@ -386,7 +386,7 @@ void FUN_004da790(int param_1,float param_2)
           }
         }
       }
-      if ((*(float *)(param_1 + 0xbdf4) < (float)_DAT_0058a341) ||
+      if ((*(float *)(param_1 + 0xbdf4) < (float)0.5) ||
          (*(float *)(param_1 + 0xbdf8) <= 0.0)) {
         if (*(int *)(param_1 + 0xbd50) == 0) {
           uVar7 = 0x40800000;
@@ -480,7 +480,8 @@ switchD_004db6cf_caseD_3:
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                   (0x01E57284,*(uint *)(param_1 + 0xbca4));
       }
-      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058a359;
+      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32
+      ;
       local_ac = *(float *)(param_1 + 0x2420) * param_2;
       local_a8 = *(float *)(param_1 + 0x2424) * param_2;
       local_a4 = param_2 * *(float *)(param_1 + 0x2428);

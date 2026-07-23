@@ -10,10 +10,10 @@
 ;   FUN_00533210 at 00533517
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005950ee
-;   undefined4 DAT_005950f2
-;   undefined4 DAT_005950f6
-;   undefined4 DAT_005950fa
+;   float FLOAT_005950ee = -0.1000000
+;   float FLOAT_005950f2 = 0.1000000
+;   float FLOAT_005950f6 = 2
+;   float FLOAT_005950fa = 10
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -64,13 +64,13 @@ section .text
     MOV dword ptr [ESP + 0x154],EBX     ; 005337af
     PUSH EAX                            ; 005337b6
     FXCH ST3                            ; 005337b7
-    FLD float ptr [0x005950ee]          ; 005337b9 | DAT_005950ee
+    FLD float ptr [0x005950ee]          ; 005337b9 | FLOAT_005950ee
     FXCH                                ; 005337bf
     FADD ST0,ST1                        ; 005337c1
     FXCH ST3                            ; 005337c3
     FADDP                               ; 005337c5
     FXCH                                ; 005337c7
-    FLD float ptr [0x005950f2]          ; 005337c9 | DAT_005950f2
+    FLD float ptr [0x005950f2]          ; 005337c9 | FLOAT_005950f2
     FXCH                                ; 005337cf
     FADD ST0,ST1                        ; 005337d1
     FXCH ST4                            ; 005337d3
@@ -163,10 +163,10 @@ section .text
     FLD float ptr [ESP + 0x100]         ; 005338e9
     FSUB float ptr [ESP + 0xf4]         ; 005338f0
     FXCH                                ; 005338f7
-    FMUL float ptr [0x005950f6]         ; 005338f9 | DAT_005950f6
+    FMUL float ptr [0x005950f6]         ; 005338f9 | FLOAT_005950f6
     FXCH                                ; 005338ff
     FSTP float ptr [ESP + 0x1c0]        ; 00533901
-    FADD float ptr [0x005950fa]         ; 00533908 | DAT_005950fa
+    FADD float ptr [0x005950fa]         ; 00533908 | FLOAT_005950fa
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 0053390e
     FST float ptr [ESP + 0x1a8]         ; 00533915
     MOV dword ptr [ESP + 0x124],EAX     ; 0053391c

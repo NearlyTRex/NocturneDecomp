@@ -17,7 +17,7 @@
 ;   FUN_0049cc10 at 0049d06c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058e24a
+;   float FLOAT_0058e24a = 0.3500000
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b9354
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe794
     FLD float ptr [ESP + 0x20]          ; 004fe798
-    FDIV float ptr [0x0058e24a]         ; 004fe79c | DAT_0058e24a
+    FDIV float ptr [0x0058e24a]         ; 004fe79c | FLOAT_0058e24a
     FSUBR float ptr [0x01e56c20]        ; 004fe7a2 | DAT_01e56c20
     ADD ESP,0x4                         ; 004fe7a8
         ;   Label: LAB_004fe7a8
@@ -260,7 +260,7 @@ section .text
         ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe99d
     FLD float ptr [ESP + 0x20]          ; 004fe9a1
-    FDIV float ptr [0x0058e24a]         ; 004fe9a5 | DAT_0058e24a
+    FDIV float ptr [0x0058e24a]         ; 004fe9a5 | FLOAT_0058e24a
     FADD float ptr [0x01e56c20]         ; 004fe9ab | DAT_01e56c20
     JMP 0x004fe7a8                      ; 004fe9b1
         ;   XREF to: 004fe7a8 (UNCONDITIONAL_JUMP)  ; LAB_004fe7a8

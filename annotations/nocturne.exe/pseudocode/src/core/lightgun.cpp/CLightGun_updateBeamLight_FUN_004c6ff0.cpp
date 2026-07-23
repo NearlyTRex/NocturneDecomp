@@ -26,7 +26,7 @@ void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(int param_
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0();
   _DAT_01c74740 = 0x42000000;
-  _DAT_01c74778 = _DAT_0059fd64;
+  _DAT_01c74778 = 112.0f;
   _DAT_01c76310 = 1;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080();
   return;

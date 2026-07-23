@@ -36,9 +36,9 @@
 ;   core_fire.cpp_CSpark_process_FUN_004836e0 at 00483738
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058cb88
-;   undefined4 DAT_0058cb8c
-;   undefined4 DAT_0058cb90
+;   float FLOAT_0058cb88 = 0.8000000
+;   float FLOAT_0058cb8c = 2
+;   float FLOAT_0058cb90 = -0.7000000
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
 ;   undefined4 DAT_01fba938
@@ -179,7 +179,7 @@ section .text
     FMULP ST2                           ; 004ef28b
     FXCH ST2                            ; 004ef28d
     FST float ptr [ESP + 0x30]          ; 004ef28f
-    FLD float ptr [0x0058cb88]          ; 004ef293 | DAT_0058cb88
+    FLD float ptr [0x0058cb88]          ; 004ef293 | FLOAT_0058cb88
     FXCH                                ; 004ef299
     FMUL ST1                            ; 004ef29b
     FXCH ST3                            ; 004ef29d
@@ -255,7 +255,7 @@ section .text
     FLD float ptr [ESP + 0x8c]          ; 004ef359
     FMUL float ptr [EDX + 0x8]          ; 004ef360
     FADDP                               ; 004ef363
-    FMUL float ptr [0x0058cb8c]         ; 004ef365 | DAT_0058cb8c
+    FMUL float ptr [0x0058cb8c]         ; 004ef365 | FLOAT_0058cb8c
     FLD float ptr [ESP + 0x84]          ; 004ef36b
     FXCH                                ; 004ef372
     FSTP float ptr [ESP + 0x98]         ; 004ef374
@@ -291,7 +291,7 @@ section .text
     MOV dword ptr [EDX + 0x8],EAX       ; 004ef3e9
     LEA EDX,[EBX + 0xc]                 ; 004ef3ec
         ;   Label: LAB_004ef3ec
-    FLD float ptr [0x0058cb90]          ; 004ef3ef | DAT_0058cb90
+    FLD float ptr [0x0058cb90]          ; 004ef3ef | FLOAT_0058cb90
     FLD float ptr [EDX]                 ; 004ef3f5
     FMUL ST1                            ; 004ef3f7
     FSTP float ptr [ESP + 0x6c]         ; 004ef3f9

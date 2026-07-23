@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(int param_1,uint param_2)
 
 {
@@ -30,7 +28,7 @@ uint __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(int param
       iVar5 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar1,param_2);
       if (iVar5 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - *(float *)(param_1 + 0x20);
-        fVar3 = (*(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24)) * (float)_DAT_005965e8;
+        fVar3 = (*(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24)) * (float)3;
         fVar4 = *(float *)(iVar1 + 0x28) - *(float *)(param_1 + 0x28);
         if (SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3) < *(float *)(param_1 + 0xbc9c)) {
           *(int *)(param_1 + 0xbca4) = iVar1;

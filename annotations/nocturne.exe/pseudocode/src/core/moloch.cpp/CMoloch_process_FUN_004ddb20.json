@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 1480,
+    "complexity_score": 1495,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 220,
-    "suspect_count": 124,
+    "suspect_count": 125,
     "suspect_types": [
       "pointer_cast",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -316,51 +317,51 @@
     },
     {
       "addr": "0058a7d2",
-      "name": "DAT_0058a7d2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a7d2",
+      "type": "double",
+      "value": "12.5663706140000"
     },
     {
       "addr": "0058a7da",
-      "name": "DAT_0058a7da",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a7da",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "0058a7e2",
-      "name": "DAT_0058a7e2",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a7e2",
+      "type": "double",
+      "value": "32"
     },
     {
       "addr": "0058a7ea",
-      "name": "DAT_0058a7ea",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a7ea",
+      "type": "double",
+      "value": "-1.57079632675000"
     },
     {
       "addr": "0058a7f2",
-      "name": "DAT_0058a7f2",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058a7f2",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "0058a7fa",
-      "name": "DAT_0058a7fa",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a7fa",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "0058a802",
-      "name": "DAT_0058a802",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a802",
+      "type": "double",
+      "value": "1.59386252192652E-314"
     },
     {
       "addr": "0058a80a",
-      "name": "DAT_0058a80a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a80a",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "005a0ab8",
@@ -776,7 +777,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0058a7da;",
+      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;",
       "type": "unnamed_param"
     },
     {
@@ -784,7 +785,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0058a7da;",
+      "text": "*(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;",
       "type": "unnamed_param"
     },
     {
@@ -968,7 +969,7 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058a7e2;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -976,7 +977,7 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058a7e2;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -984,7 +985,7 @@
       "line": 108,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058a7e2;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1196,11 +1197,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 139,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_18 = param_2 * (float)_DAT_0058a80a;",
+      "text": "local_18 = param_2 * (float)3.1415926535000001;",
       "type": "unnamed_param"
     },
     {

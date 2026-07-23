@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4)
 
 {
@@ -47,24 +45,24 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param
       pfVar12 = local_24;
       do {
         fVar13 = (float10)fcos((float10)iVar5 *
-                               ((float10)local_1c * (float10)_DAT_0058b6b0 + (float10)_DAT_0058b6c8)
-                              );
-        *pfVar11 = (float)(fVar13 * (float10)_DAT_0058b6b8);
+                               ((float10)local_1c * (float10)0.049087385211999998 +
+                               (float10)0.78539816339699997));
+        *pfVar11 = (float)(fVar13 * (float10)1000000000);
         local_14 = iVar5;
         if (*pfVar11 < 0.0) {
           local_5c[0] = (double)*pfVar11;
-          modf((double)(*pfVar11 + (float)_DAT_0058b6d0),local_5c);
+          modf((double)(*pfVar11 + (float)-0.5),local_5c);
           dVar3 = local_5c[0];
         }
         else {
           local_64 = (double)*pfVar11;
-          modf((double)(*pfVar11 + (float)_DAT_0058b6d8),&local_64);
+          modf((double)(*pfVar11 + (float)0.5),&local_64);
           dVar3 = local_64;
         }
         *pfVar11 = (float)dVar3;
         pfVar11 = pfVar11 + 1;
         iVar5 = iVar5 + 2;
-        *pfVar12 = *pfVar12 * (float)_DAT_0058b6c0;
+        *pfVar12 = *pfVar12 * (float)1.0000000000000001e-09;
         pfVar12 = pfVar12 + 1;
       } while (iVar5 != 0x41);
       local_1c = local_1c + 1;
@@ -79,7 +77,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param
   iVar5 = 0;
   local_4c = 0;
   do {
-    if ((float)_DAT_0058b6e0 < ABS(*(float *)(iVar5 * 4 + param_2))) {
+    if ((float)1.0000000000000001e-05 < ABS(*(float *)(iVar5 * 4 + param_2))) {
       aiStack_e4[local_4c] = iVar5;
       local_4c = local_4c + 1;
     }

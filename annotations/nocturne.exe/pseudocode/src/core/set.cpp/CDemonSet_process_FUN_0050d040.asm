@@ -13,9 +13,9 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508f81
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059079a
+;   TerminatedCString s_son_0059079a
 ;   string s_%soff_0059079f
-;   undefined4 DAT_005907a5
+;   TerminatedCString s_moon_005907a5
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_01fb99d4
 ;   undefined4 DAT_01fb9b54
@@ -93,7 +93,7 @@ section .text
     ADD ESP,0xc                         ; 0050d0e4
     LEA EAX,[ESI + 0x4]                 ; 0050d0e7
     PUSH EAX                            ; 0050d0ea
-    PUSH 0x59079a                       ; 0050d0eb | DAT_0059079a
+    PUSH 0x59079a                       ; 0050d0eb | = "%son"
     LEA EAX,[ESP + 0x8]                 ; 0050d0f0
     PUSH EAX                            ; 0050d0f4
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050d0f5
@@ -132,7 +132,7 @@ section .text
     MOV dword ptr [EBX + 0x1cb4],0x0    ; 0050d148
     PUSH 0x4                            ; 0050d152
         ;   Label: LAB_0050d152
-    PUSH 0x5907a5                       ; 0050d154 | DAT_005907a5
+    PUSH 0x5907a5                       ; 0050d154 | = "moon"
     ADD ESI,0x4                         ; 0050d159
     PUSH ESI                            ; 0050d15c
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0050d15d

@@ -55,9 +55,9 @@
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eafe6
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058c329+1
+;   TerminatedCString s_core_netgame_cpp_0058c32a
 ;   string s_CNetGame::applyNewGameSettings_-_0058c33e
-;   string s_..\\core\\netgame.cpp_0058c38a
+;   TerminatedCString s_core_netgame_cpp_0058c38a
 ;   string s_Hell_froze_0058c39e
 ;   undefined4 DAT_005bdee4
 ;   undefined4 DAT_01cc4800
@@ -89,7 +89,7 @@ section .text
     CMP dword ptr [EAX + 0x4],0x1       ; 004ec61d
     JZ 0x004ec646                       ; 004ec621
         ;   XREF to: 004ec646 (CONDITIONAL_JUMP)  ; LAB_004ec646
-    MOV EBX,0x58c32a                    ; 004ec623 | s_..\core\netgame.cpp_0058c329+1
+    MOV EBX,0x58c32a                    ; 004ec623 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ec623
     MOV EDI,0x7e6                       ; 004ec628
     PUSH 0x58c33e                       ; 004ec62d | = "CNetGame::applyNewGameSettings - shou..."

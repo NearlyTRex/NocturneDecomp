@@ -23,6 +23,6 @@ bool __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
   if (_DAT_02dc84b0 == 0) {
     return true;
   }
-  FUN_00529980("Mb`?killSoundThread - failed!\n" + 4);
+  FUN_00529980("killSoundThread - failed!\n");
   return _DAT_02dc84b0 == 0;
 }

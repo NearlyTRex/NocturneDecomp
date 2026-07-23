@@ -33,13 +33,13 @@ void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
   float local_68;
   uint local_64;
   uint local_60;
-  uint local_5c;
+  float local_5c;
   float local_40;
   float local_3c;
   float local_38;
   float local_20;
   int local_1c;
-  uint local_18;
+  float local_18;
   float local_14;
   
   iVar5 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
@@ -81,7 +81,7 @@ void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
       break;
     case 1:
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-      uVar8 = 0x40400000;
+      fVar2 = 3.0f;
       if (*(int *)(param_1 + 0xbca4) == 0) {
         iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         if (iVar6 == 0) {
@@ -89,12 +89,12 @@ void core_drone_cpp_CDrone_process_FUN_00462a60(int param_1,float param_2)
         }
       }
       else {
-        local_18 = 0x40400000;
+        local_18 = 3.0f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
         local_64 = 0;
-        local_5c = uVar8;
+        local_5c = fVar2;
         local_60 = 0;
         uVar8 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                           (*(int *)(param_1 + 0xbca4),&local_64,0x3f000000,0x3e32b8c2);

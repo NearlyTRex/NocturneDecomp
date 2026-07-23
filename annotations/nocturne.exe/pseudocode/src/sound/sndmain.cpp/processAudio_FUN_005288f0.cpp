@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_processAudio_FUN_005288f0(void)
   
   if (_DAT_02dc8318 != (int *)0x0) {
     iVar1 = wincore_winrun_cpp_waitForMutexTimeout_FUN_00559bf0
-                      (_DAT_02dc84b8,_DAT_02dc84a8 * _DAT_005939b6);
+                      (_DAT_02dc84b8,_DAT_02dc84a8 * 3);
     if (iVar1 != 0) {
       _DAT_02dc84bc = _DAT_02dc84bc + 1;
       (**(code **)(*_DAT_02dc8318 + 0x10))(_DAT_02dc8318);

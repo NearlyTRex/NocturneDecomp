@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 329,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 26,
+    "pseudocode_lines": 43,
+    "suspect_count": 25,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 126
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -191,9 +190,9 @@
     },
     {
       "addr": "00590d41",
-      "name": "DAT_00590d41",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00590d41",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "005ad350",
@@ -312,14 +311,14 @@
         {
           "check_id": "invalidPointerCast",
           "column": 8,
-          "line": 45,
+          "line": 43,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 8,
-          "line": 49,
+          "line": 47,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -330,16 +329,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_005148b0(char *param_1,char *param_2)",
@@ -347,7 +338,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_005148b0(char *param_1,char *param_2)",
@@ -355,7 +346,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 + 0x104 != param_1 + 0x100) {",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_2 + 0x104 != param_1 + 0x100) {",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
@@ -387,7 +378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x104);",
@@ -395,7 +386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x104);",
@@ -403,7 +394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x108);",
@@ -411,7 +402,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x108);",
@@ -419,7 +410,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar3 = param_1 + 0x118;",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar4 = param_2 + 0x110;",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x140);",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x140);",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar3 = param_1;",
@@ -459,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar4 = param_2;",
@@ -467,7 +458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,*(uint *)(param_1 + 0x144));",
@@ -475,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2,*(uint *)(param_1 + 0x144));",
@@ -483,7 +474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {",
@@ -491,15 +482,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {",
+      "text": "if (*(float *)(param_1 + 0x144) <= (float)0.25) {",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 27,
+      "line": 25,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -507,7 +498,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
       "severity": "moderate",
       "text": "for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -515,7 +506,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 13,
+      "line": 11,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
@@ -542,7 +533,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 45,
+      "line": 43,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {",
@@ -550,10 +541,10 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 49,
+      "line": 47,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {",
+      "text": "if (*(float *)(param_1 + 0x144) <= (float)0.25) {",
       "type": "static_invalid_pointer_cast"
     }
   ]

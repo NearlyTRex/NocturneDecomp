@@ -25,12 +25,12 @@ void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(char *p
   pcVar2 = (char *)0x0;
 LAB_004f4ae2:
   if (pcVar2 != (char *)0x0) {
-    iVar1 = _stricmp(pcVar2,0x58d1e6);
+    iVar1 = _stricmp(pcVar2,".raw");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0(param_1,param_2);
       return;
     }
-    iVar1 = _stricmp(pcVar2,0x58d1eb);
+    iVar1 = _stricmp(pcVar2,".pbm");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0(param_1,param_2);
       return;

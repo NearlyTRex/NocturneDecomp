@@ -17,7 +17,7 @@
 ;   core_set.cpp_FUN_00509a80 at 00509de0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00596cd5
+;   double DOUBLE_00596cd5 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005ba8ec
 ;   undefined4 DAT_01b4d738
@@ -71,7 +71,7 @@ section .text
     CALL core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0 ; 00549356
         ;   XREF to: 004b21b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0()
     ADD ESP,0xc                         ; 0054935b
-    FLD double ptr [0x00596cd5]         ; 0054935e | DAT_00596cd5
+    FLD double ptr [0x00596cd5]         ; 0054935e | DOUBLE_00596cd5
     FLD float ptr [ESP]                 ; 00549364
     FMUL ST1                            ; 00549367
     FLD float ptr [ESP + 0x4]           ; 00549369

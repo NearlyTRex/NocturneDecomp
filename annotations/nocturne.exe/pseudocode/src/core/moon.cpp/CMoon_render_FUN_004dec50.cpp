@@ -44,8 +44,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
             (DAT_005ae704,&DAT_02dd1184);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,0x42e00000);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(DAT_005ae704,&DAT_02dd1184);
-  local_5c = (*(float *)(param_1 + 4) + (float)_DAT_0058a936) * (float)_DAT_0058a93e;
-  local_58 = (float)_DAT_0058a93e * (*(float *)(param_1 + 4) + (float)_DAT_0058a936);
+  local_5c = (*(float *)(param_1 + 4) + (float)-0.5) * (float)48;
+  local_58 = (float)48 * (*(float *)(param_1 + 4) + (float)-0.5);
   local_54 = 0x42900000;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_5c)
   ;
@@ -73,7 +73,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
         local_44 = local_44 + *(float *)(iVar3 + 0x1ccdef8);
         local_40 = local_40 + *(float *)(iVar3 + 0x1ccdefc);
         local_3c = local_3c + *(float *)(iVar3 + 0x1ccdf00);
-        local_4c = local_4c + _DAT_0058a956;
+        local_4c = local_4c + 1.570796f;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,local_50,0)
@@ -89,11 +89,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
         local_14 = *(int *)(*(int *)(iVar3 + 0x1ccdeec) * 0xc + 0x1ccdec8);
         local_18 = *(float *)(iVar3 + 0x1ccdef0) / (float)local_14;
         local_38 = (double)local_18;
-        if ((float)_DAT_0058a95e <= local_18) {
-          fVar6 = ((float10)local_18 + (float10)_DAT_0058a936) * (float10)_DAT_0058a946;
+        if ((float)0.5 <= local_18) {
+          fVar6 = ((float10)local_18 + (float10)-0.5) * (float10)8192;
         }
         else {
-          fVar6 = (float10)_DAT_0058a952 - (float10)local_18 * (float10)_DAT_0058a94e;
+          fVar6 = (float10)8192.0f - (float10)local_18 * (float10)16384.0f;
         }
         local_5c = 7.156918e-39;
         fVar6 = (float10)round(fVar6);

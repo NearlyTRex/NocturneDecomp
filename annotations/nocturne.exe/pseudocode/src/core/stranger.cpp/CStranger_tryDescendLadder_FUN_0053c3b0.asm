@@ -17,13 +17,13 @@
 ;   FUN_0053fc60 at 0053fef3
 ;
 ; Referenced Globals:
-;   undefined4 s_Ladder_dot_:_%f_00595b3e+1
-;   undefined4 DAT_00595b57
-;   undefined4 DAT_00595b5f
-;   undefined4 DAT_00595b67
-;   undefined4 DAT_00595b6f
-;   undefined4 DAT_00595b77
-;   undefined4 DAT_00595b7f
+;   TerminatedCString s_Ladder_dot_f_00595b3f
+;   double DOUBLE_00595b57 = 0.990000000000000
+;   float FLOAT_00595b5f = 0.5
+;   double DOUBLE_00595b67 = 2
+;   double DOUBLE_00595b6f = 4
+;   double DOUBLE_00595b77 = -1
+;   double DOUBLE_00595b7f = 0.261799387791667
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
@@ -61,7 +61,7 @@ section .text
     MOV dword ptr [ESP + 0xe8],EAX      ; 0053c3d4
     FLD float ptr [ESP + 0xe8]          ; 0053c3db
     ADD ESP,0x8                         ; 0053c3e2
-    FCOMP double ptr [0x00595b57]       ; 0053c3e5 | DAT_00595b57
+    FCOMP double ptr [0x00595b57]       ; 0053c3e5 | DOUBLE_00595b57
     FNSTSW AX                           ; 0053c3eb
     SAHF                                ; 0053c3ed
     JC 0x0053c42f                       ; 0053c3ee
@@ -119,7 +119,7 @@ section .text
     FADD float ptr [EAX + 0x2d0]        ; 0053c484
     FSUBR float ptr [EDI + 0x24]        ; 0053c48a
     FABS                                ; 0053c48d
-    FCOMP double ptr [0x00595b67]       ; 0053c48f | DAT_00595b67
+    FCOMP double ptr [0x00595b67]       ; 0053c48f | DOUBLE_00595b67
     FNSTSW AX                           ; 0053c495
     SAHF                                ; 0053c497
     JA 0x0053c438                       ; 0053c498
@@ -135,7 +135,7 @@ section .text
     FLD float ptr [ESP + 0x30]          ; 0053c4b0
     FST double ptr [ESP + 0x8]          ; 0053c4b4
     FABS                                ; 0053c4b8
-    FCOMP double ptr [0x00595b6f]       ; 0053c4ba | DAT_00595b6f
+    FCOMP double ptr [0x00595b6f]       ; 0053c4ba | DOUBLE_00595b6f
     FNSTSW AX                           ; 0053c4c0
     SAHF                                ; 0053c4c2
     JA 0x0053c438                       ; 0053c4c3
@@ -177,7 +177,7 @@ section .text
     JNC 0x0053c544                      ; 0053c521
         ;   XREF to: 0053c544 (CONDITIONAL_JUMP)  ; LAB_0053c544
     FLD float ptr [ESP + 0x10]          ; 0053c523
-    FADD double ptr [0x00595b77]        ; 0053c527 | DAT_00595b77
+    FADD double ptr [0x00595b77]        ; 0053c527 | DOUBLE_00595b77
     FLD float ptr [ESP + 0x28]          ; 0053c52d
     FCOMPP                              ; 0053c531
     FNSTSW AX                           ; 0053c533
@@ -190,7 +190,7 @@ section .text
         ;   Label: LAB_0053c544
     FADD float ptr [ESP + 0x1c]         ; 0053c548
     FST float ptr [ESP + 0x7c]          ; 0053c54c
-    FLD float ptr [0x00595b5f]          ; 0053c550 | DAT_00595b5f
+    FLD float ptr [0x00595b5f]          ; 0053c550 | FLOAT_00595b5f
     FXCH                                ; 0053c556
     FMUL ST1                            ; 0053c558
     FLD float ptr [ESP + 0x14]          ; 0053c55a
@@ -255,7 +255,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0053c63d
     MOV dword ptr [ESP + 0x44],EAX      ; 0053c644
     MOV EAX,dword ptr [ESP + 0xc4]      ; 0053c648
-    FLD double ptr [0x00595b7f]         ; 0053c64f | DAT_00595b7f
+    FLD double ptr [0x00595b7f]         ; 0053c64f | DOUBLE_00595b7f
     MOV dword ptr [ESP + 0x48],EAX      ; 0053c655
     FCOS                                ; 0053c659
     FLD float ptr [ESP + 0xb8]          ; 0053c65b
@@ -292,7 +292,7 @@ section .text
     PUSH EDX                            ; 0053c6c3
     MOV ECX,dword ptr [ESP + 0x4]       ; 0053c6c4
     PUSH ECX                            ; 0053c6c8
-    PUSH 0x595b3f                       ; 0053c6c9 | s_Ladder_dot_:_%f_00595b3e+1
+    PUSH 0x595b3f                       ; 0053c6c9 | = "Ladder dot : %f\n"
     MOV EBX,dword ptr [0x005ad350]      ; 0053c6ce | PTR_DAT_005ad350
     PUSH EBX                            ; 0053c6d4 | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053c6d5

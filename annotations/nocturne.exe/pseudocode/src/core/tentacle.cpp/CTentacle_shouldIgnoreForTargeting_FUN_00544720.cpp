@@ -13,7 +13,7 @@ uint core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(int param
   int iVar2;
   
   uVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                    (param_1 + 0x150,&DAT_005965f0);
+                    (param_1 + 0x150,"wait");
   iVar2 = _stricmp(uVar1);
   if (iVar2 == 0) {
     return 1;

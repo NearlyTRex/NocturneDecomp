@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 511
-  Total diagnostics: 2126
+  Functions with findings: 513
+  Total diagnostics: 2130
   Functions flagged by multiple tools: 2
-  .keep.cpp files: 0, raw .cpp files: 511
+  .keep.cpp files: 0, raw .cpp files: 513
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -493,7 +493,7 @@ FUN_0053a260  [.cpp] [Cppcheck (quick)]
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_step_FUN_004ff2c0  [.cpp] [Cppcheck (quick)]
-  File: core/script.cpp  (34 diagnostics)
+  File: core/script.cpp  (35 diagnostics)
 
   Line  345: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line  367: [invalidscanf] sscanf() without field width limits can crash with huge input data.
@@ -527,6 +527,7 @@ core_script.cpp_CScript_step_FUN_004ff2c0  [.cpp] [Cppcheck (quick)]
   Line 2691: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 2735: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 2798: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2882: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 3003: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 3092: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
@@ -857,19 +858,19 @@ core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730  [.cpp] [Cp
 core_turret.cpp_CTurret_updateTargeting_FUN_0054a110  [.cpp] [Cppcheck (quick)]
   File: core/turret.cpp  (13 diagnostics)
 
-  Line   83: [uninitvar] Uninitialized variable: fStack_c8
-  Line   84: [uninitvar] Uninitialized variable: fStack_c4
-  Line   85: [uninitvar] Uninitialized variable: fStack_c0
-  Line   86: [uninitvar] Uninitialized variable: fStack_bc
-  Line   87: [uninitvar] Uninitialized variable: fStack_b8
-  Line  136: [legacyUninitvar] Uninitialized variable: fStack_b0
-  Line  137: [legacyUninitvar] Uninitialized variable: fStack_ac
-  Line  138: [legacyUninitvar] Uninitialized variable: fStack_a8
-  Line  138: [legacyUninitvar] Uninitialized variable: fStack_a4
-  Line  138: [legacyUninitvar] Uninitialized variable: fStack_a0
-  Line  143: [incorrectLogicOperator] Logical disjunction always evaluates to true: fStack_48 < 0xBF060A92 || fStack_48 > 0x3F9C61AA.
-  Line  145: [legacyUninitvar] Uninitialized variable: fStack_44
-  Line  145: [legacyUninitvar] Uninitialized variable: fStack_40
+  Line   81: [uninitvar] Uninitialized variable: fStack_c8
+  Line   82: [uninitvar] Uninitialized variable: fStack_c4
+  Line   83: [uninitvar] Uninitialized variable: fStack_c0
+  Line   84: [uninitvar] Uninitialized variable: fStack_bc
+  Line   85: [uninitvar] Uninitialized variable: fStack_b8
+  Line  134: [legacyUninitvar] Uninitialized variable: fStack_b0
+  Line  135: [legacyUninitvar] Uninitialized variable: fStack_ac
+  Line  136: [legacyUninitvar] Uninitialized variable: fStack_a8
+  Line  136: [legacyUninitvar] Uninitialized variable: fStack_a4
+  Line  136: [legacyUninitvar] Uninitialized variable: fStack_a0
+  Line  141: [incorrectLogicOperator] Logical disjunction always evaluates to true: fStack_48 < 0xBF060A92 || fStack_48 > 0x3F9C61AA.
+  Line  143: [legacyUninitvar] Uninitialized variable: fStack_44
+  Line  143: [legacyUninitvar] Uninitialized variable: fStack_40
 
 ----------------------------------------------------------------------------------------------------
 FUN_004194b0  [.cpp] [Cppcheck (quick)]
@@ -909,18 +910,18 @@ FUN_0048b6f0  [.cpp] [Cppcheck (quick)]
 FUN_00533750  [.cpp] [Cppcheck (quick)]
   File: .  (12 diagnostics)
 
-  Line   81: [uninitvar] Uninitialized variable: fStack_e8
-  Line   82: [uninitvar] Uninitialized variable: fStack_e0
-  Line   83: [uninitvar] Uninitialized variable: fStack_dc
-  Line  101: [uninitvar] Uninitialized variable: fStack_e4
-  Line  102: [uninitvar] Uninitialized variable: fStack_d8
-  Line  135: [legacyUninitvar] Uninitialized variable: fStack_64
-  Line  148: [uninitvar] Uninitialized variable: fStack_94
-  Line  149: [uninitvar] Uninitialized variable: fStack_90
-  Line  151: [uninitvar] Uninitialized variable: fStack_7c
-  Line  152: [uninitvar] Uninitialized variable: fStack_78
-  Line  159: [uninitvar] Uninitialized variable: uStack_a0
-  Line  160: [uninitvar] Uninitialized variable: uStack_9c
+  Line   79: [uninitvar] Uninitialized variable: fStack_e8
+  Line   80: [uninitvar] Uninitialized variable: fStack_e0
+  Line   81: [uninitvar] Uninitialized variable: fStack_dc
+  Line   99: [uninitvar] Uninitialized variable: fStack_e4
+  Line  100: [uninitvar] Uninitialized variable: fStack_d8
+  Line  133: [legacyUninitvar] Uninitialized variable: fStack_64
+  Line  146: [uninitvar] Uninitialized variable: fStack_94
+  Line  147: [uninitvar] Uninitialized variable: fStack_90
+  Line  149: [uninitvar] Uninitialized variable: fStack_7c
+  Line  150: [uninitvar] Uninitialized variable: fStack_78
+  Line  157: [uninitvar] Uninitialized variable: uStack_a0
+  Line  158: [uninitvar] Uninitialized variable: uStack_9c
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_renderSkyDome_FUN_00463580  [.cpp] [Cppcheck (quick)]
@@ -1009,17 +1010,17 @@ core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0  [.cp
 core_zombie.cpp_FUN_00560cd0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (11 diagnostics)
 
-  Line  113: [uninitvar] Uninitialized variable: local_d0
-  Line  114: [uninitvar] Uninitialized variable: local_d8
-  Line  114: [uninitvar] Uninitialized variable: local_cc
-  Line  115: [uninitvar] Uninitialized variable: local_d4
-  Line  115: [uninitvar] Uninitialized variable: local_c8
-  Line  157: [uninitvar] Uninitialized variable: local_3c
-  Line  158: [uninitvar] Uninitialized variable: local_38
-  Line  159: [uninitvar] Uninitialized variable: local_100
-  Line  160: [uninitvar] Uninitialized variable: local_f0
-  Line  161: [uninitvar] Uninitialized variable: local_e0
-  Line  164: [uninitvar] Uninitialized variable: unaff_ESI
+  Line  111: [uninitvar] Uninitialized variable: local_d0
+  Line  112: [uninitvar] Uninitialized variable: local_d8
+  Line  112: [uninitvar] Uninitialized variable: local_cc
+  Line  113: [uninitvar] Uninitialized variable: local_d4
+  Line  113: [uninitvar] Uninitialized variable: local_c8
+  Line  155: [uninitvar] Uninitialized variable: local_3c
+  Line  156: [uninitvar] Uninitialized variable: local_38
+  Line  157: [uninitvar] Uninitialized variable: local_100
+  Line  158: [uninitvar] Uninitialized variable: local_f0
+  Line  159: [uninitvar] Uninitialized variable: local_e0
+  Line  162: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 FUN_00445750  [.cpp] [Cppcheck (quick)]
@@ -1040,16 +1041,16 @@ FUN_00445750  [.cpp] [Cppcheck (quick)]
 FUN_004f7360  [.cpp] [Cppcheck (quick)]
   File: .  (10 diagnostics)
 
-  Line   53: [uninitvar] Uninitialized variable: fStack_6c
-  Line   54: [uninitvar] Uninitialized variable: fStack_54
-  Line   54: [uninitvar] Uninitialized variable: fStack_58
-  Line   54: [uninitvar] Uninitialized variable: fStack_1c
-  Line   55: [uninitvar] Uninitialized variable: fStack_4c
-  Line   56: [uninitvar] Uninitialized variable: fStack_5c
-  Line   56: [uninitvar] Uninitialized variable: fStack_20
-  Line   56: [uninitvar] Uninitialized variable: fStack_70
-  Line   56: [uninitvar] Uninitialized variable: fStack_74
-  Line   56: [uninitvar] Uninitialized variable: fStack_50
+  Line   51: [uninitvar] Uninitialized variable: fStack_6c
+  Line   52: [uninitvar] Uninitialized variable: fStack_54
+  Line   52: [uninitvar] Uninitialized variable: fStack_58
+  Line   52: [uninitvar] Uninitialized variable: fStack_1c
+  Line   53: [uninitvar] Uninitialized variable: fStack_4c
+  Line   54: [uninitvar] Uninitialized variable: fStack_5c
+  Line   54: [uninitvar] Uninitialized variable: fStack_20
+  Line   54: [uninitvar] Uninitialized variable: fStack_70
+  Line   54: [uninitvar] Uninitialized variable: fStack_74
+  Line   54: [uninitvar] Uninitialized variable: fStack_50
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0  [.cpp] [Cppcheck (quick)]
@@ -1286,13 +1287,13 @@ FUN_00495a20  [.cpp] [Cppcheck (quick)]
 FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
   File: .  (7 diagnostics)
 
-  Line   59: [uninitvar] Uninitialized variable: fStack_24
-  Line   60: [uninitvar] Uninitialized variable: fStack_20
-  Line   62: [uninitvar] Uninitialized variable: fStack_48
-  Line   63: [uninitvar] Uninitialized variable: fStack_44
-  Line   69: [uninitvar] Uninitialized variable: fStack_2c
-  Line   69: [uninitvar] Uninitialized variable: fStack_34
-  Line   69: [uninitvar] Uninitialized variable: fStack_30
+  Line   57: [uninitvar] Uninitialized variable: fStack_24
+  Line   58: [uninitvar] Uninitialized variable: fStack_20
+  Line   60: [uninitvar] Uninitialized variable: fStack_48
+  Line   61: [uninitvar] Uninitialized variable: fStack_44
+  Line   67: [uninitvar] Uninitialized variable: fStack_2c
+  Line   67: [uninitvar] Uninitialized variable: fStack_34
+  Line   67: [uninitvar] Uninitialized variable: fStack_30
 
 ----------------------------------------------------------------------------------------------------
 FUN_004f7ae0  [.cpp] [Cppcheck (quick)]
@@ -1486,12 +1487,12 @@ FUN_00478120  [.cpp] [Cppcheck (quick)]
 FUN_00516770  [.cpp] [Cppcheck (quick)]
   File: .  (6 diagnostics)
 
-  Line   48: [uninitvar] Uninitialized variable: fStack_70
-  Line   49: [uninitvar] Uninitialized variable: fStack_6c
-  Line   51: [uninitvar] Uninitialized variable: fStack_64
-  Line   52: [uninitvar] Uninitialized variable: fStack_60
-  Line   58: [uninitvar] Uninitialized variable: fStack_48
-  Line   58: [uninitvar] Uninitialized variable: fStack_4c
+  Line   46: [uninitvar] Uninitialized variable: fStack_70
+  Line   47: [uninitvar] Uninitialized variable: fStack_6c
+  Line   49: [uninitvar] Uninitialized variable: fStack_64
+  Line   50: [uninitvar] Uninitialized variable: fStack_60
+  Line   56: [uninitvar] Uninitialized variable: fStack_48
+  Line   56: [uninitvar] Uninitialized variable: fStack_4c
 
 ----------------------------------------------------------------------------------------------------
 FUN_0056f14c  [.cpp] [Cppcheck (quick)]
@@ -1788,11 +1789,11 @@ core_vampboss.cpp_CVampireBoss_process_FUN_0054c690  [.cpp] [Clang-Tidy (quick),
 core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660  [.cpp] [Cppcheck (quick)]
   File: core/weapon.cpp  (5 diagnostics)
 
-  Line   33: [uninitvar] Uninitialized variable: fStack_40
-  Line   34: [uninitvar] Uninitialized variable: fStack_48
-  Line   34: [uninitvar] Uninitialized variable: fStack_3c
-  Line   37: [uninitvar] Uninitialized variable: fStack_44
-  Line   37: [uninitvar] Uninitialized variable: fStack_38
+  Line   31: [uninitvar] Uninitialized variable: fStack_40
+  Line   32: [uninitvar] Uninitialized variable: fStack_48
+  Line   32: [uninitvar] Uninitialized variable: fStack_3c
+  Line   35: [uninitvar] Uninitialized variable: fStack_44
+  Line   35: [uninitvar] Uninitialized variable: fStack_38
 
 ----------------------------------------------------------------------------------------------------
 core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_00557cc0  [.cpp] [Cppcheck (quick)]
@@ -1927,10 +1928,10 @@ FUN_004d6650  [.cpp] [Cppcheck (quick)]
 FUN_004f6170  [.cpp] [Clang-Tidy (quick)]
   File: .  (4 diagnostics)
 
-  Line   92: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
-  Line  101: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
-  Line  112: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
-  Line  117: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
+  Line   91: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
+  Line  100: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
+  Line  111: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
+  Line  116: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
 
 ----------------------------------------------------------------------------------------------------
 FUN_00515ea0  [.cpp] [Cppcheck (quick)]
@@ -1945,10 +1946,10 @@ FUN_00515ea0  [.cpp] [Cppcheck (quick)]
 FUN_0051d650  [.cpp] [Cppcheck (quick)]
   File: .  (4 diagnostics)
 
-  Line   47: [uninitvar] Uninitialized variable: uStack_3c
-  Line   59: [uninitvar] Uninitialized variable: uStack_6c
-  Line   70: [uninitvar] Uninitialized variable: uStack_5c
-  Line   81: [uninitvar] Uninitialized variable: uStack_4c
+  Line   46: [uninitvar] Uninitialized variable: uStack_3c
+  Line   58: [uninitvar] Uninitialized variable: uStack_6c
+  Line   69: [uninitvar] Uninitialized variable: uStack_5c
+  Line   80: [uninitvar] Uninitialized variable: uStack_4c
 
 ----------------------------------------------------------------------------------------------------
 FUN_00545c30  [.cpp] [Cppcheck (quick)]
@@ -2008,10 +2009,10 @@ core_boneguy.cpp_hsvToRgb_FUN_00418480  [.cpp] [Cppcheck (quick)]
 core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (4 diagnostics)
 
-  Line   52: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-  Line  115: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-  Line  139: [uninitvar] Uninitialized variable: local_7c
-  Line  140: [uninitvar] Uninitialized variable: local_78
+  Line   50: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  113: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  137: [uninitvar] Uninitialized variable: local_7c
+  Line  138: [uninitvar] Uninitialized variable: local_78
 
 ----------------------------------------------------------------------------------------------------
 core_bugs.cpp_FUN_00423480  [.cpp] [Cppcheck (quick)]
@@ -2125,10 +2126,10 @@ core_path.cpp_CPathMap_searchGrid_FUN_004f20a0  [.cpp] [Cppcheck (quick)]
 core_pendulum.cpp_CPendulum_setup_FUN_004f2d40  [.cpp] [Cppcheck (quick)]
   File: core/pendulum.cpp  (4 diagnostics)
 
-  Line   40: [uninitvar] Uninitialized variable: fStack_3c
-  Line   40: [uninitvar] Uninitialized variable: fStack_48
-  Line   42: [uninitvar] Uninitialized variable: fStack_44
-  Line   42: [uninitvar] Uninitialized variable: fStack_38
+  Line   38: [uninitvar] Uninitialized variable: fStack_3c
+  Line   38: [uninitvar] Uninitialized variable: fStack_48
+  Line   40: [uninitvar] Uninitialized variable: fStack_44
+  Line   40: [uninitvar] Uninitialized variable: fStack_38
 
 ----------------------------------------------------------------------------------------------------
 core_scat.cpp_CScat_updateAiming_FUN_004fd450  [.cpp] [Cppcheck (quick)]
@@ -2224,10 +2225,10 @@ core_xform.cpp_slerpQuaternion_FUN_0055d2d0  [.cpp] [Cppcheck (quick)]
 core_zombie.cpp_CZombie_canBeAttracted_FUN_00561bf0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (4 diagnostics)
 
-  Line   41: [uninitvar] Uninitialized variable: local_30
-  Line   41: [uninitvar] Uninitialized variable: local_48
-  Line   44: [uninitvar] Uninitialized variable: local_2c
-  Line   44: [uninitvar] Uninitialized variable: local_44
+  Line   39: [uninitvar] Uninitialized variable: local_30
+  Line   39: [uninitvar] Uninitialized variable: local_48
+  Line   42: [uninitvar] Uninitialized variable: local_2c
+  Line   42: [uninitvar] Uninitialized variable: local_44
 
 ----------------------------------------------------------------------------------------------------
 core_zombie.cpp_FUN_00561940  [.cpp] [Cppcheck (quick)]
@@ -2743,9 +2744,9 @@ core_terrain.cpp_CTerrain_render_FUN_00549310  [.cpp] [Cppcheck (quick)]
 core_turret.cpp_CTurret_updatePatrol_FUN_0054a920  [.cpp] [Cppcheck (quick)]
   File: core/turret.cpp  (3 diagnostics)
 
-  Line   46: [uninitvar] Uninitialized variable: fStack_48
-  Line   50: [uninitvar] Uninitialized variable: fStack_4c
-  Line   50: [uninitvar] Uninitialized variable: fStack_40
+  Line   44: [uninitvar] Uninitialized variable: fStack_48
+  Line   48: [uninitvar] Uninitialized variable: fStack_4c
+  Line   48: [uninitvar] Uninitialized variable: fStack_40
 
 ----------------------------------------------------------------------------------------------------
 core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0  [.cpp] [Cppcheck (quick)]
@@ -2878,6 +2879,13 @@ FUN_00489990  [.cpp] [Cppcheck (quick)]
   Line   64: [legacyUninitvar] Uninitialized variable: aiStack_2c
 
 ----------------------------------------------------------------------------------------------------
+FUN_004950a0  [.cpp] [Cppcheck (quick)]
+  File: core/frankgen.cpp  (2 diagnostics)
+
+  Line   34: [floatConversionOverflow] Undefined behaviour: float (2300) to integer conversion overflow.
+  Line   77: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 FUN_004980d0  [.cpp] [Cppcheck (quick)]
   File: .  (2 diagnostics)
 
@@ -2951,8 +2959,8 @@ FUN_004fda20  [.cpp] [Cppcheck (quick)]
 FUN_005148b0  [.cpp] [Cppcheck (quick)]
   File: .  (2 diagnostics)
 
-  Line   45: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   49: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   43: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   47: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 FUN_0053f310  [.cpp] [Clang-Tidy (quick)]
@@ -3056,8 +3064,8 @@ core_batcreat.cpp_CBatCreature_process_FUN_00412480  [.cpp] [Cppcheck (quick)]
 core_batman.cpp_CBatman_process_FUN_00413800  [.cpp] [Cppcheck (quick)]
   File: core/batman.cpp  (2 diagnostics)
 
-  Line  148: [uninitvar] Uninitialized variable: local_7c
-  Line  195: [uninitvar] Uninitialized variable: local_94
+  Line  149: [uninitvar] Uninitialized variable: local_7c
+  Line  196: [uninitvar] Uninitialized variable: local_94
 
 ----------------------------------------------------------------------------------------------------
 core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200  [.cpp] [Cppcheck (quick)]
@@ -3077,8 +3085,8 @@ core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0  [.cpp] [Cppcheck (quick)]
 core_bugs.cpp_FUN_00421b80  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (2 diagnostics)
 
-  Line   72: [uninitvar] Uninitialized variable: iStack_3c
-  Line   73: [uninitvar] Uninitialized variable: unaff_EBX
+  Line   70: [uninitvar] Uninitialized variable: iStack_3c
+  Line   71: [uninitvar] Uninitialized variable: unaff_EBX
 
 ----------------------------------------------------------------------------------------------------
 core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0  [.cpp] [Cppcheck (quick)]
@@ -3252,8 +3260,8 @@ core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004ba8a0  [.cpp] [Cppcheck (quick
 core_keyactor.cpp_CKeyActor_process_FUN_004c34e0  [.cpp] [Cppcheck (quick)]
   File: core/keyactor.cpp  (2 diagnostics)
 
-  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   27: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_marquee.cpp_CMarquee_computeBoundingBox_FUN_004cc1b0  [.cpp] [Cppcheck (quick)]
@@ -3301,8 +3309,8 @@ core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460  [.cpp] [Cppchec
 core_particle.cpp_CParticle_process_FUN_004ef120  [.cpp] [Cppcheck (quick)]
   File: core/particle.cpp  (2 diagnostics)
 
-  Line   58: [legacyUninitvar] Uninitialized variable: afStack_34
-  Line   82: [uninitvar] Uninitialized variable: fStack_24
+  Line   57: [legacyUninitvar] Uninitialized variable: afStack_34
+  Line   81: [uninitvar] Uninitialized variable: fStack_24
 
 ----------------------------------------------------------------------------------------------------
 core_sentinel.cpp_CSentinel_process_FUN_00505ba0  [.cpp] [Cppcheck (quick)]
@@ -3315,8 +3323,8 @@ core_sentinel.cpp_CSentinel_process_FUN_00505ba0  [.cpp] [Cppcheck (quick)]
 core_setcolid.cpp_FUN_0050f910  [.cpp] [Cppcheck (quick)]
   File: core/setcolid.cpp  (2 diagnostics)
 
-  Line   34: [uninitvar] Uninitialized variable: local_1c
-  Line   35: [uninitvar] Uninitialized variable: local_28
+  Line   32: [uninitvar] Uninitialized variable: local_1c
+  Line   33: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 core_setutil.cpp_C3DSCamera_loadPVS_FUN_00514800  [.cpp] [Cppcheck (quick)]
@@ -3385,8 +3393,8 @@ core_trash.cpp_CTrash_getBoundingBox_FUN_00547730  [.cpp] [Cppcheck (quick)]
 core_wateract.cpp_CWaterActor_setup_FUN_00551370  [.cpp] [Cppcheck (quick)]
   File: core/wateract.cpp  (2 diagnostics)
 
-  Line   69: [uninitvar] Uninitialized variable: local_2c
-  Line   85: [legacyUninitvar] Uninitialized variable: local_18
+  Line   67: [uninitvar] Uninitialized variable: local_2c
+  Line   83: [legacyUninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005570b0  [.cpp] [Cppcheck (quick)]
@@ -3406,15 +3414,15 @@ core_xform.cpp_matrixToQuaternion_FUN_0055cf10  [.cpp] [Cppcheck (quick)]
 core_zombie.cpp_FUN_00561010  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (2 diagnostics)
 
-  Line  187: [uninitvar] Uninitialized variable: fStack_d8
-  Line  216: [legacyUninitvar] Uninitialized variable: fStack_f0
+  Line  188: [uninitvar] Uninitialized variable: fStack_d8
+  Line  217: [legacyUninitvar] Uninitialized variable: fStack_f0
 
 ----------------------------------------------------------------------------------------------------
 core_zombie.cpp_FUN_005621f0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (2 diagnostics)
 
-  Line   36: [uninitvar] Uninitialized variable: local_2c
-  Line   37: [uninitvar] Uninitialized variable: local_28
+  Line   34: [uninitvar] Uninitialized variable: local_2c
+  Line   35: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 engine_clipper.c_FUN_00432cd0  [.cpp] [Cppcheck (quick)]
@@ -3554,16 +3562,10 @@ FUN_00490470  [.cpp] [Cppcheck (quick)]
   Line   96: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
-FUN_004950a0  [.cpp] [Cppcheck (quick)]
-  File: core/frankgen.cpp  (1 diagnostics)
-
-  Line   77: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
 FUN_00499b00  [.cpp] [Cppcheck (quick)]
   File: .  (1 diagnostics)
 
-  Line   37: [uninitvar] Uninitialized variable: local_2c
+  Line   35: [uninitvar] Uninitialized variable: local_2c
 
 ----------------------------------------------------------------------------------------------------
 FUN_004a57c0  [.cpp] [Cppcheck (quick)]
@@ -3611,7 +3613,7 @@ FUN_004c8440  [.cpp] [Cppcheck (quick)]
 FUN_004c9580  [.cpp] [Cppcheck (quick)]
   File: .  (1 diagnostics)
 
-  Line  159: [uninitvar] Uninitialized variable: *puVar6
+  Line  157: [uninitvar] Uninitialized variable: *puVar6
 
 ----------------------------------------------------------------------------------------------------
 FUN_004cea50  [.cpp] [Cppcheck (quick)]
@@ -3624,6 +3626,12 @@ FUN_004dba70  [.cpp] [Cppcheck (quick)]
   File: .  (1 diagnostics)
 
   Line  111: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
+FUN_004e5200  [.cpp] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line   56: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 FUN_004f0360  [.cpp] [Cppcheck (quick)]
@@ -3671,7 +3679,7 @@ FUN_0052d790  [.cpp] [Cppcheck (quick)]
 FUN_0052dff0  [.cpp] [Cppcheck (quick)]
   File: .  (1 diagnostics)
 
-  Line  212: [uninitvar] Uninitialized variable: extraout_var
+  Line  213: [uninitvar] Uninitialized variable: extraout_var
 
 ----------------------------------------------------------------------------------------------------
 FUN_005396d0  [.cpp] [Cppcheck (quick)]
@@ -3689,7 +3697,7 @@ FUN_0053f210  [.cpp] [Cppcheck (quick)]
 FUN_0053ffe0  [.cpp] [Cppcheck (quick)]
   File: .  (1 diagnostics)
 
-  Line   89: [identicalConditionAfterEarlyExit] Identical condition '*(int*)(param_1+0x1fa94)==0', second condition is always false
+  Line   87: [identicalConditionAfterEarlyExit] Identical condition '*(int*)(param_1+0x1fa94)==0', second condition is always false
 
 ----------------------------------------------------------------------------------------------------
 FUN_005423c0  [.cpp] [Cppcheck (quick)]
@@ -3947,7 +3955,7 @@ core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050  [.cpp] [Cppcheck (quic
 core_charactr.cpp_CCharacter_processFire_FUN_004269b0  [.cpp] [Cppcheck (quick)]
   File: core/charactr.cpp  (1 diagnostics)
 
-  Line   59: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line   57: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0  [.cpp] [Cppcheck (quick)]
@@ -4241,13 +4249,13 @@ core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0  [.cpp] [Cppcheck (quick)]
 core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0  [.cpp] [Cppcheck (quick)]
   File: core/mobster.cpp  (1 diagnostics)
 
-  Line  129: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
+  Line  127: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0  [.cpp] [Cppcheck (quick)]
   File: core/mobster.cpp  (1 diagnostics)
 
-  Line  126: [uninitvar] Uninitialized variable: fStack_78
+  Line  124: [uninitvar] Uninitialized variable: fStack_78
 
 ----------------------------------------------------------------------------------------------------
 core_moloch.cpp_CMoloch_processAI_FUN_004de1b0  [.cpp] [Cppcheck (quick)]
@@ -4322,6 +4330,12 @@ core_set.cpp_FUN_0050d910  [.cpp] [Cppcheck (quick)]
   Line   97: [uninitvar] Uninitialized variable: local_38
 
 ----------------------------------------------------------------------------------------------------
+core_setutil.cpp_C3DSCamera_load_FUN_005144e0  [.cpp] [Cppcheck (quick)]
+  File: core/setutil.cpp  (1 diagnostics)
+
+  Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (1 diagnostics)
 
@@ -4349,7 +4363,7 @@ core_smiley.cpp_CSmiley_attractActorToward_FUN_00520a20  [.cpp] [Cppcheck (quick
 core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60  [.cpp] [Cppcheck (quick)]
   File: core/smiley.cpp  (1 diagnostics)
 
-  Line  105: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
+  Line  103: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_smiley.cpp_CSmiley_process_FUN_005200c0  [.cpp] [Cppcheck (quick)]
@@ -4367,7 +4381,7 @@ core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760  [.cpp] [Cppcheck
 core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640  [.cpp] [Cppcheck (quick)]
   File: core/turret.cpp  (1 diagnostics)
 
-  Line   37: [uninitvar] Uninitialized variable: local_2c
+  Line   35: [uninitvar] Uninitialized variable: local_2c
 
 ----------------------------------------------------------------------------------------------------
 core_turret.cpp_CTurret_process_FUN_005497f0  [.cpp] [Cppcheck (quick)]
@@ -4433,7 +4447,7 @@ core_xform.cpp_buildRotationY_FUN_0055c7b0  [.cpp] [Cppcheck (quick)]
 core_xform.cpp_buildXFlipMatrix_FUN_0055c9d0  [.cpp] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   41: [uninitvar] Uninitialized variable: unaff_ESI
+  Line   39: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_inverse_FUN_0055bd00  [.cpp] [Cppcheck (quick)]
@@ -4469,7 +4483,7 @@ core_xform.cpp_quaternionToMatrix3x4_FUN_0055ced0  [.cpp] [Cppcheck (quick)]
 core_zombie.cpp_CZombie_processDismemberment_FUN_00561cf0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (1 diagnostics)
 
-  Line  110: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
+  Line  108: [selfAssignment] Redundant assignment of 'param_2[1]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_FUN_00402e90  [.cpp] [Cppcheck (quick)]
@@ -4541,7 +4555,7 @@ engine_matrix.c_buildRotationMatrix_FUN_004ccdc0  [.cpp] [Cppcheck (quick)]
 engine_matrix.c_initializeTrigTables_FUN_004cc9d0  [.cpp] [Cppcheck (quick)]
   File: engine/matrix.c  (1 diagnostics)
 
-  Line   33: [ignoredReturnValue] Return value of function round() is not used.
+  Line   31: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
 engine_matrix.c_interpolatedCos_FUN_004ccaa0  [.cpp] [Cppcheck (quick)]
@@ -4565,7 +4579,7 @@ engine_matrix.c_invertTransformMatrix_FUN_004ccae0  [.cpp] [Cppcheck (quick)]
 engine_matrix.c_normalizeVector3DFloat_FUN_004cde90  [.cpp] [Cppcheck (quick)]
   File: engine/matrix.c  (1 diagnostics)
 
-  Line   40: [uninitvar] Uninitialized variable: unaff_ESI
+  Line   38: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 engine_matrix.c_transformWorldToView_FUN_004cd0e0  [.cpp] [Cppcheck (quick)]

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 435,
+    "complexity_score": 400,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 105,
-    "suspect_count": 29,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
@@ -193,26 +192,26 @@
   "globals": [
     {
       "addr": "0058e36d",
-      "name": "DAT_0058e36d",
-      "type": "undefined1",
+      "name": "s_wav_0058e36d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e36e",
-      "name": "DAT_0058e36e",
-      "type": "undefined1",
+      "name": "s_wav_0058e36d+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e36f",
-      "name": "DAT_0058e36f",
-      "type": "undefined1",
+      "name": "s_wav_0058e36d+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e370",
-      "name": "DAT_0058e370",
-      "type": "undefined1",
+      "name": "s_wav_0058e36d+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -223,26 +222,26 @@
     },
     {
       "addr": "0058e37c",
-      "name": "DAT_0058e37c",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e37c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e37d",
-      "name": "DAT_0058e37d",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e37c+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e37e",
-      "name": "DAT_0058e37e",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e37c+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e37f",
-      "name": "DAT_0058e37f",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e37c+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -253,26 +252,26 @@
     },
     {
       "addr": "0058e38b",
-      "name": "DAT_0058e38b",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e38b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058e38c",
-      "name": "DAT_0058e38c",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e38b+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e38d",
-      "name": "DAT_0058e38d",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e38b+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058e38e",
-      "name": "DAT_0058e38e",
-      "type": "undefined1",
+      "name": "s_s_0_85_0058e38b+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -574,30 +573,6 @@
       "severity": "mild",
       "text": "param_1[5] = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0058e36d",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058e36d;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_0058e37c",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058e37c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_0058e38b",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058e38b;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

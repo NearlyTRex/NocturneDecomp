@@ -14,9 +14,9 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501037
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058fa9a
-;   undefined4 DAT_0058faa2
-;   undefined4 DAT_0058faaa
+;   double DOUBLE_0058fa9a = 1.29193225731028E-319
+;   double DOUBLE_0058faa2 = 0.0200000000000000
+;   double DOUBLE_0058faaa = 0.400000000000000
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_00765a60
 ;   undefined4 DAT_00765a98
@@ -84,7 +84,7 @@ section .text
     MOV EAX,ESP                         ; 00504a1d
         ;   Label: LAB_00504a1d
     PUSH EAX                            ; 00504a1f
-    PUSH 0x58fa9a                       ; 00504a20 | DAT_0058fa9a
+    PUSH 0x58fa9a                       ; 00504a20 | DOUBLE_0058fa9a
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00504a25
     PUSH ECX                            ; 00504a28
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00504a29
@@ -133,8 +133,8 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 00504a92
     MOV dword ptr [ESP + 0x8],EDI       ; 00504a96
     FILD qword ptr [ESP + 0x4]          ; 00504a9a
-    FMUL double ptr [0x0058faa2]        ; 00504a9e | DAT_0058faa2
-    FADD double ptr [0x0058faaa]        ; 00504aa4 | DAT_0058faaa
+    FMUL double ptr [0x0058faa2]        ; 00504a9e | DOUBLE_0058faa2
+    FADD double ptr [0x0058faaa]        ; 00504aa4 | DOUBLE_0058faaa
     FSTP float ptr [ESP]                ; 00504aaa
     JMP 0x00504a5c                      ; 00504aad
         ;   XREF to: 00504a5c (UNCONDITIONAL_JUMP)  ; LAB_00504a5c

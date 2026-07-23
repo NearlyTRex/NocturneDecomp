@@ -13,13 +13,13 @@
 ;
 ; Referenced Globals:
 ;   string s_%*[^_]_005908c2
-;   undefined4 DAT_005908ca
+;   TerminatedCString s_d_005908ca
 ;   string s_..\\core\\set.cpp_005908ce
 ;   string s_Set_saveState_info_is_invalid_ve_005908de
 ;   string s_%*[^_]_00590907
-;   undefined4 DAT_0059090f
+;   TerminatedCString s_d_0059090f
 ;   string s_The_set_has_changed_since_you_sa_00590913
-;   undefined4 DAT_00590979
+;   TerminatedCString s_d_00590979
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x8                         ; 0050e93a
     MOV EAX,ESP                         ; 0050e93d
     PUSH EAX                            ; 0050e93f
-    PUSH 0x5908ca                       ; 0050e940 | DAT_005908ca
+    PUSH 0x5908ca                       ; 0050e940 | = "%d\n"
     PUSH EDI                            ; 0050e945
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0050e946
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -65,7 +65,7 @@ section .text
     ADD ESP,0x8                         ; 0050e965
     LEA EAX,[ESP + 0x4]                 ; 0050e968
     PUSH EAX                            ; 0050e96c
-    PUSH 0x59090f                       ; 0050e96d | DAT_0059090f
+    PUSH 0x59090f                       ; 0050e96d | = "%d\n"
     PUSH EDI                            ; 0050e972
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0050e973
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -90,7 +90,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0050e9a4
         ;   Label: LAB_0050e9a4
     PUSH EAX                            ; 0050e9a8
-    PUSH 0x590979                       ; 0050e9a9 | DAT_00590979
+    PUSH 0x590979                       ; 0050e9a9 | = "%d\n"
     PUSH EDI                            ; 0050e9ae
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0050e9af
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()

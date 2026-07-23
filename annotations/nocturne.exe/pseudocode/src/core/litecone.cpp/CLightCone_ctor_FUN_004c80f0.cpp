@@ -16,7 +16,7 @@ int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_0059fed4;
-  pcVar3 = &DAT_00587ad0;
+  pcVar3 = "none";
   *(uint *)(iVar2 + 0x150) = 0x42600000;
   *(uint *)(iVar2 + 0x154) = 0x40c00000;
   *(uint *)(iVar2 + 0xfc) = 1;
@@ -31,7 +31,7 @@ int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = &DAT_00587ad5;
+  pcVar3 = "none";
   pcVar4 = (char *)(iVar2 + 0x1c0);
   do {
     cVar1 = *pcVar3;

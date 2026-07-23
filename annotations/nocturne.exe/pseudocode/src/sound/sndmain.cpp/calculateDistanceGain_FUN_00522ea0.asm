@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005927ee
+;   double DOUBLE_005927ee = 0.0500000000000000
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00522ec1
     FLD float ptr [ESP + 0xc]           ; 00522ec5
         ;   Label: LAB_00522ec5
-    FMUL double ptr [0x005927ee]        ; 00522ec9 | DAT_005927ee
+    FMUL double ptr [0x005927ee]        ; 00522ec9 | DOUBLE_005927ee
     FLD float ptr [ESP + 0x8]           ; 00522ecf
     FCOMPP                              ; 00522ed3
     FNSTSW AX                           ; 00522ed5

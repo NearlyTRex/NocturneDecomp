@@ -5,21 +5,21 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_bgate.kfm_00595011
-;   undefined1 DAT_0059501b
-;   undefined1 DAT_0059501c
-;   undefined1 DAT_0059501d
-;   undefined1 DAT_0059501e
-;   undefined1 DAT_00595020
-;   undefined1 DAT_00595021
-;   undefined1 DAT_00595022
-;   undefined1 DAT_00595023
-;   undefined1 DAT_00595025
-;   undefined1 DAT_00595026
-;   undefined1 DAT_00595027
-;   undefined1 DAT_00595028
-;   undefined1 DAT_0059502a
-;   undefined1 DAT_0059502b
+;   TerminatedCString s_bgate_kfm_00595011
+;   TerminatedCString s_none_0059501b
+;   undefined4 s_one_0059501b+1
+;   undefined4 s_ne_0059501b+2
+;   undefined4 s_e_0059501b+3
+;   TerminatedCString s_none_00595020
+;   undefined4 s_one_00595020+1
+;   undefined4 s_ne_00595020+2
+;   undefined4 s_e_00595020+3
+;   TerminatedCString s_none_00595025
+;   undefined4 s_one_00595025+1
+;   undefined4 s_ne_00595025+2
+;   undefined4 s_e_00595025+3
+;   TerminatedCString s_none_0059502a
+;   undefined4 s_one_0059502a+1
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     PUSH 0x595011                       ; 00533044 | = "bgate.kfm"
     LEA EAX,[EBX + 0x150]               ; 00533049
     PUSH EAX                            ; 0053304f
-    MOV ESI,0x59501b                    ; 00533050 | DAT_0059501b
+    MOV ESI,0x59501b                    ; 00533050 | = "none"
     MOV dword ptr [EBX + 0x14c],0x5a2334 ; 00533055 | PTR_core_spike.cpp_CSpike_setup_FUN_00533160_005a2334
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0053305f
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
@@ -59,13 +59,13 @@ section .text
     LEA EDI,[EBX + 0x2e8]               ; 0053307b
     MOV dword ptr [EBX + 0x2d4],0x0     ; 00533081
     PUSH EDI                            ; 0053308b
-    MOV AL,byte ptr [ESI]               ; 0053308c | DAT_0059501b | DAT_0059501d
+    MOV AL,byte ptr [ESI]               ; 0053308c | = "none" | s_ne_0059501b+2
         ;   Label: LAB_0053308c
     MOV byte ptr [EDI],AL               ; 0053308e
     CMP AL,0x0                          ; 00533090
     JZ 0x005330a4                       ; 00533092
         ;   XREF to: 005330a4 (CONDITIONAL_JUMP)  ; LAB_005330a4
-    MOV AL,byte ptr [ESI + 0x1]         ; 00533094 | DAT_0059501c | DAT_0059501e
+    MOV AL,byte ptr [ESI + 0x1]         ; 00533094 | s_one_0059501b+1 | s_e_0059501b+3
     ADD ESI,0x2                         ; 00533097
     MOV byte ptr [EDI + 0x1],AL         ; 0053309a
     ADD EDI,0x2                         ; 0053309d
@@ -74,16 +74,16 @@ section .text
         ;   XREF to: 0053308c (CONDITIONAL_JUMP)  ; LAB_0053308c
     POP EDI                             ; 005330a4
         ;   Label: LAB_005330a4
-    MOV ESI,0x595020                    ; 005330a5 | DAT_00595020
+    MOV ESI,0x595020                    ; 005330a5 | = "none"
     LEA EDI,[EBX + 0x34c]               ; 005330aa
     PUSH EDI                            ; 005330b0
-    MOV AL,byte ptr [ESI]               ; 005330b1 | DAT_00595020 | DAT_00595022
+    MOV AL,byte ptr [ESI]               ; 005330b1 | = "none" | s_ne_00595020+2
         ;   Label: LAB_005330b1
     MOV byte ptr [EDI],AL               ; 005330b3
     CMP AL,0x0                          ; 005330b5
     JZ 0x005330c9                       ; 005330b7
         ;   XREF to: 005330c9 (CONDITIONAL_JUMP)  ; LAB_005330c9
-    MOV AL,byte ptr [ESI + 0x1]         ; 005330b9 | DAT_00595021 | DAT_00595023
+    MOV AL,byte ptr [ESI + 0x1]         ; 005330b9 | s_one_00595020+1 | s_e_00595020+3
     ADD ESI,0x2                         ; 005330bc
     MOV byte ptr [EDI + 0x1],AL         ; 005330bf
     ADD EDI,0x2                         ; 005330c2
@@ -92,16 +92,16 @@ section .text
         ;   XREF to: 005330b1 (CONDITIONAL_JUMP)  ; LAB_005330b1
     POP EDI                             ; 005330c9
         ;   Label: LAB_005330c9
-    MOV ESI,0x595025                    ; 005330ca | DAT_00595025
+    MOV ESI,0x595025                    ; 005330ca | = "none"
     LEA EDI,[EBX + 0x3b0]               ; 005330cf
     PUSH EDI                            ; 005330d5
-    MOV AL,byte ptr [ESI]               ; 005330d6 | DAT_00595025 | DAT_00595027
+    MOV AL,byte ptr [ESI]               ; 005330d6 | = "none" | s_ne_00595025+2
         ;   Label: LAB_005330d6
     MOV byte ptr [EDI],AL               ; 005330d8
     CMP AL,0x0                          ; 005330da
     JZ 0x005330ee                       ; 005330dc
         ;   XREF to: 005330ee (CONDITIONAL_JUMP)  ; LAB_005330ee
-    MOV AL,byte ptr [ESI + 0x1]         ; 005330de | DAT_00595026 | DAT_00595028
+    MOV AL,byte ptr [ESI + 0x1]         ; 005330de | s_one_00595025+1 | s_e_00595025+3
     ADD ESI,0x2                         ; 005330e1
     MOV byte ptr [EDI + 0x1],AL         ; 005330e4
     ADD EDI,0x2                         ; 005330e7
@@ -110,16 +110,16 @@ section .text
         ;   XREF to: 005330d6 (CONDITIONAL_JUMP)  ; LAB_005330d6
     POP EDI                             ; 005330ee
         ;   Label: LAB_005330ee
-    MOV ESI,0x59502a                    ; 005330ef | DAT_0059502a
+    MOV ESI,0x59502a                    ; 005330ef | = "none"
     LEA EDI,[EBX + 0x414]               ; 005330f4
     PUSH EDI                            ; 005330fa
-    MOV AL,byte ptr [ESI]               ; 005330fb | DAT_0059502a | DAT_0059502c
+    MOV AL,byte ptr [ESI]               ; 005330fb | = "none" | s_ne_0059502a+2
         ;   Label: LAB_005330fb
     MOV byte ptr [EDI],AL               ; 005330fd
     CMP AL,0x0                          ; 005330ff
     JZ 0x00533113                       ; 00533101
         ;   XREF to: 00533113 (CONDITIONAL_JUMP)  ; LAB_00533113
-    MOV AL,byte ptr [ESI + 0x1]         ; 00533103 | DAT_0059502b | DAT_0059502d
+    MOV AL,byte ptr [ESI + 0x1]         ; 00533103 | s_one_0059502a+1 | s_e_0059502a+3
     ADD ESI,0x2                         ; 00533106
     MOV byte ptr [EDI + 0x1],AL         ; 00533109
     ADD EDI,0x2                         ; 0053310c

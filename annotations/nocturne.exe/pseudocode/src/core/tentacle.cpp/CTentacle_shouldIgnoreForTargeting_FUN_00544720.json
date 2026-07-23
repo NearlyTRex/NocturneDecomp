@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 41
@@ -169,8 +168,8 @@
   "globals": [
     {
       "addr": "005965f0",
-      "name": "DAT_005965f0",
-      "type": "undefined4",
+      "name": "s_wait_005965f0",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -227,16 +226,8 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,&DAT_005965f0);",
+      "text": "(param_1 + 0x150,\"wait\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005965f0",
-      "severity": "mild",
-      "text": "(param_1 + 0x150,&DAT_005965f0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

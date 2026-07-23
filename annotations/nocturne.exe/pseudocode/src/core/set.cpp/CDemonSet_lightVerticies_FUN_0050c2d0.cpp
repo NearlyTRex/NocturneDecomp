@@ -181,7 +181,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     local_3c = (float)local_24 * (float)local_1c - local_a4 * local_88;
                     local_90 = local_3c * local_3c + local_44 * local_44 + local_40 * local_40;
                     local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
-                    fVar1 = local_8c * (float)_DAT_00590792;
+                    fVar1 = local_8c * (float)65535;
                     puVar7 = puVar7 + 9;
                     iVar8 = iVar8 + 1;
                     *pfVar14 = local_40 * fVar1;
@@ -243,7 +243,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     fVar3 = (float)local_20 * local_c0 - local_c4 * (float)local_1c;
                     local_2c = fVar3 * fVar3 + fVar4 * fVar4 + fVar1 * fVar1;
                     local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
-                    fVar2 = local_28 * (float)_DAT_00590792;
+                    fVar2 = local_28 * (float)65535;
                     *(float *)(puVar7 + 4) = fVar1 * fVar2;
                     *(float *)(puVar7 + 6) = fVar4 * fVar2;
                     *(float *)(puVar7 + 8) = fVar3 * fVar2;
@@ -312,7 +312,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     local_74 = pfVar14[2] * pfVar14[2] +
                                *pfVar14 * *pfVar14 + pfVar14[1] * pfVar14[1];
                     local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
-                    fVar1 = local_70 * (float)_DAT_00590792;
+                    fVar1 = local_70 * (float)65535;
                     *pfVar14 = *pfVar14 * fVar1;
                     pfVar14[1] = pfVar14[1] * fVar1;
                     pfVar14[2] = pfVar14[2] * fVar1;
@@ -344,7 +344,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                       local_80 = pfVar14[2] * pfVar14[2] +
                                  *pfVar14 * *pfVar14 + pfVar14[1] * pfVar14[1];
                       local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
-                      fVar1 = local_7c * (float)_DAT_00590792;
+                      fVar1 = local_7c * (float)65535;
                       *pfVar14 = *pfVar14 * fVar1;
                       pfVar14[1] = pfVar14[1] * fVar1;
                       pfVar14[2] = pfVar14[2] * fVar1;

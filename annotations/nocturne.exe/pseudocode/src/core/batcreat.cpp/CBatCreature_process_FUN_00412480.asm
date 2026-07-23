@@ -67,7 +67,7 @@
 ;   double DOUBLE_00578a1f = 0.523598775583333
 ;   double DOUBLE_00578a27 = 2
 ;   double DOUBLE_00578a2f = 32
-;   undefined4 DAT_00599fac
+;   float FLOAT_00599fac = 3.5
 ;   float FLOAT_00599fb8 = 10
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b96c4
@@ -428,7 +428,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x62]      ; 0041282a
     FLD float ptr [EBP + 0x62]          ; 0041282d
     MOV dword ptr [EBP + 0x6e],EAX      ; 00412830
-    FCOMP float ptr [0x00599fac]        ; 00412833 | DAT_00599fac
+    FCOMP float ptr [0x00599fac]        ; 00412833 | FLOAT_00599fac
     FNSTSW AX                           ; 00412839
     SAHF                                ; 0041283b
     JC 0x0041298c                       ; 0041283c
@@ -658,7 +658,7 @@ section .text
     ADD ESP,0xc                         ; 00412ab3
     JMP 0x0041257b                      ; 00412ab6
         ;   XREF to: 0041257b (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV EAX,[0x00599fac]                ; 00412abb | DAT_00599fac
+    MOV EAX,[0x00599fac]                ; 00412abb | FLOAT_00599fac
         ;   Label: LAB_00412abb
     PUSH 0x3e32b8c2                     ; 00412ac0
     MOV dword ptr [EBP + 0x66],EAX      ; 00412ac5

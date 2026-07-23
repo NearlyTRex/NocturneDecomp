@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 272,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 19,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -228,8 +228,8 @@
     },
     {
       "addr": "00593a8b",
-      "name": "DAT_00593a8b",
-      "type": "undefined4",
+      "name": "s_Bits_00593a8b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -240,8 +240,8 @@
     },
     {
       "addr": "00593a99",
-      "name": "DAT_00593a99",
-      "type": "undefined4",
+      "name": "s_Hz_00593a99",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -258,8 +258,8 @@
     },
     {
       "addr": "00593ab9",
-      "name": "DAT_00593ab9",
-      "type": "undefined4",
+      "name": "s_Mute_00593ab9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -501,16 +501,8 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a8b,local_18);",
+      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,\"Bits\",local_18);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00593a8b",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a8b,local_18);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -525,16 +517,8 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a99,local_1c);",
+      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,\"Hz\",local_1c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00593a99",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593a99,local_1c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -557,16 +541,8 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593ab9,uVar2);",
+      "text": "uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,\"Mute\",uVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_00593ab9",
-      "severity": "mild",
-      "text": "uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,&DAT_00593ab9,uVar2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

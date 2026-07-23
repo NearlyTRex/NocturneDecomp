@@ -12,11 +12,11 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2328
 ;
 ; Referenced Globals:
-;   undefined4 s_splash-music-44.wav_00594bd5+1
+;   TerminatedCString s_splash_music_44_wav_00594bd6
 ;   string s_splash-music-22.wav_00594bea
-;   undefined4 DAT_005a22e4
-;   undefined4 DAT_005a22e8
-;   undefined4 DAT_005a22ec
+;   float FLOAT_005a22e4 = 0.25
+;   float FLOAT_005a22e8 = 0.25
+;   float FLOAT_005a22ec = 1
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_reset_FUN_0052e9c0
@@ -47,7 +47,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0052e85a
     FLD float ptr [ESP + 0x4]           ; 0052e85e
     ADD ESP,0x4                         ; 0052e862
-    FCOMP float ptr [0x005a22e4]        ; 0052e865 | DAT_005a22e4
+    FCOMP float ptr [0x005a22e4]        ; 0052e865 | FLOAT_005a22e4
     FNSTSW AX                           ; 0052e86b
     SAHF                                ; 0052e86d
     JA 0x0052e993                       ; 0052e86e
@@ -59,12 +59,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0052e87b
     FLD float ptr [ESP + 0x4]           ; 0052e87f
     ADD ESP,0x4                         ; 0052e883
-    FCOMP float ptr [0x005a22e8]        ; 0052e886 | DAT_005a22e8
+    FCOMP float ptr [0x005a22e8]        ; 0052e886 | FLOAT_005a22e8
     FNSTSW AX                           ; 0052e88c
     SAHF                                ; 0052e88e
     JBE 0x0052e8a1                      ; 0052e88f
         ;   XREF to: 0052e8a1 (CONDITIONAL_JUMP)  ; LAB_0052e8a1
-    PUSH dword ptr [0x005a22e8]         ; 0052e891 | DAT_005a22e8
+    PUSH dword ptr [0x005a22e8]         ; 0052e891 | FLOAT_005a22e8
     PUSH 0x0                            ; 0052e897
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0 ; 0052e899
         ;   XREF to: 005272e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0()
@@ -76,12 +76,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0052e8a8
     FLD float ptr [ESP + 0x4]           ; 0052e8ac
     ADD ESP,0x4                         ; 0052e8b0
-    FCOMP float ptr [0x005a22ec]        ; 0052e8b3 | DAT_005a22ec
+    FCOMP float ptr [0x005a22ec]        ; 0052e8b3 | FLOAT_005a22ec
     FNSTSW AX                           ; 0052e8b9
     SAHF                                ; 0052e8bb
     JBE 0x0052e8ce                      ; 0052e8bc
         ;   XREF to: 0052e8ce (CONDITIONAL_JUMP)  ; LAB_0052e8ce
-    PUSH dword ptr [0x005a22ec]         ; 0052e8be | DAT_005a22ec
+    PUSH dword ptr [0x005a22ec]         ; 0052e8be | FLOAT_005a22ec
     PUSH 0x2                            ; 0052e8c4
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0 ; 0052e8c6
         ;   XREF to: 005272e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0()
@@ -159,7 +159,7 @@ section .text
     CMP EAX,0x7530                      ; 0052e976
     JLE 0x0052e9a8                      ; 0052e97b
         ;   XREF to: 0052e9a8 (CONDITIONAL_JUMP)  ; LAB_0052e9a8
-    PUSH 0x594bd6                       ; 0052e97d | s_splash-music-44.wav_00594bd5+1
+    PUSH 0x594bd6                       ; 0052e97d | = "splash-music-44.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 0052e982
         ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
     ADD ESP,0x4                         ; 0052e987
@@ -168,7 +168,7 @@ section .text
     ADD ESP,0x4                         ; 0052e98f
         ;   Label: LAB_0052e98f
     RET                                 ; 0052e992
-    PUSH dword ptr [0x005a22e4]         ; 0052e993 | DAT_005a22e4
+    PUSH dword ptr [0x005a22e4]         ; 0052e993 | FLOAT_005a22e4
         ;   Label: LAB_0052e993
     PUSH 0x1                            ; 0052e999
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0 ; 0052e99b

@@ -9,7 +9,7 @@
 ;   core_script.cpp_getActor_FUN_004fe180 at 004fe1a4
 ;
 ; Referenced Globals:
-;   undefined4 s_Actor_variable_name_must_begin_w_0058dfa9+1
+;   TerminatedCString s_Actor_variable_name_must_0058dfaa
 ;   string s_Actor_variable_name_\"%s\"_is_too_l_0058dfd2
 ;   string s_Actor_variable_name_\"%s\"_is_not_v_0058dff7
 ;   undefined4 DAT_005c168c
@@ -54,7 +54,7 @@ section .text
     INC EAX                             ; 004fdef7
     JMP 0x004fdee5                      ; 004fdef8
         ;   XREF to: 004fdee5 (UNCONDITIONAL_JUMP)  ; LAB_004fdee5
-    PUSH 0x58dfaa                       ; 004fdefa | s_Actor_variable_name_must_begin_w_0058dfa9+1
+    PUSH 0x58dfaa                       ; 004fdefa | = "Actor variable name must begin with '@'"
         ;   Label: LAB_004fdefa
     PUSH 0x1e56420                      ; 004fdeff
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fdf04

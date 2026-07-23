@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 134,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 10,
+    "pseudocode_lines": 18,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -153,9 +152,9 @@
   "globals": [
     {
       "addr": "00597215",
-      "name": "DAT_00597215",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00597215",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -204,16 +203,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_0054dfa0(int param_1,float *param_2)",
@@ -221,7 +212,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint FUN_0054dfa0(int param_1,float *param_2)",
@@ -229,7 +220,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
+      "line": 11,
       "match": "code *",
       "severity": "moderate",
       "text": "pfVar3 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_34);",
@@ -237,7 +228,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar3 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_34);",
@@ -245,7 +236,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar3 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_34);",
@@ -253,7 +244,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == afStack_10) {",
@@ -261,15 +252,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (*pfVar3 + pfVar3[3]) * _DAT_00597215;",
+      "text": "*param_2 = (*pfVar3 + pfVar3[3]) * 0.5f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[1] = fVar1;",
@@ -277,7 +268,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[2] = fVar2;",

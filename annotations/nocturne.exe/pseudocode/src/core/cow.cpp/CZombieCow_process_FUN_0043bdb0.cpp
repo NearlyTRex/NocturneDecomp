@@ -29,14 +29,14 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
   float local_58;
   uint local_54;
   uint local_50;
-  uint local_4c;
+  float local_4c;
   float local_48;
   float local_44;
   float local_40;
   byte local_3c [12];
   byte local_30 [20];
   float local_1c;
-  uint local_18;
+  float local_18;
   uint local_14;
   
   iVar4 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
@@ -81,7 +81,7 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
       break;
     case 1:
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-      uVar6 = 0x40900000;
+      fVar2 = 4.5f;
       if (*(int *)(param_1 + 0xbca4) == 0) {
         iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         if (iVar5 == 0) {
@@ -89,13 +89,13 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
         }
       }
       else {
-        local_18 = 0x40900000;
+        local_18 = 4.5f;
         *(uint *)(param_1 + 0x23ac) = 0;
         *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
         *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
         local_54 = 0;
         local_50 = 0;
-        local_4c = uVar6;
+        local_4c = fVar2;
         uVar6 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                           (*(int *)(param_1 + 0xbca4),&local_54,0x3f000000,0x3e32b8c2);
         iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0

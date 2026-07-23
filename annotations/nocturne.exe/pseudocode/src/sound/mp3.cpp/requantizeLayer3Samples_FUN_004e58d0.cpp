@@ -54,7 +54,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(uint *param_1,fl
     }
   }
   if (_DAT_01cd6324 == 0) {
-    fVar12 = (float10)_DAT_0058b8a0;
+    fVar12 = (float10)1.3333333333333299;
     iVar5 = 0;
     iVar7 = 0;
     do {
@@ -64,8 +64,8 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(uint *param_1,fl
       iVar7 = iVar7 + 8;
     } while (iVar5 < 200);
     iVar7 = 0;
-    fVar10 = (float10)_DAT_0058b8a8;
-    fVar12 = (float10)_DAT_0058b898;
+    fVar10 = (float10)2;
+    fVar12 = (float10)0.25;
     iVar5 = 0;
     do {
       fVar2 = (float10)-iVar7 * fVar12;
@@ -151,8 +151,8 @@ LAB_004e5a60:
         }
         else {
           fVar12 = (float10)pow
-                                      ((float10)_DAT_0058b8a8,
-                                       (float10)iVar7 * (float10)_DAT_0058b898);
+                                      ((float10)2,
+                                       (float10)iVar7 * (float10)0.25);
           pfVar4 = local_38;
         }
         *pfVar4 = (float)fVar12;
@@ -162,7 +162,7 @@ LAB_004e5a60:
           *local_18 = *local_18 * (float)*(double *)(iVar7 * 8 + 0x1cd6328);
         }
         else {
-          fVar12 = (float10)pow((float10)iVar7,(float10)_DAT_0058b8a0);
+          fVar12 = (float10)pow((float10)iVar7,(float10)1.3333333333333299);
           *local_1c = (float)(fVar12 * (float10)*local_1c);
         }
         if (*(int *)((int)param_1 + iVar5 + local_68) < 0) {

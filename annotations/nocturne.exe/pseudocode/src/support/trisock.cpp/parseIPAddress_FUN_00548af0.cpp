@@ -17,7 +17,7 @@ uint __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(uint param_1,uint p
   if (iVar1 != 0) {
     return param_1;
   }
-  _DAT_01cc4800 = "?..\\support\\trisock.cpp" + 1;
+  _DAT_01cc4800 = "..\\support\\trisock.cpp";
   _DAT_01cc4804 = 0x36;
   FUN_004c8440("Invalid dotted decimal string: %s",param_2);
   return param_1;

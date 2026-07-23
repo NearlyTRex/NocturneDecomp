@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -204,39 +204,39 @@
     },
     {
       "addr": "00595b0f",
-      "name": "DAT_00595b0f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b0f",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "00595b17",
-      "name": "DAT_00595b17",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00595b17",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "00595b1f",
-      "name": "DAT_00595b1f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b1f",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "00595b27",
-      "name": "DAT_00595b27",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b27",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "00595b2f",
-      "name": "DAT_00595b2f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b2f",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "00595b37",
-      "name": "DAT_00595b37",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00595b37",
+      "type": "double",
+      "value": "0.261799387791667"
     },
     {
       "addr": "005ad350",
@@ -503,7 +503,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((float)_DAT_00595b0f <= local_14) && (*(int *)(param_1 + 0x24ac) == 0)) &&",
+      "text": "if ((((float)0.98999999999999999 <= local_14) && (*(int *)(param_1 + 0x24ac) == 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -527,7 +527,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "(ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24)) <= (float)_DAT_00595b1f)) {",
+      "text": "(ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24)) <= (float)2)) {",
       "type": "unnamed_param"
     },
     {

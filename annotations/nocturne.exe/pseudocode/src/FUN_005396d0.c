@@ -24,7 +24,7 @@ void FUN_005396d0(int param_1,uint param_2)
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90(iVar1,auStack_1ad8);
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
             (iVar1,*(uint *)(param_1 + 0x1faec),
-             *(float *)(param_1 + 0x1fabc) * (float)_DAT_005958b7,0xffffffff);
+             *(float *)(param_1 + 0x1fabc) * (float)40,0xffffffff);
   iVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0
                     (local_1c,_DAT_02dc9f50 * 0x10 + param_1 + 0x800);
   local_10 = -*(float *)(iVar2 + 4);

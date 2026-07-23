@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 522,
+    "complexity_score": 524,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 154,
     "suspect_count": 35,
     "suspect_types": [
       "param_count_too_few",
@@ -135,7 +135,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 546
+    "total_lines": 548
   },
   "cross_references": [
     {
@@ -225,27 +225,27 @@
   "globals": [
     {
       "addr": "0059759f",
-      "name": "DAT_0059759f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059759f",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "005975a7",
-      "name": "DAT_005975a7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005975a7",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005975af",
-      "name": "DAT_005975af",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005975af",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005975b7",
-      "name": "DAT_005975b7",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005975b7",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "005a3e8c",
@@ -781,7 +781,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_60);",
@@ -789,7 +789,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "local_6c = (float)param_1[2];",
@@ -797,7 +797,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != 0) {",
@@ -805,7 +805,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_54);",
@@ -813,7 +813,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "local_64 = (float)param_1[2];",
@@ -821,7 +821,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != 0) {",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 113,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_48);",
@@ -837,7 +837,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != 0) {",
@@ -845,7 +845,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 127,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_3c);",
@@ -853,7 +853,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == 0) {",
@@ -861,7 +861,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 132,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0) {",
@@ -869,7 +869,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 134,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -877,7 +877,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 134,
       "match": "DAT_005c1374",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -885,7 +885,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -893,7 +893,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_005c1374",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -901,7 +901,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 142,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(DAT_005ae704,1);",
@@ -909,7 +909,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 144,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -917,7 +917,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 144,
       "match": "DAT_005c1374",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -925,7 +925,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 148,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xa000);",
@@ -933,7 +933,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 150,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",
@@ -941,7 +941,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 150,
       "match": "DAT_005c1374",
       "severity": "mild",
       "text": "(DAT_005ae704,&DAT_005c1374);",

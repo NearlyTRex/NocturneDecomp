@@ -94,10 +94,10 @@ LAB_00547bbc:
       pfVar5 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_b8);
       fStack_88 = *pfVar5 + pfVar5[3];
       fStack_84 = pfVar5[1] + pfVar5[4];
-      fStack_70 = fStack_88 * _DAT_005969a7;
-      fStack_6c = fStack_84 * _DAT_005969a7;
+      fStack_70 = fStack_88 * 0.5f;
+      fStack_6c = fStack_84 * 0.5f;
       fStack_80 = pfVar5[2] + pfVar5[5];
-      fStack_68 = fStack_80 * _DAT_005969a7;
+      fStack_68 = fStack_80 * 0.5f;
       pfVar5 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                   (param_1,auStack_64,&fStack_70);
       if (&fStack_58 != pfVar5) {
@@ -110,8 +110,8 @@ LAB_00547bbc:
       iStack_74 = (int)ROUND(fStack_50 * _DAT_005a3640);
       iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
                             (0x01E57284,&iStack_7c,0);
-      if ((*(float *)(param_1 + 0x214) * (float)_DAT_005969af <= (float)iStack_18) &&
-         ((float)iStack_18 <= *(float *)(param_1 + 0x218) * (float)_DAT_005969af)) {
+      if ((*(float *)(param_1 + 0x214) * (float)65536 <= (float)iStack_18) &&
+         ((float)iStack_18 <= *(float *)(param_1 + 0x218) * (float)65536)) {
         local_34 = 1;
       }
     }

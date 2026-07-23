@@ -68,15 +68,15 @@
 ;   string s_%s_confused_while_walking_to_scr_00587794
 ;   string s_%s_gave_up_chase_-_I'm_confused_005877be
 ;   string s_slime.wav_@%f_*%f_005877df
-;   undefined4 DAT_005877f4
-;   undefined4 DAT_005877fc
-;   undefined4 DAT_00587804
-;   undefined4 DAT_0058780c
-;   undefined4 DAT_00587814
-;   undefined4 DAT_0058781c
-;   undefined4 DAT_00587824
-;   undefined4 DAT_0058782c
-;   undefined4 DAT_0059fa6c
+;   double DOUBLE_005877f4 = 0.392699081687500
+;   double DOUBLE_005877fc = 3
+;   double DOUBLE_00587804 = 12
+;   double DOUBLE_0058780c = -0.200000000000000
+;   double DOUBLE_00587814 = 32
+;   float FLOAT_0058781c = 2
+;   double DOUBLE_00587824 = -0.523598775583333
+;   double DOUBLE_0058782c = 0.523598775583333
+;   float FLOAT_0059fa6c = 20
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b80f0
 ;   ... and 5 more
@@ -141,9 +141,9 @@ section .text
         ;   XREF to: 004c4da7 (CONDITIONAL_JUMP)  ; LAB_004c4da7
     FLD float ptr [EBX + 0xbc8c]        ; 004c49dc
     FLD float ptr [EBP + 0x92]          ; 004c49e2
-    FMUL double ptr [0x005877f4]        ; 004c49e8 | DAT_005877f4
+    FMUL double ptr [0x005877f4]        ; 004c49e8 | DOUBLE_005877f4
     FMULP                               ; 004c49ee
-    FMUL double ptr [0x005877fc]        ; 004c49f0 | DAT_005877fc
+    FMUL double ptr [0x005877fc]        ; 004c49f0 | DOUBLE_005877fc
     FLD float ptr [EBX + 0x23ac]        ; 004c49f6
     PUSH EDI                            ; 004c49fc
     FSTP float ptr [EBX + 0x242c]       ; 004c49fd
@@ -237,7 +237,7 @@ section .text
     FLD float ptr [EBP + 0x92]          ; 004c4afb
         ;   Label: LAB_004c4afb
     FLD ST0                             ; 004c4b01
-    FMUL double ptr [0x00587814]        ; 004c4b03 | DAT_00587814
+    FMUL double ptr [0x00587814]        ; 004c4b03 | DOUBLE_00587814
     FLD float ptr [EBX + 0x2424]        ; 004c4b09
     FXCH                                ; 004c4b0f
     FSUBR ST0,ST1                       ; 004c4b11
@@ -343,7 +343,7 @@ section .text
     FLD float ptr [EBP + -0x5e]         ; 004c4c23
         ;   Label: LAB_004c4c23
     PUSH 0x40000000                     ; 004c4c26
-    FADD float ptr [0x0058781c]         ; 004c4c2b | DAT_0058781c
+    FADD float ptr [0x0058781c]         ; 004c4c2b | FLOAT_0058781c
     PUSH 0xc0000000                     ; 004c4c31
     FSTP float ptr [EBP + -0x5e]        ; 004c4c36
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004c4c39
@@ -357,11 +357,11 @@ section .text
     FSTP float ptr [EBP + -0x62]        ; 004c4c54
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004c4c57
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
-    FLD double ptr [0x00587824]         ; 004c4c5c | DAT_00587824
+    FLD double ptr [0x00587824]         ; 004c4c5c | DOUBLE_00587824
     FLD ST0                             ; 004c4c62
     MOV dword ptr [EBP + 0x76],EAX      ; 004c4c64
     FSIN                                ; 004c4c67
-    FLD double ptr [0x0058782c]         ; 004c4c69 | DAT_0058782c
+    FLD double ptr [0x0058782c]         ; 004c4c69 | DOUBLE_0058782c
     FPTAN                               ; 004c4c6f
     FSTP ST0                            ; 004c4c71
     FLD float ptr [EBP + 0x76]          ; 004c4c73
@@ -388,9 +388,9 @@ section .text
     FMUL double ptr [EBP + 0x2a]        ; 004c4ca5
     FSUB float ptr [EBP + -0x5e]        ; 004c4ca8
     FLD ST2                             ; 004c4cab
-    FMUL float ptr [0x0058781c]         ; 004c4cad | DAT_0058781c
+    FMUL float ptr [0x0058781c]         ; 004c4cad | FLOAT_0058781c
     FLD double ptr [EBP + 0x2a]         ; 004c4cb3
-    FMUL double ptr [0x00587814]        ; 004c4cb6 | DAT_00587814
+    FMUL double ptr [0x00587814]        ; 004c4cb6 | DOUBLE_00587814
     FXCH                                ; 004c4cbc
     FMUL ST4                            ; 004c4cbe
     FXCH                                ; 004c4cc0
@@ -616,13 +616,13 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004c4f17
     FABS                                ; 004c4f1a
     ADD ESP,0x4                         ; 004c4f1c
-    FCOMP double ptr [0x005877f4]       ; 004c4f1f | DAT_005877f4
+    FCOMP double ptr [0x005877f4]       ; 004c4f1f | DOUBLE_005877f4
     FNSTSW AX                           ; 004c4f25
     SAHF                                ; 004c4f27
     JNC 0x004c4f7b                      ; 004c4f28
         ;   XREF to: 004c4f7b (CONDITIONAL_JUMP)  ; LAB_004c4f7b
     FLD float ptr [EBP + 0x5e]          ; 004c4f2a
-    FCOMP double ptr [0x00587804]       ; 004c4f2d | DAT_00587804
+    FCOMP double ptr [0x00587804]       ; 004c4f2d | DOUBLE_00587804
     FNSTSW AX                           ; 004c4f33
     SAHF                                ; 004c4f35
     JA 0x004c4f7b                       ; 004c4f36
@@ -686,7 +686,7 @@ section .text
     ADD ESP,0xc                         ; 004c4fd3
     JMP 0x004c4a74                      ; 004c4fd6
         ;   XREF to: 004c4a74 (UNCONDITIONAL_JUMP)  ; LAB_004c4a74
-    MOV EAX,[0x0059fa6c]                ; 004c4fdb | DAT_0059fa6c
+    MOV EAX,[0x0059fa6c]                ; 004c4fdb | FLOAT_0059fa6c
         ;   Label: LAB_004c4fdb
     MOV dword ptr [EBP + 0x52],EAX      ; 004c4fe0
     LEA EAX,[EBX + 0x23a4]              ; 004c4fe3
@@ -799,7 +799,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004c511e
     FABS                                ; 004c5121
     ADD ESP,0x4                         ; 004c5123
-    FCOMP double ptr [0x005877f4]       ; 004c5126 | DAT_005877f4
+    FCOMP double ptr [0x005877f4]       ; 004c5126 | DOUBLE_005877f4
     FNSTSW AX                           ; 004c512c
     SAHF                                ; 004c512e
     JNC 0x004c4a74                      ; 004c512f
@@ -853,7 +853,7 @@ section .text
     FLDLN2                              ; 004c51ad
     FXCH                                ; 004c51af
     FYL2X                               ; 004c51b1
-    FMUL double ptr [0x0058780c]        ; 004c51b3 | DAT_0058780c
+    FMUL double ptr [0x0058780c]        ; 004c51b3 | DOUBLE_0058780c
     FLD1                                ; 004c51b9
     FLDL2E                              ; 004c51bb
     FMUL ST2                            ; 004c51bd

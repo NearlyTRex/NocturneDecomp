@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_wateract_cpp_CWaterActor_setup_FUN_00551370(int param_1)
 
 {
@@ -50,18 +48,18 @@ void core_wateract_cpp_CWaterActor_setup_FUN_00551370(int param_1)
       iVar5 = ((int)ROUND(fVar14) + 1) * iVar11;
       *(int *)(param_1 + 0x290) = iVar5;
       if (iVar5 < 0x3e9) break;
-      *(float *)(param_1 + 0x27c) = *(float *)(param_1 + 0x27c) * (float)_DAT_005975df;
+      *(float *)(param_1 + 0x27c) = *(float *)(param_1 + 0x27c) * (float)2;
     }
     fVar1 = *(float *)(param_1 + 0x158);
-    fVar4 = (float)_DAT_005975d7;
+    fVar4 = (float)0.5;
     iVar5 = 0;
     if (0 < (int)ROUND(fVar14) + 1) {
       do {
         iVar8 = 0;
         if (0 < iVar11) {
-          fVar13 = (float10)_DAT_00597607;
-          fVar14 = (float10)_DAT_005975ff;
-          fVar16 = (float10)_DAT_005975d7;
+          fVar13 = (float10)252;
+          fVar14 = (float10)65536;
+          fVar16 = (float10)0.5;
           pfVar6 = (float *)(iVar5 * 0x20);
           do {
             pfVar6[1] = 0.0;
@@ -146,19 +144,19 @@ void core_wateract_cpp_CWaterActor_setup_FUN_00551370(int param_1)
     *(uint *)(param_1 + 0x290) = 0;
     iVar5 = 0;
     if (0 < *(int *)(param_1 + 0x2b22c)) {
-      fVar13 = (float10)_DAT_0059760f;
-      fVar14 = (float10)_DAT_005975ff;
-      fVar16 = (float10)_DAT_005975f7;
+      fVar13 = (float10)8388608;
+      fVar14 = (float10)65536;
+      fVar16 = (float10)128;
       do {
-        fVar17 = ((float10)iVar5 / (float10)*(int *)(param_1 + 0x2b22c)) * (float10)_DAT_005975e7 *
-                 (float10)_DAT_005975df;
+        fVar17 = ((float10)iVar5 / (float10)*(int *)(param_1 + 0x2b22c)) * (float10)3.1415926535000001
+                 * (float10)2;
         fVar15 = (float10)fcos(fVar17);
         fVar17 = (float10)fsin(fVar17);
         *(float *)(param_1 + 0x294 + *(int *)(param_1 + 0x290) * 0x20) =
-             (float)(fVar15 * (float10)*(float *)(param_1 + 0x150) * (float10)_DAT_005975ef);
+             (float)(fVar15 * (float10)*(float *)(param_1 + 0x150) * (float10)0.70699999999999996);
         *(uint *)(param_1 + 0x298 + *(int *)(param_1 + 0x290) * 0x20) = 0;
         *(float *)(param_1 + 0x29c + *(int *)(param_1 + 0x290) * 0x20) =
-             (float)(fVar17 * (float10)*(float *)(param_1 + 0x158) * (float10)_DAT_005975ef);
+             (float)(fVar17 * (float10)*(float *)(param_1 + 0x158) * (float10)0.70699999999999996);
         iVar11 = *(int *)(param_1 + 0x290) * 0x20;
         fVar17 = (float10)round
                                     (((float10)*(float *)(iVar11 + 0x294 + param_1) /

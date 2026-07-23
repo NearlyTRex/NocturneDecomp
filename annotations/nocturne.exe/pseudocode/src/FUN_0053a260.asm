@@ -44,7 +44,7 @@
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539feb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00595967
+;   double DOUBLE_00595967 = 0.000100000000000000
 ;   undefined4 DAT_005a4508
 ;   undefined4 DAT_02dc9f5c
 ;   undefined4 DAT_02dc9f60
@@ -296,7 +296,7 @@ section .text
         ;   XREF to: 0051cfd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0()
     FLD float ptr [EBX + 0x1faf4]       ; 0053a542
     ADD ESP,0x14                        ; 0053a548
-    FCOMP double ptr [0x00595967]       ; 0053a54b | DAT_00595967
+    FCOMP double ptr [0x00595967]       ; 0053a54b | DOUBLE_00595967
     FNSTSW AX                           ; 0053a551
     SAHF                                ; 0053a553
     JA 0x0053a5bc                       ; 0053a554

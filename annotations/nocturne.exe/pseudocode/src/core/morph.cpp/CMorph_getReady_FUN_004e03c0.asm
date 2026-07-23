@@ -58,7 +58,7 @@
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef761
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\morph.cpp_0058ad77+1
+;   TerminatedCString s_core_morph_cpp_0058ad78
 ;   string s_CMorph::getReady_-_can't_do_this_0058ad8a
 ;   undefined4 DAT_005993f0
 ;   undefined4 DAT_01cc4800
@@ -144,7 +144,7 @@ section .text
     ADD ESP,0x8                         ; 004e048a
     JMP 0x004e0469                      ; 004e048d
         ;   XREF to: 004e0469 (UNCONDITIONAL_JUMP)  ; LAB_004e0469
-    MOV EBX,0x58ad78                    ; 004e048f | s_..\core\morph.cpp_0058ad77+1
+    MOV EBX,0x58ad78                    ; 004e048f | = "..\\core\\morph.cpp"
         ;   Label: LAB_004e048f
     MOV ESI,0x31f                       ; 004e0494
     PUSH 0x58ad8a                       ; 004e0499 | = "CMorph::getReady - can't do this unle..."

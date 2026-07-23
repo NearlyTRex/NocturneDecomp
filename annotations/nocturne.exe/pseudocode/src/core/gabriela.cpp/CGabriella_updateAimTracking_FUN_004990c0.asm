@@ -29,7 +29,7 @@
 ;   double DOUBLE_00582252 = 0.5
 ;   double DOUBLE_0058225a = 1.5
 ;   undefined4 DAT_005993b0
-;   undefined4 DAT_0059dcb0
+;   float FLOAT_0059dcb0 = 0.3000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c713b0
 ;   undefined4 DAT_01fa3ff0
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [EBX + 0x1fa68],EAX   ; 00499130
     MOV EAX,dword ptr [EBX + 0x1fa68]   ; 00499136
     MOV dword ptr [EBX + 0x1fa64],EAX   ; 0049913c
-    FLD float ptr [0x0059dcb0]          ; 00499142 | DAT_0059dcb0
+    FLD float ptr [0x0059dcb0]          ; 00499142 | FLOAT_0059dcb0
         ;   Label: LAB_00499142
     FMUL double ptr [0x00582252]        ; 00499148 | DOUBLE_00582252
     FDIVR float ptr [EBP + 0x18]        ; 0049914e
@@ -178,7 +178,7 @@ section .text
     MOV dword ptr [EBX + 0x1fa64],EAX   ; 00499268
     FLD float ptr [EBP + 0x18]          ; 0049926e
         ;   Label: LAB_0049926e
-    FDIV float ptr [0x0059dcb0]         ; 00499271 | DAT_0059dcb0
+    FDIV float ptr [0x0059dcb0]         ; 00499271 | FLOAT_0059dcb0
     FADD float ptr [EBX + 0x1fa78]      ; 00499277
     MOV dword ptr [EBX + 0x1fa68],0x0   ; 0049927d
     JMP 0x00499157                      ; 00499287
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
     ADD ESP,0x8                         ; 00499462
     FLD float ptr [EBP + 0x18]          ; 00499465
-    FDIV float ptr [0x0059dcb0]         ; 00499468 | DAT_0059dcb0
+    FDIV float ptr [0x0059dcb0]         ; 00499468 | FLOAT_0059dcb0
     MOV EAX,dword ptr [ESP + 0xdc]      ; 0049946e
     MOV dword ptr [EBX + 0x1fa64],EAX   ; 00499475
     MOV EAX,dword ptr [ESP + 0xe0]      ; 0049947b
@@ -383,7 +383,7 @@ section .text
     JC 0x0049915d                       ; 0049954d
         ;   XREF to: 0049915d (CONDITIONAL_JUMP)  ; LAB_0049915d
     FLD float ptr [EBP + 0x18]          ; 00499553
-    FDIV float ptr [0x0059dcb0]         ; 00499556 | DAT_0059dcb0
+    FDIV float ptr [0x0059dcb0]         ; 00499556 | FLOAT_0059dcb0
     FSUBR float ptr [EBX + 0x1fa78]     ; 0049955c
     JMP 0x00499157                      ; 00499562
         ;   XREF to: 00499157 (UNCONDITIONAL_JUMP)  ; LAB_00499157

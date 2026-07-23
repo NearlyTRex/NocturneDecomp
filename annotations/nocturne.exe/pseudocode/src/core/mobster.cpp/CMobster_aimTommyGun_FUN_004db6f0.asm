@@ -25,11 +25,11 @@
 ;   FUN_004da790 at 004dacae
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\mobster.cpp_0058a35f+2
+;   TerminatedCString s_core_mobster_cpp_0058a361
 ;   string s_CMobster::aimTommyGun_-_I'm_not_c_0058a375
-;   undefined4 DAT_0058a3a5
-;   undefined4 DAT_0058a3a9
-;   undefined4 DAT_0058a3b1
+;   float FLOAT_0058a3a5 = 3
+;   double DOUBLE_0058a3a9 = 5.34643470770547E-315
+;   double DOUBLE_0058a3b1 = 2
 ;   undefined4 DAT_01cae124
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -104,7 +104,7 @@ section .text
     TEST EAX,EAX                        ; 004db74f
     JNZ 0x004db776                      ; 004db751
         ;   XREF to: 004db776 (CONDITIONAL_JUMP)  ; LAB_004db776
-    MOV ECX,0x58a361                    ; 004db753 | s_..\core\mobster.cpp_0058a35f+2
+    MOV ECX,0x58a361                    ; 004db753 | = "..\\core\\mobster.cpp"
     MOV ESI,0x323                       ; 004db758
     PUSH 0x58a375                       ; 004db75d | = "CMobster::aimTommyGun - I'm not carry..."
     MOV dword ptr [0x01cc4800],ECX      ; 004db762 | DAT_01cc4800
@@ -163,7 +163,7 @@ section .text
     JZ 0x004db9f6                       ; 004db808
         ;   XREF to: 004db9f6 (CONDITIONAL_JUMP)  ; LAB_004db9f6
     FLD float ptr [ESP + 0x54]          ; 004db80e
-    FADD float ptr [0x0058a3a9]         ; 004db812 | DAT_0058a3a9
+    FADD float ptr [0x0058a3a9]         ; 004db812 | DOUBLE_0058a3a9
     FSTP float ptr [ESP + 0x54]         ; 004db818
         ;   Label: LAB_004db818
     LEA EAX,[ESP + 0x50]                ; 004db81c
@@ -202,7 +202,7 @@ section .text
     JBE 0x004dba05                      ; 004db877
         ;   XREF to: 004dba05 (CONDITIONAL_JUMP)  ; LAB_004dba05
     FLD float ptr [ESP + 0x4]           ; 004db87d
-    FCOMP double ptr [0x0058a3b1]       ; 004db881 | DAT_0058a3b1
+    FCOMP double ptr [0x0058a3b1]       ; 004db881 | DOUBLE_0058a3b1
     FNSTSW AX                           ; 004db887
     SAHF                                ; 004db889
     JBE 0x004dba05                      ; 004db88a
@@ -340,7 +340,7 @@ section .text
     RET                                 ; 004db9f5
     FLD float ptr [ESP + 0x54]          ; 004db9f6
         ;   Label: LAB_004db9f6
-    FADD float ptr [0x0058a3a5]         ; 004db9fa | DAT_0058a3a5
+    FADD float ptr [0x0058a3a5]         ; 004db9fa | FLOAT_0058a3a5
     JMP 0x004db818                      ; 004dba00
         ;   XREF to: 004db818 (UNCONDITIONAL_JUMP)  ; LAB_004db818
     FLD float ptr [EBX + 0xbdf4]        ; 004dba05

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_2)
 
 {
@@ -18,8 +16,8 @@ uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_
   param_2[7] = 0x3f800000;
   if (*param_2 == 1) {
     param_2[5] = -0x42333333;
-    fVar1 = (float)_DAT_00589507;
-    param_2[6] = (int)((float)param_2[6] + _DAT_0058950f);
+    fVar1 = (float)1.3;
+    param_2[6] = (int)((float)param_2[6] + 0.5f);
     param_2[7] = (int)((float)param_2[7] * fVar1);
   }
   else {

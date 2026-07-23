@@ -19,7 +19,7 @@ void FUN_004c90e0(void)
   int iVar6;
   byte local_110 [256];
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,"enemy.pod",&DAT_00587ec4);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,"enemy.pod","rb");
   if (iVar1 == 0) {
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_014b9900,0x58);
     wincore_winrun_cpp_getTime_FUN_00558a30();

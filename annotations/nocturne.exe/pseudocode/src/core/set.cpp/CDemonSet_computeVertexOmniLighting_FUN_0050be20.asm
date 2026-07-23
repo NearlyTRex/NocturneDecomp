@@ -22,7 +22,7 @@
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 00550ede
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059064a
+;   double DOUBLE_0059064a = 255
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5038
@@ -93,7 +93,7 @@ section .text
     SHL EAX,0x4                         ; 0050beb7
     FLD float ptr [ESP + 0x4]           ; 0050beba
     ADD EBX,EAX                         ; 0050bebe
-    FCOMP double ptr [0x0059064a]       ; 0050bec0 | DAT_0059064a
+    FCOMP double ptr [0x0059064a]       ; 0050bec0 | DOUBLE_0059064a
     FNSTSW AX                           ; 0050bec6
     SAHF                                ; 0050bec8
     JBE 0x0050bed3                      ; 0050bec9
@@ -101,7 +101,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x437f0000 ; 0050becb
     FLD float ptr [ESP]                 ; 0050bed3
         ;   Label: LAB_0050bed3
-    FCOMP double ptr [0x0059064a]       ; 0050bed6 | DAT_0059064a
+    FCOMP double ptr [0x0059064a]       ; 0050bed6 | DOUBLE_0059064a
     FNSTSW AX                           ; 0050bedc
     SAHF                                ; 0050bede
     JBE 0x0050bee8                      ; 0050bedf
@@ -109,7 +109,7 @@ section .text
     MOV dword ptr [ESP],0x437f0000      ; 0050bee1
     FLD float ptr [ESP + 0x8]           ; 0050bee8
         ;   Label: LAB_0050bee8
-    FCOMP double ptr [0x0059064a]       ; 0050beec | DAT_0059064a
+    FCOMP double ptr [0x0059064a]       ; 0050beec | DOUBLE_0059064a
     FNSTSW AX                           ; 0050bef2
     SAHF                                ; 0050bef4
     JA 0x0050bff5                       ; 0050bef5

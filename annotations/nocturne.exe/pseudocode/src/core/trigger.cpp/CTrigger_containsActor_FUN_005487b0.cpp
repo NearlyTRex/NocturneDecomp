@@ -36,10 +36,10 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
     pfVar4 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_7c);
     fStack_34 = *pfVar4 + pfVar4[3];
     fStack_30 = pfVar4[1] + pfVar4[4];
-    fStack_4c = fStack_34 * _DAT_00596b93;
-    fStack_48 = fStack_30 * _DAT_00596b93;
+    fStack_4c = fStack_34 * 0.5f;
+    fStack_48 = fStack_30 * 0.5f;
     fStack_2c = pfVar4[2] + pfVar4[5];
-    fStack_44 = fStack_2c * _DAT_00596b93;
+    fStack_44 = fStack_2c * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&fStack_40,&fStack_4c);
     if (*(int *)(param_1 + 0x210) != 0) {
       iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_00765a98);
@@ -69,7 +69,7 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
       }
       else {
         if (*(int *)(param_1 + 0x168) != 1) {
-          _DAT_01cc4800 = "?..\\core\\trigger.cpp" + 1;
+          _DAT_01cc4800 = "..\\core\\trigger.cpp";
           _DAT_01cc4804 = 0x37d;
           FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x168),
                        param_1);
@@ -81,7 +81,7 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_94);
         if ((fStack_90 <= fStack_3c) && (fStack_3c <= fStack_84)) {
           if (fStack_40 * fStack_40 + fStack_38 * fStack_38 <=
-              *(float *)(param_1 + 0x158) * *(float *)(param_1 + 0x160) * (float)_DAT_00596b97) {
+              *(float *)(param_1 + 0x158) * *(float *)(param_1 + 0x160) * (float)0.25) {
             return 1;
           }
           return 0;

@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   string s_moloch_h.dfm_0058a73b
-;   string s_moloch_d.dfm_0058a748
-;   string s_moloch_d.dfm_0058a755
-;   string s_moloch_h.dfm_0058a762
+;   TerminatedCString s_moloch_h_dfm_0058a73b
+;   TerminatedCString s_moloch_d_dfm_0058a748
+;   TerminatedCString s_moloch_d_dfm_0058a755
+;   TerminatedCString s_moloch_h_dfm_0058a762
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_getReady_FUN_004e03c0

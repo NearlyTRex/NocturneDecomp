@@ -4,6 +4,10 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x5A0000
 // =============================================================================
 
+// float
+float FLOAT_005a2158 = 0.0f;
+float FLOAT_005a2160 = 0.0f;
+
 // string
 string DAT_005ACE34 = "$SDamageInfo$$";
 string DAT_005ACE54 = "$CBoundingBox3D$$";
@@ -60,7 +64,6 @@ undefined1 DAT_005acc90 = 0x00;
 undefined1 DAT_005acc91 = 0x00;
 
 // undefined4
-undefined4 DAT_005a2158 = 0x00000000;
 undefined4 DAT_005a4b78 = 0x00000000;
 undefined4 DAT_005acaa4 = 0x00000001;
 undefined4 DAT_005acaa8 = 0x000000F8;

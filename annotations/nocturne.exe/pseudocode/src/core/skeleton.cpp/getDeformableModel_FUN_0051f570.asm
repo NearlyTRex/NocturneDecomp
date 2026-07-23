@@ -9,7 +9,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 at 0051dcda
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\skeleton.cpp_00591dce+5
+;   TerminatedCString s_core_skeleton_cpp_00591dd3
 ;   string s_Can't_load_%s_because_deformable_00591de8
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -64,7 +64,7 @@ section .text
     PUSH 0x40                           ; 0051f5c9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0051f5cb
     PUSH EAX                            ; 0051f5ce
-    MOV ESI,0x591dd3                    ; 0051f5cf | s_..\core\skeleton.cpp_00591dce+5
+    MOV ESI,0x591dd3                    ; 0051f5cf | = "..\\core\\skeleton.cpp"
     MOV EDI,0x1057                      ; 0051f5d4
     PUSH 0x591de8                       ; 0051f5d9 | = "Can't load %s because deformable mode..."
     MOV dword ptr [0x01cc4800],ESI      ; 0051f5de | DAT_01cc4800

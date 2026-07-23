@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -270,45 +270,45 @@
   "globals": [
     {
       "addr": "0058a936",
-      "name": "DAT_0058a936",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a936",
+      "type": "double",
+      "value": "-0.5"
     },
     {
       "addr": "0058a93e",
-      "name": "DAT_0058a93e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a93e",
+      "type": "double",
+      "value": "48"
     },
     {
       "addr": "0058a946",
-      "name": "DAT_0058a946",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a946",
+      "type": "double",
+      "value": "8192"
     },
     {
       "addr": "0058a94e",
-      "name": "DAT_0058a94e",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058a94e",
+      "type": "float",
+      "value": "16384"
     },
     {
       "addr": "0058a952",
-      "name": "DAT_0058a952",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058a952",
+      "type": "float",
+      "value": "8192"
     },
     {
       "addr": "0058a956",
-      "name": "DAT_0058a956",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058a956",
+      "type": "float",
+      "value": "1.570796"
     },
     {
       "addr": "0058a95e",
-      "name": "DAT_0058a95e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a95e",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005ae704",
@@ -747,7 +747,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_5c = (*(float *)(param_1 + 4) + (float)_DAT_0058a936) * (float)_DAT_0058a93e;",
+      "text": "local_5c = (*(float *)(param_1 + 4) + (float)-0.5) * (float)48;",
       "type": "unnamed_param"
     },
     {
@@ -755,7 +755,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_58 = (float)_DAT_0058a93e * (*(float *)(param_1 + 4) + (float)_DAT_0058a936);",
+      "text": "local_58 = (float)48 * (*(float *)(param_1 + 4) + (float)-0.5);",
       "type": "unnamed_param"
     },
     {
@@ -942,7 +942,7 @@
       "line": 76,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_4c = local_4c + _DAT_0058a956;",
+      "text": "local_4c = local_4c + 1.570796f;",
       "type": "static_uninitvar"
     }
   ]

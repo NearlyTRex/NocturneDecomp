@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059a5a0
+;   float FLOAT_0059a5a0 = 4
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cd4318
@@ -90,7 +90,7 @@ section .text
     CALL core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_004e0380 ; 004157f5
         ;   XREF to: 004e0380 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_004e0380()
     FLD float ptr [EBX + 0xbea4]        ; 004157fa
-    FDIV float ptr [0x0059a5a0]         ; 00415800 | DAT_0059a5a0
+    FDIV float ptr [0x0059a5a0]         ; 00415800 | FLOAT_0059a5a0
     ADD ESP,0x14                        ; 00415806
     SUB ESP,0x4                         ; 00415809
     FSTP float ptr [ESP]                ; 0041580c

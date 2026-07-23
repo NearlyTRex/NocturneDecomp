@@ -18,7 +18,7 @@
 ;   ... and 88 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\motion.cpp_0058b2cc+1
+;   TerminatedCString s_core_motion_cpp_0058b2cd
 ;   string s_CMotionController::setDesiredSta_0058b2e0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -73,7 +73,7 @@ section .text
     RET                                 ; 004e16f9
     PUSH EDI                            ; 004e16fa
         ;   Label: LAB_004e16fa
-    MOV ECX,0x58b2cd                    ; 004e16fb | s_..\core\motion.cpp_0058b2cc+1
+    MOV ECX,0x58b2cd                    ; 004e16fb | = "..\\core\\motion.cpp"
     MOV EDI,0x274                       ; 004e1700
     PUSH 0x58b2e0                       ; 004e1705 | = "CMotionController::setDesiredState - ..."
     MOV dword ptr [0x01cc4800],ECX      ; 004e170a | DAT_01cc4800

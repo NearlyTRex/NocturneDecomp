@@ -32,7 +32,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00522f10(int param_1,int para
   _DAT_02dc8380 = realloc(_DAT_02dc8380,DAT_005bea68 * iVar4 * 2);
   _DAT_02dc8338 = realloc(_DAT_02dc8338,iVar4 * DAT_005bea68);
   if (((_DAT_02dc835c == 0) || (_DAT_02dc8380 == 0)) || (_DAT_02dc8338 == 0)) {
-    _DAT_01cc4800 = "?..\\sound\\sndmain.cpp" + 1;
+    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
     _DAT_01cc4804 = 0x4ac;
     FUN_004c8440("allocMixBuffers - out of memory");
   }

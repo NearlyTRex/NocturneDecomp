@@ -17,10 +17,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 s_m-gun1.wav_@_2.3_*_%f_005968cf+2
+;   TerminatedCString s_m_gun1_wav_2_3_f_005968d1
 ;   string s_m-gun-t.wav_005968e7
-;   undefined4 DAT_005968f5
-;   undefined4 DAT_005968f9
+;   float FLOAT_005968f5 = 6
+;   float FLOAT_005968f9 = 0.1666667
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_01cae0e8
 ;
@@ -91,7 +91,7 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 0054651f
     SUB ESP,0x8                         ; 00546523
     FSTP double ptr [ESP]               ; 00546526
-    PUSH 0x5968d1                       ; 00546529 | s_m-gun1.wav_@_2.3_*_%f_005968cf+2
+    PUSH 0x5968d1                       ; 00546529 | = "m-gun1.wav @ 2.3 * %f"
     LEA EAX,[ESP + 0x148]               ; 0054652e
     PUSH EAX                            ; 00546535
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00546536
@@ -158,7 +158,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005465dd
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
     FLD float ptr [ESP + 0x10]          ; 005465e2
-    FMUL float ptr [0x005968f5]         ; 005465e6 | DAT_005968f5
+    FMUL float ptr [0x005968f5]         ; 005465e6 | FLOAT_005968f5
     FST float ptr [ESP + 0x10]          ; 005465ec
     FSTP double ptr [ESP + 0x1a8]       ; 005465f0
     MOV EDI,dword ptr [ESP + 0x1ac]     ; 005465f7
@@ -192,7 +192,7 @@ section .text
     MOV dword ptr [ESP + 0x1b0],EAX     ; 0054665f
     FILD dword ptr [ESP + 0x1b0]        ; 00546666
     FMUL float ptr [ESP + 0x10]         ; 0054666d
-    FMUL float ptr [0x005968f9]         ; 00546671 | DAT_005968f9
+    FMUL float ptr [0x005968f9]         ; 00546671 | FLOAT_005968f9
     CALL crt_math.c_round_FUN_00563a30  ; 00546677
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0xc]         ; 0054667c

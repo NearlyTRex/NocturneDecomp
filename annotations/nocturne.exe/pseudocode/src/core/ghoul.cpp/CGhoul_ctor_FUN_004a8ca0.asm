@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   string s_guul.dfm_00584ac4
 ;   double DOUBLE_00584acd = 65536
-;   undefined4 DAT_0059e210
-;   undefined4 DAT_0059e214
+;   float FLOAT_0059e210 = 50
+;   float FLOAT_0059e214 = 100
 ;   undefined1* PTR_core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0_0059e224 = 004a8dd0
 ;
 ; Called Functions:
@@ -76,9 +76,9 @@ section .text
     MOV dword ptr [EBX + 0xbd84],0x0    ; 004a8d72
     MOV dword ptr [EBX + 0xbd88],0x0    ; 004a8d7c
     MOV dword ptr [EBX + 0xbd8c],0x0    ; 004a8d86
-    FLD float ptr [0x0059e210]          ; 004a8d90 | DAT_0059e210
+    FLD float ptr [0x0059e210]          ; 004a8d90 | FLOAT_0059e210
     MOV dword ptr [EBX + 0xbd90],0x0    ; 004a8d96
-    FLD float ptr [0x0059e214]          ; 004a8da0 | DAT_0059e214
+    FLD float ptr [0x0059e214]          ; 004a8da0 | FLOAT_0059e214
     MOV dword ptr [EBX + 0xbd40],EAX    ; 004a8da6
     ADD ESP,0x8                         ; 004a8dac
     FXCH                                ; 004a8daf

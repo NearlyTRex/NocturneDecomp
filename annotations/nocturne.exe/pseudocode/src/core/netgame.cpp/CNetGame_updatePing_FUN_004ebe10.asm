@@ -19,12 +19,12 @@
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370 at 004ea625
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\netgame.cpp_0058c241+1
+;   TerminatedCString s_core_netgame_cpp_0058c242
 ;   string s_CNetGame::updatePing_-_invalid_p_0058c256
-;   undefined4 DAT_0058c282
-;   undefined4 DAT_0058c28a
-;   undefined4 DAT_0058c292
-;   undefined4 DAT_0058c29a
+;   double DOUBLE_0058c282 = 0.0000152587890625
+;   double DOUBLE_0058c28a = 30
+;   double DOUBLE_0058c292 = 0.400000000000000
+;   double DOUBLE_0058c29a = 5
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01cea3f4
@@ -55,7 +55,7 @@ section .text
     CMP EBX,dword ptr [ESI + 0x1c]      ; 004ebe26
     JL 0x004ebe4e                       ; 004ebe29
         ;   XREF to: 004ebe4e (CONDITIONAL_JUMP)  ; LAB_004ebe4e
-    MOV ECX,0x58c242                    ; 004ebe2b | s_..\core\netgame.cpp_0058c241+1
+    MOV ECX,0x58c242                    ; 004ebe2b | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ebe2b
     MOV EDI,0x735                       ; 004ebe30
     PUSH 0x58c256                       ; 004ebe35 | = "CNetGame::updatePing - invalid player..."
@@ -101,7 +101,7 @@ section .text
     SUB ECX,EAX                         ; 004ebeb7
     MOV dword ptr [ESP + 0x18],ECX      ; 004ebeb9
     FILD dword ptr [ESP + 0x18]         ; 004ebebd
-    FMUL double ptr [0x0058c282]        ; 004ebec1 | DAT_0058c282
+    FMUL double ptr [0x0058c282]        ; 004ebec1 | DOUBLE_0058c282
     FST float ptr [ESP + 0x8]           ; 004ebec7
     FLDZ                                ; 004ebecb
     FCOMPP                              ; 004ebecd
@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [ESP + 0x8],ECX       ; 004ebed6
     FLD float ptr [ESP + 0x8]           ; 004ebeda
         ;   Label: LAB_004ebeda
-    FCOMP double ptr [0x0058c28a]       ; 004ebede | DAT_0058c28a
+    FCOMP double ptr [0x0058c28a]       ; 004ebede | DOUBLE_0058c28a
     FNSTSW AX                           ; 004ebee4
     SAHF                                ; 004ebee6
     JBE 0x004ebef1                      ; 004ebee7
@@ -121,7 +121,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x41f00000 ; 004ebee9
     FLD float ptr [ESP + 0x8]           ; 004ebef1
         ;   Label: LAB_004ebef1
-    FCOMP double ptr [0x0058c292]       ; 004ebef5 | DAT_0058c292
+    FCOMP double ptr [0x0058c292]       ; 004ebef5 | DOUBLE_0058c292
     FNSTSW AX                           ; 004ebefb
     SAHF                                ; 004ebefd
     JC 0x004ebfa3                       ; 004ebefe
@@ -131,7 +131,7 @@ section .text
     SUB ECX,EAX                         ; 004ebf0d
     MOV dword ptr [ESP + 0x18],ECX      ; 004ebf0f
     FILD dword ptr [ESP + 0x18]         ; 004ebf13
-    FMUL double ptr [0x0058c282]        ; 004ebf17 | DAT_0058c282
+    FMUL double ptr [0x0058c282]        ; 004ebf17 | DOUBLE_0058c282
     FST float ptr [ESP + 0x4]           ; 004ebf1d
     FLDZ                                ; 004ebf21
     FCOMPP                              ; 004ebf23
@@ -143,7 +143,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004ebf2c
     FLD float ptr [ESP + 0x4]           ; 004ebf30
         ;   Label: LAB_004ebf30
-    FCOMP double ptr [0x0058c28a]       ; 004ebf34 | DAT_0058c28a
+    FCOMP double ptr [0x0058c28a]       ; 004ebf34 | DOUBLE_0058c28a
     FNSTSW AX                           ; 004ebf3a
     SAHF                                ; 004ebf3c
     JBE 0x004ebf47                      ; 004ebf3d
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004ebfa3 (CONDITIONAL_JUMP)  ; LAB_004ebfa3
     FLD float ptr [ESP]                 ; 004ebf64
         ;   Label: LAB_004ebf64
-    FCOMP double ptr [0x0058c29a]       ; 004ebf67 | DAT_0058c29a
+    FCOMP double ptr [0x0058c29a]       ; 004ebf67 | DOUBLE_0058c29a
     FNSTSW AX                           ; 004ebf6d
     SAHF                                ; 004ebf6f
     JBE 0x004ebf79                      ; 004ebf70

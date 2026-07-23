@@ -12,7 +12,7 @@ void core_netgame_cpp_removeChatOut_FUN_004e9640(int param_1)
 
 {
   if ((param_1 < 0) || (_DAT_01d06610 <= param_1)) {
-    _DAT_01cc4800 = ">@..\\core\\netgame.cpp" + 2;
+    _DAT_01cc4800 = "..\\core\\netgame.cpp";
     _DAT_01cc4804 = 0x107;
     FUN_004c8440("removeChatOut - invalid index");
   }

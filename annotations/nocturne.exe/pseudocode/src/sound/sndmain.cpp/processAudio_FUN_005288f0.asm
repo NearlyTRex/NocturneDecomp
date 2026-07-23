@@ -10,7 +10,7 @@
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec5c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005939b6
+;   double DOUBLE_005939b6 = 3
 ;   undefined4 DAT_02dc8318
 ;   undefined4 DAT_02dc84a8
 ;   undefined4 DAT_02dc84b8
@@ -33,7 +33,7 @@ section .text
         ;   Label: LAB_005288f9
     FLD double ptr [0x02dc84a8]         ; 005288fa | DAT_02dc84a8
         ;   Label: LAB_005288fa
-    FMUL double ptr [0x005939b6]        ; 00528900 | DAT_005939b6
+    FMUL double ptr [0x005939b6]        ; 00528900 | DOUBLE_005939b6
     SUB ESP,0x8                         ; 00528906
     MOV ECX,dword ptr [0x02dc84b8]      ; 00528909 | DAT_02dc84b8
     FSTP double ptr [ESP]               ; 0052890f

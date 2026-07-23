@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005402f0(int param_1)
 
 {
@@ -23,43 +21,43 @@ void FUN_005402f0(int param_1)
   iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   bVar2 = false;
   if (iVar3 < 2) {
-    if ((*(int *)(param_1 + 0x2a84) == 0) && ((float)_DAT_00595f9f < *(float *)(param_1 + 0x2a88)))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 0) && ((float)0.69999999999999996 < *(float *)(param_1 + 0x2a88))
+       ) {
       bVar2 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 1) && (*(float *)(param_1 + 0x2a88) < (float)_DAT_00595fa7))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 1) && (*(float *)(param_1 + 0x2a88) < (float)0.29999999999999999)
+       ) {
       bVar2 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 2) && ((float)_DAT_00595faf < *(float *)(param_1 + 0x2a88)))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 2) && ((float)0.5 < *(float *)(param_1 + 0x2a88))
+       ) {
       bVar1 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 3) && (*(float *)(param_1 + 0x2a88) < (float)_DAT_00595faf))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 3) && (*(float *)(param_1 + 0x2a88) < (float)0.5)
+       ) {
       bVar1 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 4) && (*(float *)(param_1 + 0x2a88) < (float)_DAT_00595fb7))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 4) && (*(float *)(param_1 + 0x2a88) < (float)0.40000000000000002)
+       ) {
       bVar1 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 5) && ((float)_DAT_00595fbf < *(float *)(param_1 + 0x2a88)))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 5) && ((float)0.59999999999999998 < *(float *)(param_1 + 0x2a88))
+       ) {
       bVar1 = true;
     }
-    if ((*(int *)(param_1 + 0x2a84) == 9) && (*(float *)(param_1 + 0x2a88) < (float)_DAT_00595fb7))
-    {
+    if ((*(int *)(param_1 + 0x2a84) == 9) && (*(float *)(param_1 + 0x2a88) < (float)0.40000000000000002)
+       ) {
       bVar1 = true;
     }
     if (((*(int *)(param_1 + 0x2a84) == 0xf) &&
-        ((float)_DAT_00595fa7 < *(float *)(param_1 + 0x2a88))) &&
-       ((double)*(float *)(param_1 + 0x2a88) < _DAT_00595fc7)) {
+        ((float)0.29999999999999999 < *(float *)(param_1 + 0x2a88))) &&
+       ((double)*(float *)(param_1 + 0x2a88) < 0.80000000000000004)) {
       bVar1 = true;
     }
   }
   iVar3 = *(int *)(param_1 + 0x2c20);
   if (bVar2) {
-    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"?Bip01 L Forearm" + 1,0x32);
+    core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x32);
     core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x33);
     core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x34);
     core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(iVar3,"Bip01 L Forearm",0x35);

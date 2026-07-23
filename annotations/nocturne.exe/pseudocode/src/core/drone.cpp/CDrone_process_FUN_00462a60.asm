@@ -45,7 +45,7 @@
 ;   double DOUBLE_0057df14 = 3.14159265350000
 ;   double DOUBLE_0057df1c = 0.5
 ;   double DOUBLE_0057df24 = 32
-;   undefined4 DAT_0059c6f8
+;   float FLOAT_0059c6f8 = 3
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b96c4
 ;   undefined4 DAT_005be368
@@ -547,7 +547,7 @@ section .text
     ADD ESP,0xc                         ; 00462f6f
     JMP 0x00462b6c                      ; 00462f72
         ;   XREF to: 00462b6c (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV EAX,[0x0059c6f8]                ; 00462f77 | DAT_0059c6f8
+    MOV EAX,[0x0059c6f8]                ; 00462f77 | FLOAT_0059c6f8
         ;   Label: LAB_00462f77
     PUSH 0x3e32b8c2                     ; 00462f7c
     MOV dword ptr [EBP + 0x72],EAX      ; 00462f81

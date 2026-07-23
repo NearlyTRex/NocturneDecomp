@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 138,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
@@ -164,50 +164,50 @@
   "globals": [
     {
       "addr": "005975cb",
-      "name": "DAT_005975cb",
-      "type": "undefined1",
+      "name": "s_none_005975cb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005975cc",
-      "name": "DAT_005975cc",
-      "type": "undefined1",
+      "name": "s_one_005975cb+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005975cd",
-      "name": "DAT_005975cd",
-      "type": "undefined1",
+      "name": "s_ne_005975cb+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005975ce",
-      "name": "DAT_005975ce",
-      "type": "undefined1",
+      "name": "s_e_005975cb+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005975d0",
-      "name": "DAT_005975d0",
-      "type": "undefined1",
+      "name": "s_none_005975d0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005975d1",
-      "name": "DAT_005975d1",
-      "type": "undefined1",
+      "name": "s_one_005975d0+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005975d2",
-      "name": "DAT_005975d2",
-      "type": "undefined1",
+      "name": "s_ne_005975d0+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005975d3",
-      "name": "DAT_005975d3",
-      "type": "undefined1",
+      "name": "s_e_005975d0+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -287,22 +287,6 @@
       "match": "DAT_005a3fd0",
       "severity": "mild",
       "text": "iVar2 = __arrinit(iVar2 + 0x294,1000,&DAT_005a3fd0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005975cb",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005975cb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005975d0",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005975d0;",
       "type": "undefined_data"
     },
     {

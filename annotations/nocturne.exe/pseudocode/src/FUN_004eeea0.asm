@@ -8,10 +8,10 @@
 ;   FUN_004b8600 at 004b8683
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058cb6f
-;   undefined4 DAT_0058cb73
+;   TerminatedCString s_DIE_0058cb6f
+;   TerminatedCString s_HURT_0058cb73
 ;   string s_DAMAGE_0058cb78
-;   undefined4 DAT_0058cb7f
+;   TerminatedCString s_SHOT_0058cb7f
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
@@ -55,7 +55,7 @@ section .text
     CMP dword ptr [EBX + 0x2590],0x0    ; 004eeeec
     JNZ 0x004eef19                      ; 004eeef3
         ;   XREF to: 004eef19 (CONDITIONAL_JUMP)  ; LAB_004eef19
-    PUSH 0x58cb73                       ; 004eeef5 | DAT_0058cb73
+    PUSH 0x58cb73                       ; 004eeef5 | = "HURT"
     PUSH ESI                            ; 004eeefa
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 ; 004eeefb
         ;   XREF to: 004eedc0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0()
@@ -93,14 +93,14 @@ section .text
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0 ; 004eef49
         ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0()
     ADD ESP,0x4                         ; 004eef4e
-    PUSH 0x58cb6f                       ; 004eef51 | DAT_0058cb6f
+    PUSH 0x58cb6f                       ; 004eef51 | = "DIE"
     PUSH ESI                            ; 004eef56
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 ; 004eef57
         ;   XREF to: 004eedc0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0()
     ADD ESP,0x8                         ; 004eef5c
     JMP 0x004eef19                      ; 004eef5f
         ;   XREF to: 004eef19 (UNCONDITIONAL_JUMP)  ; LAB_004eef19
-    PUSH 0x58cb7f                       ; 004eef61 | DAT_0058cb7f
+    PUSH 0x58cb7f                       ; 004eef61 | = "SHOT"
         ;   Label: LAB_004eef61
     PUSH ESI                            ; 004eef66
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 ; 004eef67

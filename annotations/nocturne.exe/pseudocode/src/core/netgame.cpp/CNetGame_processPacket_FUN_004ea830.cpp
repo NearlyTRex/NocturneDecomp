@@ -170,22 +170,22 @@ LAB_004eab0f:
       return;
     }
     if (0.0 <= (float)local_1c[10]) {
-      local_ec = (float)(*(int *)(param_3 + 5) - local_1c[0xc]) * (float)_DAT_0058c0d2;
-      if (local_ec < (float)_DAT_0058c0da) {
+      local_ec = (float)(*(int *)(param_3 + 5) - local_1c[0xc]) * (float)1.52587890625e-05;
+      if (local_ec < (float)-30) {
         local_ec = -30.0;
       }
-      if ((float)_DAT_0058c0e2 < local_ec) {
+      if ((float)30 < local_ec) {
         local_ec = 30.0;
       }
       if (local_ec <= 0.0) {
         return;
       }
     }
-    local_e8 = (float)(_DAT_01cea3f8 - *(int *)(param_3 + 5)) * (float)_DAT_0058c0d2;
+    local_e8 = (float)(_DAT_01cea3f8 - *(int *)(param_3 + 5)) * (float)1.52587890625e-05;
     if (local_e8 < 0.0) {
       local_e8 = 0.0;
     }
-    if ((float)_DAT_0058c0e2 < local_e8) {
+    if ((float)30 < local_e8) {
       local_e8 = 30.0;
     }
     local_1c[10] = (int)local_e8;
@@ -264,11 +264,11 @@ LAB_004eaf88:
     if (param_1[1] == 1) {
       if (local_1c[0x10] != 0) {
         local_14 = local_1c[0x10] - *(int *)(param_3 + 5);
-        local_f0 = (float)local_14 * (float)_DAT_0058c0d2;
-        if (local_f0 < (float)_DAT_0058c0da) {
+        local_f0 = (float)local_14 * (float)1.52587890625e-05;
+        if (local_f0 < (float)-30) {
           local_f0 = -30.0;
         }
-        if ((float)_DAT_0058c0e2 < local_f0) {
+        if ((float)30 < local_f0) {
           local_f0 = 30.0;
         }
         if (local_f0 <= 0.0) {
@@ -328,7 +328,7 @@ LAB_004eaf88:
     if (((*param_1 == 2) && (-1 < (int)uVar2)) && (uVar2 == param_1[0x44])) {
       core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(param_1,0);
       uVar3 = support_trisock_cpp_createNetworkAddr_FUN_00548d30
-                        (local_34,&DAT_02dd10c4,0,0,&DAT_0058c059,
+                        (local_34,&DAT_02dd10c4,0,0,&CHAR_00h_0058c059,
                          "You have been disconnected from the game");
       core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(param_1,uVar3);
       return;

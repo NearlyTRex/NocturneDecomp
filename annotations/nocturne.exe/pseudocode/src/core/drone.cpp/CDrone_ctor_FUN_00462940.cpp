@@ -11,7 +11,7 @@
 int core_drone_cpp_CDrone_ctor_FUN_00462940(uint param_1)
 
 {
-  uint uVar1;
+  float fVar1;
   uint uVar2;
   int iVar3;
   
@@ -19,12 +19,12 @@ int core_drone_cpp_CDrone_ctor_FUN_00462940(uint param_1)
   *(byte ***)(iVar3 + 0x14c) = &PTR_core_drone_cpp_CDrone_setup_FUN_004629b0_0059c714;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar3 + 0x150,"drone.dfm");
   *(uint *)(iVar3 + 0x2dd4) = 0x3f400000;
-  uVar1 = _DAT_0059c6fc;
+  fVar1 = 50.0f;
   *(uint *)(iVar3 + 0x2dd8) = 0x3fc00000;
   uVar2 = _DAT_0059c700;
   *(uint *)(iVar3 + 0x2608) = 1;
   *(uint *)(iVar3 + 0x2434) = 0x42960000;
-  *(uint *)(iVar3 + 0x2ddc) = uVar1;
+  *(float *)(iVar3 + 0x2ddc) = fVar1;
   *(uint *)(iVar3 + 0x2de0) = uVar2;
   return iVar3;
 }

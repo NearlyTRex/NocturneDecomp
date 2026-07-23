@@ -86,24 +86,24 @@ void FUN_00497900(int param_1)
         ((int)(&stack0xfffffee4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)
   ;
   if (0.0 < *(float *)(param_1 + 0x1fa44)) {
-    local_28 = *(float *)(param_1 + 0x1fa44) / _DAT_0059dca0;
+    local_28 = *(float *)(param_1 + 0x1fa44) / 0.2f;
     if (1.0 < local_28) {
       local_28 = 1.0;
     }
-    if (0x3F51EB85 < *(float *)(param_1 + 0x1fa44)) {
+    if (0.82f < *(float *)(param_1 + 0x1fa44)) {
       local_28 = (1.0 - (1.0 - *(float *)(param_1 + 0x1fa78)) *
-                        ((*(float *)(param_1 + 0x1fa44) - 0x3F51EB85) / (1.0 - 0x3F51EB85))) *
-                 local_28;
+                        ((*(float *)(param_1 + 0x1fa44) - 0.82f) / (1.0 - 0.82f)))
+                 * local_28;
     }
     iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
                       (*(uint *)(param_1 + 0x1f8d0),&FLOAT_005820f6);
     if (iVar1 == 0) {
       if ((float)0.001 < local_28) {
         local_24 = *(float *)(param_1 + 0x1fa44);
-        if (0x3F51EB85 < local_24) {
-          local_24 = 0x3F51EB85;
+        if (0.82f < local_24) {
+          local_24 = 0.82f;
         }
-        local_24 = (local_24 - _DAT_0059dca0) / (1.0 - _DAT_0059dca0);
+        local_24 = (local_24 - 0.2f) / (1.0 - 0.2f);
         if (local_24 < 0.0) {
           local_24 = 0.0;
         }
@@ -115,8 +115,8 @@ void FUN_00497900(int param_1)
         local_14 = (float)local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (param_1 + 0x150,_DAT_01c713cc,local_50,local_28,_DAT_01c713a8,&LAB_0051b650);
-        if (0x3F51EB85 <= *(float *)(param_1 + 0x1fa44)) {
-          local_2c = ((*(float *)(param_1 + 0x1fa44) - 0x3F51EB85) / (1.0 - 0x3F51EB85)) *
+        if (0.82f <= *(float *)(param_1 + 0x1fa44)) {
+          local_2c = ((*(float *)(param_1 + 0x1fa44) - 0.82f) / (1.0 - 0.82f)) *
                      *(float *)(param_1 + 0x1fa78);
           if (local_2c < *(float *)(param_1 + 0x1fa74)) {
             local_2c = *(float *)(param_1 + 0x1fa74);
@@ -171,7 +171,7 @@ void FUN_00497900(int param_1)
       }
       core_xform_cpp_slerpQuaternion_FUN_0055d2d0
                 (param_1 + 0x800 + _DAT_01c713dc * 0x10,_DAT_01c713b0 * 0x10 + param_1 + 0x800,
-                 *(float *)(param_1 + 0x1fa44) / _DAT_0059dca4);
+                 *(float *)(param_1 + 0x1fa44) / 0.64f);
       puVar4 = (uint *)(_DAT_01c713dc * 0x10 + 0x800 + param_1);
       puVar2 = puVar4 + (uint)bVar3 * -2 + 1;
       *puVar4 = local_1b4;
@@ -196,7 +196,7 @@ void FUN_00497900(int param_1)
     else {
       core_xform_cpp_slerpQuaternion_FUN_0055d2d0
                 (param_1 + 0x800 + _DAT_01c713dc * 0x10,_DAT_01c713b0 * 0x10 + param_1 + 0x800,
-                 *(float *)(param_1 + 0x1fa44) / _DAT_0059dca4);
+                 *(float *)(param_1 + 0x1fa44) / 0.64f);
       puVar4 = (uint *)(param_1 + 0x800 + _DAT_01c713dc * 0x10);
       puVar2 = puVar4 + (uint)bVar3 * -2 + 1;
       *puVar4 = local_1c4;
@@ -209,10 +209,10 @@ void FUN_00497900(int param_1)
             ((uint)bVar3 * -2 + 1) * 4);
       if ((float)0.001 < local_28) {
         local_20 = *(float *)(param_1 + 0x1fa44);
-        if (0x3F51EB85 < local_20) {
-          local_20 = 0x3F51EB85;
+        if (0.82f < local_20) {
+          local_20 = 0.82f;
         }
-        local_20 = (local_20 - _DAT_0059dca0) / (1.0 - _DAT_0059dca0);
+        local_20 = (local_20 - 0.2f) / (1.0 - 0.2f);
         if (local_20 < 0.0) {
           local_20 = 0.0;
         }
@@ -224,8 +224,8 @@ void FUN_00497900(int param_1)
         local_14 = (float)local_44;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (param_1 + 0x150,_DAT_01c713cc,local_44,local_28,_DAT_01c713a8,&LAB_0051b650);
-        if ((0x3F51EB85 <= *(float *)(param_1 + 0x1fa44)) &&
-           (local_40 = ((*(float *)(param_1 + 0x1fa44) - 0x3F51EB85) / (1.0 - 0x3F51EB85)) *
+        if ((0.82f <= *(float *)(param_1 + 0x1fa44)) &&
+           (local_40 = ((*(float *)(param_1 + 0x1fa44) - 0.82f) / (1.0 - 0.82f)) *
                        *(float *)(param_1 + 0x1fa78), (float)0.001 < local_40)) {
           if ((DAT_01c71354 & 1) == 0) {
             DAT_01c71354 = DAT_01c71354 | 1;

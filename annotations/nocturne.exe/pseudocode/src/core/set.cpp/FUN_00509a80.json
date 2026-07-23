@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 795,
-    "complexity_score": 678,
+    "complexity_score": 679,
     "cross_reference_count": 1,
     "function_call_count": 35,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 258,
+    "pseudocode_lines": 259,
     "suspect_count": 39,
     "suspect_types": [
       "param_count_too_few",
@@ -137,7 +137,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1053
+    "total_lines": 1054
   },
   "cross_references": [
     {
@@ -340,27 +340,27 @@
   "globals": [
     {
       "addr": "00590532",
-      "name": "s_comp:_%3.2f/%3.2f_actren_:_%3.2f_00590531+1",
-      "type": "undefined4",
+      "name": "s_comp_3_2f_3_2f_actren_3_00590532",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059055a",
-      "name": "DAT_0059055a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059055a",
+      "type": "double",
+      "value": "0.0555555555555556"
     },
     {
       "addr": "00590562",
-      "name": "DAT_00590562",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00590562",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "0059056a",
-      "name": "DAT_0059056a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059056a",
+      "type": "double",
+      "value": "1000"
     },
     {
       "addr": "005ad350",
@@ -988,7 +988,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 244,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = param_1;",
@@ -996,7 +996,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 244,
+      "line": 245,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x14cd6c)) {",
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
+      "line": 260,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)(param_1 + 0x14cd6c));",
@@ -1012,7 +1012,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 248,
+      "line": 249,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(iVar3 + 0x128) = *(uint *)(iVar3 + 0x20);",
@@ -1020,7 +1020,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 253,
+      "line": 254,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(iVar3 + 0x134) = *(uint *)(iVar3 + 0x30);",

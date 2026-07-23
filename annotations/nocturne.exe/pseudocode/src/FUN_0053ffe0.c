@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0053ffe0(int param_1)
 
 {
@@ -112,7 +110,7 @@ switchD_005400cd_caseD_3:
     }
   }
   fVar1 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,uVar4);
-  if ((float)_DAT_00595eb7 <= fVar1) {
+  if ((float)0.98999999999999999 <= fVar1) {
     iVar5 = param_1 + 0x1fa50;
     if ((*(int *)(param_1 + 0x1fa98) != 0) && (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 0))
     {

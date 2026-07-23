@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00595182
-;   undefined4 DAT_00595187
+;   TerminatedCString s_rise_00595182
+;   TerminatedCString s_run_00595187
 ;   string s_width_0059518b
 ;   string s_count_00595191
 ;   string s_groundType_00595197
@@ -27,13 +27,13 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 005348c6
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 005348cb
-    PUSH 0x595182                       ; 005348ce | DAT_00595182
+    PUSH 0x595182                       ; 005348ce | = "rise"
     LEA EAX,[EBX + 0x150]               ; 005348d3
     PUSH EAX                            ; 005348d9
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 005348da
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 005348df
-    PUSH 0x595187                       ; 005348e2 | DAT_00595187
+    PUSH 0x595187                       ; 005348e2 | = "run"
     LEA EAX,[EBX + 0x154]               ; 005348e7
     PUSH EAX                            ; 005348ed
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 005348ee

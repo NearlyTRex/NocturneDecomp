@@ -63,7 +63,7 @@ void FUN_004ca790(int param_1,int param_2)
   piStack_b4 = DAT_005ae704;
   piStack_b8 = (int *)0x4ca7d5;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0();
-  fVar6 = (float10)_DAT_00587f62;
+  fVar6 = (float10)256.0f;
   fVar1 = pfVar5[1];
   fVar2 = *pfVar5;
   pfStack_ac = (float *)0x4ca7f3;
@@ -91,8 +91,8 @@ void FUN_004ca790(int param_1,int param_2)
   iStack_bc = 0x4ca879;
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090();
   if ((iVar4 == 0) &&
-     ((((float)_DAT_00587f6a < pfVar5[3] || ((float)_DAT_00587f6a < pfVar5[4])) ||
-      ((float)_DAT_00587f6a < pfVar5[5])))) {
+     ((((float)0.01 < pfVar5[3] || ((float)0.01 < pfVar5[4])) ||
+      ((float)0.01 < pfVar5[5])))) {
     local_3c = -1.4;
     local_34 = -1.4;
     local_38 = 0.2;
@@ -141,7 +141,7 @@ void FUN_004ca790(int param_1,int param_2)
     local_7c = 0x1000000;
     local_70 = 0x1000000;
     local_78 = 3;
-    fVar6 = (float10)_DAT_00587f62;
+    fVar6 = (float10)256.0f;
     fVar1 = pfVar5[4];
     fVar2 = pfVar5[5];
     iVar4 = *DAT_005ae704;

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 271,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 101,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -188,8 +187,8 @@
     },
     {
       "addr": "00591b03",
-      "name": "DAT_00591b03",
-      "type": "undefined4",
+      "name": "s_Bug_00591b03",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -442,14 +441,6 @@
       "severity": "mild",
       "text": "iVar10 = param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_00591b03",
-      "severity": "mild",
-      "text": "iVar4 = FUN_004c8440(&DAT_00591b03);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

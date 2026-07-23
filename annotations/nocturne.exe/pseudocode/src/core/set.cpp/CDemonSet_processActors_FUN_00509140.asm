@@ -26,9 +26,9 @@
 ; Referenced Globals:
 ;   string s_%d._%s_:_%3.2f_ms_005904a6
 ;   string s_Process_time_(%d_actors)_:_%3.2f_005904b9
-;   undefined4 DAT_005904e2
-;   undefined4 DAT_005904ea
-;   undefined4 DAT_005904f2
+;   double DOUBLE_005904e2 = 0.0555555555555556
+;   double DOUBLE_005904ea = 0.0000152587890625
+;   double DOUBLE_005904f2 = 1000
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
@@ -549,9 +549,9 @@ section .text
     XOR ESI,ESI                         ; 0050969a
     FILD dword ptr [ESI + 0x1ffb078]    ; 0050969c
         ;   Label: LAB_0050969c
-    FMUL double ptr [0x005904e2]        ; 005096a2 | DAT_005904e2
-    FMUL double ptr [0x005904ea]        ; 005096a8 | DAT_005904ea
-    FMUL double ptr [0x005904f2]        ; 005096ae | DAT_005904f2
+    FMUL double ptr [0x005904e2]        ; 005096a2 | DOUBLE_005904e2
+    FMUL double ptr [0x005904ea]        ; 005096a8 | DOUBLE_005904ea
+    FMUL double ptr [0x005904f2]        ; 005096ae | DOUBLE_005904f2
     FDIV float ptr [ESP]                ; 005096b4
     SUB ESP,0x8                         ; 005096b7
     FSTP double ptr [ESP]               ; 005096ba
@@ -576,9 +576,9 @@ section .text
     SUB EAX,EDX                         ; 005096e9
     MOV dword ptr [ESP + 0x90],EAX      ; 005096eb
     FILD dword ptr [ESP + 0x90]         ; 005096f2
-    FMUL double ptr [0x005904e2]        ; 005096f9 | DAT_005904e2
-    FMUL double ptr [0x005904ea]        ; 005096ff | DAT_005904ea
-    FMUL double ptr [0x005904f2]        ; 00509705 | DAT_005904f2
+    FMUL double ptr [0x005904e2]        ; 005096f9 | DOUBLE_005904e2
+    FMUL double ptr [0x005904ea]        ; 005096ff | DOUBLE_005904ea
+    FMUL double ptr [0x005904f2]        ; 00509705 | DOUBLE_005904f2
     FDIV float ptr [ESP]                ; 0050970b
     SUB ESP,0x8                         ; 0050970e
     MOV ECX,dword ptr [ESP + 0x90]      ; 00509711

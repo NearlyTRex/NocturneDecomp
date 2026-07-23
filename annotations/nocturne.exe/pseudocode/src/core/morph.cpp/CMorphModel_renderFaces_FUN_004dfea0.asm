@@ -12,8 +12,8 @@
 ;   core_morph.cpp_CMorphModel_render_FUN_004dfc70 at 004dfca0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058ad6c
-;   undefined4 DAT_0058ad74
+;   double DOUBLE_0058ad6c = 65535
+;   float FLOAT_0058ad74 = 2
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
@@ -53,9 +53,9 @@ section .text
     ADD ESP,0x8                         ; 004dfeca
     FLD float ptr [ESP + 0x24]          ; 004dfecd
     FLD ST0                             ; 004dfed1
-    FMUL double ptr [0x0058ad6c]        ; 004dfed3 | DAT_0058ad6c
+    FMUL double ptr [0x0058ad6c]        ; 004dfed3 | DOUBLE_0058ad6c
     MOV EAX,0xffff                      ; 004dfed9
-    FLD float ptr [0x0058ad74]          ; 004dfede | DAT_0058ad74
+    FLD float ptr [0x0058ad74]          ; 004dfede | FLOAT_0058ad74
     FSUBRP ST2,ST0                      ; 004dfee4
     MOV EBX,dword ptr [0x01c038f4]      ; 004dfee6 | DAT_01c038f4
     FMULP                               ; 004dfeec

@@ -51,7 +51,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
         _DAT_01cc4804 = 0x5c9;
         FUN_004c8440("CInventory::select - Catch 22");
       }
-      if ((float)_DAT_00587401 < *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434)) {
+      if ((float)98 < *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434)) {
         return 1;
       }
       pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
@@ -87,7 +87,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
         pcVar5[1] = cVar1;
         pcVar5 = pcVar5 + 2;
       } while (cVar1 != '\0');
-      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(&DAT_005873e7);
+      pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
       iVar2 = -1;
       pcVar3 = local_114;
       do {

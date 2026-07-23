@@ -39,12 +39,12 @@
 ;   string s_[%d,%d]%n_00594a1a
 ;   string s_..\\core\\sound.cpp_00594a24
 ;   string s_Invalid_sfx_string:_%s_00594a36
-;   undefined4 DAT_00594a4d
-;   undefined4 DAT_00594a4f
-;   undefined1 DAT_00594a51
-;   undefined1 DAT_00594a52
-;   undefined1 DAT_00594a53
-;   undefined1 DAT_00594a54
+;   TerminatedCString s_anon_00594a4d
+;   TerminatedCString s_anon_00594a4f
+;   TerminatedCString s_wav_00594a51
+;   undefined4 s_wav_00594a51+1
+;   undefined4 s_wav_00594a51+2
+;   undefined4 s_wav_00594a51+3
 ;   string s_Can't_find_wav:_%s_00594a56
 ;   string s_@%f%n_00594a6a
 ;   string s_..\\core\\sound.cpp_00594a70
@@ -137,7 +137,7 @@ section .text
         ;   Label: LAB_0052d1a2
     JNZ 0x0052d1d1                      ; 0052d1a4
         ;   XREF to: 0052d1d1 (CONDITIONAL_JUMP)  ; LAB_0052d1d1
-    MOV ESI,0x594a51                    ; 0052d1a6 | DAT_00594a51
+    MOV ESI,0x594a51                    ; 0052d1a6 | = ".wav"
     LEA EDI,[ESP + 0x8]                 ; 0052d1ab
     PUSH EDI                            ; 0052d1af
     SUB ECX,ECX                         ; 0052d1b0
@@ -145,13 +145,13 @@ section .text
     MOV AL,0x0                          ; 0052d1b3
     SCASB.REPNE ES:EDI                  ; 0052d1b5
     DEC EDI                             ; 0052d1b7
-    MOV AL,byte ptr [ESI]               ; 0052d1b8 | DAT_00594a51 | DAT_00594a53
+    MOV AL,byte ptr [ESI]               ; 0052d1b8 | = ".wav" | s_wav_00594a51+2
         ;   Label: LAB_0052d1b8
     MOV byte ptr [EDI],AL               ; 0052d1ba
     CMP AL,0x0                          ; 0052d1bc
     JZ 0x0052d1d0                       ; 0052d1be
         ;   XREF to: 0052d1d0 (CONDITIONAL_JUMP)  ; LAB_0052d1d0
-    MOV AL,byte ptr [ESI + 0x1]         ; 0052d1c0 | DAT_00594a52 | DAT_00594a54
+    MOV AL,byte ptr [ESI + 0x1]         ; 0052d1c0 | s_wav_00594a51+1 | s_wav_00594a51+3
     ADD ESI,0x2                         ; 0052d1c3
     MOV byte ptr [EDI + 0x1],AL         ; 0052d1c6
     ADD EDI,0x2                         ; 0052d1c9
@@ -361,7 +361,7 @@ section .text
     CALL FUN_004c8440                   ; 0052d3fe
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x8                         ; 0052d403
-    PUSH 0x594a4d                       ; 0052d406 | DAT_00594a4d
+    PUSH 0x594a4d                       ; 0052d406 | = "?"
         ;   Label: LAB_0052d406
     PUSH ESI                            ; 0052d40b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052d40c
@@ -371,7 +371,7 @@ section .text
     CMP dword ptr [ESP + 0x14c],0x9     ; 0052d416
     JLE 0x0052d430                      ; 0052d41e
         ;   XREF to: 0052d430 (CONDITIONAL_JUMP)  ; LAB_0052d430
-    PUSH 0x594a4f                       ; 0052d420 | DAT_00594a4f
+    PUSH 0x594a4f                       ; 0052d420 | = "?"
     PUSH ESI                            ; 0052d425
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052d426
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()

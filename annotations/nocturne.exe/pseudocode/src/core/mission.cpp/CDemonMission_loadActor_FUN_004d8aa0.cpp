@@ -51,7 +51,7 @@ int __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(uint param_1,u
   }
   else {
     _ungetc(iVar1,param_2);
-    iVar2 = _fscanf(param_2,&DAT_00589c44,&local_14);
+    iVar2 = _fscanf(param_2,"%x",&local_14);
     iVar1 = local_14;
     if (iVar2 == 1) goto LAB_004d8b28;
   }

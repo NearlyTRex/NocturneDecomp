@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -327,8 +327,8 @@
     },
     {
       "addr": "00587a61",
-      "name": "s_%s_in_volume_00587a60+1",
-      "type": "undefined4",
+      "name": "s_s_in_volume_00587a61",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -339,27 +339,27 @@
     },
     {
       "addr": "00587a7d",
-      "name": "DAT_00587a7d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00587a7d",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "00587a85",
-      "name": "DAT_00587a85",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00587a85",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "0059fd60",
-      "name": "DAT_0059fd60",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059fd60",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "0059fd68",
-      "name": "DAT_0059fd68",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059fd68",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005ad350",
@@ -596,7 +596,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x578) < 0x41F00000) {",
+      "text": "if (*(float *)(param_1 + 0x578) < 30.0f) {",
       "type": "unnamed_param"
     },
     {
@@ -676,7 +676,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_30 = (float)_DAT_00587a7d / *(float *)(param_1 + 0x2e0);",
+      "text": "fStack_30 = (float)1.5 / *(float *)(param_1 + 0x2e0);",
       "type": "unnamed_param"
     },
     {
@@ -748,7 +748,7 @@
       "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x578) = 0x41F00000;",
+      "text": "*(float *)(param_1 + 0x578) = 30.0f;",
       "type": "unnamed_param"
     },
     {
@@ -804,7 +804,7 @@
       "line": 142,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),0x40000000);",
+      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),2.0f);",
       "type": "unnamed_param"
     },
     {

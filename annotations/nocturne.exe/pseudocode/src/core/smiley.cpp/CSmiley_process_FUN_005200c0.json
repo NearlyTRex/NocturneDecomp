@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 2105,
+    "complexity_score": 2106,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 335,
+    "pseudocode_lines": 336,
     "suspect_count": 175,
     "suspect_types": [
       "undefined_data",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1182
+    "total_lines": 1183
   },
   "cross_references": [],
   "function": {
@@ -305,27 +305,27 @@
     },
     {
       "addr": "0059208d",
-      "name": "DAT_0059208d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059208d",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00592095",
-      "name": "DAT_00592095",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00592095",
+      "type": "double",
+      "value": "0.523598775583333"
     },
     {
       "addr": "0059209d",
-      "name": "DAT_0059209d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0059209d",
+      "type": "double",
+      "value": "32"
     },
     {
       "addr": "005a1f98",
-      "name": "DAT_005a1f98",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a1f98",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "005ad350",
@@ -1964,7 +1964,7 @@
       "line": 316,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0059209d;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32",
       "type": "unnamed_param"
     },
     {
@@ -1972,7 +1972,7 @@
       "line": 316,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0059209d;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32",
       "type": "unnamed_param"
     },
     {
@@ -1980,23 +1980,7 @@
       "line": 316,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0059209d;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 317,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_64 = *(float *)(param_1 + 0x2420) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 317,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_64 = *(float *)(param_1 + 0x2420) * param_2;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32",
       "type": "unnamed_param"
     },
     {
@@ -2004,13 +1988,21 @@
       "line": 318,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = *(float *)(param_1 + 0x2424) * param_2;",
+      "text": "local_64 = *(float *)(param_1 + 0x2420) * param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 318,
       "match": "param_2",
+      "severity": "mild",
+      "text": "local_64 = *(float *)(param_1 + 0x2420) * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 319,
+      "match": "param_1",
       "severity": "mild",
       "text": "local_60 = *(float *)(param_1 + 0x2424) * param_2;",
       "type": "unnamed_param"
@@ -2020,13 +2012,13 @@
       "line": 319,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_5c = param_2 * *(float *)(param_1 + 0x2428);",
+      "text": "local_60 = *(float *)(param_1 + 0x2424) * param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 319,
-      "match": "param_1",
+      "line": 320,
+      "match": "param_2",
       "severity": "mild",
       "text": "local_5c = param_2 * *(float *)(param_1 + 0x2428);",
       "type": "unnamed_param"
@@ -2036,7 +2028,7 @@
       "line": 320,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_7c = local_64 + *(float *)(param_1 + 0x2414);",
+      "text": "local_5c = param_2 * *(float *)(param_1 + 0x2428);",
       "type": "unnamed_param"
     },
     {
@@ -2044,7 +2036,7 @@
       "line": 321,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_78 = local_60 + *(float *)(param_1 + 0x2418);",
+      "text": "local_7c = local_64 + *(float *)(param_1 + 0x2414);",
       "type": "unnamed_param"
     },
     {
@@ -2052,7 +2044,7 @@
       "line": 322,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_74 = local_5c + *(float *)(param_1 + 0x241c);",
+      "text": "local_78 = local_60 + *(float *)(param_1 + 0x2418);",
       "type": "unnamed_param"
     },
     {
@@ -2060,7 +2052,7 @@
       "line": 323,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_ac = local_7c + *(float *)(param_1 + 0x23a4);",
+      "text": "local_74 = local_5c + *(float *)(param_1 + 0x241c);",
       "type": "unnamed_param"
     },
     {
@@ -2068,7 +2060,7 @@
       "line": 324,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_a8 = local_78 + *(float *)(param_1 + 0x23a8);",
+      "text": "local_ac = local_7c + *(float *)(param_1 + 0x23a4);",
       "type": "unnamed_param"
     },
     {
@@ -2076,7 +2068,7 @@
       "line": 325,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_a4 = local_74 + *(float *)(param_1 + 0x23ac);",
+      "text": "local_a8 = local_78 + *(float *)(param_1 + 0x23a8);",
       "type": "unnamed_param"
     },
     {
@@ -2084,20 +2076,20 @@
       "line": 326,
       "match": "param_1",
       "severity": "mild",
+      "text": "local_a4 = local_74 + *(float *)(param_1 + 0x23ac);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 327,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x241c) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2418) = *(uint *)(param_1 + 0x241c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 328,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2418) = *(uint *)(param_1 + 0x241c);",
@@ -2108,12 +2100,12 @@
       "line": 328,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x2418);",
+      "text": "*(uint *)(param_1 + 0x2418) = *(uint *)(param_1 + 0x241c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 329,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x2418);",
@@ -2124,20 +2116,20 @@
       "line": 329,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x2418);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 330,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x23ac) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x23a8) = *(float *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 331,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x23a8) = *(float *)(param_1 + 0x23ac);",
@@ -2148,12 +2140,12 @@
       "line": 331,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23ac);",
+      "text": "*(float *)(param_1 + 0x23a8) = *(float *)(param_1 + 0x23ac);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 331,
+      "line": 332,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23ac);",
@@ -2164,15 +2156,15 @@
       "line": 332,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_ac);",
+      "text": "*(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23ac);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 335,
+      "line": 333,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_ac);",
       "type": "unnamed_param"
     },
     {
@@ -2180,7 +2172,7 @@
       "line": 336,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);",
+      "text": "core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -2188,12 +2180,20 @@
       "line": 337,
       "match": "param_1",
       "severity": "mild",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 338,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 337,
+      "line": 338,
       "match": "param_2",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",

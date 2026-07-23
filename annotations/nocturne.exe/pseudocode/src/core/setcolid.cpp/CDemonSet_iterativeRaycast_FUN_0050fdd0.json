@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 220,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 13,
+    "pseudocode_lines": 69,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "self_copy_guard",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 247
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -168,15 +167,15 @@
   "globals": [
     {
       "addr": "00590a1d",
-      "name": "DAT_00590a1d",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00590a1d",
+      "type": "float",
+      "value": "0.005000000"
     },
     {
       "addr": "00590a21",
-      "name": "DAT_00590a21",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00590a21",
+      "type": "float",
+      "value": "0.1000000"
     }
   ],
   "param_estimates": {
@@ -478,16 +477,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(uint param_1,float *param_2,float *param_3)",
@@ -495,7 +486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(uint param_1,float *param_2,float *param_3)",
@@ -503,7 +494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(uint param_1,float *param_2,float *param_3)",
@@ -511,7 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "local_70 = *param_2;",
@@ -519,7 +510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "local_6c = param_2[1];",
@@ -527,7 +518,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "local_68 = param_2[2];",
@@ -535,7 +526,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_3",
       "severity": "mild",
       "text": "local_58 = *param_3;",
@@ -543,7 +534,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_3",
       "severity": "mild",
       "text": "local_54 = param_3[1];",
@@ -551,7 +542,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_3",
       "severity": "mild",
       "text": "local_50 = param_3[2];",
@@ -559,7 +550,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "local_18 = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(param_1,&local_70,&local_28);",
@@ -567,7 +558,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_70 != &local_28)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_70 != &local_28) {",

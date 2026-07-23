@@ -16,7 +16,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(uint pa
   
   FUN_004f3f50(param_1);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_004f3fc0(param_1,param_2);
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(0x58d308,param_1,0x58d305);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"rb");
   if (iVar1 == 0) {
     _sprintf(auStack_6c,"Unable to open PBM file %s",param_1);
     _DAT_01cc4804 = 0x4ff;

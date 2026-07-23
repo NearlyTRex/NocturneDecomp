@@ -31,10 +31,10 @@ __asm {
         mov EBX,dword ptr [DAT_005ae704]
         push EBX
         call engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-        fld double ptr [DAT_0058a936]
+        fld double ptr [DOUBLE_0058a936]
         fld float ptr [ESI + 0x4]
         fadd ST(0),ST(1)
-        fld double ptr [DAT_0058a93e]
+        fld double ptr [DOUBLE_0058a93e]
         fxch
         fmul ST(1)
         lea EAX,[EBP + -0x4c]
@@ -113,7 +113,7 @@ __asm {
         fadd float ptr [EBX + EAX*0x1 + 0x14]
         lea EAX,[EBP + -0x34]
         fxch
-        fadd float ptr [DAT_0058a956]
+        fadd float ptr [FLOAT_0058a956]
         push EAX
         fxch
         fstp float ptr [EBP + -0x2c]
@@ -149,13 +149,13 @@ __asm {
         add ESP,0x4
         fst float ptr [EBP + -0x8]
         fst double ptr [EBP + -0x28]
-        fcomp double ptr [DAT_0058a95e]
+        fcomp double ptr [DOUBLE_0058a95e]
         fnstsw AX
         sahf
         jnc LAB_004df02c
         fld float ptr [EBP + -0x8]
-        fmul float ptr [DAT_0058a94e]
-        fsubr float ptr [DAT_0058a952]
+        fmul float ptr [FLOAT_0058a94e]
+        fsubr float ptr [FLOAT_0058a952]
     LAB_004dee88:
         mov EDX,dword ptr [DAT_005be368]
         call crt_math_c_round_FUN_00563a30
@@ -273,8 +273,8 @@ __asm {
         ret
     LAB_004df02c:
         fld double ptr [EBP + -0x28]
-        fadd double ptr [DAT_0058a936]
-        fmul double ptr [DAT_0058a946]
+        fadd double ptr [DOUBLE_0058a936]
+        fmul double ptr [DOUBLE_0058a946]
         jmp LAB_004dee88
 }
 }

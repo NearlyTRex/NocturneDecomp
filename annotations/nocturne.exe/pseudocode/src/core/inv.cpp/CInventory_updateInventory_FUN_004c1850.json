@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -187,21 +187,21 @@
   "globals": [
     {
       "addr": "00587409",
-      "name": "DAT_00587409",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00587409",
+      "type": "double",
+      "value": "100"
     },
     {
       "addr": "0059f7f0",
-      "name": "DAT_0059f7f0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059f7f0",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "0059f7f4",
-      "name": "DAT_0059f7f4",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059f7f4",
+      "type": "float",
+      "value": "120"
     },
     {
       "addr": "005b9354",
@@ -537,7 +537,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *param_1 - (*(float *)(0x01C775EC + 0x264) * (float)_DAT_00587409) / local_1c;",
+      "text": "fVar1 = *param_1 - (*(float *)(0x01C775EC + 0x264) * (float)100) / local_1c;",
       "type": "unnamed_param"
     },
     {

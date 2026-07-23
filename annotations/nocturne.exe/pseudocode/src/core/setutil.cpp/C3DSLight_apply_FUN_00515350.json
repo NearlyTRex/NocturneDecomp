@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 361,
+    "complexity_score": 345,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 29,
+    "pseudocode_lines": 40,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "unnamed_param",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 118
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -188,9 +187,9 @@
   "globals": [
     {
       "addr": "00590e61",
-      "name": "DAT_00590e61",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00590e61",
+      "type": "double",
+      "value": "65536"
     }
   ],
   "param_estimates": {
@@ -254,16 +253,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "byte core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,char *param_2)",
@@ -271,7 +262,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "byte core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,char *param_2)",
@@ -279,7 +270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 + 0x104 != (char *)(param_1 + 0x104)) {",
@@ -287,7 +278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_2 + 0x104 != (char *)(param_1 + 0x104)) {",
@@ -295,7 +286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x104);",
@@ -303,7 +294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x104);",
@@ -311,7 +302,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x108);",
@@ -319,7 +310,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x108);",
@@ -327,7 +318,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x10c);",
@@ -335,7 +326,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x10c);",
@@ -343,7 +334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(param_2 + 0x110,param_1 + 0x110);",
@@ -351,7 +342,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(param_2 + 0x110,param_1 + 0x110);",
@@ -359,7 +350,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x11c);",
@@ -367,7 +358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x11c);",
@@ -375,15 +366,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "((float10)*(float *)(param_1 + 0x120) * (float10)_DAT_00590e61);",
+      "text": "((float10)*(float *)(param_1 + 0x120) * (float10)65536);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "*(int *)(param_2 + 0x2fa4) = (int)ROUND(fVar5);",
@@ -391,7 +382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar3 = (char *)(param_1 + 4);",
@@ -399,7 +390,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,*(uint *)(param_1 + 0x124),uVar6);",
@@ -407,7 +398,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2,*(uint *)(param_1 + 0x124),uVar6);",
@@ -415,7 +406,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x11e8) = 0;",
@@ -423,7 +414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1894) = 0;",
@@ -431,7 +422,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar4 = param_2;",
@@ -439,7 +430,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x17f4) == 0) {",
@@ -447,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar2 = core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(param_2);",
@@ -455,7 +446,7 @@
     },
     {
       "description": "Raw hex address 0x5153af assigned to bare local `uVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 21,
+      "line": 19,
       "match": "0x5153af",
       "severity": "moderate",
       "text": "uVar6 = 0x5153af;",
@@ -463,7 +454,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -471,7 +462,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 15,
+      "line": 13,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x104);",

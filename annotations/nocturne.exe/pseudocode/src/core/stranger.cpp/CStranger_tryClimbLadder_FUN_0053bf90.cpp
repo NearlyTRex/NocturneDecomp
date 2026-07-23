@@ -63,7 +63,7 @@ uint __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(int param_1
   
   *(uint *)(param_1 + 0x1fa14) = 0;
   local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,0);
-  if ((((float)_DAT_00595b0f <= local_14) && (*(int *)(param_1 + 0x24ac) == 0)) &&
+  if ((((float)0.98999999999999999 <= local_14) && (*(int *)(param_1 + 0x24ac) == 0)) &&
      (*(int *)(param_1 + 0x24f0) == 0)) {
     local_20 = param_1 + 0x20;
     local_1c = 0;
@@ -73,24 +73,24 @@ uint __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(int param_1
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(uint *)(0x01E57284 + local_18 + 0x14cd70),_DAT_01cc3120);
       if ((iVar2 != 0) &&
-         (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24)) <= (float)_DAT_00595b1f)) {
+         (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24)) <= (float)2)) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar2,&local_a4,local_20);
-        if ((ABS(local_9c) <= (float)_DAT_00595b27) && (0.0 <= local_9c)) {
+        if ((ABS(local_9c) <= (float)4) && (0.0 <= local_9c)) {
           (**(code **)(*(int *)(iVar2 + 0x14c) + 0x14))(iVar2,&local_e0);
           if (fStack_d4 < local_a4) {
             if (fStack_d4 + 1.0 < local_a4) goto LAB_0053c018;
             local_a4 = fStack_d4;
           }
           if (local_a4 < local_e0) {
-            if (local_a4 < local_e0 + (float)_DAT_00595b2f) goto LAB_0053c018;
+            if (local_a4 < local_e0 + (float)-1) goto LAB_0053c018;
             local_a4 = local_e0;
           }
           fStack_bc = local_e0 + fStack_d4;
-          fStack_c8 = fStack_bc * _DAT_00595b17;
+          fStack_c8 = fStack_bc * 0.5f;
           fStack_b4 = fStack_d8 + fStack_cc;
           fStack_b8 = fStack_dc + fStack_d0;
-          fStack_c0 = fStack_b4 * _DAT_00595b17;
-          fStack_c4 = fStack_b8 * _DAT_00595b17;
+          fStack_c0 = fStack_b4 * 0.5f;
+          fStack_c4 = fStack_b8 * 0.5f;
           local_9c = fStack_c0;
           pfVar3 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                       (iVar2,auStack_8c,&local_a4);
@@ -105,7 +105,7 @@ uint __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(int param_1
           fStack_44 = *(float *)(iVar2 + 0x44);
           fStack_40 = *(float *)(iVar2 + 0x50);
           fStack_3c = *(float *)(iVar2 + 0x5c);
-          fVar5 = (float10)fcos((float10)_DAT_00595b37);
+          fVar5 = (float10)fcos((float10)0.261799387791667);
           fStack_38 = fStack_b0;
           fStack_34 = fStack_ac;
           fStack_30 = fStack_a8;

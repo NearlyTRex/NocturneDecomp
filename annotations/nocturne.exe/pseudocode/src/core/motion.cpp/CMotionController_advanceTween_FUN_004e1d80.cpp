@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(int *param_1,int param_2,float param_3,float *param_4)
 
 {
@@ -26,8 +24,8 @@ void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(int *pa
   if (0 < *(int *)(iVar5 + 0x4a4)) {
     do {
       fVar2 = (float)*(int *)(iVar4 + 0x4a8);
-      if ((param_3 <= fVar2) && (fVar2 <= local_20 + (float)_DAT_0058b3ad)) {
-        local_20 = fVar2 + (float)_DAT_0058b3ad;
+      if ((param_3 <= fVar2) && (fVar2 <= local_20 + (float)0.001)) {
+        local_20 = fVar2 + (float)0.001;
       }
       iVar3 = iVar3 + 1;
       iVar4 = iVar4 + 8;

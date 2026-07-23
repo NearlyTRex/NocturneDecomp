@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,18 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 121,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 124
   },
@@ -177,45 +175,45 @@
   "globals": [
     {
       "addr": "0058a181",
-      "name": "s_mobster1.dfm_0058a180+1",
-      "type": "undefined4",
+      "name": "s_mobster1_dfm_0058a181",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058a18e",
-      "name": "DAT_0058a18e",
-      "type": "undefined1",
+      "name": "s_none_0058a18e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058a18f",
-      "name": "DAT_0058a18f",
-      "type": "undefined1",
+      "name": "s_one_0058a18e+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058a190",
-      "name": "DAT_0058a190",
-      "type": "undefined1",
+      "name": "s_ne_0058a18e+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058a191",
-      "name": "DAT_0058a191",
-      "type": "undefined1",
+      "name": "s_e_0058a18e+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005a0920",
-      "name": "DAT_005a0920",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0920",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005a0924",
-      "name": "DAT_005a0924",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0924",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005a0934",
@@ -280,16 +278,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(uint param_1)",
@@ -297,23 +287,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
+      "text": "iVar5 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0058a18e",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_0058a18e;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

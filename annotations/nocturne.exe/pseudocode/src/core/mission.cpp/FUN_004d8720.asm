@@ -15,17 +15,17 @@
 ;   string s_//_mission_version,_actor_versio_00589a61
 ;   string s_%d,%d_00589a84
 ;   string s_//_Root_name_of_mission_00589a8b
-;   undefined4 DAT_00589aa4
+;   TerminatedCString s_s_00589aa4
 ;   string s_//_setList_00589aa8
-;   undefined4 DAT_00589ab4
-;   undefined4 DAT_00589ab8
-;   string s_//_actorTypeList_00589abc
-;   undefined4 DAT_00589ace
+;   TerminatedCString s_d_00589ab4
+;   TerminatedCString s_s_00589ab8
+;   TerminatedCString s_actorTypeList_00589abc
+;   TerminatedCString s_d_00589ace
 ;   string s_%s_%d_00589ad2
 ;   string s_//_actor_count_00589ad9
-;   undefined4 DAT_00589ae9
+;   TerminatedCString s_d_00589ae9
 ;   string s_//_inventory_actor_count_00589aed
-;   undefined4 DAT_00589b07
+;   TerminatedCString s_d_00589b07
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 004d8789
     LEA EAX,[EBX + 0x10]                ; 004d878c
     PUSH EAX                            ; 004d878f
-    PUSH 0x589aa4                       ; 004d8790 | DAT_00589aa4
+    PUSH 0x589aa4                       ; 004d8790 | = "%s\n"
     PUSH ESI                            ; 004d8795
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d8796
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
@@ -101,7 +101,7 @@ section .text
     MOV EBP,ESI                         ; 004d87ac
     MOV ESI,dword ptr [EBX + 0x110]     ; 004d87ae
     PUSH ESI                            ; 004d87b4
-    PUSH 0x589ab4                       ; 004d87b5 | DAT_00589ab4
+    PUSH 0x589ab4                       ; 004d87b5 | = "%d\n"
     MOV EDI,EBP                         ; 004d87ba
     PUSH EDI                            ; 004d87bc
     XOR ESI,ESI                         ; 004d87bd
@@ -115,7 +115,7 @@ section .text
     LEA EDI,[EBX + 0x114]               ; 004d87d1
     PUSH EDI                            ; 004d87d7
         ;   Label: LAB_004d87d7
-    PUSH 0x589ab8                       ; 004d87d8 | DAT_00589ab8
+    PUSH 0x589ab8                       ; 004d87d8 | = "%s\n"
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d87dd
     PUSH EAX                            ; 004d87e1
     INC ESI                             ; 004d87e2
@@ -138,7 +138,7 @@ section .text
     ADD ESP,0x8                         ; 004d880f
     MOV ESI,dword ptr [0x00763e94]      ; 004d8812 | DAT_00763e94
     PUSH ESI                            ; 004d8818
-    PUSH 0x589ace                       ; 004d8819 | DAT_00589ace
+    PUSH 0x589ace                       ; 004d8819 | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x24]      ; 004d881e
     PUSH EDI                            ; 004d8822
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d8823
@@ -183,7 +183,7 @@ section .text
         ;   XREF to: 004d8d80 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_countActors_FUN_004d8d80()
     ADD ESP,0x4                         ; 004d8888
     PUSH EAX                            ; 004d888b
-    PUSH 0x589ae9                       ; 004d888c | DAT_00589ae9
+    PUSH 0x589ae9                       ; 004d888c | = "%d\n"
     MOV EDX,dword ptr [ESP + 0x24]      ; 004d8891
     PUSH EDX                            ; 004d8895
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d8896
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 004d88bc (CONDITIONAL_JUMP)  ; LAB_004d88bc
     PUSH EDI                            ; 004d88e2
         ;   Label: LAB_004d88e2
-    PUSH 0x589b07                       ; 004d88e3 | DAT_00589b07
+    PUSH 0x589b07                       ; 004d88e3 | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x24]      ; 004d88e8
     PUSH ESI                            ; 004d88ec
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d88ed

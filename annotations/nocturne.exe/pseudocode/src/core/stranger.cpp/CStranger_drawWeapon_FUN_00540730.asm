@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_flashlit.wav_00595fce+1
+;   TerminatedCString s_flashlit_wav_00595fcf
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01c77830
@@ -27,7 +27,7 @@ section .text
         ;   XREF to: 00540751 (CONDITIONAL_JUMP)  ; LAB_00540751
     RET                                 ; 00540750
         ;   Label: LAB_00540750
-    PUSH 0x595fcf                       ; 00540751 | s_flashlit.wav_00595fce+1
+    PUSH 0x595fcf                       ; 00540751 | = "flashlit.wav"
         ;   Label: LAB_00540751
     MOV dword ptr [EAX + 0x244],0x0     ; 00540756 | DAT_01c77830
     PUSH EDX                            ; 00540760

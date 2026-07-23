@@ -14,7 +14,7 @@
 ;   FUN_004fbf20 at 004fc262
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058df46
+;   double DOUBLE_0058df46 = 0.000100000000000000
 ;   undefined4 DAT_01e533c8
 ;
 ; Called Functions:
@@ -126,7 +126,7 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004fd0f7
         ;   Label: LAB_004fd0f7
     FST double ptr [ESP]                ; 004fd0fb
-    FCOMP double ptr [0x0058df46]       ; 004fd0fe | DAT_0058df46
+    FCOMP double ptr [0x0058df46]       ; 004fd0fe | DOUBLE_0058df46
     FNSTSW AX                           ; 004fd104
     SAHF                                ; 004fd106
     JBE 0x004fd19e                      ; 004fd107

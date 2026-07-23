@@ -135,7 +135,7 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(int param_1,float param_2)
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar3);
     }
   }
-  fVar1 = (float)_DAT_0059208d;
+  fVar1 = (float)3.1415926535000001;
   iVar2 = param_1 + 0x150;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar1 * *(float *)(param_1 + 0xbc8c);
@@ -157,11 +157,11 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(int param_1,float param_2)
           local_50 = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
           local_20 = SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
           local_18 = local_20;
-          if (local_20 < 0x40200000 + 1.0) {
+          if (local_20 < 2.5f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_c4,&local_58);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_c0 - *(float *)(param_1 + 0x34));
-            if (ABS(local_14) < (float)_DAT_00592095) {
+            if (ABS(local_14) < (float)0.52359877558333301) {
               *(uint *)(param_1 + 0xbd58) = 0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar2,9,1);
             }
@@ -182,8 +182,8 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(int param_1,float param_2)
           if (param_1 == *(int *)(iVar4 + 0x2590)) {
             (**(code **)(*(int *)(iVar4 + 0x14c) + 0xe8))(iVar4);
           }
-          local_8c = 0x40200000;
-          local_1c = 0x40200000;
+          local_8c = 2.5f;
+          local_1c = 2.5f;
           *(uint *)(param_1 + 0x23ac) = 0;
           *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
@@ -320,7 +320,8 @@ switchD_00520915_caseD_3:
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                   (0x01E57284,*(uint *)(param_1 + 0xbca4));
       }
-      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0059209d;
+      *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32
+      ;
       local_64 = *(float *)(param_1 + 0x2420) * param_2;
       local_60 = *(float *)(param_1 + 0x2424) * param_2;
       local_5c = param_2 * *(float *)(param_1 + 0x2428);

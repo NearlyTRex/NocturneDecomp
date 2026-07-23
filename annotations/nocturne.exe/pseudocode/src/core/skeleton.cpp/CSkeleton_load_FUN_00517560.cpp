@@ -27,7 +27,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(int param_1,char *par
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_005911ee,param_2,&DAT_005911eb);
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rt");
   if (iVar2 == 0) {
     _DAT_01cc4800 = "..\\core\\skeleton.cpp";
     _DAT_01cc4804 = 0xf6;

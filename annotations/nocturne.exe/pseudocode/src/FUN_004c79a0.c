@@ -19,28 +19,28 @@ void FUN_004c79a0(int param_1,float param_2)
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);
   fVar2 = (float)core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
-                           (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0x41F00000);
-  fVar2 = (0x41F00000 / fVar2) * param_2 + *(float *)(param_1 + 0x578);
+                           (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,30.0f);
+  fVar2 = (30.0f / fVar2) * param_2 + *(float *)(param_1 + 0x578);
   *(float *)(param_1 + 0x578) = fVar2;
-  if (0x41F00000 < fVar2) {
-    *(float *)(param_1 + 0x578) = 0x41F00000;
+  if (30.0f < fVar2) {
+    *(float *)(param_1 + 0x578) = 30.0f;
   }
-  fVar4 = (float10)*(float *)(param_1 + 0x578) / (float10)0x41F00000;
+  fVar4 = (float10)*(float *)(param_1 + 0x578) / (float10)30.0f;
   *(float *)(param_1 + 0x57c) = (float)fVar4;
   iVar3 = *(int *)(param_1 + 0x2cc);
   uVar5 = 0x4c7a27;
-  fVar4 = (float10)round(fVar4 * (float10)_DAT_00587aa5);
+  fVar4 = (float10)round(fVar4 * (float10)100);
   *(int *)(param_1 + 0x560) = (int)ROUND(fVar4);
   if (iVar3 == 2) {
-    fVar2 = (_DAT_0059fd6c - 0x40000000) * *(float *)(param_1 + 0x57c) + 0x40000000;
-    fVar1 = _DAT_0059fd70 + (_DAT_0059fd74 - _DAT_0059fd70) * *(float *)(param_1 + 0x57c);
+    fVar2 = (2.5f - 2.0f) * *(float *)(param_1 + 0x57c) + 2.0f;
+    fVar1 = 1.0f + (2.0f - 1.0f) * *(float *)(param_1 + 0x57c);
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0x574));
     if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(param_1 + 0x20);
       sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(fVar2);
       FUN_00526120(fVar1);
-      uVar5 = sound_sndmain_cpp_startSfx_FUN_005265a0("?cre-charge.wav" + 1);
+      uVar5 = sound_sndmain_cpp_startSfx_FUN_005265a0("cre-charge.wav");
       *(uint *)(param_1 + 0x574) = uVar5;
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
@@ -51,8 +51,9 @@ void FUN_004c79a0(int param_1,float param_2)
     iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
     if (iVar3 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
       FUN_004940d0(0x01C70F74,
-                   _DAT_0059fd80 + (_DAT_0059fd84 - _DAT_0059fd80) * *(float *)(param_1 + 0x57c),
-                   (_DAT_0059fd7c - _DAT_0059fd78) * *(float *)(param_1 + 0x57c) + _DAT_0059fd78);
+                   1.0f + (1.58f - 1.0f) * *(float *)(param_1 + 0x57c),
+                   (0.45f - 0.3f) * *(float *)(param_1 + 0x57c) + 0.3f)
+      ;
     }
     core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(param_1);
     if (*(int *)(param_1 + 0x570) == 0) {

@@ -10,12 +10,12 @@
 ;   FUN_00547b30 at 00547ba1
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\trigger.cpp_00596b22+1
+;   TerminatedCString s_core_trigger_cpp_00596b23
 ;   string s_CTrigger::containsActor_-_invali_00596b37
 ;   string s_..\\core\\trigger.cpp_00596b71
 ;   string s_Hell_froze..._00596b85
-;   undefined4 DAT_00596b93
-;   undefined4 DAT_00596b97
+;   float FLOAT_00596b93 = 0.5
+;   double DOUBLE_00596b97 = 0.25
 ;   undefined4 DAT_00765a98
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -61,7 +61,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 005487f4
     FADD float ptr [EDX + 0x4]          ; 005487f7
     FXCH                                ; 005487fa
-    FLD float ptr [0x00596b93]          ; 005487fc | DAT_00596b93
+    FLD float ptr [0x00596b93]          ; 005487fc | FLOAT_00596b93
     FXCH                                ; 00548802
     FMUL ST1                            ; 00548804
     FXCH ST2                            ; 00548806
@@ -163,7 +163,7 @@ section .text
     FADDP                               ; 0054890f
     FLD float ptr [EBX + 0x158]         ; 00548911
     FMUL float ptr [EBX + 0x160]        ; 00548917
-    FMUL double ptr [0x00596b97]        ; 0054891d | DAT_00596b97
+    FMUL double ptr [0x00596b97]        ; 0054891d | DOUBLE_00596b97
     FCOMPP                              ; 00548923
     FNSTSW AX                           ; 00548925
     SAHF                                ; 00548927
@@ -248,7 +248,7 @@ section .text
         ;   Label: LAB_005489e9
     MOV EDX,dword ptr [EBX + 0x168]     ; 005489ea
     PUSH EDX                            ; 005489f0
-    MOV EBP,0x596b23                    ; 005489f1 | s_..\core\trigger.cpp_00596b22+1
+    MOV EBP,0x596b23                    ; 005489f1 | = "..\\core\\trigger.cpp"
     MOV EAX,0x37d                       ; 005489f6
     PUSH 0x596b37                       ; 005489fb | = "CTrigger::containsActor - invalid tri..."
     MOV dword ptr [0x01cc4800],EBP      ; 00548a00 | DAT_01cc4800

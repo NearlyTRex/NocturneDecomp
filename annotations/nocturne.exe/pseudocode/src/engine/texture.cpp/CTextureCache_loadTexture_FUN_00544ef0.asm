@@ -12,21 +12,21 @@
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 0054596f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00596708
+;   TerminatedCString s_art_00596708
 ;   string s_CTextureCache::load_-_Bad_textur_0059670c
 ;   string s_..\\engine\\texture.cpp_0059673d
 ;   string s_..\\engine\\texture.cpp_00596753
 ;   string s_CTextureCache::load_-_Can't_find_00596769
-;   undefined4 DAT_00596794
-;   undefined4 DAT_00596799
-;   undefined4 DAT_0059679c
+;   TerminatedCString s_act_00596794
+;   TerminatedCString s_rb_00596799
+;   TerminatedCString s_art_0059679c
 ;   string s_..\\engine\\texture.cpp_005967a0
 ;   string s_CTextureCache::load_-_Out_of_mem_005967b6
-;   undefined4 DAT_00596809
-;   undefined4 DAT_0059680e
-;   undefined4 DAT_00596811
-;   undefined4 DAT_00596815
-;   undefined4 DAT_0059681a
+;   TerminatedCString s_raw_00596809
+;   TerminatedCString s_rb_0059680e
+;   TerminatedCString s_art_00596811
+;   TerminatedCString s_opa_00596815
+;   TerminatedCString s_rb_0059681a
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x118]     ; 00544efa
     MOV EDX,dword ptr [ESP + 0x11c]     ; 00544f01
     PUSH EDX                            ; 00544f08
-    PUSH 0x596708                       ; 00544f09 | DAT_00596708
+    PUSH 0x596708                       ; 00544f09 | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00544f0e
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 00544f13
@@ -118,16 +118,16 @@ section .text
     CALL FUN_004c8440                   ; 00544f98
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
     ADD ESP,0x4                         ; 00544f9d
-    PUSH 0x596794                       ; 00544fa0 | DAT_00596794
+    PUSH 0x596794                       ; 00544fa0 | = ".act"
         ;   Label: LAB_00544fa0
     PUSH EDI                            ; 00544fa5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00544fa6
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 00544fab
-    PUSH 0x596799                       ; 00544fae | DAT_00596799
+    PUSH 0x596799                       ; 00544fae | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 00544fb3
     PUSH EAX                            ; 00544fb7
-    PUSH 0x59679c                       ; 00544fb8 | DAT_0059679c
+    PUSH 0x59679c                       ; 00544fb8 | = "art"
     LEA EDI,[EBX + 0x13008]             ; 00544fbd
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00544fc3
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
@@ -262,16 +262,16 @@ section .text
         ;   XREF to: 00545103 (CONDITIONAL_JUMP)  ; LAB_00545103
     SUB ESI,ESI                         ; 00545119
         ;   Label: LAB_00545119
-    PUSH 0x596809                       ; 0054511b | DAT_00596809
+    PUSH 0x596809                       ; 0054511b | = ".raw"
         ;   Label: LAB_0054511b
     PUSH ESI                            ; 00545120
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00545121
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 00545126
-    PUSH 0x59680e                       ; 00545129 | DAT_0059680e
+    PUSH 0x59680e                       ; 00545129 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0054512e
     PUSH EAX                            ; 00545132
-    PUSH 0x596811                       ; 00545133 | DAT_00596811
+    PUSH 0x596811                       ; 00545133 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00545138
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     MOV ESI,EAX                         ; 0054513d
@@ -329,16 +329,16 @@ section .text
         ;   XREF to: 0054518e (CONDITIONAL_JUMP)  ; LAB_0054518e
     SUB ESI,ESI                         ; 005451a4
         ;   Label: LAB_005451a4
-    PUSH 0x596815                       ; 005451a6 | DAT_00596815
+    PUSH 0x596815                       ; 005451a6 | = ".opa"
         ;   Label: LAB_005451a6
     PUSH ESI                            ; 005451ab
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005451ac
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 005451b1
-    PUSH 0x59681a                       ; 005451b4 | DAT_0059681a
+    PUSH 0x59681a                       ; 005451b4 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005451b9
     PUSH EAX                            ; 005451bd
-    PUSH 0x59681d                       ; 005451be | DAT_0059681d
+    PUSH 0x59681d                       ; 005451be | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 005451c3
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 005451c8

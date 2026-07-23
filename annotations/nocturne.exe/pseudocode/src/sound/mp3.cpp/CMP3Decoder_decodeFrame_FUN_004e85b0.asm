@@ -91,7 +91,7 @@
 ;   string s_MPEG_Layer_2_-_pick_table_-_can'_0058b4f1
 ;   string s_..\\sound\\mp3.cpp_0058b52a
 ;   string s_js_bound_bad_layer/modext_(%d/%d_0058b53b
-;   undefined4 s_..\\sound\\mp3.cpp_0058b9bf+1
+;   TerminatedCString s_sound_mp3_cpp_0058b9c0
 ;   string s_Not_enough_main_data_to_decode_f_0058b9d1
 ;   undefined4 s_ntroller$$_005bb246+0xa
 ;   undefined4 DAT_005bbc48
@@ -904,7 +904,7 @@ section .text
         ;   Label: LAB_004e8fb6
     DEC EAX                             ; 004e8fbd
     PUSH EAX                            ; 004e8fbe
-    MOV EDX,0x58b9c0                    ; 004e8fbf | s_..\sound\mp3.cpp_0058b9bf+1
+    MOV EDX,0x58b9c0                    ; 004e8fbf | = "..\\sound\\mp3.cpp"
     MOV ECX,0xf90                       ; 004e8fc4
     PUSH 0x58b9d1                       ; 004e8fc9 | = "Not enough main data to decode frame %d."
     MOV dword ptr [0x01cc4800],EDX      ; 004e8fce | DAT_01cc4800

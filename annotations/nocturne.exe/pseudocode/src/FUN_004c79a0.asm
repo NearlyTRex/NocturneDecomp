@@ -9,18 +9,18 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 s_cre-charge.wav_00587a88+1
+;   TerminatedCString s_cre_charge_wav_00587a89
 ;   string s_lgunmask.raw_00587a98
-;   undefined4 DAT_00587aa5
-;   undefined4 DAT_0059fd60
-;   undefined4 DAT_0059fd68
-;   undefined4 DAT_0059fd6c
-;   undefined4 DAT_0059fd70
-;   undefined4 DAT_0059fd74
-;   undefined4 DAT_0059fd78
-;   undefined4 DAT_0059fd7c
-;   undefined4 DAT_0059fd80
-;   undefined4 DAT_0059fd84
+;   double DOUBLE_00587aa5 = 100
+;   float FLOAT_0059fd60 = 30
+;   float FLOAT_0059fd68 = 2
+;   float FLOAT_0059fd6c = 2.5
+;   float FLOAT_0059fd70 = 1
+;   float FLOAT_0059fd74 = 2
+;   float FLOAT_0059fd78 = 0.3000000
+;   float FLOAT_0059fd7c = 0.4500000
+;   float FLOAT_0059fd80 = 1
+;   float FLOAT_0059fd84 = 1.580000
 ;   undefined4 DAT_005ad54c
 ;   undefined4 DAT_005b9284
 ;   undefined4 DAT_005be368
@@ -62,27 +62,27 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c79b9
     ADD ESP,0x8                         ; 004c79c0
     ADD EAX,0x1f5a0                     ; 004c79c3
-    PUSH dword ptr [0x0059fd60]         ; 004c79c8 | DAT_0059fd60
+    PUSH dword ptr [0x0059fd60]         ; 004c79c8 | FLOAT_0059fd60
     PUSH EAX                            ; 004c79ce
     CALL core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20 ; 004c79cf
         ;   XREF to: 004c1b20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20()
     MOV dword ptr [ESP + 0x18],EAX      ; 004c79d4
     FLD float ptr [ESP + 0x18]          ; 004c79d8
-    FDIVR float ptr [0x0059fd60]        ; 004c79dc | DAT_0059fd60
+    FDIVR float ptr [0x0059fd60]        ; 004c79dc | FLOAT_0059fd60
     ADD ESP,0x8                         ; 004c79e2
     FMUL float ptr [ESP + 0x28]         ; 004c79e5
     FADD float ptr [EBX + 0x578]        ; 004c79e9
     FST float ptr [EBX + 0x578]         ; 004c79ef
-    FCOMP float ptr [0x0059fd60]        ; 004c79f5 | DAT_0059fd60
+    FCOMP float ptr [0x0059fd60]        ; 004c79f5 | FLOAT_0059fd60
     FNSTSW AX                           ; 004c79fb
     SAHF                                ; 004c79fd
     JA 0x004c7ba8                       ; 004c79fe
         ;   XREF to: 004c7ba8 (CONDITIONAL_JUMP)  ; LAB_004c7ba8
     FLD float ptr [EBX + 0x578]         ; 004c7a04
         ;   Label: LAB_004c7a04
-    FDIV float ptr [0x0059fd60]         ; 004c7a0a | DAT_0059fd60
+    FDIV float ptr [0x0059fd60]         ; 004c7a0a | FLOAT_0059fd60
     FST float ptr [EBX + 0x57c]         ; 004c7a10
-    FMUL double ptr [0x00587aa5]        ; 004c7a16 | DAT_00587aa5
+    FMUL double ptr [0x00587aa5]        ; 004c7a16 | DOUBLE_00587aa5
     MOV EDX,dword ptr [EBX + 0x2cc]     ; 004c7a1c
     CALL crt_math.c_round_FUN_00563a30  ; 004c7a22
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
@@ -91,12 +91,12 @@ section .text
     JNZ 0x004c7bb8                      ; 004c7a30
         ;   XREF to: 004c7bb8 (CONDITIONAL_JUMP)  ; LAB_004c7bb8
     PUSH EDI                            ; 004c7a36
-    FLD float ptr [0x0059fd68]          ; 004c7a37 | DAT_0059fd68
-    FLD float ptr [0x0059fd6c]          ; 004c7a3d | DAT_0059fd6c
+    FLD float ptr [0x0059fd68]          ; 004c7a37 | FLOAT_0059fd68
+    FLD float ptr [0x0059fd6c]          ; 004c7a3d | FLOAT_0059fd6c
     FSUB ST0,ST1                        ; 004c7a43
     FMUL float ptr [EBX + 0x57c]        ; 004c7a45
-    FLD float ptr [0x0059fd70]          ; 004c7a4b | DAT_0059fd70
-    FLD float ptr [0x0059fd74]          ; 004c7a51 | DAT_0059fd74
+    FLD float ptr [0x0059fd70]          ; 004c7a4b | FLOAT_0059fd70
+    FLD float ptr [0x0059fd74]          ; 004c7a51 | FLOAT_0059fd74
     FSUB ST0,ST1                        ; 004c7a57
     MOV ECX,dword ptr [EBX + 0x574]     ; 004c7a59
     FMUL float ptr [EBX + 0x57c]        ; 004c7a5f
@@ -135,12 +135,12 @@ section .text
     CMP EAX,EBP                         ; 004c7ac9
     JNZ 0x004c7b21                      ; 004c7acb
         ;   XREF to: 004c7b21 (CONDITIONAL_JUMP)  ; LAB_004c7b21
-    FLD float ptr [0x0059fd84]          ; 004c7acd | DAT_0059fd84
-    FLD float ptr [0x0059fd78]          ; 004c7ad3 | DAT_0059fd78
-    FLD float ptr [0x0059fd7c]          ; 004c7ad9 | DAT_0059fd7c
+    FLD float ptr [0x0059fd84]          ; 004c7acd | FLOAT_0059fd84
+    FLD float ptr [0x0059fd78]          ; 004c7ad3 | FLOAT_0059fd78
+    FLD float ptr [0x0059fd7c]          ; 004c7ad9 | FLOAT_0059fd7c
     FSUB ST0,ST1                        ; 004c7adf
     FXCH ST2                            ; 004c7ae1
-    FLD float ptr [0x0059fd80]          ; 004c7ae3 | DAT_0059fd80
+    FLD float ptr [0x0059fd80]          ; 004c7ae3 | FLOAT_0059fd80
     FXCH                                ; 004c7ae9
     FSUB ST0,ST1                        ; 004c7aeb
     FXCH ST3                            ; 004c7aed
@@ -206,7 +206,7 @@ section .text
     POP ESI                             ; 004c7ba5
     POP EBX                             ; 004c7ba6
     RET                                 ; 004c7ba7
-    MOV EAX,[0x0059fd60]                ; 004c7ba8 | DAT_0059fd60
+    MOV EAX,[0x0059fd60]                ; 004c7ba8 | FLOAT_0059fd60
         ;   Label: LAB_004c7ba8
     MOV dword ptr [EBX + 0x578],EAX     ; 004c7bad
     JMP 0x004c7a04                      ; 004c7bb3
@@ -254,7 +254,7 @@ section .text
     CALL FUN_00526120                   ; 004c7c29
         ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; undefined FUN_00526120()
     ADD ESP,0x4                         ; 004c7c2e
-    PUSH 0x587a89                       ; 004c7c31 | s_cre-charge.wav_00587a88+1
+    PUSH 0x587a89                       ; 004c7c31 | = "cre-charge.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004c7c36
         ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
     ADD ESP,0x4                         ; 004c7c3b

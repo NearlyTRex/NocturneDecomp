@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(uint param_1,uint 
   int iVar1;
   uint uVar2;
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,&DAT_00589612);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\core\\mission.cpp";
     _DAT_01cc4804 = 0x9c;

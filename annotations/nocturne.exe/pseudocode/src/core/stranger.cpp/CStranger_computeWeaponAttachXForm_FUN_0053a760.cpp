@@ -444,12 +444,12 @@ uint * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int par
                                 (local_90,&DAT_02dd1184,_DAT_02dc9f84 * 0x30 + iVar6);
     local_198 = *pfVar5 + *pfVar4;
     local_194 = pfVar5[1] + pfVar4[1];
-    local_108 = local_198 * _DAT_005959a7;
+    local_108 = local_198 * 0.5f;
     local_190 = pfVar5[2] + pfVar4[2];
-    local_104 = local_194 * _DAT_005959a7;
-    local_100 = local_190 * _DAT_005959a7;
+    local_104 = local_194 * 0.5f;
+    local_100 = local_190 * 0.5f;
     (**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_204);
-    local_100 = local_100 + _DAT_005959bf;
+    local_100 = local_100 + 0.333f;
     local_104 = local_104 - (local_1f4 - local_200);
     fVar3 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(param_2);
     local_104 = fVar3 + local_104;
@@ -484,11 +484,11 @@ uint * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int par
   if (iVar6 != 0) {
     (**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&local_21c);
     local_144[3] = local_21c + local_210;
-    local_150 = local_144[3] * _DAT_005959a7;
+    local_150 = local_144[3] * 0.5f;
     local_134 = local_218 + local_20c;
     local_130 = local_214 + local_208;
-    local_14c = local_134 * _DAT_005959a7;
-    local_148 = local_130 * _DAT_005959a7;
+    local_14c = local_134 * 0.5f;
+    local_148 = local_130 * 0.5f;
     if (&local_180 != &local_150) {
       local_180 = local_150;
       local_17c = local_14c;
@@ -530,11 +530,11 @@ LAB_0053b4b4:
           local_80 = pfVar4[1];
           local_7c = pfVar4[2];
         }
-        local_178 = local_208 * (float)_DAT_005959b7 + local_214 * (float)_DAT_005959af;
+        local_178 = local_208 * (float)0.29999999999999999 + local_214 * (float)0.69999999999999996;
         goto LAB_0053b05b;
       }
       if (iVar2 != 3) {
-        _DAT_01cc4800 = "?..\\core\\stranger.cpp" + 1;
+        _DAT_01cc4800 = "..\\core\\stranger.cpp";
         _DAT_01cc4804 = 0xc44;
         FUN_004c8440("Don't know how to carry light %s",iVar6);
         goto LAB_0053b05b;

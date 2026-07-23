@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -189,33 +189,33 @@
   "globals": [
     {
       "addr": "0058a812",
-      "name": "DAT_0058a812",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a812",
+      "type": "double",
+      "value": "6"
     },
     {
       "addr": "0058a81a",
-      "name": "DAT_0058a81a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a81a",
+      "type": "double",
+      "value": "0.318309886192889"
     },
     {
       "addr": "0058a822",
-      "name": "DAT_0058a822",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a822",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "0058a82a",
-      "name": "DAT_0058a82a",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a82a",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "0058a832",
-      "name": "DAT_0058a832",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058a832",
+      "type": "double",
+      "value": "-3.14159265350000"
     },
     {
       "addr": "01cae0e8",
@@ -713,7 +713,7 @@
       "line": 120,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 * (float)_DAT_0058a82a < fStack_78) {",
+      "text": "if (param_2 * (float)3.1415926535000001 < fStack_78) {",
       "type": "unnamed_param"
     },
     {
@@ -721,7 +721,7 @@
       "line": 121,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_78 = param_2 * (float)_DAT_0058a82a;",
+      "text": "fStack_78 = param_2 * (float)3.1415926535000001;",
       "type": "unnamed_param"
     },
     {
@@ -729,7 +729,7 @@
       "line": 123,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (fStack_78 < param_2 * (float)_DAT_0058a832) {",
+      "text": "if (fStack_78 < param_2 * (float)-3.1415926535000001) {",
       "type": "unnamed_param"
     },
     {
@@ -737,7 +737,7 @@
       "line": 124,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_78 = param_2 * (float)_DAT_0058a832;",
+      "text": "fStack_78 = param_2 * (float)-3.1415926535000001;",
       "type": "unnamed_param"
     },
     {

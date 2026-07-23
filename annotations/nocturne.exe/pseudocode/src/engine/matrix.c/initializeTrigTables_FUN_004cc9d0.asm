@@ -10,9 +10,9 @@
 ;   FUN_004c85f0 at 004c873b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005881c3
-;   undefined4 DAT_005881cb
-;   undefined4 DAT_005881d3
+;   double DOUBLE_005881c3 = 3.14159265350000
+;   double DOUBLE_005881cb = 0.0078125
+;   double DOUBLE_005881d3 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -28,9 +28,9 @@ section .text
     AND ESP,0xfffffff8                  ; 004cc9d6
     XOR EDX,EDX                         ; 004cc9d9
     XOR ECX,ECX                         ; 004cc9db
-    FLD double ptr [0x005881d3]         ; 004cc9dd | DAT_005881d3
-    FLD double ptr [0x005881cb]         ; 004cc9e3 | DAT_005881cb
-    FLD double ptr [0x005881c3]         ; 004cc9e9 | DAT_005881c3
+    FLD double ptr [0x005881d3]         ; 004cc9dd | DOUBLE_005881d3
+    FLD double ptr [0x005881cb]         ; 004cc9e3 | DOUBLE_005881cb
+    FLD double ptr [0x005881c3]         ; 004cc9e9 | DOUBLE_005881c3
     MOV dword ptr [ESP + 0x8],ECX       ; 004cc9ef
         ;   Label: LAB_004cc9ef
     FILD dword ptr [ESP + 0x8]          ; 004cc9f3

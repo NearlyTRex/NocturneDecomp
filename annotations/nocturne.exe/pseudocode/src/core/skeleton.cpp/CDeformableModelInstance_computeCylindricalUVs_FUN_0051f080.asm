@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   string s_..\\core\\skeleton.cpp_00591d6f
 ;   string s_CDeformableModelInstance::comput_00591d84
-;   undefined4 DAT_00591dcb
+;   double DOUBLE_00591dcb = 2670176.85779676
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc4800
@@ -147,7 +147,7 @@ section .text
     FILD dword ptr [EDX]                ; 0051f19e
     CALL crt_math.c_atan2_FUN_00566c81  ; 0051f1a0
         ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
-    FMUL double ptr [0x00591dcb]        ; 0051f1a5 | DAT_00591dcb
+    FMUL double ptr [0x00591dcb]        ; 0051f1a5 | DOUBLE_00591dcb
     MOV EAX,dword ptr [ESP + 0x20]      ; 0051f1ab
     CALL crt_math.c_round_FUN_00563a30  ; 0051f1af
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(int param_1,float param_2)
 
 {
@@ -32,7 +30,7 @@ LAB_0054d9e2:
             local_78 = *(float *)(param_1 + 0xbed98);
           }
           if (0.0 < (double)local_78) {
-            _sprintf(local_74,"wing?.wav @%f",(double)local_78 * _DAT_0059715d);
+            _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);
             goto LAB_0054da79;
           }
         }

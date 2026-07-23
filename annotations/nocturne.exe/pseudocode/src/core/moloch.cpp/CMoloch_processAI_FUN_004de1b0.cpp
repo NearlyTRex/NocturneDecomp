@@ -56,7 +56,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(int param_1,float pa
     iVar6 = _DAT_01cae0e8 * 4;
     *(uint *)(param_1 + 0x2410) = 0;
     if (SQRT(local_6c * local_6c + local_74 * local_74 + local_70 * local_70) <=
-        (float)_DAT_0058a812) {
+        (float)6) {
       iVar6 = *(int *)(iVar6 + 0x1cae0d8);
       iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x140))(iVar6);
       if ((iVar6 == 0) && (uVar5 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar5 != 0)) {
@@ -77,7 +77,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(int param_1,float pa
       if (iVar6 != 0) {
         fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (fStack_64 - *(float *)(param_1 + 0x34));
-        fVar2 = fStack_18 * (float)_DAT_0058a81a * (float)_DAT_0058a822;
+        fVar2 = fStack_18 * (float)0.31830988619288902 * (float)4;
         fStack_28 = -local_20;
         *(float *)(param_1 + 0xbcb8) = fVar2;
         if (fVar2 < fStack_28) {
@@ -124,11 +124,11 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(int param_1,float pa
       fStack_58 = -local_24;
     }
     fStack_78 = fStack_58 - *(float *)(param_1 + 0x229f4);
-    if (param_2 * (float)_DAT_0058a82a < fStack_78) {
-      fStack_78 = param_2 * (float)_DAT_0058a82a;
+    if (param_2 * (float)3.1415926535000001 < fStack_78) {
+      fStack_78 = param_2 * (float)3.1415926535000001;
     }
-    if (fStack_78 < param_2 * (float)_DAT_0058a832) {
-      fStack_78 = param_2 * (float)_DAT_0058a832;
+    if (fStack_78 < param_2 * (float)-3.1415926535000001) {
+      fStack_78 = param_2 * (float)-3.1415926535000001;
     }
     *(float *)(param_1 + 0x229f4) = *(float *)(param_1 + 0x229f4) + fStack_78;
   }

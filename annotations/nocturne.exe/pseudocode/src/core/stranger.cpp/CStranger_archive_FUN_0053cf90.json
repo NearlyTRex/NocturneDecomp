@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -172,8 +172,8 @@
   "globals": [
     {
       "addr": "00595bf7",
-      "name": "s_objectToPickUp_00595bf6+1",
-      "type": "undefined4",
+      "name": "s_objectToPickUp_00595bf7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -314,7 +314,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa08,\"@objectToPickUp\" + 1);",
+      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa08,\"objectToPickUp\");",
       "type": "unnamed_param"
     },
     {

@@ -31,7 +31,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,uint par
     iVar2 = _fgetc(param_2);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(param_2,&DAT_0058adcd,&local_34);
+  _fscanf(param_2,"%d\n",&local_34);
   if (local_34 < 0) {
     _DAT_01cc4800 = "..\\core\\motion.cpp";
     _DAT_01cc4804 = 0x5b;
@@ -47,11 +47,11 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,uint par
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
   iVar2 = 0;
-  _fscanf(param_2,&DAT_0058ae85,param_1);
+  _fscanf(param_2,"%d\n",param_1);
   if (0 < *param_1) {
     piVar3 = param_1 + 1;
     do {
-      _fscanf(param_2,&DAT_0058ae89,piVar3);
+      _fscanf(param_2,"%s\n",piVar3);
       iVar2 = iVar2 + 1;
       piVar3 = (int *)((int)piVar3 + 0x1e);
     } while (iVar2 < *param_1);
@@ -60,7 +60,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,uint par
     iVar2 = _fgetc(param_2);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(param_2,&DAT_0058ae8d,param_1 + 0x259);
+  _fscanf(param_2,"%d\n",param_1 + 0x259);
   local_28 = 0;
   if (0 < param_1[0x259]) {
     local_2c = param_1 + 0x25a;
@@ -94,7 +94,7 @@ LAB_004e0a23:
         if (iVar2 < 0) break;
       } while (iVar2 != 10);
       iVar2 = 0;
-      _fscanf(param_2,&DAT_0058aec1,piVar3 + 0x1a);
+      _fscanf(param_2,"%d\n",piVar3 + 0x1a);
       if (0 < piVar3[0x1a]) {
         local_24 = piVar3 + 0x1b;
         local_1c = piVar3 + 0x1d;
@@ -118,7 +118,7 @@ LAB_004e0a23:
         if (iVar2 < 0) break;
       } while (iVar2 != 10);
       iVar2 = 0;
-      _fscanf(param_2,&DAT_0058aed8,piVar3 + 0x129);
+      _fscanf(param_2,"%d\n",piVar3 + 0x129);
       if (0 < piVar3[0x129]) {
         local_20 = piVar3 + 0x12a;
         piVar4 = piVar3 + 299;
@@ -138,12 +138,12 @@ LAB_004e0a23:
           if (iVar2 < 0) break;
         } while (iVar2 != 10);
         iVar2 = 0;
-        _fscanf(param_2,&DAT_0058aee3,piVar3 + 0x148);
+        _fscanf(param_2,"%d",piVar3 + 0x148);
         if (0 < piVar3[0x148]) {
           piVar4 = piVar3 + 0x149;
           do {
             iVar2 = iVar2 + 1;
-            _fscanf(param_2,&DAT_0058aee6,piVar4);
+            _fscanf(param_2,"%d",piVar4);
             piVar4 = piVar4 + 1;
           } while (iVar2 < piVar3[0x148]);
         }

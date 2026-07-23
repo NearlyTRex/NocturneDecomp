@@ -90,7 +90,7 @@ joined_r0x004dcc9d:
     case 0x40:
       goto switchD_004dccb6_caseD_d;
     default:
-      _DAT_01cc4800 = "@..\\engine\\model.c" + 1;
+      _DAT_01cc4800 = "..\\engine\\model.c";
       _DAT_01cc4804 = 0xce;
       FUN_004c8440("Need a new byteswap!");
       param_2 = param_2 - uVar1;

@@ -23,7 +23,7 @@ void FUN_004f8570(int param_1,int param_2)
     _DAT_01cc4804 = 0x1f1;
     FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
-  iVar1 = _fopen(param_1 + 4,0x58dac5);
+  iVar1 = _fopen(param_1 + 4,"rb");
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\engine\\pod.cpp";
     _DAT_01cc4804 = 0x1f6;

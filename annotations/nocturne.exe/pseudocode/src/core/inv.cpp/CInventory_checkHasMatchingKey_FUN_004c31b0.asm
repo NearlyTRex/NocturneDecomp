@@ -9,7 +9,7 @@
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047ec93
 ;
 ; Referenced Globals:
-;   undefined4 s_You_used_a_key._005874f8+1
+;   TerminatedCString s_You_used_a_key_005874f9
 ;   string s_key-unlock.wav_00587509
 ;   string s_You_need_the_right_key_00587518
 ;   undefined4 DAT_005b9354
@@ -59,7 +59,7 @@ section .text
     JZ 0x004c3233                       ; 004c31f6
         ;   XREF to: 004c3233 (CONDITIONAL_JUMP)  ; LAB_004c3233
     PUSH 0x40a00000                     ; 004c31f8
-    PUSH 0x5874f9                       ; 004c31fd | s_You_used_a_key._005874f8+1
+    PUSH 0x5874f9                       ; 004c31fd | = "You used a key."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c3202
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004c3207

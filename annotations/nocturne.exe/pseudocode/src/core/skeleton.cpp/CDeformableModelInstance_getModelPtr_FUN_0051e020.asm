@@ -18,7 +18,7 @@
 ;   ... and 36 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\skeleton.cpp_00591c89+2
+;   TerminatedCString s_core_skeleton_cpp_00591c8b
 ;   string s_CDeformableModelInstance::getMod_00591ca0
 ;   string s_..\\core\\skeleton.cpp_00591cee
 ;   string s_Tried_to_do_something_with_model_00591d03
@@ -43,7 +43,7 @@ section .text
     CMP byte ptr [EBX + 0x2260],0x0     ; 0051e030
     JNZ 0x0051e066                      ; 0051e037
         ;   XREF to: 0051e066 (CONDITIONAL_JUMP)  ; LAB_0051e066
-    MOV EDI,0x591c8b                    ; 0051e039 | s_..\core\skeleton.cpp_00591c89+2
+    MOV EDI,0x591c8b                    ; 0051e039 | = "..\\core\\skeleton.cpp"
     MOV EBP,0xdd1                       ; 0051e03e
     PUSH 0x591ca0                       ; 0051e043 | = "CDeformableModelInstance::getModelPtr..."
     MOV dword ptr [0x01cc4800],EDI      ; 0051e048 | DAT_01cc4800

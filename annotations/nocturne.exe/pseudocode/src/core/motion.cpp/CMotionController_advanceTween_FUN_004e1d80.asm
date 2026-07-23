@@ -14,7 +14,7 @@
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0 at 004e1384
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b3ad
+;   double DOUBLE_0058b3ad = 0.00100000000000000
 ;
 ; *****************************************************************************
 
@@ -88,7 +88,7 @@ section .text
     RET                                 ; 004e1e18
     FLD float ptr [ESP + 0x8]           ; 004e1e19
         ;   Label: LAB_004e1e19
-    FADD double ptr [0x0058b3ad]        ; 004e1e1d | DAT_0058b3ad
+    FADD double ptr [0x0058b3ad]        ; 004e1e1d | DOUBLE_0058b3ad
     FLD float ptr [ESP + 0xc]           ; 004e1e23
     FSTP double ptr [ESP]               ; 004e1e27
     FCOMP double ptr [ESP]              ; 004e1e2a
@@ -97,7 +97,7 @@ section .text
     JC 0x004e1ddb                       ; 004e1e30
         ;   XREF to: 004e1ddb (CONDITIONAL_JUMP)  ; LAB_004e1ddb
     FLD double ptr [ESP]                ; 004e1e32
-    FADD double ptr [0x0058b3ad]        ; 004e1e35 | DAT_0058b3ad
+    FADD double ptr [0x0058b3ad]        ; 004e1e35 | DOUBLE_0058b3ad
     FSTP float ptr [ESP + 0x8]          ; 004e1e3b
     JMP 0x004e1ddb                      ; 004e1e3f
         ;   XREF to: 004e1ddb (UNCONDITIONAL_JUMP)  ; LAB_004e1ddb

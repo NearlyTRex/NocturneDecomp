@@ -8,7 +8,7 @@
 ;   core_pendulum.cpp_CPendulum_process_FUN_004f3a20 at 004f3b43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d01c
+;   float FLOAT_0058d01c = 0.5
 ;   undefined4 DAT_005a1228
 ;   undefined4 DAT_005b96c4
 ;
@@ -97,7 +97,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004f2efd
     FADD float ptr [EDX + 0x4]          ; 004f2f00
     FXCH                                ; 004f2f03
-    FLD float ptr [0x0058d01c]          ; 004f2f05 | DAT_0058d01c
+    FLD float ptr [0x0058d01c]          ; 004f2f05 | FLOAT_0058d01c
     FXCH                                ; 004f2f0b
     FMUL ST1                            ; 004f2f0d
     FXCH ST2                            ; 004f2f0f
@@ -364,7 +364,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004f3260
     FADD float ptr [EDX + 0x4]          ; 004f3263
     FXCH                                ; 004f3266
-    FLD float ptr [0x0058d01c]          ; 004f3268 | DAT_0058d01c
+    FLD float ptr [0x0058d01c]          ; 004f3268 | FLOAT_0058d01c
     FXCH                                ; 004f326e
     FMUL ST1                            ; 004f3270
     FXCH ST2                            ; 004f3272

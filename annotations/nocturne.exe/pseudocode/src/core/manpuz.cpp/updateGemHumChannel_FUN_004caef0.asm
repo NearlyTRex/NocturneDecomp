@@ -14,7 +14,7 @@
 ;   FUN_004cb010 at 004cb07c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587fc2
+;   double DOUBLE_00587fc2 = 0.00392156862745098
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_004caf35
     FLD float ptr [EDX]                 ; 004caf37
         ;   Label: LAB_004caf37
-    FMUL double ptr [0x00587fc2]        ; 004caf39 | DAT_00587fc2
+    FMUL double ptr [0x00587fc2]        ; 004caf39 | DOUBLE_00587fc2
     FST float ptr [ESP]                 ; 004caf3f
     FLDZ                                ; 004caf42
     FCOMPP                              ; 004caf44

@@ -41,7 +41,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(int param_
       if (*(float *)(param_1 + 0x338) < 1.0) {
         uStack_40 = 0x4c222a;
         fVar8 = (float10)round
-                                   ((float10)*(float *)(param_1 + 0x338) * (float10)_DAT_00587469);
+                                   ((float10)*(float *)(param_1 + 0x338) * (float10)65535.0f);
         local_20 = (int)ROUND(fVar8);
       }
       iVar1 = (local_20 * 2) / 3;
@@ -73,8 +73,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(int param_
       iVar2 = DAT_005b761c - iVar7;
       iVar3 = DAT_005b7620 - iVar7;
       if (*(float *)(param_1 + 0x33c) < 1.0) {
-        round((float10)*(float *)(param_1 + 0x33c) * (float10)_DAT_00587469)
-        ;
+        round
+                  ((float10)*(float *)(param_1 + 0x33c) * (float10)65535.0f);
       }
       if (*(int *)(param_1 + 0x44c) == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0

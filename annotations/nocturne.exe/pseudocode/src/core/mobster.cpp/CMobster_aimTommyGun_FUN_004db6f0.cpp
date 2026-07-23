@@ -50,7 +50,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(uint *)(param_1 + 0x24f0),_DAT_02ddf9a8);
       if (iVar2 == 0) {
-        _DAT_01cc4800 = "@@..\\core\\mobster.cpp" + 2;
+        _DAT_01cc4800 = "..\\core\\mobster.cpp";
         _DAT_01cc4804 = 0x323;
         FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
       }
@@ -68,16 +68,16 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       local_30 = *(float *)(iVar2 + 0x28) - pfVar4[2];
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(uint *)(param_1 + 0xbca4),_DAT_01cae124);
-      fVar1 = _DAT_0058a3a5;
+      fVar1 = 3.0f;
       if (iVar2 != 0) {
-        fVar1 = _DAT_0058a3a9;
+        fVar1 = 5.3464347077054713e-315._0_4_;
       }
       local_34 = local_34 + fVar1;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_2c,&local_38);
       local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                   (local_28 - *(float *)(param_1 + 0x34));
       local_84 = SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34);
-      if ((local_88 <= ABS(local_18)) || (local_84 <= (float)_DAT_0058a3b1)) {
+      if ((local_88 <= ABS(local_18)) || (local_84 <= (float)2)) {
         param_2 = *(float *)(param_1 + 0xbdf4) - param_2;
         *(float *)(param_1 + 0xbdf4) = param_2;
         if (param_2 < 0.0) {

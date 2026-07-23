@@ -23,7 +23,7 @@
 ;   string s_..\\core\\frankgen.cpp_00581d58
 ;   TerminatedCString s_WTF_00581d6d
 ;   undefined4 DAT_0059db58
-;   undefined4 DAT_0059db70
+;   float FLOAT_0059db70 = 2300
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 004951fc (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x495078]  ; 004950ba | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    PUSH dword ptr [0x0059db70]         ; 004950c1 | DAT_0059db70
+    PUSH dword ptr [0x0059db70]         ; 004950c1 | FLOAT_0059db70
         ;   Label: caseD_0
     PUSH 0x0                            ; 004950c7
     PUSH EBP                            ; 004950c9

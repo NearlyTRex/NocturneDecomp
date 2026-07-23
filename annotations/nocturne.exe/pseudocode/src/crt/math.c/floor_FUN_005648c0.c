@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double floor(uint param_1,uint param_2)
 
 {
@@ -16,7 +14,7 @@ double floor(uint param_1,uint param_2)
   
   dVar1 = (double)modf(param_1,param_2,local_18);
   if (dVar1 < 0.0) {
-    local_18[0] = local_18[0] + _DAT_005989b0;
+    local_18[0] = local_18[0] + -1;
   }
   return local_18[0];
 }

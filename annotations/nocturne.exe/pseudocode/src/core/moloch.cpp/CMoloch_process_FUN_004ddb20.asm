@@ -28,14 +28,14 @@
 ;   string s_moloch_d.dfm_0058a7a6
 ;   string s_moloch_d.dfm_0058a7b3
 ;   string s_moloch_h.dfm_0058a7c0
-;   undefined4 DAT_0058a7d2
-;   undefined4 DAT_0058a7da
-;   undefined4 DAT_0058a7e2
-;   undefined4 DAT_0058a7ea
-;   undefined4 DAT_0058a7f2
-;   undefined4 DAT_0058a7fa
-;   undefined4 DAT_0058a802
-;   undefined4 DAT_0058a80a
+;   double DOUBLE_0058a7d2 = 12.5663706140000
+;   double DOUBLE_0058a7da = 0.333333333333333
+;   double DOUBLE_0058a7e2 = 32
+;   double DOUBLE_0058a7ea = -1.57079632675000
+;   float FLOAT_0058a7f2 = 3.141593
+;   double DOUBLE_0058a7fa = 1.57079632675000
+;   double DOUBLE_0058a802 = 1.59386252192652E-314
+;   double DOUBLE_0058a80a = 3.14159265350000
 ;   undefined4 DAT_005a0ab8
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   ... and 4 more
@@ -136,7 +136,7 @@ section .text
         ;   XREF to: 004ddb6a (UNCONDITIONAL_JUMP)  ; LAB_004ddb6a
     FLD float ptr [EBP + 0x18]          ; 004ddbc2
         ;   Label: LAB_004ddbc2
-    FMUL double ptr [0x0058a7d2]        ; 004ddbc5 | DAT_0058a7d2
+    FMUL double ptr [0x0058a7d2]        ; 004ddbc5 | DOUBLE_0058a7d2
     FLD float ptr [EBX + 0x23ac]        ; 004ddbcb
     MOV EAX,[0x005b9354]                ; 004ddbd1 | DAT_005b9354
     FSTP float ptr [EBX + 0x242c]       ; 004ddbd6
@@ -145,7 +145,7 @@ section .text
     JZ 0x004ddbfd                       ; 004ddbe9
         ;   XREF to: 004ddbfd (CONDITIONAL_JUMP)  ; LAB_004ddbfd
     FLD float ptr [EBX + 0x2430]        ; 004ddbeb
-    FMUL double ptr [0x0058a7da]        ; 004ddbf1 | DAT_0058a7da
+    FMUL double ptr [0x0058a7da]        ; 004ddbf1 | DOUBLE_0058a7da
     FSTP float ptr [EBX + 0x2430]       ; 004ddbf7
     PUSH dword ptr [EBP + 0x18]         ; 004ddbfd
         ;   Label: LAB_004ddbfd
@@ -202,27 +202,27 @@ section .text
     FLD float ptr [ESP + 0x1b08]        ; 004ddc8a
     ADD ESP,0x4                         ; 004ddc91
     FST float ptr [ESP]                 ; 004ddc94
-    FCOMP double ptr [0x0058a7ea]       ; 004ddc97 | DAT_0058a7ea
+    FCOMP double ptr [0x0058a7ea]       ; 004ddc97 | DOUBLE_0058a7ea
     FNSTSW AX                           ; 004ddc9d
     SAHF                                ; 004ddc9f
     JNC 0x004ddcae                      ; 004ddca0
         ;   XREF to: 004ddcae (CONDITIONAL_JUMP)  ; LAB_004ddcae
     FLD float ptr [ESP]                 ; 004ddca2
-    FADD float ptr [0x0058a7f2]         ; 004ddca5 | DAT_0058a7f2
+    FADD float ptr [0x0058a7f2]         ; 004ddca5 | FLOAT_0058a7f2
     FSTP float ptr [ESP]                ; 004ddcab
     FLD float ptr [ESP]                 ; 004ddcae
         ;   Label: LAB_004ddcae
-    FCOMP double ptr [0x0058a7fa]       ; 004ddcb1 | DAT_0058a7fa
+    FCOMP double ptr [0x0058a7fa]       ; 004ddcb1 | DOUBLE_0058a7fa
     FNSTSW AX                           ; 004ddcb7
     SAHF                                ; 004ddcb9
     JBE 0x004ddcc8                      ; 004ddcba
         ;   XREF to: 004ddcc8 (CONDITIONAL_JUMP)  ; LAB_004ddcc8
     FLD float ptr [ESP]                 ; 004ddcbc
-    FADD float ptr [0x0058a802]         ; 004ddcbf | DAT_0058a802
+    FADD float ptr [0x0058a802]         ; 004ddcbf | DOUBLE_0058a802
     FSTP float ptr [ESP]                ; 004ddcc5
     FLD float ptr [EBP + 0x18]          ; 004ddcc8
         ;   Label: LAB_004ddcc8
-    FMUL double ptr [0x0058a80a]        ; 004ddccb | DAT_0058a80a
+    FMUL double ptr [0x0058a80a]        ; 004ddccb | DOUBLE_0058a80a
     FLD float ptr [ESP]                 ; 004ddcd1
     FXCH                                ; 004ddcd4
     FST float ptr [ESP + 0x1b00]        ; 004ddcd6
@@ -459,7 +459,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004ddf44
         ;   Label: LAB_004ddf44
     FLD ST0                             ; 004ddf47
-    FMUL double ptr [0x0058a7e2]        ; 004ddf49 | DAT_0058a7e2
+    FMUL double ptr [0x0058a7e2]        ; 004ddf49 | DOUBLE_0058a7e2
     FLD float ptr [EBX + 0x2424]        ; 004ddf4f
     FXCH                                ; 004ddf55
     FSUBR ST0,ST1                       ; 004ddf57

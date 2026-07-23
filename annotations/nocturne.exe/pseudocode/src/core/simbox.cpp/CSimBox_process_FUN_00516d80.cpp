@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
 
 {
@@ -48,13 +46,13 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
       *(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x5b4);
       iStack_c = rand();
       *(float *)(param_1 + 0x30) =
-           ((float)iStack_c * _DAT_00591119 + (float)_DAT_0059111d) * (float)_DAT_00591125;
+           ((float)iStack_c * 3.051851e-05f + (float)-0.5) * (float)3.1415926535000001;
       iStack_c = rand();
       *(float *)(param_1 + 0x38) =
-           (float)iStack_c * _DAT_00591119 * (float)_DAT_00591125 * (float)_DAT_0059112d;
+           (float)iStack_c * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
       iStack_c = rand();
       *(float *)(param_1 + 0x34) =
-           (float)iStack_c * _DAT_00591119 * (float)_DAT_00591125 * (float)_DAT_0059112d;
+           (float)iStack_c * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
       (*(code *)**(uint **)(param_1 + 0x14c))(param_1);
     }
   }

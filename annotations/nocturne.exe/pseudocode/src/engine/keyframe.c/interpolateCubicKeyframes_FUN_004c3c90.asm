@@ -19,14 +19,14 @@
 ;   string s_Bad_keyframe_1_00587643
 ;   string s_..\\engine\\keyframe.c_00587652
 ;   string s_ZBP_not_found!_00587667
-;   undefined4 DAT_0058767c
-;   undefined4 DAT_00587684
-;   undefined4 DAT_00587688
-;   undefined4 DAT_0058768c
-;   undefined4 DAT_00587694
-;   undefined4 DAT_00587698
-;   undefined4 DAT_0058769c
-;   undefined4 DAT_005876a0
+;   double DOUBLE_0058767c = 0.0000152587890625
+;   float FLOAT_00587684 = -0.5
+;   float FLOAT_00587688 = 0.5
+;   double DOUBLE_0058768c = 65536
+;   float FLOAT_00587694 = 1.5
+;   float FLOAT_00587698 = -2.5
+;   float FLOAT_0058769c = 2
+;   float FLOAT_005876a0 = -1.5
 ;   undefined4 DAT_01bd1d84
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -144,40 +144,40 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 004c3d94
     MOV dword ptr [ESP + 0x2c],EAX      ; 004c3d97
     FILD dword ptr [ESP + 0x2c]         ; 004c3d9b
-    FMUL double ptr [0x0058767c]        ; 004c3d9f | DAT_0058767c
+    FMUL double ptr [0x0058767c]        ; 004c3d9f | DOUBLE_0058767c
     FLD ST0                             ; 004c3da5
     FMUL ST1                            ; 004c3da7
     FLD ST0                             ; 004c3da9
     FMUL ST2                            ; 004c3dab
     FLD ST1                             ; 004c3dad
-    FMUL float ptr [0x0058769c]         ; 004c3daf | DAT_0058769c
+    FMUL float ptr [0x0058769c]         ; 004c3daf | FLOAT_0058769c
     FLD ST1                             ; 004c3db5
-    FMUL float ptr [0x00587684]         ; 004c3db7 | DAT_00587684
+    FMUL float ptr [0x00587684]         ; 004c3db7 | FLOAT_00587684
     FLD ST2                             ; 004c3dbd
-    FMUL float ptr [0x00587694]         ; 004c3dbf | DAT_00587694
+    FMUL float ptr [0x00587694]         ; 004c3dbf | FLOAT_00587694
     FLD ST3                             ; 004c3dc5
     FXCH ST2                            ; 004c3dc7
     FADD ST0,ST5                        ; 004c3dc9
     FXCH ST2                            ; 004c3dcb
-    FMUL float ptr [0x005876a0]         ; 004c3dcd | DAT_005876a0
+    FMUL float ptr [0x005876a0]         ; 004c3dcd | FLOAT_005876a0
     FXCH ST6                            ; 004c3dd3
-    FMUL float ptr [0x00587688]         ; 004c3dd5 | DAT_00587688
+    FMUL float ptr [0x00587688]         ; 004c3dd5 | FLOAT_00587688
     FXCH ST4                            ; 004c3ddb
-    FMUL float ptr [0x00587688]         ; 004c3ddd | DAT_00587688
+    FMUL float ptr [0x00587688]         ; 004c3ddd | FLOAT_00587688
     FXCH ST4                            ; 004c3de3
     FSTP float ptr [ESP + 0x2c]         ; 004c3de5
     FXCH                                ; 004c3de9
     FSUB float ptr [ESP + 0x2c]         ; 004c3deb
     FLD ST4                             ; 004c3def
-    FMUL float ptr [0x00587688]         ; 004c3df1 | DAT_00587688
+    FMUL float ptr [0x00587688]         ; 004c3df1 | FLOAT_00587688
     FXCH                                ; 004c3df7
-    FMUL double ptr [0x0058768c]        ; 004c3df9 | DAT_0058768c
+    FMUL double ptr [0x0058768c]        ; 004c3df9 | DOUBLE_0058768c
     FXCH                                ; 004c3dff
     FSUBP ST4,ST0                       ; 004c3e01
     FXCH ST4                            ; 004c3e03
-    FMUL float ptr [0x00587698]         ; 004c3e05 | DAT_00587698
+    FMUL float ptr [0x00587698]         ; 004c3e05 | FLOAT_00587698
     FXCH ST3                            ; 004c3e0b
-    FMUL double ptr [0x0058768c]        ; 004c3e0d | DAT_0058768c
+    FMUL double ptr [0x0058768c]        ; 004c3e0d | DOUBLE_0058768c
     FXCH ST3                            ; 004c3e13
     FADDP                               ; 004c3e15
     FXCH ST4                            ; 004c3e17
@@ -186,9 +186,9 @@ section .text
     FADDP ST4,ST0                       ; 004c3e1d
     FADD float ptr [ESP + 0x2c]         ; 004c3e1f
     FXCH ST3                            ; 004c3e23
-    FMUL double ptr [0x0058768c]        ; 004c3e25 | DAT_0058768c
+    FMUL double ptr [0x0058768c]        ; 004c3e25 | DOUBLE_0058768c
     FXCH ST3                            ; 004c3e2b
-    FMUL double ptr [0x0058768c]        ; 004c3e2d | DAT_0058768c
+    FMUL double ptr [0x0058768c]        ; 004c3e2d | DOUBLE_0058768c
     SHL EBX,0x2                         ; 004c3e33
     MOV ECX,dword ptr [EDX + 0x14]      ; 004c3e36
     ADD EBX,EDX                         ; 004c3e39

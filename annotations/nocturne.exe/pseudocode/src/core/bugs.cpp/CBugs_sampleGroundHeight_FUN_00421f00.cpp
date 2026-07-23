@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2)
 
 {
@@ -25,7 +23,7 @@ uint core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param
   uVar9 = 0x421f40;
   fVar4 = (float10)round
                              ((float10)((param_2 - *(float *)(param_1 + 0x19854)) *
-                                       (1.0 / _DAT_0059aea8)));
+                                       (1.0 / 0.5f)));
   uVar8 = 0x421f47;
   fVar5 = (float10)round();
   local_18 = (int)ROUND(fVar4);

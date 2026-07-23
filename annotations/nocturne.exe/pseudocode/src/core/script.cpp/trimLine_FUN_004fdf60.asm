@@ -8,7 +8,7 @@
 ;   FUN_004fee30 at 004fee78
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058e01d
+;   TerminatedCString s_anon_0058e01d
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 004fdf86 (CONDITIONAL_JUMP)  ; LAB_004fdf86
     POP EDI                             ; 004fdf9e
         ;   Label: LAB_004fdf9e
-    PUSH 0x58e01d                       ; 004fdf9f | DAT_0058e01d
+    PUSH 0x58e01d                       ; 004fdf9f | = "//"
     PUSH EBX                            ; 004fdfa4
     CALL crt_string.c_strstr_FUN_00566fe0 ; 004fdfa5
         ;   XREF to: 00566fe0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_strstr_FUN_00566fe0()

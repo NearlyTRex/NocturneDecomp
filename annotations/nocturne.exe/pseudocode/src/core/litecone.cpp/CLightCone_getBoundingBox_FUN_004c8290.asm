@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00587add
+;   double DOUBLE_00587add = 18
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c8293
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c8297
     FLD float ptr [EDX + 0x150]         ; 004c829b
-    FDIVR double ptr [0x00587add]       ; 004c82a1 | DAT_00587add
+    FDIVR double ptr [0x00587add]       ; 004c82a1 | DOUBLE_00587add
     FMUL float ptr [EDX + 0x154]        ; 004c82a7
     MOV dword ptr [EAX + 0x8],0x0       ; 004c82ad
     FSTP float ptr [ESP]                ; 004c82b4

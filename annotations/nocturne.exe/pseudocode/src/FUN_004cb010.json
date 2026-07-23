@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 289,
-    "complexity_score": 355,
+    "complexity_score": 339,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 110,
-    "suspect_count": 23,
+    "pseudocode_lines": 109,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 399
+    "total_lines": 398
   },
   "cross_references": [
     {
@@ -201,8 +200,8 @@
   "globals": [
     {
       "addr": "00587fca",
-      "name": "s_manpuz-chargegemloop-red.wav_00587fc8+2",
-      "type": "undefined4",
+      "name": "s_manpuz_chargegemloop_red_00587fca",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -219,21 +218,21 @@
     },
     {
       "addr": "00588026",
-      "name": "DAT_00588026",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00588026",
+      "type": "float",
+      "value": "255"
     },
     {
       "addr": "005a0044",
-      "name": "DAT_005a0044",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0044",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005a0048",
-      "name": "DAT_005a0048",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0048",
+      "type": "float",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -373,16 +372,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_004cb010(int param_1,int param_2,float param_3)",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void FUN_004cb010(int param_1,int param_2,float param_3)",
@@ -398,23 +389,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void FUN_004cb010(int param_1,int param_2,float param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_28 = param_3 * 255.0f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_28 = param_3 * _DAT_00588026;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);",
@@ -430,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,pfVar12 + 9);",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,param_2,&local_30,&local_2c,&local_24);",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,param_2,&local_30,&local_2c,&local_24);",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "(piVar11 = (int *)(param_1 + 0x5e8 + param_2 * 100), *piVar11 != 0)) &&",
@@ -462,7 +453,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "(piVar11 = (int *)(param_1 + 0x5e8 + param_2 * 100), *piVar11 != 0)) &&",
@@ -470,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
@@ -478,10 +469,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);",
       "type": "unnamed_param"
     },
     {
@@ -489,39 +488,39 @@
       "line": 101,
       "match": "param_1",
       "severity": "mild",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -529,20 +528,12 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_1",
-      "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_2",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);",

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -212,15 +212,15 @@
     },
     {
       "addr": "005969a7",
-      "name": "DAT_005969a7",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005969a7",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005969af",
-      "name": "DAT_005969af",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_005969af",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005a3640",
@@ -676,7 +676,7 @@
       "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(float *)(param_1 + 0x214) * (float)_DAT_005969af <= (float)iStack_18) &&",
+      "text": "if ((*(float *)(param_1 + 0x214) * (float)65536 <= (float)iStack_18) &&",
       "type": "unnamed_param"
     },
     {
@@ -684,7 +684,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "((float)iStack_18 <= *(float *)(param_1 + 0x218) * (float)_DAT_005969af)) {",
+      "text": "((float)iStack_18 <= *(float *)(param_1 + 0x218) * (float)65536)) {",
       "type": "unnamed_param"
     },
     {

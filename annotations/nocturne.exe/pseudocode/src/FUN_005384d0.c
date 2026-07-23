@@ -147,7 +147,7 @@ void FUN_005384d0(int param_1)
                               (param_1 + 0x150,0);
   local_1f08 = local_18;
   if (*(int *)(param_1 + 0x1fabc) < 0x3e19999a) {
-    local_1f08 = (*(float *)(param_1 + 0x1fabc) / _DAT_0059582f) * local_18;
+    local_1f08 = (*(float *)(param_1 + 0x1fabc) / 0.15f) * local_18;
   }
   if (0.85 < *(float *)(param_1 + 0x1fabc)) {
     local_1f08 = ((1.0 - *(float *)(param_1 + 0x1fabc)) / 0.15) * local_1f08;
@@ -177,14 +177,14 @@ void FUN_005384d0(int param_1)
     local_188 = local_158 - local_17c;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_7c,auStack_1ec + 0x17);
     fVar2 = *(float *)(param_1 + 0x158);
-    if ((float)_DAT_0059589f <= fVar2) {
-      local_1ee0 = 1.0 - (fVar2 + (float)_DAT_005958a7) * (float)_DAT_005958af;
+    if ((float)13 <= fVar2) {
+      local_1ee0 = 1.0 - (fVar2 + (float)-13) * (float)0.0769230769230769;
       if (local_1ee0 < 0.0) {
         local_1ee0 = 0.0;
       }
     }
     else {
-      local_1ee0 = fVar2 * (float)_DAT_005958af;
+      local_1ee0 = fVar2 * (float)0.0769230769230769;
     }
     core_xform_cpp_FUN_0055d4a0(local_7c);
     local_360 = auStack_32c[3];
@@ -220,14 +220,14 @@ LAB_00538745:
     local_68[0] = local_e0 - local_b0;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_4c,&local_70);
     fVar2 = *(float *)(param_1 + 0x158);
-    if ((float)_DAT_00595887 <= fVar2) {
-      local_1ef4 = 1.0 - (fVar2 + (float)_DAT_0059588f) * (float)_DAT_00595857;
+    if ((float)24 <= fVar2) {
+      local_1ef4 = 1.0 - (fVar2 + (float)-24) * (float)0.10000000000000001;
       if (local_1ef4 < 0.0) {
         local_1ef4 = 0.0;
       }
     }
     else {
-      local_1ef4 = fVar2 * (float)_DAT_00595897;
+      local_1ef4 = fVar2 * (float)0.041666666666666699;
     }
     core_xform_cpp_FUN_0055d4a0(-local_4c);
     auStack_23c[3] = local_2c0;
@@ -287,10 +287,10 @@ LAB_00538745:
         local_a4 = local_128;
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_148,pfVar12);
         local_24 = SQRT(local_128 * local_128 + local_130 * local_130 + local_12c * local_12c);
-        if (local_24 < _DAT_005a2738) {
+        if (local_24 < 2.7f) {
           pfVar12 = (float *)0x5389fd;
-          fVar11 = (float10)acos((float10)local_24 / (float10)_DAT_005a2738)
-          ;
+          fVar11 = (float10)acos
+                                      ((float10)local_24 / (float10)2.7f);
           local_20 = (float)fVar11;
           core_xform_cpp_FUN_0055d4e0(local_20,pfVar12);
           auStack_2a4[0] = uStack_2d4;
@@ -327,11 +327,11 @@ LAB_00538745:
         puVar6 = local_3b0 + 3;
       }
       else if (iVar3 == 0x17) {
-        local_1ef8 = *(float *)(param_1 + 0x158) * (float)_DAT_00595847;
+        local_1ef8 = *(float *)(param_1 + 0x158) * (float)0.066666666666666693;
         if (1.0 < local_1ef8) {
           local_1ef8 = 1.0;
         }
-        fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,
+        fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)2.7f,
                                  (float10)1);
         local_38 = (float)fVar11;
         core_xform_cpp_FUN_0055d4e0(local_38);
@@ -352,16 +352,16 @@ LAB_00538745:
       else {
         if (iVar3 != 0x18) {
           if (iVar3 == 0x19) {
-            local_1f0c = 1.0 - (*(float *)(param_1 + 0x158) + (float)_DAT_0059583f) *
-                               (float)_DAT_00595847;
+            local_1f0c = 1.0 - (*(float *)(param_1 + 0x158) + (float)-15) *
+                               (float)0.066666666666666693;
             if (local_1f0c < 0.0) {
               local_1f0c = 0.0;
             }
             if (1.0 < local_1f0c) {
               local_1f0c = 1.0;
             }
-            fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738
-                                     ,(float10)1);
+            fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) /
+                                     (float10)2.7f,(float10)1);
             local_34 = (float)fVar11;
             core_xform_cpp_FUN_0055d4e0(local_34);
             local_1f0 = local_260;
@@ -390,7 +390,7 @@ LAB_00538745:
             pfVar12 = (float *)0x539513;
             fVar11 = (float10)atan2
                                         ((float10)local_168 - (float10)*(float *)(param_1 + 0x1fb04)
-                                         ,(float10)_DAT_005a2738);
+                                         ,(float10)2.7f);
             core_xform_cpp_FUN_0055d4a0((float)fVar11,pfVar12);
             iVar3 = local_1c;
             auStack_3ec[2] = uStack_344;
@@ -403,8 +403,8 @@ LAB_00538745:
                       (iVar3,auStack_3ec + 2,local_1ef4,_DAT_02dc9f60,&LAB_0051b650);
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                       (local_1c,auStack_3ec + 2,local_1ef4,_DAT_02dc9f5c,&LAB_0051b650);
-            fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738
-                                     ,(float10)1);
+            fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) /
+                                     (float10)2.7f,(float10)1);
             local_30 = (float)fVar11;
             core_xform_cpp_FUN_0055d4e0(local_30);
             iVar3 = local_1c;
@@ -440,7 +440,7 @@ LAB_00538745:
         local_20 = local_20 - _DAT_02dc9fe8;
         pfVar12 = (float *)0x539214;
         fVar11 = (float10)atan2
-                                    ((float10)local_c0 - (float10)local_20,(float10)_DAT_005a2738);
+                                    ((float10)local_c0 - (float10)local_20,(float10)2.7f);
         core_xform_cpp_FUN_0055d4a0((float)fVar11,pfVar12);
         auStack_294[0] = uStack_384;
         auStack_2bc[(uint)bVar10 * -2 + 0xb] = local_380[(uint)bVar10 * -2];
@@ -453,7 +453,7 @@ LAB_00538745:
                   (param_1 + 0x150,auStack_2bc + 10,local_1ee0,_DAT_02dc9f60,&LAB_0051b650);
         core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                   (local_1c,auStack_2bc + 10,local_1ee0,_DAT_02dc9f5c,&LAB_0051b650);
-        fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)_DAT_005a2738,
+        fVar11 = (float10)fpatan((float10)*(float *)(param_1 + 0x1fb18) / (float10)2.7f,
                                  (float10)1);
         local_34 = (float)fVar11;
         core_xform_cpp_FUN_0055d4e0(local_34);
@@ -482,10 +482,10 @@ LAB_00538745:
       pfVar4 = (float *)(**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,pfVar12);
       fStack_d4 = *pfVar4 + pfVar4[3];
       fStack_d0 = pfVar4[1] + pfVar4[4];
-      local_17c = fStack_d4 * _DAT_0059585f;
+      local_17c = fStack_d4 * 0.5f;
       fStack_cc = pfVar4[2] + pfVar4[5];
-      fStack_178 = fStack_d0 * _DAT_0059585f;
-      fStack_174 = fStack_cc * _DAT_0059585f;
+      fStack_178 = fStack_d0 * 0.5f;
+      fStack_174 = fStack_cc * 0.5f;
       if (&stack0x00000000 != &DAT_02dca09c) {
         _DAT_02dc9f20 = local_17c;
         _DAT_02dc9f24 = fStack_178;
@@ -505,14 +505,14 @@ LAB_00538745:
     fStack_f0 = fStack_120 - fStack_d8;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&uStack_11c,&local_f8);
     local_1edc = *(float *)(param_1 + 0x158);
-    if ((float)_DAT_00595867 <= local_1edc) {
-      local_1edc = 1.0 - (local_1edc + (float)_DAT_0059586f) * (float)_DAT_00595877;
+    if ((float)21 <= local_1edc) {
+      local_1edc = 1.0 - (local_1edc + (float)-21) * (float)0.071428571428571397;
       if (local_1edc < 0.0) {
         local_1edc = 0.0;
       }
     }
     else {
-      local_1edc = local_1edc * (float)_DAT_0059587f;
+      local_1edc = local_1edc * (float)0.047619047619047603;
     }
     core_xform_cpp_FUN_0055d4a0(uStack_11c);
     auStack_284[0] = uStack_1b4;
@@ -557,7 +557,7 @@ LAB_00538751:
   }
   iVar3 = param_1 + 0x150;
   uVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-                    (iVar3,"?draw_holsters2aimPistols" + 1,1);
+                    (iVar3,"draw_holsters2aimPistols",1);
   uVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar5);
   local_2c = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
                        (iVar3,uVar5,0x3f800000);

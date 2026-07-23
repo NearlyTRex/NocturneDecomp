@@ -20,17 +20,17 @@
 ;
 ; Referenced Globals:
 ;   string s_world_0058fb9c
-;   undefined4 DAT_0058fba2
+;   TerminatedCString s_rt_0058fba2
 ;   string s_world_0058fba5
 ;   string s_..\\core\\script.cpp_0058fbab
 ;   string s_Can't_open_world\\%s_0058fbbe
-;   undefined4 DAT_0058fbd2
+;   TerminatedCString s_anon_0058fbd2
 ;   string s_%[^,],_%[^,],_%[^_]_0058fbd4
 ;   string s_..\\core\\script.cpp_0058fbe9
 ;   string s_SCScipt::dbLoad_-_error_parsing_%_0058fbfc
 ;   string s_stranger_0058fc29
-;   undefined1 DAT_0058fc32
-;   undefined1 DAT_0058fc33
+;   TerminatedCString s_anon_0058fc32
+;   undefined4 s_anon_0058fc32+1
 ;   string s_Warning!_Duplicate_wav_string_%s_0058fc34
 ;   undefined4 s_arning!_Duplicate_wav_string_%s_d_0058fc34+1
 ;   string s_%s.wav_0058fc64
@@ -78,7 +78,7 @@ section .text
     PUSH EDI                            ; 00504eaf
         ;   Label: LAB_00504eaf
     PUSH ESI                            ; 00504eb0
-    PUSH 0x58fba2                       ; 00504eb1 | DAT_0058fba2
+    PUSH 0x58fba2                       ; 00504eb1 | = "rt"
     MOV ECX,dword ptr [ESP + 0x348]     ; 00504eb6
     PUSH ECX                            ; 00504ebd
     PUSH 0x58fba5                       ; 00504ebe | = "world"
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
     ADD ESP,0x4                         ; 00504edb
     ADD dword ptr [ESP + 0x330],EAX     ; 00504ede
-    PUSH 0x58fbd2                       ; 00504ee5 | DAT_0058fbd2
+    PUSH 0x58fbd2                       ; 00504ee5 | = " "
         ;   Label: LAB_00504ee5
     PUSH EBP                            ; 00504eea
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00504eeb
@@ -159,16 +159,16 @@ section .text
     TEST EAX,EAX                        ; 00504fa2
     JNZ 0x00504fcc                      ; 00504fa4
         ;   XREF to: 00504fcc (CONDITIONAL_JUMP)  ; LAB_00504fcc
-    MOV ESI,0x58fc32                    ; 00504fa6 | DAT_0058fc32
+    MOV ESI,0x58fc32                    ; 00504fa6 | = "$"
     LEA EDI,[ESP + 0x80]                ; 00504fab
     PUSH EDI                            ; 00504fb2
-    MOV AL,byte ptr [ESI]               ; 00504fb3 | DAT_0058fc32 | = "Warning! Duplicate wav string %s dete..."
+    MOV AL,byte ptr [ESI]               ; 00504fb3 | = "$" | s_Warning!_Duplicate_wav_string_%s_0058fc34
         ;   Label: LAB_00504fb3
     MOV byte ptr [EDI],AL               ; 00504fb5
     CMP AL,0x0                          ; 00504fb7
     JZ 0x00504fcb                       ; 00504fb9
         ;   XREF to: 00504fcb (CONDITIONAL_JUMP)  ; LAB_00504fcb
-    MOV AL,byte ptr [ESI + 0x1]         ; 00504fbb | DAT_0058fc33 | s_arning!_Duplicate_wav_string_%s_d_0058fc34+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 00504fbb | s_anon_0058fc32+1 | s_arning!_Duplicate_wav_string_%s_d_0058fc34+1
     ADD ESI,0x2                         ; 00504fbe
     MOV byte ptr [EDI + 0x1],AL         ; 00504fc1
     ADD EDI,0x2                         ; 00504fc4

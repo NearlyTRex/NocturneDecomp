@@ -27,11 +27,11 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void)
   fVar4 = 0.0;
   iVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0(0);
   if (iVar1 != 0) {
-    fVar4 = (float)(_DAT_02dc84c0 - iVar2) * (float)_DAT_00593b5e;
+    fVar4 = (float)(_DAT_02dc84c0 - iVar2) * (float)8.4771050347222196e-07;
     if (fVar4 < 0.0) {
       fVar4 = 0.0;
     }
-    if ((float)_DAT_00593b66 < fVar4) {
+    if ((float)0.25 < fVar4) {
       fVar4 = 0.25;
     }
   }

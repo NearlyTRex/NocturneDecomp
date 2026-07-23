@@ -85,11 +85,11 @@ LAB_0053f41f:
       local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
                                   (param_1,6);
       iVar5 = 6;
-      if ((float)_DAT_00595e0f < local_14) {
-        fVar1 = param_2 * (float)_DAT_00595e07 + *(float *)(param_1 + 0x1fa4c);
+      if ((float)0.98999999999999999 < local_14) {
+        fVar1 = param_2 * (float)25 + *(float *)(param_1 + 0x1fa4c);
         *(float *)(param_1 + 0x1fa4c) = fVar1;
-        if (0x428C0000 < fVar1) {
-          *(float *)(param_1 + 0x1fa4c) = 0x428C0000;
+        if (70.0f < fVar1) {
+          *(float *)(param_1 + 0x1fa4c) = 70.0f;
         }
         if (*(int *)(param_1 + 0xbca0) == 0) goto switchD_0053f7b3_caseD_3;
         goto LAB_0053f38b;
@@ -210,7 +210,7 @@ joined_r0x0053f88b:
           (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,local_54);
         }
         *(uint *)(param_1 + 0x1faa0) = 0;
-        *(uint *)(param_1 + 0x1fa4c) = 0x41200000;
+        *(float *)(param_1 + 0x1fa4c) = 10.0f;
       }
       if (1.0 <= *(float *)(param_1 + 0x2a88)) {
         *(uint *)(param_1 + 0x2a84) = 0;

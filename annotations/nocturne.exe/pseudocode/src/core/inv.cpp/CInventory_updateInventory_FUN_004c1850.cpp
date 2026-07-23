@@ -28,7 +28,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
     param_1[0x117] = *(float *)((int)param_1[0xcc] + 0x560);
   }
   if ((*(int *)(0x01C775EC + 0x244) == 0) && (*(int *)(0x01C775EC + 0x240) == 0)) {
-    local_20 = 1.0 / _DAT_0059f7f4;
+    local_20 = 1.0 / 120.0f;
     iVar3 = 0;
     pfVar5 = param_1;
     if (0 < (int)param_1[2]) {
@@ -41,7 +41,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
         pfVar5 = pfVar5 + 1;
       } while (iVar3 < (int)param_1[2]);
     }
-    fVar2 = (float)_DAT_00587409;
+    fVar2 = (float)100;
     fVar1 = *(float *)(0x01C775EC + 0x264) * fVar2 * local_20 + *param_1;
     *param_1 = fVar1;
     if (fVar2 < fVar1) {
@@ -50,7 +50,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
   }
   else {
     iVar3 = 0;
-    local_1c = 0x41F00000;
+    local_1c = 30.0f;
     pfVar5 = param_1;
     if (0 < (int)param_1[2]) {
       do {
@@ -62,7 +62,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
         pfVar5 = pfVar5 + 1;
       } while (iVar3 < (int)param_1[2]);
     }
-    fVar1 = *param_1 - (*(float *)(0x01C775EC + 0x264) * (float)_DAT_00587409) / local_1c;
+    fVar1 = *param_1 - (*(float *)(0x01C775EC + 0x264) * (float)100) / local_1c;
     *param_1 = fVar1;
     if (fVar1 < 0.0) {
       *param_1 = 0.0;

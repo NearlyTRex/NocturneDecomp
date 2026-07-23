@@ -18,8 +18,8 @@
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cfaf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590a15
-;   undefined4 DAT_00590a19
+;   float FLOAT_00590a15 = -1
+;   float FLOAT_00590a19 = 150
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
@@ -62,11 +62,11 @@ section .text
     PUSH EAX                            ; 0050f95d
     LEA EAX,[ESP + 0xc]                 ; 0050f95e
     FXCH                                ; 0050f962
-    FADD float ptr [0x00590a15]         ; 0050f964 | DAT_00590a15
+    FADD float ptr [0x00590a15]         ; 0050f964 | FLOAT_00590a15
     PUSH EAX                            ; 0050f96a
     LEA EAX,[ESP + 0x1c]                ; 0050f96b
     FXCH                                ; 0050f96f
-    FADD float ptr [0x00590a19]         ; 0050f971 | DAT_00590a19
+    FADD float ptr [0x00590a19]         ; 0050f971 | FLOAT_00590a19
     PUSH EAX                            ; 0050f977
     FXCH                                ; 0050f978
     FSTP float ptr [ESP + 0x24]         ; 0050f97a

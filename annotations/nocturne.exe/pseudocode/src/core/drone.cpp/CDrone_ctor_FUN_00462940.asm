@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   string s_drone.dfm_0057de8b
-;   undefined4 DAT_0059c6fc
+;   float FLOAT_0059c6fc = 50
 ;   undefined4 DAT_0059c700
 ;   undefined1* PTR_core_drone.cpp_CDrone_setup_FUN_004629b0_0059c714 = 004629b0
 ;
@@ -33,7 +33,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00462962
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     MOV dword ptr [EBX + 0x2dd4],0x3f400000 ; 00462967
-    FLD float ptr [0x0059c6fc]          ; 00462971 | DAT_0059c6fc
+    FLD float ptr [0x0059c6fc]          ; 00462971 | FLOAT_0059c6fc
     MOV dword ptr [EBX + 0x2dd8],0x3fc00000 ; 00462977
     FLD float ptr [0x0059c700]          ; 00462981 | DAT_0059c700
     MOV dword ptr [EBX + 0x2608],0x1    ; 00462987

@@ -51,9 +51,9 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
   local_1c[1] = 0;
   local_1c[2] = 0;
   FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
-  iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058869e,"tridx6.dll");
+  iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058869e,"tridx6.dll");
   bVar2 = false;
-  iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_005886ab,"tri3dfx.dll");
+  iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_005886ab,"tri3dfx.dll");
   if (iVar4 == iVar7) {
     bVar2 = true;
   }
@@ -72,7 +72,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
         iVar7 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
         iVar4 = _DAT_01cc64a8;
         if (iVar7 != 0) {
-          pcVar9 = &DAT_005886b8;
+          pcVar9 = "tri3dfx.dll";
           pcVar11 = &DAT_005c0e80;
           do {
             cVar1 = *pcVar9;
@@ -279,7 +279,7 @@ LAB_004d039c:
       pcVar11[1] = cVar1;
       pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
-    _sprintf(local_120,&DAT_00588902,0x01C775EC[2]);
+    _sprintf(local_120,"%d",0x01C775EC[2]);
     iVar4 = -1;
     pcVar9 = &DAT_01cc6080;
     do {
@@ -534,17 +534,17 @@ LAB_004d0b7a:
         else {
           iVar4 = _stricmp(&DAT_005c0e80,"tridx6.dll");
           if (iVar4 == 0) {
-            pcVar10 = &DAT_00588990;
+            pcVar10 = "tridx7.dll";
             goto LAB_004d0b7a;
           }
           iVar4 = _stricmp(&DAT_005c0e80,"tridx7.dll");
           if (iVar4 == 0) {
-            pcVar10 = &DAT_005889a6;
+            pcVar10 = "trid3d.dll";
             goto LAB_004d0b7a;
           }
           iVar4 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
           if (iVar4 == 0) {
-            pcVar10 = &DAT_005889bd;
+            pcVar10 = "trid3d.dll";
             goto LAB_004d0b7a;
           }
         }

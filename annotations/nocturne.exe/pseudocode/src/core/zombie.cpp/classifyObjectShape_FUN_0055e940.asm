@@ -14,9 +14,9 @@
 ;   core_zombie.cpp_FUN_00561010 at 0056164e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005983ce
-;   undefined4 DAT_005983d6
-;   undefined4 DAT_005983de
+;   double DOUBLE_005983ce = 2
+;   double DOUBLE_005983d6 = 0.700000000000000
+;   double DOUBLE_005983de = 6
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x8]       ; 0055e949
     FLD float ptr [EDX]                 ; 0055e94c
     FST double ptr [ESP + 0x8]          ; 0055e94e
-    FCOMP double ptr [0x005983ce]       ; 0055e952 | DAT_005983ce
+    FCOMP double ptr [0x005983ce]       ; 0055e952 | DOUBLE_005983ce
     FNSTSW AX                           ; 0055e958
     SAHF                                ; 0055e95a
     JC 0x0055ea18                       ; 0055e95b
@@ -52,13 +52,13 @@ section .text
         ;   XREF to: 0055e9b2 (CONDITIONAL_JUMP)  ; LAB_0055e9b2
     FLD float ptr [EDX + 0x8]           ; 0055e978
     FST double ptr [ESP + 0x20]         ; 0055e97b
-    FCOMP double ptr [0x005983ce]       ; 0055e97f | DAT_005983ce
+    FCOMP double ptr [0x005983ce]       ; 0055e97f | DOUBLE_005983ce
     FNSTSW AX                           ; 0055e985
     SAHF                                ; 0055e987
     JBE 0x0055e9b2                      ; 0055e988
         ;   XREF to: 0055e9b2 (CONDITIONAL_JUMP)  ; LAB_0055e9b2
     FLD double ptr [ESP + 0x20]         ; 0055e98a
-    FCOMP double ptr [0x005983de]       ; 0055e98e | DAT_005983de
+    FCOMP double ptr [0x005983de]       ; 0055e98e | DOUBLE_005983de
     FNSTSW AX                           ; 0055e994
     SAHF                                ; 0055e996
     JNC 0x0055e9b2                      ; 0055e997
@@ -99,7 +99,7 @@ section .text
     JNC 0x0055ea7b                      ; 0055e9e1
         ;   XREF to: 0055ea7b (CONDITIONAL_JUMP)  ; LAB_0055ea7b
     FLD double ptr [ESP + 0x10]         ; 0055e9e7
-    FCOMP double ptr [0x005983ce]       ; 0055e9eb | DAT_005983ce
+    FCOMP double ptr [0x005983ce]       ; 0055e9eb | DOUBLE_005983ce
     FNSTSW AX                           ; 0055e9f1
     SAHF                                ; 0055e9f3
     JNC 0x0055ea7b                      ; 0055e9f4
@@ -123,32 +123,32 @@ section .text
     FLD float ptr [EDX + 0x4]           ; 0055ea18
         ;   Label: LAB_0055ea18
     FST double ptr [ESP + 0x18]         ; 0055ea1b
-    FCOMP double ptr [0x005983ce]       ; 0055ea1f | DAT_005983ce
+    FCOMP double ptr [0x005983ce]       ; 0055ea1f | DOUBLE_005983ce
     FNSTSW AX                           ; 0055ea25
     SAHF                                ; 0055ea27
     JNC 0x0055e961                      ; 0055ea28
         ;   XREF to: 0055e961 (CONDITIONAL_JUMP)  ; LAB_0055e961
     FLD float ptr [EDX + 0x8]           ; 0055ea2e
     FST double ptr [ESP]                ; 0055ea31
-    FCOMP double ptr [0x005983ce]       ; 0055ea34 | DAT_005983ce
+    FCOMP double ptr [0x005983ce]       ; 0055ea34 | DOUBLE_005983ce
     FNSTSW AX                           ; 0055ea3a
     SAHF                                ; 0055ea3c
     JNC 0x0055e961                      ; 0055ea3d
         ;   XREF to: 0055e961 (CONDITIONAL_JUMP)  ; LAB_0055e961
     FLD double ptr [ESP + 0x8]          ; 0055ea43
-    FCOMP double ptr [0x005983d6]       ; 0055ea47 | DAT_005983d6
+    FCOMP double ptr [0x005983d6]       ; 0055ea47 | DOUBLE_005983d6
     FNSTSW AX                           ; 0055ea4d
     SAHF                                ; 0055ea4f
     JBE 0x0055e961                      ; 0055ea50
         ;   XREF to: 0055e961 (CONDITIONAL_JUMP)  ; LAB_0055e961
     FLD double ptr [ESP + 0x18]         ; 0055ea56
-    FCOMP double ptr [0x005983d6]       ; 0055ea5a | DAT_005983d6
+    FCOMP double ptr [0x005983d6]       ; 0055ea5a | DOUBLE_005983d6
     FNSTSW AX                           ; 0055ea60
     SAHF                                ; 0055ea62
     JBE 0x0055e961                      ; 0055ea63
         ;   XREF to: 0055e961 (CONDITIONAL_JUMP)  ; LAB_0055e961
     FLD double ptr [ESP]                ; 0055ea69
-    FCOMP double ptr [0x005983d6]       ; 0055ea6c | DAT_005983d6
+    FCOMP double ptr [0x005983d6]       ; 0055ea6c | DOUBLE_005983d6
     FNSTSW AX                           ; 0055ea72
     SAHF                                ; 0055ea74
     JBE 0x0055e961                      ; 0055ea75

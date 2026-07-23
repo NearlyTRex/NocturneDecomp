@@ -15,7 +15,7 @@ uint __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0(uint param_
     return 1;
   }
   if ((param_3 == 0) &&
-     (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,&DAT_00587411), iVar1 != 0)) {
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CGun"), iVar1 != 0)) {
     return 1;
   }
   if (param_3 == 1) {

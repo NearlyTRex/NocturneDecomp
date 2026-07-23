@@ -87,7 +87,7 @@ void core_tvbat_cpp_CTVBat_process_FUN_0054b460(int param_1,float param_2)
       *(uint *)(param_1 + 0xbeb0) = *(uint *)(iVar6 + 0x24);
       *(uint *)(param_1 + 0xbeb4) = *(uint *)(iVar6 + 0x28);
     }
-    *(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + _DAT_00596fbd;
+    *(float *)(param_1 + 0xbeb0) = *(float *)(param_1 + 0xbeb0) + 4.0f;
   }
   iVar6 = *(int *)(param_1 + 0xbee0);
   if (iVar6 == 2) {
@@ -101,7 +101,7 @@ void core_tvbat_cpp_CTVBat_process_FUN_0054b460(int param_1,float param_2)
     local_dc = *pfVar1;
     local_d8 = *(float *)(param_1 + 0x24);
     local_d4 = *(float *)(param_1 + 0x28);
-    *(float *)(param_1 + 0xbed8) = param_2 * (float)_DAT_00597005 + *(float *)(param_1 + 0xbed8);
+    *(float *)(param_1 + 0xbed8) = param_2 * (float)-32 + *(float *)(param_1 + 0xbed8);
     local_94 = *(float *)(param_1 + 0xbed4) * param_2;
     local_90 = *(float *)(param_1 + 0xbed8) * param_2;
     local_8c = *(float *)(param_1 + 0xbedc) * param_2;
@@ -109,12 +109,12 @@ void core_tvbat_cpp_CTVBat_process_FUN_0054b460(int param_1,float param_2)
     *(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + local_90;
     *(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + local_8c;
     *(float *)(param_1 + 0x38) =
-         param_2 * *(float *)(param_1 + 0xbec0) * _DAT_0059700d + *(float *)(param_1 + 0x38);
+         param_2 * *(float *)(param_1 + 0xbec0) * 2.0f + *(float *)(param_1 + 0x38);
     fVar5 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00();
     if ((0.0 <= fVar5) && (fVar5 < 1.0)) {
-      fVar2 = (*(float *)(param_1 + 0x24) - local_d8) * fVar5 * _DAT_00597011;
-      fVar3 = (*(float *)(param_1 + 0x28) - local_d4) * fVar5 * _DAT_00597011;
-      *pfVar1 = local_dc + (*pfVar1 - local_dc) * fVar5 * _DAT_00597011;
+      fVar2 = (*(float *)(param_1 + 0x24) - local_d8) * fVar5 * 0.8f;
+      fVar3 = (*(float *)(param_1 + 0x28) - local_d4) * fVar5 * 0.8f;
+      *pfVar1 = local_dc + (*pfVar1 - local_dc) * fVar5 * 0.8f;
       *(float *)(param_1 + 0x24) = local_d8 + fVar2;
       *(float *)(param_1 + 0x28) = local_d4 + fVar3;
       *(uint *)(param_1 + 0xbedc) = 0;
@@ -126,7 +126,7 @@ void core_tvbat_cpp_CTVBat_process_FUN_0054b460(int param_1,float param_2)
       local_84 = local_d8 - *(float *)(param_1 + 0x24);
       local_80 = local_d4 - *(float *)(param_1 + 0x28);
     }
-    if ((float)_DAT_00597015 <=
+    if ((float)0.10000000000000001 <=
         SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
       return;
     }
@@ -146,8 +146,8 @@ void core_tvbat_cpp_CTVBat_process_FUN_0054b460(int param_1,float param_2)
         local_50 = *(float *)(iVar6 + 0x28);
       }
       local_18 = *(int *)(param_1 + 0x6c) % 8 + -4;
-      local_54 = (float)local_18 * (float)_DAT_00596fcd +
-                 *(float *)(param_1 + 0xbec8) + (float)_DAT_00596fc5 + local_54;
+      local_54 = (float)local_18 * (float)0.5 +
+                 *(float *)(param_1 + 0xbec8) + (float)4 + local_54;
       goto LAB_0054b592;
     }
   }
@@ -193,7 +193,7 @@ LAB_0054b592:
       local_54 = *(float *)(iVar6 + 0x24);
       local_50 = *(float *)(iVar6 + 0x28);
     }
-    local_54 = *(float *)(param_1 + 0xbec8) + (float)_DAT_00596fc5 + local_54;
+    local_54 = *(float *)(param_1 + 0xbec8) + (float)4 + local_54;
     *(uint *)(param_1 + 0xbca4) = *(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   }
   local_70 = local_58 - *(float *)(param_1 + 0x20);
@@ -224,8 +224,8 @@ LAB_0054b592:
       local_8c = local_ec;
       local_88 = fStack_e8;
     }
-    if (((fStack_11c <= local_8c) && (local_8c <= fStack_118)) && (local_178 < (float)_DAT_00596fd5)
-       ) {
+    if (((fStack_11c <= local_8c) && (local_8c <= fStack_118)) &&
+       (local_178 < (float)2)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(local_16c);
       fStack_168 = 1.0;
       iStack_138 = param_1;
@@ -251,7 +251,7 @@ LAB_0054b592:
   local_20 = fStack_24;
   fStack_28 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                (fStack_28 - *(float *)(param_1 + 0x30));
-  fVar5 = (float)_DAT_00596fdd;
+  fVar5 = (float)0.33333333333333298;
   *(float *)(param_1 + 0xbed4) = *(float *)(param_1 + 0xbec4) * fStack_3c;
   *(float *)(param_1 + 0xbed8) = *(float *)(param_1 + 0xbec4) * fStack_38;
   *(float *)(param_1 + 0xbedc) = *(float *)(param_1 + 0xbec4) * fStack_44;
@@ -267,15 +267,15 @@ LAB_0054b592:
   local_cc = *(float *)(param_1 + 0x20) - local_84;
   local_c8 = *(float *)(param_1 + 0x24) - local_80;
   fStack_c4 = *(float *)(param_1 + 0x28) - local_7c;
-  local_170 = (local_c8 * (float)_DAT_00596fc5) / param_2 + (float)_DAT_00596fe5;
-  if (local_170 < (float)_DAT_00596fed) {
+  local_170 = (local_c8 * (float)4) / param_2 + (float)35;
+  if (local_170 < (float)10) {
     local_170 = 10.0;
   }
-  if ((float)_DAT_00596ff5 < local_170) {
+  if ((float)60 < local_170) {
     local_170 = 60.0;
   }
   *(float *)(param_1 + 0xbea8) =
-       (local_170 - *(float *)(param_1 + 0xbea8)) * (float)_DAT_00596ffd +
+       (local_170 - *(float *)(param_1 + 0xbea8)) * (float)0.69999999999999996 +
        *(float *)(param_1 + 0xbea8);
   *(float *)(param_1 + 0xbd24) =
        param_2 * *(float *)(param_1 + 0xbea8) * *(float *)(param_1 + 0xbea4) +

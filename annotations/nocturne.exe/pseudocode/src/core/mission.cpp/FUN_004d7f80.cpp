@@ -13,7 +13,7 @@ void FUN_004d7f80(uint param_1,uint param_2)
 {
   int iVar1;
   
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,0x589669);
+  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"wt");
   if (iVar1 == 0) {
     _DAT_01cc4800 = "..\\core\\mission.cpp";
     _DAT_01cc4804 = 0xb6;

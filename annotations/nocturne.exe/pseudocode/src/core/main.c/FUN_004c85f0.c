@@ -42,7 +42,7 @@ void FUN_004c85f0(void)
     DAT_006af628 = 1;
     _DAT_01c038f0 = 1;
   }
-  iVar4 = _fopen("stderr.txt",&DAT_00587b65);
+  iVar4 = _fopen("stderr.txt","rb");
   if (iVar4 != 0) {
     _fclose();
     iVar4 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0("stderr.txt",0x1c0);
@@ -52,7 +52,7 @@ void FUN_004c85f0(void)
       FUN_004c8440();
     }
   }
-  _freopen("stderr.txt",&DAT_00587bb5,&DAT_005c18c8);
+  _freopen("stderr.txt","wt",&DAT_005c18c8);
   DAT_006af628 = 3;
   FUN_0048ee80();
   FUN_004bdb80();
@@ -93,7 +93,7 @@ void FUN_004c85f0(void)
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_228,&DAT_00587cb8,(double)((float)_DAT_02de20a8 * _DAT_00587e64));
+    _sprintf(acStack_228,"%.1f",(double)((float)_DAT_02de20a8 * 9.536743e-07f));
     pcVar8 = acStack_228;
     iVar4 = -1;
     pcVar5 = acStack_528;
@@ -136,7 +136,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = &DAT_00587ccf;
+    pcVar5 = "\n";
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -178,7 +178,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = &DAT_00587d00;
+    pcVar5 = "\n";
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -220,7 +220,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = &DAT_00587d34;
+    pcVar5 = "\n";
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -262,7 +262,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar5 = &DAT_00587d50;
+    pcVar5 = "\n";
     iVar4 = -1;
     pcVar8 = acStack_528;
     do {
@@ -317,7 +317,7 @@ void FUN_004c85f0(void)
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_128,&DAT_00587d8d,(double)((float)_DAT_02de20ac * _DAT_00587e64));
+    _sprintf(acStack_128,"%.1f",(double)((float)_DAT_02de20ac * 9.536743e-07f));
     pcVar10 = acStack_128;
     iVar4 = -1;
     pcVar8 = acStack_728;
@@ -360,7 +360,7 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = &DAT_00587dae;
+    pcVar8 = "\n";
     iVar4 = -1;
     pcVar10 = acStack_728;
     do {
@@ -402,7 +402,7 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = &DAT_00587ddd;
+    pcVar8 = "\n";
     iVar4 = -1;
     pcVar10 = acStack_728;
     do {
@@ -484,27 +484,27 @@ void FUN_004c85f0(void)
     iVar4 = iVar4 + 4;
     iVar6 = iStack_14 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
-              (*puVar1,(float)iStack_14 * (float)_DAT_00587e68 + (float)_DAT_00587e68,0);
+              (*puVar1,(float)iStack_14 * (float)0.125 + (float)0.125,0);
     iStack_14 = iVar6;
   } while (iVar6 < 8);
   iVar6 = 0;
   iVar4 = 0;
   do {
     **(uint **)((int)&DAT_005ad53c + iVar6) = 0x100;
-    fVar3 = (float)_DAT_00587e70;
+    fVar3 = (float)0.25;
     *(uint *)(*(int *)((int)&DAT_005ad53c + iVar6) + 4) = 0x100;
     puVar1 = (uint *)((int)&DAT_005ad53c + iVar6);
     iVar6 = iVar6 + 4;
     iVar7 = iVar4 + 1;
     iStack_14 = iVar4;
     core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
-              (*puVar1,(float)iVar4 * fVar3 + (float)_DAT_00587e70,0);
+              (*puVar1,(float)iVar4 * fVar3 + (float)0.25,0);
     iVar4 = iVar7;
   } while (iVar7 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0();
   FUN_004940d0();
   core_netgame_cpp_CNetGame_init_FUN_004e9910();
   wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0
-            ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_00587e27);
+            ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   return;
 }

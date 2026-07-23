@@ -23,7 +23,7 @@
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080 at 004c40e1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005875d4
+;   double DOUBLE_005875d4 = 65535
 ;
 ; *****************************************************************************
 
@@ -122,7 +122,7 @@ section .text
     FDIV float ptr [EBP + -0x10]        ; 004c3a11
     FLD float ptr [EBP + -0x1c]         ; 004c3a14
     FMUL ST1                            ; 004c3a17
-    FLD double ptr [0x005875d4]         ; 004c3a19 | DAT_005875d4
+    FLD double ptr [0x005875d4]         ; 004c3a19 | DOUBLE_005875d4
     FXCH                                ; 004c3a1f
     FMUL ST1                            ; 004c3a21
     FSTP float ptr [EBP + -0x1c]        ; 004c3a23

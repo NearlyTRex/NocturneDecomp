@@ -28,18 +28,18 @@ int FUN_004edfc0(uint param_1)
   int local_14;
   
   local_1c = 0;
-  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058c922,param_1);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,param_1);
   iVar5 = iVar3;
   if (0 < iVar3) {
-    iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0058c926,param_1,&DAT_0058c923);
+    iVar4 = engine_dosio_cpp_getFile_FUN_00456a60(&CHAR_00h_0058c926,param_1,"rt");
     iVar5 = 0;
     if (iVar4 != 0) {
       local_18 = _ftell(iVar4);
       local_18 = iVar3 + local_18;
       _fgets(local_31c,0xff,iVar4);
-      _fscanf(iVar4,&DAT_0058c927,&local_1c);
+      _fscanf(iVar4,"%d\n",&local_1c);
       _fgets(local_31c,0xff,iVar4);
-      _fscanf(iVar4,&DAT_0058c92b,&DAT_01d16810);
+      _fscanf(iVar4,"%d\n",&DAT_01d16810);
       if (local_1c != 0) {
         _DAT_01cc4800 = "..\\support\\newmsg.cpp";
         _DAT_01cc4804 = 0x52;
@@ -48,7 +48,7 @@ int FUN_004edfc0(uint param_1)
       _fgets(local_31c,0xff,iVar4);
       _fscanf(iVar4,"\"%[^\"]\"\n",&DAT_005bdf50);
       do {
-        _fscanf(iVar4,&DAT_0058c96b);
+        _fscanf(iVar4," ");
         iVar5 = _ftell(iVar4);
         if (local_18 <= iVar5) {
           _fclose(iVar4);

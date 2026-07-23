@@ -8,7 +8,7 @@
 ;   FUN_004c9cf0 at 004c9d2d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a004c
+;   float FLOAT_005a004c = 2
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     JZ 0x004cb95d                       ; 004cb939
         ;   XREF to: 004cb95d (CONDITIONAL_JUMP)  ; LAB_004cb95d
     FLD float ptr [ESP + 0xc]           ; 004cb93b
-    FDIV float ptr [0x005a004c]         ; 004cb93f | DAT_005a004c
+    FDIV float ptr [0x005a004c]         ; 004cb93f | FLOAT_005a004c
     FSUBR float ptr [EDX + 0x18]        ; 004cb945
     FST float ptr [EDX + 0x18]          ; 004cb948
     FLDZ                                ; 004cb94b
@@ -48,7 +48,7 @@ section .text
     RET                                 ; 004cb95c
     FLD float ptr [ESP + 0xc]           ; 004cb95d
         ;   Label: LAB_004cb95d
-    FDIV float ptr [0x005a004c]         ; 004cb961 | DAT_005a004c
+    FDIV float ptr [0x005a004c]         ; 004cb961 | FLOAT_005a004c
     FADD float ptr [EDX + 0x18]         ; 004cb967
     FST float ptr [EDX + 0x18]          ; 004cb96a
     FLD1                                ; 004cb96d

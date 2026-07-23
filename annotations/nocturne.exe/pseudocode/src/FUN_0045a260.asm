@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057d756 = 0.5
-;   undefined4 DAT_0059c408
+;   float FLOAT_0059c408 = 1
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cd4318
@@ -159,7 +159,7 @@ section .text
     FLD float ptr [EBX + 0xbdb4]        ; 0045a36e
     FLD1                                ; 0045a374
     FSUBRP                              ; 0045a376
-    FDIV float ptr [0x0059c408]         ; 0045a378 | DAT_0059c408
+    FDIV float ptr [0x0059c408]         ; 0045a378 | FLOAT_0059c408
     FSTP float ptr [ESP + 0x8]          ; 0045a37e
     FLD float ptr [ESP + 0x8]           ; 0045a382
         ;   Label: LAB_0045a382
@@ -215,7 +215,7 @@ section .text
     FLD float ptr [EBX + 0xbdb4]        ; 0045a409
         ;   Label: LAB_0045a409
     FSUBR double ptr [0x0057d756]       ; 0045a40f | DOUBLE_0057d756
-    FDIV float ptr [0x0059c408]         ; 0045a415 | DAT_0059c408
+    FDIV float ptr [0x0059c408]         ; 0045a415 | FLOAT_0059c408
     FST float ptr [ESP + 0x8]           ; 0045a41b
     FLDZ                                ; 0045a41f
     FCOMPP                              ; 0045a421

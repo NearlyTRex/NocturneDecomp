@@ -41,7 +41,7 @@ void FUN_004feff0(uint *param_1)
   _DAT_01e56c28 = 0;
   param_1[5] = 0;
   splitpath(iVar2,0,0,local_70,0);
-  pcVar3 = &DAT_0058e36d;
+  pcVar3 = ".wav";
   iVar2 = -1;
   pcVar5 = local_70;
   do {
@@ -64,7 +64,7 @@ void FUN_004feff0(uint *param_1)
   } while (cVar1 != '\0');
   iVar2 = _stricmp(local_70,"smill.wav");
   if (iVar2 == 0) {
-    pcVar3 = &DAT_0058e37c;
+    pcVar3 = "@0.85";
     iVar2 = -1;
     pcVar5 = local_70;
     do {
@@ -88,7 +88,7 @@ void FUN_004feff0(uint *param_1)
   }
   iVar2 = _stricmp(local_70,"town.wav");
   if (iVar2 == 0) {
-    pcVar3 = &DAT_0058e38b;
+    pcVar3 = "@0.85";
     iVar2 = -1;
     pcVar5 = local_70;
     do {

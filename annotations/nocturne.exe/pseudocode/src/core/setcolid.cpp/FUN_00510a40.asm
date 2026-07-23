@@ -44,7 +44,7 @@
 ;   string s_info.keyFramedModelInstancePtr_!_00590a42
 ;   string s_..\\core\\setcolid.cpp_00590a8e
 ;   string s_Invalid_collision_type!_00590aa3
-;   undefined4 DAT_00590abd
+;   double DOUBLE_00590abd = -0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_01fba938
@@ -446,7 +446,7 @@ section .text
     FSQRT                               ; 00510fae
     FSUB double ptr [ESP + 0x20]        ; 00510fb0
     FST double ptr [ESP + 0x30]         ; 00510fb4
-    FCOMP double ptr [0x00590abd]       ; 00510fb8 | DAT_00590abd
+    FCOMP double ptr [0x00590abd]       ; 00510fb8 | DOUBLE_00590abd
     FNSTSW AX                           ; 00510fbe
     SAHF                                ; 00510fc0
     JBE 0x00510fd5                      ; 00510fc1

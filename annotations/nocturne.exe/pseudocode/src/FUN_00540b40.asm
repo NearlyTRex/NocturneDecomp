@@ -11,8 +11,8 @@
 ;   undefined4 s_dwing.cth_00596018+1
 ;   undefined4 s_wing.cth_00596018+2
 ;   undefined4 s_ing.cth_00596018+3
-;   undefined4 DAT_005a28cc
-;   undefined4 DAT_005a28d0
+;   float FLOAT_005a28cc = 50
+;   float FLOAT_005a28d0 = 100
 ;   undefined1* PTR_FUN_005a28e4 = 00540c20
 ;
 ; Called Functions:
@@ -66,9 +66,9 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540bb5
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 00540bba
-    FLD float ptr [0x005a28cc]          ; 00540bc4 | DAT_005a28cc
+    FLD float ptr [0x005a28cc]          ; 00540bc4 | FLOAT_005a28cc
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 00540bca
-    FLD float ptr [0x005a28d0]          ; 00540bd4 | DAT_005a28d0
+    FLD float ptr [0x005a28d0]          ; 00540bd4 | FLOAT_005a28d0
     MOV dword ptr [EBX + 0xdfd8],0x1    ; 00540bda
     ADD ESP,0x8                         ; 00540be4
     FXCH                                ; 00540be7

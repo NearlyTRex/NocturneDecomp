@@ -29,11 +29,11 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(int param_1)
   }
   *(uint *)(param_1 + 0x2e8) = 0;
   *(uint *)(param_1 + 0x360) = 0;
-  iVar2 = _stricmp(param_1 + 0x21c,&DAT_0059699b);
+  iVar2 = _stricmp(param_1 + 0x21c,"none");
   if (iVar2 == 0) {
     *(byte *)(param_1 + 0x21c) = 0;
   }
-  iVar2 = _stricmp(param_1 + 0x280,&DAT_005969a0);
+  iVar2 = _stricmp(param_1 + 0x280,"none");
   if (iVar2 == 0) {
     *(byte *)(param_1 + 0x280) = 0;
   }

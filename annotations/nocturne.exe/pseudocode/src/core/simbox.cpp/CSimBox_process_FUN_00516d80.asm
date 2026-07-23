@@ -7,10 +7,10 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00591119
-;   undefined4 DAT_0059111d
-;   undefined4 DAT_00591125
-;   undefined4 DAT_0059112d
+;   float FLOAT_00591119 = 0.00003051851
+;   double DOUBLE_0059111d = -0.5
+;   double DOUBLE_00591125 = 3.14159265350000
+;   double DOUBLE_0059112d = 2
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005bac64
 ;   undefined4 DAT_01cc30e4
@@ -115,25 +115,25 @@ section .text
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516e82
     FILD dword ptr [ESP + 0xc]          ; 00516e86
-    FMUL float ptr [0x00591119]         ; 00516e8a | DAT_00591119
-    FADD double ptr [0x0059111d]        ; 00516e90 | DAT_0059111d
-    FMUL double ptr [0x00591125]        ; 00516e96 | DAT_00591125
+    FMUL float ptr [0x00591119]         ; 00516e8a | FLOAT_00591119
+    FADD double ptr [0x0059111d]        ; 00516e90 | DOUBLE_0059111d
+    FMUL double ptr [0x00591125]        ; 00516e96 | DOUBLE_00591125
     FSTP float ptr [EBX + 0x30]         ; 00516e9c
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00516e9f
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516ea4
     FILD dword ptr [ESP + 0xc]          ; 00516ea8
-    FMUL float ptr [0x00591119]         ; 00516eac | DAT_00591119
-    FMUL double ptr [0x00591125]        ; 00516eb2 | DAT_00591125
-    FMUL double ptr [0x0059112d]        ; 00516eb8 | DAT_0059112d
+    FMUL float ptr [0x00591119]         ; 00516eac | FLOAT_00591119
+    FMUL double ptr [0x00591125]        ; 00516eb2 | DOUBLE_00591125
+    FMUL double ptr [0x0059112d]        ; 00516eb8 | DOUBLE_0059112d
     FSTP float ptr [EBX + 0x38]         ; 00516ebe
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00516ec1
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516ec6
     FILD dword ptr [ESP + 0xc]          ; 00516eca
-    FMUL float ptr [0x00591119]         ; 00516ece | DAT_00591119
-    FMUL double ptr [0x00591125]        ; 00516ed4 | DAT_00591125
-    FMUL double ptr [0x0059112d]        ; 00516eda | DAT_0059112d
+    FMUL float ptr [0x00591119]         ; 00516ece | FLOAT_00591119
+    FMUL double ptr [0x00591125]        ; 00516ed4 | DOUBLE_00591125
+    FMUL double ptr [0x0059112d]        ; 00516eda | DOUBLE_0059112d
     PUSH EBX                            ; 00516ee0
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00516ee1
     FSTP float ptr [EBX + 0x34]         ; 00516ee7

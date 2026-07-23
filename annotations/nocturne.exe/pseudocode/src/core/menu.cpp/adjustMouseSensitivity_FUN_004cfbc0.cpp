@@ -73,7 +73,7 @@ LAB_004cfc23:
                iVar2,4);
     iVar2 = _DAT_01c00c64 + _DAT_01c00c5c;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0
-                      (_DAT_01bcd070,0x41,0xff,0,"%4.2f",(double)iVar3 * _DAT_00588543);
+                      (_DAT_01bcd070,0x41,0xff,0,"%4.2f",(double)iVar3 * 1.52587890625e-05);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
               (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,(iVar2 - iVar1) / 2);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();

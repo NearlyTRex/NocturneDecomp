@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 197,
+    "complexity_score": 182,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -192,8 +191,8 @@
   "globals": [
     {
       "addr": "0058a661",
-      "name": "DAT_0058a661",
-      "type": "undefined4",
+      "name": "s_rb_0058a661",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -356,16 +355,8 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,&DAT_0058a661);",
+      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,\"rb\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0058a661",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"models\",param_1,&DAT_0058a661);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

@@ -43,8 +43,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0053d0d8 = 0053d2d6
-;   undefined4 DAT_00595c97
-;   undefined4 DAT_00595c9f
+;   double DOUBLE_00595c97 = 0.990000000000000
+;   double DOUBLE_00595c9f = 0.950000000000000
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
@@ -105,7 +105,7 @@ section .text
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053d141
     ADD ESP,0x8                         ; 0053d144
     FLD float ptr [EBP + 0x7a]          ; 0053d147
-    FCOMP double ptr [0x00595c97]       ; 0053d14a | DAT_00595c97
+    FCOMP double ptr [0x00595c97]       ; 0053d14a | DOUBLE_00595c97
     FNSTSW AX                           ; 0053d150
     SAHF                                ; 0053d152
     JBE 0x0053d264                      ; 0053d153
@@ -252,7 +252,7 @@ section .text
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053d2e2
     ADD ESP,0x8                         ; 0053d2e5
     FLD float ptr [EBP + 0x7a]          ; 0053d2e8
-    FCOMP double ptr [0x00595c9f]       ; 0053d2eb | DAT_00595c9f
+    FCOMP double ptr [0x00595c9f]       ; 0053d2eb | DOUBLE_00595c9f
     FNSTSW AX                           ; 0053d2f1
     SAHF                                ; 0053d2f3
     JBE 0x0053d2fb                      ; 0053d2f4

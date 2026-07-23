@@ -13,10 +13,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 s_MENUCLD2.RAW_005974aa+1
-;   undefined4 s_ENUCLD2.RAW_005974aa+2
-;   undefined4 s_NUCLD2.RAW_005974aa+3
-;   undefined4 s_UCLD2.RAW_005974aa+4
+;   TerminatedCString s_MENUCLD2_RAW_005974ab
+;   undefined4 s_MENUCLD2_RAW_005974ab+1
+;   undefined4 s_MENUCLD2_RAW_005974ab+2
+;   undefined4 s_MENUCLD2_RAW_005974ab+3
 ;   string s_BWATER%d.RAW_005974b8
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
@@ -102,16 +102,16 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00550421
         ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
     ADD ESP,0x4                         ; 00550426
-    MOV ESI,0x5974ab                    ; 00550429 | s_MENUCLD2.RAW_005974aa+1
+    MOV ESI,0x5974ab                    ; 00550429 | = "MENUCLD2.RAW"
     LEA EDI,[EAX + 0x12c]               ; 0055042e
     PUSH EDI                            ; 00550434
-    MOV AL,byte ptr [ESI]               ; 00550435 | s_MENUCLD2.RAW_005974aa+1 | s_NUCLD2.RAW_005974aa+3
+    MOV AL,byte ptr [ESI]               ; 00550435 | = "MENUCLD2.RAW" | s_MENUCLD2_RAW_005974ab+2
         ;   Label: LAB_00550435
     MOV byte ptr [EDI],AL               ; 00550437
     CMP AL,0x0                          ; 00550439
     JZ 0x0055044d                       ; 0055043b
         ;   XREF to: 0055044d (CONDITIONAL_JUMP)  ; LAB_0055044d
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055043d | s_ENUCLD2.RAW_005974aa+2 | s_UCLD2.RAW_005974aa+4
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055043d | s_MENUCLD2_RAW_005974ab+1 | s_MENUCLD2_RAW_005974ab+3
     ADD ESI,0x2                         ; 00550440
     MOV byte ptr [EDI + 0x1],AL         ; 00550443
     ADD EDI,0x2                         ; 00550446

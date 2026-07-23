@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -157,8 +157,8 @@
   "globals": [
     {
       "addr": "00597473",
-      "name": "s_CHero_00597472+1",
-      "type": "undefined4",
+      "name": "s_CHero_00597473",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -242,7 +242,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"?CHero\" + 1), iVar1 != 0)) {",
+      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"CHero\"), iVar1 != 0)) {",
       "type": "unnamed_param"
     }
   ],

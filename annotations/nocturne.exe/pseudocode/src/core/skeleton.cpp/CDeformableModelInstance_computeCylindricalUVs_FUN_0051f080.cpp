@@ -62,7 +62,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
       }
       else {
         fVar9 = (float10)atan2((float10)*piVar4,(float10)piVar4[2]);
-        fVar9 = (float10)round(fVar9 * (float10)_DAT_00591dcb);
+        fVar9 = (float10)round(fVar9 * (float10)2670176.8577967598);
         iVar2 = param_1 + (int)ROUND(fVar9);
         iVar7 = *DAT_005ae704;
         iVar3 = extraout_ECX;

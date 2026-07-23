@@ -10,8 +10,8 @@
 ;   string s_voicuhurt.wav_005971c9
 ;   string s_VampireBossBitesIt_005971d7
 ;   string s_voicudeath.wav_@_2.5_005971ea
-;   undefined4 DAT_00597205
-;   undefined4 DAT_0059720d
+;   double DOUBLE_00597205 = 2
+;   double DOUBLE_0059720d = 25
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005baf90
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [EDI + 0x4]           ; 0054dd87
     FSUBR float ptr [ESI + 0x2434]      ; 0054dd8a
     FST float ptr [ESI + 0x2434]        ; 0054dd90
-    FCOMP double ptr [0x0059720d]       ; 0054dd96 | DAT_0059720d
+    FCOMP double ptr [0x0059720d]       ; 0054dd96 | DOUBLE_0059720d
     FNSTSW AX                           ; 0054dd9c
     SAHF                                ; 0054dd9e
     JNC 0x0054ddab                      ; 0054dd9f
@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_0054ddf5
     LEA EAX,[EDI + 0x1c]                ; 0054ddf8
     FLD ST0                             ; 0054ddfb
-    FMUL double ptr [0x00597205]        ; 0054ddfd | DAT_00597205
+    FMUL double ptr [0x00597205]        ; 0054ddfd | DOUBLE_00597205
     PUSH EAX                            ; 0054de03
     LEA EAX,[ESP + 0x4]                 ; 0054de04
     XOR EBX,EBX                         ; 0054de08

@@ -31,7 +31,7 @@ uint core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
     iStack_1c = iStack_14;
     iVar6 = iStack_18;
     do {
-      _sprintf(auStack_11c,0x58ce1b,(&PTR_DAT_005be130)[*(byte *)(iVar6 + 0x1e40098)]);
+      _sprintf(auStack_11c,"%s",(&PTR_s_x_005be130)[*(byte *)(iVar6 + 0x1e40098)]);
       if ((iVar3 == _DAT_01e3161c) && (iVar4 == _DAT_01e31620)) {
         auStack_11c[0] = 0x73;
       }

@@ -79,11 +79,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int par
         *(uint *)(param_1 + 0x1fa68) = *(uint *)(param_1 + 0x1fa6c);
         *(uint *)(param_1 + 0x1fa64) = *(uint *)(param_1 + 0x1fa68);
       }
-      fVar2 = param_2 / (_DAT_0059dcb0 * (float)0.5) + *(float *)(param_1 + 0x1fa78);
+      fVar2 = param_2 / (0.3f * (float)0.5) + *(float *)(param_1 + 0x1fa78);
     }
     else if (*(int *)(param_1 + 0x1fa60) == 0) {
       if (0.0 < *(float *)(param_1 + 0x1fa74)) goto LAB_0049915d;
-      fVar2 = *(float *)(param_1 + 0x1fa78) - param_2 / _DAT_0059dcb0;
+      fVar2 = *(float *)(param_1 + 0x1fa78) - param_2 / 0.3f;
     }
     else {
       __arrinit(&local_134,10,&DAT_005993b0);
@@ -122,7 +122,7 @@ LAB_004993c1:
       fStack_94 = fStack_70 - pfVar6[1];
       fStack_90 = fStack_6c - pfVar6[2];
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&uStack_5c,&fStack_98);
-      fVar2 = param_2 / _DAT_0059dcb0;
+      fVar2 = param_2 / 0.3f;
       *(uint *)(param_1 + 0x1fa64) = uStack_5c;
       fVar2 = fVar2 + *(float *)(param_1 + 0x1fa78);
       *(uint *)(param_1 + 0x1fa68) = uStack_58;
@@ -139,7 +139,7 @@ LAB_004993c1:
     if (1.5707964 < *(float *)(param_1 + 0x1fa64)) {
       *(uint *)(param_1 + 0x1fa64) = 0x3fc90fdb;
     }
-    fVar2 = param_2 / _DAT_0059dcb0 + *(float *)(param_1 + 0x1fa78);
+    fVar2 = param_2 / 0.3f + *(float *)(param_1 + 0x1fa78);
     *(uint *)(param_1 + 0x1fa68) = 0;
   }
   *(float *)(param_1 + 0x1fa78) = fVar2;

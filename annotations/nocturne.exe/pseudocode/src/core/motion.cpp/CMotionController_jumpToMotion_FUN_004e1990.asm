@@ -14,7 +14,7 @@
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef87b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b381
+;   float FLOAT_0058b381 = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_004e19f0
@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x4                         ; 004e1991
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e1994
     FLD float ptr [ESP + 0x14]          ; 004e1998
-    FCOMP float ptr [0x0058b381]        ; 004e199c | DAT_0058b381
+    FCOMP float ptr [0x0058b381]        ; 004e199c | FLOAT_0058b381
     FNSTSW AX                           ; 004e19a2
     SAHF                                ; 004e19a4
     JZ 0x004e19ca                       ; 004e19a5

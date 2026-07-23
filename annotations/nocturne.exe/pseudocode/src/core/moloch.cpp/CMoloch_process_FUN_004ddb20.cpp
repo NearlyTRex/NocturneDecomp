@@ -58,11 +58,11 @@ void core_moloch_cpp_CMoloch_process_FUN_004ddb20(int param_1,float param_2)
     uVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0x150,&local_1b14);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar4);
   }
-  fVar2 = (float)_DAT_0058a7d2;
+  fVar2 = (float)12.566370614;
   *(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);
   *(float *)(param_1 + 0x2430) = param_2 * fVar2;
   if (*(int *)(iVar3 + 0x228) != 0) {
-    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0058a7da;
+    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;
   }
   iVar3 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
   if (iVar3 == 0) {
@@ -112,7 +112,7 @@ LAB_004ddc32:
   }
 LAB_004ddc3a:
   if (*(int *)(param_1 + 0x2590) == 0) {
-    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058a7e2;
+    *(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;
     local_38 = *(float *)(param_1 + 0x2420) * param_2;
     local_34 = *(float *)(param_1 + 0x2424) * param_2;
     local_30 = param_2 * *(float *)(param_1 + 0x2428);
@@ -137,13 +137,13 @@ LAB_004ddc3a:
       iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_50,uVar4);
       local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar3 + 4));
       local_1b18 = local_14;
-      if (local_14 < (float)_DAT_0058a7ea) {
-        local_1b18 = local_14 + _DAT_0058a7f2;
+      if (local_14 < (float)-1.57079632675) {
+        local_1b18 = local_14 + 3.141593f;
       }
-      if ((float)_DAT_0058a7fa < local_1b18) {
-        local_1b18 = local_1b18 + _DAT_0058a802;
+      if ((float)1.57079632675 < local_1b18) {
+        local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;
       }
-      local_18 = param_2 * (float)_DAT_0058a80a;
+      local_18 = param_2 * (float)3.1415926535000001;
       local_1c = -local_18;
       if (local_1b18 < local_1c) {
         local_1b18 = local_1c;

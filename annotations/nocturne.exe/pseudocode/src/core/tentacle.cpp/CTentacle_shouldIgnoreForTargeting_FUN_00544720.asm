@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005965f0
+;   TerminatedCString s_wait_005965f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040d830
@@ -20,7 +20,7 @@ section .text
         ;   Label: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720
     MOV EBP,ESP                         ; 00544721
     MOV EAX,dword ptr [EBP + 0x8]       ; 00544723
-    PUSH 0x5965f0                       ; 00544726 | DAT_005965f0
+    PUSH 0x5965f0                       ; 00544726 | = "wait"
     ADD EAX,0x150                       ; 0054472b
     PUSH EAX                            ; 00544730
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00544731

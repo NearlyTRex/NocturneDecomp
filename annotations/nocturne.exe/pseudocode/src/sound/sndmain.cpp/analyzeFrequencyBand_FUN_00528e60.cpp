@@ -89,10 +89,10 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
     if (1 < iVar12) {
       do {
         iVar18 = local_30 / 2;
-        fVar23 = (float10)_DAT_00593aee / (float10)iVar18;
+        fVar23 = (float10)3.1415926535000001 / (float10)iVar18;
         fVar30 = (float10)fcos(fVar23);
         fVar24 = (float10)fsin(fVar23);
-        fVar25 = (float10)_DAT_00593ae6;
+        fVar25 = (float10)2;
         fVar23 = fVar23 * fVar25;
         fVar26 = (float10)fsin(fVar23);
         fVar23 = (float10)fcos(fVar23);
@@ -181,7 +181,7 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
         fVar6 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar6;
       } while (iVar12 < iVar9);
     }
-    return SQRT((fVar6 / (float)iVar9) / (float)iVar18) * (float)_DAT_00593ae6;
+    return SQRT((fVar6 / (float)iVar9) / (float)iVar18) * (float)2;
   }
   return 0.0;
 }

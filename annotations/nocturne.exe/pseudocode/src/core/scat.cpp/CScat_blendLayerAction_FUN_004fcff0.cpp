@@ -40,7 +40,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(int param_1)
     fVar10 = 0.0;
   }
   dVar2 = (double)fVar10;
-  if ((float)_DAT_0058df46 < fVar10) {
+  if ((float)0.0001 < fVar10) {
     if (1.0 < dVar2) {
       fVar10 = 1.0;
     }

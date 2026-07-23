@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 95,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_param",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 109
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -215,15 +214,15 @@
     },
     {
       "addr": "005a28cc",
-      "name": "DAT_005a28cc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a28cc",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005a28d0",
-      "name": "DAT_005a28d0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a28d0",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005a28e4",
@@ -276,16 +275,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int FUN_00540b40(uint param_1)",
@@ -293,7 +284,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
@@ -301,7 +292,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

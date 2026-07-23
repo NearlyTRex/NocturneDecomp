@@ -77,7 +77,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(int param_1,float param_2
   if (*(int *)(param_1 + 0x1fa50) == 0) goto LAB_004fc893;
   local_2c = 0;
   if (*(int *)(*(int *)(param_1 + 0x1fa50) + 0x2d8) == 8) {
-    if (local_7c < (float)_DAT_0058deee) {
+    if (local_7c < (float)8) {
       iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
       if ((*(int *)(iVar5 + 0x24) == 7) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
         *(uint *)(param_1 + 0xbca0) = 1;
@@ -86,9 +86,9 @@ LAB_004fc7c4:
       if (local_2c == 0) goto LAB_004fc893;
     }
   }
-  else if (local_7c < (float)_DAT_0058dede) {
+  else if (local_7c < (float)15) {
     if ((*(int *)(param_1 + 0x1fa3c) != 0) && (iVar5 != 0)) {
-      if (((float)_DAT_0058dee6 < *(float *)(param_1 + 0x2a88)) &&
+      if (((float)0.90000000000000002 < *(float *)(param_1 + 0x2a88)) &&
          (*(int *)(param_1 + 0x1fa64) != 0)) {
         *(uint *)(param_1 + 0xbca0) = 1;
       }
@@ -107,7 +107,7 @@ LAB_004fc7c4:
   if (iVar5 != 0) {
     fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                  (fStack_50 - *(float *)(param_1 + 0x34));
-    fVar1 = fStack_18 * (float)_DAT_0058def6 * (float)_DAT_0058defe;
+    fVar1 = fStack_18 * (float)0.31830988619288902 * (float)4;
     fStack_24 = -local_20;
     *(float *)(param_1 + 0xbcb8) = fVar1;
     if (fVar1 < fStack_24) {
@@ -116,7 +116,7 @@ LAB_004fc7c4:
     if (local_20 < *(float *)(param_1 + 0xbcb8)) {
       *(float *)(param_1 + 0xbcb8) = local_20;
     }
-    if ((float)_DAT_0058df06 <= local_7c) {
+    if ((float)10 <= local_7c) {
       *(uint *)(param_1 + 0xbc9c) = 1;
     }
     *(uint *)(param_1 + 0xbc94) = 1;
@@ -146,11 +146,11 @@ LAB_004fc893:
     fStack_44 = -local_1c;
   }
   fStack_80 = fStack_44 - *(float *)(param_1 + 0x1fa44);
-  if (param_2 * (float)_DAT_0058df0e < fStack_80) {
-    fStack_80 = param_2 * (float)_DAT_0058df0e;
+  if (param_2 * (float)3.1415926535000001 < fStack_80) {
+    fStack_80 = param_2 * (float)3.1415926535000001;
   }
-  if (fStack_80 < param_2 * (float)_DAT_0058df16) {
-    fStack_80 = param_2 * (float)_DAT_0058df16;
+  if (fStack_80 < param_2 * (float)-3.1415926535000001) {
+    fStack_80 = param_2 * (float)-3.1415926535000001;
   }
   *(float *)(param_1 + 0x1fa44) = *(float *)(param_1 + 0x1fa44) + fStack_80;
   return;

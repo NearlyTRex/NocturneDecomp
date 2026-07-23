@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x104]:1  local_104
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005875a3+1
+;   TerminatedCString s_modelName_005875a4
 ;   string s_keyMask_005875ae
 ;   string s_descriptiveName_005875b6
 ;   undefined4 DAT_005bac4c
@@ -30,7 +30,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004c365f
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
     ADD ESP,0x4                         ; 004c3664
-    PUSH 0x5875a4                       ; 004c3667 | s_modelName_005875a3+1
+    PUSH 0x5875a4                       ; 004c3667 | = "modelName"
     LEA EAX,[EBX + 0x150]               ; 004c366c
     PUSH EAX                            ; 004c3672
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 004c3673

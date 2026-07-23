@@ -21,7 +21,7 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10(voi
   dVar2 = _DAT_02dc78e8;
   dVar1 = _DAT_02dc78e0;
   if (DAT_005bea68 == 2) {
-    dVar1 = _DAT_005bea88 * _DAT_005927c6;
+    dVar1 = _DAT_005bea88 * 0.5;
     _DAT_02dc83d8 = _DAT_02dc78e0 - _DAT_02dc7910 * dVar1;
     _DAT_02dc8418 = _DAT_02dc78e8 - _DAT_02dc7918 * dVar1;
     _DAT_02dc8458 = _DAT_02dc78f0 - _DAT_02dc7920 * dVar1;

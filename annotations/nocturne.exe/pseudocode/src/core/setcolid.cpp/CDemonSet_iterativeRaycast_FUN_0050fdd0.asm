@@ -39,8 +39,8 @@
 ;   FUN_0053d100 at 0053d1fe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590a1d
-;   undefined4 DAT_00590a21
+;   float FLOAT_00590a1d = 0.005000000
+;   float FLOAT_00590a21 = 0.1000000
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
@@ -82,7 +82,7 @@ section .text
     MOV dword ptr [ESP + 0x40],ECX      ; 0050fe21
     MOV dword ptr [ESP + 0x44],EDX      ; 0050fe25
     MOV dword ptr [ESP + 0x74],EDX      ; 0050fe29
-    FLD float ptr [0x00590a1d]          ; 0050fe2d | DAT_00590a1d
+    FLD float ptr [0x00590a1d]          ; 0050fe2d | FLOAT_00590a1d
         ;   Label: LAB_0050fe2d
     FLD float ptr [ESP + 0x3c]          ; 0050fe33
     FMUL ST1                            ; 0050fe37
@@ -90,7 +90,7 @@ section .text
     FMUL ST2                            ; 0050fe3d
     FLD float ptr [ESP + 0x44]          ; 0050fe3f
     FMULP ST3                           ; 0050fe43
-    FLD float ptr [0x00590a21]          ; 0050fe45 | DAT_00590a21
+    FLD float ptr [0x00590a21]          ; 0050fe45 | FLOAT_00590a21
     FLD float ptr [ESP + 0x30]          ; 0050fe4b
     FMUL ST1                            ; 0050fe4f
     FLD float ptr [ESP + 0x34]          ; 0050fe51
@@ -217,7 +217,7 @@ section .text
     RET                                 ; 0050ffc1
     FLD float ptr [ESP + 0x8]           ; 0050ffc2
         ;   Label: LAB_0050ffc2
-    FMUL float ptr [0x00590a21]         ; 0050ffc6 | DAT_00590a21
+    FMUL float ptr [0x00590a21]         ; 0050ffc6 | FLOAT_00590a21
     FADD float ptr [ESP + 0x74]         ; 0050ffcc
     FSTP float ptr [ESP + 0x6c]         ; 0050ffd0
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0050ffd4

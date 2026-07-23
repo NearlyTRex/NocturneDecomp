@@ -16,7 +16,7 @@ void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005
   int local_14;
   
   _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,&DAT_00590c5f,&local_18);
+  _fscanf(param_2,"%d\n",&local_18);
   iVar2 = 0;
   if (0 < local_18) {
     do {

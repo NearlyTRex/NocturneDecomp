@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -237,9 +237,9 @@
     },
     {
       "addr": "0059db70",
-      "name": "DAT_0059db70",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059db70",
+      "type": "float",
+      "value": "2300"
     },
     {
       "addr": "01cc4800",
@@ -360,7 +360,7 @@
   "static_analysis": {
     "analyzed_file": "FUN_004950a0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
@@ -368,6 +368,13 @@
           "line": 77,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
+        },
+        {
+          "check_id": "floatConversionOverflow",
+          "column": 22,
+          "line": 34,
+          "message": "Undefined behaviour: float (2300) to integer conversion overflow.",
+          "severity": "error"
         }
       ],
       "error": null

@@ -36,10 +36,10 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(int *param_1)
     param_1[10] = (int)(fVar1 - fVar2);
     if (0.0 <= fVar1 - fVar2) {
       iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,"?noLightningFlash" + 1);
+                        (0x01C03A10,"noLightningFlash");
       if (iVar5 == 0) {
         local_14 = (float)_DAT_01fb96f0;
-        local_18 = (float)_DAT_01fb96f0 * (float)_DAT_00597c49 - local_1c;
+        local_18 = (float)_DAT_01fb96f0 * (float)1.5259021896696401e-05 - local_1c;
         if (local_18 < (float)param_1[0xc]) {
           local_18 = (float)param_1[0xc];
           param_1[9] = 0;
@@ -106,7 +106,7 @@ LAB_005549ac:
           param_1[9] = 1;
           local_14 = (float)_DAT_01fb96f0;
           fVar3 = (float)_DAT_01fb96f0;
-          fVar1 = (float)_DAT_00597c49;
+          fVar1 = (float)1.5259021896696401e-05;
           param_1[0xc] = (int)(fVar3 * fVar1);
           local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                                       (0x3dcccccd,0x3e99999a);
@@ -115,19 +115,19 @@ LAB_005549ac:
             local_2c = 1.0;
           }
           local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                      (0x3c23d70a,local_2c * (float)_DAT_00597c51);
+                                      (0x3c23d70a,local_2c * (float)0.59999999999999998);
           param_1[10] = (int)local_14;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(0x1fb8508,local_2c);
         }
       }
     }
-    if ((float)_DAT_00597c59 <= (float)param_1[0xd]) {
+    if ((float)15 <= (float)param_1[0xd]) {
       param_1[0xd] = 0x41700000;
     }
     else {
       fVar10 = (float10)1;
       fVar8 = (float10)1.4426950408889634 *
-              ((float10)fVar2 * (float10)_DAT_00597c61 +
+              ((float10)fVar2 * (float10)0.10000000000000001 +
               (float10)0.6931471805599453 * (float10)(float)param_1[0xd]);
       fVar9 = (float10)f2xm1(fVar8 - (fVar8 / fVar10) * fVar10);
       fVar10 = (float10)fscale(fVar9 + fVar10,fVar8);

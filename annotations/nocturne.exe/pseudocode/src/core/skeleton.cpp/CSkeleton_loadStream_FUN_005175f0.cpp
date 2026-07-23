@@ -27,7 +27,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
     iVar1 = _fgetc(param_2);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(param_2,&DAT_00591228,&local_24);
+  _fscanf(param_2,"%d\n",&local_24);
   if (local_24 < 1) {
     _DAT_01cc4800 = "..\\core\\skeleton.cpp";
     _DAT_01cc4804 = 0x10d;

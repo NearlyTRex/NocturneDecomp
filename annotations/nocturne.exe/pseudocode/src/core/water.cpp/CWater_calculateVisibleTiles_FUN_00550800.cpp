@@ -54,10 +54,10 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
   if ((*(uint *)(param_1 + 4) & 0x7fffffff) != 0) {
     core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0();
     core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0();
-    fVar2 = (float)_DAT_0059758f;
+    fVar2 = (float)0.5;
     _DAT_02dd1220 = (local_44 + local_8c) * fVar2;
     _DAT_02dd1228 = (local_3c + local_84) * fVar2;
-    local_28 = (local_8c - local_44) * fVar2 * (float)_DAT_00597597;
+    local_28 = (local_8c - local_44) * fVar2 * (float)1.1000000000000001;
     _DAT_02dd1224 = 0.0;
     local_20 = 0.0;
     if (0.0 < local_28) {
@@ -67,7 +67,7 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
     if (local_20 < local_24) {
       local_20 = local_24;
     }
-    local_2c = (local_84 - local_3c) * (float)_DAT_0059758f * (float)_DAT_00597597;
+    local_2c = (local_84 - local_3c) * (float)0.5 * (float)1.1000000000000001;
     if (local_20 < local_2c) {
       local_20 = local_2c;
     }
@@ -108,7 +108,7 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
               iVar7 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190();
               if (iVar7 != 0) {
                 if (0xfff < _DAT_02dd1234) {
-                  _DAT_01cc4800 = "?..\\core\\water.cpp" + 1;
+                  _DAT_01cc4800 = "..\\core\\water.cpp";
                   _DAT_01cc4804 = 0x136;
                   FUN_004c8440();
                 }

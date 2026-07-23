@@ -62,7 +62,7 @@ section .text
     SAHF                                ; 0049498e
     JBE 0x004949a3                      ; 0049498f
         ;   XREF to: 004949a3 (CONDITIONAL_JUMP)  ; LAB_004949a3
-    FLD float ptr [0x0059db70]          ; 00494991 | DAT_0059db70
+    FLD float ptr [0x0059db70]          ; 00494991 | FLOAT_0059db70
     FSUBR float ptr [0x01c71340]        ; 00494997 | DAT_01c71340
     FSTP float ptr [0x01c71340]         ; 0049499d | DAT_01c71340
     PUSH ESI                            ; 004949a3
@@ -302,15 +302,15 @@ section .text
     RET                                 ; 00494c92
     FLD float ptr [ESP + 0x88]          ; 00494c93
         ;   Label: LAB_00494c93
-    FMUL float ptr [0x0059db6c]         ; 00494c9a | DAT_0059db6c
+    FMUL float ptr [0x0059db6c]         ; 00494c9a | FLOAT_0059db6c
     FADD float ptr [ESI + 0x154]        ; 00494ca0
     FST float ptr [ESI + 0x154]         ; 00494ca6
-    FCOMP float ptr [0x0059db70]        ; 00494cac | DAT_0059db70
+    FCOMP float ptr [0x0059db70]        ; 00494cac | FLOAT_0059db70
     FNSTSW AX                           ; 00494cb2
     SAHF                                ; 00494cb4
     JC 0x00494980                       ; 00494cb5
         ;   XREF to: 00494980 (CONDITIONAL_JUMP)  ; LAB_00494980
-    FLD float ptr [0x0059db70]          ; 00494cbb | DAT_0059db70
+    FLD float ptr [0x0059db70]          ; 00494cbb | FLOAT_0059db70
     FSUBR float ptr [ESI + 0x154]       ; 00494cc1
     FSTP float ptr [ESI + 0x154]        ; 00494cc7
     JMP 0x00494980                      ; 00494ccd

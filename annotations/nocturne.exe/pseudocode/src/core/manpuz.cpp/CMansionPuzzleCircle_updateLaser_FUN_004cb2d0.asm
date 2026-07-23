@@ -66,8 +66,8 @@
 ;   FUN_004c9cf0 at 004c9d43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058802a
-;   undefined4 DAT_0058802e
+;   float FLOAT_0058802a = 2
+;   float FLOAT_0058802e = 4
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
@@ -168,10 +168,10 @@ section .text
     FSUB float ptr [EBX + 0x5e0]        ; 004cb3b8
     FSTP float ptr [EBP + 0x2a]         ; 004cb3be
     FLD float ptr [EBX + 0x1504]        ; 004cb3c1
-    FMUL float ptr [0x0058802a]         ; 004cb3c7 | DAT_0058802a
+    FMUL float ptr [0x0058802a]         ; 004cb3c7 | FLOAT_0058802a
     LEA EAX,[EBP + 0x26]                ; 004cb3cd
     ADD ESP,0xc                         ; 004cb3d0
-    FLD float ptr [0x0058802e]          ; 004cb3d3 | DAT_0058802e
+    FLD float ptr [0x0058802e]          ; 004cb3d3 | FLOAT_0058802e
     FLD float ptr [EBP + 0x2a]          ; 004cb3d9
     FMUL ST1                            ; 004cb3dc
     PUSH EAX                            ; 004cb3de

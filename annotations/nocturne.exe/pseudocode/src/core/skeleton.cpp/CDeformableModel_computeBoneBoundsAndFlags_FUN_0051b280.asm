@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\skeleton.cpp_00591aee
-;   undefined4 DAT_00591b03
+;   TerminatedCString s_Bug_00591b03
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -226,7 +226,7 @@ section .text
     MOV EAX,0x591aee                    ; 0051b44d | = "..\\core\\skeleton.cpp"
         ;   Label: LAB_0051b44d
     MOV EDX,0x86b                       ; 0051b452
-    PUSH 0x591b03                       ; 0051b457 | DAT_00591b03
+    PUSH 0x591b03                       ; 0051b457 | = "Bug!"
     MOV [0x01cc4800],EAX                ; 0051b45c | DAT_01cc4800
     MOV dword ptr [0x01cc4804],EDX      ; 0051b461 | DAT_01cc4804
     CALL FUN_004c8440                   ; 0051b467

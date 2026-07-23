@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   string s_wolfbrn.dfm_00597cd3
-;   undefined4 DAT_005a42f0
-;   undefined4 DAT_005a42f4
-;   undefined4 DAT_005a42f8
+;   float FLOAT_005a42f0 = 50
+;   float FLOAT_005a42f4 = 100
+;   float FLOAT_005a42f8 = 10
 ;   undefined1* PTR_core_werewolf.cpp_CWerewolf_setup_FUN_00555b40_005a4314 = 00555b40
 ;
 ; Called Functions:
@@ -38,11 +38,11 @@ section .text
     MOV dword ptr [EBX + 0xbd24],0x0    ; 00555acb
     MOV dword ptr [EBX + 0xbd3c],0x1    ; 00555ad5
     MOV dword ptr [EBX + 0xbd50],0x0    ; 00555adf
-    FLD float ptr [0x005a42f0]          ; 00555ae9 | DAT_005a42f0
+    FLD float ptr [0x005a42f0]          ; 00555ae9 | FLOAT_005a42f0
     MOV dword ptr [EBX + 0xbd54],0x40a00000 ; 00555aef
-    FLD float ptr [0x005a42f4]          ; 00555af9 | DAT_005a42f4
+    FLD float ptr [0x005a42f4]          ; 00555af9 | FLOAT_005a42f4
     MOV dword ptr [EBX + 0xbd58],0x0    ; 00555aff
-    FLD float ptr [0x005a42f8]          ; 00555b09 | DAT_005a42f8
+    FLD float ptr [0x005a42f8]          ; 00555b09 | FLOAT_005a42f8
     MOV dword ptr [EBX + 0xbd5c],0x0    ; 00555b0f
     ADD ESP,0x8                         ; 00555b19
     MOV dword ptr [EBX + 0xbd60],0x0    ; 00555b1c

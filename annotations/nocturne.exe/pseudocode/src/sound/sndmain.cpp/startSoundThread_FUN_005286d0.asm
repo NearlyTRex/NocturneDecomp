@@ -9,7 +9,7 @@
 ;   sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340 at 0052c3c0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005938e6
+;   double DOUBLE_005938e6 = 0.00200000000000000
 ;   undefined4 DAT_02dc84a8
 ;   undefined4 DAT_02dc84ac
 ;   undefined4 DAT_02dc84b0
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 005286e8
     FLD double ptr [EBP + 0xc]          ; 005286eb
     MOV [0x02dc84ac],EAX                ; 005286ee | DAT_02dc84ac
-    FCOMP double ptr [0x005938e6]       ; 005286f3 | DAT_005938e6
+    FCOMP double ptr [0x005938e6]       ; 005286f3 | DOUBLE_005938e6
     FNSTSW AX                           ; 005286f9
     SAHF                                ; 005286fb
     JNC 0x00528714                      ; 005286fc

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_00561cf0(int param_1,int *param_2)
 
 {
@@ -92,7 +90,7 @@ switchD_00561d26_default:
       if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) == 0) {
         param_2[1] = 0x461c3c00;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)_DAT_00598926);
+      param_2[2] = (int)((float)param_2[2] * (float)7);
       if (*(int *)(param_1 + 0xbdf0) < 0) {
         param_2[1] = 0x4479c000;
       }
@@ -100,11 +98,11 @@ switchD_00561d26_default:
   }
   iVar2 = *param_2;
   if (iVar2 == *(int *)(param_1 + 0xbdf8)) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_00598936);
+    param_2[1] = (int)((float)param_2[1] * (float)2.5);
     return;
   }
   if ((iVar2 != *(int *)(param_1 + 0xbdf0)) && (iVar2 != *(int *)(param_1 + 0xbdf4))) {
-    param_2[1] = (int)((float)param_2[1] * (float)_DAT_0059892e);
+    param_2[1] = (int)((float)param_2[1] * (float)0.5);
     return;
   }
   param_2[1] = param_2[1];

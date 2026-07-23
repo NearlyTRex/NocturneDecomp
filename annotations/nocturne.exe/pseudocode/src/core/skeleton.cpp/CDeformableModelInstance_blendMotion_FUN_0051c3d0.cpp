@@ -59,7 +59,7 @@ void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(int par
   int local_18;
   
   bVar13 = 0;
-  if ((float)_DAT_00591b8b < param_4) {
+  if ((float)0.001 < param_4) {
     core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
               (param_1,param_2,param_3,local_58,&local_5c,&local_938);
     iVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
@@ -198,7 +198,7 @@ void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(int par
       }
     }
     else {
-      _DAT_01cc4800 = "MbP?..\\core\\skeleton.cpp" + 4;
+      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
       _DAT_01cc4804 = 0xa82;
       FUN_004c8440("Write me!");
     }

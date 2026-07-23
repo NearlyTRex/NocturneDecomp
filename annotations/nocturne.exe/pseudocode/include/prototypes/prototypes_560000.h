@@ -114,7 +114,7 @@ void FUN_00565c12(void);
 void FUN_00565c50(int param_1,int param_2);
 void __fpustack_safe crt_math_c_asin_FUN_00565c76(void);
 void __fpustack_safe crt_math_c_acos_FUN_00565ca4(float10 param_1);
-LPSTR __cdecl crt_stdlib_c__fullpath_FUN_00565d00(LPSTR param_1,LPCSTR param_2,uint param_3);
+__cdecl char(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3);
 undefined4 __cdecl crt_io_c_getFileStat_FUN_00565dc0(LPCSTR param_1,int *param_2);
 undefined4 __cdecl crt_io_c__utime_00600c1e_FUN_00565dc6(LPCSTR param_1,undefined4 *param_2);
 undefined4 __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(LPCSTR param_1,byte param_2);

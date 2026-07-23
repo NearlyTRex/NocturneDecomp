@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   string s_hotdemon.dfm_00585df7
-;   undefined4 DAT_0059f0c0
-;   undefined4 DAT_0059f0c4
+;   float FLOAT_0059f0c0 = 50
+;   float FLOAT_0059f0c4 = 100
 ;   undefined1* PTR_core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00_0059f0d4 = 004b8d00
 ;
 ; Called Functions:
@@ -35,8 +35,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x59f0d4 ; 004b8cbb | PTR_core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00_0059f0d4
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b8cc2
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
-    FLD float ptr [0x0059f0c0]          ; 004b8cc7 | DAT_0059f0c0
-    FLD float ptr [0x0059f0c4]          ; 004b8ccd | DAT_0059f0c4
+    FLD float ptr [0x0059f0c0]          ; 004b8cc7 | FLOAT_0059f0c0
+    FLD float ptr [0x0059f0c4]          ; 004b8ccd | FLOAT_0059f0c4
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004b8cd3
     ADD ESP,0x8                         ; 004b8cdd
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 004b8ce0

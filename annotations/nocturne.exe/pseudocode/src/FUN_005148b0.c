@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005148b0(char *param_1,char *param_2)
 
 {
@@ -46,7 +44,7 @@ void FUN_005148b0(char *param_1,char *param_2)
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (PTR_DAT_005ad350,"Ambient set low by script\n");
   }
-  if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {
+  if (*(float *)(param_1 + 0x144) <= (float)0.25) {
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60

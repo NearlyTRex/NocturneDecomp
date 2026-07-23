@@ -14,7 +14,7 @@
 ;   undefined4 s_st_specify_actor_name_0058e068+2
 ;   undefined4 s_t_specify_actor_name_0058e068+3
 ;   string s_Actor_variable_%s_not_defined,_o_0058e080
-;   undefined4 DAT_0058e0c6
+;   TerminatedCString s_anon_0058e0c6
 ;   string s_Can't_use_'$'_actor_specifier_in_0058e0c8
 ;   string s_Hero_doesn't_exist!!?!_0058e0f6
 ;   string s_Actor_\"%s\"_does_not_exist._0058e10d
@@ -136,7 +136,7 @@ section .text
     POP ESI                             ; 004fe234
     POP EBX                             ; 004fe235
     RET                                 ; 004fe236
-    PUSH 0x58e0c6                       ; 004fe237 | DAT_0058e0c6
+    PUSH 0x58e0c6                       ; 004fe237 | = "$"
         ;   Label: LAB_004fe237
     PUSH EBX                            ; 004fe23c
     CALL crt_string.c__stricmp_FUN_00564520 ; 004fe23d

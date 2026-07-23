@@ -34,11 +34,11 @@ void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(int param_1,uint param_2)
   core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(param_1,param_2);
   fVar7 = (float10)1;
   fVar5 = (float10)1.4426950408889634 *
-          (float10)*(float *)(param_1 + 0x428) * (float10)_DAT_0058d080 *
+          (float10)*(float *)(param_1 + 0x428) * (float10)-1 *
           (float10)*(float *)(param_1 + 0x42c);
   fVar6 = (float10)f2xm1(fVar5 - (fVar5 / fVar7) * fVar7);
   fVar7 = (float10)fscale(fVar6 + fVar7,fVar5);
-  if (fVar7 <= (float10)_DAT_0058d088) {
+  if (fVar7 <= (float10)0.10000000000000001) {
     *(uint *)(param_1 + 0x438) = 1;
     return;
   }

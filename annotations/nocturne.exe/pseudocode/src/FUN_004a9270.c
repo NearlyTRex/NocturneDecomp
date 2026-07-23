@@ -90,7 +90,7 @@ void FUN_004a9270(int param_1,float param_2)
   byte local_f0 [12];
   uint local_e4;
   uint local_e0;
-  uint local_dc;
+  float local_dc;
   float local_d8;
   float local_d4;
   float local_d0;
@@ -125,7 +125,7 @@ void FUN_004a9270(int param_1,float param_2)
   float local_38;
   float local_34;
   int local_30;
-  uint local_2c;
+  float local_2c;
   float local_28;
   float local_24;
   float local_20;
@@ -154,7 +154,7 @@ switchD_004a9c0a_caseD_e:
           (iVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xec))(), iVar5 == 0)
           ) && (iVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe0))
                                   (*(int *)(param_1 + 0xbca4),param_1), iVar5 != 0)) {
-        local_16c = 0x40200000;
+        local_16c = 2.5f;
         local_174 = 0;
         local_170 = 0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1);
@@ -387,7 +387,7 @@ switchD_004a9c0a_caseD_e:
             iVar6 = *(int *)(param_1 + 0xbd84);
             if (iVar6 == 0) {
               local_fc = 0;
-              local_f4 = 0x40200000;
+              local_f4 = 2.5f;
               local_f8 = 0;
               uVar9 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xbc))
                                 (*(int *)(param_1 + 0xbca4),&local_fc,0x3f800000,0x3e32b8c2);
@@ -407,18 +407,18 @@ switchD_004a9c0a_caseD_e:
                 local_40 = 0.0;
                 local_38 = 0.0;
                 if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd54) * 4) != 0) {
-                  local_24 = (1.0 - ABS(local_48 - 0x4059999A) / 0x4059999A) *
+                  local_24 = (1.0 - ABS(local_48 - 3.4f) / 3.4f) *
                              (float)0.29999999999999999;
                 }
                 if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd4c) * 4) != 0) {
-                  local_40 = (1.0 - ABS(local_48 - 0x40200000) / 0x40200000) *
+                  local_40 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *
                              (float)0.40000000000000002;
                 }
                 local_44 = local_48;
                 iVar6 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe0))
                                   (*(int *)(param_1 + 0xbca4),param_1,0);
                 if (iVar6 != 0) {
-                  local_38 = (1.0 - ABS(local_48 - 0x40200000) / 0x40200000) *
+                  local_38 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *
                              (float)0.29999999999999999;
                 }
                 local_3c = local_24 + local_40;
@@ -488,9 +488,9 @@ switchD_004a9c0a_caseD_e:
           else {
 LAB_004aa6a3:
             if (*(int *)(param_1 + 0xbd34) != 0) {
-              local_2c = 0x40000000;
+              local_2c = 2.0f;
               if (*(int *)(param_1 + 0xbd34) == 0xe) {
-                local_2c = 0x40B00000;
+                local_2c = 5.5f;
               }
               local_dc = local_2c;
               local_e4 = 0;
@@ -537,8 +537,8 @@ LAB_004aa1e6:
             ;
             local_9c = (double)local_50;
             local_14 = local_50;
-            if ((local_50 <= (float)2) && (local_20 = 0x4059999A, 1.0 <= local_9c))
-            {
+            if ((local_50 <= (float)2) && (local_20 = 3.4f, 1.0 <= local_9c)
+               ) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0();
               local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
                                           (0x40e00000,0x41700000);
@@ -680,7 +680,7 @@ LAB_004aaa0a:
       else {
         iVar8 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xec))();
         if (iVar8 == 0) {
-          local_20 = 0x40200000;
+          local_20 = 2.5f;
         }
         else {
           iVar8 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xec))();
@@ -701,7 +701,7 @@ LAB_004aaa0a:
         local_a4 = (double)local_4c;
         local_14 = local_4c;
         if (local_4c <= (float)2) {
-          local_20 = 0x40200000;
+          local_20 = 2.5f;
           if (1.0 <= local_a4) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0();
             local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -830,7 +830,7 @@ LAB_004a93c4:
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (param_1 + 0x150,*(uint *)(param_1 + 0xbd3c),local_60,local_5c,_DAT_01c78c38,
                &LAB_0051b650);
-    fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / _DAT_0059e20c;
+    fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / 0.7f;
     *(float *)(param_1 + 0xbd38) = fVar3;
     if (fVar3 < 0.0) {
       *(uint *)(param_1 + 0xbd38) = 0;

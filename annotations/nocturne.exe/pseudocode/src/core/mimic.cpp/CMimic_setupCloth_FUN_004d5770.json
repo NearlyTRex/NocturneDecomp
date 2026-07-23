@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -194,8 +194,8 @@
   "globals": [
     {
       "addr": "00589487",
-      "name": "s_%s_attacking_hero_00589485+2",
-      "type": "undefined4",
+      "name": "s_s_attacking_hero_00589487",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -403,7 +403,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"@@%s attacking hero\\n\" + 2,param_1);",
+      "text": "(PTR_DAT_005ad350,\"%s attacking hero\\n\",param_1);",
       "type": "unnamed_param"
     },
     {

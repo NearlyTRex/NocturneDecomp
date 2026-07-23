@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 262,
+    "complexity_score": 247,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -195,8 +194,8 @@
   "globals": [
     {
       "addr": "0058b938",
-      "name": "s_sound_0058b937+1",
-      "type": "undefined4",
+      "name": "s_sound_0058b938",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -213,8 +212,8 @@
     },
     {
       "addr": "0058b95d",
-      "name": "DAT_0058b95d",
-      "type": "undefined4",
+      "name": "s_rb_0058b95d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -368,7 +367,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(\">sound\" + 1,param_2);",
+      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"sound\",param_2);",
       "type": "unnamed_param"
     },
     {
@@ -384,16 +383,8 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,&DAT_0058b95d);",
+      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,\"rb\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0058b95d",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,&DAT_0058b95d);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

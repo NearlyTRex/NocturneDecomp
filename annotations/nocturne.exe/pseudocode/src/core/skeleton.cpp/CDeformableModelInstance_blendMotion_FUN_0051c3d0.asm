@@ -48,9 +48,9 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\skeleton.cpp_00591b67+4
+;   TerminatedCString s_core_skeleton_cpp_00591b6b
 ;   string s_Write_me!_00591b80
-;   undefined4 DAT_00591b8b
+;   double DOUBLE_00591b8b = 0.00100000000000000
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -77,7 +77,7 @@ section .text
     SUB ESP,0x924                       ; 0051c3d6
     AND ESP,0xfffffff8                  ; 0051c3dc
     FLD float ptr [EBP + 0x20]          ; 0051c3df
-    FCOMP double ptr [0x00591b8b]       ; 0051c3e2 | DAT_00591b8b
+    FCOMP double ptr [0x00591b8b]       ; 0051c3e2 | DOUBLE_00591b8b
     FNSTSW AX                           ; 0051c3e8
     SAHF                                ; 0051c3ea
     JA 0x0051c3f4                       ; 0051c3eb
@@ -522,7 +522,7 @@ section .text
     ADD ESP,0x8                         ; 0051ca72
     JMP 0x0051c8e7                      ; 0051ca75
         ;   XREF to: 0051c8e7 (UNCONDITIONAL_JUMP)  ; LAB_0051c8e7
-    MOV ECX,0x591b6b                    ; 0051ca7a | s_..\core\skeleton.cpp_00591b67+4
+    MOV ECX,0x591b6b                    ; 0051ca7a | = "..\\core\\skeleton.cpp"
         ;   Label: LAB_0051ca7a
     MOV ESI,0xa82                       ; 0051ca7f
     PUSH 0x591b80                       ; 0051ca84 | = "Write me!"

@@ -65,13 +65,13 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
   local_90 = param_1[2] - param_5[2];
   pfVar1 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                               (local_68,&local_98);
-  local_a4 = *pfVar1 / _DAT_0058cd47;
-  local_9c = _DAT_0058cd4b * pfVar1[2];
+  local_a4 = *pfVar1 / 100.0f;
+  local_9c = 0.01f * pfVar1[2];
   local_18 = 1;
   local_50 = 0.0;
   local_4c = 0.0;
   local_48 = 0.0;
-  local_a0 = -(pfVar1[1] * _DAT_0058cd4b);
+  local_a0 = -(pfVar1[1] * 0.01f);
   switch(param_2) {
   case 1:
     local_48 = 1.0;
@@ -128,7 +128,7 @@ switchD_004eff7e_caseD_1:
 switchD_004eff7e_caseD_2:
     local_80 = 0;
     local_7c = 0;
-    local_48 = local_48 + _DAT_0058cd4f;
+    local_48 = local_48 + 1.5873523201947252e-314._0_4_;
     local_78 = 0xbf800000;
 LAB_004effab:
     local_18 = 2;
@@ -146,7 +146,7 @@ switchD_004eff7e_caseD_4:
     local_18 = 2;
     local_2c = 0xbf800000;
     local_28 = 0;
-    local_50 = local_50 + _DAT_0058cd4f;
+    local_50 = local_50 + 1.5873523201947252e-314._0_4_;
     local_24 = 0;
   }
 switchD_004eff7e_default:
@@ -155,19 +155,19 @@ switchD_004eff7e_default:
     case 1:
       return local_a0;
     case 2:
-      return local_a0 + (float)_DAT_0058cd87;
+      return local_a0 + (float)3.1415926535000001;
     case 3:
-      return local_a0 + (float)_DAT_0058cd7f;
+      return local_a0 + (float)1.57079632675;
     case 4:
-      return local_a0 + (float)_DAT_0058cd77;
+      return local_a0 + (float)-1.57079632675;
     case 5:
-      return local_a0 + (float)_DAT_0058cd6f;
+      return local_a0 + (float)0.78539816337500001;
     case 6:
-      return local_a0 + (float)_DAT_0058cd67;
+      return local_a0 + (float)-0.78539816337500001;
     case 7:
-      return local_a0 + (float)_DAT_0058cd5f;
+      return local_a0 + (float)2.356194490125;
     case 8:
-      return local_a0 + (float)_DAT_0058cd57;
+      return local_a0 + (float)-2.356194490125;
     default:
       _DAT_01cc4800 = "..\\core\\path.cpp";
       _DAT_01cc4804 = 0x183;
@@ -182,7 +182,7 @@ switchD_004eff7e_default:
   case 2:
     local_b0 = 0;
     local_ac = 0;
-    local_48 = local_48 + _DAT_0058cd4f;
+    local_48 = local_48 + 1.5873523201947252e-314._0_4_;
     local_a8 = 0xbf800000;
 LAB_004f0235:
     local_18 = local_18 + 1;
@@ -198,7 +198,7 @@ LAB_004f0235:
     local_18 = local_18 + 1;
     local_38 = 0xbf800000;
     local_34 = 0;
-    local_50 = local_50 + _DAT_0058cd4f;
+    local_50 = local_50 + 1.5873523201947252e-314._0_4_;
     local_30 = 0;
   }
 switchD_004f0211_default:

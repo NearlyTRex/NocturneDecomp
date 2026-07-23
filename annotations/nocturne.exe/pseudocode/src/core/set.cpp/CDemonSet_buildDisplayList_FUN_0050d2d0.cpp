@@ -74,10 +74,10 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(int param_1,ui
           pfVar4 = (float *)(**(code **)(*(int *)(iVar6 + 0x14c) + 0x14))(iVar6,auStack_84);
           fStack_48 = *pfVar4 + pfVar4[3];
           fStack_44 = pfVar4[1] + pfVar4[4];
-          fStack_54 = fStack_48 * _DAT_00590812;
-          fStack_50 = fStack_44 * _DAT_00590812;
+          fStack_54 = fStack_48 * 0.5f;
+          fStack_50 = fStack_44 * 0.5f;
           fStack_40 = pfVar4[2] + pfVar4[5];
-          fStack_4c = fStack_40 * _DAT_00590812;
+          fStack_4c = fStack_40 * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar6);
           *(int *)(&DAT_02080434 + _DAT_02080430 * 8) = iVar6;
           iVar6 = _DAT_02080430 * 8;
@@ -136,7 +136,7 @@ LAB_0050d39b:
     local_14 = local_14 - local_28;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (PTR_DAT_005ad350,"buildDispList %d items : %3.2f ms\n",_DAT_02080430,
-               ((double)local_14 * _DAT_0059081a * _DAT_00590822 * _DAT_0059082a) /
+               ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                (double)*(float *)(0x01C775EC + 0x264));
     return;
   }

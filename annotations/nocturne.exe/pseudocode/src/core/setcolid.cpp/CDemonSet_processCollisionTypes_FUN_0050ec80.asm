@@ -35,8 +35,8 @@
 ;   string s_info.keyFramedModelInstancePtr_!_00590992
 ;   string s_..\\core\\setcolid.cpp_005909de
 ;   string s_Invalid_collision_type!_005909f3
-;   undefined4 DAT_00590a0d
-;   undefined4 DAT_00590a11
+;   float FLOAT_00590a0d = 2
+;   float FLOAT_00590a11 = -10
 ;   undefined4 DAT_005993b0
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -114,7 +114,7 @@ section .text
     MOV dword ptr [ESP + 0x228],EAX     ; 0050ed28
     FLD float ptr [ESP + 0x224]         ; 0050ed2f
         ;   Label: LAB_0050ed2f
-    FADD float ptr [0x00590a0d]         ; 0050ed36 | DAT_00590a0d
+    FADD float ptr [0x00590a0d]         ; 0050ed36 | FLOAT_00590a0d
     MOV EAX,dword ptr [ESP + 0x30c]     ; 0050ed3c
     FSTP float ptr [ESP + 0x224]        ; 0050ed43
     MOV dword ptr [EAX + 0x14cd5c],0x0  ; 0050ed4a
@@ -171,7 +171,7 @@ section .text
     FLD float ptr [ESP + 0x20c]         ; 0050ee45
         ;   Label: LAB_0050ee45
     LEA EAX,[ESP + 0x1b0]               ; 0050ee4c
-    FADD float ptr [0x00590a11]         ; 0050ee53 | DAT_00590a11
+    FADD float ptr [0x00590a11]         ; 0050ee53 | FLOAT_00590a11
     PUSH EAX                            ; 0050ee59
     FSTP float ptr [ESP + 0x210]        ; 0050ee5a
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 0050ee61

@@ -8,10 +8,10 @@
 ;   FUN_005289f0 at 00528b41
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\sound\\sndmain.cpp_005939bd+1
+;   TerminatedCString s_sound_sndmain_cpp_005939be
 ;   string s_setMaxSwSoundLatency_-_can't_do_t_005939d3
-;   undefined4 DAT_00593a0e
-;   undefined4 DAT_00593a16
+;   double DOUBLE_00593a0e = 0.0500000000000000
+;   double DOUBLE_00593a16 = 2
 ;   undefined4 DAT_005bea98
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 005289b9 (CONDITIONAL_JUMP)  ; LAB_005289b9
     FLD float ptr [ESP + 0x4]           ; 00528989
         ;   Label: LAB_00528989
-    FCOMP double ptr [0x00593a0e]       ; 0052898d | DAT_00593a0e
+    FCOMP double ptr [0x00593a0e]       ; 0052898d | DOUBLE_00593a0e
     FNSTSW AX                           ; 00528993
     SAHF                                ; 00528995
     JNC 0x005289a0                      ; 00528996
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x3d4ccccd ; 00528998
     FLD float ptr [ESP + 0x4]           ; 005289a0
         ;   Label: LAB_005289a0
-    FCOMP double ptr [0x00593a16]       ; 005289a4 | DAT_00593a16
+    FCOMP double ptr [0x00593a16]       ; 005289a4 | DOUBLE_00593a16
     FNSTSW AX                           ; 005289aa
     SAHF                                ; 005289ac
     JA 0x005289de                       ; 005289ad
@@ -48,7 +48,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005289af
     MOV [0x005bea98],EAX                ; 005289b3 | DAT_005bea98
     RET                                 ; 005289b8
-    MOV EDX,0x5939be                    ; 005289b9 | s_..\sound\sndmain.cpp_005939bd+1
+    MOV EDX,0x5939be                    ; 005289b9 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_005289b9
     MOV ECX,0x1329                      ; 005289be
     PUSH 0x5939d3                       ; 005289c3 | = "setMaxSwSoundLatency - can't do this ..."

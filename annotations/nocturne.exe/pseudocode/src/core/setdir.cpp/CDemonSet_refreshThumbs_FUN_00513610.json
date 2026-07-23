@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 138,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -186,14 +186,14 @@
   "globals": [
     {
       "addr": "00590c05",
-      "name": "DAT_00590c05",
-      "type": "undefined4",
+      "name": "s_rb_00590c05",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00590c08",
-      "name": "DAT_00590c08",
-      "type": "undefined4",
+      "name": "s_data_00590c08",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -270,24 +270,8 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00590c08,param_2,&DAT_00590c05);",
+      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(\"data\",param_2,\"rb\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00590c08",
-      "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00590c08,param_2,&DAT_00590c05);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00590c05",
-      "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00590c08,param_2,&DAT_00590c05);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

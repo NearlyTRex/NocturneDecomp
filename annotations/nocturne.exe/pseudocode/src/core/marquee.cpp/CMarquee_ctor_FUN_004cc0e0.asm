@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00588193
-;   undefined1 DAT_00588194
-;   undefined1 DAT_00588195
-;   string s_u1.pth_00588196
+;   TerminatedCString s_menu1_pth_00588193
+;   undefined4 s_menu1_pth_00588193+1
+;   undefined4 s_menu1_pth_00588193+2
+;   undefined4 s_menu1_pth_00588193+3
 ;   undefined1* PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4 = 004cc2e0
 ;
 ; Called Functions:
@@ -32,19 +32,19 @@ section .text
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 004cc0f5
         ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
     LEA EDX,[EAX + 0xfffffe64]          ; 004cc0fa
-    MOV ESI,0x588193                    ; 004cc100 | DAT_00588193
+    MOV ESI,0x588193                    ; 004cc100 | = "menu1.pth"
     ADD ESP,0x4                         ; 004cc105
     MOV dword ptr [EDX + 0x14c],0x5a02d4 ; 004cc108 | PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4
     LEA EDI,[EDX + 0x150]               ; 004cc112
     MOV dword ptr [EDX + 0x170],0x41200000 ; 004cc118
     PUSH EDI                            ; 004cc122
-    MOV AL,byte ptr [ESI]               ; 004cc123 | DAT_00588193 | DAT_00588195
+    MOV AL,byte ptr [ESI]               ; 004cc123 | = "menu1.pth" | s_menu1_pth_00588193+2
         ;   Label: LAB_004cc123
     MOV byte ptr [EDI],AL               ; 004cc125
     CMP AL,0x0                          ; 004cc127
     JZ 0x004cc13b                       ; 004cc129
         ;   XREF to: 004cc13b (CONDITIONAL_JUMP)  ; LAB_004cc13b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004cc12b | DAT_00588194 | = "u1.pth"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004cc12b | s_menu1_pth_00588193+1 | s_menu1_pth_00588193+3
     ADD ESI,0x2                         ; 004cc12e
     MOV byte ptr [EDI + 0x1],AL         ; 004cc131
     ADD EDI,0x2                         ; 004cc134

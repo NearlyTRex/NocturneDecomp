@@ -18,7 +18,7 @@ int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(uint param_1,uint pa
   if (iVar1 != 0) {
     _DAT_02dc84a8 = param_1;
     _DAT_02dc84ac = param_2;
-    if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < _DAT_005938e6) {
+    if (__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) < 0.002) {
       _DAT_02dc84a8 = 0xd2f1a9fc;
       _DAT_02dc84ac = 0x3f60624d;
     }

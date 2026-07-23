@@ -11,7 +11,7 @@
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004cffdb
 ;
 ; Referenced Globals:
-;   undefined4 s_Press_any_key_to_continue._0058854a+1
+;   TerminatedCString s_Press_any_key_to_continu_0058854b
 ;   string s_Monitor_calibration_00588568
 ;   undefined4 DAT_014b9904
 ;
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 004cfe64 (CONDITIONAL_JUMP)  ; LAB_004cfe64
     POP EDI                             ; 004cfe7c
         ;   Label: LAB_004cfe7c
-    PUSH 0x58854b                       ; 004cfe7d | s_Press_any_key_to_continue._0058854a+1
+    PUSH 0x58854b                       ; 004cfe7d | = "  Press any key to continue."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004cfe82
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004cfe87

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
 
 {
@@ -62,8 +60,8 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
   }
   local_28 = 0;
   if (0 < *(int *)(param_1 + 0xbd28)) {
-    fVar11 = _DAT_0059aea8 * 12.0f;
-    fVar12 = _DAT_0059aea8 * -12.0f;
+    fVar11 = 0.5f * 12.0f;
+    fVar12 = 0.5f * -12.0f;
     puVar10 = (uint *)(param_1 + 0xbd4c);
     puVar7 = (uint *)(param_1 + 0xbd40);
     local_2c = (uint *)(param_1 + 0xbd34);

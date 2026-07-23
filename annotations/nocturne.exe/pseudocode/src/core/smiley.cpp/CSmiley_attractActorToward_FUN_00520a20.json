@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -165,9 +165,9 @@
   "globals": [
     {
       "addr": "005920a5",
-      "name": "DAT_005920a5",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005920a5",
+      "type": "float",
+      "value": "-4"
     },
     {
       "addr": "02da8a7c",
@@ -390,7 +390,7 @@
       "line": 31,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fStack_1c = fStack_1c + _DAT_005920a5;",
+      "text": "fStack_1c = fStack_1c + -4.0f;",
       "type": "static_uninitvar"
     }
   ],

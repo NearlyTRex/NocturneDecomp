@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   string s_Ambient_set_low_by_script_00590d03
 ;   string s_Ambient_set_ridiculously_high_00590d1e
-;   undefined4 DAT_00590d41
+;   double DOUBLE_00590d41 = 0.25
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
@@ -87,7 +87,7 @@ section .text
     ADD ESP,0x8                         ; 0051494e
     FLD float ptr [EBX + 0x144]         ; 00514951
         ;   Label: LAB_00514951
-    FCOMP double ptr [0x00590d41]       ; 00514957 | DAT_00590d41
+    FCOMP double ptr [0x00590d41]       ; 00514957 | DOUBLE_00590d41
     FNSTSW AX                           ; 0051495d
     SAHF                                ; 0051495f
     JA 0x00514966                       ; 00514960

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 311,
+    "complexity_score": 291,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 81,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -196,32 +196,32 @@
     },
     {
       "addr": "0058cf83",
-      "name": "DAT_0058cf83",
-      "type": "undefined1",
+      "name": "s_RAW_0058cf83",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058cf84",
-      "name": "DAT_0058cf84",
-      "type": "undefined1",
+      "name": "s_RAW_0058cf83+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cf85",
-      "name": "DAT_0058cf85",
-      "type": "undefined1",
+      "name": "s_RAW_0058cf83+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cf86",
-      "name": "DAT_0058cf86",
-      "type": "undefined1",
+      "name": "s_RAW_0058cf83+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cf88",
-      "name": "DAT_0058cf88",
-      "type": "undefined4",
+      "name": "s_wb_0058cf88",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -486,22 +486,6 @@
       "severity": "mild",
       "text": "param_1 = param_1 + 2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_0058cf83",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_0058cf83;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_0058cf88",
-      "severity": "mild",
-      "text": "iVar2 = _fopen(local_6c,&DAT_0058cf88);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

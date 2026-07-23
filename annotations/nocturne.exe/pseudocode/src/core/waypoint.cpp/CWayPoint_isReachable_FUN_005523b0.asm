@@ -16,10 +16,10 @@
 ;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 at 005526a0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00597748
-;   undefined4 DAT_00597750
-;   undefined4 DAT_00597758
-;   undefined4 DAT_00597760
+;   double DOUBLE_00597748 = 10
+;   double DOUBLE_00597750 = 30
+;   double DOUBLE_00597758 = 8
+;   double DOUBLE_00597760 = 25
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600
@@ -52,21 +52,21 @@ section .text
         ;   XREF to: 0055241d (CONDITIONAL_JUMP)  ; LAB_0055241d
     FLD float ptr [ESP + 0x10]          ; 005523e3
     FABS                                ; 005523e7
-    FCOMP double ptr [0x00597758]       ; 005523e9 | DAT_00597758
+    FCOMP double ptr [0x00597758]       ; 005523e9 | DOUBLE_00597758
     FNSTSW AX                           ; 005523ef
     SAHF                                ; 005523f1
     JA 0x00552416                       ; 005523f2
         ;   XREF to: 00552416 (CONDITIONAL_JUMP)  ; LAB_00552416
     FLD float ptr [ESP + 0xc]           ; 005523f4
     FABS                                ; 005523f8
-    FCOMP double ptr [0x00597760]       ; 005523fa | DAT_00597760
+    FCOMP double ptr [0x00597760]       ; 005523fa | DOUBLE_00597760
     FNSTSW AX                           ; 00552400
     SAHF                                ; 00552402
     JA 0x00552416                       ; 00552403
         ;   XREF to: 00552416 (CONDITIONAL_JUMP)  ; LAB_00552416
     FLD float ptr [ESP + 0x14]          ; 00552405
     FABS                                ; 00552409
-    FCOMP double ptr [0x00597760]       ; 0055240b | DAT_00597760
+    FCOMP double ptr [0x00597760]       ; 0055240b | DOUBLE_00597760
     FNSTSW AX                           ; 00552411
     SAHF                                ; 00552413
     JBE 0x00552457                      ; 00552414
@@ -80,21 +80,21 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0055241d
         ;   Label: LAB_0055241d
     FABS                                ; 00552421
-    FCOMP double ptr [0x00597748]       ; 00552423 | DAT_00597748
+    FCOMP double ptr [0x00597748]       ; 00552423 | DOUBLE_00597748
     FNSTSW AX                           ; 00552429
     SAHF                                ; 0055242b
     JA 0x00552416                       ; 0055242c
         ;   XREF to: 00552416 (CONDITIONAL_JUMP)  ; LAB_00552416
     FLD float ptr [ESP + 0xc]           ; 0055242e
     FABS                                ; 00552432
-    FCOMP double ptr [0x00597750]       ; 00552434 | DAT_00597750
+    FCOMP double ptr [0x00597750]       ; 00552434 | DOUBLE_00597750
     FNSTSW AX                           ; 0055243a
     SAHF                                ; 0055243c
     JA 0x00552416                       ; 0055243d
         ;   XREF to: 00552416 (CONDITIONAL_JUMP)  ; LAB_00552416
     FLD float ptr [ESP + 0x14]          ; 0055243f
     FABS                                ; 00552443
-    FCOMP double ptr [0x00597750]       ; 00552445 | DAT_00597750
+    FCOMP double ptr [0x00597750]       ; 00552445 | DOUBLE_00597750
     FNSTSW AX                           ; 0055244b
     SAHF                                ; 0055244d
     JBE 0x00552457                      ; 0055244e

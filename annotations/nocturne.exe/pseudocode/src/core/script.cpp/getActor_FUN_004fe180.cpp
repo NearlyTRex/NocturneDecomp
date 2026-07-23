@@ -48,7 +48,7 @@ int __cdecl core_script_cpp_getActor_FUN_004fe180(char *param_1,uint param_2,uin
     }
   }
   else {
-    iVar2 = _stricmp(param_1,&DAT_0058e0c6);
+    iVar2 = _stricmp(param_1,"$");
     if (iVar2 == 0) {
       if (*0x01CEA280 != 0) {
         _sprintf(&DAT_01e56420,"Can't use '$' actor specifier in multi-player");

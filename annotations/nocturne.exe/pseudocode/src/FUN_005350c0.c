@@ -9,7 +9,7 @@
 int FUN_005350c0(uint param_1)
 
 {
-  uint uVar1;
+  float fVar1;
   int iVar2;
   int iVar3;
   
@@ -38,9 +38,9 @@ int FUN_005350c0(uint param_1)
   *(uint *)(iVar3 + -0xa8) = 0;
   *(uint *)(iVar3 + -0x9c) = 0;
   *(uint *)(iVar3 + -0x98) = 0;
-  uVar1 = 0x41200000;
+  fVar1 = 10.0f;
   *(uint *)(iVar3 + -0x94) = 0;
-  *(uint *)(iVar3 + -0xf4) = uVar1;
+  *(float *)(iVar3 + -0xf4) = fVar1;
   *(uint *)(iVar3 + -0x28) = 0xf149f2ca;
   *(uint *)(iVar3 + -0x40) = 0xf149f2ca;
   *(uint *)(iVar3 + -0xe4) = *(uint *)(iVar3 + -0xe8);
@@ -48,7 +48,7 @@ int FUN_005350c0(uint param_1)
   *(uint *)(iVar3 + -0xc4) = *(uint *)(iVar3 + -200);
   *(uint *)(iVar3 + -0xcc) = *(uint *)(iVar3 + -0xd0);
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (iVar3 + -0x1f9f0,"p?stranger.dfm" + 2);
+            (iVar3 + -0x1f9f0,"stranger.dfm");
   *(uint *)(iVar3 + -0x1d0bc) = 0;
   *(uint *)(iVar3 + -0xac) = 0;
   *(uint *)(iVar3 + -0x88) = 0;

@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526ac0
 ;
 ; Referenced Globals:
-;   undefined4 s_allocateHwSample_-_failed_005927cd+1
+;   TerminatedCString s_allocateHwSample_failed_005927ce
 ;   undefined4 DAT_02dc1ed8
 ;   undefined4 DAT_02dc216c
 ;   undefined4 DAT_02dc2170
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005239b1
     JL 0x00523973                       ; 005239b4
         ;   XREF to: 00523973 (CONDITIONAL_JUMP)  ; LAB_00523973
-    PUSH 0x5927ce                       ; 005239b6 | s_allocateHwSample_-_failed_005927cd+1
+    PUSH 0x5927ce                       ; 005239b6 | = "allocateHwSample - failed\n"
     CALL FUN_00529980                   ; 005239bb
         ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
     ADD ESP,0x4                         ; 005239c0

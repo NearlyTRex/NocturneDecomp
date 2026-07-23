@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 276,
+    "complexity_score": 241,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -176,14 +175,14 @@
   "globals": [
     {
       "addr": "0058cb6f",
-      "name": "DAT_0058cb6f",
-      "type": "undefined4",
+      "name": "s_DIE_0058cb6f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058cb73",
-      "name": "DAT_0058cb73",
-      "type": "undefined4",
+      "name": "s_HURT_0058cb73",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -194,8 +193,8 @@
     },
     {
       "addr": "0058cb7f",
-      "name": "DAT_0058cb7f",
-      "type": "undefined4",
+      "name": "s_SHOT_0058cb7f",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -358,14 +357,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0058cb6f",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb6f);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_2",
@@ -380,22 +371,6 @@
       "severity": "mild",
       "text": "else if ((0.0 < *(float *)(param_2 + 4)) && (*(int *)(param_1 + 0x2590) == 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0058cb73",
-      "severity": "mild",
-      "text": "iVar3 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb73);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0058cb7f",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(iVar2,&DAT_0058cb7f);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

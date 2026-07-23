@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string s_nbride2.dfm_0057d4ac
-;   undefined4 DAT_0059c3f0
-;   undefined4 DAT_0059c3f4
+;   float FLOAT_0059c3f0 = 50
+;   float FLOAT_0059c3f4 = 100
 ;   undefined1* PTR_core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730_0059c414 = 00458730
 ;
 ; Called Functions:
@@ -38,9 +38,9 @@ section .text
     MOV dword ptr [EBX + 0x2dd8],0x3f800000 ; 00458674
     MOV byte ptr [EBX + 0xbd48],0x0     ; 0045867e
     MOV dword ptr [EBX + 0x2434],0x43070000 ; 00458685
-    FLD float ptr [0x0059c3f0]          ; 0045868f | DAT_0059c3f0
+    FLD float ptr [0x0059c3f0]          ; 0045868f | FLOAT_0059c3f0
     MOV dword ptr [EBX + 0xbdb0],0x0    ; 00458695
-    FLD float ptr [0x0059c3f4]          ; 0045869f | DAT_0059c3f4
+    FLD float ptr [0x0059c3f4]          ; 0045869f | FLOAT_0059c3f4
     MOV dword ptr [EBX + 0xbdb4],0x0    ; 004586a5
     LEA EAX,[EBX + 0xbdc0]              ; 004586af
     FXCH                                ; 004586b5

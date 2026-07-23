@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1110,
-    "complexity_score": 1391,
+    "complexity_score": 1321,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 104,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 596,
-    "suspect_count": 74,
+    "suspect_count": 67,
     "suspect_types": [
       "dropped_loop_counter",
       "raw_address_constant",
@@ -261,9 +261,9 @@
     },
     {
       "addr": "0058869e",
-      "name": "DAT_0058869e",
-      "type": "undefined4",
-      "value": null
+      "name": "CHAR_00h_0058869e",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "0058869f",
@@ -273,9 +273,9 @@
     },
     {
       "addr": "005886ab",
-      "name": "DAT_005886ab",
-      "type": "undefined4",
-      "value": null
+      "name": "CHAR_00h_005886ab",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005886ac",
@@ -285,26 +285,26 @@
     },
     {
       "addr": "005886b8",
-      "name": "DAT_005886b8",
-      "type": "undefined1",
+      "name": "s_tri3dfx_dll_005886b8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005886b9",
-      "name": "DAT_005886b9",
-      "type": "undefined1",
+      "name": "s_tri3dfx_dll_005886b8+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005886ba",
-      "name": "DAT_005886ba",
-      "type": "undefined1",
+      "name": "s_tri3dfx_dll_005886b8+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005886bb",
-      "name": "s_3dfx.dll_005886bb",
-      "type": "string",
+      "name": "s_tri3dfx_dll_005886b8+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -507,8 +507,8 @@
     },
     {
       "addr": "00588902",
-      "name": "DAT_00588902",
-      "type": "undefined4",
+      "name": "s_d_00588902",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -591,14 +591,14 @@
     },
     {
       "addr": "00588990",
-      "name": "DAT_00588990",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_00588990",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00588991",
-      "name": "s_ridx7.dll_00588991",
-      "type": "string",
+      "name": "s_tridx7_dll_00588990+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -609,14 +609,14 @@
     },
     {
       "addr": "005889a6",
-      "name": "DAT_005889a6",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005889a6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005889a7",
-      "name": "s_rid3d.dll_005889a7",
-      "type": "string",
+      "name": "s_trid3d_dll_005889a6+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -627,14 +627,14 @@
     },
     {
       "addr": "005889bd",
-      "name": "DAT_005889bd",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005889bd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005889be",
-      "name": "s_rid3d.dll_005889be",
-      "type": "string",
+      "name": "s_trid3d_dll_005889bd+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -1070,22 +1070,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0058869e",
-      "severity": "mild",
-      "text": "iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058869e,\"tridx6.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005886ab",
-      "severity": "mild",
-      "text": "iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_005886ab,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_01cc652c",
       "severity": "mild",
@@ -1098,14 +1082,6 @@
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar7 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005886b8",
-      "severity": "mild",
-      "text": "pcVar9 = &DAT_005886b8;",
       "type": "undefined_data"
     },
     {
@@ -1254,14 +1230,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 275,
-      "match": "DAT_00588902",
-      "severity": "mild",
-      "text": "_sprintf(local_120,&DAT_00588902,0x01C775EC[2]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 277,
       "match": "DAT_01cc6080",
       "severity": "mild",
@@ -1358,14 +1326,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 530,
-      "match": "DAT_00588990",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_00588990;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 533,
       "match": "DAT_005c0e80",
       "severity": "mild",
@@ -1374,26 +1334,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 535,
-      "match": "DAT_005889a6",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_005889a6;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 538,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar4 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 540,
-      "match": "DAT_005889bd",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_005889bd;",
       "type": "undefined_data"
     },
     {

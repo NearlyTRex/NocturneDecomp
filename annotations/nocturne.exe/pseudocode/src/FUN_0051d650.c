@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint param_5,uint param_6)
 
@@ -32,7 +31,7 @@ void FUN_0051d650(uint param_1,float *param_2,float param_3,uint param_4,uint pa
   byte auStack_14 [12];
   
   bVar2 = 0;
-  if (param_3 <= (float)_DAT_00591bc3) {
+  if (param_3 <= (float)0.001) {
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);

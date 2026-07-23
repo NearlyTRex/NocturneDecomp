@@ -31,7 +31,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int param_1)
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
     core_moon_cpp_CMoon_update_FUN_004deae0(0x1cc5780,*(uint *)(0x01C775EC + 0x264));
     core_moon_cpp_CMoon_render_FUN_004dec50(0x1cc5780);
-    uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("?Graphic options" + 1);
+    uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Graphic options");
     _sprintf(0x1cc7900,uVar2);
     uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound options");
     _sprintf(0x1cc7a00,uVar2);

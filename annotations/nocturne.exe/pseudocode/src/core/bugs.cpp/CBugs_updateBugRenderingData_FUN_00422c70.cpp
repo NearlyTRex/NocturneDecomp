@@ -96,7 +96,7 @@ void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(int param_1,int par
       *(uint *)(param_2 + 0x34) = 0;
     }
     else {
-      fVar4 = _DAT_0059aeac / *(float *)(param_2 + 0x38);
+      fVar4 = 1.0f / *(float *)(param_2 + 0x38);
       iVar9 = 0;
       while( true ) {
         fVar2 = *(float *)(param_2 + 0x34);

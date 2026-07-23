@@ -28,7 +28,7 @@ uint core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(int param_1,int par
   uVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                     (auStack_14,&DAT_02dd1184,_DAT_02da8a7c * 0x30 + param_1 + 0xfd0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_20,uVar2);
-  fStack_1c = fStack_1c + _DAT_005920a5;
+  fStack_1c = fStack_1c + -4.0f;
   (**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,auStack_20,param_2 + 0x30);
   return 1;
 }

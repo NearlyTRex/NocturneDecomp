@@ -80,7 +80,7 @@
 ;   double DOUBLE_00578c87 = 0.523598775583333
 ;   double DOUBLE_00578c8f = 32
 ;   double DOUBLE_00578c97 = 5
-;   undefined4 DAT_0059a14c
+;   float FLOAT_0059a14c = 3.5
 ;   undefined4 DAT_0059a158
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   ... and 12 more
@@ -816,7 +816,7 @@ section .text
     FMUL float ptr [EBP + -0x36]        ; 00413fe0
     FADDP                               ; 00413fe3
     FSQRT                               ; 00413fe5
-    FCOMP float ptr [0x0059a14c]        ; 00413fe7 | DAT_0059a14c
+    FCOMP float ptr [0x0059a14c]        ; 00413fe7 | FLOAT_0059a14c
     FNSTSW AX                           ; 00413fed
     SAHF                                ; 00413fef
     JNC 0x0041403c                      ; 00413ff0
@@ -965,7 +965,7 @@ section .text
     ADD ESP,0xc                         ; 0041416f
     JMP 0x00413900                      ; 00414172
         ;   XREF to: 00413900 (UNCONDITIONAL_JUMP)  ; caseD_c
-    MOV EAX,[0x0059a14c]                ; 00414177 | DAT_0059a14c
+    MOV EAX,[0x0059a14c]                ; 00414177 | FLOAT_0059a14c
         ;   Label: LAB_00414177
     PUSH 0x3e32b8c2                     ; 0041417c
     MOV dword ptr [EBP + 0x5e],EAX      ; 00414181

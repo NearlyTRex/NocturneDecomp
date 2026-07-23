@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(uint param_1)
 
 {
-  uint uVar1;
+  float fVar1;
   int iVar2;
   
   iVar2 = FUN_004b46d0(param_1);
@@ -29,9 +27,9 @@ int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(uint param_1)
   *(uint *)(iVar2 + -0x10) = 0;
   *(uint *)(iVar2 + -0x18) = 0;
   *(uint *)(iVar2 + -4) = 0;
-  uVar1 = _DAT_0059dcdc;
+  fVar1 = 10.0f;
   *(uint *)(iVar2 + -0x28) = 0;
-  *(uint *)(iVar2 + 0x3ab30) = uVar1;
+  *(float *)(iVar2 + 0x3ab30) = fVar1;
   *(uint *)(iVar2 + -0x24) = 0;
   *(uint *)(iVar2 + -0x20) = 0;
   *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -0x10);

@@ -46,17 +46,17 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading set",0);
   core_level_cpp_CLevelLoader_update_FUN_004c59e0(0x01CC3160,uVar2);
   core_set_cpp_CDemonSet_clear_FUN_00506ec0(param_1);
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,&DAT_00590104);
+  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rt");
   if (iVar3 == 0) {
     _DAT_01cc4800 = "..\\core\\set.cpp";
     _DAT_01cc4804 = 0x11b;
     FUN_004c8440("CDemonSet::Unable to open %s",param_2);
   }
-  _fscanf(iVar3,&DAT_0059013b,param_1 + 0x56a31);
-  _fscanf(iVar3,&DAT_0059013f,param_1 + 0x56aab);
-  _fscanf(iVar3,&DAT_00590143,local_228);
-  _fscanf(iVar3,&DAT_00590147,local_128);
-  _fscanf(iVar3,&DAT_0059014b,param_1 + 0x5335a);
+  _fscanf(iVar3,"%d\n",param_1 + 0x56a31);
+  _fscanf(iVar3,"%f\n",param_1 + 0x56aab);
+  _fscanf(iVar3,"%s\n",local_228);
+  _fscanf(iVar3,"%s\n",local_128);
+  _fscanf(iVar3,"%f\n",param_1 + 0x5335a);
   if (param_1[0x56a31] == 0) {
     _fgets(local_228,0xff,iVar3);
     _fgets(local_228,0xff,iVar3);
@@ -79,7 +79,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   _fgets(local_228,0xff,iVar3);
   _fscanf(iVar3,"%d,%s\n",param_1 + 0x56a2b,param_1 + 0x56a2c);
   if (param_1[0x56a31] < 5) {
-    iVar4 = _strnicmp(local_128,&DAT_00590185,4);
+    iVar4 = _strnicmp(local_128,"ndun",4);
     if (iVar4 == 0) {
       *0x02DD1210 = 1;
     }
@@ -89,14 +89,14 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_00590181,0x02DD1210);
+    _fscanf(iVar3,"%d\n",0x02DD1210);
   }
   if (param_1[0x56a31] < 6) {
     param_1[0x58490] = 1;
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_0059018a,param_1 + 0x58490);
+    _fscanf(iVar3,"%d\n",param_1 + 0x58490);
   }
   piVar6 = param_1 + 0x58491;
   if (param_1[0x56a31] < 0xc) {
@@ -117,7 +117,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   }
   piVar6 = param_1 + 0x56a9a;
   if (param_1[0x56a31] < 0xd) {
-    pcVar5 = &DAT_005901a8;
+    pcVar5 = "none";
     param_1[0x56a99] = 0;
     do {
       cVar1 = *pcVar5;
@@ -138,7 +138,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_005901ad,param_1 + 0x584a0);
+    _fscanf(iVar3,"%d\n",param_1 + 0x584a0);
   }
   iVar4 = _strnicmp(local_128,"train",5);
   uVar2 = 0x02DD10C8;
@@ -154,7 +154,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     _fgets(local_228,0xff,iVar3);
   }
   iVar4 = 0;
-  _fscanf(iVar3,&DAT_005901b7,param_1 + 0x6591);
+  _fscanf(iVar3,"%d\n",param_1 + 0x6591);
   if (0 < param_1[0x6591]) {
     piVar6 = param_1 + 0x6592;
     do {
@@ -167,7 +167,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     _fgets(local_228,0xff,iVar3);
   }
   iVar4 = 0;
-  _fscanf(iVar3,&DAT_005901bb,param_1);
+  _fscanf(iVar3,"%d\n",param_1);
   if (0 < *param_1) {
     piVar6 = param_1 + 1;
     do {
@@ -182,7 +182,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     if (iVar4 == 0) {
       param_1[0x56ab4] = 2;
     }
-    iVar4 = _strnicmp(local_128,&DAT_005901ef,4);
+    iVar4 = _strnicmp(local_128,"h109",4);
     if (iVar4 == 0) {
       param_1[0x56ab4] = 0;
     }
@@ -194,7 +194,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     if (iVar4 == 0) {
       param_1[0x56ab4] = 0;
     }
-    iVar4 = _strnicmp(local_128,&DAT_00590201,4);
+    iVar4 = _strnicmp(local_128,"ndun",4);
     if (iVar4 == 0) {
       param_1[0x56ab4] = 3;
     }
@@ -202,9 +202,9 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_005901bf,param_1 + 0x56ab4);
+    _fscanf(iVar3,"%d\n",param_1 + 0x56ab4);
     iVar4 = 0;
-    _fscanf(iVar3,&DAT_005901c3,param_1 + 0x56ab5);
+    _fscanf(iVar3,"%d\n",param_1 + 0x56ab5);
     if (0 < param_1[0x56ab5]) {
       local_38 = param_1 + 0x56ab6;
       local_40 = param_1 + 0x56ac6;
@@ -220,7 +220,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
         _fscanf(iVar3,"%f,%f,%f\n",local_54,local_4c,local_50);
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(piVar6,local_54);
         iVar4 = iVar4 + 1;
-        _fscanf(iVar3,&DAT_005901e5,local_40);
+        _fscanf(iVar3,"%d\n",local_40);
         piVar6 = piVar6 + 0x11;
         local_40 = local_40 + 0x11;
         local_18 = local_18 + 0x11;
@@ -237,7 +237,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     if (iVar4 == 0) {
       param_1[0x57ca5] = 8;
     }
-    iVar4 = _strnicmp(local_128,&DAT_00590210,4);
+    iVar4 = _strnicmp(local_128,"h109",4);
     if (iVar4 == 0) {
       param_1[0x57ca5] = 3;
     }
@@ -253,21 +253,21 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     if (iVar4 == 0) {
       param_1[0x57ca5] = 2;
     }
-    iVar4 = _strnicmp(local_128,&DAT_00590229,4);
+    iVar4 = _strnicmp(local_128,"ndun",4);
     if (iVar4 == 0) {
       param_1[0x57ca5] = 8;
     }
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_00590206,param_1 + 0x57ca5);
+    _fscanf(iVar3,"%d\n",param_1 + 0x57ca5);
   }
   if (param_1[0x56a31] < 0x18) {
     param_1[0x56a25] = 0;
   }
   else {
     _fgets(local_228,0xff,iVar3);
-    _fscanf(iVar3,&DAT_0059022e,param_1 + 0x56a25);
+    _fscanf(iVar3,"%d\n",param_1 + 0x56a25);
   }
   if ((3 < param_1[0x56a31]) && (param_1[0x56a31] < 10)) {
     core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(param_1,iVar3);
@@ -278,7 +278,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   else {
     _fgets(local_228,0xff,iVar3);
     iVar4 = 0;
-    _fscanf(iVar3,&DAT_00590232,param_1 + 0x56c0a);
+    _fscanf(iVar3,"%d\n",param_1 + 0x56c0a);
     if (0 < param_1[0x56c0a]) {
       local_34 = param_1 + 0x56c0b;
       piVar6 = param_1 + 0x56c11;
@@ -339,7 +339,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
       *(char *)((int)piVar8 + 1) = cVar1;
       piVar8 = (int *)((int)piVar8 + 2);
     } while (cVar1 != '\0');
-    iVar3 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_0059026c,piVar6,&DAT_00590269);
+    iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("data",piVar6,"rb");
     if (iVar3 == 0) {
       wincore_windll_cpp_clearScreen_FUN_0052ee70();
       engine_2d_c_drawText_FUN_00402600("Warning!  No .GEO file.  Press any key",0,0);
@@ -390,7 +390,7 @@ LAB_00507898:
     pcVar7 = (char *)0x0;
   }
 LAB_005078c1:
-  pcVar5 = &DAT_005902a7;
+  pcVar5 = ".zth";
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;

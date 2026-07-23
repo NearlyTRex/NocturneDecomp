@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(int param_1)
 
 {
@@ -33,7 +31,7 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(int param_
       local_1c = 0xbfcccccd;
       local_24 = 0x400ccccd;
     }
-    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)_DAT_0058a2d9;
+    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)1.57079632675;
   }
   else {
     local_14 = 0xc0166666;
@@ -44,7 +42,7 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(int param_
       local_1c = 0xbfcccccd;
       local_24 = 0xc00ccccd;
     }
-    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)_DAT_0058a2e1;
+    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)-1.57079632675;
   }
   *(float *)(param_1 + 0x34) = fVar1;
   puVar2 = (uint *)

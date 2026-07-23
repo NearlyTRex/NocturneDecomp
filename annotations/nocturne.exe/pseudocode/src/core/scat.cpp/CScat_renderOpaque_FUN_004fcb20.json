@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 160,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 11,
+    "pseudocode_lines": 34,
+    "suspect_count": 10,
     "suspect_types": [
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 112
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -170,9 +169,9 @@
     },
     {
       "addr": "0058df1e",
-      "name": "DAT_0058df1e",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058df1e",
+      "type": "double",
+      "value": "0.950000000000000"
     }
   ],
   "param_estimates": {
@@ -232,16 +231,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(int param_1)",
@@ -249,7 +240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
@@ -257,7 +248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_1 + 0x1fa50);",
@@ -265,7 +256,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);",
@@ -273,7 +264,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1fa50) != 0) {",
@@ -281,7 +272,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(*(uint *)(*(int *)(param_1 + 0x1fa50) + 0x2d8)) {",
@@ -289,7 +280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,uVar2);",
@@ -297,7 +288,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x1fa50) + 0x14c) + 0xe8))",
@@ -305,7 +296,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x1fa50) + 0x14c) + 0xe8))",
@@ -313,7 +304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x1fa50));",

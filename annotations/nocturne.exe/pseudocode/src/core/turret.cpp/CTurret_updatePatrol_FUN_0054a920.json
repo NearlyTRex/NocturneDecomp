@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 345,
+    "complexity_score": 329,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 26,
+    "pseudocode_lines": 64,
+    "suspect_count": 25,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 217
+    "total_lines": 216
   },
   "cross_references": [
     {
@@ -183,15 +182,15 @@
   "globals": [
     {
       "addr": "00596eb5",
-      "name": "DAT_00596eb5",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00596eb5",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "00596ebd",
-      "name": "DAT_00596ebd",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00596ebd",
+      "type": "float",
+      "value": "25"
     }
   ],
   "param_estimates": {
@@ -290,21 +289,21 @@
         {
           "check_id": "uninitvar",
           "column": 85,
-          "line": 46,
+          "line": 44,
           "message": "Uninitialized variable: fStack_48",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 41,
-          "line": 50,
+          "line": 48,
           "message": "Uninitialized variable: fStack_4c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 85,
-          "line": 50,
+          "line": 48,
           "message": "Uninitialized variable: fStack_40",
           "severity": "error"
         }
@@ -315,16 +314,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)",
@@ -332,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)",
@@ -340,7 +331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(float *)(param_1 + 0x864) <= 0.0) {",
@@ -348,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x778) != 0) {",
@@ -356,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar1 = (float *)(param_1 + 0x844);",
@@ -364,23 +355,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,pfVar1,param_2 * (float)_DAT_00596eb5);",
+      "text": "(param_1,pfVar1,param_2 * (float)0.33333333333333298);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1,pfVar1,param_2 * (float)_DAT_00596eb5);",
+      "text": "(param_1,pfVar1,param_2 * (float)0.33333333333333298);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x778) + 0x14c) + 0x14))",
@@ -388,7 +379,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x778) + 0x14c) + 0x14))",
@@ -396,7 +387,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x778),&fStack_54);",
@@ -404,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_38 = *(float *)(param_1 + 0x848);",
@@ -412,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_34 = *(float *)(param_1 + 0x84c);",
@@ -420,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x844) = fStack_54 * fStack_24 + (1.0 - fStack_24) * fStack_48;",
@@ -428,7 +419,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x84c) = fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;",
@@ -436,7 +427,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x848) = uStack_50;",
@@ -444,7 +435,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x778),auStack_30,pfVar1);",
@@ -452,7 +443,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x848) = pfVar5[1];",
@@ -460,7 +451,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x84c) = pfVar5[2];",
@@ -468,7 +459,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_1 + 0x848) - fStack_38;",
@@ -476,7 +467,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = *(float *)(param_1 + 0x84c) - fStack_34;",
@@ -484,7 +475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (*(float *)(param_1 + 0x2f8) <= 0.0) {",
@@ -492,7 +483,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 66,
+      "line": 64,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xdc))(param_1);",
@@ -500,7 +491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xdc))(param_1);",
@@ -508,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xdc))(param_1);",
@@ -527,7 +518,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_48",
-      "line": 46,
+      "line": 44,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(float *)(param_1 + 0x844) = fStack_54 * fStack_24 + (1.0 - fStack_24) * fStack_48;",
@@ -535,7 +526,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_4c",
-      "line": 50,
+      "line": 48,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(float *)(param_1 + 0x84c) = fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;",
@@ -543,7 +534,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_40",
-      "line": 50,
+      "line": 48,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(float *)(param_1 + 0x84c) = fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;",

@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 124,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -169,26 +168,26 @@
   "globals": [
     {
       "addr": "0058cbd0",
-      "name": "DAT_0058cbd0",
-      "type": "undefined1",
+      "name": "s_wolfbrn_dfm_0058cbd0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0058cbd1",
-      "name": "DAT_0058cbd1",
-      "type": "undefined1",
+      "name": "s_wolfbrn_dfm_0058cbd0+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cbd2",
-      "name": "DAT_0058cbd2",
-      "type": "undefined1",
+      "name": "s_wolfbrn_dfm_0058cbd0+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0058cbd3",
-      "name": "s_fbrn.dfm_0058cbd3",
-      "type": "string",
+      "name": "s_wolfbrn_dfm_0058cbd0+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -309,14 +308,6 @@
       "severity": "mild",
       "text": "iVar2 = FUN_004ee950(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0058cbd0",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0058cbd0;",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

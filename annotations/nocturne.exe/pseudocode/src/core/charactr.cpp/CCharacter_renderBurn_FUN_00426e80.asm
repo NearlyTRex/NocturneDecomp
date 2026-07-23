@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057a002 = 65535
-;   undefined4 DAT_0059b090
+;   float FLOAT_0059b090 = 3
 ;   undefined4 DAT_005ad1fc
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_00765aa0
@@ -105,7 +105,7 @@ section .text
     TEST EDI,EDI                        ; 00426f2b
     JLE 0x00426f74                      ; 00426f2d
         ;   XREF to: 00426f74 (CONDITIONAL_JUMP)  ; LAB_00426f74
-    FLD float ptr [0x0059b090]          ; 00426f2f | DAT_0059b090
+    FLD float ptr [0x0059b090]          ; 00426f2f | FLOAT_0059b090
     FLD double ptr [0x0057a002]         ; 00426f35 | DOUBLE_0057a002
     MOV EDX,EAX                         ; 00426f3b
     FLD float ptr [EDX + 0x2f28]        ; 00426f3d

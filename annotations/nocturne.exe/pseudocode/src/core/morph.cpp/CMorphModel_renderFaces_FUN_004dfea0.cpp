@@ -22,8 +22,8 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(int param_1,flo
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
   iVar2 = 0xffff - _DAT_01c038f4;
   fVar5 = (float10)round
-                             ((float10)param_2 * (float10)_DAT_0058ad6c *
-                              ((float10)_DAT_0058ad74 - (float10)param_2));
+                             ((float10)param_2 * (float10)65535 *
+                              ((float10)2.0f - (float10)param_2));
   lVar1 = (longlong)iVar2 * (longlong)(int)ROUND(fVar5);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (DAT_005ae704,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

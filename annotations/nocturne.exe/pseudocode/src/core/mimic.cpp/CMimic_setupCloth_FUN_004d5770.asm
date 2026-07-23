@@ -10,7 +10,7 @@
 ;   FUN_004d49f0 at 004d4b4b
 ;
 ; Referenced Globals:
-;   undefined4 s_%s_attacking_hero_00589485+2
+;   TerminatedCString s_s_attacking_hero_00589487
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01c71420
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 004d5800
     PUSH EBX                            ; 004d5803
-    PUSH 0x589487                       ; 004d5804 | s_%s_attacking_hero_00589485+2
+    PUSH 0x589487                       ; 004d5804 | = "%s attacking hero\n"
     MOV EBX,dword ptr [0x005ad350]      ; 004d5809 | PTR_DAT_005ad350
     PUSH EBX                            ; 004d580f | DAT_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004d5810

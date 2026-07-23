@@ -8,10 +8,10 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507773
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590cc7
+;   TerminatedCString s_d_00590cc7
 ;   string s_..\\core\\setutil.cpp_00590ccb
 ;   string s_Out_of_memory_for_pvsList_-_%d_00590cdf
-;   undefined4 DAT_00590cfe
+;   TerminatedCString s_d_00590cfe
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -32,7 +32,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 00514807
     LEA EAX,[EDI + 0x190]               ; 0051480b
     PUSH EAX                            ; 00514811
-    PUSH 0x590cc7                       ; 00514812 | DAT_00590cc7
+    PUSH 0x590cc7                       ; 00514812 | = "%d\n"
     PUSH EBP                            ; 00514817
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00514818
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
@@ -65,7 +65,7 @@ section .text
         ;   Label: LAB_0051485c
     ADD EAX,EBX                         ; 00514862
     PUSH EAX                            ; 00514864
-    PUSH 0x590cfe                       ; 00514865 | DAT_00590cfe
+    PUSH 0x590cfe                       ; 00514865 | = "\t%d\n"
     PUSH EBP                            ; 0051486a
     INC ESI                             ; 0051486b
     ADD EBX,0x4                         ; 0051486c

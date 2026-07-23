@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2)
 
 {
@@ -36,8 +34,8 @@ void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,fl
       pfVar3 = (float *)(iVar4 * 0xb8 + param_1 + 0xa98);
       if ((pfVar2[2] - param_2[0xd]) * (pfVar2[2] - param_2[0xd]) +
           (pfVar2[1] - param_2[0xc]) * (pfVar2[1] - param_2[0xc]) +
-          (*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < (float)_DAT_00587f5a) {
-        fVar1 = (float)_DAT_00587f52;
+          (*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < (float)0.25) {
+        fVar1 = (float)0.0039215686274509803;
         pfVar3[6] = (float)(int)param_2[3] * *param_2 * *pfVar3 * fVar1 + pfVar3[6];
         pfVar3[7] = (float)(int)param_2[4] * *param_2 * pfVar3[1] * fVar1 + pfVar3[7];
         pfVar3[8] = (float)(int)param_2[5] * *param_2 * pfVar3[2] * fVar1 + pfVar3[8];

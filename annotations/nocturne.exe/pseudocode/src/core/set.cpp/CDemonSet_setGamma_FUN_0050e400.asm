@@ -13,8 +13,8 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dce1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590872
-;   undefined4 DAT_0059087a
+;   double DOUBLE_00590872 = 0.0000152587890625
+;   double DOUBLE_0059087a = 65536
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 0050e41b
     MOV dword ptr [ESP + 0x8],EAX       ; 0050e41e
     FILD dword ptr [ESP + 0x8]          ; 0050e422
-    FMUL double ptr [0x00590872]        ; 0050e426 | DAT_00590872
+    FMUL double ptr [0x00590872]        ; 0050e426 | DOUBLE_00590872
     MOV ESI,0x100                       ; 0050e42c
     XOR EDX,EDX                         ; 0050e431
     XOR ECX,ECX                         ; 0050e433
@@ -48,12 +48,12 @@ section .text
     MOV dword ptr [ESP + 0x8],EDX       ; 0050e438
         ;   Label: LAB_0050e438
     FILD dword ptr [ESP + 0x8]          ; 0050e43c
-    FMUL double ptr [0x00590872]        ; 0050e440 | DAT_00590872
+    FMUL double ptr [0x00590872]        ; 0050e440 | DOUBLE_00590872
     FLD float ptr [ESP]                 ; 0050e446
     FXCH                                ; 0050e449
     CALL crt_math.c_pow_FUN_00565ad6    ; 0050e44b
         ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
-    FMUL double ptr [0x0059087a]        ; 0050e450 | DAT_0059087a
+    FMUL double ptr [0x0059087a]        ; 0050e450 | DOUBLE_0059087a
     CALL crt_math.c_round_FUN_00563a30  ; 0050e456
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x4]         ; 0050e45b

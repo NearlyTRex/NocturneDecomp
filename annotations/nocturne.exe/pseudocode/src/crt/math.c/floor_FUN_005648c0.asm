@@ -22,7 +22,7 @@
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005989b0
+;   double DOUBLE_005989b0 = -1
 ;
 ; Called Functions:
 ;   crt_math.c_modf_FUN_00566fb6
@@ -55,7 +55,7 @@ section .text
     JBE 0x005648f9                      ; 005648eb
         ;   XREF to: 005648f9 (CONDITIONAL_JUMP)  ; LAB_005648f9
     FLD double ptr [EBP + -0x14]        ; 005648ed
-    FADD double ptr [0x005989b0]        ; 005648f0 | DAT_005989b0
+    FADD double ptr [0x005989b0]        ; 005648f0 | DOUBLE_005989b0
     FSTP double ptr [EBP + -0x14]       ; 005648f6
     MOV EAX,dword ptr [EBP + -0x14]     ; 005648f9
         ;   Label: LAB_005648f9

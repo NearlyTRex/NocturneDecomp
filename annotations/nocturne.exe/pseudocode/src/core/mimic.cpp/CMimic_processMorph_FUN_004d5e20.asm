@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   string s_..\\core\\mimic.cpp_00589588
 ;   string s_CMimic::processMorph_-_can't_pro_0058959a
-;   undefined4 DAT_005a05e4
+;   float FLOAT_005a05e4 = 1
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 004d5e80 (CONDITIONAL_JUMP)  ; LAB_004d5e80
     FLD float ptr [EBP + 0x18]          ; 004d5e38
         ;   Label: LAB_004d5e38
-    FDIV float ptr [0x005a05e4]         ; 004d5e3b | DAT_005a05e4
+    FDIV float ptr [0x005a05e4]         ; 004d5e3b | FLOAT_005a05e4
     FADD float ptr [EBX + 0x47578]      ; 004d5e41
     FST float ptr [EBX + 0x47578]       ; 004d5e47
     FLD1                                ; 004d5e4d

@@ -37,8 +37,8 @@
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1a8f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00593ae6
-;   undefined4 DAT_00593aee
+;   double DOUBLE_00593ae6 = 2
+;   double DOUBLE_00593aee = 3.14159265350000
 ;   undefined4 DAT_005bea6c
 ;   undefined4 DAT_02dc8330
 ;
@@ -171,11 +171,11 @@ section .text
     MOV dword ptr [ESP + 0xb0],EAX      ; 00528fbd
     MOV dword ptr [ESP + 0x30],EAX      ; 00528fc4
     FILD dword ptr [ESP + 0xb0]         ; 00528fc8
-    FDIVR double ptr [0x00593aee]       ; 00528fcf | DAT_00593aee
+    FDIVR double ptr [0x00593aee]       ; 00528fcf | DOUBLE_00593aee
     FLD ST0                             ; 00528fd5
     FSINCOS                             ; 00528fd7
     FXCH ST2                            ; 00528fd9
-    FLD double ptr [0x00593ae6]         ; 00528fdb | DAT_00593ae6
+    FLD double ptr [0x00593ae6]         ; 00528fdb | DOUBLE_00593ae6
     FXCH                                ; 00528fe1
     FMUL ST1                            ; 00528fe3
     FLD ST0                             ; 00528fe5
@@ -450,7 +450,7 @@ section .text
     FILD dword ptr [ESP + 0xb0]         ; 0052938d
     FDIVP                               ; 00529394
     FSQRT                               ; 00529396
-    FMUL double ptr [0x00593ae6]        ; 00529398 | DAT_00593ae6
+    FMUL double ptr [0x00593ae6]        ; 00529398 | DOUBLE_00593ae6
     FST double ptr [ESP + 0x28]         ; 0052939e
     FSTP float ptr [ESP + 0x88]         ; 005293a2
     MOV EAX,dword ptr [ESP + 0x88]      ; 005293a9

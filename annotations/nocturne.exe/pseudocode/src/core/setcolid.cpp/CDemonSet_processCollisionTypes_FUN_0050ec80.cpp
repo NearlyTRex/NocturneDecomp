@@ -133,7 +133,7 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
     local_e4 = param_2[1];
     local_e0 = param_2[2];
   }
-  local_e4 = local_e4 + _DAT_00590a0d;
+  local_e4 = local_e4 + 2.0f;
   *(uint *)(param_1 + 0x14cd5c) = 0;
   *(uint *)(param_1 + 0x14cd60) = 0xffffffff;
   *(uint *)(param_1 + 0x14cd64) = 0xffffffff;
@@ -153,7 +153,7 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
       local_100 = local_f4;
       local_f8 = local_ec;
     }
-    local_fc = local_fc + _DAT_00590a11;
+    local_fc = local_fc + -10.0f;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(local_158);
     local_158[0] = 0;
     local_1c = 0;

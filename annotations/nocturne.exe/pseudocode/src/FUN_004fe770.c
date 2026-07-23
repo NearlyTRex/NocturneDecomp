@@ -24,12 +24,12 @@ void FUN_004fe770(int param_1)
   
   if (*(int *)(0x01C775EC + 0x228) == 0) {
     fVar3 = (float)core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(0x01C775EC);
-    _DAT_01e56c20 = _DAT_01e56c20 - fVar3 / _DAT_0058e24a;
+    _DAT_01e56c20 = _DAT_01e56c20 - fVar3 / 0.35f;
   }
   else {
     _DAT_01e53410 = *(int *)(0x01C775EC + 0x228);
     fVar3 = (float)core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(0x01C775EC);
-    _DAT_01e56c20 = fVar3 / _DAT_0058e24a + _DAT_01e56c20;
+    _DAT_01e56c20 = fVar3 / 0.35f + _DAT_01e56c20;
   }
   iVar8 = DAT_005b7620;
   iVar1 = DAT_005b761c;

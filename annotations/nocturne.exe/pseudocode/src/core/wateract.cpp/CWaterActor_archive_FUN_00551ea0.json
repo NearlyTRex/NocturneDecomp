@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 317,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 27,
+    "suspect_count": 23,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 198
@@ -178,8 +177,8 @@
   "globals": [
     {
       "addr": "0059766f",
-      "name": "DAT_0059766f",
-      "type": "undefined4",
+      "name": "s_size_0059766f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -286,20 +285,20 @@
     },
     {
       "addr": "00597729",
-      "name": "DAT_00597729",
-      "type": "undefined4",
+      "name": "s_colR_00597729",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0059772e",
-      "name": "DAT_0059772e",
-      "type": "undefined4",
+      "name": "s_colG_0059772e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00597733",
-      "name": "DAT_00597733",
-      "type": "undefined4",
+      "name": "s_colB_00597733",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -373,16 +372,8 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,&DAT_0059766f);",
+      "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,\"size\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_0059766f",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,&DAT_0059766f);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -525,48 +516,24 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x284,&DAT_00597729);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x284,\"colR\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_00597729",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x284,&DAT_00597729);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x288,&DAT_0059772e);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x288,\"colG\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0059772e",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x288,&DAT_0059772e);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x28c,&DAT_00597733);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x28c,\"colB\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00597733",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x28c,&DAT_00597733);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

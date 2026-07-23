@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -301,75 +301,75 @@
     },
     {
       "addr": "00589437",
-      "name": "DAT_00589437",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589437",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "0058943f",
-      "name": "DAT_0058943f",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0058943f",
+      "type": "float",
+      "value": "4.242857"
     },
     {
       "addr": "00589443",
-      "name": "DAT_00589443",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00589443",
+      "type": "float",
+      "value": "12.22222"
     },
     {
       "addr": "00589447",
-      "name": "DAT_00589447",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589447",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "0058944f",
-      "name": "DAT_0058944f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058944f",
+      "type": "double",
+      "value": "0.785398163375000"
     },
     {
       "addr": "00589457",
-      "name": "DAT_00589457",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589457",
+      "type": "double",
+      "value": "15"
     },
     {
       "addr": "0058945f",
-      "name": "DAT_0058945f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058945f",
+      "type": "double",
+      "value": "0.636619772385777"
     },
     {
       "addr": "00589467",
-      "name": "DAT_00589467",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589467",
+      "type": "double",
+      "value": "25"
     },
     {
       "addr": "0058946f",
-      "name": "DAT_0058946f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058946f",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "00589477",
-      "name": "DAT_00589477",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00589477",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "0058947f",
-      "name": "DAT_0058947f",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058947f",
+      "type": "double",
+      "value": "32"
     },
     {
       "addr": "005a05d8",
-      "name": "DAT_005a05d8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a05d8",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "005b9354",
@@ -1062,7 +1062,7 @@
       "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x242c) = local_14 * _DAT_0058943f;",
+      "text": "*(float *)(param_1 + 0x242c) = local_14 * 4.242857f;",
       "type": "unnamed_param"
     },
     {
@@ -1070,7 +1070,7 @@
       "line": 144,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x242c) = local_14 * _DAT_00589443 + *(float *)(param_1 + 0x242c);",
+      "text": "*(float *)(param_1 + 0x242c) = local_14 * 12.22222f + *(float *)(param_1 + 0x242c);",
       "type": "unnamed_param"
     },
     {
@@ -1078,7 +1078,7 @@
       "line": 144,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x242c) = local_14 * _DAT_00589443 + *(float *)(param_1 + 0x242c);",
+      "text": "*(float *)(param_1 + 0x242c) = local_14 * 12.22222f + *(float *)(param_1 + 0x242c);",
       "type": "unnamed_param"
     },
     {
@@ -1454,7 +1454,7 @@
       "line": 268,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058947f;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1462,7 +1462,7 @@
       "line": 268,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058947f;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -1470,7 +1470,7 @@
       "line": 268,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)_DAT_0058947f;",
+      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {

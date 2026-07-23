@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ulonglong __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void)
 
 {
@@ -21,9 +19,9 @@ ulonglong __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void)
   float10 fVar8;
   
   iVar1 = 0;
-  fVar4 = (float10)_DAT_005881d3;
-  fVar5 = (float10)_DAT_005881cb;
-  fVar6 = (float10)_DAT_005881c3;
+  fVar4 = (float10)65536;
+  fVar5 = (float10)0.0078125;
+  fVar6 = (float10)3.1415926535000001;
   iVar2 = 0;
   do {
     fVar7 = (float10)iVar1 * fVar6 * fVar5;

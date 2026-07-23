@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00579c55 = 0.25
 ;   undefined4 DAT_0059ae90
-;   undefined4 DAT_0059aea8
+;   float FLOAT_0059aea8 = 0.5
 ;   undefined4 DAT_005ae704
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_004216e9
     MOV dword ptr [ESP + 0x30],EAX      ; 004216ed
     FILD dword ptr [ESP + 0x30]         ; 004216f1
-    FMUL float ptr [0x0059aea8]         ; 004216f5 | DAT_0059aea8
+    FMUL float ptr [0x0059aea8]         ; 004216f5 | FLOAT_0059aea8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004216fb
     MOV ECX,dword ptr [ESP + 0x20]      ; 004216fe
     FADD float ptr [EAX + 0x19854]      ; 00421702
@@ -47,7 +47,7 @@ section .text
     MOV dword ptr [ESP + 0x30],ESI      ; 00421718
         ;   Label: LAB_00421718
     FILD dword ptr [ESP + 0x30]         ; 0042171c
-    FMUL float ptr [0x0059aea8]         ; 00421720 | DAT_0059aea8
+    FMUL float ptr [0x0059aea8]         ; 00421720 | FLOAT_0059aea8
     MOV EAX,dword ptr [EBP + 0x14]      ; 00421726
     LEA EBX,[ESP + 0xc]                 ; 00421729
     FADD float ptr [EAX + 0x19858]      ; 0042172d

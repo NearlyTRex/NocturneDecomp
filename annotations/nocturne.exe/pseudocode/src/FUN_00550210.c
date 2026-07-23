@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_00550210(int param_1)
 
 {
@@ -39,8 +37,8 @@ uint FUN_00550210(int param_1)
   else {
     uVar1 = 0x5502ea;
     fVar3 = (float10)round
-                               ((float10)_DAT_005974a3 -
-                                (float10)*(float *)(param_1 + 0x3b4) * (float10)_DAT_005974a3);
+                               ((float10)65535 -
+                                (float10)*(float *)(param_1 + 0x3b4) * (float10)65535);
     iStack_1c = (int)ROUND(fVar3);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,iStack_1c,uVar1);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,0);

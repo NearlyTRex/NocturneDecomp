@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 1354,
+    "complexity_score": 1244,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 88,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 499,
-    "suspect_count": 81,
+    "suspect_count": 70,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -369,8 +369,8 @@
     },
     {
       "addr": "00587b65",
-      "name": "DAT_00587b65",
-      "type": "undefined4",
+      "name": "s_rb_00587b65",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -399,8 +399,8 @@
     },
     {
       "addr": "00587bb5",
-      "name": "DAT_00587bb5",
-      "type": "undefined4",
+      "name": "s_wt_00587bb5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -447,8 +447,8 @@
     },
     {
       "addr": "00587cb8",
-      "name": "DAT_00587cb8",
-      "type": "undefined4",
+      "name": "s_s_1f_00587cb8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -459,14 +459,14 @@
     },
     {
       "addr": "00587ccf",
-      "name": "DAT_00587ccf",
-      "type": "undefined1",
+      "name": "s_anon_00587ccf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587cd0",
-      "name": "DAT_00587cd0",
-      "type": "undefined1",
+      "name": "s_anon_00587ccf+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -483,14 +483,14 @@
     },
     {
       "addr": "00587d00",
-      "name": "DAT_00587d00",
-      "type": "undefined1",
+      "name": "s_anon_00587d00",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587d01",
-      "name": "DAT_00587d01",
-      "type": "undefined1",
+      "name": "s_anon_00587d00+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -507,14 +507,14 @@
     },
     {
       "addr": "00587d34",
-      "name": "DAT_00587d34",
-      "type": "undefined1",
+      "name": "s_anon_00587d34",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587d35",
-      "name": "DAT_00587d35",
-      "type": "undefined1",
+      "name": "s_anon_00587d34+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -531,14 +531,14 @@
     },
     {
       "addr": "00587d50",
-      "name": "DAT_00587d50",
-      "type": "undefined1",
+      "name": "s_anon_00587d50",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587d51",
-      "name": "DAT_00587d51",
-      "type": "undefined1",
+      "name": "s_anon_00587d50+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -561,8 +561,8 @@
     },
     {
       "addr": "00587d8d",
-      "name": "DAT_00587d8d",
-      "type": "undefined4",
+      "name": "s_s_1f_00587d8d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -573,14 +573,14 @@
     },
     {
       "addr": "00587dae",
-      "name": "DAT_00587dae",
-      "type": "undefined1",
+      "name": "s_anon_00587dae",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587daf",
-      "name": "DAT_00587daf",
-      "type": "undefined1",
+      "name": "s_anon_00587dae+1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -597,25 +597,25 @@
     },
     {
       "addr": "00587ddd",
-      "name": "DAT_00587ddd",
-      "type": "undefined1",
+      "name": "s_anon_00587ddd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587dde",
-      "name": "DAT_00587dde",
-      "type": "undefined1",
+      "name": "s_anon_00587ddd+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00587ddf",
-      "name": "s_See_README.TXT_for_more_informat_00587ddf",
-      "type": "string",
+      "name": "s_See_README_TXT_for_more_00587ddf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587de0",
-      "name": "s_ee_README.TXT_for_more_informati_00587ddf+1",
+      "name": "s_See_README_TXT_for_more_00587ddf+1",
       "type": "undefined4",
       "value": null
     },
@@ -645,8 +645,8 @@
     },
     {
       "addr": "00587e27",
-      "name": "DAT_00587e27",
-      "type": "undefined4",
+      "name": "s_s_0_00587e27",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -657,27 +657,27 @@
     },
     {
       "addr": "00587e38",
-      "name": "s_SOFTWARE\\Matrox\\PowerDesk\\Curren_00587e38",
-      "type": "string",
+      "name": "s_SOFTWARE_Matrox_PowerDes_00587e38",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00587e64",
-      "name": "DAT_00587e64",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00587e64",
+      "type": "float",
+      "value": "9.536743E-7"
     },
     {
       "addr": "00587e68",
-      "name": "DAT_00587e68",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00587e68",
+      "type": "double",
+      "value": "0.125"
     },
     {
       "addr": "00587e70",
-      "name": "DAT_00587e70",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00587e70",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "005ad51c",
@@ -1049,26 +1049,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00587b65",
-      "severity": "mild",
-      "text": "iVar4 = _fopen(\"stderr.txt\",&DAT_00587b65);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_00587bb5",
-      "severity": "mild",
-      "text": "_freopen(\"stderr.txt\",&DAT_00587bb5,&DAT_005c18c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_005c18c8",
       "severity": "mild",
-      "text": "_freopen(\"stderr.txt\",&DAT_00587bb5,&DAT_005c18c8);",
+      "text": "_freopen(\"stderr.txt\",\"wt\",&DAT_005c18c8);",
       "type": "undefined_data"
     },
     {
@@ -1077,70 +1061,6 @@
       "match": "DAT_006af628",
       "severity": "mild",
       "text": "DAT_006af628 = 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_00587cb8",
-      "severity": "mild",
-      "text": "_sprintf(acStack_228,&DAT_00587cb8,(double)((float)_DAT_02de20a8 * _DAT_00587e64));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_00587ccf",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00587ccf;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 174,
-      "match": "DAT_00587d00",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00587d00;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_00587d34",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00587d34;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 258,
-      "match": "DAT_00587d50",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00587d50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 313,
-      "match": "DAT_00587d8d",
-      "severity": "mild",
-      "text": "_sprintf(acStack_128,&DAT_00587d8d,(double)((float)_DAT_02de20ac * _DAT_00587e64));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 356,
-      "match": "DAT_00587dae",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_00587dae;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 398,
-      "match": "DAT_00587ddd",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_00587ddd;",
       "type": "undefined_data"
     },
     {
@@ -1173,14 +1093,6 @@
       "match": "DAT_005ad53c",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&DAT_005ad53c + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 501,
-      "match": "DAT_00587e27",
-      "severity": "mild",
-      "text": "(\"SOFTWARE\\\\Matrox\\\\PowerDesk\\\\Current Settings\",\"Flip on VBlank\",&DAT_00587e27);",
       "type": "undefined_data"
     },
     {

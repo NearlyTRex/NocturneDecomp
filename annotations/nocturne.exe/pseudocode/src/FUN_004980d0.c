@@ -46,7 +46,7 @@ void FUN_004980d0(int param_1,uint param_2)
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
             (local_34c,param_1 + 0x20,param_1 + 0x30);
   local_14 = param_1 + 0x1f5a0;
-  if (*(float *)(param_1 + 0x1fa44) < _DAT_0059dca4) {
+  if (*(float *)(param_1 + 0x1fa44) < 0.64f) {
     (**(code **)(*(int *)(*(int *)(param_1 + 0x1f8d0) + 0x14c) + 0xd4))
               (*(int *)(param_1 + 0x1f8d0),1);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_22c,0x1c71370,0x1c7137c)

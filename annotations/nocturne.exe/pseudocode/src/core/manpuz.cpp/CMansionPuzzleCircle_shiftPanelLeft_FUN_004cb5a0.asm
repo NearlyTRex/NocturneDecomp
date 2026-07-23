@@ -10,7 +10,7 @@
 ;   FUN_004cb010 at 004cb2b5
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\manpuz.cpp_00588031+1
+;   TerminatedCString s_core_manpuz_cpp_00588032
 ;   string s_CMansionPuzzleCircle::shiftPanel_00588045
 ;   string s_manpuz-doorslide.wav_00588075
 ;   undefined4 DAT_01cc4800
@@ -64,7 +64,7 @@ section .text
     CMP dword ptr [ESI],0x0             ; 004cb5f1
     JZ 0x004cb719                       ; 004cb5f4
         ;   XREF to: 004cb719 (CONDITIONAL_JUMP)  ; LAB_004cb719
-    MOV EDX,0x588032                    ; 004cb5fa | s_..\core\manpuz.cpp_00588031+1
+    MOV EDX,0x588032                    ; 004cb5fa | = "..\\core\\manpuz.cpp"
         ;   Label: LAB_004cb5fa
     MOV ECX,0x554                       ; 004cb5ff
     PUSH 0x588045                       ; 004cb604 | = "CMansionPuzzleCircle::shiftPanelLeft ..."

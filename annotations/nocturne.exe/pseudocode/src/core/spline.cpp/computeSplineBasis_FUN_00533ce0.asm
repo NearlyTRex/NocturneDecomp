@@ -20,12 +20,12 @@
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020 at 0045b23b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005950fe
-;   undefined4 DAT_00595106
-;   undefined4 DAT_0059510a
-;   undefined4 DAT_0059510e
-;   undefined4 DAT_00595112
-;   undefined4 DAT_00595116
+;   double DOUBLE_005950fe = 0.5
+;   float FLOAT_00595106 = 2
+;   float FLOAT_0059510a = -3
+;   float FLOAT_0059510e = 3
+;   float FLOAT_00595112 = -2
+;   float FLOAT_00595116 = 4
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     FSUBRP ST2,ST0                      ; 00533cf1
     FMUL float ptr [ESP + 0x2c]         ; 00533cf3
     FXCH                                ; 00533cf7
-    FMUL double ptr [0x005950fe]        ; 00533cf9 | DAT_005950fe
+    FMUL double ptr [0x005950fe]        ; 00533cf9 | DOUBLE_005950fe
     FXCH                                ; 00533cff
     FST float ptr [ESP + 0x4]           ; 00533d01
     FMUL float ptr [ESP + 0x2c]         ; 00533d05
@@ -50,11 +50,11 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 00533d10
     FMUL float ptr [ESP + 0x8]          ; 00533d14
     FLD float ptr [ESP]                 ; 00533d18
-    FMUL float ptr [0x00595106]         ; 00533d1b | DAT_00595106
-    FLD float ptr [0x0059510a]          ; 00533d21 | DAT_0059510a
+    FMUL float ptr [0x00595106]         ; 00533d1b | FLOAT_00595106
+    FLD float ptr [0x0059510a]          ; 00533d21 | FLOAT_0059510a
     FLD float ptr [ESP]                 ; 00533d27
     FMUL ST1                            ; 00533d2a
-    FLD float ptr [0x00595106]          ; 00533d2c | DAT_00595106
+    FLD float ptr [0x00595106]          ; 00533d2c | FLOAT_00595106
     FSUB float ptr [ESP]                ; 00533d32
     FXCH                                ; 00533d35
     FMUL float ptr [ESP + 0x4]          ; 00533d37
@@ -78,7 +78,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 00533d6a
     FLD float ptr [ESP]                 ; 00533d6e
     FMUL float ptr [ESP + 0x2c]         ; 00533d71
-    FLD float ptr [0x0059510e]          ; 00533d75 | DAT_0059510e
+    FLD float ptr [0x0059510e]          ; 00533d75 | FLOAT_0059510e
     FXCH ST2                            ; 00533d7b
     FADDP ST5,ST0                       ; 00533d7d
     FLD float ptr [ESP]                 ; 00533d7f
@@ -98,9 +98,9 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 00533da7
     FMUL float ptr [ESP + 0x4]          ; 00533dab
     FLD float ptr [ESP]                 ; 00533daf
-    FMUL float ptr [0x00595116]         ; 00533db2 | DAT_00595116
+    FMUL float ptr [0x00595116]         ; 00533db2 | FLOAT_00595116
     FLD float ptr [ESP]                 ; 00533db8
-    FADD float ptr [0x00595112]         ; 00533dbb | DAT_00595112
+    FADD float ptr [0x00595112]         ; 00533dbb | FLOAT_00595112
     FXCH ST4                            ; 00533dc1
     FSUBP ST6,ST0                       ; 00533dc3
     FXCH ST3                            ; 00533dc5
@@ -109,13 +109,13 @@ section .text
     FXCH ST5                            ; 00533dcf
     FSTP float ptr [EAX + 0xc]          ; 00533dd1
     FLD float ptr [ESP]                 ; 00533dd4
-    FMUL float ptr [0x0059510e]         ; 00533dd7 | DAT_0059510e
+    FMUL float ptr [0x0059510e]         ; 00533dd7 | FLOAT_0059510e
     FXCH ST3                            ; 00533ddd
     FMUL float ptr [ESP + 0x2c]         ; 00533ddf
     FLD float ptr [ESP + 0x14]          ; 00533de3
     FXCH                                ; 00533de7
     FADDP ST3,ST0                       ; 00533de9
-    FMUL float ptr [0x0059510e]         ; 00533deb | DAT_0059510e
+    FMUL float ptr [0x0059510e]         ; 00533deb | FLOAT_0059510e
     FXCH ST2                            ; 00533df1
     FSUB float ptr [ESP]                ; 00533df3
     FXCH ST2                            ; 00533df6
@@ -123,13 +123,13 @@ section .text
     FXCH ST2                            ; 00533dfc
     FSTP float ptr [EAX + 0x10]         ; 00533dfe
     FLD float ptr [ESP + 0x18]          ; 00533e01
-    FMUL float ptr [0x00595106]         ; 00533e05 | DAT_00595106
+    FMUL float ptr [0x00595106]         ; 00533e05 | FLOAT_00595106
     FXCH ST3                            ; 00533e0b
     FMUL float ptr [ESP + 0x4]          ; 00533e0d
     FXCH ST3                            ; 00533e11
     FMUL float ptr [ESP + 0x2c]         ; 00533e13
     FLD float ptr [ESP + 0x1c]          ; 00533e17
-    FMUL float ptr [0x00595106]         ; 00533e1b | DAT_00595106
+    FMUL float ptr [0x00595106]         ; 00533e1b | FLOAT_00595106
     FXCH                                ; 00533e21
     FADDP ST3,ST0                       ; 00533e23
     FMUL float ptr [ESP + 0x2c]         ; 00533e25
@@ -138,7 +138,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 00533e2e
     FMUL float ptr [ESP + 0x2c]         ; 00533e32
     FLD float ptr [ESP + 0x20]          ; 00533e36
-    FMUL float ptr [0x0059510e]         ; 00533e3a | DAT_0059510e
+    FMUL float ptr [0x0059510e]         ; 00533e3a | FLOAT_0059510e
     FXCH                                ; 00533e40
     FSUBP ST4,ST0                       ; 00533e42
     FMUL float ptr [ESP + 0x4]          ; 00533e44

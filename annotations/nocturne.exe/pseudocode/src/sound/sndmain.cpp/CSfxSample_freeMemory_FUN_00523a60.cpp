@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(byte *param_1)
   uint uVar1;
   
   if (*(int *)(param_1 + 300) != 0) {
-    _DAT_01cc4800 = "A..\\sound\\sndmain.cpp" + 1;
+    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
     _DAT_01cc4804 = 0x70a;
     FUN_004c8440("SfxSample::freeMemory - freeing sample in use!");
   }

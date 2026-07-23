@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 425,
+    "complexity_score": 415,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 34,
+    "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
       "unaffected_reg",
@@ -234,8 +234,8 @@
     },
     {
       "addr": "00589c44",
-      "name": "DAT_00589c44",
-      "type": "undefined4",
+      "name": "s_x_00589c44",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -554,16 +554,8 @@
       "line": 47,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,&DAT_00589c44,&local_14);",
+      "text": "iVar2 = _fscanf(param_2,\"%x\",&local_14);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_00589c44",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,&DAT_00589c44,&local_14);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

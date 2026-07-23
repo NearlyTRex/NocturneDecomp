@@ -12,13 +12,13 @@
 ; undefined        Stack[-0x84]:1  local_84
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058785f
-;   undefined4 DAT_00587863
-;   undefined4 DAT_00587867
+;   TerminatedCString s_sml_0058785f
+;   TerminatedCString s_med_00587863
+;   TerminatedCString s_big_00587867
 ;   string s_l%s-die?.wav_0058787c
 ;   string s_l%s-shot?.wav_00587889
-;   undefined4 DAT_0058789c
-;   undefined4 DAT_005878a4
+;   double DOUBLE_0058789c = 0.300000000000000
+;   double DOUBLE_005878a4 = 0.700000000000000
 ;   undefined4 DAT_005b96c4
 ;
 ; Called Functions:
@@ -88,13 +88,13 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004c5398
     FLD float ptr [ESP + 0x14]          ; 004c539c
     FST double ptr [ESP]                ; 004c53a0
-    FCOMP double ptr [0x0058789c]       ; 004c53a3 | DAT_0058789c
+    FCOMP double ptr [0x0058789c]       ; 004c53a3 | DOUBLE_0058789c
     FNSTSW AX                           ; 004c53a9
     SAHF                                ; 004c53ab
     JNC 0x004c5426                      ; 004c53ac
         ;   XREF to: 004c5426 (CONDITIONAL_JUMP)  ; LAB_004c5426
-    MOV EAX,0x58785f                    ; 004c53ae | DAT_0058785f
-    PUSH EAX                            ; 004c53b3 | DAT_0058785f | DAT_00587863 | DAT_00587867
+    MOV EAX,0x58785f                    ; 004c53ae | = "sml"
+    PUSH EAX                            ; 004c53b3 | = "sml" | s_med_00587863 | s_big_00587867
         ;   Label: LAB_004c53b3
     PUSH 0x58787c                       ; 004c53b4 | = "l%s-die?.wav"
     LEA EAX,[ESP + 0x20]                ; 004c53b9
@@ -142,15 +142,15 @@ section .text
     RET                                 ; 004c5425
     FLD double ptr [ESP]                ; 004c5426
         ;   Label: LAB_004c5426
-    FCOMP double ptr [0x005878a4]       ; 004c5429 | DAT_005878a4
+    FCOMP double ptr [0x005878a4]       ; 004c5429 | DOUBLE_005878a4
     FNSTSW AX                           ; 004c542f
     SAHF                                ; 004c5431
     JNC 0x004c543e                      ; 004c5432
         ;   XREF to: 004c543e (CONDITIONAL_JUMP)  ; LAB_004c543e
-    MOV EAX,0x587863                    ; 004c5434 | DAT_00587863
+    MOV EAX,0x587863                    ; 004c5434 | = "med"
     JMP 0x004c53b3                      ; 004c5439
         ;   XREF to: 004c53b3 (UNCONDITIONAL_JUMP)  ; LAB_004c53b3
-    MOV EAX,0x587867                    ; 004c543e | DAT_00587867
+    MOV EAX,0x587867                    ; 004c543e | = "big"
         ;   Label: LAB_004c543e
     JMP 0x004c53b3                      ; 004c5443
         ;   XREF to: 004c53b3 (UNCONDITIONAL_JUMP)  ; LAB_004c53b3
@@ -172,13 +172,13 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 004c5470
     FLD float ptr [ESP + 0x10]          ; 004c5474
     FST double ptr [ESP + 0x8]          ; 004c5478
-    FCOMP double ptr [0x0058789c]       ; 004c547c | DAT_0058789c
+    FCOMP double ptr [0x0058789c]       ; 004c547c | DOUBLE_0058789c
     FNSTSW AX                           ; 004c5482
     SAHF                                ; 004c5484
     JNC 0x004c54d2                      ; 004c5485
         ;   XREF to: 004c54d2 (CONDITIONAL_JUMP)  ; LAB_004c54d2
-    MOV EAX,0x58785f                    ; 004c5487 | DAT_0058785f
-    PUSH EAX                            ; 004c548c | DAT_0058785f | DAT_00587863 | DAT_00587867
+    MOV EAX,0x58785f                    ; 004c5487 | = "sml"
+    PUSH EAX                            ; 004c548c | = "sml" | s_med_00587863 | s_big_00587867
         ;   Label: LAB_004c548c
     PUSH 0x587889                       ; 004c548d | = "l%s-shot?.wav"
     LEA EAX,[ESP + 0x84]                ; 004c5492
@@ -205,15 +205,15 @@ section .text
         ;   XREF to: 004c53de (UNCONDITIONAL_JUMP)  ; LAB_004c53de
     FLD double ptr [ESP + 0x8]          ; 004c54d2
         ;   Label: LAB_004c54d2
-    FCOMP double ptr [0x005878a4]       ; 004c54d6 | DAT_005878a4
+    FCOMP double ptr [0x005878a4]       ; 004c54d6 | DOUBLE_005878a4
     FNSTSW AX                           ; 004c54dc
     SAHF                                ; 004c54de
     JNC 0x004c54e8                      ; 004c54df
         ;   XREF to: 004c54e8 (CONDITIONAL_JUMP)  ; LAB_004c54e8
-    MOV EAX,0x587863                    ; 004c54e1 | DAT_00587863
+    MOV EAX,0x587863                    ; 004c54e1 | = "med"
     JMP 0x004c548c                      ; 004c54e6
         ;   XREF to: 004c548c (UNCONDITIONAL_JUMP)  ; LAB_004c548c
-    MOV EAX,0x587867                    ; 004c54e8 | DAT_00587867
+    MOV EAX,0x587867                    ; 004c54e8 | = "big"
         ;   Label: LAB_004c54e8
     JMP 0x004c548c                      ; 004c54ed
         ;   XREF to: 004c548c (UNCONDITIONAL_JUMP)  ; LAB_004c548c

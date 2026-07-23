@@ -14,7 +14,7 @@ void FUN_004f4b30(uint param_1,uint param_2)
   int iVar1;
   byte auStack_6c [100];
   
-  iVar1 = _fopen(param_2,0x58d1f0);
+  iVar1 = _fopen(param_2,"wb");
   if (iVar1 == 0) {
     _sprintf(auStack_6c,"Unable to create PBM file %s",param_2);
     _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";

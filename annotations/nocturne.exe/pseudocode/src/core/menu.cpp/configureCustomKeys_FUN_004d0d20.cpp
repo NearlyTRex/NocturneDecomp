@@ -84,7 +84,7 @@ LAB_004d0e3b:
       pcVar9[1] = cVar1;
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
-    _sprintf(local_114,"%5.2f",(double)*(int *)(0x01C775EC + 0x9c) * _DAT_00588b43);
+    _sprintf(local_114,"%5.2f",(double)*(int *)(0x01C775EC + 0x9c) * 1.52587890625e-05);
     iVar3 = -1;
     pcVar5 = (char *)0x1cc6ab0;
     do {
@@ -117,7 +117,7 @@ LAB_004d0e3b:
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
     uVar4 = 7;
-    _sprintf(local_114,"%5.2f",(double)*(int *)(0x01C775EC + 0xa0) * _DAT_00588b43);
+    _sprintf(local_114,"%5.2f",(double)*(int *)(0x01C775EC + 0xa0) * 1.52587890625e-05);
     iVar3 = -1;
     pcVar7 = (char *)0x1cc6bb0;
     do {

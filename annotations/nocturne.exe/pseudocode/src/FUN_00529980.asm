@@ -21,7 +21,7 @@
 ;   ... and 18 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00593b86
+;   TerminatedCString s_s_00593b86
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
 ;
@@ -49,7 +49,7 @@ section .text
     ADD ESP,0xc                         ; 005299af
     MOV EAX,ESP                         ; 005299b2
     PUSH EAX                            ; 005299b4
-    PUSH 0x593b86                       ; 005299b5 | DAT_00593b86
+    PUSH 0x593b86                       ; 005299b5 | = "%s\n"
     MOV EBX,dword ptr [0x005ad350]      ; 005299ba | PTR_DAT_005ad350
     XOR ECX,ECX                         ; 005299c0
     PUSH EBX                            ; 005299c2 | DAT_0077ad0c

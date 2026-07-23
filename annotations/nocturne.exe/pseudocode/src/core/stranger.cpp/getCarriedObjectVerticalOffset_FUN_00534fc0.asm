@@ -14,7 +14,7 @@
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053b3c6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005951e7
+;   double DOUBLE_005951e7 = 0.00390625
 ;   undefined4 DAT_00764838
 ;   undefined4 DAT_02dd1204
 ;
@@ -118,7 +118,7 @@ section .text
     SUB ESI,EBP                         ; 0053506a
     MOV dword ptr [ESP + 0xc],ESI       ; 0053506c
     FILD dword ptr [ESP + 0xc]          ; 00535070
-    FMUL double ptr [0x005951e7]        ; 00535074 | DAT_005951e7
+    FMUL double ptr [0x005951e7]        ; 00535074 | DOUBLE_005951e7
     FSTP float ptr [ESP + 0x4]          ; 0053507a
     POP EDI                             ; 0053507e
     MOV EAX,dword ptr [ESP]             ; 0053507f

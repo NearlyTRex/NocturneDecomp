@@ -52,9 +52,9 @@ void FUN_004fbf20(int param_1,float param_2)
   if (iVar12 == 0) {
     return;
   }
-  *(float *)(param_1 + 0x2430) = param_2 * (float)_DAT_0058de9e;
+  *(float *)(param_1 + 0x2430) = param_2 * (float)12.566370614;
   if (*(int *)(iVar13 + 0x228) != 0) {
-    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)_DAT_0058dea6;
+    *(float *)(param_1 + 0x2430) = *(float *)(param_1 + 0x2430) * (float)0.33333333333333298;
   }
   fVar1 = *(float *)(param_1 + 0xbc8c) - param_2;
   *(float *)(param_1 + 0xbc8c) = fVar1;
@@ -190,7 +190,7 @@ LAB_004fc367:
     fVar4 = *(float *)(param_1 + 0x2418);
     fVar5 = *(float *)(param_1 + 0x23ac);
     fVar6 = *(float *)(param_1 + 0x241c);
-    fVar11 = (float)_DAT_0058deae;
+    fVar11 = (float)32;
     *(uint *)(param_1 + 0x23ac) = 0;
     *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
     *(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23a8);
@@ -212,13 +212,13 @@ LAB_004fc367:
     iVar13 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_58,uVar16);
     local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(*(uint *)(iVar13 + 4));
     local_88 = local_14;
-    if (local_14 < (float)_DAT_0058deb6) {
-      local_88 = local_14 + _DAT_0058debe;
+    if (local_14 < (float)-1.57079632675) {
+      local_88 = local_14 + 3.141593f;
     }
-    if ((float)_DAT_0058dec6 < local_88) {
-      local_88 = local_88 + _DAT_0058dece;
+    if ((float)1.57079632675 < local_88) {
+      local_88 = local_88 + 1.5938625219265179e-314._0_4_;
     }
-    local_18 = param_2 * (float)_DAT_0058ded6;
+    local_18 = param_2 * (float)3.1415926535000001;
     local_1c = -local_18;
     if (local_88 < local_1c) {
       local_88 = local_1c;

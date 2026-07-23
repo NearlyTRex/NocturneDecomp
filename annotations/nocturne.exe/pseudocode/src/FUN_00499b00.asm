@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00582286 = -0.3000000
 ;   double DOUBLE_0058228a = 0.5
-;   undefined4 DAT_0059dcb8
+;   float FLOAT_0059dcb8 = 0.05000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 00499b68
     FLD float ptr [EBP + 0x18]          ; 00499b6b
-    FDIV float ptr [0x0059dcb8]         ; 00499b6e | DAT_0059dcb8
+    FDIV float ptr [0x0059dcb8]         ; 00499b6e | FLOAT_0059dcb8
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00499b74
     MOV EAX,dword ptr [EAX]             ; 00499b77
     MOV dword ptr [ESP + 0x1b30],EAX    ; 00499b79

@@ -52,7 +52,7 @@ uint core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(int param_1)
   }
   else {
     iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x65c);
-    pcVar3 = "@MENUCLD2.RAW" + 1;
+    pcVar3 = "MENUCLD2.RAW";
     pcVar4 = (char *)(iVar2 + 300);
     do {
       cVar1 = *pcVar3;

@@ -34,7 +34,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(int param_1)
           iVar1 = *(int *)(param_1 + 0x15a8cc) + 1;
           *(int *)(param_1 + 0x15a8cc) = iVar1;
           if (99 < iVar1) {
-            _DAT_01cc4800 = "@..\\core\\set.cpp" + 1;
+            _DAT_01cc4800 = "..\\core\\set.cpp";
             _DAT_01cc4804 = 0x1118;
             FUN_004c8440("CDemonSet::buildMirrorList - Too many mirrors");
           }

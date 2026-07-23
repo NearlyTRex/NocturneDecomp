@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 108,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
     "total_lines": 107
   },
@@ -191,15 +190,15 @@
     },
     {
       "addr": "0059e210",
-      "name": "DAT_0059e210",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e210",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "0059e214",
-      "name": "DAT_0059e214",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059e214",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0059e224",
@@ -261,16 +260,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(uint param_1)",
@@ -278,26 +269,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
+      "text": "iVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x4a8cfc assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "description": "Raw hex address 0x4a8cfc assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
       "match": "0x4a8cfc",
       "severity": "moderate",
-      "text": "uVar4 = 0x4a8cfc;",
+      "text": "uVar5 = 0x4a8cfc;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x4a8d47 assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 30,
+      "description": "Raw hex address 0x4a8d47 assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 29,
       "match": "0x4a8d47",
       "severity": "moderate",
-      "text": "uVar4 = 0x4a8d47;",
+      "text": "uVar5 = 0x4a8d47;",
       "type": "raw_address_constant"
     }
   ],

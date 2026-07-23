@@ -18,7 +18,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(int 
   
   piVar3 = (int *)(param_1 + 0x5e8 + param_2 * 100);
   if (*piVar3 != 0) {
-    fVar1 = ((float)piVar3[2] * param_3) / _DAT_005a0040 + (float)piVar3[1];
+    fVar1 = ((float)piVar3[2] * param_3) / 2.0f + (float)piVar3[1];
     piVar3[1] = (int)fVar1;
     if (fVar1 < 0.0) {
       piVar3[2] = 0;
@@ -28,7 +28,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(int 
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);
       piVar4 = (int *)(param_1 + 0x5e8 + iVar2 * 100);
       if (*piVar4 != 0) {
-        _DAT_01cc4800 = "?..\\core\\manpuz.cpp" + 1;
+        _DAT_01cc4800 = "..\\core\\manpuz.cpp";
         _DAT_01cc4804 = 0x45d;
         FUN_004c8440("CMansionPuzzleCircle::processPanel - Panel collision!");
       }

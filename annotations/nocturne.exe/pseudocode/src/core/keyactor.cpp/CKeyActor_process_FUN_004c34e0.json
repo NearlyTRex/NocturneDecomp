@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 182,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 14,
+    "pseudocode_lines": 26,
+    "suspect_count": 13,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 82
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -174,21 +173,21 @@
   "globals": [
     {
       "addr": "0058758c",
-      "name": "DAT_0058758c",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058758c",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00587594",
-      "name": "DAT_00587594",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00587594",
+      "type": "double",
+      "value": "8192"
     },
     {
       "addr": "0058759c",
-      "name": "DAT_0058759c",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058759c",
+      "type": "double",
+      "value": "16384"
     },
     {
       "addr": "005be368",
@@ -273,14 +272,14 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 29,
+          "line": 27,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 17,
-          "line": 30,
+          "line": 28,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -291,16 +290,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)",
@@ -308,7 +299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)",
@@ -316,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1 + 0x2d4;",
@@ -324,31 +315,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)_DAT_0058758c + *(float *)(param_1 + 0x2d0);",
+      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x2d0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)_DAT_0058758c + *(float *)(param_1 + 0x2d0);",
+      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x2d0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)_DAT_0058758c + *(float *)(param_1 + 0x2d0);",
+      "text": "*(float *)(param_1 + 0x2d0) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x2d0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(iVar1,param_1 + 0x20);",
@@ -356,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = (float10)fsin((float10)*(float *)(param_1 + 0x2d0));",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x310) = iVar2;",
@@ -372,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "*(char *)(param_1 + 0x2f0) =",
@@ -380,7 +371,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2f4) = 0;",
@@ -388,7 +379,7 @@
     },
     {
       "description": "Raw hex address 0x4c3531 assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
+      "line": 15,
       "match": "0x4c3531",
       "severity": "moderate",
       "text": "uVar5 = 0x4c3531;",
@@ -396,7 +387,7 @@
     },
     {
       "description": "Raw hex address 0x1e57284 assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 27,
+      "line": 25,
       "match": "0x1e57284",
       "severity": "moderate",
       "text": "uVar5 = 0x01E57284;",
@@ -404,7 +395,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 29,
+      "line": 27,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = (iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0);",
@@ -412,7 +403,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
+      "line": 28,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar3 = iVar2 >> 0x1f;",

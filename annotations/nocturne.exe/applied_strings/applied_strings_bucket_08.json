@@ -1856,14 +1856,6 @@
     "value":"CMelee"
   },
   {
-    "addr":"005874f8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":17,
-    "type":"string",
-    "value":"@You used a key."
-  },
-  {
     "addr":"00587518",
     "charset":"US-ASCII",
     "importable":true,
@@ -1878,14 +1870,6 @@
     "len":19,
     "type":"string",
     "value":"CTrigger || CGlass"
-  },
-  {
-    "addr":"00587a88",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":16,
-    "type":"string",
-    "value":"?cre-charge.wav"
   },
   {
     "addr":"00587a98",
@@ -1928,11 +1912,19 @@
     "value":"stderr.txt"
   },
   {
+    "addr":"00587cb8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"%.1f"
+  },
+  {
     "addr":"00587e38",
     "charset":"US-ASCII",
     "importable":true,
     "len":43,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"SOFTWARE\\Matrox\\PowerDesk\\Current Settings"
   },
   {
@@ -1942,14 +1934,6 @@
     "len":7,
     "type":"string",
     "value":"load%d"
-  },
-  {
-    "addr":"00587fc8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":31,
-    "type":"string",
-    "value":"p?manpuz-chargegemloop-red.wav"
   },
   {
     "addr":"005881a8",
@@ -1972,8 +1956,16 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":19,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\matrix.c"
+  },
+  {
+    "addr":"00588378",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":12,
+    "type":"TerminatedCString",
+    "value":"shvl-f?.wav"
   },
   {
     "addr":"005883c8",
@@ -2006,6 +1998,14 @@
     "len":20,
     "type":"string",
     "value":"Monitor calibration"
+  },
+  {
+    "addr":"005886b8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":12,
+    "type":"TerminatedCString",
+    "value":"tri3dfx.dll"
   },
   {
     "addr":"00588928",
@@ -2104,6 +2104,14 @@
     "value":"Next item"
   },
   {
+    "addr":"00589088",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"Walk"
+  },
+  {
     "addr":"005890f8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2142,6 +2150,14 @@
     "len":12,
     "type":"string",
     "value":"// setList\n"
+  },
+  {
+    "addr":"00589ab8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%s\n"
   },
   {
     "addr":"00589b28",
@@ -2200,22 +2216,6 @@
     "value":"torso01"
   },
   {
-    "addr":"0058a3b8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":12,
-    "type":"string",
-    "value":"@CTommyGun"
-  },
-  {
-    "addr":"0058a488",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":19,
-    "type":"string",
-    "value":"@mobster-die-?.wav"
-  },
-  {
     "addr":"0058a588",
     "charset":"US-ASCII",
     "importable":true,
@@ -2228,7 +2228,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":18,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\model.c"
   },
   {
@@ -2248,11 +2248,19 @@
     "value":"..\\engine\\model.c"
   },
   {
+    "addr":"0058a708",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"\\"
+  },
+  {
     "addr":"0058a748",
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"moloch_d.dfm"
   },
   {
@@ -2312,12 +2320,44 @@
     "value":"..\\core\\morph.cpp"
   },
   {
+    "addr":"0058ad78",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":18,
+    "type":"TerminatedCString",
+    "value":"..\\core\\morph.cpp"
+  },
+  {
+    "addr":"0058aed8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
+    "addr":"0058af18",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%s\n"
+  },
+  {
     "addr":"0058b088",
     "charset":"US-ASCII",
     "importable":true,
     "len":120,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n"
+  },
+  {
+    "addr":"0058b178",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%d"
   },
   {
     "addr":"0058b468",
@@ -2334,6 +2374,22 @@
     "len":25,
     "type":"string",
     "value":"Out of memory.  File: %s"
+  },
+  {
+    "addr":"0058b6e8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":17,
+    "type":"TerminatedCString",
+    "value":"..\\sound\\mp3.cpp"
+  },
+  {
+    "addr":"0058b938",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"sound"
   },
   {
     "addr":"0058ba68",
@@ -2364,7 +2420,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":28,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Received join refuse packet"
   },
   {
@@ -2372,7 +2428,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":38,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Received sync request packet, code %d"
   },
   {
@@ -2380,16 +2436,8 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":29,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Received sync reply, code %d"
-  },
-  {
-    "addr":"0058c0e8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":22,
-    "type":"string",
-    "value":">@..\\core\\netgame.cpp"
   },
   {
     "addr":"0058c138",
@@ -2404,15 +2452,15 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"gameSettings"
   },
   {
     "addr":"0058c218",
     "charset":"US-ASCII",
     "importable":true,
-    "len":12,
-    "type":"string",
+    "len":10,
+    "type":"TerminatedCString",
     "value":"Send chat"
   },
   {
@@ -2448,11 +2496,19 @@
     "value":"..\\core\\path.cpp"
   },
   {
+    "addr":"0058cf88",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"wb"
+  },
+  {
     "addr":"0058cfe8",
     "charset":"US-ASCII",
     "importable":true,
     "len":10,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CPendulum"
   },
   {
@@ -2484,7 +2540,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":69,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Unable to allocate memory for rowOffset table in CPackedBitmap::load"
   },
   {
@@ -2492,7 +2548,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":24,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\cockpit\\pkbitmap.cpp"
   },
   {
@@ -2500,15 +2556,23 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":24,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\cockpit\\pkbitmap.cpp"
+  },
+  {
+    "addr":"0058d308",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
   },
   {
     "addr":"0058d388",
     "charset":"US-ASCII",
     "importable":true,
     "len":46,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"IO error reading PBG (possibly corrupt file)."
   },
   {
@@ -2516,7 +2580,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":74,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW"
   },
   {
@@ -2532,7 +2596,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":18,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\pod.cpp"
   },
   {
@@ -2540,7 +2604,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":32,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"Can't mount %s to check version"
   },
   {
@@ -2548,7 +2612,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":18,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\engine\\pod.cpp"
   },
   {
@@ -2648,6 +2712,14 @@
     "value":"debug"
   },
   {
+    "addr":"0058eaf8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"else"
+  },
+  {
     "addr":"0058ebf8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2696,12 +2768,28 @@
     "value":"snapToFace"
   },
   {
+    "addr":"0058f918",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"wait"
+  },
+  {
     "addr":"0058fc78",
     "charset":"US-ASCII",
     "importable":true,
     "len":6,
     "type":"string",
     "value":"sound"
+  },
+  {
+    "addr":"0058fd38",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
   },
   {
     "addr":"0058fd48",
@@ -2744,6 +2832,14 @@
     "value":"Loading set"
   },
   {
+    "addr":"005901a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"none"
+  },
+  {
     "addr":"00590298",
     "charset":"US-ASCII",
     "importable":true,
@@ -2752,12 +2848,28 @@
     "value":"Loading thumbs"
   },
   {
+    "addr":"00590898",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"1\n"
+  },
+  {
     "addr":"00590b58",
     "charset":"US-ASCII",
     "importable":true,
     "len":40,
     "type":"string",
     "value":"CDemonSet::ignore - ignore list is full"
+  },
+  {
+    "addr":"00590c08",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"data"
   },
   {
     "addr":"00590c28",
@@ -2776,6 +2888,14 @@
     "value":"..\\core\\setdir.cpp"
   },
   {
+    "addr":"00590d68",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%f\n"
+  },
+  {
     "addr":"00590da8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2790,14 +2910,6 @@
     "len":7,
     "type":"string",
     "value":"%f,%f\n"
-  },
-  {
-    "addr":"00590e68",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":21,
-    "type":"string",
-    "value":"@..\\core\\setutil.cpp"
   },
   {
     "addr":"00591188",
@@ -2816,6 +2928,14 @@
     "value":"CSkeleton::load - Can't open %s"
   },
   {
+    "addr":"00591228",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
     "addr":"005913e8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2830,6 +2950,14 @@
     "len":75,
     "type":"string",
     "value":"Can't load model of version %d, this .exe can only handle up to version %d"
+  },
+  {
+    "addr":"005917d8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
   },
   {
     "addr":"005918f8",
@@ -2888,6 +3016,14 @@
     "value":"Bip01 Spine2"
   },
   {
+    "addr":"005922e8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"klp"
+  },
+  {
     "addr":"00592718",
     "charset":"US-ASCII",
     "importable":true,
@@ -2916,7 +3052,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":35,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"setNumberOfSfxChannels - too many!"
   },
   {
@@ -2980,7 +3116,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":14,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"STONECORRIDOR"
   },
   {
@@ -2988,7 +3124,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":10,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"MOUNTAINS"
   },
   {
@@ -3006,6 +3142,14 @@
     "len":19,
     "type":"string",
     "value":"APIDLLdrawPolygon2"
+  },
+  {
+    "addr":"00595008",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"\\"
   },
   {
     "addr":"005950e8",
@@ -3100,8 +3244,24 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":9,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CDrummer"
+  },
+  {
+    "addr":"00596508",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"CTentacle"
+  },
+  {
+    "addr":"005965a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"modelName"
   },
   {
     "addr":"005965d8",
@@ -3110,6 +3270,14 @@
     "len":11,
     "type":"string",
     "value":"graveActor"
+  },
+  {
+    "addr":"00596708",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
   },
   {
     "addr":"00596898",
@@ -3148,7 +3316,7 @@
     "charset":"US-ASCII",
     "importable":true,
     "len":23,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"..\\support\\trisock.cpp"
   },
   {
@@ -3192,19 +3360,11 @@
     "value":"CVampireBoss::process - Need 4 waypoints"
   },
   {
-    "addr":"00597218",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":17,
-    "type":"string",
-    "value":"?voicusummon.wav"
-  },
-  {
     "addr":"005972b8",
     "charset":"US-ASCII",
     "importable":true,
     "len":9,
-    "type":"string",
+    "type":"TerminatedCString",
     "value":"CVehicle"
   },
   {
@@ -3243,9 +3403,17 @@
     "addr":"00597738",
     "charset":"US-ASCII",
     "importable":true,
-    "len":12,
-    "type":"string",
+    "len":10,
+    "type":"TerminatedCString",
     "value":"CWayPoint"
+  },
+  {
+    "addr":"00597768",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"none"
   },
   {
     "addr":"00597808",
@@ -3278,14 +3446,6 @@
     "len":23,
     "type":"string",
     "value":"..\\wincore\\wddvmem.cpp"
-  },
-  {
-    "addr":"00597c18",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":18,
-    "type":"string",
-    "value":"?noLightningFlash"
   },
   {
     "addr":"00597e78",

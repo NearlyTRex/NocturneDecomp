@@ -13,8 +13,8 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(int 
   
   if (*(int *)(param_1 + 0x1fa08) != 0) {
     if (*(int *)(param_1 + 0x1faa0) != 4) {
-      FUN_0046fb40(0x01BCD074,"@actionPending = %d\nstranger.cpp line %d" + 1,
-                   *(int *)(param_1 + 0x1faa0),0xd49);
+      FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
+                   0xd49);
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                       (*(uint *)(param_1 + 0x1fa08),DAT_00764230);

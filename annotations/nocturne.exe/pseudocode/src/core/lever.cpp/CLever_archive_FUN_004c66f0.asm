@@ -8,7 +8,7 @@
 ; undefined1       Stack[-0xd3]:1  local_d3
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_00587944+1
+;   TerminatedCString s_modelName_00587945
 ;   string s_modelName_0058794f
 ;   string s_leverType_00587959
 ;   string s_onEvent_00587963
@@ -183,7 +183,7 @@ section .text
     POP ESI                             ; 004c688a
     POP EBX                             ; 004c688b
     RET                                 ; 004c688c
-    PUSH 0x587945                       ; 004c688d | s_modelName_00587944+1
+    PUSH 0x587945                       ; 004c688d | = "modelName"
         ;   Label: LAB_004c688d
     LEA ESI,[ESP + 0x4]                 ; 004c6892
     PUSH ESI                            ; 004c6896

@@ -29,14 +29,14 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680
   for (iVar3 = *(int *)(param_1 + 0x514); iVar3 != 0; iVar3 = *(int *)(iVar3 + 0x144)) {
     iVar2 = _strnicmp(iVar3,param_3,~uVar4 - 1);
     if (((iVar2 == 0) &&
-        (iVar2 = sscanf(iVar3 + (~uVar4 - 1),&DAT_00589e5f,&local_14),
+        (iVar2 = sscanf(iVar3 + (~uVar4 - 1),"%d",&local_14),
         iVar2 == 1)) && (iVar5 < local_14)) {
       iVar5 = local_14;
     }
   }
   do {
     iVar5 = iVar5 + 1;
-    _sprintf(param_2,&DAT_00589e62,param_3,iVar5);
+    _sprintf(param_2,"%s%d",param_3,iVar5);
     iVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(param_1,param_2);
   } while (iVar3 != 0);
   return;

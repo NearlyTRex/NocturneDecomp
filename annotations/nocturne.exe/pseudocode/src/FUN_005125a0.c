@@ -156,11 +156,11 @@ LAB_0051260f:
     piVar12 = piVar12 + 3;
   } while (iVar11 < 8);
   fStack_130 = local_160 + fStack_154;
-  fStack_100 = (local_160 + fStack_154) * _DAT_00590bd5;
+  fStack_100 = (local_160 + fStack_154) * 0.5f;
   fStack_12c = fStack_15c + fStack_150;
-  fStack_fc = (fStack_15c + fStack_150) * _DAT_00590bd5;
+  fStack_fc = (fStack_15c + fStack_150) * 0.5f;
   fStack_128 = fStack_158 + afStack_14c[0];
-  fStack_f8 = (fStack_158 + afStack_14c[0]) * _DAT_00590bd5;
+  fStack_f8 = (fStack_158 + afStack_14c[0]) * 0.5f;
   iStack_1c4 = (int)ROUND(fStack_100 * _DAT_005a1a70);
   iStack_1c0 = (int)ROUND(fStack_fc * _DAT_005a1a70);
   aiStack_1bc[0] = (int)ROUND(fStack_f8 * _DAT_005a1a70);
@@ -202,12 +202,12 @@ LAB_0051260f:
   (**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&fStack_17c,iVar8);
   fStack_1c = (float)core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70(&fStack_17c);
   fStack_e0 = fStack_17c + fStack_170;
-  fStack_11c = fStack_e0 * _DAT_00590bd5;
+  fStack_11c = fStack_e0 * 0.5f;
   fStack_dc = fStack_178 + fStack_16c;
   fStack_d8 = fStack_174 + fStack_168;
-  fStack_118 = fStack_dc * _DAT_00590bd5;
-  fStack_114 = fStack_d8 * _DAT_00590bd5;
-  local_b4 = fStack_1c * (float)_DAT_00590bdd + 1.0;
+  fStack_118 = fStack_dc * 0.5f;
+  fStack_114 = fStack_d8 * 0.5f;
+  local_b4 = fStack_1c * (float)1.5 + 1.0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,auStack_110,&fStack_11c);
   iStack_b0 = core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(param_1,auStack_110);
   _DAT_026714b0 = (uint)(iStack_b0 == -1);
@@ -360,9 +360,9 @@ LAB_0051260f:
             fStack_2ec = 1.0;
             do {
               if ((*(byte *)(*DAT_005ae704 + iVar11 + 0x13) & 0x80) != 0) {
-                dVar4 = _DAT_00590bed;
+                dVar4 = 0.0625;
                 if (0 < *(int *)(*DAT_005ae704 + iVar11 + 8)) {
-                  dVar4 = _DAT_00590be5;
+                  dVar4 = 0.5;
                 }
                 fStack_2ec = fStack_2ec * (float)dVar4;
               }
@@ -548,10 +548,10 @@ LAB_0051260f:
 LAB_00512d30:
     if ((param_3 == 0) && (0.0 < fVar18)) {
       if (_DAT_020875f4 == param_1[0x56aaf]) {
-        fVar18 = fVar18 * (float)_DAT_00590bf5;
+        fVar18 = fVar18 * (float)3;
       }
       if (_DAT_020875f4 == param_1[0x56ab0]) {
-        fVar18 = fVar18 * (float)_DAT_00590bfd;
+        fVar18 = fVar18 * (float)0.20000000000000001;
       }
     }
     *(float *)(&DAT_02663604 + _DAT_020875f4 * 4) = fVar18;

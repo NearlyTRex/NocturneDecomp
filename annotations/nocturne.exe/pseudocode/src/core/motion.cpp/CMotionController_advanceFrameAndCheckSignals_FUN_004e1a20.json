@@ -74,6 +74,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 117,
+        "message": "expected unqualified-id"
+      },
+      {
         "category": "other",
         "column": 56,
         "line": 172,
@@ -108,12 +114,6 @@
         "column": 40,
         "line": 266,
         "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 267,
-        "message": "invalid suffix 'x' on integer constant"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 375,
+    "complexity_score": 374,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 54,
     "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 229
+    "total_lines": 228
   },
   "cross_references": [
     {
@@ -168,21 +168,21 @@
     },
     {
       "addr": "0058b385",
-      "name": "DAT_0058b385",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b385",
+      "type": "double",
+      "value": "-0.000100000000000000"
     },
     {
       "addr": "0058b38d",
-      "name": "DAT_0058b38d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b38d",
+      "type": "double",
+      "value": "1.58735232019473E-314"
     },
     {
       "addr": "0058b395",
-      "name": "DAT_0058b395",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0058b395",
+      "type": "double",
+      "value": "0.00100000000000000"
     }
   ],
   "param_estimates": {
@@ -329,16 +329,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)",
@@ -346,7 +338,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)",
@@ -354,7 +346,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)",
@@ -362,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)",
@@ -370,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "uint __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,uint param_5)",
@@ -378,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = *param_2 * 0x54c + *param_1 + 0x968;",
@@ -386,7 +378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *param_2 * 0x54c + *param_1 + 0x968;",
@@ -394,7 +386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_4",
       "severity": "mild",
       "text": "local_20 = param_4 * *(float *)(iVar4 + 0x20) + *param_3;",
@@ -402,7 +394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = param_4 * *(float *)(iVar4 + 0x20) + *param_3;",
@@ -410,15 +402,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((*param_3 <= (float)iVar1) && ((float)iVar1 <= local_20 + (float)_DAT_0058b395)) {",
+      "text": "if ((*param_3 <= (float)iVar1) && ((float)iVar1 <= local_20 + (float)0.001)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 32,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(param_1[0x14] + 8))",
@@ -426,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(param_1[0x14] + 8))",
@@ -434,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(float)*(int *)(iVar4 + 0x60) + *param_3,",
@@ -442,7 +434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_1,(float)*(int *)(iVar4 + 0x60) + *param_3,",
@@ -450,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_5",
       "severity": "mild",
       "text": "(float)*(int *)(iVar4 + 0x60) + local_20,param_5);",
@@ -458,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = local_20;",
@@ -466,7 +458,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(param_1[0x14] + 8))",
@@ -474,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(param_1[0x14] + 8))",
@@ -482,7 +474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(float)*(int *)(iVar4 + 0x60) + *param_3,",
@@ -490,7 +482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_1,(float)*(int *)(iVar4 + 0x60) + *param_3,",
@@ -498,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_5",
       "severity": "mild",
       "text": "(float)(*(int *)(iVar4 + 0x60) + *(int *)(iVar4 + 100)),param_5);",
@@ -506,15 +498,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = (float)(*(int *)(iVar4 + 100) + -1);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (fStack_18 == 1.5873523201947252e-314._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
+      "line": 49,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(param_1[0x14] + 4))",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = (**(code **)(param_1[0x14] + 4))",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*param_2,(float)(*(int *)(iVar4 + 100) + -1),",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,*param_2,(float)(*(int *)(iVar4 + 100) + -1),",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *(int *)(iVar4 + 0x34);",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = fStack_18;",

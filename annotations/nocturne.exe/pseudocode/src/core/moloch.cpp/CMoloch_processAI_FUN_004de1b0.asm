@@ -17,11 +17,11 @@
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004dde5b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058a812
-;   undefined4 DAT_0058a81a
-;   undefined4 DAT_0058a822
-;   undefined4 DAT_0058a82a
-;   undefined4 DAT_0058a832
+;   double DOUBLE_0058a812 = 6
+;   double DOUBLE_0058a81a = 0.318309886192889
+;   double DOUBLE_0058a822 = 4
+;   double DOUBLE_0058a82a = 3.14159265350000
+;   double DOUBLE_0058a832 = -3.14159265350000
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -104,7 +104,7 @@ section .text
     MOV EDX,dword ptr [0x01cae0e8]      ; 004de27b | DAT_01cae0e8
     SHL EDX,0x2                         ; 004de281
     MOV dword ptr [EBX + 0x2410],0x0    ; 004de284
-    FCOMP double ptr [0x0058a812]       ; 004de28e | DAT_0058a812
+    FCOMP double ptr [0x0058a812]       ; 004de28e | DOUBLE_0058a812
     FNSTSW AX                           ; 004de294
     SAHF                                ; 004de296
     JBE 0x004de4c3                      ; 004de297
@@ -135,9 +135,9 @@ section .text
         ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
     MOV dword ptr [ESP + 0x7c],EAX      ; 004de2df
     FLD float ptr [ESP + 0x7c]          ; 004de2e3
-    FMUL double ptr [0x0058a81a]        ; 004de2e7 | DAT_0058a81a
+    FMUL double ptr [0x0058a81a]        ; 004de2e7 | DOUBLE_0058a81a
     ADD ESP,0x4                         ; 004de2ed
-    FMUL double ptr [0x0058a822]        ; 004de2f0 | DAT_0058a822
+    FMUL double ptr [0x0058a822]        ; 004de2f0 | DOUBLE_0058a822
     FLD float ptr [ESP + 0x70]          ; 004de2f6
     FCHS                                ; 004de2fa
     FSTP float ptr [ESP + 0x68]         ; 004de2fc
@@ -252,7 +252,7 @@ section .text
     FXCH                                ; 004de441
     FSUB float ptr [EBX + 0x229f4]      ; 004de443
     FXCH                                ; 004de449
-    FMUL double ptr [0x0058a82a]        ; 004de44b | DAT_0058a82a
+    FMUL double ptr [0x0058a82a]        ; 004de44b | DOUBLE_0058a82a
     FXCH                                ; 004de451
     FST float ptr [ESP + 0x18]          ; 004de453
     FXCH                                ; 004de457
@@ -266,7 +266,7 @@ section .text
     FSTP float ptr [ESP + 0x18]         ; 004de46a
     FLD float ptr [EBP + 0x18]          ; 004de46e
         ;   Label: LAB_004de46e
-    FMUL double ptr [0x0058a832]        ; 004de471 | DAT_0058a832
+    FMUL double ptr [0x0058a832]        ; 004de471 | DOUBLE_0058a832
     FLD float ptr [ESP + 0x18]          ; 004de477
     FXCH                                ; 004de47b
     FSTP double ptr [ESP]               ; 004de47d

@@ -37,7 +37,7 @@ void core_set_cpp_FUN_0050a260(int param_1)
   iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   local_14 = &DAT_01c74640;
   uVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(iVar6 + 0x150);
-  iVar5 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar4,"@Bip01 Head" + 1,0);
+  iVar5 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar4,"Bip01 Head",0);
   iVar5 = iVar6 + 0xfd0 + iVar5 * 0x30;
   local_40 = 0x3ead0e56;
   local_44 = 0;
@@ -46,7 +46,7 @@ void core_set_cpp_FUN_0050a260(int param_1)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar6,&local_2c,uVar4);
   core_xform_cpp_matrixToEulerAngles_FUN_0055b180(iVar5,&local_38);
   local_18 = 0;
-  local_20 = local_38 + (float)_DAT_00590582;
+  local_20 = local_38 + (float)0.261799387791667;
   _DAT_01c762fc = 0;
   local_1c = local_34 + *(float *)(iVar6 + 0x34);
   if (&stack0x00000000 != (byte *)0x1c74770) {

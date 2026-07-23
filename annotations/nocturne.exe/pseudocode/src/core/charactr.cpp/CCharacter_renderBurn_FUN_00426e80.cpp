@@ -48,7 +48,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
       iVar7 = iVar7 + 4;
     } while (iVar5 < *(int *)(iVar4 + 0x28558));
   }
-  fVar2 = 0x40400000;
+  fVar2 = 3.0f;
   iVar5 = 0;
   if (0 < *(int *)(param_1 + 0x2f08)) {
     fVar1 = (float)65535;

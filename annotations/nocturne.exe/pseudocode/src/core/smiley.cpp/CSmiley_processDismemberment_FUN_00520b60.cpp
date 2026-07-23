@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_00520b60(int param_1,int *param_2)
 
 {
@@ -93,19 +91,19 @@ switchD_00520be9_default:
           if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd54) * 4) == 0) {
             param_2[1] = 0x461c3c00;
           }
-          param_2[2] = (int)((float)param_2[2] * (float)_DAT_005920e5);
+          param_2[2] = (int)((float)param_2[2] * (float)7);
         }
       }
       iVar3 = *param_2;
       if (iVar3 != *(int *)(param_1 + 0xbd54)) {
         if ((iVar3 != *(int *)(param_1 + 0xbd4c)) && (iVar3 != *(int *)(param_1 + 0xbd50))) {
-          param_2[1] = (int)((float)param_2[1] * (float)_DAT_005920ed);
+          param_2[1] = (int)((float)param_2[1] * (float)0.5);
           return;
         }
         param_2[1] = param_2[1];
         return;
       }
-      param_2[1] = (int)((float)param_2[1] * (float)_DAT_005920f5);
+      param_2[1] = (int)((float)param_2[1] * (float)2.5);
       return;
     }
   }

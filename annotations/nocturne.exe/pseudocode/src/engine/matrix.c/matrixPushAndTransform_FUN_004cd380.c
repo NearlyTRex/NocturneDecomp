@@ -205,7 +205,7 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004cd380(int param_1,int
   _DAT_01c039b8 = iVar4;
   _DAT_01cc5174 = _DAT_01cc5174 + 1;
   if (9 < _DAT_01cc5174) {
-    _DAT_01cc4800 = "@..\\engine\\matrix.c" + 1;
+    _DAT_01cc4800 = "..\\engine\\matrix.c";
     _DAT_01cc4804 = 0x31c;
     FUN_004c8440("Matrix unbalance");
     return;

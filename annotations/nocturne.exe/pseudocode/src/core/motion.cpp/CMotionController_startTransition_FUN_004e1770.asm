@@ -11,7 +11,7 @@
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500 at 004e15d8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058b319
+;   float FLOAT_0058b319 = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -32,7 +32,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 004e177f
     MOV dword ptr [ESP],EAX             ; 004e1782
     FLD float ptr [ESP]                 ; 004e1785
-    FCOMP float ptr [0x0058b319]        ; 004e1788 | DAT_0058b319
+    FCOMP float ptr [0x0058b319]        ; 004e1788 | FLOAT_0058b319
     FNSTSW AX                           ; 004e178e
     SAHF                                ; 004e1790
     JZ 0x004e17d7                       ; 004e1791

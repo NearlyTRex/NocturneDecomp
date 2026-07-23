@@ -9,7 +9,7 @@
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40 at 00460e56
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\engine\\matrix.c_005882c2+1
+;   TerminatedCString s_engine_matrix_c_005882c3
 ;   string s_Too_many_3D_windows_005882d6
 ;   undefined4 DAT_005b7648
 ;   undefined4 DAT_01c00c48
@@ -100,7 +100,7 @@ section .text
     PUSH ESI                            ; 004ce8f1
         ;   Label: LAB_004ce8f1
     PUSH EBX                            ; 004ce8f2
-    MOV EBX,0x5882c3                    ; 004ce8f3 | s_..\engine\matrix.c_005882c2+1
+    MOV EBX,0x5882c3                    ; 004ce8f3 | = "..\\engine\\matrix.c"
     MOV ESI,0x53d                       ; 004ce8f8
     PUSH 0x5882d6                       ; 004ce8fd | = "Too many 3D windows"
     MOV dword ptr [0x01cc4800],EBX      ; 004ce902 | DAT_01cc4800

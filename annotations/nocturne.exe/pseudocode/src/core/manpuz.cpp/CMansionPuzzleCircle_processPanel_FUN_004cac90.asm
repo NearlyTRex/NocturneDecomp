@@ -8,9 +8,9 @@
 ;   FUN_004c9cf0 at 004c9d17
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\manpuz.cpp_00587f71+1
+;   TerminatedCString s_core_manpuz_cpp_00587f72
 ;   string s_CMansionPuzzleCircle::processPan_00587f85
-;   undefined4 DAT_005a0040
+;   float FLOAT_005a0040 = 2
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -49,7 +49,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 004cacc6
         ;   Label: LAB_004cacc6
     FMUL float ptr [ESP + 0x18]         ; 004cacc9
-    FDIV float ptr [0x005a0040]         ; 004caccd | DAT_005a0040
+    FDIV float ptr [0x005a0040]         ; 004caccd | FLOAT_005a0040
     FADD float ptr [EBX + 0x4]          ; 004cacd3
     FST float ptr [EBX + 0x4]           ; 004cacd6
     FLDZ                                ; 004cacd9
@@ -86,7 +86,7 @@ section .text
     TEST EDI,EDI                        ; 004cad20
     JZ 0x004cad46                       ; 004cad22
         ;   XREF to: 004cad46 (CONDITIONAL_JUMP)  ; LAB_004cad46
-    MOV EBP,0x587f72                    ; 004cad24 | s_..\core\manpuz.cpp_00587f71+1
+    MOV EBP,0x587f72                    ; 004cad24 | = "..\\core\\manpuz.cpp"
     MOV EAX,0x45d                       ; 004cad29
     PUSH 0x587f85                       ; 004cad2e | = "CMansionPuzzleCircle::processPanel - ..."
     MOV dword ptr [0x01cc4800],EBP      ; 004cad33 | DAT_01cc4800

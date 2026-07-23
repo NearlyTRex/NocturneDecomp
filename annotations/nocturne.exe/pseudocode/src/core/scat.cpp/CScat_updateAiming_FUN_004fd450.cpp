@@ -62,10 +62,10 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
   local_13c = *(float *)(param_1 + 0x1fa54);
   local_2c = *(float *)(param_1 + 0x1fa58);
   if ((*(int *)(param_1 + 0x1f59c) != 0) && (*(int *)(param_1 + 0xbc90) != 2)) {
-    local_13c = *(float *)(param_1 + 0xbcbc) * (float)_DAT_0058df4e * (float)_DAT_0058df56 * param_2
-                + local_13c;
+    local_13c = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 *
+                param_2 + local_13c;
     local_1c = 0x3fc90fdb;
-    if (local_13c < _DAT_0058df5e) {
+    if (local_13c < -1.570796f) {
       local_13c = -1.5707964;
     }
     if (1.5707964 < local_13c) {
@@ -111,10 +111,10 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
                                 (*(int *)(param_1 + 0x1fa60),auStack_c0);
     fStack_90 = *pfVar5 + pfVar5[3];
     fStack_8c = pfVar5[1] + pfVar5[4];
-    fStack_78 = fStack_90 * _DAT_0058df62;
+    fStack_78 = fStack_90 * 0.5f;
     fStack_88 = pfVar5[2] + pfVar5[5];
-    fStack_74 = fStack_8c * _DAT_0058df62;
-    fStack_130 = fStack_88 * _DAT_0058df62;
+    fStack_74 = fStack_8c * 0.5f;
+    fStack_130 = fStack_88 * 0.5f;
     fStack_70 = fStack_130;
     fVar6 = fStack_78;
     fVar2 = fStack_74;
@@ -147,7 +147,7 @@ LAB_004fd4ed:
   local_18 = local_38;
   local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                               (local_13c - *(float *)(param_1 + 0x1fa54));
-  local_30 = param_2 * (float)_DAT_0058df4e * (float)_DAT_0058df66;
+  local_30 = param_2 * (float)3.1415926535000001 * (float)1.5;
   local_3c = -local_30;
   if (local_38 < local_3c) {
     local_38 = local_3c;
@@ -168,10 +168,10 @@ LAB_004fd4ed:
   if ((*(int *)(param_1 + 0x1fa60) != 0) && (param_3 == 0)) {
     local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                 (*(float *)(param_1 + 0x1fa58) - local_2c);
-    if (((float)_DAT_0058df6e <= ABS(local_18)) &&
+    if (((float)0.02 <= ABS(local_18)) &&
        (fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                  (*(float *)(param_1 + 0x1fa58) - local_2c),
-       (float)_DAT_0058df6e <= ABS(fVar6))) {
+       (float)0.02 <= ABS(fVar6))) {
       return;
     }
     *(uint *)(param_1 + 0x1fa64) = 1;

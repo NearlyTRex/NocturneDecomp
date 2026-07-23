@@ -65,15 +65,15 @@ LAB_0053ecf1:
       if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar6) goto LAB_0053ee02;
       iVar3 = *(int *)(iVar7 + 0x14ecb4 + 0x01E57284);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_68,iVar3 + 0x20);
-      if (((ABS(local_68) <= (float)_DAT_00595db7) && (ABS(local_64) <= (float)_DAT_00595dbf)) &&
-         ((0.0 <= local_60 &&
-          ((((int)local_60 < 0x40c00001 && (iVar3 != param_1)) &&
-           (iVar2 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3), iVar2 == 0)))))) {
+      if (((ABS(local_68) <= (float)1.5) && (ABS(local_64) <= (float)4))
+         && ((0.0 <= local_60 &&
+             ((((int)local_60 < 0x40c00001 && (iVar3 != param_1)) &&
+              (iVar2 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3), iVar2 == 0)))))) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_e4);
         iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,auStack_e4);
         if ((iVar3 == 2) &&
-           (fStack_f0 = 1.0 - ((local_60 - fStack_c8) + (float)_DAT_00595dc7) * (float)_DAT_00595daf
-           , local_f8 <= fStack_f0)) {
+           (fStack_f0 = 1.0 - ((local_60 - fStack_c8) + (float)-1.5) *
+                              (float)0.40000000000000002, local_f8 <= fStack_f0)) {
           if (fStack_f0 < 0.0) {
             fStack_f0 = 0.0;
           }
@@ -93,12 +93,12 @@ LAB_0053f147:
   }
   local_f4 = local_f8 - *(float *)(param_1 + 0x1faf4);
   if (0.0 <= local_f4) {
-    if ((0.0 < local_f4) && (param_2 / _DAT_005a26fc < local_f4)) {
-      local_f4 = param_2 / _DAT_005a26fc;
+    if ((0.0 < local_f4) && (param_2 / 0.05f < local_f4)) {
+      local_f4 = param_2 / 0.05f;
     }
   }
   else {
-    fVar1 = -param_2 * (1.0 / _DAT_005a2700);
+    fVar1 = -param_2 * (1.0 / 0.5f);
     if (local_f4 < fVar1) {
       local_f4 = fVar1;
     }

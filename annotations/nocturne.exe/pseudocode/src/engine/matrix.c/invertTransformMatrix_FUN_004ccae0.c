@@ -29,13 +29,13 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004ccae0(void)
   uint uStack_54;
   
   fVar2 = (float)_DAT_01c039e8;
-  fVar1 = (float)_DAT_005881db;
+  fVar1 = (float)1.52587890625e-05;
   fVar6 = (float)_DAT_01c039ec;
-  fVar5 = (float)_DAT_005881db;
+  fVar5 = (float)1.52587890625e-05;
   fVar8 = (float)_DAT_01c03a00;
-  fVar7 = (float)_DAT_005881db;
+  fVar7 = (float)1.52587890625e-05;
   fVar4 = (float)_DAT_01c03a04;
-  fVar3 = (float)_DAT_005881db;
+  fVar3 = (float)1.52587890625e-05;
   _DAT_01cc5140 = _DAT_01c039e8;
   _DAT_01cc5144 = _DAT_01c039ec;
   _DAT_01cc5148 = _DAT_01c039f0;

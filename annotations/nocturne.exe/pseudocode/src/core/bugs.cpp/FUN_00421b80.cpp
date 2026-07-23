@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bugs_cpp_FUN_00421b80(int param_1)
 
 {
@@ -45,7 +43,7 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
   float local_c;
   
   bVar10 = 0;
-  local_c = 1.0 / _DAT_0059aea8;
+  local_c = 1.0 / 0.5f;
   local_54 = *(float *)(param_1 + 0x19838) + *(float *)(param_1 + 0x19844);
   local_50 = *(float *)(param_1 + 0x1983c) + *(float *)(param_1 + 0x19848);
   fVar2 = local_50 * 0.5f;
@@ -61,12 +59,12 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
   local_38 = (int)ROUND(fVar11);
   dVar12 = (double)floor((double)fVar1,uVar14);
   local_10 = local_38;
-  fVar1 = (float)local_38 * _DAT_0059aea8;
+  fVar1 = (float)local_38 * 0.5f;
   local_44 = (byte  [8])dVar12;
   fVar11 = (float10)round((float10)dVar12);
   local_18 = (int)ROUND(fVar11);
-  fVar13 = (float)local_18 * _DAT_0059aea8;
-  fVar2 = _DAT_0059aea8 * 5.4034218993573707e-315._0_4_ * (float)0.5;
+  fVar13 = (float)local_18 * 0.5f;
+  fVar2 = 0.5f * 5.4034218993573707e-315._0_4_ * (float)0.5;
   *(float *)(param_1 + 0x19854) = (fVar1 - *(float *)(param_1 + 0x20)) - fVar2;
   *(float *)(param_1 + 0x19858) = (fVar13 - *(float *)(param_1 + 0x28)) - fVar2;
   if ((iStack_3c != *(int *)(param_1 + 0x1984c)) || (local_18 != *(int *)(param_1 + 0x19850))) {
@@ -96,12 +94,12 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
     local_30 = unaff_EBX;
     do {
       iVar5 = 0;
-      local_54 = (float)local_1c * _DAT_0059aea8 + fVar13;
+      local_54 = (float)local_1c * 0.5f + fVar13;
       iVar6 = local_34 - local_38;
       iVar4 = local_30;
       iVar9 = local_30;
       do {
-        local_4c = (float)iVar5 * _DAT_0059aea8 + fVar2 + fVar1;
+        local_4c = (float)iVar5 * 0.5f + fVar2 + fVar1;
         if ((((local_1c < local_20) || (local_2c < local_1c)) || (iVar5 < local_24)) ||
            (local_28 < iVar5)) {
           local_14 = iVar5;

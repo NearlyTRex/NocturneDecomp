@@ -28,14 +28,14 @@
 ;   string s_This_mission_uses_actor_format_v_0058973b
 ;   string s_..\\core\\mission.cpp_00589786
 ;   string s_No_name_in_mission_0058979a
-;   undefined4 DAT_005897ad
-;   undefined4 DAT_005897b1
-;   undefined4 DAT_005897b5
-;   undefined4 DAT_005897b9
+;   TerminatedCString s_s_005897ad
+;   TerminatedCString s_d_005897b1
+;   TerminatedCString s_s_005897b5
+;   TerminatedCString s_d_005897b9
 ;   string s_%s_%d_005897bd
 ;   string s_..\\core\\mission.cpp_005897c4
 ;   string s_Actor_type_%s_is_saved_in_missio_005897d8
-;   undefined4 DAT_00589841
+;   TerminatedCString s_d_00589841
 ;   ... and 22 more
 ;
 ; Called Functions:
@@ -144,7 +144,7 @@ section .text
     LEA EAX,[EBX + 0x10]                ; 004d80c3
         ;   Label: LAB_004d80c3
     PUSH EAX                            ; 004d80c6
-    PUSH 0x5897ad                       ; 004d80c7 | DAT_005897ad
+    PUSH 0x5897ad                       ; 004d80c7 | = "%s\n"
     MOV ECX,dword ptr [ESP + 0x168]     ; 004d80cc
     PUSH ECX                            ; 004d80d3
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d80d4
@@ -165,7 +165,7 @@ section .text
     LEA EAX,[EBX + 0x110]               ; 004d80f5
         ;   Label: LAB_004d80f5
     PUSH EAX                            ; 004d80fb
-    PUSH 0x5897b1                       ; 004d80fc | DAT_005897b1
+    PUSH 0x5897b1                       ; 004d80fc | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x168]     ; 004d8101
     PUSH ESI                            ; 004d8108
     XOR EBP,EBP                         ; 004d8109
@@ -179,7 +179,7 @@ section .text
     LEA ESI,[EBX + 0x114]               ; 004d811d
     PUSH ESI                            ; 004d8123
         ;   Label: LAB_004d8123
-    PUSH 0x5897b5                       ; 004d8124 | DAT_005897b5
+    PUSH 0x5897b5                       ; 004d8124 | = "%s\n"
     MOV EAX,dword ptr [ESP + 0x168]     ; 004d8129
     PUSH EAX                            ; 004d8130
     INC EBP                             ; 004d8131
@@ -213,7 +213,7 @@ section .text
     LEA EAX,[ESP + 0x138]               ; 004d8178
         ;   Label: LAB_004d8178
     PUSH EAX                            ; 004d817f
-    PUSH 0x5897b9                       ; 004d8180 | DAT_005897b9
+    PUSH 0x5897b9                       ; 004d8180 | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x168]     ; 004d8185
     PUSH ESI                            ; 004d818c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d818d
@@ -293,7 +293,7 @@ section .text
     LEA EAX,[ESP + 0x130]               ; 004d825e
         ;   Label: LAB_004d825e
     PUSH EAX                            ; 004d8265
-    PUSH 0x589841                       ; 004d8266 | DAT_00589841
+    PUSH 0x589841                       ; 004d8266 | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x168]     ; 004d826b
     PUSH EDI                            ; 004d8272
     XOR EBP,EBP                         ; 004d8273
@@ -319,7 +319,7 @@ section .text
     LEA EAX,[ESP + 0x134]               ; 004d82a2
         ;   Label: LAB_004d82a2
     PUSH EAX                            ; 004d82a9
-    PUSH 0x589845                       ; 004d82aa | DAT_00589845
+    PUSH 0x589845                       ; 004d82aa | = "%d\n"
     MOV EDX,dword ptr [ESP + 0x168]     ; 004d82af
     PUSH EDX                            ; 004d82b6
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d82b7

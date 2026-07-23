@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059746b
+;   double DOUBLE_0059746b = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -64,7 +64,7 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 0054fb07
     FADDP                               ; 0054fb0b
     FSQRT                               ; 0054fb0d
-    FCOMP double ptr [0x0059746b]       ; 0054fb0f | DAT_0059746b
+    FCOMP double ptr [0x0059746b]       ; 0054fb0f | DOUBLE_0059746b
     FNSTSW AX                           ; 0054fb15
     SAHF                                ; 0054fb17
     JNC 0x0054fb57                      ; 0054fb18
